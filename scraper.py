@@ -6,7 +6,7 @@ import csv
 import sys
 import re
 
-BASE_URL = "https://markposition.wordpress.com/"
+BASE_URL = "https://marketing1usa.wordpress.com/"
 
 def is_url(text):
     # Simple regex to check if text looks like a URL

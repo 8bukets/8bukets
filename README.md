@@ -1,6 +1,6 @@
-# Markposition Scraper
+# Marketing1USA Scraper
 
-This is a Python script designed to scrape the website `https://markposition.wordpress.com/`. It traverses all available pages and extracts information about each post.
+This is a Python script designed to scrape the website `https://marketing1usa.wordpress.com/`. It traverses all available pages and extracts information about each post.
 
 ## Functionality
 
