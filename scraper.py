@@ -2,117 +2,151 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import time
+import logging
+import argparse
+import sys
 
-def scrape_wishlist():
-    base_url = "https://wishlist.design.blog"
-    url = base_url
-    print(f"Starting scrape at {url}...")
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(sys.stdout)
+    ]
+)
+logger = logging.getLogger(__name__)
 
-    all_data = []
+class BlogScraper:
+    def __init__(self, base_url, output_file="wishlist_data.json"):
+        self.base_url = base_url
+        self.output_file = output_file
+        self.headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+        }
+        self.data = []
 
-    while url:
-        print(f"Fetching {url}...")
+    def fetch_page(self, url):
+        logger.info(f"Fetching {url}...")
         try:
-            response = requests.get(url)
+            response = requests.get(url, headers=self.headers, timeout=10)
             response.raise_for_status()
+            return response.content
         except requests.RequestException as e:
-            print(f"Error fetching URL: {e}")
-            break
+            logger.error(f"Error fetching URL {url}: {e}")
+            return None
 
-        soup = BeautifulSoup(response.content, "html.parser")
-        articles = soup.find_all("article")
-        print(f"Found {len(articles)} articles on this page.")
+    def parse_article(self, article):
+        item = {}
 
-        for article in articles:
-            item = {}
+        # Title
+        title_tag = article.select_one("header.entry-header h2.entry-title a")
+        item['title'] = title_tag.get_text(strip=True) if title_tag else None
 
-            # Title
-            title_tag = article.select_one("header.entry-header h2.entry-title a")
-            if title_tag:
-                item['title'] = title_tag.get_text(strip=True)
-            else:
-                item['title'] = None
-
-            # Link (External)
-            content_div = article.select_one("div.entry-content")
-            external_link = None
-            if content_div:
-                link_tag = content_div.find("a")
-                if link_tag:
-                    external_link = link_tag.get('href')
-                    if not external_link and link_tag.get_text(strip=True).startswith('http'):
-                         external_link = link_tag.get_text(strip=True)
-
+        # Link (External)
+        content_div = article.select_one("div.entry-content")
+        external_link = None
+        if content_div:
+            # Check for direct anchor tags
+            link_tag = content_div.find("a")
+            if link_tag:
+                external_link = link_tag.get('href')
+                # If href is missing or empty, maybe the text itself is a URL (unlikely for <a> but possible)
                 if not external_link:
-                     text_content = content_div.get_text(strip=True)
-                     if text_content.startswith('http'):
-                         external_link = text_content
+                    text_content = link_tag.get_text(strip=True)
+                    if text_content.startswith('http'):
+                        external_link = text_content
 
-            item['external_link'] = external_link
+            # Fallback: check text content if no suitable <a> tag
+            if not external_link:
+                text_content = content_div.get_text(strip=True)
+                # Simple check for URL in text
+                if text_content.startswith('http'):
+                    external_link = text_content.split()[0] # Take the first word if it looks like a URL
 
-            # Date
-            time_tag = article.select_one(".entry-meta .posted-on time")
-            if time_tag:
-                item['date'] = time_tag.get_text(strip=True)
-                item['datetime'] = time_tag.get('datetime')
-            else:
-                item['date'] = None
-                item['datetime'] = None
+        item['external_link'] = external_link
 
-            # Author
-            author_tag = article.select_one(".entry-meta .byline .author a")
-            if author_tag:
-                item['author'] = author_tag.get_text(strip=True)
-            else:
-                item['author'] = None
+        # Date
+        time_tag = article.select_one(".entry-meta .posted-on time")
+        if time_tag:
+            item['date'] = time_tag.get_text(strip=True)
+            item['datetime'] = time_tag.get('datetime')
+        else:
+            item['date'] = None
+            item['datetime'] = None
 
-            # Category
-            cat_links = article.select("header.entry-header .cat-links a")
-            if cat_links:
-                item['categories'] = [cat.get_text(strip=True) for cat in cat_links]
-            else:
-                item['categories'] = []
+        # Author
+        author_tag = article.select_one(".entry-meta .byline .author a")
+        item['author'] = author_tag.get_text(strip=True) if author_tag else None
 
-            all_data.append(item)
+        # Category
+        cat_links = article.select("header.entry-header .cat-links a")
+        item['categories'] = [cat.get_text(strip=True) for cat in cat_links] if cat_links else []
 
-        # Pagination: Look for "Older posts" link
-        # Based on typical WP themes and my earlier debug, it might not be obvious if it's infinite scroll.
-        # But if it is paginated, it usually has "nav-previous" or "Older posts".
-        # However, previous debug showed no "nav-previous".
-        # But requests.get returned 222 articles which seemed to be ALL articles.
-        # If there IS pagination, we should check for it.
-        # I'll check for any link containing "Older posts" case insensitive.
+        return item
 
-        next_page_link = None
+    def get_next_page(self, soup):
         # Standard WP pagination
         nav_previous = soup.find("div", class_="nav-previous")
         if nav_previous:
             a_tag = nav_previous.find("a")
             if a_tag:
-                next_page_link = a_tag.get('href')
+                return a_tag.get('href')
 
-        # If standard class not found, search text
-        if not next_page_link:
-            for a in soup.find_all("a", href=True):
-                if "older posts" in a.get_text(strip=True).lower():
-                    next_page_link = a['href']
-                    break
+        # Fallback: search for "Older posts" link by text
+        for a in soup.find_all("a", href=True):
+            if "older posts" in a.get_text(strip=True).lower():
+                return a['href']
 
-        if next_page_link:
-            print(f"Found next page: {next_page_link}")
-            url = next_page_link
-            time.sleep(1) # Be polite
-        else:
-            print("No more pages found.")
-            url = None
+        return None
 
-    # Save to JSON
-    output_file = "wishlist_data.json"
-    with open(output_file, "w", encoding="utf-8") as f:
-        json.dump(all_data, f, indent=2, ensure_ascii=False)
+    def run(self):
+        url = self.base_url
 
-    print(f"Scraped {len(all_data)} articles in total.")
-    print(f"Scraped data saved to {output_file}")
+        while url:
+            content = self.fetch_page(url)
+            if not content:
+                break
+
+            soup = BeautifulSoup(content, "html.parser")
+            articles = soup.find_all("article")
+            logger.info(f"Found {len(articles)} articles on this page.")
+
+            if not articles:
+                logger.warning("No articles found on page.")
+
+            for article in articles:
+                item = self.parse_article(article)
+                self.data.append(item)
+
+            next_page = self.get_next_page(soup)
+            if next_page:
+                logger.info(f"Found next page: {next_page}")
+                url = next_page
+                time.sleep(1) # Be polite
+            else:
+                logger.info("No more pages found.")
+                url = None
+
+        self.save_data()
+
+    def save_data(self):
+        try:
+            with open(self.output_file, "w", encoding="utf-8") as f:
+                json.dump(self.data, f, indent=2, ensure_ascii=False)
+            logger.info(f"Scraped {len(self.data)} articles in total.")
+            logger.info(f"Data saved to {self.output_file}")
+        except IOError as e:
+            logger.error(f"Error saving data to {self.output_file}: {e}")
+
+def main():
+    parser = argparse.ArgumentParser(description="Scrape wishlist.design.blog")
+    parser.add_argument("--url", default="https://wishlist.design.blog", help="Base URL to scrape")
+    parser.add_argument("--output", default="wishlist_data.json", help="Output JSON file")
+
+    args = parser.parse_args()
+
+    scraper = BlogScraper(args.url, args.output)
+    scraper.run()
 
 if __name__ == "__main__":
-    scrape_wishlist()
+    main()
