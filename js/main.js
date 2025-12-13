@@ -6,6 +6,67 @@ document.addEventListener('DOMContentLoaded', () => {
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
+
+    // Theme Toggle
+    const toggleBtn = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        if (toggleBtn) toggleBtn.textContent = 'Light Mode';
+    }
+
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                toggleBtn.textContent = 'Light Mode';
+            } else {
+                localStorage.setItem('theme', 'light');
+                toggleBtn.textContent = 'Dark Mode';
+            }
+        });
+    }
+
+    // Search Functionality
+    const searchInput = document.getElementById('search-input');
+    const articleList = document.getElementById('article-list');
+
+    if (searchInput && articleList) {
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const articles = articleList.getElementsByTagName('article');
+
+            Array.from(articles).forEach(article => {
+                // Search in the entire text content of the article
+                const text = article.textContent.toLowerCase();
+
+                if (text.includes(term)) {
+                    article.style.display = 'block';
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+        });
+    }
+
+    // Contact Form Validation
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (email && message) {
+                alert('Thank you for your message! We will get back to you shortly.');
+                contactForm.reset();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+    }
 });
 
 // Simple toggle function for "Read More"
@@ -20,4 +81,21 @@ function toggleReadMore(btn) {
         moreText.style.display = 'none';
         btn.textContent = 'Read More';
     }
+}
+
+// Filter by Category
+function filterByCategory(category) {
+    const articleList = document.getElementById('article-list');
+    if (!articleList) return;
+
+    const articles = articleList.getElementsByTagName('article');
+
+    Array.from(articles).forEach(article => {
+        const cat = article.getAttribute('data-category');
+        if (cat === category || category === 'All') {
+            article.style.display = 'block';
+        } else {
+            article.style.display = 'none';
+        }
+    });
 }

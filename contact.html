@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - United Sports News</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>United Sports News</h1>
+        <button id="theme-toggle">Dark Mode</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Football</a></li>
+                <li><a href="index.html">Basketball</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" style="text-align: left;">
+            <h2>Contact Us</h2>
+            <p>Have a tip, question, or just want to say hi? Drop us a line.</p>
+        </section>
+
+        <section class="content-area">
+            <form id="contact-form" style="background: var(--card-bg); padding: 2rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                <div style="margin-bottom: 1rem;">
+                    <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Name</label>
+                    <input type="text" id="name" name="name" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+
+                <div style="margin-bottom: 1rem;">
+                    <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Email</label>
+                    <input type="email" id="email" name="email" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+
+                <div style="margin-bottom: 1rem;">
+                    <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Message</label>
+                    <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+                </div>
+
+                <button type="submit" style="background: var(--primary-color); color: #fff; border: none; padding: 0.75rem 1.5rem; border-radius: 4px; cursor: pointer; font-size: 1rem;">Send Message</button>
+            </form>
+        </section>
+
+        <aside class="sidebar">
+            <h3>Get in Touch</h3>
+            <p>Email: contact@unitedsports.news</p>
+            <p>Phone: +1 234 567 890</p>
+            <p>Address: 123 Sports Lane, Stadium City</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> United Sports News. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

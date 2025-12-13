@@ -9,12 +9,13 @@
 <body>
     <header>
         <h1>United Sports News</h1>
+        <button id="theme-toggle">Dark Mode</button>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Football</a></li>
-                <li><a href="#">Basketball</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#" onclick="filterByCategory('Football')">Football</a></li>
+                <li><a href="#" onclick="filterByCategory('Basketball')">Basketball</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -23,23 +24,44 @@
         <section class="hero">
             <h2>Welcome to United Sports News</h2>
             <p>Your number one source for all things sports.</p>
+            <div style="margin-top: 1rem;">
+                <input type="text" id="search-input" placeholder="Search articles..." style="padding: 0.5rem; width: 60%; border-radius: 4px; border: 1px solid #ccc;">
+            </div>
         </section>
 
         <section class="content-area">
-            <div class="articles">
-                <article>
+            <div class="articles" id="article-list">
+                <article data-category="Football">
+                    <span class="tag">Football</span>
                     <div class="image-placeholder">Match Image</div>
                     <h3>Latest Match Results</h3>
                     <p>The weekend provided some shocking results across the major leagues. From last-minute winners to unexpected upsets, we cover it all.</p>
                     <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
                     <p class="more-text" style="display:none;">Detailed analysis shows that underdogs are performing better than ever this season. Stats indicate a shift in possession-based tactics.</p>
                 </article>
-                <article>
+                <article data-category="Transfer News">
+                    <span class="tag">Transfer News</span>
                     <div class="image-placeholder">Transfer Image</div>
                     <h3>Player Transfers</h3>
                     <p>With the transfer window approaching, rumors are heating up. Top clubs are looking to bolster their squads.</p>
                     <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
                     <p class="more-text" style="display:none;">Sources say that several high-profile strikers are on the move. Fees are expected to break records yet again.</p>
+                </article>
+                <article data-category="Basketball">
+                    <span class="tag">Basketball</span>
+                    <div class="image-placeholder">NBA Image</div>
+                    <h3>Championship Finals Set</h3>
+                    <p>The stage is set for an epic showdown in the finals. Both teams have fought hard to get here.</p>
+                    <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+                    <p class="more-text" style="display:none;">Analysts predict a 7-game series given the defensive strengths of both squads.</p>
+                </article>
+                <article data-category="Football">
+                    <span class="tag">Football</span>
+                    <div class="image-placeholder">Youth Academy</div>
+                    <h3>Rising Stars of the Season</h3>
+                    <p>We take a look at the most promising young talents breaking into the first teams this year.</p>
+                    <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+                    <p class="more-text" style="display:none;">Scouts from all over Europe are watching these kids closely.</p>
                 </article>
             </div>
         </section>
