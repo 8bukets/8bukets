@@ -1,27 +1,38 @@
-# Promotion Tool for Draagsterblocks
+# Promotion Tool
 
-This tool helps automate the promotion of the `draagsterblocks.wordpress.com` blog (all-about-cookies.com).
+A command-line tool to automate the promotion of WordPress blogs. It fetches content from an RSS feed, generates social media posts with intelligent hashtags, downloads images, and performs health checks.
 
 ## Features
 
-1. **Social Media Draft Generation**: Fetches the latest posts from the RSS feed and generates draft tweets with relevant hashtags.
-2. **SEO Analysis**: Checks the homepage for critical SEO metadata (Description, Open Graph tags).
+- **Automated Copywriting**: Generates tweets with hashtags derived from titles and content.
+- **Image Downloading**: Automatically fetches featured images for easy posting.
+- **SEO Health Check**: Verifies homepage metadata (OG tags, description).
+- **Broken Link Checker**: Scans post content for dead links before you share them.
+- **Export**: Saves a comprehensive Markdown report.
 
-## Setup
+## Installation
 
-1. Install dependencies:
+1. Install requirements:
    ```bash
    pip install -r requirements.txt
    ```
 
-2. Run the script:
-   ```bash
-   python promote_site.py
-   ```
+## Usage
 
-## Requirements
+Basic usage:
+```bash
+python promote_site.py
+```
 
-- python 3.x
-- feedparser
-- requests
-- beautifulsoup4
+Advanced usage:
+```bash
+python promote_site.py --url https://yourblog.wordpress.com --output report.md --download-images --check-links
+```
+
+### Arguments
+
+- `--url`: The base URL of the site (default: `https://draagsterblocks.wordpress.com/`)
+- `--feed`: Custom RSS feed URL (optional).
+- `--output`: Path to save the report (e.g., `report.md`).
+- `--download-images`: Enable downloading of featured images to `images/` folder.
+- `--check-links`: specific flag to check for broken links in the post content.
