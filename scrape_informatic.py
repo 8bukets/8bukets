@@ -3,17 +3,34 @@ from bs4 import BeautifulSoup
 import json
 import time
 import logging
+import argparse
+import sys
 from urllib.parse import urlparse
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
+from dataclasses import dataclass, asdict
+from typing import List, Optional
+from markdownify import markdownify as md
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
+@dataclass
+class Post:
+    title: Optional[str]
+    post_url: Optional[str]
+    date: Optional[str]
+    date_text: Optional[str]
+    categories: List[str]
+    content: str
+    external_links: List[str]
+    image_url: Optional[str]
 
 BASE_URL = "https://informaticmagazine.data.blog"
+
+def configure_logging(verbose: bool):
+    level = logging.DEBUG if verbose else logging.INFO
+    logging.basicConfig(
+        level=level,
+        format='%(asctime)s - %(levelname)s - %(message)s'
+    )
 
 def get_session():
     """
@@ -37,35 +54,95 @@ def get_session():
 
     return session
 
-def is_external_link(link_url, base_url):
+def is_external_link(link_url: str, base_url: str) -> bool:
     """
     Checks if a link is external to the base domain.
     """
     if not link_url:
         return False
 
-    parsed_link = urlparse(link_url)
-    parsed_base = urlparse(base_url)
+    try:
+        parsed_link = urlparse(link_url)
+        parsed_base = urlparse(base_url)
+    except Exception:
+        return False
 
     # If netloc is empty (relative link), it's internal
     if not parsed_link.netloc:
         return False
 
-    # Check if the domain is the same or a subdomain
-    # simplistic check: link domain ends with base domain
-    # However, data.blog is the host here.
-    # informaticmagazine.data.blog
-
     return parsed_link.netloc != parsed_base.netloc
 
-def scrape():
+def parse_post_html(post_soup, base_url: str) -> Post:
+    """
+    Parses a single article soup object and returns a Post object.
+    """
+    # Title
+    title_tag = post_soup.find('h2', class_='entry-title')
+    title = None
+    post_url = None
+    if title_tag and title_tag.find('a'):
+        title = title_tag.find('a').get_text(strip=True)
+        post_url = title_tag.find('a')['href']
+
+    # Date
+    date_tag = post_soup.find('time', class_='entry-date')
+    date_iso = None
+    date_text = None
+    if date_tag:
+        date_iso = date_tag.get('datetime')
+        date_text = date_tag.get_text(strip=True)
+
+    # Category
+    cat_links = post_soup.find('span', class_='cat-links')
+    categories = []
+    if cat_links:
+        categories = [a.get_text(strip=True) for a in cat_links.find_all('a')]
+
+    # Content and External Links
+    content_div = post_soup.find('div', class_='entry-content')
+    external_links = []
+    content_text = ""
+
+    if content_div:
+        # Convert HTML to Markdown
+        content_text = md(str(content_div)).strip()
+
+        # Extract external links
+        for link in content_div.find_all('a'):
+            href = link.get('href')
+            if href and is_external_link(href, base_url):
+                external_links.append(href)
+
+    # Image
+    img = post_soup.find('div', class_='featured-image')
+    image_url = None
+    if img and img.find('img'):
+            image_url = img.find('img').get('src')
+
+    return Post(
+        title=title,
+        post_url=post_url,
+        date=date_iso,
+        date_text=date_text,
+        categories=categories,
+        content=content_text,
+        external_links=external_links,
+        image_url=image_url
+    )
+
+def scrape(output_file: str, max_pages: int = 0):
     session = get_session()
     all_posts = []
     page = 1
     current_url = BASE_URL
 
     while current_url:
-        logging.info(f"Scraping {current_url}...")
+        if max_pages > 0 and page > max_pages:
+            logging.info(f"Reached max pages limit ({max_pages}). Stopping.")
+            break
+
+        logging.info(f"Scraping page {page}: {current_url}...")
         try:
             response = session.get(current_url)
             response.raise_for_status()
@@ -78,61 +155,12 @@ def scrape():
         posts = soup.find_all('article')
         logging.info(f"Found {len(posts)} posts on page {page}.")
 
-        for post in posts:
-            item = {}
-
-            # Title
-            title_tag = post.find('h2', class_='entry-title')
-            if title_tag and title_tag.find('a'):
-                item['title'] = title_tag.find('a').get_text(strip=True)
-                item['post_url'] = title_tag.find('a')['href']
-            else:
-                item['title'] = None
-                item['post_url'] = None
-
-            # Date
-            date_tag = post.find('time', class_='entry-date')
-            if date_tag:
-                item['date'] = date_tag.get('datetime')
-                item['date_text'] = date_tag.get_text(strip=True)
-            else:
-                item['date'] = None
-                item['date_text'] = None
-
-            # Category
-            cat_links = post.find('span', class_='cat-links')
-            if cat_links:
-                cats = [a.get_text(strip=True) for a in cat_links.find_all('a')]
-                item['categories'] = cats
-            else:
-                item['categories'] = []
-
-            # Content and External Links
-            content_div = post.find('div', class_='entry-content')
-            external_links = []
-            content_text = ""
-
-            if content_div:
-                # Extract text
-                content_text = content_div.get_text(separator="\n", strip=True)
-
-                # Extract external links
-                for link in content_div.find_all('a'):
-                    href = link.get('href')
-                    if href and is_external_link(href, BASE_URL):
-                        external_links.append(href)
-
-            item['content'] = content_text
-            item['external_links'] = external_links
-
-            # Image
-            img = post.find('div', class_='featured-image')
-            if img and img.find('img'):
-                 item['image_url'] = img.find('img').get('src')
-            else:
-                item['image_url'] = None
-
-            all_posts.append(item)
+        for post_soup in posts:
+            try:
+                post_obj = parse_post_html(post_soup, BASE_URL)
+                all_posts.append(post_obj)
+            except Exception as e:
+                logging.error(f"Error parsing post on page {page}: {e}")
 
         # Pagination
         nav_previous = soup.find('div', class_='nav-previous')
@@ -142,12 +170,27 @@ def scrape():
             time.sleep(1) # Polite delay
         else:
             current_url = None
+            logging.info("No more pages found.")
 
     logging.info(f"Total posts scraped: {len(all_posts)}")
 
-    with open('data.json', 'w', encoding='utf-8') as f:
-        json.dump(all_posts, f, indent=4, ensure_ascii=False)
-    logging.info("Saved to data.json")
+    try:
+        with open(output_file, 'w', encoding='utf-8') as f:
+            json.dump([asdict(p) for p in all_posts], f, indent=4, ensure_ascii=False)
+        logging.info(f"Saved to {output_file}")
+    except IOError as e:
+        logging.error(f"Failed to save output to {output_file}: {e}")
+
+def main():
+    parser = argparse.ArgumentParser(description="Scrape informaticmagazine.data.blog")
+    parser.add_argument("-o", "--output", default="data.json", help="Output JSON file path (default: data.json)")
+    parser.add_argument("-n", "--pages", type=int, default=0, help="Maximum number of pages to scrape (0 for all)")
+    parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose logging")
+
+    args = parser.parse_args()
+
+    configure_logging(args.verbose)
+    scrape(args.output, args.pages)
 
 if __name__ == "__main__":
-    scrape()
+    main()
