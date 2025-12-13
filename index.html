@@ -25,20 +25,39 @@
             <p>Your number one source for all things sports.</p>
         </section>
 
-        <section class="articles">
-            <article>
-                <h3>Latest Match Results</h3>
-                <p>Stay tuned for the latest scores and match analysis from around the world.</p>
-            </article>
-            <article>
-                <h3>Player Transfers</h3>
-                <p>Get the latest updates on player transfers and rumors.</p>
-            </article>
+        <section class="content-area">
+            <div class="articles">
+                <article>
+                    <div class="image-placeholder">Match Image</div>
+                    <h3>Latest Match Results</h3>
+                    <p>The weekend provided some shocking results across the major leagues. From last-minute winners to unexpected upsets, we cover it all.</p>
+                    <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+                    <p class="more-text" style="display:none;">Detailed analysis shows that underdogs are performing better than ever this season. Stats indicate a shift in possession-based tactics.</p>
+                </article>
+                <article>
+                    <div class="image-placeholder">Transfer Image</div>
+                    <h3>Player Transfers</h3>
+                    <p>With the transfer window approaching, rumors are heating up. Top clubs are looking to bolster their squads.</p>
+                    <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+                    <p class="more-text" style="display:none;">Sources say that several high-profile strikers are on the move. Fees are expected to break records yet again.</p>
+                </article>
+            </div>
         </section>
+
+        <aside class="sidebar">
+            <h3>Trending Now</h3>
+            <ul>
+                <li><a href="#">Championship Finals Scheduled</a></li>
+                <li><a href="#">Top 10 Goals of the Month</a></li>
+                <li><a href="#">Interview with the MVP</a></li>
+                <li><a href="#">New Stadium Plans Unveiled</a></li>
+                <li><a href="#">Injury Updates: Who's Out?</a></li>
+            </ul>
+        </aside>
     </main>
 
     <footer>
-        <p>&copy; 2024 United Sports News. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> United Sports News. All rights reserved.</p>
     </footer>
 
     <script src="js/main.js"></script>
