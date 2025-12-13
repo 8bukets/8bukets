@@ -1,57 +1,72 @@
-# Markposition Scraper
+# Markposition Scraper & Analytics
 
-This is a robust Python script designed to scrape the website `https://markposition.wordpress.com/`. It traverses all available pages (or a specified limit) and extracts detailed information about each post.
+A robust, asynchronous toolset for scraping and analyzing data from `https://markposition.wordpress.com/`.
 
 ## Features
 
-*   **Robustness**: Uses `requests.Session` with retry logic to handle network instability.
-*   **Data Cleaning**: Normalizes whitespace and removes non-breaking spaces from extracted text.
-*   **Extraction**: Captures:
-    *   Title
-    *   Date
-    *   Author
-    *   Categories
-    *   External Link (Prioritizes content links, iframes/embeds, then title URLs)
-    *   Post URL
-*   **Flexible Output**: Supports JSON, CSV, and TXT output formats, configurable via CLI arguments.
+### Scraper (`scraper.py`)
+*   **High Performance**: Built with `aiohttp` and `asyncio` for concurrent fetching, significantly faster than synchronous scrapers.
+*   **Robust**: Handles network errors and pagination automatically (stops on 404 or empty pages).
+*   **Smart Extraction**:
+    *   Prioritizes content links, then embedded iframes (e.g., YouTube), then title URLs.
+    *   Extracts metadata: Title, Date, Author, Categories, External Link, Domain, Post URL.
+*   **Data Cleaning**: Normalizes text fields.
+*   **Multiple Outputs**: JSON, CSV, and TXT (unique links).
+
+### Analytics (`analytics.py`)
+*   **Insightful Reports**: Generates a Markdown report (`REPORT.md`) summarizing the scraped data.
+*   **Metrics**:
+    *   Total posts and date range.
+    *   Top referenced domains.
+    *   Top categories.
+    *   Posting frequency by year.
+    *   Author statistics.
 
 ## Requirements
 
-*   Python 3.x
-*   `requests` library
-*   `beautifulsoup4` library
+*   Python 3.7+
+*   `aiohttp`
+*   `beautifulsoup4`
+*   `requests` (legacy dependency, optional for analytics)
 
 Install dependencies:
 
 ```bash
-pip install requests beautifulsoup4
+pip install aiohttp beautifulsoup4 requests
 ```
 
 ## Usage
 
-Run the script from the command line:
+### 1. Scrape Data
+
+Run the asynchronous scraper to fetch data:
 
 ```bash
 python3 scraper.py
 ```
 
-### Options
+**Options:**
+*   `--json`: Output JSON filename (default: `links.json`)
+*   `--csv`: Output CSV filename (default: `links.csv`)
+*   `--txt`: Output TXT filename for unique links (default: `unique_links.txt`)
+*   `--limit`: Limit the number of pages to scrape (e.g., `--limit 5`).
+*   `--concurrency`: Number of concurrent requests (default: 5).
 
-You can customize the execution using command-line arguments:
+### 2. Generate Report
 
-*   `--json`: Specify the output JSON filename (default: `links.json`).
-*   `--csv`: Specify the output CSV filename (default: `links.csv`).
-*   `--txt`: Specify the output TXT filename for unique links (default: `unique_links.txt`).
-*   `--limit`: Limit the number of pages to scrape (useful for testing).
-
-**Example:**
+Run the analytics script to process the JSON data:
 
 ```bash
-python3 scraper.py --json my_data.json --csv my_data.csv --limit 5
+python3 analytics.py
 ```
+
+**Options:**
+*   `--input`: Input JSON file (default: `links.json`)
+*   `--output`: Output Markdown file (default: `REPORT.md`)
 
 ## Output Files
 
-1.  **JSON**: A detailed list of dictionaries containing all extracted fields for each post.
-2.  **CSV**: A tabular representation of the data, suitable for spreadsheets.
-3.  **TXT**: A sorted list of unique external URLs found across all scraped posts.
+*   `links.json`: Full dataset in JSON format.
+*   `links.csv`: Tabular dataset.
+*   `unique_links.txt`: Sorted list of unique extracted URLs.
+*   `REPORT.md`: Statistical summary of the data.
