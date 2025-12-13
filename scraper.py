@@ -5,44 +5,70 @@ import time
 import csv
 import sys
 import re
+import logging
+from typing import List, Dict, Optional, Any
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[logging.StreamHandler(sys.stdout)]
+)
+logger = logging.getLogger(__name__)
 
 BASE_URL = "https://marketing1usa.wordpress.com/"
 
-def is_url(text):
-    # Simple regex to check if text looks like a URL
+def is_url(text: str) -> bool:
+    """Simple regex to check if text looks like a URL."""
     return re.match(r'^https?://', text.strip()) is not None
 
-def scrape_site():
+def get_session() -> requests.Session:
+    """Create a requests Session with retry logic."""
+    session = requests.Session()
+    retry = Retry(
+        total=3,
+        backoff_factor=1,
+        status_forcelist=[500, 502, 503, 504],
+        allowed_methods=frozenset(['GET', 'POST'])
+    )
+    adapter = HTTPAdapter(max_retries=retry)
+    session.mount('http://', adapter)
+    session.mount('https://', adapter)
+    session.headers.update({
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+    })
+    return session
+
+def scrape_site() -> List[Dict[str, Optional[str]]]:
     page_num = 1
     all_posts = []
-
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-    }
+    session = get_session()
 
     while True:
         url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
-        print(f"Scraping {url}...")
+        logger.info(f"Scraping {url}...")
 
         try:
-            response = requests.get(url, headers=headers)
+            response = session.get(url)
             if response.status_code == 404:
-                print("Reached end of pages (404).")
+                logger.info("Reached end of pages (404).")
                 break
             response.raise_for_status()
         except requests.RequestException as e:
-            print(f"Error fetching {url}: {e}")
+            logger.error(f"Error fetching {url}: {e}")
             break
 
         soup = BeautifulSoup(response.text, 'html.parser')
         articles = soup.find_all('article', class_='post')
 
         if not articles:
-            print("No articles found on this page. Stopping.")
+            logger.info("No articles found on this page. Stopping.")
             break
 
         for article in articles:
-            post_data = {}
+            post_data: Dict[str, Optional[str]] = {}
 
             # Title
             title_text = ""
@@ -98,18 +124,18 @@ def scrape_site():
         older_posts = soup.find('a', string=lambda text: text and "Older Posts" in text)
         if not older_posts and not has_next:
              if not soup.select_one('.next.page-numbers') and not soup.select_one('.nav-previous a'):
-                 print("No next page link found.")
+                 logger.info("No next page link found.")
 
         page_num += 1
         time.sleep(1) # Be polite
 
     return all_posts
 
-def save_data(posts):
+def save_data(posts: List[Dict[str, Optional[str]]]) -> None:
     # JSON
     with open('links.json', 'w', encoding='utf-8') as f:
         json.dump(posts, f, indent=4, ensure_ascii=False)
-    print(f"Saved {len(posts)} posts to links.json")
+    logger.info(f"Saved {len(posts)} posts to links.json")
 
     # CSV
     with open('links.csv', 'w', newline='', encoding='utf-8') as f:
@@ -122,24 +148,23 @@ def save_data(posts):
                 post.get('external_link', ''),
                 post.get('post_url', '')
             ])
-    print(f"Saved {len(posts)} posts to links.csv")
+    logger.info(f"Saved {len(posts)} posts to links.csv")
 
     # Unique Links TXT
     unique_links = set()
     for post in posts:
         link = post.get('external_link')
         if link:
-            # Clean up the link if necessary (e.g. remove query params if desired, but maybe keep them for now)
             unique_links.add(link)
 
     sorted_links = sorted(list(unique_links))
     with open('unique_links.txt', 'w', encoding='utf-8') as f:
         for link in sorted_links:
             f.write(link + '\n')
-    print(f"Saved {len(sorted_links)} unique links to unique_links.txt")
+    logger.info(f"Saved {len(sorted_links)} unique links to unique_links.txt")
 
 if __name__ == "__main__":
-    print("Starting scraper...")
+    logger.info("Starting scraper...")
     posts = scrape_site()
     save_data(posts)
-    print("Done.")
+    logger.info("Done.")
