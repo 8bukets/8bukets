@@ -1,6 +1,6 @@
-# Markposition Scraper & Analytics
+# Webshop Scraper & Analytics
 
-A robust, asynchronous toolset for scraping and analyzing data from `https://markposition.wordpress.com/`.
+A robust, asynchronous toolset for scraping and analyzing data from `https://webshop.business.blog/`.
 
 ## Features
 

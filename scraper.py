@@ -18,9 +18,9 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-BASE_URL = "https://markposition.wordpress.com/"
+BASE_URL = "https://webshop.business.blog/"
 
-class MarkPositionScraperAsync:
+class WebshopScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
         self.output_csv = output_csv
@@ -84,7 +84,7 @@ class MarkPositionScraperAsync:
 
             # Title
             title_text = ""
-            title_tag = article.select_one('h1.entry-title a')
+            title_tag = article.select_one('.entry-title a')
             if title_tag:
                 title_text = self.clean_text(title_tag.get_text())
                 post_data['title'] = title_text
@@ -260,7 +260,7 @@ class MarkPositionScraperAsync:
             logger.error(f"Failed to save TXT: {e}")
 
 def main():
-    parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
+    parser = argparse.ArgumentParser(description="Async Scraper for webshop.business.blog")
     parser.add_argument("--json", default="links.json", help="Output JSON filename")
     parser.add_argument("--csv", default="links.csv", help="Output CSV filename")
     parser.add_argument("--txt", default="unique_links.txt", help="Output TXT filename for unique links")
@@ -269,7 +269,7 @@ def main():
 
     args = parser.parse_args()
 
-    scraper = MarkPositionScraperAsync(
+    scraper = WebshopScraperAsync(
         output_json=args.json,
         output_csv=args.csv,
         output_txt=args.txt,
