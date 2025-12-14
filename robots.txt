@@ -1,0 +1,12 @@
+# robots.txt
+# This file allows all crawlers to access the site content.
+# It is configured to facilitate communication with second and third-party services (e.g., ad networks, analytics)
+# by ensuring they are not blocked from crawling necessary resources.
+
+User-agent: *
+Allow: /
+
+User-agent: Mediapartners-Google
+Allow: /
+
+# Note: This file does not manage cookies directly. Cookie consent is handled via HTTP headers or on-page scripts.
