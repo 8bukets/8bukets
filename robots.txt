@@ -1,0 +1,7 @@
+# Robots.txt for wishlist.design.blog (or project mirror)
+# To better connect with search engines and bots.
+# Note: Robots.txt does not control cookies. Cookie policies are handled via HTTP Headers and Privacy Policies.
+
+User-agent: *
+Allow: /
+Sitemap: https://wishlist.design.blog/sitemap.xml
