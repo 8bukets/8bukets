@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /xmlrpc.php
+
+# Allow AdSense bot to crawl the site for better ad targeting
+User-agent: Mediapartners-Google
+Allow: /
+
+# Allow social media bots for better sharing previews
+User-agent: FacebookExternalHit
+Allow: /
+User-agent: Twitterbot
+Allow: /
+User-agent: LinkedInBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://malubeach.wordpress.com/sitemap.xml
