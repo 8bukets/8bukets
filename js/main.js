@@ -79,6 +79,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Cookie Consent Logic
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptCookiesBtn = document.getElementById('accept-cookies');
+    const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+
+    if (!cookiesAccepted && cookieBanner) {
+        cookieBanner.style.display = 'block';
+    }
+
+    if (acceptCookiesBtn) {
+        acceptCookiesBtn.addEventListener('click', () => {
+            localStorage.setItem('cookiesAccepted', 'true');
+            if (cookieBanner) {
+                cookieBanner.style.display = 'none';
+            }
+        });
+    }
 });
 
 // Simple toggle function for "Read More"

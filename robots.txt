@@ -1,3 +1,13 @@
+# robots.txt for United Sports News
+
+# Allow all bots to crawl the entire site
 User-agent: *
 Allow: /
+
+# Explicitly allow access to assets for proper rendering (crucial for SEO)
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Location of the Sitemap
 Sitemap: https://unitedsports.news.blog/sitemap.xml
