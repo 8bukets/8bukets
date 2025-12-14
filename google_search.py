@@ -123,7 +123,8 @@ def main():
     parser = argparse.ArgumentParser(description="Scrape Google Search results.")
     parser.add_argument("query", nargs="?", default="site:marketing1usa.wordpress.com", help="Search query")
     parser.add_argument("--output", default="google_results", help="Output file prefix")
-    parser.add_argument("--headless", action="store_true", default=True, help="Run in headless mode")
+    parser.add_argument("--no-headless", action="store_false", dest="headless", help="Run browser in visible mode (default is headless)")
+    parser.set_defaults(headless=True)
 
     args = parser.parse_args()
 
