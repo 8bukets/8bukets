@@ -1,42 +1,38 @@
-# Markposition Analytics Report
+# Wordpress Blog Analytics Report
 
-**Generated on:** 2025-12-13 12:59:36
+**Generated on:** 2025-12-14 10:01:06
 
 ## General Statistics
-- **Total Posts:** 679
-- **Date Range:** 2020-05-19 to 2022-10-05
-- **Unique Domains Linked:** 367
+- **Total Posts:** 350
+- **Date Range:** 2020-10-22 to 2023-06-25
+- **Unique Domains Linked:** 178
 
 ## Top 10 Referenced Domains
 | Domain | Count |
 | :--- | :---: |
-| skillshop.exceedlms.com | 23 |
-| support.google.com | 21 |
-| youtube.com | 18 |
-| advertising.amazon.com | 16 |
-| en.wikipedia.org | 14 |
-| google.com | 13 |
-| web.facebook.com | 12 |
-| developers.google.com | 11 |
-| trustarc.com | 11 |
-| ads.google.com | 10 |
+| youtube.com | 70 |
+| music.youtube.com | 34 |
+| epidemicsound.com | 10 |
+| billboard.com | 7 |
+| music.apple.com | 6 |
+| soundcloud.com | 5 |
+| artistrepublik.com | 4 |
+| spotify.com | 3 |
+| steinberg.net | 3 |
+| apple.com | 3 |
 
 ## Top 10 Categories
 | Category | Count |
 | :--- | :---: |
-| Ad Ads Advertise | 660 |
-| Promotion | 14 |
-| Ads | 4 |
-| Advertise | 3 |
-| Advertising | 3 |
-| Online | 2 |
+| Music | 350 |
 
 ## Posts by Year
 | Year | Count |
 | :--- | :---: |
-| 2022 | 235 |
-| 2021 | 190 |
-| 2020 | 254 |
+| 2023 | 9 |
+| 2022 | 170 |
+| 2021 | 166 |
+| 2020 | 5 |
 
 ## Authors
-- Filip Keser: 679 posts
+- Filip Keser: 350 posts
