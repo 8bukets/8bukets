@@ -23,6 +23,13 @@
     <meta property="twitter:description" content="Stay ahead with the latest sports news. Breaking stories, scores, and expert analysis.">
     <meta property="twitter:image" content="https://unitedsports.news.blog/images/og-image.jpg">
 
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#004d40">
+
+    <!-- Preload and Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Structured Data (JSON-LD) -->
@@ -43,8 +50,8 @@
 <body>
     <header>
         <h1>United Sports News</h1>
-        <button id="theme-toggle">Dark Mode</button>
-        <nav>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">Dark Mode</button>
+        <nav aria-label="Main Navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#" onclick="filterByCategory('Football')">Football</a></li>
@@ -67,35 +74,35 @@
             <div class="articles" id="article-list">
                 <article data-category="Football">
                     <span class="tag">Football</span>
-                    <div class="image-placeholder">Match Image</div>
-                    <h3>Latest Match Results</h3>
-                    <p>The weekend provided some shocking results across the major leagues. From last-minute winners to unexpected upsets, we cover it all.</p>
-                    <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
-                    <p class="more-text" style="display:none;">Detailed analysis shows that underdogs are performing better than ever this season. Stats indicate a shift in possession-based tactics.</p>
+                    <img src="images/placeholder.webp" alt="Football players celebrating a goal in a packed stadium" loading="lazy" width="600" height="400" style="width: 100%; height: auto; border-radius: 4px;">
+                    <h3>Latest Premier League Match Results</h3>
+                    <p>The weekend provided some shocking results across the Premier League and La Liga. From Liverpool's last-minute winners to unexpected upsets at Old Trafford, we cover it all.</p>
+                    <button class="read-more-btn" onclick="toggleReadMore(this)" aria-label="Read more about Latest Match Results">Read More</button>
+                    <p class="more-text" style="display:none;">Detailed analysis shows that underdogs are performing better than ever this season. Stats indicate a shift in possession-based tactics used by Manchester City and Arsenal.</p>
                 </article>
                 <article data-category="Transfer News">
                     <span class="tag">Transfer News</span>
-                    <div class="image-placeholder">Transfer Image</div>
-                    <h3>Player Transfers</h3>
-                    <p>With the transfer window approaching, rumors are heating up. Top clubs are looking to bolster their squads.</p>
-                    <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
-                    <p class="more-text" style="display:none;">Sources say that several high-profile strikers are on the move. Fees are expected to break records yet again.</p>
+                    <img src="images/placeholder.webp" alt="Football club manager signing a new player contract" loading="lazy" width="600" height="400" style="width: 100%; height: auto; border-radius: 4px;">
+                    <h3>Live Player Transfer Updates</h3>
+                    <p>With the January transfer window approaching, rumors are heating up. Top clubs like Real Madrid and PSG are looking to bolster their squads with new signings.</p>
+                    <button class="read-more-btn" onclick="toggleReadMore(this)" aria-label="Read more about Player Transfers">Read More</button>
+                    <p class="more-text" style="display:none;">Sources say that several high-profile strikers, including Mbappe and Haaland rumors, are dominating the headlines. Transfer fees are expected to break records yet again.</p>
                 </article>
                 <article data-category="Basketball">
                     <span class="tag">Basketball</span>
-                    <div class="image-placeholder">NBA Image</div>
-                    <h3>Championship Finals Set</h3>
-                    <p>The stage is set for an epic showdown in the finals. Both teams have fought hard to get here.</p>
-                    <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
-                    <p class="more-text" style="display:none;">Analysts predict a 7-game series given the defensive strengths of both squads.</p>
+                    <img src="images/placeholder.webp" alt="Basketball player making a slam dunk in a finals game" loading="lazy" width="600" height="400" style="width: 100%; height: auto; border-radius: 4px;">
+                    <h3>NBA Championship Finals Set</h3>
+                    <p>The stage is set for an epic showdown in the NBA Finals. The Lakers and the Celtics have fought hard through the playoffs to get here.</p>
+                    <button class="read-more-btn" onclick="toggleReadMore(this)" aria-label="Read more about Championship Finals Set">Read More</button>
+                    <p class="more-text" style="display:none;">Analysts predict a 7-game series given the defensive strengths of both squads. LeBron James and Jayson Tatum are the key players to watch.</p>
                 </article>
                 <article data-category="Football">
                     <span class="tag">Football</span>
-                    <div class="image-placeholder">Youth Academy</div>
-                    <h3>Rising Stars of the Season</h3>
-                    <p>We take a look at the most promising young talents breaking into the first teams this year.</p>
-                    <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
-                    <p class="more-text" style="display:none;">Scouts from all over Europe are watching these kids closely.</p>
+                    <img src="images/placeholder.webp" alt="Young football talent training at a youth academy" loading="lazy" width="600" height="400" style="width: 100%; height: auto; border-radius: 4px;">
+                    <h3>Rising Stars of the UEFA Season</h3>
+                    <p>We take a look at the most promising young talents breaking into the first teams this year in the Champions League.</p>
+                    <button class="read-more-btn" onclick="toggleReadMore(this)" aria-label="Read more about Rising Stars">Read More</button>
+                    <p class="more-text" style="display:none;">Scouts from all over Europe, including Barcelona and Bayern Munich, are watching these kids closely.</p>
                 </article>
             </div>
         </section>

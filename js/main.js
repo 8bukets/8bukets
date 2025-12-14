@@ -1,6 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('United Sports News website loaded successfully.');
 
+    // Service Worker Registration
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./sw.js')
+                .then(registration => {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, err => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+        });
+    }
+
     // Set current year in footer
     const yearSpan = document.getElementById('year');
     if (yearSpan) {

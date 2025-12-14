@@ -1,0 +1,20 @@
+{
+  "name": "United Sports News",
+  "short_name": "USN",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#004d40",
+  "theme_color": "#004d40",
+  "icons": [
+    {
+      "src": "images/placeholder.webp",
+      "sizes": "192x192",
+      "type": "image/webp"
+    },
+    {
+      "src": "images/placeholder.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    }
+  ]
+}
