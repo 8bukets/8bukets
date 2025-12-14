@@ -5,7 +5,7 @@ import time
 import argparse
 import logging
 import sys
-from typing import List, Optional
+from typing import List, Optional, Tuple
 from datetime import datetime
 from models import Post
 
@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 
 DEFAULT_BASE_URL = "https://infogadgettech.wordpress.com"
 DEFAULT_OUTPUT_FILE = "gadgets.json"
-DEFAULT_MAX_PAGES = 5
+DEFAULT_MAX_PAGES = 3  # Reduced for quicker testing/analysis
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
 
 class GadgetScraper:
@@ -53,10 +53,28 @@ class GadgetScraper:
             logger.warning(f"Could not parse date: {date_str}")
             return date_str
 
-    def extract_posts_from_html(self, html_content: str) -> (List[Post], Optional[str]):
+    def extract_posts_from_html(self, html_content: str) -> Tuple[List[Post], Optional[str]]:
         soup = BeautifulSoup(html_content, 'html.parser')
         articles = soup.find_all('article', class_='post')
         posts = []
+
+        # Extract site-wide info if needed (like H1s on home page)
+        # But we are focusing on individual posts.
+        # Note: on the blog index, we can't see the full content or meta description of the *post page*,
+        # only the excerpt. However, we can analyze the post item on the listing page.
+        # To do a *full* SEO audit, we would need to visit each post URL.
+        # For now, we will extract what is available on the listing page,
+        # and maybe word count of the excerpt.
+
+        # NOTE: A proper SEO audit requires crawling individual post pages.
+        # Given the constraints, I will stick to what is visible on the listing
+        # OR fetch the individual page if I want deep details.
+        # Fetching individual pages for every post might be slow/aggressive.
+        # I will analyze the *listing* data first.
+
+        # Actually, let's extract H1 counts from the *current page* (listing page) just to store it somewhere?
+        # No, h1_count should be per post if possible, but on listing page, post titles are H2.
+        # The main H1 is usually the site title.
 
         for article in articles:
             # Title
@@ -95,23 +113,39 @@ class GadgetScraper:
 
             # Image
             image_url = None
+            image_alt = None
             featured_image = article.find('div', class_='featured-image')
             if featured_image:
                 img_tag = featured_image.find('img')
                 if img_tag:
                     image_url = img_tag.get('src')
-                    # Remove query params for cleaner URL if needed, but often they handle resizing
+                    image_alt = img_tag.get('alt') or "Missing Alt Text"
+                    # Remove query params for cleaner URL if needed
                     if '?w=' in image_url:
                         image_url = image_url.split('?')[0]
 
-            # External Link
+            # Content Analysis
             content_div = article.find('div', class_='entry-content')
             external_link = None
+            word_count = 0
+
             if content_div:
-                # Often the first link in the content is the external one for this type of blog
+                # Word count of the excerpt/content visible
+                text_content = content_div.get_text(strip=True)
+                word_count = len(text_content.split())
+
+                # External Link
                 link_tag = content_div.find('a')
                 if link_tag:
                     external_link = link_tag.get('href')
+
+            # Meta description is per-page, not available on listing.
+            # We will leave it None for now, or fetch individual page if we really want to (expensive).
+            # For the purpose of this task (Audit), checking listing info is a good start.
+
+            # H1 count: On a listing page, the post title is H2. The H1 is usually the site title.
+            # We can check if the post title *should* be H1 (it should be H2 on listing, H1 on single).
+            # We'll just store 0 for now as we aren't visiting the single page.
 
             if external_link:
                 post = Post(
@@ -122,7 +156,11 @@ class GadgetScraper:
                     categories=categories,
                     tags=tags,
                     image_url=image_url,
-                    original_url=original_url
+                    original_url=original_url,
+                    meta_description=None, # Cannot get without visiting page
+                    word_count=word_count,
+                    h1_count=0, # Cannot get without visiting page
+                    image_alt=image_alt
                 )
                 posts.append(post)
 

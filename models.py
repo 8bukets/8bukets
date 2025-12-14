@@ -12,6 +12,10 @@ class Post:
     tags: List[str] = field(default_factory=list)
     image_url: Optional[str] = None
     original_url: Optional[str] = None
+    meta_description: Optional[str] = None
+    word_count: int = 0
+    h1_count: int = 0
+    image_alt: Optional[str] = None
 
     def to_dict(self):
         return {
@@ -22,5 +26,9 @@ class Post:
             "categories": self.categories,
             "tags": self.tags,
             "image_url": self.image_url,
-            "original_url": self.original_url
+            "original_url": self.original_url,
+            "meta_description": self.meta_description,
+            "word_count": self.word_count,
+            "h1_count": self.h1_count,
+            "image_alt": self.image_alt
         }
