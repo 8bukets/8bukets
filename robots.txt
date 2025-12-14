@@ -1,0 +1,10 @@
+# robots.txt
+# This file controls which parts of the site can be accessed by automated crawlers (bots).
+# It does not control cookies or third-party data sharing (privacy).
+
+# Allow all bots to access the entire site to maximize visibility.
+User-agent: *
+Allow: /
+
+# Sitemap location (helps search engines find content)
+Sitemap: https://marketing1usa.wordpress.com/sitemap.xml

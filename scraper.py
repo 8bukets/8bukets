@@ -11,6 +11,8 @@ from typing import List, Dict, Optional, Any, Set
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from dataclasses import dataclass, asdict
+from urllib.robotparser import RobotFileParser
+from urllib.parse import urljoin
 
 # Configure logging
 logging.basicConfig(
@@ -28,10 +30,15 @@ class Post:
     post_url: Optional[str]
 
 class WordPressScraper:
-    def __init__(self, base_url: str, delay: int = 1):
+    def __init__(self, base_url: str, delay: int = 1, ignore_robots: bool = False):
         self.base_url = base_url
         self.delay = delay
+        self.ignore_robots = ignore_robots
         self.session = self._get_session()
+        self.rp = None
+
+        if not self.ignore_robots:
+            self._init_robots_parser()
 
     def _get_session(self) -> requests.Session:
         """Create a requests Session with retry logic."""
@@ -45,10 +52,29 @@ class WordPressScraper:
         adapter = HTTPAdapter(max_retries=retry)
         session.mount('http://', adapter)
         session.mount('https://', adapter)
+        # Use a consistent User-Agent
+        self.user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         session.headers.update({
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+            'User-Agent': self.user_agent
         })
         return session
+
+    def _init_robots_parser(self):
+        robots_url = urljoin(self.base_url, "robots.txt")
+        logger.info(f"Checking robots.txt at {robots_url}...")
+        self.rp = RobotFileParser()
+        self.rp.set_url(robots_url)
+        try:
+            self.rp.read()
+            logger.info("robots.txt read successfully.")
+        except Exception as e:
+            logger.warning(f"Could not read robots.txt: {e}. Defaulting to allow all.")
+            self.rp = None
+
+    def is_allowed(self, url: str) -> bool:
+        if self.ignore_robots or self.rp is None:
+            return True
+        return self.rp.can_fetch(self.user_agent, url)
 
     def is_url(self, text: str) -> bool:
         """Simple regex to check if text looks like a URL."""
@@ -60,6 +86,11 @@ class WordPressScraper:
 
         while True:
             url = f"{self.base_url}page/{page_num}/" if page_num > 1 else self.base_url
+
+            if not self.is_allowed(url):
+                logger.warning(f"Crawling {url} is disallowed by robots.txt. Stopping.")
+                break
+
             logger.info(f"Scraping {url}...")
 
             try:
@@ -193,13 +224,14 @@ def main():
     parser.add_argument("--url", default="https://marketing1usa.wordpress.com/", help="Base URL of the WordPress site")
     parser.add_argument("--output", default="links", help="Prefix for output files (default: links)")
     parser.add_argument("--delay", type=int, default=1, help="Delay between requests in seconds")
+    parser.add_argument("--ignore-robots", action="store_true", help="Ignore robots.txt rules")
 
     args = parser.parse_args()
 
     # Ensure URL ends with slash
     base_url = args.url if args.url.endswith('/') else f"{args.url}/"
 
-    scraper = WordPressScraper(base_url, args.delay)
+    scraper = WordPressScraper(base_url, args.delay, args.ignore_robots)
     logger.info(f"Starting scraper for {base_url}...")
     posts = scraper.scrape()
     save_data(posts, args.output)
