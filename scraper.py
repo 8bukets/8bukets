@@ -18,10 +18,11 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-BASE_URL = "https://markposition.wordpress.com/"
+DEFAULT_BASE_URL = "https://artmusicpage.wordpress.com/"
 
-class MarkPositionScraperAsync:
-    def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
+class WordpressScraperAsync:
+    def __init__(self, base_url: str, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
+        self.base_url = base_url if base_url.endswith('/') else f"{base_url}/"
         self.output_json = output_json
         self.output_csv = output_csv
         self.output_txt = output_txt
@@ -60,7 +61,7 @@ class MarkPositionScraperAsync:
             return None
 
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
-        url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
+        url = f"{self.base_url}page/{page_num}/" if page_num > 1 else self.base_url
         try:
             async with session.get(url) as response:
                 if response.status == 404:
@@ -84,7 +85,8 @@ class MarkPositionScraperAsync:
 
             # Title
             title_text = ""
-            title_tag = article.select_one('h1.entry-title a')
+            # Support both h1 and h2 for entry title
+            title_tag = article.select_one('h1.entry-title a, h2.entry-title a, .entry-title a')
             if title_tag:
                 title_text = self.clean_text(title_tag.get_text())
                 post_data['title'] = title_text
@@ -144,14 +146,6 @@ class MarkPositionScraperAsync:
         }
 
         async with aiohttp.ClientSession(headers=headers) as session:
-            # We don't know the total pages, so we have to fetch sequentially or in chunks until we hit 404/empty.
-            # Pure concurrent fetching of all pages requires knowing the max page.
-            # Heuristic: fetch in batches of `concurrency`. If any page in batch returns 404 or empty, stop.
-
-            # Actually, WordPress pages are sequential. If page N is 404, N+1 is likely 404 too.
-            # But fetching 100 pages 1-by-1 is slow.
-            # Let's try fetching chunks.
-
             active = True
             while active:
                 tasks = []
@@ -166,7 +160,6 @@ class MarkPositionScraperAsync:
                         active = False
                         break
 
-                    # We create a task that acquires semaphore (though sem is less useful if we just create batch size = concurrency)
                     tasks.append(self.fetch_and_parse(session, current_page, sem))
 
                 if not tasks:
@@ -260,7 +253,8 @@ class MarkPositionScraperAsync:
             logger.error(f"Failed to save TXT: {e}")
 
 def main():
-    parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
+    parser = argparse.ArgumentParser(description="Async Scraper for WordPress blogs")
+    parser.add_argument("--url", default=DEFAULT_BASE_URL, help="Base URL of the WordPress blog")
     parser.add_argument("--json", default="links.json", help="Output JSON filename")
     parser.add_argument("--csv", default="links.csv", help="Output CSV filename")
     parser.add_argument("--txt", default="unique_links.txt", help="Output TXT filename for unique links")
@@ -269,7 +263,8 @@ def main():
 
     args = parser.parse_args()
 
-    scraper = MarkPositionScraperAsync(
+    scraper = WordpressScraperAsync(
+        base_url=args.url,
         output_json=args.json,
         output_csv=args.csv,
         output_txt=args.txt,
