@@ -260,7 +260,7 @@ class MarkPositionScraperAsync:
             logger.error(f"Failed to save TXT: {e}")
 
 def main():
-    parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
+    parser = argparse.ArgumentParser(description="Async Scraper for software-online-review.com")
     parser.add_argument("--json", default="links.json", help="Output JSON filename")
     parser.add_argument("--csv", default="links.csv", help="Output CSV filename")
     parser.add_argument("--txt", default="unique_links.txt", help="Output TXT filename for unique links")
