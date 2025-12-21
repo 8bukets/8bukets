@@ -2,6 +2,8 @@ import sqlite3
 import os
 import logging
 from datetime import datetime, timedelta
+from collections import Counter
+import re
 
 # Configure logging
 logging.basicConfig(
@@ -33,6 +35,10 @@ class ReportGenerator:
                 cursor.execute("SELECT title, post_url, scraped_at FROM posts WHERE scraped_at >= ?", (yesterday,))
                 new_posts = cursor.fetchall()
 
+                # Get latest SEO rankings (from last 24 hours)
+                cursor.execute("SELECT query, rank, title, url, checked_at FROM rankings WHERE checked_at >= ? ORDER BY checked_at DESC", (yesterday,))
+                rankings = cursor.fetchall()
+
         except sqlite3.Error as e:
             logger.error(f"Database error: {e}")
             return
@@ -45,19 +51,57 @@ class ReportGenerator:
             f.write(f"**Total Posts in Database:** {total_posts}\n\n")
             f.write(f"**New Posts (Last 24h):** {len(new_posts)}\n\n")
 
+            # Intelligent Insight: Keyword Analysis
+            if new_posts:
+                titles = [post[0] for post in new_posts if post[0]]
+                if titles:
+                    f.write("## 🧠 Intelligent Insights: Keyword Trends\n\n")
+                    f.write("Most frequent words in new post titles:\n\n")
+                    keywords = self.analyze_keywords(titles)
+                    f.write("| Keyword | Frequency |\n")
+                    f.write("|---|---|\n")
+                    for word, count in keywords:
+                        f.write(f"| {word} | {count} |\n")
+                    f.write("\n")
+
+            # Rankings Section
+            f.write("## 🔍 SEO Rankings Check\n\n")
+            if rankings:
+                f.write("| Query | Rank | Title | Link | Checked At |\n")
+                f.write("|---|---|---|---|---|\n")
+                for r in rankings:
+                    query, rank, title, url, checked_at = r
+                    title = title.replace("|", "-") if title else "N/A"
+                    f.write(f"| {query} | {rank} | {title} | [Link]({url}) | {checked_at} |\n")
+            else:
+                f.write("No ranking data collected in the last 24 hours (or check failed).\n\n")
+
             if new_posts:
                 f.write("## Recently Scraped Posts\n\n")
                 f.write("| Title | Scraped At | Link |\n")
                 f.write("|---|---|---|\n")
                 for post in new_posts:
                     title, url, scraped_at = post
-                    # sanitize title for markdown table
                     title = title.replace("|", "-") if title else "No Title"
                     f.write(f"| {title} | {scraped_at} | [View]({url}) |\n")
             else:
                 f.write("No new posts scraped in the last 24 hours.\n")
 
         logger.info(f"Report generated: {report_filename}")
+
+    def analyze_keywords(self, titles):
+        """Perform simple keyword frequency analysis on a list of strings."""
+        text = " ".join(titles).lower()
+        # Remove special chars
+        text = re.sub(r'[^\w\s]', '', text)
+        words = text.split()
+
+        # Simple stop words list
+        stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'this', 'that', 'it', 'as', 'from'}
+
+        filtered_words = [w for w in words if w not in stop_words and len(w) > 2]
+
+        return Counter(filtered_words).most_common(10)
 
 if __name__ == "__main__":
     reporter = ReportGenerator()

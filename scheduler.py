@@ -3,6 +3,7 @@ import time
 import logging
 import sys
 from scraper import main as run_scraper
+from google_checker import main as run_checker
 from report_generator import ReportGenerator
 
 # Configure logging
@@ -25,7 +26,19 @@ def job():
     except Exception as e:
         logger.error(f"Scraper failed: {e}")
 
-    # 2. Generate Report
+    # 2. Run Google Checker
+    logger.info("Running Google SEO Checker...")
+    try:
+        # We call main, which relies on argparse defaults.
+        # Ideally we'd refactor google_checker to have a run() method taking args,
+        # but main() works if we don't need to change defaults dynamically.
+        # It defaults to site:wishlist.design.blog and 10 results.
+        run_checker()
+    except Exception as e:
+        # Google scraping often fails due to blocking, so log as warning mostly
+        logger.warning(f"Google Checker failed (likely blocking): {e}")
+
+    # 3. Generate Report
     logger.info("Generating report...")
     try:
         reporter = ReportGenerator()
@@ -39,8 +52,6 @@ def main():
     logger.info("Scheduler started. Running 24/7.")
 
     # Schedule the job to run every day at a specific time (e.g., 00:00)
-    # For demonstration/testing, we can also run it every X minutes if needed.
-    # Here we set it to run daily at midnight.
     schedule.every().day.at("00:00").do(job)
 
     # Also run once immediately on startup for verification

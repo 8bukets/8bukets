@@ -5,6 +5,8 @@ import logging
 import sys
 import random
 import time
+import sqlite3
+from datetime import datetime
 
 # Configure logging
 logging.basicConfig(
@@ -21,6 +23,45 @@ USER_AGENTS = [
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36',
 ]
+
+DB_NAME = "wishlist_data.db"
+
+def init_rankings_db():
+    """Initialize the rankings table in the database."""
+    try:
+        with sqlite3.connect(DB_NAME) as conn:
+            cursor = conn.cursor()
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS rankings (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    query TEXT,
+                    rank INTEGER,
+                    title TEXT,
+                    url TEXT,
+                    checked_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )
+            ''')
+            conn.commit()
+    except sqlite3.Error as e:
+        logger.error(f"Database initialization error: {e}")
+
+def save_rankings_to_db(results, query):
+    """Save ranking results to the database."""
+    if not results:
+        return
+
+    try:
+        with sqlite3.connect(DB_NAME) as conn:
+            cursor = conn.cursor()
+            for res in results:
+                cursor.execute('''
+                    INSERT INTO rankings (query, rank, title, url)
+                    VALUES (?, ?, ?, ?)
+                ''', (query, res['rank'], res['title'], res['url']))
+            conn.commit()
+            logger.info(f"Saved {len(results)} rankings to database.")
+    except sqlite3.Error as e:
+        logger.error(f"Database insertion error: {e}")
 
 def check_google_listings(query, num_results=10):
     """
@@ -126,7 +167,9 @@ def main():
 
     args = parser.parse_args()
 
+    init_rankings_db()
     results = check_google_listings(args.query, args.limit)
+    save_rankings_to_db(results, args.query)
 
     if not results:
         logger.warning("No results found. The IP might be blocked or HTML structure changed.")
