@@ -66,7 +66,7 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
+    md.append("# Webshop Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
     md.append("\n## General Statistics")
@@ -102,7 +102,7 @@ def generate_report(data, output_file):
     print(f"Report generated: {output_file}")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
+    parser = argparse.ArgumentParser(description="Generate analytics report for Webshop data")
     parser.add_argument("--input", default="links.json", help="Input JSON file")
     parser.add_argument("--output", default="REPORT.md", help="Output Markdown report file")
     args = parser.parse_args()
