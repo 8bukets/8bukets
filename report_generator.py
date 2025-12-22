@@ -30,14 +30,28 @@ class ReportGenerator:
                 cursor.execute("SELECT COUNT(*) FROM posts")
                 total_posts = cursor.fetchone()[0]
 
-                # Get posts scraped in the last 24 hours
                 yesterday = datetime.now() - timedelta(days=1)
-                cursor.execute("SELECT title, post_url, scraped_at FROM posts WHERE scraped_at >= ?", (yesterday,))
+
+                # New posts
+                cursor.execute("SELECT title, post_url, scraped_at FROM posts WHERE scraped_at >= ? AND id NOT IN (SELECT post_id FROM changes)", (yesterday,))
                 new_posts = cursor.fetchall()
 
-                # Get latest SEO rankings (from last 24 hours)
+                # Updated posts
+                cursor.execute("""
+                    SELECT p.title, p.post_url, c.field, c.old_value, c.new_value, c.changed_at
+                    FROM changes c
+                    JOIN posts p ON c.post_id = p.id
+                    WHERE c.changed_at >= ?
+                """, (yesterday,))
+                updated_posts = cursor.fetchall()
+
+                # Latest SEO rankings
                 cursor.execute("SELECT query, rank, title, url, checked_at FROM rankings WHERE checked_at >= ? ORDER BY checked_at DESC", (yesterday,))
                 rankings = cursor.fetchall()
+
+                # Previous SEO rankings (older than 24h)
+                cursor.execute("SELECT query, rank, checked_at FROM rankings WHERE checked_at < ? ORDER BY checked_at DESC", (yesterday,))
+                past_rankings = cursor.fetchall()
 
         except sqlite3.Error as e:
             logger.error(f"Database error: {e}")
@@ -48,36 +62,56 @@ class ReportGenerator:
 
         with open(report_filename, "w", encoding="utf-8") as f:
             f.write(f"# Daily Scraper Report - {report_date}\n\n")
-            f.write(f"**Total Posts in Database:** {total_posts}\n\n")
-            f.write(f"**New Posts (Last 24h):** {len(new_posts)}\n\n")
+            f.write(f"**Total Posts:** {total_posts}\n")
+            f.write(f"**New Posts:** {len(new_posts)}\n")
+            f.write(f"**Updated Posts:** {len(updated_posts)}\n\n")
 
-            # Intelligent Insight: Keyword Analysis
-            if new_posts:
-                titles = [post[0] for post in new_posts if post[0]]
-                if titles:
-                    f.write("## 🧠 Intelligent Insights: Keyword Trends\n\n")
-                    f.write("Most frequent words in new post titles:\n\n")
-                    keywords = self.analyze_keywords(titles)
-                    f.write("| Keyword | Frequency |\n")
-                    f.write("|---|---|\n")
-                    for word, count in keywords:
-                        f.write(f"| {word} | {count} |\n")
-                    f.write("\n")
+            # Recommendations Section
+            f.write("## 💡 Recommendations\n\n")
+            recommendations = self.generate_recommendations(new_posts, updated_posts, rankings, past_rankings)
+            for rec in recommendations:
+                f.write(f"- {rec}\n")
+            if not recommendations:
+                f.write("Everything looks stable. No specific actions recommended.\n")
+            f.write("\n")
 
-            # Rankings Section
-            f.write("## 🔍 SEO Rankings Check\n\n")
+            # Keyword Analysis
+            all_recent_titles = [p[0] for p in new_posts] + [p[0] for p in updated_posts]
+            if all_recent_titles:
+                f.write("## 🧠 Keyword Trends\n\n")
+                f.write("Most frequent words in recent activity:\n\n")
+                keywords = self.analyze_keywords(all_recent_titles)
+                f.write("| Keyword | Frequency |\n")
+                f.write("|---|---|\n")
+                for word, count in keywords:
+                    f.write(f"| {word} | {count} |\n")
+                f.write("\n")
+
+            # SEO Rankings Trend
+            f.write("## 📈 SEO Trend Analysis\n\n")
             if rankings:
-                f.write("| Query | Rank | Title | Link | Checked At |\n")
+                f.write("| Query | Rank | Change | Checked At |\n")
                 f.write("|---|---|---|---|---|\n")
-                for r in rankings:
-                    query, rank, title, url, checked_at = r
-                    title = title.replace("|", "-") if title else "N/A"
-                    f.write(f"| {query} | {rank} | {title} | [Link]({url}) | {checked_at} |\n")
+                trends = self.analyze_seo_trends(rankings, past_rankings)
+                for item in trends:
+                    f.write(f"| {item['query']} | {item['rank']} | {item['change']} | {item['date']} |\n")
             else:
-                f.write("No ranking data collected in the last 24 hours (or check failed).\n\n")
+                f.write("No SEO ranking data for today.\n\n")
 
+            # Content Updates Section
+            if updated_posts:
+                f.write("## 🔄 Content Updates\n\n")
+                f.write("| Post | Field | Old | New | Time |\n")
+                f.write("|---|---|---|---|---|\n")
+                for u in updated_posts:
+                    title, url, field, old, new, time = u
+                    title = title.replace("|", "-")
+                    f.write(f"| [{title}]({url}) | {field} | {old} | {new} | {time} |\n")
+                f.write("\n")
+
+            # New Posts Section
             if new_posts:
-                f.write("## Recently Scraped Posts\n\n")
+                f.write("## 🆕 Recently Scraped Posts\n\n")
                 f.write("| Title | Scraped At | Link |\n")
                 f.write("|---|---|---|\n")
                 for post in new_posts:
@@ -90,18 +124,66 @@ class ReportGenerator:
         logger.info(f"Report generated: {report_filename}")
 
     def analyze_keywords(self, titles):
-        """Perform simple keyword frequency analysis on a list of strings."""
         text = " ".join(titles).lower()
-        # Remove special chars
         text = re.sub(r'[^\w\s]', '', text)
         words = text.split()
-
-        # Simple stop words list
-        stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'this', 'that', 'it', 'as', 'from'}
-
+        stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'this', 'that', 'it', 'as', 'from', 'de', 'la'}
         filtered_words = [w for w in words if w not in stop_words and len(w) > 2]
-
         return Counter(filtered_words).most_common(10)
+
+    def analyze_seo_trends(self, current, past):
+        analysis = []
+        past_dict = {r[0]: r[1] for r in past} # Query -> Rank mapping
+
+        seen_queries = set()
+        for r in current:
+            query, rank, title, url, checked_at = r
+            if query in seen_queries: continue # Just take latest per query
+            seen_queries.add(query)
+
+            change_str = "New"
+            if query in past_dict:
+                diff = past_dict[query] - rank
+                if diff > 0:
+                    change_str = f"⬆️ +{diff}"
+                elif diff < 0:
+                    change_str = f"⬇️ {diff}"
+                else:
+                    change_str = "➖ 0"
+
+            analysis.append({
+                "query": query,
+                "rank": rank,
+                "change": change_str,
+                "date": checked_at
+            })
+        return analysis
+
+    def generate_recommendations(self, new_posts, updated_posts, rankings, past_rankings):
+        recs = []
+
+        # Frequency advice
+        if not new_posts:
+            recs.append("⚠️ **Low Activity**: No new posts detected today. Consider creating new content.")
+        elif len(new_posts) > 5:
+            recs.append("✅ **High Activity**: Great job! More than 5 posts today.")
+
+        # Update advice
+        if updated_posts:
+            recs.append(f"ℹ️ **Maintenance**: {len(updated_posts)} posts were updated. Review changes to ensure accuracy.")
+
+        # SEO advice
+        if not rankings:
+            recs.append("⚠️ **SEO Alert**: Ranking check failed or data missing. Check internet connection or Google blocks.")
+        else:
+            trends = self.analyze_seo_trends(rankings, past_rankings)
+            for t in trends:
+                if "⬇️" in t['change']:
+                    recs.append(f"📉 **SEO Drop**: Rank dropped for '{t['query']}'. Review page content and keywords.")
+                if t['rank'] > 10:
+                    recs.append(f"🔍 **SEO Visibility**: '{t['query']}' is on Page {int(t['rank']/10)+1}. Aim for top 10.")
+
+        return recs
 
 if __name__ == "__main__":
     reporter = ReportGenerator()
