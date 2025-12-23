@@ -1,0 +1,124 @@
+import json
+import os
+import argparse
+import subprocess
+import logging
+from agents.analysis_agent import AnalysisAgent
+from agents.research_agent import ResearchAgent
+from agents.intelligence_agent import IntelligenceAgent
+from agents.content_agent import ContentAgent
+from agents.health_check_agent import HealthCheckAgent
+from agents.monetization_agent import MonetizationAgent
+from agents.creativity_agent import CreativityAgent
+from agents.autonomous_intelligence_agent import AutonomousIntelligenceAgent
+from agents.programmatic_ads_agent import ProgrammaticAdsAgent
+from agents.ads_agent import AdsAgent
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
+logger = logging.getLogger(__name__)
+
+RESULTS_DIR = "results"
+
+def load_data(filepath):
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        logger.error(f"File {filepath} not found. Run scraper first.")
+        return []
+
+def save_result(filename, content):
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+    filepath = os.path.join(RESULTS_DIR, filename)
+    with open(filepath, 'w', encoding='utf-8') as f:
+        if isinstance(content, (dict, list)):
+            json.dump(content, f, indent=4)
+        else:
+            f.write(str(content))
+    logger.info(f"Saved result to {filepath}")
+
+def main():
+    parser = argparse.ArgumentParser(description="Run Autonomous Agents System")
+    parser.add_argument("--skip-scrape", action="store_true", help="Skip the scraping step")
+    args = parser.parse_args()
+
+    # 1. Scrape
+    if not args.skip_scrape:
+        logger.info("Starting Scraper...")
+        subprocess.run(["python3", "scraper.py"], check=True)
+    else:
+        logger.info("Skipping scrape...")
+
+    # 2. Load Data
+    data = load_data("links.json")
+    if not data:
+        logger.warning("No data to process.")
+        return
+
+    # 3. Instantiate Agents
+    analysis_agent = AnalysisAgent()
+    research_agent = ResearchAgent()
+    intelligence_agent = IntelligenceAgent()
+    content_agent = ContentAgent()
+    health_agent = HealthCheckAgent()
+    monetization_agent = MonetizationAgent()
+    creativity_agent = CreativityAgent()
+    ai_agent = AutonomousIntelligenceAgent()
+    prog_ads_agent = ProgrammaticAdsAgent()
+    ads_agent = AdsAgent()
+
+    # 4. Pipeline Execution
+    logger.info("Starting Agent Pipeline...")
+    results_aggregator = {}
+
+    # Health Check
+    health_results = health_agent.process(data)
+    save_result("health_check.json", health_results)
+    results_aggregator['health'] = health_results
+
+    if health_results['status'] != "Healthy" and health_results['record_count'] == 0:
+        logger.error("Data unhealthy or empty. Aborting pipeline.")
+        return
+
+    # Analysis
+    analysis_results = analysis_agent.process(data)
+    save_result("analysis.json", analysis_results)
+
+    # Research
+    research_results = research_agent.process(data)
+    save_result("research.json", research_results)
+
+    # Intelligence
+    intelligence_results = intelligence_agent.process(analysis_results)
+    save_result("intelligence.json", intelligence_results)
+    results_aggregator['intelligence'] = intelligence_results
+
+    # Content
+    content = content_agent.process(data, intelligence_results)
+    save_result("content_draft.md", content)
+
+    # Monetization
+    monetization_strategies = monetization_agent.process(research_results)
+    save_result("monetization.json", monetization_strategies)
+    results_aggregator['monetization'] = monetization_strategies
+
+    # Creativity
+    headlines = creativity_agent.process(analysis_results['common_keywords'])
+    save_result("creative_headlines.json", headlines)
+
+    # Ads
+    prog_ads = prog_ads_agent.process(analysis_results['common_keywords'])
+    save_result("programmatic_ads_config.json", prog_ads)
+
+    ad_copy = ads_agent.process(research_results)
+    save_result("ad_copy.json", ad_copy)
+
+    # High-level Synthesis
+    summary = ai_agent.process(results_aggregator)
+    save_result("executive_summary.txt", summary)
+
+    logger.info("Pipeline Complete. Check 'results/' directory.")
+
+if __name__ == "__main__":
+    main()

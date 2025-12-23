@@ -8,7 +8,7 @@ import argparse
 import logging
 import time
 from typing import List, Dict, Optional, Set
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urljoin
 
 # Configure logging
 logging.basicConfig(
@@ -18,16 +18,16 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-BASE_URL = "https://markposition.wordpress.com/"
+BASE_URL = "https://www.oracle.com/news/"
 
-class MarkPositionScraperAsync:
+class OracleNewsScraper:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
         self.output_csv = output_csv
         self.output_txt = output_txt
         self.max_pages = max_pages
         self.concurrency = concurrency
-        self.session = None
+        self.base_url = BASE_URL
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -36,184 +36,113 @@ class MarkPositionScraperAsync:
         text = text.replace('\xa0', ' ')
         return re.sub(r'\s+', ' ', text).strip()
 
-    def is_url(self, text: str) -> bool:
-        """Check if text looks like a URL."""
-        return re.match(r'^https?://', text.strip()) is not None
+    def sanitize_for_csv(self, value: str) -> str:
+        """Prevent CSV injection by prepending a single quote to risky fields."""
+        if not value:
+            return ""
+        if value.startswith(('=', '+', '-', '@', '%')):
+            return "'" + value
+        return value
 
-    def extract_categories(self, article: BeautifulSoup) -> List[str]:
-        """Extract categories from article class names."""
-        categories = []
-        if article.get('class'):
-            for cls in article['class']:
-                if cls.startswith('category-'):
-                    cat_name = cls.replace('category-', '').replace('-', ' ').title()
-                    categories.append(cat_name)
-        return categories
-
-    def extract_domain(self, url: str) -> Optional[str]:
-        """Extract domain from URL."""
-        if not url:
-            return None
+    async def fetch_page(self, session: aiohttp.ClientSession, url: str) -> Optional[str]:
         try:
-            return urlparse(url).netloc.replace('www.', '')
-        except:
-            return None
-
-    async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
-        url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
-        try:
-            async with session.get(url) as response:
+            # 30 second global timeout
+            timeout = aiohttp.ClientTimeout(total=30)
+            async with session.get(url, timeout=timeout) as response:
                 if response.status == 404:
                     return None
                 response.raise_for_status()
                 return await response.text()
         except aiohttp.ClientError as e:
-            logger.error(f"Error fetching page {page_num}: {e}")
+            logger.error(f"Error fetching {url}: {e}")
+            return None
+        except asyncio.TimeoutError:
+            logger.error(f"Timeout fetching {url}")
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
         soup = BeautifulSoup(html, 'html.parser')
-        articles = soup.find_all('article', class_='post')
-        page_posts = []
+        # Oracle news uses links in <h3> tags or <a> tags with specific classes or structures.
+        # Based on curl output, we saw links like:
+        # <a href="/news/announcement/..." data-lbl="..."><h3>Title</h3></a>
 
-        if not articles:
-            return []
+        articles = []
 
-        for article in articles:
-            post_data = {}
+        # Find all links that look like announcements
+        links = soup.find_all('a', href=True)
 
-            # Title
-            title_text = ""
-            title_tag = article.select_one('h1.entry-title a')
-            if title_tag:
-                title_text = self.clean_text(title_tag.get_text())
-                post_data['title'] = title_text
+        seen_urls = set()
 
-            # Date
-            date_tag = article.select_one('time.entry-date')
-            if date_tag:
-                post_data['date'] = self.clean_text(date_tag.get_text())
-                post_data['datetime'] = date_tag.get('datetime')
+        for link in links:
+            href = link.get('href')
+            if not href or '/news/announcement/' not in href:
+                continue
 
-            # Author
-            author_tag = article.select_one('.author.vcard .fn')
-            if author_tag:
-                post_data['author'] = self.clean_text(author_tag.get_text())
-            else:
-                post_data['author'] = None
+            # Filter for "google-cloud" as requested
+            if 'google-cloud' not in href.lower():
+                continue
 
-            # Categories
-            post_data['categories'] = self.extract_categories(article)
+            full_url = urljoin(self.base_url, href)
 
-            # External Link
-            external_link = None
-            content_div = article.select_one('.entry-content')
+            if full_url in seen_urls:
+                continue
+            seen_urls.add(full_url)
 
-            if content_div:
-                link_tag = content_div.select_one('a')
-                if link_tag:
-                    external_link = link_tag.get('href')
+            # Extract title
+            title = self.clean_text(link.get_text())
+            if not title:
+                # Try finding nested h3 or similar
+                h3 = link.find('h3')
+                if h3:
+                    title = self.clean_text(h3.get_text())
 
-                if not external_link:
-                    iframe_tag = content_div.select_one('iframe')
-                    if iframe_tag:
-                        external_link = iframe_tag.get('src')
+            # If still no title, use the URL slug as a fallback title
+            if not title:
+                slug = href.split('/')[-2] if href.endswith('/') else href.split('/')[-1]
+                title = slug.replace('-', ' ').title()
 
-            if not external_link and title_text and self.is_url(title_text):
-                external_link = title_text
+            # Extract Date (heuristic from URL or nearby text)
+            # URL format example: ...-2025-12-11/
+            date_match = re.search(r'(\d{4}-\d{2}-\d{2})', href)
+            date_str = date_match.group(1) if date_match else ""
 
-            post_data['external_link'] = external_link
-            post_data['domain'] = self.extract_domain(external_link)
+            article_data = {
+                'title': title,
+                'date': date_str,
+                'author': "Oracle News", # Default author
+                'categories': ["Cloud", "Database", "Google Cloud"],
+                'external_link': full_url, # The article itself is the link
+                'domain': "oracle.com",
+                'post_url': full_url
+            }
+            articles.append(article_data)
 
-            # Post URL
-            if title_tag:
-                post_data['post_url'] = title_tag.get('href')
-
-            page_posts.append(post_data)
-
-        return page_posts
+        return articles
 
     async def scrape(self):
         all_posts = []
-        page_num = 1
-        sem = asyncio.Semaphore(self.concurrency)
 
-        # Headers
+        # Headers to mimic browser
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
 
         async with aiohttp.ClientSession(headers=headers) as session:
-            # We don't know the total pages, so we have to fetch sequentially or in chunks until we hit 404/empty.
-            # Pure concurrent fetching of all pages requires knowing the max page.
-            # Heuristic: fetch in batches of `concurrency`. If any page in batch returns 404 or empty, stop.
+            # We only really need to scrape the main news page for this specific task
+            # unless there's pagination we can easily follow.
+            # The current curl showed just the main page.
+            # We'll stick to the main page for now as it contained the relevant future links.
 
-            # Actually, WordPress pages are sequential. If page N is 404, N+1 is likely 404 too.
-            # But fetching 100 pages 1-by-1 is slow.
-            # Let's try fetching chunks.
-
-            active = True
-            while active:
-                tasks = []
-                # Prepare a batch of pages
-                batch_start = page_num
-                # If max_pages is set, clamp the batch size
-                current_concurrency = self.concurrency
-
-                for i in range(current_concurrency):
-                    current_page = batch_start + i
-                    if self.max_pages and current_page > self.max_pages:
-                        active = False
-                        break
-
-                    # We create a task that acquires semaphore (though sem is less useful if we just create batch size = concurrency)
-                    tasks.append(self.fetch_and_parse(session, current_page, sem))
-
-                if not tasks:
-                    break
-
-                logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
-                results = await asyncio.gather(*tasks)
-
-                # Check results
-                batch_posts_count = 0
-                stop_detected = False
-
-                # Results are ordered by page number
-                for idx, page_posts in enumerate(results):
-                    page_idx = batch_start + idx
-                    if page_posts is None:
-                        # 404 or Error
-                        logger.info(f"Page {page_idx} returned 404 or empty. Stopping.")
-                        stop_detected = True
-                        break # Don't process further pages in this batch effectively (though they were fetched)
-                    elif len(page_posts) == 0:
-                        logger.info(f"Page {page_idx} has no articles. Stopping.")
-                        stop_detected = True
-                        break
-                    else:
-                        all_posts.extend(page_posts)
-                        batch_posts_count += len(page_posts)
-
-                if stop_detected:
-                    break
-
-                if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
-                    logger.info("Reached max pages limit.")
-                    break
-
-                page_num += len(tasks)
-                # Small delay between batches
-                await asyncio.sleep(0.5)
+            logger.info(f"Fetching {self.base_url}...")
+            html = await self.fetch_page(session, self.base_url)
+            if html:
+                posts = await self.parse_page(html)
+                all_posts.extend(posts)
+                logger.info(f"Found {len(posts)} relevant articles.")
+            else:
+                logger.error("Failed to fetch main news page.")
 
         self.save_data(all_posts)
-
-    async def fetch_and_parse(self, session, page_num, sem):
-        async with sem:
-            html = await self.fetch_page(session, page_num)
-            if html:
-                return await self.parse_page(html)
-            return None
 
     def save_data(self, posts: List[Dict]):
         # JSON
@@ -231,13 +160,13 @@ class MarkPositionScraperAsync:
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        self.sanitize_for_csv(post.get('title', '')),
+                        self.sanitize_for_csv(post.get('date', '')),
+                        self.sanitize_for_csv(post.get('author', '')),
+                        self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                        self.sanitize_for_csv(post.get('external_link', '')),
+                        self.sanitize_for_csv(post.get('domain', '')),
+                        self.sanitize_for_csv(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
@@ -260,16 +189,16 @@ class MarkPositionScraperAsync:
             logger.error(f"Failed to save TXT: {e}")
 
 def main():
-    parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
+    parser = argparse.ArgumentParser(description="Scraper for Oracle Database @ Google Cloud News")
     parser.add_argument("--json", default="links.json", help="Output JSON filename")
     parser.add_argument("--csv", default="links.csv", help="Output CSV filename")
     parser.add_argument("--txt", default="unique_links.txt", help="Output TXT filename for unique links")
-    parser.add_argument("--limit", type=int, help="Limit number of pages to scrape")
+    parser.add_argument("--limit", type=int, help="Limit number of pages (unused in single page mode)")
     parser.add_argument("--concurrency", type=int, default=5, help="Number of concurrent requests")
 
     args = parser.parse_args()
 
-    scraper = MarkPositionScraperAsync(
+    scraper = OracleNewsScraper(
         output_json=args.json,
         output_csv=args.csv,
         output_txt=args.txt,
