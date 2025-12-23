@@ -1,0 +1,426 @@
+{
+    "total_articles": 39,
+    "articles": [
+        {
+            "title": "Oracle Expands AI Agent Studio for Fusion Applications with New Marketplace, LLMs, and Vast Partner Network",
+            "sentiment": 0.06818181818181818,
+            "keywords": [
+                "oracle expands ai agent",
+                "fusion applications",
+                "marketplace",
+                "llms",
+                "partner network"
+            ]
+        },
+        {
+            "title": "Oracle Launches Fusion Applications AI Agent Marketplace to Accelerate Enterprise AI Adoption",
+            "sentiment": 0.0,
+            "keywords": [
+                "oracle launches fusion applications ai agent marketplace",
+                "accelerate enterprise ai adoption"
+            ]
+        },
+        {
+            "title": "Oracle Advances Enterprise AI with New Agents Across Fusion Applications",
+            "sentiment": 0.13636363636363635,
+            "keywords": [
+                "oracle advances enterprise ai",
+                "agents across fusion applications"
+            ]
+        },
+        {
+            "title": "Oracle AI Agents Help Finance Leaders Accelerate Business Insights and Boost Efficiency",
+            "sentiment": 0.0,
+            "keywords": [
+                "oracle ai agents",
+                "accelerate",
+                "insights",
+                "boost efficiency"
+            ]
+        },
+        {
+            "title": "Oracle AI Agents Help Supply Chain Leaders Boost Operational Efficiency",
+            "sentiment": 0.0,
+            "keywords": [
+                "oracle ai agents",
+                "chain",
+                "boost operational efficiency"
+            ]
+        },
+        {
+            "title": "Oracle Collaborates with Microsoft to Enhance Supply Chain Efficiency",
+            "sentiment": 0.0,
+            "keywords": [
+                "oracle collaborates",
+                "microsoft",
+                "enhance",
+                "chain efficiency"
+            ]
+        },
+        {
+            "title": "Oracle Helps Organizations Optimize the Candidate and Hiring Experience with Agentic AI",
+            "sentiment": 0.0,
+            "keywords": [
+                "oracle helps organizations optimize",
+                "candidate",
+                "experience",
+                "agentic ai"
+            ]
+        },
+        {
+            "title": "Introducing the New AI-First User Experience in Oracle Fusion Applications",
+            "sentiment": 0.13636363636363635,
+            "keywords": [
+                "introducing",
+                "ai-first user experience",
+                "oracle fusion applications"
+            ]
+        },
+        {
+            "title": "The Choctaw Nation of Oklahoma Unlocks the Value of Enterprise AI with Oracle Fusion Cloud Applications",
+            "sentiment": 0.0,
+            "keywords": [
+                "choctaw nation",
+                "oklahoma unlocks",
+                "value",
+                "enterprise ai",
+                "oracle fusion cloud applications"
+            ]
+        },
+        {
+            "title": "United States Department of the Air Force Advances Mission-Critical Operations with Oracle Fusion Cloud Applications",
+            "sentiment": 0.0,
+            "keywords": [
+                "air force",
+                "advances mission-critical operations",
+                "oracle fusion cloud applications"
+            ]
+        },
+        {
+            "title": "PwC Partners with Oracle to Reimagine Finance Processes with AI in Oracle Fusion Cloud ERP",
+            "sentiment": 0.0,
+            "keywords": [
+                "pwc partners",
+                "oracle",
+                "reimagine",
+                "processes",
+                "ai",
+                "oracle fusion cloud erp"
+            ]
+        },
+        {
+            "title": "Oracle Unveils AI Data Platform, Empowering Customers to Innovate in the AI Era",
+            "sentiment": 0.0,
+            "keywords": [
+                "oracle unveils ai data platform",
+                "empowering customers",
+                "innovate",
+                "ai era"
+            ]
+        },
+        {
+            "title": "Oracle Introduces New Cloud Networking Capabilities for Any Workload",
+            "sentiment": 0.13636363636363635,
+            "keywords": [
+                "oracle introduces",
+                "cloud networking capabilities",
+                "workload"
+            ]
+        },
+        {
+            "title": "Oracle Unveils Next-Generation Oracle Cloud Infrastructure Zettascale10 Cluster for AI",
+            "sentiment": 0.0,
+            "keywords": [
+                "oracle unveils next-generation oracle cloud infrastructure zettascale10 cluster",
+                "ai"
+            ]
+        },
+        {
+            "title": "Oracle Introduces Multicloud Universal Credits",
+            "sentiment": 0.0,
+            "keywords": [
+                "oracle introduces multicloud universal credits"
+            ]
+        },
+        {
+            "title": "Oracle and AMD Expand Partnership to Help Customers Achieve Next-Generation AI Scale",
+            "sentiment": 0.0,
+            "keywords": [
+                "oracle",
+                "amd expand partnership",
+                "customers achieve next-generation ai scale"
+            ]
+        },
+        {
+            "title": "Oracle AI Database 26ai Powers the AI for Data Revolution",
+            "sentiment": 0.0,
+            "keywords": [
+                "oracle ai database",
+                "powers",
+                "ai",
+                "data revolution"
+            ]
+        },
+        {
+            "title": "Oracle Adds New Database Capabilities and Partner Program to Oracle Database@AWS",
+            "sentiment": 0.13636363636363635,
+            "keywords": [
+                "oracle adds",
+                "database capabilities",
+                "partner program",
+                "oracle database",
+                "aws"
+            ]
+        },
+        {
+            "title": "Oracle Database@Azure Powers Cloud Migrations for Organizations Across the World",
+            "sentiment": 0.0,
+            "keywords": [
+                "oracle database",
+                "azure powers cloud migrations",
+                "organizations across"
+            ]
+        },
+        {
+            "title": "Oracle Database@Google Cloud Adds New Oracle AI Database Services, Additional Regions, and Groundbreaking Partner Program",
+            "sentiment": 0.13636363636363635,
+            "keywords": [
+                "oracle database",
+                "google cloud adds",
+                "oracle ai database",
+                "additional regions",
+                "groundbreaking partner program"
+            ]
+        },
+        {
+            "title": "Oracle Autonomous AI Lakehouse Enables Open, Interoperable Data Access Across Multi-Platform, Multicloud Environments",
+            "sentiment": 0.2,
+            "keywords": [
+                "oracle autonomous ai lakehouse enables",
+                "data access across multi-platform",
+                "multicloud environments"
+            ]
+        },
+        {
+            "title": "Oracle Cloud Infrastructure Enables More Customers to Rapidly Deploy AI and Cloud Services",
+            "sentiment": 0.5,
+            "keywords": [
+                "oracle cloud infrastructure enables",
+                "customers",
+                "rapidly deploy ai",
+                "cloud"
+            ]
+        },
+        {
+            "title": "Oracle Announces AI Assistant and New AI-Powered Features for Oracle Fusion Data Intelligence",
+            "sentiment": 0.13636363636363635,
+            "keywords": [
+                "oracle announces ai",
+                "ai-powered features",
+                "oracle fusion data intelligence"
+            ]
+        },
+        {
+            "title": "Children\u2019s Hospital Los Angeles Taps Oracle to Enhance Business Systems",
+            "sentiment": 0.0,
+            "keywords": [
+                "\u2019 s hospital",
+                "los angeles taps oracle",
+                "enhance",
+                "systems"
+            ]
+        },
+        {
+            "title": "Oracle Becomes the Destination of Choice for AI Innovators",
+            "sentiment": 0.0,
+            "keywords": [
+                "oracle becomes",
+                "destination",
+                "ai innovators"
+            ]
+        },
+        {
+            "title": "Oracle Launches New Customer and Partner Offerings to Accelerate AI Adoption and Business Results With Oracle AI Factory",
+            "sentiment": 0.13636363636363635,
+            "keywords": [
+                "oracle launches",
+                "customer",
+                "partner offerings",
+                "accelerate ai adoption",
+                "oracle ai"
+            ]
+        },
+        {
+            "title": "Retraced Advances Transparency and Sustainability in Fashion with Oracle Autonomous AI Database",
+            "sentiment": 0.4,
+            "keywords": [
+                "retraced advances transparency",
+                "sustainability",
+                "oracle autonomous ai database"
+            ]
+        },
+        {
+            "title": "Oracle and Duality Deliver Privacy-First AI to Government and Defense Customers",
+            "sentiment": 0.0,
+            "keywords": [
+                "oracle",
+                "duality deliver privacy-first ai",
+                "customers"
+            ]
+        },
+        {
+            "title": "Oracle Unveils New Defense Ecosystem Members",
+            "sentiment": 0.13636363636363635,
+            "keywords": [
+                "oracle unveils",
+                "new defense",
+                "ecosystem"
+            ]
+        },
+        {
+            "title": "Health Systems Simplify Secure Data Exchange with Oracle Health",
+            "sentiment": 0.4,
+            "keywords": [
+                "systems simplify secure data",
+                "oracle"
+            ]
+        },
+        {
+            "title": "Oracle Intelligent Communications Orchestration Network Makes It Easier to Connect Critical AI and Cloud Services",
+            "sentiment": 0.4,
+            "keywords": [
+                "oracle intelligent communications orchestration network makes",
+                "connect critical ai",
+                "cloud"
+            ]
+        },
+        {
+            "title": "Oracle Named a Leader in IDC MarketScape for Worldwide Corporate Loan Lifecycle Management",
+            "sentiment": 0.0,
+            "keywords": [
+                "oracle",
+                "idc marketscape",
+                "worldwide",
+                "lifecycle management"
+            ]
+        },
+        {
+            "title": "SoftBank Corp. Accelerates Japan\u2019s AI and Sovereign Cloud Future with Oracle Alloy",
+            "sentiment": 0.0,
+            "keywords": [
+                "softbank corp",
+                "accelerates japan",
+                "\u2019 s",
+                "ai",
+                "sovereign cloud",
+                "oracle alloy"
+            ]
+        },
+        {
+            "title": "Oracle Health Powers Rural Health Innovation and Transformation",
+            "sentiment": 0.0,
+            "keywords": [
+                "oracle",
+                "powers",
+                "rural health",
+                "innovation",
+                "transformation"
+            ]
+        },
+        {
+            "title": "NATO CCDCOE to Research Battlefield Connectivity with Oracle 5G Solutions",
+            "sentiment": 0.0,
+            "keywords": [
+                "ccdcoe",
+                "battlefield connectivity",
+                "oracle",
+                "solutions"
+            ]
+        },
+        {
+            "title": "Oracle AI Agents Help Marketing, Sales, and Service Leaders Unlock New Revenue Opportunities",
+            "sentiment": 0.13636363636363635,
+            "keywords": [
+                "oracle ai agents",
+                "unlock",
+                "new revenue",
+                "opportunities"
+            ]
+        },
+        {
+            "title": "Oracle Supercharges Simphony Self-Service Capabilities for Stadiums, Restaurants, and Hotels",
+            "sentiment": 0.0,
+            "keywords": [
+                "oracle supercharges simphony self-service capabilities",
+                "stadiums",
+                "restaurants",
+                "hotels"
+            ]
+        },
+        {
+            "title": "Oracle Health and Life Sciences Strengthens Industry Ecosystem with Enhanced Partner Program",
+            "sentiment": 0.0,
+            "keywords": [
+                "oracle",
+                "strengthens",
+                "ecosystem",
+                "enhanced partner program"
+            ]
+        },
+        {
+            "title": "Oracle Recognized as a Leader in 2025 IDC MarketScape for Worldwide Life Science R&D Pharmacovigilance Technology Solutions and Consulting Services",
+            "sentiment": 0.0,
+            "keywords": [
+                "oracle recognized",
+                "idc marketscape",
+                "worldwide",
+                "life science",
+                "d pharmacovigilance",
+                "solutions",
+                "consulting"
+            ]
+        }
+    ],
+    "top_keywords": [
+        [
+            "oracle",
+            8
+        ],
+        [
+            "ai",
+            4
+        ],
+        [
+            "oracle ai agents",
+            3
+        ],
+        [
+            "oracle database",
+            3
+        ],
+        [
+            "enhance",
+            2
+        ],
+        [
+            "oracle fusion cloud applications",
+            2
+        ],
+        [
+            "oracle ai database",
+            2
+        ],
+        [
+            "powers",
+            2
+        ],
+        [
+            "customers",
+            2
+        ],
+        [
+            "cloud",
+            2
+        ]
+    ]
+}
