@@ -3,8 +3,7 @@ import time
 import logging
 import sys
 from scraper import main as run_scraper
-from google_checker import main as run_checker
-from report_generator import ReportGenerator
+from agent_orchestrator import AgentOrchestrator
 
 # Configure logging
 logging.basicConfig(
@@ -19,32 +18,20 @@ logger = logging.getLogger(__name__)
 def job():
     logger.info("Starting scheduled job...")
 
-    # 1. Run Scraper
+    # 1. Run Scraper (Data Collection)
     logger.info("Running scraper...")
     try:
         run_scraper()
     except Exception as e:
         logger.error(f"Scraper failed: {e}")
 
-    # 2. Run Google Checker
-    logger.info("Running Google SEO Checker...")
+    # 2. Run Agents (Analysis, Research, Creation, Reporting)
+    logger.info("Running Autonomous Agents...")
     try:
-        # We call main, which relies on argparse defaults.
-        # Ideally we'd refactor google_checker to have a run() method taking args,
-        # but main() works if we don't need to change defaults dynamically.
-        # It defaults to site:wishlist.design.blog and 10 results.
-        run_checker()
+        orchestrator = AgentOrchestrator()
+        orchestrator.run_agents()
     except Exception as e:
-        # Google scraping often fails due to blocking, so log as warning mostly
-        logger.warning(f"Google Checker failed (likely blocking): {e}")
-
-    # 3. Generate Report
-    logger.info("Generating report...")
-    try:
-        reporter = ReportGenerator()
-        reporter.generate_daily_report()
-    except Exception as e:
-        logger.error(f"Report generation failed: {e}")
+        logger.error(f"Agent Orchestrator failed: {e}")
 
     logger.info("Job completed.")
 
