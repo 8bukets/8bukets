@@ -1,12 +1,18 @@
-import asyncio
 import logging
 import argparse
 import time
 import os
 import shutil
+import json
 from datetime import datetime, timedelta
-from scraper import WebshopScraperAsync
-from analytics import load_data, generate_report
+
+from agents.research import ResearchAgent
+from agents.health import HealthCheckAgent
+from agents.analyze import AnalyzeAgent
+from agents.intelligence import IntelligenceAgent
+from agents.monetization import MonetizationAgent
+from agents.creativity import CreativityAgent
+from agents.content import ContentAgent
 
 # Configure logging
 logging.basicConfig(
@@ -17,18 +23,20 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 def get_seconds_until_next_run(target_hour=6):
-    """Calculates seconds until the next target_hour (e.g., 06:00 AM)."""
     now = datetime.now()
     target = now.replace(hour=target_hour, minute=0, second=0, microsecond=0)
-
     if now >= target:
         target += timedelta(days=1)
+    return (target - now).total_seconds()
 
-    seconds = (target - now).total_seconds()
-    return seconds
+def load_json(filepath):
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except:
+        return []
 
 def run_job(max_pages=None):
-    """Runs the scraper and generates a daily report."""
     today = datetime.now().strftime('%Y-%m-%d')
     report_dir = "reports"
     if not os.path.exists(report_dir):
@@ -40,73 +48,77 @@ def run_job(max_pages=None):
     txt_file = "unique_links.txt"
     prev_json_file = "links_prev.json"
 
-    logger.info(f"Starting daily job for {today}...")
+    logger.info(f"--- Starting Autonomous Job for {today} ---")
 
-    # 0. Backup previous data for comparison
-    prev_data = None
+    # Initialize Agents
+    research_agent = ResearchAgent()
+    health_agent = HealthCheckAgent()
+    analyze_agent = AnalyzeAgent()
+    intel_agent = IntelligenceAgent()
+    money_agent = MonetizationAgent()
+    creative_agent = CreativityAgent()
+    content_agent = ContentAgent()
+
+    # 0. Health Check (Pre-flight)
+    if not health_agent.run(url="https://webshop.business.blog"):
+        logger.error("Pre-flight health check failed. Aborting job.")
+        # Decide whether to continue. For robustness, we might try anyway or alert.
+        # Here we continue but log error.
+
+    # Backup data
     if os.path.exists(json_file):
-        try:
-            logger.info("Backing up current data...")
-            shutil.copy(json_file, prev_json_file)
-            prev_data = load_data(prev_json_file)
-        except Exception as e:
-            logger.warning(f"Failed to backup/load previous data: {e}")
+        shutil.copy(json_file, prev_json_file)
 
-    # 1. Run Scraper
-    logger.info("Starting scraper...")
-    try:
-        scraper = WebshopScraperAsync(
-            output_json=json_file,
-            output_csv=csv_file,
-            output_txt=txt_file,
-            max_pages=max_pages,
-            concurrency=5
-        )
-        asyncio.run(scraper.scrape())
-    except Exception as e:
-        logger.error(f"Scraper failed: {e}")
-        # Continue to reporting even if scraper fails partially (to report old data)
-        # or return if completely broken. For now, we continue.
+    # 1. Research (Scraping)
+    success = research_agent.run(json_file, csv_file, txt_file, max_pages=max_pages)
+    if not success:
+        logger.warning("Research agent reported issues.")
 
-    # 2. Generate Report
-    logger.info("Generating analytics report...")
-    try:
-        data = load_data(json_file)
-        if not data:
-            logger.warning("No data found to report.")
-            return
+    # 2. Health Check (Data)
+    if not health_agent.run(data_file=json_file):
+        logger.error("Data integrity check failed.")
+        return
 
-        generate_report(data, report_file, prev_data)
-        logger.info(f"Job completed. Report saved to {report_file}")
-    except Exception as e:
-        logger.error(f"Analytics generation failed: {e}")
+    # Load Data
+    current_data = load_json(json_file)
+    prev_data = load_json(prev_json_file) if os.path.exists(prev_json_file) else None
+
+    # 3. Analyze
+    stats = analyze_agent.run(current_data)
+
+    # 4. Intelligence
+    intel = intel_agent.run(current_data, prev_data)
+
+    # 5. Monetization
+    money_opps = money_agent.run(current_data)
+
+    # 6. Creativity
+    creative_ideas = creative_agent.run(intel.get('keywords', []))
+
+    # 7. Content Creation
+    content_agent.run(stats, intel, money_opps, creative_ideas, report_file)
+
+    logger.info(f"--- Job Finished. Report: {report_file} ---")
 
 def main():
-    parser = argparse.ArgumentParser(description="Daily Automation Task for Webshop Scraper")
-    parser.add_argument("--loop", action="store_true", help="Run continuously every 24 hours")
-    parser.add_argument("--limit", type=int, help="Limit number of pages to scrape per run")
-    parser.add_argument("--hour", type=int, default=6, help="Hour of the day to run (0-23) in loop mode")
+    parser = argparse.ArgumentParser(description="Autonomous Multi-Agent System")
+    parser.add_argument("--loop", action="store_true", help="Run continuously 24/7")
+    parser.add_argument("--limit", type=int, help="Limit scraped pages")
+    parser.add_argument("--hour", type=int, default=6, help="Hour to run (0-23)")
     args = parser.parse_args()
 
     if args.loop:
-        logger.info(f"Starting in continuous mode (24/7). Scheduled for {args.hour}:00 daily.")
-
-        # Run once immediately on startup? Or wait?
-        # Typically "24/7" implies it runs now, then schedules next.
-        # Let's run immediately for the first time.
-
+        logger.info(f"System starting in autonomous mode. Schedule: {args.hour}:00 daily.")
         while True:
             try:
                 run_job(max_pages=args.limit)
             except Exception as e:
-                logger.critical(f"Critical job failure: {e}")
+                logger.critical(f"System Crash: {e}")
 
-            # Calculate sleep time
-            sleep_seconds = get_seconds_until_next_run(args.hour)
-            next_run_time = (datetime.now() + timedelta(seconds=sleep_seconds)).strftime('%Y-%m-%d %H:%M:%S')
-
-            logger.info(f"Sleeping for {sleep_seconds/3600:.1f} hours. Next run at {next_run_time}")
-            time.sleep(sleep_seconds)
+            sleep_sec = get_seconds_until_next_run(args.hour)
+            wake_time = (datetime.now() + timedelta(seconds=sleep_sec)).strftime('%Y-%m-%d %H:%M:%S')
+            logger.info(f"Agents sleeping. Next cycle: {wake_time}")
+            time.sleep(sleep_sec)
     else:
         run_job(max_pages=args.limit)
 
