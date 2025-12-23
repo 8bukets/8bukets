@@ -2,7 +2,7 @@ import logging
 import random
 import json
 
-logger = logging.getLogger("AdsAgent")
+logger = logging.getLogger("MonetizationAgent")
 
 class MonetizationAgent:
     def __init__(self):
@@ -57,7 +57,3 @@ class MonetizationAgent:
         strategy["campaigns"].sort(key=lambda x: x["projected_revenue"], reverse=True)
 
         return strategy
-
-class ProgrammaticAdAgent(MonetizationAgent):
-    """Wrapper for Programmatic Advertising logic."""
-    pass

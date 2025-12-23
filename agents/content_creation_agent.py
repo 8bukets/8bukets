@@ -2,9 +2,9 @@ import logging
 import random
 from datetime import datetime
 
-logger = logging.getLogger("ContentAgent")
+logger = logging.getLogger("ContentCreationAgent")
 
-class ContentAgent:
+class ContentCreationAgent:
     def __init__(self):
         pass
 
@@ -48,7 +48,3 @@ class ContentAgent:
             f"{topic} is not just a buzzword; it's becoming a core infrastructure requirement."
         ]
         return random.choice(insights)
-
-class CreativityAgent(ContentAgent):
-    """Alias for ContentAgent as they share the same creative generation logic."""
-    pass

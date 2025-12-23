@@ -2,21 +2,21 @@ import os
 import json
 import logging
 import asyncio
-from datetime import datetime
 
-# Import Agents
-from agents.health import HealthCheckAgent
-from agents.analysis import AnalyzeAgent, IntelligenceAgent
-from agents.research import ResearchAgent
-from agents.content import ContentAgent, CreativityAgent
-from agents.ads import MonetizationAgent, ProgrammaticAdAgent
+# Import Agents (Refactored)
+from agents.health_check_agent import HealthCheckAgent
+from agents.analyze_agent import AnalyzeAgent
+from agents.intelligence_agent import IntelligenceAgent
+from agents.research_agent import ResearchAgent
+from agents.content_creation_agent import ContentCreationAgent
+from agents.programmatic_ads_agent import ProgrammaticAdsAgent
 from scraper import OracleNewsScraper
 
 # Configure Orchestrator Logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-logger = logging.getLogger("AutonomousIntelligence")
+logger = logging.getLogger("AutonomousIntelligenceAgent")
 
-class AutonomousOrchestrator:
+class AutonomousIntelligenceAgent:
     def __init__(self, output_dir="results"):
         self.output_dir = output_dir
         if not os.path.exists(output_dir):
@@ -63,7 +63,7 @@ class AutonomousOrchestrator:
 
         # 5. Content Creation
         logger.info("Step 5: Creative Content Generation...")
-        content_agent = ContentAgent() # Or CreativityAgent
+        content_agent = ContentCreationAgent()
         blog_post = content_agent.generate_content(trends, strategy)
 
         # Save Markdown
@@ -72,7 +72,7 @@ class AutonomousOrchestrator:
 
         # 6. Monetization & Ads
         logger.info("Step 6: Programmatic Advertising Strategy...")
-        ads_agent = ProgrammaticAdAgent()
+        ads_agent = ProgrammaticAdsAgent()
         ad_strategy = ads_agent.generate_ad_strategy(trends)
         self._save_json("ad_campaign_strategy.json", ad_strategy)
 
@@ -82,7 +82,3 @@ class AutonomousOrchestrator:
         path = os.path.join(self.output_dir, filename)
         with open(path, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=4)
-
-if __name__ == "__main__":
-    orchestrator = AutonomousOrchestrator()
-    asyncio.run(orchestrator.run_pipeline())

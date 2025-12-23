@@ -3,7 +3,7 @@ import json
 import logging
 import time
 
-logger = logging.getLogger("HealthAgent")
+logger = logging.getLogger("HealthCheckAgent")
 
 class HealthCheckAgent:
     def __init__(self, data_file="links.json", scraper_file="scraper.py"):

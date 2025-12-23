@@ -21,7 +21,7 @@ We've seen significant activity around **enhance**. Here are the headlines:
 - Oracle Collaborates with Microsoft to Enhance Supply Chain Efficiency
 - Children’s Hospital Los Angeles Taps Oracle to Enhance Business Systems
 
-*> Insight: Investments in enhance are likely to yield high ROI in the coming fiscal year.*
+*> Insight: Competitors should watch enhance closely as Oracle doubles down on this capability.*
 
 ### Trend: Oracle Fusion Cloud Applications
 We've seen significant activity around **oracle fusion cloud applications**. Here are the headlines:
@@ -47,14 +47,14 @@ We've seen significant activity around **ai**. Here are the headlines:
 - Oracle AI Database 26ai Powers the AI for Data Revolution
 - SoftBank Corp. Accelerates Japan’s AI and Sovereign Cloud Future with Oracle Alloy
 
-*> Insight: Investments in ai are likely to yield high ROI in the coming fiscal year.*
+*> Insight: ai is not just a buzzword; it's becoming a core infrastructure requirement.*
 
 ### Trend: Oracle Ai Database
 We've seen significant activity around **oracle ai database**. Here are the headlines:
 - Oracle AI Database 26ai Powers the AI for Data Revolution
 - Oracle Database@Google Cloud Adds New Oracle AI Database Services, Additional Regions, and Groundbreaking Partner Program
 
-*> Insight: oracle ai database is not just a buzzword; it's becoming a core infrastructure requirement.*
+*> Insight: Competitors should watch oracle ai database closely as Oracle doubles down on this capability.*
 
 ### Trend: Powers
 We've seen significant activity around **powers**. Here are the headlines:
@@ -69,18 +69,18 @@ We've seen significant activity around **oracle database**. Here are the headlin
 - Oracle Database@Azure Powers Cloud Migrations for Organizations Across the World
 - Oracle Database@Google Cloud Adds New Oracle AI Database Services, Additional Regions, and Groundbreaking Partner Program
 
-*> Insight: oracle database is not just a buzzword; it's becoming a core infrastructure requirement.*
+*> Insight: Competitors should watch oracle database closely as Oracle doubles down on this capability.*
 
 ### Trend: Customers
 We've seen significant activity around **customers**. Here are the headlines:
 - Oracle Cloud Infrastructure Enables More Customers to Rapidly Deploy AI and Cloud Services
 - Oracle and Duality Deliver Privacy-First AI to Government and Defense Customers
 
-*> Insight: customers is not just a buzzword; it's becoming a core infrastructure requirement.*
+*> Insight: Investments in customers are likely to yield high ROI in the coming fiscal year.*
 
 ### Trend: Cloud
 We've seen significant activity around **cloud**. Here are the headlines:
 - Oracle Cloud Infrastructure Enables More Customers to Rapidly Deploy AI and Cloud Services
 - Oracle Intelligent Communications Orchestration Network Makes It Easier to Connect Critical AI and Cloud Services
 
-*> Insight: The rise of cloud suggests a shift towards more automated enterprise workflows.*
+*> Insight: Competitors should watch cloud closely as Oracle doubles down on this capability.*
