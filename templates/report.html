@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Agents Report</title>
+    <meta name="description" content="Daily autonomous agent report including analysis, insights, and opportunities.">
+    <style>
+        :root {{
+            --primary: #2563eb;
+            --surface: #ffffff;
+            --background: #f8fafc;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }}
+        body {{
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--background);
+            margin: 0;
+            padding: 2rem;
+        }}
+        .skip-link {{
+            position: absolute; top: -40px; left: 0; background: var(--primary); color: white; padding: 8px; z-index: 100;
+            text-decoration: none; font-weight: bold; transition: top 0.2s;
+        }}
+        .skip-link:focus {{ top: 0; }}
+        main {{
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }}
+        header {{ border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 2rem; }}
+        h1 {{ margin: 0; color: var(--text); font-size: 2rem; letter-spacing: -0.025em; }}
+        h2 {{ margin-top: 2.5rem; color: var(--primary); font-size: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }}
+        .meta {{ color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem; }}
+        .stat-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }}
+        .stat-card {{ background: var(--background); padding: 1rem; border-radius: 8px; border: 1px solid var(--border); }}
+        .stat-label {{ font-size: 0.875rem; color: var(--text-muted); display: block; }}
+        .stat-value {{ font-size: 1.5rem; font-weight: 700; color: var(--text); }}
+        ul {{ padding-left: 1.5rem; }}
+        li {{ margin-bottom: 0.5rem; }}
+        table {{ width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.95rem; }}
+        th, td {{ text-align: left; padding: 0.75rem; border-bottom: 1px solid var(--border); }}
+        th {{ background: var(--background); font-weight: 600; color: var(--text-muted); }}
+        tr:hover {{ background-color: #f1f5f9; }}
+        a {{ color: var(--primary); text-decoration: none; font-weight: 500; }}
+        a:hover {{ text-decoration: underline; }}
+        .tag {{ display: inline-block; padding: 0.25rem 0.5rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; background: var(--background); border: 1px solid var(--border); }}
+        .badge-ad {{ background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }}
+        footer {{ margin-top: 4rem; text-align: center; color: var(--text-muted); font-size: 0.875rem; }}
+        @media (max-width: 600px) {{
+            body {{ padding: 1rem; }}
+            main {{ padding: 1rem; }}
+            table {{ display: block; overflow-x: auto; white-space: nowrap; }}
+        }}
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <main id="main">
+        <header>
+            <h1>Autonomous Agents Report</h1>
+            <p class="meta">Generated on <time datetime="{{ISOTIMESTAMP}}">{{TIMESTAMP}}</time></p>
+        </header>
+
+        <section aria-labelledby="analysis-heading">
+            <h2 id="analysis-heading">📊 Analysis</h2>
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <span class="stat-label">Total Posts</span>
+                    <span class="stat-value">{{TOTAL_POSTS}}</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Disallowed Paths</span>
+                    <span class="stat-value">{{DISALLOWED_PATHS}}</span>
+                </div>
+            </div>
+            <p><strong>Date Range:</strong> {{DATE_START}} to {{DATE_END}}</p>
+
+            <h3>Top Domains</h3>
+            <ul>
+                {{TOP_DOMAINS_LIST}}
+            </ul>
+        </section>
+
+        <section aria-labelledby="intelligence-heading">
+            <h2 id="intelligence-heading">🧠 Intelligence Insights</h2>
+            <ul>
+                {{INSIGHTS_LIST}}
+            </ul>
+        </section>
+
+        <section aria-labelledby="ads-heading">
+            <h2 id="ads-heading">🎯 Advertising & Targeting</h2>
+            {{ADS_SECTION}}
+        </section>
+
+        <section aria-labelledby="creative-heading">
+            <h2 id="creative-heading">🎨 Creative Ideas</h2>
+            <ul>
+                {{IDEAS_LIST}}
+            </ul>
+        </section>
+
+        <section aria-labelledby="fun-heading">
+            <h2 id="fun-heading">🎈 Google Antigravity</h2>
+            <p><strong>Hidden Gem:</strong> {{ANTIGRAVITY_GEM}}</p>
+            <p><strong>Title Range:</strong> {{ANTIGRAVITY_SHORT}} chars (Shortest) — {{ANTIGRAVITY_LONG}} chars (Longest)</p>
+        </section>
+
+        <section aria-labelledby="monetization-heading">
+            <h2 id="monetization-heading">💰 Monetization Opportunities</h2>
+            <p>Found <strong>{{MONETIZATION_COUNT}}</strong> potential items.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Keywords</th>
+                        <th scope="col">Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{MONETIZATION_ROWS}}
+                </tbody>
+            </table>
+        </section>
+
+        <footer>
+            <p>Generated by Autonomous Agents System | <a href="AGENTS_REPORT.md">View Markdown Version</a></p>
+        </footer>
+    </main>
+</body>
+</html>
