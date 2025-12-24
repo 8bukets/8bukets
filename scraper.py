@@ -9,6 +9,7 @@ import logging
 import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
+from urllib.robotparser import RobotFileParser
 
 # Configure logging
 logging.basicConfig(
@@ -31,6 +32,15 @@ class MarkPositionScraperAsync:
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+
+        # Robots.txt check
+        self.rp = RobotFileParser()
+        self.rp.set_url(f"{BASE_URL}robots.txt")
+        try:
+            self.rp.read()
+            logger.info("Parsed robots.txt")
+        except Exception as e:
+            logger.warning(f"Could not parse robots.txt: {e}")
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -64,6 +74,11 @@ class MarkPositionScraperAsync:
 
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
         url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
+
+        if not self.rp.can_fetch("*", url):
+            logger.warning(f"robots.txt disallows fetching {url}")
+            return None
+
         try:
             async with session.get(url) as response:
                 if response.status == 404:

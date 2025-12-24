@@ -17,6 +17,13 @@ from agents.intelligence_agent import IntelligenceAgent
 from agents.creativity_agent import CreativityAgent
 from agents.content_agent import ContentAgent
 
+# New Ad Tech Agents
+from agents.ads_agent import AdsAgent
+from agents.targeting_agent import TargetingAgent
+from agents.bid_agent import BidAgent
+from agents.programmatic_agent import ProgrammaticAgent
+from agents.autonomous_intelligence import AutonomousIntelligenceAgent
+
 # Configure Logging
 logging.basicConfig(
     level=logging.INFO,
@@ -93,9 +100,25 @@ def save_report(results, output_dir="results"):
         for idea in creative.get('creative_hooks', []):
             f.write(f"- {idea}\n")
 
+        # Ad Tech Section
+        programmatic = results.get('programmatic', {})
+        f.write("\n## 7. Autonomous Ad Campaigns\n")
+        f.write(f"System Status: {programmatic.get('system_status')}\n")
+        for camp in programmatic.get('programmatic_campaigns', []):
+            f.write(f"\n### {camp.get('campaign_name')}\n")
+            f.write(f"- **Headline:** {camp.get('creative', {}).get('headline')}\n")
+            f.write(f"- **Targeting:** {camp.get('target_audience')}\n")
+            f.write(f"- **Bid:** ${camp.get('bid')}\n")
+
+        # Autonomous Intelligence
+        ai_meta = results.get('autonomous_intelligence', {})
+        f.write("\n## 8. Antigravity Intelligence\n")
+        f.write(f"**Insight:** {ai_meta.get('meta_insight')}\n")
+        f.write(f"**Status:** {ai_meta.get('evolution_status')}\n")
+
         # Content
         content = results.get('content', {})
-        f.write("\n## 7. Content Draft\n")
+        f.write("\n## 9. Content Draft\n")
         f.write(content.get('draft', ''))
 
     logger.info(f"Report saved to {filename}")
@@ -118,41 +141,49 @@ def main():
 
     results = {}
 
-    # 3. Run Agents
-    # Health Agent
-    health_agent = HealthCheckAgent()
-    results['health'] = health_agent.run()
+    # 3. Run Agents Sequence
 
-    # Analysis Agent
-    analysis_agent = AnalysisAgent()
-    results['analysis'] = analysis_agent.run(data)
+    # --- Base Layer ---
+    results['health'] = HealthCheckAgent().run()
+    results['analysis'] = AnalysisAgent().run(data)
+    results['monetization'] = MonetizationAgent().run(data)
+    results['research'] = ResearchAgent().run(data)
 
-    # Monetization Agent
-    monetization_agent = MonetizationAgent()
-    results['monetization'] = monetization_agent.run(data)
-
-    # Research Agent
-    research_agent = ResearchAgent()
-    results['research'] = research_agent.run(data)
-
-    # Intelligence Agent (Depends on Analysis, Monetization, Research)
-    intelligence_input = {
+    # --- Intelligence Layer ---
+    results['intelligence'] = IntelligenceAgent().run({
         "analysis": results['analysis'],
         "monetization": results['monetization'],
         "research": results['research']
-    }
-    intelligence_agent = IntelligenceAgent()
-    results['intelligence'] = intelligence_agent.run(intelligence_input)
+    })
 
-    # Creativity Agent (Depends on Research)
-    creativity_input = {"research": results['research']}
-    creativity_agent = CreativityAgent()
-    results['creativity'] = creativity_agent.run(creativity_input)
+    results['creativity'] = CreativityAgent().run({"research": results['research']})
 
-    # Content Agent (Depends on Intelligence)
-    content_input = {"intelligence": results['intelligence']}
-    content_agent = ContentAgent()
-    results['content'] = content_agent.run(content_input)
+    # --- Ad Tech Layer (Collaborative) ---
+    # Ads Agent needs monetization data
+    results['ads'] = AdsAgent().run({"monetization": results['monetization']})
+
+    # Targeting needs analysis
+    results['targeting'] = TargetingAgent().run({"analysis": results['analysis']})
+
+    # Bid Agent needs ads output
+    results['bid'] = BidAgent().run({"ads": results['ads']})
+
+    # Programmatic Agent packages it all
+    results['programmatic'] = ProgrammaticAgent().run({
+        "ads": results['ads'],
+        "targeting": results['targeting'],
+        "bid": results['bid']
+    })
+
+    # --- Meta-Intelligence Layer ---
+    # Reviews everything for anomalies
+    results['autonomous_intelligence'] = AutonomousIntelligenceAgent().run({
+        "research": results['research'],
+        "programmatic": results['programmatic']
+    })
+
+    # --- Content Layer ---
+    results['content'] = ContentAgent().run({"intelligence": results['intelligence']})
 
     # 4. Reporting
     save_report(results)
