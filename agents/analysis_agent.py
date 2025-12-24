@@ -16,7 +16,7 @@ class AnalysisAgent(BaseAgent):
         except:
             return None
 
-    async def process(self, data: List[Dict]) -> Dict[str, Any]:
+    async def process(self, data: List[Dict], shared_context: Dict[str, Any], knowledge_base: Dict[str, Any]) -> Dict[str, Any]:
         results = {}
 
         # Total Posts

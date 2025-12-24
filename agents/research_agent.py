@@ -16,7 +16,11 @@ class ResearchAgent(BaseAgent):
         except:
             return "Error"
 
-    async def process(self, data: List[Dict]) -> Dict[str, Any]:
+    async def process(self, data: List[Dict], shared_context: Dict[str, Any], knowledge_base: Dict[str, Any]) -> Dict[str, Any]:
+        # READ CONTEXT: Check if robots allowed
+        if not shared_context.get('robots_allowed', True):
+            return {"Status": "Research halted due to Robots.txt restrictions."}
+
         # Get unique domains
         unique_links = list(set([p.get('external_link') for p in data if p.get('external_link')]))
         # Limit to top 5 unique links for "daily research" to avoid spamming

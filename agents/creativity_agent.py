@@ -6,7 +6,7 @@ class CreativityAgent(BaseAgent):
     def __init__(self):
         super().__init__("Creativity Agent")
 
-    async def process(self, data: List[Dict]) -> Dict[str, Any]:
+    async def process(self, data: List[Dict], shared_context: Dict[str, Any], knowledge_base: Dict[str, Any]) -> Dict[str, Any]:
         titles = [p.get('title') for p in data if p.get('title')]
         if not titles:
             return {"Ad Copy": "No input data for creativity."}

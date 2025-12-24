@@ -6,7 +6,7 @@ class ContentAgent(BaseAgent):
     def __init__(self):
         super().__init__("Content Agent")
 
-    async def process(self, data: List[Dict]) -> Dict[str, Any]:
+    async def process(self, data: List[Dict], shared_context: Dict[str, Any], knowledge_base: Dict[str, Any]) -> Dict[str, Any]:
         if not data:
             return {"Daily Briefing": "No data available."}
 

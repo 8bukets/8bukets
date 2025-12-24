@@ -6,7 +6,7 @@ class MonetizationAgent(BaseAgent):
     def __init__(self):
         super().__init__("Monetization Agent")
 
-    async def process(self, data: List[Dict]) -> Dict[str, Any]:
+    async def process(self, data: List[Dict], shared_context: Dict[str, Any], knowledge_base: Dict[str, Any]) -> Dict[str, Any]:
         affiliate_patterns = ['amazon', 'clickbank', 'shareasale', 'rakuten', 'cj.com', 'partner', 'affiliate']
 
         found_opportunities = []

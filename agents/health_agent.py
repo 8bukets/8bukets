@@ -15,7 +15,7 @@ class HealthCheckAgent(BaseAgent):
         except:
             return 0
 
-    async def process(self, data: List[Dict]) -> Dict[str, Any]:
+    async def process(self, data: List[Dict], shared_context: Dict[str, Any], knowledge_base: Dict[str, Any]) -> Dict[str, Any]:
         links = [p.get('external_link') for p in data if p.get('external_link')]
         if not links:
             return {"Health Status": "No links to check"}
