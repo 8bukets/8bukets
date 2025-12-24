@@ -26,19 +26,22 @@ def run_orchestration(save_report=True):
     health_status = health_agent.run()
     report_data['health'] = health_status
 
-    if health_status.get("status") != "healthy":
+    if health_status.get("site_status") != "healthy":
         logger.error("Target site is unhealthy. Aborting operation.")
-        return report_data
+        # We proceed if robots.txt issues but site is up
 
     # 2. Research
     research_agent = ResearcherAgent()
     # Limit to 2 pages for daily updates
     raw_data = research_agent.run({"limit": 2})
-    report_data['posts_scraped'] = len(raw_data)
+    report_data['research'] = {
+        'posts_scraped': len(raw_data.get('blog_posts', [])),
+        'google_results': len(raw_data.get('google_listings', []))
+    }
 
-    if not raw_data:
-        logger.warning("No data scraped.")
-        return report_data
+    if not raw_data.get('blog_posts'):
+        logger.warning("No blog data scraped.")
+        # Proceed with partial data if possible
 
     # 3. Analyze
     analyzer_agent = AnalyzerAgent()
@@ -57,7 +60,8 @@ def run_orchestration(save_report=True):
 
     # 6. Monetization
     monetization_agent = MonetizationAgent()
-    monetization_result = monetization_agent.run(raw_data)
+    # Monetization checks blog posts mainly
+    monetization_result = monetization_agent.run(raw_data.get('blog_posts', []))
     report_data['monetization'] = monetization_result
 
     # 7. Create Content
@@ -84,12 +88,19 @@ def save_daily_report(data):
         # Health
         f.write("## 1. System Health\n")
         status = data.get('health', {})
-        f.write(f"- **Status:** {status.get('status')}\n")
-        f.write(f"- **Code:** {status.get('code')}\n\n")
+        f.write(f"- **Site Status:** {status.get('site_status')} (Code: {status.get('site_code')})\n")
+        f.write(f"- **Robots.txt Access:** {status.get('robots_txt_accessible')}\n")
+        f.write(f"- **Googlebot Allowed:** {status.get('googlebot_allowed')}\n\n")
+
+        # Research Stats
+        research = data.get('research', {})
+        f.write("## 2. Research Summary\n")
+        f.write(f"- **New Posts Scraped:** {research.get('posts_scraped')}\n")
+        f.write(f"- **Google Listings Found:** {research.get('google_results')}\n\n")
 
         # Intelligence
         intel = data.get('intelligence', {})
-        f.write("## 2. Strategic Intelligence\n")
+        f.write("## 3. Strategic Intelligence\n")
         f.write(f"- **Recommended Focus:** {intel.get('recommended_focus')}\n")
         for insight in intel.get('insights', []):
             f.write(f"- {insight}\n")
@@ -97,7 +108,7 @@ def save_daily_report(data):
 
         # Monetization
         money = data.get('monetization', {})
-        f.write("## 3. Monetization Review\n")
+        f.write("## 4. Monetization Review\n")
         f.write(f"- **Summary:** {money.get('summary')}\n")
         for detail in money.get('details', []):
             f.write(f"- {detail}\n")
@@ -105,14 +116,14 @@ def save_daily_report(data):
 
         # Creativity
         creative = data.get('creativity', {})
-        f.write("## 4. Creative Brainstorming\n")
+        f.write("## 5. Creative Brainstorming\n")
         for idea in creative.get('creative_ideas', []):
             f.write(f"- {idea}\n")
         f.write("\n")
 
         # Content Draft
         draft = data.get('content_draft', {})
-        f.write("## 5. Automated Content Draft\n")
+        f.write("## 6. Automated Content Draft\n")
         f.write(f"### {draft.get('draft_title', 'Untitled')}\n\n")
         f.write(draft.get('draft_content', ''))
 
