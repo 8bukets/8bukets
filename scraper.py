@@ -29,6 +29,19 @@ class WordpressScraperAsync:
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+        self.disallowed_paths = []
+
+    def set_disallowed_paths(self, paths: List[str]):
+        self.disallowed_paths = paths
+
+    def is_allowed(self, url: str) -> bool:
+        if not self.disallowed_paths:
+            return True
+        path = urlparse(url).path
+        for disallowed in self.disallowed_paths:
+            if path.startswith(disallowed):
+                return False
+        return True
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -62,6 +75,9 @@ class WordpressScraperAsync:
 
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
         url = f"{self.base_url}page/{page_num}/" if page_num > 1 else self.base_url
+        if not self.is_allowed(url):
+            logger.info(f"Skipping disallowed URL: {url}")
+            return None
         try:
             async with session.get(url) as response:
                 if response.status == 404:

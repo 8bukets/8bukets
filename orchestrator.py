@@ -8,6 +8,10 @@ from agents.monetization_agent import MonetizationAgent
 from agents.creativity_agent import CreativityAgent
 from agents.content_agent import ContentAgent
 from agents.health_agent import HealthCheckAgent
+from agents.compliance_agent import ComplianceAgent
+from agents.ads_agent import AdsAgent
+from agents.learning_agent import LearningAgent
+from agents.antigravity_agent import AntigravityAgent
 
 # Configure logging
 logging.basicConfig(
@@ -20,13 +24,17 @@ logger = logging.getLogger("Orchestrator")
 class Orchestrator:
     def __init__(self):
         self.agents = [
+            ComplianceAgent(), # First check compliance
             ResearchAgent(),
             AnalyzeAgent(),
             IntelligenceAgent(),
             MonetizationAgent(),
+            AdsAgent(), # New ads agent
             CreativityAgent(),
+            AntigravityAgent(), # Fun/Innovation
             ContentAgent(),
-            HealthCheckAgent()
+            HealthCheckAgent(),
+            LearningAgent() # Last to learn from the cycle
         ]
         self.context = {}
 
