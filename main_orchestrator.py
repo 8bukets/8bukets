@@ -1,5 +1,7 @@
 import logging
 import sys
+import datetime
+import os
 from agents.researcher import ResearcherAgent
 from agents.analyzer import AnalyzerAgent
 from agents.intelligence import IntelligenceAgent
@@ -15,57 +17,106 @@ logging.basicConfig(
 )
 logger = logging.getLogger("Orchestrator")
 
-def run_orchestration():
+def run_orchestration(save_report=True):
     logger.info(">>> STARTING AUTONOMOUS AGENT SWARM <<<")
+    report_data = {}
 
     # 1. Health Check
     health_agent = HealthCheckAgent()
     health_status = health_agent.run()
-    logger.info(f"Health Status: {health_status}")
+    report_data['health'] = health_status
 
     if health_status.get("status") != "healthy":
         logger.error("Target site is unhealthy. Aborting operation.")
-        return
+        return report_data
 
     # 2. Research
     research_agent = ResearcherAgent()
-    # Limit to 2 pages for quick demonstration
+    # Limit to 2 pages for daily updates
     raw_data = research_agent.run({"limit": 2})
+    report_data['posts_scraped'] = len(raw_data)
 
     if not raw_data:
         logger.warning("No data scraped.")
-        return
+        return report_data
 
     # 3. Analyze
     analyzer_agent = AnalyzerAgent()
     analysis_result = analyzer_agent.run(raw_data)
+    report_data['analysis'] = analysis_result
 
     # 4. Intelligence
     intelligence_agent = IntelligenceAgent()
     intelligence_result = intelligence_agent.run(analysis_result)
-    logger.info(f"Strategic Insight: {intelligence_result.get('recommended_focus')}")
+    report_data['intelligence'] = intelligence_result
 
     # 5. Creativity
     creativity_agent = CreativityAgent()
     creative_result = creativity_agent.run(analysis_result)
-    for idea in creative_result.get("creative_ideas", []):
-        logger.info(f"Creative Idea: {idea}")
+    report_data['creativity'] = creative_result
 
     # 6. Monetization
     monetization_agent = MonetizationAgent()
     monetization_result = monetization_agent.run(raw_data)
-    logger.info(f"Monetization Summary: {monetization_result.get('summary')}")
+    report_data['monetization'] = monetization_result
 
     # 7. Create Content
     content_agent = ContentCreatorAgent()
     content_draft = content_agent.run(intelligence_result)
-
-    # Output Draft
-    with open("agent_generated_draft.md", "w") as f:
-        f.write(content_draft.get("draft_content", ""))
-    logger.info("Content draft saved to agent_generated_draft.md")
+    report_data['content_draft'] = content_draft
 
     logger.info(">>> SWARM OPERATION COMPLETE <<<")
+
+    if save_report:
+        save_daily_report(report_data)
+
+    return report_data
+
+def save_daily_report(data):
+    today = datetime.datetime.now().strftime("%Y-%m-%d")
+    report_dir = "reports"
+    os.makedirs(report_dir, exist_ok=True)
+    report_file = os.path.join(report_dir, f"daily_report_{today}.md")
+
+    with open(report_file, "w", encoding="utf-8") as f:
+        f.write(f"# Daily Autonomous Report: {today}\n\n")
+
+        # Health
+        f.write("## 1. System Health\n")
+        status = data.get('health', {})
+        f.write(f"- **Status:** {status.get('status')}\n")
+        f.write(f"- **Code:** {status.get('code')}\n\n")
+
+        # Intelligence
+        intel = data.get('intelligence', {})
+        f.write("## 2. Strategic Intelligence\n")
+        f.write(f"- **Recommended Focus:** {intel.get('recommended_focus')}\n")
+        for insight in intel.get('insights', []):
+            f.write(f"- {insight}\n")
+        f.write("\n")
+
+        # Monetization
+        money = data.get('monetization', {})
+        f.write("## 3. Monetization Review\n")
+        f.write(f"- **Summary:** {money.get('summary')}\n")
+        for detail in money.get('details', []):
+            f.write(f"- {detail}\n")
+        f.write("\n")
+
+        # Creativity
+        creative = data.get('creativity', {})
+        f.write("## 4. Creative Brainstorming\n")
+        for idea in creative.get('creative_ideas', []):
+            f.write(f"- {idea}\n")
+        f.write("\n")
+
+        # Content Draft
+        draft = data.get('content_draft', {})
+        f.write("## 5. Automated Content Draft\n")
+        f.write(f"### {draft.get('draft_title', 'Untitled')}\n\n")
+        f.write(draft.get('draft_content', ''))
+
+    logger.info(f"Report saved to {report_file}")
 
 if __name__ == "__main__":
     run_orchestration()
