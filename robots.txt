@@ -5,3 +5,7 @@
 User-agent: *
 Allow: /
 Sitemap: https://wishlist.design.blog/sitemap.xml
+
+# Allow Google AdSense bot to crawl content for better ad targeting
+User-agent: Mediapartners-Google
+Allow: /
