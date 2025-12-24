@@ -7,7 +7,7 @@ import re
 import argparse
 import logging
 import time
-from typing import List, Dict, Optional, Set
+from typing import List, Dict, Optional, Set, Tuple
 from urllib.parse import urlparse
 
 # Configure logging
@@ -135,8 +135,6 @@ class MarkPositionScraperAsync:
 
     async def scrape(self):
         all_posts = []
-        page_num = 1
-        sem = asyncio.Semaphore(self.concurrency)
 
         # Headers
         headers = {
@@ -144,76 +142,72 @@ class MarkPositionScraperAsync:
         }
 
         async with aiohttp.ClientSession(headers=headers) as session:
-            # We don't know the total pages, so we have to fetch sequentially or in chunks until we hit 404/empty.
-            # Pure concurrent fetching of all pages requires knowing the max page.
-            # Heuristic: fetch in batches of `concurrency`. If any page in batch returns 404 or empty, stop.
+            tasks = set()
+            next_page = 1
+            results = []
+            stop_scheduling = False
 
-            # Actually, WordPress pages are sequential. If page N is 404, N+1 is likely 404 too.
-            # But fetching 100 pages 1-by-1 is slow.
-            # Let's try fetching chunks.
+            # Initial fill of the queue
+            while len(tasks) < self.concurrency and not stop_scheduling:
+                if self.max_pages and next_page > self.max_pages:
+                    stop_scheduling = True
+                    break
 
-            active = True
-            while active:
-                tasks = []
-                # Prepare a batch of pages
-                batch_start = page_num
-                # If max_pages is set, clamp the batch size
-                current_concurrency = self.concurrency
+                # Create task
+                task = asyncio.create_task(self.fetch_and_parse(session, next_page))
+                tasks.add(task)
+                next_page += 1
 
-                for i in range(current_concurrency):
-                    current_page = batch_start + i
-                    if self.max_pages and current_page > self.max_pages:
-                        active = False
+            while tasks:
+                # Wait for at least one task to complete
+                done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+                tasks = pending
+
+                for task in done:
+                    try:
+                        page_num, page_posts = await task
+
+                        if page_posts is None:
+                            # 404 or Error
+                            logger.info(f"Page {page_num} returned 404 or error. Stopping new scheduling.")
+                            stop_scheduling = True
+                        elif len(page_posts) == 0:
+                            logger.info(f"Page {page_num} has no articles. Stopping new scheduling.")
+                            stop_scheduling = True
+                        else:
+                            logger.info(f"Page {page_num} scraped ({len(page_posts)} posts).")
+                            results.append((page_num, page_posts))
+                    except Exception as e:
+                        logger.error(f"Task failed: {e}")
+                        # If a task fails unpredictably, we generally might want to continue or retry.
+                        # For now, we assume it's a transient error or a bad page, but don't stop everything unless necessary.
+                        # But typically consistent failure implies we should stop or retry.
+                        pass
+
+                # Schedule new tasks if slot is available and not stopping
+                while len(tasks) < self.concurrency and not stop_scheduling:
+                    if self.max_pages and next_page > self.max_pages:
+                        stop_scheduling = True
                         break
 
-                    # We create a task that acquires semaphore (though sem is less useful if we just create batch size = concurrency)
-                    tasks.append(self.fetch_and_parse(session, current_page, sem))
+                    task = asyncio.create_task(self.fetch_and_parse(session, next_page))
+                    tasks.add(task)
+                    next_page += 1
 
-                if not tasks:
-                    break
+        # Sort results by page number to ensure order
+        results.sort(key=lambda x: x[0])
 
-                logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
-                results = await asyncio.gather(*tasks)
-
-                # Check results
-                batch_posts_count = 0
-                stop_detected = False
-
-                # Results are ordered by page number
-                for idx, page_posts in enumerate(results):
-                    page_idx = batch_start + idx
-                    if page_posts is None:
-                        # 404 or Error
-                        logger.info(f"Page {page_idx} returned 404 or empty. Stopping.")
-                        stop_detected = True
-                        break # Don't process further pages in this batch effectively (though they were fetched)
-                    elif len(page_posts) == 0:
-                        logger.info(f"Page {page_idx} has no articles. Stopping.")
-                        stop_detected = True
-                        break
-                    else:
-                        all_posts.extend(page_posts)
-                        batch_posts_count += len(page_posts)
-
-                if stop_detected:
-                    break
-
-                if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
-                    logger.info("Reached max pages limit.")
-                    break
-
-                page_num += len(tasks)
-                # Small delay between batches
-                await asyncio.sleep(0.5)
+        for _, posts in results:
+            all_posts.extend(posts)
 
         self.save_data(all_posts)
 
-    async def fetch_and_parse(self, session, page_num, sem):
-        async with sem:
-            html = await self.fetch_page(session, page_num)
-            if html:
-                return await self.parse_page(html)
-            return None
+    async def fetch_and_parse(self, session, page_num) -> Tuple[int, Optional[List[Dict]]]:
+        html = await self.fetch_page(session, page_num)
+        if html:
+            posts = await self.parse_page(html)
+            return page_num, posts
+        return page_num, None
 
     def save_data(self, posts: List[Dict]):
         # JSON
