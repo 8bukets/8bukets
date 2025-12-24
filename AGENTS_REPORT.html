@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Agents Report</title>
+    <meta name="description" content="Daily autonomous agent report including analysis, insights, and opportunities.">
+    <style>
+        :root {{
+            --primary: #2563eb;
+            --surface: #ffffff;
+            --background: #f8fafc;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }}
+        body {{
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--background);
+            margin: 0;
+            padding: 2rem;
+        }}
+        .skip-link {{
+            position: absolute; top: -40px; left: 0; background: var(--primary); color: white; padding: 8px; z-index: 100;
+            text-decoration: none; font-weight: bold; transition: top 0.2s;
+        }}
+        .skip-link:focus {{ top: 0; }}
+        main {{
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }}
+        header {{ border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 2rem; }}
+        h1 {{ margin: 0; color: var(--text); font-size: 2rem; letter-spacing: -0.025em; }}
+        h2 {{ margin-top: 2.5rem; color: var(--primary); font-size: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }}
+        .meta {{ color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem; }}
+        .stat-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }}
+        .stat-card {{ background: var(--background); padding: 1rem; border-radius: 8px; border: 1px solid var(--border); }}
+        .stat-label {{ font-size: 0.875rem; color: var(--text-muted); display: block; }}
+        .stat-value {{ font-size: 1.5rem; font-weight: 700; color: var(--text); }}
+        ul {{ padding-left: 1.5rem; }}
+        li {{ margin-bottom: 0.5rem; }}
+        table {{ width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.95rem; }}
+        th, td {{ text-align: left; padding: 0.75rem; border-bottom: 1px solid var(--border); }}
+        th {{ background: var(--background); font-weight: 600; color: var(--text-muted); }}
+        tr:hover {{ background-color: #f1f5f9; }}
+        a {{ color: var(--primary); text-decoration: none; font-weight: 500; }}
+        a:hover {{ text-decoration: underline; }}
+        .tag {{ display: inline-block; padding: 0.25rem 0.5rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; background: var(--background); border: 1px solid var(--border); }}
+        .badge-ad {{ background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }}
+        footer {{ margin-top: 4rem; text-align: center; color: var(--text-muted); font-size: 0.875rem; }}
+        @media (max-width: 600px) {{
+            body {{ padding: 1rem; }}
+            main {{ padding: 1rem; }}
+            table {{ display: block; overflow-x: auto; white-space: nowrap; }}
+        }}
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <main id="main">
+        <header>
+            <h1>Autonomous Agents Report</h1>
+            <p class="meta">Generated on <time datetime="2025-12-24T19:05:55.310486">2025-12-24 19:05:55</time></p>
+        </header>
+
+        <section aria-labelledby="analysis-heading">
+            <h2 id="analysis-heading">📊 Analysis</h2>
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <span class="stat-label">Total Posts</span>
+                    <span class="stat-value">350</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Disallowed Paths</span>
+                    <span class="stat-value">10</span>
+                </div>
+            </div>
+            <p><strong>Date Range:</strong> 2020-10-22 to 2023-06-25</p>
+
+            <h3>Top Domains</h3>
+            <ul>
+                <li><strong>youtube.com</strong>: 70</li><li><strong>music.youtube.com</strong>: 34</li><li><strong>epidemicsound.com</strong>: 10</li><li><strong>billboard.com</strong>: 7</li><li><strong>music.apple.com</strong>: 6</li><li><strong>soundcloud.com</strong>: 5</li><li><strong>artistrepublik.com</strong>: 4</li><li><strong>spotify.com</strong>: 3</li><li><strong>steinberg.net</strong>: 3</li><li><strong>apple.com</strong>: 3</li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="intelligence-heading">
+            <h2 id="intelligence-heading">🧠 Intelligence Insights</h2>
+            <ul>
+                <li>Domain Dominance: &#x27;youtube.com&#x27; accounts for 70 links.</li><li>Content Focus: The primary category is &#x27;Music&#x27; (350 posts).</li><li>Key Contributor: Filip Keser is the most active author.</li><li>Activity Trend: Peak activity observed in 2022.</li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="ads-heading">
+            <h2 id="ads-heading">🎯 Advertising & Targeting</h2>
+            <div class='stat-card' style='margin-bottom:1rem;'><span class='tag badge-ad'>Strategy</span><p><strong>Target:</strong> Music</p><p><strong>Bid:</strong> $1.0</p><p><strong>Copy:</strong> <em>"Unlock your potential in Music today."</em></p></div>
+        </section>
+
+        <section aria-labelledby="creative-heading">
+            <h2 id="creative-heading">🎨 Creative Ideas</h2>
+            <ul>
+                <li>Top 10 Music Trends You Missed</li><li>The Ultimate Guide to Music</li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="fun-heading">
+            <h2 id="fun-heading">🎈 Google Antigravity</h2>
+            <p><strong>Hidden Gem:</strong> MTV HITS Playlist | MTV UK</p>
+            <p><strong>Title Range:</strong> 3 chars (Shortest) — 154 chars (Longest)</p>
+        </section>
+
+        <section aria-labelledby="monetization-heading">
+            <h2 id="monetization-heading">💰 Monetization Opportunities</h2>
+            <p>Found <strong>24</strong> potential items.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Keywords</th>
+                        <th scope="col">Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>STAY PLUGGED INTO YOUR FANS – With the Amazon Music for Artists app, instantly know how your fans are listening to your music. Available on web and mobile</td><td><span class='tag'>amazon</span></td><td><a href='https://artists.amazonmusic.com/' target='_blank'>Visit <span aria-hidden='true'>→</span></a></td></tr><tr><td>Spotify</td><td><span class='tag'>premium</span></td><td><a href='https://www.spotify.com/hr-hr/premium/?utm_source=hr-hr_brand_contextual_text&utm_medium=paidsearch&utm_campaign=alwayson_roe_hr_premiumbusiness_core_brand+contextual-mobile+text+exact+hr-hr+google&gclid=CjwKCAjw6fyXBhBgEiwAhhiZsl6doSZS1rdGnJIlDd99xyA7sIV1AYZYKyUGPrcog45zrV6_2o2TRBoCOlcQAvD_BwE&gclsrc=aw.ds' target='_blank'>Visit <span aria-hidden='true'>→</span></a></td></tr><tr><td>pointblankmusicschool</td><td><span class='tag'>course</span></td><td><a href='https://www.pointblankmusicschool.com/courses/online/' target='_blank'>Visit <span aria-hidden='true'>→</span></a></td></tr><tr><td>Glazbena kutija Web Shop</td><td><span class='tag'>shop</span></td><td><a href='https://www.glazbena-kutija.hr/' target='_blank'>Visit <span aria-hidden='true'>→</span></a></td></tr><tr><td>Buy Music Editing and Notation Software, Video Editing Software – Avid</td><td><span class='tag'>buy</span>, <span class='tag'>shop</span></td><td><a href='https://shop.avid.com/?rdp=1652211862524' target='_blank'>Visit <span aria-hidden='true'>→</span></a></td></tr><tr><td>Premium Music for Content Creators | Epidemic Sound</td><td><span class='tag'>premium</span></td><td><a href='https://www.epidemicsound.com/' target='_blank'>Visit <span aria-hidden='true'>→</span></a></td></tr><tr><td>Premium Music for Content Creators | Epidemic Sound</td><td><span class='tag'>premium</span></td><td><a href='https://www.epidemicsound.com/' target='_blank'>Visit <span aria-hidden='true'>→</span></a></td></tr><tr><td>THRIFT SHOP FEAT. WANZ</td><td><span class='tag'>shop</span></td><td><a href='https://www.youtube.com/embed/QK8mJJJvaes?feature=oembed' target='_blank'>Visit <span aria-hidden='true'>→</span></a></td></tr><tr><td>Upload &amp; sell your music on Apple, Spotify, Amazon and Google Play | DistroKid</td><td><span class='tag'>amazon</span></td><td><a href='https://distrokid.com/' target='_blank'>Visit <span aria-hidden='true'>→</span></a></td></tr><tr><td>BeatStars | World’s #1 Music Marketplace to Buy &amp; Sell Beats</td><td><span class='tag'>buy</span></td><td><a href='https://www.beatstars.com/' target='_blank'>Visit <span aria-hidden='true'>→</span></a></td></tr><tr><td>Google Play music</td><td><span class='tag'>store</span></td><td><a href='https://play.google.com/store/apps/dev?id=7418002299881635538' target='_blank'>Visit <span aria-hidden='true'>→</span></a></td></tr><tr><td>Build your own photography store | Picfair Plus | Picfair</td><td><span class='tag'>store</span></td><td><a href='https://www.picfair.com/plus' target='_blank'>Visit <span aria-hidden='true'>→</span></a></td></tr><tr><td>Free Stock Photos: High-Res Images for Websites &amp; Commercial Use</td><td><span class='tag'>shop</span></td><td><a href='https://burst.shopify.com/' target='_blank'>Visit <span aria-hidden='true'>→</span></a></td></tr><tr><td>‎Logic Pro on the Mac App Store</td><td><span class='tag'>store</span></td><td><a href='https://apps.apple.com/hr/app/logic-pro/id634148309?mt=12' target='_blank'>Visit <span aria-hidden='true'>→</span></a></td></tr><tr><td>‎Apple Podcasts on the App Store</td><td><span class='tag'>store</span></td><td><a href='https://apps.apple.com/us/app/apple-podcasts/id525463029' target='_blank'>Visit <span aria-hidden='true'>→</span></a></td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <footer>
+            <p>Generated by Autonomous Agents System | <a href="AGENTS_REPORT.md">View Markdown Version</a></p>
+        </footer>
+    </main>
+</body>
+</html>
