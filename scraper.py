@@ -29,6 +29,16 @@ class MarkPositionScraperAsync:
         self.concurrency = concurrency
         self.session = None
 
+    def sanitize_csv_field(self, field: Optional[str]) -> str:
+        """Sanitize field to prevent CSV injection."""
+        if field is None:
+            return ""
+        if not isinstance(field, str):
+            field = str(field)
+        if field.startswith(('=', '+', '-', '@')):
+            return "'" + field
+        return field
+
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
@@ -230,14 +240,17 @@ class MarkPositionScraperAsync:
                 writer = csv.writer(f)
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
+                    # Helper to sanitize and join categories if needed
+                    cats = ", ".join(post.get('categories', []))
+
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        self.sanitize_csv_field(post.get('title', '')),
+                        self.sanitize_csv_field(post.get('date', '')),
+                        self.sanitize_csv_field(post.get('author', '')),
+                        self.sanitize_csv_field(cats),
+                        self.sanitize_csv_field(post.get('external_link', '')),
+                        self.sanitize_csv_field(post.get('domain', '')),
+                        self.sanitize_csv_field(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
