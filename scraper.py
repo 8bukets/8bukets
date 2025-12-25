@@ -7,6 +7,7 @@ import re
 import argparse
 import logging
 import time
+import sys
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
@@ -14,7 +15,8 @@ from urllib.parse import urlparse
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
+    datefmt='%H:%M:%S',
+    stream=sys.stdout
 )
 logger = logging.getLogger(__name__)
 
@@ -146,6 +148,7 @@ class MarkPositionScraperAsync:
         all_posts = []
         page_num = 1
         sem = asyncio.Semaphore(self.concurrency)
+        start_time = time.time()
 
         # Headers
         headers = {
@@ -154,6 +157,13 @@ class MarkPositionScraperAsync:
 
         # Set a global timeout for all requests
         timeout = aiohttp.ClientTimeout(total=30)
+
+        # Color constants (safe)
+        GREEN = '\033[92m' if sys.stdout.isatty() else ''
+        RESET = '\033[0m' if sys.stdout.isatty() else ''
+        BOLD = '\033[1m' if sys.stdout.isatty() else ''
+
+        print(f"{BOLD}Starting Scraper...{RESET}")
 
         async with aiohttp.ClientSession(headers=headers, timeout=timeout) as session:
             # We don't know the total pages, so we have to fetch sequentially or in chunks until we hit 404/empty.
@@ -219,6 +229,8 @@ class MarkPositionScraperAsync:
                 await asyncio.sleep(0.5)
 
         self.save_data(all_posts)
+        elapsed = time.time() - start_time
+        print(f"\n{GREEN}{BOLD}✓ Scrape Complete!{RESET} Found {len(all_posts)} posts in {elapsed:.2f}s.")
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
