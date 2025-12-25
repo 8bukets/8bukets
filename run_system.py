@@ -15,6 +15,13 @@ from agents.monetization_agent import MonetizationAgent
 from agents.creativity_agent import CreativityAgent
 from agents.content_agent import ContentAgent
 
+# New Autonomous Agents
+from agents.robot_txt_agent import RobotTxtAgent
+from agents.targeting_agent import TargetingAgent
+from agents.ads_agent import AdsAgent
+from agents.bid_agent import BidAgent
+from agents.autonomous_intelligence_agent import AutonomousIntelligenceAgent
+
 # Configure Logging
 logging.basicConfig(
     level=logging.INFO,
@@ -25,10 +32,6 @@ logger = logging.getLogger("SystemOrchestrator")
 
 def run_scraper():
     logger.info("Starting Scraper...")
-    # Running scraper via subprocess to ensure clean state and async isolation
-    # We limit to 5 pages for the daily run to keep it quick, or remove limit for full run
-
-    # Check if scraper.py supports --limit (it does in current version)
     try:
         result = subprocess.run(
             ["python3", "scraper.py", "--limit", "5"],
@@ -60,32 +63,37 @@ def generate_daily_report(context, filename):
         with open(filename, 'w', encoding='utf-8') as f:
             f.write(f"# Daily Autonomous Report: {datetime.now().strftime('%Y-%m-%d')}\n\n")
 
-            f.write("## 1. Health Status\n")
+            f.write(f"**Autonomous Status:** {context.get('autonomous_status', 'UNKNOWN')}\n\n")
+
+            f.write("## 1. Ecosystem Health\n")
             health = context.get("health_report", {})
-            f.write(f"**Status:** {health.get('status', 'UNKNOWN')}\n")
             for check in health.get("checks", []):
                 f.write(f"- {check}\n")
+            robots = context.get("robots_txt", {})
+            f.write(f"- **Robots.txt:** {robots.get('status', 'N/A')} (Disallowed: {len(robots.get('disallowed_paths', []))})\n")
 
-            f.write("\n## 2. Market Analysis\n")
+            f.write("\n## 2. Targeting & Strategy\n")
+            targeting = context.get("targeting_profile", {})
+            f.write(f"- **Persona:** {targeting.get('primary_persona', 'N/A')}\n")
+            f.write(f"- **Intent:** {targeting.get('intent', 'N/A')}\n")
+
+            f.write("\n## 3. Bid Intelligence\n")
+            bid = context.get("bid_strategy", {})
+            f.write(f"- **Strategy:** {bid.get('strategy', 'N/A')}\n")
+            f.write(f"- **Recommended CPM:** ${bid.get('recommended_cpm', 0.00)}\n")
+            f.write(f"- **Self-Optimization Factor:** {bid.get('adjustment_factor', 1.0)}\n")
+
+            f.write("\n## 4. Ads Generation\n")
+            for ad in context.get("generated_ads", []):
+                f.write(f"### {ad.get('headline')}\n")
+                f.write(f"- Target: {ad.get('target_audience')}\n")
+                f.write(f"- CTA: {ad.get('cta')}\n")
+
+            f.write("\n## 5. Market Analysis\n")
             stats = context.get("analysis_stats", {})
-            f.write(f"- **Total Posts Scraped:** {stats.get('total_posts')}\n")
-            f.write("### Top Domains\n")
-            for d, c in stats.get("top_domains", {}).items():
-                f.write(f"- {d}: {c}\n")
+            f.write(f"- **Total Posts:** {stats.get('total_posts')}\n")
 
-            f.write("\n## 3. Intelligence & Research\n")
-            for note in context.get("research_notes", []):
-                f.write(f"- {note}\n")
-            f.write("\n**Insights:**\n")
-            for insight in context.get("intelligence_insights", []):
-                f.write(f"- {insight}\n")
-
-            f.write("\n## 4. Content Strategy\n")
-            f.write("### Creative Angles\n")
-            for angle in context.get("creative_angles", []):
-                f.write(f"- {angle}\n")
-
-            f.write("\n### Draft Content\n")
+            f.write("\n## 6. Content Draft\n")
             f.write("```text\n")
             f.write(context.get("generated_content", ""))
             f.write("\n```\n")
@@ -95,7 +103,7 @@ def generate_daily_report(context, filename):
         logger.error(f"Failed to write report: {e}")
 
 def run_cycle():
-    logger.info("=== Starting Daily Cycle ===")
+    logger.info("=== Starting Daily Autonomous Cycle ===")
 
     # 1. Scrape
     if not run_scraper():
@@ -108,15 +116,20 @@ def run_cycle():
         logger.warning("No data loaded. Skipping agent execution.")
         return
 
-    # 3. Initialize Agents
+    # 3. Initialize Agents (Order Matters for Collaboration)
     agents = [
         HealthCheckAgent(),
+        RobotTxtAgent(),       # New: Check compliance first
         AnalysisAgent(),
         ResearchAgent(),
-        IntelligenceAgent(),
+        IntelligenceAgent(),   # Synthesizes Analysis & Research
+        TargetingAgent(),      # New: Depends on Intelligence
+        CreativityAgent(),     # Depends on Intelligence
+        AdsAgent(),            # New: Depends on Targeting & Creativity
+        BidAgent(),            # New: Depends on Targeting
         MonetizationAgent(),
-        CreativityAgent(),
-        ContentAgent()
+        ContentAgent(),
+        AutonomousIntelligenceAgent() # New: Overseer
     ]
 
     context = {}
@@ -124,6 +137,7 @@ def run_cycle():
     # 4. Run Pipeline
     for agent in agents:
         try:
+            # Collaboration: Each agent receives the full context accumulated so far
             result = agent.run(data, context)
             if result:
                 context.update(result)
