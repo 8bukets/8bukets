@@ -1,9 +1,0 @@
-*.pyc
-__pycache__/
-data.json
-data.csv
-data.txt
-reports/
-links.json
-links.csv
-unique_links.txt
