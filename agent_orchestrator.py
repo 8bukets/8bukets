@@ -90,43 +90,105 @@ class AgentOrchestrator:
         report_date = datetime.now().strftime("%Y-%m-%d")
         report_filename = os.path.join(self.report_dir, f"agent_report_{report_date}.md")
 
+        # Extract data for summary
+        h = outputs.get('HealthAgent', {})
+        i = outputs.get('IntelligenceAgent', {})
+        ads = outputs.get('AdManagerAgent', {})
+        a = outputs.get('AnalystAgent', {})
+        m = outputs.get('MonetizationAgent', {})
+        cc = outputs.get('CreatorAgent', {})
+
+        db_status = h.get('db_status', 'Unknown')
+        experience = i.get('experience_level', 'Unknown')
+        campaign_count = len(ads.get('campaigns', []))
+        opp_count = len(m.get('top_opportunities', []))
+
         with open(report_filename, "w", encoding="utf-8") as f:
             f.write(f"# 🤖 Autonomous Agent Report (Evolved) - {report_date}\n\n")
 
+            # --- Dashboard Summary ---
+            f.write("## 📊 Executive Summary\n\n")
+            f.write("| System Health | Experience | Active Campaigns | Monetization Opps |\n")
+            f.write("|---|---|---|---|\n")
+            # Use emojis for status
+            health_icon = "🟢" if "Connected" in str(db_status) else "🔴"
+            f.write(f"| {health_icon} {db_status} | 🧠 {experience} | 📢 {campaign_count} | 💰 {opp_count} |\n\n")
+
+            # --- Table of Contents ---
+            f.write("## 📑 Table of Contents<a id='table-of-contents'></a>\n\n")
+            f.write("- [System Health](#system-health)\n")
+            f.write("- [Intelligence](#intelligence-self-learning)\n")
+            f.write("- [Ad Manager](#ad-manager-autonomous)\n")
+            f.write("- [Analysis Data](#analysis-data)\n")
+            f.write("- [Monetization](#monetization)\n")
+            f.write("- [Content Draft](#content-draft)\n\n")
+
+            f.write("---\n\n")
+
+            # --- Sections ---
+
             # Health
-            h = outputs.get('HealthAgent', {})
-            f.write(f"## 🏥 System Health\n- DB: {h.get('db_status')}\n\n")
+            f.write(f"## 🏥 System Health<a id='system-health'></a>\n")
+            f.write(f"- **Database Status**: {db_status}\n\n")
+            f.write("[⬆️ Back to Top](#table-of-contents)\n\n")
 
-            # Intelligence (Evolved)
-            i = outputs.get('IntelligenceAgent', {})
-            f.write(f"## 🧠 Intelligence (Self-Learning)\n")
-            f.write(f"- **Experience**: {i.get('experience_level')}\n")
-            f.write(f"- **Strategy**: {i.get('strategy')}\n")
+            # Intelligence
+            f.write(f"## 🧠 Intelligence (Self-Learning)<a id='intelligence-self-learning'></a>\n")
+            f.write(f"- **Experience Level**: {experience}\n")
+            f.write(f"- **Current Strategy**: {i.get('strategy')}\n")
             f.write(f"- **Trend Alert**: {i.get('trend_alert')}\n\n")
+            f.write("[⬆️ Back to Top](#table-of-contents)\n\n")
 
-            # Ad Manager (New)
-            ads = outputs.get('AdManagerAgent', {})
-            f.write(f"## 📢 Ad Manager (Autonomous)\n")
+            # Ad Manager
+            f.write(f"## 📢 Ad Manager (Autonomous)<a id='ad-manager-autonomous'></a>\n")
             f.write(f"### Targeting\n- Audience: {ads.get('targeting', {}).get('primary_audience')}\n")
+
             f.write(f"### Bids\n")
-            for bid in ads.get('bidding_strategy', []):
-                f.write(f"- Keyword: `{bid['keyword']}` | Bid: ${bid['suggested_bid']}\n")
-            f.write(f"### Active Campaigns\n")
-            for camp in ads.get('campaigns', []):
-                f.write(f"- **{camp['name']}**: {camp['headline']} ({camp['type']})\n")
-            f.write("\n")
+            bids = ads.get('bidding_strategy', [])
+            if bids:
+                f.write("| Keyword | Bid |\n|---|---|\n")
+                for bid in bids:
+                    f.write(f"| `{bid['keyword']}` | ${bid['suggested_bid']} |\n")
+            else:
+                f.write("No bids generated.\n")
+
+            f.write(f"\n### Active Campaigns\n")
+            camps = ads.get('campaigns', [])
+            if camps:
+                for camp in camps:
+                    f.write(f"- **{camp['name']}** ({camp['type']}): _{camp['headline']}_\n")
+            else:
+                f.write("No active campaigns.\n")
+            f.write("\n[⬆️ Back to Top](#table-of-contents)\n\n")
 
             # Analysis
-            a = outputs.get('AnalystAgent', {})
-            f.write(f"## 📊 Analysis Data\n- Keywords: {a.get('keywords')}\n\n")
+            f.write(f"## 📊 Analysis Data<a id='analysis-data'></a>\n")
+            keywords = a.get('keywords')
+            if keywords:
+                f.write("**Top Keywords:**\n")
+                # Display keywords as tags/badges
+                f.write(" ".join([f"`{k}`" for k in keywords]))
+                f.write("\n")
+            else:
+                f.write("No keywords analyzed.\n")
+            f.write("\n[⬆️ Back to Top](#table-of-contents)\n\n")
 
             # Monetization
-            m = outputs.get('MonetizationAgent', {})
-            f.write(f"## 💰 Monetization\n- Opportunities: {len(m.get('top_opportunities', []))}\n\n")
+            f.write(f"## 💰 Monetization<a id='monetization'></a>\n")
+            f.write(f"**Identified Opportunities:** {opp_count}\n")
+            if opp_count > 0:
+                for opp in m.get('top_opportunities', []):
+                    f.write(f"- {opp}\n")
+            f.write("\n[⬆️ Back to Top](#table-of-contents)\n\n")
 
             # Content
-            cc = outputs.get('CreatorAgent', {})
-            f.write(f"## ✍️ Content Draft\n**{cc.get('draft_title')}**\n\n{cc.get('draft_content')}\n\n")
+            f.write(f"## ✍️ Content Draft<a id='content-draft'></a>\n")
+            draft_title = cc.get('draft_title', 'No Title')
+            draft_content = cc.get('draft_content', 'No content generated.')
+
+            f.write(f"### {draft_title}\n\n")
+            f.write(f"{draft_content}\n\n")
+            f.write("[⬆️ Back to Top](#table-of-contents)\n")
 
         logger.info(f"Agent Report generated: {report_filename}")
 
