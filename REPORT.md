@@ -1,6 +1,6 @@
 # Markposition Analytics Report
 
-**Generated on:** 2025-12-13 12:59:36
+**Generated on:** 2025-12-25 08:08:31
 
 ## General Statistics
 - **Total Posts:** 679
@@ -32,11 +32,11 @@
 | Online | 2 |
 
 ## Posts by Year
-| Year | Count |
-| :--- | :---: |
-| 2022 | 235 |
-| 2021 | 190 |
-| 2020 | 254 |
+| Year | Count | Distribution |
+| :--- | :---: | :--- |
+| 2022 | 235 | ██████████████████ |
+| 2021 | 190 | ██████████████ |
+| 2020 | 254 | ████████████████████ |
 
 ## Authors
 - Filip Keser: 679 posts
