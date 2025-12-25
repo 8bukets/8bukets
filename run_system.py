@@ -23,6 +23,7 @@ from agents.targeting_agent import TargetingAgent
 from agents.bid_agent import BidAgent
 from agents.programmatic_agent import ProgrammaticAgent
 from agents.autonomous_intelligence import AutonomousIntelligenceAgent
+from agents.developer_agent import DeveloperAgent
 
 # Configure Logging
 logging.basicConfig(
@@ -116,6 +117,17 @@ def save_report(results, output_dir="results"):
         f.write(f"**Insight:** {ai_meta.get('meta_insight')}\n")
         f.write(f"**Status:** {ai_meta.get('evolution_status')}\n")
 
+        # System Evolution (Developer Agent)
+        dev = results.get('developer', {})
+        f.write("\n## 9. System Evolution Proposals (Self-Improvement)\n")
+        if dev.get('feature_proposals'):
+            for prop in dev.get('feature_proposals', []):
+                f.write(f"### {prop['type']}: {prop['title']}\n")
+                f.write(f"- **Reason:** {prop['reason']}\n")
+                f.write(f"- **Proposed Code:**\n```python\n{prop['code_snippet']}\n```\n")
+        else:
+            f.write("No new features proposed this run.\n")
+
         # Content
         content = results.get('content', {})
         f.write("\n## 9. Content Draft\n")
@@ -184,6 +196,13 @@ def main():
 
     # --- Content Layer ---
     results['content'] = ContentAgent().run({"intelligence": results['intelligence']})
+
+    # --- Evolution Layer ---
+    # Developer Agent looks at system health and analysis to propose code changes
+    results['developer'] = DeveloperAgent().run({
+        "health": results['health'],
+        "analysis": results['analysis']
+    })
 
     # 4. Reporting
     save_report(results)

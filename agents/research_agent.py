@@ -25,7 +25,17 @@ class ResearchAgent(BaseAgent):
 
         topic_counts = Counter(words).most_common(20)
 
+        # Curiosity Module: Identify "Novel" keywords (rare but present)
+        # In a real system, we'd compare against long-term memory.
+        # Here, we simulate it by picking keywords that appear 2-3 times (not top 1, but present)
+        novelty_candidates = [w for w, c in Counter(words).items() if 2 <= c <= 4]
+        novel_trends = novelty_candidates[:5] # Pick top 5 novelties
+
+        # Save novelties to memory for future tracking
+        self.memory.update_learning("potential_emerging_trends", novel_trends)
+
         return {
             "trending_keywords": [t[0] for t in topic_counts],
-            "research_notes": f"Identified {len(topic_counts)} trending topics based on frequency analysis."
+            "novel_trends": novel_trends,
+            "research_notes": f"Identified {len(topic_counts)} trending topics. Flagged {len(novel_trends)} novel terms for curiosity tracking."
         }
