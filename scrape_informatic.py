@@ -6,6 +6,7 @@ import logging
 import argparse
 import sys
 from urllib.parse import urlparse
+from concurrent.futures import ThreadPoolExecutor
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from dataclasses import dataclass, asdict
@@ -137,40 +138,68 @@ def scrape(output_file: str, max_pages: int = 0):
     page = 1
     current_url = BASE_URL
 
-    while current_url:
-        if max_pages > 0 and page > max_pages:
-            logging.info(f"Reached max pages limit ({max_pages}). Stopping.")
-            break
+    with ThreadPoolExecutor(max_workers=1) as executor:
+        future_response = None
 
-        logging.info(f"Scraping page {page}: {current_url}...")
-        try:
-            response = session.get(current_url)
-            response.raise_for_status()
-        except requests.exceptions.RequestException as e:
-            logging.error(f"Error fetching {current_url}: {e}")
-            break
+        while current_url:
+            if max_pages > 0 and page > max_pages:
+                logging.info(f"Reached max pages limit ({max_pages}). Stopping.")
+                break
 
-        soup = BeautifulSoup(response.content, 'html.parser')
+            # If we have a future from the previous iteration, get the result
+            if future_response:
+                try:
+                    response = future_response.result()
+                    response.raise_for_status()
+                except requests.exceptions.RequestException as e:
+                    logging.error(f"Error fetching {current_url}: {e}")
+                    break
+                future_response = None
+            else:
+                # First iteration
+                logging.info(f"Scraping page {page}: {current_url}...")
+                try:
+                    response = session.get(current_url)
+                    response.raise_for_status()
+                except requests.exceptions.RequestException as e:
+                    logging.error(f"Error fetching {current_url}: {e}")
+                    break
 
-        posts = soup.find_all('article')
-        logging.info(f"Found {len(posts)} posts on page {page}.")
+            soup = BeautifulSoup(response.content, 'html.parser')
 
-        for post_soup in posts:
-            try:
-                post_obj = parse_post_html(post_soup, BASE_URL)
-                all_posts.append(post_obj)
-            except Exception as e:
-                logging.error(f"Error parsing post on page {page}: {e}")
+            # Identify next URL and start fetching immediately (if needed)
+            next_url = None
+            nav_previous = soup.find('div', class_='nav-previous')
+            if nav_previous and nav_previous.find('a'):
+                next_url = nav_previous.find('a')['href']
 
-        # Pagination
-        nav_previous = soup.find('div', class_='nav-previous')
-        if nav_previous and nav_previous.find('a'):
-            current_url = nav_previous.find('a')['href']
-            page += 1
-            time.sleep(1) # Polite delay
-        else:
-            current_url = None
-            logging.info("No more pages found.")
+            # Start fetching next page in background if applicable
+            if next_url and (max_pages == 0 or page + 1 <= max_pages):
+                logging.info(f"Prefetching page {page + 1}: {next_url}...")
+                future_response = executor.submit(session.get, next_url)
+                # Note: Explicit time.sleep(1) removed. The processing time for the current page
+                # acts as a natural rate limiter for the next request.
+            else:
+                future_response = None
+
+            # Process posts (CPU bound)
+            posts = soup.find_all('article')
+            logging.info(f"Found {len(posts)} posts on page {page}.")
+
+            for post_soup in posts:
+                try:
+                    post_obj = parse_post_html(post_soup, BASE_URL)
+                    all_posts.append(post_obj)
+                except Exception as e:
+                    logging.error(f"Error parsing post on page {page}: {e}")
+
+            # Prepare for next iteration
+            if next_url:
+                current_url = next_url
+                page += 1
+            else:
+                current_url = None
+                logging.info("No more pages found.")
 
     logging.info(f"Total posts scraped: {len(all_posts)}")
 
