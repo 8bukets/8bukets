@@ -46,8 +46,11 @@ class MarkPositionScraperAsync:
         return text
 
     def is_url(self, text: str) -> bool:
-        """Check if text looks like a URL."""
-        return re.match(r'^https?://', text.strip()) is not None
+        """Check if text looks like a valid HTTP/HTTPS URL."""
+        if not text:
+            return False
+        text = text.strip()
+        return re.match(r'^https?://', text) is not None
 
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
@@ -121,12 +124,16 @@ class MarkPositionScraperAsync:
             if content_div:
                 link_tag = content_div.select_one('a')
                 if link_tag:
-                    external_link = link_tag.get('href')
+                    link_href = link_tag.get('href')
+                    if link_href and self.is_url(link_href):
+                        external_link = link_href
 
                 if not external_link:
                     iframe_tag = content_div.select_one('iframe')
                     if iframe_tag:
-                        external_link = iframe_tag.get('src')
+                        iframe_src = iframe_tag.get('src')
+                        if iframe_src and self.is_url(iframe_src):
+                            external_link = iframe_src
 
             if not external_link and title_text and self.is_url(title_text):
                 external_link = title_text
