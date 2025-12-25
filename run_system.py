@@ -17,7 +17,39 @@ from agents.programmatic_ads_agent import ProgrammaticAdsAgent
 from agents.ads_agent import AdsAgent
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
+import sys
+
+class ColorFormatter(logging.Formatter):
+    grey = "\x1b[38;20m"
+    green = "\x1b[32;20m"
+    yellow = "\x1b[33;20m"
+    red = "\x1b[31;20m"
+    bold_red = "\x1b[31;1m"
+    reset = "\x1b[0m"
+    format_str = "%(asctime)s - %(message)s"
+
+    FORMATS = {
+        logging.DEBUG: grey + format_str + reset,
+        logging.INFO: green + format_str + reset,
+        logging.WARNING: yellow + format_str + reset,
+        logging.ERROR: red + format_str + reset,
+        logging.CRITICAL: bold_red + format_str + reset
+    }
+
+    def format(self, record):
+        log_fmt = self.FORMATS.get(record.levelno)
+        formatter = logging.Formatter(log_fmt, datefmt='%H:%M:%S')
+        return formatter.format(record)
+
+# Setup root logger
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+handler = logging.StreamHandler(sys.stdout)
+handler.setFormatter(ColorFormatter())
+if logger.hasHandlers():
+    logger.handlers.clear()
+logger.addHandler(handler)
+
 logger = logging.getLogger(__name__)
 
 RESULTS_DIR = "results"
@@ -27,7 +59,7 @@ def load_data(filepath):
         with open(filepath, 'r', encoding='utf-8') as f:
             return json.load(f)
     except FileNotFoundError:
-        logger.error(f"File {filepath} not found. Run scraper first.")
+        logger.error(f"❌ File {filepath} not found. Run scraper first.")
         return []
 
 def save_result(filename, content, date_str=None):
@@ -42,23 +74,23 @@ def save_result(filename, content, date_str=None):
             json.dump(content, f, indent=4)
         else:
             f.write(str(content))
-    logger.info(f"Saved result to {filepath}")
+    logger.info(f"💾 Saved result to {filepath}")
 
 def run_pipeline(skip_scrape=False):
     current_date = datetime.now().strftime('%Y-%m-%d')
-    logger.info(f"Starting Pipeline for {current_date}...")
+    logger.info(f"🚀 Starting Pipeline for {current_date}...")
 
     # 1. Scrape
     if not skip_scrape:
-        logger.info("Starting Scraper...")
+        logger.info("🕷️  Starting Scraper...")
         subprocess.run(["python3", "scraper.py"], check=True)
     else:
-        logger.info("Skipping scrape...")
+        logger.info("⏩ Skipping scrape...")
 
     # 2. Load Data
     data = load_data("links.json")
     if not data:
-        logger.warning("No data to process.")
+        logger.warning("⚠️  No data to process.")
         return
 
     # 3. Instantiate Agents
@@ -74,7 +106,7 @@ def run_pipeline(skip_scrape=False):
     ads_agent = AdsAgent()
 
     # 4. Pipeline Execution
-    logger.info("Starting Agent Pipeline...")
+    logger.info("🤖 Starting Agent Pipeline...")
     results_aggregator = {}
 
     # Health Check
@@ -83,7 +115,7 @@ def run_pipeline(skip_scrape=False):
     results_aggregator['health'] = health_results
 
     if health_results['status'] != "Healthy" and health_results['record_count'] == 0:
-        logger.error("Data unhealthy or empty. Aborting pipeline.")
+        logger.error("❌ Data unhealthy or empty. Aborting pipeline.")
         return
 
     # Analysis
@@ -123,7 +155,7 @@ def run_pipeline(skip_scrape=False):
     summary = ai_agent.process(results_aggregator)
     save_result("executive_summary.txt", summary, current_date)
 
-    logger.info(f"Pipeline Complete for {current_date}. Check 'results/' directory.")
+    logger.info(f"✨ Pipeline Complete for {current_date}. Check 'results/' directory.")
 
 def main():
     parser = argparse.ArgumentParser(description="Run Autonomous Agents System")
@@ -133,14 +165,14 @@ def main():
     args = parser.parse_args()
 
     if args.daemon:
-        logger.info(f"Starting Daemon Mode. Running every {args.interval} seconds.")
+        logger.info(f"🔄 Starting Daemon Mode. Running every {args.interval} seconds.")
         while True:
             try:
                 run_pipeline(skip_scrape=args.skip_scrape)
             except Exception as e:
-                logger.error(f"Pipeline failed: {e}")
+                logger.error(f"❌ Pipeline failed: {e}")
 
-            logger.info(f"Sleeping for {args.interval} seconds...")
+            logger.info(f"💤 Sleeping for {args.interval} seconds...")
             time.sleep(args.interval)
     else:
         run_pipeline(skip_scrape=args.skip_scrape)
