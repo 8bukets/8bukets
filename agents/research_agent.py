@@ -5,7 +5,7 @@ class ResearchAgent(BaseAgent):
     def __init__(self):
         super().__init__("Research Agent")
 
-    def run(self, data):
+    def run(self, data, context=None):
         self.log("Identifying trends...")
         # Trend detection based on keywords in titles
         keywords = []

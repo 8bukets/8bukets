@@ -9,6 +9,7 @@ import logging
 import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
+from urllib.robotparser import RobotFileParser
 
 # Configure logging
 logging.basicConfig(
@@ -28,6 +29,35 @@ class MarkPositionScraperAsync:
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+        self.rp = RobotFileParser()
+
+    async def check_robots_txt(self) -> bool:
+        """Check if scraping is allowed by robots.txt."""
+        robots_url = f"{BASE_URL}robots.txt"
+        logger.info(f"Checking robots.txt at {robots_url}...")
+        try:
+            # RobotFileParser is synchronous, but fetching can be async.
+            # However, standard usage implies fetching via set_url + read.
+            # We will use aiohttp to fetch, then feed to parser.
+            async with aiohttp.ClientSession() as session:
+                async with session.get(robots_url) as response:
+                    if response.status == 200:
+                        content = await response.text()
+                        self.rp.parse(content.splitlines())
+                        # Check if our User-Agent is allowed
+                        # We use a generic one or specific if configured
+                        user_agent = "*"
+                        if not self.rp.can_fetch(user_agent, BASE_URL):
+                            logger.warning("Scraping disallowed by robots.txt")
+                            return False
+                        logger.info("Scraping allowed by robots.txt")
+                        return True
+                    else:
+                        logger.warning(f"robots.txt not found (status {response.status}). Assuming allowed.")
+                        return True
+        except Exception as e:
+            logger.error(f"Error checking robots.txt: {e}. Assuming allowed.")
+            return True
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -134,6 +164,12 @@ class MarkPositionScraperAsync:
         return page_posts
 
     async def scrape(self):
+        # Check robots.txt first
+        allowed = await self.check_robots_txt()
+        if not allowed:
+            logger.error("Aborting scrape due to robots.txt restrictions.")
+            return
+
         all_posts = []
         page_num = 1
         sem = asyncio.Semaphore(self.concurrency)

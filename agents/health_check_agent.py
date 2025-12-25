@@ -4,7 +4,7 @@ class HealthCheckAgent(BaseAgent):
     def __init__(self):
         super().__init__("Health Check Agent")
 
-    def run(self, data):
+    def run(self, data, context=None):
         self.log("Running health checks...")
 
         missing_link_count = 0

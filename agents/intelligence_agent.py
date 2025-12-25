@@ -4,7 +4,7 @@ class IntelligenceAgent(BaseAgent):
     def __init__(self):
         super().__init__("Intelligence Agent")
 
-    def run(self, data):
+    def run(self, data, context=None):
         self.log("Gathering intelligence...")
 
         # Identify high-value targets (e.g., .gov or .edu domains, or specific tech giants)
