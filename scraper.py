@@ -58,19 +58,31 @@ class OracleNewsScraper:
             return None
 
     def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
-
-        # Find comments containing the news section
-        comments = soup.find_all(string=lambda text: isinstance(text, Comment))
+        # Optimization: Use Regex to find the specific comment block containing the news section.
+        # This avoids parsing the entire HTML page with BeautifulSoup, which is slow for large pages.
+        # We look for a comment containing 'rc92v0' and '<section'.
+        pattern = re.compile(r'<!--(.*?)-->', re.DOTALL)
         news_html = None
-        for c in comments:
-            if 'rc92v0' in c and '<section' in c:
-                news_html = c
+
+        for match in pattern.finditer(html):
+            content = match.group(1)
+            # Efficiently check for markers in the comment content
+            if 'rc92v0' in content and '<section' in content:
+                news_html = content
                 break
 
         if not news_html:
             logger.warning("Could not find hidden news section in HTML comments.")
-            return []
+            # Fallback to BeautifulSoup if regex fails (though unlikely if structure is consistent)
+            soup = BeautifulSoup(html, 'html.parser')
+            comments = soup.find_all(string=lambda text: isinstance(text, Comment))
+            for c in comments:
+                if 'rc92v0' in c and '<section' in c:
+                    news_html = c
+                    break
+
+            if not news_html:
+                return []
 
         news_soup = BeautifulSoup(news_html, 'html.parser')
         articles = news_soup.find_all('li', class_='rc92w3')
