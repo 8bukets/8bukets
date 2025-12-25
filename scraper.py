@@ -20,6 +20,10 @@ logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
 
+# Pre-compile regex patterns for performance
+WHITESPACE_REGEX = re.compile(r'\s+')
+URL_REGEX = re.compile(r'^https?://')
+
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
@@ -34,11 +38,11 @@ class MarkPositionScraperAsync:
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return WHITESPACE_REGEX.sub(' ', text).strip()
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
-        return re.match(r'^https?://', text.strip()) is not None
+        return URL_REGEX.match(text.strip()) is not None
 
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
@@ -71,7 +75,8 @@ class MarkPositionScraperAsync:
             logger.error(f"Error fetching page {page_num}: {e}")
             return None
 
-    async def parse_page(self, html: str) -> List[Dict]:
+    def _parse_page_sync(self, html: str) -> List[Dict]:
+        """Synchronous parsing logic to be run in executor."""
         soup = BeautifulSoup(html, 'lxml')
         articles = soup.find_all('article', class_='post')
         page_posts = []
@@ -132,6 +137,11 @@ class MarkPositionScraperAsync:
             page_posts.append(post_data)
 
         return page_posts
+
+    async def parse_page(self, html: str) -> List[Dict]:
+        """Offload CPU-bound parsing to a thread pool to avoid blocking the event loop."""
+        loop = asyncio.get_running_loop()
+        return await loop.run_in_executor(None, self._parse_page_sync, html)
 
     async def scrape(self):
         all_posts = []
