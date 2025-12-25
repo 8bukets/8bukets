@@ -25,8 +25,16 @@ class MarkPositionScraperAsync:
         self.output_json = output_json
         self.output_csv = output_csv
         self.output_txt = output_txt
+
+        # Security: Input validation
+        if max_pages is not None and max_pages <= 0:
+            raise ValueError("max_pages must be a positive integer")
         self.max_pages = max_pages
+
+        if concurrency <= 0:
+            raise ValueError("concurrency must be a positive integer")
         self.concurrency = concurrency
+
         self.session = None
 
     def clean_text(self, text: str) -> str:
@@ -35,6 +43,16 @@ class MarkPositionScraperAsync:
             return ""
         text = text.replace('\xa0', ' ')
         return re.sub(r'\s+', ' ', text).strip()
+
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text to prevent CSV injection (formula injection)."""
+        if not text:
+            return ""
+        # If the text starts with specific characters, prepend a single quote
+        # to force it to be treated as a string in Excel/Calc.
+        if text.startswith(('=', '+', '-', '@', '%')):
+            return "'" + text
+        return text
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
@@ -143,7 +161,10 @@ class MarkPositionScraperAsync:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
 
-        async with aiohttp.ClientSession(headers=headers) as session:
+        # Security: Set global timeout for all requests to prevent hanging
+        timeout = aiohttp.ClientTimeout(total=30)
+
+        async with aiohttp.ClientSession(headers=headers, timeout=timeout) as session:
             # We don't know the total pages, so we have to fetch sequentially or in chunks until we hit 404/empty.
             # Pure concurrent fetching of all pages requires knowing the max page.
             # Heuristic: fetch in batches of `concurrency`. If any page in batch returns 404 or empty, stop.
@@ -231,13 +252,13 @@ class MarkPositionScraperAsync:
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        self.sanitize_for_csv(post.get('title', '')),
+                        self.sanitize_for_csv(post.get('date', '')),
+                        self.sanitize_for_csv(post.get('author', '')),
+                        self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                        self.sanitize_for_csv(post.get('external_link', '')),
+                        self.sanitize_for_csv(post.get('domain', '')),
+                        self.sanitize_for_csv(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
