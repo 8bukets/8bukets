@@ -9,6 +9,7 @@ from agents.health import HealthAgent
 from agents.monetization import MonetizationAgent
 from agents.creative import CreativeAgent
 from agents.ad_manager import AdManagerAgent
+from agents.curiosity import CuriosityAgent
 
 # Configure logging
 logging.basicConfig(
@@ -29,9 +30,10 @@ class AgentOrchestrator:
         self.researcher_agent = ResearcherAgent()
         self.intelligence_agent = IntelligenceAgent()
         self.monetization_agent = MonetizationAgent()
+        self.curiosity_agent = CuriosityAgent() # New
         self.creative_agent = CreativeAgent()
         self.ad_manager_agent = AdManagerAgent()
-        self.creator_agent = CreatorAgent() # Content creator
+        self.creator_agent = CreatorAgent()
 
     def run_agents(self):
         logger.info("Orchestrating agents with Collaboration Protocol...")
@@ -43,29 +45,14 @@ class AgentOrchestrator:
         outputs['ResearcherAgent'] = self.researcher_agent.run()
         outputs['MonetizationAgent'] = self.monetization_agent.run()
 
-        # 2. Collaborative Agents (Need input from above)
+        # 2. Collaborative Agents
 
-        # Intelligence needs Analysis
-        intel_context = {
-            'keywords': outputs['AnalystAgent'].get('keywords', [])
-        }
-        outputs['IntelligenceAgent'] = self.intelligence_agent.run() # Pass context if supported, currently via modifying run or perform_task
-        # Quick fix: calling perform_task directly for context or modifying Base Agent.
-        # Ideally, we update perform_task to accept context.
-        # Since Base Agent .run() calls .perform_task() without args, we need to handle this.
-        # For this iteration, let's update the specific agents to accept context via a setter or constructor?
-        # Or simpler: Override .run() or just call perform_task logic directly here?
-        # Best approach: Update Agent.run to accept **kwargs and pass to perform_task.
-        # But I can't change Base Agent easily without breaking others potentially.
-        # I'll manually execute the logic with context for these specific agents by calling perform_task directly if I hadn't updated base.
-        # But wait, I updated ad_manager and intelligence to accept context in perform_task.
-        # I need to update Base Agent to support passing args.
-
-        # Let's override the run method call here effectively.
+        # Intelligence
+        intel_context = {'keywords': outputs['AnalystAgent'].get('keywords', [])}
         self.intelligence_agent.perform_task(context=intel_context)
         outputs['IntelligenceAgent'] = self.intelligence_agent.results
 
-        # AdManager needs Analysis + Monetization
+        # AdManager
         ad_context = {
             'keywords': outputs['AnalystAgent'].get('keywords', []),
             'top_opportunities': outputs['MonetizationAgent'].get('top_opportunities', [])
@@ -73,15 +60,22 @@ class AgentOrchestrator:
         self.ad_manager_agent.perform_task(context=ad_context)
         outputs['AdManagerAgent'] = self.ad_manager_agent.results
 
-        # 3. Creative/Output Agents (Need input from Intelligence/Ads)
-        outputs['CreativeAgent'] = self.creative_agent.run()
+        # Curiosity (Exploration)
+        # Needs no input, but uses DB.
+        outputs['CuriosityAgent'] = self.curiosity_agent.run()
 
-        # Creator needs Ad/Strategy context
-        creator_context = {
-            'strategy': outputs['IntelligenceAgent'].get('strategy')
+        # Creative (Innovation)
+        # Needs Curiosity context
+        creative_context = {
+            'curiosity_findings': outputs['CuriosityAgent'].get('findings', []),
+            'exploration_query': outputs['CuriosityAgent'].get('exploration_query', '')
         }
-        # Assuming CreatorAgent was updated or doesn't need context yet. The prompt implied "create content... with 100% intelligence".
-        # I didn't update CreatorAgent to take context in the previous plan step, but I can do it now implicitly or just run it.
+        self.creative_agent.perform_task(context=creative_context)
+        outputs['CreativeAgent'] = self.creative_agent.results
+
+        # Creator (Content)
+        # Creator needs Ad/Strategy context
+        # Ideally we pass Strategy here too
         outputs['CreatorAgent'] = self.creator_agent.run()
 
         self.generate_report(outputs)
@@ -91,34 +85,36 @@ class AgentOrchestrator:
         report_filename = os.path.join(self.report_dir, f"agent_report_{report_date}.md")
 
         with open(report_filename, "w", encoding="utf-8") as f:
-            f.write(f"# 🤖 Autonomous Agent Report (Evolved) - {report_date}\n\n")
+            f.write(f"# 🤖 Autonomous Agent Report (Evolved v2) - {report_date}\n\n")
 
             # Health
             h = outputs.get('HealthAgent', {})
             f.write(f"## 🏥 System Health\n- DB: {h.get('db_status')}\n\n")
 
-            # Intelligence (Evolved)
+            # Intelligence
             i = outputs.get('IntelligenceAgent', {})
-            f.write(f"## 🧠 Intelligence (Self-Learning)\n")
-            f.write(f"- **Experience**: {i.get('experience_level')}\n")
+            f.write(f"## 🧠 Intelligence\n")
             f.write(f"- **Strategy**: {i.get('strategy')}\n")
             f.write(f"- **Trend Alert**: {i.get('trend_alert')}\n\n")
 
-            # Ad Manager (New)
+            # Curiosity & Innovation
+            cur = outputs.get('CuriosityAgent', {})
+            crt = outputs.get('CreativeAgent', {})
+            f.write(f"## 🌌 Curiosity & Innovation (Google Antigravity Mode)\n")
+            f.write(f"- **Explored**: '{cur.get('exploration_query')}'\n")
+            f.write(f"- **Findings**: {cur.get('findings')}\n")
+            f.write(f"### 💡 High Solution Interest Ideas\n")
+            for idea in crt.get('system_improvement_ideas', []):
+                f.write(f"- 🛠️ {idea}\n")
+            f.write("\n")
+
+            # Ad Manager
             ads = outputs.get('AdManagerAgent', {})
-            f.write(f"## 📢 Ad Manager (Autonomous)\n")
-            f.write(f"### Targeting\n- Audience: {ads.get('targeting', {}).get('primary_audience')}\n")
-            f.write(f"### Bids\n")
-            for bid in ads.get('bidding_strategy', []):
-                f.write(f"- Keyword: `{bid['keyword']}` | Bid: ${bid['suggested_bid']}\n")
+            f.write(f"## 📢 Ad Manager\n")
             f.write(f"### Active Campaigns\n")
             for camp in ads.get('campaigns', []):
                 f.write(f"- **{camp['name']}**: {camp['headline']} ({camp['type']})\n")
             f.write("\n")
-
-            # Analysis
-            a = outputs.get('AnalystAgent', {})
-            f.write(f"## 📊 Analysis Data\n- Keywords: {a.get('keywords')}\n\n")
 
             # Monetization
             m = outputs.get('MonetizationAgent', {})
