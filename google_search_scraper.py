@@ -1,6 +1,7 @@
 import json
 import logging
 import argparse
+import os
 from googlesearch import search
 from typing import List, Dict
 
@@ -47,12 +48,17 @@ def main():
 
     results = perform_google_search(args.query, num_results=args.limit)
 
+    # Security: Sanitize output filename to prevent path traversal
+    safe_filename = os.path.basename(args.output)
+    if safe_filename != args.output:
+        logging.warning(f"Path traversal detected in output path. Using sanitized filename: {safe_filename}")
+
     try:
-        with open(args.output, 'w', encoding='utf-8') as f:
+        with open(safe_filename, 'w', encoding='utf-8') as f:
             json.dump(results, f, indent=4, ensure_ascii=False)
-        logging.info(f"Saved results to {args.output}")
+        logging.info(f"Saved results to {safe_filename}")
     except IOError as e:
-        logging.error(f"Failed to save output to {args.output}: {e}")
+        logging.error(f"Failed to save output to {safe_filename}: {e}")
 
 if __name__ == "__main__":
     main()
