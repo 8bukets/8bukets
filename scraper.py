@@ -20,6 +20,10 @@ logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
 
+# Optimization: Pre-compile regex for performance
+REGEX_WHITESPACE = re.compile(r'\s+')
+REGEX_URL = re.compile(r'^\s*https?://')
+
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
@@ -33,12 +37,13 @@ class MarkPositionScraperAsync:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
-        text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        # \s matches \xa0 (non-breaking space) in Python 3 string patterns
+        return REGEX_WHITESPACE.sub(' ', text).strip()
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
-        return re.match(r'^https?://', text.strip()) is not None
+        # Use compiled regex that handles leading whitespace, avoiding .strip() allocation
+        return REGEX_URL.match(text) is not None
 
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
