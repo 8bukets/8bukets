@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+Sitemap: https://draagsterwork.wordpress.com/sitemap.xml
