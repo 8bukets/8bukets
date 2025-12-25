@@ -12,6 +12,7 @@ from agents.compliance_agent import ComplianceAgent
 from agents.ads_agent import AdsAgent
 from agents.learning_agent import LearningAgent
 from agents.antigravity_agent import AntigravityAgent
+from agents.innovation_agent import InnovationAgent
 
 # Configure logging
 logging.basicConfig(
@@ -32,6 +33,7 @@ class Orchestrator:
             AdsAgent(), # New ads agent
             CreativityAgent(),
             AntigravityAgent(), # Fun/Innovation
+            InnovationAgent(), # System evolution
             ContentAgent(),
             HealthCheckAgent(),
             LearningAgent() # Last to learn from the cycle

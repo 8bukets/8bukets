@@ -14,6 +14,7 @@ class ContentAgent(BaseAgent):
         ad_strategies = context.get("ad_strategies", [])
         antigravity = context.get("antigravity", {})
         compliance = context.get("compliance", {})
+        innovations = context.get("innovations", [])
 
         md = []
         md.append("# Autonomous Agents Report")
@@ -53,8 +54,18 @@ class ContentAgent(BaseAgent):
             md.append(f"- **Hidden Gem**: {antigravity.get('hidden_gem')}")
             md.append(f"- **Range**: Shortest title ({len(antigravity.get('shortest_title',''))} chars) to Longest ({len(antigravity.get('longest_title',''))} chars)")
 
+        # Innovation Section
+        md.append("\n## 6. System Innovation & Code Integration Ideas")
+        if innovations:
+            md.append("| Trigger | Idea | Complexity |")
+            md.append("|---|---|---|")
+            for inn in innovations:
+                md.append(f"| {inn['trigger']} | {inn['idea']} | {inn['complexity']} |")
+        else:
+            md.append("No innovations generated this cycle.")
+
         # Monetization Section
-        md.append("\n## 6. Monetization Opportunities")
+        md.append("\n## 7. Monetization Opportunities")
         md.append(f"Found {len(monetization)} potential items.")
         if monetization:
             md.append("\n| Title | Keywords | Link |")
@@ -63,7 +74,7 @@ class ContentAgent(BaseAgent):
                 md.append(f"| {op['title']} | {', '.join(op['keywords'])} | [Link]({op['link']}) |")
 
         # Compliance Info
-        md.append("\n## 7. Compliance")
+        md.append("\n## 8. Compliance")
         md.append(f"Robots.txt URL: {compliance.get('robots_txt_url')}")
         md.append(f"Disallowed paths found: {len(compliance.get('disallowed_paths', []))}")
 

@@ -24,6 +24,13 @@ class ResearchAgent(BaseAgent):
             concurrency=5
         )
 
+        # Apply compliance rules if available
+        compliance = context.get("compliance", {})
+        disallowed = compliance.get("disallowed_paths", [])
+        if disallowed:
+            self.log(f"Applying {len(disallowed)} disallowed paths from compliance check.")
+            scraper.set_disallowed_paths(disallowed)
+
         # Run the scrape
         await scraper.scrape()
 
