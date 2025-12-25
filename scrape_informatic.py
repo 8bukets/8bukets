@@ -5,6 +5,7 @@ import time
 import logging
 import argparse
 import sys
+import os
 from urllib.parse import urlparse
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
@@ -174,12 +175,20 @@ def scrape(output_file: str, max_pages: int = 0):
 
     logging.info(f"Total posts scraped: {len(all_posts)}")
 
+    # Security: Sanitize output_file to prevent path traversal
+    safe_filename = os.path.basename(output_file)
+    if safe_filename != output_file:
+         logging.warning(f"Path traversal attempt detected? '{output_file}' replaced with '{safe_filename}'")
+
+    # We enforce saving to the current working directory (or a specific data dir if we wanted)
+    # to prevent writing to arbitrary system paths.
+
     try:
-        with open(output_file, 'w', encoding='utf-8') as f:
+        with open(safe_filename, 'w', encoding='utf-8') as f:
             json.dump([asdict(p) for p in all_posts], f, indent=4, ensure_ascii=False)
-        logging.info(f"Saved to {output_file}")
+        logging.info(f"Saved to {safe_filename}")
     except IOError as e:
-        logging.error(f"Failed to save output to {output_file}: {e}")
+        logging.error(f"Failed to save output to {safe_filename}: {e}")
 
 def main():
     parser = argparse.ArgumentParser(description="Scrape informaticmagazine.data.blog")
