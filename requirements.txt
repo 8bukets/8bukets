@@ -1,2 +1,5 @@
+aiohttp
+beautifulsoup4
+requests
 textblob
 nltk

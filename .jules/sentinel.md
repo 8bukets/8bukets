@@ -1,0 +1,4 @@
+## 2025-10-16 - CSV Injection Prevention
+**Vulnerability:** Scraped data was being written directly to CSV files without sanitization. If a field (like a title) started with `=`, `+`, `-`, or `@`, it could be interpreted as a formula by spreadsheet software (Excel, Google Sheets), leading to potential command execution (CSV Injection).
+**Learning:** Even "read-only" data formats like CSV can be vectors for attacks if they are consumed by rich clients like Excel. Data integrity must be preserved, but safety of the consuming application is also a responsibility of the producer.
+**Prevention:** Implemented a `sanitize_for_csv` method that prepends a single quote (`'`) to any field starting with dangerous characters. This forces the spreadsheet software to treat the cell content as a string literal.
