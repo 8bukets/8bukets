@@ -87,10 +87,17 @@ def generate_report(data, output_file):
         md.append(f"| {cat} | {count} |")
 
     md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Year | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+
+    max_count = 0
+    if year_counts:
+        max_count = max(c for _, c in year_counts)
+
     for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+        bar_len = int((count / max_count) * 20) if max_count > 0 else 0
+        bar = '█' * bar_len
+        md.append(f"| {year} | {count} | {bar} |")
 
     md.append("\n## Authors")
     for author, count in author_counts:
