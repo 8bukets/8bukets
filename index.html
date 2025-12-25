@@ -1,39 +1,34 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>United Sports News - Top Source for Football, Basketball & More</title>
-    <meta name="description" content="United Sports News provides the latest updates, match results, transfer news, and in-depth analysis for Football, Basketball, and sports worldwide.">
-    <meta name="keywords" content="sports news, football, basketball, transfer news, match results, NBA, premier league">
-    <meta name="author" content="United Sports News">
-    <link rel="canonical" href="https://unitedsports.news.blog/">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://unitedsports.news.blog/">
-    <meta property="og:title" content="United Sports News - Top Source for Sports Updates">
-    <meta property="og:description" content="Stay ahead with the latest sports news. Breaking stories, scores, and expert analysis.">
-    <meta property="og:image" content="https://unitedsports.news.blog/images/og-image.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://unitedsports.news.blog/">
-    <meta property="twitter:title" content="United Sports News">
-    <meta property="twitter:description" content="Stay ahead with the latest sports news. Breaking stories, scores, and expert analysis.">
-    <meta property="twitter:image" content="https://unitedsports.news.blog/images/og-image.jpg">
-
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#004d40">
-
-    <!-- Preload and Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>United Sports News - Top Source for Football, Basketball &amp; More</title>
+<meta content="United Sports News provides the latest updates, match results, transfer news, and in-depth analysis for Football, Basketball, and sports worldwide." name="description"/>
+<meta content="sports news, football, basketball, transfer news, match results, NBA, premier league" name="keywords"/>
+<meta content="United Sports News" name="author"/>
+<link href="https://unitedsports.news.blog/" rel="canonical"/>
+<!-- Open Graph / Facebook -->
+<meta content="website" property="og:type"/>
+<meta content="https://unitedsports.news.blog/" property="og:url"/>
+<meta content="United Sports News - Top Source for Sports Updates" property="og:title"/>
+<meta content="Stay ahead with the latest sports news. Breaking stories, scores, and expert analysis." property="og:description"/>
+<meta content="https://unitedsports.news.blog/images/og-image.jpg" property="og:image"/>
+<!-- Twitter -->
+<meta content="summary_large_image" property="twitter:card"/>
+<meta content="https://unitedsports.news.blog/" property="twitter:url"/>
+<meta content="United Sports News" property="twitter:title"/>
+<meta content="Stay ahead with the latest sports news. Breaking stories, scores, and expert analysis." property="twitter:description"/>
+<meta content="https://unitedsports.news.blog/images/og-image.jpg" property="twitter:image"/>
+<link href="manifest.json" rel="manifest"/>
+<meta content="#004d40" name="theme-color"/>
+<!-- Preload and Performance -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="css/style.css" rel="stylesheet"/>
+<!-- Structured Data (JSON-LD) -->
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "NewsMediaOrganization",
@@ -48,86 +43,107 @@
     </script>
 </head>
 <body>
-    <header>
-        <h1>United Sports News</h1>
-        <button id="theme-toggle" aria-label="Toggle Dark Mode">Dark Mode</button>
-        <nav aria-label="Main Navigation">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#" onclick="filterByCategory('Football')">Football</a></li>
-                <li><a href="#" onclick="filterByCategory('Basketball')">Basketball</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero">
-            <h2>Welcome to United Sports News</h2>
-            <p>Your number one source for all things sports.</p>
-            <div style="margin-top: 1rem;">
-                <input type="text" id="search-input" placeholder="Search articles..." style="padding: 0.5rem; width: 60%; border-radius: 4px; border: 1px solid #ccc;">
-            </div>
-        </section>
-
-        <section class="content-area">
-            <div class="articles" id="article-list">
-                <article data-category="Football">
-                    <span class="tag">Football</span>
-                    <img src="images/placeholder.webp" alt="Football players celebrating a goal in a packed stadium" loading="lazy" width="600" height="400" style="width: 100%; height: auto; border-radius: 4px;">
-                    <h3>Latest Premier League Match Results</h3>
-                    <p>The weekend provided some shocking results across the Premier League and La Liga. From Liverpool's last-minute winners to unexpected upsets at Old Trafford, we cover it all.</p>
-                    <button class="read-more-btn" onclick="toggleReadMore(this)" aria-label="Read more about Latest Match Results">Read More</button>
-                    <p class="more-text" style="display:none;">Detailed analysis shows that underdogs are performing better than ever this season. Stats indicate a shift in possession-based tactics used by Manchester City and Arsenal.</p>
-                </article>
-                <article data-category="Transfer News">
-                    <span class="tag">Transfer News</span>
-                    <img src="images/placeholder.webp" alt="Football club manager signing a new player contract" loading="lazy" width="600" height="400" style="width: 100%; height: auto; border-radius: 4px;">
-                    <h3>Live Player Transfer Updates</h3>
-                    <p>With the January transfer window approaching, rumors are heating up. Top clubs like Real Madrid and PSG are looking to bolster their squads with new signings.</p>
-                    <button class="read-more-btn" onclick="toggleReadMore(this)" aria-label="Read more about Player Transfers">Read More</button>
-                    <p class="more-text" style="display:none;">Sources say that several high-profile strikers, including Mbappe and Haaland rumors, are dominating the headlines. Transfer fees are expected to break records yet again.</p>
-                </article>
-                <article data-category="Basketball">
-                    <span class="tag">Basketball</span>
-                    <img src="images/placeholder.webp" alt="Basketball player making a slam dunk in a finals game" loading="lazy" width="600" height="400" style="width: 100%; height: auto; border-radius: 4px;">
-                    <h3>NBA Championship Finals Set</h3>
-                    <p>The stage is set for an epic showdown in the NBA Finals. The Lakers and the Celtics have fought hard through the playoffs to get here.</p>
-                    <button class="read-more-btn" onclick="toggleReadMore(this)" aria-label="Read more about Championship Finals Set">Read More</button>
-                    <p class="more-text" style="display:none;">Analysts predict a 7-game series given the defensive strengths of both squads. LeBron James and Jayson Tatum are the key players to watch.</p>
-                </article>
-                <article data-category="Football">
-                    <span class="tag">Football</span>
-                    <img src="images/placeholder.webp" alt="Young football talent training at a youth academy" loading="lazy" width="600" height="400" style="width: 100%; height: auto; border-radius: 4px;">
-                    <h3>Rising Stars of the UEFA Season</h3>
-                    <p>We take a look at the most promising young talents breaking into the first teams this year in the Champions League.</p>
-                    <button class="read-more-btn" onclick="toggleReadMore(this)" aria-label="Read more about Rising Stars">Read More</button>
-                    <p class="more-text" style="display:none;">Scouts from all over Europe, including Barcelona and Bayern Munich, are watching these kids closely.</p>
-                </article>
-            </div>
-        </section>
-
-        <aside class="sidebar">
-            <h3>Trending Now</h3>
-            <ul>
-                <li><a href="#">Championship Finals Scheduled</a></li>
-                <li><a href="#">Top 10 Goals of the Month</a></li>
-                <li><a href="#">Interview with the MVP</a></li>
-                <li><a href="#">New Stadium Plans Unveiled</a></li>
-                <li><a href="#">Injury Updates: Who's Out?</a></li>
-            </ul>
-        </aside>
-    </main>
-
-    <footer>
-        <p>&copy; <span id="year"></span> United Sports News. All rights reserved.</p>
-    </footer>
-
-    <div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #333; color: #fff; padding: 1rem; text-align: center; z-index: 1000;">
-        <p style="display: inline-block; margin: 0 1rem 0 0;">We use cookies to improve your experience. By using our site, you consent to our use of cookies.</p>
-        <button id="accept-cookies" style="background: var(--primary-light); color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer;">Accept</button>
-    </div>
-
-    <script src="js/main.js"></script>
+<header>
+<h1>United Sports News</h1>
+<button aria-label="Toggle Dark Mode" id="theme-toggle">Dark Mode</button>
+<nav aria-label="Main Navigation">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="#" onclick="filterByCategory('Football')">Football</a></li>
+<li><a href="#" onclick="filterByCategory('Basketball')">Basketball</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+</header>
+<main>
+<section class="hero">
+<h2>Welcome to United Sports News</h2>
+<p>Your number one source for all things sports.</p>
+<div style="margin-top: 1rem;">
+<input id="search-input" placeholder="Search articles..." style="padding: 0.5rem; width: 60%; border-radius: 4px; border: 1px solid #ccc;" type="text"/>
+</div>
+</section>
+<section class="content-area">
+<!-- Programmatic Ad Slot managed by Ad Agent -->
+<div id="ad-slot-top" style="margin-bottom: 2rem; display: block;">
+<div class="programmatic-ad" style="background: #e0f7fa; padding: 1.5rem; border: 1px dashed #006064; text-align: center; border-radius: 8px;">
+<p style="font-weight: bold; color: #006064;">Sponsored by BetWin365</p>
+<h3 style="margin: 0.5rem 0;">Join now and get a $100 bonus.</h3>
+<button style="background: #00838f; color: white; border: none; padding: 0.5rem 1rem; cursor: pointer; border-radius: 4px;">Shop Now</button>
+<p style="font-size: 0.7rem; color: #999; margin-top: 0.5rem;">Ad served autonomously by AdAgent v1.0</p>
+</div>
+</div>
+<div class="articles" id="article-list">
+<article class="generated-content" data-category="Basketball">
+<span class="tag">Basketball</span>
+<span class="date" style="font-size: 0.8rem; color: #666; display: block; margin-bottom: 0.5rem;">Generated: 2025-12-25 15:23</span>
+<img alt="Lakers secure playoff spot." height="400" loading="lazy" src="images/placeholder.webp" style="width: 100%; height: auto; border-radius: 4px;" width="600"/>
+<h3>Lakers secure playoff spot.</h3>
+<p>LeBron leads the charge as the Lakers dominate.</p>
+<button aria-label="Read more about Lakers secure playoff spot." class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+<p class="more-text" style="display:none;">[Autonomous Intelligence Expansion]: This content was generated based on real-time data analysis of global sports trends. The agent has determined high engagement potential for Basketball.</p>
+</article>
+<article class="generated-content" data-category="Tennis">
+<span class="tag">Tennis</span>
+<span class="date" style="font-size: 0.8rem; color: #666; display: block; margin-bottom: 0.5rem;">Generated: 2025-12-25 15:23</span>
+<img alt="Grand Slam final set." height="400" loading="lazy" src="images/placeholder.webp" style="width: 100%; height: auto; border-radius: 4px;" width="600"/>
+<h3>Grand Slam final set.</h3>
+<p>The world's top two players will meet on Sunday.</p>
+<button aria-label="Read more about Grand Slam final set." class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+<p class="more-text" style="display:none;">[Autonomous Intelligence Expansion]: This content was generated based on real-time data analysis of global sports trends. The agent has determined high engagement potential for Tennis.</p>
+</article>
+<article data-category="Football">
+<span class="tag">Football</span>
+<img alt="Football players celebrating a goal in a packed stadium" height="400" loading="lazy" src="images/placeholder.webp" style="width: 100%; height: auto; border-radius: 4px;" width="600"/>
+<h3>Latest Premier League Match Results</h3>
+<p>The weekend provided some shocking results across the Premier League and La Liga. From Liverpool's last-minute winners to unexpected upsets at Old Trafford, we cover it all.</p>
+<button aria-label="Read more about Latest Match Results" class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+<p class="more-text" style="display:none;">Detailed analysis shows that underdogs are performing better than ever this season. Stats indicate a shift in possession-based tactics used by Manchester City and Arsenal.</p>
+</article>
+<article data-category="Transfer News">
+<span class="tag">Transfer News</span>
+<img alt="Football club manager signing a new player contract" height="400" loading="lazy" src="images/placeholder.webp" style="width: 100%; height: auto; border-radius: 4px;" width="600"/>
+<h3>Live Player Transfer Updates</h3>
+<p>With the January transfer window approaching, rumors are heating up. Top clubs like Real Madrid and PSG are looking to bolster their squads with new signings.</p>
+<button aria-label="Read more about Player Transfers" class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+<p class="more-text" style="display:none;">Sources say that several high-profile strikers, including Mbappe and Haaland rumors, are dominating the headlines. Transfer fees are expected to break records yet again.</p>
+</article>
+<article data-category="Basketball">
+<span class="tag">Basketball</span>
+<img alt="Basketball player making a slam dunk in a finals game" height="400" loading="lazy" src="images/placeholder.webp" style="width: 100%; height: auto; border-radius: 4px;" width="600"/>
+<h3>NBA Championship Finals Set</h3>
+<p>The stage is set for an epic showdown in the NBA Finals. The Lakers and the Celtics have fought hard through the playoffs to get here.</p>
+<button aria-label="Read more about Championship Finals Set" class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+<p class="more-text" style="display:none;">Analysts predict a 7-game series given the defensive strengths of both squads. LeBron James and Jayson Tatum are the key players to watch.</p>
+</article>
+<article data-category="Football">
+<span class="tag">Football</span>
+<img alt="Young football talent training at a youth academy" height="400" loading="lazy" src="images/placeholder.webp" style="width: 100%; height: auto; border-radius: 4px;" width="600"/>
+<h3>Rising Stars of the UEFA Season</h3>
+<p>We take a look at the most promising young talents breaking into the first teams this year in the Champions League.</p>
+<button aria-label="Read more about Rising Stars" class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+<p class="more-text" style="display:none;">Scouts from all over Europe, including Barcelona and Bayern Munich, are watching these kids closely.</p>
+</article>
+</div>
+</section>
+<aside class="sidebar">
+<h3>Trending Now</h3>
+<ul>
+<li><a href="#">Championship Finals Scheduled</a></li>
+<li><a href="#">Top 10 Goals of the Month</a></li>
+<li><a href="#">Interview with the MVP</a></li>
+<li><a href="#">New Stadium Plans Unveiled</a></li>
+<li><a href="#">Injury Updates: Who's Out?</a></li>
+</ul>
+</aside>
+</main>
+<footer>
+<p>© <span id="year"></span> United Sports News. All rights reserved.</p>
+</footer>
+<div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #333; color: #fff; padding: 1rem; text-align: center; z-index: 1000;">
+<p style="display: inline-block; margin: 0 1rem 0 0;">We use cookies to improve your experience. By using our site, you consent to our use of cookies.</p>
+<button id="accept-cookies" style="background: var(--primary-light); color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer;">Accept</button>
+</div>
+<script src="js/main.js"></script>
 </body>
 </html>
