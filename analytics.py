@@ -48,6 +48,9 @@ def generate_report(data, output_file):
             except ValueError:
                 pass
 
+    most_active_year = "N/A"
+    most_active_year_count = 0
+
     if dates:
         dates.sort()
         start_date = dates[0].strftime('%Y-%m-%d')
@@ -55,6 +58,11 @@ def generate_report(data, output_file):
         years = [d.year for d in dates]
         year_counts = Counter(years).most_common()
         year_counts.sort(key=lambda x: x[0], reverse=True)
+        if year_counts:
+             # Find max year
+             top_year = max(year_counts, key=lambda x: x[1])
+             most_active_year = top_year[0]
+             most_active_year_count = top_year[1]
     else:
         start_date = "N/A"
         end_date = "N/A"
@@ -64,37 +72,50 @@ def generate_report(data, output_file):
     authors = [p.get('author') for p in data if p.get('author')]
     author_counts = Counter(authors).most_common()
 
+    top_author = "N/A"
+    if author_counts:
+        top_author = author_counts[0][0]
+
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
-    md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    md.append("# 📊 Markposition Analytics Report")
+    md.append(f"\n_Generated on: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}_")
 
-    md.append("\n## General Statistics")
-    md.append(f"- **Total Posts:** {total_posts}")
-    md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append("\n## 📈 General Overview")
+    md.append("| Metric | Value |")
+    md.append("| :--- | :--- |")
+    md.append(f"| **Total Posts** | {total_posts} |")
+    md.append(f"| **Date Range** | {start_date} to {end_date} |")
+    md.append(f"| **Unique Domains** | {len(set(domains))} |")
+    md.append(f"| **Top Author** | {top_author} |")
+    md.append(f"| **Busiest Year** | {most_active_year} ({most_active_year_count} posts) |")
 
-    md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
-    for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+    md.append("\n## 🔗 Top 10 Referenced Domains")
+    md.append("| Rank | Domain | Count |")
+    md.append("| :---: | :--- | :---: |")
+    for i, (domain, count) in enumerate(domain_counts, 1):
+        md.append(f"| {i} | {domain} | {count} |")
 
-    md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
-    for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+    md.append("\n## 🏷️ Top 10 Categories")
+    md.append("| Rank | Category | Count |")
+    md.append("| :---: | :--- | :---: |")
+    for i, (cat, count) in enumerate(category_counts, 1):
+        md.append(f"| {i} | {cat} | {count} |")
 
-    md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
+    md.append("\n## 📅 Posting Activity by Year")
+    md.append("| Year | Posts |")
+    md.append("| :---: | :---: |")
     for year, count in year_counts:
         md.append(f"| {year} | {count} |")
 
-    md.append("\n## Authors")
-    for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+    if author_counts:
+        md.append("\n## ✍️ Authors")
+        md.append("| Author | Posts |")
+        md.append("| :--- | :---: |")
+        for author, count in author_counts:
+             md.append(f"| {author} | {count} |")
+
+    md.append("\n---\n*🎨 Report enhanced by Palette*")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
