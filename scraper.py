@@ -134,7 +134,7 @@ class MarkPositionScraperAsync:
         return page_posts
 
     async def scrape(self):
-        all_posts = []
+        self.all_posts = []
         page_num = 1
         sem = asyncio.Semaphore(self.concurrency)
 
@@ -143,70 +143,74 @@ class MarkPositionScraperAsync:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
 
-        async with aiohttp.ClientSession(headers=headers) as session:
-            # We don't know the total pages, so we have to fetch sequentially or in chunks until we hit 404/empty.
-            # Pure concurrent fetching of all pages requires knowing the max page.
-            # Heuristic: fetch in batches of `concurrency`. If any page in batch returns 404 or empty, stop.
+        try:
+            async with aiohttp.ClientSession(headers=headers) as session:
+                # We don't know the total pages, so we have to fetch sequentially or in chunks until we hit 404/empty.
+                # Pure concurrent fetching of all pages requires knowing the max page.
+                # Heuristic: fetch in batches of `concurrency`. If any page in batch returns 404 or empty, stop.
 
-            # Actually, WordPress pages are sequential. If page N is 404, N+1 is likely 404 too.
-            # But fetching 100 pages 1-by-1 is slow.
-            # Let's try fetching chunks.
+                # Actually, WordPress pages are sequential. If page N is 404, N+1 is likely 404 too.
+                # But fetching 100 pages 1-by-1 is slow.
+                # Let's try fetching chunks.
 
-            active = True
-            while active:
-                tasks = []
-                # Prepare a batch of pages
-                batch_start = page_num
-                # If max_pages is set, clamp the batch size
-                current_concurrency = self.concurrency
+                active = True
+                while active:
+                    tasks = []
+                    # Prepare a batch of pages
+                    batch_start = page_num
+                    # If max_pages is set, clamp the batch size
+                    current_concurrency = self.concurrency
 
-                for i in range(current_concurrency):
-                    current_page = batch_start + i
-                    if self.max_pages and current_page > self.max_pages:
-                        active = False
+                    for i in range(current_concurrency):
+                        current_page = batch_start + i
+                        if self.max_pages and current_page > self.max_pages:
+                            active = False
+                            break
+
+                        # We create a task that acquires semaphore (though sem is less useful if we just create batch size = concurrency)
+                        tasks.append(self.fetch_and_parse(session, current_page, sem))
+
+                    if not tasks:
                         break
 
-                    # We create a task that acquires semaphore (though sem is less useful if we just create batch size = concurrency)
-                    tasks.append(self.fetch_and_parse(session, current_page, sem))
+                    logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
+                    results = await asyncio.gather(*tasks)
 
-                if not tasks:
-                    break
+                    # Check results
+                    batch_posts_count = 0
+                    stop_detected = False
 
-                logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
-                results = await asyncio.gather(*tasks)
+                    # Results are ordered by page number
+                    for idx, page_posts in enumerate(results):
+                        page_idx = batch_start + idx
+                        if page_posts is None:
+                            # 404 or Error
+                            logger.info(f"Page {page_idx} returned 404 or empty. Stopping.")
+                            stop_detected = True
+                            break # Don't process further pages in this batch effectively (though they were fetched)
+                        elif len(page_posts) == 0:
+                            logger.info(f"Page {page_idx} has no articles. Stopping.")
+                            stop_detected = True
+                            break
+                        else:
+                            self.all_posts.extend(page_posts)
+                            batch_posts_count += len(page_posts)
 
-                # Check results
-                batch_posts_count = 0
-                stop_detected = False
-
-                # Results are ordered by page number
-                for idx, page_posts in enumerate(results):
-                    page_idx = batch_start + idx
-                    if page_posts is None:
-                        # 404 or Error
-                        logger.info(f"Page {page_idx} returned 404 or empty. Stopping.")
-                        stop_detected = True
-                        break # Don't process further pages in this batch effectively (though they were fetched)
-                    elif len(page_posts) == 0:
-                        logger.info(f"Page {page_idx} has no articles. Stopping.")
-                        stop_detected = True
+                    if stop_detected:
                         break
-                    else:
-                        all_posts.extend(page_posts)
-                        batch_posts_count += len(page_posts)
 
-                if stop_detected:
-                    break
+                    if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
+                        logger.info("Reached max pages limit.")
+                        break
 
-                if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
-                    logger.info("Reached max pages limit.")
-                    break
-
-                page_num += len(tasks)
-                # Small delay between batches
-                await asyncio.sleep(0.5)
-
-        self.save_data(all_posts)
+                    page_num += len(tasks)
+                    # Small delay between batches
+                    await asyncio.sleep(0.5)
+        except asyncio.CancelledError:
+            logger.info("Scraping task cancelled.")
+            raise
+        finally:
+            self.save_data(self.all_posts)
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
@@ -277,7 +281,10 @@ def main():
         concurrency=args.concurrency
     )
 
-    asyncio.run(scraper.scrape())
+    try:
+        asyncio.run(scraper.scrape())
+    except KeyboardInterrupt:
+        logger.warning("\n🛑 Scraping interrupted. Data has been saved.")
 
 if __name__ == "__main__":
     main()
