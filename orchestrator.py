@@ -14,12 +14,10 @@ from agents.learning_agent import LearningAgent
 from agents.antigravity_agent import AntigravityAgent
 from agents.innovation_agent import InnovationAgent
 
+from utils.log_formatter import setup_logging
+
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+setup_logging()
 logger = logging.getLogger("Orchestrator")
 
 class Orchestrator:

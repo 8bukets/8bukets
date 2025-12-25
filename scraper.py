@@ -10,12 +10,7 @@ import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+# Configure logging (will be overridden if main)
 logger = logging.getLogger(__name__)
 
 DEFAULT_BASE_URL = "https://artmusicpage.wordpress.com/"
@@ -269,6 +264,10 @@ class WordpressScraperAsync:
             logger.error(f"Failed to save TXT: {e}")
 
 def main():
+    # Setup logging for standalone run
+    from utils.log_formatter import setup_logging
+    setup_logging()
+
     parser = argparse.ArgumentParser(description="Async Scraper for WordPress blogs")
     parser.add_argument("--url", default=DEFAULT_BASE_URL, help="Base URL of the WordPress blog")
     parser.add_argument("--json", default="links.json", help="Output JSON filename")
