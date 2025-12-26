@@ -10,11 +10,52 @@ import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
-# Configure logging
+import sys
+
+# ANSI Colors for Palette UX
+class Colors:
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    BOLD = '\033[1m'
+    RESET = '\033[0m'
+
+class ColorFormatter(logging.Formatter):
+    def __init__(self, fmt="%(asctime)s - %(message)s", datefmt='%H:%M:%S'):
+        super().__init__(fmt, datefmt)
+        # Check stderr because logging.StreamHandler defaults to stderr
+        self.use_colors = sys.stderr.isatty()
+
+    def format(self, record):
+        # Create a copy of the record to avoid mutating the original
+        record = logging.makeLogRecord(record.__dict__)
+
+        if self.use_colors:
+            if record.levelno == logging.INFO:
+                msg_color = Colors.CYAN
+                icon = "ℹ️ "
+                # Special handling for success messages
+                if "Saved" in record.msg:
+                    msg_color = Colors.GREEN
+                    icon = "✅ "
+                elif "Fetching" in record.msg:
+                    icon = "🚀 "
+
+                record.msg = f"{msg_color}{icon} {record.msg}{Colors.RESET}"
+            elif record.levelno == logging.WARNING:
+                record.msg = f"{Colors.YELLOW}⚠️  {record.msg}{Colors.RESET}"
+            elif record.levelno == logging.ERROR:
+                record.msg = f"{Colors.RED}❌ {record.msg}{Colors.RESET}"
+
+        return super().format(record)
+
+# Configure logging with visual polish
+handler = logging.StreamHandler()
+handler.setFormatter(ColorFormatter())
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
+    handlers=[handler]
 )
 logger = logging.getLogger(__name__)
 
