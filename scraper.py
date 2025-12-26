@@ -10,13 +10,11 @@ import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
+from logger_utils import ColorFormatter
+
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
 BASE_URL = "https://markposition.wordpress.com/"
 
@@ -258,6 +256,12 @@ class MarkPositionScraperAsync:
             return None
 
 def main():
+    # Configure logging for standalone execution
+    ch = logging.StreamHandler()
+    ch.setLevel(logging.INFO)
+    ch.setFormatter(ColorFormatter(include_name=False))
+    logger.addHandler(ch)
+
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
     parser.add_argument("--json", default="links.json", help="Output JSON filename")
     parser.add_argument("--csv", default="links.csv", help="Output CSV filename")
