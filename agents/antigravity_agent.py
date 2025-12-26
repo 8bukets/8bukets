@@ -24,10 +24,16 @@ class AntigravityAgent(BaseAgent):
         # Suggest a random post that might be overlooked (bottom of the list)
         hidden_gem = random.choice(data)
 
+        # Zero Gravity Mode: Find "lightweight" content (short titles) vs "Heavy" content
+        zero_gravity_posts = [p for p in data if len(p.get("title", "")) < 20]
+        heavy_posts = [p for p in data if len(p.get("title", "")) > 100]
+
         context["antigravity"] = {
             "shortest_title": shortest,
             "longest_title": longest,
             "hidden_gem": hidden_gem.get("title", "Unknown"),
-            "fun_fact": "Gravity is just a theory here."
+            "zero_gravity_count": len(zero_gravity_posts),
+            "heavy_count": len(heavy_posts),
+            "fun_fact": "Gravity is just a theory here. We float."
         }
         self.log("Antigravity checks complete.")

@@ -39,7 +39,8 @@ class ContentAgent(BaseAgent):
         md.append("\n## 3. Advertising & Targeting (Autonomus Decisions)")
         if ad_strategies:
             for ad in ad_strategies:
-                md.append(f"- **Target**: {ad['target_category']} | **Bid**: ${ad['suggested_bid']} | **Copy**: \"{ad['ad_copy']}\"")
+                target = ad.get('target') or ad.get('target_category') or 'Unknown'
+                md.append(f"- **Type**: {ad.get('type', 'Standard')} | **Target**: {target} | **Bid**: ${ad['suggested_bid']} | **Copy**: \"{ad['ad_copy']}\"")
         else:
             md.append("No ad strategies generated.")
 

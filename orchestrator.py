@@ -41,10 +41,24 @@ class Orchestrator:
     async def run_once(self, limit=None):
         logger.info("Starting autonomous cycle...")
 
+        # Load dynamic configuration from LearningAgent
+        import json
+        import os
+        config = {}
+        if os.path.exists("system_config.json"):
+            try:
+                with open("system_config.json", 'r') as f:
+                    config = json.load(f)
+                logger.info(f"Loaded autonomous config: {config}")
+            except Exception as e:
+                logger.warning(f"Failed to load system config: {e}")
+
         # Reset context or carry over state? Reset for now.
         self.context = {}
-        if limit:
-            self.context["limit"] = limit
+
+        # Priority: CLI override > Learned Config > Default
+        self.context["limit"] = limit if limit is not None else config.get("limit", 5)
+        self.context["concurrency"] = config.get("concurrency", 5)
 
         for agent in self.agents:
             try:
