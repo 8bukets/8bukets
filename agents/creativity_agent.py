@@ -32,5 +32,8 @@ class CreativityAgent(BaseAgent):
         if creativity_level > 5.0:
              ideas.append("Abstract: Quantum-entangled neural networks for instantaneous ad bidding.")
 
+        # Add a specific coding task for the CodingAgent
+        ideas.append("Code: Python script to analyze keyword frequency in scraped data.")
+
         context.set("creative_ideas", ideas)
         self.log(context, f"Generated {len(ideas)} ideas.")

@@ -9,6 +9,8 @@ from agents.monetization_agent import MonetizationAgent
 from agents.ad_agent import AdAgent
 from agents.health_agent import HealthAgent
 from agents.intelligence_agent import IntelligenceAgent
+from agents.devops_agent import DevOpsAgent
+from agents.coding_agent import CodingAgent
 
 # Setup logging with visual polish (if ColorFormatter exists from previous task, use it)
 try:
@@ -34,10 +36,12 @@ def main():
     monetization = MonetizationAgent()
     ads = AdAgent()
     health = HealthAgent()
+    devops = DevOpsAgent()
+    coding = CodingAgent()
 
     # Initialize Intelligence (Orchestrator)
     # The order here defines the default sequential flow if IntelligenceAgent just iterates
-    workers = [health, research, analysis, creativity, content, monetization, ads]
+    workers = [health, devops, research, analysis, creativity, content, coding, monetization, ads]
     brain = IntelligenceAgent(workers)
 
     # Run the System

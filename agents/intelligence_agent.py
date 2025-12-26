@@ -50,3 +50,31 @@ class IntelligenceAgent(BaseAgent):
 
         # Google Antigravity "Colab"
         self.log(context, "🚀 collaborating with Google Antigravity concepts: Gravity defied, creativity maximized.")
+        self._create_antigravity_artifact(context)
+
+    def _create_antigravity_artifact(self, context: AgentContext):
+        """Creates a fun artifact as part of the Google Antigravity collaboration."""
+        content = """
+<!DOCTYPE html>
+<html>
+<head>
+<title>Google Antigravity Collaboration</title>
+<style>
+body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+h1 { color: #4285F4; transform: rotate(180deg); }
+p { font-size: 1.2em; color: #555; }
+</style>
+</head>
+<body>
+<h1>Google Antigravity</h1>
+<p>Collaborating with autonomous agents to defy expectations.</p>
+<p>IQ Level: """ + str(context.get("system_iq", "Unknown")) + """</p>
+<script>
+console.log("Antigravity loaded.");
+</script>
+</body>
+</html>
+"""
+        with open("antigravity.html", "w") as f:
+            f.write(content)
+        self.log(context, "🌌 Generated antigravity.html artifact.")
