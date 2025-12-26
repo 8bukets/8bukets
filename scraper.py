@@ -84,6 +84,12 @@ class OracleNewsScraper:
 
             full_url = urljoin(self.base_url, href)
 
+            # Security: Ensure we stay on the expected domain and scheme
+            parsed_url = urlparse(full_url)
+            if parsed_url.netloc != 'www.oracle.com' or parsed_url.scheme not in ('http', 'https'):
+                logger.warning(f"Skipping potentially malicious or external link: {full_url}")
+                continue
+
             if full_url in seen_urls:
                 continue
             seen_urls.add(full_url)
