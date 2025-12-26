@@ -59,6 +59,14 @@ class MarkPositionScraperAsync:
         except:
             return None
 
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text to prevent CSV Injection."""
+        if not text:
+            return ""
+        if str(text).startswith(('=', '+', '-', '@')):
+            return "'" + str(text)
+        return str(text)
+
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
         url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
         try:
@@ -224,13 +232,13 @@ class MarkPositionScraperAsync:
         for post in posts:
             # CSV
             csv_writer.writerow([
-                post.get('title', ''),
-                post.get('date', ''),
-                post.get('author', ''),
-                ", ".join(post.get('categories', [])),
-                post.get('external_link', ''),
-                post.get('domain', ''),
-                post.get('post_url', '')
+                self.sanitize_for_csv(post.get('title', '')),
+                self.sanitize_for_csv(post.get('date', '')),
+                self.sanitize_for_csv(post.get('author', '')),
+                self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                self.sanitize_for_csv(post.get('external_link', '')),
+                self.sanitize_for_csv(post.get('domain', '')),
+                self.sanitize_for_csv(post.get('post_url', ''))
             ])
 
             # TXT
