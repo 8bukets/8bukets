@@ -61,6 +61,10 @@ class OracleNewsScraper:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
+        loop = asyncio.get_running_loop()
+        return await loop.run_in_executor(None, self._parse_page_sync, html)
+
+    def _parse_page_sync(self, html: str) -> List[Dict]:
         soup = BeautifulSoup(html, 'html.parser')
         # Oracle news uses links in <h3> tags or <a> tags with specific classes or structures.
         # Based on curl output, we saw links like:
