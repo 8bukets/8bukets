@@ -46,7 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const articleList = document.getElementById('article-list');
 
     if (searchInput && articleList) {
-        searchInput.addEventListener('input', (e) => {
+        // ⚡ Bolt Optimization: Debounce search to prevent layout thrashing on every keystroke
+        const debouncedSearch = debounce((e) => {
             const term = e.target.value.toLowerCase();
             const articles = articleList.getElementsByTagName('article');
 
@@ -60,7 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     article.style.display = 'none';
                 }
             });
-        });
+        }, 300); // 300ms delay
+
+        searchInput.addEventListener('input', debouncedSearch);
     }
 
     // Contact Form Validation
@@ -128,4 +131,18 @@ function filterByCategory(category) {
             article.style.display = 'none';
         }
     });
+}
+
+/**
+ * ⚡ Bolt Utility: Debounce function
+ * Delays the execution of a function until after 'wait' milliseconds have elapsed
+ * since the last time it was invoked. Reduces unnecessary processing.
+ */
+function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+        const context = this;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), wait);
+    };
 }
