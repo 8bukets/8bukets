@@ -13,7 +13,13 @@ class ResearcherAgent(BaseAgent):
     def perform_task(self, data):
         # Data can specify limits or targets
         limit = data.get('limit', 1) if data else 1
-        output_file = data.get('output_file', 'data.json') if data else 'data.json'
+        raw_output_file = data.get('output_file', 'data.json') if data else 'data.json'
+
+        # SECURITY: Sanitize output_file to prevent path traversal
+        # We enforce that the file is written to the current working directory by stripping path components.
+        output_file = os.path.basename(raw_output_file)
+        if output_file != raw_output_file:
+            self.logger.warning(f"Security: Sanitized output path '{raw_output_file}' to '{output_file}'")
 
         self.logger.info(f"Scraping content (limit {limit} pages)...")
 
