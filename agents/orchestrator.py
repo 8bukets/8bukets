@@ -6,9 +6,11 @@ from health_agent import HealthAgent
 from creative_agent import CreativeAgent
 from research_agent import ResearchAgent
 from analysis_agent import AnalysisAgent
+from state_manager import StateManager
 
 class Orchestrator:
     def __init__(self):
+        self.state_manager = StateManager()
         self.content_agent = ContentAgent()
         self.ad_agent = AdAgent()
         self.health_agent = HealthAgent()
@@ -22,7 +24,9 @@ class Orchestrator:
         Run the autonomous agents in a coordinated loop.
         :param cycles: Number of cycles to run (to prevent infinite loop in sandbox).
         """
+        current_iq = self.state_manager.get_iq()
         print("=== Initializing Autonomous Agent Network ===")
+        print(f"System IQ: {current_iq} (Self-Learning Mode: ACTIVE)")
         print("Integration: 100%")
         print("Autonomy: 100%")
         print("Collaborative Intelligence: ACTIVE")
@@ -43,7 +47,8 @@ class Orchestrator:
             raw_data = self.research_agent.gather_intelligence()
 
             print("[Orchestrator] Triggering Analysis Agent...")
-            analyzed_data = self.analysis_agent.analyze_data(raw_data)
+            # Pass IQ to analysis agent for context-aware processing
+            analyzed_data = self.analysis_agent.analyze_data(raw_data, current_iq)
 
             # Step 3: Creative Brainstorming (Curiosity & Ideas)
             print("[Orchestrator] Triggering Creative Agent (100% Curiosity)...")
@@ -64,7 +69,12 @@ class Orchestrator:
                  print("[Orchestrator] Initiating Collaboration with Google Antigravity...")
                  self.research_agent.collaborate_with_google()
 
-            print(f"--- Cycle {self.cycle_count} Completed with High Solution Interest ---")
+            # Self-Learning / Evolution Step
+            new_iq = self.state_manager.evolve_iq(increment=0.5)
+            self.state_manager.increment_cycle()
+            current_iq = new_iq
+            print(f"--- Cycle {self.cycle_count} Completed. System IQ Evolved to {new_iq} ---")
+
             # In a real infinite loop, we would sleep here
             # time.sleep(86400) # 24 hours
 

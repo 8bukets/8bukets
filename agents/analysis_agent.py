@@ -1,12 +1,17 @@
 class AnalysisAgent:
     def __init__(self):
-        self.intelligence_level = "100%"
+        self.base_intelligence = 100
 
-    def analyze_data(self, raw_data):
+    def analyze_data(self, raw_data, iq_level=25):
         """
         Process raw data into actionable intelligence.
         """
-        print(f"[AnalysisAgent] Processing raw data: {raw_data['topic']}...")
+        # Simulate efficiency gain from higher IQ
+        processing_speed = "Standard"
+        if iq_level > 30:
+            processing_speed = "Accelerated (Quantum)"
+
+        print(f"[AnalysisAgent] Processing raw data: {raw_data['topic']}... [IQ: {iq_level} - {processing_speed}]")
 
         # Simulate intelligent processing
         sentiment = "Positive"
@@ -15,12 +20,17 @@ class AnalysisAgent:
         elif "upset" in raw_data['raw_text'].lower():
             sentiment = "Exciting"
 
-        insight = f"Analysis indicates high viral potential for {raw_data['topic']}. Sentiment: {sentiment}."
+        # Higher IQ leads to deeper insights
+        depth = "Standard Analysis"
+        if iq_level > 26:
+            depth = "Deep Neural Pattern Recognition"
+
+        insight = f"Analysis indicates high viral potential for {raw_data['topic']}. Sentiment: {sentiment}. Method: {depth}."
 
         processed_data = {
             "topic": raw_data['topic'],
             "title": f"Deep Dive: {raw_data['topic']} Insights",
-            "summary": f"{raw_data['raw_text']} Our AI models predict this will impact the season significantly.",
+            "summary": f"{raw_data['raw_text']} Our AI models (IQ {iq_level}) predict this will impact the season significantly.",
             "insight": insight,
             "sentiment": sentiment
         }
