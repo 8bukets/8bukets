@@ -14,6 +14,8 @@ class AdAgent(BaseAgent):
 
         # Simulate targeting based on categories
         insights = data.get("insights", {})
+        bid_aggressiveness = data.get("bid_aggressiveness", 1.0) # Default to 1.0 if not provided
+
         top_cats = [c[0] for c in insights.get("top_categories", [])]
 
         target_segments = top_cats if top_cats else ["General Audience"]
@@ -21,7 +23,10 @@ class AdAgent(BaseAgent):
         # Simulate Real-Time Bidding (RTB)
         bid_floor = 0.50
         bid_ceiling = 5.00
-        calculated_bid = round(random.uniform(bid_floor, bid_ceiling), 2)
+
+        # Apply intelligence aggressiveness to the bid calculation
+        raw_bid = random.uniform(bid_floor, bid_ceiling)
+        calculated_bid = round(raw_bid * bid_aggressiveness, 2)
 
         ad_campaign = {
             "target_segments": target_segments,
@@ -31,7 +36,7 @@ class AdAgent(BaseAgent):
             "status": "Ready to Deploy"
         }
 
-        self.log(f"Ad campaign prepared: Bid ${calculated_bid} for {target_segments}")
+        self.log(f"Ad campaign prepared: Bid ${calculated_bid} (Aggressiveness: {bid_aggressiveness}) for {target_segments}")
         return {"status": "success", "campaign": ad_campaign}
 
 class MonetizationAgent(BaseAgent):

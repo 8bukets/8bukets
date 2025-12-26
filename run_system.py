@@ -46,6 +46,7 @@ async def main():
     logger.info("🚀 Initializing Autonomous Agent Swarm...")
 
     # Instantiate Agents
+    brain = IntelligenceAgent() # Brain first to get strategy
     researcher = ResearchAgent()
     analyst = AnalysisAgent()
     creator = ContentAgent()
@@ -53,7 +54,10 @@ async def main():
     advertiser = AdAgent()
     accountant = MonetizationAgent()
     doctor = HealthAgent()
-    brain = IntelligenceAgent()
+
+    # 0. Get Strategy from Intelligence (Memory)
+    strategy = brain.get_mission_strategy()
+    logger.info(f"🧠 Intelligence Level: IQ {strategy.get('iq')}. Bid Aggressiveness: {strategy.get('bid_aggressiveness')}")
 
     # 1. Health Check
     logger.info("🏥 Step 1: Pre-flight Health Check")
@@ -77,15 +81,25 @@ async def main():
 
     # 4. Content Creation
     logger.info("✍️ Step 4: Drafting Content Strategy")
-    content_res = await creator.process({"insights": analysis_res.get("insights")})
+    # Pass creativity threshold from strategy (implied usage in ContentAgent/CreativityAgent)
+    content_res = await creator.process({
+        "insights": analysis_res.get("insights"),
+        "creativity_threshold": strategy.get("creativity_threshold")
+    })
 
     # 5. Creativity Injection
     logger.info("🎨 Step 5: Applying Creativity")
-    creative_res = await artist.process({"content": content_res.get("content")})
+    creative_res = await artist.process({
+        "content": content_res.get("content"),
+        "creativity_threshold": strategy.get("creativity_threshold")
+    })
 
     # 6. Ad Targeting
     logger.info("🎯 Step 6: Planning Ad Campaign")
-    ad_res = await advertiser.process({"insights": analysis_res.get("insights")})
+    ad_res = await advertiser.process({
+        "insights": analysis_res.get("insights"),
+        "bid_aggressiveness": strategy.get("bid_aggressiveness")
+    })
 
     # 7. Monetization Projection
     logger.info("💰 Step 7: Projecting Revenue")
@@ -105,6 +119,7 @@ async def main():
     # Final Summary Output
     print("\n--- 🏁 MISSION SUMMARY 🏁 ---")
     print(f"Target: {args.url}")
+    print(f"IQ Level: {intelligence_res.get('iq')}")
     print(f"Articles Analyzed: {len(research_res.get('data', []))}")
     print(f"Top Strategy: {content_res.get('content', {}).get('strategy_brief')}")
     print(f"Creative Title: {creative_res.get('creative_content', {}).get('creative_titles', [''])[0]}")

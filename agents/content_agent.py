@@ -60,18 +60,21 @@ class CreativityAgent(BaseAgent):
         """
         content = data.get("content", {})
         titles = content.get("suggested_titles", [])
+        creativity_threshold = data.get("creativity_threshold", 0.5)
 
-        self.log("Infusing creativity and defying gravity...")
+        self.log(f"Infusing creativity (Threshold: {creativity_threshold})...")
 
         creative_titles = []
         emojis = ["🚀", "✨", "🔥", "💡", "🛡️", "🤖"]
 
         for title in titles:
             emoji = random.choice(emojis)
-            # "Antigravity" effect: reverse words or something fun?
-            # Let's just add a 'Google Antigravity' reference occasionally.
-            if random.random() > 0.7:
-                title = f"{title} (Zero G Edition)"
+
+            # Use learned creativity_threshold to determine if we go "Zero G"
+            # Lower threshold might mean MORE creativity or LESS?
+            # Let's say higher threshold = More Zero G.
+            if random.random() < creativity_threshold:
+                 title = f"{title} (Zero G Edition)"
 
             creative_titles.append(f"{emoji} {title}")
 
