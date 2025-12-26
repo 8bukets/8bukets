@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  autonomous-agent:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile
+    image: autonomous-agent:latest
+    container_name: autonomous_agent
+    volumes:
+      # Mount the entire app directory (excluding artifacts via dockerignore usually, but here for dev)
+      # Or just use a named volume for persistence
+      - agent_data:/app/data
+    environment:
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+    # Override the command to ensure we write to the data directory if we want persistence
+    # But for now, let's just stick to the default behavior.
+    # The important fix is removing the file bind mounts for non-existent files.
+    restart: on-failure
+
+volumes:
+  agent_data:
