@@ -49,6 +49,12 @@ class MarkPositionScraperAsync:
         """Check if text looks like a URL."""
         return re.match(r'^https?://', text.strip()) is not None
 
+    def is_safe_url(self, url: str) -> bool:
+        """Check if URL has a safe scheme (http/https)."""
+        if not url:
+            return False
+        return url.strip().lower().startswith(('http://', 'https://'))
+
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
         categories = []
@@ -121,12 +127,16 @@ class MarkPositionScraperAsync:
             if content_div:
                 link_tag = content_div.select_one('a')
                 if link_tag:
-                    external_link = link_tag.get('href')
+                    href = link_tag.get('href')
+                    if self.is_safe_url(href):
+                        external_link = href
 
                 if not external_link:
                     iframe_tag = content_div.select_one('iframe')
                     if iframe_tag:
-                        external_link = iframe_tag.get('src')
+                        src = iframe_tag.get('src')
+                        if self.is_safe_url(src):
+                            external_link = src
 
             if not external_link and title_text and self.is_url(title_text):
                 external_link = title_text
@@ -136,7 +146,11 @@ class MarkPositionScraperAsync:
 
             # Post URL
             if title_tag:
-                post_data['post_url'] = title_tag.get('href')
+                href = title_tag.get('href')
+                if self.is_safe_url(href):
+                    post_data['post_url'] = href
+                else:
+                    post_data['post_url'] = None
 
             page_posts.append(post_data)
 
