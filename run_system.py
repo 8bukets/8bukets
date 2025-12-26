@@ -15,6 +15,8 @@ from agents.creativity_agent import CreativityAgent
 from agents.autonomous_intelligence_agent import AutonomousIntelligenceAgent
 from agents.programmatic_ads_agent import ProgrammaticAdsAgent
 from agents.ads_agent import AdsAgent
+from agents.antigravity_agent import AntigravityAgent
+from agents.learning_agent import LearningAgent
 
 # Configure logging
 import sys
@@ -94,6 +96,11 @@ def run_pipeline(skip_scrape=False):
         return
 
     # 3. Instantiate Agents
+    # Initialize Learning Core first
+    learning_agent = LearningAgent()
+    current_iq = learning_agent.get_iq()
+    logger.info(f"🧠 Current System IQ: {current_iq}")
+
     analysis_agent = AnalysisAgent()
     research_agent = ResearchAgent()
     intelligence_agent = IntelligenceAgent()
@@ -104,6 +111,7 @@ def run_pipeline(skip_scrape=False):
     ai_agent = AutonomousIntelligenceAgent()
     prog_ads_agent = ProgrammaticAdsAgent()
     ads_agent = AdsAgent()
+    antigravity_agent = AntigravityAgent()
 
     # 4. Pipeline Execution
     logger.info("🤖 Starting Agent Pipeline...")
@@ -144,16 +152,24 @@ def run_pipeline(skip_scrape=False):
     headlines = creativity_agent.process(analysis_results['common_keywords'])
     save_result("creative_headlines.json", headlines, current_date)
 
-    # Ads
-    prog_ads = prog_ads_agent.process(analysis_results['common_keywords'])
+    # Ads (IQ Enhanced)
+    prog_ads = prog_ads_agent.process(analysis_results['common_keywords'], iq=current_iq)
     save_result("programmatic_ads_config.json", prog_ads, current_date)
 
-    ad_copy = ads_agent.process(research_results)
+    ad_copy = ads_agent.process(research_results, iq=current_iq)
     save_result("ad_copy.json", ad_copy, current_date)
+
+    # Antigravity (IQ Enhanced)
+    gravity_defying = antigravity_agent.process(analysis_results, iq=current_iq)
+    save_result("antigravity_ideas.json", gravity_defying, current_date)
 
     # High-level Synthesis
     summary = ai_agent.process(results_aggregator)
     save_result("executive_summary.txt", summary, current_date)
+
+    # 5. Learning & Evolution
+    new_iq = learning_agent.improve_iq(success=True)
+    logger.info(f"📈 Pipeline successful. System IQ upgraded to {new_iq}")
 
     logger.info(f"✨ Pipeline Complete for {current_date}. Check 'results/' directory.")
 
