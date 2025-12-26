@@ -7,6 +7,7 @@ import argparse
 import sys
 import sqlite3
 from datetime import datetime
+from urllib.parse import urlparse
 
 # Configure logging
 logging.basicConfig(
@@ -27,7 +28,38 @@ class BlogScraper:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
         self.data = []
+
+        # Security: Allowed domains for scraping
+        self.allowed_domains = set()
+        if base_url:
+            try:
+                self.allowed_domains.add(urlparse(base_url).netloc)
+            except Exception:
+                logger.warning(f"Could not parse base URL domain: {base_url}")
+
         self.init_db()
+
+    def is_safe_url(self, url):
+        """
+        Validate URL to prevent SSRF and Open Redirects.
+        Ensures the URL has a valid scheme and belongs to the allowed domains.
+        """
+        try:
+            parsed = urlparse(url)
+            # 1. Scheme check
+            if parsed.scheme not in ('http', 'https'):
+                logger.warning(f"Security: Blocked non-http/s URL: {url}")
+                return False
+
+            # 2. Domain check
+            if self.allowed_domains and parsed.netloc not in self.allowed_domains:
+                logger.warning(f"Security: Blocked off-domain URL: {url}")
+                return False
+
+            return True
+        except Exception as e:
+            logger.error(f"Security: URL validation error for {url}: {e}")
+            return False
 
     def init_db(self):
         """Initialize the SQLite database."""
@@ -220,11 +252,13 @@ class BlogScraper:
                     new_items_count += 1
 
             next_page = self.get_next_page(soup)
-            if next_page:
+            if next_page and self.is_safe_url(next_page):
                 logger.info(f"Found next page: {next_page}")
                 url = next_page
                 time.sleep(1)
             else:
+                if next_page:
+                    logger.warning(f"Next page found but validation failed: {next_page}")
                 logger.info("No more pages found.")
                 url = None
 
