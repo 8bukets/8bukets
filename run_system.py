@@ -15,6 +15,7 @@ from agents.creativity_agent import CreativityAgent
 from agents.autonomous_intelligence_agent import AutonomousIntelligenceAgent
 from agents.programmatic_ads_agent import ProgrammaticAdsAgent
 from agents.ads_agent import AdsAgent
+from agents.curiosity_agent import CuriosityAgent
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
@@ -72,6 +73,7 @@ def run_pipeline(skip_scrape=False):
     ai_agent = AutonomousIntelligenceAgent()
     prog_ads_agent = ProgrammaticAdsAgent()
     ads_agent = AdsAgent()
+    curiosity_agent = CuriosityAgent()
 
     # 4. Pipeline Execution
     logger.info("Starting Agent Pipeline...")
@@ -99,6 +101,12 @@ def run_pipeline(skip_scrape=False):
     save_result("intelligence.json", intelligence_results, current_date)
     results_aggregator['intelligence'] = intelligence_results
 
+    current_iq = intelligence_results.get('iq_score', 25)
+
+    # Curiosity (Antigravity)
+    curiosity_results = curiosity_agent.process(analysis_results['common_keywords'])
+    save_result("curiosity_antigravity.json", curiosity_results, current_date)
+
     # Content
     content = content_agent.process(data, intelligence_results)
     save_result("content_draft.md", content, current_date)
@@ -113,7 +121,7 @@ def run_pipeline(skip_scrape=False):
     save_result("creative_headlines.json", headlines, current_date)
 
     # Ads
-    prog_ads = prog_ads_agent.process(analysis_results['common_keywords'])
+    prog_ads = prog_ads_agent.process(analysis_results['common_keywords'], iq_score=current_iq)
     save_result("programmatic_ads_config.json", prog_ads, current_date)
 
     ad_copy = ads_agent.process(research_results)
