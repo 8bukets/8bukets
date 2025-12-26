@@ -7,15 +7,21 @@ import re
 import argparse
 import logging
 import time
+import sys
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
+from utils.log_formatter import ColorFormatter
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+if __name__ == "__main__":
+    # If running as script, configure root logger
+    root_logger = logging.getLogger()
+    root_logger.setLevel(logging.INFO)
+    if not root_logger.handlers:
+        handler = logging.StreamHandler(sys.stdout)
+        handler.setFormatter(ColorFormatter())
+        root_logger.addHandler(handler)
+
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
