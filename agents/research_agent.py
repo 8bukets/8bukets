@@ -28,7 +28,19 @@ class ResearchAgent(BaseAgent):
             self.log(context, f"🛑 Access to {BASE_URL} forbidden by robots.txt.")
             return
 
-        self.log(context, f"Starting scraping of {BASE_URL}...")
+        # Self-Improvement: Adjust concurrency based on IQ
+        knowledge = context.get("knowledge_base")
+        concurrency = 3
+        max_pages = 1
+
+        if knowledge:
+            concurrency = knowledge.get_strategy_param("concurrency", 3)
+            # As IQ grows, we can handle more pages (simulated)
+            iq = knowledge.get_iq()
+            if iq > 30:
+                max_pages = 2
+
+        self.log(context, f"Starting scraping of {BASE_URL} with IQ-optimized concurrency: {concurrency}")
 
         # Configure scraper
         json_out = "links.json"
@@ -39,8 +51,8 @@ class ResearchAgent(BaseAgent):
             output_json=json_out,
             output_csv=csv_out,
             output_txt=txt_out,
-            max_pages=1, # Limit for demo/autonomy speed
-            concurrency=3
+            max_pages=max_pages,
+            concurrency=concurrency
         )
 
         # Run async scraper in sync context
