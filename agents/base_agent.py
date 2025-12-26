@@ -2,7 +2,7 @@ import json
 import logging
 from abc import ABC, abstractmethod
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+# Remove basicConfig to allow root logger configuration to take precedence
 logger = logging.getLogger(__name__)
 
 class BaseAgent(ABC):

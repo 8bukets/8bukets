@@ -2,6 +2,7 @@ import os
 import json
 import logging
 from datetime import datetime
+from utils.log_formatter import ColorFormatter
 from agents.analysis_agent import AnalysisAgent
 from agents.health_agent import HealthCheckAgent
 from agents.research_agent import ResearchAgent
@@ -10,12 +11,14 @@ from agents.creativity_agent import CreativityAgent
 from agents.content_agent import ContentAgent
 from agents.monetization_agent import MonetizationAgent
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+# Configure root logging
+root_logger = logging.getLogger()
+root_logger.setLevel(logging.INFO)
+handler = logging.StreamHandler()
+handler.setFormatter(ColorFormatter(datefmt='%H:%M:%S'))
+root_logger.addHandler(handler)
+
+# Get orchestrator logger (will use root handler)
 logger = logging.getLogger("SystemOrchestrator")
 
 def main():
@@ -36,6 +39,13 @@ def main():
     all_results = {}
     for agent in agents:
         try:
+            # Reconfigure agent logger to use our formatter if needed,
+            # but since they use 'agents.base_agent' or similar, we might need to configure root logger instead.
+            # However, for now, let's just rely on them printing to stdout or we configure root logger.
+
+            # Actually, the agents use `logging.getLogger(__name__)`.
+            # We should probably configure the root logger to catch everything with our formatter.
+
             agent.run()
             all_results[agent.name] = agent.get_results()
         except Exception as e:
