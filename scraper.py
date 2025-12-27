@@ -20,6 +20,17 @@ logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
 
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
@@ -218,7 +229,8 @@ class MarkPositionScraperAsync:
                 # Small delay between batches
                 await asyncio.sleep(0.5)
 
-        self.save_data(all_posts)
+        unique_links_count = self.save_data(all_posts)
+        self.print_summary(len(all_posts), unique_links_count)
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
@@ -226,6 +238,15 @@ class MarkPositionScraperAsync:
             if html:
                 return await self.parse_page(html)
             return None
+
+    def print_summary(self, total_posts: int, unique_links_count: int):
+        print(f"\n{Colors.HEADER}✨ Scraping Complete! ✨{Colors.ENDC}")
+        print(f"{Colors.BLUE}{'-'*40}{Colors.ENDC}")
+        print(f"📝 {Colors.BOLD}Total Posts:{Colors.ENDC}       {Colors.GREEN}{total_posts}{Colors.ENDC}")
+        print(f"📂 {Colors.BOLD}JSON Output:{Colors.ENDC}       {self.output_json}")
+        print(f"📊 {Colors.BOLD}CSV Output:{Colors.ENDC}        {self.output_csv}")
+        print(f"🔗 {Colors.BOLD}Unique Links:{Colors.ENDC}      {self.output_txt} ({unique_links_count})")
+        print(f"{Colors.BLUE}{'-'*40}{Colors.ENDC}\n")
 
     def save_data(self, posts: List[Dict]):
         # JSON
@@ -270,6 +291,8 @@ class MarkPositionScraperAsync:
             logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
         except IOError as e:
             logger.error(f"Failed to save TXT: {e}")
+
+        return len(sorted_links)
 
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
