@@ -5,12 +5,29 @@ from urllib.parse import urlparse
 from datetime import datetime
 import sys
 
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+    @staticmethod
+    def colorize(text, color):
+        if sys.stdout.isatty():
+            return f"{color}{text}{Colors.ENDC}"
+        return text
+
 def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             return json.load(f)
     except FileNotFoundError:
-        print(f"Error: File '{filepath}' not found.")
+        print(Colors.colorize(f"Error: File '{filepath}' not found.", Colors.FAIL))
         sys.exit(1)
 
 def get_domain(url):
@@ -21,12 +38,47 @@ def get_domain(url):
     except:
         return None
 
+def print_summary_box(stats):
+    # Calculate box width
+    width = 50
+    horizontal = "─" * (width - 2)
+
+    print(Colors.colorize(f"\n┌{horizontal}┐", Colors.CYAN))
+    print(Colors.colorize(f"│ {'ANALYTICS SUMMARY'.center(width - 4)} │", Colors.CYAN + Colors.BOLD))
+    print(Colors.colorize(f"├{horizontal}┤", Colors.CYAN))
+
+    # Stats rows
+    rows = [
+        ("Total Posts", str(stats['total_posts'])),
+        ("Date Range", f"{stats['start_date']} to {stats['end_date']}"),
+        ("Top Domain", f"{stats['top_domain'][0]} ({stats['top_domain'][1]})" if stats['top_domain'] else "N/A"),
+        ("Top Category", f"{stats['top_category'][0]} ({stats['top_category'][1]})" if stats['top_category'] else "N/A"),
+        ("Unique Domains", str(stats['unique_domains']))
+    ]
+
+    for label, value in rows:
+        # Truncate value if too long to fit
+        max_val_len = width - 4 - len(label) - 2 # 2 for ": "
+        if len(value) > max_val_len:
+            value = value[:max_val_len-1] + "…"
+
+        line = f"│ {Colors.colorize(label, Colors.GREEN)}: {value}"
+        # Adjust padding calculation to account for color codes length being invisible
+        # But here we added color codes to 'line', so standard len() is wrong.
+        # We need to construct the visual string length separately.
+        padding = " " * (width - 4 - len(label) - 2 - len(value))
+        print(f"{line}{padding} {Colors.colorize('│', Colors.CYAN)}")
+
+    print(Colors.colorize(f"└{horizontal}┘", Colors.CYAN))
+    print(f"\nReport generated: {Colors.colorize(stats['output_file'], Colors.BLUE)}")
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
     # 1. Domain Analysis
     domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
     domain_counts = Counter(domains).most_common(10)
+    unique_domains = len(set(domains))
 
     # 2. Category Analysis
     all_categories = []
@@ -72,7 +124,7 @@ def generate_report(data, output_file):
     md.append("\n## General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append(f"- **Unique Domains Linked:** {unique_domains}")
 
     md.append("\n## Top 10 Referenced Domains")
     md.append("| Domain | Count |")
@@ -99,7 +151,17 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    # Print Summary Box
+    stats = {
+        "total_posts": total_posts,
+        "start_date": start_date,
+        "end_date": end_date,
+        "unique_domains": unique_domains,
+        "top_domain": domain_counts[0] if domain_counts else None,
+        "top_category": category_counts[0] if category_counts else None,
+        "output_file": output_file
+    }
+    print_summary_box(stats)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
