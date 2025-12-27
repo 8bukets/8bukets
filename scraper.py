@@ -20,6 +20,17 @@ logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
 
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
@@ -133,7 +144,17 @@ class MarkPositionScraperAsync:
 
         return page_posts
 
+    def print_summary(self, total_posts: int, unique_links_count: int, execution_time: float):
+        print(f"\n{Colors.CYAN}╔════════════════════════════════════════════╗{Colors.ENDC}")
+        print(f"{Colors.CYAN}║           {Colors.BOLD}Scraping Completed! 🚀{Colors.ENDC}{Colors.CYAN}           ║{Colors.ENDC}")
+        print(f"{Colors.CYAN}╠════════════════════════════════════════════╣{Colors.ENDC}")
+        print(f"{Colors.CYAN}║{Colors.ENDC} {Colors.BOLD}Total Posts:{Colors.ENDC}    {str(total_posts).ljust(27)} {Colors.CYAN}║{Colors.ENDC}")
+        print(f"{Colors.CYAN}║{Colors.ENDC} {Colors.BOLD}Unique Links:{Colors.ENDC}   {str(unique_links_count).ljust(27)} {Colors.CYAN}║{Colors.ENDC}")
+        print(f"{Colors.CYAN}║{Colors.ENDC} {Colors.BOLD}Time Taken:{Colors.ENDC}     {f'{execution_time:.2f}s'.ljust(27)} {Colors.CYAN}║{Colors.ENDC}")
+        print(f"{Colors.CYAN}╚════════════════════════════════════════════╝{Colors.ENDC}\n")
+
     async def scrape(self):
+        start_time = time.time()
         all_posts = []
         page_num = 1
         sem = asyncio.Semaphore(self.concurrency)
@@ -206,7 +227,9 @@ class MarkPositionScraperAsync:
                 # Small delay between batches
                 await asyncio.sleep(0.5)
 
-        self.save_data(all_posts)
+        unique_count = self.save_data(all_posts)
+        end_time = time.time()
+        self.print_summary(len(all_posts), unique_count, end_time - start_time)
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
@@ -258,6 +281,8 @@ class MarkPositionScraperAsync:
             logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
         except IOError as e:
             logger.error(f"Failed to save TXT: {e}")
+
+        return len(unique_links)
 
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
