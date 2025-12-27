@@ -5,6 +5,49 @@ from urllib.parse import urlparse
 from datetime import datetime
 import sys
 
+class Colors:
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    BOLD = '\033[1m'
+    ENDC = '\033[0m'
+
+def print_summary_box(stats):
+    if not sys.stdout.isatty():
+        print(f"Report generated: {stats['report_file']}")
+        return
+
+    w_label = 14
+    w_value = 30
+    width = w_label + w_value + 5 # | L... V... | => 1+1+L+1+V+1+1 = L+V+5
+
+    def row(label, value):
+        val = str(value)
+        if len(val) > w_value:
+            val = val[:w_value-3] + "..."
+        print(f"| {Colors.GREEN}{label:<{w_label}}{Colors.ENDC} {Colors.BOLD}{val:<{w_value}}{Colors.ENDC}{Colors.CYAN}{Colors.BOLD} |")
+
+    print(f"\n{Colors.CYAN}{Colors.BOLD}+{'-' * (width - 2)}+")
+    print(f"|{'ANALYTICS SUMMARY'.center(width - 2)}|")
+    print(f"+{'-' * (width - 2)}+")
+
+    row("Total Posts:", stats['total_posts'])
+    row("Date Range:", f"{stats['start_date']} to {stats['end_date']}")
+
+    top_dom = stats['top_domain']
+    if isinstance(top_dom, tuple): top_dom = f"{top_dom[0]} ({top_dom[1]})"
+    row("Top Domain:", top_dom)
+
+    top_cat = stats['top_category']
+    if isinstance(top_cat, tuple): top_cat = f"{top_cat[0]} ({top_cat[1]})"
+    row("Top Category:", top_cat)
+
+    print(f"+{'-' * (width - 2)}+")
+    report_val = stats['report_file']
+    if len(report_val) > width - 12:
+        report_val = report_val[:width-15] + "..."
+    print(f"| Report: {report_val:<{width-12}} |")
+    print(f"+{'-' * (width - 2)}+{Colors.ENDC}\n")
+
 def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
@@ -99,7 +142,16 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    # Prepare stats for summary
+    stats = {
+        'total_posts': total_posts,
+        'start_date': start_date,
+        'end_date': end_date,
+        'top_domain': domain_counts[0] if domain_counts else ('None', 0),
+        'top_category': category_counts[0] if category_counts else ('None', 0),
+        'report_file': output_file
+    }
+    print_summary_box(stats)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for WordPress blog data")
