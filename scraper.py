@@ -219,19 +219,25 @@ class MarkPositionScraperAsync:
             logger.error(f"Failed to save JSON: {e}")
 
         # CSV
+        def sanitize_for_csv(text):
+            """Prevent CSV injection by prepending ' to risky characters."""
+            if text and isinstance(text, str) and text.startswith(('=', '+', '-', '@')):
+                return "'" + text
+            return text
+
         try:
             with open(self.output_csv, 'w', newline='', encoding='utf-8') as f:
                 writer = csv.writer(f)
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        sanitize_for_csv(post.get('title', '')),
+                        sanitize_for_csv(post.get('date', '')),
+                        sanitize_for_csv(post.get('author', '')),
+                        sanitize_for_csv(", ".join(post.get('categories', []))),
+                        sanitize_for_csv(post.get('external_link', '')),
+                        sanitize_for_csv(post.get('domain', '')),
+                        sanitize_for_csv(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
