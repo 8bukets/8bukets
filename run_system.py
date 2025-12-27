@@ -23,12 +23,19 @@ from agents.bid_agent import BidAgent
 from agents.autonomous_intelligence_agent import AutonomousIntelligenceAgent
 
 # Configure Logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+from utils.log_formatter import ColorFormatter
+
 logger = logging.getLogger("SystemOrchestrator")
+logger.setLevel(logging.INFO)
+
+# Create console handler with custom formatter
+ch = logging.StreamHandler()
+ch.setLevel(logging.INFO)
+ch.setFormatter(ColorFormatter())
+
+# Add handler to logger (and root logger to capture all)
+logging.getLogger().addHandler(ch)
+logging.getLogger().setLevel(logging.INFO)
 
 def run_scraper():
     logger.info("Starting Scraper...")
