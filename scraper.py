@@ -9,13 +9,10 @@ import logging
 from typing import List, Dict, Optional
 from urllib.parse import urlparse
 from datetime import datetime
+from utils.log_formatter import setup_colored_logging
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+setup_colored_logging()
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://www.oracle.com/news/"
