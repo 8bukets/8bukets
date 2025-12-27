@@ -19,6 +19,21 @@ class ReportGenerator:
         if not os.path.exists(self.report_dir):
             os.makedirs(self.report_dir)
 
+    def sanitize_markdown_cell(self, text):
+        """Sanitize text to prevent Markdown table injection."""
+        if text is None:
+            return ""
+        return str(text).replace("|", "&#124;").replace("\n", " ")
+
+    def sanitize_url(self, url):
+        """Sanitize URL to prevent XSS (javascript: links)."""
+        if not url:
+            return ""
+        url = str(url).strip()
+        if url.lower().startswith("javascript:"):
+            return "#invalid-url-blocked"
+        return url
+
     def generate_daily_report(self):
         logger.info("Generating daily report...")
 
@@ -84,7 +99,7 @@ class ReportGenerator:
                 f.write("| Keyword | Frequency |\n")
                 f.write("|---|---|\n")
                 for word, count in keywords:
-                    f.write(f"| {word} | {count} |\n")
+                    f.write(f"| {self.sanitize_markdown_cell(word)} | {count} |\n")
                 f.write("\n")
 
             # SEO Rankings Trend
@@ -94,7 +109,7 @@ class ReportGenerator:
                 f.write("|---|---|---|---|---|\n")
                 trends = self.analyze_seo_trends(rankings, past_rankings)
                 for item in trends:
-                    f.write(f"| {item['query']} | {item['rank']} | {item['change']} | {item['date']} |\n")
+                    f.write(f"| {self.sanitize_markdown_cell(item['query'])} | {item['rank']} | {item['change']} | {item['date']} |\n")
             else:
                 f.write("No SEO ranking data for today.\n\n")
 
@@ -105,7 +120,11 @@ class ReportGenerator:
                 f.write("|---|---|---|---|---|\n")
                 for u in updated_posts:
                     title, url, field, old, new, time = u
-                    title = title.replace("|", "-")
+                    title = self.sanitize_markdown_cell(title)
+                    url = self.sanitize_url(url)
+                    field = self.sanitize_markdown_cell(field)
+                    old = self.sanitize_markdown_cell(old)
+                    new = self.sanitize_markdown_cell(new)
                     f.write(f"| [{title}]({url}) | {field} | {old} | {new} | {time} |\n")
                 f.write("\n")
 
@@ -116,7 +135,8 @@ class ReportGenerator:
                 f.write("|---|---|---|\n")
                 for post in new_posts:
                     title, url, scraped_at = post
-                    title = title.replace("|", "-") if title else "No Title"
+                    title = self.sanitize_markdown_cell(title) if title else "No Title"
+                    url = self.sanitize_url(url)
                     f.write(f"| {title} | {scraped_at} | [View]({url}) |\n")
             else:
                 f.write("No new posts scraped in the last 24 hours.\n")
