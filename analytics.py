@@ -4,6 +4,21 @@ from collections import Counter
 from urllib.parse import urlparse
 from datetime import datetime
 import sys
+import html
+
+def sanitize_markdown_cell(text):
+    """Sanitize text for use in a Markdown table cell."""
+    if text is None:
+        return ""
+    # Convert to string if not already
+    text = str(text)
+    # Escape pipes to prevent table injection
+    text = text.replace('|', '\\|')
+    # Prevent XSS (though less critical in pure MD, good practice if rendered to HTML)
+    text = html.escape(text)
+    # Replace newlines with spaces to keep cell structure
+    text = text.replace('\n', ' ').replace('\r', '')
+    return text
 
 def load_data(filepath):
     try:
@@ -78,13 +93,13 @@ def generate_report(data, output_file):
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        md.append(f"| {sanitize_markdown_cell(domain)} | {count} |")
 
     md.append("\n## Top 10 Categories")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        md.append(f"| {sanitize_markdown_cell(cat)} | {count} |")
 
     md.append("\n## Posts by Year")
     md.append("| Year | Count |")
@@ -94,7 +109,8 @@ def generate_report(data, output_file):
 
     md.append("\n## Authors")
     for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+        # Sanitize author just in case, though it's a list
+        md.append(f"- {sanitize_markdown_cell(author)}: {count} posts")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
