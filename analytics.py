@@ -13,6 +13,12 @@ def load_data(filepath):
         print(f"Error: File '{filepath}' not found.")
         sys.exit(1)
 
+class Colors:
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    BOLD = '\033[1m'
+    ENDC = '\033[0m'
+
 def get_domain(url):
     if not url:
         return None
@@ -99,7 +105,65 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    # Summary Box
+    # Define widths for dynamic sizing
+    # Minimum width 42 to accommodate title, max determined by content
+    # Titles
+    t_file = "📂 File:   "
+    t_posts = "📝 Posts:  "
+    t_range = "📅 Range:  "
+
+    # Values
+    v_file = output_file
+    v_posts = str(total_posts)
+    v_range = f"{start_date} to {end_date}"
+
+    # Calculate content lengths
+    # Note: Emojis like 📂, 📝, 📅 take 2 visual spaces but len() counts 1.
+    # We add +1 for each emoji line to account for this in padding calculation.
+
+    # Length of "Title + Value"
+    len_file = len(t_file) + len(v_file) + 1 # +1 for emoji
+    len_posts = len(t_posts) + len(v_posts) + 1 # +1 for emoji
+    len_range = len(t_range) + len(v_range) + 1 # +1 for emoji
+
+    # "📊 Analytics Report Ready!"
+    # String length: 26 chars. Visual length: 26 + 1 (for 📊) = 27.
+    # We need to account for this if we want strict centering or just make box wide enough.
+
+    # Let's set a minimum content width of 40.
+    max_content_len = max(40, len_file, len_posts, len_range)
+
+    # Build lines with padding
+    def pad_line(title, value, color_val=None):
+        content = f"{title}{color_val if color_val else ''}{value}{Colors.ENDC if color_val else ''}"
+        # Correct visual length calculation: len(title) + len(value) + 1 (for emoji in title)
+        visible_len = len(title) + len(value) + 1
+        padding = max_content_len - visible_len
+        return f"{Colors.CYAN}│  {content}{' ' * padding}  │{Colors.ENDC}"
+
+    # Borders
+    top_border = f"{Colors.CYAN}┌{'─' * (max_content_len + 4)}┐{Colors.ENDC}"
+    bot_border = f"{Colors.CYAN}└{'─' * (max_content_len + 4)}┘{Colors.ENDC}"
+
+    # Header line
+    # "📊 Analytics Report Ready!" len is 26. Visual is 27.
+    # Padding needed: (max_content_len + 4) - (2 (indent) + 27 (visual) + 2 (right border space? no, we want right align))
+    # Correct math:
+    # Box inner width: max_content_len + 4 (spaces)
+    # We print: │  (2 spaces) [TEXT] [PADDING]  (2 spaces) │
+    # Total inner width available: max_content_len + 4.
+    # Used: 2 (left margin) + 27 (visual text).
+    # Remaining for padding: (max_content_len + 4) - 29.
+    header_padding = max_content_len + 4 - 29
+
+    print(f"\n{top_border}")
+    print(f"{Colors.CYAN}│  📊 Analytics Report Ready!{' ' * header_padding}│{Colors.ENDC}")
+    print(f"{Colors.CYAN}│{' ' * (max_content_len + 4)}│{Colors.ENDC}")
+    print(pad_line(t_file, v_file, Colors.BOLD))
+    print(pad_line(t_posts, v_posts, Colors.GREEN))
+    print(pad_line(t_range, v_range))
+    print(f"{bot_border}\n")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
