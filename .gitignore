@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.pyo
+links.json
+links.csv
+unique_links.txt
+TEST_REPORT.md
