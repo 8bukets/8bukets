@@ -1,0 +1,4 @@
+## 2024-05-23 - CSV Injection Vulnerability in Scraper Output
+**Vulnerability:** The scraper was writing scraped data directly to a CSV file without sanitization. Malicious content starting with `=`, `+`, `-`, or `@` (e.g., in a post title or author name) could be executed as a formula by spreadsheet software like Excel, potentially leading to Remote Code Execution (RCE) on the analyst's machine.
+**Learning:** Even when scraping "static" content, data integrity and output sanitization are critical. The format of the output file (CSV) dictates the security requirements. Spreadsheet software is a common vector for attacks via "Formula Injection" or "CSV Injection".
+**Prevention:** Always sanitize data before writing to CSV. A standard mitigation is to prepend a single quote `'` to any field starting with risky characters. This forces the spreadsheet software to treat the content as a string literal.
