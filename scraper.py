@@ -7,6 +7,7 @@ import re
 import argparse
 import logging
 import time
+import sys
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse, urljoin
 
@@ -19,6 +20,19 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://www.oracle.com/news/"
+
+class Colors:
+    # Only use colors if stdout is a TTY
+    if sys.stdout.isatty():
+        CYAN = '\033[96m'
+        GREEN = '\033[92m'
+        ENDC = '\033[0m'
+        BOLD = '\033[1m'
+    else:
+        CYAN = ''
+        GREEN = ''
+        ENDC = ''
+        BOLD = ''
 
 class OracleNewsScraper:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
@@ -120,6 +134,7 @@ class OracleNewsScraper:
         return articles
 
     async def scrape(self):
+        start_time = time.time()
         all_posts = []
 
         # Headers to mimic browser
@@ -143,6 +158,36 @@ class OracleNewsScraper:
                 logger.error("Failed to fetch main news page.")
 
         self.save_data(all_posts)
+
+        # UX: Print Summary Box
+        duration = time.time() - start_time
+        width = 50
+        print(f"\n{Colors.CYAN}┌{'─' * (width-2)}┐{Colors.ENDC}")
+        # "✨ Execution Summary" is 19 chars visible length (approx), border is 50.
+        # Left border (2) + Space (1) + Text (19) + Space (X) + Right border (2) = width + extra chars
+        # Simplest alignment: Center it manually or pad calculation
+        title = "✨ Execution Summary"
+        # Manual padding for title to avoid emoji width issues
+        print(f"{Colors.CYAN}│ {Colors.BOLD}{title}{Colors.ENDC}{Colors.CYAN}{' ' * (width - 4 - 19)}│{Colors.ENDC}")
+        print(f"{Colors.CYAN}├{'─' * (width-2)}┤{Colors.ENDC}")
+        stats = [
+            ("Articles Found", len(all_posts)),
+            ("JSON Output", self.output_json),
+            ("CSV Output", self.output_csv),
+            ("Duration", f"{duration:.2f}s")
+        ]
+        for label, value in stats:
+            # Truncate value if it's too long
+            str_value = str(value)
+            # Max value length = width - 3 - len(label) - 2
+            max_val_len = width - 5 - len(label)
+            if len(str_value) > max_val_len:
+                str_value = str_value[:max_val_len-3] + "..."
+
+            content_len = len(label) + 2 + len(str_value)
+            padding = width - 3 - content_len
+            print(f"{Colors.CYAN}│ {Colors.ENDC}{label}: {Colors.GREEN}{str_value}{Colors.ENDC}{' ' * max(0, padding)}{Colors.CYAN}│{Colors.ENDC}")
+        print(f"{Colors.CYAN}└{'─' * (width-2)}┘{Colors.ENDC}\n")
 
     def save_data(self, posts: List[Dict]):
         # JSON
