@@ -33,8 +33,7 @@ class MarkPositionScraperAsync:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
-        text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return " ".join(text.split())
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
