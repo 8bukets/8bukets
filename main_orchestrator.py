@@ -11,10 +11,14 @@ from agents.monetization import MonetizationAgent
 from agents.creativity import CreativityAgent
 from agents.advertising import AdvertisingAgent
 
+from utils.logging_utils import ColorFormatter
+
 # Configure logging
+handler = logging.StreamHandler()
+handler.setFormatter(ColorFormatter())
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    handlers=[handler]
 )
 logger = logging.getLogger("Orchestrator")
 

@@ -4,10 +4,14 @@ import logging
 import argparse
 from main_orchestrator import run_orchestration
 
+from utils.logging_utils import ColorFormatter
+
 # Configure logging
+handler = logging.StreamHandler()
+handler.setFormatter(ColorFormatter())
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    handlers=[handler]
 )
 logger = logging.getLogger("AutonomousRunner")
 

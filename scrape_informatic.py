@@ -25,11 +25,15 @@ class Post:
 
 BASE_URL = "https://informaticmagazine.data.blog"
 
+from utils.logging_utils import ColorFormatter
+
 def configure_logging(verbose: bool):
     level = logging.DEBUG if verbose else logging.INFO
+    handler = logging.StreamHandler()
+    handler.setFormatter(ColorFormatter())
     logging.basicConfig(
         level=level,
-        format='%(asctime)s - %(levelname)s - %(message)s'
+        handlers=[handler]
     )
 
 def get_session():

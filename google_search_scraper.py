@@ -4,11 +4,15 @@ import argparse
 from googlesearch import search
 from typing import List, Dict
 
+from utils.logging_utils import ColorFormatter
+
 def configure_logging(verbose: bool):
     level = logging.DEBUG if verbose else logging.INFO
+    handler = logging.StreamHandler()
+    handler.setFormatter(ColorFormatter())
     logging.basicConfig(
         level=level,
-        format='%(asctime)s - %(levelname)s - %(message)s'
+        handlers=[handler]
     )
 
 def perform_google_search(query: str, num_results: int = 10, lang: str = "en") -> List[Dict[str, str]]:
