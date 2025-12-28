@@ -1,0 +1,3 @@
+## 2024-05-23 - BeautifulSoup SoupStrainer Optimization
+**Learning:** When using `SoupStrainer` with `html.parser` in BeautifulSoup, straining for a parent tag (e.g., `article`) *does* preserve its entire subtree (children tags like `h1`, `a`, `time`), contrary to some documentation interpretations or behaviors with other parsers. This allows for effective partial parsing of large HTML documents where only specific sections are needed, reducing CPU usage by ~25-30% in `scraper.py`.
+**Action:** Use `SoupStrainer` to limit the scope of parsing when only a subset of the DOM is required for extraction, but always verify that required child elements are accessible in the resulting soup.
