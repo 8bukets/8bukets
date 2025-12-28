@@ -18,6 +18,20 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+class Colors:
+    RESET = "\033[0m"
+    BOLD = "\033[1m"
+    GREEN = "\033[92m"
+    BLUE = "\033[94m"
+    YELLOW = "\033[93m"
+    CYAN = "\033[96m"
+
+    @staticmethod
+    def colorize(text, color):
+        if sys.stdout.isatty():
+            return f"{color}{text}{Colors.RESET}"
+        return text
+
 class BlogScraper:
     def __init__(self, base_url, output_json="wishlist_data.json", db_name="wishlist_data.db"):
         self.base_url = base_url
@@ -229,6 +243,17 @@ class BlogScraper:
                 url = None
 
         self.save_json()
+
+        # Print Summary Box
+        print("\n" + "=" * 50)
+        print(f" {Colors.colorize('🎨 SCRAPER SUMMARY', Colors.BOLD)} ")
+        print("=" * 50)
+        print(f" {Colors.colorize('📚 Total Articles:', Colors.BLUE)} {len(self.data)}")
+        print(f" {Colors.colorize('✨ New Items:', Colors.GREEN)}      {new_items_count}")
+        print(f" {Colors.colorize('💾 Database:', Colors.YELLOW)}       {self.db_name}")
+        print(f" {Colors.colorize('📄 JSON Output:', Colors.YELLOW)}    {self.output_json}")
+        print("=" * 50 + "\n")
+
         logger.info(f"Scraped {len(self.data)} articles in total.")
         logger.info(f"New items added to database: {new_items_count}")
 
