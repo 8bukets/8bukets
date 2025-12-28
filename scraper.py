@@ -6,6 +6,7 @@ import csv
 import re
 import argparse
 import logging
+import os
 import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
@@ -22,12 +23,26 @@ BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
-        self.output_json = output_json
-        self.output_csv = output_csv
-        self.output_txt = output_txt
+        self.output_json = self.validate_path(output_json)
+        self.output_csv = self.validate_path(output_csv)
+        self.output_txt = self.validate_path(output_txt)
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+
+    def validate_path(self, path: str) -> str:
+        """Ensure the path is a simple filename in the current directory to prevent path traversal."""
+        if not path:
+            raise ValueError("Output path cannot be empty")
+
+        base_name = os.path.basename(path)
+        if base_name != path:
+            raise ValueError(f"Invalid path '{path}'. Output files must be simple filenames in the current directory.")
+
+        if path in ['.', '..']:
+             raise ValueError(f"Invalid filename: {path}")
+
+        return path
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
