@@ -1,6 +1,7 @@
 import json
 import logging
 import argparse
+import sys
 from googlesearch import search
 from typing import List, Dict
 
@@ -8,7 +9,8 @@ def configure_logging(verbose: bool):
     level = logging.DEBUG if verbose else logging.INFO
     logging.basicConfig(
         level=level,
-        format='%(asctime)s - %(levelname)s - %(message)s'
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        stream=sys.stdout
     )
 
 def perform_google_search(query: str, num_results: int = 10, lang: str = "en") -> List[Dict[str, str]]:

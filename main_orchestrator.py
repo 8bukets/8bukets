@@ -14,7 +14,8 @@ from agents.advertising import AdvertisingAgent
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    stream=sys.stdout
 )
 logger = logging.getLogger("Orchestrator")
 
@@ -79,9 +80,32 @@ def run_orchestration(save_report=True):
     logger.info(">>> SWARM OPERATION COMPLETE <<<")
 
     if save_report:
-        save_daily_report(report_data)
+        report_file = save_daily_report(report_data)
+        report_data['report_file'] = report_file
+        print_summary_box(report_data)
 
     return report_data
+
+def print_summary_box(report_data):
+    # Check color support
+    use_colors = sys.stdout.isatty() or os.environ.get('FORCE_COLOR')
+    c = lambda t, k: f"{k}{t}\033[0m" if use_colors else t
+    GREEN, CYAN, YELLOW, BOLD = '\033[92m', '\033[96m', '\033[93m', '\033[1m'
+
+    # Extract & truncate
+    health = report_data.get('health', {}).get('site_status', 'Unknown')
+    posts = report_data.get('research', {}).get('posts_scraped', 0)
+    draft = report_data.get('content_draft', {}).get('draft_title', 'No Draft')
+    if draft and len(draft) > 40: draft = draft[:37] + "..."
+    path = report_data.get('report_file', 'unknown')
+
+    # Print summary
+    print(f"\n{c('🚀 SWARM EXECUTION SUMMARY', BOLD + CYAN)}")
+    print(f"{c('────────────────────────────────────────', BOLD)}")
+    print(f" {c('•', CYAN)} Status:          {c('✅', GREEN)} {health}")
+    print(f" {c('•', CYAN)} Posts Scraped:   {posts}")
+    print(f" {c('•', CYAN)} Content Draft:   {draft}")
+    print(f" {c('•', CYAN)} Report:          {c(path, YELLOW)}\n")
 
 def save_daily_report(data):
     today = datetime.datetime.now().strftime("%Y-%m-%d")
@@ -146,6 +170,7 @@ def save_daily_report(data):
         f.write(draft.get('draft_content', ''))
 
     logger.info(f"Report saved to {report_file}")
+    return report_file
 
 if __name__ == "__main__":
     run_orchestration()
