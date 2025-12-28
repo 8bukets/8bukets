@@ -7,14 +7,26 @@ import re
 import argparse
 import logging
 import time
+import sys
+import os
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
+
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
 
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
+    datefmt='%H:%M:%S',
+    stream=sys.stdout
 )
 logger = logging.getLogger(__name__)
 
@@ -267,6 +279,24 @@ class WordpressScraperAsync:
             logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
         except IOError as e:
             logger.error(f"Failed to save TXT: {e}")
+
+        self.print_summary(len(posts), len(sorted_links))
+
+    def print_summary(self, total_posts: int, unique_links: int):
+        if not sys.stdout.isatty() and not os.environ.get('FORCE_COLOR'):
+            return
+
+        width = 50
+        # Truncate filename if too long (width - 16 for label/border padding)
+        json_out = (self.output_json[:31] + '...') if len(self.output_json) > 34 else self.output_json
+
+        print(f"\n{Colors.BLUE}┌{'─' * (width - 2)}┐{Colors.ENDC}")
+        print(f"{Colors.BLUE}│{Colors.HEADER}{'SCRAPE COMPLETE':^{width - 2}}{Colors.BLUE}│{Colors.ENDC}")
+        print(f"{Colors.BLUE}├{'─' * (width - 2)}┤{Colors.ENDC}")
+        print(f"{Colors.BLUE}│ {Colors.BOLD}Total Posts:{Colors.ENDC} {str(total_posts):<{width - 16}}{Colors.BLUE}│{Colors.ENDC}")
+        print(f"{Colors.BLUE}│ {Colors.BOLD}Unique Links:{Colors.ENDC} {str(unique_links):<{width - 17}}{Colors.BLUE}│{Colors.ENDC}")
+        print(f"{Colors.BLUE}│ {Colors.BOLD}JSON Output:{Colors.ENDC} {json_out:<{width - 16}}{Colors.BLUE}│{Colors.ENDC}")
+        print(f"{Colors.BLUE}└{'─' * (width - 2)}┘{Colors.ENDC}\n")
 
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for WordPress blogs")
