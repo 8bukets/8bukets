@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
 import re
@@ -61,7 +61,14 @@ class OracleNewsScraper:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+        # Optimization: Use SoupStrainer to only parse <a> tags and their children.
+        # This significantly reduces memory and CPU usage by ignoring the vast majority of the DOM.
+        # We switch to 'lxml' which is faster than 'html.parser'.
+        # Note: SoupStrainer('a') preserves the <a> tag and its *descendants* (like <h3>),
+        # which is exactly what we need for title extraction below.
+        strainer = SoupStrainer('a', href=True)
+        soup = BeautifulSoup(html, 'lxml', parse_only=strainer)
+
         # Oracle news uses links in <h3> tags or <a> tags with specific classes or structures.
         # Based on curl output, we saw links like:
         # <a href="/news/announcement/..." data-lbl="..."><h3>Title</h3></a>
