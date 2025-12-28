@@ -9,6 +9,7 @@ import logging
 import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
+import sys
 
 # Configure logging
 logging.basicConfig(
@@ -20,6 +21,23 @@ logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
 
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+
+    @staticmethod
+    def colorize(text, color):
+        import os
+        if sys.stdout.isatty() or os.environ.get('FORCE_COLOR'):
+            return f"{color}{text}{Colors.ENDC}"
+        return text
+
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
@@ -28,6 +46,7 @@ class MarkPositionScraperAsync:
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+        self.start_time = None
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -134,6 +153,7 @@ class MarkPositionScraperAsync:
         return page_posts
 
     async def scrape(self):
+        self.start_time = time.time()
         all_posts = []
         page_num = 1
         sem = asyncio.Semaphore(self.concurrency)
@@ -208,6 +228,23 @@ class MarkPositionScraperAsync:
 
         self.save_data(all_posts)
 
+    def print_summary(self, total_posts: int, unique_links_count: int):
+        elapsed = time.time() - self.start_time
+        width = 50
+        print(f"\n{Colors.colorize('┌' + '─' * (width - 2) + '┐', Colors.CYAN)}")
+        print(f"{Colors.colorize('│', Colors.CYAN)} {Colors.colorize('🎉 Scraping Complete!', Colors.BOLD):^48} {Colors.colorize('│', Colors.CYAN)}")
+        print(f"{Colors.colorize('├' + '─' * (width - 2) + '┤', Colors.CYAN)}")
+
+        # Helper to format lines
+        def format_line(label, value):
+            return f"{Colors.colorize('│', Colors.CYAN)} {label:<20} {value:<25} {Colors.colorize('│', Colors.CYAN)}"
+
+        print(format_line("📄 Total Posts:", f"{total_posts}"))
+        print(format_line("🔗 Unique Links:", f"{unique_links_count}"))
+        print(format_line("⏱️  Time Elapsed:", f"{elapsed:.2f}s"))
+        print(format_line("📂 Output JSON:", f"{self.output_json}"))
+        print(f"{Colors.colorize('└' + '─' * (width - 2) + '┘', Colors.CYAN)}\n")
+
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
             html = await self.fetch_page(session, page_num)
@@ -258,6 +295,8 @@ class MarkPositionScraperAsync:
             logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
         except IOError as e:
             logger.error(f"Failed to save TXT: {e}")
+
+        self.print_summary(len(posts), len(sorted_links))
 
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
