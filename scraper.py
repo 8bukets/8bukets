@@ -6,6 +6,7 @@ import logging
 import argparse
 import sys
 import sqlite3
+import os
 from datetime import datetime
 
 # Configure logging
@@ -234,10 +235,21 @@ class BlogScraper:
 
     def save_json(self):
         try:
+            # Security fix: Path traversal prevention
+            # Ensure the output path is within the current working directory
+            abs_path = os.path.abspath(self.output_json)
+            cwd = os.getcwd()
+            common_prefix = os.path.commonpath([abs_path, cwd])
+
+            if common_prefix != cwd:
+                error_msg = f"Security Error: Output path '{self.output_json}' attempts to write outside current directory."
+                logger.error(error_msg)
+                raise ValueError(error_msg)
+
             with open(self.output_json, "w", encoding="utf-8") as f:
                 json.dump(self.data, f, indent=2, ensure_ascii=False)
             logger.info(f"Data saved to {self.output_json}")
-        except IOError as e:
+        except (IOError, ValueError) as e:
             logger.error(f"Error saving data to {self.output_json}: {e}")
 
 def main():
