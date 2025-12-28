@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+test_links.csv
+test_links.json
+test_unique_links.txt
+results/
+links.json
+links.csv
+unique_links.txt
+REPORT.md
