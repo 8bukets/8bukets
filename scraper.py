@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup, Comment
 import json
 import csv
 import re
+import sys
 import argparse
 import logging
 from typing import List, Dict, Optional
@@ -20,11 +21,38 @@ logger = logging.getLogger(__name__)
 
 BASE_URL = "https://www.oracle.com/news/"
 
+class Colors:
+    """ANSI color codes for CLI output."""
+    enabled = sys.stdout.isatty()
+    RESET = '\033[0m' if enabled else ''
+    BOLD = '\033[1m' if enabled else ''
+    GREEN = '\033[32m' if enabled else ''
+    BLUE = '\033[34m' if enabled else ''
+    CYAN = '\033[36m' if enabled else ''
+
 class OracleNewsScraper:
     def __init__(self, output_json: str, output_csv: str, output_txt: str):
         self.output_json = output_json
         self.output_csv = output_csv
         self.output_txt = output_txt
+
+    def print_summary(self, total: int, unique: int):
+        w = 50
+        def _row(lbl, val, c=Colors.BLUE):
+            val = str(val)
+            avail = w - len(lbl) - 4
+            if len(val) > avail: val = val[:avail-1] + "…"
+            pad = w - len(lbl) - len(val) - 2
+            return f"│  {lbl}{c}{val}{Colors.RESET}{' ' * pad}│"
+
+        print(f"\n{Colors.CYAN}┌{'─'*w}┐{Colors.RESET}")
+        print(f"{Colors.CYAN}│  {Colors.BOLD}✨ Scrape Completed Successfully!{Colors.RESET}{' ' * 15}│{Colors.RESET}")
+        print(f"{Colors.CYAN}├{'─'*w}┤{Colors.RESET}")
+        print(f"{Colors.CYAN}{_row('📄 Posts Extracted: ', total, Colors.GREEN)}{Colors.RESET}")
+        print(f"{Colors.CYAN}{_row('💾 JSON Saved:      ', self.output_json)}{Colors.RESET}")
+        print(f"{Colors.CYAN}{_row('📊 CSV Saved:       ', self.output_csv)}{Colors.RESET}")
+        print(f"{Colors.CYAN}{_row('🔗 Unique Links:    ', f'{self.output_txt} ({unique})')}{Colors.RESET}")
+        print(f"{Colors.CYAN}└{'─'*w}┘{Colors.RESET}\n")
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -134,11 +162,12 @@ class OracleNewsScraper:
             if html:
                 posts = self.parse_page(html)
                 logger.info(f"Extracted {len(posts)} posts.")
-                self.save_data(posts)
+                unique = self.save_data(posts)
+                self.print_summary(len(posts), unique)
             else:
                 logger.error("Failed to retrieve content.")
 
-    def save_data(self, posts: List[Dict]):
+    def save_data(self, posts: List[Dict]) -> int:
         # JSON
         try:
             with open(self.output_json, 'w', encoding='utf-8') as f:
@@ -181,6 +210,7 @@ class OracleNewsScraper:
             logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
         except IOError as e:
             logger.error(f"Failed to save TXT: {e}")
+        return len(sorted_links)
 
 def main():
     parser = argparse.ArgumentParser(description="Scraper for Oracle News")
