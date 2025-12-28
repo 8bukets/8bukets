@@ -1,13 +1,12 @@
 import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
 import re
 import argparse
 import logging
-import time
-from typing import List, Dict, Optional, Set
+from typing import List, Dict, Optional
 from urllib.parse import urlparse
 
 # Configure logging
@@ -33,8 +32,7 @@ class MarkPositionScraperAsync:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
-        text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return " ".join(text.split())
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
@@ -72,7 +70,8 @@ class MarkPositionScraperAsync:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+        strainer = SoupStrainer('article', class_='post')
+        soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
         articles = soup.find_all('article', class_='post')
         page_posts = []
 
