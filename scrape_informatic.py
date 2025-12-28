@@ -5,6 +5,7 @@ import time
 import logging
 import argparse
 import sys
+from pathlib import Path
 from urllib.parse import urlparse
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
@@ -53,6 +54,22 @@ def get_session():
     })
 
     return session
+
+def validate_output_path(path_str: str) -> Path:
+    """
+    Validates that the output path is within the current working directory.
+    Returns the resolved Path object.
+    """
+    try:
+        target = Path(path_str).resolve()
+        cwd = Path.cwd().resolve()
+
+        if not target.is_relative_to(cwd):
+            raise ValueError(f"Security Alert: Output path '{path_str}' must be within the current directory.")
+
+        return target
+    except Exception as e:
+        raise ValueError(f"Invalid path: {e}")
 
 def is_external_link(link_url: str, base_url: str) -> bool:
     """
@@ -144,7 +161,8 @@ def scrape(output_file: str, max_pages: int = 0):
 
         logging.info(f"Scraping page {page}: {current_url}...")
         try:
-            response = session.get(current_url)
+            # Added timeout to prevent hanging indefinitely
+            response = session.get(current_url, timeout=10)
             response.raise_for_status()
         except requests.exceptions.RequestException as e:
             logging.error(f"Error fetching {current_url}: {e}")
@@ -175,10 +193,13 @@ def scrape(output_file: str, max_pages: int = 0):
     logging.info(f"Total posts scraped: {len(all_posts)}")
 
     try:
-        with open(output_file, 'w', encoding='utf-8') as f:
+        # Validate output path before writing
+        safe_path = validate_output_path(output_file)
+
+        with open(safe_path, 'w', encoding='utf-8') as f:
             json.dump([asdict(p) for p in all_posts], f, indent=4, ensure_ascii=False)
-        logging.info(f"Saved to {output_file}")
-    except IOError as e:
+        logging.info(f"Saved to {safe_path}")
+    except (IOError, ValueError) as e:
         logging.error(f"Failed to save output to {output_file}: {e}")
 
 def main():
