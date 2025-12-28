@@ -7,6 +7,7 @@ import re
 import argparse
 import logging
 import time
+import sys
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
@@ -14,11 +15,23 @@ from urllib.parse import urlparse
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
+    datefmt='%H:%M:%S',
+    stream=sys.stdout
 )
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
+
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
 
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
@@ -28,6 +41,8 @@ class MarkPositionScraperAsync:
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+        self.total_posts = 0
+        self.unique_links_count = 0
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -205,6 +220,7 @@ class MarkPositionScraperAsync:
 
                         if total_batch_posts > 0:
                             logger.info(f"Saved {total_batch_posts} posts from batch.")
+                            self.total_posts += total_batch_posts
 
                         if stop_detected:
                             break
@@ -238,6 +254,7 @@ class MarkPositionScraperAsync:
             if link and link not in seen_links:
                 seen_links.add(link)
                 txt_f.write(link + '\n')
+                self.unique_links_count += 1
 
             # JSON
             if not is_first_item:
@@ -257,6 +274,31 @@ class MarkPositionScraperAsync:
                 return await self.parse_page(html)
             return None
 
+def print_summary_box(total_posts, unique_links, duration, json_file, csv_file, txt_file):
+    use_colors = sys.stdout.isatty()
+
+    def c(color, text):
+        return f"{color}{text}{Colors.ENDC}" if use_colors else text
+
+    width = 60
+    border = c(Colors.BLUE, "═" * width)
+
+    print(f"\n{border}")
+    print(f" {c(Colors.BOLD + Colors.HEADER, 'SCRAPE COMPLETE')} ")
+    print(f"{border}")
+
+    # Stats
+    print(f" {c(Colors.GREEN, '✅')} {c(Colors.BOLD, 'Total Posts Scraped:')} {total_posts}")
+    print(f" {c(Colors.CYAN, '🔗')} {c(Colors.BOLD, 'Unique Links Found:')} {unique_links}")
+    print(f" {c(Colors.WARNING, '⏱️')} {c(Colors.BOLD, 'Time Taken:')} {duration:.2f}s")
+
+    print(f"{c(Colors.BLUE, '─' * width)}")
+    print(f" {c(Colors.BOLD, '📁 Output Files:')}")
+    print(f"   • {json_file}")
+    print(f"   • {csv_file}")
+    print(f"   • {txt_file}")
+    print(f"{border}\n")
+
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
     parser.add_argument("--json", default="links.json", help="Output JSON filename")
@@ -275,7 +317,18 @@ def main():
         concurrency=args.concurrency
     )
 
+    start_time = time.time()
     asyncio.run(scraper.scrape())
+    end_time = time.time()
+
+    print_summary_box(
+        scraper.total_posts,
+        scraper.unique_links_count,
+        end_time - start_time,
+        args.json,
+        args.csv,
+        args.txt
+    )
 
 if __name__ == "__main__":
     main()
