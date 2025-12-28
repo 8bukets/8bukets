@@ -2,6 +2,8 @@ import asyncio
 import json
 import logging
 import os
+import sys
+import time
 import argparse
 from datetime import datetime
 from scraper import MarkPositionScraperAsync
@@ -26,6 +28,25 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 KB_FILE = "knowledge_base.json"
+
+class Colors:
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    FAIL = '\033[91m'
+    BOLD = '\033[1m'
+    ENDC = '\033[0m'
+
+def print_summary(success, failed, duration, report):
+    if not sys.stdout.isatty(): return
+    c = Colors
+    print(f"\n{c.CYAN}{'='*40}{c.ENDC}")
+    print(f"{c.BOLD}   🎨 Execution Summary{c.ENDC}")
+    print(f"{c.CYAN}{'-'*40}{c.ENDC}")
+    print(f"   {c.GREEN}✔ Agents Run:{c.ENDC} {success + failed}")
+    if failed: print(f"   {c.FAIL}✖ Failed:{c.ENDC}     {failed}")
+    print(f"   {c.CYAN}⏱ Duration:{c.ENDC}   {duration:.2f}s")
+    print(f"   {c.CYAN}📄 Report:{c.ENDC}     {os.path.basename(report)}")
+    print(f"{c.CYAN}{'='*40}{c.ENDC}\n")
 
 async def run_pipeline(skip_scrape=False, limit=2):
     # 0. Initialize Context and Knowledge Base
@@ -82,6 +103,10 @@ async def run_pipeline(skip_scrape=False, limit=2):
     report_lines = []
     report_lines.append(f"# Daily Autonomous Report: {datetime.now().strftime('%Y-%m-%d')}\n")
 
+    start_time = time.time()
+    success_count = 0
+    fail_count = 0
+
     for agent in agents:
         logger.info(f"Running {agent.name}...")
         try:
@@ -89,9 +114,11 @@ async def run_pipeline(skip_scrape=False, limit=2):
             report_section = agent.format_report(results)
             report_lines.append(report_section)
             report_lines.append("\n---\n")
+            success_count += 1
         except Exception as e:
             logger.error(f"Error in {agent.name}: {e}")
             report_lines.append(f"### {agent.name} Failed\nError: {e}\n\n---\n")
+            fail_count += 1
 
     # 5. Save Report
     output_dir = "results"
@@ -102,6 +129,8 @@ async def run_pipeline(skip_scrape=False, limit=2):
         f.write("\n".join(report_lines))
 
     logger.info(f"Report generated successfully: {report_filename}")
+
+    print_summary(success_count, fail_count, time.time() - start_time, report_filename)
 
     # 6. Save Knowledge Base (Evolution)
     try:
