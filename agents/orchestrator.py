@@ -1,5 +1,7 @@
 import time
 import sys
+import os
+from bs4 import BeautifulSoup
 from content_agent import ContentAgent
 from ad_agent import AdAgent
 from health_agent import HealthAgent
@@ -29,22 +31,34 @@ class Orchestrator:
             self.cycle_count += 1
             print(f"\n--- Cycle {self.cycle_count} (Simulated Day) Started ---")
 
+            # Optimization: Load DOM once per cycle to reduce I/O overhead
+            # Bolt: Single parse, multiple modifications
+            soup = None
+            if os.path.exists('index.html'):
+                 with open('index.html', 'r') as f:
+                     soup = BeautifulSoup(f, 'html.parser')
+
             # Step 1: Health Check
-            if not self.health_agent.run_diagnostics():
+            if not self.health_agent.run_diagnostics(soup=soup):
                 print("[Orchestrator] System unstable. Aborting cycle.")
                 break
 
             # Step 2: Creative Brainstorming (Curiosity & Ideas)
             print("[Orchestrator] Triggering Creative Agent (100% Curiosity)...")
-            self.creative_agent.implement_idea()
+            self.creative_agent.implement_idea(soup=soup)
 
             # Step 3: Content Creation (Intelligence)
             print("[Orchestrator] Triggering Content Agent...")
-            self.content_agent.publish()
+            self.content_agent.publish(soup=soup)
 
             # Step 4: Monetization (Sustainability)
             print("[Orchestrator] Triggering Ad Agent...")
-            self.ad_agent.place_ad()
+            self.ad_agent.place_ad(soup=soup)
+
+            # Commit changes to disk once
+            if soup:
+                with open('index.html', 'w') as f:
+                    f.write(str(soup))
 
             print(f"--- Cycle {self.cycle_count} Completed with High Solution Interest ---")
             # In a real infinite loop, we would sleep here
