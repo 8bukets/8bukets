@@ -1,6 +1,7 @@
 import json
 import logging
 import argparse
+from pathlib import Path
 from googlesearch import search
 from typing import List, Dict
 
@@ -10,6 +11,22 @@ def configure_logging(verbose: bool):
         level=level,
         format='%(asctime)s - %(levelname)s - %(message)s'
     )
+
+def validate_output_path(path_str: str) -> Path:
+    """
+    Validates that the output path is within the current working directory.
+    Returns the resolved Path object.
+    """
+    try:
+        target = Path(path_str).resolve()
+        cwd = Path.cwd().resolve()
+
+        if not target.is_relative_to(cwd):
+            raise ValueError(f"Security Alert: Output path '{path_str}' must be within the current directory.")
+
+        return target
+    except Exception as e:
+        raise ValueError(f"Invalid path: {e}")
 
 def perform_google_search(query: str, num_results: int = 10, lang: str = "en") -> List[Dict[str, str]]:
     """
@@ -48,10 +65,13 @@ def main():
     results = perform_google_search(args.query, num_results=args.limit)
 
     try:
-        with open(args.output, 'w', encoding='utf-8') as f:
+        # Validate output path before writing
+        safe_path = validate_output_path(args.output)
+
+        with open(safe_path, 'w', encoding='utf-8') as f:
             json.dump(results, f, indent=4, ensure_ascii=False)
-        logging.info(f"Saved results to {args.output}")
-    except IOError as e:
+        logging.info(f"Saved results to {safe_path}")
+    except (IOError, ValueError) as e:
         logging.error(f"Failed to save output to {args.output}: {e}")
 
 if __name__ == "__main__":
