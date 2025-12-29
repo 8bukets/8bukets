@@ -1,0 +1,4 @@
+## 2024-05-23 - Path Traversal in File Output
+**Vulnerability:** The `scraper.py` script accepted command-line arguments for output filenames (`--json`, `--csv`, etc.) without validating that the paths were within the expected directory. This allowed a Path Traversal attack where a user could overwrite arbitrary files on the system (e.g., `../../etc/passwd`) by providing a malicious path.
+**Learning:** File writing operations that use user-controlled paths must always validate the resolved absolute path against a safe allowlist (like the current working directory). Simply joining paths or relying on relative paths is insufficient as `..` can bypass these checks.
+**Prevention:** I implemented a `validate_output_path` method that resolves the absolute path of the input and checks `os.path.commonpath([cwd, abs_path]) == cwd`. This ensures all file writes are strictly contained within the application's directory.
