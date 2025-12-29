@@ -1,0 +1,3 @@
+## 2024-12-29 - [SoupStrainer + lxml Performance]
+**Learning:** `lxml` is significantly faster than `html.parser` (~1.8x). When combining `lxml` with `SoupStrainer`, filtering by attributes (e.g., `SoupStrainer('article', class_='post')`) fails to match elements (returns 0 results). However, filtering by tag only (e.g., `SoupStrainer('article')`) works correctly and provides a performance boost by only parsing the relevant subtrees.
+**Action:** Use `lxml` as the default parser for performance-critical scraping. When using `SoupStrainer` with `lxml`, filter by tag name only and refine with `find_all` on the resulting soup, rather than trying to filter by attributes in the strainer itself.
