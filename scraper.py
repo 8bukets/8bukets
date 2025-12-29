@@ -27,7 +27,14 @@ class BlogScraper:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
         self.data = []
+        # optimization: Use a session for connection pooling (Keep-Alive)
+        self.session = requests.Session()
+        self.session.headers.update(self.headers)
         self.init_db()
+
+    def __del__(self):
+        if hasattr(self, 'session'):
+            self.session.close()
 
     def init_db(self):
         """Initialize the SQLite database."""
@@ -65,63 +72,77 @@ class BlogScraper:
         except sqlite3.Error as e:
             logger.error(f"Database initialization error: {e}")
 
-    def save_to_db(self, item):
+    def save_to_db(self, item, conn=None):
         """Save a single item to the database, handling updates."""
         try:
-            with sqlite3.connect(self.db_name) as conn:
-                cursor = conn.cursor()
+            # optimization: Allow reusing existing connection to reduce I/O overhead
+            should_close = False
+            if conn is None:
+                conn = sqlite3.connect(self.db_name)
+                should_close = True
 
-                # Check if post exists
-                cursor.execute("SELECT id, title, external_link FROM posts WHERE post_url = ?", (item.get('post_url'),))
-                existing_post = cursor.fetchone()
+            cursor = conn.cursor()
 
-                if existing_post:
-                    post_id, old_title, old_link = existing_post
-                    updated = False
+            # Check if post exists
+            cursor.execute("SELECT id, title, external_link FROM posts WHERE post_url = ?", (item.get('post_url'),))
+            existing_post = cursor.fetchone()
 
-                    # Check Title Change
-                    new_title = item.get('title')
-                    if old_title != new_title and new_title:
-                        logger.info(f"Change detected for {item.get('post_url')}: Title changed.")
-                        cursor.execute("INSERT INTO changes (post_id, field, old_value, new_value) VALUES (?, ?, ?, ?)",
-                                       (post_id, 'title', old_title, new_title))
-                        cursor.execute("UPDATE posts SET title = ? WHERE id = ?", (new_title, post_id))
-                        updated = True
+            if existing_post:
+                post_id, old_title, old_link = existing_post
+                updated = False
 
-                    # Check External Link Change
-                    new_link = item.get('external_link')
-                    if old_link != new_link and new_link:
-                        logger.info(f"Change detected for {item.get('post_url')}: External Link changed.")
-                        cursor.execute("INSERT INTO changes (post_id, field, old_value, new_value) VALUES (?, ?, ?, ?)",
-                                       (post_id, 'external_link', old_link, new_link))
-                        cursor.execute("UPDATE posts SET external_link = ? WHERE id = ?", (new_link, post_id))
-                        updated = True
+                # Check Title Change
+                new_title = item.get('title')
+                if old_title != new_title and new_title:
+                    logger.info(f"Change detected for {item.get('post_url')}: Title changed.")
+                    cursor.execute("INSERT INTO changes (post_id, field, old_value, new_value) VALUES (?, ?, ?, ?)",
+                                   (post_id, 'title', old_title, new_title))
+                    cursor.execute("UPDATE posts SET title = ? WHERE id = ?", (new_title, post_id))
+                    updated = True
 
-                    if updated:
-                        # Update scraped_at to reflect latest check
-                        cursor.execute("UPDATE posts SET scraped_at = CURRENT_TIMESTAMP WHERE id = ?", (post_id,))
-                        conn.commit()
-                        return False # Not a "new" post, but an updated one
+                # Check External Link Change
+                new_link = item.get('external_link')
+                if old_link != new_link and new_link:
+                    logger.info(f"Change detected for {item.get('post_url')}: External Link changed.")
+                    cursor.execute("INSERT INTO changes (post_id, field, old_value, new_value) VALUES (?, ?, ?, ?)",
+                                   (post_id, 'external_link', old_link, new_link))
+                    cursor.execute("UPDATE posts SET external_link = ? WHERE id = ?", (new_link, post_id))
+                    updated = True
 
-                else:
-                    # Insert new post
-                    cursor.execute('''
-                        INSERT INTO posts (title, post_url, external_link, date_str, datetime_iso, author, categories)
-                        VALUES (?, ?, ?, ?, ?, ?, ?)
-                    ''', (
-                        item.get('title'),
-                        item.get('post_url'),
-                        item.get('external_link'),
-                        item.get('date'),
-                        item.get('datetime'),
-                        item.get('author'),
-                        json.dumps(item.get('categories'))
-                    ))
+                if updated:
+                    # Update scraped_at to reflect latest check
+                    cursor.execute("UPDATE posts SET scraped_at = CURRENT_TIMESTAMP WHERE id = ?", (post_id,))
                     conn.commit()
-                    return True # New post
+                    if should_close: conn.close()
+                    return False # Not a "new" post, but an updated one
+
+                if should_close: conn.close()
+
+            else:
+                # Insert new post
+                cursor.execute('''
+                    INSERT INTO posts (title, post_url, external_link, date_str, datetime_iso, author, categories)
+                    VALUES (?, ?, ?, ?, ?, ?, ?)
+                ''', (
+                    item.get('title'),
+                    item.get('post_url'),
+                    item.get('external_link'),
+                    item.get('date'),
+                    item.get('datetime'),
+                    item.get('author'),
+                    json.dumps(item.get('categories'))
+                ))
+                conn.commit()
+                if should_close: conn.close()
+                return True # New post
 
         except sqlite3.Error as e:
             logger.error(f"Database insertion/update error: {e}")
+            if should_close and conn:
+                try:
+                    conn.close()
+                except:
+                    pass
             return False
 
         return False
@@ -129,7 +150,8 @@ class BlogScraper:
     def fetch_page(self, url):
         logger.info(f"Fetching {url}...")
         try:
-            response = requests.get(url, headers=self.headers, timeout=10)
+            # optimization: Use session to reuse TCP connection
+            response = self.session.get(url, timeout=10)
             response.raise_for_status()
             return response.content
         except requests.RequestException as e:
@@ -201,32 +223,37 @@ class BlogScraper:
         url = self.base_url
         new_items_count = 0
 
-        while url:
-            content = self.fetch_page(url)
-            if not content:
-                break
+        # optimization: Open DB connection once and reuse it
+        try:
+            with sqlite3.connect(self.db_name) as conn:
+                while url:
+                    content = self.fetch_page(url)
+                    if not content:
+                        break
 
-            soup = BeautifulSoup(content, "html.parser")
-            articles = soup.find_all("article")
-            logger.info(f"Found {len(articles)} articles on this page.")
+                    soup = BeautifulSoup(content, "html.parser")
+                    articles = soup.find_all("article")
+                    logger.info(f"Found {len(articles)} articles on this page.")
 
-            if not articles:
-                logger.warning("No articles found on page.")
+                    if not articles:
+                        logger.warning("No articles found on page.")
 
-            for article in articles:
-                item = self.parse_article(article)
-                self.data.append(item)
-                if self.save_to_db(item):
-                    new_items_count += 1
+                    for article in articles:
+                        item = self.parse_article(article)
+                        self.data.append(item)
+                        if self.save_to_db(item, conn=conn):
+                            new_items_count += 1
 
-            next_page = self.get_next_page(soup)
-            if next_page:
-                logger.info(f"Found next page: {next_page}")
-                url = next_page
-                time.sleep(1)
-            else:
-                logger.info("No more pages found.")
-                url = None
+                    next_page = self.get_next_page(soup)
+                    if next_page:
+                        logger.info(f"Found next page: {next_page}")
+                        url = next_page
+                        time.sleep(1)
+                    else:
+                        logger.info("No more pages found.")
+                        url = None
+        except sqlite3.Error as e:
+            logger.error(f"Database error in run loop: {e}")
 
         self.save_json()
         logger.info(f"Scraped {len(self.data)} articles in total.")
