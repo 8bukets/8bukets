@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup, Comment
 import json
 import csv
 import re
+import os
 import argparse
 import logging
 from typing import List, Dict, Optional
@@ -22,9 +23,38 @@ BASE_URL = "https://www.oracle.com/news/"
 
 class OracleNewsScraper:
     def __init__(self, output_json: str, output_csv: str, output_txt: str):
-        self.output_json = output_json
-        self.output_csv = output_csv
-        self.output_txt = output_txt
+        self.output_json = self.validate_path(output_json)
+        self.output_csv = self.validate_path(output_csv)
+        self.output_txt = self.validate_path(output_txt)
+
+    def validate_path(self, filepath: str) -> str:
+        """Ensure the path is within the current working directory."""
+        # Get absolute path of the requested file
+        abs_path = os.path.abspath(filepath)
+        # Get absolute path of current working directory
+        cwd = os.path.abspath(os.getcwd())
+
+        # Check if the file is within CWD using commonpath to prevent prefix matching bypass
+        # e.g. /home/user/project_v2 vs /home/user/project
+        try:
+            if os.path.commonpath([cwd, abs_path]) != cwd:
+                logger.warning(f"Security Warning: Attempted path traversal to {filepath}. Resetting to {os.path.basename(filepath)}")
+                return os.path.basename(filepath)
+        except ValueError:
+            # Different drives on Windows will raise ValueError
+            logger.warning(f"Security Warning: Attempted path traversal (different drive) to {filepath}. Resetting to {os.path.basename(filepath)}")
+            return os.path.basename(filepath)
+
+        return filepath
+
+    def sanitize_for_csv(self, text: str) -> str:
+        """Prevent CSV Injection (Formula Injection)."""
+        if not text:
+            return ""
+        # If text starts with =, +, -, @, prepend a single quote
+        if text.startswith(('=', '+', '-', '@')):
+            return f"'{text}"
+        return text
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -154,13 +184,13 @@ class OracleNewsScraper:
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        self.sanitize_for_csv(post.get('title', '')),
+                        self.sanitize_for_csv(post.get('date', '')),
+                        self.sanitize_for_csv(post.get('author', '')),
+                        self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                        self.sanitize_for_csv(post.get('external_link', '')),
+                        self.sanitize_for_csv(post.get('domain', '')),
+                        self.sanitize_for_csv(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
