@@ -4,6 +4,7 @@ import logging
 from datetime import datetime, timedelta
 from collections import Counter
 import re
+import html
 
 # Configure logging
 logging.basicConfig(
@@ -84,7 +85,7 @@ class ReportGenerator:
                 f.write("| Keyword | Frequency |\n")
                 f.write("|---|---|\n")
                 for word, count in keywords:
-                    f.write(f"| {word} | {count} |\n")
+                    f.write(f"| {html.escape(str(word))} | {count} |\n")
                 f.write("\n")
 
             # SEO Rankings Trend
@@ -94,7 +95,7 @@ class ReportGenerator:
                 f.write("|---|---|---|---|---|\n")
                 trends = self.analyze_seo_trends(rankings, past_rankings)
                 for item in trends:
-                    f.write(f"| {item['query']} | {item['rank']} | {item['change']} | {item['date']} |\n")
+                    f.write(f"| {html.escape(str(item['query']))} | {item['rank']} | {item['change']} | {item['date']} |\n")
             else:
                 f.write("No SEO ranking data for today.\n\n")
 
@@ -105,8 +106,8 @@ class ReportGenerator:
                 f.write("|---|---|---|---|---|\n")
                 for u in updated_posts:
                     title, url, field, old, new, time = u
-                    title = title.replace("|", "-")
-                    f.write(f"| [{title}]({url}) | {field} | {old} | {new} | {time} |\n")
+                    title = str(title).replace("|", "-")
+                    f.write(f"| [{html.escape(title)}]({html.escape(str(url))}) | {html.escape(str(field))} | {html.escape(str(old))} | {html.escape(str(new))} | {time} |\n")
                 f.write("\n")
 
             # New Posts Section
@@ -116,8 +117,8 @@ class ReportGenerator:
                 f.write("|---|---|---|\n")
                 for post in new_posts:
                     title, url, scraped_at = post
-                    title = title.replace("|", "-") if title else "No Title"
-                    f.write(f"| {title} | {scraped_at} | [View]({url}) |\n")
+                    title = str(title).replace("|", "-") if title else "No Title"
+                    f.write(f"| {html.escape(title)} | {scraped_at} | [View]({html.escape(str(url))}) |\n")
             else:
                 f.write("No new posts scraped in the last 24 hours.\n")
 
