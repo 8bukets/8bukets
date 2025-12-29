@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
 import re
@@ -72,7 +72,9 @@ class MarkPositionScraperAsync:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+        # Performance optimization: parse only 'article' tags using lxml
+        parse_only = SoupStrainer('article')
+        soup = BeautifulSoup(html, 'lxml', parse_only=parse_only)
         articles = soup.find_all('article', class_='post')
         page_posts = []
 
