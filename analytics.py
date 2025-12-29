@@ -4,6 +4,18 @@ from collections import Counter
 from urllib.parse import urlparse
 from datetime import datetime
 import sys
+import html
+
+def escape_markdown(text):
+    """Escape text for Markdown tables and prevent HTML injection."""
+    if not text:
+        return ""
+    text = str(text)
+    # Escape HTML characters to prevent XSS
+    text = html.escape(text)
+    # Escape pipe characters to prevent table injection
+    text = text.replace('|', r'\|')
+    return text
 
 def load_data(filepath):
     try:
@@ -78,23 +90,23 @@ def generate_report(data, output_file):
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        md.append(f"| {escape_markdown(domain)} | {count} |")
 
     md.append("\n## Top 10 Categories")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        md.append(f"| {escape_markdown(cat)} | {count} |")
 
     md.append("\n## Posts by Year")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
     for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+        md.append(f"| {escape_markdown(year)} | {count} |")
 
     md.append("\n## Authors")
     for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+        md.append(f"- {escape_markdown(author)}: {count} posts")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
