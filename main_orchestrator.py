@@ -12,9 +12,13 @@ from agents.creativity import CreativityAgent
 from agents.advertising import AdvertisingAgent
 
 # Configure logging
+from utils.colors import ColoredFormatter
+
+handler = logging.StreamHandler()
+handler.setFormatter(ColoredFormatter())
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    handlers=[handler]
 )
 logger = logging.getLogger("Orchestrator")
 

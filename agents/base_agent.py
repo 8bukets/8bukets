@@ -5,10 +5,13 @@ class BaseAgent:
         self.name = name
         self.logger = logging.getLogger(self.name)
         self.logger.setLevel(logging.INFO)
-        if not self.logger.handlers:
+        # Ensure proper logging configuration when running agents independently.
+        # If the root logger has handlers (e.g. from orchestrator), we skip adding a new one
+        # to avoid duplicate logs.
+        if not self.logger.handlers and not logging.getLogger().handlers:
+            from utils.colors import ColoredFormatter
             handler = logging.StreamHandler()
-            formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-            handler.setFormatter(formatter)
+            handler.setFormatter(ColoredFormatter())
             self.logger.addHandler(handler)
 
     def run(self, data=None):
