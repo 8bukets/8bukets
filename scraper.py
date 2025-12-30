@@ -7,6 +7,8 @@ import re
 import argparse
 import logging
 import time
+import sys
+import os
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
@@ -19,6 +21,17 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
+
+class Colors:
+    CYAN, GREEN, BOLD, ENDC = '\033[96m', '\033[92m', '\033[1m', '\033[0m'
+
+    @staticmethod
+    def enabled():
+        return sys.stdout.isatty() or os.environ.get('FORCE_COLOR')
+
+    @classmethod
+    def fmt(cls, text, color):
+        return f"{color}{text}{cls.ENDC}" if cls.enabled() else text
 
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
@@ -134,6 +147,7 @@ class MarkPositionScraperAsync:
         return page_posts
 
     async def scrape(self):
+        start_time = time.time()
         all_posts = []
         page_num = 1
         sem = asyncio.Semaphore(self.concurrency)
@@ -207,6 +221,42 @@ class MarkPositionScraperAsync:
                 await asyncio.sleep(0.5)
 
         self.save_data(all_posts)
+        duration = time.time() - start_time
+        self.print_summary(len(all_posts), duration)
+
+    def print_summary(self, total_posts, duration):
+        width = 50
+        c = Colors
+
+        unique_links = 0
+        try:
+            with open(self.output_txt, 'r') as f:
+                unique_links = len(f.readlines())
+        except: pass
+
+        def p(text): print(text)
+
+        p(f"\n{c.fmt('╭' + '─' * (width - 2) + '╮', c.CYAN)}")
+        p(f"{c.fmt('│', c.CYAN)} {c.fmt('🎨 Scraper Summary', c.BOLD)}{' ' * (width - 19)} {c.fmt('│', c.CYAN)}")
+        p(f"{c.fmt('├' + '─' * (width - 2) + '┤', c.CYAN)}")
+
+        stats = [
+            ("📄 Posts Scraped", f"{total_posts}"),
+            ("🔗 Unique Links", f"{unique_links}"),
+            ("⏱️  Time Taken", f"{duration:.2f}s"),
+        ]
+
+        for label, value in stats:
+            pad = width - 4 - len(label) - len(value) - (1 if '📄' in label or '🔗' in label else 0)
+            p(f"{c.fmt('│', c.CYAN)} {label}: {c.fmt(value, c.GREEN)}{' ' * pad} {c.fmt('│', c.CYAN)}")
+
+        p(f"{c.fmt('├' + '─' * (width - 2) + '┤', c.CYAN)}")
+        p(f"{c.fmt('│', c.CYAN)} {c.fmt('📂 Output Files', c.BOLD)}{' ' * (width - 17)} {c.fmt('│', c.CYAN)}")
+
+        for f in [self.output_json, self.output_csv, self.output_txt]:
+            p(f"{c.fmt('│', c.CYAN)} • {f}{' ' * (width - 5 - len(f))} {c.fmt('│', c.CYAN)}")
+
+        p(f"{c.fmt('╰' + '─' * (width - 2) + '╯', c.CYAN)}")
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
