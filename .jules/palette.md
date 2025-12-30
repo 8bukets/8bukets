@@ -1,0 +1,3 @@
+## 2025-12-30 - CLI Summary Boxes
+**Learning:** Python's `len()` counts code points, not visual columns. Emojis like 🚀 and ✨ often take up 2 visual columns but count as 1 or 2 characters depending on the string representation. When building ASCII borders around text with emojis, visual alignment breaks unless you manually account for this extra width.
+**Action:** In future CLI improvements, use a dedicated function to calculate "display width" (e.g., adding +1 width for known double-width emojis) or use a library like `wcwidth` if dependencies permit. For now, simple regex adjustment `len(re.findall(r'[emoji_range]', text))` works for specific known icons.
