@@ -6,6 +6,7 @@ import csv
 import re
 import argparse
 import logging
+import sys
 import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
@@ -14,11 +15,19 @@ from urllib.parse import urlparse
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
+    datefmt='%H:%M:%S',
+    stream=sys.stdout
 )
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
+
+class Colors:
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    BOLD = '\033[1m'
+    ENDC = '\033[0m'
 
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
@@ -134,6 +143,7 @@ class MarkPositionScraperAsync:
         return page_posts
 
     async def scrape(self):
+        start_time = time.time()
         all_posts = []
         page_num = 1
         sem = asyncio.Semaphore(self.concurrency)
@@ -207,6 +217,17 @@ class MarkPositionScraperAsync:
                 await asyncio.sleep(0.5)
 
         self.save_data(all_posts)
+
+        elapsed = time.time() - start_time
+        self.print_summary(len(all_posts), elapsed)
+
+    def print_summary(self, total_posts: int, elapsed: float):
+        print(f"\n{Colors.CYAN}{Colors.BOLD}╔════════════════════════════════════════════╗{Colors.ENDC}")
+        print(f"{Colors.CYAN}{Colors.BOLD}║          Scraping Completed! 🚀            ║{Colors.ENDC}")
+        print(f"{Colors.CYAN}{Colors.BOLD}╠════════════════════════════════════════════╣{Colors.ENDC}")
+        print(f"║ 📄 Total Posts:   {Colors.GREEN}{str(total_posts).ljust(25)}{Colors.ENDC}║")
+        print(f"║ ⏱️  Time Taken:    {Colors.YELLOW}{f'{elapsed:.2f}s'.ljust(25)}{Colors.ENDC}║")
+        print(f"{Colors.CYAN}{Colors.BOLD}╚════════════════════════════════════════════╝{Colors.ENDC}\n")
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
