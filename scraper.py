@@ -7,8 +7,34 @@ import re
 import argparse
 import logging
 import time
-from typing import List, Dict, Optional, Set
+import sys
+import os
+from typing import List, Dict, Optional
 from urllib.parse import urlparse
+
+
+class Colors:
+    GREEN = '\033[92m'
+    CYAN = '\033[96m'
+    BOLD = '\033[1m'
+    ENDC = '\033[0m'
+
+    @classmethod
+    def style(cls, text, color):
+        if sys.stdout.isatty() or os.environ.get('FORCE_COLOR'):
+            return f"{color}{text}{cls.ENDC}"
+        return text
+
+
+def print_summary(posts, links, duration):
+    print(f"\n{Colors.style('='*40, Colors.BOLD)}")
+    print(f"{Colors.style(' 🚀  SCRAPE COMPLETED SUCCESSFULLY', Colors.GREEN + Colors.BOLD)}")
+    print(f"{Colors.style('='*40, Colors.BOLD)}")
+    print(f" 📄  Posts Scraped:    {Colors.style(str(posts), Colors.CYAN)}")
+    print(f" 🔗  Unique Links:     {Colors.style(str(links), Colors.CYAN)}")
+    print(f" ⏱️   Time Taken:       {Colors.style(f'{duration:.2f}s', Colors.CYAN)}")
+    print(f"{Colors.style('='*40, Colors.BOLD)}\n")
+
 
 # Configure logging
 logging.basicConfig(
@@ -206,7 +232,8 @@ class MarkPositionScraperAsync:
                 # Small delay between batches
                 await asyncio.sleep(0.5)
 
-        self.save_data(all_posts)
+        unique_count = self.save_data(all_posts)
+        return len(all_posts), unique_count
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
@@ -259,6 +286,9 @@ class MarkPositionScraperAsync:
         except IOError as e:
             logger.error(f"Failed to save TXT: {e}")
 
+        return len(sorted_links)
+
+
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
     parser.add_argument("--json", default="links.json", help="Output JSON filename")
@@ -277,7 +307,10 @@ def main():
         concurrency=args.concurrency
     )
 
-    asyncio.run(scraper.scrape())
+    start_time = time.time()
+    posts_count, links_count = asyncio.run(scraper.scrape())
+    duration = time.time() - start_time
+    print_summary(posts_count, links_count, duration)
 
 if __name__ == "__main__":
     main()
