@@ -18,6 +18,54 @@ logging.basicConfig(
 )
 logger = logging.getLogger("Orchestrator")
 
+class Colors:
+    """ANSI color codes for CLI output."""
+    # Check if we should use colors (TTY or forced)
+    _use_color = sys.stdout.isatty() or os.environ.get('FORCE_COLOR')
+
+    HEADER = '\033[95m' if _use_color else ''
+    BLUE = '\033[94m' if _use_color else ''
+    CYAN = '\033[96m' if _use_color else ''
+    GREEN = '\033[92m' if _use_color else ''
+    WARNING = '\033[93m' if _use_color else ''
+    FAIL = '\033[91m' if _use_color else ''
+    ENDC = '\033[0m' if _use_color else ''
+    BOLD = '\033[1m' if _use_color else ''
+    UNDERLINE = '\033[4m' if _use_color else ''
+
+def print_summary_box(data, report_path):
+    """Prints a beautiful summary dashboard to the console."""
+    # Extract key metrics with safe defaults
+    health_data = data.get('health', {})
+    health = health_data.get('site_status', 'Unknown')
+
+    is_healthy = health == 'healthy'
+    health_color = Colors.GREEN if is_healthy else Colors.FAIL
+    health_icon = "✅" if is_healthy else "❌"
+
+    posts = data.get('research', {}).get('posts_scraped', 0)
+
+    focus = data.get('intelligence', {}).get('recommended_focus', 'None')
+
+    monetization = data.get('monetization', {}).get('summary', 'N/A')
+    if monetization and len(monetization) > 40:
+        monetization = monetization[:37] + "..."
+
+    draft_title = data.get('content_draft', {}).get('draft_title', 'Untitled')
+    if draft_title and len(draft_title) > 40:
+        draft_title = draft_title[:37] + "..."
+
+    print(f"\n{Colors.BOLD}{Colors.CYAN}    🚀 SWARM EXECUTION COMPLETE{Colors.ENDC}")
+    print(f"{Colors.CYAN}    ========================================={Colors.ENDC}")
+    print(f"    🏥 Health:         {health_color}{health_icon} {str(health).capitalize()}{Colors.ENDC}")
+    print(f"    📊 Posts Scraped:  {Colors.BLUE}{posts}{Colors.ENDC}")
+    print(f"    🧠 Focus:          {Colors.HEADER}{focus}{Colors.ENDC}")
+    print(f"    💰 Monetization:   {Colors.WARNING}{monetization}{Colors.ENDC}")
+    print(f"    📄 Draft Title:    {Colors.GREEN}{draft_title}{Colors.ENDC}")
+    print(f"")
+    print(f"    🔗 Report: {Colors.UNDERLINE}{report_path}{Colors.ENDC}")
+    print(f"{Colors.CYAN}    ========================================={Colors.ENDC}\n")
+
 def run_orchestration(save_report=True):
     logger.info(">>> STARTING AUTONOMOUS AGENT SWARM (v2.0 - Evolving) <<<")
     report_data = {}
@@ -79,7 +127,8 @@ def run_orchestration(save_report=True):
     logger.info(">>> SWARM OPERATION COMPLETE <<<")
 
     if save_report:
-        save_daily_report(report_data)
+        report_path = save_daily_report(report_data)
+        print_summary_box(report_data, report_path)
 
     return report_data
 
@@ -146,6 +195,7 @@ def save_daily_report(data):
         f.write(draft.get('draft_content', ''))
 
     logger.info(f"Report saved to {report_file}")
+    return report_file
 
 if __name__ == "__main__":
     run_orchestration()
