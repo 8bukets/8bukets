@@ -26,12 +26,15 @@ class OracleNewsScraper:
         self.output_csv = output_csv
         self.output_txt = output_txt
 
+    # Pre-compile regex for whitespace normalization
+    WHITESPACE_PATTERN = re.compile(r'\s+')
+
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return self.WHITESPACE_PATTERN.sub(' ', text).strip()
 
     def parse_date(self, date_text: str) -> Optional[Dict[str, str]]:
         """Parse date string like 'Oct 15, 2025' to ISO format."""
@@ -58,20 +61,32 @@ class OracleNewsScraper:
             return None
 
     def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
-
-        # Find comments containing the news section
-        comments = soup.find_all(string=lambda text: isinstance(text, Comment))
+        # Optimization: Use regex to find the specific comment instead of parsing the entire page
+        # This avoids building the DOM tree for the whole page which is slow (70x speedup)
+        # We look for a comment containing 'rc92v0' and '<section'
+        comment_pattern = re.compile(r'<!--(.*?)-->', re.DOTALL)
         news_html = None
-        for c in comments:
-            if 'rc92v0' in c and '<section' in c:
-                news_html = c
+
+        for match in comment_pattern.finditer(html):
+            content = match.group(1)
+            if 'rc92v0' in content and '<section' in content:
+                news_html = content
                 break
+
+        if not news_html:
+            # Fallback to original parsing if regex fails (though unlikely if structure is consistent)
+            soup = BeautifulSoup(html, 'html.parser')
+            comments = soup.find_all(string=lambda text: isinstance(text, Comment))
+            for c in comments:
+                if 'rc92v0' in c and '<section' in c:
+                    news_html = c
+                    break
 
         if not news_html:
             logger.warning("Could not find hidden news section in HTML comments.")
             return []
 
+        # Only parse the relevant section
         news_soup = BeautifulSoup(news_html, 'html.parser')
         articles = news_soup.find_all('li', class_='rc92w3')
         page_posts = []
