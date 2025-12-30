@@ -144,7 +144,8 @@ def scrape(output_file: str, max_pages: int = 0):
 
         logging.info(f"Scraping page {page}: {current_url}...")
         try:
-            response = session.get(current_url)
+            # Sentinel: Added timeout to prevent infinite hanging (DoS risk)
+            response = session.get(current_url, timeout=10)
             response.raise_for_status()
         except requests.exceptions.RequestException as e:
             logging.error(f"Error fetching {current_url}: {e}")
