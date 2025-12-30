@@ -80,32 +80,55 @@ class AgentOrchestrator:
 
         self.generate_report(outputs)
 
+    def sanitize_markdown(self, text):
+        """Sanitize text to prevent Markdown injection."""
+        if not isinstance(text, str):
+            return text
+        # Escape Markdown characters that could change formatting or create links
+        # We focus on characters that create links or structure
+        # [ ] ( ) < > * _ ` #
+        # But for readability, let's stick to key ones that allow malicious links or scripts
+        # [link](url) -> \[link\]\(url\)
+        # <script> -> &lt;script&gt;
+
+        # Simple implementation: escape special characters
+        escape_chars = ['[', ']', '(', ')', '<', '>', '*', '_', '`', '#', '|']
+        sanitized = text
+        for char in escape_chars:
+            sanitized = sanitized.replace(char, f"\\{char}")
+        return sanitized
+
     def generate_report(self, outputs):
         report_date = datetime.now().strftime("%Y-%m-%d")
         report_filename = os.path.join(self.report_dir, f"agent_report_{report_date}.md")
+
+        def s(text):
+            if isinstance(text, list):
+                return [self.sanitize_markdown(str(item)) for item in text]
+            return self.sanitize_markdown(str(text)) if text is not None else "None"
 
         with open(report_filename, "w", encoding="utf-8") as f:
             f.write(f"# 🤖 Autonomous Agent Report (Evolved v2) - {report_date}\n\n")
 
             # Health
             h = outputs.get('HealthAgent', {})
-            f.write(f"## 🏥 System Health\n- DB: {h.get('db_status')}\n\n")
+            f.write(f"## 🏥 System Health\n- DB: {s(h.get('db_status'))}\n\n")
 
             # Intelligence
             i = outputs.get('IntelligenceAgent', {})
             f.write(f"## 🧠 Intelligence\n")
-            f.write(f"- **Strategy**: {i.get('strategy')}\n")
-            f.write(f"- **Trend Alert**: {i.get('trend_alert')}\n\n")
+            f.write(f"- **Strategy**: {s(i.get('strategy'))}\n")
+            f.write(f"- **Trend Alert**: {s(i.get('trend_alert'))}\n\n")
 
             # Curiosity & Innovation
             cur = outputs.get('CuriosityAgent', {})
             crt = outputs.get('CreativeAgent', {})
             f.write(f"## 🌌 Curiosity & Innovation (Google Antigravity Mode)\n")
-            f.write(f"- **Explored**: '{cur.get('exploration_query')}'\n")
-            f.write(f"- **Findings**: {cur.get('findings')}\n")
+            f.write(f"- **Explored**: '{s(cur.get('exploration_query'))}'\n")
+            f.write(f"- **Findings**: {s(cur.get('findings'))}\n")
             f.write(f"### 💡 High Solution Interest Ideas\n")
             for idea in crt.get('system_improvement_ideas', []):
-                f.write(f"- 🛠️ {idea}\n")
+                f.write(f"- 🛠️ {s(idea)}\n")
             f.write("\n")
 
             # Ad Manager
@@ -113,7 +136,7 @@ class AgentOrchestrator:
             f.write(f"## 📢 Ad Manager\n")
             f.write(f"### Active Campaigns\n")
             for camp in ads.get('campaigns', []):
-                f.write(f"- **{camp['name']}**: {camp['headline']} ({camp['type']})\n")
+                f.write(f"- **{s(camp['name'])}**: {s(camp['headline'])} ({s(camp['type'])})\n")
             f.write("\n")
 
             # Monetization
@@ -122,7 +145,7 @@ class AgentOrchestrator:
 
             # Content
             cc = outputs.get('CreatorAgent', {})
-            f.write(f"## ✍️ Content Draft\n**{cc.get('draft_title')}**\n\n{cc.get('draft_content')}\n\n")
+            f.write(f"## ✍️ Content Draft\n**{s(cc.get('draft_title'))}**\n\n{s(cc.get('draft_content'))}\n\n")
 
         logger.info(f"Agent Report generated: {report_filename}")
 
