@@ -215,6 +215,15 @@ class MarkPositionScraperAsync:
                 return await self.parse_page(html)
             return None
 
+    def _sanitize_for_csv(self, value: str) -> str:
+        """Sanitize a string to prevent CSV formula injection."""
+        if not value:
+            return ""
+        # If the value looks like a formula, prepend a single quote
+        if str(value).startswith(('=', '+', '-', '@')):
+            return f"'{value}"
+        return value
+
     def save_data(self, posts: List[Dict]):
         # JSON
         try:
@@ -231,13 +240,13 @@ class MarkPositionScraperAsync:
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        self._sanitize_for_csv(post.get('title', '')),
+                        self._sanitize_for_csv(post.get('date', '')),
+                        self._sanitize_for_csv(post.get('author', '')),
+                        self._sanitize_for_csv(", ".join(post.get('categories', []))),
+                        self._sanitize_for_csv(post.get('external_link', '')),
+                        self._sanitize_for_csv(post.get('domain', '')),
+                        self._sanitize_for_csv(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
