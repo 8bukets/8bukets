@@ -1,6 +1,7 @@
 import logging
 import os
 from datetime import datetime
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from agents.analyst import AnalystAgent
 from agents.researcher import ResearcherAgent
 from agents.intelligence import IntelligenceAgent
@@ -40,35 +41,46 @@ class AgentOrchestrator:
         outputs = {}
 
         # 1. Independent / Foundational Agents
-        outputs['HealthAgent'] = self.health_agent.run()
-        outputs['AnalystAgent'] = self.analyst_agent.run()
-        outputs['ResearcherAgent'] = self.researcher_agent.run()
-        outputs['MonetizationAgent'] = self.monetization_agent.run()
+        # Parallelize execution of independent agents
+        with ThreadPoolExecutor(max_workers=5) as executor:
+            future_to_agent = {
+                executor.submit(self.health_agent.run): 'HealthAgent',
+                executor.submit(self.analyst_agent.run): 'AnalystAgent',
+                executor.submit(self.researcher_agent.run): 'ResearcherAgent',
+                executor.submit(self.monetization_agent.run): 'MonetizationAgent',
+                executor.submit(self.curiosity_agent.run): 'CuriosityAgent'
+            }
+
+            for future in as_completed(future_to_agent):
+                agent_name = future_to_agent[future]
+                try:
+                    outputs[agent_name] = future.result()
+                except Exception as exc:
+                    logger.error(f'{agent_name} generated an exception: {exc}')
+                    outputs[agent_name] = {}
 
         # 2. Collaborative Agents
 
         # Intelligence
-        intel_context = {'keywords': outputs['AnalystAgent'].get('keywords', [])}
+        intel_context = {'keywords': outputs.get('AnalystAgent', {}).get('keywords', [])}
         self.intelligence_agent.perform_task(context=intel_context)
         outputs['IntelligenceAgent'] = self.intelligence_agent.results
 
         # AdManager
         ad_context = {
-            'keywords': outputs['AnalystAgent'].get('keywords', []),
-            'top_opportunities': outputs['MonetizationAgent'].get('top_opportunities', [])
+            'keywords': outputs.get('AnalystAgent', {}).get('keywords', []),
+            'top_opportunities': outputs.get('MonetizationAgent', {}).get('top_opportunities', [])
         }
         self.ad_manager_agent.perform_task(context=ad_context)
         outputs['AdManagerAgent'] = self.ad_manager_agent.results
 
-        # Curiosity (Exploration)
-        # Needs no input, but uses DB.
-        outputs['CuriosityAgent'] = self.curiosity_agent.run()
+        # Curiosity is now run in parallel in step 1
 
         # Creative (Innovation)
         # Needs Curiosity context
         creative_context = {
-            'curiosity_findings': outputs['CuriosityAgent'].get('findings', []),
-            'exploration_query': outputs['CuriosityAgent'].get('exploration_query', '')
+            'curiosity_findings': outputs.get('CuriosityAgent', {}).get('findings', []),
+            'exploration_query': outputs.get('CuriosityAgent', {}).get('exploration_query', '')
         }
         self.creative_agent.perform_task(context=creative_context)
         outputs['CreativeAgent'] = self.creative_agent.results
