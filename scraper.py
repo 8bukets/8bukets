@@ -7,14 +7,79 @@ import re
 import argparse
 import logging
 import time
+import sys
+import os
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse, urljoin
 
+class Colors:
+    """ANSI color codes for CLI output."""
+    RESET = '\033[0m'
+    BOLD = '\033[1m'
+    GREEN = '\033[32m'
+    BLUE = '\033[34m'
+    CYAN = '\033[36m'
+    YELLOW = '\033[33m'
+    RED = '\033[31m'
+    MAGENTA = '\033[35m'
+
+    @staticmethod
+    def style(text, color_code):
+        if sys.stdout.isatty() or os.environ.get('FORCE_COLOR'):
+            return f"{color_code}{text}{Colors.RESET}"
+        return text
+
+    @staticmethod
+    def strip(text):
+        return re.sub(r'\x1b\[[0-9;]*m', '', text)
+
+def print_summary(duration: float, articles_count: int, files: List[str]):
+    c = Colors
+    width = 50
+
+    # Helper to calculate padding adjustment for double-width emojis
+    # We assume each emoji is 1 char in Python string but 2 chars on screen.
+    def pad_len(text, target_width):
+        # Only count emojis that have len 1 but width 2
+        # Rocket 🚀: len 1, width 2 -> Count it
+        # Page 📄: len 1, width 2 -> Count it
+        # Floppy 💾: len 1, width 2 -> Count it
+        # Watch ⏱️: len 2, width 2 -> Do NOT count it (as len matches visual width)
+        emoji_count = text.count('🚀') + text.count('📄') + text.count('💾')
+        return target_width - 2 - emoji_count
+
+    print(c.style(f"\n┌{'─' * (width - 2)}┐", c.BLUE))
+
+    # Title
+    title = " 🚀 Scrape Completed Successfully! "
+    print(c.style(f"│{title:<{pad_len(title, width)}}│", c.GREEN))
+
+    print(c.style(f"│{'─' * (width - 2)}│", c.BLUE))
+
+    # Stats
+    time_str = f" ⏱️  Time Elapsed: {duration:.2f}s"
+    print(c.style(f"│{time_str:<{pad_len(time_str, width)}}│", c.RESET))
+
+    count_str = f" 📄 Articles Found: {articles_count}"
+    print(c.style(f"│{count_str:<{pad_len(count_str, width)}}│", c.RESET))
+
+    # Outputs
+    outputs_header = " 💾 Outputs:"
+    print(c.style(f"│{outputs_header:<{pad_len(outputs_header, width)}}│", c.RESET))
+
+    for f in files:
+        line = f"    • {f}"
+        print(c.style(f"│{line:<{width - 2}}│", c.CYAN))
+
+    print(c.style(f"└{'─' * (width - 2)}┘\n", c.BLUE))
+
 # Configure logging
+# Use stdout to ensure logs and summary appear in correct order
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
+    datefmt='%H:%M:%S',
+    stream=sys.stdout
 )
 logger = logging.getLogger(__name__)
 
@@ -120,6 +185,7 @@ class OracleNewsScraper:
         return articles
 
     async def scrape(self):
+        start_time = time.time()
         all_posts = []
 
         # Headers to mimic browser
@@ -143,6 +209,9 @@ class OracleNewsScraper:
                 logger.error("Failed to fetch main news page.")
 
         self.save_data(all_posts)
+
+        duration = time.time() - start_time
+        print_summary(duration, len(all_posts), [self.output_json, self.output_csv, self.output_txt])
 
     def save_data(self, posts: List[Dict]):
         # JSON
