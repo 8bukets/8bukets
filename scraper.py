@@ -7,6 +7,8 @@ import re
 import argparse
 import logging
 import time
+import sys
+import os
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
@@ -19,6 +21,17 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 DEFAULT_BASE_URL = "https://artmusicpage.wordpress.com/"
+
+class Colors:
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    BOLD = '\033[1m'
+    END = '\033[0m'
+
+    @staticmethod
+    def style(text, color):
+        return f"{color}{text}{Colors.END}" if sys.stdout.isatty() or os.environ.get('FORCE_COLOR') else text
 
 class WordpressScraperAsync:
     def __init__(self, base_url: str, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
@@ -152,6 +165,7 @@ class WordpressScraperAsync:
         return page_posts
 
     async def scrape(self):
+        start_time = time.time()
         all_posts = []
         page_num = 1
         sem = asyncio.Semaphore(self.concurrency)
@@ -216,6 +230,39 @@ class WordpressScraperAsync:
                 await asyncio.sleep(0.5)
 
         self.save_data(all_posts)
+        self.print_summary(len(all_posts), time.time() - start_time)
+
+    def print_summary(self, count: int, duration: float):
+        w = 50
+        print(f"\n{Colors.style('┌' + '─' * w + '┐', Colors.CYAN)}")
+
+        title = "✨ Scraping Complete!"
+        vis_len = len(title) + 1 # +1 for emoji
+        padding = w - 2 - vis_len
+        print(f"{Colors.style('│', Colors.CYAN)}  {Colors.style(title, Colors.BOLD + Colors.GREEN)}{' ' * padding}{Colors.style('│', Colors.CYAN)}")
+
+        print(f"{Colors.style('├' + '─' * w + '┤', Colors.CYAN)}")
+
+        items = [
+            ("📄 Total Posts", f"{count}"),
+            ("⏱️  Duration", f"{duration:.2f}s"),
+            ("💾 JSON Output", self.output_json),
+            ("📊 CSV Output", self.output_csv)
+        ]
+
+        for label, value in items:
+            vis_label = len(label) + 1 # +1 for emoji
+            vis_value = len(value)
+            max_val_len = w - 4 - vis_label - 1
+
+            if vis_value > max_val_len:
+                value = "..." + value[-(max_val_len-3):]
+                vis_value = len(value)
+
+            spaces = w - 4 - vis_label - vis_value
+            print(f"{Colors.style('│', Colors.CYAN)}  {label}{' ' * spaces}{Colors.style(value, Colors.YELLOW)}  {Colors.style('│', Colors.CYAN)}")
+
+        print(f"{Colors.style('└' + '─' * w + '┘', Colors.CYAN)}\n")
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
