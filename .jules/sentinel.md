@@ -1,0 +1,4 @@
+## 2024-05-23 - Prevent CSV Formula Injection
+**Vulnerability:** User-controlled content (post titles, authors, etc.) was written directly to CSV files without sanitization. Malicious actors could inject spreadsheet formulas (starting with `=`, `+`, `-`, `@`) which could execute arbitrary commands when the CSV is opened in Excel/Calc.
+**Learning:** Even when scraping "passive" data, output formats like CSV can interpret certain characters as executable code. Always sanitize data before crossing trust boundaries (in this case, writing to a file format with active content features).
+**Prevention:** Sanitize all fields written to CSVs by prepending a single quote (`'`) if they start with sensitive characters (`=`, `+`, `-`, `@`). This forces spreadsheet software to treat the cell content as text.
