@@ -1,9 +1,18 @@
 import json
 import argparse
+import os
 from collections import Counter
 from urllib.parse import urlparse
 from datetime import datetime
 import sys
+
+def validate_path(path):
+    """Ensure the path is within the current working directory."""
+    abs_path = os.path.abspath(path)
+    cwd = os.getcwd()
+    if os.path.commonpath([cwd, abs_path]) != cwd:
+        raise ValueError(f"Security Error: Output path '{path}' is outside the current working directory.")
+    return path
 
 def load_data(filepath):
     try:
@@ -96,6 +105,7 @@ def generate_report(data, output_file):
     for author, count in author_counts:
         md.append(f"- {author}: {count} posts")
 
+    validate_path(output_file)
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
