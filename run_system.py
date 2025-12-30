@@ -2,6 +2,7 @@ import argparse
 import time
 import json
 import os
+import sys
 import subprocess
 import logging
 from datetime import datetime
@@ -22,13 +23,38 @@ from agents.ads_agent import AdsAgent
 from agents.bid_agent import BidAgent
 from agents.autonomous_intelligence_agent import AutonomousIntelligenceAgent
 
+class Colors:
+    """Simple ANSI color wrapper."""
+    _use = sys.stdout.isatty() or os.environ.get('FORCE_COLOR', '0') != '0'
+    HEADER = '\033[95m' if _use else ''
+    BLUE = '\033[94m' if _use else ''
+    GREEN = '\033[92m' if _use else ''
+    YELLOW = '\033[93m' if _use else ''
+    RED = '\033[91m' if _use else ''
+    ENDC = '\033[0m' if _use else ''
+    BOLD = '\033[1m' if _use else ''
+
 # Configure Logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
+    datefmt='%H:%M:%S',
+    stream=sys.stdout
 )
 logger = logging.getLogger("SystemOrchestrator")
+
+def print_summary(start_time, report_path, success=True):
+    elapsed = time.time() - start_time
+    status = f"{Colors.GREEN}SUCCESS{Colors.ENDC}" if success else f"{Colors.RED}FAILED{Colors.ENDC}"
+    icon = "🟢" if success else "🔴"
+
+    print(f"\n{Colors.HEADER}{'='*60}{Colors.ENDC}")
+    print(f" 🤖 {Colors.BOLD}Autonomous System Summary{Colors.ENDC}")
+    print(f"{Colors.HEADER}{'-'*60}{Colors.ENDC}")
+    print(f" Status:  {icon} {status}")
+    print(f" Time:    ⏱️  {Colors.BLUE}{elapsed:.2f}s{Colors.ENDC}")
+    print(f" Report:  📄 {Colors.YELLOW}{report_path}{Colors.ENDC}")
+    print(f"{Colors.HEADER}{'='*60}{Colors.ENDC}\n")
 
 def run_scraper():
     logger.info("Starting Scraper...")
@@ -103,52 +129,60 @@ def generate_daily_report(context, filename):
         logger.error(f"Failed to write report: {e}")
 
 def run_cycle():
+    start_time = time.time()
+    success = False
+    report_file = "N/A"
+
     logger.info("=== Starting Daily Autonomous Cycle ===")
 
-    # 1. Scrape
-    if not run_scraper():
-        logger.error("Cycle aborted due to scraper failure.")
-        return
+    try:
+        # 1. Scrape
+        if not run_scraper():
+            logger.error("Cycle aborted due to scraper failure.")
+            return
 
-    # 2. Load Data
-    data = load_data()
-    if not data:
-        logger.warning("No data loaded. Skipping agent execution.")
-        return
+        # 2. Load Data
+        data = load_data()
+        if not data:
+            logger.warning("No data loaded. Skipping agent execution.")
+            return
 
-    # 3. Initialize Agents (Order Matters for Collaboration)
-    agents = [
-        HealthCheckAgent(),
-        RobotTxtAgent(),       # New: Check compliance first
-        AnalysisAgent(),
-        ResearchAgent(),
-        IntelligenceAgent(),   # Synthesizes Analysis & Research
-        TargetingAgent(),      # New: Depends on Intelligence
-        CreativityAgent(),     # Depends on Intelligence
-        AdsAgent(),            # New: Depends on Targeting & Creativity
-        BidAgent(),            # New: Depends on Targeting
-        MonetizationAgent(),
-        ContentAgent(),
-        AutonomousIntelligenceAgent() # New: Overseer
-    ]
+        # 3. Initialize Agents (Order Matters for Collaboration)
+        agents = [
+            HealthCheckAgent(),
+            RobotTxtAgent(),       # New: Check compliance first
+            AnalysisAgent(),
+            ResearchAgent(),
+            IntelligenceAgent(),   # Synthesizes Analysis & Research
+            TargetingAgent(),      # New: Depends on Intelligence
+            CreativityAgent(),     # Depends on Intelligence
+            AdsAgent(),            # New: Depends on Targeting & Creativity
+            BidAgent(),            # New: Depends on Targeting
+            MonetizationAgent(),
+            ContentAgent(),
+            AutonomousIntelligenceAgent() # New: Overseer
+        ]
 
-    context = {}
+        context = {}
 
-    # 4. Run Pipeline
-    for agent in agents:
-        try:
-            # Collaboration: Each agent receives the full context accumulated so far
-            result = agent.run(data, context)
-            if result:
-                context.update(result)
-        except Exception as e:
-            logger.error(f"Error in {agent.name}: {e}")
+        # 4. Run Pipeline
+        for agent in agents:
+            try:
+                # Collaboration: Each agent receives the full context accumulated so far
+                result = agent.run(data, context)
+                if result:
+                    context.update(result)
+            except Exception as e:
+                logger.error(f"Error in {agent.name}: {e}")
 
-    # 5. Report
-    report_file = f"results/DAILY_REPORT_{datetime.now().strftime('%Y-%m-%d')}.md"
-    generate_daily_report(context, report_file)
+        # 5. Report
+        report_file = f"results/DAILY_REPORT_{datetime.now().strftime('%Y-%m-%d')}.md"
+        generate_daily_report(context, report_file)
+        success = True
 
-    logger.info("=== Cycle Complete ===")
+    finally:
+        logger.info("=== Cycle Complete ===")
+        print_summary(start_time, report_file, success)
 
 def main():
     parser = argparse.ArgumentParser(description="Autonomous Agent System")
