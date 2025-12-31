@@ -5,8 +5,17 @@ import time
 import logging
 import argparse
 import sys
+import os
 import sqlite3
 from datetime import datetime
+
+class Colors:
+    """ANSI color codes for terminal output."""
+    BLUE, CYAN, GREEN, RED, ENDC = '\033[94m', '\033[96m', '\033[92m', '\033[91m', '\033[0m'
+
+# Disable colors if not in a tty (and FORCE_COLOR is not set)
+if not (sys.stdout and sys.stdout.isatty()) and not os.environ.get('FORCE_COLOR'):
+    Colors.BLUE = Colors.CYAN = Colors.GREEN = Colors.RED = Colors.ENDC = ''
 
 # Configure logging
 logging.basicConfig(
@@ -63,7 +72,7 @@ class BlogScraper:
                 ''')
                 conn.commit()
         except sqlite3.Error as e:
-            logger.error(f"Database initialization error: {e}")
+            logger.error(f"{Colors.RED}Database initialization error: {e}{Colors.ENDC}")
 
     def save_to_db(self, item):
         """Save a single item to the database, handling updates."""
@@ -127,13 +136,13 @@ class BlogScraper:
         return False
 
     def fetch_page(self, url):
-        logger.info(f"Fetching {url}...")
+        logger.info(f"Fetching {Colors.CYAN}{url}{Colors.ENDC}...")
         try:
             response = requests.get(url, headers=self.headers, timeout=10)
             response.raise_for_status()
             return response.content
         except requests.RequestException as e:
-            logger.error(f"Error fetching URL {url}: {e}")
+            logger.error(f"{Colors.RED}Error fetching URL {url}: {e}{Colors.ENDC}")
             return None
 
     def parse_article(self, article):
@@ -197,9 +206,61 @@ class BlogScraper:
 
         return None
 
+    def print_summary(self, duration, new_count, total):
+        """Prints a visual summary of the scraping run."""
+        width = 40
+        # Emoji widths: ⏱️ (2), 📄 (2), 🆕 (2). Spaces included in text.
+        # " ⏱️  Duration:     " = 1 (space) + 2 (emoji) + 2 (spaces) + 9 (Duration:) + 5 (spaces) = 19 chars visually?
+        # Let's manually pad.
+        # Inner width is width-2 = 38.
+
+        print(f"\n{Colors.BLUE}╔{'═' * (width - 2)}╗{Colors.ENDC}")
+        print(f"{Colors.BLUE}║{Colors.ENDC}{'Scraper Summary'.center(width - 2)}{Colors.BLUE}║{Colors.ENDC}")
+        print(f"{Colors.BLUE}╠{'═' * (width - 2)}╣{Colors.ENDC}")
+
+        # Duration row
+        dur_label = " ⏱️  Duration:     " # 1+2+2+9+5 = 19 visual chars? No.
+        # Python len("⏱️") is 1 or 2 depending on build, but usually prints as 2 columns.
+        # Let's treat labels as fixed width parts.
+        # " ⏱️  Duration:     " -> Visual length approx 19.
+        # Value padding: 38 - 19 = 19.
+
+        # Safe way: construct the content, strip colors/emojis to measure, then pad.
+        # But emojis are hard to measure. I'll stick to a simpler manually tuned padding.
+
+        # Row 1
+        label = " ⏱️  Duration:     "
+        val = f"{duration:.2f}s"
+        # 1 space + 1 emoji (2 col) + 2 space + 9 chars + 5 spaces = 1 + 2 + 2 + 9 + 5 = 19 cols
+        # Available: 38. Remaining for val: 19.
+        print(f"{Colors.BLUE}║{Colors.ENDC}{label}{val:<19}{Colors.BLUE}║{Colors.ENDC}")
+
+        # Row 2
+        label = " 📄 Articles:     "
+        val = str(total)
+        print(f"{Colors.BLUE}║{Colors.ENDC}{label}{val:<19}{Colors.BLUE}║{Colors.ENDC}")
+
+        # Row 3
+        label = " 🆕 New Items:    "
+        if new_count > 0:
+            val_colored = f"{Colors.GREEN}{new_count}{Colors.ENDC}"
+            # visual len of val is len(str(new_count)).
+            # pad needed is 19 - len(str(new_count)).
+            # f-string width includes invisible chars.
+            # total f-string width = 19 + (len(val_colored) - len(str(new_count)))
+            pad_width = 19 + (len(val_colored) - len(str(new_count)))
+            print(f"{Colors.BLUE}║{Colors.ENDC}{label}{val_colored:<{pad_width}}{Colors.BLUE}║{Colors.ENDC}")
+        else:
+            val = str(new_count)
+            print(f"{Colors.BLUE}║{Colors.ENDC}{label}{val:<19}{Colors.BLUE}║{Colors.ENDC}")
+
+        print(f"{Colors.BLUE}╚{'═' * (width - 2)}╝{Colors.ENDC}\n")
+
     def run(self):
+        start_time = time.time()
         url = self.base_url
         new_items_count = 0
+        print(f"{Colors.BLUE}🎨 Starting Scraper...{Colors.ENDC}")
 
         while url:
             content = self.fetch_page(url)
@@ -218,10 +279,11 @@ class BlogScraper:
                 self.data.append(item)
                 if self.save_to_db(item):
                     new_items_count += 1
+                    logger.info(f"{Colors.GREEN}+ New: {item.get('title')}{Colors.ENDC}")
 
             next_page = self.get_next_page(soup)
             if next_page:
-                logger.info(f"Found next page: {next_page}")
+                logger.info(f"Found next page: {Colors.CYAN}{next_page}{Colors.ENDC}")
                 url = next_page
                 time.sleep(1)
             else:
@@ -229,8 +291,7 @@ class BlogScraper:
                 url = None
 
         self.save_json()
-        logger.info(f"Scraped {len(self.data)} articles in total.")
-        logger.info(f"New items added to database: {new_items_count}")
+        self.print_summary(time.time() - start_time, new_items_count, len(self.data))
 
     def save_json(self):
         try:
