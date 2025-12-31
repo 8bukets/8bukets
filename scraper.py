@@ -20,6 +20,12 @@ logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
 
+class Colors:
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
@@ -134,6 +140,7 @@ class MarkPositionScraperAsync:
         return page_posts
 
     async def scrape(self):
+        start_time = time.time()
         all_posts = []
         page_num = 1
         sem = asyncio.Semaphore(self.concurrency)
@@ -207,6 +214,18 @@ class MarkPositionScraperAsync:
                 await asyncio.sleep(0.5)
 
         self.save_data(all_posts)
+        elapsed = time.time() - start_time
+        unique_links = len({p.get('external_link') for p in all_posts if p.get('external_link')})
+        self.print_summary(elapsed, len(all_posts), unique_links)
+
+    def print_summary(self, elapsed, total, unique):
+        print(f"\n{Colors.CYAN}╔════════════════════════════════════════╗{Colors.ENDC}")
+        print(f"{Colors.CYAN}║{Colors.ENDC} {Colors.BOLD}Scraping Summary{Colors.ENDC}                       {Colors.CYAN}║{Colors.ENDC}")
+        print(f"{Colors.CYAN}╠════════════════════════════════════════╣{Colors.ENDC}")
+        print(f"{Colors.CYAN}║{Colors.ENDC} ⏱️  Duration:     {elapsed:<10.2f}s          {Colors.CYAN}║{Colors.ENDC}")
+        print(f"{Colors.CYAN}║{Colors.ENDC} 📰 Total Posts:  {total:<10}            {Colors.CYAN}║{Colors.ENDC}")
+        print(f"{Colors.CYAN}║{Colors.ENDC} 🔗 Unique Links: {unique:<10}            {Colors.CYAN}║{Colors.ENDC}")
+        print(f"{Colors.CYAN}╚════════════════════════════════════════╝{Colors.ENDC}\n")
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
