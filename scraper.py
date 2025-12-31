@@ -3,6 +3,7 @@ import asyncio
 from bs4 import BeautifulSoup
 import json
 import csv
+import os
 import re
 import argparse
 import logging
@@ -28,6 +29,24 @@ class OracleNewsScraper:
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.base_url = BASE_URL
+
+    def validate_output_path(self, filepath: str) -> str:
+        """
+        Validates that the output path is within the current working directory.
+        Prevents path traversal attacks.
+        """
+        # Resolve the absolute path of the target file
+        abs_path = os.path.abspath(filepath)
+
+        # Get the absolute path of the current working directory
+        cwd = os.getcwd()
+
+        # Ensure the file is within the CWD
+        # commonpath returns the longest common sub-path
+        if os.path.commonpath([abs_path, cwd]) != cwd:
+            raise ValueError(f"Security Error: Output path '{filepath}' is outside the current working directory.")
+
+        return abs_path
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -147,15 +166,17 @@ class OracleNewsScraper:
     def save_data(self, posts: List[Dict]):
         # JSON
         try:
-            with open(self.output_json, 'w', encoding='utf-8') as f:
+            json_path = self.validate_output_path(self.output_json)
+            with open(json_path, 'w', encoding='utf-8') as f:
                 json.dump(posts, f, indent=4, ensure_ascii=False)
             logger.info(f"Saved {len(posts)} posts to {self.output_json}")
-        except IOError as e:
+        except (IOError, ValueError) as e:
             logger.error(f"Failed to save JSON: {e}")
 
         # CSV
         try:
-            with open(self.output_csv, 'w', newline='', encoding='utf-8') as f:
+            csv_path = self.validate_output_path(self.output_csv)
+            with open(csv_path, 'w', newline='', encoding='utf-8') as f:
                 writer = csv.writer(f)
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
@@ -169,7 +190,7 @@ class OracleNewsScraper:
                         self.sanitize_for_csv(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
-        except IOError as e:
+        except (IOError, ValueError) as e:
             logger.error(f"Failed to save CSV: {e}")
 
         # Unique Links TXT
@@ -181,11 +202,12 @@ class OracleNewsScraper:
 
         sorted_links = sorted(list(unique_links))
         try:
-            with open(self.output_txt, 'w', encoding='utf-8') as f:
+            txt_path = self.validate_output_path(self.output_txt)
+            with open(txt_path, 'w', encoding='utf-8') as f:
                 for link in sorted_links:
                     f.write(link + '\n')
             logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
-        except IOError as e:
+        except (IOError, ValueError) as e:
             logger.error(f"Failed to save TXT: {e}")
 
 def main():
