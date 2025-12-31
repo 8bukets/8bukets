@@ -1,9 +1,9 @@
-name: Bi-Weekly Report
+name: Daily Report
 
 on:
   schedule:
-    # Run at 08:00 on the 1st and 15th of every month
-    - cron: '0 8 1,15 * *'
+    # Run at 08:00 UTC every day
+    - cron: '0 8 * * *'
   workflow_dispatch:
 
 permissions:
@@ -44,6 +44,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "chore: update bi-weekly analytics report [skip ci]"
+            git commit -m "chore: update daily analytics report [skip ci]"
             git push
           fi
