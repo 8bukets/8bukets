@@ -4,6 +4,7 @@ import json
 import os
 import subprocess
 import logging
+import schedule
 from datetime import datetime
 
 # Import Agents
@@ -152,16 +153,22 @@ def run_cycle():
 
 def main():
     parser = argparse.ArgumentParser(description="Autonomous Agent System")
-    parser.add_argument("--loop", action="store_true", help="Run continuously every 24h")
+    parser.add_argument("--loop", action="store_true", help="Run continuously every day")
     args = parser.parse_args()
 
     if args.loop:
-        logger.info("System starting in LOOP mode.")
+        logger.info("System starting in LOOP mode (Daily).")
+
+        # Schedule the job every day
+        schedule.every().day.do(run_cycle)
+
+        # Run once immediately
+        run_cycle()
+
         try:
             while True:
-                run_cycle()
-                logger.info("Sleeping for 24 hours...")
-                time.sleep(86400) # 24 hours
+                schedule.run_pending()
+                time.sleep(3600) # Check every hour
         except KeyboardInterrupt:
             logger.info("Loop interrupted by user.")
     else:
