@@ -9,6 +9,23 @@ import logging
 import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
+import sys
+import os
+
+class Colors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+    @staticmethod
+    def strip(text):
+        return re.sub(r'\x1b\[[0-9;]*m', '', text)
 
 # Configure logging
 logging.basicConfig(
@@ -143,6 +160,7 @@ class MarkPositionScraperAsync:
         return page_posts
 
     async def scrape(self):
+        start_time = time.time()
         all_posts = []
         page_num = 1
         sem = asyncio.Semaphore(self.concurrency)
@@ -219,6 +237,48 @@ class MarkPositionScraperAsync:
                 await asyncio.sleep(0.5)
 
         self.save_data(all_posts)
+        duration = time.time() - start_time
+        self.print_summary(len(all_posts), duration)
+
+    def print_summary(self, total_posts: int, duration: float):
+        """Print a colored summary box of the scraping run."""
+        use_colors = sys.stdout.isatty() or os.environ.get('FORCE_COLOR')
+
+        # Define helper for colors to avoid complex dynamic types
+        class C:
+            HEADER = Colors.HEADER if use_colors else ''
+            OKGREEN = Colors.OKGREEN if use_colors else ''
+            BOLD = Colors.BOLD if use_colors else ''
+            ENDC = Colors.ENDC if use_colors else ''
+
+        width = 50
+
+        print(f"\n{C.HEADER}╔{'═' * (width - 2)}╗{C.ENDC}")
+        title = " SCRAPING COMPLETED "
+        print(f"{C.HEADER}║{' ' * 14}{C.BOLD}{title}{C.ENDC}{C.HEADER}{' ' * 14}║{C.ENDC}")
+        print(f"{C.HEADER}╠{'═' * (width - 2)}╣{C.ENDC}")
+
+        def p_row(label, val):
+            val = str(val)
+            # Account for emojis (width 2) in label
+            # 🚀, 📄, 📊, 🔗 are length 1 but width 2 (add 1).
+            # ⏱️ is length 2 and width 2 (add 0).
+            extra_pad = 0
+            if any(x in label for x in "🚀📄📊🔗"):
+                extra_pad += 1
+
+            vis_len = len(label) + extra_pad
+            max_len = width - 4 - vis_len - 1
+            if len(val) > max_len: val = "..." + val[-(max_len-3):]
+            pad = width - 4 - vis_len - len(val)
+            print(f"{C.HEADER}║ {C.ENDC}{label}{' ' * max(0, pad)}{C.OKGREEN}{val}{C.ENDC}{C.HEADER} ║{C.ENDC}")
+
+        p_row("🚀 Total Posts Scraped:", total_posts)
+        p_row("⏱️  Time Taken:", f"{duration:.2f}s")
+        p_row("📄 JSON Output:", self.output_json)
+        p_row("📊 CSV Output:", self.output_csv)
+        p_row("🔗 Unique Links File:", self.output_txt)
+        print(f"{C.HEADER}╚{'═' * (width - 2)}╝{C.ENDC}\n")
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
