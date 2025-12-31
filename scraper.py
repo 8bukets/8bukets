@@ -7,18 +7,34 @@ import re
 import argparse
 import logging
 import time
+import sys
+import os
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse, urljoin
 
-# Configure logging
+# Configure logging to stdout
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
+    datefmt='%H:%M:%S',
+    stream=sys.stdout
 )
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://www.oracle.com/news/"
+
+class Colors:
+    """ANSI color codes for CLI output."""
+    BLUE = '\033[94m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    BOLD = '\033[1m'
+    RESET = '\033[0m'
+
+    @staticmethod
+    def strip(text: str) -> str:
+        return re.sub(r'\x1b\[[0-9;]*m', '', text)
 
 class OracleNewsScraper:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
@@ -120,6 +136,9 @@ class OracleNewsScraper:
         return articles
 
     async def scrape(self):
+        start_time = time.time()
+        print(f"{Colors.BLUE}{Colors.BOLD}🚀 Starting Oracle News Scraper...{Colors.RESET}")
+
         all_posts = []
 
         # Headers to mimic browser
@@ -144,14 +163,46 @@ class OracleNewsScraper:
 
         self.save_data(all_posts)
 
+        duration = time.time() - start_time
+        self.print_summary(len(all_posts), duration)
+
+    def print_summary(self, count: int, duration: float):
+        """Prints a beautiful summary box."""
+        width = 50
+        print(f"\n{Colors.BLUE}╔{'═' * (width-2)}╗{Colors.RESET}")
+        print(f"{Colors.BLUE}║{Colors.BOLD} 📊 Scraper Summary{' ' * (width-19)} {Colors.BLUE}║{Colors.RESET}")
+        print(f"{Colors.BLUE}╠{'═' * (width-2)}╣{Colors.RESET}")
+
+        def print_row(label, value):
+            visible_len = len(label) + len(str(value))
+            # Adjust padding for emojis (approximate width correction)
+            # Emojis like ⏱️ and 📄 take 2 visual columns but len() is 1 (or 2 depending on encoding, here assumed 1 for basic check)
+            # If the emoji displays as 2 cols but counts as 1 char, we need 1 LESS space of padding.
+            # However, in many terminals ⏱️ is len 1 but display width 2.
+            # Let's trust the visual verification: previous code added padding which made it wider.
+            # We should SUBTRACT padding if the character count underestimates the width.
+
+            emoji_adjustment = 0
+            if '⏱️' in label: emoji_adjustment = 1
+            if '📄' in label: emoji_adjustment = 1
+
+            padding = width - 4 - visible_len - emoji_adjustment
+            print(f"{Colors.BLUE}║{Colors.RESET} {label} {value}{' ' * padding}{Colors.BLUE}║{Colors.RESET}")
+
+        print_row(f"📄 Posts Found:", count)
+        print_row(f"⏱️  Duration:", f"{duration:.2f}s")
+        print_row(f"💾 JSON:", self.output_json)
+        print_row(f"💾 CSV:", self.output_csv)
+        print(f"{Colors.BLUE}╚{'═' * (width-2)}╝{Colors.RESET}\n")
+
     def save_data(self, posts: List[Dict]):
         # JSON
         try:
             with open(self.output_json, 'w', encoding='utf-8') as f:
                 json.dump(posts, f, indent=4, ensure_ascii=False)
-            logger.info(f"Saved {len(posts)} posts to {self.output_json}")
+            logger.info(f"{Colors.GREEN}✅ Saved {len(posts)} posts to {self.output_json}{Colors.RESET}")
         except IOError as e:
-            logger.error(f"Failed to save JSON: {e}")
+            logger.error(f"{Colors.RED}❌ Failed to save JSON: {e}{Colors.RESET}")
 
         # CSV
         try:
@@ -168,9 +219,9 @@ class OracleNewsScraper:
                         self.sanitize_for_csv(post.get('domain', '')),
                         self.sanitize_for_csv(post.get('post_url', ''))
                     ])
-            logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
+            logger.info(f"{Colors.GREEN}✅ Saved {len(posts)} posts to {self.output_csv}{Colors.RESET}")
         except IOError as e:
-            logger.error(f"Failed to save CSV: {e}")
+            logger.error(f"{Colors.RED}❌ Failed to save CSV: {e}{Colors.RESET}")
 
         # Unique Links TXT
         unique_links = set()
@@ -184,9 +235,9 @@ class OracleNewsScraper:
             with open(self.output_txt, 'w', encoding='utf-8') as f:
                 for link in sorted_links:
                     f.write(link + '\n')
-            logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
+            logger.info(f"{Colors.GREEN}✅ Saved {len(sorted_links)} unique links to {self.output_txt}{Colors.RESET}")
         except IOError as e:
-            logger.error(f"Failed to save TXT: {e}")
+            logger.error(f"{Colors.RED}❌ Failed to save TXT: {e}{Colors.RESET}")
 
 def main():
     parser = argparse.ArgumentParser(description="Scraper for Oracle Database @ Google Cloud News")
