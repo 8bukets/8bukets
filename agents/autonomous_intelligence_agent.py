@@ -25,6 +25,11 @@ class AutonomousIntelligenceAgent:
     async def run_pipeline(self):
         logger.info("Starting Autonomous Pipeline...")
 
+        # 0. Check Schedule
+        if not self._is_scheduled_run():
+            logger.info("Not a scheduled run date. Skipping pipeline.")
+            return
+
         # 1. Scrape Data (Simulating 'Intelligence Gathering')
         logger.info("Step 1: Intelligence Gathering (Scraping)...")
         scraper = OracleNewsScraper(
@@ -77,6 +82,33 @@ class AutonomousIntelligenceAgent:
         self._save_json("ad_campaign_strategy.json", ad_strategy)
 
         logger.info("Autonomous Pipeline Completed Successfully.")
+
+    def _is_scheduled_run(self) -> bool:
+        """Check if the pipeline should run based on bi-weekly schedule."""
+        from datetime import datetime
+
+        # Check for state file
+        state_file = os.path.join(self.output_dir, "last_run.json")
+        now = datetime.now()
+
+        if os.path.exists(state_file):
+            try:
+                with open(state_file, 'r') as f:
+                    data = json.load(f)
+                    last_run_str = data.get('last_run')
+                    if last_run_str:
+                        last_run = datetime.fromisoformat(last_run_str)
+                        delta = now - last_run
+                        if delta.days < 14:
+                            return False
+            except (json.JSONDecodeError, ValueError):
+                pass # Corrupt file or format, run anyway
+
+        # Update last run time
+        with open(state_file, 'w') as f:
+            json.dump({'last_run': now.isoformat()}, f)
+
+        return True
 
     def _save_json(self, filename, data):
         path = os.path.join(self.output_dir, filename)
