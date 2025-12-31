@@ -20,6 +20,79 @@ logger = logging.getLogger(__name__)
 
 DEFAULT_BASE_URL = "https://artmusicpage.wordpress.com/"
 
+# Try to import wcwidth for correct visual width of emojis
+try:
+    from wcwidth import wcswidth
+except ImportError:
+    def wcswidth(s):
+        # Fallback: Treat emojis as width 2, others as width 1
+        # This is a simple approximation
+        width = 0
+        for char in s:
+            if ord(char) > 0x1F000:  # Roughly the emoji range start
+                width += 2
+            else:
+                width += 1
+        return width
+
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+def print_summary(stats: Dict, duration: float, json_path: str, csv_path: str, txt_path: str):
+    """Prints a beautiful summary box of the scraping run."""
+
+    # Calculate widths
+    box_width = 50
+
+    def pad_line(label, value, extra_padding=0):
+        # Calculate visual length of the content
+        content_len = wcswidth(label) + wcswidth(str(value))
+        # padding needed = total width - border (2) - content
+        padding = box_width - 4 - content_len + extra_padding
+        return f"│ {label}{' ' * padding}{value} │"
+
+    print(f"\n{Colors.CYAN}╭{'─' * (box_width - 2)}╮{Colors.ENDC}")
+
+    title = "🚀 Scrape Completed!"
+    title_padding = (box_width - 2 - wcswidth(title)) // 2
+    # Adjust for odd widths if necessary
+    extra_space = (box_width - 2 - wcswidth(title)) % 2
+    print(f"{Colors.CYAN}│{' ' * title_padding}{Colors.BOLD}{Colors.HEADER}{title}{Colors.ENDC}{Colors.CYAN}{' ' * (title_padding + extra_space)}│{Colors.ENDC}")
+
+    print(f"{Colors.CYAN}├{'─' * (box_width - 2)}┤{Colors.ENDC}")
+
+    # Lines
+    # Note: emojis width handling. Rocket is 2 chars wide visually usually, but wcwidth handles it.
+    # However, Python strings might treat them as length 1 or 2 depending on encoding,
+    # but wcwidth is the source of truth for visual terminal width.
+
+    print(f"{Colors.CYAN}{pad_line('📄 Total Posts:', stats.get('json_count', 0))}{Colors.ENDC}")
+    print(f"{Colors.CYAN}{pad_line('⏱️  Time Taken:', f'{duration:.2f}s', extra_padding=0)}{Colors.ENDC}")
+    print(f"{Colors.CYAN}{pad_line('🔗 Unique Links:', stats.get('unique_links_count', 0))}{Colors.ENDC}")
+
+    print(f"{Colors.CYAN}├{'─' * (box_width - 2)}┤{Colors.ENDC}")
+
+    # Shorten paths if they are too long
+    def truncate_path(p):
+        if len(p) > 25:
+            return "..." + p[-22:]
+        return p
+
+    print(f"{Colors.CYAN}{pad_line('💾 JSON Output:', truncate_path(json_path))}{Colors.ENDC}")
+    print(f"{Colors.CYAN}{pad_line('📊 CSV Output:', truncate_path(csv_path))}{Colors.ENDC}")
+    print(f"{Colors.CYAN}{pad_line('📝 TXT Output:', truncate_path(txt_path))}{Colors.ENDC}")
+
+    print(f"{Colors.CYAN}╰{'─' * (box_width - 2)}╯{Colors.ENDC}\n")
+
+
 class WordpressScraperAsync:
     def __init__(self, base_url: str, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.base_url = base_url if base_url.endswith('/') else f"{base_url}/"
@@ -152,6 +225,7 @@ class WordpressScraperAsync:
         return page_posts
 
     async def scrape(self):
+        start_time = time.time()
         all_posts = []
         page_num = 1
         sem = asyncio.Semaphore(self.concurrency)
@@ -215,7 +289,10 @@ class WordpressScraperAsync:
                 # Small delay between batches
                 await asyncio.sleep(0.5)
 
-        self.save_data(all_posts)
+        stats = self.save_data(all_posts)
+        end_time = time.time()
+        duration = end_time - start_time
+        print_summary(stats, duration, self.output_json, self.output_csv, self.output_txt)
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
@@ -224,12 +301,19 @@ class WordpressScraperAsync:
                 return await self.parse_page(html)
             return None
 
-    def save_data(self, posts: List[Dict]):
+    def save_data(self, posts: List[Dict]) -> Dict:
+        stats = {
+            'json_count': 0,
+            'csv_count': 0,
+            'unique_links_count': 0
+        }
+
         # JSON
         try:
             with open(self.output_json, 'w', encoding='utf-8') as f:
                 json.dump(posts, f, indent=4, ensure_ascii=False)
             logger.info(f"Saved {len(posts)} posts to {self.output_json}")
+            stats['json_count'] = len(posts)
         except IOError as e:
             logger.error(f"Failed to save JSON: {e}")
 
@@ -249,6 +333,7 @@ class WordpressScraperAsync:
                         post.get('post_url', '')
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
+            stats['csv_count'] = len(posts)
         except IOError as e:
             logger.error(f"Failed to save CSV: {e}")
 
@@ -265,8 +350,11 @@ class WordpressScraperAsync:
                 for link in sorted_links:
                     f.write(link + '\n')
             logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
+            stats['unique_links_count'] = len(sorted_links)
         except IOError as e:
             logger.error(f"Failed to save TXT: {e}")
+
+        return stats
 
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for WordPress blogs")
