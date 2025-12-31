@@ -47,15 +47,26 @@ def print_summary_box(stats):
     max_value_len = max(len(str(Colors.strip_ansi(str(v)))) for v in values) if values else 0
 
     # Box width: border + padding + label + sep + value + padding + border
-    box_width = max(40, max_label_len + max_value_len + 7)
+    # We want roughly: | Label: Value |
+    # Min width 40
+    # Current logic was: max_label_len + max_value_len + 7.
+    # Where does 7 come from? "| " (2) + ": " (2) + " |" (2) + 1 extra?
+
+    box_width = max(40, max_label_len + max_value_len + 10)
 
     border = Colors.style("=" * box_width, Colors.BLUE)
     title = Colors.style(" EXECUTION SUMMARY ", Colors.BOLD + Colors.HEADER)
 
     # Center title
     title_visible_len = len(" EXECUTION SUMMARY ")
-    padding_left = (box_width - title_visible_len) // 2
-    padding_right = box_width - title_visible_len - padding_left
+
+    # Ensure non-negative padding
+    if box_width > title_visible_len:
+        padding_left = (box_width - title_visible_len) // 2
+        padding_right = box_width - title_visible_len - padding_left
+    else:
+        padding_left = 0
+        padding_right = 0
 
     print("\n" + border)
     print(" " * padding_left + title + " " * padding_right)
@@ -66,7 +77,13 @@ def print_summary_box(stats):
         val_str = str(value)
         val_visible_len = len(Colors.strip_ansi(val_str))
 
-        padding = box_width - 4 - len(label) - val_visible_len
-        print(f"| {Colors.style(label, Colors.BOLD)}: {' ' * padding}{val_str} |")
+        # Format is: "| LABEL: {PADDING}VALUE |"
+        # Length = 2 + len(label) + 2 + len(padding) + len(value) + 2 = 6 + label + value + padding
+        # padding = box_width - 6 - len(label) - len(value)
+
+        needed_padding = box_width - 6 - len(label) - val_visible_len
+        if needed_padding < 0: needed_padding = 0
+
+        print(f"| {Colors.style(label, Colors.BOLD)}: {' ' * needed_padding}{val_str} |")
 
     print(border + "\n")
