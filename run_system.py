@@ -60,7 +60,7 @@ async def main():
     print(f"Loaded {len(data)} records.")
 
     # 3. Run Agents
-    full_report = [f"# Daily System Report - {datetime.now().strftime('%Y-%m-%d')}\n"]
+    full_report = [f"# Bi-Weekly System Report - {datetime.now().strftime('%Y-%m-%d')}\n"]
 
     for agent in AGENTS:
         print(f"Running {agent.name}...")
@@ -77,7 +77,7 @@ async def main():
     if not os.path.exists(RESULTS_DIR):
         os.makedirs(RESULTS_DIR)
 
-    report_filename = f"{RESULTS_DIR}/daily_report_{datetime.now().strftime('%Y-%m-%d')}.md"
+    report_filename = f"{RESULTS_DIR}/system_report_{datetime.now().strftime('%Y-%m-%d')}.md"
     with open(report_filename, 'w', encoding='utf-8') as f:
         f.write("\n".join(full_report))
 
