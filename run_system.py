@@ -59,10 +59,10 @@ def load_data(filepath="links.json"):
         logger.error(f"Failed to parse JSON data: {e}")
         return []
 
-def generate_bi_weekly_report(context, filename):
+def generate_daily_report(context, filename):
     try:
         with open(filename, 'w', encoding='utf-8') as f:
-            f.write(f"# Bi-Weekly Autonomous Report: {datetime.now().strftime('%Y-%m-%d')}\n\n")
+            f.write(f"# Daily Autonomous Report: {datetime.now().strftime('%Y-%m-%d')}\n\n")
 
             f.write(f"**Autonomous Status:** {context.get('autonomous_status', 'UNKNOWN')}\n\n")
 
@@ -104,7 +104,7 @@ def generate_bi_weekly_report(context, filename):
         logger.error(f"Failed to write report: {e}")
 
 def run_cycle():
-    logger.info("=== Starting Bi-Weekly Autonomous Cycle ===")
+    logger.info("=== Starting Daily Autonomous Cycle ===")
 
     # 1. Scrape
     if not run_scraper():
@@ -146,21 +146,21 @@ def run_cycle():
             logger.error(f"Error in {agent.name}: {e}")
 
     # 5. Report
-    report_file = f"results/BI_WEEKLY_REPORT_{datetime.now().strftime('%Y-%m-%d')}.md"
-    generate_bi_weekly_report(context, report_file)
+    report_file = f"results/DAILY_REPORT_{datetime.now().strftime('%Y-%m-%d')}.md"
+    generate_daily_report(context, report_file)
 
     logger.info("=== Cycle Complete ===")
 
 def main():
     parser = argparse.ArgumentParser(description="Autonomous Agent System")
-    parser.add_argument("--loop", action="store_true", help="Run continuously every 2 weeks")
+    parser.add_argument("--loop", action="store_true", help="Run continuously every day")
     args = parser.parse_args()
 
     if args.loop:
-        logger.info("System starting in LOOP mode (Every 2 weeks).")
+        logger.info("System starting in LOOP mode (Daily).")
 
-        # Schedule the job every 2 weeks
-        schedule.every(2).weeks.do(run_cycle)
+        # Schedule the job every day
+        schedule.every().day.do(run_cycle)
 
         # Run once immediately
         run_cycle()
