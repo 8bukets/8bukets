@@ -46,13 +46,15 @@ async def main_loop(args):
         except Exception as e:
             logger.error(f"Error in cycle: {e}")
 
-        logger.info(f"Sleeping for {args.interval} seconds...")
+        next_run = datetime.now().timestamp() + args.interval
+        next_run_str = datetime.fromtimestamp(next_run).strftime('%H:%M:%S')
+        logger.info(f"Sleeping for {args.interval} seconds... (Next run at {next_run_str})")
         await asyncio.sleep(args.interval)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Continuous Automation for Scraper and Analytics")
     parser.add_argument("--url", default=DEFAULT_BASE_URL, help="Base URL of the WordPress blog")
-    parser.add_argument("--interval", type=int, default=1209600, help="Interval in seconds (default: 1209600 / 2 weeks)")
+    parser.add_argument("--interval", type=int, default=86400, help="Interval in seconds (default: 86400 / 24h)")
     parser.add_argument("--json", default="links.json", help="Output JSON filename")
     parser.add_argument("--csv", default="links.csv", help="Output CSV filename")
     parser.add_argument("--txt", default="unique_links.txt", help="Output TXT filename for unique links")
