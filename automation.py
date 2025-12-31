@@ -33,10 +33,10 @@ async def run_cycle(url, json_file, csv_file, txt_file, limit, concurrency):
     # Generate main report
     generate_report(data, "REPORT.md")
 
-    # Generate daily report
+    # Generate dated report
     date_str = datetime.now().strftime('%Y-%m-%d')
-    daily_report_file = f"REPORT_{date_str}.md"
-    generate_report(data, daily_report_file)
+    dated_report_file = f"REPORT_{date_str}.md"
+    generate_report(data, dated_report_file)
     logger.info("Reports generated.")
 
 async def main_loop(args):
@@ -52,7 +52,7 @@ async def main_loop(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Continuous Automation for Scraper and Analytics")
     parser.add_argument("--url", default=DEFAULT_BASE_URL, help="Base URL of the WordPress blog")
-    parser.add_argument("--interval", type=int, default=86400, help="Interval in seconds (default: 86400 / 24h)")
+    parser.add_argument("--interval", type=int, default=1209600, help="Interval in seconds (default: 1209600 / 2 weeks)")
     parser.add_argument("--json", default="links.json", help="Output JSON filename")
     parser.add_argument("--csv", default="links.csv", help="Output CSV filename")
     parser.add_argument("--txt", default="unique_links.txt", help="Output TXT filename for unique links")
