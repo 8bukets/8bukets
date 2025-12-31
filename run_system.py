@@ -80,7 +80,7 @@ async def run_pipeline(skip_scrape=False, limit=2):
 
     # 4. Execute Agents
     report_lines = []
-    report_lines.append(f"# Daily Autonomous Report: {datetime.now().strftime('%Y-%m-%d')}\n")
+    report_lines.append(f"# Bi-Weekly Autonomous Report: {datetime.now().strftime('%Y-%m-%d')}\n")
 
     for agent in agents:
         logger.info(f"Running {agent.name}...")
@@ -96,7 +96,7 @@ async def run_pipeline(skip_scrape=False, limit=2):
     # 5. Save Report
     output_dir = "results"
     os.makedirs(output_dir, exist_ok=True)
-    report_filename = f"{output_dir}/DAILY_REPORT_{datetime.now().strftime('%Y-%m-%d')}.md"
+    report_filename = f"{output_dir}/BIWEEKLY_REPORT_{datetime.now().strftime('%Y-%m-%d')}.md"
 
     with open(report_filename, 'w', encoding='utf-8') as f:
         f.write("\n".join(report_lines))
