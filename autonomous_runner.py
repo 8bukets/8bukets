@@ -31,9 +31,9 @@ def main():
         return
 
     # Schedule the job
-    # For a real "every day" scenario:
-    schedule.every().day.at("09:00").do(job)
-    logger.info("Scheduled job for every day at 09:00.")
+    # For a real "every other week" scenario:
+    schedule.every(2).weeks.do(job)
+    logger.info("Scheduled job for every 2 weeks.")
 
     # For demonstration, we keep the process alive
     while True:
