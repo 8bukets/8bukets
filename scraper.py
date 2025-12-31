@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer, FeatureNotFound
 import json
 import csv
 import re
@@ -21,6 +21,12 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
+    # Pre-compiled regex patterns for performance
+    WHITESPACE_PATTERN = re.compile(r'\s+')
+    URL_PATTERN = re.compile(r'^https?://')
+    # Exact word match for 'post' class to avoid false positives with SoupStrainer
+    POST_CLASS_PATTERN = re.compile(r'\bpost\b')
+
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
         self.output_csv = output_csv
@@ -34,11 +40,11 @@ class MarkPositionScraperAsync:
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return self.WHITESPACE_PATTERN.sub(' ', text).strip()
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
-        return re.match(r'^https?://', text.strip()) is not None
+        return self.URL_PATTERN.match(text.strip()) is not None
 
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
@@ -72,7 +78,19 @@ class MarkPositionScraperAsync:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+        # Optimization: Use SoupStrainer to only parse relevant parts of the document
+        strainer = SoupStrainer('article', class_=self.POST_CLASS_PATTERN)
+
+        # Try using lxml for speed if available, otherwise fall back to html.parser
+        try:
+            soup = BeautifulSoup(html, 'lxml', parse_only=strainer)
+        except FeatureNotFound:
+            soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
+
+        # Since we strained for 'article' tags, soup itself is a fragment containing them.
+        # However, SoupStrainer behavior means soup is the top container.
+        # If we use parse_only, soup might contain the found tags directly or nested depending on structure.
+        # Safest way is to search within the strained soup.
         articles = soup.find_all('article', class_='post')
         page_posts = []
 
