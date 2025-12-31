@@ -45,8 +45,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input');
     const articleList = document.getElementById('article-list');
 
+    // Debounce utility to improve performance by limiting the rate of execution
+    const debounce = (func, delay) => {
+        let timeoutId;
+        return (...args) => {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                func.apply(null, args);
+            }, delay);
+        };
+    };
+
     if (searchInput && articleList) {
-        searchInput.addEventListener('input', (e) => {
+        searchInput.addEventListener('input', debounce((e) => {
             const term = e.target.value.toLowerCase();
             const articles = articleList.getElementsByTagName('article');
 
@@ -60,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     article.style.display = 'none';
                 }
             });
-        });
+        }, 300)); // 300ms delay to prevent layout thrashing on every keystroke
     }
 
     // Contact Form Validation
