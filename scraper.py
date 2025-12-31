@@ -50,10 +50,12 @@ class OracleNewsScraper:
 
     async def fetch_page(self, session: aiohttp.ClientSession) -> Optional[str]:
         try:
-            async with session.get(BASE_URL) as response:
+            # Set a timeout to prevent hanging indefinitely
+            timeout = aiohttp.ClientTimeout(total=10)
+            async with session.get(BASE_URL, timeout=timeout) as response:
                 response.raise_for_status()
                 return await response.text()
-        except aiohttp.ClientError as e:
+        except (aiohttp.ClientError, asyncio.TimeoutError) as e:
             logger.error(f"Error fetching page: {e}")
             return None
 
@@ -147,6 +149,14 @@ class OracleNewsScraper:
         except IOError as e:
             logger.error(f"Failed to save JSON: {e}")
 
+        def sanitize_for_csv(value):
+            """Prepend ' to fields starting with dangerous characters to prevent CSV injection."""
+            if not isinstance(value, str):
+                return value
+            if value.startswith(('=', '+', '-', '@')):
+                return "'" + value
+            return value
+
         # CSV
         try:
             with open(self.output_csv, 'w', newline='', encoding='utf-8') as f:
@@ -154,13 +164,13 @@ class OracleNewsScraper:
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
                     writer.writerow([
-                        post.get('title', ''),
+                        sanitize_for_csv(post.get('title', '')),
                         post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        sanitize_for_csv(post.get('author', '')),
+                        sanitize_for_csv(", ".join(post.get('categories', []))),
+                        sanitize_for_csv(post.get('external_link', '')),
+                        sanitize_for_csv(post.get('domain', '')),
+                        sanitize_for_csv(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
