@@ -1,0 +1,4 @@
+## 2024-02-14 - [CSV Formula Injection in Scraper Output]
+**Vulnerability:** User-controlled input (like article titles or authors) from external websites was being written directly to CSV files. If these fields started with `=`, `+`, `-`, or `@`, they could be executed as formulas in spreadsheet software (Excel, Google Sheets), potentially leading to data exfiltration or arbitrary command execution on the analyst's machine.
+**Learning:** Even when scraping "static" content, the data is untrusted. When converting data formats (HTML -> CSV), the destination format's special characters (like `=`) must be escaped. This is a form of injection that targets the *consumer* of the data, not the server.
+**Prevention:** Always sanitize data before writing to CSV. Prepending a single quote `'` to fields starting with formula triggers forces the spreadsheet software to treat the content as a string literal.
