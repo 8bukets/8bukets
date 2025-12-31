@@ -22,31 +22,38 @@ class Orchestrator:
         print("Integration: 100%")
         print("Autonomy: 100%")
         print("Collaborative Intelligence: ACTIVE")
-        print("Daily Work Protocol: ENGAGED")
+        print("Bi-Weekly Work Protocol: ENGAGED")
         print("===========================================")
 
         for i in range(cycles):
             self.cycle_count += 1
             print(f"\n--- Cycle {self.cycle_count} (Simulated Day) Started ---")
 
-            # Step 1: Health Check
+            # Step 1: Health Check - Performed daily for safety
             if not self.health_agent.run_diagnostics():
                 print("[Orchestrator] System unstable. Aborting cycle.")
                 break
 
-            # Step 2: Creative Brainstorming (Curiosity & Ideas)
-            print("[Orchestrator] Triggering Creative Agent (100% Curiosity)...")
-            self.creative_agent.implement_idea()
+            # Execute publishing/creative tasks only every 14 days (Bi-weekly)
+            if self.cycle_count % 14 == 0:
+                print(f"[Orchestrator] Bi-Weekly Schedule Triggered (Day {self.cycle_count})")
 
-            # Step 3: Content Creation (Intelligence)
-            print("[Orchestrator] Triggering Content Agent...")
-            self.content_agent.publish()
+                # Step 2: Creative Brainstorming (Curiosity & Ideas)
+                print("[Orchestrator] Triggering Creative Agent (100% Curiosity)...")
+                self.creative_agent.implement_idea()
 
-            # Step 4: Monetization (Sustainability)
-            print("[Orchestrator] Triggering Ad Agent...")
-            self.ad_agent.place_ad()
+                # Step 3: Content Creation (Intelligence)
+                print("[Orchestrator] Triggering Content Agent...")
+                self.content_agent.publish()
 
-            print(f"--- Cycle {self.cycle_count} Completed with High Solution Interest ---")
+                # Step 4: Monetization (Sustainability)
+                print("[Orchestrator] Triggering Ad Agent...")
+                self.ad_agent.place_ad()
+
+                print(f"--- Cycle {self.cycle_count} (Bi-Weekly Report) Completed ---")
+            else:
+                print(f"[Orchestrator] Day {self.cycle_count}: Monitoring mode (No active reporting).")
+
             # In a real infinite loop, we would sleep here
             # time.sleep(86400) # 24 hours
 
