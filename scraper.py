@@ -11,11 +11,33 @@ from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+class ColoredFormatter(logging.Formatter):
+    COLORS = {
+        'INFO': Colors.CYAN,
+        'WARNING': Colors.WARNING,
+        'ERROR': Colors.FAIL,
+        'CRITICAL': Colors.FAIL + Colors.BOLD,
+        'DEBUG': Colors.BLUE
+    }
+
+    def format(self, record):
+        log_message = super().format(record)
+        return f"{self.COLORS.get(record.levelname, '')}{log_message}{Colors.ENDC}"
+
+handler = logging.StreamHandler()
+handler.setFormatter(ColoredFormatter('%(asctime)s - %(levelname)s - %(message)s', datefmt='%H:%M:%S'))
+logging.basicConfig(level=logging.INFO, handlers=[handler])
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
@@ -134,6 +156,8 @@ class MarkPositionScraperAsync:
         return page_posts
 
     async def scrape(self):
+        start_time = time.time()
+        logger.info(f"🚀 Starting scraper with concurrency {self.concurrency}...")
         all_posts = []
         page_num = 1
         sem = asyncio.Semaphore(self.concurrency)
@@ -172,7 +196,7 @@ class MarkPositionScraperAsync:
                 if not tasks:
                     break
 
-                logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
+                logger.info(f"📄 Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
                 results = await asyncio.gather(*tasks)
 
                 # Check results
@@ -184,11 +208,11 @@ class MarkPositionScraperAsync:
                     page_idx = batch_start + idx
                     if page_posts is None:
                         # 404 or Error
-                        logger.info(f"Page {page_idx} returned 404 or empty. Stopping.")
+                        logger.warning(f"⚠️  Page {page_idx} returned 404 or empty. Stopping.")
                         stop_detected = True
                         break # Don't process further pages in this batch effectively (though they were fetched)
                     elif len(page_posts) == 0:
-                        logger.info(f"Page {page_idx} has no articles. Stopping.")
+                        logger.warning(f"⚠️  Page {page_idx} has no articles. Stopping.")
                         stop_detected = True
                         break
                     else:
@@ -199,7 +223,7 @@ class MarkPositionScraperAsync:
                     break
 
                 if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
-                    logger.info("Reached max pages limit.")
+                    logger.info("🛑 Reached max pages limit.")
                     break
 
                 page_num += len(tasks)
@@ -207,6 +231,7 @@ class MarkPositionScraperAsync:
                 await asyncio.sleep(0.5)
 
         self.save_data(all_posts)
+        self.print_summary(len(all_posts), page_num - 1 if page_num > 1 else 1, time.time() - start_time)
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
@@ -220,7 +245,7 @@ class MarkPositionScraperAsync:
         try:
             with open(self.output_json, 'w', encoding='utf-8') as f:
                 json.dump(posts, f, indent=4, ensure_ascii=False)
-            logger.info(f"Saved {len(posts)} posts to {self.output_json}")
+            logger.info(f"💾 Saved {Colors.BOLD}{len(posts)}{Colors.ENDC} posts to {Colors.UNDERLINE}{self.output_json}{Colors.ENDC}")
         except IOError as e:
             logger.error(f"Failed to save JSON: {e}")
 
@@ -239,7 +264,7 @@ class MarkPositionScraperAsync:
                         post.get('domain', ''),
                         post.get('post_url', '')
                     ])
-            logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
+            logger.info(f"💾 Saved {Colors.BOLD}{len(posts)}{Colors.ENDC} posts to {Colors.UNDERLINE}{self.output_csv}{Colors.ENDC}")
         except IOError as e:
             logger.error(f"Failed to save CSV: {e}")
 
@@ -255,9 +280,25 @@ class MarkPositionScraperAsync:
             with open(self.output_txt, 'w', encoding='utf-8') as f:
                 for link in sorted_links:
                     f.write(link + '\n')
-            logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
+            logger.info(f"🔗 Saved {Colors.BOLD}{len(sorted_links)}{Colors.ENDC} unique links to {Colors.UNDERLINE}{self.output_txt}{Colors.ENDC}")
         except IOError as e:
             logger.error(f"Failed to save TXT: {e}")
+
+    def print_summary(self, total_posts: int, pages_scraped: int, duration: float):
+        print(f"\n{Colors.BOLD}╔════════════════════════════════════════╗{Colors.ENDC}")
+        print(f"{Colors.BOLD}║             SUMMARY REPORT             ║{Colors.ENDC}")
+        print(f"{Colors.BOLD}╠════════════════════════════════════════╣{Colors.ENDC}")
+
+        # Calculate padding for values
+        def pad_line(label, value):
+            content_length = len(label) + len(str(value))
+            padding = 40 - content_length - 4 # 4 for "║ " and " ║"
+            return f"{Colors.BOLD}║{Colors.ENDC} {label}{Colors.CYAN}{value}{Colors.ENDC}" + " " * padding + f"{Colors.BOLD}║{Colors.ENDC}"
+
+        print(pad_line("⏱️  Time Elapsed:       ", f"{duration:.2f}s"))
+        print(pad_line("📄 Pages Scraped:      ", pages_scraped))
+        print(pad_line("💾 Total Posts:        ", total_posts))
+        print(f"{Colors.BOLD}╚════════════════════════════════════════╝{Colors.ENDC}")
 
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
