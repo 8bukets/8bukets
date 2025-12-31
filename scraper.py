@@ -59,6 +59,17 @@ class MarkPositionScraperAsync:
         except:
             return None
 
+    def sanitize_csv_field(self, field: str) -> str:
+        """
+        Sanitize CSV fields to prevent formula injection.
+        If a field starts with =, +, -, or @, prepend a single quote.
+        """
+        if not isinstance(field, str):
+            return field
+        if field.startswith(('=', '+', '-', '@')):
+            return f"'{field}"
+        return field
+
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
         url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
         try:
@@ -231,13 +242,13 @@ class MarkPositionScraperAsync:
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        self.sanitize_csv_field(post.get('title', '')),
+                        self.sanitize_csv_field(post.get('date', '')),
+                        self.sanitize_csv_field(post.get('author', '')),
+                        self.sanitize_csv_field(", ".join(post.get('categories', []))),
+                        self.sanitize_csv_field(post.get('external_link', '')),
+                        self.sanitize_csv_field(post.get('domain', '')),
+                        self.sanitize_csv_field(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
