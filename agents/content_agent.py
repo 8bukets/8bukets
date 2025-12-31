@@ -24,14 +24,14 @@ class ContentAgent(BaseAgent):
         top_articles = data[:3]
 
         # Draft a simple blog post
-        draft_title = f"Daily Insight: The State of {dominant_topic}"
-        draft_body = f"Today we are looking at the latest trends in {dominant_topic}.\n\n"
+        draft_title = f"Bi-Weekly Insight: The State of {dominant_topic}"
+        draft_body = f"This week we are looking at the latest trends in {dominant_topic}.\n\n"
         draft_body += "Here are the top stories you shouldn't miss:\n"
 
         for article in top_articles:
             draft_body += f"- **{article.get('title')}**: A key piece by {article.get('author') or 'Unknown'}.\n"
 
-        draft_body += "\nStay tuned for more updates tomorrow!"
+        draft_body += "\nStay tuned for more updates in our next edition!"
 
         return {
             "draft_title": draft_title,

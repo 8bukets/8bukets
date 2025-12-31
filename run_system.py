@@ -6,6 +6,7 @@ import time
 import re
 from datetime import datetime
 from typing import List, Dict, Any
+import wcwidth
 
 # Import Agents
 from agents.analysis_agent import AnalysisAgent
@@ -38,9 +39,12 @@ RESULTS_DIR = "results"
 def print_summary_box(title: str, stats: List[tuple]):
     """Prints a styled summary box."""
     # Determine the maximum width needed for content
-    # We strip ANSI codes to get visual length
+    # We need to account for visual width of emojis and characters
     def visual_len(s):
-        return len(re.sub(r'\x1b\[[0-9;]*m', '', str(s)))
+        # Strip ANSI codes first
+        clean_s = re.sub(r'\x1b\[[0-9;]*m', '', str(s))
+        # Use wcwidth to get correct display width (handles emojis, CJK, etc)
+        return wcwidth.wcswidth(clean_s)
 
     content_width = 0
     for label, value in stats:
@@ -62,13 +66,26 @@ def print_summary_box(title: str, stats: List[tuple]):
 
     # Title Centering
     styled_title = Colors.bold(title)
-    # To center correctly with ANSI codes, we need to know how much 'invisible' string length to add to the center width
-    invisible_len = len(styled_title) - visual_len(styled_title)
-    # We want the visual area to be (width + 2) wide
-    # So we pad the string to (width + 2 + invisible_len)
-    centered_title = f" {styled_title} ".center(width + 2 + invisible_len)
 
-    print(Colors.cyan(f"{V}") + centered_title + Colors.cyan(f"{V}"))
+    # Calculate visible width
+    v_len = visual_len(title)
+
+    # Calculate padding needed to reach (width + 2) visual columns
+    # We print: " " + title + " "
+    # Total visual width needed: width + 2
+    # Current visual width: v_len + 2
+    # Padding needed: (width + 2) - (v_len + 2) = width - v_len
+
+    padding_needed = width - v_len
+    left_pad = padding_needed // 2
+    right_pad = padding_needed - left_pad
+
+    # Construct the centered line
+    # We use raw spaces for padding, then the styled title
+    # Note: styled_title contains ANSI codes but they have 0 width
+    centered_line = f"{' ' * (left_pad + 1)}{styled_title}{' ' * (right_pad + 1)}"
+
+    print(Colors.cyan(f"{V}") + centered_line + Colors.cyan(f"{V}"))
     print(Colors.cyan(f"{V}{' ' * (width + 2)}{V}"))
 
     for label, value in stats:
@@ -83,15 +100,38 @@ def print_summary_box(title: str, stats: List[tuple]):
     print(Colors.cyan(f"{BL}{H * (width + 2)}{BR}"))
     print()
 
+def should_run_report(force: bool = False) -> bool:
+    """
+    Determines if the report should run based on bi-weekly schedule.
+    Schedule: Every even week's Monday.
+    """
+    if force:
+        return True
+
+    today = datetime.now()
+    year, week, day = today.isocalendar()
+
+    # Bi-weekly schedule: Run on Monday (1) of even weeks
+    is_biweekly_monday = (day == 1) and (week % 2 == 0)
+
+    return is_biweekly_monday
+
 async def main():
     parser = argparse.ArgumentParser(description="Autonomous Agent System")
     parser.add_argument("--skip-scrape", action="store_true", help="Skip scraping and use existing data")
+    parser.add_argument("--force", action="store_true", help="Force run ignoring schedule")
     args = parser.parse_args()
 
     start_time = time.time()
 
     print(Colors.header(f"\n🎨 Autonomous Agent System Initialized"))
     print(Colors.cyan(f"=====================================\n"))
+
+    # 0. Check Schedule
+    if not should_run_report(args.force):
+        print(Colors.warning(f"⏩ Skipping Run: Not scheduled for today (Bi-weekly Mondays)."))
+        print(Colors.blue("ℹ️  Use --force to override."))
+        return
 
     # 1. Run Scraper (unless skipped)
     if not args.skip_scrape:
@@ -119,7 +159,12 @@ async def main():
 
     # 3. Run Agents
     print(Colors.header(f"\n🤖 Starting Agent Swarm..."))
-    full_report = [f"# Daily System Report - {datetime.now().strftime('%Y-%m-%d')}\n"]
+
+    # Generate bi-weekly filename parts
+    today_date = datetime.now().strftime('%Y-%m-%d')
+    current_year, current_week, _ = datetime.now().isocalendar()
+
+    full_report = [f"# Bi-Weekly System Report - {today_date} (Week {current_week})\n"]
 
     agents_success = 0
     agents_failed = 0
@@ -142,7 +187,7 @@ async def main():
     if not os.path.exists(RESULTS_DIR):
         os.makedirs(RESULTS_DIR)
 
-    report_filename = f"{RESULTS_DIR}/daily_report_{datetime.now().strftime('%Y-%m-%d')}.md"
+    report_filename = f"{RESULTS_DIR}/biweekly_report_{today_date}_W{current_week}.md"
     with open(report_filename, 'w', encoding='utf-8') as f:
         f.write("\n".join(full_report))
 
