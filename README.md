@@ -37,7 +37,12 @@ pip install aiohttp beautifulsoup4 requests
 
 ## Usage
 
-### 1. Scrape Data
+### Automated Reporting
+This repository is configured with a GitHub Action that runs every other week (on odd-numbered weeks) to scrape new data and update `REPORT.md` automatically.
+
+### Manual Usage
+
+#### 1. Scrape Data
 
 Run the asynchronous scraper to fetch data:
 
@@ -52,7 +57,7 @@ python3 scraper.py
 *   `--limit`: Limit the number of pages to scrape (e.g., `--limit 5`).
 *   `--concurrency`: Number of concurrent requests (default: 5).
 
-### 2. Generate Report
+#### 2. Generate Report
 
 Run the analytics script to process the JSON data:
 

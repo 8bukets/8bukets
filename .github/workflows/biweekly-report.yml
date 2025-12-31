@@ -1,0 +1,57 @@
+name: Bi-weekly Analytics Report
+
+on:
+  schedule:
+    # Run at 00:00 on Monday.
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check if it is the correct week
+        run: |
+          # Get current week number
+          WEEK=$(date +%V)
+          # Check if even/odd (adjust as needed, here we run on odd weeks)
+          if [ $((WEEK % 2)) -eq 0 ]; then
+            echo "Even week, skipping report generation."
+            echo "run_report=false" >> $GITHUB_ENV
+          else
+            echo "Odd week, running report generation."
+            echo "run_report=true" >> $GITHUB_ENV
+          fi
+
+      - name: Set up Python
+        if: env.run_report == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        if: env.run_report == 'true'
+        run: |
+          pip install aiohttp beautifulsoup4 requests
+
+      - name: Run Scraper
+        if: env.run_report == 'true'
+        run: python3 scraper.py --limit 10
+
+      - name: Generate Report
+        if: env.run_report == 'true'
+        run: python3 analytics.py
+
+      - name: Commit and Push Report
+        if: env.run_report == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add REPORT.md links.json links.csv unique_links.txt
+          git commit -m "chore: update bi-weekly analytics report" || echo "No changes to commit"
+          git push
