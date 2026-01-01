@@ -5,6 +5,7 @@ import subprocess
 import logging
 import time
 from datetime import datetime
+from colors import Colors, ColoredFormatter
 from agents.analysis_agent import AnalysisAgent
 from agents.research_agent import ResearchAgent
 from agents.intelligence_agent import IntelligenceAgent
@@ -17,7 +18,9 @@ from agents.programmatic_ads_agent import ProgrammaticAdsAgent
 from agents.ads_agent import AdsAgent
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
+handler = logging.StreamHandler()
+handler.setFormatter(ColoredFormatter('%(asctime)s - %(message)s'))
+logging.basicConfig(level=logging.INFO, handlers=[handler])
 logger = logging.getLogger(__name__)
 
 RESULTS_DIR = "results"
