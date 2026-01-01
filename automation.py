@@ -33,10 +33,10 @@ async def run_cycle(url, json_file, csv_file, txt_file, limit, concurrency):
     # Generate main report
     generate_report(data, "REPORT.md")
 
-    # Generate daily report
+    # Generate dated report
     date_str = datetime.now().strftime('%Y-%m-%d')
-    daily_report_file = f"REPORT_{date_str}.md"
-    generate_report(data, daily_report_file)
+    dated_report_file = f"REPORT_{date_str}.md"
+    generate_report(data, dated_report_file)
     logger.info("Reports generated.")
 
 async def main_loop(args):
@@ -46,7 +46,9 @@ async def main_loop(args):
         except Exception as e:
             logger.error(f"Error in cycle: {e}")
 
-        logger.info(f"Sleeping for {args.interval} seconds...")
+        next_run = datetime.now().timestamp() + args.interval
+        next_run_str = datetime.fromtimestamp(next_run).strftime('%H:%M:%S')
+        logger.info(f"Sleeping for {args.interval} seconds... (Next run at {next_run_str})")
         await asyncio.sleep(args.interval)
 
 if __name__ == "__main__":
