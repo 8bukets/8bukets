@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
 import re
@@ -21,6 +21,10 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://www.oracle.com/news/"
 
 class OracleNewsScraper:
+    # Pre-compile regex patterns for performance
+    WHITESPACE_RE = re.compile(r'\s+')
+    DATE_RE = re.compile(r'(\d{4}-\d{2}-\d{2})')
+
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
         self.output_csv = output_csv
@@ -34,7 +38,7 @@ class OracleNewsScraper:
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return self.WHITESPACE_RE.sub(' ', text).strip()
 
     def sanitize_for_csv(self, value: str) -> str:
         """Prevent CSV injection by prepending a single quote to risky fields."""
@@ -61,7 +65,9 @@ class OracleNewsScraper:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+        # Use SoupStrainer to only parse <a> tags, significantly reducing parsing time
+        strainer = SoupStrainer('a', href=True)
+        soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
         # Oracle news uses links in <h3> tags or <a> tags with specific classes or structures.
         # Based on curl output, we saw links like:
         # <a href="/news/announcement/..." data-lbl="..."><h3>Title</h3></a>
@@ -69,6 +75,9 @@ class OracleNewsScraper:
         articles = []
 
         # Find all links that look like announcements
+        # When using SoupStrainer with 'a', 'soup' itself acts like the result of find_all('a')
+        # if we iterate over it directly, but for compatibility we can still call find_all
+        # or just treat the soup object as the container of the filtered tags.
         links = soup.find_all('a', href=True)
 
         seen_urls = set()
@@ -103,7 +112,7 @@ class OracleNewsScraper:
 
             # Extract Date (heuristic from URL or nearby text)
             # URL format example: ...-2025-12-11/
-            date_match = re.search(r'(\d{4}-\d{2}-\d{2})', href)
+            date_match = self.DATE_RE.search(href)
             date_str = date_match.group(1) if date_match else ""
 
             article_data = {
