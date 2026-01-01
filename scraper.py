@@ -9,13 +9,9 @@ import logging
 import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse, urljoin
+from colors import Colors, ColoredFormatter
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+# Create logger but delay configuration to prevent side effects on import
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://www.oracle.com/news/"
@@ -189,6 +185,11 @@ class OracleNewsScraper:
             logger.error(f"Failed to save TXT: {e}")
 
 def main():
+    # Configure logging for standalone execution
+    handler = logging.StreamHandler()
+    handler.setFormatter(ColoredFormatter('%(asctime)s - %(levelname)s - %(message)s', datefmt='%H:%M:%S'))
+    logging.basicConfig(level=logging.INFO, handlers=[handler], force=True)
+
     parser = argparse.ArgumentParser(description="Scraper for Oracle Database @ Google Cloud News")
     parser.add_argument("--json", default="links.json", help="Output JSON filename")
     parser.add_argument("--csv", default="links.csv", help="Output CSV filename")
