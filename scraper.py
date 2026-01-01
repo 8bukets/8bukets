@@ -11,9 +11,19 @@ from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
 # Configure logging
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
+    format=f'{Colors.BLUE}%(asctime)s{Colors.ENDC} - %(message)s',
     datefmt='%H:%M:%S'
 )
 logger = logging.getLogger(__name__)
@@ -134,7 +144,11 @@ class MarkPositionScraperAsync:
         return page_posts
 
     async def scrape(self):
+        start_time = time.time()
         page_num = 1
+        total_posts = 0
+        pages_scraped = 0
+        unique_links_count = 0
         sem = asyncio.Semaphore(self.concurrency)
 
         # Headers
@@ -179,7 +193,7 @@ class MarkPositionScraperAsync:
                         if not tasks:
                             break
 
-                        logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
+                        logger.info(f"{Colors.YELLOW}Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...{Colors.ENDC}")
                         results = await asyncio.gather(*tasks)
 
                         # Check results
@@ -191,26 +205,28 @@ class MarkPositionScraperAsync:
                             page_idx = batch_start + idx
                             if page_posts is None:
                                 # 404 or Error
-                                logger.info(f"Page {page_idx} returned 404 or empty. Stopping.")
+                                logger.info(f"{Colors.FAIL}Page {page_idx} returned 404 or empty. Stopping.{Colors.ENDC}")
                                 stop_detected = True
                                 break
                             elif len(page_posts) == 0:
-                                logger.info(f"Page {page_idx} has no articles. Stopping.")
+                                logger.info(f"{Colors.FAIL}Page {page_idx} has no articles. Stopping.{Colors.ENDC}")
                                 stop_detected = True
                                 break
                             else:
                                 # Write this page's posts incrementally
                                 first_json_item = self.save_batch(page_posts, json_f, csv_writer, txt_f, seen_links, first_json_item)
                                 total_batch_posts += len(page_posts)
+                                pages_scraped += 1
 
                         if total_batch_posts > 0:
-                            logger.info(f"Saved {total_batch_posts} posts from batch.")
+                            total_posts += total_batch_posts
+                            logger.info(f"{Colors.GREEN}Saved {total_batch_posts} posts from batch.{Colors.ENDC}")
 
                         if stop_detected:
                             break
 
                         if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
-                            logger.info("Reached max pages limit.")
+                            logger.info(f"{Colors.YELLOW}Reached max pages limit.{Colors.ENDC}")
                             break
 
                         page_num += len(tasks)
@@ -219,6 +235,37 @@ class MarkPositionScraperAsync:
             finally:
                 # Finalize JSON even on error
                 json_f.write('\n]')
+                unique_links_count = len(seen_links)
+                self.print_summary(time.time() - start_time, pages_scraped, total_posts, unique_links_count)
+
+    def print_summary(self, duration, pages, posts, unique):
+        # Helper for padding with emoji correction
+        def p(label, val):
+            # Emojis 📄, 📝, 🔗, 🚀 have len 1 but width 2.
+            # Emoji ⏱️ has len 2 and width 2.
+            text = f" {label} {val}"
+            # Basic length
+            visual_len = len(text)
+            # Correction for len 1 width 2 emojis
+            visual_len += sum(1 for c in label if c in '📄📝🔗🚀')
+            # ⏱️ is len 2, so it already counts as 2, matching visual width 2. No correction needed.
+
+            pad = 48 - visual_len
+            return text + " " * max(0, pad)
+
+        print(f"\n{Colors.HEADER}┌──────────────────────────────────────────────────┐{Colors.ENDC}")
+        print(f"{Colors.HEADER}│              🚀 Scrape Completed!                │{Colors.ENDC}")
+        print(f"{Colors.HEADER}├──────────────────────────────────────────────────┤{Colors.ENDC}")
+        print(f"{Colors.HEADER}│{Colors.ENDC}{p('⏱️  Duration:    ', f'{duration:.2f}s')}{Colors.HEADER}│{Colors.ENDC}")
+        print(f"{Colors.HEADER}│{Colors.ENDC}{p('📄 Pages Scraped:', str(pages))}{Colors.HEADER}│{Colors.ENDC}")
+        print(f"{Colors.HEADER}│{Colors.ENDC}{p('📝 Total Posts:  ', str(posts))}{Colors.HEADER}│{Colors.ENDC}")
+        print(f"{Colors.HEADER}│{Colors.ENDC}{p('🔗 Unique Links: ', str(unique))}{Colors.HEADER}│{Colors.ENDC}")
+        print(f"{Colors.HEADER}│                                                  │{Colors.ENDC}")
+        print(f"{Colors.HEADER}│{Colors.ENDC} 📂 Output Files:                                 {Colors.HEADER}│{Colors.ENDC}")
+        print(f"{Colors.HEADER}│{Colors.ENDC}    • {self.output_json:<43}{Colors.HEADER}│{Colors.ENDC}")
+        print(f"{Colors.HEADER}│{Colors.ENDC}    • {self.output_csv:<43}{Colors.HEADER}│{Colors.ENDC}")
+        print(f"{Colors.HEADER}│{Colors.ENDC}    • {self.output_txt:<43}{Colors.HEADER}│{Colors.ENDC}")
+        print(f"{Colors.HEADER}└──────────────────────────────────────────────────┘{Colors.ENDC}")
 
     def save_batch(self, posts: List[Dict], json_f, csv_writer, txt_f, seen_links: Set[str], is_first_item: bool) -> bool:
         for post in posts:
