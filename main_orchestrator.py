@@ -2,6 +2,7 @@ import logging
 import sys
 import datetime
 import os
+from colors import ColoredFormatter
 from agents.researcher import ResearcherAgent
 from agents.analyzer import AnalyzerAgent
 from agents.intelligence import IntelligenceAgent
@@ -12,17 +13,21 @@ from agents.creativity import CreativityAgent
 from agents.advertising import AdvertisingAgent
 
 # Configure logging
+handler = logging.StreamHandler(sys.stdout)
+handler.setFormatter(ColoredFormatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    handlers=[handler],
+    force=True
 )
 logger = logging.getLogger("Orchestrator")
 
 def run_orchestration(save_report=True):
-    logger.info(">>> STARTING AUTONOMOUS AGENT SWARM (v2.0 - Evolving) <<<")
+    logger.info("🚀 STARTING AUTONOMOUS AGENT SWARM (v2.0 - Evolving)")
     report_data = {}
 
     # 1. Health Check
+    logger.info("🩺 Phase 1: Health Check")
     health_agent = HealthCheckAgent()
     health_status = health_agent.run()
     report_data['health'] = health_status
@@ -31,6 +36,7 @@ def run_orchestration(save_report=True):
         logger.error("Target site is unhealthy. Aborting operation.")
 
     # 2. Research
+    logger.info("🔍 Phase 2: Research")
     research_agent = ResearcherAgent()
     raw_data = research_agent.run({"limit": 2})
     report_data['research'] = {
@@ -42,16 +48,19 @@ def run_orchestration(save_report=True):
         logger.warning("No blog data scraped.")
 
     # 3. Analyze
+    logger.info("🧠 Phase 3: Analysis")
     analyzer_agent = AnalyzerAgent()
     analysis_result = analyzer_agent.run(raw_data)
     report_data['analysis'] = analysis_result
 
     # 3.5 Advertising (Collaborating with Analyzer)
+    logger.info("📢 Phase 3.5: Advertising")
     ad_agent = AdvertisingAgent()
     ad_result = ad_agent.run(analysis_result)
     report_data['advertising'] = ad_result
 
     # 4. Intelligence (Collaborating with Analyzer + Advertising + History)
+    logger.info("💡 Phase 4: Intelligence")
     intelligence_agent = IntelligenceAgent()
     # Pass combined data for "100% collaboration"
     combined_input = {
@@ -62,21 +71,24 @@ def run_orchestration(save_report=True):
     report_data['intelligence'] = intelligence_result
 
     # 5. Creativity
+    logger.info("🎨 Phase 5: Creativity")
     creativity_agent = CreativityAgent()
     creative_result = creativity_agent.run(analysis_result)
     report_data['creativity'] = creative_result
 
     # 6. Monetization
+    logger.info("💰 Phase 6: Monetization")
     monetization_agent = MonetizationAgent()
     monetization_result = monetization_agent.run(raw_data.get('blog_posts', []))
     report_data['monetization'] = monetization_result
 
     # 7. Create Content
+    logger.info("✍️  Phase 7: Content Creation")
     content_agent = ContentCreatorAgent()
     content_draft = content_agent.run(intelligence_result)
     report_data['content_draft'] = content_draft
 
-    logger.info(">>> SWARM OPERATION COMPLETE <<<")
+    logger.info("✅ SWARM OPERATION COMPLETE")
 
     if save_report:
         save_daily_report(report_data)
