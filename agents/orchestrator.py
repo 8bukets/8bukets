@@ -47,6 +47,7 @@ class Orchestrator:
             self.ad_agent.place_ad()
 
             print(f"--- Cycle {self.cycle_count} Completed with High Solution Interest ---")
+
             # In a real infinite loop, we would sleep here
             # time.sleep(86400) # 24 hours
 

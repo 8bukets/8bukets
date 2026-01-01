@@ -1,5 +1,5 @@
 import os
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 
 class HealthAgent:
     def __init__(self, filepath='index.html', robots_path='robots.txt'):
@@ -13,10 +13,13 @@ class HealthAgent:
             print(f"[HealthAgent] CRITICAL: {self.filepath} missing!")
             return False
 
-        with open(self.filepath, 'r') as f:
-            soup = BeautifulSoup(f, 'html.parser')
-
+        # Optimize: Use SoupStrainer to only parse structural tags
         required_tags = ['html', 'head', 'body', 'header', 'main', 'footer']
+        strainer = SoupStrainer(required_tags)
+
+        with open(self.filepath, 'r') as f:
+            soup = BeautifulSoup(f, 'html.parser', parse_only=strainer)
+
         missing = [tag for tag in required_tags if not soup.find(tag)]
 
         if missing:
