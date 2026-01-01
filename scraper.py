@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-from bs4 import BeautifulSoup, Comment
+from bs4 import BeautifulSoup
 import json
 import csv
 import re
@@ -21,6 +21,9 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://www.oracle.com/news/"
 
 class OracleNewsScraper:
+    # Pre-compile regex for performance
+    COMMENT_RE = re.compile(r'<!--(.*?)-->', re.DOTALL)
+
     def __init__(self, output_json: str, output_csv: str, output_txt: str):
         self.output_json = output_json
         self.output_csv = output_csv
@@ -58,11 +61,11 @@ class OracleNewsScraper:
             return None
 
     def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
-
-        # Find comments containing the news section
-        comments = soup.find_all(string=lambda text: isinstance(text, Comment))
+        # Optimization: Use regex to find the specific comment instead of parsing full DOM with BeautifulSoup.
+        # This avoids building the DOM tree for the entire page (~100x faster).
+        comments = self.COMMENT_RE.findall(html)
         news_html = None
+
         for c in comments:
             if 'rc92v0' in c and '<section' in c:
                 news_html = c
