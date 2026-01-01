@@ -1,7 +1,8 @@
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import time
+import re
 import logging
 import argparse
 import sys
@@ -137,6 +138,15 @@ def scrape(output_file: str, max_pages: int = 0):
     page = 1
     current_url = BASE_URL
 
+    # ⚡ Bolt Optimization: Use SoupStrainer to only parse 'article' tags
+    # and the pagination div to avoid full DOM parsing.
+    # Note: BeautifulSoup passes name only to the function if used as name argument.
+    # We must construct SoupStrainer carefully or use a simpler approach.
+    # Since we can't easily filter by attrs in the name function for SoupStrainer,
+    # we will use a list of tags and filter later, OR just filter 'article' and 'div'.
+    # Filtering just 'article' and 'div' is safe and still faster than full parse.
+    target_strainer = SoupStrainer(name=['article', 'div'])
+
     while current_url:
         if max_pages > 0 and page > max_pages:
             logging.info(f"Reached max pages limit ({max_pages}). Stopping.")
@@ -150,7 +160,8 @@ def scrape(output_file: str, max_pages: int = 0):
             logging.error(f"Error fetching {current_url}: {e}")
             break
 
-        soup = BeautifulSoup(response.content, 'html.parser')
+        # ⚡ Optimization: Only parse relevant parts of the document
+        soup = BeautifulSoup(response.content, 'html.parser', parse_only=target_strainer)
 
         posts = soup.find_all('article')
         logging.info(f"Found {len(posts)} posts on page {page}.")
