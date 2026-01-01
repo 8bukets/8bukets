@@ -6,15 +6,39 @@ import logging
 import argparse
 import sys
 import sqlite3
+import os
 from datetime import datetime
 
+class Colors:
+    """ANSI color codes for CLI output."""
+    _use_color = sys.stdout.isatty() or os.environ.get('FORCE_COLOR')
+
+    HEADER = '\033[95m' if _use_color else ''
+    OKBLUE = '\033[94m' if _use_color else ''
+    OKGREEN = '\033[92m' if _use_color else ''
+    WARNING = '\033[93m' if _use_color else ''
+    FAIL = '\033[91m' if _use_color else ''
+    ENDC = '\033[0m' if _use_color else ''
+    BOLD = '\033[1m' if _use_color else ''
+
+class ColorFormatter(logging.Formatter):
+    """Custom formatter to add colors to log levels."""
+
+    def format(self, record):
+        if record.levelno == logging.INFO:
+            record.msg = f"{record.msg}"
+        elif record.levelno == logging.WARNING:
+            record.msg = f"{Colors.WARNING}{record.msg}{Colors.ENDC}"
+        elif record.levelno == logging.ERROR:
+            record.msg = f"{Colors.FAIL}{record.msg}{Colors.ENDC}"
+        return super().format(record)
+
 # Configure logging
+handler = logging.StreamHandler(sys.stdout)
+handler.setFormatter(ColorFormatter('%(asctime)s - %(levelname)s - %(message)s'))
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.StreamHandler(sys.stdout)
-    ]
+    handlers=[handler]
 )
 logger = logging.getLogger(__name__)
 
@@ -82,7 +106,7 @@ class BlogScraper:
                     # Check Title Change
                     new_title = item.get('title')
                     if old_title != new_title and new_title:
-                        logger.info(f"Change detected for {item.get('post_url')}: Title changed.")
+                        logger.info(f"📝 Change detected for {item.get('post_url')}: Title changed.")
                         cursor.execute("INSERT INTO changes (post_id, field, old_value, new_value) VALUES (?, ?, ?, ?)",
                                        (post_id, 'title', old_title, new_title))
                         cursor.execute("UPDATE posts SET title = ? WHERE id = ?", (new_title, post_id))
@@ -91,7 +115,7 @@ class BlogScraper:
                     # Check External Link Change
                     new_link = item.get('external_link')
                     if old_link != new_link and new_link:
-                        logger.info(f"Change detected for {item.get('post_url')}: External Link changed.")
+                        logger.info(f"🔗 Change detected for {item.get('post_url')}: External Link changed.")
                         cursor.execute("INSERT INTO changes (post_id, field, old_value, new_value) VALUES (?, ?, ?, ?)",
                                        (post_id, 'external_link', old_link, new_link))
                         cursor.execute("UPDATE posts SET external_link = ? WHERE id = ?", (new_link, post_id))
@@ -127,13 +151,13 @@ class BlogScraper:
         return False
 
     def fetch_page(self, url):
-        logger.info(f"Fetching {url}...")
+        logger.info(f"🌐 Fetching {url}...")
         try:
             response = requests.get(url, headers=self.headers, timeout=10)
             response.raise_for_status()
             return response.content
         except requests.RequestException as e:
-            logger.error(f"Error fetching URL {url}: {e}")
+            logger.error(f"❌ Error fetching URL {url}: {e}")
             return None
 
     def parse_article(self, article):
@@ -211,7 +235,7 @@ class BlogScraper:
             logger.info(f"Found {len(articles)} articles on this page.")
 
             if not articles:
-                logger.warning("No articles found on page.")
+                logger.warning(f"⚠️  No articles found on page.")
 
             for article in articles:
                 item = self.parse_article(article)
@@ -221,24 +245,32 @@ class BlogScraper:
 
             next_page = self.get_next_page(soup)
             if next_page:
-                logger.info(f"Found next page: {next_page}")
+                logger.info(f"➡️  Found next page: {next_page}")
                 url = next_page
                 time.sleep(1)
             else:
-                logger.info("No more pages found.")
+                logger.info(f"✅ No more pages found.")
                 url = None
 
         self.save_json()
-        logger.info(f"Scraped {len(self.data)} articles in total.")
-        logger.info(f"New items added to database: {new_items_count}")
+        self.print_summary(new_items_count)
+
+    def print_summary(self, new_count):
+        print(f"\n{Colors.HEADER}╔════════════════════════════════════════╗{Colors.ENDC}")
+        print(f"{Colors.HEADER}║           Scraping Complete!           ║{Colors.ENDC}")
+        print(f"{Colors.HEADER}╠════════════════════════════════════════╣{Colors.ENDC}")
+        print(f"║ 📄 Total Articles:   {str(len(self.data)).ljust(18)}║")
+        print(f"║ 🆕 New Items:        {str(new_count).ljust(18)}║")
+        print(f"║ 💾 Output:           {self.output_json.ljust(18)}║")
+        print(f"{Colors.HEADER}╚════════════════════════════════════════╝{Colors.ENDC}\n")
 
     def save_json(self):
         try:
             with open(self.output_json, "w", encoding="utf-8") as f:
                 json.dump(self.data, f, indent=2, ensure_ascii=False)
-            logger.info(f"Data saved to {self.output_json}")
+            logger.info(f"💾 Data saved to {self.output_json}")
         except IOError as e:
-            logger.error(f"Error saving data to {self.output_json}: {e}")
+            logger.error(f"❌ Error saving data to {self.output_json}: {e}")
 
 def main():
     parser = argparse.ArgumentParser(description="Scrape wishlist.design.blog")
