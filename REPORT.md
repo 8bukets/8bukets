@@ -1,13 +1,13 @@
-# Wordpress Blog Analytics Report
+# 📊 Wordpress Blog Analytics Report
 
-**Generated on:** 2025-12-29 19:04:27
+**Generated on:** 2026-01-01 02:44:45
 
-## General Statistics
+## 📈 General Statistics
 - **Total Posts:** 391
 - **Date Range:** 2020-06-10 to 2023-06-25
 - **Unique Domains Linked:** 194
 
-## Top 10 Referenced Domains
+## 🏆 Top 10 Referenced Domains
 | Domain | Count |
 | :--- | :---: |
 | youtube.com | 74 |
@@ -21,12 +21,12 @@
 | soundcloud.com | 5 |
 | artistrepublik.com | 4 |
 
-## Top 10 Categories
+## 🏷️ Top 10 Categories
 | Category | Count |
 | :--- | :---: |
 | Music | 391 |
 
-## Posts by Year
+## 📅 Posts by Year
 | Year | Count |
 | :--- | :---: |
 | 2023 | 9 |
@@ -34,5 +34,5 @@
 | 2021 | 166 |
 | 2020 | 46 |
 
-## Authors
+## ✍️ Authors
 - Filip Keser: 391 posts
