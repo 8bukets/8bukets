@@ -21,6 +21,13 @@ def get_domain(url):
     except:
         return None
 
+def sanitize_markdown(text):
+    """Sanitize text for Markdown table cells to prevent injection."""
+    if not isinstance(text, str):
+        return str(text)
+    # Escape pipe characters which define table columns
+    return text.replace('|', r'\|')
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
@@ -78,13 +85,13 @@ def generate_report(data, output_file):
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        md.append(f"| {sanitize_markdown(domain)} | {count} |")
 
     md.append("\n## Top 10 Categories")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        md.append(f"| {sanitize_markdown(cat)} | {count} |")
 
     md.append("\n## Posts by Year")
     md.append("| Year | Count |")
