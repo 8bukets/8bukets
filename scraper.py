@@ -2,6 +2,7 @@ import aiohttp
 import asyncio
 from bs4 import BeautifulSoup
 import json
+import os
 import csv
 import re
 import argparse
@@ -22,12 +23,28 @@ BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
-        self.output_json = output_json
-        self.output_csv = output_csv
-        self.output_txt = output_txt
+        self.output_json = self.validate_output_path(output_json)
+        self.output_csv = self.validate_output_path(output_csv)
+        self.output_txt = self.validate_output_path(output_txt)
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+
+    def validate_output_path(self, path: str) -> str:
+        """Ensure the output path is within the current working directory."""
+        if not path:
+            return path
+        cwd = os.getcwd()
+        abs_path = os.path.abspath(path)
+        if os.path.commonpath([cwd, abs_path]) != cwd:
+            raise ValueError(f"Security Error: Output path '{path}' is outside the current working directory.")
+        return path
+
+    def sanitize_for_csv(self, text: str) -> str:
+        """Prevent CSV formula injection."""
+        if text and isinstance(text, str) and text.startswith(('=', '+', '-', '@')):
+            return "'" + text
+        return text
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -231,13 +248,13 @@ class MarkPositionScraperAsync:
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        self.sanitize_for_csv(post.get('title', '')),
+                        self.sanitize_for_csv(post.get('date', '')),
+                        self.sanitize_for_csv(post.get('author', '')),
+                        self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                        self.sanitize_for_csv(post.get('external_link', '')),
+                        self.sanitize_for_csv(post.get('domain', '')),
+                        self.sanitize_for_csv(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
