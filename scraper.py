@@ -3,6 +3,7 @@ import asyncio
 from bs4 import BeautifulSoup
 import json
 import csv
+import os
 import re
 import argparse
 import logging
@@ -22,12 +23,29 @@ BASE_URL = "https://www.oracle.com/news/"
 
 class OracleNewsScraper:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
-        self.output_json = output_json
-        self.output_csv = output_csv
-        self.output_txt = output_txt
+        self.output_json = self.validate_output_path(output_json)
+        self.output_csv = self.validate_output_path(output_csv)
+        self.output_txt = self.validate_output_path(output_txt)
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.base_url = BASE_URL
+
+    def validate_output_path(self, path: str) -> str:
+        """Ensure the output path is within the current working directory."""
+        # Resolve the absolute path
+        abs_path = os.path.abspath(path)
+        # Get the absolute path of the current working directory
+        cwd = os.path.abspath(os.getcwd())
+
+        # Use commonpath to ensure abs_path is inside cwd
+        try:
+            if os.path.commonpath([abs_path, cwd]) != cwd:
+                 raise ValueError(f"Output path must be within the current working directory: {path}")
+        except ValueError:
+             # Can happen on Windows if drives differ
+             raise ValueError(f"Invalid output path: {path}")
+
+        return abs_path
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
