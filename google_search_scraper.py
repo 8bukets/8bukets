@@ -6,10 +6,23 @@ from typing import List, Dict
 
 def configure_logging(verbose: bool):
     level = logging.DEBUG if verbose else logging.INFO
-    logging.basicConfig(
-        level=level,
-        format='%(asctime)s - %(levelname)s - %(message)s'
-    )
+
+    # Custom colored formatter
+    class ScraperFormatter(logging.Formatter):
+        def format(self, record):
+            msg = super().format(record)
+            if record.levelno == logging.INFO:
+                return f"\033[96mℹ️  {msg}\033[0m" # Cyan
+            elif record.levelno == logging.WARNING:
+                return f"\033[93m⚠️  {msg}\033[0m" # Yellow
+            elif record.levelno == logging.ERROR:
+                return f"\033[91m❌ {msg}\033[0m" # Red
+            return msg
+
+    handler = logging.StreamHandler()
+    handler.setFormatter(ScraperFormatter('%(asctime)s - %(levelname)s - %(message)s'))
+
+    logging.basicConfig(level=level, handlers=[handler], force=True)
 
 def perform_google_search(query: str, num_results: int = 10, lang: str = "en") -> List[Dict[str, str]]:
     """

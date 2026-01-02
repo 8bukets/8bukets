@@ -1,13 +1,32 @@
 import logging
 
+# Formatter defined at module level
+try:
+    from colors import Colors
+except ImportError:
+    # Fallback if colors.py is missing (though we added it)
+    class Colors:
+        GREEN = ""
+        FAIL = ""
+        ENDC = ""
+
+class AgentColoredFormatter(logging.Formatter):
+    def format(self, record):
+        message = super().format(record)
+        prefix = "🚀" if "Starting" in record.msg else "✅" if "complete" in record.msg else "➡️ "
+        color = Colors.GREEN if record.levelno == logging.INFO else Colors.FAIL
+        return f"{color}{prefix} {message}{Colors.ENDC}"
+
 class BaseAgent:
     def __init__(self, name):
         self.name = name
         self.logger = logging.getLogger(self.name)
         self.logger.setLevel(logging.INFO)
+        # Prevent duplicate logging since root logger is configured
+        self.logger.propagate = False
         if not self.logger.handlers:
             handler = logging.StreamHandler()
-            formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+            formatter = AgentColoredFormatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
             handler.setFormatter(formatter)
             self.logger.addHandler(handler)
 
