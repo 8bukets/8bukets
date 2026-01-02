@@ -4,6 +4,7 @@ from collections import Counter
 from urllib.parse import urlparse
 from datetime import datetime
 import sys
+from colors import Colors, colorize
 
 def load_data(filepath):
     try:
@@ -66,40 +67,47 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
-    md.append("# Wordpress Blog Analytics Report")
+    md.append("# 📊 Wordpress Blog Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
+    md.append("\n## 📈 General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
 
-    md.append("\n## Top 10 Referenced Domains")
+    md.append("\n## 🔗 Top 10 Referenced Domains")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in domain_counts:
         md.append(f"| {domain} | {count} |")
 
-    md.append("\n## Top 10 Categories")
+    md.append("\n## 📂 Top 10 Categories")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in category_counts:
         md.append(f"| {cat} | {count} |")
 
-    md.append("\n## Posts by Year")
+    md.append("\n## 📅 Posts by Year")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
     for year, count in year_counts:
         md.append(f"| {year} | {count} |")
 
-    md.append("\n## Authors")
+    md.append("\n## ✍️ Authors")
     for author, count in author_counts:
         md.append(f"- {author}: {count} posts")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    # Summary Box
+    print(f"\n{Colors.CYAN}╔════════════════════════════════════════╗{Colors.ENDC}")
+    print(f"{Colors.CYAN}║{Colors.ENDC} {Colors.BOLD}Analytics Report Generated!{Colors.ENDC} 📊      {Colors.CYAN}║{Colors.ENDC}")
+    print(f"{Colors.CYAN}╠════════════════════════════════════════╣{Colors.ENDC}")
+    print(f"{Colors.CYAN}║{Colors.ENDC} 📄 Output File:   {Colors.GREEN}{output_file[:22]:<22}{Colors.ENDC} {Colors.CYAN}║{Colors.ENDC}")
+    print(f"{Colors.CYAN}║{Colors.ENDC} 📈 Total Posts:   {Colors.YELLOW}{total_posts:<22}{Colors.ENDC} {Colors.CYAN}║{Colors.ENDC}")
+    print(f"{Colors.CYAN}║{Colors.ENDC} 📅 Date Range:    {Colors.YELLOW}{str(start_date)[:10]} to {str(end_date)[:10]:<8}{Colors.ENDC} {Colors.CYAN}║{Colors.ENDC}")
+    print(f"{Colors.CYAN}╚════════════════════════════════════════╝{Colors.ENDC}\n")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for WordPress blog data")
