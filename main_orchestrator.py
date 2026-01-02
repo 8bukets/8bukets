@@ -11,11 +11,23 @@ from agents.monetization import MonetizationAgent
 from agents.creativity import CreativityAgent
 from agents.advertising import AdvertisingAgent
 
+from colors import Colors
+
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
+class ColoredFormatter(logging.Formatter):
+    def format(self, record):
+        message = super().format(record)
+        if record.levelno == logging.INFO:
+            return f"{Colors.CYAN}ℹ️  {message}{Colors.ENDC}"
+        elif record.levelno == logging.WARNING:
+            return f"{Colors.WARNING}⚠️  {message}{Colors.ENDC}"
+        elif record.levelno == logging.ERROR:
+            return f"{Colors.FAIL}❌ {message}{Colors.ENDC}"
+        return message
+
+handler = logging.StreamHandler()
+handler.setFormatter(ColoredFormatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
+logging.basicConfig(level=logging.INFO, handlers=[handler], force=True)
 logger = logging.getLogger("Orchestrator")
 
 def run_orchestration(save_report=True):
