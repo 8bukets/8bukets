@@ -29,6 +29,20 @@ class MarkPositionScraperAsync:
         self.concurrency = concurrency
         self.session = None
 
+    def sanitize_for_csv(self, value: Optional[str]) -> str:
+        """Sanitize a value to prevent CSV injection."""
+        if not value:
+            return ""
+
+        # Ensure it's a string
+        val_str = str(value)
+
+        # Check for dangerous characters at the start
+        if val_str.startswith(('=', '+', '-', '@')):
+            return f"'{val_str}"
+
+        return val_str
+
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
@@ -224,13 +238,13 @@ class MarkPositionScraperAsync:
         for post in posts:
             # CSV
             csv_writer.writerow([
-                post.get('title', ''),
-                post.get('date', ''),
-                post.get('author', ''),
-                ", ".join(post.get('categories', [])),
-                post.get('external_link', ''),
-                post.get('domain', ''),
-                post.get('post_url', '')
+                self.sanitize_for_csv(post.get('title', '')),
+                self.sanitize_for_csv(post.get('date', '')),
+                self.sanitize_for_csv(post.get('author', '')),
+                self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                self.sanitize_for_csv(post.get('external_link', '')),
+                self.sanitize_for_csv(post.get('domain', '')),
+                self.sanitize_for_csv(post.get('post_url', ''))
             ])
 
             # TXT

@@ -1,0 +1,4 @@
+## 2024-12-25 - CSV Injection Vulnerability
+**Vulnerability:** User-controlled data (e.g., article titles, authors, categories) was being written directly to CSV files without sanitization. Malicious inputs starting with `=`, `+`, `-`, or `@` could be interpreted as formulas by spreadsheet software (Excel, LibreOffice), potentially leading to command execution (CSV Injection).
+**Learning:** Even when scraping "static" content, data integrity and safety cannot be assumed. CSV format is inherently risky when dealing with untrusted input because of how spreadsheet software interprets cell contents.
+**Prevention:** All untrusted data destined for CSV output must be sanitized. A common and effective mitigation is to prepend a single quote (`'`) to any field starting with dangerous characters (`=`, `+`, `-`, `@`), forcing the spreadsheet software to treat the cell content as a string literal.
