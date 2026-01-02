@@ -3,6 +3,7 @@ import asyncio
 from bs4 import BeautifulSoup
 import json
 import csv
+import os
 import re
 import argparse
 import logging
@@ -22,12 +23,28 @@ BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
-        self.output_json = output_json
-        self.output_csv = output_csv
-        self.output_txt = output_txt
+        self.output_json = self.validate_output_path(output_json)
+        self.output_csv = self.validate_output_path(output_csv)
+        self.output_txt = self.validate_output_path(output_txt)
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+
+    def validate_output_path(self, filepath: str) -> str:
+        """Ensure the output path is within the current working directory to prevent path traversal."""
+        # Get absolute path of the target file
+        abs_path = os.path.abspath(filepath)
+        # Get absolute path of the current working directory
+        cwd = os.getcwd()
+
+        # Use commonpath to check if the file is inside the cwd
+        try:
+            if os.path.commonpath([cwd, abs_path]) != cwd:
+                 raise ValueError(f"Output path '{filepath}' must be within the current working directory.")
+        except ValueError:
+             raise ValueError(f"Output path '{filepath}' must be within the current working directory.")
+
+        return filepath
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
