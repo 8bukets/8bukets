@@ -11,9 +11,12 @@ from agents.research_agent import ResearchAgent
 from agents.content_creation_agent import ContentCreationAgent
 from agents.programmatic_ads_agent import ProgrammaticAdsAgent
 from scraper import OracleNewsScraper
+from colors import Colors, ColoredFormatter
 
 # Configure Orchestrator Logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+handler = logging.StreamHandler()
+handler.setFormatter(ColoredFormatter())
+logging.basicConfig(level=logging.INFO, handlers=[handler], force=True)
 logger = logging.getLogger("AutonomousIntelligenceAgent")
 
 class AutonomousIntelligenceAgent:
@@ -23,10 +26,10 @@ class AutonomousIntelligenceAgent:
             os.makedirs(output_dir)
 
     async def run_pipeline(self):
-        logger.info("Starting Autonomous Pipeline...")
+        logger.info(f"{Colors.BOLD}{Colors.HEADER}Starting Autonomous Pipeline...{Colors.RESET}")
 
         # 1. Scrape Data (Simulating 'Intelligence Gathering')
-        logger.info("Step 1: Intelligence Gathering (Scraping)...")
+        logger.info(f"{Colors.CYAN}Step 1: Intelligence Gathering (Scraping)...{Colors.RESET}")
         scraper = OracleNewsScraper(
             output_json="links.json",
             output_csv="links.csv",
@@ -35,7 +38,7 @@ class AutonomousIntelligenceAgent:
         await scraper.scrape()
 
         # 2. Health Check
-        logger.info("Step 2: System Health Check...")
+        logger.info(f"{Colors.CYAN}Step 2: System Health Check...{Colors.RESET}")
         health_agent = HealthCheckAgent()
         health_report = health_agent.check()
         self._save_json("health_report.json", health_report)
@@ -45,7 +48,7 @@ class AutonomousIntelligenceAgent:
             return
 
         # 3. Analysis & Intelligence
-        logger.info("Step 3: Analysis & Strategic Intelligence...")
+        logger.info(f"{Colors.CYAN}Step 3: Analysis & Strategic Intelligence...{Colors.RESET}")
         analyze_agent = AnalyzeAgent()
         intelligence_agent = IntelligenceAgent()
 
@@ -56,13 +59,13 @@ class AutonomousIntelligenceAgent:
         self._save_json("strategic_brief.json", strategy)
 
         # 4. Research
-        logger.info("Step 4: Autonomous Research...")
+        logger.info(f"{Colors.CYAN}Step 4: Autonomous Research...{Colors.RESET}")
         research_agent = ResearchAgent()
         trends = research_agent.identify_trends(analysis_data)
         self._save_json("trends_report.json", trends)
 
         # 5. Content Creation
-        logger.info("Step 5: Creative Content Generation...")
+        logger.info(f"{Colors.CYAN}Step 5: Creative Content Generation...{Colors.RESET}")
         content_agent = ContentCreationAgent()
         blog_post = content_agent.generate_content(trends, strategy)
 
@@ -71,12 +74,12 @@ class AutonomousIntelligenceAgent:
             f.write(blog_post)
 
         # 6. Monetization & Ads
-        logger.info("Step 6: Programmatic Advertising Strategy...")
+        logger.info(f"{Colors.CYAN}Step 6: Programmatic Advertising Strategy...{Colors.RESET}")
         ads_agent = ProgrammaticAdsAgent()
         ad_strategy = ads_agent.generate_ad_strategy(trends)
         self._save_json("ad_campaign_strategy.json", ad_strategy)
 
-        logger.info("Autonomous Pipeline Completed Successfully.")
+        logger.info(f"{Colors.GREEN}{Colors.BOLD}✨ Autonomous Pipeline Completed Successfully.{Colors.RESET}")
 
     def _save_json(self, filename, data):
         path = os.path.join(self.output_dir, filename)
