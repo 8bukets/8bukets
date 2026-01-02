@@ -9,6 +9,7 @@ import logging
 import time
 from typing import List, Dict, Optional, Set, Tuple
 from urllib.parse import urlparse
+from colors import Colors, colorize
 
 # Configure logging
 logging.basicConfig(
@@ -17,6 +18,8 @@ logging.basicConfig(
     datefmt='%H:%M:%S'
 )
 logger = logging.getLogger(__name__)
+# Prevent duplicate logging when imported
+logger.propagate = False
 
 BASE_URL = "https://markposition.wordpress.com/"
 
@@ -169,16 +172,16 @@ class MarkPositionScraperAsync:
 
                         if page_posts is None:
                             # 404 or Error
-                            logger.info(f"Page {page_num} returned 404 or error. Stopping new scheduling.")
+                            logger.info(colorize(f"Page {page_num} returned 404 or error. Stopping new scheduling.", Colors.YELLOW))
                             stop_scheduling = True
                         elif len(page_posts) == 0:
-                            logger.info(f"Page {page_num} has no articles. Stopping new scheduling.")
+                            logger.info(colorize(f"Page {page_num} has no articles. Stopping new scheduling.", Colors.YELLOW))
                             stop_scheduling = True
                         else:
-                            logger.info(f"Page {page_num} scraped ({len(page_posts)} posts).")
+                            logger.info(colorize(f"Page {page_num} scraped ({len(page_posts)} posts).", Colors.GREEN))
                             results.append((page_num, page_posts))
                     except Exception as e:
-                        logger.error(f"Task failed: {e}")
+                        logger.error(colorize(f"Task failed: {e}", Colors.RED))
                         # If a task fails unpredictably, we generally might want to continue or retry.
                         # For now, we assume it's a transient error or a bad page, but don't stop everything unless necessary.
                         # But typically consistent failure implies we should stop or retry.
@@ -214,9 +217,9 @@ class MarkPositionScraperAsync:
         try:
             with open(self.output_json, 'w', encoding='utf-8') as f:
                 json.dump(posts, f, indent=4, ensure_ascii=False)
-            logger.info(f"Saved {len(posts)} posts to {self.output_json}")
+            logger.info(colorize(f"Saved {len(posts)} posts to {self.output_json}", Colors.CYAN))
         except IOError as e:
-            logger.error(f"Failed to save JSON: {e}")
+            logger.error(colorize(f"Failed to save JSON: {e}", Colors.RED))
 
         # CSV
         try:
@@ -233,9 +236,9 @@ class MarkPositionScraperAsync:
                         post.get('domain', ''),
                         post.get('post_url', '')
                     ])
-            logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
+            logger.info(colorize(f"Saved {len(posts)} posts to {self.output_csv}", Colors.CYAN))
         except IOError as e:
-            logger.error(f"Failed to save CSV: {e}")
+            logger.error(colorize(f"Failed to save CSV: {e}", Colors.RED))
 
         # Unique Links TXT
         unique_links = set()
@@ -249,9 +252,19 @@ class MarkPositionScraperAsync:
             with open(self.output_txt, 'w', encoding='utf-8') as f:
                 for link in sorted_links:
                     f.write(link + '\n')
-            logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
+            logger.info(colorize(f"Saved {len(sorted_links)} unique links to {self.output_txt}", Colors.CYAN))
         except IOError as e:
-            logger.error(f"Failed to save TXT: {e}")
+            logger.error(colorize(f"Failed to save TXT: {e}", Colors.RED))
+
+        # Summary Box
+        print(f"\n{Colors.BOLD}{Colors.MAGENTA}╔══════════════════════════════════════╗{Colors.RESET}")
+        print(f"{Colors.BOLD}{Colors.MAGENTA}║           SCRAPE COMPLETE            ║{Colors.RESET}")
+        print(f"{Colors.BOLD}{Colors.MAGENTA}╠══════════════════════════════════════╣{Colors.RESET}")
+        print(f"║ 📄 Total Posts:      {str(len(posts)).ljust(16)}║")
+        print(f"║ 🔗 Unique Links:     {str(len(unique_links)).ljust(16)}║")
+        print(f"║ 💾 JSON Output:      {self.output_json[:16].ljust(16)}║")
+        print(f"║ 📊 CSV Output:       {self.output_csv[:16].ljust(16)}║")
+        print(f"{Colors.BOLD}{Colors.MAGENTA}╚══════════════════════════════════════╝{Colors.RESET}\n")
 
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
