@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+results/
+links.json
+links.csv
+unique_links.txt
+REPORT.md
+.jules/

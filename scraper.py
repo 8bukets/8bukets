@@ -9,13 +9,12 @@ import logging
 import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
+from colors import ColoredFormatter
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+handler = logging.StreamHandler()
+handler.setFormatter(ColoredFormatter('%(asctime)s - %(levelname)s - %(message)s', datefmt='%H:%M:%S'))
+logging.basicConfig(level=logging.INFO, handlers=[handler])
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"

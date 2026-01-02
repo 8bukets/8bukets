@@ -2,6 +2,7 @@ import os
 import json
 import logging
 from datetime import datetime
+from colors import ColoredFormatter
 from agents.analysis_agent import AnalysisAgent
 from agents.health_agent import HealthCheckAgent
 from agents.research_agent import ResearchAgent
@@ -11,11 +12,9 @@ from agents.content_agent import ContentAgent
 from agents.monetization_agent import MonetizationAgent
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+handler = logging.StreamHandler()
+handler.setFormatter(ColoredFormatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s', datefmt='%H:%M:%S'))
+logging.basicConfig(level=logging.INFO, handlers=[handler], force=True)
 logger = logging.getLogger("SystemOrchestrator")
 
 def main():
