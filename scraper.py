@@ -9,6 +9,7 @@ import logging
 import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
+from colors import Colors, colorize
 
 # Configure logging
 logging.basicConfig(
@@ -229,9 +230,9 @@ class WordpressScraperAsync:
         try:
             with open(self.output_json, 'w', encoding='utf-8') as f:
                 json.dump(posts, f, indent=4, ensure_ascii=False)
-            logger.info(f"Saved {len(posts)} posts to {self.output_json}")
+            logger.info(colorize(f"Saved {len(posts)} posts to {self.output_json}", Colors.GREEN))
         except IOError as e:
-            logger.error(f"Failed to save JSON: {e}")
+            logger.error(colorize(f"Failed to save JSON: {e}", Colors.RED))
 
         # CSV
         try:
@@ -248,9 +249,9 @@ class WordpressScraperAsync:
                         post.get('domain', ''),
                         post.get('post_url', '')
                     ])
-            logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
+            logger.info(colorize(f"Saved {len(posts)} posts to {self.output_csv}", Colors.GREEN))
         except IOError as e:
-            logger.error(f"Failed to save CSV: {e}")
+            logger.error(colorize(f"Failed to save CSV: {e}", Colors.RED))
 
         # Unique Links TXT
         unique_links = set()
@@ -264,9 +265,19 @@ class WordpressScraperAsync:
             with open(self.output_txt, 'w', encoding='utf-8') as f:
                 for link in sorted_links:
                     f.write(link + '\n')
-            logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
+            logger.info(colorize(f"Saved {len(sorted_links)} unique links to {self.output_txt}", Colors.GREEN))
         except IOError as e:
-            logger.error(f"Failed to save TXT: {e}")
+            logger.error(colorize(f"Failed to save TXT: {e}", Colors.RED))
+
+        # Summary Box
+        print(f"\n{Colors.CYAN}╔════════════════════════════════════════╗{Colors.ENDC}")
+        print(f"{Colors.CYAN}║{Colors.ENDC} {Colors.BOLD}Scraping Completed Successfully!{Colors.ENDC} 🚀   {Colors.CYAN}║{Colors.ENDC}")
+        print(f"{Colors.CYAN}╠════════════════════════════════════════╣{Colors.ENDC}")
+        print(f"{Colors.CYAN}║{Colors.ENDC} 📄 Total Posts:   {Colors.YELLOW}{len(posts):<22}{Colors.ENDC} {Colors.CYAN}║{Colors.ENDC}")
+        print(f"{Colors.CYAN}║{Colors.ENDC} 🔗 Unique Links:  {Colors.YELLOW}{len(unique_links):<22}{Colors.ENDC} {Colors.CYAN}║{Colors.ENDC}")
+        print(f"{Colors.CYAN}║{Colors.ENDC} 💾 JSON Output:   {Colors.GREEN}{self.output_json[:22]:<22}{Colors.ENDC} {Colors.CYAN}║{Colors.ENDC}")
+        print(f"{Colors.CYAN}║{Colors.ENDC} 📊 CSV Output:    {Colors.GREEN}{self.output_csv[:22]:<22}{Colors.ENDC} {Colors.CYAN}║{Colors.ENDC}")
+        print(f"{Colors.CYAN}╚════════════════════════════════════════╝{Colors.ENDC}\n")
 
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for WordPress blogs")
