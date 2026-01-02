@@ -10,11 +10,15 @@ import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
+from colors import ColoredFormatter, Colors
+
 # Configure logging
+handler = logging.StreamHandler()
+handler.setFormatter(ColoredFormatter('%(asctime)s - %(levelname)s - %(message)s', datefmt='%H:%M:%S'))
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
+    handlers=[handler],
+    force=True
 )
 logger = logging.getLogger(__name__)
 
@@ -179,7 +183,7 @@ class MarkPositionScraperAsync:
                         if not tasks:
                             break
 
-                        logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
+                        logger.info(f"📥 Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
                         results = await asyncio.gather(*tasks)
 
                         # Check results
@@ -204,7 +208,7 @@ class MarkPositionScraperAsync:
                                 total_batch_posts += len(page_posts)
 
                         if total_batch_posts > 0:
-                            logger.info(f"Saved {total_batch_posts} posts from batch.")
+                            logger.info(f"💾 Saved {total_batch_posts} posts from batch.")
 
                         if stop_detected:
                             break

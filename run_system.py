@@ -6,6 +6,8 @@ import subprocess
 import logging
 from datetime import datetime
 
+from colors import ColoredFormatter, Colors
+
 # Import Agents
 from agents.health_check_agent import HealthCheckAgent
 from agents.analysis_agent import AnalysisAgent
@@ -23,15 +25,17 @@ from agents.bid_agent import BidAgent
 from agents.autonomous_intelligence_agent import AutonomousIntelligenceAgent
 
 # Configure Logging
+handler = logging.StreamHandler()
+handler.setFormatter(ColoredFormatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s', datefmt='%H:%M:%S'))
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
+    handlers=[handler],
+    force=True
 )
 logger = logging.getLogger("SystemOrchestrator")
 
 def run_scraper():
-    logger.info("Starting Scraper...")
+    logger.info(f"{Colors.CYAN}🚀 Starting Scraper...{Colors.ENDC}")
     try:
         result = subprocess.run(
             ["python3", "scraper.py", "--limit", "5"],
@@ -41,7 +45,7 @@ def run_scraper():
         if result.returncode != 0:
             logger.error(f"Scraper failed: {result.stderr}")
             return False
-        logger.info("Scraper finished successfully.")
+        logger.info("✅ Scraper finished successfully.")
         return True
     except Exception as e:
         logger.error(f"Failed to execute scraper: {e}")
@@ -103,7 +107,7 @@ def generate_daily_report(context, filename):
         logger.error(f"Failed to write report: {e}")
 
 def run_cycle():
-    logger.info("=== Starting Daily Autonomous Cycle ===")
+    logger.info(f"{Colors.HEADER}{Colors.BOLD}=== 🔄 Starting Daily Autonomous Cycle ==={Colors.ENDC}")
 
     # 1. Scrape
     if not run_scraper():
@@ -148,7 +152,7 @@ def run_cycle():
     report_file = f"results/DAILY_REPORT_{datetime.now().strftime('%Y-%m-%d')}.md"
     generate_daily_report(context, report_file)
 
-    logger.info("=== Cycle Complete ===")
+    logger.info(f"{Colors.HEADER}{Colors.BOLD}=== ✨ Cycle Complete ==={Colors.ENDC}")
 
 def main():
     parser = argparse.ArgumentParser(description="Autonomous Agent System")
