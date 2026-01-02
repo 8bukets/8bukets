@@ -3,6 +3,7 @@ import asyncio
 from bs4 import BeautifulSoup, Comment
 import json
 import csv
+import os
 import re
 import argparse
 import logging
@@ -22,9 +23,31 @@ BASE_URL = "https://www.oracle.com/news/"
 
 class OracleNewsScraper:
     def __init__(self, output_json: str, output_csv: str, output_txt: str):
-        self.output_json = output_json
-        self.output_csv = output_csv
-        self.output_txt = output_txt
+        self.output_json = self.validate_output_path(output_json)
+        self.output_csv = self.validate_output_path(output_csv)
+        self.output_txt = self.validate_output_path(output_txt)
+
+    def validate_output_path(self, path: str) -> str:
+        """Ensure the output path is safe and within the current working directory."""
+        # Resolve the absolute path
+        abs_path = os.path.realpath(path)
+        # Get the current working directory
+        cwd = os.getcwd()
+
+        # Check if the path is within the cwd
+        if os.path.commonpath([abs_path, cwd]) != cwd:
+            raise ValueError(f"Security Error: Output path '{path}' is outside the current working directory.")
+
+        return abs_path
+
+    def sanitize_for_csv(self, text: str) -> str:
+        """Prevent CSV Injection by prepending ' to risky characters."""
+        if not text:
+            return ""
+        # If text starts with =, +, -, or @, prepend a single quote
+        if text.startswith(('=', '+', '-', '@')):
+            return f"'{text}"
+        return text
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -153,14 +176,15 @@ class OracleNewsScraper:
                 writer = csv.writer(f)
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
+                    # Sanitize fields before writing to CSV to prevent injection
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        self.sanitize_for_csv(post.get('title', '')),
+                        self.sanitize_for_csv(post.get('date', '')),
+                        self.sanitize_for_csv(post.get('author', '')),
+                        self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                        self.sanitize_for_csv(post.get('external_link', '')),
+                        self.sanitize_for_csv(post.get('domain', '')),
+                        self.sanitize_for_csv(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
