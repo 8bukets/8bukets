@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import json
 import csv
 import re
+import os
 import argparse
 import logging
 import time
@@ -35,6 +36,29 @@ class MarkPositionScraperAsync:
             return ""
         text = text.replace('\xa0', ' ')
         return re.sub(r'\s+', ' ', text).strip()
+
+    def sanitize_for_csv(self, value: str) -> str:
+        """Sanitize values to prevent CSV injection (Formula Injection)."""
+        if not value:
+            return ""
+        value = str(value)
+        if value.startswith(('=', '+', '-', '@')):
+            return f"'{value}"
+        return value
+
+    def validate_output_path(self, filepath: str) -> str:
+        """Ensure the output path is within the current working directory."""
+        # Get absolute path of the requested file
+        abs_path = os.path.abspath(filepath)
+        # Get absolute path of the current working directory
+        cwd = os.path.abspath(os.getcwd())
+
+        # Check if the file is within the CWD
+        # os.path.commonpath returns the longest common sub-path
+        if os.path.commonpath([abs_path, cwd]) != cwd:
+            raise ValueError(f"Security Error: Output path '{filepath}' is outside the current working directory.")
+
+        return filepath
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
@@ -216,6 +240,18 @@ class MarkPositionScraperAsync:
             return None
 
     def save_data(self, posts: List[Dict]):
+        # Validate paths before writing
+        try:
+            if self.output_json:
+                self.validate_output_path(self.output_json)
+            if self.output_csv:
+                self.validate_output_path(self.output_csv)
+            if self.output_txt:
+                self.validate_output_path(self.output_txt)
+        except ValueError as e:
+            logger.error(f"Security validation failed: {e}")
+            return
+
         # JSON
         try:
             with open(self.output_json, 'w', encoding='utf-8') as f:
@@ -231,13 +267,13 @@ class MarkPositionScraperAsync:
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        self.sanitize_for_csv(post.get('title', '')),
+                        self.sanitize_for_csv(post.get('date', '')),
+                        self.sanitize_for_csv(post.get('author', '')),
+                        self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                        self.sanitize_for_csv(post.get('external_link', '')),
+                        self.sanitize_for_csv(post.get('domain', '')),
+                        self.sanitize_for_csv(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
