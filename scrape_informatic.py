@@ -11,6 +11,7 @@ from urllib3.util.retry import Retry
 from dataclasses import dataclass, asdict
 from typing import List, Optional
 from markdownify import markdownify as md
+import os
 
 @dataclass
 class Post:
@@ -53,6 +54,30 @@ def get_session():
     })
 
     return session
+
+def validate_output_path(filepath: str) -> str:
+    """
+    Validates that the output path is safe and within the current working directory.
+    Prevents path traversal attacks.
+    """
+    # Resolve the absolute path (resolving symlinks with realpath)
+    abs_path = os.path.realpath(filepath)
+    cwd = os.getcwd()
+
+    # Check if the resolved path starts with the current working directory
+    # os.path.commonpath throws error if paths are on different drives (Windows)
+    # but here we just check prefix.
+    try:
+        common = os.path.commonpath([abs_path, cwd])
+    except ValueError:
+        # Paths on different drives
+        common = ""
+
+    if common != cwd:
+        raise ValueError(f"Security Error: Output path '{filepath}' is outside the current working directory.")
+
+    return abs_path
+
 
 def is_external_link(link_url: str, base_url: str) -> bool:
     """
@@ -175,9 +200,14 @@ def scrape(output_file: str, max_pages: int = 0):
     logging.info(f"Total posts scraped: {len(all_posts)}")
 
     try:
-        with open(output_file, 'w', encoding='utf-8') as f:
+        # Validate path before writing
+        safe_path = validate_output_path(output_file)
+
+        with open(safe_path, 'w', encoding='utf-8') as f:
             json.dump([asdict(p) for p in all_posts], f, indent=4, ensure_ascii=False)
-        logging.info(f"Saved to {output_file}")
+        logging.info(f"Saved to {safe_path}")
+    except ValueError as ve:
+        logging.error(f"Security Validation Failed: {ve}")
     except IOError as e:
         logging.error(f"Failed to save output to {output_file}: {e}")
 
