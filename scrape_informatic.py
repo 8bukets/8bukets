@@ -1,5 +1,6 @@
 import requests
-from bs4 import BeautifulSoup
+import re
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import time
 import logging
@@ -150,7 +151,10 @@ def scrape(output_file: str, max_pages: int = 0):
             logging.error(f"Error fetching {current_url}: {e}")
             break
 
-        soup = BeautifulSoup(response.content, 'html.parser')
+        # Optimization: Use SoupStrainer to only parse article tags, reducing overhead.
+        # This speeds up parsing by ignoring the rest of the DOM (sidebar, footer, etc.)
+        strainer = SoupStrainer('article')
+        soup = BeautifulSoup(response.content, 'html.parser', parse_only=strainer)
 
         posts = soup.find_all('article')
         logging.info(f"Found {len(posts)} posts on page {page}.")
@@ -163,9 +167,13 @@ def scrape(output_file: str, max_pages: int = 0):
                 logging.error(f"Error parsing post on page {page}: {e}")
 
         # Pagination
-        nav_previous = soup.find('div', class_='nav-previous')
-        if nav_previous and nav_previous.find('a'):
-            current_url = nav_previous.find('a')['href']
+        # Optimization: Use Regex on text content for pagination link to avoid parsing the full DOM for just one link.
+        # Pattern looks for: <div class="nav-previous"><a href="...">
+        # We handle potential whitespace, multiple classes, and different quote types for robustness.
+        # Regex matches 'class="...nav-previous..."' to be safe against additional classes.
+        nav_match = re.search(r'class=["\'][^"\']*nav-previous[^"\']*["\'][^>]*>\s*<a[^>]+href=["\']([^"\']+)["\']', response.text, re.IGNORECASE | re.DOTALL)
+        if nav_match:
+            current_url = nav_match.group(1)
             page += 1
             time.sleep(1) # Polite delay
         else:
