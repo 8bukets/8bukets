@@ -7,6 +7,7 @@ import argparse
 import sys
 import sqlite3
 from datetime import datetime
+from urllib.parse import urlparse, urljoin
 
 # Configure logging
 logging.basicConfig(
@@ -64,6 +65,27 @@ class BlogScraper:
                 conn.commit()
         except sqlite3.Error as e:
             logger.error(f"Database initialization error: {e}")
+
+    def is_safe_url(self, url):
+        """
+        Check if the URL belongs to the same domain as the base URL.
+        Prevents SSRF by ensuring we don't follow links to other domains.
+        """
+        if not url:
+            return False
+
+        try:
+            base_netloc = urlparse(self.base_url).netloc
+            target_netloc = urlparse(url).netloc
+            # If target_netloc is empty (relative URL), it's technically safe relative to base,
+            # but we expect absolute URLs passed here after urljoin.
+            # However, if passed a relative URL directly, we should probably return False
+            # or rely on the caller to resolve it.
+            # Given we resolve in run(), we expect absolute URLs.
+            return base_netloc == target_netloc and base_netloc != ''
+        except Exception as e:
+            logger.error(f"Error checking URL safety: {e}")
+            return False
 
     def save_to_db(self, item):
         """Save a single item to the database, handling updates."""
@@ -221,9 +243,16 @@ class BlogScraper:
 
             next_page = self.get_next_page(soup)
             if next_page:
-                logger.info(f"Found next page: {next_page}")
-                url = next_page
-                time.sleep(1)
+                # Ensure we have an absolute URL
+                next_page = urljoin(url, next_page)
+
+                if self.is_safe_url(next_page):
+                    logger.info(f"Found next page: {next_page}")
+                    url = next_page
+                    time.sleep(1)
+                else:
+                    logger.warning(f"Skipping unsafe or external next page URL: {next_page}")
+                    url = None
             else:
                 logger.info("No more pages found.")
                 url = None
