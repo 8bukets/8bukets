@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import Dict, List, Any
+from colors import Colors
 
 class BaseAgent(ABC):
     def __init__(self, name: str):
@@ -10,4 +11,4 @@ class BaseAgent(ABC):
         pass
 
     def log(self, message: str):
-        print(f"[{self.name}] {message}")
+        print(f"{Colors.CYAN}[{self.name}]{Colors.ENDC} {message}")

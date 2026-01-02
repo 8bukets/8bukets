@@ -3,8 +3,10 @@ import os
 import argparse
 import subprocess
 import logging
+import sys
 import time
 from datetime import datetime
+from colors import Colors
 from agents.analysis_agent import AnalysisAgent
 from agents.research_agent import ResearchAgent
 from agents.intelligence_agent import IntelligenceAgent
@@ -17,7 +19,23 @@ from agents.programmatic_ads_agent import ProgrammaticAdsAgent
 from agents.ads_agent import AdsAgent
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
+class ColoredFormatter(logging.Formatter):
+    def format(self, record):
+        if record.levelno == logging.INFO:
+            msg_color = Colors.GREEN
+        elif record.levelno == logging.WARNING:
+            msg_color = Colors.WARNING
+        elif record.levelno == logging.ERROR:
+            msg_color = Colors.FAIL
+        else:
+            msg_color = Colors.ENDC
+
+        record.msg = f"{msg_color}{record.msg}{Colors.ENDC}"
+        return super().format(record)
+
+handler = logging.StreamHandler(sys.stdout)
+handler.setFormatter(ColoredFormatter('%(asctime)s - %(message)s'))
+logging.basicConfig(level=logging.INFO, handlers=[handler], force=True)
 logger = logging.getLogger(__name__)
 
 RESULTS_DIR = "results"
@@ -46,14 +64,14 @@ def save_result(filename, content, date_str=None):
 
 def run_pipeline(skip_scrape=False):
     current_date = datetime.now().strftime('%Y-%m-%d')
-    logger.info(f"Starting Pipeline for {current_date}...")
+    logger.info(f"🚀 Starting Pipeline for {current_date}...")
 
     # 1. Scrape
     if not skip_scrape:
-        logger.info("Starting Scraper...")
+        logger.info("🕷️  Starting Scraper...")
         subprocess.run(["python3", "scraper.py"], check=True)
     else:
-        logger.info("Skipping scrape...")
+        logger.info("⏩ Skipping scrape...")
 
     # 2. Load Data
     data = load_data("links.json")
@@ -74,7 +92,7 @@ def run_pipeline(skip_scrape=False):
     ads_agent = AdsAgent()
 
     # 4. Pipeline Execution
-    logger.info("Starting Agent Pipeline...")
+    logger.info("🤖 Starting Agent Pipeline...")
     results_aggregator = {}
 
     # Health Check
@@ -123,7 +141,7 @@ def run_pipeline(skip_scrape=False):
     summary = ai_agent.process(results_aggregator)
     save_result("executive_summary.txt", summary, current_date)
 
-    logger.info(f"Pipeline Complete for {current_date}. Check 'results/' directory.")
+    logger.info(f"✅ Pipeline Complete for {current_date}. Check 'results/' directory.")
 
 def main():
     parser = argparse.ArgumentParser(description="Run Autonomous Agents System")
