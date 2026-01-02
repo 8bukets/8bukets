@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const articleList = document.getElementById('article-list');
 
     if (searchInput && articleList) {
-        searchInput.addEventListener('input', (e) => {
+        const handleSearch = (e) => {
             const term = e.target.value.toLowerCase();
             const articles = articleList.getElementsByTagName('article');
 
@@ -60,7 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     article.style.display = 'none';
                 }
             });
-        });
+        };
+
+        const debouncedSearch = debounce(handleSearch, 300);
+        searchInput.addEventListener('input', debouncedSearch);
     }
 
     // Contact Form Validation
@@ -111,6 +114,16 @@ function toggleReadMore(btn) {
         moreText.style.display = 'none';
         btn.textContent = 'Read More';
     }
+}
+
+// Debounce Utility
+function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+        const context = this;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), wait);
+    };
 }
 
 // Filter by Category
