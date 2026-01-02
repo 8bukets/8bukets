@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from colors import Colors, colorize
 
 class BaseAgent(ABC):
     def __init__(self, name):
@@ -14,4 +15,6 @@ class BaseAgent(ABC):
         pass
 
     def log(self, message):
-        print(f"[{self.name}] {message}")
+        # Colorize the agent name in CYAN
+        agent_tag = colorize(f"[{self.name}]", Colors.CYAN)
+        print(f"{agent_tag} {message}")

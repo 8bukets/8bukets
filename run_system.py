@@ -8,20 +8,21 @@ from agents.content_agent import ContentAgent
 from agents.health_check_agent import HealthCheckAgent
 from agents.monetization_agent import MonetizationAgent
 from agents.creativity_agent import CreativityAgent
+from colors import Colors, colorize
 
 def load_data(filepath="links.json"):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             return json.load(f)
     except FileNotFoundError:
-        print(f"Error: File '{filepath}' not found.")
+        print(colorize(f"Error: File '{filepath}' not found.", Colors.FAIL))
         return []
 
 def main():
-    print("System starting...")
+    print(colorize("🚀 System starting...", Colors.HEADER))
     data = load_data()
     if not data:
-        print("No data available. Exiting.")
+        print(colorize("⚠️ No data available. Exiting.", Colors.WARNING))
         sys.exit(1)
 
     # Instantiate agents
@@ -43,7 +44,7 @@ def main():
             output = agent.run(data)
             full_report += f"{output}\n---\n"
         except Exception as e:
-            print(f"Error running {agent.name}: {e}")
+            print(colorize(f"❌ Error running {agent.name}: {e}", Colors.FAIL))
             full_report += f"### {agent.name}\nError: {e}\n\n---\n"
 
     # Save report
@@ -51,7 +52,7 @@ def main():
     with open(filename, 'w', encoding='utf-8') as f:
         f.write(full_report)
 
-    print(f"System run complete. Report saved to {filename}")
+    print(colorize(f"✅ System run complete. Report saved to {filename}", Colors.GREEN))
 
 if __name__ == "__main__":
     main()
