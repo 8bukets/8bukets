@@ -5,7 +5,7 @@ import argparse
 from datetime import datetime
 from typing import List, Dict, Any
 
-# Import Agents
+# Import Existing Agents
 from agents.analysis_agent import AnalysisAgent
 from agents.research_agent import ResearchAgent
 from agents.intelligence_agent import IntelligenceAgent
@@ -13,6 +13,12 @@ from agents.health_agent import HealthCheckAgent
 from agents.monetization_agent import MonetizationAgent
 from agents.content_agent import ContentAgent
 from agents.creativity_agent import CreativityAgent
+
+# Import New Agents
+from agents.autonomous_intelligence_agent import AutonomousIntelligenceAgent
+from agents.programmatic_ads_agent import ProgrammaticAdsAgent
+from agents.market_simulation_agent import MarketSimulationAgent
+from agents.cookie_agent import CookieAgent
 
 # Import Scraper
 from scraper import MarkPositionScraperAsync
@@ -24,16 +30,37 @@ AGENTS = [
     HealthCheckAgent(),
     MonetizationAgent(),
     ContentAgent(),
-    CreativityAgent()
+    CreativityAgent(),
+    CookieAgent(),
+    ProgrammaticAdsAgent()
 ]
 
+# Special Agents (Run separately in the loop)
+SIMULATION_AGENT = MarketSimulationAgent()
+EVOLUTION_AGENT = AutonomousIntelligenceAgent()
+
 DATA_FILE = "links.json"
+DNA_FILE = "DNA.json"
 RESULTS_DIR = "results"
+
+def load_dna():
+    if not os.path.exists(DNA_FILE):
+        return {}
+    with open(DNA_FILE, 'r') as f:
+        return json.load(f)
+
+def save_dna(dna):
+    with open(DNA_FILE, 'w') as f:
+        json.dump(dna, f, indent=4)
 
 async def main():
     parser = argparse.ArgumentParser(description="Autonomous Agent System")
     parser.add_argument("--skip-scrape", action="store_true", help="Skip scraping and use existing data")
     args = parser.parse_args()
+
+    # 0. Load DNA (Evolutionary Architecture)
+    dna = load_dna()
+    print(f"--- Loaded System DNA (IQ: {dna.get('system_iq', 'N/A')}) ---")
 
     # 1. Run Scraper (unless skipped)
     if not args.skip_scrape:
@@ -59,13 +86,19 @@ async def main():
 
     print(f"Loaded {len(data)} records.")
 
-    # 3. Run Agents
-    full_report = [f"# Daily System Report - {datetime.now().strftime('%Y-%m-%d')}\n"]
+    # 3. Run Standard Agents
+    full_report = [f"# Daily Autonomous System Report - {datetime.now().strftime('%Y-%m-%d')}\n"]
+    full_report.append(f"**Current System IQ:** {dna.get('system_iq', 'Unknown')}\n")
+
+    agent_outputs = {}
 
     for agent in AGENTS:
         print(f"Running {agent.name}...")
         try:
-            results = agent.run(data)
+            # Pass DNA to agents so they adapt
+            results = agent.run(data, dna=dna)
+            agent_outputs[agent.name] = results
+
             report_section = agent.format_report(results)
             full_report.append(report_section)
             full_report.append("\n---\n")
@@ -73,7 +106,22 @@ async def main():
             print(f"Error running {agent.name}: {e}")
             full_report.append(f"## {agent.name} Failed\nError: {str(e)}")
 
-    # 4. Save Report
+    # 4. Market Simulation (Feedback Loop)
+    print("Running Market Simulation...")
+    market_feedback = SIMULATION_AGENT.run(data, dna=dna, agent_outputs=agent_outputs)
+    full_report.append(SIMULATION_AGENT.format_report(market_feedback))
+
+    # 5. Evolution (Autonomous Intelligence)
+    print("Running Autonomous Evolution...")
+    evolution_result = EVOLUTION_AGENT.run(data, dna=dna, feedback=market_feedback)
+    full_report.append(EVOLUTION_AGENT.format_report(evolution_result))
+
+    # 6. Apply Evolution (Write to Disk)
+    if evolution_result.get("new_dna"):
+        save_dna(evolution_result["new_dna"])
+        print("System DNA Updated.")
+
+    # 7. Save Report
     if not os.path.exists(RESULTS_DIR):
         os.makedirs(RESULTS_DIR)
 

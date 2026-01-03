@@ -6,9 +6,14 @@ class ContentAgent(BaseAgent):
     def __init__(self):
         super().__init__("Content Creation Agent")
 
-    def run(self, data: List[Dict[str, Any]]) -> Dict[str, Any]:
+    def run(self, data: List[Dict[str, Any]], dna: Dict[str, Any] = None, **kwargs) -> Dict[str, Any]:
         if not data:
             return {"error": "No data"}
+
+        # Use DNA to influence tone
+        tone = "informative"
+        if dna:
+            tone = dna.get("content_strategy", {}).get("tone", "informative")
 
         # Determine dominant category
         all_cats = []
@@ -24,7 +29,7 @@ class ContentAgent(BaseAgent):
         top_articles = data[:3]
 
         # Draft a simple blog post
-        draft_title = f"Daily Insight: The State of {dominant_topic}"
+        draft_title = f"Daily Insight: The State of {dominant_topic} ({tone.title()} Edition)"
         draft_body = f"Today we are looking at the latest trends in {dominant_topic}.\n\n"
         draft_body += "Here are the top stories you shouldn't miss:\n"
 
@@ -36,7 +41,8 @@ class ContentAgent(BaseAgent):
         return {
             "draft_title": draft_title,
             "draft_body": draft_body,
-            "topic": dominant_topic
+            "topic": dominant_topic,
+            "tone_used": tone
         }
 
     def format_report(self, results: Dict[str, Any]) -> str:

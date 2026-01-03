@@ -6,7 +6,7 @@ class AnalysisAgent(BaseAgent):
     def __init__(self):
         super().__init__("Analysis Agent")
 
-    def run(self, data: List[Dict[str, Any]]) -> Dict[str, Any]:
+    def run(self, data: List[Dict[str, Any]], dna: Dict[str, Any] = None, **kwargs) -> Dict[str, Any]:
         if not data:
             return {"error": "No data to analyze"}
 
