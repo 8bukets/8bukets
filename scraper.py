@@ -29,16 +29,20 @@ class MarkPositionScraperAsync:
         self.concurrency = concurrency
         self.session = None
 
+    # Pre-compile regex for whitespace cleaning
+    WHITESPACE_RE = re.compile(r'\s+')
+
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return self.WHITESPACE_RE.sub(' ', text).strip()
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
-        return re.match(r'^https?://', text.strip()) is not None
+        t = text.strip()
+        return t.startswith(('http://', 'https://'))
 
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
@@ -84,13 +88,17 @@ class MarkPositionScraperAsync:
 
             # Title
             title_text = ""
-            title_tag = article.select_one('h1.entry-title a')
+            # Optimization: Use find() which is faster than select_one()
+            h1 = article.find('h1', class_='entry-title')
+            title_tag = h1.find('a') if h1 else None
+
             if title_tag:
                 title_text = self.clean_text(title_tag.get_text())
                 post_data['title'] = title_text
 
             # Date
-            date_tag = article.select_one('time.entry-date')
+            # Optimization: Use find()
+            date_tag = article.find('time', class_='entry-date')
             if date_tag:
                 post_data['date'] = self.clean_text(date_tag.get_text())
                 post_data['datetime'] = date_tag.get('datetime')
