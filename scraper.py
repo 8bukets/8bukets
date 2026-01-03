@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
 import re
@@ -21,6 +21,9 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
+    # Pre-compile regex for performance
+    WHITESPACE_RE = re.compile(r'\s+')
+
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
         self.output_csv = output_csv
@@ -34,7 +37,7 @@ class MarkPositionScraperAsync:
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return self.WHITESPACE_RE.sub(' ', text).strip()
 
     def sanitize_for_csv(self, text: str) -> str:
         """Sanitize text to prevent CSV injection (formula injection)."""
@@ -81,7 +84,9 @@ class MarkPositionScraperAsync:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+        # Use SoupStrainer to parse only 'article' tags, significantly reducing parsing time
+        parse_only = SoupStrainer('article', class_='post')
+        soup = BeautifulSoup(html, 'html.parser', parse_only=parse_only)
         articles = soup.find_all('article', class_='post')
         page_posts = []
 
