@@ -11,3 +11,12 @@ class BaseAgent(ABC):
 
     def log(self, message: str):
         print(f"[{self.name}] {message}")
+
+    def load_dna(self) -> Dict:
+        """Loads the system DNA configuration."""
+        import json
+        try:
+            with open("system_dna.json", 'r') as f:
+                return json.load(f)
+        except FileNotFoundError:
+            return {}

@@ -1,0 +1,27 @@
+{
+    "generation": 2,
+    "agents": {
+        "programmatic_ads": {
+            "bid_aggressiveness": 0.4699620710567594,
+            "targeting_precision": 0.5,
+            "ad_frequency": 0.5268308275385927
+        },
+        "content_creation": {
+            "creativity_temperature": 0.7318015766864459,
+            "length_preference": 1.0,
+            "seo_density": 0.05
+        },
+        "monetization": {
+            "adsense_placement_density": 0.3,
+            "affiliate_link_probability": 0.2
+        },
+        "intelligence": {
+            "learning_rate": 0.1,
+            "curiosity_factor": 0.8
+        }
+    },
+    "market_conditions": {
+        "volatility": 0.5
+    },
+    "iq_score": 100.5
+}

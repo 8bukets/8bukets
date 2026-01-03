@@ -15,6 +15,9 @@ from agents.creativity_agent import CreativityAgent
 from agents.autonomous_intelligence_agent import AutonomousIntelligenceAgent
 from agents.programmatic_ads_agent import ProgrammaticAdsAgent
 from agents.ads_agent import AdsAgent
+from agents.market_simulation_agent import MarketSimulationAgent
+from agents.learning_agent import LearningAgent
+from agents.robots_cookies_agent import RobotsAgent, CookieJarAgent
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
@@ -72,10 +75,22 @@ def run_pipeline(skip_scrape=False):
     ai_agent = AutonomousIntelligenceAgent()
     prog_ads_agent = ProgrammaticAdsAgent()
     ads_agent = AdsAgent()
+    market_agent = MarketSimulationAgent()
+    learning_agent = LearningAgent()
+    robots_agent = RobotsAgent()
+    cookie_agent = CookieJarAgent()
 
     # 4. Pipeline Execution
     logger.info("Starting Agent Pipeline...")
     results_aggregator = {}
+
+    # Load DNA
+    try:
+        with open("system_dna.json", 'r') as f:
+            dna = json.load(f)
+    except FileNotFoundError:
+        logger.warning("DNA not found, using defaults.")
+        dna = {"generation": 0, "agents": {}} # Minimal fallback
 
     # Health Check
     health_results = health_agent.process(data)
@@ -85,6 +100,9 @@ def run_pipeline(skip_scrape=False):
     if health_results['status'] != "Healthy" and health_results['record_count'] == 0:
         logger.error("Data unhealthy or empty. Aborting pipeline.")
         return
+
+    # Cookie Cooperation
+    cookie_agent.process({"session_id": f"SESS_{current_date}", "user_segment": "enterprise"})
 
     # Analysis
     analysis_results = analysis_agent.process(data)
@@ -102,6 +120,12 @@ def run_pipeline(skip_scrape=False):
     # Content
     content = content_agent.process(data, intelligence_results)
     save_result("content_draft.md", content, current_date)
+
+    # Self-Coding (Physical Code Integration)
+    # The system autonomously writes generated code to disk.
+    if intelligence_results.get("new_algorithm_idea"):
+        algo_code = f"# Auto-generated algorithm based on {intelligence_results['new_algorithm_idea']}\n\ndef auto_algo():\n    pass\n"
+        save_result("auto_generated_code.py", algo_code, current_date)
 
     # Monetization
     monetization_strategies = monetization_agent.process(research_results)
@@ -123,7 +147,15 @@ def run_pipeline(skip_scrape=False):
     summary = ai_agent.process(results_aggregator)
     save_result("executive_summary.txt", summary, current_date)
 
-    logger.info(f"Pipeline Complete for {current_date}. Check 'results/' directory.")
+    # 5. Market Simulation & Evolution
+    logger.info("Simulating Market & Evolving DNA...")
+    market_feedback = market_agent.process(results_aggregator, dna)
+    save_result("market_feedback.json", market_feedback, current_date)
+
+    new_dna = learning_agent.process(market_feedback, dna)
+    save_result("dna_snapshot.json", new_dna, current_date) # Backup
+
+    logger.info(f"Pipeline Complete for {current_date}. DNA Generation: {new_dna.get('generation')}.")
 
 def main():
     parser = argparse.ArgumentParser(description="Run Autonomous Agents System")

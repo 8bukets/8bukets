@@ -1,0 +1,16 @@
+{
+    "strategies": [
+        "Affiliate marketing for Google Cloud courses",
+        "Consulting services for Oracle-to-GCP migration",
+        "Premium newsletter for multi-cloud architecture"
+    ],
+    "adsense_config": {
+        "placement_density": 0.3,
+        "auto_ads": true,
+        "ad_formats": [
+            "Display",
+            "In-article",
+            "Multiplex"
+        ]
+    }
+}
