@@ -11,11 +11,60 @@ from typing import List, Dict, Optional, Set, Tuple
 from urllib.parse import urlparse
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+class ColorFormatter(logging.Formatter):
+    """Custom formatter for colorized and emoji-enhanced logging."""
+    GREY = "\x1b[38;20m"
+    BLUE = "\x1b[34;20m"
+    GREEN = "\x1b[32;20m"
+    YELLOW = "\x1b[33;20m"
+    RED = "\x1b[31;20m"
+    BOLD_RED = "\x1b[31;1m"
+    RESET = "\x1b[0m"
+
+    def format(self, record):
+        color = self.GREY
+        icon = "🔹"
+
+        if record.levelno == logging.INFO:
+            color = self.BLUE
+            icon = "ℹ️ "
+        elif record.levelno == logging.WARNING:
+            color = self.YELLOW
+            icon = "⚠️ "
+        elif record.levelno == logging.ERROR:
+            color = self.RED
+            icon = "❌"
+        elif record.levelno == logging.CRITICAL:
+            color = self.BOLD_RED
+            icon = "🚨"
+
+        # Context-aware icons
+        msg = record.getMessage()
+        if "Saved" in msg:
+            color = self.GREEN
+            icon = "✅"
+        elif "Stopping" in msg:
+            color = self.YELLOW
+            icon = "🛑"
+        elif "scraped" in msg:
+            color = self.GREEN
+            icon = "📄"
+        elif "Error" in msg or "failed" in msg:
+            color = self.RED
+            icon = "❌"
+
+        timestamp = self.formatTime(record, "%H:%M:%S")
+        log_msg = f"{color}{timestamp} {icon} {msg}{self.RESET}"
+
+        if record.exc_info:
+            exc_text = self.formatException(record.exc_info)
+            log_msg += f"\n{self.RED}{exc_text}{self.RESET}"
+
+        return log_msg
+
+handler = logging.StreamHandler()
+handler.setFormatter(ColorFormatter())
+logging.basicConfig(level=logging.INFO, handlers=[handler])
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
