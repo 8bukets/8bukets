@@ -1,4 +1,4 @@
-## 2024-05-23 - CSV Injection in Scraper Output
-**Vulnerability:** Scraped data (e.g., post titles, authors) was written directly to CSV without sanitization. If the scraped site contained fields starting with `=, +, -, @`, Excel would execute them as formulas.
-**Learning:** Even when scraping "safe" sites, the output format (CSV) can introduce vulnerabilities if the consuming application (Excel) interprets the data as executable.
-**Prevention:** Sanitize all untrusted input before writing to CSV by prepending `'` to dangerous characters.
+## 2024-05-23 - Path Traversal in File Output
+**Vulnerability:** The scraper accepted output filenames via CLI arguments and wrote to them without validation. This allowed writing files outside the intended directory (Path Traversal), potentially overwriting sensitive files if run with sufficient permissions.
+**Learning:** CLI tools that write files should validate paths if they are expected to run in restricted environments or handle untrusted input, even if the user provides the arguments.
+**Prevention:** Use `os.path.realpath` and `os.path.commonpath` to ensure the output path is contained within the current working directory (or a specific allowed directory).
