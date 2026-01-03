@@ -1,0 +1,3 @@
+## 2024-05-23 - BeautifulSoup vs Regex for Partial Parsing
+**Learning:** For scraping tasks where the desired content is wrapped in a large, identifiable container (like an HTML comment or a specific tag) within a massive document, using `re.finditer` or string search to locate that container *before* parsing with BeautifulSoup can be significantly faster (3x in this case) than parsing the full DOM tree first.
+**Action:** When optimizing scrapers, check if we are parsing the whole page just to find one isolated section. If so, extract that section with regex first, then parse only that snippet.

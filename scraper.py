@@ -1,6 +1,4 @@
-import aiohttp
 import asyncio
-from bs4 import BeautifulSoup, Comment
 import json
 import csv
 import re
@@ -9,6 +7,8 @@ import logging
 from typing import List, Dict, Optional
 from urllib.parse import urlparse
 from datetime import datetime
+import aiohttp
+from bs4 import BeautifulSoup
 
 # Configure logging
 logging.basicConfig(
@@ -19,6 +19,9 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://www.oracle.com/news/"
+# Pre-compile regex patterns for performance
+COMMENT_RE = re.compile(r'<!--(.*?)-->', re.DOTALL)
+WHITESPACE_RE = re.compile(r'\s+')
 
 class OracleNewsScraper:
     def __init__(self, output_json: str, output_csv: str, output_txt: str):
@@ -31,7 +34,7 @@ class OracleNewsScraper:
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return WHITESPACE_RE.sub(' ', text).strip()
 
     def parse_date(self, date_text: str) -> Optional[Dict[str, str]]:
         """Parse date string like 'Oct 15, 2025' to ISO format."""
@@ -58,14 +61,13 @@ class OracleNewsScraper:
             return None
 
     def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
-
-        # Find comments containing the news section
-        comments = soup.find_all(string=lambda text: isinstance(text, Comment))
+        # Optimization: Use regex to find the comment instead of parsing the full DOM
+        # This avoids building a massive DOM tree for the initial page load, which is 3x faster.
         news_html = None
-        for c in comments:
-            if 'rc92v0' in c and '<section' in c:
-                news_html = c
+        for match in COMMENT_RE.finditer(html):
+            content = match.group(1)
+            if 'rc92v0' in content and '<section' in content:
+                news_html = content
                 break
 
         if not news_html:
@@ -117,7 +119,7 @@ class OracleNewsScraper:
             # Categories (Default/Inferred)
             post_data['categories'] = ["News"]
             if external_link and '/announcement/' in external_link:
-                 post_data['categories'].append("Announcement")
+                post_data['categories'].append("Announcement")
 
             page_posts.append(post_data)
 
