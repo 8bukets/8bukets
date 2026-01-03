@@ -1,72 +1,46 @@
-# Markposition Scraper & Analytics
+# Autonomous Multi-Agent System
 
-A robust, asynchronous toolset for scraping and analyzing data from `https://markposition.wordpress.com/`.
+This project implements a fully autonomous, self-evolving multi-agent system designed for high-interest solution generation, programmatic advertising, and continuous self-improvement.
 
-## Features
+## Architecture
 
-### Scraper (`scraper.py`)
-*   **High Performance**: Built with `aiohttp` and `asyncio` for concurrent fetching, significantly faster than synchronous scrapers.
-*   **Robust**: Handles network errors and pagination automatically (stops on 404 or empty pages).
-*   **Smart Extraction**:
-    *   Prioritizes content links, then embedded iframes (e.g., YouTube), then title URLs.
-    *   Extracts metadata: Title, Date, Author, Categories, External Link, Domain, Post URL.
-*   **Data Cleaning**: Normalizes text fields.
-*   **Multiple Outputs**: JSON, CSV, and TXT (unique links).
+The system is built on a modular agent framework where each agent has a specific role. They communicate via a shared context ("The Mind") during each daily cycle.
 
-### Analytics (`analytics.py`)
-*   **Insightful Reports**: Generates a Markdown report (`REPORT.md`) summarizing the scraped data.
-*   **Metrics**:
-    *   Total posts and date range.
-    *   Top referenced domains.
-    *   Top categories.
-    *   Posting frequency by year.
-    *   Author statistics.
+### Core Agents
+- **AnalysisAgent:** Analyzes market trends and internal performance.
+- **ResearchAgent:** Conducts autonomous research on high-value topics.
+- **IntelligenceAgent:** Synthesizes data and forms strategies (The "Brain").
+- **CreativityAgent:** Generates innovative ideas and code snippets.
+- **ContentAgent:** Physically writes generated code to disk (`generated_output/`).
 
-## Requirements
+### Advertising & Monetization Ecosystem
+- **ProgrammaticAdsAgent:** Configures ad campaigns and bidding strategies.
+- **AdsAgent:** Generates ad creatives.
+- **MarketSimulationAgent:** Simulates market feedback (clicks, impressions) to close the learning loop.
+- **MonetizationAgent:** Manages revenue streams (simulated AdSense).
 
-*   Python 3.7+
-*   `aiohttp`
-*   `beautifulsoup4`
-*   `requests` (legacy dependency, optional for analytics)
-
-Install dependencies:
-
-```bash
-pip install aiohttp beautifulsoup4 requests
-```
+### System Evolution ("DNA")
+- **AutonomousIntelligenceAgent:** The "Self" that evolves the system. It modifies `data/dna.json` based on performance, increasing IQ and adjusting parameters like bid aggressiveness.
+- **HealthCheckAgent:** Ensures system integrity.
 
 ## Usage
 
-### 1. Scrape Data
+1. **Install Dependencies:**
+   No external dependencies required (uses standard Python library).
 
-Run the asynchronous scraper to fetch data:
+2. **Run the System:**
+   Execute the main orchestrator loop:
+   ```bash
+   python3 run_system.py
+   ```
 
-```bash
-python3 scraper.py
-```
+3. **Observe Evolution:**
+   - Check the console logs for the "Daily Cycle" reports.
+   - Watch `data/dna.json` to see the "IQ" and "Generation" increase over time.
+   - Check `generated_output/` for the code files the system writes autonomously.
 
-**Options:**
-*   `--json`: Output JSON filename (default: `links.json`)
-*   `--csv`: Output CSV filename (default: `links.csv`)
-*   `--txt`: Output TXT filename for unique links (default: `unique_links.txt`)
-*   `--limit`: Limit the number of pages to scrape (e.g., `--limit 5`).
-*   `--concurrency`: Number of concurrent requests (default: 5).
-
-### 2. Generate Report
-
-Run the analytics script to process the JSON data:
-
-```bash
-python3 analytics.py
-```
-
-**Options:**
-*   `--input`: Input JSON file (default: `links.json`)
-*   `--output`: Output Markdown file (default: `REPORT.md`)
-
-## Output Files
-
-*   `links.json`: Full dataset in JSON format.
-*   `links.csv`: Tabular dataset.
-*   `unique_links.txt`: Sorted list of unique extracted URLs.
-*   `REPORT.md`: Statistical summary of the data.
+## Key Features
+- **Evolutionary Architecture:** The system rewrites its own configuration (`dna.json`) to adapt to the market.
+- **Physical Code Integration:** The agents write actual Python code files to disk.
+- **Robots.txt & Cookie Compliance:** Simulates cooperative web protocols.
+- **100% Autonomous Loop:** The system runs end-to-end without human intervention.
