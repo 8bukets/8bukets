@@ -11,12 +11,36 @@ from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+class ColorFormatter(logging.Formatter):
+    grey = "\x1b[38;20m"
+    yellow = "\x1b[33;20m"
+    red = "\x1b[31;20m"
+    bold_red = "\x1b[31;1m"
+    reset = "\x1b[0m"
+    green = "\x1b[32;20m"
+    cyan = "\x1b[36;20m"
+
+    FORMATS = {
+        logging.DEBUG: grey + "%(asctime)s - %(levelname)s - %(message)s" + reset,
+        logging.INFO: cyan + "%(asctime)s - %(levelname)s - %(message)s" + reset,
+        logging.WARNING: yellow + "%(asctime)s - %(levelname)s - %(message)s" + reset,
+        logging.ERROR: red + "%(asctime)s - %(levelname)s - %(message)s" + reset,
+        logging.CRITICAL: bold_red + "%(asctime)s - %(levelname)s - %(message)s" + reset
+    }
+
+    def format(self, record):
+        log_fmt = self.FORMATS.get(record.levelno)
+        formatter = logging.Formatter(log_fmt, datefmt='%H:%M:%S')
+        return formatter.format(record)
+
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
+# Create console handler with a higher log level
+ch = logging.StreamHandler()
+ch.setLevel(logging.INFO)
+ch.setFormatter(ColorFormatter())
+logger.addHandler(ch)
 
 BASE_URL = "https://markposition.wordpress.com/"
 
@@ -68,7 +92,7 @@ class MarkPositionScraperAsync:
                 response.raise_for_status()
                 return await response.text()
         except aiohttp.ClientError as e:
-            logger.error(f"Error fetching page {page_num}: {e}")
+            logger.error(f"❌ Error fetching page {page_num}: {e}")
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
@@ -179,7 +203,7 @@ class MarkPositionScraperAsync:
                         if not tasks:
                             break
 
-                        logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
+                        logger.info(f"🚀 Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
                         results = await asyncio.gather(*tasks)
 
                         # Check results
@@ -191,11 +215,11 @@ class MarkPositionScraperAsync:
                             page_idx = batch_start + idx
                             if page_posts is None:
                                 # 404 or Error
-                                logger.info(f"Page {page_idx} returned 404 or empty. Stopping.")
+                                logger.info(f"⚠️ Page {page_idx} returned 404 or empty. Stopping.")
                                 stop_detected = True
                                 break
                             elif len(page_posts) == 0:
-                                logger.info(f"Page {page_idx} has no articles. Stopping.")
+                                logger.info(f"⚠️ Page {page_idx} has no articles. Stopping.")
                                 stop_detected = True
                                 break
                             else:
@@ -204,13 +228,13 @@ class MarkPositionScraperAsync:
                                 total_batch_posts += len(page_posts)
 
                         if total_batch_posts > 0:
-                            logger.info(f"Saved {total_batch_posts} posts from batch.")
+                            logger.info(f"💾 Saved {total_batch_posts} posts from batch.")
 
                         if stop_detected:
                             break
 
                         if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
-                            logger.info("Reached max pages limit.")
+                            logger.info("✨ Reached max pages limit.")
                             break
 
                         page_num += len(tasks)
