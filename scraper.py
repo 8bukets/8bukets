@@ -6,6 +6,8 @@ import logging
 import argparse
 import sys
 import sqlite3
+import urllib.robotparser
+from urllib.parse import urlparse
 from datetime import datetime
 
 # Configure logging
@@ -28,7 +30,25 @@ class BlogScraper:
         }
         self.data = []
         self.conn = None
+        self.rp = urllib.robotparser.RobotFileParser()
         self.init_db()
+
+    def can_fetch(self, url):
+        """Check robots.txt for permission."""
+        parsed = urlparse(url)
+        base = f"{parsed.scheme}://{parsed.netloc}"
+        robots_url = f"{base}/robots.txt"
+
+        try:
+            # Optimization: Only read if we haven't already or if URL changed (simplified for single domain)
+            if not self.rp.url:
+                self.rp.set_url(robots_url)
+                self.rp.read()
+
+            return self.rp.can_fetch(self.headers['User-Agent'], url)
+        except Exception as e:
+            logger.warning(f"Could not check robots.txt: {e}. Defaulting to True.")
+            return True
 
     def init_db(self):
         """Initialize the SQLite database."""
@@ -213,6 +233,10 @@ class BlogScraper:
     def run(self):
         url = self.base_url
         new_items_count = 0
+
+        if not self.can_fetch(url):
+            logger.error(f"Scraping forbidden by robots.txt for {url}")
+            return
 
         while url:
             content = self.fetch_page(url)

@@ -10,6 +10,9 @@ from agents.monetization import MonetizationAgent
 from agents.creative import CreativeAgent
 from agents.ad_manager import AdManagerAgent
 from agents.curiosity import CuriosityAgent
+from agents.market_sim import MarketSimulationAgent
+from agents.learning import LearningAgent
+from agents.cookie_jar import CookieJar
 
 # Configure logging
 logging.basicConfig(
@@ -24,19 +27,37 @@ class AgentOrchestrator:
         if not os.path.exists(self.report_dir):
             os.makedirs(self.report_dir)
 
+        # Shared State
+        self.cookie_jar = CookieJar()
+
         # Instantiate agents
         self.health_agent = HealthAgent()
         self.analyst_agent = AnalystAgent()
         self.researcher_agent = ResearcherAgent()
         self.intelligence_agent = IntelligenceAgent()
         self.monetization_agent = MonetizationAgent()
-        self.curiosity_agent = CuriosityAgent() # New
+        self.curiosity_agent = CuriosityAgent()
         self.creative_agent = CreativeAgent()
         self.ad_manager_agent = AdManagerAgent()
         self.creator_agent = CreatorAgent()
 
+        # New Autonomy Agents
+        self.market_sim_agent = MarketSimulationAgent()
+        self.learning_agent = LearningAgent()
+
+        # Inject Dependencies
+        self.all_agents = [
+            self.health_agent, self.analyst_agent, self.researcher_agent,
+            self.intelligence_agent, self.monetization_agent, self.curiosity_agent,
+            self.creative_agent, self.ad_manager_agent, self.creator_agent,
+            self.market_sim_agent, self.learning_agent
+        ]
+
+        for agent in self.all_agents:
+            agent.set_cookie_jar(self.cookie_jar)
+
     def run_agents(self):
-        logger.info("Orchestrating agents with Collaboration Protocol...")
+        logger.info("Orchestrating agents with Collaboration Protocol & Evolutionary DNA...")
         outputs = {}
 
         # 1. Independent / Foundational Agents
@@ -61,11 +82,9 @@ class AgentOrchestrator:
         outputs['AdManagerAgent'] = self.ad_manager_agent.results
 
         # Curiosity (Exploration)
-        # Needs no input, but uses DB.
         outputs['CuriosityAgent'] = self.curiosity_agent.run()
 
         # Creative (Innovation)
-        # Needs Curiosity context
         creative_context = {
             'curiosity_findings': outputs['CuriosityAgent'].get('findings', []),
             'exploration_query': outputs['CuriosityAgent'].get('exploration_query', '')
@@ -74,9 +93,20 @@ class AgentOrchestrator:
         outputs['CreativeAgent'] = self.creative_agent.results
 
         # Creator (Content)
-        # Creator needs Ad/Strategy context
-        # Ideally we pass Strategy here too
         outputs['CreatorAgent'] = self.creator_agent.run()
+
+        # 3. Evolutionary Feedback Loop
+
+        # Market Simulation (Environment Feedback)
+        self.market_sim_agent.perform_task(context=outputs)
+        outputs['MarketSimulationAgent'] = self.market_sim_agent.results
+
+        # Learning Agent (Evolution)
+        learning_context = {
+            'market_feedback': outputs['MarketSimulationAgent']
+        }
+        self.learning_agent.perform_task(context=learning_context)
+        outputs['LearningAgent'] = self.learning_agent.results
 
         self.generate_report(outputs)
 
@@ -119,10 +149,22 @@ class AgentOrchestrator:
             # Monetization
             m = outputs.get('MonetizationAgent', {})
             f.write(f"## 💰 Monetization\n- Opportunities: {len(m.get('top_opportunities', []))}\n\n")
+            f.write(f"- AdSense Candidates: {len(m.get('adsense_candidates', []))}\n\n")
 
             # Content
             cc = outputs.get('CreatorAgent', {})
             f.write(f"## ✍️ Content Draft\n**{cc.get('draft_title')}**\n\n{cc.get('draft_content')}\n\n")
+
+            # Evolution Status
+            ms = outputs.get('MarketSimulationAgent', {})
+            la = outputs.get('LearningAgent', {})
+            dna = la.get('evolved_dna', {}).get('system_stats', {})
+
+            f.write(f"## 🧬 Evolution Status\n")
+            f.write(f"- **Market Score**: {ms.get('score', 0):.2f}\n")
+            f.write(f"- **Feedback**: {', '.join(ms.get('details', []))}\n")
+            f.write(f"- **Current IQ**: {dna.get('iq_level', 'N/A')}\n")
+            f.write(f"- **Generation**: {dna.get('generation', 'N/A')}\n")
 
         logger.info(f"Agent Report generated: {report_filename}")
 

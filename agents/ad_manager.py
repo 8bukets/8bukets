@@ -22,7 +22,14 @@ class AdManagerAgent(Agent):
         # 3. Ad Creatives (Ads)
         self.results['campaigns'] = self.create_campaigns(keywords, opportunities)
 
+        # 4. Programmatic Advertising Cookie Drop
+        if self.cookie_jar:
+            self.cookie_jar.set_cookie("programmatic-ads.internal", "user_segment", self.results['targeting']['primary_audience'])
+
     def define_targeting(self, keywords):
+        # Use DNA parameters
+        risk_tolerance = self.dna.get('parameters', {}).get('risk_tolerance', 0.3)
+
         # Infer audience from keywords
         audience = "General Interest"
         if any("fashion" in k[0] for k in keywords):
@@ -37,11 +44,14 @@ class AdManagerAgent(Agent):
         }
 
     def calculate_bids(self, keywords):
-        # Simulate bid calculation based on "competition" (frequency)
+        # Simulate bid calculation based on "competition" (frequency) and DNA aggressiveness
+        aggressiveness = self.dna.get('parameters', {}).get('bid_aggressiveness', 1.0)
+
         bids = []
         for kw, freq in keywords:
             # Higher freq = higher competition = higher CPC
-            cpc = round(0.5 + (freq * 0.1), 2)
+            base_cpc = 0.5 + (freq * 0.1)
+            cpc = round(base_cpc * aggressiveness, 2)
             bids.append({"keyword": kw, "suggested_bid": cpc})
         return bids
 
