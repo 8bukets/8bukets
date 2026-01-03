@@ -6,6 +6,8 @@ import logging
 import argparse
 import sys
 import sqlite3
+import urllib.robotparser
+from urllib.parse import urlparse
 from datetime import datetime
 
 # Configure logging
@@ -27,13 +29,34 @@ class BlogScraper:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
         self.data = []
+        self.conn = None
+        self.rp = urllib.robotparser.RobotFileParser()
         self.init_db()
+
+    def can_fetch(self, url):
+        """Check robots.txt for permission."""
+        parsed = urlparse(url)
+        base = f"{parsed.scheme}://{parsed.netloc}"
+        robots_url = f"{base}/robots.txt"
+
+        try:
+            # Optimization: Only read if we haven't already or if URL changed (simplified for single domain)
+            if not self.rp.url:
+                self.rp.set_url(robots_url)
+                self.rp.read()
+
+            return self.rp.can_fetch(self.headers['User-Agent'], url)
+        except Exception as e:
+            logger.warning(f"Could not check robots.txt: {e}. Defaulting to True.")
+            return True
 
     def init_db(self):
         """Initialize the SQLite database."""
         try:
-            with sqlite3.connect(self.db_name) as conn:
-                cursor = conn.cursor()
+            # Optimization: Reuse connection
+            self.conn = sqlite3.connect(self.db_name)
+            with self.conn:
+                cursor = self.conn.cursor()
                 # Posts table
                 cursor.execute('''
                     CREATE TABLE IF NOT EXISTS posts (
@@ -61,15 +84,25 @@ class BlogScraper:
                         FOREIGN KEY(post_id) REFERENCES posts(id)
                     )
                 ''')
-                conn.commit()
+                # Commit is handled by the context manager (with self.conn:)
         except sqlite3.Error as e:
             logger.error(f"Database initialization error: {e}")
+
+    def close(self):
+        """Close the database connection."""
+        if self.conn:
+            try:
+                self.conn.close()
+                self.conn = None
+            except sqlite3.Error as e:
+                logger.error(f"Error closing database connection: {e}")
 
     def save_to_db(self, item):
         """Save a single item to the database, handling updates."""
         try:
-            with sqlite3.connect(self.db_name) as conn:
-                cursor = conn.cursor()
+            # Optimization: Use the persistent connection
+            with self.conn:
+                cursor = self.conn.cursor()
 
                 # Check if post exists
                 cursor.execute("SELECT id, title, external_link FROM posts WHERE post_url = ?", (item.get('post_url'),))
@@ -100,7 +133,7 @@ class BlogScraper:
                     if updated:
                         # Update scraped_at to reflect latest check
                         cursor.execute("UPDATE posts SET scraped_at = CURRENT_TIMESTAMP WHERE id = ?", (post_id,))
-                        conn.commit()
+                        # Commit is handled by context manager upon exit
                         return False # Not a "new" post, but an updated one
 
                 else:
@@ -117,7 +150,7 @@ class BlogScraper:
                         item.get('author'),
                         json.dumps(item.get('categories'))
                     ))
-                    conn.commit()
+                    # Commit is handled by context manager upon exit
                     return True # New post
 
         except sqlite3.Error as e:
@@ -201,6 +234,10 @@ class BlogScraper:
         url = self.base_url
         new_items_count = 0
 
+        if not self.can_fetch(url):
+            logger.error(f"Scraping forbidden by robots.txt for {url}")
+            return
+
         while url:
             content = self.fetch_page(url)
             if not content:
@@ -229,6 +266,7 @@ class BlogScraper:
                 url = None
 
         self.save_json()
+        self.close()
         logger.info(f"Scraped {len(self.data)} articles in total.")
         logger.info(f"New items added to database: {new_items_count}")
 
