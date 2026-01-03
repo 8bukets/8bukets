@@ -27,6 +27,7 @@ def generate_report(data, output_file):
     # 1. Domain Analysis
     domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
     domain_counts = Counter(domains).most_common(10)
+    total_domains = len(domains)
 
     # 2. Category Analysis
     all_categories = []
@@ -35,6 +36,7 @@ def generate_report(data, output_file):
         if cats:
             all_categories.extend(cats)
     category_counts = Counter(all_categories).most_common(10)
+    total_categories = len(all_categories)
 
     # 3. Date Analysis
     dates = []
@@ -75,16 +77,18 @@ def generate_report(data, output_file):
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
 
     md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Domain | Count | % |")
+    md.append("| :--- | :---: | :---: |")
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        percent = (count / total_domains * 100) if total_domains > 0 else 0
+        md.append(f"| {domain} | {count} | {percent:.1f}% |")
 
     md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Category | Count | % |")
+    md.append("| :--- | :---: | :---: |")
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        percent = (count / total_categories * 100) if total_categories > 0 else 0
+        md.append(f"| {cat} | {count} | {percent:.1f}% |")
 
     md.append("\n## Posts by Year")
     md.append("| Year | Count |")
