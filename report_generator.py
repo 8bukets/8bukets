@@ -19,6 +19,33 @@ class ReportGenerator:
         if not os.path.exists(self.report_dir):
             os.makedirs(self.report_dir)
 
+    def escape_markdown(self, text):
+        """Escapes markdown special characters to prevent injection."""
+        if text is None:
+            return ""
+        # Escape characters that have special meaning in Markdown
+        # especially [ ] for links and | for tables
+        special_chars = str.maketrans({
+            "\\": r"\\",
+            "`": r"\`",
+            "*": r"\*",
+            "_": r"\_",
+            "{": r"\{",
+            "}": r"\}",
+            "[": r"\[",
+            "]": r"\]",
+            "(": r"\(",
+            ")": r"\)",
+            "#": r"\#",
+            "+": r"\+",
+            "-": r"\-",
+            "!": r"\!",
+            "|": r"\|",
+            "<": r"&lt;",
+            ">": r"&gt;",
+        })
+        return str(text).translate(special_chars)
+
     def generate_daily_report(self):
         logger.info("Generating daily report...")
 
@@ -105,7 +132,11 @@ class ReportGenerator:
                 f.write("|---|---|---|---|---|\n")
                 for u in updated_posts:
                     title, url, field, old, new, time = u
-                    title = title.replace("|", "-")
+                    title = self.escape_markdown(title)
+                    # We don't escape URL, assuming it's a valid URL, but we should probably check/escape it too if it contains )
+                    # For now focusing on content injection
+                    old = self.escape_markdown(old)
+                    new = self.escape_markdown(new)
                     f.write(f"| [{title}]({url}) | {field} | {old} | {new} | {time} |\n")
                 f.write("\n")
 
@@ -116,7 +147,10 @@ class ReportGenerator:
                 f.write("|---|---|---|\n")
                 for post in new_posts:
                     title, url, scraped_at = post
-                    title = title.replace("|", "-") if title else "No Title"
+                    if title:
+                        title = self.escape_markdown(title)
+                    else:
+                        title = "No Title"
                     f.write(f"| {title} | {scraped_at} | [View]({url}) |\n")
             else:
                 f.write("No new posts scraped in the last 24 hours.\n")
