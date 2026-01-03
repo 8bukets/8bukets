@@ -11,7 +11,7 @@ class MonetizationAgent(BaseAgent):
             'health': 6, 'marketing': 6, 'tech': 5
         }
 
-    def run(self, data: List[Dict[str, Any]]) -> Dict[str, Any]:
+    def run(self, data: List[Dict[str, Any]], dna: Dict[str, Any] = None, **kwargs) -> Dict[str, Any]:
         if not data:
             return {"error": "No data"}
 

@@ -7,7 +7,7 @@ class HealthCheckAgent(BaseAgent):
     def __init__(self):
         super().__init__("Health Check Agent")
 
-    def run(self, data: List[Dict[str, Any]]) -> Dict[str, Any]:
+    def run(self, data: List[Dict[str, Any]], dna: Dict[str, Any] = None, **kwargs) -> Dict[str, Any]:
         # Check integrity of the data passed
         missing_titles = sum(1 for p in data if not p.get('title'))
         missing_dates = sum(1 for p in data if not p.get('date'))

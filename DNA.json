@@ -1,0 +1,19 @@
+{
+    "system_iq": 27,
+    "bid_strategy": {
+        "aggressiveness": 0.45,
+        "target_audience_expansion": 0.2,
+        "budget_allocation": {
+            "search": 0.4,
+            "display": 0.3,
+            "video": 0.3
+        }
+    },
+    "content_strategy": {
+        "curiosity_level": 0.6,
+        "creativity_weight": 0.5,
+        "tone": "informative"
+    },
+    "evolution_rate": 0.1,
+    "last_performance_score": 0.778886181657483
+}

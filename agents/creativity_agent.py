@@ -6,16 +6,24 @@ class CreativityAgent(BaseAgent):
     def __init__(self):
         super().__init__("Creativity Agent")
 
-    def run(self, data: List[Dict[str, Any]]) -> Dict[str, Any]:
+    def run(self, data: List[Dict[str, Any]], dna: Dict[str, Any] = None, **kwargs) -> Dict[str, Any]:
         if not data or len(data) < 2:
             return {"error": "Not enough data for creativity"}
+
+        # Use DNA for creativity weight
+        weight = 0.5
+        if dna:
+            weight = dna.get("content_strategy", {}).get("creativity_weight", 0.5)
 
         # "Remix" Ideas: Combine title structures
         titles = [p.get('title') for p in data if p.get('title')]
 
         generated_ideas = []
         if titles:
-            for _ in range(3):
+            # Higher weight = more random combinations
+            num_ideas = int(3 + (weight * 5))
+
+            for _ in range(num_ideas):
                 t1 = random.choice(titles)
                 t2 = random.choice(titles)
 
@@ -30,7 +38,8 @@ class CreativityAgent(BaseAgent):
                 generated_ideas.append(new_title)
 
         return {
-            "remixed_ideas": generated_ideas
+            "remixed_ideas": generated_ideas,
+            "creativity_factor": weight
         }
 
     def format_report(self, results: Dict[str, Any]) -> str:
