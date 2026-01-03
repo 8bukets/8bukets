@@ -15,6 +15,10 @@ from agents.creativity_agent import CreativityAgent
 from agents.autonomous_intelligence_agent import AutonomousIntelligenceAgent
 from agents.programmatic_ads_agent import ProgrammaticAdsAgent
 from agents.ads_agent import AdsAgent
+from agents.market_simulation_agent import MarketSimulationAgent
+from agents.learning_agent import LearningAgent
+from agents.cookie_agent import CookieAgent
+from agents.code_generator_agent import CodeGeneratorAgent
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
@@ -72,6 +76,10 @@ def run_pipeline(skip_scrape=False):
     ai_agent = AutonomousIntelligenceAgent()
     prog_ads_agent = ProgrammaticAdsAgent()
     ads_agent = AdsAgent()
+    market_sim_agent = MarketSimulationAgent()
+    learning_agent = LearningAgent()
+    cookie_agent = CookieAgent()
+    code_gen_agent = CodeGeneratorAgent()
 
     # 4. Pipeline Execution
     logger.info("Starting Agent Pipeline...")
@@ -118,6 +126,25 @@ def run_pipeline(skip_scrape=False):
 
     ad_copy = ads_agent.process(research_results)
     save_result("ad_copy.json", ad_copy, current_date)
+
+    # --- New Autonomous Features ---
+
+    # Market Simulation (Feedback Loop)
+    market_feedback = market_sim_agent.process(content, prog_ads)
+    save_result("market_feedback.json", market_feedback, current_date)
+
+    # Evolutionary Learning (DNA Update)
+    evolved_dna = learning_agent.process(market_feedback)
+    save_result("dna_snapshot.json", evolved_dna, current_date)
+    logger.info(f"System IQ is now: {evolved_dna.get('system_iq')}")
+
+    # Cookie & Audience Management
+    cookie_data = cookie_agent.process(evolved_dna)
+    save_result("audience_data.json", cookie_data, current_date)
+
+    # Autonomous Code Generation
+    code_status = code_gen_agent.process(evolved_dna, intelligence_results)
+    logger.info(code_status)
 
     # High-level Synthesis
     summary = ai_agent.process(results_aggregator)

@@ -1,0 +1,16 @@
+{
+    "system_iq": 26,
+    "evolution_generation": 2,
+    "bid_aggressiveness": 0.49,
+    "creativity_factor": 0.3,
+    "cookie_sync_partners": [
+        "google",
+        "oracle",
+        "doubleclick"
+    ],
+    "learning_rate": 0.01,
+    "genes": {
+        "content_length_bias": "short",
+        "ad_platform_preference": "google"
+    }
+}

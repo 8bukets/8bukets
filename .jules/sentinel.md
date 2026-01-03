@@ -1,0 +1,4 @@
+## 2025-01-20 - [Path Traversal in Scraper Output]
+**Vulnerability:** The scraper accepted arbitrary file paths for output files (e.g., `output_json`), allowing a potential attacker (or confused user) to overwrite sensitive system files or write files outside the intended directory via path traversal (e.g., `../../etc/passwd`).
+**Learning:** Even in CLI tools where the user is generally trusted, verifying file paths prevents accidental damage and misuse when the tool is integrated into larger automated pipelines. `os.path.commonpath` is the robust way to check if a path is inside a base directory, handling path separators and traversing correctly.
+**Prevention:** Implemented a `validate_path` method that resolves the absolute path of the output file and asserts it shares the `os.getcwd()` as a common prefix.

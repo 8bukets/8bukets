@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /private
+Crawl-delay: 5
+
+# Self-Evolving Robot Configuration
+# Collaborative Agent Access Allowed

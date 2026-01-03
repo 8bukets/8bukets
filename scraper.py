@@ -3,6 +3,7 @@ import asyncio
 from bs4 import BeautifulSoup
 import json
 import csv
+import os
 import re
 import argparse
 import logging
@@ -22,12 +23,24 @@ BASE_URL = "https://www.oracle.com/news/"
 
 class OracleNewsScraper:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
-        self.output_json = output_json
-        self.output_csv = output_csv
-        self.output_txt = output_txt
+        self.output_json = self.validate_path(output_json)
+        self.output_csv = self.validate_path(output_csv)
+        self.output_txt = self.validate_path(output_txt)
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.base_url = BASE_URL
+
+    def validate_path(self, filepath: str) -> str:
+        """
+        Validates that the output path is within the current working directory.
+        Returns the absolute path if valid, raises ValueError otherwise.
+        """
+        base_path = os.getcwd()
+        abs_path = os.path.abspath(filepath)
+        # Use commonpath to handle symlinks and different path separators correctly
+        if os.path.commonpath([base_path, abs_path]) != base_path:
+            raise ValueError(f"Security Alert: Attempted path traversal to {abs_path}. Operation blocked.")
+        return abs_path
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
