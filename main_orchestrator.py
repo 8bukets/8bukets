@@ -2,6 +2,7 @@ import logging
 import sys
 import datetime
 import os
+from colors import Colors
 from agents.researcher import ResearcherAgent
 from agents.analyzer import AnalyzerAgent
 from agents.intelligence import IntelligenceAgent
@@ -12,10 +13,29 @@ from agents.creativity import CreativityAgent
 from agents.advertising import AdvertisingAgent
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
+class ColoredFormatter(logging.Formatter):
+    def format(self, record):
+        message = super().format(record)
+        if record.levelno >= logging.ERROR:
+            return Colors.colorize(message, Colors.FAIL)
+        elif record.levelno >= logging.WARNING:
+            return Colors.colorize(message, Colors.WARNING)
+        elif "STARTING" in message or "COMPLETE" in message:
+             return Colors.colorize(message, Colors.HEADER)
+        return message
+
+root_logger = logging.getLogger()
+root_logger.setLevel(logging.INFO)
+formatter = ColoredFormatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+if not root_logger.handlers:
+    handler = logging.StreamHandler()
+    handler.setFormatter(formatter)
+    root_logger.addHandler(handler)
+else:
+    for handler in root_logger.handlers:
+        handler.setFormatter(formatter)
+
 logger = logging.getLogger("Orchestrator")
 
 def run_orchestration(save_report=True):
