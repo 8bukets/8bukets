@@ -11,12 +11,57 @@ from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+class CustomFormatter(logging.Formatter):
+    grey = "\x1b[38;20m"
+    blue = "\x1b[34;20m"
+    green = "\x1b[32;20m"
+    yellow = "\x1b[33;20m"
+    red = "\x1b[31;20m"
+    bold_red = "\x1b[31;1m"
+    reset = "\x1b[0m"
+    format_str = "%(asctime)s - %(levelname)s - %(message)s"
+
+    FORMATS = {
+        logging.DEBUG: grey + format_str + reset,
+        logging.INFO: blue + format_str + reset,
+        logging.WARNING: yellow + format_str + reset,
+        logging.ERROR: red + format_str + reset,
+        logging.CRITICAL: bold_red + format_str + reset
+    }
+
+    def format(self, record):
+        log_fmt = self.FORMATS.get(record.levelno)
+        formatter = logging.Formatter(log_fmt, datefmt='%H:%M:%S')
+
+        # Add emojis based on message content
+        message = record.msg
+        if "Fetching" in str(message):
+            record.msg = f"🚀 {message}"
+        elif "Saved" in str(message):
+             record.msg = f"💾 {message}"
+        elif "Error" in str(message) or "Failed" in str(message):
+             record.msg = f"❌ {message}"
+        elif "limit" in str(message) or "Stopping" in str(message):
+             record.msg = f"🛑 {message}"
+
+        return formatter.format(record)
+
 logger = logging.getLogger(__name__)
+
+# Configure root logger to use CustomFormatter
+root_logger = logging.getLogger()
+root_logger.setLevel(logging.INFO)
+
+# Create console handler
+ch = logging.StreamHandler()
+ch.setLevel(logging.INFO)
+ch.setFormatter(CustomFormatter())
+
+# Clear existing handlers to avoid duplicates
+if root_logger.handlers:
+    root_logger.handlers.clear()
+
+root_logger.addHandler(ch)
 
 BASE_URL = "https://markposition.wordpress.com/"
 
