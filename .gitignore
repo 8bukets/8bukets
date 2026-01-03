@@ -11,3 +11,4 @@ venv/
 *.json
 *.csv
 *.txt
+output_content/
