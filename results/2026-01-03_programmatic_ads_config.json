@@ -1,0 +1,23 @@
+{
+    "targeting": {
+        "keywords": [
+            "oracle",
+            "database",
+            "at",
+            "google",
+            "cloud"
+        ],
+        "audience": [
+            "IT Decision Makers",
+            "Cloud Architects",
+            "DBAs"
+        ],
+        "platforms": [
+            "LinkedIn",
+            "Google Display Network"
+        ]
+    },
+    "bid_strategy": "Maximize Conversions",
+    "bid_multiplier": 0.48463630182477485,
+    "frequency_cap": 5.105172974179137
+}
