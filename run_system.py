@@ -4,6 +4,7 @@ import argparse
 import subprocess
 import logging
 import time
+import concurrent.futures
 from datetime import datetime
 from agents.analysis_agent import AnalysisAgent
 from agents.research_agent import ResearchAgent
@@ -15,12 +16,22 @@ from agents.creativity_agent import CreativityAgent
 from agents.autonomous_intelligence_agent import AutonomousIntelligenceAgent
 from agents.programmatic_ads_agent import ProgrammaticAdsAgent
 from agents.ads_agent import AdsAgent
+from agents.learning_agent import LearningAgent
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 RESULTS_DIR = "results"
+DNA_FILE = "dna.json"
+
+def load_dna():
+    """Load the DNA configuration file."""
+    try:
+        with open(DNA_FILE, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {"concurrency": 2}
 
 def load_data(filepath):
     try:
@@ -45,8 +56,13 @@ def save_result(filename, content, date_str=None):
     logger.info(f"Saved result to {filepath}")
 
 def run_pipeline(skip_scrape=False):
+    start_time = time.time()
     current_date = datetime.now().strftime('%Y-%m-%d')
     logger.info(f"Starting Pipeline for {current_date}...")
+
+    dna = load_dna()
+    max_workers = dna.get('concurrency', 2)
+    logger.info(f"Using Concurrency: {max_workers}")
 
     # 1. Scrape
     if not skip_scrape:
@@ -72,12 +88,13 @@ def run_pipeline(skip_scrape=False):
     ai_agent = AutonomousIntelligenceAgent()
     prog_ads_agent = ProgrammaticAdsAgent()
     ads_agent = AdsAgent()
+    learning_agent = LearningAgent()
 
     # 4. Pipeline Execution
     logger.info("Starting Agent Pipeline...")
     results_aggregator = {}
 
-    # Health Check
+    # Health Check (Blocking - must pass before proceeding)
     health_results = health_agent.process(data)
     save_result("health_check.json", health_results, current_date)
     results_aggregator['health'] = health_results
@@ -86,44 +103,62 @@ def run_pipeline(skip_scrape=False):
         logger.error("Data unhealthy or empty. Aborting pipeline.")
         return
 
-    # Analysis
-    analysis_results = analysis_agent.process(data)
-    save_result("analysis.json", analysis_results, current_date)
+    # Parallel Execution Phase 1: Analysis & Research (Independent)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+        future_analysis = executor.submit(analysis_agent.process, data)
+        future_research = executor.submit(research_agent.process, data)
 
-    # Research
-    research_results = research_agent.process(data)
+        analysis_results = future_analysis.result()
+        research_results = future_research.result()
+
+    save_result("analysis.json", analysis_results, current_date)
     save_result("research.json", research_results, current_date)
 
-    # Intelligence
+    # Parallel Execution Phase 2: Dependent Agents
+    # Intelligence depends on Analysis
     intelligence_results = intelligence_agent.process(analysis_results)
     save_result("intelligence.json", intelligence_results, current_date)
     results_aggregator['intelligence'] = intelligence_results
 
-    # Content
-    content = content_agent.process(data, intelligence_results)
-    save_result("content_draft.md", content, current_date)
+    # Phase 3: High Parallelism for Output Agents
+    # Monetization (needs Research)
+    # Ads (needs Research)
+    # Content (needs Data + Intelligence)
+    # Creativity (needs Analysis Keywords)
+    # Programmatic (needs Analysis Keywords)
 
-    # Monetization
-    monetization_strategies = monetization_agent.process(research_results)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+        f_monetization = executor.submit(monetization_agent.process, research_results)
+        f_ads = executor.submit(ads_agent.process, research_results)
+        f_content = executor.submit(content_agent.process, data, intelligence_results)
+        f_creativity = executor.submit(creativity_agent.process, analysis_results['common_keywords'])
+        f_prog_ads = executor.submit(prog_ads_agent.process, analysis_results['common_keywords'])
+
+        monetization_strategies = f_monetization.result()
+        ad_copy = f_ads.result()
+        content = f_content.result()
+        headlines = f_creativity.result()
+        prog_ads = f_prog_ads.result()
+
     save_result("monetization.json", monetization_strategies, current_date)
     results_aggregator['monetization'] = monetization_strategies
-
-    # Creativity
-    headlines = creativity_agent.process(analysis_results['common_keywords'])
-    save_result("creative_headlines.json", headlines, current_date)
-
-    # Ads
-    prog_ads = prog_ads_agent.process(analysis_results['common_keywords'])
-    save_result("programmatic_ads_config.json", prog_ads, current_date)
-
-    ad_copy = ads_agent.process(research_results)
     save_result("ad_copy.json", ad_copy, current_date)
+    save_result("content_draft.md", content, current_date)
+    save_result("creative_headlines.json", headlines, current_date)
+    save_result("programmatic_ads_config.json", prog_ads, current_date)
 
     # High-level Synthesis
     summary = ai_agent.process(results_aggregator)
     save_result("executive_summary.txt", summary, current_date)
 
-    logger.info(f"Pipeline Complete for {current_date}. Check 'results/' directory.")
+    # 5. Evolution / Self-Optimization
+    end_time = time.time()
+    total_duration = end_time - start_time
+    learning_metrics = {"total_duration": total_duration}
+    learning_results = learning_agent.process(learning_metrics)
+    save_result("learning_log.json", learning_results, current_date)
+
+    logger.info(f"Pipeline Complete for {current_date} in {total_duration:.2f}s. Check 'results/' directory.")
 
 def main():
     parser = argparse.ArgumentParser(description="Run Autonomous Agents System")

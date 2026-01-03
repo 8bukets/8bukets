@@ -1,3 +1,5 @@
-## 2024-05-23 - BeautifulSoup SoupStrainer Optimization
-**Learning:** Parsing the entire HTML tree when only specific tags are needed is a significant performance bottleneck in BeautifulSoup.
-**Action:** Use `SoupStrainer` to restrict parsing to only relevant tags (e.g., `<a>`), which can reduce parsing time by ~30-40% on large pages.
+## 2024-05-23 - Parallel Agent Pipeline & Evolutionary DNA
+**Learning:** Sequential execution of independent agents adds unnecessary latency.
+**Action:** Implemented `concurrent.futures` in `run_system.py` to run analysis, research, and output generation agents in parallel.
+**Learning:** Hardcoded performance parameters (concurrency, timeouts) prevent the system from adapting to different environments.
+**Action:** Introduced `dna.json` and a `LearningAgent` that autonomously tunes these parameters based on execution time metrics.
