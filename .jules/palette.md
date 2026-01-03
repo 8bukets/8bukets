@@ -1,0 +1,3 @@
+## 2024-05-22 - [CLI Color Logging Implementation]
+**Learning:** Python's `logging.basicConfig` is often called in multiple places in a CLI application. When retrofitting a `ColoredFormatter`, it's critical to inspect `root_logger.handlers` and update existing handlers if they exist, rather than just adding a new one, to avoid duplicate logs or ignored formatting.
+**Action:** When improving CLI logging, always assume `basicConfig` might have been called already. Use a pattern that checks `root_logger.handlers` and updates/replaces the formatter on them to ensure consistency across all entry points.
