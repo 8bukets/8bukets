@@ -1,14 +1,13 @@
-import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
 import json
 import csv
 import re
 import argparse
 import logging
-import time
-from typing import List, Dict, Optional, Set
+from typing import List, Dict, Optional
 from urllib.parse import urlparse
+import aiohttp
+from bs4 import BeautifulSoup
 
 # Configure logging
 logging.basicConfig(
@@ -56,7 +55,7 @@ class MarkPositionScraperAsync:
             return None
         try:
             return urlparse(url).netloc.replace('www.', '')
-        except:
+        except Exception:
             return None
 
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
@@ -224,13 +223,20 @@ class MarkPositionScraperAsync:
         except IOError as e:
             logger.error(f"Failed to save JSON: {e}")
 
+        def sanitize_for_csv(value):
+            if not isinstance(value, str):
+                return value
+            if value and value.startswith(('=', '+', '-', '@')):
+                return "'" + value
+            return value
+
         # CSV
         try:
             with open(self.output_csv, 'w', newline='', encoding='utf-8') as f:
                 writer = csv.writer(f)
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
-                    writer.writerow([
+                    row = [
                         post.get('title', ''),
                         post.get('date', ''),
                         post.get('author', ''),
@@ -238,7 +244,8 @@ class MarkPositionScraperAsync:
                         post.get('external_link', ''),
                         post.get('domain', ''),
                         post.get('post_url', '')
-                    ])
+                    ]
+                    writer.writerow([sanitize_for_csv(field) for field in row])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
             logger.error(f"Failed to save CSV: {e}")
