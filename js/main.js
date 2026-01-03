@@ -45,8 +45,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input');
     const articleList = document.getElementById('article-list');
 
+    // ⚡ Bolt: Debounce function to limit the rate at which a function can fire.
+    // Reduces function execution frequency for event handlers like 'input' or 'resize'.
+    function debounce(func, wait) {
+        let timeout;
+        return function(...args) {
+            const context = this;
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(context, args), wait);
+        };
+    }
+
     if (searchInput && articleList) {
-        searchInput.addEventListener('input', (e) => {
+        // ⚡ Bolt: Debounce search input to avoid layout thrashing and unnecessary loops on every keystroke.
+        searchInput.addEventListener('input', debounce((e) => {
             const term = e.target.value.toLowerCase();
             const articles = articleList.getElementsByTagName('article');
 
@@ -60,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     article.style.display = 'none';
                 }
             });
-        });
+        }, 300)); // 300ms delay
     }
 
     // Contact Form Validation
