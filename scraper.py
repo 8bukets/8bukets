@@ -1,14 +1,13 @@
-import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
 import json
 import csv
 import re
 import argparse
 import logging
-import time
-from typing import List, Dict, Optional, Set
-from urllib.parse import urlparse, urljoin
+from typing import List, Dict, Optional
+from urllib.parse import urljoin
+import aiohttp
+from bs4 import BeautifulSoup, SoupStrainer
 
 # Configure logging
 logging.basicConfig(
@@ -61,7 +60,11 @@ class OracleNewsScraper:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+        # Optimize parsing by only looking for 'a' tags
+        # This significantly reduces the parse tree size
+        strainer = SoupStrainer('a', href=True)
+        soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
+
         # Oracle news uses links in <h3> tags or <a> tags with specific classes or structures.
         # Based on curl output, we saw links like:
         # <a href="/news/announcement/..." data-lbl="..."><h3>Title</h3></a>
@@ -69,6 +72,7 @@ class OracleNewsScraper:
         articles = []
 
         # Find all links that look like announcements
+        # Since we strained, soup itself is mostly just a tags
         links = soup.find_all('a', href=True)
 
         seen_urls = set()
