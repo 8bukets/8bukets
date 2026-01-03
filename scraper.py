@@ -1,22 +1,60 @@
-import aiohttp
-import asyncio
-from bs4 import BeautifulSoup
-import json
-import csv
-import re
 import argparse
+import asyncio
+import csv
+import json
 import logging
-import time
-from typing import List, Dict, Optional, Set
-from urllib.parse import urlparse, urljoin
+import re
+from typing import List, Dict, Optional
+from urllib.parse import urljoin
+
+import aiohttp
+from bs4 import BeautifulSoup
+
+class ColorFormatter(logging.Formatter):
+    """Logging Formatter to add colors and emojis"""
+
+    grey = "\x1b[38;20m"
+    green = "\x1b[32;20m"
+    yellow = "\x1b[33;20m"
+    red = "\x1b[31;20m"
+    bold_red = "\x1b[31;1m"
+    reset = "\x1b[0m"
+
+    FORMATS = {
+        logging.DEBUG: grey + "🐛 %(message)s" + reset,
+        logging.INFO: green + "ℹ️  %(message)s" + reset,
+        logging.WARNING: yellow + "⚠️  %(message)s" + reset,
+        logging.ERROR: red + "❌ %(message)s" + reset,
+        logging.CRITICAL: bold_red + "🚨 %(message)s" + reset
+    }
+
+    def format(self, record):
+        # Add timestamp
+        log_fmt = self.FORMATS.get(record.levelno, self.reset + "%(message)s")
+        # Custom logic for "Saved" or "Found" to use different emoji if it's INFO
+        if record.levelno == logging.INFO:
+            msg_str = str(record.msg)
+            if "Saved" in msg_str:
+                log_fmt = self.green + "✅ %(message)s" + self.reset
+            elif "Found" in msg_str:
+                log_fmt = self.green + "🔍 %(message)s" + self.reset
+            elif "Fetching" in msg_str:
+                log_fmt = self.green + "🚀 %(message)s" + self.reset
+
+        formatter = logging.Formatter(f"%(asctime)s - {log_fmt}", datefmt='%H:%M:%S')
+        return formatter.format(record)
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
+# Create console handler with a higher log level
+ch = logging.StreamHandler()
+ch.setLevel(logging.INFO)
+
+ch.setFormatter(ColorFormatter())
+
+logger.addHandler(ch)
 
 BASE_URL = "https://www.oracle.com/news/"
 
