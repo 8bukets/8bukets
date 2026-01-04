@@ -1,0 +1,4 @@
+## 2024-05-23 - CSV Injection in Scraper Output
+**Vulnerability:** User-controlled data (e.g., article titles) was written directly to CSV files without sanitization. If a title began with characters like `=`, `+`, `-`, or `@`, it could be interpreted as a formula by spreadsheet software, leading to potential command execution (CSV Injection).
+**Learning:** Even when scraping "trusted" sites, the data structure (CSV) itself introduces vulnerabilities if the consuming application (Excel/LibreOffice) interprets the data as code. Data must be sanitized for the specific context where it will be used (e.g., CSV, HTML, SQL).
+**Prevention:** Implemented a `sanitize_for_csv` method that prepends a single quote `'` to any field starting with dangerous characters. This forces spreadsheet software to treat the cell content as a string literal.
