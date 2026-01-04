@@ -15,7 +15,8 @@ class ResearchAgent:
         trends = defaultdict(list)
 
         # Simple clustering: If an article contains a top keyword, add it to that trend
-        top_keywords = [k[0] for k in analysis_results.get("top_keywords", [])]
+        # Optimization: Use set for O(1) lookup
+        top_keywords = {k[0] for k in analysis_results.get("top_keywords", [])}
 
         for article in analysis_results.get("articles", []):
             assigned = False
