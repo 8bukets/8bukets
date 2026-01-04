@@ -20,7 +20,11 @@ logger = logging.getLogger(__name__)
 
 BASE_URL = "https://www.oracle.com/news/"
 
+
 class OracleNewsScraper:
+    WHITESPACE_RE = re.compile(r'\s+')
+    DATE_RE = re.compile(r'(\d{4}-\d{2}-\d{2})')
+
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
         self.output_csv = output_csv
@@ -33,8 +37,7 @@ class OracleNewsScraper:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
-        text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return self.WHITESPACE_RE.sub(' ', text).strip()
 
     def sanitize_for_csv(self, value: str) -> str:
         """Prevent CSV injection by prepending a single quote to risky fields."""
@@ -98,20 +101,21 @@ class OracleNewsScraper:
 
             # If still no title, use the URL slug as a fallback title
             if not title:
-                slug = href.split('/')[-2] if href.endswith('/') else href.split('/')[-1]
+                slug = href.split(
+                    '/')[-2] if href.endswith('/') else href.split('/')[-1]
                 title = slug.replace('-', ' ').title()
 
             # Extract Date (heuristic from URL or nearby text)
             # URL format example: ...-2025-12-11/
-            date_match = re.search(r'(\d{4}-\d{2}-\d{2})', href)
+            date_match = self.DATE_RE.search(href)
             date_str = date_match.group(1) if date_match else ""
 
             article_data = {
                 'title': title,
                 'date': date_str,
-                'author': "Oracle News", # Default author
+                'author': "Oracle News",  # Default author
                 'categories': ["Cloud", "Database", "Google Cloud"],
-                'external_link': full_url, # The article itself is the link
+                'external_link': full_url,  # The article itself is the link
                 'domain': "oracle.com",
                 'post_url': full_url
             }
@@ -157,13 +161,15 @@ class OracleNewsScraper:
         try:
             with open(self.output_csv, 'w', newline='', encoding='utf-8') as f:
                 writer = csv.writer(f)
-                writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
+                writer.writerow(
+                    ['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
                     writer.writerow([
                         self.sanitize_for_csv(post.get('title', '')),
                         self.sanitize_for_csv(post.get('date', '')),
                         self.sanitize_for_csv(post.get('author', '')),
-                        self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                        self.sanitize_for_csv(
+                            ", ".join(post.get('categories', []))),
                         self.sanitize_for_csv(post.get('external_link', '')),
                         self.sanitize_for_csv(post.get('domain', '')),
                         self.sanitize_for_csv(post.get('post_url', ''))
@@ -184,17 +190,25 @@ class OracleNewsScraper:
             with open(self.output_txt, 'w', encoding='utf-8') as f:
                 for link in sorted_links:
                     f.write(link + '\n')
-            logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
+            logger.info(
+                f"Saved {len(sorted_links)} unique links to {self.output_txt}")
         except IOError as e:
             logger.error(f"Failed to save TXT: {e}")
 
+
 def main():
-    parser = argparse.ArgumentParser(description="Scraper for Oracle Database @ Google Cloud News")
-    parser.add_argument("--json", default="links.json", help="Output JSON filename")
-    parser.add_argument("--csv", default="links.csv", help="Output CSV filename")
-    parser.add_argument("--txt", default="unique_links.txt", help="Output TXT filename for unique links")
-    parser.add_argument("--limit", type=int, help="Limit number of pages (unused in single page mode)")
-    parser.add_argument("--concurrency", type=int, default=5, help="Number of concurrent requests")
+    parser = argparse.ArgumentParser(
+        description="Scraper for Oracle Database @ Google Cloud News")
+    parser.add_argument("--json", default="links.json",
+                        help="Output JSON filename")
+    parser.add_argument("--csv", default="links.csv",
+                        help="Output CSV filename")
+    parser.add_argument("--txt", default="unique_links.txt",
+                        help="Output TXT filename for unique links")
+    parser.add_argument(
+        "--limit", type=int, help="Limit number of pages (unused in single page mode)")
+    parser.add_argument("--concurrency", type=int, default=5,
+                        help="Number of concurrent requests")
 
     args = parser.parse_args()
 
@@ -207,6 +221,7 @@ def main():
     )
 
     asyncio.run(scraper.scrape())
+
 
 if __name__ == "__main__":
     main()

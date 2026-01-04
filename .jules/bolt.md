@@ -1,0 +1,3 @@
+## 2025-01-04 - Regex Compilation and Optimization
+**Learning:** Compiling regex patterns as class attributes significantly improves performance in hot loops, especially for text processing tasks like scraping. In Python 3, `\s` in regex matches unicode whitespace including `\xa0`, making explicit `replace('\xa0', ' ')` redundant when followed by `re.sub(r'\s+', ' ', ...)`.
+**Action:** Always pre-compile regexes used in loops. Verify regex character class behavior (like `\s`) before chaining string replacements.
