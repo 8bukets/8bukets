@@ -7,6 +7,7 @@ import argparse
 import sys
 import sqlite3
 from datetime import datetime
+from urllib.parse import urlparse
 
 # Configure logging
 logging.basicConfig(
@@ -126,7 +127,46 @@ class BlogScraper:
 
         return False
 
+    def validate_url(self, url):
+        """
+        Validate URL to prevent SSRF and other issues.
+        Enforces http/https schemes and checks for valid domain.
+        """
+        if not url:
+            return False
+
+        try:
+            parsed = urlparse(url)
+
+            # 1. Scheme Check
+            if parsed.scheme not in ('http', 'https'):
+                logger.error(f"Invalid URL scheme: {parsed.scheme}. Only http and https are supported.")
+                return False
+
+            # 2. Domain/Netloc Check
+            if not parsed.netloc:
+                logger.error("Invalid URL: Missing network location (domain).")
+                return False
+
+            # 3. Localhost/Private IP Check (Basic)
+            # This is a basic check. For robust protection against DNS rebinding,
+            # one would need to resolve the IP and check if it's private.
+            hostname = parsed.hostname.lower() if parsed.hostname else ""
+            if hostname in ['localhost', '127.0.0.1', '0.0.0.0', '::1']:
+                 logger.error(f"Blocked access to local address: {hostname}")
+                 return False
+
+            return True
+
+        except Exception as e:
+            logger.error(f"URL validation error: {e}")
+            return False
+
     def fetch_page(self, url):
+        if not self.validate_url(url):
+            logger.warning(f"Skipping invalid URL: {url}")
+            return None
+
         logger.info(f"Fetching {url}...")
         try:
             response = requests.get(url, headers=self.headers, timeout=10)
