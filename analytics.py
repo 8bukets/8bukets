@@ -99,7 +99,8 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    print(f"\n\033[95m✨ Report generated:\033[0m \033[1m{output_file}\033[0m")
+    print(f"   \033[36mℹ️  Analyzed {total_posts} posts from {len(set(domains))} domains.\033[0m")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
