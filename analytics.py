@@ -5,6 +5,7 @@ from urllib.parse import urlparse
 from datetime import datetime
 import sys
 
+
 def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
@@ -12,6 +13,7 @@ def load_data(filepath):
     except FileNotFoundError:
         print(f"Error: File '{filepath}' not found.")
         sys.exit(1)
+
 
 def get_domain(url):
     if not url:
@@ -21,11 +23,13 @@ def get_domain(url):
     except:
         return None
 
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
     # 1. Domain Analysis
-    domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
+    domains = [get_domain(p.get('external_link'))
+               for p in data if p.get('external_link')]
     domain_counts = Counter(domains).most_common(10)
 
     # 2. Category Analysis
@@ -66,45 +70,52 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
-    md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    md.append("# 📊 Markposition Analytics Report")
+    md.append(
+        f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
-    md.append(f"- **Total Posts:** {total_posts}")
-    md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append("\n## 📈 General Statistics")
+    md.append("| Metric | Value |")
+    md.append("| :--- | :--- |")
+    md.append(f"| **Total Posts** | {total_posts} |")
+    md.append(f"| **Date Range** | {start_date} to {end_date} |")
+    md.append(f"| **Unique Domains Linked** | {len(set(domains))} |")
 
-    md.append("\n## Top 10 Referenced Domains")
+    md.append("\n## 🌐 Top 10 Referenced Domains")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in domain_counts:
         md.append(f"| {domain} | {count} |")
 
-    md.append("\n## Top 10 Categories")
+    md.append("\n## 🏷️ Top 10 Categories")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in category_counts:
         md.append(f"| {cat} | {count} |")
 
-    md.append("\n## Posts by Year")
+    md.append("\n## 📅 Posts by Year")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
     for year, count in year_counts:
         md.append(f"| {year} | {count} |")
 
-    md.append("\n## Authors")
+    md.append("\n## ✍️ Authors")
     for author, count in author_counts:
         md.append(f"- {author}: {count} posts")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    print(f"✅ Report generated: {output_file}")
+
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
-    parser.add_argument("--input", default="links.json", help="Input JSON file")
-    parser.add_argument("--output", default="REPORT.md", help="Output Markdown report file")
+    parser = argparse.ArgumentParser(
+        description="Generate analytics report for Markposition data")
+    parser.add_argument("--input", default="links.json",
+                        help="Input JSON file")
+    parser.add_argument("--output", default="REPORT.md",
+                        help="Output Markdown report file")
     args = parser.parse_args()
 
     data = load_data(args.input)
