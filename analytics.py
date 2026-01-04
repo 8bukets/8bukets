@@ -90,7 +90,17 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    # UX Improvement: Visual summary
+    print(f"\n✨ Analytics Report Generated: {output_file} ✨")
+    print("-" * 50)
+    print(f"📊 Total Posts:      {total_posts}")
+    print(f"📅 Date Range:       {start_date} to {end_date}")
+    print(f"🔗 Unique Domains:   {len(set(domains))}")
+    print("-" * 50)
+    print("🏆 Top 3 Domains:")
+    for domain, count in domain_counts[:3]:
+        print(f"   • {domain:<30} ({count})")
+    print("-" * 50)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
