@@ -11,12 +11,34 @@ from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse, urljoin
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+class CustomFormatter(logging.Formatter):
+    grey = "\x1b[38;20m"
+    cyan = "\x1b[36;20m"
+    green = "\x1b[32;20m"
+    yellow = "\x1b[33;20m"
+    red = "\x1b[31;20m"
+    bold_red = "\x1b[31;1m"
+    reset = "\x1b[0m"
+    format_str = "%(asctime)s - %(levelname)s - %(message)s"
+
+    FORMATS = {
+        logging.DEBUG: grey + format_str + reset,
+        logging.INFO: cyan + format_str + reset,
+        logging.WARNING: yellow + format_str + reset,
+        logging.ERROR: red + format_str + reset,
+        logging.CRITICAL: bold_red + format_str + reset
+    }
+
+    def format(self, record):
+        log_fmt = self.FORMATS.get(record.levelno)
+        formatter = logging.Formatter(log_fmt, datefmt='%H:%M:%S')
+        return formatter.format(record)
+
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+ch = logging.StreamHandler()
+ch.setFormatter(CustomFormatter())
+logger.addHandler(ch)
 
 BASE_URL = "https://www.oracle.com/news/"
 
@@ -133,25 +155,34 @@ class OracleNewsScraper:
             # The current curl showed just the main page.
             # We'll stick to the main page for now as it contained the relevant future links.
 
-            logger.info(f"Fetching {self.base_url}...")
+            logger.info(f"🚀 Fetching {self.base_url}...")
             html = await self.fetch_page(session, self.base_url)
             if html:
                 posts = await self.parse_page(html)
                 all_posts.extend(posts)
-                logger.info(f"Found {len(posts)} relevant articles.")
+                logger.info(f"✅ Found {len(posts)} relevant articles.")
             else:
-                logger.error("Failed to fetch main news page.")
+                logger.error("❌ Failed to fetch main news page.")
 
         self.save_data(all_posts)
+
+        # Final Summary
+        print(f"\n\033[1m📊 Scrape Summary\033[0m")
+        print(f"\033[95m-------------------------\033[0m")
+        print(f"Total Articles: {len(all_posts)}")
+        if all_posts:
+            print(f"Latest Date:    {all_posts[0].get('date', 'N/A')}")
+        print(f"\033[95m-------------------------\033[0m")
+        print(f"✨ Done! Data saved to {self.output_json}, {self.output_csv}, {self.output_txt}")
 
     def save_data(self, posts: List[Dict]):
         # JSON
         try:
             with open(self.output_json, 'w', encoding='utf-8') as f:
                 json.dump(posts, f, indent=4, ensure_ascii=False)
-            logger.info(f"Saved {len(posts)} posts to {self.output_json}")
+            logger.info(f"💾 Saved {len(posts)} posts to {self.output_json}")
         except IOError as e:
-            logger.error(f"Failed to save JSON: {e}")
+            logger.error(f"❌ Failed to save JSON: {e}")
 
         # CSV
         try:
@@ -168,9 +199,9 @@ class OracleNewsScraper:
                         self.sanitize_for_csv(post.get('domain', '')),
                         self.sanitize_for_csv(post.get('post_url', ''))
                     ])
-            logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
+            logger.info(f"💾 Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
-            logger.error(f"Failed to save CSV: {e}")
+            logger.error(f"❌ Failed to save CSV: {e}")
 
         # Unique Links TXT
         unique_links = set()
@@ -184,9 +215,9 @@ class OracleNewsScraper:
             with open(self.output_txt, 'w', encoding='utf-8') as f:
                 for link in sorted_links:
                     f.write(link + '\n')
-            logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
+            logger.info(f"💾 Saved {len(sorted_links)} unique links to {self.output_txt}")
         except IOError as e:
-            logger.error(f"Failed to save TXT: {e}")
+            logger.error(f"❌ Failed to save TXT: {e}")
 
 def main():
     parser = argparse.ArgumentParser(description="Scraper for Oracle Database @ Google Cloud News")
