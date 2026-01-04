@@ -6,8 +6,7 @@ import csv
 import re
 import argparse
 import logging
-import time
-from typing import List, Dict, Optional, Set
+from typing import List, Dict, Optional
 from urllib.parse import urlparse
 
 # Configure logging
@@ -19,6 +18,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
+
 
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
@@ -36,6 +36,15 @@ class MarkPositionScraperAsync:
         text = text.replace('\xa0', ' ')
         return re.sub(r'\s+', ' ', text).strip()
 
+    def sanitize_for_csv(self, value: Optional[str]) -> str:
+        """Sanitize a value to prevent CSV injection."""
+        if value is None:
+            return ""
+        value = str(value)
+        if value and value.startswith(('=', '+', '-', '@')):
+            return f"'{value}"
+        return value
+
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
         return re.match(r'^https?://', text.strip()) is not None
@@ -46,7 +55,8 @@ class MarkPositionScraperAsync:
         if article.get('class'):
             for cls in article['class']:
                 if cls.startswith('category-'):
-                    cat_name = cls.replace('category-', '').replace('-', ' ').title()
+                    cat_name = cls.replace(
+                        'category-', '').replace('-', ' ').title()
                     categories.append(cat_name)
         return categories
 
@@ -56,7 +66,7 @@ class MarkPositionScraperAsync:
             return None
         try:
             return urlparse(url).netloc.replace('www.', '')
-        except:
+        except Exception:
             return None
 
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
@@ -167,12 +177,14 @@ class MarkPositionScraperAsync:
                         break
 
                     # We create a task that acquires semaphore (though sem is less useful if we just create batch size = concurrency)
-                    tasks.append(self.fetch_and_parse(session, current_page, sem))
+                    tasks.append(self.fetch_and_parse(
+                        session, current_page, sem))
 
                 if not tasks:
                     break
 
-                logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
+                logger.info(
+                    f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
                 results = await asyncio.gather(*tasks)
 
                 # Check results
@@ -184,11 +196,14 @@ class MarkPositionScraperAsync:
                     page_idx = batch_start + idx
                     if page_posts is None:
                         # 404 or Error
-                        logger.info(f"Page {page_idx} returned 404 or empty. Stopping.")
+                        logger.info(
+                            f"Page {page_idx} returned 404 or empty. Stopping.")
                         stop_detected = True
-                        break # Don't process further pages in this batch effectively (though they were fetched)
+                        # Don't process further pages in this batch effectively (though they were fetched)
+                        break
                     elif len(page_posts) == 0:
-                        logger.info(f"Page {page_idx} has no articles. Stopping.")
+                        logger.info(
+                            f"Page {page_idx} has no articles. Stopping.")
                         stop_detected = True
                         break
                     else:
@@ -228,16 +243,18 @@ class MarkPositionScraperAsync:
         try:
             with open(self.output_csv, 'w', newline='', encoding='utf-8') as f:
                 writer = csv.writer(f)
-                writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
+                writer.writerow(
+                    ['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        self.sanitize_for_csv(post.get('title', '')),
+                        self.sanitize_for_csv(post.get('date', '')),
+                        self.sanitize_for_csv(post.get('author', '')),
+                        self.sanitize_for_csv(
+                            ", ".join(post.get('categories', []))),
+                        self.sanitize_for_csv(post.get('external_link', '')),
+                        self.sanitize_for_csv(post.get('domain', '')),
+                        self.sanitize_for_csv(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
@@ -255,17 +272,25 @@ class MarkPositionScraperAsync:
             with open(self.output_txt, 'w', encoding='utf-8') as f:
                 for link in sorted_links:
                     f.write(link + '\n')
-            logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
+            logger.info(
+                f"Saved {len(sorted_links)} unique links to {self.output_txt}")
         except IOError as e:
             logger.error(f"Failed to save TXT: {e}")
 
+
 def main():
-    parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
-    parser.add_argument("--json", default="links.json", help="Output JSON filename")
-    parser.add_argument("--csv", default="links.csv", help="Output CSV filename")
-    parser.add_argument("--txt", default="unique_links.txt", help="Output TXT filename for unique links")
-    parser.add_argument("--limit", type=int, help="Limit number of pages to scrape")
-    parser.add_argument("--concurrency", type=int, default=5, help="Number of concurrent requests")
+    parser = argparse.ArgumentParser(
+        description="Async Scraper for markposition.wordpress.com")
+    parser.add_argument("--json", default="links.json",
+                        help="Output JSON filename")
+    parser.add_argument("--csv", default="links.csv",
+                        help="Output CSV filename")
+    parser.add_argument("--txt", default="unique_links.txt",
+                        help="Output TXT filename for unique links")
+    parser.add_argument("--limit", type=int,
+                        help="Limit number of pages to scrape")
+    parser.add_argument("--concurrency", type=int, default=5,
+                        help="Number of concurrent requests")
 
     args = parser.parse_args()
 
@@ -278,6 +303,7 @@ def main():
     )
 
     asyncio.run(scraper.scrape())
+
 
 if __name__ == "__main__":
     main()
