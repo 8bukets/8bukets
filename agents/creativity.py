@@ -2,6 +2,7 @@ from .base_agent import BaseAgent
 from textblob import Word
 from textblob import TextBlob
 
+
 class CreativityAgent(BaseAgent):
     def __init__(self):
         super().__init__("Creativity")

@@ -4,13 +4,13 @@ import json
 import time
 import logging
 import argparse
-import sys
 from urllib.parse import urlparse
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from dataclasses import dataclass, asdict
 from typing import List, Optional
 from markdownify import markdownify as md
+
 
 @dataclass
 class Post:
@@ -23,7 +23,9 @@ class Post:
     external_links: List[str]
     image_url: Optional[str]
 
+
 BASE_URL = "https://informaticmagazine.data.blog"
+
 
 def configure_logging(verbose: bool):
     level = logging.DEBUG if verbose else logging.INFO
@@ -31,6 +33,7 @@ def configure_logging(verbose: bool):
         level=level,
         format='%(asctime)s - %(levelname)s - %(message)s'
     )
+
 
 def get_session():
     """
@@ -54,6 +57,7 @@ def get_session():
 
     return session
 
+
 def is_external_link(link_url: str, base_url: str) -> bool:
     """
     Checks if a link is external to the base domain.
@@ -72,6 +76,7 @@ def is_external_link(link_url: str, base_url: str) -> bool:
         return False
 
     return parsed_link.netloc != parsed_base.netloc
+
 
 def parse_post_html(post_soup, base_url: str) -> Post:
     """
@@ -118,7 +123,7 @@ def parse_post_html(post_soup, base_url: str) -> Post:
     img = post_soup.find('div', class_='featured-image')
     image_url = None
     if img and img.find('img'):
-            image_url = img.find('img').get('src')
+        image_url = img.find('img').get('src')
 
     return Post(
         title=title,
@@ -131,7 +136,8 @@ def parse_post_html(post_soup, base_url: str) -> Post:
         image_url=image_url
     )
 
-def scrape(output_file: str, max_pages: int = 0):
+
+def scrape(output_file: Optional[str] = None, max_pages: int = 0) -> List[Post]:
     session = get_session()
     all_posts = []
     page = 1
@@ -167,30 +173,40 @@ def scrape(output_file: str, max_pages: int = 0):
         if nav_previous and nav_previous.find('a'):
             current_url = nav_previous.find('a')['href']
             page += 1
-            time.sleep(1) # Polite delay
+            time.sleep(1)  # Polite delay
         else:
             current_url = None
             logging.info("No more pages found.")
 
     logging.info(f"Total posts scraped: {len(all_posts)}")
 
-    try:
-        with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump([asdict(p) for p in all_posts], f, indent=4, ensure_ascii=False)
-        logging.info(f"Saved to {output_file}")
-    except IOError as e:
-        logging.error(f"Failed to save output to {output_file}: {e}")
+    if output_file:
+        try:
+            with open(output_file, 'w', encoding='utf-8') as f:
+                json.dump([asdict(p) for p in all_posts],
+                          f, indent=4, ensure_ascii=False)
+            logging.info(f"Saved to {output_file}")
+        except IOError as e:
+            logging.error(f"Failed to save output to {output_file}: {e}")
+
+    return all_posts
+
 
 def main():
-    parser = argparse.ArgumentParser(description="Scrape informaticmagazine.data.blog")
-    parser.add_argument("-o", "--output", default="data.json", help="Output JSON file path (default: data.json)")
-    parser.add_argument("-n", "--pages", type=int, default=0, help="Maximum number of pages to scrape (0 for all)")
-    parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose logging")
+    parser = argparse.ArgumentParser(
+        description="Scrape informaticmagazine.data.blog")
+    parser.add_argument("-o", "--output", default="data.json",
+                        help="Output JSON file path (default: data.json)")
+    parser.add_argument("-n", "--pages", type=int, default=0,
+                        help="Maximum number of pages to scrape (0 for all)")
+    parser.add_argument("-v", "--verbose", action="store_true",
+                        help="Enable verbose logging")
 
     args = parser.parse_args()
 
     configure_logging(args.verbose)
     scrape(args.output, args.pages)
+
 
 if __name__ == "__main__":
     main()

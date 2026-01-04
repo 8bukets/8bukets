@@ -1,6 +1,7 @@
 from .base_agent import BaseAgent
 import random
 
+
 class AdvertisingAgent(BaseAgent):
     def __init__(self):
         super().__init__("Advertising")
@@ -27,7 +28,8 @@ class AdvertisingAgent(BaseAgent):
         for word, count in keywords[:5]:
             # Simulated logic: rarer words might have lower competition but high specificity
             # We assign a fake CPC value based on word length (just as a heuristic)
-            simulated_cpc = round(random.uniform(0.5, 5.0) + (len(word) * 0.1), 2)
+            simulated_cpc = round(random.uniform(
+                0.5, 5.0) + (len(word) * 0.1), 2)
             competition = "High" if count > 5 else "Low"
 
             # "Antigravity" pick: Low competition, Decent CPC

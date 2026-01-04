@@ -2,6 +2,7 @@ import json
 import os
 import logging
 
+
 class LearningModule:
     def __init__(self, db_file="knowledge_base.json"):
         self.db_file = db_file

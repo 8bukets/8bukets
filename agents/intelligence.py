@@ -2,6 +2,7 @@ from .base_agent import BaseAgent
 from learning_module import LearningModule
 import datetime
 
+
 class IntelligenceAgent(BaseAgent):
     def __init__(self):
         super().__init__("Intelligence")
@@ -33,17 +34,21 @@ class IntelligenceAgent(BaseAgent):
         if isinstance(history, dict):
             hist_avg = history.get("historical_average_sentiment", 0)
             if sentiment > hist_avg:
-                insights.append("Current sentiment is improving over historical average.")
+                insights.append(
+                    "Current sentiment is improving over historical average.")
             else:
-                insights.append("Current sentiment is dipping. Investigating engagement drivers.")
+                insights.append(
+                    "Current sentiment is dipping. Investigating engagement drivers.")
 
         # 2. Ad-Driven Strategy
         target = ad_data.get("target_audience", "General")
         insights.append(f"Align content tone for: {target}.")
 
-        antigravity_picks = [item['keyword'] for item in ad_data.get("bid_strategy", []) if "Antigravity" in item['strategy']]
+        antigravity_picks = [item['keyword'] for item in ad_data.get(
+            "bid_strategy", []) if "Antigravity" in item['strategy']]
         if antigravity_picks:
-            insights.append(f"Focus on 'Antigravity' keywords for ROI: {', '.join(antigravity_picks)}.")
+            insights.append(
+                f"Focus on 'Antigravity' keywords for ROI: {', '.join(antigravity_picks)}.")
 
         # 3. Content Focus Recommendation
         recommended_focus = keywords[0][0] if keywords else "General"

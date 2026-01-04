@@ -5,6 +5,7 @@ import logging
 import sys
 import subprocess
 
+
 class AnalyzerAgent(BaseAgent):
     def __init__(self):
         super().__init__("Analyzer")
@@ -13,7 +14,8 @@ class AnalyzerAgent(BaseAgent):
             TextBlob("test").sentiment
         except Exception:
             self.logger.warning("TextBlob corpora missing. Downloading...")
-            subprocess.run([sys.executable, "-m", "textblob.download_corpora"], check=True)
+            subprocess.run(
+                [sys.executable, "-m", "textblob.download_corpora"], check=True)
 
     def perform_task(self, data):
         # Data is output from Researcher (dict with blog_posts and google_listings)

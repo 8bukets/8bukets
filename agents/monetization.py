@@ -1,5 +1,6 @@
 from .base_agent import BaseAgent
 
+
 class MonetizationAgent(BaseAgent):
     def __init__(self):
         super().__init__("Monetization")
@@ -13,7 +14,8 @@ class MonetizationAgent(BaseAgent):
         for post in data:
             content = post.get('content', '').lower()
             if 'adsense' not in content and 'affiliate' not in content:
-                opportunities.append(f"Post '{post.get('title')}' has no obvious monetization terms.")
+                opportunities.append(
+                    f"Post '{post.get('title')}' has no obvious monetization terms.")
 
         # Simple heuristic
         if len(opportunities) > 5:
