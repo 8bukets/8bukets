@@ -26,6 +26,7 @@ def generate_report(data, output_file):
 
     # 1. Domain Analysis
     domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
+    total_domains = len(domains)
     domain_counts = Counter(domains).most_common(10)
 
     # 2. Category Analysis
@@ -34,6 +35,7 @@ def generate_report(data, output_file):
         cats = p.get('categories', [])
         if cats:
             all_categories.extend(cats)
+    total_categories = len(all_categories)
     category_counts = Counter(all_categories).most_common(10)
 
     # 3. Date Analysis
@@ -66,35 +68,49 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
+    md.append("# 📊 Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
+    # Key Insights
+    md.append("\n## 💡 Key Insights")
+    if domain_counts:
+        top_domain = domain_counts[0]
+        md.append(f"- **Top Domain:** `{top_domain[0]}` with **{top_domain[1]}** references.")
+    if category_counts:
+        top_cat = category_counts[0]
+        md.append(f"- **Top Category:** `{top_cat[0]}` appears in **{top_cat[1]}** posts.")
+    md.append(f"- **Activity:** {total_posts} posts published between {start_date} and {end_date}.")
+
+    md.append("\n## 📈 General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
 
-    md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
+    md.append("\n## 🌐 Top 10 Referenced Domains")
+    md.append("| Domain | Count | % |")
+    md.append("| :--- | :---: | :---: |")
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        pct = (count / total_domains * 100) if total_domains else 0
+        md.append(f"| {domain} | {count} | {pct:.1f}% |")
 
-    md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
+    md.append("\n## 📂 Top 10 Categories")
+    md.append("| Category | Count | % |")
+    md.append("| :--- | :---: | :---: |")
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        pct = (count / total_categories * 100) if total_categories else 0
+        md.append(f"| {cat} | {count} | {pct:.1f}% |")
 
-    md.append("\n## Posts by Year")
+    md.append("\n## 📅 Posts by Year")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
     for year, count in year_counts:
         md.append(f"| {year} | {count} |")
 
-    md.append("\n## Authors")
+    md.append("\n## ✍️ Authors")
+    md.append("| Author | Posts |")
+    md.append("| :--- | :---: |")
     for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+        md.append(f"| {author} | {count} |")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
