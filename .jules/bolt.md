@@ -1,0 +1,3 @@
+## 2024-05-23 - Offloading Blocking Tasks
+**Learning:** In an `asyncio` application like a scraper, CPU-bound tasks (such as parsing large HTML with BeautifulSoup) block the event loop, negating the benefits of concurrency. Moving these tasks to a `ProcessPoolExecutor` allows the loop to remain responsive and fetch pages in parallel while parsing happens in background processes.
+**Action:** Identify synchronous CPU-bound bottlenecks in async applications and offload them to `loop.run_in_executor` with a `ProcessPoolExecutor`. Ensure offloaded functions and their dependencies are picklable (top-level functions).
