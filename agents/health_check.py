@@ -2,6 +2,7 @@ from .base_agent import BaseAgent
 import requests
 import urllib.robotparser
 
+
 class HealthCheckAgent(BaseAgent):
     def __init__(self):
         super().__init__("HealthCheck")

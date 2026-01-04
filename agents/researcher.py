@@ -1,10 +1,19 @@
 from .base_agent import BaseAgent
-import subprocess
-import sys
-import json
-import os
-import logging
-from typing import List, Dict
+from dataclasses import asdict
+
+# Import scrapers directly
+try:
+    import scrape_informatic
+    import google_search_scraper
+except ImportError:
+    # Handle cases where run from inside agents directory or package issues
+    import sys
+    import os
+    sys.path.append(os.path.dirname(
+        os.path.dirname(os.path.abspath(__file__))))
+    import scrape_informatic
+    import google_search_scraper
+
 
 class ResearcherAgent(BaseAgent):
     def __init__(self):
@@ -13,7 +22,11 @@ class ResearcherAgent(BaseAgent):
     def perform_task(self, data):
         # Data can specify limits or targets
         limit = data.get('limit', 1) if data else 1
-        output_file = data.get('output_file', 'data.json') if data else 'data.json'
+        # output_file is no longer strictly needed for data transfer, but we can still save it if desired
+        # or we can remove it. For now, we will skip saving to file unless explicitly requested or for debugging
+        # But to be safe and compatible with previous behavior if anything relies on the file existing:
+        output_file = data.get(
+            'output_file', 'data.json') if data else 'data.json'
 
         self.logger.info(f"Scraping content (limit {limit} pages)...")
 
@@ -21,15 +34,12 @@ class ResearcherAgent(BaseAgent):
 
         # 1. Scrape Blog Content
         try:
-            # We assume scrape_informatic.py is in the root directory
-            cmd = [sys.executable, "scrape_informatic.py", "-n", str(limit), "-o", output_file]
-            subprocess.run(cmd, check=True)
+            # Direct call to scrape function
+            # scrape returns List[Post] objects
+            posts = scrape_informatic.scrape(
+                output_file=output_file, max_pages=limit)
+            results['blog_posts'] = [asdict(p) for p in posts]
 
-            if os.path.exists(output_file):
-                with open(output_file, 'r', encoding='utf-8') as f:
-                    results['blog_posts'] = json.load(f)
-            else:
-                results['blog_posts'] = []
         except Exception as e:
             self.logger.error(f"Blog scraping failed: {e}")
             results['blog_posts'] = []
@@ -37,19 +47,13 @@ class ResearcherAgent(BaseAgent):
         # 2. Check Google Listings
         self.logger.info("Checking Google Listings...")
         try:
-            search_output = "google_search_results.json"
-            # We assume google_search_scraper.py is in the root directory
-            # We need to create google_search_scraper.py if it doesn't exist or is not importable
-            # Since we are using subprocess, we can call it.
-            # Wait, I need to restore google_search_scraper.py first.
-            cmd = [sys.executable, "google_search_scraper.py", "-o", search_output]
-            subprocess.run(cmd, check=True)
+            # Direct call to google search
+            # We use the defaults from the script if not specified
+            query = "site:informaticmagazine.data.blog"
+            search_results = google_search_scraper.perform_google_search(
+                query, num_results=10)
+            results['google_listings'] = search_results
 
-            if os.path.exists(search_output):
-                with open(search_output, 'r', encoding='utf-8') as f:
-                    results['google_listings'] = json.load(f)
-            else:
-                results['google_listings'] = []
         except Exception as e:
             self.logger.error(f"Google search scraping failed: {e}")
             results['google_listings'] = []

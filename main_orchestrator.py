@@ -18,6 +18,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger("Orchestrator")
 
+
 def run_orchestration(save_report=True):
     logger.info(">>> STARTING AUTONOMOUS AGENT SWARM (v2.0 - Evolving) <<<")
     report_data = {}
@@ -68,7 +69,8 @@ def run_orchestration(save_report=True):
 
     # 6. Monetization
     monetization_agent = MonetizationAgent()
-    monetization_result = monetization_agent.run(raw_data.get('blog_posts', []))
+    monetization_result = monetization_agent.run(
+        raw_data.get('blog_posts', []))
     report_data['monetization'] = monetization_result
 
     # 7. Create Content
@@ -83,6 +85,7 @@ def run_orchestration(save_report=True):
 
     return report_data
 
+
 def save_daily_report(data):
     today = datetime.datetime.now().strftime("%Y-%m-%d")
     report_dir = "reports"
@@ -96,15 +99,19 @@ def save_daily_report(data):
         # Health
         f.write("## 1. System Health & Environment\n")
         status = data.get('health', {})
-        f.write(f"- **Site Status:** {status.get('site_status')} (Code: {status.get('site_code')})\n")
-        f.write(f"- **Robots.txt Access:** {status.get('robots_txt_accessible')}\n")
-        f.write(f"- **Googlebot Allowed:** {status.get('googlebot_allowed')}\n\n")
+        f.write(
+            f"- **Site Status:** {status.get('site_status')} (Code: {status.get('site_code')})\n")
+        f.write(
+            f"- **Robots.txt Access:** {status.get('robots_txt_accessible')}\n")
+        f.write(
+            f"- **Googlebot Allowed:** {status.get('googlebot_allowed')}\n\n")
 
         # Research Stats
         research = data.get('research', {})
         f.write("## 2. Research Summary\n")
         f.write(f"- **New Posts Scraped:** {research.get('posts_scraped')}\n")
-        f.write(f"- **Google Listings Found:** {research.get('google_results')}\n\n")
+        f.write(
+            f"- **Google Listings Found:** {research.get('google_results')}\n\n")
 
         # Intelligence & Evolution
         intel = data.get('intelligence', {})
@@ -121,7 +128,8 @@ def save_daily_report(data):
         f.write(f"- **Target Audience:** {ads.get('target_audience')}\n")
         f.write("- **Bid Strategy:**\n")
         for bid in ads.get('bid_strategy', []):
-            f.write(f"  - **{bid['keyword']}**: {bid['suggested_bid']} ({bid['strategy']})\n")
+            f.write(
+                f"  - **{bid['keyword']}**: {bid['suggested_bid']} ({bid['strategy']})\n")
         f.write("\n")
 
         # Monetization
@@ -146,6 +154,7 @@ def save_daily_report(data):
         f.write(draft.get('draft_content', ''))
 
     logger.info(f"Report saved to {report_file}")
+
 
 if __name__ == "__main__":
     run_orchestration()

@@ -11,6 +11,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger("AutonomousRunner")
 
+
 def job():
     logger.info("Executing scheduled daily orchestration job...")
     try:
@@ -19,10 +20,13 @@ def job():
     except Exception as e:
         logger.error(f"Daily job failed: {e}")
 
+
 def main():
     parser = argparse.ArgumentParser(description="Autonomous Agent Runner")
-    parser.add_argument("--now", action="store_true", help="Run the job immediately once and exit")
-    parser.add_argument("--interval", type=int, default=1, help="Interval in minutes for testing (default 24h normally)")
+    parser.add_argument("--now", action="store_true",
+                        help="Run the job immediately once and exit")
+    parser.add_argument("--interval", type=int, default=1,
+                        help="Interval in minutes for testing (default 24h normally)")
 
     args = parser.parse_args()
 
@@ -39,6 +43,7 @@ def main():
     while True:
         schedule.run_pending()
         time.sleep(1)
+
 
 if __name__ == "__main__":
     main()
