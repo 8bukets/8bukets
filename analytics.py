@@ -66,35 +66,49 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
+    md.append("# 📊 Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
-    md.append(f"- **Total Posts:** {total_posts}")
+    # Highlights
+    top_author = author_counts[0][0] if author_counts else "N/A"
+    top_domain = domain_counts[0][0] if domain_counts else "N/A"
+    top_category = category_counts[0][0] if category_counts else "N/A"
+
+    md.append("\n## 🌟 Highlights")
+    md.append(f"- **Top Author:** {top_author}")
+    md.append(f"- **Top Domain:** {top_domain}")
+    md.append(f"- **Top Category:** {top_category}")
+
+    md.append("\n## 📈 General Statistics")
+    md.append(f"- **Total Posts:** {total_posts:,}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append(f"- **Unique Domains Linked:** {len(set(domains)):,}")
 
-    md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
+    md.append("\n## 🌐 Top 10 Referenced Domains")
+    md.append("| Domain | Count | % of Total |")
+    md.append("| :--- | :---: | :---: |")
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        percentage = (count / len(domains) * 100) if domains else 0
+        md.append(f"| {domain} | {count:,} | {percentage:.1f}% |")
 
-    md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
+    md.append("\n## 🏷️ Top 10 Categories")
+    md.append("| Category | Count | % of Posts |")
+    md.append("| :--- | :---: | :---: |")
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        # Note: A post can have multiple categories, so sum(count) > total_posts
+        # We calculate % based on total number of posts for context
+        percentage = (count / total_posts * 100) if total_posts else 0
+        md.append(f"| {cat} | {count:,} | {percentage:.1f}% |")
 
-    md.append("\n## Posts by Year")
+    md.append("\n## 📅 Posts by Year")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
     for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+        md.append(f"| {year} | {count:,} |")
 
-    md.append("\n## Authors")
+    md.append("\n## ✍️ Authors")
     for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+        md.append(f"- {author}: {count:,} posts")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
