@@ -6,9 +6,9 @@ import csv
 import re
 import argparse
 import logging
-import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
+from concurrent.futures import ProcessPoolExecutor
 
 # Configure logging
 logging.basicConfig(
@@ -20,46 +20,135 @@ logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
 
+
+def clean_text(text: str) -> str:
+    """Normalize whitespace and remove non-breaking spaces."""
+    if not text:
+        return ""
+    text = text.replace('\xa0', ' ')
+    return re.sub(r'\s+', ' ', text).strip()
+
+
+def is_url(text: str) -> bool:
+    """Check if text looks like a URL."""
+    return re.match(r'^https?://', text.strip()) is not None
+
+
+def extract_categories(article: BeautifulSoup) -> List[str]:
+    """Extract categories from article class names."""
+    categories = []
+    if article.get('class'):
+        for cls in article['class']:
+            if cls.startswith('category-'):
+                cat_name = cls.replace(
+                    'category-',
+                    '').replace(
+                    '-',
+                    ' ').title()
+                categories.append(cat_name)
+    return categories
+
+
+def extract_domain(url: str) -> Optional[str]:
+    """Extract domain from URL."""
+    if not url:
+        return None
+    try:
+        domain = urlparse(url).netloc.replace('www.', '')
+        return domain if domain else None
+    except BaseException:
+        return None
+
+
+def parse_page_sync(html: str) -> List[Dict]:
+    """
+    CPU-bound parsing function to be run in a separate process.
+    Parses HTML and extracts article data.
+    """
+    soup = BeautifulSoup(html, 'html.parser')
+    articles = soup.find_all('article', class_='post')
+    page_posts = []
+
+    if not articles:
+        return []
+
+    for article in articles:
+        post_data = {}
+
+        # Title
+        title_text = ""
+        title_tag = article.select_one('h1.entry-title a')
+        if title_tag:
+            title_text = clean_text(title_tag.get_text())
+            post_data['title'] = title_text
+
+        # Date
+        date_tag = article.select_one('time.entry-date')
+        if date_tag:
+            post_data['date'] = clean_text(date_tag.get_text())
+            post_data['datetime'] = date_tag.get('datetime')
+
+        # Author
+        author_tag = article.select_one('.author.vcard .fn')
+        if author_tag:
+            post_data['author'] = clean_text(author_tag.get_text())
+        else:
+            post_data['author'] = None
+
+        # Categories
+        post_data['categories'] = extract_categories(article)
+
+        # External Link
+        external_link = None
+        content_div = article.select_one('.entry-content')
+
+        if content_div:
+            link_tag = content_div.select_one('a')
+            if link_tag:
+                external_link = link_tag.get('href')
+
+            if not external_link:
+                iframe_tag = content_div.select_one('iframe')
+                if iframe_tag:
+                    external_link = iframe_tag.get('src')
+
+        if not external_link and title_text and is_url(title_text):
+            external_link = title_text
+
+        post_data['external_link'] = external_link
+        post_data['domain'] = extract_domain(external_link)
+
+        # Post URL
+        if title_tag:
+            post_data['post_url'] = title_tag.get('href')
+
+        page_posts.append(post_data)
+
+    return page_posts
+
+
 class MarkPositionScraperAsync:
-    def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
+    def __init__(
+            self,
+            output_json: str,
+            output_csv: str,
+            output_txt: str,
+            max_pages: Optional[int] = None,
+            concurrency: int = 5):
         self.output_json = output_json
         self.output_csv = output_csv
         self.output_txt = output_txt
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+        # Use ProcessPoolExecutor for CPU-bound parsing
+        # We limit workers to avoid excessive overhead, but allow parallelism
+        self.executor = ProcessPoolExecutor(max_workers=min(concurrency, 4))
 
-    def clean_text(self, text: str) -> str:
-        """Normalize whitespace and remove non-breaking spaces."""
-        if not text:
-            return ""
-        text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
-
-    def is_url(self, text: str) -> bool:
-        """Check if text looks like a URL."""
-        return re.match(r'^https?://', text.strip()) is not None
-
-    def extract_categories(self, article: BeautifulSoup) -> List[str]:
-        """Extract categories from article class names."""
-        categories = []
-        if article.get('class'):
-            for cls in article['class']:
-                if cls.startswith('category-'):
-                    cat_name = cls.replace('category-', '').replace('-', ' ').title()
-                    categories.append(cat_name)
-        return categories
-
-    def extract_domain(self, url: str) -> Optional[str]:
-        """Extract domain from URL."""
-        if not url:
-            return None
-        try:
-            return urlparse(url).netloc.replace('www.', '')
-        except:
-            return None
-
-    async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
+    async def fetch_page(
+            self,
+            session: aiohttp.ClientSession,
+            page_num: int) -> Optional[str]:
         url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
         try:
             async with session.get(url) as response:
@@ -71,67 +160,23 @@ class MarkPositionScraperAsync:
             logger.error(f"Error fetching page {page_num}: {e}")
             return None
 
-    async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
-        articles = soup.find_all('article', class_='post')
-        page_posts = []
+    def sanitize_for_csv(self, value):
+        """Sanitize values to prevent CSV injection."""
+        if value is None:
+            return ""
+        value = str(value)
+        if value and value[0] in ('=', '+', '-', '@'):
+            return "'" + value
+        return value
 
-        if not articles:
-            return []
-
-        for article in articles:
-            post_data = {}
-
-            # Title
-            title_text = ""
-            title_tag = article.select_one('h1.entry-title a')
-            if title_tag:
-                title_text = self.clean_text(title_tag.get_text())
-                post_data['title'] = title_text
-
-            # Date
-            date_tag = article.select_one('time.entry-date')
-            if date_tag:
-                post_data['date'] = self.clean_text(date_tag.get_text())
-                post_data['datetime'] = date_tag.get('datetime')
-
-            # Author
-            author_tag = article.select_one('.author.vcard .fn')
-            if author_tag:
-                post_data['author'] = self.clean_text(author_tag.get_text())
-            else:
-                post_data['author'] = None
-
-            # Categories
-            post_data['categories'] = self.extract_categories(article)
-
-            # External Link
-            external_link = None
-            content_div = article.select_one('.entry-content')
-
-            if content_div:
-                link_tag = content_div.select_one('a')
-                if link_tag:
-                    external_link = link_tag.get('href')
-
-                if not external_link:
-                    iframe_tag = content_div.select_one('iframe')
-                    if iframe_tag:
-                        external_link = iframe_tag.get('src')
-
-            if not external_link and title_text and self.is_url(title_text):
-                external_link = title_text
-
-            post_data['external_link'] = external_link
-            post_data['domain'] = self.extract_domain(external_link)
-
-            # Post URL
-            if title_tag:
-                post_data['post_url'] = title_tag.get('href')
-
-            page_posts.append(post_data)
-
-        return page_posts
+    async def fetch_and_parse(self, session, page_num, sem):
+        async with sem:
+            html = await self.fetch_page(session, page_num)
+            if html:
+                # Offload CPU-bound parsing to ProcessPoolExecutor
+                loop = asyncio.get_running_loop()
+                return await loop.run_in_executor(self.executor, parse_page_sync, html)
+            return None
 
     async def scrape(self):
         page_num = 1
@@ -144,12 +189,18 @@ class MarkPositionScraperAsync:
 
         # Open files for incremental writing
         with open(self.output_json, 'w', encoding='utf-8') as json_f, \
-             open(self.output_csv, 'w', newline='', encoding='utf-8') as csv_f, \
-             open(self.output_txt, 'w', encoding='utf-8') as txt_f:
+                open(self.output_csv, 'w', newline='', encoding='utf-8') as csv_f, \
+                open(self.output_txt, 'w', encoding='utf-8') as txt_f:
 
             # Initialize CSV
             csv_writer = csv.writer(csv_f)
-            csv_writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
+            csv_writer.writerow(['Title',
+                                 'Date',
+                                 'Author',
+                                 'Categories',
+                                 'External Link',
+                                 'Domain',
+                                 'Post URL'])
 
             # Initialize JSON
             json_f.write('[')
@@ -174,12 +225,16 @@ class MarkPositionScraperAsync:
                                 active = False
                                 break
 
-                            tasks.append(self.fetch_and_parse(session, current_page, sem))
+                            tasks.append(
+                                self.fetch_and_parse(
+                                    session, current_page, sem))
 
                         if not tasks:
                             break
 
-                        logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
+                        logger.info(
+                            f"Fetching pages {batch_start} to {
+                                batch_start + len(tasks) - 1}...")
                         results = await asyncio.gather(*tasks)
 
                         # Check results
@@ -191,25 +246,30 @@ class MarkPositionScraperAsync:
                             page_idx = batch_start + idx
                             if page_posts is None:
                                 # 404 or Error
-                                logger.info(f"Page {page_idx} returned 404 or empty. Stopping.")
+                                logger.info(
+                                    f"Page {page_idx} returned 404 or empty. Stopping.")
                                 stop_detected = True
                                 break
                             elif len(page_posts) == 0:
-                                logger.info(f"Page {page_idx} has no articles. Stopping.")
+                                logger.info(
+                                    f"Page {page_idx} has no articles. Stopping.")
                                 stop_detected = True
                                 break
                             else:
                                 # Write this page's posts incrementally
-                                first_json_item = self.save_batch(page_posts, json_f, csv_writer, txt_f, seen_links, first_json_item)
+                                first_json_item = self.save_batch(
+                                    page_posts, json_f, csv_writer, txt_f, seen_links, first_json_item)
                                 total_batch_posts += len(page_posts)
 
                         if total_batch_posts > 0:
-                            logger.info(f"Saved {total_batch_posts} posts from batch.")
+                            logger.info(
+                                f"Saved {total_batch_posts} posts from batch.")
 
                         if stop_detected:
                             break
 
-                        if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
+                        if self.max_pages and (
+                                batch_start + len(tasks) - 1) >= self.max_pages:
                             logger.info("Reached max pages limit.")
                             break
 
@@ -219,18 +279,27 @@ class MarkPositionScraperAsync:
             finally:
                 # Finalize JSON even on error
                 json_f.write('\n]')
+                # Shutdown the executor
+                self.executor.shutdown(wait=True)
 
-    def save_batch(self, posts: List[Dict], json_f, csv_writer, txt_f, seen_links: Set[str], is_first_item: bool) -> bool:
+    def save_batch(
+            self,
+            posts: List[Dict],
+            json_f,
+            csv_writer,
+            txt_f,
+            seen_links: Set[str],
+            is_first_item: bool) -> bool:
         for post in posts:
             # CSV
             csv_writer.writerow([
-                post.get('title', ''),
-                post.get('date', ''),
-                post.get('author', ''),
-                ", ".join(post.get('categories', [])),
-                post.get('external_link', ''),
-                post.get('domain', ''),
-                post.get('post_url', '')
+                self.sanitize_for_csv(post.get('title', '')),
+                self.sanitize_for_csv(post.get('date', '')),
+                self.sanitize_for_csv(post.get('author', '')),
+                self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                self.sanitize_for_csv(post.get('external_link', '')),
+                self.sanitize_for_csv(post.get('domain', '')),
+                self.sanitize_for_csv(post.get('post_url', ''))
             ])
 
             # TXT
@@ -250,20 +319,31 @@ class MarkPositionScraperAsync:
 
         return is_first_item
 
-    async def fetch_and_parse(self, session, page_num, sem):
-        async with sem:
-            html = await self.fetch_page(session, page_num)
-            if html:
-                return await self.parse_page(html)
-            return None
 
 def main():
-    parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
-    parser.add_argument("--json", default="links.json", help="Output JSON filename")
-    parser.add_argument("--csv", default="links.csv", help="Output CSV filename")
-    parser.add_argument("--txt", default="unique_links.txt", help="Output TXT filename for unique links")
-    parser.add_argument("--limit", type=int, help="Limit number of pages to scrape")
-    parser.add_argument("--concurrency", type=int, default=5, help="Number of concurrent requests")
+    parser = argparse.ArgumentParser(
+        description="Async Scraper for markposition.wordpress.com")
+    parser.add_argument(
+        "--json",
+        default="links.json",
+        help="Output JSON filename")
+    parser.add_argument(
+        "--csv",
+        default="links.csv",
+        help="Output CSV filename")
+    parser.add_argument(
+        "--txt",
+        default="unique_links.txt",
+        help="Output TXT filename for unique links")
+    parser.add_argument(
+        "--limit",
+        type=int,
+        help="Limit number of pages to scrape")
+    parser.add_argument(
+        "--concurrency",
+        type=int,
+        default=5,
+        help="Number of concurrent requests")
 
     args = parser.parse_args()
 
@@ -276,6 +356,7 @@ def main():
     )
 
     asyncio.run(scraper.scrape())
+
 
 if __name__ == "__main__":
     main()
