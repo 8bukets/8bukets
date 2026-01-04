@@ -99,7 +99,24 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    # UX Improvement: Print summary to console
+    print("\n" + "="*40)
+    print(f"📊 Analysis Complete!")
+    print("="*40)
+    print(f"📄 Total Posts:    {total_posts}")
+    print(f"📅 Date Range:     {start_date} to {end_date}")
+    print(f"🔗 Unique Domains: {len(set(domains))}")
+
+    print("\n🏆 Top Categories:")
+    if category_counts:
+        for cat, count in category_counts[:3]:
+            print(f"  • {cat}: {count}")
+    else:
+        print("  • No categories found")
+
+    print("\n" + "-"*40)
+    print(f"📝 Report saved to: {output_file}")
+    print("="*40 + "\n")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
