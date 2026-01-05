@@ -21,6 +21,12 @@ def get_domain(url):
     except:
         return None
 
+def create_bar_chart(value, max_value, width=20):
+    if max_value == 0:
+        return "░" * width
+    filled = int((value / max_value) * width)
+    return "█" * filled + "░" * (width - filled)
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
@@ -75,10 +81,16 @@ def generate_report(data, output_file):
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
 
     md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Domain | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+
+    max_domain_count = domain_counts[0][1] if domain_counts else 0
+    total_domains = len(domains)
+
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        bar = create_bar_chart(count, max_domain_count)
+        pct = (count / total_domains * 100) if total_domains else 0
+        md.append(f"| {domain} | {count} | `{bar}` {pct:.1f}% |")
 
     md.append("\n## Top 10 Categories")
     md.append("| Category | Count |")
@@ -87,10 +99,16 @@ def generate_report(data, output_file):
         md.append(f"| {cat} | {count} |")
 
     md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Year | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+
+    max_year_count = year_counts[0][1] if year_counts else 0
+    total_years = len(dates) # dates list corresponds to years
+
     for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+        bar = create_bar_chart(count, max_year_count)
+        pct = (count / total_years * 100) if total_years else 0
+        md.append(f"| {year} | {count} | `{bar}` {pct:.1f}% |")
 
     md.append("\n## Authors")
     for author, count in author_counts:
