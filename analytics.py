@@ -12,6 +12,24 @@ def load_data(filepath):
         print(f"Error: File '{filepath}' not found.")
         sys.exit(1)
 
+def create_bar_chart(value, max_value, width=20):
+    """Generates an ASCII bar chart."""
+    if max_value == 0:
+        return "░" * width
+
+    filled_len = int((value / max_value) * width)
+
+    # Clamp to width to prevent overflow
+    if filled_len > width:
+        filled_len = width
+
+    # Ensure at least one block if value > 0
+    if value > 0 and filled_len == 0:
+        filled_len = 1
+
+    empty_len = width - filled_len
+    return "█" * filled_len + "░" * empty_len
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
@@ -66,26 +84,36 @@ def generate_report(data, output_file):
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
 
     md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Domain | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_domain = domain_counts[0][1] if domain_counts else 0
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        bar = create_bar_chart(count, max_domain)
+        md.append(f"| {domain} | {count} | {bar} |")
 
     md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Category | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_cat = category_counts[0][1] if category_counts else 0
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        bar = create_bar_chart(count, max_cat)
+        md.append(f"| {cat} | {count} | {bar} |")
 
     md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Year | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_year = max([count for _, count in year_counts]) if year_counts else 0
     for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+        bar = create_bar_chart(count, max_year)
+        md.append(f"| {year} | {count} | {bar} |")
 
     md.append("\n## Authors")
+    md.append("| Author | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_author = author_counts[0][1] if author_counts else 0
     for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+        bar = create_bar_chart(count, max_author)
+        md.append(f"| {author} | {count} | {bar} |")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
