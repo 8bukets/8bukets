@@ -2,6 +2,7 @@ import logging
 import sys
 import datetime
 import os
+from utils.formatters import create_markdown_table, create_ascii_progress_bar
 from agents.researcher import ResearcherAgent
 from agents.analyzer import AnalyzerAgent
 from agents.intelligence import IntelligenceAgent
@@ -103,7 +104,10 @@ def save_daily_report(data):
         # Research Stats
         research = data.get('research', {})
         f.write("## 2. Research Summary\n")
-        f.write(f"- **New Posts Scraped:** {research.get('posts_scraped')}\n")
+        posts_scraped = research.get('posts_scraped', 0)
+        # Using a hypothetical target of 1000 for the bar chart
+        bar_chart = create_ascii_progress_bar(posts_scraped, 1000)
+        f.write(f"- **New Posts Scraped:** {posts_scraped} {bar_chart}\n")
         f.write(f"- **Google Listings Found:** {research.get('google_results')}\n\n")
 
         # Intelligence & Evolution
@@ -119,9 +123,15 @@ def save_daily_report(data):
         ads = data.get('advertising', {})
         f.write("## 4. Advertising & Targeting (Google Antigravity Colab)\n")
         f.write(f"- **Target Audience:** {ads.get('target_audience')}\n")
-        f.write("- **Bid Strategy:**\n")
-        for bid in ads.get('bid_strategy', []):
-            f.write(f"  - **{bid['keyword']}**: {bid['suggested_bid']} ({bid['strategy']})\n")
+        f.write("### Bid Strategy\n")
+
+        bid_strategy = ads.get('bid_strategy', [])
+        if bid_strategy:
+            headers = ["Keyword", "Suggested Bid", "Competition", "Strategy"]
+            rows = [[b.get('keyword'), b.get('suggested_bid'), b.get('competition'), b.get('strategy')] for b in bid_strategy]
+            f.write(create_markdown_table(headers, rows))
+        else:
+            f.write("No bid strategy data available.\n")
         f.write("\n")
 
         # Monetization
