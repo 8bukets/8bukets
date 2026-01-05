@@ -21,6 +21,15 @@ def get_domain(url):
     except:
         return None
 
+def _generate_ascii_bar(count, total, width=20):
+    """Generates an ASCII bar chart representation."""
+    if total == 0:
+        return "░" * width
+    percentage = count / total
+    filled_length = int(width * percentage)
+    bar = "▓" * filled_length + "░" * (width - filled_length)
+    return bar
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
@@ -79,9 +88,11 @@ def generate_report(data, output_file):
 
     # Domains: top 10 by count
     top_domains = domain_counts.most_common(10)
+    total_domain_refs = sum(domain_counts.values())
 
     # Categories: top 10 by count
     top_categories = category_counts.most_common(10)
+    total_category_refs = sum(category_counts.values())
 
     # Dates: range and years sorted by year descending
     if min_date and max_date:
@@ -93,6 +104,7 @@ def generate_report(data, output_file):
         start_date = "N/A"
         end_date = "N/A"
         sorted_years = []
+    total_year_refs = sum(year_counts.values())
 
     # Authors: all by count descending (most_common does this)
     sorted_authors = author_counts.most_common()
@@ -108,22 +120,28 @@ def generate_report(data, output_file):
     md.append(f"- **Unique Domains Linked:** {len(unique_domains)}")
 
     md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Domain | Count | % | Distribution |")
+    md.append("| :--- | :---: | :---: | :--- |")
     for domain, count in top_domains:
-        md.append(f"| {domain} | {count} |")
+        pct = (count / total_domain_refs) * 100
+        bar = _generate_ascii_bar(count, total_domain_refs)
+        md.append(f"| {domain} | {count} | {pct:.1f}% | {bar} |")
 
     md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Category | Count | % | Distribution |")
+    md.append("| :--- | :---: | :---: | :--- |")
     for cat, count in top_categories:
-        md.append(f"| {cat} | {count} |")
+        pct = (count / total_category_refs) * 100
+        bar = _generate_ascii_bar(count, total_category_refs)
+        md.append(f"| {cat} | {count} | {pct:.1f}% | {bar} |")
 
     md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Year | Count | % | Distribution |")
+    md.append("| :--- | :---: | :---: | :--- |")
     for year, count in sorted_years:
-        md.append(f"| {year} | {count} |")
+        pct = (count / total_year_refs) * 100
+        bar = _generate_ascii_bar(count, total_year_refs)
+        md.append(f"| {year} | {count} | {pct:.1f}% | {bar} |")
 
     md.append("\n## Authors")
     for author, count in sorted_authors:
