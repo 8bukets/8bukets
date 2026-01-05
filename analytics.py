@@ -21,6 +21,13 @@ def get_domain(url):
     except:
         return None
 
+def create_bar_chart(value, max_value, width=20):
+    if max_value == 0:
+        return "░" * width
+    filled_length = int(width * value / max_value)
+    bar = "█" * filled_length + "░" * (width - filled_length)
+    return bar
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
@@ -74,27 +81,57 @@ def generate_report(data, output_file):
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
 
+    # Top 10 Referenced Domains
     md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
-    for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+    if domain_counts:
+        max_domain_count = domain_counts[0][1]
+        md.append("| Domain | Count | % | Distribution |")
+        md.append("| :--- | :---: | :---: | :--- |")
+        for domain, count in domain_counts:
+            pct = (count / len(domains)) * 100 if domains else 0
+            bar = create_bar_chart(count, max_domain_count)
+            md.append(f"| {domain} | {count} | {pct:.1f}% | {bar} |")
+    else:
+        md.append("No domains found.")
 
+    # Top 10 Categories
     md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
-    for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+    if category_counts:
+        max_cat_count = category_counts[0][1]
+        md.append("| Category | Count | % | Distribution |")
+        md.append("| :--- | :---: | :---: | :--- |")
+        for cat, count in category_counts:
+            pct = (count / len(all_categories)) * 100 if all_categories else 0
+            bar = create_bar_chart(count, max_cat_count)
+            md.append(f"| {cat} | {count} | {pct:.1f}% | {bar} |")
+    else:
+        md.append("No categories found.")
 
+    # Posts by Year
     md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
-    for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+    if year_counts:
+        max_year_count = max(count for _, count in year_counts)
+        md.append("| Year | Count | % | Distribution |")
+        md.append("| :--- | :---: | :---: | :--- |")
+        for year, count in year_counts:
+            pct = (count / total_posts) * 100 if total_posts else 0
+            bar = create_bar_chart(count, max_year_count)
+            md.append(f"| {year} | {count} | {pct:.1f}% | {bar} |")
+    else:
+        md.append("No date data available.")
 
+    # Authors
     md.append("\n## Authors")
-    for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+    if author_counts:
+        max_author_count = author_counts[0][1]
+        md.append("| Author | Count | % | Distribution |")
+        md.append("| :--- | :---: | :---: | :--- |")
+        for author, count in author_counts:
+            pct = (count / total_posts) * 100 if total_posts else 0
+            bar = create_bar_chart(count, max_author_count)
+            md.append(f"| {author} | {count} | {pct:.1f}% | {bar} |")
+    else:
+        md.append("No authors found.")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
