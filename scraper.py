@@ -6,6 +6,7 @@ import logging
 import argparse
 import sys
 import sqlite3
+from urllib.parse import urlparse
 from datetime import datetime
 
 # Configure logging
@@ -185,17 +186,30 @@ class BlogScraper:
         return item
 
     def get_next_page(self, soup):
+        next_url = None
         nav_previous = soup.find("div", class_="nav-previous")
         if nav_previous:
             a_tag = nav_previous.find("a")
             if a_tag:
-                return a_tag.get('href')
+                next_url = a_tag.get('href')
 
-        for a in soup.find_all("a", href=True):
-            if "older posts" in a.get_text(strip=True).lower():
-                return a['href']
+        if not next_url:
+            for a in soup.find_all("a", href=True):
+                if "older posts" in a.get_text(strip=True).lower():
+                    next_url = a['href']
+                    break
 
-        return None
+        # Security Check: SSRF Protection
+        if next_url:
+            base_domain = urlparse(self.base_url).netloc
+            next_domain = urlparse(next_url).netloc
+
+            # Allow if domain matches or if it's a relative path (empty netloc)
+            if next_domain and next_domain != base_domain:
+                logger.warning(f"Security Alert: Skipping off-domain next page: {next_url}")
+                return None
+
+        return next_url
 
     def run(self):
         url = self.base_url
