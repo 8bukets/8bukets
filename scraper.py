@@ -29,6 +29,12 @@ class BlogScraper:
         self.data = []
         self.init_db()
 
+    def _is_valid_url(self, url):
+        """Validate URL to prevent javascript: or other malicious schemes."""
+        if not url:
+            return False
+        return url.strip().lower().startswith(('http://', 'https://'))
+
     def init_db(self):
         """Initialize the SQLite database."""
         try:
@@ -142,7 +148,9 @@ class BlogScraper:
         # Title and Post URL
         title_tag = article.select_one("header.entry-header h2.entry-title a")
         item['title'] = title_tag.get_text(strip=True) if title_tag else None
-        item['post_url'] = title_tag.get('href') if title_tag else None
+
+        raw_post_url = title_tag.get('href') if title_tag else None
+        item['post_url'] = raw_post_url if self._is_valid_url(raw_post_url) else None
 
         # Link (External)
         content_div = article.select_one("div.entry-content")
@@ -151,16 +159,18 @@ class BlogScraper:
             # Check for direct anchor tags
             link_tag = content_div.find("a")
             if link_tag:
-                external_link = link_tag.get('href')
-                if not external_link:
+                raw_link = link_tag.get('href')
+                if self._is_valid_url(raw_link):
+                    external_link = raw_link
+                elif not raw_link:
                     text_content = link_tag.get_text(strip=True)
-                    if text_content.startswith('http'):
+                    if self._is_valid_url(text_content):
                         external_link = text_content
 
             # Fallback
             if not external_link:
                 text_content = content_div.get_text(strip=True)
-                if text_content.startswith('http'):
+                if self._is_valid_url(text_content):
                     external_link = text_content.split()[0]
 
         item['external_link'] = external_link
