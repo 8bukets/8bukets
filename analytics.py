@@ -70,27 +70,38 @@ def generate_report(data, output_file):
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
     md.append("\n## General Statistics")
-    md.append(f"- **Total Posts:** {total_posts}")
-    md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append(f"- **Total Posts:** {total_posts:,}")
+    # Improve date readability if not N/A
+    if start_date != "N/A":
+        try:
+            sd = datetime.strptime(start_date, '%Y-%m-%d').strftime('%b %d, %Y')
+            ed = datetime.strptime(end_date, '%Y-%m-%d').strftime('%b %d, %Y')
+            md.append(f"- **Date Range:** {sd} to {ed}")
+        except ValueError:
+             md.append(f"- **Date Range:** {start_date} to {end_date}")
+    else:
+        md.append(f"- **Date Range:** {start_date} to {end_date}")
+    md.append(f"- **Unique Domains Linked:** {len(set(domains)):,}")
 
     md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Domain | Count | % of Posts |")
+    md.append("| :--- | :---: | :---: |")
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        pct = (count / total_posts) * 100 if total_posts > 0 else 0
+        md.append(f"| {domain} | {count:,} | {pct:.1f}% |")
 
     md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Category | Count | % of Posts |")
+    md.append("| :--- | :---: | :---: |")
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        pct = (count / total_posts) * 100 if total_posts > 0 else 0
+        md.append(f"| {cat} | {count:,} | {pct:.1f}% |")
 
     md.append("\n## Posts by Year")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
     for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+        md.append(f"| {year} | {count:,} |")
 
     md.append("\n## Authors")
     for author, count in author_counts:
