@@ -60,15 +60,37 @@ class MarkPositionScraperAsync:
             return None
 
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
+        """Fetch a page from the website with timeout and size limits."""
         url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
         try:
-            async with session.get(url) as response:
+            # Set a timeout of 30 seconds for the request
+            # Limit response size to 10MB to prevent memory exhaustion (DoS)
+            timeout = aiohttp.ClientTimeout(total=30)
+            async with session.get(url, timeout=timeout) as response:
                 if response.status == 404:
                     return None
                 response.raise_for_status()
-                return await response.text()
+
+                # Check Content-Length header if available
+                content_length = response.headers.get('Content-Length')
+                if content_length and int(content_length) > 10 * 1024 * 1024:
+                    logger.error("Page %d exceeded size limit: %s bytes", page_num, content_length)
+                    return None
+
+                content = await response.text()
+                if len(content) > 10 * 1024 * 1024:
+                    logger.error("Page %d content exceeded 10MB", page_num)
+                    return None
+                return content
+
+        except asyncio.TimeoutError:
+            logger.error("Timeout fetching page %d", page_num)
+            return None
         except aiohttp.ClientError as e:
-            logger.error(f"Error fetching page {page_num}: {e}")
+            logger.error("Error fetching page %d: %s", page_num, e)
+            return None
+        except Exception as e: # pylint: disable=broad-exception-caught
+            logger.error("Unexpected error fetching page %d: %s", page_num, e)
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
