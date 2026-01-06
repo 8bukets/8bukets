@@ -136,6 +136,7 @@ def scrape(output_file: str, max_pages: int = 0):
     all_posts = []
     page = 1
     current_url = BASE_URL
+    base_domain = urlparse(BASE_URL).netloc
 
     while current_url:
         if max_pages > 0 and page > max_pages:
@@ -143,8 +144,22 @@ def scrape(output_file: str, max_pages: int = 0):
             break
 
         logging.info(f"Scraping page {page}: {current_url}...")
+
+        # URL Validation (Security Fix)
         try:
-            response = session.get(current_url)
+            parsed = urlparse(current_url)
+            if parsed.scheme not in ('http', 'https'):
+                logging.error(f"Skipping unsafe scheme in URL: {current_url}")
+                break
+            if parsed.netloc != base_domain:
+                logging.error(f"Skipping external URL redirection: {current_url}")
+                break
+        except Exception as e:
+            logging.error(f"URL parsing error for {current_url}: {e}")
+            break
+
+        try:
+            response = session.get(current_url, timeout=30)
             response.raise_for_status()
         except requests.exceptions.RequestException as e:
             logging.error(f"Error fetching {current_url}: {e}")
