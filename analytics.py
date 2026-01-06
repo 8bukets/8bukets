@@ -4,12 +4,25 @@ from collections import Counter
 from datetime import datetime
 import sys
 
+class Colors:
+    _is_tty = sys.stdout.isatty()
+
+    HEADER = '\033[95m' if _is_tty else ''
+    OKBLUE = '\033[94m' if _is_tty else ''
+    OKCYAN = '\033[96m' if _is_tty else ''
+    OKGREEN = '\033[92m' if _is_tty else ''
+    WARNING = '\033[93m' if _is_tty else ''
+    FAIL = '\033[91m' if _is_tty else ''
+    ENDC = '\033[0m' if _is_tty else ''
+    BOLD = '\033[1m' if _is_tty else ''
+    UNDERLINE = '\033[4m' if _is_tty else ''
+
 def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             return json.load(f)
     except FileNotFoundError:
-        print(f"Error: File '{filepath}' not found.")
+        print(f"{Colors.FAIL}Error: File '{filepath}' not found.{Colors.ENDC}")
         sys.exit(1)
 
 def generate_report(data, output_file):
@@ -90,7 +103,17 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    # Print Summary to Console
+    print(f"\n{Colors.HEADER}{Colors.BOLD}Markposition Analytics Report{Colors.ENDC}")
+    print(f"{Colors.HEADER}-----------------------------{Colors.ENDC}")
+    print(f"{Colors.OKCYAN}Total Posts:{Colors.ENDC}      {total_posts}")
+    print(f"{Colors.OKCYAN}Date Range:{Colors.ENDC}       {start_date} to {end_date}")
+    print(f"{Colors.OKCYAN}Unique Domains:{Colors.ENDC}   {len(set(domains))}")
+    if category_counts:
+        top_cat, top_cat_count = category_counts[0]
+        print(f"{Colors.OKCYAN}Top Category:{Colors.ENDC}     {top_cat} ({top_cat_count})")
+
+    print(f"\n{Colors.OKGREEN}✔ Report generated successfully: {output_file}{Colors.ENDC}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")

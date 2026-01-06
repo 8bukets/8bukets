@@ -1,0 +1,3 @@
+## 2025-12-13 - CLI Output Enhancement
+**Learning:** For developer tools without a UI, the terminal IS the UI. Simple additions like summary statistics and color-coded status messages significantly improve the "feeling" of the tool, transforming it from a silent script to an interactive assistant. Immediate feedback (stats printed to stdout) saves the user a step of opening the output file to check if the run was "good".
+**Action:** When working on CLI tools in the future, always look for opportunities to surface key "success metrics" immediately in the terminal output, rather than just confirming file generation. Use standard ANSI colors for status (Green=Success, Red=Error, Cyan/Blue=Info) to establish a visual hierarchy.
