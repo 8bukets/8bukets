@@ -1,6 +1,7 @@
-import aiohttp
+"""
+Scraper for Oracle News articles.
+"""
 import asyncio
-from bs4 import BeautifulSoup, Comment
 import json
 import csv
 import re
@@ -9,6 +10,8 @@ import logging
 from typing import List, Dict, Optional
 from urllib.parse import urlparse
 from datetime import datetime
+import aiohttp
+from bs4 import BeautifulSoup, Comment
 
 # Configure logging
 logging.basicConfig(
@@ -21,6 +24,7 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://www.oracle.com/news/"
 
 class OracleNewsScraper:
+    """Scraper for Oracle News articles."""
     def __init__(self, output_json: str, output_csv: str, output_txt: str):
         self.output_json = output_json
         self.output_csv = output_csv
@@ -33,6 +37,12 @@ class OracleNewsScraper:
         text = text.replace('\xa0', ' ')
         return re.sub(r'\s+', ' ', text).strip()
 
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text to prevent CSV injection."""
+        if text and isinstance(text, str) and text.startswith(('=', '+', '-', '@')):
+            return "'" + text
+        return text
+
     def parse_date(self, date_text: str) -> Optional[Dict[str, str]]:
         """Parse date string like 'Oct 15, 2025' to ISO format."""
         try:
@@ -42,22 +52,24 @@ class OracleNewsScraper:
                 'iso': dt.isoformat()
             }
         except ValueError:
-            logger.warning(f"Could not parse date: {date_text}")
+            logger.warning("Could not parse date: %s", date_text)
             return {
                 'display': date_text,
                 'iso': None
             }
 
     async def fetch_page(self, session: aiohttp.ClientSession) -> Optional[str]:
+        """Fetch the news page content."""
         try:
             async with session.get(BASE_URL) as response:
                 response.raise_for_status()
                 return await response.text()
         except aiohttp.ClientError as e:
-            logger.error(f"Error fetching page: {e}")
+            logger.error("Error fetching page: %s", e)
             return None
 
     def parse_page(self, html: str) -> List[Dict]:
+        """Parse HTML content to extract news articles."""
         soup = BeautifulSoup(html, 'html.parser')
 
         # Find comments containing the news section
@@ -108,7 +120,7 @@ class OracleNewsScraper:
             if external_link:
                 try:
                     post_data['domain'] = urlparse(external_link).netloc.replace('www.', '')
-                except:
+                except Exception: # pylint: disable=broad-except
                     pass
 
             # Author (Default)
@@ -117,54 +129,59 @@ class OracleNewsScraper:
             # Categories (Default/Inferred)
             post_data['categories'] = ["News"]
             if external_link and '/announcement/' in external_link:
-                 post_data['categories'].append("Announcement")
+                post_data['categories'].append("Announcement")
 
             page_posts.append(post_data)
 
         return page_posts
 
     async def scrape(self):
+        """Main scraping method."""
         headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
+                          'AppleWebKit/537.36 (KHTML, like Gecko) '
+                          'Chrome/91.0.4472.124 Safari/537.36'
         }
 
         async with aiohttp.ClientSession(headers=headers) as session:
-            logger.info(f"Fetching {BASE_URL}...")
+            logger.info("Fetching %s...", BASE_URL)
             html = await self.fetch_page(session)
             if html:
                 posts = self.parse_page(html)
-                logger.info(f"Extracted {len(posts)} posts.")
+                logger.info("Extracted %d posts.", len(posts))
                 self.save_data(posts)
             else:
                 logger.error("Failed to retrieve content.")
 
     def save_data(self, posts: List[Dict]):
+        """Save extracted posts to JSON, CSV, and TXT files."""
         # JSON
         try:
             with open(self.output_json, 'w', encoding='utf-8') as f:
                 json.dump(posts, f, indent=4, ensure_ascii=False)
-            logger.info(f"Saved {len(posts)} posts to {self.output_json}")
+            logger.info("Saved %d posts to %s", len(posts), self.output_json)
         except IOError as e:
-            logger.error(f"Failed to save JSON: {e}")
+            logger.error("Failed to save JSON: %s", e)
 
         # CSV
         try:
             with open(self.output_csv, 'w', newline='', encoding='utf-8') as f:
                 writer = csv.writer(f)
-                writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
+                writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link',
+                                 'Domain', 'Post URL'])
                 for post in posts:
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        self.sanitize_for_csv(post.get('title', '')),
+                        self.sanitize_for_csv(post.get('date', '')),
+                        self.sanitize_for_csv(post.get('author', '')),
+                        self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                        self.sanitize_for_csv(post.get('external_link', '')),
+                        self.sanitize_for_csv(post.get('domain', '')),
+                        self.sanitize_for_csv(post.get('post_url', ''))
                     ])
-            logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
+            logger.info("Saved %d posts to %s", len(posts), self.output_csv)
         except IOError as e:
-            logger.error(f"Failed to save CSV: {e}")
+            logger.error("Failed to save CSV: %s", e)
 
         # Unique Links TXT
         unique_links = set()
@@ -178,15 +195,17 @@ class OracleNewsScraper:
             with open(self.output_txt, 'w', encoding='utf-8') as f:
                 for link in sorted_links:
                     f.write(link + '\n')
-            logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
+            logger.info("Saved %d unique links to %s", len(sorted_links), self.output_txt)
         except IOError as e:
-            logger.error(f"Failed to save TXT: {e}")
+            logger.error("Failed to save TXT: %s", e)
 
 def main():
+    """Main entry point."""
     parser = argparse.ArgumentParser(description="Scraper for Oracle News")
     parser.add_argument("--json", default="links.json", help="Output JSON filename")
     parser.add_argument("--csv", default="links.csv", help="Output CSV filename")
-    parser.add_argument("--txt", default="unique_links.txt", help="Output TXT filename for unique links")
+    parser.add_argument("--txt", default="unique_links.txt",
+                        help="Output TXT filename for unique links")
 
     args = parser.parse_args()
 
