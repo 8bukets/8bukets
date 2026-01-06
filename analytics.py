@@ -70,15 +70,17 @@ def generate_report(data, output_file):
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
     md.append("\n## General Statistics")
-    md.append(f"- **Total Posts:** {total_posts}")
-    md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append(f"- 📝 **Total Posts:** {total_posts}")
+    md.append(f"- 📅 **Date Range:** {start_date} to {end_date}")
+    md.append(f"- 🔗 **Unique Domains Linked:** {len(set(domains))}")
 
     md.append("\n## Top 10 Referenced Domains")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        # Create a clickable link for the domain
+        # Assuming https as the default protocol for convenience
+        md.append(f"| [{domain}](https://{domain}) | {count} |")
 
     md.append("\n## Top 10 Categories")
     md.append("| Category | Count |")
