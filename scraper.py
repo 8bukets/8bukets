@@ -6,8 +6,7 @@ import csv
 import re
 import argparse
 import logging
-import time
-from typing import List, Dict, Optional, Set
+from typing import List, Dict, Optional
 from urllib.parse import urlparse, urljoin
 
 # Configure logging
@@ -83,6 +82,12 @@ class OracleNewsScraper:
                 continue
 
             full_url = urljoin(self.base_url, href)
+
+            # Security check: Ensure protocol is http or https
+            parsed_url = urlparse(full_url)
+            if parsed_url.scheme not in ('http', 'https'):
+                logger.warning(f"Skipping potentially unsafe URL: {full_url}")
+                continue
 
             if full_url in seen_urls:
                 continue
