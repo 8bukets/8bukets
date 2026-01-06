@@ -129,21 +129,21 @@ class OracleNewsScraper:
         }
 
         async with aiohttp.ClientSession(headers=headers) as session:
-            logger.info(f"Fetching {BASE_URL}...")
+            logger.info(f"🌐 Fetching {BASE_URL}...")
             html = await self.fetch_page(session)
             if html:
                 posts = self.parse_page(html)
-                logger.info(f"Extracted {len(posts)} posts.")
+                logger.info(f"📦 Extracted {len(posts)} posts.")
                 self.save_data(posts)
             else:
-                logger.error("Failed to retrieve content.")
+                logger.error("❌ Failed to retrieve content.")
 
     def save_data(self, posts: List[Dict]):
         # JSON
         try:
             with open(self.output_json, 'w', encoding='utf-8') as f:
                 json.dump(posts, f, indent=4, ensure_ascii=False)
-            logger.info(f"Saved {len(posts)} posts to {self.output_json}")
+            logger.info(f"💾 Saved {len(posts)} posts to {self.output_json}")
         except IOError as e:
             logger.error(f"Failed to save JSON: {e}")
 
@@ -162,7 +162,7 @@ class OracleNewsScraper:
                         post.get('domain', ''),
                         post.get('post_url', '')
                     ])
-            logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
+            logger.info(f"💾 Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
             logger.error(f"Failed to save CSV: {e}")
 
@@ -178,7 +178,7 @@ class OracleNewsScraper:
             with open(self.output_txt, 'w', encoding='utf-8') as f:
                 for link in sorted_links:
                     f.write(link + '\n')
-            logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
+            logger.info(f"💾 Saved {len(sorted_links)} unique links to {self.output_txt}")
         except IOError as e:
             logger.error(f"Failed to save TXT: {e}")
 

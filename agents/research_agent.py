@@ -32,5 +32,5 @@ class ResearchAgent:
         # Filter out small trends
         major_trends = {k: v for k, v in trends.items() if len(v) > 1}
 
-        logger.info(f"Identified {len(major_trends)} major trends.")
+        logger.info(f"📈 Identified {len(major_trends)} major trends.")
         return major_trends
