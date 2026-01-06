@@ -13,6 +13,8 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 class ReportGenerator:
+    """Generates daily Markdown reports from scraped data."""
+
     def __init__(self, db_name="wishlist_data.db", report_dir="reports"):
         self.db_name = db_name
         self.report_dir = report_dir
@@ -20,6 +22,7 @@ class ReportGenerator:
             os.makedirs(self.report_dir)
 
     def generate_daily_report(self):
+        """Generates the daily report based on data in the database."""
         logger.info("Generating daily report...")
 
         try:
@@ -33,7 +36,11 @@ class ReportGenerator:
                 yesterday = datetime.now() - timedelta(days=1)
 
                 # New posts
-                cursor.execute("SELECT title, post_url, scraped_at FROM posts WHERE scraped_at >= ? AND id NOT IN (SELECT post_id FROM changes)", (yesterday,))
+                cursor.execute(
+                    "SELECT title, post_url, scraped_at FROM posts "
+                    "WHERE scraped_at >= ? AND id NOT IN (SELECT post_id FROM changes)",
+                    (yesterday,)
+                )
                 new_posts = cursor.fetchall()
 
                 # Updated posts
@@ -46,15 +53,23 @@ class ReportGenerator:
                 updated_posts = cursor.fetchall()
 
                 # Latest SEO rankings
-                cursor.execute("SELECT query, rank, title, url, checked_at FROM rankings WHERE checked_at >= ? ORDER BY checked_at DESC", (yesterday,))
+                cursor.execute(
+                    "SELECT query, rank, title, url, checked_at FROM rankings "
+                    "WHERE checked_at >= ? ORDER BY checked_at DESC",
+                    (yesterday,)
+                )
                 rankings = cursor.fetchall()
 
                 # Previous SEO rankings (older than 24h)
-                cursor.execute("SELECT query, rank, checked_at FROM rankings WHERE checked_at < ? ORDER BY checked_at DESC", (yesterday,))
+                cursor.execute(
+                    "SELECT query, rank, checked_at FROM rankings "
+                    "WHERE checked_at < ? ORDER BY checked_at DESC",
+                    (yesterday,)
+                )
                 past_rankings = cursor.fetchall()
 
         except sqlite3.Error as e:
-            logger.error(f"Database error: {e}")
+            logger.error("Database error: %s", e)
             return
 
         report_date = datetime.now().strftime("%Y-%m-%d")
@@ -62,9 +77,27 @@ class ReportGenerator:
 
         with open(report_filename, "w", encoding="utf-8") as f:
             f.write(f"# Daily Scraper Report - {report_date}\n\n")
-            f.write(f"**Total Posts:** {total_posts}\n")
-            f.write(f"**New Posts:** {len(new_posts)}\n")
-            f.write(f"**Updated Posts:** {len(updated_posts)}\n\n")
+
+            # Quick Stats Dashboard
+            f.write("### 📊 At a Glance\n\n")
+            f.write("| Total Posts | New Posts | Updates | SEO Alerts |\n")
+            f.write("|:---:|:---:|:---:|:---:|\n")
+            # Ensure rankings is defined before use
+            ranking_count = len(rankings) if 'rankings' in locals() and rankings else 0
+            f.write(f"| {total_posts} | {len(new_posts)} | {len(updated_posts)} | {ranking_count} |\n\n")
+
+            # Table of Contents
+            f.write("## 📑 Table of Contents\n\n")
+            f.write("- [💡 Recommendations](#-recommendations)\n")
+            if new_posts or updated_posts:
+                f.write("- [🧠 Keyword Trends](#-keyword-trends)\n")
+            if 'rankings' in locals() and rankings:
+                f.write("- [📈 SEO Trend Analysis](#-seo-trend-analysis)\n")
+            if updated_posts:
+                f.write("- [🔄 Content Updates](#-content-updates)\n")
+            if new_posts:
+                f.write("- [🆕 Recently Scraped Posts](#-recently-scraped-posts)\n")
+            f.write("\n---\n\n")
 
             # Recommendations Section
             f.write("## 💡 Recommendations\n\n")
@@ -106,7 +139,12 @@ class ReportGenerator:
                 for u in updated_posts:
                     title, url, field, old, new, time = u
                     title = title.replace("|", "-")
-                    f.write(f"| [{title}]({url}) | {field} | {old} | {new} | {time} |\n")
+                    # Truncate long values for cleaner table
+                    old_str = str(old) if old else ""
+                    new_str = str(new) if new else ""
+                    old_display = (old_str[:47] + '...') if len(old_str) > 50 else old_str
+                    new_display = (new_str[:47] + '...') if len(new_str) > 50 else new_str
+                    f.write(f"| [{title}]({url}) | {field} | {old_display} | {new_display} | {time} |\n")
                 f.write("\n")
 
             # New Posts Section
@@ -121,24 +159,36 @@ class ReportGenerator:
             else:
                 f.write("No new posts scraped in the last 24 hours.\n")
 
-        logger.info(f"Report generated: {report_filename}")
+            f.write(
+                f"\n_Generated by Daily Scraper at "
+                f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}_\n"
+            )
+
+        logger.info("Report generated: %s", report_filename)
 
     def analyze_keywords(self, titles):
+        """Analyzes titles to find most frequent keywords."""
         text = " ".join(titles).lower()
         text = re.sub(r'[^\w\s]', '', text)
         words = text.split()
-        stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'this', 'that', 'it', 'as', 'from', 'de', 'la'}
+        stop_words = {
+            'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of',
+            'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'this', 'that',
+            'it', 'as', 'from', 'de', 'la'
+        }
         filtered_words = [w for w in words if w not in stop_words and len(w) > 2]
         return Counter(filtered_words).most_common(10)
 
     def analyze_seo_trends(self, current, past):
+        """Analyzes SEO ranking trends compared to past data."""
         analysis = []
         past_dict = {r[0]: r[1] for r in past} # Query -> Rank mapping
 
         seen_queries = set()
         for r in current:
-            query, rank, title, url, checked_at = r
-            if query in seen_queries: continue # Just take latest per query
+            query, rank, _, _, checked_at = r
+            if query in seen_queries:
+                continue # Just take latest per query
             seen_queries.add(query)
 
             change_str = "New"
@@ -160,28 +210,44 @@ class ReportGenerator:
         return analysis
 
     def generate_recommendations(self, new_posts, updated_posts, rankings, past_rankings):
+        """Generates actionable recommendations based on data."""
         recs = []
 
         # Frequency advice
         if not new_posts:
-            recs.append("⚠️ **Low Activity**: No new posts detected today. Consider creating new content.")
+            recs.append(
+                "⚠️ **Low Activity**: No new posts detected today. "
+                "Consider creating new content."
+            )
         elif len(new_posts) > 5:
             recs.append("✅ **High Activity**: Great job! More than 5 posts today.")
 
         # Update advice
         if updated_posts:
-            recs.append(f"ℹ️ **Maintenance**: {len(updated_posts)} posts were updated. Review changes to ensure accuracy.")
+            recs.append(
+                f"ℹ️ **Maintenance**: {len(updated_posts)} posts were updated. "
+                "Review changes to ensure accuracy."
+            )
 
         # SEO advice
         if not rankings:
-            recs.append("⚠️ **SEO Alert**: Ranking check failed or data missing. Check internet connection or Google blocks.")
+            recs.append(
+                "⚠️ **SEO Alert**: Ranking check failed or data missing. "
+                "Check internet connection or Google blocks."
+            )
         else:
             trends = self.analyze_seo_trends(rankings, past_rankings)
             for t in trends:
                 if "⬇️" in t['change']:
-                    recs.append(f"📉 **SEO Drop**: Rank dropped for '{t['query']}'. Review page content and keywords.")
+                    recs.append(
+                        f"📉 **SEO Drop**: Rank dropped for '{t['query']}'. "
+                        "Review page content and keywords."
+                    )
                 if t['rank'] > 10:
-                    recs.append(f"🔍 **SEO Visibility**: '{t['query']}' is on Page {int(t['rank']/10)+1}. Aim for top 10.")
+                    page = int(t['rank'] / 10) + 1
+                    recs.append(
+                        f"🔍 **SEO Visibility**: '{t['query']}' is on Page {page}. Aim for top 10."
+                    )
 
         return recs
 
