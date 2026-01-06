@@ -1,14 +1,14 @@
-import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
-import json
-import csv
-import re
 import argparse
+import csv
+import json
 import logging
+import re
 import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
+import aiohttp
+from bs4 import BeautifulSoup
 
 # Configure logging
 logging.basicConfig(
@@ -71,7 +71,8 @@ class MarkPositionScraperAsync:
             logger.error(f"Error fetching page {page_num}: {e}")
             return None
 
-    async def parse_page(self, html: str) -> List[Dict]:
+    def _parse_page_sync(self, html: str) -> List[Dict]:
+        """Synchronous parsing logic."""
         soup = BeautifulSoup(html, 'html.parser')
         articles = soup.find_all('article', class_='post')
         page_posts = []
@@ -132,6 +133,12 @@ class MarkPositionScraperAsync:
             page_posts.append(post_data)
 
         return page_posts
+
+    async def parse_page(self, html: str) -> List[Dict]:
+        """
+        Offload CPU-bound parsing to a separate thread to prevent blocking the event loop.
+        """
+        return await asyncio.to_thread(self._parse_page_sync, html)
 
     async def scrape(self):
         all_posts = []
