@@ -1,0 +1,3 @@
+## 2026-01-06 - Interactive Markdown Reports
+**Learning:** In text-heavy CLI environments without web frontends, Markdown reports serve as the primary "UI". Adding standard Markdown interaction elements like clickable links significantly reduces friction for users who need to verify data.
+**Action:** When generating Markdown reports, always look for opportunities to turn plain text references (like URLs, IDs, or file paths) into clickable links or actionable references.
