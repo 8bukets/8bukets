@@ -1,0 +1,9 @@
+
+Markposition Analytics Report
+-----------------------------
+Total Posts:      679
+Date Range:       2020-05-19 to 2022-10-05
+Unique Domains:   367
+Top Category:     Ad Ads Advertise (660)
+
+✔ Report generated successfully: REPORT.md
