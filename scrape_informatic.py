@@ -25,73 +25,12 @@ class Post:
 
 BASE_URL = "https://informaticmagazine.data.blog"
 
-class UXFormatter(logging.Formatter):
-    """
-    Custom logging formatter that adds emojis to log messages based on content or level.
-    """
-
-    EMOJIS = {
-        'DEBUG': '🐛',
-        'INFO': 'ℹ️',
-        'WARNING': '⚠️',
-        'ERROR': '❌',
-        'CRITICAL': '🚨'
-    }
-
-    # Context-based emojis
-    CONTEXT_ICONS = {
-        'Scraping page': '🔍',
-        'Found': '📄',
-        'Saved': '💾',
-        'Total posts': '📊',
-        'No more pages': '🛑',
-        'Reached max': '⏭️',
-        'Error': '❌',
-        'Failed': '❌'
-    }
-
-    def format(self, record):
-        # Default emoji based on level
-        icon = self.EMOJIS.get(record.levelname, '')
-
-        # Override based on message content
-        original_msg = record.msg
-        # Check against the expanded message
-        msg = record.getMessage()
-        for key, emoji in self.CONTEXT_ICONS.items():
-            if key in msg:
-                icon = emoji
-                break
-
-        # Safely format without permanent mutation if possible,
-        # but standard pattern often mutates.
-        # To be safer, we clone the record or just mutate and restore,
-        # but for this script, we'll just be careful.
-        # Better approach: Update the format string for this record?
-        # Simpler: just return the formatted string with emoji prepended to the result of super().format(record)
-        # However, super().format() uses the format string which includes %(message)s.
-
-        # Let's temporarily mutate
-        record.msg = f"{icon} {original_msg}"
-        result = super().format(record)
-        record.msg = original_msg # Restore
-        return result
-
 def configure_logging(verbose: bool):
     level = logging.DEBUG if verbose else logging.INFO
-    # Use stderr for logs so stdout can be used for data piping
-    handler = logging.StreamHandler(sys.stderr)
-
-    # Simpler format without repeating levelname since we use emojis
-    formatter = UXFormatter('%(asctime)s - %(message)s', datefmt='%H:%M:%S')
-    handler.setFormatter(formatter)
-
-    logger = logging.getLogger()
-    logger.setLevel(level)
-    # Clear existing handlers to avoid duplicates
-    if logger.hasHandlers():
-        logger.handlers.clear()
-    logger.addHandler(handler)
+    logging.basicConfig(
+        level=level,
+        format='%(asctime)s - %(levelname)s - %(message)s'
+    )
 
 def get_session():
     """
