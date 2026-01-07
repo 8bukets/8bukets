@@ -9,5 +9,10 @@ Allow: /css/
 Allow: /js/
 Allow: /images/
 
+# Autonomous Agent Permissions
+# Allow research and analysis agents full access
+User-agent: UnitedSportsBot
+Allow: /
+
 # Location of the Sitemap
 Sitemap: https://unitedsports.news.blog/sitemap.xml
