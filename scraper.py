@@ -1,14 +1,15 @@
-import aiohttp
-import asyncio
-from bs4 import BeautifulSoup
-import json
-import csv
-import re
 import argparse
+import asyncio
+import csv
+import json
 import logging
+import re
 import time
-from typing import List, Dict, Optional, Set
+from typing import Dict, List, Optional, Set
 from urllib.parse import urlparse
+
+import aiohttp
+from bs4 import BeautifulSoup, SoupStrainer
 
 # Configure logging
 logging.basicConfig(
@@ -72,7 +73,9 @@ class MarkPositionScraperAsync:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'lxml')
+        # Optimize parsing by only looking for relevant article tags
+        strainer = SoupStrainer('article', class_=lambda x: x and 'post' in x.split())
+        soup = BeautifulSoup(html, 'lxml', parse_only=strainer)
         articles = soup.find_all('article', class_='post')
         page_posts = []
 
