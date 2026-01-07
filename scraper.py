@@ -82,7 +82,7 @@ class BlogScraper:
                     # Check Title Change
                     new_title = item.get('title')
                     if old_title != new_title and new_title:
-                        logger.info(f"Change detected for {item.get('post_url')}: Title changed.")
+                        logger.info(f"📝 Change detected for {item.get('post_url')}: Title changed.")
                         cursor.execute("INSERT INTO changes (post_id, field, old_value, new_value) VALUES (?, ?, ?, ?)",
                                        (post_id, 'title', old_title, new_title))
                         cursor.execute("UPDATE posts SET title = ? WHERE id = ?", (new_title, post_id))
@@ -91,7 +91,7 @@ class BlogScraper:
                     # Check External Link Change
                     new_link = item.get('external_link')
                     if old_link != new_link and new_link:
-                        logger.info(f"Change detected for {item.get('post_url')}: External Link changed.")
+                        logger.info(f"🔗 Change detected for {item.get('post_url')}: External Link changed.")
                         cursor.execute("INSERT INTO changes (post_id, field, old_value, new_value) VALUES (?, ?, ?, ?)",
                                        (post_id, 'external_link', old_link, new_link))
                         cursor.execute("UPDATE posts SET external_link = ? WHERE id = ?", (new_link, post_id))
@@ -127,7 +127,7 @@ class BlogScraper:
         return False
 
     def fetch_page(self, url):
-        logger.info(f"Fetching {url}...")
+        logger.info(f"🔍 Fetching {url}...")
         try:
             response = requests.get(url, headers=self.headers, timeout=10)
             response.raise_for_status()
@@ -208,10 +208,10 @@ class BlogScraper:
 
             soup = BeautifulSoup(content, "html.parser")
             articles = soup.find_all("article")
-            logger.info(f"Found {len(articles)} articles on this page.")
+            logger.info(f"📄 Found {len(articles)} articles on this page.")
 
             if not articles:
-                logger.warning("No articles found on page.")
+                logger.warning("⚠️ No articles found on page.")
 
             for article in articles:
                 item = self.parse_article(article)
@@ -221,24 +221,24 @@ class BlogScraper:
 
             next_page = self.get_next_page(soup)
             if next_page:
-                logger.info(f"Found next page: {next_page}")
+                logger.info(f"⏭️ Found next page: {next_page}")
                 url = next_page
                 time.sleep(1)
             else:
-                logger.info("No more pages found.")
+                logger.info("🛑 No more pages found.")
                 url = None
 
         self.save_json()
-        logger.info(f"Scraped {len(self.data)} articles in total.")
-        logger.info(f"New items added to database: {new_items_count}")
+        logger.info(f"🎉 Scraped {len(self.data)} articles in total.")
+        logger.info(f"✨ New items added to database: {new_items_count}")
 
     def save_json(self):
         try:
             with open(self.output_json, "w", encoding="utf-8") as f:
                 json.dump(self.data, f, indent=2, ensure_ascii=False)
-            logger.info(f"Data saved to {self.output_json}")
+            logger.info(f"💾 Data saved to {self.output_json}")
         except IOError as e:
-            logger.error(f"Error saving data to {self.output_json}: {e}")
+            logger.error(f"❌ Error saving data to {self.output_json}: {e}")
 
 def main():
     parser = argparse.ArgumentParser(description="Scrape wishlist.design.blog")
