@@ -75,16 +75,20 @@ def generate_report(data, output_file):
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
 
     md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Domain | Count | % |")
+    md.append("| :--- | :---: | :---: |")
+    total_domains = len(domains)
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        percentage = (count / total_domains * 100) if total_domains > 0 else 0
+        md.append(f"| {domain} | {count} | {percentage:.1f}% |")
 
     md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Category | Count | % |")
+    md.append("| :--- | :---: | :---: |")
+    total_categories = len(all_categories)
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        percentage = (count / total_categories * 100) if total_categories > 0 else 0
+        md.append(f"| {cat} | {count} | {percentage:.1f}% |")
 
     md.append("\n## Posts by Year")
     md.append("| Year | Count |")
