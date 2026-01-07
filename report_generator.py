@@ -61,10 +61,12 @@ class ReportGenerator:
         report_filename = os.path.join(self.report_dir, f"report_{report_date}.md")
 
         with open(report_filename, "w", encoding="utf-8") as f:
-            f.write(f"# Daily Scraper Report - {report_date}\n\n")
-            f.write(f"**Total Posts:** {total_posts}\n")
-            f.write(f"**New Posts:** {len(new_posts)}\n")
-            f.write(f"**Updated Posts:** {len(updated_posts)}\n\n")
+            f.write(f"# 📰 Daily Scraper Report - {report_date}\n\n")
+
+            # Summary Table
+            f.write("| 📊 Total Posts | ✨ New Posts | 🔄 Updated Posts |\n")
+            f.write("| :---: | :---: | :---: |\n")
+            f.write(f"| {total_posts} | {len(new_posts)} | {len(updated_posts)} |\n\n")
 
             # Recommendations Section
             f.write("## 💡 Recommendations\n\n")
@@ -106,6 +108,11 @@ class ReportGenerator:
                 for u in updated_posts:
                     title, url, field, old, new, time = u
                     title = title.replace("|", "-")
+                    # Format time to be more readable (YYYY-MM-DD HH:MM)
+                    try:
+                         time = datetime.strptime(time, "%Y-%m-%d %H:%M:%S").strftime("%Y-%m-%d %H:%M")
+                    except ValueError:
+                        pass # Keep original if format fails
                     f.write(f"| [{title}]({url}) | {field} | {old} | {new} | {time} |\n")
                 f.write("\n")
 
@@ -117,6 +124,11 @@ class ReportGenerator:
                 for post in new_posts:
                     title, url, scraped_at = post
                     title = title.replace("|", "-") if title else "No Title"
+                    # Format time
+                    try:
+                         scraped_at = datetime.strptime(scraped_at, "%Y-%m-%d %H:%M:%S").strftime("%Y-%m-%d %H:%M")
+                    except ValueError:
+                        pass
                     f.write(f"| {title} | {scraped_at} | [View]({url}) |\n")
             else:
                 f.write("No new posts scraped in the last 24 hours.\n")
