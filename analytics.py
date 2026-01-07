@@ -134,6 +134,21 @@ def generate_report(data, output_file):
 
     print(f"Report generated: {output_file}")
 
+    print("\n📊 Analytics Summary")
+    print("-" * 20)
+    print(f"📝 Total Posts:      {total_posts:,}")
+    print(f"📅 Date Range:       {start_date} to {end_date}")
+    print(f"🔗 Unique Domains:   {len(unique_domains):,}")
+
+    print("\n🏆 Top 3 Domains:")
+    for i, (domain, count) in enumerate(top_domains[:3], 1):
+        print(f"   {i}. {domain} ({count:,})")
+
+    print("\n🏷️ Top 3 Categories:")
+    for i, (cat, count) in enumerate(top_categories[:3], 1):
+        print(f"   {i}. {cat} ({count:,})")
+    print()
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
     parser.add_argument("--input", default="links.json", help="Input JSON file")
