@@ -1,0 +1,4 @@
+## 2024-05-23 - Prevent CSV Injection in Scraper
+**Vulnerability:** The scraper was writing unsanitized user input (titles, authors, etc.) directly to a CSV file. If these fields started with characters like `=`, `+`, `-`, or `@`, they could be interpreted as formulas by spreadsheet software (Excel, LibreOffice), potentially leading to arbitrary code execution on the user's machine (CSV Injection).
+**Learning:** Even simple data export formats like CSV require sanitization when handling untrusted input. The "trust nothing" principle applies to file outputs, not just database queries or HTML rendering.
+**Prevention:** Implemented a `sanitize_for_csv` method that prepends a single quote `'` to any field starting with dangerous characters, forcing them to be treated as strings. This pattern should be reused for any future CSV exports.
