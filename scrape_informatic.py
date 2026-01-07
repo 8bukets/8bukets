@@ -1,5 +1,5 @@
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import time
 import logging
@@ -150,7 +150,14 @@ def scrape(output_file: str, max_pages: int = 0):
             logging.error(f"Error fetching {current_url}: {e}")
             break
 
-        soup = BeautifulSoup(response.content, 'html.parser')
+        # Bolt Optimization: Use SoupStrainer to only parse relevant tags (articles and navigation)
+        # This significantly reduces parsing time by ignoring most of the document.
+        # We include 'nav' because the pagination is nested within it.
+        soup = BeautifulSoup(
+            response.content,
+            'html.parser',
+            parse_only=SoupStrainer(['article', 'nav'])
+        )
 
         posts = soup.find_all('article')
         logging.info(f"Found {len(posts)} posts on page {page}.")
@@ -164,6 +171,12 @@ def scrape(output_file: str, max_pages: int = 0):
 
         # Pagination
         nav_previous = soup.find('div', class_='nav-previous')
+        if not nav_previous:
+            # Try finding it inside the nav tag if not found directly
+            nav_tag = soup.find('nav', class_='posts-navigation')
+            if nav_tag:
+                nav_previous = nav_tag.find('div', class_='nav-previous')
+
         if nav_previous and nav_previous.find('a'):
             current_url = nav_previous.find('a')['href']
             page += 1
