@@ -29,6 +29,16 @@ class BlogScraper:
         self.data = []
         self.init_db()
 
+    @staticmethod
+    def sanitize_for_csv(text):
+        """
+        Sanitize text to prevent CSV injection (Formula Injection).
+        Prepends a single quote if the text starts with =, +, -, or @.
+        """
+        if isinstance(text, str) and text.startswith(('=', '+', '-', '@')):
+            return f"'{text}"
+        return text
+
     def init_db(self):
         """Initialize the SQLite database."""
         try:
@@ -127,6 +137,10 @@ class BlogScraper:
         return False
 
     def fetch_page(self, url):
+        if not url.startswith(('http://', 'https://')):
+            logger.error(f"Invalid URL scheme: {url}. Only http and https are supported.")
+            return None
+
         logger.info(f"Fetching {url}...")
         try:
             response = requests.get(url, headers=self.headers, timeout=10)
@@ -141,7 +155,8 @@ class BlogScraper:
 
         # Title and Post URL
         title_tag = article.select_one("header.entry-header h2.entry-title a")
-        item['title'] = title_tag.get_text(strip=True) if title_tag else None
+        title_text = title_tag.get_text(strip=True) if title_tag else None
+        item['title'] = self.sanitize_for_csv(title_text)
         item['post_url'] = title_tag.get('href') if title_tag else None
 
         # Link (External)
@@ -176,11 +191,15 @@ class BlogScraper:
 
         # Author
         author_tag = article.select_one(".entry-meta .byline .author a")
-        item['author'] = author_tag.get_text(strip=True) if author_tag else None
+        author_text = author_tag.get_text(strip=True) if author_tag else None
+        item['author'] = self.sanitize_for_csv(author_text)
 
         # Category
         cat_links = article.select("header.entry-header .cat-links a")
-        item['categories'] = [cat.get_text(strip=True) for cat in cat_links] if cat_links else []
+        if cat_links:
+            item['categories'] = [self.sanitize_for_csv(cat.get_text(strip=True)) for cat in cat_links]
+        else:
+            item['categories'] = []
 
         return item
 

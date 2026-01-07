@@ -38,8 +38,8 @@ def job():
 def main():
     logger.info("Scheduler started. Running 24/7.")
 
-    # Schedule the job to run every day at a specific time (e.g., 00:00)
-    schedule.every().day.at("00:00").do(job)
+    # Schedule the job to run every two weeks
+    schedule.every(2).weeks.do(job)
 
     # Also run once immediately on startup for verification
     logger.info("Running initial job on startup...")
