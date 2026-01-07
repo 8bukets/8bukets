@@ -1,14 +1,14 @@
-import aiohttp
-import asyncio
-from bs4 import BeautifulSoup
-import json
-import csv
-import re
 import argparse
+import asyncio
+import csv
+import json
 import logging
-import time
-from typing import List, Dict, Optional, Set
-from urllib.parse import urlparse, urljoin
+import re
+from typing import List, Dict, Optional
+from urllib.parse import urljoin
+
+import aiohttp
+from bs4 import BeautifulSoup, SoupStrainer
 
 # Configure logging
 logging.basicConfig(
@@ -21,7 +21,9 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://www.oracle.com/news/"
 
 class OracleNewsScraper:
-    def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
+    """Scrapes Oracle News for Google Cloud announcements."""
+    def __init__(self, output_json: str, output_csv: str, output_txt: str,
+                 max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
         self.output_csv = output_csv
         self.output_txt = output_txt
@@ -61,7 +63,11 @@ class OracleNewsScraper:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+        # Optimization: Use lxml and SoupStrainer to only parse <a> tags
+        # This significantly reduces memory usage and parsing time for large pages
+        strainer = SoupStrainer('a', href=True)
+        soup = BeautifulSoup(html, 'lxml', parse_only=strainer)
+
         # Oracle news uses links in <h3> tags or <a> tags with specific classes or structures.
         # Based on curl output, we saw links like:
         # <a href="/news/announcement/..." data-lbl="..."><h3>Title</h3></a>
@@ -69,6 +75,8 @@ class OracleNewsScraper:
         articles = []
 
         # Find all links that look like announcements
+        # With SoupStrainer, the soup object itself behaves like the list of tags
+        # or we can iterate over the soup as it contains only the strained tags
         links = soup.find_all('a', href=True)
 
         seen_urls = set()
