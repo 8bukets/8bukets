@@ -4,6 +4,7 @@ from collections import Counter
 from urllib.parse import urlparse
 from datetime import datetime
 import sys
+import html
 
 def load_data(filepath):
     try:
@@ -78,13 +79,13 @@ def generate_report(data, output_file):
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        md.append(f"| {html.escape(str(domain or ''))} | {count} |")
 
     md.append("\n## Top 10 Categories")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        md.append(f"| {html.escape(str(cat or ''))} | {count} |")
 
     md.append("\n## Posts by Year")
     md.append("| Year | Count |")
@@ -94,7 +95,7 @@ def generate_report(data, output_file):
 
     md.append("\n## Authors")
     for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+        md.append(f"- {html.escape(str(author or ''))}: {count} posts")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
