@@ -128,8 +128,8 @@ def run_pipeline(skip_scrape=False):
 def main():
     parser = argparse.ArgumentParser(description="Run Autonomous Agents System")
     parser.add_argument("--skip-scrape", action="store_true", help="Skip the scraping step")
-    parser.add_argument("--daemon", action="store_true", help="Run continuously every day")
-    parser.add_argument("--interval", type=int, default=86400, help="Interval in seconds (default 24h)")
+    parser.add_argument("--daemon", action="store_true", help="Run continuously")
+    parser.add_argument("--interval", type=int, default=1209600, help="Interval in seconds (default 2 weeks)")
     args = parser.parse_args()
 
     if args.daemon:
