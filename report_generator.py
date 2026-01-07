@@ -20,7 +20,7 @@ class ReportGenerator:
             os.makedirs(self.report_dir)
 
     def generate_daily_report(self):
-        logger.info("Generating daily report...")
+        logger.info("Generating bi-weekly report...")
 
         try:
             with sqlite3.connect(self.db_name) as conn:
@@ -30,10 +30,10 @@ class ReportGenerator:
                 cursor.execute("SELECT COUNT(*) FROM posts")
                 total_posts = cursor.fetchone()[0]
 
-                yesterday = datetime.now() - timedelta(days=1)
+                reporting_period_start = datetime.now() - timedelta(weeks=2)
 
                 # New posts
-                cursor.execute("SELECT title, post_url, scraped_at FROM posts WHERE scraped_at >= ? AND id NOT IN (SELECT post_id FROM changes)", (yesterday,))
+                cursor.execute("SELECT title, post_url, scraped_at FROM posts WHERE scraped_at >= ? AND id NOT IN (SELECT post_id FROM changes)", (reporting_period_start,))
                 new_posts = cursor.fetchall()
 
                 # Updated posts
@@ -42,15 +42,15 @@ class ReportGenerator:
                     FROM changes c
                     JOIN posts p ON c.post_id = p.id
                     WHERE c.changed_at >= ?
-                """, (yesterday,))
+                """, (reporting_period_start,))
                 updated_posts = cursor.fetchall()
 
                 # Latest SEO rankings
-                cursor.execute("SELECT query, rank, title, url, checked_at FROM rankings WHERE checked_at >= ? ORDER BY checked_at DESC", (yesterday,))
+                cursor.execute("SELECT query, rank, title, url, checked_at FROM rankings WHERE checked_at >= ? ORDER BY checked_at DESC", (reporting_period_start,))
                 rankings = cursor.fetchall()
 
-                # Previous SEO rankings (older than 24h)
-                cursor.execute("SELECT query, rank, checked_at FROM rankings WHERE checked_at < ? ORDER BY checked_at DESC", (yesterday,))
+                # Previous SEO rankings (older than 2 weeks)
+                cursor.execute("SELECT query, rank, checked_at FROM rankings WHERE checked_at < ? ORDER BY checked_at DESC", (reporting_period_start,))
                 past_rankings = cursor.fetchall()
 
         except sqlite3.Error as e:
@@ -61,7 +61,7 @@ class ReportGenerator:
         report_filename = os.path.join(self.report_dir, f"report_{report_date}.md")
 
         with open(report_filename, "w", encoding="utf-8") as f:
-            f.write(f"# 📰 Daily Scraper Report - {report_date}\n\n")
+            f.write(f"# 📰 Bi-Weekly Scraper Report - {report_date}\n\n")
 
             # Summary Table
             f.write("| 📊 Total Posts | ✨ New Posts | 🔄 Updated Posts |\n")
@@ -131,7 +131,7 @@ class ReportGenerator:
                         pass
                     f.write(f"| {title} | {scraped_at} | [View]({url}) |\n")
             else:
-                f.write("No new posts scraped in the last 24 hours.\n")
+                f.write("No new posts scraped in the last 14 days.\n")
 
         logger.info(f"Report generated: {report_filename}")
 
