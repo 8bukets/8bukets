@@ -72,6 +72,13 @@ class MarkPositionScraperAsync:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
+        # Offload the CPU-bound parsing logic to a thread pool executor.
+        # This prevents the parsing of large HTML documents from blocking the asyncio event loop,
+        # allowing network I/O for other concurrent tasks to proceed uninterrupted.
+        loop = asyncio.get_running_loop()
+        return await loop.run_in_executor(None, self._parse_page_sync, html)
+
+    def _parse_page_sync(self, html: str) -> List[Dict]:
         soup = BeautifulSoup(html, 'html.parser')
         articles = soup.find_all('article', class_='post')
         page_posts = []
