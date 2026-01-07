@@ -1,0 +1,4 @@
+## 2025-02-18 - CSV Injection Vulnerability in Scraper
+**Vulnerability:** The `OracleNewsScraper` was writing unsanitized user-controlled data (scraped from external websites) directly to a CSV file. If the scraped content contained characters like `=`, `@`, `+`, or `-` at the beginning of a field, opening the CSV in spreadsheet software could execute arbitrary formulas (CSV Injection / Formula Injection).
+**Learning:** Even "read-only" operations like scraping data can introduce security risks when that data is exported to formats with executable capabilities (like CSV/Excel). Data crossing trust boundaries (web -> local CSV) must always be sanitized.
+**Prevention:** Implemented a `sanitize_for_csv` method that prepends a single quote `'` to any field starting with dangerous characters. This forces spreadsheet software to treat the content as a string literal.
