@@ -1,9 +1,15 @@
-import schedule
-import time
+"""
+Scheduler script for running the scraper and agent orchestrator periodically.
+"""
+
 import logging
 import sys
-from scraper import main as run_scraper
+import time
+
+import schedule
+
 from agent_orchestrator import AgentOrchestrator
+from scraper import main as run_scraper
 
 # Configure logging
 logging.basicConfig(
@@ -16,6 +22,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 def job():
+    """Execute the scheduled tasks: Scraper and Agents."""
     logger.info("Starting scheduled job...")
 
     # 1. Run Scraper (Data Collection)
@@ -23,7 +30,7 @@ def job():
     try:
         run_scraper()
     except Exception as e:
-        logger.error(f"Scraper failed: {e}")
+        logger.error("Scraper failed: %s", e)
 
     # 2. Run Agents (Analysis, Research, Creation, Reporting)
     logger.info("Running Autonomous Agents...")
@@ -31,15 +38,16 @@ def job():
         orchestrator = AgentOrchestrator()
         orchestrator.run_agents()
     except Exception as e:
-        logger.error(f"Agent Orchestrator failed: {e}")
+        logger.error("Agent Orchestrator failed: %s", e)
 
     logger.info("Job completed.")
 
 def main():
+    """Main entry point for the scheduler."""
     logger.info("Scheduler started. Running 24/7.")
 
-    # Schedule the job to run every day at a specific time (e.g., 00:00)
-    schedule.every().day.at("00:00").do(job)
+    # Schedule the job to run every 2 weeks
+    schedule.every(2).weeks.do(job)
 
     # Also run once immediately on startup for verification
     logger.info("Running initial job on startup...")
