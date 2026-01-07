@@ -5,6 +5,7 @@ import time
 import logging
 import argparse
 import sys
+import os
 from urllib.parse import urlparse
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
@@ -131,7 +132,26 @@ def parse_post_html(post_soup, base_url: str) -> Post:
         image_url=image_url
     )
 
+def validate_output_path(path: str) -> str:
+    """
+    Validates that the output path is safe and within the current working directory.
+    Prevents path traversal attacks.
+    """
+    base_dir = os.getcwd()
+    # Normalize path and make it absolute
+    abs_path = os.path.abspath(os.path.join(base_dir, path))
+
+    # Check if the resolved path starts with the base directory
+    # Use os.path.commonpath to safely compare paths and avoid prefix matching bypass
+    if os.path.commonpath([base_dir, abs_path]) != base_dir:
+        raise ValueError(f"Security Error: Invalid output path '{path}'. Path traversal detected.")
+
+    return abs_path
+
 def scrape(output_file: str, max_pages: int = 0):
+    # Validate output path before doing any work
+    output_file = validate_output_path(output_file)
+
     session = get_session()
     all_posts = []
     page = 1
@@ -190,7 +210,11 @@ def main():
     args = parser.parse_args()
 
     configure_logging(args.verbose)
-    scrape(args.output, args.pages)
+    try:
+        scrape(args.output, args.pages)
+    except ValueError as e:
+        logging.error(e)
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
