@@ -128,10 +128,31 @@ class BlogScraper:
 
     def fetch_page(self, url):
         logger.info(f"Fetching {url}...")
+
+        # Security: Enforce HTTP/HTTPS to prevent SSRF/local file access
+        if not url.startswith(('http://', 'https://')):
+            logger.error(f"Invalid URL scheme: {url}. Only http/https are allowed.")
+            return None
+
         try:
-            response = requests.get(url, headers=self.headers, timeout=10)
-            response.raise_for_status()
-            return response.content
+            # Security: Use stream=True to prevent Memory DoS
+            with requests.get(url, headers=self.headers, timeout=10, stream=True) as response:
+                response.raise_for_status()
+
+                # Security: Limit response size (e.g., 10MB)
+                MAX_SIZE = 10 * 1024 * 1024
+                chunks = []
+                current_size = 0
+
+                for chunk in response.iter_content(chunk_size=1024 * 1024):
+                    chunks.append(chunk)
+                    current_size += len(chunk)
+                    if current_size > MAX_SIZE:
+                        logger.error(f"Response too large ({current_size} bytes). Limit is {MAX_SIZE} bytes.")
+                        return None
+
+                return b"".join(chunks)
+
         except requests.RequestException as e:
             logger.error(f"Error fetching URL {url}: {e}")
             return None

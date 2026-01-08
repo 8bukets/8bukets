@@ -40,7 +40,13 @@ class TestBlogScraper(unittest.TestCase):
     def test_fetch_page(self, mock_get):
         mock_response = MagicMock()
         mock_response.status_code = 200
-        mock_response.content = self.mock_html.encode('utf-8')
+
+        # Mock context manager
+        mock_response.__enter__.return_value = mock_response
+        mock_response.__exit__.return_value = None
+
+        # For stream=True, we must mock iter_content
+        mock_response.iter_content.return_value = iter([self.mock_html.encode('utf-8')])
         mock_get.return_value = mock_response
 
         content = self.scraper.fetch_page("http://mock.url")
