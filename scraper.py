@@ -1,14 +1,17 @@
-import aiohttp
+"""
+Async Scraper for markposition.wordpress.com.
+Scrapes content concurrently and saves to JSON, CSV, and TXT.
+"""
 import asyncio
-from bs4 import BeautifulSoup
 import json
 import csv
 import re
 import argparse
 import logging
-import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
+import aiohttp
+from bs4 import BeautifulSoup
 
 # Configure logging
 logging.basicConfig(
@@ -21,7 +24,12 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
-    def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
+    """
+    Async Scraper for markposition.wordpress.com.
+    Handles concurrent fetching and parsing of pages.
+    """
+    def __init__(self, output_json: str, output_csv: str, output_txt: str,
+                 max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
         self.output_csv = output_csv
         self.output_txt = output_txt
@@ -56,10 +64,11 @@ class MarkPositionScraperAsync:
             return None
         try:
             return urlparse(url).netloc.replace('www.', '')
-        except:
+        except Exception: # pylint: disable=broad-except
             return None
 
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
+        """Fetch a single page asynchronously."""
         url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
         try:
             async with session.get(url) as response:
@@ -68,10 +77,16 @@ class MarkPositionScraperAsync:
                 response.raise_for_status()
                 return await response.text()
         except aiohttp.ClientError as e:
-            logger.error(f"Error fetching page {page_num}: {e}")
+            logger.error("Error fetching page %s: %s", page_num, e)
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
+        """Parse the page content in a separate thread."""
+        # Offload CPU-bound parsing to a thread to avoid blocking the event loop
+        return await asyncio.to_thread(self._parse_page_sync, html)
+
+    def _parse_page_sync(self, html: str) -> List[Dict]:
+        """Synchronous parsing logic."""
         soup = BeautifulSoup(html, 'html.parser')
         articles = soup.find_all('article', class_='post')
         page_posts = []
@@ -134,12 +149,17 @@ class MarkPositionScraperAsync:
         return page_posts
 
     async def scrape(self):
+        """Main scraping loop."""
         page_num = 1
         sem = asyncio.Semaphore(self.concurrency)
 
         # Headers
         headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+            'User-Agent': (
+                'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
+                'AppleWebKit/537.36 (KHTML, like Gecko) '
+                'Chrome/91.0.4472.124 Safari/537.36'
+            )
         }
 
         # Open files for incremental writing
@@ -179,7 +199,10 @@ class MarkPositionScraperAsync:
                         if not tasks:
                             break
 
-                        logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
+                        logger.info(
+                            "Fetching pages %s to %s...",
+                            batch_start, batch_start + len(tasks) - 1
+                        )
                         results = await asyncio.gather(*tasks)
 
                         # Check results
@@ -191,20 +214,22 @@ class MarkPositionScraperAsync:
                             page_idx = batch_start + idx
                             if page_posts is None:
                                 # 404 or Error
-                                logger.info(f"Page {page_idx} returned 404 or empty. Stopping.")
+                                logger.info("Page %s returned 404 or empty. Stopping.", page_idx)
                                 stop_detected = True
                                 break
-                            elif len(page_posts) == 0:
-                                logger.info(f"Page {page_idx} has no articles. Stopping.")
+                            if len(page_posts) == 0:
+                                logger.info("Page %s has no articles. Stopping.", page_idx)
                                 stop_detected = True
                                 break
-                            else:
-                                # Write this page's posts incrementally
-                                first_json_item = self.save_batch(page_posts, json_f, csv_writer, txt_f, seen_links, first_json_item)
-                                total_batch_posts += len(page_posts)
+
+                            # Write this page's posts incrementally
+                            first_json_item = self.save_batch(
+                                page_posts, json_f, csv_writer, txt_f, seen_links, first_json_item
+                            )
+                            total_batch_posts += len(page_posts)
 
                         if total_batch_posts > 0:
-                            logger.info(f"Saved {total_batch_posts} posts from batch.")
+                            logger.info("Saved %s posts from batch.", total_batch_posts)
 
                         if stop_detected:
                             break
@@ -220,7 +245,9 @@ class MarkPositionScraperAsync:
                 # Finalize JSON even on error
                 json_f.write('\n]')
 
-    def save_batch(self, posts: List[Dict], json_f, csv_writer, txt_f, seen_links: Set[str], is_first_item: bool) -> bool:
+    def save_batch(self, posts: List[Dict], json_f, csv_writer, txt_f,
+                   seen_links: Set[str], is_first_item: bool) -> bool:
+        """Save a batch of posts to the output files."""
         for post in posts:
             # CSV
             csv_writer.writerow([
@@ -251,6 +278,7 @@ class MarkPositionScraperAsync:
         return is_first_item
 
     async def fetch_and_parse(self, session, page_num, sem):
+        """Fetch and parse a page with semaphore limiting."""
         async with sem:
             html = await self.fetch_page(session, page_num)
             if html:
@@ -258,6 +286,7 @@ class MarkPositionScraperAsync:
             return None
 
 def main():
+    """Main entry point."""
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
     parser.add_argument("--json", default="links.json", help="Output JSON filename")
     parser.add_argument("--csv", default="links.csv", help="Output CSV filename")
