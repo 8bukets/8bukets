@@ -26,8 +26,17 @@ class BlogScraper:
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
+        # Use a session for connection pooling
+        self.session = requests.Session()
+        self.session.headers.update(self.headers)
         self.data = []
         self.init_db()
+
+    def __del__(self):
+        try:
+            self.session.close()
+        except Exception:
+            pass
 
     def init_db(self):
         """Initialize the SQLite database."""
@@ -129,7 +138,8 @@ class BlogScraper:
     def fetch_page(self, url):
         logger.info(f"Fetching {url}...")
         try:
-            response = requests.get(url, headers=self.headers, timeout=10)
+            # Reuse session for performance (connection pooling)
+            response = self.session.get(url, timeout=10)
             response.raise_for_status()
             return response.content
         except requests.RequestException as e:
