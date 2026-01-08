@@ -36,7 +36,7 @@ class TestBlogScraper(unittest.TestCase):
         if os.path.exists(self.json_name):
             os.remove(self.json_name)
 
-    @patch('requests.get')
+    @patch('requests.Session.get')
     def test_fetch_page(self, mock_get):
         mock_response = MagicMock()
         mock_response.status_code = 200
