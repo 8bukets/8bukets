@@ -1,0 +1,3 @@
+## 2024-05-23 - [Blocking Event Loop with BeautifulSoup]
+**Learning:** Even in an async scraper using `aiohttp`, CPU-bound operations like `BeautifulSoup` parsing run on the main thread and block the event loop. This prevents concurrent network requests from progressing, effectively serializing part of the workload. Measuring just the parsing time doesn't show the full picture; measuring the latency of concurrent "background" tasks during parsing reveals the blocking nature.
+**Action:** Always offload heavy CPU operations (parsing large HTML, data processing) to a separate thread using `asyncio.to_thread` (or `run_in_executor` for older Python) in async applications to maintain responsiveness and true concurrency.
