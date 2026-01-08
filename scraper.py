@@ -1,14 +1,21 @@
-import aiohttp
-import asyncio
-from bs4 import BeautifulSoup
-import json
-import csv
-import re
+"""
+Async Scraper for markposition.wordpress.com.
+
+This module provides functionality to scrape articles, including titles, dates,
+authors, and categories, and save them to JSON, CSV, and TXT formats.
+"""
+
 import argparse
+import asyncio
+import csv
+import json
 import logging
-import time
+import re
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
+
+import aiohttp
+from bs4 import BeautifulSoup
 
 # Configure logging
 logging.basicConfig(
@@ -20,7 +27,12 @@ logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
 
+
 class MarkPositionScraperAsync:
+    """
+    A class to scrape MarkPosition asynchronously.
+    """
+
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
         self.output_csv = output_csv
@@ -221,6 +233,20 @@ class MarkPositionScraperAsync:
                 json_f.write('\n]')
 
     def save_batch(self, posts: List[Dict], json_f, csv_writer, txt_f, seen_links: Set[str], is_first_item: bool) -> bool:
+        """
+        Save a batch of posts to the open file handles.
+
+        Args:
+            posts: List of post dictionaries.
+            json_f: File handle for JSON output.
+            csv_writer: CSV writer object.
+            txt_f: File handle for TXT output.
+            seen_links: Set of seen links to avoid duplicates in TXT.
+            is_first_item: Boolean indicating if this is the first item in the JSON array.
+
+        Returns:
+            Updated is_first_item status.
+        """
         for post in posts:
             # CSV
             csv_writer.writerow([
