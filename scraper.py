@@ -184,7 +184,7 @@ class MarkPositionScraperAsync:
                 if not tasks:
                     break
 
-                logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
+                logger.info(f"🚀 Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
                 results = await asyncio.gather(*tasks)
 
                 # Check results
@@ -196,11 +196,11 @@ class MarkPositionScraperAsync:
                     page_idx = batch_start + idx
                     if page_posts is None:
                         # 404 or Error
-                        logger.info(f"Page {page_idx} returned 404 or empty. Stopping.")
+                        logger.info(f"🛑 Page {page_idx} returned 404 or empty. Stopping.")
                         stop_detected = True
                         break # Don't process further pages in this batch effectively (though they were fetched)
                     elif len(page_posts) == 0:
-                        logger.info(f"Page {page_idx} has no articles. Stopping.")
+                        logger.info(f"🛑 Page {page_idx} has no articles. Stopping.")
                         stop_detected = True
                         break
                     else:
@@ -211,7 +211,7 @@ class MarkPositionScraperAsync:
                     break
 
                 if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
-                    logger.info("Reached max pages limit.")
+                    logger.info("🛑 Reached max pages limit.")
                     break
 
                 page_num += len(tasks)
@@ -232,9 +232,9 @@ class MarkPositionScraperAsync:
         try:
             with open(self.output_json, 'w', encoding='utf-8') as f:
                 json.dump(posts, f, indent=4, ensure_ascii=False)
-            logger.info(f"Saved {len(posts)} posts to {self.output_json}")
+            logger.info(f"💾 Saved {len(posts)} posts to {self.output_json}")
         except IOError as e:
-            logger.error(f"Failed to save JSON: {e}")
+            logger.error(f"❌ Failed to save JSON: {e}")
 
         # CSV
         try:
@@ -251,9 +251,9 @@ class MarkPositionScraperAsync:
                         self.sanitize_for_csv(post.get('domain', '')),
                         self.sanitize_for_csv(post.get('post_url', ''))
                     ])
-            logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
+            logger.info(f"💾 Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
-            logger.error(f"Failed to save CSV: {e}")
+            logger.error(f"❌ Failed to save CSV: {e}")
 
         # Unique Links TXT
         unique_links = set()
@@ -267,9 +267,9 @@ class MarkPositionScraperAsync:
             with open(self.output_txt, 'w', encoding='utf-8') as f:
                 for link in sorted_links:
                     f.write(link + '\n')
-            logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
+            logger.info(f"💾 Saved {len(sorted_links)} unique links to {self.output_txt}")
         except IOError as e:
-            logger.error(f"Failed to save TXT: {e}")
+            logger.error(f"❌ Failed to save TXT: {e}")
 
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
