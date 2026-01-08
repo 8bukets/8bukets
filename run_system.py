@@ -79,19 +79,53 @@ async def run_pipeline(skip_scrape=False, limit=2):
     ]
 
     # 4. Execute Agents
+    agent_results = {}
+    logger.info("🚀 Starting Autonomous Agent Pipeline...")
+
+    for agent in agents:
+        logger.info(f"🤖 Running {agent.name}...")
+        try:
+            results = await agent.process(data, shared_context, knowledge_base)
+            agent_results[agent.name] = {
+                "results": results,
+                "formatted": agent.format_report(results)
+            }
+        except Exception as e:
+            logger.error(f"❌ Error in {agent.name}: {e}")
+            agent_results[agent.name] = {
+                "results": {},
+                "formatted": f"### {agent.name} Failed\nError: {e}"
+            }
+
+    # 5. Generate Report
     report_lines = []
     report_lines.append(f"# Daily Autonomous Report: {datetime.now().strftime('%Y-%m-%d')}\n")
 
+    # Executive Summary
+    analysis_res = agent_results.get('Analysis Agent', {}).get('results', {})
+    gravity_res = agent_results.get('Google Antigravity Agent', {}).get('results', {})
+
+    total_posts = analysis_res.get('Total Posts', 'N/A')
+    system_status = gravity_res.get('System Status', 'Unknown')
+    strategy = gravity_res.get('Strategic Synthesis', 'Pending')
+
+    report_lines.append("## 📊 Executive Summary\n")
+    report_lines.append("| Metric | Value |")
+    report_lines.append("| :--- | :--- |")
+    report_lines.append(f"| **Total Posts** | {total_posts} |")
+    report_lines.append(f"| **System Status** | {system_status} |")
+    report_lines.append(f"| **Strategy** | {strategy} |")
+    report_lines.append("\n---\n")
+    report_lines.append("## 📝 Detailed Agent Reports\n")
+
     for agent in agents:
-        logger.info(f"Running {agent.name}...")
-        try:
-            results = await agent.process(data, shared_context, knowledge_base)
-            report_section = agent.format_report(results)
-            report_lines.append(report_section)
-            report_lines.append("\n---\n")
-        except Exception as e:
-            logger.error(f"Error in {agent.name}: {e}")
-            report_lines.append(f"### {agent.name} Failed\nError: {e}\n\n---\n")
+        data = agent_results.get(agent.name, {})
+        content = data.get('formatted', '')
+
+        # UX: Use collapsible details for cleaner reading
+        report_lines.append(f"<details>\n<summary><strong>{agent.name}</strong></summary>\n\n")
+        report_lines.append(content)
+        report_lines.append("\n\n</details>\n")
 
     # 5. Save Report
     output_dir = "results"
