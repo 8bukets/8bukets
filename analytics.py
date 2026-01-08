@@ -26,7 +26,8 @@ def generate_report(data, output_file):
 
     # 1. Domain Analysis
     domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
-    domain_counts = Counter(domains).most_common(10)
+    domain_counter = Counter(domains)
+    domain_counts = domain_counter.most_common(10)
 
     # 2. Category Analysis
     all_categories = []
@@ -34,7 +35,8 @@ def generate_report(data, output_file):
         cats = p.get('categories', [])
         if cats:
             all_categories.extend(cats)
-    category_counts = Counter(all_categories).most_common(10)
+    category_counter = Counter(all_categories)
+    category_counts = category_counter.most_common(10)
 
     # 3. Date Analysis
     dates = []
@@ -66,40 +68,60 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
-    md.append("# Wordpress Blog Analytics Report")
+    md.append("# 📊 Wordpress Blog Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
+    md.append("\n## 📈 General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
 
-    md.append("\n## Top 10 Referenced Domains")
+    md.append("\n## 🔗 Top 10 Referenced Domains")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in domain_counts:
         md.append(f"| {domain} | {count} |")
 
-    md.append("\n## Top 10 Categories")
+    md.append("\n## 🏷️ Top 10 Categories")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in category_counts:
         md.append(f"| {cat} | {count} |")
 
-    md.append("\n## Posts by Year")
+    md.append("\n## 📑 Full Data (Collapsible)")
+
+    # Full Domain List
+    md.append("\n<details>")
+    md.append("<summary><strong>View All Domains</strong></summary>\n")
+    md.append("| Domain | Count |")
+    md.append("| :--- | :---: |")
+    for domain, count in domain_counter.most_common():
+        md.append(f"| {domain} | {count} |")
+    md.append("</details>")
+
+    # Full Category List
+    md.append("\n<details>")
+    md.append("<summary><strong>View All Categories</strong></summary>\n")
+    md.append("| Category | Count |")
+    md.append("| :--- | :---: |")
+    for cat, count in category_counter.most_common():
+        md.append(f"| {cat} | {count} |")
+    md.append("</details>")
+
+    md.append("\n## 📅 Posts by Year")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
     for year, count in year_counts:
         md.append(f"| {year} | {count} |")
 
-    md.append("\n## Authors")
+    md.append("\n## ✍️ Authors")
     for author, count in author_counts:
         md.append(f"- {author}: {count} posts")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    print(f"✨ Report successfully generated: {output_file} 🚀")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for WordPress blog data")
