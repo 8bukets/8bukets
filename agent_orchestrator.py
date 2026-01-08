@@ -87,9 +87,32 @@ class AgentOrchestrator:
         with open(report_filename, "w", encoding="utf-8") as f:
             f.write(f"# 🤖 Autonomous Agent Report (Evolved v2) - {report_date}\n\n")
 
-            # Health
+            # Data preparation
             h = outputs.get('HealthAgent', {})
-            f.write(f"## 🏥 System Health\n- DB: {h.get('db_status')}\n\n")
+            m = outputs.get('MonetizationAgent', {})
+            ads = outputs.get('AdManagerAgent', {})
+            crt = outputs.get('CreativeAgent', {})
+
+            # Summary Table
+            f.write("## 📊 Executive Summary\n")
+            f.write("| Metric | Status | Details |\n")
+            f.write("| :--- | :--- | :--- |\n")
+
+            db_icon = "✅" if h.get('db_status') == "OK" else "❌"
+            f.write(f"| **System Health** | {db_icon} {h.get('db_status')} | DB Size: {h.get('db_size', 0)/1024:.1f} KB |\n")
+
+            ops_count = len(m.get('top_opportunities', []))
+            f.write(f"| **Monetization** | 💰 {ops_count} Ops | Top 3 listed below |\n")
+
+            camp_count = len(ads.get('campaigns', []))
+            f.write(f"| **Ad Campaigns** | 📢 {camp_count} Active | Strategy Active |\n\n")
+
+            # Health
+            f.write(f"## 🏥 System Health\n")
+            f.write(f"- **Database Status**: {db_icon} {h.get('db_status')}\n")
+            json_status = h.get('json_status', 'Unknown')
+            json_icon = "✅" if json_status == "OK" else "❌"
+            f.write(f"- **Scraper Data**: {json_icon} {json_status}\n\n")
 
             # Intelligence
             i = outputs.get('IntelligenceAgent', {})
@@ -99,30 +122,47 @@ class AgentOrchestrator:
 
             # Curiosity & Innovation
             cur = outputs.get('CuriosityAgent', {})
-            crt = outputs.get('CreativeAgent', {})
             f.write(f"## 🌌 Curiosity & Innovation (Google Antigravity Mode)\n")
-            f.write(f"- **Explored**: '{cur.get('exploration_query')}'\n")
+            f.write(f"- **Explored**: `{cur.get('exploration_query')}`\n")
             f.write(f"- **Findings**: {cur.get('findings')}\n")
-            f.write(f"### 💡 High Solution Interest Ideas\n")
-            for idea in crt.get('system_improvement_ideas', []):
-                f.write(f"- 🛠️ {idea}\n")
-            f.write("\n")
+
+            ideas = crt.get('system_improvement_ideas', [])
+            if ideas:
+                f.write(f"### 💡 High Solution Interest Ideas\n")
+                f.write(f"<details><summary>View {len(ideas)} Ideas</summary>\n\n")
+                for idea in ideas:
+                    f.write(f"- 🛠️ {idea}\n")
+                f.write("\n</details>\n\n")
+            else:
+                f.write(f"### 💡 High Solution Interest Ideas\n*No new ideas generated.*\n\n")
 
             # Ad Manager
-            ads = outputs.get('AdManagerAgent', {})
             f.write(f"## 📢 Ad Manager\n")
-            f.write(f"### Active Campaigns\n")
-            for camp in ads.get('campaigns', []):
-                f.write(f"- **{camp['name']}**: {camp['headline']} ({camp['type']})\n")
-            f.write("\n")
+            campaigns = ads.get('campaigns', [])
+            if campaigns:
+                f.write(f"### Active Campaigns\n")
+                f.write(f"<details><summary>View {len(campaigns)} Campaigns</summary>\n\n")
+                for camp in campaigns:
+                    f.write(f"- **{camp['name']}**: {camp['headline']} ({camp['type']})\n")
+                f.write("\n</details>\n\n")
+            else:
+                f.write("No active campaigns.\n\n")
 
             # Monetization
-            m = outputs.get('MonetizationAgent', {})
-            f.write(f"## 💰 Monetization\n- Opportunities: {len(m.get('top_opportunities', []))}\n\n")
+            f.write(f"## 💰 Monetization\n")
+            f.write(f"- **Total Opportunities**: {m.get('opportunities_count', 0)}\n")
+            top_ops = m.get('top_opportunities', [])
+            if top_ops:
+                f.write(f"- **Top 3 Opportunities**:\n")
+                for op in top_ops:
+                    f.write(f"  - [{op['title']}]({op['url']})\n")
+            f.write("\n")
 
             # Content
             cc = outputs.get('CreatorAgent', {})
-            f.write(f"## ✍️ Content Draft\n**{cc.get('draft_title')}**\n\n{cc.get('draft_content')}\n\n")
+            f.write(f"## ✍️ Content Draft\n")
+            f.write(f"### {cc.get('draft_title')}\n\n")
+            f.write(f"{cc.get('draft_content')}\n\n")
 
         logger.info(f"Agent Report generated: {report_filename}")
 
