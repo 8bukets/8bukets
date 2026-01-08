@@ -75,7 +75,20 @@ class MarkPositionScraperAsync:
                 if response.status == 404:
                     return None
                 response.raise_for_status()
-                return await response.text()
+
+                # Security: Limit response size to prevent DoS (10MB limit)
+                MAX_SIZE = 10 * 1024 * 1024
+                content = bytearray()
+                async for chunk in response.content.iter_chunked(1024):
+                    content.extend(chunk)
+                    if len(content) > MAX_SIZE:
+                        logger.warning(f"Page {page_num} exceeded size limit of {MAX_SIZE} bytes.")
+                        return None
+
+                # Decode explicitly
+                encoding = response.get_encoding() or 'utf-8'
+                return content.decode(encoding, errors='replace')
+
         except aiohttp.ClientError as e:
             logger.error(f"Error fetching page {page_num}: {e}")
             return None
