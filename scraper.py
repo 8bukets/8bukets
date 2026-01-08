@@ -153,7 +153,9 @@ class OracleNewsScraper:
                 writer = csv.writer(f)
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
-                    writer.writerow([
+                    # Sanitize fields to prevent CSV injection
+                    # Prepend ' to fields starting with =, +, -, or @
+                    row_data = [
                         post.get('title', ''),
                         post.get('date', ''),
                         post.get('author', ''),
@@ -161,7 +163,14 @@ class OracleNewsScraper:
                         post.get('external_link', ''),
                         post.get('domain', ''),
                         post.get('post_url', '')
-                    ])
+                    ]
+                    sanitized_row = []
+                    for field in row_data:
+                        if isinstance(field, str) and field.startswith(('=', '+', '-', '@')):
+                            sanitized_row.append("'" + field)
+                        else:
+                            sanitized_row.append(field)
+                    writer.writerow(sanitized_row)
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
             logger.error(f"Failed to save CSV: {e}")
