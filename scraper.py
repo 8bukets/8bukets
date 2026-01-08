@@ -7,6 +7,7 @@ import re
 import argparse
 import logging
 import time
+import os
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
@@ -22,12 +23,23 @@ BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
-        self.output_json = output_json
-        self.output_csv = output_csv
-        self.output_txt = output_txt
+        self.output_json = self.validate_path(output_json)
+        self.output_csv = self.validate_path(output_csv)
+        self.output_txt = self.validate_path(output_txt)
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+
+    def validate_path(self, path: str) -> str:
+        """Validate that the path is safe (no traversal)."""
+        # Allow only the filename or path within the current working directory
+        safe_base = os.path.join(os.getcwd(), '')
+        requested_path = os.path.abspath(os.path.join(os.getcwd(), path))
+
+        if not requested_path.startswith(safe_base):
+             raise ValueError(f"Path traversal attempt detected: {path}")
+
+        return path
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -62,12 +74,13 @@ class MarkPositionScraperAsync:
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
         url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
         try:
-            async with session.get(url) as response:
+            # Added timeout to prevent hanging indefinitely
+            async with session.get(url, timeout=30) as response:
                 if response.status == 404:
                     return None
                 response.raise_for_status()
                 return await response.text()
-        except aiohttp.ClientError as e:
+        except (aiohttp.ClientError, asyncio.TimeoutError) as e:
             logger.error(f"Error fetching page {page_num}: {e}")
             return None
 
