@@ -45,6 +45,7 @@ class OracleNewsScraper:
         return value
 
     async def fetch_page(self, session: aiohttp.ClientSession, url: str) -> Optional[str]:
+        MAX_RESPONSE_SIZE = 10 * 1024 * 1024  # 10MB
         try:
             # 30 second global timeout
             timeout = aiohttp.ClientTimeout(total=30)
@@ -52,8 +53,22 @@ class OracleNewsScraper:
                 if response.status == 404:
                     return None
                 response.raise_for_status()
-                return await response.text()
-        except aiohttp.ClientError as e:
+
+                # Check Content-Length header if available
+                content_length = response.headers.get('Content-Length')
+                if content_length and int(content_length) > MAX_RESPONSE_SIZE:
+                    logger.error(f"Response content length {content_length} exceeds limit for {url}")
+                    return None
+
+                content = bytearray()
+                async for chunk in response.content.iter_chunked(8192):
+                    content.extend(chunk)
+                    if len(content) > MAX_RESPONSE_SIZE:
+                        logger.error(f"Response size limit exceeded for {url}")
+                        return None
+
+                return content.decode(response.get_encoding() or 'utf-8', errors='replace')
+        except (aiohttp.ClientError, ValueError) as e:
             logger.error(f"Error fetching {url}: {e}")
             return None
         except asyncio.TimeoutError:
