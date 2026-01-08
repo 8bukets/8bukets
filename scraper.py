@@ -1,14 +1,15 @@
-import aiohttp
-import asyncio
-from bs4 import BeautifulSoup
-import json
-import csv
-import re
 import argparse
+import asyncio
+import csv
+import json
 import logging
-import time
-from typing import List, Dict, Optional, Set
-from urllib.parse import urlparse, urljoin
+import re
+from typing import List, Dict, Optional
+from urllib.parse import urljoin
+
+import aiohttp
+from bs4 import BeautifulSoup
+
 
 # Configure logging
 logging.basicConfig(
@@ -21,7 +22,11 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://www.oracle.com/news/"
 
 class OracleNewsScraper:
-    def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
+    """
+    Scrapes Oracle news for Google Cloud related announcements.
+    """
+    def __init__(self, output_json: str, output_csv: str, output_txt: str,
+                 max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
         self.output_csv = output_csv
         self.output_txt = output_txt
@@ -45,6 +50,7 @@ class OracleNewsScraper:
         return value
 
     async def fetch_page(self, session: aiohttp.ClientSession, url: str) -> Optional[str]:
+        """Fetches the content of a single page."""
         try:
             # 30 second global timeout
             timeout = aiohttp.ClientTimeout(total=30)
@@ -61,6 +67,7 @@ class OracleNewsScraper:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
+        """Parses the HTML content to extract article details."""
         soup = BeautifulSoup(html, 'html.parser')
         # Oracle news uses links in <h3> tags or <a> tags with specific classes or structures.
         # Based on curl output, we saw links like:
@@ -120,6 +127,7 @@ class OracleNewsScraper:
         return articles
 
     async def scrape(self):
+        """Main scraping loop."""
         all_posts = []
 
         # Headers to mimic browser
@@ -133,25 +141,26 @@ class OracleNewsScraper:
             # The current curl showed just the main page.
             # We'll stick to the main page for now as it contained the relevant future links.
 
-            logger.info(f"Fetching {self.base_url}...")
+            logger.info(f"🌐 Fetching {self.base_url}...")
             html = await self.fetch_page(session, self.base_url)
             if html:
                 posts = await self.parse_page(html)
                 all_posts.extend(posts)
-                logger.info(f"Found {len(posts)} relevant articles.")
+                logger.info(f"🔍 Found {len(posts)} relevant articles.")
             else:
-                logger.error("Failed to fetch main news page.")
+                logger.error("❌ Failed to fetch main news page.")
 
         self.save_data(all_posts)
 
     def save_data(self, posts: List[Dict]):
+        """Saves scraped data to JSON, CSV, and TXT files."""
         # JSON
         try:
             with open(self.output_json, 'w', encoding='utf-8') as f:
                 json.dump(posts, f, indent=4, ensure_ascii=False)
-            logger.info(f"Saved {len(posts)} posts to {self.output_json}")
+            logger.info(f"💾 Saved {len(posts)} posts to {self.output_json}")
         except IOError as e:
-            logger.error(f"Failed to save JSON: {e}")
+            logger.error(f"❌ Failed to save JSON: {e}")
 
         # CSV
         try:
@@ -168,9 +177,9 @@ class OracleNewsScraper:
                         self.sanitize_for_csv(post.get('domain', '')),
                         self.sanitize_for_csv(post.get('post_url', ''))
                     ])
-            logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
+            logger.info(f"💾 Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
-            logger.error(f"Failed to save CSV: {e}")
+            logger.error(f"❌ Failed to save CSV: {e}")
 
         # Unique Links TXT
         unique_links = set()
@@ -184,9 +193,9 @@ class OracleNewsScraper:
             with open(self.output_txt, 'w', encoding='utf-8') as f:
                 for link in sorted_links:
                     f.write(link + '\n')
-            logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
+            logger.info(f"💾 Saved {len(sorted_links)} unique links to {self.output_txt}")
         except IOError as e:
-            logger.error(f"Failed to save TXT: {e}")
+            logger.error(f"❌ Failed to save TXT: {e}")
 
 def main():
     parser = argparse.ArgumentParser(description="Scraper for Oracle Database @ Google Cloud News")
