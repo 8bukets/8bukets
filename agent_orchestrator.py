@@ -1,3 +1,6 @@
+"""
+This module orchestrates the autonomous agents to generate a comprehensive report.
+"""
 import logging
 import os
 from datetime import datetime
@@ -18,7 +21,13 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+
 class AgentOrchestrator:
+    """
+    Orchestrates the execution of various agents, managing their dependencies
+    and aggregating their outputs into a final report.
+    """
+    # pylint: disable=too-many-instance-attributes
     def __init__(self, report_dir="reports"):
         self.report_dir = report_dir
         if not os.path.exists(self.report_dir):
@@ -30,12 +39,16 @@ class AgentOrchestrator:
         self.researcher_agent = ResearcherAgent()
         self.intelligence_agent = IntelligenceAgent()
         self.monetization_agent = MonetizationAgent()
-        self.curiosity_agent = CuriosityAgent() # New
+        self.curiosity_agent = CuriosityAgent()  # New
         self.creative_agent = CreativeAgent()
         self.ad_manager_agent = AdManagerAgent()
         self.creator_agent = CreatorAgent()
 
     def run_agents(self):
+        """
+        Executes all agents in the defined order, passing context between them
+        as needed, and generates the final report.
+        """
         logger.info("Orchestrating agents with Collaboration Protocol...")
         outputs = {}
 
@@ -81,50 +94,85 @@ class AgentOrchestrator:
         self.generate_report(outputs)
 
     def generate_report(self, outputs):
+        """
+        Generates a Markdown report from the agent outputs.
+        """
         report_date = datetime.now().strftime("%Y-%m-%d")
         report_filename = os.path.join(self.report_dir, f"agent_report_{report_date}.md")
 
         with open(report_filename, "w", encoding="utf-8") as f:
-            f.write(f"# 🤖 Autonomous Agent Report (Evolved v2) - {report_date}\n\n")
+            f.write(
+                f"# 🤖 Autonomous Agent Report (Evolved v2) - {report_date} "
+                "<a name='top'></a>\n\n"
+            )
+
+            # Table of Contents
+            f.write("## 📋 Table of Contents\n")
+            f.write("- [🏥 System Health](#health)\n")
+            f.write("- [🧠 Intelligence](#intelligence)\n")
+            f.write("- [🌌 Curiosity & Innovation](#curiosity)\n")
+            f.write("- [📢 Ad Manager](#ads)\n")
+            f.write("- [💰 Monetization](#monetization)\n")
+            f.write("- [✍️ Content Draft](#content)\n\n")
 
             # Health
             h = outputs.get('HealthAgent', {})
-            f.write(f"## 🏥 System Health\n- DB: {h.get('db_status')}\n\n")
+            f.write(f"## 🏥 System Health <a name='health'></a>\n- DB: {h.get('db_status')}\n")
+            f.write("[↑ Back to Top](#top)\n\n")
 
             # Intelligence
             i = outputs.get('IntelligenceAgent', {})
-            f.write(f"## 🧠 Intelligence\n")
+            f.write("## 🧠 Intelligence <a name='intelligence'></a>\n")
             f.write(f"- **Strategy**: {i.get('strategy')}\n")
-            f.write(f"- **Trend Alert**: {i.get('trend_alert')}\n\n")
+            f.write(f"- **Trend Alert**: {i.get('trend_alert')}\n")
+            f.write("[↑ Back to Top](#top)\n\n")
 
             # Curiosity & Innovation
             cur = outputs.get('CuriosityAgent', {})
             crt = outputs.get('CreativeAgent', {})
-            f.write(f"## 🌌 Curiosity & Innovation (Google Antigravity Mode)\n")
+            f.write(
+                "## 🌌 Curiosity & Innovation (Google Antigravity Mode) "
+                "<a name='curiosity'></a>\n"
+            )
             f.write(f"- **Explored**: '{cur.get('exploration_query')}'\n")
             f.write(f"- **Findings**: {cur.get('findings')}\n")
-            f.write(f"### 💡 High Solution Interest Ideas\n")
+            f.write("### 💡 High Solution Interest Ideas\n")
+            f.write("<details>\n<summary>View Ideas</summary>\n\n")
             for idea in crt.get('system_improvement_ideas', []):
                 f.write(f"- 🛠️ {idea}\n")
-            f.write("\n")
+            f.write("\n</details>\n")
+            f.write("[↑ Back to Top](#top)\n\n")
 
             # Ad Manager
             ads = outputs.get('AdManagerAgent', {})
-            f.write(f"## 📢 Ad Manager\n")
-            f.write(f"### Active Campaigns\n")
+            f.write("## 📢 Ad Manager <a name='ads'></a>\n")
+            f.write("### Active Campaigns\n")
+            f.write("<details>\n<summary>View Campaigns</summary>\n\n")
             for camp in ads.get('campaigns', []):
                 f.write(f"- **{camp['name']}**: {camp['headline']} ({camp['type']})\n")
-            f.write("\n")
+            f.write("\n</details>\n")
+            f.write("[↑ Back to Top](#top)\n\n")
 
             # Monetization
             m = outputs.get('MonetizationAgent', {})
-            f.write(f"## 💰 Monetization\n- Opportunities: {len(m.get('top_opportunities', []))}\n\n")
+            f.write(
+                f"## 💰 Monetization <a name='monetization'></a>\n- "
+                f"Opportunities: {len(m.get('top_opportunities', []))}\n"
+            )
+            f.write("[↑ Back to Top](#top)\n\n")
 
             # Content
             cc = outputs.get('CreatorAgent', {})
-            f.write(f"## ✍️ Content Draft\n**{cc.get('draft_title')}**\n\n{cc.get('draft_content')}\n\n")
+            f.write(
+                f"## ✍️ Content Draft <a name='content'></a>\n"
+                f"**{cc.get('draft_title')}**\n\n"
+            )
+            f.write("<details>\n<summary>Read Draft</summary>\n\n")
+            f.write(f"{cc.get('draft_content')}\n")
+            f.write("\n</details>\n")
+            f.write("[↑ Back to Top](#top)\n\n")
 
-        logger.info(f"Agent Report generated: {report_filename}")
+        logger.info("Agent Report generated: %s", report_filename)
 
 if __name__ == "__main__":
     orchestrator = AgentOrchestrator()
