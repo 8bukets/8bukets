@@ -7,6 +7,7 @@ import argparse
 import sys
 import sqlite3
 from datetime import datetime
+from urllib.parse import urlparse, urljoin
 
 # Configure logging
 logging.basicConfig(
@@ -27,6 +28,11 @@ class BlogScraper:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
         self.data = []
+
+        # Security: Parse allowed domain from base_url to prevent SSRF
+        parsed_base = urlparse(self.base_url)
+        self.allowed_domain = parsed_base.netloc
+
         self.init_db()
 
     def init_db(self):
@@ -128,6 +134,13 @@ class BlogScraper:
 
     def fetch_page(self, url):
         logger.info(f"Fetching {url}...")
+
+        # Security: Ensure scheme is http or https
+        parsed = urlparse(url)
+        if parsed.scheme not in ('http', 'https'):
+            logger.error(f"Security: Invalid scheme '{parsed.scheme}' for URL {url}")
+            return None
+
         try:
             response = requests.get(url, headers=self.headers, timeout=10)
             response.raise_for_status()
@@ -221,9 +234,17 @@ class BlogScraper:
 
             next_page = self.get_next_page(soup)
             if next_page:
-                logger.info(f"Found next page: {next_page}")
-                url = next_page
-                time.sleep(1)
+                # Security: Validate next_page domain and normalize URL
+                next_page = urljoin(url, next_page)
+                parsed_next = urlparse(next_page)
+
+                if parsed_next.netloc == self.allowed_domain:
+                    logger.info(f"Found next page: {next_page}")
+                    url = next_page
+                    time.sleep(1)
+                else:
+                    logger.warning(f"Security: Skipping external or invalid next page URL: {next_page}")
+                    url = None
             else:
                 logger.info("No more pages found.")
                 url = None
