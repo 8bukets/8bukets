@@ -97,37 +97,65 @@ def generate_report(data, output_file):
     # Authors: all by count descending (most_common does this)
     sorted_authors = author_counts.most_common()
 
+    # Determine Top Domain and Top Category for Summary
+    top_domain_str = f"{top_domains[0][0]} ({top_domains[0][1]})" if top_domains else "N/A"
+    top_category_str = f"{top_categories[0][0]} ({top_categories[0][1]})" if top_categories else "N/A"
+
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
+    md.append("# 📊 Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
-    md.append(f"- **Total Posts:** {total_posts}")
-    md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(unique_domains)}")
+    # Table of Contents
+    md.append("\n## 📑 Table of Contents")
+    md.append("- [Executive Summary](#executive-summary)")
+    md.append("- [Referenced Domains](#referenced-domains)")
+    md.append("- [Categories](#categories)")
+    md.append("- [Posts by Year](#posts-by-year)")
+    md.append("- [Authors](#authors)")
 
-    md.append("\n## Top 10 Referenced Domains")
+    # Executive Summary
+    md.append("\n## <a id='executive-summary'></a>📋 Executive Summary")
+    md.append("| Metric | Value |")
+    md.append("| :--- | :--- |")
+    md.append(f"| **Total Posts** | {total_posts} |")
+    md.append(f"| **Date Range** | {start_date} to {end_date} |")
+    md.append(f"| **Unique Domains** | {len(unique_domains)} |")
+    md.append(f"| **Top Domain** | {top_domain_str} |")
+    md.append(f"| **Top Category** | {top_category_str} |")
+
+    md.append("\n## <a id='referenced-domains'></a>🌐 Top 10 Referenced Domains")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in top_domains:
         md.append(f"| {domain} | {count} |")
+    md.append("\n[⬆️ Back to Top](#markposition-analytics-report)")
 
-    md.append("\n## Top 10 Categories")
+    md.append("\n## <a id='categories'></a>🏷️ Top 10 Categories")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in top_categories:
         md.append(f"| {cat} | {count} |")
+    md.append("\n[⬆️ Back to Top](#markposition-analytics-report)")
 
-    md.append("\n## Posts by Year")
+    md.append("\n## <a id='posts-by-year'></a>📅 Posts by Year")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
     for year, count in sorted_years:
         md.append(f"| {year} | {count} |")
+    md.append("\n[⬆️ Back to Top](#markposition-analytics-report)")
 
-    md.append("\n## Authors")
-    for author, count in sorted_authors:
-        md.append(f"- {author}: {count} posts")
+    md.append("\n## <a id='authors'></a>✍️ Authors")
+    if len(sorted_authors) > 5:
+        md.append("<details>")
+        md.append("<summary>Click to see all authors</summary>\n")
+        for author, count in sorted_authors:
+            md.append(f"- **{author}**: {count} posts")
+        md.append("\n</details>")
+    else:
+        for author, count in sorted_authors:
+            md.append(f"- **{author}**: {count} posts")
+    md.append("\n[⬆️ Back to Top](#markposition-analytics-report)")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
