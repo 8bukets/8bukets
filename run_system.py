@@ -37,7 +37,7 @@ async def main():
 
     # 1. Run Scraper (unless skipped)
     if not args.skip_scrape:
-        print("--- Starting Scraper ---")
+        print("🚀 Starting Scraper...")
         scraper = MarkPositionScraperAsync(
             output_json=DATA_FILE,
             output_csv="links.csv",
@@ -45,32 +45,32 @@ async def main():
             concurrency=5
         )
         await scraper.scrape()
-        print("--- Scraping Complete ---")
+        print("✅ Scraping Complete!")
     else:
-        print("--- Skipping Scraper ---")
+        print("⏩ Skipping Scraper...")
 
     # 2. Load Data
     if not os.path.exists(DATA_FILE):
-        print(f"Error: {DATA_FILE} not found. Cannot run agents.")
+        print(f"❌ Error: {DATA_FILE} not found. Cannot run agents.")
         return
 
     with open(DATA_FILE, 'r', encoding='utf-8') as f:
         data: List[Dict[str, Any]] = json.load(f)
 
-    print(f"Loaded {len(data)} records.")
+    print(f"📊 Loaded {len(data)} records.")
 
     # 3. Run Agents
     full_report = [f"# Daily System Report - {datetime.now().strftime('%Y-%m-%d')}\n"]
 
     for agent in AGENTS:
-        print(f"Running {agent.name}...")
+        print(f"🏃 Running {agent.name}...")
         try:
             results = agent.run(data)
             report_section = agent.format_report(results)
             full_report.append(report_section)
             full_report.append("\n---\n")
         except Exception as e:
-            print(f"Error running {agent.name}: {e}")
+            print(f"❌ Error running {agent.name}: {e}")
             full_report.append(f"## {agent.name} Failed\nError: {str(e)}")
 
     # 4. Save Report
@@ -81,7 +81,7 @@ async def main():
     with open(report_filename, 'w', encoding='utf-8') as f:
         f.write("\n".join(full_report))
 
-    print(f"\nReport generated successfully: {report_filename}")
+    print(f"\n✨ Report generated successfully: {report_filename}")
 
 if __name__ == "__main__":
     asyncio.run(main())
