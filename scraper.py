@@ -28,6 +28,26 @@ class OracleNewsScraper:
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.base_url = BASE_URL
+        self.allowed_domain = urlparse(BASE_URL).netloc
+
+    def is_allowed_url(self, url: str) -> bool:
+        """Validate that the URL is HTTP/HTTPS and within the allowed domain."""
+        try:
+            parsed = urlparse(url)
+            # Ensure scheme is http or https
+            if parsed.scheme not in ('http', 'https'):
+                return False
+            # Ensure domain matches allowed domain (allow subdomains if needed, or exact match)
+            # Here we enforce strict match or subdomain match if appropriate.
+            # Base URL is www.oracle.com.
+            # We want to allow www.oracle.com and potentially oracle.com if redirected, but for now we enforce strict domain.
+
+            # Simple check: netloc must match allowed_domain exactly.
+            # allowed_domain is 'www.oracle.com'
+
+            return parsed.netloc == self.allowed_domain
+        except Exception:
+            return False
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -83,6 +103,10 @@ class OracleNewsScraper:
                 continue
 
             full_url = urljoin(self.base_url, href)
+
+            if not self.is_allowed_url(full_url):
+                logger.warning(f"Blocked potential SSRF/External link: {full_url}")
+                continue
 
             if full_url in seen_urls:
                 continue
