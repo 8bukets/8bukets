@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+results/
+data/
+links.json
+links.csv
+unique_links.txt
+google_search_results.json
+*.log
+.DS_Store
