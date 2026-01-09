@@ -31,7 +31,7 @@ logging.basicConfig(
 logger = logging.getLogger("SystemOrchestrator")
 
 def run_scraper():
-    logger.info("Starting Scraper...")
+    logger.info("🕷️  Starting Scraper...")
     try:
         result = subprocess.run(
             ["python3", "scraper.py", "--limit", "5"],
@@ -39,12 +39,12 @@ def run_scraper():
             text=True
         )
         if result.returncode != 0:
-            logger.error(f"Scraper failed: {result.stderr}")
+            logger.error(f"🛑 Scraper failed: {result.stderr}")
             return False
-        logger.info("Scraper finished successfully.")
+        logger.info("✅ Scraper finished successfully.")
         return True
     except Exception as e:
-        logger.error(f"Failed to execute scraper: {e}")
+        logger.error(f"🛑 Failed to execute scraper: {e}")
         return False
 
 def load_data(filepath="links.json"):
@@ -67,8 +67,11 @@ def generate_daily_report(context, filename):
 
             f.write("## 1. Ecosystem Health\n")
             health = context.get("health_report", {})
+            f.write("<details>\n<summary>Click to view health checks</summary>\n\n")
             for check in health.get("checks", []):
                 f.write(f"- {check}\n")
+            f.write("</details>\n\n")
+
             robots = context.get("robots_txt", {})
             f.write(f"- **Robots.txt:** {robots.get('status', 'N/A')} (Disallowed: {len(robots.get('disallowed_paths', []))})\n")
 
@@ -94,26 +97,28 @@ def generate_daily_report(context, filename):
             f.write(f"- **Total Posts:** {stats.get('total_posts')}\n")
 
             f.write("\n## 6. Content Draft\n")
+            f.write("<details>\n<summary>View Generated Content</summary>\n\n")
             f.write("```text\n")
             f.write(context.get("generated_content", ""))
             f.write("\n```\n")
+            f.write("</details>\n\n")
 
-        logger.info(f"Report generated at {filename}")
+        logger.info(f"📝 Report generated at {filename}")
     except IOError as e:
         logger.error(f"Failed to write report: {e}")
 
 def run_cycle():
-    logger.info("=== Starting Daily Autonomous Cycle ===")
+    logger.info("🚀 === Starting Daily Autonomous Cycle ===")
 
     # 1. Scrape
     if not run_scraper():
-        logger.error("Cycle aborted due to scraper failure.")
+        logger.error("🛑 Cycle aborted due to scraper failure.")
         return
 
     # 2. Load Data
     data = load_data()
     if not data:
-        logger.warning("No data loaded. Skipping agent execution.")
+        logger.warning("⚠️  No data loaded. Skipping agent execution.")
         return
 
     # 3. Initialize Agents (Order Matters for Collaboration)
@@ -138,17 +143,18 @@ def run_cycle():
     for agent in agents:
         try:
             # Collaboration: Each agent receives the full context accumulated so far
+            logger.info(f"🤖 Agent: {agent.name} working...")
             result = agent.run(data, context)
             if result:
                 context.update(result)
         except Exception as e:
-            logger.error(f"Error in {agent.name}: {e}")
+            logger.error(f"🛑 Error in {agent.name}: {e}")
 
     # 5. Report
     report_file = f"results/DAILY_REPORT_{datetime.now().strftime('%Y-%m-%d')}.md"
     generate_daily_report(context, report_file)
 
-    logger.info("=== Cycle Complete ===")
+    logger.info("✨ === Cycle Complete ===")
 
 def main():
     parser = argparse.ArgumentParser(description="Autonomous Agent System")
