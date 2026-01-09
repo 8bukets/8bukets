@@ -1,0 +1,4 @@
+## 2026-01-09 - SSRF Vulnerability in Web Scraper
+**Vulnerability:** The `BlogScraper` in `scraper.py` blindly followed `next_page` links extracted from the HTML content without validating the domain or protocol. This could allow an attacker to redirect the scraper to internal network resources (SSRF) or malicious external sites.
+**Learning:** Web scrapers that follow links must treat those links as untrusted user input. Assuming that a target site only links to itself is dangerous, as the target site could be compromised or serve user-generated content with malicious links.
+**Prevention:** Always validate that extracted URLs belong to the expected domain (`netloc`) and use a safe protocol (`http`/`https`) before fetching. Use `urljoin` to handle relative links correctly while validating the resolved absolute URL.
