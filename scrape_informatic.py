@@ -144,13 +144,29 @@ def scrape(output_file: str, max_pages: int = 0):
 
         logging.info(f"Scraping page {page}: {current_url}...")
         try:
-            response = session.get(current_url)
-            response.raise_for_status()
+            # Security: Add timeout to prevent hanging (DoS risk)
+            # Security: Stream content to enforce size limits (Memory DoS risk)
+            with session.get(current_url, timeout=15, stream=True) as response:
+                response.raise_for_status()
+
+                # Check Content-Length header if present
+                content_length = response.headers.get('Content-Length')
+                if content_length and int(content_length) > 10 * 1024 * 1024:  # 10 MB limit
+                    logging.error(f"Page {current_url} is too large ({content_length} bytes). Skipping.")
+                    break
+
+                # Read content with a strict size limit
+                content = b""
+                for chunk in response.iter_content(chunk_size=8192):
+                    content += chunk
+                    if len(content) > 10 * 1024 * 1024:  # 10 MB limit
+                        raise requests.exceptions.RequestException(f"Response too large (>10MB) for {current_url}")
+
+                soup = BeautifulSoup(content, 'html.parser')
+
         except requests.exceptions.RequestException as e:
             logging.error(f"Error fetching {current_url}: {e}")
             break
-
-        soup = BeautifulSoup(response.content, 'html.parser')
 
         posts = soup.find_all('article')
         logging.info(f"Found {len(posts)} posts on page {page}.")
