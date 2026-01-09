@@ -1,0 +1,3 @@
+## 2026-01-09 - [TextBlob Tokenization Optimization]
+**Learning:** Re-tokenizing a large concatenated string in `TextBlob` (O(N)) is significantly slower and more memory-intensive than processing tokens per document during the initial pass (O(1) relative to total corpus concatenation). By reusing the per-document `TextBlob` instance created for sentiment analysis, we can extract words immediately without needing to allocate a massive string or re-parse the entire corpus.
+**Action:** When iterating over a collection of documents for multiple analysis tasks (sentiment, keywords, etc.), always perform all extraction in a single pass per document rather than aggregating raw text for a second pass.
