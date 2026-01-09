@@ -1,14 +1,14 @@
-import aiohttp
-import asyncio
-from bs4 import BeautifulSoup
-import json
-import csv
-import re
 import argparse
+import asyncio
+import csv
+import json
 import logging
-import time
-from typing import List, Dict, Optional, Set
+import re
+from typing import List, Dict, Optional
 from urllib.parse import urlparse
+
+import aiohttp
+from bs4 import BeautifulSoup
 
 # Configure logging
 logging.basicConfig(
@@ -21,7 +21,9 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
-    def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
+    """Async scraper for markposition.wordpress.com."""
+    def __init__(self, output_json: str, output_csv: str, output_txt: str,
+                 max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
         self.output_csv = output_csv
         self.output_txt = output_txt
@@ -58,6 +60,15 @@ class MarkPositionScraperAsync:
             return urlparse(url).netloc.replace('www.', '')
         except:
             return None
+
+    def sanitize_for_csv(self, text: Optional[str]) -> str:
+        """Sanitize text to prevent CSV injection."""
+        if not text:
+            return ""
+        # If the text starts with a formula character, escape it with a single quote
+        if text.startswith(('=', '+', '-', '@')):
+            return "'" + text
+        return text
 
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
         url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
@@ -231,13 +242,13 @@ class MarkPositionScraperAsync:
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        self.sanitize_for_csv(post.get('title', '')),
+                        self.sanitize_for_csv(post.get('date', '')),
+                        self.sanitize_for_csv(post.get('author', '')),
+                        self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                        self.sanitize_for_csv(post.get('external_link', '')),
+                        self.sanitize_for_csv(post.get('domain', '')),
+                        self.sanitize_for_csv(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
