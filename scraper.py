@@ -1,14 +1,14 @@
-import aiohttp
-import asyncio
-from bs4 import BeautifulSoup
-import json
-import csv
-import re
 import argparse
+import asyncio
+import csv
+import json
 import logging
-import time
-from typing import List, Dict, Optional, Set
+import re
+from typing import List, Dict, Optional
 from urllib.parse import urlparse
+
+import aiohttp
+from bs4 import BeautifulSoup
 
 # Configure logging
 logging.basicConfig(
@@ -69,6 +69,9 @@ class MarkPositionScraperAsync:
                 return await response.text()
         except aiohttp.ClientError as e:
             logger.error(f"Error fetching page {page_num}: {e}")
+            return None
+        except asyncio.TimeoutError:
+            logger.error(f"Timeout fetching page {page_num}")
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
@@ -143,7 +146,10 @@ class MarkPositionScraperAsync:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
 
-        async with aiohttp.ClientSession(headers=headers) as session:
+        # Set a 30-second timeout for requests to prevent hanging
+        timeout = aiohttp.ClientTimeout(total=30)
+
+        async with aiohttp.ClientSession(headers=headers, timeout=timeout) as session:
             # We don't know the total pages, so we have to fetch sequentially or in chunks until we hit 404/empty.
             # Pure concurrent fetching of all pages requires knowing the max page.
             # Heuristic: fetch in batches of `concurrency`. If any page in batch returns 404 or empty, stop.
