@@ -64,37 +64,57 @@ def generate_report(data, output_file):
     authors = [p.get('author') for p in data if p.get('author')]
     author_counts = Counter(authors).most_common()
 
+    # Calculate Summary Metrics
+    top_domain = domain_counts[0][0] if domain_counts else "N/A"
+    top_category = category_counts[0][0] if category_counts else "N/A"
+    active_authors_count = len(author_counts)
+    unique_domains_count = len(set(domains))
+
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
+    md.append("# 📊 Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
-    md.append(f"- **Total Posts:** {total_posts}")
-    md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    # Executive Summary Table
+    md.append("\n## 🚀 Executive Summary")
+    md.append("| Metric | Value |")
+    md.append("| :--- | :--- |")
+    md.append(f"| 📝 Total Posts | {total_posts} |")
+    md.append(f"| 📅 Date Range | {start_date} to {end_date} |")
+    md.append(f"| 🔗 Unique Domains | {unique_domains_count} |")
+    md.append(f"| 🏆 Top Referenced Domain | {top_domain} |")
+    md.append(f"| 🏷️ Top Category | {top_category} |")
+    md.append(f"| 👥 Active Authors | {active_authors_count} |")
 
-    md.append("\n## Top 10 Referenced Domains")
+    md.append("\n## 🌐 Top 10 Referenced Domains")
+    md.append("<details>")
+    md.append("<summary>Click to expand</summary>\n")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in domain_counts:
         md.append(f"| {domain} | {count} |")
+    md.append("</details>")
 
-    md.append("\n## Top 10 Categories")
+    md.append("\n## 📂 Top 10 Categories")
+    md.append("<details>")
+    md.append("<summary>Click to expand</summary>\n")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in category_counts:
         md.append(f"| {cat} | {count} |")
+    md.append("</details>")
 
-    md.append("\n## Posts by Year")
+    md.append("\n## 📅 Posts by Year")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
     for year, count in year_counts:
         md.append(f"| {year} | {count} |")
 
-    md.append("\n## Authors")
+    md.append("\n## ✍️ Authors")
     for author, count in author_counts:
         md.append(f"- {author}: {count} posts")
+
+    md.append("\n---\n*Generated with ❤️ by Markposition Analytics*")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
