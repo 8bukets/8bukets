@@ -48,11 +48,32 @@ class OracleNewsScraper:
         try:
             # 30 second global timeout
             timeout = aiohttp.ClientTimeout(total=30)
+            # 10 MB limit to prevent memory exhaustion (DoS)
+            MAX_SIZE = 10 * 1024 * 1024
+
             async with session.get(url, timeout=timeout) as response:
                 if response.status == 404:
                     return None
                 response.raise_for_status()
-                return await response.text()
+
+                # Check Content-Length header first if available
+                content_length = response.headers.get('Content-Length')
+                if content_length:
+                    try:
+                        if int(content_length) > MAX_SIZE:
+                            logger.warning(f"Skipping {url}: Content-Length {content_length} exceeds limit of {MAX_SIZE} bytes")
+                            return None
+                    except ValueError:
+                        # Ignore malformed Content-Length header
+                        pass
+
+                # Read content with limit
+                content = await response.content.read(MAX_SIZE + 1)
+                if len(content) > MAX_SIZE:
+                    logger.warning(f"Skipping {url}: Content size exceeds limit of {MAX_SIZE} bytes")
+                    return None
+
+                return content.decode(response.get_encoding(), errors='replace')
         except aiohttp.ClientError as e:
             logger.error(f"Error fetching {url}: {e}")
             return None
