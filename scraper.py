@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
 import re
@@ -19,6 +19,13 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
+
+# Attempt to use lxml if available for better performance
+try:
+    import lxml
+    PARSER = 'lxml'
+except ImportError:
+    PARSER = 'html.parser'
 
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
@@ -71,8 +78,13 @@ class MarkPositionScraperAsync:
             logger.error(f"Error fetching page {page_num}: {e}")
             return None
 
-    async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+    def parse_page(self, html: str) -> List[Dict]:
+        """
+        Parses HTML to extract posts.
+        Optimized to use SoupStrainer and run synchronously (to be offloaded to executor).
+        """
+        strainer = SoupStrainer('article', class_='post')
+        soup = BeautifulSoup(html, PARSER, parse_only=strainer)
         articles = soup.find_all('article', class_='post')
         page_posts = []
 
@@ -212,7 +224,9 @@ class MarkPositionScraperAsync:
         async with sem:
             html = await self.fetch_page(session, page_num)
             if html:
-                return await self.parse_page(html)
+                loop = asyncio.get_running_loop()
+                # Offload blocking parsing to thread pool to avoid blocking event loop
+                return await loop.run_in_executor(None, self.parse_page, html)
             return None
 
     def save_data(self, posts: List[Dict]):
