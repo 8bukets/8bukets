@@ -21,6 +21,14 @@ def get_domain(url):
     except:
         return None
 
+def create_ascii_bar(count, total, length=20):
+    """Generates an ASCII progress bar."""
+    if total == 0:
+        return "░" * length
+    filled_length = int(length * count / total)
+    bar = "█" * filled_length + "░" * (length - filled_length)
+    return bar
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
@@ -41,9 +49,6 @@ def generate_report(data, output_file):
         external_link = p.get('external_link')
         if external_link:
             domain = get_domain(external_link)
-            # Match original behavior: include None if get_domain returns it
-            # Original: domains = [get_domain(...) for ... if external_link]
-            # Counter(domains)
             domain_counts[domain] += 1
             unique_domains.add(domain)
 
@@ -87,47 +92,69 @@ def generate_report(data, output_file):
     if min_date and max_date:
         start_date = min_date.strftime('%Y-%m-%d')
         end_date = max_date.strftime('%Y-%m-%d')
-        # Sort years descending (key is year)
         sorted_years = sorted(year_counts.items(), key=lambda x: x[0], reverse=True)
     else:
         start_date = "N/A"
         end_date = "N/A"
         sorted_years = []
 
-    # Authors: all by count descending (most_common does this)
+    # Authors: all by count descending
     sorted_authors = author_counts.most_common()
 
     # Generate Markdown
     md = []
     md.append("# Markposition Analytics Report")
-    md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    md.append(f"\n_Generated on: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}_")
 
-    md.append("\n## General Statistics")
-    md.append(f"- **Total Posts:** {total_posts}")
-    md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(unique_domains)}")
+    # Executive Summary Table
+    md.append("\n## 📊 Executive Summary")
+    md.append("| Metric | Value |")
+    md.append("| :--- | :--- |")
+    md.append(f"| 📝 Total Posts | **{total_posts}** |")
+    md.append(f"| 📅 Date Range | {start_date} to {end_date} |")
+    md.append(f"| 🌐 Unique Domains | {len(unique_domains)} |")
+    md.append(f"| ✍️ Unique Authors | {len(author_counts)} |")
 
-    md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
-    for domain, count in top_domains:
-        md.append(f"| {domain} | {count} |")
+    # Top 10 Domains with Bar
+    md.append("\n## 🌐 Top 10 Referenced Domains")
+    if top_domains:
+        max_domain_count = top_domains[0][1]
+        md.append("| Domain | Count | Distribution |")
+        md.append("| :--- | :---: | :--- |")
+        for domain, count in top_domains:
+            bar = create_ascii_bar(count, max_domain_count)
+            md.append(f"| {domain} | {count} | {bar} |")
+    else:
+        md.append("No domains found.")
 
-    md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
-    for cat, count in top_categories:
-        md.append(f"| {cat} | {count} |")
+    # Top 10 Categories with Bar
+    md.append("\n## 🏷️ Top 10 Categories")
+    if top_categories:
+        max_cat_count = top_categories[0][1]
+        md.append("| Category | Count | Distribution |")
+        md.append("| :--- | :---: | :--- |")
+        for cat, count in top_categories:
+            bar = create_ascii_bar(count, max_cat_count)
+            md.append(f"| {cat} | {count} | {bar} |")
+    else:
+        md.append("No categories found.")
 
-    md.append("\n## Posts by Year")
+    # Posts by Year
+    md.append("\n## 📅 Posts by Year")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
     for year, count in sorted_years:
         md.append(f"| {year} | {count} |")
 
-    md.append("\n## Authors")
+    # Authors (Collapsible)
+    md.append("\n## ✍️ Authors")
+    md.append("<details>")
+    md.append("<summary>Click to expand full author list</summary>\n")
+    md.append("| Author | Posts |")
+    md.append("| :--- | :---: |")
     for author, count in sorted_authors:
-        md.append(f"- {author}: {count} posts")
+        md.append(f"| {author} | {count} |")
+    md.append("</details>")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
