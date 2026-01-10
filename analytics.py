@@ -1,3 +1,7 @@
+"""
+Analytics module for Markposition data.
+Generates a Markdown report from JSON data.
+"""
 import json
 import argparse
 from collections import Counter
@@ -5,6 +9,7 @@ from datetime import datetime
 import sys
 
 def load_data(filepath):
+    """Load JSON data from file."""
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             return json.load(f)
@@ -12,7 +17,15 @@ def load_data(filepath):
         print(f"Error: File '{filepath}' not found.")
         sys.exit(1)
 
+def generate_ascii_bar(count, max_count, max_width=20):
+    """Generates an ASCII bar chart."""
+    if max_count == 0:
+        return ""
+    bar_length = int((count / max_count) * max_width)
+    return "█" * bar_length
+
 def generate_report(data, output_file):
+    """Generate a Markdown report from the data."""
     total_posts = len(data)
 
     # 1. Domain Analysis
@@ -60,32 +73,38 @@ def generate_report(data, output_file):
     md.append("# Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
+    md.append("\n## 📊 General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
 
-    md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
+    md.append("\n## 🌐 Top 10 Referenced Domains")
+    md.append("| Domain | Count | Trend |")
+    md.append("| :--- | :---: | :--- |")
+    max_domain_count = domain_counts[0][1] if domain_counts else 0
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        bar = generate_ascii_bar(count, max_domain_count)
+        md.append(f"| {domain} | {count} | {bar} |")
 
-    md.append("\n## Top 10 Categories")
+    md.append("\n## 🏷️ Top 10 Categories")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in category_counts:
         md.append(f"| {cat} | {count} |")
 
-    md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
+    md.append("\n## 📅 Posts by Year")
+    md.append("| Year | Count | Trend |")
+    md.append("| :--- | :---: | :--- |")
+    max_year_count = max(c for _, c in year_counts) if year_counts else 0
     for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+        bar = generate_ascii_bar(count, max_year_count)
+        md.append(f"| {year} | {count} | {bar} |")
 
-    md.append("\n## Authors")
+    md.append("\n## ✍️ Authors")
+    md.append("| Author | Posts |")
+    md.append("| :--- | :---: |")
     for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+        md.append(f"| {author} | {count} |")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
@@ -98,5 +117,5 @@ if __name__ == "__main__":
     parser.add_argument("--output", default="REPORT.md", help="Output Markdown report file")
     args = parser.parse_args()
 
-    data = load_data(args.input)
-    generate_report(data, args.output)
+    data_content = load_data(args.input)
+    generate_report(data_content, args.output)
