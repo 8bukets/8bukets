@@ -1,4 +1,5 @@
 import requests
+from urllib.parse import urlparse
 from bs4 import BeautifulSoup
 import json
 import time
@@ -126,7 +127,25 @@ class BlogScraper:
 
         return False
 
+    def validate_url(self, url):
+        """Validates that the URL uses http or https schemes."""
+        try:
+            parsed = urlparse(url)
+            if parsed.scheme not in ('http', 'https'):
+                logger.warning(f"Blocked potentially unsafe URL scheme: {url}")
+                return False
+            if not parsed.netloc:
+                logger.warning(f"Blocked URL with missing hostname: {url}")
+                return False
+            return True
+        except Exception as e:
+            logger.error(f"Error validating URL {url}: {e}")
+            return False
+
     def fetch_page(self, url):
+        if not self.validate_url(url):
+            return None
+
         logger.info(f"Fetching {url}...")
         try:
             response = requests.get(url, headers=self.headers, timeout=10)
