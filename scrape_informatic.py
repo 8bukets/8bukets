@@ -1,19 +1,24 @@
-import requests
-from bs4 import BeautifulSoup
+"""
+Scraper for informaticmagazine.data.blog.
+"""
 import json
 import time
 import logging
 import argparse
 import sys
 from urllib.parse import urlparse
-from requests.adapters import HTTPAdapter
-from urllib3.util.retry import Retry
 from dataclasses import dataclass, asdict
 from typing import List, Optional
+
+import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+from bs4 import BeautifulSoup
 from markdownify import markdownify as md
 
 @dataclass
 class Post:
+    """Dataclass representing a blog post."""
     title: Optional[str]
     post_url: Optional[str]
     date: Optional[str]
@@ -131,6 +136,33 @@ def parse_post_html(post_soup, base_url: str) -> Post:
         image_url=image_url
     )
 
+MAX_RESPONSE_SIZE = 10 * 1024 * 1024  # 10 MB
+
+def safe_get_content(session, url):
+    """
+    Safely fetches content with size limit enforcement to prevent DoS.
+    """
+    response = session.get(url, stream=True, timeout=30)
+    response.raise_for_status()
+
+    content_length = response.headers.get('Content-Length')
+    if content_length and int(content_length) > MAX_RESPONSE_SIZE:
+        raise ValueError(
+            f"Content-Length ({content_length}) exceeds maximum allowed size "
+            f"({MAX_RESPONSE_SIZE} bytes)"
+        )
+
+    content = b""
+    for chunk in response.iter_content(chunk_size=8192):
+        if chunk:
+            content += chunk
+            if len(content) > MAX_RESPONSE_SIZE:
+                raise ValueError(
+                    f"Response size exceeds maximum allowed size ({MAX_RESPONSE_SIZE} bytes)"
+                )
+
+    return content
+
 def scrape(output_file: str, max_pages: int = 0):
     session = get_session()
     all_posts = []
@@ -144,13 +176,12 @@ def scrape(output_file: str, max_pages: int = 0):
 
         logging.info(f"Scraping page {page}: {current_url}...")
         try:
-            response = session.get(current_url)
-            response.raise_for_status()
-        except requests.exceptions.RequestException as e:
+            content = safe_get_content(session, current_url)
+        except Exception as e:
             logging.error(f"Error fetching {current_url}: {e}")
             break
 
-        soup = BeautifulSoup(response.content, 'html.parser')
+        soup = BeautifulSoup(content, 'html.parser')
 
         posts = soup.find_all('article')
         logging.info(f"Found {len(posts)} posts on page {page}.")
