@@ -1,0 +1,4 @@
+## 2024-10-27 - CSV Injection in Scraped Data
+**Vulnerability:** Scraped data (titles, authors, categories) was written directly to CSV files without sanitization. Malicious content starting with `=`, `+`, `-`, or `@` could execute arbitrary formulas (CSV Injection / Formula Injection) when opened in spreadsheet software like Excel.
+**Learning:** Scrapers act as a bridge between untrusted external content and internal tools/users. Even if the scraper itself is safe, the data it produces can be weaponized against the consumer of that data. Treating all external input as untrusted must extend to the *format* it is exported to.
+**Prevention:** Sanitize all fields before writing to CSV by prepending a single quote `'` to any field starting with dangerous characters (`=`, `+`, `-`, `@`). This forces the spreadsheet software to treat the content as a string literal.
