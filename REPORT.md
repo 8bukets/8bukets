@@ -1,11 +1,14 @@
-# Markposition Analytics Report
+# 📊 Markposition Analytics Report
 
-**Generated on:** 2025-12-13 12:59:36
+**Generated on:** 2026-01-10 19:16:06
 
-## General Statistics
-- **Total Posts:** 679
-- **Date Range:** 2020-05-19 to 2022-10-05
-- **Unique Domains Linked:** 367
+## Executive Summary
+| Metric | Value |
+| :--- | :--- |
+| 📝 Total Posts | 679 |
+| 📅 Date Range | 2020-05-19 to 2022-10-05 |
+| 🔗 Unique Domains | 367 |
+| ✅ Status | Analysis Complete |
 
 ## Top 10 Referenced Domains
 | Domain | Count |
@@ -21,7 +24,10 @@
 | trustarc.com | 11 |
 | ads.google.com | 10 |
 
-## Top 10 Categories
+<details>
+<summary><strong>📂 Detailed Statistics (Categories, Years, Authors)</strong></summary>
+
+### Top 10 Categories
 | Category | Count |
 | :--- | :---: |
 | Ad Ads Advertise | 660 |
@@ -31,12 +37,14 @@
 | Advertising | 3 |
 | Online | 2 |
 
-## Posts by Year
+### Posts by Year
 | Year | Count |
 | :--- | :---: |
 | 2022 | 235 |
 | 2021 | 190 |
 | 2020 | 254 |
 
-## Authors
+### Authors
 - Filip Keser: 679 posts
+
+</details>
