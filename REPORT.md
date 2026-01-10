@@ -1,27 +1,34 @@
-# Markposition Analytics Report
+# 📊 Markposition Analytics Report
 
-**Generated on:** 2025-12-23 19:44:50
+_Generated on: 2026-01-10 08:14:17_
 
-## General Statistics
-- **Total Posts:** 39
-- **Date Range:** 2025-09-30 to 2025-10-15
-- **Unique Domains Linked:** 1
+## 🚀 Executive Summary
+| Metric | Value |
+| :--- | :--- |
+| 📝 **Total Posts** | 39 |
+| 📅 **Date Range** | 2025-09-30 to 2025-10-15 |
+| 🔗 **Unique Domains** | 1 |
+| ✍️ **Active Authors** | 1 |
 
-## Top 10 Referenced Domains
-| Domain | Count |
-| :--- | :---: |
-| oracle.com | 39 |
+## 🌐 Top 10 Referenced Domains
+| Domain | Count | Visual |
+| :--- | :---: | :--- |
+| oracle.com | 39 | `████████████████████` |
 
-## Top 10 Categories
-| Category | Count |
-| :--- | :---: |
-| News | 39 |
-| Announcement | 39 |
+## 🏷️ Top 10 Categories
+| Category | Count | Visual |
+| :--- | :---: | :--- |
+| News | 39 | `████████████████████` |
+| Announcement | 39 | `████████████████████` |
 
-## Posts by Year
-| Year | Count |
-| :--- | :---: |
-| 2025 | 39 |
+## 🗓️ Posts by Year
+| Year | Count | Visual |
+| :--- | :---: | :--- |
+| 2025 | 39 | `████████████████████` |
 
-## Authors
-- Oracle: 39 posts
+## ✍️ Authors
+<details>
+<summary>Click to view all 1 authors</summary>
+
+- **Oracle**: 39 posts
+</details>
