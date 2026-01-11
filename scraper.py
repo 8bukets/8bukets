@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
 import re
@@ -33,8 +33,8 @@ class MarkPositionScraperAsync:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
-        text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        # Optimization: split and join is faster than regex for whitespace normalization
+        return ' '.join(text.replace('\xa0', ' ').split())
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
@@ -72,7 +72,11 @@ class MarkPositionScraperAsync:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+        # Optimization: Parse only article tags to speed up processing.
+        # Note: We strain for 'article' broadly because SoupStrainer class matching is strict/different.
+        # Then we filter for class_='post' using find_all which handles the multi-valued class attribute correctly.
+        parse_only = SoupStrainer('article')
+        soup = BeautifulSoup(html, 'html.parser', parse_only=parse_only)
         articles = soup.find_all('article', class_='post')
         page_posts = []
 
