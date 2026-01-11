@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.DS_Store
+tests/TEST_REPORT_UX.md
+tests/test_links.json
+links.json
+links.csv
+unique_links.txt
+REPORT.md
