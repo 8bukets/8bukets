@@ -1,12 +1,13 @@
+import argparse
+import json
+import logging
+import sqlite3
+import sys
+import time
+from datetime import datetime
+
 import requests
 from bs4 import BeautifulSoup
-import json
-import time
-import logging
-import argparse
-import sys
-import sqlite3
-from datetime import datetime
 
 # Configure logging
 logging.basicConfig(
@@ -136,13 +137,25 @@ class BlogScraper:
             logger.error(f"Error fetching URL {url}: {e}")
             return None
 
+    def validate_url(self, url):
+        """Ensure URL is valid and uses http/https scheme."""
+        if not url:
+            return None
+        url = url.strip()
+        if url.lower().startswith(('http://', 'https://')):
+            return url
+        return None
+
     def parse_article(self, article):
+        """Parse a single article element."""
         item = {}
 
         # Title and Post URL
         title_tag = article.select_one("header.entry-header h2.entry-title a")
         item['title'] = title_tag.get_text(strip=True) if title_tag else None
-        item['post_url'] = title_tag.get('href') if title_tag else None
+
+        raw_post_url = title_tag.get('href') if title_tag else None
+        item['post_url'] = self.validate_url(raw_post_url)
 
         # Link (External)
         content_div = article.select_one("div.entry-content")
@@ -151,17 +164,19 @@ class BlogScraper:
             # Check for direct anchor tags
             link_tag = content_div.find("a")
             if link_tag:
-                external_link = link_tag.get('href')
+                raw_link = link_tag.get('href')
+                external_link = self.validate_url(raw_link)
+
                 if not external_link:
                     text_content = link_tag.get_text(strip=True)
                     if text_content.startswith('http'):
-                        external_link = text_content
+                        external_link = self.validate_url(text_content)
 
             # Fallback
             if not external_link:
                 text_content = content_div.get_text(strip=True)
                 if text_content.startswith('http'):
-                    external_link = text_content.split()[0]
+                    external_link = self.validate_url(text_content.split()[0])
 
         item['external_link'] = external_link
 
