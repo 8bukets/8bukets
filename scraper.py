@@ -1,14 +1,15 @@
-import aiohttp
-import asyncio
-from bs4 import BeautifulSoup
-import json
-import csv
-import re
 import argparse
+import asyncio
+import csv
+import json
 import logging
+import re
 import time
-from typing import List, Dict, Optional, Set
+from typing import Dict, List, Optional, Set
 from urllib.parse import urlparse
+
+import aiohttp
+from bs4 import BeautifulSoup, SoupStrainer
 
 # Configure logging
 logging.basicConfig(
@@ -21,6 +22,7 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
+    """Async scraper for MarkPosition website."""
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
         self.output_csv = output_csv
@@ -28,13 +30,15 @@ class MarkPositionScraperAsync:
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+        self._whitespace_re = re.compile(r'\s+')
+        self._post_class_re = re.compile(r'\bpost\b')
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return self._whitespace_re.sub(' ', text).strip()
 
     def sanitize_for_csv(self, text: str) -> str:
         """Sanitize text to prevent CSV injection (formula injection)."""
@@ -80,9 +84,13 @@ class MarkPositionScraperAsync:
             logger.error(f"Error fetching page {page_num}: {e}")
             return None
 
-    async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
-        articles = soup.find_all('article', class_='post')
+    def parse_page(self, html: str) -> List[Dict]:
+        """Parse HTML and extract posts. CPU-bound."""
+        # Optimization: SoupStrainer to only parse relevant article tags.
+        # This reduces memory usage and parsing time.
+        strainer = SoupStrainer('article', class_=self._post_class_re)
+        soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
+        articles = soup.find_all('article')
         page_posts = []
 
         if not articles:
@@ -224,7 +232,9 @@ class MarkPositionScraperAsync:
         async with sem:
             html = await self.fetch_page(session, page_num)
             if html:
-                return await self.parse_page(html)
+                # Offload CPU-bound parsing to a thread to avoid blocking the event loop
+                loop = asyncio.get_running_loop()
+                return await loop.run_in_executor(None, self.parse_page, html)
             return None
 
     def save_data(self, posts: List[Dict]):
