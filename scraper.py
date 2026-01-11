@@ -1,14 +1,17 @@
-import aiohttp
-import asyncio
-from bs4 import BeautifulSoup
-import json
-import csv
-import re
+"""
+Async Scraper for markposition.wordpress.com
+"""
 import argparse
+import asyncio
+import csv
+import json
 import logging
-import time
-from typing import List, Dict, Optional, Set
+import re
+from typing import Dict, List, Optional
 from urllib.parse import urlparse
+
+import aiohttp
+from bs4 import BeautifulSoup
 
 # Configure logging
 logging.basicConfig(
@@ -21,6 +24,8 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
+    """Scraper class for MarkPosition blog."""
+
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
         self.output_csv = output_csv
@@ -36,6 +41,19 @@ class MarkPositionScraperAsync:
         text = text.replace('\xa0', ' ')
         return re.sub(r'\s+', ' ', text).strip()
 
+    def validate_url(self, url: str) -> Optional[str]:
+        """Validate and clean URL. Returns None if invalid."""
+        if not url:
+            return None
+        # Remove all whitespace (newlines, tabs, spaces)
+        clean_url = "".join(url.split())
+
+        # Must start with http:// or https://
+        if not clean_url.lower().startswith(('http://', 'https://')):
+            return None
+
+        return clean_url
+
     def sanitize_for_csv(self, text: str) -> str:
         """Sanitize text to prevent CSV injection (formula injection)."""
         if not text:
@@ -47,7 +65,7 @@ class MarkPositionScraperAsync:
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
-        return re.match(r'^https?://', text.strip()) is not None
+        return self.validate_url(text) is not None
 
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
@@ -65,7 +83,7 @@ class MarkPositionScraperAsync:
             return None
         try:
             return urlparse(url).netloc.replace('www.', '')
-        except:
+        except Exception:  # pylint: disable=broad-except
             return None
 
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
@@ -121,15 +139,15 @@ class MarkPositionScraperAsync:
             if content_div:
                 link_tag = content_div.select_one('a')
                 if link_tag:
-                    external_link = link_tag.get('href')
+                    external_link = self.validate_url(link_tag.get('href'))
 
                 if not external_link:
                     iframe_tag = content_div.select_one('iframe')
                     if iframe_tag:
-                        external_link = iframe_tag.get('src')
+                        external_link = self.validate_url(iframe_tag.get('src'))
 
             if not external_link and title_text and self.is_url(title_text):
-                external_link = title_text
+                external_link = self.validate_url(title_text)
 
             post_data['external_link'] = external_link
             post_data['domain'] = self.extract_domain(external_link)
