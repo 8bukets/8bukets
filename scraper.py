@@ -1,14 +1,15 @@
-import aiohttp
-import asyncio
-from bs4 import BeautifulSoup
-import json
-import csv
-import re
 import argparse
+import asyncio
+import csv
+import json
 import logging
+import re
 import time
-from typing import List, Dict, Optional, Set
+from typing import Dict, List, Optional, Set
 from urllib.parse import urlparse
+
+import aiohttp
+from bs4 import BeautifulSoup
 
 # Configure logging
 logging.basicConfig(
@@ -21,7 +22,9 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
-    def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
+    """Async scraper for the MarkPosition website."""
+    def __init__(self, output_json: str, output_csv: str, output_txt: str,
+                 max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
         self.output_csv = output_csv
         self.output_txt = output_txt
@@ -35,6 +38,15 @@ class MarkPositionScraperAsync:
             return ""
         text = text.replace('\xa0', ' ')
         return re.sub(r'\s+', ' ', text).strip()
+
+    def sanitize_for_csv(self, value: Optional[str]) -> str:
+        """Sanitize a value to prevent CSV injection."""
+        if not value:
+            return ""
+        value_str = str(value)
+        if value_str.startswith(('=', '+', '-', '@')):
+            return f"'{value_str}"
+        return value_str
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
@@ -56,10 +68,11 @@ class MarkPositionScraperAsync:
             return None
         try:
             return urlparse(url).netloc.replace('www.', '')
-        except:
+        except Exception: # pylint: disable=broad-except
             return None
 
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
+        """Fetch a single page content asynchronously."""
         url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
         try:
             async with session.get(url) as response:
@@ -68,7 +81,7 @@ class MarkPositionScraperAsync:
                 response.raise_for_status()
                 return await response.text()
         except aiohttp.ClientError as e:
-            logger.error(f"Error fetching page {page_num}: {e}")
+            logger.error("Error fetching page %d: %s", page_num, e)
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
@@ -231,13 +244,13 @@ class MarkPositionScraperAsync:
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        self.sanitize_for_csv(post.get('title', '')),
+                        self.sanitize_for_csv(post.get('date', '')),
+                        self.sanitize_for_csv(post.get('author', '')),
+                        self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                        self.sanitize_for_csv(post.get('external_link', '')),
+                        self.sanitize_for_csv(post.get('domain', '')),
+                        self.sanitize_for_csv(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
