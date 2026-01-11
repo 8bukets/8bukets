@@ -1,3 +1,9 @@
+"""
+Analytics module for Markposition.
+
+Generates a Markdown report summarizing the scraped data.
+"""
+
 import json
 import argparse
 from collections import Counter
@@ -6,6 +12,7 @@ from datetime import datetime
 import sys
 
 def load_data(filepath):
+    """Load JSON data from the specified file."""
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             return json.load(f)
@@ -14,15 +21,17 @@ def load_data(filepath):
         sys.exit(1)
 
 def get_domain(url):
+    """Extract domain from a URL."""
     if not url:
         return None
     try:
         return urlparse(url).netloc.replace('www.', '')
-    except:
+    except Exception: # pylint: disable=broad-except
         return None
 
-def generate_report(data, output_file):
-    total_posts = len(data)
+def generate_report(posts_data, output_file):
+    """Generate a Markdown report from the posts data."""
+    total_posts = len(posts_data)
 
     # Initialize counters and trackers
     domain_counts = Counter()
@@ -36,7 +45,7 @@ def generate_report(data, output_file):
     unique_domains = set()
 
     # Single pass iteration
-    for p in data:
+    for p in posts_data:
         # 1. Domain Analysis
         external_link = p.get('external_link')
         if external_link:
@@ -99,35 +108,49 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
-    md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    md.append("# 🎨 Markposition Analytics Report")
+    md.append(f"\n_Generated on: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}_")
 
-    md.append("\n## General Statistics")
-    md.append(f"- **Total Posts:** {total_posts}")
-    md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(unique_domains)}")
+    md.append("\n## 📋 Executive Summary")
+    md.append("| Metric | Value |")
+    md.append("| :--- | :--- |")
+    md.append(f"| 📝 Total Posts | **{total_posts}** |")
+    md.append(f"| 📅 Date Range | {start_date} to {end_date} |")
+    md.append(f"| 🔗 Unique Domains | {len(unique_domains)} |")
+    md.append(f"| ✍️ Total Authors | {len(sorted_authors)} |")
 
-    md.append("\n## Top 10 Referenced Domains")
+    md.append("\n## 📊 Top 10 Referenced Domains")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in top_domains:
         md.append(f"| {domain} | {count} |")
 
-    md.append("\n## Top 10 Categories")
+    md.append("\n## 🏷️ Top 10 Categories")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in top_categories:
         md.append(f"| {cat} | {count} |")
 
-    md.append("\n## Posts by Year")
+    md.append("\n## 📅 Posts by Year")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
     for year, count in sorted_years:
         md.append(f"| {year} | {count} |")
 
-    md.append("\n## Authors")
-    for author, count in sorted_authors:
-        md.append(f"- {author}: {count} posts")
+    md.append("\n## ✍️ Authors")
+    if len(sorted_authors) > 10:
+        md.append("<details>")
+        md.append("<summary>Click to view all authors</summary>\n")
+        md.append("| Author | Posts |")
+        md.append("| :--- | :---: |")
+        for author, count in sorted_authors:
+            md.append(f"| {author} | {count} |")
+        md.append("\n</details>")
+    else:
+        md.append("| Author | Posts |")
+        md.append("| :--- | :---: |")
+        for author, count in sorted_authors:
+            md.append(f"| {author} | {count} |")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
