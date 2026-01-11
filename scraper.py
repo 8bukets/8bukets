@@ -36,6 +36,12 @@ class MarkPositionScraperAsync:
         text = text.replace('\xa0', ' ')
         return re.sub(r'\s+', ' ', text).strip()
 
+    def sanitize_csv_field(self, field: str) -> str:
+        """Sanitize field to prevent CSV injection formulas."""
+        if field and isinstance(field, str) and field.startswith(('=', '+', '-', '@')):
+            return f"'{field}"
+        return field
+
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
         return re.match(r'^https?://', text.strip()) is not None
@@ -143,7 +149,8 @@ class MarkPositionScraperAsync:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
 
-        async with aiohttp.ClientSession(headers=headers) as session:
+        timeout = aiohttp.ClientTimeout(total=30)
+        async with aiohttp.ClientSession(headers=headers, timeout=timeout) as session:
             # We don't know the total pages, so we have to fetch sequentially or in chunks until we hit 404/empty.
             # Pure concurrent fetching of all pages requires knowing the max page.
             # Heuristic: fetch in batches of `concurrency`. If any page in batch returns 404 or empty, stop.
@@ -230,14 +237,26 @@ class MarkPositionScraperAsync:
                 writer = csv.writer(f)
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
+                    # Sanitize fields prone to CSV injection
+                    title = self.sanitize_csv_field(post.get('title', ''))
+                    date = self.sanitize_csv_field(post.get('date', ''))
+                    author = self.sanitize_csv_field(post.get('author', ''))
+                    categories = self.sanitize_csv_field(", ".join(post.get('categories', [])))
+                    # URLs are less likely to be formulas but good to be safe if they come from user input
+                    # However, strictly speaking, they are URLs.
+                    # We will sanitize them too just in case they are malicious strings.
+                    ext_link = self.sanitize_csv_field(post.get('external_link', ''))
+                    domain = self.sanitize_csv_field(post.get('domain', ''))
+                    post_url = self.sanitize_csv_field(post.get('post_url', ''))
+
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        title,
+                        date,
+                        author,
+                        categories,
+                        ext_link,
+                        domain,
+                        post_url
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
