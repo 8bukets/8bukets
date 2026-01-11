@@ -1,11 +1,28 @@
-from agents.base_agent import BaseAgent
+"""
+This module contains the ContentAgent class which is responsible for composing
+and saving the final report based on the analysis from other agents.
+"""
 from datetime import datetime
 
+from agents.base_agent import BaseAgent
+
+
 class ContentAgent(BaseAgent):
+    """
+    Agent responsible for generating the final Markdown report.
+    It aggregates data from all other agents and formats it into a readable report.
+    """
     def __init__(self):
         super().__init__("Content")
 
-    async def run(self, context: dict):
+    def _generate_ascii_bar(self, count, max_count, width=20):
+        if max_count == 0:
+            return ""
+        filled = int((count / max_count) * width)
+        bar_str = "█" * filled + "░" * (width - filled)
+        return bar_str
+
+    async def run(self, context: dict): # pylint: disable=too-many-locals, too-many-branches, too-many-statements
         self.log("Composing report...")
         analysis = context.get("analysis", {})
         insights = context.get("intelligence_insights", [])
@@ -23,12 +40,26 @@ class ContentAgent(BaseAgent):
         # Analysis Section
         md.append("\n## 1. Analysis")
         md.append(f"- Total Posts Scraped: {analysis.get('total_posts')}")
-        md.append(f"- Date Range: {analysis.get('date_stats', {}).get('start')} to {analysis.get('date_stats', {}).get('end')}")
+        date_stats = analysis.get('date_stats', {})
+        md.append(f"- Date Range: {date_stats.get('start')} to {date_stats.get('end')}")
 
         if analysis.get('top_domains'):
             md.append("\n### Top Domains")
+            max_count = analysis['top_domains'][0][1] if analysis['top_domains'] else 0
+            md.append("| Domain | Count | Distribution |")
+            md.append("|---|---|---|")
             for d, c in analysis['top_domains']:
-                md.append(f"- {d}: {c}")
+                bar_str = self._generate_ascii_bar(c, max_count)
+                md.append(f"| {d} | {c} | {bar_str} |")
+
+        if analysis.get('top_categories'):
+            md.append("\n### Top Categories")
+            max_cat = analysis['top_categories'][0][1] if analysis['top_categories'] else 0
+            md.append("| Category | Count | Distribution |")
+            md.append("|---|---|---|")
+            for c, count in analysis['top_categories']:
+                bar_str = self._generate_ascii_bar(count, max_cat)
+                md.append(f"| {c} | {count} | {bar_str} |")
 
         # Intelligence Section
         md.append("\n## 2. Intelligence Insights")
@@ -39,7 +70,8 @@ class ContentAgent(BaseAgent):
         md.append("\n## 3. Advertising & Targeting (Autonomus Decisions)")
         if ad_strategies:
             for ad in ad_strategies:
-                md.append(f"- **Target**: {ad['target_category']} | **Bid**: ${ad['suggested_bid']} | **Copy**: \"{ad['ad_copy']}\"")
+                md.append(f"- **Target**: {ad['target_category']} | **Bid**: "
+                          f"${ad['suggested_bid']} | **Copy**: \"{ad['ad_copy']}\"")
         else:
             md.append("No ad strategies generated.")
 
@@ -52,7 +84,10 @@ class ContentAgent(BaseAgent):
         if antigravity:
             md.append("\n## 5. Google Antigravity & Fun")
             md.append(f"- **Hidden Gem**: {antigravity.get('hidden_gem')}")
-            md.append(f"- **Range**: Shortest title ({len(antigravity.get('shortest_title',''))} chars) to Longest ({len(antigravity.get('longest_title',''))} chars)")
+            shortest = len(antigravity.get('shortest_title', ''))
+            longest = len(antigravity.get('longest_title', ''))
+            md.append(f"- **Range**: Shortest title ({shortest} chars) to "
+                      f"Longest ({longest} chars)")
 
         # Innovation Section
         md.append("\n## 6. System Innovation & Code Integration Ideas")
@@ -67,11 +102,20 @@ class ContentAgent(BaseAgent):
         # Monetization Section
         md.append("\n## 7. Monetization Opportunities")
         md.append(f"Found {len(monetization)} potential items.")
+
         if monetization:
+            if len(monetization) > 10:
+                md.append("\n<details>")
+                md.append("<summary>Click to view all opportunities</summary>\n")
+
             md.append("\n| Title | Keywords | Link |")
             md.append("|---|---|---|")
-            for op in monetization[:10]: # Limit to 10
+
+            for op in monetization:
                 md.append(f"| {op['title']} | {', '.join(op['keywords'])} | [Link]({op['link']}) |")
+
+            if len(monetization) > 10:
+                md.append("\n</details>")
 
         # Compliance Info
         md.append("\n## 8. Compliance")
