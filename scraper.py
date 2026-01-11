@@ -27,98 +27,103 @@ class BlogScraper:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
         self.data = []
+        self.conn = None
         self.init_db()
 
     def init_db(self):
         """Initialize the SQLite database."""
         try:
-            with sqlite3.connect(self.db_name) as conn:
-                cursor = conn.cursor()
-                # Posts table
-                cursor.execute('''
-                    CREATE TABLE IF NOT EXISTS posts (
-                        id INTEGER PRIMARY KEY AUTOINCREMENT,
-                        title TEXT,
-                        post_url TEXT UNIQUE,
-                        external_link TEXT,
-                        date_str TEXT,
-                        datetime_iso TEXT,
-                        author TEXT,
-                        categories TEXT,
-                        scraped_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-                    )
-                ''')
+            self.conn = sqlite3.connect(self.db_name)
+            cursor = self.conn.cursor()
+            # Posts table
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS posts (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    title TEXT,
+                    post_url TEXT UNIQUE,
+                    external_link TEXT,
+                    date_str TEXT,
+                    datetime_iso TEXT,
+                    author TEXT,
+                    categories TEXT,
+                    scraped_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )
+            ''')
 
-                # Changes table for tracking updates
-                cursor.execute('''
-                    CREATE TABLE IF NOT EXISTS changes (
-                        id INTEGER PRIMARY KEY AUTOINCREMENT,
-                        post_id INTEGER,
-                        field TEXT,
-                        old_value TEXT,
-                        new_value TEXT,
-                        changed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                        FOREIGN KEY(post_id) REFERENCES posts(id)
-                    )
-                ''')
-                conn.commit()
+            # Changes table for tracking updates
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS changes (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    post_id INTEGER,
+                    field TEXT,
+                    old_value TEXT,
+                    new_value TEXT,
+                    changed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY(post_id) REFERENCES posts(id)
+                )
+            ''')
+            self.conn.commit()
         except sqlite3.Error as e:
             logger.error(f"Database initialization error: {e}")
 
     def save_to_db(self, item):
         """Save a single item to the database, handling updates."""
+        if not self.conn:
+            logger.error("Database connection is not available.")
+            return False
+
         try:
-            with sqlite3.connect(self.db_name) as conn:
-                cursor = conn.cursor()
+            # Optimize: Reuse existing connection
+            cursor = self.conn.cursor()
 
-                # Check if post exists
-                cursor.execute("SELECT id, title, external_link FROM posts WHERE post_url = ?", (item.get('post_url'),))
-                existing_post = cursor.fetchone()
+            # Check if post exists
+            cursor.execute("SELECT id, title, external_link FROM posts WHERE post_url = ?", (item.get('post_url'),))
+            existing_post = cursor.fetchone()
 
-                if existing_post:
-                    post_id, old_title, old_link = existing_post
-                    updated = False
+            if existing_post:
+                post_id, old_title, old_link = existing_post
+                updated = False
 
-                    # Check Title Change
-                    new_title = item.get('title')
-                    if old_title != new_title and new_title:
-                        logger.info(f"Change detected for {item.get('post_url')}: Title changed.")
-                        cursor.execute("INSERT INTO changes (post_id, field, old_value, new_value) VALUES (?, ?, ?, ?)",
-                                       (post_id, 'title', old_title, new_title))
-                        cursor.execute("UPDATE posts SET title = ? WHERE id = ?", (new_title, post_id))
-                        updated = True
+                # Check Title Change
+                new_title = item.get('title')
+                if old_title != new_title and new_title:
+                    logger.info(f"Change detected for {item.get('post_url')}: Title changed.")
+                    cursor.execute("INSERT INTO changes (post_id, field, old_value, new_value) VALUES (?, ?, ?, ?)",
+                                   (post_id, 'title', old_title, new_title))
+                    cursor.execute("UPDATE posts SET title = ? WHERE id = ?", (new_title, post_id))
+                    updated = True
 
-                    # Check External Link Change
-                    new_link = item.get('external_link')
-                    if old_link != new_link and new_link:
-                        logger.info(f"Change detected for {item.get('post_url')}: External Link changed.")
-                        cursor.execute("INSERT INTO changes (post_id, field, old_value, new_value) VALUES (?, ?, ?, ?)",
-                                       (post_id, 'external_link', old_link, new_link))
-                        cursor.execute("UPDATE posts SET external_link = ? WHERE id = ?", (new_link, post_id))
-                        updated = True
+                # Check External Link Change
+                new_link = item.get('external_link')
+                if old_link != new_link and new_link:
+                    logger.info(f"Change detected for {item.get('post_url')}: External Link changed.")
+                    cursor.execute("INSERT INTO changes (post_id, field, old_value, new_value) VALUES (?, ?, ?, ?)",
+                                   (post_id, 'external_link', old_link, new_link))
+                    cursor.execute("UPDATE posts SET external_link = ? WHERE id = ?", (new_link, post_id))
+                    updated = True
 
-                    if updated:
-                        # Update scraped_at to reflect latest check
-                        cursor.execute("UPDATE posts SET scraped_at = CURRENT_TIMESTAMP WHERE id = ?", (post_id,))
-                        conn.commit()
-                        return False # Not a "new" post, but an updated one
+                if updated:
+                    # Update scraped_at to reflect latest check
+                    cursor.execute("UPDATE posts SET scraped_at = CURRENT_TIMESTAMP WHERE id = ?", (post_id,))
+                    self.conn.commit()
+                    return False # Not a "new" post, but an updated one
 
-                else:
-                    # Insert new post
-                    cursor.execute('''
-                        INSERT INTO posts (title, post_url, external_link, date_str, datetime_iso, author, categories)
-                        VALUES (?, ?, ?, ?, ?, ?, ?)
-                    ''', (
-                        item.get('title'),
-                        item.get('post_url'),
-                        item.get('external_link'),
-                        item.get('date'),
-                        item.get('datetime'),
-                        item.get('author'),
-                        json.dumps(item.get('categories'))
-                    ))
-                    conn.commit()
-                    return True # New post
+            else:
+                # Insert new post
+                cursor.execute('''
+                    INSERT INTO posts (title, post_url, external_link, date_str, datetime_iso, author, categories)
+                    VALUES (?, ?, ?, ?, ?, ?, ?)
+                ''', (
+                    item.get('title'),
+                    item.get('post_url'),
+                    item.get('external_link'),
+                    item.get('date'),
+                    item.get('datetime'),
+                    item.get('author'),
+                    json.dumps(item.get('categories'))
+                ))
+                self.conn.commit()
+                return True # New post
 
         except sqlite3.Error as e:
             logger.error(f"Database insertion/update error: {e}")
@@ -231,6 +236,9 @@ class BlogScraper:
         self.save_json()
         logger.info(f"Scraped {len(self.data)} articles in total.")
         logger.info(f"New items added to database: {new_items_count}")
+
+        if self.conn:
+            self.conn.close()
 
     def save_json(self):
         try:
