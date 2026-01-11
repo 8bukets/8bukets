@@ -5,6 +5,17 @@ from urllib.parse import urlparse
 from datetime import datetime
 import sys
 
+# UX Visual Constants
+EMOJI = {
+    'STATS': '📊',
+    'DOMAIN': '🌐',
+    'CATEGORY': '🏷️',
+    'DATE': '📅',
+    'AUTHOR': '✍️',
+    'TIME': '⏰',
+    'CHECK': '✅'
+}
+
 def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
@@ -27,6 +38,7 @@ def generate_report(data, output_file):
     # 1. Domain Analysis
     domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
     domain_counts = Counter(domains).most_common(10)
+    unique_domains = len(set(domains))
 
     # 2. Category Analysis
     all_categories = []
@@ -67,34 +79,51 @@ def generate_report(data, output_file):
     # Generate Markdown
     md = []
     md.append("# Markposition Analytics Report")
-    md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    md.append(f"\n> Generated on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
-    md.append(f"- **Total Posts:** {total_posts}")
-    md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    # Executive Summary
+    md.append(f"\n## {EMOJI['STATS']} Executive Summary")
+    md.append("| Metric | Value |")
+    md.append("| :--- | :--- |")
+    md.append(f"| {EMOJI['CHECK']} Total Posts | **{total_posts}** |")
+    md.append(f"| {EMOJI['DATE']} Date Range | {start_date} to {end_date} |")
+    md.append(f"| {EMOJI['DOMAIN']} Unique Domains | {unique_domains} |")
+    md.append(f"| {EMOJI['AUTHOR']} Active Authors | {len(author_counts)} |")
 
-    md.append("\n## Top 10 Referenced Domains")
+    # Detailed Sections with Collapsible Details
+    md.append(f"\n## {EMOJI['DOMAIN']} Top Referenced Domains")
+    md.append("<details>")
+    md.append("<summary>Click to view top 10 domains</summary>\n")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in domain_counts:
         md.append(f"| {domain} | {count} |")
+    md.append("</details>")
 
-    md.append("\n## Top 10 Categories")
+    md.append(f"\n## {EMOJI['CATEGORY']} Top Categories")
+    md.append("<details>")
+    md.append("<summary>Click to view top 10 categories</summary>\n")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in category_counts:
         md.append(f"| {cat} | {count} |")
+    md.append("</details>")
 
-    md.append("\n## Posts by Year")
+    md.append(f"\n## {EMOJI['DATE']} Posting Activity by Year")
+    md.append("<details>")
+    md.append("<summary>Click to view yearly breakdown</summary>\n")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
     for year, count in year_counts:
         md.append(f"| {year} | {count} |")
+    md.append("</details>")
 
-    md.append("\n## Authors")
+    md.append(f"\n## {EMOJI['AUTHOR']} Authors")
+    md.append("<details>")
+    md.append("<summary>Click to view author stats</summary>\n")
     for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+        md.append(f"- **{author}**: {count} posts")
+    md.append("</details>")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
