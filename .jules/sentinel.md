@@ -1,0 +1,4 @@
+## 2025-02-14 - [CSV Injection Vulnerability in Data Export]
+**Vulnerability:** The scraper was writing user-controlled data (titles, authors, etc.) directly to a CSV file without sanitization. Malicious input starting with `=`, `+`, `-`, or `@` could be interpreted as a formula by spreadsheet software (e.g., Excel), leading to arbitrary code execution (CSV Injection / Formula Injection).
+**Learning:** Even internal data scraping tools need to treat scraped content as untrusted user input, especially when exporting to formats with executable capabilities like CSV (when opened in spreadsheets).
+**Prevention:** Sanitization must be applied at the point of data export. Any field starting with `=`, `+`, `-`, or `@` should be escaped by prepending a single quote `'`. This forces the spreadsheet application to treat the value as a literal string.
