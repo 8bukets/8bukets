@@ -9,12 +9,14 @@ import logging
 import time
 from typing import List, Dict, Optional, Set, Tuple
 from urllib.parse import urlparse
+from utils.log_formatter import ColorFormatter
 
 # Configure logging
+handler = logging.StreamHandler()
+handler.setFormatter(ColorFormatter())
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
+    handlers=[handler]
 )
 logger = logging.getLogger(__name__)
 

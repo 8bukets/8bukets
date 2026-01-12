@@ -4,6 +4,7 @@ import logging
 import os
 import argparse
 from datetime import datetime
+from utils.log_formatter import ColorFormatter
 from scraper import MarkPositionScraperAsync
 from agents.robot_txt_agent import RobotTxtAgent
 from agents.analysis_agent import AnalysisAgent
@@ -19,10 +20,11 @@ from agents.iq_agent import IQAgent
 from agents.antigravity_agent import AntigravityAgent
 
 # Configure logging
+handler = logging.StreamHandler()
+handler.setFormatter(ColorFormatter())
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
+    handlers=[handler]
 )
 logger = logging.getLogger(__name__)
 
