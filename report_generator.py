@@ -62,9 +62,13 @@ class ReportGenerator:
 
         with open(report_filename, "w", encoding="utf-8") as f:
             f.write(f"# Daily Scraper Report - {report_date}\n\n")
-            f.write(f"**Total Posts:** {total_posts}\n")
-            f.write(f"**New Posts:** {len(new_posts)}\n")
-            f.write(f"**Updated Posts:** {len(updated_posts)}\n\n")
+
+            # Executive Summary
+            f.write("| Metric | Count |\n")
+            f.write("|---|---|\n")
+            f.write(f"| **Total Posts** | {total_posts} |\n")
+            f.write(f"| **New Posts** | {len(new_posts)} |\n")
+            f.write(f"| **Updated Posts** | {len(updated_posts)} |\n\n")
 
             # Recommendations Section
             f.write("## 💡 Recommendations\n\n")
@@ -81,10 +85,13 @@ class ReportGenerator:
                 f.write("## 🧠 Keyword Trends\n\n")
                 f.write("Most frequent words in recent activity:\n\n")
                 keywords = self.analyze_keywords(all_recent_titles)
-                f.write("| Keyword | Frequency |\n")
-                f.write("|---|---|\n")
+                max_freq = max(k[1] for k in keywords) if keywords else 1
+                f.write("| Keyword | Frequency | Distribution |\n")
+                f.write("|---|---|---|\n")
                 for word, count in keywords:
-                    f.write(f"| {word} | {count} |\n")
+                    bar_len = int((count / max_freq) * 10)
+                    bar = "█" * bar_len + "░" * (10 - bar_len)
+                    f.write(f"| {word} | {count} | `{bar}` |\n")
                 f.write("\n")
 
             # SEO Rankings Trend
@@ -101,23 +108,31 @@ class ReportGenerator:
             # Content Updates Section
             if updated_posts:
                 f.write("## 🔄 Content Updates\n\n")
+                if len(updated_posts) > 10:
+                    f.write("<details><summary>View all updates</summary>\n\n")
                 f.write("| Post | Field | Old | New | Time |\n")
                 f.write("|---|---|---|---|---|\n")
                 for u in updated_posts:
                     title, url, field, old, new, time = u
                     title = title.replace("|", "-")
                     f.write(f"| [{title}]({url}) | {field} | {old} | {new} | {time} |\n")
+                if len(updated_posts) > 10:
+                    f.write("\n</details>\n")
                 f.write("\n")
 
             # New Posts Section
             if new_posts:
                 f.write("## 🆕 Recently Scraped Posts\n\n")
+                if len(new_posts) > 10:
+                    f.write("<details><summary>View all new posts</summary>\n\n")
                 f.write("| Title | Scraped At | Link |\n")
                 f.write("|---|---|---|\n")
                 for post in new_posts:
                     title, url, scraped_at = post
                     title = title.replace("|", "-") if title else "No Title"
                     f.write(f"| {title} | {scraped_at} | [View]({url}) |\n")
+                if len(new_posts) > 10:
+                    f.write("\n</details>\n")
             else:
                 f.write("No new posts scraped in the last 24 hours.\n")
 
