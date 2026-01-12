@@ -18,10 +18,18 @@ def get_domain(url):
         return None
     try:
         return urlparse(url).netloc.replace('www.', '')
-    except:
+    except Exception:  # pylint: disable=broad-except
         return None
 
+def generate_ascii_bar(count, max_count, width=20):
+    """Generates an ASCII bar chart string."""
+    if max_count == 0:
+        return ""
+    filled = int((count / max_count) * width)
+    return "█" * filled + "░" * (width - filled)
+
 def generate_report(data, output_file):
+    """Generates a Markdown report from the scraped data."""
     total_posts = len(data)
 
     # 1. Domain Analysis
@@ -75,22 +83,28 @@ def generate_report(data, output_file):
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
 
     md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Domain | Count | Visualization |")
+    md.append("| :--- | :---: | :--- |")
+    max_domain = max([c for _, c in domain_counts]) if domain_counts else 0
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        ascii_bar = generate_ascii_bar(count, max_domain)
+        md.append(f"| {domain} | {count} | {ascii_bar} |")
 
     md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Category | Count | Visualization |")
+    md.append("| :--- | :---: | :--- |")
+    max_cat = max([c for _, c in category_counts]) if category_counts else 0
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        ascii_bar = generate_ascii_bar(count, max_cat)
+        md.append(f"| {cat} | {count} | {ascii_bar} |")
 
     md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Year | Count | Visualization |")
+    md.append("| :--- | :---: | :--- |")
+    max_year = max([c for _, c in year_counts]) if year_counts else 0
     for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+        ascii_bar = generate_ascii_bar(count, max_year)
+        md.append(f"| {year} | {count} | {ascii_bar} |")
 
     md.append("\n## Authors")
     for author, count in author_counts:
