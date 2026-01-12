@@ -21,6 +21,14 @@ def get_domain(url):
     except:
         return None
 
+import math
+
+def create_ascii_bar(count, max_count, width=15):
+    if max_count == 0:
+        return ""
+    bar_length = math.ceil((count / max_count) * width)
+    return "█" * bar_length + "░" * (width - bar_length)
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
@@ -66,35 +74,51 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
-    md.append("# Wordpress Blog Analytics Report")
+    md.append("# 📊 Wordpress Blog Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
-    md.append(f"- **Total Posts:** {total_posts}")
-    md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append("\n## 📋 Executive Summary")
+    md.append("| Metric | Value |")
+    md.append("| :--- | :--- |")
+    md.append(f"| Total Posts | {total_posts} |")
+    md.append(f"| Date Range | {start_date} to {end_date} |")
+    md.append(f"| Unique Domains | {len(set(domains))} |")
+    md.append(f"| Top Category | {category_counts[0][0] if category_counts else 'N/A'} |")
 
-    md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
+    md.append("\n## 🌐 Top 10 Referenced Domains")
+    md.append("| Domain | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_domain = domain_counts[0][1] if domain_counts else 1
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        bar = create_ascii_bar(count, max_domain)
+        md.append(f"| {domain} | {count} | {bar} |")
 
-    md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
+    md.append("\n## 📂 Top 10 Categories")
+    md.append("| Category | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_cat = category_counts[0][1] if category_counts else 1
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        bar = create_ascii_bar(count, max_cat)
+        md.append(f"| {cat} | {count} | {bar} |")
 
-    md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
+    md.append("\n## 📅 Posts by Year")
+    md.append("| Year | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_year_count = max(count for _, count in year_counts) if year_counts else 1
     for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+        bar = create_ascii_bar(count, max_year_count)
+        md.append(f"| {year} | {count} | {bar} |")
 
-    md.append("\n## Authors")
-    for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+    md.append("\n## ✍️ Authors")
+    if len(author_counts) > 5:
+        md.append("<details>")
+        md.append("<summary>Click to see all authors</summary>\n")
+        for author, count in author_counts:
+             md.append(f"- {author}: {count} posts")
+        md.append("</details>")
+    else:
+        for author, count in author_counts:
+            md.append(f"- {author}: {count} posts")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
