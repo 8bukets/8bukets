@@ -4,7 +4,6 @@ import json
 import time
 import logging
 import argparse
-import sys
 from urllib.parse import urlparse
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
@@ -118,7 +117,7 @@ def parse_post_html(post_soup, base_url: str) -> Post:
     img = post_soup.find('div', class_='featured-image')
     image_url = None
     if img and img.find('img'):
-            image_url = img.find('img').get('src')
+        image_url = img.find('img').get('src')
 
     return Post(
         title=title,
@@ -177,9 +176,11 @@ def scrape(output_file: str, max_pages: int = 0):
     try:
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump([asdict(p) for p in all_posts], f, indent=4, ensure_ascii=False)
-        logging.info(f"Saved to {output_file}")
+        logging.info("Saved to %s", output_file)
     except IOError as e:
-        logging.error(f"Failed to save output to {output_file}: {e}")
+        logging.error("Failed to save output to %s: %s", output_file, e)
+
+    return [asdict(p) for p in all_posts]
 
 def main():
     parser = argparse.ArgumentParser(description="Scrape informaticmagazine.data.blog")
