@@ -1,0 +1,4 @@
+## 2024-10-27 - CSV Formula Injection Prevention
+**Vulnerability:** User-controlled data (titles, authors, etc.) scraped from external sites was written directly to CSV files without sanitization. This allows malicious actors to craft inputs (e.g., titles starting with `=`) that execute as formulas when the CSV is opened in Excel, potentially leading to data exfiltration or arbitrary command execution on the analyst's machine.
+**Learning:** Even "read-only" scrapers can be vectors for attacks if the output is consumed by vulnerable tools like Excel. CSVs are not just text files; they are executable code in certain contexts.
+**Prevention:** Sanitize all fields written to CSVs. Specifically, prepend a single quote `'` to any field starting with active characters (`=`, `+`, `-`, `@`) to force Excel to treat it as a string.
