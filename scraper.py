@@ -1,12 +1,16 @@
+import argparse
+import json
+import logging
+import sqlite3
+import sys
+import time
+from datetime import datetime
+from urllib.parse import urlparse
+import ipaddress
+import socket
+
 import requests
 from bs4 import BeautifulSoup
-import json
-import time
-import logging
-import argparse
-import sys
-import sqlite3
-from datetime import datetime
 
 # Configure logging
 logging.basicConfig(
@@ -126,10 +130,46 @@ class BlogScraper:
 
         return False
 
+    def validate_url(self, url):
+        """Validates the URL to prevent SSRF and other issues."""
+        try:
+            parsed = urlparse(url)
+            if parsed.scheme not in ('http', 'https'):
+                logger.warning(f"Blocked URL with invalid scheme: {url}")
+                return False
+
+            hostname = parsed.hostname
+            if not hostname:
+                return False
+
+            try:
+                # Resolve hostname to IP to check for private addresses
+                ip = socket.gethostbyname(hostname)
+                if ipaddress.ip_address(ip).is_private:
+                    logger.warning(f"Blocked access to private IP: {url} ({ip})")
+                    return False
+            except socket.error:
+                # If we can't resolve it, it might be an internal name or invalid
+                # For safety, we could block it, but that might break valid domains
+                # that fail temporarily. However, strict SSRF protection usually fails closed.
+                pass
+
+            if hostname in ('localhost', '127.0.0.1', '::1', '0.0.0.0'):
+                logger.warning(f"Blocked access to localhost: {url}")
+                return False
+
+            return True
+        except Exception as e:
+            logger.error(f"URL validation error: {e}")
+            return False
+
     def fetch_page(self, url):
+        if not self.validate_url(url):
+            return None
+
         logger.info(f"Fetching {url}...")
         try:
-            response = requests.get(url, headers=self.headers, timeout=10)
+            response = requests.get(url, headers=self.headers, timeout=10, allow_redirects=False)
             response.raise_for_status()
             return response.content
         except requests.RequestException as e:
