@@ -1,12 +1,13 @@
+import argparse
+import json
+import logging
+import sqlite3
+import sys
+import time
+from datetime import datetime
+
 import requests
 from bs4 import BeautifulSoup
-import json
-import time
-import logging
-import argparse
-import sys
-import sqlite3
-from datetime import datetime
 
 # Configure logging
 logging.basicConfig(
@@ -65,63 +66,58 @@ class BlogScraper:
         except sqlite3.Error as e:
             logger.error(f"Database initialization error: {e}")
 
-    def save_to_db(self, item):
+    def save_to_db(self, item, cursor):
         """Save a single item to the database, handling updates."""
         try:
-            with sqlite3.connect(self.db_name) as conn:
-                cursor = conn.cursor()
+            # Check if post exists
+            cursor.execute("SELECT id, title, external_link FROM posts WHERE post_url = ?", (item.get('post_url'),))
+            existing_post = cursor.fetchone()
 
-                # Check if post exists
-                cursor.execute("SELECT id, title, external_link FROM posts WHERE post_url = ?", (item.get('post_url'),))
-                existing_post = cursor.fetchone()
+            if existing_post:
+                post_id, old_title, old_link = existing_post
+                updated = False
 
-                if existing_post:
-                    post_id, old_title, old_link = existing_post
-                    updated = False
+                # Check Title Change
+                new_title = item.get('title')
+                if old_title != new_title and new_title:
+                    logger.info("Change detected for %s: Title changed.", item.get('post_url'))
+                    cursor.execute("INSERT INTO changes (post_id, field, old_value, new_value) VALUES (?, ?, ?, ?)",
+                                   (post_id, 'title', old_title, new_title))
+                    cursor.execute("UPDATE posts SET title = ? WHERE id = ?", (new_title, post_id))
+                    updated = True
 
-                    # Check Title Change
-                    new_title = item.get('title')
-                    if old_title != new_title and new_title:
-                        logger.info(f"Change detected for {item.get('post_url')}: Title changed.")
-                        cursor.execute("INSERT INTO changes (post_id, field, old_value, new_value) VALUES (?, ?, ?, ?)",
-                                       (post_id, 'title', old_title, new_title))
-                        cursor.execute("UPDATE posts SET title = ? WHERE id = ?", (new_title, post_id))
-                        updated = True
+                # Check External Link Change
+                new_link = item.get('external_link')
+                if old_link != new_link and new_link:
+                    logger.info("Change detected for %s: External Link changed.", item.get('post_url'))
+                    cursor.execute("INSERT INTO changes (post_id, field, old_value, new_value) VALUES (?, ?, ?, ?)",
+                                   (post_id, 'external_link', old_link, new_link))
+                    cursor.execute("UPDATE posts SET external_link = ? WHERE id = ?", (new_link, post_id))
+                    updated = True
 
-                    # Check External Link Change
-                    new_link = item.get('external_link')
-                    if old_link != new_link and new_link:
-                        logger.info(f"Change detected for {item.get('post_url')}: External Link changed.")
-                        cursor.execute("INSERT INTO changes (post_id, field, old_value, new_value) VALUES (?, ?, ?, ?)",
-                                       (post_id, 'external_link', old_link, new_link))
-                        cursor.execute("UPDATE posts SET external_link = ? WHERE id = ?", (new_link, post_id))
-                        updated = True
+                if updated:
+                    # Update scraped_at to reflect latest check
+                    cursor.execute("UPDATE posts SET scraped_at = CURRENT_TIMESTAMP WHERE id = ?", (post_id,))
+                    return False # Not a "new" post, but an updated one
 
-                    if updated:
-                        # Update scraped_at to reflect latest check
-                        cursor.execute("UPDATE posts SET scraped_at = CURRENT_TIMESTAMP WHERE id = ?", (post_id,))
-                        conn.commit()
-                        return False # Not a "new" post, but an updated one
-
-                else:
-                    # Insert new post
-                    cursor.execute('''
-                        INSERT INTO posts (title, post_url, external_link, date_str, datetime_iso, author, categories)
-                        VALUES (?, ?, ?, ?, ?, ?, ?)
-                    ''', (
-                        item.get('title'),
-                        item.get('post_url'),
-                        item.get('external_link'),
-                        item.get('date'),
-                        item.get('datetime'),
-                        item.get('author'),
-                        json.dumps(item.get('categories'))
-                    ))
-                    conn.commit()
-                    return True # New post
+            else:
+                # Insert new post
+                cursor.execute('''
+                    INSERT INTO posts (title, post_url, external_link, date_str, datetime_iso, author, categories)
+                    VALUES (?, ?, ?, ?, ?, ?, ?)
+                ''', (
+                    item.get('title'),
+                    item.get('post_url'),
+                    item.get('external_link'),
+                    item.get('date'),
+                    item.get('datetime'),
+                    item.get('author'),
+                    json.dumps(item.get('categories'))
+                ))
+                return True # New post
 
         except sqlite3.Error as e:
-            logger.error(f"Database insertion/update error: {e}")
+            logger.error("Database insertion/update error: %s", e)
             return False
 
         return False
@@ -201,36 +197,44 @@ class BlogScraper:
         url = self.base_url
         new_items_count = 0
 
-        while url:
-            content = self.fetch_page(url)
-            if not content:
-                break
+        # Optimization: Reuse connection for the entire session to avoid
+        # repeatedly opening/closing DB and committing for every item.
+        with sqlite3.connect(self.db_name) as conn:
+            cursor = conn.cursor()
 
-            soup = BeautifulSoup(content, "html.parser")
-            articles = soup.find_all("article")
-            logger.info(f"Found {len(articles)} articles on this page.")
+            while url:
+                content = self.fetch_page(url)
+                if not content:
+                    break
 
-            if not articles:
-                logger.warning("No articles found on page.")
+                soup = BeautifulSoup(content, "html.parser")
+                articles = soup.find_all("article")
+                logger.info("Found %d articles on this page.", len(articles))
 
-            for article in articles:
-                item = self.parse_article(article)
-                self.data.append(item)
-                if self.save_to_db(item):
-                    new_items_count += 1
+                if not articles:
+                    logger.warning("No articles found on page.")
 
-            next_page = self.get_next_page(soup)
-            if next_page:
-                logger.info(f"Found next page: {next_page}")
-                url = next_page
-                time.sleep(1)
-            else:
-                logger.info("No more pages found.")
-                url = None
+                for article in articles:
+                    item = self.parse_article(article)
+                    self.data.append(item)
+                    if self.save_to_db(item, cursor):
+                        new_items_count += 1
+
+                # Batch commit per page
+                conn.commit()
+
+                next_page = self.get_next_page(soup)
+                if next_page:
+                    logger.info("Found next page: %s", next_page)
+                    url = next_page
+                    time.sleep(1)
+                else:
+                    logger.info("No more pages found.")
+                    url = None
 
         self.save_json()
-        logger.info(f"Scraped {len(self.data)} articles in total.")
-        logger.info(f"New items added to database: {new_items_count}")
+        logger.info("Scraped %d articles in total.", len(self.data))
+        logger.info("New items added to database: %d", new_items_count)
 
     def save_json(self):
         try:
