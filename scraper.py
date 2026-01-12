@@ -143,7 +143,8 @@ class MarkPositionScraperAsync:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
 
-        async with aiohttp.ClientSession(headers=headers) as session:
+        timeout = aiohttp.ClientTimeout(total=30)
+        async with aiohttp.ClientSession(headers=headers, timeout=timeout) as session:
             # We don't know the total pages, so we have to fetch sequentially or in chunks until we hit 404/empty.
             # Pure concurrent fetching of all pages requires knowing the max page.
             # Heuristic: fetch in batches of `concurrency`. If any page in batch returns 404 or empty, stop.
@@ -229,15 +230,21 @@ class MarkPositionScraperAsync:
             with open(self.output_csv, 'w', newline='', encoding='utf-8') as f:
                 writer = csv.writer(f)
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
+
+                def sanitize(value):
+                    if value and isinstance(value, str) and value.startswith(('=', '+', '-', '@')):
+                        return "'" + value
+                    return value
+
                 for post in posts:
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        sanitize(post.get('title', '')),
+                        sanitize(post.get('date', '')),
+                        sanitize(post.get('author', '')),
+                        sanitize(", ".join(post.get('categories', []))),
+                        sanitize(post.get('external_link', '')),
+                        sanitize(post.get('domain', '')),
+                        sanitize(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
