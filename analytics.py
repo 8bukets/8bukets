@@ -66,33 +66,44 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
+    # Helper for ASCII bars
+    def draw_bar(val, max_val, width=20):
+        if not max_val: return ""
+        filled = int((val / max_val) * width)
+        return "█" * filled + "░" * (width - filled)
+
+    md.append("# 🎨 Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
-    md.append(f"- **Total Posts:** {total_posts}")
-    md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append("\n## 📊 Executive Summary")
+    md.append("| Metric | Value |")
+    md.append("| :--- | :--- |")
+    md.append(f"| Total Posts | **{total_posts}** |")
+    md.append(f"| Date Range | {start_date} to {end_date} |")
+    md.append(f"| Unique Domains | {len(set(domains))} |")
 
-    md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
+    md.append("\n## 🔗 Top 10 Referenced Domains")
+    md.append("| Domain | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_domain = domain_counts[0][1] if domain_counts else 1
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        md.append(f"| {domain} | {count} | {draw_bar(count, max_domain)} |")
 
-    md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
+    md.append("\n## 📑 Top 10 Categories")
+    md.append("| Category | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_cat = category_counts[0][1] if category_counts else 1
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        md.append(f"| {cat} | {count} | {draw_bar(count, max_cat)} |")
 
-    md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
+    md.append("\n## 📅 Posts by Year")
+    md.append("| Year | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_year = max([c for _, c in year_counts]) if year_counts else 1
     for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+        md.append(f"| {year} | {count} | {draw_bar(count, max_year)} |")
 
-    md.append("\n## Authors")
+    md.append("\n## ✍️ Authors")
     for author, count in author_counts:
         md.append(f"- {author}: {count} posts")
 
