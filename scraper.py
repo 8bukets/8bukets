@@ -44,6 +44,30 @@ class OracleNewsScraper:
             return "'" + value
         return value
 
+    def validate_url(self, url: str) -> Optional[str]:
+        """Validate URL scheme and ensure no dangerous content."""
+        if not url:
+            return None
+
+        # Parse URL
+        try:
+            parsed = urlparse(url)
+        except Exception:
+            return None
+
+        # Only allow http and https schemes
+        if parsed.scheme not in ('http', 'https'):
+            return None
+
+        # Basic check for dangerous characters often used in injections
+        # Allow alphanumeric, dots, hyphens, underscores, slashes, colons (for ports), query params
+        # But specifically reject control characters or anything looking like javascript: payload
+        # simple check: if it contains whitespace or control chars, reject
+        if re.search(r'[\s<>"\'{}|\\^`]', url):
+            return None
+
+        return url
+
     async def fetch_page(self, session: aiohttp.ClientSession, url: str) -> Optional[str]:
         try:
             # 30 second global timeout
@@ -83,6 +107,11 @@ class OracleNewsScraper:
                 continue
 
             full_url = urljoin(self.base_url, href)
+
+            # Security: Validate the final URL
+            if not self.validate_url(full_url):
+                logger.warning(f"Skipping invalid/malicious URL: {full_url}")
+                continue
 
             if full_url in seen_urls:
                 continue
