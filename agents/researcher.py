@@ -1,10 +1,16 @@
 from .base_agent import BaseAgent
-import subprocess
 import sys
 import json
 import os
 import logging
-from typing import List, Dict
+
+# Import scrapers directly
+sys.path.append(os.getcwd()) # Ensure root is in path
+try:
+    import scrape_informatic
+    import google_search_scraper
+except ImportError:
+    logging.getLogger("Researcher").warning("Could not import scrapers. Make sure they are in the python path.")
 
 class ResearcherAgent(BaseAgent):
     def __init__(self):
@@ -15,43 +21,41 @@ class ResearcherAgent(BaseAgent):
         limit = data.get('limit', 1) if data else 1
         output_file = data.get('output_file', 'data.json') if data else 'data.json'
 
-        self.logger.info(f"Scraping content (limit {limit} pages)...")
+        self.logger.info("Scraping content (limit %s pages)...", limit)
 
         results = {}
 
         # 1. Scrape Blog Content
         try:
-            # We assume scrape_informatic.py is in the root directory
-            cmd = [sys.executable, "scrape_informatic.py", "-n", str(limit), "-o", output_file]
-            subprocess.run(cmd, check=True)
-
-            if os.path.exists(output_file):
-                with open(output_file, 'r', encoding='utf-8') as f:
-                    results['blog_posts'] = json.load(f)
-            else:
-                results['blog_posts'] = []
+            # Direct call to scrape_informatic
+            self.logger.info("Calling scrape_informatic.scrape() directly.")
+            blog_posts = scrape_informatic.scrape(output_file, max_pages=limit)
+            results['blog_posts'] = blog_posts
         except Exception as e:
-            self.logger.error(f"Blog scraping failed: {e}")
+            self.logger.error("Blog scraping failed: %s", e)
+            # Fallback to file reading if scrape failed but maybe wrote file?
+            # Or just empty list
             results['blog_posts'] = []
 
         # 2. Check Google Listings
         self.logger.info("Checking Google Listings...")
         try:
             search_output = "google_search_results.json"
-            # We assume google_search_scraper.py is in the root directory
-            # We need to create google_search_scraper.py if it doesn't exist or is not importable
-            # Since we are using subprocess, we can call it.
-            # Wait, I need to restore google_search_scraper.py first.
-            cmd = [sys.executable, "google_search_scraper.py", "-o", search_output]
-            subprocess.run(cmd, check=True)
+            query = "site:informaticmagazine.data.blog"
+            limit_search = 10 # Default from original script
 
-            if os.path.exists(search_output):
-                with open(search_output, 'r', encoding='utf-8') as f:
-                    results['google_listings'] = json.load(f)
-            else:
-                results['google_listings'] = []
+            # Direct call to google_search_scraper
+            self.logger.info("Calling google_search_scraper.perform_google_search() directly.")
+            search_results = google_search_scraper.perform_google_search(query, num_results=limit_search)
+
+            # Save artifacts as expected by other components or for history
+            with open(search_output, 'w', encoding='utf-8') as f:
+                json.dump(search_results, f, indent=4, ensure_ascii=False)
+
+            results['google_listings'] = search_results
+
         except Exception as e:
-            self.logger.error(f"Google search scraping failed: {e}")
+            self.logger.error("Google search scraping failed: %s", e)
             results['google_listings'] = []
 
         return results
