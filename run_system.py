@@ -15,6 +15,7 @@ from agents.content_agent import ContentAgent
 from agents.health_agent import HealthCheckAgent
 from agents.monetization_agent import MonetizationAgent
 from agents.creativity_agent import CreativityAgent
+from agents.iq_agent import IQAgent
 from agents.antigravity_agent import AntigravityAgent
 
 # Configure logging
@@ -63,7 +64,7 @@ async def run_pipeline(skip_scrape=False, limit=2):
         data = json.load(f)
 
     # 3. Initialize Agents in Dependency Order
-    # Robot -> Scraper (Implicit) -> Analysis -> Intelligence -> Ads -> Research -> Bid -> Content -> Health -> Monetization -> Creativity -> Antigravity
+    # Robot -> Scraper (Implicit) -> Analysis -> Intelligence -> Ads -> Research -> Bid -> Content -> Health -> Monetization -> Creativity -> IQ -> Antigravity
     agents = [
         RobotTxtAgent(),      # Checks rules first
         AnalysisAgent(),      # Basic stats
@@ -75,7 +76,8 @@ async def run_pipeline(skip_scrape=False, limit=2):
         HealthCheckAgent(),   # Maintenance
         MonetizationAgent(),  # Revenue
         CreativityAgent(),    # Ad Copy
-        AntigravityAgent()    # Synthesis & Evolution
+        IQAgent(),            # Self-Learning (needs inputs from above)
+        AntigravityAgent()    # Synthesis & Evolution (needs IQ)
     ]
 
     # 4. Execute Agents
