@@ -41,12 +41,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Utility: Debounce function to limit the rate of execution
+    // ⚡ Bolt Optimization: Reduces unnecessary DOM updates during typing
+    function debounce(func, wait) {
+        let timeout;
+        return function(...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), wait);
+        };
+    }
+
     // Search Functionality
     const searchInput = document.getElementById('search-input');
     const articleList = document.getElementById('article-list');
 
     if (searchInput && articleList) {
-        searchInput.addEventListener('input', (e) => {
+        const handleSearch = debounce((e) => {
             const term = e.target.value.toLowerCase();
             const articles = articleList.getElementsByTagName('article');
 
@@ -60,7 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     article.style.display = 'none';
                 }
             });
-        });
+        }, 300); // 300ms delay
+
+        searchInput.addEventListener('input', handleSearch);
     }
 
     // Contact Form Validation
