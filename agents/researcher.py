@@ -15,23 +15,25 @@ class ResearcherAgent(BaseAgent):
         limit = data.get('limit', 1) if data else 1
         output_file = data.get('output_file', 'data.json') if data else 'data.json'
 
-        self.logger.info(f"Scraping content (limit {limit} pages)...")
+        self.logger.info("Scraping content (limit %s pages)...", limit)
 
         results = {}
 
         # 1. Scrape Blog Content
         try:
-            # We assume scrape_informatic.py is in the root directory
-            cmd = [sys.executable, "scrape_informatic.py", "-n", str(limit), "-o", output_file]
-            subprocess.run(cmd, check=True)
+            # Import dynamically to avoid top-level import issues if not in path
+            import scrape_informatic
 
-            if os.path.exists(output_file):
-                with open(output_file, 'r', encoding='utf-8') as f:
-                    results['blog_posts'] = json.load(f)
-            else:
-                results['blog_posts'] = []
+            # Use direct function call instead of subprocess
+            # This avoids process startup overhead and disk I/O
+            results['blog_posts'] = scrape_informatic.scrape(output_file=output_file, max_pages=limit)
+
+        except ImportError:
+            self.logger.error("Could not import scrape_informatic module. Ensure it is in the python path.")
+            results['blog_posts'] = []
         except Exception as e:
-            self.logger.error(f"Blog scraping failed: {e}")
+            # pylint: disable=broad-except
+            self.logger.error("Blog scraping failed: %s", e)
             results['blog_posts'] = []
 
         # 2. Check Google Listings
@@ -39,9 +41,6 @@ class ResearcherAgent(BaseAgent):
         try:
             search_output = "google_search_results.json"
             # We assume google_search_scraper.py is in the root directory
-            # We need to create google_search_scraper.py if it doesn't exist or is not importable
-            # Since we are using subprocess, we can call it.
-            # Wait, I need to restore google_search_scraper.py first.
             cmd = [sys.executable, "google_search_scraper.py", "-o", search_output]
             subprocess.run(cmd, check=True)
 
@@ -51,7 +50,8 @@ class ResearcherAgent(BaseAgent):
             else:
                 results['google_listings'] = []
         except Exception as e:
-            self.logger.error(f"Google search scraping failed: {e}")
+            # pylint: disable=broad-except
+            self.logger.error("Google search scraping failed: %s", e)
             results['google_listings'] = []
 
         return results
