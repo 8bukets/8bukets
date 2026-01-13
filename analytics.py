@@ -4,6 +4,7 @@ from collections import Counter
 from urllib.parse import urlparse
 from datetime import datetime
 import sys
+import math
 
 def load_data(filepath):
     try:
@@ -20,6 +21,11 @@ def get_domain(url):
         return urlparse(url).netloc.replace('www.', '')
     except:
         return None
+
+def get_bar(val, max_val, width=10):
+    if not max_val: return ""
+    filled = math.ceil((val / max_val) * width)
+    return "█" * filled + "░" * (width - filled)
 
 def generate_report(data, output_file):
     total_posts = len(data)
@@ -41,9 +47,6 @@ def generate_report(data, output_file):
         external_link = p.get('external_link')
         if external_link:
             domain = get_domain(external_link)
-            # Match original behavior: include None if get_domain returns it
-            # Original: domains = [get_domain(...) for ... if external_link]
-            # Counter(domains)
             domain_counts[domain] += 1
             unique_domains.add(domain)
 
@@ -99,33 +102,36 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
+    md.append("# 📊 Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
+    md.append("\n## 📈 General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(unique_domains)}")
 
-    md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
+    md.append("\n## 🌐 Top 10 Referenced Domains")
+    md.append("| Domain | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_d = top_domains[0][1] if top_domains else 0
     for domain, count in top_domains:
-        md.append(f"| {domain} | {count} |")
+        md.append(f"| {domain} | {count} | {get_bar(count, max_d)} |")
 
-    md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
+    md.append("\n## 📂 Top 10 Categories")
+    md.append("| Category | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_c = top_categories[0][1] if top_categories else 0
     for cat, count in top_categories:
-        md.append(f"| {cat} | {count} |")
+        md.append(f"| {cat} | {count} | {get_bar(count, max_c)} |")
 
-    md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
+    md.append("\n## 📅 Posts by Year")
+    md.append("| Year | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_y = max([c for y, c in sorted_years]) if sorted_years else 0
     for year, count in sorted_years:
-        md.append(f"| {year} | {count} |")
+        md.append(f"| {year} | {count} | {get_bar(count, max_y)} |")
 
-    md.append("\n## Authors")
+    md.append("\n## ✍️ Authors")
     for author, count in sorted_authors:
         md.append(f"- {author}: {count} posts")
 
