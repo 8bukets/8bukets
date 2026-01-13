@@ -69,32 +69,50 @@ def generate_report(data, output_file):
     md.append("# Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
+    md.append("\n## 📊 Executive Summary")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
 
-    md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
+    def draw_bar(val, max_val):
+        """Draws an ASCII bar chart."""
+        if not max_val:
+            return ""
+        width = 20
+        filled = int((val / max_val) * width)
+        return '█' * filled + '░' * (width - filled)
+
+    max_domain = domain_counts[0][1] if domain_counts else 0
+    md.append("\n## 🌐 Top 10 Referenced Domains")
+    md.append("| Domain | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        md.append(f"| {domain} | {count} | {draw_bar(count, max_domain)} |")
 
-    md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
+    max_cat = category_counts[0][1] if category_counts else 0
+    md.append("\n## 📂 Top 10 Categories")
+    md.append("| Category | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        md.append(f"| {cat} | {count} | {draw_bar(count, max_cat)} |")
 
-    md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
+    max_year = year_counts[0][1] if year_counts else 0
+    md.append("\n## 📅 Posts by Year")
+    md.append("| Year | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
     for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+        md.append(f"| {year} | {count} | {draw_bar(count, max_year)} |")
 
-    md.append("\n## Authors")
+    md.append("\n## ✍️ Authors")
+    if len(author_counts) > 5:
+        md.append("<details>")
+        md.append(f"<summary>Click to view all {len(author_counts)} authors</summary>\n")
+
     for author, count in author_counts:
         md.append(f"- {author}: {count} posts")
+
+    if len(author_counts) > 5:
+        md.append("\n</details>")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
