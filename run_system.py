@@ -17,6 +17,7 @@ from agents.monetization_agent import MonetizationAgent
 from agents.creativity_agent import CreativityAgent
 from agents.iq_agent import IQAgent
 from agents.antigravity_agent import AntigravityAgent
+from utils.colors import Colors, print_summary_box
 
 # Configure logging
 logging.basicConfig(
@@ -83,17 +84,23 @@ async def run_pipeline(skip_scrape=False, limit=2):
     # 4. Execute Agents
     report_lines = []
     report_lines.append(f"# Daily Autonomous Report: {datetime.now().strftime('%Y-%m-%d')}\n")
+    agent_results = []
 
     for agent in agents:
         logger.info(f"Running {agent.name}...")
+        start_time = datetime.now()
         try:
             results = await agent.process(data, shared_context, knowledge_base)
+            duration = (datetime.now() - start_time).total_seconds()
             report_section = agent.format_report(results)
             report_lines.append(report_section)
             report_lines.append("\n---\n")
+
+            agent_results.append((agent.name, f"SUCCESS ({duration:.2f}s)", Colors.GREEN))
         except Exception as e:
             logger.error(f"Error in {agent.name}: {e}")
             report_lines.append(f"### {agent.name} Failed\nError: {e}\n\n---\n")
+            agent_results.append((agent.name, "FAILED", Colors.RED))
 
     # 5. Save Report
     output_dir = "results"
@@ -104,6 +111,9 @@ async def run_pipeline(skip_scrape=False, limit=2):
         f.write("\n".join(report_lines))
 
     logger.info(f"Report generated successfully: {report_filename}")
+
+    # Print Summary Box
+    print_summary_box("DAILY AGENT EXECUTION SUMMARY", agent_results)
 
     # 6. Save Knowledge Base (Evolution)
     try:
