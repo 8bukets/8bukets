@@ -21,6 +21,13 @@ def get_domain(url):
     except:
         return None
 
+def create_bar_chart(value, max_value, max_width=20):
+    """Generates an ASCII bar chart."""
+    if max_value == 0:
+        return ""
+    width = int((value / max_value) * max_width)
+    return "█" * width
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
@@ -64,35 +71,41 @@ def generate_report(data, output_file):
     authors = [p.get('author') for p in data if p.get('author')]
     author_counts = Counter(authors).most_common()
 
+    # Calculate max values for charts
+    max_cat_count = max((c for _, c in category_counts), default=0)
+    max_year_count = max((c for _, c in year_counts), default=0)
+
     # Generate Markdown
     md = []
     md.append("# Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
+    md.append("\n## 📊 General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
 
-    md.append("\n## Top 10 Referenced Domains")
+    md.append("\n## 🏆 Top 10 Referenced Domains")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in domain_counts:
         md.append(f"| {domain} | {count} |")
 
-    md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
+    md.append("\n## 📂 Top 10 Categories")
+    md.append("| Category | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        bar = create_bar_chart(count, max_cat_count)
+        md.append(f"| {cat} | {count} | {bar} |")
 
-    md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
+    md.append("\n## 📅 Posts by Year")
+    md.append("| Year | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
     for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+        bar = create_bar_chart(count, max_year_count)
+        md.append(f"| {year} | {count} | {bar} |")
 
-    md.append("\n## Authors")
+    md.append("\n## ✍️ Authors")
     for author, count in author_counts:
         md.append(f"- {author}: {count} posts")
 
