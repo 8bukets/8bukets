@@ -99,7 +99,46 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    print_summary(total_posts, start_date, end_date, len(set(domains)), domain_counts)
+    print(f"\nReport generated: {output_file}")
+
+def print_table(headers, rows):
+    """Prints a simple ASCII table."""
+    if not rows:
+        return
+
+    # Calculate column widths
+    col_widths = [len(h) for h in headers]
+    for row in rows:
+        # Only check columns that exist in headers
+        for i in range(min(len(row), len(headers))):
+            col_widths[i] = max(col_widths[i], len(str(row[i])))
+
+    # Create format string
+    fmt = " | ".join([f"{{:<{w}}}" for w in col_widths])
+    separator = "-+-".join(["-" * w for w in col_widths])
+
+    # Print table
+    print(fmt.format(*headers))
+    print(separator)
+    for row in rows:
+        # Ensure row has enough items, fill with empty string if missing
+        row_data = list(row) + [""] * (len(headers) - len(row))
+        # Truncate if too many items
+        row_data = row_data[:len(headers)]
+        print(fmt.format(*[str(r) for r in row_data]))
+
+def print_summary(total_posts, start_date, end_date, unique_domains, domain_counts):
+    """Prints a summary to the console."""
+    print("\n" + "="*30)
+    print(" MARKPOSITION ANALYTICS SUMMARY")
+    print("="*30 + "\n")
+
+    print(f"Total Posts:    {total_posts}")
+    print(f"Date Range:     {start_date} to {end_date}")
+    print(f"Unique Domains: {unique_domains}")
+    print("\nTOP 10 REFERENCED DOMAINS:")
+    print_table(["Domain", "Count"], domain_counts[:10])
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
