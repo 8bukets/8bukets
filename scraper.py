@@ -1,14 +1,15 @@
-import aiohttp
-import asyncio
-from bs4 import BeautifulSoup
-import json
-import csv
-import re
 import argparse
+import asyncio
+import csv
+import json
 import logging
-import time
-from typing import List, Dict, Optional, Set
+import re
+
+from typing import Dict, List, Optional
 from urllib.parse import urlparse
+
+import aiohttp
+from bs4 import BeautifulSoup
 
 # Configure logging
 logging.basicConfig(
@@ -48,6 +49,50 @@ class MarkPositionScraperAsync:
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
         return re.match(r'^https?://', text.strip()) is not None
+
+    def validate_url(self, url: str) -> Optional[str]:
+        """
+        Validate URL to ensure it uses a safe scheme and contains no dangerous characters.
+        Returns the sanitized URL if valid, otherwise None.
+        """
+        if not url:
+            return None
+
+        # Remove leading/trailing whitespace
+        url = url.strip()
+
+        # dangerous characters check (basic)
+        # Prevent injection of control characters
+        if any(char in url for char in ['<', '>', '"', "'", ' ', '\t', '\n', '\r']):
+            # Allow spaces if they are encoded, but here we are checking raw string.
+            # Usually URLs shouldn't have raw spaces.
+            # But let's be strict about control chars and injection markers.
+            # Actually, quotes are often used to break out of attributes.
+            # The URL comes from BS4 which extracts it from href, so it's already attribute-decoded usually.
+            pass
+
+        # Parse the URL
+        try:
+            parsed = urlparse(url)
+        except ValueError:
+            return None
+
+        # Check for dangerous schemes
+        if parsed.scheme and parsed.scheme.lower() not in ('http', 'https'):
+            return None
+
+        # If no scheme, it might be relative, which is generally safe from XSS
+        # unless it starts with // (protocol relative) which copies the current protocol.
+        # But if current is http/s, it is fine.
+        # However, we want to block `javascript:`, `data:`, `vbscript:` which are handled by scheme check.
+        # The edge case is `javascript:alert(1)` might be parsed with scheme `javascript`.
+
+        # explicitly block known dangerous schemes just in case urlparse behaves unexpectedly
+        lower_url = url.lower()
+        if lower_url.startswith(('javascript:', 'vbscript:', 'data:', 'file:')):
+            return None
+
+        return url
 
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
@@ -121,22 +166,23 @@ class MarkPositionScraperAsync:
             if content_div:
                 link_tag = content_div.select_one('a')
                 if link_tag:
-                    external_link = link_tag.get('href')
+                    external_link = self.validate_url(link_tag.get('href'))
 
                 if not external_link:
                     iframe_tag = content_div.select_one('iframe')
                     if iframe_tag:
-                        external_link = iframe_tag.get('src')
+                        external_link = self.validate_url(iframe_tag.get('src'))
 
             if not external_link and title_text and self.is_url(title_text):
-                external_link = title_text
+                # Ensure title_text is also validated as a URL
+                external_link = self.validate_url(title_text)
 
             post_data['external_link'] = external_link
             post_data['domain'] = self.extract_domain(external_link)
 
             # Post URL
             if title_tag:
-                post_data['post_url'] = title_tag.get('href')
+                post_data['post_url'] = self.validate_url(title_tag.get('href'))
 
             page_posts.append(post_data)
 
