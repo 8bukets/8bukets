@@ -1,19 +1,28 @@
-import requests
-from bs4 import BeautifulSoup
-import json
-import time
-import logging
+"""
+Scrapes articles from informaticmagazine.data.blog.
+"""
 import argparse
-import sys
-from urllib.parse import urlparse
-from requests.adapters import HTTPAdapter
-from urllib3.util.retry import Retry
+import logging
+import time
+import json
 from dataclasses import dataclass, asdict
 from typing import List, Optional
+from urllib.parse import urlparse
+
+import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+from bs4 import BeautifulSoup
 from markdownify import markdownify as md
+
+TIMEOUT_SECONDS = 30
+BASE_URL = "https://informaticmagazine.data.blog"
 
 @dataclass
 class Post:
+    """
+    Data class representing a blog post.
+    """
     title: Optional[str]
     post_url: Optional[str]
     date: Optional[str]
@@ -23,9 +32,10 @@ class Post:
     external_links: List[str]
     image_url: Optional[str]
 
-BASE_URL = "https://informaticmagazine.data.blog"
-
 def configure_logging(verbose: bool):
+    """
+    Configures the logging level.
+    """
     level = logging.DEBUG if verbose else logging.INFO
     logging.basicConfig(
         level=level,
@@ -49,7 +59,9 @@ def get_session():
     session.mount("https://", adapter)
 
     session.headers.update({
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                      "AppleWebKit/537.36 (KHTML, like Gecko) "
+                      "Chrome/91.0.4472.124 Safari/537.36"
     })
 
     return session
@@ -64,7 +76,7 @@ def is_external_link(link_url: str, base_url: str) -> bool:
     try:
         parsed_link = urlparse(link_url)
         parsed_base = urlparse(base_url)
-    except Exception:
+    except Exception: # pylint: disable=broad-except
         return False
 
     # If netloc is empty (relative link), it's internal
@@ -118,7 +130,7 @@ def parse_post_html(post_soup, base_url: str) -> Post:
     img = post_soup.find('div', class_='featured-image')
     image_url = None
     if img and img.find('img'):
-            image_url = img.find('img').get('src')
+        image_url = img.find('img').get('src')
 
     return Post(
         title=title,
@@ -132,6 +144,9 @@ def parse_post_html(post_soup, base_url: str) -> Post:
     )
 
 def scrape(output_file: str, max_pages: int = 0):
+    """
+    Main scraping function.
+    """
     session = get_session()
     all_posts = []
     page = 1
@@ -139,28 +154,29 @@ def scrape(output_file: str, max_pages: int = 0):
 
     while current_url:
         if max_pages > 0 and page > max_pages:
-            logging.info(f"Reached max pages limit ({max_pages}). Stopping.")
+            logging.info("Reached max pages limit (%s). Stopping.", max_pages)
             break
 
-        logging.info(f"Scraping page {page}: {current_url}...")
+        logging.info("Scraping page %s: %s...", page, current_url)
         try:
-            response = session.get(current_url)
+            # SECURITY: Added timeout to prevent infinite hanging
+            response = session.get(current_url, timeout=TIMEOUT_SECONDS)
             response.raise_for_status()
         except requests.exceptions.RequestException as e:
-            logging.error(f"Error fetching {current_url}: {e}")
+            logging.error("Error fetching %s: %s", current_url, e)
             break
 
         soup = BeautifulSoup(response.content, 'html.parser')
 
         posts = soup.find_all('article')
-        logging.info(f"Found {len(posts)} posts on page {page}.")
+        logging.info("Found %s posts on page %s.", len(posts), page)
 
         for post_soup in posts:
             try:
                 post_obj = parse_post_html(post_soup, BASE_URL)
                 all_posts.append(post_obj)
-            except Exception as e:
-                logging.error(f"Error parsing post on page {page}: {e}")
+            except Exception as e: # pylint: disable=broad-except
+                logging.error("Error parsing post on page %s: %s", page, e)
 
         # Pagination
         nav_previous = soup.find('div', class_='nav-previous')
@@ -172,19 +188,24 @@ def scrape(output_file: str, max_pages: int = 0):
             current_url = None
             logging.info("No more pages found.")
 
-    logging.info(f"Total posts scraped: {len(all_posts)}")
+    logging.info("Total posts scraped: %s", len(all_posts))
 
     try:
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump([asdict(p) for p in all_posts], f, indent=4, ensure_ascii=False)
-        logging.info(f"Saved to {output_file}")
+        logging.info("Saved to %s", output_file)
     except IOError as e:
-        logging.error(f"Failed to save output to {output_file}: {e}")
+        logging.error("Failed to save output to %s: %s", output_file, e)
 
 def main():
+    """
+    CLI entry point.
+    """
     parser = argparse.ArgumentParser(description="Scrape informaticmagazine.data.blog")
-    parser.add_argument("-o", "--output", default="data.json", help="Output JSON file path (default: data.json)")
-    parser.add_argument("-n", "--pages", type=int, default=0, help="Maximum number of pages to scrape (0 for all)")
+    parser.add_argument("-o", "--output", default="data.json",
+                        help="Output JSON file path (default: data.json)")
+    parser.add_argument("-n", "--pages", type=int, default=0,
+                        help="Maximum number of pages to scrape (0 for all)")
     parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose logging")
 
     args = parser.parse_args()
