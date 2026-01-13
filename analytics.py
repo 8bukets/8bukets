@@ -5,6 +5,12 @@ from urllib.parse import urlparse
 from datetime import datetime
 import sys
 
+def create_bar_chart(value, max_value, length=20):
+    if not max_value:
+        return "░" * length
+    bar_len = int((value / max_value) * length)
+    return "█" * bar_len + "░" * (length - bar_len)
+
 def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
@@ -39,7 +45,7 @@ def generate_report(data, output_file):
     # 3. Date Analysis
     dates = []
     for p in data:
-        dt_str = p.get('datetime')
+        dt_str = p.get('date')
         if dt_str:
             try:
                 # Handle ISO format
@@ -75,22 +81,28 @@ def generate_report(data, output_file):
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
 
     md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Domain | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_domain = domain_counts[0][1] if domain_counts else 0
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        bar = create_bar_chart(count, max_domain)
+        md.append(f"| {domain} | {count} | {bar} |")
 
     md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Category | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_cat = category_counts[0][1] if category_counts else 0
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        bar = create_bar_chart(count, max_cat)
+        md.append(f"| {cat} | {count} | {bar} |")
 
     md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Year | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_year = max((c for _, c in year_counts), default=0)
     for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+        bar = create_bar_chart(count, max_year)
+        md.append(f"| {year} | {count} | {bar} |")
 
     md.append("\n## Authors")
     for author, count in author_counts:
