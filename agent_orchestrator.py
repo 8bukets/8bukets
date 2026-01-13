@@ -87,6 +87,21 @@ class AgentOrchestrator:
         with open(report_filename, "w", encoding="utf-8") as f:
             f.write(f"# 🤖 Autonomous Agent Report (Evolved v2) - {report_date}\n\n")
 
+            # Extract data for Executive Summary
+            health_status = outputs.get('HealthAgent', {}).get('db_status', 'Unknown')
+            opps_count = len(outputs.get('MonetizationAgent', {}).get('top_opportunities', []))
+            campaigns_count = len(outputs.get('AdManagerAgent', {}).get('campaigns', []))
+            strategy = outputs.get('IntelligenceAgent', {}).get('strategy', 'N/A')
+
+            # 📊 Executive Summary
+            f.write("## 📊 Executive Summary\n\n")
+            f.write("| Metric | Status |\n")
+            f.write("|---|---|\n")
+            f.write(f"| 🏥 System Health | {health_status} |\n")
+            f.write(f"| 💰 Opportunities | {opps_count} |\n")
+            f.write(f"| 📢 Campaigns | {campaigns_count} |\n")
+            f.write(f"| 🧠 Strategy | {strategy} |\n\n")
+
             # Health
             h = outputs.get('HealthAgent', {})
             f.write(f"## 🏥 System Health\n- DB: {h.get('db_status')}\n\n")
