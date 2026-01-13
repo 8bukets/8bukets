@@ -1,0 +1,3 @@
+## 2023-10-27 - [BeautifulSoup Performance: lxml vs html.parser vs SoupStrainer]
+**Learning:** `SoupStrainer` optimization in BeautifulSoup is context-dependent. While `lxml` is universally faster than `html.parser` (~2x), `SoupStrainer` adds overhead when used with `re.compile` on attributes. However, `SoupStrainer('tagname')` combined with `lxml` is extremely fast (~2.7x faster than baseline) because it effectively prunes the tree during parsing.
+**Action:** When optimizing BeautifulSoup, switch to `lxml` first. Then, if only specific tags are needed, use `SoupStrainer('tagname')`. Avoid `SoupStrainer` with regex attributes if simple tag filtering suffices.
