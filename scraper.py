@@ -7,16 +7,44 @@ import re
 import argparse
 import logging
 import time
+import sys
 from typing import List, Dict, Optional, Set, Tuple
 from urllib.parse import urlparse
 
+# UX Improvement: Colored Logging
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+
+class ColoredFormatter(logging.Formatter):
+    FORMATS = {
+        logging.DEBUG: Colors.BLUE + "%(asctime)s - %(levelname)s - %(message)s" + Colors.ENDC,
+        logging.INFO: Colors.GREEN + "%(asctime)s - %(levelname)s - %(message)s" + Colors.ENDC,
+        logging.WARNING: Colors.WARNING + "%(asctime)s - %(levelname)s - %(message)s" + Colors.ENDC,
+        logging.ERROR: Colors.FAIL + "%(asctime)s - %(levelname)s - %(message)s" + Colors.ENDC,
+        logging.CRITICAL: Colors.FAIL + Colors.BOLD + "%(asctime)s - %(levelname)s - %(message)s" + Colors.ENDC + Colors.ENDC,
+    }
+
+    def format(self, record):
+        log_fmt = self.FORMATS.get(record.levelno)
+        formatter = logging.Formatter(log_fmt, datefmt='%H:%M:%S')
+        return formatter.format(record)
+
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+logger.propagate = False  # Prevent duplicate logs when imported
+# Avoid adding multiple handlers if reloaded
+if not logger.handlers:
+    ch = logging.StreamHandler(sys.stdout)
+    ch.setLevel(logging.INFO)
+    ch.setFormatter(ColoredFormatter())
+    logger.addHandler(ch)
 
 BASE_URL = "https://markposition.wordpress.com/"
 
@@ -134,6 +162,7 @@ class MarkPositionScraperAsync:
         return page_posts
 
     async def scrape(self):
+        start_time = time.time()
         all_posts = []
 
         # Headers
@@ -179,9 +208,6 @@ class MarkPositionScraperAsync:
                             results.append((page_num, page_posts))
                     except Exception as e:
                         logger.error(f"Task failed: {e}")
-                        # If a task fails unpredictably, we generally might want to continue or retry.
-                        # For now, we assume it's a transient error or a bad page, but don't stop everything unless necessary.
-                        # But typically consistent failure implies we should stop or retry.
                         pass
 
                 # Schedule new tasks if slot is available and not stopping
@@ -201,6 +227,28 @@ class MarkPositionScraperAsync:
             all_posts.extend(posts)
 
         self.save_data(all_posts)
+
+        # UX: Print Summary
+        unique_links_count = len(set(p.get('external_link') for p in all_posts if p.get('external_link')))
+        execution_time = time.time() - start_time
+        self.print_summary(len(all_posts), unique_links_count, execution_time)
+
+    def print_summary(self, total_posts: int, unique_links_count: int, execution_time: float):
+        print(f"\n{Colors.HEADER}╔══════════════════════════════════════╗{Colors.ENDC}")
+        # "           SCRAPE COMPLETE 🚀         " -> 11 spaces + 15 text + 1 space + 1 emoji (vis 2) + 9 spaces = 37 len (38 vis)
+        print(f"{Colors.HEADER}║           SCRAPE COMPLETE 🚀         ║{Colors.ENDC}")
+        print(f"{Colors.HEADER}╠══════════════════════════════════════╣{Colors.ENDC}")
+
+        # " 📄 Total Posts:       " -> 1 space + 1 emoji(vis 2) + 1 space + 12 text + 7 spaces = 22 len (23 vis)
+        # Value padded to 15. Total vis: 23+15 = 38.
+        print(f"{Colors.HEADER}║ 📄 Total Posts:       {total_posts:<15} ║{Colors.ENDC}")
+        print(f"{Colors.HEADER}║ 🔗 Unique Links:      {unique_links_count:<15} ║{Colors.ENDC}")
+
+        # " ⏱️  Time Taken:       " -> 1 space + 1 emoji(vis 2, len 2) + 2 spaces + 11 text + 7 spaces = 23 len (23 vis)
+        # Value padded to 15. Total vis: 23+15 = 38.
+        time_str = f"{execution_time:.2f}s"
+        print(f"{Colors.HEADER}║ ⏱️  Time Taken:       {time_str:<15} ║{Colors.ENDC}")
+        print(f"{Colors.HEADER}╚══════════════════════════════════════╝{Colors.ENDC}\n")
 
     async def fetch_and_parse(self, session, page_num) -> Tuple[int, Optional[List[Dict]]]:
         html = await self.fetch_page(session, page_num)
