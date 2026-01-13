@@ -1,12 +1,14 @@
-import requests
-from bs4 import BeautifulSoup
 import json
 import time
 import logging
 import argparse
 import sys
 import sqlite3
+import re
+from urllib.parse import urlparse
 from datetime import datetime
+import requests
+from bs4 import BeautifulSoup
 
 # Configure logging
 logging.basicConfig(
@@ -28,6 +30,34 @@ class BlogScraper:
         }
         self.data = []
         self.init_db()
+
+    def validate_url(self, url):
+        """
+        Validates a URL for security.
+        Enforces http/https schemes.
+        Rejects URLs containing whitespace, control characters, or dangerous symbols.
+        """
+        if not url:
+            return False
+
+        # Check for dangerous characters: < > " ' { } | ^ ` and whitespace
+        if re.search(r'[\s<>"\'{}|^`]', url):
+            logger.warning("Invalid URL detected (dangerous characters): %s", url)
+            return False
+
+        try:
+            parsed = urlparse(url)
+            if parsed.scheme not in ('http', 'https'):
+                logger.warning("Invalid URL scheme: %s", url)
+                return False
+            if not parsed.netloc:
+                logger.warning("Invalid URL (missing netloc): %s", url)
+                return False
+        except Exception as e:
+            logger.warning("URL parsing error for %s: %s", url, e)
+            return False
+
+        return True
 
     def init_db(self):
         """Initialize the SQLite database."""
@@ -127,6 +157,10 @@ class BlogScraper:
         return False
 
     def fetch_page(self, url):
+        if not self.validate_url(url):
+            logger.error("Skipping invalid URL: %s", url)
+            return None
+
         logger.info(f"Fetching {url}...")
         try:
             response = requests.get(url, headers=self.headers, timeout=10)
