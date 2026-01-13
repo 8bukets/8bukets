@@ -36,6 +36,28 @@ class OracleNewsScraper:
         text = text.replace('\xa0', ' ')
         return re.sub(r'\s+', ' ', text).strip()
 
+    def validate_url(self, url: str) -> bool:
+        """Validate URL scheme and characters to prevent injection/traversal."""
+        if not url:
+            return False
+
+        # Check for dangerous characters (whitespace, control chars, injection symbols)
+        # We allow alphanumerics, standard URL symbols. We reject < > " ' { } | ^ `
+        if re.search(r'[\s<>"{}\|^`]', url):
+            return False
+
+        try:
+            parsed = urlparse(url)
+            # Enforce http/https
+            if parsed.scheme not in ('http', 'https'):
+                return False
+            # Enforce netloc existence
+            if not parsed.netloc:
+                return False
+            return True
+        except Exception:
+            return False
+
     def sanitize_for_csv(self, value: str) -> str:
         """Prevent CSV injection by prepending a single quote to risky fields."""
         if not value:
@@ -83,6 +105,10 @@ class OracleNewsScraper:
                 continue
 
             full_url = urljoin(self.base_url, href)
+
+            if not self.validate_url(full_url):
+                logger.warning(f"Skipping invalid URL: {full_url}")
+                continue
 
             if full_url in seen_urls:
                 continue
