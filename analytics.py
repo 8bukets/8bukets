@@ -1,8 +1,16 @@
 import json
 import argparse
+import math
 from collections import Counter
 from datetime import datetime
 import sys
+
+def create_bar_chart(value, max_value, width=20):
+    """Creates an ASCII bar chart for the given value."""
+    if max_value == 0:
+        return ""
+    filled_len = math.ceil((value / max_value) * width)
+    return '█' * filled_len + '░' * (width - filled_len)
 
 def load_data(filepath):
     try:
@@ -13,6 +21,7 @@ def load_data(filepath):
         sys.exit(1)
 
 def generate_report(data, output_file):
+    # pylint: disable=too-many-locals, too-many-statements
     total_posts = len(data)
 
     # 1. Domain Analysis
@@ -57,33 +66,39 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
+    md.append("# 📊 Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
+    md.append("\n## 📈 General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
 
-    md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
+    md.append("\n## 🌐 Top 10 Referenced Domains")
+    md.append("| Domain | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_domain_count = domain_counts[0][1] if domain_counts else 0
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        chart_bar = create_bar_chart(count, max_domain_count)
+        md.append(f"| {domain} | {count} | {chart_bar} |")
 
-    md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
+    md.append("\n## 📂 Top 10 Categories")
+    md.append("| Category | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_cat_count = category_counts[0][1] if category_counts else 0
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        chart_bar = create_bar_chart(count, max_cat_count)
+        md.append(f"| {cat} | {count} | {chart_bar} |")
 
-    md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
+    md.append("\n## 📅 Posts by Year")
+    md.append("| Year | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_year_count = max(c for y, c in year_counts) if year_counts else 0
     for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+        chart_bar = create_bar_chart(count, max_year_count)
+        md.append(f"| {year} | {count} | {chart_bar} |")
 
-    md.append("\n## Authors")
+    md.append("\n## ✍️ Authors")
     for author, count in author_counts:
         md.append(f"- {author}: {count} posts")
 
