@@ -1,3 +1,8 @@
+"""
+Analytics module for Markposition data.
+Generates a markdown report with statistics.
+"""
+
 import json
 import argparse
 from collections import Counter
@@ -5,23 +10,38 @@ from urllib.parse import urlparse
 from datetime import datetime
 import sys
 
+# ANSI Colors for UX
+class Colors:
+    """ANSI color codes for terminal output."""
+    GREEN = '\033[92m'
+    BLUE = '\033[94m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    BOLD = '\033[1m'
+    RESET = '\033[0m'
+
 def load_data(filepath):
+    """Load JSON data from file."""
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             return json.load(f)
     except FileNotFoundError:
-        print(f"Error: File '{filepath}' not found.")
+        print(f"{Colors.RED}❌ Error: File '{filepath}' not found.{Colors.RESET}")
         sys.exit(1)
 
 def get_domain(url):
+    """Extract domain from URL."""
     if not url:
         return None
     try:
         return urlparse(url).netloc.replace('www.', '')
-    except:
+    except ValueError:
+        return None
+    except AttributeError:
         return None
 
 def generate_report(data, output_file):
+    """Generate Markdown report from data."""
     total_posts = len(data)
 
     # Initialize counters and trackers
@@ -132,7 +152,7 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    print(f"{Colors.GREEN}✅ Report generated: {output_file}{Colors.RESET}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
