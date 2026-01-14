@@ -1,14 +1,14 @@
-import aiohttp
-import asyncio
-from bs4 import BeautifulSoup
-import json
-import csv
-import re
 import argparse
+import asyncio
+import csv
+import json
 import logging
-import time
-from typing import List, Dict, Optional, Set
+import re
+from typing import List, Dict, Optional
 from urllib.parse import urlparse
+
+import aiohttp
+from bs4 import BeautifulSoup
 
 # Configure logging
 logging.basicConfig(
@@ -21,7 +21,10 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
-    def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
+    """Async scraper for the MarkPosition WordPress site."""
+
+    def __init__(self, output_json: str, output_csv: str, output_txt: str,
+                 max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
         self.output_csv = output_csv
         self.output_txt = output_txt
@@ -56,7 +59,7 @@ class MarkPositionScraperAsync:
             return None
         try:
             return urlparse(url).netloc.replace('www.', '')
-        except:
+        except (ValueError, AttributeError):
             return None
 
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
@@ -215,6 +218,15 @@ class MarkPositionScraperAsync:
                 return await self.parse_page(html)
             return None
 
+    def sanitize_for_csv(self, value: str) -> str:
+        """Sanitize a value to prevent CSV injection (formula injection)."""
+        if not value:
+            return ""
+        # If value starts with one of the trigger characters, escape it with a single quote
+        if value.startswith(('=', '+', '-', '@')):
+            return f"'{value}"
+        return value
+
     def save_data(self, posts: List[Dict]):
         # JSON
         try:
@@ -230,14 +242,23 @@ class MarkPositionScraperAsync:
                 writer = csv.writer(f)
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
+                    # Sanitize all fields that might contain user input
+                    title = self.sanitize_for_csv(post.get('title', ''))
+                    date = self.sanitize_for_csv(post.get('date', ''))
+                    author = self.sanitize_for_csv(post.get('author', ''))
+                    categories = self.sanitize_for_csv(", ".join(post.get('categories', [])))
+                    external_link = self.sanitize_for_csv(post.get('external_link', ''))
+                    domain = self.sanitize_for_csv(post.get('domain', ''))
+                    post_url = self.sanitize_for_csv(post.get('post_url', ''))
+
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        title,
+                        date,
+                        author,
+                        categories,
+                        external_link,
+                        domain,
+                        post_url
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
