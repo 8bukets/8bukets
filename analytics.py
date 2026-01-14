@@ -21,6 +21,14 @@ def get_domain(url):
     except:
         return None
 
+def create_bar_chart(value, max_value, width=20):
+    """Generates an ASCII bar chart."""
+    if max_value == 0:
+        return "░" * width
+    filled_length = int(width * value / max_value)
+    bar = "█" * filled_length + "░" * (width - filled_length)
+    return bar
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
@@ -66,35 +74,66 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
+    md.append("# 📊 Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
-    md.append(f"- **Total Posts:** {total_posts}")
+    md.append("\n## 📈 General Statistics")
+    md.append(f"- **Total Posts:** {total_posts:,}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append(f"- **Unique Domains Linked:** {len(set(domains)):,}")
 
-    md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
-    for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+    # Helper to calculate percentages
+    total_domains = len(domains) if domains else 1
+    total_categories = len(all_categories) if all_categories else 1
+    # For years, the total is total_posts (roughly) or len(dates)
+    total_dates = len(dates) if dates else 1
 
-    md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
-    for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+    # Domains Table
+    md.append("\n## 🔗 Top 10 Referenced Domains")
+    if domain_counts:
+        md.append("| Domain | Count | % | Distribution |")
+        md.append("| :--- | :---: | :---: | :--- |")
+        max_domain = domain_counts[0][1]
+        for domain, count in domain_counts:
+            percent = (count / total_domains) * 100
+            bar = create_bar_chart(count, max_domain)
+            md.append(f"| {domain} | {count:,} | {percent:.1f}% | {bar} |")
+    else:
+        md.append("No domain data available.")
 
-    md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
-    for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+    # Categories Table
+    md.append("\n## 🏷️ Top 10 Categories")
+    if category_counts:
+        md.append("| Category | Count | % | Distribution |")
+        md.append("| :--- | :---: | :---: | :--- |")
+        max_cat = category_counts[0][1]
+        for cat, count in category_counts:
+            percent = (count / total_categories) * 100
+            bar = create_bar_chart(count, max_cat)
+            md.append(f"| {cat} | {count:,} | {percent:.1f}% | {bar} |")
+    else:
+        md.append("No category data available.")
 
-    md.append("\n## Authors")
-    for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+    # Years Table
+    md.append("\n## 📅 Posts by Year")
+    if year_counts:
+        md.append("| Year | Count | % | Distribution |")
+        md.append("| :--- | :---: | :---: | :--- |")
+        # Find max count for years for scaling
+        max_year = max((c for _, c in year_counts), default=0)
+        for year, count in year_counts:
+            percent = (count / total_dates) * 100
+            bar = create_bar_chart(count, max_year)
+            md.append(f"| {year} | {count:,} | {percent:.1f}% | {bar} |")
+    else:
+        md.append("No date data available.")
+
+    md.append("\n## ✍️ Authors")
+    if author_counts:
+        for author, count in author_counts:
+            md.append(f"- **{author}**: {count:,} posts")
+    else:
+        md.append("No author data available.")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
