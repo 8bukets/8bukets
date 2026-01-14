@@ -1,3 +1,7 @@
+"""
+Analytics script for Markposition data.
+Generates a Markdown report and displays a terminal dashboard.
+"""
 import json
 import argparse
 from collections import Counter
@@ -5,23 +9,49 @@ from urllib.parse import urlparse
 from datetime import datetime
 import sys
 
+class Colors:
+    """ANSI color codes for terminal output."""
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+
+def create_bar_chart(data, title, color):
+    """Prints a simple ASCII bar chart to the terminal."""
+    print(f"\n{color}{Colors.BOLD}{title}{Colors.ENDC}")
+    if not data:
+        print("  (No data)")
+        return
+    max_val = max(count for _, count in data)
+    scale = 40 / max_val if max_val > 0 else 0
+    for label, count in data:
+        bar_len = int(count * scale)
+        bar_chars = '█' * bar_len
+        print(f" {label[:25]:<25} {color}{bar_chars} {count}{Colors.ENDC}")
+
 def load_data(filepath):
+    """Loads JSON data from the specified filepath."""
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             return json.load(f)
     except FileNotFoundError:
-        print(f"Error: File '{filepath}' not found.")
+        print(f"{Colors.FAIL}Error: File '{filepath}' not found.{Colors.ENDC}")
         sys.exit(1)
 
 def get_domain(url):
+    """Extracts the domain from a URL."""
     if not url:
         return None
     try:
         return urlparse(url).netloc.replace('www.', '')
-    except:
+    except Exception: # pylint: disable=broad-except
         return None
 
 def generate_report(data, output_file):
+    """Generates a Markdown report and prints a terminal summary."""
     total_posts = len(data)
 
     # 1. Domain Analysis
@@ -99,7 +129,17 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    # Terminal Dashboard
+    print(f"\n{Colors.GREEN}{Colors.BOLD}✅ Report generated successfully: {output_file}{Colors.ENDC}")
+    print(f"{Colors.HEADER}📊 Quick Insights:{Colors.ENDC}")
+    print(f" - Total Posts: {Colors.BOLD}{total_posts}{Colors.ENDC}")
+    print(f" - Unique Domains: {Colors.BOLD}{len(set(domains))}{Colors.ENDC}")
+    print(f" - Date Range: {Colors.BOLD}{start_date}{Colors.ENDC} "
+          f"to {Colors.BOLD}{end_date}{Colors.ENDC}")
+
+    create_bar_chart(category_counts[:5], "Top 5 Categories", Colors.BLUE)
+    create_bar_chart(domain_counts[:5], "Top 5 Domains", Colors.GREEN)
+    print() # Final newline
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
@@ -107,5 +147,5 @@ if __name__ == "__main__":
     parser.add_argument("--output", default="REPORT.md", help="Output Markdown report file")
     args = parser.parse_args()
 
-    data = load_data(args.input)
-    generate_report(data, args.output)
+    data_loaded = load_data(args.input)
+    generate_report(data_loaded, args.output)
