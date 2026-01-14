@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const articleList = document.getElementById('article-list');
 
     if (searchInput && articleList) {
-        searchInput.addEventListener('input', (e) => {
+        const handleSearch = debounce((e) => {
             const term = e.target.value.toLowerCase();
             const articles = articleList.getElementsByTagName('article');
 
@@ -60,7 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     article.style.display = 'none';
                 }
             });
-        });
+        }, 300);
+
+        searchInput.addEventListener('input', handleSearch);
     }
 
     // Contact Form Validation
@@ -98,6 +100,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Debounce helper function
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
 
 // Simple toggle function for "Read More"
 function toggleReadMore(btn) {
