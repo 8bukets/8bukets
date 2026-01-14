@@ -1,12 +1,13 @@
+import argparse
+import json
+import logging
+import sqlite3
+import sys
+import time
+from urllib.parse import urlparse
+
 import requests
 from bs4 import BeautifulSoup
-import json
-import time
-import logging
-import argparse
-import sys
-import sqlite3
-from datetime import datetime
 
 # Configure logging
 logging.basicConfig(
@@ -21,6 +22,7 @@ logger = logging.getLogger(__name__)
 class BlogScraper:
     def __init__(self, base_url, output_json="wishlist_data.json", db_name="wishlist_data.db"):
         self.base_url = base_url
+        self.allowed_domain = urlparse(base_url).netloc
         self.output_json = output_json
         self.db_name = db_name
         self.headers = {
@@ -128,6 +130,21 @@ class BlogScraper:
 
     def fetch_page(self, url):
         logger.info(f"Fetching {url}...")
+
+        # Security check: Prevent SSRF
+        try:
+            parsed = urlparse(url)
+            if parsed.scheme not in ('http', 'https'):
+                logger.warning(f"Skipping URL with invalid scheme: {url}")
+                return None
+
+            if parsed.netloc and parsed.netloc != self.allowed_domain:
+                logger.warning(f"Skipping URL from different domain: {url}")
+                return None
+        except Exception as e:
+            logger.error(f"Error parsing URL {url}: {e}")
+            return None
+
         try:
             response = requests.get(url, headers=self.headers, timeout=10)
             response.raise_for_status()
