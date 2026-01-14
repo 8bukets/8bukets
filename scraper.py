@@ -84,6 +84,12 @@ class OracleNewsScraper:
 
             full_url = urljoin(self.base_url, href)
 
+            # Validate URL scheme (prevent javascript: etc.)
+            parsed = urlparse(full_url)
+            if parsed.scheme not in ('http', 'https'):
+                logger.warning(f"Skipping potentially unsafe URL scheme: {full_url}")
+                continue
+
             if full_url in seen_urls:
                 continue
             seen_urls.add(full_url)
