@@ -14,6 +14,8 @@ class ResearcherAgent(BaseAgent):
         # Data can specify limits or targets
         limit = data.get('limit', 1) if data else 1
         output_file = data.get('output_file', 'data.json') if data else 'data.json'
+        # Security: Sanitize output_file to prevent path traversal
+        output_file = os.path.basename(output_file)
 
         self.logger.info(f"Scraping content (limit {limit} pages)...")
 
