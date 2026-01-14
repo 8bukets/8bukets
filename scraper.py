@@ -1,14 +1,14 @@
-import aiohttp
-import asyncio
-from bs4 import BeautifulSoup
-import json
-import csv
-import re
 import argparse
+import asyncio
+import csv
+import json
 import logging
-import time
-from typing import List, Dict, Optional, Set, Tuple
+import re
+from typing import List, Dict, Optional, Tuple
 from urllib.parse import urlparse
+
+import aiohttp
+from bs4 import BeautifulSoup, SoupStrainer
 
 # Configure logging
 logging.basicConfig(
@@ -71,8 +71,10 @@ class MarkPositionScraperAsync:
             logger.error(f"Error fetching page {page_num}: {e}")
             return None
 
-    async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+    def parse_page(self, html: str) -> List[Dict]:
+        # Optimization: Use SoupStrainer to only parse article tags, significantly reducing CPU usage
+        strainer = SoupStrainer('article')
+        soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
         articles = soup.find_all('article', class_='post')
         page_posts = []
 
@@ -205,7 +207,8 @@ class MarkPositionScraperAsync:
     async def fetch_and_parse(self, session, page_num) -> Tuple[int, Optional[List[Dict]]]:
         html = await self.fetch_page(session, page_num)
         if html:
-            posts = await self.parse_page(html)
+            # Optimization: Run CPU-bound parsing in a separate thread to avoid blocking the event loop
+            posts = await asyncio.to_thread(self.parse_page, html)
             return page_num, posts
         return page_num, None
 
