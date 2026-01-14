@@ -5,12 +5,31 @@ from urllib.parse import urlparse
 from datetime import datetime
 import sys
 
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+def create_bar_chart(label, count, max_count, bar_width=20):
+    if max_count == 0:
+        bar = ""
+    else:
+        filled_length = int(bar_width * count // max_count)
+        bar = "█" * filled_length + "░" * (bar_width - filled_length)
+    return f"{label:<20} | {Colors.BLUE}{bar}{Colors.ENDC} {count}"
+
 def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             return json.load(f)
     except FileNotFoundError:
-        print(f"Error: File '{filepath}' not found.")
+        print(f"{Colors.FAIL}Error: File '{filepath}' not found.{Colors.ENDC}")
         sys.exit(1)
 
 def get_domain(url):
@@ -99,7 +118,28 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    # --- UX Enhancement: Visual Summary ---
+    print(f"\n{Colors.BOLD}{Colors.HEADER}📊 Analytics Summary{Colors.ENDC}")
+    print(f"{Colors.BOLD}Total Posts:{Colors.ENDC} {total_posts}")
+    print(f"{Colors.BOLD}Date Range:{Colors.ENDC}  {start_date} to {end_date}")
+
+    print(f"\n{Colors.BOLD}{Colors.CYAN}Top Domains:{Colors.ENDC}")
+    if domain_counts:
+        max_domain = domain_counts[0][1]
+        for domain, count in domain_counts[:5]: # Top 5 for CLI
+             print(create_bar_chart(domain[:20], count, max_domain))
+    else:
+        print("No domains found.")
+
+    print(f"\n{Colors.BOLD}{Colors.CYAN}Top Categories:{Colors.ENDC}")
+    if category_counts:
+        max_cat = category_counts[0][1]
+        for cat, count in category_counts[:5]:
+            print(create_bar_chart(cat[:20], count, max_cat))
+    else:
+        print("No categories found.")
+
+    print(f"\n{Colors.GREEN}✅ Report generated successfully: {output_file}{Colors.ENDC}\n")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for WordPress blog data")
