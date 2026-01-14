@@ -1,4 +1,4 @@
-## 2024-05-23 - CSV Injection in Scraper Output
-**Vulnerability:** Scraped data (e.g., post titles, authors) was written directly to CSV without sanitization. If the scraped site contained fields starting with `=, +, -, @`, Excel would execute them as formulas.
-**Learning:** Even when scraping "safe" sites, the output format (CSV) can introduce vulnerabilities if the consuming application (Excel) interprets the data as executable.
-**Prevention:** Sanitize all untrusted input before writing to CSV by prepending `'` to dangerous characters.
+## 2026-01-14 - Markdown Injection in Analytics Report
+**Vulnerability:** The analytics script directly embedded scraped data (domain names, authors, categories) into a Markdown report table without sanitization. Malicious or malformed data containing pipe characters `|` would break the table structure, and HTML tags (e.g., `<script>`, `<img>`) could lead to Stored XSS if the Markdown report was viewed in a vulnerable renderer.
+**Learning:** Generating reports from untrusted data requires the same level of sanitization as rendering HTML, especially when the output format (Markdown) supports raw HTML and structural characters.
+**Prevention:** Implement a `sanitize_markdown` function to escape structural characters (like `|` in tables) and HTML entities (`<`, `>`) before writing to the report.
