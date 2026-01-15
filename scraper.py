@@ -11,11 +11,25 @@ from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+class ColoredFormatter(logging.Formatter):
+    COLORS = {
+        'INFO': '\033[94m',      # Blue
+        'WARNING': '\033[93m',   # Yellow
+        'ERROR': '\033[91m',     # Red
+        'CRITICAL': '\033[91m',  # Red
+        'RESET': '\033[0m',
+        'SUCCESS': '\033[92m'    # Green
+    }
+
+    def format(self, record):
+        log_message = super().format(record)
+        if "Saved" in str(record.msg):
+             return f"{self.COLORS['SUCCESS']}{log_message}{self.COLORS['RESET']}"
+        return f"{self.COLORS.get(record.levelname, self.COLORS['RESET'])}{log_message}{self.COLORS['RESET']}"
+
+handler = logging.StreamHandler()
+handler.setFormatter(ColoredFormatter('%(asctime)s - %(levelname)s - %(message)s', datefmt='%H:%M:%S'))
+logging.basicConfig(level=logging.INFO, handlers=[handler])
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
