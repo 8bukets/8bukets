@@ -5,6 +5,39 @@ from urllib.parse import urlparse
 from datetime import datetime
 import sys
 
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+def create_bar_chart(input_data, width=30):
+    """Generates an ASCII bar chart for the given data (list of (label, value) tuples)."""
+    if not input_data:
+        return ""
+
+    max_val = max(item[1] for item in input_data) if input_data else 0
+    chart = []
+    for label, value in input_data:
+        if max_val > 0:
+            bar_len = int((value / max_val) * width)
+        else:
+            bar_len = 0
+        bar_str = '█' * bar_len
+        empty = '░' * (width - bar_len)
+        # Truncate label if too long
+        display_label = (label[:23] + '..') if len(str(label)) > 25 else f"{str(label):<25}"
+        chart.append(
+            f"{display_label} {Colors.BLUE}{bar_str}{Colors.ENDC}"
+            f"{Colors.CYAN}{empty}{Colors.ENDC} {value}"
+        )
+    return "\n".join(chart)
+
 def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
@@ -132,7 +165,20 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    # UX Improvement: Visual Summary to Console
+    print(f"\n{Colors.GREEN}{Colors.BOLD}✨ Report generated successfully!{Colors.ENDC}")
+    print(f"{Colors.BOLD}📁 File:{Colors.ENDC} {output_file}")
+
+    print(f"\n{Colors.HEADER}📊 Quick Summary:{Colors.ENDC}")
+    print(f"  • {Colors.BOLD}Total Posts:{Colors.ENDC} {total_posts}")
+    print(f"  • {Colors.BOLD}Date Range:{Colors.ENDC}  {start_date} to {end_date}")
+    print(f"  • {Colors.BOLD}Unique Domains:{Colors.ENDC} {len(unique_domains)}")
+
+    print(f"\n{Colors.BOLD}🏆 Top 5 Domains:{Colors.ENDC}")
+    print(create_bar_chart(domain_counts.most_common(5)))
+
+    print(f"\n{Colors.CYAN}💡 Pro tip: Open {output_file} for full analysis "
+          f"including authors and categories.{Colors.ENDC}\n")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
