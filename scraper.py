@@ -7,6 +7,9 @@ import argparse
 import sys
 import sqlite3
 from datetime import datetime
+import socket
+import ipaddress
+from urllib.parse import urlparse
 
 # Configure logging
 logging.basicConfig(
@@ -126,7 +129,44 @@ class BlogScraper:
 
         return False
 
+    def validate_url(self, url):
+        """Validate URL to prevent SSRF and other issues."""
+        try:
+            parsed = urlparse(url)
+            if parsed.scheme not in ('http', 'https'):
+                logger.error(f"Invalid scheme: {parsed.scheme}")
+                return False
+
+            hostname = parsed.hostname
+            if not hostname:
+                logger.error("No hostname found")
+                return False
+
+            # Check for localhost explicitly
+            if hostname.lower() in ['localhost', '127.0.0.1', '::1', '0.0.0.0']:
+                logger.error("Access to localhost is denied")
+                return False
+
+            # Resolve IP to check for private networks
+            try:
+                ip = socket.gethostbyname(hostname)
+                if ipaddress.ip_address(ip).is_private:
+                    logger.error(f"Access to private IP {ip} is denied")
+                    return False
+            except socket.error:
+                # If we can't resolve it, requests might also fail, or it's an internal DNS issue.
+                pass
+
+            return True
+
+        except Exception as e:
+            logger.error(f"URL validation failed: {e}")
+            return False
+
     def fetch_page(self, url):
+        if not self.validate_url(url):
+            return None
+
         logger.info(f"Fetching {url}...")
         try:
             response = requests.get(url, headers=self.headers, timeout=10)
