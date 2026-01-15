@@ -10,6 +10,7 @@ from agents.health_check import HealthCheckAgent
 from agents.monetization import MonetizationAgent
 from agents.creativity import CreativityAgent
 from agents.advertising import AdvertisingAgent
+from agents.cli_utils import Palette
 
 # Configure logging
 logging.basicConfig(
@@ -79,7 +80,8 @@ def run_orchestration(save_report=True):
     logger.info(">>> SWARM OPERATION COMPLETE <<<")
 
     if save_report:
-        save_daily_report(report_data)
+        report_file = save_daily_report(report_data)
+        Palette.display_summary(report_data, report_file)
 
     return report_data
 
@@ -107,7 +109,7 @@ def save_daily_report(data):
         f.write(f"- **Google Listings Found:** {research.get('google_results')}\n\n")
 
         # Intelligence & Evolution
-        intel = data.get('intelligence', {})
+        intel = data.get('intelligence', {}) or {}
         f.write("## 3. Strategic Intelligence & Evolution\n")
         f.write(f"- **Evolution Status:** {intel.get('evolution_status')}\n")
         f.write(f"- **Recommended Focus:** {intel.get('recommended_focus')}\n")
@@ -116,7 +118,7 @@ def save_daily_report(data):
         f.write("\n")
 
         # Advertising
-        ads = data.get('advertising', {})
+        ads = data.get('advertising', {}) or {}
         f.write("## 4. Advertising & Targeting (Google Antigravity Colab)\n")
         f.write(f"- **Target Audience:** {ads.get('target_audience')}\n")
         f.write("- **Bid Strategy:**\n")
@@ -125,7 +127,7 @@ def save_daily_report(data):
         f.write("\n")
 
         # Monetization
-        money = data.get('monetization', {})
+        money = data.get('monetization', {}) or {}
         f.write("## 5. Monetization Review\n")
         f.write(f"- **Summary:** {money.get('summary')}\n")
         for detail in money.get('details', []):
@@ -133,7 +135,7 @@ def save_daily_report(data):
         f.write("\n")
 
         # Creativity
-        creative = data.get('creativity', {})
+        creative = data.get('creativity', {}) or {}
         f.write("## 6. Creative Brainstorming\n")
         for idea in creative.get('creative_ideas', []):
             f.write(f"- {idea}\n")
@@ -146,6 +148,7 @@ def save_daily_report(data):
         f.write(draft.get('draft_content', ''))
 
     logger.info(f"Report saved to {report_file}")
+    return report_file
 
 if __name__ == "__main__":
     run_orchestration()
