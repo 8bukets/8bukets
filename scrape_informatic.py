@@ -24,6 +24,7 @@ class Post:
     image_url: Optional[str]
 
 BASE_URL = "https://informaticmagazine.data.blog"
+BASE_DOMAIN = urlparse(BASE_URL).netloc
 
 def configure_logging(verbose: bool):
     level = logging.DEBUG if verbose else logging.INFO
@@ -54,16 +55,19 @@ def get_session():
 
     return session
 
-def is_external_link(link_url: str, base_url: str) -> bool:
+def is_external_link(link_url: str, base_url: str, base_domain: str) -> bool:
     """
     Checks if a link is external to the base domain.
     """
     if not link_url:
         return False
 
+    # Fast path: relative links or links starting with base_url are internal
+    if link_url.startswith('/') or link_url.startswith(base_url):
+        return False
+
     try:
         parsed_link = urlparse(link_url)
-        parsed_base = urlparse(base_url)
     except Exception:
         return False
 
@@ -71,9 +75,9 @@ def is_external_link(link_url: str, base_url: str) -> bool:
     if not parsed_link.netloc:
         return False
 
-    return parsed_link.netloc != parsed_base.netloc
+    return parsed_link.netloc != base_domain
 
-def parse_post_html(post_soup, base_url: str) -> Post:
+def parse_post_html(post_soup, base_url: str, base_domain: str) -> Post:
     """
     Parses a single article soup object and returns a Post object.
     """
@@ -111,7 +115,7 @@ def parse_post_html(post_soup, base_url: str) -> Post:
         # Extract external links
         for link in content_div.find_all('a'):
             href = link.get('href')
-            if href and is_external_link(href, base_url):
+            if href and is_external_link(href, base_url, base_domain):
                 external_links.append(href)
 
     # Image
@@ -157,7 +161,7 @@ def scrape(output_file: str, max_pages: int = 0):
 
         for post_soup in posts:
             try:
-                post_obj = parse_post_html(post_soup, BASE_URL)
+                post_obj = parse_post_html(post_soup, BASE_URL, BASE_DOMAIN)
                 all_posts.append(post_obj)
             except Exception as e:
                 logging.error(f"Error parsing post on page {page}: {e}")
