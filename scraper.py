@@ -70,13 +70,30 @@ class MarkPositionScraperAsync:
 
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
         url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
+        MAX_RESPONSE_SIZE = 5 * 1024 * 1024  # 5MB limit
+
         try:
             async with session.get(url) as response:
                 if response.status == 404:
                     return None
                 response.raise_for_status()
-                return await response.text()
-        except aiohttp.ClientError as e:
+
+                # Check Content-Length header if present
+                content_length = response.headers.get('Content-Length')
+                if content_length and int(content_length) > MAX_RESPONSE_SIZE:
+                    logger.warning(f"Page {page_num} exceeded max size (Content-Length: {content_length})")
+                    return None
+
+                # Read in chunks
+                content = bytearray()
+                async for chunk in response.content.iter_chunked(1024):
+                    content.extend(chunk)
+                    if len(content) > MAX_RESPONSE_SIZE:
+                        logger.warning(f"Page {page_num} exceeded max size limit of {MAX_RESPONSE_SIZE} bytes")
+                        return None
+
+                return content.decode('utf-8', errors='replace')
+        except (aiohttp.ClientError, ValueError) as e:
             logger.error(f"Error fetching page {page_num}: {e}")
             return None
 
