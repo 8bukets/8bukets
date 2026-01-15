@@ -5,6 +5,25 @@ from urllib.parse import urlparse
 from datetime import datetime
 import sys
 
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+def create_bar_chart(label, count, max_count, width=20):
+    if max_count == 0:
+        bar = ""
+    else:
+        filled = int((count / max_count) * width)
+        bar = "█" * filled + "░" * (width - filled)
+    return f"{label:<25} | {Colors.BLUE}{bar}{Colors.ENDC} {count}"
+
 def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
@@ -39,10 +58,11 @@ def generate_report(data, output_file):
     # 3. Date Analysis
     dates = []
     for p in data:
-        dt_str = p.get('datetime')
+        # Check 'date' field (scraper output) or fallback to 'datetime'
+        dt_str = p.get('date') or p.get('datetime')
         if dt_str:
             try:
-                # Handle ISO format
+                # Handle ISO format or YYYY-MM-DD
                 dt = datetime.fromisoformat(dt_str)
                 dates.append(dt)
             except ValueError:
@@ -99,7 +119,22 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    # Console Summary
+    print(f"\n{Colors.HEADER}{Colors.BOLD}Markposition Analytics Report{Colors.ENDC}")
+    print(f"{Colors.GREEN}✓ Report saved to {output_file}{Colors.ENDC}\n")
+
+    print(f"{Colors.BOLD}Snapshot:{Colors.ENDC}")
+    print(f"  • Total Posts:    {Colors.CYAN}{total_posts}{Colors.ENDC}")
+    print(f"  • Date Range:     {Colors.CYAN}{start_date} to {end_date}{Colors.ENDC}")
+    print(f"  • Unique Domains: {Colors.CYAN}{len(set(domains))}{Colors.ENDC}")
+
+    if category_counts:
+        print(f"\n{Colors.BOLD}Top Categories:{Colors.ENDC}")
+        max_cat = category_counts[0][1]
+        for cat, count in category_counts[:5]:
+            print(create_bar_chart(cat[:25], count, max_cat))
+
+    print("") # Newline
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
