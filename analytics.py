@@ -15,29 +15,36 @@ def load_data(filepath):
 def generate_report(data, output_file):
     total_posts = len(data)
 
-    # 1. Domain Analysis
-    domains = [p.get('domain') for p in data if p.get('domain')]
-    domain_counts = Counter(domains).most_common(10)
-
-    # 2. Category Analysis
-    all_categories = []
-    for p in data:
-        cats = p.get('categories', [])
-        if cats:
-            all_categories.extend(cats)
-    category_counts = Counter(all_categories).most_common(10)
-
-    # 3. Date Analysis
+    # Single-pass analysis
+    # Optimized to iterate over data only once (O(N)) instead of multiple times (O(4N))
+    domain_counter = Counter()
+    category_counter = Counter()
+    author_counter = Counter()
     dates = []
+
     for p in data:
-        dt_str = p.get('datetime')
-        if dt_str:
+        # Domain Analysis
+        if domain := p.get('domain'):
+            domain_counter[domain] += 1
+
+        # Category Analysis
+        if cats := p.get('categories'):
+            category_counter.update(cats)
+
+        # Author Analysis
+        if author := p.get('author'):
+            author_counter[author] += 1
+
+        # Date Analysis
+        if dt_str := p.get('datetime'):
             try:
-                # Handle ISO format
-                dt = datetime.fromisoformat(dt_str)
-                dates.append(dt)
+                dates.append(datetime.fromisoformat(dt_str))
             except ValueError:
                 pass
+
+    domain_counts = domain_counter.most_common(10)
+    category_counts = category_counter.most_common(10)
+    author_counts = author_counter.most_common()
 
     if dates:
         dates.sort()
@@ -51,10 +58,6 @@ def generate_report(data, output_file):
         end_date = "N/A"
         year_counts = []
 
-    # 4. Author Analysis
-    authors = [p.get('author') for p in data if p.get('author')]
-    author_counts = Counter(authors).most_common()
-
     # Generate Markdown
     md = []
     md.append("# Markposition Analytics Report")
@@ -63,7 +66,7 @@ def generate_report(data, output_file):
     md.append("\n## General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append(f"- **Unique Domains Linked:** {len(domain_counter)}")
 
     md.append("\n## Top 10 Referenced Domains")
     md.append("| Domain | Count |")
