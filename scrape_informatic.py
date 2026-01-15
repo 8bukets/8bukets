@@ -73,6 +73,31 @@ def is_external_link(link_url: str, base_url: str) -> bool:
 
     return parsed_link.netloc != parsed_base.netloc
 
+def is_safe_pagination_url(link_url: str, base_url: str) -> bool:
+    """
+    Validates if a pagination URL is safe to follow.
+    Must be http/https and either relative or matching the base domain.
+    Prevents SSRF and redirection to malicious sites.
+    """
+    if not link_url:
+        return False
+
+    try:
+        parsed_link = urlparse(link_url)
+        parsed_base = urlparse(base_url)
+    except Exception:
+        return False
+
+    # Check scheme if present (must be http or https)
+    if parsed_link.scheme and parsed_link.scheme.lower() not in ('http', 'https'):
+        return False
+
+    # Check netloc if present (must match base domain)
+    if parsed_link.netloc and parsed_link.netloc != parsed_base.netloc:
+        return False
+
+    return True
+
 def parse_post_html(post_soup, base_url: str) -> Post:
     """
     Parses a single article soup object and returns a Post object.
@@ -165,9 +190,15 @@ def scrape(output_file: str, max_pages: int = 0):
         # Pagination
         nav_previous = soup.find('div', class_='nav-previous')
         if nav_previous and nav_previous.find('a'):
-            current_url = nav_previous.find('a')['href']
-            page += 1
-            time.sleep(1) # Polite delay
+            next_url = nav_previous.find('a')['href']
+
+            if is_safe_pagination_url(next_url, BASE_URL):
+                current_url = next_url
+                page += 1
+                time.sleep(1) # Polite delay
+            else:
+                logging.warning(f"Unsafe pagination URL detected: {next_url}. Stopping.")
+                current_url = None
         else:
             current_url = None
             logging.info("No more pages found.")
