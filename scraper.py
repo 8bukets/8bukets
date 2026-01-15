@@ -18,6 +18,23 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+    @staticmethod
+    def strip_colors(text):
+        return text.replace(Colors.HEADER, "").replace(Colors.BLUE, "").replace(Colors.CYAN, "") \
+                   .replace(Colors.GREEN, "").replace(Colors.WARNING, "").replace(Colors.FAIL, "") \
+                   .replace(Colors.ENDC, "").replace(Colors.BOLD, "").replace(Colors.UNDERLINE, "")
+
 class BlogScraper:
     def __init__(self, base_url, output_json="wishlist_data.json", db_name="wishlist_data.db"):
         self.base_url = base_url
@@ -197,7 +214,25 @@ class BlogScraper:
 
         return None
 
+    def print_summary(self, total_articles, new_items, duration):
+        summary_lines = [
+            f"\n{Colors.CYAN}=================================================={Colors.ENDC}",
+            f"{Colors.GREEN}{Colors.BOLD}✅ SCRAPING COMPLETE{Colors.ENDC}",
+            f"{Colors.CYAN}--------------------------------------------------{Colors.ENDC}",
+            f"📚 Total Articles: {Colors.BOLD}{total_articles}{Colors.ENDC}",
+            f"🆕 New Added:      {Colors.BOLD}{new_items}{Colors.ENDC}",
+            f"⏱️  Time Taken:     {Colors.BOLD}{duration:.2f}s{Colors.ENDC}",
+            f"{Colors.CYAN}=================================================={Colors.ENDC}\n"
+        ]
+
+        for line in summary_lines:
+            if sys.stdout.isatty():
+                print(line)
+            else:
+                print(Colors.strip_colors(line))
+
     def run(self):
+        start_time = time.time()
         url = self.base_url
         new_items_count = 0
 
@@ -229,8 +264,13 @@ class BlogScraper:
                 url = None
 
         self.save_json()
+        duration = time.time() - start_time
+
+        # Original logs kept for file logging if needed, but summary is for user
         logger.info(f"Scraped {len(self.data)} articles in total.")
         logger.info(f"New items added to database: {new_items_count}")
+
+        self.print_summary(len(self.data), new_items_count, duration)
 
     def save_json(self):
         try:
