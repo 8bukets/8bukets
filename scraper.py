@@ -19,6 +19,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://www.oracle.com/news/"
+MAX_RESPONSE_SIZE = 5 * 1024 * 1024  # 5MB limit to prevent DoS
 
 class OracleNewsScraper:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
@@ -52,7 +53,22 @@ class OracleNewsScraper:
                 if response.status == 404:
                     return None
                 response.raise_for_status()
-                return await response.text()
+
+                # Check Content-Length header if present
+                content_length = response.headers.get('Content-Length')
+                if content_length and int(content_length) > MAX_RESPONSE_SIZE:
+                    logger.error(f"Response too large ({content_length} bytes) for {url}")
+                    return None
+
+                # Stream response to enforce size limit
+                content = bytearray()
+                async for chunk in response.content.iter_chunked(1024):
+                    content.extend(chunk)
+                    if len(content) > MAX_RESPONSE_SIZE:
+                        logger.error(f"Response exceeded size limit of {MAX_RESPONSE_SIZE} bytes for {url}")
+                        return None
+
+                return content.decode(response.get_encoding(), errors='replace')
         except aiohttp.ClientError as e:
             logger.error(f"Error fetching {url}: {e}")
             return None
