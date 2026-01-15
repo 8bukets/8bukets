@@ -4,6 +4,19 @@ from collections import Counter
 from datetime import datetime
 import sys
 
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    BOLD = '\033[1m'
+    ENDC = '\033[0m'
+
+def create_bar_chart(label, value, max_value, width=20):
+    filled_length = int(width * value // max_value) if max_value > 0 else 0
+    bar = '█' * filled_length + '░' * (width - filled_length)
+    return f"{label:<30} {Colors.BLUE}{bar}{Colors.ENDC} ({value})"
+
 def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
@@ -90,7 +103,20 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    # Visual Summary
+    print(f"\n{Colors.HEADER}📊 Markposition Analytics{Colors.ENDC}")
+    print(f"{Colors.HEADER}-------------------------{Colors.ENDC}")
+    print(f"📅 Range: {Colors.CYAN}{start_date}{Colors.ENDC} -> {Colors.CYAN}{end_date}{Colors.ENDC}")
+    print(f"📝 Total Posts: {Colors.BOLD}{total_posts}{Colors.ENDC}")
+    print(f"🔗 Unique Domains: {Colors.BOLD}{len(set(domains))}{Colors.ENDC}")
+    print(f"\n{Colors.BOLD}🏆 Top Domains{Colors.ENDC}")
+    print(f"-------------------------")
+    if domain_counts:
+        max_count = domain_counts[0][1]
+        for domain, count in domain_counts[:5]:  # Show top 5
+            print(create_bar_chart(domain, count, max_count))
+
+    print(f"\n{Colors.GREEN}✅ Report generated: {output_file}{Colors.ENDC}\n")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
