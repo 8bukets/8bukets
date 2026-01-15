@@ -11,12 +11,30 @@ from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+class Colors:
+    BLUE = '\033[94m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    RESET = '\033[0m'
+
+class CustomFormatter(logging.Formatter):
+    def format(self, record):
+        timestamp = self.formatTime(record, '%H:%M:%S')
+        level_color = {
+            logging.INFO: Colors.BLUE,
+            logging.WARNING: Colors.YELLOW,
+            logging.ERROR: Colors.RED,
+        }.get(record.levelno, Colors.RESET)
+
+        levelname = f"{level_color}{record.levelname}{Colors.RESET}"
+        return f"{timestamp} - {levelname} - {record.getMessage()}"
+
 logger = logging.getLogger(__name__)
+handler = logging.StreamHandler()
+handler.setFormatter(CustomFormatter())
+logger.addHandler(handler)
+logger.setLevel(logging.INFO)
 
 DEFAULT_BASE_URL = "https://artmusicpage.wordpress.com/"
 
@@ -229,7 +247,7 @@ class WordpressScraperAsync:
         try:
             with open(self.output_json, 'w', encoding='utf-8') as f:
                 json.dump(posts, f, indent=4, ensure_ascii=False)
-            logger.info(f"Saved {len(posts)} posts to {self.output_json}")
+            logger.info(f"{Colors.GREEN}Saved {len(posts)} posts to {self.output_json}{Colors.RESET}")
         except IOError as e:
             logger.error(f"Failed to save JSON: {e}")
 
@@ -248,7 +266,7 @@ class WordpressScraperAsync:
                         post.get('domain', ''),
                         post.get('post_url', '')
                     ])
-            logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
+            logger.info(f"{Colors.GREEN}Saved {len(posts)} posts to {self.output_csv}{Colors.RESET}")
         except IOError as e:
             logger.error(f"Failed to save CSV: {e}")
 
@@ -264,7 +282,7 @@ class WordpressScraperAsync:
             with open(self.output_txt, 'w', encoding='utf-8') as f:
                 for link in sorted_links:
                     f.write(link + '\n')
-            logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
+            logger.info(f"{Colors.GREEN}Saved {len(sorted_links)} unique links to {self.output_txt}{Colors.RESET}")
         except IOError as e:
             logger.error(f"Failed to save TXT: {e}")
 

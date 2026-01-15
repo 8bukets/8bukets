@@ -5,6 +5,11 @@ from urllib.parse import urlparse
 from datetime import datetime
 import sys
 
+class Colors:
+    GREEN = '\033[92m'
+    RESET = '\033[0m'
+    BOLD = '\033[1m'
+
 def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
@@ -99,7 +104,7 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    print(f"{Colors.GREEN}{Colors.BOLD}✨ Report generated successfully: {output_file}{Colors.RESET}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for WordPress blog data")
