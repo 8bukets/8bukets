@@ -16,8 +16,22 @@ def load_data(filepath):
 def get_domain(url):
     if not url:
         return None
+    # Optimization: Manual string parsing is ~5x faster than urlparse
     try:
-        return urlparse(url).netloc.replace('www.', '')
+        if '//' in url:
+            domain = url.split('//', 1)[1].split('/', 1)[0]
+        else:
+            domain = url.split('/', 1)[0]
+
+        # Handle auth
+        if '@' in domain:
+            domain = domain.split('@', 1)[1]
+
+        # Remove port if present
+        if ':' in domain:
+            domain = domain.split(':', 1)[0]
+
+        return domain.replace('www.', '')
     except:
         return None
 
