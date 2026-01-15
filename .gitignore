@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+links.json
+links.csv
+unique_links.txt
+reports/
+wishlist_data.json
+wishlist_data.db
+venv/
+.env
+.DS_Store
