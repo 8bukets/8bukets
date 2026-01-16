@@ -44,7 +44,28 @@ class OracleNewsScraper:
             return "'" + value
         return value
 
+    def validate_url(self, url: str) -> bool:
+        """Validate URL to prevent SSRF and restrict to authorized domains."""
+        if not url:
+            return False
+        try:
+            parsed = urlparse(url)
+            # 1. Scheme Validation
+            if parsed.scheme not in ('http', 'https'):
+                return False
+            # 2. Domain Validation (Strict Allowlist)
+            # Allow oracle.com and its subdomains
+            if not (parsed.netloc == 'oracle.com' or parsed.netloc.endswith('.oracle.com')):
+                return False
+            return True
+        except Exception:
+            return False
+
     async def fetch_page(self, session: aiohttp.ClientSession, url: str) -> Optional[str]:
+        if not self.validate_url(url):
+            logger.warning(f"Blocked request to unauthorized URL: {url}")
+            return None
+
         try:
             # 30 second global timeout
             timeout = aiohttp.ClientTimeout(total=30)
@@ -83,6 +104,9 @@ class OracleNewsScraper:
                 continue
 
             full_url = urljoin(self.base_url, href)
+
+            if not self.validate_url(full_url):
+                continue
 
             if full_url in seen_urls:
                 continue
