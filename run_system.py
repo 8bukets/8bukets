@@ -3,6 +3,10 @@ import json
 import logging
 import os
 import argparse
+import sys
+import threading
+import itertools
+import time
 from datetime import datetime
 from scraper import MarkPositionScraperAsync
 from agents.robot_txt_agent import RobotTxtAgent
@@ -25,6 +29,44 @@ logging.basicConfig(
     datefmt='%H:%M:%S'
 )
 logger = logging.getLogger(__name__)
+
+class Spinner:
+    def __init__(self, message="Processing", delay=0.1):
+        self.spinner = itertools.cycle(['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'])
+        self.delay = delay
+        self.message = message
+        self.running = False
+        self.thread = None
+        self.is_tty = sys.stderr.isatty() and not os.environ.get("CI")
+
+    def spin(self):
+        while self.running:
+            sys.stderr.write(f"\r{next(self.spinner)} {self.message}...")
+            sys.stderr.flush()
+            time.sleep(self.delay)
+
+    def __enter__(self):
+        if self.is_tty:
+            self.running = True
+            self.thread = threading.Thread(target=self.spin)
+            self.thread.start()
+        else:
+            logger.info(f"Running {self.message}...")
+        return self
+
+    def __exit__(self, exc_type, exc_value, exc_traceback):
+        if self.is_tty:
+            self.running = False
+            if self.thread:
+                self.thread.join()
+            if exc_type:
+                sys.stderr.write(f"\r✗ {self.message} Failed!    \n")
+            else:
+                sys.stderr.write(f"\r✓ {self.message} Done       \n")
+            sys.stderr.flush()
+        else:
+            if exc_type:
+                logger.error(f"{self.message} Failed.")
 
 KB_FILE = "knowledge_base.json"
 
@@ -85,15 +127,21 @@ async def run_pipeline(skip_scrape=False, limit=2):
     report_lines.append(f"# Daily Autonomous Report: {datetime.now().strftime('%Y-%m-%d')}\n")
 
     for agent in agents:
-        logger.info(f"Running {agent.name}...")
         try:
-            results = await agent.process(data, shared_context, knowledge_base)
-            report_section = agent.format_report(results)
-            report_lines.append(report_section)
-            report_lines.append("\n---\n")
-        except Exception as e:
-            logger.error(f"Error in {agent.name}: {e}")
-            report_lines.append(f"### {agent.name} Failed\nError: {e}\n\n---\n")
+            with Spinner(agent.name):
+                try:
+                    results = await agent.process(data, shared_context, knowledge_base)
+                    report_section = agent.format_report(results)
+                    report_lines.append(report_section)
+                    report_lines.append("\n---\n")
+                except Exception as e:
+                    # Capture for report
+                    report_lines.append(f"### {agent.name} Failed\nError: {e}\n\n---\n")
+                    logger.error(f"Error in {agent.name}: {e}")
+                    raise e # Trigger Spinner failure
+        except Exception:
+            # Catch the re-raised exception so the loop continues
+            pass
 
     # 5. Save Report
     output_dir = "results"
