@@ -20,6 +20,18 @@ class ContentAgent(BaseAgent):
         md.append("# Autonomous Agents Report")
         md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
+        # Table of Contents
+        md.append("\n## Table of Contents")
+        md.append("- [1. Analysis](#1-analysis)")
+        md.append("- [2. Intelligence Insights](#2-intelligence-insights)")
+        md.append("- [3. Advertising & Targeting (Autonomous Decisions)](#3-advertising--targeting-autonomous-decisions)")
+        md.append("- [4. Creative Ideas](#4-creative-ideas)")
+        if antigravity:
+            md.append("- [5. Google Antigravity & Fun](#5-google-antigravity--fun)")
+        md.append("- [6. System Innovation & Code Integration Ideas](#6-system-innovation--code-integration-ideas)")
+        md.append("- [7. Monetization Opportunities](#7-monetization-opportunities)")
+        md.append("- [8. Compliance](#8-compliance)")
+
         # Analysis Section
         md.append("\n## 1. Analysis")
         md.append(f"- Total Posts Scraped: {analysis.get('total_posts')}")
@@ -36,7 +48,7 @@ class ContentAgent(BaseAgent):
             md.append(f"- {insight}")
 
         # Ad Strategy Section
-        md.append("\n## 3. Advertising & Targeting (Autonomus Decisions)")
+        md.append("\n## 3. Advertising & Targeting (Autonomous Decisions)")
         if ad_strategies:
             for ad in ad_strategies:
                 md.append(f"- **Target**: {ad['target_category']} | **Bid**: ${ad['suggested_bid']} | **Copy**: \"{ad['ad_copy']}\"")
