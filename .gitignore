@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+.ipynb_checkpoints
+.vscode/
+.idea/
+links.json
+links.csv
+unique_links.txt
+REPORT.md
+Daily_Report_*.md

@@ -1,13 +1,18 @@
-# Markposition Analytics Report
+# 🎨 Markposition Analytics Report
 
-**Generated on:** 2025-12-13 12:59:36
+**Generated on:** 2026-01-16 08:03:57
 
-## General Statistics
+## ✨ Key Highlights
+- The most active year was **2022**.
+- The top referenced domain is **skillshop.exceedlms.com**.
+- The most common category is **Ad Ads Advertise**.
+
+## 📈 General Statistics
 - **Total Posts:** 679
 - **Date Range:** 2020-05-19 to 2022-10-05
 - **Unique Domains Linked:** 367
 
-## Top 10 Referenced Domains
+## 🔗 Top 10 Referenced Domains
 | Domain | Count |
 | :--- | :---: |
 | skillshop.exceedlms.com | 23 |
@@ -21,7 +26,7 @@
 | trustarc.com | 11 |
 | ads.google.com | 10 |
 
-## Top 10 Categories
+## 📂 Top 10 Categories
 | Category | Count |
 | :--- | :---: |
 | Ad Ads Advertise | 660 |
@@ -31,12 +36,15 @@
 | Advertising | 3 |
 | Online | 2 |
 
-## Posts by Year
+## 📅 Posts by Year
 | Year | Count |
 | :--- | :---: |
 | 2022 | 235 |
 | 2021 | 190 |
 | 2020 | 254 |
 
-## Authors
-- Filip Keser: 679 posts
+## ✍️ Authors
+- **Filip Keser**: 679 posts
+
+---
+*Generated with ❤️ by Palette*
