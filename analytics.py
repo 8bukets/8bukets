@@ -21,6 +21,20 @@ def get_domain(url):
     except:
         return None
 
+def escape_markdown(text):
+    """
+    Escape characters that have special meaning in Markdown tables and HTML.
+    """
+    if not isinstance(text, str):
+        return str(text)
+    # Replace pipes to avoid breaking tables
+    text = text.replace('|', '\\|')
+    # Escape HTML tags
+    text = text.replace('<', '&lt;').replace('>', '&gt;')
+    # Replace newlines with spaces to ensure single-line table cells
+    text = text.replace('\n', ' ').replace('\r', '')
+    return text
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
@@ -78,13 +92,13 @@ def generate_report(data, output_file):
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        md.append(f"| {escape_markdown(domain)} | {count} |")
 
     md.append("\n## Top 10 Categories")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        md.append(f"| {escape_markdown(cat)} | {count} |")
 
     md.append("\n## Posts by Year")
     md.append("| Year | Count |")
@@ -94,7 +108,7 @@ def generate_report(data, output_file):
 
     md.append("\n## Authors")
     for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+        md.append(f"- {escape_markdown(author)}: {count} posts")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
