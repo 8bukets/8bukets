@@ -19,10 +19,11 @@ logging.basicConfig(
 logger = logging.getLogger("Orchestrator")
 
 def run_orchestration(save_report=True):
-    logger.info(">>> STARTING AUTONOMOUS AGENT SWARM (v2.0 - Evolving) <<<")
+    logger.info("🚀 >>> STARTING AUTONOMOUS AGENT SWARM (v2.0 - Evolving) <<<")
     report_data = {}
 
     # 1. Health Check
+    logger.info("🏥 Running System Health Check...")
     health_agent = HealthCheckAgent()
     health_status = health_agent.run()
     report_data['health'] = health_status
@@ -31,6 +32,7 @@ def run_orchestration(save_report=True):
         logger.error("Target site is unhealthy. Aborting operation.")
 
     # 2. Research
+    logger.info("🔍 Starting Research Phase...")
     research_agent = ResearcherAgent()
     raw_data = research_agent.run({"limit": 2})
     report_data['research'] = {
@@ -42,16 +44,19 @@ def run_orchestration(save_report=True):
         logger.warning("No blog data scraped.")
 
     # 3. Analyze
+    logger.info("📊 Analyzing Data...")
     analyzer_agent = AnalyzerAgent()
     analysis_result = analyzer_agent.run(raw_data)
     report_data['analysis'] = analysis_result
 
     # 3.5 Advertising (Collaborating with Analyzer)
+    logger.info("📢 Generating Advertising Strategy...")
     ad_agent = AdvertisingAgent()
     ad_result = ad_agent.run(analysis_result)
     report_data['advertising'] = ad_result
 
     # 4. Intelligence (Collaborating with Analyzer + Advertising + History)
+    logger.info("🧠 Processing Strategic Intelligence...")
     intelligence_agent = IntelligenceAgent()
     # Pass combined data for "100% collaboration"
     combined_input = {
@@ -62,21 +67,24 @@ def run_orchestration(save_report=True):
     report_data['intelligence'] = intelligence_result
 
     # 5. Creativity
+    logger.info("🎨 Brainstorming Creative Ideas...")
     creativity_agent = CreativityAgent()
     creative_result = creativity_agent.run(analysis_result)
     report_data['creativity'] = creative_result
 
     # 6. Monetization
+    logger.info("💰 Reviewing Monetization Opportunities...")
     monetization_agent = MonetizationAgent()
     monetization_result = monetization_agent.run(raw_data.get('blog_posts', []))
     report_data['monetization'] = monetization_result
 
     # 7. Create Content
+    logger.info("📝 Drafting Content...")
     content_agent = ContentCreatorAgent()
     content_draft = content_agent.run(intelligence_result)
     report_data['content_draft'] = content_draft
 
-    logger.info(">>> SWARM OPERATION COMPLETE <<<")
+    logger.info("✅ >>> SWARM OPERATION COMPLETE <<< 🚀")
 
     if save_report:
         save_daily_report(report_data)
