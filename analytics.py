@@ -12,20 +12,18 @@ def load_data(filepath):
         print(f"Error: File '{filepath}' not found.")
         sys.exit(1)
 
-def generate_report(data, output_file):
-    total_posts = len(data)
-
+def analyze_data(data):
     # 1. Domain Analysis
-    domains = [p.get('domain') for p in data if p.get('domain')]
-    domain_counts = Counter(domains).most_common(10)
+    # Use generator to count without intermediate list
+    domain_counter = Counter(p.get('domain') for p in data if p.get('domain'))
+    domain_counts = domain_counter.most_common(10)
 
     # 2. Category Analysis
-    all_categories = []
-    for p in data:
-        cats = p.get('categories', [])
-        if cats:
-            all_categories.extend(cats)
-    category_counts = Counter(all_categories).most_common(10)
+    # Nested generator to flatten categories without intermediate list
+    # Use (p.get('categories') or []) to handle None if 'categories' key exists but is null
+    category_counts = Counter(
+        cat for p in data for cat in (p.get('categories') or [])
+    ).most_common(10)
 
     # 3. Date Analysis
     dates = []
@@ -43,8 +41,8 @@ def generate_report(data, output_file):
         dates.sort()
         start_date = dates[0].strftime('%Y-%m-%d')
         end_date = dates[-1].strftime('%Y-%m-%d')
-        years = [d.year for d in dates]
-        year_counts = Counter(years).most_common()
+        # Use generator for years
+        year_counts = Counter(d.year for d in dates).most_common()
         year_counts.sort(key=lambda x: x[0], reverse=True)
     else:
         start_date = "N/A"
@@ -52,8 +50,22 @@ def generate_report(data, output_file):
         year_counts = []
 
     # 4. Author Analysis
-    authors = [p.get('author') for p in data if p.get('author')]
-    author_counts = Counter(authors).most_common()
+    # Use generator
+    author_counts = Counter(p.get('author') for p in data if p.get('author')).most_common()
+
+    return {
+        'total_posts': len(data),
+        'start_date': start_date,
+        'end_date': end_date,
+        'unique_domains': len(domain_counter), # Count unique keys in Counter
+        'domain_counts': domain_counts,
+        'category_counts': category_counts,
+        'year_counts': year_counts,
+        'author_counts': author_counts
+    }
+
+def generate_report(data, output_file):
+    stats = analyze_data(data)
 
     # Generate Markdown
     md = []
@@ -61,30 +73,30 @@ def generate_report(data, output_file):
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
     md.append("\n## General Statistics")
-    md.append(f"- **Total Posts:** {total_posts}")
-    md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append(f"- **Total Posts:** {stats['total_posts']}")
+    md.append(f"- **Date Range:** {stats['start_date']} to {stats['end_date']}")
+    md.append(f"- **Unique Domains Linked:** {stats['unique_domains']}")
 
     md.append("\n## Top 10 Referenced Domains")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
-    for domain, count in domain_counts:
+    for domain, count in stats['domain_counts']:
         md.append(f"| {domain} | {count} |")
 
     md.append("\n## Top 10 Categories")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
-    for cat, count in category_counts:
+    for cat, count in stats['category_counts']:
         md.append(f"| {cat} | {count} |")
 
     md.append("\n## Posts by Year")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
-    for year, count in year_counts:
+    for year, count in stats['year_counts']:
         md.append(f"| {year} | {count} |")
 
     md.append("\n## Authors")
-    for author, count in author_counts:
+    for author, count in stats['author_counts']:
         md.append(f"- {author}: {count} posts")
 
     with open(output_file, 'w', encoding='utf-8') as f:
