@@ -4,6 +4,7 @@ from collections import Counter
 from urllib.parse import urlparse
 from datetime import datetime
 import sys
+from itertools import chain
 
 def load_data(filepath):
     try:
@@ -29,12 +30,8 @@ def generate_report(data, output_file):
     domain_counts = Counter(domains).most_common(10)
 
     # 2. Category Analysis
-    all_categories = []
-    for p in data:
-        cats = p.get('categories', [])
-        if cats:
-            all_categories.extend(cats)
-    category_counts = Counter(all_categories).most_common(10)
+    # Optimized: Use chain to avoid intermediate list. Safe against None.
+    category_counts = Counter(chain.from_iterable((p.get('categories') or []) for p in data)).most_common(10)
 
     # 3. Date Analysis
     dates = []
