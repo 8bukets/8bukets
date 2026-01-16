@@ -6,6 +6,7 @@ import logging
 import argparse
 import sys
 import sqlite3
+from urllib.parse import urlparse
 from datetime import datetime
 
 # Configure logging
@@ -126,12 +127,41 @@ class BlogScraper:
 
         return False
 
+    def validate_url(self, url):
+        """
+        Validate the URL to prevent SSRF and other risks.
+        Ensures scheme is http/https and domain is not a local address.
+        """
+        try:
+            parsed = urlparse(url)
+            if parsed.scheme not in ('http', 'https'):
+                raise ValueError(f"Invalid scheme: {parsed.scheme}. Only http/https allowed.")
+
+            hostname = parsed.hostname
+            if not hostname:
+                 raise ValueError("Invalid URL: No hostname found.")
+
+            # Basic blocklist for local addresses
+            local_domains = {'localhost', '127.0.0.1', '0.0.0.0', '::1'}
+            if hostname in local_domains or hostname.startswith('127.'):
+                raise ValueError(f"Access to local address {hostname} is restricted.")
+
+            return True
+        except ValueError as e:
+            raise e
+        except Exception as e:
+            raise ValueError(f"Malformed URL: {e}")
+
     def fetch_page(self, url):
         logger.info(f"Fetching {url}...")
         try:
+            self.validate_url(url)
             response = requests.get(url, headers=self.headers, timeout=10)
             response.raise_for_status()
             return response.content
+        except ValueError as e:
+            logger.error(f"Security validation failed for {url}: {e}")
+            return None
         except requests.RequestException as e:
             logger.error(f"Error fetching URL {url}: {e}")
             return None
