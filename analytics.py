@@ -12,6 +12,19 @@ def load_data(filepath):
         print(f"Error: File '{filepath}' not found.")
         sys.exit(1)
 
+def escape_markdown(text):
+    """Sanitize text for Markdown tables and prevent HTML injection."""
+    if text is None:
+        return ""
+    text = str(text)
+    # Prevent table injection
+    text = text.replace("|", "\\|")
+    # Prevent row breaking
+    text = text.replace("\n", " ").replace("\r", " ")
+    # Prevent HTML injection
+    text = text.replace("<", "&lt;").replace(">", "&gt;")
+    return text
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
@@ -69,13 +82,13 @@ def generate_report(data, output_file):
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        md.append(f"| {escape_markdown(domain)} | {count} |")
 
     md.append("\n## Top 10 Categories")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        md.append(f"| {escape_markdown(cat)} | {count} |")
 
     md.append("\n## Posts by Year")
     md.append("| Year | Count |")
@@ -85,7 +98,7 @@ def generate_report(data, output_file):
 
     md.append("\n## Authors")
     for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+        md.append(f"- {escape_markdown(author)}: {count} posts")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
