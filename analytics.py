@@ -4,6 +4,7 @@ from collections import Counter
 from urllib.parse import urlparse
 from datetime import datetime
 import sys
+from itertools import chain
 
 def load_data(filepath):
     try:
@@ -21,47 +22,56 @@ def get_domain(url):
     except:
         return None
 
+def is_valid_date_str(s):
+    """
+    Fast check if string looks like YYYY-MM-DD.
+    Replica of basic validation logic without expensive datetime parsing.
+    """
+    if not s or len(s) < 10:
+        return False
+    # Check YYYY-MM-DD format
+    if not (s[0:4].isdigit() and s[4] == '-' and s[5:7].isdigit() and s[7] == '-' and s[8:10].isdigit()):
+        return False
+    return True
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
     # 1. Domain Analysis
-    domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
-    domain_counts = Counter(domains).most_common(10)
+    # Optimization: Use generator to avoid building intermediate list and memory usage
+    domains_gen = (get_domain(p.get('external_link')) for p in data if p.get('external_link'))
+    all_domains_counter = Counter(domains_gen)
+    domain_counts = all_domains_counter.most_common(10)
+    unique_domains_count = len(all_domains_counter)
 
     # 2. Category Analysis
-    all_categories = []
-    for p in data:
-        cats = p.get('categories', [])
-        if cats:
-            all_categories.extend(cats)
-    category_counts = Counter(all_categories).most_common(10)
+    # Optimization: Use itertools.chain to flatten list of lists lazily, avoiding large intermediate list
+    categories_gen = chain.from_iterable(p.get('categories') or [] for p in data)
+    category_counts = Counter(categories_gen).most_common(10)
 
     # 3. Date Analysis
-    dates = []
-    for p in data:
-        dt_str = p.get('datetime')
-        if dt_str:
-            try:
-                # Handle ISO format
-                dt = datetime.fromisoformat(dt_str)
-                dates.append(dt)
-            except ValueError:
-                pass
+    # Optimization: Use string manipulation for ISO dates (faster than parsing datetime objects)
+    # Filter using fast string check instead of try/except datetime.fromisoformat to preserve validation
+    date_strings = [p.get('datetime') for p in data if p.get('datetime') and is_valid_date_str(p.get('datetime'))]
 
-    if dates:
-        dates.sort()
-        start_date = dates[0].strftime('%Y-%m-%d')
-        end_date = dates[-1].strftime('%Y-%m-%d')
-        years = [d.year for d in dates]
+    start_date = "N/A"
+    end_date = "N/A"
+    year_counts = []
+
+    if date_strings:
+        date_strings.sort()
+        # ISO format sorts lexicographically correct
+        start_date = date_strings[0][:10] # YYYY-MM-DD
+        end_date = date_strings[-1][:10]
+
+        # Extract year from string "YYYY..."
+        years = (d[:4] for d in date_strings)
         year_counts = Counter(years).most_common()
         year_counts.sort(key=lambda x: x[0], reverse=True)
-    else:
-        start_date = "N/A"
-        end_date = "N/A"
-        year_counts = []
 
     # 4. Author Analysis
-    authors = [p.get('author') for p in data if p.get('author')]
+    # Optimization: Use generator
+    authors = (p.get('author') for p in data if p.get('author'))
     author_counts = Counter(authors).most_common()
 
     # Generate Markdown
@@ -72,7 +82,7 @@ def generate_report(data, output_file):
     md.append("\n## General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append(f"- **Unique Domains Linked:** {unique_domains_count}")
 
     md.append("\n## Top 10 Referenced Domains")
     md.append("| Domain | Count |")
