@@ -1,6 +1,13 @@
 # Markposition Analytics Report
 
-**Generated on:** 2025-12-13 12:59:36
+**Generated on:** 2026-01-16 19:25:21
+
+## Table of Contents
+- [General Statistics](#general-statistics)
+- [Top 10 Referenced Domains](#top-10-referenced-domains)
+- [Top 10 Categories](#top-10-categories)
+- [Posts by Year](#posts-by-year)
+- [Authors](#authors)
 
 ## General Statistics
 - **Total Posts:** 679
