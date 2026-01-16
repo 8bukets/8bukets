@@ -28,12 +28,11 @@ def main():
     # Run immediately once
     run_daily_job()
 
-    # Loop for simulation (e.g., every 24 hours = 86400 seconds)
-    # Uncomment the loop below for actual continuous execution
-    # while True:
-    #     logger.info("Waiting 24 hours for next run...")
-    #     time.sleep(86400)
-    #     run_daily_job()
+    # Loop for simulation (every 2 weeks = 1,209,600 seconds)
+    while True:
+        logger.info("Waiting 14 days (bi-weekly) for next run...")
+        time.sleep(1209600)
+        run_daily_job()
 
 if __name__ == "__main__":
     main()

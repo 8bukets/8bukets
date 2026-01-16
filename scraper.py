@@ -62,12 +62,14 @@ class MarkPositionScraperAsync:
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
         url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
         try:
-            async with session.get(url) as response:
+            # Set a timeout of 10 seconds to prevent indefinite hanging
+            timeout = aiohttp.ClientTimeout(total=10)
+            async with session.get(url, timeout=timeout) as response:
                 if response.status == 404:
                     return None
                 response.raise_for_status()
                 return await response.text()
-        except aiohttp.ClientError as e:
+        except (aiohttp.ClientError, asyncio.TimeoutError) as e:
             logger.error(f"Error fetching page {page_num}: {e}")
             return None
 
@@ -224,7 +226,7 @@ class MarkPositionScraperAsync:
                 writer = csv.writer(f)
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
-                    writer.writerow([
+                    row = [
                         post.get('title', ''),
                         post.get('date', ''),
                         post.get('author', ''),
@@ -232,7 +234,15 @@ class MarkPositionScraperAsync:
                         post.get('external_link', ''),
                         post.get('domain', ''),
                         post.get('post_url', '')
-                    ])
+                    ]
+                    # Sanitize for CSV Injection
+                    safe_row = []
+                    for field in row:
+                        if field and isinstance(field, str) and field.startswith(('=', '+', '-', '@')):
+                            safe_row.append("'" + field)
+                        else:
+                            safe_row.append(field)
+                    writer.writerow(safe_row)
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
             logger.error(f"Failed to save CSV: {e}")
