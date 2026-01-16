@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+links.json
+links.csv
+unique_links.txt
+REPORT.md
+venv/
+.env
+.DS_Store
