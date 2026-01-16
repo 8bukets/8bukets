@@ -31,21 +31,23 @@ class TestBlogScraper(unittest.TestCase):
         self.scraper = BlogScraper("http://mock.url", self.json_name, self.db_name)
 
     def tearDown(self):
+        self.scraper.close() # Ensure resources are closed
         if os.path.exists(self.db_name):
             os.remove(self.db_name)
         if os.path.exists(self.json_name):
             os.remove(self.json_name)
 
-    @patch('requests.get')
-    def test_fetch_page(self, mock_get):
+    def test_fetch_page(self):
+        # We need to mock self.scraper.session.get, not requests.get
         mock_response = MagicMock()
         mock_response.status_code = 200
         mock_response.content = self.mock_html.encode('utf-8')
-        mock_get.return_value = mock_response
 
-        content = self.scraper.fetch_page("http://mock.url")
-        self.assertIsNotNone(content)
-        self.assertIn(b"Test Title", content)
+        with patch.object(self.scraper.session, 'get', return_value=mock_response) as mock_get:
+            content = self.scraper.fetch_page("http://mock.url")
+            self.assertIsNotNone(content)
+            self.assertIn(b"Test Title", content)
+            mock_get.assert_called_once()
 
     def test_parse_article(self):
         from bs4 import BeautifulSoup
