@@ -1,0 +1,3 @@
+## 2024-05-23 - [ProcessPoolExecutor for CPU-bound tasks in AsyncIO]
+**Learning:** `BeautifulSoup` parsing is heavily CPU-bound and constrained by Python's GIL. Offloading it to `ThreadPoolExecutor` (default for `run_in_executor`) actually degraded performance due to GIL contention. Using `ProcessPoolExecutor` provided a ~60% speedup by bypassing the GIL and utilizing multiple cores, allowing the main event loop to handle network I/O without blocking.
+**Action:** When optimizing CPU-bound tasks in an asyncio application (like HTML parsing), prefer `ProcessPoolExecutor` over `ThreadPoolExecutor` and ensure the task function is picklable (top-level function, no instance state).
