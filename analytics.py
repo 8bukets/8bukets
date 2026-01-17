@@ -3,6 +3,7 @@ import argparse
 from collections import Counter
 from datetime import datetime
 import sys
+import itertools
 
 def load_data(filepath):
     try:
@@ -16,35 +17,41 @@ def generate_report(data, output_file):
     total_posts = len(data)
 
     # 1. Domain Analysis
-    domains = [p.get('domain') for p in data if p.get('domain')]
-    domain_counts = Counter(domains).most_common(10)
+    # Use generator to avoid creating intermediate list of all domains
+    domain_counter = Counter(p.get('domain') for p in data if p.get('domain'))
+    domain_counts = domain_counter.most_common(10)
+    unique_domains_count = len(domain_counter)
 
     # 2. Category Analysis
-    all_categories = []
-    for p in data:
-        cats = p.get('categories', [])
-        if cats:
-            all_categories.extend(cats)
-    category_counts = Counter(all_categories).most_common(10)
+    # Use chain.from_iterable to flatten categories without intermediate list
+    category_counts = Counter(
+        itertools.chain.from_iterable(p.get('categories') or [] for p in data)
+    ).most_common(10)
 
     # 3. Date Analysis
-    dates = []
+    min_date = None
+    max_date = None
+    year_counter = Counter()
+
     for p in data:
         dt_str = p.get('datetime')
         if dt_str:
             try:
                 # Handle ISO format
                 dt = datetime.fromisoformat(dt_str)
-                dates.append(dt)
+                if min_date is None or dt < min_date:
+                    min_date = dt
+                if max_date is None or dt > max_date:
+                    max_date = dt
+                year_counter[dt.year] += 1
             except ValueError:
                 pass
 
-    if dates:
-        dates.sort()
-        start_date = dates[0].strftime('%Y-%m-%d')
-        end_date = dates[-1].strftime('%Y-%m-%d')
-        years = [d.year for d in dates]
-        year_counts = Counter(years).most_common()
+    if min_date:
+        start_date = min_date.strftime('%Y-%m-%d')
+        end_date = max_date.strftime('%Y-%m-%d')
+        # Sort years descending
+        year_counts = year_counter.most_common()
         year_counts.sort(key=lambda x: x[0], reverse=True)
     else:
         start_date = "N/A"
@@ -52,8 +59,7 @@ def generate_report(data, output_file):
         year_counts = []
 
     # 4. Author Analysis
-    authors = [p.get('author') for p in data if p.get('author')]
-    author_counts = Counter(authors).most_common()
+    author_counts = Counter(p.get('author') for p in data if p.get('author')).most_common()
 
     # Generate Markdown
     md = []
@@ -63,7 +69,7 @@ def generate_report(data, output_file):
     md.append("\n## General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append(f"- **Unique Domains Linked:** {unique_domains_count}")
 
     md.append("\n## Top 10 Referenced Domains")
     md.append("| Domain | Count |")
