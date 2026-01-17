@@ -24,7 +24,14 @@ class HealthCheckAgent(BaseAgent):
         sample = random.sample(links, min(len(links), 5))
 
         results = {}
-        async with aiohttp.ClientSession() as session:
+        # Use shared session if available, else create local
+        session = shared_context.get('session')
+        local_session = None
+        if not session:
+            local_session = aiohttp.ClientSession()
+            session = local_session
+
+        try:
             tasks = [self.check_link(session, url) for url in sample]
             statuses = await asyncio.gather(*tasks)
 
@@ -32,5 +39,8 @@ class HealthCheckAgent(BaseAgent):
             results['Sample Size'] = len(sample)
             results['Healthy Links'] = success_count
             results['Broken/Error Links'] = len(sample) - success_count
+        finally:
+            if local_session:
+                await local_session.close()
 
         return results

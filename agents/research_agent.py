@@ -29,13 +29,23 @@ class ResearchAgent(BaseAgent):
         results = {}
         tech_stack = []
 
-        async with aiohttp.ClientSession() as session:
+        # Use shared session if available, else create local
+        session = shared_context.get('session')
+        local_session = None
+        if not session:
+            local_session = aiohttp.ClientSession()
+            session = local_session
+
+        try:
             tasks = [self.fetch_headers(session, url) for url in targets]
             headers = await asyncio.gather(*tasks)
 
             for url, server in zip(targets, headers):
                 domain = urlparse(url).netloc
                 tech_stack.append(f"{domain}: {server}")
+        finally:
+            if local_session:
+                await local_session.close()
 
         results['Server Technologies (Sample)'] = "; ".join(tech_stack)
         return results

@@ -34,7 +34,14 @@ class RobotTxtAgent(BaseAgent):
 
         results = {}
 
-        async with aiohttp.ClientSession() as session:
+        # Use shared session if available, else create local
+        session = shared_context.get('session')
+        local_session = None
+        if not session:
+            local_session = aiohttp.ClientSession()
+            session = local_session
+
+        try:
             url, status, preview = await self.fetch_robots(session, target_url)
             results['Target'] = url
             results['Status'] = status
@@ -43,5 +50,8 @@ class RobotTxtAgent(BaseAgent):
             # Share with other agents
             shared_context['robots_allowed'] = (status == "Found")
             shared_context['target_domain'] = urlparse(target_url).netloc
+        finally:
+            if local_session:
+                await local_session.close()
 
         return results

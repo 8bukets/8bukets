@@ -1,4 +1,5 @@
 import asyncio
+import aiohttp
 import json
 import logging
 import os
@@ -84,16 +85,20 @@ async def run_pipeline(skip_scrape=False, limit=2):
     report_lines = []
     report_lines.append(f"# Daily Autonomous Report: {datetime.now().strftime('%Y-%m-%d')}\n")
 
-    for agent in agents:
-        logger.info(f"Running {agent.name}...")
-        try:
-            results = await agent.process(data, shared_context, knowledge_base)
-            report_section = agent.format_report(results)
-            report_lines.append(report_section)
-            report_lines.append("\n---\n")
-        except Exception as e:
-            logger.error(f"Error in {agent.name}: {e}")
-            report_lines.append(f"### {agent.name} Failed\nError: {e}\n\n---\n")
+    # Shared session for agents to reuse connections
+    async with aiohttp.ClientSession() as session:
+        shared_context['session'] = session
+
+        for agent in agents:
+            logger.info(f"Running {agent.name}...")
+            try:
+                results = await agent.process(data, shared_context, knowledge_base)
+                report_section = agent.format_report(results)
+                report_lines.append(report_section)
+                report_lines.append("\n---\n")
+            except Exception as e:
+                logger.error(f"Error in {agent.name}: {e}")
+                report_lines.append(f"### {agent.name} Failed\nError: {e}\n\n---\n")
 
     # 5. Save Report
     output_dir = "results"
