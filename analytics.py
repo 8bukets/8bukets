@@ -69,32 +69,61 @@ def generate_report(data, output_file):
     md.append("# Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
+    # Navigation: Table of Contents
+    md.append("\n## Table of Contents")
+    md.append("- [General Statistics](#general-statistics)")
+    md.append("- [Top 10 Referenced Domains](#top-10-referenced-domains)")
+    md.append("- [Top 10 Categories](#top-10-categories)")
+    md.append("- [Posts by Year](#posts-by-year)")
+    md.append("- [Authors](#authors)")
+
     md.append("\n## General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append("\n[Back to Top](#table-of-contents)")
 
     md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
-    for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+    if domain_counts:
+        md.append("| Domain | Count | Share |")
+        md.append("| :--- | :---: | :---: |")
+        for domain, count in domain_counts:
+            share = (count / total_posts) * 100 if total_posts > 0 else 0
+            md.append(f"| {domain} | {count} | {share:.1f}% |")
+    else:
+        md.append("\n*No domain data available.*")
+    md.append("\n[Back to Top](#table-of-contents)")
 
     md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
-    for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+    if category_counts:
+        md.append("| Category | Count | Share |")
+        md.append("| :--- | :---: | :---: |")
+        total_cats = len(all_categories)
+        for cat, count in category_counts:
+            share = (count / total_cats) * 100 if total_cats > 0 else 0
+            md.append(f"| {cat} | {count} | {share:.1f}% |")
+    else:
+        md.append("\n*No category data available.*")
+    md.append("\n[Back to Top](#table-of-contents)")
 
     md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
-    for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+    if year_counts:
+        md.append("| Year | Count | Share |")
+        md.append("| :--- | :---: | :---: |")
+        for year, count in year_counts:
+            share = (count / total_posts) * 100 if total_posts > 0 else 0
+            md.append(f"| {year} | {count} | {share:.1f}% |")
+    else:
+        md.append("\n*No date data available.*")
+    md.append("\n[Back to Top](#table-of-contents)")
 
     md.append("\n## Authors")
-    for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+    if author_counts:
+        for author, count in author_counts:
+            md.append(f"- **{author}**: {count} posts")
+    else:
+        md.append("\n*No author data available.*")
+    md.append("\n[Back to Top](#table-of-contents)")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
