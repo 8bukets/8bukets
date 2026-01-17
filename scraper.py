@@ -9,6 +9,7 @@ import logging
 import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
+from urllib.robotparser import RobotFileParser
 
 # Configure logging
 logging.basicConfig(
@@ -21,6 +22,9 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
+    _WHITESPACE_PATTERN = re.compile(r'\s+')
+    _URL_PATTERN = re.compile(r'^https?://')
+
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
         self.output_csv = output_csv
@@ -29,16 +33,25 @@ class MarkPositionScraperAsync:
         self.concurrency = concurrency
         self.session = None
 
+        # Robots.txt check
+        self.rp = RobotFileParser()
+        self.rp.set_url(f"{BASE_URL}robots.txt")
+        try:
+            self.rp.read()
+            logger.info("Parsed robots.txt")
+        except Exception as e:
+            logger.warning(f"Could not parse robots.txt: {e}")
+
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return self._WHITESPACE_PATTERN.sub(' ', text).strip()
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
-        return re.match(r'^https?://', text.strip()) is not None
+        return self._URL_PATTERN.match(text.strip()) is not None
 
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
@@ -61,6 +74,11 @@ class MarkPositionScraperAsync:
 
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
         url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
+
+        if not self.rp.can_fetch("*", url):
+            logger.warning(f"robots.txt disallows fetching {url}")
+            return None
+
         try:
             async with session.get(url) as response:
                 if response.status == 404:

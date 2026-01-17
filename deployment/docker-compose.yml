@@ -1,0 +1,13 @@
+version: '3'
+services:
+  autonomous-agent:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile
+    volumes:
+      - ../results:/app/results
+      - ../memory:/app/memory
+      - ../system_evolution:/app/system_evolution
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: sh -c "python3 run_system.py --limit 10"
