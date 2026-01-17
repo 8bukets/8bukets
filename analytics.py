@@ -1,3 +1,6 @@
+"""
+Module for generating analytics reports from scraped data.
+"""
 import json
 import argparse
 from collections import Counter
@@ -6,6 +9,7 @@ from datetime import datetime
 import sys
 
 def load_data(filepath):
+    """Loads JSON data from the specified filepath."""
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             return json.load(f)
@@ -14,23 +18,26 @@ def load_data(filepath):
         sys.exit(1)
 
 def get_domain(url):
+    """Extracts the domain from a given URL."""
     if not url:
         return None
     try:
         return urlparse(url).netloc.replace('www.', '')
-    except:
+    except Exception: # pylint: disable=broad-except
         return None
 
-def generate_report(data, output_file):
-    total_posts = len(data)
+def generate_report(posts_data, output_file):
+    """Generates a Markdown report and prints a summary to the console."""
+    total_posts = len(posts_data)
 
     # 1. Domain Analysis
-    domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
+    domains = [get_domain(p.get('external_link'))
+               for p in posts_data if p.get('external_link')]
     domain_counts = Counter(domains).most_common(10)
 
     # 2. Category Analysis
     all_categories = []
-    for p in data:
+    for p in posts_data:
         cats = p.get('categories', [])
         if cats:
             all_categories.extend(cats)
@@ -38,7 +45,7 @@ def generate_report(data, output_file):
 
     # 3. Date Analysis
     dates = []
-    for p in data:
+    for p in posts_data:
         dt_str = p.get('datetime')
         if dt_str:
             try:
@@ -61,45 +68,51 @@ def generate_report(data, output_file):
         year_counts = []
 
     # 4. Author Analysis
-    authors = [p.get('author') for p in data if p.get('author')]
+    authors = [p.get('author') for p in posts_data if p.get('author')]
     author_counts = Counter(authors).most_common()
 
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
+    md.append("# 📊 Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
+    md.append("\n## 📈 General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
 
-    md.append("\n## Top 10 Referenced Domains")
+    md.append("\n## 🌐 Top 10 Referenced Domains")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in domain_counts:
         md.append(f"| {domain} | {count} |")
 
-    md.append("\n## Top 10 Categories")
+    md.append("\n## 🏷️ Top 10 Categories")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in category_counts:
         md.append(f"| {cat} | {count} |")
 
-    md.append("\n## Posts by Year")
+    md.append("\n## 📅 Posts by Year")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
     for year, count in year_counts:
         md.append(f"| {year} | {count} |")
 
-    md.append("\n## Authors")
+    md.append("\n## ✍️ Authors")
     for author, count in author_counts:
         md.append(f"- {author}: {count} posts")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    print(f"✨ Report generated: {output_file}")
+    print("\n📊 Quick Summary:")
+    print(f"   • Total Posts: {total_posts}")
+    print(f"   • Unique Domains: {len(set(domains))}")
+    print(f"   • Date Range: {start_date} to {end_date}")
+    if domain_counts:
+        print(f"   • Top Domain: {domain_counts[0][0]} ({domain_counts[0][1]})")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
