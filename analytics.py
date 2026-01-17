@@ -69,6 +69,19 @@ def generate_report(data, output_file):
     md.append("# Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
+    # Table of Contents
+    md.append("\n## Table of Contents")
+    toc_entries = [
+        "General Statistics",
+        "Top 10 Referenced Domains",
+        "Top 10 Categories",
+        "Posts by Year",
+        "Authors"
+    ]
+    for entry in toc_entries:
+        slug = entry.lower().replace(' ', '-')
+        md.append(f"- [{entry}](#{slug})")
+
     md.append("\n## General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
