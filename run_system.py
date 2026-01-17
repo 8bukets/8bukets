@@ -5,6 +5,7 @@ import os
 import argparse
 from datetime import datetime
 from scraper import MarkPositionScraperAsync
+from colors import Colors, colorize
 from agents.robot_txt_agent import RobotTxtAgent
 from agents.analysis_agent import AnalysisAgent
 from agents.research_agent import ResearchAgent
@@ -43,7 +44,7 @@ async def run_pipeline(skip_scrape=False, limit=2):
     # 1. Scrape (Autonomous Data Gathering)
     json_file = "links.json"
     if not skip_scrape:
-        logger.info("Starting autonomous scraper...")
+        logger.info(colorize("Starting autonomous scraper...", Colors.CYAN))
         scraper = MarkPositionScraperAsync(
             output_json=json_file,
             output_csv="links.csv",
@@ -53,11 +54,11 @@ async def run_pipeline(skip_scrape=False, limit=2):
         )
         await scraper.scrape()
     else:
-        logger.info("Skipping scrape, using existing data.")
+        logger.info(colorize("Skipping scrape, using existing data.", Colors.YELLOW))
 
     # 2. Load Data
     if not os.path.exists(json_file):
-        logger.error("No data found. Exiting.")
+        logger.error(colorize("No data found. Exiting.", Colors.RED))
         return
 
     with open(json_file, 'r', encoding='utf-8') as f:
@@ -85,14 +86,14 @@ async def run_pipeline(skip_scrape=False, limit=2):
     report_lines.append(f"# Daily Autonomous Report: {datetime.now().strftime('%Y-%m-%d')}\n")
 
     for agent in agents:
-        logger.info(f"Running {agent.name}...")
+        logger.info(f"Running {colorize(agent.name, Colors.CYAN)}...")
         try:
             results = await agent.process(data, shared_context, knowledge_base)
             report_section = agent.format_report(results)
             report_lines.append(report_section)
             report_lines.append("\n---\n")
         except Exception as e:
-            logger.error(f"Error in {agent.name}: {e}")
+            logger.error(colorize(f"Error in {agent.name}: {e}", Colors.RED))
             report_lines.append(f"### {agent.name} Failed\nError: {e}\n\n---\n")
 
     # 5. Save Report
@@ -103,15 +104,15 @@ async def run_pipeline(skip_scrape=False, limit=2):
     with open(report_filename, 'w', encoding='utf-8') as f:
         f.write("\n".join(report_lines))
 
-    logger.info(f"Report generated successfully: {report_filename}")
+    logger.info(colorize(f"Report generated successfully: {report_filename}", Colors.GREEN))
 
     # 6. Save Knowledge Base (Evolution)
     try:
         with open(KB_FILE, 'w', encoding='utf-8') as f:
             json.dump(knowledge_base, f, indent=4)
-        logger.info("Knowledge Base evolved and saved.")
+        logger.info(colorize("Knowledge Base evolved and saved.", Colors.GREEN))
     except Exception as e:
-        logger.error(f"Failed to save Knowledge Base: {e}")
+        logger.error(colorize(f"Failed to save Knowledge Base: {e}", Colors.RED))
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run Autonomous Agent System")
