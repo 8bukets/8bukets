@@ -8,7 +8,7 @@ class ContentAgent(BaseAgent):
     def process(self, data: List[Dict], insights: Dict) -> str:
         self.log("Generating content...")
 
-        articles = "\n".join([f"- {item['title']} ({item.get('date', 'N/A')})" for item in data])
+        articles = "\n".join([f"- {self.escape_markdown(item['title'])} ({item.get('date', 'N/A')})" for item in data])
         focus = ", ".join(insights.get('focus_areas', []))
 
         blog_post = f"""
