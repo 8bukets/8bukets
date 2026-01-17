@@ -29,12 +29,15 @@ class MarkPositionScraperAsync:
         self.concurrency = concurrency
         self.session = None
 
+    # Pre-compile regex for performance
+    WHITESPACE_REGEX = re.compile(r'\s+')
+
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return self.WHITESPACE_REGEX.sub(' ', text).strip()
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
@@ -71,7 +74,11 @@ class MarkPositionScraperAsync:
             logger.error(f"Error fetching page {page_num}: {e}")
             return None
 
-    async def parse_page(self, html: str) -> List[Dict]:
+    def parse_page(self, html: str) -> List[Dict]:
+        """
+        Parse HTML content to extract post data.
+        Ran in an executor to avoid blocking the event loop.
+        """
         soup = BeautifulSoup(html, 'html.parser')
         articles = soup.find_all('article', class_='post')
         page_posts = []
@@ -254,7 +261,9 @@ class MarkPositionScraperAsync:
         async with sem:
             html = await self.fetch_page(session, page_num)
             if html:
-                return await self.parse_page(html)
+                # Offload CPU-bound parsing to an executor to prevent blocking the event loop
+                loop = asyncio.get_running_loop()
+                return await loop.run_in_executor(None, self.parse_page, html)
             return None
 
 def main():
