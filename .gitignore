@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+.pytest_cache/
+links.json
+links.csv
+unique_links.txt
+test_output.json
+test_output.csv
+test_output.txt
