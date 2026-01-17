@@ -4,6 +4,7 @@ from collections import Counter
 from urllib.parse import urlparse
 from datetime import datetime
 import sys
+from itertools import chain
 
 def load_data(filepath):
     try:
@@ -25,15 +26,14 @@ def generate_report(data, output_file):
     total_posts = len(data)
 
     # 1. Domain Analysis
-    domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
+    # Optimization: Use generator expression to avoid creating intermediate list in memory
+    domains = (get_domain(p.get('external_link')) for p in data if p.get('external_link'))
     domain_counts = Counter(domains).most_common(10)
 
     # 2. Category Analysis
-    all_categories = []
-    for p in data:
-        cats = p.get('categories', [])
-        if cats:
-            all_categories.extend(cats)
+    # Optimization: Use chain.from_iterable to avoid creating a large intermediate list of all categories
+    # chain.from_iterable efficiently iterates over the sublists without building a single flat list first
+    all_categories = chain.from_iterable((p.get('categories') or []) for p in data)
     category_counts = Counter(all_categories).most_common(10)
 
     # 3. Date Analysis
@@ -61,7 +61,8 @@ def generate_report(data, output_file):
         year_counts = []
 
     # 4. Author Analysis
-    authors = [p.get('author') for p in data if p.get('author')]
+    # Optimization: Use generator expression to avoid creating intermediate list
+    authors = (p.get('author') for p in data if p.get('author'))
     author_counts = Counter(authors).most_common()
 
     # Generate Markdown
@@ -72,7 +73,29 @@ def generate_report(data, output_file):
     md.append("\n## General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    # Note: len(set(domains)) would consume the generator if we reused it, but we already consumed it in Counter.
+    # To get unique domains count efficiently without storing all domains, we can use the keys from domain_counts if we had the full counter.
+    # But domain_counts is only top 10.
+    # So we strictly speaking need to iterate again or store the counter.
+
+    # Re-calculating unique domains count.
+    # Since we need the count of unique items, we have to iterate again or store the set.
+    # The original code did: len(set(domains)).
+    # But now 'domains' is a generator that is already exhausted by Counter(domains).
+    # So we need to re-create the generator or keep the full Counter object.
+
+    # Let's verify what the original code did.
+    # original: domains = [list]... domain_counts = Counter(domains).most_common(10) ... len(set(domains))
+
+    # To preserve functionality and memory efficiency:
+    # We can create a full Counter first.
+
+    domains_gen = (get_domain(p.get('external_link')) for p in data if p.get('external_link'))
+    full_domain_counts = Counter(domains_gen)
+    domain_counts = full_domain_counts.most_common(10)
+    unique_domains_count = len(full_domain_counts)
+
+    md.append(f"- **Unique Domains Linked:** {unique_domains_count}")
 
     md.append("\n## Top 10 Referenced Domains")
     md.append("| Domain | Count |")
