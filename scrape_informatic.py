@@ -5,6 +5,7 @@ import time
 import logging
 import argparse
 import sys
+import ipaddress
 from urllib.parse import urlparse
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
@@ -53,6 +54,41 @@ def get_session():
     })
 
     return session
+
+def is_safe_url(url: str) -> bool:
+    """
+    Validates if a URL is safe to fetch (prevents SSRF).
+    Checks scheme and ensures hostname is not a local/private IP.
+    """
+    if not url:
+        return False
+
+    try:
+        parsed = urlparse(url)
+    except Exception:
+        return False
+
+    if parsed.scheme not in ('http', 'https'):
+        return False
+
+    hostname = parsed.hostname
+    if not hostname:
+        return False
+
+    # Block localhost string literals
+    if hostname.lower() in ('localhost', '127.0.0.1', '::1', '0.0.0.0'):
+        return False
+
+    try:
+        # Check if hostname is an IP address
+        ip = ipaddress.ip_address(hostname)
+        if ip.is_private or ip.is_loopback or ip.is_reserved or ip.is_link_local or ip.is_multicast:
+            return False
+    except ValueError:
+        # It's a domain name.
+        pass
+
+    return True
 
 def is_external_link(link_url: str, base_url: str) -> bool:
     """
@@ -140,6 +176,11 @@ def scrape(output_file: str, max_pages: int = 0):
     while current_url:
         if max_pages > 0 and page > max_pages:
             logging.info(f"Reached max pages limit ({max_pages}). Stopping.")
+            break
+
+        # Validate URL before fetching
+        if not is_safe_url(current_url):
+            logging.error(f"Unsafe URL detected: {current_url}. Stopping.")
             break
 
         logging.info(f"Scraping page {page}: {current_url}...")
