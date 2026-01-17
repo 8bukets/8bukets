@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import urllib.parse
 import json
 import time
 import logging
@@ -126,7 +127,35 @@ class BlogScraper:
 
         return False
 
+    def is_safe_url(self, url):
+        """
+        Validate URL to prevent SSRF.
+        Ensures scheme is http/https and hostname is not local/internal.
+        """
+        try:
+            parsed = urllib.parse.urlparse(url)
+        except Exception:
+            return False
+
+        if parsed.scheme not in ('http', 'https'):
+            return False
+
+        # Basic blacklist for localhost and common local IPs
+        hostname = parsed.hostname
+        if not hostname:
+            return False
+
+        unsafe_hosts = {'localhost', '127.0.0.1', '::1', '0.0.0.0'}
+        if hostname in unsafe_hosts:
+            return False
+
+        return True
+
     def fetch_page(self, url):
+        if not self.is_safe_url(url):
+            logger.warning(f"Security blocked unsafe URL: {url}")
+            return None
+
         logger.info(f"Fetching {url}...")
         try:
             response = requests.get(url, headers=self.headers, timeout=10)
