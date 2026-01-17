@@ -63,8 +63,18 @@ def generate_daily_report(context, filename):
         with open(filename, 'w', encoding='utf-8') as f:
             f.write(f"# Daily Autonomous Report: {datetime.now().strftime('%Y-%m-%d')}\n\n")
 
+            # Table of Contents
+            f.write("## Table of Contents\n")
+            f.write("- [1. Ecosystem Health](#ecosystem-health)\n")
+            f.write("- [2. Targeting & Strategy](#targeting-strategy)\n")
+            f.write("- [3. Bid Intelligence](#bid-intelligence)\n")
+            f.write("- [4. Ads Generation](#ads-generation)\n")
+            f.write("- [5. Market Analysis](#market-analysis)\n")
+            f.write("- [6. Content Draft](#content-draft)\n\n")
+
             f.write(f"**Autonomous Status:** {context.get('autonomous_status', 'UNKNOWN')}\n\n")
 
+            f.write("<a name=\"ecosystem-health\"></a>\n")
             f.write("## 1. Ecosystem Health\n")
             health = context.get("health_report", {})
             for check in health.get("checks", []):
@@ -72,28 +82,33 @@ def generate_daily_report(context, filename):
             robots = context.get("robots_txt", {})
             f.write(f"- **Robots.txt:** {robots.get('status', 'N/A')} (Disallowed: {len(robots.get('disallowed_paths', []))})\n")
 
-            f.write("\n## 2. Targeting & Strategy\n")
+            f.write("\n<a name=\"targeting-strategy\"></a>\n")
+            f.write("## 2. Targeting & Strategy\n")
             targeting = context.get("targeting_profile", {})
             f.write(f"- **Persona:** {targeting.get('primary_persona', 'N/A')}\n")
             f.write(f"- **Intent:** {targeting.get('intent', 'N/A')}\n")
 
-            f.write("\n## 3. Bid Intelligence\n")
+            f.write("\n<a name=\"bid-intelligence\"></a>\n")
+            f.write("## 3. Bid Intelligence\n")
             bid = context.get("bid_strategy", {})
             f.write(f"- **Strategy:** {bid.get('strategy', 'N/A')}\n")
             f.write(f"- **Recommended CPM:** ${bid.get('recommended_cpm', 0.00)}\n")
             f.write(f"- **Self-Optimization Factor:** {bid.get('adjustment_factor', 1.0)}\n")
 
-            f.write("\n## 4. Ads Generation\n")
+            f.write("\n<a name=\"ads-generation\"></a>\n")
+            f.write("## 4. Ads Generation\n")
             for ad in context.get("generated_ads", []):
                 f.write(f"### {ad.get('headline')}\n")
                 f.write(f"- Target: {ad.get('target_audience')}\n")
                 f.write(f"- CTA: {ad.get('cta')}\n")
 
-            f.write("\n## 5. Market Analysis\n")
+            f.write("\n<a name=\"market-analysis\"></a>\n")
+            f.write("## 5. Market Analysis\n")
             stats = context.get("analysis_stats", {})
             f.write(f"- **Total Posts:** {stats.get('total_posts')}\n")
 
-            f.write("\n## 6. Content Draft\n")
+            f.write("\n<a name=\"content-draft\"></a>\n")
+            f.write("## 6. Content Draft\n")
             f.write("```text\n")
             f.write(context.get("generated_content", ""))
             f.write("\n```\n")
