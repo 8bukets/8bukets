@@ -9,11 +9,8 @@ class IntelligenceAgent(BaseAgent):
 
     async def process(self, data: List[Dict], shared_context: Dict[str, Any], knowledge_base: Dict[str, Any]) -> Dict[str, Any]:
         # Extract keywords from titles
-        all_text = ""
-        for p in data:
-            title = p.get('title', '')
-            if title:
-                all_text += " " + title
+        titles = [p.get('title', '') for p in data if p.get('title')]
+        all_text = " ".join(titles)
 
         # Simple tokenization and stop word removal (very basic)
         words = re.findall(r'\w+', all_text.lower())
