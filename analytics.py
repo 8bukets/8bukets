@@ -4,6 +4,7 @@ from collections import Counter
 from urllib.parse import urlparse
 from datetime import datetime
 import sys
+import re
 
 def load_data(filepath):
     try:
@@ -11,7 +12,7 @@ def load_data(filepath):
             return json.load(f)
     except FileNotFoundError:
         print(f"Error: File '{filepath}' not found.")
-        sys.exit(1)
+        return [] # Return empty list instead of exit for robustness
 
 def get_domain(url):
     if not url:
@@ -21,7 +22,42 @@ def get_domain(url):
     except:
         return None
 
-def generate_report(data, output_file):
+def analyze_keywords(data, top_n=10):
+    """Extracts top keywords from titles."""
+    stop_words = {
+        'the', 'and', 'in', 'of', 'for', 'a', 'to', 'on', 'with', 'at', 'by',
+        'from', 'is', 'it', 'your', 'my', 'webshop', 'online', 'store', 'shop',
+        'official', 'website', 'site', 'hr', 'com', 'eu', 'collection', 'new',
+        'sale', 'best', 'buy', 'free', 'shipping', 'delivery', 'price', 'deals',
+        'offer', 'discount', 'save', 'get', 'up', 'off', 'all', 'more'
+    }
+
+    all_words = []
+    for p in data:
+        title = p.get('title', '').lower()
+        # Remove special chars
+        words = re.findall(r'\b\w+\b', title)
+        for w in words:
+            if w not in stop_words and len(w) > 2:
+                all_words.append(w)
+
+    return Counter(all_words).most_common(top_n)
+
+def detect_new_posts(current_data, prev_data):
+    """Identifies posts present in current but not in prev."""
+    if not prev_data:
+        return []
+
+    prev_urls = {p.get('post_url') for p in prev_data if p.get('post_url')}
+    new_posts = []
+
+    for p in current_data:
+        if p.get('post_url') and p.get('post_url') not in prev_urls:
+            new_posts.append(p)
+
+    return new_posts
+
+def generate_report(data, output_file, prev_data=None):
     total_posts = len(data)
 
     # 1. Domain Analysis
@@ -64,10 +100,30 @@ def generate_report(data, output_file):
     authors = [p.get('author') for p in data if p.get('author')]
     author_counts = Counter(authors).most_common()
 
+    # 5. Intelligent Analysis
+    top_keywords = analyze_keywords(data)
+    new_posts = detect_new_posts(data, prev_data) if prev_data else []
+
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
+    md.append("# Webshop Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+
+    md.append("\n## Daily Insights")
+    if new_posts:
+        md.append(f"**🚀 {len(new_posts)} New Posts Detected!**")
+        for p in new_posts[:5]: # List top 5
+            md.append(f"- [{p.get('title', 'Untitled')}]({p.get('post_url')})")
+        if len(new_posts) > 5:
+            md.append(f"- ...and {len(new_posts) - 5} more.")
+    else:
+        md.append("No new posts detected since last run.")
+
+    md.append("\n### Trending Keywords")
+    md.append("| Keyword | Frequency |")
+    md.append("| :--- | :---: |")
+    for kw, count in top_keywords:
+        md.append(f"| {kw} | {count} |")
 
     md.append("\n## General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
@@ -102,10 +158,13 @@ def generate_report(data, output_file):
     print(f"Report generated: {output_file}")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
+    parser = argparse.ArgumentParser(description="Generate analytics report for Webshop data")
     parser.add_argument("--input", default="links.json", help="Input JSON file")
     parser.add_argument("--output", default="REPORT.md", help="Output Markdown report file")
+    parser.add_argument("--prev", help="Previous JSON file for comparison", required=False)
     args = parser.parse_args()
 
     data = load_data(args.input)
-    generate_report(data, args.output)
+    prev_data = load_data(args.prev) if args.prev else None
+
+    generate_report(data, args.output, prev_data)
