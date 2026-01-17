@@ -1,5 +1,6 @@
 from collections import Counter
 from typing import List, Dict, Any
+from itertools import chain
 from .base_agent import BaseAgent
 
 class AnalysisAgent(BaseAgent):
@@ -13,17 +14,18 @@ class AnalysisAgent(BaseAgent):
         total_posts = len(data)
 
         # Category Analysis
-        all_categories = []
-        for post in data:
-            all_categories.extend(post.get('categories', []))
+        # Optimization: Use chain.from_iterable to avoid creating a large intermediate list of all categories
+        all_categories = chain.from_iterable((post.get('categories') or []) for post in data)
         category_counts = dict(Counter(all_categories).most_common(5))
 
         # Author Analysis
-        authors = [post.get('author') for post in data if post.get('author')]
+        # Optimization: Use generator expression to avoid creating intermediate list
+        authors = (post.get('author') for post in data if post.get('author'))
         author_counts = dict(Counter(authors).most_common(5))
 
         # Domain Analysis
-        domains = [post.get('domain') for post in data if post.get('domain')]
+        # Optimization: Use generator expression to avoid creating intermediate list
+        domains = (post.get('domain') for post in data if post.get('domain'))
         domain_counts = dict(Counter(domains).most_common(5))
 
         return {
