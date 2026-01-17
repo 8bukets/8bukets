@@ -1,12 +1,21 @@
 # Markposition Analytics Report
 
-**Generated on:** 2025-12-13 12:59:36
+**Generated on:** 2026-01-17 08:26:26
 
+## Table of Contents
+- [General Statistics](#general-statistics)
+- [Top 10 Referenced Domains](#top-referenced-domains)
+- [Top 10 Categories](#top-categories)
+- [Posts by Year](#posts-by-year)
+- [Authors](#authors)
+
+<a name="general-statistics"></a>
 ## General Statistics
 - **Total Posts:** 679
 - **Date Range:** 2020-05-19 to 2022-10-05
 - **Unique Domains Linked:** 367
 
+<a name="top-referenced-domains"></a>
 ## Top 10 Referenced Domains
 | Domain | Count |
 | :--- | :---: |
@@ -21,6 +30,7 @@
 | trustarc.com | 11 |
 | ads.google.com | 10 |
 
+<a name="top-categories"></a>
 ## Top 10 Categories
 | Category | Count |
 | :--- | :---: |
@@ -31,6 +41,7 @@
 | Advertising | 3 |
 | Online | 2 |
 
+<a name="posts-by-year"></a>
 ## Posts by Year
 | Year | Count |
 | :--- | :---: |
@@ -38,5 +49,6 @@
 | 2021 | 190 |
 | 2020 | 254 |
 
+<a name="authors"></a>
 ## Authors
 - Filip Keser: 679 posts
