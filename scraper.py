@@ -7,6 +7,7 @@ import re
 import argparse
 import logging
 import time
+import sys
 from typing import List, Dict, Optional, Set, Tuple
 from urllib.parse import urlparse
 
@@ -14,9 +15,29 @@ from urllib.parse import urlparse
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
+    datefmt='%H:%M:%S',
+    stream=sys.stdout
 )
 logger = logging.getLogger(__name__)
+
+class Colors:
+    """ANSI color codes for terminal output."""
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+
+    @classmethod
+    def enable(cls):
+        """Check if colors should be enabled (TTY)."""
+        if not sys.stdout.isatty():
+            for attr in dir(cls):
+                if not attr.startswith('__') and isinstance(getattr(cls, attr), str):
+                    setattr(cls, attr, '')
 
 BASE_URL = "https://markposition.wordpress.com/"
 
@@ -133,7 +154,23 @@ class MarkPositionScraperAsync:
 
         return page_posts
 
+    def print_summary(self, total_posts: int, unique_links_count: int, duration: float):
+        """Print a beautiful summary box of the scraping results."""
+        Colors.enable()
+        width = 60
+        print(f"\n{Colors.CYAN}{'=' * width}{Colors.ENDC}")
+        print(f"{Colors.HEADER}📊 Scraper Summary{Colors.ENDC}".center(width + 9)) # +9 for color codes
+        print(f"{Colors.CYAN}{'-' * width}{Colors.ENDC}")
+
+        print(f"{Colors.BOLD}📝 Total Posts:{Colors.ENDC}      {Colors.GREEN}{total_posts}{Colors.ENDC}")
+        print(f"{Colors.BOLD}🔗 Unique Links:{Colors.ENDC}     {Colors.BLUE}{unique_links_count}{Colors.ENDC}")
+        print(f"{Colors.BOLD}⏱️  Time Taken:{Colors.ENDC}       {duration:.2f} seconds")
+        print(f"{Colors.BOLD}📂 Output:{Colors.ENDC}           {self.output_json}, {self.output_csv}")
+
+        print(f"{Colors.CYAN}{'=' * width}{Colors.ENDC}\n")
+
     async def scrape(self):
+        start_time = time.time()
         all_posts = []
 
         # Headers
@@ -200,7 +237,10 @@ class MarkPositionScraperAsync:
         for _, posts in results:
             all_posts.extend(posts)
 
-        self.save_data(all_posts)
+        unique_links_count = self.save_data(all_posts)
+
+        end_time = time.time()
+        self.print_summary(len(all_posts), unique_links_count, end_time - start_time)
 
     async def fetch_and_parse(self, session, page_num) -> Tuple[int, Optional[List[Dict]]]:
         html = await self.fetch_page(session, page_num)
@@ -252,6 +292,8 @@ class MarkPositionScraperAsync:
             logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
         except IOError as e:
             logger.error(f"Failed to save TXT: {e}")
+
+        return len(sorted_links)
 
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
