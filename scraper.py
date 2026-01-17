@@ -11,10 +11,34 @@ from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
 # Configure logging
+class ColorFormatter(logging.Formatter):
+    """Custom formatter to add colors and emojis to logs."""
+
+    grey = "\x1b[38;20m"
+    green = "\x1b[32;20m"
+    yellow = "\x1b[33;20m"
+    red = "\x1b[31;20m"
+    bold_red = "\x1b[31;1m"
+    reset = "\x1b[0m"
+
+    FORMATS = {
+        logging.DEBUG: grey + "%(asctime)s 🐛 %(levelname)s - %(message)s" + reset,
+        logging.INFO: green + "%(asctime)s ✨ %(message)s" + reset,
+        logging.WARNING: yellow + "%(asctime)s ⚠️  %(levelname)s - %(message)s" + reset,
+        logging.ERROR: red + "%(asctime)s ❌ %(levelname)s - %(message)s" + reset,
+        logging.CRITICAL: bold_red + "%(asctime)s 🛑 %(levelname)s - %(message)s" + reset
+    }
+
+    def format(self, record):
+        log_fmt = self.FORMATS.get(record.levelno)
+        formatter = logging.Formatter(log_fmt, datefmt='%H:%M:%S')
+        return formatter.format(record)
+
+handler = logging.StreamHandler()
+handler.setFormatter(ColorFormatter())
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
+    handlers=[handler]
 )
 logger = logging.getLogger(__name__)
 
