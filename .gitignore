@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+results/
+knowledge_base.json
+links.json
+links.csv
+unique_links.txt
+.DS_Store
+*.log
