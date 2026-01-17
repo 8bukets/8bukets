@@ -1,5 +1,6 @@
 from .base_agent import BaseAgent
 from collections import Counter
+from itertools import chain
 from typing import List, Dict, Any
 from urllib.parse import urlparse
 from datetime import datetime
@@ -23,25 +24,19 @@ class AnalysisAgent(BaseAgent):
         results['Total Posts'] = len(data)
 
         # Domain Analysis
-        domains = [self.get_domain(p.get('external_link')) for p in data if p.get('external_link')]
-        domain_counts = Counter(domains).most_common(5)
+        domain_counts = Counter(self.get_domain(p.get('external_link')) for p in data if p.get('external_link')).most_common(5)
         results['Top Domains'] = ", ".join([f"{d} ({c})" for d, c in domain_counts])
 
         # Category Analysis
-        all_categories = []
-        for p in data:
-            cats = p.get('categories', [])
-            if isinstance(cats, list):
-                all_categories.extend(cats)
-            elif isinstance(cats, str):
-                all_categories.append(cats)
+        def get_cats(p):
+            c = p.get('categories', [])
+            return c if isinstance(c, list) else [c] if isinstance(c, str) else []
 
-        category_counts = Counter(all_categories).most_common(5)
+        category_counts = Counter(chain.from_iterable(get_cats(p) for p in data)).most_common(5)
         results['Top Categories'] = ", ".join([f"{c} ({n})" for c, n in category_counts])
 
         # Author Analysis
-        authors = [p.get('author') for p in data if p.get('author')]
-        author_counts = Counter(authors).most_common(3)
+        author_counts = Counter(p.get('author') for p in data if p.get('author')).most_common(3)
         results['Top Authors'] = ", ".join([f"{a} ({c})" for a, c in author_counts])
 
         return results
