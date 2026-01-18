@@ -36,8 +36,12 @@ class TestBlogScraper(unittest.TestCase):
         if os.path.exists(self.json_name):
             os.remove(self.json_name)
 
+    @patch('scraper.is_safe_url')
     @patch('requests.get')
-    def test_fetch_page(self, mock_get):
+    def test_fetch_page(self, mock_get, mock_is_safe):
+        # Allow safe URL
+        mock_is_safe.return_value = True
+
         mock_response = MagicMock()
         mock_response.status_code = 200
         mock_response.content = self.mock_html.encode('utf-8')
@@ -46,6 +50,32 @@ class TestBlogScraper(unittest.TestCase):
         content = self.scraper.fetch_page("http://mock.url")
         self.assertIsNotNone(content)
         self.assertIn(b"Test Title", content)
+
+    @patch('socket.getaddrinfo')
+    def test_fetch_page_ssrf_protection(self, mock_getaddrinfo):
+        # Simulate local IP resolution for unsafe URL
+        # getaddrinfo returns list of (family, type, proto, canonname, sockaddr)
+        # sockaddr is (ip, port) for IPv4
+        mock_getaddrinfo.return_value = [(2, 1, 6, '', ('127.0.0.1', 80))]
+
+        # This should fail validation and NOT call requests.get
+        with patch('requests.get') as mock_req_get:
+            content = self.scraper.fetch_page("http://unsafe.local")
+            self.assertIsNone(content)
+            mock_req_get.assert_not_called()
+
+        # Simulate public IP resolution for safe URL
+        mock_getaddrinfo.return_value = [(2, 1, 6, '', ('8.8.8.8', 80))]
+
+        with patch('requests.get') as mock_req_get:
+            mock_response = MagicMock()
+            mock_response.status_code = 200
+            mock_response.content = b"Safe Content"
+            mock_req_get.return_value = mock_response
+
+            content = self.scraper.fetch_page("http://safe.public")
+            self.assertIsNotNone(content)
+            mock_req_get.assert_called()
 
     def test_parse_article(self):
         from bs4 import BeautifulSoup

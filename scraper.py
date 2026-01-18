@@ -6,6 +6,9 @@ import logging
 import argparse
 import sys
 import sqlite3
+import socket
+import ipaddress
+from urllib.parse import urlparse
 from datetime import datetime
 
 # Configure logging
@@ -17,6 +20,42 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
+
+def is_safe_url(url):
+    """
+    Validates the URL to prevent SSRF attacks.
+    Checks that the scheme is http/https and the IP address is not private/loopback.
+    """
+    try:
+        parsed = urlparse(url)
+        if parsed.scheme not in ('http', 'https'):
+            return False
+
+        hostname = parsed.hostname
+        if not hostname:
+            return False
+
+        # Resolve hostname to IP
+        # use getaddrinfo to support IPv4 and IPv6
+        addr_info = socket.getaddrinfo(hostname, None)
+
+        for family, type, proto, canonname, sockaddr in addr_info:
+            ip = sockaddr[0]
+            try:
+                ip_obj = ipaddress.ip_address(ip)
+            except ValueError:
+                continue
+
+            if (ip_obj.is_private or
+                ip_obj.is_loopback or
+                ip_obj.is_reserved or
+                ip_obj.is_link_local):
+                return False
+
+        return True
+    except Exception as e:
+        logger.error(f"URL validation error: {e}")
+        return False
 
 class BlogScraper:
     def __init__(self, base_url, output_json="wishlist_data.json", db_name="wishlist_data.db"):
@@ -127,6 +166,10 @@ class BlogScraper:
         return False
 
     def fetch_page(self, url):
+        if not is_safe_url(url):
+            logger.error(f"Blocked unsafe URL: {url}")
+            return None
+
         logger.info(f"Fetching {url}...")
         try:
             response = requests.get(url, headers=self.headers, timeout=10)
