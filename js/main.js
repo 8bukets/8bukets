@@ -46,7 +46,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const articleList = document.getElementById('article-list');
 
     if (searchInput && articleList) {
-        searchInput.addEventListener('input', (e) => {
+        // Debounce function to limit the rate of execution
+        const debounce = (func, delay) => {
+            let timeoutId;
+            return (...args) => {
+                clearTimeout(timeoutId);
+                timeoutId = setTimeout(() => {
+                    func.apply(null, args);
+                }, delay);
+            };
+        };
+
+        const performSearch = (e) => {
             const term = e.target.value.toLowerCase();
             const articles = articleList.getElementsByTagName('article');
 
@@ -60,7 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     article.style.display = 'none';
                 }
             });
-        });
+        };
+
+        // Apply debounce to the search handler (300ms delay)
+        searchInput.addEventListener('input', debounce(performSearch, 300));
     }
 
     // Contact Form Validation
