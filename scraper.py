@@ -9,6 +9,7 @@ import logging
 import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse, urljoin
+from urllib.robotparser import RobotFileParser
 
 # Configure logging
 logging.basicConfig(
@@ -28,6 +29,28 @@ class OracleNewsScraper:
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.base_url = BASE_URL
+        self.rp = RobotFileParser()
+
+    def check_robots_txt(self):
+        """Check if scraping is allowed by robots.txt"""
+        parsed_url = urlparse(self.base_url)
+        robots_url = f"{parsed_url.scheme}://{parsed_url.netloc}/robots.txt"
+        logger.info(f"Checking robots.txt at {robots_url}...")
+        try:
+            self.rp.set_url(robots_url)
+            self.rp.read()
+            if not self.rp.can_fetch("*", self.base_url):
+                logger.warning(f"robots.txt disallows scraping {self.base_url}")
+                # For this exercise, we might warn but proceed, or strictly fail.
+                # Given "fully autonomous" usually implies being a good citizen:
+                logger.error("Aborting scrape due to robots.txt restrictions.")
+                return False
+            else:
+                logger.info("robots.txt allows scraping.")
+                return True
+        except Exception as e:
+            logger.warning(f"Could not fetch/parse robots.txt: {e}. Proceeding with caution.")
+            return True
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -120,6 +143,11 @@ class OracleNewsScraper:
         return articles
 
     async def scrape(self):
+        # Check robots.txt first (synchronously for simplicity in this async function, or wrap it)
+        # RobotFileParser uses urllib which is blocking, but for one request it's acceptable here.
+        if not self.check_robots_txt():
+            return
+
         all_posts = []
 
         # Headers to mimic browser
