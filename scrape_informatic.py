@@ -5,6 +5,8 @@ import time
 import logging
 import argparse
 import sys
+import socket
+import ipaddress
 from urllib.parse import urlparse
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
@@ -53,6 +55,51 @@ def get_session():
     })
 
     return session
+
+def is_safe_url(url: str) -> bool:
+    """
+    Validates that a URL is safe to scrape:
+    1. Must use http or https scheme.
+    2. Hostname must resolve to a public IP address (no loopback, private, link-local).
+    """
+    if not url:
+        return False
+
+    try:
+        parsed = urlparse(url)
+    except Exception:
+        return False
+
+    if parsed.scheme not in ('http', 'https'):
+        return False
+
+    if not parsed.hostname:
+        return False
+
+    try:
+        # Resolve hostname to IP(s)
+        # using getaddrinfo to support both IPv4 and IPv6 if needed,
+        # though we primarily check if the resulting IP is safe.
+        addr_info = socket.getaddrinfo(parsed.hostname, None)
+
+        for family, _, _, _, sockaddr in addr_info:
+            ip_str = sockaddr[0]
+            ip = ipaddress.ip_address(ip_str)
+
+            # Check for private/unsafe ranges
+            if (ip.is_private or
+                ip.is_loopback or
+                ip.is_link_local or
+                ip.is_multicast or
+                ip.is_reserved):
+                logging.warning(f"Blocked unsafe IP {ip_str} for URL {url}")
+                return False
+
+        return True
+    except (socket.gaierror, ValueError):
+        # DNS resolution failed or invalid IP
+        logging.warning(f"DNS resolution failed or invalid IP for URL {url}")
+        return False
 
 def is_external_link(link_url: str, base_url: str) -> bool:
     """
@@ -165,9 +212,14 @@ def scrape(output_file: str, max_pages: int = 0):
         # Pagination
         nav_previous = soup.find('div', class_='nav-previous')
         if nav_previous and nav_previous.find('a'):
-            current_url = nav_previous.find('a')['href']
-            page += 1
-            time.sleep(1) # Polite delay
+            next_url = nav_previous.find('a')['href']
+            if is_safe_url(next_url):
+                current_url = next_url
+                page += 1
+                time.sleep(1) # Polite delay
+            else:
+                logging.warning(f"Unsafe pagination URL found: {next_url}. Stopping.")
+                current_url = None
         else:
             current_url = None
             logging.info("No more pages found.")
