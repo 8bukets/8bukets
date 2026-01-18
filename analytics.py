@@ -4,6 +4,7 @@ from collections import Counter
 from urllib.parse import urlparse
 from datetime import datetime
 import sys
+import itertools
 
 def load_data(filepath):
     try:
@@ -25,16 +26,18 @@ def generate_report(data, output_file):
     total_posts = len(data)
 
     # 1. Domain Analysis
-    domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
-    domain_counts = Counter(domains).most_common(10)
+    # Optimization: Use generator expression to avoid creating intermediate list
+    domains = (get_domain(p.get('external_link')) for p in data if p.get('external_link'))
+    domain_counter = Counter(domains)
+    domain_counts = domain_counter.most_common(10)
 
     # 2. Category Analysis
-    all_categories = []
-    for p in data:
-        cats = p.get('categories', [])
-        if cats:
-            all_categories.extend(cats)
-    category_counts = Counter(all_categories).most_common(10)
+    # Optimization: Use chain.from_iterable to strictly evaluate categories lazily
+    category_counts = Counter(
+        itertools.chain.from_iterable(
+            (p.get('categories') or []) for p in data
+        )
+    ).most_common(10)
 
     # 3. Date Analysis
     dates = []
@@ -72,7 +75,7 @@ def generate_report(data, output_file):
     md.append("\n## General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append(f"- **Unique Domains Linked:** {len(domain_counter)}")
 
     md.append("\n## Top 10 Referenced Domains")
     md.append("| Domain | Count |")
