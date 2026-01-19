@@ -1,0 +1,4 @@
+## 2024-05-22 - [CSV Formula Injection Mitigation]
+**Vulnerability:** Scraped data written to CSV files is not sanitized. Malicious actors could inject formulas (starting with `=`, `+`, `-`, `@`) into fields like `Title` or `Author` on the target website. If an admin opens the resulting CSV in Excel/Sheets, these formulas execute, potentially leading to command execution or data exfiltration.
+**Learning:** Even "read-only" data scraping pipelines have injection risks if the output format (CSV) interprets certain characters as executable code. Trusting data from external websites (like blog comments or titles) is dangerous when generating reports.
+**Prevention:** Always sanitize data before writing to CSV. Prepend a single quote `'` to any field starting with formula triggers (`=`, `+`, `-`, `@`) to force the spreadsheet software to treat the cell as text. Implemented `sanitize_for_csv` method in `MarkPositionScraperAsync`.
