@@ -25,16 +25,13 @@ def generate_report(data, output_file):
     total_posts = len(data)
 
     # 1. Domain Analysis
-    domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
-    domain_counts = Counter(domains).most_common(10)
+    domains_gen = (get_domain(p.get('external_link')) for p in data if p.get('external_link'))
+    domain_counter = Counter(domains_gen)
+    domain_counts = domain_counter.most_common(10)
 
     # 2. Category Analysis
-    all_categories = []
-    for p in data:
-        cats = p.get('categories', [])
-        if cats:
-            all_categories.extend(cats)
-    category_counts = Counter(all_categories).most_common(10)
+    categories_gen = (cat for p in data for cat in (p.get('categories') or []))
+    category_counts = Counter(categories_gen).most_common(10)
 
     # 3. Date Analysis
     dates = []
@@ -61,8 +58,8 @@ def generate_report(data, output_file):
         year_counts = []
 
     # 4. Author Analysis
-    authors = [p.get('author') for p in data if p.get('author')]
-    author_counts = Counter(authors).most_common()
+    authors_gen = (p.get('author') for p in data if p.get('author'))
+    author_counts = Counter(authors_gen).most_common()
 
     # Generate Markdown
     md = []
@@ -72,7 +69,7 @@ def generate_report(data, output_file):
     md.append("\n## General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append(f"- **Unique Domains Linked:** {len(domain_counter)}")
 
     md.append("\n## Top 10 Referenced Domains")
     md.append("| Domain | Count |")
