@@ -4,6 +4,20 @@ from collections import Counter
 from urllib.parse import urlparse
 from datetime import datetime
 import sys
+import html
+
+def sanitize_text(text):
+    """Sanitize text for Markdown tables and XSS prevention."""
+    if text is None:
+        return "N/A"
+    s = str(text)
+    # Escape HTML characters to prevent XSS
+    s = html.escape(s)
+    # Escape backslashes first to prevent them from acting as escape characters
+    s = s.replace('\\', '\\\\')
+    # Escape pipes to prevent Markdown table breakage
+    s = s.replace('|', '\\|')
+    return s
 
 def load_data(filepath):
     try:
@@ -78,13 +92,13 @@ def generate_report(data, output_file):
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        md.append(f"| {sanitize_text(domain)} | {count} |")
 
     md.append("\n## Top 10 Categories")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        md.append(f"| {sanitize_text(cat)} | {count} |")
 
     md.append("\n## Posts by Year")
     md.append("| Year | Count |")
@@ -94,7 +108,7 @@ def generate_report(data, output_file):
 
     md.append("\n## Authors")
     for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+        md.append(f"- {sanitize_text(author)}: {count} posts")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
