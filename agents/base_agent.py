@@ -4,12 +4,8 @@ class BaseAgent:
     def __init__(self, name):
         self.name = name
         self.logger = logging.getLogger(self.name)
+        # Only set level, do not add handlers as root logger handles propagation
         self.logger.setLevel(logging.INFO)
-        if not self.logger.handlers:
-            handler = logging.StreamHandler()
-            formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-            handler.setFormatter(formatter)
-            self.logger.addHandler(handler)
 
     def run(self, data=None):
         self.logger.info("Starting...")
