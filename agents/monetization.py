@@ -4,6 +4,13 @@ class MonetizationAgent(BaseAgent):
     def __init__(self):
         super().__init__("Monetization")
 
+    def sanitize_input(self, text):
+        """Sanitize text to prevent Markdown injection."""
+        if not text:
+            return "Untitled"
+        # Escape markdown special characters to prevent injection in reports
+        return text.replace('[', '\\[').replace(']', '\\]').replace('(', '\\(').replace(')', '\\)')
+
     def perform_task(self, data):
         # Data is raw posts
         if not data:
@@ -13,7 +20,8 @@ class MonetizationAgent(BaseAgent):
         for post in data:
             content = post.get('content', '').lower()
             if 'adsense' not in content and 'affiliate' not in content:
-                opportunities.append(f"Post '{post.get('title')}' has no obvious monetization terms.")
+                safe_title = self.sanitize_input(post.get('title'))
+                opportunities.append(f"Post '{safe_title}' has no obvious monetization terms.")
 
         # Simple heuristic
         if len(opportunities) > 5:
