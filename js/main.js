@@ -46,21 +46,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const articleList = document.getElementById('article-list');
 
     if (searchInput && articleList) {
-        searchInput.addEventListener('input', (e) => {
-            const term = e.target.value.toLowerCase();
-            const articles = articleList.getElementsByTagName('article');
+        // ⚡ Bolt Optimization: Cache article text to prevent DOM thrashing
+        // and excessive reads during search operations.
+        const articles = Array.from(articleList.getElementsByTagName('article'));
+        const searchIndex = articles.map(article => ({
+            element: article,
+            text: article.textContent.toLowerCase()
+        }));
 
-            Array.from(articles).forEach(article => {
-                // Search in the entire text content of the article
-                const text = article.textContent.toLowerCase();
-
-                if (text.includes(term)) {
-                    article.style.display = 'block';
+        const performSearch = (term) => {
+            // Use cached index for O(1) property access instead of DOM read
+            searchIndex.forEach(item => {
+                if (item.text.includes(term)) {
+                    item.element.style.display = 'block';
                 } else {
-                    article.style.display = 'none';
+                    item.element.style.display = 'none';
                 }
             });
-        });
+        };
+
+        // ⚡ Bolt Optimization: Debounce search to reduce main thread work
+        const debounce = (func, wait) => {
+            let timeout;
+            return function(...args) {
+                const context = this;
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(context, args), wait);
+            };
+        };
+
+        searchInput.addEventListener('input', debounce((e) => {
+            const term = e.target.value.toLowerCase();
+            performSearch(term);
+        }, 300));
     }
 
     // Contact Form Validation
