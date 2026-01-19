@@ -99,35 +99,49 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
+    md.append("<a name=\"top\"></a>")
+    md.append("# 📊 Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
+    # Table of Contents
+    md.append("\n## 📑 Table of Contents")
+    md.append("- [General Statistics](#general-statistics)")
+    md.append("- [Top 10 Referenced Domains](#top-10-referenced-domains)")
+    md.append("- [Top 10 Categories](#top-10-categories)")
+    md.append("- [Posts by Year](#posts-by-year)")
+    md.append("- [Authors](#authors)")
+
+    md.append("\n## <a name=\"general-statistics\"></a>📈 General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(unique_domains)}")
+    md.append("\n[⬆️ Back to Top](#top)")
 
-    md.append("\n## Top 10 Referenced Domains")
+    md.append("\n## <a name=\"top-10-referenced-domains\"></a>🌐 Top 10 Referenced Domains")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in top_domains:
         md.append(f"| {domain} | {count} |")
+    md.append("\n[⬆️ Back to Top](#top)")
 
-    md.append("\n## Top 10 Categories")
+    md.append("\n## <a name=\"top-10-categories\"></a>📂 Top 10 Categories")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in top_categories:
         md.append(f"| {cat} | {count} |")
+    md.append("\n[⬆️ Back to Top](#top)")
 
-    md.append("\n## Posts by Year")
+    md.append("\n## <a name=\"posts-by-year\"></a>📅 Posts by Year")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
     for year, count in sorted_years:
         md.append(f"| {year} | {count} |")
+    md.append("\n[⬆️ Back to Top](#top)")
 
-    md.append("\n## Authors")
+    md.append("\n## <a name=\"authors\"></a>✍️ Authors")
     for author, count in sorted_authors:
         md.append(f"- {author}: {count} posts")
+    md.append("\n[⬆️ Back to Top](#top)")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
