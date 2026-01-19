@@ -29,6 +29,17 @@ class BlogScraper:
         self.data = []
         self.init_db()
 
+    def validate_url(self, url):
+        """
+        Validates that the URL starts with http:// or https:// to prevent Stored XSS.
+        """
+        if not url:
+            return None
+        url = url.strip()
+        if url.lower().startswith(('http://', 'https://')):
+            return url
+        return None
+
     def init_db(self):
         """Initialize the SQLite database."""
         try:
@@ -142,7 +153,8 @@ class BlogScraper:
         # Title and Post URL
         title_tag = article.select_one("header.entry-header h2.entry-title a")
         item['title'] = title_tag.get_text(strip=True) if title_tag else None
-        item['post_url'] = title_tag.get('href') if title_tag else None
+        raw_post_url = title_tag.get('href') if title_tag else None
+        item['post_url'] = self.validate_url(raw_post_url)
 
         # Link (External)
         content_div = article.select_one("div.entry-content")
@@ -163,7 +175,7 @@ class BlogScraper:
                 if text_content.startswith('http'):
                     external_link = text_content.split()[0]
 
-        item['external_link'] = external_link
+        item['external_link'] = self.validate_url(external_link)
 
         # Date
         time_tag = article.select_one(".entry-meta .posted-on time")
