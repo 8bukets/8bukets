@@ -33,6 +33,18 @@ class OracleNewsScraper:
         text = text.replace('\xa0', ' ')
         return re.sub(r'\s+', ' ', text).strip()
 
+    def sanitize_for_csv(self, field: str) -> str:
+        """
+        Sanitize a field for CSV injection (Formula Injection).
+        If the field starts with =, +, -, or @, prepend a single quote.
+        """
+        if not field:
+            return ""
+        field_str = str(field)
+        if field_str.startswith(('=', '+', '-', '@')):
+            return f"'{field_str}"
+        return field_str
+
     def parse_date(self, date_text: str) -> Optional[Dict[str, str]]:
         """Parse date string like 'Oct 15, 2025' to ISO format."""
         try:
@@ -153,14 +165,24 @@ class OracleNewsScraper:
                 writer = csv.writer(f)
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
+                    # Prepare fields
+                    title = post.get('title', '')
+                    date = post.get('date', '')
+                    author = post.get('author', '')
+                    categories = ", ".join(post.get('categories', []))
+                    ext_link = post.get('external_link', '')
+                    domain = post.get('domain', '')
+                    post_url = post.get('post_url', '')
+
+                    # Write sanitized row
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        self.sanitize_for_csv(title),
+                        self.sanitize_for_csv(date),
+                        self.sanitize_for_csv(author),
+                        self.sanitize_for_csv(categories),
+                        self.sanitize_for_csv(ext_link),
+                        self.sanitize_for_csv(domain),
+                        self.sanitize_for_csv(post_url)
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
