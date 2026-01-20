@@ -46,7 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const articleList = document.getElementById('article-list');
 
     if (searchInput && articleList) {
-        searchInput.addEventListener('input', (e) => {
+        // ⚡ Bolt Optimization: Debounce the search input to prevent excessive DOM updates
+        const performSearch = debounce((e) => {
             const term = e.target.value.toLowerCase();
             const articles = articleList.getElementsByTagName('article');
 
@@ -60,7 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     article.style.display = 'none';
                 }
             });
-        });
+        }, 300);
+
+        searchInput.addEventListener('input', performSearch);
     }
 
     // Contact Form Validation
@@ -128,4 +131,14 @@ function filterByCategory(category) {
             article.style.display = 'none';
         }
     });
+}
+
+// ⚡ Bolt Utility: Debounce function to limit the rate at which a function can fire.
+function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+        const context = this;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), wait);
+    };
 }
