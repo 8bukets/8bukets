@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import time
+from urllib.parse import urlparse
 import logging
 import argparse
 import sys
@@ -126,7 +127,19 @@ class BlogScraper:
 
         return False
 
+    def validate_url(self, url):
+        """Validates that the URL uses http/https schemes."""
+        try:
+            parsed = urlparse(url)
+            return parsed.scheme in ('http', 'https') and bool(parsed.netloc)
+        except Exception:
+            return False
+
     def fetch_page(self, url):
+        if not self.validate_url(url):
+            logger.error(f"Invalid URL detected (SSRF protection): {url}")
+            return None
+
         logger.info(f"Fetching {url}...")
         try:
             response = requests.get(url, headers=self.headers, timeout=10)
@@ -162,6 +175,11 @@ class BlogScraper:
                 text_content = content_div.get_text(strip=True)
                 if text_content.startswith('http'):
                     external_link = text_content.split()[0]
+
+        # Validate extracted external link
+        if external_link and not self.validate_url(external_link):
+            logger.warning(f"Ignored invalid external link: {external_link}")
+            external_link = None
 
         item['external_link'] = external_link
 
