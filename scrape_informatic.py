@@ -54,7 +54,7 @@ def get_session():
 
     return session
 
-def is_external_link(link_url: str, base_url: str) -> bool:
+def is_external_link(link_url: str, base_netloc: str) -> bool:
     """
     Checks if a link is external to the base domain.
     """
@@ -63,7 +63,6 @@ def is_external_link(link_url: str, base_url: str) -> bool:
 
     try:
         parsed_link = urlparse(link_url)
-        parsed_base = urlparse(base_url)
     except Exception:
         return False
 
@@ -71,9 +70,9 @@ def is_external_link(link_url: str, base_url: str) -> bool:
     if not parsed_link.netloc:
         return False
 
-    return parsed_link.netloc != parsed_base.netloc
+    return parsed_link.netloc != base_netloc
 
-def parse_post_html(post_soup, base_url: str) -> Post:
+def parse_post_html(post_soup, base_netloc: str) -> Post:
     """
     Parses a single article soup object and returns a Post object.
     """
@@ -111,7 +110,7 @@ def parse_post_html(post_soup, base_url: str) -> Post:
         # Extract external links
         for link in content_div.find_all('a'):
             href = link.get('href')
-            if href and is_external_link(href, base_url):
+            if href and is_external_link(href, base_netloc):
                 external_links.append(href)
 
     # Image
@@ -136,6 +135,8 @@ def scrape(output_file: str, max_pages: int = 0):
     all_posts = []
     page = 1
     current_url = BASE_URL
+    # Bolt: Pre-calculate netloc to improve performance in inner loops
+    base_netloc = urlparse(BASE_URL).netloc
 
     while current_url:
         if max_pages > 0 and page > max_pages:
@@ -157,7 +158,7 @@ def scrape(output_file: str, max_pages: int = 0):
 
         for post_soup in posts:
             try:
-                post_obj = parse_post_html(post_soup, BASE_URL)
+                post_obj = parse_post_html(post_soup, base_netloc)
                 all_posts.append(post_obj)
             except Exception as e:
                 logging.error(f"Error parsing post on page {page}: {e}")
