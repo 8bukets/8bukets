@@ -12,6 +12,15 @@ def load_data(filepath):
         print(f"Error: File '{filepath}' not found.")
         sys.exit(1)
 
+def draw_bar(count, total, max_width=20):
+    """Generates an ASCII bar chart."""
+    if total == 0:
+        return ""
+    filled_length = int(max_width * count // total)
+    bar = '█' * filled_length + '░' * (max_width - filled_length)
+    percent = (count / total) * 100
+    return f"`{bar}` {percent:.1f}%"
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
@@ -57,35 +66,54 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
+
+    # Back to Top Anchor
+    md.append("<a name=\"top\"></a>")
+
     md.append("# Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
+    # Table of Contents
+    md.append("\n## Table of Contents")
+    md.append("- [General Statistics](#general-statistics)")
+    md.append("- [Top 10 Referenced Domains](#top-10-referenced-domains)")
+    md.append("- [Top 10 Categories](#top-10-categories)")
+    md.append("- [Posts by Year](#posts-by-year)")
+    md.append("- [Authors](#authors)")
+
     md.append("\n## General Statistics")
-    md.append(f"- **Total Posts:** {total_posts}")
+    md.append(f"- **Total Posts:** {total_posts:,}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append(f"- **Unique Domains Linked:** {len(set(domains)):,}")
+    md.append("\n[Back to Top](#top)")
 
     md.append("\n## Top 10 Referenced Domains")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        md.append(f"| {domain} | {count:,} |")
+    md.append("\n[Back to Top](#top)")
 
     md.append("\n## Top 10 Categories")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        md.append(f"| {cat} | {count:,} |")
+    md.append("\n[Back to Top](#top)")
 
     md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Year | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_count = max([c for _, c in year_counts]) if year_counts else 0
     for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+        bar = draw_bar(count, max_count) if max_count else ""
+        md.append(f"| {year} | {count:,} | {bar} |")
+    md.append("\n[Back to Top](#top)")
 
     md.append("\n## Authors")
     for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+        md.append(f"- {author}: {count:,} posts")
+    md.append("\n[Back to Top](#top)")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
