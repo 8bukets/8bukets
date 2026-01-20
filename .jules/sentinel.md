@@ -1,0 +1,4 @@
+## 2025-10-27 - Stored XSS and Markdown Table Injection in Analytics Report
+**Vulnerability:** `analytics.py` generated Markdown reports (`REPORT.md`) by directly concatenating user-controlled input (authors, categories, domains) into the file. This allowed malicious actors to inject HTML (Stored XSS) or Markdown table syntax (breaking layout or injecting columns).
+**Learning:** Generating reports or documents from untrusted data requires sanitization, even if the output format is "just Markdown", as Markdown supports raw HTML and structural elements.
+**Prevention:** Always sanitize user input before writing to output files. For Markdown, escape HTML characters (`<`, `>`, `&`, `'`, `"`) and structural characters (like `|` in tables). Use helper functions like `sanitize_markdown` to centralize this logic.
