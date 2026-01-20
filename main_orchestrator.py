@@ -2,6 +2,7 @@ import logging
 import sys
 import datetime
 import os
+import html
 from agents.researcher import ResearcherAgent
 from agents.analyzer import AnalyzerAgent
 from agents.intelligence import IntelligenceAgent
@@ -17,6 +18,27 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger("Orchestrator")
+
+def sanitize_text(text):
+    """
+    Sanitizes text to prevent HTML Injection/XSS and Markdown Link Injection.
+    """
+    if text is None:
+        return ""
+
+    # Ensure it's a string
+    text_str = str(text)
+
+    # 1. Escape HTML (prevents <script>, <img onerror>, etc.)
+    safe_text = html.escape(text_str)
+
+    # 2. Neutralize dangerous URL schemes in Markdown links
+    # This prevents [Click Me](javascript:alert(1))
+    safe_text = safe_text.replace("javascript:", "x-javascript:")
+    safe_text = safe_text.replace("vbscript:", "x-vbscript:")
+    safe_text = safe_text.replace("data:", "x-data:")
+
+    return safe_text
 
 def run_orchestration(save_report=True):
     logger.info(">>> STARTING AUTONOMOUS AGENT SWARM (v2.0 - Evolving) <<<")
@@ -96,54 +118,54 @@ def save_daily_report(data):
         # Health
         f.write("## 1. System Health & Environment\n")
         status = data.get('health', {})
-        f.write(f"- **Site Status:** {status.get('site_status')} (Code: {status.get('site_code')})\n")
-        f.write(f"- **Robots.txt Access:** {status.get('robots_txt_accessible')}\n")
-        f.write(f"- **Googlebot Allowed:** {status.get('googlebot_allowed')}\n\n")
+        f.write(f"- **Site Status:** {sanitize_text(status.get('site_status'))} (Code: {sanitize_text(status.get('site_code'))})\n")
+        f.write(f"- **Robots.txt Access:** {sanitize_text(status.get('robots_txt_accessible'))}\n")
+        f.write(f"- **Googlebot Allowed:** {sanitize_text(status.get('googlebot_allowed'))}\n\n")
 
         # Research Stats
         research = data.get('research', {})
         f.write("## 2. Research Summary\n")
-        f.write(f"- **New Posts Scraped:** {research.get('posts_scraped')}\n")
-        f.write(f"- **Google Listings Found:** {research.get('google_results')}\n\n")
+        f.write(f"- **New Posts Scraped:** {sanitize_text(research.get('posts_scraped'))}\n")
+        f.write(f"- **Google Listings Found:** {sanitize_text(research.get('google_results'))}\n\n")
 
         # Intelligence & Evolution
         intel = data.get('intelligence', {})
         f.write("## 3. Strategic Intelligence & Evolution\n")
-        f.write(f"- **Evolution Status:** {intel.get('evolution_status')}\n")
-        f.write(f"- **Recommended Focus:** {intel.get('recommended_focus')}\n")
+        f.write(f"- **Evolution Status:** {sanitize_text(intel.get('evolution_status'))}\n")
+        f.write(f"- **Recommended Focus:** {sanitize_text(intel.get('recommended_focus'))}\n")
         for insight in intel.get('insights', []):
-            f.write(f"- {insight}\n")
+            f.write(f"- {sanitize_text(insight)}\n")
         f.write("\n")
 
         # Advertising
         ads = data.get('advertising', {})
         f.write("## 4. Advertising & Targeting (Google Antigravity Colab)\n")
-        f.write(f"- **Target Audience:** {ads.get('target_audience')}\n")
+        f.write(f"- **Target Audience:** {sanitize_text(ads.get('target_audience'))}\n")
         f.write("- **Bid Strategy:**\n")
         for bid in ads.get('bid_strategy', []):
-            f.write(f"  - **{bid['keyword']}**: {bid['suggested_bid']} ({bid['strategy']})\n")
+            f.write(f"  - **{sanitize_text(bid['keyword'])}**: {sanitize_text(bid['suggested_bid'])} ({sanitize_text(bid['strategy'])})\n")
         f.write("\n")
 
         # Monetization
         money = data.get('monetization', {})
         f.write("## 5. Monetization Review\n")
-        f.write(f"- **Summary:** {money.get('summary')}\n")
+        f.write(f"- **Summary:** {sanitize_text(money.get('summary'))}\n")
         for detail in money.get('details', []):
-            f.write(f"- {detail}\n")
+            f.write(f"- {sanitize_text(detail)}\n")
         f.write("\n")
 
         # Creativity
         creative = data.get('creativity', {})
         f.write("## 6. Creative Brainstorming\n")
         for idea in creative.get('creative_ideas', []):
-            f.write(f"- {idea}\n")
+            f.write(f"- {sanitize_text(idea)}\n")
         f.write("\n")
 
         # Content Draft
         draft = data.get('content_draft', {})
         f.write("## 7. Automated Content Draft\n")
-        f.write(f"### {draft.get('draft_title', 'Untitled')}\n\n")
-        f.write(draft.get('draft_content', ''))
+        f.write(f"### {sanitize_text(draft.get('draft_title', 'Untitled'))}\n\n")
+        f.write(sanitize_text(draft.get('draft_content', '')))
 
     logger.info(f"Report saved to {report_file}")
 
