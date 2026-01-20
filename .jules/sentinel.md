@@ -1,0 +1,4 @@
+## 2024-05-22 - CSV Injection Vulnerability
+**Vulnerability:** The scraper was writing user-controlled content (titles, dates, authors) directly to a CSV file without sanitization. Malicious content starting with `=`, `+`, `-`, or `@` could trigger formula execution in spreadsheet software (Excel, LibreOffice) when the CSV is opened, potentially leading to Remote Code Execution (RCE) on the analyst's machine.
+**Learning:** Data extracted from web pages should never be trusted, even if it looks like plain text. Libraries like `csv` do not automatically sanitize for formula injection; they only handle CSV format escaping (like quotes and delimiters).
+**Prevention:** Always sanitize data before writing to CSVs meant for human consumption. Prepend a single quote `'` to fields starting with dangerous characters (`=`, `+`, `-`, `@`) to force them to be treated as literal strings.
