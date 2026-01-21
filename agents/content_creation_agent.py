@@ -1,6 +1,7 @@
 import logging
 import random
 from datetime import datetime
+from agents.security_utils import sanitize_for_markdown
 
 logger = logging.getLogger("ContentCreationAgent")
 
@@ -28,13 +29,15 @@ class ContentCreationAgent:
         for topic, titles in trends.items():
             if topic == "General": continue
 
-            md_content.append(f"\n### Trend: {topic.title()}")
-            md_content.append(f"We've seen significant activity around **{topic}**. Here are the headlines:")
+            safe_topic = sanitize_for_markdown(topic)
+            md_content.append(f"\n### Trend: {safe_topic.title()}")
+            md_content.append(f"We've seen significant activity around **{safe_topic}**. Here are the headlines:")
             for title in titles[:5]: # Limit to 5
-                md_content.append(f"- {title}")
+                safe_title = sanitize_for_markdown(title)
+                md_content.append(f"- {safe_title}")
 
             # Creative addition
-            creative_insight = self._generate_creative_insight(topic)
+            creative_insight = self._generate_creative_insight(safe_topic)
             md_content.append(f"\n*> Insight: {creative_insight}*")
 
         return "\n".join(md_content)
