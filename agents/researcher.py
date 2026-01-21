@@ -1,10 +1,13 @@
 from .base_agent import BaseAgent
-import subprocess
 import sys
 import json
 import os
 import logging
 from typing import List, Dict
+
+# Import scrapers directly to avoid subprocess overhead
+import scrape_informatic
+import google_search_scraper
 
 class ResearcherAgent(BaseAgent):
     def __init__(self):
@@ -21,15 +24,8 @@ class ResearcherAgent(BaseAgent):
 
         # 1. Scrape Blog Content
         try:
-            # We assume scrape_informatic.py is in the root directory
-            cmd = [sys.executable, "scrape_informatic.py", "-n", str(limit), "-o", output_file]
-            subprocess.run(cmd, check=True)
-
-            if os.path.exists(output_file):
-                with open(output_file, 'r', encoding='utf-8') as f:
-                    results['blog_posts'] = json.load(f)
-            else:
-                results['blog_posts'] = []
+            # Optimization: Direct function call instead of subprocess
+            results['blog_posts'] = scrape_informatic.scrape(output_file, max_pages=limit)
         except Exception as e:
             self.logger.error(f"Blog scraping failed: {e}")
             results['blog_posts'] = []
@@ -38,18 +34,16 @@ class ResearcherAgent(BaseAgent):
         self.logger.info("Checking Google Listings...")
         try:
             search_output = "google_search_results.json"
-            # We assume google_search_scraper.py is in the root directory
-            # We need to create google_search_scraper.py if it doesn't exist or is not importable
-            # Since we are using subprocess, we can call it.
-            # Wait, I need to restore google_search_scraper.py first.
-            cmd = [sys.executable, "google_search_scraper.py", "-o", search_output]
-            subprocess.run(cmd, check=True)
 
-            if os.path.exists(search_output):
-                with open(search_output, 'r', encoding='utf-8') as f:
-                    results['google_listings'] = json.load(f)
-            else:
-                results['google_listings'] = []
+            # Optimization: Direct function call instead of subprocess
+            results['google_listings'] = google_search_scraper.perform_google_search(
+                query="site:informaticmagazine.data.blog",
+                num_results=10
+            )
+            # Persist to file to maintain behavior
+            with open(search_output, 'w', encoding='utf-8') as f:
+                json.dump(results['google_listings'], f, indent=4, ensure_ascii=False)
+
         except Exception as e:
             self.logger.error(f"Google search scraping failed: {e}")
             results['google_listings'] = []
