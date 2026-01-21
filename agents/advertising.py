@@ -1,5 +1,6 @@
 from .base_agent import BaseAgent
 import random
+from security_utils import sanitize_for_markdown
 
 class AdvertisingAgent(BaseAgent):
     def __init__(self):
@@ -13,7 +14,11 @@ class AdvertisingAgent(BaseAgent):
         # 1. Targeting
         target_audience = "General Audience"
         if categories:
-            primary_cat = categories[0][0].lower()
+            # Safely get the category name
+            primary_cat_raw = categories[0][0]
+            # Sanitize just in case, though usually internal categorization
+            primary_cat = sanitize_for_markdown(primary_cat_raw).lower()
+
             if "tech" in primary_cat or "code" in primary_cat:
                 target_audience = "Software Developers, Tech Enthusiasts (18-45)"
             elif "finance" in primary_cat:
@@ -25,9 +30,12 @@ class AdvertisingAgent(BaseAgent):
         # Simulate "Google Antigravity" logic: Finding keywords that defy the norm (high value, low competition)
         bid_suggestions = []
         for word, count in keywords[:5]:
+            # Sanitize the keyword
+            safe_word = sanitize_for_markdown(word)
+
             # Simulated logic: rarer words might have lower competition but high specificity
             # We assign a fake CPC value based on word length (just as a heuristic)
-            simulated_cpc = round(random.uniform(0.5, 5.0) + (len(word) * 0.1), 2)
+            simulated_cpc = round(random.uniform(0.5, 5.0) + (len(safe_word) * 0.1), 2)
             competition = "High" if count > 5 else "Low"
 
             # "Antigravity" pick: Low competition, Decent CPC
@@ -36,7 +44,7 @@ class AdvertisingAgent(BaseAgent):
                 antigravity_score = "Antigravity Opportunity (High Value/Low Comp)"
 
             bid_suggestions.append({
-                "keyword": word,
+                "keyword": safe_word,
                 "suggested_bid": f"${simulated_cpc}",
                 "competition": competition,
                 "strategy": antigravity_score

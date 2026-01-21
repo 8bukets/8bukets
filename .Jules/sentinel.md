@@ -1,0 +1,4 @@
+## 2025-05-01 - Unsanitized Markdown Injection in Reports
+**Vulnerability:** Scraped data (blog titles) and generated content (keywords) were directly injected into Markdown reports without escaping. This allowed Markdown Injection (e.g., spoofed links) and potential Stored XSS if the report is viewed in a vulnerable Markdown viewer.
+**Learning:** Even text-based formats like Markdown are susceptible to injection attacks when constructed from untrusted input. Agents generating "human-readable" output must still sanitize inputs to prevent formatting breakage or malicious links.
+**Prevention:** Implemented `security_utils.sanitize_for_markdown` to escape Markdown special characters. Enforced sanitization in `MonetizationAgent` and `AdvertisingAgent` at the source of the data generation/extraction.
