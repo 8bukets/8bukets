@@ -9,6 +9,7 @@ import logging
 import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
+from security_utils import sanitize_for_csv
 
 # Configure logging
 logging.basicConfig(
@@ -231,13 +232,13 @@ class MarkPositionScraperAsync:
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        sanitize_for_csv(post.get('title', '')),
+                        sanitize_for_csv(post.get('date', '')),
+                        sanitize_for_csv(post.get('author', '')),
+                        sanitize_for_csv(", ".join(post.get('categories', []))),
+                        sanitize_for_csv(post.get('external_link', '')),
+                        sanitize_for_csv(post.get('domain', '')),
+                        sanitize_for_csv(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
