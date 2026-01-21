@@ -4,12 +4,9 @@ class BaseAgent:
     def __init__(self, name):
         self.name = name
         self.logger = logging.getLogger(self.name)
-        self.logger.setLevel(logging.INFO)
-        if not self.logger.handlers:
-            handler = logging.StreamHandler()
-            formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-            handler.setFormatter(formatter)
-            self.logger.addHandler(handler)
+        # We rely on the root logger configuration (basicConfig) to handle output.
+        # Adding a handler here causes double logging if the root logger is already configured.
+        # self.logger.setLevel(logging.INFO)
 
     def run(self, data=None):
         self.logger.info("Starting...")
