@@ -10,6 +10,10 @@ import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
+# Pre-compile regex patterns for performance
+WHITESPACE_PATTERN = re.compile(r'\s+')
+URL_PATTERN = re.compile(r'^https?://')
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
@@ -34,11 +38,11 @@ class MarkPositionScraperAsync:
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return WHITESPACE_PATTERN.sub(' ', text).strip()
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
-        return re.match(r'^https?://', text.strip()) is not None
+        return URL_PATTERN.match(text.strip()) is not None
 
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
