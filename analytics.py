@@ -5,6 +5,14 @@ from urllib.parse import urlparse
 from datetime import datetime
 import sys
 
+EMOJI_MAP = {
+    "General Statistics": "📊",
+    "Top 10 Referenced Domains": "🌐",
+    "Top 10 Categories": "🍷",
+    "Posts by Year": "📅",
+    "Authors": "✒️"
+}
+
 def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
@@ -41,9 +49,6 @@ def generate_report(data, output_file):
         external_link = p.get('external_link')
         if external_link:
             domain = get_domain(external_link)
-            # Match original behavior: include None if get_domain returns it
-            # Original: domains = [get_domain(...) for ... if external_link]
-            # Counter(domains)
             domain_counts[domain] += 1
             unique_domains.add(domain)
 
@@ -98,39 +103,69 @@ def generate_report(data, output_file):
     sorted_authors = author_counts.most_common()
 
     # Generate Markdown
-    md = []
-    md.append("# Markposition Analytics Report")
-    md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    # We will build parts separately to avoid magic indices
 
-    md.append("\n## General Statistics")
-    md.append(f"- **Total Posts:** {total_posts}")
-    md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(unique_domains)}")
+    # 1. Header Part
+    md_header = []
+    md_header.append(f"<a name=\"top\"></a>")
+    md_header.append("# Markposition Analytics Report")
+    md_header.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
+    # 2. Body Part (collecting TOC entries as we go)
+    md_body = []
+    toc_lines = ["\n## Table of Contents"]
+
+    def add_header(title):
+        slug = title.lower().replace(" ", "-")
+        emoji = EMOJI_MAP.get(title, "")
+
+        # Add to TOC
+        toc_lines.append(f"- [{title}](#{slug})")
+
+        # Add to content
+        md_body.append(f"\n<a name=\"{slug}\"></a>")
+        md_body.append(f"## {emoji} {title}".strip())
+
+    def add_back_to_top():
+        md_body.append(f"\n[Back to Top](#top)")
+
+    add_header("General Statistics")
+    md_body.append(f"- **Total Posts:** {total_posts:,}")
+    md_body.append(f"- **Date Range:** {start_date} to {end_date}")
+    md_body.append(f"- **Unique Domains Linked:** {len(unique_domains):,}")
+    add_back_to_top()
+
+    add_header("Top 10 Referenced Domains")
+    md_body.append("| Domain | Count |")
+    md_body.append("| :--- | :---: |")
     for domain, count in top_domains:
-        md.append(f"| {domain} | {count} |")
+        md_body.append(f"| {domain} | {count:,} |")
+    add_back_to_top()
 
-    md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
+    add_header("Top 10 Categories")
+    md_body.append("| Category | Count |")
+    md_body.append("| :--- | :---: |")
     for cat, count in top_categories:
-        md.append(f"| {cat} | {count} |")
+        md_body.append(f"| {cat} | {count:,} |")
+    add_back_to_top()
 
-    md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
+    add_header("Posts by Year")
+    md_body.append("| Year | Count |")
+    md_body.append("| :--- | :---: |")
     for year, count in sorted_years:
-        md.append(f"| {year} | {count} |")
+        md_body.append(f"| {year} | {count:,} |")
+    add_back_to_top()
 
-    md.append("\n## Authors")
+    add_header("Authors")
     for author, count in sorted_authors:
-        md.append(f"- {author}: {count} posts")
+        md_body.append(f"- {author}: {count:,} posts")
+    add_back_to_top()
+
+    # Combine parts
+    final_md = md_header + toc_lines + md_body
 
     with open(output_file, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(md))
+        f.write('\n'.join(final_md))
 
     print(f"Report generated: {output_file}")
 
