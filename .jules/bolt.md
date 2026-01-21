@@ -1,0 +1,3 @@
+## 2026-01-21 - Subprocess Overhead in Agent Swarm
+**Learning:** Invoking sibling Python scripts via `subprocess` (e.g., `sys.executable script.py`) incurs significant overhead due to interpreter startup and module re-importing. In `ResearcherAgent`, this was done to "isolate" scrapers, but it prevented data passing in memory, forcing file I/O serialization/deserialization.
+**Action:** When integrating Python tools, prefer importing them as modules and calling functions directly. Ensure those scripts are structured with `if __name__ == "__main__":` blocks and exposed functions that return data structures, not just side effects (writing files).
