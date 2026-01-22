@@ -6,6 +6,7 @@ import logging
 import argparse
 import sys
 import sqlite3
+from urllib.parse import urlparse
 from datetime import datetime
 
 # Configure logging
@@ -28,6 +29,26 @@ class BlogScraper:
         }
         self.data = []
         self.init_db()
+
+    def validate_url(self, url):
+        """
+        Validates the URL to prevent SSRF and other security issues.
+        Ensures the scheme is http or https.
+        """
+        if not url:
+            return False
+
+        try:
+            parsed = urlparse(url)
+            if parsed.scheme not in ('http', 'https'):
+                logger.warning(f"Security blocked URL with invalid scheme: {url}")
+                return False
+
+            # Additional checks can be added here (e.g., block private IPs)
+            return True
+        except Exception as e:
+            logger.error(f"URL validation error for {url}: {e}")
+            return False
 
     def init_db(self):
         """Initialize the SQLite database."""
@@ -127,6 +148,10 @@ class BlogScraper:
         return False
 
     def fetch_page(self, url):
+        if not self.validate_url(url):
+            logger.error(f"Skipping invalid or unsafe URL: {url}")
+            return None
+
         logger.info(f"Fetching {url}...")
         try:
             response = requests.get(url, headers=self.headers, timeout=10)
