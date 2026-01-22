@@ -9,6 +9,7 @@ import logging
 import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse, urljoin
+from urllib.robotparser import RobotFileParser
 
 # Configure logging
 logging.basicConfig(
@@ -28,6 +29,29 @@ class OracleNewsScraper:
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.base_url = BASE_URL
+        self.rp = RobotFileParser()
+
+    def check_robots_txt(self):
+        """Check if scraping is allowed by robots.txt"""
+        parsed_url = urlparse(self.base_url)
+        robots_url = f"{parsed_url.scheme}://{parsed_url.netloc}/robots.txt"
+        logger.info(f"Checking robots.txt at {robots_url}...")
+
+        try:
+            self.rp.set_url(robots_url)
+            self.rp.read()
+            can_fetch = self.rp.can_fetch("*", self.base_url)
+            if can_fetch:
+                logger.info("Robots.txt allows scraping.")
+            else:
+                logger.warning("Robots.txt disallows scraping this URL!")
+            return can_fetch
+        except Exception as e:
+            logger.error(f"Error checking robots.txt: {e}")
+            # Fail open if robots.txt is unreachable, or closed?
+            # Usually polite scrapers fail open if it's just a network glitch,
+            # but stricter ones fail closed. Let's assume allowed if error.
+            return True
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -120,6 +144,10 @@ class OracleNewsScraper:
         return articles
 
     async def scrape(self):
+        if not self.check_robots_txt():
+            logger.error("Aborting scrape due to robots.txt restrictions.")
+            return
+
         all_posts = []
 
         # Headers to mimic browser

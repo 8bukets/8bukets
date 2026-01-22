@@ -15,6 +15,12 @@ from agents.creativity_agent import CreativityAgent
 from agents.autonomous_intelligence_agent import AutonomousIntelligenceAgent
 from agents.programmatic_ads_agent import ProgrammaticAdsAgent
 from agents.ads_agent import AdsAgent
+from agents.targeting_agent import TargetingAgent
+from agents.bidding_agent import BiddingAgent
+from agents.innovation_agent import InnovationAgent
+from agents.developer_agent import DeveloperAgent
+from agents.jules_orchestrator_agent import JulesIntelligenceAgent
+from agents.memory_system import MemorySystem
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
@@ -48,6 +54,10 @@ def run_pipeline(skip_scrape=False):
     current_date = datetime.now().strftime('%Y-%m-%d')
     logger.info(f"Starting Pipeline for {current_date}...")
 
+    # 0. Initialize Memory
+    memory_system = MemorySystem()
+    logger.info(f"Memory Loaded. Iteration: {memory_system.get('iterations')}")
+
     # 1. Scrape
     if not skip_scrape:
         logger.info("Starting Scraper...")
@@ -70,8 +80,14 @@ def run_pipeline(skip_scrape=False):
     monetization_agent = MonetizationAgent()
     creativity_agent = CreativityAgent()
     ai_agent = AutonomousIntelligenceAgent()
-    prog_ads_agent = ProgrammaticAdsAgent()
-    ads_agent = AdsAgent()
+    # ads_agent = AdsAgent() # Legacy, keeping if needed or replaced by specialized
+
+    # New Specialized Agents
+    targeting_agent = TargetingAgent()
+    bidding_agent = BiddingAgent()
+    innovation_agent = InnovationAgent()
+    developer_agent = DeveloperAgent()
+    jules_agent = JulesIntelligenceAgent()
 
     # 4. Pipeline Execution
     logger.info("Starting Agent Pipeline...")
@@ -99,9 +115,21 @@ def run_pipeline(skip_scrape=False):
     save_result("intelligence.json", intelligence_results, current_date)
     results_aggregator['intelligence'] = intelligence_results
 
-    # Content
-    content = content_agent.process(data, intelligence_results)
-    save_result("content_draft.md", content, current_date)
+    # Targeting & Bidding (New)
+    targeting_config = targeting_agent.process(analysis_results['common_keywords'], memory_system.memory)
+    save_result("targeting_config.json", targeting_config, current_date)
+
+    bidding_config = bidding_agent.process(targeting_config, memory_system.memory)
+    save_result("bidding_config.json", bidding_config, current_date)
+
+    # Content Generation with Innovation (Antigravity)
+    base_content = content_agent.process(data, intelligence_results)
+    final_content = innovation_agent.process(base_content, memory_system.memory)
+    save_result("content_draft.md", final_content, current_date)
+
+    # Code Generation (Developer Agent)
+    code_snippets = developer_agent.process(research_results)
+    save_result("developer_code.md", code_snippets, current_date)
 
     # Monetization
     monetization_strategies = monetization_agent.process(research_results)
@@ -112,16 +140,13 @@ def run_pipeline(skip_scrape=False):
     headlines = creativity_agent.process(analysis_results['common_keywords'])
     save_result("creative_headlines.json", headlines, current_date)
 
-    # Ads
-    prog_ads = prog_ads_agent.process(analysis_results['common_keywords'])
-    save_result("programmatic_ads_config.json", prog_ads, current_date)
-
-    ad_copy = ads_agent.process(research_results)
-    save_result("ad_copy.json", ad_copy, current_date)
-
     # High-level Synthesis
     summary = ai_agent.process(results_aggregator)
     save_result("executive_summary.txt", summary, current_date)
+
+    # 5. Jules Intelligence (Evolution & Learning)
+    # Analyze all results and update memory for next run
+    jules_agent.process(memory_system, results_aggregator)
 
     logger.info(f"Pipeline Complete for {current_date}. Check 'results/' directory.")
 
