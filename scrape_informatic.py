@@ -10,7 +10,12 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from dataclasses import dataclass, asdict
 from typing import List, Optional
-from markdownify import markdownify as md
+from markdownify import markdownify as md, MarkdownConverter
+
+# Initialize converter once to reuse configuration
+# Using a class-level or global converter avoids re-instantiation overhead
+# and allows using convert_soup which is much faster than convert(str)
+markdown_converter = MarkdownConverter()
 
 @dataclass
 class Post:
@@ -106,7 +111,9 @@ def parse_post_html(post_soup, base_url: str) -> Post:
 
     if content_div:
         # Convert HTML to Markdown
-        content_text = md(str(content_div)).strip()
+        # Optimization: Pass the BeautifulSoup tag directly to convert_soup
+        # This avoids serializing to string (str(content_div)) and re-parsing
+        content_text = markdown_converter.convert_soup(content_div).strip()
 
         # Extract external links
         for link in content_div.find_all('a'):
