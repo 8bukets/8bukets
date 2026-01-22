@@ -5,6 +5,7 @@ import time
 import logging
 import argparse
 import sys
+import os
 from urllib.parse import urlparse
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
@@ -190,6 +191,22 @@ def main():
     args = parser.parse_args()
 
     configure_logging(args.verbose)
+
+    # Security Check: Prevent path traversal
+    # Ensure the output file is within the current working directory
+    abs_output = os.path.abspath(args.output)
+    abs_cwd = os.path.abspath(os.getcwd())
+
+    # Use commonpath to properly check for directory containment
+    try:
+        if os.path.commonpath([abs_cwd, abs_output]) != abs_cwd:
+            logging.error(f"Security Error: Output path '{args.output}' allows writing outside the project directory. Access denied.")
+            sys.exit(1)
+    except ValueError:
+        # Can happen on Windows if paths are on different drives
+        logging.error(f"Security Error: Output path '{args.output}' allows writing outside the project directory. Access denied.")
+        sys.exit(1)
+
     scrape(args.output, args.pages)
 
 if __name__ == "__main__":
