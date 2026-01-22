@@ -1,9 +1,18 @@
 import json
 import argparse
+import os
 from collections import Counter
 from urllib.parse import urlparse
 from datetime import datetime
 import sys
+
+def validate_path(path: str) -> str:
+    """Ensure path is within the current working directory."""
+    abs_path = os.path.abspath(path)
+    cwd = os.getcwd()
+    if os.path.commonpath([cwd, abs_path]) != cwd:
+        raise ValueError(f"Security Error: Path '{path}' is outside the current working directory.")
+    return path
 
 def load_data(filepath):
     try:
@@ -107,5 +116,13 @@ if __name__ == "__main__":
     parser.add_argument("--output", default="REPORT.md", help="Output Markdown report file")
     args = parser.parse_args()
 
-    data = load_data(args.input)
-    generate_report(data, args.output)
+    # Validate paths
+    try:
+        input_path = validate_path(args.input)
+        output_path = validate_path(args.output)
+    except ValueError as e:
+        print(e)
+        sys.exit(1)
+
+    data = load_data(input_path)
+    generate_report(data, output_path)
