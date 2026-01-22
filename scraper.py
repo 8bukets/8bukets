@@ -7,6 +7,7 @@ import re
 import argparse
 import logging
 import time
+import os
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
@@ -19,6 +20,14 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
+
+def validate_path(path: str) -> str:
+    """Ensure path is within the current working directory."""
+    abs_path = os.path.abspath(path)
+    cwd = os.getcwd()
+    if os.path.commonpath([cwd, abs_path]) != cwd:
+        raise ValueError(f"Security Error: Path '{path}' is outside the current working directory.")
+    return path
 
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
@@ -269,10 +278,19 @@ def main():
 
     args = parser.parse_args()
 
+    # Validate paths
+    try:
+        output_json = validate_path(args.json)
+        output_csv = validate_path(args.csv)
+        output_txt = validate_path(args.txt)
+    except ValueError as e:
+        print(e)
+        return
+
     scraper = MarkPositionScraperAsync(
-        output_json=args.json,
-        output_csv=args.csv,
-        output_txt=args.txt,
+        output_json=output_json,
+        output_csv=output_csv,
+        output_txt=output_txt,
         max_pages=args.limit,
         concurrency=args.concurrency
     )
