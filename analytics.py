@@ -21,6 +21,11 @@ def get_domain(url):
     except:
         return None
 
+def calc_pct(count, total):
+    if total == 0:
+        return "0%"
+    return f"{(count / total) * 100:.1f}%"
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
@@ -41,9 +46,6 @@ def generate_report(data, output_file):
         external_link = p.get('external_link')
         if external_link:
             domain = get_domain(external_link)
-            # Match original behavior: include None if get_domain returns it
-            # Original: domains = [get_domain(...) for ... if external_link]
-            # Counter(domains)
             domain_counts[domain] += 1
             unique_domains.add(domain)
 
@@ -76,58 +78,66 @@ def generate_report(data, output_file):
             author_counts[author] += 1
 
     # Prepare data for report
-
-    # Domains: top 10 by count
     top_domains = domain_counts.most_common(10)
-
-    # Categories: top 10 by count
     top_categories = category_counts.most_common(10)
 
-    # Dates: range and years sorted by year descending
+    # Dates
     if min_date and max_date:
         start_date = min_date.strftime('%Y-%m-%d')
         end_date = max_date.strftime('%Y-%m-%d')
-        # Sort years descending (key is year)
         sorted_years = sorted(year_counts.items(), key=lambda x: x[0], reverse=True)
     else:
         start_date = "N/A"
         end_date = "N/A"
         sorted_years = []
 
-    # Authors: all by count descending (most_common does this)
     sorted_authors = author_counts.most_common()
+
+    # Quick Insights
+    top_domain_name = top_domains[0][0] if top_domains else "N/A"
+    top_cat_name = top_categories[0][0] if top_categories else "N/A"
 
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
-    md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    md.append("# 📊 Markposition Analytics Report")
+    md.append(f"**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
 
-    md.append("\n## General Statistics")
+    # Table of Contents
+    md.append("## Table of Contents")
+    md.append("- [📈 General Statistics](#-general-statistics)")
+    md.append("- [🔗 Top 10 Referenced Domains](#-top-10-referenced-domains)")
+    md.append("- [📂 Top 10 Categories](#-top-10-categories)")
+    md.append("- [📅 Posts by Year](#-posts-by-year)")
+    md.append("- [✍️ Authors](#-authors)")
+
+    md.append("\n## 📈 General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(unique_domains)}")
+    md.append(f"- **Top Domain:** {top_domain_name}")
+    md.append(f"- **Top Category:** {top_cat_name}")
 
-    md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
+    md.append("\n## 🔗 Top 10 Referenced Domains")
+    md.append("| Domain | Count | % of Posts |")
+    md.append("| :--- | :---: | :---: |")
     for domain, count in top_domains:
-        md.append(f"| {domain} | {count} |")
+        md.append(f"| {domain} | {count} | {calc_pct(count, total_posts)} |")
 
-    md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
+    md.append("\n## 📂 Top 10 Categories")
+    md.append("| Category | Count | % of Posts |")
+    md.append("| :--- | :---: | :---: |")
     for cat, count in top_categories:
-        md.append(f"| {cat} | {count} |")
+        md.append(f"| {cat} | {count} | {calc_pct(count, total_posts)} |")
 
-    md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
+    md.append("\n## 📅 Posts by Year")
+    md.append("| Year | Count | % of Total |")
+    md.append("| :--- | :---: | :---: |")
     for year, count in sorted_years:
-        md.append(f"| {year} | {count} |")
+        md.append(f"| {year} | {count} | {calc_pct(count, total_posts)} |")
 
-    md.append("\n## Authors")
+    md.append("\n## ✍️ Authors")
     for author, count in sorted_authors:
-        md.append(f"- {author}: {count} posts")
+        md.append(f"- **{author}**: {count} posts ({calc_pct(count, total_posts)})")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
