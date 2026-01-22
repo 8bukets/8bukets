@@ -1,6 +1,8 @@
 import json
 import logging
 import argparse
+import sys
+import os
 from googlesearch import search
 from typing import List, Dict
 
@@ -44,6 +46,20 @@ def main():
     args = parser.parse_args()
 
     configure_logging(args.verbose)
+
+    # Security Check: Prevent path traversal
+    abs_output = os.path.abspath(args.output)
+    abs_cwd = os.path.abspath(os.getcwd())
+
+    # Use commonpath to properly check for directory containment
+    try:
+        if os.path.commonpath([abs_cwd, abs_output]) != abs_cwd:
+            logging.error(f"Security Error: Output path '{args.output}' allows writing outside the project directory. Access denied.")
+            sys.exit(1)
+    except ValueError:
+        # Can happen on Windows if paths are on different drives
+        logging.error(f"Security Error: Output path '{args.output}' allows writing outside the project directory. Access denied.")
+        sys.exit(1)
 
     results = perform_google_search(args.query, num_results=args.limit)
 
