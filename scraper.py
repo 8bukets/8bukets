@@ -44,6 +44,16 @@ class OracleNewsScraper:
             return "'" + value
         return value
 
+    def validate_url(self, url: str) -> bool:
+        """Ensure URL is http/https and has a valid domain structure."""
+        if not url:
+            return False
+        try:
+            parsed = urlparse(url)
+            return parsed.scheme in ('http', 'https')
+        except ValueError:
+            return False
+
     async def fetch_page(self, session: aiohttp.ClientSession, url: str) -> Optional[str]:
         try:
             # 30 second global timeout
@@ -83,6 +93,10 @@ class OracleNewsScraper:
                 continue
 
             full_url = urljoin(self.base_url, href)
+
+            if not self.validate_url(full_url):
+                logger.warning(f"Skipping potentially unsafe URL: {full_url}")
+                continue
 
             if full_url in seen_urls:
                 continue
