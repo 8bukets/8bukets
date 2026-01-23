@@ -29,16 +29,19 @@ class MarkPositionScraperAsync:
         self.concurrency = concurrency
         self.session = None
 
+    WHITESPACE_PATTERN = re.compile(r'\s+')
+    URL_PATTERN = re.compile(r'^https?://')
+
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
-        text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        # Note: \s matches \xa0 (non-breaking space) in Python 3
+        return self.WHITESPACE_PATTERN.sub(' ', text).strip()
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
-        return re.match(r'^https?://', text.strip()) is not None
+        return self.URL_PATTERN.match(text.strip()) is not None
 
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
@@ -71,7 +74,11 @@ class MarkPositionScraperAsync:
             logger.error(f"Error fetching page {page_num}: {e}")
             return None
 
-    async def parse_page(self, html: str) -> List[Dict]:
+    def parse_page(self, html: str) -> List[Dict]:
+        """
+        Parse HTML content.
+        Note: This is a CPU-bound operation and should be run in a separate thread.
+        """
         soup = BeautifulSoup(html, 'html.parser')
         articles = soup.find_all('article', class_='post')
         page_posts = []
@@ -212,7 +219,8 @@ class MarkPositionScraperAsync:
         async with sem:
             html = await self.fetch_page(session, page_num)
             if html:
-                return await self.parse_page(html)
+                # Offload CPU-bound parsing to a separate thread
+                return await asyncio.to_thread(self.parse_page, html)
             return None
 
     def save_data(self, posts: List[Dict]):
