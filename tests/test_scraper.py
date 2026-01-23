@@ -88,5 +88,24 @@ class TestBlogScraper(unittest.TestCase):
             self.assertIsNotNone(row)
             self.assertEqual(row[1], 'DB Test') # title
 
+    def test_path_traversal_validation(self):
+        # Should raise ValueError for paths outside CWD
+        with self.assertRaises(ValueError):
+            BlogScraper("http://mock.url", "../bad.json", "ok.db")
+
+        with self.assertRaises(ValueError):
+            BlogScraper("http://mock.url", "ok.json", "/tmp/bad.db")
+
+        # Should accept valid paths
+        try:
+            s = BlogScraper("http://mock.url", "valid_traversal_test.json", "valid_traversal_test.db")
+        except ValueError:
+            self.fail("BlogScraper raised ValueError for valid paths")
+        finally:
+            if os.path.exists("valid_traversal_test.db"):
+                os.remove("valid_traversal_test.db")
+            if os.path.exists("valid_traversal_test.json"): # Not created by init, but just in case
+                os.remove("valid_traversal_test.json")
+
 if __name__ == '__main__':
     unittest.main()

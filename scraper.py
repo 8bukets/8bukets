@@ -6,6 +6,7 @@ import logging
 import argparse
 import sys
 import sqlite3
+import os
 from datetime import datetime
 
 # Configure logging
@@ -21,13 +22,21 @@ logger = logging.getLogger(__name__)
 class BlogScraper:
     def __init__(self, base_url, output_json="wishlist_data.json", db_name="wishlist_data.db"):
         self.base_url = base_url
-        self.output_json = output_json
-        self.db_name = db_name
+        self.output_json = self._validate_path(output_json)
+        self.db_name = self._validate_path(db_name)
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
         self.data = []
         self.init_db()
+
+    def _validate_path(self, path):
+        """Validate that the output path is within the current working directory."""
+        base_dir = os.getcwd()
+        full_path = os.path.abspath(os.path.join(base_dir, path))
+        if os.path.commonpath([base_dir, full_path]) != base_dir:
+            raise ValueError(f"Security Error: Path '{path}' is outside the current working directory.")
+        return full_path
 
     def init_db(self):
         """Initialize the SQLite database."""
