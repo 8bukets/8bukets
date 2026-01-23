@@ -7,6 +7,7 @@ import re
 import argparse
 import logging
 import time
+import sys
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
@@ -181,7 +182,13 @@ class WordpressScraperAsync:
                 if not tasks:
                     break
 
-                logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
+                # Progress update
+                if sys.stdout.isatty():
+                    sys.stdout.write(f"\r[Scraper] Pages Processed: {page_num-1} | Found: {len(all_posts)} | Status: Fetching pages {batch_start}-{batch_start + len(tasks) - 1}...\033[K")
+                    sys.stdout.flush()
+                else:
+                    logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
+
                 results = await asyncio.gather(*tasks)
 
                 # Check results
@@ -215,6 +222,8 @@ class WordpressScraperAsync:
                 # Small delay between batches
                 await asyncio.sleep(0.5)
 
+        if sys.stdout.isatty():
+            sys.stdout.write("\n") # End progress line
         self.save_data(all_posts)
 
     async def fetch_and_parse(self, session, page_num, sem):
