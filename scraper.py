@@ -7,6 +7,7 @@ import re
 import argparse
 import logging
 import time
+import sys
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
@@ -172,7 +173,12 @@ class MarkPositionScraperAsync:
                 if not tasks:
                     break
 
-                logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
+                # UX: Progress Bar
+                batch_end = batch_start + len(tasks) - 1
+                sys.stdout.write(f"\r\033[K⏳ Fetching pages {batch_start}-{batch_end}... | Found {len(all_posts)} posts so far")
+                sys.stdout.flush()
+
+                # logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
                 results = await asyncio.gather(*tasks)
 
                 # Check results
@@ -205,6 +211,9 @@ class MarkPositionScraperAsync:
                 page_num += len(tasks)
                 # Small delay between batches
                 await asyncio.sleep(0.5)
+
+            # UX: Final newline
+            sys.stdout.write("\n")
 
         self.save_data(all_posts)
 
