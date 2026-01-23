@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
+from lxml import html as lhtml
 import json
 import csv
 import re
@@ -40,11 +40,12 @@ class MarkPositionScraperAsync:
         """Check if text looks like a URL."""
         return re.match(r'^https?://', text.strip()) is not None
 
-    def extract_categories(self, article: BeautifulSoup) -> List[str]:
+    def extract_categories(self, article) -> List[str]:
         """Extract categories from article class names."""
         categories = []
-        if article.get('class'):
-            for cls in article['class']:
+        cls_str = article.get('class')
+        if cls_str:
+            for cls in cls_str.split():
                 if cls.startswith('category-'):
                     cat_name = cls.replace('category-', '').replace('-', ' ').title()
                     categories.append(cat_name)
@@ -72,8 +73,17 @@ class MarkPositionScraperAsync:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'lxml')
-        articles = soup.find_all('article', class_='post')
+        if not html:
+            return []
+
+        try:
+            tree = lhtml.fromstring(html)
+        except Exception as e:
+            logger.error(f"Error parsing HTML: {e}")
+            return []
+
+        # Use robust XPath to match class "post"
+        articles = tree.xpath('//article[contains(concat(" ", normalize-space(@class), " "), " post ")]')
         page_posts = []
 
         if not articles:
@@ -84,21 +94,24 @@ class MarkPositionScraperAsync:
 
             # Title
             title_text = ""
-            title_tag = article.select_one('h1.entry-title a')
-            if title_tag:
-                title_text = self.clean_text(title_tag.get_text())
+            title_tags = article.xpath('.//h1[contains(@class, "entry-title")]//a')
+            if title_tags:
+                title_node = title_tags[0]
+                title_text = self.clean_text(title_node.text_content())
                 post_data['title'] = title_text
+                post_data['post_url'] = title_node.get('href')
 
             # Date
-            date_tag = article.select_one('time.entry-date')
-            if date_tag:
-                post_data['date'] = self.clean_text(date_tag.get_text())
-                post_data['datetime'] = date_tag.get('datetime')
+            date_tags = article.xpath('.//time[contains(@class, "entry-date")]')
+            if date_tags:
+                date_node = date_tags[0]
+                post_data['date'] = self.clean_text(date_node.text_content())
+                post_data['datetime'] = date_node.get('datetime')
 
             # Author
-            author_tag = article.select_one('.author.vcard .fn')
-            if author_tag:
-                post_data['author'] = self.clean_text(author_tag.get_text())
+            author_tags = article.xpath('.//*[contains(@class, "author") and contains(@class, "vcard")]//*[contains(@class, "fn")]')
+            if author_tags:
+                post_data['author'] = self.clean_text(author_tags[0].text_content())
             else:
                 post_data['author'] = None
 
@@ -107,27 +120,24 @@ class MarkPositionScraperAsync:
 
             # External Link
             external_link = None
-            content_div = article.select_one('.entry-content')
+            content_divs = article.xpath('.//*[contains(@class, "entry-content")]')
 
-            if content_div:
-                link_tag = content_div.select_one('a')
-                if link_tag:
-                    external_link = link_tag.get('href')
+            if content_divs:
+                content_div = content_divs[0]
+                links = content_div.xpath('.//a')
+                if links:
+                    external_link = links[0].get('href')
 
                 if not external_link:
-                    iframe_tag = content_div.select_one('iframe')
-                    if iframe_tag:
-                        external_link = iframe_tag.get('src')
+                    iframes = content_div.xpath('.//iframe')
+                    if iframes:
+                        external_link = iframes[0].get('src')
 
             if not external_link and title_text and self.is_url(title_text):
                 external_link = title_text
 
             post_data['external_link'] = external_link
             post_data['domain'] = self.extract_domain(external_link)
-
-            # Post URL
-            if title_tag:
-                post_data['post_url'] = title_tag.get('href')
 
             page_posts.append(post_data)
 
