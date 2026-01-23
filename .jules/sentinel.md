@@ -1,0 +1,4 @@
+## 2026-01-23 - CSV Injection Vulnerability
+**Vulnerability:** The scraper actively wrote unsanitized user-controlled input (titles, authors, etc.) directly into a CSV file. Fields starting with `=`, `+`, `-`, or `@` could be interpreted as formulas by spreadsheet software (Excel, LibreOffice), leading to arbitrary command execution on the researcher's machine.
+**Learning:** We often trust scraped data more than direct user input, but web content is untrusted. Libraries like `csv` in Python do not automatically sanitize for formula injection; they only handle CSV format escaping (quotes, delimiters).
+**Prevention:** All text fields written to CSVs must be explicitly sanitized. If a field starts with a formula trigger character, prepend a single quote `'` to force it to be treated as a string.
