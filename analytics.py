@@ -4,8 +4,28 @@ from collections import Counter
 from urllib.parse import urlparse
 from datetime import datetime
 import sys
+import os
+
+def validate_path(filepath: str) -> str:
+    """Validate that the filepath is within the current working directory."""
+    if not filepath:
+        return filepath
+
+    abs_path = os.path.abspath(filepath)
+    cwd = os.getcwd()
+
+    try:
+        common = os.path.commonpath([cwd, abs_path])
+    except ValueError:
+        raise ValueError(f"Path traversal detected: {filepath}")
+
+    if common != cwd:
+        raise ValueError(f"Path traversal detected: {filepath} is outside current directory.")
+
+    return filepath
 
 def load_data(filepath):
+    filepath = validate_path(filepath)
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             return json.load(f)
@@ -22,6 +42,7 @@ def get_domain(url):
         return None
 
 def generate_report(data, output_file):
+    output_file = validate_path(output_file)
     total_posts = len(data)
 
     # 1. Domain Analysis
