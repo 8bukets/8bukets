@@ -99,35 +99,59 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
+    md.append("# 📈 Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
-    md.append(f"- **Total Posts:** {total_posts}")
+    # Highlights
+    most_active_year = sorted_years[0][0] if sorted_years else "N/A"
+    top_domain = top_domains[0][0] if top_domains else "None"
+    top_category = top_categories[0][0] if top_categories else "None"
+
+    md.append("\n## 💡 Key Highlights")
+    md.append(f"The dataset covers **{total_posts:,} posts** from **{start_date}** to **{end_date}**.")
+    if total_posts > 0:
+        md.append(f"- **Most Active Year:** {most_active_year}")
+        md.append(f"- **Top Domain:** {top_domain}")
+        md.append(f"- **Top Category:** {top_category}")
+
+    md.append("\n## 📊 General Statistics")
+    md.append(f"- **Total Posts:** {total_posts:,}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(unique_domains)}")
+    md.append(f"- **Unique Domains Linked:** {len(unique_domains):,}")
 
-    md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
-    for domain, count in top_domains:
-        md.append(f"| {domain} | {count} |")
+    md.append("\n## 🔗 Top 10 Referenced Domains")
+    if top_domains:
+        md.append("| Domain | Count |")
+        md.append("| :--- | :---: |")
+        for domain, count in top_domains:
+            md.append(f"| {domain} | {count:,} |")
+    else:
+        md.append("*No domains found.*")
 
-    md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
-    for cat, count in top_categories:
-        md.append(f"| {cat} | {count} |")
+    md.append("\n## 📂 Top 10 Categories")
+    if top_categories:
+        md.append("| Category | Count |")
+        md.append("| :--- | :---: |")
+        for cat, count in top_categories:
+            md.append(f"| {cat} | {count:,} |")
+    else:
+        md.append("*No categories found.*")
 
-    md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
-    for year, count in sorted_years:
-        md.append(f"| {year} | {count} |")
+    md.append("\n## 📅 Posts by Year")
+    if sorted_years:
+        md.append("| Year | Count |")
+        md.append("| :--- | :---: |")
+        for year, count in sorted_years:
+            md.append(f"| {year} | {count:,} |")
+    else:
+        md.append("*No data available.*")
 
-    md.append("\n## Authors")
-    for author, count in sorted_authors:
-        md.append(f"- {author}: {count} posts")
+    md.append("\n## ✍️ Authors")
+    if sorted_authors:
+        for author, count in sorted_authors:
+            md.append(f"- **{author}**: {count:,} posts")
+    else:
+        md.append("*No authors found.*")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
