@@ -71,7 +71,7 @@ class MarkPositionScraperAsync:
             logger.error(f"Error fetching page {page_num}: {e}")
             return None
 
-    async def parse_page(self, html: str) -> List[Dict]:
+    def _parse_html_sync(self, html: str) -> List[Dict]:
         soup = BeautifulSoup(html, 'html.parser')
         articles = soup.find_all('article', class_='post')
         page_posts = []
@@ -132,6 +132,9 @@ class MarkPositionScraperAsync:
             page_posts.append(post_data)
 
         return page_posts
+
+    async def parse_page(self, html: str) -> List[Dict]:
+        return await asyncio.get_running_loop().run_in_executor(None, self._parse_html_sync, html)
 
     async def scrape(self):
         all_posts = []
