@@ -21,6 +21,9 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://www.oracle.com/news/"
 
 class OracleNewsScraper:
+    # Pre-compile regex for performance
+    WHITESPACE_RE = re.compile(r'\s+')
+
     def __init__(self, output_json: str, output_csv: str, output_txt: str):
         self.output_json = output_json
         self.output_csv = output_csv
@@ -30,8 +33,7 @@ class OracleNewsScraper:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
-        text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return self.WHITESPACE_RE.sub(' ', text).strip()
 
     def parse_date(self, date_text: str) -> Optional[Dict[str, str]]:
         """Parse date string like 'Oct 15, 2025' to ISO format."""
