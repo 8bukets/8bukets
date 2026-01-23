@@ -5,6 +5,7 @@ import time
 import logging
 import argparse
 import sys
+import os
 from urllib.parse import urlparse
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
@@ -24,6 +25,21 @@ class Post:
     image_url: Optional[str]
 
 BASE_URL = "https://informaticmagazine.data.blog"
+
+def validate_output_path(filepath: str):
+    """
+    Validates that the output path is within the current working directory.
+    Prevents path traversal attacks.
+    """
+    # Get absolute path of the target file
+    abs_path = os.path.abspath(filepath)
+    # Get absolute path of the current working directory
+    base_dir = os.getcwd()
+
+    # Check if the file path starts with the base directory
+    # os.path.commonpath is available in Python 3.5+
+    if not os.path.commonpath([base_dir, abs_path]) == base_dir:
+        raise ValueError(f"Invalid output path: {filepath}. Path must be within the current working directory.")
 
 def configure_logging(verbose: bool):
     level = logging.DEBUG if verbose else logging.INFO
@@ -190,6 +206,13 @@ def main():
     args = parser.parse_args()
 
     configure_logging(args.verbose)
+
+    try:
+        validate_output_path(args.output)
+    except ValueError as e:
+        logging.error(e)
+        sys.exit(1)
+
     scrape(args.output, args.pages)
 
 if __name__ == "__main__":
