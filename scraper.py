@@ -7,6 +7,7 @@ import re
 import argparse
 import logging
 import time
+import os
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse, urljoin
 from urllib.robotparser import RobotFileParser
@@ -23,13 +24,33 @@ BASE_URL = "https://www.oracle.com/news/"
 
 class OracleNewsScraper:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
-        self.output_json = output_json
-        self.output_csv = output_csv
-        self.output_txt = output_txt
+        self.output_json = self.validate_path(output_json)
+        self.output_csv = self.validate_path(output_csv)
+        self.output_txt = self.validate_path(output_txt)
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.base_url = BASE_URL
         self.rp = RobotFileParser()
+
+    def validate_path(self, filepath: str) -> str:
+        """Validate that the filepath is within the current working directory."""
+        if not filepath:
+            return filepath
+
+        abs_path = os.path.abspath(filepath)
+        cwd = os.getcwd()
+
+        try:
+            # os.path.commonpath returns the longest common sub-path
+            common = os.path.commonpath([cwd, abs_path])
+        except ValueError:
+            # Can happen on Windows with different drives
+            raise ValueError(f"Path traversal detected: {filepath}")
+
+        if common != cwd:
+            raise ValueError(f"Path traversal detected: {filepath} is outside current directory.")
+
+        return filepath
 
     def check_robots_txt(self):
         """Check if scraping is allowed by robots.txt"""
