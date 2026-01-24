@@ -66,35 +66,56 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
+    md.append("# 📊 Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
+    # Table of Contents
+    md.append("\n## 📑 Table of Contents")
+    md.append("- [General Statistics](#general)")
+    md.append("- [Top 10 Referenced Domains](#domains)")
+    md.append("- [Top 10 Categories](#categories)")
+    md.append("- [Posts by Year](#years)")
+    md.append("- [Authors](#authors)")
+
+    md.append("\n<a id='general'></a>")
+    md.append("## 📈 General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
 
-    md.append("\n## Top 10 Referenced Domains")
+    md.append("\n<a id='domains'></a>")
+    md.append("## 🌍 Top 10 Referenced Domains")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in domain_counts:
         md.append(f"| {domain} | {count} |")
 
-    md.append("\n## Top 10 Categories")
+    md.append("\n<a id='categories'></a>")
+    md.append("## 📁 Top 10 Categories")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in category_counts:
         md.append(f"| {cat} | {count} |")
 
-    md.append("\n## Posts by Year")
+    md.append("\n<a id='years'></a>")
+    md.append("## 📅 Posts by Year")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
     for year, count in year_counts:
         md.append(f"| {year} | {count} |")
 
-    md.append("\n## Authors")
-    for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+    md.append("\n<a id='authors'></a>")
+    md.append("## ✍️ Authors")
+    if len(author_counts) > 5:
+        md.append(f"<details><summary>View all {len(author_counts)} authors</summary>\n")
+        md.append("<ul>")
+        for author, count in author_counts:
+            md.append(f"<li>{author}: {count} posts</li>")
+        md.append("</ul>")
+        md.append("\n</details>")
+    else:
+        for author, count in author_counts:
+            md.append(f"- {author}: {count} posts")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
