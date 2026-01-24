@@ -1,3 +1,4 @@
+import os
 import requests
 from bs4 import BeautifulSoup
 import json
@@ -53,6 +54,15 @@ def get_session():
     })
 
     return session
+
+def _validate_path(file_path: str):
+    """
+    Validates that the file path is within the current working directory.
+    """
+    abs_path = os.path.realpath(file_path)
+    cwd = os.path.realpath(os.getcwd())
+    if os.path.commonpath([abs_path, cwd]) != cwd:
+        raise ValueError(f"Security Error: Output path '{file_path}' is outside the current working directory.")
 
 def is_external_link(link_url: str, base_url: str) -> bool:
     """
@@ -132,6 +142,7 @@ def parse_post_html(post_soup, base_url: str) -> Post:
     )
 
 def scrape(output_file: str, max_pages: int = 0):
+    _validate_path(output_file)
     session = get_session()
     all_posts = []
     page = 1

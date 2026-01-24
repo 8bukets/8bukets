@@ -1,8 +1,18 @@
+import os
 import json
 import logging
 import argparse
 from googlesearch import search
 from typing import List, Dict
+
+def _validate_path(file_path: str):
+    """
+    Validates that the file path is within the current working directory.
+    """
+    abs_path = os.path.realpath(file_path)
+    cwd = os.path.realpath(os.getcwd())
+    if os.path.commonpath([abs_path, cwd]) != cwd:
+        raise ValueError(f"Security Error: Output path '{file_path}' is outside the current working directory.")
 
 def configure_logging(verbose: bool):
     level = logging.DEBUG if verbose else logging.INFO
@@ -48,6 +58,7 @@ def main():
     results = perform_google_search(args.query, num_results=args.limit)
 
     try:
+        _validate_path(args.output)
         with open(args.output, 'w', encoding='utf-8') as f:
             json.dump(results, f, indent=4, ensure_ascii=False)
         logging.info(f"Saved results to {args.output}")
