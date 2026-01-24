@@ -7,6 +7,7 @@ import re
 import argparse
 import logging
 import time
+import os
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
@@ -22,12 +23,20 @@ BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
-        self.output_json = output_json
-        self.output_csv = output_csv
-        self.output_txt = output_txt
+        self.output_json = self._validate_path(output_json)
+        self.output_csv = self._validate_path(output_csv)
+        self.output_txt = self._validate_path(output_txt)
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+
+    def _validate_path(self, filepath: str) -> str:
+        """Ensure the output path is within the current working directory."""
+        abs_path = os.path.abspath(filepath)
+        cwd = os.path.abspath(os.getcwd())
+        if os.path.commonpath([abs_path, cwd]) != cwd:
+            raise ValueError(f"Security violation: Path '{filepath}' is outside the current working directory.")
+        return filepath
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
