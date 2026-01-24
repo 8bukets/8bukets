@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import time
+import os
 import logging
 import argparse
 import sys
@@ -21,13 +22,21 @@ logger = logging.getLogger(__name__)
 class BlogScraper:
     def __init__(self, base_url, output_json="wishlist_data.json", db_name="wishlist_data.db"):
         self.base_url = base_url
-        self.output_json = output_json
-        self.db_name = db_name
+        self.output_json = self._validate_path(output_json)
+        self.db_name = self._validate_path(db_name)
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
         self.data = []
         self.init_db()
+
+    def _validate_path(self, path):
+        """Validate that the path is within the current working directory."""
+        cwd = os.getcwd()
+        abs_path = os.path.abspath(path)
+        if os.path.commonpath([cwd, abs_path]) != cwd:
+            raise ValueError(f"Path must be within current working directory: {path}")
+        return path
 
     def init_db(self):
         """Initialize the SQLite database."""
