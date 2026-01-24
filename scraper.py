@@ -7,6 +7,7 @@ import re
 import argparse
 import logging
 import time
+import os
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
@@ -28,6 +29,27 @@ class MarkPositionScraperAsync:
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+
+    def _validate_path(self, filepath: str) -> str:
+        """
+        Validate that the filepath is within the current working directory.
+        Returns the absolute path if valid, raises ValueError otherwise.
+        """
+        # Resolve absolute paths
+        abs_path = os.path.abspath(filepath)
+        base_dir = os.path.abspath(os.getcwd())
+
+        # Use commonpath to check if abs_path is within base_dir
+        try:
+            common = os.path.commonpath([base_dir, abs_path])
+        except ValueError:
+            # Can happen on Windows if paths are on different drives
+            common = ""
+
+        if common != base_dir:
+            raise ValueError(f"Security Error: Invalid file path '{filepath}'. Path must be within the current working directory.")
+
+        return abs_path
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -218,14 +240,16 @@ class MarkPositionScraperAsync:
     def save_data(self, posts: List[Dict]):
         # JSON
         try:
+            self._validate_path(self.output_json)
             with open(self.output_json, 'w', encoding='utf-8') as f:
                 json.dump(posts, f, indent=4, ensure_ascii=False)
             logger.info(f"Saved {len(posts)} posts to {self.output_json}")
-        except IOError as e:
+        except (IOError, ValueError) as e:
             logger.error(f"Failed to save JSON: {e}")
 
         # CSV
         try:
+            self._validate_path(self.output_csv)
             with open(self.output_csv, 'w', newline='', encoding='utf-8') as f:
                 writer = csv.writer(f)
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
@@ -240,7 +264,7 @@ class MarkPositionScraperAsync:
                         post.get('post_url', '')
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
-        except IOError as e:
+        except (IOError, ValueError) as e:
             logger.error(f"Failed to save CSV: {e}")
 
         # Unique Links TXT
@@ -252,11 +276,12 @@ class MarkPositionScraperAsync:
 
         sorted_links = sorted(list(unique_links))
         try:
+            self._validate_path(self.output_txt)
             with open(self.output_txt, 'w', encoding='utf-8') as f:
                 for link in sorted_links:
                     f.write(link + '\n')
             logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
-        except IOError as e:
+        except (IOError, ValueError) as e:
             logger.error(f"Failed to save TXT: {e}")
 
 def main():
