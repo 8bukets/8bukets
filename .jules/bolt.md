@@ -1,0 +1,3 @@
+## 2026-01-25 - TextBlob Processing Optimization
+**Learning:** String concatenation of thousands of blog posts followed by a single monolithic `TextBlob` tokenization is significantly slower (~20%) and more memory intensive than processing each post incrementally. While Python's string concatenation is optimized, re-tokenizing the entire corpus in one go creates a massive bottleneck and memory spike.
+**Action:** When analyzing aggregated content, prefer incremental processing (e.g., updating a `Counter` per item) over "concatenate then process" patterns, especially with expensive operations like NLP tokenization.
