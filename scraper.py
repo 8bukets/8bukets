@@ -1,3 +1,4 @@
+import os
 import aiohttp
 import asyncio
 from bs4 import BeautifulSoup
@@ -22,12 +23,35 @@ BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
-        self.output_json = output_json
-        self.output_csv = output_csv
-        self.output_txt = output_txt
+        self.output_json = self.validate_output_path(output_json)
+        self.output_csv = self.validate_output_path(output_csv)
+        self.output_txt = self.validate_output_path(output_txt)
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+
+    def validate_output_path(self, filepath: str) -> str:
+        """Ensure the output path is within the current working directory."""
+        if not filepath:
+            return filepath
+
+        # Get absolute paths
+        abs_path = os.path.abspath(filepath)
+        cwd = os.getcwd()
+
+        # Check if the path starts with the CWD
+        # os.path.commonpath returns the longest common sub-path.
+        # We ensure the file is strictly inside the CWD.
+        try:
+            common = os.path.commonpath([abs_path, cwd])
+        except ValueError:
+             # commonpath can raise ValueError if paths are on different drives
+             raise ValueError(f"Security Error: Output path '{filepath}' is invalid.")
+
+        if common != cwd:
+            raise ValueError(f"Security Error: Output path '{filepath}' is outside the current working directory.")
+
+        return filepath
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
