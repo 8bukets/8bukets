@@ -7,8 +7,24 @@ import re
 import argparse
 import logging
 import time
+import sys
 from typing import List, Dict, Optional, Set, Tuple
 from urllib.parse import urlparse
+
+# ANSI Colors
+class Colors:
+    GREEN = '\033[92m'
+    RED = '\033[91m'
+    YELLOW = '\033[93m'
+    CYAN = '\033[96m'
+    BOLD = '\033[1m'
+    RESET = '\033[0m'
+
+def colorize(text: str, color: str) -> str:
+    """Apply ANSI color if stdout is a TTY."""
+    if sys.stdout.isatty():
+        return f"{color}{text}{Colors.RESET}"
+    return text
 
 # Configure logging
 logging.basicConfig(
@@ -68,7 +84,7 @@ class MarkPositionScraperAsync:
                 response.raise_for_status()
                 return await response.text()
         except aiohttp.ClientError as e:
-            logger.error(f"Error fetching page {page_num}: {e}")
+            logger.error(colorize(f"✘ Error fetching page {page_num}: {e}", Colors.RED))
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
@@ -134,6 +150,7 @@ class MarkPositionScraperAsync:
         return page_posts
 
     async def scrape(self):
+        start_time = time.time()
         all_posts = []
 
         # Headers
@@ -169,16 +186,16 @@ class MarkPositionScraperAsync:
 
                         if page_posts is None:
                             # 404 or Error
-                            logger.info(f"Page {page_num} returned 404 or error. Stopping new scheduling.")
+                            logger.info(colorize(f"⚠ Page {page_num} returned 404 or error. Stopping new scheduling.", Colors.YELLOW))
                             stop_scheduling = True
                         elif len(page_posts) == 0:
-                            logger.info(f"Page {page_num} has no articles. Stopping new scheduling.")
+                            logger.info(colorize(f"⚠ Page {page_num} has no articles. Stopping new scheduling.", Colors.YELLOW))
                             stop_scheduling = True
                         else:
-                            logger.info(f"Page {page_num} scraped ({len(page_posts)} posts).")
+                            logger.info(colorize(f"✔ Page {page_num} scraped ({len(page_posts)} posts).", Colors.GREEN))
                             results.append((page_num, page_posts))
                     except Exception as e:
-                        logger.error(f"Task failed: {e}")
+                        logger.error(colorize(f"✘ Task failed: {e}", Colors.RED))
                         # If a task fails unpredictably, we generally might want to continue or retry.
                         # For now, we assume it's a transient error or a bad page, but don't stop everything unless necessary.
                         # But typically consistent failure implies we should stop or retry.
@@ -202,6 +219,25 @@ class MarkPositionScraperAsync:
 
         self.save_data(all_posts)
 
+        # Summary
+        elapsed_time = time.time() - start_time
+        total_pages = len(results)
+        unique_links_count = len(set(p.get('external_link') for p in all_posts if p.get('external_link')))
+
+        summary = [
+            colorize("==================================================", Colors.BOLD),
+            colorize(f"           🎉 SCRAPING COMPLETE 🎉", Colors.GREEN),
+            colorize("==================================================", Colors.BOLD),
+            f"  📄 Total Pages:      {total_pages}",
+            f"  📝 Total Posts:      {len(all_posts)}",
+            f"  🔗 Unique Links:     {unique_links_count}",
+            f"  ⏱  Time Taken:       {elapsed_time:.2f}s",
+            colorize("==================================================", Colors.BOLD)
+        ]
+
+        for line in summary:
+            logger.info(line)
+
     async def fetch_and_parse(self, session, page_num) -> Tuple[int, Optional[List[Dict]]]:
         html = await self.fetch_page(session, page_num)
         if html:
@@ -214,9 +250,9 @@ class MarkPositionScraperAsync:
         try:
             with open(self.output_json, 'w', encoding='utf-8') as f:
                 json.dump(posts, f, indent=4, ensure_ascii=False)
-            logger.info(f"Saved {len(posts)} posts to {self.output_json}")
+            logger.info(colorize(f"💾 Saved {len(posts)} posts to {self.output_json}", Colors.CYAN))
         except IOError as e:
-            logger.error(f"Failed to save JSON: {e}")
+            logger.error(colorize(f"✘ Failed to save JSON: {e}", Colors.RED))
 
         # CSV
         try:
@@ -233,9 +269,9 @@ class MarkPositionScraperAsync:
                         post.get('domain', ''),
                         post.get('post_url', '')
                     ])
-            logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
+            logger.info(colorize(f"💾 Saved {len(posts)} posts to {self.output_csv}", Colors.CYAN))
         except IOError as e:
-            logger.error(f"Failed to save CSV: {e}")
+            logger.error(colorize(f"✘ Failed to save CSV: {e}", Colors.RED))
 
         # Unique Links TXT
         unique_links = set()
@@ -249,9 +285,9 @@ class MarkPositionScraperAsync:
             with open(self.output_txt, 'w', encoding='utf-8') as f:
                 for link in sorted_links:
                     f.write(link + '\n')
-            logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
+            logger.info(colorize(f"💾 Saved {len(sorted_links)} unique links to {self.output_txt}", Colors.CYAN))
         except IOError as e:
-            logger.error(f"Failed to save TXT: {e}")
+            logger.error(colorize(f"✘ Failed to save TXT: {e}", Colors.RED))
 
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
