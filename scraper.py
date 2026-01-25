@@ -7,6 +7,8 @@ import re
 import argparse
 import logging
 import time
+import os
+import sys
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
@@ -19,6 +21,25 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
+
+def validate_path(filepath: str) -> str:
+    """Validate that the filepath is within the current working directory."""
+    abs_path = os.path.abspath(filepath)
+    base_dir = os.getcwd()
+
+    # Use commonpath to check if the file is inside the base directory
+    # resolving symlinks with abspath helps, but realpath might be safer if symlinks are a concern.
+    # For now, abspath is standard for basic traversal prevention.
+    try:
+        common = os.path.commonpath([base_dir, abs_path])
+    except ValueError:
+        # Can happen on Windows if drives are different
+        common = ""
+
+    if common != base_dir:
+        logger.error(f"Security Error: Path '{filepath}' is outside the allowed directory.")
+        sys.exit(1)
+    return filepath
 
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
@@ -280,6 +301,11 @@ def main():
     parser.add_argument("--concurrency", type=int, default=5, help="Number of concurrent requests")
 
     args = parser.parse_args()
+
+    # Validate output paths
+    validate_path(args.json)
+    validate_path(args.csv)
+    validate_path(args.txt)
 
     scraper = MarkPositionScraperAsync(
         output_json=args.json,
