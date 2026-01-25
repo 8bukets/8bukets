@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import json
 import csv
 import re
+import os
 import argparse
 import logging
 import time
@@ -23,13 +24,32 @@ BASE_URL = "https://www.oracle.com/news/"
 
 class OracleNewsScraper:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
-        self.output_json = output_json
-        self.output_csv = output_csv
-        self.output_txt = output_txt
+        self.output_json = self._validate_path(output_json)
+        self.output_csv = self._validate_path(output_csv)
+        self.output_txt = self._validate_path(output_txt)
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.base_url = BASE_URL
         self.rp = RobotFileParser()
+
+    def _validate_path(self, file_path: str) -> str:
+        """Validate that the file path is within the current working directory."""
+        if not file_path:
+            return file_path
+
+        # Get absolute paths to resolve symlinks and relative paths
+        cwd = os.path.realpath(os.getcwd())
+        abs_path = os.path.realpath(file_path)
+
+        # Check if the path is safely within the current working directory
+        try:
+            if os.path.commonpath([cwd, abs_path]) != cwd:
+                raise ValueError(f"Security violation: Path '{file_path}' attempts to traverse outside the working directory.")
+        except ValueError:
+            # Handle cases like different drives on Windows
+            raise ValueError(f"Security violation: Path '{file_path}' is invalid.")
+
+        return file_path
 
     def check_robots_txt(self):
         """Check if scraping is allowed by robots.txt"""
