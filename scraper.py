@@ -22,6 +22,8 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://www.oracle.com/news/"
 
 class OracleNewsScraper:
+    WHITESPACE_PATTERN = re.compile(r'\s+')
+
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
         self.output_csv = output_csv
@@ -31,7 +33,7 @@ class OracleNewsScraper:
         self.base_url = BASE_URL
         self.rp = RobotFileParser()
 
-    def check_robots_txt(self):
+    async def check_robots_txt(self):
         """Check if scraping is allowed by robots.txt"""
         parsed_url = urlparse(self.base_url)
         robots_url = f"{parsed_url.scheme}://{parsed_url.netloc}/robots.txt"
@@ -39,7 +41,7 @@ class OracleNewsScraper:
 
         try:
             self.rp.set_url(robots_url)
-            self.rp.read()
+            await asyncio.to_thread(self.rp.read)
             can_fetch = self.rp.can_fetch("*", self.base_url)
             if can_fetch:
                 logger.info("Robots.txt allows scraping.")
@@ -58,7 +60,7 @@ class OracleNewsScraper:
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return self.WHITESPACE_PATTERN.sub(' ', text).strip()
 
     def sanitize_for_csv(self, value: str) -> str:
         """Prevent CSV injection by prepending a single quote to risky fields."""
@@ -85,6 +87,9 @@ class OracleNewsScraper:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
+        return await asyncio.to_thread(self._parse_page_sync, html)
+
+    def _parse_page_sync(self, html: str) -> List[Dict]:
         soup = BeautifulSoup(html, 'html.parser')
         # Oracle news uses links in <h3> tags or <a> tags with specific classes or structures.
         # Based on curl output, we saw links like:
@@ -144,7 +149,7 @@ class OracleNewsScraper:
         return articles
 
     async def scrape(self):
-        if not self.check_robots_txt():
+        if not await self.check_robots_txt():
             logger.error("Aborting scrape due to robots.txt restrictions.")
             return
 
