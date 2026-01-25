@@ -7,8 +7,23 @@ import re
 import argparse
 import logging
 import time
+import sys
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
+
+class Colors:
+    RESET = "\033[0m"
+    RED = "\033[91m"
+    GREEN = "\033[92m"
+    YELLOW = "\033[93m"
+    BLUE = "\033[94m"
+    CYAN = "\033[96m"
+    BOLD = "\033[1m"
+
+def colorize(text: str, color: str) -> str:
+    if sys.stdout.isatty():
+        return f"{color}{text}{Colors.RESET}"
+    return text
 
 # Configure logging
 logging.basicConfig(
@@ -68,7 +83,7 @@ class MarkPositionScraperAsync:
                 response.raise_for_status()
                 return await response.text()
         except aiohttp.ClientError as e:
-            logger.error(f"Error fetching page {page_num}: {e}")
+            logger.error(colorize(f"Error fetching page {page_num}: {e}", Colors.RED))
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
@@ -134,7 +149,9 @@ class MarkPositionScraperAsync:
         return page_posts
 
     async def scrape(self):
+        start_time = time.time()
         all_posts = []
+        total_pages_scraped = 0
         page_num = 1
         sem = asyncio.Semaphore(self.concurrency)
 
@@ -172,7 +189,7 @@ class MarkPositionScraperAsync:
                 if not tasks:
                     break
 
-                logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
+                logger.info(colorize(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...", Colors.CYAN))
                 results = await asyncio.gather(*tasks)
 
                 # Check results
@@ -184,22 +201,23 @@ class MarkPositionScraperAsync:
                     page_idx = batch_start + idx
                     if page_posts is None:
                         # 404 or Error
-                        logger.info(f"Page {page_idx} returned 404 or empty. Stopping.")
+                        logger.info(colorize(f"Page {page_idx} returned 404 or empty. Stopping.", Colors.YELLOW))
                         stop_detected = True
                         break # Don't process further pages in this batch effectively (though they were fetched)
                     elif len(page_posts) == 0:
-                        logger.info(f"Page {page_idx} has no articles. Stopping.")
+                        logger.info(colorize(f"Page {page_idx} has no articles. Stopping.", Colors.YELLOW))
                         stop_detected = True
                         break
                     else:
                         all_posts.extend(page_posts)
                         batch_posts_count += len(page_posts)
+                        total_pages_scraped += 1
 
                 if stop_detected:
                     break
 
                 if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
-                    logger.info("Reached max pages limit.")
+                    logger.info(colorize("Reached max pages limit.", Colors.YELLOW))
                     break
 
                 page_num += len(tasks)
@@ -207,6 +225,18 @@ class MarkPositionScraperAsync:
                 await asyncio.sleep(0.5)
 
         self.save_data(all_posts)
+
+        elapsed_time = time.time() - start_time
+        unique_links_count = len(set(p.get('external_link') for p in all_posts if p.get('external_link')))
+
+        print("\n" + colorize("=" * 50, Colors.BOLD))
+        print(colorize(f" SUMMARY", Colors.BOLD))
+        print(colorize("=" * 50, Colors.BOLD))
+        print(f" Total Pages Scraped:  {total_pages_scraped}")
+        print(f" Total Posts Extracted: {len(all_posts)}")
+        print(f" Unique Links Found:    {unique_links_count}")
+        print(f" Time Taken:            {elapsed_time:.2f}s")
+        print(colorize("=" * 50, Colors.BOLD) + "\n")
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
@@ -220,9 +250,9 @@ class MarkPositionScraperAsync:
         try:
             with open(self.output_json, 'w', encoding='utf-8') as f:
                 json.dump(posts, f, indent=4, ensure_ascii=False)
-            logger.info(f"Saved {len(posts)} posts to {self.output_json}")
+            logger.info(colorize(f"Saved {len(posts)} posts to {self.output_json}", Colors.GREEN))
         except IOError as e:
-            logger.error(f"Failed to save JSON: {e}")
+            logger.error(colorize(f"Failed to save JSON: {e}", Colors.RED))
 
         # CSV
         try:
@@ -239,9 +269,9 @@ class MarkPositionScraperAsync:
                         post.get('domain', ''),
                         post.get('post_url', '')
                     ])
-            logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
+            logger.info(colorize(f"Saved {len(posts)} posts to {self.output_csv}", Colors.GREEN))
         except IOError as e:
-            logger.error(f"Failed to save CSV: {e}")
+            logger.error(colorize(f"Failed to save CSV: {e}", Colors.RED))
 
         # Unique Links TXT
         unique_links = set()
@@ -255,9 +285,9 @@ class MarkPositionScraperAsync:
             with open(self.output_txt, 'w', encoding='utf-8') as f:
                 for link in sorted_links:
                     f.write(link + '\n')
-            logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
+            logger.info(colorize(f"Saved {len(sorted_links)} unique links to {self.output_txt}", Colors.GREEN))
         except IOError as e:
-            logger.error(f"Failed to save TXT: {e}")
+            logger.error(colorize(f"Failed to save TXT: {e}", Colors.RED))
 
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
