@@ -4,6 +4,19 @@ from collections import Counter
 from urllib.parse import urlparse
 from datetime import datetime
 import sys
+import os
+
+def validate_path(filepath):
+    abs_path = os.path.abspath(filepath)
+    base_dir = os.getcwd()
+    try:
+        common = os.path.commonpath([base_dir, abs_path])
+    except ValueError:
+        common = ""
+    if common != base_dir:
+        print(f"Security Error: Path '{filepath}' is outside the allowed directory.")
+        sys.exit(1)
+    return filepath
 
 def load_data(filepath):
     try:
@@ -106,6 +119,9 @@ if __name__ == "__main__":
     parser.add_argument("--input", default="links.json", help="Input JSON file")
     parser.add_argument("--output", default="REPORT.md", help="Output Markdown report file")
     args = parser.parse_args()
+
+    validate_path(args.input)
+    validate_path(args.output)
 
     data = load_data(args.input)
     generate_report(data, args.output)
