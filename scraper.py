@@ -71,7 +71,11 @@ class MarkPositionScraperAsync:
             logger.error(f"Error fetching page {page_num}: {e}")
             return None
 
-    async def parse_page(self, html: str) -> List[Dict]:
+    def parse_page(self, html: str) -> List[Dict]:
+        """
+        Parse HTML synchronously.
+        This is CPU-bound and should be run in a thread executor to avoid blocking the event loop.
+        """
         soup = BeautifulSoup(html, 'html.parser')
         articles = soup.find_all('article', class_='post')
         page_posts = []
@@ -205,7 +209,8 @@ class MarkPositionScraperAsync:
     async def fetch_and_parse(self, session, page_num) -> Tuple[int, Optional[List[Dict]]]:
         html = await self.fetch_page(session, page_num)
         if html:
-            posts = await self.parse_page(html)
+            # ⚡ Bolt Optimization: Run CPU-bound parsing in a thread to keep the event loop non-blocking
+            posts = await asyncio.to_thread(self.parse_page, html)
             return page_num, posts
         return page_num, None
 
