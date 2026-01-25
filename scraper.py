@@ -5,6 +5,7 @@ import time
 import logging
 import argparse
 import sys
+import os
 import sqlite3
 from datetime import datetime
 
@@ -21,13 +22,31 @@ logger = logging.getLogger(__name__)
 class BlogScraper:
     def __init__(self, base_url, output_json="wishlist_data.json", db_name="wishlist_data.db"):
         self.base_url = base_url
-        self.output_json = output_json
-        self.db_name = db_name
+        self.output_json = self._validate_path(output_json)
+        self.db_name = self._validate_path(db_name)
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
         self.data = []
         self.init_db()
+
+    def _validate_path(self, path):
+        """Validate that the path is within the current working directory."""
+        if not path:
+            return path
+
+        abs_path = os.path.abspath(path)
+        cwd = os.getcwd()
+
+        # Ensure the path is within the CWD
+        try:
+            if os.path.commonpath([abs_path, cwd]) != cwd:
+                raise ValueError(f"Security violation: Path '{path}' traverses outside the current working directory.")
+        except ValueError:
+             # handle cases where commonpath fails (e.g. different drives on Windows)
+             raise ValueError(f"Security violation: Path '{path}' is invalid or outside the current working directory.")
+
+        return path
 
     def init_db(self):
         """Initialize the SQLite database."""
