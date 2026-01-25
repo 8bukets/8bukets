@@ -5,6 +5,7 @@ import time
 import logging
 import argparse
 import sys
+import os
 from urllib.parse import urlparse
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
@@ -31,6 +32,27 @@ def configure_logging(verbose: bool):
         level=level,
         format='%(asctime)s - %(levelname)s - %(message)s'
     )
+
+def validate_path(path: str) -> str:
+    """
+    Validates that the path is within the current working directory.
+    Returns the absolute path if valid, raises ValueError otherwise.
+    """
+    base_dir = os.path.abspath(os.getcwd())
+    abs_path = os.path.abspath(path)
+
+    # Use os.path.commonpath to safely check path containment
+    # This handles different path separators and canonicalization
+    try:
+        common = os.path.commonpath([base_dir, abs_path])
+    except ValueError:
+        # Can happen if paths are on different drives
+        raise ValueError(f"Invalid path: {path} is on a different drive than current working directory.")
+
+    if common != base_dir:
+         raise ValueError(f"Invalid path: {path} must be within the current working directory.")
+
+    return abs_path
 
 def get_session():
     """
@@ -132,6 +154,13 @@ def parse_post_html(post_soup, base_url: str) -> Post:
     )
 
 def scrape(output_file: str, max_pages: int = 0):
+    # Validate path first to fail fast
+    try:
+        valid_output_file = validate_path(output_file)
+    except ValueError as e:
+        logging.error(e)
+        return
+
     session = get_session()
     all_posts = []
     page = 1
@@ -175,9 +204,9 @@ def scrape(output_file: str, max_pages: int = 0):
     logging.info(f"Total posts scraped: {len(all_posts)}")
 
     try:
-        with open(output_file, 'w', encoding='utf-8') as f:
+        with open(valid_output_file, 'w', encoding='utf-8') as f:
             json.dump([asdict(p) for p in all_posts], f, indent=4, ensure_ascii=False)
-        logging.info(f"Saved to {output_file}")
+        logging.info(f"Saved to {valid_output_file}")
     except IOError as e:
         logging.error(f"Failed to save output to {output_file}: {e}")
 
