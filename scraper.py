@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import json
 import csv
 import re
+import os
 import argparse
 import logging
 import time
@@ -28,6 +29,18 @@ class MarkPositionScraperAsync:
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+
+    def validate_path(self, filepath: str) -> str:
+        """Validate that the filepath is safe and within the current working directory."""
+        # Normalize the path
+        abs_path = os.path.abspath(filepath)
+        base_dir = os.getcwd()
+
+        # Check if the file is within the base directory
+        if os.path.commonpath([base_dir, abs_path]) != base_dir:
+            raise ValueError(f"Security Error: Invalid file path '{filepath}'. Path traversal detected.")
+
+        return filepath
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -134,6 +147,11 @@ class MarkPositionScraperAsync:
         return page_posts
 
     async def scrape(self):
+        # Validate paths before opening files
+        self.validate_path(self.output_json)
+        self.validate_path(self.output_csv)
+        self.validate_path(self.output_txt)
+
         page_num = 1
         sem = asyncio.Semaphore(self.concurrency)
 
