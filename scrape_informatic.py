@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+import os
 import time
 import logging
 import argparse
@@ -24,6 +25,16 @@ class Post:
     image_url: Optional[str]
 
 BASE_URL = "https://informaticmagazine.data.blog"
+
+def validate_output_path(output_path: str):
+    """
+    Validates that the output path is safe (within current directory).
+    """
+    base_dir = os.getcwd()
+    abs_path = os.path.abspath(output_path)
+    if os.path.commonpath([base_dir, abs_path]) != base_dir:
+        raise ValueError(f"Security Error: Output path '{output_path}' traverses outside the current directory.")
+    return abs_path
 
 def configure_logging(verbose: bool):
     level = logging.DEBUG if verbose else logging.INFO
@@ -132,6 +143,9 @@ def parse_post_html(post_soup, base_url: str) -> Post:
     )
 
 def scrape(output_file: str, max_pages: int = 0):
+    # Security check before doing work
+    output_file = validate_output_path(output_file)
+
     session = get_session()
     all_posts = []
     page = 1
