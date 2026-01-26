@@ -27,10 +27,14 @@ BASE_URL = "https://informaticmagazine.data.blog"
 
 def configure_logging(verbose: bool):
     level = logging.DEBUG if verbose else logging.INFO
-    logging.basicConfig(
-        level=level,
-        format='%(asctime)s - %(levelname)s - %(message)s'
-    )
+    try:
+        from cli_utils import configure_colored_logging
+        configure_colored_logging(level=level)
+    except ImportError:
+        logging.basicConfig(
+            level=level,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
 
 def get_session():
     """
