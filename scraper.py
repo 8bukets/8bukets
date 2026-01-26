@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
 import re
@@ -31,6 +31,10 @@ class OracleNewsScraper:
         self.base_url = BASE_URL
         self.rp = RobotFileParser()
 
+        # Pre-compile regex patterns
+        self.whitespace_pattern = re.compile(r'\s+')
+        self.date_pattern = re.compile(r'(\d{4}-\d{2}-\d{2})')
+
     def check_robots_txt(self):
         """Check if scraping is allowed by robots.txt"""
         parsed_url = urlparse(self.base_url)
@@ -58,7 +62,7 @@ class OracleNewsScraper:
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return self.whitespace_pattern.sub(' ', text).strip()
 
     def sanitize_for_csv(self, value: str) -> str:
         """Prevent CSV injection by prepending a single quote to risky fields."""
@@ -84,8 +88,9 @@ class OracleNewsScraper:
             logger.error(f"Timeout fetching {url}")
             return None
 
-    async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+    def parse_page(self, html: str) -> List[Dict]:
+        strainer = SoupStrainer('a', href=True)
+        soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
         # Oracle news uses links in <h3> tags or <a> tags with specific classes or structures.
         # Based on curl output, we saw links like:
         # <a href="/news/announcement/..." data-lbl="..."><h3>Title</h3></a>
@@ -93,7 +98,7 @@ class OracleNewsScraper:
         articles = []
 
         # Find all links that look like announcements
-        links = soup.find_all('a', href=True)
+        links = soup.find_all('a')
 
         seen_urls = set()
 
@@ -127,7 +132,7 @@ class OracleNewsScraper:
 
             # Extract Date (heuristic from URL or nearby text)
             # URL format example: ...-2025-12-11/
-            date_match = re.search(r'(\d{4}-\d{2}-\d{2})', href)
+            date_match = self.date_pattern.search(href)
             date_str = date_match.group(1) if date_match else ""
 
             article_data = {
@@ -164,7 +169,8 @@ class OracleNewsScraper:
             logger.info(f"Fetching {self.base_url}...")
             html = await self.fetch_page(session, self.base_url)
             if html:
-                posts = await self.parse_page(html)
+                # Run CPU-bound parsing in a separate thread
+                posts = await asyncio.to_thread(self.parse_page, html)
                 all_posts.extend(posts)
                 logger.info(f"Found {len(posts)} relevant articles.")
             else:
