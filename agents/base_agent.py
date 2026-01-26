@@ -1,14 +1,23 @@
 import logging
+import sys
 
 class BaseAgent:
     def __init__(self, name):
         self.name = name
         self.logger = logging.getLogger(self.name)
         self.logger.setLevel(logging.INFO)
-        if not self.logger.handlers:
+        # Only add handler if root logger is not configured (to avoid double logging)
+        if not logging.getLogger().handlers and not self.logger.handlers:
             handler = logging.StreamHandler()
-            formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-            handler.setFormatter(formatter)
+            try:
+                from cli_utils import ColoredFormatter
+                if sys.stdout.isatty():
+                    handler.setFormatter(ColoredFormatter())
+                else:
+                    handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
+            except ImportError:
+                handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
+
             self.logger.addHandler(handler)
 
     def run(self, data=None):

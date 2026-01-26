@@ -2,6 +2,7 @@ import logging
 import sys
 import datetime
 import os
+from cli_utils import configure_colored_logging
 from agents.researcher import ResearcherAgent
 from agents.analyzer import AnalyzerAgent
 from agents.intelligence import IntelligenceAgent
@@ -12,10 +13,7 @@ from agents.creativity import CreativityAgent
 from agents.advertising import AdvertisingAgent
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
+configure_colored_logging()
 logger = logging.getLogger("Orchestrator")
 
 def run_orchestration(save_report=True):
