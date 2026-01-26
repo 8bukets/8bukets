@@ -85,44 +85,58 @@ class AgentOrchestrator:
         report_filename = os.path.join(self.report_dir, f"agent_report_{report_date}.md")
 
         with open(report_filename, "w", encoding="utf-8") as f:
-            f.write(f"# 🤖 Autonomous Agent Report (Evolved v2) - {report_date}\n\n")
+            f.write(f"# <a id='top'></a>🤖 Autonomous Agent Report (Evolved v2) - {report_date}\n\n")
+
+            # Table of Contents
+            f.write("**Table of Contents**\n")
+            f.write("- [🏥 System Health](#system-health)\n")
+            f.write("- [🧠 Intelligence](#intelligence)\n")
+            f.write("- [🌌 Curiosity & Innovation](#curiosity)\n")
+            f.write("- [📢 Ad Manager](#ad-manager)\n")
+            f.write("- [💰 Monetization](#monetization)\n")
+            f.write("- [✍️ Content Draft](#content-draft)\n")
+            f.write("\n")
 
             # Health
             h = outputs.get('HealthAgent', {})
-            f.write(f"## 🏥 System Health\n- DB: {h.get('db_status')}\n\n")
+            f.write(f"## <a id='system-health'></a>🏥 System Health\n- DB: {h.get('db_status')}\n\n")
+            f.write("[Back to Top](#top)\n\n")
 
             # Intelligence
             i = outputs.get('IntelligenceAgent', {})
-            f.write(f"## 🧠 Intelligence\n")
+            f.write(f"## <a id='intelligence'></a>🧠 Intelligence\n")
             f.write(f"- **Strategy**: {i.get('strategy')}\n")
             f.write(f"- **Trend Alert**: {i.get('trend_alert')}\n\n")
+            f.write("[Back to Top](#top)\n\n")
 
             # Curiosity & Innovation
             cur = outputs.get('CuriosityAgent', {})
             crt = outputs.get('CreativeAgent', {})
-            f.write(f"## 🌌 Curiosity & Innovation (Google Antigravity Mode)\n")
+            f.write(f"## <a id='curiosity'></a>🌌 Curiosity & Innovation (Google Antigravity Mode)\n")
             f.write(f"- **Explored**: '{cur.get('exploration_query')}'\n")
             f.write(f"- **Findings**: {cur.get('findings')}\n")
             f.write(f"### 💡 High Solution Interest Ideas\n")
             for idea in crt.get('system_improvement_ideas', []):
                 f.write(f"- 🛠️ {idea}\n")
-            f.write("\n")
+            f.write("\n[Back to Top](#top)\n\n")
 
             # Ad Manager
             ads = outputs.get('AdManagerAgent', {})
-            f.write(f"## 📢 Ad Manager\n")
+            f.write(f"## <a id='ad-manager'></a>📢 Ad Manager\n")
             f.write(f"### Active Campaigns\n")
             for camp in ads.get('campaigns', []):
                 f.write(f"- **{camp['name']}**: {camp['headline']} ({camp['type']})\n")
-            f.write("\n")
+            f.write("\n[Back to Top](#top)\n\n")
 
             # Monetization
             m = outputs.get('MonetizationAgent', {})
-            f.write(f"## 💰 Monetization\n- Opportunities: {len(m.get('top_opportunities', []))}\n\n")
+            f.write(f"## <a id='monetization'></a>💰 Monetization\n- Opportunities: {len(m.get('top_opportunities', []))}\n\n")
+            f.write("[Back to Top](#top)\n\n")
 
             # Content
             cc = outputs.get('CreatorAgent', {})
-            f.write(f"## ✍️ Content Draft\n**{cc.get('draft_title')}**\n\n{cc.get('draft_content')}\n\n")
+            f.write(f"## <a id='content-draft'></a>✍️ Content Draft\n**{cc.get('draft_title')}**\n\n{cc.get('draft_content')}\n\n")
+            f.write("[Back to Top](#top)\n\n")
 
         logger.info(f"Agent Report generated: {report_filename}")
 
