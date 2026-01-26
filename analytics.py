@@ -4,6 +4,7 @@ from collections import Counter
 from urllib.parse import urlparse
 from datetime import datetime
 import sys
+from utils import validate_output_path
 
 def load_data(filepath):
     try:
@@ -107,5 +108,8 @@ if __name__ == "__main__":
     parser.add_argument("--output", default="REPORT.md", help="Output Markdown report file")
     args = parser.parse_args()
 
+    # Validate output path
+    output_path = validate_output_path(args.output)
+
     data = load_data(args.input)
-    generate_report(data, args.output)
+    generate_report(data, output_path)
