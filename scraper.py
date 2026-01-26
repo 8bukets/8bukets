@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup, Comment
 import json
 import csv
 import re
+import os
 import argparse
 import logging
 from typing import List, Dict, Optional
@@ -22,9 +23,23 @@ BASE_URL = "https://www.oracle.com/news/"
 
 class OracleNewsScraper:
     def __init__(self, output_json: str, output_csv: str, output_txt: str):
-        self.output_json = output_json
-        self.output_csv = output_csv
-        self.output_txt = output_txt
+        self.output_json = self.validate_path(output_json)
+        self.output_csv = self.validate_path(output_csv)
+        self.output_txt = self.validate_path(output_txt)
+
+    def validate_path(self, path: str) -> str:
+        """Ensure path is within the current working directory to prevent traversal."""
+        if not path:
+            raise ValueError("Path cannot be empty")
+
+        abs_path = os.path.abspath(path)
+        cwd = os.getcwd()
+
+        # Check if the resolved path is within the current working directory
+        if os.path.commonpath([abs_path, cwd]) != cwd:
+            raise ValueError(f"Security violation: Path {path} is outside current directory")
+
+        return abs_path
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
