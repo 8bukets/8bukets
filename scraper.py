@@ -20,6 +20,8 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://www.oracle.com/news/"
+WHITESPACE_PATTERN = re.compile(r'\s+')
+DATE_PATTERN = re.compile(r'(\d{4}-\d{2}-\d{2})')
 
 class OracleNewsScraper:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
@@ -58,7 +60,7 @@ class OracleNewsScraper:
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return WHITESPACE_PATTERN.sub(' ', text).strip()
 
     def sanitize_for_csv(self, value: str) -> str:
         """Prevent CSV injection by prepending a single quote to risky fields."""
@@ -127,7 +129,7 @@ class OracleNewsScraper:
 
             # Extract Date (heuristic from URL or nearby text)
             # URL format example: ...-2025-12-11/
-            date_match = re.search(r'(\d{4}-\d{2}-\d{2})', href)
+            date_match = DATE_PATTERN.search(href)
             date_str = date_match.group(1) if date_match else ""
 
             article_data = {
