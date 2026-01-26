@@ -554,8 +554,8 @@ https://www.youtube.com/ads/how-it-works/set-up-a-campaign/youtube-select/
 https://www.youtube.com/ads/making-a-video-ad/
 https://www.youtube.com/ads/signup/
 https://www.youtube.com/ads/youtube-select/
-https://www.youtube.com/embed/WPR9PCoeqog?feature=oembed
-https://www.youtube.com/embed/v9SqjeH7nrU?feature=oembed
+https://www.youtube.com/embed/WPR9PCoeqog?version=3&rel=1&showsearch=0&showinfo=1&iv_load_policy=1&fs=1&hl=en&autohide=2&wmode=transparent
+https://www.youtube.com/embed/v9SqjeH7nrU?version=3&rel=1&showsearch=0&showinfo=1&iv_load_policy=1&fs=1&hl=en&autohide=2&wmode=transparent
 https://www.youtube.com/intl/en_US/ads/
 https://www.youtube.com/intl/en_us/ads/how-it-works/create-a-video-ad/
 https://youradchoices.com/

@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
 import re
@@ -28,6 +28,8 @@ class MarkPositionScraperAsync:
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+        # Compile regex for SoupStrainer to match 'post' class even if other classes exist
+        self.article_strainer = SoupStrainer('article', class_=re.compile(r'\bpost\b'))
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -71,9 +73,10 @@ class MarkPositionScraperAsync:
             logger.error(f"Error fetching page {page_num}: {e}")
             return None
 
-    async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'lxml')
-        articles = soup.find_all('article', class_='post')
+    def parse_page(self, html: str) -> List[Dict]:
+        # Use SoupStrainer to only parse article tags, reducing memory and CPU usage
+        soup = BeautifulSoup(html, 'lxml', parse_only=self.article_strainer)
+        articles = soup.find_all('article')
         page_posts = []
 
         if not articles:
@@ -212,7 +215,8 @@ class MarkPositionScraperAsync:
         async with sem:
             html = await self.fetch_page(session, page_num)
             if html:
-                return await self.parse_page(html)
+                # Offload CPU-bound parsing to a thread to avoid blocking the event loop
+                return await asyncio.to_thread(self.parse_page, html)
             return None
 
     def save_data(self, posts: List[Dict]):
