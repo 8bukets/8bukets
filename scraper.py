@@ -7,6 +7,7 @@ import re
 import argparse
 import logging
 import time
+import os
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
@@ -22,12 +23,32 @@ BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
-        self.output_json = output_json
-        self.output_csv = output_csv
-        self.output_txt = output_txt
+        self.output_json = self.validate_path(output_json)
+        self.output_csv = self.validate_path(output_csv)
+        self.output_txt = self.validate_path(output_txt)
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+
+    def validate_path(self, filepath: str) -> str:
+        """
+        Validate that the file path is safe and within the current working directory.
+        Allows writing to subdirectories if they exist, but prevents traversal up.
+        """
+        # Resolve the absolute path
+        abs_path = os.path.abspath(filepath)
+        # Get the current working directory
+        cwd = os.getcwd()
+
+        # Check if the resolved path starts with the cwd
+        try:
+            if os.path.commonpath([cwd, abs_path]) != cwd:
+                raise ValueError(f"Security Error: Path '{filepath}' traverses outside the current working directory.")
+        except ValueError:
+             # specific for when paths are on different drives on Windows
+             raise ValueError(f"Security Error: Path '{filepath}' is invalid.")
+
+        return filepath
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
