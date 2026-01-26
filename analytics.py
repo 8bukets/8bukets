@@ -4,6 +4,7 @@ from collections import Counter
 from urllib.parse import urlparse
 from datetime import datetime
 import sys
+import os
 
 def load_data(filepath):
     try:
@@ -134,11 +135,33 @@ def generate_report(data, output_file):
 
     print(f"Report generated: {output_file}")
 
+def validate_output_path(path):
+    """
+    Validates that the output path is safe (within current working directory).
+    Returns the absolute path if safe, raises ValueError otherwise.
+    """
+    abs_path = os.path.abspath(path)
+    cwd = os.path.abspath(os.getcwd())
+
+    try:
+        if os.path.commonpath([abs_path, cwd]) != cwd:
+            raise ValueError(f"Security Error: Path '{path}' is outside the current working directory.")
+    except ValueError:
+        raise ValueError(f"Security Error: Path '{path}' is outside the current working directory.")
+
+    return abs_path
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
     parser.add_argument("--input", default="links.json", help="Input JSON file")
     parser.add_argument("--output", default="REPORT.md", help="Output Markdown report file")
     args = parser.parse_args()
+
+    try:
+        validate_output_path(args.output)
+    except ValueError as e:
+        print(str(e))
+        sys.exit(1)
 
     data = load_data(args.input)
     generate_report(data, args.output)

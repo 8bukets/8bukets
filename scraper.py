@@ -7,6 +7,8 @@ import re
 import argparse
 import logging
 import time
+import os
+import sys
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
@@ -259,6 +261,28 @@ class MarkPositionScraperAsync:
         except IOError as e:
             logger.error(f"Failed to save TXT: {e}")
 
+def validate_output_path(path: str) -> str:
+    """
+    Validates that the output path is safe (within current working directory).
+    Returns the absolute path if safe, raises ValueError otherwise.
+    """
+    # Normalize path
+    abs_path = os.path.abspath(path)
+    cwd = os.path.abspath(os.getcwd())
+
+    # Ensure the path is within the CWD
+    # commonpath returns the longest common sub-path.
+    # If abs_path is inside cwd, commonpath([abs_path, cwd]) should be cwd.
+    try:
+        if os.path.commonpath([abs_path, cwd]) != cwd:
+            raise ValueError(f"Security Error: Path '{path}' is outside the current working directory.")
+    except ValueError:
+        # commonpath might raise ValueError if paths are on different drives on Windows,
+        # which effectively means it's outside CWD.
+        raise ValueError(f"Security Error: Path '{path}' is outside the current working directory.")
+
+    return abs_path
+
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
     parser.add_argument("--json", default="links.json", help="Output JSON filename")
@@ -268,6 +292,15 @@ def main():
     parser.add_argument("--concurrency", type=int, default=5, help="Number of concurrent requests")
 
     args = parser.parse_args()
+
+    try:
+        # Validate output paths
+        validate_output_path(args.json)
+        validate_output_path(args.csv)
+        validate_output_path(args.txt)
+    except ValueError as e:
+        logger.error(str(e))
+        sys.exit(1)
 
     scraper = MarkPositionScraperAsync(
         output_json=args.json,
