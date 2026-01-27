@@ -9,6 +9,8 @@ import logging
 import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
+import sys
+from utils import validate_output_path
 
 # Configure logging
 logging.basicConfig(
@@ -269,10 +271,18 @@ def main():
 
     args = parser.parse_args()
 
+    try:
+        json_path = validate_output_path(args.json)
+        csv_path = validate_output_path(args.csv)
+        txt_path = validate_output_path(args.txt)
+    except ValueError as e:
+        logger.error(str(e))
+        sys.exit(1)
+
     scraper = MarkPositionScraperAsync(
-        output_json=args.json,
-        output_csv=args.csv,
-        output_txt=args.txt,
+        output_json=json_path,
+        output_csv=csv_path,
+        output_txt=txt_path,
         max_pages=args.limit,
         concurrency=args.concurrency
     )
