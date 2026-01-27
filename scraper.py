@@ -6,6 +6,7 @@ import csv
 import re
 import argparse
 import logging
+import os
 from typing import List, Dict, Optional
 from urllib.parse import urlparse
 from datetime import datetime
@@ -22,9 +23,24 @@ BASE_URL = "https://www.oracle.com/news/"
 
 class OracleNewsScraper:
     def __init__(self, output_json: str, output_csv: str, output_txt: str):
-        self.output_json = output_json
-        self.output_csv = output_csv
-        self.output_txt = output_txt
+        self.output_json = self.validate_path(output_json)
+        self.output_csv = self.validate_path(output_csv)
+        self.output_txt = self.validate_path(output_txt)
+
+    def validate_path(self, path: str) -> str:
+        """Validate that the path is within the current working directory."""
+        if not path:
+            raise ValueError("Path cannot be empty")
+
+        # Resolve absolute path
+        abs_path = os.path.abspath(path)
+        cwd = os.getcwd()
+
+        # Check if path is within CWD
+        if os.path.commonpath([abs_path, cwd]) != cwd:
+            raise ValueError(f"Security Error: Path '{path}' traverses outside the current working directory.")
+
+        return path
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -153,7 +169,7 @@ class OracleNewsScraper:
                 writer = csv.writer(f)
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
-                    writer.writerow([
+                    row = [
                         post.get('title', ''),
                         post.get('date', ''),
                         post.get('author', ''),
@@ -161,7 +177,15 @@ class OracleNewsScraper:
                         post.get('external_link', ''),
                         post.get('domain', ''),
                         post.get('post_url', '')
-                    ])
+                    ]
+                    # Sanitize CSV fields to prevent formula injection
+                    sanitized_row = []
+                    for field in row:
+                        if isinstance(field, str) and field.startswith(('=', '+', '-', '@')):
+                            sanitized_row.append("'" + field)
+                        else:
+                            sanitized_row.append(field)
+                    writer.writerow(sanitized_row)
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
             logger.error(f"Failed to save CSV: {e}")
