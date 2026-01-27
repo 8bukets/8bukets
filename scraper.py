@@ -7,6 +7,7 @@ import re
 import argparse
 import logging
 import time
+import os
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
@@ -22,12 +23,34 @@ BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
-        self.output_json = output_json
-        self.output_csv = output_csv
-        self.output_txt = output_txt
+        self.output_json = self.validate_path(output_json)
+        self.output_csv = self.validate_path(output_csv)
+        self.output_txt = self.validate_path(output_txt)
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+
+    def validate_path(self, path: str) -> str:
+        """Validate that the output path is within the current working directory."""
+        if not path:
+            raise ValueError("Output path cannot be empty")
+
+        # Resolve absolute paths
+        abs_path = os.path.abspath(path)
+        cwd = os.path.abspath(os.getcwd())
+
+        # Check if the path starts with the CWD
+        # os.path.commonpath is the safest way to check path containment
+        try:
+            common = os.path.commonpath([abs_path, cwd])
+        except ValueError:
+             # commonpath raises ValueError if paths are on different drives (Windows)
+             raise ValueError(f"Security Error: Output path '{path}' is invalid.")
+
+        if common != cwd:
+             raise ValueError(f"Security Error: Output path '{path}' attempts to traverse outside the working directory.")
+
+        return abs_path
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
