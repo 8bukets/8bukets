@@ -1,0 +1,3 @@
+## 2024-05-23 - BeautifulSoup SoupStrainer with lxml Behavior
+**Learning:** `SoupStrainer(class_='classname')` combined with `BeautifulSoup(..., 'lxml', parse_only=strainer)` yielded 0 results in tests, whereas `SoupStrainer('tagname')` worked correctly and provided >50% parsing speedup. `lxml`'s integration with `SoupStrainer` attribute filtering seems strict or buggy compared to `html.parser`, but tag filtering works reliably.
+**Action:** When using `SoupStrainer` for performance with `lxml`, prefer straining by tag name and then filtering by attributes using `find_all` on the strained soup, rather than straining by attributes directly.
