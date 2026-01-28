@@ -7,6 +7,9 @@ import argparse
 import sys
 import sqlite3
 from datetime import datetime
+import socket
+import ipaddress
+import urllib.parse
 
 # Configure logging
 logging.basicConfig(
@@ -126,7 +129,39 @@ class BlogScraper:
 
         return False
 
+    def is_safe_url(self, url):
+        """
+        Validates the URL to prevent SSRF and internal network access.
+        """
+        try:
+            parsed = urllib.parse.urlparse(url)
+            if parsed.scheme not in ('http', 'https'):
+                logger.warning(f"Unsafe scheme: {parsed.scheme}")
+                return False
+
+            hostname = parsed.hostname
+            if not hostname:
+                return False
+
+            # Resolve hostname to IP(s)
+            addr_info = socket.getaddrinfo(hostname, None)
+
+            for family, type, proto, canonname, sockaddr in addr_info:
+                ip = sockaddr[0]
+                if ipaddress.ip_address(ip).is_private:
+                    logger.warning(f"Blocked private IP access: {ip} for {hostname}")
+                    return False
+
+            return True
+        except Exception as e:
+            logger.error(f"Error validating URL {url}: {e}")
+            return False
+
     def fetch_page(self, url):
+        if not self.is_safe_url(url):
+            logger.error(f"Blocked unsafe URL: {url}")
+            return None
+
         logger.info(f"Fetching {url}...")
         try:
             response = requests.get(url, headers=self.headers, timeout=10)
