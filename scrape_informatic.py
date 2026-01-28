@@ -54,6 +54,28 @@ def get_session():
 
     return session
 
+def is_safe_url(url: str, base_url: str) -> bool:
+    """
+    Checks if a URL is safe to follow (same domain, http/s).
+    """
+    if not url:
+        return False
+    try:
+        parsed_url = urlparse(url)
+        parsed_base = urlparse(base_url)
+
+        # Must be http or https if scheme is present
+        if parsed_url.scheme and parsed_url.scheme not in ('http', 'https'):
+            return False
+
+        # If absolute URL, must match domain
+        if parsed_url.netloc and parsed_url.netloc != parsed_base.netloc:
+            return False
+
+        return True
+    except Exception:
+        return False
+
 def is_external_link(link_url: str, base_url: str) -> bool:
     """
     Checks if a link is external to the base domain.
@@ -144,7 +166,8 @@ def scrape(output_file: str, max_pages: int = 0):
 
         logging.info(f"Scraping page {page}: {current_url}...")
         try:
-            response = session.get(current_url)
+            # 🛡️ Sentinel: Added timeout to prevent hanging
+            response = session.get(current_url, timeout=10)
             response.raise_for_status()
         except requests.exceptions.RequestException as e:
             logging.error(f"Error fetching {current_url}: {e}")
@@ -165,9 +188,16 @@ def scrape(output_file: str, max_pages: int = 0):
         # Pagination
         nav_previous = soup.find('div', class_='nav-previous')
         if nav_previous and nav_previous.find('a'):
-            current_url = nav_previous.find('a')['href']
-            page += 1
-            time.sleep(1) # Polite delay
+            next_url = nav_previous.find('a')['href']
+
+            # 🛡️ Sentinel: Validate URL to prevent SSRF/Open Redirect
+            if is_safe_url(next_url, BASE_URL):
+                current_url = next_url
+                page += 1
+                time.sleep(1) # Polite delay
+            else:
+                logging.warning(f"Skipping unsafe or external pagination URL: {next_url}")
+                current_url = None
         else:
             current_url = None
             logging.info("No more pages found.")
