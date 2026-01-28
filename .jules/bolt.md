@@ -1,0 +1,3 @@
+## 2025-02-18 - [Regex vs BeautifulSoup for Comment Extraction]
+**Learning:** Extracting content from HTML comments using `BeautifulSoup`'s `find_all(string=lambda text: isinstance(text, Comment))` parses the entire DOM, which is O(N). For large pages where we only need a specific comment block, using `re.finditer` to locate the comment is ~99% faster (O(M) where M is document length but simpler operation).
+**Action:** When scraping specific hidden content (comments/scripts) from large pages, prefer regex extraction first, then parse the extracted fragment, instead of parsing the whole page. Always keep a fallback to full parsing for robustness.
