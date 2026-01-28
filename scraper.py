@@ -29,16 +29,19 @@ class MarkPositionScraperAsync:
         self.concurrency = concurrency
         self.session = None
 
+    WHITESPACE_PATTERN = re.compile(r'\s+')
+    URL_PATTERN = re.compile(r'^https?://')
+
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return self.WHITESPACE_PATTERN.sub(' ', text).strip()
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
-        return re.match(r'^https?://', text.strip()) is not None
+        return self.URL_PATTERN.match(text.strip()) is not None
 
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
@@ -84,19 +87,21 @@ class MarkPositionScraperAsync:
 
             # Title
             title_text = ""
-            title_tag = article.select_one('h1.entry-title a')
+            h1_tag = article.find('h1', class_='entry-title')
+            title_tag = h1_tag.find('a') if h1_tag else None
             if title_tag:
                 title_text = self.clean_text(title_tag.get_text())
                 post_data['title'] = title_text
 
             # Date
-            date_tag = article.select_one('time.entry-date')
+            date_tag = article.find('time', class_='entry-date')
             if date_tag:
                 post_data['date'] = self.clean_text(date_tag.get_text())
                 post_data['datetime'] = date_tag.get('datetime')
 
             # Author
-            author_tag = article.select_one('.author.vcard .fn')
+            author_container = article.find(class_='vcard')
+            author_tag = author_container.find(class_='fn') if author_container else None
             if author_tag:
                 post_data['author'] = self.clean_text(author_tag.get_text())
             else:
@@ -107,15 +112,15 @@ class MarkPositionScraperAsync:
 
             # External Link
             external_link = None
-            content_div = article.select_one('.entry-content')
+            content_div = article.find(class_='entry-content')
 
             if content_div:
-                link_tag = content_div.select_one('a')
+                link_tag = content_div.find('a')
                 if link_tag:
                     external_link = link_tag.get('href')
 
                 if not external_link:
-                    iframe_tag = content_div.select_one('iframe')
+                    iframe_tag = content_div.find('iframe')
                     if iframe_tag:
                         external_link = iframe_tag.get('src')
 
