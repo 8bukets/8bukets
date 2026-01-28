@@ -1,13 +1,22 @@
-# Markposition Analytics Report
+# <a name='table-of-contents'></a>Markposition Analytics Report
 
-**Generated on:** 2025-12-13 12:59:36
+**Generated on:** 2026-01-28 08:27:18
 
-## General Statistics
+## Table of Contents
+- [📊 General Statistics](#general-stats)
+- [🔗 Top Referenced Domains](#top-domains)
+- [📁 Top Categories](#top-categories)
+- [📅 Posts by Year](#posts-by-year)
+- [✍️ Authors](#authors)
+
+## <a name='general-stats'></a>📊 General Statistics
 - **Total Posts:** 679
 - **Date Range:** 2020-05-19 to 2022-10-05
 - **Unique Domains Linked:** 367
 
-## Top 10 Referenced Domains
+[Back to Top](#table-of-contents)
+
+## <a name='top-domains'></a>🔗 Top Referenced Domains
 | Domain | Count |
 | :--- | :---: |
 | skillshop.exceedlms.com | 23 |
@@ -21,7 +30,9 @@
 | trustarc.com | 11 |
 | ads.google.com | 10 |
 
-## Top 10 Categories
+[Back to Top](#table-of-contents)
+
+## <a name='top-categories'></a>📁 Top Categories
 | Category | Count |
 | :--- | :---: |
 | Ad Ads Advertise | 660 |
@@ -31,12 +42,18 @@
 | Advertising | 3 |
 | Online | 2 |
 
-## Posts by Year
+[Back to Top](#table-of-contents)
+
+## <a name='posts-by-year'></a>📅 Posts by Year
 | Year | Count |
 | :--- | :---: |
 | 2022 | 235 |
 | 2021 | 190 |
 | 2020 | 254 |
 
-## Authors
+[Back to Top](#table-of-contents)
+
+## <a name='authors'></a>✍️ Authors
 - Filip Keser: 679 posts
+
+[Back to Top](#table-of-contents)
