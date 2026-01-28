@@ -1,0 +1,3 @@
+## 2025-01-28 - SoupStrainer Sensitivity
+**Learning:** `SoupStrainer` with `lxml` is highly effective for performance (parsing only relevant tags), but filtering by attributes (e.g., `class_='post'`) within the strainer can be strict or fail if the parser handles the document structure differently than expected. Straining by tag name only and then filtering by attributes in the resulting soup is more robust and still yields significant gains.
+**Action:** When using `SoupStrainer` on complex or unknown HTML structures, start by straining the tag name only, then refine with `find_all` on the partial soup.
