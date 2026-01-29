@@ -21,6 +21,20 @@ def get_domain(url):
     except:
         return None
 
+def sanitize_markdown(text):
+    """Sanitize text to prevent Markdown injection."""
+    if not isinstance(text, str):
+        return str(text)
+    return text.replace("|", "&#124;").replace("<", "&lt;").replace(">", "&gt;")
+
+SECTIONS = {
+    "stats": {"title": "General Statistics", "emoji": "📈", "anchor": "general-statistics"},
+    "domains": {"title": "Top 10 Referenced Domains", "emoji": "🌐", "anchor": "top-10-referenced-domains"},
+    "categories": {"title": "Top 10 Categories", "emoji": "📂", "anchor": "top-10-categories"},
+    "years": {"title": "Posts by Year", "emoji": "📅", "anchor": "posts-by-year"},
+    "authors": {"title": "Authors", "emoji": "✍️", "anchor": "authors"},
+}
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
@@ -69,32 +83,61 @@ def generate_report(data, output_file):
     md.append("# Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
+    # --- Table of Contents ---
+    md.append(f"\n<a name='table-of-contents'></a>")
+    md.append("## 📑 Table of Contents")
+    for key, sec in SECTIONS.items():
+        md.append(f"- [{sec['emoji']} {sec['title']}](#{sec['anchor']})")
+
+    def add_back_to_top():
+        md.append("\n[Back to Top ⬆️](#table-of-contents)")
+
+    # --- General Statistics ---
+    sec = SECTIONS["stats"]
+    md.append(f"\n<a name='{sec['anchor']}'></a>")
+    md.append(f"## {sec['emoji']} {sec['title']}")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    add_back_to_top()
 
-    md.append("\n## Top 10 Referenced Domains")
+    # --- Top 10 Referenced Domains ---
+    sec = SECTIONS["domains"]
+    md.append(f"\n<a name='{sec['anchor']}'></a>")
+    md.append(f"## {sec['emoji']} {sec['title']}")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        md.append(f"| {sanitize_markdown(domain)} | {count} |")
+    add_back_to_top()
 
-    md.append("\n## Top 10 Categories")
+    # --- Top 10 Categories ---
+    sec = SECTIONS["categories"]
+    md.append(f"\n<a name='{sec['anchor']}'></a>")
+    md.append(f"## {sec['emoji']} {sec['title']}")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        md.append(f"| {sanitize_markdown(cat)} | {count} |")
+    add_back_to_top()
 
-    md.append("\n## Posts by Year")
+    # --- Posts by Year ---
+    sec = SECTIONS["years"]
+    md.append(f"\n<a name='{sec['anchor']}'></a>")
+    md.append(f"## {sec['emoji']} {sec['title']}")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
     for year, count in year_counts:
         md.append(f"| {year} | {count} |")
+    add_back_to_top()
 
-    md.append("\n## Authors")
+    # --- Authors ---
+    sec = SECTIONS["authors"]
+    md.append(f"\n<a name='{sec['anchor']}'></a>")
+    md.append(f"## {sec['emoji']} {sec['title']}")
     for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+        md.append(f"- {sanitize_markdown(author)}: {count} posts")
+    add_back_to_top()
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
