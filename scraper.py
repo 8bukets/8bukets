@@ -3,7 +3,6 @@ import asyncio
 from bs4 import BeautifulSoup
 import json
 import csv
-import re
 import argparse
 import logging
 import time
@@ -33,12 +32,15 @@ class MarkPositionScraperAsync:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
-        text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        # Optimization: split().join() is faster than re.sub for normalizing whitespace
+        # split() handles all unicode whitespace including \xa0 (non-breaking space)
+        return " ".join(text.split())
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
-        return re.match(r'^https?://', text.strip()) is not None
+        # Optimization: startswith is faster than regex for simple prefix check
+        s = text.strip()
+        return s.startswith(('http://', 'https://'))
 
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
