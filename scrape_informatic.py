@@ -1,10 +1,11 @@
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import time
 import logging
 import argparse
 import sys
+import re
 from urllib.parse import urlparse
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
@@ -24,6 +25,8 @@ class Post:
     image_url: Optional[str]
 
 BASE_URL = "https://informaticmagazine.data.blog"
+PARSED_BASE_URL = urlparse(BASE_URL)
+PAGINATION_PATTERN = re.compile(r'<div class=["\']nav-previous["\'][^>]*>\s*<a[^>]+href=["\']([^"\']+)["\']')
 
 def configure_logging(verbose: bool):
     level = logging.DEBUG if verbose else logging.INFO
@@ -61,9 +64,17 @@ def is_external_link(link_url: str, base_url: str) -> bool:
     if not link_url:
         return False
 
+    # Optimization: Use pre-parsed global if applicable
+    if base_url == BASE_URL:
+        parsed_base = PARSED_BASE_URL
+    else:
+        try:
+            parsed_base = urlparse(base_url)
+        except Exception:
+            return False
+
     try:
         parsed_link = urlparse(link_url)
-        parsed_base = urlparse(base_url)
     except Exception:
         return False
 
@@ -150,7 +161,8 @@ def scrape(output_file: str, max_pages: int = 0):
             logging.error(f"Error fetching {current_url}: {e}")
             break
 
-        soup = BeautifulSoup(response.content, 'html.parser')
+        # Performance optimization: Use SoupStrainer to only parse articles
+        soup = BeautifulSoup(response.content, 'html.parser', parse_only=SoupStrainer('article'))
 
         posts = soup.find_all('article')
         logging.info(f"Found {len(posts)} posts on page {page}.")
@@ -162,10 +174,10 @@ def scrape(output_file: str, max_pages: int = 0):
             except Exception as e:
                 logging.error(f"Error parsing post on page {page}: {e}")
 
-        # Pagination
-        nav_previous = soup.find('div', class_='nav-previous')
-        if nav_previous and nav_previous.find('a'):
-            current_url = nav_previous.find('a')['href']
+        # Pagination using Regex (faster than full DOM parsing)
+        match = PAGINATION_PATTERN.search(response.text)
+        if match:
+            current_url = match.group(1)
             page += 1
             time.sleep(1) # Polite delay
         else:
