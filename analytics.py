@@ -39,7 +39,7 @@ def generate_report(data, output_file):
     # 3. Date Analysis
     dates = []
     for p in data:
-        dt_str = p.get('datetime')
+        dt_str = p.get('datetime') or p.get('date')
         if dt_str:
             try:
                 # Handle ISO format
@@ -69,32 +69,44 @@ def generate_report(data, output_file):
     md.append("# Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
+    md.append("\n## 📋 Table of Contents <a name=\"table-of-contents\"></a>")
+    md.append("- [📊 General Statistics](#general-statistics)")
+    md.append("- [🔗 Top 10 Referenced Domains](#top-domains)")
+    md.append("- [🏷️ Top 10 Categories](#top-categories)")
+    md.append("- [📅 Posts by Year](#posts-by-year)")
+    md.append("- [✍️ Authors](#authors)")
+
+    md.append("\n## 📊 General Statistics <a name=\"general-statistics\"></a>")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append("\n[⬆️ Back to Top](#table-of-contents)")
 
-    md.append("\n## Top 10 Referenced Domains")
+    md.append("\n## 🔗 Top 10 Referenced Domains <a name=\"top-domains\"></a>")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in domain_counts:
         md.append(f"| {domain} | {count} |")
+    md.append("\n[⬆️ Back to Top](#table-of-contents)")
 
-    md.append("\n## Top 10 Categories")
+    md.append("\n## 🏷️ Top 10 Categories <a name=\"top-categories\"></a>")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in category_counts:
         md.append(f"| {cat} | {count} |")
+    md.append("\n[⬆️ Back to Top](#table-of-contents)")
 
-    md.append("\n## Posts by Year")
+    md.append("\n## 📅 Posts by Year <a name=\"posts-by-year\"></a>")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
     for year, count in year_counts:
         md.append(f"| {year} | {count} |")
+    md.append("\n[⬆️ Back to Top](#table-of-contents)")
 
-    md.append("\n## Authors")
+    md.append("\n## ✍️ Authors <a name=\"authors\"></a>")
     for author, count in author_counts:
         md.append(f"- {author}: {count} posts")
+    md.append("\n[⬆️ Back to Top](#table-of-contents)")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
