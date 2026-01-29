@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+.ipynb_checkpoints
+links.json
+links.csv
+unique_links.txt
+REPORT.md
+benchmark_scraper.py
+.jules/
