@@ -88,5 +88,29 @@ class TestBlogScraper(unittest.TestCase):
             self.assertIsNotNone(row)
             self.assertEqual(row[1], 'DB Test') # title
 
+    def test_malicious_links(self):
+        malicious_html = """
+        <html>
+            <body>
+                <article>
+                    <header class="entry-header">
+                        <h2 class="entry-title"><a href="javascript:alert(1)">Malicious Title</a></h2>
+                    </header>
+                    <div class="entry-content">
+                        <a href="javascript:steal_cookies()">Malicious Link</a>
+                    </div>
+                </article>
+            </body>
+        </html>
+        """
+        from bs4 import BeautifulSoup
+        soup = BeautifulSoup(malicious_html, 'html.parser')
+        article = soup.find('article')
+        item = self.scraper.parse_article(article)
+
+        # Expectation: malicious links are stripped (None)
+        self.assertIsNone(item['post_url'], "Malicious post_url should be None")
+        self.assertIsNone(item['external_link'], "Malicious external_link should be None")
+
 if __name__ == '__main__':
     unittest.main()

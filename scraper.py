@@ -29,6 +29,20 @@ class BlogScraper:
         self.data = []
         self.init_db()
 
+    def validate_url(self, url):
+        """
+        Validate URL to prevent XSS (e.g. javascript: links).
+        Only allows http and https protocols.
+        """
+        if not url:
+            return None
+        url = url.strip()
+        # Case-insensitive check for protocol
+        url_lower = url.lower()
+        if url_lower.startswith(('http://', 'https://')):
+            return url
+        return None
+
     def init_db(self):
         """Initialize the SQLite database."""
         try:
@@ -142,7 +156,9 @@ class BlogScraper:
         # Title and Post URL
         title_tag = article.select_one("header.entry-header h2.entry-title a")
         item['title'] = title_tag.get_text(strip=True) if title_tag else None
-        item['post_url'] = title_tag.get('href') if title_tag else None
+
+        raw_post_url = title_tag.get('href') if title_tag else None
+        item['post_url'] = self.validate_url(raw_post_url)
 
         # Link (External)
         content_div = article.select_one("div.entry-content")
@@ -151,17 +167,21 @@ class BlogScraper:
             # Check for direct anchor tags
             link_tag = content_div.find("a")
             if link_tag:
-                external_link = link_tag.get('href')
+                raw_link = link_tag.get('href')
+                external_link = self.validate_url(raw_link)
+
                 if not external_link:
                     text_content = link_tag.get_text(strip=True)
                     if text_content.startswith('http'):
-                        external_link = text_content
+                        external_link = self.validate_url(text_content)
 
             # Fallback
             if not external_link:
                 text_content = content_div.get_text(strip=True)
                 if text_content.startswith('http'):
-                    external_link = text_content.split()[0]
+                    # Split to get the first URL if multiple words
+                    candidate = text_content.split()[0]
+                    external_link = self.validate_url(candidate)
 
         item['external_link'] = external_link
 
