@@ -29,16 +29,22 @@ class MarkPositionScraperAsync:
         self.concurrency = concurrency
         self.session = None
 
+    # Pre-compile regex patterns for performance
+    WHITESPACE_PATTERN = re.compile(r'\s+')
+    URL_PATTERN = re.compile(r'^https?://')
+
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        # Use pre-compiled regex for faster substitution
+        return self.WHITESPACE_PATTERN.sub(' ', text).strip()
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
-        return re.match(r'^https?://', text.strip()) is not None
+        # Use pre-compiled regex for faster matching
+        return self.URL_PATTERN.match(text.strip()) is not None
 
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
