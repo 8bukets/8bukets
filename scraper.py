@@ -33,8 +33,8 @@ class MarkPositionScraperAsync:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
-        text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        # " ".join(text.split()) handles \xa0 and multiple spaces efficiently
+        return " ".join(text.split())
 
     def sanitize_for_csv(self, text: str) -> str:
         """Sanitize text to prevent CSV injection (formula injection)."""
@@ -47,7 +47,7 @@ class MarkPositionScraperAsync:
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
-        return re.match(r'^https?://', text.strip()) is not None
+        return text.strip().startswith(('http://', 'https://'))
 
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
@@ -80,7 +80,7 @@ class MarkPositionScraperAsync:
             logger.error(f"Error fetching page {page_num}: {e}")
             return None
 
-    async def parse_page(self, html: str) -> List[Dict]:
+    def _parse_page_sync(self, html: str) -> List[Dict]:
         soup = BeautifulSoup(html, 'html.parser')
         articles = soup.find_all('article', class_='post')
         page_posts = []
@@ -224,7 +224,9 @@ class MarkPositionScraperAsync:
         async with sem:
             html = await self.fetch_page(session, page_num)
             if html:
-                return await self.parse_page(html)
+                # Offload CPU-bound parsing to a thread to avoid blocking the event loop
+                loop = asyncio.get_running_loop()
+                return await loop.run_in_executor(None, self._parse_page_sync, html)
             return None
 
     def save_data(self, posts: List[Dict]):
