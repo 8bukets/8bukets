@@ -5,6 +5,15 @@ from urllib.parse import urlparse
 from datetime import datetime
 import sys
 
+# Define Sections with Emojis
+SECTIONS = {
+    "stats": ("General Statistics", "📊"),
+    "domains": ("Top 10 Referenced Domains", "🔗"),
+    "categories": ("Top 10 Categories", "📂"),
+    "years": ("Posts by Year", "📅"),
+    "authors": ("Authors", "✍️")
+}
+
 def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
@@ -21,7 +30,7 @@ def get_domain(url):
     except:
         return None
 
-def generate_report(data, output_file):
+def generate_markdown_content(data):
     total_posts = len(data)
 
     # 1. Domain Analysis
@@ -64,40 +73,72 @@ def generate_report(data, output_file):
     authors = [p.get('author') for p in data if p.get('author')]
     author_counts = Counter(authors).most_common()
 
-    # Generate Markdown
+    # --- Markdown Generation ---
     md = []
+
+    # Title
     md.append("# Wordpress Blog Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    md.append("\n---") # Visual separator
 
-    md.append("\n## General Statistics")
-    md.append(f"- **Total Posts:** {total_posts}")
-    md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    # Table of Contents
+    md.append(f"\n<a name='table-of-contents'></a>")
+    md.append("# Table of Contents")
+    for section_id, (title, emoji) in SECTIONS.items():
+        md.append(f"- [{title} {emoji}](#{section_id})")
 
-    md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
+    # Helper to add section
+    def add_section(section_id, content_lines):
+        title, emoji = SECTIONS[section_id]
+        md.append(f"\n<a name='{section_id}'></a>")
+        md.append(f"## {title} {emoji}")
+        md.extend(content_lines)
+        md.append(f"\n[Back to Top](#table-of-contents)")
+
+    # Stats
+    stats_content = [
+        f"- **Total Posts:** {total_posts}",
+        f"- **Date Range:** {start_date} to {end_date}",
+        f"- **Unique Domains Linked:** {len(set(domains))}"
+    ]
+    add_section("stats", stats_content)
+
+    # Domains
+    domain_content = []
+    domain_content.append("| Domain | Count |")
+    domain_content.append("| :--- | :---: |")
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        domain_content.append(f"| {domain} | {count} |")
+    add_section("domains", domain_content)
 
-    md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
+    # Categories
+    cat_content = []
+    cat_content.append("| Category | Count |")
+    cat_content.append("| :--- | :---: |")
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        cat_content.append(f"| {cat} | {count} |")
+    add_section("categories", cat_content)
 
-    md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
+    # Years
+    year_content = []
+    year_content.append("| Year | Count |")
+    year_content.append("| :--- | :---: |")
     for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+        year_content.append(f"| {year} | {count} |")
+    add_section("years", year_content)
 
-    md.append("\n## Authors")
+    # Authors
+    author_content = []
     for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+        author_content.append(f"- {author}: {count} posts")
+    add_section("authors", author_content)
 
+    return '\n'.join(md)
+
+def generate_report(data, output_file):
+    markdown_content = generate_markdown_content(data)
     with open(output_file, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(md))
+        f.write(markdown_content)
 
     print(f"Report generated: {output_file}")
 
