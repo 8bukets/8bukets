@@ -72,6 +72,11 @@ class MarkPositionScraperAsync:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
+        # Offload synchronous parsing to a separate thread to avoid blocking the event loop
+        loop = asyncio.get_running_loop()
+        return await loop.run_in_executor(None, self._parse_page_sync, html)
+
+    def _parse_page_sync(self, html: str) -> List[Dict]:
         soup = BeautifulSoup(html, 'lxml')
         articles = soup.find_all('article', class_='post')
         page_posts = []
