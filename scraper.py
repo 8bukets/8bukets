@@ -215,6 +215,16 @@ class MarkPositionScraperAsync:
                 return await self.parse_page(html)
             return None
 
+    def sanitize_for_csv(self, text: str) -> str:
+        """
+        Sanitize text to prevent CSV injection (Formula Injection).
+        Prepends a single quote to values starting with =, +, -, or @.
+        """
+        text = str(text) if text is not None else ""
+        if text.startswith(('=', '+', '-', '@')):
+            return f"'{text}"
+        return text
+
     def save_data(self, posts: List[Dict]):
         # JSON
         try:
@@ -230,7 +240,7 @@ class MarkPositionScraperAsync:
                 writer = csv.writer(f)
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
-                    writer.writerow([
+                    row = [
                         post.get('title', ''),
                         post.get('date', ''),
                         post.get('author', ''),
@@ -238,7 +248,9 @@ class MarkPositionScraperAsync:
                         post.get('external_link', ''),
                         post.get('domain', ''),
                         post.get('post_url', '')
-                    ])
+                    ]
+                    sanitized_row = [self.sanitize_for_csv(field) for field in row]
+                    writer.writerow(sanitized_row)
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
             logger.error(f"Failed to save CSV: {e}")
