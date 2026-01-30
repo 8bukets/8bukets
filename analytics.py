@@ -21,7 +21,7 @@ def get_domain(url):
     except:
         return None
 
-def generate_report(data, output_file):
+def generate_markdown_content(data):
     total_posts = len(data)
 
     # 1. Domain Analysis
@@ -64,40 +64,84 @@ def generate_report(data, output_file):
     authors = [p.get('author') for p in data if p.get('author')]
     author_counts = Counter(authors).most_common()
 
-    # Generate Markdown
+    # Define Sections
+    # Key: (Emoji, Title, Slug)
+    sections_info = [
+        ("stats", "📊", "General Statistics", "general-statistics"),
+        ("domains", "🔗", "Top 10 Referenced Domains", "top-10-referenced-domains"),
+        ("categories", "📂", "Top 10 Categories", "top-10-categories"),
+        ("years", "📅", "Posts by Year", "posts-by-year"),
+        ("authors", "✍️", "Authors", "authors"),
+    ]
+
     md = []
     md.append("# Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
+    # Table of Contents
+    md.append(f"\n<a name='table-of-contents'></a>")
+    md.append("## Table of Contents")
+    for _, emoji, title, slug in sections_info:
+        md.append(f"- [{emoji} {title}](#{slug})")
+
+    # Helper to add back to top
+    back_to_top = "\n[Back to Top](#table-of-contents)"
+
+    # Generate Sections
+
+    # 1. General Statistics
+    emoji, title, slug = sections_info[0][1], sections_info[0][2], sections_info[0][3]
+    md.append(f"\n<a name='{slug}'></a>")
+    md.append(f"## {emoji} {title}")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append(back_to_top)
 
-    md.append("\n## Top 10 Referenced Domains")
+    # 2. Domains
+    emoji, title, slug = sections_info[1][1], sections_info[1][2], sections_info[1][3]
+    md.append(f"\n<a name='{slug}'></a>")
+    md.append(f"## {emoji} {title}")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in domain_counts:
         md.append(f"| {domain} | {count} |")
+    md.append(back_to_top)
 
-    md.append("\n## Top 10 Categories")
+    # 3. Categories
+    emoji, title, slug = sections_info[2][1], sections_info[2][2], sections_info[2][3]
+    md.append(f"\n<a name='{slug}'></a>")
+    md.append(f"## {emoji} {title}")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in category_counts:
         md.append(f"| {cat} | {count} |")
+    md.append(back_to_top)
 
-    md.append("\n## Posts by Year")
+    # 4. Years
+    emoji, title, slug = sections_info[3][1], sections_info[3][2], sections_info[3][3]
+    md.append(f"\n<a name='{slug}'></a>")
+    md.append(f"## {emoji} {title}")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
     for year, count in year_counts:
         md.append(f"| {year} | {count} |")
+    md.append(back_to_top)
 
-    md.append("\n## Authors")
+    # 5. Authors
+    emoji, title, slug = sections_info[4][1], sections_info[4][2], sections_info[4][3]
+    md.append(f"\n<a name='{slug}'></a>")
+    md.append(f"## {emoji} {title}")
     for author, count in author_counts:
         md.append(f"- {author}: {count} posts")
+    md.append(back_to_top)
 
+    return '\n'.join(md)
+
+def generate_report(data, output_file):
+    content = generate_markdown_content(data)
     with open(output_file, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(md))
+        f.write(content)
 
     print(f"Report generated: {output_file}")
 
