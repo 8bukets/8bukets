@@ -21,6 +21,14 @@ def get_domain(url):
     except:
         return None
 
+SECTIONS = {
+    "stats": {"title": "General Statistics", "emoji": "📈", "slug": "general-statistics"},
+    "domains": {"title": "Top 10 Referenced Domains", "emoji": "🌐", "slug": "top-10-referenced-domains"},
+    "categories": {"title": "Top 10 Categories", "emoji": "📂", "slug": "top-10-categories"},
+    "years": {"title": "Posts by Year", "emoji": "📅", "slug": "posts-by-year"},
+    "authors": {"title": "Authors", "emoji": "✍️", "slug": "authors"},
+}
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
@@ -99,35 +107,53 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
+    md.append("# 📊 Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
+    # Table of Contents
+    md.append(f"\n## <a name='table-of-contents'></a>Table of Contents")
+    for key, info in SECTIONS.items():
+        md.append(f"- [{info['emoji']} {info['title']}](#{info['slug']})")
+
+    # Helper for section headers
+    def section_header(key):
+        info = SECTIONS[key]
+        return f"\n## <a name='{info['slug']}'></a>{info['emoji']} {info['title']}"
+
+    def back_to_top():
+        return "\n[Back to Top](#table-of-contents)"
+
+    md.append(section_header("stats"))
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(unique_domains)}")
+    md.append(back_to_top())
 
-    md.append("\n## Top 10 Referenced Domains")
+    md.append(section_header("domains"))
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in top_domains:
         md.append(f"| {domain} | {count} |")
+    md.append(back_to_top())
 
-    md.append("\n## Top 10 Categories")
+    md.append(section_header("categories"))
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in top_categories:
         md.append(f"| {cat} | {count} |")
+    md.append(back_to_top())
 
-    md.append("\n## Posts by Year")
+    md.append(section_header("years"))
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
     for year, count in sorted_years:
         md.append(f"| {year} | {count} |")
+    md.append(back_to_top())
 
-    md.append("\n## Authors")
+    md.append(section_header("authors"))
     for author, count in sorted_authors:
         md.append(f"- {author}: {count} posts")
+    md.append(back_to_top())
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
