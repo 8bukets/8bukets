@@ -1,0 +1,4 @@
+## 2026-01-30 - CSV Formula Injection
+**Vulnerability:** The scraper was writing user-controlled input (titles, authors, etc.) directly to CSV files without sanitization. If these fields started with characters like `=`, `+`, `-`, or `@`, they could be interpreted as formulas by spreadsheet software (Excel, Google Sheets), potentially leading to data exfiltration or arbitrary code execution on the analyst's machine.
+**Learning:** Data exported for use in other applications (like CSVs for Excel) must be treated as untrusted and sanitized according to the *consumer's* security model, not just the source's. Standard CSV libraries handle delimiter escaping but not formula injection.
+**Prevention:** Implement a sanitization layer for all CSV exports that prefixes potentially dangerous characters with a single quote (`'`), forcing them to be treated as literal strings.
