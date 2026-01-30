@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+links.json
+links.csv
+unique_links.txt
+test_links.json
+test_links.csv
+test_links.txt
