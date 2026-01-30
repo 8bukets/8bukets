@@ -19,6 +19,23 @@ class ReportGenerator:
         if not os.path.exists(self.report_dir):
             os.makedirs(self.report_dir)
 
+    @staticmethod
+    def sanitize_markdown(text):
+        """
+        Sanitize text for Markdown tables and general security.
+        Escapes pipes, brackets, and HTML tags.
+        """
+        if text is None:
+            return ""
+        text = str(text)
+        # Escape pipes to prevent table column injection
+        text = text.replace("|", "\\|")
+        # Escape HTML tags to prevent HTML injection
+        text = text.replace("<", "&lt;").replace(">", "&gt;")
+        # Escape brackets to prevent link hijacking (though less critical for table structure)
+        text = text.replace("[", "\\[").replace("]", "\\]")
+        return text
+
     def generate_daily_report(self):
         logger.info("Generating daily report...")
 
@@ -105,7 +122,9 @@ class ReportGenerator:
                 f.write("|---|---|---|---|---|\n")
                 for u in updated_posts:
                     title, url, field, old, new, time = u
-                    title = title.replace("|", "-")
+                    title = self.sanitize_markdown(title)
+                    old = self.sanitize_markdown(old)
+                    new = self.sanitize_markdown(new)
                     f.write(f"| [{title}]({url}) | {field} | {old} | {new} | {time} |\n")
                 f.write("\n")
 
@@ -116,7 +135,7 @@ class ReportGenerator:
                 f.write("|---|---|---|\n")
                 for post in new_posts:
                     title, url, scraped_at = post
-                    title = title.replace("|", "-") if title else "No Title"
+                    title = self.sanitize_markdown(title) if title else "No Title"
                     f.write(f"| {title} | {scraped_at} | [View]({url}) |\n")
             else:
                 f.write("No new posts scraped in the last 24 hours.\n")
