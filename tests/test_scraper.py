@@ -29,8 +29,10 @@ class TestBlogScraper(unittest.TestCase):
         self.db_name = "test_wishlist.db"
         self.json_name = "test_wishlist.json"
         self.scraper = BlogScraper("http://mock.url", self.json_name, self.db_name)
+        self.scraper.open_db()
 
     def tearDown(self):
+        self.scraper.close_db()
         if os.path.exists(self.db_name):
             os.remove(self.db_name)
         if os.path.exists(self.json_name):
@@ -75,6 +77,8 @@ class TestBlogScraper(unittest.TestCase):
         # First insertion should succeed
         success = self.scraper.save_to_db(item)
         self.assertTrue(success)
+        # Commit needed because save_to_db doesn't commit anymore
+        self.scraper.conn.commit()
 
         # Duplicate insertion (by post_url) should fail/ignore
         success = self.scraper.save_to_db(item)
