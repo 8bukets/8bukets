@@ -5,7 +5,7 @@ import time
 import logging
 import argparse
 import sys
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urljoin
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from dataclasses import dataclass, asdict
@@ -72,6 +72,25 @@ def is_external_link(link_url: str, base_url: str) -> bool:
         return False
 
     return parsed_link.netloc != parsed_base.netloc
+
+def is_safe_url(target_url: str, base_url: str) -> bool:
+    """
+    Checks if the target URL is safe to scrape (belongs to the same domain).
+    """
+    if not target_url:
+        return False
+    try:
+        target = urlparse(target_url)
+        base = urlparse(base_url)
+
+        # Must be http or https
+        if target.scheme not in ('http', 'https'):
+            return False
+
+        # Netloc must match base netloc
+        return target.netloc == base.netloc
+    except Exception:
+        return False
 
 def parse_post_html(post_soup, base_url: str) -> Post:
     """
@@ -165,9 +184,17 @@ def scrape(output_file: str, max_pages: int = 0):
         # Pagination
         nav_previous = soup.find('div', class_='nav-previous')
         if nav_previous and nav_previous.find('a'):
-            current_url = nav_previous.find('a')['href']
-            page += 1
-            time.sleep(1) # Polite delay
+            next_href = nav_previous.find('a')['href']
+            # Resolve relative URLs to absolute
+            next_url = urljoin(current_url, next_href)
+
+            if is_safe_url(next_url, BASE_URL):
+                current_url = next_url
+                page += 1
+                time.sleep(1) # Polite delay
+            else:
+                logging.warning(f"Skipping unsafe pagination URL: {next_url}")
+                current_url = None
         else:
             current_url = None
             logging.info("No more pages found.")
