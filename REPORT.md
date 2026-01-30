@@ -1,38 +1,61 @@
 # Wordpress Blog Analytics Report
 
-**Generated on:** 2025-12-21 23:47:00
+**Generated on:** 2026-01-30 19:36:10
 
-## General Statistics
-- **Total Posts:** 350
-- **Date Range:** 2020-10-22 to 2023-06-25
-- **Unique Domains Linked:** 178
+<a name='table-of-contents'></a>
+## Table of Contents
+- [📊 General Statistics](#general-statistics)
+- [🔗 Top 10 Referenced Domains](#top-domains)
+- [📂 Top 10 Categories](#top-categories)
+- [📅 Posts by Year](#posts-by-year)
+- [✍️ Authors](#authors)
 
-## Top 10 Referenced Domains
+<a name='general-statistics'></a>
+## 📊 General Statistics
+- **Total Posts:** 391
+- **Date Range:** 2020-06-10 to 2023-06-25
+- **Unique Domains Linked:** 194
+
+[Back to Top](#table-of-contents)
+
+<a name='top-domains'></a>
+## 🔗 Top 10 Referenced Domains
 | Domain | Count |
 | :--- | :---: |
-| youtube.com | 70 |
+| youtube.com | 74 |
 | music.youtube.com | 34 |
 | epidemicsound.com | 10 |
+| music.apple.com | 7 |
 | billboard.com | 7 |
-| music.apple.com | 6 |
+| artists.spotify.com | 6 |
+| spotify.com | 5 |
+| open.spotify.com | 5 |
 | soundcloud.com | 5 |
 | artistrepublik.com | 4 |
-| spotify.com | 3 |
-| steinberg.net | 3 |
-| apple.com | 3 |
 
-## Top 10 Categories
+[Back to Top](#table-of-contents)
+
+<a name='top-categories'></a>
+## 📂 Top 10 Categories
 | Category | Count |
 | :--- | :---: |
-| Music | 350 |
+| Music | 391 |
 
-## Posts by Year
+[Back to Top](#table-of-contents)
+
+<a name='posts-by-year'></a>
+## 📅 Posts by Year
 | Year | Count |
 | :--- | :---: |
 | 2023 | 9 |
 | 2022 | 170 |
 | 2021 | 166 |
-| 2020 | 5 |
+| 2020 | 46 |
 
-## Authors
-- Filip Keser: 350 posts
+[Back to Top](#table-of-contents)
+
+<a name='authors'></a>
+## ✍️ Authors
+- Filip Keser: 391 posts
+
+[Back to Top](#table-of-contents)
