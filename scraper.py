@@ -220,17 +220,27 @@ class MarkPositionScraperAsync:
                 # Finalize JSON even on error
                 json_f.write('\n]')
 
+    def sanitize_csv_field(self, text: str) -> str:
+        """Sanitize text to prevent CSV injection (formula injection)."""
+        if not text:
+            return ""
+        # Convert to string just in case, though expect strings
+        text_str = str(text)
+        if text_str.startswith(('=', '+', '-', '@')):
+            return "'" + text_str
+        return text_str
+
     def save_batch(self, posts: List[Dict], json_f, csv_writer, txt_f, seen_links: Set[str], is_first_item: bool) -> bool:
         for post in posts:
             # CSV
             csv_writer.writerow([
-                post.get('title', ''),
-                post.get('date', ''),
-                post.get('author', ''),
-                ", ".join(post.get('categories', [])),
-                post.get('external_link', ''),
-                post.get('domain', ''),
-                post.get('post_url', '')
+                self.sanitize_csv_field(post.get('title', '')),
+                self.sanitize_csv_field(post.get('date', '')),
+                self.sanitize_csv_field(post.get('author', '')),
+                self.sanitize_csv_field(", ".join(post.get('categories', []))),
+                self.sanitize_csv_field(post.get('external_link', '')),
+                self.sanitize_csv_field(post.get('domain', '')),
+                self.sanitize_csv_field(post.get('post_url', ''))
             ])
 
             # TXT
