@@ -24,45 +24,62 @@ def get_domain(url):
 def generate_report(data, output_file):
     total_posts = len(data)
 
-    # 1. Domain Analysis
-    domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
-    domain_counts = Counter(domains).most_common(10)
+    # Initialize counters and trackers
+    domain_counter = Counter()
+    category_counter = Counter()
+    author_counter = Counter()
+    year_counter = Counter()
+    min_date = None
+    max_date = None
 
-    # 2. Category Analysis
-    all_categories = []
+    # Single pass O(N) aggregation
     for p in data:
-        cats = p.get('categories', [])
+        # Domain Analysis
+        # Use pre-calculated domain if available to avoid expensive URL parsing
+        if p.get('external_link'):
+            domain = p.get('domain')
+            if not domain:
+                domain = get_domain(p.get('external_link'))
+            # Note: domain can still be None if extraction fails
+            domain_counter[domain] += 1
+
+        # Category Analysis
+        cats = p.get('categories')
         if cats:
-            all_categories.extend(cats)
-    category_counts = Counter(all_categories).most_common(10)
+            category_counter.update(cats)
 
-    # 3. Date Analysis
-    dates = []
-    for p in data:
+        # Date Analysis
         dt_str = p.get('datetime')
         if dt_str:
             try:
-                # Handle ISO format
                 dt = datetime.fromisoformat(dt_str)
-                dates.append(dt)
+                if min_date is None or dt < min_date:
+                    min_date = dt
+                if max_date is None or dt > max_date:
+                    max_date = dt
+                year_counter[dt.year] += 1
             except ValueError:
                 pass
 
-    if dates:
-        dates.sort()
-        start_date = dates[0].strftime('%Y-%m-%d')
-        end_date = dates[-1].strftime('%Y-%m-%d')
-        years = [d.year for d in dates]
-        year_counts = Counter(years).most_common()
+        # Author Analysis
+        author = p.get('author')
+        if author:
+            author_counter[author] += 1
+
+    # Process results
+    domain_counts = domain_counter.most_common(10)
+    category_counts = category_counter.most_common(10)
+    author_counts = author_counter.most_common()
+
+    if min_date and max_date:
+        start_date = min_date.strftime('%Y-%m-%d')
+        end_date = max_date.strftime('%Y-%m-%d')
+        year_counts = year_counter.most_common()
         year_counts.sort(key=lambda x: x[0], reverse=True)
     else:
         start_date = "N/A"
         end_date = "N/A"
         year_counts = []
-
-    # 4. Author Analysis
-    authors = [p.get('author') for p in data if p.get('author')]
-    author_counts = Counter(authors).most_common()
 
     # Generate Markdown
     md = []
@@ -72,7 +89,7 @@ def generate_report(data, output_file):
     md.append("\n## General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append(f"- **Unique Domains Linked:** {len(domain_counter)}")
 
     md.append("\n## Top 10 Referenced Domains")
     md.append("| Domain | Count |")
