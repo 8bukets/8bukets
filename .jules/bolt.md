@@ -1,0 +1,3 @@
+## 2024-02-05 - Python Loop Overhead vs C-Optimized Iterators
+**Learning:** Explicit Python loops (e.g. `for item in data:`) can be slower than multiple passes using C-optimized list comprehensions or `Counter(list)`, even if algorithmically O(N) vs O(4N), due to interpreter overhead. However, the single-pass approach significantly reduces memory usage by avoiding intermediate lists.
+**Action:** When optimizing for speed in Python, profile carefully. Sometimes "dumber" multi-pass code using built-ins is faster. When optimizing for memory, single-pass explicit loops are superior. Hybrid approach (batching into lists inside a loop) can offer a balance.
