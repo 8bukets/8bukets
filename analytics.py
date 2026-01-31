@@ -24,45 +24,71 @@ def get_domain(url):
 def generate_report(data, output_file):
     total_posts = len(data)
 
+    # Performance Optimization: Use Generators with Counter
+    # This delegates the counting loop to C-optimized code in collections.Counter
+    # and avoids creating large intermediate lists.
+
     # 1. Domain Analysis
-    domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
-    domain_counts = Counter(domains).most_common(10)
+    domain_counts = Counter(
+        get_domain(p.get('external_link'))
+        for p in data
+        if p.get('external_link')
+    )
+    # Remove None if it slipped through
+    if None in domain_counts:
+        del domain_counts[None]
 
     # 2. Category Analysis
-    all_categories = []
-    for p in data:
-        cats = p.get('categories', [])
-        if cats:
-            all_categories.extend(cats)
-    category_counts = Counter(all_categories).most_common(10)
+    category_counts = Counter(
+        cat
+        for p in data
+        for cat in (p.get('categories') or [])
+    )
 
-    # 3. Date Analysis
-    dates = []
+    # 3. Author Analysis
+    author_counts = Counter(
+        p.get('author')
+        for p in data
+        if p.get('author')
+    )
+
+    # 4. Date Analysis (Requires explicit loop for parsing and range finding)
+    year_counts = Counter()
+    min_date = None
+    max_date = None
+
     for p in data:
-        dt_str = p.get('datetime')
+        # Handle both 'datetime' (ISO) and 'date' (YYYY-MM-DD)
+        dt_str = p.get('datetime') or p.get('date')
         if dt_str:
             try:
-                # Handle ISO format
+                # Try fromisoformat first (handles ISO and YYYY-MM-DD in recent python)
                 dt = datetime.fromisoformat(dt_str)
-                dates.append(dt)
             except ValueError:
-                pass
+                try:
+                    dt = datetime.strptime(dt_str, '%Y-%m-%d')
+                except ValueError:
+                    dt = None
 
-    if dates:
-        dates.sort()
-        start_date = dates[0].strftime('%Y-%m-%d')
-        end_date = dates[-1].strftime('%Y-%m-%d')
-        years = [d.year for d in dates]
-        year_counts = Counter(years).most_common()
-        year_counts.sort(key=lambda x: x[0], reverse=True)
+            if dt:
+                year_counts[dt.year] += 1
+                if min_date is None or dt < min_date:
+                    min_date = dt
+                if max_date is None or dt > max_date:
+                    max_date = dt
+
+    # Sort results
+    top_domains = domain_counts.most_common(10)
+    top_categories = category_counts.most_common(10)
+    sorted_years = sorted(year_counts.items(), key=lambda x: x[0], reverse=True)
+    sorted_authors = author_counts.most_common()
+
+    if min_date and max_date:
+        start_date = min_date.strftime('%Y-%m-%d')
+        end_date = max_date.strftime('%Y-%m-%d')
     else:
         start_date = "N/A"
         end_date = "N/A"
-        year_counts = []
-
-    # 4. Author Analysis
-    authors = [p.get('author') for p in data if p.get('author')]
-    author_counts = Counter(authors).most_common()
 
     # Generate Markdown
     md = []
@@ -72,28 +98,28 @@ def generate_report(data, output_file):
     md.append("\n## General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append(f"- **Unique Domains Linked:** {len(domain_counts)}")
 
     md.append("\n## Top 10 Referenced Domains")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
-    for domain, count in domain_counts:
+    for domain, count in top_domains:
         md.append(f"| {domain} | {count} |")
 
     md.append("\n## Top 10 Categories")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
-    for cat, count in category_counts:
+    for cat, count in top_categories:
         md.append(f"| {cat} | {count} |")
 
     md.append("\n## Posts by Year")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
-    for year, count in year_counts:
+    for year, count in sorted_years:
         md.append(f"| {year} | {count} |")
 
     md.append("\n## Authors")
-    for author, count in author_counts:
+    for author, count in sorted_authors:
         md.append(f"- {author}: {count} posts")
 
     with open(output_file, 'w', encoding='utf-8') as f:

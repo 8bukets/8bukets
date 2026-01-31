@@ -1,0 +1,3 @@
+## 2026-01-31 - [Python Loop Overhead vs C-Optimized Counter]
+**Learning:** Merging multiple iterations over a list into a single manual Python loop (e.g., `for p in data: c[x]+=1`) was measurably slower (1.7s) than multiple passes using Generator Expressions with `collections.Counter` (1.48s) or List Comprehensions (1.3s). This is because `Counter(iterable)` runs the loop in C, while manual iteration incurs Python interpreter overhead for every step.
+**Action:** When optimizing aggregation in Python, prioritize passing iterables (Generators/Lists) directly to C-implemented constructors like `Counter()` over manual loops, even if it means iterating the source data multiple times (assuming source iteration is cheap).
