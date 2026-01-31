@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import time
+from urllib.parse import urlparse, urljoin
 import logging
 import argparse
 import sys
@@ -126,7 +127,32 @@ class BlogScraper:
 
         return False
 
+    def is_safe_url(self, url):
+        """Validate URL to prevent SSRF and redirect attacks."""
+        try:
+            parsed = urlparse(url)
+
+            # 1. Check scheme
+            if parsed.scheme not in ('http', 'https'):
+                logger.warning(f"Blocked unsafe scheme: {url}")
+                return False
+
+            # 2. Check domain (must match base_url domain)
+            base_domain = urlparse(self.base_url).netloc
+            if parsed.netloc != base_domain:
+                logger.warning(f"Blocked cross-domain request: {url}")
+                return False
+
+            return True
+        except Exception as e:
+            logger.error(f"Error validating URL {url}: {e}")
+            return False
+
     def fetch_page(self, url):
+        if not self.is_safe_url(url):
+            logger.error(f"Skipping unsafe URL: {url}")
+            return None
+
         logger.info(f"Fetching {url}...")
         try:
             response = requests.get(url, headers=self.headers, timeout=10)
@@ -221,9 +247,16 @@ class BlogScraper:
 
             next_page = self.get_next_page(soup)
             if next_page:
-                logger.info(f"Found next page: {next_page}")
-                url = next_page
-                time.sleep(1)
+                # Ensure next_page is absolute
+                next_page_full = urljoin(url, next_page)
+
+                if self.is_safe_url(next_page_full):
+                    logger.info(f"Found next page: {next_page_full}")
+                    url = next_page_full
+                    time.sleep(1)
+                else:
+                    logger.warning(f"Ignoring unsafe next page: {next_page_full}")
+                    url = None
             else:
                 logger.info("No more pages found.")
                 url = None

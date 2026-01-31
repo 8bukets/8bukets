@@ -1,0 +1,4 @@
+## 2026-01-31 - SSRF Prevention in Blog Scraper
+**Vulnerability:** The `BlogScraper` blindly followed URLs found in the "Older posts" pagination link (`get_next_page`). A malicious or compromised target site could inject a link to an internal service or file, causing the scraper to perform Server-Side Request Forgery (SSRF) or redirect attacks.
+**Learning:** Scrapers often assume the target site serves valid/safe links, but any external input (including HTML content) must be treated as untrusted. Blindly following extracted links allows the target to control the bot's navigation.
+**Prevention:** Implemented strict URL validation (`is_safe_url`) that checks the URL scheme (http/https only) and enforces domain whitelisting (must match the base URL's domain). Applied this check before following pagination links and before fetching any page.
