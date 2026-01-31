@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+links.json
+links.csv
+unique_links.txt
+verify_dummy.json
+verify_dummy.txt
+verify_injection.csv
