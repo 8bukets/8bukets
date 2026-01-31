@@ -215,6 +215,16 @@ class MarkPositionScraperAsync:
                 return await self.parse_page(html)
             return None
 
+    def sanitize_csv_field(self, text: str) -> str:
+        """Sanitize field to prevent CSV injection."""
+        if not text:
+            return ""
+        # Convert to string just in case, though we expect strings mostly
+        val = str(text)
+        if val.startswith(('=', '+', '-', '@')):
+            return f"'{val}"
+        return val
+
     def save_data(self, posts: List[Dict]):
         # JSON
         try:
@@ -231,13 +241,13 @@ class MarkPositionScraperAsync:
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        self.sanitize_csv_field(post.get('title', '')),
+                        self.sanitize_csv_field(post.get('date', '')),
+                        self.sanitize_csv_field(post.get('author', '')),
+                        self.sanitize_csv_field(", ".join(post.get('categories', []))),
+                        self.sanitize_csv_field(post.get('external_link', '')),
+                        self.sanitize_csv_field(post.get('domain', '')),
+                        self.sanitize_csv_field(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
