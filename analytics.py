@@ -21,6 +21,9 @@ def get_domain(url):
     except:
         return None
 
+def slugify(text):
+    return text.lower().replace(" ", "-")
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
@@ -66,35 +69,70 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
+    md.append("# 📈 Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
-    md.append(f"- **Total Posts:** {total_posts}")
-    md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    # Table of Contents
+    md.append("\n<a name='table-of-contents'></a>")
+    md.append("## 📑 Table of Contents")
+    toc_items = [
+        ("General Statistics", "📊"),
+        ("Top 10 Referenced Domains", "🌐"),
+        ("Top 10 Categories", "🏷️"),
+        ("Posts by Year", "📅"),
+        ("Authors", "✍️")
+    ]
+    for title, emoji in toc_items:
+        slug = slugify(title)
+        md.append(f"- [{emoji} {title}](#{slug})")
 
-    md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
+    def add_section(title, emoji, content_lines):
+        slug = slugify(title)
+        md.append(f"\n<a name='{slug}'></a>")
+        md.append(f"## {emoji} {title}")
+        md.extend(content_lines)
+        md.append(f"\n[Back to Top](#table-of-contents)")
+
+    # General Statistics
+    stats_lines = [
+        f"- **Total Posts:** {total_posts}",
+        f"- **Date Range:** {start_date} to {end_date}",
+        f"- **Unique Domains Linked:** {len(set(domains))}"
+    ]
+    add_section("General Statistics", "📊", stats_lines)
+
+    # Top 10 Referenced Domains
+    domain_lines = [
+        "| Domain | Count |",
+        "| :--- | :---: |"
+    ]
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        domain_lines.append(f"| {domain} | {count} |")
+    add_section("Top 10 Referenced Domains", "🌐", domain_lines)
 
-    md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
+    # Top 10 Categories
+    cat_lines = [
+        "| Category | Count |",
+        "| :--- | :---: |"
+    ]
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        cat_lines.append(f"| {cat} | {count} |")
+    add_section("Top 10 Categories", "🏷️", cat_lines)
 
-    md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
+    # Posts by Year
+    year_lines = [
+        "| Year | Count |",
+        "| :--- | :---: |"
+    ]
     for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+        year_lines.append(f"| {year} | {count} |")
+    add_section("Posts by Year", "📅", year_lines)
 
-    md.append("\n## Authors")
+    # Authors
+    author_lines = []
     for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+        author_lines.append(f"- {author}: {count} posts")
+    add_section("Authors", "✍️", author_lines)
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
