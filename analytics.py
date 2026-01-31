@@ -4,6 +4,10 @@ from collections import Counter
 from urllib.parse import urlparse
 from datetime import datetime
 import sys
+import re
+
+def slugify(text):
+    return re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-')
 
 def load_data(filepath):
     try:
@@ -69,30 +73,55 @@ def generate_report(data, output_file):
     md.append("# Wordpress Blog Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
+    # Define sections for TOC
+    sections = [
+        ("General Statistics", "📊"),
+        ("Top 10 Referenced Domains", "🔗"),
+        ("Top 10 Categories", "🏷️"),
+        ("Posts by Year", "📅"),
+        ("Authors", "✍️")
+    ]
+
+    # Generate TOC
+    md.append("\n## Table of Contents")
+    for title, emoji in sections:
+        slug = slugify(title)
+        md.append(f"- [{emoji} {title}](#{slug})")
+
+    slug = slugify("General Statistics")
+    md.append(f"\n<a name='{slug}'></a>")
+    md.append("\n## 📊 General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
 
-    md.append("\n## Top 10 Referenced Domains")
+    slug = slugify("Top 10 Referenced Domains")
+    md.append(f"\n<a name='{slug}'></a>")
+    md.append("\n## 🔗 Top 10 Referenced Domains")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in domain_counts:
         md.append(f"| {domain} | {count} |")
 
-    md.append("\n## Top 10 Categories")
+    slug = slugify("Top 10 Categories")
+    md.append(f"\n<a name='{slug}'></a>")
+    md.append("\n## 🏷️ Top 10 Categories")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in category_counts:
         md.append(f"| {cat} | {count} |")
 
-    md.append("\n## Posts by Year")
+    slug = slugify("Posts by Year")
+    md.append(f"\n<a name='{slug}'></a>")
+    md.append("\n## 📅 Posts by Year")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
     for year, count in year_counts:
         md.append(f"| {year} | {count} |")
 
-    md.append("\n## Authors")
+    slug = slugify("Authors")
+    md.append(f"\n<a name='{slug}'></a>")
+    md.append("\n## ✍️ Authors")
     for author, count in author_counts:
         md.append(f"- {author}: {count} posts")
 
