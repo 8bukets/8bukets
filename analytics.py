@@ -5,6 +5,18 @@ from urllib.parse import urlparse
 from datetime import datetime
 import sys
 
+def slugify(text):
+    """Create a URL-friendly slug from text."""
+    if not text:
+        return ""
+    return text.lower().replace(' ', '-').replace('.', '')
+
+def sanitize_markdown(text):
+    """Sanitize text to prevent Markdown breakage."""
+    if not text:
+        return ""
+    return str(text).replace('|', '\\|').replace('<', '&lt;').replace('>', '&gt;')
+
 def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
@@ -99,40 +111,75 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
+
+    # Header
+    md.append(f"# 📈 Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
+    # Table of Contents
+    md.append(f"\n<a name='table-of-contents'></a>\n## 📖 Table of Contents")
+    sections = [
+        ("General Statistics", "📊"),
+        ("Top 10 Referenced Domains", "🔗"),
+        ("Top 10 Categories", "📂"),
+        ("Posts by Year", "📅"),
+        ("Authors", "✍️")
+    ]
+    for title, emoji in sections:
+        slug = slugify(title)
+        md.append(f"- [{emoji} {title}](#{slug})")
+
+    # 1. General Statistics
+    sec_title, sec_emoji = sections[0]
+    sec_slug = slugify(sec_title)
+    md.append(f"\n<a name='{sec_slug}'></a>\n## {sec_emoji} {sec_title}")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(unique_domains)}")
+    md.append(f"\n[Back to Top](#table-of-contents)")
 
-    md.append("\n## Top 10 Referenced Domains")
+    # 2. Top Domains
+    sec_title, sec_emoji = sections[1]
+    sec_slug = slugify(sec_title)
+    md.append(f"\n<a name='{sec_slug}'></a>\n## {sec_emoji} {sec_title}")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in top_domains:
-        md.append(f"| {domain} | {count} |")
+        md.append(f"| {sanitize_markdown(domain)} | {count} |")
+    md.append(f"\n[Back to Top](#table-of-contents)")
 
-    md.append("\n## Top 10 Categories")
+    # 3. Top Categories
+    sec_title, sec_emoji = sections[2]
+    sec_slug = slugify(sec_title)
+    md.append(f"\n<a name='{sec_slug}'></a>\n## {sec_emoji} {sec_title}")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in top_categories:
-        md.append(f"| {cat} | {count} |")
+        md.append(f"| {sanitize_markdown(cat)} | {count} |")
+    md.append(f"\n[Back to Top](#table-of-contents)")
 
-    md.append("\n## Posts by Year")
+    # 4. Posts by Year
+    sec_title, sec_emoji = sections[3]
+    sec_slug = slugify(sec_title)
+    md.append(f"\n<a name='{sec_slug}'></a>\n## {sec_emoji} {sec_title}")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
     for year, count in sorted_years:
         md.append(f"| {year} | {count} |")
+    md.append(f"\n[Back to Top](#table-of-contents)")
 
-    md.append("\n## Authors")
+    # 5. Authors
+    sec_title, sec_emoji = sections[4]
+    sec_slug = slugify(sec_title)
+    md.append(f"\n<a name='{sec_slug}'></a>\n## {sec_emoji} {sec_title}")
     for author, count in sorted_authors:
-        md.append(f"- {author}: {count} posts")
+        md.append(f"- {sanitize_markdown(author)}: {count} posts")
+    md.append(f"\n[Back to Top](#table-of-contents)")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    print(f"✨ Report generated successfully: {output_file}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
