@@ -138,6 +138,12 @@ class OracleNewsScraper:
             else:
                 logger.error("Failed to retrieve content.")
 
+    def sanitize_csv_field(self, field: str) -> str:
+        """Sanitize CSV field to prevent formula injection."""
+        if field and isinstance(field, str) and field.startswith(('=', '+', '-', '@')):
+            return "'" + field
+        return field
+
     def save_data(self, posts: List[Dict]):
         # JSON
         try:
@@ -154,13 +160,13 @@ class OracleNewsScraper:
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        self.sanitize_csv_field(post.get('title', '')),
+                        self.sanitize_csv_field(post.get('date', '')),
+                        self.sanitize_csv_field(post.get('author', '')),
+                        self.sanitize_csv_field(", ".join(post.get('categories', []))),
+                        self.sanitize_csv_field(post.get('external_link', '')),
+                        self.sanitize_csv_field(post.get('domain', '')),
+                        self.sanitize_csv_field(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
