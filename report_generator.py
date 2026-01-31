@@ -66,18 +66,25 @@ class ReportGenerator:
             f.write(f"**New Posts:** {len(new_posts)}\n")
             f.write(f"**Updated Posts:** {len(updated_posts)}\n\n")
 
+            # Keyword Analysis Check
+            all_recent_titles = [p[0] for p in new_posts] + [p[0] for p in updated_posts]
+
+            # Table of Contents
+            f.write(self.generate_toc(bool(all_recent_titles), bool(updated_posts)))
+
             # Recommendations Section
+            f.write("<a id='recommendations'></a>\n")
             f.write("## 💡 Recommendations\n\n")
             recommendations = self.generate_recommendations(new_posts, updated_posts, rankings, past_rankings)
             for rec in recommendations:
                 f.write(f"- {rec}\n")
             if not recommendations:
                 f.write("Everything looks stable. No specific actions recommended.\n")
-            f.write("\n")
+            f.write("\n[⬆️ Back to Top](#table-of-contents)\n\n")
 
             # Keyword Analysis
-            all_recent_titles = [p[0] for p in new_posts] + [p[0] for p in updated_posts]
             if all_recent_titles:
+                f.write("<a id='keyword-trends'></a>\n")
                 f.write("## 🧠 Keyword Trends\n\n")
                 f.write("Most frequent words in recent activity:\n\n")
                 keywords = self.analyze_keywords(all_recent_titles)
@@ -85,9 +92,10 @@ class ReportGenerator:
                 f.write("|---|---|\n")
                 for word, count in keywords:
                     f.write(f"| {word} | {count} |\n")
-                f.write("\n")
+                f.write("\n[⬆️ Back to Top](#table-of-contents)\n\n")
 
             # SEO Rankings Trend
+            f.write("<a id='seo-trend-analysis'></a>\n")
             f.write("## 📈 SEO Trend Analysis\n\n")
             if rankings:
                 f.write("| Query | Rank | Change | Checked At |\n")
@@ -97,9 +105,11 @@ class ReportGenerator:
                     f.write(f"| {item['query']} | {item['rank']} | {item['change']} | {item['date']} |\n")
             else:
                 f.write("No SEO ranking data for today.\n\n")
+            f.write("\n[⬆️ Back to Top](#table-of-contents)\n\n")
 
             # Content Updates Section
             if updated_posts:
+                f.write("<a id='content-updates'></a>\n")
                 f.write("## 🔄 Content Updates\n\n")
                 f.write("| Post | Field | Old | New | Time |\n")
                 f.write("|---|---|---|---|---|\n")
@@ -107,9 +117,10 @@ class ReportGenerator:
                     title, url, field, old, new, time = u
                     title = title.replace("|", "-")
                     f.write(f"| [{title}]({url}) | {field} | {old} | {new} | {time} |\n")
-                f.write("\n")
+                f.write("\n[⬆️ Back to Top](#table-of-contents)\n\n")
 
             # New Posts Section
+            f.write("<a id='recently-scraped-posts'></a>\n")
             if new_posts:
                 f.write("## 🆕 Recently Scraped Posts\n\n")
                 f.write("| Title | Scraped At | Link |\n")
@@ -119,7 +130,9 @@ class ReportGenerator:
                     title = title.replace("|", "-") if title else "No Title"
                     f.write(f"| {title} | {scraped_at} | [View]({url}) |\n")
             else:
+                f.write("## 🆕 Recently Scraped Posts\n\n")
                 f.write("No new posts scraped in the last 24 hours.\n")
+            f.write("\n[⬆️ Back to Top](#table-of-contents)\n\n")
 
         logger.info(f"Report generated: {report_filename}")
 
@@ -158,6 +171,25 @@ class ReportGenerator:
                 "date": checked_at
             })
         return analysis
+
+    def generate_toc(self, has_keywords, has_updates):
+        """Generate Table of Contents string."""
+        toc = [
+            "## 📋 Table of Contents",
+            "<a id='table-of-contents'></a>",
+            "- [💡 Recommendations](#recommendations)"
+        ]
+        if has_keywords:
+            toc.append("- [🧠 Keyword Trends](#keyword-trends)")
+
+        toc.append("- [📈 SEO Trend Analysis](#seo-trend-analysis)")
+
+        if has_updates:
+            toc.append("- [🔄 Content Updates](#content-updates)")
+
+        toc.append("- [🆕 Recently Scraped Posts](#recently-scraped-posts)")
+        toc.append("\n")
+        return "\n".join(toc)
 
     def generate_recommendations(self, new_posts, updated_posts, rankings, past_rankings):
         recs = []
