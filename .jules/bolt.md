@@ -1,0 +1,3 @@
+## 2026-01-31 - Unblocking Asyncio Event Loop with Threads
+**Learning:** `BeautifulSoup` parsing is synchronous and CPU-intensive. When called directly in an `async` function, it blocks the entire event loop, freezing other tasks (like network heartbeats or concurrent requests). Offloading this to `asyncio.to_thread` significantly improves loop responsiveness (Max Delay dropped from >8s to <0.4s), even though total wall-clock time increased due to thread overhead/GIL.
+**Action:** Always offload CPU-bound parsing (BeautifulSoup, lxml, heavy regex) to threads when running in an asyncio environment to maintain concurrency.
