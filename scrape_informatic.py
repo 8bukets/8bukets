@@ -73,6 +73,30 @@ def is_external_link(link_url: str, base_url: str) -> bool:
 
     return parsed_link.netloc != parsed_base.netloc
 
+def is_safe_url(url: str, allowed_base: str) -> bool:
+    """
+    Checks if a URL is safe to scrape (http/https and matches allowed base domain).
+    Prevents SSRF by strictly validating the scheme and domain.
+    """
+    if not url:
+        return False
+
+    try:
+        parsed_url = urlparse(url)
+        parsed_base = urlparse(allowed_base)
+
+        # 1. Validate Scheme
+        if parsed_url.scheme not in ('http', 'https'):
+            return False
+
+        # 2. Validate Domain (Must match the base domain)
+        if parsed_url.netloc != parsed_base.netloc:
+            return False
+
+        return True
+    except Exception:
+        return False
+
 def parse_post_html(post_soup, base_url: str) -> Post:
     """
     Parses a single article soup object and returns a Post object.
@@ -165,9 +189,15 @@ def scrape(output_file: str, max_pages: int = 0):
         # Pagination
         nav_previous = soup.find('div', class_='nav-previous')
         if nav_previous and nav_previous.find('a'):
-            current_url = nav_previous.find('a')['href']
-            page += 1
-            time.sleep(1) # Polite delay
+            next_url = nav_previous.find('a')['href']
+
+            if is_safe_url(next_url, BASE_URL):
+                current_url = next_url
+                page += 1
+                time.sleep(1) # Polite delay
+            else:
+                logging.warning(f"Potential SSRF/Malicious Link detected: {next_url}. Stopping pagination.")
+                current_url = None
         else:
             current_url = None
             logging.info("No more pages found.")
