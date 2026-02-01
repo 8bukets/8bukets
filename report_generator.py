@@ -62,22 +62,37 @@ class ReportGenerator:
 
         with open(report_filename, "w", encoding="utf-8") as f:
             f.write(f"# Daily Scraper Report - {report_date}\n\n")
+            f.write("<a name='top'></a>\n\n")
             f.write(f"**Total Posts:** {total_posts}\n")
             f.write(f"**New Posts:** {len(new_posts)}\n")
             f.write(f"**Updated Posts:** {len(updated_posts)}\n\n")
 
+            # Determine ToC
+            all_recent_titles = [p[0] for p in new_posts] + [p[0] for p in updated_posts]
+
+            f.write("## 📋 Table of Contents\n")
+            f.write("- [💡 Recommendations](#recommendations)\n")
+            if all_recent_titles:
+                f.write("- [🧠 Keyword Trends](#keywords)\n")
+            f.write("- [📈 SEO Trend Analysis](#seo)\n")
+            if updated_posts:
+                f.write("- [🔄 Content Updates](#updates)\n")
+            f.write("- [🆕 Recently Scraped Posts](#new-posts)\n")
+            f.write("\n")
+
             # Recommendations Section
+            f.write("<a name='recommendations'></a>\n")
             f.write("## 💡 Recommendations\n\n")
             recommendations = self.generate_recommendations(new_posts, updated_posts, rankings, past_rankings)
             for rec in recommendations:
                 f.write(f"- {rec}\n")
             if not recommendations:
                 f.write("Everything looks stable. No specific actions recommended.\n")
-            f.write("\n")
+            f.write("\n[⬆️ Back to Top](#top)\n\n")
 
             # Keyword Analysis
-            all_recent_titles = [p[0] for p in new_posts] + [p[0] for p in updated_posts]
             if all_recent_titles:
+                f.write("<a name='keywords'></a>\n")
                 f.write("## 🧠 Keyword Trends\n\n")
                 f.write("Most frequent words in recent activity:\n\n")
                 keywords = self.analyze_keywords(all_recent_titles)
@@ -85,9 +100,10 @@ class ReportGenerator:
                 f.write("|---|---|\n")
                 for word, count in keywords:
                     f.write(f"| {word} | {count} |\n")
-                f.write("\n")
+                f.write("\n[⬆️ Back to Top](#top)\n\n")
 
             # SEO Rankings Trend
+            f.write("<a name='seo'></a>\n")
             f.write("## 📈 SEO Trend Analysis\n\n")
             if rankings:
                 f.write("| Query | Rank | Change | Checked At |\n")
@@ -97,9 +113,11 @@ class ReportGenerator:
                     f.write(f"| {item['query']} | {item['rank']} | {item['change']} | {item['date']} |\n")
             else:
                 f.write("No SEO ranking data for today.\n\n")
+            f.write("[⬆️ Back to Top](#top)\n\n")
 
             # Content Updates Section
             if updated_posts:
+                f.write("<a name='updates'></a>\n")
                 f.write("## 🔄 Content Updates\n\n")
                 f.write("| Post | Field | Old | New | Time |\n")
                 f.write("|---|---|---|---|---|\n")
@@ -107,11 +125,12 @@ class ReportGenerator:
                     title, url, field, old, new, time = u
                     title = title.replace("|", "-")
                     f.write(f"| [{title}]({url}) | {field} | {old} | {new} | {time} |\n")
-                f.write("\n")
+                f.write("\n[⬆️ Back to Top](#top)\n\n")
 
             # New Posts Section
+            f.write("<a name='new-posts'></a>\n")
+            f.write("## 🆕 Recently Scraped Posts\n\n")
             if new_posts:
-                f.write("## 🆕 Recently Scraped Posts\n\n")
                 f.write("| Title | Scraped At | Link |\n")
                 f.write("|---|---|---|\n")
                 for post in new_posts:
@@ -120,6 +139,7 @@ class ReportGenerator:
                     f.write(f"| {title} | {scraped_at} | [View]({url}) |\n")
             else:
                 f.write("No new posts scraped in the last 24 hours.\n")
+            f.write("\n[⬆️ Back to Top](#top)\n\n")
 
         logger.info(f"Report generated: {report_filename}")
 
