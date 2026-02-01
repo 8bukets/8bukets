@@ -21,6 +21,12 @@ def get_domain(url):
     except:
         return None
 
+def generate_bar(count, max_count, length=20):
+    if max_count == 0:
+        return '░' * length
+    filled = int((count / max_count) * length)
+    return '█' * filled + '░' * (length - filled)
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
@@ -69,32 +75,50 @@ def generate_report(data, output_file):
     md.append("# Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
+    md.append("\n## Table of Contents")
+    md.append("- [General Statistics](#general-statistics)")
+    md.append("- [Top 10 Referenced Domains](#top-10-referenced-domains)")
+    md.append("- [Top 10 Categories](#top-10-categories)")
+    md.append("- [Posts by Year](#posts-by-year)")
+    md.append("- [Authors](#authors)")
+
     md.append("\n## General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append("\n[Back to Top](#markposition-analytics-report)")
 
     md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Domain | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_domain_count = domain_counts[0][1] if domain_counts else 0
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        bar = generate_bar(count, max_domain_count)
+        md.append(f"| {domain} | {count} | {bar} |")
+    md.append("\n[Back to Top](#markposition-analytics-report)")
 
     md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Category | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_cat_count = category_counts[0][1] if category_counts else 0
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        bar = generate_bar(count, max_cat_count)
+        md.append(f"| {cat} | {count} | {bar} |")
+    md.append("\n[Back to Top](#markposition-analytics-report)")
 
     md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Year | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_year_count = year_counts[0][1] if year_counts else 0
     for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+        bar = generate_bar(count, max_year_count)
+        md.append(f"| {year} | {count} | {bar} |")
+    md.append("\n[Back to Top](#markposition-analytics-report)")
 
     md.append("\n## Authors")
     for author, count in author_counts:
         md.append(f"- {author}: {count} posts")
+    md.append("\n[Back to Top](#markposition-analytics-report)")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
