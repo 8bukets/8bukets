@@ -4,11 +4,46 @@ import sys
 import json
 import os
 import logging
+import concurrent.futures
 from typing import List, Dict
 
 class ResearcherAgent(BaseAgent):
     def __init__(self):
         super().__init__("Researcher")
+
+    def _scrape_blog(self, limit, output_file):
+        """Helper to run blog scraping subprocess."""
+        try:
+            # We assume scrape_informatic.py is in the root directory
+            cmd = [sys.executable, "scrape_informatic.py", "-n", str(limit), "-o", output_file]
+            subprocess.run(cmd, check=True)
+
+            if os.path.exists(output_file):
+                with open(output_file, 'r', encoding='utf-8') as f:
+                    return json.load(f)
+            else:
+                return []
+        except Exception as e:
+            self.logger.error(f"Blog scraping failed: {e}")
+            return []
+
+    def _scrape_google(self):
+        """Helper to run Google search scraping subprocess."""
+        self.logger.info("Checking Google Listings...")
+        try:
+            search_output = "google_search_results.json"
+            # We assume google_search_scraper.py is in the root directory
+            cmd = [sys.executable, "google_search_scraper.py", "-o", search_output]
+            subprocess.run(cmd, check=True)
+
+            if os.path.exists(search_output):
+                with open(search_output, 'r', encoding='utf-8') as f:
+                    return json.load(f)
+            else:
+                return []
+        except Exception as e:
+            self.logger.error(f"Google search scraping failed: {e}")
+            return []
 
     def perform_task(self, data):
         # Data can specify limits or targets
@@ -19,39 +54,13 @@ class ResearcherAgent(BaseAgent):
 
         results = {}
 
-        # 1. Scrape Blog Content
-        try:
-            # We assume scrape_informatic.py is in the root directory
-            cmd = [sys.executable, "scrape_informatic.py", "-n", str(limit), "-o", output_file]
-            subprocess.run(cmd, check=True)
+        # Run scraping tasks in parallel
+        # ⚡ Bolt Optimization: Run I/O bound tasks concurrently
+        with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
+            future_blog = executor.submit(self._scrape_blog, limit, output_file)
+            future_google = executor.submit(self._scrape_google)
 
-            if os.path.exists(output_file):
-                with open(output_file, 'r', encoding='utf-8') as f:
-                    results['blog_posts'] = json.load(f)
-            else:
-                results['blog_posts'] = []
-        except Exception as e:
-            self.logger.error(f"Blog scraping failed: {e}")
-            results['blog_posts'] = []
-
-        # 2. Check Google Listings
-        self.logger.info("Checking Google Listings...")
-        try:
-            search_output = "google_search_results.json"
-            # We assume google_search_scraper.py is in the root directory
-            # We need to create google_search_scraper.py if it doesn't exist or is not importable
-            # Since we are using subprocess, we can call it.
-            # Wait, I need to restore google_search_scraper.py first.
-            cmd = [sys.executable, "google_search_scraper.py", "-o", search_output]
-            subprocess.run(cmd, check=True)
-
-            if os.path.exists(search_output):
-                with open(search_output, 'r', encoding='utf-8') as f:
-                    results['google_listings'] = json.load(f)
-            else:
-                results['google_listings'] = []
-        except Exception as e:
-            self.logger.error(f"Google search scraping failed: {e}")
-            results['google_listings'] = []
+            results['blog_posts'] = future_blog.result()
+            results['google_listings'] = future_google.result()
 
         return results
