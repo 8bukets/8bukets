@@ -4,6 +4,7 @@ from collections import Counter
 from urllib.parse import urlparse
 from datetime import datetime
 import sys
+import re
 
 def load_data(filepath):
     try:
@@ -20,6 +21,9 @@ def get_domain(url):
         return urlparse(url).netloc.replace('www.', '')
     except:
         return None
+
+def slugify(text):
+    return re.sub(r'[\W_]+', '-', text.lower()).strip('-')
 
 def generate_report(data, output_file):
     total_posts = len(data)
@@ -66,35 +70,65 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
+    md.append("# <a name='top'></a>Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
+    # Sections definition for ToC
+    sections = [
+        "General Statistics",
+        "Top 10 Referenced Domains",
+        "Top 10 Categories",
+        "Posts by Year",
+        "Authors"
+    ]
+
+    # Table of Contents
+    md.append("\n## Table of Contents")
+    for section in sections:
+        slug = slugify(section)
+        md.append(f"- [{section}](#{slug})")
+
+    # Section 1
+    slug = slugify(sections[0])
+    md.append(f"\n## <a name='{slug}'></a>{sections[0]}")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append(f"\n[↑ Back to Top](#top)")
 
-    md.append("\n## Top 10 Referenced Domains")
+    # Section 2
+    slug = slugify(sections[1])
+    md.append(f"\n## <a name='{slug}'></a>{sections[1]}")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in domain_counts:
         md.append(f"| {domain} | {count} |")
+    md.append(f"\n[↑ Back to Top](#top)")
 
-    md.append("\n## Top 10 Categories")
+    # Section 3
+    slug = slugify(sections[2])
+    md.append(f"\n## <a name='{slug}'></a>{sections[2]}")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in category_counts:
         md.append(f"| {cat} | {count} |")
+    md.append(f"\n[↑ Back to Top](#top)")
 
-    md.append("\n## Posts by Year")
+    # Section 4
+    slug = slugify(sections[3])
+    md.append(f"\n## <a name='{slug}'></a>{sections[3]}")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
     for year, count in year_counts:
         md.append(f"| {year} | {count} |")
+    md.append(f"\n[↑ Back to Top](#top)")
 
-    md.append("\n## Authors")
+    # Section 5
+    slug = slugify(sections[4])
+    md.append(f"\n## <a name='{slug}'></a>{sections[4]}")
     for author, count in author_counts:
         md.append(f"- {author}: {count} posts")
+    md.append(f"\n[↑ Back to Top](#top)")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
