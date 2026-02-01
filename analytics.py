@@ -27,6 +27,7 @@ def generate_report(data, output_file):
     # 1. Domain Analysis
     domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
     domain_counts = Counter(domains).most_common(10)
+    unique_domains_count = len(set(domains))
 
     # 2. Category Analysis
     all_categories = []
@@ -72,7 +73,7 @@ def generate_report(data, output_file):
     md.append("\n## General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append(f"- **Unique Domains Linked:** {unique_domains_count}")
 
     md.append("\n## Top 10 Referenced Domains")
     md.append("| Domain | Count |")
@@ -99,7 +100,18 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    # Console Summary
+    print("\n📊 \033[1mMarkposition Analytics Report\033[0m")
+    print("--------------------------------")
+    print(f"📝 Total Posts:    {total_posts}")
+    print(f"📅 Date Range:     {start_date} to {end_date}")
+    print(f"🔗 Unique Domains: {unique_domains_count}")
+
+    print("\n🏆 \033[1mTop 3 Categories\033[0m")
+    for i, (cat, count) in enumerate(category_counts[:3], 1):
+         print(f"{i}. {cat} ({count})")
+
+    print(f"\n✅ Full report saved to \033[1m{output_file}\033[0m 📄\n")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
