@@ -24,21 +24,38 @@ def get_domain(url):
 def generate_report(data, output_file):
     total_posts = len(data)
 
-    # 1. Domain Analysis
-    domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
-    domain_counts = Counter(domains).most_common(10)
-
-    # 2. Category Analysis
-    all_categories = []
-    for p in data:
-        cats = p.get('categories', [])
-        if cats:
-            all_categories.extend(cats)
-    category_counts = Counter(all_categories).most_common(10)
-
-    # 3. Date Analysis
+    domain_counter = Counter()
+    category_counter = Counter()
+    author_counter = Counter()
     dates = []
+
+    # Single pass aggregation
+    # Bolt Optimization:
+    # 1. Iterate data once (O(N)) instead of multiple times (O(4N)).
+    # 2. Use 'domain' field directly to avoid redundant URL parsing.
     for p in data:
+        # Domain Analysis
+        # Use pre-parsed domain if available, fallback to parsing external_link
+        domain = p.get('domain')
+        if not domain:
+            external_link = p.get('external_link')
+            if external_link:
+                domain = get_domain(external_link)
+
+        if domain:
+            domain_counter[domain] += 1
+
+        # Category Analysis
+        cats = p.get('categories')
+        if cats:
+            category_counter.update(cats)
+
+        # Author Analysis
+        author = p.get('author')
+        if author:
+            author_counter[author] += 1
+
+        # Date Analysis
         dt_str = p.get('datetime')
         if dt_str:
             try:
@@ -47,6 +64,10 @@ def generate_report(data, output_file):
                 dates.append(dt)
             except ValueError:
                 pass
+
+    domain_counts = domain_counter.most_common(10)
+    category_counts = category_counter.most_common(10)
+    author_counts = author_counter.most_common()
 
     if dates:
         dates.sort()
@@ -60,10 +81,6 @@ def generate_report(data, output_file):
         end_date = "N/A"
         year_counts = []
 
-    # 4. Author Analysis
-    authors = [p.get('author') for p in data if p.get('author')]
-    author_counts = Counter(authors).most_common()
-
     # Generate Markdown
     md = []
     md.append("# Markposition Analytics Report")
@@ -72,7 +89,7 @@ def generate_report(data, output_file):
     md.append("\n## General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append(f"- **Unique Domains Linked:** {len(domain_counter)}")
 
     md.append("\n## Top 10 Referenced Domains")
     md.append("| Domain | Count |")
