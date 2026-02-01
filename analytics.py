@@ -16,16 +16,13 @@ def generate_report(data, output_file):
     total_posts = len(data)
 
     # 1. Domain Analysis
-    domains = [p.get('domain') for p in data if p.get('domain')]
-    domain_counts = Counter(domains).most_common(10)
+    # Optimization: Use generator to avoid creating intermediate list
+    domain_counter = Counter(p.get('domain') for p in data if p.get('domain'))
+    domain_counts = domain_counter.most_common(10)
 
     # 2. Category Analysis
-    all_categories = []
-    for p in data:
-        cats = p.get('categories', [])
-        if cats:
-            all_categories.extend(cats)
-    category_counts = Counter(all_categories).most_common(10)
+    # Optimization: Use nested generator to flatten categories without intermediate list
+    category_counts = Counter(c for p in data for c in p.get('categories', [])).most_common(10)
 
     # 3. Date Analysis
     dates = []
@@ -43,8 +40,8 @@ def generate_report(data, output_file):
         dates.sort()
         start_date = dates[0].strftime('%Y-%m-%d')
         end_date = dates[-1].strftime('%Y-%m-%d')
-        years = [d.year for d in dates]
-        year_counts = Counter(years).most_common()
+        # Optimization: Use generator for years
+        year_counts = Counter(d.year for d in dates).most_common()
         year_counts.sort(key=lambda x: x[0], reverse=True)
     else:
         start_date = "N/A"
@@ -52,8 +49,8 @@ def generate_report(data, output_file):
         year_counts = []
 
     # 4. Author Analysis
-    authors = [p.get('author') for p in data if p.get('author')]
-    author_counts = Counter(authors).most_common()
+    # Optimization: Use generator
+    author_counts = Counter(p.get('author') for p in data if p.get('author')).most_common()
 
     # Generate Markdown
     md = []
@@ -63,7 +60,7 @@ def generate_report(data, output_file):
     md.append("\n## General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append(f"- **Unique Domains Linked:** {len(domain_counter)}")
 
     md.append("\n## Top 10 Referenced Domains")
     md.append("| Domain | Count |")
