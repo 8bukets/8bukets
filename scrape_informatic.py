@@ -24,6 +24,8 @@ class Post:
     image_url: Optional[str]
 
 BASE_URL = "https://informaticmagazine.data.blog"
+# Security Enhancement: Prevent indefinite hanging/DoS by enforcing a timeout
+TIMEOUT = 10
 
 def configure_logging(verbose: bool):
     level = logging.DEBUG if verbose else logging.INFO
@@ -144,7 +146,8 @@ def scrape(output_file: str, max_pages: int = 0):
 
         logging.info(f"Scraping page {page}: {current_url}...")
         try:
-            response = session.get(current_url)
+            # Enforce timeout to prevent DoS/Hanging
+            response = session.get(current_url, timeout=TIMEOUT)
             response.raise_for_status()
         except requests.exceptions.RequestException as e:
             logging.error(f"Error fetching {current_url}: {e}")
