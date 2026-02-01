@@ -1,0 +1,3 @@
+## 2026-02-01 - BeautifulSoup SoupStrainer Attribute Filtering Quirk
+**Learning:** `SoupStrainer('tag', class_='classname')` can fail to match elements that `soup.find_all('tag', class_='classname')` successfully finds. This likely occurs because `SoupStrainer` matches against raw attributes during parsing, whereas `find_all` matches against processed attributes (where classes are split into lists).
+**Action:** When using `SoupStrainer` for performance, prefer filtering by tag name only (e.g., `SoupStrainer('article')`) to reduce the parsing scope, and then apply specific attribute filters using `find_all` on the resulting (smaller) soup object. This ensures both high performance and reliable filtering.
