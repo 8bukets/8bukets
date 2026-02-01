@@ -36,8 +36,10 @@ class TestBlogScraper(unittest.TestCase):
         if os.path.exists(self.json_name):
             os.remove(self.json_name)
 
+    @patch('scraper.BlogScraper.is_safe_url')
     @patch('requests.get')
-    def test_fetch_page(self, mock_get):
+    def test_fetch_page(self, mock_get, mock_is_safe):
+        mock_is_safe.return_value = True
         mock_response = MagicMock()
         mock_response.status_code = 200
         mock_response.content = self.mock_html.encode('utf-8')

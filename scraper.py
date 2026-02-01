@@ -6,6 +6,9 @@ import logging
 import argparse
 import sys
 import sqlite3
+import socket
+import ipaddress
+from urllib.parse import urlparse
 from datetime import datetime
 
 # Configure logging
@@ -126,7 +129,43 @@ class BlogScraper:
 
         return False
 
+    @staticmethod
+    def is_safe_url(url):
+        try:
+            parsed = urlparse(url)
+            if parsed.scheme not in ('http', 'https'):
+                return False
+
+            hostname = parsed.hostname
+            if not hostname:
+                return False
+
+            # Check for localhost/loopback string explicitly
+            if hostname.lower() in ['localhost', 'loopback']:
+                return False
+
+            try:
+                # Resolve to IP to check against private ranges
+                # Note: This is a synchronous DNS lookup.
+                ip_list = socket.getaddrinfo(hostname, None)
+                for item in ip_list:
+                    ip_str = item[4][0]
+                    ip = ipaddress.ip_address(ip_str)
+                    if ip.is_private or ip.is_loopback or ip.is_reserved or ip.is_link_local:
+                        return False
+            except (socket.gaierror, ValueError):
+                # DNS resolution failed or invalid IP.
+                return False
+
+            return True
+        except Exception:
+            return False
+
     def fetch_page(self, url):
+        if not self.is_safe_url(url):
+            logger.error(f"Blocked unsafe URL: {url}")
+            return None
+
         logger.info(f"Fetching {url}...")
         try:
             response = requests.get(url, headers=self.headers, timeout=10)
