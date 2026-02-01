@@ -1,0 +1,3 @@
+## 2025-02-18 - SoupStrainer vs lxml
+**Learning:** Using `SoupStrainer` with `lxml` parser didn't improve performance when the strained content (articles) constituted ~80% of the document size. Additionally, `SoupStrainer(..., class_='...')` failed to match elements correctly with `lxml` in this specific context, whereas `find_all` worked fine. Simply switching to `lxml` provided a ~16-26% speedup without the complexity of straining.
+**Action:** When optimizing BeautifulSoup, benchmark `lxml` switch first. Only use `SoupStrainer` if the target content is a small fraction of the document and selectors are simple.
