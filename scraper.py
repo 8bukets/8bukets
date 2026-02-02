@@ -135,8 +135,6 @@ class MarkPositionScraperAsync:
 
     async def scrape(self):
         all_posts = []
-        page_num = 1
-        sem = asyncio.Semaphore(self.concurrency)
 
         # Headers
         headers = {
@@ -144,76 +142,65 @@ class MarkPositionScraperAsync:
         }
 
         async with aiohttp.ClientSession(headers=headers) as session:
-            # We don't know the total pages, so we have to fetch sequentially or in chunks until we hit 404/empty.
-            # Pure concurrent fetching of all pages requires knowing the max page.
-            # Heuristic: fetch in batches of `concurrency`. If any page in batch returns 404 or empty, stop.
+            pending = set()
+            results_buffer = []  # List of (page_num, posts)
+            stop_scan = False
+            next_page = 1
+            min_fail_page = float('inf')
 
-            # Actually, WordPress pages are sequential. If page N is 404, N+1 is likely 404 too.
-            # But fetching 100 pages 1-by-1 is slow.
-            # Let's try fetching chunks.
+            logger.info(f"Starting scrape with concurrency {self.concurrency}...")
 
-            active = True
-            while active:
-                tasks = []
-                # Prepare a batch of pages
-                batch_start = page_num
-                # If max_pages is set, clamp the batch size
-                current_concurrency = self.concurrency
-
-                for i in range(current_concurrency):
-                    current_page = batch_start + i
-                    if self.max_pages and current_page > self.max_pages:
-                        active = False
+            # Sliding window loop
+            while pending or (not stop_scan and (not self.max_pages or next_page <= self.max_pages)):
+                # Fill up the window
+                while len(pending) < self.concurrency and not stop_scan:
+                    if self.max_pages and next_page > self.max_pages:
                         break
 
-                    # We create a task that acquires semaphore (though sem is less useful if we just create batch size = concurrency)
-                    tasks.append(self.fetch_and_parse(session, current_page, sem))
+                    # Create task
+                    task = asyncio.create_task(self.fetch_and_parse(session, next_page))
+                    task.page_num = next_page  # Tag the task
+                    pending.add(task)
+                    logger.info(f"Started fetching page {next_page}")
+                    next_page += 1
 
-                if not tasks:
+                if not pending:
                     break
 
-                logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
-                results = await asyncio.gather(*tasks)
+                # Wait for at least one to finish
+                done, pending = await asyncio.wait(pending, return_when=asyncio.FIRST_COMPLETED)
 
-                # Check results
-                batch_posts_count = 0
-                stop_detected = False
+                for task in done:
+                    try:
+                        posts = await task
+                        page_num_done = task.page_num
 
-                # Results are ordered by page number
-                for idx, page_posts in enumerate(results):
-                    page_idx = batch_start + idx
-                    if page_posts is None:
-                        # 404 or Error
-                        logger.info(f"Page {page_idx} returned 404 or empty. Stopping.")
-                        stop_detected = True
-                        break # Don't process further pages in this batch effectively (though they were fetched)
-                    elif len(page_posts) == 0:
-                        logger.info(f"Page {page_idx} has no articles. Stopping.")
-                        stop_detected = True
-                        break
-                    else:
-                        all_posts.extend(page_posts)
-                        batch_posts_count += len(page_posts)
+                        if posts is None or len(posts) == 0:
+                            # Stop condition met
+                            logger.info(f"Page {page_num_done} returned 404 or empty. Stopping.")
+                            stop_scan = True
+                            if page_num_done < min_fail_page:
+                                min_fail_page = page_num_done
+                        else:
+                            results_buffer.append((page_num_done, posts))
 
-                if stop_detected:
-                    break
+                    except Exception as e:
+                        logger.error(f"Task for page {task.page_num} failed: {e}")
 
-                if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
-                    logger.info("Reached max pages limit.")
-                    break
+            # Sort and filter results
+            results_buffer.sort(key=lambda x: x[0])
 
-                page_num += len(tasks)
-                # Small delay between batches
-                await asyncio.sleep(0.5)
+            for p_num, posts in results_buffer:
+                if p_num < min_fail_page:
+                    all_posts.extend(posts)
 
         self.save_data(all_posts)
 
-    async def fetch_and_parse(self, session, page_num, sem):
-        async with sem:
-            html = await self.fetch_page(session, page_num)
-            if html:
-                return await self.parse_page(html)
-            return None
+    async def fetch_and_parse(self, session, page_num):
+        html = await self.fetch_page(session, page_num)
+        if html:
+            return await self.parse_page(html)
+        return None
 
     def save_data(self, posts: List[Dict]):
         # JSON
