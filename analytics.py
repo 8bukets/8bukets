@@ -39,10 +39,11 @@ def generate_report(data, output_file):
     # 3. Date Analysis
     dates = []
     for p in data:
-        dt_str = p.get('datetime')
+        # Support both 'datetime' (legacy) and 'date' (current scraper)
+        dt_str = p.get('datetime') or p.get('date')
         if dt_str:
             try:
-                # Handle ISO format
+                # Handle ISO format or YYYY-MM-DD
                 dt = datetime.fromisoformat(dt_str)
                 dates.append(dt)
             except ValueError:
@@ -99,7 +100,22 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    # Console Dashboard
+    print("\n📊 Markposition Analytics Summary")
+    print("-" * 33)
+    print(f"📝 Total Posts:      {total_posts}")
+    print(f"📅 Date Range:       {start_date} to {end_date}")
+    print(f"🔗 Unique Domains:   {len(set(domains))}")
+
+    if category_counts:
+        top_cat, top_cat_count = category_counts[0]
+        print(f"🏆 Top Category:     \"{top_cat}\" ({top_cat_count} posts)")
+
+    if author_counts:
+        top_auth, top_auth_count = author_counts[0]
+        print(f"✍️  Top Author:       \"{top_auth}\" ({top_auth_count} posts)")
+
+    print(f"\n✅ Detailed report generated: {output_file}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
