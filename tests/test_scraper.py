@@ -3,7 +3,7 @@ from unittest.mock import MagicMock, patch
 import json
 import os
 import sqlite3
-from scraper import BlogScraper
+from scraper import BlogScraper, validate_path
 
 class TestBlogScraper(unittest.TestCase):
     def setUp(self):
@@ -87,6 +87,19 @@ class TestBlogScraper(unittest.TestCase):
             row = cursor.fetchone()
             self.assertIsNotNone(row)
             self.assertEqual(row[1], 'DB Test') # title
+
+    def test_path_validation(self):
+        # Valid paths
+        self.assertEqual(validate_path("test.json"), "test.json")
+        self.assertEqual(validate_path("./test.json"), "./test.json")
+        self.assertEqual(validate_path("subdir/test.json"), "subdir/test.json")
+
+        # Invalid paths
+        with self.assertRaises(ValueError):
+            validate_path("/etc/passwd")
+
+        with self.assertRaises(ValueError):
+            validate_path("../outside.json")
 
 if __name__ == '__main__':
     unittest.main()
