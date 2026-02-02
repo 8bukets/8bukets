@@ -6,16 +6,45 @@ import csv
 import re
 import argparse
 import logging
+import sys
 import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+    GREY = '\033[90m'
+
+class UXFormatter(logging.Formatter):
+    def format(self, record):
+        if record.levelno == logging.INFO:
+            prefix = f"{Colors.BLUE}ℹ️{Colors.ENDC}"
+        elif record.levelno == logging.WARNING:
+            prefix = f"{Colors.WARNING}⚠️{Colors.ENDC}"
+        elif record.levelno == logging.ERROR:
+            prefix = f"{Colors.FAIL}❌{Colors.ENDC}"
+        else:
+            prefix = ""
+
+        # Keep the timestamp
+        timestamp = self.formatTime(record, "%H:%M:%S")
+        return f"{Colors.GREY}{timestamp}{Colors.ENDC} {prefix} {record.getMessage()}"
+
+def setup_ux_logging():
+    handler = logging.StreamHandler(sys.stdout)
+    handler.setFormatter(UXFormatter())
+    logging.root.handlers = [handler]
+    logging.root.setLevel(logging.INFO)
+
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
@@ -255,11 +284,17 @@ class MarkPositionScraperAsync:
             with open(self.output_txt, 'w', encoding='utf-8') as f:
                 for link in sorted_links:
                     f.write(link + '\n')
-            logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
+            # logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
         except IOError as e:
             logger.error(f"Failed to save TXT: {e}")
 
+        # Summary
+        print(f"\n{Colors.HEADER}{Colors.BOLD}✨ Scrape Complete! ✨{Colors.ENDC}")
+        print(f"{Colors.GREEN}✅ Saved {len(posts)} posts to {self.output_json} & {self.output_csv}{Colors.ENDC}")
+        print(f"{Colors.GREEN}✅ Saved {len(sorted_links)} unique links to {self.output_txt}{Colors.ENDC}")
+
 def main():
+    setup_ux_logging()
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
     parser.add_argument("--json", default="links.json", help="Output JSON filename")
     parser.add_argument("--csv", default="links.csv", help="Output CSV filename")
