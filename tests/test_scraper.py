@@ -72,16 +72,16 @@ class TestBlogScraper(unittest.TestCase):
             'categories': ['Test']
         }
 
-        # First insertion should succeed
-        success = self.scraper.save_to_db(item)
-        self.assertTrue(success)
-
-        # Duplicate insertion (by post_url) should fail/ignore
-        success = self.scraper.save_to_db(item)
-        self.assertFalse(success)
-
-        # Verify data in DB
         with sqlite3.connect(self.db_name) as conn:
+            # First insertion should succeed
+            success = self.scraper.save_to_db(item, conn)
+            self.assertTrue(success)
+
+            # Duplicate insertion (by post_url) should fail/ignore
+            success = self.scraper.save_to_db(item, conn)
+            self.assertFalse(success)
+
+            # Verify data in DB
             cursor = conn.cursor()
             cursor.execute("SELECT * FROM posts WHERE post_url=?", ('http://example.com/unique-post-1',))
             row = cursor.fetchone()
