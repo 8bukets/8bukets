@@ -1,3 +1,13 @@
+// Utility for performance
+function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+        const context = this;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), wait);
+    };
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('United Sports News website loaded successfully.');
 
@@ -46,7 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const articleList = document.getElementById('article-list');
 
     if (searchInput && articleList) {
-        searchInput.addEventListener('input', (e) => {
+        // Optimization: Debounce search to reduce DOM manipulations
+        searchInput.addEventListener('input', debounce((e) => {
             const term = e.target.value.toLowerCase();
             const articles = articleList.getElementsByTagName('article');
 
@@ -60,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     article.style.display = 'none';
                 }
             });
-        });
+        }, 300));
     }
 
     // Contact Form Validation
