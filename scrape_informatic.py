@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+import os
 import time
 import logging
 import argparse
@@ -73,6 +74,28 @@ def is_external_link(link_url: str, base_url: str) -> bool:
 
     return parsed_link.netloc != parsed_base.netloc
 
+def validate_output_path(path: str) -> str:
+    """
+    Validates that the output path is safe (within the current working directory).
+    Security Note: Validate output path to prevent Path Traversal attacks.
+    """
+    # Get absolute path of the requested file
+    abs_path = os.path.abspath(path)
+
+    # Get absolute path of the current working directory
+    cwd = os.path.abspath(os.getcwd())
+
+    # Check if the file path starts with the CWD
+    # We use os.path.commonpath to safely compare paths
+    try:
+        if os.path.commonpath([abs_path, cwd]) != cwd:
+            raise ValueError(f"Security Error: Output path '{path}' traverses outside the current working directory.")
+    except ValueError:
+        # This can happen if paths are on different drives on Windows, which implies outside CWD
+        raise ValueError(f"Security Error: Output path '{path}' traverses outside the current working directory.")
+
+    return abs_path
+
 def parse_post_html(post_soup, base_url: str) -> Post:
     """
     Parses a single article soup object and returns a Post object.
@@ -132,6 +155,13 @@ def parse_post_html(post_soup, base_url: str) -> Post:
     )
 
 def scrape(output_file: str, max_pages: int = 0):
+    # Security Note: Validate output path to prevent Path Traversal attacks.
+    try:
+        output_file = validate_output_path(output_file)
+    except ValueError as e:
+        logging.error(str(e))
+        return
+
     session = get_session()
     all_posts = []
     page = 1
