@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
 import re
@@ -22,6 +22,8 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://www.oracle.com/news/"
 
 class OracleNewsScraper:
+    WHITESPACE_RE = re.compile(r'\s+')
+
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
         self.output_csv = output_csv
@@ -58,7 +60,7 @@ class OracleNewsScraper:
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return self.WHITESPACE_RE.sub(' ', text).strip()
 
     def sanitize_for_csv(self, value: str) -> str:
         """Prevent CSV injection by prepending a single quote to risky fields."""
@@ -85,7 +87,10 @@ class OracleNewsScraper:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+        # Optimization: Only parse 'a' tags to speed up processing
+        # This includes contents of 'a' tags, so nested 'h3' are preserved
+        strainer = SoupStrainer('a')
+        soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
         # Oracle news uses links in <h3> tags or <a> tags with specific classes or structures.
         # Based on curl output, we saw links like:
         # <a href="/news/announcement/..." data-lbl="..."><h3>Title</h3></a>
