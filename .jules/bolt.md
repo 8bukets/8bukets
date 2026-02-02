@@ -1,0 +1,3 @@
+## 2026-02-02 - SoupStrainer and Regex Optimization
+**Learning:** `SoupStrainer` is efficient for parsing specific tags (like `article`) but can be slower if the filter is not specific enough (e.g., matching common tags like `div`). Combined with regex on raw bytes for extracting specific isolated elements (like pagination), it provides significant performance gains by avoiding full DOM parsing.
+**Action:** When optimizing BeautifulSoup parsing, consider `SoupStrainer` for main content and regex for isolated structural elements if `SoupStrainer` cannot easily express the "OR" logic efficiently or if the element is simple enough for regex.
