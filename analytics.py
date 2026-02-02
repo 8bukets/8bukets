@@ -99,7 +99,29 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    print_summary(data, domains, category_counts, start_date, end_date, output_file)
+
+def print_summary(data, domains, category_counts, start_date, end_date, output_file):
+    # ANSI escape codes for styling
+    BOLD = "\033[1m"
+    RESET = "\033[0m"
+    CYAN = "\033[36m"
+    GREEN = "\033[32m"
+
+    print(f"\n{BOLD}📊 Analytics Report Summary{RESET}")
+    print(f"{CYAN}{'-' * 30}{RESET}")
+    print(f"📝 Total Posts:      {BOLD}{len(data)}{RESET}")
+    print(f"📅 Date Range:       {start_date} to {end_date}")
+    print(f"🔗 Unique Domains:   {len(set(domains))}")
+
+    print(f"\n{BOLD}🏆 Top Categories{RESET}")
+    if category_counts:
+        for cat, count in category_counts[:3]:
+            print(f"  • {cat}: {BOLD}{count}{RESET}")
+    else:
+        print("  (No categories found)")
+
+    print(f"\n✨ Report generated: {GREEN}{output_file}{RESET}\n")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
