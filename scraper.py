@@ -18,6 +18,36 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+class Colors:
+    RESET = "\033[0m"
+    BOLD = "\033[1m"
+    RED = "\033[91m"
+    GREEN = "\033[92m"
+    YELLOW = "\033[93m"
+    BLUE = "\033[94m"
+    CYAN = "\033[96m"
+
+class UXFormatter:
+    @staticmethod
+    def info(msg: str):
+        print(f"{Colors.BLUE}ℹ️  {Colors.BOLD}INFO:{Colors.RESET} {msg}")
+
+    @staticmethod
+    def success(msg: str):
+        print(f"{Colors.GREEN}✅ {Colors.BOLD}SUCCESS:{Colors.RESET} {msg}")
+
+    @staticmethod
+    def warning(msg: str):
+        print(f"{Colors.YELLOW}⚠️  {Colors.BOLD}WARNING:{Colors.RESET} {msg}")
+
+    @staticmethod
+    def error(msg: str):
+        print(f"{Colors.RED}❌ {Colors.BOLD}ERROR:{Colors.RESET} {msg}")
+
+    @staticmethod
+    def header(msg: str):
+        print(f"\n{Colors.CYAN}🎨 {Colors.BOLD}{msg}{Colors.RESET}\n")
+
 DEFAULT_BASE_URL = "https://artmusicpage.wordpress.com/"
 
 class WordpressScraperAsync:
@@ -40,6 +70,7 @@ class WordpressScraperAsync:
         path = urlparse(url).path
         for disallowed in self.disallowed_paths:
             if path.startswith(disallowed):
+                UXFormatter.warning(f"Skipping disallowed URL: {url}")
                 return False
         return True
 
@@ -76,7 +107,6 @@ class WordpressScraperAsync:
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
         url = f"{self.base_url}page/{page_num}/" if page_num > 1 else self.base_url
         if not self.is_allowed(url):
-            logger.info(f"Skipping disallowed URL: {url}")
             return None
         try:
             async with session.get(url) as response:
@@ -85,7 +115,7 @@ class WordpressScraperAsync:
                 response.raise_for_status()
                 return await response.text()
         except aiohttp.ClientError as e:
-            logger.error(f"Error fetching page {page_num}: {e}")
+            UXFormatter.error(f"Error fetching page {page_num}: {e}")
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
@@ -181,7 +211,7 @@ class WordpressScraperAsync:
                 if not tasks:
                     break
 
-                logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
+                UXFormatter.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
                 results = await asyncio.gather(*tasks)
 
                 # Check results
@@ -193,11 +223,11 @@ class WordpressScraperAsync:
                     page_idx = batch_start + idx
                     if page_posts is None:
                         # 404 or Error
-                        logger.info(f"Page {page_idx} returned 404 or empty. Stopping.")
+                        UXFormatter.warning(f"Page {page_idx} returned 404 or empty. Stopping.")
                         stop_detected = True
                         break # Don't process further pages in this batch effectively (though they were fetched)
                     elif len(page_posts) == 0:
-                        logger.info(f"Page {page_idx} has no articles. Stopping.")
+                        UXFormatter.warning(f"Page {page_idx} has no articles. Stopping.")
                         stop_detected = True
                         break
                     else:
@@ -208,7 +238,7 @@ class WordpressScraperAsync:
                     break
 
                 if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
-                    logger.info("Reached max pages limit.")
+                    UXFormatter.warning("Reached max pages limit.")
                     break
 
                 page_num += len(tasks)
@@ -229,9 +259,9 @@ class WordpressScraperAsync:
         try:
             with open(self.output_json, 'w', encoding='utf-8') as f:
                 json.dump(posts, f, indent=4, ensure_ascii=False)
-            logger.info(f"Saved {len(posts)} posts to {self.output_json}")
+            UXFormatter.success(f"Saved {len(posts)} posts to {self.output_json}")
         except IOError as e:
-            logger.error(f"Failed to save JSON: {e}")
+            UXFormatter.error(f"Failed to save JSON: {e}")
 
         # CSV
         try:
@@ -248,9 +278,9 @@ class WordpressScraperAsync:
                         post.get('domain', ''),
                         post.get('post_url', '')
                     ])
-            logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
+            UXFormatter.success(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
-            logger.error(f"Failed to save CSV: {e}")
+            UXFormatter.error(f"Failed to save CSV: {e}")
 
         # Unique Links TXT
         unique_links = set()
@@ -264,9 +294,9 @@ class WordpressScraperAsync:
             with open(self.output_txt, 'w', encoding='utf-8') as f:
                 for link in sorted_links:
                     f.write(link + '\n')
-            logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
+            UXFormatter.success(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
         except IOError as e:
-            logger.error(f"Failed to save TXT: {e}")
+            UXFormatter.error(f"Failed to save TXT: {e}")
 
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for WordPress blogs")
@@ -278,6 +308,8 @@ def main():
     parser.add_argument("--concurrency", type=int, default=5, help="Number of concurrent requests")
 
     args = parser.parse_args()
+
+    UXFormatter.header("Wordpress Scraper CLI")
 
     scraper = WordpressScraperAsync(
         base_url=args.url,
