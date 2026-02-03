@@ -11,12 +11,51 @@ from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+class UXFormatter(logging.Formatter):
+    def format(self, record):
+        # Determine emoji and color
+        if record.levelno == logging.INFO:
+            if "Saved" in record.msg:
+                emoji = "💾"
+                color = Colors.GREEN
+            elif "Fetching" in record.msg:
+                emoji = "📥"
+                color = Colors.BLUE
+            else:
+                emoji = "ℹ️ "
+                color = Colors.BLUE
+        elif record.levelno == logging.WARNING:
+            emoji = "⚠️ "
+            color = Colors.WARNING
+        elif record.levelno == logging.ERROR:
+            emoji = "❌"
+            color = Colors.FAIL
+        else:
+            emoji = ""
+            color = Colors.ENDC
+
+        # Format time
+        timestamp = self.formatTime(record, "%H:%M:%S")
+
+        # Construct message
+        return f"{color}{timestamp} {emoji} {record.getMessage()}{Colors.ENDC}"
+
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+handler = logging.StreamHandler()
+handler.setFormatter(UXFormatter())
+logger.addHandler(handler)
 
 BASE_URL = "https://markposition.wordpress.com/"
 
