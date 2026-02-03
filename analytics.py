@@ -5,12 +5,21 @@ from urllib.parse import urlparse
 from datetime import datetime
 import sys
 
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    BOLD = '\033[1m'
+    ENDC = '\033[0m'
+
 def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             return json.load(f)
     except FileNotFoundError:
-        print(f"Error: File '{filepath}' not found.")
+        print(f"{Colors.RED}❌ Error: File '{filepath}' not found.{Colors.ENDC}")
         sys.exit(1)
 
 def get_domain(url):
@@ -99,7 +108,19 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    # CLI Summary
+    print(f"\n{Colors.HEADER}📊 Analytics Summary{Colors.ENDC}")
+    print(f"{Colors.BLUE}----------------------{Colors.ENDC}")
+    print(f"📝 Total Posts:    {Colors.BOLD}{total_posts}{Colors.ENDC}")
+    print(f"📅 Date Range:     {start_date} to {end_date}")
+    print(f"🔗 Unique Domains: {len(set(domains))}")
+
+    print(f"\n{Colors.YELLOW}🏷️  Top Categories:{Colors.ENDC}")
+    for cat, count in category_counts[:3]:
+        print(f"  • {cat}: {count}")
+    print(f"{Colors.BLUE}----------------------{Colors.ENDC}")
+
+    print(f"\n{Colors.GREEN}✅ Report generated successfully: {Colors.BOLD}{output_file}{Colors.ENDC}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
