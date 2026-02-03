@@ -8,13 +8,41 @@ import sys
 import sqlite3
 from datetime import datetime
 
+class Colors:
+    BLUE = '\033[94m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    RESET = '\033[0m'
+
+class UXFormatter(logging.Formatter):
+    def format(self, record):
+        log_fmt = "%(asctime)s - %(message)s"
+
+        if record.levelno == logging.INFO:
+            # Use str() to ensure we can lower() even if msg is not a string
+            msg_lower = str(record.msg).lower()
+            if any(x in msg_lower for x in ['saved', 'scraped', 'added', 'found']):
+                prefix = f"{Colors.GREEN}✅{Colors.RESET}"
+            else:
+                prefix = f"{Colors.BLUE}ℹ️{Colors.RESET}"
+        elif record.levelno == logging.WARNING:
+            prefix = f"{Colors.YELLOW}⚠️{Colors.RESET}"
+        elif record.levelno == logging.ERROR:
+            prefix = f"{Colors.RED}❌{Colors.RESET}"
+        else:
+            prefix = ""
+
+        formatter = logging.Formatter(f"{prefix}  {log_fmt}")
+        return formatter.format(record)
+
 # Configure logging
+handler = logging.StreamHandler(sys.stdout)
+handler.setFormatter(UXFormatter())
+
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.StreamHandler(sys.stdout)
-    ]
+    handlers=[handler]
 )
 logger = logging.getLogger(__name__)
 
