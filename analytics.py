@@ -4,12 +4,40 @@ from collections import Counter
 from datetime import datetime
 import sys
 
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+class UXFormatter:
+    @staticmethod
+    def info(msg: str):
+        print(f"{Colors.BLUE}ℹ️  {msg}{Colors.ENDC}")
+
+    @staticmethod
+    def success(msg: str):
+        print(f"{Colors.GREEN}✅ {msg}{Colors.ENDC}")
+
+    @staticmethod
+    def warning(msg: str):
+        print(f"{Colors.YELLOW}⚠️  {msg}{Colors.ENDC}")
+
+    @staticmethod
+    def error(msg: str):
+        print(f"{Colors.RED}❌ {msg}{Colors.ENDC}")
+
 def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             return json.load(f)
     except FileNotFoundError:
-        print(f"Error: File '{filepath}' not found.")
+        UXFormatter.error(f"File '{filepath}' not found.")
         sys.exit(1)
 
 def generate_report(data, output_file):
@@ -90,7 +118,13 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    UXFormatter.success(f"Report generated: {output_file}")
+
+    # Print summary to console
+    print(f"\n{Colors.BOLD}Summary:{Colors.ENDC}")
+    print(f"- Total Posts: {total_posts}")
+    print(f"- Unique Domains: {len(set(domains))}")
+    print(f"- Date Range: {start_date} to {end_date}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
