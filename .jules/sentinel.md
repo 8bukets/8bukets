@@ -1,0 +1,4 @@
+## 2026-02-03 - Markdown Injection in Analytics Reports
+**Vulnerability:** The analytics report generator injected unsanitized user content (domains, categories, authors) directly into Markdown tables and content. Malicious input containing pipes (`|`) or HTML tags could break the report layout or execute arbitrary scripts (XSS) if the report is viewed in a browser-based Markdown viewer.
+**Learning:** Reporting tools that generate structured text formats (like Markdown, CSV, HTML) are often overlooked targets for injection attacks. Just because the output isn't a webpage served to a user doesn't mean it's safe; the report itself is an artifact that can carry payloads.
+**Prevention:** Always implement context-aware output encoding. For Markdown, this means escaping HTML characters (`<`, `>`, `&`) and specific Markdown syntax delimiters (like `|` in tables) before embedding untrusted data.
