@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+test_links.json
+test_links.csv
+test_links.txt
