@@ -5,6 +5,28 @@ from urllib.parse import urlparse
 from datetime import datetime
 import sys
 
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+def print_summary(stats, output_file):
+    print(f"\n{Colors.HEADER}{Colors.BOLD}📊 Analytics Summary{Colors.ENDC}")
+    print(f"{Colors.HEADER}--------------------{Colors.ENDC}")
+    print(f"📝 {Colors.BOLD}Total Posts:{Colors.ENDC} {stats['total_posts']}")
+    print(f"📅 {Colors.BOLD}Date Range:{Colors.ENDC} {stats['start_date']} to {stats['end_date']}")
+    print(f"🔗 {Colors.BOLD}Top Domains:{Colors.ENDC}")
+    for domain, count in stats['top_domains'][:3]:
+        print(f"  • {Colors.CYAN}{domain}{Colors.ENDC} ({count})")
+
+    print(f"\n{Colors.GREEN}✅ Report generated: {output_file}{Colors.ENDC}\n")
+
 def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
@@ -99,7 +121,13 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    stats = {
+        'total_posts': total_posts,
+        'start_date': start_date,
+        'end_date': end_date,
+        'top_domains': domain_counts
+    }
+    print_summary(stats, output_file)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
