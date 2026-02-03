@@ -31,6 +31,7 @@ class TestBlogScraper(unittest.TestCase):
         self.scraper = BlogScraper("http://mock.url", self.json_name, self.db_name)
 
     def tearDown(self):
+        self.scraper.close()
         if os.path.exists(self.db_name):
             os.remove(self.db_name)
         if os.path.exists(self.json_name):
@@ -79,6 +80,9 @@ class TestBlogScraper(unittest.TestCase):
         # Duplicate insertion (by post_url) should fail/ignore
         success = self.scraper.save_to_db(item)
         self.assertFalse(success)
+
+        # Commit changes before verifying with a new connection
+        self.scraper.conn.commit()
 
         # Verify data in DB
         with sqlite3.connect(self.db_name) as conn:
