@@ -5,12 +5,24 @@ from urllib.parse import urlparse
 from datetime import datetime
 import sys
 
+class Colors:
+    _is_tty = sys.stdout.isatty()
+    HEADER = '\033[95m' if _is_tty else ''
+    BLUE = '\033[94m' if _is_tty else ''
+    CYAN = '\033[96m' if _is_tty else ''
+    GREEN = '\033[92m' if _is_tty else ''
+    YELLOW = '\033[93m' if _is_tty else ''
+    RED = '\033[91m' if _is_tty else ''
+    ENDC = '\033[0m' if _is_tty else ''
+    BOLD = '\033[1m' if _is_tty else ''
+    UNDERLINE = '\033[4m' if _is_tty else ''
+
 def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             return json.load(f)
     except FileNotFoundError:
-        print(f"Error: File '{filepath}' not found.")
+        print(f"{Colors.RED}Error: File '{filepath}' not found.{Colors.ENDC}")
         sys.exit(1)
 
 def get_domain(url):
@@ -132,7 +144,7 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    print(f"{Colors.GREEN}🎉 Report generated: {output_file}{Colors.ENDC}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")

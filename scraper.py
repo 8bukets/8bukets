@@ -7,16 +7,73 @@ import re
 import argparse
 import logging
 import time
+import sys
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+class Colors:
+    _is_tty = sys.stderr.isatty()
+    HEADER = '\033[95m' if _is_tty else ''
+    BLUE = '\033[94m' if _is_tty else ''
+    CYAN = '\033[96m' if _is_tty else ''
+    GREEN = '\033[92m' if _is_tty else ''
+    YELLOW = '\033[93m' if _is_tty else ''
+    RED = '\033[91m' if _is_tty else ''
+    ENDC = '\033[0m' if _is_tty else ''
+    BOLD = '\033[1m' if _is_tty else ''
+    UNDERLINE = '\033[4m' if _is_tty else ''
+
+class UXFormatter(logging.Formatter):
+    def format(self, record):
+        # Use getMessage() to handle arguments
+        msg = record.getMessage()
+
+        # Only add emojis if TTY
+        prefix = ""
+        if sys.stderr.isatty():
+            if "Fetching" in msg:
+                prefix = "📥 "
+            elif "Saved" in msg:
+                prefix = "💾 "
+            elif "Stopping" in msg:
+                prefix = "🛑 "
+            elif "Reached" in msg:
+                prefix = "✅ "
+
+        # Color coding
+        if record.levelno == logging.INFO:
+            levelname = f"{Colors.BLUE}INFO{Colors.ENDC}"
+            # Add emoji to levelname if TTY
+            if sys.stderr.isatty():
+                 levelname = f"{Colors.BLUE}ℹ️  INFO{Colors.ENDC}"
+            message = f"{prefix}{msg}"
+        elif record.levelno == logging.WARNING:
+            levelname = f"{Colors.YELLOW}WARN{Colors.ENDC}"
+            if sys.stderr.isatty():
+                levelname = f"{Colors.YELLOW}⚠️  WARN{Colors.ENDC}"
+            message = f"{prefix}{msg}"
+        elif record.levelno == logging.ERROR:
+            levelname = f"{Colors.RED}ERROR{Colors.ENDC}"
+            if sys.stderr.isatty():
+                levelname = f"{Colors.RED}❌ ERROR{Colors.ENDC}"
+            message = f"{prefix}{Colors.RED}{msg}{Colors.ENDC}"
+        else:
+            levelname = record.levelname
+            message = msg
+
+        # Timestamp
+        timestamp = self.formatTime(record, self.datefmt)
+        return f"{Colors.CYAN}{timestamp}{Colors.ENDC} - {levelname} - {message}"
+
+# Configure logging with UXFormatter
+handler = logging.StreamHandler()
+handler.setFormatter(UXFormatter(datefmt='%H:%M:%S'))
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+# Clear existing handlers if any (e.g. from previous basicConfig calls in interactive sessions)
+if logger.hasHandlers():
+    logger.handlers.clear()
+logger.addHandler(handler)
 
 BASE_URL = "https://markposition.wordpress.com/"
 
