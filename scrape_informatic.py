@@ -25,12 +25,46 @@ class Post:
 
 BASE_URL = "https://informaticmagazine.data.blog"
 
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+class UXFormatter(logging.Formatter):
+    def format(self, record):
+        msg = super().format(record)
+        if record.levelno == logging.INFO:
+            if "Saved" in record.msg or "Found" in record.msg:
+                return f"{Colors.GREEN}✅ {msg}{Colors.ENDC}"
+            return f"{Colors.BLUE}ℹ️  {msg}{Colors.ENDC}"
+        elif record.levelno == logging.WARNING:
+            return f"{Colors.WARNING}⚠️  {msg}{Colors.ENDC}"
+        elif record.levelno == logging.ERROR:
+            return f"{Colors.FAIL}❌ {msg}{Colors.ENDC}"
+        elif record.levelno == logging.DEBUG:
+            return f"{Colors.CYAN}🐛 {msg}{Colors.ENDC}"
+        return msg
+
 def configure_logging(verbose: bool):
     level = logging.DEBUG if verbose else logging.INFO
-    logging.basicConfig(
-        level=level,
-        format='%(asctime)s - %(levelname)s - %(message)s'
-    )
+
+    logger = logging.getLogger()
+    logger.setLevel(level)
+
+    # Remove existing handlers
+    if logger.handlers:
+        for handler in logger.handlers[:]:
+            logger.removeHandler(handler)
+
+    handler = logging.StreamHandler(sys.stdout)
+    handler.setFormatter(UXFormatter('%(asctime)s - %(message)s', datefmt='%H:%M:%S'))
+    logger.addHandler(handler)
 
 def get_session():
     """
