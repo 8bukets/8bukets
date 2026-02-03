@@ -12,11 +12,43 @@ from urllib.parse import urlparse, urljoin
 from urllib.robotparser import RobotFileParser
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+class UXFormatter(logging.Formatter):
+    def format(self, record):
+        original_msg = str(record.msg)
+        if record.levelno == logging.INFO:
+            if "Saved" in original_msg or "Found" in original_msg:
+                record.msg = f"{Colors.GREEN}✅ {original_msg}{Colors.ENDC}"
+            else:
+                record.msg = f"{Colors.BLUE}ℹ️  {original_msg}{Colors.ENDC}"
+        elif record.levelno == logging.WARNING:
+            record.msg = f"{Colors.YELLOW}⚠️  {original_msg}{Colors.ENDC}"
+        elif record.levelno == logging.ERROR:
+            record.msg = f"{Colors.RED}❌ {original_msg}{Colors.ENDC}"
+        return super().format(record)
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+# Clear existing handlers to avoid duplicates
+if logger.handlers:
+    for handler in logger.handlers[:]:
+        logger.removeHandler(handler)
+
+handler = logging.StreamHandler()
+handler.setFormatter(UXFormatter('%(asctime)s - %(message)s', datefmt='%H:%M:%S'))
+logger.addHandler(handler)
+
+# Create module logger
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://www.oracle.com/news/"
