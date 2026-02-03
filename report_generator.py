@@ -1,6 +1,7 @@
 import sqlite3
 import os
 import logging
+import html
 from datetime import datetime, timedelta
 from collections import Counter
 import re
@@ -18,6 +19,15 @@ class ReportGenerator:
         self.report_dir = report_dir
         if not os.path.exists(self.report_dir):
             os.makedirs(self.report_dir)
+
+    def sanitize(self, text):
+        if not isinstance(text, str):
+            return str(text)
+        # Escape HTML characters (prevents XSS/HTML injection)
+        text = html.escape(text)
+        # Escape pipe characters (prevents table breakage)
+        text = text.replace('|', '&#124;')
+        return text
 
     def generate_daily_report(self):
         logger.info("Generating daily report...")
@@ -84,7 +94,7 @@ class ReportGenerator:
                 f.write("| Keyword | Frequency |\n")
                 f.write("|---|---|\n")
                 for word, count in keywords:
-                    f.write(f"| {word} | {count} |\n")
+                    f.write(f"| {self.sanitize(word)} | {count} |\n")
                 f.write("\n")
 
             # SEO Rankings Trend
@@ -94,7 +104,7 @@ class ReportGenerator:
                 f.write("|---|---|---|---|---|\n")
                 trends = self.analyze_seo_trends(rankings, past_rankings)
                 for item in trends:
-                    f.write(f"| {item['query']} | {item['rank']} | {item['change']} | {item['date']} |\n")
+                    f.write(f"| {self.sanitize(item['query'])} | {item['rank']} | {item['change']} | {item['date']} |\n")
             else:
                 f.write("No SEO ranking data for today.\n\n")
 
@@ -105,8 +115,8 @@ class ReportGenerator:
                 f.write("|---|---|---|---|---|\n")
                 for u in updated_posts:
                     title, url, field, old, new, time = u
-                    title = title.replace("|", "-")
-                    f.write(f"| [{title}]({url}) | {field} | {old} | {new} | {time} |\n")
+                    title = self.sanitize(title)
+                    f.write(f"| [{title}]({url}) | {field} | {self.sanitize(old)} | {self.sanitize(new)} | {time} |\n")
                 f.write("\n")
 
             # New Posts Section
@@ -116,7 +126,7 @@ class ReportGenerator:
                 f.write("|---|---|---|\n")
                 for post in new_posts:
                     title, url, scraped_at = post
-                    title = title.replace("|", "-") if title else "No Title"
+                    title = self.sanitize(title) if title else "No Title"
                     f.write(f"| {title} | {scraped_at} | [View]({url}) |\n")
             else:
                 f.write("No new posts scraped in the last 24 hours.\n")
@@ -179,9 +189,9 @@ class ReportGenerator:
             trends = self.analyze_seo_trends(rankings, past_rankings)
             for t in trends:
                 if "⬇️" in t['change']:
-                    recs.append(f"📉 **SEO Drop**: Rank dropped for '{t['query']}'. Review page content and keywords.")
+                    recs.append(f"📉 **SEO Drop**: Rank dropped for '{self.sanitize(t['query'])}'. Review page content and keywords.")
                 if t['rank'] > 10:
-                    recs.append(f"🔍 **SEO Visibility**: '{t['query']}' is on Page {int(t['rank']/10)+1}. Aim for top 10.")
+                    recs.append(f"🔍 **SEO Visibility**: '{self.sanitize(t['query'])}' is on Page {int(t['rank']/10)+1}. Aim for top 10.")
 
         return recs
 
