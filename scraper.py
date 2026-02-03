@@ -7,16 +7,67 @@ import re
 import argparse
 import logging
 import time
+import sys
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
 logger = logging.getLogger(__name__)
+
+class UXFormatter(logging.Formatter):
+    """Custom formatter for better UX with emojis and colors."""
+    COLORS = {
+        'INFO': '\033[94m',    # Blue
+        'WARNING': '\033[93m', # Yellow
+        'ERROR': '\033[91m',   # Red
+        'CRITICAL': '\033[91m',# Red
+        'RESET': '\033[0m'
+    }
+    EMOJIS = {
+        'INFO': '📥',
+        'WARNING': '⚠️',
+        'ERROR': '❌',
+        'CRITICAL': '🔥'
+    }
+
+    def format(self, record):
+        # Determine color and emoji
+        log_color = self.COLORS.get(record.levelname, self.COLORS['RESET'])
+        emoji = self.EMOJIS.get(record.levelname, '')
+
+        # UX Improvements for specific messages
+        if "Saved" in record.msg:
+             log_color = '\033[92m' # Green
+             emoji = '💾'
+        elif "Fetching" in record.msg:
+            emoji = '📥'
+        elif "Stopping" in record.msg or "limit" in record.msg:
+            emoji = '🛑'
+        elif "complete" in record.msg.lower():
+            emoji = '🏁'
+
+        # Disable colors if not TTY
+        if not sys.stdout.isatty():
+             log_color = ""
+             reset_color = ""
+        else:
+             reset_color = self.COLORS['RESET']
+
+        # Format: [Time] [Emoji] Message
+        timestamp = self.formatTime(record, "%H:%M:%S")
+        msg = super().format(record)
+
+        return f"{timestamp} {emoji} {log_color}{msg}{reset_color}"
+
+def setup_ux_logging():
+    """Setup the UX logger."""
+    root = logging.getLogger()
+    # Only configure if not already configured (though basicConfig handles this check, explicit is better)
+    if not root.handlers:
+        root.setLevel(logging.INFO)
+        handler = logging.StreamHandler(sys.stdout)
+        handler.setFormatter(UXFormatter('%(message)s'))
+        root.addHandler(handler)
 
 DEFAULT_BASE_URL = "https://artmusicpage.wordpress.com/"
 
@@ -269,6 +320,7 @@ class WordpressScraperAsync:
             logger.error(f"Failed to save TXT: {e}")
 
 def main():
+    setup_ux_logging()
     parser = argparse.ArgumentParser(description="Async Scraper for WordPress blogs")
     parser.add_argument("--url", default=DEFAULT_BASE_URL, help="Base URL of the WordPress blog")
     parser.add_argument("--json", default="links.json", help="Output JSON filename")
