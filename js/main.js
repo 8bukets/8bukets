@@ -46,10 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const articleList = document.getElementById('article-list');
 
     if (searchInput && articleList) {
-        searchInput.addEventListener('input', (e) => {
-            const term = e.target.value.toLowerCase();
+        const performSearch = (term) => {
             const articles = articleList.getElementsByTagName('article');
-
             Array.from(articles).forEach(article => {
                 // Search in the entire text content of the article
                 const text = article.textContent.toLowerCase();
@@ -60,7 +58,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     article.style.display = 'none';
                 }
             });
-        });
+        };
+
+        // Debounce the search to improve performance by reducing DOM updates
+        const debouncedSearch = debounce((e) => {
+            const term = e.target.value.toLowerCase();
+            performSearch(term);
+        }, 300);
+
+        searchInput.addEventListener('input', debouncedSearch);
     }
 
     // Contact Form Validation
@@ -128,4 +134,17 @@ function filterByCategory(category) {
             article.style.display = 'none';
         }
     });
+}
+
+// Utility: Debounce function
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
 }
