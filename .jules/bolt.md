@@ -1,0 +1,3 @@
+## 2024-05-22 - CPU-bound Parsing Blocking Async Loop
+**Learning:** In `scraper.py`, `BeautifulSoup` parsing was running synchronously within the `asyncio` event loop. This completely blocked the loop during parsing of large pages, preventing other network tasks (like heartbeats or other concurrent fetches) from progressing, effectively serializing the workload despite using `aiohttp`.
+**Action:** Offloaded CPU-intensive parsing to a `ProcessPoolExecutor`. This not only unblocked the event loop (improving responsiveness) but also leveraged multiple cores to parallelize parsing, significantly increasing throughput (from ~0.5s/page to ~0.14s/page on 4 cores).
