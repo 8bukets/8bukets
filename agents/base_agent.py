@@ -1,15 +1,10 @@
 import logging
+from ux_utils import configure_ux_logging
 
 class BaseAgent:
     def __init__(self, name):
         self.name = name
-        self.logger = logging.getLogger(self.name)
-        self.logger.setLevel(logging.INFO)
-        if not self.logger.handlers:
-            handler = logging.StreamHandler()
-            formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-            handler.setFormatter(formatter)
-            self.logger.addHandler(handler)
+        self.logger = configure_ux_logging(self.name)
 
     def run(self, data=None):
         self.logger.info("Starting...")

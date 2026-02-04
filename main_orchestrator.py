@@ -2,6 +2,7 @@ import logging
 import sys
 import datetime
 import os
+from ux_utils import configure_ux_logging
 from agents.researcher import ResearcherAgent
 from agents.analyzer import AnalyzerAgent
 from agents.intelligence import IntelligenceAgent
@@ -12,11 +13,7 @@ from agents.creativity import CreativityAgent
 from agents.advertising import AdvertisingAgent
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger("Orchestrator")
+logger = configure_ux_logging("Orchestrator")
 
 def run_orchestration(save_report=True):
     logger.info(">>> STARTING AUTONOMOUS AGENT SWARM (v2.0 - Evolving) <<<")

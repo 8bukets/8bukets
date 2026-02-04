@@ -11,6 +11,7 @@ from urllib3.util.retry import Retry
 from dataclasses import dataclass, asdict
 from typing import List, Optional
 from markdownify import markdownify as md
+from ux_utils import configure_ux_logging
 
 @dataclass
 class Post:
@@ -24,13 +25,6 @@ class Post:
     image_url: Optional[str]
 
 BASE_URL = "https://informaticmagazine.data.blog"
-
-def configure_logging(verbose: bool):
-    level = logging.DEBUG if verbose else logging.INFO
-    logging.basicConfig(
-        level=level,
-        format='%(asctime)s - %(levelname)s - %(message)s'
-    )
 
 def get_session():
     """
@@ -189,7 +183,7 @@ def main():
 
     args = parser.parse_args()
 
-    configure_logging(args.verbose)
+    configure_ux_logging(verbose=args.verbose)
     scrape(args.output, args.pages)
 
 if __name__ == "__main__":
