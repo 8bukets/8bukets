@@ -7,15 +7,71 @@ import re
 import argparse
 import logging
 import time
+import sys
 from typing import List, Dict, Optional, Set, Tuple
 from urllib.parse import urlparse
 
+class UXFormatter(logging.Formatter):
+    """Custom logging formatter for improved UX."""
+
+    # ANSI Color Codes
+    GREY = "\x1b[38;20m"
+    BLUE = "\x1b[34;20m"
+    CYAN = "\x1b[36;20m"
+    YELLOW = "\x1b[33;20m"
+    RED = "\x1b[31;20m"
+    BOLD_RED = "\x1b[31;1m"
+    RESET = "\x1b[0m"
+
+    COLORS = {
+        logging.DEBUG: GREY,
+        logging.INFO: CYAN,
+        logging.WARNING: YELLOW,
+        logging.ERROR: RED,
+        logging.CRITICAL: BOLD_RED,
+    }
+
+    def format(self, record):
+        # Determine if we should colorize
+        use_color = False
+        if hasattr(sys.stderr, "isatty") and sys.stderr.isatty():
+            use_color = True
+
+        # Get original message
+        message = record.getMessage()
+
+        # Add Emojis based on content
+        if "429" in message:
+            message = f"⏳ {message}"
+        elif "scraped" in message:
+            message = f"📥 {message}"
+        elif "Saved" in message:
+            message = f"💾 {message}"
+        elif "Stopping" in message:
+            message = f"🛑 {message}"
+        elif "Error" in message or "failed" in message:
+            message = f"❌ {message}"
+        elif "Starting" in message:
+            message = f"🏁 {message}"
+
+        # Format timestamp
+        record.asctime = self.formatTime(record, self.datefmt)
+
+        # Colorize levels and message if applicable
+        if use_color:
+            color = self.COLORS.get(record.levelno, self.RESET)
+            levelname = f"{color}{record.levelname}{self.RESET}"
+            # Also color the message for better visibility
+            message = f"{color}{message}{self.RESET}"
+        else:
+            levelname = record.levelname
+
+        return f"{record.asctime} - {levelname} - {message}"
+
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+handler = logging.StreamHandler(sys.stderr)
+handler.setFormatter(UXFormatter(datefmt='%H:%M:%S'))
+logging.basicConfig(level=logging.INFO, handlers=[handler])
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
