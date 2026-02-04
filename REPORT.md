@@ -1,38 +1,45 @@
-# Wordpress Blog Analytics Report
+# 📈 Wordpress Blog Analytics Report
 
-**Generated on:** 2025-12-21 23:47:00
+**Generated on:** 2026-02-04 19:17:49
 
-## General Statistics
-- **Total Posts:** 350
-- **Date Range:** 2020-10-22 to 2023-06-25
-- **Unique Domains Linked:** 178
+## Table of Contents
+- [📊 General Statistics](#-general-statistics)
+- [🔗 Top 10 Referenced Domains](#-top-10-referenced-domains)
+- [📂 Top 10 Categories](#-top-10-categories)
+- [📅 Posts by Year](#-posts-by-year)
+- [✍️ Authors](#%EF%B8%8F-authors)
 
-## Top 10 Referenced Domains
-| Domain | Count |
-| :--- | :---: |
-| youtube.com | 70 |
-| music.youtube.com | 34 |
-| epidemicsound.com | 10 |
-| billboard.com | 7 |
-| music.apple.com | 6 |
-| soundcloud.com | 5 |
-| artistrepublik.com | 4 |
-| spotify.com | 3 |
-| steinberg.net | 3 |
-| apple.com | 3 |
+## 📊 General Statistics
+- **Total Posts:** 391
+- **Date Range:** 2020-06-10 to 2023-06-25
+- **Unique Domains Linked:** 194
 
-## Top 10 Categories
-| Category | Count |
-| :--- | :---: |
-| Music | 350 |
+## 🔗 Top 10 Referenced Domains
+| Domain | Count | Distribution |
+| :--- | :---: | :--- |
+| youtube.com | 74 | `████████████████████` |
+| music.youtube.com | 34 | `█████████░░░░░░░░░░░` |
+| epidemicsound.com | 10 | `██░░░░░░░░░░░░░░░░░░` |
+| music.apple.com | 7 | `█░░░░░░░░░░░░░░░░░░░` |
+| billboard.com | 7 | `█░░░░░░░░░░░░░░░░░░░` |
+| artists.spotify.com | 6 | `█░░░░░░░░░░░░░░░░░░░` |
+| spotify.com | 5 | `█░░░░░░░░░░░░░░░░░░░` |
+| open.spotify.com | 5 | `█░░░░░░░░░░░░░░░░░░░` |
+| soundcloud.com | 5 | `█░░░░░░░░░░░░░░░░░░░` |
+| artistrepublik.com | 4 | `█░░░░░░░░░░░░░░░░░░░` |
 
-## Posts by Year
-| Year | Count |
-| :--- | :---: |
-| 2023 | 9 |
-| 2022 | 170 |
-| 2021 | 166 |
-| 2020 | 5 |
+## 📂 Top 10 Categories
+| Category | Count | Distribution |
+| :--- | :---: | :--- |
+| Music | 391 | `████████████████████` |
 
-## Authors
-- Filip Keser: 350 posts
+## 📅 Posts by Year
+| Year | Count | Distribution |
+| :--- | :---: | :--- |
+| 2023 | 9 | `█░░░░░░░░░░░░░░░░░░░` |
+| 2022 | 170 | `████████████████████` |
+| 2021 | 166 | `███████████████████░` |
+| 2020 | 46 | `█████░░░░░░░░░░░░░░░` |
+
+## ✍️ Authors
+- Filip Keser: 391 posts
