@@ -9,6 +9,7 @@ import logging
 import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
+from concurrent.futures import ProcessPoolExecutor
 
 # Configure logging
 logging.basicConfig(
@@ -20,6 +21,99 @@ logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
 
+def clean_text(text: str) -> str:
+    """Normalize whitespace and remove non-breaking spaces."""
+    if not text:
+        return ""
+    text = text.replace('\xa0', ' ')
+    return re.sub(r'\s+', ' ', text).strip()
+
+def is_url(text: str) -> bool:
+    """Check if text looks like a URL."""
+    return re.match(r'^https?://', text.strip()) is not None
+
+def extract_categories(article: BeautifulSoup) -> List[str]:
+    """Extract categories from article class names."""
+    categories = []
+    if article.get('class'):
+        for cls in article['class']:
+            if cls.startswith('category-'):
+                cat_name = cls.replace('category-', '').replace('-', ' ').title()
+                categories.append(cat_name)
+    return categories
+
+def extract_domain(url: str) -> Optional[str]:
+    """Extract domain from URL."""
+    if not url:
+        return None
+    try:
+        return urlparse(url).netloc.replace('www.', '')
+    except:
+        return None
+
+def parse_html_content(html: str) -> List[Dict]:
+    """Parse HTML content to extract posts."""
+    soup = BeautifulSoup(html, 'html.parser')
+    articles = soup.find_all('article', class_='post')
+    page_posts = []
+
+    if not articles:
+        return []
+
+    for article in articles:
+        post_data = {}
+
+        # Title
+        title_text = ""
+        title_tag = article.select_one('h1.entry-title a')
+        if title_tag:
+            title_text = clean_text(title_tag.get_text())
+            post_data['title'] = title_text
+
+        # Date
+        date_tag = article.select_one('time.entry-date')
+        if date_tag:
+            post_data['date'] = clean_text(date_tag.get_text())
+            post_data['datetime'] = date_tag.get('datetime')
+
+        # Author
+        author_tag = article.select_one('.author.vcard .fn')
+        if author_tag:
+            post_data['author'] = clean_text(author_tag.get_text())
+        else:
+            post_data['author'] = None
+
+        # Categories
+        post_data['categories'] = extract_categories(article)
+
+        # External Link
+        external_link = None
+        content_div = article.select_one('.entry-content')
+
+        if content_div:
+            link_tag = content_div.select_one('a')
+            if link_tag:
+                external_link = link_tag.get('href')
+
+            if not external_link:
+                iframe_tag = content_div.select_one('iframe')
+                if iframe_tag:
+                    external_link = iframe_tag.get('src')
+
+        if not external_link and title_text and is_url(title_text):
+            external_link = title_text
+
+        post_data['external_link'] = external_link
+        post_data['domain'] = extract_domain(external_link)
+
+        # Post URL
+        if title_tag:
+            post_data['post_url'] = title_tag.get('href')
+
+        page_posts.append(post_data)
+
+    return page_posts
+
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
@@ -28,36 +122,7 @@ class MarkPositionScraperAsync:
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
-
-    def clean_text(self, text: str) -> str:
-        """Normalize whitespace and remove non-breaking spaces."""
-        if not text:
-            return ""
-        text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
-
-    def is_url(self, text: str) -> bool:
-        """Check if text looks like a URL."""
-        return re.match(r'^https?://', text.strip()) is not None
-
-    def extract_categories(self, article: BeautifulSoup) -> List[str]:
-        """Extract categories from article class names."""
-        categories = []
-        if article.get('class'):
-            for cls in article['class']:
-                if cls.startswith('category-'):
-                    cat_name = cls.replace('category-', '').replace('-', ' ').title()
-                    categories.append(cat_name)
-        return categories
-
-    def extract_domain(self, url: str) -> Optional[str]:
-        """Extract domain from URL."""
-        if not url:
-            return None
-        try:
-            return urlparse(url).netloc.replace('www.', '')
-        except:
-            return None
+        self.executor = ProcessPoolExecutor()
 
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
         url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
@@ -70,68 +135,6 @@ class MarkPositionScraperAsync:
         except aiohttp.ClientError as e:
             logger.error(f"Error fetching page {page_num}: {e}")
             return None
-
-    async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
-        articles = soup.find_all('article', class_='post')
-        page_posts = []
-
-        if not articles:
-            return []
-
-        for article in articles:
-            post_data = {}
-
-            # Title
-            title_text = ""
-            title_tag = article.select_one('h1.entry-title a')
-            if title_tag:
-                title_text = self.clean_text(title_tag.get_text())
-                post_data['title'] = title_text
-
-            # Date
-            date_tag = article.select_one('time.entry-date')
-            if date_tag:
-                post_data['date'] = self.clean_text(date_tag.get_text())
-                post_data['datetime'] = date_tag.get('datetime')
-
-            # Author
-            author_tag = article.select_one('.author.vcard .fn')
-            if author_tag:
-                post_data['author'] = self.clean_text(author_tag.get_text())
-            else:
-                post_data['author'] = None
-
-            # Categories
-            post_data['categories'] = self.extract_categories(article)
-
-            # External Link
-            external_link = None
-            content_div = article.select_one('.entry-content')
-
-            if content_div:
-                link_tag = content_div.select_one('a')
-                if link_tag:
-                    external_link = link_tag.get('href')
-
-                if not external_link:
-                    iframe_tag = content_div.select_one('iframe')
-                    if iframe_tag:
-                        external_link = iframe_tag.get('src')
-
-            if not external_link and title_text and self.is_url(title_text):
-                external_link = title_text
-
-            post_data['external_link'] = external_link
-            post_data['domain'] = self.extract_domain(external_link)
-
-            # Post URL
-            if title_tag:
-                post_data['post_url'] = title_tag.get('href')
-
-            page_posts.append(post_data)
-
-        return page_posts
 
     async def scrape(self):
         all_posts = []
@@ -207,12 +210,14 @@ class MarkPositionScraperAsync:
                 await asyncio.sleep(0.5)
 
         self.save_data(all_posts)
+        self.executor.shutdown()
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
             html = await self.fetch_page(session, page_num)
             if html:
-                return await self.parse_page(html)
+                loop = asyncio.get_running_loop()
+                return await loop.run_in_executor(self.executor, parse_html_content, html)
             return None
 
     def save_data(self, posts: List[Dict]):
