@@ -11,12 +11,54 @@ from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+class UXFormatter(logging.Formatter):
+    COLORS = {
+        'INFO': '\033[94m',    # Blue
+        'WARNING': '\033[93m', # Yellow
+        'ERROR': '\033[91m',   # Red
+        'CRITICAL': '\033[91m',# Red
+        'DEBUG': '\033[90m',   # Grey
+        'RESET': '\033[0m',
+        'SUCCESS': '\033[92m'  # Green
+    }
+    EMOJIS = {
+        'INFO': 'ℹ️',
+        'WARNING': '⚠️',
+        'ERROR': '❌',
+        'CRITICAL': '🚨',
+        'DEBUG': '🐞'
+    }
+
+    def format(self, record):
+        log_color = self.COLORS.get(record.levelname, self.COLORS['RESET'])
+        emoji = self.EMOJIS.get(record.levelname, '')
+
+        # Custom emojis and colors for specific messages
+        msg = record.getMessage()
+        if "Saved" in msg:
+            emoji = "💾"
+            log_color = self.COLORS['SUCCESS']
+        elif "Fetching" in msg:
+            emoji = "📥"
+            log_color = self.COLORS['INFO']
+        elif "Stopping" in msg:
+            emoji = "🛑"
+            log_color = self.COLORS['WARNING']
+        elif "Reached max pages" in msg:
+            emoji = "🏁"
+            log_color = self.COLORS['SUCCESS']
+        elif "Failed" in msg:
+            emoji = "❌"
+            log_color = self.COLORS['ERROR']
+
+        record.asctime = self.formatTime(record, self.datefmt)
+        return f"{log_color}{record.asctime} {emoji} {msg}{self.COLORS['RESET']}"
+
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+handler = logging.StreamHandler()
+handler.setFormatter(UXFormatter(datefmt='%H:%M:%S'))
+logger.addHandler(handler)
 
 BASE_URL = "https://markposition.wordpress.com/"
 
