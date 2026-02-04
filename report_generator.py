@@ -19,6 +19,19 @@ class ReportGenerator:
         if not os.path.exists(self.report_dir):
             os.makedirs(self.report_dir)
 
+    def sanitize_markdown(self, text):
+        """Sanitize text for use in Markdown tables to prevent injection and layout breakage."""
+        if text is None:
+            return ""
+        text = str(text)
+        # Escape HTML characters to prevent HTML injection
+        text = text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+        # Escape pipe characters to prevent table breakage
+        text = text.replace("|", "&#124;")
+        # Remove newlines to keep table formatting intact
+        text = text.replace("\n", " ").replace("\r", "")
+        return text
+
     def generate_daily_report(self):
         logger.info("Generating daily report...")
 
@@ -84,6 +97,7 @@ class ReportGenerator:
                 f.write("| Keyword | Frequency |\n")
                 f.write("|---|---|\n")
                 for word, count in keywords:
+                    word = self.sanitize_markdown(word)
                     f.write(f"| {word} | {count} |\n")
                 f.write("\n")
 
@@ -94,7 +108,10 @@ class ReportGenerator:
                 f.write("|---|---|---|---|---|\n")
                 trends = self.analyze_seo_trends(rankings, past_rankings)
                 for item in trends:
-                    f.write(f"| {item['query']} | {item['rank']} | {item['change']} | {item['date']} |\n")
+                    query = self.sanitize_markdown(item['query'])
+                    change = self.sanitize_markdown(item['change'])
+                    date = self.sanitize_markdown(item['date'])
+                    f.write(f"| {query} | {item['rank']} | {change} | {date} |\n")
             else:
                 f.write("No SEO ranking data for today.\n\n")
 
@@ -105,7 +122,12 @@ class ReportGenerator:
                 f.write("|---|---|---|---|---|\n")
                 for u in updated_posts:
                     title, url, field, old, new, time = u
-                    title = title.replace("|", "-")
+                    title = self.sanitize_markdown(title)
+                    url = self.sanitize_markdown(url)
+                    field = self.sanitize_markdown(field)
+                    old = self.sanitize_markdown(old)
+                    new = self.sanitize_markdown(new)
+                    time = self.sanitize_markdown(time)
                     f.write(f"| [{title}]({url}) | {field} | {old} | {new} | {time} |\n")
                 f.write("\n")
 
@@ -116,7 +138,9 @@ class ReportGenerator:
                 f.write("|---|---|---|\n")
                 for post in new_posts:
                     title, url, scraped_at = post
-                    title = title.replace("|", "-") if title else "No Title"
+                    title = self.sanitize_markdown(title) if title else "No Title"
+                    url = self.sanitize_markdown(url)
+                    scraped_at = self.sanitize_markdown(scraped_at)
                     f.write(f"| {title} | {scraped_at} | [View]({url}) |\n")
             else:
                 f.write("No new posts scraped in the last 24 hours.\n")
@@ -178,10 +202,11 @@ class ReportGenerator:
         else:
             trends = self.analyze_seo_trends(rankings, past_rankings)
             for t in trends:
+                query = self.sanitize_markdown(t['query'])
                 if "⬇️" in t['change']:
-                    recs.append(f"📉 **SEO Drop**: Rank dropped for '{t['query']}'. Review page content and keywords.")
+                    recs.append(f"📉 **SEO Drop**: Rank dropped for '{query}'. Review page content and keywords.")
                 if t['rank'] > 10:
-                    recs.append(f"🔍 **SEO Visibility**: '{t['query']}' is on Page {int(t['rank']/10)+1}. Aim for top 10.")
+                    recs.append(f"🔍 **SEO Visibility**: '{query}' is on Page {int(t['rank']/10)+1}. Aim for top 10.")
 
         return recs
 
