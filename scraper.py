@@ -7,6 +7,8 @@ import re
 import argparse
 import logging
 import time
+import ipaddress
+import socket
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse, urljoin
 from urllib.robotparser import RobotFileParser
@@ -68,7 +70,44 @@ class OracleNewsScraper:
             return "'" + value
         return value
 
+    async def is_safe_url(self, url: str) -> bool:
+        """Check if URL is safe to fetch (prevents SSRF)."""
+        try:
+            parsed = urlparse(url)
+            if parsed.scheme not in ('http', 'https'):
+                return False
+
+            hostname = parsed.hostname
+            if not hostname:
+                return False
+
+            # Resolve hostname asynchronously to check for private IPs
+            loop = asyncio.get_running_loop()
+            try:
+                # getaddrinfo returns list of (family, type, proto, canonname, sockaddr)
+                infos = await loop.getaddrinfo(hostname, None)
+            except socket.gaierror:
+                return False
+
+            for family, type, proto, canonname, sockaddr in infos:
+                ip = sockaddr[0]
+                try:
+                    ip_obj = ipaddress.ip_address(ip)
+                    if ip_obj.is_private or ip_obj.is_loopback:
+                        logger.warning(f"Blocked restricted URL: {url} (IP: {ip})")
+                        return False
+                except ValueError:
+                    continue
+
+            return True
+        except Exception as e:
+            logger.error(f"URL validation failed for {url}: {e}")
+            return False
+
     async def fetch_page(self, session: aiohttp.ClientSession, url: str) -> Optional[str]:
+        if not await self.is_safe_url(url):
+            return None
+
         try:
             # 30 second global timeout
             timeout = aiohttp.ClientTimeout(total=30)
