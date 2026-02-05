@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import json
 import csv
 import re
+import os
 import argparse
 import logging
 import time
@@ -52,6 +53,14 @@ class OracleNewsScraper:
             # Usually polite scrapers fail open if it's just a network glitch,
             # but stricter ones fail closed. Let's assume allowed if error.
             return True
+
+    def validate_output_path(self, filepath: str) -> str:
+        """Ensure the output path is within the current working directory."""
+        abs_path = os.path.abspath(filepath)
+        cwd = os.getcwd()
+        if os.path.commonpath([cwd, abs_path]) != cwd:
+            raise ValueError(f"Security Error: Output path '{filepath}' is outside the current working directory.")
+        return filepath
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -173,6 +182,15 @@ class OracleNewsScraper:
         self.save_data(all_posts)
 
     def save_data(self, posts: List[Dict]):
+        # Validate all paths before writing
+        try:
+            self.validate_output_path(self.output_json)
+            self.validate_output_path(self.output_csv)
+            self.validate_output_path(self.output_txt)
+        except ValueError as e:
+            logger.error(f"Save aborted: {e}")
+            return
+
         # JSON
         try:
             with open(self.output_json, 'w', encoding='utf-8') as f:
