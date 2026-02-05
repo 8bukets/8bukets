@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
 import re
@@ -85,7 +85,10 @@ class OracleNewsScraper:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+        # Optimization: Use SoupStrainer to only parse <a> tags (and their children)
+        # This significantly reduces parsing time and memory usage for large HTML documents.
+        only_a_tags = SoupStrainer("a")
+        soup = BeautifulSoup(html, 'html.parser', parse_only=only_a_tags)
         # Oracle news uses links in <h3> tags or <a> tags with specific classes or structures.
         # Based on curl output, we saw links like:
         # <a href="/news/announcement/..." data-lbl="..."><h3>Title</h3></a>
