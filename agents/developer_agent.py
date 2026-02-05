@@ -38,9 +38,12 @@ resource "google_compute_instance" "oracle_db" {
 ```python
 # Python: Connect to Oracle Database
 import cx_Oracle
+import os
 
 dsn = cx_Oracle.makedsn("dbhost", 1521, service_name="orcl")
-connection = cx_Oracle.connect(user="hr", password="welcome", dsn=dsn)
+user = os.environ.get("DB_USER", "hr")
+password = os.environ.get("DB_PASSWORD", "welcome")
+connection = cx_Oracle.connect(user=user, password=password, dsn=dsn)
 print("Successfully connected to Oracle Database")
 ```
 """
