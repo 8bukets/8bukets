@@ -1,6 +1,6 @@
 # Markposition Analytics Report
 
-**Generated on:** 2025-12-13 12:59:36
+**Generated on:** 2026-02-05 08:20:31
 
 ## General Statistics
 - **Total Posts:** 679
@@ -8,28 +8,28 @@
 - **Unique Domains Linked:** 367
 
 ## Top 10 Referenced Domains
-| Domain | Count |
-| :--- | :---: |
-| skillshop.exceedlms.com | 23 |
-| support.google.com | 21 |
-| youtube.com | 18 |
-| advertising.amazon.com | 16 |
-| en.wikipedia.org | 14 |
-| google.com | 13 |
-| web.facebook.com | 12 |
-| developers.google.com | 11 |
-| trustarc.com | 11 |
-| ads.google.com | 10 |
+| Domain | Count | Visualization |
+| :--- | :---: | :--- |
+| skillshop.exceedlms.com | 23 | `████████████████████` |
+| support.google.com | 21 | `██████████████████  ` |
+| youtube.com | 18 | `███████████████     ` |
+| advertising.amazon.com | 16 | `█████████████       ` |
+| en.wikipedia.org | 14 | `████████████        ` |
+| google.com | 13 | `███████████         ` |
+| web.facebook.com | 12 | `██████████          ` |
+| developers.google.com | 11 | `█████████           ` |
+| trustarc.com | 11 | `█████████           ` |
+| ads.google.com | 10 | `████████            ` |
 
 ## Top 10 Categories
-| Category | Count |
-| :--- | :---: |
-| Ad Ads Advertise | 660 |
-| Promotion | 14 |
-| Ads | 4 |
-| Advertise | 3 |
-| Advertising | 3 |
-| Online | 2 |
+| Category | Count | Visualization |
+| :--- | :---: | :--- |
+| Ad Ads Advertise | 660 | `████████████████████` |
+| Promotion | 14 | `                    ` |
+| Ads | 4 | `                    ` |
+| Advertise | 3 | `                    ` |
+| Advertising | 3 | `                    ` |
+| Online | 2 | `                    ` |
 
 ## Posts by Year
 | Year | Count |

@@ -21,6 +21,13 @@ def get_domain(url):
     except:
         return None
 
+def create_ascii_bar(count, total, width=20):
+    """Generate an ASCII progress bar."""
+    if total == 0:
+        return " " * width
+    filled_len = int((count / total) * width)
+    return "█" * filled_len + " " * (width - filled_len)
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
@@ -108,16 +115,22 @@ def generate_report(data, output_file):
     md.append(f"- **Unique Domains Linked:** {len(unique_domains)}")
 
     md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Domain | Count | Visualization |")
+    md.append("| :--- | :---: | :--- |")
+
+    max_domain = top_domains[0][1] if top_domains else 0
     for domain, count in top_domains:
-        md.append(f"| {domain} | {count} |")
+        bar = create_ascii_bar(count, max_domain)
+        md.append(f"| {domain} | {count} | `{bar}` |")
 
     md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Category | Count | Visualization |")
+    md.append("| :--- | :---: | :--- |")
+
+    max_cat = top_categories[0][1] if top_categories else 0
     for cat, count in top_categories:
-        md.append(f"| {cat} | {count} |")
+        bar = create_ascii_bar(count, max_cat)
+        md.append(f"| {cat} | {count} | `{bar}` |")
 
     md.append("\n## Posts by Year")
     md.append("| Year | Count |")
