@@ -21,12 +21,19 @@ def get_domain(url):
     except:
         return None
 
+def create_ascii_bar(count, total, width=20):
+    if total == 0:
+        return ""
+    filled = int((count / total) * width)
+    return "█" * filled + "░" * (width - filled)
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
     # 1. Domain Analysis
     domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
     domain_counts = Counter(domains).most_common(10)
+    max_domain_count = domain_counts[0][1] if domain_counts else 0
 
     # 2. Category Analysis
     all_categories = []
@@ -35,6 +42,7 @@ def generate_report(data, output_file):
         if cats:
             all_categories.extend(cats)
     category_counts = Counter(all_categories).most_common(10)
+    max_category_count = category_counts[0][1] if category_counts else 0
 
     # 3. Date Analysis
     dates = []
@@ -55,10 +63,12 @@ def generate_report(data, output_file):
         years = [d.year for d in dates]
         year_counts = Counter(years).most_common()
         year_counts.sort(key=lambda x: x[0], reverse=True)
+        max_year_count = year_counts[0][1] if year_counts else 0
     else:
         start_date = "N/A"
         end_date = "N/A"
         year_counts = []
+        max_year_count = 0
 
     # 4. Author Analysis
     authors = [p.get('author') for p in data if p.get('author')]
@@ -75,22 +85,25 @@ def generate_report(data, output_file):
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
 
     md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Domain | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        bar = create_ascii_bar(count, max_domain_count)
+        md.append(f"| {domain} | {count} | {bar} |")
 
     md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Category | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        bar = create_ascii_bar(count, max_category_count)
+        md.append(f"| {cat} | {count} | {bar} |")
 
     md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Year | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
     for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+        bar = create_ascii_bar(count, max_year_count)
+        md.append(f"| {year} | {count} | {bar} |")
 
     md.append("\n## Authors")
     for author, count in author_counts:
