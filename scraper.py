@@ -11,10 +11,36 @@ from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
 # Configure logging
+class ColorFormatter(logging.Formatter):
+    """Custom formatter for colored logs."""
+
+    GREY = "\x1b[38;20m"
+    GREEN = "\x1b[32;20m"
+    YELLOW = "\x1b[33;20m"
+    RED = "\x1b[31;20m"
+    BOLD_RED = "\x1b[31;1m"
+    RESET = "\x1b[0m"
+
+    FORMAT = "%(asctime)s - %(levelname)s - %(message)s"
+
+    FORMATS = {
+        logging.DEBUG: GREY + FORMAT + RESET,
+        logging.INFO: GREEN + FORMAT + RESET,
+        logging.WARNING: YELLOW + FORMAT + RESET,
+        logging.ERROR: RED + FORMAT + RESET,
+        logging.CRITICAL: BOLD_RED + FORMAT + RESET
+    }
+
+    def format(self, record):
+        log_fmt = self.FORMATS.get(record.levelno)
+        formatter = logging.Formatter(log_fmt, datefmt='%H:%M:%S')
+        return formatter.format(record)
+
+handler = logging.StreamHandler()
+handler.setFormatter(ColorFormatter())
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
+    handlers=[handler]
 )
 logger = logging.getLogger(__name__)
 
@@ -28,6 +54,7 @@ class MarkPositionScraperAsync:
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+        self.start_time = time.time()
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -220,12 +247,33 @@ class MarkPositionScraperAsync:
 
         self.save_data(all_posts)
 
+        unique_links = set()
+        for post in all_posts:
+            link = post.get('external_link')
+            if link:
+                unique_links.add(link)
+
+        self.print_summary(len(all_posts), len(unique_links))
+
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
             html = await self.fetch_page(session, page_num)
             if html:
                 return await self.parse_page(html)
             return None
+
+    def print_summary(self, posts_count: int, unique_links_count: int):
+        elapsed = time.time() - self.start_time
+        print("\n" + "="*50)
+        print(f"🎉 Scraping Completed in {elapsed:.2f}s!")
+        print("="*50)
+        print(f"📄 Total Posts:      {posts_count}")
+        print(f"🔗 Unique Links:     {unique_links_count}")
+        print("-" * 50)
+        print(f"📁 JSON Output:      {self.output_json}")
+        print(f"📊 CSV Output:       {self.output_csv}")
+        print(f"📝 TXT Output:       {self.output_txt}")
+        print("="*50 + "\n")
 
     def save_data(self, posts: List[Dict]):
         # JSON
