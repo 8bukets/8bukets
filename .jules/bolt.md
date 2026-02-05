@@ -1,0 +1,1 @@
+## 2024-05-22 - [Python Async CPU Bound Tasks]\n**Learning:** `asyncio.to_thread` with pure Python CPU-bound tasks (like `BeautifulSoup` with `html.parser`) does not improve performance due to GIL contention, and may degrade it due to overhead.\n**Action:** Use `SoupStrainer` or optimized libraries (like `lxml`) to reduce CPU work instead of threading.
