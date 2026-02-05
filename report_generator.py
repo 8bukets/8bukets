@@ -62,9 +62,20 @@ class ReportGenerator:
 
         with open(report_filename, "w", encoding="utf-8") as f:
             f.write(f"# Daily Scraper Report - {report_date}\n\n")
-            f.write(f"**Total Posts:** {total_posts}\n")
-            f.write(f"**New Posts:** {len(new_posts)}\n")
-            f.write(f"**Updated Posts:** {len(updated_posts)}\n\n")
+
+            # --- UX IMPROVEMENT: Summary Section ---
+            status_emoji = "🟢" if len(new_posts) > 0 and not updated_posts else "🟡"
+            if not rankings: status_emoji = "🔴"
+
+            f.write(f"> {status_emoji} **Status**: {len(new_posts)} new, {len(updated_posts)} updated, {total_posts} total.\n\n")
+
+            # --- UX IMPROVEMENT: Table of Contents ---
+            f.write("## 📋 Table of Contents\n\n")
+            f.write("- [💡 Recommendations](#-recommendations)\n")
+            f.write("- [🧠 Keyword Trends](#-keyword-trends)\n")
+            f.write("- [📈 SEO Trend Analysis](#-seo-trend-analysis)\n")
+            f.write("- [🔄 Content Updates](#-content-updates)\n")
+            f.write("- [🆕 Recently Scraped Posts](#-recently-scraped-posts)\n\n")
 
             # Recommendations Section
             f.write("## 💡 Recommendations\n\n")
@@ -81,10 +92,14 @@ class ReportGenerator:
                 f.write("## 🧠 Keyword Trends\n\n")
                 f.write("Most frequent words in recent activity:\n\n")
                 keywords = self.analyze_keywords(all_recent_titles)
-                f.write("| Keyword | Frequency |\n")
-                f.write("|---|---|\n")
+
+                # --- UX IMPROVEMENT: ASCII Charts ---
+                max_freq = keywords[0][1] if keywords else 1
+                f.write("| Keyword | Frequency | Activity |\n")
+                f.write("|---|---|---|\n")
                 for word, count in keywords:
-                    f.write(f"| {word} | {count} |\n")
+                    bar = self._generate_ascii_bar(count, max_freq)
+                    f.write(f"| {word} | {count} | {bar} |\n")
                 f.write("\n")
 
             # SEO Rankings Trend
@@ -123,11 +138,17 @@ class ReportGenerator:
 
         logger.info(f"Report generated: {report_filename}")
 
+    def _generate_ascii_bar(self, value, max_value, length=10):
+        if max_value == 0: return ""
+        filled_len = int((value / max_value) * length)
+        # Using block character for filled and space/light shade for empty
+        return '█' * filled_len + '░' * (length - filled_len)
+
     def analyze_keywords(self, titles):
         text = " ".join(titles).lower()
         text = re.sub(r'[^\w\s]', '', text)
         words = text.split()
-        stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'this', 'that', 'it', 'as', 'from', 'de', 'la'}
+        stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'this', 'that', 'it', 'as', 'from', 'de', 'la', 'new'}
         filtered_words = [w for w in words if w not in stop_words and len(w) > 2]
         return Counter(filtered_words).most_common(10)
 
