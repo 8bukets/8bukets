@@ -21,6 +21,13 @@ logger = logging.getLogger(__name__)
 
 BASE_URL = "https://www.oracle.com/news/"
 
+# ANSI Colors
+CYAN = "\033[96m"
+GREEN = "\033[92m"
+YELLOW = "\033[93m"
+RESET = "\033[0m"
+BOLD = "\033[1m"
+
 class OracleNewsScraper:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
@@ -144,6 +151,7 @@ class OracleNewsScraper:
         return articles
 
     async def scrape(self):
+        start_time = time.time()
         if not self.check_robots_txt():
             logger.error("Aborting scrape due to robots.txt restrictions.")
             return
@@ -171,6 +179,20 @@ class OracleNewsScraper:
                 logger.error("Failed to fetch main news page.")
 
         self.save_data(all_posts)
+
+        # Calculate stats for summary
+        unique_links_count = len(set(p.get('external_link') for p in all_posts if p.get('external_link')))
+        elapsed = time.time() - start_time
+        self.print_summary(len(all_posts), unique_links_count, elapsed)
+
+    def print_summary(self, post_count: int, unique_count: int, elapsed_time: float):
+        print(f"\n{BOLD}{GREEN}✨ Scrape Completed Successfully!{RESET}")
+        print(f"{BOLD}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{RESET}")
+        print(f"📄 {CYAN}JSON Data:{RESET}   {self.output_json} ({post_count} posts)")
+        print(f"📊 {CYAN}CSV Data:{RESET}    {self.output_csv} ({post_count} rows)")
+        print(f"🔗 {CYAN}Unique URLs:{RESET} {self.output_txt} ({unique_count} links)")
+        print(f"{BOLD}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{RESET}")
+        print(f"🎉 Done in {elapsed_time:.2f}s\n")
 
     def save_data(self, posts: List[Dict]):
         # JSON
