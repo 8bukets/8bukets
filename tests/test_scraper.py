@@ -31,6 +31,7 @@ class TestBlogScraper(unittest.TestCase):
         self.scraper = BlogScraper("http://mock.url", self.json_name, self.db_name)
 
     def tearDown(self):
+        self.scraper.close_db()
         if os.path.exists(self.db_name):
             os.remove(self.db_name)
         if os.path.exists(self.json_name):

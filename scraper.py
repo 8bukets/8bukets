@@ -27,13 +27,19 @@ class BlogScraper:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
         self.data = []
+        self.conn = sqlite3.connect(self.db_name)
         self.init_db()
+
+    def close_db(self):
+        """Close the database connection."""
+        if self.conn:
+            self.conn.close()
 
     def init_db(self):
         """Initialize the SQLite database."""
         try:
-            with sqlite3.connect(self.db_name) as conn:
-                cursor = conn.cursor()
+            with self.conn:
+                cursor = self.conn.cursor()
                 # Posts table
                 cursor.execute('''
                     CREATE TABLE IF NOT EXISTS posts (
@@ -61,15 +67,14 @@ class BlogScraper:
                         FOREIGN KEY(post_id) REFERENCES posts(id)
                     )
                 ''')
-                conn.commit()
         except sqlite3.Error as e:
             logger.error(f"Database initialization error: {e}")
 
     def save_to_db(self, item):
         """Save a single item to the database, handling updates."""
         try:
-            with sqlite3.connect(self.db_name) as conn:
-                cursor = conn.cursor()
+            with self.conn:
+                cursor = self.conn.cursor()
 
                 # Check if post exists
                 cursor.execute("SELECT id, title, external_link FROM posts WHERE post_url = ?", (item.get('post_url'),))
@@ -100,7 +105,6 @@ class BlogScraper:
                     if updated:
                         # Update scraped_at to reflect latest check
                         cursor.execute("UPDATE posts SET scraped_at = CURRENT_TIMESTAMP WHERE id = ?", (post_id,))
-                        conn.commit()
                         return False # Not a "new" post, but an updated one
 
                 else:
@@ -117,7 +121,6 @@ class BlogScraper:
                         item.get('author'),
                         json.dumps(item.get('categories'))
                     ))
-                    conn.commit()
                     return True # New post
 
         except sqlite3.Error as e:
@@ -201,32 +204,35 @@ class BlogScraper:
         url = self.base_url
         new_items_count = 0
 
-        while url:
-            content = self.fetch_page(url)
-            if not content:
-                break
+        try:
+            while url:
+                content = self.fetch_page(url)
+                if not content:
+                    break
 
-            soup = BeautifulSoup(content, "html.parser")
-            articles = soup.find_all("article")
-            logger.info(f"Found {len(articles)} articles on this page.")
+                soup = BeautifulSoup(content, "html.parser")
+                articles = soup.find_all("article")
+                logger.info(f"Found {len(articles)} articles on this page.")
 
-            if not articles:
-                logger.warning("No articles found on page.")
+                if not articles:
+                    logger.warning("No articles found on page.")
 
-            for article in articles:
-                item = self.parse_article(article)
-                self.data.append(item)
-                if self.save_to_db(item):
-                    new_items_count += 1
+                for article in articles:
+                    item = self.parse_article(article)
+                    self.data.append(item)
+                    if self.save_to_db(item):
+                        new_items_count += 1
 
-            next_page = self.get_next_page(soup)
-            if next_page:
-                logger.info(f"Found next page: {next_page}")
-                url = next_page
-                time.sleep(1)
-            else:
-                logger.info("No more pages found.")
-                url = None
+                next_page = self.get_next_page(soup)
+                if next_page:
+                    logger.info(f"Found next page: {next_page}")
+                    url = next_page
+                    time.sleep(1)
+                else:
+                    logger.info("No more pages found.")
+                    url = None
+        finally:
+            self.close_db()
 
         self.save_json()
         logger.info(f"Scraped {len(self.data)} articles in total.")
