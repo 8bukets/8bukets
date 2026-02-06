@@ -2,6 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import time
+from urllib.parse import urlparse
+import ipaddress
 import logging
 import argparse
 import sys
@@ -28,6 +30,40 @@ class BlogScraper:
         }
         self.data = []
         self.init_db()
+
+    def is_safe_url(self, url):
+        """
+        Validate URL to prevent SSRF and ensures it's an HTTP/HTTPS scheme.
+        Blocks localhost, private IPs (basic check), and non-http schemes.
+        """
+        try:
+            parsed = urlparse(url)
+        except Exception:
+            return False
+
+        if parsed.scheme not in ('http', 'https'):
+            return False
+
+        hostname = parsed.hostname
+        if not hostname:
+            return False
+
+        # Check for localhost
+        if hostname == 'localhost':
+            return False
+
+        # Check if hostname is a private IP address
+        try:
+            ip = ipaddress.ip_address(hostname)
+            if ip.is_private or ip.is_loopback or ip.is_unspecified:
+                return False
+        except ValueError:
+            # Not an IP address, so it's a domain name.
+            # We do NOT resolve DNS here to avoid TOCTOU/DNS rebinding issues
+            # which are complex to solve in Python requests without a custom transport.
+            pass
+
+        return True
 
     def init_db(self):
         """Initialize the SQLite database."""
@@ -127,6 +163,10 @@ class BlogScraper:
         return False
 
     def fetch_page(self, url):
+        if not self.is_safe_url(url):
+            logger.error(f"Security Alert: Attempted to scrape unsafe URL: {url}")
+            return None
+
         logger.info(f"Fetching {url}...")
         try:
             response = requests.get(url, headers=self.headers, timeout=10)
