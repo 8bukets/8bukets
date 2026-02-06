@@ -1,7 +1,6 @@
 import json
 import argparse
 from collections import Counter
-from urllib.parse import urlparse
 from datetime import datetime
 import sys
 
@@ -13,19 +12,12 @@ def load_data(filepath):
         print(f"Error: File '{filepath}' not found.")
         sys.exit(1)
 
-def get_domain(url):
-    if not url:
-        return None
-    try:
-        return urlparse(url).netloc.replace('www.', '')
-    except:
-        return None
-
 def generate_report(data, output_file):
     total_posts = len(data)
 
     # 1. Domain Analysis
-    domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
+    # Optimization: Use pre-computed 'domain' field instead of re-parsing 'external_link'
+    domains = [p.get('domain') for p in data if p.get('domain')]
     domain_counts = Counter(domains).most_common(10)
 
     # 2. Category Analysis
