@@ -5,6 +5,7 @@ import time
 import logging
 import argparse
 import sys
+import os
 from urllib.parse import urlparse
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
@@ -31,6 +32,21 @@ def configure_logging(verbose: bool):
         level=level,
         format='%(asctime)s - %(levelname)s - %(message)s'
     )
+
+def validate_output_path(filepath: str) -> str:
+    """
+    Validates that the output path is within the current working directory
+    to prevent path traversal attacks.
+    """
+    # Get absolute path, resolving symlinks
+    abs_path = os.path.realpath(filepath)
+    cwd = os.path.realpath(os.getcwd())
+
+    # Check if the file is inside the CWD
+    if os.path.commonpath([abs_path, cwd]) != cwd:
+        raise ValueError(f"Security Violation: Output path '{filepath}' is outside the current working directory.")
+
+    return filepath
 
 def get_session():
     """
@@ -132,6 +148,13 @@ def parse_post_html(post_soup, base_url: str) -> Post:
     )
 
 def scrape(output_file: str, max_pages: int = 0):
+    # Early validation to fail fast
+    try:
+        validate_output_path(output_file)
+    except ValueError as e:
+        logging.error(f"Configuration Error: {e}")
+        return
+
     session = get_session()
     all_posts = []
     page = 1
@@ -144,7 +167,8 @@ def scrape(output_file: str, max_pages: int = 0):
 
         logging.info(f"Scraping page {page}: {current_url}...")
         try:
-            response = session.get(current_url)
+            # Added timeout to prevent indefinite hangs
+            response = session.get(current_url, timeout=30)
             response.raise_for_status()
         except requests.exceptions.RequestException as e:
             logging.error(f"Error fetching {current_url}: {e}")
@@ -178,7 +202,7 @@ def scrape(output_file: str, max_pages: int = 0):
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump([asdict(p) for p in all_posts], f, indent=4, ensure_ascii=False)
         logging.info(f"Saved to {output_file}")
-    except IOError as e:
+    except (IOError, ValueError) as e:
         logging.error(f"Failed to save output to {output_file}: {e}")
 
 def main():
