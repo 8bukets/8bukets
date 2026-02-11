@@ -11,10 +11,39 @@ from urllib.parse import urlparse
 from datetime import datetime
 
 # Configure logging
+class UXFormatter(logging.Formatter):
+    COLORS = {
+        logging.INFO: "\033[94m",  # Blue
+        logging.WARNING: "\033[93m",  # Yellow
+        logging.ERROR: "\033[91m",  # Red
+    }
+    RESET = "\033[0m"
+    GREEN = "\033[92m"
+
+    def format(self, record):
+        color = self.COLORS.get(record.levelno, self.RESET)
+        emoji = "ℹ️ "
+
+        if record.levelno == logging.WARNING:
+            emoji = "⚠️ "
+        elif record.levelno == logging.ERROR:
+            emoji = "❌"
+        elif record.levelno == logging.INFO:
+            msg_str = record.getMessage()
+            if any(keyword in msg_str for keyword in ["Saved", "Extracted", "Success"]):
+                emoji = "✅"
+                color = self.GREEN
+
+        timestamp = self.formatTime(record, "%H:%M:%S")
+        message = record.getMessage()
+
+        return f"{color}{emoji} {timestamp} - {message}{self.RESET}"
+
+handler = logging.StreamHandler()
+handler.setFormatter(UXFormatter())
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
+    handlers=[handler]
 )
 logger = logging.getLogger(__name__)
 
