@@ -55,7 +55,12 @@ def generate_report(data, output_file):
         # 1. Domain Analysis
         external_link = p.get('external_link')
         if external_link:
-            domain = get_domain(external_link)
+            # Optimization: Use pre-computed domain from data if available to avoid expensive URL parsing
+            if 'domain' in p:
+                domain = p['domain']
+            else:
+                domain = get_domain(external_link)
+
             # Match original behavior: include None if get_domain returns it
             # Original: domains = [get_domain(...) for ... if external_link]
             # Counter(domains)
