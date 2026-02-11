@@ -5,6 +5,13 @@ from urllib.parse import urlparse
 from datetime import datetime
 import sys
 
+# ANSI Color Codes for Palette UX
+GREEN = "\033[92m"
+CYAN = "\033[96m"
+YELLOW = "\033[93m"
+BOLD = "\033[1m"
+RESET = "\033[0m"
+
 def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
@@ -99,7 +106,19 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    # Palette UX: Console Summary
+    print(f"\n{GREEN}{BOLD}✅ Analysis Complete!{RESET}")
+    print(f"\n{CYAN}📊 Quick Summary:{RESET}")
+    print(f"  • {BOLD}Total Posts:{RESET} {total_posts}")
+    print(f"  • {BOLD}Date Range:{RESET} {start_date} to {end_date}")
+
+    top_domain = domain_counts[0] if domain_counts else ("None", 0)
+    print(f"  • {BOLD}Top Domain:{RESET} {top_domain[0]} ({top_domain[1]})")
+
+    top_cat = category_counts[0] if category_counts else ("None", 0)
+    print(f"  • {BOLD}Top Category:{RESET} {top_cat[0]} ({top_cat[1]})")
+
+    print(f"\n{YELLOW}📝 Full report saved to:{RESET} {output_file}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
