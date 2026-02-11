@@ -1,0 +1,4 @@
+## 2026-02-05 - Scraper Pagination SSRF
+**Vulnerability:** The web scraper (`scrape_informatic.py`) blindly followed pagination links (`nav-previous`) extracted from the HTML. A malicious or compromised target site could redirect the scraper to internal services (SSRF) or arbitrary external sites by manipulating the "Previous Post" link.
+**Learning:** Scrapers often implicitly trust the "structure" of the site they are scraping, assuming links point to valid pages on the same domain. This assumption is dangerous when the target content is not fully under control or if the scraper is repurposed.
+**Prevention:** Always validate URLs extracted from external content before following them. Explicitly check that the `netloc` (domain) matches the expected base domain. Use strict allowlists for domains.

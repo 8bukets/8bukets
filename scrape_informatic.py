@@ -165,9 +165,24 @@ def scrape(output_file: str, max_pages: int = 0):
         # Pagination
         nav_previous = soup.find('div', class_='nav-previous')
         if nav_previous and nav_previous.find('a'):
-            current_url = nav_previous.find('a')['href']
-            page += 1
-            time.sleep(1) # Polite delay
+            next_url = nav_previous.find('a')['href']
+
+            # Security: Validate domain to prevent SSRF/Open Redirect
+            try:
+                parsed_next = urlparse(next_url)
+                parsed_base = urlparse(BASE_URL)
+
+                # Only allow links that are relative or match the base domain
+                if parsed_next.netloc and parsed_next.netloc != parsed_base.netloc:
+                    logging.warning(f"Security Alert: Pagination link points to external/invalid domain: {next_url}")
+                    current_url = None
+                else:
+                    current_url = next_url
+                    page += 1
+                    time.sleep(1) # Polite delay
+            except Exception as e:
+                logging.error(f"Error validating next URL: {e}")
+                current_url = None
         else:
             current_url = None
             logging.info("No more pages found.")
