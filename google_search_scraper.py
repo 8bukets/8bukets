@@ -1,8 +1,31 @@
 import json
 import logging
 import argparse
+import os
+import sys
 from googlesearch import search
 from typing import List, Dict
+
+def validate_output_path(file_path: str):
+    """
+    Validates the output file path to prevent path traversal and overwriting sensitive files.
+    Enforces that the file is written to the current working directory and has a safe extension.
+    """
+    # 1. Prevent Path Traversal
+    abs_path = os.path.abspath(file_path)
+    cwd = os.getcwd()
+
+    # Use commonpath to check if the file is inside the CWD
+    try:
+        if os.path.commonpath([cwd, abs_path]) != cwd:
+            raise ValueError("Output file must be within the current working directory.")
+    except ValueError:
+         raise ValueError("Output file must be within the current working directory.")
+
+    # 2. Validate Extension
+    allowed_extensions = ['.json']
+    if not any(file_path.endswith(ext) for ext in allowed_extensions):
+        raise ValueError(f"Invalid file extension. Allowed: {', '.join(allowed_extensions)}")
 
 def configure_logging(verbose: bool):
     level = logging.DEBUG if verbose else logging.INFO
@@ -44,6 +67,12 @@ def main():
     args = parser.parse_args()
 
     configure_logging(args.verbose)
+
+    try:
+        validate_output_path(args.output)
+    except ValueError as e:
+        logging.error(f"Security Error: {e}")
+        sys.exit(1)
 
     results = perform_google_search(args.query, num_results=args.limit)
 
