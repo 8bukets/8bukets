@@ -196,11 +196,29 @@ class MarkPositionScraperAsync:
 
         # Sort results by page number to ensure order
         results.sort(key=lambda x: x[0])
+        total_pages = len(results)
 
         for _, posts in results:
             all_posts.extend(posts)
 
         self.save_data(all_posts)
+
+        # Calculate unique links for summary
+        unique_links_count = len({p.get('external_link') for p in all_posts if p.get('external_link')})
+        self.print_summary(total_pages, len(all_posts), unique_links_count)
+
+    def print_summary(self, total_pages: int, total_posts: int, unique_links: int):
+        print("\n" + "="*40)
+        print(f"\033[96m🎨  SCRAPING COMPLETE\033[0m")
+        print("="*40)
+        print(f"   Pages Scraped : {total_pages}")
+        print(f"   Total Posts   : {total_posts}")
+        print(f"   Unique Links  : {unique_links}")
+        print("-" * 40)
+        print(f"   JSON Output   : {self.output_json}")
+        print(f"   CSV Output    : {self.output_csv}")
+        print(f"   TXT Output    : {self.output_txt}")
+        print("="*40 + "\n")
 
     async def fetch_and_parse(self, session, page_num) -> Tuple[int, Optional[List[Dict]]]:
         html = await self.fetch_page(session, page_num)
