@@ -9,6 +9,7 @@ import argparse
 import sys
 import sqlite3
 from datetime import datetime
+from urllib.parse import urlparse
 
 # Configure logging
 logging.basicConfig(
@@ -237,11 +238,34 @@ class BlogScraper:
 
         return None
 
+    def is_safe_url(self, url):
+        """
+        Validates that the URL belongs to the same domain as the base URL.
+        Prevents SSRF and scope creep by restricting the scraper to the target site.
+        """
+        try:
+            parsed_base = urlparse(self.base_url)
+            parsed_url = urlparse(url)
+
+            # Allow relative URLs
+            if not parsed_url.netloc:
+                return True
+
+            # Check strictly for same hostname
+            return parsed_url.hostname == parsed_base.hostname
+        except Exception as e:
+            logger.error(f"Error validating URL {url}: {e}")
+            return False
+
     def run(self):
         url = self.base_url
         new_items_count = 0
 
         while url:
+            if not self.is_safe_url(url):
+                logger.warning(f"Skipping unsafe/external URL: {url}")
+                break
+
             content = self.fetch_page(url)
             if not content:
                 break
@@ -261,9 +285,13 @@ class BlogScraper:
 
             next_page = self.get_next_page(soup)
             if next_page:
-                logger.info(f"Found next page: {next_page}")
-                url = next_page
-                time.sleep(1)
+                if self.is_safe_url(next_page):
+                    logger.info(f"Found next page: {next_page}")
+                    url = next_page
+                    time.sleep(1)
+                else:
+                    logger.warning(f"Next page URL is outside scope: {next_page}")
+                    url = None
             else:
                 logger.info("No more pages found.")
                 url = None
