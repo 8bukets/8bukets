@@ -6,8 +6,7 @@ import csv
 import re
 import argparse
 import logging
-import time
-from typing import List, Dict, Optional, Set
+from typing import List, Dict, Optional
 from urllib.parse import urlparse
 
 # Configure logging
@@ -33,8 +32,8 @@ class MarkPositionScraperAsync:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
-        text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        # Faster than re.sub for whitespace normalization and handles \xa0 automatically
+        return " ".join(text.split())
 
     def sanitize_for_csv(self, text: str) -> str:
         """Sanitize text to prevent CSV injection (formula injection)."""
@@ -65,7 +64,7 @@ class MarkPositionScraperAsync:
             return None
         try:
             return urlparse(url).netloc.replace('www.', '')
-        except:
+        except Exception:
             return None
 
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
@@ -81,7 +80,8 @@ class MarkPositionScraperAsync:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+        # lxml is significantly faster than html.parser
+        soup = BeautifulSoup(html, 'lxml')
         articles = soup.find_all('article', class_='post')
         page_posts = []
 
