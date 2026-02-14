@@ -22,53 +22,94 @@ class ReportGenerator:
     def generate_daily_report(self):
         logger.info("Generating daily report...")
 
+        total_posts = 0
+        new_posts = []
+        updated_posts = []
+        rankings = []
+        past_rankings = []
+
+        # Status flags for the dashboard
+        seo_status = "⚪" # Default: unknown/gray
+
         try:
             with sqlite3.connect(self.db_name) as conn:
                 cursor = conn.cursor()
 
-                # Get total count
-                cursor.execute("SELECT COUNT(*) FROM posts")
-                total_posts = cursor.fetchone()[0]
+                # Get total count (fail gracefully if posts table doesn't exist)
+                try:
+                    cursor.execute("SELECT COUNT(*) FROM posts")
+                    total_posts = cursor.fetchone()[0]
+                except sqlite3.OperationalError:
+                    logger.warning("Table 'posts' not found. Skipping post stats.")
+                    total_posts = 0
 
                 yesterday = datetime.now() - timedelta(days=1)
 
                 # New posts
-                cursor.execute("SELECT title, post_url, scraped_at FROM posts WHERE scraped_at >= ? AND id NOT IN (SELECT post_id FROM changes)", (yesterday,))
-                new_posts = cursor.fetchall()
+                try:
+                    cursor.execute("SELECT title, post_url, scraped_at FROM posts WHERE scraped_at >= ? AND id NOT IN (SELECT post_id FROM changes)", (yesterday,))
+                    new_posts = cursor.fetchall()
+                except sqlite3.OperationalError:
+                    pass # Already logged warning above
 
                 # Updated posts
-                cursor.execute("""
-                    SELECT p.title, p.post_url, c.field, c.old_value, c.new_value, c.changed_at
-                    FROM changes c
-                    JOIN posts p ON c.post_id = p.id
-                    WHERE c.changed_at >= ?
-                """, (yesterday,))
-                updated_posts = cursor.fetchall()
+                try:
+                    cursor.execute("""
+                        SELECT p.title, p.post_url, c.field, c.old_value, c.new_value, c.changed_at
+                        FROM changes c
+                        JOIN posts p ON c.post_id = p.id
+                        WHERE c.changed_at >= ?
+                    """, (yesterday,))
+                    updated_posts = cursor.fetchall()
+                except sqlite3.OperationalError:
+                    logger.warning("Table 'changes' not found. Skipping update stats.")
 
-                # Latest SEO rankings
-                cursor.execute("SELECT query, rank, title, url, checked_at FROM rankings WHERE checked_at >= ? ORDER BY checked_at DESC", (yesterday,))
-                rankings = cursor.fetchall()
+                # SEO rankings
+                try:
+                    cursor.execute("SELECT query, rank, title, url, checked_at FROM rankings WHERE checked_at >= ? ORDER BY checked_at DESC", (yesterday,))
+                    rankings = cursor.fetchall()
 
-                # Previous SEO rankings (older than 24h)
-                cursor.execute("SELECT query, rank, checked_at FROM rankings WHERE checked_at < ? ORDER BY checked_at DESC", (yesterday,))
-                past_rankings = cursor.fetchall()
+                    # Previous SEO rankings (older than 24h)
+                    cursor.execute("SELECT query, rank, checked_at FROM rankings WHERE checked_at < ? ORDER BY checked_at DESC", (yesterday,))
+                    past_rankings = cursor.fetchall()
+
+                    if rankings:
+                        seo_status = "🟢"
+                    else:
+                        seo_status = "🟡" # No data for today
+
+                except sqlite3.OperationalError:
+                    logger.warning("Table 'rankings' not found. SEO section will be empty.")
+                    seo_status = "🔴" # Error state
 
         except sqlite3.Error as e:
-            logger.error(f"Database error: {e}")
+            logger.error(f"Database connection error: {e}")
             return
 
         report_date = datetime.now().strftime("%Y-%m-%d")
         report_filename = os.path.join(self.report_dir, f"report_{report_date}.md")
 
+        # Determine overall status
+        posts_status = "🟢" if new_posts else "🟡"
+        updates_status = "🟢" if updated_posts else "⚪"
+
         with open(report_filename, "w", encoding="utf-8") as f:
-            f.write(f"# Daily Scraper Report - {report_date}\n\n")
-            f.write(f"**Total Posts:** {total_posts}\n")
-            f.write(f"**New Posts:** {len(new_posts)}\n")
-            f.write(f"**Updated Posts:** {len(updated_posts)}\n\n")
+            f.write(f"# 📊 Daily Scraper Report - {report_date}\n\n")
+
+            # Dashboard
+            f.write("## 🚦 Status Dashboard\n\n")
+            f.write("| Metric | Count | Status |\n")
+            f.write("|---|---|---|\n")
+            f.write(f"| 🗂️ Total Posts | {total_posts} | 🟢 |\n")
+            f.write(f"| 🆕 New Posts | {len(new_posts)} | {posts_status} |\n")
+            f.write(f"| 🔄 Updated Posts | {len(updated_posts)} | {updates_status} |\n")
+            rank_count = len(rankings) if rankings else "--"
+            f.write(f"| 📈 SEO Check | {rank_count} | {seo_status} |\n")
+            f.write("\n")
 
             # Recommendations Section
             f.write("## 💡 Recommendations\n\n")
-            recommendations = self.generate_recommendations(new_posts, updated_posts, rankings, past_rankings)
+            recommendations = self.generate_recommendations(new_posts, updated_posts, rankings, past_rankings, seo_status)
             for rec in recommendations:
                 f.write(f"- {rec}\n")
             if not recommendations:
@@ -96,7 +137,10 @@ class ReportGenerator:
                 for item in trends:
                     f.write(f"| {item['query']} | {item['rank']} | {item['change']} | {item['date']} |\n")
             else:
-                f.write("No SEO ranking data for today.\n\n")
+                if seo_status == "🔴":
+                     f.write("⚠️ **Error**: SEO data unavailable (table missing).\n\n")
+                else:
+                     f.write("No SEO ranking data for today.\n\n")
 
             # Content Updates Section
             if updated_posts:
@@ -124,10 +168,10 @@ class ReportGenerator:
         logger.info(f"Report generated: {report_filename}")
 
     def analyze_keywords(self, titles):
-        text = " ".join(titles).lower()
+        text = " ".join([t for t in titles if t]).lower()
         text = re.sub(r'[^\w\s]', '', text)
         words = text.split()
-        stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'this', 'that', 'it', 'as', 'from', 'de', 'la'}
+        stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'this', 'that', 'it', 'as', 'from', 'de', 'la', 'i'}
         filtered_words = [w for w in words if w not in stop_words and len(w) > 2]
         return Counter(filtered_words).most_common(10)
 
@@ -159,7 +203,7 @@ class ReportGenerator:
             })
         return analysis
 
-    def generate_recommendations(self, new_posts, updated_posts, rankings, past_rankings):
+    def generate_recommendations(self, new_posts, updated_posts, rankings, past_rankings, seo_status):
         recs = []
 
         # Frequency advice
@@ -173,7 +217,9 @@ class ReportGenerator:
             recs.append(f"ℹ️ **Maintenance**: {len(updated_posts)} posts were updated. Review changes to ensure accuracy.")
 
         # SEO advice
-        if not rankings:
+        if seo_status == "🔴":
+             recs.append("⚠️ **SEO Error**: The rankings table is missing. Please run `google_checker.py` to initialize data.")
+        elif not rankings:
             recs.append("⚠️ **SEO Alert**: Ranking check failed or data missing. Check internet connection or Google blocks.")
         else:
             trends = self.analyze_seo_trends(rankings, past_rankings)
