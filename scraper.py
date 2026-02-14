@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
 import re
@@ -17,6 +17,13 @@ logging.basicConfig(
     datefmt='%H:%M:%S'
 )
 logger = logging.getLogger(__name__)
+
+# Determine best available parser
+try:
+    import lxml
+    PARSER = 'lxml'
+except ImportError:
+    PARSER = 'html.parser'
 
 BASE_URL = "https://markposition.wordpress.com/"
 
@@ -72,7 +79,9 @@ class MarkPositionScraperAsync:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+        # Optimize parsing by only parsing article tags
+        strainer = SoupStrainer('article')
+        soup = BeautifulSoup(html, PARSER, parse_only=strainer)
         articles = soup.find_all('article', class_='post')
         page_posts = []
 
