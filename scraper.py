@@ -7,6 +7,7 @@ import re
 import argparse
 import logging
 import time
+import sys
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
@@ -14,11 +15,41 @@ from urllib.parse import urlparse
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
+    datefmt='%H:%M:%S',
+    stream=sys.stdout
 )
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
+
+import os
+
+class Colors:
+    _is_tty = sys.stdout.isatty() or os.environ.get('FORCE_COLOR')
+
+    CYAN = '\033[96m' if _is_tty else ''
+    GREEN = '\033[92m' if _is_tty else ''
+    YELLOW = '\033[93m' if _is_tty else ''
+    RED = '\033[91m' if _is_tty else ''
+    BOLD = '\033[1m' if _is_tty else ''
+    ENDC = '\033[0m' if _is_tty else ''
+
+def print_summary(stats: Dict, duration: float):
+    # Padding adjustments for when colors are present vs absent
+    # Since we use direct string interpolation for values, standard padding works
+    # but we need to ensure the border aligns.
+    # The visual width of emojis (📄, etc) is usually 2. len() counts them as 1 or 2 depending on encoding.
+    # Simplest way is to print the box content and let the user enjoy it.
+
+    print(f"\n{Colors.CYAN}┌──────────────────────────────────────────┐{Colors.ENDC}")
+    print(f"{Colors.CYAN}│ {Colors.GREEN}{Colors.BOLD}🎉 Scraping Complete!{Colors.ENDC}{Colors.CYAN}                     │{Colors.ENDC}")
+    print(f"{Colors.CYAN}│                                          │{Colors.ENDC}")
+    print(f"{Colors.CYAN}│ 📄 Posts Fetched: {Colors.BOLD}{str(stats['posts']):<23}{Colors.ENDC}{Colors.CYAN}│{Colors.ENDC}")
+    print(f"{Colors.CYAN}│ 💾 JSON Output: {str(stats['json']):<25}{Colors.ENDC}{Colors.CYAN}│{Colors.ENDC}")
+    print(f"{Colors.CYAN}│ 📊 CSV Output: {str(stats['csv']):<26}{Colors.ENDC}{Colors.CYAN}│{Colors.ENDC}")
+    print(f"{Colors.CYAN}│ 🔗 Unique Links: {str(stats['unique']):<24}{Colors.ENDC}{Colors.CYAN}│{Colors.ENDC}")
+    print(f"{Colors.CYAN}│ ⏱️ Duration: {f'{duration:.1f}s':<27}{Colors.ENDC}{Colors.CYAN}│{Colors.ENDC}")
+    print(f"{Colors.CYAN}└──────────────────────────────────────────┘{Colors.ENDC}\n")
 
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
@@ -218,7 +249,7 @@ class MarkPositionScraperAsync:
                 # Small delay between batches
                 await asyncio.sleep(0.5)
 
-        self.save_data(all_posts)
+        return self.save_data(all_posts)
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
@@ -227,7 +258,7 @@ class MarkPositionScraperAsync:
                 return await self.parse_page(html)
             return None
 
-    def save_data(self, posts: List[Dict]):
+    def save_data(self, posts: List[Dict]) -> Dict:
         # JSON
         try:
             with open(self.output_json, 'w', encoding='utf-8') as f:
@@ -271,6 +302,14 @@ class MarkPositionScraperAsync:
         except IOError as e:
             logger.error(f"Failed to save TXT: {e}")
 
+        return {
+            'posts': len(posts),
+            'unique': len(sorted_links),
+            'json': self.output_json,
+            'csv': self.output_csv,
+            'txt': self.output_txt
+        }
+
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
     parser.add_argument("--json", default="links.json", help="Output JSON filename")
@@ -289,7 +328,12 @@ def main():
         concurrency=args.concurrency
     )
 
-    asyncio.run(scraper.scrape())
+    start_time = time.time()
+    stats = asyncio.run(scraper.scrape())
+    duration = time.time() - start_time
+
+    if stats:
+        print_summary(stats, duration)
 
 if __name__ == "__main__":
     main()
