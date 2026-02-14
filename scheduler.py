@@ -11,8 +11,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-def run_daily_job():
-    logger.info("Scheduler: Starting daily job...")
+def run_biweekly_job():
+    logger.info("Scheduler: Starting bi-weekly job...")
     try:
         # Run the system
         subprocess.run([sys.executable, "run_system.py", "--limit", "2"], check=True)
@@ -23,17 +23,16 @@ def run_daily_job():
 def main():
     logger.info("Starting Autonomous Agent Scheduler.")
     logger.info("Note: In a production environment, use 'cron' or 'systemd' timers.")
-    logger.info("For demonstration, this script runs the job immediately and then waits.")
+    logger.info("This script runs the job immediately and then waits 14 days.")
 
     # Run immediately once
-    run_daily_job()
+    run_biweekly_job()
 
-    # Loop for simulation (e.g., every 24 hours = 86400 seconds)
-    # Uncomment the loop below for actual continuous execution
-    # while True:
-    #     logger.info("Waiting 24 hours for next run...")
-    #     time.sleep(86400)
-    #     run_daily_job()
+    # Loop for simulation (every 14 days = 1,209,600 seconds)
+    while True:
+        logger.info("Waiting 14 days for next run...")
+        time.sleep(1209600)
+        run_biweekly_job()
 
 if __name__ == "__main__":
     main()
