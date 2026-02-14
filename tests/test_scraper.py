@@ -3,6 +3,7 @@ from unittest.mock import MagicMock, patch
 import json
 import os
 import sqlite3
+from bs4 import BeautifulSoup, SoupStrainer
 from scraper import BlogScraper
 
 class TestBlogScraper(unittest.TestCase):
@@ -23,6 +24,7 @@ class TestBlogScraper(unittest.TestCase):
                         <span class="byline"><span class="author"><a href="#">Author Name</a></span></span>
                     </div>
                 </article>
+                <div class="nav-previous"><a href="next_page_url">Older posts</a></div>
             </body>
         </html>
         """
@@ -47,10 +49,17 @@ class TestBlogScraper(unittest.TestCase):
         self.assertIsNotNone(content)
         self.assertIn(b"Test Title", content)
 
-    def test_parse_article(self):
-        from bs4 import BeautifulSoup
-        soup = BeautifulSoup(self.mock_html, 'html.parser')
+    def test_parse_article_with_strainer(self):
+        # Verify that SoupStrainer correctly preserves child elements needed for parsing
+        strainer = SoupStrainer(['article', 'div', 'a'])
+        soup = BeautifulSoup(self.mock_html, 'html.parser', parse_only=strainer)
         article = soup.find('article')
+
+        # Ensure critical child tags are present
+        self.assertIsNotNone(article.find('header'), "Header tag lost by strainer")
+        self.assertIsNotNone(article.find('h2'), "H2 tag lost by strainer")
+        self.assertIsNotNone(article.find('time'), "Time tag lost by strainer")
+
         item = self.scraper.parse_article(article)
 
         self.assertEqual(item['title'], "Test Title")
@@ -60,6 +69,13 @@ class TestBlogScraper(unittest.TestCase):
         self.assertEqual(item['datetime'], "2023-01-01")
         self.assertEqual(item['author'], "Author Name")
         self.assertEqual(item['categories'], ["Category1"])
+
+    def test_get_next_page_with_strainer(self):
+        strainer = SoupStrainer(['article', 'div', 'a'])
+        soup = BeautifulSoup(self.mock_html, 'html.parser', parse_only=strainer)
+
+        next_page = self.scraper.get_next_page(soup)
+        self.assertEqual(next_page, "next_page_url")
 
     def test_database_insertion(self):
         item = {
