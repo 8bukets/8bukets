@@ -7,6 +7,7 @@ import re
 import argparse
 import logging
 import time
+import sys
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
@@ -19,6 +20,22 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
+
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+
+    @staticmethod
+    def colorize(text, color):
+        if sys.stdout.isatty():
+            return f"{color}{text}{Colors.ENDC}"
+        return text
 
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
@@ -258,6 +275,38 @@ class MarkPositionScraperAsync:
             logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
         except IOError as e:
             logger.error(f"Failed to save TXT: {e}")
+
+        self.print_summary(len(posts), len(sorted_links))
+
+    def print_summary(self, total_posts: int, unique_links_count: int):
+        """Prints a visual summary of the scraping run."""
+        width = 60
+
+        def print_line(content="", color=Colors.CYAN):
+            # Calculate visible length (strip ANSI codes for length check)
+            visible_len = len(content)
+            padding = width - visible_len - 4 # 4 for border chars and padding spaces
+            if padding < 0: padding = 0 # simple safety
+
+            line = f"│ {content}{' ' * padding} │"
+            print(Colors.colorize(line, color))
+
+        print()
+        print(Colors.colorize(f"┌{'─' * (width - 2)}┐", Colors.CYAN))
+        print_line(f"🎨 Scraper Summary", Colors.HEADER)
+        print(Colors.colorize(f"├{'─' * (width - 2)}┤", Colors.CYAN))
+
+        # Truncate filename if too long for layout
+        def trunc(s, max_len=30):
+            return s if len(s) <= max_len else s[:max_len-3] + "..."
+
+        print_line(f"📄 Pages Limit:     {self.max_pages if self.max_pages else 'Unlimited'}")
+        print_line(f"🔗 Total Posts:     {total_posts}")
+        print_line(f"🦄 Unique Links:    {unique_links_count}")
+        print_line(f"💾 JSON Output:     {trunc(self.output_json)}")
+        print_line(f"📊 CSV Output:      {trunc(self.output_csv)}")
+        print(Colors.colorize(f"└{'─' * (width - 2)}┘", Colors.CYAN))
+        print()
 
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
