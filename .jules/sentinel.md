@@ -1,0 +1,4 @@
+## 2024-05-23 - Prevent CSV Formula Injection
+**Vulnerability:** User-controlled data (like article titles or authors) starting with `=`, `+`, `-`, or `@` could be interpreted as formulas by spreadsheet software (Excel, LibreOffice) when opening the generated CSV file. This allows attackers to execute arbitrary code or exfiltrate data from the user's computer if they open the CSV.
+**Learning:** `csv.writer` handles quoting for CSV format validity (e.g., escaping commas), but it does NOT sanitize data against formula injection. Security sanitization must be applied explicitly before writing to the CSV.
+**Prevention:** Prepend a single quote `'` to any field starting with the dangerous characters (`=`, `+`, `-`, `@`). This forces the spreadsheet application to treat the cell content as a literal string.
