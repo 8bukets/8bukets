@@ -9,13 +9,9 @@ import logging
 import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
+from utils.log_formatter import setup_colored_logging
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
@@ -184,11 +180,11 @@ class MarkPositionScraperAsync:
                     page_idx = batch_start + idx
                     if page_posts is None:
                         # 404 or Error
-                        logger.info(f"Page {page_idx} returned 404 or empty. Stopping.")
+                        logger.warning(f"Page {page_idx} returned 404 or empty. Stopping.")
                         stop_detected = True
                         break # Don't process further pages in this batch effectively (though they were fetched)
                     elif len(page_posts) == 0:
-                        logger.info(f"Page {page_idx} has no articles. Stopping.")
+                        logger.warning(f"Page {page_idx} has no articles. Stopping.")
                         stop_detected = True
                         break
                     else:
@@ -260,6 +256,7 @@ class MarkPositionScraperAsync:
             logger.error(f"Failed to save TXT: {e}")
 
 def main():
+    setup_colored_logging()
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
     parser.add_argument("--json", default="links.json", help="Output JSON filename")
     parser.add_argument("--csv", default="links.csv", help="Output CSV filename")

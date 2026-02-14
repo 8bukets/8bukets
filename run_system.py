@@ -9,16 +9,13 @@ from agents.intelligence_agent import IntelligenceAgent
 from agents.creativity_agent import CreativityAgent
 from agents.content_agent import ContentAgent
 from agents.monetization_agent import MonetizationAgent
+from utils.log_formatter import setup_colored_logging
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
 logger = logging.getLogger("SystemOrchestrator")
 
 def main():
+    setup_colored_logging()
     logger.info("Starting Daily Autonomous Agent Run")
 
     # 1. Initialize Agents

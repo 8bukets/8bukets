@@ -4,13 +4,17 @@ from collections import Counter
 from urllib.parse import urlparse
 from datetime import datetime
 import sys
+from utils.log_formatter import setup_colored_logging
+import logging
+
+logger = logging.getLogger(__name__)
 
 def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             return json.load(f)
     except FileNotFoundError:
-        print(f"Error: File '{filepath}' not found.")
+        logger.error(f"File '{filepath}' not found.")
         sys.exit(1)
 
 def get_domain(url):
@@ -152,9 +156,10 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    logger.info(f"Report generated: {output_file}")
 
 if __name__ == "__main__":
+    setup_colored_logging()
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
     parser.add_argument("--input", default="links.json", help="Input JSON file")
     parser.add_argument("--output", default="REPORT.md", help="Output Markdown report file")
