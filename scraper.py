@@ -8,7 +8,30 @@ import logging
 import argparse
 import sys
 import sqlite3
+import os
+import re
 from datetime import datetime
+
+class Colors:
+    """ANSI color codes for CLI output."""
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+
+    @staticmethod
+    def style(text, color_code):
+        if sys.stdout.isatty() or os.environ.get('FORCE_COLOR'):
+            return f"{color_code}{text}{Colors.ENDC}"
+        return text
+
+    @staticmethod
+    def strip(text):
+        return re.sub(r'\x1b\[[0-9;]*m', '', text)
 
 # Configure logging
 logging.basicConfig(
@@ -269,8 +292,41 @@ class BlogScraper:
                 url = None
 
         self.save_json()
-        logger.info(f"Scraped {len(self.data)} articles in total.")
-        logger.info(f"New items added to database: {new_items_count}")
+
+        # UX Improvement: Summary Box
+        print(self.generate_summary_box(len(self.data), new_items_count))
+
+    def generate_summary_box(self, total, new_count):
+        width = 50
+        c = Colors
+
+        # Icons
+        icon_rocket = "🚀"
+        icon_new = "✨"
+
+        # Content
+        lines = [
+            f"{c.style('SCRAPER COMPLETE', c.BOLD + c.CYAN)}",
+            "",
+            f"{icon_rocket} Total Scraped:  {c.style(str(total), c.BOLD)}",
+            f"{icon_new} New Items:      {c.style(str(new_count), c.GREEN if new_count > 0 else c.WARNING)}"
+        ]
+
+        # Build Box
+        border = c.style("=" * width, c.BLUE)
+        box = [f"\n{border}"]
+        for line in lines:
+            # Calculate padding based on visible length
+            visible_len = len(c.strip(line))
+            # Adjust for emojis (approximate 2 chars wide)
+            emoji_count = len(re.findall(r'[🚀✨]', line))
+            visible_len += emoji_count
+
+            padding = " " * ((width - visible_len) // 2)
+            box.append(f"{padding}{line}")
+        box.append(f"{border}\n")
+
+        return "\n".join(box)
 
     def save_json(self):
         try:
