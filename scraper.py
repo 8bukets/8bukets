@@ -7,6 +7,7 @@ import re
 import argparse
 import logging
 import time
+import os
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
@@ -22,12 +23,20 @@ BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
-        self.output_json = output_json
-        self.output_csv = output_csv
-        self.output_txt = output_txt
+        self.output_json = self.validate_path(output_json)
+        self.output_csv = self.validate_path(output_csv)
+        self.output_txt = self.validate_path(output_txt)
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+
+    def validate_path(self, path: str) -> str:
+        """Ensure the path is within the current working directory to prevent path traversal."""
+        base_dir = os.getcwd()
+        full_path = os.path.abspath(path)
+        if os.path.commonpath([base_dir, full_path]) != base_dir:
+            raise ValueError(f"Security Error: Output path '{path}' attempts to traverse outside the working directory.")
+        return path
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -75,7 +84,7 @@ class MarkPositionScraperAsync:
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
         url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
         try:
-            async with session.get(url) as response:
+            async with session.get(url, timeout=30) as response:
                 if response.status == 404:
                     return None
                 response.raise_for_status()
