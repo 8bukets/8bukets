@@ -7,6 +7,8 @@ import re
 import argparse
 import logging
 import time
+import sys
+import os
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
@@ -28,6 +30,25 @@ class MarkPositionScraperAsync:
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+        self.stats = {'pages': 0, 'posts': 0, 'unique': 0, 'start': 0.0, 'duration': 0.0}
+
+    def print_summary(self):
+        if not sys.stdout.isatty() and not os.environ.get('FORCE_COLOR'): return
+        C = {'G': '\033[92m', 'B': '\033[94m', 'Y': '\033[93m', 'R': '\033[0m', 'D': '\033[90m'}
+        def tr(s, w): return s[:w-3] + "..." if len(s) > w else s
+
+        print(f"\n{C['B']}┌────────────────────────────────────────────────────────┐{C['R']}")
+        print(f"{C['B']}│                   {C['G']}Scrape Complete 🚀{C['B']}                   │{C['R']}")
+        print(f"{C['B']}├────────────────────────────────────────────────────────┤{C['R']}")
+        print(f"{C['B']}│ ⏱️  Duration:     {C['Y']}{self.stats['duration']:.2f}s{C['B']}{' ' * (37 - len(f'{self.stats['duration']:.2f}s'))}│{C['R']}")
+        print(f"{C['B']}│ 📄 Pages Scanned: {C['Y']}{self.stats['pages']:<38}{C['B']}│{C['R']}")
+        print(f"{C['B']}│ 📰 Posts Found:   {C['Y']}{self.stats['posts']:<38}{C['B']}│{C['R']}")
+        print(f"{C['B']}│ 🔗 Unique Links:  {C['Y']}{self.stats['unique']:<38}{C['B']}│{C['R']}")
+        print(f"{C['B']}├────────────────────────────────────────────────────────┤{C['R']}")
+        print(f"{C['B']}│ 📂 JSON: {C['D']}{tr(self.output_json, 42):<42}{C['B']}│{C['R']}")
+        print(f"{C['B']}│ 📊 CSV:  {C['D']}{tr(self.output_csv, 42):<42}{C['B']}│{C['R']}")
+        print(f"{C['B']}│ 📝 TXT:  {C['D']}{tr(self.output_txt, 42):<42}{C['B']}│{C['R']}")
+        print(f"{C['B']}└────────────────────────────────────────────────────────┘{C['R']}\n")
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -143,6 +164,7 @@ class MarkPositionScraperAsync:
         return page_posts
 
     async def scrape(self):
+        self.stats['start'] = time.time()
         all_posts = []
         page_num = 1
         sem = asyncio.Semaphore(self.concurrency)
@@ -206,7 +228,9 @@ class MarkPositionScraperAsync:
                     else:
                         all_posts.extend(page_posts)
                         batch_posts_count += len(page_posts)
+                        self.stats['pages'] += 1
 
+                self.stats['posts'] = len(all_posts)
                 if stop_detected:
                     break
 
@@ -219,6 +243,8 @@ class MarkPositionScraperAsync:
                 await asyncio.sleep(0.5)
 
         self.save_data(all_posts)
+        self.stats['duration'] = time.time() - self.stats['start']
+        self.print_summary()
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
@@ -267,6 +293,7 @@ class MarkPositionScraperAsync:
             with open(self.output_txt, 'w', encoding='utf-8') as f:
                 for link in sorted_links:
                     f.write(link + '\n')
+            self.stats['unique'] = len(sorted_links)
             logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
         except IOError as e:
             logger.error(f"Failed to save TXT: {e}")
