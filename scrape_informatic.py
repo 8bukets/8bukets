@@ -25,11 +25,31 @@ class Post:
 
 BASE_URL = "https://informaticmagazine.data.blog"
 
+class Colors:
+    CYAN, GREEN, YELLOW, RED = '\033[96m', '\033[92m', '\033[93m', '\033[91m'
+    BOLD, RESET = '\033[1m', '\033[0m'
+
+    @staticmethod
+    def style(text, color): return f"{color}{text}{Colors.RESET}"
+
+def print_summary(count, outfile, duration):
+    width = 50
+    # Width (50) - Borders (2) - Padding/Labels (17) - Space (1) = 30 chars for value
+    outfile_trunc = (outfile[:27] + '...') if len(outfile) > 30 else outfile
+
+    print(f"\n{Colors.CYAN}┌{'─' * (width - 2)}┐{Colors.RESET}")
+    print(f"{Colors.CYAN}│{Colors.RESET} {Colors.BOLD}Scrape Complete{Colors.RESET}{' ' * (width - 18)}{Colors.CYAN}│{Colors.RESET}")
+    print(f"{Colors.CYAN}├{'─' * (width - 2)}┤{Colors.RESET}")
+    print(f"{Colors.CYAN}│{Colors.RESET} Total Posts:    {Colors.GREEN}{count:<30}{Colors.RESET} {Colors.CYAN}│{Colors.RESET}")
+    print(f"{Colors.CYAN}│{Colors.RESET} Duration:       {Colors.YELLOW}{duration:.2f}s{Colors.RESET}{' ' * (30 - len(f'{duration:.2f}s'))} {Colors.CYAN}│{Colors.RESET}")
+    print(f"{Colors.CYAN}│{Colors.RESET} Output:         {Colors.BOLD}{outfile_trunc:<30}{Colors.RESET} {Colors.CYAN}│{Colors.RESET}")
+    print(f"{Colors.CYAN}└{'─' * (width - 2)}┘{Colors.RESET}\n")
+
 def configure_logging(verbose: bool):
-    level = logging.DEBUG if verbose else logging.INFO
     logging.basicConfig(
-        level=level,
-        format='%(asctime)s - %(levelname)s - %(message)s'
+        level=logging.DEBUG if verbose else logging.INFO,
+        format=f'%(asctime)s - {Colors.BOLD}%(levelname)s{Colors.RESET} - %(message)s',
+        stream=sys.stdout
     )
 
 def get_session():
@@ -132,6 +152,7 @@ def parse_post_html(post_soup, base_url: str) -> Post:
     )
 
 def scrape(output_file: str, max_pages: int = 0):
+    start_time = time.time()
     session = get_session()
     all_posts = []
     page = 1
@@ -142,18 +163,18 @@ def scrape(output_file: str, max_pages: int = 0):
             logging.info(f"Reached max pages limit ({max_pages}). Stopping.")
             break
 
-        logging.info(f"Scraping page {page}: {current_url}...")
+        logging.info(f"Scraping page {page}: {Colors.CYAN}{current_url}{Colors.RESET}...")
         try:
             response = session.get(current_url)
             response.raise_for_status()
         except requests.exceptions.RequestException as e:
-            logging.error(f"Error fetching {current_url}: {e}")
+            logging.error(f"{Colors.RED}Error fetching {current_url}: {e}{Colors.RESET}")
             break
 
         soup = BeautifulSoup(response.content, 'html.parser')
 
         posts = soup.find_all('article')
-        logging.info(f"Found {len(posts)} posts on page {page}.")
+        logging.info(f"Found {Colors.BOLD}{len(posts)}{Colors.RESET} posts on page {page}.")
 
         for post_soup in posts:
             try:
@@ -172,14 +193,17 @@ def scrape(output_file: str, max_pages: int = 0):
             current_url = None
             logging.info("No more pages found.")
 
+    duration = time.time() - start_time
     logging.info(f"Total posts scraped: {len(all_posts)}")
 
     try:
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump([asdict(p) for p in all_posts], f, indent=4, ensure_ascii=False)
-        logging.info(f"Saved to {output_file}")
+        logging.info(f"Saved to {Colors.GREEN}{output_file}{Colors.RESET}")
     except IOError as e:
-        logging.error(f"Failed to save output to {output_file}: {e}")
+        logging.error(f"{Colors.RED}Failed to save output to {output_file}: {e}{Colors.RESET}")
+
+    print_summary(len(all_posts), output_file, duration)
 
 def main():
     parser = argparse.ArgumentParser(description="Scrape informaticmagazine.data.blog")
