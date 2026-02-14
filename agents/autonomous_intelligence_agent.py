@@ -2,6 +2,7 @@ import os
 import json
 import logging
 import asyncio
+from datetime import datetime
 
 # Import Agents (Refactored)
 from agents.health_check_agent import HealthCheckAgent
@@ -18,19 +19,24 @@ logger = logging.getLogger("AutonomousIntelligenceAgent")
 
 class AutonomousIntelligenceAgent:
     def __init__(self, output_dir="results"):
-        self.output_dir = output_dir
-        if not os.path.exists(output_dir):
-            os.makedirs(output_dir)
+        # Create a daily timestamped subdirectory to organize reports
+        date_str = datetime.now().strftime("%Y-%m-%d")
+        self.output_dir = os.path.join(output_dir, date_str)
+
+        if not os.path.exists(self.output_dir):
+            os.makedirs(self.output_dir)
 
     async def run_pipeline(self):
         logger.info("Starting Autonomous Pipeline...")
 
         # 1. Scrape Data (Simulating 'Intelligence Gathering')
         logger.info("Step 1: Intelligence Gathering (Scraping)...")
+
+        # Save scraped data in the daily folder as well
         scraper = OracleNewsScraper(
-            output_json="links.json",
-            output_csv="links.csv",
-            output_txt="unique_links.txt"
+            output_json=os.path.join(self.output_dir, "links.json"),
+            output_csv=os.path.join(self.output_dir, "links.csv"),
+            output_txt=os.path.join(self.output_dir, "unique_links.txt")
         )
         await scraper.scrape()
 
