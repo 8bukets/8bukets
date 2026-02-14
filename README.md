@@ -27,12 +27,13 @@ A robust, asynchronous toolset for scraping and analyzing data from `https://mar
 *   Python 3.7+
 *   `aiohttp`
 *   `beautifulsoup4`
+*   `lxml` (for faster parsing)
 *   `requests` (legacy dependency, optional for analytics)
 
 Install dependencies:
 
 ```bash
-pip install aiohttp beautifulsoup4 requests
+pip install aiohttp beautifulsoup4 lxml requests
 ```
 
 ## Usage
