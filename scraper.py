@@ -7,6 +7,8 @@ import re
 import argparse
 import logging
 import time
+import sys
+import os
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
@@ -14,11 +16,32 @@ from urllib.parse import urlparse
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
+    datefmt='%H:%M:%S',
+    stream=sys.stdout
 )
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
+
+class Colors:
+    RESET = '\033[0m'
+    BOLD = '\033[1m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    MAGENTA = '\033[95m'
+    BLUE = '\033[94m'
+
+    @staticmethod
+    def strip(text):
+        return re.sub(r'\x1b\[[0-9;]*m', '', text)
+
+    @classmethod
+    def style(cls, text, color):
+        if sys.stdout.isatty() or os.environ.get('FORCE_COLOR'):
+            return f"{color}{text}{cls.RESET}"
+        return text
 
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
@@ -147,6 +170,7 @@ class MarkPositionScraperAsync:
         return page_posts
 
     async def scrape(self):
+        start_time = time.time()
         all_posts = []
         page_num = 1
         sem = asyncio.Semaphore(self.concurrency)
@@ -219,7 +243,7 @@ class MarkPositionScraperAsync:
                 # Small delay between batches
                 await asyncio.sleep(0.5)
 
-        self.save_data(all_posts)
+        self.save_data(all_posts, start_time)
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
@@ -228,12 +252,67 @@ class MarkPositionScraperAsync:
                 return await self.parse_page(html)
             return None
 
-    def save_data(self, posts: List[Dict]):
+    def print_summary(self, total_posts, unique_links_count, duration, files):
+        width = 50
+        # Helper to print a line with borders
+        def p(text, color=None, align='<'):
+            stripped = Colors.strip(text)
+            # Calculate visible length (len(text) includes color codes if passed directly,
+            # so we use stripped for length calc, but print original text)
+            # But wait, if text has color codes, f-string padding counts them as chars.
+            # We need to manually calculate padding.
+
+            visible_len = len(stripped)
+            # Some emojis are double width, this is a simple approx
+            # 📄 (1 char) but display width 2? In most monospaced fonts it's 2.
+            # Python len() says 1.
+            # Let's just assume 1 for now or add extra padding manually for emojis in the content string.
+
+            # Correction for specific emojis used
+            emoji_pad = 0
+            if '🚀' in text: emoji_pad += 1
+            if '📄' in text: emoji_pad += 1
+            if '🔗' in text: emoji_pad += 1
+            if '⏱️' in text: emoji_pad += 1 # ⏱️ is 2 chars len? '⏱️'.encode() -> \xe2\x8f\xf1\xfe\x0f
+            # Actually ⏱ is \u23f1 (len 1) + ️ \ufe0f (len 1).
+
+            padding = width - visible_len - 4 - emoji_pad # 4 for "│  " and " │"
+            if padding < 0: padding = 0
+
+            content = text
+            if color:
+                content = Colors.style(text, color)
+
+            print(f"{Colors.style('│', Colors.CYAN)} {content}{' ' * padding} {Colors.style('│', Colors.CYAN)}")
+
+        print()
+        print(Colors.style(f"╭{'─' * (width - 2)}╮", Colors.CYAN))
+
+        # Title
+        p("🚀 Scrape Completed Successfully!", Colors.BOLD + Colors.GREEN)
+        print(Colors.style(f"│ {'─' * (width - 4)} │", Colors.CYAN))
+
+        # Stats
+        p(f"📄 Total Posts:      {total_posts}")
+        p(f"🔗 Unique Links:     {unique_links_count}")
+        p(f"⏱️  Duration:         {duration:.2f}s")
+
+        print(Colors.style(f"│ {'─' * (width - 4)} │", Colors.CYAN))
+
+        # Files
+        for f in files:
+            p(f"💾 {f}", Colors.BLUE)
+
+        print(Colors.style(f"╰{'─' * (width - 2)}╯", Colors.CYAN))
+
+    def save_data(self, posts: List[Dict], start_time: float):
         # JSON
+        files_generated = []
         try:
             with open(self.output_json, 'w', encoding='utf-8') as f:
                 json.dump(posts, f, indent=4, ensure_ascii=False)
             logger.info(f"Saved {len(posts)} posts to {self.output_json}")
+            files_generated.append(self.output_json)
         except IOError as e:
             logger.error(f"Failed to save JSON: {e}")
 
@@ -253,6 +332,7 @@ class MarkPositionScraperAsync:
                         self.sanitize_for_csv(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
+            files_generated.append(self.output_csv)
         except IOError as e:
             logger.error(f"Failed to save CSV: {e}")
 
@@ -269,8 +349,12 @@ class MarkPositionScraperAsync:
                 for link in sorted_links:
                     f.write(link + '\n')
             logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
+            files_generated.append(self.output_txt)
         except IOError as e:
             logger.error(f"Failed to save TXT: {e}")
+
+        duration = time.time() - start_time
+        self.print_summary(len(posts), len(sorted_links), duration, files_generated)
 
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
