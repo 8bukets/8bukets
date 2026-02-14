@@ -29,16 +29,23 @@ class MarkPositionScraperAsync:
         self.concurrency = concurrency
         self.session = None
 
+    # Pre-compile regex for performance
+    # Bolt Optimization: Compile regex once to avoid re-compilation on every call
+    # \s matches whitespace including \xa0 (non-breaking space) in Python 3 string patterns
+    WHITESPACE_REGEX = re.compile(r'\s+')
+    URL_REGEX = re.compile(r'^https?://')
+
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
-        text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        # Bolt Optimization: Use pre-compiled regex and rely on \s matching \xa0
+        return self.WHITESPACE_REGEX.sub(' ', text).strip()
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
-        return re.match(r'^https?://', text.strip()) is not None
+        # Bolt Optimization: Use pre-compiled regex
+        return self.URL_REGEX.match(text.strip()) is not None
 
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
