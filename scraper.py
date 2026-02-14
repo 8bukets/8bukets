@@ -7,6 +7,7 @@ import re
 import argparse
 import logging
 import time
+import sys
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
@@ -14,11 +15,19 @@ from urllib.parse import urlparse
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
+    datefmt='%H:%M:%S',
+    stream=sys.stdout
 )
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
+
+class Colors:
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    BOLD = '\033[1m'
+    ENDC = '\033[0m'
 
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
@@ -28,6 +37,7 @@ class MarkPositionScraperAsync:
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+        self.start_time = time.time()
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -270,6 +280,27 @@ class MarkPositionScraperAsync:
             logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
         except IOError as e:
             logger.error(f"Failed to save TXT: {e}")
+
+        self.print_summary(len(posts))
+
+    def print_summary(self, posts_count):
+        elapsed = time.time() - self.start_time
+        c = Colors
+        time_str = f"{elapsed:.2f}s"
+
+        print(f"\n{c.CYAN}┌{'─'*40}┐{c.ENDC}")
+        print(f"{c.CYAN}│{c.ENDC} {c.BOLD}🚀 Scrape Completed!{c.ENDC}{' '*19}{c.CYAN}│{c.ENDC}")
+        print(f"{c.CYAN}│{c.ENDC}{' '*40}{c.CYAN}│{c.ENDC}")
+        print(f"{c.CYAN}│{c.ENDC} 📄 Posts:      {c.GREEN}{posts_count:<5}{c.ENDC}{' '*19}{c.CYAN}│{c.ENDC}")
+
+        time_padding = max(0, 40 - 17 - len(time_str))
+        print(f"{c.CYAN}│{c.ENDC} ⏱️  Time:       {c.YELLOW}{time_str}{c.ENDC}{' '*time_padding}{c.CYAN}│{c.ENDC}")
+
+        out_str = self.output_json
+        if len(out_str) > 23: out_str = out_str[:20] + "..."
+        out_padding = max(0, 40 - 16 - len(out_str))
+        print(f"{c.CYAN}│{c.ENDC} 💾 Output:     {out_str}{' '*out_padding}{c.CYAN}│{c.ENDC}")
+        print(f"{c.CYAN}└{'─'*40}┘{c.ENDC}\n")
 
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
