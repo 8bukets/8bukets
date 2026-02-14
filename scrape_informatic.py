@@ -1,5 +1,5 @@
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import time
 import logging
@@ -150,7 +150,11 @@ def scrape(output_file: str, max_pages: int = 0):
             logging.error(f"Error fetching {current_url}: {e}")
             break
 
-        soup = BeautifulSoup(response.content, 'html.parser')
+        # Optimization: Use SoupStrainer to parse only 'article' and 'div' tags.
+        # Note: SoupStrainer with html.parser preserves the entire subtree of matched tags,
+        # so child tags like h2, a, time, span, img inside 'article' or 'div' are correctly parsed.
+        strainer = SoupStrainer(['article', 'div'])
+        soup = BeautifulSoup(response.content, 'html.parser', parse_only=strainer)
 
         posts = soup.find_all('article')
         logging.info(f"Found {len(posts)} posts on page {page}.")
