@@ -9,14 +9,16 @@ import logging
 import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
+from utils.log_formatter import ColorFormatter
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
-logger = logging.getLogger(__name__)
+# Configure root logging for scraper
+root_logger = logging.getLogger()
+root_logger.setLevel(logging.INFO)
+handler = logging.StreamHandler()
+handler.setFormatter(ColorFormatter(datefmt='%H:%M:%S'))
+root_logger.addHandler(handler)
+
+logger = logging.getLogger("MarkPositionScraper")
 
 BASE_URL = "https://markposition.wordpress.com/"
 
