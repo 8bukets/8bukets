@@ -1,8 +1,29 @@
 import json
 import logging
 import argparse
+import os
+import sys
 from googlesearch import search
 from typing import List, Dict
+
+def validate_output_path(path: str) -> str:
+    """
+    Validates that the output path is within the current working directory.
+    """
+    abs_path = os.path.abspath(path)
+    cwd = os.getcwd()
+
+    # Use commonpath to check if abs_path is within cwd
+    # commonpath raises ValueError if paths are on different drives (Windows)
+    try:
+        common = os.path.commonpath([cwd, abs_path])
+    except ValueError:
+        raise ValueError(f"Output path {path} must be within the current working directory.")
+
+    if common != cwd:
+        raise ValueError(f"Output path {path} must be within the current working directory.")
+
+    return path
 
 def configure_logging(verbose: bool):
     level = logging.DEBUG if verbose else logging.INFO
@@ -42,6 +63,12 @@ def main():
     parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose logging")
 
     args = parser.parse_args()
+
+    try:
+        validate_output_path(args.output)
+    except ValueError as e:
+        print(f"Error: {e}")
+        sys.exit(1)
 
     configure_logging(args.verbose)
 
