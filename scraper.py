@@ -7,6 +7,8 @@ import re
 import argparse
 import logging
 import time
+import sys
+import os
 from typing import List, Dict, Optional, Set, Tuple
 from urllib.parse import urlparse
 
@@ -14,11 +16,30 @@ from urllib.parse import urlparse
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
+    datefmt='%H:%M:%S',
+    stream=sys.stdout
 )
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
+
+class Colors:
+    """ANSI color codes for CLI output."""
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    BOX = '\033[94m'  # Blue for box borders
+
+    @staticmethod
+    def style(text: str, *styles) -> str:
+        if not sys.stdout.isatty() and not os.environ.get('FORCE_COLOR'):
+            return text
+        return "".join(styles) + text + Colors.ENDC
 
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
@@ -59,17 +80,18 @@ class MarkPositionScraperAsync:
         except:
             return None
 
-    async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
+    async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Tuple[Optional[str], int]:
         url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
         try:
-            async with session.get(url) as response:
+            async with session.get(url, timeout=10) as response:
                 if response.status == 404:
-                    return None
+                    return None, 404
                 response.raise_for_status()
-                return await response.text()
-        except aiohttp.ClientError as e:
+                text = await response.text()
+                return text, response.status
+        except Exception as e:
             logger.error(f"Error fetching page {page_num}: {e}")
-            return None
+            return None, 0
 
     async def parse_page(self, html: str) -> List[Dict]:
         soup = BeautifulSoup(html, 'html.parser')
@@ -133,7 +155,37 @@ class MarkPositionScraperAsync:
 
         return page_posts
 
+    def print_summary(self, total_posts: int, unique_links: int, duration: float):
+        """Print a beautiful summary box."""
+        width = 50
+
+        # Helper to create lines
+        def make_line(label, value):
+            text_value = str(value)
+            # content: " label" + "spaces" + "value "
+            # Visible length inside borders = width
+            # We have " " (1) + label + padding + value + " " (1)
+            # padding = width - 1 - len(label) - len(value) - 1
+            padding = width - 2 - len(label) - len(text_value)
+            return f"{Colors.BOX}║{Colors.ENDC} {label}{' ' * max(0, padding)}{Colors.BOLD}{text_value}{Colors.ENDC} {Colors.BOX}║{Colors.ENDC}"
+
+        print(f"\n{Colors.BOX}╔{'═' * width}╗{Colors.ENDC}")
+        # Title centering
+        title = "🎉 Scrape Complete!"
+        # We need to center 'title' in 'width' space
+        padding_left = (width - len(title)) // 2
+        padding_right = width - len(title) - padding_left
+        print(f"{Colors.BOX}║{Colors.ENDC}{' ' * padding_left}{Colors.style(title, Colors.BOLD, Colors.GREEN)}{' ' * padding_right}{Colors.BOX}║{Colors.ENDC}")
+
+        print(f"{Colors.BOX}╠{'═' * width}╣{Colors.ENDC}")
+        print(make_line("📄 Total Posts:", total_posts))
+        print(make_line("🔗 Unique Links:", unique_links))
+        print(make_line("⏱️  Duration:", f"{duration:.2f}s"))
+        print(make_line("📁 Output:", self.output_json))
+        print(f"{Colors.BOX}╚{'═' * (width)}╝{Colors.ENDC}\n")
+
     async def scrape(self):
+        start_time = time.time()
         all_posts = []
 
         # Headers
@@ -165,12 +217,15 @@ class MarkPositionScraperAsync:
 
                 for task in done:
                     try:
-                        page_num, page_posts = await task
+                        page_num, page_posts, status_code = await task
 
                         if page_posts is None:
-                            # 404 or Error
-                            logger.info(f"Page {page_num} returned 404 or error. Stopping new scheduling.")
-                            stop_scheduling = True
+                            if status_code == 404:
+                                logger.info(f"Page {page_num} returned 404. End of content. Stopping new scheduling.")
+                                stop_scheduling = True
+                            else:
+                                logger.warning(f"Page {page_num} failed (Status: {status_code}). Continuing...")
+                                # Do NOT stop scheduling for transient errors
                         elif len(page_posts) == 0:
                             logger.info(f"Page {page_num} has no articles. Stopping new scheduling.")
                             stop_scheduling = True
@@ -179,9 +234,6 @@ class MarkPositionScraperAsync:
                             results.append((page_num, page_posts))
                     except Exception as e:
                         logger.error(f"Task failed: {e}")
-                        # If a task fails unpredictably, we generally might want to continue or retry.
-                        # For now, we assume it's a transient error or a bad page, but don't stop everything unless necessary.
-                        # But typically consistent failure implies we should stop or retry.
                         pass
 
                 # Schedule new tasks if slot is available and not stopping
@@ -200,16 +252,21 @@ class MarkPositionScraperAsync:
         for _, posts in results:
             all_posts.extend(posts)
 
-        self.save_data(all_posts)
+        unique_links_count = self.save_data(all_posts)
+        duration = time.time() - start_time
 
-    async def fetch_and_parse(self, session, page_num) -> Tuple[int, Optional[List[Dict]]]:
-        html = await self.fetch_page(session, page_num)
+        # Flush stdout to ensure logs are printed before summary
+        sys.stdout.flush()
+        self.print_summary(len(all_posts), unique_links_count, duration)
+
+    async def fetch_and_parse(self, session, page_num) -> Tuple[int, Optional[List[Dict]], int]:
+        html, status = await self.fetch_page(session, page_num)
         if html:
             posts = await self.parse_page(html)
-            return page_num, posts
-        return page_num, None
+            return page_num, posts, status
+        return page_num, None, status
 
-    def save_data(self, posts: List[Dict]):
+    def save_data(self, posts: List[Dict]) -> int:
         # JSON
         try:
             with open(self.output_json, 'w', encoding='utf-8') as f:
@@ -224,7 +281,8 @@ class MarkPositionScraperAsync:
                 writer = csv.writer(f)
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
-                    writer.writerow([
+                    # Sanitize CSV fields starting with special characters
+                    row = [
                         post.get('title', ''),
                         post.get('date', ''),
                         post.get('author', ''),
@@ -232,7 +290,16 @@ class MarkPositionScraperAsync:
                         post.get('external_link', ''),
                         post.get('domain', ''),
                         post.get('post_url', '')
-                    ])
+                    ]
+
+                    sanitized_row = []
+                    for field in row:
+                        if field and isinstance(field, str) and field.startswith(('=', '+', '-', '@')):
+                            sanitized_row.append("'" + field)
+                        else:
+                            sanitized_row.append(field)
+
+                    writer.writerow(sanitized_row)
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
             logger.error(f"Failed to save CSV: {e}")
@@ -252,6 +319,8 @@ class MarkPositionScraperAsync:
             logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
         except IOError as e:
             logger.error(f"Failed to save TXT: {e}")
+
+        return len(unique_links)
 
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
