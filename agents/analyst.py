@@ -16,8 +16,8 @@ class AnalystAgent(Agent):
             cursor.execute("SELECT COUNT(*) FROM posts")
             total_posts = cursor.fetchone()[0]
 
-            yesterday = datetime.now() - timedelta(days=1)
-            cursor.execute("SELECT title FROM posts WHERE scraped_at >= ?", (yesterday,))
+            two_weeks_ago = datetime.now() - timedelta(weeks=2)
+            cursor.execute("SELECT title FROM posts WHERE scraped_at >= ?", (two_weeks_ago,))
             new_titles = [row[0] for row in cursor.fetchall()]
 
             self.results['total_posts'] = total_posts

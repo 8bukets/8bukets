@@ -4,6 +4,7 @@ import logging
 from datetime import datetime, timedelta
 from collections import Counter
 import re
+import html
 
 # Configure logging
 logging.basicConfig(
@@ -19,8 +20,8 @@ class ReportGenerator:
         if not os.path.exists(self.report_dir):
             os.makedirs(self.report_dir)
 
-    def generate_daily_report(self):
-        logger.info("Generating daily report...")
+    def generate_biweekly_report(self):
+        logger.info("Generating bi-weekly report...")
 
         try:
             with sqlite3.connect(self.db_name) as conn:
@@ -30,10 +31,10 @@ class ReportGenerator:
                 cursor.execute("SELECT COUNT(*) FROM posts")
                 total_posts = cursor.fetchone()[0]
 
-                yesterday = datetime.now() - timedelta(days=1)
+                two_weeks_ago = datetime.now() - timedelta(weeks=2)
 
                 # New posts
-                cursor.execute("SELECT title, post_url, scraped_at FROM posts WHERE scraped_at >= ? AND id NOT IN (SELECT post_id FROM changes)", (yesterday,))
+                cursor.execute("SELECT title, post_url, scraped_at FROM posts WHERE scraped_at >= ? AND id NOT IN (SELECT post_id FROM changes)", (two_weeks_ago,))
                 new_posts = cursor.fetchall()
 
                 # Updated posts
@@ -42,15 +43,15 @@ class ReportGenerator:
                     FROM changes c
                     JOIN posts p ON c.post_id = p.id
                     WHERE c.changed_at >= ?
-                """, (yesterday,))
+                """, (two_weeks_ago,))
                 updated_posts = cursor.fetchall()
 
                 # Latest SEO rankings
-                cursor.execute("SELECT query, rank, title, url, checked_at FROM rankings WHERE checked_at >= ? ORDER BY checked_at DESC", (yesterday,))
+                cursor.execute("SELECT query, rank, title, url, checked_at FROM rankings WHERE checked_at >= ? ORDER BY checked_at DESC", (two_weeks_ago,))
                 rankings = cursor.fetchall()
 
-                # Previous SEO rankings (older than 24h)
-                cursor.execute("SELECT query, rank, checked_at FROM rankings WHERE checked_at < ? ORDER BY checked_at DESC", (yesterday,))
+                # Previous SEO rankings (older than 2 weeks)
+                cursor.execute("SELECT query, rank, checked_at FROM rankings WHERE checked_at < ? ORDER BY checked_at DESC", (two_weeks_ago,))
                 past_rankings = cursor.fetchall()
 
         except sqlite3.Error as e:
@@ -61,7 +62,7 @@ class ReportGenerator:
         report_filename = os.path.join(self.report_dir, f"report_{report_date}.md")
 
         with open(report_filename, "w", encoding="utf-8") as f:
-            f.write(f"# Daily Scraper Report - {report_date}\n\n")
+            f.write(f"# Bi-weekly Scraper Report - {report_date}\n\n")
             f.write(f"**Total Posts:** {total_posts}\n")
             f.write(f"**New Posts:** {len(new_posts)}\n")
             f.write(f"**Updated Posts:** {len(updated_posts)}\n\n")
@@ -84,7 +85,7 @@ class ReportGenerator:
                 f.write("| Keyword | Frequency |\n")
                 f.write("|---|---|\n")
                 for word, count in keywords:
-                    f.write(f"| {word} | {count} |\n")
+                    f.write(f"| {html.escape(str(word))} | {count} |\n")
                 f.write("\n")
 
             # SEO Rankings Trend
@@ -94,7 +95,7 @@ class ReportGenerator:
                 f.write("|---|---|---|---|---|\n")
                 trends = self.analyze_seo_trends(rankings, past_rankings)
                 for item in trends:
-                    f.write(f"| {item['query']} | {item['rank']} | {item['change']} | {item['date']} |\n")
+                    f.write(f"| {html.escape(str(item['query']))} | {item['rank']} | {item['change']} | {item['date']} |\n")
             else:
                 f.write("No SEO ranking data for today.\n\n")
 
@@ -105,8 +106,8 @@ class ReportGenerator:
                 f.write("|---|---|---|---|---|\n")
                 for u in updated_posts:
                     title, url, field, old, new, time = u
-                    title = title.replace("|", "-")
-                    f.write(f"| [{title}]({url}) | {field} | {old} | {new} | {time} |\n")
+                    title = str(title).replace("|", "-")
+                    f.write(f"| [{html.escape(title)}]({html.escape(str(url))}) | {html.escape(str(field))} | {html.escape(str(old))} | {html.escape(str(new))} | {time} |\n")
                 f.write("\n")
 
             # New Posts Section
@@ -116,8 +117,8 @@ class ReportGenerator:
                 f.write("|---|---|---|\n")
                 for post in new_posts:
                     title, url, scraped_at = post
-                    title = title.replace("|", "-") if title else "No Title"
-                    f.write(f"| {title} | {scraped_at} | [View]({url}) |\n")
+                    title = str(title).replace("|", "-") if title else "No Title"
+                    f.write(f"| {html.escape(title)} | {scraped_at} | [View]({html.escape(str(url))}) |\n")
             else:
                 f.write("No new posts scraped in the last 24 hours.\n")
 
@@ -187,4 +188,4 @@ class ReportGenerator:
 
 if __name__ == "__main__":
     reporter = ReportGenerator()
-    reporter.generate_daily_report()
+    reporter.generate_biweekly_report()
