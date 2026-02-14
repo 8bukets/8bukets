@@ -7,6 +7,7 @@ import ipaddress
 import logging
 import argparse
 import sys
+import os
 import sqlite3
 from datetime import datetime
 
@@ -271,6 +272,51 @@ class BlogScraper:
         self.save_json()
         logger.info(f"Scraped {len(self.data)} articles in total.")
         logger.info(f"New items added to database: {new_items_count}")
+        self.print_summary(new_items_count)
+
+    def print_summary(self, new_items_count):
+        """Prints a visual summary of the scraping session."""
+        total = len(self.data)
+
+        use_color = sys.stdout.isatty() or os.environ.get('FORCE_COLOR')
+
+        GREEN = '\033[92m' if use_color else ''
+        CYAN = '\033[96m' if use_color else ''
+        RESET = '\033[0m' if use_color else ''
+        BOLD = '\033[1m' if use_color else ''
+
+        width = 40
+
+        def row(label, value_str, color=None):
+            display_value = f"{color}{value_str}{RESET}" if (color and use_color) else value_str
+            # Calculation based on fixed width 40:
+            # "│ " (2) + label(19) + value(19) + " │" (2) = 42 (matches outer border length ┌ + 40 + ┐ = 42)
+            # Actually, "│" + " " + label(19) + value(19) + " " + "│"
+
+            p_val = 19 - len(str(value_str))
+            if p_val < 0: p_val = 0
+
+            return f"{CYAN}│{RESET} {label.ljust(19)}{display_value}{' ' * p_val} {CYAN}│{RESET}"
+
+        # Helper for truncation
+        def truncate(s, l=18):
+            return (s[:l-3] + '...') if len(s) > l else s
+
+        # Header calculation
+        title = "Scraping Summary"
+        pad_len = (width - len(title)) // 2
+        extra = (width - len(title)) % 2
+
+        print(f"\n{CYAN}┌{'─' * width}┐{RESET}")
+        print(f"{CYAN}│{RESET}{' ' * pad_len}{BOLD}{title}{RESET}{' ' * (pad_len + extra)}{CYAN}│{RESET}")
+        print(f"{CYAN}├{'─' * width}┤{RESET}")
+
+        print(row("Total Articles:", total))
+        print(row("New Items Added:", new_items_count, color=GREEN))
+        print(row("Output JSON:", truncate(self.output_json)))
+        print(row("Database:", truncate(self.db_name)))
+
+        print(f"{CYAN}└{'─' * width}┘{RESET}\n")
 
     def save_json(self):
         try:
