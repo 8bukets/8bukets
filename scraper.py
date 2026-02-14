@@ -6,15 +6,18 @@ import csv
 import re
 import argparse
 import logging
+import sys
 from typing import List, Dict, Optional
 from urllib.parse import urlparse
 from datetime import datetime
 
 # Configure logging
+# Use sys.stdout to ensure synchronization with print statements in CLI
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
+    datefmt='%H:%M:%S',
+    stream=sys.stdout
 )
 logger = logging.getLogger(__name__)
 
