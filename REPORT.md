@@ -1,6 +1,6 @@
 # Markposition Analytics Report
 
-**Generated on:** 2025-12-23 19:44:50
+**Generated on:** 2025-12-25 08:13:07
 
 ## General Statistics
 - **Total Posts:** 39
@@ -19,9 +19,9 @@
 | Announcement | 39 |
 
 ## Posts by Year
-| Year | Count |
-| :--- | :---: |
-| 2025 | 39 |
+| Year | Count | Distribution |
+| :--- | :---: | :--- |
+| 2025 | 39 | ████████████████████ |
 
 ## Authors
 - Oracle: 39 posts

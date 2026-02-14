@@ -61,11 +61,13 @@ def generate_report(data, output_file):
         end_date = dates[-1].strftime('%Y-%m-%d')
         years = [d.year for d in dates]
         year_counts = Counter(years).most_common()
+        max_year_count = year_counts[0][1] if year_counts else 0
         year_counts.sort(key=lambda x: x[0], reverse=True)
     else:
         start_date = "N/A"
         end_date = "N/A"
         year_counts = []
+        max_year_count = 0
 
     # 4. Author Analysis
     authors = [p.get('author') for p in data if p.get('author')]
@@ -94,10 +96,12 @@ def generate_report(data, output_file):
         md.append(f"| {cat} | {count} |")
 
     md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Year | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
     for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+        bar_len = int((count / max_year_count) * 20) if max_year_count > 0 else 0
+        bar = '█' * bar_len
+        md.append(f"| {year} | {count} | {bar} |")
 
     md.append("\n## Authors")
     for author, count in author_counts:
