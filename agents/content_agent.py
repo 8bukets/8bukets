@@ -5,7 +5,7 @@ class ContentAgent(BaseAgent):
     def __init__(self):
         super().__init__("Content Agent")
 
-    def run(self, data):
+    def run(self, data, context=None):
         self.log("Drafting content...")
 
         # Pick a random interesting article to feature

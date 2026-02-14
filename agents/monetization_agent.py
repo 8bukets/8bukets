@@ -4,7 +4,7 @@ class MonetizationAgent(BaseAgent):
     def __init__(self):
         super().__init__("Monetization Agent")
 
-    def run(self, data):
+    def run(self, data, context=None):
         self.log("Analyzing monetization opportunities...")
 
         ad_keywords = ['ads', 'advertising', 'affiliate', 'revenue', 'monetize', 'shop', 'store']

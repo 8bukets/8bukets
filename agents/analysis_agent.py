@@ -5,7 +5,7 @@ class AnalysisAgent(BaseAgent):
     def __init__(self):
         super().__init__("Analysis Agent")
 
-    def run(self, data):
+    def run(self, data, context=None):
         self.log("Starting analysis...")
         total_posts = len(data)
 

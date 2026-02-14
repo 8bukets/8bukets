@@ -5,7 +5,7 @@ class CreativityAgent(BaseAgent):
     def __init__(self):
         super().__init__("Creativity Agent")
 
-    def run(self, data):
+    def run(self, data, context=None):
         self.log("Brainstorming creative ideas...")
 
         ideas = [

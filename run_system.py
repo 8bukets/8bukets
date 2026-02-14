@@ -8,6 +8,7 @@ from agents.content_agent import ContentAgent
 from agents.health_check_agent import HealthCheckAgent
 from agents.monetization_agent import MonetizationAgent
 from agents.creativity_agent import CreativityAgent
+from agents.ads_agent import AdsAgent
 
 def load_data(filepath="links.json"):
     try:
@@ -25,22 +26,44 @@ def main():
         sys.exit(1)
 
     # Instantiate agents
-    agents = [
+    # Stage 1: Insight Generators (Research, Intelligence, Analysis, Health, Monetization)
+    insight_agents = [
         AnalysisAgent(),
         ResearchAgent(),
         IntelligenceAgent(),
-        ContentAgent(),
         HealthCheckAgent(),
-        MonetizationAgent(),
+        MonetizationAgent()
+    ]
+
+    # Stage 2: Action Takers (Content, Ads, Creativity) - These consume context
+    action_agents = [
+        ContentAgent(),
+        AdsAgent(),
         CreativityAgent()
     ]
+
+    # Context to share between agents
+    context = {}
 
     # Run agents and collect output
     full_report = f"# Daily Autonomous Agent Report - {datetime.date.today()}\n\n"
 
-    for agent in agents:
+    # Run Stage 1
+    print("--- Running Stage 1: Insights ---")
+    for agent in insight_agents:
         try:
-            output = agent.run(data)
+            output = agent.run(data, context)
+            context[agent.name] = output # Share output in context
+            full_report += f"{output}\n---\n"
+        except Exception as e:
+            print(f"Error running {agent.name}: {e}")
+            full_report += f"### {agent.name}\nError: {e}\n\n---\n"
+
+    # Run Stage 2
+    print("--- Running Stage 2: Actions (with Context) ---")
+    for agent in action_agents:
+        try:
+            output = agent.run(data, context)
             full_report += f"{output}\n---\n"
         except Exception as e:
             print(f"Error running {agent.name}: {e}")
