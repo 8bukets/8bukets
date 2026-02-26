@@ -9,3 +9,9 @@ rich
 python-dotenv
 flask
 markdown
+celery
+redis
+faiss-cpu
+sentence-transformers
+scikit-learn
+pandas
