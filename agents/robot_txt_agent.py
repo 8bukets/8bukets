@@ -1,12 +1,13 @@
 from .base_agent import BaseAgent
 from urllib.parse import urlparse
-import logging
+import aiohttp
+import asyncio
 
 class RobotTxtAgent(BaseAgent):
     def __init__(self):
         super().__init__("RobotTxtAgent")
 
-    def run(self, data: list, context: dict) -> dict:
+    async def run(self, data: list, context: dict) -> dict:
         self.logger.info("Checking robots.txt compliance and secrets...")
 
         # Determine base URL from data or default
@@ -21,7 +22,7 @@ class RobotTxtAgent(BaseAgent):
         robots_url = f"{base_url}/robots.txt"
         self.logger.info(f"Fetching {robots_url}")
 
-        robots_content = self.fetch_robots_sync(robots_url)
+        robots_content = await self.fetch_robots_async(robots_url)
 
         disallowed = []
         sitemaps = []
@@ -52,17 +53,13 @@ class RobotTxtAgent(BaseAgent):
             }
         }
 
-    def fetch_robots_sync(self, url):
-        # Using requests for synchronous fetching within the pipeline
+    async def fetch_robots_async(self, url):
         try:
-            import requests
-            resp = requests.get(url, timeout=10)
-            if resp.status_code == 200:
-                return resp.text
-            return None
-        except ImportError:
-            self.logger.error("Request module not found. Skipping robots.txt fetch.")
-            return None
+            async with aiohttp.ClientSession() as session:
+                async with session.get(url, timeout=10) as resp:
+                    if resp.status == 200:
+                        return await resp.text()
+                    return None
         except Exception as e:
             self.logger.error(f"Failed to fetch robots.txt: {e}")
             return None

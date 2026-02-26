@@ -4,7 +4,7 @@ class AdsAgent(BaseAgent):
     def __init__(self):
         super().__init__("AdsAgent")
 
-    def run(self, data: list, context: dict) -> dict:
+    async def run(self, data: list, context: dict) -> dict:
         self.logger.info("Generating Ad Campaigns...")
 
         # Collaborative dependency: Needs Targeting Profile

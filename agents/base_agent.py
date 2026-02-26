@@ -46,7 +46,7 @@ class BaseAgent(ABC):
         return full_mem.get(self.name, {}).get(key, default)
 
     @abstractmethod
-    def run(self, data: list, context: dict) -> dict:
+    async def run(self, data: list, context: dict) -> dict:
         """
         Run the agent's task.
         :param data: The raw scraped data (list of dicts).

@@ -4,7 +4,7 @@ class ResearchAgent(BaseAgent):
     def __init__(self):
         super().__init__("ResearchAgent")
 
-    def run(self, data: list, context: dict) -> dict:
+    async def run(self, data: list, context: dict) -> dict:
         self.logger.info("Running Research...")
 
         # In a real system, this would define search queries or fetch external data.

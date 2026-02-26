@@ -4,3 +4,6 @@
 ## 2026-02-26 - urlparse behavior for invalid URLs
 **Learning:** `urllib.parse.urlparse` can return an empty string for `netloc` if the input is not a proper URL (e.g., 'not a url').
 **Action:** Always check if the extracted domain is truthy before returning it, or return `None` explicitly if an empty string is not desired.
+## 2026-02-26 - Asynchronous Agent Pipeline
+**Learning:** For systems where individual components (like agents) perform network I/O, an asynchronous pipeline is significantly more efficient.
+**Action:** Transitioned the agent ecosystem to fully async/await, standardizing on aiohttp for all network requests (including Robots.txt check) to reduce library bloat and improve concurrency.

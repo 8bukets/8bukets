@@ -1,4 +1,5 @@
 import argparse
+import asyncio
 import time
 import json
 import os
@@ -102,7 +103,7 @@ def generate_daily_report(context, filename):
     except IOError as e:
         logger.error(f"Failed to write report: {e}")
 
-def run_cycle():
+async def run_cycle():
     logger.info("=== Starting Daily Autonomous Cycle ===")
 
     # 1. Scrape
@@ -138,7 +139,7 @@ def run_cycle():
     for agent in agents:
         try:
             # Collaboration: Each agent receives the full context accumulated so far
-            result = agent.run(data, context)
+            result = await agent.run(data, context)
             if result:
                 context.update(result)
         except Exception as e:
@@ -150,7 +151,7 @@ def run_cycle():
 
     logger.info("=== Cycle Complete ===")
 
-def main():
+async def main_async():
     parser = argparse.ArgumentParser(description="Autonomous Agent System")
     parser.add_argument("--loop", action="store_true", help="Run continuously every 24h")
     args = parser.parse_args()
@@ -159,13 +160,16 @@ def main():
         logger.info("System starting in LOOP mode.")
         try:
             while True:
-                run_cycle()
+                await run_cycle()
                 logger.info("Sleeping for 24 hours...")
-                time.sleep(86400) # 24 hours
+                await asyncio.sleep(86400) # 24 hours
         except KeyboardInterrupt:
             logger.info("Loop interrupted by user.")
     else:
-        run_cycle()
+        await run_cycle()
+
+def main():
+    asyncio.run(main_async())
 
 if __name__ == "__main__":
     main()

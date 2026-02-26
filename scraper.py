@@ -62,15 +62,25 @@ class MarkPositionScraperAsync:
 
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
         url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
-        try:
-            async with session.get(url) as response:
-                if response.status == 404:
+        max_retries = 3
+        retry_delay = 1
+
+        for attempt in range(max_retries):
+            try:
+                async with session.get(url) as response:
+                    if response.status == 404:
+                        return None
+                    response.raise_for_status()
+                    return await response.text()
+            except (aiohttp.ClientError, asyncio.TimeoutError) as e:
+                if attempt < max_retries - 1:
+                    wait_time = retry_delay * (2 ** attempt)
+                    logger.warning(f"Error fetching page {page_num} (attempt {attempt + 1}/{max_retries}): {e}. Retrying in {wait_time}s...")
+                    await asyncio.sleep(wait_time)
+                else:
+                    logger.error(f"Failed to fetch page {page_num} after {max_retries} attempts: {e}")
                     return None
-                response.raise_for_status()
-                return await response.text()
-        except aiohttp.ClientError as e:
-            logger.error(f"Error fetching page {page_num}: {e}")
-            return None
+        return None
 
     async def parse_page(self, html: str) -> List[Dict]:
         soup = BeautifulSoup(html, 'html.parser')

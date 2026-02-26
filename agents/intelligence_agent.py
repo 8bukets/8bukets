@@ -4,7 +4,7 @@ class IntelligenceAgent(BaseAgent):
     def __init__(self):
         super().__init__("IntelligenceAgent")
 
-    def run(self, data: list, context: dict) -> dict:
+    async def run(self, data: list, context: dict) -> dict:
         self.logger.info("Running Intelligence...")
 
         # Synthesize findings
