@@ -38,4 +38,7 @@ COPY . .
 # Ensure data and results directories exist
 RUN mkdir -p data results
 
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+  CMD python3 -c "import os; exit(0 if os.path.exists('data/memory.db') else 1)"
+
 CMD ["python", "run_system.py"]

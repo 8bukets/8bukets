@@ -10,7 +10,7 @@ class BrowserTestAgent(BaseAgent):
     async def run(self, data: list, context: dict) -> dict:
         self.logger.info("Running Browser Verification Test...")
 
-        url = "https://markposition.wordpress.com/"
+        url = os.getenv("BASE_URL", "https://markposition.wordpress.com/")
         screenshot_path = f"results/browser_verification_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
 
         try:

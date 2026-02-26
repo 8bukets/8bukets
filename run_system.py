@@ -4,6 +4,7 @@ import aiohttp
 import time
 import json
 import os
+import sys
 import subprocess
 import logging
 from datetime import datetime
@@ -45,7 +46,7 @@ def run_scraper():
     logger.info("Starting Scraper...")
     try:
         result = subprocess.run(
-            ["python3", "scraper.py", "--limit", "5"],
+            [sys.executable, "scraper.py", "--limit", "5"],
             capture_output=True,
             text=True
         )
