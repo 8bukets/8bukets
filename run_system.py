@@ -36,9 +36,7 @@ else:
     log_handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s', datefmt='%H:%M:%S'))
 
 logger = logging.getLogger("SystemOrchestrator")
-logger.addHandler(log_handler)
-logger.setLevel(logging.INFO)
-# Also apply to other loggers
+# Set up root logger to use our handler, and don't add it specifically to child
 logging.getLogger().handlers = [log_handler]
 logging.getLogger().setLevel(logging.INFO)
 

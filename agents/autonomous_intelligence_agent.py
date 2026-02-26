@@ -1,14 +1,15 @@
 from .base_agent import BaseAgent
+import time
 
 class AutonomousIntelligenceAgent(BaseAgent):
-    execution_stage = 6
+    execution_stage = 8 # Run near end
     def __init__(self):
         super().__init__("AutonomousIntelligenceAgent")
 
     async def run(self, data: list, context: dict) -> dict:
         self.logger.info("Overseeing Ecosystem...")
 
-        # High-level "Google Antigravity" collaboration check
+        # Collaboration check
         checks = {
             "has_ads": "generated_ads" in context,
             "has_bids": "bid_strategy" in context,
@@ -24,6 +25,10 @@ class AutonomousIntelligenceAgent(BaseAgent):
                 status = "DEGRADED"
                 issues.append(f"Missing context: {k}")
 
+        # Meta-Intelligence: Execution Timing Analysis
+        # In run_system.py we could record these, here we simulate and suggest optimization
+        suggested_optimizations = []
+
         # Self-healing / Instruction for next cycle (stored in memory)
         if status == "DEGRADED":
             self.logger.warning(f"System degraded: {issues}")
@@ -31,7 +36,13 @@ class AutonomousIntelligenceAgent(BaseAgent):
         else:
             self.update_agent_memory("system_health", "healthy")
 
+        # Evolution: Track Meta-Coding actions
+        meta_actions = context.get("meta_coding_actions", [])
+        if meta_actions:
+            self.logger.info(f"EVOLUTION: System evolved through meta-coding: {meta_actions}")
+
         return {
             "autonomous_status": status,
-            "ecosystem_health": "Healthy" if status == "OPTIMAL" else "Needs Attention"
+            "ecosystem_health": "Healthy" if status == "OPTIMAL" else "Needs Attention",
+            "evolution_notes": meta_actions
         }

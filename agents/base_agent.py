@@ -21,7 +21,6 @@ class BaseAgent(ABC):
         self.name = name
         self.session = session
         self.logger = logging.getLogger(name)
-        logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
     def _get_db_session(self):
         os.makedirs(os.path.dirname(MEMORY_FILE), exist_ok=True)
