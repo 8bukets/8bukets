@@ -25,6 +25,8 @@ class BaseAgent(ABC):
     def save_memory(self, memory: dict):
         """Save global memory to disk."""
         try:
+            # Ensure directory exists
+            os.makedirs(os.path.dirname(MEMORY_FILE), exist_ok=True)
             with open(MEMORY_FILE, 'w', encoding='utf-8') as f:
                 json.dump(memory, f, indent=4)
         except Exception as e:

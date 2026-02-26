@@ -1,2 +1,8 @@
 __pycache__/
 *.pyc
+links.json
+links.csv
+unique_links.txt
+data/
+results/DAILY_REPORT_*.md
+REPORT.md

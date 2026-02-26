@@ -31,7 +31,8 @@ def get_domain(url):
     if not url:
         return None
     try:
-        return urlparse(url).netloc.replace('www.', '')
+        domain = urlparse(url).netloc.replace('www.', '')
+        return domain if domain else None
     except:
         return None
 
