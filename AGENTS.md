@@ -19,6 +19,7 @@ Agents execute in a pipeline where each agent can read from and contribute to a 
 - **Research/Intelligence Agents**: Synthesize deeper insights.
 - **Targeting/Ads/Bid Agents**: Build marketing strategies.
 - **ContentAgent**: Generates final content drafts.
+- **BrowserTestAgent**: Performs automated UI verification using Playwright.
 
 ## Persistent Memory
 

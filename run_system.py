@@ -21,6 +21,7 @@ from agents.robot_txt_agent import RobotTxtAgent
 from agents.targeting_agent import TargetingAgent
 from agents.ads_agent import AdsAgent
 from agents.bid_agent import BidAgent
+from agents.browser_test_agent import BrowserTestAgent
 from agents.autonomous_intelligence_agent import AutonomousIntelligenceAgent
 
 # Configure Logging
@@ -130,6 +131,7 @@ async def run_cycle():
         BidAgent(),            # New: Depends on Targeting
         MonetizationAgent(),
         ContentAgent(),
+        BrowserTestAgent(),    # New: Automated UI Verification
         AutonomousIntelligenceAgent() # New: Overseer
     ]
 

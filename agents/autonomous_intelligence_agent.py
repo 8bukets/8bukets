@@ -12,7 +12,8 @@ class AutonomousIntelligenceAgent(BaseAgent):
             "has_ads": "generated_ads" in context,
             "has_bids": "bid_strategy" in context,
             "has_persona": "targeting_profile" in context,
-            "has_robots": "robots_txt" in context
+            "has_robots": "robots_txt" in context,
+            "has_browser_test": "browser_test" in context
         }
 
         status = "OPTIMAL"
