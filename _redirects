@@ -1,0 +1,4 @@
+# Basic redirects
+# If the dashboard is intended to be static, we might redirect to a main report
+/report/*  /results/:splat  200
+/evolution /SYSTEM_EVOLUTION.md 200
