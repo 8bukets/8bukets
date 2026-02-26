@@ -8,30 +8,38 @@ import subprocess
 import logging
 from datetime import datetime
 
-# Import Agents
-from agents.health_check_agent import HealthCheckAgent
-from agents.analysis_agent import AnalysisAgent
-from agents.research_agent import ResearchAgent
-from agents.intelligence_agent import IntelligenceAgent
-from agents.monetization_agent import MonetizationAgent
-from agents.creativity_agent import CreativityAgent
-from agents.content_agent import ContentAgent
+import importlib
+import pkgutil
+from rich.console import Console
+from rich.table import Table
+from rich.live import Live
+from rich.progress import Progress, SpinnerColumn, TextColumn
+import agents
+from agents.base_agent import BaseAgent
 
-# New Autonomous Agents
-from agents.robot_txt_agent import RobotTxtAgent
-from agents.targeting_agent import TargetingAgent
-from agents.ads_agent import AdsAgent
-from agents.bid_agent import BidAgent
-from agents.browser_test_agent import BrowserTestAgent
-from agents.autonomous_intelligence_agent import AutonomousIntelligenceAgent
+class JsonFormatter(logging.Formatter):
+    def format(self, record):
+        log_record = {
+            "timestamp": self.formatTime(record, self.datefmt),
+            "name": record.name,
+            "level": record.levelname,
+            "message": record.getMessage()
+        }
+        return json.dumps(log_record)
 
 # Configure Logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+log_handler = logging.StreamHandler()
+if os.getenv("LOG_FORMAT", "TEXT") == "JSON":
+    log_handler.setFormatter(JsonFormatter(datefmt='%Y-%m-%d %H:%M:%S'))
+else:
+    log_handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s', datefmt='%H:%M:%S'))
+
 logger = logging.getLogger("SystemOrchestrator")
+logger.addHandler(log_handler)
+logger.setLevel(logging.INFO)
+# Also apply to other loggers
+logging.getLogger().handlers = [log_handler]
+logging.getLogger().setLevel(logging.INFO)
 
 def run_scraper():
     logger.info("Starting Scraper...")
@@ -110,8 +118,25 @@ def generate_daily_report(context, filename):
     except IOError as e:
         logger.error(f"Failed to write report: {e}")
 
+def discover_agents():
+    """Dynamically discover and instantiate agents from the agents/ directory."""
+    discovered = []
+    for loader, module_name, is_pkg in pkgutil.walk_packages(agents.__path__, agents.__name__ + "."):
+        if module_name == "agents.base_agent":
+            continue
+        try:
+            module = importlib.import_module(module_name)
+            for attr_name in dir(module):
+                attr = getattr(module, attr_name)
+                if isinstance(attr, type) and issubclass(attr, BaseAgent) and attr is not BaseAgent:
+                    discovered.append(attr())
+        except Exception as e:
+            logger.error(f"Failed to load agent from {module_name}: {e}")
+    return discovered
+
 async def run_cycle():
-    logger.info("=== Starting Daily Autonomous Cycle ===")
+    console = Console()
+    console.print("[bold blue]=== Starting Daily Autonomous Cycle ===[/bold blue]")
 
     # 1. Scrape
     if not run_scraper():
@@ -126,68 +151,49 @@ async def run_cycle():
 
     context = {}
 
-    async with aiohttp.ClientSession() as session:
-        # 3. Stage-Based Concurrent Pipeline
-        # Stage 1: Independent Foundation
-        stage1 = [
-            HealthCheckAgent(),
-            RobotTxtAgent(),
-            AnalysisAgent(),
-            BrowserTestAgent()
-        ]
-        # Inject shared session
-        for a in stage1: a.session = session
+    # 3. Dynamic Agent Pipeline
+    all_agents = discover_agents()
+    stages = {}
+    for agent in all_agents:
+        stage = getattr(agent, "execution_stage", 1)
+        if stage not in stages:
+            stages[stage] = []
+        stages[stage].append(agent)
 
-        logger.info(f"Executing Stage 1 ({len(stage1)} agents)...")
-        results1 = await asyncio.gather(*[a.run(data, context) for a in stage1], return_exceptions=True)
-    for res in results1:
-        if isinstance(res, dict): context.update(res)
-        elif isinstance(res, Exception): logger.error(f"Stage 1 error: {res}")
+    with Progress(
+        SpinnerColumn(),
+        TextColumn("[progress.description]{task.description}"),
+        transient=True,
+    ) as progress:
+        async with aiohttp.ClientSession() as session:
+            for stage_num in sorted(stages.keys()):
+                stage_agents = stages[stage_num]
+                task_id = progress.add_task(description=f"Executing Stage {stage_num}...", total=len(stage_agents))
 
-    # Stage 2: Research (Depends on Analysis)
-    stage2 = [ResearchAgent()]
-    for a in stage2: a.session = session
-    logger.info(f"Executing Stage 2 ({len(stage2)} agents)...")
-    results2 = await asyncio.gather(*[a.run(data, context) for a in stage2], return_exceptions=True)
-    for res in results2:
-        if isinstance(res, dict): context.update(res)
-        elif isinstance(res, Exception): logger.error(f"Stage 2 error: {res}")
+                # Inject session
+                for a in stage_agents:
+                    a.session = session
 
-    # Stage 3: Intelligence (Depends on Research & Analysis)
-    stage3 = [IntelligenceAgent()]
-    for a in stage3: a.session = session
-    logger.info(f"Executing Stage 3 ({len(stage3)} agents)...")
-    results3 = await asyncio.gather(*[a.run(data, context) for a in stage3], return_exceptions=True)
-    for res in results3:
-        if isinstance(res, dict): context.update(res)
-        elif isinstance(res, Exception): logger.error(f"Stage 3 error: {res}")
+                results = await asyncio.gather(*[a.run(data, context) for a in stage_agents], return_exceptions=True)
 
-    # Stage 4: Strategy & Creativity (Depends on Intelligence)
-    stage4 = [TargetingAgent(), CreativityAgent()]
-    for a in stage4: a.session = session
-    logger.info(f"Executing Stage 4 ({len(stage4)} agents)...")
-    results4 = await asyncio.gather(*[a.run(data, context) for a in stage4], return_exceptions=True)
-    for res in results4:
-        if isinstance(res, dict): context.update(res)
-        elif isinstance(res, Exception): logger.error(f"Stage 4 error: {res}")
+                for res in results:
+                    if isinstance(res, dict):
+                        context.update(res)
+                    elif isinstance(res, Exception):
+                        logger.error(f"Error in stage {stage_num}: {res}")
 
-    # Stage 5: Execution Assets (Depends on Targeting & Creativity)
-    stage5 = [AdsAgent(), BidAgent(), MonetizationAgent(), ContentAgent()]
-    for a in stage5: a.session = session
-    logger.info(f"Executing Stage 5 ({len(stage5)} agents)...")
-    results5 = await asyncio.gather(*[a.run(data, context) for a in stage5], return_exceptions=True)
-    for res in results5:
-        if isinstance(res, dict): context.update(res)
-        elif isinstance(res, Exception): logger.error(f"Stage 5 error: {res}")
+                progress.update(task_id, advance=len(stage_agents))
 
-    # Stage 6: Oversight
-    stage6 = [AutonomousIntelligenceAgent()]
-    for a in stage6: a.session = session
-    logger.info(f"Executing Stage 6 ({len(stage6)} agents)...")
-    results6 = await asyncio.gather(*[a.run(data, context) for a in stage6], return_exceptions=True)
-    for res in results6:
-        if isinstance(res, dict): context.update(res)
-        elif isinstance(res, Exception): logger.error(f"Stage 6 error: {res}")
+    # Real-time Summary Dashboard
+    table = Table(title="Agent Execution Summary")
+    table.add_column("Agent", style="cyan")
+    table.add_column("Stage", style="magenta")
+    table.add_column("Status", style="green")
+
+    for agent in all_agents:
+        table.add_row(agent.name, str(getattr(agent, "execution_stage", 1)), "COMPLETED")
+
+    console.print(table)
 
     # 4. Report
     report_file = f"results/DAILY_REPORT_{datetime.now().strftime('%Y-%m-%d')}.md"

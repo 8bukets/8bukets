@@ -1,6 +1,7 @@
 from .base_agent import BaseAgent
 
 class AdsAgent(BaseAgent):
+    execution_stage = 5
     def __init__(self):
         super().__init__("AdsAgent")
 

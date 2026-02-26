@@ -13,3 +13,6 @@
 ## 2026-02-26 - Stage-Based Concurrent Agent Execution
 **Learning:** Sequential execution of agents can be slow, especially when many agents perform I/O. Grouping agents by dependencies allows for safe parallelization within stages.
 **Action:** Implemented a stage-based pipeline in 'run_system.py' using 'asyncio.gather', significantly improving the overall cycle performance while ensuring collaborative agents receive the necessary context.
+## 2026-02-26 - Robust Persistence and Observability
+**Learning:** File-based JSON memory is fragile for concurrent systems. SQLAlchemy with SQLite provides a robust, thread-safe persistence layer. Structured logging and rich CLI tools significantly enhance system observability.
+**Action:** Migrated memory to SQLite, implemented dynamic agent loading, and added a rich dashboard to 'run_system.py' for better monitoring of the autonomous pipeline.

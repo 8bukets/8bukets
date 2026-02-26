@@ -21,15 +21,17 @@ Agents execute in a pipeline where each agent can read from and contribute to a 
 - **ContentAgent**: Generates final content drafts.
 - **BrowserTestAgent**: Performs automated UI verification using Playwright.
 
-## Persistent Memory
+## Persistent Memory (SQLite)
 
-Agents use a shared memory system located in `data/memory.json`.
+Agents use a shared SQLite database located in `data/memory.db`.
 - Use `self.get_agent_memory(key)` and `self.update_agent_memory(key, value)` to persist state across cycles.
-- The `BaseAgent` class automatically handles directory creation for the memory file.
+- The `BaseAgent` class uses SQLAlchemy for robust, concurrent-safe persistence.
 
 ## Development Guidelines
 
-- **Concurrent Execution**: The agent pipeline executes in stages. Independent agents within a stage run concurrently using `asyncio.gather`.
+- **Dynamic Loading**: Agents are automatically discovered from the `agents/` directory. Simply create a new class inheriting from `BaseAgent`.
+- **Stage Metadata**: Define `execution_stage` (int) in your agent class to control where it runs in the pipeline.
+- **Concurrent Execution**: Independent agents within the same stage run concurrently using `asyncio.gather`.
 - **Asynchronous Execution**: All agents must implement an `async def run(self, data, context)` method and utilize the shared `self.session` for network I/O.
 - **Testing**: Core utilities and agent interactions are tested in the `tests/` directory. Always run `pytest` before submitting changes.
 - **Artifacts**: Execution results (JSON, CSV, reports) are ignored by Git. Do not commit these files.

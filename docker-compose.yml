@@ -1,0 +1,10 @@
+services:
+  autonomous-agent:
+    build: .
+    volumes:
+      - ./data:/app/data
+      - ./results:/app/results
+    environment:
+      - BASE_URL=https://markposition.wordpress.com/
+      - LOG_FORMAT=TEXT
+      - SCRAPE_LIMIT=5

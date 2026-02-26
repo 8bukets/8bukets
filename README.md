@@ -5,9 +5,10 @@ A robust, asynchronous toolset for scraping and analyzing data from `https://mar
 ## Features
 
 ### Orchestrator (`run_system.py`)
-*   **Concurrent Agent Pipeline**: Executes specialized agents in parallel stages for maximum efficiency.
-*   **Stage-Based Dependency Management**: Ensures collaborative agents (e.g., Intelligence depends on Analysis) run in the correct order.
-*   **Shared Session Management**: Reuses a single `aiohttp.ClientSession` across the entire pipeline.
+*   **Dynamic Agent Discovery**: Automatically detects and loads agents from the `agents/` folder.
+*   **Concurrent Stage-Based Execution**: Runs independent agents in parallel stages using `asyncio.gather`.
+*   **SQLAlchemy Persistence**: Uses SQLite for cross-cycle memory management.
+*   **Rich CLI Dashboard**: Real-time progress monitoring and summary reports.
 
 ### Scraper (`scraper.py`)
 *   **High Performance**: Built with `aiohttp` and `asyncio` for concurrent fetching.
@@ -40,9 +41,16 @@ Install dependencies:
 pip install aiohttp beautifulsoup4 requests
 ```
 
-## Configuration
+## Configuration & Deployment
 
+### Environment Variables
 The system can be configured using environment variables. See `.env.example` for available options.
+
+### Docker
+Deploy the autonomous system instantly:
+```bash
+docker-compose up --build
+```
 
 ## Usage
 

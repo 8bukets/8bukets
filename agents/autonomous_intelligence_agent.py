@@ -1,6 +1,7 @@
 from .base_agent import BaseAgent
 
 class AutonomousIntelligenceAgent(BaseAgent):
+    execution_stage = 6
     def __init__(self):
         super().__init__("AutonomousIntelligenceAgent")
 

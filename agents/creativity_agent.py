@@ -2,6 +2,7 @@ from .base_agent import BaseAgent
 import random
 
 class CreativityAgent(BaseAgent):
+    execution_stage = 4
     def __init__(self):
         super().__init__("CreativityAgent")
 

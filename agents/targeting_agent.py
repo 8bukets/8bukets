@@ -1,6 +1,7 @@
 from .base_agent import BaseAgent
 
 class TargetingAgent(BaseAgent):
+    execution_stage = 4
     def __init__(self):
         super().__init__("TargetingAgent")
 
