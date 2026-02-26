@@ -7,3 +7,5 @@ textblob
 sqlalchemy
 rich
 python-dotenv
+flask
+markdown

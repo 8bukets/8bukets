@@ -203,7 +203,12 @@ async def run_cycle():
 async def main_async():
     parser = argparse.ArgumentParser(description="Autonomous Agent System")
     parser.add_argument("--loop", action="store_true", help="Run continuously every 24h")
+    parser.add_argument("--dashboard", action="store_true", help="Start the web dashboard")
     args = parser.parse_args()
+
+    if args.dashboard:
+        logger.info("Starting Web Dashboard...")
+        subprocess.Popen([sys.executable, "dashboard.py"])
 
     if args.loop:
         logger.info("System starting in LOOP mode.")
