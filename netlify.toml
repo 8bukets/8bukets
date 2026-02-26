@@ -1,6 +1,6 @@
 [build]
   publish = "."
-  command = "echo 'No build command required for static assets'"
+  command = "echo 'Build not required'"
 
 [[headers]]
   for = "/*"
@@ -10,5 +10,12 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "same-origin"
 
-[functions]
-  directory = "functions"
+[[redirects]]
+  from = "/report/*"
+  to = "/results/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/evolution"
+  to = "/SYSTEM_EVOLUTION.md"
+  status = 200
