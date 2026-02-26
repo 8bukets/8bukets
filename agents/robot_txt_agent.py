@@ -55,11 +55,16 @@ class RobotTxtAgent(BaseAgent):
 
     async def fetch_robots_async(self, url):
         try:
-            async with aiohttp.ClientSession() as session:
-                async with session.get(url, timeout=10) as resp:
+            if self.session:
+                async with self.session.get(url, timeout=10) as resp:
                     if resp.status == 200:
                         return await resp.text()
-                    return None
+            else:
+                async with aiohttp.ClientSession() as session:
+                    async with session.get(url, timeout=10) as resp:
+                        if resp.status == 200:
+                            return await resp.text()
+            return None
         except Exception as e:
             self.logger.error(f"Failed to fetch robots.txt: {e}")
             return None

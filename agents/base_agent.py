@@ -3,11 +3,12 @@ import logging
 import json
 import os
 
-MEMORY_FILE = "data/memory.json"
+MEMORY_FILE = os.getenv("MEMORY_FILE", "data/memory.json")
 
 class BaseAgent(ABC):
-    def __init__(self, name):
+    def __init__(self, name, session=None):
         self.name = name
+        self.session = session
         self.logger = logging.getLogger(name)
         logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 

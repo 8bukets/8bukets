@@ -1,5 +1,6 @@
 import argparse
 import asyncio
+import aiohttp
 import time
 import json
 import os
@@ -74,6 +75,11 @@ def generate_daily_report(context, filename):
             robots = context.get("robots_txt", {})
             f.write(f"- **Robots.txt:** {robots.get('status', 'N/A')} (Disallowed: {len(robots.get('disallowed_paths', []))})\n")
 
+            browser = context.get("browser_test", {})
+            f.write(f"- **Browser Check:** {browser.get('status', 'N/A')}\n")
+            if browser.get("screenshot"):
+                f.write(f"  - [View Screenshot](../{browser.get('screenshot')})\n")
+
             f.write("\n## 2. Targeting & Strategy\n")
             targeting = context.get("targeting_profile", {})
             f.write(f"- **Persona:** {targeting.get('primary_persona', 'N/A')}\n")
@@ -118,36 +124,72 @@ async def run_cycle():
         logger.warning("No data loaded. Skipping agent execution.")
         return
 
-    # 3. Initialize Agents (Order Matters for Collaboration)
-    agents = [
-        HealthCheckAgent(),
-        RobotTxtAgent(),       # New: Check compliance first
-        AnalysisAgent(),
-        ResearchAgent(),
-        IntelligenceAgent(),   # Synthesizes Analysis & Research
-        TargetingAgent(),      # New: Depends on Intelligence
-        CreativityAgent(),     # Depends on Intelligence
-        AdsAgent(),            # New: Depends on Targeting & Creativity
-        BidAgent(),            # New: Depends on Targeting
-        MonetizationAgent(),
-        ContentAgent(),
-        BrowserTestAgent(),    # New: Automated UI Verification
-        AutonomousIntelligenceAgent() # New: Overseer
-    ]
-
     context = {}
 
-    # 4. Run Pipeline
-    for agent in agents:
-        try:
-            # Collaboration: Each agent receives the full context accumulated so far
-            result = await agent.run(data, context)
-            if result:
-                context.update(result)
-        except Exception as e:
-            logger.error(f"Error in {agent.name}: {e}")
+    async with aiohttp.ClientSession() as session:
+        # 3. Stage-Based Concurrent Pipeline
+        # Stage 1: Independent Foundation
+        stage1 = [
+            HealthCheckAgent(),
+            RobotTxtAgent(),
+            AnalysisAgent(),
+            BrowserTestAgent()
+        ]
+        # Inject shared session
+        for a in stage1: a.session = session
 
-    # 5. Report
+        logger.info(f"Executing Stage 1 ({len(stage1)} agents)...")
+        results1 = await asyncio.gather(*[a.run(data, context) for a in stage1], return_exceptions=True)
+    for res in results1:
+        if isinstance(res, dict): context.update(res)
+        elif isinstance(res, Exception): logger.error(f"Stage 1 error: {res}")
+
+    # Stage 2: Research (Depends on Analysis)
+    stage2 = [ResearchAgent()]
+    for a in stage2: a.session = session
+    logger.info(f"Executing Stage 2 ({len(stage2)} agents)...")
+    results2 = await asyncio.gather(*[a.run(data, context) for a in stage2], return_exceptions=True)
+    for res in results2:
+        if isinstance(res, dict): context.update(res)
+        elif isinstance(res, Exception): logger.error(f"Stage 2 error: {res}")
+
+    # Stage 3: Intelligence (Depends on Research & Analysis)
+    stage3 = [IntelligenceAgent()]
+    for a in stage3: a.session = session
+    logger.info(f"Executing Stage 3 ({len(stage3)} agents)...")
+    results3 = await asyncio.gather(*[a.run(data, context) for a in stage3], return_exceptions=True)
+    for res in results3:
+        if isinstance(res, dict): context.update(res)
+        elif isinstance(res, Exception): logger.error(f"Stage 3 error: {res}")
+
+    # Stage 4: Strategy & Creativity (Depends on Intelligence)
+    stage4 = [TargetingAgent(), CreativityAgent()]
+    for a in stage4: a.session = session
+    logger.info(f"Executing Stage 4 ({len(stage4)} agents)...")
+    results4 = await asyncio.gather(*[a.run(data, context) for a in stage4], return_exceptions=True)
+    for res in results4:
+        if isinstance(res, dict): context.update(res)
+        elif isinstance(res, Exception): logger.error(f"Stage 4 error: {res}")
+
+    # Stage 5: Execution Assets (Depends on Targeting & Creativity)
+    stage5 = [AdsAgent(), BidAgent(), MonetizationAgent(), ContentAgent()]
+    for a in stage5: a.session = session
+    logger.info(f"Executing Stage 5 ({len(stage5)} agents)...")
+    results5 = await asyncio.gather(*[a.run(data, context) for a in stage5], return_exceptions=True)
+    for res in results5:
+        if isinstance(res, dict): context.update(res)
+        elif isinstance(res, Exception): logger.error(f"Stage 5 error: {res}")
+
+    # Stage 6: Oversight
+    stage6 = [AutonomousIntelligenceAgent()]
+    for a in stage6: a.session = session
+    logger.info(f"Executing Stage 6 ({len(stage6)} agents)...")
+    results6 = await asyncio.gather(*[a.run(data, context) for a in stage6], return_exceptions=True)
+    for res in results6:
+        if isinstance(res, dict): context.update(res)
+        elif isinstance(res, Exception): logger.error(f"Stage 6 error: {res}")
+
+    # 4. Report
     report_file = f"results/DAILY_REPORT_{datetime.now().strftime('%Y-%m-%d')}.md"
     generate_daily_report(context, report_file)
 

@@ -4,8 +4,13 @@ A robust, asynchronous toolset for scraping and analyzing data from `https://mar
 
 ## Features
 
+### Orchestrator (`run_system.py`)
+*   **Concurrent Agent Pipeline**: Executes specialized agents in parallel stages for maximum efficiency.
+*   **Stage-Based Dependency Management**: Ensures collaborative agents (e.g., Intelligence depends on Analysis) run in the correct order.
+*   **Shared Session Management**: Reuses a single `aiohttp.ClientSession` across the entire pipeline.
+
 ### Scraper (`scraper.py`)
-*   **High Performance**: Built with `aiohttp` and `asyncio` for concurrent fetching, significantly faster than synchronous scrapers.
+*   **High Performance**: Built with `aiohttp` and `asyncio` for concurrent fetching.
 *   **Robust**: Handles network errors and pagination automatically (stops on 404 or empty pages).
 *   **Smart Extraction**:
     *   Prioritizes content links, then embedded iframes (e.g., YouTube), then title URLs.
@@ -35,24 +40,21 @@ Install dependencies:
 pip install aiohttp beautifulsoup4 requests
 ```
 
+## Configuration
+
+The system can be configured using environment variables. See `.env.example` for available options.
+
 ## Usage
 
-### 1. Scrape Data
+### 1. Run Full Autonomous System
 
-Run the asynchronous scraper to fetch data:
+Executes the scraper followed by the concurrent agent pipeline and generates a daily report:
 
 ```bash
-python3 scraper.py
+python3 run_system.py
 ```
 
-**Options:**
-*   `--json`: Output JSON filename (default: `links.json`)
-*   `--csv`: Output CSV filename (default: `links.csv`)
-*   `--txt`: Output TXT filename for unique links (default: `unique_links.txt`)
-*   `--limit`: Limit the number of pages to scrape (e.g., `--limit 5`).
-*   `--concurrency`: Number of concurrent requests (default: 5).
-
-### 2. Generate Report
+### 2. Scrape Data Individually
 
 Run the analytics script to process the JSON data:
 

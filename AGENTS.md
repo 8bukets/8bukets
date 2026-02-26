@@ -4,7 +4,7 @@ Welcome, Agent. This repository contains an autonomous ecosystem for scraping, a
 
 ## Architecture Overview
 
-The system follows a modular, agent-based architecture:
+The system follows a modular, agent-based architecture with concurrent execution:
 1.  **Scraper (`scraper.py`)**: Asynchronously fetches data from the target blog.
 2.  **Analytics (`analytics.py`)**: Processes raw JSON data to generate statistics and a Markdown report.
 3.  **Agents (`agents/`)**: Individual specialized agents that collaborate to synthesize intelligence, generate ads, and draft content.
@@ -29,8 +29,9 @@ Agents use a shared memory system located in `data/memory.json`.
 
 ## Development Guidelines
 
-- **Asynchronous Execution**: The agent pipeline is asynchronous. All agents must implement an `async def run(self, data, context)` method.
-- **Testing**: Core utilities are tested in the `tests/` directory. Always run `pytest` before submitting changes.
+- **Concurrent Execution**: The agent pipeline executes in stages. Independent agents within a stage run concurrently using `asyncio.gather`.
+- **Asynchronous Execution**: All agents must implement an `async def run(self, data, context)` method and utilize the shared `self.session` for network I/O.
+- **Testing**: Core utilities and agent interactions are tested in the `tests/` directory. Always run `pytest` before submitting changes.
 - **Artifacts**: Execution results (JSON, CSV, reports) are ignored by Git. Do not commit these files.
 
 ## Command Reference

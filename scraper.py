@@ -18,7 +18,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-BASE_URL = "https://markposition.wordpress.com/"
+import os
+BASE_URL = os.getenv("BASE_URL", "https://markposition.wordpress.com/")
 
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
@@ -270,11 +271,11 @@ class MarkPositionScraperAsync:
 
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
-    parser.add_argument("--json", default="links.json", help="Output JSON filename")
-    parser.add_argument("--csv", default="links.csv", help="Output CSV filename")
-    parser.add_argument("--txt", default="unique_links.txt", help="Output TXT filename for unique links")
-    parser.add_argument("--limit", type=int, help="Limit number of pages to scrape")
-    parser.add_argument("--concurrency", type=int, default=5, help="Number of concurrent requests")
+    parser.add_argument("--json", default=os.getenv("OUTPUT_JSON", "links.json"), help="Output JSON filename")
+    parser.add_argument("--csv", default=os.getenv("OUTPUT_CSV", "links.csv"), help="Output CSV filename")
+    parser.add_argument("--txt", default=os.getenv("OUTPUT_TXT", "unique_links.txt"), help="Output TXT filename for unique links")
+    parser.add_argument("--limit", type=int, default=int(os.getenv("SCRAPE_LIMIT", 0)) or None, help="Limit number of pages to scrape")
+    parser.add_argument("--concurrency", type=int, default=int(os.getenv("CONCURRENCY", 5)), help="Number of concurrent requests")
 
     args = parser.parse_args()
 

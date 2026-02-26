@@ -10,3 +10,6 @@
 ## 2026-02-26 - Browser-Based Agent Verification
 **Learning:** Pure HTTP scraping can miss UI elements or accessibility issues. Adding a Playwright-based agent allows for real-browser verification and visual regression testing.
 **Action:** Integrated 'BrowserTestAgent' into the autonomous cycle to capture screenshots and verify site titles, enhancing the 'Google Antigravity' collaboration check.
+## 2026-02-26 - Stage-Based Concurrent Agent Execution
+**Learning:** Sequential execution of agents can be slow, especially when many agents perform I/O. Grouping agents by dependencies allows for safe parallelization within stages.
+**Action:** Implemented a stage-based pipeline in 'run_system.py' using 'asyncio.gather', significantly improving the overall cycle performance while ensuring collaborative agents receive the necessary context.
