@@ -6,3 +6,5 @@ unique_links.txt
 data/
 results/DAILY_REPORT_*.md
 REPORT.md
+SYSTEM_EVOLUTION.md
+agents/*ExpertAgent.py
