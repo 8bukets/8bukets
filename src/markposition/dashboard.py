@@ -27,6 +27,7 @@ def index():
         <div class="nav">
             <a href="/evolution">System Evolution Log</a> |
             <a href="/chat">Semantic Chat (RAG)</a> |
+            <a href="/patterns">System Patterns</a> |
             <a href="/stats">System Stats</a> |
             <a href="/logs">Worker Logs</a>
         </div>
@@ -127,6 +128,30 @@ def semantic_chat():
 
     html += "<br><a href='/'>Back</a>"
     return render_template_string(f'<html><head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css"><style>.markdown-body {{ padding: 45px; }}</style></head><body class="markdown-body">{html}</body></html>', query=query)
+
+@app.route('/patterns')
+def show_patterns():
+    from markposition.agents.vector_memory import VectorMemory
+    vm = VectorMemory()
+    patterns = vm.search("Market Pattern", top_k=20)
+
+    html = "<h1>System Identified Patterns</h1>"
+    html += "<h2>Semantic Market Clusters</h2><ul>"
+    for res in patterns:
+        if res['metadata'].get('type') == 'pattern_recognition':
+            html += f"<li>{res['metadata'].get('text')}</li>"
+    html += "</ul>"
+
+    html += "<h2>Source Code Structural Patterns</h2><ul>"
+    source_patterns = vm.search("Source code patterns", top_k=20)
+    for res in source_patterns:
+        # Simple heuristic to identify source patterns
+        if "Common dependency" in res['metadata'].get('text', '') or "Stage" in res['metadata'].get('text', ''):
+             html += f"<li>{res['metadata'].get('text')}</li>"
+    html += "</ul>"
+
+    html += "<a href='/'>Back</a>"
+    return f'<html><head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css"><style>.markdown-body {{ padding: 45px; }}</style></head><body class="markdown-body">{html}</body></html>'
 
 @app.route('/evolution')
 def show_evolution():

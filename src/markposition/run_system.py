@@ -112,11 +112,22 @@ def generate_daily_report(context, filename):
             for rec in context.get("llm_recommendations", []):
                 f.write(f"- {rec}\n")
 
-            f.write("\n## 6. Market Analysis\n")
+            f.write("\n## 6. Identified Patterns\n")
+            f.write("### Market Patterns\n")
+            patterns = context.get("market_patterns", [])
+            for p in patterns:
+                f.write(f"- {p}\n")
+
+            f.write("\n### Source Code Patterns\n")
+            src_patterns = context.get("source_code_patterns", [])
+            for p in src_patterns:
+                f.write(f"- {p}\n")
+
+            f.write("\n## 7. Market Analysis\n")
             stats = context.get("analysis_stats", {})
             f.write(f"- **Total Posts:** {stats.get('total_posts')}\n")
 
-            f.write("\n## 7. Content Draft\n")
+            f.write("\n## 8. Content Draft\n")
             f.write("```text\n")
             f.write(context.get("generated_content", ""))
             f.write("\n```\n")
