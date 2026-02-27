@@ -182,5 +182,36 @@
             "ad_count": 3,
             "target_persona": "General Tech Enthusiast"
         }
+    },
+    {
+        "timestamp": 1772201343.509943,
+        "agent": "AnalysisAgent",
+        "event_type": "MARKET_DATA_ANALYSIS",
+        "market_data_ref": "AD_ADS_ADVERTISE",
+        "payload": {
+            "ad_category_density": 0.6666666666666666,
+            "total_ad_posts": 2
+        }
+    },
+    {
+        "timestamp": 1772201343.5672543,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "admanager.google.com",
+            "insight": "Identified core node in the Google ecosystem.",
+            "status": "FETCHED"
+        }
+    },
+    {
+        "timestamp": 1772201343.603914,
+        "agent": "AdsAgent",
+        "event_type": "AD_STRATEGY_GENERATION",
+        "market_data_ref": "AD_ADS_ADVERTISE",
+        "payload": {
+            "ad_count": 3,
+            "target_persona": "General Tech Enthusiast"
+        }
     }
 ]

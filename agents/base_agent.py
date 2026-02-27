@@ -6,12 +6,14 @@ import asyncio
 from typing import Any, Dict, List, Set
 
 MEMORY_FILE = "data/memory.json"
+CONFIG_FILE = "config/evolution_params.json"
 
 class Blackboard:
-    """Shared state management with history tracking."""
+    """Shared state management with history tracking and evolutionary proposals."""
     def __init__(self):
         self._data: Dict[str, Any] = {}
         self._history: List[Dict[str, Any]] = []
+        self._proposals: List[Dict[str, Any]] = []
         self._lock = asyncio.Lock()
 
     async def update(self, agent_name: str, updates: Dict[str, Any]):
@@ -22,6 +24,18 @@ class Blackboard:
                 "timestamp": asyncio.get_event_loop().time(),
                 "keys": list(updates.keys())
             })
+
+    async def propose_improvement(self, agent_name: str, improvement: Dict[str, Any]):
+        """Agent proposes a 'Major Improvement' to the system structure or code."""
+        async with self._lock:
+            self._proposals.append({
+                "proposer": agent_name,
+                "timestamp": asyncio.get_event_loop().time(),
+                "improvement": improvement
+            })
+
+    def get_proposals(self) -> List[Dict[str, Any]]:
+        return self._proposals
 
     def get_all(self) -> Dict[str, Any]:
         return self._data.copy()
@@ -39,6 +53,16 @@ class BaseAgent(ABC):
         self.provides = provides or []
         self.logger = logging.getLogger(name)
         self.logger.setLevel(logging.INFO)
+        self.config = self._load_config()
+
+    def _load_config(self) -> dict:
+        if not os.path.exists(CONFIG_FILE):
+            return {}
+        try:
+            with open(CONFIG_FILE, 'r') as f:
+                return json.load(f)
+        except:
+            return {}
 
     def load_memory(self) -> dict:
         """Load global memory from disk."""

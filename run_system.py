@@ -25,6 +25,7 @@ from agents.bid_agent import BidAgent
 from agents.autonomous_intelligence_agent import AutonomousIntelligenceAgent
 from agents.telemetry_agent import TelemetryAgent
 from agents.sigma_agent import SixSigmaAgent
+from agents.architect_agent import ArchitectAgent
 
 # Expansion Agents
 from agents.swarm_agent import SwarmAgent
@@ -93,7 +94,14 @@ def generate_daily_report(context, filename):
             for trend in research.get("market_trends", []):
                 f.write(f"- **Trend:** {trend}\n")
 
-            f.write("\n## 4. Peer Review & Collaboration Log\n")
+            f.write("\n## 4. System Evolution & Daily Improvement\n")
+            evolution = context.get("system_evolution", {})
+            f.write(f"- **Evolution Status:** {evolution.get('status', 'STABLE')}\n")
+            f.write(f"- **Version Shift:** +{evolution.get('version_upgrade', 0)}\n")
+            for param, val in evolution.get("parameter_shifts", {}).items():
+                f.write(f"  - {param} optimized to: {val}\n")
+
+            f.write("\n## 5. Peer Review & Collaboration Log\n")
             for review in context.get("peer_review_log", []):
                 f.write(f"- {review}\n")
 
@@ -116,13 +124,13 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         logger.warning("No data loaded. Skipping agent execution.")
         return
 
-    # 1. Base Intelligence (14 Agents)
+    # 1. Base Intelligence (15 Agents)
     agents = [
         HealthCheckAgent(), RobotTxtAgent(), AnalysisAgent(),
         ResearchAgent(), IntelligenceAgent(), TargetingAgent(),
         CreativityAgent(), AdsAgent(), BidAgent(),
         MonetizationAgent(), ContentAgent(), AutonomousIntelligenceAgent(),
-        TelemetryAgent(), SixSigmaAgent()
+        TelemetryAgent(), SixSigmaAgent(), ArchitectAgent()
     ]
 
     # 2. Expanded SEO Swarm (100 Agents)

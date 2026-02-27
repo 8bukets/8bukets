@@ -37,7 +37,7 @@ class AgentOrchestrator:
         return tiers
 
     async def execute_cycle(self, data: list):
-        logger.info("Starting Autonomous Execution Cycle...")
+        logger.info(f"Starting Autonomous Execution Cycle (v{self.agents[0].config.get('current_version', 1.0)})...")
         tiers = self._resolve_execution_plan()
 
         for i, tier in enumerate(tiers):
