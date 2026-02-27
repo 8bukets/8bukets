@@ -1,0 +1,21 @@
+[build]
+  publish = "."
+  command = "npm run build"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "same-origin"
+
+[[redirects]]
+  from = "/dashboard"
+  to = "http://localhost:3000"
+  status = 200
+
+[[redirects]]
+  from = "/report/*"
+  to = "/results/:splat"
+  status = 200

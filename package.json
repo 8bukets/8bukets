@@ -1,0 +1,9 @@
+{
+  "name": "markposition-autonomous-system",
+  "version": "1.0.0",
+  "description": "Autonomous scraping and intelligence ecosystem",
+  "private": true,
+  "scripts": {
+    "build": "echo 'Building static dashboard...' && mkdir -p dist && cp -r results dist/ && cp README.md dist/index.md"
+  }
+}
