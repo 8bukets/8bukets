@@ -7,8 +7,9 @@ import logging
 import asyncio
 from datetime import datetime
 
-# Orchestrator
+# Orchestrator & Auth
 from agents.orchestrator import AgentOrchestrator
+from agents.auth import AuthManager
 
 # Agents
 from agents.health_check_agent import HealthCheckAgent
@@ -120,8 +121,12 @@ def generate_daily_report(context, filename):
     except IOError as e:
         logger.error(f"Failed to write report: {e}")
 
-async def run_cycle():
+async def run_cycle(auth_token: str = None):
     logger.info("=== Starting Daily Synchronized Autonomous Cycle (DAG Mode) ===")
+
+    if not AuthManager.verify_token(auth_token):
+        logger.error("Authentication failed. Aborting cycle.")
+        return
 
     if not run_scraper():
         logger.error("Cycle aborted due to scraper failure.")
@@ -167,19 +172,20 @@ async def run_cycle():
 async def main_async():
     parser = argparse.ArgumentParser(description="Autonomous Agent System")
     parser.add_argument("--loop", action="store_true", help="Run continuously every 24h")
+    parser.add_argument("--token", type=str, help="Authentication token", default=os.environ.get("SYSTEM_AUTH_TOKEN"))
     args = parser.parse_args()
 
     if args.loop:
         logger.info("System starting in LOOP mode.")
         try:
             while True:
-                await run_cycle()
+                await run_cycle(args.token)
                 logger.info("Sleeping for 24 hours...")
                 await asyncio.sleep(86400)
         except asyncio.CancelledError:
             logger.info("Loop interrupted.")
     else:
-        await run_cycle()
+        await run_cycle(args.token)
 
 if __name__ == "__main__":
     try:
