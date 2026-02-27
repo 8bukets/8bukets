@@ -129,16 +129,17 @@ def generate_daily_report(context, filename):
     except IOError as e:
         logger.error(f"Failed to write report: {e}")
 
-async def run_cycle(auth_token: str = None):
+async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
     logger.info("=== Starting Daily Synchronized Autonomous Cycle (DAG Mode) ===")
 
     if not AuthManager.verify_token(auth_token):
         logger.error("Authentication failed. Aborting cycle.")
         return
 
-    if not run_scraper():
-        logger.error("Cycle aborted due to scraper failure.")
-        return
+    if not skip_scraper:
+        if not run_scraper():
+            logger.error("Cycle aborted due to scraper failure.")
+            return
 
     data = load_data()
     if not data:
@@ -182,19 +183,20 @@ async def main_async():
     parser = argparse.ArgumentParser(description="Autonomous Agent System")
     parser.add_argument("--loop", action="store_true", help="Run continuously every 24h")
     parser.add_argument("--token", type=str, help="Authentication token", default=os.environ.get("SYSTEM_AUTH_TOKEN"))
+    parser.add_argument("--skip-scraper", action="store_true", help="Skip the scraping phase and use existing data")
     args = parser.parse_args()
 
     if args.loop:
         logger.info("System starting in LOOP mode.")
         try:
             while True:
-                await run_cycle(args.token)
+                await run_cycle(args.token, args.skip_scraper)
                 logger.info("Sleeping for 24 hours...")
                 await asyncio.sleep(86400)
         except asyncio.CancelledError:
             logger.info("Loop interrupted.")
     else:
-        await run_cycle(args.token)
+        await run_cycle(args.token, args.skip_scraper)
 
 if __name__ == "__main__":
     try:
