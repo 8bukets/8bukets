@@ -76,7 +76,8 @@ def generate_daily_report(context, filename):
 
             sigma = context.get("sigma_performance_report", {})
             f.write(f"**Sigma Status:** {sigma.get('average_impact_score', 0):.2f} Impact Score\n")
-            f.write(f"**Total Agent Count:** {len([k for k in context.keys() if 'Agent' in k or 'Backup' in k])}\n\n")
+            f.write(f"**Total Agent Count:** {len([k for k in context.keys() if 'Agent' in k or 'Backup' in k])}\n")
+            f.write(f"**System Owner:** {sigma.get('legal_owner', 'N/A')} ({sigma.get('owner_reference', 'N/A')})\n\n")
 
             f.write("## 1. Governance & CEO Redundancy\n")
             f.write(f"- Champion Belt: SixSigmaChampion (CEO)\n")
