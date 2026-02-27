@@ -1,24 +1,35 @@
 from .base_agent import BaseAgent, Blackboard
+import os
+import json
 
 class IntelligenceAgent(BaseAgent):
     def __init__(self):
         super().__init__("IntelligenceAgent", dependencies=["analysis_stats", "research_data"], provides=["intelligence_insights", "synchronization_level"])
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
-        self.logger.info("Running Intelligence Synchronization...")
+        self.logger.info("Running Intelligence Synchronization & External World Collaboration...")
 
         analysis = blackboard.get("analysis_stats", {})
         research = blackboard.get("research_data", {})
 
         insights = []
 
+        # 1. Internal Logic
         top_cats = analysis.get("top_categories", {})
         if "Ad Ads Advertise" in top_cats:
             insights.append("High concentration of advertising-related content.")
 
+        # 2. Synchronize with Research (Blackboard Collaboration)
         market_trends = research.get("market_trends", [])
         for trend in market_trends:
             insights.append(f"Synchronized Trend: {trend}")
+
+        # 3. Synchronize with Telemetry (External Investigation Collaboration)
+        # In a more advanced system, we'd query the TelemetryManager directly or use a shared event bus.
+        # Here we check the research results which already integrated the telemetry-derived investigations.
+        for investigation in research.get("external_investigations", []):
+            if investigation.get("world_context") == "GOOGLE_WORLD":
+                insights.append(f"External World Insight: {investigation['domain']} is an active node in the Google World.")
 
         competitors = research.get("competitor_analysis", {})
         if competitors:
@@ -28,5 +39,5 @@ class IntelligenceAgent(BaseAgent):
 
         return {
             "intelligence_insights": insights,
-            "synchronization_level": "ADVANCED"
+            "synchronization_level": "ADVANCED_COLABORATIVE"
         }

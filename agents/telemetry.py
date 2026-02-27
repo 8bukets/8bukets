@@ -13,13 +13,13 @@ class TelemetryManager:
         self.events: List[Dict[str, Any]] = []
         os.makedirs(os.path.dirname(output_file), exist_ok=True)
 
-    def record_event(self, agent_name: str, event_type: str, data: Dict[str, Any]):
+    def record_event(self, agent_name: str, event_type: str, data: Dict[str, Any], market_ref: str = "AD_ADS_ADVERTISE"):
         """Records a structural telemetry event."""
         event = {
             "timestamp": time.time(),
             "agent": agent_name,
             "event_type": event_type,
-            "market_data_ref": "AD_ADS_ADVERTISE",
+            "market_data_ref": market_ref,
             "payload": data
         }
         self.events.append(event)
