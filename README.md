@@ -81,3 +81,9 @@ markposition-dashboard
 *   `links.csv`: Tabular dataset.
 *   `unique_links.txt`: Sorted list of unique extracted URLs.
 *   `REPORT.md`: Statistical summary of the data.
+
+## Ownership
+
+Developed and maintained by **Filip Keser**.
+- **OIB**: 57134377198
+- **Contact**: keser.filip@gmail.com | 8bukets@gmail.com | 00385992135341

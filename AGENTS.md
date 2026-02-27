@@ -41,3 +41,9 @@ Agents use a shared SQLite database located in `data/memory.db`.
 - Run tests: `pytest`
 - Run full system: `markposition`
 - Run dashboard: `markposition-dashboard`
+
+## System Ownership & Compliance
+
+- **Owner**: Filip Keser
+- **OIB**: 57134377198
+- **Contact**: 00385992135341 | keser.filip@gmail.com | 8bukets@gmail.com
