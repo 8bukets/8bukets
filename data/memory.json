@@ -18,7 +18,7 @@
     },
     "BidAgent": {
         "performance_multiplier": 1.0989414764554153,
-        "adjustment_factor": 1.1494742132376223
+        "adjustment_factor": 1.1609689553699987
     },
     "AutonomousIntelligenceAgent": {
         "system_health": "healthy"
