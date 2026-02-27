@@ -24,6 +24,7 @@ from agents.targeting_agent import TargetingAgent
 from agents.ads_agent import AdsAgent
 from agents.bid_agent import BidAgent
 from agents.autonomous_intelligence_agent import AutonomousIntelligenceAgent
+from agents.telemetry_agent import TelemetryAgent
 
 # Configure Logging
 logging.basicConfig(
@@ -111,7 +112,14 @@ def generate_daily_report(context, filename):
             f.write(context.get("generated_content", ""))
             f.write("\n```\n")
 
-            f.write("\n## 8. Peer Review & Collaboration Log\n")
+            f.write("\n## 8. Market Data Structural Telemetry\n")
+            telemetry = context.get("telemetry_synthesis", {})
+            f.write(f"- **Status:** {telemetry.get('status', 'N/A')}\n")
+            f.write(f"- **Total Integrated Events:** {telemetry.get('total_events', 0)}\n")
+            for etype, count in telemetry.get("event_types", {}).items():
+                f.write(f"  - {etype}: {count}\n")
+
+            f.write("\n## 9. Peer Review & Collaboration Log\n")
             f.write(f"**Synchronization Status:** {research.get('synchronization_status', 'N/A')}\n\n")
             f.write("### Review Findings:\n")
             for review in context.get("peer_review_log", []):
@@ -149,7 +157,8 @@ async def run_cycle(auth_token: str = None):
         BidAgent(),
         MonetizationAgent(),
         ContentAgent(),
-        AutonomousIntelligenceAgent()
+        AutonomousIntelligenceAgent(),
+        TelemetryAgent()
     ]
 
     orchestrator = AgentOrchestrator(agents)

@@ -2,6 +2,7 @@ import asyncio
 import logging
 from typing import List, Dict, Set
 from agents.base_agent import BaseAgent, Blackboard
+from agents.telemetry import telemetry_manager
 
 logger = logging.getLogger("AgentOrchestrator")
 
@@ -43,8 +44,11 @@ class AgentOrchestrator:
             logger.info(f"Executing Tier {i+1}: {[a.name for a in tier]}")
             tasks = [self._run_agent(agent, data) for agent in tier]
             await asyncio.gather(*tasks)
+            # Save telemetry after each tier so following agents (like TelemetryAgent) can see it
+            telemetry_manager.save_telemetry()
 
         logger.info("Execution Cycle Complete.")
+        telemetry_manager.save_telemetry()
         return self.blackboard.get_all()
 
     async def _run_agent(self, agent: BaseAgent, data: list):
