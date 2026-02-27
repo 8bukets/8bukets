@@ -13,19 +13,28 @@ def index():
     html = """
     <html>
     <head>
-        <title>Autonomous System Dashboard</title>
+        <title>Autonomous System Admin UI</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css">
         <style>
-            .markdown-body { box-sizing: border-box; min-width: 200px; max-width: 980px; margin: 0 auto; padding: 45px; }
+            .markdown-body { box-sizing: border-box; min-width: 200px; max-width: 1200px; margin: 0 auto; padding: 45px; }
             @media (max-width: 767px) { .markdown-body { padding: 15px; } }
-            .nav { margin-bottom: 20px; }
+            .nav { margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+            .stat-box { display: inline-block; background: #f6f8fa; border: 1px solid #d0d7de; padding: 10px; margin-right: 10px; border-radius: 6px; }
         </style>
     </head>
     <body class="markdown-body">
-        <h1>Autonomous System Dashboard</h1>
+        <h1>Autonomous System Admin UI</h1>
         <div class="nav">
-            <a href="/evolution">System Evolution Log</a>
+            <a href="/evolution">System Evolution Log</a> |
+            <a href="/stats">System Stats</a> |
+            <a href="/logs">Worker Logs</a>
         </div>
+
+        <div style="margin-bottom: 20px;">
+            <div class="stat-box"><strong>Distributed Mode:</strong> """ + os.getenv("DISTRIBUTED_MODE", "FALSE") + """</div>
+            <div class="stat-box"><strong>Vector Store:</strong> """ + ("Enabled" if os.path.exists("data/vector_store") else "Disabled") + """</div>
+        </div>
+
         <h2>Daily Reports</h2>
         <ul>
     """
@@ -47,6 +56,33 @@ def show_report(name):
 
     html_content = markdown.markdown(content, extensions=['tables', 'fenced_code'])
     return f'<html><head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css"><style>.markdown-body {{ box-sizing: border-box; min-width: 200px; max-width: 980px; margin: 0 auto; padding: 45px; }}</style></head><body class="markdown-body"><a href="/">Back</a><hr>{html_content}</body></html>'
+
+@app.route('/stats')
+def show_stats():
+    import sqlite3
+    db_path = os.getenv("MEMORY_FILE", "data/memory.db")
+    stats = {}
+    if os.path.exists(db_path):
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+        cursor.execute("SELECT agent_name, COUNT(*) FROM agent_memory GROUP BY agent_name")
+        stats = dict(cursor.fetchall())
+        conn.close()
+
+    html = "<h1>System Persistence Stats</h1><ul>"
+    for agent, count in stats.items():
+        html += f"<li><strong>{agent}:</strong> {count} keys stored</li>"
+    html += "</ul><a href='/'>Back</a>"
+    return f'<html><head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css"><style>.markdown-body {{ padding: 45px; }}</style></head><body class="markdown-body">{html}</body></html>'
+
+@app.route('/logs')
+def show_logs():
+    log_path = "/tmp/dashboard.log"
+    content = "Log file not found."
+    if os.path.exists(log_path):
+        with open(log_path, 'r') as f:
+            content = f.read()
+    return f'<html><head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css"><style>.markdown-body {{ padding: 45px; }}</style></head><body class="markdown-body"><h1>Worker Logs</h1><pre>{content}</pre><a href="/">Back</a></body></html>'
 
 @app.route('/evolution')
 def show_evolution():

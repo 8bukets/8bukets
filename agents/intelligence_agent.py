@@ -37,6 +37,21 @@ class IntelligenceAgent(BaseAgent):
         if any("google" in note.lower() for note in research):
             insights.append("Google ecosystem is a primary focus area.")
 
+        # Long-term Semantic Retrieval (RAG)
+        try:
+            from .vector_memory import VectorMemory
+            vm = VectorMemory()
+            past_insights = vm.search("advertising trends", top_k=2)
+            for item in past_insights:
+                meta = item.get("metadata", {})
+                insights.append(f"Historical Trend Found (from {meta.get('agent')}): {item.get('metadata', {}).get('text')}")
+        except Exception as e:
+            self.logger.warning(f"Semantic retrieval skipped: {e}")
+
+        # Persistent Semantic Storage
+        for insight in insights:
+            self.add_vector_insight(insight, {"type": "intelligence", "sentiment": avg_sentiment})
+
         return {
             "intelligence_insights": insights,
             "sentiment_score": avg_sentiment

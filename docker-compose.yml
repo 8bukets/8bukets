@@ -3,6 +3,7 @@ services:
     build: .
     volumes:
       - ./data:/app/data
+      - ./agents:/app/agents
       - ./results:/app/results
     environment:
       - BASE_URL=https://markposition.wordpress.com/

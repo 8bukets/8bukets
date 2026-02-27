@@ -7,4 +7,4 @@ data/
 results/DAILY_REPORT_*.md
 REPORT.md
 SYSTEM_EVOLUTION.md
-agents/*ExpertAgent.py
+agents/*expertagent.py
