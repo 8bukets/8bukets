@@ -106,11 +106,17 @@ def generate_daily_report(context, filename):
                 f.write(f"- Target: {ad.get('target_audience')}\n")
                 f.write(f"- CTA: {ad.get('cta')}\n")
 
-            f.write("\n## 5. Market Analysis\n")
+            f.write("\n## 5. LLM System Reasoning\n")
+            f.write(f"{context.get('llm_reasoning', 'N/A')}\n\n")
+            f.write("**Recommendations:**\n")
+            for rec in context.get("llm_recommendations", []):
+                f.write(f"- {rec}\n")
+
+            f.write("\n## 6. Market Analysis\n")
             stats = context.get("analysis_stats", {})
             f.write(f"- **Total Posts:** {stats.get('total_posts')}\n")
 
-            f.write("\n## 6. Content Draft\n")
+            f.write("\n## 7. Content Draft\n")
             f.write("```text\n")
             f.write(context.get("generated_content", ""))
             f.write("\n```\n")

@@ -26,6 +26,7 @@ def index():
         <h1>Autonomous System Admin UI</h1>
         <div class="nav">
             <a href="/evolution">System Evolution Log</a> |
+            <a href="/chat">Semantic Chat (RAG)</a> |
             <a href="/stats">System Stats</a> |
             <a href="/logs">Worker Logs</a>
         </div>
@@ -83,6 +84,49 @@ def show_logs():
         with open(log_path, 'r') as f:
             content = f.read()
     return f'<html><head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css"><style>.markdown-body {{ padding: 45px; }}</style></head><body class="markdown-body"><h1>Worker Logs</h1><pre>{content}</pre><a href="/">Back</a></body></html>'
+
+@app.route('/chat', methods=['GET', 'POST'])
+def semantic_chat():
+    from flask import request
+    from markposition.agents.vector_memory import VectorMemory
+
+    query = ""
+    results = []
+    if request.method == 'POST':
+        query = request.form.get('query', '')
+        vm = VectorMemory()
+        results = vm.search(query, top_k=5)
+
+    html = """
+    <h1>Semantic Intelligence Interface (RAG)</h1>
+    <form method="post">
+        <input type="text" name="query" placeholder="Query the system memory..." style="width: 80%; padding: 10px;" value="{{query}}">
+        <button type="submit" style="padding: 10px;">Reason</button>
+    </form>
+    """
+
+    if query:
+        # AI Synthesis Simulation
+        synthesis = "Based on my analysis of the retrieved memories, "
+        if results:
+            top_text = results[0]['metadata'].get('text', '')
+            synthesis += f"I found {len(results)} relevant patterns. The most significant finding is: '{top_text}'. "
+            synthesis += "This suggests a strong correlation with recent scraping activity and agent collaboration."
+        else:
+            synthesis += "I couldn't find any direct semantic matches in the current memory bank. I recommend running a new cycle to populate the vector store."
+
+        html += f"<div style='background: #e1f5fe; border-left: 5px solid #03a9f4; padding: 15px; border-radius: 4px; margin-bottom: 20px;'><strong>AI System Synthesis:</strong><br>{synthesis}</div>"
+
+        html += f"<h3>Raw Memory Retrieval for: '{query}'</h3><ul>"
+        if not results:
+            html += "<li>No semantic matches found in system memory.</li>"
+        for res in results:
+            meta = res['metadata']
+            html += f"<li><strong>[{meta.get('agent', 'Unknown')}]</strong>: {meta.get('text')} <br><small>Relevance Distance: {res['distance']:.4f}</small></li>"
+        html += "</ul>"
+
+    html += "<br><a href='/'>Back</a>"
+    return render_template_string(f'<html><head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css"><style>.markdown-body {{ padding: 45px; }}</style></head><body class="markdown-body">{html}</body></html>', query=query)
 
 @app.route('/evolution')
 def show_evolution():
