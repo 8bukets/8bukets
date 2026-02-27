@@ -4,13 +4,14 @@ A robust, asynchronous toolset for scraping and analyzing data from `https://mar
 
 ## Features
 
-### Orchestrator (`run_system.py`)
-*   **Dynamic Agent Discovery**: Automatically detects and loads agents from the `agents/` folder.
+### Orchestrator (`markposition`)
+*   **Dynamic Agent Discovery**: Automatically detects and loads agents from the `agents/` package.
 *   **Concurrent Stage-Based Execution**: Runs independent agents in parallel stages using `asyncio.gather`.
 *   **SQLAlchemy Persistence**: Uses SQLite for cross-cycle memory management.
+*   **RAG-based Intelligence**: Integrated Vector Memory (FAISS) for semantic search and reasoning.
 *   **Rich CLI Dashboard**: Real-time progress monitoring and summary reports.
 
-### Scraper (`scraper.py`)
+### Scraper
 *   **High Performance**: Built with `aiohttp` and `asyncio` for concurrent fetching.
 *   **Robust**: Handles network errors and pagination automatically (stops on 404 or empty pages).
 *   **Smart Extraction**:
@@ -38,7 +39,7 @@ A robust, asynchronous toolset for scraping and analyzing data from `https://mar
 Install dependencies:
 
 ```bash
-pip install aiohttp beautifulsoup4 requests
+pip install .
 ```
 
 ## Configuration & Deployment
@@ -59,15 +60,15 @@ docker-compose up --build
 Executes the scraper followed by the concurrent agent pipeline and generates a daily report:
 
 ```bash
-python3 run_system.py
+markposition
 ```
 
-### 2. Scrape Data Individually
+### 2. Run Semantic Dashboard
 
-Run the analytics script to process the JSON data:
+Start the Flask-based intelligence interface:
 
 ```bash
-python3 analytics.py
+markposition-dashboard
 ```
 
 **Options:**

@@ -5,10 +5,10 @@ Welcome, Agent. This repository contains an autonomous ecosystem for scraping, a
 ## Architecture Overview
 
 The system follows a modular, agent-based architecture with concurrent execution:
-1.  **Scraper (`scraper.py`)**: Asynchronously fetches data from the target blog.
-2.  **Analytics (`analytics.py`)**: Processes raw JSON data to generate statistics and a Markdown report.
-3.  **Agents (`agents/`)**: Individual specialized agents that collaborate to synthesize intelligence, generate ads, and draft content.
-4.  **Orchestrator (`run_system.py`)**: Manages the end-to-end cycle of scraping followed by agent execution.
+1.  **Scraper**: Asynchronously fetches data from the target blog.
+2.  **Agents (`src/markposition/agents/`)**: Specialized agents that collaborate to synthesize intelligence.
+3.  **Intelligence Layer**: Uses FAISS and SentenceTransformers for semantic memory (RAG).
+4.  **Orchestrator**: Manages the end-to-end cycle via the `markposition` command.
 
 ## Agent Collaboration Flow
 
@@ -38,6 +38,6 @@ Agents use a shared SQLite database located in `data/memory.db`.
 
 ## Command Reference
 
-- Run tests: `python3 -m pytest tests/`
-- Run full system: `python3 run_system.py`
-- Scrape only: `python3 scraper.py --limit 5`
+- Run tests: `pytest`
+- Run full system: `markposition`
+- Run dashboard: `markposition-dashboard`
