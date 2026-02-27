@@ -100,5 +100,8 @@ def show_evolution():
 def serve_results(filename):
     return send_from_directory('results', filename)
 
-if __name__ == '__main__':
+def main():
     app.run(host='0.0.0.0', port=3000)
+
+if __name__ == '__main__':
+    main()

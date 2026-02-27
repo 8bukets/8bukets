@@ -3,9 +3,9 @@ services:
     build: .
     volumes:
       - ./data:/app/data
-      - ./agents:/app/agents
+      - ./src/markposition/agents:/app/src/markposition/agents
       - ./results:/app/results
-    command: python run_system.py --loop --dashboard
+    command: markposition --loop --dashboard
     environment:
       - BASE_URL=https://markposition.wordpress.com/
       - LOG_FORMAT=TEXT

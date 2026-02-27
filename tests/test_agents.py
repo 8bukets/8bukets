@@ -1,8 +1,8 @@
 import pytest
 import asyncio
-from agents.health_check_agent import HealthCheckAgent
-from agents.ads_agent import AdsAgent
-from agents.browser_test_agent import BrowserTestAgent
+from markposition.agents.health_check_agent import HealthCheckAgent
+from markposition.agents.ads_agent import AdsAgent
+from markposition.agents.browser_test_agent import BrowserTestAgent
 from unittest.mock import AsyncMock, patch
 
 @pytest.mark.asyncio
@@ -41,7 +41,7 @@ async def test_browser_test_agent_mock():
     agent = BrowserTestAgent()
 
     # Mock playwright
-    with patch("agents.browser_test_agent.async_playwright") as mock_pw:
+    with patch("markposition.agents.browser_test_agent.async_playwright") as mock_pw:
         mock_context = AsyncMock()
         mock_page = AsyncMock()
         mock_browser = AsyncMock()

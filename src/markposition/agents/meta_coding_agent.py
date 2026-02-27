@@ -23,7 +23,9 @@ class MetaCodingAgent(BaseAgent):
                 # Sanitize category for safe class naming and string usage
                 safe_category = re.sub(r'[^a-zA-Z0-9 ]', '', category)
                 class_name = re.sub(r'\W+', '', safe_category.title()) + "ExpertAgent"
-                filename = f"agents/{class_name.lower()}.py"
+                # Use absolute path relative to this file
+                agents_dir = os.path.dirname(os.path.abspath(__file__))
+                filename = os.path.join(agents_dir, f"{class_name.lower()}.py")
 
                 if not os.path.exists(filename):
                     self.logger.info(f"Dominant pattern detected: {safe_category}. Generating {class_name}...")
@@ -39,7 +41,7 @@ class MetaCodingAgent(BaseAgent):
     def generate_expert_agent_code(self, class_name, safe_category):
         # Use a more robust templating approach (triple quotes and escaped brackets)
         # and ensure strings are properly escaped to prevent RCE.
-        return f"""from .base_agent import BaseAgent
+        return f"""from markposition.agents.base_agent import BaseAgent
 
 class {class_name}(BaseAgent):
     execution_stage = 5

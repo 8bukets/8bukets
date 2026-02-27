@@ -86,7 +86,7 @@ class BaseAgent(ABC):
     def add_vector_insight(self, text, meta=None):
         """Add a semantic insight to the global vector memory."""
         try:
-            from .vector_memory import VectorMemory
+            from markposition.agents.vector_memory import VectorMemory
             vm = VectorMemory()
             meta = meta or {}
             meta.update({"agent": self.name, "timestamp": datetime.now(timezone.utc).isoformat()})

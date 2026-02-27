@@ -39,7 +39,7 @@ class IntelligenceAgent(BaseAgent):
 
         # Long-term Semantic Retrieval (RAG)
         try:
-            from .vector_memory import VectorMemory
+            from markposition.agents.vector_memory import VectorMemory
             vm = VectorMemory()
             past_insights = vm.search("advertising trends", top_k=2)
             for item in past_insights:

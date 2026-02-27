@@ -1,5 +1,5 @@
 import pytest
-from scraper import MarkPositionScraperAsync
+from markposition.scraper import MarkPositionScraperAsync
 
 @pytest.fixture
 def scraper():

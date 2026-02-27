@@ -1,5 +1,5 @@
 import pytest
-import analytics
+from markposition import analytics
 
 def test_get_domain():
     assert analytics.get_domain("https://www.google.com/search") == "google.com"

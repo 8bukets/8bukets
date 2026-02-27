@@ -15,8 +15,9 @@ from rich.console import Console
 from rich.table import Table
 from rich.live import Live
 from rich.progress import Progress, SpinnerColumn, TextColumn
-import agents
-from agents.base_agent import BaseAgent
+
+from markposition import agents
+from markposition.agents.base_agent import BaseAgent
 
 class JsonFormatter(logging.Formatter):
     def format(self, record):
@@ -43,8 +44,9 @@ logging.getLogger().setLevel(logging.INFO)
 def run_scraper():
     logger.info("Starting Scraper...")
     try:
+        # Now that it's a package, we might want to call it differently or keep it as subprocess
         result = subprocess.run(
-            [sys.executable, "scraper.py", "--limit", "5"],
+            [sys.executable, "-m", "markposition.scraper", "--limit", "5"],
             capture_output=True,
             text=True
         )
@@ -120,8 +122,9 @@ def generate_daily_report(context, filename):
 def discover_agents():
     """Dynamically discover and instantiate agents from the agents/ directory."""
     discovered = []
+    # Adjust path for walk_packages
     for loader, module_name, is_pkg in pkgutil.walk_packages(agents.__path__, agents.__name__ + "."):
-        if module_name == "agents.base_agent":
+        if module_name == "markposition.agents.base_agent":
             continue
         try:
             module = importlib.import_module(module_name)
@@ -159,6 +162,8 @@ async def run_cycle(sim_date=None):
             stages[stage] = []
         stages[stage].append(agent)
 
+    distributed = os.getenv("DISTRIBUTED_MODE", "FALSE").upper() == "TRUE"
+
     with Progress(
         SpinnerColumn(),
         TextColumn("[progress.description]{task.description}"),
@@ -169,11 +174,27 @@ async def run_cycle(sim_date=None):
                 stage_agents = stages[stage_num]
                 task_id = progress.add_task(description=f"Executing Stage {stage_num}...", total=len(stage_agents))
 
-                # Inject session
-                for a in stage_agents:
-                    a.session = session
+                if distributed:
+                    from markposition.tasks import run_agent_task
+                    logger.info(f"Stage {stage_num}: Dispatching {len(stage_agents)} agents to Celery.")
 
-                results = await asyncio.gather(*[a.run(data, context) for a in stage_agents], return_exceptions=True)
+                    # Bridge: Dispatch to Celery and wait for results
+                    tasks = []
+                    for a in stage_agents:
+                        # We pass the module and class name so the worker can re-instantiate
+                        task = run_agent_task.delay(a.__module__, a.__class__.__name__, data, context)
+                        tasks.append(task)
+
+                    # Poll for completion (simplified bridge)
+                    results = []
+                    for t in tasks:
+                        results.append(t.get()) # Blocking get in a loop for each stage
+                else:
+                    # Standard async local execution
+                    for a in stage_agents:
+                        a.session = session
+
+                    results = await asyncio.gather(*[a.run(data, context) for a in stage_agents], return_exceptions=True)
 
                 for res in results:
                     if isinstance(res, dict):
@@ -219,7 +240,8 @@ async def main_async():
 
     if args.dashboard:
         logger.info("Starting Web Dashboard...")
-        subprocess.Popen([sys.executable, "dashboard.py"])
+        # Since it's a module now
+        subprocess.Popen([sys.executable, "-m", "markposition.dashboard"])
 
     if args.loop:
         logger.info("System starting in LOOP mode.")
