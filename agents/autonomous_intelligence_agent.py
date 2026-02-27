@@ -1,18 +1,17 @@
-from .base_agent import BaseAgent
+from .base_agent import BaseAgent, Blackboard
 
 class AutonomousIntelligenceAgent(BaseAgent):
     def __init__(self):
-        super().__init__("AutonomousIntelligenceAgent")
+        super().__init__("AutonomousIntelligenceAgent", dependencies=["health_report", "generated_ads", "bid_strategy", "targeting_profile", "robots_txt"], provides=["autonomous_status", "ecosystem_health"])
 
-    async def run(self, data: list, context: dict) -> dict:
+    async def run(self, data: list, blackboard: Blackboard) -> dict:
         self.logger.info("Overseeing Ecosystem...")
 
-        # High-level "Google Antigravity" collaboration check
         checks = {
-            "has_ads": "generated_ads" in context,
-            "has_bids": "bid_strategy" in context,
-            "has_persona": "targeting_profile" in context,
-            "has_robots": "robots_txt" in context
+            "has_ads": blackboard.get("generated_ads") is not None,
+            "has_bids": blackboard.get("bid_strategy") is not None,
+            "has_persona": blackboard.get("targeting_profile") is not None,
+            "has_robots": blackboard.get("robots_txt") is not None
         }
 
         status = "OPTIMAL"
@@ -22,7 +21,6 @@ class AutonomousIntelligenceAgent(BaseAgent):
                 status = "DEGRADED"
                 issues.append(f"Missing context: {k}")
 
-        # Self-healing / Instruction for next cycle (stored in memory)
         if status == "DEGRADED":
             self.logger.warning(f"System degraded: {issues}")
             self.update_agent_memory("system_health", "degraded")

@@ -7,7 +7,10 @@ import logging
 import asyncio
 from datetime import datetime
 
-# Import Agents
+# Orchestrator
+from agents.orchestrator import AgentOrchestrator
+
+# Agents
 from agents.health_check_agent import HealthCheckAgent
 from agents.analysis_agent import AnalysisAgent
 from agents.research_agent import ResearchAgent
@@ -15,8 +18,6 @@ from agents.intelligence_agent import IntelligenceAgent
 from agents.monetization_agent import MonetizationAgent
 from agents.creativity_agent import CreativityAgent
 from agents.content_agent import ContentAgent
-
-# New Autonomous Agents
 from agents.robot_txt_agent import RobotTxtAgent
 from agents.targeting_agent import TargetingAgent
 from agents.ads_agent import AdsAgent
@@ -109,63 +110,55 @@ def generate_daily_report(context, filename):
             f.write(context.get("generated_content", ""))
             f.write("\n```\n")
 
-            f.write("\n## 8. Collaboration Log\n")
-            f.write(f"Synchronization Status: {research.get('synchronization_status', 'N/A')}\n")
+            f.write("\n## 8. Peer Review & Collaboration Log\n")
+            f.write(f"**Synchronization Status:** {research.get('synchronization_status', 'N/A')}\n\n")
+            f.write("### Review Findings:\n")
+            for review in context.get("peer_review_log", []):
+                f.write(f"- {review}\n")
 
         logger.info(f"Report generated at {filename}")
     except IOError as e:
         logger.error(f"Failed to write report: {e}")
 
-async def run_tier(tier_agents, data, context):
-    tasks = [agent.run(data, context) for agent in tier_agents]
-    results = await asyncio.gather(*tasks)
-    for result in results:
-        if result:
-            context.update(result)
-
 async def run_cycle():
-    logger.info("=== Starting Daily Synchronized Autonomous Cycle ===")
+    logger.info("=== Starting Daily Synchronized Autonomous Cycle (DAG Mode) ===")
 
-    # 1. Scrape
     if not run_scraper():
         logger.error("Cycle aborted due to scraper failure.")
         return
 
-    # 2. Load Data
     data = load_data()
     if not data:
         logger.warning("No data loaded. Skipping agent execution.")
         return
 
-    context = {}
+    agents = [
+        HealthCheckAgent(),
+        RobotTxtAgent(),
+        AnalysisAgent(),
+        ResearchAgent(),
+        IntelligenceAgent(),
+        TargetingAgent(),
+        CreativityAgent(),
+        AdsAgent(),
+        BidAgent(),
+        MonetizationAgent(),
+        ContentAgent(),
+        AutonomousIntelligenceAgent()
+    ]
 
-    # 3. Execution Tiers (Concurrent within Tiers, Sequential between Tiers)
-    # Tier 1: Initial Assessment
-    tier1 = [HealthCheckAgent(), RobotTxtAgent(), AnalysisAgent()]
-    logger.info("Executing Tier 1: Initial Assessment...")
-    await run_tier(tier1, data, context)
+    orchestrator = AgentOrchestrator(agents)
 
-    # Tier 2: Research & Creative Foundations (Depends on Tier 1)
-    tier2 = [ResearchAgent(), CreativityAgent(), TargetingAgent()]
-    logger.info("Executing Tier 2: Research & Creative...")
-    await run_tier(tier2, data, context)
+    # 1. Primary Execution Cycle
+    context = await orchestrator.execute_cycle(data)
 
-    # Tier 3: Intelligence & Strategy (Depends on Tier 2)
-    tier3 = [IntelligenceAgent(), BidAgent()]
-    logger.info("Executing Tier 3: Intelligence & Strategy...")
-    await run_tier(tier3, data, context)
+    # 2. Peer Review Phase
+    await orchestrator.run_peer_review()
 
-    # Tier 4: Execution & Monetization (Depends on Tier 3)
-    tier4 = [AdsAgent(), MonetizationAgent(), ContentAgent()]
-    logger.info("Executing Tier 4: Execution...")
-    await run_tier(tier4, data, context)
+    # Final Context with Reviews
+    context = orchestrator.blackboard.get_all()
 
-    # Tier 5: Oversight
-    tier5 = [AutonomousIntelligenceAgent()]
-    logger.info("Executing Tier 5: Oversight...")
-    await run_tier(tier5, data, context)
-
-    # 4. Report
+    # 3. Report
     report_file = f"results/DAILY_REPORT_{datetime.now().strftime('%Y-%m-%d')}.md"
     generate_daily_report(context, report_file)
 
@@ -182,7 +175,7 @@ async def main_async():
             while True:
                 await run_cycle()
                 logger.info("Sleeping for 24 hours...")
-                await asyncio.sleep(86400) # 24 hours
+                await asyncio.sleep(86400)
         except asyncio.CancelledError:
             logger.info("Loop interrupted.")
     else:

@@ -1,19 +1,19 @@
-from .base_agent import BaseAgent
+from .base_agent import BaseAgent, Blackboard
 
 class MonetizationAgent(BaseAgent):
     def __init__(self):
-        super().__init__("MonetizationAgent")
+        super().__init__("MonetizationAgent", dependencies=["analysis_stats", "bid_strategy"], provides=["monetization_plan"])
 
-    async def run(self, data: list, context: dict) -> dict:
+    async def run(self, data: list, blackboard: Blackboard) -> dict:
         self.logger.info("Running Monetization Analysis...")
 
-        keywords = ["affiliate", "program", "earn", "money", "monetize", "revenue"]
-        opportunities = []
+        stats = blackboard.get("analysis_stats", {})
+        bid = blackboard.get("bid_strategy", {})
 
-        for post in data:
-            title = post.get('title', '').lower()
-            if any(k in title for k in keywords):
-                opportunities.append(post.get('title'))
+        plan = {
+            "projected_revenue": stats.get("total_posts", 0) * 0.05,
+            "cpm_target": bid.get("recommended_cpm", 0.0),
+            "channels": ["Direct", "Programmatic"]
+        }
 
-        # Limit to top 5
-        return {"monetization_opportunities": opportunities[:5]}
+        return {"monetization_plan": plan}

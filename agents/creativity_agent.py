@@ -1,24 +1,21 @@
-from .base_agent import BaseAgent
-import random
+from .base_agent import BaseAgent, Blackboard
 
 class CreativityAgent(BaseAgent):
     def __init__(self):
-        super().__init__("CreativityAgent")
+        super().__init__("CreativityAgent", dependencies=["intelligence_insights"], provides=["creative_concepts"])
 
-    async def run(self, data: list, context: dict) -> dict:
+    async def run(self, data: list, blackboard: Blackboard) -> dict:
         self.logger.info("Running Creativity Session...")
 
-        insights = context.get("intelligence_insights", [])
+        insights = blackboard.get("intelligence_insights", [])
 
-        angles = [
-            "The Hidden Truth About Ad Tech",
-            "Why Your Strategy Needs a Reboot",
+        concepts = [
             "5 Trends Shaping the Future",
+            "Why Your Strategy Needs a Reboot",
             "Monetization: Beyond the Basics"
         ]
 
-        selected_angles = random.sample(angles, 2)
-        if insights:
-            selected_angles.append(f"Deep Dive: {insights[0]}")
+        if any("advertising" in str(insight).lower() for insight in insights):
+            concepts.append("Deep Dive: High concentration of advertising-related content.")
 
-        return {"creative_angles": selected_angles}
+        return {"creative_concepts": concepts}

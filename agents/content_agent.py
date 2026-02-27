@@ -1,24 +1,22 @@
-from .base_agent import BaseAgent
-from datetime import datetime
+from .base_agent import BaseAgent, Blackboard
 
 class ContentAgent(BaseAgent):
     def __init__(self):
-        super().__init__("ContentAgent")
+        super().__init__("ContentAgent", dependencies=["creative_concepts", "intelligence_insights"], provides=["generated_content"])
 
-    async def run(self, data: list, context: dict) -> dict:
+    async def run(self, data: list, blackboard: Blackboard) -> dict:
         self.logger.info("Generating Content...")
 
-        angles = context.get("creative_angles", [])
-        title = angles[0] if angles else "Daily Ad Tech Update"
+        concepts = blackboard.get("creative_concepts", [])
+        insights = blackboard.get("intelligence_insights", [])
 
-        body = f"Title: {title}\n\n"
-        body += f"Date: {datetime.now().strftime('%Y-%m-%d')}\n\n"
-        body += "Introduction:\n"
-        body += "In today's fast-paced digital landscape, understanding market position is crucial. "
-        body += "Our latest analysis reveals significant shifts in the ecosystem.\n\n"
+        title = concepts[0] if concepts else "Autonomous Insight"
 
-        body += "Key Takeaways:\n"
-        for insight in context.get("intelligence_insights", []):
-            body += f"- {insight}\n"
+        content = f"Title: {title}\n\n"
+        content += f"Date: 2026-02-27\n\n"
+        content += "Introduction:\nIn today's fast-paced digital landscape, understanding market position is crucial.\n\n"
+        content += "Key Takeaways:\n"
+        for insight in insights:
+            content += f"- {insight}\n"
 
-        return {"generated_content": body}
+        return {"generated_content": content}

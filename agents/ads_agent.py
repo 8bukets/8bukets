@@ -1,26 +1,21 @@
-from .base_agent import BaseAgent
+from .base_agent import BaseAgent, Blackboard
 
 class AdsAgent(BaseAgent):
     def __init__(self):
-        super().__init__("AdsAgent")
+        super().__init__("AdsAgent", dependencies=["targeting_profile", "creative_concepts"], provides=["generated_ads"])
 
-    async def run(self, data: list, context: dict) -> dict:
+    async def run(self, data: list, blackboard: Blackboard) -> dict:
         self.logger.info("Generating Ad Campaigns...")
 
-        # Collaborative dependency: Needs Targeting Profile
-        targeting = context.get("targeting_profile", {})
-        persona = targeting.get("primary_persona", "Unknown")
+        targeting = blackboard.get("targeting_profile", {})
+        concepts = blackboard.get("creative_concepts", [])
 
-        # Collaborative dependency: Needs Creative Angles
-        angles = context.get("creative_angles", ["Generic Ad"])
-
-        campaigns = []
-        for i, angle in enumerate(angles[:3]):
-            campaigns.append({
-                "id": f"CMP-{i+1:03d}",
-                "headline": angle,
-                "target_audience": persona,
-                "cta": "Learn More" if "Deep Dive" in angle else "Get Started"
+        ads = []
+        for concept in concepts[:3]:
+            ads.append({
+                "headline": concept,
+                "target_audience": targeting.get("primary_persona"),
+                "cta": "Get Started" if "Trends" in concept else "Learn More"
             })
 
-        return {"generated_ads": campaigns}
+        return {"generated_ads": ads}

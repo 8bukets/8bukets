@@ -3,15 +3,41 @@ import logging
 import json
 import os
 import asyncio
+from typing import Any, Dict, List, Set
 
 MEMORY_FILE = "data/memory.json"
 
+class Blackboard:
+    """Shared state management with history tracking."""
+    def __init__(self):
+        self._data: Dict[str, Any] = {}
+        self._history: List[Dict[str, Any]] = []
+        self._lock = asyncio.Lock()
+
+    async def update(self, agent_name: str, updates: Dict[str, Any]):
+        async with self._lock:
+            self._data.update(updates)
+            self._history.append({
+                "agent": agent_name,
+                "timestamp": asyncio.get_event_loop().time(),
+                "keys": list(updates.keys())
+            })
+
+    def get_all(self) -> Dict[str, Any]:
+        return self._data.copy()
+
+    def get(self, key: str, default=None) -> Any:
+        return self._data.get(key, default)
+
+    def get_history(self) -> List[Dict[str, Any]]:
+        return self._history
+
 class BaseAgent(ABC):
-    def __init__(self, name):
+    def __init__(self, name: str, dependencies: List[str] = None, provides: List[str] = None):
         self.name = name
+        self.dependencies = dependencies or []
+        self.provides = provides or []
         self.logger = logging.getLogger(name)
-        # Ensure logging is configured only once or at a high level,
-        # but for individual agents we can set their specific levels if needed.
         self.logger.setLevel(logging.INFO)
 
     def load_memory(self) -> dict:
@@ -48,17 +74,24 @@ class BaseAgent(ABC):
         return full_mem.get(self.name, {}).get(key, default)
 
     @abstractmethod
-    async def run(self, data: list, context: dict) -> dict:
+    async def run(self, data: list, blackboard: Blackboard) -> dict:
         """
         Run the agent's task asynchronously.
         :param data: The raw scraped data (list of dicts).
-        :param context: A dictionary containing results from previous agents (shared blackboard).
-        :return: A dictionary containing this agent's output to be merged into context.
+        :param blackboard: The shared state manager.
+        :return: A dictionary containing this agent's output to be merged into blackboard.
         """
         pass
 
-    async def collaborate(self, other_agent_name: str, topic: str, context: dict):
+    async def review(self, blackboard: Blackboard) -> List[str]:
+        """
+        Optional: Review the work of other agents.
+        :return: A list of suggestions or validations.
+        """
+        return []
+
+    async def collaborate(self, other_agent_name: str, topic: str, blackboard: Blackboard):
         """Simulate a collaboration request to another agent."""
         self.logger.info(f"Collaborating with {other_agent_name} on '{topic}'...")
-        await asyncio.sleep(0.1) # Simulate communication overhead
-        return context.get(other_agent_name, {}).get(topic)
+        await asyncio.sleep(0.05)
+        return blackboard.get(topic)
