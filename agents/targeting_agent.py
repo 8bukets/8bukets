@@ -23,11 +23,11 @@ class TargetingAgent(BaseAgent):
             primary_persona += " (Google Stack Focus)"
 
         # Evolution: Check if persona changed from last run
-        last_persona = self.get_agent_memory("last_primary_persona")
+        last_persona = await self.get_agent_memory("last_primary_persona")
         if last_persona and last_persona != primary_persona:
             self.logger.info(f"EVOLUTION: Audience shifted from {last_persona} to {primary_persona}")
 
-        self.update_agent_memory("last_primary_persona", primary_persona)
+        await self.update_agent_memory("last_primary_persona", primary_persona)
 
         return {
             "targeting_profile": {

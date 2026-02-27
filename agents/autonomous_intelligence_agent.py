@@ -32,9 +32,9 @@ class AutonomousIntelligenceAgent(BaseAgent):
         # Self-healing / Instruction for next cycle (stored in memory)
         if status == "DEGRADED":
             self.logger.warning(f"System degraded: {issues}")
-            self.update_agent_memory("system_health", "degraded")
+            await self.update_agent_memory("system_health", "degraded")
         else:
-            self.update_agent_memory("system_health", "healthy")
+            await self.update_agent_memory("system_health", "healthy")
 
         # Evolution: Track Meta-Coding actions
         meta_actions = context.get("meta_coding_actions", [])

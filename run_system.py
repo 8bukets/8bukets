@@ -133,7 +133,7 @@ def discover_agents():
             logger.error(f"Failed to load agent from {module_name}: {e}")
     return discovered
 
-async def run_cycle():
+async def run_cycle(sim_date=None):
     console = Console()
     console.print("[bold blue]=== Starting Daily Autonomous Cycle ===[/bold blue]")
 
@@ -195,7 +195,8 @@ async def run_cycle():
     console.print(table)
 
     # 4. Report
-    report_file = f"results/DAILY_REPORT_{datetime.now().strftime('%Y-%m-%d')}.md"
+    report_date = sim_date if sim_date else datetime.now().strftime('%Y-%m-%d')
+    report_file = f"results/DAILY_REPORT_{report_date}.md"
     generate_daily_report(context, report_file)
 
     logger.info("=== Cycle Complete ===")
@@ -204,7 +205,17 @@ async def main_async():
     parser = argparse.ArgumentParser(description="Autonomous Agent System")
     parser.add_argument("--loop", action="store_true", help="Run continuously every 24h")
     parser.add_argument("--dashboard", action="store_true", help="Start the web dashboard")
+    parser.add_argument("--simulate-days", type=int, help="Simulate a number of days of execution")
     args = parser.parse_args()
+
+    if args.simulate_days:
+        logger.info(f"Simulating {args.simulate_days} days of operation...")
+        from datetime import timedelta
+        for day in range(args.simulate_days):
+            sim_date = (datetime.now() - timedelta(days=args.simulate_days - day - 1)).strftime('%Y-%m-%d')
+            logger.info(f"--- Simulating Day {day+1} ({sim_date}) ---")
+            await run_cycle(sim_date=sim_date)
+        return
 
     if args.dashboard:
         logger.info("Starting Web Dashboard...")

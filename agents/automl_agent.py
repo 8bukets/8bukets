@@ -19,7 +19,7 @@ class AutoMLAgent(BaseAgent):
         if 'datetime' not in df.columns:
             return {"automl_prediction": "Insufficient Data"}
 
-        df['datetime'] = pd.to_datetime(df['datetime'])
+        df['datetime'] = pd.to_datetime(df['datetime'], utc=True)
         df['day'] = df['datetime'].dt.date
 
         daily_counts = df.groupby('day').size().reset_index(name='count')

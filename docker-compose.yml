@@ -5,7 +5,9 @@ services:
       - ./data:/app/data
       - ./agents:/app/agents
       - ./results:/app/results
+    command: python run_system.py --loop --dashboard
     environment:
       - BASE_URL=https://markposition.wordpress.com/
       - LOG_FORMAT=TEXT
       - SCRAPE_LIMIT=5
+      - DISTRIBUTED_MODE=TRUE

@@ -22,7 +22,7 @@ class BidAgent(BaseAgent):
 
         # Evolution: Adjust based on historical "performance" (simulated)
         # In a real scenario, this would read feedback (clicks/conversions) from memory
-        perf_factor = self.get_agent_memory("performance_multiplier", 1.0)
+        perf_factor = await self.get_agent_memory("performance_multiplier", 1.0)
         final_bid = round(base_bid * perf_factor, 2)
 
         # Self-optimization (Autonomus Decision)
@@ -30,7 +30,7 @@ class BidAgent(BaseAgent):
         import random
         fluctuation = random.uniform(0.9, 1.1)
         new_multiplier = perf_factor * fluctuation
-        self.update_agent_memory("performance_multiplier", new_multiplier)
+        await self.update_agent_memory("performance_multiplier", new_multiplier)
 
         return {
             "bid_strategy": {

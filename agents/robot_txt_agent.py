@@ -37,12 +37,12 @@ class RobotTxtAgent(BaseAgent):
                     sitemaps.append(line.split(":", 1)[1].strip())
 
         # Save findings to memory for evolution (e.g. noticing changes over time)
-        previous_disallowed = self.get_agent_memory("disallowed_paths", [])
+        previous_disallowed = await self.get_agent_memory("disallowed_paths", [])
         new_paths = set(disallowed) - set(previous_disallowed)
         if new_paths:
             self.logger.info(f"EVOLUTION: New disallowed paths detected: {new_paths}")
 
-        self.update_agent_memory("disallowed_paths", disallowed)
+        await self.update_agent_memory("disallowed_paths", disallowed)
 
         return {
             "robots_txt": {
