@@ -5,7 +5,7 @@ class CreativityAgent(BaseAgent):
     def __init__(self):
         super().__init__("CreativityAgent")
 
-    def run(self, data: list, context: dict) -> dict:
+    async def run(self, data: list, context: dict) -> dict:
         self.logger.info("Running Creativity Session...")
 
         insights = context.get("intelligence_insights", [])

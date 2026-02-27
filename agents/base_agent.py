@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 import logging
 import json
 import os
+import asyncio
 
 MEMORY_FILE = "data/memory.json"
 
@@ -9,7 +10,9 @@ class BaseAgent(ABC):
     def __init__(self, name):
         self.name = name
         self.logger = logging.getLogger(name)
-        logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+        # Ensure logging is configured only once or at a high level,
+        # but for individual agents we can set their specific levels if needed.
+        self.logger.setLevel(logging.INFO)
 
     def load_memory(self) -> dict:
         """Load global memory from disk."""
@@ -25,6 +28,7 @@ class BaseAgent(ABC):
     def save_memory(self, memory: dict):
         """Save global memory to disk."""
         try:
+            os.makedirs(os.path.dirname(MEMORY_FILE), exist_ok=True)
             with open(MEMORY_FILE, 'w', encoding='utf-8') as f:
                 json.dump(memory, f, indent=4)
         except Exception as e:
@@ -44,11 +48,17 @@ class BaseAgent(ABC):
         return full_mem.get(self.name, {}).get(key, default)
 
     @abstractmethod
-    def run(self, data: list, context: dict) -> dict:
+    async def run(self, data: list, context: dict) -> dict:
         """
-        Run the agent's task.
+        Run the agent's task asynchronously.
         :param data: The raw scraped data (list of dicts).
-        :param context: A dictionary containing results from previous agents.
-        :return: A dictionary containing this agent's output.
+        :param context: A dictionary containing results from previous agents (shared blackboard).
+        :return: A dictionary containing this agent's output to be merged into context.
         """
         pass
+
+    async def collaborate(self, other_agent_name: str, topic: str, context: dict):
+        """Simulate a collaboration request to another agent."""
+        self.logger.info(f"Collaborating with {other_agent_name} on '{topic}'...")
+        await asyncio.sleep(0.1) # Simulate communication overhead
+        return context.get(other_agent_name, {}).get(topic)

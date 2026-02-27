@@ -4,7 +4,7 @@ class BidAgent(BaseAgent):
     def __init__(self):
         super().__init__("BidAgent")
 
-    def run(self, data: list, context: dict) -> dict:
+    async def run(self, data: list, context: dict) -> dict:
         self.logger.info("Calculating Bid Strategy...")
 
         # Collaborate with Ads and Targeting

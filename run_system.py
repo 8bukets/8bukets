@@ -4,6 +4,7 @@ import json
 import os
 import subprocess
 import logging
+import asyncio
 from datetime import datetime
 
 # Import Agents
@@ -60,10 +61,12 @@ def load_data(filepath="links.json"):
 
 def generate_daily_report(context, filename):
     try:
+        os.makedirs(os.path.dirname(filename), exist_ok=True)
         with open(filename, 'w', encoding='utf-8') as f:
             f.write(f"# Daily Autonomous Report: {datetime.now().strftime('%Y-%m-%d')}\n\n")
 
-            f.write(f"**Autonomous Status:** {context.get('autonomous_status', 'UNKNOWN')}\n\n")
+            f.write(f"**Autonomous Status:** {context.get('autonomous_status', 'UNKNOWN')}\n")
+            f.write(f"**Synchronization Level:** {context.get('synchronization_level', 'BASIC')}\n\n")
 
             f.write("## 1. Ecosystem Health\n")
             health = context.get("health_report", {})
@@ -77,33 +80,51 @@ def generate_daily_report(context, filename):
             f.write(f"- **Persona:** {targeting.get('primary_persona', 'N/A')}\n")
             f.write(f"- **Intent:** {targeting.get('intent', 'N/A')}\n")
 
-            f.write("\n## 3. Bid Intelligence\n")
+            f.write("\n## 3. High-Level Research Insights\n")
+            research = context.get("research_data", {})
+            for trend in research.get("market_trends", []):
+                f.write(f"- **Trend:** {trend}\n")
+
+            f.write("\n## 4. Bid Intelligence\n")
             bid = context.get("bid_strategy", {})
             f.write(f"- **Strategy:** {bid.get('strategy', 'N/A')}\n")
             f.write(f"- **Recommended CPM:** ${bid.get('recommended_cpm', 0.00)}\n")
             f.write(f"- **Self-Optimization Factor:** {bid.get('adjustment_factor', 1.0)}\n")
 
-            f.write("\n## 4. Ads Generation\n")
+            f.write("\n## 5. Ads Generation\n")
             for ad in context.get("generated_ads", []):
                 f.write(f"### {ad.get('headline')}\n")
                 f.write(f"- Target: {ad.get('target_audience')}\n")
                 f.write(f"- CTA: {ad.get('cta')}\n")
 
-            f.write("\n## 5. Market Analysis\n")
+            f.write("\n## 6. Market Analysis & Intelligence\n")
             stats = context.get("analysis_stats", {})
             f.write(f"- **Total Posts:** {stats.get('total_posts')}\n")
+            f.write("### AI Insights\n")
+            for insight in context.get("intelligence_insights", []):
+                f.write(f"- {insight}\n")
 
-            f.write("\n## 6. Content Draft\n")
+            f.write("\n## 7. Content Draft\n")
             f.write("```text\n")
             f.write(context.get("generated_content", ""))
             f.write("\n```\n")
+
+            f.write("\n## 8. Collaboration Log\n")
+            f.write(f"Synchronization Status: {research.get('synchronization_status', 'N/A')}\n")
 
         logger.info(f"Report generated at {filename}")
     except IOError as e:
         logger.error(f"Failed to write report: {e}")
 
-def run_cycle():
-    logger.info("=== Starting Daily Autonomous Cycle ===")
+async def run_tier(tier_agents, data, context):
+    tasks = [agent.run(data, context) for agent in tier_agents]
+    results = await asyncio.gather(*tasks)
+    for result in results:
+        if result:
+            context.update(result)
+
+async def run_cycle():
+    logger.info("=== Starting Daily Synchronized Autonomous Cycle ===")
 
     # 1. Scrape
     if not run_scraper():
@@ -116,41 +137,41 @@ def run_cycle():
         logger.warning("No data loaded. Skipping agent execution.")
         return
 
-    # 3. Initialize Agents (Order Matters for Collaboration)
-    agents = [
-        HealthCheckAgent(),
-        RobotTxtAgent(),       # New: Check compliance first
-        AnalysisAgent(),
-        ResearchAgent(),
-        IntelligenceAgent(),   # Synthesizes Analysis & Research
-        TargetingAgent(),      # New: Depends on Intelligence
-        CreativityAgent(),     # Depends on Intelligence
-        AdsAgent(),            # New: Depends on Targeting & Creativity
-        BidAgent(),            # New: Depends on Targeting
-        MonetizationAgent(),
-        ContentAgent(),
-        AutonomousIntelligenceAgent() # New: Overseer
-    ]
-
     context = {}
 
-    # 4. Run Pipeline
-    for agent in agents:
-        try:
-            # Collaboration: Each agent receives the full context accumulated so far
-            result = agent.run(data, context)
-            if result:
-                context.update(result)
-        except Exception as e:
-            logger.error(f"Error in {agent.name}: {e}")
+    # 3. Execution Tiers (Concurrent within Tiers, Sequential between Tiers)
+    # Tier 1: Initial Assessment
+    tier1 = [HealthCheckAgent(), RobotTxtAgent(), AnalysisAgent()]
+    logger.info("Executing Tier 1: Initial Assessment...")
+    await run_tier(tier1, data, context)
 
-    # 5. Report
+    # Tier 2: Research & Creative Foundations (Depends on Tier 1)
+    tier2 = [ResearchAgent(), CreativityAgent(), TargetingAgent()]
+    logger.info("Executing Tier 2: Research & Creative...")
+    await run_tier(tier2, data, context)
+
+    # Tier 3: Intelligence & Strategy (Depends on Tier 2)
+    tier3 = [IntelligenceAgent(), BidAgent()]
+    logger.info("Executing Tier 3: Intelligence & Strategy...")
+    await run_tier(tier3, data, context)
+
+    # Tier 4: Execution & Monetization (Depends on Tier 3)
+    tier4 = [AdsAgent(), MonetizationAgent(), ContentAgent()]
+    logger.info("Executing Tier 4: Execution...")
+    await run_tier(tier4, data, context)
+
+    # Tier 5: Oversight
+    tier5 = [AutonomousIntelligenceAgent()]
+    logger.info("Executing Tier 5: Oversight...")
+    await run_tier(tier5, data, context)
+
+    # 4. Report
     report_file = f"results/DAILY_REPORT_{datetime.now().strftime('%Y-%m-%d')}.md"
     generate_daily_report(context, report_file)
 
     logger.info("=== Cycle Complete ===")
 
-def main():
+async def main_async():
     parser = argparse.ArgumentParser(description="Autonomous Agent System")
     parser.add_argument("--loop", action="store_true", help="Run continuously every 24h")
     args = parser.parse_args()
@@ -159,13 +180,16 @@ def main():
         logger.info("System starting in LOOP mode.")
         try:
             while True:
-                run_cycle()
+                await run_cycle()
                 logger.info("Sleeping for 24 hours...")
-                time.sleep(86400) # 24 hours
-        except KeyboardInterrupt:
-            logger.info("Loop interrupted by user.")
+                await asyncio.sleep(86400) # 24 hours
+        except asyncio.CancelledError:
+            logger.info("Loop interrupted.")
     else:
-        run_cycle()
+        await run_cycle()
 
 if __name__ == "__main__":
-    main()
+    try:
+        asyncio.run(main_async())
+    except KeyboardInterrupt:
+        pass

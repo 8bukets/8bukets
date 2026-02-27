@@ -6,7 +6,7 @@ class RobotTxtAgent(BaseAgent):
     def __init__(self):
         super().__init__("RobotTxtAgent")
 
-    def run(self, data: list, context: dict) -> dict:
+    async def run(self, data: list, context: dict) -> dict:
         self.logger.info("Checking robots.txt compliance and secrets...")
 
         # Determine base URL from data or default

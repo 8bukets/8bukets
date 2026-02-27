@@ -4,7 +4,7 @@ class MonetizationAgent(BaseAgent):
     def __init__(self):
         super().__init__("MonetizationAgent")
 
-    def run(self, data: list, context: dict) -> dict:
+    async def run(self, data: list, context: dict) -> dict:
         self.logger.info("Running Monetization Analysis...")
 
         keywords = ["affiliate", "program", "earn", "money", "monetize", "revenue"]

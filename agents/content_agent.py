@@ -5,7 +5,7 @@ class ContentAgent(BaseAgent):
     def __init__(self):
         super().__init__("ContentAgent")
 
-    def run(self, data: list, context: dict) -> dict:
+    async def run(self, data: list, context: dict) -> dict:
         self.logger.info("Generating Content...")
 
         angles = context.get("creative_angles", [])
