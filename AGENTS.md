@@ -9,6 +9,7 @@ The system follows a modular, agent-based architecture with concurrent execution
 2.  **Agents (`src/markposition/agents/`)**: Specialized agents that collaborate to synthesize intelligence.
 3.  **Intelligence Layer**: Uses FAISS and SentenceTransformers for semantic memory (RAG).
 4.  **Orchestrator**: Manages the end-to-end cycle via the `markposition` command.
+5.  **Collaboration Layer (`.antigravity/`)**: Rules and mission definitions for Google Antigravity agents.
 
 ## Agent Collaboration Flow
 
@@ -41,6 +42,13 @@ Agents use a shared SQLite database located in `data/memory.db`.
 - Run tests: `pytest`
 - Run full system: `markposition`
 - Run dashboard: `markposition-dashboard`
+
+## Google Antigravity Integration
+
+This repository is optimized for **Google Antigravity**.
+- **Mission Control**: Objectives are defined in `.antigravity/mission.md`.
+- **Cognitive Rules**: Architectural constraints are enforced via `.antigravity/rules.md`.
+- **State Synchronization**: The `CollaborationAgent` exports cycle results to `.antigravity/state.json` for external agent awareness.
 
 ## System Ownership & Compliance
 
