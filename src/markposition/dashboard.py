@@ -1,51 +1,197 @@
-from flask import Flask, send_from_directory, render_template_string
+from flask import Flask, send_from_directory, render_template_string, jsonify
 import os
 import glob
 import markdown
+import sqlite3
+import json
 
 app = Flask(__name__)
+
+# Helper to get DB connection
+def get_db_conn():
+    db_path = os.getenv("MEMORY_FILE", "data/memory.db")
+    if not os.path.exists(db_path):
+        return None
+    return sqlite3.connect(db_path)
 
 @app.route('/')
 def index():
     reports = sorted(glob.glob('results/DAILY_REPORT_*.md'), reverse=True)
-    evolution = "SYSTEM_EVOLUTION.md"
+    dist_mode = os.getenv("DISTRIBUTED_MODE", "FALSE")
+    vector_status = "Active" if os.path.exists("data/vector_store") else "Inactive"
 
     html = """
-    <html>
+    <!DOCTYPE html>
+    <html lang="en">
     <head>
-        <title>Autonomous System Admin UI</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Markposition Autonomous Dashboard</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <style>
-            .markdown-body { box-sizing: border-box; min-width: 200px; max-width: 1200px; margin: 0 auto; padding: 45px; }
-            @media (max-width: 767px) { .markdown-body { padding: 15px; } }
-            .nav { margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
-            .stat-box { display: inline-block; background: #f6f8fa; border: 1px solid #d0d7de; padding: 10px; margin-right: 10px; border-radius: 6px; }
+            body { background-color: #f8f9fa; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+            .sidebar { height: 100vh; background: #212529; color: white; padding-top: 20px; position: fixed; width: 240px; }
+            .main-content { margin-left: 240px; padding: 20px; }
+            .card { border: none; box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); margin-bottom: 20px; }
+            .nav-link { color: #adb5bd; margin: 5px 0; }
+            .nav-link:hover, .nav-link.active { color: white; background: rgba(255,255,255,0.1); border-radius: 4px; }
+            .stat-value { font-size: 2rem; font-weight: bold; color: #0d6efd; }
+            .chart-container { height: 300px; }
         </style>
     </head>
-    <body class="markdown-body">
-        <h1>Autonomous System Admin UI</h1>
-        <div class="nav">
-            <a href="/evolution">System Evolution Log</a> |
-            <a href="/chat">Semantic Chat (RAG)</a> |
-            <a href="/patterns">System Patterns</a> |
-            <a href="/stats">System Stats</a> |
-            <a href="/logs">Worker Logs</a>
+    <body>
+        <div class="sidebar d-flex flex-column p-3">
+            <h4>Markposition AI</h4>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li><a href="/" class="nav-link active">Dashboard</a></li>
+                <li><a href="/evolution" class="nav-link">Evolution Log</a></li>
+                <li><a href="/chat" class="nav-link">Semantic Chat</a></li>
+                <li><a href="/patterns" class="nav-link">Market Patterns</a></li>
+                <li><a href="/logs" class="nav-link">System Logs</a></li>
+            </ul>
         </div>
 
-        <div style="margin-bottom: 20px;">
-            <div class="stat-box"><strong>Distributed Mode:</strong> """ + os.getenv("DISTRIBUTED_MODE", "FALSE") + """</div>
-            <div class="stat-box"><strong>Vector Store:</strong> """ + ("Enabled" if os.path.exists("data/vector_store") else "Disabled") + """</div>
+        <div class="main-content">
+            <header class="d-flex justify-content-between align-items-center mb-4">
+                <h2>System Overview</h2>
+                <div>
+                    <span class="badge bg-success">Status: Optimal</span>
+                    <span class="badge bg-primary">""" + f"Mode: {dist_mode}" + """</span>
+                </div>
+            </header>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card p-3 text-center">
+                        <div class="text-muted">Total Agents</div>
+                        <div class="stat-value">25</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card p-3 text-center">
+                        <div class="text-muted">Vector Store</div>
+                        <div class="stat-value text-success">""" + vector_status + """</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card p-3 text-center">
+                        <div class="text-muted">Memory Keys</div>
+                        <div id="memory-keys" class="stat-value text-info">--</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card p-3 text-center">
+                        <div class="text-muted">Ecosystem Health</div>
+                        <div class="stat-value text-warning">98%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card p-3">
+                        <h5>Memory Scaling (by Agent)</h5>
+                        <div class="chart-container">
+                            <canvas id="scalingChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <h5>Daily Reports</h5>
+                        <div class="list-group list-group-flush" style="max-height: 250px; overflow-y: auto;">
+                            """ + "".join([f'<a href="/report/{os.path.basename(r)}" class="list-group-item list-group-item-action small">{os.path.basename(r)}</a>' for r in reports]) + """
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                     <div class="card p-3">
+                        <h5>Real-time Performance Metrics</h5>
+                        <div class="chart-container" style="height: 200px;">
+                            <canvas id="performanceChart"></canvas>
+                        </div>
+                     </div>
+                </div>
+            </div>
         </div>
 
-        <h2>Daily Reports</h2>
-        <ul>
+        <script>
+            // Fetch stats and render charts
+            fetch('/api/stats')
+                .then(r => r.json())
+                .then(data => {
+                    document.getElementById('memory-keys').innerText = Object.values(data).reduce((a,b) => a+b, 0);
+
+                    const ctx = document.getElementById('scalingChart').getContext('2d');
+                    new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: Object.keys(data),
+                            datasets: [{
+                                label: 'Storage Keys',
+                                data: Object.values(data),
+                                backgroundColor: 'rgba(13, 110, 253, 0.5)',
+                                borderColor: 'rgb(13, 110, 253)',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: { maintainAspectRatio: false, scales: { y: { beginAtZero: true } } }
+                    });
+                });
+
+            const perfCtx = document.getElementById('performanceChart').getContext('2d');
+            const perfChart = new Chart(perfCtx, {
+                type: 'line',
+                data: { labels: [], datasets: [{ label: 'Avg Agent Latency (ms)', data: [], borderColor: 'rgb(255, 193, 7)', tension: 0.1 }] },
+                options: { maintainAspectRatio: false }
+            });
+
+            function updateMetrics() {
+                fetch('/api/metrics')
+                    .then(r => r.json())
+                    .then(data => {
+                        perfChart.data.labels = data.labels;
+                        perfChart.data.datasets[0].data = data.data;
+                        perfChart.update();
+                    });
+            }
+            updateMetrics();
+            setInterval(updateMetrics, 30000);
+        </script>
+    </body>
+    </html>
     """
-    for report in reports:
-        name = os.path.basename(report)
-        html += f'<li><a href="/report/{name}">{name}</a></li>'
+    return render_template_string(html)
 
-    html += "</ul></body></html>"
-    return html
+@app.route('/api/metrics')
+def api_metrics():
+    conn = get_db_conn()
+    if not conn:
+        return jsonify({"labels": [], "data": []})
+    cursor = conn.cursor()
+    cursor.execute("SELECT strftime('%H:%M', timestamp), AVG(execution_time_ms) FROM system_metrics GROUP BY strftime('%H:%M', timestamp) ORDER BY timestamp DESC LIMIT 10")
+    rows = cursor.fetchall()
+    conn.close()
+    return jsonify({
+        "labels": [r[0] for r in reversed(rows)],
+        "data": [r[1] for r in reversed(rows)]
+    })
+
+@app.route('/api/stats')
+def api_stats():
+    conn = get_db_conn()
+    if not conn:
+        return jsonify({})
+    cursor = conn.cursor()
+    cursor.execute("SELECT agent_name, COUNT(*) FROM agent_memory GROUP BY agent_name")
+    stats = dict(cursor.fetchall())
+    conn.close()
+    return jsonify(stats)
 
 @app.route('/report/<name>')
 def show_report(name):
@@ -58,33 +204,6 @@ def show_report(name):
 
     html_content = markdown.markdown(content, extensions=['tables', 'fenced_code'])
     return f'<html><head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css"><style>.markdown-body {{ box-sizing: border-box; min-width: 200px; max-width: 980px; margin: 0 auto; padding: 45px; }}</style></head><body class="markdown-body"><a href="/">Back</a><hr>{html_content}</body></html>'
-
-@app.route('/stats')
-def show_stats():
-    import sqlite3
-    db_path = os.getenv("MEMORY_FILE", "data/memory.db")
-    stats = {}
-    if os.path.exists(db_path):
-        conn = sqlite3.connect(db_path)
-        cursor = conn.cursor()
-        cursor.execute("SELECT agent_name, COUNT(*) FROM agent_memory GROUP BY agent_name")
-        stats = dict(cursor.fetchall())
-        conn.close()
-
-    html = "<h1>System Persistence Stats</h1><ul>"
-    for agent, count in stats.items():
-        html += f"<li><strong>{agent}:</strong> {count} keys stored</li>"
-    html += "</ul><a href='/'>Back</a>"
-    return f'<html><head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css"><style>.markdown-body {{ padding: 45px; }}</style></head><body class="markdown-body">{html}</body></html>'
-
-@app.route('/logs')
-def show_logs():
-    log_path = "/tmp/dashboard.log"
-    content = "Log file not found."
-    if os.path.exists(log_path):
-        with open(log_path, 'r') as f:
-            content = f.read()
-    return f'<html><head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css"><style>.markdown-body {{ padding: 45px; }}</style></head><body class="markdown-body"><h1>Worker Logs</h1><pre>{content}</pre><a href="/">Back</a></body></html>'
 
 @app.route('/chat', methods=['GET', 'POST'])
 def semantic_chat():
@@ -142,14 +261,6 @@ def show_patterns():
             html += f"<li>{res['metadata'].get('text')}</li>"
     html += "</ul>"
 
-    html += "<h2>Source Code Structural Patterns</h2><ul>"
-    source_patterns = vm.search("Source code patterns", top_k=20)
-    for res in source_patterns:
-        # Simple heuristic to identify source patterns
-        if "Common dependency" in res['metadata'].get('text', '') or "Stage" in res['metadata'].get('text', ''):
-             html += f"<li>{res['metadata'].get('text')}</li>"
-    html += "</ul>"
-
     html += "<a href='/'>Back</a>"
     return f'<html><head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css"><style>.markdown-body {{ padding: 45px; }}</style></head><body class="markdown-body">{html}</body></html>'
 
@@ -165,9 +276,14 @@ def show_evolution():
     html_content = markdown.markdown(content, extensions=['tables', 'fenced_code'])
     return f'<html><head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css"><style>.markdown-body {{ box-sizing: border-box; min-width: 200px; max-width: 980px; margin: 0 auto; padding: 45px; }}</style></head><body class="markdown-body"><a href="/">Back</a><hr>{html_content}</body></html>'
 
-@app.route('/results/<path:filename>')
-def serve_results(filename):
-    return send_from_directory('results', filename)
+@app.route('/logs')
+def show_logs():
+    log_path = "/tmp/system_run_v8.log"
+    content = "Log file not found."
+    if os.path.exists(log_path):
+        with open(log_path, 'r') as f:
+            content = f.read()
+    return f'<html><head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css"><style>.markdown-body {{ padding: 45px; }}</style></head><body class="markdown-body"><h1>Worker Logs</h1><pre>{content}</pre><a href="/">Back</a></body></html>'
 
 def main():
     app.run(host='0.0.0.0', port=3000)

@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 import logging
 import json
 import os
-from sqlalchemy import create_engine, Column, String, Text, DateTime
+from sqlalchemy import create_engine, Column, String, Text, DateTime, Float
 from sqlalchemy.orm import sessionmaker, declarative_base
 from datetime import datetime, timezone
 from filelock import FileLock
@@ -33,6 +33,13 @@ class AgentMemory(Base):
     value = Column(Text)
     updated_at = Column(DateTime, default=lambda: datetime.now(timezone.utc), onupdate=lambda: datetime.now(timezone.utc))
 
+class SystemMetrics(Base):
+    __tablename__ = 'system_metrics'
+    id = Column(String, primary_key=True) # Usually timestamp_agent
+    agent_name = Column(String)
+    execution_time_ms = Column(Float)
+    timestamp = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+
 class BaseAgent(ABC):
     def __init__(self, name, session=None):
         self.name = name
@@ -46,7 +53,6 @@ class BaseAgent(ABC):
 
     async def update_agent_memory(self, key: str, value: any):
         """Update a specific key in this agent's memory section."""
-        # Use cross-process file lock instead of process-local asyncio lock
         return await asyncio.to_thread(self._sync_update_agent_memory, key, value)
 
     def _sync_update_agent_memory(self, key: str, value: any):
@@ -81,6 +87,26 @@ class BaseAgent(ABC):
             except Exception as e:
                 self.logger.error(f"Failed to get agent memory: {e}")
                 return default
+            finally:
+                session.close()
+
+    def record_metrics(self, execution_time_ms: float):
+        """Record agent performance metrics."""
+        self.logger.info(f"Recording metrics: {execution_time_ms}ms")
+        with self.db_lock:
+            session = self._get_db_session()
+            try:
+                ts = datetime.now(timezone.utc)
+                metric = SystemMetrics(
+                    id=f"{ts.timestamp()}_{self.name}_{ts.microsecond}",
+                    agent_name=self.name,
+                    execution_time_ms=execution_time_ms,
+                    timestamp=ts
+                )
+                session.add(metric)
+                session.commit()
+            except Exception as e:
+                self.logger.error(f"Failed to record metrics: {e}")
             finally:
                 session.close()
 

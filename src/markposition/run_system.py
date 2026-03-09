@@ -228,7 +228,17 @@ async def run_cycle(sim_date=None):
                     for a in stage_agents:
                         a.session = session
 
-                    results = await asyncio.gather(*[a.run(data, context) for a in stage_agents], return_exceptions=True)
+                    async def run_with_metrics(agent):
+                         start = time.perf_counter()
+                         try:
+                              res = await agent.run(data, context)
+                              end = time.perf_counter()
+                              agent.record_metrics(float((end - start) * 1000))
+                              return res
+                         except Exception as e:
+                              return e
+
+                    results = await asyncio.gather(*[run_with_metrics(a) for a in stage_agents], return_exceptions=True)
 
                 for res in results:
                     if isinstance(res, dict):
