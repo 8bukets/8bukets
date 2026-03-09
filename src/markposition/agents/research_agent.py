@@ -1,4 +1,5 @@
 from .base_agent import BaseAgent
+from .vector_memory import VectorMemory
 from bs4 import BeautifulSoup
 import asyncio
 
@@ -8,7 +9,17 @@ class WebResearchAgent(BaseAgent):
         super().__init__("WebResearchAgent")
 
     async def run(self, data: list, context: dict) -> dict:
-        self.logger.info("Running Web Research...")
+        self.logger.info("Running Deep Web Research...")
+
+        vm = VectorMemory()
+
+        # Knowledge Anchoring: Check if we already know about these domains
+        known_domains = {}
+        for res in vm.search("Domain Information", top_k=20):
+            text = res['metadata'].get('text', '')
+            if "Domain:" in text:
+                d = text.split("Domain:")[1].split("|")[0].strip()
+                known_domains[d] = text
 
         analysis = context.get("analysis_stats", {})
         top_domains = list(analysis.get("top_domains", {}).keys())
@@ -32,7 +43,11 @@ class WebResearchAgent(BaseAgent):
                             if desc_tag:
                                 description = desc_tag.get("content", "")
 
-                            research_notes.append(f"Domain: {domain} | Title: {title} | Description: {description[:100]}...")
+                            note = f"Domain: {domain} | Title: {title} | Description: {description[:100]}..."
+                            research_notes.append(note)
+
+                            # Anchoring: Update memory with fresh domain knowledge
+                            vm.add_entry(note, {"type": "domain_knowledge", "domain": domain, "agent": self.name})
                         else:
                             research_notes.append(f"Domain: {domain} | Failed to fetch (Status: {resp.status})")
                 else:
