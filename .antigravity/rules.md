@@ -11,7 +11,8 @@ You are an autonomous engineering agent participating in the Markposition Market
 
 ## Agent Collaboration Protocol
 - **Communication**: Agents communicate via the shared `context` dictionary in the orchestrator.
-- **Persistence**: Use the SQLAlchemy-backed `agent_memory` table for cross-cycle state.
+- **Six Sigma Intelligence**: Implement DMAIC principles for decision-making. High-variance findings trigger autonomous pivots.
+- **Autonomous Repository Promotion**: The `GitHubEvolutionAgent` is authorized to simulate code promotion based on Sigma performance thresholds.
 - **Verification**: Every autonomous change must be verified by `BrowserTestAgent` (Playwright) or the unit test suite (`pytest`).
 
 ## Code Standards

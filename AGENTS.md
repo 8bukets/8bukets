@@ -47,8 +47,9 @@ Agents use a shared SQLite database located in `data/memory.db`.
 
 This repository is optimized for **Google Antigravity**.
 - **Mission Control**: Objectives are defined in `.antigravity/mission.md`.
-- **Cognitive Rules**: Architectural constraints are enforced via `.antigravity/rules.md`.
+- **Cognitive Rules**: Architectural constraints and **Six Sigma Black Belt** decisioning protocols are enforced via `.antigravity/rules.md`.
 - **State Synchronization**: The `CollaborationAgent` exports cycle results to `.antigravity/state.json` for external agent awareness.
+- **Autonomous Evolution**: The `GitHubEvolutionAgent` manages simulated repository promotion for self-evolved code.
 
 ## System Ownership & Compliance
 
