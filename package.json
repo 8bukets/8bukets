@@ -4,6 +4,6 @@
   "description": "Autonomous scraping and intelligence ecosystem",
   "private": true,
   "scripts": {
-    "build": "echo 'Building static dashboard...' && mkdir -p dist && cp -r results dist/ && cp README.md dist/index.md"
+    "build": "mkdir -p dist && cp README.md dist/index.md && cp AGENTS.md dist/AGENTS.md && cp SYSTEM_EVOLUTION.md dist/SYSTEM_EVOLUTION.md && cp -r results dist/ || true && cp -r data dist/metadata || true"
   }
 }
