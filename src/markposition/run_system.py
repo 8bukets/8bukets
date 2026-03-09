@@ -123,7 +123,19 @@ def generate_daily_report(context, filename):
             for p in src_patterns:
                 f.write(f"- {p}\n")
 
-            f.write("\n## 7. Market Analysis\n")
+            f.write("\n## 7. Six Sigma & Repository Evolution\n")
+            sigma = context.get("sigma_metrics", {})
+            f.write(f"- **Sigma Decision:** {sigma.get('status', 'N/A')}\n")
+            f.write(f"- **Coefficient of Variation:** {sigma.get('coefficient_of_variation', 0.0):.4f}\n")
+            for finding in context.get("sigma_findings", []):
+                 f.write(f"  - {finding}\n")
+
+            repo = context.get("repository_evolution", "N/A")
+            f.write(f"- **Repository Evolution:** {repo}\n")
+            for log in context.get("commit_log", []):
+                 f.write(f"  - {log}\n")
+
+            f.write("\n## 8. Market Analysis\n")
             stats = context.get("analysis_stats", {})
             f.write(f"- **Total Posts:** {stats.get('total_posts')}\n")
 
@@ -145,6 +157,8 @@ def discover_agents():
             continue
         try:
             module = importlib.import_module(module_name)
+            # Ensure we have the latest version of the module (agent evolution)
+            importlib.reload(module)
             for attr_name in dir(module):
                 attr = getattr(module, attr_name)
                 if isinstance(attr, type) and issubclass(attr, BaseAgent) and attr is not BaseAgent:
@@ -158,12 +172,15 @@ async def run_cycle(sim_date=None):
     console.print("[bold blue]=== Starting Daily Autonomous Cycle ===[/bold blue]")
 
     # 1. Scrape
-    if not run_scraper():
-        logger.error("Cycle aborted due to scraper failure.")
-        return
+    if sim_date and os.path.exists("links.json") and os.path.getsize("links.json") > 10:
+        logger.info("Simulation mode: Using existing links.json")
+    else:
+        if not run_scraper():
+            logger.error("Cycle aborted due to scraper failure.")
+            return
 
     # 2. Load Data
-    data = load_data()
+    data = load_data("links_sim.json" if sim_date else "links.json")
     if not data:
         logger.warning("No data loaded. Skipping agent execution.")
         return
@@ -233,6 +250,10 @@ async def run_cycle(sim_date=None):
     console.print(table)
 
     # 4. Report
+    # Update autonomous status based on Sigma
+    if context.get("sigma_metrics", {}).get("status") == "VOLATILE_OPPORTUNITY":
+         context["autonomous_status"] = "EVOLVING"
+
     report_date = sim_date if sim_date else datetime.now().strftime('%Y-%m-%d')
     report_file = f"results/DAILY_REPORT_{report_date}.md"
     generate_daily_report(context, report_file)

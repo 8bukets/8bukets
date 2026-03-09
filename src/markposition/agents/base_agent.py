@@ -5,16 +5,17 @@ import os
 from sqlalchemy import create_engine, Column, String, Text, DateTime
 from sqlalchemy.orm import sessionmaker, declarative_base
 from datetime import datetime, timezone
+from filelock import FileLock
 
 import asyncio
 
 MEMORY_FILE = os.getenv("MEMORY_FILE", "data/memory.db")
+DB_LOCK_FILE = f"{MEMORY_FILE}.lock"
 Base = declarative_base()
 
 # Singleton engine and session factory
 _engine = None
 _SessionFactory = None
-_db_lock = asyncio.Lock()
 
 def _get_engine():
     global _engine, _SessionFactory
@@ -37,6 +38,7 @@ class BaseAgent(ABC):
         self.name = name
         self.session = session
         self.logger = logging.getLogger(name)
+        self.db_lock = FileLock(DB_LOCK_FILE)
         _get_engine()
 
     def _get_db_session(self):
@@ -44,41 +46,43 @@ class BaseAgent(ABC):
 
     async def update_agent_memory(self, key: str, value: any):
         """Update a specific key in this agent's memory section."""
-        async with _db_lock:
-            return await asyncio.to_thread(self._sync_update_agent_memory, key, value)
+        # Use cross-process file lock instead of process-local asyncio lock
+        return await asyncio.to_thread(self._sync_update_agent_memory, key, value)
 
     def _sync_update_agent_memory(self, key: str, value: any):
-        session = self._get_db_session()
-        try:
-            val_str = json.dumps(value)
-            entry = session.query(AgentMemory).filter_by(agent_name=self.name, key=key).first()
-            if entry:
-                entry.value = val_str
-            else:
-                entry = AgentMemory(agent_name=self.name, key=key, value=val_str)
-                session.add(entry)
-            session.commit()
-        except Exception as e:
-            self.logger.error(f"Failed to update agent memory: {e}")
-        finally:
-            session.close()
+        with self.db_lock:
+            session = self._get_db_session()
+            try:
+                val_str = json.dumps(value)
+                entry = session.query(AgentMemory).filter_by(agent_name=self.name, key=key).first()
+                if entry:
+                    entry.value = val_str
+                else:
+                    entry = AgentMemory(agent_name=self.name, key=key, value=val_str)
+                    session.add(entry)
+                session.commit()
+            except Exception as e:
+                self.logger.error(f"Failed to update agent memory: {e}")
+            finally:
+                session.close()
 
     async def get_agent_memory(self, key: str, default=None):
         """Retrieve a specific key from this agent's memory."""
         return await asyncio.to_thread(self._sync_get_agent_memory, key, default)
 
     def _sync_get_agent_memory(self, key: str, default=None):
-        session = self._get_db_session()
-        try:
-            entry = session.query(AgentMemory).filter_by(agent_name=self.name, key=key).first()
-            if entry:
-                return json.loads(entry.value)
-            return default
-        except Exception as e:
-            self.logger.error(f"Failed to get agent memory: {e}")
-            return default
-        finally:
-            session.close()
+        with self.db_lock:
+            session = self._get_db_session()
+            try:
+                entry = session.query(AgentMemory).filter_by(agent_name=self.name, key=key).first()
+                if entry:
+                    return json.loads(entry.value)
+                return default
+            except Exception as e:
+                self.logger.error(f"Failed to get agent memory: {e}")
+                return default
+            finally:
+                session.close()
 
     # Default Stage for Auto-Discovery
     execution_stage = 1
