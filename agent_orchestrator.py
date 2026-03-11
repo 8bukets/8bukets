@@ -102,7 +102,9 @@ class AgentOrchestrator:
             crt = outputs.get('CreativeAgent', {})
             f.write(f"## 🌌 Curiosity & Innovation (Google Antigravity Mode)\n")
             f.write(f"- **Explored**: '{cur.get('exploration_query')}'\n")
-            f.write(f"- **Findings**: {cur.get('findings')}\n")
+            f.write(f"- **Findings**:\n")
+            for finding in cur.get('findings', []):
+                f.write(f"  - {finding}\n")
             f.write(f"### 💡 High Solution Interest Ideas\n")
             for idea in crt.get('system_improvement_ideas', []):
                 f.write(f"- 🛠️ {idea}\n")
