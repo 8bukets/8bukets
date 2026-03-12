@@ -11,5 +11,6 @@ Establish a self-sustaining, self-evolving autonomous ecosystem that scrapes `ma
 
 ## Stakeholders
 - **System Owner**: Filip Keser (keser.filip@gmail.com)
+- **Technical Collaborator**: 8bukets@gmail.com
 - **Primary Agent**: System Orchestrator (`markposition`)
 - **Intelligence Layer**: RAG/FAISS

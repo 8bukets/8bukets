@@ -18,6 +18,7 @@ class CollaborationAgent(BaseAgent):
         # Capture summary of current cycle
         summary = {
             "timestamp": self.get_timestamp(),
+            "stakeholders": ["keser.filip@gmail.com", "8bukets@gmail.com"],
             "cycle_status": context.get("autonomous_status", "SUCCESS"),
             "agents_executed": len(data), # data is often the list of results/posts
             "findings_count": len(context.get("market_patterns", [])),
