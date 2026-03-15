@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "markposition"
+version = "1.0.0"
+description = "Autonomous scraping and intelligence ecosystem for markposition.wordpress.com"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [{ name = "Filip Keser", email = "keser.filip@gmail.com" }]
+dependencies = [
+    "aiohttp",
+    "beautifulsoup4",
+    "textblob",
+    "sqlalchemy",
+    "rich",
+    "python-dotenv",
+    "playwright",
+    "flask",
+    "markdown",
+    "celery",
+    "redis",
+    "faiss-cpu",
+    "sentence-transformers",
+    "scikit-learn",
+    "pandas"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio"
+]
+
+[project.scripts]
+markposition = "markposition.run_system:main"
+markposition-dashboard = "markposition.dashboard:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "strict"
+testpaths = ["tests"]
+pythonpath = ["src"]

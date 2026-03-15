@@ -1,3 +1,29 @@
+Metadata-Version: 2.4
+Name: markposition
+Version: 1.0.0
+Summary: Autonomous scraping and intelligence ecosystem for markposition.wordpress.com
+Author-email: Filip Keser <keser.filip@gmail.com>
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: aiohttp
+Requires-Dist: beautifulsoup4
+Requires-Dist: textblob
+Requires-Dist: sqlalchemy
+Requires-Dist: rich
+Requires-Dist: python-dotenv
+Requires-Dist: playwright
+Requires-Dist: flask
+Requires-Dist: markdown
+Requires-Dist: celery
+Requires-Dist: redis
+Requires-Dist: faiss-cpu
+Requires-Dist: sentence-transformers
+Requires-Dist: scikit-learn
+Requires-Dist: pandas
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-asyncio; extra == "dev"
+
 # Markposition Scraper & Analytics
 
 A robust, asynchronous toolset for scraping and analyzing data from `https://markposition.wordpress.com/`.

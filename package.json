@@ -1,0 +1,9 @@
+{
+  "name": "markposition-autonomous-system",
+  "version": "1.0.0",
+  "description": "Autonomous scraping and intelligence ecosystem",
+  "private": true,
+  "scripts": {
+    "build": "mkdir -p dist && cp README.md dist/index.md && cp AGENTS.md dist/AGENTS.md && cp SYSTEM_EVOLUTION.md dist/SYSTEM_EVOLUTION.md && cp -r results dist/ || true && cp -r data dist/metadata || true"
+  }
+}

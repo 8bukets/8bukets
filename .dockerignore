@@ -1,0 +1,13 @@
+__pycache__
+*.pyc
+data/
+results/
+tests/
+.git
+.gitignore
+.jules
+.env
+links.json
+links.csv
+unique_links.txt
+REPORT.md

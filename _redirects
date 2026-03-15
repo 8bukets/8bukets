@@ -1,0 +1,2 @@
+/dashboard  http://localhost:3000  200
+/report/*   /results/:splat      200

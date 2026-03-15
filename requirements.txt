@@ -1,0 +1,17 @@
+aiohttp
+beautifulsoup4
+pytest
+pytest-asyncio
+playwright
+textblob
+sqlalchemy
+rich
+python-dotenv
+flask
+markdown
+celery
+redis
+faiss-cpu
+sentence-transformers
+scikit-learn
+pandas

@@ -1,0 +1,13 @@
+services:
+  autonomous-agent:
+    build: .
+    volumes:
+      - ./data:/app/data
+      - ./src/markposition/agents:/app/src/markposition/agents
+      - ./results:/app/results
+    command: markposition --loop --dashboard
+    environment:
+      - BASE_URL=https://markposition.wordpress.com/
+      - LOG_FORMAT=TEXT
+      - SCRAPE_LIMIT=5
+      - DISTRIBUTED_MODE=TRUE

@@ -1,0 +1,6 @@
+__version__ = "1.0.0"
+__author__ = "Filip Keser"
+__email__ = "keser.filip@gmail.com"
+__alt_email__ = "8bukets@gmail.com"
+__phone__ = "00385992135341"
+__oib__ = "57134377198"
