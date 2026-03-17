@@ -357,5 +357,25 @@
             "ad_count": 3,
             "target_persona": "General Tech Enthusiast"
         }
+    },
+    {
+        "timestamp": 1773742074.418373,
+        "agent": "AnalysisAgent",
+        "event_type": "MARKET_DATA_ANALYSIS",
+        "market_data_ref": "AD_ADS_ADVERTISE",
+        "payload": {
+            "ad_category_density": 1.0,
+            "total_ad_posts": 1
+        }
+    },
+    {
+        "timestamp": 1773742074.4767244,
+        "agent": "AdsAgent",
+        "event_type": "AD_STRATEGY_GENERATION",
+        "market_data_ref": "AD_ADS_ADVERTISE",
+        "payload": {
+            "ad_count": 3,
+            "target_persona": "General Tech Enthusiast"
+        }
     }
 ]
