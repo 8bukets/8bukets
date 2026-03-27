@@ -1,14 +1,14 @@
-import aiohttp
-import asyncio
-from bs4 import BeautifulSoup
-import json
-import csv
-import re
 import argparse
+import asyncio
+import csv
+import json
 import logging
-import time
-from typing import List, Dict, Optional, Set
+import re
+from typing import List, Dict, Optional
 from urllib.parse import urlparse
+
+import aiohttp
+from bs4 import BeautifulSoup, SoupStrainer
 
 # Configure logging
 logging.basicConfig(
@@ -34,7 +34,7 @@ class MarkPositionScraperAsync:
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return ' '.join(text.split())
 
     def sanitize_for_csv(self, text: str) -> str:
         """
@@ -69,7 +69,7 @@ class MarkPositionScraperAsync:
             return None
         try:
             return urlparse(url).netloc.replace('www.', '')
-        except:
+        except Exception: # pylint: disable=broad-except
             return None
 
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
@@ -81,11 +81,16 @@ class MarkPositionScraperAsync:
                 response.raise_for_status()
                 return await response.text()
         except aiohttp.ClientError as e:
-            logger.error(f"Error fetching page {page_num}: {e}")
+            logger.error("Error fetching page %s: %s", page_num, e)
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'lxml')
+        """Parse HTML content to extract article data."""
+        # Use SoupStrainer to parse only article tags with 'post' class
+        # This significantly improves parsing performance by ignoring unrelated markup
+        strainer = SoupStrainer('article', attrs={'class': re.compile(r'\bpost\b')})
+        soup = BeautifulSoup(html, 'lxml', parse_only=strainer)
+
         articles = soup.find_all('article', class_='post')
         page_posts = []
 
@@ -157,14 +162,6 @@ class MarkPositionScraperAsync:
         }
 
         async with aiohttp.ClientSession(headers=headers) as session:
-            # We don't know the total pages, so we have to fetch sequentially or in chunks until we hit 404/empty.
-            # Pure concurrent fetching of all pages requires knowing the max page.
-            # Heuristic: fetch in batches of `concurrency`. If any page in batch returns 404 or empty, stop.
-
-            # Actually, WordPress pages are sequential. If page N is 404, N+1 is likely 404 too.
-            # But fetching 100 pages 1-by-1 is slow.
-            # Let's try fetching chunks.
-
             active = True
             while active:
                 tasks = []
@@ -179,13 +176,12 @@ class MarkPositionScraperAsync:
                         active = False
                         break
 
-                    # We create a task that acquires semaphore (though sem is less useful if we just create batch size = concurrency)
                     tasks.append(self.fetch_and_parse(session, current_page, sem))
 
                 if not tasks:
                     break
 
-                logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
+                logger.info("Fetching pages %d to %d...", batch_start, batch_start + len(tasks) - 1)
                 results = await asyncio.gather(*tasks)
 
                 # Check results
@@ -197,16 +193,16 @@ class MarkPositionScraperAsync:
                     page_idx = batch_start + idx
                     if page_posts is None:
                         # 404 or Error
-                        logger.info(f"Page {page_idx} returned 404 or empty. Stopping.")
-                        stop_detected = True
-                        break # Don't process further pages in this batch effectively (though they were fetched)
-                    elif len(page_posts) == 0:
-                        logger.info(f"Page {page_idx} has no articles. Stopping.")
+                        logger.info("Page %d returned 404 or empty. Stopping.", page_idx)
                         stop_detected = True
                         break
-                    else:
-                        all_posts.extend(page_posts)
-                        batch_posts_count += len(page_posts)
+                    if len(page_posts) == 0:
+                        logger.info("Page %d has no articles. Stopping.", page_idx)
+                        stop_detected = True
+                        break
+
+                    all_posts.extend(page_posts)
+                    batch_posts_count += len(page_posts)
 
                 if stop_detected:
                     break
@@ -233,9 +229,9 @@ class MarkPositionScraperAsync:
         try:
             with open(self.output_json, 'w', encoding='utf-8') as f:
                 json.dump(posts, f, indent=4, ensure_ascii=False)
-            logger.info(f"Saved {len(posts)} posts to {self.output_json}")
+            logger.info("Saved %d posts to %s", len(posts), self.output_json)
         except IOError as e:
-            logger.error(f"Failed to save JSON: {e}")
+            logger.error("Failed to save JSON: %s", e)
 
         # CSV
         try:
@@ -252,9 +248,9 @@ class MarkPositionScraperAsync:
                         self.sanitize_for_csv(post.get('domain', '')),
                         self.sanitize_for_csv(post.get('post_url', ''))
                     ])
-            logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
+            logger.info("Saved %d posts to %s", len(posts), self.output_csv)
         except IOError as e:
-            logger.error(f"Failed to save CSV: {e}")
+            logger.error("Failed to save CSV: %s", e)
 
         # Unique Links TXT
         unique_links = set()
@@ -268,9 +264,9 @@ class MarkPositionScraperAsync:
             with open(self.output_txt, 'w', encoding='utf-8') as f:
                 for link in sorted_links:
                     f.write(link + '\n')
-            logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
+            logger.info("Saved %d unique links to %s", len(sorted_links), self.output_txt)
         except IOError as e:
-            logger.error(f"Failed to save TXT: {e}")
+            logger.error("Failed to save TXT: %s", e)
 
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
