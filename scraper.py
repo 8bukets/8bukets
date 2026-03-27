@@ -6,8 +6,7 @@ import csv
 import re
 import argparse
 import logging
-import time
-from typing import List, Dict, Optional, Set, Tuple
+from typing import List, Dict, Optional, Tuple
 from urllib.parse import urlparse
 
 # Configure logging
@@ -30,11 +29,14 @@ class MarkPositionScraperAsync:
         self.session = None
 
     def clean_text(self, text: str) -> str:
-        """Normalize whitespace and remove non-breaking spaces."""
+        """Normalize whitespace and remove non-breaking spaces.
+
+        Optimized to use split/join which is faster than regex for this case.
+        """
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return " ".join(text.split())
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
@@ -72,6 +74,14 @@ class MarkPositionScraperAsync:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
+        """
+        Asynchronously parse the page content by offloading CPU-bound parsing to a thread.
+        This prevents blocking the event loop during heavy BeautifulSoup operations.
+        """
+        return await asyncio.to_thread(self._parse_page_sync, html)
+
+    def _parse_page_sync(self, html: str) -> List[Dict]:
+        """Synchronous parsing logic."""
         soup = BeautifulSoup(html, 'html.parser')
         articles = soup.find_all('article', class_='post')
         page_posts = []
