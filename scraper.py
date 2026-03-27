@@ -1,14 +1,13 @@
-import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
 import json
 import csv
 import re
 import argparse
 import logging
-import time
-from typing import List, Dict, Optional, Set
+from typing import List, Dict, Optional
 from urllib.parse import urlparse
+import aiohttp
+from bs4 import BeautifulSoup, SoupStrainer
 
 # Configure logging
 logging.basicConfig(
@@ -81,7 +80,9 @@ class MarkPositionScraperAsync:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+        # Optimization: Use SoupStrainer to only parse article tags
+        strainer = SoupStrainer('article')
+        soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
         articles = soup.find_all('article', class_='post')
         page_posts = []
 
@@ -93,19 +94,24 @@ class MarkPositionScraperAsync:
 
             # Title
             title_text = ""
-            title_tag = article.select_one('h1.entry-title a')
+            # Optimization: Use find/find_all instead of select_one for performance
+            h1_tag = article.find('h1', class_='entry-title')
+            title_tag = h1_tag.find('a') if h1_tag else None
             if title_tag:
                 title_text = self.clean_text(title_tag.get_text())
                 post_data['title'] = title_text
 
             # Date
-            date_tag = article.select_one('time.entry-date')
+            date_tag = article.find('time', class_='entry-date')
             if date_tag:
                 post_data['date'] = self.clean_text(date_tag.get_text())
                 post_data['datetime'] = date_tag.get('datetime')
 
             # Author
-            author_tag = article.select_one('.author.vcard .fn')
+            # .author.vcard .fn -> find class 'author' (part of 'vcard author') then 'fn'
+            author_container = article.find(class_='author')
+            author_tag = author_container.find(class_='fn') if author_container else None
+
             if author_tag:
                 post_data['author'] = self.clean_text(author_tag.get_text())
             else:
@@ -116,15 +122,15 @@ class MarkPositionScraperAsync:
 
             # External Link
             external_link = None
-            content_div = article.select_one('.entry-content')
+            content_div = article.find(class_='entry-content')
 
             if content_div:
-                link_tag = content_div.select_one('a')
+                link_tag = content_div.find('a')
                 if link_tag:
                     external_link = link_tag.get('href')
 
                 if not external_link:
-                    iframe_tag = content_div.select_one('iframe')
+                    iframe_tag = content_div.find('iframe')
                     if iframe_tag:
                         external_link = iframe_tag.get('src')
 
