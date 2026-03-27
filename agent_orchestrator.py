@@ -87,20 +87,29 @@ class AgentOrchestrator:
         with open(report_filename, "w", encoding="utf-8") as f:
             f.write(f"# 🤖 Autonomous Agent Report (Evolved v2) - {report_date}\n\n")
 
+            # Table of Contents
+            f.write("## Table of Contents\n\n")
+            f.write("- [🏥 System Health](#system-health)\n")
+            f.write("- [🧠 Intelligence](#intelligence)\n")
+            f.write("- [🌌 Curiosity & Innovation](#curiosity-innovation)\n")
+            f.write("- [📢 Ad Manager](#ad-manager)\n")
+            f.write("- [💰 Monetization](#monetization)\n")
+            f.write("- [✍️ Content Draft](#content-draft)\n\n")
+
             # Health
             h = outputs.get('HealthAgent', {})
-            f.write(f"## 🏥 System Health\n- DB: {h.get('db_status')}\n\n")
+            f.write(f"## <a id=\"system-health\"></a>🏥 System Health\n- DB: {h.get('db_status')}\n\n")
 
             # Intelligence
             i = outputs.get('IntelligenceAgent', {})
-            f.write(f"## 🧠 Intelligence\n")
+            f.write(f"## <a id=\"intelligence\"></a>🧠 Intelligence\n")
             f.write(f"- **Strategy**: {i.get('strategy')}\n")
             f.write(f"- **Trend Alert**: {i.get('trend_alert')}\n\n")
 
             # Curiosity & Innovation
             cur = outputs.get('CuriosityAgent', {})
             crt = outputs.get('CreativeAgent', {})
-            f.write(f"## 🌌 Curiosity & Innovation (Google Antigravity Mode)\n")
+            f.write(f"## <a id=\"curiosity-innovation\"></a>🌌 Curiosity & Innovation (Google Antigravity Mode)\n")
             f.write(f"- **Explored**: '{cur.get('exploration_query')}'\n")
             f.write(f"- **Findings**: {cur.get('findings')}\n")
             f.write(f"### 💡 High Solution Interest Ideas\n")
@@ -110,7 +119,7 @@ class AgentOrchestrator:
 
             # Ad Manager
             ads = outputs.get('AdManagerAgent', {})
-            f.write(f"## 📢 Ad Manager\n")
+            f.write(f"## <a id=\"ad-manager\"></a>📢 Ad Manager\n")
             f.write(f"### Active Campaigns\n")
             for camp in ads.get('campaigns', []):
                 f.write(f"- **{camp['name']}**: {camp['headline']} ({camp['type']})\n")
@@ -118,11 +127,11 @@ class AgentOrchestrator:
 
             # Monetization
             m = outputs.get('MonetizationAgent', {})
-            f.write(f"## 💰 Monetization\n- Opportunities: {len(m.get('top_opportunities', []))}\n\n")
+            f.write(f"## <a id=\"monetization\"></a>💰 Monetization\n- Opportunities: {len(m.get('top_opportunities', []))}\n\n")
 
             # Content
             cc = outputs.get('CreatorAgent', {})
-            f.write(f"## ✍️ Content Draft\n**{cc.get('draft_title')}**\n\n{cc.get('draft_content')}\n\n")
+            f.write(f"## <a id=\"content-draft\"></a>✍️ Content Draft\n**{cc.get('draft_title')}**\n\n{cc.get('draft_content')}\n\n")
 
         logger.info(f"Agent Report generated: {report_filename}")
 
