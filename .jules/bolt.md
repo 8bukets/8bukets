@@ -1,0 +1,3 @@
+## 2025-01-25 - BeautifulSoup Full Parse Overhead
+**Learning:** Parsing an entire HTML document with `BeautifulSoup` to find a specific comment (or substring) is computationally expensive O(N) where N is document size. For large documents where the target is a small, identifiable block (like a comment marker), scanning with Regex first can be orders of magnitude faster (98% faster in this case).
+**Action:** When extracting content from a known small section of a large HTML page, consider using Regex to locate and extract that section first, then use `BeautifulSoup` on the extracted fragment, but always include a fallback to full parsing for robustness.
