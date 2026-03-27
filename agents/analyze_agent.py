@@ -47,5 +47,5 @@ class AnalyzeAgent:
         # Top keywords across all articles
         analysis_results["top_keywords"] = Counter(all_keywords).most_common(10)
 
-        logger.info(f"Analysis complete. Top keyword: {analysis_results['top_keywords'][0] if analysis_results['top_keywords'] else 'None'}")
+        logger.info(f"📊 Analysis complete. Top keyword: {analysis_results['top_keywords'][0] if analysis_results['top_keywords'] else 'None'}")
         return analysis_results
