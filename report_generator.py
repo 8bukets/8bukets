@@ -19,6 +19,13 @@ class ReportGenerator:
         if not os.path.exists(self.report_dir):
             os.makedirs(self.report_dir)
 
+    def _generate_ascii_bar(self, value, max_value, length=20):
+        if max_value == 0:
+            return ""
+        filled_length = int(length * value / max_value)
+        bar = "█" * filled_length + "░" * (length - filled_length)
+        return bar
+
     def generate_daily_report(self):
         logger.info("Generating daily report...")
 
@@ -81,11 +88,15 @@ class ReportGenerator:
                 f.write("## 🧠 Keyword Trends\n\n")
                 f.write("Most frequent words in recent activity:\n\n")
                 keywords = self.analyze_keywords(all_recent_titles)
-                f.write("| Keyword | Frequency |\n")
-                f.write("|---|---|\n")
-                for word, count in keywords:
-                    f.write(f"| {word} | {count} |\n")
-                f.write("\n")
+
+                if keywords:
+                    max_freq = keywords[0][1]
+                    f.write("| Keyword | Frequency | Distribution |\n")
+                    f.write("|---|---|---|\n")
+                    for word, count in keywords:
+                        bar = self._generate_ascii_bar(count, max_freq)
+                        f.write(f"| {word} | {count} | {bar} |\n")
+                    f.write("\n")
 
             # SEO Rankings Trend
             f.write("## 📈 SEO Trend Analysis\n\n")
@@ -117,7 +128,9 @@ class ReportGenerator:
                 for post in new_posts:
                     title, url, scraped_at = post
                     title = title.replace("|", "-") if title else "No Title"
-                    f.write(f"| {title} | {scraped_at} | [View]({url}) |\n")
+                    # Format date to be more readable (YYYY-MM-DD HH:MM)
+                    scraped_at_str = str(scraped_at)[:16]
+                    f.write(f"| {title} | {scraped_at_str} | [View]({url}) |\n")
             else:
                 f.write("No new posts scraped in the last 24 hours.\n")
 
