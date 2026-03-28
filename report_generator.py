@@ -62,9 +62,15 @@ class ReportGenerator:
 
         with open(report_filename, "w", encoding="utf-8") as f:
             f.write(f"# Daily Scraper Report - {report_date}\n\n")
-            f.write(f"**Total Posts:** {total_posts}\n")
-            f.write(f"**New Posts:** {len(new_posts)}\n")
-            f.write(f"**Updated Posts:** {len(updated_posts)}\n\n")
+
+            # Summary Table
+            f.write("## 📊 Summary\n\n")
+            f.write("| Metric | Count |\n")
+            f.write("|---|---|\n")
+            f.write(f"| 📦 Total Posts | {total_posts} |\n")
+            f.write(f"| 🆕 New Posts | {len(new_posts)} |\n")
+            f.write(f"| 🔄 Updated Posts | {len(updated_posts)} |\n")
+            f.write("\n")
 
             # Recommendations Section
             f.write("## 💡 Recommendations\n\n")
@@ -111,15 +117,29 @@ class ReportGenerator:
 
             # New Posts Section
             if new_posts:
-                f.write("## 🆕 Recently Scraped Posts\n\n")
+                f.write(f"## 🆕 Recently Scraped Posts ({len(new_posts)})\n\n")
+
+                should_collapse = len(new_posts) > 10
+
+                # Collapsible section start
+                if should_collapse:
+                    f.write(f"<details>\n<summary><strong>View all {len(new_posts)} new posts</strong></summary>\n\n")
+
                 f.write("| Title | Scraped At | Link |\n")
                 f.write("|---|---|---|\n")
                 for post in new_posts:
                     title, url, scraped_at = post
                     title = title.replace("|", "-") if title else "No Title"
                     f.write(f"| {title} | {scraped_at} | [View]({url}) |\n")
+
+                # Collapsible section end
+                if should_collapse:
+                    f.write("\n</details>\n")
             else:
                 f.write("No new posts scraped in the last 24 hours.\n")
+
+            f.write("\n---\n")
+            f.write(f"[⬆️ Back to Top](#daily-scraper-report---{report_date})\n")
 
         logger.info(f"Report generated: {report_filename}")
 
