@@ -1,0 +1,3 @@
+## 2025-01-08 - BS4 Optimization Surprises
+**Learning:** `SoupStrainer` with `lxml` provided no speedup (actually slightly slower) for parsing `markposition.wordpress.com` HTML, likely because the overhead of Python logic in `SoupStrainer` outweighed the savings from skipping parsing of non-article tags, or because `lxml` is already extremely efficient. However, replacing CSS selectors (`select_one`) with native tag lookups (`find`) reduced extraction time by ~50% (0.5ms -> 0.26ms per article).
+**Action:** Prioritize `find`/`find_all` over `select`/`select_one` for high-frequency extraction loops in BeautifulSoup, especially when using `lxml`. Test `SoupStrainer` effectiveness before assuming it will help.
