@@ -215,6 +215,12 @@ class MarkPositionScraperAsync:
                 return await self.parse_page(html)
             return None
 
+    def sanitize_for_csv(self, value: str) -> str:
+        """Prevent CSV Formula Injection by escaping unsafe characters."""
+        if value and str(value).startswith(('=', '+', '-', '@')):
+            return f"'{value}"
+        return value
+
     def save_data(self, posts: List[Dict]):
         # JSON
         try:
@@ -229,16 +235,19 @@ class MarkPositionScraperAsync:
             with open(self.output_csv, 'w', newline='', encoding='utf-8') as f:
                 writer = csv.writer(f)
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
+
                 for post in posts:
-                    writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
-                    ])
+                    # Helper to get and sanitize
+                    title = self.sanitize_for_csv(post.get('title', ''))
+                    date = self.sanitize_for_csv(post.get('date', ''))
+                    author = self.sanitize_for_csv(post.get('author', ''))
+                    categories = self.sanitize_for_csv(", ".join(post.get('categories', [])))
+                    external_link = self.sanitize_for_csv(post.get('external_link', ''))
+                    domain = self.sanitize_for_csv(post.get('domain', ''))
+                    post_url = self.sanitize_for_csv(post.get('post_url', ''))
+
+                    writer.writerow([title, date, author, categories, external_link, domain, post_url])
+
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
             logger.error(f"Failed to save CSV: {e}")

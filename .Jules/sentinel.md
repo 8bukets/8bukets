@@ -1,0 +1,4 @@
+## 2024-05-24 - [CSV Formula Injection in Scraper]
+**Vulnerability:** The scraper was writing untrusted data (scraped titles, authors, etc.) directly to a CSV file. If this data started with `=`, `+`, `-`, or `@`, it could be executed as a formula in spreadsheet software like Excel, potentially leading to command execution (Formula Injection).
+**Learning:** Even "read-only" data formats like CSV can be vectors for attacks if they are consumed by rich clients like Excel. Data sanitization is necessary not just for code injection (SQLi, XSS) but also for file format injection.
+**Prevention:** Always sanitize fields before writing to CSV. Prepend a single quote `'` to any field starting with dangerous characters (`=`, `+`, `-`, `@`) to force the spreadsheet application to treat it as a string.
