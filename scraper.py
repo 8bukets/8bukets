@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
 import re
@@ -21,6 +21,10 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
+    # Pre-compile regex patterns for performance
+    WHITESPACE_RE = re.compile(r'\s+')
+    POST_CLASS_RE = re.compile(r'\bpost\b')
+
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
         self.output_csv = output_csv
@@ -34,7 +38,7 @@ class MarkPositionScraperAsync:
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return self.WHITESPACE_RE.sub(' ', text).strip()
 
     def sanitize_for_csv(self, text: str) -> str:
         """Sanitize text to prevent CSV injection (formula injection)."""
@@ -81,8 +85,14 @@ class MarkPositionScraperAsync:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
-        articles = soup.find_all('article', class_='post')
+        # Optimization: Use SoupStrainer to only parse 'article' tags with class 'post'
+        # This drastically reduces parsing time by ignoring the rest of the HTML tree.
+        strainer = SoupStrainer('article', class_=self.POST_CLASS_RE)
+        soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
+
+        # Note: Since we used parse_only, soup contains only the matched articles.
+        # We apply the filter again to avoid picking up nested articles that might lack the class.
+        articles = soup.find_all('article', class_=self.POST_CLASS_RE)
         page_posts = []
 
         if not articles:
