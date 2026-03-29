@@ -36,7 +36,7 @@ def main():
     ]
 
     # Run agents and collect output
-    full_report = f"# Daily Autonomous Agent Report - {datetime.date.today()}\n\n"
+    full_report = f"# Bi-Weekly Autonomous Agent Report - {datetime.date.today()}\n\n"
 
     for agent in agents:
         try:
@@ -47,7 +47,7 @@ def main():
             full_report += f"### {agent.name}\nError: {e}\n\n---\n"
 
     # Save report
-    filename = f"Daily_Report_{datetime.date.today()}.md"
+    filename = f"BiWeekly_Report_{datetime.date.today()}.md"
     with open(filename, 'w', encoding='utf-8') as f:
         f.write(full_report)
 

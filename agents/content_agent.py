@@ -16,9 +16,9 @@ class ContentAgent(BaseAgent):
         title = featured.get('title', 'Unknown Title')
         link = featured.get('external_link', '#')
 
-        report = "### Content Draft: Daily Highlight\n"
+        report = "### Content Draft: Bi-Weekly Highlight\n"
         report += f"**Title:** Spotlight on {title}\n\n"
-        report += f"**Draft Snippet:** In today's digest, we are highlighting an interesting piece: '{title}'. "
+        report += f"**Draft Snippet:** In this bi-weekly digest, we are highlighting an interesting piece: '{title}'. "
         report += "This aligns with our ongoing analysis of digital trends. "
         report += f"Check it out here: {link}\n"
 
