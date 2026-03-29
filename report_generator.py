@@ -19,6 +19,14 @@ class ReportGenerator:
         if not os.path.exists(self.report_dir):
             os.makedirs(self.report_dir)
 
+    def create_bar_chart(self, value, max_value, max_width=10):
+        """Creates an ASCII bar chart."""
+        if max_value == 0:
+            return ""
+        ratio = value / max_value
+        bar_length = int(ratio * max_width)
+        return "█" * bar_length
+
     def generate_daily_report(self):
         logger.info("Generating daily report...")
 
@@ -81,10 +89,14 @@ class ReportGenerator:
                 f.write("## 🧠 Keyword Trends\n\n")
                 f.write("Most frequent words in recent activity:\n\n")
                 keywords = self.analyze_keywords(all_recent_titles)
-                f.write("| Keyword | Frequency |\n")
-                f.write("|---|---|\n")
+
+                max_count = keywords[0][1] if keywords else 0
+
+                f.write("| Keyword | Frequency | Distribution |\n")
+                f.write("|---|---|---|\n")
                 for word, count in keywords:
-                    f.write(f"| {word} | {count} |\n")
+                    bar = self.create_bar_chart(count, max_count)
+                    f.write(f"| {word} | {count} | {bar} |\n")
                 f.write("\n")
 
             # SEO Rankings Trend
@@ -112,12 +124,12 @@ class ReportGenerator:
             # New Posts Section
             if new_posts:
                 f.write("## 🆕 Recently Scraped Posts\n\n")
-                f.write("| Title | Scraped At | Link |\n")
-                f.write("|---|---|---|\n")
+                f.write("| Title | Scraped At |\n")
+                f.write("|---|---|\n")
                 for post in new_posts:
                     title, url, scraped_at = post
                     title = title.replace("|", "-") if title else "No Title"
-                    f.write(f"| {title} | {scraped_at} | [View]({url}) |\n")
+                    f.write(f"| [{title}]({url}) | {scraped_at} |\n")
             else:
                 f.write("No new posts scraped in the last 24 hours.\n")
 
