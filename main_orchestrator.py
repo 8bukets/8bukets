@@ -97,6 +97,18 @@ def run_orchestration(save_report=True):
 
     return report_data
 
+def get_status_display(value, true_label="Yes", false_label="No"):
+    """Helper to add status emojis to boolean/status values."""
+    if isinstance(value, bool):
+        return f"✅ {true_label}" if value else f"❌ {false_label}"
+
+    val_str = str(value).lower()
+    if val_str == "healthy":
+        return f"✅ {value}"
+    if val_str in ["unhealthy", "error", "failed"]:
+        return f"❌ {value}"
+    return value
+
 def save_daily_report(data):
     today = datetime.datetime.now().strftime("%Y-%m-%d")
     report_dir = "reports"
@@ -110,9 +122,14 @@ def save_daily_report(data):
         # Health
         f.write("## 1. System Health & Environment 🏥\n")
         status = data.get('health', {})
-        f.write(f"- **Site Status:** {status.get('site_status')} (Code: {status.get('site_code')})\n")
-        f.write(f"- **Robots.txt Access:** {status.get('robots_txt_accessible')}\n")
-        f.write(f"- **Googlebot Allowed:** {status.get('googlebot_allowed')}\n\n")
+
+        site_status = get_status_display(status.get('site_status'))
+        robots_txt = get_status_display(status.get('robots_txt_accessible'))
+        googlebot = get_status_display(status.get('googlebot_allowed'))
+
+        f.write(f"- **Site Status:** {site_status} (Code: {status.get('site_code')})\n")
+        f.write(f"- **Robots.txt Access:** {robots_txt}\n")
+        f.write(f"- **Googlebot Allowed:** {googlebot}\n\n")
 
         # Research Stats
         research = data.get('research', {})
