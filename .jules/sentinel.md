@@ -1,0 +1,4 @@
+## 2026-01-26 - CSV Injection Vulnerability in Scraper Output
+**Vulnerability:** `scraper.py` was writing untrusted input (scraped titles, etc.) directly to a CSV file. Fields starting with `=`, `+`, `-`, or `@` could be interpreted as formulas by spreadsheet software, leading to arbitrary code execution on the user's machine (CSV Injection).
+**Learning:** When exporting data to CSV, simply escaping CSV delimiters (quotes, commas) is not enough. Spreadsheet software features like formulas introduce additional injection vectors that need to be sanitized by prepending a single quote `'` to risky characters.
+**Prevention:** Always sanitize user-controlled input before writing to CSV. Use a dedicated helper function like `sanitize_for_csv` that prepends `'` to values starting with formula triggers.
