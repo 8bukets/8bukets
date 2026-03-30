@@ -1,0 +1,4 @@
+## 2024-05-24 - [CSV Formula Injection Vulnerability]
+**Vulnerability:** User-controlled input (article titles, authors, etc.) is written directly to CSV files without sanitization. If the input starts with characters like `=`, `+`, `-`, or `@`, it can be interpreted as a formula by spreadsheet software (Excel, LibreOffice), potentially leading to command execution or data exfiltration.
+**Learning:** Even when scraping "safe" websites, the content can be manipulated or contain malicious data. Always treat external input as untrusted when generating file formats that have executable capabilities (like CSV with formulas).
+**Prevention:** Sanitize all fields written to CSVs by prepending a single quote `'` if they start with dangerous characters. This forces the spreadsheet software to treat the cell content as a string.
