@@ -36,16 +36,18 @@ class TestBlogScraper(unittest.TestCase):
         if os.path.exists(self.json_name):
             os.remove(self.json_name)
 
-    @patch('requests.get')
-    def test_fetch_page(self, mock_get):
+    def test_fetch_page(self):
         mock_response = MagicMock()
         mock_response.status_code = 200
         mock_response.content = self.mock_html.encode('utf-8')
-        mock_get.return_value = mock_response
+
+        # Mock the session.get method on the instance
+        self.scraper.session.get = MagicMock(return_value=mock_response)
 
         content = self.scraper.fetch_page("http://mock.url")
         self.assertIsNotNone(content)
         self.assertIn(b"Test Title", content)
+        self.scraper.session.get.assert_called_with("http://mock.url", timeout=10)
 
     def test_parse_article(self):
         from bs4 import BeautifulSoup
