@@ -29,13 +29,16 @@ class SixSigmaAgent(BaseAgent):
             with open("config/owner_info.json", 'r') as f:
                 owner_info = json.load(f)
 
+        oib = owner_info.get('oib', 'N/A')
+        owner_ref = f"OIB: {oib}" if oib != "[REDACTED]" else "REFERENCE: [SENSITIVE_DATA_RESTRICTED]"
+
         report = {
             "total_swarm_optimizations": len(swarm_results),
             "average_impact_score": sum(r.get("impact_score", 0) for r in swarm_results) / len(swarm_results) if swarm_results else 0,
             "belt_status": {belt: "STABLE" for belt in belts.keys()},
             "process_capability_cpk": 1.33, # Simulated
             "legal_owner": owner_info.get("owner", "N/A"),
-            "owner_reference": f"OIB: {owner_info.get('oib', 'N/A')}"
+            "owner_reference": owner_ref
         }
 
         return {"sigma_performance_report": report}
