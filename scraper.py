@@ -46,6 +46,14 @@ class MarkPositionScraperAsync:
         # Use pre-compiled regex
         return self.URL_REGEX.match(text.strip()) is not None
 
+    def sanitize_for_csv(self, value: Optional[str]) -> str:
+        """Sanitize a value to prevent CSV Injection (Formula Injection)."""
+        if not value:
+            return ""
+        if str(value).startswith(('=', '+', '-', '@')):
+            return f"'{value}"
+        return str(value)
+
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
         categories = []
@@ -237,13 +245,13 @@ class MarkPositionScraperAsync:
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        self.sanitize_for_csv(post.get('title', '')),
+                        self.sanitize_for_csv(post.get('date', '')),
+                        self.sanitize_for_csv(post.get('author', '')),
+                        self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                        self.sanitize_for_csv(post.get('external_link', '')),
+                        self.sanitize_for_csv(post.get('domain', '')),
+                        self.sanitize_for_csv(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
