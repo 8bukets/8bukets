@@ -1,14 +1,14 @@
-import aiohttp
-import asyncio
-from bs4 import BeautifulSoup
-import json
-import csv
-import re
 import argparse
+import asyncio
+import csv
+import json
 import logging
-import time
-from typing import List, Dict, Optional, Set
+import re
+from typing import Dict, List, Optional
 from urllib.parse import urlparse
+
+import aiohttp
+from bs4 import BeautifulSoup
 
 # Configure logging
 logging.basicConfig(
@@ -47,7 +47,17 @@ class MarkPositionScraperAsync:
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
-        return re.match(r'^https?://', text.strip()) is not None
+        if not text:
+            return False
+        text = text.strip()
+        # Basic check for http/https
+        if not re.match(r'^https?://', text):
+            return False
+        # Check for invalid characters (like <, >, ", ', whitespace, backticks)
+        # URLs should not have spaces or control characters or HTML brackets
+        if re.search(r'[\s<>"\'{}\\|\\^`]', text):
+            return False
+        return True
 
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
@@ -64,7 +74,14 @@ class MarkPositionScraperAsync:
         if not url:
             return None
         try:
-            return urlparse(url).netloc.replace('www.', '')
+            parsed = urlparse(url)
+            domain = parsed.netloc.replace('www.', '')
+            # Validate domain contains only allowed chars
+            # Domains should be alphanumeric, dots, hyphens, and colons (for ports)
+            # This prevents injecting HTML tags into domain field
+            if re.search(r'[^a-zA-Z0-9.\-:]', domain):
+                return None
+            return domain
         except:
             return None
 
