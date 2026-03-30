@@ -236,7 +236,7 @@ class MarkPositionScraperAsync:
                 writer = csv.writer(f)
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
-                    writer.writerow([
+                    row = [
                         post.get('title', ''),
                         post.get('date', ''),
                         post.get('author', ''),
@@ -244,8 +244,11 @@ class MarkPositionScraperAsync:
                         post.get('external_link', ''),
                         post.get('domain', ''),
                         post.get('post_url', '')
-                    ])
-            logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
+                    ]
+                    # Sanitize fields to prevent CSV injection
+                    safe_row = [f"'{val}" if isinstance(val, str) and val.startswith(('=', '+', '-', '@')) else val for val in row]
+                    writer.writerow(safe_row)
+            logger.info(f"Saved {len(posts)} to {self.output_csv}")
         except IOError as e:
             logger.error(f"Failed to save CSV: {e}")
 
