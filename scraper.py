@@ -1,14 +1,14 @@
-import aiohttp
-import asyncio
-from bs4 import BeautifulSoup
-import json
-import csv
-import re
 import argparse
+import asyncio
+import csv
+import json
 import logging
-import time
-from typing import List, Dict, Optional, Set
+import re
+from typing import Dict, List, Optional
 from urllib.parse import urlparse
+
+import aiohttp
+from bs4 import BeautifulSoup, SoupStrainer
 
 # Configure logging
 logging.basicConfig(
@@ -72,8 +72,18 @@ class MarkPositionScraperAsync:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+        # Optimization: Use SoupStrainer to parse only article tags with 'post' class
+        # This significantly speeds up parsing by ignoring the rest of the document
+        strainer = SoupStrainer('article', class_=re.compile(r'\bpost\b'))
+        soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
         articles = soup.find_all('article', class_='post')
+
+        # Fallback mechanism: If strainer returns nothing, try full parse
+        # This ensures robustness against unexpected HTML structures
+        if not articles:
+            soup = BeautifulSoup(html, 'html.parser')
+            articles = soup.find_all('article', class_='post')
+
         page_posts = []
 
         if not articles:
@@ -88,6 +98,11 @@ class MarkPositionScraperAsync:
             if title_tag:
                 title_text = self.clean_text(title_tag.get_text())
                 post_data['title'] = title_text
+            else:
+                # Fallback: Try to extract title directly from any h1 in the article
+                h1_tag = article.select_one('h1')
+                if h1_tag:
+                    post_data['title'] = self.clean_text(h1_tag.get_text())
 
             # Date
             date_tag = article.select_one('time.entry-date')
