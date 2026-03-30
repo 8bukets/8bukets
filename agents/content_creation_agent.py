@@ -15,27 +15,51 @@ class ContentCreationAgent:
         mood = strategy.get("market_mood", "Neutral")
         focus = ", ".join(strategy.get("focus_areas", []))
 
-        md_content = []
-        md_content.append(f"# Oracle News Digest: {timestamp}")
-        md_content.append(f"\n**Market Mood:** {mood}")
-        md_content.append(f"**Focus Areas:** {focus}")
-        md_content.append("\n## Executive Summary")
-        md_content.append(f"Recent analysis indicates a **{mood.lower()}** sentiment in the latest Oracle news cycle. "
-                          f"Key topics driving the conversation include **{focus}**.")
+        mood_emoji = {
+            "Bullish": "🚀",
+            "Bearish": "📉",
+            "Neutral": "😐",
+            "Volatile": "⛈️"
+        }.get(mood, "📊")
 
-        md_content.append("\n## Trending Topics")
+        md_content = []
+        md_content.append(f"# 📰 Oracle News Digest: {timestamp}")
+
+        md_content.append("\n## 📊 Executive Summary")
+
+        md_content.append("| Metric | Status | Details |")
+        md_content.append("| :--- | :---: | :--- |")
+        md_content.append(f"| **Market Mood** | {mood_emoji} | {mood} |")
+        md_content.append(f"| **Focus Areas** | 🎯 | {focus} |")
+        md_content.append(f"| **Date** | 📅 | {timestamp} |")
+
+        md_content.append(
+            f"\nRecent analysis indicates a **{mood.lower()}** "
+            f"sentiment in the latest Oracle news cycle. "
+            f"Key topics driving the conversation include **{focus}**."
+        )
+
+        md_content.append("\n## 📈 Trending Topics")
+
+        md_content.append("\n<details>")
+        md_content.append("<summary>Click to view detailed trends</summary>\n")
 
         for topic, titles in trends.items():
-            if topic == "General": continue
+            if topic == "General":
+                continue
 
             md_content.append(f"\n### Trend: {topic.title()}")
-            md_content.append(f"We've seen significant activity around **{topic}**. Here are the headlines:")
-            for title in titles[:5]: # Limit to 5
+            md_content.append(
+                f"We've seen significant activity around **{topic}**. Here are the headlines:"
+            )
+            for title in titles[:5]:  # Limit to 5
                 md_content.append(f"- {title}")
 
             # Creative addition
             creative_insight = self._generate_creative_insight(topic)
             md_content.append(f"\n*> Insight: {creative_insight}*")
+
+        md_content.append("\n</details>")
 
         return "\n".join(md_content)
 
