@@ -31,21 +31,24 @@ def get_domain(url):
 def generate_report(data, output_file):
     total_posts = len(data)
 
-    # 1. Domain Analysis
-    domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
-    domain_counts = Counter(domains).most_common(10)
-
-    # 2. Category Analysis
+    # Single-pass aggregation
+    domains = []
     all_categories = []
+    dates = []
+    authors = []
+
     for p in data:
-        cats = p.get('categories', [])
+        # 1. Domain
+        ext_link = p.get('external_link')
+        if ext_link:
+            domains.append(get_domain(ext_link))
+
+        # 2. Category
+        cats = p.get('categories')
         if cats:
             all_categories.extend(cats)
-    category_counts = Counter(all_categories).most_common(10)
 
-    # 3. Date Analysis
-    dates = []
-    for p in data:
+        # 3. Date
         dt_str = p.get('datetime')
         if dt_str:
             try:
@@ -54,6 +57,15 @@ def generate_report(data, output_file):
                 dates.append(dt)
             except ValueError:
                 pass
+
+        # 4. Author
+        author = p.get('author')
+        if author:
+            authors.append(author)
+
+    # Process aggregations
+    domain_counts = Counter(domains).most_common(10)
+    category_counts = Counter(all_categories).most_common(10)
 
     if dates:
         dates.sort()
@@ -67,8 +79,6 @@ def generate_report(data, output_file):
         end_date = "N/A"
         year_counts = []
 
-    # 4. Author Analysis
-    authors = [p.get('author') for p in data if p.get('author')]
     author_counts = Counter(authors).most_common()
 
     # Generate Markdown
