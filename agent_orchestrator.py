@@ -87,6 +87,16 @@ class AgentOrchestrator:
         with open(report_filename, "w", encoding="utf-8") as f:
             f.write(f"# 🤖 Autonomous Agent Report (Evolved v2) - {report_date}\n\n")
 
+            # Table of Contents
+            f.write("## 📋 Table of Contents\n")
+            f.write("- [🏥 System Health](#system-health)\n")
+            f.write("- [🧠 Intelligence](#intelligence)\n")
+            f.write("- [🌌 Curiosity & Innovation](#curiosity--innovation-google-antigravity-mode)\n")
+            f.write("- [📢 Ad Manager](#ad-manager)\n")
+            f.write("- [💰 Monetization](#monetization)\n")
+            f.write("- [✍️ Content Draft](#content-draft)\n\n")
+            f.write("---\n\n")
+
             # Health
             h = outputs.get('HealthAgent', {})
             f.write(f"## 🏥 System Health\n- DB: {h.get('db_status')}\n\n")
