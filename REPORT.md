@@ -1,27 +1,50 @@
+<a name="top"></a>
 # Markposition Analytics Report
 
-**Generated on:** 2025-12-23 19:44:50
+**Generated on:** 2026-01-18 08:17:07
 
-## General Statistics
+## Table of Contents
+- [📊 General Statistics](#general-statistics)
+- [🌐 Top 10 Referenced Domains](#referenced-domains)
+- [📂 Top 10 Categories](#categories)
+- [📅 Posts by Year](#posts-by-year)
+- [✍️ Authors](#authors)
+
+<a name="general-statistics"></a>
+## 📊 General Statistics
 - **Total Posts:** 39
 - **Date Range:** 2025-09-30 to 2025-10-15
 - **Unique Domains Linked:** 1
 
-## Top 10 Referenced Domains
+[⬆️ Back to Top](#top)
+
+<a name="referenced-domains"></a>
+## 🌐 Top 10 Referenced Domains
 | Domain | Count |
 | :--- | :---: |
 | oracle.com | 39 |
 
-## Top 10 Categories
+[⬆️ Back to Top](#top)
+
+<a name="categories"></a>
+## 📂 Top 10 Categories
 | Category | Count |
 | :--- | :---: |
 | News | 39 |
 | Announcement | 39 |
 
-## Posts by Year
+[⬆️ Back to Top](#top)
+
+<a name="posts-by-year"></a>
+## 📅 Posts by Year
 | Year | Count |
 | :--- | :---: |
 | 2025 | 39 |
 
-## Authors
+[⬆️ Back to Top](#top)
+
+<a name="authors"></a>
+## ✍️ Authors
 - Oracle: 39 posts
+
+[⬆️ Back to Top](#top)
