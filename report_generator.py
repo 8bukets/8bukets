@@ -19,6 +19,30 @@ class ReportGenerator:
         if not os.path.exists(self.report_dir):
             os.makedirs(self.report_dir)
 
+    def generate_dashboard(self, total, new_count, updated_count):
+        """Generates a summary dashboard table."""
+        dashboard = "| Metric | Count | Status |\n"
+        dashboard += "|---|---|---|\n"
+        dashboard += f"| 📚 Total Posts | {total} | ➖ |\n"
+
+        new_status = "✅" if new_count > 0 else "😴"
+        dashboard += f"| 🆕 New Posts | {new_count} | {new_status} |\n"
+
+        update_status = "ℹ️" if updated_count > 0 else "➖"
+        dashboard += f"| 🔄 Updates | {updated_count} | {update_status} |\n"
+
+        return dashboard
+
+    def generate_toc(self):
+        """Generates a Table of Contents."""
+        toc = "## 📋 Table of Contents\n\n"
+        toc += "- [💡 Recommendations](#-recommendations)\n"
+        toc += "- [🧠 Keyword Trends](#-keyword-trends)\n"
+        toc += "- [📈 SEO Trend Analysis](#-seo-trend-analysis)\n"
+        toc += "- [🔄 Content Updates](#-content-updates)\n"
+        toc += "- [🆕 Recently Scraped Posts](#-recently-scraped-posts)\n"
+        return toc
+
     def generate_daily_report(self):
         logger.info("Generating daily report...")
 
@@ -62,9 +86,14 @@ class ReportGenerator:
 
         with open(report_filename, "w", encoding="utf-8") as f:
             f.write(f"# Daily Scraper Report - {report_date}\n\n")
-            f.write(f"**Total Posts:** {total_posts}\n")
-            f.write(f"**New Posts:** {len(new_posts)}\n")
-            f.write(f"**Updated Posts:** {len(updated_posts)}\n\n")
+
+            # 1. Dashboard
+            f.write(self.generate_dashboard(total_posts, len(new_posts), len(updated_posts)))
+            f.write("\n")
+
+            # 2. TOC
+            f.write(self.generate_toc())
+            f.write("\n")
 
             # Recommendations Section
             f.write("## 💡 Recommendations\n\n")
@@ -94,32 +123,54 @@ class ReportGenerator:
                 f.write("|---|---|---|---|---|\n")
                 trends = self.analyze_seo_trends(rankings, past_rankings)
                 for item in trends:
-                    f.write(f"| {item['query']} | {item['rank']} | {item['change']} | {item['date']} |\n")
+                    # Clean timestamp
+                    date_clean = str(item['date']).split('.')[0]
+                    f.write(f"| {item['query']} | {item['rank']} | {item['change']} | {date_clean} |\n")
             else:
                 f.write("No SEO ranking data for today.\n\n")
 
             # Content Updates Section
+            f.write("## 🔄 Content Updates\n\n")
             if updated_posts:
-                f.write("## 🔄 Content Updates\n\n")
+                # UX: Collapsible if > 5
+                is_collapsible = len(updated_posts) > 5
+                if is_collapsible:
+                    f.write(f"<details>\n<summary>View all {len(updated_posts)} updates</summary>\n\n")
+
                 f.write("| Post | Field | Old | New | Time |\n")
                 f.write("|---|---|---|---|---|\n")
                 for u in updated_posts:
                     title, url, field, old, new, time = u
                     title = title.replace("|", "-")
-                    f.write(f"| [{title}]({url}) | {field} | {old} | {new} | {time} |\n")
-                f.write("\n")
+                    time_clean = str(time).split('.')[0]
+                    f.write(f"| [{title}]({url}) | {field} | {old} | {new} | {time_clean} |\n")
+
+                if is_collapsible:
+                    f.write("\n</details>\n")
+            else:
+                f.write("ℹ️ No content updates detected in the last 24 hours.\n")
+            f.write("\n")
 
             # New Posts Section
+            f.write("## 🆕 Recently Scraped Posts\n\n")
             if new_posts:
-                f.write("## 🆕 Recently Scraped Posts\n\n")
+                # UX: Collapsible if > 5
+                is_collapsible = len(new_posts) > 5
+                if is_collapsible:
+                    f.write(f"<details>\n<summary>View all {len(new_posts)} new posts</summary>\n\n")
+
                 f.write("| Title | Scraped At | Link |\n")
                 f.write("|---|---|---|\n")
                 for post in new_posts:
                     title, url, scraped_at = post
                     title = title.replace("|", "-") if title else "No Title"
-                    f.write(f"| {title} | {scraped_at} | [View]({url}) |\n")
+                    scraped_at_clean = str(scraped_at).split('.')[0]
+                    f.write(f"| {title} | {scraped_at_clean} | [View]({url}) |\n")
+
+                if is_collapsible:
+                    f.write("\n</details>\n")
             else:
-                f.write("No new posts scraped in the last 24 hours.\n")
+                f.write("😴 No new posts scraped in the last 24 hours.\n")
 
         logger.info(f"Report generated: {report_filename}")
 
