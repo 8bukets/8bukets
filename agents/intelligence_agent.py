@@ -1,25 +1,43 @@
-from .base_agent import BaseAgent
+from .base_agent import BaseAgent, Blackboard
+import os
+import json
 
 class IntelligenceAgent(BaseAgent):
     def __init__(self):
-        super().__init__("IntelligenceAgent")
+        super().__init__("IntelligenceAgent", dependencies=["analysis_stats", "research_data"], provides=["intelligence_insights", "synchronization_level"])
 
-    def run(self, data: list, context: dict) -> dict:
-        self.logger.info("Running Intelligence...")
+    async def run(self, data: list, blackboard: Blackboard) -> dict:
+        self.logger.info("Running Intelligence Synchronization & External World Collaboration...")
 
-        # Synthesize findings
-        analysis = context.get("analysis_stats", {})
-        research = context.get("research_notes", [])
+        analysis = blackboard.get("analysis_stats", {})
+        research = blackboard.get("research_data", {})
 
         insights = []
 
-        # Insight 1: Dominance
+        # 1. Internal Logic
         top_cats = analysis.get("top_categories", {})
         if "Ad Ads Advertise" in top_cats:
             insights.append("High concentration of advertising-related content.")
 
-        # Insight 2: Context
-        if any("google" in note.lower() for note in research):
-            insights.append("Google ecosystem is a primary focus area.")
+        # 2. Synchronize with Research (Blackboard Collaboration)
+        market_trends = research.get("market_trends", [])
+        for trend in market_trends:
+            insights.append(f"Synchronized Trend: {trend}")
 
-        return {"intelligence_insights": insights}
+        # 3. Synchronize with Telemetry (External Investigation Collaboration)
+        # In a more advanced system, we'd query the TelemetryManager directly or use a shared event bus.
+        # Here we check the research results which already integrated the telemetry-derived investigations.
+        for investigation in research.get("external_investigations", []):
+            if investigation.get("world_context") == "GOOGLE_WORLD":
+                insights.append(f"External World Insight: {investigation['domain']} is an active node in the Google World.")
+
+        competitors = research.get("competitor_analysis", {})
+        if competitors:
+            top_comp = max(competitors.values(), key=lambda x: x['relevance'] == 'High', default=None)
+            if top_comp:
+                insights.append(f"Strategic Focus: {top_comp['findings']}")
+
+        return {
+            "intelligence_insights": insights,
+            "synchronization_level": "ADVANCED_COLABORATIVE"
+        }

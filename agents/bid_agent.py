@@ -1,40 +1,33 @@
-from .base_agent import BaseAgent
+from .base_agent import BaseAgent, Blackboard
 
 class BidAgent(BaseAgent):
     def __init__(self):
-        super().__init__("BidAgent")
+        super().__init__("BidAgent", dependencies=["targeting_profile"], provides=["bid_strategy"])
 
-    def run(self, data: list, context: dict) -> dict:
+    async def run(self, data: list, blackboard: Blackboard) -> dict:
         self.logger.info("Calculating Bid Strategy...")
 
-        # Collaborate with Ads and Targeting
-        targeting = context.get("targeting_profile", {})
+        targeting = blackboard.get("targeting_profile", {})
         persona = targeting.get("primary_persona", "")
 
-        base_bid = 1.50 # CPM
-
-        # Logic: High value audience = Higher bid
+        base_cpm = 3.50
         if "AdTech" in persona:
-            base_bid *= 2.5
+            base_cpm += 1.00
         if "Google" in persona:
-            base_bid *= 1.2
+            base_cpm *= 1.1
 
-        # Evolution: Adjust based on historical "performance" (simulated)
-        # In a real scenario, this would read feedback (clicks/conversions) from memory
-        perf_factor = self.get_agent_memory("performance_multiplier", 1.0)
-        final_bid = round(base_bid * perf_factor, 2)
+        # Evolution: Learn from previous cycle
+        adj_factor = self.get_agent_memory("adjustment_factor", 1.0)
+        final_cpm = round(base_cpm * adj_factor, 2)
 
-        # Self-optimization (Autonomus Decision)
-        # Simulate market fluctuation
-        import random
-        fluctuation = random.uniform(0.9, 1.1)
-        new_multiplier = perf_factor * fluctuation
-        self.update_agent_memory("performance_multiplier", new_multiplier)
+        # Self-optimization
+        new_adj = adj_factor * 1.01
+        self.update_agent_memory("adjustment_factor", new_adj)
 
         return {
             "bid_strategy": {
-                "recommended_cpm": final_bid,
                 "strategy": "Automated Value-Based",
-                "adjustment_factor": round(new_multiplier, 3)
+                "recommended_cpm": final_cpm,
+                "adjustment_factor": round(adj_factor, 3)
             }
         }

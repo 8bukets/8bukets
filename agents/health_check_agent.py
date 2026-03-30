@@ -1,12 +1,10 @@
-from .base_agent import BaseAgent
-import os
-import json
+from .base_agent import BaseAgent, Blackboard
 
 class HealthCheckAgent(BaseAgent):
     def __init__(self):
-        super().__init__("HealthCheckAgent")
+        super().__init__("HealthCheckAgent", provides=["health_report"])
 
-    def run(self, data: list, context: dict) -> dict:
+    async def run(self, data: list, blackboard: Blackboard) -> dict:
         self.logger.info("Running Health Check...")
 
         report = {
@@ -14,14 +12,12 @@ class HealthCheckAgent(BaseAgent):
             "checks": []
         }
 
-        # Check 1: Data is not empty
         if not data:
             report["status"] = "FAIL"
             report["checks"].append("Data is empty.")
         else:
             report["checks"].append(f"Data contains {len(data)} records.")
 
-        # Check 2: Basic schema validation (sample first 5)
         required_keys = ["title", "external_link", "post_url"]
         valid_count = 0
         for item in data[:5]:
