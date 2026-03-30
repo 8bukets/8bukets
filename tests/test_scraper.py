@@ -31,21 +31,27 @@ class TestBlogScraper(unittest.TestCase):
         self.scraper = BlogScraper("http://mock.url", self.json_name, self.db_name)
 
     def tearDown(self):
+        # Ensure scraper resources are closed
+        if hasattr(self, 'scraper'):
+            self.scraper.close()
+
         if os.path.exists(self.db_name):
             os.remove(self.db_name)
         if os.path.exists(self.json_name):
             os.remove(self.json_name)
 
-    @patch('requests.get')
-    def test_fetch_page(self, mock_get):
+    def test_fetch_page(self):
+        # Mocking session.get instead of requests.get
         mock_response = MagicMock()
         mock_response.status_code = 200
         mock_response.content = self.mock_html.encode('utf-8')
-        mock_get.return_value = mock_response
 
-        content = self.scraper.fetch_page("http://mock.url")
-        self.assertIsNotNone(content)
-        self.assertIn(b"Test Title", content)
+        # Access the session object on the scraper instance
+        with patch.object(self.scraper.session, 'get', return_value=mock_response) as mock_get:
+            content = self.scraper.fetch_page("http://mock.url")
+            self.assertIsNotNone(content)
+            self.assertIn(b"Test Title", content)
+            mock_get.assert_called_once()
 
     def test_parse_article(self):
         from bs4 import BeautifulSoup
@@ -81,6 +87,8 @@ class TestBlogScraper(unittest.TestCase):
         self.assertFalse(success)
 
         # Verify data in DB
+        # Note: self.scraper.conn is still open, so we can query it directly or open a new connection to verify persistence to disk.
+        # Since we commit in save_to_db, a new connection should see it.
         with sqlite3.connect(self.db_name) as conn:
             cursor = conn.cursor()
             cursor.execute("SELECT * FROM posts WHERE post_url=?", ('http://example.com/unique-post-1',))
