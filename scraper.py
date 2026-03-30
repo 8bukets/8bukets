@@ -41,6 +41,17 @@ class MarkPositionScraperAsync:
         # Use pre-compiled regex
         return self.WHITESPACE_REGEX.sub(' ', text).strip()
 
+    def sanitize_for_csv(self, text: str) -> str:
+        """
+        Sanitize text to prevent CSV injection (Formula Injection).
+        Prepends a single quote if the text starts with =, +, -, or @.
+        """
+        if not text:
+            return ""
+        if text.startswith(('=', '+', '-', '@')):
+            return "'" + text
+        return text
+
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
         # Use pre-compiled regex
@@ -236,14 +247,22 @@ class MarkPositionScraperAsync:
                 writer = csv.writer(f)
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
+                    title = self.sanitize_for_csv(post.get('title', ''))
+                    date = self.sanitize_for_csv(post.get('date', ''))
+                    author = self.sanitize_for_csv(post.get('author', ''))
+                    categories = self.sanitize_for_csv(", ".join(post.get('categories', [])))
+                    external_link = self.sanitize_for_csv(post.get('external_link', ''))
+                    domain = self.sanitize_for_csv(post.get('domain', ''))
+                    post_url = self.sanitize_for_csv(post.get('post_url', ''))
+
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        title,
+                        date,
+                        author,
+                        categories,
+                        external_link,
+                        domain,
+                        post_url
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
