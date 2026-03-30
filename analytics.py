@@ -1,3 +1,6 @@
+"""
+Module for generating analytics reports from scraped data.
+"""
 import json
 import argparse
 from collections import Counter
@@ -13,6 +16,7 @@ BOLD = "\033[1m"
 RESET = "\033[0m"
 
 def load_data(filepath):
+    """Load JSON data from a file."""
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             return json.load(f)
@@ -21,55 +25,70 @@ def load_data(filepath):
         sys.exit(1)
 
 def get_domain(url):
+    """Extract domain from URL."""
     if not url:
         return None
     try:
         return urlparse(url).netloc.replace('www.', '')
-    except:
+    except Exception: # pylint: disable=broad-except
         return None
 
-def generate_report(data, output_file):
-    total_posts = len(data)
+def generate_report(posts_data, output_file):
+    """Generate a Markdown report from data."""
+    total_posts = len(posts_data)
 
-    # 1. Domain Analysis
-    domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
-    domain_counts = Counter(domains).most_common(10)
+    # Single pass aggregation
+    domain_counter = Counter()
+    category_counter = Counter()
+    year_counter = Counter()
+    author_counter = Counter()
 
-    # 2. Category Analysis
-    all_categories = []
-    for p in data:
-        cats = p.get('categories', [])
-        if cats:
-            all_categories.extend(cats)
-    category_counts = Counter(all_categories).most_common(10)
-
-    # 3. Date Analysis
     dates = []
-    for p in data:
+
+    for p in posts_data:
+        # 1. Domain
+        ext_link = p.get('external_link')
+        if ext_link:
+            d = get_domain(ext_link)
+            if d:
+                domain_counter[d] += 1
+
+        # 2. Category
+        cats = p.get('categories')
+        if cats:
+            for cat in cats:
+                category_counter[cat] += 1
+
+        # 3. Date
         dt_str = p.get('datetime')
         if dt_str:
             try:
-                # Handle ISO format
                 dt = datetime.fromisoformat(dt_str)
                 dates.append(dt)
+                year_counter[dt.year] += 1
             except ValueError:
                 pass
+
+        # 4. Author
+        a = p.get('author')
+        if a:
+            author_counter[a] += 1
+
+    domain_counts = domain_counter.most_common(10)
+    category_counts = category_counter.most_common(10)
 
     if dates:
         dates.sort()
         start_date = dates[0].strftime('%Y-%m-%d')
         end_date = dates[-1].strftime('%Y-%m-%d')
-        years = [d.year for d in dates]
-        year_counts = Counter(years).most_common()
-        year_counts.sort(key=lambda x: x[0], reverse=True)
     else:
         start_date = "N/A"
         end_date = "N/A"
-        year_counts = []
 
-    # 4. Author Analysis
-    authors = [p.get('author') for p in data if p.get('author')]
-    author_counts = Counter(authors).most_common()
+    year_counts = year_counter.most_common()
+    year_counts.sort(key=lambda x: x[0], reverse=True)
+
+    author_counts = author_counter.most_common()
 
     # Generate Markdown
     md = []
@@ -79,7 +98,7 @@ def generate_report(data, output_file):
     md.append("\n## General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
-    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append(f"- **Unique Domains Linked:** {len(domain_counter)}")
 
     md.append("\n## Top 10 Referenced Domains")
     md.append("| Domain | Count |")
