@@ -6,17 +6,38 @@ import csv
 import re
 import argparse
 import logging
+import sys
 import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 import concurrent.futures
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+
+class ColorLogFormatter(logging.Formatter):
+    def format(self, record):
+        # Only colorize if stderr is a TTY (standard for logging)
+        if sys.stderr.isatty():
+            if record.levelno == logging.INFO:
+                record.levelname = f"{Colors.GREEN}{record.levelname}{Colors.ENDC}"
+            elif record.levelno == logging.WARNING:
+                record.levelname = f"{Colors.WARNING}{record.levelname}{Colors.ENDC}"
+            elif record.levelno == logging.ERROR:
+                record.levelname = f"{Colors.FAIL}{record.levelname}{Colors.ENDC}"
+        return super().format(record)
+
+handler = logging.StreamHandler()
+handler.setFormatter(ColorLogFormatter('%(asctime)s - %(levelname)s - %(message)s', datefmt='%H:%M:%S'))
+logging.basicConfig(level=logging.INFO, handlers=[handler])
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
@@ -223,6 +244,19 @@ class MarkPositionScraperAsync:
                 loop = asyncio.get_running_loop()
                 return await loop.run_in_executor(self.executor, parse_page, html)
             return None
+
+    def print_summary(self, total_posts: int):
+        # Use stdout for summary
+        if not sys.stdout.isatty():
+            return
+
+        print(f"\n{Colors.BOLD}✨ Scraping Complete! ✨{Colors.ENDC}")
+        print(f"{Colors.CYAN}────────────────────────────────────────{Colors.ENDC}")
+        print(f"📦 Total Posts:   {Colors.GREEN}{total_posts}{Colors.ENDC}")
+        print(f"📄 JSON Output:   {Colors.BLUE}{self.output_json}{Colors.ENDC}")
+        print(f"📊 CSV Output:    {Colors.BLUE}{self.output_csv}{Colors.ENDC}")
+        print(f"🔗 TXT Output:    {Colors.BLUE}{self.output_txt}{Colors.ENDC}")
+        print(f"{Colors.CYAN}────────────────────────────────────────{Colors.ENDC}\n")
 
     def save_data(self, posts: List[Dict]):
         # JSON
