@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
 import re
@@ -33,8 +33,8 @@ class MarkPositionScraperAsync:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
-        text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        # Optimize: join/split is significantly faster than re.sub for this case
+        return ' '.join(text.replace('\xa0', ' ').split())
 
     def sanitize_for_csv(self, text: Optional[str]) -> str:
         """Sanitize text to prevent CSV injection."""
@@ -81,25 +81,40 @@ class MarkPositionScraperAsync:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
-        articles = soup.find_all('article', class_='post')
-        page_posts = []
+        # Optimize: Use SoupStrainer to only parse article tags
+        # Note: SoupStrainer matching for 'class' can be strict, so we use regex for safety
+        strainer = SoupStrainer('article', class_=re.compile(r'\bpost\b'))
+        soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
+
+        # When using SoupStrainer with parse_only, we can iterate directly or use find_all
+        # Iterating directly is faster if the soup only contains the desired elements
+        articles = []
+        for element in soup:
+            if element.name == 'article':
+                articles.append(element)
 
         if not articles:
-            return []
+            # Fallback for safety: if strainer missed everything, parse full HTML
+            soup = BeautifulSoup(html, 'html.parser')
+            articles = soup.find_all('article', class_='post')
+
+        page_posts = []
 
         for article in articles:
             post_data = {}
 
             # Title
             title_text = ""
-            title_tag = article.select_one('h1.entry-title a')
+            # Optimize: use find/find_all instead of select_one where possible
+            h1 = article.find('h1', class_='entry-title')
+            title_tag = h1.find('a') if h1 else None
+
             if title_tag:
                 title_text = self.clean_text(title_tag.get_text())
                 post_data['title'] = title_text
 
             # Date
-            date_tag = article.select_one('time.entry-date')
+            date_tag = article.find('time', class_='entry-date')
             if date_tag:
                 post_data['date'] = self.clean_text(date_tag.get_text())
                 post_data['datetime'] = date_tag.get('datetime')
@@ -116,15 +131,15 @@ class MarkPositionScraperAsync:
 
             # External Link
             external_link = None
-            content_div = article.select_one('.entry-content')
+            content_div = article.find(class_='entry-content')
 
             if content_div:
-                link_tag = content_div.select_one('a')
+                link_tag = content_div.find('a')
                 if link_tag:
                     external_link = link_tag.get('href')
 
                 if not external_link:
-                    iframe_tag = content_div.select_one('iframe')
+                    iframe_tag = content_div.find('iframe')
                     if iframe_tag:
                         external_link = iframe_tag.get('src')
 
