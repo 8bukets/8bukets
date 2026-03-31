@@ -134,7 +134,18 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    # Console Summary
+    G = '\033[92m'  # Green
+    B = '\033[1m'   # Bold
+    R = '\033[0m'   # Reset
+
+    print(f"\n{B}Markposition Analytics Summary{R}")
+    print("-" * 30)
+    print(f"{B}Total Posts:{R}      {total_posts}")
+    print(f"{B}Date Range:{R}       {start_date} to {end_date}")
+    print(f"{B}Unique Domains:{R}   {len(set(domains))}")
+    print("-" * 30)
+    print(f"{G}Report generated successfully: {output_file}{R}\n")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
