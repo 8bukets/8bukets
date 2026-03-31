@@ -7,8 +7,15 @@ import re
 import argparse
 import logging
 import time
+import sys
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
+
+class Colors:
+    use = sys.stdout.isatty()
+    CYAN = '\033[96m' if use else ''
+    BOLD = '\033[1m' if use else ''
+    RESET = '\033[0m' if use else ''
 
 # Configure logging
 logging.basicConfig(
@@ -32,6 +39,8 @@ class MarkPositionScraperAsync:
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+        self.pages_scanned = 0
+        self.start_time = 0
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -140,6 +149,7 @@ class MarkPositionScraperAsync:
         return page_posts
 
     async def scrape(self):
+        self.start_time = time.time()
         all_posts = []
         page_num = 1
         sem = asyncio.Semaphore(self.concurrency)
@@ -181,6 +191,8 @@ class MarkPositionScraperAsync:
                 logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
                 results = await asyncio.gather(*tasks)
 
+                self.pages_scanned += len(tasks)
+
                 # Check results
                 batch_posts_count = 0
                 stop_detected = False
@@ -213,6 +225,27 @@ class MarkPositionScraperAsync:
                 await asyncio.sleep(0.5)
 
         self.save_data(all_posts)
+        self.print_summary(len(all_posts))
+
+    def print_summary(self, total_posts):
+        t = f"{time.time() - self.start_time:.2f}s"
+        c = Colors
+        w = 30
+        print(f"\n{c.CYAN}┌{'─'*w}┐{c.RESET}")
+        print(f"{c.CYAN}│{c.BOLD}   Scraper Summary            {c.RESET}{c.CYAN}│{c.RESET}")
+        print(f"{c.CYAN}├{'─'*w}┤{c.RESET}")
+
+        for icon, label, val in [("⏱️ ", "Time :", t), ("📄", "Pages:", str(self.pages_scanned)), ("🔗", "Posts:", str(total_posts))]:
+             line = f" {icon} {label} {val}"
+             # Emoji visual correction: assume emoji takes 2 spaces.
+             # If len(icon_char) is 1, we need -1 padding.
+             icon_char = icon.strip()
+             correction = 1 if len(icon_char) == 1 else 0
+             pad = w - len(line) - correction
+             if pad < 0: pad = 0
+             print(f"{c.CYAN}│{c.RESET}{line}{' '*pad}{c.CYAN}│{c.RESET}")
+
+        print(f"{c.CYAN}└{'─'*w}┘{c.RESET}\n")
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
