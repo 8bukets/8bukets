@@ -134,7 +134,34 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    # CLI Visual Summary
+    use_colors = sys.stdout.isatty()
+
+    class Colors:
+        HEADER = '\033[95m' if use_colors else ''
+        BLUE = '\033[94m' if use_colors else ''
+        GREEN = '\033[92m' if use_colors else ''
+        ENDC = '\033[0m' if use_colors else ''
+        BOLD = '\033[1m' if use_colors else ''
+
+    def create_bar_chart(label, value, max_val, width=20):
+        if max_val == 0:
+            bar_len = 0
+        else:
+            bar_len = int((value / max_val) * width)
+        bar_visual = '█' * bar_len
+        return f"{label:<25} {Colors.BLUE}|{bar_visual:<{width}}|{Colors.ENDC} {value}"
+
+    print(f"\n{Colors.HEADER}{Colors.BOLD}📊 Report generated: {output_file}{Colors.ENDC}")
+    print(f"{Colors.GREEN}✔ Total Posts: {total_posts} | "
+          f"Date Range: {start_date} to {end_date}{Colors.ENDC}\n")
+
+    print(f"{Colors.BOLD}Top Linked Domains:{Colors.ENDC}")
+    if domain_counts:
+        max_count = domain_counts[0][1]
+        for domain_name, dom_count in domain_counts[:5]:
+            print(create_bar_chart(domain_name, dom_count, max_count))
+    print()
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
