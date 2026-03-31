@@ -6,15 +6,31 @@ import csv
 import re
 import argparse
 import logging
+import time
+import sys
 from typing import List, Dict, Optional
 from urllib.parse import urlparse
 from datetime import datetime
+
+# ANSI Colors for UX
+class Colors:
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    BOLD = '\033[1m'
+    RESET = '\033[0m'
+
+    @staticmethod
+    def strip(text):
+        return re.sub(r'\x1b\[[0-9;]*m', '', text)
 
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
+    datefmt='%H:%M:%S',
+    stream=sys.stdout
 )
 logger = logging.getLogger(__name__)
 
@@ -132,7 +148,36 @@ class OracleNewsScraper:
 
         return page_posts
 
+    def print_summary(self, posts: List[Dict], duration: float):
+        unique_links = len(set(p.get('external_link') for p in posts if p.get('external_link')))
+
+        # Prepare content
+        title = f"{Colors.BOLD}{Colors.CYAN}📰 Scraping Summary{Colors.RESET}"
+        count_line = f"   Posts Extracted:   {Colors.GREEN}{len(posts)}{Colors.RESET}"
+        links_line = f"   Unique Links:      {Colors.YELLOW}{unique_links}{Colors.RESET}"
+        time_line  = f"   Time Elapsed:      {Colors.CYAN}{duration:.2f}s{Colors.RESET}"
+
+        # Calculate width (ignoring ANSI codes for length)
+        content_lines = [count_line, links_line, time_line]
+        max_len = max(len(Colors.strip(line)) for line in content_lines)
+        box_width = max(len(Colors.strip(title)) + 2, max_len + 5)
+
+        print("\n")
+        # Subtract 1 extra from dashes because '📰' is visually 2 chars but len() is 1
+        print(f"{Colors.BOLD}┌─ {title} {'─' * (box_width - len(Colors.strip(title)) - 4)}┐{Colors.RESET}")
+        print(f"{Colors.BOLD}│{' ' * box_width}│{Colors.RESET}")
+
+        for line in content_lines:
+            visible_len = len(Colors.strip(line))
+            padding = box_width - visible_len
+            print(f"{Colors.BOLD}│{Colors.RESET} {line}{' ' * (padding - 1)}{Colors.BOLD}│{Colors.RESET}")
+
+        print(f"{Colors.BOLD}│{' ' * box_width}│{Colors.RESET}")
+        print(f"{Colors.BOLD}└{'─' * box_width}┘{Colors.RESET}")
+        print("\n")
+
     async def scrape(self):
+        start_time = time.time()
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
@@ -144,6 +189,9 @@ class OracleNewsScraper:
                 posts = self.parse_page(html)
                 logger.info(f"Extracted {len(posts)} posts.")
                 self.save_data(posts)
+
+                duration = time.time() - start_time
+                self.print_summary(posts, duration)
             else:
                 logger.error("Failed to retrieve content.")
 
