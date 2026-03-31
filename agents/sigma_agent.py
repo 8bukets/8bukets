@@ -32,10 +32,20 @@ class SixSigmaAgent(BaseAgent):
         oib = owner_info.get('oib', 'N/A')
         owner_ref = f"OIB: {oib}" if oib != "[REDACTED]" else "REFERENCE: [SENSITIVE_DATA_RESTRICTED]"
 
+        # DMAIC Methodology Alignment
+        dmaic_status = {
+            "DEFINE": "COMPLETE" if any(r.get("phase") == "DEFINE" for r in swarm_results) else "PENDING",
+            "MEASURE": "COMPLETE" if any(r.get("phase") == "MEASURE" for r in swarm_results) else "PENDING",
+            "ANALYZE": "COMPLETE" if any(r.get("phase") == "ANALYZE" for r in swarm_results) else "PENDING",
+            "IMPROVE": "COMPLETE" if any(r.get("phase") == "IMPROVE" for r in swarm_results) else "PENDING",
+            "CONTROL": "COMPLETE" if any(r.get("phase") == "CONTROL" for r in swarm_results) else "PENDING"
+        }
+
         report = {
             "total_swarm_optimizations": len(swarm_results),
             "average_impact_score": sum(r.get("impact_score", 0) for r in swarm_results) / len(swarm_results) if swarm_results else 0,
             "belt_status": {belt: "STABLE" for belt in belts.keys()},
+            "dmaic_lifecycle": dmaic_status,
             "process_capability_cpk": 1.33, # Simulated
             "legal_owner": owner_info.get("owner", "N/A"),
             "owner_reference": owner_ref
