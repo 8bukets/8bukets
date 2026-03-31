@@ -72,7 +72,20 @@ class ReportGenerator:
             f.write(f"**New Posts:** {len(new_posts)}\n")
             f.write(f"**Updated Posts:** {len(updated_posts)}\n\n")
 
+            # Table of Contents
+            f.write("## Table of Contents\n")
+            f.write("- [Recommendations](#recommendations)\n")
+            if new_posts or updated_posts:
+                f.write("- [Keyword Trends](#keyword-trends)\n")
+            f.write("- [SEO Trend Analysis](#seo-trend-analysis)\n")
+            if updated_posts:
+                f.write("- [Content Updates](#content-updates)\n")
+            if new_posts:
+                f.write("- [Recently Scraped Posts](#recently-scraped-posts)\n")
+            f.write("\n")
+
             # Recommendations Section
+            f.write('<a name="recommendations"></a>\n')
             f.write("## 💡 Recommendations\n\n")
             recommendations = self.generate_recommendations(new_posts, updated_posts, rankings, past_rankings)
             for rec in recommendations:
@@ -84,6 +97,7 @@ class ReportGenerator:
             # Keyword Analysis
             all_recent_titles = [p[0] for p in new_posts] + [p[0] for p in updated_posts]
             if all_recent_titles:
+                f.write('<a name="keyword-trends"></a>\n')
                 f.write("## 🧠 Keyword Trends\n\n")
                 f.write("Most frequent words in recent activity:\n\n")
                 keywords = self.analyze_keywords(all_recent_titles)
@@ -98,6 +112,7 @@ class ReportGenerator:
                 f.write("\n")
 
             # SEO Rankings Trend
+            f.write('<a name="seo-trend-analysis"></a>\n')
             f.write("## 📈 SEO Trend Analysis\n\n")
             if rankings:
                 f.write("| Query | Rank | Change | Checked At |\n")
@@ -110,6 +125,7 @@ class ReportGenerator:
 
             # Content Updates Section
             if updated_posts:
+                f.write('<a name="content-updates"></a>\n')
                 f.write("## 🔄 Content Updates\n\n")
                 f.write("| Post | Field | Old | New | Time |\n")
                 f.write("|---|---|---|---|---|\n")
@@ -121,6 +137,7 @@ class ReportGenerator:
 
             # New Posts Section
             if new_posts:
+                f.write('<a name="recently-scraped-posts"></a>\n')
                 f.write("## 🆕 Recently Scraped Posts\n\n")
                 f.write("| Title | Scraped At | Link |\n")
                 f.write("|---|---|---|\n")
