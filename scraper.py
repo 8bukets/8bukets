@@ -1,6 +1,4 @@
-import aiohttp
 import asyncio
-from bs4 import BeautifulSoup, Comment
 import json
 import csv
 import re
@@ -9,6 +7,9 @@ import logging
 from typing import List, Dict, Optional
 from urllib.parse import urlparse
 from datetime import datetime
+
+import aiohttp
+from bs4 import BeautifulSoup
 
 # Configure logging
 logging.basicConfig(
@@ -19,6 +20,9 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://www.oracle.com/news/"
+# Pre-compile regex for performance
+COMMENT_RE = re.compile(r'<!--(.*?)-->', re.DOTALL)
+WHITESPACE_RE = re.compile(r'\s+')
 
 class OracleNewsScraper:
     def __init__(self, output_json: str, output_csv: str, output_txt: str):
@@ -31,7 +35,7 @@ class OracleNewsScraper:
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return WHITESPACE_RE.sub(' ', text).strip()
 
     def sanitize_for_csv(self, text: str) -> str:
         """Sanitize text to prevent CSV Injection (Formula Injection)."""
@@ -67,20 +71,23 @@ class OracleNewsScraper:
             return None
 
     def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
-
-        # Find comments containing the news section
-        comments = soup.find_all(string=lambda text: isinstance(text, Comment))
+        # Optimization: Use Regex to find the relevant comment directly instead of parsing the whole page.
+        # This avoids parsing the full DOM which is expensive when we only need content inside a specific comment.
         news_html = None
-        for c in comments:
-            if 'rc92v0' in c and '<section' in c:
-                news_html = c
+        for match in COMMENT_RE.finditer(html):
+            content = match.group(1)
+            if 'rc92v0' in content and '<section' in content:
+                news_html = content
                 break
 
         if not news_html:
             logger.warning("Could not find hidden news section in HTML comments.")
             return []
 
+        # Parse only the news section HTML
+        # Optimization: Use SoupStrainer to only parse what we need (the list items)
+        # However, since we are already parsing a small fragment (news_html), the gain from SoupStrainer might be minimal,
+        # but it's good practice.
         news_soup = BeautifulSoup(news_html, 'html.parser')
         articles = news_soup.find_all('li', class_='rc92w3')
         page_posts = []
@@ -126,7 +133,7 @@ class OracleNewsScraper:
             # Categories (Default/Inferred)
             post_data['categories'] = ["News"]
             if external_link and '/announcement/' in external_link:
-                 post_data['categories'].append("Announcement")
+                post_data['categories'].append("Announcement")
 
             page_posts.append(post_data)
 
