@@ -10,12 +10,10 @@ import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
+from utils.log_formatter import setup_colored_logging
+
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+setup_colored_logging()
 logger = logging.getLogger(__name__)
 
 DEFAULT_BASE_URL = "https://artmusicpage.wordpress.com/"
