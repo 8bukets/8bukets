@@ -1,6 +1,10 @@
 import jwt from "jsonwebtoken";
 
 export default function (req, res, next) {
+  if (!process.env.JWT_SECRET) {
+    return res.status(500).json({ error: "JWT secret is not configured" });
+  }
+
   const header = req.headers.authorization;
 
   if (!header || !header.startsWith("Bearer ")) {
