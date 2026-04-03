@@ -8,6 +8,25 @@ import db from "./db/index.js";
 
 dotenv.config();
 
+export async function healthHandler(_req, res) {
+  try {
+    await db.healthcheck();
+
+    res.json({
+      ok: true,
+      service: "software-review-platform-backend",
+      database: "ok",
+    });
+  } catch (error) {
+    res.status(503).json({
+      ok: false,
+      service: "software-review-platform-backend",
+      database: "error",
+      error: error.message,
+    });
+  }
+}
+
 export function createApp() {
   const app = express();
 
@@ -18,24 +37,7 @@ export function createApp() {
   );
   app.use(express.json());
 
-  app.get("/api/health", async (_req, res) => {
-    try {
-      await db.healthcheck();
-
-      res.json({
-        ok: true,
-        service: "software-review-platform-backend",
-        database: "ok",
-      });
-    } catch (error) {
-      res.status(503).json({
-        ok: false,
-        service: "software-review-platform-backend",
-        database: "error",
-        error: error.message,
-      });
-    }
-  });
+  app.get("/api/health", healthHandler);
 
   app.use("/api/auth", authRoutes);
   app.use("/api/reviews", reviewRoutes);
