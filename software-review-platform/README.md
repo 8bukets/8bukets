@@ -78,6 +78,9 @@ software-review-platform/
 - [TEST_PLAN.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/TEST_PLAN.md) for manual smoke testing and launch verification
 - [ROADMAP_BOARD.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/ROADMAP_BOARD.md) for a GitHub Projects-style execution board
 - [COPY_GUIDE.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/COPY_GUIDE.md) for homepage, CTA, and onboarding copy suggestions
+- [API_CONTRACT.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/API_CONTRACT.md) for the current backend route surface and expected request/response shapes
+- [DATA_MODEL.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/DATA_MODEL.md) for the core entities and relationships behind the platform
+- [OPEN_QUESTIONS.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/OPEN_QUESTIONS.md) for unresolved product and implementation decisions
 - [KNOWLEDGE_MERGE.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/KNOWLEDGE_MERGE.md) for the canonical mapping between Antigravity, Project SOR, the live domain, and the new platform
 - [REPO_CLASSIFICATION.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/REPO_CLASSIFICATION.md) for the keep/migrate/archive workspace view
 - [SECURITY_NOTES.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/SECURITY_NOTES.md) for repo hygiene and sensitive file follow-up
