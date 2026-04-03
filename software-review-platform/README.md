@@ -70,6 +70,15 @@ Verification helpers:
 - frontend check: `cd frontend && npm run check`
 - local DB reset: `cd backend && npm run db:reset`
 
+## Start Here
+
+If you want the shortest path to launch, open these first:
+
+1. [DEPLOY_HANDOFF.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/DEPLOY_HANDOFF.md)
+2. [LAUNCH_RUNBOOK.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/LAUNCH_RUNBOOK.md)
+3. [DEPLOYMENT.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/DEPLOYMENT.md)
+4. [ENV_TEMPLATE.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/ENV_TEMPLATE.md)
+
 ## Demo Seed
 
 After running the database init file, the project includes:
@@ -92,6 +101,7 @@ The SQL seed uses placeholder password hashes for these accounts. For a real loc
 - [PITCH.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/PITCH.md) for the investor narrative and 5-minute pitch script
 - [MIGRATION.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/MIGRATION.md) for the migration plan from the live site to the new app
 - [LAUNCH_CHECKLIST.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/LAUNCH_CHECKLIST.md) for the step-by-step rollout checklist for `app.software-online-review.com`
+- [DEPLOY_HANDOFF.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/DEPLOY_HANDOFF.md) for the current deploy-ready status, verified checks, and exact next platform steps
 - [LAUNCH_RUNBOOK.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/LAUNCH_RUNBOOK.md) for the exact Vercel + Railway + Supabase launch sequence
 - [DEPLOYMENT.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/DEPLOYMENT.md) for the recommended first production deployment path
 - [SEED_CONTENT_PLAN.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/SEED_CONTENT_PLAN.md) for the first software profiles, reviews, and structured launch content
