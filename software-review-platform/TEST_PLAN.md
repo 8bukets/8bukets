@@ -22,6 +22,11 @@ Use this before any deployment.
 - database connects successfully
 - no immediate startup errors appear
 
+Practical command checks:
+
+- `cd backend && npm run check`
+- `cd frontend && npm run check`
+
 ## Auth Flow
 
 ### Register User
@@ -157,6 +162,18 @@ Repeat this after deployment:
 - comments work
 - ratings work
 - no obvious broken links
+
+## Verified In This Workspace
+
+The following checks have already been confirmed in this environment:
+
+- backend bootstrap passes with `NO_LISTEN=1`
+- frontend production build passes with `next build`
+
+The following checks were not confirmed here because Docker is unavailable in this environment:
+
+- `docker compose up --build`
+- full live database-backed browser flow
 
 ## Launch Readiness Check
 

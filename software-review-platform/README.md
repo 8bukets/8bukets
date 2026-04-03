@@ -64,6 +64,11 @@ Health check:
 
 - backend health: `GET /api/health`
 
+Verification helpers:
+
+- backend check: `cd backend && npm run check`
+- frontend check: `cd frontend && npm run check`
+
 ## Demo Seed
 
 After running the database init file, the project includes:

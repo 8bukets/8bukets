@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "node --watch src/server.js",
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "check": "NO_LISTEN=1 node src/server.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",

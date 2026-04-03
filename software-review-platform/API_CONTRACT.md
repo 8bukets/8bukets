@@ -57,6 +57,18 @@ Purpose:
 
 - list available software entries
 
+Supported query params:
+
+- `q`
+- `category`
+- `sort`
+
+Supported sort values:
+
+- `rating`
+- `reviews`
+- default name order
+
 Expected result:
 
 - software list
@@ -74,6 +86,21 @@ Expected result:
 - software details
 - approved reviews for the software
 - aggregate values when available
+
+## Health
+
+### `GET /api/health`
+
+Purpose:
+
+- verify API availability
+- verify basic database connectivity
+
+Expected result:
+
+- `ok`
+- service name
+- database health signal
 
 ## Reviews
 
