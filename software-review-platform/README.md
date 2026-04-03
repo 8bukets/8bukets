@@ -65,6 +65,8 @@ software-review-platform/
 - [PRODUCT.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/PRODUCT.md) for the product brief, user flows, and roadmap
 - [PITCH.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/PITCH.md) for the investor narrative and 5-minute pitch script
 - [MIGRATION.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/MIGRATION.md) for the migration plan from the live site to the new app
+- [LAUNCH_CHECKLIST.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/LAUNCH_CHECKLIST.md) for the step-by-step rollout checklist for `app.software-online-review.com`
+- [DEPLOYMENT.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/DEPLOYMENT.md) for the recommended first production deployment path
 - [KNOWLEDGE_MERGE.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/KNOWLEDGE_MERGE.md) for the canonical mapping between Antigravity, Project SOR, the live domain, and the new platform
 - [REPO_CLASSIFICATION.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/REPO_CLASSIFICATION.md) for the keep/migrate/archive workspace view
 - [SECURITY_NOTES.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/SECURITY_NOTES.md) for repo hygiene and sensitive file follow-up
