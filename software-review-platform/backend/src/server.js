@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import authRoutes from "./routes/auth.js";
 import reviewRoutes from "./routes/reviews.js";
 import softwareRoutes from "./routes/software.js";
+import db from "./db/index.js";
 
 dotenv.config();
 
@@ -17,8 +18,23 @@ export function createApp() {
   );
   app.use(express.json());
 
-  app.get("/api/health", (_req, res) => {
-    res.json({ ok: true, service: "software-review-platform-backend" });
+  app.get("/api/health", async (_req, res) => {
+    try {
+      await db.healthcheck();
+
+      res.json({
+        ok: true,
+        service: "software-review-platform-backend",
+        database: "ok",
+      });
+    } catch (error) {
+      res.status(503).json({
+        ok: false,
+        service: "software-review-platform-backend",
+        database: "error",
+        error: error.message,
+      });
+    }
   });
 
   app.use("/api/auth", authRoutes);

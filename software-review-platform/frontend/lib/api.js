@@ -1,4 +1,4 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+import { API_URL } from "./config";
 
 export async function fetchJson(path, options = {}) {
   const response = await fetch(`${API_URL}${path}`, {

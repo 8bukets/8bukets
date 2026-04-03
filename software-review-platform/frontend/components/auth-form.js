@@ -2,9 +2,8 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { API_URL } from "../lib/config";
 import { storeSession } from "../lib/session";
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
 
 export default function AuthForm({ mode }) {
   const router = useRouter();

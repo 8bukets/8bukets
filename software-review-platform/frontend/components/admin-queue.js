@@ -1,9 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { API_URL } from "../lib/config";
 import { getStoredToken, getStoredUser } from "../lib/session";
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
 
 export default function AdminQueue() {
   const [queue, setQueue] = useState([]);

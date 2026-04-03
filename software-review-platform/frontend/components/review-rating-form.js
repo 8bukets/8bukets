@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { API_URL } from "../lib/config";
 import { getStoredToken } from "../lib/session";
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
 
 export default function ReviewRatingForm({ reviewId }) {
   const [score, setScore] = useState(5);
