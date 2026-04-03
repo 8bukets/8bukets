@@ -1,25 +1,35 @@
 # Software Review Platform
 
-Standalone MVP starter for `software-online-review.com`.
+Software Review Platform is a full-stack starter for a trust-focused software review product.
 
 ![Stack](https://img.shields.io/badge/stack-Next.js%20%7C%20Express%20%7C%20PostgreSQL-black)
 ![Auth](https://img.shields.io/badge/auth-JWT-brown)
 ![Status](https://img.shields.io/badge/status-MVP-orange)
 ![Moderation](https://img.shields.io/badge/moderation-admin%20workflow-blue)
 
-A clean full-stack starter with software listings, review submission, moderation, comments, ratings, and Docker-based local setup.
+It includes software listings, user authentication, review submission, moderation, comments, ratings, and a clean foundation for future trust, vendor, and monetization features.
 
-## What It Includes
+## Overview
 
-- Next.js App Router frontend
-- Express API backend
-- PostgreSQL schema and seed data
-- JWT login and registration
-- admin moderation queue
-- software detail pages
-- review detail pages
-- comments and review ratings
-- Docker Compose setup
+This project is designed as an MVP base for building a modern software review platform with structured discovery, transparent moderation, and extensible product architecture.
+
+## Stack
+
+- Next.js
+- Express
+- PostgreSQL
+- JWT authentication
+- Docker Compose
+
+## Current Features
+
+- software listing pages
+- user registration and login
+- review submission flow
+- admin moderation flow
+- comments on reviews
+- review ratings
+- local database bootstrap
 
 ## Project Structure
 
@@ -27,112 +37,77 @@ A clean full-stack starter with software listings, review submission, moderation
 software-review-platform/
   backend/
     src/
-      app.js
+      server.js
       controllers/
       db/
       middleware/
       routes/
       utils/
-  db/
-    init.sql
   frontend/
-    src/
-      app/
-      components/
-      lib/
-      services/
+    pages/
+    components/
+    lib/
+    services/
     styles/
   docker-compose.yml
 ```
 
-## Quick Start
+## Local Setup
 
-1. Copy env templates:
+1. Install frontend and backend dependencies.
+2. Configure environment variables.
+3. Start the stack with Docker Compose.
+4. Create a user or admin account.
+5. Test review, moderation, comment, and rating flows.
 
-```bash
-cp backend/.env.example backend/.env
-cp frontend/.env.example frontend/.env.local
-```
+## Documentation
 
-2. Start the stack:
+- [PRODUCT.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/PRODUCT.md) for the product brief, user flows, and roadmap
+- [PITCH.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/PITCH.md) for the investor narrative and 5-minute pitch script
+- [MIGRATION.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/MIGRATION.md) for the migration plan from the live site to the new app
+- [KNOWLEDGE_MERGE.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/KNOWLEDGE_MERGE.md) for the canonical mapping between Antigravity, Project SOR, the live domain, and the new platform
+- [REPO_CLASSIFICATION.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/REPO_CLASSIFICATION.md) for the keep/migrate/archive workspace view
+- [SECURITY_NOTES.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/SECURITY_NOTES.md) for repo hygiene and sensitive file follow-up
 
-```bash
-docker compose up --build
-```
+## Development Goals
 
-3. Open:
+- make software reviews more credible and structured
+- support transparent moderation workflows
+- create a strong base for trust and discovery features
+- keep the architecture simple enough for fast iteration
 
-- Frontend: `http://localhost:3000`
-- API health: `http://localhost:5000/api/health`
+## Roadmap
 
-## Local Run Without Docker
+### MVP
 
-1. Start PostgreSQL locally and create a database named `software_reviews`.
-2. Run the SQL in `db/init.sql`.
+- verify local Docker startup
+- replace hardcoded env values
+- add healthcheck endpoints
+- validate auth flow end-to-end
+- stabilize review submission and detail flow
+- complete admin moderation workflow
+- replace placeholder moderation logic
 
-3. Start the backend:
+### Phase 2
 
-```bash
-cd backend
-npm install
-npm run dev
-```
+- add software search and filtering
+- add review analytics and aggregate metrics
+- integrate transactional email notifications
+- improve SEO for software and review pages
+- add abuse protection and rate limiting
+- prepare deployment configuration for staging and production
+- add basic admin dashboard metrics view
 
-4. Start the frontend in a second terminal:
+### Phase 3
 
-```bash
-cd frontend
-npm install
-npm run dev
-```
+- add company profiles and vendor-owned software pages
+- introduce verified reviewer flow
+- add AI-assisted trust scoring for reviews
+- add vendor subscriptions and monetization groundwork
+- build featured listings and promotional placements
+- add reviewer reputation and contribution history
+- create a go-to-market content and SEO publishing pipeline
 
-## Admin Setup
+## Status
 
-Register an admin account using the optional invite code:
-
-- `local-admin-invite`
-
-Example payload:
-
-```json
-{
-  "email": "admin@example.com",
-  "password": "strong-password",
-  "invite_code": "local-admin-invite"
-}
-```
-
-After login, open `/admin` to moderate pending reviews.
-
-## Main API Routes
-
-- `POST /api/auth/register`
-- `POST /api/auth/login`
-- `GET /api/auth/me`
-- `GET /api/software`
-- `GET /api/software/:slug`
-- `GET /api/reviews`
-- `GET /api/reviews/pending`
-- `GET /api/reviews/:id`
-- `POST /api/reviews`
-- `POST /api/reviews/:id/comments`
-- `POST /api/reviews/:id/ratings`
-- `PATCH /api/reviews/:id/moderate`
-
-## Default User Flow
-
-- register a user
-- optionally register an admin with the invite code
-- log in
-- browse software
-- submit a review with a score
-- review enters pending moderation
-- admin approves or rejects it
-- approved reviews become visible on software pages
-- signed-in users can comment on and rate reviews
-
-## Notes
-
-- AI moderation is intentionally placeholder logic for the MVP.
-- Search, notifications, analytics, and email can be added on top of this base.
-- Local runtime should be validated on a machine with Docker and PostgreSQL available.
+This repository currently provides an MVP starter and should be treated as a foundation for further iteration, testing, and deployment hardening.
