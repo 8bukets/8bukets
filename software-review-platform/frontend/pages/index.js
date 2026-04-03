@@ -1,8 +1,8 @@
 import Link from "next/link";
 import SoftwareGrid from "../components/software-grid";
-import { getFilteredSoftwareList, getSoftwareList } from "../lib/api";
+import { getSoftwareCatalogSnapshot } from "../lib/api";
 
-export default function Home({ software, categories, filters }) {
+export default function Home({ software, categories, filters, isApiAvailable }) {
   return (
     <div className="container">
       <section className="hero">
@@ -36,6 +36,16 @@ export default function Home({ software, categories, filters }) {
           </div>
         </div>
       </section>
+
+      {!isApiAvailable ? (
+        <section className="status-banner card">
+          <strong>Backend connection issue</strong>
+          <p className="muted">
+            The frontend rendered successfully, but the software API is not reachable right now. Verify the backend
+            deployment and <code>/api/health</code> before launch.
+          </p>
+        </section>
+      ) : null}
 
       <section className="section-head">
         <div>
@@ -93,7 +103,7 @@ export default function Home({ software, categories, filters }) {
         </div>
       </section>
 
-      <SoftwareGrid software={software} />
+      <SoftwareGrid software={software} isApiAvailable={isApiAvailable} />
     </div>
   );
 }
@@ -105,18 +115,16 @@ export async function getServerSideProps({ query }) {
     sort: typeof query.sort === "string" ? query.sort : "",
   };
 
-  const [allSoftware, software] = await Promise.all([
-    getSoftwareList(),
-    getFilteredSoftwareList(filters),
-  ]);
+  const { allSoftware, filteredSoftware, isApiAvailable } = await getSoftwareCatalogSnapshot(filters);
 
   const categories = [...new Set(allSoftware.map((item) => item.category).filter(Boolean))].sort();
 
   return {
     props: {
-      software,
+      software: filteredSoftware,
       categories,
       filters,
+      isApiAvailable,
     },
   };
 }

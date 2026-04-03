@@ -203,6 +203,14 @@ a {
   margin-bottom: 32px;
 }
 
+.status-banner {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 32px;
+  border-color: rgba(249, 115, 22, 0.35);
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.08), rgba(20, 20, 22, 0.96));
+}
+
 .filter-form {
   display: grid;
   grid-template-columns: minmax(0, 1.6fr) minmax(200px, 1fr) minmax(180px, 1fr) auto;

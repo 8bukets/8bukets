@@ -4,12 +4,16 @@ function formatRating(value) {
   return Number(value || 0).toFixed(1);
 }
 
-export default function SoftwareGrid({ software }) {
+export default function SoftwareGrid({ software, isApiAvailable = true }) {
   if (!software.length) {
     return (
       <div className="card">
-        <h3>No software matched your filters</h3>
-        <p className="muted">Try clearing filters or using a broader search term.</p>
+        <h3>{isApiAvailable ? "No software matched your filters" : "Software catalog is temporarily unavailable"}</h3>
+        <p className="muted">
+          {isApiAvailable
+            ? "Try clearing filters or using a broader search term."
+            : "The frontend is live, but the API could not be reached. Check backend health and environment configuration."}
+        </p>
       </div>
     );
   }

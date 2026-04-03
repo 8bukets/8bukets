@@ -39,6 +39,22 @@ export async function getSoftwareList() {
   }
 }
 
+export async function getSoftwareCatalogSnapshot(filters = {}) {
+  const [allSoftware, filteredSoftware] = await Promise.allSettled([
+    fetchJson("/software"),
+    fetchJson("/software", { params: filters }),
+  ]);
+
+  const allSoftwareValue = allSoftware.status === "fulfilled" ? allSoftware.value : [];
+  const filteredSoftwareValue = filteredSoftware.status === "fulfilled" ? filteredSoftware.value : [];
+
+  return {
+    allSoftware: allSoftwareValue,
+    filteredSoftware: filteredSoftwareValue,
+    isApiAvailable: allSoftware.status === "fulfilled" && filteredSoftware.status === "fulfilled",
+  };
+}
+
 export async function getFilteredSoftwareList(filters = {}) {
   try {
     return await fetchJson("/software", { params: filters });
