@@ -85,6 +85,7 @@ These steps cannot be completed from the current sandbox alone:
 
 1. Create a Supabase Postgres project and copy the production `DATABASE_URL`.
 2. Create a Railway service pointing to `software-review-platform/backend`.
+   - optional config-as-code file is already present at `/software-review-platform/backend/railway.toml`
 3. Set Railway variables:
    - `DATABASE_URL`
    - `JWT_SECRET`
