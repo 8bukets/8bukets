@@ -69,6 +69,8 @@ software-review-platform/
 - [DEPLOYMENT.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/DEPLOYMENT.md) for the recommended first production deployment path
 - [SEED_CONTENT_PLAN.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/SEED_CONTENT_PLAN.md) for the first software profiles, reviews, and structured launch content
 - [GO_TO_MARKET.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/GO_TO_MARKET.md) for the soft-launch and traffic handoff plan from the existing live site
+- [CONTENT_AUDIT.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/CONTENT_AUDIT.md) for the keep/rewrite/archive review of existing `software-online-review.com` content patterns
+- [FIRST_10_SOFTWARE.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/FIRST_10_SOFTWARE.md) for a concrete first batch of software profiles to seed into the platform
 - [KNOWLEDGE_MERGE.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/KNOWLEDGE_MERGE.md) for the canonical mapping between Antigravity, Project SOR, the live domain, and the new platform
 - [REPO_CLASSIFICATION.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/REPO_CLASSIFICATION.md) for the keep/migrate/archive workspace view
 - [SECURITY_NOTES.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/SECURITY_NOTES.md) for repo hygiene and sensitive file follow-up
