@@ -15,7 +15,8 @@ Map the most important environment variables for local development and first pro
 ### Common
 
 - `PORT`
-- `CORS_ORIGIN`
+- `HOST`
+- `CLIENT_ORIGIN`
 - `NODE_ENV`
 
 ## Backend Notes
@@ -34,11 +35,13 @@ Do not reuse development secrets.
 
 Use a private value and avoid exposing it in public-facing documentation or UI copy.
 
-### CORS_ORIGIN
+### CLIENT_ORIGIN
 
 Set this to the real frontend domain, for example:
 
 - `https://app.software-online-review.com`
+
+The current backend code reads `CLIENT_ORIGIN`, so that should be the default environment name in local and production setup.
 
 ## Frontend Variables
 
@@ -46,8 +49,9 @@ Set this to the real frontend domain, for example:
 
 - public API base URL
 
-Suggested pattern:
+Supported patterns:
 
+- `NEXT_PUBLIC_API_URL`
 - `NEXT_PUBLIC_API_BASE_URL`
 
 ### Example Production Value
@@ -73,14 +77,15 @@ DATABASE_URL=postgres://postgres:password@localhost:5432/software_reviews
 JWT_SECRET=local-dev-secret
 ADMIN_INVITE_CODE=local-admin-invite
 PORT=5000
-CORS_ORIGIN=http://localhost:3000
+HOST=127.0.0.1
+CLIENT_ORIGIN=http://localhost:3000
 NODE_ENV=development
 ```
 
 ### Frontend
 
 ```env
-NEXT_PUBLIC_API_BASE_URL=http://localhost:5000/api
+NEXT_PUBLIC_API_URL=http://localhost:5000/api
 ```
 
 ## Production Example
@@ -92,14 +97,15 @@ DATABASE_URL=postgres://...
 JWT_SECRET=replace-with-long-random-secret
 ADMIN_INVITE_CODE=replace-with-private-invite
 PORT=5000
-CORS_ORIGIN=https://app.software-online-review.com
+HOST=0.0.0.0
+CLIENT_ORIGIN=https://app.software-online-review.com
 NODE_ENV=production
 ```
 
 ### Frontend
 
 ```env
-NEXT_PUBLIC_API_BASE_URL=https://your-backend-host.example.com/api
+NEXT_PUBLIC_API_URL=https://your-backend-host.example.com/api
 ```
 
 ## Hosting Map

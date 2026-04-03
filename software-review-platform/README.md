@@ -68,6 +68,7 @@ Verification helpers:
 
 - backend check: `cd backend && npm run check`
 - frontend check: `cd frontend && npm run check`
+- local DB reset: `cd backend && npm run db:reset`
 
 ## Demo Seed
 
