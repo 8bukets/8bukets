@@ -6,6 +6,7 @@ export const getSoftware = async (req, res) => {
   const params = [];
   const query = typeof req.query.q === "string" ? req.query.q.trim() : "";
   const category = typeof req.query.category === "string" ? req.query.category.trim() : "";
+  const sort = typeof req.query.sort === "string" ? req.query.sort.trim() : "";
 
   if (query) {
     params.push(`%${query}%`);
@@ -18,6 +19,12 @@ export const getSoftware = async (req, res) => {
   }
 
   const whereClause = filters.length ? `WHERE ${filters.join(" AND ")}` : "";
+  const orderClause =
+    sort === "rating"
+      ? "ORDER BY average_rating DESC, review_count DESC, s.name ASC"
+      : sort === "reviews"
+        ? "ORDER BY review_count DESC, average_rating DESC, s.name ASC"
+        : "ORDER BY s.name ASC";
 
   try {
     const result = await db.query(
@@ -29,7 +36,7 @@ export const getSoftware = async (req, res) => {
        LEFT JOIN ratings rt ON rt.review_id = r.id
        ${whereClause}
        GROUP BY s.id
-       ORDER BY s.name ASC`,
+       ${orderClause}`,
       params
     );
     res.json(result.rows);

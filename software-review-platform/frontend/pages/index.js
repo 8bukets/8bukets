@@ -67,6 +67,14 @@ export default function Home({ software, categories, filters }) {
               ))}
             </select>
           </div>
+          <div className="filter-field">
+            <label className="label" htmlFor="sort">Sort</label>
+            <select id="sort" name="sort" className="input" defaultValue={filters.sort}>
+              <option value="">Name</option>
+              <option value="rating">Highest rated</option>
+              <option value="reviews">Most reviewed</option>
+            </select>
+          </div>
           <div className="filter-actions">
             <button type="submit" className="btn btn-primary">Apply filters</button>
             <Link href="/" className="btn btn-outline">Reset</Link>
@@ -94,6 +102,7 @@ export async function getServerSideProps({ query }) {
   const filters = {
     q: typeof query.q === "string" ? query.q : "",
     category: typeof query.category === "string" ? query.category : "",
+    sort: typeof query.sort === "string" ? query.sort : "",
   };
 
   const [allSoftware, software] = await Promise.all([

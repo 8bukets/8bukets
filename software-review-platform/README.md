@@ -60,6 +60,10 @@ software-review-platform/
 4. Create a user or admin account.
 5. Test review, moderation, comment, and rating flows.
 
+Health check:
+
+- backend health: `GET /api/health`
+
 ## Demo Seed
 
 After running the database init file, the project includes:

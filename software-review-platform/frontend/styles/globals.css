@@ -205,7 +205,7 @@ a {
 
 .filter-form {
   display: grid;
-  grid-template-columns: minmax(0, 1.8fr) minmax(220px, 1fr) auto;
+  grid-template-columns: minmax(0, 1.6fr) minmax(200px, 1fr) minmax(180px, 1fr) auto;
   gap: 16px;
   align-items: end;
 }
