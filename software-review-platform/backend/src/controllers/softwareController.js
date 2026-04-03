@@ -2,6 +2,23 @@
 import db from "../db/index.js";
 
 export const getSoftware = async (req, res) => {
+  const filters = [];
+  const params = [];
+  const query = typeof req.query.q === "string" ? req.query.q.trim() : "";
+  const category = typeof req.query.category === "string" ? req.query.category.trim() : "";
+
+  if (query) {
+    params.push(`%${query}%`);
+    filters.push(`(s.name ILIKE $${params.length} OR COALESCE(s.description, '') ILIKE $${params.length})`);
+  }
+
+  if (category) {
+    params.push(category);
+    filters.push(`s.category = $${params.length}`);
+  }
+
+  const whereClause = filters.length ? `WHERE ${filters.join(" AND ")}` : "";
+
   try {
     const result = await db.query(
       `SELECT s.*,
@@ -10,8 +27,10 @@ export const getSoftware = async (req, res) => {
        FROM software s
        LEFT JOIN reviews r ON r.software_id = s.id AND r.status = 'approved'
        LEFT JOIN ratings rt ON rt.review_id = r.id
+       ${whereClause}
        GROUP BY s.id
-       ORDER BY s.name ASC`
+       ORDER BY s.name ASC`,
+      params
     );
     res.json(result.rows);
   } catch (error) {

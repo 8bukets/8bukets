@@ -1,8 +1,8 @@
 import Link from "next/link";
 import SoftwareGrid from "../components/software-grid";
-import { getSoftwareList } from "../lib/api";
+import { getFilteredSoftwareList, getSoftwareList } from "../lib/api";
 
-export default function Home({ software }) {
+export default function Home({ software, categories, filters }) {
   return (
     <div className="container">
       <section className="hero">
@@ -44,16 +44,70 @@ export default function Home({ software }) {
         </div>
       </section>
 
+      <section className="card filter-card">
+        <form method="get" action="/" className="filter-form">
+          <div className="filter-field">
+            <label className="label" htmlFor="q">Search</label>
+            <input
+              id="q"
+              name="q"
+              className="input"
+              defaultValue={filters.q}
+              placeholder="Search software by name or description"
+            />
+          </div>
+          <div className="filter-field">
+            <label className="label" htmlFor="category">Category</label>
+            <select id="category" name="category" className="input" defaultValue={filters.category}>
+              <option value="">All categories</option>
+              {categories.map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="filter-actions">
+            <button type="submit" className="btn btn-primary">Apply filters</button>
+            <Link href="/" className="btn btn-outline">Reset</Link>
+          </div>
+        </form>
+      </section>
+
+      <section className="section-head">
+        <div>
+          <h2>{software.length} Software Results</h2>
+          <p className="section-copy">
+            {filters.q || filters.category
+              ? "Filtered view of the seeded launch catalog."
+              : "Browse the seeded launch catalog and open individual software pages."}
+          </p>
+        </div>
+      </section>
+
       <SoftwareGrid software={software} />
     </div>
   );
 }
 
-export async function getServerSideProps() {
-  const software = await getSoftwareList();
+export async function getServerSideProps({ query }) {
+  const filters = {
+    q: typeof query.q === "string" ? query.q : "",
+    category: typeof query.category === "string" ? query.category : "",
+  };
+
+  const [allSoftware, software] = await Promise.all([
+    getSoftwareList(),
+    getFilteredSoftwareList(filters),
+  ]);
+
+  const categories = [...new Set(allSoftware.map((item) => item.category).filter(Boolean))].sort();
+
   return {
     props: {
       software,
+      categories,
+      filters,
     },
   };
 }

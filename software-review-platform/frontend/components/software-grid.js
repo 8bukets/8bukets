@@ -5,6 +5,15 @@ function formatRating(value) {
 }
 
 export default function SoftwareGrid({ software }) {
+  if (!software.length) {
+    return (
+      <div className="card">
+        <h3>No software matched your filters</h3>
+        <p className="muted">Try clearing filters or using a broader search term.</p>
+      </div>
+    );
+  }
+
   return (
     <div className="software-grid">
       {software.map((item) => (
