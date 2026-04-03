@@ -11,7 +11,7 @@ export default function SessionStatus() {
   }, []);
 
   if (!user) {
-    return <div className="session-status">Anonymous session</div>;
+    return <div className="session-status">Anonymous session. Log in to submit reviews, comments, and ratings.</div>;
   }
 
   return (

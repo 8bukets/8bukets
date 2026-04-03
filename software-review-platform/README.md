@@ -60,6 +60,22 @@ software-review-platform/
 4. Create a user or admin account.
 5. Test review, moderation, comment, and rating flows.
 
+## Demo Seed
+
+After running the database init file, the project includes:
+
+- a seeded software catalog
+- approved reviews
+- comments and ratings
+- one pending review for admin moderation testing
+
+Seeded demo accounts:
+
+- user: `demo-user@software-review-platform.local`
+- admin: `demo-admin@software-review-platform.local`
+
+The SQL seed uses placeholder password hashes for these accounts. For a real local run, create fresh accounts through the app after bootstrapping the database.
+
 ## Documentation
 
 - [PRODUCT.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/PRODUCT.md) for the product brief, user flows, and roadmap

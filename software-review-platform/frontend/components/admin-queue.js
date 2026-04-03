@@ -9,6 +9,7 @@ export default function AdminQueue() {
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
   const [authorized, setAuthorized] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   async function loadQueue() {
     const token = getStoredToken();
@@ -16,10 +17,12 @@ export default function AdminQueue() {
 
     if (!token || !user || user.role !== "admin") {
       setAuthorized(false);
+      setIsLoading(false);
       return;
     }
 
     setAuthorized(true);
+    setIsLoading(true);
 
     try {
       const response = await fetch(`${API_URL}/reviews/pending`, {
@@ -37,6 +40,8 @@ export default function AdminQueue() {
       setQueue(data);
     } catch (loadError) {
       setError(loadError.message);
+    } finally {
+      setIsLoading(false);
     }
   }
 
@@ -81,6 +86,15 @@ export default function AdminQueue() {
         <p className="muted">
           Log in as an admin to access this panel. You can register an admin account with the invite code defined in backend env.
         </p>
+      </div>
+    );
+  }
+
+  if (isLoading) {
+    return (
+      <div className="card">
+        <h2>Moderation queue</h2>
+        <p className="muted">Loading pending reviews...</p>
       </div>
     );
   }

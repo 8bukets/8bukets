@@ -17,6 +17,9 @@ export default function Home({ software }) {
             <Link href="/register" className="btn btn-primary">Create account</Link>
             <Link href="/admin" className="btn btn-outline">Open moderation panel</Link>
           </div>
+          <p className="muted" style={{ marginTop: "16px" }}>
+            Demo seed includes approved reviews, comments, ratings, and one pending moderation example.
+          </p>
         </div>
         <div className="hero-panel card">
           <div className="stat-row">
