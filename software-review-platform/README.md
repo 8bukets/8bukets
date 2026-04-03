@@ -75,6 +75,9 @@ software-review-platform/
 - [ADMIN_OPS.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/ADMIN_OPS.md) for the day-to-day moderation and platform operations workflow
 - [REVIEW_GUIDELINES.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/REVIEW_GUIDELINES.md) for review quality standards and moderation policy
 - [ENV_TEMPLATE.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/ENV_TEMPLATE.md) for production environment variable mapping across frontend, backend, and hosting
+- [TEST_PLAN.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/TEST_PLAN.md) for manual smoke testing and launch verification
+- [ROADMAP_BOARD.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/ROADMAP_BOARD.md) for a GitHub Projects-style execution board
+- [COPY_GUIDE.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/COPY_GUIDE.md) for homepage, CTA, and onboarding copy suggestions
 - [KNOWLEDGE_MERGE.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/KNOWLEDGE_MERGE.md) for the canonical mapping between Antigravity, Project SOR, the live domain, and the new platform
 - [REPO_CLASSIFICATION.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/REPO_CLASSIFICATION.md) for the keep/migrate/archive workspace view
 - [SECURITY_NOTES.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/SECURITY_NOTES.md) for repo hygiene and sensitive file follow-up
