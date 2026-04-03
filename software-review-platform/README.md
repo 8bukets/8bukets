@@ -66,6 +66,7 @@ software-review-platform/
 - [PITCH.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/PITCH.md) for the investor narrative and 5-minute pitch script
 - [MIGRATION.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/MIGRATION.md) for the migration plan from the live site to the new app
 - [LAUNCH_CHECKLIST.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/LAUNCH_CHECKLIST.md) for the step-by-step rollout checklist for `app.software-online-review.com`
+- [LAUNCH_RUNBOOK.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/LAUNCH_RUNBOOK.md) for the exact Vercel + Railway + Supabase launch sequence
 - [DEPLOYMENT.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/DEPLOYMENT.md) for the recommended first production deployment path
 - [SEED_CONTENT_PLAN.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/SEED_CONTENT_PLAN.md) for the first software profiles, reviews, and structured launch content
 - [GO_TO_MARKET.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/GO_TO_MARKET.md) for the soft-launch and traffic handoff plan from the existing live site
