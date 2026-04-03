@@ -34,6 +34,7 @@ In Railway:
    - `ADMIN_INVITE_CODE`
    - `PORT`
    - `CORS_ORIGIN`
+   - `HOST` only if your platform requires an explicit bind host
 5. Deploy the service
 6. Verify the backend health route
 

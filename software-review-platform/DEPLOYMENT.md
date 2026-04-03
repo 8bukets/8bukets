@@ -84,6 +84,7 @@ Recommended notes:
 
 - use a long random JWT secret
 - set CORS to the real frontend domain
+- if `HOST` is not set, the backend will bind on the platform default interface
 - do not hardcode secrets in source files
 
 ## Frontend

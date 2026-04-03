@@ -16,7 +16,7 @@ Map the most important environment variables for local development and first pro
 
 - `PORT`
 - `HOST`
-- `CLIENT_ORIGIN`
+- `CORS_ORIGIN`
 - `NODE_ENV`
 
 ## Backend Notes
@@ -35,13 +35,13 @@ Do not reuse development secrets.
 
 Use a private value and avoid exposing it in public-facing documentation or UI copy.
 
-### CLIENT_ORIGIN
+### CORS_ORIGIN
 
 Set this to the real frontend domain, for example:
 
 - `https://app.software-online-review.com`
 
-The current backend code reads `CLIENT_ORIGIN`, so that should be the default environment name in local and production setup.
+The backend accepts `CORS_ORIGIN` as the primary variable and also supports legacy `CLIENT_ORIGIN` for compatibility.
 
 ## Frontend Variables
 
@@ -78,7 +78,7 @@ JWT_SECRET=local-dev-secret
 ADMIN_INVITE_CODE=local-admin-invite
 PORT=5000
 HOST=127.0.0.1
-CLIENT_ORIGIN=http://localhost:3000
+CORS_ORIGIN=http://localhost:3000
 NODE_ENV=development
 ```
 
@@ -98,7 +98,7 @@ JWT_SECRET=replace-with-long-random-secret
 ADMIN_INVITE_CODE=replace-with-private-invite
 PORT=5000
 HOST=0.0.0.0
-CLIENT_ORIGIN=https://app.software-online-review.com
+CORS_ORIGIN=https://app.software-online-review.com
 NODE_ENV=production
 ```
 
