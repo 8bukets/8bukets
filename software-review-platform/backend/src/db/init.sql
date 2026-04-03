@@ -55,7 +55,14 @@ CREATE TABLE IF NOT EXISTS moderation (
 
 INSERT INTO software (name, slug, description, category, website_url)
 VALUES
-    ('Notion', 'notion', 'Collaborative workspace and productivity platform.', 'productivity', 'https://www.notion.so'),
-    ('Linear', 'linear', 'Issue tracking and product development platform.', 'project-management', 'https://linear.app'),
-    ('Figma', 'figma', 'Collaborative design and prototyping platform.', 'design', 'https://www.figma.com')
+    ('Ahrefs', 'ahrefs', 'SEO intelligence platform for backlink analysis, keyword research, and competitive content discovery.', 'seo-marketing', 'https://ahrefs.com'),
+    ('SEMrush', 'semrush', 'Search marketing suite for SEO, competitive research, content planning, and paid traffic analysis.', 'seo-marketing', 'https://www.semrush.com'),
+    ('Google Analytics 4', 'google-analytics-4', 'Web and product analytics platform for understanding traffic, engagement, and conversion behavior.', 'analytics', 'https://analytics.google.com'),
+    ('HubSpot', 'hubspot', 'CRM and growth platform for marketing, sales, service, and customer lifecycle workflows.', 'crm-marketing', 'https://www.hubspot.com'),
+    ('WordPress', 'wordpress', 'Content management system and website platform used for blogs, business sites, and publishing workflows.', 'cms-website', 'https://wordpress.org'),
+    ('Webflow', 'webflow', 'Visual website platform that combines design, CMS capabilities, and modern publishing workflows.', 'cms-website', 'https://webflow.com'),
+    ('Notion', 'notion', 'Collaborative workspace for docs, projects, internal knowledge, and lightweight team workflows.', 'productivity-knowledge', 'https://www.notion.so'),
+    ('ChatGPT', 'chatgpt', 'AI assistant used for drafting, research, idea generation, and workflow acceleration across many roles.', 'ai-productivity', 'https://chatgpt.com'),
+    ('Vercel', 'vercel', 'Frontend deployment platform optimized for modern web applications, previews, and edge delivery.', 'hosting-deployment', 'https://vercel.com'),
+    ('Shopify', 'shopify', 'Ecommerce platform for storefront creation, product management, payments, and online retail operations.', 'ecommerce', 'https://www.shopify.com')
 ON CONFLICT (slug) DO NOTHING;
