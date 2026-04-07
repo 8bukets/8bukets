@@ -3,13 +3,15 @@ import time
 import logging
 import os
 from typing import Any, Dict, List
+from filelock import FileLock
 
 logger = logging.getLogger("TelemetryManager")
 
 class TelemetryManager:
-    """Handles Market Data Structural Telemetry for Ad-related content."""
+    """Handles Market Data Structural Telemetry for Ad-related content with atomic locking."""
     def __init__(self, output_file="data/telemetry.json"):
         self.output_file = output_file
+        self.lock_file = output_file + ".lock"
         self.events: List[Dict[str, Any]] = []
         os.makedirs(os.path.dirname(output_file), exist_ok=True)
 
@@ -29,25 +31,30 @@ class TelemetryManager:
         logger.info(f"[TELEMETRY] {event['agent']} emitted {event['event_type']} for {event['market_data_ref']}")
 
     def save_telemetry(self):
-        """Persists telemetry events to disk."""
+        """Persists telemetry events to disk using atomic file locking."""
+        if not self.events:
+            return
+
+        lock = FileLock(self.lock_file)
         try:
-            # Append to existing or create new
-            existing = []
-            if os.path.exists(self.output_file):
-                with open(self.output_file, 'r', encoding='utf-8') as f:
-                    try:
-                        existing = json.load(f)
-                    except json.JSONDecodeError:
-                        existing = []
+            with lock.acquire(timeout=10):
+                # Append to existing or create new
+                existing = []
+                if os.path.exists(self.output_file):
+                    with open(self.output_file, 'r', encoding='utf-8') as f:
+                        try:
+                            existing = json.load(f)
+                        except json.JSONDecodeError:
+                            existing = []
 
-            existing.extend(self.events)
+                existing.extend(self.events)
 
-            with open(self.output_file, 'w', encoding='utf-8') as f:
-                json.dump(existing, f, indent=4)
+                with open(self.output_file, 'w', encoding='utf-8') as f:
+                    json.dump(existing, f, indent=4)
 
-            self.events = [] # Clear memory after save
+                self.events = [] # Clear memory after save
         except Exception as e:
-            logger.error(f"Failed to save telemetry: {e}")
+            logger.error(f"Failed to save telemetry with lock: {e}")
 
 # Global instance for easy integration
 telemetry_manager = TelemetryManager()
