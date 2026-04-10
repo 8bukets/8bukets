@@ -571,6 +571,7 @@
         }
     },
     {
+        "timestamp": 1775542612.4783297,
         "timestamp": 1775206539.263148,
         "agent": "AnalysisAgent",
         "event_type": "MARKET_DATA_ANALYSIS",
@@ -581,6 +582,7 @@
         }
     },
     {
+        "timestamp": 1775542612.5384583,
         "timestamp": 1775206539.3215828,
         "agent": "ResearchAgent",
         "event_type": "EXTERNAL_INVESTIGATION",
@@ -592,6 +594,7 @@
         }
     },
     {
+        "timestamp": 1775542612.5792892,
         "timestamp": 1775206539.3620973,
         "agent": "ResearchAgent",
         "event_type": "EXTERNAL_INVESTIGATION",
@@ -603,6 +606,7 @@
         }
     },
     {
+        "timestamp": 1775542612.599738,
         "timestamp": 1775206539.3825676,
         "agent": "ResearchAgent",
         "event_type": "EXTERNAL_INVESTIGATION",
@@ -614,6 +618,7 @@
         }
     },
     {
+        "timestamp": 1775542612.7016137,
         "timestamp": 1775206539.4841669,
         "agent": "ResearchAgent",
         "event_type": "EXTERNAL_INVESTIGATION",
@@ -625,6 +630,7 @@
         }
     },
     {
+        "timestamp": 1775542612.7178698,
         "timestamp": 1775206539.5018108,
         "agent": "AdsAgent",
         "event_type": "AD_STRATEGY_GENERATION",

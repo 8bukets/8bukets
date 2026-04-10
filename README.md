@@ -70,3 +70,20 @@ python3 analytics.py
 *   `links.csv`: Tabular dataset.
 *   `unique_links.txt`: Sorted list of unique extracted URLs.
 *   `REPORT.md`: Statistical summary of the data.
+
+## Autonomous Workflows & GitKraken
+
+The system is designed for fully autonomous operation with integrated version control.
+
+### GitHub Integration
+- **`GitHubEvolutionAgent`**: Automatically stages and commits system evolution (data, results, and config) during each cycle.
+- **GitHub Actions**: A daily workflow is configured in `.github/workflows/autonomous_cycle.yml` to run the system autonomously.
+
+### Monitoring with GitKraken
+To monitor the system's progress using GitKraken:
+1.  **Clone the Repository**: Open the repository in GitKraken.
+2.  **Pull Updates**: The `GitHubEvolutionAgent` creates commits locally. If a `GITHUB_TOKEN` is provided, it will also push to origin.
+3.  **Visualize Evolution**: Use GitKraken's graph view to track daily version increments and data updates.
+4.  **Local Sync**: If the system is running on a server, use GitKraken to pull the latest autonomous commits to your local machine for analysis.
+
+For detailed setup instructions, see `autonomous_workflow.md`.
