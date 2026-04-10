@@ -572,7 +572,6 @@
     },
     {
         "timestamp": 1775542612.4783297,
-        "timestamp": 1775206539.263148,
         "agent": "AnalysisAgent",
         "event_type": "MARKET_DATA_ANALYSIS",
         "market_data_ref": "AD_ADS_ADVERTISE",
@@ -583,7 +582,6 @@
     },
     {
         "timestamp": 1775542612.5384583,
-        "timestamp": 1775206539.3215828,
         "agent": "ResearchAgent",
         "event_type": "EXTERNAL_INVESTIGATION",
         "market_data_ref": "GOOGLE_WORLD",
@@ -595,7 +593,6 @@
     },
     {
         "timestamp": 1775542612.5792892,
-        "timestamp": 1775206539.3620973,
         "agent": "ResearchAgent",
         "event_type": "EXTERNAL_INVESTIGATION",
         "market_data_ref": "GOOGLE_WORLD",
@@ -607,7 +604,6 @@
     },
     {
         "timestamp": 1775542612.599738,
-        "timestamp": 1775206539.3825676,
         "agent": "ResearchAgent",
         "event_type": "EXTERNAL_INVESTIGATION",
         "market_data_ref": "GOOGLE_WORLD",
@@ -619,7 +615,6 @@
     },
     {
         "timestamp": 1775542612.7016137,
-        "timestamp": 1775206539.4841669,
         "agent": "ResearchAgent",
         "event_type": "EXTERNAL_INVESTIGATION",
         "market_data_ref": "GOOGLE_WORLD",
@@ -631,7 +626,6 @@
     },
     {
         "timestamp": 1775542612.7178698,
-        "timestamp": 1775206539.5018108,
         "agent": "AdsAgent",
         "event_type": "AD_STRATEGY_GENERATION",
         "market_data_ref": "AD_ADS_ADVERTISE",
@@ -641,27 +635,7 @@
         }
     },
     {
-        "timestamp": 1775542202.988131,
-        "agent": "AnalysisAgent",
-        "event_type": "MARKET_DATA_ANALYSIS",
-        "market_data_ref": "AD_ADS_ADVERTISE",
-        "payload": {
-            "ad_category_density": 1.0,
-            "total_ad_posts": 1
-        }
-    },
-    {
-        "timestamp": 1775542203.0186274,
-        "agent": "AdsAgent",
-        "event_type": "AD_STRATEGY_GENERATION",
-        "market_data_ref": "AD_ADS_ADVERTISE",
-        "payload": {
-            "ad_count": 3,
-            "target_persona": "General Tech Enthusiast"
-        }
-    },
-    {
-        "timestamp": 1775542227.490651,
+        "timestamp": 1775858596.6489084,
         "agent": "AnalysisAgent",
         "event_type": "MARKET_DATA_ANALYSIS",
         "market_data_ref": "AD_ADS_ADVERTISE",
@@ -671,7 +645,7 @@
         }
     },
     {
-        "timestamp": 1775542227.5470612,
+        "timestamp": 1775858596.7134182,
         "agent": "ResearchAgent",
         "event_type": "EXTERNAL_INVESTIGATION",
         "market_data_ref": "GOOGLE_WORLD",
@@ -682,7 +656,7 @@
         }
     },
     {
-        "timestamp": 1775542227.5879672,
+        "timestamp": 1775858596.7544947,
         "agent": "ResearchAgent",
         "event_type": "EXTERNAL_INVESTIGATION",
         "market_data_ref": "GOOGLE_WORLD",
@@ -693,7 +667,7 @@
         }
     },
     {
-        "timestamp": 1775542227.6085212,
+        "timestamp": 1775858596.7750392,
         "agent": "ResearchAgent",
         "event_type": "EXTERNAL_INVESTIGATION",
         "market_data_ref": "GOOGLE_WORLD",
@@ -704,7 +678,7 @@
         }
     },
     {
-        "timestamp": 1775542227.7105653,
+        "timestamp": 1775858596.8773034,
         "agent": "ResearchAgent",
         "event_type": "EXTERNAL_INVESTIGATION",
         "market_data_ref": "GOOGLE_WORLD",
@@ -715,7 +689,7 @@
         }
     },
     {
-        "timestamp": 1775542227.72918,
+        "timestamp": 1775858596.8937693,
         "agent": "AdsAgent",
         "event_type": "AD_STRATEGY_GENERATION",
         "market_data_ref": "AD_ADS_ADVERTISE",
@@ -725,7 +699,7 @@
         }
     },
     {
-        "timestamp": 1775543321.1593754,
+        "timestamp": 1775858781.8539054,
         "agent": "AnalysisAgent",
         "event_type": "MARKET_DATA_ANALYSIS",
         "market_data_ref": "AD_ADS_ADVERTISE",
@@ -735,7 +709,7 @@
         }
     },
     {
-        "timestamp": 1775543321.2185514,
+        "timestamp": 1775858781.912621,
         "agent": "ResearchAgent",
         "event_type": "EXTERNAL_INVESTIGATION",
         "market_data_ref": "GOOGLE_WORLD",
@@ -746,7 +720,7 @@
         }
     },
     {
-        "timestamp": 1775543321.2593803,
+        "timestamp": 1775858781.9535062,
         "agent": "ResearchAgent",
         "event_type": "EXTERNAL_INVESTIGATION",
         "market_data_ref": "GOOGLE_WORLD",
@@ -757,7 +731,7 @@
         }
     },
     {
-        "timestamp": 1775543321.279864,
+        "timestamp": 1775858781.974071,
         "agent": "ResearchAgent",
         "event_type": "EXTERNAL_INVESTIGATION",
         "market_data_ref": "GOOGLE_WORLD",
@@ -768,7 +742,7 @@
         }
     },
     {
-        "timestamp": 1775543321.3820162,
+        "timestamp": 1775858782.076292,
         "agent": "ResearchAgent",
         "event_type": "EXTERNAL_INVESTIGATION",
         "market_data_ref": "GOOGLE_WORLD",
@@ -779,7 +753,7 @@
         }
     },
     {
-        "timestamp": 1775543321.403117,
+        "timestamp": 1775858782.092846,
         "agent": "AdsAgent",
         "event_type": "AD_STRATEGY_GENERATION",
         "market_data_ref": "AD_ADS_ADVERTISE",
