@@ -3,12 +3,12 @@ import asyncio
 from bs4 import BeautifulSoup
 import json
 import csv
-import re
 import argparse
 import logging
 import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
+from utils import validate_output_path
 
 # Configure logging
 logging.basicConfig(
@@ -22,9 +22,9 @@ BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
-        self.output_json = output_json
-        self.output_csv = output_csv
-        self.output_txt = output_txt
+        self.output_json = validate_output_path(output_json)
+        self.output_csv = validate_output_path(output_csv)
+        self.output_txt = validate_output_path(output_txt)
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
@@ -33,12 +33,15 @@ class MarkPositionScraperAsync:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
-        text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        # Optimization: split().join() is faster than re.sub for normalizing whitespace
+        # split() handles all unicode whitespace including \xa0 (non-breaking space)
+        return " ".join(text.split())
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
-        return re.match(r'^https?://', text.strip()) is not None
+        # Optimization: startswith is faster than regex for simple prefix check
+        s = text.strip()
+        return s.startswith(('http://', 'https://'))
 
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""

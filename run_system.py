@@ -174,7 +174,8 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
 async def main_async():
     parser = argparse.ArgumentParser(description="Massive Scale Autonomous System")
     parser.add_argument("--loop", action="store_true", help="Run continuously every 24h")
-    parser.add_argument("--token", type=str, help="Authentication token", default=os.environ.get("SYSTEM_AUTH_TOKEN"))
+    # Use default_dev_token if nothing is provided
+    parser.add_argument("--token", type=str, help="Authentication token", default=os.environ.get("SYSTEM_AUTH_TOKEN", "default_dev_token"))
     parser.add_argument("--skip-scraper", action="store_true", help="Skip the scraping phase and use existing data")
     args = parser.parse_args()
 
