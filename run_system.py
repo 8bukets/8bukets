@@ -28,6 +28,9 @@ from agents.sigma_agent import SixSigmaAgent
 from agents.architect_agent import ArchitectAgent
 from agents.github_evolution_agent import GitHubEvolutionAgent
 from agents.meta_coding_agent import MetaCodingAgent
+from agents.jules_evolution_agent import JulesEvolutionAgent
+from agents.gitkraken_evolution_agent import GitKrakenEvolutionAgent
+from agents.docker_evolution_agent import DockerEvolutionAgent
 
 # Expansion Agents
 from agents.swarm_agent import SwarmAgent
@@ -127,14 +130,15 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         logger.warning("No data loaded. Skipping agent execution.")
         return
 
-    # 1. Base Intelligence (17 Agents)
+    # 1. Base Intelligence (20 Agents)
     agents = [
         HealthCheckAgent(), RobotTxtAgent(), AnalysisAgent(),
         ResearchAgent(), IntelligenceAgent(), TargetingAgent(),
         CreativityAgent(), AdsAgent(), BidAgent(),
         MonetizationAgent(), ContentAgent(), AutonomousIntelligenceAgent(),
         TelemetryAgent(), SixSigmaAgent(), ArchitectAgent(),
-        MetaCodingAgent(), GitHubEvolutionAgent()
+        MetaCodingAgent(), JulesEvolutionAgent(), GitKrakenEvolutionAgent(),
+        DockerEvolutionAgent(), GitHubEvolutionAgent()
     ]
 
     # 2. Expanded SEO Swarm (100 Agents)
