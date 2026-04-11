@@ -889,5 +889,69 @@
             "ad_count": 3,
             "target_persona": "AdTech Professional"
         }
+    },
+    {
+        "timestamp": 1775932390.1185102,
+        "agent": "AnalysisAgent",
+        "event_type": "MARKET_DATA_ANALYSIS",
+        "market_data_ref": "AD_ADS_ADVERTISE",
+        "payload": {
+            "ad_category_density": 0.9485714285714286,
+            "total_ad_posts": 332
+        }
+    },
+    {
+        "timestamp": 1775932390.1845899,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "support.google.com",
+            "insight": "Identified core node in the Google ecosystem.",
+            "status": "FETCHED"
+        }
+    },
+    {
+        "timestamp": 1775932390.2254565,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "developers.google.com",
+            "insight": "Identified core node in the Google ecosystem.",
+            "status": "FETCHED"
+        }
+    },
+    {
+        "timestamp": 1775932390.2459948,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "google.com",
+            "insight": "Identified core node in the Google ecosystem.",
+            "status": "FETCHED"
+        }
+    },
+    {
+        "timestamp": 1775932390.3481712,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "marketingplatform.google.com",
+            "insight": "Identified core node in the Google ecosystem.",
+            "status": "FETCHED"
+        }
+    },
+    {
+        "timestamp": 1775932390.3671987,
+        "agent": "AdsAgent",
+        "event_type": "AD_STRATEGY_GENERATION",
+        "market_data_ref": "AD_ADS_ADVERTISE",
+        "payload": {
+            "ad_count": 3,
+            "target_persona": "AdTech Professional"
+        }
     }
 ]
