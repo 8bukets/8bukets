@@ -953,5 +953,153 @@
             "ad_count": 3,
             "target_persona": "AdTech Professional"
         }
+    },
+    {
+        "timestamp": 1775951418.6533043,
+        "agent": "AnalysisAgent",
+        "event_type": "MARKET_DATA_ANALYSIS",
+        "market_data_ref": "AD_ADS_ADVERTISE",
+        "payload": {
+            "ad_category_density": 0.9485714285714286,
+            "total_ad_posts": 332
+        }
+    },
+    {
+        "timestamp": 1775951418.719934,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "support.google.com",
+            "insight": "Identified core node in the Google ecosystem.",
+            "status": "FETCHED"
+        }
+    },
+    {
+        "timestamp": 1775951418.7609034,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "developers.google.com",
+            "insight": "Identified core node in the Google ecosystem.",
+            "status": "FETCHED"
+        }
+    },
+    {
+        "timestamp": 1775951418.7814043,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "google.com",
+            "insight": "Identified core node in the Google ecosystem.",
+            "status": "FETCHED"
+        }
+    },
+    {
+        "timestamp": 1775951418.883703,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "marketingplatform.google.com",
+            "insight": "Identified core node in the Google ecosystem.",
+            "status": "FETCHED"
+        }
+    },
+    {
+        "timestamp": 1775951418.9006598,
+        "agent": "AdsAgent",
+        "event_type": "AD_STRATEGY_GENERATION",
+        "market_data_ref": "AD_ADS_ADVERTISE",
+        "payload": {
+            "ad_count": 3,
+            "target_persona": "AdTech Professional"
+        }
+    },
+    {
+        "timestamp": 1775951622.2284417,
+        "agent": "AnalysisAgent",
+        "event_type": "MARKET_DATA_ANALYSIS",
+        "market_data_ref": "AD_ADS_ADVERTISE",
+        "payload": {
+            "ad_category_density": 1.0,
+            "total_ad_posts": 1
+        }
+    },
+    {
+        "timestamp": 1775951622.2543795,
+        "agent": "AdsAgent",
+        "event_type": "AD_STRATEGY_GENERATION",
+        "market_data_ref": "AD_ADS_ADVERTISE",
+        "payload": {
+            "ad_count": 3,
+            "target_persona": "General Tech Enthusiast"
+        }
+    },
+    {
+        "timestamp": 1775952354.8572176,
+        "agent": "AnalysisAgent",
+        "event_type": "MARKET_DATA_ANALYSIS",
+        "market_data_ref": "AD_ADS_ADVERTISE",
+        "payload": {
+            "ad_category_density": 0.9485714285714286,
+            "total_ad_posts": 332
+        }
+    },
+    {
+        "timestamp": 1775952354.917455,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "support.google.com",
+            "insight": "Identified core node in the Google ecosystem.",
+            "status": "FETCHED"
+        }
+    },
+    {
+        "timestamp": 1775952354.9583466,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "developers.google.com",
+            "insight": "Identified core node in the Google ecosystem.",
+            "status": "FETCHED"
+        }
+    },
+    {
+        "timestamp": 1775952354.9788098,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "google.com",
+            "insight": "Identified core node in the Google ecosystem.",
+            "status": "FETCHED"
+        }
+    },
+    {
+        "timestamp": 1775952355.0808356,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "marketingplatform.google.com",
+            "insight": "Identified core node in the Google ecosystem.",
+            "status": "FETCHED"
+        }
+    },
+    {
+        "timestamp": 1775952355.0985239,
+        "agent": "AdsAgent",
+        "event_type": "AD_STRATEGY_GENERATION",
+        "market_data_ref": "AD_ADS_ADVERTISE",
+        "payload": {
+            "ad_count": 3,
+            "target_persona": "AdTech Professional"
+        }
     }
 ]

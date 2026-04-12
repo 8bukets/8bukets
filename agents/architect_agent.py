@@ -41,19 +41,23 @@ class ArchitectAgent(BaseAgent):
                 evolution["parameter_shifts"][key] = value
 
         if evolution["status"] == "EVOLVED":
-            self._apply_evolution(current_config, evolution)
+            new_version = self._apply_evolution(current_config, evolution)
+            evolution["parameter_shifts"]["current_version"] = new_version
 
         return {"system_evolution": evolution}
 
-    def _apply_evolution(self, current, evolution):
+    def _apply_evolution(self, current, evolution) -> float:
         new_config = current.copy()
         new_config.update(evolution["parameter_shifts"])
-        new_config["current_version"] = round(new_config.get("current_version", 1.0) + evolution["version_upgrade"], 2)
+        new_version = round(new_config.get("current_version", 1.0) + evolution["version_upgrade"], 2)
+        new_config["current_version"] = new_version
         new_config["last_evolution"] = datetime.now().strftime("%Y-%m-%d")
 
         try:
             with open(CONFIG_FILE, 'w') as f:
                 json.dump(new_config, f, indent=4)
-            self.logger.info(f"System evolved to version {new_config['current_version']}")
+            self.logger.info(f"System evolved to version {new_version}")
+            return new_version
         except Exception as e:
             self.logger.error(f"Failed to persist evolution: {e}")
+            return current.get("current_version", 1.0)

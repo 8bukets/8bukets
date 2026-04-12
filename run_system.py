@@ -54,13 +54,13 @@ def run_scraper():
             text=True
         )
         if result.returncode != 0:
-            logger.error(f"Scraper failed: {result.stderr}")
-            return False
+            logger.error(f"Scraper failed with exit code {result.returncode}: {result.stderr}")
+            raise RuntimeError(f"Scraper failed: {result.stderr}")
         logger.info("Scraper finished successfully.")
         return True
     except Exception as e:
         logger.error(f"Failed to execute scraper: {e}")
-        return False
+        raise
 
 def load_data(filepath="links.json"):
     if not os.path.exists(filepath):
