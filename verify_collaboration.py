@@ -1,5 +1,6 @@
 import asyncio
 import logging
+import pytest
 from agents.base_agent import Blackboard
 from agents.jules_evolution_agent import JulesEvolutionAgent
 from agents.gitkraken_evolution_agent import GitKrakenEvolutionAgent
@@ -10,6 +11,7 @@ from agents.github_evolution_agent import GitHubEvolutionAgent
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger("CollaborationVerifier")
 
+@pytest.mark.asyncio
 async def test_agent_connections():
     logger.info("Starting Connection Test for Collaborative Evolution Unit...")
 
