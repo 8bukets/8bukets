@@ -31,6 +31,7 @@ from agents.meta_coding_agent import MetaCodingAgent
 from agents.jules_evolution_agent import JulesEvolutionAgent
 from agents.gitkraken_evolution_agent import GitKrakenEvolutionAgent
 from agents.docker_evolution_agent import DockerEvolutionAgent
+from agents.collaboration_agent import CollaborationAgent
 
 # Expansion Agents
 from agents.swarm_agent import SwarmAgent
@@ -111,6 +112,12 @@ def generate_daily_report(context, filename):
             for review in context.get("peer_review_log", []):
                 f.write(f"- {review}\n")
 
+            f.write("\n## 6. Antigravity Collaboration\n")
+            antigravity = context.get("antigravity_context", {})
+            f.write(f"- **Platform:** {antigravity.get('platform', 'N/A')}\n")
+            f.write(f"- **Sync Status:** {antigravity.get('status', 'PENDING')}\n")
+            f.write(f"- **Stakeholders Notified:** {', '.join(antigravity.get('stakeholders', []))}\n")
+
         logger.info(f"Report generated at {filename}")
     except IOError as e:
         logger.error(f"Failed to write report: {e}")
@@ -130,7 +137,7 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         logger.warning("No data loaded. Skipping agent execution.")
         return
 
-    # 1. Base Intelligence (20 Agents)
+    # 1. Base Intelligence (21 Agents)
     agents = [
         HealthCheckAgent(), RobotTxtAgent(), AnalysisAgent(),
         ResearchAgent(), IntelligenceAgent(), TargetingAgent(),
@@ -138,7 +145,7 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         MonetizationAgent(), ContentAgent(), AutonomousIntelligenceAgent(),
         TelemetryAgent(), SixSigmaAgent(), ArchitectAgent(),
         MetaCodingAgent(), JulesEvolutionAgent(), GitKrakenEvolutionAgent(),
-        DockerEvolutionAgent(), GitHubEvolutionAgent()
+        DockerEvolutionAgent(), GitHubEvolutionAgent(), CollaborationAgent()
     ]
 
     # 2. Expanded SEO Swarm (100 Agents)
