@@ -32,6 +32,7 @@ from agents.jules_evolution_agent import JulesEvolutionAgent
 from agents.gitkraken_evolution_agent import GitKrakenEvolutionAgent
 from agents.docker_evolution_agent import DockerEvolutionAgent
 from agents.collaboration_agent import CollaborationAgent
+from agents.mongodb_agent import MongoDBAgent
 
 # Expansion Agents
 from agents.swarm_agent import SwarmAgent
@@ -145,7 +146,8 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         MonetizationAgent(), ContentAgent(), AutonomousIntelligenceAgent(),
         TelemetryAgent(), SixSigmaAgent(), ArchitectAgent(),
         MetaCodingAgent(), JulesEvolutionAgent(), GitKrakenEvolutionAgent(),
-        DockerEvolutionAgent(), GitHubEvolutionAgent(), CollaborationAgent()
+        DockerEvolutionAgent(), GitHubEvolutionAgent(), CollaborationAgent(),
+        MongoDBAgent()
     ]
 
     # 2. Expanded SEO Swarm (100 Agents)

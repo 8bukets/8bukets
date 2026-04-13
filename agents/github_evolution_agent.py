@@ -24,6 +24,12 @@ class GitHubEvolutionAgent(BaseAgent):
             # 1. Stage changes (Sanitized config, memory, and results)
             subprocess.run(["git", "add", "config/evolution_params.json", "config/owner_info.json", "data/", "results/", "links.json", "links.csv", "unique_links.txt"], check=True)
 
+            # Check for changes before committing
+            status = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True).stdout.strip()
+            if not status:
+                self.logger.info("No changes to commit. Skipping Git commit/push.")
+                return {"vcs_status": "CLEAN"}
+
             # 2. Commit changes with collaborative insights
             version = evolution.get("parameter_shifts", {}).get("current_version", "1.0")
             commit_msg = (
