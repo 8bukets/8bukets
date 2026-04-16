@@ -33,6 +33,9 @@ from agents.gitkraken_evolution_agent import GitKrakenEvolutionAgent
 from agents.docker_evolution_agent import DockerEvolutionAgent
 from agents.collaboration_agent import CollaborationAgent
 from agents.mongodb_agent import MongoDBAgent
+from agents.system_audit_agent import SystemAuditAgent
+from agents.documentation_agent import DocumentationAgent
+from agents.performance_optimization_agent import PerformanceOptimizationAgent
 
 # Expansion Agents
 from agents.swarm_agent import SwarmAgent
@@ -147,13 +150,14 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         TelemetryAgent(), SixSigmaAgent(), ArchitectAgent(),
         MetaCodingAgent(), JulesEvolutionAgent(), GitKrakenEvolutionAgent(),
         DockerEvolutionAgent(), GitHubEvolutionAgent(), CollaborationAgent(),
-        MongoDBAgent()
+        MongoDBAgent(), PerformanceOptimizationAgent(), SystemAuditAgent(),
+        DocumentationAgent()
     ]
 
-    # 2. Expanded SEO Swarm (100 Agents)
+    # 2. Expanded SEO Swarm (200 Agents)
     swarm_tasks = ["SEO Audit", "Market Probe", "Domain Research", "Keyword Sync"]
     phases = ["DEFINE", "MEASURE", "ANALYZE", "IMPROVE", "CONTROL", "RESEARCH_WORLD", "AD_TECH_PROBE"]
-    for i in range(100):
+    for i in range(200):
         phase = phases[i % len(phases)]
         agents.append(SwarmAgent(agent_id=i, phase=phase, tasks=swarm_tasks))
 
