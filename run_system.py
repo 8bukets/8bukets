@@ -28,6 +28,14 @@ from agents.sigma_agent import SixSigmaAgent
 from agents.architect_agent import ArchitectAgent
 from agents.github_evolution_agent import GitHubEvolutionAgent
 from agents.meta_coding_agent import MetaCodingAgent
+from agents.jules_evolution_agent import JulesEvolutionAgent
+from agents.gitkraken_evolution_agent import GitKrakenEvolutionAgent
+from agents.docker_evolution_agent import DockerEvolutionAgent
+from agents.collaboration_agent import CollaborationAgent
+from agents.mongodb_agent import MongoDBAgent
+from agents.system_audit_agent import SystemAuditAgent
+from agents.documentation_agent import DocumentationAgent
+from agents.performance_optimization_agent import PerformanceOptimizationAgent
 
 # Expansion Agents
 from agents.swarm_agent import SwarmAgent
@@ -51,13 +59,13 @@ def run_scraper():
             text=True
         )
         if result.returncode != 0:
-            logger.error(f"Scraper failed: {result.stderr}")
-            return False
+            logger.error(f"Scraper failed with exit code {result.returncode}: {result.stderr}")
+            raise RuntimeError(f"Scraper failed: {result.stderr}")
         logger.info("Scraper finished successfully.")
         return True
     except Exception as e:
         logger.error(f"Failed to execute scraper: {e}")
-        return False
+        raise
 
 def load_data(filepath="links.json"):
     if not os.path.exists(filepath):
@@ -108,6 +116,12 @@ def generate_daily_report(context, filename):
             for review in context.get("peer_review_log", []):
                 f.write(f"- {review}\n")
 
+            f.write("\n## 6. Antigravity Collaboration\n")
+            antigravity = context.get("antigravity_context", {})
+            f.write(f"- **Platform:** {antigravity.get('platform', 'N/A')}\n")
+            f.write(f"- **Sync Status:** {antigravity.get('status', 'PENDING')}\n")
+            f.write(f"- **Stakeholders Notified:** {', '.join(antigravity.get('stakeholders', []))}\n")
+
         logger.info(f"Report generated at {filename}")
     except IOError as e:
         logger.error(f"Failed to write report: {e}")
@@ -127,20 +141,23 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         logger.warning("No data loaded. Skipping agent execution.")
         return
 
-    # 1. Base Intelligence (17 Agents)
+    # 1. Base Intelligence (21 Agents)
     agents = [
         HealthCheckAgent(), RobotTxtAgent(), AnalysisAgent(),
         ResearchAgent(), IntelligenceAgent(), TargetingAgent(),
         CreativityAgent(), AdsAgent(), BidAgent(),
         MonetizationAgent(), ContentAgent(), AutonomousIntelligenceAgent(),
         TelemetryAgent(), SixSigmaAgent(), ArchitectAgent(),
-        MetaCodingAgent(), GitHubEvolutionAgent()
+        MetaCodingAgent(), JulesEvolutionAgent(), GitKrakenEvolutionAgent(),
+        DockerEvolutionAgent(), GitHubEvolutionAgent(), CollaborationAgent(),
+        MongoDBAgent(), PerformanceOptimizationAgent(), SystemAuditAgent(),
+        DocumentationAgent()
     ]
 
-    # 2. Expanded SEO Swarm (100 Agents)
+    # 2. Expanded SEO Swarm (200 Agents)
     swarm_tasks = ["SEO Audit", "Market Probe", "Domain Research", "Keyword Sync"]
     phases = ["DEFINE", "MEASURE", "ANALYZE", "IMPROVE", "CONTROL", "RESEARCH_WORLD", "AD_TECH_PROBE"]
-    for i in range(100):
+    for i in range(200):
         phase = phases[i % len(phases)]
         agents.append(SwarmAgent(agent_id=i, phase=phase, tasks=swarm_tasks))
 
