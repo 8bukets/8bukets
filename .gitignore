@@ -1,3 +1,14 @@
 __pycache__/
+node_modules/
+dist/
+build/
+target/
 *.pyc
-.env
+results/
+data/
+links.json
+links.csv
+unique_links.txt
+REPORT.md
+.jules/
+antigravity-ide/environment/.agent/
