@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { autonomousFetch, healthCheck } from '@/antigravity/core'
+import { autonomousFetch, healthCheck, predictiveFetch } from '@/antigravity/core'
 
 // Define the schema for our autonomous app stats
 const AppStatsSchema = z.object({

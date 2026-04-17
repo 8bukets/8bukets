@@ -33,3 +33,10 @@ We use **Vitest** for unit and integration tests.
 ## Synchronization Protocols (Update)
 - **GitHub:** Autonomous PR validation is triggered by the Explorer.
 - **GitKraken:** Visual branch validation should reflect the "Clean Architecture" maintained by the Core.
+
+## The Jules Protocol (Autonomous Improvement)
+To "work better," the agent (Jules) follows these self-improving directives:
+1.  **Memory Integration:** Every autonomous action is recorded in `.jules_memory.json` to avoid repeating errors and to double-down on successful patterns.
+2.  **Architectural Stewardship:** Jules proactively guards the Next.js 16 core patterns, preventing "drift" toward legacy React patterns.
+3.  **Predictive Refinement:** Jules analyzes the Explorer's output to automatically suggest Phase 6 cognitive upgrades.
+4.  **Self-Correction:** If a Circuit Breaker trips (Phase 5), Jules automatically logs the failure and adjusts the Predictive Scaling (Phase 4) profile to be more conservative.

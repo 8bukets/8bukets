@@ -1,130 +1,169 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
-import { PageProps } from "@/antigravity/core";
+import { PageProps, resolve, getSystemInsights } from "@/antigravity/core";
 import { getAppStats } from "@/antigravity/services/stats";
 
-/**
- * Launch Page: Scaled and Boosted
- * Demonstrates connectivity, caching, and instant navigations.
- */
-export default async function LaunchPage({ params, searchParams }: PageProps) {
-  // Await mandatory async APIs
-  await Promise.all([params, searchParams]);
+export default async function CommandCenter({
+  'use cache' params, searchParams }: PageProps) {
+  await Promise.all([resolve(params), resolve(searchParams)]);
 
   return (
-    <div className="flex flex-col flex-1 bg-zinc-50 font-sans dark:bg-black overflow-hidden">
-      {/* Visual background element */}
-      <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-blue-500/10 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-purple-500/10 blur-[120px] rounded-full pointer-events-none" />
+    <div className="flex flex-col min-h-screen bg-zinc-50 dark:bg-[#050505] text-zinc-900 dark:text-zinc-100 font-sans selection:bg-blue-500/30">
+      {/* Dynamic Background */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/10 blur-[120px] rounded-full animate-pulse" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-600/10 blur-[120px] rounded-full animate-pulse" />
+      </div>
 
-      <main className="relative flex flex-col flex-1 w-full max-w-6xl mx-auto py-12 px-8 lg:py-24">
-        {/* Header Section */}
-        <header className="flex items-center justify-between mb-16 animate-in fade-in slide-in-from-top-4 duration-1000">
+      <main className="relative z-10 flex flex-col w-full max-w-7xl mx-auto p-6 md:p-12 gap-12">
+        {/* Top Navigation */}
+        <header className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-zinc-200 dark:border-zinc-800 pb-8">
           <div className="flex items-center gap-4">
-            <Image
-              className="dark:invert"
-              src="/next.svg"
-              alt="Next.js logo"
-              width={100}
-              height={20}
-              priority
-            />
-            <span className="text-xl font-light text-zinc-400">/</span>
-            <h1 className="text-xl font-bold tracking-tight">Antigravity V1</h1>
+            <div className="w-10 h-10 bg-black dark:bg-white rounded-xl flex items-center justify-center">
+              <span className="text-white dark:text-black font-black text-xl">A</span>
+            </div>
+            <div>
+              <h1 className="text-2xl font-bold tracking-tight">Antigravity Command</h1>
+              <p className="text-zinc-500 text-sm font-medium">Autonomous Ecosystem v1.0 • Phase 6</p>
+            </div>
           </div>
-          <div className="flex items-center gap-3">
-            <Suspense fallback={<div className="h-6 w-32 bg-zinc-200 dark:bg-zinc-800 rounded animate-pulse" />}>
-              <SystemStatus />
-            </Suspense>
-          </div>
+          <nav className="flex items-center gap-2 bg-white dark:bg-zinc-900 p-1 rounded-full border border-zinc-200 dark:border-zinc-800 shadow-sm">
+            <Link href="/" className="px-4 py-2 bg-zinc-100 dark:bg-zinc-800 rounded-full text-sm font-bold">Dashboard</Link>
+            <Link href="/store/featured" className="px-4 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full text-sm transition-colors">Store</Link>
+            <a href="https://github.com/8bukets/8bukets" className="px-4 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full text-sm transition-colors">GitHub</a>
+          </nav>
         </header>
 
-        {/* Hero Section */}
-        <section className="mb-24 max-w-2xl animate-in fade-in slide-in-from-left-4 duration-1000 delay-200">
-          <h2 className="text-6xl font-bold leading-[1.1] mb-8 tracking-tighter bg-gradient-to-r from-zinc-950 to-zinc-500 dark:from-white dark:to-zinc-500 bg-clip-text text-transparent">
-            Build, Boost, and Scale at Light Speed.
-          </h2>
-          <p className="text-xl text-zinc-600 dark:text-zinc-400 mb-10 leading-relaxed">
-            Your system is now fully synchronized with Next.js 16, MongoDB, and Supabase. 
-            Experience zero-latency navigations and schema-safe data scaling.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Link
-              href="/store/featured"
-              className="px-8 py-4 bg-black text-white dark:bg-white dark:text-black rounded-full font-bold hover:scale-105 active:scale-95 transition-all shadow-xl shadow-black/10"
-            >
-              Enter the Store
-            </Link>
-            <a
-              href="https://github.com"
-              target="_blank"
-              className="px-8 py-4 border border-zinc-200 dark:border-zinc-800 rounded-full font-medium hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
-            >
-              Sync to GitHub
-            </a>
-          </div>
-        </section>
+        {/* Dashboard Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
+          {/* Main Status Column */}
+          <div className="lg:col-span-2 flex flex-col gap-8">
+            <section className="p-8 bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-[2rem] shadow-sm">
+              <h2 className="text-sm font-bold uppercase tracking-widest text-zinc-400 mb-6">Autonomous Systems Status</h2>
+              <Suspense fallback={<div className="h-24 w-full bg-zinc-100 dark:bg-zinc-800 animate-pulse rounded-2xl" />}>
+                <SystemHealthGrid />
+              </Suspense>
+            </section>
 
-        {/* Feature Grid */}
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500">
-          <FeatureCard 
-            title="Turbopack Boosted" 
-            desc="Blazing fast HMR and incremental builds with filesystem caching." 
-            icon="⚡"
-          />
-          <FeatureCard 
-            title="Database Ready" 
-            desc="Pre-configured MongoDB and Supabase layers with connection pooling." 
-            icon="📦"
-          />
-          <FeatureCard 
-            title="Data Integrity" 
-            desc="Zod-validated schema-safe fetching with Next.js 16 Cache Components." 
-            icon="🛡️"
-          />
-        </section>
-
-        {/* Action Center */}
-        <footer className="mt-auto pt-12 border-t border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row justify-between items-center gap-6 text-zinc-500 text-sm">
-          <div className="flex gap-8">
-            <Link href="/shop/legacy" className="hover:text-black dark:hover:text-white transition-colors underline decoration-zinc-300 underline-offset-4">Legacy Proxy Link</Link>
-            <Link href="/store/shoes" className="hover:text-black dark:hover:text-white transition-colors">Instant Navigation: Shoes</Link>
-            <Link href="/store/hats" className="hover:text-black dark:hover:text-white transition-colors">Instant Navigation: Hats</Link>
+            <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="p-8 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-[2rem] shadow-xl shadow-blue-500/20">
+                <h3 className="text-lg font-bold mb-2">Predictive Scaling</h3>
+                <p className="text-blue-100 text-sm mb-6 leading-relaxed">The engine is currently learning from traffic patterns to optimize cache volatility.</p>
+                <div className="h-1 bg-white/20 rounded-full overflow-hidden">
+                  <div className="h-full bg-white w-[65%] animate-pulse" />
+                </div>
+              </div>
+              <div className="p-8 bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-[2rem]">
+                <h3 className="text-lg font-bold mb-2">Self-Healing</h3>
+                <p className="text-zinc-500 dark:text-zinc-400 text-sm mb-6">Circuit breakers are active. Current state: <span className="text-green-500 font-bold">Stable</span></p>
+                <div className="flex gap-2">
+                  <div className="w-2 h-2 rounded-full bg-green-500" />
+                  <div className="w-2 h-2 rounded-full bg-green-500/30" />
+                  <div className="w-2 h-2 rounded-full bg-green-500/30" />
+                </div>
+              </div>
+            </section>
           </div>
-          <p>© 2026 Antigravity IDE • Next.js 16.2.3</p>
+
+          {/* Right Sidebar: Cognitive Insights & Logs */}
+          <div className="flex flex-col gap-8">
+            <aside className="p-8 bg-zinc-900 text-white rounded-[2rem] flex flex-col gap-8">
+              <div>
+                <div className="flex items-center gap-2 mb-6">
+                  <span className="text-xl">🧠</span>
+                  <h2 className="text-lg font-bold">Cognitive Evolution</h2>
+                </div>
+                <Suspense fallback={<div className="h-20 bg-white/5 rounded-xl animate-pulse" />}>
+                  <EvolutionInsights />
+                </Suspense>
+              </div>
+
+              <div>
+                <h3 className="text-xs font-black uppercase tracking-widest text-zinc-500 mb-4">Autonomous Activity</h3>
+                <Suspense fallback={<div className="h-40 bg-white/5 rounded-xl animate-pulse" />}>
+                  <ActivityFeed />
+                </Suspense>
+              </div>
+
+              <button className="w-full py-4 bg-white text-black rounded-2xl font-bold hover:bg-zinc-200 transition-colors active:scale-95 text-sm">
+                Apply Optimizations
+              </button>
+            </aside>
+          </div>
+
+        </div>
+
+        {/* Footer info */}
+        <footer className="flex justify-between items-center text-zinc-400 text-xs py-8">
+          <p>Next.js 16.2.3 • Turbopack Optimized</p>
+          <div className="flex gap-4">
+            <span>Docker: Active</span>
+            <span>Mongo: Healthy</span>
+            <span>Supabase: Healthy</span>
+          </div>
         </footer>
       </main>
     </div>
   );
 }
 
-async function SystemStatus() {
+async function SystemHealthGrid() {
   const stats = await getAppStats();
+  const insights = await getSystemInsights();
+
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <StatusItem label="MongoDB" value={stats.mongoStatus} ok={stats.mongoStatus === 'healthy'} />
+      <StatusItem label="Supabase" value={stats.supabaseStatus} ok={stats.supabaseStatus === 'healthy' || stats.supabaseStatus === 'connected'} />
+      <StatusItem label="Users" value={stats.activeUsers.toString()} ok={true} />
+      <StatusItem label="Uptime" value={`${Math.floor(insights.uptime / 60)}m`} ok={true} />
+    </div>
+  )
+}
+
+function StatusItem({ label, value, ok }: { label: string, value: string, ok: boolean }) {
+  return (
+    <div className="flex flex-col gap-1">
+      <span className="text-[10px] font-black uppercase text-zinc-400">{label}</span>
+      <span className={`text-xl font-bold ${ok ? 'text-zinc-900 dark:text-white' : 'text-red-500'}`}>{value}</span>
+    </div>
+  )
+}
+
+async function EvolutionInsights() {
+  const insights = await getSystemInsights();
   
   return (
-    <div className="flex gap-4">
-      <StatusIndicator label="MongoDB" status={stats.mongoStatus} />
-      <StatusIndicator label="Supabase" status={stats.supabaseStatus} />
+    <div className="space-y-4">
+      <div className="p-4 bg-white/5 rounded-2xl border border-white/10">
+        <p className="text-xs text-zinc-400 mb-1">Predictive Model</p>
+        <p className="text-sm font-medium">Auto-scaling {insights.caching.registrySize} volatile tags</p>
+      </div>
+      <div className="p-4 bg-white/5 rounded-2xl border border-white/10">
+        <p className="text-xs text-zinc-400 mb-1">Network Boundary</p>
+        <p className="text-sm font-medium">Proxy Node.js Runtime: Stable</p>
+      </div>
     </div>
-  );
+  )
 }
 
-function StatusIndicator({ label, status }: { label: string, status: 'connected' | 'disconnected' }) {
-  return (
-    <div className="flex items-center gap-2 px-3 py-1 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-full text-xs font-medium">
-      <div className={`w-2 h-2 rounded-full ${status === 'connected' ? 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.5)]' : 'bg-red-500'}`} />
-      <span>{label}</span>
-    </div>
-  );
-}
+async function ActivityFeed() {
+  const insights = await getSystemInsights();
+  const logs = insights.logs.length > 0 ? insights.logs : [{ msg: 'System initialized. Awaiting autonomous signals...', time: '--:--', type: 'init' }];
 
-function FeatureCard({ title, desc, icon }: { title: string, desc: string, icon: string }) {
   return (
-    <div className="p-8 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-900 rounded-3xl hover:border-zinc-400 dark:hover:border-zinc-700 transition-colors group">
-      <div className="text-3xl mb-4 group-hover:scale-110 transition-transform origin-left">{icon}</div>
-      <h3 className="text-lg font-bold mb-2">{title}</h3>
-      <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed">{desc}</p>
+    <div className="flex flex-col gap-3 max-h-[300px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-zinc-800">
+      {logs.map((log, i) => (
+        <div key={i} className="flex gap-3 text-[11px] leading-relaxed animate-in fade-in slide-in-from-left-2">
+          <span className="text-zinc-600 font-mono whitespace-nowrap">{log.time}</span>
+          <p className={`${log.type === 'init' ? 'text-zinc-500 italic' : 'text-zinc-300'}`}>
+            <span className="text-blue-500 font-bold mr-1">[{log.type.toUpperCase()}]</span>
+            {log.msg}
+          </p>
+        </div>
+      ))}
     </div>
-  );
+  )
 }

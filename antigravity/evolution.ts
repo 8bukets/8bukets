@@ -38,12 +38,21 @@ export async function evolve() {
           })
         }
 
-        // Detect large files that should be refactored into 'antigravity/services'
+        // Rule 2: Detect large files that should be refactored
         if (lines > 150) {
           suggestions.push({
             file: fullPath.replace(process.cwd(), ''),
             complexity: lines,
-            suggestion: 'ARCHITECTURAL_DRIFT: File exceeds complexity limits. Move logic to autonomous core services.'
+            suggestion: 'ARCHITECTURAL_DRIFT: File exceeds complexity limits.'
+          })
+        }
+
+        // Rule 3: Detect Sync Access to Params (Next.js 16 Violation)
+        if (content.includes('params.') && !content.includes('await params') && !content.includes('resolve(params)')) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'SYNC_PROP_VIOLATION: Direct access to params detected. Must be awaited in Next.js 16.'
           })
         }
       }
@@ -53,11 +62,45 @@ export async function evolve() {
   scan(baseDir)
 
   console.log('✨ [Evolution Report]: Found', suggestions.length, 'potential optimizations.')
-  suggestions.forEach(s => {
-    console.log(` - [${s.file}] (${s.complexity} lines): ${s.suggestion}`)
-  })
-
   return suggestions
+}
+
+/**
+ * applyFixes: Autonomous Autocorrection
+ * Programmatically fixes common architectural drift issues.
+ */
+export async function applyFixes(suggestions: EvolutionMetric[]) {
+  console.log('🛠️ [Antigravity Evolution] Applying autonomous fixes...')
+  
+  for (const s of suggestions) {
+    const fullPath = path.join(process.cwd(), s.file)
+    let content = fs.readFileSync(fullPath, 'utf8')
+
+    if (s.suggestion.startsWith('MISSING_CACHE_DIRECTIVE')) {
+      console.log(` - Fixing ${s.file}: Injecting 'use cache'`)
+      // Inject 'use cache' at the top of the first async function found
+      content = content.replace(/async function(.*?)\{/, "async function$1{\n  'use cache'")
+      fs.writeFileSync(fullPath, content)
+    }
+
+    if (s.suggestion.startsWith('SYNC_PROP_VIOLATION')) {
+      console.log(` - Fixing ${s.file}: Wrapping params in resolve()`)
+      // Add the import if missing
+      if (!content.includes('import {') || !content.includes('@/antigravity/core')) {
+        content = "import { resolve } from '@/antigravity/core'\n" + content
+      } else if (!content.includes('resolve')) {
+        content = content.replace(/import \{(.*?)\} from '@\/antigravity\/core'/, "import {$1, resolve} from '@/antigravity/core'")
+      }
+      
+      // Attempt to wrap params usages
+      content = content.replace(/(\{.*?params.*?\}.*?)\.then/g, "resolve(params).then")
+      fs.writeFileSync(fullPath, content)
+    }
+    
+    // Additional autocorrection logic can be added here
+  }
+  
+  console.log('✅ [Antigravity Evolution] Autocorrection complete.')
 }
 
 if (require.main === module) {

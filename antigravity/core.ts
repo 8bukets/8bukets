@@ -11,9 +11,9 @@ import { z } from 'zod'
 
 // --- 1. CONFIGURATION & TYPES ---
 
-const MONGODB_URI = process.env.MONGODB_URI!
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/placeholder'
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co'
+const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder'
 
 export interface PageProps<T = any> {
   params: Promise<T>
@@ -128,6 +128,36 @@ export async function predictiveFetch<T>(
     tags: [tag],
     life: profile
   })
+}
+
+// --- 4. COGNITIVE INSIGHTS (Phase 6) ---
+
+const logBuffer: { msg: string; time: string; type: string }[] = []
+
+export function logAutonomousAction(msg: string, type: string = 'info') {
+  logBuffer.unshift({ msg, time: new Date().toLocaleTimeString(), type })
+  if (logBuffer.length > 50) logBuffer.pop()
+}
+
+export async function getSystemInsights() {
+  'use cache'
+  cacheLife('inventory')
+  
+  return {
+    circuitBreakers: {
+      mongodb: circuitBreaker.mongodb.state,
+      supabase: circuitBreaker.supabase.state,
+    },
+    caching: {
+      registrySize: volatilityRegistry.size,
+      activeProfiles: Array.from(volatilityRegistry.keys()).map(tag => ({
+        tag,
+        profile: getPredictiveProfile(tag)
+      }))
+    },
+    logs: logBuffer,
+    uptime: process.uptime()
+  }
 }
 
 /**

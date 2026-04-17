@@ -1,5 +1,6 @@
 import { healthCheck, getRuntimeEnv } from './core'
 import { evolve } from './evolution'
+import { jules } from './jules'
 
 /**
  * ANTIGRAVITY AUTONOMOUS EXPLORER
@@ -46,6 +47,9 @@ export async function explore() {
     circuitBreakers: 'active',
     status: isHealthy ? 'STABLE' : 'EVOLVING'
   }
+
+  // 6. Jules Protocol: Record the Task in Cognitive Memory
+  jules.recordTask(`System Scan: Health is ${results.health}. Found ${results.evolution.length} evolutionary suggestions.`)
 
   console.log('📊 [Explorer Report]:', JSON.stringify(results, null, 2))
   
