@@ -158,8 +158,14 @@ export function logAutonomousAction(msg: string, type: string = 'info') {
 }
 
 export async function getSystemInsights() {
-  'use cache'
-  cacheLife('inventory')
+  // Phase 12: Safeguard against CLI-mode execution
+  // Only use cache if we are in a recognized Next.js request context
+  const isServerRequest = !!process.env.NEXT_RUNTIME
+
+  if (isServerRequest) {
+    'use cache'
+    cacheLife('inventory')
+  }
   
   const { synthesize } = await import('./synthesis')
   const { getPersistenceHealth } = await import('./services/persistence')
