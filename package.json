@@ -10,7 +10,8 @@
     "trace": "next internal trace .next/dev/trace-turbopack",
     "test": "vitest run",
     "explore": "tsx antigravity/explorer.ts",
-    "evolve": "tsx antigravity/evolution.ts"
+    "evolve": "tsx antigravity/evolution.ts",
+    "daily": "tsx -e \"import { jules } from './antigravity/jules'; jules.executeWorkCycle()\""
   },
   "dependencies": {
     "@supabase/supabase-js": "^2",

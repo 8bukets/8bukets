@@ -11,9 +11,13 @@ import { z } from 'zod'
 
 // --- 1. CONFIGURATION & TYPES ---
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/placeholder'
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co'
-const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder'
+const MONGODB_URI = process.env.MONGODB_URI
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
+const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+if (!MONGODB_URI || !SUPABASE_URL || !SUPABASE_KEY) {
+  console.warn('⚠️ [Autonomous Core] Missing production credentials. System running in limited observability mode.')
+}
 
 export interface PageProps<T = any> {
   params: Promise<T>
@@ -28,7 +32,7 @@ export interface LayoutProps<T = any> {
 // --- 2. AUTONOMOUS DATABASE CLIENTS ---
 
 let _mongoClientPromise: Promise<MongoClient>
-const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
+const supabase = createClient(SUPABASE_URL || 'https://placeholder.supabase.co', SUPABASE_KEY || 'placeholder')
 
 // Phase 5: Self-Healing State
 const circuitBreaker = {
@@ -143,6 +147,9 @@ export async function getSystemInsights() {
   'use cache'
   cacheLife('inventory')
   
+  const { synthesize } = await import('./synthesis')
+  const ideas = await synthesize()
+
   return {
     circuitBreakers: {
       mongodb: circuitBreaker.mongodb.state,
@@ -156,6 +163,7 @@ export async function getSystemInsights() {
       }))
     },
     logs: logBuffer,
+    ideas,
     uptime: process.uptime()
   }
 }

@@ -106,48 +106,33 @@ export class Jules {
   /**
    * selfRepair: Autonomous bug fixing and testing.
    */
-  public async selfRepair() {
-    console.log('🔧 [Jules] Starting autonomous self-repair cycle...')
-    
-    const { evolve, applyFixes } = await import('./evolution')
-    const suggestions = await evolve()
-    
-    if (suggestions.length > 0) {
-      await applyFixes(suggestions)
-      this.recordTask(`Self-Repair: Applied ${suggestions.length} fixes.`)
-      
-      // Verification
-      console.log('🧪 [Jules] Verifying fixes with autonomous test suite...')
-      // In a real environment, this would spawn 'npm test'
-      console.log('✅ [Jules] All tests passed after self-repair.')
-
-      // Phase 6: Autonomous Git Sync
-      await this.gitSync(`🤖 fix: autonomous self-repair of ${suggestions.length} issues`)
-    } else {
-      console.log('✨ [Jules] No issues detected. System integrity is optimal.')
-    }
-  }
-
   /**
-   * gitSync: Autonomous Repository Synchronization.
+   * executeWorkCycle: Full Autonomous Work Day.
+   * Performs Phase 1-7 actions: Health -> Repair -> Synthesis -> Sync.
    */
-  public async gitSync(message: string) {
-    console.log('🔄 [Jules] Commencing autonomous Git synchronization...')
+  public async executeWorkCycle() {
+    console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
     
-    // We use dynamic import for exec to run shell commands from Node
-    const { execSync } = await import('child_process')
-    
-    try {
-      execSync('git add .', { stdio: 'inherit' })
-      execSync(`git commit -m "${message}"`, { stdio: 'inherit' })
-      console.log('✅ [Jules] Changes committed autonomously.')
-      
-      // Note: We don't push automatically in every environment 
-      // but the core is ready for 'git push' if remotes are configured.
-      this.recordTask(`Git Sync: Committed fixes to local repository.`)
-    } catch (err) {
-      console.warn('⚠️ [Jules] Git sync skipped or failed (likely no changes to commit).')
+    // 1. Scan (Explorer)
+    const { explore } = await import('./explorer')
+    const scanResults = await explore()
+
+    // 2. Repair (Evolution)
+    await this.selfRepair()
+
+    // 3. Ideate (Synthesis)
+    const { synthesize } = await import('./synthesis')
+    const ideas = await synthesize()
+    if (ideas.length > 0) {
+      this.recordTask(`Synthesis: Generated ${ideas.length} new architectural proposals.`)
     }
+
+    // 4. Final Sync
+    await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
+    
+    this.memory.lastOptimization = new Date().toISOString()
+    this.save()
+    console.log('🏆 [Jules] Autonomous Work Cycle Complete.')
   }
 }
 

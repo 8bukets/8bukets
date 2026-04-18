@@ -137,13 +137,18 @@ async function EvolutionInsights() {
   
   return (
     <div className="space-y-4">
-      <div className="p-4 bg-white/5 rounded-2xl border border-white/10">
-        <p className="text-xs text-zinc-400 mb-1">Predictive Model</p>
-        <p className="text-sm font-medium">Auto-scaling {insights.caching.registrySize} volatile tags</p>
-      </div>
-      <div className="p-4 bg-white/5 rounded-2xl border border-white/10">
-        <p className="text-xs text-zinc-400 mb-1">Network Boundary</p>
-        <p className="text-sm font-medium">Proxy Node.js Runtime: Stable</p>
+      {insights.ideas.map((idea: any, i: number) => (
+        <div key={i} className="p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-blue-500/50 transition-colors group">
+          <div className="flex items-center justify-between mb-2">
+            <p className="text-[10px] font-black uppercase text-blue-500 tracking-tighter">New Idea Synthesized</p>
+            <span className="text-[10px] px-2 py-0.5 bg-blue-500 text-white rounded-full font-bold">{idea.complexity}</span>
+          </div>
+          <p className="text-sm font-bold mb-1 group-hover:text-blue-400 transition-colors">{idea.feature}</p>
+          <p className="text-[11px] text-zinc-500 leading-relaxed">{idea.rationale}</p>
+        </div>
+      ))}
+      <div className="p-4 bg-white/5 rounded-2xl border border-white/10 italic">
+        <p className="text-[11px] text-zinc-500">Autonomous brain is scanning for more architectural gaps...</p>
       </div>
     </div>
   )

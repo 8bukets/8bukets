@@ -3,19 +3,11 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   cacheComponents: true,
   reactCompiler: true,
-  viewTransition: true,
-  // Boost: Optimizes imports for large libraries to speed up Turbopack scanning
-  optimizePackageImports: ["lucide-react", "lodash", "@supabase/supabase-js", "mongodb"],
   experimental: {
+    viewTransition: true,
+    optimizePackageImports: ["lucide-react", "lodash", "@supabase/supabase-js", "mongodb"],
+    instantNavigationDevToolsToggle: true,
     turbopackFileSystemCacheForDev: true,
-  },
-  // Boost: Turbopack specific optimizations
-  turbopack: {
-    // Resolve alias fallback to silence Node.js native module errors in browser
-    resolveAlias: {
-      "mongodb-client-encryption": "node-noop",
-      "aws4": "node-noop"
-    },
   },
   // Scale by defining your own cache behavior across the app
   cacheLife: {
@@ -29,7 +21,16 @@ const nextConfig: NextConfig = {
       revalidate: 60 * 60 * 4, // 4 hours on server
       expire: 60 * 60 * 24 // 24 hours max
     }
-  }
+  },
+  // Boost: Turbopack specific optimizations
+  turbopack: {
+    // Resolve alias fallback to silence Node.js native module errors in browser
+    resolveAlias: {
+      fs: './antigravity/empty.ts',
+      path: './antigravity/empty.ts',
+      os: './antigravity/empty.ts',
+    },
+  },
 };
 
 export default nextConfig;
