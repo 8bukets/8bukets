@@ -28,7 +28,8 @@ export class Jules {
           runtime: 'Next.js 16 Node.js Runtime',
           caching: 'Phase 4 Predictive',
           resilience: 'Phase 5 Circuit Breaker',
-          verifiedSignature: 'SHA256:Zey4+Jcqu48gSIuuQaavasF2D7iu+J590Rr1EA3LdbA'
+          verifiedSignature: 'SHA256:Zey4+Jcqu48gSIuuQaavasF2D7iu+J590Rr1EA3LdbA',
+          neuralSyncSignature: 'SHA256:qhno7SbhBIYwfgNgGhygt2e0kRDBlPkEqjAGdXTVOsA'
         },
         autonomousTasks: []
       }
