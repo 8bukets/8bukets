@@ -220,8 +220,13 @@ export async function autonomousFetch<T>(
   try {
     const data = await fetcher()
     
-    if (config.tags) config.tags.forEach(tag => cacheTag(tag))
-    if (config.life) cacheLife(config.life as any)
+    // Phase 12: Safeguard against non-server environments
+    const isServerRequest = !!process.env.NEXT_RUNTIME
+
+    if (isServerRequest) {
+      if (config.tags) config.tags.forEach(tag => cacheTag(tag))
+      if (config.life) cacheLife(config.life as any)
+    }
 
     const result = schema.safeParse(data)
     if (!result.success) {

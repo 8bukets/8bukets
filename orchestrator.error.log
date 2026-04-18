@@ -304,3 +304,13 @@ shell-init: error retrieving current directory: getcwd: cannot access parent dir
 /bin/bash: /Users/filipkeser/Documents/Antigravity/my-app/start_all.sh: Operation not permitted
 shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
 /bin/bash: /Users/filipkeser/Documents/Antigravity/my-app/start_all.sh: Operation not permitted
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+/bin/bash: /Users/filipkeser/Documents/Antigravity/my-app/start_all.sh: Operation not permitted
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+/bin/bash: /Users/filipkeser/Documents/Antigravity/my-app/start_all.sh: Operation not permitted
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+/bin/bash: /Users/filipkeser/Documents/Antigravity/my-app/start_all.sh: Operation not permitted
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+/bin/bash: /Users/filipkeser/Documents/Antigravity/my-app/start_all.sh: Operation not permitted
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+/bin/bash: /Users/filipkeser/Documents/Antigravity/my-app/start_all.sh: Operation not permitted
