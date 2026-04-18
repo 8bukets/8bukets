@@ -25,7 +25,10 @@ export default async function CommandCenter({
             </div>
             <div>
               <h1 className="text-2xl font-bold tracking-tight">Antigravity Command</h1>
-              <p className="text-zinc-500 text-sm font-medium">Autonomous Ecosystem v1.0 • Phase 6</p>
+              <div className="flex items-center gap-2">
+                <p className="text-zinc-500 text-sm font-medium">Autonomous Ecosystem v1.0 • Phase 9</p>
+                <span className="text-[10px] px-2 py-0.5 bg-blue-500/10 text-blue-500 rounded-full font-bold border border-blue-500/20">Neural Sync Active</span>
+              </div>
             </div>
           </div>
           <nav className="flex items-center gap-2 bg-white dark:bg-zinc-900 p-1 rounded-full border border-zinc-200 dark:border-zinc-800 shadow-sm">
@@ -80,6 +83,13 @@ export default async function CommandCenter({
               </div>
 
               <div>
+                <h3 className="text-xs font-black uppercase tracking-widest text-zinc-500 mb-4">Global Neural Network</h3>
+                <Suspense fallback={<div className="h-20 bg-white/5 rounded-xl animate-pulse" />}>
+                  <NeuralNetworkList />
+                </Suspense>
+              </div>
+
+              <div>
                 <h3 className="text-xs font-black uppercase tracking-widest text-zinc-500 mb-4">Autonomous Activity</h3>
                 <Suspense fallback={<div className="h-40 bg-white/5 rounded-xl animate-pulse" />}>
                   <ActivityFeed />
@@ -117,8 +127,27 @@ export default async function CommandCenter({
     </div>
   );
 }
+async function NeuralNetworkList() {
+  const { getSystemInsights } = await import('@/antigravity/core');
+  const insights = await getSystemInsights();
+
+  return (
+    <div className="space-y-2">
+      {insights.network.map((node: any, i: number) => (
+        <div key={i} className="flex items-center justify-between p-3 bg-white/5 rounded-xl border border-white/10">
+          <div className="flex items-center gap-2">
+            <div className={`w-1.5 h-1.5 rounded-full ${node.health === 'optimal' ? 'bg-blue-400 shadow-[0_0_8px_rgba(96,165,250,0.5)]' : 'bg-zinc-600'}`} />
+            <span className="text-[11px] font-bold text-zinc-300 uppercase tracking-tighter">{node.origin}</span>
+          </div>
+          <span className="text-[10px] text-zinc-500">{node.lastSeen}</span>
+        </div>
+      ))}
+    </div>
+  )
+}
 
 async function PersistenceFleetBar() {
+...
   const { getSystemInsights } = await import('@/antigravity/core');
   const insights = await getSystemInsights();
 
