@@ -164,10 +164,12 @@ export async function getSystemInsights() {
   const { synthesize } = await import('./synthesis')
   const { getPersistenceHealth } = await import('./services/persistence')
   const { getNetworkState } = await import('./services/neural')
+  const { getRelayState } = await import('./services/relay')
   
   const ideas = await synthesize()
   const persistence = await getPersistenceHealth()
   const network = await getNetworkState()
+  const relay = await getRelayState()
 
   return {
     circuitBreakers: {
@@ -185,6 +187,7 @@ export async function getSystemInsights() {
     ideas,
     persistence,
     network,
+    relay,
     uptime: process.uptime()
   }
 }

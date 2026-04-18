@@ -83,6 +83,13 @@ export default async function CommandCenter({
               </div>
 
               <div>
+                <h3 className="text-xs font-black uppercase tracking-widest text-zinc-500 mb-4">Omni-Presence Matrix</h3>
+                <Suspense fallback={<div className="h-20 bg-white/5 rounded-xl animate-pulse" />}>
+                  <OmniPresenceMatrix />
+                </Suspense>
+              </div>
+
+              <div>
                 <h3 className="text-xs font-black uppercase tracking-widest text-zinc-500 mb-4">Global Neural Network</h3>
                 <Suspense fallback={<div className="h-20 bg-white/5 rounded-xl animate-pulse" />}>
                   <NeuralNetworkList />
@@ -127,6 +134,33 @@ export default async function CommandCenter({
     </div>
   );
 }
+async function OmniPresenceMatrix() {
+  const { getSystemInsights } = await import('@/antigravity/core');
+  const insights = await getSystemInsights();
+
+  return (
+    <div className="space-y-3">
+      {insights.relay.map((node: any, i: number) => (
+        <div key={i} className="p-3 bg-white/5 rounded-xl border border-white/10 group hover:border-purple-500/30 transition-all">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-[10px] font-black text-purple-400 uppercase tracking-widest">{node.environment}</span>
+            <div className="flex gap-1">
+              {[...Array(3)].map((_, j) => (
+                <div key={j} className={`w-1 h-1 rounded-full ${j < Math.ceil(node.intensity * 3) ? 'bg-purple-500 shadow-[0_0_5px_rgba(168,85,247,0.5)]' : 'bg-zinc-800'}`} />
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-1.5">
+            {node.activeViews.map((view: string, k: number) => (
+              <span key={k} className="text-[9px] px-2 py-0.5 bg-zinc-800 text-zinc-400 rounded-md font-mono">{view}</span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 async function NeuralNetworkList() {
   const { getSystemInsights } = await import('@/antigravity/core');
   const insights = await getSystemInsights();
