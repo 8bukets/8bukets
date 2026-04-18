@@ -162,7 +162,9 @@ export async function getSystemInsights() {
   cacheLife('inventory')
   
   const { synthesize } = await import('./synthesis')
+  const { getPersistenceHealth } = await import('./services/persistence')
   const ideas = await synthesize()
+  const persistence = await getPersistenceHealth()
 
   return {
     circuitBreakers: {
@@ -178,6 +180,7 @@ export async function getSystemInsights() {
     },
     logs: logBuffer,
     ideas,
+    persistence,
     uptime: process.uptime()
   }
 }

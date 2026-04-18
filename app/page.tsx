@@ -95,17 +95,44 @@ export default async function CommandCenter({
         </div>
 
         {/* Footer info */}
-        <footer className="flex justify-between items-center text-zinc-400 text-xs py-8">
-          <p>Next.js 16.2.3 • Turbopack Optimized</p>
-          <div className="flex gap-4">
-            <span>Docker: Active</span>
-            <span>Mongo: Healthy</span>
-            <span>Supabase: Healthy</span>
+        <footer className="mt-auto pt-12 border-t border-zinc-200 dark:border-zinc-800 flex flex-col gap-6">
+          <div className="flex flex-wrap justify-between items-center gap-6 text-zinc-500 text-[10px] uppercase font-black tracking-widest">
+            <p>Next.js 16.2.3 • Turbopack Optimized • 24/7 Persistence Active</p>
+            <div className="flex gap-4">
+              <span>Docker: Active</span>
+              <span>Mongo: Healthy</span>
+              <span>Supabase: Healthy</span>
+            </div>
+          </div>
+          
+          <Suspense fallback={<div className="h-10 w-full bg-white/5 rounded-xl animate-pulse" />}>
+            <PersistenceFleetBar />
+          </Suspense>
+          
+          <div className="flex justify-center pb-4">
+            <p className="text-[10px] text-zinc-600">© 2026 Antigravity IDE • Jules Cognitive Agent</p>
           </div>
         </footer>
       </main>
     </div>
   );
+}
+
+async function PersistenceFleetBar() {
+  const { getSystemInsights } = await import('@/antigravity/core');
+  const insights = await getSystemInsights();
+
+  return (
+    <div className="flex flex-wrap gap-2">
+      {insights.persistence.map((p: any, i: number) => (
+        <div key={i} className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg flex items-center gap-2">
+          <div className={`w-1.5 h-1.5 rounded-full ${p.status === 'running' ? 'bg-green-500' : 'bg-zinc-600'}`} />
+          <span className="text-[10px] font-bold text-zinc-400">{p.agent.split('.').pop()}</span>
+          {p.pid && <span className="text-[9px] text-zinc-600 font-mono">PID:{p.pid}</span>}
+        </div>
+      ))}
+    </div>
+  )
 }
 
 async function SystemHealthGrid() {

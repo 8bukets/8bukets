@@ -69,6 +69,7 @@ export class Jules {
     const tasks = [
       { name: 'Core Integrity Check', action: () => this.recordTask('Integrity scan passed.') },
       { name: 'Cache Volatility Audit', action: () => this.recordTask('Cache profiles optimized.') },
+      { name: 'Dependency Autopilot', action: () => this.auditDependencies() },
       { name: 'GitKraken Sync Prep', action: () => this.recordTask('Visual branch history cleaned.') },
       { name: 'Supabase Connectivity Refresh', action: () => this.recordTask('Supabase pooling verified.') }
     ]
@@ -112,11 +113,28 @@ export class Jules {
     }
   }
 
+  public async auditDependencies() {
+    console.log('📦 [Jules] Auditing dependency sovereignty...')
+    const { execSync } = await import('child_process')
+    try {
+      const outdated = execSync('npm outdated --json || true').toString()
+      const count = Object.keys(JSON.parse(outdated || '{}')).length
+      if (count > 0) {
+        this.recordTask(`Dependency Autopilot: Found ${count} outdated packages. Optimization recommended.`)
+      } else {
+        this.recordTask(`Dependency Autopilot: All packages are sovereign and up-to-date.`)
+      }
+    } catch (e) {
+      this.recordTask('Dependency Autopilot: Audit skipped due to environment state.')
+    }
+  }
+
   public async executeWorkCycle() {
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
     const { explore } = await import('./explorer')
     await explore()
     await this.selfRepair()
+    await this.auditDependencies()
     const { synthesize } = await import('./synthesis')
     const ideas = await synthesize()
     if (ideas.length > 0) {
