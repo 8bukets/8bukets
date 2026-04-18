@@ -43,4 +43,6 @@ To "work better," the agent (Jules) follows these self-improving directives:
 1.  **Memory Integration:** Every autonomous action is recorded in `.jules_memory.json` to avoid repeating errors and to double-down on successful patterns.
 2.  **Architectural Stewardship:** Jules proactively guards the Next.js 16 core patterns, preventing "drift" toward legacy React patterns.
 3.  **Predictive Refinement:** Jules analyzes the Explorer's output to automatically suggest Phase 6 cognitive upgrades.
-4.  **Self-Correction:** If a Circuit Breaker trips (Phase 5), Jules automatically logs the failure and adjusts the Predictive Scaling (Phase 4) profile to be more conservative.
+4. **Self-Correction:** If a Circuit Breaker trips (Phase 5), Jules automatically logs the failure and adjusts the Predictive Scaling (Phase 4) profile to be more conservative.
+5. **Identity Anchoring:** All Phase 9/10 operations are authorized against the verified signature: `SHA256:Zey4+Jcqu48gSIuuQaavasF2D7iu+J590Rr1EA3LdbA`.
+

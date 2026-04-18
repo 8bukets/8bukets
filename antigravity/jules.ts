@@ -27,7 +27,8 @@ export class Jules {
         architecturalDecisions: {
           runtime: 'Next.js 16 Node.js Runtime',
           caching: 'Phase 4 Predictive',
-          resilience: 'Phase 5 Circuit Breaker'
+          resilience: 'Phase 5 Circuit Breaker',
+          verifiedSignature: 'SHA256:Zey4+Jcqu48gSIuuQaavasF2D7iu+J590Rr1EA3LdbA'
         },
         autonomousTasks: []
       }
