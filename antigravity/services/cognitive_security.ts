@@ -1,22 +1,68 @@
-/**
- * Cognitive Security Service
- * Generated autonomously by the Antigravity Singularity Engine.
- * Rationale: Autonomously scans for leaked credentials and insecure patterns across the neural network.
- */
 import { z } from 'zod'
-import { autonomousFetch } from '@/antigravity/core'
+import { autonomousFetch, logAutonomousAction } from '@/antigravity/core'
+import fs from 'fs'
+import path from 'path'
 
-export const CognitiveSecurityServiceSchema = z.object({
-  status: z.string(),
-  lastRun: z.string()
+export const SecurityAuditSchema = z.object({
+  status: z.enum(['secure', 'warning', 'critical']),
+  issuesFound: z.number(),
+  lastAudit: z.string(),
+  scannedFiles: z.number()
 })
 
-export async function getCognitiveSecurityServiceData() {
-  'use cache'
-  return autonomousFetch(CognitiveSecurityServiceSchema, async () => {
-    return {
-      status: 'active',
-      lastRun: new Date().toISOString()
+export type SecurityAudit = z.infer<typeof SecurityAuditSchema>
+
+/**
+ * Cognitive Security Service
+ * Autonomously scans for high-risk patterns and credential leakage.
+ */
+export async function runSecurityAudit(): Promise<SecurityAudit> {
+  return autonomousFetch(SecurityAuditSchema, async () => {
+    'use cache'
+    console.log('🛡️ [Cognitive Security] Starting deep-tissue security scan...')
+    
+    let issuesFound = 0
+    let scannedFiles = 0
+    const riskPatterns = [
+      /mongodb\+srv:\/\//i, // Hardcoded Mongo URIs
+      /sb_publishable_.*?_zsZm57QY/i, // Specific Supabase keys
+      /process\.env\..*? =/ // Hardcoded env assignments
+    ]
+
+    function scan(dir: string) {
+      const files = fs.readdirSync(dir)
+      for (const file of files) {
+        const fullPath = path.join(dir, file)
+        if (file === 'node_modules' || file === '.git' || file === '.next') continue
+        
+        if (fs.statSync(fullPath).isDirectory()) {
+          scan(fullPath)
+        } else if (file.endsWith('.ts') || file.endsWith('.tsx') || file.endsWith('.js')) {
+          scannedFiles++
+          const content = fs.readFileSync(fullPath, 'utf8')
+          for (const pattern of riskPatterns) {
+            if (pattern.test(content)) {
+              console.warn(`⚠️ [Security Risk] Potential credential leak in: ${file}`)
+              issuesFound++
+            }
+          }
+        }
+      }
     }
-  }, { life: 'minutes' })
+
+    scan(process.cwd())
+
+    const status = issuesFound > 0 ? 'warning' : 'secure'
+    
+    if (issuesFound > 0) {
+      logAutonomousAction(`[SECURITY] Found ${issuesFound} potential risks during audit.`, 'security')
+    }
+
+    return {
+      status,
+      issuesFound,
+      lastAudit: new Date().toISOString(),
+      scannedFiles
+    }
+  }, { life: 'catalog', tags: ['security-audit'] })
 }

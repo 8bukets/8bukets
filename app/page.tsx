@@ -230,9 +230,10 @@ async function SystemHealthGrid() {
   const insights = await getSystemInsights();
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
       <StatusItem label="MongoDB" value={stats.mongoStatus} ok={stats.mongoStatus === 'healthy'} />
       <StatusItem label="Supabase" value={stats.supabaseStatus} ok={stats.supabaseStatus === 'healthy' || stats.supabaseStatus === 'connected'} />
+      <StatusItem label="Security" value={insights.security.status.toUpperCase()} ok={insights.security.status === 'secure'} />
       <StatusItem label="Users" value={stats.activeUsers.toString()} ok={true} />
       <StatusItem label="Uptime" value={`${Math.floor(insights.uptime / 60)}m`} ok={true} />
     </div>
