@@ -3,21 +3,22 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.sigma.orchestrator</string>
+    <string>com.sigma.web_app</string>
     <key>ProgramArguments</key>
     <array>
-        <string>/bin/bash</string>
-        <string>/Users/filipkeser/Documents/Antigravity/start_all.sh</string>
+        <string>/usr/local/bin/npm</string>
+        <string>run</string>
+        <string>dev</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
     <key>KeepAlive</key>
     <true/>
     <key>WorkingDirectory</key>
-    <string>/Users/filipkeser/Documents/Antigravity</string>
+    <string>/Users/filipkeser/Documents/Antigravity/web-app</string>
     <key>StandardOutPath</key>
-    <string>/Users/filipkeser/Documents/Antigravity/orchestrator.log</string>
+    <string>/Users/filipkeser/Documents/Antigravity/web-app/dashboard.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/filipkeser/Documents/Antigravity/orchestrator.error.log</string>
+    <string>/Users/filipkeser/Documents/Antigravity/web-app/dashboard.error.log</string>
 </dict>
 </plist>
