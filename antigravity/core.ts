@@ -106,11 +106,17 @@ const volatilityRegistry = new Map<string, { updates: number; lastUpdate: number
 
 export function recordUpdate(tag: string) {
   const current = volatilityRegistry.get(tag) || { updates: 0, lastUpdate: Date.now() }
-  volatilityRegistry.set(tag, {
+  const newStats = {
     updates: current.updates + 1,
     lastUpdate: Date.now()
-  })
+  }
+  volatilityRegistry.set(tag, newStats)
   updateTag(tag)
+
+  // Phase 7+: Persist to Predictive Analytics Layer
+  import('./services/analytics').then(a => {
+    a.trackEvent(tag, 'VOLATILITY_INCREASE', newStats)
+  })
 }
 
 export function getPredictiveProfile(tag: string): 'inventory' | 'catalog' | 'minutes' {

@@ -50,10 +50,9 @@ export default async function CommandCenter({
             <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="p-8 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-[2rem] shadow-xl shadow-blue-500/20">
                 <h3 className="text-lg font-bold mb-2">Predictive Scaling</h3>
-                <p className="text-blue-100 text-sm mb-6 leading-relaxed">The engine is currently learning from traffic patterns to optimize cache volatility.</p>
-                <div className="h-1 bg-white/20 rounded-full overflow-hidden">
-                  <div className="h-full bg-white w-[65%] animate-pulse" />
-                </div>
+                <Suspense fallback={<div className="h-20 animate-pulse" />}>
+                  <AnalyticsForecast />
+                </Suspense>
               </div>
               <div className="p-8 bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-[2rem]">
                 <h3 className="text-lg font-bold mb-2">Self-Healing</h3>
@@ -131,8 +130,36 @@ function StatusItem({ label, value, ok }: { label: string, value: string, ok: bo
     </div>
   )
 }
+async function AnalyticsForecast() {
+  const { getRecentAnalytics } = await import('@/antigravity/services/analytics');
+  const events = await getRecentAnalytics(3);
+
+  if (events.length === 0) {
+    return (
+      <>
+        <p className="text-blue-100 text-sm mb-6 leading-relaxed">The engine is currently learning from traffic patterns to optimize cache volatility.</p>
+        <div className="h-1 bg-white/20 rounded-full overflow-hidden">
+          <div className="h-full bg-white w-[35%] animate-pulse" />
+        </div>
+      </>
+    )
+  }
+
+  return (
+    <div className="space-y-3">
+      {events.map((e: any, i: number) => (
+        <div key={i} className="text-[11px] bg-white/10 p-2 rounded-lg border border-white/10">
+          <span className="font-bold mr-2 text-white">[{e.tag}]</span>
+          <span className="text-blue-200">New volatility pattern analyzed</span>
+        </div>
+      ))}
+      <p className="text-[10px] text-blue-200 italic mt-2">Historical trends saved to MongoDB for forecasting.</p>
+    </div>
+  )
+}
 
 async function EvolutionInsights() {
+...
   const insights = await getSystemInsights();
   
   return (
