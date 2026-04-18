@@ -75,6 +75,14 @@ export async function getMongoClient(): Promise<MongoClient> {
     circuitBreaker.mongodb.lastFailure = Date.now()
     if (circuitBreaker.mongodb.failures >= FAILURE_THRESHOLD) {
       circuitBreaker.mongodb.state = 'open'
+      // Phase 7: Autonomous Notification
+      import('./services/notification').then(n => {
+        n.sendNotification({
+          type: 'health',
+          message: 'MongoDB Circuit Breaker tripped. System in recovery mode.',
+          severity: 'critical'
+        })
+      })
     }
     throw err
   }

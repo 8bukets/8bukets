@@ -156,15 +156,24 @@ async function EvolutionInsights() {
 
 async function ActivityFeed() {
   const insights = await getSystemInsights();
-  const logs = insights.logs.length > 0 ? insights.logs : [{ msg: 'System initialized. Awaiting autonomous signals...', time: '--:--', type: 'init' }];
+  const { getNotifications } = await import('@/antigravity/services/notification');
+  const notifications = await getNotifications();
+  
+  // Merge logs and notifications for the feed
+  const feed = [
+    ...notifications.map(n => ({ msg: n.message, time: new Date(n.timestamp).toLocaleTimeString(), type: n.type })),
+    ...insights.logs
+  ].sort((a, b) => b.time.localeCompare(a.time));
+
+  const finalFeed = feed.length > 0 ? feed : [{ msg: 'System initialized. Awaiting autonomous signals...', time: '--:--', type: 'init' }];
 
   return (
     <div className="flex flex-col gap-3 max-h-[300px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-zinc-800">
-      {logs.map((log, i) => (
+      {finalFeed.map((log, i) => (
         <div key={i} className="flex gap-3 text-[11px] leading-relaxed animate-in fade-in slide-in-from-left-2">
           <span className="text-zinc-600 font-mono whitespace-nowrap">{log.time}</span>
           <p className={`${log.type === 'init' ? 'text-zinc-500 italic' : 'text-zinc-300'}`}>
-            <span className="text-blue-500 font-bold mr-1">[{log.type.toUpperCase()}]</span>
+            <span className={`font-bold mr-1 ${log.type === 'health' ? 'text-red-500' : 'text-blue-500'}`}>[{log.type.toUpperCase()}]</span>
             {log.msg}
           </p>
         </div>
