@@ -22,15 +22,35 @@ export default async function CommandCenter({
           <div className="flex items-center gap-4">
             <div className="w-10 h-10 bg-black dark:bg-white rounded-xl flex items-center justify-center">
               <span className="text-white dark:text-black font-black text-xl">A</span>
-            </div>
             <div>
               <h1 className="text-2xl font-bold tracking-tight">Antigravity Command</h1>
               <div className="flex items-center gap-2">
-                <p className="text-zinc-500 text-sm font-medium">Autonomous Ecosystem v1.0 • Phase 9</p>
-                <span className="text-[10px] px-2 py-0.5 bg-blue-500/10 text-blue-500 rounded-full font-bold border border-blue-500/20">Neural Sync Active</span>
+                <p className="text-zinc-500 text-sm font-medium">Autonomous Ecosystem v1.0 • Phase 12</p>
+                <span className="text-[10px] px-2 py-0.5 bg-blue-500/10 text-blue-500 rounded-full font-bold border border-blue-500/20">Super-Intelligence Active</span>
               </div>
             </div>
-          </div>
+            ...
+            async function OptimizationPulse() {
+            const { getSystemInsights } = await import('@/antigravity/core');
+            const insights = await getSystemInsights();
+
+            return (
+            <div className="space-y-3">
+            {insights.proposals.map((p: any, i: number) => (
+            <div key={i} className="p-3 bg-white/5 rounded-xl border border-white/10 group hover:border-blue-400/30 transition-all">
+            <div className="flex items-center justify-between mb-1">
+            <span className="text-[10px] font-black text-blue-400 uppercase tracking-widest">{p.vector}</span>
+            <span className="text-[9px] text-zinc-600 font-mono">Impact:{(p.impactScore * 100).toFixed(0)}%</span>
+            </div>
+            <p className="text-[11px] text-zinc-300 leading-tight group-hover:text-white transition-colors">{p.proposal}</p>
+            </div>
+            ))}
+            </div>
+            )
+            }
+
+            async function OmniPresenceMatrix() {
+
           <nav className="flex items-center gap-2 bg-white dark:bg-zinc-900 p-1 rounded-full border border-zinc-200 dark:border-zinc-800 shadow-sm">
             <Link href="/" className="px-4 py-2 bg-zinc-100 dark:bg-zinc-800 rounded-full text-sm font-bold">Dashboard</Link>
             <Link href="/store/featured" className="px-4 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full text-sm transition-colors">Store</Link>
@@ -79,6 +99,13 @@ export default async function CommandCenter({
                 </div>
                 <Suspense fallback={<div className="h-20 bg-white/5 rounded-xl animate-pulse" />}>
                   <EvolutionInsights />
+                </Suspense>
+              </div>
+
+              <div>
+                <h3 className="text-xs font-black uppercase tracking-widest text-zinc-500 mb-4">Optimization Pulse</h3>
+                <Suspense fallback={<div className="h-20 bg-white/5 rounded-xl animate-pulse" />}>
+                  <OptimizationPulse />
                 </Suspense>
               </div>
 

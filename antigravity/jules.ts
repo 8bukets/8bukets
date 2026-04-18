@@ -152,6 +152,13 @@ export class Jules {
       }
     }
 
+    // Phase 12: Super-Intelligence Optimization
+    const { optimize } = await import('./optimization')
+    const refactors = await optimize()
+    if (refactors.length > 0) {
+      this.recordTask(`Super-Intelligence: Generated ${refactors.length} predictive refactors.`)
+    }
+
     await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
     this.memory.lastOptimization = new Date().toISOString()
     this.save()
