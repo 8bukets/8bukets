@@ -134,12 +134,22 @@ export class Jules {
     const { explore } = await import('./explorer')
     await explore()
     await this.selfRepair()
-    await this.auditDependencies()
+    // 3. Ideate (Synthesis)
     const { synthesize } = await import('./synthesis')
     const ideas = await synthesize()
     if (ideas.length > 0) {
       this.recordTask(`Synthesis: Generated ${ideas.length} architectural proposals.`)
+
+      // Phase 10: Singularity Orchestration
+      const { bootstrap } = await import('./singularity')
+      for (const idea of ideas) {
+        if (idea.complexity === 'Low' || idea.complexity === 'Medium') {
+          await bootstrap(idea)
+          this.recordTask(`Singularity: Autonomously bootstrapped ${idea.feature}.`)
+        }
+      }
     }
+
     await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
     this.memory.lastOptimization = new Date().toISOString()
     this.save()
