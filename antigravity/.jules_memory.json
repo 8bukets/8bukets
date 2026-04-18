@@ -75,6 +75,16 @@
       "id": "o5vih31uw",
       "status": "completed",
       "goal": "System Scan: Health is DEGRADED. Generated 0 new architectural ideas."
+    },
+    {
+      "id": "p200zboe0",
+      "status": "completed",
+      "goal": "System Scan: Health is DEGRADED. Generated 0 new architectural ideas."
+    },
+    {
+      "id": "o6ubw7v3x",
+      "status": "completed",
+      "goal": "Self-Repair: Applied 1 fixes."
     }
   ]
 }
