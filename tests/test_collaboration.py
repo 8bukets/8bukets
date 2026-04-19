@@ -1,7 +1,7 @@
 import pytest
 import asyncio
-from agents.base_agent import Blackboard
-from agents.collaboration_agent import CollaborationAgent
+from markposition.agents.base_agent import Blackboard
+from markposition.agents.collaboration_agent import CollaborationAgent
 
 @pytest.mark.asyncio
 async def test_collaboration_agent():

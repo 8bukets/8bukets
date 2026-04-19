@@ -1,7 +1,7 @@
 import pytest
 import asyncio
-from agents.base_agent import Blackboard, BaseAgent
-from agents.orchestrator import AgentOrchestrator
+from markposition.agents.base_agent import Blackboard, BaseAgent
+from markposition.agents.orchestrator import AgentOrchestrator
 
 class MockAgent(BaseAgent):
     def __init__(self, name, deps=None, provides=None, result=None):

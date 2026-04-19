@@ -1,3 +1,21 @@
+Metadata-Version: 2.4
+Name: markposition
+Version: 1.23.0
+Summary: Massive Scale Autonomous Sigma SEO System
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aiohttp
+Requires-Dist: beautifulsoup4
+Requires-Dist: requests
+Requires-Dist: filelock
+Requires-Dist: motor
+Requires-Dist: pymongo
+Requires-Dist: textblob
+Requires-Dist: flask
+Requires-Dist: flask-cors
+Dynamic: license-file
+
 # Markposition Scraper & Analytics
 
 A robust, asynchronous toolset for scraping and analyzing data from `https://markposition.wordpress.com/`.
@@ -29,22 +47,20 @@ A robust, asynchronous toolset for scraping and analyzing data from `https://mar
 *   `beautifulsoup4`
 *   `requests` (legacy dependency, optional for analytics)
 
-Install dependencies and the package:
+Install dependencies:
 
 ```bash
-pip install -e .
+pip install aiohttp beautifulsoup4 requests
 ```
 
 ## Usage
 
-The system now uses standardized entry points.
-
 ### 1. Scrape Data
 
-Run the asynchronous scraper via the package module:
+Run the asynchronous scraper to fetch data:
 
 ```bash
-python3 -m markposition.scraper
+python3 scraper.py
 ```
 
 **Options:**
@@ -56,10 +72,10 @@ python3 -m markposition.scraper
 
 ### 2. Generate Report
 
-Run the analytics script:
+Run the analytics script to process the JSON data:
 
 ```bash
-python3 -m markposition.analytics
+python3 analytics.py
 ```
 
 **Options:**
@@ -73,20 +89,13 @@ python3 -m markposition.analytics
 *   `unique_links.txt`: Sorted list of unique extracted URLs.
 *   `REPORT.md`: Statistical summary of the data.
 
-### Autonomous Workflows & Monitoring
+## Autonomous Workflows & GitKraken
 
-The system is designed for fully autonomous operation with integrated version control and visual monitoring.
+The system is designed for fully autonomous operation with integrated version control.
 
 ### GitHub Integration
-- **`GitHubEvolutionAgent`**: Automatically stages and commits system evolution during each cycle.
-- **GitHub Actions**: A daily workflow is configured to run the system autonomously.
-
-### Dashboard & Monitoring
-Launch the web-based dashboard to visualize system progress:
-
-```bash
-markposition-dashboard
-```
+- **`GitHubEvolutionAgent`**: Automatically stages and commits system evolution (data, results, and config) during each cycle.
+- **GitHub Actions**: A daily workflow is configured in `.github/workflows/autonomous_cycle.yml` to run the system autonomously.
 
 ### Monitoring with GitKraken
 To monitor the system's progress using GitKraken:

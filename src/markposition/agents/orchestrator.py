@@ -1,8 +1,8 @@
 import asyncio
 import logging
 from typing import List, Dict, Set
-from agents.base_agent import BaseAgent, Blackboard
-from agents.telemetry import telemetry_manager
+from .base_agent import BaseAgent, Blackboard
+from .telemetry import telemetry_manager
 
 logger = logging.getLogger("AgentOrchestrator")
 

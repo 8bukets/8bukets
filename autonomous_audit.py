@@ -56,8 +56,8 @@ def run_audit():
     # 5. Check Orchestrator Health
     print("[*] Verifying Orchestrator and Agent Registry...")
     try:
-        from agents.base_agent import BaseAgent
-        from agents.orchestrator import AgentOrchestrator
+        from markposition.agents.base_agent import BaseAgent
+        from markposition.agents.orchestrator import AgentOrchestrator
         # Simple instantiation check
         AgentOrchestrator([])
         print("[✅] Orchestrator is healthy.")

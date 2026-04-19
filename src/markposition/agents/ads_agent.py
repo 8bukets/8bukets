@@ -1,5 +1,5 @@
 from .base_agent import BaseAgent, Blackboard
-from agents.telemetry import telemetry_manager
+from .telemetry import telemetry_manager
 
 class AdsAgent(BaseAgent):
     def __init__(self):

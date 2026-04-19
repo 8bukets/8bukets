@@ -3,7 +3,7 @@
 This document outlines the standards and procedures for developing and maintaining agents within the Markposition ecosystem.
 
 ## 1. Agent Base Class
-All agents must inherit from `agents.base_agent.BaseAgent`.
+All agents must inherit from `markposition.agents.base_agent.BaseAgent`.
 
 ### Key Methods
 - `__init__(self)`: Define agent name, dependencies, and provides.
@@ -28,6 +28,6 @@ The system follows a continuous improvement cycle:
 Use `telemetry_manager.record_event()` for structural tracking of market data insights. Use `self.logger` for standard execution logs.
 
 ## 5. Coding Standards
-- Use absolute imports (e.g., `from agents.base_agent import BaseAgent`).
+- Use absolute package imports (e.g., `from markposition.agents.base_agent import BaseAgent`).
 - Ensure all I/O operations on shared files use appropriate locking (e.g., `filelock` for telemetry).
 - Redact PII in all configurations and reports.

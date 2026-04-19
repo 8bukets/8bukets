@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "markposition"
+version = "1.23.0"
+description = "Massive Scale Autonomous Sigma SEO System"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "aiohttp",
+    "beautifulsoup4",
+    "requests",
+    "filelock",
+    "motor",
+    "pymongo",
+    "textblob",
+    "flask",
+    "flask-cors"
+]
+
+[project.scripts]
+markposition = "markposition.run_system:main"
+markposition-dashboard = "markposition.dashboard:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,7 +1,7 @@
 import pytest
 import aiohttp
-from agents.research_agent import ResearchAgent
-from agents.base_agent import Blackboard
+from markposition.agents.research_agent import ResearchAgent
+from markposition.agents.base_agent import Blackboard
 
 @pytest.mark.asyncio
 async def test_domain_connectivity():

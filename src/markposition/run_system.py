@@ -1,4 +1,5 @@
 import argparse
+import sys
 import time
 import json
 import os
@@ -8,39 +9,41 @@ import asyncio
 from datetime import datetime
 
 # Orchestrator
-from agents.orchestrator import AgentOrchestrator
+from .agents.orchestrator import AgentOrchestrator
 
 # Base Agents
-from agents.health_check_agent import HealthCheckAgent
-from agents.analysis_agent import AnalysisAgent
-from agents.research_agent import ResearchAgent
-from agents.intelligence_agent import IntelligenceAgent
-from agents.monetization_agent import MonetizationAgent
-from agents.creativity_agent import CreativityAgent
-from agents.content_agent import ContentAgent
-from agents.robot_txt_agent import RobotTxtAgent
-from agents.targeting_agent import TargetingAgent
-from agents.ads_agent import AdsAgent
-from agents.bid_agent import BidAgent
-from agents.autonomous_intelligence_agent import AutonomousIntelligenceAgent
-from agents.telemetry_agent import TelemetryAgent
-from agents.sigma_agent import SixSigmaAgent
-from agents.architect_agent import ArchitectAgent
-from agents.github_evolution_agent import GitHubEvolutionAgent
-from agents.meta_coding_agent import MetaCodingAgent
-from agents.jules_evolution_agent import JulesEvolutionAgent
-from agents.gitkraken_evolution_agent import GitKrakenEvolutionAgent
-from agents.docker_evolution_agent import DockerEvolutionAgent
-from agents.collaboration_agent import CollaborationAgent
-from agents.mongodb_agent import MongoDBAgent
-from agents.system_audit_agent import SystemAuditAgent
-from agents.documentation_agent import DocumentationAgent
-from agents.performance_optimization_agent import PerformanceOptimizationAgent
+from .agents.health_check_agent import HealthCheckAgent
+from .agents.analysis_agent import AnalysisAgent
+from .agents.research_agent import ResearchAgent
+from .agents.intelligence_agent import IntelligenceAgent
+from .agents.monetization_agent import MonetizationAgent
+from .agents.creativity_agent import CreativityAgent
+from .agents.content_agent import ContentAgent
+from .agents.robot_txt_agent import RobotTxtAgent
+from .agents.targeting_agent import TargetingAgent
+from .agents.ads_agent import AdsAgent
+from .agents.bid_agent import BidAgent
+from .agents.autonomous_intelligence_agent import AutonomousIntelligenceAgent
+from .agents.telemetry_agent import TelemetryAgent
+from .agents.sigma_agent import SixSigmaAgent
+from .agents.architect_agent import ArchitectAgent
+from .agents.github_evolution_agent import GitHubEvolutionAgent
+from .agents.meta_coding_agent import MetaCodingAgent
+from .agents.jules_evolution_agent import JulesEvolutionAgent
+from .agents.gitkraken_evolution_agent import GitKrakenEvolutionAgent
+from .agents.docker_evolution_agent import DockerEvolutionAgent
+from .agents.collaboration_agent import CollaborationAgent
+from .agents.mongodb_agent import MongoDBAgent
+from .agents.system_audit_agent import SystemAuditAgent
+from .agents.documentation_agent import DocumentationAgent
+from .agents.performance_optimization_agent import PerformanceOptimizationAgent
+from .agents.notification_agent import NotificationAgent
+from .agents.sigma_optimization_agent import SigmaOptimizationAgent
 
 # Expansion Agents
-from agents.swarm_agent import SwarmAgent
-from agents.backup_agent import BackupAgent, CEOBackupAgent
-from agents.auth import AuthManager
+from .agents.swarm_agent import SwarmAgent
+from .agents.backup_agent import BackupAgent, CEOBackupAgent
+from .agents.auth import AuthManager
 
 # Configure Logging
 logging.basicConfig(
@@ -54,7 +57,7 @@ def run_scraper():
     logger.info("Starting Scraper...")
     try:
         result = subprocess.run(
-            ["python3", "scraper.py", "--limit", "1"],
+            [sys.executable, "-m", "markposition.scraper", "--limit", "1"],
             capture_output=True,
             text=True
         )
@@ -151,7 +154,7 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         MetaCodingAgent(), JulesEvolutionAgent(), GitKrakenEvolutionAgent(),
         DockerEvolutionAgent(), GitHubEvolutionAgent(), CollaborationAgent(),
         MongoDBAgent(), PerformanceOptimizationAgent(), SystemAuditAgent(),
-        DocumentationAgent()
+        DocumentationAgent(), NotificationAgent(), SigmaOptimizationAgent()
     ]
 
     # 2. Expanded SEO Swarm (200 Agents)
@@ -187,6 +190,12 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
     generate_daily_report(context, report_file)
 
     logger.info("=== Cycle Complete ===")
+
+def main():
+    try:
+        asyncio.run(main_async())
+    except KeyboardInterrupt:
+        pass
 
 async def main_async():
     parser = argparse.ArgumentParser(description="Massive Scale Autonomous System")

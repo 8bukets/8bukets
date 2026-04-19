@@ -4,7 +4,7 @@ import os
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import analytics
-from agents.telemetry import telemetry_manager
+from .telemetry import telemetry_manager
 
 class AnalysisAgent(BaseAgent):
     def __init__(self):

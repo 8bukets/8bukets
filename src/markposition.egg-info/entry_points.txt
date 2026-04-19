@@ -1,0 +1,3 @@
+[console_scripts]
+markposition = markposition.run_system:main
+markposition-dashboard = markposition.dashboard:main
