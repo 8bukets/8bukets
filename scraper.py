@@ -59,15 +59,17 @@ class OracleNewsScraper:
 
     async def fetch_page(self, session: aiohttp.ClientSession) -> Optional[str]:
         try:
-            async with session.get(BASE_URL) as response:
+            # Added timeout for performance/safety (10s)
+            async with session.get(BASE_URL, timeout=10) as response:
                 response.raise_for_status()
                 return await response.text()
-        except aiohttp.ClientError as e:
+        except (aiohttp.ClientError, asyncio.TimeoutError) as e:
             logger.error(f"Error fetching page: {e}")
             return None
 
     def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+        # Optimization: Use lxml for faster parsing
+        soup = BeautifulSoup(html, 'lxml')
 
         # Find comments containing the news section
         comments = soup.find_all(string=lambda text: isinstance(text, Comment))
@@ -81,7 +83,8 @@ class OracleNewsScraper:
             logger.warning("Could not find hidden news section in HTML comments.")
             return []
 
-        news_soup = BeautifulSoup(news_html, 'html.parser')
+        # Optimization: Use lxml for fragment parsing as well
+        news_soup = BeautifulSoup(news_html, 'lxml')
         articles = news_soup.find_all('li', class_='rc92w3')
         page_posts = []
 
