@@ -11,9 +11,10 @@ from agents.research_agent import ResearchAgent
 from agents.content_creation_agent import ContentCreationAgent
 from agents.programmatic_ads_agent import ProgrammaticAdsAgent
 from scraper import OracleNewsScraper
+from utils.log_formatter import setup_colored_logging
 
 # Configure Orchestrator Logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+setup_colored_logging()
 logger = logging.getLogger("AutonomousIntelligenceAgent")
 
 class AutonomousIntelligenceAgent:
