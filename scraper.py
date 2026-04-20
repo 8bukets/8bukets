@@ -28,6 +28,10 @@ class BlogScraper:
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
+        # Use a session for connection pooling (Performance Optimization)
+        self.session = requests.Session()
+        self.session.headers.update(self.headers)
+
         self.data = []
         self.conn = None
         self.init_db()
@@ -180,7 +184,8 @@ class BlogScraper:
 
         logger.info(f"Fetching {url}...")
         try:
-            response = requests.get(url, headers=self.headers, timeout=10)
+            # reuse session
+            response = self.session.get(url, timeout=10)
             response.raise_for_status()
             return response.content
         except requests.RequestException as e:
