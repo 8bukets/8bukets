@@ -6,3 +6,75 @@ npm error enoent Could not read package.json: Error: ENOENT: no such file or dir
 npm error enoent This is related to npm not being able to find a file.
 npm error enoent
 npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-04-20T02_25_32_121Z-debug-0.log
+npm error code ENOENT
+npm error syscall open
+npm error path /Users/filipkeser/Documents/Antigravity/my-app/package.json
+npm error errno -2
+npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/Users/filipkeser/Documents/Antigravity/my-app/package.json'
+npm error enoent This is related to npm not being able to find a file.
+npm error enoent
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-04-20T02_25_37_348Z-debug-0.log
+npm error code ENOENT
+npm error syscall open
+npm error path /Users/filipkeser/Documents/Antigravity/my-app/package.json
+npm error errno -2
+npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/Users/filipkeser/Documents/Antigravity/my-app/package.json'
+npm error enoent This is related to npm not being able to find a file.
+npm error enoent
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-04-20T02_25_47_521Z-debug-0.log
+npm error code ENOENT
+npm error syscall open
+npm error path /Users/filipkeser/Documents/Antigravity/my-app/package.json
+npm error errno -2
+npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/Users/filipkeser/Documents/Antigravity/my-app/package.json'
+npm error enoent This is related to npm not being able to find a file.
+npm error enoent
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-04-20T02_25_57_670Z-debug-0.log
+npm error code ENOENT
+npm error syscall open
+npm error path /Users/filipkeser/Documents/Antigravity/my-app/package.json
+npm error errno -2
+npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/Users/filipkeser/Documents/Antigravity/my-app/package.json'
+npm error enoent This is related to npm not being able to find a file.
+npm error enoent
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-04-20T02_26_07_897Z-debug-0.log
+npm error code ENOENT
+npm error syscall open
+npm error path /Users/filipkeser/Documents/Antigravity/my-app/package.json
+npm error errno -2
+npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/Users/filipkeser/Documents/Antigravity/my-app/package.json'
+npm error enoent This is related to npm not being able to find a file.
+npm error enoent
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-04-20T02_26_18_128Z-debug-0.log
+npm error code ENOENT
+npm error syscall open
+npm error path /Users/filipkeser/Documents/Antigravity/my-app/package.json
+npm error errno -2
+npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/Users/filipkeser/Documents/Antigravity/my-app/package.json'
+npm error enoent This is related to npm not being able to find a file.
+npm error enoent
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-04-20T02_26_28_330Z-debug-0.log
+npm error code ENOENT
+npm error syscall open
+npm error path /Users/filipkeser/Documents/Antigravity/my-app/package.json
+npm error errno -2
+npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/Users/filipkeser/Documents/Antigravity/my-app/package.json'
+npm error enoent This is related to npm not being able to find a file.
+npm error enoent
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-04-20T02_26_38_608Z-debug-0.log
+npm error code ENOENT
+npm error syscall open
+npm error path /Users/filipkeser/Documents/Antigravity/my-app/package.json
+npm error errno -2
+npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/Users/filipkeser/Documents/Antigravity/my-app/package.json'
+npm error enoent This is related to npm not being able to find a file.
+npm error enoent
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-04-20T02_26_48_863Z-debug-0.log
+npm error code ENOENT
+npm error syscall open
+npm error path /Users/filipkeser/Documents/Antigravity/my-app/package.json
+npm error errno -2
+npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/Users/filipkeser/Documents/Antigravity/my-app/package.json'
+npm error enoent This is related to npm not being able to find a file.
+npm error enoent
+npm error A complete log of this run can be found in: /Users/filipkeser/.npm/_logs/2026-04-20T02_26_59_116Z-debug-0.log
