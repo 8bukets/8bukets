@@ -9,14 +9,14 @@ import argparse
 import sys
 import sqlite3
 from datetime import datetime
+from utils.logging_utils import ColorFormatter, Colors
 
 # Configure logging
+handler = logging.StreamHandler(sys.stdout)
+handler.setFormatter(ColorFormatter('%(asctime)s - %(levelname)s - %(message)s'))
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.StreamHandler(sys.stdout)
-    ]
+    handlers=[handler]
 )
 logger = logging.getLogger(__name__)
 
@@ -288,8 +288,16 @@ class BlogScraper:
                 self.conn = None
 
         self.save_json()
-        logger.info(f"Scraped {len(self.data)} articles in total.")
-        logger.info(f"New items added to database: {new_items_count}")
+
+        # Summary Box
+        print(f"\n{Colors.CYAN}{'='*40}{Colors.RESET}")
+        print(f"{Colors.BOLD}🎉 Scraping Completed!{Colors.RESET}")
+        print(f"{Colors.CYAN}{'='*40}{Colors.RESET}")
+        print(f"📄 Total Scraped: {Colors.BOLD}{len(self.data)}{Colors.RESET}")
+        print(f"🆕 New Items:     {Colors.GREEN}{new_items_count}{Colors.RESET}")
+        print(f"💾 JSON Output:   {self.output_json}")
+        print(f"🗄️  DB Output:     {self.db_name}")
+        print(f"{Colors.CYAN}{'='*40}{Colors.RESET}\n")
 
     def save_json(self):
         try:
