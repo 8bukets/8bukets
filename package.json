@@ -9,9 +9,9 @@
     "lint": "eslint",
     "trace": "next internal trace .next/dev/trace-turbopack",
     "test": "vitest run",
-    "explore": "tsx antigravity/explorer.ts",
-    "evolve": "tsx antigravity/evolution.ts",
-    "daily": "tsx -e \"import { jules } from './antigravity/jules'; jules.executeWorkCycle()\"",
+    "explore": "tsx --env-file=.env antigravity/explorer.ts",
+    "evolve": "tsx --env-file=.env antigravity/evolution.ts",
+    "daily": "tsx --env-file=.env -e \"import { jules } from './antigravity/jules'; jules.executeWorkCycle()\"",
     "invoke-hello": "curl -L -X POST 'https://tevdxaufsnpsbvvurddg.supabase.co/functions/v1/hello-world' -H \"Authorization: Bearer $NEXT_PUBLIC_SUPABASE_ANON_KEY\" --data '{\"name\":\"Antigravity\"}'"
   },
   "dependencies": {
