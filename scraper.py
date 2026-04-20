@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import json
 import csv
 import re
+import os
 import argparse
 import logging
 import time
@@ -28,6 +29,14 @@ class MarkPositionScraperAsync:
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+
+    def sanitize_for_csv(self, text: str) -> str:
+        """Prevent CSV injection."""
+        if not text:
+            return ""
+        if text.startswith(('=', '+', '-', '@')):
+            return "'" + text
+        return text
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
