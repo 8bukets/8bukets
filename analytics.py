@@ -4,6 +4,18 @@ from collections import Counter
 from urllib.parse import urlparse
 from datetime import datetime
 import sys
+import html
+
+def escape_markdown(text):
+    """Escape text for Markdown tables and prevent HTML injection."""
+    if not text:
+        return ""
+    text = str(text)
+    # Escape HTML characters to prevent XSS
+    text = html.escape(text)
+    # Escape pipe characters to prevent table injection
+    text = text.replace('|', r'\|')
+    return text
 
 class Colors:
     HEADER = '\033[95m'
@@ -136,7 +148,7 @@ def generate_report(data, output_file):
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
     for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+        md.append(f"| {escape_markdown(year)} | {count} |")
 
     md.append("\n## Authors")
     for author, count in author_counts:

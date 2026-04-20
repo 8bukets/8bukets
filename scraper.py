@@ -178,7 +178,12 @@ class MarkPositionScraperAsync:
                 if response.status == 404:
                     return None
                 response.raise_for_status()
-                return await response.text()
+                # Limit response size to 5MB to prevent memory exhaustion (DoS)
+                content = await response.read()
+                if len(content) > 5 * 1024 * 1024:
+                    logger.warning(f"Page {page_num} exceeded size limit. Skipping.")
+                    return None
+                return content.decode('utf-8', errors='ignore')
         except aiohttp.ClientError as e:
             logger.error(f"Error fetching page {page_num}: {e}")
             return None
