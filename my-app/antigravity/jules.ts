@@ -175,6 +175,12 @@ export class Jules {
       this.recordTask('Efficiency Audit: Physical footprint warning detected.')
     }
 
+    // Phase 14: Sovereign Orchestration (Super-Connectivity)
+    const { probeSuperConnectivity, performNeuralHandshake } = await import('./orchestration')
+    await probeSuperConnectivity()
+    await performNeuralHandshake()
+    this.recordTask('Orchestration: Super-connectivity pulses confirmed across Sovereign Bridge.')
+
     await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
     this.memory.lastOptimization = new Date().toISOString()
     this.save()

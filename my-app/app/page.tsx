@@ -28,8 +28,8 @@ export default async function CommandCenter({ params, searchParams }: PageProps)
             <div>
               <h1 className="text-2xl font-bold tracking-tight">Antigravity Command</h1>
               <div className="flex items-center gap-2">
-                <p className="text-zinc-500 text-sm font-medium">Autonomous Ecosystem v1.0 • Phase 12</p>
-                <span className="text-[10px] px-2 py-0.5 bg-blue-500/10 text-blue-500 rounded-full font-bold border border-blue-500/20">Super-Intelligence Active</span>
+                <p className="text-zinc-500 text-sm font-medium">Autonomous Ecosystem v1.0 • Phase 14</p>
+                <span className="text-[10px] px-2 py-0.5 bg-blue-500/10 text-blue-500 rounded-full font-bold border border-blue-500/20 underline decoration-blue-500/30 underline-offset-4">Sovereign Bridge Active</span>
               </div>
             </div>
           </div>
@@ -81,6 +81,13 @@ export default async function CommandCenter({ params, searchParams }: PageProps)
                 </div>
                 <Suspense fallback={<div className="h-20 bg-white/5 rounded-xl animate-pulse" />}>
                   <EvolutionInsights />
+                </Suspense>
+              </div>
+
+              <div>
+                <h3 className="text-xs font-black uppercase tracking-widest text-zinc-500 mb-4">Sovereign Bridge Probes</h3>
+                <Suspense fallback={<div className="h-20 bg-white/5 rounded-xl animate-pulse" />}>
+                  <SovereignBridgeMatrix />
                 </Suspense>
               </div>
 
@@ -221,8 +228,33 @@ async function EvolutionInsights() {
   )
 }
 
+async function SovereignBridgeMatrix() {
+  const insights = await getSystemInsights();
+
+  return (
+    <div className="space-y-2">
+      {insights.connectivity.map((p: any, i: number) => (
+        <div key={i} className="flex items-center justify-between p-3 bg-white/5 rounded-xl border border-white/10">
+          <div className="flex flex-col gap-0.5">
+            <span className="text-[10px] font-black text-zinc-300 uppercase tracking-tighter">{p.target}</span>
+            <span className="text-[9px] text-zinc-500 font-mono">{p.latency.toFixed(1)}ms</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-12 h-1 bg-zinc-800 rounded-full overflow-hidden">
+              <div 
+                className={`h-full ${p.status === 'optimal' ? 'bg-blue-500' : 'bg-yellow-500'}`} 
+                style={{ width: `${p.syncDepth * 100}%` }} 
+              />
+            </div>
+            <div className={`w-1.5 h-1.5 rounded-full ${p.status === 'optimal' ? 'bg-blue-400 animate-pulse' : 'bg-yellow-500'}`} />
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 async function OptimizationPulse() {
-  const { getSystemInsights } = await import('@/antigravity/core');
   const insights = await getSystemInsights();
 
   return (
@@ -241,13 +273,12 @@ async function OptimizationPulse() {
 }
 
 async function OmniPresenceMatrix() {
-  const { getSystemInsights } = await import('@/antigravity/core');
   const insights = await getSystemInsights();
 
   return (
     <div className="space-y-3">
       {insights.relay.map((node: any, i: number) => (
-        <div key={i} className="p-3 bg-white/5 rounded-xl border border-white/10 group hover:purple-500/30 transition-all">
+        <div key={i} className="p-3 bg-white/5 rounded-xl border border-white/10 group hover:border-purple-500/30 transition-all">
           <div className="flex items-center justify-between mb-2">
             <span className="text-[10px] font-black text-purple-400 uppercase tracking-widest">{node.environment}</span>
             <div className="flex gap-1">
@@ -268,7 +299,6 @@ async function OmniPresenceMatrix() {
 }
 
 async function NeuralNetworkList() {
-  const { getSystemInsights } = await import('@/antigravity/core');
   const insights = await getSystemInsights();
 
   return (
@@ -314,7 +344,6 @@ async function ActivityFeed() {
 }
 
 async function PersistenceFleetBar() {
-  const { getSystemInsights } = await import('@/antigravity/core');
   const insights = await getSystemInsights();
 
   return (
