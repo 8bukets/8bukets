@@ -11,14 +11,13 @@ export async function register() {
     console.log('[Instrumentation] Initializing Antigravity Core...')
     
     try {
-      // Use dynamic import to avoid build-time tracing issues
-      // @ts-ignore
+      // Use relative import for runtime resolution in Next.js 16
       const { jules } = await import('./antigravity/jules')
       if (jules && typeof jules.runDailyRoutine === 'function') {
         await jules.runDailyRoutine()
       }
     } catch (e) {
-      console.warn('[Instrumentation] Autonomous routine skipped: Could not resolve Jules.')
+      console.warn('[Instrumentation] Jules resolution failed. System remaining in manual mode.')
     }
   }
 }
