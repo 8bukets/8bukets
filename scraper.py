@@ -3,6 +3,7 @@ import asyncio
 from bs4 import BeautifulSoup, Comment
 import json
 import csv
+import os
 import re
 import argparse
 import logging
@@ -22,9 +23,17 @@ BASE_URL = "https://www.oracle.com/news/"
 
 class OracleNewsScraper:
     def __init__(self, output_json: str, output_csv: str, output_txt: str):
-        self.output_json = output_json
-        self.output_csv = output_csv
-        self.output_txt = output_txt
+        self.output_json = self.validate_path(output_json)
+        self.output_csv = self.validate_path(output_csv)
+        self.output_txt = self.validate_path(output_txt)
+
+    def validate_path(self, path: str) -> str:
+        """Ensure the path is within the current working directory to prevent path traversal."""
+        base_dir = os.getcwd()
+        full_path = os.path.abspath(os.path.join(base_dir, path))
+        if os.path.commonpath([base_dir, full_path]) != base_dir:
+            raise ValueError(f"Invalid path: {path}. Output file must be within the current working directory.")
+        return full_path
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -59,10 +68,12 @@ class OracleNewsScraper:
 
     async def fetch_page(self, session: aiohttp.ClientSession) -> Optional[str]:
         try:
-            async with session.get(BASE_URL) as response:
+            # Add timeout to prevent indefinite hanging (DoS risk)
+            timeout = aiohttp.ClientTimeout(total=30)
+            async with session.get(BASE_URL, timeout=timeout) as response:
                 response.raise_for_status()
                 return await response.text()
-        except aiohttp.ClientError as e:
+        except (aiohttp.ClientError, asyncio.TimeoutError) as e:
             logger.error(f"Error fetching page: {e}")
             return None
 
