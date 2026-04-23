@@ -1999,5 +1999,16 @@
             "ad_count": 3,
             "target_persona": "AdTech Professional"
         }
+    },
+    {
+        "timestamp": 1776934523.269956,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
     }
 ]
