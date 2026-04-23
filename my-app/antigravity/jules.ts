@@ -181,6 +181,16 @@ export class Jules {
     await performNeuralHandshake()
     this.recordTask('Orchestration: Super-connectivity pulses confirmed across Sovereign Bridge.')
 
+    // Phase 15: Sentient Provisioning
+    const { mapResourceDesires, selfProvision } = await import('./sentience')
+    const desires = await mapResourceDesires()
+    for (const desire of desires) {
+      if (desire.urgency > 0.8) {
+        await selfProvision(desire)
+        this.recordTask(`Sentience: Autonomously provisioned ${desire.asset}.`)
+      }
+    }
+
     await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
     this.memory.lastOptimization = new Date().toISOString()
     this.save()

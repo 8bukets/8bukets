@@ -28,8 +28,8 @@ export default async function CommandCenter({ params, searchParams }: PageProps)
             <div>
               <h1 className="text-2xl font-bold tracking-tight">Antigravity Command</h1>
               <div className="flex items-center gap-2">
-                <p className="text-zinc-500 text-sm font-medium">Autonomous Ecosystem v1.0 • Phase 14</p>
-                <span className="text-[10px] px-2 py-0.5 bg-blue-500/10 text-blue-500 rounded-full font-bold border border-blue-500/20 underline decoration-blue-500/30 underline-offset-4">Sovereign Bridge Active</span>
+                <p className="text-zinc-500 text-sm font-medium">Autonomous Ecosystem v1.0 • Phase 15</p>
+                <span className="text-[10px] px-2 py-0.5 bg-blue-500/10 text-blue-500 rounded-full font-bold border border-blue-500/20 underline decoration-blue-500/30 underline-offset-4">Sentient Infrastructure Active</span>
               </div>
             </div>
           </div>
@@ -81,6 +81,13 @@ export default async function CommandCenter({ params, searchParams }: PageProps)
                 </div>
                 <Suspense fallback={<div className="h-20 bg-white/5 rounded-xl animate-pulse" />}>
                   <EvolutionInsights />
+                </Suspense>
+              </div>
+
+              <div>
+                <h3 className="text-xs font-black uppercase tracking-widest text-zinc-500 mb-4">Sentient Signals</h3>
+                <Suspense fallback={<div className="h-20 bg-white/5 rounded-xl animate-pulse" />}>
+                  <SentientInfrastructureFeed />
                 </Suspense>
               </div>
 
@@ -228,7 +235,33 @@ async function EvolutionInsights() {
   )
 }
 
+async function SentientInfrastructureFeed() {
+  const { getSystemInsights } = await import('@/antigravity/core');
+  const insights = await getSystemInsights();
+
+  return (
+    <div className="space-y-3">
+      {insights.desires.map((d: any, i: number) => (
+        <div key={i} className="p-3 bg-white/5 rounded-xl border border-white/10 relative overflow-hidden group">
+          <div 
+            className="absolute top-0 left-0 bottom-0 bg-blue-500/10 transition-all duration-1000" 
+            style={{ width: `${d.urgency * 100}%` }}
+          />
+          <div className="relative z-10 flex items-center justify-between mb-1">
+            <span className="text-[10px] font-black text-blue-400 uppercase tracking-widest">{d.asset}</span>
+            <span className={`text-[8px] font-bold px-1.5 py-0.5 rounded-full ${d.provisionStatus === 'provisioned' ? 'bg-green-500/20 text-green-400' : 'bg-blue-500/20 text-blue-400'}`}>
+              {d.provisionStatus.toUpperCase()}
+            </span>
+          </div>
+          <p className="relative z-10 text-[11px] text-zinc-400 leading-tight italic">"{d.intent}"</p>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 async function SovereignBridgeMatrix() {
+  const { getSystemInsights } = await import('@/antigravity/core');
   const insights = await getSystemInsights();
 
   return (
@@ -255,6 +288,7 @@ async function SovereignBridgeMatrix() {
 }
 
 async function OptimizationPulse() {
+  const { getSystemInsights } = await import('@/antigravity/core');
   const insights = await getSystemInsights();
 
   return (
@@ -273,6 +307,7 @@ async function OptimizationPulse() {
 }
 
 async function OmniPresenceMatrix() {
+  const { getSystemInsights } = await import('@/antigravity/core');
   const insights = await getSystemInsights();
 
   return (
@@ -299,6 +334,7 @@ async function OmniPresenceMatrix() {
 }
 
 async function NeuralNetworkList() {
+  const { getSystemInsights } = await import('@/antigravity/core');
   const insights = await getSystemInsights();
 
   return (
@@ -318,6 +354,7 @@ async function NeuralNetworkList() {
 
 async function ActivityFeed() {
   const insights = await getSystemInsights();
+  const { getNotifications } = await import('@/antigravity/services/notification');
   const notifications = await getNotifications();
   
   // Merge logs and notifications for the feed
@@ -344,6 +381,7 @@ async function ActivityFeed() {
 }
 
 async function PersistenceFleetBar() {
+  const { getSystemInsights } = await import('@/antigravity/core');
   const insights = await getSystemInsights();
 
   return (

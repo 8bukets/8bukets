@@ -175,6 +175,7 @@ export async function getSystemInsights() {
   const { runSecurityAudit } = await import('./services/cognitive_security')
   const { auditEfficiency } = await import('./efficiency')
   const { probeSuperConnectivity } = await import('./orchestration')
+  const { mapResourceDesires } = await import('./sentience')
   
   const ideas = await synthesize()
   const persistence = await getPersistenceHealth()
@@ -183,6 +184,7 @@ export async function getSystemInsights() {
   const security = await runSecurityAudit()
   const efficiency = await auditEfficiency()
   const connectivity = await probeSuperConnectivity()
+  const desires = await mapResourceDesires()
 
   // Phase 12: Pass partial insights to optimizer to avoid recursion
   const proposals = await optimize({
@@ -211,6 +213,7 @@ export async function getSystemInsights() {
     security,
     efficiency,
     connectivity,
+    desires,
     uptime: process.uptime()
   }
 }
