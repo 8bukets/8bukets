@@ -36,6 +36,7 @@ from agents.mongodb_agent import MongoDBAgent
 from agents.system_audit_agent import SystemAuditAgent
 from agents.documentation_agent import DocumentationAgent
 from agents.performance_optimization_agent import PerformanceOptimizationAgent
+from agents.google_edge_agent import GoogleEdgeAgent
 
 # Expansion Agents
 from agents.swarm_agent import SwarmAgent
@@ -144,7 +145,7 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
     # 1. Base Intelligence (21 Agents)
     agents = [
         HealthCheckAgent(), RobotTxtAgent(), AnalysisAgent(),
-        ResearchAgent(), IntelligenceAgent(), TargetingAgent(),
+        ResearchAgent(), GoogleEdgeAgent(), IntelligenceAgent(), TargetingAgent(),
         CreativityAgent(), AdsAgent(), BidAgent(),
         MonetizationAgent(), ContentAgent(), AutonomousIntelligenceAgent(),
         TelemetryAgent(), SixSigmaAgent(), ArchitectAgent(),

@@ -4,7 +4,7 @@ import json
 
 class IntelligenceAgent(BaseAgent):
     def __init__(self):
-        super().__init__("IntelligenceAgent", dependencies=["analysis_stats", "research_data"], provides=["intelligence_insights", "synchronization_level"])
+        super().__init__("IntelligenceAgent", dependencies=["analysis_stats", "research_data", "google_edge_knowledge"], provides=["intelligence_insights", "synchronization_level"])
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
         self.logger.info("Running Intelligence Synchronization & External World Collaboration...")
@@ -36,6 +36,14 @@ class IntelligenceAgent(BaseAgent):
             top_comp = max(competitors.values(), key=lambda x: x['relevance'] == 'High', default=None)
             if top_comp:
                 insights.append(f"Strategic Focus: {top_comp['findings']}")
+
+        # 4. Integrate Google Edge Knowledge
+        edge_knowledge = blackboard.get("google_edge_knowledge", {})
+        if edge_knowledge and "sections" in edge_knowledge:
+            insights.append(f"Google Edge Knowledge Integrated: {len(edge_knowledge['sections'])} sections extracted.")
+            if len(edge_knowledge["sections"]) > 0:
+                first_heading = edge_knowledge["sections"][0].get("heading", "N/A")
+                insights.append(f"Top Edge AI Insight: {first_heading}")
 
         return {
             "intelligence_insights": insights,
