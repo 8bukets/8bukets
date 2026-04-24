@@ -33,6 +33,7 @@ from agents.gitkraken_evolution_agent import GitKrakenEvolutionAgent
 from agents.docker_evolution_agent import DockerEvolutionAgent
 from agents.collaboration_agent import CollaborationAgent
 from agents.mongodb_agent import MongoDBAgent
+from agents.mysql_agent import MySQLAgent
 from agents.system_audit_agent import SystemAuditAgent
 from agents.documentation_agent import DocumentationAgent
 from agents.performance_optimization_agent import PerformanceOptimizationAgent
@@ -150,8 +151,8 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         TelemetryAgent(), SixSigmaAgent(), ArchitectAgent(),
         MetaCodingAgent(), JulesEvolutionAgent(), GitKrakenEvolutionAgent(),
         DockerEvolutionAgent(), GitHubEvolutionAgent(), CollaborationAgent(),
-        MongoDBAgent(), PerformanceOptimizationAgent(), SystemAuditAgent(),
-        DocumentationAgent()
+        MongoDBAgent(), MySQLAgent(), PerformanceOptimizationAgent(),
+        SystemAuditAgent(), DocumentationAgent()
     ]
 
     # 2. Expanded SEO Swarm (200 Agents)

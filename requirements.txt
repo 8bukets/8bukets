@@ -6,3 +6,5 @@ pytest-asyncio
 filelock
 motor
 pymongo
+aiomysql
+cryptography
