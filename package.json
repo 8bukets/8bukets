@@ -1,5 +1,10 @@
 {
   "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^5.1.1",
     "tsx": "^4.21.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.4"
   }
 }
