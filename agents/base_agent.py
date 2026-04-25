@@ -37,6 +37,19 @@ class Blackboard:
     def get_proposals(self) -> List[Dict[str, Any]]:
         return self._proposals
 
+    async def report_issue(self, agent_name: str, issue_type: str, details: Dict[str, Any] = None):
+        """Allows an agent to report a system issue to the blackboard."""
+        async with self._lock:
+            issues = self._data.get("system_issues", [])
+            issues.append({
+                "id": f"issue-{len(issues)+1}",
+                "type": issue_type,
+                "reporter": agent_name,
+                "timestamp": asyncio.get_event_loop().time(),
+                "details": details or {}
+            })
+            self._data["system_issues"] = issues
+
     def get_all(self) -> Dict[str, Any]:
         return self._data.copy()
 
