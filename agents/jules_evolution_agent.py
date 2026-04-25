@@ -38,8 +38,6 @@ class JulesEvolutionAgent(BaseAgent):
         if not api_key:
             self.logger.warning("GEMINI_API_KEY is not set. Skipping autonomous parameter optimization.")
         else:
-            url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={api_key}"
-
             prompt = f"""
             You are an AI evolving a massive-scale autonomous system.
             Based on these Gemma 4 best practices and overview: {gemma_context}
@@ -59,31 +57,46 @@ class JulesEvolutionAgent(BaseAgent):
                 ]
             }
 
-            try:
-                resp = requests.post(url, headers=headers, json=payload)
-                resp.raise_for_status()
-                response_data = resp.json()
+            models_to_try = [
+                "gemini-flash-latest",
+                "gemini-2.5-flash",
+                "gemini-1.5-flash"
+            ]
 
-                # Extract text from response
-                text = response_data['candidates'][0]['content']['parts'][0]['text']
+            success = False
+            for model in models_to_try:
+                url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
+                self.logger.info(f"Attempting autonomous evolution with model: {model}")
+                try:
+                    resp = requests.post(url, headers=headers, json=payload, timeout=15)
+                    resp.raise_for_status()
+                    response_data = resp.json()
 
-                # Clean markdown formatting if present
-                text = text.replace("```json", "").replace("```", "").strip()
+                    # Extract text from response
+                    text = response_data['candidates'][0]['content']['parts'][0]['text']
 
-                proposed_params = json.loads(text)
+                    # Clean markdown formatting if present
+                    text = text.replace("```json", "").replace("```", "").strip()
 
-                # Basic validation
-                if isinstance(proposed_params, dict) and "current_version" in proposed_params:
-                    new_params = proposed_params
-                    self.logger.info(f"Gemini proposed new parameters: {new_params}")
+                    proposed_params = json.loads(text)
 
-                    # Apply new params
-                    with open(params_path, "w", encoding="utf-8") as f:
-                        json.dump(new_params, f, indent=4)
-                else:
-                    self.logger.warning("Gemini returned invalid format.")
-            except Exception as e:
-                self.logger.error(f"Gemini API call failed: {e}")
+                    # Basic validation
+                    if isinstance(proposed_params, dict) and "current_version" in proposed_params:
+                        new_params = proposed_params
+                        self.logger.info(f"Gemini proposed new parameters using {model}: {new_params}")
+
+                        # Apply new params
+                        with open(params_path, "w", encoding="utf-8") as f:
+                            json.dump(new_params, f, indent=4)
+                        success = True
+                        break # Optimization successful, stop fallback loop
+                    else:
+                        self.logger.warning(f"Model {model} returned invalid format.")
+                except Exception as e:
+                    self.logger.warning(f"Gemini API call failed for model {model}: {e}")
+
+            if not success:
+                self.logger.error("All Gemini model fallbacks exhausted. Autonomous parameter optimization aborted.")
 
         # Build the 'Collaboration Nexus' - a shared strategy for specialized agents
         strategy = {
