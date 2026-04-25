@@ -15,11 +15,11 @@ jobs:
         service: [backend, scraper]
     steps:
     - name: Checkout Code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set Up Node.js
       if: matrix.service == 'backend'
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: 20
 
@@ -33,7 +33,7 @@ jobs:
 
     - name: Set Up Python
       if: matrix.service == 'scraper'
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: 3.11
 
@@ -53,7 +53,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Authenticate with GCP
       uses: google-github-actions/auth@v1
