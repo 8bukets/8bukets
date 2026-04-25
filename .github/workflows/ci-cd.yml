@@ -1,0 +1,88 @@
+name: CI/CD Pipeline with GCP
+
+on:
+  push:
+    branches:
+      - jules/scraper-markposition-17752547678215960211
+  pull_request:
+
+jobs:
+  test:
+    name: Test and Lint Services
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        service: [backend, scraper]
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set Up Node.js
+      if: matrix.service == 'backend'
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20
+
+    - name: Install Frontend/Backend Dependencies
+      if: matrix.service == 'backend'
+      run: npm install
+
+    - name: Run Backend Tests
+      if: matrix.service == 'backend'
+      run: npm test
+
+    - name: Set Up Python
+      if: matrix.service == 'scraper'
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+
+    - name: Install Scraper Dependencies
+      if: matrix.service == 'scraper'
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run Scraper Tests
+      if: matrix.service == 'scraper'
+      run: pytest
+
+  build-and-deploy:
+    name: Build and Deploy to GCP
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Authenticate with GCP
+      uses: google-github-actions/auth@v1
+      with:
+        credentials_json: ${{ secrets.GCP_KEY }}
+
+    - name: Configure Docker to Use GCR
+      run: gcloud auth configure-docker
+
+    - name: Build and Push Backend Image
+      run: |
+        docker build -t gcr.io/${{ secrets.GCP_PROJECT }}/backend ./backend
+        docker push gcr.io/${{ secrets.GCP_PROJECT }}/backend
+
+    - name: Build and Push Frontend Image
+      run: |
+        docker build -t gcr.io/${{ secrets.GCP_PROJECT }}/frontend ./frontend
+        docker push gcr.io/${{ secrets.GCP_PROJECT }}/frontend
+
+    - name: Build and Push Scraper Image
+      run: |
+        docker build -t gcr.io/${{ secrets.GCP_PROJECT }}/scraper .
+        docker push gcr.io/${{ secrets.GCP_PROJECT }}/scraper
+
+    - name: Deploy to GKE or Cloud Run
+      run: |
+        # Example for Cloud Run Deployment
+        gcloud run deploy backend \
+          --image gcr.io/${{ secrets.GCP_PROJECT }}/backend \
+          --platform managed \
+          --region us-central1 \
+          --allow-unauthenticated
