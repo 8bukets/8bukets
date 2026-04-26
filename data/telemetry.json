@@ -2063,6 +2063,8 @@
             "ad_count": 3,
             "target_persona": "AdTech Professional"
         }
+<<<<<<< HEAD
+=======
     },
     {
         "timestamp": 1776957526.1119258,
@@ -2096,5 +2098,6 @@
             "insight": "Confirmed core Google node accessibility (HTTP 200).",
             "status": "ACCESSIBLE"
         }
+>>>>>>> origin/add-google-edge-agent-9371392929328195231
     }
 ]
