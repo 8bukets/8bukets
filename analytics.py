@@ -7,7 +7,17 @@ import sys
 from utils import validate_output_path
 
 def create_ascii_bar(count, max_count, bar_length=20):
-    """Generate an ASCII progress bar."""
+    """
+    Generate an ASCII progress bar for visualizing distributions.
+
+    Args:
+        count (int): The current value.
+        max_count (int): The maximum value for scaling.
+        bar_length (int): Total character length of the bar.
+
+    Returns:
+        str: A string representing the progress bar visually.
+    """
     if max_count == 0:
         return ""
     filled_length = int(round(bar_length * count / float(max_count)))
@@ -21,6 +31,15 @@ def escape_markdown(text):
     return str(text).replace('|', '&#124;')
 
 def load_data(filepath):
+    """
+    Load scraped JSON data from a file.
+
+    Args:
+        filepath (str): Path to the JSON data file.
+
+    Returns:
+        List[Dict]: Parsed data. Exits the program if file is missing.
+    """
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             return json.load(f)
@@ -29,6 +48,15 @@ def load_data(filepath):
         sys.exit(1)
 
 def get_domain(url):
+    """
+    Extract domain from a given URL string.
+
+    Args:
+        url (str): The URL.
+
+    Returns:
+        str or None: The parsed domain or None if parsing fails.
+    """
     if not url:
         return None
     try:
@@ -36,7 +64,15 @@ def get_domain(url):
     except:
         return None
 
-def generate_report(data, output_file):
+def generate_report(data, output_file, dry_run=False):
+    """
+    Generate analytics report from scraped data and write it to a Markdown file.
+
+    Args:
+        data (List[Dict]): The scraped JSON data.
+        output_file (str): The path to the output Markdown file.
+        dry_run (bool): If True, do not write the report to a file.
+    """
     total_posts = len(data)
 
     # 1. Domain Analysis
@@ -138,19 +174,22 @@ def generate_report(data, output_file):
     for author, count in author_counts:
         md.append(f"- {author}: {count} posts")
 
-    with open(output_file, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(md))
-
-    print(f"Report generated: {output_file}")
+    if dry_run:
+        print(f"Dry run enabled. Would have generated report at: {output_file}")
+    else:
+        with open(output_file, 'w', encoding='utf-8') as f:
+            f.write('\n'.join(md))
+        print(f"Report generated: {output_file}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
     parser.add_argument("--input", default="links.json", help="Input JSON file")
     parser.add_argument("--output", default="REPORT.md", help="Output Markdown report file")
+    parser.add_argument("--dry-run", action="store_true", help="Run without writing any output files")
     args = parser.parse_args()
 
     # Validate output path
     output_path = validate_output_path(args.output)
 
     data = load_data(args.input)
-    generate_report(data, output_path)
+    generate_report(data, output_path, dry_run=args.dry_run)

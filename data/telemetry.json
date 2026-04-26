@@ -2246,5 +2246,25 @@
             "ad_count": 3,
             "target_persona": "AdTech Professional"
         }
+    },
+    {
+        "timestamp": 1777238187.0943837,
+        "agent": "AnalysisAgent",
+        "event_type": "MARKET_DATA_ANALYSIS",
+        "market_data_ref": "AD_ADS_ADVERTISE",
+        "payload": {
+            "ad_category_density": 0.0,
+            "total_ad_posts": 0
+        }
+    },
+    {
+        "timestamp": 1777238187.2165565,
+        "agent": "AdsAgent",
+        "event_type": "AD_STRATEGY_GENERATION",
+        "market_data_ref": "AD_ADS_ADVERTISE",
+        "payload": {
+            "ad_count": 3,
+            "target_persona": "General Tech Enthusiast"
+        }
     }
 ]

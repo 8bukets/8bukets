@@ -51,11 +51,20 @@ logging.basicConfig(
 )
 logger = logging.getLogger("SystemOrchestrator")
 
-def run_scraper():
+def run_scraper(dry_run: bool = False):
+    """
+    Run the scraper script.
+
+    Args:
+        dry_run (bool): If True, passes the --dry-run flag to the scraper script to prevent file writes.
+    """
     logger.info("Starting Scraper...")
     try:
+        cmd = ["python3", "scraper.py", "--limit", "1"]
+        if dry_run:
+            cmd.append("--dry-run")
         result = subprocess.run(
-            ["python3", "scraper.py", "--limit", "1"],
+            cmd,
             capture_output=True,
             text=True
         )
@@ -127,7 +136,15 @@ def generate_daily_report(context, filename):
     except IOError as e:
         logger.error(f"Failed to write report: {e}")
 
-async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
+async def run_cycle(auth_token: str = None, skip_scraper: bool = False, dry_run: bool = False):
+    """
+    Execute a full autonomous cycle.
+
+    Args:
+        auth_token (str): The authentication token.
+        skip_scraper (bool): If True, skips the scraper execution.
+        dry_run (bool): If True, executes agents without persisting to DB and skips generating report.
+    """
     logger.info("=== Starting Massive Synchronized Autonomous Cycle ===")
 
     if not AuthManager.verify_token(auth_token):
@@ -135,7 +152,7 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         return
 
     if not skip_scraper:
-        run_scraper()
+        run_scraper(dry_run=dry_run)
 
     data = load_data()
     if not data:
@@ -151,9 +168,14 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         TelemetryAgent(), SixSigmaAgent(), ArchitectAgent(),
         MetaCodingAgent(), JulesEvolutionAgent(), GitKrakenEvolutionAgent(),
         DockerEvolutionAgent(), GitHubEvolutionAgent(), CollaborationAgent(),
-        MongoDBAgent(), MySQLAgent(), PerformanceOptimizationAgent(),
-        SystemAuditAgent(), DocumentationAgent()
+        PerformanceOptimizationAgent(), SystemAuditAgent(), DocumentationAgent()
     ]
+
+    # Exclude DB Agents in dry run to prevent writes
+    if not dry_run:
+        agents.extend([MongoDBAgent(), MySQLAgent()])
+    else:
+        logger.info("Dry run enabled. Excluding MongoDBAgent and MySQLAgent.")
 
     # 2. Expanded SEO Swarm (200 Agents)
     swarm_tasks = ["SEO Audit", "Market Probe", "Domain Research", "Keyword Sync"]
@@ -185,7 +207,10 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
 
     # 4. Report
     report_file = f"results/DAILY_REPORT_{datetime.now().strftime('%Y-%m-%d')}.md"
-    generate_daily_report(context, report_file)
+    if dry_run:
+        logger.info(f"Dry run enabled. Skipping daily report generation at: {report_file}")
+    else:
+        generate_daily_report(context, report_file)
 
     logger.info("=== Cycle Complete ===")
 
@@ -195,19 +220,20 @@ async def main_async():
     # Use default_dev_token if nothing is provided
     parser.add_argument("--token", type=str, help="Authentication token", default=os.environ.get("SYSTEM_AUTH_TOKEN", "default_dev_token"))
     parser.add_argument("--skip-scraper", action="store_true", help="Skip the scraping phase and use existing data")
+    parser.add_argument("--dry-run", action="store_true", help="Run the system in dry-run mode (no file or DB writes)")
     args = parser.parse_args()
 
     if args.loop:
         logger.info("System starting in LOOP mode.")
         try:
             while True:
-                await run_cycle(args.token, args.skip_scraper)
+                await run_cycle(args.token, args.skip_scraper, args.dry_run)
                 logger.info("Sleeping for 24 hours...")
                 await asyncio.sleep(86400)
         except asyncio.CancelledError:
             logger.info("Loop interrupted.")
     else:
-        await run_cycle(args.token, args.skip_scraper)
+        await run_cycle(args.token, args.skip_scraper, args.dry_run)
 
 if __name__ == "__main__":
     try:

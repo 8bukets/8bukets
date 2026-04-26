@@ -51,6 +51,7 @@ python3 scraper.py
 *   `--txt`: Output TXT filename for unique links (default: `unique_links.txt`)
 *   `--limit`: Limit the number of pages to scrape (e.g., `--limit 5`).
 *   `--concurrency`: Number of concurrent requests (default: 5).
+*   `--dry-run`: Run the scraper without writing to any output files (used for testing and data security).
 
 ### 2. Generate Report
 
@@ -63,6 +64,21 @@ python3 analytics.py
 **Options:**
 *   `--input`: Input JSON file (default: `links.json`)
 *   `--output`: Output Markdown file (default: `REPORT.md`)
+*   `--dry-run`: Run the analytics generator without writing the report file.
+
+
+### 3. Run Autonomous System
+
+Execute the full autonomous swarm cycle (includes scraping, data loading, agent intelligence routing, and reporting):
+
+```bash
+python3 run_system.py
+```
+
+**Options:**
+*   `--loop`: Run the system continuously in a loop.
+*   `--skip-scraper`: Skip the scraping phase and use existing data files.
+*   `--dry-run`: Run the system without persisting data to databases or writing report files.
 
 ## Output Files
 
