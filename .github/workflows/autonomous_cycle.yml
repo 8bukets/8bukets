@@ -35,10 +35,14 @@ jobs:
       run: |
         PYTHONPATH=. python3 -m pytest tests/
 
+    - name: Run GoogleEdgeAgent Specific Tests
+      run: |
+        PYTHONPATH=. python3 -m pytest tests/test_google_edge.py -v
+
     - name: Run Autonomous Cycle
       env:
         SYSTEM_AUTH_TOKEN: ${{ secrets.SYSTEM_AUTH_TOKEN || 'default_dev_token' }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        # We skip the scraper here to prevent IP bans from GitHub Actions
-        python3 run_system.py --skip-scraper
+        # Executing full autonomous system including scrapers (e.g. GoogleEdgeAgent)
+        python3 run_system.py
