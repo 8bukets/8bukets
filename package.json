@@ -1,7 +1,7 @@
 {
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
-    "build": "ncc build index.js -o dist"
+    "build": "ncc build index.js -o dist && ncc build pre.js -o dist/pre && ncc build post.js -o dist/post"
   },
   "dependencies": {
     "@actions/core": "^1.11.1",
