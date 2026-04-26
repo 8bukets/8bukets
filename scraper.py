@@ -21,36 +21,16 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
-    def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5, dry_run: bool = False):
-        """
-        Initialize the async scraper.
-
-        Args:
-            output_json (str): Path to JSON output file.
-            output_csv (str): Path to CSV output file.
-            output_txt (str): Path to TXT output file.
-            max_pages (Optional[int]): Maximum number of pages to scrape.
-            concurrency (int): Maximum number of concurrent connections.
-            dry_run (bool): If True, fetch and parse but do not write files.
-        """
+    def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = validate_output_path(output_json)
         self.output_csv = validate_output_path(output_csv)
         self.output_txt = validate_output_path(output_txt)
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
-        self.dry_run = dry_run
 
     def clean_text(self, text: str) -> str:
-        """
-        Normalize whitespace and remove non-breaking spaces from text.
-
-        Args:
-            text (str): The raw text to clean.
-
-        Returns:
-            str: The cleaned string with normalized whitespace.
-        """
+        """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
         # Optimization: split().join() is faster than re.sub for normalizing whitespace
@@ -58,29 +38,13 @@ class MarkPositionScraperAsync:
         return " ".join(text.split())
 
     def is_url(self, text: str) -> bool:
-        """
-        Check if text looks like a valid URL.
-
-        Args:
-            text (str): The string to check.
-
-        Returns:
-            bool: True if it starts with http:// or https://, False otherwise.
-        """
+        """Check if text looks like a URL."""
         # Optimization: startswith is faster than regex for simple prefix check
         s = text.strip()
         return s.startswith(('http://', 'https://'))
 
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
-        """
-        Extract categories from article class names.
-
-        Args:
-            article (BeautifulSoup): The parsed article HTML element.
-
-        Returns:
-            List[str]: A list of category names formatted as title case.
-        """
+        """Extract categories from article class names."""
         categories = []
         if article.get('class'):
             for cls in article['class']:
@@ -90,15 +54,7 @@ class MarkPositionScraperAsync:
         return categories
 
     def extract_domain(self, url: str) -> Optional[str]:
-        """
-        Extract domain from a given URL.
-
-        Args:
-            url (str): The full URL string.
-
-        Returns:
-            Optional[str]: The parsed domain name without 'www.', or None if invalid.
-        """
+        """Extract domain from URL."""
         if not url:
             return None
         try:
@@ -107,16 +63,6 @@ class MarkPositionScraperAsync:
             return None
 
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
-        """
-        Asynchronously fetch the HTML content for a specific page number.
-
-        Args:
-            session (aiohttp.ClientSession): The active client session.
-            page_num (int): The page number to fetch.
-
-        Returns:
-            Optional[str]: The raw HTML text, or None if 404 or an error occurs.
-        """
         url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
         try:
             async with session.get(url) as response:
@@ -129,15 +75,6 @@ class MarkPositionScraperAsync:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        """
-        Parse the HTML content of a page and extract post data.
-
-        Args:
-            html (str): The raw HTML string.
-
-        Returns:
-            List[Dict]: A list of dictionaries, each containing extracted post metadata.
-        """
         soup = BeautifulSoup(html, 'html.parser')
         articles = soup.find_all('article', class_='post')
         page_posts = []
@@ -200,11 +137,6 @@ class MarkPositionScraperAsync:
         return page_posts
 
     async def scrape(self):
-        """
-        Main asynchronous method to manage the scraping process.
-        Controls concurrency, pagination, and output writing.
-        If dry_run is True, it processes pages without saving to files.
-        """
         page_num = 1
         sem = asyncio.Semaphore(self.concurrency)
 
@@ -213,28 +145,18 @@ class MarkPositionScraperAsync:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
 
-        import contextlib
-        @contextlib.contextmanager
-        def optional_open(path, mode, **kwargs):
-            if self.dry_run:
-                yield None
-            else:
-                with open(path, mode, **kwargs) as f:
-                    yield f
+        # Open files for incremental writing
+        with open(self.output_json, 'w', encoding='utf-8') as json_f, \
+             open(self.output_csv, 'w', newline='', encoding='utf-8') as csv_f, \
+             open(self.output_txt, 'w', encoding='utf-8') as txt_f:
 
-        logger.info(f"Starting scrape. Dry run mode: {self.dry_run}")
+            # Initialize CSV
+            csv_writer = csv.writer(csv_f)
+            csv_writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
 
-        with optional_open(self.output_json, 'w', encoding='utf-8') as json_f, \
-             optional_open(self.output_csv, 'w', newline='', encoding='utf-8') as csv_f, \
-             optional_open(self.output_txt, 'w', encoding='utf-8') as txt_f:
-
-            csv_writer = None
+            # Initialize JSON
+            json_f.write('[')
             first_json_item = True
-
-            if not self.dry_run:
-                csv_writer = csv.writer(csv_f)
-                csv_writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
-                json_f.write('[')
 
             # Initialize Unique Links tracking
             seen_links = set()
@@ -299,18 +221,9 @@ class MarkPositionScraperAsync:
                         await asyncio.sleep(0.5)
             finally:
                 # Finalize JSON even on error
-                if not self.dry_run and json_f:
-                    json_f.write('\n]')
+                json_f.write('\n]')
 
     def save_batch(self, posts: List[Dict], json_f, csv_writer, txt_f, seen_links: Set[str], is_first_item: bool) -> bool:
-        """Save a batch of parsed posts to the output files. If dry_run is True, skips writing and only updates seen_links."""
-        if self.dry_run:
-            for post in posts:
-                link = post.get('external_link')
-                if link and link not in seen_links:
-                    seen_links.add(link)
-            return is_first_item
-
         for post in posts:
             # CSV
             csv_writer.writerow([
@@ -341,17 +254,6 @@ class MarkPositionScraperAsync:
         return is_first_item
 
     async def fetch_and_parse(self, session, page_num, sem):
-        """
-        Helper method to fetch and parse a page while respecting concurrency limits.
-
-        Args:
-            session: The HTTP session.
-            page_num: Page to fetch.
-            sem: Semaphore for controlling concurrency.
-
-        Returns:
-            List of parsed posts, or None if failed.
-        """
         async with sem:
             html = await self.fetch_page(session, page_num)
             if html:
@@ -365,7 +267,6 @@ def main():
     parser.add_argument("--txt", default="unique_links.txt", help="Output TXT filename for unique links")
     parser.add_argument("--limit", type=int, help="Limit number of pages to scrape")
     parser.add_argument("--concurrency", type=int, default=5, help="Number of concurrent requests")
-    parser.add_argument("--dry-run", action="store_true", help="Run without writing any output files")
 
     args = parser.parse_args()
 
@@ -374,8 +275,7 @@ def main():
         output_csv=args.csv,
         output_txt=args.txt,
         max_pages=args.limit,
-        concurrency=args.concurrency,
-        dry_run=args.dry_run
+        concurrency=args.concurrency
     )
 
     asyncio.run(scraper.scrape())
