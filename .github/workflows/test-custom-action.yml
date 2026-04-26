@@ -1,0 +1,22 @@
+name: Test Custom Action
+on:
+  push:
+    branches:
+      - '**'
+  workflow_dispatch:
+
+jobs:
+  test-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run Custom Action
+        id: test_action
+        uses: ./
+        with:
+          who-to-greet: 'Jules AI'
+
+      - name: Verify Output
+        run: echo "The action said the time was ${{ steps.test_action.outputs.time }}"
