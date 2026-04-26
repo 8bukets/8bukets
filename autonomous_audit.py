@@ -65,6 +65,20 @@ def run_audit():
         print(f"[!] Orchestrator health check failed: {e}")
         sys.exit(1)
 
+    # 6. Validate License Integrity
+    print("[*] Validating License Integrity...")
+    license_file = "LICENSE"
+    if os.path.exists(license_file):
+        with open(license_file, 'r', encoding='utf-8') as f:
+            content = f.read()
+            if "MIT License" in content and "Copyright" in content:
+                print("[✅] License is present and valid (MIT).")
+            else:
+                print(f"[!] WARNING: {license_file} exists but does not appear to be a standard MIT License.")
+    else:
+        print(f"[!] ERROR: {license_file} is missing from the repository.")
+        sys.exit(1)
+
     print("=== AUDIT COMPLETE: SYSTEM IS SECURE AND EVOLVING ===")
 
 if __name__ == "__main__":

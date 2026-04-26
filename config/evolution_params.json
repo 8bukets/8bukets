@@ -1,8 +1,8 @@
 {
-    "system_concurrency": 55,
-    "seo_impact_threshold": 0.235,
-    "research_depth": "AGENTIC_HYBRID_OPTIMIZED_V2.1",
-    "evolution_rate": 0.075,
-    "current_version": 1.35,
-    "last_evolution": "2026-06-15"
+    "system_concurrency": 58,
+    "seo_impact_threshold": 0.22,
+    "research_depth": "AGENTIC_HYBRID_OPTIMIZED_V2.2",
+    "evolution_rate": 0.08,
+    "current_version": 1.37,
+    "last_evolution": "2026-04-26"
 }
