@@ -14,11 +14,16 @@ def create_ascii_bar(count, max_count, bar_length=20):
     bar = '█' * filled_length + '░' * (bar_length - filled_length)
     return bar
 
+import html
+
 def escape_markdown(text):
-    """Escape pipes to prevent breaking Markdown tables."""
+    """Escape pipes and HTML characters to prevent breaking Markdown tables and XSS."""
     if text is None:
         return ""
-    return str(text).replace('|', '&#124;')
+    # Escape HTML tags (e.g. <script>)
+    safe_text = html.escape(str(text))
+    # Escape Markdown table pipes
+    return safe_text.replace('|', '&#124;')
 
 def load_data(filepath):
     try:
@@ -136,7 +141,7 @@ def generate_report(data, output_file):
 
     md.append("\n## Authors")
     for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+        md.append(f"- {escape_markdown(author)}: {count} posts")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))

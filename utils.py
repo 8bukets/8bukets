@@ -1,31 +1,39 @@
 import os
+import re
 
 def validate_output_path(path: str) -> str:
     """
-    Validates that the output path is within the current working directory.
+    Validates that the output path is within the current working directory and has a valid extension.
     Returns the absolute path if valid, otherwise raises ValueError.
     """
-    # Get absolute path of the requested file
+    if not path:
+        raise ValueError("Security Error: Output path cannot be empty.")
+
     abs_path = os.path.abspath(path)
-
-    # Get absolute path of current working directory
     cwd = os.getcwd()
-
-    # Check if the file path is within the CWD
-    # commonpath returns the longest common sub-path
-    # We put both paths in a list. If the common path is the CWD (or CWD is a prefix), it's okay.
-    # Note: commonpath works on paths, not strings, so it handles separators correctly.
 
     try:
         common = os.path.commonpath([abs_path, cwd])
     except ValueError:
-        # Can happen on Windows if drives are different
         raise ValueError(f"Security Error: Output path '{path}' is on a different drive/location than current working directory.")
 
     if common != cwd:
-        # There's a subtle edge case: if cwd is /a/b and abs_path is /a/b/c, common is /a/b. Correct.
-        # If abs_path is /a/b, common is /a/b. Correct.
-        # If abs_path is /a/x, common is /a. Incorrect.
         raise ValueError(f"Security Error: Output path '{path}' is outside the current working directory.")
 
+    # Restrict to allowed extensions to prevent writing arbitrary executable files (.py, .sh, etc)
+    allowed_extensions = {'.json', '.csv', '.txt', '.md'}
+    _, ext = os.path.splitext(abs_path)
+    if ext.lower() not in allowed_extensions:
+        raise ValueError(f"Security Error: File extension '{ext}' is not allowed.")
+
     return abs_path
+
+import urllib.parse
+
+def is_safe_url(url: str) -> bool:
+    """Validates that a URL uses safe schemes to prevent SSRF"""
+    try:
+        parsed = urllib.parse.urlparse(url)
+        return parsed.scheme in ('http', 'https')
+    except Exception:
+        return False
