@@ -35,9 +35,22 @@ Install dependencies:
 pip install aiohttp beautifulsoup4 requests
 ```
 
+
 ## Usage
 
-### 1. Scrape Data
+### Unified End-to-End Execution (Recommended)
+
+To run the entire system pipeline (Scraping -> Autonomous Cycle -> Analytics) with built-in environment variable management, use the unified `common_run.py` script:
+
+```bash
+python3 common_run.py
+```
+
+### Manual Execution (Step-by-Step)
+
+If you prefer to run individual components manually:
+
+#### 1. Scrape Data
 
 Run the asynchronous scraper to fetch data:
 

@@ -1,31 +1,31 @@
 # Markposition Analytics Report
 
-**Generated on:** 2026-04-07 06:27:33
+**Generated on:** 2026-04-26 03:53:30
 
 ## General Statistics
-- **Total Posts:** 350
-- **Date Range:** 2021-04-29 to 2022-10-05
-- **Unique Domains Linked:** 186
+- **Total Posts:** 679
+- **Date Range:** 2020-05-19 to 2022-10-05
+- **Unique Domains Linked:** 367
 
 ## Top 10 Referenced Domains
 | Domain | Count | Distribution |
 | :--- | :---: | :--- |
-| skillshop.exceedlms.com | 22 | ████████████████████ |
-| support.google.com | 17 | ███████████████░░░░░ |
-| advertising.amazon.com | 15 | ██████████████░░░░░░ |
+| skillshop.exceedlms.com | 23 | ████████████████████ |
+| support.google.com | 21 | ██████████████████░░ |
+| youtube.com | 18 | ████████████████░░░░ |
+| advertising.amazon.com | 16 | ██████████████░░░░░░ |
+| en.wikipedia.org | 14 | ████████████░░░░░░░░ |
+| google.com | 13 | ███████████░░░░░░░░░ |
+| web.facebook.com | 12 | ██████████░░░░░░░░░░ |
 | developers.google.com | 11 | ██████████░░░░░░░░░░ |
-| google.com | 11 | ██████████░░░░░░░░░░ |
-| youtube.com | 10 | █████████░░░░░░░░░░░ |
-| en.wikipedia.org | 10 | █████████░░░░░░░░░░░ |
-| web.facebook.com | 8 | ███████░░░░░░░░░░░░░ |
-| business.linkedin.com | 8 | ███████░░░░░░░░░░░░░ |
-| marketingplatform.google.com | 7 | ██████░░░░░░░░░░░░░░ |
+| trustarc.com | 11 | ██████████░░░░░░░░░░ |
+| ads.google.com | 10 | █████████░░░░░░░░░░░ |
 
 ## Top 10 Categories
 | Category | Count | Distribution |
 | :--- | :---: | :--- |
-| Ad Ads Advertise | 332 | ████████████████████ |
-| Promotion | 13 | █░░░░░░░░░░░░░░░░░░░ |
+| Ad Ads Advertise | 660 | ████████████████████ |
+| Promotion | 14 | ░░░░░░░░░░░░░░░░░░░░ |
 | Ads | 4 | ░░░░░░░░░░░░░░░░░░░░ |
 | Advertise | 3 | ░░░░░░░░░░░░░░░░░░░░ |
 | Advertising | 3 | ░░░░░░░░░░░░░░░░░░░░ |
@@ -34,8 +34,9 @@
 ## Posts by Year
 | Year | Count | Distribution |
 | :--- | :---: | :--- |
-| 2022 | 235 | ████████████████████ |
-| 2021 | 115 | ██████████░░░░░░░░░░ |
+| 2022 | 235 | ███████████████████░ |
+| 2021 | 190 | ███████████████░░░░░ |
+| 2020 | 254 | ████████████████████ |
 
 ## Authors
-- Filip Keser: 350 posts
+- Filip Keser: 679 posts

@@ -37,7 +37,7 @@ If you prefer running it daily at a specific time (e.g., 2 AM) instead of a cont
 1. Open crontab: `crontab -e`
 2. Add the following line:
 ```cron
-0 2 * * * cd /path/to/project && SYSTEM_AUTH_TOKEN=your_secure_token /usr/bin/python3 run_system.py > /path/to/project/results/cron.log 2>&1
+0 2 * * * cd /path/to/project && SYSTEM_AUTH_TOKEN=your_secure_token /usr/bin/python3 common_run.py > /path/to/project/results/cron.log 2>&1
 ```
 
 ## 3. GitHub Actions (CI/CD Automation)
