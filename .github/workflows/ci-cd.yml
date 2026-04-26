@@ -1,4 +1,4 @@
-name: CI/CD Pipeline with GCP
+name: CI/CD Pipeline
 
 on:
   push:
@@ -47,44 +47,72 @@ jobs:
       if: matrix.service == 'scraper'
       run: pytest
 
-
   build-and-deploy:
-    name: Build and Deploy to GCP
+    name: Build and Deploy
     needs: test
-    if: ${{ secrets.GCP_KEY != '' }}
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
 
-    - name: Authenticate with GCP
-      uses: google-github-actions/auth@v2
+    - name: Log in to GitHub Container Registry
+      uses: docker/login-action@v3
       with:
-        credentials_json: ${{ secrets.GCP_KEY }}
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Configure Docker to Use GCR
-      run: gcloud auth configure-docker
-
-    - name: Build and Push Backend Image
+    - name: Convert repository name to lowercase
       run: |
-        docker build -t gcr.io/${{ secrets.GCP_PROJECT }}/backend ./backend
-        docker push gcr.io/${{ secrets.GCP_PROJECT }}/backend
+        echo "REPO_LC=${GITHUB_REPOSITORY,,}" >> ${GITHUB_ENV}
 
-    - name: Build and Push Frontend Image
+    - name: Build and Push Backend Image (GHCR)
       run: |
-        docker build -t gcr.io/${{ secrets.GCP_PROJECT }}/frontend ./frontend
-        docker push gcr.io/${{ secrets.GCP_PROJECT }}/frontend
+        docker build -t ghcr.io/${{ env.REPO_LC }}/backend:latest ./backend || echo "No backend folder found"
+        docker push ghcr.io/${{ env.REPO_LC }}/backend:latest || echo "Skipping backend push"
 
-    - name: Build and Push Scraper Image
+    - name: Build and Push Frontend Image (GHCR)
       run: |
-        docker build -t gcr.io/${{ secrets.GCP_PROJECT }}/scraper .
-        docker push gcr.io/${{ secrets.GCP_PROJECT }}/scraper
+        docker build -t ghcr.io/${{ env.REPO_LC }}/frontend:latest ./frontend || echo "No frontend folder found"
+        docker push ghcr.io/${{ env.REPO_LC }}/frontend:latest || echo "Skipping frontend push"
 
-    - name: Deploy to GKE or Cloud Run
+    - name: Build and Push Scraper Image (GHCR)
       run: |
-        # Example for Cloud Run Deployment
-        gcloud run deploy backend \
-          --image gcr.io/${{ secrets.GCP_PROJECT }}/backend \
-          --platform managed \
-          --region us-central1 \
-          --allow-unauthenticated
+        docker build -t ghcr.io/${{ env.REPO_LC }}/scraper:latest .
+        docker push ghcr.io/${{ env.REPO_LC }}/scraper:latest
+
+    # --- GCP DEPLOYMENT PREPARED (COMMENTED OUT) ---
+    # - name: Authenticate with GCP
+    #   uses: google-github-actions/auth@v2
+    #   with:
+    #     credentials_json: ${{ secrets.GCP_KEY }}
+    #
+    # - name: Configure Docker to Use GCR
+    #   run: gcloud auth configure-docker
+    #
+    # - name: Build and Push Backend Image (GCR)
+    #   run: |
+    #     docker build -t gcr.io/${{ secrets.GCP_PROJECT }}/backend ./backend
+    #     docker push gcr.io/${{ secrets.GCP_PROJECT }}/backend
+    #
+    # - name: Build and Push Frontend Image (GCR)
+    #   run: |
+    #     docker build -t gcr.io/${{ secrets.GCP_PROJECT }}/frontend ./frontend
+    #     docker push gcr.io/${{ secrets.GCP_PROJECT }}/frontend
+    #
+    # - name: Build and Push Scraper Image (GCR)
+    #   run: |
+    #     docker build -t gcr.io/${{ secrets.GCP_PROJECT }}/scraper .
+    #     docker push gcr.io/${{ secrets.GCP_PROJECT }}/scraper
+    #
+    # - name: Deploy to GKE or Cloud Run
+    #   run: |
+    #     # Example for Cloud Run Deployment
+    #     gcloud run deploy backend \
+    #       --image gcr.io/${{ secrets.GCP_PROJECT }}/backend \
+    #       --platform managed \
+    #       --region us-central1 \
+    #       --allow-unauthenticated
