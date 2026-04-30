@@ -70,3 +70,9 @@ This is not merely a software application; it is an **"Agent-as-a-Service" (AaaS
 
 **Conclusion:**
 Acquiring this IP grants the buyer a foundational, self-healing AI engine. Whether used internally to obliterate data acquisition costs, or externally packaged as a premium Developer Tooling/Intelligence API, this Agent Factory is a multi-million dollar revenue generator waiting to be unleashed.
+
+## Seller Information
+
+* **Name:** Filip Keser
+* **Personal Number (OIB/PIN):** [INSERT OIB]
+* **Bank Account (IBAN):** [INSERT IBAN]
