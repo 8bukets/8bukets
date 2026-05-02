@@ -155,8 +155,10 @@ export class Jules {
     }
 
     // Phase 12: Super-Intelligence Optimization
-    const { optimize } = await import('./optimization')
-    const refactors = await optimize()
+    // getSystemInsights already triggers the optimization engine internally
+    const { getSystemInsights } = await import('./core')
+    const insights = await getSystemInsights()
+    const refactors = (insights as any).proposals || []
     if (refactors.length > 0) {
       this.recordTask(`Super-Intelligence: Generated ${refactors.length} predictive refactors.`)
     }

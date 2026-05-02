@@ -33,7 +33,7 @@ export async function runSecurityAudit(): Promise<SecurityAudit> {
       const files = fs.readdirSync(dir)
       for (const file of files) {
         const fullPath = path.join(dir, file)
-        if (file === 'node_modules' || file === '.git' || file === '.next') continue
+        if (file === 'node_modules' || file === '.git' || file === '.next' || file === 'venv') continue
         
         if (fs.statSync(fullPath).isDirectory()) {
           scan(fullPath)
