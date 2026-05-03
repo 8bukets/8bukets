@@ -1,0 +1,70 @@
+[
+    {
+        "title": "Google DeepMind",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/"
+    },
+    {
+        "title": "Google Research",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/"
+    },
+    {
+        "title": "Google Labs",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/"
+    },
+    {
+        "title": "Gemini models",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/"
+    },
+    {
+        "title": "Quantum computing",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/"
+    },
+    {
+        "title": "Gemini Embedding 2 is now generally available.",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2-generally-available/"
+    },
+    {
+        "title": "Deep Research Max: a step change for autonomous research agents",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/"
+    },
+    {
+        "title": "Gemini 3.1 Flash TTS: the next generation of expressive AI speech",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/"
+    },
+    {
+        "title": "Gemini 3.1 Flash Live: Making audio AI more natural and reliable",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-live/"
+    },
+    {
+        "title": "Gemini Robotics ER-1.6 enhances reasoning to help robots navigate real-world tasks.",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-1-6/"
+    },
+    {
+        "title": "Measuring progress toward AGI: A cognitive framework",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/measuring-agi-cognitive-framework/"
+    },
+    {
+        "title": "Our new study explores how AI can reduce the climate impact of air travel.",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/contrail-avoidance-research/"
+    },
+    {
+        "title": "3 creative tips from our Flow Sessions artists",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-sessions-artists-lessons/"
+    },
+    {
+        "title": "Stitch’s DESIGN.md format is now open-source so you can use it across platforms.",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-design-md/"
+    },
+    {
+        "title": "Google brings Pomelli in English to small businesses in Europe.",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/pomelli-in-europe/"
+    },
+    {
+        "title": "Introducing “vibe design” with Stitch",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-ai-ui-design/"
+    },
+    {
+        "title": "Answering your trending questions on World Quantum Day",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/world-quantum-day-2026/"
+    }
+]
