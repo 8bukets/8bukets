@@ -1,0 +1,47 @@
+name: PR CI - tests on pull requests
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Test and Lint Services (PR)
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        service: [backend, scraper]
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      if: matrix.service == 'backend'
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+
+    - name: Install backend dependencies
+      if: matrix.service == 'backend'
+      run: npm install
+
+    - name: Run backend tests
+      if: matrix.service == 'backend'
+      run: npm test
+
+    - name: Set up Python
+      if: matrix.service == 'scraper'
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.11
+
+    - name: Install scraper dependencies
+      if: matrix.service == 'scraper'
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run scraper tests
+      if: matrix.service == 'scraper'
+      run: pytest
