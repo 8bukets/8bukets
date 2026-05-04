@@ -37,6 +37,8 @@ from agents.mysql_agent import MySQLAgent
 from agents.system_audit_agent import SystemAuditAgent
 from agents.documentation_agent import DocumentationAgent
 from agents.performance_optimization_agent import PerformanceOptimizationAgent
+from agents.knowledge_agent import KnowledgeAgent
+from ai_agents_knowledge_scraper import scrape_ai_agents_knowledge
 
 # Expansion Agents
 from agents.swarm_agent import SwarmAgent
@@ -52,8 +54,9 @@ logging.basicConfig(
 logger = logging.getLogger("SystemOrchestrator")
 
 def run_scraper():
-    logger.info("Starting Scraper...")
+    logger.info("Starting Scrapers...")
     try:
+        # Standard Market Scraper
         result = subprocess.run(
             ["python3", "scraper.py", "--limit", "1"],
             capture_output=True,
@@ -62,7 +65,11 @@ def run_scraper():
         if result.returncode != 0:
             logger.error(f"Scraper failed with exit code {result.returncode}: {result.stderr}")
             raise RuntimeError(f"Scraper failed: {result.stderr}")
-        logger.info("Scraper finished successfully.")
+
+        # AI Agent Knowledge Scraper (Direct module call)
+        scrape_ai_agents_knowledge()
+
+        logger.info("Scrapers finished successfully.")
         return True
     except Exception as e:
         logger.error(f"Failed to execute scraper: {e}")
@@ -142,17 +149,17 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         logger.warning("No data loaded. Skipping agent execution.")
         return
 
-    # 1. Base Intelligence (21 Agents)
+    # 1. Base Intelligence (22 Agents)
     agents = [
-        HealthCheckAgent(), RobotTxtAgent(), AnalysisAgent(),
-        ResearchAgent(), IntelligenceAgent(), TargetingAgent(),
-        CreativityAgent(), AdsAgent(), BidAgent(),
-        MonetizationAgent(), ContentAgent(), AutonomousIntelligenceAgent(),
-        TelemetryAgent(), SixSigmaAgent(), ArchitectAgent(),
-        MetaCodingAgent(), JulesEvolutionAgent(), GitKrakenEvolutionAgent(),
-        DockerEvolutionAgent(), GitHubEvolutionAgent(), CollaborationAgent(),
-        MongoDBAgent(), MySQLAgent(), PerformanceOptimizationAgent(),
-        SystemAuditAgent(), DocumentationAgent()
+        HealthCheckAgent(), RobotTxtAgent(), KnowledgeAgent(),
+        AnalysisAgent(), ResearchAgent(), IntelligenceAgent(),
+        TargetingAgent(), CreativityAgent(), AdsAgent(),
+        BidAgent(), MonetizationAgent(), ContentAgent(),
+        AutonomousIntelligenceAgent(), TelemetryAgent(), SixSigmaAgent(),
+        ArchitectAgent(), MetaCodingAgent(), JulesEvolutionAgent(),
+        GitKrakenEvolutionAgent(), DockerEvolutionAgent(), GitHubEvolutionAgent(),
+        CollaborationAgent(), MongoDBAgent(), MySQLAgent(),
+        PerformanceOptimizationAgent(), SystemAuditAgent(), DocumentationAgent()
     ]
 
     # 2. Expanded SEO Swarm (200 Agents)
