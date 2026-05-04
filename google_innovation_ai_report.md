@@ -50,14 +50,17 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 ### Evolving expectations of what’s possibleKent Walker shares Google’s perspective on the future of privacy at IAPP Global Summit 2026.
 - URL: https://blog.google/innovation-and-ai/technology/safety-security/evolving-expectations-of-whats-possible/
 
+### The latest AI news we announced in April 2026
+- URL: https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-april-2026/
+
 ### Join the new AI Agents Vibe Coding Course from Google and Kaggle
 - URL: https://blog.google/innovation-and-ai/technology/developers-tools/kaggle-genai-intensive-course-vibe-coding-june-2026/
 
+### Reduce friction and latency for long-running jobs with Webhooks in Gemini API
+- URL: https://blog.google/innovation-and-ai/technology/developers-tools/event-driven-webhooks/
+
 ### You can now easily generate files in Gemini.
 - URL: https://blog.google/innovation-and-ai/products/gemini-app/generate-files-in-gemini/
-
-### Find out what’s new in the Gemini app in April's Gemini Drop.
-- URL: https://blog.google/innovation-and-ai/products/gemini-app/gemini-drop-april-2026/
 
 ### How we’re protecting energy affordability in Oklahoma
 - URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/oklahoma-energy-affordability-agreement/

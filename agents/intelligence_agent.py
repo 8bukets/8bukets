@@ -4,7 +4,7 @@ import json
 
 class IntelligenceAgent(BaseAgent):
     def __init__(self):
-        super().__init__("IntelligenceAgent", dependencies=["analysis_stats", "research_data", "google_edge_knowledge"], provides=["intelligence_insights", "synchronization_level"])
+        super().__init__("IntelligenceAgent", dependencies=["analysis_stats", "research_data", "google_edge_knowledge", "google_innovation_ai_knowledge", "google_models_research_knowledge"], provides=["intelligence_insights", "synchronization_level"])
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
         self.logger.info("Running Intelligence Synchronization & External World Collaboration...")
@@ -44,6 +44,22 @@ class IntelligenceAgent(BaseAgent):
             if len(edge_knowledge["sections"]) > 0:
                 first_heading = edge_knowledge["sections"][0].get("heading", "N/A")
                 insights.append(f"Top Edge AI Insight: {first_heading}")
+
+        # 5. Integrate Innovation & AI Knowledge
+        innovation_knowledge = blackboard.get("google_innovation_ai_knowledge", {})
+        if innovation_knowledge and "articles" in innovation_knowledge:
+            insights.append(f"Innovation & AI Knowledge Integrated: {len(innovation_knowledge['articles'])} articles found.")
+            if len(innovation_knowledge["articles"]) > 0:
+                top_article = innovation_knowledge["articles"][0].get("title", "N/A")
+                insights.append(f"Top Innovation Insight: {top_article}")
+
+        # 6. Integrate Models & Research Knowledge
+        research_knowledge = blackboard.get("google_models_research_knowledge", {})
+        if research_knowledge and "articles" in research_knowledge:
+            insights.append(f"Models & Research Knowledge Integrated: {len(research_knowledge['articles'])} articles found.")
+            if len(research_knowledge["articles"]) > 0:
+                top_research = research_knowledge["articles"][0].get("title", "N/A")
+                insights.append(f"Top Research Insight: {top_research}")
 
         return {
             "intelligence_insights": insights,

@@ -41,9 +41,18 @@ class GoogleInnovationAIAgent(BaseAgent):
                                     title = link.get_text(strip=True)
                                     # Basic heuristic to avoid menu links or short fragments
                                     if title and len(title) > 20:
+                                        # Attempt to find a summary in a neighboring tag or parent
+                                        snippet = ""
+                                        parent = link.find_parent(['div', 'section'])
+                                        if parent:
+                                            summary_tag = parent.find(['p', 'span'], class_=lambda x: x and ('summary' in x or 'description' in x))
+                                            if summary_tag:
+                                                snippet = summary_tag.get_text(strip=True)
+
                                         knowledge["articles"].append({
                                             "title": title,
-                                            "url": full_url
+                                            "url": full_url,
+                                            "snippet": snippet
                                         })
                                         seen_urls.add(full_url)
 
