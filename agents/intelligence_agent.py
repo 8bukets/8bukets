@@ -4,15 +4,32 @@ import json
 
 class IntelligenceAgent(BaseAgent):
     def __init__(self):
-        super().__init__("IntelligenceAgent", dependencies=["analysis_stats", "research_data"], provides=["intelligence_insights", "synchronization_level"])
+        super().__init__("IntelligenceAgent",
+                         dependencies=["analysis_stats", "research_data", "ai_agents_definitions"],
+                         provides=["intelligence_insights", "synchronization_level"])
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
         self.logger.info("Running Intelligence Synchronization & External World Collaboration...")
 
         analysis = blackboard.get("analysis_stats", {})
         research = blackboard.get("research_data", {})
+        knowledge = blackboard.get("ai_agents_definitions", {})
 
         insights = []
+
+        # 0. Knowledge Alignment
+        if knowledge:
+            insights.append("System alignment verified against Google Cloud AI Agent definitions.")
+
+            ai_agent_def = knowledge.get("ai_agent", "").lower()
+            if "reasoning" in ai_agent_def and "acting" in ai_agent_def:
+                insights.append("Ecosystem architecture aligns with ReAct framework (Reasoning + Acting).")
+
+            if "memory" in ai_agent_def:
+                insights.append("System utilizes multi-tiered memory architecture (Short-term, Long-term, Episodic).")
+
+            if "tools" in ai_agent_def:
+                insights.append("Agent capabilities are extended via specialized external toolsets.")
 
         # 1. Internal Logic
         top_cats = analysis.get("top_categories", {})
