@@ -30,14 +30,19 @@ class KnowledgeAgent(BaseAgent):
             definitions = {
                 "ai_agent": knowledge.get("key-features-of-an-ai-agent", {}).get("content", ""),
                 "differences": knowledge.get("what-is-the-difference-between-ai-agents,-ai-assistants,-and-bots", {}).get("content", ""),
-                "types": knowledge.get("what-are-the-types-of-agents-in-ai", {}).get("content", "")
+                "types": knowledge.get("what-are-the-types-of-agents-in-ai", {}).get("content", ""),
+                "challenges": knowledge.get("challenges-with-using-ai-agents", {}).get("content", ""),
+                "deployment": knowledge.get("deploy-ai-agents-for-scale-and-efficiency-with-cloud-run", {}).get("content", ""),
+                "how_they_work": knowledge.get("how-do-ai-agents-work", {}).get("content", "")
             }
 
             best_practices = [
                 "Focus on reasoning, acting, observing, and planning.",
                 "Implement self-refining capabilities for continuous improvement.",
                 "Ensure robust memory management (short-term, long-term, episodic, consensus).",
-                "Utilize appropriate tools for environment interaction."
+                "Utilize appropriate tools for environment interaction.",
+                "Maintain a consistent persona appropriate to the assigned role.",
+                "Leverage serverless platforms like Cloud Run for scalable and cost-effective deployment."
             ]
 
             return {
