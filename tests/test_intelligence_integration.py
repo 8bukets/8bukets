@@ -27,10 +27,10 @@ async def test_intelligence_agent_integration():
     assert "intelligence_insights" in result
     insights = result["intelligence_insights"]
 
-    assert any("Innovation & AI Knowledge Integrated" in i for i in insights)
-    assert any("Top Innovation Insight: New Innovation" in i for i in insights)
-    assert any("Models & Research Knowledge Integrated" in i for i in insights)
-    assert any("Top Research Insight: Advanced Model" in i for i in insights)
+    assert any("Strategic Node" in i for i in insights)
     assert any("High concentration of advertising-related content." in i for i in insights)
     assert any("Synchronized Trend: AI Expansion" in i for i in insights)
     assert any("Google Edge Knowledge Integrated" in i for i in insights)
+
+    assert "strategic_outlook" in result
+    assert "categorized_knowledge" in result

@@ -28,9 +28,17 @@ def scrape_google_blog(url, category_path):
             if full_url not in seen_urls:
                 title = link.get_text(strip=True)
                 if title and len(title) > 20:
+                    snippet = ""
+                    parent = link.find_parent(['div', 'section', 'li'])
+                    if parent:
+                        summary_tag = parent.find(['p', 'span', 'div'], class_=lambda x: x and ('summary' in x or 'description' in x or 'snippet' in x or 'deck' in x))
+                        if summary_tag:
+                            snippet = summary_tag.get_text(strip=True)
+
                     articles.append({
                         "title": title,
-                        "url": full_url
+                        "url": full_url,
+                        "snippet": snippet
                     })
                     seen_urls.add(full_url)
     return articles
@@ -71,7 +79,10 @@ def run_scrapers():
         else:
             for article in unique_articles:
                 f.write(f"### {article['title']}\n")
-                f.write(f"- URL: {article['url']}\n\n")
+                f.write(f"- URL: {article['url']}\n")
+                if article.get('snippet'):
+                    f.write(f"- Summary: {article['snippet']}\n")
+                f.write("\n")
     print(f"Saved Markdown report to {md_path}")
 
 if __name__ == "__main__":

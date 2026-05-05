@@ -4,7 +4,7 @@ import json
 
 class IntelligenceAgent(BaseAgent):
     def __init__(self):
-        super().__init__("IntelligenceAgent", dependencies=["analysis_stats", "research_data", "google_edge_knowledge", "google_innovation_ai_knowledge", "google_models_research_knowledge"], provides=["intelligence_insights", "synchronization_level"])
+        super().__init__("IntelligenceAgent", dependencies=["analysis_stats", "research_data", "google_edge_knowledge", "google_innovation_ai_knowledge", "google_models_research_knowledge"], provides=["intelligence_insights", "synchronization_level", "strategic_outlook", "categorized_knowledge"])
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
         self.logger.info("Running Intelligence Synchronization & External World Collaboration...")
@@ -45,23 +45,69 @@ class IntelligenceAgent(BaseAgent):
                 first_heading = edge_knowledge["sections"][0].get("heading", "N/A")
                 insights.append(f"Top Edge AI Insight: {first_heading}")
 
-        # 5. Integrate Innovation & AI Knowledge
-        innovation_knowledge = blackboard.get("google_innovation_ai_knowledge", {})
-        if innovation_knowledge and "articles" in innovation_knowledge:
-            insights.append(f"Innovation & AI Knowledge Integrated: {len(innovation_knowledge['articles'])} articles found.")
-            if len(innovation_knowledge["articles"]) > 0:
-                top_article = innovation_knowledge["articles"][0].get("title", "N/A")
-                insights.append(f"Top Innovation Insight: {top_article}")
+        # 5. Categorize and Synthesize Google AI Knowledge
+        google_knowledge_sources = [
+            blackboard.get("google_innovation_ai_knowledge", {}),
+            blackboard.get("google_models_research_knowledge", {}),
+            blackboard.get("google_edge_knowledge", {})
+        ]
 
-        # 6. Integrate Models & Research Knowledge
-        research_knowledge = blackboard.get("google_models_research_knowledge", {})
-        if research_knowledge and "articles" in research_knowledge:
-            insights.append(f"Models & Research Knowledge Integrated: {len(research_knowledge['articles'])} articles found.")
-            if len(research_knowledge["articles"]) > 0:
-                top_research = research_knowledge["articles"][0].get("title", "N/A")
-                insights.append(f"Top Research Insight: {top_research}")
+        all_articles = []
+        for source in google_knowledge_sources:
+            if "articles" in source:
+                all_articles.extend(source["articles"])
+            elif "sections" in source: # Edge knowledge format
+                for section in source["sections"]:
+                    all_articles.append({
+                        "title": section.get("heading", ""),
+                        "snippet": section.get("content", "")
+                    })
+
+        categories = {
+            "Models & Gemini": [],
+            "Research & DeepMind": [],
+            "Infrastructure & Cloud": [],
+            "Products & Tools": [],
+            "Safety & Privacy": []
+        }
+
+        keywords = {
+            "Models & Gemini": ["gemini", "gemma", "llm", "embedding", "multimodal", "token"],
+            "Research & DeepMind": ["research", "deepmind", "agi", "quantum", "science", "framework"],
+            "Infrastructure & Cloud": ["infrastructure", "cloud", "network", "energy", "compute", "global"],
+            "Products & Tools": ["app", "developer", "tool", "notebooklm", "search", "api", "vibe"],
+            "Safety & Privacy": ["safety", "security", "privacy", "protecting", "compliance", "policy"]
+        }
+
+        for article in all_articles:
+            text = (article.get("title", "") + " " + article.get("snippet", "")).lower()
+            categorized = False
+            for cat, kws in keywords.items():
+                if any(kw in text for kw in kws):
+                    categories[cat].append(article.get("title"))
+                    categorized = True
+                    break
+            if not categorized:
+                # Default to General Innovation
+                if "General Innovation" not in categories:
+                    categories["General Innovation"] = []
+                categories["General Innovation"].append(article.get("title"))
+
+        for cat, titles in categories.items():
+            if titles:
+                insights.append(f"Strategic Node [{cat}]: Found {len(titles)} relevant updates.")
+                insights.append(f"  - Lead insight: {titles[0]}")
+
+        # 6. Strategic Risk & Opportunity Assessment
+        assessment = "Positive outlook on multimodal scaling and autonomous research agents."
+        if len(categories["Safety & Privacy"]) > 0:
+            assessment += " Strategic focus on privacy-preserving AI and security frameworks detected."
+        if len(categories["Infrastructure & Cloud"]) > 0:
+            assessment += " Infrastructure expansion indicates preparation for massive-scale deployment."
 
         return {
             "intelligence_insights": insights,
-            "synchronization_level": "ADVANCED_COLABORATIVE"
+            "strategic_outlook": assessment,
+            "synchronization_level": "ADVANCED_COLABORATIVE",
+            "categorized_knowledge": {k: v for k, v in categories.items() if v}
         }
