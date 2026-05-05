@@ -6,7 +6,7 @@ class IntelligenceAgent(BaseAgent):
     def __init__(self):
         super().__init__("IntelligenceAgent",
                          dependencies=["analysis_stats", "research_data", "ai_agents_definitions"],
-                         provides=["intelligence_insights", "synchronization_level"])
+                         provides=["intelligence_insights", "synchronization_level", "strategic_risk_assessment"])
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
         self.logger.info("Running Intelligence Synchronization & External World Collaboration...")
@@ -30,6 +30,26 @@ class IntelligenceAgent(BaseAgent):
 
             if "tools" in ai_agent_def:
                 insights.append("Agent capabilities are extended via specialized external toolsets.")
+
+            if "collaborating" in ai_agent_def:
+                insights.append("System supports multi-agent collaboration and coordination.")
+
+            if "self-refining" in ai_agent_def:
+                insights.append("Ecosystem includes self-improvement and adaptation mechanisms.")
+
+            if "observing" in ai_agent_def:
+                insights.append("System maintains environmental awareness through perception and sensing.")
+
+        # 0.5 Strategic Risk Assessment
+        risks = []
+        challenges = knowledge.get("challenges", "").lower()
+        if challenges:
+            if "empathy" in challenges or "emotional intelligence" in challenges:
+                risks.append("Limited performance expected in tasks requiring deep emotional intelligence.")
+            if "ethical" in challenges:
+                risks.append("High-stakes ethical decisions require human-in-the-loop oversight.")
+            if "unpredictable" in challenges or "physical environments" in challenges:
+                risks.append("Physical environment unpredictability identified as a boundary for autonomous operation.")
 
         # 1. Internal Logic
         top_cats = analysis.get("top_categories", {})
@@ -56,5 +76,6 @@ class IntelligenceAgent(BaseAgent):
 
         return {
             "intelligence_insights": insights,
-            "synchronization_level": "ADVANCED_COLABORATIVE"
+            "synchronization_level": "ADVANCED_COLABORATIVE",
+            "strategic_risk_assessment": risks
         }
