@@ -62,11 +62,20 @@ def run_pipeline(skip_scrape=False):
     if not skip_scrape:
         logger.info("Starting Scraper...")
         subprocess.run(["python3", "scraper.py"], check=True)
+        logger.info("Starting Oracle AI Scraper...")
+        subprocess.run(["python3", "oracle_ai_scraper.py"], check=True)
     else:
         logger.info("Skipping scrape...")
 
     # 2. Load Data
     data = load_data("links.json")
+    oracle_ai_data = load_data("oracle_ai_docs.json")
+
+    # Update memory with Oracle AI knowledge
+    if oracle_ai_data:
+        memory_system.update("oracle_ai_knowledge", oracle_ai_data)
+        logger.info("Loaded Oracle AI knowledge into memory.")
+
     if not data:
         logger.warning("No data to process.")
         return
