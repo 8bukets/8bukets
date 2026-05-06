@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
 import re
@@ -85,26 +85,25 @@ class OracleNewsScraper:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
         # Oracle news uses links in <h3> tags or <a> tags with specific classes or structures.
         # Based on curl output, we saw links like:
         # <a href="/news/announcement/..." data-lbl="..."><h3>Title</h3></a>
 
+        # Optimize: Filter during parsing using SoupStrainer
+        def link_filter(href):
+            return href and '/news/announcement/' in href and 'google-cloud' in href.lower()
+
+        # Only parse <a> tags that match our criteria
+        strainer = SoupStrainer('a', href=link_filter)
+        soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
+
         articles = []
-
-        # Find all links that look like announcements
-        links = soup.find_all('a', href=True)
-
+        links = soup.find_all('a')
         seen_urls = set()
 
         for link in links:
             href = link.get('href')
-            if not href or '/news/announcement/' not in href:
-                continue
-
-            # Filter for "google-cloud" as requested
-            if 'google-cloud' not in href.lower():
-                continue
+            # Filtering already done by SoupStrainer
 
             full_url = urljoin(self.base_url, href)
 
