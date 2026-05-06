@@ -1,0 +1,30 @@
+[
+    {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/",
+        "title": "Models & research",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [
+            {
+                "title": "Our new study explores how AI can reduce the climate impact of air travel.",
+                "description": ""
+            }
+        ],
+        "google_cloud_tools": [
+            "Stitch’s DESIGN.md format is now open-source so you can use it across platforms."
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanded-gemini-api-file-search-multimodal-rag/",
+        "title": "Gemini API File Search is now multimodal",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [
+            {
+                "title": "General Benefit",
+                "description": "Today, we are expanding the Gemini API’s File Search tool. You can now build retrieval-augmented generation (RAG) systems with multimodal data and custom metadata. We’re also introducing page citations to improve grounding and transparency."
+            }
+        ],
+        "google_cloud_tools": []
+    }
+]

@@ -26,6 +26,9 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 ### Our new study explores how AI can reduce the climate impact of air travel.
 - URL: https://blog.google/innovation-and-ai/models-and-research/google-research/contrail-avoidance-research/
 
+### Flow Music and Believe bring next-gen tools to artists
+- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/believe-flow-music-partnership/
+
 ### 3 creative tips from our Flow Sessions artists
 - URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-sessions-artists-lessons/
 
@@ -34,9 +37,6 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 
 ### Google brings Pomelli in English to small businesses in Europe.
 - URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/pomelli-in-europe/
-
-### Introducing “vibe design” with Stitch
-- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-ai-ui-design/
 
 ### View more from Google Labs
 - URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/
