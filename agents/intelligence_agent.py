@@ -4,7 +4,7 @@ import json
 
 class IntelligenceAgent(BaseAgent):
     def __init__(self):
-        super().__init__("IntelligenceAgent", dependencies=["analysis_stats", "research_data", "google_edge_knowledge", "google_innovation_ai_knowledge", "google_models_research_knowledge"], provides=["intelligence_insights", "synchronization_level", "strategic_outlook", "categorized_knowledge"])
+        super().__init__("IntelligenceAgent", dependencies=["analysis_stats", "research_data", "google_edge_knowledge", "google_innovation_ai_knowledge", "google_models_research_knowledge", "ai_agent_knowledge"], provides=["intelligence_insights", "synchronization_level", "strategic_outlook", "categorized_knowledge", "strategic_risk_assessment"])
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
         self.logger.info("Running Intelligence Synchronization & External World Collaboration...")
@@ -98,16 +98,41 @@ class IntelligenceAgent(BaseAgent):
                 insights.append(f"Strategic Node [{cat}]: Found {len(titles)} relevant updates.")
                 insights.append(f"  - Lead insight: {titles[0]}")
 
-        # 6. Strategic Risk & Opportunity Assessment
+        # 6. Integrate AI Agent Knowledge Base
+        agent_knowledge = blackboard.get("ai_agent_knowledge", {})
+        risk_assessment = []
+        if agent_knowledge:
+            insights.append(f"AI Agent Knowledge Base Integrated: {len(agent_knowledge.get('entries', []))} deep dives analyzed.")
+
+            # Extract common benefits as strategic drivers
+            for benefit in agent_knowledge.get("all_benefits", []):
+                title = benefit.get("title", "")
+                if title and "Benefit" not in title:
+                    insights.append(f"Strategic Value Driver: {title}")
+
+            if agent_knowledge.get("all_tools"):
+                insights.append(f"Recommended Toolchain: {', '.join(agent_knowledge.get('all_tools'))}")
+
+            # Assess Risk based on agent definitions and use cases
+            if any("autonomous" in str(d).lower() for d in agent_knowledge.get("all_definitions")):
+                risk_assessment.append("Increased focus on autonomous agency requires enhanced safety guardrails.")
+            if agent_knowledge.get("all_use_cases"):
+                risk_assessment.append(f"Diversifying application landscape with {len(agent_knowledge['all_use_cases'])} validated use cases.")
+
+        # 7. Strategic Risk & Opportunity Assessment
         assessment = "Positive outlook on multimodal scaling and autonomous research agents."
         if len(categories["Safety & Privacy"]) > 0:
             assessment += " Strategic focus on privacy-preserving AI and security frameworks detected."
         if len(categories["Infrastructure & Cloud"]) > 0:
             assessment += " Infrastructure expansion indicates preparation for massive-scale deployment."
 
+        if not risk_assessment:
+            risk_assessment.append("Continuous monitoring of external AI ecosystem recommended.")
+
         return {
             "intelligence_insights": insights,
             "strategic_outlook": assessment,
-            "synchronization_level": "ADVANCED_COLABORATIVE",
+            "strategic_risk_assessment": risk_assessment,
+            "synchronization_level": "KNOWLEDGE_ALIGNED",
             "categorized_knowledge": {k: v for k, v in categories.items() if v}
         }

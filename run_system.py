@@ -39,6 +39,7 @@ from agents.performance_optimization_agent import PerformanceOptimizationAgent
 from agents.google_edge_agent import GoogleEdgeAgent
 from agents.google_models_research_agent import GoogleModelsResearchAgent
 from agents.google_innovation_ai_agent import GoogleInnovationAIAgent
+from agents.knowledge_agent import KnowledgeAgent
 
 # Expansion Agents
 from agents.swarm_agent import SwarmAgent
@@ -148,7 +149,7 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
     agents = [
         HealthCheckAgent(), RobotTxtAgent(), AnalysisAgent(),
         ResearchAgent(), GoogleEdgeAgent(), GoogleModelsResearchAgent(),
-        GoogleInnovationAIAgent(), IntelligenceAgent(), TargetingAgent(),
+        GoogleInnovationAIAgent(), KnowledgeAgent(), IntelligenceAgent(), TargetingAgent(),
         CreativityAgent(), AdsAgent(), BidAgent(),
         MonetizationAgent(), ContentAgent(), AutonomousIntelligenceAgent(),
         TelemetryAgent(), SixSigmaAgent(), ArchitectAgent(),
