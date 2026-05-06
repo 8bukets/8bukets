@@ -49,6 +49,7 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 
 ### Evolving expectations of what’s possibleKent Walker shares Google’s perspective on the future of privacy at IAPP Global Summit 2026.
 - URL: https://blog.google/innovation-and-ai/technology/safety-security/evolving-expectations-of-whats-possible/
+- Summary: Kent Walker shares Google’s perspective on the future of privacy at IAPP Global Summit 2026.
 
 ### The latest AI news we announced in April 2026
 - URL: https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-april-2026/
@@ -56,14 +57,15 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 ### Join the new AI Agents Vibe Coding Course from Google and Kaggle
 - URL: https://blog.google/innovation-and-ai/technology/developers-tools/kaggle-genai-intensive-course-vibe-coding-june-2026/
 
+### Gemini API File Search is now multimodal: build efficient, verifiable RAG
+- URL: https://blog.google/innovation-and-ai/technology/developers-tools/expanded-gemini-api-file-search-multimodal-rag/
+
+### Accelerating Gemma 4: faster inference with  multi-token prediction drafters
+- URL: https://blog.google/innovation-and-ai/technology/developers-tools/multi-token-prediction-gemma-4/
+
 ### Reduce friction and latency for long-running jobs with Webhooks in Gemini API
 - URL: https://blog.google/innovation-and-ai/technology/developers-tools/event-driven-webhooks/
-
-### You can now easily generate files in Gemini.
-- URL: https://blog.google/innovation-and-ai/products/gemini-app/generate-files-in-gemini/
 
 ### How we’re protecting energy affordability in Oklahoma
 - URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/oklahoma-energy-affordability-agreement/
 
-### We're announcing the first West Memphis Energy Impact Fund recipients.
-- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/west-memphis-energy-impact-fund-recipients/
