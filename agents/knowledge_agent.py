@@ -28,12 +28,23 @@ class KnowledgeAgent(BaseAgent):
 
             # Extract specific definitions and best practices
             definitions = {
-                "ai_agent": knowledge.get("key-features-of-an-ai-agent", {}).get("content", ""),
+                "ai_agent": knowledge.get("what-is-an-ai-agent", {}).get("content", ""),
+                "features": knowledge.get("key-features-of-an-ai-agent", {}).get("content", ""),
                 "differences": knowledge.get("what-is-the-difference-between-ai-agents,-ai-assistants,-and-bots", {}).get("content", ""),
-                "types": knowledge.get("what-are-the-types-of-agents-in-ai", {}).get("content", ""),
+                "types": knowledge.get("based-on-interaction", {}).get("content", "") + "\n" + knowledge.get("based-on-number-of-agents", {}).get("content", ""),
                 "challenges": knowledge.get("challenges-with-using-ai-agents", {}).get("content", ""),
                 "deployment": knowledge.get("deploy-ai-agents-for-scale-and-efficiency-with-cloud-run", {}).get("content", ""),
-                "how_they_work": knowledge.get("how-do-ai-agents-work", {}).get("content", "")
+                "how_they_work": knowledge.get("how-do-ai-agents-work", {}).get("content", ""),
+                "use_cases": {
+                    "customer": knowledge.get("customer-agents", {}).get("content", ""),
+                    "employee": knowledge.get("employee-agents", {}).get("content", ""),
+                    "creative": knowledge.get("creative-agents", {}).get("content", ""),
+                    "data": knowledge.get("data-agents", {}).get("content", ""),
+                    "code": knowledge.get("code-agents", {}).get("content", ""),
+                    "security": knowledge.get("security-agents", {}).get("content", "")
+                },
+                "benefits": knowledge.get("benefits-of-using-ai-agents", {}).get("content", ""),
+                "google_cloud_tools": knowledge.get("google-cloud-and-ai-agents", {}).get("content", "")
             }
 
             best_practices = [
@@ -42,7 +53,8 @@ class KnowledgeAgent(BaseAgent):
                 "Ensure robust memory management (short-term, long-term, episodic, consensus).",
                 "Utilize appropriate tools for environment interaction.",
                 "Maintain a consistent persona appropriate to the assigned role.",
-                "Leverage serverless platforms like Cloud Run for scalable and cost-effective deployment."
+                "Leverage serverless platforms like Cloud Run for scalable and cost-effective deployment.",
+                "Design specialized agents for specific domains like Code, Security, or Data."
             ]
 
             return {
