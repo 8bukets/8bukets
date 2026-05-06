@@ -25,4 +25,13 @@ class CreativityAgent(BaseAgent):
         if "interactive partners" in agent_types:
             concepts.append("User Engagement: Building Interactive Partner Agents")
 
+        use_cases = knowledge.get("use_cases", {})
+        if use_cases:
+            if use_cases.get("code"):
+                concepts.append("The Future of Dev: Accelerating with Code Agents")
+            if use_cases.get("security"):
+                concepts.append("Autonomous Defense: Protecting the Perimeter with Security Agents")
+            if use_cases.get("data"):
+                concepts.append("Data Insights: Unleashing Data Agents on Complex Analytics")
+
         return {"creative_concepts": concepts}

@@ -16,51 +16,65 @@ def scrape_ai_agents_knowledge():
         return False
 
     soup = BeautifulSoup(resp.content, "html.parser")
-    headings = soup.find_all("h2")
+
+    # Capture all relevant headings as section markers
+    # Including h1, h2, h3 to get more granular and complete sections (like Benefits and Use Cases)
+    headings = soup.find_all(["h1", "h2", "h3"])
+    all_tags = soup.find_all(True)
     data = {}
 
-    for header in headings:
+    for i, header in enumerate(headings):
+        section_title = header.get_text(strip=True)
         section_id = header.get("id")
         if not section_id:
-            section_id = header.get_text(strip=True).lower().replace(" ", "-").replace("?", "")
+            section_id = section_title.lower().replace(" ", "-").replace("?", "")
 
-        section_title = header.get_text(strip=True)
-        content = []
-        curr = header.find_next_sibling()
+        next_header = headings[i+1] if i+1 < len(headings) else None
 
-        while curr:
-            if curr.name == "h2":
-                break
+        try:
+            start_idx = all_tags.index(header)
+            end_idx = all_tags.index(next_header) if next_header else len(all_tags)
+        except ValueError:
+            continue
 
-            if curr.name == "pre":
-                code = curr.get_text(strip=True)
-                content.append(f"```\n{code}\n```")
-            elif curr.name in ["h3", "h4"]:
-                title = curr.get_text(strip=True)
-                content.append(f"### {title}")
-            elif curr.name == "ul":
-                for li in curr.find_all("li", recursive=False):
-                    content.append(f"- {li.get_text(strip=True)}")
-            elif curr.name == "ol":
-                for idx, li in enumerate(curr.find_all("li", recursive=False)):
-                    content.append(f"{idx + 1}. {li.get_text(strip=True)}")
-            elif curr.name == "table":
-                rows = []
-                for tr in curr.find_all("tr"):
-                    cells = [th_td.get_text(strip=True) for th_td in tr.find_all(["th", "td"])]
-                    rows.append(" | ".join(cells))
-                content.append("\n".join(rows))
-            else:
-                text = curr.get_text(separator=' ', strip=True)
-                if text:
-                    content.append(text)
+        section_content = []
+        processed_tags = set()
 
-            curr = curr.find_next_sibling()
+        for j in range(start_idx + 1, end_idx):
+            tag = all_tags[j]
+            if tag in processed_tags:
+                continue
 
-        data[section_id] = {
-            "title": section_title,
-            "content": "\n\n".join(content)
-        }
+            # Sub-headings within a section (h4)
+            if tag.name == "h4":
+                section_content.append(f"### {tag.get_text(strip=True)}")
+            # Content tags
+            elif tag.name in ["p", "li", "table", "pre", "h5", "h6"]:
+                if tag.name == "table":
+                    rows = []
+                    for tr in tag.find_all("tr"):
+                        cells = [th_td.get_text(strip=True) for th_td in tr.find_all(["th", "td"])]
+                        rows.append(" | ".join(cells))
+                    section_content.append("\n".join(rows))
+                elif tag.name == "pre":
+                    section_content.append(f"```\n{tag.get_text(strip=True)}\n```")
+                elif tag.name == "li":
+                    # Simple bullet for list items
+                    section_content.append(f"- {tag.get_text(strip=True)}")
+                else:
+                    text = tag.get_text(separator=' ', strip=True)
+                    if text:
+                        section_content.append(text)
+
+                # Mark all descendants as processed to avoid duplicates
+                for descendant in tag.find_all(True):
+                    processed_tags.add(descendant)
+
+        if section_content:
+            data[section_id] = {
+                "title": section_title,
+                "content": "\n\n".join(section_content)
+            }
 
     # Save to JSON
     json_path = "ai_agents_knowledge.json"

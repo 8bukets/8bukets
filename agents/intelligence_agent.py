@@ -21,7 +21,7 @@ class IntelligenceAgent(BaseAgent):
         if knowledge:
             insights.append("System alignment verified against Google Cloud AI Agent definitions.")
 
-            ai_agent_def = knowledge.get("ai_agent", "").lower()
+            ai_agent_def = (knowledge.get("ai_agent", "") + " " + knowledge.get("features", "")).lower()
             if "reasoning" in ai_agent_def and "acting" in ai_agent_def:
                 insights.append("Ecosystem architecture aligns with ReAct framework (Reasoning + Acting).")
 
@@ -39,6 +39,24 @@ class IntelligenceAgent(BaseAgent):
 
             if "observing" in ai_agent_def:
                 insights.append("System maintains environmental awareness through perception and sensing.")
+
+            # Benefits integration
+            benefits = knowledge.get("benefits", "").lower()
+            if "efficiency" in benefits:
+                insights.append("Strategic Benefit: Significant efficiency and productivity gains via task division.")
+            if "decision-making" in benefits:
+                insights.append("Strategic Benefit: Improved decision-making through agent collaboration and debate.")
+            if "adaptability" in benefits:
+                insights.append("Strategic Benefit: High adaptability to changing situations and strategies.")
+
+            # Tools integration
+            tools_info = knowledge.get("google_cloud_tools", "").lower()
+            if "gemini" in tools_info:
+                insights.append("Tooling Strategy: Leveraging Gemini Enterprise for governance and discovery.")
+            if "adk" in tools_info:
+                insights.append("Tooling Strategy: Utilizing Agent Development Kit (ADK) for multi-agent systems.")
+            if "cloud run" in tools_info:
+                insights.append("Infrastructure Strategy: Scalable deployment using Cloud Run serverless platform.")
 
         # 0.5 Strategic Risk Assessment
         risks = []
