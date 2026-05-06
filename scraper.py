@@ -84,7 +84,8 @@ class OracleNewsScraper:
             logger.error(f"Timeout fetching {url}")
             return None
 
-    async def parse_page(self, html: str) -> List[Dict]:
+    def _parse_page_sync(self, html: str) -> List[Dict]:
+        """Synchronous parsing logic, to be run in a thread."""
         soup = BeautifulSoup(html, 'html.parser')
         # Oracle news uses links in <h3> tags or <a> tags with specific classes or structures.
         # Based on curl output, we saw links like:
@@ -142,6 +143,10 @@ class OracleNewsScraper:
             articles.append(article_data)
 
         return articles
+
+    async def parse_page(self, html: str) -> List[Dict]:
+        """Offload parsing to a separate thread to avoid blocking the event loop."""
+        return await asyncio.to_thread(self._parse_page_sync, html)
 
     async def scrape(self):
         if not self.check_robots_txt():
