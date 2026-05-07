@@ -116,7 +116,7 @@ def run_pipeline(skip_scrape=False):
     save_result("analysis.json", analysis_results, current_date)
 
     # Research
-    research_results = research_agent.process(data)
+    research_results = research_agent.process(data, memory_system.memory)
     save_result("research.json", research_results, current_date)
 
     # Intelligence
@@ -150,7 +150,7 @@ def run_pipeline(skip_scrape=False):
     save_result("creative_headlines.json", headlines, current_date)
 
     # High-level Synthesis
-    summary = ai_agent.process(results_aggregator)
+    summary = ai_agent.process(results_aggregator, memory_system.memory)
     save_result("executive_summary.txt", summary, current_date)
 
     # 5. Jules Intelligence (Evolution & Learning)
