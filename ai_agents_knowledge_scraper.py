@@ -25,6 +25,9 @@ def scrape_ai_agents_knowledge():
 
     for i, header in enumerate(headings):
         section_title = header.get_text(strip=True)
+        if section_title in ["Additional resources", "Take the next step", "Accelerate your digital transformation", "Why Google", "Products and pricing", "Solutions", "Resources", "Engage"]:
+            break
+
         section_id = header.get("id")
         if not section_id:
             section_id = section_title.lower().replace(" ", "-").replace("?", "")
@@ -53,14 +56,15 @@ def scrape_ai_agents_knowledge():
                 if tag.name == "table":
                     rows = []
                     for tr in tag.find_all("tr"):
-                        cells = [th_td.get_text(strip=True) for th_td in tr.find_all(["th", "td"])]
+                        cells = [th_td.get_text(separator=" ", strip=True) for th_td in tr.find_all(["th", "td"])]
                         rows.append(" | ".join(cells))
                     section_content.append("\n".join(rows))
                 elif tag.name == "pre":
                     section_content.append(f"```\n{tag.get_text(strip=True)}\n```")
                 elif tag.name == "li":
-                    # Simple bullet for list items
-                    section_content.append(f"- {tag.get_text(strip=True)}")
+                    # Use separator to avoid text concatenation
+                    text = tag.get_text(separator=" ", strip=True)
+                    section_content.append(f"- {text}")
                 else:
                     text = tag.get_text(separator=' ', strip=True)
                     if text:

@@ -113,18 +113,34 @@ def generate_daily_report(context, filename):
             for trend in research.get("market_trends", []):
                 f.write(f"- **Trend:** {trend}\n")
 
-            f.write("\n## 4. System Evolution & Daily Improvement\n")
+            f.write("\n## 4. Intelligence & Strategic Outlook\n")
+            outlook = context.get("strategic_outlook", [])
+            for item in outlook:
+                f.write(f"- {item}\n")
+
+            f.write("\n### Strategic Risks\n")
+            risks = context.get("strategic_risk_assessment", [])
+            for risk in risks:
+                f.write(f"- [!] {risk}\n")
+
+            f.write("\n### Categorized Knowledge\n")
+            categorized = context.get("categorized_knowledge", {})
+            for cat, items in categorized.items():
+                if items:
+                    f.write(f"- **{cat}:** {', '.join(items)}\n")
+
+            f.write("\n## 5. System Evolution & Daily Improvement\n")
             evolution = context.get("system_evolution", {})
             f.write(f"- **Evolution Status:** {evolution.get('status', 'STABLE')}\n")
             f.write(f"- **Version Shift:** +{evolution.get('version_upgrade', 0)}\n")
             for param, val in evolution.get("parameter_shifts", {}).items():
                 f.write(f"  - {param} optimized to: {val}\n")
 
-            f.write("\n## 5. Peer Review & Collaboration Log\n")
+            f.write("\n## 6. Peer Review & Collaboration Log\n")
             for review in context.get("peer_review_log", []):
                 f.write(f"- {review}\n")
 
-            f.write("\n## 6. Antigravity Collaboration\n")
+            f.write("\n## 7. Antigravity Collaboration\n")
             antigravity = context.get("antigravity_context", {})
             f.write(f"- **Platform:** {antigravity.get('platform', 'N/A')}\n")
             f.write(f"- **Sync Status:** {antigravity.get('status', 'PENDING')}\n")

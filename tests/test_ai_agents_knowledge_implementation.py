@@ -16,9 +16,19 @@ async def test_knowledge_integration_flow():
     # Mock knowledge file if not exists or use the existing one
     if not os.path.exists("ai_agents_knowledge.json"):
         mock_data = {
+            "what-is-an-ai-agent": {"content": "AI agents are software systems..."},
             "key-features-of-an-ai-agent": {"content": "Reasoning Acting Collaborating Self-refining Observing"},
             "challenges-with-using-ai-agents": {"content": "Empathy Ethical stakes Unpredictable"},
-            "what-are-the-types-of-agents-in-ai": {"content": "Background Agents Interactive Partners"}
+            "what-are-the-types-of-agents-in-ai": {"content": "Background Agents Interactive Partners"},
+            "benefits-of-using-ai-agents": {"content": "Simultaneous execution Realistic simulations Collaboration"},
+            "google-cloud-and-ai-agents": {"content": "- ToolA Description\n- ToolB Description"},
+            "customer-agents": {"content": "Customer context"},
+            "employee-agents": {"content": "Employee context"},
+            "creative-agents": {"content": "Creative context"},
+            "data-agents": {"content": "Data context"},
+            "code-agents": {"content": "Code context"},
+            "security-agents": {"content": "Security context"},
+            "deploy-ai-agents-for-scale-and-efficiency-with-cloud-run": {"content": "Cloud Run deployment"}
         }
         with open("ai_agents_knowledge.json", "w") as f:
             json.dump(mock_data, f)
@@ -29,6 +39,8 @@ async def test_knowledge_integration_flow():
     assert "challenges" in k_result["ai_agents_definitions"]
     assert "deployment" in k_result["ai_agents_definitions"]
     assert any("Cloud Run" in bp for bp in k_result["agent_best_practices"])
+    assert "customer" in k_result["agent_use_cases"]
+    assert len(k_result["google_cloud_tools_list"]) > 0
 
     # 2. Test IntelligenceAgent
     # Needs analysis_stats and research_data
@@ -43,6 +55,8 @@ async def test_knowledge_integration_flow():
     assert any("self-improvement" in insight for insight in i_result["intelligence_insights"])
     assert len(i_result["strategic_risk_assessment"]) > 0
     assert any("emotional intelligence" in risk for risk in i_result["strategic_risk_assessment"])
+    assert len(i_result["strategic_outlook"]) > 0
+    assert "Models" in i_result["categorized_knowledge"]
 
     # 3. Test CreativityAgent
     c_agent = CreativityAgent()

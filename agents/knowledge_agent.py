@@ -9,7 +9,7 @@ class KnowledgeAgent(BaseAgent):
     def __init__(self):
         super().__init__("KnowledgeAgent",
                          dependencies=[],
-                         provides=["ai_agents_definitions", "agent_best_practices"])
+                         provides=["ai_agents_definitions", "agent_best_practices", "agent_use_cases", "google_cloud_tools_list"])
         self.knowledge_file = "ai_agents_knowledge.json"
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
@@ -47,6 +47,24 @@ class KnowledgeAgent(BaseAgent):
                 "google_cloud_tools": knowledge.get("google-cloud-and-ai-agents", {}).get("content", "")
             }
 
+            use_cases = definitions.get("use_cases", {})
+
+            # Extract tools list
+            tools_content = definitions.get("google_cloud_tools", "")
+            tools_list = []
+            if tools_content:
+                # Tools are typically in bullet points: "- ToolName Description"
+                import re
+                for line in tools_content.split("\n"):
+                    if line.startswith("- "):
+                        # Regex to capture the first few words which usually form the tool name
+                        # Stops at known description start markers or after 4 words
+                        match = re.search(r"^- ([\w\s\(\)-]{1,50}?)(?:\s+(?:Secure|Create|Build|Curated|Open-source|An open-source|A fully|Provides|Unified|Single|End-to-end|Google-quality|Speech|Language|Custom|Omnichannel)|$)", line)
+                        if match:
+                            tool_name = match.group(1).strip()
+                            if tool_name and len(tool_name.split()) <= 6:
+                                tools_list.append(tool_name)
+
             best_practices = [
                 "Focus on reasoning, acting, observing, and planning.",
                 "Implement self-refining capabilities for continuous improvement.",
@@ -59,11 +77,15 @@ class KnowledgeAgent(BaseAgent):
 
             return {
                 "ai_agents_definitions": definitions,
-                "agent_best_practices": best_practices
+                "agent_best_practices": best_practices,
+                "agent_use_cases": use_cases,
+                "google_cloud_tools_list": tools_list
             }
         except Exception as e:
             self.logger.error(f"Failed to load knowledge: {e}")
             return {
                 "ai_agents_definitions": {},
-                "agent_best_practices": []
+                "agent_best_practices": [],
+                "agent_use_cases": {},
+                "google_cloud_tools_list": []
             }

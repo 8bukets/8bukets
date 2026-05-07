@@ -6,7 +6,7 @@ class IntelligenceAgent(BaseAgent):
     def __init__(self):
         super().__init__("IntelligenceAgent",
                          dependencies=["analysis_stats", "research_data", "ai_agents_definitions"],
-                         provides=["intelligence_insights", "synchronization_level", "strategic_risk_assessment"])
+                         provides=["intelligence_insights", "synchronization_level", "strategic_risk_assessment", "strategic_outlook", "categorized_knowledge"])
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
         self.logger.info("Running Intelligence Synchronization & External World Collaboration...")
@@ -92,8 +92,27 @@ class IntelligenceAgent(BaseAgent):
             if top_comp:
                 insights.append(f"Strategic Focus: {top_comp['findings']}")
 
+        # Strategic Outlook synthesis
+        outlook = []
+        benefits_content = knowledge.get("benefits", "").lower()
+        if "simultaneous execution" in benefits_content:
+            outlook.append("Scaling Strategy: Implementing simultaneous execution across agent tiers.")
+        if "realistic simulations" in benefits_content:
+            outlook.append("R&D Strategy: Developing realistic simulations for human-agent interaction.")
+        if "collaboration" in benefits_content:
+            outlook.append("Operational Strategy: Enhancing agent debate and feedback loops.")
+
+        # Categorized Knowledge
+        categorized = {
+            "Models": ["LLMs as the foundation (Brain)"],
+            "Products": blackboard.get("google_cloud_tools_list", []),
+            "Solutions": list(blackboard.get("agent_use_cases", {}).keys())
+        }
+
         return {
             "intelligence_insights": insights,
             "synchronization_level": "ADVANCED_COLABORATIVE",
-            "strategic_risk_assessment": risks
+            "strategic_risk_assessment": risks,
+            "strategic_outlook": outlook,
+            "categorized_knowledge": categorized
         }
