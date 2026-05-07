@@ -11,7 +11,8 @@ async def test_domain_connectivity():
         for domain in domains:
             url = f"https://{domain}"
             async with session.head(url, allow_redirects=True) as response:
-                assert response.status < 400, f"Failed to reach {domain}, status: {response.status}"
+                # Treat 429 as a success indicator for reachability (rate limiting)
+                assert response.status < 400 or response.status == 429, f"Failed to reach {domain}, status: {response.status}"
 
 @pytest.mark.asyncio
 async def test_research_agent_real_connectivity():

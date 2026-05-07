@@ -104,10 +104,22 @@ def generate_daily_report(context, filename):
             backups = [k for k in context.keys() if "System_Backup" in k]
             f.write(f"- **Active System Backups:** {len(backups)}\n")
 
-            f.write("\n## 3. High-Level Research Insights\n")
+            f.write("\n## 3. High-Level Research & Intelligence\n")
             research = context.get("research_data", {})
             for trend in research.get("market_trends", []):
                 f.write(f"- **Trend:** {trend}\n")
+
+            outlook = context.get("strategic_outlook", "N/A")
+            f.write(f"\n**Strategic Outlook:** {outlook}\n")
+
+            f.write("\n### Strategic Risk Assessment\n")
+            for risk in context.get("strategic_risk_assessment", []):
+                f.write(f"- {risk}\n")
+
+            f.write("\n### Categorized Intelligence\n")
+            categorized = context.get("categorized_knowledge", {})
+            for cat, items in categorized.items():
+                f.write(f"- **{cat}**: {len(items)} updates found.\n")
 
             f.write("\n## 4. System Evolution & Daily Improvement\n")
             evolution = context.get("system_evolution", {})

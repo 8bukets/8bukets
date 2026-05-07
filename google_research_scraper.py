@@ -54,17 +54,27 @@ def run_scrapers():
 
     all_articles = research_articles + innovation_articles
 
+    # Load existing data to merge
+    json_path = "data/google_innovation_ai.json"
+    existing_articles = []
+    if os.path.exists(json_path):
+        try:
+            with open(json_path, "r", encoding="utf-8") as f:
+                existing_articles = json.load(f)
+        except Exception as e:
+            print(f"Error reading existing JSON: {e}")
+
     # Deduplicate by URL
+    combined_articles = existing_articles + all_articles
     unique_articles = []
     seen_urls = set()
-    for art in all_articles:
+    for art in combined_articles:
         if art['url'] not in seen_urls:
             unique_articles.append(art)
             seen_urls.add(art['url'])
 
     # Save to JSON
     os.makedirs("data", exist_ok=True)
-    json_path = "data/google_innovation_ai.json"
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(unique_articles, f, indent=4, ensure_ascii=False)
     print(f"Saved JSON data to {json_path}")

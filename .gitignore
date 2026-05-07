@@ -1,3 +1,7 @@
 __pycache__/
 *.pyc
 .env
+data/telemetry.json
+data/memory.json
+data/google_research.json
+config/evolution_params.json
