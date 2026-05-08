@@ -43,9 +43,9 @@ class GoogleInnovationAIAgent(BaseAgent):
                                     if title and len(title) > 20:
                                         # Attempt to find a summary in a neighboring tag or parent
                                         snippet = ""
-                                        parent = link.find_parent(['div', 'section', 'li'])
+                                        parent = link.find_parent(['div', 'section', 'li', 'article'])
                                         if parent:
-                                            summary_tag = parent.find(['p', 'span', 'div'], class_=lambda x: x and ('summary' in x or 'description' in x or 'snippet' in x or 'deck' in x))
+                                            summary_tag = parent.find(['p', 'span', 'div'], class_=lambda x: x and ('summary' in x.lower() or 'description' in x.lower() or 'snippet' in x.lower() or 'deck' in x.lower()))
                                             if summary_tag:
                                                 snippet = summary_tag.get_text(strip=True)
 
