@@ -7,7 +7,7 @@ class MetaCodingAgent(BaseAgent):
     """The Meta-Coder: Autonomously refactors system logic and generates new experts based on Sigma variance."""
     def __init__(self):
         super().__init__("MetaCodingAgent",
-                         dependencies=["sigma_performance_report", "system_evolution"],
+                         dependencies=["sigma_performance_report", "system_evolution", "react_actions"],
                          provides=["meta_optimizations"])
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
@@ -17,15 +17,17 @@ class MetaCodingAgent(BaseAgent):
         sigma = blackboard.get("sigma_performance_report", {})
 
         impact = sigma.get("average_impact_score", 0)
+        react_actions = blackboard.get("react_actions", [])
 
         # Self-Improvement logic: If impact is high, 'reward' the system with deeper skill sets
         if impact > 0.5:
             self.logger.info(f"High system impact ({impact:.2f}) detected. Injecting 'Deep-Skill' optimizations.")
 
             # Proposal for code-level change (Simulated)
+            expert_mode_val = "REACT_ENHANCED" if react_actions else "ACTIVE"
             optimization = {
                 "performance_logic": "DEEP_ANALYTICS_V2",
-                "expert_mode": "ACTIVE",
+                "expert_mode": expert_mode_val,
                 "autonomous_refactor": True
             }
 
