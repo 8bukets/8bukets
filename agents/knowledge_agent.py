@@ -43,7 +43,13 @@ class KnowledgeAgent(BaseAgent):
                     "code": knowledge.get("code-agents", {}).get("content", ""),
                     "security": knowledge.get("security-agents", {}).get("content", "")
                 },
-                "benefits": knowledge.get("benefits-of-using-ai-agents", {}).get("content", ""),
+                "benefits": "\n\n".join([
+                    knowledge.get("benefits-of-using-ai-agents", {}).get("content", ""),
+                    knowledge.get("efficiency-and-productivity", {}).get("content", ""),
+                    knowledge.get("improved-decision-making", {}).get("content", ""),
+                    knowledge.get("enhanced-capabilities", {}).get("content", ""),
+                    knowledge.get("social-interaction-and-simulation", {}).get("content", "")
+                ]),
                 "google_cloud_tools": knowledge.get("google-cloud-and-ai-agents", {}).get("content", "")
             }
 

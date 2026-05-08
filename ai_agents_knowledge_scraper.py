@@ -19,12 +19,13 @@ def scrape_ai_agents_knowledge():
 
     # Capture all relevant headings as section markers
     # Including h1, h2, h3 to get more granular and complete sections (like Benefits and Use Cases)
-    headings = soup.find_all(["h1", "h2", "h3"])
+    headings = soup.find_all(["h1", "h2", "h3", "h4"])
     all_tags = soup.find_all(True)
     data = {}
 
     for i, header in enumerate(headings):
         section_title = header.get_text(strip=True)
+        # Break when we hit the footer navigation or additional resources sections
         if section_title in ["Additional resources", "Take the next step", "Accelerate your digital transformation", "Why Google", "Products and pricing", "Solutions", "Resources", "Engage"]:
             break
 
