@@ -171,6 +171,8 @@ export async function getSystemInsights() {
   const { getPersistenceHealth } = await import('./services/persistence')
   const { getNetworkState } = await import('./services/neural')
   const { getRelayState } = await import('./services/relay')
+  const { getDockerStatus } = await import('./services/docker')
+  const { getCollaborationContext } = await import('./services/collaboration')
   const { optimize } = await import('./optimization')
   const { runSecurityAudit } = await import('./services/cognitive_security')
   
@@ -178,6 +180,8 @@ export async function getSystemInsights() {
   const persistence = await getPersistenceHealth()
   const network = await getNetworkState()
   const relay = await getRelayState()
+  const docker = await getDockerStatus()
+  const collaboration = await getCollaborationContext()
 
   const baseInsights = {
     circuitBreakers: {
@@ -196,6 +200,8 @@ export async function getSystemInsights() {
     persistence,
     network,
     relay,
+    docker,
+    collaboration,
     uptime: process.uptime()
   }
 

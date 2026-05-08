@@ -75,7 +75,9 @@ export class Jules {
       { name: 'Dependency Autopilot', action: () => this.auditDependencies() },
       { name: 'GitKraken Sync Prep', action: () => this.recordTask('Visual branch history cleaned.') },
       { name: 'Edge Function Audit', action: () => this.recordTask('Edge function hello-world prepared for deployment.') },
-      { name: 'Supabase Connectivity Refresh', action: () => this.recordTask('Supabase pooling verified.') }
+      { name: 'Supabase Connectivity Refresh', action: () => this.recordTask('Supabase pooling verified.') },
+      { name: 'Collaboration Sync', action: () => this.syncCollaboration() },
+      { name: 'Docker Sovereignty Audit', action: () => this.auditDocker() }
     ]
 
     for (const task of tasks) {
@@ -86,6 +88,24 @@ export class Jules {
     this.memory.lastOptimization = new Date().toISOString()
     this.save()
     console.log('✅ [Jules] Daily Routine Completed.')
+  }
+
+  public async syncCollaboration() {
+    console.log('🤝 [Jules] Synchronizing collaboration context...')
+    const { exportCollaborationContext } = await import('./services/collaboration')
+    await exportCollaborationContext()
+    this.recordTask('Collaboration Sync: Exported system context and stakeholder data.')
+  }
+
+  public async auditDocker() {
+    console.log('🐳 [Jules] Auditing Docker sovereignty...')
+    const { getDockerStatus } = await import('./services/docker')
+    const containers = await getDockerStatus()
+    if (containers.length > 0) {
+      this.recordTask(`Docker Sovereignty: Found ${containers.length} active containers. Connectivity verified.`)
+    } else {
+      this.recordTask('Docker Sovereignty: No active containers found or Docker daemon unreachable.')
+    }
   }
 
   public async selfRepair() {
