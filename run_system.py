@@ -31,6 +31,8 @@ from agents.meta_coding_agent import MetaCodingAgent
 from agents.jules_evolution_agent import JulesEvolutionAgent
 from agents.gitkraken_evolution_agent import GitKrakenEvolutionAgent
 from agents.docker_evolution_agent import DockerEvolutionAgent
+from agents.gitlab_evolution_agent import GitLabEvolutionAgent
+from agents.cloud_workflow_agent import CloudWorkflowAgent
 from agents.collaboration_agent import CollaborationAgent
 from agents.mongodb_agent import MongoDBAgent
 from agents.mysql_agent import MySQLAgent
@@ -146,6 +148,14 @@ def generate_daily_report(context, filename):
             f.write(f"- **Sync Status:** {antigravity.get('status', 'PENDING')}\n")
             f.write(f"- **Stakeholders Notified:** {', '.join(antigravity.get('stakeholders', []))}\n")
 
+            f.write("\n## Multi-Cloud Workflow Intelligence\n")
+            cloud = context.get("cloud_workflow_status", {})
+            gitlab = context.get("gitlab_pipeline_metrics", {})
+            f.write(f"- **Workflow Fluent:** {cloud.get('workflow_fluent', False)}\n")
+            f.write(f"- **Availability Score:** {cloud.get('availability_score', 0)}\n")
+            f.write(f"- **Orchestration:** {cloud.get('orchestration', 'UNKNOWN')}\n")
+            f.write(f"- **GitLab Pipeline Efficiency:** {gitlab.get('pipeline_efficiency', 'N/A')}\n")
+
         logger.info(f"Report generated at {filename}")
     except IOError as e:
         logger.error(f"Failed to write report: {e}")
@@ -174,6 +184,7 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         AutonomousIntelligenceAgent(), TelemetryAgent(), SixSigmaAgent(),
         ArchitectAgent(), MetaCodingAgent(), JulesEvolutionAgent(),
         GitKrakenEvolutionAgent(), DockerEvolutionAgent(), GitHubEvolutionAgent(),
+        GitLabEvolutionAgent(), CloudWorkflowAgent(),
         CollaborationAgent(), MongoDBAgent(), MySQLAgent(),
         PerformanceOptimizationAgent(), SystemAuditAgent(), DocumentationAgent()
     ]
