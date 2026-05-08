@@ -79,7 +79,8 @@ class KnowledgeAgent(BaseAgent):
                 "ai_agents_definitions": definitions,
                 "agent_best_practices": best_practices,
                 "agent_use_cases": use_cases,
-                "google_cloud_tools_list": tools_list
+                "google_cloud_tools_list": tools_list,
+                "react_framework_details": {"features": definitions.get("features", "")}
             }
         except Exception as e:
             self.logger.error(f"Failed to load knowledge: {e}")

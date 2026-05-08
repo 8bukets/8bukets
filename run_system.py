@@ -15,6 +15,7 @@ from agents.health_check_agent import HealthCheckAgent
 from agents.analysis_agent import AnalysisAgent
 from agents.research_agent import ResearchAgent
 from agents.intelligence_agent import IntelligenceAgent
+from agents.react_agent import ReActAgent
 from agents.monetization_agent import MonetizationAgent
 from agents.creativity_agent import CreativityAgent
 from agents.content_agent import ContentAgent
@@ -168,7 +169,7 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
     # 1. Base Intelligence (22 Agents)
     agents = [
         HealthCheckAgent(), RobotTxtAgent(), KnowledgeAgent(),
-        AnalysisAgent(), ResearchAgent(), IntelligenceAgent(),
+        AnalysisAgent(), ResearchAgent(), IntelligenceAgent(), ReActAgent(),
         TargetingAgent(), CreativityAgent(), AdsAgent(),
         BidAgent(), MonetizationAgent(), ContentAgent(),
         AutonomousIntelligenceAgent(), TelemetryAgent(), SixSigmaAgent(),
