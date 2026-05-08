@@ -25,11 +25,6 @@
         "snippet": ""
     },
     {
-        "title": "Measuring progress toward AGI: A cognitive framework",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/measuring-agi-cognitive-framework/",
-        "snippet": ""
-    },
-    {
         "title": "View more from Google DeepMind",
         "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/",
         "snippet": ""
@@ -40,7 +35,7 @@
         "snippet": ""
     },
     {
-        "title": "Flow Music and Believe bring next-gen tools to artists",
+        "title": "Google Flow Music and Believe bring next-gen tools to artists",
         "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/believe-flow-music-partnership/",
         "snippet": ""
     },
@@ -80,6 +75,11 @@
         "snippet": "Kent Walker shares Google’s perspective on the future of privacy at IAPP Global Summit 2026."
     },
     {
+        "title": "Find out how AlphaEvolve has gone from research to solving real-life problems.",
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/alphaevolve-updates/",
+        "snippet": ""
+    },
+    {
         "title": "The latest AI news we announced in April 2026",
         "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-april-2026/",
         "snippet": ""
@@ -102,11 +102,6 @@
     {
         "title": "Reduce friction and latency for long-running jobs with Webhooks in Gemini API",
         "url": "https://blog.google/innovation-and-ai/technology/developers-tools/event-driven-webhooks/",
-        "snippet": ""
-    },
-    {
-        "title": "How we’re protecting energy affordability in Oklahoma",
-        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/oklahoma-energy-affordability-agreement/",
         "snippet": ""
     }
 ]

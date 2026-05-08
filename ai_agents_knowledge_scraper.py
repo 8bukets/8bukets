@@ -99,16 +99,32 @@ def run_knowledge_scraper():
 
     print(f"Found {len(article_urls)} potential articles. Diving in...")
 
-    all_knowledge = []
+    # Load existing knowledge to merge
+    json_path = "data/ai_agents_knowledge.json"
+    existing_knowledge = []
+    if os.path.exists(json_path):
+        try:
+            with open(json_path, "r", encoding="utf-8") as f:
+                existing_knowledge = json.load(f)
+        except Exception as e:
+            print(f"Error reading existing knowledge: {e}")
+
+    new_knowledge = []
+    seen_titles = {item["title"] for item in existing_knowledge}
+
     for url in list(article_urls)[:5]: # Limit to 5 for efficiency
         print(f"Scraping {url}...")
         k = extract_structured_knowledge(url)
         if k and (k["definitions"] or k["use_cases"] or k["benefits"]):
-            all_knowledge.append(k)
+            if k["title"] not in seen_titles:
+                new_knowledge.append(k)
+                seen_titles.add(k["title"])
+
+    all_knowledge = existing_knowledge + new_knowledge
 
     # Save to JSON
     os.makedirs("data", exist_ok=True)
-    with open("data/ai_agents_knowledge.json", "w", encoding="utf-8") as f:
+    with open(json_path, "w", encoding="utf-8") as f:
         json.dump(all_knowledge, f, indent=4, ensure_ascii=False)
 
     # Save to Markdown
