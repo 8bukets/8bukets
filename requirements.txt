@@ -8,3 +8,5 @@ motor
 pymongo
 aiomysql
 cryptography
+python-dotenv
+vercel
