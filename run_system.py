@@ -38,6 +38,7 @@ from agents.system_audit_agent import SystemAuditAgent
 from agents.documentation_agent import DocumentationAgent
 from agents.performance_optimization_agent import PerformanceOptimizationAgent
 from agents.knowledge_agent import KnowledgeAgent
+from agents.sandbox_agent import SandboxAgent
 from ai_agents_knowledge_scraper import scrape_ai_agents_knowledge
 
 # Expansion Agents
@@ -175,7 +176,8 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         ArchitectAgent(), MetaCodingAgent(), JulesEvolutionAgent(),
         GitKrakenEvolutionAgent(), DockerEvolutionAgent(), GitHubEvolutionAgent(),
         CollaborationAgent(), MongoDBAgent(), MySQLAgent(),
-        PerformanceOptimizationAgent(), SystemAuditAgent(), DocumentationAgent()
+        PerformanceOptimizationAgent(), SystemAuditAgent(), DocumentationAgent(),
+        SandboxAgent()
     ]
 
     # 2. Expanded SEO Swarm (200 Agents)
