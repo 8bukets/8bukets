@@ -193,6 +193,14 @@ export class Jules {
     const reactSteps = await reactService.executeCycle('Optimize system posture using ReAct', reactTools)
     this.recordTask(`ReAct: Completed ${reactSteps.length} reasoning-action steps.`)
 
+    // Knowledge Observation
+    console.log('👁️ [Jules] Initiating Knowledge Observation...')
+    const { observeKnowledge } = await import('./services/knowledge_observer')
+    const knowledgeInsights = await observeKnowledge('https://software-online-review.com')
+    if (knowledgeInsights) {
+      this.recordTask(`Knowledge Observation: Extracted ${knowledgeInsights.topKeywords.length} concepts from ${knowledgeInsights.source}`)
+    }
+
     await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
     this.memory.lastOptimization = new Date().toISOString()
     this.save()
