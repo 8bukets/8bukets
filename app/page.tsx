@@ -5,7 +5,7 @@ import { PageProps, resolve, getSystemInsights } from "@/antigravity/core";
 import { getAppStats } from "@/antigravity/services/stats";
 
 export default async function CommandCenter({
-  'use cache' params, searchParams }: PageProps) {
+  params, searchParams }: PageProps) {
   await Promise.all([resolve(params), resolve(searchParams)]);
 
   return (
