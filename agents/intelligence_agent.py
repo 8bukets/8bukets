@@ -21,12 +21,15 @@ class IntelligenceAgent(BaseAgent):
         if knowledge:
             insights.append("System alignment verified against Google Cloud AI Agent definitions.")
 
-            ai_agent_def = (knowledge.get("ai_agent", "") + " " + knowledge.get("features", "")).lower()
+            ai_agent_def = (knowledge.get("ai_agent", "") + " " + knowledge.get("features", "") + " " + knowledge.get("how_they_work", "")).lower()
             if "reasoning" in ai_agent_def and "acting" in ai_agent_def:
                 insights.append("Ecosystem architecture aligns with ReAct framework (Reasoning + Acting).")
 
             if "memory" in ai_agent_def:
                 insights.append("System utilizes multi-tiered memory architecture (Short-term, Long-term, Episodic).")
+
+            if "consensus memory" in ai_agent_def:
+                insights.append("Ecosystem supports consensus memory for shared information among agents.")
 
             if "tools" in ai_agent_def:
                 insights.append("Agent capabilities are extended via specialized external toolsets.")
@@ -55,6 +58,8 @@ class IntelligenceAgent(BaseAgent):
                 insights.append("Tooling Strategy: Leveraging Gemini Enterprise for governance and discovery.")
             if "adk" in tools_info:
                 insights.append("Tooling Strategy: Utilizing Agent Development Kit (ADK) for multi-agent systems.")
+            if "a2a protocol" in tools_info:
+                insights.append("Interoperability Strategy: Adopting A2A Protocol for platform-agnostic agent communication.")
             if "cloud run" in tools_info:
                 insights.append("Infrastructure Strategy: Scalable deployment using Cloud Run serverless platform.")
 
