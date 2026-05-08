@@ -82,7 +82,7 @@ export class Jules {
 
     for (const task of tasks) {
       console.log(` - Executing: ${task.name}...`)
-      task.action()
+      await task.action()
     }
 
     this.memory.lastOptimization = new Date().toISOString()

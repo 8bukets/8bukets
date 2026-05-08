@@ -21,7 +21,20 @@ export async function getPersistenceHealth(): Promise<PersistenceStatus[]> {
     'use cache'
     const results: PersistenceStatus[] = []
 
+    let hasLaunchctl = false
+    try {
+      execSync('which launchctl', { stdio: 'ignore' })
+      hasLaunchctl = true
+    } catch (e) {
+      // launchctl not available (likely Linux or Windows)
+    }
+
     for (const agent of agents) {
+      if (!hasLaunchctl) {
+        results.push({ agent, status: 'stopped' })
+        continue
+      }
+
       try {
         const output = execSync(`launchctl list ${agent}`).toString()
         const pidMatch = output.match(/"PID" = (\d+);/)
