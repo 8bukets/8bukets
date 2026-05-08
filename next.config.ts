@@ -27,8 +27,8 @@ const nextConfig: NextConfig = {
     // Resolve alias fallback to silence Node.js native module errors in browser
     resolveAlias: {
       fs: './antigravity/empty.ts',
-      path: './antigravity/empty.ts',
-      os: './antigravity/empty.ts',
+      path: 'path-browserify',
+      os: 'os-browserify/browser',
     },
   },
 };
