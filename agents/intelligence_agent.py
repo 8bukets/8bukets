@@ -43,6 +43,15 @@ class IntelligenceAgent(BaseAgent):
             if "observing" in ai_agent_def:
                 insights.append("System maintains environmental awareness through perception and sensing.")
 
+            # Taxonomy Insights
+            taxonomy = blackboard.get("agent_taxonomy", {})
+            if taxonomy:
+                insights.append("Taxonomy Alignment: System architecture distinguishes between Interactive Partners and Background Processes.")
+
+            differences = knowledge.get("differences", "").lower()
+            if "autonomously" in differences and "proactively" in differences:
+                insights.append("Strategic Distinction: System operates as a true AI Agent (Autonomous/Proactive) rather than a simple Bot or Assistant.")
+
             # Benefits integration
             benefits = knowledge.get("benefits", "").lower()
             if "efficiency" in benefits:
