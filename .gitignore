@@ -79,3 +79,7 @@ secrets.json
 # Local settings often contain secrets and should not be committed
 local_settings.py
 .next_server.log
+
+# runtime state
+antigravity/.jules_memory.json
+autonomous_state.json

@@ -83,5 +83,14 @@ export async function exportCollaborationContext() {
   // In a real scenario, this might push to a shared DB or external API
   fs.writeFileSync(exportPath, JSON.stringify(context, null, 2))
   console.log(`✅ [Collaboration] Exported context to ${exportPath}`)
+
+  // Phase 9: Multi-agent collaboration notification
+  const { sendNotification } = await import('./notification')
+  await sendNotification({
+    type: 'evolution',
+    message: `Collaboration context synchronized for ${context.stakeholders.length} stakeholders.`,
+    severity: 'info'
+  })
+
   return context
 }
