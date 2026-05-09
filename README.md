@@ -35,6 +35,22 @@ Install dependencies:
 pip install aiohttp beautifulsoup4 requests
 ```
 
+## Configuration & Environment Variables
+
+The system relies on various API keys and connection strings to operate both locally and in CI/CD.
+
+1.  **Local Setup**:
+    - Copy `.env.example` to a new file named `.env`:
+      ```bash
+      cp .env.example .env
+      ```
+    - Update `.env` with your actual credentials (e.g., `GOOGLE_API_KEY`, `GEMINI_API_KEY`, database URIs). **Do not commit `.env` to source control.**
+
+2.  **GitHub Actions / CI/CD**:
+    - In your GitHub repository, go to **Settings > Secrets and variables > Actions**.
+    - Add the variables listed in `.env.example` as Repository Secrets (e.g., `GOOGLE_API_KEY`, `GEMINI_API_KEY`).
+    - The workflows are pre-configured to pass these secrets as environment variables to the system.
+
 ## Usage
 
 ### 1. Scrape Data
