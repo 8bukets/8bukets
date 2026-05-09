@@ -4,7 +4,7 @@ class CloudWorkflowAgent(BaseAgent):
     """Multi-Cloud Orchestrator: Combines insights from GitHub, GitLab, GitKraken, and Docker Cloud."""
     def __init__(self):
         super().__init__("CloudWorkflowAgent",
-                         dependencies=["vcs_status", "git_visualization_metrics", "gitlab_pipeline_metrics", "container_status"],
+                         dependencies=["vcs_status", "git_visualization_metrics", "gitlab_pipeline_metrics", "container_status", "react_agent_deployment_config"],
                          provides=["cloud_workflow_status"])
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
@@ -25,10 +25,15 @@ class CloudWorkflowAgent(BaseAgent):
 
         availability_score = 0.99 if is_fluent else 0.85
 
+        react_config = blackboard.get("react_agent_deployment_config", {})
+        if react_config and react_config.get("status") == "READY_FOR_DEPLOYMENT":
+            availability_score = min(1.0, availability_score + 0.05)
+
         cloud_workflow_status = {
             "workflow_fluent": is_fluent,
             "availability_score": availability_score,
-            "orchestration": "SYNCHRONIZED"
+            "orchestration": "SYNCHRONIZED",
+            "react_agent_deployment": "ORCHESTRATED" if react_config and react_config.get("status") == "READY_FOR_DEPLOYMENT" else "PENDING"
         }
 
         self.logger.info(f"Multi-cloud workflow evaluated: Fluent={is_fluent}, Availability={availability_score}")
