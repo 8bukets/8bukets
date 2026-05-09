@@ -8,7 +8,7 @@ class ReActAgent(BaseAgent):
     def __init__(self):
         super().__init__("ReActAgent",
                          dependencies=["intelligence_insights", "ai_agents_definitions"],
-                         provides=["react_reasoning", "react_actions"])
+                         provides=["react_reasoning", "react_actions", "react_agent_deployment_config"])
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
         self.logger.info("Executing ReAct (Reasoning + Acting) logic...")
@@ -39,10 +39,20 @@ class ReActAgent(BaseAgent):
             reasoning_log.append("Reasoning: No specific insights to act upon.")
             action_log.append("CONTINUE_MONITORING")
 
+        deployment_config = {}
+        if "DEPLOY_FOCUSED_AD_CAMPAIGN" in action_log:
+            deployment_config = {
+                "agent_type": "ReactAgent",
+                "framework": "Next.js",
+                "deployment_target": "Cloud Run",
+                "status": "READY_FOR_DEPLOYMENT"
+            }
+
         # Prepare payload
         payload = {
             "react_reasoning": reasoning_log,
-            "react_actions": action_log
+            "react_actions": action_log,
+            "react_agent_deployment_config": deployment_config
         }
 
         self.logger.info(f"ReAct reasoning complete. Proposed actions: {action_log}")
