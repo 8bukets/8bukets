@@ -1,15 +1,15 @@
 {
     "version": 1.0,
-    "iterations": 2,
+    "iterations": 4,
     "keyword_performance": {},
     "bid_strategy": {
-        "base_bid": 1.65,
+        "base_bid": 1.81,
         "multipliers": {
             "Canada": 1.2,
             "India": 0.9
         }
     },
-    "innovation_level": 0.2,
+    "innovation_level": 0.30000000000000004,
     "history": [
         {
             "iteration": 0,
@@ -19,6 +19,16 @@
         {
             "iteration": 1,
             "engagement": 86,
+            "action": "Maintained strategy"
+        },
+        {
+            "iteration": 2,
+            "engagement": 33,
+            "action": "Updated strategy"
+        },
+        {
+            "iteration": 3,
+            "engagement": 60,
             "action": "Maintained strategy"
         }
     ],

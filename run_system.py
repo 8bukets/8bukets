@@ -132,7 +132,7 @@ def run_pipeline(skip_scrape=False):
     save_result("bidding_config.json", bidding_config, current_date)
 
     # Content Generation with Innovation (Antigravity)
-    base_content = content_agent.process(data, intelligence_results)
+    base_content = content_agent.process(data, intelligence_results, memory_system.memory)
     final_content = innovation_agent.process(base_content, memory_system.memory)
     save_result("content_draft.md", final_content, current_date)
 
