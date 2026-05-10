@@ -32,8 +32,8 @@ AI assistants are AI agents designed as applications or products to collaborate 
 
 AI assistants are often embedded in the product being used. A key characteristic is the interaction between the assistant and user through the different steps of the task. The assistant responds to requests or prompts from the user, and can recommend actions but decision-making is done by the user.
 
-
  | AI agent | AI assistant | Bot ﻿
+--- | --- | --- | ---
 Purpose | Autonomously and proactively perform tasks | Assisting users with tasks | Automating simple tasks or conversations
 Capabilities | Can perform complex, multi-step actions; learns and adapts; can make decisions independently | Responds to requests or prompts; provides information and completes simple tasks; can recommend actions but the user makes decisions | Follows pre-defined rules; limited learning; basic interactions
 Interaction | Proactive; goal-oriented | Reactive; responds to user requests | Reactive; responds to triggers or commands

@@ -56,9 +56,19 @@ def scrape_ai_agents_knowledge():
             elif tag.name in ["p", "li", "table", "pre", "h5", "h6"]:
                 if tag.name == "table":
                     rows = []
-                    for tr in tag.find_all("tr"):
+                    header_count = 0
+                    for k, tr in enumerate(tag.find_all("tr")):
                         cells = [th_td.get_text(separator=" ", strip=True) for th_td in tr.find_all(["th", "td"])]
+                        if not any(cells): continue # Skip empty rows
                         rows.append(" | ".join(cells))
+                        if k == 0 or header_count == 0:
+                            header_count = len(cells)
+
+                    if rows and header_count > 1:
+                        # Add Markdown table separator
+                        separator = " | ".join(["---"] * header_count)
+                        rows.insert(1, separator)
+
                     section_content.append("\n".join(rows))
                 elif tag.name == "pre":
                     section_content.append(f"```\n{tag.get_text(strip=True)}\n```")

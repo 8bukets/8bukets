@@ -26,13 +26,21 @@ class IntelligenceAgent(BaseAgent):
                 insights.append("Ecosystem architecture aligns with ReAct framework (Reasoning + Acting).")
 
             if "memory" in ai_agent_def:
-                insights.append("System utilizes multi-tiered memory architecture (Short-term, Long-term, Episodic).")
+                memory_def = knowledge.get("memory_definition", "")
+                if "short term, long term, consensus, and episodic" in memory_def.lower():
+                    insights.append("Verified Multi-tiered Memory: Short-term, Long-term, Consensus, and Episodic memory support confirmed.")
+                else:
+                    insights.append("System utilizes multi-tiered memory architecture (Short-term, Long-term, Episodic).")
 
             if "consensus memory" in ai_agent_def:
                 insights.append("Ecosystem supports consensus memory for shared information among agents.")
 
             if "tools" in ai_agent_def:
-                insights.append("Agent capabilities are extended via specialized external toolsets.")
+                tools_def = knowledge.get("tools_definition", "")
+                if "physical, graphical, and program-based" in tools_def.lower():
+                    insights.append("Extended Toolset: Support for physical, graphical, and program-based interfaces confirmed.")
+                else:
+                    insights.append("Agent capabilities are extended via specialized external toolsets.")
 
             if "collaborating" in ai_agent_def:
                 insights.append("System supports multi-agent collaboration and coordination.")
@@ -82,6 +90,8 @@ class IntelligenceAgent(BaseAgent):
                 risks.append("High-stakes ethical decisions require human-in-the-loop oversight.")
             if "unpredictable" in challenges or "physical environments" in challenges:
                 risks.append("Physical environment unpredictability identified as a boundary for autonomous operation.")
+            if "resource-intensive" in challenges:
+                risks.append("Deployment scalability may be impacted by high computational resource requirements.")
 
         # 1. Internal Logic
         top_cats = analysis.get("top_categories", {})
