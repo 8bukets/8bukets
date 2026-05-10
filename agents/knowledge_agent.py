@@ -27,6 +27,15 @@ class KnowledgeAgent(BaseAgent):
                 knowledge = json.load(f)
 
             # Extract specific definitions and best practices
+            how_they_work = knowledge.get("how-do-ai-agents-work", {}).get("content", "")
+
+            # Helper to extract bullet points
+            def extract_bullet(text, marker):
+                for line in text.split("\n"):
+                    if line.startswith(f"- {marker}"):
+                        return line.split(":", 1)[1].strip() if ":" in line else line
+                return ""
+
             definitions = {
                 "ai_agent": knowledge.get("what-is-an-ai-agent", {}).get("content", ""),
                 "features": knowledge.get("key-features-of-an-ai-agent", {}).get("content", ""),
@@ -36,7 +45,11 @@ class KnowledgeAgent(BaseAgent):
                 "types": knowledge.get("based-on-interaction", {}).get("content", "") + "\n" + knowledge.get("based-on-number-of-agents", {}).get("content", ""),
                 "challenges": knowledge.get("challenges-with-using-ai-agents", {}).get("content", ""),
                 "deployment": knowledge.get("deploy-ai-agents-for-scale-and-efficiency-with-cloud-run", {}).get("content", ""),
-                "how_they_work": knowledge.get("how-do-ai-agents-work", {}).get("content", ""),
+                "how_they_work": how_they_work,
+                "persona_definition": extract_bullet(how_they_work, "Persona"),
+                "memory_definition": extract_bullet(how_they_work, "Memory"),
+                "tools_definition": extract_bullet(how_they_work, "Tools"),
+                "model_definition": extract_bullet(how_they_work, "Model"),
                 "use_cases": {
                     "customer": knowledge.get("customer-agents", {}).get("content", ""),
                     "employee": knowledge.get("employee-agents", {}).get("content", ""),
@@ -67,7 +80,8 @@ class KnowledgeAgent(BaseAgent):
                     if line.startswith("- "):
                         # Regex to capture the first few words which usually form the tool name
                         # Stops at known description start markers or after 4 words
-                        match = re.search(r"^- ([\w\s\(\)-]{1,50}?)(?:\s+(?:Secure|Create|Build|Curated|Open-source|An open-source|A fully|Provides|Unified|Single|End-to-end|Google-quality|Speech|Language|Custom|Omnichannel)|$)", line)
+                        # Updated to handle more markers found in the content
+                        match = re.search(r"^- ([\w\s\(\)-]{1,50}?)(?:\s+(?:Secure|Create|Build|Curated|Open-source|An|A|Provides|Unified|Single|End-to-end|Google-quality|Speech|Language|Custom|Omnichannel)|$)", line)
                         if match:
                             tool_name = match.group(1).strip()
                             if tool_name and len(tool_name.split()) <= 6:
