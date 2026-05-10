@@ -30,7 +30,7 @@ def extract_structured_knowledge(url):
     text_content = soup.get_text(separator=' ', strip=True).lower()
 
     # Common patterns for AI Agents
-    if "agent" in text_content or "autonomous" in text_content or "generative ai" in text_content:
+    if any(kw in text_content for kw in ["agent", "autonomous", "generative ai", "gemini", "gemma", "research"]):
         # Extract headers and following content
         for header in soup.find_all(['h1', 'h2', 'h3']):
             header_text = header.get_text(strip=True)
@@ -55,6 +55,13 @@ def extract_structured_knowledge(url):
 
     # If no sections found, try to extract from paragraphs based on keywords
     if not any([knowledge["definitions"], knowledge["use_cases"], knowledge["benefits"]]):
+        # Also check for lead content
+        lead_content = soup.find('div', class_='article-lead')
+        if lead_content:
+            text = lead_content.get_text(strip=True)
+            if "agent" in text.lower():
+                knowledge["definitions"].append({"term": "AI Agent (Lead Insight)", "text": text})
+
         paragraphs = soup.find_all('p')
         for p in paragraphs:
             text = p.get_text(strip=True)
@@ -112,7 +119,7 @@ def run_knowledge_scraper():
     new_knowledge = []
     seen_titles = {item["title"] for item in existing_knowledge}
 
-    for url in list(article_urls)[:5]: # Limit to 5 for efficiency
+    for url in list(article_urls)[:15]: # Limit to 15 for better coverage
         print(f"Scraping {url}...")
         k = extract_structured_knowledge(url)
         if k and (k["definitions"] or k["use_cases"] or k["benefits"]):

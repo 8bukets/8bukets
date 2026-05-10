@@ -48,3 +48,10 @@ Synthesized from Google Innovation & AI Blog
 - Interactions API
 
 ---
+
+## [Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/)
+
+### Definitions
+- **Introducing “vibe design” with Stitch**: Stitch is evolving into an AI-native platform that allows anyone to create, iterate, and collaborate on high-fidelity UI.
+
+---

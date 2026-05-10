@@ -86,5 +86,18 @@
             "Model Context Protocol (MCP)",
             "Interactions API"
         ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/",
+        "title": "Google Labs",
+        "definitions": [
+            {
+                "term": "Introducing “vibe design” with Stitch",
+                "text": "Stitch is evolving into an AI-native platform that allows anyone to create, iterate, and collaborate on high-fidelity UI."
+            }
+        ],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": []
     }
 ]
