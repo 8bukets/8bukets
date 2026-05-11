@@ -34,17 +34,30 @@ class CloudWorkflowAgent(BaseAgent):
         if react_deployment_ready:
             availability_score = min(1.0, availability_score + 0.05)
 
+        active_decisions = []
         orchestration_mode = "SYNCHRONIZED"
-        if react_deployment_ready:
+
+        if not is_fluent:
+            orchestration_mode = "RECOVERY_MODE"
+            if vcs_status not in ["COMMITTED_AND_PUSHED", "COMMITTED_LOCAL", "CLEAN"]:
+                active_decisions.append("RESOLVE_VCS_CONFLICTS")
+            if viz_metrics.get("kraken_compatibility_score", 0) <= 0.9:
+                active_decisions.append("OPTIMIZE_GITKRAKEN_VISUALIZATION")
+            if gitlab_metrics.get("pipeline_efficiency") != "OPTIMIZED":
+                active_decisions.append("OPTIMIZE_GITLAB_PIPELINE")
+            if docker_status.get("runtime_stability") != "VERIFIED":
+                active_decisions.append("REBUILD_DOCKER")
+        elif react_deployment_ready:
             orchestration_mode = "REACT_DEPLOYMENT_ACTIVE"
 
         cloud_workflow_status = {
             "workflow_fluent": is_fluent,
             "availability_score": availability_score,
             "orchestration": orchestration_mode,
-            "react_agent_deployment": "ORCHESTRATED" if react_deployment_ready else "PENDING"
+            "react_agent_deployment": "ORCHESTRATED" if react_deployment_ready else "PENDING",
+            "active_decisions": active_decisions
         }
 
-        self.logger.info(f"Multi-cloud workflow evaluated: Fluent={is_fluent}, Availability={availability_score}")
+        self.logger.info(f"Multi-cloud workflow evaluated: Fluent={is_fluent}, Availability={availability_score}, Mode={orchestration_mode}, Decisions={active_decisions}")
 
         return {"cloud_workflow_status": cloud_workflow_status}
