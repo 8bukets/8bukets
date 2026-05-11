@@ -13,7 +13,7 @@ class SandboxAgent(BaseAgent):
     def __init__(self):
         super().__init__(
             name="SandboxDecisionAgent",
-            dependencies=["generated_code"],  # Assuming another agent provides code to test
+            dependencies=[],  # Assuming another agent provides code to test
             provides=["sandbox_execution_results"]
         )
         self.token = os.environ.get("VERCEL_SANDBOX_TOKEN")
