@@ -1,0 +1,29 @@
+{
+  "stakeholders": [
+    {
+      "name": "Filip Keser",
+      "role": "Founder",
+      "email": "filip@example.com"
+    },
+    {
+      "name": "Jules",
+      "role": "Lead Architect",
+      "email": "jules@antigravity.ai"
+    },
+    {
+      "name": "Sigma Bot",
+      "role": "Operations",
+      "email": "sigma@antigravity.ai"
+    }
+  ],
+  "systemMetadata": {
+    "version": "0.1.0",
+    "environment": "development",
+    "uptime": 8.522069961
+  },
+  "sigmaStatus": {
+    "mongodb": "error",
+    "supabase": "connected",
+    "timestamp": "2026-05-11T21:19:46.018Z"
+  }
+}
