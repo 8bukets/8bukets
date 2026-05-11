@@ -229,3 +229,14 @@ To compile means to gather information from various sources and arrange it into 
 
 - **General**: Focuses on the act of assembling information or materials (e.g., compile a report).
 - **Computing**: Focuses on the automatic transformation of code using a tool known as a compiler.
+
+## Jules Tools
+
+Jules Tools is a lightweight command-line interface (CLI) for interacting with Jules, Google’s autonomous AI coding agent. It allows you to manage coding sessions, inspect progress, and integrate Jules into your existing development workflows and scripts directly from your terminal.
+
+Think of Jules Tools as both a command surface and a dashboard for your coding agent, designed to keep you in your flow without needing to switch to a web browser.
+
+- Installation: `npm install -g @google/jules`.
+- Authentication: `jules login` and `jules logout`.
+- Commands: `version`, `remote` (list, new, pull), `completion`.
+- Dashboard (TUI): Run `jules` without arguments for an interactive experience.
