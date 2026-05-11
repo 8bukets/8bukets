@@ -196,29 +196,62 @@ export class Jules {
     // Knowledge Observation
     console.log('👁️ [Jules] Initiating Knowledge Observation...')
     const { observeKnowledge } = await import('./services/knowledge_observer')
-    const knowledgeInsights = await observeKnowledge('https://software-online-review.com')
-    if (knowledgeInsights) {
-      this.recordTask(`Knowledge Observation: Extracted ${knowledgeInsights.topKeywords.length} concepts from ${knowledgeInsights.source}`)
+    const { observeGithubDocs } = await import('./services/github_docs_observer')
+
+    const [webInsights, githubInsights] = await Promise.all([
+      observeKnowledge('https://software-online-review.com'),
+      observeGithubDocs('bmewburn/intelephense-docs', ['features.md', 'installation.md', 'gettingStarted.md'])
+    ])
+
+    const consolidatedKnowledge: any = {
+      web: webInsights,
+      github: githubInsights,
+      lastUpdated: new Date().toISOString()
+    }
+
+    if (webInsights || githubInsights) {
+      if (webInsights) {
+        this.recordTask(`Knowledge Observation: Extracted ${webInsights.topKeywords.length} concepts from ${webInsights.source}`)
+      }
+      if (githubInsights && githubInsights.length > 0) {
+        this.recordTask(`Knowledge Observation: Extracted technical documentation from ${githubInsights[0].source}`)
+      }
 
       const jsonPath = path.join(process.cwd(), 'ai_agents_knowledge.json')
-      fs.writeFileSync(jsonPath, JSON.stringify(knowledgeInsights, null, 2), 'utf8')
+      fs.writeFileSync(jsonPath, JSON.stringify(consolidatedKnowledge, null, 2), 'utf8')
 
-      let mdContent = `# Knowledge Observation Insights\n\n`
-      mdContent += `**Source:** ${knowledgeInsights.source}\n`
-      mdContent += `**Title:** ${knowledgeInsights.title}\n`
-      mdContent += `**Description:** ${knowledgeInsights.description}\n`
-      mdContent += `**Analyzed At:** ${knowledgeInsights.analyzedAt}\n\n`
+      let mdContent = `# Consolidated Knowledge Observation Insights\n\n`
+      mdContent += `*Last Updated: ${consolidatedKnowledge.lastUpdated}*\n\n`
 
-      mdContent += `## Top Keywords\n`
-      knowledgeInsights.topKeywords.forEach((kw: string) => {
-        mdContent += `- ${kw}\n`
-      })
-      mdContent += `\n`
+      if (webInsights) {
+        mdContent += `## 🌐 Web Insights: ${webInsights.title}\n`
+        mdContent += `**Source:** ${webInsights.source}\n`
+        mdContent += `**Description:** ${webInsights.description}\n\n`
 
-      mdContent += `## Recent Posts\n`
-      knowledgeInsights.recentPosts.forEach((post: { title: string; link: string }) => {
-        mdContent += `- [${post.title}](${post.link})\n`
-      })
+        mdContent += `### Top Keywords\n`
+        webInsights.topKeywords.forEach((kw: string) => {
+          mdContent += `- ${kw}\n`
+        })
+        mdContent += `\n`
+
+        mdContent += `### Recent Posts\n`
+        webInsights.recentPosts.forEach((post: { title: string; link: string }) => {
+          mdContent += `- [${post.title}](${post.link})\n`
+        })
+        mdContent += `\n---\n\n`
+      }
+
+      if (githubInsights && githubInsights.length > 0) {
+        mdContent += `## 🐙 GitHub Technical Documentation\n`
+        mdContent += `**Repository:** ${githubInsights[0].source}\n\n`
+
+        githubInsights.forEach(insight => {
+          mdContent += `### File: ${insight.file}\n`
+          insight.sections.forEach(section => {
+            mdContent += `#### ${section.title}\n${section.content}\n\n`
+          })
+        })
+      }
 
       const mdPath = path.join(process.cwd(), 'ai_agents_knowledge.md')
       fs.writeFileSync(mdPath, mdContent, 'utf8')
