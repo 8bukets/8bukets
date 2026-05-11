@@ -198,3 +198,9 @@ Google Cloud provides a portfolio of products and solutions in the AI agent spac
 
 - Cloud Run A fully managed serverless platform that allows you to deploy containerized agents and applications, providing auto-scaling and pay-per-use efficiency.
 
+
+## IDE Integration for AI Agents
+To provide seamless coding assistance, AI agents like the Gemini CLI can integrate with Integrated Development Environments (IDEs). Interoperability is achieved through standard open protocols and dedicated extensions:
+
+- **VS Code Companion Extension**: Provides direct workspace access in VS Code compatible IDEs, reading open files, cursor context, and selections. Supports native diff viewing and auto-applying suggested code modifications.
+- **Agent Client Protocol (ACP)**: An open protocol enabling interoperability between AI coding agents and diverse IDEs. It relies on the ACP Agent Registry for distribution, making an ACP-compliant agent available directly within supporting tools like JetBrains and Zed.
