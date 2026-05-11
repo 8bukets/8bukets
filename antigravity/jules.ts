@@ -133,6 +133,27 @@ export class Jules {
     }
   }
 
+  public async startConsciousnessLoop() {
+    console.log('👁️ [Jules] Initiating Continuous Consciousness Loop...');
+    
+    // Phase 16: Real-time surveillance
+    import('./explorer').then(({ watchSystem }) => {
+      if (typeof watchSystem === 'function') watchSystem();
+    }).catch(err => console.error('❌ [Jules] Watchdog initiation failed:', err));
+
+    while (true) {
+      try {
+        await this.executeWorkCycle();
+        const delay = 60 * 60 * 1000; // 1 hour between full cycles
+        console.log(`💤 [Jules] Cycle complete. Next autonomous pulse in 1h...`);
+        await new Promise(resolve => setTimeout(resolve, delay));
+      } catch (err) {
+        console.error('💥 [Jules] Loop error, restarting in 60s...', err);
+        await new Promise(resolve => setTimeout(resolve, 60000));
+      }
+    }
+  }
+
   public async executeWorkCycle() {
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
     const { explore } = await import('./explorer')
