@@ -48,6 +48,13 @@ class IntelligenceAgent(BaseAgent):
             if "self-refining" in ai_agent_def:
                 insights.append("Ecosystem includes self-improvement and adaptation mechanisms.")
 
+            # New insights from updated knowledge
+            if "reasoning" in ai_agent_def:
+                insights.append("Deep reasoning verified: System uses logic to draw conclusions and solve problems autonomously.")
+
+            if "planning" in ai_agent_def:
+                insights.append("Strategic planning confirmed: Agents can identify necessary steps and evaluate potential actions.")
+
             if "observing" in ai_agent_def:
                 insights.append("System maintains environmental awareness through perception and sensing.")
 
