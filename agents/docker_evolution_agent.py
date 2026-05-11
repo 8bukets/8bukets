@@ -27,6 +27,10 @@ class DockerEvolutionAgent(BaseAgent):
         if react_config and react_config.get("status") == "READY_FOR_DEPLOYMENT":
             optimization_report["react_container_status"] = "PROVISIONED"
             optimization_report["base_image"] = "node:20-alpine"
+            if react_config.get("frontend_framework"):
+                optimization_report["framework"] = react_config.get("frontend_framework")
+            if react_config.get("backend_framework"):
+                optimization_report["backend_framework"] = react_config.get("backend_framework")
 
         self.logger.info("Docker Cloud environment synchronized with autonomous evolution strategy.")
 

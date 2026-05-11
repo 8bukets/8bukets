@@ -95,7 +95,8 @@ class KnowledgeAgent(BaseAgent):
                 "Maintain a consistent persona (role, personality, communication style) appropriate to the assigned role.",
                 "Leverage serverless platforms like Cloud Run for scalable and cost-effective deployment.",
                 "Design specialized agents for specific domains like Code, Security, or Data.",
-                "Distinguish between AI Agents (autonomous), AI Assistants (collaborative), and Bots (rule-based)."
+                "Distinguish between AI Agents (autonomous), AI Assistants (collaborative), and Bots (rule-based).",
+                "Orchestrate React agents dynamically through Next.js for robust frontend deployments."
             ]
 
             return {
@@ -103,7 +104,10 @@ class KnowledgeAgent(BaseAgent):
                 "agent_best_practices": best_practices,
                 "agent_use_cases": use_cases,
                 "google_cloud_tools_list": tools_list,
-                "react_framework_details": {"features": definitions.get("features", "")},
+                "react_framework_details": {
+                    "features": definitions.get("features", ""),
+                    "deployment_strategy": "Orchestrate React components using Next.js for seamless AI integration."
+                },
                 "agent_taxonomy": {
                     "interactive_partners": "Assisting with tasks like customer service via direct conversation.",
                     "background_processes": "Automating routine tasks and optimizing processes behind the scenes."
