@@ -1,7 +1,7 @@
 {
-  "source": "https://software-online-review.com",
-  "title": "software info by fk &#8211; software-online-review &#8211; Filip Keser",
-  "description": "software-online-review - Filip Keser",
+  "source": "User-Provided Documentation: Intelephense",
+  "title": "Intelephense - PHP Language Server",
+  "description": "High performance PHP language server adhering to LSP with premium features.",
   "topKeywords": [
     "posted",
     "software",
@@ -12,9 +12,40 @@
     "google",
     "microsoft",
     "august",
-    "platform"
+    "platform",
+    "types",
+    "intelephense",
+    "server",
+    "features",
+    "assert",
+    "template",
+    "string",
+    "narrowing",
+    "array",
+    "cross",
+    "editor",
+    "language",
+    "experience",
+    "provided",
+    "access"
   ],
   "recentPosts": [
+    {
+      "title": "Intelligence: Type System & Narrowing",
+      "link": "https://intelephense.com/#type-system"
+    },
+    {
+      "title": "Intelligence: Control Flow Analysis",
+      "link": "https://intelephense.com/#control-flow"
+    },
+    {
+      "title": "Feature: Workspace Symbols (LSP)",
+      "link": "https://intelephense.com/#workspace-symbols"
+    },
+    {
+      "title": "Premium: Rename & Refactoring",
+      "link": "https://intelephense.com/#premium"
+    },
     {
       "title": "Roadmap and business roadmap",
       "link": "https://software-online-review.com/2025/11/01/roadmap-and-business-roadmap/"
@@ -76,5 +107,11 @@
       "link": "https://software-online-review.com/2026/02/17/schema/"
     }
   ],
-  "analyzedAt": "2026-05-10T03:30:55.459Z"
+  "history": [
+    {
+      "source": "User-Provided Documentation: Intelephense",
+      "analyzedAt": "2026-05-11T01:07:57.957Z"
+    }
+  ],
+  "analyzedAt": "2026-05-11T01:07:57.957Z"
 }

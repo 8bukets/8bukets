@@ -195,34 +195,11 @@ export class Jules {
 
     // Knowledge Observation
     console.log('👁️ [Jules] Initiating Knowledge Observation...')
-    const { observeKnowledge } = await import('./services/knowledge_observer')
+    const { observeKnowledge, persistKnowledge } = await import('./services/knowledge_observer')
     const knowledgeInsights = await observeKnowledge('https://software-online-review.com')
     if (knowledgeInsights) {
       this.recordTask(`Knowledge Observation: Extracted ${knowledgeInsights.topKeywords.length} concepts from ${knowledgeInsights.source}`)
-
-      const jsonPath = path.join(process.cwd(), 'ai_agents_knowledge.json')
-      fs.writeFileSync(jsonPath, JSON.stringify(knowledgeInsights, null, 2), 'utf8')
-
-      let mdContent = `# Knowledge Observation Insights\n\n`
-      mdContent += `**Source:** ${knowledgeInsights.source}\n`
-      mdContent += `**Title:** ${knowledgeInsights.title}\n`
-      mdContent += `**Description:** ${knowledgeInsights.description}\n`
-      mdContent += `**Analyzed At:** ${knowledgeInsights.analyzedAt}\n\n`
-
-      mdContent += `## Top Keywords\n`
-      knowledgeInsights.topKeywords.forEach((kw: string) => {
-        mdContent += `- ${kw}\n`
-      })
-      mdContent += `\n`
-
-      mdContent += `## Recent Posts\n`
-      knowledgeInsights.recentPosts.forEach((post: { title: string; link: string }) => {
-        mdContent += `- [${post.title}](${post.link})\n`
-      })
-
-      const mdPath = path.join(process.cwd(), 'ai_agents_knowledge.md')
-      fs.writeFileSync(mdPath, mdContent, 'utf8')
-      console.log('✅ [Jules] Knowledge successfully merged and integrated into repository (ai_agents_knowledge.json, ai_agents_knowledge.md)')
+      persistKnowledge(knowledgeInsights)
     }
 
     await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
