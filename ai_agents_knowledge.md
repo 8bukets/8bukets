@@ -1,7 +1,7 @@
 # Knowledge Observation Insights (Unified)
 
-**Latest Source:** User-Provided Documentation: Intelephense
-**Latest Analysis:** 2026-05-11T01:07:57.957Z
+**Latest Source:** https://software-online-review.com
+**Latest Analysis:** 2026-05-11T03:13:56.239Z
 
 ## 🔑 Top Keywords (Merged)
 - posted
@@ -29,6 +29,11 @@
 - experience
 - provided
 - access
+- october
+- dynamics
+- business
+- management
+- march
 
 ## 📰 Recent Intelligence & Posts
 - [Intelligence: Type System & Narrowing](https://intelephense.com/#type-system)
@@ -53,3 +58,4 @@
 
 ## 📜 Observation History
 - User-Provided Documentation: Intelephense (2026-05-11T01:07:57.957Z)
+- https://software-online-review.com (2026-05-11T03:13:56.239Z)

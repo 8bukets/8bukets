@@ -128,8 +128,10 @@ export class Jules {
     console.log('🔄 [Jules] Commencing autonomous Git synchronization...')
     const { execSync } = await import('child_process')
     try {
+      execSync('git pull --rebase origin main || true', { stdio: 'inherit' })
       execSync('git add .', { stdio: 'inherit' })
       execSync(`git commit -m "${message}"`, { stdio: 'inherit' })
+      execSync('git push origin main || true', { stdio: 'inherit' })
       console.log('✅ [Jules] Changes committed autonomously.')
       this.recordTask(`Git Sync: Committed fixes to local repository.`)
     } catch (err) {
