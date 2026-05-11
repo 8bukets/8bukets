@@ -15,6 +15,9 @@ class CloudWorkflowAgent(BaseAgent):
 
         self.logger.info("Evaluating unified multi-cloud workflow status...")
 
+        react_config = blackboard.get("react_agent_deployment_config", {})
+        react_deployment_ready = react_config and react_config.get("status") == "READY_FOR_DEPLOYMENT"
+
         # Evaluate combined state
         is_fluent = (
             vcs_status in ["COMMITTED_AND_PUSHED", "COMMITTED_LOCAL", "CLEAN"] and
@@ -23,17 +26,23 @@ class CloudWorkflowAgent(BaseAgent):
             docker_status.get("runtime_stability") == "VERIFIED"
         )
 
+        if react_deployment_ready:
+            is_fluent = True
+
         availability_score = 0.99 if is_fluent else 0.85
 
-        react_config = blackboard.get("react_agent_deployment_config", {})
-        if react_config and react_config.get("status") == "READY_FOR_DEPLOYMENT":
+        if react_deployment_ready:
             availability_score = min(1.0, availability_score + 0.05)
+
+        orchestration_mode = "SYNCHRONIZED"
+        if react_deployment_ready:
+            orchestration_mode = "REACT_DEPLOYMENT_ACTIVE"
 
         cloud_workflow_status = {
             "workflow_fluent": is_fluent,
             "availability_score": availability_score,
-            "orchestration": "SYNCHRONIZED",
-            "react_agent_deployment": "ORCHESTRATED" if react_config and react_config.get("status") == "READY_FOR_DEPLOYMENT" else "PENDING"
+            "orchestration": orchestration_mode,
+            "react_agent_deployment": "ORCHESTRATED" if react_deployment_ready else "PENDING"
         }
 
         self.logger.info(f"Multi-cloud workflow evaluated: Fluent={is_fluent}, Availability={availability_score}")
