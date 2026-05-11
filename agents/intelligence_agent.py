@@ -118,6 +118,9 @@ class IntelligenceAgent(BaseAgent):
                 risk_assessment.append("Increased focus on autonomous agency requires enhanced safety guardrails.")
             if agent_knowledge.get("all_use_cases"):
                 risk_assessment.append(f"Diversifying application landscape with {len(agent_knowledge['all_use_cases'])} validated use cases.")
+                # Highlight top use cases in insights
+                for use_case in agent_knowledge.get("all_use_cases", [])[:3]:
+                    insights.append(f"Validated AI Agent Use Case: {use_case.get('title')} - {use_case.get('description')[:100]}...")
 
         # 7. Strategic Risk & Opportunity Assessment
         assessment = "Positive outlook on multimodal scaling and autonomous research agents."

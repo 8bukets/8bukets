@@ -65,7 +65,14 @@ def run_scraper():
         if result.returncode != 0:
             logger.error(f"Scraper failed with exit code {result.returncode}: {result.stderr}")
             raise RuntimeError(f"Scraper failed: {result.stderr}")
-        logger.info("Scraper finished successfully.")
+
+        logger.info("Running Google Research Scraper...")
+        subprocess.run(["python3", "google_research_scraper.py"], check=True)
+
+        logger.info("Running AI Agents Knowledge Scraper...")
+        subprocess.run(["python3", "ai_agents_knowledge_scraper.py"], check=True)
+
+        logger.info("Scrapers finished successfully.")
         return True
     except Exception as e:
         logger.error(f"Failed to execute scraper: {e}")
@@ -116,10 +123,17 @@ def generate_daily_report(context, filename):
             for risk in context.get("strategic_risk_assessment", []):
                 f.write(f"- {risk}\n")
 
+            f.write("\n### Intelligence Insights\n")
+            for insight in context.get("intelligence_insights", []):
+                if "Validated AI Agent Use Case" in insight:
+                    f.write(f"- {insight}\n")
+
             f.write("\n### Categorized Intelligence\n")
             categorized = context.get("categorized_knowledge", {})
             for cat, items in categorized.items():
                 f.write(f"- **{cat}**: {len(items)} updates found.\n")
+                for item in items[:3]:
+                    f.write(f"  - {item}\n")
 
             f.write("\n## 4. System Evolution & Daily Improvement\n")
             evolution = context.get("system_evolution", {})
