@@ -37,6 +37,7 @@ We use **Vitest** for unit and integration tests.
 - All autonomous core changes MUST pass validation before being merged.
 
 ## Synchronization Protocols (Update)
+- **Connect:** Use `npm run connect` to trigger Docker auditing and stakeholder collaboration sync.
 - **GitHub:** Autonomous PR validation is triggered by the Explorer.
 - **GitKraken:** Visual branch validation should reflect the "Clean Architecture" maintained by the Core.
 

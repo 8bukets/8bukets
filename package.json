@@ -11,6 +11,7 @@
     "test": "vitest run",
     "explore": "tsx --env-file=.env antigravity/explorer.ts",
     "evolve": "tsx --env-file=.env antigravity/evolution.ts",
+    "connect": "tsx --env-file=.env scripts/connect_and_collaborate.ts",
     "daily": "tsx --env-file=.env -e \"import { jules } from './antigravity/jules'; jules.executeWorkCycle()\"",
     "invoke-hello": "curl -L -X POST 'https://tevdxaufsnpsbvvurddg.supabase.co/functions/v1/hello-world' -H \"Authorization: Bearer $NEXT_PUBLIC_SUPABASE_ANON_KEY\" --data '{\"name\":\"Antigravity\"}'"
   },
