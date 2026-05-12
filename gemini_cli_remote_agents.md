@@ -197,13 +197,33 @@ auth:
 ---
 ```
 
+
+If the agent card advertises an oauth2 security scheme with authorizationCode flow, the `authorization_url`, `token_url`, and `scopes` are automatically discovered. You only need to provide `client_id` (and `client_secret` if required).
+
+Tokens are persisted to disk and refreshed automatically when they expire.
+
+### Auth validation
+When Gemini CLI loads a remote agent, it validates your auth configuration against the agent card’s declared securitySchemes. If the agent requires authentication that you haven’t configured, you’ll see an error describing what’s needed.
+
+`google-credentials` is treated as compatible with `http` Bearer security schemes, since it produces Bearer tokens.
+
+### Auth retry behavior
+All auth providers automatically retry on 401 and 403 responses by re-fetching credentials (up to 2 retries). This handles cases like expired tokens or rotated credentials. For `apiKey` with `!command` values, the command is re-executed on retry to fetch a fresh key.
+
+### Agent card fetching and auth
+When connecting to a remote agent, Gemini CLI first fetches the agent card without authentication. If the card endpoint returns a 401 or 403, it retries the fetch with the configured auth headers. This lets agents have publicly accessible cards while protecting their task endpoints, or to protect both behind auth.
+
 ## Managing Subagents
 Users can manage subagents using the following commands within Gemini CLI:
 
 *   `/agents list`: Displays all available local and remote subagents.
-*   `/agents reload`: Reloads the agent registry.
+*   `/agents reload`: Reloads the agent registry. Use this after adding or modifying agent definition files.
 *   `/agents enable <agent_name>`: Enables a specific subagent.
 *   `/agents disable <agent_name>`: Disables a specific subagent.
+
+> **Tip**
+>
+> You can use the `@cli_help` agent within Gemini CLI for assistance with configuring subagents.
 
 ### Disabling remote agents
 Remote subagents are enabled by default. To disable them, set `enableAgents` to false in your `settings.json`:
