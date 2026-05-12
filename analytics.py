@@ -32,6 +32,24 @@ def get_domain(url):
     except:
         return None
 
+def create_ascii_bar(count, total, width=15):
+    """Generates an ASCII progress bar."""
+    if total == 0:
+        return "░" * width
+
+    fill_ratio = count / total
+    fill_count = int(fill_ratio * width)
+
+    # Ensure at least one block if count > 0 but ratio is small
+    if fill_count == 0 and count > 0:
+        fill_count = 1
+
+    # Ensure we don't exceed width (though math shouldn't allow it if count <= total)
+    if fill_count > width:
+        fill_count = width
+
+    empty_count = width - fill_count
+    return "▓" * fill_count + "░" * empty_count
 def escape_markdown(text):
     """
     Escapes characters that have special meaning in Markdown and HTML.
@@ -57,6 +75,12 @@ def escape_markdown(text):
 def generate_report(data, output_file):
     total_posts = len(data)
 
+    # 1. Domain Analysis
+    domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
+    domain_counts = Counter(domains).most_common(10)
+    max_domain_count = domain_counts[0][1] if domain_counts else 0
+
+    # 2. Category Analysis
     # Single pass aggregation
     domains = []
     all_categories = []
@@ -78,6 +102,8 @@ def generate_report(data, output_file):
         cats = p.get('categories')
         if cats:
             all_categories.extend(cats)
+    category_counts = Counter(all_categories).most_common(10)
+    max_category_count = category_counts[0][1] if category_counts else 0
 
         # Date Analysis
         dt_str = p.get('datetime')
@@ -103,10 +129,12 @@ def generate_report(data, output_file):
         years = [d.year for d in dates]
         year_counts = Counter(years).most_common()
         year_counts.sort(key=lambda x: x[0], reverse=True)
+        max_year_count = max(count for year, count in year_counts) if year_counts else 0
     else:
         start_date = "N/A"
         end_date = "N/A"
         year_counts = []
+        max_year_count = 0
 
     author_counts = Counter(authors).most_common()
 
@@ -143,6 +171,26 @@ def generate_report(data, output_file):
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
     md.append("\n[Back to Top](#table-of-contents)")
 
+    md.append("\n## Top 10 Referenced Domains")
+    md.append("| Domain | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    for domain, count in domain_counts:
+        bar = create_ascii_bar(count, max_domain_count)
+        md.append(f"| {domain} | {count} | {bar} |")
+
+    md.append("\n## Top 10 Categories")
+    md.append("| Category | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    for cat, count in category_counts:
+        bar = create_ascii_bar(count, max_category_count)
+        md.append(f"| {cat} | {count} | {bar} |")
+
+    md.append("\n## Posts by Year")
+    md.append("| Year | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    for year, count in year_counts:
+        bar = create_ascii_bar(count, max_year_count)
+        md.append(f"| {year} | {count} | {bar} |")
     # Top Domains
     md.append("\n## 🔗 Top Referenced Domains")
     md.append("| Domain | Count |")
@@ -179,6 +227,7 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
+    print(f"✨ Report generated: {output_file}")
     # Improved Console Feedback with TTY check
     use_color = sys.stdout.isatty()
 
