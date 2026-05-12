@@ -5,6 +5,20 @@ from urllib.parse import urlparse
 from datetime import datetime
 import sys
 
+def create_ascii_bar(count, max_count, bar_length=20):
+    """Generate an ASCII progress bar."""
+    if max_count == 0:
+        return ""
+    filled_length = int(round(bar_length * count / float(max_count)))
+    bar = '█' * filled_length + '░' * (bar_length - filled_length)
+    return bar
+
+def escape_markdown(text):
+    """Escape pipes to prevent breaking Markdown tables."""
+    if text is None:
+        return ""
+    return str(text).replace('|', '&#124;')
+
 def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
@@ -25,7 +39,15 @@ def generate_report(data, output_file):
     total_posts = len(data)
 
     # 1. Domain Analysis
-    domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
+    domains = []
+    for p in data:
+        # Optimization: Use pre-calculated domain if available
+        d = p.get('domain')
+        if d:
+            domains.append(d)
+        elif p.get('external_link'):
+            domains.append(get_domain(p.get('external_link')))
+
     domain_counts = Counter(domains).most_common(10)
 
     # 2. Category Analysis
@@ -75,22 +97,28 @@ def generate_report(data, output_file):
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
 
     md.append("\n## Top 10 Referenced Domains")
-    md.append("| Domain | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Domain | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_domain_count = domain_counts[0][1] if domain_counts else 0
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        bar = create_ascii_bar(count, max_domain_count)
+        md.append(f"| {escape_markdown(domain)} | {count} | {bar} |")
 
     md.append("\n## Top 10 Categories")
-    md.append("| Category | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Category | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_cat_count = category_counts[0][1] if category_counts else 0
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        bar = create_ascii_bar(count, max_cat_count)
+        md.append(f"| {escape_markdown(cat)} | {count} | {bar} |")
 
     md.append("\n## Posts by Year")
-    md.append("| Year | Count |")
-    md.append("| :--- | :---: |")
+    md.append("| Year | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    max_year_count = max([c for _, c in year_counts]) if year_counts else 0
     for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+        bar = create_ascii_bar(count, max_year_count)
+        md.append(f"| {year} | {count} | {bar} |")
 
     md.append("\n## Authors")
     for author, count in author_counts:
