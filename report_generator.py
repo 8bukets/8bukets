@@ -72,19 +72,35 @@ class ReportGenerator:
             f.write(f"**New Posts:** {len(new_posts)}\n")
             f.write(f"**Updated Posts:** {len(updated_posts)}\n\n")
 
+            # Table of Contents
+            f.write("## <a name=\"table-of-contents\"></a>Table of Contents\n\n")
+            f.write("- [💡 Recommendations](#recommendations)\n")
+
+            all_recent_titles = [p[0] for p in new_posts] + [p[0] for p in updated_posts]
+            if all_recent_titles:
+                f.write("- [🧠 Keyword Trends](#keyword-trends)\n")
+
+            f.write("- [📈 SEO Trend Analysis](#seo-trend-analysis)\n")
+
+            if updated_posts:
+                f.write("- [🔄 Content Updates](#content-updates)\n")
+
+            if new_posts:
+                f.write("- [🆕 Recently Scraped Posts](#recently-scraped-posts)\n")
+            f.write("\n")
+
             # Recommendations Section
-            f.write("## 💡 Recommendations\n\n")
+            f.write("## <a name=\"recommendations\"></a>💡 Recommendations\n\n")
             recommendations = self.generate_recommendations(new_posts, updated_posts, rankings, past_rankings)
             for rec in recommendations:
                 f.write(f"- {rec}\n")
             if not recommendations:
                 f.write("Everything looks stable. No specific actions recommended.\n")
-            f.write("\n")
+            f.write("\n[Back to Top](#table-of-contents)\n\n")
 
             # Keyword Analysis
-            all_recent_titles = [p[0] for p in new_posts] + [p[0] for p in updated_posts]
             if all_recent_titles:
-                f.write("## 🧠 Keyword Trends\n\n")
+                f.write("## <a name=\"keyword-trends\"></a>🧠 Keyword Trends\n\n")
                 f.write("Most frequent words in recent activity:\n\n")
                 keywords = self.analyze_keywords(all_recent_titles)
 
@@ -93,12 +109,14 @@ class ReportGenerator:
                 f.write("| Keyword | Frequency | Distribution |\n")
                 f.write("|---|---|---|\n")
                 for word, count in keywords:
+                    f.write(f"| {word} | {count} |\n")
+                f.write("\n[Back to Top](#table-of-contents)\n\n")
                     bar = self.create_ascii_bar(count, max_freq)
                     f.write(f"| {word} | {count} | `{bar}` |\n")
                 f.write("\n")
 
             # SEO Rankings Trend
-            f.write("## 📈 SEO Trend Analysis\n\n")
+            f.write("## <a name=\"seo-trend-analysis\"></a>📈 SEO Trend Analysis\n\n")
             if rankings:
                 f.write("| Query | Rank | Change | Checked At |\n")
                 f.write("|---|---|---|---|---|\n")
@@ -106,28 +124,30 @@ class ReportGenerator:
                 for item in trends:
                     f.write(f"| {item['query']} | {item['rank']} | {item['change']} | {item['date']} |\n")
             else:
-                f.write("No SEO ranking data for today.\n\n")
+                f.write("No SEO ranking data for today.\n")
+            f.write("\n[Back to Top](#table-of-contents)\n\n")
 
             # Content Updates Section
             if updated_posts:
-                f.write("## 🔄 Content Updates\n\n")
+                f.write("## <a name=\"content-updates\"></a>🔄 Content Updates\n\n")
                 f.write("| Post | Field | Old | New | Time |\n")
                 f.write("|---|---|---|---|---|\n")
                 for u in updated_posts:
                     title, url, field, old, new, time = u
                     title = title.replace("|", "-")
                     f.write(f"| [{title}]({url}) | {field} | {old} | {new} | {time} |\n")
-                f.write("\n")
+                f.write("\n[Back to Top](#table-of-contents)\n\n")
 
             # New Posts Section
             if new_posts:
-                f.write("## 🆕 Recently Scraped Posts\n\n")
+                f.write("## <a name=\"recently-scraped-posts\"></a>🆕 Recently Scraped Posts\n\n")
                 f.write("| Title | Scraped At | Link |\n")
                 f.write("|---|---|---|\n")
                 for post in new_posts:
                     title, url, scraped_at = post
                     title = title.replace("|", "-") if title else "No Title"
                     f.write(f"| {title} | {scraped_at} | [View]({url}) |\n")
+                f.write("\n[Back to Top](#table-of-contents)\n")
             else:
                 f.write("No new posts scraped in the last 24 hours.\n")
 
