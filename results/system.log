@@ -1,6 +1,0 @@
-18:12:07 - SystemOrchestrator - INFO - System starting in LOOP mode.
-18:12:07 - SystemOrchestrator - INFO - === Starting Massive Synchronized Autonomous Cycle ===
-18:12:07 - SystemOrchestrator - INFO - Starting Scraper...
-18:12:08 - SystemOrchestrator - INFO - Scraper finished successfully.
-18:12:08 - SystemOrchestrator - WARNING - No data loaded. Skipping agent execution.
-18:12:08 - SystemOrchestrator - INFO - Sleeping for 24 hours...
