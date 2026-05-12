@@ -178,10 +178,8 @@ export async function getSystemInsights() {
   const persistence = await getPersistenceHealth()
   const network = await getNetworkState()
   const relay = await getRelayState()
-  const proposals = await optimize()
-  const security = await runSecurityAudit()
 
-  return {
+  const baseInsights = {
     circuitBreakers: {
       mongodb: circuitBreaker.mongodb.state,
       supabase: circuitBreaker.supabase.state,
@@ -198,9 +196,16 @@ export async function getSystemInsights() {
     persistence,
     network,
     relay,
-    proposals,
-    security,
     uptime: process.uptime()
+  }
+
+  const proposals = await optimize(baseInsights)
+  const security = await runSecurityAudit()
+
+  return {
+    ...baseInsights,
+    proposals,
+    security
   }
 }
 
