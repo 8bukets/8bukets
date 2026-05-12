@@ -44,6 +44,7 @@ class KnowledgeAgent(BaseAgent):
                 "agent_count_types": knowledge.get("based-on-number-of-agents", {}).get("content", ""),
                 "types": knowledge.get("based-on-interaction", {}).get("content", "") + "\n" + knowledge.get("based-on-number-of-agents", {}).get("content", ""),
                 "challenges": knowledge.get("challenges-with-using-ai-agents", {}).get("content", ""),
+                "jules_tools": knowledge.get("jules-tools", {}).get("content", ""),
                 "deployment": knowledge.get("deploy-ai-agents-for-scale-and-efficiency-with-cloud-run", {}).get("content", ""),
                 "how_they_work": how_they_work,
                 "persona_definition": extract_bullet(how_they_work, "Persona"),
@@ -88,6 +89,7 @@ class KnowledgeAgent(BaseAgent):
                                 tools_list.append(tool_name)
 
             best_practices = [
+                "Use Jules Tools CLI for terminal-based session management and TUI dashboard.",
                 "Focus on reasoning, acting, observing, and planning.",
                 "Implement self-refining capabilities for continuous improvement.",
                 "Ensure robust memory management (short-term, long-term, episodic, consensus).",
