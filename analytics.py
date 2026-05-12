@@ -21,6 +21,18 @@ def get_domain(url):
     except:
         return None
 
+def create_ascii_bar(value, max_value, width=20):
+    if max_value == 0:
+        return '░' * width
+    fill_len = int((value / max_value) * width)
+    return '█' * fill_len + '░' * (width - fill_len)
+
+def escape_markdown(text):
+    if text is None:
+        return ""
+    text = str(text)
+    return text.replace('|', '&#124;')
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
@@ -107,16 +119,42 @@ def generate_report(data, output_file):
     for year, count in year_counts:
         md.append(f"| {year} | {count} |")
     md.append("\n[Back to Top](#markposition-analytics-report)")
+    # Max values for charts
+    max_domain_count = domain_counts[0][1] if domain_counts else 0
+    max_category_count = category_counts[0][1] if category_counts else 0
+    max_year_count = max([c for y, c in year_counts]) if year_counts else 0
+
+    md.append("\n## Top 10 Referenced Domains")
+    md.append("| Domain | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    for domain, count in domain_counts:
+        bar = create_ascii_bar(count, max_domain_count)
+        md.append(f"| {escape_markdown(domain)} | {count} | {bar} |")
+
+    md.append("\n## Top 10 Categories")
+    md.append("| Category | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    for cat, count in category_counts:
+        bar = create_ascii_bar(count, max_category_count)
+        md.append(f"| {escape_markdown(cat)} | {count} | {bar} |")
+
+    md.append("\n## Posts by Year")
+    md.append("| Year | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    for year, count in year_counts:
+        bar = create_ascii_bar(count, max_year_count)
+        md.append(f"| {year} | {count} | {bar} |")
 
     md.append("\n## <a id='authors'></a>✍️ Authors")
     for author, count in author_counts:
         md.append(f"- {author}: {count} posts")
     md.append("\n[Back to Top](#markposition-analytics-report)")
+        md.append(f"- {escape_markdown(author)}: {count} posts")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    print(f"✨ Report generated: {output_file}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
