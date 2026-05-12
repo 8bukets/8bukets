@@ -277,6 +277,62 @@ class MarkPositionScraperAsync:
                 return await self.parse_page(html)
             return None
 
+<<<<<<< sentinel/fix-csv-injection-2739836513252277633
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text to prevent CSV injection."""
+        if not text:
+            return ""
+        text = str(text)
+        if text.startswith(('=', '+', '-', '@')):
+            return "'" + text
+        return text
+
+    def save_data(self, posts: List[Dict]):
+        # JSON
+        try:
+            with open(self.output_json, 'w', encoding='utf-8') as f:
+                json.dump(posts, f, indent=4, ensure_ascii=False)
+            logger.info(f"Saved {len(posts)} posts to {self.output_json}")
+        except IOError as e:
+            logger.error(f"Failed to save JSON: {e}")
+
+        # CSV
+        try:
+            with open(self.output_csv, 'w', newline='', encoding='utf-8') as f:
+                writer = csv.writer(f)
+                writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
+                for post in posts:
+                    writer.writerow([
+                        self.sanitize_for_csv(post.get('title', '')),
+                        self.sanitize_for_csv(post.get('date', '')),
+                        self.sanitize_for_csv(post.get('author', '')),
+                        self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                        self.sanitize_for_csv(post.get('external_link', '')),
+                        self.sanitize_for_csv(post.get('domain', '')),
+                        self.sanitize_for_csv(post.get('post_url', ''))
+                    ])
+            logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
+        except IOError as e:
+            logger.error(f"Failed to save CSV: {e}")
+
+        # Unique Links TXT
+        unique_links = set()
+        for post in posts:
+            link = post.get('external_link')
+            if link:
+                unique_links.add(link)
+
+        sorted_links = sorted(list(unique_links))
+        try:
+            with open(self.output_txt, 'w', encoding='utf-8') as f:
+                for link in sorted_links:
+                    f.write(link + '\n')
+            logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
+        except IOError as e:
+            logger.error(f"Failed to save TXT: {e}")
+
+=======
+>>>>>>> jules/scraper-markposition-17752547678215960211
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
     parser.add_argument("--json", default="links.json", help="Output JSON filename")
