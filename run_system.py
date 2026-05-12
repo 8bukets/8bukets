@@ -43,6 +43,7 @@ from agents.performance_optimization_agent import PerformanceOptimizationAgent
 from agents.knowledge_agent import KnowledgeAgent
 from agents.sandbox_agent import SandboxAgent
 from ai_agents_knowledge_scraper import scrape_ai_agents_knowledge
+from vscode_intelephense_scraper import scrape_vscode_intelephense
 
 # Expansion Agents
 from agents.swarm_agent import SwarmAgent
@@ -72,6 +73,9 @@ def run_scraper():
 
         # AI Agent Knowledge Scraper (Direct module call)
         scrape_ai_agents_knowledge()
+
+        # VSCode Intelephense Scraper
+        scrape_vscode_intelephense()
 
         logger.info("Scrapers finished successfully.")
         return True
