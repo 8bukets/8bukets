@@ -18,11 +18,17 @@ logging.basicConfig(
 )
 logger = logging.getLogger("Orchestrator")
 
+def print_progress(step, total, message, icon="⏳"):
+    """Prints a styled progress update to stdout."""
+    # ANSI escape codes for colors: \033[94m (Blue), \033[0m (Reset)
+    print(f"\n\033[94m{icon} [{step}/{total}] {message}...\033[0m")
+
 def run_orchestration(save_report=True):
     logger.info(">>> STARTING AUTONOMOUS AGENT SWARM (v2.0 - Evolving) <<<")
     report_data = {}
 
     # 1. Health Check
+    print_progress(1, 9, "Running Health Check", "🏥")
     health_agent = HealthCheckAgent()
     health_status = health_agent.run()
     report_data['health'] = health_status
@@ -31,6 +37,7 @@ def run_orchestration(save_report=True):
         logger.error("Target site is unhealthy. Aborting operation.")
 
     # 2. Research
+    print_progress(2, 9, "Gathering Research", "🔍")
     research_agent = ResearcherAgent()
     raw_data = research_agent.run({"limit": 2})
     report_data['research'] = {
@@ -42,16 +49,19 @@ def run_orchestration(save_report=True):
         logger.warning("No blog data scraped.")
 
     # 3. Analyze
+    print_progress(3, 9, "Analyzing Data", "📊")
     analyzer_agent = AnalyzerAgent()
     analysis_result = analyzer_agent.run(raw_data)
     report_data['analysis'] = analysis_result
 
     # 3.5 Advertising (Collaborating with Analyzer)
+    print_progress(4, 9, "Optimizing Advertising", "📢")
     ad_agent = AdvertisingAgent()
     ad_result = ad_agent.run(analysis_result)
     report_data['advertising'] = ad_result
 
     # 4. Intelligence (Collaborating with Analyzer + Advertising + History)
+    print_progress(5, 9, "Generating Intelligence", "🧠")
     intelligence_agent = IntelligenceAgent()
     # Pass combined data for "100% collaboration"
     combined_input = {
@@ -62,16 +72,19 @@ def run_orchestration(save_report=True):
     report_data['intelligence'] = intelligence_result
 
     # 5. Creativity
+    print_progress(6, 9, "Sparking Creativity", "🎨")
     creativity_agent = CreativityAgent()
     creative_result = creativity_agent.run(analysis_result)
     report_data['creativity'] = creative_result
 
     # 6. Monetization
+    print_progress(7, 9, "Reviewing Monetization", "💰")
     monetization_agent = MonetizationAgent()
     monetization_result = monetization_agent.run(raw_data.get('blog_posts', []))
     report_data['monetization'] = monetization_result
 
     # 7. Create Content
+    print_progress(8, 9, "Drafting Content", "✍️")
     content_agent = ContentCreatorAgent()
     content_draft = content_agent.run(intelligence_result)
     report_data['content_draft'] = content_draft
@@ -79,6 +92,7 @@ def run_orchestration(save_report=True):
     logger.info(">>> SWARM OPERATION COMPLETE <<<")
 
     if save_report:
+        print_progress(9, 9, "Saving Report", "💾")
         save_daily_report(report_data)
 
     return report_data
@@ -117,6 +131,7 @@ def save_daily_report(data):
         # Health
         anchor, title = sections_map[0]
         f.write(f"## <a name='{anchor}'></a>{title}\n")
+        f.write("## 1. System Health & Environment 🏥\n")
         status = data.get('health', {})
         f.write(f"- **Site Status:** {status.get('site_status')} (Code: {status.get('site_code')})\n")
         f.write(f"- **Robots.txt Access:** {status.get('robots_txt_accessible')}\n")
@@ -127,6 +142,7 @@ def save_daily_report(data):
         anchor, title = sections_map[1]
         f.write(f"## <a name='{anchor}'></a>{title}\n")
         research = data.get('research', {})
+        f.write("## 2. Research Summary 🔍\n")
         f.write(f"- **New Posts Scraped:** {research.get('posts_scraped')}\n")
         f.write(f"- **Google Listings Found:** {research.get('google_results')}\n")
         f.write(back_to_top)
@@ -135,6 +151,7 @@ def save_daily_report(data):
         anchor, title = sections_map[2]
         f.write(f"## <a name='{anchor}'></a>{title}\n")
         intel = data.get('intelligence', {})
+        f.write("## 3. Strategic Intelligence & Evolution 🧠\n")
         f.write(f"- **Evolution Status:** {intel.get('evolution_status')}\n")
         f.write(f"- **Recommended Focus:** {intel.get('recommended_focus')}\n")
         for insight in intel.get('insights', []):
@@ -145,6 +162,7 @@ def save_daily_report(data):
         anchor, title = sections_map[3]
         f.write(f"## <a name='{anchor}'></a>{title}\n")
         ads = data.get('advertising', {})
+        f.write("## 4. Advertising & Targeting (Google Antigravity Colab) 📢\n")
         f.write(f"- **Target Audience:** {ads.get('target_audience')}\n")
         f.write("- **Bid Strategy:**\n")
         for bid in ads.get('bid_strategy', []):
@@ -155,6 +173,7 @@ def save_daily_report(data):
         anchor, title = sections_map[4]
         f.write(f"## <a name='{anchor}'></a>{title}\n")
         money = data.get('monetization', {})
+        f.write("## 5. Monetization Review 💰\n")
         f.write(f"- **Summary:** {money.get('summary')}\n")
         for detail in money.get('details', []):
             f.write(f"- {detail}\n")
@@ -165,6 +184,7 @@ def save_daily_report(data):
         f.write(f"## <a name='{anchor}'></a>{title}\n")
         creative = data.get('creativity', {})
         f.write(f"- **Creative Ideas:**\n")
+        f.write("## 6. Creative Brainstorming 🎨\n")
         for idea in creative.get('creative_ideas', []):
             f.write(f"- {idea}\n")
         f.write(back_to_top)
@@ -173,6 +193,7 @@ def save_daily_report(data):
         anchor, title = sections_map[6]
         f.write(f"## <a name='{anchor}'></a>{title}\n")
         draft = data.get('content_draft', {})
+        f.write("## 7. Automated Content Draft ✍️\n")
         f.write(f"### {draft.get('draft_title', 'Untitled')}\n\n")
         f.write(draft.get('draft_content', ''))
         f.write(back_to_top)
