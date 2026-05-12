@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 type StatusResponse = {
   supabase: { status: string; error: string | null };
   mongodb: { status: string; error: string | null };
+  evolution: { version: string; sigma: number };
 };
 
 export default function Home() {
@@ -56,6 +57,20 @@ export default function Home() {
                   <span className="text-sm font-mono text-zinc-500">{status.mongodb.status}</span>
                 </div>
                 {status.mongodb.error && <p className="text-sm text-red-500 px-4">Error: {status.mongodb.error}</p>}
+
+                <div className="mt-6 pt-6 border-t border-zinc-100 dark:border-zinc-800">
+                  <h3 className="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-3">Autonomous System Metrics</h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="p-3 bg-zinc-50 dark:bg-zinc-800 rounded-lg">
+                      <p className="text-xs text-zinc-500">System Version</p>
+                      <p className="text-lg font-bold">{status.evolution.version}</p>
+                    </div>
+                    <div className="p-3 bg-zinc-50 dark:bg-zinc-800 rounded-lg">
+                      <p className="text-xs text-zinc-500">Sigma Impact</p>
+                      <p className="text-lg font-bold text-blue-500">{status.evolution.sigma.toFixed(2)}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             ) : (
               <p className="text-red-500">Failed to load status.</p>

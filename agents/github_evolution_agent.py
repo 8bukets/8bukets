@@ -64,6 +64,21 @@ class GitHubEvolutionAgent(BaseAgent):
                 except subprocess.CalledProcessError as pull_e:
                     self.logger.warning(f"Failed to synchronize with remote: {pull_e}")
 
+            # 4. Handle Auto-Merge and Synchronization
+            if token:
+                try:
+                    self.logger.info("Synchronizing with remote to ensure seamless evolution...")
+                    subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=True)
+                    subprocess.run(["git", "push", "origin", "main"], check=True)
+
+                    # Signal for auto-merge workflow if this was a PR (via label)
+                    # For direct pushes, we ensure the commit message is descriptive
+                    self.logger.info("Autonomous merge and synchronization successful.")
+                    vcs_status = "COMMITTED_AND_PUSHED"
+                except subprocess.CalledProcessError as sync_e:
+                    self.logger.warning(f"Failed to finalize sync: {sync_e}")
+                    vcs_status = "SYNC_FAILED"
+
             return {"vcs_status": vcs_status}
 
         except subprocess.CalledProcessError as e:
