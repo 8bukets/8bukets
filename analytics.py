@@ -5,6 +5,17 @@ from urllib.parse import urlparse
 from datetime import datetime
 import sys
 
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
@@ -21,32 +32,69 @@ def get_domain(url):
     except:
         return None
 
+def escape_markdown(text):
+    """
+    Escapes characters that have special meaning in Markdown and HTML.
+    Specifically targets:
+    - HTML entities: &, <, >
+    - Markdown table separators: |
+    """
+    if text is None:
+        return ""
+    text = str(text)
+
+    # HTML escaping
+    text = text.replace("&", "&amp;")
+    text = text.replace("<", "&lt;")
+    text = text.replace(">", "&gt;")
+
+    # Markdown escaping
+    # Escape pipe to prevent table injection
+    text = text.replace("|", "\\|")
+
+    return text
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
-    # 1. Domain Analysis
-    domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
-    domain_counts = Counter(domains).most_common(10)
-
-    # 2. Category Analysis
+    # Single pass aggregation
+    domains = []
     all_categories = []
+    dates = []
+    authors = []
+
     for p in data:
-        cats = p.get('categories', [])
+        # Domain Analysis
+        # Use pre-computed domain if available, otherwise fallback to parsing external_link
+        domain = p.get('domain')
+        if domain:
+            domains.append(domain)
+        elif p.get('external_link'):
+            d = get_domain(p['external_link'])
+            if d:
+                domains.append(d)
+
+        # Category Analysis
+        cats = p.get('categories')
         if cats:
             all_categories.extend(cats)
-    category_counts = Counter(all_categories).most_common(10)
 
-    # 3. Date Analysis
-    dates = []
-    for p in data:
+        # Date Analysis
         dt_str = p.get('datetime')
         if dt_str:
             try:
                 # Handle ISO format
-                dt = datetime.fromisoformat(dt_str)
-                dates.append(dt)
+                dates.append(datetime.fromisoformat(dt_str))
             except ValueError:
                 pass
+
+        # Author Analysis
+        author = p.get('author')
+        if author:
+            authors.append(author)
+
+    domain_counts = Counter(domains).most_common(10)
+    category_counts = Counter(all_categories).most_common(10)
 
     if dates:
         dates.sort()
@@ -60,8 +108,6 @@ def generate_report(data, output_file):
         end_date = "N/A"
         year_counts = []
 
-    # 4. Author Analysis
-    authors = [p.get('author') for p in data if p.get('author')]
     author_counts = Counter(authors).most_common()
 
     # Determine Highlight
@@ -104,6 +150,7 @@ def generate_report(data, output_file):
     for domain, count in domain_counts:
         md.append(f"| {domain} | {count} |")
     md.append("\n[Back to Top](#table-of-contents)")
+        md.append(f"| {escape_markdown(domain)} | {count} |")
 
     # Top Categories
     md.append("\n## 📂 Top Categories")
@@ -112,6 +159,7 @@ def generate_report(data, output_file):
     for cat, count in category_counts:
         md.append(f"| {cat} | {count} |")
     md.append("\n[Back to Top](#table-of-contents)")
+        md.append(f"| {escape_markdown(cat)} | {count} |")
 
     # Posts by Year
     md.append("\n## 📅 Posts by Year")
@@ -126,6 +174,7 @@ def generate_report(data, output_file):
     for author, count in author_counts:
         md.append(f"- {author}: {count} posts")
     md.append("\n[Back to Top](#table-of-contents)")
+        md.append(f"- {escape_markdown(author)}: {count} posts")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
@@ -141,6 +190,16 @@ def generate_report(data, output_file):
          most_active = sorted(year_counts, key=lambda x: x[1], reverse=True)[0]
          print(f"   📅 Most active year: {most_active[0]} ({most_active[1]} posts)")
     print(f"   💡 Tip: Open {output_file} to view detailed insights.\n")
+    # Console Summary
+    print(f"\n{Colors.HEADER}📊 Analytics Summary{Colors.ENDC}")
+    print(f"{Colors.BLUE}Total Posts:{Colors.ENDC} {total_posts}")
+    print(f"{Colors.BLUE}Date Range:{Colors.ENDC} {start_date} to {end_date}")
+
+    if domain_counts:
+        top_domain, count = domain_counts[0]
+        print(f"{Colors.BLUE}Top Domain:{Colors.ENDC} {top_domain} ({count} refs)")
+
+    print(f"\n{Colors.GREEN}✨ Report generated: {output_file}{Colors.ENDC}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
