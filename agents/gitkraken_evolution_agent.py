@@ -28,17 +28,8 @@ class GitKrakenEvolutionAgent(BaseAgent):
         graph_depth = "EXTENDED" if branch_count > 3 else "STANDARD"
         kraken_score = min(0.99, 0.80 + (branch_count * 0.05))
 
-        visualization_data = {
-            "graph_depth": graph_depth,
-            "commit_clustering": "SEMANTIC",
-            "kraken_compatibility_score": round(kraken_score, 2)
-        branch_count = 1
         commit_count = 1
-
         try:
-            branches = subprocess.run(["git", "branch", "-r"], capture_output=True, text=True).stdout.strip().split('\n')
-            branch_count = max(1, len([b for b in branches if b]))
-
             commits = subprocess.run(["git", "rev-list", "--all", "--count"], capture_output=True, text=True).stdout.strip()
             if commits.isdigit():
                 commit_count = int(commits)
@@ -46,12 +37,10 @@ class GitKrakenEvolutionAgent(BaseAgent):
             self.logger.warning(f"Could not retrieve dynamic git metrics: {e}")
 
         graph_depth = "EXTENDED" if commit_count > 10 else "STANDARD"
-        kraken_compatibility_score = min(0.99, 0.8 + (0.05 * branch_count))
-
         visualization_data = {
             "graph_depth": graph_depth,
             "commit_clustering": "SEMANTIC",
-            "kraken_compatibility_score": kraken_compatibility_score,
+            "kraken_compatibility_score": round(kraken_score, 2),
             "branches": branch_count,
             "commits": commit_count
         }

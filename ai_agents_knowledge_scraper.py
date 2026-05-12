@@ -18,7 +18,6 @@ def scrape_ai_agents_knowledge():
     soup = BeautifulSoup(resp.content, "html.parser")
 
     # Capture all relevant headings as section markers
-    # Including h1, h2, h3 to get more granular and complete sections (like Benefits and Use Cases)
     headings = soup.find_all(["h1", "h2", "h3", "h4"])
     all_tags = soup.find_all(True)
     data = {}
@@ -91,9 +90,14 @@ def scrape_ai_agents_knowledge():
                 "content": "\n\n".join(section_content)
             }
 
-    data["compile-definition"] = {
-        "title": "What does Compile mean?",
-        "content": "To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.\n\n### Key Definitions of Compile\n\n- **Gathering Information**: To collect and put together data, facts, or documents (e.g., to compile a report or compile a list).\n- **Creating Works**: To produce a book, anthology, or database from various materials.\n- **Computing**: To convert high-level programming code (like C++ or Java) into machine code, allowing a computer to execute the program.\n\n### Usage Examples\n\n- \"She is compiling a list of clients for the newsletter.\"\n- \"It took years to compile the dictionary.\"\n- \"The developer needs to compile the code before running the application.\"\n\n### Synonyms\n\nAssemble, Collect, Gather, Compose, Accumulate, Organize, Synthesize\n\n### Contextual Usage\n\n- **General**: Focuses on the act of assembling information or materials (e.g., compile a report).\n- **Computing**: Focuses on the automatic transformation of code using a tool known as a compiler."
+    data["compile"] = {
+        "title": "Compile",
+        "content": "To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.\n\n### Key Definitions of Compile\n\n- **Gathering Information**: To collect and put together data, facts, or documents (e.g., to compile a report or compile a list).\n- **Creating Works**: To produce a book, anthology, or database from various materials.\n- **Computing**: To convert high-level programming code (like C++ or Java) into machine code, allowing a computer to execute the program.\n\n### Usage Examples\n\n- \"She is compiling a list of clients for the newsletter.\"\n- \"It took years to compile the dictionary.\"\n- \"The developer needs to compile the code before running the application.\"\n\n### Synonyms\n\n- Assemble\n- Collect\n- Gather\n- Compose\n- Accumulate\n- Organize\n- Synthesize\n\n### Contextual Usage\n\n- **General**: Focuses on the act of assembling information or materials (e.g., compile a report).\n- **Computing**: Focuses on the automatic transformation of code using a tool known as a compiler."
+    }
+
+    data["jules-tools"] = {
+        "title": "Jules Tools",
+        "content": "Jules Tools is a lightweight command-line interface (CLI) for interacting with Jules, Google’s autonomous AI coding agent. It allows you to manage coding sessions, inspect progress, and integrate Jules into your existing development workflows and scripts directly from your terminal.\n\nThink of Jules Tools as both a command surface and a dashboard for your coding agent, designed to keep you in your flow without needing to switch to a web browser.\n\n- Installation: `npm install -g @google/jules`.\n- Authentication: `jules login` and `jules logout`.\n- Commands: `version`, `remote` (list, new, pull), `completion`.\n- Dashboard (TUI): Run `jules` without arguments for an interactive experience."
     }
 
     # Save to JSON
