@@ -19,6 +19,31 @@ class ReportGenerator:
         if not os.path.exists(self.report_dir):
             os.makedirs(self.report_dir)
 
+    def sanitize_markdown(self, text):
+        """Escapes Markdown special characters to prevent injection."""
+        if not text:
+            return ""
+        # Escape pipe to prevent table breakage
+        text = text.replace("|", "&#124;")
+        # Escape brackets to prevent link creation
+        text = text.replace("[", "\\[").replace("]", "\\]")
+        return text
+
+    def get_safe_url(self, url):
+        """Validates and sanitizes URLs."""
+        if not url:
+            return None
+        url_lower = url.lower().strip()
+        # Allow http, https, and relative paths (starting with /)
+        if url_lower.startswith("http://") or url_lower.startswith("https://") or url_lower.startswith("/"):
+            return url
+        return None
+    def create_ascii_bar(self, count, max_count, width=10):
+        if max_count == 0:
+            return ""
+        bar_len = int((count / max_count) * width)
+        return "█" * bar_len + "░" * (width - bar_len)
+
     def generate_daily_report(self):
         logger.info("Generating daily report...")
 
@@ -66,58 +91,104 @@ class ReportGenerator:
             f.write(f"**New Posts:** {len(new_posts)}\n")
             f.write(f"**Updated Posts:** {len(updated_posts)}\n\n")
 
+            # Table of Contents
+            f.write("## <a name=\"table-of-contents\"></a>Table of Contents\n\n")
+            f.write("- [💡 Recommendations](#recommendations)\n")
+
+            all_recent_titles = [p[0] for p in new_posts] + [p[0] for p in updated_posts]
+            if all_recent_titles:
+                f.write("- [🧠 Keyword Trends](#keyword-trends)\n")
+
+            f.write("- [📈 SEO Trend Analysis](#seo-trend-analysis)\n")
+
+            if updated_posts:
+                f.write("- [🔄 Content Updates](#content-updates)\n")
+
+            if new_posts:
+                f.write("- [🆕 Recently Scraped Posts](#recently-scraped-posts)\n")
+            f.write("\n")
+
             # Recommendations Section
-            f.write("## 💡 Recommendations\n\n")
+            f.write("## <a name=\"recommendations\"></a>💡 Recommendations\n\n")
             recommendations = self.generate_recommendations(new_posts, updated_posts, rankings, past_rankings)
             for rec in recommendations:
                 f.write(f"- {rec}\n")
             if not recommendations:
                 f.write("Everything looks stable. No specific actions recommended.\n")
-            f.write("\n")
+            f.write("\n[Back to Top](#table-of-contents)\n\n")
 
             # Keyword Analysis
-            all_recent_titles = [p[0] for p in new_posts] + [p[0] for p in updated_posts]
             if all_recent_titles:
-                f.write("## 🧠 Keyword Trends\n\n")
+                f.write("## <a name=\"keyword-trends\"></a>🧠 Keyword Trends\n\n")
                 f.write("Most frequent words in recent activity:\n\n")
                 keywords = self.analyze_keywords(all_recent_titles)
-                f.write("| Keyword | Frequency |\n")
-                f.write("|---|---|\n")
+
+                max_freq = keywords[0][1] if keywords else 0
+
+                f.write("| Keyword | Frequency | Distribution |\n")
+                f.write("|---|---|---|\n")
                 for word, count in keywords:
+                    # Keywords should be safe, but good to escape
+                    f.write(f"| {self.sanitize_markdown(word)} | {count} |\n")
                     f.write(f"| {word} | {count} |\n")
+                f.write("\n[Back to Top](#table-of-contents)\n\n")
+                    bar = self.create_ascii_bar(count, max_freq)
+                    f.write(f"| {word} | {count} | `{bar}` |\n")
                 f.write("\n")
 
             # SEO Rankings Trend
-            f.write("## 📈 SEO Trend Analysis\n\n")
+            f.write("## <a name=\"seo-trend-analysis\"></a>📈 SEO Trend Analysis\n\n")
             if rankings:
                 f.write("| Query | Rank | Change | Checked At |\n")
                 f.write("|---|---|---|---|---|\n")
                 trends = self.analyze_seo_trends(rankings, past_rankings)
                 for item in trends:
-                    f.write(f"| {item['query']} | {item['rank']} | {item['change']} | {item['date']} |\n")
+                    # Query could be malicious if from DB
+                    safe_query = self.sanitize_markdown(item['query'])
+                    f.write(f"| {safe_query} | {item['rank']} | {item['change']} | {item['date']} |\n")
             else:
-                f.write("No SEO ranking data for today.\n\n")
+                f.write("No SEO ranking data for today.\n")
+            f.write("\n[Back to Top](#table-of-contents)\n\n")
 
             # Content Updates Section
             if updated_posts:
-                f.write("## 🔄 Content Updates\n\n")
+                f.write("## <a name=\"content-updates\"></a>🔄 Content Updates\n\n")
                 f.write("| Post | Field | Old | New | Time |\n")
                 f.write("|---|---|---|---|---|\n")
                 for u in updated_posts:
                     title, url, field, old, new, time = u
+
+                    safe_title = self.sanitize_markdown(title)
+                    safe_url = self.get_safe_url(url)
+                    safe_old = self.sanitize_markdown(old)
+                    safe_new = self.sanitize_markdown(new)
+
+                    # If URL is unsafe, don't link it
+                    link_md = f"[{safe_title}]({safe_url})" if safe_url else f"{safe_title} (Unsafe Link)"
+
+                    f.write(f"| {link_md} | {field} | {safe_old} | {safe_new} | {time} |\n")
+                f.write("\n")
                     title = title.replace("|", "-")
                     f.write(f"| [{title}]({url}) | {field} | {old} | {new} | {time} |\n")
-                f.write("\n")
+                f.write("\n[Back to Top](#table-of-contents)\n\n")
 
             # New Posts Section
             if new_posts:
-                f.write("## 🆕 Recently Scraped Posts\n\n")
+                f.write("## <a name=\"recently-scraped-posts\"></a>🆕 Recently Scraped Posts\n\n")
                 f.write("| Title | Scraped At | Link |\n")
                 f.write("|---|---|---|\n")
                 for post in new_posts:
                     title, url, scraped_at = post
+
+                    safe_title = self.sanitize_markdown(title) if title else "No Title"
+                    safe_url = self.get_safe_url(url)
+
+                    view_link = f"[View]({safe_url})" if safe_url else "(Unsafe Link)"
+
+                    f.write(f"| {safe_title} | {scraped_at} | {view_link} |\n")
                     title = title.replace("|", "-") if title else "No Title"
                     f.write(f"| {title} | {scraped_at} | [View]({url}) |\n")
+                f.write("\n[Back to Top](#table-of-contents)\n")
             else:
                 f.write("No new posts scraped in the last 24 hours.\n")
 
@@ -179,9 +250,13 @@ class ReportGenerator:
             trends = self.analyze_seo_trends(rankings, past_rankings)
             for t in trends:
                 if "⬇️" in t['change']:
-                    recs.append(f"📉 **SEO Drop**: Rank dropped for '{t['query']}'. Review page content and keywords.")
+                    # Query is from DB, should escape if used in output, but here it is just text.
+                    # Wait, if this list item is written to Markdown, it should be escaped too.
+                    safe_query = self.sanitize_markdown(t['query'])
+                    recs.append(f"📉 **SEO Drop**: Rank dropped for '{safe_query}'. Review page content and keywords.")
                 if t['rank'] > 10:
-                    recs.append(f"🔍 **SEO Visibility**: '{t['query']}' is on Page {int(t['rank']/10)+1}. Aim for top 10.")
+                    safe_query = self.sanitize_markdown(t['query'])
+                    recs.append(f"🔍 **SEO Visibility**: '{safe_query}' is on Page {int(t['rank']/10)+1}. Aim for top 10.")
 
         return recs
 

@@ -31,6 +31,8 @@ class TestBlogScraper(unittest.TestCase):
         self.scraper = BlogScraper("http://mock.url", self.json_name, self.db_name)
 
     def tearDown(self):
+        if hasattr(self, 'scraper') and self.scraper:
+            self.scraper.close()
         if os.path.exists(self.db_name):
             os.remove(self.db_name)
         if os.path.exists(self.json_name):
@@ -87,6 +89,26 @@ class TestBlogScraper(unittest.TestCase):
             row = cursor.fetchone()
             self.assertIsNotNone(row)
             self.assertEqual(row[1], 'DB Test') # title
+
+    def test_is_safe_url(self):
+        # Safe URLs
+        self.assertTrue(self.scraper.is_safe_url("http://example.com"))
+        self.assertTrue(self.scraper.is_safe_url("https://google.com/foo/bar"))
+
+        # Unsafe URLs - Scheme
+        self.assertFalse(self.scraper.is_safe_url("ftp://example.com"))
+        self.assertFalse(self.scraper.is_safe_url("file:///etc/passwd"))
+        self.assertFalse(self.scraper.is_safe_url("javascript:alert(1)"))
+
+        # Unsafe URLs - Localhost/Private
+        self.assertFalse(self.scraper.is_safe_url("http://localhost"))
+        self.assertFalse(self.scraper.is_safe_url("http://localhost:8080"))
+        self.assertFalse(self.scraper.is_safe_url("http://127.0.0.1"))
+        self.assertFalse(self.scraper.is_safe_url("http://127.0.0.1:5000"))
+        self.assertFalse(self.scraper.is_safe_url("http://0.0.0.0"))
+        self.assertFalse(self.scraper.is_safe_url("http://[::1]"))
+        self.assertFalse(self.scraper.is_safe_url("http://192.168.1.1"))
+        self.assertFalse(self.scraper.is_safe_url("http://10.0.0.50"))
 
 if __name__ == '__main__':
     unittest.main()
