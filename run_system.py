@@ -45,6 +45,7 @@ from agents.knowledge_agent import KnowledgeAgent
 from agents.intelephense_agent import IntelephenseAgent
 from agents.sandbox_agent import SandboxAgent
 from ai_agents_knowledge_scraper import scrape_ai_agents_knowledge
+from vscode_intelephense_scraper import scrape_vscode_intelephense
 from intelephense_scraper import scrape_intelephense_docs
 
 # Expansion Agents
@@ -76,6 +77,8 @@ def run_scraper():
         # AI Agent Knowledge Scraper (Direct module call)
         scrape_ai_agents_knowledge()
 
+        # VSCode Intelephense Scraper
+        scrape_vscode_intelephense()
         # Intelephense Documentation Scraper
         scrape_intelephense_docs()
 
