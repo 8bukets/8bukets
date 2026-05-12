@@ -28,10 +28,6 @@ class GitKrakenEvolutionAgent(BaseAgent):
         graph_depth = "EXTENDED" if branch_count > 3 else "STANDARD"
         kraken_score = min(0.99, 0.80 + (branch_count * 0.05))
 
-        visualization_data = {
-            "graph_depth": graph_depth,
-            "commit_clustering": "SEMANTIC",
-            "kraken_compatibility_score": round(kraken_score, 2)
         branch_count = 1
         commit_count = 1
 

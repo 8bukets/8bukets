@@ -67,9 +67,6 @@ class CloudWorkflowAgent(BaseAgent):
         }
 
         self.logger.info(f"Multi-cloud workflow evaluated: Fluent={is_fluent}, Orchestration={orchestration_mode}, Decisions={active_decisions}")
-            "react_agent_deployment": "ORCHESTRATED" if react_deployment_ready else "PENDING",
-            "active_decisions": active_decisions
-        }
 
         self.logger.info(f"Multi-cloud workflow evaluated: Fluent={is_fluent}, Availability={availability_score}, Mode={orchestration_mode}, Decisions={active_decisions}")
 

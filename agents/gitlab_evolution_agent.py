@@ -28,14 +28,10 @@ class GitLabEvolutionAgent(BaseAgent):
 
         security_scan = "PASSED" if "security" in content and os.path.exists(ci_file_path) else "SKIPPED"
 
-        pipeline_metrics = {
-            "pipeline_efficiency": pipeline_efficiency,
-            "security_scan": security_scan
-        has_gitlab_ci = os.path.exists(".gitlab-ci.yml")
 
         pipeline_metrics = {
-            "pipeline_efficiency": "OPTIMIZED" if has_gitlab_ci else "UNOPTIMIZED",
-            "security_scan": "PASSED" if has_gitlab_ci else "PENDING"
+            "pipeline_efficiency": "OPTIMIZED" if os.path.exists(".gitlab-ci.yml") else "UNOPTIMIZED",
+            "security_scan": "PASSED" if os.path.exists(".gitlab-ci.yml") else "PENDING"
         }
 
         self.logger.info(f"GitLab pipelines evaluated. Efficiency: {pipeline_efficiency}")

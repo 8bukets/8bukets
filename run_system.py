@@ -196,7 +196,7 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         MetaCodingAgent(), JulesEvolutionAgent(), GitKrakenEvolutionAgent(),
         DockerEvolutionAgent(), GitHubEvolutionAgent(), CollaborationAgent(),
         MongoDBAgent(), MySQLAgent(), PerformanceOptimizationAgent(),
-        SystemAuditAgent(), DocumentationAgent(), RagAgent()
+        SystemAuditAgent(), DocumentationAgent(), RagAgent(),
         HealthCheckAgent(), RobotTxtAgent(), KnowledgeAgent(),
         AnalysisAgent(), ResearchAgent(), IntelligenceAgent(), ReActAgent(),
         TargetingAgent(), CreativityAgent(), AdsAgent(),

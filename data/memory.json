@@ -2,7 +2,8 @@
     "TargetingAgent": {
         "last_primary_persona": "AdTech Professional",
         "long_term": {
-            "new_key": "new_val"
+            "new_key": "new_val",
+            "last_primary_persona": "AdTech Professional"
         }
     },
     "TestAgent": {
@@ -14,7 +15,46 @@
                 "timestamp": "2026-05-12T07:56:40.607308",
                 "event": "episodic_event",
                 "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-12T20:42:46.132817",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-12T20:43:40.545463",
+                "event": "episodic_event",
+                "data": "episodic_data"
             }
         ]
+    },
+    "RobotTxtAgent": {
+        "long_term": {
+            "disallowed_paths": [
+                "/mshots/v1/",
+                "/next/",
+                "/press-this.php",
+                "/public.api/",
+                "/wp-signup.php",
+                "/wp-admin/",
+                "/wp-login.php",
+                "/activate/",
+                "/cgi-bin/",
+                "/remote-login.php"
+            ]
+        },
+        "episodic": []
+    },
+    "BidAgent": {
+        "long_term": {
+            "adjustment_factor": 1.08285670562808
+        },
+        "episodic": []
+    },
+    "AutonomousIntelligenceAgent": {
+        "long_term": {
+            "system_health": "healthy"
+        },
+        "episodic": []
     }
 }
