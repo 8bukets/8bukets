@@ -198,6 +198,7 @@ Google Cloud provides a portfolio of products and solutions in the AI agent spac
 
 - Cloud Run A fully managed serverless platform that allows you to deploy containerized agents and applications, providing auto-scaling and pay-per-use efficiency.
 
+## What does Compile mean?
 
 ## IDE Integration for AI Agents
 To provide seamless coding assistance, AI agents like the Gemini CLI can integrate with Integrated Development Environments (IDEs). Interoperability is achieved through standard open protocols and dedicated extensions:
@@ -222,6 +223,7 @@ To compile means to gather information from various sources and arrange it into 
 
 ### Synonyms
 
+Assemble, Collect, Gather, Compose, Accumulate, Organize, Synthesize
 - Assemble
 - Collect
 - Gather
