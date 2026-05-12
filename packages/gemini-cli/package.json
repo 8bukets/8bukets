@@ -1,0 +1,18 @@
+{
+  "name": "@google/gemini-cli",
+  "version": "1.0.0",
+  "description": "Main package for Gemini CLI",
+  "main": "index.js",
+  "bin": {
+    "gemini": "bin/gemini.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@google/gemini-cli-core": "*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

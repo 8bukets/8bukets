@@ -1,0 +1,50 @@
+name: Antigravity Autonomous Daily Work
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Every day at midnight
+  workflow_dispatch: # Allows manual trigger
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  autonomous-work:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Execute Autonomous Work Cycle
+        run: npx tsx -e "import { jules } from './antigravity/jules'; jules.executeWorkCycle()"
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      - name: Build Verification
+        run: npm run build
+
+      - name: Push Changes
+        run: |
+          git config --global user.name "filip keser"
+          git config --global user.email "8bukets@gmail.com"
+          git add -A
+          git diff --quiet && git diff --staged --quiet || git commit -m "chore: autonomous daily cycle update"
+          git pull --rebase origin main || true
+          git push origin main || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -3,12 +3,12 @@ import asyncio
 from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
-import re
 import argparse
 import logging
 import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
+from utils import validate_output_path
 
 # Configure logging
 logging.basicConfig(
@@ -21,10 +21,14 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
+    # Pre-compile regex patterns for performance
+    CLEAN_TEXT_REGEX = re.compile(r'\s+')
+    URL_REGEX = re.compile(r'^https?://')
+
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
-        self.output_json = output_json
-        self.output_csv = output_csv
-        self.output_txt = output_txt
+        self.output_json = validate_output_path(output_json)
+        self.output_csv = validate_output_path(output_csv)
+        self.output_txt = validate_output_path(output_txt)
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
@@ -34,11 +38,20 @@ class MarkPositionScraperAsync:
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return self.CLEAN_TEXT_REGEX.sub(' ', text).strip()
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
-        return re.match(r'^https?://', text.strip()) is not None
+        return self.URL_REGEX.match(text.strip()) is not None
+        # Optimization: split().join() is faster than re.sub for normalizing whitespace
+        # split() handles all unicode whitespace including \xa0 (non-breaking space)
+        return " ".join(text.split())
+
+    def is_url(self, text: str) -> bool:
+        """Check if text looks like a URL."""
+        # Optimization: startswith is faster than regex for simple prefix check
+        s = text.strip()
+        return s.startswith(('http://', 'https://'))
 
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
@@ -76,6 +89,15 @@ class MarkPositionScraperAsync:
         strainer = SoupStrainer('article')
         soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
         articles = soup.find_all('article', class_='post')
+        soup = BeautifulSoup(html, 'html.parser')
+
+        # Optimization: Narrow search scope to #content div if present to avoid traversing footer/sidebar
+        content = soup.find('div', id='content')
+        if content:
+            articles = content.find_all('article', class_='post')
+        else:
+            articles = soup.find_all('article', class_='post')
+
         page_posts = []
 
         if not articles:
@@ -144,7 +166,6 @@ class MarkPositionScraperAsync:
         return page_posts
 
     async def scrape(self):
-        all_posts = []
         page_num = 1
         sem = asyncio.Semaphore(self.concurrency)
 
@@ -153,70 +174,113 @@ class MarkPositionScraperAsync:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
 
-        async with aiohttp.ClientSession(headers=headers) as session:
-            # We don't know the total pages, so we have to fetch sequentially or in chunks until we hit 404/empty.
-            # Pure concurrent fetching of all pages requires knowing the max page.
-            # Heuristic: fetch in batches of `concurrency`. If any page in batch returns 404 or empty, stop.
+        # Open files for incremental writing
+        with open(self.output_json, 'w', encoding='utf-8') as json_f, \
+             open(self.output_csv, 'w', newline='', encoding='utf-8') as csv_f, \
+             open(self.output_txt, 'w', encoding='utf-8') as txt_f:
 
-            # Actually, WordPress pages are sequential. If page N is 404, N+1 is likely 404 too.
-            # But fetching 100 pages 1-by-1 is slow.
-            # Let's try fetching chunks.
+            # Initialize CSV
+            csv_writer = csv.writer(csv_f)
+            csv_writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
 
-            active = True
-            while active:
-                tasks = []
-                # Prepare a batch of pages
-                batch_start = page_num
-                # If max_pages is set, clamp the batch size
-                current_concurrency = self.concurrency
+            # Initialize JSON
+            json_f.write('[')
+            first_json_item = True
 
-                for i in range(current_concurrency):
-                    current_page = batch_start + i
-                    if self.max_pages and current_page > self.max_pages:
-                        active = False
-                        break
+            # Initialize Unique Links tracking
+            seen_links = set()
 
-                    # We create a task that acquires semaphore (though sem is less useful if we just create batch size = concurrency)
-                    tasks.append(self.fetch_and_parse(session, current_page, sem))
+            try:
+                async with aiohttp.ClientSession(headers=headers) as session:
+                    active = True
+                    while active:
+                        tasks = []
+                        # Prepare a batch of pages
+                        batch_start = page_num
+                        # If max_pages is set, clamp the batch size
+                        current_concurrency = self.concurrency
 
-                if not tasks:
-                    break
+                        for i in range(current_concurrency):
+                            current_page = batch_start + i
+                            if self.max_pages and current_page > self.max_pages:
+                                active = False
+                                break
 
-                logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
-                results = await asyncio.gather(*tasks)
+                            tasks.append(self.fetch_and_parse(session, current_page, sem))
 
-                # Check results
-                batch_posts_count = 0
-                stop_detected = False
+                        if not tasks:
+                            break
 
-                # Results are ordered by page number
-                for idx, page_posts in enumerate(results):
-                    page_idx = batch_start + idx
-                    if page_posts is None:
-                        # 404 or Error
-                        logger.info(f"Page {page_idx} returned 404 or empty. Stopping.")
-                        stop_detected = True
-                        break # Don't process further pages in this batch effectively (though they were fetched)
-                    elif len(page_posts) == 0:
-                        logger.info(f"Page {page_idx} has no articles. Stopping.")
-                        stop_detected = True
-                        break
-                    else:
-                        all_posts.extend(page_posts)
-                        batch_posts_count += len(page_posts)
+                        logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
+                        results = await asyncio.gather(*tasks)
 
-                if stop_detected:
-                    break
+                        # Check results
+                        stop_detected = False
+                        total_batch_posts = 0
 
-                if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
-                    logger.info("Reached max pages limit.")
-                    break
+                        # Results are ordered by page number
+                        for idx, page_posts in enumerate(results):
+                            page_idx = batch_start + idx
+                            if page_posts is None:
+                                # 404 or Error
+                                logger.info(f"Page {page_idx} returned 404 or empty. Stopping.")
+                                stop_detected = True
+                                break
+                            elif len(page_posts) == 0:
+                                logger.info(f"Page {page_idx} has no articles. Stopping.")
+                                stop_detected = True
+                                break
+                            else:
+                                # Write this page's posts incrementally
+                                first_json_item = self.save_batch(page_posts, json_f, csv_writer, txt_f, seen_links, first_json_item)
+                                total_batch_posts += len(page_posts)
 
-                page_num += len(tasks)
-                # Small delay between batches
-                await asyncio.sleep(0.5)
+                        if total_batch_posts > 0:
+                            logger.info(f"Saved {total_batch_posts} posts from batch.")
 
-        self.save_data(all_posts)
+                        if stop_detected:
+                            break
+
+                        if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
+                            logger.info("Reached max pages limit.")
+                            break
+
+                        page_num += len(tasks)
+                        # Small delay between batches
+                        await asyncio.sleep(0.5)
+            finally:
+                # Finalize JSON even on error
+                json_f.write('\n]')
+
+    def save_batch(self, posts: List[Dict], json_f, csv_writer, txt_f, seen_links: Set[str], is_first_item: bool) -> bool:
+        for post in posts:
+            # CSV
+            csv_writer.writerow([
+                post.get('title', ''),
+                post.get('date', ''),
+                post.get('author', ''),
+                ", ".join(post.get('categories', [])),
+                post.get('external_link', ''),
+                post.get('domain', ''),
+                post.get('post_url', '')
+            ])
+
+            # TXT
+            link = post.get('external_link')
+            if link and link not in seen_links:
+                seen_links.add(link)
+                txt_f.write(link + '\n')
+
+            # JSON
+            if not is_first_item:
+                json_f.write(',\n')
+            else:
+                json_f.write('\n')
+                is_first_item = False
+
+            json.dump(post, json_f, indent=4, ensure_ascii=False)
+
+        return is_first_item
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
@@ -224,6 +288,15 @@ class MarkPositionScraperAsync:
             if html:
                 return await self.parse_page(html)
             return None
+
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text to prevent CSV injection."""
+        if not text:
+            return ""
+        text = str(text)
+        if text.startswith(('=', '+', '-', '@')):
+            return "'" + text
+        return text
 
     def save_data(self, posts: List[Dict]):
         # JSON
@@ -241,13 +314,13 @@ class MarkPositionScraperAsync:
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        self.sanitize_for_csv(post.get('title', '')),
+                        self.sanitize_for_csv(post.get('date', '')),
+                        self.sanitize_for_csv(post.get('author', '')),
+                        self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                        self.sanitize_for_csv(post.get('external_link', '')),
+                        self.sanitize_for_csv(post.get('domain', '')),
+                        self.sanitize_for_csv(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
