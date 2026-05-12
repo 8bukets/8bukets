@@ -40,19 +40,12 @@ async def verify():
         }
     ]
 
-    from agents.react_agent import ReActAgent
-    from agents.knowledge_agent import KnowledgeAgent
-    from agents.cloud_workflow_agent import CloudWorkflowAgent
-    from agents.gitlab_evolution_agent import GitLabEvolutionAgent
-
     agents = [
         HealthCheckAgent(),
         RobotTxtAgent(),
-        KnowledgeAgent(),
         AnalysisAgent(),
         ResearchAgent(),
         IntelligenceAgent(),
-        ReActAgent(),
         TargetingAgent(),
         CreativityAgent(),
         AdsAgent(),
@@ -67,8 +60,6 @@ async def verify():
         JulesEvolutionAgent(),
         GitKrakenEvolutionAgent(),
         DockerEvolutionAgent(),
-        GitLabEvolutionAgent(),
-        CloudWorkflowAgent(),
         GitHubEvolutionAgent()
     ]
 

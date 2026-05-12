@@ -14,9 +14,8 @@ The workspace currently contains multiple overlapping identities:
 - Project SOR
 - `software-online-review.com`
 - `software-review-platform`
-- `markposition.wordpress.com`
 
-These are not separate businesses. They are five layers of the same evolving asset.
+These are not four separate businesses. They are four layers of the same evolving asset.
 
 ## Canonical Interpretation
 
@@ -88,22 +87,6 @@ Canonical role:
 - MVP product foundation
 - structured application layer for the future platform
 
-### markposition.wordpress.com
-
-This is the market intelligence and external data source layer.
-
-Examples found in the repo:
-
-- `scraper.py`
-- `analytics.py`
-- `links.json` and `REPORT.md`
-
-Canonical role:
-
-- market intelligence layer
-- data source for tracking ad tech, CMS, and marketing tools
-- external trend analysis feeding the intelligence system
-
 ## Recommended Unified Model
 
 The best working model is:
@@ -112,9 +95,8 @@ The best working model is:
 - Project SOR = brand and editorial layer
 - `software-online-review.com` = current public distribution layer
 - `software-review-platform` = future product engine
-- `markposition.wordpress.com` = market intelligence and data source layer
 
-This gives the project a coherent internal structure instead of five competing interpretations.
+This gives the project a coherent internal structure instead of four competing interpretations.
 
 ## How These Layers Connect
 
@@ -159,14 +141,6 @@ This layer should:
 - moderation happens
 - comments and ratings live
 
-### Market Intelligence Layer
-
-`markposition.wordpress.com` serves as the external ear of the system where:
-
-- the scraper fetches the latest industry news and tools
-- analytics generate reports on market trends
-- the data feeds the Antigravity intelligence layer
-
 ## Architectural Direction
 
 Short term:
@@ -193,7 +167,6 @@ To reduce confusion, use this naming consistently:
 - Project SOR: brand and strategic initiative
 - Software Review Platform: product implementation
 - `software-online-review.com`: public domain and customer-facing distribution point
-- Markposition Scraper & Analytics: market intelligence toolset capturing data from `markposition.wordpress.com`
 
 ## Product Implications
 

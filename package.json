@@ -1,22 +1,11 @@
 {
-  "name": "jules-cli",
-  "version": "1.0.0",
-  "type": "module",
-  "bin": {
-    "jules": "./bin/jules.js"
-  },
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "build": "ncc build index.js -o dist"
   },
   "dependencies": {
     "@actions/core": "^1.11.1",
-    "@actions/github": "^5.1.1",
-    "chalk": "^5.6.2",
-    "commander": "^14.0.3"
-    "@google/gemini-cli-core": "^0.41.2"
+    "@actions/github": "^5.1.1"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.38.4",

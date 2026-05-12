@@ -39,12 +39,11 @@ class KnowledgeAgent(BaseAgent):
             definitions = {
                 "ai_agent": knowledge.get("what-is-an-ai-agent", {}).get("content", ""),
                 "features": knowledge.get("key-features-of-an-ai-agent", {}).get("content", ""),
-                "differences": knowledge.get("what-is-the-difference-between-ai-agents,-ai-assistants,-and-bots", {}).get("content", "") + "\n\n" + knowledge.get("key-differences", {}).get("content", ""),
+                "differences": knowledge.get("what-is-the-difference-between-ai-agents,-ai-assistants,-and-bots", {}).get("content", ""),
                 "interaction_types": knowledge.get("based-on-interaction", {}).get("content", ""),
                 "agent_count_types": knowledge.get("based-on-number-of-agents", {}).get("content", ""),
                 "types": knowledge.get("based-on-interaction", {}).get("content", "") + "\n" + knowledge.get("based-on-number-of-agents", {}).get("content", ""),
                 "challenges": knowledge.get("challenges-with-using-ai-agents", {}).get("content", ""),
-                "jules_tools": knowledge.get("jules-tools", {}).get("content", ""),
                 "deployment": knowledge.get("deploy-ai-agents-for-scale-and-efficiency-with-cloud-run", {}).get("content", ""),
                 "how_they_work": how_they_work,
                 "persona_definition": extract_bullet(how_they_work, "Persona"),
@@ -82,14 +81,13 @@ class KnowledgeAgent(BaseAgent):
                         # Regex to capture the first few words which usually form the tool name
                         # Stops at known description start markers or after 4 words
                         # Updated to handle more markers found in the content
-                        match = re.search(r"^- ([\w\s\(\)-]{1,60}?)(?:\s+(?:Secure platform|Create AI|Build hybrid|Build Google-quality|Curated collection|Open-source|An AI|A fully managed|Provides a|Unified|Single|End-to-end|Speech|Language|Custom|Omnichannel)|$)", line)
+                        match = re.search(r"^- ([\w\s\(\)-]{1,50}?)(?:\s+(?:Secure|Create|Build|Curated|Open-source|An|A|Provides|Unified|Single|End-to-end|Google-quality|Speech|Language|Custom|Omnichannel)|$)", line)
                         if match:
                             tool_name = match.group(1).strip()
                             if tool_name and len(tool_name.split()) <= 6:
                                 tools_list.append(tool_name)
 
             best_practices = [
-                "Use Jules Tools CLI for terminal-based session management and TUI dashboard.",
                 "Focus on reasoning, acting, observing, and planning.",
                 "Implement self-refining capabilities for continuous improvement.",
                 "Ensure robust memory management (short-term, long-term, episodic, consensus).",
@@ -97,8 +95,7 @@ class KnowledgeAgent(BaseAgent):
                 "Maintain a consistent persona (role, personality, communication style) appropriate to the assigned role.",
                 "Leverage serverless platforms like Cloud Run for scalable and cost-effective deployment.",
                 "Design specialized agents for specific domains like Code, Security, or Data.",
-                "Distinguish between AI Agents (autonomous), AI Assistants (collaborative), and Bots (rule-based).",
-                "Orchestrate React agents dynamically through Next.js for robust frontend deployments."
+                "Distinguish between AI Agents (autonomous), AI Assistants (collaborative), and Bots (rule-based)."
             ]
 
             return {
@@ -106,10 +103,7 @@ class KnowledgeAgent(BaseAgent):
                 "agent_best_practices": best_practices,
                 "agent_use_cases": use_cases,
                 "google_cloud_tools_list": tools_list,
-                "react_framework_details": {
-                    "features": definitions.get("features", ""),
-                    "deployment_strategy": "Orchestrate React components using Next.js for seamless AI integration."
-                },
+                "react_framework_details": {"features": definitions.get("features", "")},
                 "agent_taxonomy": {
                     "interactive_partners": "Assisting with tasks like customer service via direct conversation.",
                     "background_processes": "Automating routine tasks and optimizing processes behind the scenes."

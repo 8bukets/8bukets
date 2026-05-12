@@ -16,23 +16,15 @@
     "TargetingAgent": {
         "last_primary_persona": "AdTech Professional",
         "long_term": {
-            "new_key": "new_val",
-            "last_primary_persona": "AdTech Professional"
+            "new_key": "new_val"
         }
     },
     "BidAgent": {
         "performance_multiplier": 1.0989414764554153,
-        "adjustment_factor": 1.5648107472306303
-        "adjustment_factor": 1.7632679173989854,
-        "long_term": {
-            "adjustment_factor": 1.8348636655497332
-        }
+        "adjustment_factor": 1.7632679173989854
     },
     "AutonomousIntelligenceAgent": {
-        "system_health": "healthy",
-        "long_term": {
-            "system_health": "healthy"
-        }
+        "system_health": "healthy"
     },
     "TestAgent": {
         "long_term": {
@@ -66,30 +58,6 @@
             },
             {
                 "timestamp": "2026-05-10T08:18:35.185808",
-                "event": "episodic_event",
-                "data": "episodic_data"
-            },
-            {
-                "timestamp": "2026-05-11T18:57:36.102805",
-                "timestamp": "2026-05-11T08:12:31.656586",
-                "timestamp": "2026-05-11T02:58:12.906705",
-                "event": "episodic_event",
-                "data": "episodic_data"
-            },
-            {
-                "timestamp": "2026-05-11T16:35:06.729916",
-                "timestamp": "2026-05-11T18:59:12.334939",
-                "timestamp": "2026-05-11T15:43:01.522984",
-                "event": "episodic_event",
-                "data": "episodic_data"
-            },
-            {
-                "timestamp": "2026-05-11T22:45:00.331183",
-                "event": "episodic_event",
-                "data": "episodic_data"
-            },
-            {
-                "timestamp": "2026-05-12T02:50:19.221116",
                 "event": "episodic_event",
                 "data": "episodic_data"
             }
