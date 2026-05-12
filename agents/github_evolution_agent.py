@@ -47,10 +47,20 @@ class GitHubEvolutionAgent(BaseAgent):
             # 3. Push changes (if GITHUB_TOKEN is available)
             token = os.environ.get("GITHUB_TOKEN")
             if token:
-                self.logger.info("GITHUB_TOKEN detected. Attempting to push...")
-                # Note: This is a simplified push logic. In a real scenario, you'd handle remote URL properly.
-                subprocess.run(["git", "push"], check=True)
-                vcs_status = "COMMITTED_AND_PUSHED"
+                self.logger.info("GITHUB_TOKEN detected. Pulling with rebase and attempting to push...")
+                pull_result = subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=False)
+                if pull_result.returncode != 0:
+                    self.logger.warning("Git pull rebase failed (likely merge conflict). Aborting rebase.")
+                    subprocess.run(["git", "rebase", "--abort"], check=False)
+                    vcs_status = "COMMITTED_LOCAL" # Prevent push from failing
+                else:
+                    # Note: This is a simplified push logic. In a real scenario, you'd handle remote URL properly.
+                    try:
+                        subprocess.run(["git", "push"], check=True)
+                        vcs_status = "COMMITTED_AND_PUSHED"
+                    except subprocess.CalledProcessError as e:
+                        self.logger.error(f"Git push failed: {e}")
+                        vcs_status = "COMMITTED_LOCAL"
             else:
                 self.logger.warning("GITHUB_TOKEN not found. Changes committed but not pushed.")
                 vcs_status = "COMMITTED_LOCAL"
