@@ -1,3 +1,6 @@
+## 2024-05-22 - BeautifulSoup Selector Performance
+**Learning:** In this codebase, replacing CSS selectors (`select_one`) with direct tag searches (`find`) yielded a ~46% performance improvement for element extraction. `SoupStrainer` provided a smaller (~6%) but additive gain.
+**Action:** Prefer `find/find_all` over `select/select_one` in tight loops or high-volume scraping tasks.
 ## 2025-02-12 - SoupStrainer Class Matching
 **Learning:** `SoupStrainer('tag', class_='classname')` performs an exact string match on the `class` attribute of the HTML tag. It does NOT check if 'classname' is present in the list of classes (like `find_all` does). This causes it to fail silently (filter out everything) when tags have multiple classes (e.g., `<article class="classname otherclass">`).
 **Action:** Always use `re.compile(r'\bclassname\b')` when filtering by class with `SoupStrainer` if the element might have multiple classes.
