@@ -21,12 +21,33 @@ def get_domain(url):
     except:
         return None
 
+def create_ascii_bar(count, max_count, width=20):
+    """Creates an ASCII bar chart for a given count."""
+    if max_count == 0:
+        return ""
+    bar_length = int((count / max_count) * width)
+
+    # Ensure very small non-zero values get at least a thin bar
+    if count > 0 and bar_length == 0:
+        return "▏"
+
+    # Use block elements for bar
+    return "█" * bar_length
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
     # 1. Domain Analysis
-    domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
+    domains = []
+    for p in data:
+        # Use pre-computed domain if available to avoid costly url parsing
+        if p.get('domain'):
+            domains.append(p.get('domain'))
+        elif p.get('external_link'):
+            domains.append(get_domain(p.get('external_link')))
+
     domain_counts = Counter(domains).most_common(10)
+    max_domain_count = domain_counts[0][1] if domain_counts else 0
 
     # 2. Category Analysis
     all_categories = []
@@ -35,6 +56,7 @@ def generate_report(data, output_file):
         if cats:
             all_categories.extend(cats)
     category_counts = Counter(all_categories).most_common(10)
+    max_category_count = category_counts[0][1] if category_counts else 0
 
     # 3. Date Analysis
     dates = []
@@ -47,6 +69,13 @@ def generate_report(data, output_file):
                 dates.append(dt)
             except ValueError:
                 pass
+        # Fallback to 'date' field if 'datetime' is missing or invalid
+        elif p.get('date'):
+            try:
+                dt = datetime.strptime(p.get('date'), '%Y-%m-%d')
+                dates.append(dt)
+            except ValueError:
+                pass
 
     if dates:
         dates.sort()
@@ -55,10 +84,12 @@ def generate_report(data, output_file):
         years = [d.year for d in dates]
         year_counts = Counter(years).most_common()
         year_counts.sort(key=lambda x: x[0], reverse=True)
+        max_year_count = year_counts[0][1] if year_counts else 0
     else:
         start_date = "N/A"
         end_date = "N/A"
         year_counts = []
+        max_year_count = 0
 
     # 4. Author Analysis
     authors = [p.get('author') for p in data if p.get('author')]
@@ -66,7 +97,7 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
+    md.append("# 📊 Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
     # Table of Contents
@@ -78,6 +109,7 @@ def generate_report(data, output_file):
     md.append("- [✍️ Authors](#authors)")
 
     md.append("\n## 📊 General Statistics")
+    md.append("\n## 📈 General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
@@ -92,30 +124,43 @@ def generate_report(data, output_file):
     md.append("\n## 🌐 Top 10 Referenced Domains")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
+    md.append("\n## 🔗 Top 10 Referenced Domains")
+    md.append("| Domain | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
     for domain, count in domain_counts:
-        md.append(f"| {domain} | {count} |")
+        bar = create_ascii_bar(count, max_domain_count)
+        md.append(f"| {domain} | {count} | {bar} |")
 
     md.append("\n[Back to Top](#table-of-contents)")
 
     md.append("\n## 🏷️ Top 10 Categories")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
+    md.append("\n## 🏷️ Top 10 Categories")
+    md.append("| Category | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
     for cat, count in category_counts:
-        md.append(f"| {cat} | {count} |")
+        bar = create_ascii_bar(count, max_category_count)
+        md.append(f"| {cat} | {count} | {bar} |")
 
     md.append("\n[Back to Top](#table-of-contents)")
 
     md.append("\n## 📅 Posts by Year")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
+    md.append("\n## 📅 Posts by Year")
+    md.append("| Year | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
     for year, count in year_counts:
-        md.append(f"| {year} | {count} |")
+        bar = create_ascii_bar(count, max_year_count)
+        md.append(f"| {year} | {count} | {bar} |")
 
     md.append("\n[Back to Top](#table-of-contents)")
 
     md.append("\n## ✍️ Authors")
     for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+        posts_str = "post" if count == 1 else "posts"
+        md.append(f"- **{author}**: {count} {posts_str}")
 
     md.append("\n[Back to Top](#table-of-contents)")
 
