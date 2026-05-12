@@ -39,7 +39,7 @@ class KnowledgeAgent(BaseAgent):
             definitions = {
                 "ai_agent": knowledge.get("what-is-an-ai-agent", {}).get("content", ""),
                 "features": knowledge.get("key-features-of-an-ai-agent", {}).get("content", ""),
-                "differences": knowledge.get("what-is-the-difference-between-ai-agents,-ai-assistants,-and-bots", {}).get("content", ""),
+                "differences": knowledge.get("what-is-the-difference-between-ai-agents,-ai-assistants,-and-bots", {}).get("content", "") + "\n\n" + knowledge.get("key-differences", {}).get("content", ""),
                 "interaction_types": knowledge.get("based-on-interaction", {}).get("content", ""),
                 "agent_count_types": knowledge.get("based-on-number-of-agents", {}).get("content", ""),
                 "types": knowledge.get("based-on-interaction", {}).get("content", "") + "\n" + knowledge.get("based-on-number-of-agents", {}).get("content", ""),
@@ -82,7 +82,7 @@ class KnowledgeAgent(BaseAgent):
                         # Regex to capture the first few words which usually form the tool name
                         # Stops at known description start markers or after 4 words
                         # Updated to handle more markers found in the content
-                        match = re.search(r"^- ([\w\s\(\)-]{1,50}?)(?:\s+(?:Secure|Create|Build|Curated|Open-source|An|A|Provides|Unified|Single|End-to-end|Google-quality|Speech|Language|Custom|Omnichannel)|$)", line)
+                        match = re.search(r"^- ([\w\s\(\)-]{1,60}?)(?:\s+(?:Secure platform|Create AI|Build hybrid|Build Google-quality|Curated collection|Open-source|An AI|A fully managed|Provides a|Unified|Single|End-to-end|Speech|Language|Custom|Omnichannel)|$)", line)
                         if match:
                             tool_name = match.group(1).strip()
                             if tool_name and len(tool_name.split()) <= 6:
