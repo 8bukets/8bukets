@@ -41,14 +41,14 @@ async def test_persona_and_memory_implementation():
 @pytest.mark.asyncio(loop_scope="function")
 async def test_backward_compatibility():
     agent = MockAgent("TargetingAgent")
-    # Existing data in data/memory.json: "TargetingAgent": {"last_primary_persona": "AdTech Professional"}
+    # Existing data in data/memory.json: "TargetingAgent": {"last_primary_persona": "General Tech Enthusiast"}
     val = agent.get_agent_memory("last_primary_persona")
-    assert val == "AdTech Professional"
+    assert val == "General Tech Enthusiast"
 
     # Update and check nested
     agent.update_agent_memory("new_key", "new_val")
     assert agent.get_agent_memory("new_key") == "new_val"
-    assert agent.get_agent_memory("last_primary_persona") == "AdTech Professional"
+    assert agent.get_agent_memory("last_primary_persona") == "General Tech Enthusiast"
 
 @pytest.mark.asyncio(loop_scope="function")
 async def test_knowledge_integration_flow():
