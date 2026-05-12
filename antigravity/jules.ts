@@ -67,10 +67,12 @@ export class Jules {
   public async runDailyRoutine() {
     console.log('🗓️ [Jules] Executing Daily Autonomous Routine...')
     await this.selfRepair()
+    await this.observeGithubDocs()
 
     const tasks = [
       { name: 'Core Integrity Check', action: () => this.recordTask('Integrity scan passed.') },
       { name: 'Security Sovereignty Audit', action: () => this.recordTask('Cognitive security scan complete.') },
+      { name: 'Knowledge Ingestion', action: () => this.recordTask('GitHub Documentation sync complete.') },
       { name: 'Cache Volatility Audit', action: () => this.recordTask('Cache profiles optimized.') },
       { name: 'Dependency Autopilot', action: () => this.auditDependencies() },
       { name: 'GitKraken Sync Prep', action: () => this.recordTask('Visual branch history cleaned.') },
@@ -86,6 +88,39 @@ export class Jules {
     this.memory.lastOptimization = new Date().toISOString()
     this.save()
     console.log('✅ [Jules] Daily Routine Completed.')
+  }
+
+  public async observeGithubDocs() {
+    console.log('📚 [Jules] Observing technical documentation from GitHub...')
+    const { githubDocsObserver } = await import('./services/github_docs_observer')
+
+    const docsToObserve = [
+      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'README.md' },
+      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'features.md' },
+      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'installation.md' },
+      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'gettingStarted.md' }
+    ]
+
+    const allKnowledge: any[] = []
+
+    for (const doc of docsToObserve) {
+      try {
+        const result = await githubDocsObserver.fetchDoc(doc.owner, doc.repo, doc.path)
+        allKnowledge.push(result)
+        console.log(` ✅ [Jules] Ingested: ${doc.path}`)
+      } catch (err) {
+        console.error(` ❌ [Jules] Failed to ingest ${doc.path}:`, err)
+      }
+    }
+
+    if (allKnowledge.length > 0) {
+      const dataDir = path.join(process.cwd(), 'data')
+      if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir)
+
+      const filePath = path.join(dataDir, 'intelephense_docs.json')
+      fs.writeFileSync(filePath, JSON.stringify(allKnowledge, null, 2))
+      this.recordTask(`Knowledge Ingestion: Synchronized ${allKnowledge.length} Intelephense docs.`)
+    }
   }
 
   public async selfRepair() {
@@ -159,6 +194,7 @@ export class Jules {
     const { explore } = await import('./explorer')
     await explore()
     await this.selfRepair()
+    await this.observeGithubDocs()
     // 3. Ideate (Synthesis)
     const { synthesize } = await import('./synthesis')
     const ideas = await synthesize()
