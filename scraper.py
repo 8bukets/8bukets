@@ -7,6 +7,7 @@ import re
 import argparse
 import logging
 import time
+import os
 from typing import List, Dict, Optional, Set, Tuple
 from urllib.parse import urlparse
 
@@ -26,12 +27,50 @@ class MarkPositionScraperAsync:
     URL_PATTERN = re.compile(r'^https?://')
 
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
-        self.output_json = output_json
-        self.output_csv = output_csv
-        self.output_txt = output_txt
+        self.output_json = self._validate_path(output_json)
+        self.output_csv = self._validate_path(output_csv)
+        self.output_txt = self._validate_path(output_txt)
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+
+    def _validate_path(self, path: str) -> str:
+        """
+        Validate that the path is within the current working directory.
+        Returns the absolute path if valid, raises ValueError otherwise.
+        """
+        if not path:
+            return path
+
+        # Get absolute path
+        abs_path = os.path.abspath(path)
+        # Get current working directory
+        cwd = os.getcwd()
+
+        # Check if the path starts with the CWD
+        # os.path.commonpath throws error on Windows if drives are different,
+        # but here we assume same drive or just use string check for simplicity in linux env
+        try:
+            common = os.path.commonpath([abs_path, cwd])
+            if common != cwd:
+                 # Check if it's exactly the CWD or a file inside it
+                # If common is cwd, then abs_path is inside or is cwd
+                # wait, commonpath of /a/b/c and /a/b is /a/b.
+                # commonpath of /a/b/c and /a/d is /a
+
+                # If abs_path is /app/subdir/file and cwd is /app
+                # common is /app. Correct.
+
+                # If abs_path is /tmp/file and cwd is /app
+                # common is / (or empty).
+
+                # So we want common == cwd.
+                raise ValueError(f"Path traversal detected: {path} is outside {cwd}")
+        except ValueError:
+             # handle case where commonpath might fail or return different drive
+             raise ValueError(f"Invalid path: {path}")
+
+        return abs_path
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
@@ -39,6 +78,28 @@ class MarkPositionScraperAsync:
             return ""
         text = text.replace('\xa0', ' ')
         return self.CLEAN_TEXT_PATTERN.sub(' ', text).strip()
+        # ' '.join(text.split()) handles all whitespace normalization efficiently
+        return " ".join(text.split())
+
+    def sanitize_for_csv(self, text: Optional[str]) -> str:
+        """Sanitize text to prevent CSV injection."""
+        if not text:
+            return ""
+        text = str(text)
+        if text.startswith(('=', '+', '-', '@')):
+            return "'" + text
+        return text
+
+    def _sanitize_csv_field(self, field: str) -> str:
+        """
+        Sanitize a CSV field to prevent formula injection.
+        If a field starts with =, +, -, or @, prepend a single quote.
+        """
+        if not field:
+            return ""
+        if str(field).startswith(('=', '+', '-', '@')):
+            return f"'{field}"
+        return str(field)
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
@@ -80,6 +141,13 @@ class MarkPositionScraperAsync:
         # Optimization: Use find() instead of select_one() for ~46% faster extraction
         strainer = SoupStrainer('article')
         soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
+        # Use regex for class matching because SoupStrainer requires exact string match
+        # for string arguments, but we need to match 'post' in a list of classes.
+        strainer = SoupStrainer('article', class_=re.compile(r'\bpost\b'))
+        soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
+    def _parse_page_sync(self, html: str) -> List[Dict]:
+        """Synchronous parsing logic to be run in an executor."""
+        soup = BeautifulSoup(html, 'html.parser')
         articles = soup.find_all('article', class_='post')
         page_posts = []
 
@@ -215,7 +283,8 @@ class MarkPositionScraperAsync:
     async def fetch_and_parse(self, session, page_num) -> Tuple[int, Optional[List[Dict]]]:
         html = await self.fetch_page(session, page_num)
         if html:
-            posts = await self.parse_page(html)
+            loop = asyncio.get_running_loop()
+            posts = await loop.run_in_executor(None, self._parse_page_sync, html)
             return page_num, posts
         return page_num, None
 
@@ -235,13 +304,20 @@ class MarkPositionScraperAsync:
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        self._sanitize_csv_field(post.get('title', '')),
+                        self._sanitize_csv_field(post.get('date', '')),
+                        self._sanitize_csv_field(post.get('author', '')),
+                        self._sanitize_csv_field(", ".join(post.get('categories', []))),
+                        self._sanitize_csv_field(post.get('external_link', '')),
+                        self._sanitize_csv_field(post.get('domain', '')),
+                        self._sanitize_csv_field(post.get('post_url', ''))
+                        self.sanitize_for_csv(post.get('title', '')),
+                        self.sanitize_for_csv(post.get('date', '')),
+                        self.sanitize_for_csv(post.get('author', '')),
+                        self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                        self.sanitize_for_csv(post.get('external_link', '')),
+                        self.sanitize_for_csv(post.get('domain', '')),
+                        self.sanitize_for_csv(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
