@@ -99,9 +99,20 @@ def scrape_ai_agents_knowledge():
     # Save to JSON
     json_path = "ai_agents_knowledge.json"
     try:
+        # Merge with existing data to ensure cumulative knowledge integration
+        if os.path.exists(json_path):
+            try:
+                with open(json_path, "r", encoding="utf-8") as f:
+                    existing_data = json.load(f)
+                # Update existing with new, but keep what's not in new
+                existing_data.update(data)
+                data = existing_data
+            except Exception as e:
+                logger.warning(f"Failed to load existing knowledge for merging: {e}")
+
         with open(json_path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=4, ensure_ascii=False)
-        logger.info(f"Saved AI Agent knowledge to {json_path}")
+        logger.info(f"Saved merged AI Agent knowledge to {json_path}")
 
         # Save to Markdown for documentation reference
         md_path = "ai_agents_knowledge.md"
