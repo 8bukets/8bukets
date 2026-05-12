@@ -7,7 +7,7 @@ class ReActAgent(BaseAgent):
     """
     def __init__(self):
         super().__init__("ReActAgent",
-                         dependencies=["intelligence_insights", "ai_agents_definitions"],
+                         dependencies=["intelligence_insights", "ai_agents_definitions", "react_framework_details"],
                          provides=["react_reasoning", "react_actions", "react_agent_deployment_config"])
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
@@ -15,6 +15,7 @@ class ReActAgent(BaseAgent):
 
         insights = blackboard.get("intelligence_insights", [])
         definitions = blackboard.get("ai_agents_definitions", {})
+        react_details = blackboard.get("react_framework_details", {})
 
         reasoning_log = []
         action_log = []
@@ -50,6 +51,11 @@ class ReActAgent(BaseAgent):
                 "orchestration_mode": "SYNCHRONIZED",
                 "status": "READY_FOR_DEPLOYMENT"
             }
+            if react_details:
+                if react_details.get("features"):
+                    deployment_config["features"] = react_details.get("features")
+                if react_details.get("deployment_strategy"):
+                    deployment_config["strategy"] = react_details.get("deployment_strategy")
 
         # Prepare payload
         payload = {

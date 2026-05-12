@@ -49,6 +49,13 @@ class CloudWorkflowAgent(BaseAgent):
                 active_decisions.append("REBUILD_DOCKER")
         elif react_deployment_ready:
             orchestration_mode = "REACT_DEPLOYMENT_ACTIVE"
+            active_decisions.append("DEPLOY_REACT_AGENT")
+
+            # Incorporate the strategy and features read from React config if available
+            if react_config.get("strategy"):
+                active_decisions.append("APPLY_REACT_DEPLOYMENT_STRATEGY")
+            if react_config.get("features"):
+                self.logger.info("React configuration features found and incorporated into the deployment strategy.")
 
         cloud_workflow_status = {
             "workflow_fluent": is_fluent,
