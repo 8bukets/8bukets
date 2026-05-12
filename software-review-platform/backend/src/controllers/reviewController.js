@@ -137,7 +137,7 @@ export const createReview = async (req, res) => {
     const review = reviewInsert.rows[0];
 
     // AI analiza (mock)
-    const sentiment = analyzeSentiment(content);
+    const sentiment = await analyzeSentiment(content);
 
     await db.query(
       `UPDATE reviews SET sentiment_score=$1 WHERE id=$2`,

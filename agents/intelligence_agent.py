@@ -1,6 +1,8 @@
 from .base_agent import BaseAgent, Blackboard
+from .telemetry import telemetry_manager
 import os
 import json
+import uuid
 
 class IntelligenceAgent(BaseAgent):
     def __init__(self):
@@ -10,6 +12,42 @@ class IntelligenceAgent(BaseAgent):
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
         self.logger.info("Running Intelligence Synchronization & External World Collaboration...")
+
+        # Simulate an LLM Call for Intelligence synthesis and record it via OpenTelemetry GenAI semantics
+        session_id = str(uuid.uuid4())
+        response_id = f"chatcmpl-{uuid.uuid4().hex[:12]}"
+
+        telemetry_manager.record_gen_ai_inference_event(
+            operation_name="chat",
+            **{
+                "gen_ai.conversation.id": session_id,
+                "gen_ai.request.model": "gpt-4",
+                "gen_ai.system_instructions": [
+                    {"type": "text", "content": "You are a strategic intelligence AI."}
+                ],
+                "gen_ai.input.messages": [
+                    {"role": "user", "parts": [{"type": "text", "content": "Analyze current system data."}]}
+                ],
+                "gen_ai.response.id": response_id,
+                "gen_ai.response.model": "gpt-4-0613",
+                "gen_ai.usage.input_tokens": 12,
+                "gen_ai.usage.output_tokens": 45,
+                "gen_ai.output.messages": [
+                    {"role": "assistant", "parts": [{"type": "text", "content": "System aligned with Google Cloud Agent definitions."}], "finish_reason": "stop"}
+                ],
+                "gen_ai.response.finish_reasons": ["stop"]
+            }
+        )
+
+        telemetry_manager.record_gen_ai_evaluation_event(
+            evaluation_name="Relevance",
+            **{
+                "gen_ai.response.id": response_id,
+                "gen_ai.evaluation.score.value": 1.0,
+                "gen_ai.evaluation.score.label": "relevant",
+                "gen_ai.evaluation.explanation": "The insight accurately reflects the underlying system context."
+            }
+        )
 
         analysis = blackboard.get("analysis_stats", {})
         research = blackboard.get("research_data", {})
