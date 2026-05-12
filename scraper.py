@@ -36,6 +36,15 @@ class MarkPositionScraperAsync:
         # ' '.join(text.split()) handles all whitespace normalization efficiently
         return " ".join(text.split())
 
+    def sanitize_for_csv(self, text: Optional[str]) -> str:
+        """Sanitize text to prevent CSV injection."""
+        if not text:
+            return ""
+        text = str(text)
+        if text.startswith(('=', '+', '-', '@')):
+            return "'" + text
+        return text
+
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
         return re.match(r'^https?://', text.strip()) is not None
@@ -76,6 +85,9 @@ class MarkPositionScraperAsync:
         # for string arguments, but we need to match 'post' in a list of classes.
         strainer = SoupStrainer('article', class_=re.compile(r'\bpost\b'))
         soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
+    def _parse_page_sync(self, html: str) -> List[Dict]:
+        """Synchronous parsing logic to be run in an executor."""
+        soup = BeautifulSoup(html, 'html.parser')
         articles = soup.find_all('article', class_='post')
         page_posts = []
 
@@ -208,7 +220,8 @@ class MarkPositionScraperAsync:
     async def fetch_and_parse(self, session, page_num) -> Tuple[int, Optional[List[Dict]]]:
         html = await self.fetch_page(session, page_num)
         if html:
-            posts = await self.parse_page(html)
+            loop = asyncio.get_running_loop()
+            posts = await loop.run_in_executor(None, self._parse_page_sync, html)
             return page_num, posts
         return page_num, None
 
@@ -228,13 +241,13 @@ class MarkPositionScraperAsync:
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        self.sanitize_for_csv(post.get('title', '')),
+                        self.sanitize_for_csv(post.get('date', '')),
+                        self.sanitize_for_csv(post.get('author', '')),
+                        self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                        self.sanitize_for_csv(post.get('external_link', '')),
+                        self.sanitize_for_csv(post.get('domain', '')),
+                        self.sanitize_for_csv(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
