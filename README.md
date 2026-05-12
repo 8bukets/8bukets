@@ -51,6 +51,19 @@ The system relies on various API keys and connection strings to operate both loc
     - Add the variables listed in `.env.example` as Repository Secrets (e.g., `GOOGLE_API_KEY`, `GEMINI_API_KEY`).
     - The workflows are pre-configured to pass these secrets as environment variables to the system.
 
+## Canonical Knowledge Merge
+
+The components of this repository, including the scraper tools and analytics for `markposition.wordpress.com`, form the **Market Intelligence Layer** of the broader Antigravity ecosystem.
+
+This ecosystem contains five core identities mapped in the [KNOWLEDGE_MERGE.md](software-review-platform/KNOWLEDGE_MERGE.md) file:
+1. **Antigravity**: internal intelligence and automation layer.
+2. **Project SOR**: public-facing brand and editorial narrative.
+3. **`software-online-review.com`**: the current distribution domain.
+4. **`software-review-platform`**: the future product engine and new review platform MVP.
+5. **`markposition.wordpress.com`**: the external data source tracking ad tech and market trends feeding the intelligence system.
+
+Please refer to `software-review-platform/KNOWLEDGE_MERGE.md` for a comprehensive breakdown of how these layers interact.
+
 ## Usage
 
 ### 1. Scrape Data
