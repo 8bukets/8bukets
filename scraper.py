@@ -2,6 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import time
+from urllib.parse import urlparse
+import ipaddress
 import logging
 import argparse
 import sys
@@ -40,6 +42,39 @@ class BlogScraper:
         if self.conn:
             self.conn.close()
             self.conn = None
+    def is_safe_url(self, url):
+        """
+        Validate URL to prevent SSRF and ensures it's an HTTP/HTTPS scheme.
+        Blocks localhost, private IPs (basic check), and non-http schemes.
+        """
+        try:
+            parsed = urlparse(url)
+        except Exception:
+            return False
+
+        if parsed.scheme not in ('http', 'https'):
+            return False
+
+        hostname = parsed.hostname
+        if not hostname:
+            return False
+
+        # Check for localhost
+        if hostname == 'localhost':
+            return False
+
+        # Check if hostname is a private IP address
+        try:
+            ip = ipaddress.ip_address(hostname)
+            if ip.is_private or ip.is_loopback or ip.is_unspecified:
+                return False
+        except ValueError:
+            # Not an IP address, so it's a domain name.
+            # We do NOT resolve DNS here to avoid TOCTOU/DNS rebinding issues
+            # which are complex to solve in Python requests without a custom transport.
+            pass
+
+        return True
 
     def init_db(self):
         """Initialize the SQLite database."""
@@ -85,6 +120,15 @@ class BlogScraper:
 
         try:
             cursor = self.conn.cursor()
+        close_conn = False
+        if self.conn:
+            conn = self.conn
+        else:
+            conn = sqlite3.connect(self.db_name)
+            close_conn = True
+
+        try:
+            cursor = conn.cursor()
 
             # Check if post exists
             cursor.execute("SELECT id, title, external_link FROM posts WHERE post_url = ?", (item.get('post_url'),))
@@ -116,6 +160,7 @@ class BlogScraper:
                     # Update scraped_at to reflect latest check
                     cursor.execute("UPDATE posts SET scraped_at = CURRENT_TIMESTAMP WHERE id = ?", (post_id,))
                     self.conn.commit()
+                    conn.commit()
                     return False # Not a "new" post, but an updated one
 
             else:
@@ -133,17 +178,26 @@ class BlogScraper:
                     json.dumps(item.get('categories'))
                 ))
                 self.conn.commit()
+                conn.commit()
                 return True # New post
 
         except sqlite3.Error as e:
             logger.error(f"Database insertion/update error: {e}")
             if self.conn:
                 self.conn.rollback()
+            conn.rollback()
             return False
+        finally:
+            if close_conn:
+                conn.close()
 
         return False
 
     def fetch_page(self, url):
+        if not self.is_safe_url(url):
+            logger.error(f"Security Alert: Attempted to scrape unsafe URL: {url}")
+            return None
+
         logger.info(f"Fetching {url}...")
         try:
             response = requests.get(url, headers=self.headers, timeout=10)
@@ -218,32 +272,40 @@ class BlogScraper:
         url = self.base_url
         new_items_count = 0
 
-        while url:
-            content = self.fetch_page(url)
-            if not content:
-                break
+        # Performance optimization: Reuse DB connection
+        self.conn = sqlite3.connect(self.db_name)
 
-            soup = BeautifulSoup(content, "html.parser")
-            articles = soup.find_all("article")
-            logger.info(f"Found {len(articles)} articles on this page.")
+        try:
+            while url:
+                content = self.fetch_page(url)
+                if not content:
+                    break
 
-            if not articles:
-                logger.warning("No articles found on page.")
+                soup = BeautifulSoup(content, "html.parser")
+                articles = soup.find_all("article")
+                logger.info(f"Found {len(articles)} articles on this page.")
 
-            for article in articles:
-                item = self.parse_article(article)
-                self.data.append(item)
-                if self.save_to_db(item):
-                    new_items_count += 1
+                if not articles:
+                    logger.warning("No articles found on page.")
 
-            next_page = self.get_next_page(soup)
-            if next_page:
-                logger.info(f"Found next page: {next_page}")
-                url = next_page
-                time.sleep(1)
-            else:
-                logger.info("No more pages found.")
-                url = None
+                for article in articles:
+                    item = self.parse_article(article)
+                    self.data.append(item)
+                    if self.save_to_db(item):
+                        new_items_count += 1
+
+                next_page = self.get_next_page(soup)
+                if next_page:
+                    logger.info(f"Found next page: {next_page}")
+                    url = next_page
+                    time.sleep(1)
+                else:
+                    logger.info("No more pages found.")
+                    url = None
+        finally:
+            if self.conn:
+                self.conn.close()
+                self.conn = None
 
         self.save_json()
         logger.info(f"Scraped {len(self.data)} articles in total.")
