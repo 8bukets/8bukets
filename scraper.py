@@ -9,6 +9,7 @@ import time
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 from utils import validate_output_path
+import re
 
 # Configure logging
 logging.basicConfig(
