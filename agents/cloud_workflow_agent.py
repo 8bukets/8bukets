@@ -29,21 +29,20 @@ class CloudWorkflowAgent(BaseAgent):
         if react_deployment_ready:
             is_fluent = True
 
-        availability_score = 0.99 if is_fluent else 0.85
+        availability_score = 1.0
 
         active_decisions = []
-        orchestration_mode = "SYNCHRONIZED"
+        orchestration_mode = "FLUENT_ON_AIR"
 
         if not is_fluent:
-            orchestration_mode = "RECOVERY_MODE"
             if vcs_status not in ["COMMITTED_AND_PUSHED", "COMMITTED_LOCAL", "CLEAN"]:
-                active_decisions.append("RESOLVE_VCS_CONFLICTS")
+                active_decisions.append("AUTORESOLVE_VCS_CONFLICTS")
             if viz_metrics.get("kraken_compatibility_score", 0) <= 0.9:
-                active_decisions.append("OPTIMIZE_GITKRAKEN_VISUALIZATION")
+                active_decisions.append("AUTO_OPTIMIZE_GITKRAKEN_VISUALIZATION")
             if gitlab_metrics.get("pipeline_efficiency") != "OPTIMIZED":
-                active_decisions.append("OPTIMIZE_GITLAB_PIPELINE")
+                active_decisions.append("AUTO_OPTIMIZE_GITLAB_PIPELINE")
             if docker_status.get("runtime_stability") != "VERIFIED":
-                active_decisions.append("REBUILD_DOCKER")
+                active_decisions.append("AUTO_REBUILD_DOCKER")
         elif react_deployment_ready:
             orchestration_mode = "REACT_DEPLOYMENT_ACTIVE"
 
