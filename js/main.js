@@ -45,7 +45,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input');
     const articleList = document.getElementById('article-list');
 
+    // Debounce function to limit the rate of execution
+    function debounce(func, delay) {
+        let timeoutId;
+        return function(...args) {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                func.apply(this, args);
+            }, delay);
+        };
+    }
+
     if (searchInput && articleList) {
+        // Debounce the search input handler to improve performance
+        searchInput.addEventListener('input', debounce((e) => {
         const performSearch = (e) => {
         const handleSearch = (e) => {
             const term = e.target.value.toLowerCase();
@@ -61,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     article.style.display = 'none';
                 }
             });
+        }, 300)); // 300ms delay
         };
 
         // Debounce search input to improve performance
