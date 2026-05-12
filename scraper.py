@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
 import argparse
@@ -85,6 +85,10 @@ class MarkPositionScraperAsync:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
+        # Use SoupStrainer to only parse article tags, significantly reducing overhead
+        strainer = SoupStrainer('article')
+        soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
+        articles = soup.find_all('article', class_='post')
         soup = BeautifulSoup(html, 'html.parser')
 
         # Optimization: Narrow search scope to #content div if present to avoid traversing footer/sidebar
@@ -104,19 +108,26 @@ class MarkPositionScraperAsync:
 
             # Title
             title_text = ""
-            title_tag = article.select_one('h1.entry-title a')
+            # Optimized: replace select_one with find
+            title_header = article.find('h1', class_='entry-title')
+            title_tag = title_header.find('a') if title_header else None
+
             if title_tag:
                 title_text = self.clean_text(title_tag.get_text())
                 post_data['title'] = title_text
 
             # Date
-            date_tag = article.select_one('time.entry-date')
+            # Optimized: replace select_one with find
+            date_tag = article.find('time', class_='entry-date')
             if date_tag:
                 post_data['date'] = self.clean_text(date_tag.get_text())
                 post_data['datetime'] = date_tag.get('datetime')
 
             # Author
-            author_tag = article.select_one('.author.vcard .fn')
+            # Optimized: replace select_one with find
+            author_container = article.find(class_='author')
+            author_tag = author_container.find(class_='fn') if author_container else None
+
             if author_tag:
                 post_data['author'] = self.clean_text(author_tag.get_text())
             else:
@@ -127,15 +138,16 @@ class MarkPositionScraperAsync:
 
             # External Link
             external_link = None
-            content_div = article.select_one('.entry-content')
+            # Optimized: replace select_one with find
+            content_div = article.find(class_='entry-content')
 
             if content_div:
-                link_tag = content_div.select_one('a')
+                link_tag = content_div.find('a')
                 if link_tag:
                     external_link = link_tag.get('href')
 
                 if not external_link:
-                    iframe_tag = content_div.select_one('iframe')
+                    iframe_tag = content_div.find('iframe')
                     if iframe_tag:
                         external_link = iframe_tag.get('src')
 
@@ -277,7 +289,6 @@ class MarkPositionScraperAsync:
                 return await self.parse_page(html)
             return None
 
-<<<<<<< sentinel/fix-csv-injection-2739836513252277633
     def sanitize_for_csv(self, text: str) -> str:
         """Sanitize text to prevent CSV injection."""
         if not text:
@@ -331,8 +342,6 @@ class MarkPositionScraperAsync:
         except IOError as e:
             logger.error(f"Failed to save TXT: {e}")
 
-=======
->>>>>>> jules/scraper-markposition-17752547678215960211
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
     parser.add_argument("--json", default="links.json", help="Output JSON filename")
