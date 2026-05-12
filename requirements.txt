@@ -10,5 +10,3 @@ aiomysql
 cryptography
 python-dotenv
 vercel
-opentelemetry-api
-opentelemetry-sdk

@@ -41,10 +41,8 @@ from agents.system_audit_agent import SystemAuditAgent
 from agents.documentation_agent import DocumentationAgent
 from agents.performance_optimization_agent import PerformanceOptimizationAgent
 from agents.knowledge_agent import KnowledgeAgent
-from agents.intelephense_agent import IntelephenseAgent
 from agents.sandbox_agent import SandboxAgent
 from ai_agents_knowledge_scraper import scrape_ai_agents_knowledge
-from intelephense_scraper import scrape_intelephense_docs
 
 # Expansion Agents
 from agents.swarm_agent import SwarmAgent
@@ -74,9 +72,6 @@ def run_scraper():
 
         # AI Agent Knowledge Scraper (Direct module call)
         scrape_ai_agents_knowledge()
-
-        # Intelephense Documentation Scraper
-        scrape_intelephense_docs()
 
         logger.info("Scrapers finished successfully.")
         return True
@@ -194,7 +189,7 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         GitLabEvolutionAgent(), CloudWorkflowAgent(),
         CollaborationAgent(), MongoDBAgent(), MySQLAgent(),
         PerformanceOptimizationAgent(), SystemAuditAgent(), DocumentationAgent(),
-        IntelephenseAgent(), SandboxAgent()
+        SandboxAgent()
     ]
 
     # 2. Expanded SEO Swarm (200 Agents)

@@ -5,10 +5,6 @@ on:
     - cron: '0 0 * * *' # Every day at midnight
   workflow_dispatch: # Allows manual trigger
 
-permissions:
-  contents: write
-  pull-requests: write
-
 jobs:
   autonomous-work:
     runs-on: ubuntu-latest
@@ -35,16 +31,10 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
-      - name: Build Verification
-        run: npm run build
-
       - name: Push Changes
         run: |
           git config --global user.name "filip keser"
           git config --global user.email "8bukets@gmail.com"
-          git add -A
-          git diff --quiet && git diff --staged --quiet || git commit -m "chore: autonomous daily cycle update"
-          git pull --rebase origin main || true
-          git push origin main || true
+          git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
