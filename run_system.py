@@ -71,6 +71,13 @@ def run_pipeline(skip_scrape=False):
 
     # 2. Load Data
     data = load_data("links.json")
+    oracle_ai_data = load_data("oracle_ai_docs.json")
+
+    # Update memory with Oracle AI knowledge
+    if oracle_ai_data:
+        memory_system.update("oracle_ai_knowledge", oracle_ai_data)
+        logger.info("Loaded Oracle AI knowledge into memory.")
+
     if not data:
         logger.warning("No data to process.")
         return
@@ -112,7 +119,7 @@ def run_pipeline(skip_scrape=False):
     save_result("analysis.json", analysis_results, current_date)
 
     # Research
-    research_results = research_agent.process(data)
+    research_results = research_agent.process(data, memory_system.memory)
     save_result("research.json", research_results, current_date)
 
     # Intelligence
@@ -128,7 +135,7 @@ def run_pipeline(skip_scrape=False):
     save_result("bidding_config.json", bidding_config, current_date)
 
     # Content Generation with Innovation (Antigravity)
-    base_content = content_agent.process(data, intelligence_results)
+    base_content = content_agent.process(data, intelligence_results, memory_system.memory)
     final_content = innovation_agent.process(base_content, memory_system.memory)
     save_result("content_draft.md", final_content, current_date)
 
@@ -150,7 +157,7 @@ def run_pipeline(skip_scrape=False):
     save_result("oracle_ai_knowledge.json", oracle_ai_knowledge, current_date)
 
     # High-level Synthesis
-    summary = ai_agent.process(results_aggregator)
+    summary = ai_agent.process(results_aggregator, memory_system.memory)
     save_result("executive_summary.txt", summary, current_date)
 
     # 5. Jules Intelligence (Evolution & Learning)
