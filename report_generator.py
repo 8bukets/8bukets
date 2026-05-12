@@ -19,6 +19,12 @@ class ReportGenerator:
         if not os.path.exists(self.report_dir):
             os.makedirs(self.report_dir)
 
+    def create_ascii_bar(self, count, max_count, width=10):
+        if max_count == 0:
+            return ""
+        bar_len = int((count / max_count) * width)
+        return "█" * bar_len + "░" * (width - bar_len)
+
     def generate_daily_report(self):
         logger.info("Generating daily report...")
 
@@ -97,11 +103,17 @@ class ReportGenerator:
                 f.write("## <a name=\"keyword-trends\"></a>🧠 Keyword Trends\n\n")
                 f.write("Most frequent words in recent activity:\n\n")
                 keywords = self.analyze_keywords(all_recent_titles)
-                f.write("| Keyword | Frequency |\n")
-                f.write("|---|---|\n")
+
+                max_freq = keywords[0][1] if keywords else 0
+
+                f.write("| Keyword | Frequency | Distribution |\n")
+                f.write("|---|---|---|\n")
                 for word, count in keywords:
                     f.write(f"| {word} | {count} |\n")
                 f.write("\n[Back to Top](#table-of-contents)\n\n")
+                    bar = self.create_ascii_bar(count, max_freq)
+                    f.write(f"| {word} | {count} | `{bar}` |\n")
+                f.write("\n")
 
             # SEO Rankings Trend
             f.write("## <a name=\"seo-trend-analysis\"></a>📈 SEO Trend Analysis\n\n")
