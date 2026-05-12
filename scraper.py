@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
 import re
@@ -136,8 +136,15 @@ def parse_html_content(html: str) -> List[Dict]:
 
 
 class MarkPositionScraperAsync:
+<<<<<<< bolt-scraper-optimization-8033040251280167060
+    CLEAN_TEXT_REGEX = re.compile(r'\s+')
+    URL_REGEX = re.compile(r'^https?://')
+
+    def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
+=======
     def __init__(self, output_json: str, output_csv: str, output_txt: str,
                  max_pages: Optional[int] = None, concurrency: int = 5):
+>>>>>>> analytics-single-pass-optimization-8605272393071134080
         self.output_json = output_json
         self.output_csv = output_csv
         self.output_txt = output_txt
@@ -146,8 +153,42 @@ class MarkPositionScraperAsync:
         self.session = None
         self.executor = None  # Will be set in scrape()
 
+<<<<<<< bolt-scraper-optimization-8033040251280167060
+    def clean_text(self, text: str) -> str:
+        """Normalize whitespace and remove non-breaking spaces."""
+        if not text:
+            return ""
+        text = text.replace('\xa0', ' ')
+        return self.CLEAN_TEXT_REGEX.sub(' ', text).strip()
+
+    def is_url(self, text: str) -> bool:
+        """Check if text looks like a URL."""
+        return self.URL_REGEX.match(text.strip()) is not None
+
+    def extract_categories(self, article: BeautifulSoup) -> List[str]:
+        """Extract categories from article class names."""
+        categories = []
+        if article.get('class'):
+            for cls in article['class']:
+                if cls.startswith('category-'):
+                    cat_name = cls.replace('category-', '').replace('-', ' ').title()
+                    categories.append(cat_name)
+        return categories
+
+    def extract_domain(self, url: str) -> Optional[str]:
+        """Extract domain from URL."""
+        if not url:
+            return None
+        try:
+            return urlparse(url).netloc.replace('www.', '')
+        except:
+            return None
+
+    async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
+=======
     async def fetch_page(self, session: aiohttp.ClientSession,
                          page_num: int) -> Optional[str]:
+>>>>>>> analytics-single-pass-optimization-8605272393071134080
         url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
         try:
             async with session.get(url) as response:
@@ -160,12 +201,33 @@ class MarkPositionScraperAsync:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
+<<<<<<< bolt-scraper-optimization-8033040251280167060
+        # Optimization: Use SoupStrainer to only parse article tags
+        # This significantly reduces parsing time by ignoring head, scripts, footer etc.
+        soup = BeautifulSoup(html, 'html.parser', parse_only=SoupStrainer('article'))
+        articles = soup.find_all('article', class_='post')
+        page_posts = []
+
+        if not articles:
+            return []
+
+        for article in articles:
+            post_data = {}
+
+            # Title
+            title_text = ""
+            title_tag = article.select_one('h1.entry-title a')
+            if title_tag:
+                title_text = self.clean_text(title_tag.get_text())
+                post_data['title'] = title_text
+=======
         """Offloads parsing to ProcessPoolExecutor."""
         loop = asyncio.get_running_loop()
         # Run the CPU-bound parsing in a separate process
         return await loop.run_in_executor(
             self.executor, parse_html_content, html
         )
+>>>>>>> analytics-single-pass-optimization-8605272393071134080
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
