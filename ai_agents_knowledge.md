@@ -198,13 +198,7 @@ Google Cloud provides a portfolio of products and solutions in the AI agent spac
 
 - Cloud Run A fully managed serverless platform that allows you to deploy containerized agents and applications, providing auto-scaling and pay-per-use efficiency.
 
-## What does Compile mean?
 
-## IDE Integration for AI Agents
-To provide seamless coding assistance, AI agents like the Gemini CLI can integrate with Integrated Development Environments (IDEs). Interoperability is achieved through standard open protocols and dedicated extensions:
-
-- **VS Code Companion Extension**: Provides direct workspace access in VS Code compatible IDEs, reading open files, cursor context, and selections. Supports native diff viewing and auto-applying suggested code modifications.
-- **Agent Client Protocol (ACP)**: An open protocol enabling interoperability between AI coding agents and diverse IDEs. It relies on the ACP Agent Registry for distribution, making an ACP-compliant agent available directly within supporting tools like JetBrains and Zed.
 ## Compile
 
 To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.
@@ -223,7 +217,6 @@ To compile means to gather information from various sources and arrange it into 
 
 ### Synonyms
 
-Assemble, Collect, Gather, Compose, Accumulate, Organize, Synthesize
 - Assemble
 - Collect
 - Gather

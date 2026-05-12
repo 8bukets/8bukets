@@ -32,7 +32,7 @@ jobs:
 
     - name: Run Scraper Tests
       if: matrix.service == 'scraper'
-      run: pytest
+      run: PYTHONPATH=. pytest tests/
 
     # Root Frontend Tests (Node)
     - name: Set Up Node.js
