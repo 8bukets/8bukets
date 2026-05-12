@@ -1,5 +1,6 @@
 import aiohttp
 import asyncio
+import re
 from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
@@ -37,12 +38,6 @@ class MarkPositionScraperAsync:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
-        text = text.replace('\xa0', ' ')
-        return self.CLEAN_TEXT_REGEX.sub(' ', text).strip()
-
-    def is_url(self, text: str) -> bool:
-        """Check if text looks like a URL."""
-        return self.URL_REGEX.match(text.strip()) is not None
         # Optimization: split().join() is faster than re.sub for normalizing whitespace
         # split() handles all unicode whitespace including \xa0 (non-breaking space)
         return " ".join(text.split())
@@ -86,17 +81,18 @@ class MarkPositionScraperAsync:
 
     async def parse_page(self, html: str) -> List[Dict]:
         # Use SoupStrainer to only parse article tags, significantly reducing overhead
-        strainer = SoupStrainer('article')
+        strainer = SoupStrainer('article', class_='post')
         soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
         articles = soup.find_all('article', class_='post')
-        soup = BeautifulSoup(html, 'html.parser')
 
-        # Optimization: Narrow search scope to #content div if present to avoid traversing footer/sidebar
-        content = soup.find('div', id='content')
-        if content:
-            articles = content.find_all('article', class_='post')
-        else:
-            articles = soup.find_all('article', class_='post')
+        if not articles:
+            # Fallback if strainer was too restrictive or structure is different
+            soup = BeautifulSoup(html, 'html.parser')
+            content = soup.find('div', id='content')
+            if content:
+                articles = content.find_all('article', class_='post')
+            else:
+                articles = soup.find_all('article', class_='post')
 
         page_posts = []
 
