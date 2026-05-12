@@ -7,6 +7,7 @@ import re
 import argparse
 import logging
 import time
+import os
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
@@ -19,6 +20,17 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
+
+def validate_path(filepath: str) -> str:
+    """
+    Validates that the filepath is safe and within the current working directory.
+    Returns the absolute path if safe, raises ValueError otherwise.
+    """
+    abs_path = os.path.abspath(filepath)
+    cwd = os.path.abspath(os.getcwd())
+    if os.path.commonpath([cwd, abs_path]) != cwd:
+        raise ValueError(f"Security Error: Path '{filepath}' attempts to access outside the working directory.")
+    return abs_path
 
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
@@ -35,6 +47,16 @@ class MarkPositionScraperAsync:
             return ""
         text = text.replace('\xa0', ' ')
         return re.sub(r'\s+', ' ', text).strip()
+
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text to prevent CSV injection."""
+        if not text:
+            return ""
+        # Convert to string just in case
+        text_str = str(text)
+        if text_str.startswith(('=', '+', '-', '@')):
+            return "'" + text_str
+        return text_str
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
@@ -225,13 +247,13 @@ class MarkPositionScraperAsync:
         for post in posts:
             # CSV
             csv_writer.writerow([
-                post.get('title', ''),
-                post.get('date', ''),
-                post.get('author', ''),
-                ", ".join(post.get('categories', [])),
-                post.get('external_link', ''),
-                post.get('domain', ''),
-                post.get('post_url', '')
+                self.sanitize_for_csv(post.get('title', '')),
+                self.sanitize_for_csv(post.get('date', '')),
+                self.sanitize_for_csv(post.get('author', '')),
+                self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                self.sanitize_for_csv(post.get('external_link', '')),
+                self.sanitize_for_csv(post.get('domain', '')),
+                self.sanitize_for_csv(post.get('post_url', ''))
             ])
 
             # TXT
@@ -268,10 +290,19 @@ def main():
 
     args = parser.parse_args()
 
+    # Validate paths to prevent path traversal
+    try:
+        json_path = validate_path(args.json)
+        csv_path = validate_path(args.csv)
+        txt_path = validate_path(args.txt)
+    except ValueError as e:
+        logger.error(str(e))
+        return
+
     scraper = MarkPositionScraperAsync(
-        output_json=args.json,
-        output_csv=args.csv,
-        output_txt=args.txt,
+        output_json=json_path,
+        output_csv=csv_path,
+        output_txt=txt_path,
         max_pages=args.limit,
         concurrency=args.concurrency
     )
