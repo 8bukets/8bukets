@@ -1,0 +1,217 @@
+# Remote Subagents
+
+Gemini CLI supports connecting to remote subagents using the Agent-to-Agent (A2A) protocol. This allows Gemini CLI to interact with other agents, expanding its capabilities by delegating tasks to remote services.
+
+Gemini CLI can connect to any compliant A2A agent. You can find samples of A2A agents in the following repositories:
+
+*   ADK Samples (Python)
+*   ADK Python Contributing Samples
+
+## Proxy support
+Gemini CLI routes traffic to remote agents through an HTTP/HTTPS proxy if one is configured. It uses the `general.proxy` setting in your `settings.json` file or standard environment variables (`HTTP_PROXY`, `HTTPS_PROXY`).
+
+```json
+{
+  "general": {
+    "proxy": "http://my-proxy:8080"
+  }
+}
+```
+
+## Defining remote subagents
+Remote subagents are defined as Markdown files (`.md`) with YAML frontmatter. You can place them in:
+
+*   **Project-level:** `.gemini/agents/*.md` (Shared with your team)
+*   **User-level:** `~/.gemini/agents/*.md` (Personal agents)
+
+### Configuration schema
+| Field | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `kind` | string | Yes | Must be `remote`. |
+| `name` | string | Yes | A unique name for the agent. Must be a valid slug (lowercase letters, numbers, hyphens, and underscores only). |
+| `agent_card_url` | string | Yes* | The URL to the agent’s A2A card endpoint. Required if `agent_card_json` is not provided. |
+| `agent_card_json` | string | Yes* | The inline JSON string of the agent’s A2A card. Required if `agent_card_url` is not provided. |
+| `auth` | object | No | Authentication configuration. See Authentication. |
+
+### Single-subagent example
+```yaml
+---
+kind: remote
+name: my-remote-agent
+agent_card_url: https://example.com/agent-card
+---
+```
+
+### Multi-subagent example
+The loader explicitly supports multiple remote subagents defined in a single Markdown file.
+
+```yaml
+---
+- kind: remote
+  name: remote-1
+  agent_card_url: https://example.com/1
+- kind: remote
+  name: remote-2
+  agent_card_url: https://example.com/2
+---
+```
+
+> **Note:** Mixed local and remote agents, or multiple local agents, are not supported in a single file; the list format is currently remote-only.
+
+## Authentication
+Many remote agents require authentication. Gemini CLI supports several authentication methods aligned with the A2A security specification. Add an `auth` block to your agent’s frontmatter to configure credentials.
+
+### Supported auth types
+Gemini CLI supports the following authentication types:
+
+| Type | Description |
+| :--- | :--- |
+| `apiKey` | Send a static API key as an HTTP header. |
+| `http` | HTTP authentication (Bearer token, Basic credentials, or any IANA-registered scheme). |
+| `google-credentials` | Google Application Default Credentials (ADC). Automatically selects access or identity tokens. |
+| `oauth` | OAuth 2.0 Authorization Code flow with PKCE. Opens a browser for interactive sign-in. |
+
+### Dynamic values
+For `apiKey` and `http` auth types, secret values (key, token, username, password, value) support dynamic resolution:
+
+| Format | Description | Example |
+| :--- | :--- | :--- |
+| `$ENV_VAR` | Read from an environment variable. | `$MY_API_KEY` |
+| `!command` | Execute a shell command and use the trimmed output. | `!gcloud auth print-token` |
+| literal | Use the string as-is. | `sk-abc123` |
+| `$$` / `!!` | Escape prefix. `$$FOO` becomes the literal `$FOO`. | `$$NOT_AN_ENV_VAR` |
+
+> **Security tip:** Prefer `$ENV_VAR` or `!command` over embedding secrets directly in agent files, especially for project-level agents checked into version control.
+
+### API key (`apiKey`)
+Sends an API key as an HTTP header on every request.
+
+| Field | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `type` | string | Yes | Must be `apiKey`. |
+| `key` | string | Yes | The API key value. Supports dynamic values. |
+| `name` | string | No | Header name to send the key in. Default: `X-API-Key`. |
+
+```yaml
+---
+kind: remote
+name: my-agent
+agent_card_url: https://example.com/agent-card
+auth:
+  type: apiKey
+  key: $MY_API_KEY
+---
+```
+
+### HTTP authentication (`http`)
+Supports Bearer tokens, Basic auth, and arbitrary IANA-registered HTTP authentication schemes.
+
+#### Bearer token
+Use the following fields to configure a Bearer token:
+
+| Field | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `type` | string | Yes | Must be `http`. |
+| `scheme` | string | Yes | Must be `Bearer`. |
+| `token` | string | Yes | The bearer token. Supports dynamic values. |
+
+```yaml
+auth:
+  type: http
+  scheme: Bearer
+  token: $MY_BEARER_TOKEN
+```
+
+#### Basic authentication
+Use the following fields to configure Basic authentication:
+
+| Field | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `type` | string | Yes | Must be `http`. |
+| `scheme` | string | Yes | Must be `Basic`. |
+| `username` | string | Yes | The username. Supports dynamic values. |
+| `password` | string | Yes | The password. Supports dynamic values. |
+
+```yaml
+auth:
+  type: http
+  scheme: Basic
+  username: $MY_USERNAME
+  password: $MY_PASSWORD
+```
+
+#### Raw scheme
+For any other IANA-registered scheme (for example, Digest, HOBA), provide the raw authorization value.
+
+| Field | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `type` | string | Yes | Must be `http`. |
+| `scheme` | string | Yes | The scheme name (for example, Digest). |
+| `value` | string | Yes | Raw value sent as `Authorization: <scheme> <value>`. Supports dynamic values. |
+
+```yaml
+auth:
+  type: http
+  scheme: Digest
+  value: $MY_DIGEST_VALUE
+```
+
+### Google Application Default Credentials (`google-credentials`)
+Uses Google Application Default Credentials (ADC) to authenticate with Google Cloud services and Cloud Run endpoints. This is the recommended auth method for agents hosted on Google Cloud infrastructure.
+
+| Field | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `type` | string | Yes | Must be `google-credentials`. |
+| `scopes` | string[] | No | OAuth scopes. Defaults to `https://www.googleapis.com/auth/cloud-platform`. |
+
+```yaml
+---
+kind: remote
+name: my-gcp-agent
+agent_card_url: https://my-agent-xyz.run.app/.well-known/agent.json
+auth:
+  type: google-credentials
+---
+```
+
+### OAuth 2.0 (`oauth`)
+Performs an interactive OAuth 2.0 Authorization Code flow with PKCE.
+
+| Field | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `type` | string | Yes | Must be `oauth`. |
+| `client_id` | string | Yes* | OAuth client ID. Required for interactive auth. |
+| `client_secret` | string | No* | OAuth client secret. |
+| `scopes` | string[] | No | Requested scopes. |
+| `authorization_url` | string | No | Authorization endpoint. |
+| `token_url` | string | No | Token endpoint. |
+
+```yaml
+---
+kind: remote
+name: oauth-agent
+agent_card_url: https://example.com/.well-known/agent.json
+auth:
+  type: oauth
+  client_id: my-client-id.apps.example.com
+---
+```
+
+## Managing Subagents
+Users can manage subagents using the following commands within Gemini CLI:
+
+*   `/agents list`: Displays all available local and remote subagents.
+*   `/agents reload`: Reloads the agent registry.
+*   `/agents enable <agent_name>`: Enables a specific subagent.
+*   `/agents disable <agent_name>`: Disables a specific subagent.
+
+### Disabling remote agents
+Remote subagents are enabled by default. To disable them, set `enableAgents` to false in your `settings.json`:
+
+```json
+{
+  "experimental": {
+    "enableAgents": false
+  }
+}
+```

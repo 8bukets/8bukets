@@ -15,6 +15,7 @@ from agents.health_check_agent import HealthCheckAgent
 from agents.analysis_agent import AnalysisAgent
 from agents.research_agent import ResearchAgent
 from agents.intelligence_agent import IntelligenceAgent
+from agents.react_agent import ReActAgent
 from agents.monetization_agent import MonetizationAgent
 from agents.creativity_agent import CreativityAgent
 from agents.content_agent import ContentAgent
@@ -31,6 +32,8 @@ from agents.meta_coding_agent import MetaCodingAgent
 from agents.jules_evolution_agent import JulesEvolutionAgent
 from agents.gitkraken_evolution_agent import GitKrakenEvolutionAgent
 from agents.docker_evolution_agent import DockerEvolutionAgent
+from agents.gitlab_evolution_agent import GitLabEvolutionAgent
+from agents.cloud_workflow_agent import CloudWorkflowAgent
 from agents.collaboration_agent import CollaborationAgent
 from agents.mongodb_agent import MongoDBAgent
 from agents.mysql_agent import MySQLAgent
@@ -38,6 +41,11 @@ from agents.system_audit_agent import SystemAuditAgent
 from agents.documentation_agent import DocumentationAgent
 from agents.performance_optimization_agent import PerformanceOptimizationAgent
 from agents.rag_agent import RagAgent
+from agents.knowledge_agent import KnowledgeAgent
+from agents.intelephense_agent import IntelephenseAgent
+from agents.sandbox_agent import SandboxAgent
+from ai_agents_knowledge_scraper import scrape_ai_agents_knowledge
+from intelephense_scraper import scrape_intelephense_docs
 
 # Expansion Agents
 from agents.swarm_agent import SwarmAgent
@@ -53,8 +61,9 @@ logging.basicConfig(
 logger = logging.getLogger("SystemOrchestrator")
 
 def run_scraper():
-    logger.info("Starting Scraper...")
+    logger.info("Starting Scrapers...")
     try:
+        # Standard Market Scraper
         result = subprocess.run(
             ["python3", "scraper.py", "--limit", "1"],
             capture_output=True,
@@ -63,7 +72,14 @@ def run_scraper():
         if result.returncode != 0:
             logger.error(f"Scraper failed with exit code {result.returncode}: {result.stderr}")
             raise RuntimeError(f"Scraper failed: {result.stderr}")
-        logger.info("Scraper finished successfully.")
+
+        # AI Agent Knowledge Scraper (Direct module call)
+        scrape_ai_agents_knowledge()
+
+        # Intelephense Documentation Scraper
+        scrape_intelephense_docs()
+
+        logger.info("Scrapers finished successfully.")
         return True
     except Exception as e:
         logger.error(f"Failed to execute scraper: {e}")
@@ -107,22 +123,46 @@ def generate_daily_report(context, filename):
             for trend in research.get("market_trends", []):
                 f.write(f"- **Trend:** {trend}\n")
 
-            f.write("\n## 4. System Evolution & Daily Improvement\n")
+            f.write("\n## 4. Intelligence & Strategic Outlook\n")
+            outlook = context.get("strategic_outlook", [])
+            for item in outlook:
+                f.write(f"- {item}\n")
+
+            f.write("\n### Strategic Risks\n")
+            risks = context.get("strategic_risk_assessment", [])
+            for risk in risks:
+                f.write(f"- [!] {risk}\n")
+
+            f.write("\n### Categorized Knowledge\n")
+            categorized = context.get("categorized_knowledge", {})
+            for cat, items in categorized.items():
+                if items:
+                    f.write(f"- **{cat}:** {', '.join(items)}\n")
+
+            f.write("\n## 5. System Evolution & Daily Improvement\n")
             evolution = context.get("system_evolution", {})
             f.write(f"- **Evolution Status:** {evolution.get('status', 'STABLE')}\n")
             f.write(f"- **Version Shift:** +{evolution.get('version_upgrade', 0)}\n")
             for param, val in evolution.get("parameter_shifts", {}).items():
                 f.write(f"  - {param} optimized to: {val}\n")
 
-            f.write("\n## 5. Peer Review & Collaboration Log\n")
+            f.write("\n## 6. Peer Review & Collaboration Log\n")
             for review in context.get("peer_review_log", []):
                 f.write(f"- {review}\n")
 
-            f.write("\n## 6. Antigravity Collaboration\n")
+            f.write("\n## 7. Antigravity Collaboration\n")
             antigravity = context.get("antigravity_context", {})
             f.write(f"- **Platform:** {antigravity.get('platform', 'N/A')}\n")
             f.write(f"- **Sync Status:** {antigravity.get('status', 'PENDING')}\n")
             f.write(f"- **Stakeholders Notified:** {', '.join(antigravity.get('stakeholders', []))}\n")
+
+            f.write("\n## Multi-Cloud Workflow Intelligence\n")
+            cloud = context.get("cloud_workflow_status", {})
+            gitlab = context.get("gitlab_pipeline_metrics", {})
+            f.write(f"- **Workflow Fluent:** {cloud.get('workflow_fluent', False)}\n")
+            f.write(f"- **Availability Score:** {cloud.get('availability_score', 0)}\n")
+            f.write(f"- **Orchestration:** {cloud.get('orchestration', 'UNKNOWN')}\n")
+            f.write(f"- **GitLab Pipeline Efficiency:** {gitlab.get('pipeline_efficiency', 'N/A')}\n")
 
         logger.info(f"Report generated at {filename}")
     except IOError as e:
@@ -143,7 +183,7 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         logger.warning("No data loaded. Skipping agent execution.")
         return
 
-    # 1. Base Intelligence (21 Agents)
+    # 1. Base Intelligence (22 Agents)
     agents = [
         HealthCheckAgent(), RobotTxtAgent(), AnalysisAgent(),
         ResearchAgent(), IntelligenceAgent(), TargetingAgent(),
@@ -154,6 +194,17 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         DockerEvolutionAgent(), GitHubEvolutionAgent(), CollaborationAgent(),
         MongoDBAgent(), MySQLAgent(), PerformanceOptimizationAgent(),
         SystemAuditAgent(), DocumentationAgent(), RagAgent()
+        HealthCheckAgent(), RobotTxtAgent(), KnowledgeAgent(),
+        AnalysisAgent(), ResearchAgent(), IntelligenceAgent(), ReActAgent(),
+        TargetingAgent(), CreativityAgent(), AdsAgent(),
+        BidAgent(), MonetizationAgent(), ContentAgent(),
+        AutonomousIntelligenceAgent(), TelemetryAgent(), SixSigmaAgent(),
+        ArchitectAgent(), MetaCodingAgent(), JulesEvolutionAgent(),
+        GitKrakenEvolutionAgent(), DockerEvolutionAgent(), GitHubEvolutionAgent(),
+        GitLabEvolutionAgent(), CloudWorkflowAgent(),
+        CollaborationAgent(), MongoDBAgent(), MySQLAgent(),
+        PerformanceOptimizationAgent(), SystemAuditAgent(), DocumentationAgent(),
+        IntelephenseAgent(), SandboxAgent()
     ]
 
     # 2. Expanded SEO Swarm (200 Agents)

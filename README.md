@@ -35,6 +35,35 @@ Install dependencies:
 pip install aiohttp beautifulsoup4 requests
 ```
 
+## Configuration & Environment Variables
+
+The system relies on various API keys and connection strings to operate both locally and in CI/CD.
+
+1.  **Local Setup**:
+    - Copy `.env.example` to a new file named `.env`:
+      ```bash
+      cp .env.example .env
+      ```
+    - Update `.env` with your actual credentials (e.g., `GOOGLE_API_KEY`, `GEMINI_API_KEY`, database URIs). **Do not commit `.env` to source control.**
+
+2.  **GitHub Actions / CI/CD**:
+    - In your GitHub repository, go to **Settings > Secrets and variables > Actions**.
+    - Add the variables listed in `.env.example` as Repository Secrets (e.g., `GOOGLE_API_KEY`, `GEMINI_API_KEY`).
+    - The workflows are pre-configured to pass these secrets as environment variables to the system.
+
+## Canonical Knowledge Merge
+
+The components of this repository, including the scraper tools and analytics for `markposition.wordpress.com`, form the **Market Intelligence Layer** of the broader Antigravity ecosystem.
+
+This ecosystem contains five core identities mapped in the [KNOWLEDGE_MERGE.md](software-review-platform/KNOWLEDGE_MERGE.md) file:
+1. **Antigravity**: internal intelligence and automation layer.
+2. **Project SOR**: public-facing brand and editorial narrative.
+3. **`software-online-review.com`**: the current distribution domain.
+4. **`software-review-platform`**: the future product engine and new review platform MVP.
+5. **`markposition.wordpress.com`**: the external data source tracking ad tech and market trends feeding the intelligence system.
+
+Please refer to `software-review-platform/KNOWLEDGE_MERGE.md` for a comprehensive breakdown of how these layers interact.
+
 ## Usage
 
 ### 1. Scrape Data

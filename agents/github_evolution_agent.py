@@ -6,7 +6,7 @@ class GitHubEvolutionAgent(BaseAgent):
     """Autonomously stages, commits, and pushes code changes based on system evolution."""
     def __init__(self):
         super().__init__("GitHubEvolutionAgent",
-                         dependencies=["system_evolution", "evolution_strategy", "git_visualization_metrics", "container_status"],
+                         dependencies=["system_evolution", "evolution_strategy", "git_visualization_metrics", "container_status", "gitlab_pipeline_metrics"],
                          provides=["vcs_status"])
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
@@ -14,6 +14,7 @@ class GitHubEvolutionAgent(BaseAgent):
         strategy = blackboard.get("evolution_strategy", {})
         viz_metrics = blackboard.get("git_visualization_metrics", {})
         docker_status = blackboard.get("container_status", {})
+        gitlab_metrics = blackboard.get("gitlab_pipeline_metrics", {})
         if evolution.get("status") != "EVOLVED":
             self.logger.info("No system evolution detected. Skipping Git operations.")
             return {"vcs_status": "SKIPPED"}
@@ -37,21 +38,41 @@ class GitHubEvolutionAgent(BaseAgent):
                 f"Collaborative Evolution Metrics:\n"
                 f"- GitKraken Visualization: {viz_metrics.get('kraken_compatibility_score', 0)*100}%\n"
                 f"- Docker Stability: {docker_status.get('runtime_stability', 'N/A')}\n"
+                f"- GitLab Pipeline: {gitlab_metrics.get('pipeline_efficiency', 'N/A')}\n"
                 f"- Evolution Strategy: {strategy.get('optimization_priority', 'STANDARD')}\n\n"
-                f"Automated commit by collaborative agent unit (Jules + GitHub + GitKraken + Docker)."
+                f"Automated commit by collaborative agent unit (Jules + GitHub + GitLab + GitKraken + Docker Cloud)."
             )
             subprocess.run(["git", "commit", "-m", commit_msg], check=True)
 
             # 3. Push changes (if GITHUB_TOKEN is available)
             token = os.environ.get("GITHUB_TOKEN")
             if token:
-                self.logger.info("GITHUB_TOKEN detected. Attempting to push...")
-                # Note: This is a simplified push logic. In a real scenario, you'd handle remote URL properly.
-                subprocess.run(["git", "push"], check=True)
-                vcs_status = "COMMITTED_AND_PUSHED"
+                self.logger.info("GITHUB_TOKEN detected. Pulling with rebase and attempting to push...")
+                pull_result = subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=False)
+                if pull_result.returncode != 0:
+                    self.logger.warning("Git pull rebase failed (likely merge conflict). Aborting rebase.")
+                    subprocess.run(["git", "rebase", "--abort"], check=False)
+                    vcs_status = "COMMITTED_LOCAL" # Prevent push from failing
+                else:
+                    # Note: This is a simplified push logic. In a real scenario, you'd handle remote URL properly.
+                    try:
+                        subprocess.run(["git", "push"], check=True)
+                        vcs_status = "COMMITTED_AND_PUSHED"
+                    except subprocess.CalledProcessError as e:
+                        self.logger.error(f"Git push failed: {e}")
+                        vcs_status = "COMMITTED_LOCAL"
             else:
                 self.logger.warning("GITHUB_TOKEN not found. Changes committed but not pushed.")
                 vcs_status = "COMMITTED_LOCAL"
+
+            # Dynamic repository state validation before attempting to push
+            # Automatically pull latest changes to prevent push failures when multiple agents are working
+            if token:
+                try:
+                    self.logger.info("Synchronizing with remote to avoid conflicts...")
+                    subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=True)
+                except subprocess.CalledProcessError as pull_e:
+                    self.logger.warning(f"Failed to synchronize with remote: {pull_e}")
 
             return {"vcs_status": vcs_status}
 
