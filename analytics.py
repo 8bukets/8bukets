@@ -100,11 +100,30 @@ def generate_report(data, output_file):
     md.append("# 📊 Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
+    # Table of Contents
+    md.append("\n## Table of Contents")
+    md.append("- [📊 General Statistics](#general-statistics)")
+    md.append("- [🌐 Top 10 Referenced Domains](#top-10-referenced-domains)")
+    md.append("- [🏷️ Top 10 Categories](#top-10-categories)")
+    md.append("- [📅 Posts by Year](#posts-by-year)")
+    md.append("- [✍️ Authors](#authors)")
+
+    md.append("\n## 📊 General Statistics")
     md.append("\n## 📈 General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
 
+    # Highlight
+    if domain_counts:
+        top_domain = domain_counts[0][0]
+        md.append(f"\n> 💡 **Highlight:** The most referenced domain is **{top_domain}**.")
+
+    md.append("\n[Back to Top](#table-of-contents)")
+
+    md.append("\n## 🌐 Top 10 Referenced Domains")
+    md.append("| Domain | Count |")
+    md.append("| :--- | :---: |")
     md.append("\n## 🔗 Top 10 Referenced Domains")
     md.append("| Domain | Count | Distribution |")
     md.append("| :--- | :---: | :--- |")
@@ -112,6 +131,11 @@ def generate_report(data, output_file):
         bar = create_ascii_bar(count, max_domain_count)
         md.append(f"| {domain} | {count} | {bar} |")
 
+    md.append("\n[Back to Top](#table-of-contents)")
+
+    md.append("\n## 🏷️ Top 10 Categories")
+    md.append("| Category | Count |")
+    md.append("| :--- | :---: |")
     md.append("\n## 🏷️ Top 10 Categories")
     md.append("| Category | Count | Distribution |")
     md.append("| :--- | :---: | :--- |")
@@ -119,6 +143,11 @@ def generate_report(data, output_file):
         bar = create_ascii_bar(count, max_category_count)
         md.append(f"| {cat} | {count} | {bar} |")
 
+    md.append("\n[Back to Top](#table-of-contents)")
+
+    md.append("\n## 📅 Posts by Year")
+    md.append("| Year | Count |")
+    md.append("| :--- | :---: |")
     md.append("\n## 📅 Posts by Year")
     md.append("| Year | Count | Distribution |")
     md.append("| :--- | :---: | :--- |")
@@ -126,10 +155,14 @@ def generate_report(data, output_file):
         bar = create_ascii_bar(count, max_year_count)
         md.append(f"| {year} | {count} | {bar} |")
 
+    md.append("\n[Back to Top](#table-of-contents)")
+
     md.append("\n## ✍️ Authors")
     for author, count in author_counts:
         posts_str = "post" if count == 1 else "posts"
         md.append(f"- **{author}**: {count} {posts_str}")
+
+    md.append("\n[Back to Top](#table-of-contents)")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
