@@ -94,6 +94,12 @@ class MarkPositionScraperAsync:
             logger.error(f"Error fetching page {page_num}: {e}")
             return None
 
+    async def parse_page(self, html: str) -> List[Dict]:
+        # Optimize parsing by only looking at article tags
+        # This significantly reduces CPU usage and memory for large pages
+        strainer = SoupStrainer('article')
+        soup = BeautifulSoup(html, 'lxml', parse_only=strainer)
+        articles = soup.find_all('article', class_='post')
     def parse_page(self, html: str) -> List[Dict]:
         strainer = SoupStrainer('article', class_=re.compile(r'(^|\s)post(\s|$)'))
         soup = BeautifulSoup(html, 'lxml', parse_only=strainer)
