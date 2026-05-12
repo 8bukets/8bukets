@@ -1,0 +1,156 @@
+#!/usr/bin/env python3
+import argparse
+import json
+import os
+import random
+import string
+import subprocess
+import sys
+import uuid
+
+# Base directory for settings (relative to repo root)
+# When running in a worktree, we need to find the root
+def find_repo_root():
+    try:
+        # Find the main repo root (not the worktree root if we are in one)
+        # However, git rev-parse --show-toplevel from a worktree gives the worktree root.
+        # But actually, git rev-parse --git-common-dir gives the original .git dir path.
+        result = subprocess.run(
+            ["git", "rev-parse", "--git-common-dir"],
+            check=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True
+        )
+        git_common_dir = result.stdout.strip()
+        return os.path.abspath(os.path.dirname(git_common_dir))
+    except subprocess.CalledProcessError:
+        return os.path.abspath(os.getcwd())
+
+REPO_ROOT = find_repo_root()
+SETTINGS_DIR = os.path.join(REPO_ROOT, ".gemini")
+SETTINGS_FILE = os.path.join(SETTINGS_DIR, "settings.json")
+WORKTREES_DIR = os.path.join(SETTINGS_DIR, "worktrees")
+
+def load_settings():
+    if not os.path.exists(SETTINGS_FILE):
+        return {}
+    try:
+        with open(SETTINGS_FILE, 'r') as f:
+            return json.load(f)
+    except json.JSONDecodeError:
+        return {}
+
+def save_settings(settings):
+    os.makedirs(SETTINGS_DIR, exist_ok=True)
+    with open(SETTINGS_FILE, 'w') as f:
+        json.dump(settings, f, indent=2)
+
+def is_worktrees_enabled(settings):
+    return settings.get("experimental", {}).get("worktrees", False)
+
+def generate_random_name():
+    suffix = ''.join(random.choices(string.ascii_lowercase + string.digits, k=8))
+    return f"worktree-{suffix}"
+
+def run_git_command(command, cwd=None):
+    try:
+        subprocess.run(command, cwd=cwd, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        return True
+    except subprocess.CalledProcessError as e:
+        print(f"Git command failed: {' '.join(command)}")
+        print(e.stderr.decode('utf-8'))
+        return False
+
+def start_repl(worktree_name=None, is_worktree=False, session_id=None):
+    if not session_id:
+        session_id = str(uuid.uuid4())[:8]
+
+    print("Welcome to Gemini CLI")
+    try:
+        while True:
+            try:
+                cmd = input("gemini> ").strip()
+                if cmd == "/quit":
+                    break
+                elif cmd == "/settings":
+                    settings = load_settings()
+                    print("Settings:")
+                    print(json.dumps(settings, indent=2))
+                    print("To enable Git worktrees, add this to .gemini/settings.json:")
+                    print('{"experimental": {"worktrees": true}}')
+
+                    enable = input("Enable Git Worktrees? (y/N): ").strip().lower()
+                    if enable == 'y':
+                        if "experimental" not in settings:
+                            settings["experimental"] = {}
+                        settings["experimental"]["worktrees"] = True
+                        save_settings(settings)
+                        print("Git worktrees enabled.")
+                elif cmd:
+                    print(f"Unknown command: {cmd}")
+            except EOFError:
+                break
+    except KeyboardInterrupt:
+        print()
+
+    # Exit handling
+    if is_worktree:
+        print("\nSession ended.")
+        print("To resume your work in this worktree, run:")
+        print(f"cd .gemini/worktrees/{worktree_name}")
+        print(f"gemini --resume {session_id}")
+        print("\nTo clean up this worktree manually, run:")
+        print(f"git worktree remove .gemini/worktrees/{worktree_name} --force")
+        print(f"git branch -D {worktree_name}")
+    else:
+        print("\nSession ended.")
+
+def main():
+    parser = argparse.ArgumentParser(description="Gemini CLI")
+    parser.add_argument("-w", "--worktree", nargs="?", const="RANDOM_NAME_MARKER", help="Create an isolated worktree and start Gemini CLI in it.")
+    parser.add_argument("--resume", help="Resume a session in a worktree.")
+
+    args = parser.parse_args()
+
+    settings = load_settings()
+
+    if args.resume:
+        # Resuming a session
+        # Extract worktree name from current directory path
+        current_dir = os.path.abspath(os.getcwd())
+        worktree_name = os.path.basename(current_dir)
+        print(f"Resuming session {args.resume} in worktree {worktree_name}...")
+        start_repl(worktree_name=worktree_name, is_worktree=True, session_id=args.resume)
+        return
+
+    if args.worktree:
+        if not is_worktrees_enabled(settings):
+            print("Git worktrees are an experimental feature. You must enable them in your settings.")
+            sys.exit(1)
+
+        worktree_name = args.worktree
+        if worktree_name == "RANDOM_NAME_MARKER":
+            worktree_name = generate_random_name()
+
+        worktree_path = os.path.join(WORKTREES_DIR, worktree_name)
+
+        # Create worktree
+        print(f"Creating Git worktree '{worktree_name}' at '{worktree_path}'...")
+        branch_name = worktree_name
+
+        if not run_git_command(["git", "worktree", "add", worktree_path, "-b", branch_name], cwd=REPO_ROOT):
+            sys.exit(1)
+
+        # Change to worktree directory
+        os.chdir(worktree_path)
+
+        # Start REPL
+        start_repl(worktree_name=worktree_name, is_worktree=True)
+        return
+
+    # Normal start
+    start_repl()
+
+if __name__ == "__main__":
+    main()

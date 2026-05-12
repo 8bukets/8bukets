@@ -1,0 +1,50 @@
+name: Autonomous Daily Cycle
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Run daily at midnight UTC
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  run-autonomous-system:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10' # Ensure compatibility with aiohttp
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install aiohttp beautifulsoup4 requests pytest pytest-asyncio filelock
+
+    - name: Configure Git
+      run: |
+        git config --global user.name "google-labs-jules[bot]"
+        git config --global user.email "161369871+google-labs-jules[bot]@users.noreply.github.com"
+
+    - name: Run Tests
+      run: |
+        PYTHONPATH=. python3 -m pytest tests/
+
+    - name: Run Autonomous Cycle
+      env:
+        SYSTEM_AUTH_TOKEN: ${{ secrets.SYSTEM_AUTH_TOKEN || 'default_dev_token' }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: |
+        # We skip the scraper here to prevent IP bans from GitHub Actions
+        python3 run_system.py --skip-scraper
