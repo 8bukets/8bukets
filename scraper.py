@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
 import re
@@ -33,8 +33,8 @@ class MarkPositionScraperAsync:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
-        text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        # ' '.join(text.split()) handles all whitespace normalization efficiently
+        return " ".join(text.split())
 
     def sanitize_for_csv(self, text: Optional[str]) -> str:
         """Sanitize text to prevent CSV injection."""
@@ -80,6 +80,11 @@ class MarkPositionScraperAsync:
             logger.error(f"Error fetching page {page_num}: {e}")
             return None
 
+    async def parse_page(self, html: str) -> List[Dict]:
+        # Use regex for class matching because SoupStrainer requires exact string match
+        # for string arguments, but we need to match 'post' in a list of classes.
+        strainer = SoupStrainer('article', class_=re.compile(r'\bpost\b'))
+        soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
     def _parse_page_sync(self, html: str) -> List[Dict]:
         """Synchronous parsing logic to be run in an executor."""
         soup = BeautifulSoup(html, 'html.parser')
