@@ -1,4 +1,19 @@
 {
+  "hooks": {
+    "BeforeTool": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "name": "security-check",
+            "type": "command",
+            "command": "$GEMINI_PROJECT_DIR/.gemini/hooks/security.py",
+            "timeout": 5000,
+            "description": "Blocks execution of dangerous bash commands and queries."
+          }
+        ]
+      }
+    ]
   "agents": {
     "overrides": {
       "browser_agent": {
