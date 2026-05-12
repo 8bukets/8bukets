@@ -78,14 +78,47 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
+    md.append("# <a id='markposition-analytics-report'></a>Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
-    md.append(f"- **Total Posts:** {total_posts}")
+    # Table of Contents
+    md.append("\n## Table of Contents")
+    md.append("- [📊 General Statistics](#general-statistics)")
+    md.append("- [🌐 Top 10 Referenced Domains](#top-10-referenced-domains)")
+    md.append("- [📂 Top 10 Categories](#top-10-categories)")
+    md.append("- [📅 Posts by Year](#posts-by-year)")
+    md.append("- [✍️ Authors](#authors)")
+
+    md.append("\n## <a id='general-statistics'></a>📊 General Statistics")
+    if domain_counts:
+        top_domain = domain_counts[0]
+        md.append(f"> 💡 **Highlight:** The most referenced domain is **{top_domain[0]}** with {top_domain[1]} citations.")
+
+    md.append(f"\n- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append("\n[Back to Top](#markposition-analytics-report)")
 
+    md.append("\n## <a id='top-10-referenced-domains'></a>🌐 Top 10 Referenced Domains")
+    md.append("| Domain | Count |")
+    md.append("| :--- | :---: |")
+    for domain, count in domain_counts:
+        md.append(f"| {domain} | {count} |")
+    md.append("\n[Back to Top](#markposition-analytics-report)")
+
+    md.append("\n## <a id='top-10-categories'></a>📂 Top 10 Categories")
+    md.append("| Category | Count |")
+    md.append("| :--- | :---: |")
+    for cat, count in category_counts:
+        md.append(f"| {cat} | {count} |")
+    md.append("\n[Back to Top](#markposition-analytics-report)")
+
+    md.append("\n## <a id='posts-by-year'></a>📅 Posts by Year")
+    md.append("| Year | Count |")
+    md.append("| :--- | :---: |")
+    for year, count in year_counts:
+        md.append(f"| {year} | {count} |")
+    md.append("\n[Back to Top](#markposition-analytics-report)")
     # Max values for charts
     max_domain_count = domain_counts[0][1] if domain_counts else 0
     max_category_count = category_counts[0][1] if category_counts else 0
@@ -112,8 +145,10 @@ def generate_report(data, output_file):
         bar = create_ascii_bar(count, max_year_count)
         md.append(f"| {year} | {count} | {bar} |")
 
-    md.append("\n## Authors")
+    md.append("\n## <a id='authors'></a>✍️ Authors")
     for author, count in author_counts:
+        md.append(f"- {author}: {count} posts")
+    md.append("\n[Back to Top](#markposition-analytics-report)")
         md.append(f"- {escape_markdown(author)}: {count} posts")
 
     with open(output_file, 'w', encoding='utf-8') as f:
