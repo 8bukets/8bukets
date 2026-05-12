@@ -29,7 +29,8 @@ class MemorySystem:
                 "multipliers": {"Canada": 1.2, "India": 0.9}
             },
             "innovation_level": 0.1, # 0.0 to 1.0 (Antigravity factor)
-            "history": []
+            "history": [],
+            "oracle_ai_knowledge": {}
         }
 
     def save_memory(self):
