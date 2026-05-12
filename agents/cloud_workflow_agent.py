@@ -32,18 +32,6 @@ class CloudWorkflowAgent(BaseAgent):
         availability_score = 0.99 if is_fluent else 0.85
 
         active_decisions = []
-        if docker_status.get("runtime_stability") != "VERIFIED":
-            active_decisions.append("REBUILD_DOCKER")
-        if gitlab_metrics.get("pipeline_efficiency") != "OPTIMIZED":
-            active_decisions.append("OPTIMIZE_PIPELINE")
-        if vcs_status not in ["COMMITTED_AND_PUSHED", "COMMITTED_LOCAL", "CLEAN"]:
-            active_decisions.append("FORCE_GIT_SYNC")
-
-        orchestration_mode = "RECOVERY_MODE" if active_decisions else "SYNCHRONIZED"
-        if react_deployment_ready:
-            availability_score = min(1.0, availability_score + 0.05)
-
-        active_decisions = []
         orchestration_mode = "SYNCHRONIZED"
 
         if not is_fluent:
@@ -63,11 +51,6 @@ class CloudWorkflowAgent(BaseAgent):
             "workflow_fluent": is_fluent,
             "availability_score": availability_score,
             "orchestration": orchestration_mode,
-            "active_decisions": active_decisions
-        }
-
-        self.logger.info(f"Multi-cloud workflow evaluated: Fluent={is_fluent}, Orchestration={orchestration_mode}, Decisions={active_decisions}")
-            "react_agent_deployment": "ORCHESTRATED" if react_deployment_ready else "PENDING",
             "active_decisions": active_decisions
         }
 
