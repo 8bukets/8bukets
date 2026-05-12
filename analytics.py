@@ -77,6 +77,18 @@ def generate_report(data, output_file):
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
     # Table of Contents
+<<<<<<< palette-ux-report-improvements-9630359626298714094
+    md.append("\n<a name='table-of-contents'></a>")
+    md.append("## 📑 Table of Contents")
+    md.append("- [📊 General Statistics](#general-statistics)")
+    md.append("- [🔗 Top Referenced Domains](#top-referenced-domains)")
+    md.append("- [🏷️ Top Categories](#top-categories)")
+    md.append("- [📅 Posts by Year](#posts-by-year)")
+    md.append("- [✍️ Authors](#authors)")
+
+    md.append("\n<a name='general-statistics'></a>")
+    md.append("## 📊 General Statistics")
+=======
     md.append("\n## Table of Contents <a id='table-of-contents'></a>")
     md.append("- [📊 General Statistics](#general-statistics)")
     md.append("- [🔗 Top 10 Referenced Domains](#top-10-referenced-domains)")
@@ -85,31 +97,52 @@ def generate_report(data, output_file):
     md.append("- [✍️ Authors](#authors)")
 
     md.append("\n## 📊 General Statistics <a id='general-statistics'></a>")
+>>>>>>> artmusicpage-scraper-13642650452924627148
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
     md.append("\n[Back to Top](#table-of-contents)")
 
+<<<<<<< palette-ux-report-improvements-9630359626298714094
+    md.append("\n<a name='top-referenced-domains'></a>")
+    md.append("## 🔗 Top 10 Referenced Domains")
+=======
     md.append("\n## 🔗 Top 10 Referenced Domains <a id='top-10-referenced-domains'></a>")
+>>>>>>> artmusicpage-scraper-13642650452924627148
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in domain_counts:
         md.append(f"| {domain} | {count} |")
     md.append("\n[Back to Top](#table-of-contents)")
 
+<<<<<<< palette-ux-report-improvements-9630359626298714094
+    md.append("\n<a name='top-categories'></a>")
+    md.append("## 🏷️ Top 10 Categories")
+=======
     md.append("\n## 🏷️ Top 10 Categories <a id='top-10-categories'></a>")
+>>>>>>> artmusicpage-scraper-13642650452924627148
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in category_counts:
         md.append(f"| {cat} | {count} |")
     md.append("\n[Back to Top](#table-of-contents)")
 
+<<<<<<< palette-ux-report-improvements-9630359626298714094
+    md.append("\n<a name='posts-by-year'></a>")
+    md.append("## 📅 Posts by Year")
+=======
     md.append("\n## 📅 Posts by Year <a id='posts-by-year'></a>")
+>>>>>>> artmusicpage-scraper-13642650452924627148
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
     for year, count in year_counts:
         md.append(f"| {year} | {count} |")
     md.append("\n[Back to Top](#table-of-contents)")
+<<<<<<< palette-ux-report-improvements-9630359626298714094
+
+    md.append("\n<a name='authors'></a>")
+    md.append("## ✍️ Authors")
+=======
     # Helper for max counts
     max_domain_count = domain_counts[0][1] if domain_counts else 0
     max_category_count = category_counts[0][1] if category_counts else 0
@@ -137,6 +170,7 @@ def generate_report(data, output_file):
         md.append(f"| {year} | {count} | {bar} |")
 
     md.append("\n## ✍️ Authors <a id='authors'></a>")
+>>>>>>> artmusicpage-scraper-13642650452924627148
     for author, count in author_counts:
         md.append(f"- {author}: {count} posts")
     md.append("\n[Back to Top](#table-of-contents)")
