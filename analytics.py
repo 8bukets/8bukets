@@ -104,9 +104,26 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
+    md.append("# 📊 Markposition Analytics Report")
+    md.append("<a name='table-of-contents'></a>")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
+    md.append("\n## Table of Contents")
+    md.append("* [General Statistics](#general-statistics)")
+    md.append("* [Top 10 Referenced Domains](#top-10-referenced-domains)")
+    md.append("* [Top 10 Categories](#top-10-categories)")
+    md.append("* [Posts by Year](#posts-by-year)")
+    md.append("* [Authors](#authors)")
+
+    md.append("\n<a name='general-statistics'></a>")
+    md.append("## 📈 General Statistics")
+    md.append(f"- **Total Posts:** {total_posts}")
+    md.append(f"- **Date Range:** {start_date} to {end_date}")
+    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append("\n[Back to Top](#table-of-contents)")
+
+    md.append("\n<a name='top-10-referenced-domains'></a>")
+    md.append("## 🌐 Top 10 Referenced Domains")
     # Table of Contents
     md.append("\n## Table of Contents")
     md.append("- [📊 General Statistics](#general-statistics)")
@@ -132,6 +149,8 @@ def generate_report(data, output_file):
         md.append(f"| {domain} | {count} |")
     md.append("\n[Back to Top](#table-of-contents)")
 
+    md.append("\n<a name='top-10-categories'></a>")
+    md.append("## 📂 Top 10 Categories")
     # Categories
     md.append("\n## 📂 Top 10 Categories")
     md.append("| Category | Count |")
@@ -140,6 +159,8 @@ def generate_report(data, output_file):
         md.append(f"| {cat} | {count} |")
     md.append("\n[Back to Top](#table-of-contents)")
 
+    md.append("\n<a name='posts-by-year'></a>")
+    md.append("## 📅 Posts by Year")
     # Years
     md.append("\n## 📅 Posts by Year")
     md.append("| Year | Count |")
@@ -147,6 +168,11 @@ def generate_report(data, output_file):
     for year, count in year_counts:
         md.append(f"| {year} | {count} |")
     md.append("\n[Back to Top](#table-of-contents)")
+
+    md.append("\n<a name='authors'></a>")
+    md.append("## ✍️ Authors")
+    for author, count in author_counts:
+        md.append(f"- {author}: {count} posts")
     md.append("\n## Top 10 Referenced Domains")
     md.append("| Domain | Count | Distribution |")
     md.append("| :--- | :---: | :--- |")

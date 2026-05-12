@@ -1,5 +1,17 @@
-# Markposition Analytics Report
+# 📊 Markposition Analytics Report
+<a name='table-of-contents'></a>
 
+**Generated on:** 2026-01-27 19:28:12
+
+## Table of Contents
+* [General Statistics](#general-statistics)
+* [Top 10 Referenced Domains](#top-10-referenced-domains)
+* [Top 10 Categories](#top-10-categories)
+* [Posts by Year](#posts-by-year)
+* [Authors](#authors)
+
+<a name='general-statistics'></a>
+## 📈 General Statistics
 **Generated on:** 2026-01-26 19:36:59
 
 ## Table of Contents
@@ -14,6 +26,9 @@
 - **Date Range:** 2020-05-19 to 2022-10-05
 - **Unique Domains Linked:** 367
 
+[Back to Top](#table-of-contents)
+
+<a name='top-10-referenced-domains'></a>
 > 💡 **Highlight:** The most referenced domain is **skillshop.exceedlms.com** with 23 links.
 
 [Back to Top](#table-of-contents)
@@ -34,6 +49,7 @@
 
 [Back to Top](#table-of-contents)
 
+<a name='top-10-categories'></a>
 ## 📂 Top 10 Categories
 | Category | Count |
 | :--- | :---: |
@@ -46,6 +62,7 @@
 
 [Back to Top](#table-of-contents)
 
+<a name='posts-by-year'></a>
 ## 📅 Posts by Year
 | Year | Count |
 | :--- | :---: |
@@ -55,6 +72,11 @@
 
 [Back to Top](#table-of-contents)
 
+<a name='authors'></a>
+## ✍️ Authors
+- Filip Keser: 679 posts
+
+[Back to Top](#table-of-contents)
 ## ✍️ Authors
 - **Filip Keser**: 679 posts
 
