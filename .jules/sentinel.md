@@ -1,3 +1,7 @@
+## 2026-02-06 - SSRF in RobotTxtAgent
+**Vulnerability:** The `RobotTxtAgent` was vulnerable to Server-Side Request Forgery (SSRF). It dynamically determined the base URL for fetching `robots.txt` from the input data (`post_url`). If the input data contained a malicious URL (e.g., pointing to `localhost`), the agent would attempt to fetch `robots.txt` from that internal service.
+**Learning:** trusting input data to construct network requests without validation is dangerous, especially when the data source is external or can be manipulated. Even in "internal" agents, defense in depth is crucial.
+**Prevention:** Validate all URLs against an allowlist of trusted domains before making requests. For specific scrapers, hardcode the target domain or strictly validate that the dynamic URL belongs to the expected target.
 # Sentinel's Journal
 
 ## 2025-02-20 - CSV Injection Vulnerability
