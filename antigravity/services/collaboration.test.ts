@@ -9,7 +9,15 @@ vi.mock('@/antigravity/core', () => ({
 }))
 
 // Now import the service
-import { getMissionMetadata } from './collaboration'
+import { getMissionMetadata, syncCollaborationState } from './collaboration'
+
+vi.mock('./docker', () => ({
+  checkDockerHealth: vi.fn(() => Promise.resolve({
+    status: 'optimal',
+    containerCount: 1,
+    timestamp: '2026-05-12T00:00:00.000Z'
+  }))
+}))
 
 describe('Collaboration Service', () => {
   beforeEach(() => {
@@ -46,5 +54,30 @@ Test Mission
   it('should throw error if mission document is missing', async () => {
     vi.mocked(fs.existsSync).mockReturnValue(false)
     await expect(getMissionMetadata()).rejects.toThrow('Mission document missing')
+  })
+
+  it('should sync collaboration state correctly', async () => {
+    const mockMission = `
+# Antigravity Mission
+## Mission Statement
+Test Mission
+## Stakeholders
+- Role A: a@test.com
+## Strategic Goals
+1. Goal 1
+`
+    vi.mocked(fs.existsSync).mockReturnValue(true)
+    vi.mocked(fs.readFileSync).mockReturnValue(mockMission)
+    vi.mocked(fs.writeFileSync).mockImplementation(() => {})
+
+    const state = await syncCollaborationState()
+
+    expect(state).toBeDefined()
+    expect(state.mission).toBe('Test Mission')
+    expect(state.docker.status).toBe('optimal')
+    expect(fs.writeFileSync).toHaveBeenCalledWith(
+      expect.stringContaining('autonomous_state.json'),
+      expect.any(String)
+    )
   })
 })

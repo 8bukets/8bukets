@@ -3,5 +3,26 @@
     "next_run": "2026-04-22T04:11:18.721165+00:00",
     "status": "IDLE",
     "last_success": true,
-    "last_checked": "2026-04-20T04:11:00.204744+00:00"
+    "last_checked": "2026-04-20T04:11:00.204744+00:00",
+    "mission": "To build a self-evolving, autonomous organism that transcends traditional software boundaries through continuous learning and multi-agent synergy.",
+    "stakeholders": [
+        {
+            "role": "Strategic Lead",
+            "email": "petar.pan@antigravity.io"
+        },
+        {
+            "role": "Technical Architect",
+            "email": "jules@antigravity.io"
+        },
+        {
+            "role": "Operations",
+            "email": "sigma@antigravity.io"
+        }
+    ],
+    "docker": {
+        "status": "disconnected",
+        "containerCount": 0,
+        "timestamp": "2026-05-12T21:15:08.381Z"
+    },
+    "last_sync": "2026-05-12T21:15:08.381Z"
 }
