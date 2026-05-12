@@ -10,13 +10,19 @@ class RobotTxtAgent(BaseAgent):
         self.logger.info("Checking robots.txt compliance and secrets...")
 
         # Determine base URL from data or default
-        base_url = "https://markposition.wordpress.com"
+        default_url = "https://markposition.wordpress.com"
+        base_url = default_url
+
         if data:
             # Try to infer from first post
             link = data[0].get('post_url')
             if link:
                 parsed = urlparse(link)
-                base_url = f"{parsed.scheme}://{parsed.netloc}"
+                # SECURITY: Prevent SSRF by validating the domain
+                if parsed.netloc == "markposition.wordpress.com":
+                    base_url = f"{parsed.scheme}://{parsed.netloc}"
+                else:
+                    self.logger.warning(f"SECURITY: Ignoring potentially unsafe domain from data: {parsed.netloc}. Using default.")
 
         robots_url = f"{base_url}/robots.txt"
         self.logger.info(f"Fetching {robots_url}")
