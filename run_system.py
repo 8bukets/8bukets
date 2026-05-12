@@ -149,7 +149,7 @@ def run_pipeline(skip_scrape=False):
     results_aggregator['monetization'] = monetization_strategies
 
     # Creativity
-    headlines = creativity_agent.process(analysis_results['common_keywords'])
+    headlines = creativity_agent.process(analysis_results['common_keywords'], memory_system.memory)
     save_result("creative_headlines.json", headlines, current_date)
 
     # Integrate Oracle AI Knowledge
