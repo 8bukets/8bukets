@@ -1,3 +1,7 @@
+## 2026-01-27 - CLI Path Traversal
+**Vulnerability:** `scraper.py` and `analytics.py` allowed arbitrary file paths via CLI arguments, enabling path traversal (reading/writing files outside CWD).
+**Learning:** CLI tools often trust user input for file paths implicitly. `os.path.commonpath` is a robust way to validate paths against a safe root (like CWD).
+**Prevention:** Always validate file paths provided by users or external sources. Use a dedicated `validate_path` function that resolves absolute paths and checks containment.
 ## 2026-02-06 - SSRF in RobotTxtAgent
 **Vulnerability:** The `RobotTxtAgent` was vulnerable to Server-Side Request Forgery (SSRF). It dynamically determined the base URL for fetching `robots.txt` from the input data (`post_url`). If the input data contained a malicious URL (e.g., pointing to `localhost`), the agent would attempt to fetch `robots.txt` from that internal service.
 **Learning:** trusting input data to construct network requests without validation is dangerous, especially when the data source is external or can be manipulated. Even in "internal" agents, defense in depth is crucial.

@@ -4,6 +4,18 @@ from collections import Counter
 from urllib.parse import urlparse
 from datetime import datetime
 import sys
+import os
+
+def validate_path(filepath: str) -> str:
+    """
+    Validates that the filepath is safe and within the current working directory.
+    Returns the absolute path if safe, raises ValueError otherwise.
+    """
+    abs_path = os.path.abspath(filepath)
+    cwd = os.path.abspath(os.getcwd())
+    if os.path.commonpath([cwd, abs_path]) != cwd:
+        raise ValueError(f"Security Error: Path '{filepath}' attempts to access outside the working directory.")
+    return abs_path
 
 def create_ascii_bar(count, max_count, bar_length=20):
     """Generate an ASCII progress bar."""
@@ -183,5 +195,12 @@ if __name__ == "__main__":
     parser.add_argument("--output", default="REPORT.md", help="Output Markdown report file")
     args = parser.parse_args()
 
-    data = load_data(args.input)
-    generate_report(data, args.output)
+    try:
+        input_path = validate_path(args.input)
+        output_path = validate_path(args.output)
+    except ValueError as e:
+        print(f"Error: {e}")
+        sys.exit(1)
+
+    data = load_data(input_path)
+    generate_report(data, output_path)
