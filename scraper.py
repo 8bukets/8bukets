@@ -49,6 +49,15 @@ class OracleNewsScraper:
         text = text.replace('\xa0', ' ')
         return re.sub(r'\s+', ' ', text).strip()
 
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text to prevent CSV Injection (Formula Injection)."""
+        if not text:
+            return ""
+        text = str(text)
+        if text.startswith(('=', '+', '-', '@')):
+            return "'" + text
+        return text
+
     def parse_date(self, date_text: str) -> Optional[Dict[str, str]]:
         """Parse date string like 'Oct 15, 2025' to ISO format."""
         try:
@@ -73,16 +82,26 @@ class OracleNewsScraper:
             logger.error(f"Error fetching page: {e}")
             return None
 
-    def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+    def _extract_news_comment(self, html: str) -> Optional[str]:
+        """Extract the hidden news section from HTML comments using regex for performance."""
+        # Fast path: Regex
+        # Regex for HTML comments: <!--(.*?)-->
+        # We look for a comment containing 'rc92v0' and '<section'
+        for match in re.finditer(r'<!--(.*?)-->', html, re.DOTALL):
+            c = match.group(1)
+            if 'rc92v0' in c and '<section' in c:
+                return c
 
-        # Find comments containing the news section
+        # Slow path: BeautifulSoup (fallback)
+        soup = BeautifulSoup(html, 'html.parser')
         comments = soup.find_all(string=lambda text: isinstance(text, Comment))
-        news_html = None
         for c in comments:
             if 'rc92v0' in c and '<section' in c:
-                news_html = c
-                break
+                return c
+        return None
+
+    def parse_page(self, html: str) -> List[Dict]:
+        news_html = self._extract_news_comment(html)
 
         if not news_html:
             logger.warning("Could not find hidden news section in HTML comments.")
@@ -124,7 +143,7 @@ class OracleNewsScraper:
             if external_link:
                 try:
                     post_data['domain'] = urlparse(external_link).netloc.replace('www.', '')
-                except:
+                except Exception:
                     pass
 
             # Author (Default)
@@ -133,7 +152,7 @@ class OracleNewsScraper:
             # Categories (Default/Inferred)
             post_data['categories'] = ["News"]
             if external_link and '/announcement/' in external_link:
-                 post_data['categories'].append("Announcement")
+                post_data['categories'].append("Announcement")
 
             page_posts.append(post_data)
 
@@ -186,6 +205,18 @@ class OracleNewsScraper:
                         else:
                             sanitized_row.append(field)
                     writer.writerow(sanitized_row)
+                    # Prepare data for CSV with sanitization
+                    categories = ", ".join(post.get('categories', []))
+
+                    writer.writerow([
+                        self.sanitize_for_csv(post.get('title', '')),
+                        self.sanitize_for_csv(post.get('date', '')),
+                        self.sanitize_for_csv(post.get('author', '')),
+                        self.sanitize_for_csv(categories),
+                        self.sanitize_for_csv(post.get('external_link', '')),
+                        self.sanitize_for_csv(post.get('domain', '')),
+                        self.sanitize_for_csv(post.get('post_url', ''))
+                    ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
             logger.error(f"Failed to save CSV: {e}")
