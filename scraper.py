@@ -7,6 +7,7 @@ import re
 import argparse
 import logging
 import time
+import os
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 import concurrent.futures
@@ -163,12 +164,73 @@ def parse_page(html: str) -> List[Dict]:
 
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
-        self.output_json = output_json
-        self.output_csv = output_csv
-        self.output_txt = output_txt
+        self.output_json = self.validate_path(output_json)
+        self.output_csv = self.validate_path(output_csv)
+        self.output_txt = self.validate_path(output_txt)
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+
+    def validate_path(self, path: str) -> str:
+        """Validate that the output path is within the current working directory."""
+        if not path:
+            raise ValueError("Output path cannot be empty")
+
+        # Resolve absolute paths
+        abs_path = os.path.abspath(path)
+        cwd = os.path.abspath(os.getcwd())
+
+        # Check if the path starts with the CWD
+        # os.path.commonpath is the safest way to check path containment
+        try:
+            common = os.path.commonpath([abs_path, cwd])
+        except ValueError:
+             # commonpath raises ValueError if paths are on different drives (Windows)
+             raise ValueError(f"Security Error: Output path '{path}' is invalid.")
+
+        if common != cwd:
+             raise ValueError(f"Security Error: Output path '{path}' attempts to traverse outside the working directory.")
+
+        return abs_path
+
+    def clean_text(self, text: str) -> str:
+        """Normalize whitespace and remove non-breaking spaces."""
+        if not text:
+            return ""
+        text = text.replace('\xa0', ' ')
+        return re.sub(r'\s+', ' ', text).strip()
+
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text to prevent CSV injection (formula injection)."""
+        if not text:
+            return ""
+        # If the text starts with one of the trigger characters, prepend a single quote
+        if text.startswith(('=', '+', '-', '@', '%')):
+            return "'" + text
+        return text
+
+    def is_url(self, text: str) -> bool:
+        """Check if text looks like a URL."""
+        return re.match(r'^https?://', text.strip()) is not None
+
+    def extract_categories(self, article: BeautifulSoup) -> List[str]:
+        """Extract categories from article class names."""
+        categories = []
+        if article.get('class'):
+            for cls in article['class']:
+                if cls.startswith('category-'):
+                    cat_name = cls.replace('category-', '').replace('-', ' ').title()
+                    categories.append(cat_name)
+        return categories
+
+    def extract_domain(self, url: str) -> Optional[str]:
+        """Extract domain from URL."""
+        if not url:
+            return None
+        try:
+            return urlparse(url).netloc.replace('www.', '')
+        except:
+            return None
         self.executor = concurrent.futures.ProcessPoolExecutor()
 
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
