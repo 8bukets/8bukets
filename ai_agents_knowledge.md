@@ -10,6 +10,8 @@ AI agents are software systems that use AI to pursue goals and complete tasks on
 
 Their capabilities are made possible in large part by the multimodal capacity of generative AI and AI foundation models. AI agents can process multimodal information like text, voice, video, audio, code, and more simultaneously; can converse, reason, learn, and make decisions. They can learn over time and facilitate transactions and business processes. Agents can work with other agents to coordinate and perform more complex workflows.
 
+[2-min AI with Google: AI agents explained - video thumbnail]
+
 ## Key features of an AI agent
 
 As explained above, while the key features of an AI agent are reasoning and acting (as described in ReAct Framework ) more features have evolved over time.
@@ -184,66 +186,29 @@ Security agents strengthen security posture by mitigating attacks or increasing 
 
 Google Cloud provides a portfolio of products and solutions in the AI agent space. These include integrated AI assistants, pre-built AI agents, AI applications, and a platform of agent and developer tools to build custom AI agents.
 
-- Gemini Enterprise App Secure platform to discover, create, run, and govern AI agents across your organization.
+- [gemini icon] Gemini Enterprise App Secure platform to discover, create, run, and govern AI agents across your organization.
 
-- Gemini Enterprise Agent Platform Create AI agents and applications using natural language or a code-first approach. Easily ground your agents or apps in enterprise data with a range of options.
+- [Gemini Enterprise agent platform icon] Gemini Enterprise Agent Platform Create AI agents and applications using natural language or a code-first approach. Easily ground your agents or apps in enterprise data with a range of options.
 
-- Customer Experience Agent Studio Build hybrid conversational agents with both deterministic and generative AI functionality.
+- [Dialogflow icon] Customer Experience Agent Studio Build hybrid conversational agents with both deterministic and generative AI functionality.
 
-- Agent Garden Curated collection of pre-built agent samples, solutions, tools, and frameworks to accelerate the development and deployment of AI agents.
+- [gemini enterprise agent platform icon] Agent Garden Curated collection of pre-built agent samples, solutions, tools, and frameworks to accelerate the development and deployment of AI agents.
 
 - Agent Development Kit (ADK) Open-source Python SDK to build sophisticated multi-agent systems with orchestration, memory, and developer tools.
 
 - A2A Protocol An open-source framework originally developed by Google to help build AI agents. An AI agent built with A2A Protocol will be interoperable with any service, platform, or infrastructure.
 
-- Cloud Run A fully managed serverless platform that allows you to deploy containerized agents and applications, providing auto-scaling and pay-per-use efficiency.
+- [Cloud Run Logo] Cloud Run A fully managed serverless platform that allows you to deploy containerized agents and applications, providing auto-scaling and pay-per-use efficiency.
 
-## What does Compile mean?
+## Additional resources
 
-## IDE Integration for AI Agents
-To provide seamless coding assistance, AI agents like the Gemini CLI can integrate with Integrated Development Environments (IDEs). Interoperability is achieved through standard open protocols and dedicated extensions:
+Continue learning about AI agents with additional resources.
 
-- **VS Code Companion Extension**: Provides direct workspace access in VS Code compatible IDEs, reading open files, cursor context, and selections. Supports native diff viewing and auto-applying suggested code modifications.
-- **Agent Client Protocol (ACP)**: An open protocol enabling interoperability between AI coding agents and diverse IDEs. It relies on the ACP Agent Registry for distribution, making an ACP-compliant agent available directly within supporting tools like JetBrains and Zed.
-## Compile
+- Google ADK on Github
 
-To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.
+- Google Agents White Paper (via Kaggle)
 
-### Key Definitions of Compile
+- Google Agents Companion White Paper (via Kaggle)
 
-- **Gathering Information**: To collect and put together data, facts, or documents (e.g., to compile a report or compile a list).
-- **Creating Works**: To produce a book, anthology, or database from various materials.
-- **Computing**: To convert high-level programming code (like C++ or Java) into machine code, allowing a computer to execute the program.
+- Skillsboost Advanced Generative AI for Developers Learning
 
-### Usage Examples
-
-- "She is compiling a list of clients for the newsletter."
-- "It took years to compile the dictionary."
-- "The developer needs to compile the code before running the application."
-
-### Synonyms
-
-Assemble, Collect, Gather, Compose, Accumulate, Organize, Synthesize
-- Assemble
-- Collect
-- Gather
-- Compose
-- Accumulate
-- Organize
-- Synthesize
-
-### Contextual Usage
-
-- **General**: Focuses on the act of assembling information or materials (e.g., compile a report).
-- **Computing**: Focuses on the automatic transformation of code using a tool known as a compiler.
-
-## Jules Tools
-
-Jules Tools is a lightweight command-line interface (CLI) for interacting with Jules, Google’s autonomous AI coding agent. It allows you to manage coding sessions, inspect progress, and integrate Jules into your existing development workflows and scripts directly from your terminal.
-
-Think of Jules Tools as both a command surface and a dashboard for your coding agent, designed to keep you in your flow without needing to switch to a web browser.
-
-- Installation: `npm install -g @google/jules`.
-- Authentication: `jules login` and `jules logout`.
-- Commands: `version`, `remote` (list, new, pull), `completion`.
-- Dashboard (TUI): Run `jules` without arguments for an interactive experience.

@@ -25,8 +25,8 @@ def scrape_ai_agents_knowledge():
 
     for i, header in enumerate(headings):
         section_title = header.get_text(strip=True)
-        # Break when we hit the footer navigation or additional resources sections
-        if section_title in ["Additional resources", "Take the next step", "Accelerate your digital transformation", "Why Google", "Products and pricing", "Solutions", "Resources", "Engage"]:
+        # Break when we hit the footer navigation or take the next step sections
+        if section_title in ["Take the next step", "Accelerate your digital transformation", "Why Google", "Products and pricing", "Solutions", "Resources", "Engage"]:
             break
 
         section_id = header.get("id")
@@ -53,8 +53,12 @@ def scrape_ai_agents_knowledge():
             if tag.name == "h4":
                 section_content.append(f"### {tag.get_text(strip=True)}")
             # Content tags
-            elif tag.name in ["p", "li", "table", "pre", "h5", "h6"]:
-                if tag.name == "table":
+            elif tag.name in ["p", "li", "table", "pre", "h5", "h6", "img"]:
+                if tag.name == "img":
+                    alt_text = tag.get("alt")
+                    if alt_text:
+                        section_content.append(f"[{alt_text}]")
+                elif tag.name == "table":
                     rows = []
                     header_count = 0
                     for k, tr in enumerate(tag.find_all("tr")):
@@ -73,10 +77,20 @@ def scrape_ai_agents_knowledge():
                 elif tag.name == "pre":
                     section_content.append(f"```\n{tag.get_text(strip=True)}\n```")
                 elif tag.name == "li":
+                    # Include alt text for images inside li
+                    for img in tag.find_all("img"):
+                        alt = img.get("alt")
+                        if alt:
+                            img.insert_before(f"[{alt}] ")
                     # Use separator to avoid text concatenation
                     text = tag.get_text(separator=" ", strip=True)
                     section_content.append(f"- {text}")
                 else:
+                    # Include alt text for images inside other tags
+                    for img in tag.find_all("img"):
+                        alt = img.get("alt")
+                        if alt:
+                            img.insert_before(f"[{alt}] ")
                     text = tag.get_text(separator=' ', strip=True)
                     if text:
                         section_content.append(text)
@@ -90,11 +104,6 @@ def scrape_ai_agents_knowledge():
                 "title": section_title,
                 "content": "\n\n".join(section_content)
             }
-
-    data["compile-definition"] = {
-        "title": "What does Compile mean?",
-        "content": "To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.\n\n### Key Definitions of Compile\n\n- **Gathering Information**: To collect and put together data, facts, or documents (e.g., to compile a report or compile a list).\n- **Creating Works**: To produce a book, anthology, or database from various materials.\n- **Computing**: To convert high-level programming code (like C++ or Java) into machine code, allowing a computer to execute the program.\n\n### Usage Examples\n\n- \"She is compiling a list of clients for the newsletter.\"\n- \"It took years to compile the dictionary.\"\n- \"The developer needs to compile the code before running the application.\"\n\n### Synonyms\n\nAssemble, Collect, Gather, Compose, Accumulate, Organize, Synthesize\n\n### Contextual Usage\n\n- **General**: Focuses on the act of assembling information or materials (e.g., compile a report).\n- **Computing**: Focuses on the automatic transformation of code using a tool known as a compiler."
-    }
 
     # Save to JSON
     json_path = "ai_agents_knowledge.json"

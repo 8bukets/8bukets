@@ -125,6 +125,13 @@ class IntelligenceAgent(BaseAgent):
             if "cloud run" in tools_info:
                 insights.append("Infrastructure Strategy: Scalable deployment using Cloud Run serverless platform.")
 
+            # Additional Resources insights
+            resources = knowledge.get("additional_resources", "").lower()
+            if "white paper" in resources:
+                insights.append("Research Foundation: System design informed by Google Agents White Papers.")
+            if "skillsboost" in resources:
+                insights.append("Development Strategy: Leveraging Skillsboost Advanced Generative AI training for developers.")
+
         # 0.5 Strategic Risk Assessment
         risks = []
         challenges = knowledge.get("challenges", "").lower()

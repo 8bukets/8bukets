@@ -9,7 +9,7 @@ class KnowledgeAgent(BaseAgent):
     def __init__(self):
         super().__init__("KnowledgeAgent",
                          dependencies=[],
-                         provides=["ai_agents_definitions", "agent_best_practices", "agent_use_cases", "google_cloud_tools_list"])
+                         provides=["ai_agents_definitions", "agent_best_practices", "agent_use_cases", "google_cloud_tools_list", "additional_resources"])
         self.knowledge_file = "ai_agents_knowledge.json"
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
@@ -66,7 +66,8 @@ class KnowledgeAgent(BaseAgent):
                     knowledge.get("enhanced-capabilities", {}).get("content", ""),
                     knowledge.get("social-interaction-and-simulation", {}).get("content", "")
                 ]),
-                "google_cloud_tools": knowledge.get("google-cloud-and-ai-agents", {}).get("content", "")
+                "google_cloud_tools": knowledge.get("google-cloud-and-ai-agents", {}).get("content", ""),
+                "additional_resources": knowledge.get("additional-resources", {}).get("content", "")
             }
 
             use_cases = definitions.get("use_cases", {})
@@ -82,7 +83,7 @@ class KnowledgeAgent(BaseAgent):
                         # Regex to capture the first few words which usually form the tool name
                         # Stops at known description start markers or after 4 words
                         # Updated to handle more markers found in the content
-                        match = re.search(r"^- ([\w\s\(\)-]{1,60}?)(?:\s+(?:Secure platform|Create AI|Build hybrid|Build Google-quality|Curated collection|Open-source|An AI|A fully managed|Provides a|Unified|Single|End-to-end|Speech|Language|Custom|Omnichannel)|$)", line)
+                        match = re.search(r"^- (?:\[.*?\]\s*)?([\w\s\(\)-]{1,60}?)(?:\s+(?:Secure platform|Create AI|Build hybrid|Build Google-quality|Curated collection|Open-source|An AI|A fully managed|Provides a|Unified|Single|End-to-end|Speech|Language|Custom|Omnichannel|Strengthen)|$)", line)
                         if match:
                             tool_name = match.group(1).strip()
                             if tool_name and len(tool_name.split()) <= 6:
@@ -106,6 +107,7 @@ class KnowledgeAgent(BaseAgent):
                 "agent_best_practices": best_practices,
                 "agent_use_cases": use_cases,
                 "google_cloud_tools_list": tools_list,
+                "additional_resources": definitions.get("additional_resources", ""),
                 "react_framework_details": {
                     "features": definitions.get("features", ""),
                     "deployment_strategy": "Orchestrate React components using Next.js for seamless AI integration."
