@@ -1,6 +1,7 @@
 # 🎨 Markposition Analytics Report
 
 **Generated on:** 2026-01-27 08:14:29
+**Generated on:** 2026-02-05 08:30:01
 
 ## Table of Contents
 - [📊 General Statistics](#general-statistics)
@@ -36,6 +37,21 @@
 | Year | Count |
 | :--- | :---: |
 | 2025 | 39 |
+## Top 10 Referenced Domains
+| Domain | Count | Distribution |
+| :--- | :---: | :--- |
+| oracle.com | 39 | ████████████████████ |
+
+## Top 10 Categories
+| Category | Count | Distribution |
+| :--- | :---: | :--- |
+| News | 39 | ████████████████████ |
+| Announcement | 39 | ████████████████████ |
+
+## Posts by Year
+| Year | Count | Distribution |
+| :--- | :---: | :--- |
+| 2025 | 39 | ████████████████████ |
 
 [⬆️ Back to Top](#table-of-contents)
 
