@@ -21,6 +21,13 @@ def get_domain(url):
     except:
         return None
 
+def create_ascii_bar(count, max_count, bar_length=20):
+    if max_count == 0:
+        return "░" * bar_length
+    filled_len = int((count / max_count) * bar_length)
+    empty_len = bar_length - filled_len
+    return "█" * filled_len + "░" * empty_len
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
@@ -103,6 +110,31 @@ def generate_report(data, output_file):
     for year, count in year_counts:
         md.append(f"| {year} | {count} |")
     md.append("\n[Back to Top](#table-of-contents)")
+    # Helper for max counts
+    max_domain_count = domain_counts[0][1] if domain_counts else 0
+    max_category_count = category_counts[0][1] if category_counts else 0
+    max_year_count = max((count for year, count in year_counts), default=0)
+
+    md.append("\n## Top 10 Referenced Domains")
+    md.append("| Domain | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    for domain, count in domain_counts:
+        bar = create_ascii_bar(count, max_domain_count)
+        md.append(f"| {domain} | {count} | {bar} |")
+
+    md.append("\n## Top 10 Categories")
+    md.append("| Category | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    for cat, count in category_counts:
+        bar = create_ascii_bar(count, max_category_count)
+        md.append(f"| {cat} | {count} | {bar} |")
+
+    md.append("\n## Posts by Year")
+    md.append("| Year | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    for year, count in year_counts:
+        bar = create_ascii_bar(count, max_year_count)
+        md.append(f"| {year} | {count} | {bar} |")
 
     md.append("\n## ✍️ Authors <a id='authors'></a>")
     for author, count in author_counts:
