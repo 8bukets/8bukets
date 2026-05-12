@@ -8,7 +8,23 @@
                 "timestamp": "2026-05-12T08:27:29.304687",
                 "event": "episodic_event",
                 "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-12T08:41:20.774730",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-12T08:45:57.697986",
+                "event": "episodic_event",
+                "data": "episodic_data"
             }
         ]
+    },
+    "TargetingAgent": {
+        "last_primary_persona": "AdTech Professional",
+        "long_term": {
+            "new_key": "new_val"
+        }
     }
 }
