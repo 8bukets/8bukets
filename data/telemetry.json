@@ -3567,7 +3567,7 @@
         }
     },
     {
-        "timestamp": 1778569245.813328,
+        "timestamp": 1778572386.5653338,
         "agent": "ResearchAgent",
         "event_type": "EXTERNAL_INVESTIGATION",
         "market_data_ref": "GOOGLE_WORLD",
@@ -3578,7 +3578,18 @@
         }
     },
     {
-        "timestamp": 1778569318.6378078,
+        "timestamp": 1778572558.6941724,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
+    },
+    {
+        "timestamp": 1778572600.826001,
         "agent": "ResearchAgent",
         "event_type": "EXTERNAL_INVESTIGATION",
         "market_data_ref": "GOOGLE_WORLD",
