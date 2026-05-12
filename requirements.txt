@@ -1,0 +1,14 @@
+aiohttp
+beautifulsoup4
+requests
+pytest
+pytest-asyncio
+filelock
+motor
+pymongo
+aiomysql
+cryptography
+python-dotenv
+vercel
+opentelemetry-api
+opentelemetry-sdk
