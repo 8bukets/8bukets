@@ -4,7 +4,9 @@ import argparse
 import subprocess
 import logging
 import time
+import asyncio
 from datetime import datetime
+from oracle_ai_scraper import OracleAIScraper
 from agents.analysis_agent import AnalysisAgent
 from agents.research_agent import ResearchAgent
 from agents.intelligence_agent import IntelligenceAgent
@@ -65,7 +67,8 @@ def run_pipeline(skip_scrape=False):
         subprocess.run(["python3", "scraper.py"], check=True)
 
         logger.info("Starting Oracle AI Scraper...")
-        subprocess.run(["python3", "oracle_ai_scraper.py"], check=True)
+        scraper = OracleAIScraper(output_json="oracle_ai_docs.json", output_md="oracle_ai_docs.md")
+        asyncio.run(scraper.scrape())
     else:
         logger.info("Skipping scrape...")
 
