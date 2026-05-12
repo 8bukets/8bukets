@@ -32,6 +32,16 @@ class BlogScraper:
         self.conn = None
         self.init_db()
 
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.close()
+
+    def close(self):
+        if self.conn:
+            self.conn.close()
+            self.conn = None
     def is_safe_url(self, url):
         """
         Validate URL to prevent SSRF and ensures it's an HTTP/HTTPS scheme.
@@ -69,41 +79,47 @@ class BlogScraper:
     def init_db(self):
         """Initialize the SQLite database."""
         try:
-            with sqlite3.connect(self.db_name) as conn:
-                cursor = conn.cursor()
-                # Posts table
-                cursor.execute('''
-                    CREATE TABLE IF NOT EXISTS posts (
-                        id INTEGER PRIMARY KEY AUTOINCREMENT,
-                        title TEXT,
-                        post_url TEXT UNIQUE,
-                        external_link TEXT,
-                        date_str TEXT,
-                        datetime_iso TEXT,
-                        author TEXT,
-                        categories TEXT,
-                        scraped_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-                    )
-                ''')
+            self.conn = sqlite3.connect(self.db_name)
+            cursor = self.conn.cursor()
+            # Posts table
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS posts (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    title TEXT,
+                    post_url TEXT UNIQUE,
+                    external_link TEXT,
+                    date_str TEXT,
+                    datetime_iso TEXT,
+                    author TEXT,
+                    categories TEXT,
+                    scraped_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )
+            ''')
 
-                # Changes table for tracking updates
-                cursor.execute('''
-                    CREATE TABLE IF NOT EXISTS changes (
-                        id INTEGER PRIMARY KEY AUTOINCREMENT,
-                        post_id INTEGER,
-                        field TEXT,
-                        old_value TEXT,
-                        new_value TEXT,
-                        changed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                        FOREIGN KEY(post_id) REFERENCES posts(id)
-                    )
-                ''')
-                conn.commit()
+            # Changes table for tracking updates
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS changes (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    post_id INTEGER,
+                    field TEXT,
+                    old_value TEXT,
+                    new_value TEXT,
+                    changed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY(post_id) REFERENCES posts(id)
+                )
+            ''')
+            self.conn.commit()
         except sqlite3.Error as e:
             logger.error(f"Database initialization error: {e}")
 
     def save_to_db(self, item):
         """Save a single item to the database, handling updates."""
+        if not self.conn:
+            logger.error("Database connection is not initialized.")
+            return False
+
+        try:
+            cursor = self.conn.cursor()
         close_conn = False
         if self.conn:
             conn = self.conn
@@ -143,6 +159,7 @@ class BlogScraper:
                 if updated:
                     # Update scraped_at to reflect latest check
                     cursor.execute("UPDATE posts SET scraped_at = CURRENT_TIMESTAMP WHERE id = ?", (post_id,))
+                    self.conn.commit()
                     conn.commit()
                     return False # Not a "new" post, but an updated one
 
@@ -160,11 +177,14 @@ class BlogScraper:
                     item.get('author'),
                     json.dumps(item.get('categories'))
                 ))
+                self.conn.commit()
                 conn.commit()
                 return True # New post
 
         except sqlite3.Error as e:
             logger.error(f"Database insertion/update error: {e}")
+            if self.conn:
+                self.conn.rollback()
             conn.rollback()
             return False
         finally:
@@ -307,8 +327,8 @@ def main():
 
     args = parser.parse_args()
 
-    scraper = BlogScraper(args.url, args.json, args.db)
-    scraper.run()
+    with BlogScraper(args.url, args.json, args.db) as scraper:
+        scraper.run()
 
 if __name__ == "__main__":
     main()
