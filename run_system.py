@@ -20,6 +20,7 @@ from agents.bidding_agent import BiddingAgent
 from agents.innovation_agent import InnovationAgent
 from agents.developer_agent import DeveloperAgent
 from agents.jules_orchestrator_agent import JulesIntelligenceAgent
+from agents.oracle_ai_agent import OracleAIAgent
 from agents.memory_system import MemorySystem
 
 # Configure logging
@@ -62,6 +63,7 @@ def run_pipeline(skip_scrape=False):
     if not skip_scrape:
         logger.info("Starting Scraper...")
         subprocess.run(["python3", "scraper.py"], check=True)
+
         logger.info("Starting Oracle AI Scraper...")
         subprocess.run(["python3", "oracle_ai_scraper.py"], check=True)
     else:
@@ -97,6 +99,7 @@ def run_pipeline(skip_scrape=False):
     innovation_agent = InnovationAgent()
     developer_agent = DeveloperAgent()
     jules_agent = JulesIntelligenceAgent()
+    oracle_ai_agent = OracleAIAgent()
 
     # 4. Pipeline Execution
     logger.info("Starting Agent Pipeline...")
@@ -148,6 +151,10 @@ def run_pipeline(skip_scrape=False):
     # Creativity
     headlines = creativity_agent.process(analysis_results['common_keywords'])
     save_result("creative_headlines.json", headlines, current_date)
+
+    # Integrate Oracle AI Knowledge
+    oracle_ai_knowledge = oracle_ai_agent.process(memory_system)
+    save_result("oracle_ai_knowledge.json", oracle_ai_knowledge, current_date)
 
     # High-level Synthesis
     summary = ai_agent.process(results_aggregator, memory_system.memory)
