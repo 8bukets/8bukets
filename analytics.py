@@ -21,6 +21,11 @@ def get_domain(url):
     except:
         return None
 
+def create_ascii_bar(count, max_count, length=20):
+    if max_count == 0:
+        return '░' * length
+    filled_length = int(length * count / max_count)
+    return '█' * filled_length + '░' * (length - filled_length)
 def escape_markdown(text):
     """
     Escapes special characters in Markdown to prevent injection (especially in tables).
@@ -99,9 +104,11 @@ def generate_report(data, output_file):
 
     # Domains: top 10 by count
     top_domains = domain_counts.most_common(10)
+    max_domain_count = top_domains[0][1] if top_domains else 0
 
     # Categories: top 10 by count
     top_categories = category_counts.most_common(10)
+    max_category_count = top_categories[0][1] if top_categories else 0
 
     # Dates: range and years sorted by year descending
     if min_date and max_date:
@@ -113,6 +120,8 @@ def generate_report(data, output_file):
         start_date = "N/A"
         end_date = "N/A"
         sorted_years = []
+
+    max_year_count = max([c for y, c in sorted_years]) if sorted_years else 0
 
     # Authors: all by count descending (most_common does this)
     sorted_authors = author_counts.most_common()
@@ -135,6 +144,26 @@ def generate_report(data, output_file):
     md.append(f"- **Unique Domains Linked:** {len(unique_domains)}")
     md.append("\n[Back to Top](#table-of-contents)")
 
+    md.append("\n## Top 10 Referenced Domains")
+    md.append("| Domain | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    for domain, count in top_domains:
+        bar = create_ascii_bar(count, max_domain_count)
+        md.append(f"| {domain} | {count} | {bar} |")
+
+    md.append("\n## Top 10 Categories")
+    md.append("| Category | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    for cat, count in top_categories:
+        bar = create_ascii_bar(count, max_category_count)
+        md.append(f"| {cat} | {count} | {bar} |")
+
+    md.append("\n## Posts by Year")
+    md.append("| Year | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    for year, count in sorted_years:
+        bar = create_ascii_bar(count, max_year_count)
+        md.append(f"| {year} | {count} | {bar} |")
     md.append("\n## 🔗 Top 10 Referenced Domains")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
