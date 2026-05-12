@@ -65,6 +65,15 @@ class GitHubEvolutionAgent(BaseAgent):
                 self.logger.warning("GITHUB_TOKEN not found. Changes committed but not pushed.")
                 vcs_status = "COMMITTED_LOCAL"
 
+            # Dynamic repository state validation before attempting to push
+            # Automatically pull latest changes to prevent push failures when multiple agents are working
+            if token:
+                try:
+                    self.logger.info("Synchronizing with remote to avoid conflicts...")
+                    subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=True)
+                except subprocess.CalledProcessError as pull_e:
+                    self.logger.warning(f"Failed to synchronize with remote: {pull_e}")
+
             return {"vcs_status": vcs_status}
 
         except subprocess.CalledProcessError as e:

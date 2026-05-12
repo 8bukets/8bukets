@@ -56,9 +56,19 @@ def scrape_ai_agents_knowledge():
             elif tag.name in ["p", "li", "table", "pre", "h5", "h6"]:
                 if tag.name == "table":
                     rows = []
-                    for tr in tag.find_all("tr"):
+                    header_count = 0
+                    for k, tr in enumerate(tag.find_all("tr")):
                         cells = [th_td.get_text(separator=" ", strip=True) for th_td in tr.find_all(["th", "td"])]
+                        if not any(cells): continue # Skip empty rows
                         rows.append(" | ".join(cells))
+                        if k == 0 or header_count == 0:
+                            header_count = len(cells)
+
+                    if rows and header_count > 1:
+                        # Add Markdown table separator
+                        separator = " | ".join(["---"] * header_count)
+                        rows.insert(1, separator)
+
                     section_content.append("\n".join(rows))
                 elif tag.name == "pre":
                     section_content.append(f"```\n{tag.get_text(strip=True)}\n```")
@@ -80,6 +90,11 @@ def scrape_ai_agents_knowledge():
                 "title": section_title,
                 "content": "\n\n".join(section_content)
             }
+
+    data["compile-definition"] = {
+        "title": "What does Compile mean?",
+        "content": "To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.\n\n### Key Definitions of Compile\n\n- **Gathering Information**: To collect and put together data, facts, or documents (e.g., to compile a report or compile a list).\n- **Creating Works**: To produce a book, anthology, or database from various materials.\n- **Computing**: To convert high-level programming code (like C++ or Java) into machine code, allowing a computer to execute the program.\n\n### Usage Examples\n\n- \"She is compiling a list of clients for the newsletter.\"\n- \"It took years to compile the dictionary.\"\n- \"The developer needs to compile the code before running the application.\"\n\n### Synonyms\n\nAssemble, Collect, Gather, Compose, Accumulate, Organize, Synthesize\n\n### Contextual Usage\n\n- **General**: Focuses on the act of assembling information or materials (e.g., compile a report).\n- **Computing**: Focuses on the automatic transformation of code using a tool known as a compiler."
+    }
 
     # Save to JSON
     json_path = "ai_agents_knowledge.json"
