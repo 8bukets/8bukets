@@ -12,7 +12,7 @@ export async function POST(req: Request) {
     // If they have a custom provider string setup or if that model exists, we can pass it exactly as string to a custom registry if we had one.
     // Given standard @ai-sdk/google, the model name is passed to the google() provider.
     const result = streamText({
-      model: google('gemini-3.1-flash-lite', { useSearchGrounding: false }),
+      model: google('gemini-1.5-flash-latest'),
       prompt: prompt || 'Why is the sky blue?',
     });
 
@@ -20,7 +20,7 @@ export async function POST(req: Request) {
   } catch (error) {
     // Fallback if the body is empty or no json is provided, default to the sky blue prompt.
     const result = streamText({
-      model: google('gemini-3.1-flash-lite', { useSearchGrounding: false }),
+      model: google('gemini-1.5-flash-latest'),
       prompt: 'Why is the sky blue?',
     });
     return result.toTextStreamResponse();
