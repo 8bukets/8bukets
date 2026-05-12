@@ -2248,7 +2248,6 @@
         }
     },
     {
-        "timestamp": 1777290324.2662444,
         "timestamp": 1777257562.2919207,
         "agent": "ResearchAgent",
         "event_type": "EXTERNAL_INVESTIGATION",
@@ -2260,7 +2259,6 @@
         }
     },
     {
-        "timestamp": 1777290414.4467876,
         "timestamp": 1777257563.3584247,
         "agent": "AnalysisAgent",
         "event_type": "MARKET_DATA_ANALYSIS",
@@ -2271,7 +2269,6 @@
         }
     },
     {
-        "timestamp": 1777290414.523454,
         "timestamp": 1777257563.4333363,
         "agent": "ResearchAgent",
         "event_type": "EXTERNAL_INVESTIGATION",
@@ -2283,7 +2280,6 @@
         }
     },
     {
-        "timestamp": 1777290414.5337608,
         "timestamp": 1777257563.4533918,
         "agent": "ResearchAgent",
         "event_type": "EXTERNAL_INVESTIGATION",
@@ -3260,8 +3256,6 @@
         }
     },
     {
-        "timestamp": 1778342890.0360637,
-        "timestamp": 1778342595.2270305,
         "timestamp": 1778289890.2653039,
         "agent": "ResearchAgent",
         "event_type": "EXTERNAL_INVESTIGATION",
@@ -3273,8 +3267,6 @@
         }
     },
     {
-        "timestamp": 1778525937.5157042,
-        "timestamp": 1778343101.1721125,
         "timestamp": 1778453090.436753,
         "agent": "AnalysisAgent",
         "event_type": "MARKET_DATA_ANALYSIS",
@@ -3446,7 +3438,6 @@
         }
     },
     {
-        "timestamp": 1777290414.547051,
         "timestamp": 1778468294.573067,
         "agent": "ResearchAgent",
         "event_type": "EXTERNAL_INVESTIGATION",
@@ -3479,7 +3470,6 @@
         }
     },
     {
-        "timestamp": 1778517306.9457703,
         "timestamp": 1778514181.8015475,
         "agent": "ResearchAgent",
         "event_type": "EXTERNAL_INVESTIGATION",
@@ -3513,7 +3503,6 @@
         }
     },
     {
-        "timestamp": 1778525952.5701427,
         "timestamp": 1778554220.5259473,
         "agent": "AnalysisAgent",
         "event_type": "MARKET_DATA_ANALYSIS",
@@ -3535,7 +3524,6 @@
         }
     },
     {
-        "timestamp": 1777290414.7631736,
         "timestamp": 1778554220.6423006,
         "agent": "ResearchAgent",
         "event_type": "EXTERNAL_INVESTIGATION",
@@ -3569,7 +3557,6 @@
         }
     },
     {
-        "timestamp": 1777290415.0113144,
         "timestamp": 1778554221.1874332,
         "agent": "AdsAgent",
         "event_type": "AD_STRATEGY_GENERATION",
@@ -3577,6 +3564,39 @@
         "payload": {
             "ad_count": 3,
             "target_persona": "AdTech Professional"
+        }
+    },
+    {
+        "timestamp": 1778572386.5653338,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
+    },
+    {
+        "timestamp": 1778572558.6941724,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
+    },
+    {
+        "timestamp": 1778572600.826001,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
         }
     }
 ]
