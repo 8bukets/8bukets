@@ -162,10 +162,6 @@ export async function getSystemInsights() {
   // Only use cache if we are in a recognized Next.js request context
   const isServerRequest = !!process.env.NEXT_RUNTIME
 
-  if (isServerRequest) {
-    'use cache'
-    cacheLife('inventory')
-  }
   
   const { synthesize } = await import('./synthesis')
   const { getPersistenceHealth } = await import('./services/persistence')
@@ -178,6 +174,11 @@ export async function getSystemInsights() {
   const persistence = await getPersistenceHealth()
   const network = await getNetworkState()
   const relay = await getRelayState()
+
+  const { getMissionMetadata } = await import('./services/collaboration')
+  const { checkDockerHealth } = await import('./services/docker')
+  const collaboration = await getMissionMetadata()
+  const docker = await checkDockerHealth()
 
   const baseInsights = {
     circuitBreakers: {
@@ -196,6 +197,8 @@ export async function getSystemInsights() {
     persistence,
     network,
     relay,
+    collaboration,
+    docker,
     uptime: process.uptime()
   }
 
@@ -228,13 +231,6 @@ export async function autonomousFetch<T>(
   try {
     const data = await fetcher()
     
-    // Phase 12: Safeguard against non-server environments
-    const isServerRequest = !!process.env.NEXT_RUNTIME
-
-    if (isServerRequest) {
-      if (config.tags) config.tags.forEach(tag => cacheTag(tag))
-      if (config.life) cacheLife(config.life as any)
-    }
 
     const result = schema.safeParse(data)
     if (!result.success) {
