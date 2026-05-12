@@ -11,6 +11,7 @@ from urllib3.util.retry import Retry
 from dataclasses import dataclass, asdict
 from typing import List, Optional
 from markdownify import markdownify as md
+from utils import validate_output_path
 
 @dataclass
 class Post:
@@ -175,9 +176,12 @@ def scrape(output_file: str, max_pages: int = 0):
     logging.info(f"Total posts scraped: {len(all_posts)}")
 
     try:
-        with open(output_file, 'w', encoding='utf-8') as f:
+        validated_path = validate_output_path(output_file)
+        with open(validated_path, 'w', encoding='utf-8') as f:
             json.dump([asdict(p) for p in all_posts], f, indent=4, ensure_ascii=False)
-        logging.info(f"Saved to {output_file}")
+        logging.info(f"Saved to {validated_path}")
+    except ValueError as ve:
+        logging.error(str(ve))
     except IOError as e:
         logging.error(f"Failed to save output to {output_file}: {e}")
 

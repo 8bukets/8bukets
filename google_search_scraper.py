@@ -3,6 +3,7 @@ import logging
 import argparse
 from googlesearch import search
 from typing import List, Dict
+from utils import validate_output_path
 
 def configure_logging(verbose: bool):
     level = logging.DEBUG if verbose else logging.INFO
@@ -48,9 +49,12 @@ def main():
     results = perform_google_search(args.query, num_results=args.limit)
 
     try:
-        with open(args.output, 'w', encoding='utf-8') as f:
+        validated_path = validate_output_path(args.output)
+        with open(validated_path, 'w', encoding='utf-8') as f:
             json.dump(results, f, indent=4, ensure_ascii=False)
-        logging.info(f"Saved results to {args.output}")
+        logging.info(f"Saved results to {validated_path}")
+    except ValueError as ve:
+        logging.error(str(ve))
     except IOError as e:
         logging.error(f"Failed to save output to {args.output}: {e}")
 
