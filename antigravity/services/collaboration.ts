@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { z } from 'zod'
 import { autonomousFetch } from '@/antigravity/core'
+import { checkDockerHealth } from './docker'
 
 /**
  * ANTIGRAVITY COLLABORATION SERVICE (Phase 9)
@@ -77,4 +78,32 @@ export async function exportEcosystemMetadata() {
     systemId: 'antigravity-alpha-01',
     timestamp: new Date().toISOString()
   }
+}
+
+export async function syncCollaborationState() {
+  console.log('🔄 [Collaboration] Synchronizing autonomous state...')
+  const metadata = await getMissionMetadata()
+  const dockerHealth = await checkDockerHealth()
+  const statePath = path.join(process.cwd(), 'autonomous_state.json')
+
+  let currentState: any = {}
+  if (fs.existsSync(statePath)) {
+    try {
+      currentState = JSON.parse(fs.readFileSync(statePath, 'utf8'))
+    } catch (e) {
+      console.warn('⚠️ [Collaboration] Failed to parse autonomous_state.json, starting fresh.')
+    }
+  }
+
+  const newState = {
+    ...currentState,
+    mission: metadata.missionStatement,
+    stakeholders: metadata.stakeholders,
+    docker: dockerHealth,
+    last_sync: new Date().toISOString()
+  }
+
+  fs.writeFileSync(statePath, JSON.stringify(newState, null, 4))
+  console.log('✅ [Collaboration] Autonomous state synchronized successfully.')
+  return newState
 }
