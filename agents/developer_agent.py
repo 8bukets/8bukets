@@ -12,7 +12,36 @@ class DeveloperAgent(BaseAgent):
         findings = str(research_results)
         code_block = ""
 
-        if "Google Cloud" in findings or "Google" in findings:
+        if "AI" in findings:
+            code_block = """
+```python
+# Python: Invoke Oracle Cloud Infrastructure (OCI) AI Services (Simulated)
+import oci
+import os
+
+config = oci.config.from_file()
+ai_client = oci.ai_language.AIServiceLanguageClient(config)
+
+text_document = oci.ai_language.models.TextDocument(
+    key="1",
+    text="Oracle AI offers state-of-the-art generative AI and machine learning capabilities.",
+    language_code="en"
+)
+
+# Detect sentiment using OCI AI Language service
+detect_language_details = oci.ai_language.models.DetectLanguageSentimentsDetails(
+    documents=[text_document]
+)
+
+try:
+    response = ai_client.detect_language_sentiments(detect_language_details)
+    for doc in response.data.documents:
+        print(f"Sentiment for document {doc.key}: {doc.document_sentiment}")
+except Exception as e:
+    print(f"Error calling OCI AI Services: {e}")
+```
+"""
+        elif "Google Cloud" in findings or "Google" in findings:
             code_block = """
 ```hcl
 # Terraform: Deploy Oracle Database on Google Cloud (Simulated)
