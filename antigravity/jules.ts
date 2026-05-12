@@ -69,6 +69,7 @@ export class Jules {
     await this.selfRepair()
 
     const tasks = [
+      { name: 'Consolidated Knowledge Observation', action: () => this.observeKnowledge() },
       { name: 'Core Integrity Check', action: () => this.recordTask('Integrity scan passed.') },
       { name: 'Security Sovereignty Audit', action: () => this.recordTask('Cognitive security scan complete.') },
       { name: 'Cache Volatility Audit', action: () => this.recordTask('Cache profiles optimized.') },
@@ -133,10 +134,32 @@ export class Jules {
     }
   }
 
+  public async startConsciousnessLoop() {
+    console.log('👁️ [Jules] Initiating Continuous Consciousness Loop...');
+    
+    // Phase 16: Real-time surveillance
+    import('./explorer').then(({ watchSystem }) => {
+      if (typeof watchSystem === 'function') watchSystem();
+    }).catch(err => console.error('❌ [Jules] Watchdog initiation failed:', err));
+
+    while (true) {
+      try {
+        await this.executeWorkCycle();
+        const delay = 60 * 60 * 1000; // 1 hour between full cycles
+        console.log(`💤 [Jules] Cycle complete. Next autonomous pulse in 1h...`);
+        await new Promise(resolve => setTimeout(resolve, delay));
+      } catch (err) {
+        console.error('💥 [Jules] Loop error, restarting in 60s...', err);
+        await new Promise(resolve => setTimeout(resolve, 60000));
+      }
+    }
+  }
+
   public async executeWorkCycle() {
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
     const { explore } = await import('./explorer')
     await explore()
+    await this.observeKnowledge()
     await this.selfRepair()
     // 3. Ideate (Synthesis)
     const { synthesize } = await import('./synthesis')
@@ -177,6 +200,27 @@ export class Jules {
     this.memory.lastOptimization = new Date().toISOString()
     this.save()
     console.log('🏆 [Jules] Autonomous Work Cycle Complete.')
+  }
+
+  public async observeKnowledge() {
+    console.log('🧠 [Jules] Observing new knowledge foundations...')
+    const { KnowledgeObserver } = await import('./services/knowledge_observer')
+    const observer = new KnowledgeObserver()
+
+    // In a real scenario, we might scan a 'drops' or 'incoming' folder
+    const incomingDir = path.join(process.cwd(), 'scratch')
+    if (fs.existsSync(incomingDir)) {
+      const files = fs.readdirSync(incomingDir).filter(f => f.endsWith('_docs.md'))
+      for (const file of files) {
+        const fullPath = path.join(incomingDir, file)
+        const content = fs.readFileSync(fullPath, 'utf8')
+        const title = file.replace('_docs.md', '').split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') + ' Documentation'
+
+        const knowledge = KnowledgeObserver.processContent(title, content, `local://${file}`)
+        await observer.persistKnowledge(knowledge)
+        this.recordTask(`Knowledge Observation: Ingested ${title}`)
+      }
+    }
   }
 }
 
