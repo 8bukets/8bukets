@@ -22,6 +22,7 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
+    CLEAN_TEXT_REGEX = re.compile(r'\s+')
     # Pre-compile regex patterns for performance
     WHITESPACE_REGEX = re.compile(r'\s+')
     URL_REGEX = re.compile(r'^https?://')
@@ -47,6 +48,10 @@ class MarkPositionScraperAsync:
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
+        return self.CLEAN_TEXT_REGEX.sub(' ', text).strip()
+
+    def is_url(self, text: str) -> bool:
+        """Check if text looks like a URL."""
         # Use pre-compiled regex
         return self.WHITESPACE_REGEX.sub(' ', text).strip()
 
