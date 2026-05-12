@@ -26,6 +26,20 @@ def create_ascii_bar(count, max_count, length=20):
         return '░' * length
     filled_length = int(length * count / max_count)
     return '█' * filled_length + '░' * (length - filled_length)
+def escape_markdown(text):
+    """
+    Escapes special characters in Markdown to prevent injection (especially in tables).
+    """
+    if text is None:
+        return ""
+    text = str(text)
+    # Escape pipe for tables
+    text = text.replace('|', '\\|')
+    # Prevent HTML injection
+    text = text.replace('<', '&lt;').replace('>', '&gt;')
+    # Prevent link injection
+    text = text.replace('[', '\\[').replace(']', '\\]')
+    return text
 
 def generate_report(data, output_file):
     total_posts = len(data)
@@ -46,7 +60,12 @@ def generate_report(data, output_file):
         # 1. Domain Analysis
         external_link = p.get('external_link')
         if external_link:
-            domain = get_domain(external_link)
+            # Optimization: Use pre-computed domain from data if available to avoid expensive URL parsing
+            if 'domain' in p:
+                domain = p['domain']
+            else:
+                domain = get_domain(external_link)
+
             # Match original behavior: include None if get_domain returns it
             # Original: domains = [get_domain(...) for ... if external_link]
             # Counter(domains)
@@ -112,10 +131,18 @@ def generate_report(data, output_file):
     md.append("# Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
+    md.append("\n## Table of Contents")
+    md.append("- [📊 General Statistics](#general-statistics)")
+    md.append("- [🔗 Top 10 Referenced Domains](#top-10-referenced-domains)")
+    md.append("- [📂 Top 10 Categories](#top-10-categories)")
+    md.append("- [📅 Posts by Year](#posts-by-year)")
+    md.append("- [✍️ Authors](#authors)")
+
+    md.append("\n## 📊 General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(unique_domains)}")
+    md.append("\n[Back to Top](#table-of-contents)")
 
     md.append("\n## Top 10 Referenced Domains")
     md.append("| Domain | Count | Distribution |")
@@ -137,13 +164,37 @@ def generate_report(data, output_file):
     for year, count in sorted_years:
         bar = create_ascii_bar(count, max_year_count)
         md.append(f"| {year} | {count} | {bar} |")
+    md.append("\n## 🔗 Top 10 Referenced Domains")
+    md.append("| Domain | Count |")
+    md.append("| :--- | :---: |")
+    for domain, count in top_domains:
+        md.append(f"| {domain} | {count} |")
+    md.append("\n[Back to Top](#table-of-contents)")
+        md.append(f"| {escape_markdown(domain)} | {count} |")
 
-    md.append("\n## Authors")
+    md.append("\n## 📂 Top 10 Categories")
+    md.append("| Category | Count |")
+    md.append("| :--- | :---: |")
+    for cat, count in top_categories:
+        md.append(f"| {cat} | {count} |")
+    md.append("\n[Back to Top](#table-of-contents)")
+        md.append(f"| {escape_markdown(cat)} | {count} |")
+
+    md.append("\n## 📅 Posts by Year")
+    md.append("| Year | Count |")
+    md.append("| :--- | :---: |")
+    for year, count in sorted_years:
+        md.append(f"| {year} | {count} |")
+    md.append("\n[Back to Top](#table-of-contents)")
+
+    md.append("\n## ✍️ Authors")
     for author, count in sorted_authors:
         md.append(f"- {author}: {count} posts")
+    md.append("\n[Back to Top](#table-of-contents)")
+        md.append(f"- {escape_markdown(author)}: {count} posts")
 
     with open(output_file, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(md))
+        f.write('\n'.join(md) + '\n')
 
     print(f"Report generated: {output_file}")
 
