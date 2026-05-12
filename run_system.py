@@ -40,6 +40,7 @@ from agents.mysql_agent import MySQLAgent
 from agents.system_audit_agent import SystemAuditAgent
 from agents.documentation_agent import DocumentationAgent
 from agents.performance_optimization_agent import PerformanceOptimizationAgent
+from agents.rag_agent import RagAgent
 from agents.knowledge_agent import KnowledgeAgent
 from agents.intelephense_agent import IntelephenseAgent
 from agents.sandbox_agent import SandboxAgent
@@ -184,6 +185,15 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
 
     # 1. Base Intelligence (22 Agents)
     agents = [
+        HealthCheckAgent(), RobotTxtAgent(), AnalysisAgent(),
+        ResearchAgent(), IntelligenceAgent(), TargetingAgent(),
+        CreativityAgent(), AdsAgent(), BidAgent(),
+        MonetizationAgent(), ContentAgent(), AutonomousIntelligenceAgent(),
+        TelemetryAgent(), SixSigmaAgent(), ArchitectAgent(),
+        MetaCodingAgent(), JulesEvolutionAgent(), GitKrakenEvolutionAgent(),
+        DockerEvolutionAgent(), GitHubEvolutionAgent(), CollaborationAgent(),
+        MongoDBAgent(), MySQLAgent(), PerformanceOptimizationAgent(),
+        SystemAuditAgent(), DocumentationAgent(), RagAgent()
         HealthCheckAgent(), RobotTxtAgent(), KnowledgeAgent(),
         AnalysisAgent(), ResearchAgent(), IntelligenceAgent(), ReActAgent(),
         TargetingAgent(), CreativityAgent(), AdsAgent(),
