@@ -40,11 +40,14 @@ class ReActAgent(BaseAgent):
             action_log.append("CONTINUE_MONITORING")
 
         deployment_config = {}
-        if "DEPLOY_FOCUSED_AD_CAMPAIGN" in action_log:
+        if "DEPLOY_FOCUSED_AD_CAMPAIGN" in action_log or "OPTIMIZE_WORKFLOW_DECISION_MAKING" in action_log:
+            reasoning_log.append("Reasoning: Specific actions determined, configuring React Agent deployment.")
             deployment_config = {
                 "agent_type": "ReactAgent",
-                "framework": "Next.js",
+                "frontend_framework": "Next.js",
+                "backend_framework": "Node.js",
                 "deployment_target": "Cloud Run",
+                "orchestration_mode": "SYNCHRONIZED",
                 "status": "READY_FOR_DEPLOYMENT"
             }
 
