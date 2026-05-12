@@ -75,17 +75,37 @@ export class Jules {
       { name: 'Dependency Autopilot', action: () => this.auditDependencies() },
       { name: 'GitKraken Sync Prep', action: () => this.recordTask('Visual branch history cleaned.') },
       { name: 'Edge Function Audit', action: () => this.recordTask('Edge function hello-world prepared for deployment.') },
-      { name: 'Supabase Connectivity Refresh', action: () => this.recordTask('Supabase pooling verified.') }
+      { name: 'Supabase Connectivity Refresh', action: () => this.recordTask('Supabase pooling verified.') },
+      { name: 'Collaboration Sync', action: () => this.syncCollaboration() },
+      { name: 'Docker Sovereignty Audit', action: () => this.auditDocker() }
     ]
 
     for (const task of tasks) {
       console.log(` - Executing: ${task.name}...`)
-      task.action()
+      await task.action()
     }
 
     this.memory.lastOptimization = new Date().toISOString()
     this.save()
     console.log('✅ [Jules] Daily Routine Completed.')
+  }
+
+  public async syncCollaboration() {
+    console.log('🤝 [Jules] Synchronizing collaboration context...')
+    const { exportCollaborationContext } = await import('./services/collaboration')
+    await exportCollaborationContext()
+    this.recordTask('Collaboration Sync: Exported system context and stakeholder data.')
+  }
+
+  public async auditDocker() {
+    console.log('🐳 [Jules] Auditing Docker sovereignty...')
+    const { getDockerStatus } = await import('./services/docker')
+    const containers = await getDockerStatus()
+    if (containers.length > 0) {
+      this.recordTask(`Docker Sovereignty: Found ${containers.length} active containers. Connectivity verified.`)
+    } else {
+      this.recordTask('Docker Sovereignty: No active containers found or Docker daemon unreachable.')
+    }
   }
 
   public async selfRepair() {
@@ -182,10 +202,121 @@ export class Jules {
       this.recordTask(`Super-Intelligence: Generated ${refactors.length} predictive refactors.`)
     }
 
+    // ReAct Protocol Integration
+    const { reactService } = await import('./services/react')
+    const reactTools = {
+      checkSystemState: async () => JSON.stringify(await import('./core').then(c => c.healthCheck())),
+      findOptimizations: async () => JSON.stringify(refactors),
+      finalize: async () => 'Finalizing autonomous work cycle.'
+    }
+    const reactSteps = await reactService.executeCycle('Optimize system posture using ReAct', reactTools)
+    this.recordTask(`ReAct: Completed ${reactSteps.length} reasoning-action steps.`)
+
+    // Knowledge Observation
+    console.log('👁️ [Jules] Initiating Knowledge Observation...')
+    const { observeKnowledge, persistKnowledge } = await import('./services/knowledge_observer')
+    const knowledgeInsights = await observeKnowledge('https://software-online-review.com')
+    if (knowledgeInsights) {
+      this.recordTask(`Knowledge Observation: Extracted ${knowledgeInsights.topKeywords.length} concepts from ${knowledgeInsights.source}`)
+      persistKnowledge(knowledgeInsights)
+    }
+
+    // GitHub Docs Observation
+    console.log('👁️ [Jules] Scanning GitHub Docs...')
+    const { observeGithubDocs } = await import('./services/github_docs_observer')
+    const githubInsights = await observeGithubDocs('bmewburn/intelephense-docs', ['installation.md', 'configuration.md'])
+    if (githubInsights.length > 0) {
+      this.recordTask(`GitHub Docs: Observed ${githubInsights.length} files from Intelephense docs.`)
+    }
+
+    await this.syncCollaboration()
+    await this.generateConsolidatedReport()
+
     await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
     this.memory.lastOptimization = new Date().toISOString()
     this.save()
     console.log('🏆 [Jules] Autonomous Work Cycle Complete.')
+  }
+
+  public async generateConsolidatedReport() {
+    console.log('📊 [Jules] Generating Consolidated Intelligence Report...')
+    const reportPath = path.join(process.cwd(), 'CONSOLIDATED_INTELLIGENCE.md')
+
+    let insights: any
+    try {
+      const { getSystemInsights } = await import('./core')
+      insights = await getSystemInsights()
+    } catch (e) {
+      console.warn('⚠️ [Jules] Partial intelligence gathering failed. Falling back to basic reporting.')
+      insights = { uptime: process.uptime(), circuitBreakers: { mongodb: 'unknown', supabase: 'unknown' }, security: { score: 0 }, ideas: [], proposals: [], caching: { registrySize: 0 } }
+    }
+
+    let report = `# Antigravity Consolidated Intelligence Report\n\n`
+    report += `**Generated At:** ${new Date().toISOString()}\n`
+    report += `**Uptime:** ${Math.floor(insights.uptime)}s\n\n`
+
+    report += `## 🛡️ System Sovereignty\n`
+    report += `- **MongoDB:** ${insights.circuitBreakers.mongodb}\n`
+    report += `- **Supabase:** ${insights.circuitBreakers.supabase}\n`
+    report += `- **Security Audit:** ${insights.security.status} (${insights.security.issuesFound} issues)\n\n`
+
+    report += `## 🧠 Cognitive State\n`
+    report += `- **Architectural Proposals:** ${insights.ideas.length}\n`
+    report += `- **Predictive Refactors:** ${insights.proposals.length}\n`
+    report += `- **Active Caching Profiles:** ${insights.caching.registrySize}\n\n`
+
+    report += `## 🤝 Collaboration & Stakeholders\n`
+    if (fs.existsSync(path.join(process.cwd(), 'autonomous_state.json'))) {
+      const state = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'autonomous_state.json'), 'utf8'))
+      state.stakeholders.forEach((s: any) => {
+        report += `- **${s.name}** (${s.role}) <${s.email}>\n`
+      })
+    } else {
+      report += `_No collaboration state found._\n`
+    }
+
+    report += `\n`
+    report += await this.scanAllBranches()
+
+    report += `\n## 📜 Recent Autonomous Tasks\n`
+    this.memory.autonomousTasks.slice(-10).reverse().forEach(task => {
+      report += `- ${task.goal}\n`
+    })
+
+    fs.writeFileSync(reportPath, report)
+    console.log(`✅ [Jules] Report generated at ${reportPath}`)
+    this.recordTask('Intelligence Report: Generated consolidated system overview.')
+  }
+
+  public async scanAllBranches() {
+    console.log('🌿 [Jules] Scanning all project branches for knowledge...')
+    const { execSync } = await import('child_process')
+    try {
+      const branchInfo = execSync('git branch -a --list').toString().trim()
+      const branches = branchInfo.split('\n').map(b => b.trim())
+
+      let summary = `## 🌿 Branch Intelligence\n`
+      summary += `Found ${branches.length} branches in the repository.\n\n`
+
+      branches.slice(0, 10).forEach(branch => {
+        try {
+          const lastCommit = execSync(`git log -1 --format="%s (%ar)" ${branch.replace('* ', '')}`).toString().trim()
+          summary += `- **${branch}**: ${lastCommit}\n`
+        } catch (e) {
+          summary += `- **${branch}**: _Summary unavailable_\n`
+        }
+      })
+
+      if (branches.length > 10) {
+        summary += `\n_...and ${branches.length - 10} more branches._\n`
+      }
+
+      this.recordTask(`Branch Scan: Analyzed ${branches.length} branches for cross-project context.`)
+      return summary
+    } catch (e) {
+      console.warn('⚠️ [Jules] Branch scan failed.')
+      return '## 🌿 Branch Intelligence\n_Branch scan failed or Git not available._\n'
+    }
   }
 }
 

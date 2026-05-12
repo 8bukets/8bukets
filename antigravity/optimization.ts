@@ -12,13 +12,15 @@ export interface PredictiveRefactor {
   impactScore: number
 }
 
-export async function optimize(): Promise<PredictiveRefactor[]> {
+export async function optimize(data?: { registrySize: number, ideasCount: number }): Promise<PredictiveRefactor[]> {
   console.log('🧠 [Super-Intelligence] Initiating infinite self-optimization scan...')
-  const insights = await getSystemInsights()
+
+  const registrySize = data?.registrySize ?? 0
+  const ideasCount = data?.ideasCount ?? 0
   const refactors: PredictiveRefactor[] = []
 
   // Vector 1: Performance Optimization (Cross-referencing Volatility and Caching)
-  if (insights.caching.registrySize > 10) {
+  if (registrySize > 10) {
     refactors.push({
       id: 'P-101',
       vector: 'performance',
@@ -28,7 +30,7 @@ export async function optimize(): Promise<PredictiveRefactor[]> {
   }
 
   // Vector 2: Architectural Purity
-  if (insights.ideas.length > 5) {
+  if (ideasCount > 5) {
     refactors.push({
       id: 'A-202',
       vector: 'architecture',

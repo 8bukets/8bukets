@@ -1,7 +1,32 @@
 {
-    "last_run": "2026-04-21T04:11:18.721165+00:00",
-    "next_run": "2026-04-22T04:11:18.721165+00:00",
-    "status": "IDLE",
-    "last_success": true,
-    "last_checked": "2026-04-20T04:11:00.204744+00:00"
+  "last_run": "2026-04-21T04:11:18.721165+00:00",
+  "next_run": "2026-04-22T04:11:18.721165+00:00",
+  "status": "IDLE",
+  "stakeholders": [
+    {
+      "name": "Filip Keser",
+      "role": "Founder",
+      "email": "filip@example.com"
+    },
+    {
+      "name": "Jules",
+      "role": "Lead Architect",
+      "email": "jules@antigravity.ai"
+    },
+    {
+      "name": "Sigma Bot",
+      "role": "Operations",
+      "email": "sigma@antigravity.ai"
+    }
+  ],
+  "systemMetadata": {
+    "version": "0.1.0",
+    "environment": "development",
+    "uptime": 22.919452538
+  },
+  "sigmaStatus": {
+    "mongodb": "error",
+    "supabase": "connected",
+    "timestamp": "2026-05-12T15:19:06.282Z"
+  }
 }

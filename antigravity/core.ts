@@ -178,8 +178,11 @@ export async function getSystemInsights() {
   const persistence = await getPersistenceHealth()
   const network = await getNetworkState()
   const relay = await getRelayState()
-  const proposals = await optimize()
   const security = await runSecurityAudit()
+  const proposals = await optimize({
+    registrySize: volatilityRegistry.size,
+    ideasCount: ideas.length
+  })
 
   return {
     circuitBreakers: {
