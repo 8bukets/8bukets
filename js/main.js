@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (searchInput && articleList) {
         const performSearch = (e) => {
+        const handleSearch = (e) => {
             const term = e.target.value.toLowerCase();
             const articles = articleList.getElementsByTagName('article');
 
@@ -65,6 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Debounce search input to improve performance
         const debouncedSearch = debounce(performSearch, 300);
         searchInput.addEventListener('input', debouncedSearch);
+        // Debounce the search input to improve performance
+        searchInput.addEventListener('input', debounce(handleSearch, 300));
     }
 
     // Contact Form Validation
@@ -135,6 +138,12 @@ function filterByCategory(category) {
 }
 
 // Utility function to debounce high-frequency events
+/**
+ * Debounce function to limit the rate at which a function can fire.
+ * @param {Function} func - The function to debounce.
+ * @param {number} wait - The delay in milliseconds.
+ * @returns {Function} - The debounced function.
+ */
 function debounce(func, wait) {
     let timeout;
     return function(...args) {
