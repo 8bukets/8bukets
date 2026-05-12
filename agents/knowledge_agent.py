@@ -44,6 +44,7 @@ class KnowledgeAgent(BaseAgent):
                 "agent_count_types": knowledge.get("based-on-number-of-agents", {}).get("content", ""),
                 "types": knowledge.get("based-on-interaction", {}).get("content", "") + "\n" + knowledge.get("based-on-number-of-agents", {}).get("content", ""),
                 "challenges": knowledge.get("challenges-with-using-ai-agents", {}).get("content", ""),
+                "jules_tools": knowledge.get("jules-tools", {}).get("content", ""),
                 "deployment": knowledge.get("deploy-ai-agents-for-scale-and-efficiency-with-cloud-run", {}).get("content", ""),
                 "how_they_work": how_they_work,
                 "persona_definition": extract_bullet(how_they_work, "Persona"),
@@ -88,6 +89,7 @@ class KnowledgeAgent(BaseAgent):
                                 tools_list.append(tool_name)
 
             best_practices = [
+                "Use Jules Tools CLI for terminal-based session management and TUI dashboard.",
                 "Focus on reasoning, acting, observing, and planning.",
                 "Implement self-refining capabilities for continuous improvement.",
                 "Ensure robust memory management (short-term, long-term, episodic, consensus).",
@@ -95,7 +97,8 @@ class KnowledgeAgent(BaseAgent):
                 "Maintain a consistent persona (role, personality, communication style) appropriate to the assigned role.",
                 "Leverage serverless platforms like Cloud Run for scalable and cost-effective deployment.",
                 "Design specialized agents for specific domains like Code, Security, or Data.",
-                "Distinguish between AI Agents (autonomous), AI Assistants (collaborative), and Bots (rule-based)."
+                "Distinguish between AI Agents (autonomous), AI Assistants (collaborative), and Bots (rule-based).",
+                "Orchestrate React agents dynamically through Next.js for robust frontend deployments."
             ]
 
             return {
@@ -103,7 +106,10 @@ class KnowledgeAgent(BaseAgent):
                 "agent_best_practices": best_practices,
                 "agent_use_cases": use_cases,
                 "google_cloud_tools_list": tools_list,
-                "react_framework_details": {"features": definitions.get("features", "")},
+                "react_framework_details": {
+                    "features": definitions.get("features", ""),
+                    "deployment_strategy": "Orchestrate React components using Next.js for seamless AI integration."
+                },
                 "agent_taxonomy": {
                     "interactive_partners": "Assisting with tasks like customer service via direct conversation.",
                     "background_processes": "Automating routine tasks and optimizing processes behind the scenes."

@@ -1,3 +1,4 @@
+import subprocess
 from .base_agent import BaseAgent, Blackboard
 
 class GitKrakenEvolutionAgent(BaseAgent):
@@ -14,11 +15,28 @@ class GitKrakenEvolutionAgent(BaseAgent):
 
         self.logger.info("Optimizing repository for GitKraken professional visualization...")
 
-        # Simulated visualization improvements
+        branch_count = 1
+        commit_count = 1
+
+        try:
+            branches = subprocess.run(["git", "branch", "-r"], capture_output=True, text=True).stdout.strip().split('\n')
+            branch_count = max(1, len([b for b in branches if b]))
+
+            commits = subprocess.run(["git", "rev-list", "--all", "--count"], capture_output=True, text=True).stdout.strip()
+            if commits.isdigit():
+                commit_count = int(commits)
+        except Exception as e:
+            self.logger.warning(f"Could not retrieve dynamic git metrics: {e}")
+
+        graph_depth = "EXTENDED" if commit_count > 10 else "STANDARD"
+        kraken_compatibility_score = min(0.99, 0.8 + (0.05 * branch_count))
+
         visualization_data = {
-            "graph_depth": "EXTENDED",
+            "graph_depth": graph_depth,
             "commit_clustering": "SEMANTIC",
-            "kraken_compatibility_score": 0.98
+            "kraken_compatibility_score": kraken_compatibility_score,
+            "branches": branch_count,
+            "commits": commit_count
         }
 
         # The agent 'prepares' metadata for the final commit

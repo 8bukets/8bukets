@@ -204,3 +204,44 @@ To provide seamless coding assistance, AI agents like the Gemini CLI can integra
 
 - **VS Code Companion Extension**: Provides direct workspace access in VS Code compatible IDEs, reading open files, cursor context, and selections. Supports native diff viewing and auto-applying suggested code modifications.
 - **Agent Client Protocol (ACP)**: An open protocol enabling interoperability between AI coding agents and diverse IDEs. It relies on the ACP Agent Registry for distribution, making an ACP-compliant agent available directly within supporting tools like JetBrains and Zed.
+## Compile
+
+To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.
+
+### Key Definitions of Compile
+
+- **Gathering Information**: To collect and put together data, facts, or documents (e.g., to compile a report or compile a list).
+- **Creating Works**: To produce a book, anthology, or database from various materials.
+- **Computing**: To convert high-level programming code (like C++ or Java) into machine code, allowing a computer to execute the program.
+
+### Usage Examples
+
+- "She is compiling a list of clients for the newsletter."
+- "It took years to compile the dictionary."
+- "The developer needs to compile the code before running the application."
+
+### Synonyms
+
+- Assemble
+- Collect
+- Gather
+- Compose
+- Accumulate
+- Organize
+- Synthesize
+
+### Contextual Usage
+
+- **General**: Focuses on the act of assembling information or materials (e.g., compile a report).
+- **Computing**: Focuses on the automatic transformation of code using a tool known as a compiler.
+
+## Jules Tools
+
+Jules Tools is a lightweight command-line interface (CLI) for interacting with Jules, Google’s autonomous AI coding agent. It allows you to manage coding sessions, inspect progress, and integrate Jules into your existing development workflows and scripts directly from your terminal.
+
+Think of Jules Tools as both a command surface and a dashboard for your coding agent, designed to keep you in your flow without needing to switch to a web browser.
+
+- Installation: `npm install -g @google/jules`.
+- Authentication: `jules login` and `jules logout`.
+- Commands: `version`, `remote` (list, new, pull), `completion`.
+- Dashboard (TUI): Run `jules` without arguments for an interactive experience.
