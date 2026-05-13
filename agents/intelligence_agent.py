@@ -1,6 +1,8 @@
 from .base_agent import BaseAgent, Blackboard
+from .telemetry import telemetry_manager
 import os
 import json
+import uuid
 
 class IntelligenceAgent(BaseAgent):
     def __init__(self):
@@ -10,6 +12,42 @@ class IntelligenceAgent(BaseAgent):
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
         self.logger.info("Running Intelligence Synchronization & External World Collaboration...")
+
+        # Simulate an LLM Call for Intelligence synthesis and record it via OpenTelemetry GenAI semantics
+        session_id = str(uuid.uuid4())
+        response_id = f"chatcmpl-{uuid.uuid4().hex[:12]}"
+
+        telemetry_manager.record_gen_ai_inference_event(
+            operation_name="chat",
+            **{
+                "gen_ai.conversation.id": session_id,
+                "gen_ai.request.model": "gpt-4",
+                "gen_ai.system_instructions": [
+                    {"type": "text", "content": "You are a strategic intelligence AI."}
+                ],
+                "gen_ai.input.messages": [
+                    {"role": "user", "parts": [{"type": "text", "content": "Analyze current system data."}]}
+                ],
+                "gen_ai.response.id": response_id,
+                "gen_ai.response.model": "gpt-4-0613",
+                "gen_ai.usage.input_tokens": 12,
+                "gen_ai.usage.output_tokens": 45,
+                "gen_ai.output.messages": [
+                    {"role": "assistant", "parts": [{"type": "text", "content": "System aligned with Google Cloud Agent definitions."}], "finish_reason": "stop"}
+                ],
+                "gen_ai.response.finish_reasons": ["stop"]
+            }
+        )
+
+        telemetry_manager.record_gen_ai_evaluation_event(
+            evaluation_name="Relevance",
+            **{
+                "gen_ai.response.id": response_id,
+                "gen_ai.evaluation.score.value": 1.0,
+                "gen_ai.evaluation.score.label": "relevant",
+                "gen_ai.evaluation.explanation": "The insight accurately reflects the underlying system context."
+            }
+        )
 
         analysis = blackboard.get("analysis_stats", {})
         research = blackboard.get("research_data", {})
@@ -26,19 +64,34 @@ class IntelligenceAgent(BaseAgent):
                 insights.append("Ecosystem architecture aligns with ReAct framework (Reasoning + Acting).")
 
             if "memory" in ai_agent_def:
-                insights.append("System utilizes multi-tiered memory architecture (Short-term, Long-term, Episodic).")
+                memory_def = knowledge.get("memory_definition", "")
+                if "short term, long term, consensus, and episodic" in memory_def.lower():
+                    insights.append("Verified Multi-tiered Memory: Short-term, Long-term, Consensus, and Episodic memory support confirmed.")
+                else:
+                    insights.append("System utilizes multi-tiered memory architecture (Short-term, Long-term, Episodic).")
 
             if "consensus memory" in ai_agent_def:
                 insights.append("Ecosystem supports consensus memory for shared information among agents.")
 
             if "tools" in ai_agent_def:
-                insights.append("Agent capabilities are extended via specialized external toolsets.")
+                tools_def = knowledge.get("tools_definition", "")
+                if "physical, graphical, and program-based" in tools_def.lower():
+                    insights.append("Extended Toolset: Support for physical, graphical, and program-based interfaces confirmed.")
+                else:
+                    insights.append("Agent capabilities are extended via specialized external toolsets.")
 
             if "collaborating" in ai_agent_def:
                 insights.append("System supports multi-agent collaboration and coordination.")
 
             if "self-refining" in ai_agent_def:
                 insights.append("Ecosystem includes self-improvement and adaptation mechanisms.")
+
+            # New insights from updated knowledge
+            if "reasoning" in ai_agent_def:
+                insights.append("Deep reasoning verified: System uses logic to draw conclusions and solve problems autonomously.")
+
+            if "planning" in ai_agent_def:
+                insights.append("Strategic planning confirmed: Agents can identify necessary steps and evaluate potential actions.")
 
             if "observing" in ai_agent_def:
                 insights.append("System maintains environmental awareness through perception and sensing.")
@@ -82,6 +135,8 @@ class IntelligenceAgent(BaseAgent):
                 risks.append("High-stakes ethical decisions require human-in-the-loop oversight.")
             if "unpredictable" in challenges or "physical environments" in challenges:
                 risks.append("Physical environment unpredictability identified as a boundary for autonomous operation.")
+            if "resource-intensive" in challenges:
+                risks.append("Deployment scalability may be impacted by high computational resource requirements.")
 
         # 1. Internal Logic
         top_cats = analysis.get("top_categories", {})

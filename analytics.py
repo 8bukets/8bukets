@@ -50,6 +50,8 @@ def generate_report(data, output_file):
             domains.append(get_domain(p.get('external_link')))
 
     domain_counts = Counter(domains).most_common(10)
+    top_domain = domain_counts[0][0] if domain_counts else "N/A"
+    top_domain_count = domain_counts[0][1] if domain_counts else 0
 
     # 2. Category Analysis
     all_categories = []
@@ -102,14 +104,75 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
+    md.append("# 📊 Markposition Analytics Report")
+    md.append("<a name='table-of-contents'></a>")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
+    md.append("\n## Table of Contents")
+    md.append("* [General Statistics](#general-statistics)")
+    md.append("* [Top 10 Referenced Domains](#top-10-referenced-domains)")
+    md.append("* [Top 10 Categories](#top-10-categories)")
+    md.append("* [Posts by Year](#posts-by-year)")
+    md.append("* [Authors](#authors)")
+
+    md.append("\n<a name='general-statistics'></a>")
+    md.append("## 📈 General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append("\n[Back to Top](#table-of-contents)")
 
+    md.append("\n<a name='top-10-referenced-domains'></a>")
+    md.append("## 🌐 Top 10 Referenced Domains")
+    # Table of Contents
+    md.append("\n## Table of Contents")
+    md.append("- [📊 General Statistics](#general-statistics)")
+    md.append("- [🌐 Top 10 Referenced Domains](#top-10-referenced-domains)")
+    md.append("- [📂 Top 10 Categories](#top-10-categories)")
+    md.append("- [📅 Posts by Year](#posts-by-year)")
+    md.append("- [✍️ Authors](#authors)")
+
+    # General Statistics
+    md.append("\n## 📊 General Statistics")
+    md.append(f"- **Total Posts:** {total_posts}")
+    md.append(f"- **Date Range:** {start_date} to {end_date}")
+    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    if top_domain != "N/A":
+        md.append(f"\n> 💡 **Highlight:** The most referenced domain is **{top_domain}** with {top_domain_count} links.")
+    md.append("\n[Back to Top](#table-of-contents)")
+
+    # Domains
+    md.append("\n## 🌐 Top 10 Referenced Domains")
+    md.append("| Domain | Count |")
+    md.append("| :--- | :---: |")
+    for domain, count in domain_counts:
+        md.append(f"| {domain} | {count} |")
+    md.append("\n[Back to Top](#table-of-contents)")
+
+    md.append("\n<a name='top-10-categories'></a>")
+    md.append("## 📂 Top 10 Categories")
+    # Categories
+    md.append("\n## 📂 Top 10 Categories")
+    md.append("| Category | Count |")
+    md.append("| :--- | :---: |")
+    for cat, count in category_counts:
+        md.append(f"| {cat} | {count} |")
+    md.append("\n[Back to Top](#table-of-contents)")
+
+    md.append("\n<a name='posts-by-year'></a>")
+    md.append("## 📅 Posts by Year")
+    # Years
+    md.append("\n## 📅 Posts by Year")
+    md.append("| Year | Count |")
+    md.append("| :--- | :---: |")
+    for year, count in year_counts:
+        md.append(f"| {year} | {count} |")
+    md.append("\n[Back to Top](#table-of-contents)")
+
+    md.append("\n<a name='authors'></a>")
+    md.append("## ✍️ Authors")
+    for author, count in author_counts:
+        md.append(f"- {author}: {count} posts")
     md.append("\n## Top 10 Referenced Domains")
     md.append("| Domain | Count | Distribution |")
     md.append("| :--- | :---: | :--- |")
@@ -134,14 +197,20 @@ def generate_report(data, output_file):
         bar = create_ascii_bar(count, max_year_count)
         md.append(f"| {year} | {count} | {bar} |")
 
-    md.append("\n## Authors")
+    # Authors
+    md.append("\n## ✍️ Authors")
     for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+        md.append(f"- **{author}**: {count} posts")
+    md.append("\n[Back to Top](#table-of-contents)")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    # Console UX
+    if sys.stdout.isatty():
+        print(f"\033[92m✨ Report generated successfully: {output_file}\033[0m") # Green text
+    else:
+        print(f"✨ Report generated successfully: {output_file}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")

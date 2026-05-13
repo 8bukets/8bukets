@@ -7,7 +7,7 @@ class ReActAgent(BaseAgent):
     """
     def __init__(self):
         super().__init__("ReActAgent",
-                         dependencies=["intelligence_insights", "ai_agents_definitions"],
+                         dependencies=["intelligence_insights", "ai_agents_definitions", "agent_use_cases", "agent_best_practices"],
                          provides=["react_reasoning", "react_actions", "react_agent_deployment_config"])
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
@@ -15,6 +15,8 @@ class ReActAgent(BaseAgent):
 
         insights = blackboard.get("intelligence_insights", [])
         definitions = blackboard.get("ai_agents_definitions", {})
+        use_cases = blackboard.get("agent_use_cases", {})
+        best_practices = blackboard.get("agent_best_practices", [])
 
         reasoning_log = []
         action_log = []
@@ -40,11 +42,24 @@ class ReActAgent(BaseAgent):
             action_log.append("CONTINUE_MONITORING")
 
         deployment_config = {}
-        if "DEPLOY_FOCUSED_AD_CAMPAIGN" in action_log:
+        if "DEPLOY_FOCUSED_AD_CAMPAIGN" in action_log or "OPTIMIZE_WORKFLOW_DECISION_MAKING" in action_log:
+            reasoning_log.append("Reasoning: Specific actions determined, configuring React Agent deployment.")
+
+            # Dynamically determine deployment target based on best practices
+            deployment_target = "Cloud Run"
+            if any("Next.js" in bp for bp in best_practices) or any("Vercel" in bp for bp in best_practices):
+                deployment_target = "Vercel"
+
+            # Check if any specific use case is active (e.g., customer, security)
+            active_use_cases = list(use_cases.keys()) if isinstance(use_cases, dict) else []
+
             deployment_config = {
                 "agent_type": "ReactAgent",
-                "framework": "Next.js",
-                "deployment_target": "Cloud Run",
+                "frontend_framework": "Next.js",
+                "backend_framework": "Node.js",
+                "deployment_target": deployment_target,
+                "active_use_cases": active_use_cases,
+                "orchestration_mode": "SYNCHRONIZED",
                 "status": "READY_FOR_DEPLOYMENT"
             }
 
