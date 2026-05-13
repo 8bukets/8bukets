@@ -94,12 +94,15 @@ export class Jules {
   public async observeGithubDocs() {
     console.log('📚 [Jules] Observing technical documentation from GitHub...')
     const { githubDocsObserver } = await import('./services/github_docs_observer')
+    const { KnowledgeObserver } = await import('./services/knowledge_observer')
+    const observer = new KnowledgeObserver()
 
     const docsToObserve = [
       { owner: 'bmewburn', repo: 'intelephense-docs', path: 'README.md' },
       { owner: 'bmewburn', repo: 'intelephense-docs', path: 'features.md' },
       { owner: 'bmewburn', repo: 'intelephense-docs', path: 'installation.md' },
-      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'gettingStarted.md' }
+      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'gettingStarted.md' },
+      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'support.md' }
     ]
 
     const allKnowledge: any[] = []
@@ -108,7 +111,14 @@ export class Jules {
       try {
         const result = await githubDocsObserver.fetchDoc(doc.owner, doc.repo, doc.path)
         allKnowledge.push(result)
-        console.log(` ✅ [Jules] Ingested: ${doc.path}`)
+
+        // Phase 12: Integrate into consolidated knowledge base
+        const title = `Intelephense: ${doc.path.replace('.md', '')}`
+        const rawContent = result.sections.map((s: any) => `# ${s.title}\n${s.content}`).join('\n\n')
+        const knowledge = KnowledgeObserver.processContent(title, rawContent, result.rawUrl)
+        await observer.persistKnowledge(knowledge)
+
+        console.log(` ✅ [Jules] Ingested and Processed: ${doc.path}`)
       } catch (err) {
         console.error(` ❌ [Jules] Failed to ingest ${doc.path}:`, err)
       }
