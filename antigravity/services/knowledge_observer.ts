@@ -41,7 +41,7 @@ export class KnowledgeObserver {
     let inCodeBlock = false
 
     for (const line of lines) {
-      const trimmed = line.trim()
+      const trimmed = line.trim();
 
       // Toggle code block state
       if (trimmed.startsWith('```') || trimmed.startsWith('<?php')) {
@@ -49,12 +49,24 @@ export class KnowledgeObserver {
       }
 
       // Detect headers ONLY if not in a code block
+      const hasLetters = /[a-zA-Z]/.test(trimmed)
       const isMarkdownHeader = !inCodeBlock && trimmed.startsWith('#')
-      const isStrongHeader = !inCodeBlock && trimmed && trimmed.toUpperCase() === trimmed &&
-                             trimmed.length < 50 && trimmed.length > 3 &&
+      const isStrongHeader = !inCodeBlock && trimmed && hasLetters &&
+                             trimmed.length < 60 && trimmed.length > 2 &&
+                             !trimmed.endsWith('.') &&
+                             !trimmed.endsWith(':') &&
+                             !trimmed.endsWith(',') &&
+                             (trimmed.toUpperCase() === trimmed || /^[A-Z][a-z]+(\s[A-Z][a-z]+)*$/.test(trimmed)) &&
+                             !trimmed.startsWith('This ') &&
+                             !trimmed.startsWith('Some ') &&
                              !/^[{}/*<>?]+$/.test(trimmed) && // Exclude common code symbols
-                             !trimmed.includes('(') && !trimmed.includes(')') // Exclude function calls
+                             !trimmed.includes('(') && !trimmed.includes(')') && // Exclude function calls
+                             !trimmed.includes(' = ') && // Exclude assignments
+                             !trimmed.includes(' => ') // Exclude arrow funcs/mappings
 
+      // Heuristic: If it's a markdown header, always count it.
+      // If it's a strong header, it must not be immediately followed by a lot of text on the same line (already trimmed)
+      // and it should ideally be on its own line (which it is here since we iterate lines).
       if (isMarkdownHeader || isStrongHeader) {
         if (currentLines.length > 0) {
           sections.push({ header: currentHeader, content: currentLines.join('\n').trim() })

@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { z } from 'zod'
 import { autonomousFetch } from '@/antigravity/core'
+import { checkDockerHealth } from './docker'
 
 /**
  * ANTIGRAVITY COLLABORATION SERVICE (Phase 9)
@@ -75,6 +76,56 @@ export async function exportEcosystemMetadata() {
   return {
     ...metadata,
     systemId: 'antigravity-alpha-01',
+    timestamp: new Date().toISOString()
+  }
+}
+
+export async function syncCollaborationState(branchIntelligence?: any[]) {
+  console.log('🔄 [Collaboration] Synchronizing autonomous state...')
+  const metadata = await getMissionMetadata()
+  const dockerHealth = await checkDockerHealth()
+  const statePath = path.join(process.cwd(), 'autonomous_state.json')
+
+  let currentState: any = {}
+  if (fs.existsSync(statePath)) {
+    try {
+      currentState = JSON.parse(fs.readFileSync(statePath, 'utf8'))
+    } catch (e) {
+      console.warn('⚠️ [Collaboration] Failed to parse autonomous_state.json, starting fresh.')
+    }
+  }
+
+  const { jules } = await import('../jules')
+  const { workOrderService } = await import('./work_order')
+  const branches = branchIntelligence || await jules.scanAllBranches()
+  const workOrders = workOrderService.getPendingOrders() // Simplified for now
+
+  const newState = {
+    ...currentState,
+    mission: metadata.missionStatement,
+    stakeholders: metadata.stakeholders,
+    docker: dockerHealth,
+    intelligence: {
+      branches: branches.length,
+      pendingTasks: workOrders.length
+    },
+    last_sync: new Date().toISOString()
+  }
+
+  fs.writeFileSync(statePath, JSON.stringify(newState, null, 4))
+  console.log('✅ [Collaboration] Autonomous state synchronized successfully.')
+  return newState
+}
+
+export async function mergeEcosystemInsights(branchIntelligence: any[], workOrders: any[]) {
+  const metadata = await getMissionMetadata()
+  console.log('🧠 [Collaboration] Merging ecosystem insights...')
+
+  return {
+    mission: metadata.missionStatement,
+    goals: metadata.goals,
+    branches: branchIntelligence,
+    recentWork: workOrders.slice(-5),
     timestamp: new Date().toISOString()
   }
 }

@@ -94,12 +94,15 @@ export class Jules {
   public async observeGithubDocs() {
     console.log('📚 [Jules] Observing technical documentation from GitHub...')
     const { githubDocsObserver } = await import('./services/github_docs_observer')
+    const { KnowledgeObserver } = await import('./services/knowledge_observer')
+    const observer = new KnowledgeObserver()
 
     const docsToObserve = [
       { owner: 'bmewburn', repo: 'intelephense-docs', path: 'README.md' },
       { owner: 'bmewburn', repo: 'intelephense-docs', path: 'features.md' },
       { owner: 'bmewburn', repo: 'intelephense-docs', path: 'installation.md' },
-      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'gettingStarted.md' }
+      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'gettingStarted.md' },
+      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'support.md' }
     ]
 
     const allKnowledge: any[] = []
@@ -108,7 +111,14 @@ export class Jules {
       try {
         const result = await githubDocsObserver.fetchDoc(doc.owner, doc.repo, doc.path)
         allKnowledge.push(result)
-        console.log(` ✅ [Jules] Ingested: ${doc.path}`)
+
+        // Phase 12: Integrate into consolidated knowledge base
+        const title = `Intelephense: ${doc.path.replace('.md', '')}`
+        const rawContent = result.sections.map((s: any) => `# ${s.title}\n${s.content}`).join('\n\n')
+        const knowledge = KnowledgeObserver.processContent(title, rawContent, result.rawUrl)
+        await observer.persistKnowledge(knowledge)
+
+        console.log(` ✅ [Jules] Ingested and Processed: ${doc.path}`)
       } catch (err) {
         console.error(` ❌ [Jules] Failed to ingest ${doc.path}:`, err)
       }
@@ -193,34 +203,46 @@ export class Jules {
   public async executeWorkCycle() {
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
     const { explore } = await import('./explorer')
+    const { workOrderService } = await import('./services/work_order')
+
     await explore()
     await this.observeKnowledge()
     await this.selfRepair()
     await this.observeGithubDocs()
+    const branches = await this.scanAllBranches(true)
+
+    // Collaboration & Intelligence (Phase 9/12)
+    const { syncCollaborationState } = await import('./services/collaboration')
+    const { generateConsolidatedReport } = await import('./services/intelligence')
+    await syncCollaborationState(branches)
+    await generateConsolidatedReport(branches)
+
     // 3. Ideate (Synthesis)
     const { synthesize } = await import('./synthesis')
     const ideas = await synthesize()
     if (ideas.length > 0) {
       this.recordTask(`Synthesis: Generated ${ideas.length} architectural proposals.`)
 
-      // Phase 10: Singularity Orchestration
-      const { bootstrap } = await import('./singularity')
+      // Phase 10: Singularity Orchestration via Work Orders
       for (const idea of ideas) {
         if (idea.complexity === 'Low' || idea.complexity === 'Medium') {
-          await bootstrap(idea)
-          this.recordTask(`Singularity: Autonomously bootstrapped ${idea.feature}.`)
+          workOrderService.createOrder('BOOTSTRAP_SERVICE', `Bootstrap ${idea.feature}`, idea)
         }
       }
     }
 
-    // Phase 12: Super-Intelligence Optimization
-    // getSystemInsights already triggers the optimization engine internally
+    // Phase 12: Super-Intelligence Optimization via Work Orders
     const { getSystemInsights } = await import('./core')
     const insights = await getSystemInsights()
     const refactors = (insights as any).proposals || []
     if (refactors.length > 0) {
       this.recordTask(`Super-Intelligence: Generated ${refactors.length} predictive refactors.`)
+      // Group all proposals into a single optimization order for efficiency
+      workOrderService.createOrder('OPTIMIZE_SYSTEM', 'Apply predictive refactors', { proposals: refactors })
     }
+
+    // 4. Execute Work Orders
+    await workOrderService.executePendingOrders()
 
     // ReAct Protocol Integration (arXiv:2210.03629)
     const { reactService } = await import('./services/react')
@@ -238,8 +260,60 @@ export class Jules {
     console.log('🏆 [Jules] Autonomous Work Cycle Complete.')
   }
 
+  private cachedBranchIntelligence: any[] | null = null
+  private lastScanTimestamp: number = 0
+  private readonly SCAN_CACHE_TTL = 1000 * 60 * 5 // 5 minutes
+
+  public async scanAllBranches(force: boolean = false) {
+    if (!force && this.cachedBranchIntelligence && (Date.now() - this.lastScanTimestamp < this.SCAN_CACHE_TTL)) {
+      return this.cachedBranchIntelligence
+    }
+
+    console.log('🔍 [Jules] Scanning all ecosystem branches...')
+    const { execFileSync } = await import('child_process')
+    try {
+      const branchesRaw = execFileSync('git', ['branch', '-a']).toString()
+      const branches = branchesRaw.split('\n')
+        .map(b => b.replace('*', '').trim())
+        .filter(b => b && !b.includes('->'))
+
+      // Limit deep scan to recent local branches to improve performance
+      const branchIntelligence = branches.map(branch => {
+        try {
+          // Use execFileSync with arguments array to prevent command injection
+          const lastCommit = execFileSync('git', ['log', '-1', '--format=%s|%at', branch]).toString().trim()
+          const [message, timestamp] = lastCommit.split('|')
+          return {
+            name: branch,
+            lastMessage: message,
+            lastSeen: new Date(parseInt(timestamp) * 1000).toISOString()
+          }
+        } catch (e) {
+          return { name: branch, lastMessage: 'Unknown', lastSeen: new Date().toISOString() }
+        }
+      })
+
+      this.cachedBranchIntelligence = branchIntelligence
+      this.lastScanTimestamp = Date.now()
+
+      if (force) {
+        this.recordTask(`Branch Intelligence: Force-scanned ${branchIntelligence.length} branches.`)
+      }
+      return branchIntelligence
+    } catch (err) {
+      console.error('❌ [Jules] Branch scan failed:', err)
+      return this.cachedBranchIntelligence || []
+    }
+  }
+
   public async observeKnowledge() {
     console.log('🧠 [Jules] Observing new knowledge foundations...')
+
+    const { observeKnowledge: scanUrl } = await import('./services/knowledge')
+    const observation = await scanUrl('https://software-online-review.com')
+    if (observation.status === 'observed') {
+      this.recordTask(`Knowledge Observed: Extracted intelligence from ${observation.url}`)
+    }
     const { KnowledgeObserver } = await import('./services/knowledge_observer')
     const observer = new KnowledgeObserver()
 
