@@ -298,6 +298,12 @@ export class Jules {
 
   public async observeKnowledge() {
     console.log('🧠 [Jules] Observing new knowledge foundations...')
+
+    const { observeKnowledge: scanUrl } = await import('./services/knowledge')
+    const observation = await scanUrl('https://software-online-review.com')
+    if (observation.status === 'observed') {
+      this.recordTask(`Knowledge Observed: Extracted intelligence from ${observation.url}`)
+    }
     const { KnowledgeObserver } = await import('./services/knowledge_observer')
     const observer = new KnowledgeObserver()
 
