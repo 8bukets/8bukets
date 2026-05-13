@@ -178,7 +178,6 @@ Step 6: Report: "Found X items matching [filters] across Y pages"
 
 - Milestone analysis → Get ALL work items in milestone (filter + paginate)
 - Epic progress → Get ALL child items (filtered by epic, then paginate)
-- backlog health → Get ALL relevant work items
 - Backlog health → Get ALL relevant work items
 - Team velocity → Get ALL closed items in time period
 - Risk assessment → Get ALL blocked/at-risk items
