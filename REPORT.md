@@ -1,6 +1,7 @@
 # Markposition Analytics Report
 
 **Generated on:** 2026-02-04 08:09:35
+**Generated on:** 2026-01-27 08:30:44
 
 ## Table of Contents
 - [General Statistics](#general-statistics)
@@ -15,6 +16,9 @@
 - **Unique Domains Linked:** 367
 
 ## 🌐 Top 10 Referenced Domains
+[Back to Top](#table-of-contents)
+
+## 🔗 Top 10 Referenced Domains
 | Domain | Count |
 | :--- | :---: |
 | skillshop.exceedlms.com | 23 |
@@ -28,6 +32,8 @@
 | trustarc.com | 11 |
 | ads.google.com | 10 |
 
+[Back to Top](#table-of-contents)
+
 ## 📂 Top 10 Categories
 | Category | Count |
 | :--- | :---: |
@@ -37,6 +43,8 @@
 | Advertise | 3 |
 | Advertising | 3 |
 | Online | 2 |
+
+[Back to Top](#table-of-contents)
 
 ## 📅 Posts by Year
 | Year | Count |
@@ -50,3 +58,49 @@
 
 ---
 Generated with ❤️ by Palette
+[Back to Top](#table-of-contents)
+
+## ✍️ Authors
+- Filip Keser: 679 posts
+
+[Back to Top](#table-of-contents)
+**Generated on:** 2026-02-06 08:21:08
+
+## 📊 General Statistics
+- 📝 **Total Posts:** 679
+- 📅 **Date Range:** 2020-05-19 to 2022-10-05
+- 🔗 **Unique Domains Linked:** 367
+
+## 🌐 Top 10 Referenced Domains
+| Domain | Count | Distribution |
+| :--- | :---: | :--- |
+| skillshop.exceedlms.com | 23 | ████████████████████ |
+| support.google.com | 21 | ██████████████████ |
+| youtube.com | 18 | ███████████████ |
+| advertising.amazon.com | 16 | █████████████ |
+| en.wikipedia.org | 14 | ████████████ |
+| google.com | 13 | ███████████ |
+| web.facebook.com | 12 | ██████████ |
+| developers.google.com | 11 | █████████ |
+| trustarc.com | 11 | █████████ |
+| ads.google.com | 10 | ████████ |
+
+## 📂 Top 10 Categories
+| Category | Count | Distribution |
+| :--- | :---: | :--- |
+| Ad Ads Advertise | 660 | ████████████████████ |
+| Promotion | 14 | ▏ |
+| Ads | 4 | ▏ |
+| Advertise | 3 | ▏ |
+| Advertising | 3 | ▏ |
+| Online | 2 | ▏ |
+
+## 📅 Posts by Year
+| Year | Count | Distribution |
+| :--- | :---: | :--- |
+| 2022 | 235 | ██████████████████ |
+| 2021 | 190 | ██████████████ |
+| 2020 | 254 | ████████████████████ |
+
+## ✍️ Authors
+- Filip Keser: 679 posts
