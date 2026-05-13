@@ -115,6 +115,10 @@ def parse_page_content(html: str) -> List[Dict]:
     return page_posts
 
 class MarkPositionScraperAsync:
+    # Pre-compile regex patterns for performance
+    WHITESPACE_RE = re.compile(r'\s+')
+    URL_RE = re.compile(r'^https?://')
+
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = validate_output_path(output_json)
         self.output_csv = validate_output_path(output_csv)
@@ -128,8 +132,8 @@ class MarkPositionScraperAsync:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
-        text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        # \s matches \xa0 (non-breaking space) in Python 3, so explicit replace is redundant
+        return self.WHITESPACE_RE.sub(' ', text).strip()
 
     def sanitize_for_csv(self, text: str) -> str:
         """
@@ -146,7 +150,7 @@ class MarkPositionScraperAsync:
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
-        return re.match(r'^https?://', text.strip()) is not None
+        return self.URL_RE.match(text.strip()) is not None
 
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
