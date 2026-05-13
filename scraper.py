@@ -333,6 +333,15 @@ class MarkPositionScraperAsync:
                 return await loop.run_in_executor(None, self.parse_page, html)
             return None
 
+    def sanitize_for_csv(self, value: str) -> str:
+        """Sanitize a value to prevent CSV injection."""
+        if not value:
+            return ""
+        value_str = str(value)
+        if value_str.startswith(('=', '+', '-', '@')):
+            return f"'{value_str}"
+        return value_str
+
     def save_data(self, posts: List[Dict]):
         # JSON
         try:
