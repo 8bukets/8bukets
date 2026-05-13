@@ -1,16 +1,16 @@
-name: Antigravity Autonomous Daily Work
+name: Autonomous Cycle
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Every day at midnight
-  workflow_dispatch: # Allows manual trigger
+    - cron: '0 */4 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
   pull-requests: write
 
 jobs:
-  autonomous-work:
+  autonomous-swarm:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,8 +26,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Execute Autonomous Work Cycle
-        run: npx tsx -e "import { jules } from './antigravity/jules'; jules.executeWorkCycle()"
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Execute Swarm
+        run: |
+          if [ -f run_system.py ]; then
+            pip install -r requirements.txt || true
+            python3 run_system.py
+          else
+            npm run daily
+          fi
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
@@ -39,7 +50,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "chore: autonomous daily work update" || true
+          git commit -m "chore: autonomous workflow step" || true
           git pull --rebase origin main || true
           git push origin main || true
         env:
