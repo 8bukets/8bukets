@@ -39,10 +39,10 @@ class KnowledgeAgent(BaseAgent):
             definitions = {
                 "ai_agent": knowledge.get("what-is-an-ai-agent", {}).get("content", ""),
                 "features": knowledge.get("key-features-of-an-ai-agent", {}).get("content", ""),
-                "differences": knowledge.get("what-is-the-difference-between-ai-agents,-ai-assistants,-and-bots", {}).get("content", "") + "\n\n" + knowledge.get("key-differences", {}).get("content", ""),
+                "differences": knowledge.get("what-is-the-difference-between-ai-agents-ai-assistants-and-bots", {}).get("content", "") + "\n\n" + knowledge.get("key-differences", {}).get("content", ""),
                 "interaction_types": knowledge.get("based-on-interaction", {}).get("content", ""),
                 "agent_count_types": knowledge.get("based-on-number-of-agents", {}).get("content", ""),
-                "types": knowledge.get("based-on-interaction", {}).get("content", "") + "\n" + knowledge.get("based-on-number-of-agents", {}).get("content", ""),
+                "types": knowledge.get("what-are-the-types-of-agents-in-ai", {}).get("content", "") + "\n\n" + knowledge.get("based-on-interaction", {}).get("content", "") + "\n\n" + knowledge.get("based-on-number-of-agents", {}).get("content", ""),
                 "challenges": knowledge.get("challenges-with-using-ai-agents", {}).get("content", ""),
                 "jules_tools": knowledge.get("jules-tools", {}).get("content", ""),
                 "deployment": knowledge.get("deploy-ai-agents-for-scale-and-efficiency-with-cloud-run", {}).get("content", ""),
