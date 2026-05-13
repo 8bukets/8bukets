@@ -50,4 +50,4 @@ jobs:
         NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
       run: |
         # Execute the autonomous system cycle in the cloud
-        python3 run_system.py --skip-scraper --token "${SYSTEM_AUTH_TOKEN}"
+        python3 run_system.py --token "${SYSTEM_AUTH_TOKEN}"
