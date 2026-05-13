@@ -1,3 +1,6 @@
+## 2026-02-05 - CPU-bound parsing blocking asyncio loop
+**Learning:** `scraper.py` was running `BeautifulSoup` parsing (CPU-bound) directly in the `asyncio` event loop. This blocks the loop, negating the concurrency benefits of `aiohttp` as the loop cannot process other network events while parsing.
+**Action:** Offloaded parsing to a `ProcessPoolExecutor` using `loop.run_in_executor` to allow truly concurrent scraping and parsing.
 ## 2024-05-23 - Regex Compilation Overhead
 **Learning:** Python's `re` module internal caching is very effective. Explicitly compiling simple regex patterns like `\s+` into class attributes yielded negligible performance gains (1.02x) compared to just calling `re.sub` directly.
 **Action:** Do not prematurely optimize regex by pre-compiling unless profiling shows a specific need or the pattern is very complex.
