@@ -5,6 +5,11 @@
 ## DOCUMENT: Intelephense Documentation
 **Source:** local://intelephense_docs.md
 **Ingested At:** 2026-05-13T05:44:15.866Z
+*Last Updated: 2026-05-13T03:31:00.261Z*
+
+## DOCUMENT: Intelephense Documentation
+**Source:** local://intelephense_docs.md
+**Ingested At:** 2026-05-13T03:31:00.260Z
 
 ### About
 Intelephense is a high performance, cross platform, cross editor PHP language server adhering to the Language Server Protocol (LSP).
