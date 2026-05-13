@@ -80,7 +80,7 @@ export async function exportEcosystemMetadata() {
   }
 }
 
-export async function syncCollaborationState() {
+export async function syncCollaborationState(branchIntelligence?: any[]) {
   console.log('🔄 [Collaboration] Synchronizing autonomous state...')
   const metadata = await getMissionMetadata()
   const dockerHealth = await checkDockerHealth()
@@ -95,15 +95,37 @@ export async function syncCollaborationState() {
     }
   }
 
+  const { jules } = await import('../jules')
+  const { workOrderService } = await import('./work_order')
+  const branches = branchIntelligence || await jules.scanAllBranches()
+  const workOrders = workOrderService.getPendingOrders() // Simplified for now
+
   const newState = {
     ...currentState,
     mission: metadata.missionStatement,
     stakeholders: metadata.stakeholders,
     docker: dockerHealth,
+    intelligence: {
+      branches: branches.length,
+      pendingTasks: workOrders.length
+    },
     last_sync: new Date().toISOString()
   }
 
   fs.writeFileSync(statePath, JSON.stringify(newState, null, 4))
   console.log('✅ [Collaboration] Autonomous state synchronized successfully.')
   return newState
+}
+
+export async function mergeEcosystemInsights(branchIntelligence: any[], workOrders: any[]) {
+  const metadata = await getMissionMetadata()
+  console.log('🧠 [Collaboration] Merging ecosystem insights...')
+
+  return {
+    mission: metadata.missionStatement,
+    goals: metadata.goals,
+    branches: branchIntelligence,
+    recentWork: workOrders.slice(-5),
+    timestamp: new Date().toISOString()
+  }
 }
