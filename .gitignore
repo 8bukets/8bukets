@@ -83,3 +83,4 @@ local_settings.py
 # runtime state
 antigravity/.jules_memory.json
 autonomous_state.json
+test-env
