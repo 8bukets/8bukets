@@ -4,15 +4,6 @@ import { Suspense } from "react";
 import { PageProps, resolve, getSystemInsights } from "@/antigravity/core";
 import { getAppStats } from "@/antigravity/services/stats";
 
-export default async function CommandCenter(props: PageProps) {
-  return (
-    <Suspense fallback={<div>Loading Antigravity...</div>}>
-      <CommandCenterContent {...props} />
-    </Suspense>
-  )
-}
-
-async function CommandCenterContent({ params, searchParams }: PageProps) {
 export default async function CommandCenter({
   params, searchParams }: PageProps) {
   await Promise.all([resolve(params), resolve(searchParams)]);

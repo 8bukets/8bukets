@@ -199,6 +199,13 @@ export class Jules {
     await this.observeKnowledge()
     await this.selfRepair()
     await this.observeGithubDocs()
+    const branches = await this.scanAllBranches(true)
+
+    // Collaboration & Intelligence (Phase 9/12)
+    const { syncCollaborationState } = await import('./services/collaboration')
+    const { generateConsolidatedReport } = await import('./services/intelligence')
+    await syncCollaborationState(branches)
+    await generateConsolidatedReport(branches)
 
     // 3. Ideate (Synthesis)
     const { synthesize } = await import('./synthesis')
@@ -241,6 +248,52 @@ export class Jules {
     this.memory.lastOptimization = new Date().toISOString()
     this.save()
     console.log('🏆 [Jules] Autonomous Work Cycle Complete.')
+  }
+
+  private cachedBranchIntelligence: any[] | null = null
+  private lastScanTimestamp: number = 0
+  private readonly SCAN_CACHE_TTL = 1000 * 60 * 5 // 5 minutes
+
+  public async scanAllBranches(force: boolean = false) {
+    if (!force && this.cachedBranchIntelligence && (Date.now() - this.lastScanTimestamp < this.SCAN_CACHE_TTL)) {
+      return this.cachedBranchIntelligence
+    }
+
+    console.log('🔍 [Jules] Scanning all ecosystem branches...')
+    const { execFileSync } = await import('child_process')
+    try {
+      const branchesRaw = execFileSync('git', ['branch', '-a']).toString()
+      const branches = branchesRaw.split('\n')
+        .map(b => b.replace('*', '').trim())
+        .filter(b => b && !b.includes('->'))
+
+      // Limit deep scan to recent local branches to improve performance
+      const branchIntelligence = branches.map(branch => {
+        try {
+          // Use execFileSync with arguments array to prevent command injection
+          const lastCommit = execFileSync('git', ['log', '-1', '--format=%s|%at', branch]).toString().trim()
+          const [message, timestamp] = lastCommit.split('|')
+          return {
+            name: branch,
+            lastMessage: message,
+            lastSeen: new Date(parseInt(timestamp) * 1000).toISOString()
+          }
+        } catch (e) {
+          return { name: branch, lastMessage: 'Unknown', lastSeen: new Date().toISOString() }
+        }
+      })
+
+      this.cachedBranchIntelligence = branchIntelligence
+      this.lastScanTimestamp = Date.now()
+
+      if (force) {
+        this.recordTask(`Branch Intelligence: Force-scanned ${branchIntelligence.length} branches.`)
+      }
+      return branchIntelligence
+    } catch (err) {
+      console.error('❌ [Jules] Branch scan failed:', err)
+      return this.cachedBranchIntelligence || []
+    }
   }
 
   public async observeKnowledge() {
