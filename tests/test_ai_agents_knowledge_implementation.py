@@ -45,6 +45,11 @@ async def test_backward_compatibility():
     agent.update_agent_memory("test_compatibility_persona", "Compatibility Enthusiast")
     val = agent.get_agent_memory("test_compatibility_persona")
     assert val == "Compatibility Enthusiast"
+    # Existing data in data/memory.json: "TargetingAgent": {"last_primary_persona": "General Tech Enthusiast"}
+    agent.update_agent_memory("last_primary_persona", "General Tech Enthusiast")
+
+    val = agent.get_agent_memory("last_primary_persona")
+    assert val == "General Tech Enthusiast"
 
     # Update and check nested
     agent.update_agent_memory("new_key", "new_val")
