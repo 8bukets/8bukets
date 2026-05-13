@@ -193,34 +193,39 @@ export class Jules {
   public async executeWorkCycle() {
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
     const { explore } = await import('./explorer')
+    const { workOrderService } = await import('./services/work_order')
+
     await explore()
     await this.observeKnowledge()
     await this.selfRepair()
     await this.observeGithubDocs()
+
     // 3. Ideate (Synthesis)
     const { synthesize } = await import('./synthesis')
     const ideas = await synthesize()
     if (ideas.length > 0) {
       this.recordTask(`Synthesis: Generated ${ideas.length} architectural proposals.`)
 
-      // Phase 10: Singularity Orchestration
-      const { bootstrap } = await import('./singularity')
+      // Phase 10: Singularity Orchestration via Work Orders
       for (const idea of ideas) {
         if (idea.complexity === 'Low' || idea.complexity === 'Medium') {
-          await bootstrap(idea)
-          this.recordTask(`Singularity: Autonomously bootstrapped ${idea.feature}.`)
+          workOrderService.createOrder('BOOTSTRAP_SERVICE', `Bootstrap ${idea.feature}`, idea)
         }
       }
     }
 
-    // Phase 12: Super-Intelligence Optimization
-    // getSystemInsights already triggers the optimization engine internally
+    // Phase 12: Super-Intelligence Optimization via Work Orders
     const { getSystemInsights } = await import('./core')
     const insights = await getSystemInsights()
     const refactors = (insights as any).proposals || []
     if (refactors.length > 0) {
       this.recordTask(`Super-Intelligence: Generated ${refactors.length} predictive refactors.`)
+      // Group all proposals into a single optimization order for efficiency
+      workOrderService.createOrder('OPTIMIZE_SYSTEM', 'Apply predictive refactors', { proposals: refactors })
     }
+
+    // 4. Execute Work Orders
+    await workOrderService.executePendingOrders()
 
     // ReAct Protocol Integration (arXiv:2210.03629)
     const { reactService } = await import('./services/react')
