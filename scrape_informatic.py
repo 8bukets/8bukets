@@ -5,7 +5,9 @@ import time
 import logging
 import argparse
 import sys
-from urllib.parse import urlparse
+import socket
+import ipaddress
+from urllib.parse import urlparse, urljoin
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from dataclasses import dataclass, asdict
@@ -54,6 +56,45 @@ def get_session():
     })
 
     return session
+
+def validate_url(url: str) -> bool:
+    """
+    Validates a URL to prevent SSRF by checking for private/loopback IPs.
+    Supports both IPv4 and IPv6.
+    """
+    try:
+        parsed = urlparse(url)
+        if parsed.scheme not in ('http', 'https'):
+            return False
+
+        hostname = parsed.hostname
+        if not hostname:
+            return False
+
+        # Resolve hostname to IPs (IPv4 and IPv6)
+        # getaddrinfo returns a list of tuples: (family, type, proto, canonname, sockaddr)
+        # sockaddr is (address, port) for IPv4 and (address, port, flow info, scope id) for IPv6
+        try:
+            addr_info = socket.getaddrinfo(hostname, None)
+        except socket.gaierror:
+            return False
+
+        for family, _, _, _, sockaddr in addr_info:
+            ip_str = sockaddr[0]
+            try:
+                ip = ipaddress.ip_address(ip_str)
+                # Check for private, loopback, or unspecified addresses (0.0.0.0)
+                if (ip.is_private or ip.is_loopback or
+                    ip.is_link_local or ip.is_multicast or
+                    ip.is_unspecified):
+                    return False
+            except ValueError:
+                # If we can't parse the IP, treat as unsafe
+                return False
+
+        return True
+    except Exception:
+        return False
 
 def is_external_link(link_url: str, base_url: str) -> bool:
     """
@@ -144,9 +185,47 @@ def scrape(output_file: str, max_pages: int = 0):
             break
 
         logging.info(f"Scraping page {page}: {current_url}...")
+
+        # Initial validation
+        if not validate_url(current_url):
+            logging.error(f"Security Alert: Invalid or unsafe URL detected: {current_url}")
+            break
+
         try:
-            response = session.get(current_url)
+            # Manually handle redirects to prevent SSRF via redirection
+            response = session.get(current_url, allow_redirects=False)
+
+            # Follow redirects with validation
+            redirect_limit = 5
+            redirect_count = 0
+            while response.is_redirect:
+                if redirect_count >= redirect_limit:
+                    logging.error("Too many redirects.")
+                    response = None
+                    break
+
+                next_url = response.headers.get('Location')
+                if not next_url:
+                    break
+
+                # Handle relative redirects
+                next_url = urljoin(current_url, next_url)
+
+                if not validate_url(next_url):
+                    logging.error(f"Security Alert: Redirected to unsafe URL: {next_url}")
+                    response = None
+                    break
+
+                logging.info(f"Following redirect to: {next_url}")
+                current_url = next_url
+                response = session.get(current_url, allow_redirects=False)
+                redirect_count += 1
+
+            if response is None:
+                break
+
             response.raise_for_status()
+
         except requests.exceptions.RequestException as e:
             logging.error(f"Error fetching {current_url}: {e}")
             break
