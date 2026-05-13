@@ -1,16 +1,10 @@
 # ANTIGRAVITY AI AGENTS KNOWLEDGE BASE
 
-*Last Updated: 2026-05-13T01:16:00.805Z*
-*Last Updated: 2026-05-13T05:44:15.870Z*
+*Last Updated: 2026-05-13T21:31:12.289Z*
 
 ## DOCUMENT: Intelephense Documentation
 **Source:** local://intelephense_docs.md
-**Ingested At:** 2026-05-13T05:44:15.866Z
-*Last Updated: 2026-05-13T03:31:00.261Z*
-
-## DOCUMENT: Intelephense Documentation
-**Source:** local://intelephense_docs.md
-**Ingested At:** 2026-05-13T03:31:00.260Z
+**Ingested At:** 2026-05-13T21:31:11.226Z
 
 ### About
 Intelephense is a high performance, cross platform, cross editor PHP language server adhering to the Language Server Protocol (LSP).
@@ -796,7 +790,7 @@ setColourDoc(''); // Completion suggestions for 'red', 'blue', 'green'
 
 ## DOCUMENT: Intelephense: README
 **Source:** https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/README.md
-**Ingested At:** 2026-05-13T01:16:00.642Z
+**Ingested At:** 2026-05-13T21:31:11.777Z
 
 ### Intelephense
 Intelephense is a high performance, cross platform PHP language server adhering to the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/).
@@ -824,7 +818,7 @@ This is proprietary software released to end users under a "freemium" model. Man
 
 ## DOCUMENT: Intelephense: features
 **Source:** https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/features.md
-**Ingested At:** 2026-05-13T01:16:00.665Z
+**Ingested At:** 2026-05-13T21:31:11.897Z
 
 ### Features
 
@@ -881,7 +875,7 @@ This is proprietary software released to end users under a "freemium" model. Man
 
 ## DOCUMENT: Intelephense: installation
 **Source:** https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/installation.md
-**Ingested At:** 2026-05-13T01:16:00.688Z
+**Ingested At:** 2026-05-13T21:31:12.044Z
 
 ### Installation
 
@@ -1655,7 +1649,7 @@ interface InitialisationOptions {
 
 ## DOCUMENT: Intelephense: gettingStarted
 **Source:** https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/gettingStarted.md
-**Ingested At:** 2026-05-13T01:16:00.713Z
+**Ingested At:** 2026-05-13T21:31:12.157Z
 
 ### Getting Started
 
@@ -2132,7 +2126,7 @@ Packages can be found online that aim to workaround these issues by providing st
 
 ## DOCUMENT: Intelephense: support
 **Source:** https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/support.md
-**Ingested At:** 2026-05-13T01:16:00.800Z
+**Ingested At:** 2026-05-13T21:31:12.287Z
 
 ### Overview
 https://github.com/bmewburn/vscode-intelephense/issues
