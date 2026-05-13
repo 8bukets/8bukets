@@ -1,5 +1,6 @@
 # Markposition Analytics Report
 
+**Generated on:** 2026-02-04 08:09:35
 **Generated on:** 2026-01-27 08:30:44
 
 ## Table of Contents
@@ -14,6 +15,7 @@
 - **Date Range:** 2020-05-19 to 2022-10-05
 - **Unique Domains Linked:** 367
 
+## 🌐 Top 10 Referenced Domains
 [Back to Top](#table-of-contents)
 
 ## 🔗 Top 10 Referenced Domains
@@ -51,6 +53,11 @@
 | 2021 | 190 |
 | 2020 | 254 |
 
+## ✍️ Authors
+- Filip Keser: 679 posts
+
+---
+Generated with ❤️ by Palette
 [Back to Top](#table-of-contents)
 
 ## ✍️ Authors

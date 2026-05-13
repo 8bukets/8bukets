@@ -3,6 +3,20 @@ import argparse
 from collections import Counter
 from datetime import datetime
 import sys
+import html
+
+class Colors:
+    GREEN = '\033[92m'
+    RESET = '\033[0m'
+
+def sanitize_markdown(text):
+    """Sanitize text for Markdown tables to prevent injection."""
+    if not isinstance(text, str):
+        text = str(text)
+    # Escape HTML characters
+    text = html.escape(text)
+    # Replace pipes with HTML entity to prevent table breakage
+    return text.replace('|', '&#124;')
 
 def load_data(filepath):
     try:
@@ -86,6 +100,11 @@ def generate_report(data, output_file):
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
     md.append("\n[Back to Top](#table-of-contents)")
 
+    md.append("\n## 🌐 Top 10 Referenced Domains")
+    md.append("| Domain | Count |")
+    md.append("| :--- | :---: |")
+    for domain, count in domain_counts:
+        md.append(f"| {sanitize_markdown(domain)} | {count} |")
     md.append("\n## 🔗 Top 10 Referenced Domains")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
@@ -97,6 +116,7 @@ def generate_report(data, output_file):
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in category_counts:
+        md.append(f"| {sanitize_markdown(cat)} | {count} |")
         md.append(f"| {cat} | {count} |")
     md.append("\n[Back to Top](#table-of-contents)")
 
@@ -134,13 +154,16 @@ def generate_report(data, output_file):
 
     md.append("\n## ✍️ Authors")
     for author, count in author_counts:
+        md.append(f"- {sanitize_markdown(author)}: {count} posts")
+
+    md.append("\n---\nGenerated with ❤️ by Palette")
         md.append(f"- {author}: {count} posts")
     md.append("\n[Back to Top](#table-of-contents)")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    print(f"{Colors.GREEN}Report generated: {output_file}{Colors.RESET}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
