@@ -50,6 +50,7 @@ from intelephense_scraper import scrape_intelephense_docs
 
 # Expansion Agents
 from agents.swarm_agent import SwarmAgent
+from agents.work_order_agent import WorkOrderAgent
 from agents.backup_agent import BackupAgent, CEOBackupAgent
 from agents.auth import AuthManager
 
@@ -191,6 +192,7 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         # Foundation & Health
         HealthCheckAgent(), RobotTxtAgent(), SystemAuditAgent(), TelemetryAgent(),
         DocumentationAgent(), PerformanceOptimizationAgent(), SandboxAgent(),
+        WorkOrderAgent(),
 
         # Intelligence & Research
         AnalysisAgent(), ResearchAgent(), IntelligenceAgent(), KnowledgeAgent(),
