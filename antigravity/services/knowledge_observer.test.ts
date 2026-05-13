@@ -30,6 +30,15 @@ describe('KnowledgeObserver', () => {
     expect(result.sections[1].content).toBe('Content 2')
   })
 
+  it('should handle Title Case headers', () => {
+    const raw = 'Introduction\nThis is the intro.\nGetting Started\nStep 1...'
+    const result = KnowledgeObserver.processContent('Test Title', raw, 'test-source')
+
+    expect(result.sections).toHaveLength(2)
+    expect(result.sections[0].header).toBe('Introduction')
+    expect(result.sections[1].header).toBe('Getting Started')
+  })
+
   it('should handle uppercase headers and skip code blocks', () => {
     const raw = `INTRODUCTION
 This is an introduction.
