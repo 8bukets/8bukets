@@ -43,5 +43,5 @@ export async function get${idea.feature.replace(/\s+/g, '')}Data() {
 
   fs.writeFileSync(filePath, template)
   console.log(`✅ [Singularity] Successfully generated ${serviceName}.ts`)
-  return filePath
+  return { filePath, serviceName, feature: idea.feature }
 }
