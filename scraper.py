@@ -41,6 +41,15 @@ class MarkPositionScraperAsync:
         self.concurrency = concurrency
         self.session = None
 
+    def sanitize_for_csv(self, value: str) -> str:
+        """Sanitize string to prevent CSV formula injection."""
+        if value is None:
+            return ""
+        value = str(value)
+        if value.startswith(('=', '+', '-', '@')):
+            return "'" + value
+        return value
+
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
