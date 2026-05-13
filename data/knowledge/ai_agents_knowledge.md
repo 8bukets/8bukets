@@ -1,10 +1,10 @@
 # ANTIGRAVITY AI AGENTS KNOWLEDGE BASE
 
-*Last Updated: 2026-05-13T01:12:48.754Z*
+*Last Updated: 2026-05-13T05:44:15.870Z*
 
 ## DOCUMENT: Intelephense Documentation
-**Source:** https://intelephense.com/docs
-**Ingested At:** 2026-05-13T01:12:48.753Z
+**Source:** local://intelephense_docs.md
+**Ingested At:** 2026-05-13T05:44:15.866Z
 
 ### About
 Intelephense is a high performance, cross platform, cross editor PHP language server adhering to the Language Server Protocol (LSP).
