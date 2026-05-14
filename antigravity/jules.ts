@@ -152,9 +152,15 @@ export class Jules {
 
   public async gitSync(message: string) {
     console.log('🔄 [Jules] Commencing autonomous Git synchronization...')
-    // Delegate to CI/CD pipeline (e.g. continuous-presence.yml)
-    console.log('✅ [Jules] Git sync delegated to CI/CD pipeline.')
-    this.recordTask(`Git Sync: Git sync delegated to CI/CD pipeline.`)
+    const { execSync } = await import('child_process')
+    try {
+      execSync('git add .', { stdio: 'inherit' })
+      execSync(`git commit -m "${message}"`, { stdio: 'inherit' })
+      console.log('✅ [Jules] Changes committed autonomously.')
+      this.recordTask(`Git Sync: Committed fixes to local repository.`)
+    } catch (err) {
+      console.warn('⚠️ [Jules] Git sync skipped or failed (likely no changes to commit).')
+    }
   }
 
   public async auditDependencies() {
