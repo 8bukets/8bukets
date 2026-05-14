@@ -4,9 +4,41 @@ import fs from 'fs';
 import path from 'path';
 
 export const dynamic = 'force-dynamic';
+import arcjet, { detectPromptInjection, sensitiveInfo } from "@arcjet/next";
 
-export async function GET() {
+const aj = arcjet({
+  key: process.env.ARCJET_KEY!,
+  rules: [
+    detectPromptInjection({
+      mode: "LIVE",
+    }),
+    sensitiveInfo({
+      mode: "LIVE",
+      deny: ["EMAIL", "PHONE_NUMBER"],
+    }),
+  ],
+});
+
+export async function GET(req: Request) {
   try {
+    const url = new URL(req.url);
+    const queryParameterToCheck = url.searchParams.get("query") || "";
+
+    const decision = await aj.protect(req, {
+      detectPromptInjectionMessage: queryParameterToCheck,
+      sensitiveInfoValue: queryParameterToCheck,
+    } as any);
+
+    if (decision.isDenied()) {
+      if (decision.reason.isPromptInjection()) {
+        return NextResponse.json({ error: "Prompt injection detected" }, { status: 403 });
+      }
+      if (decision.reason.isSensitiveInfo()) {
+        return NextResponse.json({ error: "Sensitive information detected" }, { status: 400 });
+      }
+      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    }
+
     const client = await getMongoClient();
     const db = client.db(process.env.MONGODB_DB || 'software_reviews');
 
