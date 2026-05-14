@@ -11,12 +11,31 @@ import { z } from 'zod'
 
 // --- 1. CONFIGURATION & TYPES ---
 
-const MONGODB_URI = process.env.MONGODB_URI
+const MONGODB_URI = process.env.MONGODB_URI || process.env.DATABASE_URL
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
-const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY
 
 if (!MONGODB_URI || !SUPABASE_URL || !SUPABASE_KEY) {
   console.warn('⚠️ [Autonomous Core] Missing production credentials. System running in limited observability mode.')
+}
+
+/**
+ * CLOUD SECRETS INGESTION
+ * In a production cloud environment, secrets may be mapped to specific headers or vault files.
+ */
+export async function getCloudSecret(key: string): Promise<string | undefined> {
+  // Support for common cloud-native secret env names
+  const cloudKeyMap: Record<string, string[]> = {
+    'MONGODB_URI': ['DATABASE_URL', 'MONGO_URL'],
+    'SUPABASE_KEY': ['SUPABASE_SERVICE_ROLE_KEY', 'SERVICE_ROLE_KEY']
+  }
+
+  const aliases = cloudKeyMap[key] || []
+  for (const alias of aliases) {
+    if (process.env[alias]) return process.env[alias]
+  }
+
+  return process.env[key]
 }
 
 export interface PageProps<T = any> {
