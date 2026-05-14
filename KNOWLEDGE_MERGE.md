@@ -236,3 +236,15 @@ All the best - https://markposition.wordpress.com
 - **Target**: https://software-online-review.com
 - **Title**: software info by fk – software-online-review – Filip Keser
 - **Relationship Map**: Confirmed overlapping identities between Antigravity, Project SOR, software-online-review.com, software-review-platform, and markposition.wordpress.com as the formal Market Intelligence layer.
+
+## Autonomous Observation
+- **Date**: 2026-05-14T17:51:51.328Z
+- **Target**: https://software-online-review.com
+- **Title**: software info by fk – software-online-review – Filip Keser
+- **Relationship Map**: Confirmed overlapping identities between Antigravity, Project SOR, software-online-review.com, software-review-platform, and markposition.wordpress.com as the formal Market Intelligence layer.
+
+## Autonomous Observation
+- **Date**: 2026-05-14T17:55:53.567Z
+- **Target**: https://software-online-review.com
+- **Title**: software info by fk – software-online-review – Filip Keser
+- **Relationship Map**: Confirmed overlapping identities between Antigravity, Project SOR, software-online-review.com, software-review-platform, and markposition.wordpress.com as the formal Market Intelligence layer.

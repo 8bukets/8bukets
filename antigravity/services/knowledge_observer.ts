@@ -99,51 +99,52 @@ export class KnowledgeObserver {
   }
 
   /**
-   * persistKnowledge: Merges and saves knowledge to persistent stores.
+   * persistKnowledge: Merges and saves knowledge to the unified system store.
    */
   public async persistKnowledge(knowledge: Knowledge) {
     if (!fs.existsSync(this.storageDir)) {
       fs.mkdirSync(this.storageDir, { recursive: true })
     }
 
-    const jsonStore = path.join(this.storageDir, 'ai_agents_knowledge.json')
-    const mdStore = path.join(this.storageDir, 'ai_agents_knowledge.md')
+    const jsonStore = path.join(this.storageDir, 'system_knowledge.json')
 
-    // 1. JSON Persistence (Merge Logic)
-    let existingData: Knowledge[] = []
+    // 1. JSON Persistence (Cross-Ecosystem Merge Logic)
+    let systemKnowledge: any = {
+      metadata: {
+        generated_at: new Date().toISOString(),
+        version: 1.0,
+        sources_processed: []
+      },
+      sections: {},
+      typescript_sections: {}
+    }
+
     if (fs.existsSync(jsonStore)) {
       try {
-        existingData = JSON.parse(fs.readFileSync(jsonStore, 'utf8'))
+        systemKnowledge = JSON.parse(fs.readFileSync(jsonStore, 'utf8'))
       } catch (e) {
-        console.warn('⚠️ [KnowledgeObserver] Failed to parse existing JSON store. Starting fresh.')
+        console.warn('⚠️ [KnowledgeObserver] Failed to parse unified store. Initializing new structure.')
       }
     }
 
-    // Replace if same title exists, or append
-    const index = existingData.findIndex(k => k.title === knowledge.title)
-    if (index !== -1) {
-      existingData[index] = knowledge
-    } else {
-      existingData.push(knowledge)
+    // Ensure TypeScript sections structure exists
+    if (!systemKnowledge.typescript_sections) {
+      systemKnowledge.typescript_sections = {}
     }
 
-    fs.writeFileSync(jsonStore, JSON.stringify(existingData, null, 2))
-
-    // 2. Markdown Persistence (Rebuild)
-    let mdContent = `# ANTIGRAVITY AI AGENTS KNOWLEDGE BASE\n\n*Last Updated: ${new Date().toISOString()}*\n\n`
-
-    for (const k of existingData) {
-      mdContent += `## DOCUMENT: ${k.title}\n`
-      mdContent += `**Source:** ${k.metadata.source}  \n`
-      mdContent += `**Ingested At:** ${k.metadata.ingestedAt}\n\n`
-
-      for (const section of k.sections) {
-        mdContent += `### ${section.header}\n${section.content}\n\n`
-      }
-      mdContent += `---\n\n`
+    // Upsert the new knowledge into TypeScript-specific namespace
+    systemKnowledge.typescript_sections[knowledge.title] = {
+      sections: knowledge.sections,
+      metadata: knowledge.metadata
     }
 
-    fs.writeFileSync(mdStore, mdContent)
-    console.log(`✅ [KnowledgeObserver] Persisted "${knowledge.title}" to ${this.storageDir}`)
+    // Update global metadata
+    systemKnowledge.metadata.generated_at = new Date().toISOString()
+    if (!systemKnowledge.metadata.sources_processed.includes(knowledge.metadata.source)) {
+      systemKnowledge.metadata.sources_processed.push(knowledge.metadata.source)
+    }
+
+    fs.writeFileSync(jsonStore, JSON.stringify(systemKnowledge, null, 2))
+    console.log(`✅ [KnowledgeObserver] Persisted "${knowledge.title}" to unified store at ${jsonStore}`)
   }
 }
