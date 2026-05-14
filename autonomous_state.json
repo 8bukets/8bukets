@@ -15,19 +15,19 @@
         }
     ],
     "docker": {
-        "status": "disconnected",
-        "containerCount": 0,
-        "simulated": false,
-        "timestamp": "2026-05-14T14:56:58.933Z"
+        "status": "simulated",
+        "containerCount": 2,
+        "simulated": true,
+        "timestamp": "2026-05-14T21:14:44.651Z"
     },
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1778770618934,
+        "timestamp": 1778793284651,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
-        "branches": 1668,
+        "branches": 1676,
         "pendingTasks": 0,
         "relationshipMap": {
             "stakeholderEngagement": {
@@ -36,6 +36,7 @@
                     "activeProjects": [
                         "remotes/origin/jules/add-system-patent-947552789592854459",
                         "remotes/origin/jules/compile-knowledge-integration-4875845775501523719",
+                        "remotes/origin/jules/knowledge-merge-integration-4756532437460590133",
                         "remotes/origin/jules/scraper-intelephense-2916212763307459692",
                         "remotes/origin/jules/scraper-markposition-17752547678215960211"
                     ]
@@ -45,6 +46,7 @@
                     "activeProjects": [
                         "remotes/origin/jules/add-system-patent-947552789592854459",
                         "remotes/origin/jules/compile-knowledge-integration-4875845775501523719",
+                        "remotes/origin/jules/knowledge-merge-integration-4756532437460590133",
                         "remotes/origin/jules/scraper-intelephense-2916212763307459692",
                         "remotes/origin/jules/scraper-markposition-17752547678215960211"
                     ]
@@ -54,6 +56,7 @@
                     "activeProjects": [
                         "remotes/origin/jules/add-system-patent-947552789592854459",
                         "remotes/origin/jules/compile-knowledge-integration-4875845775501523719",
+                        "remotes/origin/jules/knowledge-merge-integration-4756532437460590133",
                         "remotes/origin/jules/scraper-intelephense-2916212763307459692",
                         "remotes/origin/jules/scraper-markposition-17752547678215960211"
                     ]
@@ -61,7 +64,6 @@
             },
             "goalAlignment": {
                 "Achieve full autonomous work cycles.": [
-                    "jules-3450373713332257591-d6dcb3d3",
                     "remotes/origin/add-malubeach-scraper-16704333902164650708",
                     "remotes/origin/add-mysql-agent-12534386317238704274",
                     "remotes/origin/autonomous-agents-framework-90146205652415261",
@@ -83,6 +85,7 @@
                     "remotes/origin/cloud-autonomous-stabilization-11787002344957414636",
                     "remotes/origin/codex/software-review-platform-starter",
                     "remotes/origin/dynamic-cloud-workflow-agents-4167178583632810604",
+                    "remotes/origin/feat/antigravity-cloud-evolution-3450373713332257591",
                     "remotes/origin/feat/connect-docker-collaboration-6033606454460470488",
                     "remotes/origin/feat/custom-github-action-10612201952418849138",
                     "remotes/origin/feat/full-autonomous-creation-execution-17830710122661382280",
@@ -92,6 +95,7 @@
                     "remotes/origin/feat/react-agent-integration-8372098972397137891",
                     "remotes/origin/feat/setup-npm-workspaces-gemini-cli-12181861489580932121",
                     "remotes/origin/feat/smarter-cloud-workflow-1168853453825745042",
+                    "remotes/origin/feat/unified-autonomous-intelligence-v2-11368535330418373877",
                     "remotes/origin/feat/vercel-sandbox-agent-4324012582245511797",
                     "remotes/origin/feature/autonomous-cloud-presence-6564198224759094346",
                     "remotes/origin/feature/autonomous-creation-execution-5649264533760770196",
@@ -104,6 +108,7 @@
                     "remotes/origin/feature/orchestrator-active-decisions-12848386406612919414",
                     "remotes/origin/feature/smarter-cloud-workflow-13558470471841766440",
                     "remotes/origin/fix-and-automate-autonomous-system-4910910196834454154",
+                    "remotes/origin/fix-cloud-autonomous-presence-9827360869310750655",
                     "remotes/origin/fix/agent-memory-and-tests-14715316655293625624",
                     "remotes/origin/fix/autonomous-system-syntax-16085505803900570829",
                     "remotes/origin/improve-git-sync-and-ingest-sor-6424222975070794974",
@@ -211,7 +216,6 @@
                     "remotes/origin/jules-knowledge-merge-collaboration-3722212575858302197"
                 ],
                 "Utilize Jenkins CI/CD to facilitate continuous integration, build orchestration, and system ignition.": [
-                    "main",
                     "remotes/origin/add-duo-planner-agent-8887381606310982436",
                     "remotes/origin/add-gitlab-security-agent-prompt-6060929454808838034",
                     "remotes/origin/add-malubeach-scraper-16704333902164650708",
@@ -226,6 +230,7 @@
                     "remotes/origin/feat/gitlab-ci-pipeline-15616713096718552061",
                     "remotes/origin/feat/nextjs-supabase-mongodb-ecosystem-8833511503168317980",
                     "remotes/origin/feat/setup-docker-ci-cd-15330021649064333459",
+                    "remotes/origin/feat/unified-autonomous-intelligence-v2-11368535330418373877",
                     "remotes/origin/feature/autonomous-cloud-presence-6564198224759094346",
                     "remotes/origin/feature/autonomous-work-order-system-2865376496549289667",
                     "remotes/origin/feature/backup-agent-11331906079381269962",
@@ -243,7 +248,6 @@
                     "remotes/origin/jules-continuous-presence-workflow-3144055533381791740",
                     "remotes/origin/jules-gitlab-ci-setup-10531506072496288006",
                     "remotes/origin/jules/add-system-patent-947552789592854459",
-                    "remotes/origin/main",
                     "remotes/origin/opt-scraper-regex-6404737091544860092",
                     "remotes/origin/palette-analytics-ux-improvement-10522861074342822232",
                     "remotes/origin/palette-cli-enhancement-5441850221004135602",
@@ -295,5 +299,5 @@
             ]
         }
     },
-    "last_sync": "2026-05-14T14:56:58.963Z"
+    "last_sync": "2026-05-14T21:15:00.402Z"
 }
