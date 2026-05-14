@@ -24,6 +24,7 @@ from agents.developer_agent import DeveloperAgent
 from agents.jules_orchestrator_agent import JulesIntelligenceAgent
 from agents.oracle_ai_agent import OracleAIAgent
 from agents.memory_system import MemorySystem
+from agents.oracle_ai_agent import OracleAIAgent
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
@@ -107,6 +108,12 @@ def run_pipeline(skip_scrape=False):
     # 4. Pipeline Execution
     logger.info("Starting Agent Pipeline...")
     results_aggregator = {}
+
+    # Oracle AI Knowledge Processing
+    if 'oracle_ai_data' in locals() and oracle_ai_data:
+        oracle_agent_results = oracle_ai_agent.process(oracle_ai_data)
+        results_aggregator['oracle_ai'] = oracle_agent_results
+        save_result("oracle_ai_insights.json", oracle_agent_results, current_date)
 
     # Health Check
     health_results = health_agent.process(data)
