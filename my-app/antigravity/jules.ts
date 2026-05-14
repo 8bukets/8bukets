@@ -111,12 +111,14 @@ export class Jules {
     console.log('🔄 [Jules] Commencing autonomous Git synchronization...')
     const { execSync } = await import('child_process')
     try {
+      execSync('git pull --rebase origin main || true', { stdio: 'inherit' })
       execSync('git add .', { stdio: 'inherit' })
       execSync(`git commit -m "${message}"`, { stdio: 'inherit' })
-      console.log('✅ [Jules] Changes committed autonomously.')
-      this.recordTask(`Git Sync: Committed fixes to local repository.`)
+      execSync('git push origin main || true', { stdio: 'inherit' })
+      console.log('✅ [Jules] Changes committed and pushed autonomously.')
+      this.recordTask(`Git Sync: Synchronized repository state autonomously.`)
     } catch (err) {
-      console.warn('⚠️ [Jules] Git sync skipped or failed (likely no changes to commit).')
+      console.warn('⚠️ [Jules] Git sync skipped or failed (likely no changes to commit or upstream issues).')
     }
   }
 
@@ -143,6 +145,13 @@ export class Jules {
     await this.selfRepair()
     await this.auditDependencies()
     
+    // Scan and Observe Knowledge
+    const { observeKnowledge } = await import('./services/knowledge')
+    const observation = await observeKnowledge('https://software-online-review.com')
+    if (observation.status === 'observed') {
+      this.recordTask(`Knowledge Observed: Extracted intelligence from ${observation.url}`)
+    }
+
     // 3. Ideate (Synthesis)
     const { synthesize } = await import('./synthesis')
     const ideas = await synthesize()

@@ -1,0 +1,59 @@
+{
+  "servers": {
+    "MCP_DOCKER": {
+      "command": "docker",
+      "args": [
+        "mcp",
+        "gateway",
+        "run",
+        "--profile",
+        "antigravity-sovereign"
+      ],
+      "type": "stdio"
+    },
+    "MCP_DOCKER_DEVOPS": {
+      "command": "docker",
+      "args": [
+        "mcp",
+        "gateway",
+        "run",
+        "--profile",
+        "antigravity-devops"
+      ],
+      "type": "stdio"
+    },
+    "MCP_DOCKER_SECURITY": {
+      "command": "docker",
+      "args": [
+        "mcp",
+        "gateway",
+        "run",
+        "--profile",
+        "antigravity-security"
+      ],
+      "type": "stdio"
+    },
+    "jules": {
+      "command": "docker",
+      "args": [
+        "agent",
+        "serve",
+        "mcp",
+        "getanant/jules-agent:latest"
+      ],
+      "type": "stdio"
+    },
+    "jules-explorer": {
+      "command": "docker",
+      "args": [
+        "agent",
+        "serve",
+        "mcp",
+        "getanant/jules-agent:latest",
+        "--agent",
+        "explorer"
+      ],
+      "type": "stdio"
+    }
+  }
+}

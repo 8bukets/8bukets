@@ -11,12 +11,31 @@ import { z } from 'zod'
 
 // --- 1. CONFIGURATION & TYPES ---
 
-const MONGODB_URI = process.env.MONGODB_URI
+const MONGODB_URI = process.env.MONGODB_URI || process.env.DATABASE_URL
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
-const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY
 
 if (!MONGODB_URI || !SUPABASE_URL || !SUPABASE_KEY) {
   console.warn('⚠️ [Autonomous Core] Missing production credentials. System running in limited observability mode.')
+}
+
+/**
+ * CLOUD SECRETS INGESTION
+ * In a production cloud environment, secrets may be mapped to specific headers or vault files.
+ */
+export async function getCloudSecret(key: string): Promise<string | undefined> {
+  // Support for common cloud-native secret env names
+  const cloudKeyMap: Record<string, string[]> = {
+    'MONGODB_URI': ['DATABASE_URL', 'MONGO_URL'],
+    'SUPABASE_KEY': ['SUPABASE_SERVICE_ROLE_KEY', 'SERVICE_ROLE_KEY']
+  }
+
+  const aliases = cloudKeyMap[key] || []
+  for (const alias of aliases) {
+    if (process.env[alias]) return process.env[alias]
+  }
+
+  return process.env[key]
 }
 
 export interface PageProps<T = any> {
@@ -162,10 +181,6 @@ export async function getSystemInsights() {
   // Only use cache if we are in a recognized Next.js request context
   const isServerRequest = !!process.env.NEXT_RUNTIME
 
-  if (isServerRequest) {
-    'use cache'
-    cacheLife('inventory')
-  }
   
   const { synthesize } = await import('./synthesis')
   const { getPersistenceHealth } = await import('./services/persistence')
@@ -178,6 +193,11 @@ export async function getSystemInsights() {
   const persistence = await getPersistenceHealth()
   const network = await getNetworkState()
   const relay = await getRelayState()
+
+  const { getMissionMetadata } = await import('./services/collaboration')
+  const { checkDockerHealth } = await import('./services/docker')
+  const collaboration = await getMissionMetadata()
+  const docker = await checkDockerHealth()
 
   const baseInsights = {
     circuitBreakers: {
@@ -196,6 +216,8 @@ export async function getSystemInsights() {
     persistence,
     network,
     relay,
+    collaboration,
+    docker,
     uptime: process.uptime()
   }
 
@@ -228,13 +250,6 @@ export async function autonomousFetch<T>(
   try {
     const data = await fetcher()
     
-    // Phase 12: Safeguard against non-server environments
-    const isServerRequest = !!process.env.NEXT_RUNTIME
-
-    if (isServerRequest) {
-      if (config.tags) config.tags.forEach(tag => cacheTag(tag))
-      if (config.life) cacheLife(config.life as any)
-    }
 
     const result = schema.safeParse(data)
     if (!result.success) {
