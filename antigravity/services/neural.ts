@@ -32,7 +32,6 @@ export async function broadcastPulse() {
 }
 
 export async function getNetworkState() {
-  'use cache'
   // Simulates receiving pulses from other agents in the "Global Neural Network"
   return [
     { origin: 'production', health: 'optimal', lastSeen: '2m ago' },

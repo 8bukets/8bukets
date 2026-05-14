@@ -41,15 +41,26 @@ class GitKrakenEvolutionAgent(BaseAgent):
         except Exception as e:
             self.logger.warning(f"Could not retrieve dynamic git metrics: {e}")
 
+        semantic_commits_detected = False
+        try:
+            log_res = subprocess.run(["git", "log", "--oneline", "-n", "20"], capture_output=True, text=True).stdout.lower()
+            if any(prefix in log_res for prefix in ["feat:", "fix:", "chore:", "docs:", "refactor:"]):
+                semantic_commits_detected = True
+        except Exception as e:
+            self.logger.warning(f"Could not check for semantic commits: {e}")
+
         graph_depth = "EXTENDED" if commit_count > 10 else "STANDARD"
-        kraken_compatibility_score = min(0.99, 0.8 + (0.05 * branch_count))
+
+        base_score = 0.85 if semantic_commits_detected else 0.80
+        kraken_compatibility_score = min(0.99, base_score + (0.05 * branch_count))
 
         visualization_data = {
             "graph_depth": graph_depth,
-            "commit_clustering": "SEMANTIC",
+            "commit_clustering": "SEMANTIC" if semantic_commits_detected else "CHRONOLOGICAL",
             "kraken_compatibility_score": kraken_compatibility_score,
             "branches": branch_count,
-            "commits": commit_count
+            "commits": commit_count,
+            "semantic_commits_detected": semantic_commits_detected
         }
 
         self.logger.info(f"GitKraken compatibility evaluated. Score: {visualization_data['kraken_compatibility_score']}")

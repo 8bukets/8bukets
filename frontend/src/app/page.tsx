@@ -1,5 +1,7 @@
-'use client';
+"use client";
 
+import { useChat } from "@ai-sdk/react";
+import { useState } from "react";
 import { useEffect, useState } from 'react';
 
 type StatusResponse = {
@@ -11,6 +13,23 @@ type IntelligenceResponse = {
   snapshot: { evolution?: { parameter_shifts?: { current_version?: string } } } | null;
   workOrders: { id: string; type: string; status: string; goal: string; createdAt: string }[];
   logs: { time: string; type: string; agent: string; message: string }[];
+  snapshot: {
+    evolution?: {
+      parameter_shifts?: {
+        current_version?: string;
+      };
+    };
+  } | null;
+  workOrders: {
+    id: string;
+    type: string;
+    goal: string;
+  }[];
+  logs: {
+    time: string;
+    type: string;
+    msg: string;
+  }[];
 };
 
 export default function Home() {
@@ -38,7 +57,23 @@ export default function Home() {
     fetchData();
   }, []);
 
+export default function Chat() {
+  const [input, setInput] = useState("");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const { messages, sendMessage } = useChat({
+    onError: async (e) => setErrorMessage(e.message),
+  });
   return (
+    <div className="flex flex-col w-full max-w-md py-24 mx-auto stretch">
+      {messages.map((message) => (
+        <div key={message.id} className="whitespace-pre-wrap">
+          {message.role === "user" ? "User: " : "AI: "}
+          {message.parts.map((part, i) => {
+            switch (part.type) {
+              case "text":
+                return <div key={`${message.id}-${i}`}>{part.text}</div>;
+            }
+          })}
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start max-w-4xl w-full">
         <div className="flex flex-col sm:flex-row justify-between items-end w-full gap-4">
@@ -91,6 +126,7 @@ export default function Home() {
               ) : intel?.workOrders && intel.workOrders.length > 0 ? (
                 <div className="space-y-3">
                   {intel.workOrders.map((order: { id: string; type: string; status: string; goal: string; createdAt: string }) => (
+                  {intel.workOrders.map((order) => (
                     <div key={order.id} className="p-3 bg-zinc-50 dark:bg-zinc-800 rounded-lg border-l-4 border-blue-500">
                       <div className="flex justify-between items-start mb-1">
                         <span className="text-xs font-bold text-blue-500 uppercase">{order.type}</span>
@@ -118,6 +154,7 @@ export default function Home() {
                 <p className="animate-pulse">Fetching latest insights...</p>
               ) : intel?.logs && intel.logs.length > 0 ? (
                 intel.logs.map((log: { time: string; type: string; agent: string; message: string; msg?: string; }, i: number) => (
+                intel.logs.map((log, i: number) => (
                   <div key={i} className="mb-1">
                     <span className="text-zinc-500">[{log.time}]</span>{' '}
                     <span className={log.type === 'error' ? 'text-red-400' : 'text-green-400'}>
@@ -163,7 +200,27 @@ export default function Home() {
             </li>
           </ul>
         </div>
-      </main>
+      ))}
+
+      {errorMessage && (
+        <div className="text-red-500 text-sm mb-4">{errorMessage}</div>
+      )}
+
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          sendMessage({ text: input });
+          setInput("");
+          setErrorMessage(null);
+        }}
+      >
+        <input
+          className="fixed dark:bg-zinc-900 bottom-0 w-full max-w-md p-2 mb-8 border border-zinc-300 dark:border-zinc-800 rounded shadow-xl"
+          value={input}
+          placeholder="Say something..."
+          onChange={(e) => setInput(e.currentTarget.value)}
+        />
+      </form>
     </div>
   );
 }

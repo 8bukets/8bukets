@@ -20,7 +20,6 @@ export async function getAppStats(): Promise<AppStats> {
     'system-stats',
     AppStatsSchema,
     async () => {
-      'use cache'
       // Autonomous self-diagnostic health check
       const health = await healthCheck()
 
