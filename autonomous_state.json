@@ -22,6 +22,12 @@
     "docker": {
         "status": "disconnected",
         "containerCount": 0,
+        "timestamp": "2026-05-13T22:26:22.405Z"
+    },
+    "last_sync": "2026-05-13T22:26:33.517Z",
+    "intelligence": {
+        "branches": 1643,
+        "pendingTasks": 0
         "timestamp": "2026-05-14T03:18:48.128Z"
     },
     "last_sync": "2026-05-14T03:18:48.152Z",

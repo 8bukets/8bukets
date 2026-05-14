@@ -1,5 +1,10 @@
 # ANTIGRAVITY AI AGENTS KNOWLEDGE BASE
 
+*Last Updated: 2026-05-13T21:31:12.289Z*
+
+## DOCUMENT: Intelephense Documentation
+**Source:** local://intelephense_docs.md
+**Ingested At:** 2026-05-13T21:31:11.226Z
 *Last Updated: 2026-05-14T03:22:43.928Z*
 *Last Updated: 2026-05-14T03:18:37.412Z*
 
@@ -4951,6 +4956,7 @@ Skip to content ↓
 - Collapse this bar
 ## DOCUMENT: Intelephense: README
 **Source:** https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/README.md
+**Ingested At:** 2026-05-13T21:31:11.777Z
 **Ingested At:** 2026-05-14T03:18:37.003Z
 
 ### Intelephense
@@ -4979,6 +4985,7 @@ This is proprietary software released to end users under a "freemium" model. Man
 
 ## DOCUMENT: Intelephense: features
 **Source:** https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/features.md
+**Ingested At:** 2026-05-13T21:31:11.897Z
 **Ingested At:** 2026-05-14T03:18:37.103Z
 
 ### Features
@@ -5036,6 +5043,7 @@ This is proprietary software released to end users under a "freemium" model. Man
 
 ## DOCUMENT: Intelephense: installation
 **Source:** https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/installation.md
+**Ingested At:** 2026-05-13T21:31:12.044Z
 **Ingested At:** 2026-05-14T03:18:37.200Z
 
 ### Installation
@@ -5810,6 +5818,7 @@ interface InitialisationOptions {
 
 ## DOCUMENT: Intelephense: gettingStarted
 **Source:** https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/gettingStarted.md
+**Ingested At:** 2026-05-13T21:31:12.157Z
 **Ingested At:** 2026-05-14T03:18:37.309Z
 
 ### Getting Started
@@ -6287,6 +6296,7 @@ Packages can be found online that aim to workaround these issues by providing st
 
 ## DOCUMENT: Intelephense: support
 **Source:** https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/support.md
+**Ingested At:** 2026-05-13T21:31:12.287Z
 **Ingested At:** 2026-05-14T03:18:37.410Z
 
 ### Overview
