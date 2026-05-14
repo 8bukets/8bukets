@@ -9,8 +9,6 @@ vi.mock('fs', () => ({
   },
   existsSync: vi.fn(),
   readFileSync: vi.fn(),
-  writeFileSync: vi.fn()
-  }
 }))
 
 // We mock the core module *before* importing the service

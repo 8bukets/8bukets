@@ -3,6 +3,8 @@ import path from 'path'
 import { z } from 'zod'
 import { autonomousFetch } from '@/antigravity/core'
 import { checkDockerHealth } from './docker'
+import { getLatestBuildStatus } from './jenkins'
+
 
 /**
  * ANTIGRAVITY COLLABORATION SERVICE (Phase 9)
@@ -109,6 +111,8 @@ ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
   fs.appendFileSync(path.join(logDir, 'collaboration.log'), summary)
 
   return { notifiedCount: metadata.stakeholders.length }
+}
+
 export async function generateRelationshipMap(branches: any[], stakeholders: Stakeholder[], goals: string[]) {
   console.log('🗺️ [Collaboration] Generating relationship map...')
 
@@ -141,7 +145,8 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     { type: 'Documentation', name: 'AGENTS.md', status: 'Active' },
     { type: 'Documentation', name: 'CONSOLIDATED_INTELLIGENCE.md', status: 'Active' },
     { type: 'Service', name: 'Jules Cognitive Agent', status: 'Optimal' },
-    { type: 'Service', name: 'Unified Web Command Center', status: 'Live' }
+    { type: 'Service', name: 'Unified Web Command Center', status: 'Live' },
+    { type: 'Service', name: 'Jenkins CI/CD Pipeline', status: 'Active' }
   ]
 
   return map
@@ -151,6 +156,7 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
   console.log('🔄 [Collaboration] Synchronizing autonomous state...')
   const metadata = await getMissionMetadata()
   const dockerHealth = await checkDockerHealth()
+  const jenkinsStatus = await getLatestBuildStatus()
   const statePath = path.join(process.cwd(), 'autonomous_state.json')
 
   let currentState: any = {}
@@ -173,6 +179,7 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
     mission: metadata.missionStatement,
     stakeholders: metadata.stakeholders,
     docker: dockerHealth,
+    jenkins: jenkinsStatus,
     intelligence: {
       branches: branches.length,
       pendingTasks: workOrders.length,
