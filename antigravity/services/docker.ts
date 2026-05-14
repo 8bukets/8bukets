@@ -38,7 +38,7 @@ export async function getDockerFleetStatus(): Promise<DockerContainer[]> {
       // Phase 12: Adaptive Connectivity
       // If we are in a restricted environment (like a serverless sandbox or CI without Docker socket access),
       // we fall back to a simulated but descriptive state rather than just failing.
-      const isRestrictedEnv = process.env.NODE_ENV === 'test' || process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true' || true
+      const isRestrictedEnv = process.env.NODE_ENV === 'test' || process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true'
 
       if (isRestrictedEnv) {
         console.log('🧪 [Docker] Restricted environment detected. Engaging simulated fleet observability.')
