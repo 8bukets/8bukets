@@ -20,11 +20,83 @@
       },
       {
         "header": "Type System",
-        "content": "Providing type information in your PHP code will result in a better experience when using Intelephense. Type information can be provided via coded type declarations or PHPDoc type annotations. Where both have been provided, PHPDoc type annotations are given precedence as they can provide more detailed type information.\n\n<?php\n\n/**\n * @param string $s  <- A phpdoc parameter type annotation for $s\n * @return string[] <- A phpdoc return type annotation specifying the array element type\n **/\nfunction foo(string $s): array {} // <- type declarations for $s (string) and function return (array)\nIntelephense will also compute inferred types when a declared or documented type is not found or during control flow analysis. When a type is inferred it may be reduced to it's minimal representation. For example, MyClass|object would become object because MyClass is a sub-type of object.\n\nIntelephense provides limited support for PHPStorm metadata as a way of overriding or supplementing type information. It is recommended to use PHPDoc type annotations instead of PHPStorm metadata where possible as they are more widely supported across different tools. Support for PHPStorm metadata may be removed in future releases. Please see the PHPDoc Instead of PHPStorm Metadata/Attributes section in the appendix for more information.\n\nType Narrowing\nIntelephense performs type narrowing of variables during control flow analysis. Type narrowing expressions include built-in type assertions such as is_string, custom type assertions annotated with @assert, instanceof, and equality expressions. The example below demonstrates type narrowing.\n\n<?php\n\nclass Foo {}\n\nfunction example(string|array|Foo|null $input): void\n{\n    if (!$input) {\n        // $input is narrowed to string|array|null in this block\n        // empty strings, empty arrays and null are all falsey\n    } else {\n        // $input is narrowed to string|array|Foo in this block\n\n        if ($input instanceof Foo) {\n            // $input is narrowed to Foo in this block\n        } else if (is_string($input)) {\n            // $input is narrowed to string in this block\n        } else {\n            // $input is narrowed to array in this block\n        }\n    }\n}"
+        "content": "Providing type information in your PHP code will result in a better experience when using Intelephense. Type information can be provided via coded type declarations or PHPDoc type annotations. Where both have been provided, PHPDoc type annotations are given precedence as they can provide more detailed type information.\n\n<?php\n\n/**\n * @param string $s  <- A phpdoc parameter type annotation for $s\n * @return string[] <- A phpdoc return type annotation specifying the array element type\n **/\nfunction foo(string $s): array {} // <- type declarations for $s (string) and function return (array)\nIntelephense will also compute inferred types when a declared or documented type is not found or during control flow analysis. When a type is inferred it may be reduced to it's minimal representation. For example, MyClass|object would become object because MyClass is a sub-type of object.\n\nIntelephense provides limited support for PHPStorm metadata as a way of overriding or supplementing type information. It is recommended to use PHPDoc type annotations instead of PHPStorm metadata where possible as they are more widely supported across different tools. Support for PHPStorm metadata may be removed in future releases. Please see the PHPDoc Instead of PHPStorm Metadata/Attributes section in the appendix for more information."
+      },
+      {
+        "header": "Type Narrowing",
+        "content": "Intelephense performs type narrowing of variables during control flow analysis. Type narrowing expressions include built-in type assertions such as is_string, custom type assertions annotated with @assert, instanceof, and equality expressions. The example below demonstrates type narrowing.\n\n<?php\n\nclass Foo {}\n\nfunction example(string|array|Foo|null $input): void\n{\n    if (!$input) {\n        // $input is narrowed to string|array|null in this block\n        // empty strings, empty arrays and null are all falsey\n    } else {\n        // $input is narrowed to string|array|Foo in this block\n\n        if ($input instanceof Foo) {\n            // $input is narrowed to Foo in this block\n        } else if (is_string($input)) {\n            // $input is narrowed to string in this block\n        } else {\n            // $input is narrowed to array in this block\n        }\n    }\n}"
       },
       {
         "header": "Type Evolving",
-        "content": "Type evolving is the change in a variable's type after an assignment expression. Simple variables and parameters always change to the type of the assigned expression regardless of initial assignments, type declarations or annotations.\n\nProperties with no type declaration or annotation will also change to the type of the assigned expression. Otherwise they will only widen or narrow according to the bounds of the initial type they have been declared or annotated with.\n\nIntelephense will type evolve array types when mutated only if they are declared with an empty array initialiser. Otherwise they are considered to retain their initial declared, annotated or inferred type. The example below demonstrates type evolving.\n\n<?php\n\nfunction example(int $a): void\n{\n    $a = \"string\"; // $a is now type string\n\n    $b = []; // $b is type array and flagged as evolving\n\n    $b[] = \"string\"; // $b is now type string[]\n\n    $b[] = 9; //$b is now (string|int)[]\n\n    $c = [1, 2]; // $c is type int[] and NOT flagged as evolving\n\n    $c[] = \"string\"; // $c is still type int[]\n}\nSupported Types\nIn the list of supported types below, some can only be used in PHPDoc as documented types. Please see the PHP type system documentation if you are unfamiliar with the standard PHP types. PHPDoc only, or internal types, are flagged with an asterisk.\n\nAdditional types used in other static analysis engines that are not listed here are not fully supported. Intelephense attempts to fallback to an appropriate alternative in this situation.\n\nTop Type\nmixed\n\nThe super-type of all types. Any other type can be assigned to a type constraint of mixed. If intelephense cannot determine a more specific type for a symbol or expression then this is the type it is given. Because of this, Intelephense also allows mixed to be assigned to any other type constraint as well, effectively turning off type checking for that instance. To switch off this behaviour you can set both intelephense.diagnostics.relaxedTypeCheck and intelephense.diagnostics.noMixedTypeCheck to false.\n\nBottom Type\nnever\n\nThe sub-type of all types. This type can be assigned to any other type constraint. It is used to represent an impossibility in the code and can be used as the return type of a function that exits or always throws an exception.\n\nScalar Types\nAny of these types can be assigned to the other unless the declare(strict_types=1) directive is used in the file or intelephense.diagnostics.strictTypes is true.\n\nint\nfloat\nbool\nstring\nUnit Types\nvoid\nnull\ntrue\nfalse\nunset* Intelephense uses this PHP keyword to represent the type of an undefined variable.\nLiteral Types\n'myString'* String literals are encapsulated in quotes.\n9* An integer literal.\nObject Types\nobject\n\\MyNs\\MyClass Classes, interfaces, traits, and enums can be fully qualified or not. If not fully qualified then the standard PHP name resolution rules apply to determine the fully qualified name.\nobject{name: string, optional?: string}* Object shapes can be used to provide further information on dynamic object properties. This improves completion suggestions and type inference when accessing these properties. Optional properties can be declared by adding a ? at the end of the name.\nstatic\nself\n$this*\nArray Types\narray\narray<TKey, TValue>* Generic form for an array where the type arguments represent the array key and value types respectively. If only a single type argument is provided then it will be normalised to array<string|int, TValue>.\nTValue[]* Represents a numeric indexed array where the element type is TValue.\narray{description: string, 'length (cm)': float, optional?: string, ...<int, string>}* Array shapes can be used to provide further information on array element keys and value types. This improves completion suggestions and type inference when accessing these elements. Keys with non alphanumeric characters need to be in quotes. Optional keys can be declared by adding a ? at the end of the key. Unspecified extra elements can be declared by adding an element of form ...<TKey, TValue>. Keys are optional and default to numerically indexed. For example a two element tuple would be array{Type0, Type1}. A mix of keyed and unkeyed elements is not supported.\nCallable Types\ncallable Base callable type that represents a callable string, callable array or a class that implements __invoke.\ncallable(TParamA $a, TParamB $b): TReturn* Callable type signatures can be defined to improve language intelligence. Parameter names are optional. The callable type should be wrapped in parentheses if it forms part of a union. Closure can be used instead of callable for a more specific type.\nAlias Types\niterable Alias for Traversable|array.\n?A Nullable type that is shorthand for null|A. Cannot be used as part of a union or intersection type.\nUnion Types\nA|B|C\n\nA type which may have multiple atomic type representations. For example, a type constraint of A|B can be assigned type A or B.\n\nIntersection Types\nA&B&C\n\nA composite type which consists of multiple atomic types. For example, a type of A&B can be assigned to type A and to type B.\n\nDNF Types\nA|B|(C&D&E)\n\nWhen combining union and intersection types, only a single level of nesting is permitted. The union must be the top level.\n\nGeneric Types\nMyType<TypeArg1, TypeArg2>*\n\nA generic type can be declared using one or many @template PHPDoc annotations above the target class, interface, or trait. Type arguments can then be supplied in the same order as the @template declarations. The following built-in types are templated:\n\niterable<TKey, TValue>\nTraversable<TKey, TValue>\narray<TKey, TValue>\nIterator<TKey, TValue>\nIteratorAggregate<TKey, TValue>\nArrayAccess<TKey, TValue>\nWeakReference<TObject>\nWeakMap<TKey, TValue>\nFiber<TStart, TResume, TReturn, TSuspend>\nDatePeriod<TDate, TEnd>\nReflectionAttribute<TObject>\nReflectionClass<TObject>\nGenerator<TKey, TYield, TSend, TReturn>\nArrayObject<TKey, TValue>\nSplDoublyLinkedList<TValue>\nSplQueue<TValue>\nSplStack<TValue>\nSplHeap<TValue>\nSplMinHeap<TValue>\nSplMaxHeap<TValue>\nSplPriorityQueue<TPriority, TValue>\nSplFixedArray<TValue>\nSplObjectStorage<TObject, TValue>\nConditional Return Type\n(TSubject is TCompare ? TTrue : TFalse)*\n\nSometimes the return type of a function may depend on the type of a parameter. A conditional type can be used without templates too by using the parameter name. For example, ($myParam is string ? string : null). Conditional types must be wrapped in parentheses. Conditional types may also be nested.\n\nArray Key Type\nkey-of<TArray>*\n\nThis type will resolve to a union of the keys of an array shape.\n\nArray Value Type\nvalue-of<TArray>*\n\nThis type will resolve to a union of the values of an array shape.\n\nIndex Access Type\nTArray[TKey]*\n\nThis type will resolve to the type of the value at index TKey in TArray. It is particularly useful in conjunction with key-of<TArray> and shape types for mapping the return type when accessing container items with arbitrary strings. For example:\n\n<?php\n\nclass MyContainerItem {}\n\nclass MyContainer\n{\n    /**\n     * @template TMap of array{item: MyContainerItem, other: object}\n     * @template TKey of key-of<TMap>\n     * @param TKey $name\n     * @return TMap[TKey]\n     */\n    function get($name): mixed {}\n}\n\n$container = new MyContainer();\n$item = $container->get('item'); //$item is MyContainerItem"
+        "content": "Type evolving is the change in a variable's type after an assignment expression. Simple variables and parameters always change to the type of the assigned expression regardless of initial assignments, type declarations or annotations.\n\nProperties with no type declaration or annotation will also change to the type of the assigned expression. Otherwise they will only widen or narrow according to the bounds of the initial type they have been declared or annotated with.\n\nIntelephense will type evolve array types when mutated only if they are declared with an empty array initialiser. Otherwise they are considered to retain their initial declared, annotated or inferred type. The example below demonstrates type evolving.\n\n<?php\n\nfunction example(int $a): void\n{\n    $a = \"string\"; // $a is now type string\n\n    $b = []; // $b is type array and flagged as evolving\n\n    $b[] = \"string\"; // $b is now type string[]\n\n    $b[] = 9; //$b is now (string|int)[]\n\n    $c = [1, 2]; // $c is type int[] and NOT flagged as evolving\n\n    $c[] = \"string\"; // $c is still type int[]\n}"
+      },
+      {
+        "header": "Supported Types",
+        "content": "In the list of supported types below, some can only be used in PHPDoc as documented types. Please see the PHP type system documentation if you are unfamiliar with the standard PHP types. PHPDoc only, or internal types, are flagged with an asterisk.\n\nAdditional types used in other static analysis engines that are not listed here are not fully supported. Intelephense attempts to fallback to an appropriate alternative in this situation."
+      },
+      {
+        "header": "Top Type",
+        "content": "mixed\n\nThe super-type of all types. Any other type can be assigned to a type constraint of mixed. If intelephense cannot determine a more specific type for a symbol or expression then this is the type it is given. Because of this, Intelephense also allows mixed to be assigned to any other type constraint as well, effectively turning off type checking for that instance. To switch off this behaviour you can set both intelephense.diagnostics.relaxedTypeCheck and intelephense.diagnostics.noMixedTypeCheck to false."
+      },
+      {
+        "header": "Bottom Type",
+        "content": "never\n\nThe sub-type of all types. This type can be assigned to any other type constraint. It is used to represent an impossibility in the code and can be used as the return type of a function that exits or always throws an exception."
+      },
+      {
+        "header": "Scalar Types",
+        "content": "Any of these types can be assigned to the other unless the declare(strict_types=1) directive is used in the file or intelephense.diagnostics.strictTypes is true.\n\nint\nfloat\nbool\nstring"
+      },
+      {
+        "header": "Unit Types",
+        "content": "void\nnull\ntrue\nfalse\nunset* Intelephense uses this PHP keyword to represent the type of an undefined variable."
+      },
+      {
+        "header": "Literal Types",
+        "content": "'myString'* String literals are encapsulated in quotes.\n9* An integer literal."
+      },
+      {
+        "header": "Object Types",
+        "content": "object\n\\MyNs\\MyClass Classes, interfaces, traits, and enums can be fully qualified or not. If not fully qualified then the standard PHP name resolution rules apply to determine the fully qualified name.\nobject{name: string, optional?: string}* Object shapes can be used to provide further information on dynamic object properties. This improves completion suggestions and type inference when accessing these properties. Optional properties can be declared by adding a ? at the end of the name.\nstatic\nself\n$this*"
+      },
+      {
+        "header": "Array Types",
+        "content": "array\narray<TKey, TValue>* Generic form for an array where the type arguments represent the array key and value types respectively. If only a single type argument is provided then it will be normalised to array<string|int, TValue>.\nTValue[]* Represents a numeric indexed array where the element type is TValue.\narray{description: string, 'length (cm)': float, optional?: string, ...<int, string>}* Array shapes can be used to provide further information on array element keys and value types. This improves completion suggestions and type inference when accessing these elements. Keys with non alphanumeric characters need to be in quotes. Optional keys can be declared by adding a ? at the end of the key. Unspecified extra elements can be declared by adding an element of form ...<TKey, TValue>. Keys are optional and default to numerically indexed. For example a two element tuple would be array{Type0, Type1}. A mix of keyed and unkeyed elements is not supported."
+      },
+      {
+        "header": "Callable Types",
+        "content": "callable Base callable type that represents a callable string, callable array or a class that implements __invoke.\ncallable(TParamA $a, TParamB $b): TReturn* Callable type signatures can be defined to improve language intelligence. Parameter names are optional. The callable type should be wrapped in parentheses if it forms part of a union. Closure can be used instead of callable for a more specific type."
+      },
+      {
+        "header": "Alias Types",
+        "content": "iterable Alias for Traversable|array.\n?A Nullable type that is shorthand for null|A. Cannot be used as part of a union or intersection type."
+      },
+      {
+        "header": "Union Types",
+        "content": "A|B|C\n\nA type which may have multiple atomic type representations. For example, a type constraint of A|B can be assigned type A or B."
+      },
+      {
+        "header": "Intersection Types",
+        "content": "A&B&C\n\nA composite type which consists of multiple atomic types. For example, a type of A&B can be assigned to type A and to type B.\n\nDNF Types\nA|B|(C&D&E)\n\nWhen combining union and intersection types, only a single level of nesting is permitted. The union must be the top level."
+      },
+      {
+        "header": "Generic Types",
+        "content": "MyType<TypeArg1, TypeArg2>*\n\nA generic type can be declared using one or many @template PHPDoc annotations above the target class, interface, or trait. Type arguments can then be supplied in the same order as the @template declarations. The following built-in types are templated:\n\niterable<TKey, TValue>\nTraversable<TKey, TValue>\narray<TKey, TValue>\nIterator<TKey, TValue>\nIteratorAggregate<TKey, TValue>\nArrayAccess<TKey, TValue>\nWeakReference<TObject>\nWeakMap<TKey, TValue>\nFiber<TStart, TResume, TReturn, TSuspend>\nDatePeriod<TDate, TEnd>\nReflectionAttribute<TObject>\nReflectionClass<TObject>\nGenerator<TKey, TYield, TSend, TReturn>\nArrayObject<TKey, TValue>\nSplDoublyLinkedList<TValue>\nSplQueue<TValue>\nSplStack<TValue>\nSplHeap<TValue>\nSplMinHeap<TValue>\nSplMaxHeap<TValue>\nSplPriorityQueue<TPriority, TValue>\nSplFixedArray<TValue>\nSplObjectStorage<TObject, TValue>"
+      },
+      {
+        "header": "Conditional Return Type",
+        "content": "(TSubject is TCompare ? TTrue : TFalse)*\n\nSometimes the return type of a function may depend on the type of a parameter. A conditional type can be used without templates too by using the parameter name. For example, ($myParam is string ? string : null). Conditional types must be wrapped in parentheses. Conditional types may also be nested."
+      },
+      {
+        "header": "Array Key Type",
+        "content": "key-of<TArray>*\n\nThis type will resolve to a union of the keys of an array shape."
+      },
+      {
+        "header": "Array Value Type",
+        "content": "value-of<TArray>*\n\nThis type will resolve to a union of the values of an array shape."
+      },
+      {
+        "header": "Index Access Type",
+        "content": "TArray[TKey]*\n\nThis type will resolve to the type of the value at index TKey in TArray. It is particularly useful in conjunction with key-of<TArray> and shape types for mapping the return type when accessing container items with arbitrary strings. For example:\n\n<?php\n\nclass MyContainerItem {}\n\nclass MyContainer\n{\n    /**\n     * @template TMap of array{item: MyContainerItem, other: object}\n     * @template TKey of key-of<TMap>\n     * @param TKey $name\n     * @return TMap[TKey]\n     */\n    function get($name): mixed {}\n}\n\n$container = new MyContainer();\n$item = $container->get('item'); //$item is MyContainerItem"
       },
       {
         "header": "Miscellaneous Types",
@@ -245,8 +317,7 @@
     ],
     "metadata": {
       "source": "local://intelephense_docs.md",
-      "ingestedAt": "2026-05-13T05:44:15.866Z"
-      "ingestedAt": "2026-05-13T03:31:00.260Z"
+      "ingestedAt": "2026-05-14T03:18:36.649Z"
     }
   },
   {
@@ -279,7 +350,7 @@
     ],
     "metadata": {
       "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/README.md",
-      "ingestedAt": "2026-05-13T01:16:00.642Z"
+      "ingestedAt": "2026-05-14T03:18:37.003Z"
     }
   },
   {
@@ -356,7 +427,7 @@
     ],
     "metadata": {
       "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/features.md",
-      "ingestedAt": "2026-05-13T01:16:00.665Z"
+      "ingestedAt": "2026-05-14T03:18:37.103Z"
     }
   },
   {
@@ -405,7 +476,7 @@
     ],
     "metadata": {
       "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/installation.md",
-      "ingestedAt": "2026-05-13T01:16:00.688Z"
+      "ingestedAt": "2026-05-14T03:18:37.200Z"
     }
   },
   {
@@ -434,7 +505,7 @@
     ],
     "metadata": {
       "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/gettingStarted.md",
-      "ingestedAt": "2026-05-13T01:16:00.713Z"
+      "ingestedAt": "2026-05-14T03:18:37.309Z"
     }
   },
   {
@@ -447,7 +518,7 @@
     ],
     "metadata": {
       "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/support.md",
-      "ingestedAt": "2026-05-13T01:16:00.800Z"
+      "ingestedAt": "2026-05-14T03:18:37.410Z"
     }
   }
 ]

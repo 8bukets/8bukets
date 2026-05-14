@@ -1,16 +1,10 @@
 # ANTIGRAVITY AI AGENTS KNOWLEDGE BASE
 
-*Last Updated: 2026-05-13T01:16:00.805Z*
-*Last Updated: 2026-05-13T05:44:15.870Z*
+*Last Updated: 2026-05-14T03:18:37.412Z*
 
 ## DOCUMENT: Intelephense Documentation
 **Source:** local://intelephense_docs.md
-**Ingested At:** 2026-05-13T05:44:15.866Z
-*Last Updated: 2026-05-13T03:31:00.261Z*
-
-## DOCUMENT: Intelephense Documentation
-**Source:** local://intelephense_docs.md
-**Ingested At:** 2026-05-13T03:31:00.260Z
+**Ingested At:** 2026-05-14T03:18:36.649Z
 
 ### About
 Intelephense is a high performance, cross platform, cross editor PHP language server adhering to the Language Server Protocol (LSP).
@@ -106,7 +100,7 @@ Intelephense will also compute inferred types when a declared or documented type
 
 Intelephense provides limited support for PHPStorm metadata as a way of overriding or supplementing type information. It is recommended to use PHPDoc type annotations instead of PHPStorm metadata where possible as they are more widely supported across different tools. Support for PHPStorm metadata may be removed in future releases. Please see the PHPDoc Instead of PHPStorm Metadata/Attributes section in the appendix for more information.
 
-Type Narrowing
+### Type Narrowing
 Intelephense performs type narrowing of variables during control flow analysis. Type narrowing expressions include built-in type assertions such as is_string, custom type assertions annotated with @assert, instanceof, and equality expressions. The example below demonstrates type narrowing.
 
 <?php
@@ -154,61 +148,69 @@ function example(int $a): void
 
     $c[] = "string"; // $c is still type int[]
 }
-Supported Types
+
+### Supported Types
 In the list of supported types below, some can only be used in PHPDoc as documented types. Please see the PHP type system documentation if you are unfamiliar with the standard PHP types. PHPDoc only, or internal types, are flagged with an asterisk.
 
 Additional types used in other static analysis engines that are not listed here are not fully supported. Intelephense attempts to fallback to an appropriate alternative in this situation.
 
-Top Type
+### Top Type
 mixed
 
 The super-type of all types. Any other type can be assigned to a type constraint of mixed. If intelephense cannot determine a more specific type for a symbol or expression then this is the type it is given. Because of this, Intelephense also allows mixed to be assigned to any other type constraint as well, effectively turning off type checking for that instance. To switch off this behaviour you can set both intelephense.diagnostics.relaxedTypeCheck and intelephense.diagnostics.noMixedTypeCheck to false.
 
-Bottom Type
+### Bottom Type
 never
 
 The sub-type of all types. This type can be assigned to any other type constraint. It is used to represent an impossibility in the code and can be used as the return type of a function that exits or always throws an exception.
 
-Scalar Types
+### Scalar Types
 Any of these types can be assigned to the other unless the declare(strict_types=1) directive is used in the file or intelephense.diagnostics.strictTypes is true.
 
 int
 float
 bool
 string
-Unit Types
+
+### Unit Types
 void
 null
 true
 false
 unset* Intelephense uses this PHP keyword to represent the type of an undefined variable.
-Literal Types
+
+### Literal Types
 'myString'* String literals are encapsulated in quotes.
 9* An integer literal.
-Object Types
+
+### Object Types
 object
 \MyNs\MyClass Classes, interfaces, traits, and enums can be fully qualified or not. If not fully qualified then the standard PHP name resolution rules apply to determine the fully qualified name.
 object{name: string, optional?: string}* Object shapes can be used to provide further information on dynamic object properties. This improves completion suggestions and type inference when accessing these properties. Optional properties can be declared by adding a ? at the end of the name.
 static
 self
 $this*
-Array Types
+
+### Array Types
 array
 array<TKey, TValue>* Generic form for an array where the type arguments represent the array key and value types respectively. If only a single type argument is provided then it will be normalised to array<string|int, TValue>.
 TValue[]* Represents a numeric indexed array where the element type is TValue.
 array{description: string, 'length (cm)': float, optional?: string, ...<int, string>}* Array shapes can be used to provide further information on array element keys and value types. This improves completion suggestions and type inference when accessing these elements. Keys with non alphanumeric characters need to be in quotes. Optional keys can be declared by adding a ? at the end of the key. Unspecified extra elements can be declared by adding an element of form ...<TKey, TValue>. Keys are optional and default to numerically indexed. For example a two element tuple would be array{Type0, Type1}. A mix of keyed and unkeyed elements is not supported.
-Callable Types
+
+### Callable Types
 callable Base callable type that represents a callable string, callable array or a class that implements __invoke.
 callable(TParamA $a, TParamB $b): TReturn* Callable type signatures can be defined to improve language intelligence. Parameter names are optional. The callable type should be wrapped in parentheses if it forms part of a union. Closure can be used instead of callable for a more specific type.
-Alias Types
+
+### Alias Types
 iterable Alias for Traversable|array.
 ?A Nullable type that is shorthand for null|A. Cannot be used as part of a union or intersection type.
-Union Types
+
+### Union Types
 A|B|C
 
 A type which may have multiple atomic type representations. For example, a type constraint of A|B can be assigned type A or B.
 
-Intersection Types
+### Intersection Types
 A&B&C
 
 A composite type which consists of multiple atomic types. For example, a type of A&B can be assigned to type A and to type B.
@@ -218,7 +220,7 @@ A|B|(C&D&E)
 
 When combining union and intersection types, only a single level of nesting is permitted. The union must be the top level.
 
-Generic Types
+### Generic Types
 MyType<TypeArg1, TypeArg2>*
 
 A generic type can be declared using one or many @template PHPDoc annotations above the target class, interface, or trait. Type arguments can then be supplied in the same order as the @template declarations. The following built-in types are templated:
@@ -246,22 +248,23 @@ SplMaxHeap<TValue>
 SplPriorityQueue<TPriority, TValue>
 SplFixedArray<TValue>
 SplObjectStorage<TObject, TValue>
-Conditional Return Type
+
+### Conditional Return Type
 (TSubject is TCompare ? TTrue : TFalse)*
 
 Sometimes the return type of a function may depend on the type of a parameter. A conditional type can be used without templates too by using the parameter name. For example, ($myParam is string ? string : null). Conditional types must be wrapped in parentheses. Conditional types may also be nested.
 
-Array Key Type
+### Array Key Type
 key-of<TArray>*
 
 This type will resolve to a union of the keys of an array shape.
 
-Array Value Type
+### Array Value Type
 value-of<TArray>*
 
 This type will resolve to a union of the values of an array shape.
 
-Index Access Type
+### Index Access Type
 TArray[TKey]*
 
 This type will resolve to the type of the value at index TKey in TArray. It is particularly useful in conjunction with key-of<TArray> and shape types for mapping the return type when accessing container items with arbitrary strings. For example:
@@ -796,7 +799,7 @@ setColourDoc(''); // Completion suggestions for 'red', 'blue', 'green'
 
 ## DOCUMENT: Intelephense: README
 **Source:** https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/README.md
-**Ingested At:** 2026-05-13T01:16:00.642Z
+**Ingested At:** 2026-05-14T03:18:37.003Z
 
 ### Intelephense
 Intelephense is a high performance, cross platform PHP language server adhering to the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/).
@@ -824,7 +827,7 @@ This is proprietary software released to end users under a "freemium" model. Man
 
 ## DOCUMENT: Intelephense: features
 **Source:** https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/features.md
-**Ingested At:** 2026-05-13T01:16:00.665Z
+**Ingested At:** 2026-05-14T03:18:37.103Z
 
 ### Features
 
@@ -881,7 +884,7 @@ This is proprietary software released to end users under a "freemium" model. Man
 
 ## DOCUMENT: Intelephense: installation
 **Source:** https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/installation.md
-**Ingested At:** 2026-05-13T01:16:00.688Z
+**Ingested At:** 2026-05-14T03:18:37.200Z
 
 ### Installation
 
@@ -1655,7 +1658,7 @@ interface InitialisationOptions {
 
 ## DOCUMENT: Intelephense: gettingStarted
 **Source:** https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/gettingStarted.md
-**Ingested At:** 2026-05-13T01:16:00.713Z
+**Ingested At:** 2026-05-14T03:18:37.309Z
 
 ### Getting Started
 
@@ -2132,7 +2135,7 @@ Packages can be found online that aim to workaround these issues by providing st
 
 ## DOCUMENT: Intelephense: support
 **Source:** https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/support.md
-**Ingested At:** 2026-05-13T01:16:00.800Z
+**Ingested At:** 2026-05-14T03:18:37.410Z
 
 ### Overview
 https://github.com/bmewburn/vscode-intelephense/issues

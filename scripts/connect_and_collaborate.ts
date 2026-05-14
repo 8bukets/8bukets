@@ -1,4 +1,4 @@
-import { syncCollaborationState } from '../antigravity/services/collaboration'
+import { syncCollaborationState, broadcastToStakeholders } from '../antigravity/services/collaboration'
 
 /**
  * CONNECT AND COLLABORATE SCRIPT
@@ -10,6 +10,8 @@ async function main() {
 
   try {
     const finalState = await syncCollaborationState()
+    await broadcastToStakeholders(finalState)
+
     console.log('🌐 [Antigravity] System Synchronization Complete.')
     console.log('📊 Current Posture:', JSON.stringify(finalState.docker, null, 2))
   } catch (err) {

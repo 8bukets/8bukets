@@ -1,6 +1,4 @@
 # Next.js 16 + MongoDB Local Dev Orchestration
-version: '3.8'
-
 services:
   app:
     build:
