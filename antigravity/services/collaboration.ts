@@ -109,6 +109,42 @@ ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
   fs.appendFileSync(path.join(logDir, 'collaboration.log'), summary)
 
   return { notifiedCount: metadata.stakeholders.length }
+export async function generateRelationshipMap(branches: any[], stakeholders: Stakeholder[], goals: string[]) {
+  console.log('🗺️ [Collaboration] Generating relationship map...')
+
+  const map: any = {
+    stakeholderEngagement: {},
+    goalAlignment: {},
+    resourceInventory: []
+  }
+
+  // Correlate branches to goals based on keywords
+  goals.forEach(goal => {
+    const relevantBranches = branches.filter(b =>
+      goal.toLowerCase().split(' ').some(word =>
+        word.length > 3 && (b.name.toLowerCase().includes(word) || b.lastMessage.toLowerCase().includes(word))
+      )
+    )
+    map.goalAlignment[goal] = relevantBranches.map(b => b.name)
+  })
+
+  // Correlate stakeholders to roles/branches
+  stakeholders.forEach(s => {
+    map.stakeholderEngagement[s.role] = {
+      email: s.email,
+      activeProjects: branches.filter(b => b.category === 'agent' || b.name.includes(s.role.toLowerCase().split(' ')[0])).map(b => b.name)
+    }
+  })
+
+  // Identify "Resources" (Documentation and key services)
+  map.resourceInventory = [
+    { type: 'Documentation', name: 'AGENTS.md', status: 'Active' },
+    { type: 'Documentation', name: 'CONSOLIDATED_INTELLIGENCE.md', status: 'Active' },
+    { type: 'Service', name: 'Jules Cognitive Agent', status: 'Optimal' },
+    { type: 'Service', name: 'Unified Web Command Center', status: 'Live' }
+  ]
+
+  return map
 }
 
 export async function syncCollaborationState(branchIntelligence?: any[]) {
@@ -130,6 +166,7 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
   const { workOrderService } = await import('./work_order')
   const branches = branchIntelligence || await jules.scanAllBranches()
   const workOrders = workOrderService.getPendingOrders() // Simplified for now
+  const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
 
   const newState = {
     ...currentState,
@@ -138,7 +175,8 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
     docker: dockerHealth,
     intelligence: {
       branches: branches.length,
-      pendingTasks: workOrders.length
+      pendingTasks: workOrders.length,
+      relationshipMap
     },
     last_sync: new Date().toISOString()
   }

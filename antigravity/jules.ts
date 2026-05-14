@@ -227,6 +227,10 @@ export class Jules {
       for (const idea of ideas) {
         if (idea.complexity === 'Low' || idea.complexity === 'Medium') {
           workOrderService.createOrder('BOOTSTRAP_SERVICE', `Bootstrap ${idea.feature}`, idea)
+
+          // Phase 12: Chain Smoke Test and Deployment orders
+          workOrderService.createOrder('SMOKE_TEST', `Verify ${idea.feature}`, { serviceName: idea.feature })
+          workOrderService.createOrder('DEPLOYMENT', `Deploy ${idea.feature}`, { serviceName: idea.feature })
         }
       }
     }
@@ -253,6 +257,10 @@ export class Jules {
     }
     const reactSteps = await reactService.executeCycle('Optimize system posture using ReAct', reactTools)
     this.recordTask(`ReAct: Completed ${reactSteps.length} reasoning-action steps.`)
+
+    // Phase 9: Executive Briefing
+    const { dispatchExecutiveBriefing } = await import('./services/notification')
+    await dispatchExecutiveBriefing(`System synchronized across ${branches.length} branches. Relationship map updated.`)
 
     await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
     this.memory.lastOptimization = new Date().toISOString()
@@ -283,13 +291,29 @@ export class Jules {
           // Use execFileSync with arguments array to prevent command injection
           const lastCommit = execFileSync('git', ['log', '-1', '--format=%s|%at', branch]).toString().trim()
           const [message, timestamp] = lastCommit.split('|')
+
+          // Phase 9: Categorization & Result Extraction
+          let category = 'other'
+          if (branch.includes('feat/') || branch.includes('feature/')) category = 'feature'
+          else if (branch.includes('fix/')) category = 'fix'
+          else if (branch.includes('jules/') || branch.includes('agent/')) category = 'agent'
+          else if (branch.includes('research/')) category = 'research'
+
           return {
             name: branch,
             lastMessage: message,
-            lastSeen: new Date(parseInt(timestamp) * 1000).toISOString()
+            lastSeen: new Date(parseInt(timestamp) * 1000).toISOString(),
+            category,
+            results: message.includes(':') ? message.split(':')[1].trim() : message
           }
         } catch (e) {
-          return { name: branch, lastMessage: 'Unknown', lastSeen: new Date().toISOString() }
+          return {
+            name: branch,
+            lastMessage: 'Unknown',
+            lastSeen: new Date().toISOString(),
+            category: 'unknown',
+            results: 'N/A'
+          }
         }
       })
 

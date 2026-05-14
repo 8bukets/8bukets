@@ -38,36 +38,56 @@ export class KnowledgeObserver {
     const lines = rawContent.split('\n')
     let currentHeader = 'Introduction'
     let currentLines: string[] = []
-    let inCodeBlock = false
+    let inMarkdownCodeBlock = false
+    let inPhpCodeBlock = false
 
     for (const line of lines) {
       const trimmed = line.trim();
 
-      // Toggle code block state
-      if (trimmed.startsWith('```') || trimmed.startsWith('<?php')) {
-        inCodeBlock = !inCodeBlock
+      // Manage code block states
+      if (trimmed.startsWith('```')) {
+        inMarkdownCodeBlock = !inMarkdownCodeBlock
+      } else if (trimmed.startsWith('<?php')) {
+        inPhpCodeBlock = true
       }
 
-      // Detect headers ONLY if not in a code block
+      const inCodeBlock = inMarkdownCodeBlock || inPhpCodeBlock
+
+      // Detect header candidates
       const hasLetters = /[a-zA-Z]/.test(trimmed)
-      const isMarkdownHeader = !inCodeBlock && trimmed.startsWith('#')
-      const isStrongHeader = !inCodeBlock && trimmed && hasLetters &&
+      const isMarkdownHeader = trimmed.startsWith('#')
+      const isStrongHeaderCandidate = trimmed && hasLetters &&
                              trimmed.length < 60 && trimmed.length > 2 &&
                              !trimmed.endsWith('.') &&
                              !trimmed.endsWith(':') &&
                              !trimmed.endsWith(',') &&
-                             (trimmed.toUpperCase() === trimmed || /^[A-Z][a-z]+(\s[A-Z][a-z]+)*$/.test(trimmed)) &&
+                             !trimmed.includes('\t') &&
+                             !trimmed.includes('|') && !trimmed.includes('&') &&
+                             !trimmed.includes('[') && !trimmed.includes(']') &&
+                             !trimmed.includes('\\') &&
+                             (trimmed.toUpperCase() === trimmed || /^[A-Z][a-z0-9]*(\s[A-Z][a-z0-9]*)*$/.test(trimmed)) &&
                              !trimmed.startsWith('This ') &&
                              !trimmed.startsWith('Some ') &&
-                             !/^[{}/*<>?]+$/.test(trimmed) && // Exclude common code symbols
-                             !trimmed.includes('(') && !trimmed.includes(')') && // Exclude function calls
-                             !trimmed.includes(' = ') && // Exclude assignments
-                             !trimmed.includes(' => ') // Exclude arrow funcs/mappings
+                             !/^[{}/*<>?]+$/.test(trimmed) &&
+                             !trimmed.includes('(') && !trimmed.includes(')') &&
+                             !trimmed.includes(' = ') &&
+                             !trimmed.includes(' => ')
 
-      // Heuristic: If it's a markdown header, always count it.
-      // If it's a strong header, it must not be immediately followed by a lot of text on the same line (already trimmed)
-      // and it should ideally be on its own line (which it is here since we iterate lines).
-      if (isMarkdownHeader || isStrongHeader) {
+      // Heuristic: If we hit a markdown header or a strong header candidate,
+      // we assume any unclosed PHP block has ended.
+      let effectiveHeader = false
+      if (isMarkdownHeader) {
+        effectiveHeader = true
+        inPhpCodeBlock = false // Markdown headers break PHP blocks
+      } else if (!inCodeBlock && isStrongHeaderCandidate) {
+        effectiveHeader = true
+      } else if (inPhpCodeBlock && isStrongHeaderCandidate) {
+        // Strong headers also break PHP blocks (which often lack closing tags in docs)
+        effectiveHeader = true
+        inPhpCodeBlock = false
+      }
+
+      if (effectiveHeader) {
         if (currentLines.length > 0) {
           sections.push({ header: currentHeader, content: currentLines.join('\n').trim() })
         }
@@ -77,10 +97,9 @@ export class KnowledgeObserver {
         currentLines.push(line)
       }
 
-      // If we just ended a code block, make sure we stay out of it for the next lines
-      // unless another one starts. The simple toggle works if we have distinct start/end markers.
-      if (trimmed.endsWith('?>') && inCodeBlock) {
-        inCodeBlock = false
+      // Close PHP code block if we see the closing tag
+      if (trimmed.includes('?>') && inPhpCodeBlock) {
+        inPhpCodeBlock = false
       }
     }
 

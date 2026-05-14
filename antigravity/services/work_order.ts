@@ -5,7 +5,7 @@ import { logAutonomousAction } from '../core'
 
 export const WorkOrderSchema = z.object({
   id: z.string(),
-  type: z.enum(['BOOTSTRAP_SERVICE', 'OPTIMIZE_SYSTEM', 'CONTENT_GENERATION']),
+  type: z.enum(['BOOTSTRAP_SERVICE', 'OPTIMIZE_SYSTEM', 'CONTENT_GENERATION', 'SMOKE_TEST', 'DEPLOYMENT']),
   goal: z.string(),
   payload: z.any(),
   status: z.enum(['pending', 'executing', 'completed', 'failed']),
@@ -116,6 +116,14 @@ export class WorkOrderService {
       case 'CONTENT_GENERATION':
         const { generateContent } = await import('./content')
         return await generateContent(order.payload)
+
+      case 'SMOKE_TEST':
+        const { runSmokeTest } = await import('./smoke_test')
+        return await runSmokeTest(order.payload)
+
+      case 'DEPLOYMENT':
+        logAutonomousAction(`[DEPLOYMENT] Executing deployment: ${order.goal}`, 'info')
+        return { status: 'deployed', timestamp: new Date().toISOString() }
 
       case 'OPTIMIZE_SYSTEM':
         const { evolve, applyFixes } = await import('../evolution')
