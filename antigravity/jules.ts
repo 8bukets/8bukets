@@ -206,6 +206,27 @@ export class Jules {
       }
     }
 
+    // Phase 12: Super-Intelligence Optimization
+    // getSystemInsights already triggers the optimization engine internally
+    const { getSystemInsights } = await import('./core')
+    const insights = await getSystemInsights()
+    const refactors = (insights as any).proposals || []
+    if (refactors.length > 0) {
+      this.recordTask(`Super-Intelligence: Generated ${refactors.length} predictive refactors.`)
+    }
+
+    // ReAct Protocol Integration (arXiv:2210.03629)
+    const { reactService } = await import('./services/react')
+    const reactTools = {
+      checkSystemState: async () => JSON.stringify(await import('./core').then(c => c.healthCheck())),
+      findOptimizations: async () => JSON.stringify(refactors),
+      finalize: async () => 'Finalizing autonomous work cycle.'
+    }
+    const reactSteps = await reactService.executeCycle('Optimize system posture using ReAct', reactTools)
+    this.recordTask(`ReAct: Completed ${reactSteps.length} reasoning-action steps.`)
+
+    await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
+    this.memory.lastOptimization = new Date().toISOString()
     await workOrderService.executePendingOrders()
 
     // Cross-Platform PR Creation if relevant
