@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-import { MongoClient } from 'mongodb';
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/placeholder';
 
@@ -13,19 +12,6 @@ let cached = (global as any).mongoose;
 if (!cached) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   cached = (global as any).mongoose = { conn: null, promise: null };
-}
-
-/**
- * getMongoClient: Low-level driver access for raw queries
- */
-let client: MongoClient;
-let clientPromise: Promise<MongoClient>;
-
-export async function getMongoClient() {
-  if (clientPromise) return clientPromise;
-  client = new MongoClient(MONGODB_URI);
-  clientPromise = client.connect();
-  return clientPromise;
 }
 
 async function dbConnect() {
