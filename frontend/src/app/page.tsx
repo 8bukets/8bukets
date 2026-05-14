@@ -10,6 +10,9 @@ type StatusResponse = {
 };
 
 type IntelligenceResponse = {
+  snapshot: { evolution?: { parameter_shifts?: { current_version?: string } } } | null;
+  workOrders: { id: string; type: string; status: string; goal: string; createdAt: string }[];
+  logs: { time: string; type: string; agent: string; message: string }[];
   snapshot: {
     evolution?: {
       parameter_shifts?: {
@@ -122,6 +125,7 @@ export default function Chat() {
                 <p className="text-zinc-500 animate-pulse">Loading queue...</p>
               ) : intel?.workOrders && intel.workOrders.length > 0 ? (
                 <div className="space-y-3">
+                  {intel.workOrders.map((order: { id: string; type: string; status: string; goal: string; createdAt: string }) => (
                   {intel.workOrders.map((order) => (
                     <div key={order.id} className="p-3 bg-zinc-50 dark:bg-zinc-800 rounded-lg border-l-4 border-blue-500">
                       <div className="flex justify-between items-start mb-1">
@@ -149,6 +153,7 @@ export default function Chat() {
               {loading ? (
                 <p className="animate-pulse">Fetching latest insights...</p>
               ) : intel?.logs && intel.logs.length > 0 ? (
+                intel.logs.map((log: { time: string; type: string; agent: string; message: string; msg?: string; }, i: number) => (
                 intel.logs.map((log, i: number) => (
                   <div key={i} className="mb-1">
                     <span className="text-zinc-500">[{log.time}]</span>{' '}
