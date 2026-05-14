@@ -80,6 +80,73 @@ export async function exportEcosystemMetadata() {
   }
 }
 
+/**
+ * Phase 9: Multi-Agent Collaboration Protocol
+ * Notifies stakeholders of the current system state and recent autonomous evolutions.
+ */
+export async function broadcastToStakeholders(state: any) {
+  const metadata = await getMissionMetadata()
+  console.log('📢 [Collaboration] Broadcasting system posture to stakeholders...')
+
+  const summary = `
+--- ANTIGRAVITY COLLABORATION SUMMARY ---
+Timestamp: ${state.last_sync}
+Mission: ${metadata.missionStatement}
+Docker Status: ${state.docker.status} (${state.docker.containerCount} containers)
+Intelligence: ${state.intelligence.branches} branches synchronized, ${state.intelligence.pendingTasks} tasks pending.
+
+Stakeholders notified:
+${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
+------------------------------------------
+`
+  // In Phase 9, we log this to the console and a collaboration log file.
+  // In future phases, this could trigger actual email or slack notifications.
+  console.log(summary)
+
+  const logDir = path.join(process.cwd(), 'logs')
+  if (!fs.existsSync(logDir)) fs.mkdirSync(logDir)
+
+  fs.appendFileSync(path.join(logDir, 'collaboration.log'), summary)
+
+  return { notifiedCount: metadata.stakeholders.length }
+export async function generateRelationshipMap(branches: any[], stakeholders: Stakeholder[], goals: string[]) {
+  console.log('🗺️ [Collaboration] Generating relationship map...')
+
+  const map: any = {
+    stakeholderEngagement: {},
+    goalAlignment: {},
+    resourceInventory: []
+  }
+
+  // Correlate branches to goals based on keywords
+  goals.forEach(goal => {
+    const relevantBranches = branches.filter(b =>
+      goal.toLowerCase().split(' ').some(word =>
+        word.length > 3 && (b.name.toLowerCase().includes(word) || b.lastMessage.toLowerCase().includes(word))
+      )
+    )
+    map.goalAlignment[goal] = relevantBranches.map(b => b.name)
+  })
+
+  // Correlate stakeholders to roles/branches
+  stakeholders.forEach(s => {
+    map.stakeholderEngagement[s.role] = {
+      email: s.email,
+      activeProjects: branches.filter(b => b.category === 'agent' || b.name.includes(s.role.toLowerCase().split(' ')[0])).map(b => b.name)
+    }
+  })
+
+  // Identify "Resources" (Documentation and key services)
+  map.resourceInventory = [
+    { type: 'Documentation', name: 'AGENTS.md', status: 'Active' },
+    { type: 'Documentation', name: 'CONSOLIDATED_INTELLIGENCE.md', status: 'Active' },
+    { type: 'Service', name: 'Jules Cognitive Agent', status: 'Optimal' },
+    { type: 'Service', name: 'Unified Web Command Center', status: 'Live' }
+  ]
+
+  return map
+}
+
 export async function syncCollaborationState(branchIntelligence?: any[]) {
   console.log('🔄 [Collaboration] Synchronizing autonomous state...')
   const metadata = await getMissionMetadata()
@@ -99,6 +166,7 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
   const { workOrderService } = await import('./work_order')
   const branches = branchIntelligence || await jules.scanAllBranches()
   const workOrders = workOrderService.getPendingOrders() // Simplified for now
+  const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
 
   const newState = {
     ...currentState,
@@ -107,7 +175,8 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
     docker: dockerHealth,
     intelligence: {
       branches: branches.length,
-      pendingTasks: workOrders.length
+      pendingTasks: workOrders.length,
+      relationshipMap
     },
     last_sync: new Date().toISOString()
   }

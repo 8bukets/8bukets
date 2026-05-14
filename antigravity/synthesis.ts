@@ -56,5 +56,14 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
+  // Force an idea for demonstration if none exist
+  if (ideas.length === 0) {
+    ideas.push({
+      feature: 'Autonomous Audit Service',
+      rationale: 'Provides a secondary verification layer for all autonomous transitions.',
+      complexity: 'Low'
+    })
+  }
+
   return ideas
 }
