@@ -31,7 +31,6 @@ export const ${idea.feature.replace(/\s+/g, '')}Schema = z.object({
 })
 
 export async function get${idea.feature.replace(/\s+/g, '')}Data() {
-  'use cache'
   return autonomousFetch(${idea.feature.replace(/\s+/g, '')}Schema, async () => {
     return {
       status: 'active',

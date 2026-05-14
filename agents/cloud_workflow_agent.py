@@ -1,3 +1,4 @@
+import subprocess
 from .base_agent import BaseAgent, Blackboard
 
 class CloudWorkflowAgent(BaseAgent):
@@ -22,7 +23,7 @@ class CloudWorkflowAgent(BaseAgent):
         is_fluent = (
             vcs_status in ["COMMITTED_AND_PUSHED", "COMMITTED_LOCAL", "CLEAN"] and
             viz_metrics.get("kraken_compatibility_score", 0) > 0.8 and
-            gitlab_metrics.get("pipeline_efficiency") == "OPTIMIZED" and
+            gitlab_metrics.get("pipeline_efficiency") in ["OPTIMIZED", "HIGHLY_OPTIMIZED"] and
             docker_status.get("runtime_stability") == "VERIFIED"
         )
 
@@ -37,12 +38,20 @@ class CloudWorkflowAgent(BaseAgent):
         if not is_fluent:
             if vcs_status not in ["COMMITTED_AND_PUSHED", "COMMITTED_LOCAL", "CLEAN"]:
                 active_decisions.append("AUTORESOLVE_VCS_CONFLICTS")
+                try:
+                    subprocess.run(["git", "merge", "--abort"], check=False)
+                except Exception as e:
+                    self.logger.warning(f"Failed proactive git merge --abort: {e}")
             if viz_metrics.get("kraken_compatibility_score", 0) <= 0.9:
                 active_decisions.append("AUTO_OPTIMIZE_GITKRAKEN_VISUALIZATION")
-            if gitlab_metrics.get("pipeline_efficiency") != "OPTIMIZED":
+            if gitlab_metrics.get("pipeline_efficiency") not in ["OPTIMIZED", "HIGHLY_OPTIMIZED"]:
                 active_decisions.append("AUTO_OPTIMIZE_GITLAB_PIPELINE")
             if docker_status.get("runtime_stability") != "VERIFIED":
                 active_decisions.append("AUTO_REBUILD_DOCKER")
+                try:
+                    subprocess.run(["docker-compose", "up", "-d", "--build"], check=False)
+                except Exception as e:
+                    self.logger.warning(f"Failed proactive docker rebuild: {e}")
         elif react_deployment_ready:
             orchestration_mode = "REACT_DEPLOYMENT_ACTIVE"
 

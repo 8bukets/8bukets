@@ -21,6 +21,14 @@ class GitHubEvolutionAgent(BaseAgent):
 
         self.logger.info("System evolved. Performing autonomous Git operations...")
 
+        workflow_count = 0
+        workflows_dir = ".github/workflows"
+        if os.path.exists(workflows_dir) and os.path.isdir(workflows_dir):
+            try:
+                workflow_count = len([f for f in os.listdir(workflows_dir) if f.endswith('.yml') or f.endswith('.yaml')])
+            except Exception as e:
+                self.logger.warning(f"Could not count GitHub workflows: {e}")
+
         try:
             # 1. Stage changes (Sanitized config, memory, and results)
             subprocess.run(["git", "add", "config/evolution_params.json", "config/owner_info.json", "data/", "results/", "links.json", "links.csv", "unique_links.txt"], check=True)
@@ -29,7 +37,7 @@ class GitHubEvolutionAgent(BaseAgent):
             status = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True).stdout.strip()
             if not status:
                 self.logger.info("No changes to commit. Skipping Git commit/push.")
-                return {"vcs_status": "CLEAN"}
+                return {"vcs_status": "CLEAN", "workflow_count": workflow_count}
 
             # 2. Commit changes with collaborative insights
             version = evolution.get("parameter_shifts", {}).get("current_version", "1.0")
@@ -74,11 +82,11 @@ class GitHubEvolutionAgent(BaseAgent):
                 except subprocess.CalledProcessError as pull_e:
                     self.logger.warning(f"Failed to synchronize with remote: {pull_e}")
 
-            return {"vcs_status": vcs_status}
+            return {"vcs_status": vcs_status, "workflow_count": workflow_count}
 
         except subprocess.CalledProcessError as e:
             self.logger.error(f"Git operation failed: {e}")
-            return {"vcs_status": "FAILED"}
+            return {"vcs_status": "FAILED", "workflow_count": workflow_count}
         except Exception as e:
             self.logger.error(f"An unexpected error occurred during Git operations: {e}")
-            return {"vcs_status": "ERROR"}
+            return {"vcs_status": "ERROR", "workflow_count": workflow_count}

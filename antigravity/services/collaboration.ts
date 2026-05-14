@@ -27,7 +27,6 @@ const MISSION_PATH = path.join(process.cwd(), '.antigravity/mission.md')
 
 export async function getMissionMetadata(): Promise<MissionMetadata> {
   return autonomousFetch(MissionMetadataSchema, async () => {
-    // Note: In Next.js server context, we don't use 'use cache' here to avoid some issues we saw earlier
     if (!fs.existsSync(MISSION_PATH)) {
       throw new Error('Mission document missing. System collaboration impaired.')
     }

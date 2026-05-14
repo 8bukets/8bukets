@@ -241,7 +241,6 @@ export async function autonomousFetch<T>(
   } catch (err) {
     console.warn('[Autonomous Core] Primary fetch failed. Attempting Graceful Degradation...', err)
 
-    // In Next.js 16, if we are in a 'use cache' scope, we can rely on
     // the stale-while-revalidate behavior if a previous entry exists.
     // If we throw here, Next.js will often serve the stale content if available.
     throw err

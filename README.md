@@ -2,6 +2,13 @@
 
 A robust, asynchronous toolset for scraping and analyzing data from `https://markposition.wordpress.com/`.
 
+## Supabase Configuration
+This project is configured to work with the Netlify Supabase Extension.
+To set up the project locally:
+1.  Connect your Netlify site to your Supabase project via the Netlify extension.
+2.  The extension will automatically inject the required environment variables: `SUPABASE_DATABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
+3.  For local development, ensure these variables are present in your `.env` file or exported in your environment.
+
 ## Features
 
 ### Scraper (`scraper.py`)

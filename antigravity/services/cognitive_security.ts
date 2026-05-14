@@ -18,7 +18,6 @@ export type SecurityAudit = z.infer<typeof SecurityAuditSchema>
  */
 export async function runSecurityAudit(): Promise<SecurityAudit> {
   return autonomousFetch(SecurityAuditSchema, async () => {
-    'use cache'
     console.log('🛡️ [Cognitive Security] Starting deep-tissue security scan...')
 
     let issuesFound = 0
