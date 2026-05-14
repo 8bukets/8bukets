@@ -26,6 +26,12 @@ vi.mock('./docker', () => ({
   }))
 }))
 
+vi.mock('../jules', () => ({
+  jules: {
+    scanAllBranches: vi.fn(() => Promise.resolve([]))
+  }
+}))
+
 describe('Collaboration Service', () => {
   beforeEach(() => {
     vi.clearAllMocks()
@@ -46,8 +52,8 @@ Test Mission
 1. Goal 1
 2. Goal 2
 `
-    vi.mocked(fs.existsSync).mockReturnValue(true)
-    vi.mocked(fs.readFileSync).mockReturnValue(mockMission)
+    vi.mocked(fs.existsSync).mockReturnValue(true as any)
+    vi.mocked(fs.readFileSync).mockReturnValue(mockMission as any)
 
     const metadata = await getMissionMetadata()
 
@@ -59,7 +65,7 @@ Test Mission
   })
 
   it('should throw error if mission document is missing', async () => {
-    vi.mocked(fs.existsSync).mockReturnValue(false)
+    vi.mocked(fs.existsSync).mockReturnValue(false as any)
     await expect(getMissionMetadata()).rejects.toThrow('Mission document missing')
   })
 
@@ -73,18 +79,18 @@ Test Mission
 ## Strategic Goals
 1. Goal 1
 `
-    vi.mocked(fs.existsSync).mockImplementation((path: any) => {
+    vi.mocked(fs.existsSync).mockImplementation(((path: any) => {
       if (path.toString().includes('mission.md')) return true
       if (path.toString().includes('autonomous_state.json')) return false
       if (path.toString().includes('.jules_memory.json')) return true
       return false
-    })
-    vi.mocked(fs.readFileSync).mockImplementation((path: any) => {
+    }) as any)
+    vi.mocked(fs.readFileSync).mockImplementation(((path: any) => {
       if (path.toString().includes('mission.md')) return mockMission
       if (path.toString().includes('.jules_memory.json')) return JSON.stringify({ autonomousTasks: [] })
       return ''
-    })
-    vi.mocked(fs.writeFileSync).mockImplementation(() => {})
+    }) as any)
+    vi.mocked(fs.writeFileSync).mockImplementation((() => {}) as any)
 
     const state = await syncCollaborationState()
 
