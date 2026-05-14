@@ -17,4 +17,8 @@ class MonetizationAgent(BaseAgent):
         if "Canada" in str(research):
             strategies.append("Target Canadian enterprise sector with localization services.")
 
+        if "AI" in str(research):
+            strategies.append("Consulting services for AI implementations on Oracle Cloud")
+            strategies.append("Develop custom generative AI solutions leveraging Oracle infrastructure")
+
         return strategies

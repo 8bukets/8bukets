@@ -318,6 +318,67 @@
         {
             "text": "Machine Learning in Oracle AI Database",
             "url": "https://docs.oracle.com/en/database/oracle/machine-learning/"
+    "title": "Oracle Artificial Intelligence",
+    "sections": [
+        {
+            "heading": "Artificial Intelligence (AI)",
+            "content": [
+                "Get comprehensive AI services and state-of-the-art generative AI innovations on our data platform and in our cloud applications—all on a best-in-class AI infrastructure.",
+                "Speak to an AI expert"
+            ]
+        },
+        {
+            "heading": "Explore the AI trends shaping business in 2026",
+            "content": [
+                "Discover the latest AI trends and insights through this webinar series and ebook."
+            ]
+        },
+        {
+            "heading": "Learn about the future of GenAI: Beyond the hype curve",
+            "content": [
+                "Join OCI Chief Technical Architect Pradeep Vincent and OCI Chief Data Scientist Dan Roth for a discussion on GenAI trends and OCI innovations tackling emerging business challenges."
+            ]
+        },
+        {
+            "heading": "Oracle AI in action",
+            "content": [
+                "Saving Norway’s forests The Norwegian Institute of Bioeconomy Research (NIBIO) uses OCI Data Science to support more sustainable forests. Improve video streaming iSIZE trains neural network–based solutions for video streaming on OCI’s AI infrastructure. Boost customer service Brain4Data helps small businesses leverage AI with Oracle Database 23ai for vector search and app development."
+            ]
+        },
+        {
+            "heading": "Get started with Oracle AI",
+            "content": [
+                "Free AI trial AI hands-on lab AI solutions hub Contact sales",
+                "Try Oracle AI and get a 30-day trial Oracle offers a free pricing tier for most AI services as well as a free trial account with US$300 in credits to try additional cloud services. Get the details and sign up for your free account. Try Oracle AI for free Which Oracle AI and ML services offer a free pricing tier? OCI Speech OCI Language OCI Vision OCI Document Understanding Machine Learning in Oracle AI Database OCI Data Labeling You also only have to pay compute and storage charges for OCI Data Science. Learn with an AI hands-on lab The best way to learn something is to try it yourself. Use our tutorials and hands-on labs with your own Oracle Cloud tenancy, at no charge for many services. See all AI and machine learning workshops and tutorials Welcome to Bistro AI: Create an AI-powered recipe generator With the help of generative AI, you'll provide a list of ingredients to a pretrained recipe generator to decide what to make. Start this lab for Welcome to Bistro AI Speed up data science with the Accelerated Data Science SDK Explore concepts in OCI Data Science to improve workflow efficiency and become more productive. Start this lab to Speed up data science with the Accelerated Data Science SDK Build the perfect digital assistant for your business Explore how to work with multiple chatbots and digital assistants in Oracle Digital Assistant. Start this lab to Build the perfect digital assistant for your business The beginner’s guide to building custom language AI models Discover how to automate sophisticated text analysis at scale without machine learning expertise. Start this lab for The beginner’s guide to building custom language AI models See how to apply AI today Enter a new era of productivity with generative AI solutions for your business. Learn how Oracle helps customers leverage AI embedded across the full technology stack. Visit the AI solutions hub What can you achieve with Oracle AI? Fine-tune LLMs in OCI Automate invoice processing Build a chatbot with RAG Summarize web content with generative AI And so much more! Contact sales Interested in learning more about Oracle AI? Let one of our experts help. Get in touch They can answer questions such as How can I get started with AI and machine learning? What can I do for my business with generative AI? Which services are right for me?"
+            ]
+        },
+        {
+            "heading": "Try Oracle AI and get a 30-day trial",
+            "content": [
+                "Oracle offers a free pricing tier for most AI services as well as a free trial account with US$300 in credits to try additional cloud services. Get the details and sign up for your free account.",
+                "Try Oracle AI for free"
+            ]
+        },
+        {
+            "heading": "Learn with an AI hands-on lab",
+            "content": [
+                "The best way to learn something is to try it yourself. Use our tutorials and hands-on labs with your own Oracle Cloud tenancy, at no charge for many services.",
+                "See all AI and machine learning workshops and tutorials"
+            ]
+        },
+        {
+            "heading": "See how to apply AI today",
+            "content": [
+                "Enter a new era of productivity with generative AI solutions for your business. Learn how Oracle helps customers leverage AI embedded across the full technology stack.",
+                "Visit the AI solutions hub"
+            ]
+        },
+        {
+            "heading": "Contact sales",
+            "content": [
+                "Interested in learning more about Oracle AI? Let one of our experts help.",
+                "Get in touch"
+            ]
         }
     ]
 }

@@ -4,7 +4,9 @@ import argparse
 import subprocess
 import logging
 import time
+import asyncio
 from datetime import datetime
+from oracle_ai_scraper import OracleAIScraper
 from agents.analysis_agent import AnalysisAgent
 from agents.research_agent import ResearchAgent
 from agents.intelligence_agent import IntelligenceAgent
@@ -20,6 +22,7 @@ from agents.bidding_agent import BiddingAgent
 from agents.innovation_agent import InnovationAgent
 from agents.developer_agent import DeveloperAgent
 from agents.jules_orchestrator_agent import JulesIntelligenceAgent
+from agents.oracle_ai_agent import OracleAIAgent
 from agents.memory_system import MemorySystem
 from agents.oracle_ai_agent import OracleAIAgent
 
@@ -63,8 +66,10 @@ def run_pipeline(skip_scrape=False):
     if not skip_scrape:
         logger.info("Starting Scraper...")
         subprocess.run(["python3", "scraper.py"], check=True)
+
         logger.info("Starting Oracle AI Scraper...")
-        subprocess.run(["python3", "oracle_ai_scraper.py"], check=True)
+        scraper = OracleAIScraper(output_json="oracle_ai_docs.json", output_md="oracle_ai_docs.md")
+        asyncio.run(scraper.scrape())
     else:
         logger.info("Skipping scrape...")
 
@@ -124,7 +129,7 @@ def run_pipeline(skip_scrape=False):
     save_result("analysis.json", analysis_results, current_date)
 
     # Research
-    research_results = research_agent.process(data)
+    research_results = research_agent.process(data, memory_system.memory)
     save_result("research.json", research_results, current_date)
 
     # Intelligence
@@ -140,7 +145,7 @@ def run_pipeline(skip_scrape=False):
     save_result("bidding_config.json", bidding_config, current_date)
 
     # Content Generation with Innovation (Antigravity)
-    base_content = content_agent.process(data, intelligence_results)
+    base_content = content_agent.process(data, intelligence_results, memory_system.memory)
     final_content = innovation_agent.process(base_content, memory_system.memory)
     save_result("content_draft.md", final_content, current_date)
 
@@ -154,11 +159,15 @@ def run_pipeline(skip_scrape=False):
     results_aggregator['monetization'] = monetization_strategies
 
     # Creativity
-    headlines = creativity_agent.process(analysis_results['common_keywords'])
+    headlines = creativity_agent.process(analysis_results['common_keywords'], memory_system.memory)
     save_result("creative_headlines.json", headlines, current_date)
 
+    # Integrate Oracle AI Knowledge
+    oracle_ai_knowledge = oracle_ai_agent.process(memory_system)
+    save_result("oracle_ai_knowledge.json", oracle_ai_knowledge, current_date)
+
     # High-level Synthesis
-    summary = ai_agent.process(results_aggregator)
+    summary = ai_agent.process(results_aggregator, memory_system.memory)
     save_result("executive_summary.txt", summary, current_date)
 
     # 5. Jules Intelligence (Evolution & Learning)
