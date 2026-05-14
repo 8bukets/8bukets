@@ -168,3 +168,124 @@ Synthesized from Google Innovation & AI Blog
 - Kaggle
 
 ---
+
+## [Innovation & AI](https://blog.google/innovation-and-ai/)
+
+### Google Cloud Tools
+- Infrastructure & cloud
+- Gemini
+- Gemma
+- Kaggle
+
+---
+
+## [Infrastructure & Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/)
+
+### Google Cloud Tools
+- 7 highlights from Google Cloud Next ‘26
+- Google Cloud Next ‘26
+- Gemini
+
+---
+
+## [Global Network](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/)
+
+### Google Cloud Tools
+- Gemini
+
+---
+
+## [Google Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/)
+
+### Google Cloud Tools
+- 7 highlights from Google Cloud Next ‘26
+- Google Cloud Next ‘26
+- Gemini
+
+---
+
+## [Google Threat Intelligence Group reports on AI threat trends.](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/google-threat-intelligence-group-report/)
+
+### Google Cloud Tools
+- Gemini
+
+---
+
+## [Products](https://blog.google/innovation-and-ai/products/)
+
+### Google Cloud Tools
+- Gemini
+- Gemma
+
+---
+
+## [NotebookLM](https://blog.google/innovation-and-ai/products/notebooklm/)
+
+### Google Cloud Tools
+- Gemini
+
+---
+
+## [Technology](https://blog.google/innovation-and-ai/technology/)
+
+### Google Cloud Tools
+- Gemini
+- Gemma
+
+---
+
+## [AI](https://blog.google/innovation-and-ai/technology/ai/)
+
+### Benefits
+- **AI Impact Summit 2026: How we’re partnering to make AI work for everyone**: An overview of Google’s new global partnerships and funding announcements at the AI Impact Summit in India.
+
+### Google Cloud Tools
+- Gemini
+- Gemma
+
+---
+
+## [The latest AI news we announced in April 2026](https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-april-2026/)
+
+### Definitions
+- **General summary**: Google’s April updates focused on the "agentic era," introducing the Gemini Enterprise Agent Platform, eighth-generation chips, and the powerful Gemma 4 open model. You can now access new tools like Google Vids for free video creation, Deep Research Max for data analysis, and a personalized coding tutor in Colab. Check out the new AI Agents Vibe Coding course on Kaggle to start building software today.
+- **Basic explainer**: Google announced a bunch of new AI tools in April to help people work, study and create more easily. They launched features like a free video generator, a personal coding tutor and advanced research assistants. These updates aim to make AI more helpful for everything from school projects to professional business tasks. Google is also using this tech to improve healthcare and language translation for everyone.
+
+### Benefits
+- **Bullet points**: Check out "The latest AI news we announced in April" for Google's newest tech updates. Google Cloud introduced powerful new tools and chips to help businesses build AI agents. You can now create professional videos for free using the new Google Vids suite. New coding tools like Learn Mode in Colab act as your personal programming tutor. Google is using AI to improve healthcare access and help students with test prep.
+
+### Google Cloud Tools
+- Gemini
+- Gemma
+- Kaggle
+
+---
+
+## [Developer tools](https://blog.google/innovation-and-ai/technology/developers-tools/)
+
+### Google Cloud Tools
+- Gemini
+- Kaggle
+
+---
+
+## [Health](https://blog.google/innovation-and-ai/technology/health/)
+
+### Google Cloud Tools
+- Gemini
+
+---
+
+## [Safety & Security](https://blog.google/innovation-and-ai/technology/safety-security/)
+
+### Google Cloud Tools
+- Gemini
+
+---
+
+## [Evolving expectations of what’s possible](https://blog.google/innovation-and-ai/technology/safety-security/evolving-expectations-of-whats-possible/)
+
+### Google Cloud Tools
+- Gemini
+
+---

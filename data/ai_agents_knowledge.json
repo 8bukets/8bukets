@@ -248,5 +248,177 @@
             "Vertex AI",
             "Kaggle"
         ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/",
+        "title": "Innovation & AI",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Infrastructure & cloud",
+            "Gemini",
+            "Gemma",
+            "Kaggle"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/",
+        "title": "Infrastructure & Cloud",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "7 highlights from Google Cloud Next ‘26",
+            "Google Cloud Next ‘26",
+            "Gemini"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/",
+        "title": "Global Network",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/",
+        "title": "Google Cloud",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "7 highlights from Google Cloud Next ‘26",
+            "Google Cloud Next ‘26",
+            "Gemini"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/google-threat-intelligence-group-report/",
+        "title": "Google Threat Intelligence Group reports on AI threat trends.",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/products/",
+        "title": "Products",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini",
+            "Gemma"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/products/notebooklm/",
+        "title": "NotebookLM",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/technology/",
+        "title": "Technology",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini",
+            "Gemma"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/technology/ai/",
+        "title": "AI",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [
+            {
+                "title": "AI Impact Summit 2026: How we’re partnering to make AI work for everyone",
+                "description": "An overview of Google’s new global partnerships and funding announcements at the AI Impact Summit in India."
+            }
+        ],
+        "google_cloud_tools": [
+            "Gemini",
+            "Gemma"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-april-2026/",
+        "title": "The latest AI news we announced in April 2026",
+        "definitions": [
+            {
+                "term": "General summary",
+                "text": "Google’s April updates focused on the \"agentic era,\" introducing the Gemini Enterprise Agent Platform, eighth-generation chips, and the powerful Gemma 4 open model. You can now access new tools like Google Vids for free video creation, Deep Research Max for data analysis, and a personalized coding tutor in Colab. Check out the new AI Agents Vibe Coding course on Kaggle to start building software today."
+            },
+            {
+                "term": "Basic explainer",
+                "text": "Google announced a bunch of new AI tools in April to help people work, study and create more easily. They launched features like a free video generator, a personal coding tutor and advanced research assistants. These updates aim to make AI more helpful for everything from school projects to professional business tasks. Google is also using this tech to improve healthcare and language translation for everyone."
+            }
+        ],
+        "use_cases": [],
+        "benefits": [
+            {
+                "title": "Bullet points",
+                "description": "Check out \"The latest AI news we announced in April\" for Google's newest tech updates. Google Cloud introduced powerful new tools and chips to help businesses build AI agents. You can now create professional videos for free using the new Google Vids suite. New coding tools like Learn Mode in Colab act as your personal programming tutor. Google is using AI to improve healthcare access and help students with test prep."
+            }
+        ],
+        "google_cloud_tools": [
+            "Gemini",
+            "Gemma",
+            "Kaggle"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/",
+        "title": "Developer tools",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini",
+            "Kaggle"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/technology/health/",
+        "title": "Health",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/technology/safety-security/",
+        "title": "Safety & Security",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/technology/safety-security/evolving-expectations-of-whats-possible/",
+        "title": "Evolving expectations of what’s possible",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini"
+        ]
     }
 ]

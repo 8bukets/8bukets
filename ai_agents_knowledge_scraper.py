@@ -35,7 +35,7 @@ def extract_structured_knowledge(url):
 
     text_content = soup.get_text(separator=' ', strip=True).lower()
 
-    if any(kw in text_content for kw in ["agent", "autonomous", "generative ai", "gemini", "gemma", "research", "vibe", "mtp", "speculative"]):
+    if any(kw in text_content for kw in ["agent", "autonomous", "generative ai", "gemini", "gemma", "research", "vibe", "mtp", "speculative", "innovation", "ai", "intelligence"]):
 
         summary_sections = {
             "General summary": "definitions",
@@ -142,7 +142,7 @@ def run_knowledge_scraper():
     }
 
     article_urls = set()
-    keywords = ["agent", "gemini", "research", "autonomous", "vibe", "coding", "gemma", "mtp", "deep research"]
+    keywords = ["agent", "gemini", "research", "autonomous", "vibe", "coding", "gemma", "mtp", "deep research", "ai", "innovation", "intelligence", "recap"]
 
     for base_url in scan_urls:
         print(f"Scanning {base_url}...")
