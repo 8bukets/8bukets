@@ -1,8 +1,7 @@
 "use client";
 
 import { useChat } from "@ai-sdk/react";
-import { useState } from "react";
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from "react";
 
 type StatusResponse = {
   supabase: { status: string; error: string | null };
@@ -54,13 +53,13 @@ export default function Home() {
     fetchData();
   }, []);
 
-export default function Chat() {
   const [input, setInput] = useState("");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const { messages, sendMessage } = useChat({
     onError: async (e) => setErrorMessage(e.message),
   });
   return (
+    <>
     <div className="flex flex-col w-full max-w-md py-24 mx-auto stretch">
       {messages.map((message) => (
         <div key={message.id} className="whitespace-pre-wrap">
@@ -71,6 +70,9 @@ export default function Chat() {
                 return <div key={`${message.id}-${i}`}>{part.text}</div>;
             }
           })}
+        </div>
+      ))}
+    </div>
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start max-w-4xl w-full">
         <div className="flex flex-col sm:flex-row justify-between items-end w-full gap-4">
@@ -195,7 +197,7 @@ export default function Chat() {
             </li>
           </ul>
         </div>
-      ))}
+      </main>
 
       {errorMessage && (
         <div className="text-red-500 text-sm mb-4">{errorMessage}</div>
@@ -216,6 +218,8 @@ export default function Chat() {
           onChange={(e) => setInput(e.currentTarget.value)}
         />
       </form>
+
     </div>
+    </>
   );
 }
