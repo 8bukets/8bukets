@@ -38,3 +38,20 @@ export async function getNotifications(): Promise<Notification[]> {
   // Use 'inventory' profile for frequent updates
   return notifications
 }
+
+export async function dispatchExecutiveBriefing(summary: string) {
+  console.log('📢 [Notification] Dispatching executive briefing...')
+
+  const briefing: Notification = {
+    id: Math.random().toString(36).substr(2, 9),
+    type: 'evolution',
+    severity: 'info',
+    message: `EXECUTIVE BRIEFING: ${summary}`,
+    timestamp: new Date().toISOString()
+  }
+
+  notifications.unshift(briefing)
+  logAutonomousAction(`[BRIEFING] ${summary}`, 'info')
+
+  return briefing
+}

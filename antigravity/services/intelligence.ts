@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import { getMissionMetadata } from './collaboration'
+import { getMissionMetadata, generateRelationshipMap } from './collaboration'
 import { workOrderService } from './work_order'
 import { jules } from '../jules'
 import { healthCheck } from '../core'
@@ -48,6 +48,46 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
     })
   } else {
     report += `  - No pending orders. System is optimal.\n`
+  }
+  report += `\n`
+
+  const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
+
+  report += `## 🗺️ Relationship Map\n`
+  report += `### Goal Alignment\n`
+  Object.entries(relationshipMap.goalAlignment).forEach(([goal, relevantBranches]: [string, any]) => {
+    report += `- **Goal:** ${goal}\n`
+    if (relevantBranches.length > 0) {
+      report += `  - *Branches:* ${relevantBranches.join(', ')}\n`
+    } else {
+      report += `  - *No direct branch alignment detected.*\n`
+    }
+  })
+  report += `\n`
+
+  report += `### Stakeholder Engagement\n`
+  Object.entries(relationshipMap.stakeholderEngagement).forEach(([role, data]: [string, any]) => {
+    report += `- **${role}** (${data.email})\n`
+    if (data.activeProjects.length > 0) {
+      report += `  - *Active Projects:* ${data.activeProjects.join(', ')}\n`
+    }
+  })
+  report += `\n`
+
+  report += `## 📦 Resource Inventory\n`
+  relationshipMap.resourceInventory.forEach((res: any) => {
+    report += `- [${res.type}] **${res.name}** - Status: ${res.status}\n`
+  })
+  report += `\n`
+
+  report += `## 🏆 Results Summary\n`
+  const resultBranches = branches.filter(b => b.results && b.results !== 'N/A' && b.results !== b.lastMessage).slice(0, 5)
+  if (resultBranches.length > 0) {
+    resultBranches.forEach(b => {
+      report += `- **${b.name}**: ${b.results}\n`
+    })
+  } else {
+    report += `- No explicit results extracted from recent history.\n`
   }
   report += `\n`
 
