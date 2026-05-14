@@ -8,9 +8,9 @@ type StatusResponse = {
 };
 
 type IntelligenceResponse = {
-  snapshot: any;
-  workOrders: any[];
-  logs: any[];
+  snapshot: { evolution?: { parameter_shifts?: { current_version?: string } } } | null;
+  workOrders: { id: string; type: string; status: string; goal: string; createdAt: string }[];
+  logs: { time: string; type: string; agent: string; message: string }[];
 };
 
 export default function Home() {
@@ -90,7 +90,7 @@ export default function Home() {
                 <p className="text-zinc-500 animate-pulse">Loading queue...</p>
               ) : intel?.workOrders && intel.workOrders.length > 0 ? (
                 <div className="space-y-3">
-                  {intel.workOrders.map((order: any) => (
+                  {intel.workOrders.map((order: { id: string; type: string; status: string; goal: string; createdAt: string }) => (
                     <div key={order.id} className="p-3 bg-zinc-50 dark:bg-zinc-800 rounded-lg border-l-4 border-blue-500">
                       <div className="flex justify-between items-start mb-1">
                         <span className="text-xs font-bold text-blue-500 uppercase">{order.type}</span>
@@ -117,7 +117,7 @@ export default function Home() {
               {loading ? (
                 <p className="animate-pulse">Fetching latest insights...</p>
               ) : intel?.logs && intel.logs.length > 0 ? (
-                intel.logs.map((log: any, i: number) => (
+                intel.logs.map((log: { time: string; type: string; agent: string; message: string; msg?: string; }, i: number) => (
                   <div key={i} className="mb-1">
                     <span className="text-zinc-500">[{log.time}]</span>{' '}
                     <span className={log.type === 'error' ? 'text-red-400' : 'text-green-400'}>
