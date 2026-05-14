@@ -1,57 +1,41 @@
-name: Autonomous Cycle
+name: Antigravity Autonomous Work Cycle
 
 on:
   schedule:
-    - cron: '0 */4 * * *'
-  workflow_dispatch:
-
-permissions:
-  contents: write
-  pull-requests: write
+    - cron: '0 0 * * *' # Daily at midnight
+  workflow_dispatch: # Manual trigger
 
 jobs:
-  autonomous-swarm:
+  autonomous-cycle:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '20'
           cache: 'npm'
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: npm ci
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Execute Swarm
-        run: |
-          if [ -f run_system.py ]; then
-            pip install -r requirements.txt || true
-            python3 run_system.py
-          else
-            npm run daily
-          fi
+      - name: Execute Parallel Agent Cycle
+        run: npx tsx antigravity/run_parallel.ts
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
-
-      - name: Push Changes
-        run: |
-          npm run build || true
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m "chore: autonomous workflow step" || true
-          git pull --rebase origin main || true
-          git push origin main || true
-        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+
+      - name: Commit & Push Evolutions
+        run: |
+          git config --global user.name "antigravity-bot"
+          git config --global user.email "bot@antigravity.ai"
+          git add .
+          git commit -m "🤖 chore: autonomous cloud work cycle completion" || echo "No changes to commit"
+          git push

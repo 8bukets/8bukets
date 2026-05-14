@@ -1,23 +1,34 @@
+stages:
+  - autonomous
+  - build
+  - test
+  - deploy
+
+autonomous-work-cycle:
+  stage: autonomous
+  image: node:20
+  only:
+    - schedules
+    - web
+  script:
+    - npm ci
+    - npx tsx antigravity/run_parallel.ts
+  variables:
+    MONGODB_URI: $MONGODB_URI
+    NEXT_PUBLIC_SUPABASE_URL: $NEXT_PUBLIC_SUPABASE_URL
+    NEXT_PUBLIC_SUPABASE_ANON_KEY: $NEXT_PUBLIC_SUPABASE_ANON_KEY
+    GITLAB_TOKEN: $GITLAB_TOKEN
+
 build-job:
   stage: build
+  image: node:20
   script:
-    - echo "Hello, $GITLAB_USER_LOGIN!"
+    - npm ci
+    - npm run build
 
-test-job1:
+test-job:
   stage: test
+  image: node:20
   script:
-    - echo "This job tests something"
-
-test-job2:
-  stage: test
-  script:
-    - echo "This job tests something, but takes more time than test-job1."
-    - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
-    - echo "which simulates a test that runs 20 seconds longer than test-job1"
-    - sleep 20
-
-deploy-prod:
-  stage: deploy
-  script:
-    - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
-  environment: production
+    - npm ci
+    - npm test

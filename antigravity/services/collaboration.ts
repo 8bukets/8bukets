@@ -124,11 +124,13 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
 
   // Correlate branches to goals based on keywords
   goals.forEach(goal => {
-    const relevantBranches = branches.filter(b =>
-      goal.toLowerCase().split(' ').some(word =>
-        word.length > 3 && (b.name.toLowerCase().includes(word) || b.lastMessage.toLowerCase().includes(word))
-      )
-    )
+    const relevantBranches = branches.filter(b => {
+      const branchName = b?.name || '';
+      const lastMsg = b?.lastMessage || '';
+      return goal.toLowerCase().split(' ').some(word =>
+        word.length > 3 && (branchName.toLowerCase().includes(word) || lastMsg.toLowerCase().includes(word))
+      );
+    })
     map.goalAlignment[goal] = relevantBranches.map(b => b.name)
   })
 
@@ -136,7 +138,10 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
   stakeholders.forEach(s => {
     map.stakeholderEngagement[s.role] = {
       email: s.email,
-      activeProjects: branches.filter(b => b.category === 'agent' || b.name.includes(s.role.toLowerCase().split(' ')[0])).map(b => b.name)
+      activeProjects: branches.filter(b => {
+        const branchName = b?.name || '';
+        return b.category === 'agent' || branchName.includes(s.role.toLowerCase().split(' ')[0]);
+      }).map(b => b.name)
     }
   })
 
