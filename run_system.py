@@ -42,6 +42,7 @@ from agents.documentation_agent import DocumentationAgent
 from agents.performance_optimization_agent import PerformanceOptimizationAgent
 from agents.rag_agent import RagAgent
 from agents.knowledge_agent import KnowledgeAgent
+from agents.knowledge_merge_agent import KnowledgeMergeAgent
 from agents.intelephense_agent import IntelephenseAgent
 from agents.sandbox_agent import SandboxAgent
 from ai_agents_knowledge_scraper import scrape_ai_agents_knowledge
@@ -196,6 +197,7 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
 
         # Intelligence & Research
         AnalysisAgent(), ResearchAgent(), IntelligenceAgent(), KnowledgeAgent(),
+        KnowledgeMergeAgent(),
         ReActAgent(), RagAgent(), AutonomousIntelligenceAgent(),
 
         # Strategy & Execution
