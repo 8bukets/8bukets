@@ -30,3 +30,7 @@ To compile means to gather information from various sources and arrange it into 
 
 - **General**: Focuses on the act of assembling information or materials (e.g., compile a report).
 - **Computing**: Focuses on the automatic transformation of code using a tool known as a compiler.
+
+## Knowledge Merge
+
+Knowledge Merge is a process or document that merges key concepts currently spread across Antigravity, Project SOR, the live software-online-review.com domain, and the new software-review-platform starter. It creates one canonical map of what each layer is, what role it plays, and how the project should evolve. All the best - https://markposition.wordpress.com

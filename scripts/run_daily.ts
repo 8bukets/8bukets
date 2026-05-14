@@ -9,7 +9,7 @@ async function main() {
     await jules.startConsciousnessLoop();
   } else {
     console.log('Running single daily cycle...');
-    jules.executeWorkCycle();
+    await jules.executeWorkCycle();
   }
 }
 
