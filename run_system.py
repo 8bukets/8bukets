@@ -24,7 +24,6 @@ from agents.developer_agent import DeveloperAgent
 from agents.jules_orchestrator_agent import JulesIntelligenceAgent
 from agents.oracle_ai_agent import OracleAIAgent
 from agents.memory_system import MemorySystem
-from agents.oracle_ai_agent import OracleAIAgent
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
@@ -111,7 +110,7 @@ def run_pipeline(skip_scrape=False):
 
     # Oracle AI Knowledge Processing
     if 'oracle_ai_data' in locals() and oracle_ai_data:
-        oracle_agent_results = oracle_ai_agent.process(oracle_ai_data)
+        oracle_agent_results = oracle_ai_agent.process(data=oracle_ai_data, memory_system=memory_system)
         results_aggregator['oracle_ai'] = oracle_agent_results
         save_result("oracle_ai_insights.json", oracle_agent_results, current_date)
 
@@ -163,7 +162,7 @@ def run_pipeline(skip_scrape=False):
     save_result("creative_headlines.json", headlines, current_date)
 
     # Integrate Oracle AI Knowledge
-    oracle_ai_knowledge = oracle_ai_agent.process(memory_system)
+    oracle_ai_knowledge = oracle_ai_agent.process(memory_system=memory_system)
     save_result("oracle_ai_knowledge.json", oracle_ai_knowledge, current_date)
 
     # High-level Synthesis

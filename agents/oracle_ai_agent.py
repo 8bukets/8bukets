@@ -1,41 +1,8 @@
-from agents.base_agent import BaseAgent
-from typing import Dict, Any
-
-class OracleAIAgent(BaseAgent):
-    def __init__(self):
-        super().__init__("OracleAIAgent")
-
-    def process(self, data: Any) -> Dict[str, Any]:
-        """
-        Process the Oracle AI documentation data and extract key insights.
-        """
-        self.log("Processing Oracle AI knowledge...")
-
-        if not data:
-            return {
-                "status": "No data",
-                "sections_processed": 0,
-                "links_processed": 0,
-                "summary": "No data available to process."
-            }
-
-        sections = data.get("sections", [])
-        links = data.get("key_links", [])
-
-        # Simple extraction logic for the proof of concept
-        insights = {
-            "status": "Processed",
-            "sections_processed": len(sections),
-            "links_processed": len(links),
-            "summary": "Processed Oracle AI documentation."
-        }
-
-        return insights
 import json
 import logging
-from typing import Dict, Any, List
-from .base_agent import BaseAgent
 import os
+from typing import Dict, Any, List
+from agents.base_agent import BaseAgent
 
 logger = logging.getLogger(__name__)
 
@@ -44,7 +11,10 @@ class OracleAIAgent(BaseAgent):
         super().__init__("Oracle AI Agent")
         self.data_file = data_file
 
-    def _load_data(self) -> Dict:
+    def _load_data(self, data: Any = None) -> Dict:
+        if data is not None:
+            return data
+
         if not os.path.exists(self.data_file):
             self.log(f"Data file {self.data_file} not found. Returning empty structure.")
             return {}
@@ -56,10 +26,10 @@ class OracleAIAgent(BaseAgent):
             self.log(f"Error loading {self.data_file}: {e}")
             return {}
 
-    def process(self, memory_system: Any) -> Dict:
-        self.log(f"Processing Oracle AI knowledge from {self.data_file}...")
+    def process(self, data: Any = None, memory_system: Any = None) -> Dict:
+        self.log(f"Processing Oracle AI knowledge...")
 
-        data = self._load_data()
+        data = self._load_data(data)
         if not data or 'sections' not in data:
             self.log("No valid Oracle AI data found to process.")
             return {"status": "No data"}
@@ -87,7 +57,8 @@ class OracleAIAgent(BaseAgent):
                 knowledge_summary["key_points"].append(heading)
 
         # Update the system memory
-        memory_system.update("oracle_ai_knowledge", knowledge_summary)
+        if memory_system is not None:
+            memory_system.update("oracle_ai_knowledge", knowledge_summary)
 
         self.log(f"Successfully integrated {len(knowledge_summary['key_points'])} key points and {len(knowledge_summary['features'])} features into system memory.")
 
