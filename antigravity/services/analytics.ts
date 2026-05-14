@@ -36,7 +36,6 @@ export async function trackEvent(tag: string, event: string, metadata?: any) {
 }
 
 export async function getRecentAnalytics(limit: number = 10) {
-  'use cache'
   try {
     const client = await getMongoClient()
     const db = client.db()

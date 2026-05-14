@@ -34,7 +34,6 @@ export async function sendNotification(payload: Omit<Notification, 'id' | 'times
 }
 
 export async function getNotifications(): Promise<Notification[]> {
-  'use cache'
   // Use 'inventory' profile for frequent updates
   return notifications
 }

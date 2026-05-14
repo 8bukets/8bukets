@@ -28,7 +28,8 @@ export async function GET() {
       logs: recentLogs,
       timestamp: new Date().toISOString()
     });
-  } catch (err: any) {
-    return NextResponse.json({ error: err.message }, { status: 500 });
+  } catch (err) {
+    const error = err as Error;
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
