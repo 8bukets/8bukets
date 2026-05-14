@@ -6,7 +6,7 @@
 
 **URL:** https://github.com/bmewburn/vscode-intelephense
 
-**Stars:** 1843 | **Forks:** 114 | **Language:** TypeScript
+**Stars:** 1844 | **Forks:** 114 | **Language:** TypeScript
 
 **License:** Other
 
