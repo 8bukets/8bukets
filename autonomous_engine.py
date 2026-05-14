@@ -72,8 +72,55 @@ def run_typescript_cycle():
     except subprocess.CalledProcessError as e:
         logger.error(f"❌ TypeScript Cycle failed: {e}")
 
+def create_autonomous_orders():
+    """Identify and create new work orders if the system needs them."""
+    orders_file = "data/work_orders.json"
+    if not os.path.exists(orders_file):
+        return
+
+    try:
+        with open(orders_file, 'r') as f:
+            orders = json.load(f)
+    except:
+        orders = []
+
+    pending = [o for o in orders if o["status"] == "PENDING"]
+    if len(pending) > 5:
+        return
+
+    logger.info("🆕 Analyzing system for new autonomous orders...")
+    new_orders = []
+
+    # If no research tasks, add one
+    if not any(o["type"] == "RESEARCH" and o["status"] == "PENDING" for o in orders):
+        new_orders.append({
+            "id": f"AUTO_RESEARCH_{datetime.now().strftime('%H%M%S')}",
+            "type": "RESEARCH",
+            "description": "Autonomous market trend update",
+            "status": "PENDING",
+            "created_at": datetime.now().isoformat()
+        })
+
+    # Add a maintenance test
+    if not any(o["type"] == "TESTING" and o["status"] == "PENDING" for o in orders):
+        new_orders.append({
+            "id": f"AUTO_TEST_{datetime.now().strftime('%H%M%S')}",
+            "type": "TESTING",
+            "description": "Routine system stability check",
+            "status": "PENDING",
+            "created_at": datetime.now().isoformat()
+        })
+
+    if new_orders:
+        orders.extend(new_orders)
+        with open(orders_file, 'w') as f:
+            json.dump(orders, f, indent=4)
+        for o in new_orders:
+            logger.info(f"✅ Created Order: {o['id']} ({o['type']})")
+
 def process_work_orders():
     """Check for pending work orders and execute appropriate scripts."""
+    create_autonomous_orders()
     orders_file = "data/work_orders.json"
     if not os.path.exists(orders_file):
         return

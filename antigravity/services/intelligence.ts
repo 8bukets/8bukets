@@ -11,7 +11,6 @@ import { healthCheck } from '../core'
  */
 
 export async function generateConsolidatedReport(branchIntelligence?: any[]) {
-  'use cache'
   console.log('📊 [Intelligence] Generating consolidated system report...')
 
   const metadata = await getMissionMetadata()

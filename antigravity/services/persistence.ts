@@ -18,7 +18,6 @@ export async function getPersistenceHealth(): Promise<PersistenceStatus[]> {
   const agents = ['com.sigma.orchestrator', 'com.sigma.jules', 'com.sigma.syra_api']
 
   return autonomousFetch(z.array(PersistenceSchema), async () => {
-    'use cache'
     const results: PersistenceStatus[] = []
 
     for (const agent of agents) {

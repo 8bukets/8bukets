@@ -29,15 +29,6 @@ export async function evolve() {
         const content = fs.readFileSync(fullPath, 'utf8')
         const lines = content.split('\n').length
 
-        // Example Evolutionary Logic: Detect lack of 'use cache' in large async components
-        if (lines > 50 && content.includes('async function') && !content.includes("'use cache'")) {
-          suggestions.push({
-            file: fullPath.replace(process.cwd(), ''),
-            complexity: lines,
-            suggestion: 'MISSING_CACHE_DIRECTIVE: High complexity async component detected without granular caching.'
-          })
-        }
-
         // Rule 2: Detect large files that should be refactored
         if (lines > 150) {
           suggestions.push({
@@ -77,9 +68,6 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
     let content = fs.readFileSync(fullPath, 'utf8')
 
     if (s.suggestion.startsWith('MISSING_CACHE_DIRECTIVE')) {
-      console.log(` - Fixing ${s.file}: Injecting 'use cache'`)
-      // Inject 'use cache' at the top of the first async function found
-      content = content.replace(/async function(.*?)\{/, "async function$1{\n  'use cache'")
       fs.writeFileSync(fullPath, content)
     }
 
