@@ -6,6 +6,10 @@ vi.mock('fs', () => ({
     existsSync: vi.fn(),
     readFileSync: vi.fn(),
     writeFileSync: vi.fn()
+  },
+  existsSync: vi.fn(),
+  readFileSync: vi.fn(),
+  writeFileSync: vi.fn()
   }
 }))
 
@@ -17,6 +21,12 @@ vi.mock('@/antigravity/core', () => ({
 
 // Now import the service
 import { getMissionMetadata, syncCollaborationState } from './collaboration'
+
+vi.mock('../jules', () => ({
+  jules: {
+    scanAllBranches: vi.fn(() => Promise.resolve([]))
+  }
+}))
 
 vi.mock('./docker', () => ({
   checkDockerHealth: vi.fn(() => Promise.resolve({
