@@ -126,7 +126,6 @@ export default function Chat() {
               ) : intel?.workOrders && intel.workOrders.length > 0 ? (
                 <div className="space-y-3">
                   {intel.workOrders.map((order: { id: string; type: string; status: string; goal: string; createdAt: string }) => (
-                  {intel.workOrders.map((order) => (
                     <div key={order.id} className="p-3 bg-zinc-50 dark:bg-zinc-800 rounded-lg border-l-4 border-blue-500">
                       <div className="flex justify-between items-start mb-1">
                         <span className="text-xs font-bold text-blue-500 uppercase">{order.type}</span>
@@ -154,7 +153,6 @@ export default function Chat() {
                 <p className="animate-pulse">Fetching latest insights...</p>
               ) : intel?.logs && intel.logs.length > 0 ? (
                 intel.logs.map((log: { time: string; type: string; agent: string; message: string; msg?: string; }, i: number) => (
-                intel.logs.map((log, i: number) => (
                   <div key={i} className="mb-1">
                     <span className="text-zinc-500">[{log.time}]</span>{' '}
                     <span className={log.type === 'error' ? 'text-red-400' : 'text-green-400'}>
@@ -200,7 +198,7 @@ export default function Chat() {
             </li>
           </ul>
         </div>
-      ))}
+      }
 
       {errorMessage && (
         <div className="text-red-500 text-sm mb-4">{errorMessage}</div>
