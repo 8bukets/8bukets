@@ -30,11 +30,26 @@ class DockerEvolutionAgent(BaseAgent):
         has_dockerfile = os.path.exists("Dockerfile")
         has_docker_compose = os.path.exists("docker-compose.yml")
 
+        has_multi_stage = False
+        has_alpine_base = False
+        if has_dockerfile:
+            try:
+                with open("Dockerfile", "r", encoding="utf-8") as f:
+                    content = f.read().lower()
+                    if "as builder" in content:
+                        has_multi_stage = True
+                    if "alpine" in content:
+                        has_alpine_base = True
+            except Exception as e:
+                self.logger.error(f"Error reading Dockerfile: {e}")
+
         optimization_report = {
             "image_size_reduction": "15MB",
             "layer_optimization": "SUCCESSFUL" if has_dockerfile else "PENDING",
             "runtime_stability": "VERIFIED" if has_dockerfile and has_docker_compose else "UNVERIFIED",
-            "cloud_sync": "ENABLED"
+            "cloud_sync": "ENABLED",
+            "multi_stage_build": has_multi_stage,
+            "alpine_base": has_alpine_base
         }
 
         if react_config and react_config.get("status") == "READY_FOR_DEPLOYMENT":
