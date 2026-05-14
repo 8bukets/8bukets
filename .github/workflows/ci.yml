@@ -39,7 +39,7 @@ jobs:
       if: matrix.service == 'frontend'
       uses: actions/setup-node@v4
       with:
-        node-version: 20
+        node-version: 24
 
     - name: Install Frontend Dependencies
       if: matrix.service == 'frontend'
@@ -58,7 +58,7 @@ jobs:
       if: matrix.service == 'sr-backend'
       uses: actions/setup-node@v4
       with:
-        node-version: 20
+        node-version: 24
 
     - name: Install SR Backend Dependencies
       if: matrix.service == 'sr-backend'
@@ -77,7 +77,7 @@ jobs:
       if: matrix.service == 'sr-frontend'
       uses: actions/setup-node@v4
       with:
-        node-version: 20
+        node-version: 24
 
     - name: Install SR Frontend Dependencies
       if: matrix.service == 'sr-frontend'
