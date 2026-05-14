@@ -1,8 +1,7 @@
 "use client";
 
 import { useChat } from "@ai-sdk/react";
-import { useState } from "react";
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from "react";
 
 type StatusResponse = {
   supabase: { status: string; error: string | null };
@@ -10,24 +9,24 @@ type StatusResponse = {
 };
 
 type IntelligenceResponse = {
-  snapshot: { evolution?: { parameter_shifts?: { current_version?: string } } } | null;
-  workOrders: { id: string; type: string; status: string; goal: string; createdAt: string }[];
-  logs: { time: string; type: string; agent: string; message: string }[];
   snapshot: {
     evolution?: {
       parameter_shifts?: {
-        current_version?: string;
-      };
-    };
+        current_version?: string
+      }
+    }
   } | null;
   workOrders: {
     id: string;
     type: string;
+    status: string;
     goal: string;
+    created_at: string;
   }[];
   logs: {
     time: string;
     type: string;
+    agent: string;
     msg: string;
   }[];
 };
@@ -36,6 +35,12 @@ export default function Home() {
   const [status, setStatus] = useState<StatusResponse | null>(null);
   const [intel, setIntel] = useState<IntelligenceResponse | null>(null);
   const [loading, setLoading] = useState(true);
+  const [input, setInput] = useState("");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const { messages, sendMessage } = useChat({
+    onError: (e) => setErrorMessage(e.message),
+  });
 
   useEffect(() => {
     async function fetchData() {
@@ -57,28 +62,12 @@ export default function Home() {
     fetchData();
   }, []);
 
-export default function Chat() {
-  const [input, setInput] = useState("");
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const { messages, sendMessage } = useChat({
-    onError: async (e) => setErrorMessage(e.message),
-  });
   return (
-    <div className="flex flex-col w-full max-w-md py-24 mx-auto stretch">
-      {messages.map((message) => (
-        <div key={message.id} className="whitespace-pre-wrap">
-          {message.role === "user" ? "User: " : "AI: "}
-          {message.parts.map((part, i) => {
-            switch (part.type) {
-              case "text":
-                return <div key={`${message.id}-${i}`}>{part.text}</div>;
-            }
-          })}
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen p-8 pb-20 gap-8 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start max-w-4xl w-full">
         <div className="flex flex-col sm:flex-row justify-between items-end w-full gap-4">
           <div>
-            <h1 className="text-4xl font-bold tracking-tight mb-2">Googleov Full-Stack Ekosustav</h1>
+            <h1 className="text-4xl font-bold tracking-tight mb-2">Google Full-Stack Ecosystem</h1>
             <p className="text-zinc-500">Autonomous Cloud Intelligence Layer v{intel?.snapshot?.evolution?.parameter_shifts?.current_version || '1.0'}</p>
           </div>
           <div className="flex items-center gap-2 px-3 py-1 bg-green-500/10 text-green-500 rounded-full text-xs font-bold animate-pulse">
@@ -125,7 +114,6 @@ export default function Chat() {
                 <p className="text-zinc-500 animate-pulse">Loading queue...</p>
               ) : intel?.workOrders && intel.workOrders.length > 0 ? (
                 <div className="space-y-3">
-                  {intel.workOrders.map((order: { id: string; type: string; status: string; goal: string; createdAt: string }) => (
                   {intel.workOrders.map((order) => (
                     <div key={order.id} className="p-3 bg-zinc-50 dark:bg-zinc-800 rounded-lg border-l-4 border-blue-500">
                       <div className="flex justify-between items-start mb-1">
@@ -153,8 +141,7 @@ export default function Chat() {
               {loading ? (
                 <p className="animate-pulse">Fetching latest insights...</p>
               ) : intel?.logs && intel.logs.length > 0 ? (
-                intel.logs.map((log: { time: string; type: string; agent: string; message: string; msg?: string; }, i: number) => (
-                intel.logs.map((log, i: number) => (
+                intel.logs.map((log, i) => (
                   <div key={i} className="mb-1">
                     <span className="text-zinc-500">[{log.time}]</span>{' '}
                     <span className={log.type === 'error' ? 'text-red-400' : 'text-green-400'}>
@@ -169,6 +156,39 @@ export default function Chat() {
               {!loading && <div className="animate-pulse mt-2">_</div>}
             </div>
           </div>
+        </div>
+
+        {/* Chat Section */}
+        <div className="w-full bg-white dark:bg-zinc-900 rounded-xl shadow-md overflow-hidden border border-zinc-200 dark:border-zinc-800 p-6">
+          <h2 className="text-xl font-semibold mb-4">Agent Interaction</h2>
+          <div className="flex flex-col w-full h-64 overflow-y-auto mb-4 p-4 bg-zinc-50 dark:bg-zinc-800 rounded-lg">
+            {messages.map((message) => (
+              <div key={message.id} className="whitespace-pre-wrap mb-2">
+                <span className="font-bold">{message.role === "user" ? "User: " : "AI: "}</span>
+                {message.content}
+              </div>
+            ))}
+            {errorMessage && (
+              <div className="text-red-500 text-sm mb-4">{errorMessage}</div>
+            )}
+          </div>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              sendMessage({ text: input });
+              setInput("");
+              setErrorMessage(null);
+            }}
+            className="flex gap-2"
+          >
+            <input
+              className="flex-1 p-2 border border-zinc-300 dark:border-zinc-800 rounded dark:bg-zinc-900"
+              value={input}
+              placeholder="Interact with the agent..."
+              onChange={(e) => setInput(e.currentTarget.value)}
+            />
+            <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Send</button>
+          </form>
         </div>
 
         <div className="w-full">
@@ -200,27 +220,7 @@ export default function Chat() {
             </li>
           </ul>
         </div>
-      ))}
-
-      {errorMessage && (
-        <div className="text-red-500 text-sm mb-4">{errorMessage}</div>
-      )}
-
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          sendMessage({ text: input });
-          setInput("");
-          setErrorMessage(null);
-        }}
-      >
-        <input
-          className="fixed dark:bg-zinc-900 bottom-0 w-full max-w-md p-2 mb-8 border border-zinc-300 dark:border-zinc-800 rounded shadow-xl"
-          value={input}
-          placeholder="Say something..."
-          onChange={(e) => setInput(e.currentTarget.value)}
-        />
-      </form>
+      </main>
     </div>
   );
 }
