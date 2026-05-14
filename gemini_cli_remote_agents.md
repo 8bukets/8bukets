@@ -4,10 +4,25 @@ Gemini CLI supports connecting to remote subagents using the Agent-to-Agent (A2A
 
 Gemini CLI can connect to any compliant A2A agent. You can find samples of A2A agents in the following repositories:
 
-*   ADK Samples (Python)
-*   ADK Python Contributing Samples
+*   [ADK Samples (Python)](#) *(Links omitted)*
+*   [ADK Python Contributing Samples](#) *(Links omitted)*
 
-## Proxy support
+---
+
+## Table of Contents
+1. [Proxy Support](#proxy-support)
+2. [Defining Remote Subagents](#defining-remote-subagents)
+   - [Configuration Schema](#configuration-schema)
+   - [Examples](#examples)
+3. [Authentication](#authentication)
+   - [Supported Auth Types](#supported-auth-types)
+   - [Dynamic Values](#dynamic-values)
+   - [Auth Provider Examples](#auth-provider-examples)
+4. [Managing Subagents](#managing-subagents)
+
+---
+
+## Proxy Support
 Gemini CLI routes traffic to remote agents through an HTTP/HTTPS proxy if one is configured. It uses the `general.proxy` setting in your `settings.json` file or standard environment variables (`HTTP_PROXY`, `HTTPS_PROXY`).
 
 ```json
@@ -18,7 +33,7 @@ Gemini CLI routes traffic to remote agents through an HTTP/HTTPS proxy if one is
 }
 ```
 
-## Defining remote subagents
+## Defining Remote Subagents
 Remote subagents are defined as Markdown files (`.md`) with YAML frontmatter. You can place them in:
 
 *   **Project-level:** `.gemini/agents/*.md` (Shared with your team)
@@ -27,13 +42,15 @@ Remote subagents are defined as Markdown files (`.md`) with YAML frontmatter. Yo
 ### Configuration schema
 | Field | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `kind` | string | Yes | Must be `remote`. |
-| `name` | string | Yes | A unique name for the agent. Must be a valid slug (lowercase letters, numbers, hyphens, and underscores only). |
-| `agent_card_url` | string | Yes* | The URL to the agent’s A2A card endpoint. Required if `agent_card_json` is not provided. |
-| `agent_card_json` | string | Yes* | The inline JSON string of the agent’s A2A card. Required if `agent_card_url` is not provided. |
+| `kind` | string | **Yes** | Must be `remote`. |
+| `name` | string | **Yes** | A unique name for the agent. Must be a valid slug (lowercase letters, numbers, hyphens, and underscores only). |
+| `agent_card_url` | string | **Yes*** | The URL to the agent’s A2A card endpoint. Required if `agent_card_json` is not provided. |
+| `agent_card_json` | string | **Yes*** | The inline JSON string of the agent’s A2A card. Required if `agent_card_url` is not provided. |
 | `auth` | object | No | Authentication configuration. See Authentication. |
 
-### Single-subagent example
+### Examples
+
+**Single-subagent example**
 ```yaml
 ---
 kind: remote
@@ -42,7 +59,7 @@ agent_card_url: https://example.com/agent-card
 ---
 ```
 
-### Multi-subagent example
+**Multi-subagent example**
 The loader explicitly supports multiple remote subagents defined in a single Markdown file.
 
 ```yaml
@@ -83,13 +100,15 @@ For `apiKey` and `http` auth types, secret values (key, token, username, passwor
 
 > **Security tip:** Prefer `$ENV_VAR` or `!command` over embedding secrets directly in agent files, especially for project-level agents checked into version control.
 
-### API key (`apiKey`)
+### Auth Provider Examples
+
+#### API key (`apiKey`)
 Sends an API key as an HTTP header on every request.
 
 | Field | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `type` | string | Yes | Must be `apiKey`. |
-| `key` | string | Yes | The API key value. Supports dynamic values. |
+| `type` | string | **Yes** | Must be `apiKey`. |
+| `key` | string | **Yes** | The API key value. Supports dynamic values. |
 | `name` | string | No | Header name to send the key in. Default: `X-API-Key`. |
 
 ```yaml
@@ -103,17 +122,17 @@ auth:
 ---
 ```
 
-### HTTP authentication (`http`)
+#### HTTP authentication (`http`)
 Supports Bearer tokens, Basic auth, and arbitrary IANA-registered HTTP authentication schemes.
 
-#### Bearer token
+**Bearer token**
 Use the following fields to configure a Bearer token:
 
 | Field | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `type` | string | Yes | Must be `http`. |
-| `scheme` | string | Yes | Must be `Bearer`. |
-| `token` | string | Yes | The bearer token. Supports dynamic values. |
+| `type` | string | **Yes** | Must be `http`. |
+| `scheme` | string | **Yes** | Must be `Bearer`. |
+| `token` | string | **Yes** | The bearer token. Supports dynamic values. |
 
 ```yaml
 auth:
@@ -122,15 +141,15 @@ auth:
   token: $MY_BEARER_TOKEN
 ```
 
-#### Basic authentication
+**Basic authentication**
 Use the following fields to configure Basic authentication:
 
 | Field | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `type` | string | Yes | Must be `http`. |
-| `scheme` | string | Yes | Must be `Basic`. |
-| `username` | string | Yes | The username. Supports dynamic values. |
-| `password` | string | Yes | The password. Supports dynamic values. |
+| `type` | string | **Yes** | Must be `http`. |
+| `scheme` | string | **Yes** | Must be `Basic`. |
+| `username` | string | **Yes** | The username. Supports dynamic values. |
+| `password` | string | **Yes** | The password. Supports dynamic values. |
 
 ```yaml
 auth:
@@ -140,14 +159,14 @@ auth:
   password: $MY_PASSWORD
 ```
 
-#### Raw scheme
+**Raw scheme**
 For any other IANA-registered scheme (for example, Digest, HOBA), provide the raw authorization value.
 
 | Field | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `type` | string | Yes | Must be `http`. |
-| `scheme` | string | Yes | The scheme name (for example, Digest). |
-| `value` | string | Yes | Raw value sent as `Authorization: <scheme> <value>`. Supports dynamic values. |
+| `type` | string | **Yes** | Must be `http`. |
+| `scheme` | string | **Yes** | The scheme name (for example, Digest). |
+| `value` | string | **Yes** | Raw value sent as `Authorization: <scheme> <value>`. Supports dynamic values. |
 
 ```yaml
 auth:
@@ -156,12 +175,12 @@ auth:
   value: $MY_DIGEST_VALUE
 ```
 
-### Google Application Default Credentials (`google-credentials`)
+#### Google Application Default Credentials (`google-credentials`)
 Uses Google Application Default Credentials (ADC) to authenticate with Google Cloud services and Cloud Run endpoints. This is the recommended auth method for agents hosted on Google Cloud infrastructure.
 
 | Field | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `type` | string | Yes | Must be `google-credentials`. |
+| `type` | string | **Yes** | Must be `google-credentials`. |
 | `scopes` | string[] | No | OAuth scopes. Defaults to `https://www.googleapis.com/auth/cloud-platform`. |
 
 ```yaml
@@ -174,13 +193,13 @@ auth:
 ---
 ```
 
-### OAuth 2.0 (`oauth`)
+#### OAuth 2.0 (`oauth`)
 Performs an interactive OAuth 2.0 Authorization Code flow with PKCE.
 
 | Field | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `type` | string | Yes | Must be `oauth`. |
-| `client_id` | string | Yes* | OAuth client ID. Required for interactive auth. |
+| `type` | string | **Yes** | Must be `oauth`. |
+| `client_id` | string | **Yes*** | OAuth client ID. Required for interactive auth. |
 | `client_secret` | string | No* | OAuth client secret. |
 | `scopes` | string[] | No | Requested scopes. |
 | `authorization_url` | string | No | Authorization endpoint. |
@@ -197,13 +216,12 @@ auth:
 ---
 ```
 
-
-If the agent card advertises an oauth2 security scheme with authorizationCode flow, the `authorization_url`, `token_url`, and `scopes` are automatically discovered. You only need to provide `client_id` (and `client_secret` if required).
+If the agent card advertises an `oauth2` security scheme with `authorizationCode` flow, the `authorization_url`, `token_url`, and `scopes` are automatically discovered. You only need to provide `client_id` (and `client_secret` if required).
 
 Tokens are persisted to disk and refreshed automatically when they expire.
 
 ### Auth validation
-When Gemini CLI loads a remote agent, it validates your auth configuration against the agent card’s declared securitySchemes. If the agent requires authentication that you haven’t configured, you’ll see an error describing what’s needed.
+When Gemini CLI loads a remote agent, it validates your auth configuration against the agent card’s declared `securitySchemes`. If the agent requires authentication that you haven’t configured, you’ll see an error describing what’s needed.
 
 `google-credentials` is treated as compatible with `http` Bearer security schemes, since it produces Bearer tokens.
 
