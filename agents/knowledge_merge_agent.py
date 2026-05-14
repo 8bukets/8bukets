@@ -15,7 +15,7 @@ class KnowledgeMergeAgent(BaseAgent):
             dependencies=["ai_agents_definitions", "analysis_stats", "research_data"],
             provides=["consolidated_knowledge"]
         )
-        self.output_json = "data/consolidated_knowledge.json"
+        self.output_json = "data/knowledge/system_knowledge.json"
         self.output_md = "CONSOLIDATED_KNOWLEDGE.md"
         self.sources = {
             "ai_agents": "ai_agents_knowledge.json",
@@ -29,16 +29,37 @@ class KnowledgeMergeAgent(BaseAgent):
         }
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
-        self.logger.info("Starting Knowledge Consolidation...")
+        self.logger.info("Starting Knowledge Consolidation (Python Layer)...")
 
+        # Load existing unified knowledge to prevent overwriting TypeScript data
         consolidated = {
             "metadata": {
                 "generated_at": datetime.now().isoformat(),
                 "version": self.config.get("current_version", 1.0),
                 "sources_processed": []
             },
-            "sections": {}
+            "sections": {},
+            "typescript_sections": {} # Preserved for TS agents
         }
+
+        if os.path.exists(self.output_json):
+            try:
+                with open(self.output_json, "r", encoding="utf-8") as f:
+                    existing = json.load(f)
+                    if isinstance(existing, dict):
+                        # Preserve metadata version if it's higher
+                        if existing.get("metadata", {}).get("version", 0) > consolidated["metadata"]["version"]:
+                            consolidated["metadata"]["version"] = existing["metadata"]["version"]
+
+                        # Preserve existing sections (especially those from TS)
+                        if "sections" in existing:
+                            consolidated["sections"].update(existing["sections"])
+                        if "typescript_sections" in existing:
+                            consolidated["typescript_sections"].update(existing["typescript_sections"])
+                        if "system_insights" in existing:
+                            consolidated["system_insights"] = existing["system_insights"]
+            except Exception as e:
+                self.logger.warning(f"Failed to load existing knowledge from {self.output_json}: {e}")
 
         # 1. Process Structured Knowledge Sources (JSON Dictionaries)
         for key, filepath in self.sources.items():
@@ -52,7 +73,8 @@ class KnowledgeMergeAgent(BaseAgent):
 
                 if isinstance(content, dict):
                     consolidated["sections"][key] = content
-                    consolidated["metadata"]["sources_processed"].append(filepath)
+                    if filepath not in consolidated["metadata"]["sources_processed"]:
+                        consolidated["metadata"]["sources_processed"].append(filepath)
                 elif isinstance(content, list):
                     # For market_data (links.json), we might want to summarize or just store a subset
                     if key == "market_data":
@@ -62,7 +84,8 @@ class KnowledgeMergeAgent(BaseAgent):
                         }
                     else:
                         consolidated["sections"][key] = {"data": content}
-                    consolidated["metadata"]["sources_processed"].append(filepath)
+                    if filepath not in consolidated["metadata"]["sources_processed"]:
+                        consolidated["metadata"]["sources_processed"].append(filepath)
 
             except Exception as e:
                 self.logger.error(f"Error processing {filepath}: {e}")
@@ -92,13 +115,16 @@ class KnowledgeMergeAgent(BaseAgent):
         try:
             with open(self.output_md, "w", encoding="utf-8") as f:
                 f.write(f"# Consolidated Knowledge Base\n\n")
-                f.write(f"**Generated:** {consolidated['metadata']['generated_at']}\n")
+                f.write(f"**Last Sync (Python):** {consolidated['metadata']['generated_at']}\n")
                 f.write(f"**System Version:** {consolidated['metadata']['version']}\n\n")
 
                 f.write("## System Intelligence & Outlook\n")
                 insights = consolidated.get("system_insights", {})
-                for item in insights.get("intelligence_outlook", []):
-                    f.write(f"- {item}\n")
+                if insights:
+                    for item in insights.get("intelligence_outlook", []):
+                        f.write(f"- {item}\n")
+                else:
+                    f.write("Awaiting autonomous intelligence sync...\n")
 
                 f.write("\n## 1. AI Agent Foundation\n")
                 ai_data = consolidated["sections"].get("ai_agents", {})
@@ -128,6 +154,15 @@ class KnowledgeMergeAgent(BaseAgent):
                         if isinstance(tech_data, dict):
                             keys_preview = ", ".join(list(tech_data.keys())[:5])
                             f.write(f"Topics covered: {keys_preview}...\n\n")
+
+                # TypeScript Integration Section
+                if consolidated.get("typescript_sections"):
+                    f.write("\n## 5. TypeScript Ecosystem Intelligence\n")
+                    for title, ts_data in consolidated["typescript_sections"].items():
+                        f.write(f"### {title}\n")
+                        f.write(f"*Source: {ts_data.get('metadata', {}).get('source', 'Unknown')}*\n\n")
+                        for sec in ts_data.get("sections", []):
+                            f.write(f"#### {sec['header']}\n{sec['content']}\n\n")
 
             self.logger.info(f"Consolidated Markdown saved to {self.output_md}")
         except Exception as e:

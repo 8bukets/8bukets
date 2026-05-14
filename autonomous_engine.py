@@ -209,7 +209,9 @@ async def main():
         return
 
     if args.loop:
-        logger.info("🔄 Autonomous Engine starting in LOOP mode (24/7 Persistence).")
+        # Default sleep 4 hours (14400s)
+        sleep_interval = int(os.environ.get("AUTONOMOUS_HEARTBEAT", 14400))
+        logger.info(f"🔄 Autonomous Engine starting in LOOP mode (Heartbeat: {sleep_interval}s).")
         try:
             while True:
                 logger.info(f"=== Starting New Autonomous Cycle: {datetime.now().isoformat()} ===")
@@ -219,8 +221,8 @@ async def main():
                 run_typescript_cycle()
                 process_work_orders()
                 run_audit()
-                logger.info("Cycle complete. Sleeping for 24 hours...")
-                await asyncio.sleep(86400)
+                logger.info(f"Cycle complete. Sleeping for {sleep_interval}s...")
+                await asyncio.sleep(sleep_interval)
         except asyncio.CancelledError:
             logger.info("Engine loop interrupted.")
         except Exception as e:
