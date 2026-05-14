@@ -1,7 +1,13 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import fs from 'fs'
 
-vi.mock('fs')
+vi.mock('fs', () => ({
+  default: {
+    existsSync: vi.fn(),
+    readFileSync: vi.fn(),
+    writeFileSync: vi.fn()
+  }
+}))
 
 // We mock the core module *before* importing the service
 vi.mock('@/antigravity/core', () => ({
