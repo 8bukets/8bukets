@@ -227,6 +227,10 @@ export class Jules {
       for (const idea of ideas) {
         if (idea.complexity === 'Low' || idea.complexity === 'Medium') {
           workOrderService.createOrder('BOOTSTRAP_SERVICE', `Bootstrap ${idea.feature}`, idea)
+
+          // Phase 12: Chain Smoke Test and Deployment orders
+          workOrderService.createOrder('SMOKE_TEST', `Verify ${idea.feature}`, { serviceName: idea.feature })
+          workOrderService.createOrder('DEPLOYMENT', `Deploy ${idea.feature}`, { serviceName: idea.feature })
         }
       }
     }
