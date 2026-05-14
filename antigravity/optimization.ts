@@ -30,6 +30,7 @@ export interface SystemInsights {
 }
 
 export async function optimize(insights: SystemInsights): Promise<PredictiveRefactor[]> {
+  'use cache'
   console.log('🧠 [Super-Intelligence] Initiating infinite self-optimization scan...')
   const refactors: PredictiveRefactor[] = []
 

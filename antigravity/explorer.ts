@@ -10,6 +10,7 @@ import path from 'path'
  * Automatically scans and validates the system state.
  */
 export async function explore() {
+  'use cache'
   console.log('🚀 [Antigravity Explorer] Starting autonomous scan...')
 
   const results: any = {

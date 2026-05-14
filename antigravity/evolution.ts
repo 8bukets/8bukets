@@ -16,7 +16,7 @@ export async function evolve() {
   console.log('🧠 [Antigravity Evolution] Commencing cognitive analysis...')
 
   const suggestions: EvolutionMetric[] = []
-  const baseDir = path.join(process.cwd(), 'app')
+  const baseDir = path.join(process.cwd(), 'antigravity')
 
   // Recursive scan to find "bloated" or unoptimized patterns
   function scan(dir: string) {
@@ -103,6 +103,6 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
   console.log('✅ [Antigravity Evolution] Autocorrection complete.')
 }
 
-if (require.main === module) {
-  evolve().catch(console.error)
-}
+// if (require.main === module) {
+//   evolve().catch(console.error)
+// }

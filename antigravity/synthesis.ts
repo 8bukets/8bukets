@@ -13,6 +13,7 @@ interface SynthesizedIdea {
 }
 
 export async function synthesize(): Promise<SynthesizedIdea[]> {
+  'use cache'
   console.log('🔮 [Antigravity Synthesis] Ideating new architectural features...')
 
   const ideas: SynthesizedIdea[] = []

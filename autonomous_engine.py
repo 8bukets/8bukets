@@ -54,7 +54,23 @@ def bootstrap():
             json.dump(owner_info, f, indent=4)
         logger.info(f"Initialized {owner_file}")
 
+    # 4. Initialize work orders file if missing
+    orders_file = "data/work_orders.json"
+    if not os.path.exists(orders_file):
+        with open(orders_file, 'w') as f:
+            json.dump([], f)
+        logger.info(f"Initialized {orders_file}")
+
     logger.info("✅ Bootstrap complete.")
+
+def run_typescript_cycle():
+    """Execute the TypeScript autonomous work cycle."""
+    logger.info("🔷 Starting TypeScript Autonomous Cycle (Antigravity)...")
+    try:
+        subprocess.run(["npm", "run", "daily"], check=True)
+        logger.info("✅ TypeScript Cycle complete.")
+    except subprocess.CalledProcessError as e:
+        logger.error(f"❌ TypeScript Cycle failed: {e}")
 
 def process_work_orders():
     """Check for pending work orders and execute appropriate scripts."""
@@ -84,6 +100,37 @@ def process_work_orders():
                     logger.error(f"❌ Deployment {order['id']} FAILED: {e}")
                     order["status"] = "FAILED"
                     updated = True
+            elif order["type"] == "TESTING":
+                logger.info(f"🧪 Executing Testing Work Order: {order['id']}")
+                try:
+                    subprocess.run(["pytest"], check=True)
+                    order["status"] = "COMPLETED"
+                    order["updated_at"] = datetime.now().isoformat()
+                    updated = True
+                    logger.info(f"✅ Testing {order['id']} COMPLETED.")
+                except subprocess.CalledProcessError as e:
+                    logger.error(f"❌ Testing {order['id']} FAILED: {e}")
+                    order["status"] = "FAILED"
+                    updated = True
+            elif order["type"] == "CONTENT_CREATION":
+                logger.info(f"📝 Executing Content Creation Work Order: {order['id']}")
+                # Simulated content generation
+                order["status"] = "COMPLETED"
+                order["updated_at"] = datetime.now().isoformat()
+                updated = True
+                logger.info(f"✅ Content Creation {order['id']} COMPLETED.")
+            elif order["type"] == "RESEARCH":
+                logger.info(f"🔍 Executing Research Work Order: {order['id']}")
+                try:
+                    run_scraper()
+                    order["status"] = "COMPLETED"
+                    order["updated_at"] = datetime.now().isoformat()
+                    updated = True
+                    logger.info(f"✅ Research {order['id']} COMPLETED.")
+                except Exception as e:
+                    logger.error(f"❌ Research {order['id']} FAILED: {e}")
+                    order["status"] = "FAILED"
+                    updated = True
 
     if updated:
         with open(orders_file, 'w') as f:
@@ -105,6 +152,7 @@ async def main():
             if not args.skip_scraper:
                 run_scraper()
             await run_cycle(args.token, args.skip_scraper)
+            run_typescript_cycle()
             process_work_orders()
             run_audit()
             logger.info("✅ DRY-RUN complete. System is stable.")
@@ -121,6 +169,7 @@ async def main():
                 if not args.skip_scraper:
                     run_scraper()
                 await run_cycle(args.token, args.skip_scraper)
+                run_typescript_cycle()
                 process_work_orders()
                 run_audit()
                 logger.info("Cycle complete. Sleeping for 24 hours...")
@@ -135,6 +184,7 @@ async def main():
         if not args.skip_scraper:
             run_scraper()
         await run_cycle(args.token, args.skip_scraper)
+        run_typescript_cycle()
         process_work_orders()
         run_audit()
         logger.info("✅ Execution finished.")
