@@ -52,7 +52,7 @@ export class GithubDocsObserver {
 
   /**
    * parseMarkdown: Extracts sections based on markdown headers.
-   * Improved to handle empty sections and nested headers.
+   * Improved to handle empty sections, nested headers, and link-only titles.
    */
   private parseMarkdown(markdown: string): { title: string; content: string }[] {
     const sections: { title: string; content: string }[] = []
@@ -65,13 +65,22 @@ export class GithubDocsObserver {
       const headerMatch = line.match(/^#+\s+(.*)$/)
       if (headerMatch) {
         // Save previous section if it has content or isn't the default Overview
-        if (currentContent.length > 0 || currentTitle !== 'Overview') {
+        const content = currentContent.join('\n').trim()
+        if (content !== '' || (currentTitle !== 'Overview' && currentTitle.length > 0)) {
           sections.push({
             title: currentTitle,
-            content: currentContent.join('\n').trim()
+            content: content
           })
         }
-        currentTitle = headerMatch[1]
+
+        // Clean up title: Extract text from link-only headers like "### [Features](features.md)"
+        let nextTitle = headerMatch[1].trim()
+        const linkMatch = nextTitle.match(/^\[(.*)\]\(.*\)$/)
+        if (linkMatch) {
+          nextTitle = linkMatch[1]
+        }
+
+        currentTitle = nextTitle
         currentContent = []
       } else {
         currentContent.push(line)
@@ -79,12 +88,19 @@ export class GithubDocsObserver {
     }
 
     // Push final section
-    sections.push({
-      title: currentTitle,
-      content: currentContent.join('\n').trim()
-    })
+    const finalContent = currentContent.join('\n').trim()
+    if (finalContent !== '' || (currentTitle !== 'Overview' && currentTitle.length > 0)) {
+      sections.push({
+        title: currentTitle,
+        content: finalContent
+      })
+    }
 
-    return sections.filter(s => s.title !== 'Overview' || s.content !== '')
+    // Filter: Remove sections that are effectively empty placeholders
+    return sections.filter(s => {
+      const isPlaceholder = s.content === '' && (s.title === 'Overview' || s.title.toLowerCase().includes('placeholder'))
+      return !isPlaceholder && s.title !== ''
+    })
   }
 }
 
