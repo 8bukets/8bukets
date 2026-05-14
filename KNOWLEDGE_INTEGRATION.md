@@ -241,7 +241,6 @@ To compile means to gather information from various sources and arrange it into 
 
 ### Synonyms
 
-Assemble, Collect, Gather, Compose, Accumulate, Organize, Synthesize
 - Assemble
 - Collect
 - Gather
