@@ -13,7 +13,6 @@ This document is a compiled knowledge base containing the contents of various ex
 7. [vscode-intelephense](#vscode-intelephense)
 8. [IDE Integration](#ide-integration)
 9. [Remote Subagents](#remote-subagents)
-10. [Knowledge Merge](#knowledge-merge)
 
 ---
 
@@ -3758,7 +3757,3 @@ Remote subagents are enabled by default. To disable them, set `enableAgents` to 
 
 
 ---
-
-# Knowledge Merge
-
-Knowledge Merge is a process or document that merges key concepts currently spread across Antigravity, Project SOR, the live software-online-review.com domain, and the new software-review-platform starter. It creates one canonical map of what each layer is, what role it plays, and how the project should evolve. All the best - https://markposition.wordpress.com

@@ -101,7 +101,7 @@ def scrape_ai_agents_knowledge():
     json_path = "ai_agents_knowledge.json"
     try:
         final_data = {}
-        manual_keys = ["compile-definition", "compile", "jules-tools", "knowledge-merge"]
+        manual_keys = ["compile-definition", "compile", "jules-tools"]
         if os.path.exists(json_path):
             with open(json_path, "r", encoding="utf-8") as f:
                 old_data = json.load(f)

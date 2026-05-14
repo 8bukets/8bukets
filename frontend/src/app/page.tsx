@@ -58,12 +58,6 @@ export default function Home() {
     fetchData();
   }, []);
 
-  const [input, setInput] = useState("");
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const { messages, sendMessage } = useChat({
-    onError: async (e) => setErrorMessage(e.message),
-  });
-
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start max-w-4xl w-full">
@@ -157,51 +151,6 @@ export default function Home() {
               )}
               {!loading && <div className="animate-pulse mt-2">_</div>}
             </div>
-          </div>
-        </div>
-
-        <div className="w-full mt-4 bg-white dark:bg-zinc-900 rounded-xl shadow-md p-6 border border-zinc-200 dark:border-zinc-800">
-          <h2 className="text-xl font-semibold mb-4">AI Assistant</h2>
-          <div className="flex flex-col w-full min-h-[300px]">
-            <div className="flex-1 overflow-y-auto mb-4 space-y-4">
-              {messages.map((message) => (
-                <div key={message.id} className="whitespace-pre-wrap">
-                  <span className="font-bold">{message.role === "user" ? "You: " : "AI: "}</span>
-                  {message.parts.map((part, i) => {
-                    switch (part.type) {
-                      case "text":
-                        return <span key={`${message.id}-${i}`}>{part.text}</span>;
-                      default:
-                        return null;
-                    }
-                  })}
-                </div>
-              ))}
-            </div>
-
-            {errorMessage && (
-              <div className="text-red-500 text-sm mb-4">{errorMessage}</div>
-            )}
-
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                sendMessage({ text: input });
-                setInput("");
-                setErrorMessage(null);
-              }}
-              className="flex gap-2"
-            >
-              <input
-                className="flex-1 p-2 border border-zinc-300 dark:border-zinc-700 bg-transparent rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
-                value={input}
-                placeholder="Ask about the ecosystem..."
-                onChange={(e) => setInput(e.currentTarget.value)}
-              />
-              <button type="submit" className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded font-medium transition-colors">
-                Send
-              </button>
-            </form>
           </div>
         </div>
 
