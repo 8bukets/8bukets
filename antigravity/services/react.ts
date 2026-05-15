@@ -80,6 +80,12 @@ export class ReActService {
   ): Promise<{ thought: string; action: string }> {
     // Basic heuristic-based reasoning simulation
     if (stepIndex === 0) {
+      if (goal.includes('Audit and merge PR') && availableTools.includes('auditPR')) {
+        return {
+          thought: `Initial thought: To achieve "${goal}", I should first audit the PR.`,
+          action: 'auditPR'
+        }
+      }
       return {
         thought: `Initial thought: To achieve "${goal}", I should first assess the current environment state.`,
         action: availableTools.includes('checkSystemState') ? 'checkSystemState' : availableTools[0]
@@ -92,6 +98,21 @@ export class ReActService {
       return {
         thought: `I detected issues in the observation: ${lastObservation}. I need to find optimizations to repair the system.`,
         action: availableTools.includes('findOptimizations') ? 'findOptimizations' : 'finish'
+      }
+    }
+
+    if (goal.includes('Audit and merge PR')) {
+      if (lastObservation.includes('compliant') && availableTools.includes('verifyCI')) {
+        return {
+          thought: `The PR is compliant. Next, I need to verify CI checks.`,
+          action: 'verifyCI'
+        }
+      }
+      if (lastObservation.includes('passed') && availableTools.includes('merge')) {
+        return {
+          thought: `CI checks have passed. I am ready to merge the PR.`,
+          action: 'merge'
+        }
       }
     }
 

@@ -122,6 +122,31 @@ export class GitProviderService {
   }
 
   /**
+   * Verifies CI checks for a specific branch.
+   */
+  public async verifyCIStatus(branch: string, provider: 'github' | 'gitlab' = 'github'): Promise<boolean> {
+    if (provider === 'github' && process.env.GITHUB_TOKEN) {
+      try {
+        const octokit = github.getOctokit(process.env.GITHUB_TOKEN)
+        const context = github.context
+        const { data } = await octokit.rest.checks.listForRef({
+          ...context.repo,
+          ref: branch
+        })
+
+        if (data.check_runs.length === 0) return true; // No checks is treated as passed
+
+        return data.check_runs.every(check => check.status === 'completed' && check.conclusion === 'success')
+      } catch (err: any) {
+        console.error(`❌ [GitProvider] GitHub verifyCIStatus failed for ${branch}:`, err.message)
+        return false;
+      }
+    }
+    // GitLab could be implemented similarly using glab or raw curl
+    return false; // default to false if provider not supported or missing token to prevent unsafe merges
+  }
+
+  /**
    * Lists open Pull Requests for the current repository.
    */
   public async listPullRequests(): Promise<PRInfo[]> {
