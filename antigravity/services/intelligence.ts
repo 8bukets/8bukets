@@ -76,9 +76,30 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
 
   report += `## 📦 Resource Inventory\n`
   relationshipMap.resourceInventory.forEach((res: any) => {
-    report += `- [${res.type}] **${res.name}** - Status: ${res.status}\n`
+    report += `- [${res.type}] **${res.name}** - Status: ${res.status}${res.source ? ` (*Source: ${res.source}*)` : ''}\n`
   })
   report += `\n`
+
+  report += `## 🧠 Knowledge Matrix\n`
+  const knowledgePath = path.join(process.cwd(), 'data/knowledge/ai_agents_knowledge.json')
+  if (fs.existsSync(knowledgePath)) {
+    try {
+      const knowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
+      knowledge.forEach((k: any) => {
+        report += `### ${k.title}\n`
+        report += `- **Source:** ${k.metadata.source}\n`
+        report += `- **Sections:** ${k.sections.length}\n`
+        if (k.sections.length > 0) {
+          report += `  - *Key Topics:* ${k.sections.slice(0, 3).map((s: any) => s.header).join(', ')}\n`
+        }
+        report += `\n`
+      })
+    } catch (e) {
+      report += `⚠️ Failed to parse Knowledge Matrix.\n\n`
+    }
+  } else {
+    report += `*No autonomous knowledge ingested yet.*\n\n`
+  }
 
   report += `## 🏆 Results Summary\n`
   const resultBranches = branches.filter(b => b.results && b.results !== 'N/A' && b.results !== b.lastMessage).slice(0, 5)
