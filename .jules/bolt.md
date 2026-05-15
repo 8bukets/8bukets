@@ -1,3 +1,6 @@
+## 2026-02-05 - URL Parsing in Scrapers
+**Learning:** Repeatedly calling `urlparse()` inside tight loops (like checking external links for every scraped element) adds significant overhead. Pre-parsing constant base URLs can improve performance by ~50% in link-heavy checks.
+**Action:** Pass pre-parsed `ParseResult` objects to helper functions instead of raw URL strings when the URL is constant or reused.
 ## 2026-01-27 - [Parallel Subprocess Execution]
 **Learning:** Sequential execution of independent I/O-bound subprocesses (like web scraping) is a significant bottleneck. Python's `ThreadPoolExecutor` is effective for parallelizing `subprocess.run` calls without blocking the main thread.
 **Action:** Identify independent agent tasks that spawn external processes and refactor them to run concurrently using `concurrent.futures`.
