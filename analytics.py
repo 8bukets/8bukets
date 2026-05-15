@@ -4,6 +4,21 @@ from collections import Counter
 from urllib.parse import urlparse
 from datetime import datetime
 import sys
+import html
+
+def escape_markdown(text):
+    """Escape characters that are special in Markdown or HTML to prevent injection."""
+    if text is None:
+        return ""
+    # Convert to string
+    text = str(text)
+    # Escape HTML to prevent XSS
+    text = html.escape(text)
+    # Escape backslashes first to prevent escaping the escape characters
+    text = text.replace('\\', '\\\\')
+    # Escape pipe | to prevent table injection
+    text = text.replace('|', '\\|')
+    return text
 
 class Colors:
     HEADER = '\033[95m'
@@ -196,6 +211,8 @@ def generate_report(data, output_file):
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in domain_counts:
+        safe_domain = escape_markdown(domain)
+        md.append(f"| {safe_domain} | {count} |")
         md.append(f"| {domain} | {count} |")
     md.append("\n[Back to Top](#table-of-contents)")
         md.append(f"| {escape_markdown(domain)} | {count} |")
@@ -205,6 +222,8 @@ def generate_report(data, output_file):
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in category_counts:
+        safe_cat = escape_markdown(cat)
+        md.append(f"| {safe_cat} | {count} |")
         md.append(f"| {cat} | {count} |")
     md.append("\n[Back to Top](#table-of-contents)")
         md.append(f"| {escape_markdown(cat)} | {count} |")
@@ -220,6 +239,8 @@ def generate_report(data, output_file):
     # Authors
     md.append("\n## ✍️ Authors")
     for author, count in author_counts:
+        safe_author = escape_markdown(author)
+        md.append(f"- {safe_author}: {count} posts")
         md.append(f"- {author}: {count} posts")
     md.append("\n[Back to Top](#table-of-contents)")
         md.append(f"- {escape_markdown(author)}: {count} posts")

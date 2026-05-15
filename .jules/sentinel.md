@@ -3,6 +3,10 @@
 **Learning:** Even when scraping "safe" sites, the output format (CSV) can introduce vulnerabilities if the consuming application (Excel) interprets the data as executable.
 **Prevention:** Sanitize all untrusted input before writing to CSV by prepending `'` to dangerous characters.
 
+## 2026-02-05 - Markdown Injection in Analytics Report
+**Vulnerability:** User-controlled data (e.g., author names, categories) was inserted directly into Markdown tables. Malicious input containing `|` could break table structure, and HTML tags could lead to Stored XSS if the report is rendered in a browser.
+**Learning:** Markdown generation is not just text concatenation; it requires context-aware escaping (HTML entity encoding + escaping Markdown delimiters like `|` and `\`).
+**Prevention:** Use a dedicated `escape_markdown` function that handles both HTML and Markdown special characters before inserting data into reports.
 ## 2024-05-24 - Path Traversal in File Output
 **Vulnerability:** `scraper.py` accepted arbitrary output file paths (e.g., `../file.json`), allowing potential overwriting of sensitive system files.
 **Learning:** CLI tools often trust user input for file paths implicitly. `argparse` does not validate paths, and `open()` follows traversal characters.
