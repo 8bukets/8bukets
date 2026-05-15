@@ -2,6 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import time
+from urllib.parse import urlparse
+import ipaddress
 import logging
 import argparse
 import sys
@@ -34,6 +36,52 @@ class BlogScraper:
         """Close the database connection."""
         if self.conn:
             self.conn.close()
+        self.conn = None
+        self.init_db()
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.close()
+
+    def close(self):
+        if self.conn:
+            self.conn.close()
+            self.conn = None
+    def is_safe_url(self, url):
+        """
+        Validate URL to prevent SSRF and ensures it's an HTTP/HTTPS scheme.
+        Blocks localhost, private IPs (basic check), and non-http schemes.
+        """
+        try:
+            parsed = urlparse(url)
+        except Exception:
+            return False
+
+        if parsed.scheme not in ('http', 'https'):
+            return False
+
+        hostname = parsed.hostname
+        if not hostname:
+            return False
+
+        # Check for localhost
+        if hostname == 'localhost':
+            return False
+
+        # Check if hostname is a private IP address
+        try:
+            ip = ipaddress.ip_address(hostname)
+            if ip.is_private or ip.is_loopback or ip.is_unspecified:
+                return False
+        except ValueError:
+            # Not an IP address, so it's a domain name.
+            # We do NOT resolve DNS here to avoid TOCTOU/DNS rebinding issues
+            # which are complex to solve in Python requests without a custom transport.
+            pass
+
+        return True
 
     def init_db(self):
         """Initialize the SQLite database."""
@@ -67,11 +115,45 @@ class BlogScraper:
                         FOREIGN KEY(post_id) REFERENCES posts(id)
                     )
                 ''')
+            self.conn = sqlite3.connect(self.db_name)
+            cursor = self.conn.cursor()
+            # Posts table
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS posts (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    title TEXT,
+                    post_url TEXT UNIQUE,
+                    external_link TEXT,
+                    date_str TEXT,
+                    datetime_iso TEXT,
+                    author TEXT,
+                    categories TEXT,
+                    scraped_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )
+            ''')
+
+            # Changes table for tracking updates
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS changes (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    post_id INTEGER,
+                    field TEXT,
+                    old_value TEXT,
+                    new_value TEXT,
+                    changed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY(post_id) REFERENCES posts(id)
+                )
+            ''')
+            self.conn.commit()
         except sqlite3.Error as e:
             logger.error(f"Database initialization error: {e}")
 
     def save_to_db(self, item):
         """Save a single item to the database, handling updates."""
+        if not self.conn:
+            logger.error("Database connection is not initialized.")
+            return False
+
         try:
             with self.conn:
                 cursor = self.conn.cursor()
@@ -122,14 +204,85 @@ class BlogScraper:
                         json.dumps(item.get('categories'))
                     ))
                     return True # New post
+            cursor = self.conn.cursor()
+        close_conn = False
+        if self.conn:
+            conn = self.conn
+        else:
+            conn = sqlite3.connect(self.db_name)
+            close_conn = True
+
+        try:
+            cursor = conn.cursor()
+
+            # Check if post exists
+            cursor.execute("SELECT id, title, external_link FROM posts WHERE post_url = ?", (item.get('post_url'),))
+            existing_post = cursor.fetchone()
+
+            if existing_post:
+                post_id, old_title, old_link = existing_post
+                updated = False
+
+                # Check Title Change
+                new_title = item.get('title')
+                if old_title != new_title and new_title:
+                    logger.info(f"Change detected for {item.get('post_url')}: Title changed.")
+                    cursor.execute("INSERT INTO changes (post_id, field, old_value, new_value) VALUES (?, ?, ?, ?)",
+                                   (post_id, 'title', old_title, new_title))
+                    cursor.execute("UPDATE posts SET title = ? WHERE id = ?", (new_title, post_id))
+                    updated = True
+
+                # Check External Link Change
+                new_link = item.get('external_link')
+                if old_link != new_link and new_link:
+                    logger.info(f"Change detected for {item.get('post_url')}: External Link changed.")
+                    cursor.execute("INSERT INTO changes (post_id, field, old_value, new_value) VALUES (?, ?, ?, ?)",
+                                   (post_id, 'external_link', old_link, new_link))
+                    cursor.execute("UPDATE posts SET external_link = ? WHERE id = ?", (new_link, post_id))
+                    updated = True
+
+                if updated:
+                    # Update scraped_at to reflect latest check
+                    cursor.execute("UPDATE posts SET scraped_at = CURRENT_TIMESTAMP WHERE id = ?", (post_id,))
+                    self.conn.commit()
+                    conn.commit()
+                    return False # Not a "new" post, but an updated one
+
+            else:
+                # Insert new post
+                cursor.execute('''
+                    INSERT INTO posts (title, post_url, external_link, date_str, datetime_iso, author, categories)
+                    VALUES (?, ?, ?, ?, ?, ?, ?)
+                ''', (
+                    item.get('title'),
+                    item.get('post_url'),
+                    item.get('external_link'),
+                    item.get('date'),
+                    item.get('datetime'),
+                    item.get('author'),
+                    json.dumps(item.get('categories'))
+                ))
+                self.conn.commit()
+                conn.commit()
+                return True # New post
 
         except sqlite3.Error as e:
             logger.error(f"Database insertion/update error: {e}")
+            if self.conn:
+                self.conn.rollback()
+            conn.rollback()
             return False
+        finally:
+            if close_conn:
+                conn.close()
 
         return False
 
     def fetch_page(self, url):
+        if not self.is_safe_url(url):
+            logger.error(f"Security Alert: Attempted to scrape unsafe URL: {url}")
+            return None
+
         logger.info(f"Fetching {url}...")
         try:
             response = requests.get(url, headers=self.headers, timeout=10)
@@ -204,6 +357,9 @@ class BlogScraper:
         url = self.base_url
         new_items_count = 0
 
+        # Performance optimization: Reuse DB connection
+        self.conn = sqlite3.connect(self.db_name)
+
         try:
             while url:
                 content = self.fetch_page(url)
@@ -233,6 +389,9 @@ class BlogScraper:
                     url = None
         finally:
             self.close_db()
+            if self.conn:
+                self.conn.close()
+                self.conn = None
 
         self.save_json()
         logger.info(f"Scraped {len(self.data)} articles in total.")
@@ -254,8 +413,8 @@ def main():
 
     args = parser.parse_args()
 
-    scraper = BlogScraper(args.url, args.json, args.db)
-    scraper.run()
+    with BlogScraper(args.url, args.json, args.db) as scraper:
+        scraper.run()
 
 if __name__ == "__main__":
     main()
