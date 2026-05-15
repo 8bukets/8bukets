@@ -53,12 +53,15 @@ class DockerEvolutionAgent(BaseAgent):
         }
 
         if react_config and react_config.get("status") == "READY_FOR_DEPLOYMENT":
-            optimization_report["react_container_status"] = "PROVISIONED"
+            target = react_config.get("deployment_target")
+            optimization_report["react_container_status"] = "PROVISIONED_FOR_VERCEL" if target == "Vercel" else "PROVISIONED_FOR_CLOUD_RUN"
             optimization_report["base_image"] = "node:20-alpine"
             if react_config.get("frontend_framework"):
                 optimization_report["framework"] = react_config.get("frontend_framework")
             if react_config.get("backend_framework"):
                 optimization_report["backend_framework"] = react_config.get("backend_framework")
+            if react_config.get("tools_integration"):
+                optimization_report["tools_integration"] = react_config.get("tools_integration")
 
         self.logger.info("Docker Cloud environment synchronized with autonomous evolution strategy.")
 
