@@ -196,8 +196,11 @@ export class Jules {
 
     for (const pr of pulls) {
       const tools = {
-        auditPR: async () => `PR #${pr.id} titled "${pr.title}" by ${pr.author} is compliant with PROTOCOL.md.`,
-        verifyCI: async () => 'CI checks passed (simulated).',
+        auditPR: async () => pr.title.includes('WIP') ? 'not compliant' : 'compliant',
+        verifyCI: async () => {
+          const passed = await gitProvider.verifyCIStatus(pr.branch, pr.provider);
+          return passed ? 'passed' : 'failed';
+        },
         merge: async () => await gitProvider.mergePullRequest(pr.id, pr.provider)
       }
 
