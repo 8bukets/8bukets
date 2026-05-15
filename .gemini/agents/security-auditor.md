@@ -1,6 +1,6 @@
 ---
 name: security-auditor
-description: Specialized in finding security vulnerabilities in code.
+description: Security expert agent which should be used to analyze codebase vulnerabilities. Use it for finding SQL Injection, XSS, and hardcoded credentials.
 kind: local
 tools:
   - read_file
