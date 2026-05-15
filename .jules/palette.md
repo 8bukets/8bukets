@@ -1,3 +1,6 @@
+## 2025-02-03 - Rich CLI Feedback Pattern
+**Learning:** CLI tools often lack visual hierarchy, making it hard to spot errors in a wall of text. Adding ANSI colors and emojis (✅, ❌, ⚠️) significantly improves scanability and user confidence during long-running processes.
+**Action:** Implement `UXFormatter` class in all CLI scripts to standardize colored feedback for Info, Success, Warning, and Error states.
 ## 2024-05-22 - Improved Analytics Report UX
 **Learning:** Adding a Table of Contents and emojis to Markdown reports significantly improves scanability and user delight.
 **Action:** Always include a TOC and visual indicators (emojis) in generated reports to help users quickly navigate content.

@@ -19,6 +19,34 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+class UXFormatter:
+    @staticmethod
+    def info(msg: str):
+        logger.info(f"{Colors.BLUE}ℹ️  {msg}{Colors.ENDC}")
+
+    @staticmethod
+    def success(msg: str):
+        logger.info(f"{Colors.GREEN}✅ {msg}{Colors.ENDC}")
+
+    @staticmethod
+    def warning(msg: str):
+        logger.warning(f"{Colors.YELLOW}⚠️  {msg}{Colors.ENDC}")
+
+    @staticmethod
+    def error(msg: str):
+        logger.error(f"{Colors.RED}❌ {msg}{Colors.ENDC}")
+
 BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
@@ -88,7 +116,7 @@ class MarkPositionScraperAsync:
                 response.raise_for_status()
                 return await response.text()
         except aiohttp.ClientError as e:
-            logger.error(f"Error fetching page {page_num}: {e}")
+            UXFormatter.error(f"Error fetching page {page_num}: {e}")
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
@@ -192,7 +220,7 @@ class MarkPositionScraperAsync:
                 if not tasks:
                     break
 
-                logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
+                UXFormatter.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
                 results = await asyncio.gather(*tasks)
 
                 # Check results
@@ -204,11 +232,11 @@ class MarkPositionScraperAsync:
                     page_idx = batch_start + idx
                     if page_posts is None:
                         # 404 or Error
-                        logger.info(f"Page {page_idx} returned 404 or empty. Stopping.")
+                        UXFormatter.warning(f"Page {page_idx} returned 404 or empty. Stopping.")
                         stop_detected = True
                         break # Don't process further pages in this batch effectively (though they were fetched)
                     elif len(page_posts) == 0:
-                        logger.info(f"Page {page_idx} has no articles. Stopping.")
+                        UXFormatter.warning(f"Page {page_idx} has no articles. Stopping.")
                         stop_detected = True
                         break
                     else:
@@ -219,7 +247,7 @@ class MarkPositionScraperAsync:
                     break
 
                 if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
-                    logger.info("Reached max pages limit.")
+                    UXFormatter.info("Reached max pages limit.")
                     break
 
                 page_num += len(tasks)
@@ -248,6 +276,9 @@ class MarkPositionScraperAsync:
             json_path = self.validate_path(self.output_json)
             with open(json_path, 'w', encoding='utf-8') as f:
                 json.dump(posts, f, indent=4, ensure_ascii=False)
+            UXFormatter.success(f"Saved {len(posts)} posts to {self.output_json}")
+        except IOError as e:
+            UXFormatter.error(f"Failed to save JSON: {e}")
             logger.info(f"Saved {len(posts)} posts to {self.output_json}")
         except (IOError, ValueError) as e:
             logger.error(f"Failed to save JSON: {e}")
@@ -268,6 +299,9 @@ class MarkPositionScraperAsync:
                         self.sanitize_for_csv(post.get('domain', '')),
                         self.sanitize_for_csv(post.get('post_url', ''))
                     ])
+            UXFormatter.success(f"Saved {len(posts)} posts to {self.output_csv}")
+        except IOError as e:
+            UXFormatter.error(f"Failed to save CSV: {e}")
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except (IOError, ValueError) as e:
             logger.error(f"Failed to save CSV: {e}")
@@ -285,6 +319,9 @@ class MarkPositionScraperAsync:
             with open(txt_path, 'w', encoding='utf-8') as f:
                 for link in sorted_links:
                     f.write(link + '\n')
+            UXFormatter.success(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
+        except IOError as e:
+            UXFormatter.error(f"Failed to save TXT: {e}")
             logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
         except (IOError, ValueError) as e:
             logger.error(f"Failed to save TXT: {e}")
