@@ -113,7 +113,11 @@ export class Jules {
     const observer = new KnowledgeObserver()
 
     const docsToObserve = [
-      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'README.md' }
+      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'README.md' },
+      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'installation.md' },
+      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'gettingStarted.md' },
+      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'features.md' },
+      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'support.md' }
     ]
 
     for (const doc of docsToObserve) {
@@ -181,6 +185,7 @@ export class Jules {
 
     await explore()
     await this.observeKnowledge()
+    await this.observeGithubDocs()
 
     if (this.role === 'Coder' || this.role === 'General') {
        await this.selfRepair()
