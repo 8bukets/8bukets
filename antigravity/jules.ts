@@ -287,10 +287,20 @@ export class Jules {
     const { explore } = await import('./explorer')
     const { workOrderService } = await import('./services/work_order')
 
+    // Phase 14: Prioritize PR processing in cloud environments to fulfill "merge and work" mandate
+    if (process.env.GITHUB_ACTIONS || process.env.GITLAB_CI) {
+      console.log('☁️ [Jules] Cloud environment detected. Prioritizing PR/MR auditing...')
+      await this.processPullRequests()
+    }
+
     await explore()
     await this.observeKnowledge()
     await this.selfRepair()
-    await this.processPullRequests()
+
+    // Process PRs again after potential self-repairs or new branch creations
+    if (!process.env.GITHUB_ACTIONS && !process.env.GITLAB_CI) {
+      await this.processPullRequests()
+    }
     await this.observeGithubDocs()
     const branches = await this.scanAllBranches(true)
 

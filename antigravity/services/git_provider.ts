@@ -195,6 +195,13 @@ export class GitProviderService {
    * Merges a Pull Request if criteria are met.
    */
   public async mergePullRequest(prId: number | string, provider: 'github' | 'gitlab' = 'github') {
+    // Protocol Audit: Ensure we are not merging in a restricted environment without a token
+    const token = process.env.GITHUB_TOKEN || process.env.GITLAB_TOKEN
+    if (!token) {
+      console.warn(`⚠️ [GitProvider] Cannot merge ${provider} PR/MR #${prId} without authentication token.`)
+      return false
+    }
+
     if (provider === 'github' && process.env.GITHUB_TOKEN) {
       try {
         const octokit = github.getOctokit(process.env.GITHUB_TOKEN)

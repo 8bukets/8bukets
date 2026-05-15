@@ -4,6 +4,7 @@ import { getMissionMetadata } from './collaboration'
 import { workOrderService } from './work_order'
 import { jules } from '../jules'
 import { healthCheck } from '../core'
+import { checkJenkinsHealth } from './jenkins'
 
 /**
  * CONSOLIDATED INTELLIGENCE SERVICE
@@ -16,7 +17,7 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   const metadata = await getMissionMetadata()
   const branches = branchIntelligence || await jules.scanAllBranches()
   const health = await healthCheck()
-  const workOrders = workOrderService.getPendingOrders()
+  const workOrders = await workOrderService.getPendingOrders()
 
   const reportPath = path.join(process.cwd(), 'CONSOLIDATED_INTELLIGENCE.md')
 
@@ -26,8 +27,11 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `## 🎯 Mission Statement\n> ${metadata.missionStatement}\n\n`
 
   report += `## 🏥 System Sovereignty\n`
+  report += `- **Execution Environment:** ${process.env.GITHUB_ACTIONS ? 'Cloud (GitHub Actions)' : 'Local'}\n`
   report += `- **MongoDB:** ${health.mongodb}\n`
   report += `- **Supabase:** ${health.supabase}\n`
+  const jenkinsHealth = await checkJenkinsHealth()
+  report += `- **Jenkins Pipeline:** ${jenkinsHealth.metrics.pipeline_efficiency}\n`
   report += `- **Total Branches:** ${branches.length}\n\n`
 
   report += `## 🌿 Branch Intelligence (Recent Activity)\n`
@@ -48,6 +52,31 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
     })
   } else {
     report += `  - No pending orders. System is optimal.\n`
+  }
+  report += `\n`
+
+  report += `## 🤖 Python Ecosystem Intelligence\n`
+  try {
+    const linksPath = path.join(process.cwd(), 'links.json')
+    if (fs.existsSync(linksPath)) {
+      const links = JSON.parse(fs.readFileSync(linksPath, 'utf8'))
+      report += `- **Market Data:** ${links.length} entries analyzed.\n`
+    } else {
+      report += `- **Market Data:** Scraper results pending.\n`
+    }
+
+    const resultsDir = path.join(process.cwd(), 'results')
+    if (fs.existsSync(resultsDir)) {
+      const files = fs.readdirSync(resultsDir)
+      report += `- **Autonomous Reports:** ${files.length} generated.\n`
+
+      const latestReport = files.filter(f => f.startsWith('DAILY_REPORT')).sort().reverse()[0]
+      if (latestReport) {
+        report += `- **Latest Report:** ${latestReport}\n`
+      }
+    }
+  } catch (e) {
+    report += `- **Ecosystem Status:** Limited observability into Python layer.\n`
   }
   report += `\n`
 
