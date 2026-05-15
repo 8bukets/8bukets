@@ -201,7 +201,13 @@ export class Jules {
       this.recordTask(`Synthesis: Generated ${ideas.length} proposals.`)
       for (const idea of ideas) {
         if (idea.complexity === 'Low' || idea.complexity === 'Medium') {
+          console.log(`🔗 [Jules] Chaining creation cycle for: ${idea.feature}`)
           workOrderService.createOrder('BOOTSTRAP_SERVICE', `Bootstrap ${idea.feature}`, idea)
+          workOrderService.createOrder('SMOKE_TEST', `Verify ${idea.feature}`, {
+            serviceName: idea.feature.toLowerCase().replace(/\s+/g, '_').replace(/_service$/, ''),
+            feature: idea.feature
+          })
+          workOrderService.createOrder('DEPLOYMENT', `Deploy ${idea.feature}`, idea)
         }
       }
     }

@@ -56,6 +56,15 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
+  // Gap Analysis 5: Autonomous Compliance
+  if (!files.some(f => f.includes('compliance'))) {
+    ideas.push({
+      feature: 'Autonomous Compliance Service',
+      rationale: 'Autonomously audits system logs for GDPR and SOC2 compliance patterns.',
+      complexity: 'Medium'
+    })
+  }
+
   // Force an idea for demonstration if none exist
   if (ideas.length === 0) {
     ideas.push({
