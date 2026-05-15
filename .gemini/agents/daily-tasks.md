@@ -1,6 +1,6 @@
 ---
 name: daily-tasks
-description: Specialized in executing daily tasks and autonomous routines.
+description: Task runner agent which should be used to execute daily autonomous routines and scripts. Use it to run npm run daily and report results.
 kind: local
 tools:
   - run_shell_command

@@ -19,6 +19,24 @@
     "overrides": {
       "browser_agent": {
         "enabled": true
+      },
+      "collaborator": {
+        "enabled": true,
+        "runConfig": {
+          "maxTurns": 30
+        }
+      },
+      "security-auditor": {
+        "enabled": true,
+        "runConfig": {
+          "maxTurns": 20
+        }
+      },
+      "daily-tasks": {
+        "enabled": true,
+        "runConfig": {
+          "maxTurns": 20
+        }
       }
     },
     "browser": {
