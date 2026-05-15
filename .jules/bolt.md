@@ -1,3 +1,6 @@
+## 2024-05-22 - [Repeated Database Connection Anti-Pattern]
+**Learning:** Establishing a new database connection for every single record insertion in a loop is a significant performance bottleneck due to connection overhead.
+**Action:** Use a persistent connection for the lifetime of the scraper/worker, and manage transactions appropriately within that connection.
 ## 2026-01-27 - [Sequential Agent Bottleneck]
 **Learning:** The `AgentOrchestrator` runs agents sequentially by default. `ResearcherAgent` and `CuriosityAgent` are IO-bound (network requests), causing significant delays. `AnalystAgent` and `MonetizationAgent` are fast but block downstream dependent agents.
 **Action:** Use `ThreadPoolExecutor` to parallelize independent agents and carefully manage dependencies (Analyst -> Intelligence) to maximize concurrency. This pattern should be applied to future agent additions.
