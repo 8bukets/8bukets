@@ -4,6 +4,7 @@ import { z } from 'zod'
 import { autonomousFetch } from '@/antigravity/core'
 import { checkDockerHealth } from './docker'
 import { getLatestBuildStatus } from './jenkins'
+import { dispatchExecutiveBriefing } from './notification'
 
 
 /**
@@ -105,6 +106,9 @@ ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
   // In future phases, this could trigger actual email or slack notifications.
   console.log(summary)
 
+  // Dispatch executive briefing for high-level communication
+  await dispatchExecutiveBriefing(`System synchronized: ${state.intelligence.branches} branches, ${state.intelligence.pendingTasks} tasks. Docker: ${state.docker.status}.`)
+
   const logDir = path.join(process.cwd(), 'logs')
   if (!fs.existsSync(logDir)) fs.mkdirSync(logDir)
 
@@ -120,6 +124,24 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     stakeholderEngagement: {},
     goalAlignment: {},
     resourceInventory: []
+  }
+
+  // Integrate autonomous knowledge into resource inventory
+  const knowledgePath = path.join(process.cwd(), 'data/knowledge/ai_agents_knowledge.json')
+  if (fs.existsSync(knowledgePath)) {
+    try {
+      const knowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
+      knowledge.forEach((k: any) => {
+        map.resourceInventory.push({
+          type: 'Knowledge',
+          name: k.title,
+          status: 'Ingested',
+          source: k.metadata.source
+        })
+      })
+    } catch (e) {
+      console.warn('⚠️ [Collaboration] Failed to parse ai_agents_knowledge.json for relationship map.')
+    }
   }
 
   // Correlate branches to goals based on keywords
@@ -146,13 +168,13 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
   })
 
   // Identify "Resources" (Documentation and key services)
-  map.resourceInventory = [
+  map.resourceInventory.push(
     { type: 'Documentation', name: 'AGENTS.md', status: 'Active' },
     { type: 'Documentation', name: 'CONSOLIDATED_INTELLIGENCE.md', status: 'Active' },
     { type: 'Service', name: 'Jules Cognitive Agent', status: 'Optimal' },
     { type: 'Service', name: 'Unified Web Command Center', status: 'Live' },
     { type: 'Service', name: 'Jenkins CI/CD Pipeline', status: 'Active' }
-  ]
+  )
 
   return map
 }

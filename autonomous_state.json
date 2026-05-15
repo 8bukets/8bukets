@@ -15,19 +15,19 @@
         }
     ],
     "docker": {
-        "status": "simulated",
-        "containerCount": 2,
-        "simulated": true,
-        "timestamp": "2026-05-15T01:22:13.527Z"
+        "status": "disconnected",
+        "containerCount": 0,
+        "simulated": false,
+        "timestamp": "2026-05-15T03:34:00.561Z"
     },
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1778808133527,
+        "timestamp": 1778816040562,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
-        "branches": 1683,
+        "branches": 1684,
         "pendingTasks": 0,
         "relationshipMap": {
             "stakeholderEngagement": {
@@ -64,8 +64,7 @@
             },
             "goalAlignment": {
                 "Achieve full autonomous work cycles.": [
-                    "jules-14439717062784308623-3105ce70",
-                    "main",
+                    "remotes/origin/add-google-edge-agent-9371392929328195231",
                     "remotes/origin/add-malubeach-scraper-16704333902164650708",
                     "remotes/origin/add-mysql-agent-12534386317238704274",
                     "remotes/origin/autonomous-agents-framework-90146205652415261",
@@ -94,6 +93,7 @@
                     "remotes/origin/feat/full-autonomous-creation-execution-17830710122661382280",
                     "remotes/origin/feat/gemma-4-scraper-14386039384216646408",
                     "remotes/origin/feat/intelephense-docs-ingestion-5058226112541762188",
+                    "remotes/origin/feat/intelephense-docs-sync-14439717062784308623",
                     "remotes/origin/feat/knowledge-merge-automation-4266785228236839027",
                     "remotes/origin/feat/react-agent-integration-8372098972397137891",
                     "remotes/origin/feat/setup-npm-workspaces-gemini-cli-12181861489580932121",
@@ -122,7 +122,6 @@
                     "remotes/origin/jules-continuous-presence-workflow-3144055533381791740",
                     "remotes/origin/jules-full-autonomus-workflow-8744732568350416698",
                     "remotes/origin/jules-improve-workflow-and-knowledge-observer-11114380607500005512",
-                    "remotes/origin/main",
                     "remotes/origin/multi-cloud-workflow-intelligence-12208347123975439755",
                     "remotes/origin/opt-scraper-regex-6404737091544860092",
                     "remotes/origin/palette-cli-ux-5136733467430420971",
@@ -151,7 +150,6 @@
                 "Integrate real-time Docker fleet monitoring.": [
                     "remotes/origin/add-docker-push-methods-8792019299013764107",
                     "remotes/origin/add-docker-scripts-14962706392589598489",
-                    "remotes/origin/add-google-edge-agent-9371392929328195231",
                     "remotes/origin/chore/docker-collaboration-sync-9465155386456086135",
                     "remotes/origin/ci-consolidation-docker-build-cloud-16058181468570173910",
                     "remotes/origin/connect-docker-collaborate-17099568282070534570",
@@ -226,6 +224,7 @@
                 "Utilize Jenkins CI/CD to facilitate continuous integration, build orchestration, and system ignition.": [
                     "remotes/origin/add-duo-planner-agent-8887381606310982436",
                     "remotes/origin/add-gitlab-security-agent-prompt-6060929454808838034",
+                    "remotes/origin/add-google-edge-agent-9371392929328195231",
                     "remotes/origin/add-malubeach-scraper-16704333902164650708",
                     "remotes/origin/autonomous-agents-framework-90146205652415261",
                     "remotes/origin/bolt-performance-soupstrainer-14059433622013418020",
@@ -283,6 +282,42 @@
             },
             "resourceInventory": [
                 {
+                    "type": "Knowledge",
+                    "name": "intelephense_docs.md",
+                    "status": "Ingested",
+                    "source": "local://intelephense_docs.md"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Intelephense: README",
+                    "status": "Ingested",
+                    "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/README.md"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Intelephense: installation",
+                    "status": "Ingested",
+                    "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/installation.md"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Intelephense: gettingStarted",
+                    "status": "Ingested",
+                    "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/gettingStarted.md"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Intelephense: features",
+                    "status": "Ingested",
+                    "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/features.md"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Intelephense: support",
+                    "status": "Ingested",
+                    "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/support.md"
+                },
+                {
                     "type": "Documentation",
                     "name": "AGENTS.md",
                     "status": "Active"
@@ -310,5 +345,5 @@
             ]
         }
     },
-    "last_sync": "2026-05-15T01:22:13.600Z"
+    "last_sync": "2026-05-15T03:34:13.146Z"
 }
