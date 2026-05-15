@@ -27,6 +27,7 @@ export async function GET(req: Request) {
     const decision = await aj.protect(req, {
       detectPromptInjectionMessage: queryParameterToCheck,
       sensitiveInfoValue: queryParameterToCheck,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } as any);
 
     if (decision.isDenied()) {
@@ -71,7 +72,5 @@ export async function GET(req: Request) {
   } catch (err) {
     const error = err as Error;
     return NextResponse.json({ error: error.message }, { status: 500 });
-  } catch (err: unknown) {
-    return NextResponse.json({ error: (err as Error).message }, { status: 500 });
   }
 }
