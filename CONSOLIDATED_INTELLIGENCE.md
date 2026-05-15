@@ -94,7 +94,6 @@
 - **remotes/origin/update-compile-definition-9206230129012668911**: resolve eslint and build errors causing CI failure
 - **remotes/origin/feat/autonomous-creation-cycle-14040463371825265667**: implement full autonomous creation order and execution cycle
 - **remotes/origin/feat/integrate-oracle-ai-knowledge-17141461773939806605**: integrate Oracle AI knowledge with orchestrator
-- **remotes/origin/feat/docker-collaboration-sync-231662997979975664**: enable adaptive docker connectivity and collaboration sync
 
 ## 👥 Stakeholders
 - **Strategic Lead**: petar.pan@antigravity.io
