@@ -1,19 +1,20 @@
-# ANTIGRAVITY AI AGENTS KNOWLEDGE BASE
+# KNOWLEDGE INTEGRATION
 
-*Last Updated: 2026-05-15T00:24:27.746Z*
+## What are AI Agents?
 
-## DOCUMENT: intelephense_docs.md
-**Source:** local://intelephense_docs.md
-**Ingested At:** 2026-05-15T00:24:27.743Z
+<!-- AI_AGENTS_START -->
+### DOCUMENT: Intelephense Documentation
+**Source:** https://intelephense.com/docs
+**Ingested At:** 2026-05-15T03:46:28.218Z
 
-### About
+#### About
 Intelephense is a high performance, cross platform, cross editor PHP language server adhering to the Language Server Protocol (LSP).
 
 When paired with an LSP capable editor it provides an essential set of code tools, making for a productive and rich PHP coding experience.
 
 The Intelephense server is proprietary software released to end users under a "freemium" model. Many of the features are provided free of charge. Access to premium features can be obtained by purchasing a licence key.
 
-### Visual Studio Code
+#### Visual Studio Code
 Visual Studio Code users should install the Intelephense extension from within the extensions view or download it from the VSCode marketplace.
 
 The built-in VSCode PHP Language Features extension can cause excessive completion suggestions that are out of context and is best disabled. Go to the Extensions UI and search for PHP Language Features to disable it. Alternatively, you can disable parts of it via it's configuration settings. Other third party extensions that provide similar functionality to Intelephense may also need to be disabled for best results.
@@ -23,7 +24,7 @@ Optionally purchase and enter your licence key by opening the command palette (C
 A screen capture showing how to enter your intelephense licence key into VSCode.
 Entering a licence key via the VS Code command palette
 
-### Other Editors
+#### Other Editors
 Intelephense requires a Node.js runtime environment. It is recommended that you use a current LTS version of Node.js. To install Intelephense server you can use npm.
 
 npm i intelephense -g
@@ -65,7 +66,7 @@ Windows	globalStoragePath	%AppData%/intelephense/global/	%UserProfile%/intelephe
 Windows	licenceKey	{globalStoragePath}/licence.txt	{globalStoragePath}/license.txt
 If your LSP client does not expose initializationOptions then a licence key can be provided by placing (only) the key in a text file at the default licenceKey path listed above.
 
-### Configuration
+#### Configuration
 Please see the VSCode client package.json configuration property for a full list of configuration options and associated JSON schema. Note that the configuration keys are given in dot notation. As an example, the equivalent JSON object for intelephense.files.exclude would be {"intelephense": {"files": {"exclude": []}}}.
 
 Intelephense attempts to provide reasonable defaults for all settings. Some of the more important settings to consider when getting started include:
@@ -86,7 +87,7 @@ When configuring a multi-root workspace, Intelephense will presume that the fold
 
 Depending on the framework or library you use, you may find you need additional configuration to provide method declarations or override existing ones. Please see the Frameworks and Libraries section in the appendix for more information on this.
 
-### Type System
+#### Type System
 Providing type information in your PHP code will result in a better experience when using Intelephense. Type information can be provided via coded type declarations or PHPDoc type annotations. Where both have been provided, PHPDoc type annotations are given precedence as they can provide more detailed type information.
 
 <?php
@@ -100,7 +101,7 @@ Intelephense will also compute inferred types when a declared or documented type
 
 Intelephense provides limited support for PHPStorm metadata as a way of overriding or supplementing type information. It is recommended to use PHPDoc type annotations instead of PHPStorm metadata where possible as they are more widely supported across different tools. Support for PHPStorm metadata may be removed in future releases. Please see the PHPDoc Instead of PHPStorm Metadata/Attributes section in the appendix for more information.
 
-### Type Narrowing
+#### Type Narrowing
 Intelephense performs type narrowing of variables during control flow analysis. Type narrowing expressions include built-in type assertions such as is_string, custom type assertions annotated with @assert, instanceof, and equality expressions. The example below demonstrates type narrowing.
 
 <?php
@@ -125,7 +126,7 @@ function example(string|array|Foo|null $input): void
     }
 }
 
-### Type Evolving
+#### Type Evolving
 Type evolving is the change in a variable's type after an assignment expression. Simple variables and parameters always change to the type of the assigned expression regardless of initial assignments, type declarations or annotations.
 
 Properties with no type declaration or annotation will also change to the type of the assigned expression. Otherwise they will only widen or narrow according to the bounds of the initial type they have been declared or annotated with.
@@ -149,22 +150,22 @@ function example(int $a): void
     $c[] = "string"; // $c is still type int[]
 }
 
-### Supported Types
+#### Supported Types
 In the list of supported types below, some can only be used in PHPDoc as documented types. Please see the PHP type system documentation if you are unfamiliar with the standard PHP types. PHPDoc only, or internal types, are flagged with an asterisk.
 
 Additional types used in other static analysis engines that are not listed here are not fully supported. Intelephense attempts to fallback to an appropriate alternative in this situation.
 
-### Top Type
+#### Top Type
 mixed
 
 The super-type of all types. Any other type can be assigned to a type constraint of mixed. If intelephense cannot determine a more specific type for a symbol or expression then this is the type it is given. Because of this, Intelephense also allows mixed to be assigned to any other type constraint as well, effectively turning off type checking for that instance. To switch off this behaviour you can set both intelephense.diagnostics.relaxedTypeCheck and intelephense.diagnostics.noMixedTypeCheck to false.
 
-### Bottom Type
+#### Bottom Type
 never
 
 The sub-type of all types. This type can be assigned to any other type constraint. It is used to represent an impossibility in the code and can be used as the return type of a function that exits or always throws an exception.
 
-### Scalar Types
+#### Scalar Types
 Any of these types can be assigned to the other unless the declare(strict_types=1) directive is used in the file or intelephense.diagnostics.strictTypes is true.
 
 int
@@ -172,18 +173,18 @@ float
 bool
 string
 
-### Unit Types
+#### Unit Types
 void
 null
 true
 false
 unset* Intelephense uses this PHP keyword to represent the type of an undefined variable.
 
-### Literal Types
+#### Literal Types
 'myString'* String literals are encapsulated in quotes.
 9* An integer literal.
 
-### Object Types
+#### Object Types
 object
 \MyNs\MyClass Classes, interfaces, traits, and enums can be fully qualified or not. If not fully qualified then the standard PHP name resolution rules apply to determine the fully qualified name.
 object{name: string, optional?: string}* Object shapes can be used to provide further information on dynamic object properties. This improves completion suggestions and type inference when accessing these properties. Optional properties can be declared by adding a ? at the end of the name.
@@ -191,26 +192,26 @@ static
 self
 $this*
 
-### Array Types
+#### Array Types
 array
 array<TKey, TValue>* Generic form for an array where the type arguments represent the array key and value types respectively. If only a single type argument is provided then it will be normalised to array<string|int, TValue>.
 TValue[]* Represents a numeric indexed array where the element type is TValue.
 array{description: string, 'length (cm)': float, optional?: string, ...<int, string>}* Array shapes can be used to provide further information on array element keys and value types. This improves completion suggestions and type inference when accessing these elements. Keys with non alphanumeric characters need to be in quotes. Optional keys can be declared by adding a ? at the end of the key. Unspecified extra elements can be declared by adding an element of form ...<TKey, TValue>. Keys are optional and default to numerically indexed. For example a two element tuple would be array{Type0, Type1}. A mix of keyed and unkeyed elements is not supported.
 
-### Callable Types
+#### Callable Types
 callable Base callable type that represents a callable string, callable array or a class that implements __invoke.
 callable(TParamA $a, TParamB $b): TReturn* Callable type signatures can be defined to improve language intelligence. Parameter names are optional. The callable type should be wrapped in parentheses if it forms part of a union. Closure can be used instead of callable for a more specific type.
 
-### Alias Types
+#### Alias Types
 iterable Alias for Traversable|array.
 ?A Nullable type that is shorthand for null|A. Cannot be used as part of a union or intersection type.
 
-### Union Types
+#### Union Types
 A|B|C
 
 A type which may have multiple atomic type representations. For example, a type constraint of A|B can be assigned type A or B.
 
-### Intersection Types
+#### Intersection Types
 A&B&C
 
 A composite type which consists of multiple atomic types. For example, a type of A&B can be assigned to type A and to type B.
@@ -220,7 +221,7 @@ A|B|(C&D&E)
 
 When combining union and intersection types, only a single level of nesting is permitted. The union must be the top level.
 
-### Generic Types
+#### Generic Types
 MyType<TypeArg1, TypeArg2>*
 
 A generic type can be declared using one or many @template PHPDoc annotations above the target class, interface, or trait. Type arguments can then be supplied in the same order as the @template declarations. The following built-in types are templated:
@@ -249,22 +250,22 @@ SplPriorityQueue<TPriority, TValue>
 SplFixedArray<TValue>
 SplObjectStorage<TObject, TValue>
 
-### Conditional Return Type
+#### Conditional Return Type
 (TSubject is TCompare ? TTrue : TFalse)*
 
 Sometimes the return type of a function may depend on the type of a parameter. A conditional type can be used without templates too by using the parameter name. For example, ($myParam is string ? string : null). Conditional types must be wrapped in parentheses. Conditional types may also be nested.
 
-### Array Key Type
+#### Array Key Type
 key-of<TArray>*
 
 This type will resolve to a union of the keys of an array shape.
 
-### Array Value Type
+#### Array Value Type
 value-of<TArray>*
 
 This type will resolve to a union of the values of an array shape.
 
-### Index Access Type
+#### Index Access Type
 TArray[TKey]*
 
 This type will resolve to the type of the value at index TKey in TArray. It is particularly useful in conjunction with key-of<TArray> and shape types for mapping the return type when accessing container items with arbitrary strings. For example:
@@ -287,7 +288,7 @@ class MyContainer
 $container = new MyContainer();
 $item = $container->get('item'); //$item is MyContainerItem
 
-### Miscellaneous Types
+#### Miscellaneous Types
 resource*
 class-string<T>* A string where the value is the name of class T.
 PHPDoc Annotations
@@ -345,16 +346,16 @@ This annotation is used to declare a type alias. A type alias allows you to crea
 /** @import-type TypeName as OptionalAlias */
 This annotation is used to import a type alias that has been declared in another file. It functions similarly to @phpstan-import-type and @psalm-import-type and both these annotations may also be used. However, type aliases are not bound to classes in Intelephense and as such the from ClassName specifier is unnecessary but still supported. Type aliases in Intelephense follow normal PHP namespace rules.
 
-### Features
+#### Features
 Intelephense provides a variety of features to enhance the development experience when working with PHP code. Many of these features are provided for free while others require a Premium licence to access. All images and videos in this section are taken from the VS Code client. The features are available to all LSP clients that support the relevant LSP methods. Keybindings listed for each feature are the defaults for the VS Code client.
 
-### Free Features
+#### Free Features
 The following features are available to all users of Intelephense. A licence is not necessary.
 
-### LSP
+#### LSP
 workspace/symbol
 
-### Keybinding
+#### Keybinding
 Ctrl+T
 This feature allows you to search for symbols in your workspace and navigate to their definitions. It is particularly useful for finding and navigating to symbols that are not directly referenced in the current file. When the query contains alphanumeric characters only, the search is performed on the unqualified name of the symbol. You can narrow your search to a specific symbol by using a query containing characters found in the Fully Qualified Structural Element Name (FQSEN) of the symbol. For example, a query of m\pt:u( would find the method with FQSEN App\Models\Post::user().
 
@@ -363,10 +364,10 @@ Unfortunately, VS Code has a current issue where it will discard results if the 
 Workspace Symbols panel in VS Code showing search results for a PHP symbol
 Searching for workspace symbols using the FQSEN query syntax
 
-### LSP
+#### LSP
 textDocument/documentSymbol
 
-### Keybinding
+#### Keybinding
 Ctrl+Shift+O
 This feature lists all symbols in the current document, providing an overview of the structure of the file. A client can use this information to provide a document outline view, breadcrumb navigation, and a symbol search specific to the current file.
 
@@ -374,39 +375,39 @@ Document Symbols outline panel showing PHP class and method structure
 Document symbols provide an outline of the current file's structure
 Go to Definition
 
-### LSP
+#### LSP
 textDocument/definition
 
-### Keybinding
+#### Keybinding
 F12 | right-click context menu
 This feature allows you to navigate to the definition of a symbol when invoked on a reference to that symbol in the current file. Multiple definitions may sometimes be found for a symbol. For example, invoking the feature on the type name in a new expression may find both the constructor method and the class declaration as definitions. It is up to the client to decide how to present multiple definitions to the user. For example a peek definitions window may open or the user may simply be navigated to the first definition in the list.
 
 Go to Definition navigates directly to a symbol's definition
 
-### LSP
+#### LSP
 textDocument/hover
 
-### Keybinding
+#### Keybinding
 Ctrl+K Ctrl+I | mouse-over
 This feature provides information about a symbol when hovering over a reference to that symbol in the current file. The information provided can include the type of the symbol, it's signature if it is a function or method, and any associated documentation.
 
 Hover tooltip showing PHP symbol type information and documentation
 Hover shows type information and documentation for a symbol
 
-### LSP
+#### LSP
 textDocument/documentHighlight
 
-### Keybinding
+#### Keybinding
 Displayed automatically at the cursor position
 This feature highlights all references to the symbol at the cursor position in the current file. This can be useful for quickly identifying all usages of a symbol in the current file. Read and write contexts will be identified if applicable and the client can choose to highlight them differently if desired.
 
 Document Highlight marking all references to a PHP symbol in the editor
 Document Highlight marks all references to the symbol under the cursor. Read and write contexts are coloured differently.
 
-### LSP
+#### LSP
 textDocument/completion
 
-### Keybinding
+#### Keybinding
 Ctrl+Space
 Trigger characters
 $ > : \ / ' " * . <
@@ -415,10 +416,10 @@ This feature provides a list of context appropriate completion suggestions for a
 Code Completion dropdown with context-aware PHP symbol suggestions
 Code Completion provides context-aware suggestions as you type
 
-### LSP
+#### LSP
 textDocument/signatureHelp
 
-### Keybinding
+#### Keybinding
 Ctrl+Shift+Space
 Trigger characters
 ( , :
@@ -427,35 +428,35 @@ This feature provides information about the signature of a function or method wh
 Signature Help popup displaying PHP function parameter information
 Signature Help displays parameter information for the current function call
 
-### LSP
+#### LSP
 textDocument/references
 
-### Keybinding
+#### Keybinding
 Shift+F12 | right-click context menu
 This feature provides a list of all references to a symbol in the current file or workspace. The references can include variables, functions, methods, classes, and other symbols. When there is a hierarchy of types, references to a type member will be determined relative to the initial base members.
 
 Find All References panel listing all usages of a PHP symbol
 Find All References lists every usage of a symbol across the workspace
 
-### LSP
+#### LSP
 textDocument/formatting
 
-### Keybinding
+#### Keybinding
 Ctrl+Shift+I (format document)
 
-### LSP
+#### LSP
 textDocument/rangeFormatting
 
-### Keybinding
+#### Keybinding
 Ctrl+K Ctrl+F (format selection)
 This feature provides formatting of a whole document or a selected range within a document. The Intelephense formatter is opinionated and aims to comply with PHP-FIG coding standards. Limited configuration options are available to allow some customisation of brace style.
 
 Formatter applies PHP-FIG coding standards to the document
 
-### LSP
+#### LSP
 textDocument/publishDiagnostics
 
-### Keybinding
+#### Keybinding
 Published automatically onType or onSave | F8 (next) | Shift+F8 (previous)
 This feature provides diagnostics for the currently opened files. Diagnostics include syntax errors, type errors, language constraints and other issues detected by Intelephense. Intelephense aims to provide rapid diagnostics that are aligned with the PHP engine where possible.
 
@@ -474,29 +475,29 @@ intelephense.diagnostics.typeCheckDocumentedTypes controls whether documented ty
 Diagnostics panel showing PHP type errors and warnings inline in the editor
 Diagnostics surface type errors and other issues either as you type or on save depending on your settings.
 
-### LSP
+#### LSP
 textDocument/inlineValues
 
-### Keybinding
+#### Keybinding
 Displayed automatically during a debug session
 This feature provides ranges and text for variables in a file that may be relevant for a debugger to display inline values for during a debugging session. To see this feature in action in VS Code, install the official Xdebug extension.
 
 Inline Values showing variable states in the editor during a debug session
 Inline Values display variable states during a debug session
 
-### Embedded Languages
+#### Embedded Languages
 Intelephense presumes that text outside of PHP tags is HTML. Basic language intelligence is provided for HTML and embedded CSS and JavaScript within HTML.
 
 Language intelligence for HTML and CSS embedded within a PHP file
 Language intelligence for HTML, CSS, and JavaScript within PHP files
 
-### Premium Features
+#### Premium Features
 The following features require a licence to access. A licence can be purchased at the checkout page.
 
-### LSP
+#### LSP
 textDocument/rename
 
-### Keybinding
+#### Keybinding
 F2 | right-click context menu
 This feature allows you to rename a symbol and all references to that symbol in the current file or workspace. This differs from a simple text find and replace in that it is aware of the syntax and semantics of the code, and will only rename the specific symbol.
 
@@ -506,19 +507,19 @@ Renaming a namespace in a file updates imports and FQN references for the file s
 
 Rename refactors a symbol and all its references across the workspace
 
-### LSP
+#### LSP
 textDocument/foldingRange
 
-### Keybinding
+#### Keybinding
 Ctrl+Shift+[ (fold) | Ctrl+Shift+] (unfold) | left-click editor gutter | right-click context menu
 This feature allows you to fold and unfold regions of code in the current file. Intelephense provides folding ranges for symbol definition bodies, control structures, comments, imports, and custom regions identified by #region and #endregion comments. The folding provider is syntax tree driven and is more reliable than indent based folding providers such as the default provider in VS Code.
 
 Code Folding collapses and expands regions based on the syntax tree
 
-### LSP
+#### LSP
 textDocument/implementation
 
-### Keybinding
+#### Keybinding
 Ctrl+F12 | right-click context menu
 This feature provides a list of all implementations of a method or interface when invoked on a reference. This functions similar to go to definition but differs in that it will find the classes that implement the interface or methods that implement an abstract method declaration.
 
@@ -526,48 +527,48 @@ Find All Implementations listing concrete classes implementing a PHP interface
 Find All Implementations lists all concrete implementations of an interface or abstract method
 Go to Type Definition
 
-### LSP
+#### LSP
 textDocument/typeDefinition
 
-### Keybinding
+#### Keybinding
 Right-click context menu
 This feature allows you to navigate to the type definition of a variable. Similar to go to definition but differs in that it will navigate to the type definition rather than the variable declaration itself.
 
 Go to Type Definition navigates to the type of a variable
 Go to Declaration
 
-### LSP
+#### LSP
 textDocument/declaration
 
-### Keybinding
+#### Keybinding
 Right-click context menu
 This feature allows you to navigate to the initial declaration of a symbol. Similar to go to definition, and depending on the context may function the same, it differs in that it will navigate to the initial declaration of a symbol in a hierarchy of types. For example, invoking this feature on a sub-type method reference will navigate to the initial declaration of the method in a super-type rather than the sub-type method declaration itself.
 
 Go to Declaration navigates to the initial declaration in a type hierarchy
 
-### LSP
+#### LSP
 textDocument/selectionRange
 
-### Keybinding
+#### Keybinding
 Shift+Alt+→ (expand) | Shift+Alt+← (shrink)
 This feature allows you to expand and shrink the current selection in the current file based on the syntax tree of the code. For example, if the cursor is on a variable name, the first expansion would select the variable name, the second expansion would select the whole variable declaration, the third expansion would select the whole statement, the fourth expansion would select the whole block, and so on. Being syntax tree driven, it is more precise than regex or indent based selection providers such as the default provider in VS Code.
 
 Smart Select expands or shrinks the selection based on the syntax tree
 
-### LSP
+#### LSP
 textDocument/typeHierarchy
 
-### Keybinding
+#### Keybinding
 Right-click context menu
 This feature provides a type hierarchy for a class, interface, trait or enum when invoked on a reference to the type. It is useful for understanding the inheritance structure of a type and for quick navigation to types in the hierarchy.
 
 Type Hierarchy panel showing the inheritance structure of a PHP class
 Type Hierarchy shows the inheritance structure of a type
 
-### LSP
+#### LSP
 textDocument/codeLens
 
-### Keybinding
+#### Keybinding
 Rendered inline above declarations | activated by left-clicking
 This feature provides additional information and navigation for symbol declarations in the current file. Several lenses are provided by Intelephense. They are disabled by default to reduce visual clutter, see the intelephense.codeLens settings to enable them.
 
@@ -579,10 +580,10 @@ Usages: shows the number of types that use a trait and provides a link to view t
 Code Lens displaying reference counts above PHP class and method declarations
 Code Lens displays reference counts and navigation links above declarations
 
-### LSP
+#### LSP
 textDocument/inlayHint
 
-### Keybinding
+#### Keybinding
 Displayed inline automatically
 This feature provides additional type and parameter information in the form of hints that are displayed inline with the code in the current file. Intelephense provides several types of inlay hints. They are enabled by default. See the intelephense.inlayHints settings to configure them.
 
@@ -592,10 +593,10 @@ Return Type: shows the inferred return type of a function or method when it has 
 Inlay Hints showing inferred parameter names and return types inline in PHP code
 Inlay Hints show inferred parameter names and return types inline
 
-### LSP
+#### LSP
 textDocument/documentLink
 
-### Keybinding
+#### Keybinding
 Ctrl+Click | mouse-over
 This feature provides clickable links to related files and resources from the current file. Intelephense will show links to files referenced in require and include statements, and to local files referenced in @see annotations.
 
@@ -604,10 +605,10 @@ If your require statements are relative or you reference $_SERVER['DOCUMENT_ROOT
 Document Links showing clickable require and include paths in a PHP file
 Document Links make require/include paths and @see annotations clickable
 
-### LSP
+#### LSP
 textDocument/codeAction
 
-### Keybinding
+#### Keybinding
 Ctrl+. | left-click lightbulb
 This feature provides a list of context appropriate actions that can be performed at the cursor position in the current file. VS Code will show a lightbulb icon on the current line when code actions are available. Intelephense provides several code actions.
 
@@ -616,7 +617,7 @@ Add PHPDoc: Generate PHPDoc for functions, classes, and methods.
 Implement All Abstract Methods: Generate method stubs for all abstract methods that have not been implemented in a class.
 Code Actions offer quick-fix and refactoring options at the cursor position
 
-### Appendix
+#### Appendix
 Compatibility With Frameworks and Libraries
 Intelephense aims to support all PHP frameworks and libraries but does not implement specific solutions for these. Limited or unexpected language intelligence can sometimes be provided if the package:
 
@@ -765,7 +766,7 @@ $obj = getColourDoc('red'); // $obj is inferred as RedService
 
 // Using PHPStorm attributes:
 
-### [\JetBrains\PhpStorm\ArrayShape(['red' => RedService::class, 'blue' => BlueObject::class, 'green' => GreenCollection::class])]
+#### [\JetBrains\PhpStorm\ArrayShape(['red' => RedService::class, 'blue' => BlueObject::class, 'green' => GreenCollection::class])]
 function getColoursAttr(): array {}
 
 // Using PHPDoc annotations:
@@ -783,7 +784,7 @@ $green = getColoursDoc()['green']; // $green is inferred as GreenCollection
 
 // Using PHPStorm attributes:
 
-### [\JetBrains\PhpStorm\ExpectedValues(values: ['red', 'blue', 'green'])]
+#### [\JetBrains\PhpStorm\ExpectedValues(values: ['red', 'blue', 'green'])]
 function setColourAttr(string $colour): void {}
 
 // Using PHPDoc annotations:
@@ -797,3 +798,10 @@ setColourDoc(''); // Completion suggestions for 'red', 'blue', 'green'
 
 ---
 
+<!-- AI_AGENTS_END -->
+
+## What does Compile mean?
+
+## IDE Integration
+
+## Gemma 4 Model Card

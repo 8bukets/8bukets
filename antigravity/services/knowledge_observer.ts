@@ -125,41 +125,72 @@ export class KnowledgeObserver {
       fs.mkdirSync(this.storageDir, { recursive: true })
     }
 
-    const jsonStore = path.join(this.storageDir, 'ai_agents_knowledge.json')
-    const mdStore = path.join(this.storageDir, 'ai_agents_knowledge.md')
+    const jsonStore = path.join(this.storageDir, 'system_knowledge.json')
+    const mdStore = path.join(process.cwd(), 'KNOWLEDGE_INTEGRATION.md')
 
     // 1. JSON Persistence (Merge Logic)
-    let existingData: Knowledge[] = []
+    let store: { typescript_sections: Knowledge[] } = { typescript_sections: [] }
     if (fs.existsSync(jsonStore)) {
       try {
-        existingData = JSON.parse(fs.readFileSync(jsonStore, 'utf8'))
+        const raw = fs.readFileSync(jsonStore, 'utf8')
+        const parsed = JSON.parse(raw)
+        if (parsed.typescript_sections && Array.isArray(parsed.typescript_sections)) {
+          store = parsed
+        } else if (Array.isArray(parsed)) {
+          store.typescript_sections = parsed
+        }
       } catch (e) {
         console.warn('⚠️ [KnowledgeObserver] Failed to parse existing JSON store. Starting fresh.')
       }
     }
 
     // Replace if same title exists, or append
-    const index = existingData.findIndex(k => k.title === knowledge.title)
+    const index = store.typescript_sections.findIndex(k => k.title === knowledge.title)
     if (index !== -1) {
-      existingData[index] = knowledge
+      store.typescript_sections[index] = knowledge
     } else {
-      existingData.push(knowledge)
+      store.typescript_sections.push(knowledge)
     }
 
-    fs.writeFileSync(jsonStore, JSON.stringify(existingData, null, 2))
+    fs.writeFileSync(jsonStore, JSON.stringify(store, null, 2))
 
-    // 2. Markdown Persistence (Rebuild)
-    let mdContent = `# ANTIGRAVITY AI AGENTS KNOWLEDGE BASE\n\n*Last Updated: ${new Date().toISOString()}*\n\n`
+    // 2. Markdown Persistence (Marker-Based Update)
+    let mdContent = ''
+    if (fs.existsSync(mdStore)) {
+      mdContent = fs.readFileSync(mdStore, 'utf8')
+    } else {
+      mdContent = `# KNOWLEDGE INTEGRATION\n\n## What are AI Agents?\n\n<!-- AI_AGENTS_START -->\n<!-- AI_AGENTS_END -->\n\n## What does Compile mean?\n\n## IDE Integration\n\n## Gemma 4 Model Card\n`
+    }
 
-    for (const k of existingData) {
-      mdContent += `## DOCUMENT: ${k.title}\n`
-      mdContent += `**Source:** ${k.metadata.source}  \n`
-      mdContent += `**Ingested At:** ${k.metadata.ingestedAt}\n\n`
+    const startMarker = '<!-- AI_AGENTS_START -->'
+    const endMarker = '<!-- AI_AGENTS_END -->'
+
+    let aiAgentsContent = '\n'
+    for (const k of store.typescript_sections) {
+      aiAgentsContent += `### DOCUMENT: ${k.title}\n`
+      aiAgentsContent += `**Source:** ${k.metadata.source}  \n`
+      aiAgentsContent += `**Ingested At:** ${k.metadata.ingestedAt}\n\n`
 
       for (const section of k.sections) {
-        mdContent += `### ${section.header}\n${section.content}\n\n`
+        aiAgentsContent += `#### ${section.header}\n${section.content}\n\n`
       }
-      mdContent += `---\n\n`
+      aiAgentsContent += `---\n\n`
+    }
+
+    const startIdx = mdContent.indexOf(startMarker)
+    const endIdx = mdContent.indexOf(endMarker)
+
+    if (startIdx !== -1 && endIdx !== -1) {
+      const before = mdContent.substring(0, startIdx + startMarker.length)
+      const after = mdContent.substring(endIdx)
+      mdContent = before + aiAgentsContent + after
+    } else {
+      // If markers are missing, append them to the first relevant section or at the end
+      if (mdContent.includes('## What are AI Agents?')) {
+          mdContent = mdContent.replace('## What are AI Agents?', `## What are AI Agents?\n\n${startMarker}${aiAgentsContent}${endMarker}`)
+      } else {
+          mdContent += `\n## What are AI Agents?\n\n${startMarker}${aiAgentsContent}${endMarker}\n`
+      }
     }
 
     fs.writeFileSync(mdStore, mdContent)
