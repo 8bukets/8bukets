@@ -158,7 +158,7 @@ export class Jules {
           const status = execSync('git status --porcelain').toString().trim()
           if (status) {
             console.warn('⚠️ [Jules] Working directory is dirty. Stashing changes before repair...')
-            execSync('git stash')
+            execSync('git stash -u')
           }
 
           execSync(`git checkout -b ${branchName}`)
@@ -226,7 +226,7 @@ export class Jules {
 
       const result = await gitProvider.commit({
         message: formattedMessage,
-        files: ['.'], // Include everything in the repair
+        files: ['.'],
         push: !!process.env.GITHUB_TOKEN || !!process.env.GITLAB_TOKEN,
         branch
       })

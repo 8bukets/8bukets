@@ -1,3 +1,4 @@
+import { logAutonomousAction } from '../core'
 import fs from 'fs'
 import path from 'path'
 import { getMissionMetadata } from './collaboration'
@@ -11,7 +12,7 @@ import { healthCheck } from '../core'
  */
 
 export async function generateConsolidatedReport(branchIntelligence?: any[]) {
-  console.log('📊 [Intelligence] Generating consolidated system report...')
+  logAutonomousAction('📊 [Intelligence] Generating consolidated system report...', 'info')
 
   const metadata = await getMissionMetadata()
   const branches = branchIntelligence || await jules.scanAllBranches()
@@ -57,7 +58,7 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   })
 
   fs.writeFileSync(reportPath, report)
-  console.log(`✅ [Intelligence] Report saved to ${reportPath}`)
+  logAutonomousAction(`✅ [Intelligence] Report saved to ${reportPath}`, 'info')
 
   return { reportPath, branchCount: branches.length }
 }

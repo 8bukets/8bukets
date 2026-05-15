@@ -63,7 +63,7 @@ export async function getMongoClient(): Promise<MongoClient> {
   // Circuit Breaker Logic
   if (circuitBreaker.mongodb.state === 'open') {
     if (Date.now() - circuitBreaker.mongodb.lastFailure > RECOVERY_TIMEOUT) {
-      console.log('🔄 [Autonomous Core] Attempting MongoDB self-healing...')
+      logAutonomousAction('🔄 [Autonomous Core] Attempting MongoDB self-healing...', 'info')
       circuitBreaker.mongodb.state = 'half-open'
     } else {
       throw new Error('Circuit Breaker: MongoDB is in recovery mode.')

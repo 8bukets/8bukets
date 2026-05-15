@@ -1,3 +1,4 @@
+import { logAutonomousAction } from './core'
 import fs from 'fs'
 import path from 'path'
 
@@ -7,13 +8,13 @@ import path from 'path'
  */
 
 export async function bootstrap(idea: { feature: string, rationale: string }) {
-  console.log(`🌀 [Singularity] Bootstrapping: ${idea.feature}...`)
+  logAutonomousAction(`🌀 [Singularity] Bootstrapping: ${idea.feature}...`, 'info')
 
   const serviceName = idea.feature.toLowerCase().replace(/\s+/g, '_').replace(/_service$/, '')
   const filePath = path.join(process.cwd(), 'antigravity/services', `${serviceName}.ts`)
 
   if (fs.existsSync(filePath)) {
-    console.log(` - Service ${serviceName} already exists. Skipping bootstrap.`)
+    logAutonomousAction(` - Service ${serviceName} already exists. Skipping bootstrap.`, 'info')
     return
   }
 
@@ -41,6 +42,6 @@ export async function get${idea.feature.replace(/\s+/g, '')}Data() {
 `
 
   fs.writeFileSync(filePath, template)
-  console.log(`✅ [Singularity] Successfully generated ${serviceName}.ts`)
+  logAutonomousAction(`✅ [Singularity] Successfully generated ${serviceName}.ts`, 'info')
   return { filePath, serviceName, feature: idea.feature }
 }
