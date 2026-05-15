@@ -2,7 +2,7 @@
 
 ## Compile
 
-To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.
+prepare best value of knowledge integration - To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.
 
 ### Key Definitions of Compile
 
