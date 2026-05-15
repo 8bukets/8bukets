@@ -7,6 +7,7 @@ import re
 import argparse
 import logging
 import time
+import os
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
@@ -18,9 +19,42 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+class UXFormatter:
+    @staticmethod
+    def info(msg: str):
+        logger.info(f"{Colors.BLUE}ℹ️  {msg}{Colors.ENDC}")
+
+    @staticmethod
+    def success(msg: str):
+        logger.info(f"{Colors.GREEN}✅ {msg}{Colors.ENDC}")
+
+    @staticmethod
+    def warning(msg: str):
+        logger.warning(f"{Colors.YELLOW}⚠️  {msg}{Colors.ENDC}")
+
+    @staticmethod
+    def error(msg: str):
+        logger.error(f"{Colors.RED}❌ {msg}{Colors.ENDC}")
+
 BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
+    CLEAN_TEXT_REGEX = re.compile(r'\s+')
+    # Pre-compile regex patterns for performance
+    WHITESPACE_REGEX = re.compile(r'\s+')
+    URL_REGEX = re.compile(r'^https?://')
+
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
         self.output_csv = output_csv
@@ -29,16 +63,30 @@ class MarkPositionScraperAsync:
         self.concurrency = concurrency
         self.session = None
 
+    def validate_path(self, path: str) -> str:
+        """Ensure path is within current working directory."""
+        cwd = os.getcwd()
+        abs_path = os.path.abspath(path)
+        if os.path.commonpath([cwd, abs_path]) != cwd:
+            raise ValueError(f"Security Error: Path '{path}' is outside the current working directory.")
+        return abs_path
+
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return self.CLEAN_TEXT_REGEX.sub(' ', text).strip()
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
-        return re.match(r'^https?://', text.strip()) is not None
+        # Use pre-compiled regex
+        return self.WHITESPACE_REGEX.sub(' ', text).strip()
+
+    def is_url(self, text: str) -> bool:
+        """Check if text looks like a URL."""
+        # Use pre-compiled regex
+        return self.URL_REGEX.match(text.strip()) is not None
 
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
@@ -68,7 +116,7 @@ class MarkPositionScraperAsync:
                 response.raise_for_status()
                 return await response.text()
         except aiohttp.ClientError as e:
-            logger.error(f"Error fetching page {page_num}: {e}")
+            UXFormatter.error(f"Error fetching page {page_num}: {e}")
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
@@ -172,7 +220,7 @@ class MarkPositionScraperAsync:
                 if not tasks:
                     break
 
-                logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
+                UXFormatter.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
                 results = await asyncio.gather(*tasks)
 
                 # Check results
@@ -184,11 +232,11 @@ class MarkPositionScraperAsync:
                     page_idx = batch_start + idx
                     if page_posts is None:
                         # 404 or Error
-                        logger.info(f"Page {page_idx} returned 404 or empty. Stopping.")
+                        UXFormatter.warning(f"Page {page_idx} returned 404 or empty. Stopping.")
                         stop_detected = True
                         break # Don't process further pages in this batch effectively (though they were fetched)
                     elif len(page_posts) == 0:
-                        logger.info(f"Page {page_idx} has no articles. Stopping.")
+                        UXFormatter.warning(f"Page {page_idx} has no articles. Stopping.")
                         stop_detected = True
                         break
                     else:
@@ -199,7 +247,7 @@ class MarkPositionScraperAsync:
                     break
 
                 if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
-                    logger.info("Reached max pages limit.")
+                    UXFormatter.info("Reached max pages limit.")
                     break
 
                 page_num += len(tasks)
@@ -215,32 +263,47 @@ class MarkPositionScraperAsync:
                 return await self.parse_page(html)
             return None
 
+    def sanitize_for_csv(self, value: str) -> str:
+        """Sanitize a value to prevent CSV injection."""
+        if value and isinstance(value, str):
+            if value.startswith(('=', '+', '-', '@')):
+                return "'" + value
+        return value
+
     def save_data(self, posts: List[Dict]):
         # JSON
         try:
-            with open(self.output_json, 'w', encoding='utf-8') as f:
+            json_path = self.validate_path(self.output_json)
+            with open(json_path, 'w', encoding='utf-8') as f:
                 json.dump(posts, f, indent=4, ensure_ascii=False)
-            logger.info(f"Saved {len(posts)} posts to {self.output_json}")
+            UXFormatter.success(f"Saved {len(posts)} posts to {self.output_json}")
         except IOError as e:
+            UXFormatter.error(f"Failed to save JSON: {e}")
+            logger.info(f"Saved {len(posts)} posts to {self.output_json}")
+        except (IOError, ValueError) as e:
             logger.error(f"Failed to save JSON: {e}")
 
         # CSV
         try:
-            with open(self.output_csv, 'w', newline='', encoding='utf-8') as f:
+            csv_path = self.validate_path(self.output_csv)
+            with open(csv_path, 'w', newline='', encoding='utf-8') as f:
                 writer = csv.writer(f)
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        self.sanitize_for_csv(post.get('title', '')),
+                        self.sanitize_for_csv(post.get('date', '')),
+                        self.sanitize_for_csv(post.get('author', '')),
+                        self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                        self.sanitize_for_csv(post.get('external_link', '')),
+                        self.sanitize_for_csv(post.get('domain', '')),
+                        self.sanitize_for_csv(post.get('post_url', ''))
                     ])
-            logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
+            UXFormatter.success(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
+            UXFormatter.error(f"Failed to save CSV: {e}")
+            logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
+        except (IOError, ValueError) as e:
             logger.error(f"Failed to save CSV: {e}")
 
         # Unique Links TXT
@@ -252,11 +315,15 @@ class MarkPositionScraperAsync:
 
         sorted_links = sorted(list(unique_links))
         try:
-            with open(self.output_txt, 'w', encoding='utf-8') as f:
+            txt_path = self.validate_path(self.output_txt)
+            with open(txt_path, 'w', encoding='utf-8') as f:
                 for link in sorted_links:
                     f.write(link + '\n')
-            logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
+            UXFormatter.success(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
         except IOError as e:
+            UXFormatter.error(f"Failed to save TXT: {e}")
+            logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
+        except (IOError, ValueError) as e:
             logger.error(f"Failed to save TXT: {e}")
 
 def main():
