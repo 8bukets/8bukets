@@ -17,6 +17,7 @@ This document is a compiled knowledge base containing the contents of various ex
 
 ---
 
+<!-- AI_AGENTS_START -->
 # What are AI Agents?
 
 Scraped from [https://cloud.google.com/discover/what-are-ai-agents](https://cloud.google.com/discover/what-are-ai-agents)
@@ -196,6 +197,7 @@ Google Cloud provides a portfolio of products and solutions in the AI agent spac
 - Agent Development Kit (ADK) Open-source Python SDK to build sophisticated multi-agent systems with orchestration, memory, and developer tools.
 - A2A Protocol An open-source framework originally developed by Google to help build AI agents. An AI agent built with A2A Protocol will be interoperable with any service, platform, or infrastructure.
 - Cloud Run A fully managed serverless platform that allows you to deploy containerized agents and applications, providing auto-scaling and pay-per-use efficiency.
+<!-- AI_AGENTS_END -->
 
 ## What does Compile mean?
 
