@@ -1,3 +1,6 @@
+## 2026-02-05 - [CLI Report Visuals]
+**Learning:** Text-based reports (Markdown/CLI) are hard to scan without visual weight.
+**Action:** Use simple ASCII bar charts (e.g., `████░`) in tables to visualize relative magnitudes in generated reports.
 ## 2025-02-03 - Rich CLI Feedback Pattern
 **Learning:** CLI tools often lack visual hierarchy, making it hard to spot errors in a wall of text. Adding ANSI colors and emojis (✅, ❌, ⚠️) significantly improves scanability and user confidence during long-running processes.
 **Action:** Implement `UXFormatter` class in all CLI scripts to standardize colored feedback for Info, Success, Warning, and Error states.

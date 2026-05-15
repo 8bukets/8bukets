@@ -54,6 +54,14 @@ def load_data(filepath):
         UXFormatter.error(f"File '{filepath}' not found.")
         sys.exit(1)
 
+def create_ascii_bar(count, max_value, max_width=20):
+    if max_value == 0:
+        return ""
+
+    filled_len = int((count / max_value) * max_width)
+    if filled_len == 0 and count > 0:
+        filled_len = 1
+    return "█" * filled_len
 def create_ascii_bar(value, max_value, width=20):
     if max_value == 0:
         return ""
@@ -111,7 +119,7 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
+    md.append("# 📈 Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
     # Table of Contents
@@ -127,6 +135,32 @@ def generate_report(data, output_file):
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
     md.append("\n[Back to Top](#table-of-contents)")
+
+    # Helper to get max count for bars
+    max_domain_count = domain_counts[0][1] if domain_counts else 0
+    max_cat_count = category_counts[0][1] if category_counts else 0
+    max_year_count = max([c for _, c in year_counts]) if year_counts else 0
+
+    md.append("\n## 🌐 Top 10 Referenced Domains")
+    md.append("| Domain | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    for domain, count in domain_counts:
+        bar = create_ascii_bar(count, max_domain_count)
+        md.append(f"| {domain} | {count} | {bar} |")
+
+    md.append("\n## 🏷️ Top 10 Categories")
+    md.append("| Category | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    for cat, count in category_counts:
+        bar = create_ascii_bar(count, max_cat_count)
+        md.append(f"| {cat} | {count} | {bar} |")
+
+    md.append("\n## 📅 Posts by Year")
+    md.append("| Year | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    for year, count in year_counts:
+        bar = create_ascii_bar(count, max_year_count)
+        md.append(f"| {year} | {count} | {bar} |")
 
     md.append("\n## 🌐 Top 10 Referenced Domains")
     md.append("| Domain | Count |")
