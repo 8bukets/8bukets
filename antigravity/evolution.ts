@@ -16,10 +16,14 @@ export async function evolve() {
   console.log('🧠 [Antigravity Evolution] Commencing cognitive analysis...')
 
   const suggestions: EvolutionMetric[] = []
-  const baseDir = path.join(process.cwd(), 'antigravity')
+  const scanDirs = [
+    path.join(process.cwd(), 'antigravity'),
+    path.join(process.cwd(), 'software-review-platform')
+  ]
 
   // Recursive scan to find "bloated" or unoptimized patterns
   function scan(dir: string) {
+    if (!fs.existsSync(dir)) return
     const files = fs.readdirSync(dir)
     for (const file of files) {
       const fullPath = path.join(dir, file)
@@ -46,11 +50,31 @@ export async function evolve() {
             suggestion: 'SYNC_PROP_VIOLATION: Direct access to params detected. Must be awaited in Next.js 16.'
           })
         }
+
+        // Rule 4: Detect console.log in production-like files
+        if (content.includes('console.log(') && !fullPath.includes('.test.') && !fullPath.includes('jules.ts')) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'LOGGING_VIOLATION: console.log detected in production path. Use logAutonomousAction.'
+          })
+        }
+
+        // Rule 5: Detect "any" type usage (Type safety)
+        if (content.includes(': any') || content.includes('as any')) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'TYPE_SAFETY_VIOLATION: usage of "any" type detected.'
+          })
+        }
       }
     }
   }
 
-  scan(baseDir)
+  for (const dir of scanDirs) {
+    scan(dir)
+  }
 
   console.log('✨ [Evolution Report]: Found', suggestions.length, 'potential optimizations.')
   return suggestions
@@ -82,6 +106,23 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
 
       // Attempt to wrap params usages
       content = content.replace(/(\{.*?params.*?\}.*?)\.then/g, "resolve(params).then")
+      fs.writeFileSync(fullPath, content)
+    }
+
+    // Rule 4 Fix: Replace console.log with logAutonomousAction
+    if (s.suggestion.startsWith('LOGGING_VIOLATION')) {
+      console.log(` - Fixing ${s.file}: Replacing console.log with logAutonomousAction`)
+
+      // Calculate relative path to core.ts
+      const fileDir = path.dirname(fullPath)
+      const corePath = path.join(process.cwd(), 'antigravity/core')
+      let relativeCorePath = path.relative(fileDir, corePath)
+      if (!relativeCorePath.startsWith('.')) relativeCorePath = './' + relativeCorePath
+
+      if (!content.includes('logAutonomousAction')) {
+        content = `import { logAutonomousAction } from '${relativeCorePath}'\n` + content
+      }
+      content = content.replace(/console\.log\((.*?)\)/g, "logAutonomousAction($1, 'info')")
       fs.writeFileSync(fullPath, content)
     }
 
