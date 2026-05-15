@@ -39,23 +39,31 @@ export async function GET(req: Request) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
 
-    const client = await getMongoClient();
-    const db = client.db(process.env.MONGODB_DB || 'software_reviews');
+    let latestSnapshot = null;
+    let activeWorkOrders = [];
+    let systemState = null;
 
-    // Fetch latest intelligence snapshot
-    const latestSnapshot = await db.collection('system_intelligence')
-      .findOne({}, { sort: { timestamp: -1 } });
+    try {
+      const client = await getMongoClient();
+      const db = client.db(process.env.MONGODB_DB || 'software_reviews');
 
-    // Fetch active work orders from MongoDB
-    const activeWorkOrders = await db.collection('work_orders')
-      .find({ status: { $in: ['pending', 'executing', 'PENDING', 'IN_PROGRESS'] } })
-      .sort({ created_at: -1 })
-      .limit(5)
-      .toArray();
+      // Fetch latest intelligence snapshot
+      latestSnapshot = await db.collection('system_intelligence')
+        .findOne({}, { sort: { timestamp: -1 } });
 
-    // Fetch latest system state
-    const systemState = await db.collection('system_state')
-      .findOne({ systemId: 'antigravity-alpha-01' });
+      // Fetch active work orders from MongoDB
+      activeWorkOrders = await db.collection('work_orders')
+        .find({ status: { $in: ['pending', 'executing', 'PENDING', 'IN_PROGRESS'] } })
+        .sort({ created_at: -1 })
+        .limit(5)
+        .toArray();
+
+      // Fetch latest system state
+      systemState = await db.collection('system_state')
+        .findOne({ systemId: 'antigravity-alpha-01' });
+    } catch (dbErr) {
+      console.warn('MongoDB connection failed, providing limited response', dbErr);
+    }
 
     // Read latest cognitive logs (fallback to file if needed, but preferably from DB in future)
     const logPath = path.join(process.cwd(), '../logs/autonomous.log');
@@ -75,11 +83,32 @@ export async function GET(req: Request) {
       }
     }
 
+    // Read local links.json for real-time market data
+    // Use multiple path strategies for cross-environment robustness (Cloud vs Local)
+    const possiblePaths = [
+      path.join(process.cwd(), '../links.json'),
+      path.join(process.cwd(), 'links.json'),
+      '/app/links.json'
+    ];
+
+    let marketLinks = [];
+    for (const p of possiblePaths) {
+      if (fs.existsSync(p)) {
+        try {
+          marketLinks = JSON.parse(fs.readFileSync(p, 'utf8')).slice(0, 5);
+          break;
+        } catch (e) {
+          console.error(`Failed to read market data from ${p}:`, e);
+        }
+      }
+    }
+
     return NextResponse.json({
       snapshot: latestSnapshot,
       state: systemState,
       workOrders: activeWorkOrders,
       logs: recentLogs,
+      marketLinks,
       timestamp: new Date().toISOString()
     });
   } catch (err: unknown) {

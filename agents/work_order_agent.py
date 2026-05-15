@@ -59,13 +59,29 @@ class WorkOrderAgent(BaseAgent):
         # Scenario: Content Creation based on Market Trends
         market_trends = research.get("market_trends", [])
         if market_trends:
-            for trend in market_trends[:2]: # Limit to top 2 trends per cycle
-                task_id = f"CONTENT_{trend.replace(' ', '_').upper()}"
+            # Create content for ALL major trends found (expanded from top 2)
+            for trend in market_trends:
+                task_id = f"CONTENT_{trend.replace(' ', '_').replace('.', '').upper()}"
                 if not self._order_exists(orders, task_id):
                     new_tasks_identified.append({
                         "id": task_id,
                         "type": "CONTENT_CREATION",
                         "description": f"Generate structured review/content for trend: {trend}",
+                        "status": "pending",
+                        "created_at": datetime.now().isoformat()
+                    })
+
+        # Scenario: Proactive Investigation for Restricted/Unreachable Domains
+        investigations = research.get("external_investigations", [])
+        for inv in investigations:
+            if inv.get("status") in ["RESTRICTED", "UNREACHABLE"]:
+                domain = inv.get("domain")
+                task_id = f"INVESTIGATE_{domain.replace('.', '_').upper()}"
+                if not self._order_exists(orders, task_id):
+                    new_tasks_identified.append({
+                        "id": task_id,
+                        "type": "RESEARCH",
+                        "description": f"Deep investigation of connectivity issues for domain: {domain}",
                         "status": "pending",
                         "created_at": datetime.now().isoformat()
                     })
