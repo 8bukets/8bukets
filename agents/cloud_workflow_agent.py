@@ -54,12 +54,15 @@ class CloudWorkflowAgent(BaseAgent):
                     self.logger.warning(f"Failed proactive docker rebuild: {e}")
         elif react_deployment_ready:
             orchestration_mode = "REACT_DEPLOYMENT_ACTIVE"
+            active_decisions.extend(["PROVISION_REACT_DEPLOYMENT", "CONFIGURE_REACT_TOOLS"])
 
         cloud_workflow_status = {
             "workflow_fluent": is_fluent,
             "availability_score": availability_score,
             "orchestration": orchestration_mode,
-            "active_decisions": active_decisions
+            "active_decisions": active_decisions,
+            "deployment_target": react_config.get("deployment_target", "UNKNOWN"),
+            "tools_integration": react_config.get("tools_integration", [])
         }
 
         self.logger.info(f"Multi-cloud workflow evaluated: Fluent={is_fluent}, Availability={availability_score}, Mode={orchestration_mode}, Decisions={active_decisions}")
