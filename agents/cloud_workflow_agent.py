@@ -5,13 +5,14 @@ class CloudWorkflowAgent(BaseAgent):
     """Multi-Cloud Orchestrator: Combines insights from GitHub, GitLab, GitKraken, and Docker Cloud."""
     def __init__(self):
         super().__init__("CloudWorkflowAgent",
-                         dependencies=["vcs_status", "git_visualization_metrics", "gitlab_pipeline_metrics", "container_status", "react_agent_deployment_config"],
+                         dependencies=["vcs_status", "git_visualization_metrics", "gitlab_pipeline_metrics", "jenkins_pipeline_metrics", "container_status", "react_agent_deployment_config"],
                          provides=["cloud_workflow_status"])
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
         vcs_status = blackboard.get("vcs_status", "UNKNOWN")
         viz_metrics = blackboard.get("git_visualization_metrics", {})
         gitlab_metrics = blackboard.get("gitlab_pipeline_metrics", {})
+        jenkins_metrics = blackboard.get("jenkins_pipeline_metrics", {})
         docker_status = blackboard.get("container_status", {})
 
         self.logger.info("Evaluating unified multi-cloud workflow status...")
@@ -23,7 +24,7 @@ class CloudWorkflowAgent(BaseAgent):
         is_fluent = (
             vcs_status in ["COMMITTED_AND_PUSHED", "COMMITTED_LOCAL", "CLEAN"] and
             viz_metrics.get("kraken_compatibility_score", 0) > 0.8 and
-            gitlab_metrics.get("pipeline_efficiency") in ["OPTIMIZED", "HIGHLY_OPTIMIZED"] and
+            (gitlab_metrics.get("pipeline_efficiency") in ["OPTIMIZED", "HIGHLY_OPTIMIZED"] or jenkins_metrics.get("pipeline_efficiency") in ["OPTIMIZED", "HIGHLY_OPTIMIZED"]) and
             docker_status.get("runtime_stability") == "VERIFIED"
         )
 
@@ -44,8 +45,8 @@ class CloudWorkflowAgent(BaseAgent):
                     self.logger.warning(f"Failed proactive git merge --abort: {e}")
             if viz_metrics.get("kraken_compatibility_score", 0) <= 0.9:
                 active_decisions.append("AUTO_OPTIMIZE_GITKRAKEN_VISUALIZATION")
-            if gitlab_metrics.get("pipeline_efficiency") not in ["OPTIMIZED", "HIGHLY_OPTIMIZED"]:
-                active_decisions.append("AUTO_OPTIMIZE_GITLAB_PIPELINE")
+            if gitlab_metrics.get("pipeline_efficiency") not in ["OPTIMIZED", "HIGHLY_OPTIMIZED"] and jenkins_metrics.get("pipeline_efficiency") not in ["OPTIMIZED", "HIGHLY_OPTIMIZED"]:
+                active_decisions.append("AUTO_OPTIMIZE_PIPELINE")
             if docker_status.get("runtime_stability") != "VERIFIED":
                 active_decisions.append("AUTO_REBUILD_DOCKER")
                 try:

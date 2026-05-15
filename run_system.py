@@ -33,6 +33,7 @@ from agents.jules_evolution_agent import JulesEvolutionAgent
 from agents.gitkraken_evolution_agent import GitKrakenEvolutionAgent
 from agents.docker_evolution_agent import DockerEvolutionAgent
 from agents.gitlab_evolution_agent import GitLabEvolutionAgent
+from agents.jenkins_agent import JenkinsEvolutionAgent
 from agents.cloud_workflow_agent import CloudWorkflowAgent
 from agents.collaboration_agent import CollaborationAgent
 from agents.mongodb_agent import MongoDBAgent
@@ -168,6 +169,8 @@ def generate_daily_report(context, filename):
             f.write(f"- **Availability Score:** {cloud.get('availability_score', 0)}\n")
             f.write(f"- **Orchestration:** {cloud.get('orchestration', 'UNKNOWN')}\n")
             f.write(f"- **GitLab Pipeline Efficiency:** {gitlab.get('pipeline_efficiency', 'N/A')}\n")
+            jenkins = context.get("jenkins_pipeline_metrics", {})
+            f.write(f"- **Jenkins Pipeline Efficiency:** {jenkins.get('pipeline_efficiency', 'N/A')}\n")
 
         logger.info(f"Report generated at {filename}")
     except IOError as e:
@@ -206,7 +209,7 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
 
         # DevOps & Evolution
         MetaCodingAgent(), JulesEvolutionAgent(), GitHubEvolutionAgent(),
-        GitLabEvolutionAgent(), GitKrakenEvolutionAgent(), DockerEvolutionAgent(),
+        GitLabEvolutionAgent(), JenkinsEvolutionAgent(), GitKrakenEvolutionAgent(), DockerEvolutionAgent(),
         CloudWorkflowAgent(), CollaborationAgent(),
 
         # Data Persistence

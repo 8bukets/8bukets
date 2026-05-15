@@ -6,7 +6,7 @@ class GitHubEvolutionAgent(BaseAgent):
     """Autonomously stages, commits, and pushes code changes based on system evolution."""
     def __init__(self):
         super().__init__("GitHubEvolutionAgent",
-                         dependencies=["system_evolution", "evolution_strategy", "git_visualization_metrics", "container_status", "gitlab_pipeline_metrics"],
+                         dependencies=["system_evolution", "evolution_strategy", "git_visualization_metrics", "container_status", "gitlab_pipeline_metrics", "jenkins_pipeline_metrics"],
                          provides=["vcs_status"])
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
@@ -15,6 +15,7 @@ class GitHubEvolutionAgent(BaseAgent):
         viz_metrics = blackboard.get("git_visualization_metrics", {})
         docker_status = blackboard.get("container_status", {})
         gitlab_metrics = blackboard.get("gitlab_pipeline_metrics", {})
+        jenkins_metrics = blackboard.get("jenkins_pipeline_metrics", {})
         if evolution.get("status") != "EVOLVED":
             self.logger.info("No system evolution detected. Skipping Git operations.")
             return {"vcs_status": "SKIPPED"}
@@ -47,8 +48,9 @@ class GitHubEvolutionAgent(BaseAgent):
                 f"- GitKraken Visualization: {viz_metrics.get('kraken_compatibility_score', 0)*100}%\n"
                 f"- Docker Stability: {docker_status.get('runtime_stability', 'N/A')}\n"
                 f"- GitLab Pipeline: {gitlab_metrics.get('pipeline_efficiency', 'N/A')}\n"
+                f"- Jenkins Pipeline: {jenkins_metrics.get('pipeline_efficiency', 'N/A')}\n"
                 f"- Evolution Strategy: {strategy.get('optimization_priority', 'STANDARD')}\n\n"
-                f"Automated commit by collaborative agent unit (Jules + GitHub + GitLab + GitKraken + Docker Cloud)."
+                f"Automated commit by collaborative agent unit (Jules + GitHub + GitLab + Jenkins + GitKraken + Docker Cloud)."
             )
             subprocess.run(["git", "commit", "-m", commit_msg], check=True)
 
