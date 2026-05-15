@@ -6,7 +6,14 @@ vi.mock('fs')
 // We mock the core module *before* importing the service
 vi.mock('@/antigravity/core', () => ({
   autonomousFetch: vi.fn((schema, fn) => fn()),
-  logAutonomousAction: vi.fn()
+  logAutonomousAction: vi.fn(),
+  getMongoClient: vi.fn(() => Promise.resolve({
+    db: () => ({
+      collection: () => ({
+        updateOne: vi.fn(() => Promise.resolve())
+      })
+    })
+  }))
 }))
 
 // Now import the service

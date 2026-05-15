@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { z } from 'zod'
-import { autonomousFetch } from '@/antigravity/core'
+import { autonomousFetch, getMongoClient } from '@/antigravity/core'
 import { checkDockerHealth } from './docker'
 
 /**
@@ -97,7 +97,7 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
   const { jules } = await import('../jules')
   const { workOrderService } = await import('./work_order')
   const branches = branchIntelligence || await jules.scanAllBranches()
-  const workOrders = workOrderService.getPendingOrders() // Simplified for now
+  const workOrders = await workOrderService.getPendingOrders()
 
   const newState = {
     ...currentState,
@@ -111,8 +111,23 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
     last_sync: new Date().toISOString()
   }
 
+  // Persist to local fallback
   fs.writeFileSync(statePath, JSON.stringify(newState, null, 4))
-  console.log('✅ [Collaboration] Autonomous state synchronized successfully.')
+
+  // Persist to MongoDB
+  try {
+    const client = await getMongoClient()
+    const db = client.db()
+    await db.collection('system_state').updateOne(
+      { systemId: 'antigravity-alpha-01' },
+      { $set: newState },
+      { upsert: true }
+    )
+    console.log('✅ [Collaboration] Autonomous state synchronized to MongoDB.')
+  } catch (e) {
+    console.error('❌ [Collaboration] Failed to sync state to MongoDB:', e)
+  }
+
   return newState
 }
 

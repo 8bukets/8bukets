@@ -46,24 +46,38 @@ export async function GET(req: Request) {
     const latestSnapshot = await db.collection('system_intelligence')
       .findOne({}, { sort: { timestamp: -1 } });
 
-    // Fetch active work orders (mocked for now, integrate with Jules agent layer)
-    const workOrdersPath = path.join(process.cwd(), '../data/work_orders.json');
-    let activeWorkOrders = [];
-    if (fs.existsSync(workOrdersPath)) {
-      const allOrders = JSON.parse(fs.readFileSync(workOrdersPath, 'utf8'));
-      activeWorkOrders = allOrders.filter((o: { status: string; type: string; id: string; goal: string }) => o.status === 'pending' || o.status === 'executing').slice(0, 5);
-    }
+    // Fetch active work orders from MongoDB
+    const activeWorkOrders = await db.collection('work_orders')
+      .find({ status: { $in: ['pending', 'executing', 'PENDING', 'IN_PROGRESS'] } })
+      .sort({ created_at: -1 })
+      .limit(5)
+      .toArray();
 
-    // Read latest cognitive logs
+    // Fetch latest system state
+    const systemState = await db.collection('system_state')
+      .findOne({ systemId: 'antigravity-alpha-01' });
+
+    // Read latest cognitive logs (fallback to file if needed, but preferably from DB in future)
     const logPath = path.join(process.cwd(), '../logs/autonomous.log');
     let recentLogs = [];
     if (fs.existsSync(logPath)) {
-      const logContent = fs.readFileSync(logPath, 'utf8');
-      recentLogs = logContent.split('\n').filter(l => l).slice(-15).map(l => JSON.parse(l)).reverse();
+      try {
+        const logContent = fs.readFileSync(logPath, 'utf8');
+        recentLogs = logContent.split('\n')
+          .filter(l => l.trim())
+          .slice(-15)
+          .map(l => {
+            try { return JSON.parse(l); } catch(e) { return { msg: l, time: new Date().toISOString(), type: 'raw' }; }
+          })
+          .reverse();
+      } catch (e) {
+        console.error('Failed to read logs:', e);
+      }
     }
 
     return NextResponse.json({
       snapshot: latestSnapshot,
+      state: systemState,
       workOrders: activeWorkOrders,
       logs: recentLogs,
       timestamp: new Date().toISOString()

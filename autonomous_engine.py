@@ -10,6 +10,7 @@ from datetime import datetime
 # Import components from existing modules
 from run_system import run_scraper, run_cycle
 from autonomous_audit import run_audit
+from pymongo import MongoClient
 
 # Configure Logging
 logging.basicConfig(
@@ -73,18 +74,62 @@ def run_typescript_cycle():
     except subprocess.CalledProcessError as e:
         logger.error(f"❌ TypeScript Cycle failed: {e}")
 
-def create_autonomous_orders():
-    """Identify and create new work orders if the system needs them."""
-    orders_file = "data/work_orders.json"
-    if not os.path.exists(orders_file):
+def sync_work_orders_with_mongodb():
+    """Sync work orders between local file and MongoDB."""
+    uri = os.environ.get("MONGODB_URI")
+    if not uri:
         return
 
+    orders_file = "data/work_orders.json"
+    local_orders = []
+    if os.path.exists(orders_file):
+        try:
+            with open(orders_file, 'r') as f:
+                local_orders = json.load(f)
+        except:
+            local_orders = []
+
+    try:
+        client = MongoClient(uri)
+        db = client.get_database()
+        collection = db.work_orders
+
+        # 1. Pull from MongoDB
+        mongo_orders = list(collection.find({}))
+
+        # 2. Merge (MongoDB wins for status updates)
+        order_map = {o["id"]: o for o in local_orders}
+        for mo in mongo_orders:
+            # Clean up MongoDB-specific _id
+            if "_id" in mo: del mo["_id"]
+            order_map[mo["id"]] = mo
+
+        merged_orders = list(order_map.values())
+
+        # 3. Save back to both
+        with open(orders_file, 'w') as f:
+            json.dump(merged_orders, f, indent=4)
+
+        for o in merged_orders:
+            collection.update_one({"id": o["id"]}, {"$set": o}, upsert=True)
+
+        logger.info(f"✅ Synchronized {len(merged_orders)} work orders with MongoDB.")
+        client.close()
+    except Exception as e:
+        logger.error(f"❌ Failed to sync work orders with MongoDB: {e}")
+
+def create_autonomous_orders():
+    """Identify and create new work orders if the system needs them."""
+    sync_work_orders_with_mongodb()
+
+    orders_file = "data/work_orders.json"
     try:
         with open(orders_file, 'r') as f:
             orders = json.load(f)
     except:
         orders = []
 
+    pending = [o for o in orders if o["status"] in ["PENDING", "pending"]]
     pending = [o for o in orders if o["status"] == "pending"]
     if len(pending) > 5:
         return
@@ -132,6 +177,8 @@ def create_autonomous_orders():
 def process_work_orders():
     """Check for pending work orders and execute appropriate scripts."""
     create_autonomous_orders()
+    sync_work_orders_with_mongodb() # Re-sync after creation
+
     orders_file = "data/work_orders.json"
     if not os.path.exists(orders_file):
         return
@@ -144,6 +191,8 @@ def process_work_orders():
 
     updated = False
     for order in orders:
+        status = order.get("status", "").upper()
+        if status in ["PENDING", "IN_PROGRESS"]:
         if order["status"] == "pending" or order["status"] == "in_progress":
             if order["type"] == "DEPLOYMENT":
                 logger.info(f"🔔 Executing Deployment Work Order: {order['id']}")
@@ -198,6 +247,7 @@ def process_work_orders():
     if updated:
         with open(orders_file, 'w') as f:
             json.dump(orders, f, indent=4)
+        sync_work_orders_with_mongodb()
 
 async def main():
     parser = argparse.ArgumentParser(description="Full Autonomous Automatic Creation Order and Execution Engine")

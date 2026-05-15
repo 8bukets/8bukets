@@ -39,10 +39,15 @@ class GitHubEvolutionAgent(BaseAgent):
                 self.logger.info("No changes to commit. Skipping Git commit/push.")
                 return {"vcs_status": "CLEAN", "workflow_count": workflow_count}
 
-            # 2. Commit changes with collaborative insights
+            # 2. Commit changes with collaborative insights (GitKraken Optimized)
             version = evolution.get("parameter_shifts", {}).get("current_version", "1.0")
+
+            progress = int(viz_metrics.get('kraken_compatibility_score', 0.85) * 100)
+            progress_bar = "█" * (progress // 5) + "░" * (20 - (progress // 5))
+
             commit_msg = (
-                f"Autonomous System Evolution: Version {version}\n\n"
+                f"[ROADMAP:PHASE-12] Autonomous System Evolution: Version {version}\n\n"
+                f"Progress: {progress_bar} ({progress}%)\n\n"
                 f"Collaborative Evolution Metrics:\n"
                 f"- GitKraken Visualization: {viz_metrics.get('kraken_compatibility_score', 0)*100}%\n"
                 f"- Docker Stability: {docker_status.get('runtime_stability', 'N/A')}\n"

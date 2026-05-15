@@ -150,11 +150,34 @@ export class Jules {
     }
   }
 
-  public async gitSync(message: string) {
+  public async gitSync(message: string, phase: string = 'PHASE-12', progress: number = 100) {
     console.log('🔄 [Jules] Commencing autonomous Git synchronization...')
-    // Delegate to CI/CD pipeline (e.g. continuous-presence.yml)
-    console.log('✅ [Jules] Git sync delegated to CI/CD pipeline.')
-    this.recordTask(`Git Sync: Git sync delegated to CI/CD pipeline.`)
+
+    try {
+      const { gitProvider, GitProviderService } = await import('./services/git_provider')
+
+      const formattedMessage = GitProviderService.formatGitKrakenMessage(
+        message,
+        phase,
+        progress,
+        ['Autonomous system evolution', 'State synchronized to MongoDB']
+      )
+
+      const result = await gitProvider.commit({
+        message: formattedMessage,
+        files: ['antigravity/', 'data/', 'autonomous_state.json', 'CONSOLIDATED_INTELLIGENCE.md'],
+        push: !!process.env.GITHUB_TOKEN || !!process.env.GITLAB_TOKEN
+      })
+
+      if (result.status === 'success') {
+        this.recordTask(`Git Sync: Committed changes with GitKraken optimization.`)
+      } else {
+        this.recordTask(`Git Sync: No changes to commit.`)
+      }
+    } catch (err: any) {
+      console.error('❌ [Jules] Git sync failed:', err.message)
+      this.recordTask(`Git Sync: Failed - ${err.message}`)
+    }
   }
 
   public async auditDependencies() {
