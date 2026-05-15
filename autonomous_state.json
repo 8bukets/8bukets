@@ -18,12 +18,12 @@
         "status": "disconnected",
         "containerCount": 0,
         "simulated": false,
-        "timestamp": "2026-05-15T03:36:11.657Z"
+        "timestamp": "2026-05-15T03:34:00.561Z"
     },
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1778816171658,
+        "timestamp": 1778816040562,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
@@ -64,7 +64,6 @@
             },
             "goalAlignment": {
                 "Achieve full autonomous work cycles.": [
-                    "jules-458143035147139751-5d2e2497",
                     "remotes/origin/add-google-edge-agent-9371392929328195231",
                     "remotes/origin/add-malubeach-scraper-16704333902164650708",
                     "remotes/origin/add-mysql-agent-12534386317238704274",
@@ -283,6 +282,42 @@
             },
             "resourceInventory": [
                 {
+                    "type": "Knowledge",
+                    "name": "intelephense_docs.md",
+                    "status": "Ingested",
+                    "source": "local://intelephense_docs.md"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Intelephense: README",
+                    "status": "Ingested",
+                    "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/README.md"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Intelephense: installation",
+                    "status": "Ingested",
+                    "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/installation.md"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Intelephense: gettingStarted",
+                    "status": "Ingested",
+                    "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/gettingStarted.md"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Intelephense: features",
+                    "status": "Ingested",
+                    "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/features.md"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Intelephense: support",
+                    "status": "Ingested",
+                    "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/support.md"
+                },
+                {
                     "type": "Documentation",
                     "name": "AGENTS.md",
                     "status": "Active"
@@ -310,5 +345,5 @@
             ]
         }
     },
-    "last_sync": "2026-05-15T03:36:11.840Z"
+    "last_sync": "2026-05-15T03:34:13.146Z"
 }
