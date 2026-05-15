@@ -42,6 +42,11 @@ autonomous-work-cycle:
   script:
     - npm ci
     - npx tsx antigravity/run_parallel.ts
+    - git config --global user.name "gitlab-ci[bot]"
+    - git config --global user.email "gitlab-ci[bot]@users.noreply.gitlab.com"
+    - git add .
+    - git commit -m "chore: persist autonomous cloud state" || true
+    - git push origin HEAD:$CI_COMMIT_BRANCH || true
   variables:
     MONGODB_URI: $MONGODB_URI
     NEXT_PUBLIC_SUPABASE_URL: $NEXT_PUBLIC_SUPABASE_URL

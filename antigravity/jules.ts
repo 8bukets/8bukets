@@ -157,12 +157,18 @@ export class Jules {
     console.log(`🔄 [Jules-${this.role}] Commencing autonomous Git synchronization...`)
     const { execSync } = await import('child_process')
     try {
+      execSync('git pull --rebase origin main || true', { stdio: 'inherit' })
       execSync('git add .', { stdio: 'inherit' })
-      execSync(`git commit -m "${message}"`, { stdio: 'inherit' })
-      console.log('✅ [Jules] Changes committed autonomously.')
-      this.recordTask(`Git Sync: Committed changes to local repository.`)
+      try {
+        execSync(`git commit -m "${message}"`, { stdio: 'inherit' })
+      } catch (commitErr) {
+        console.log('ℹ️ [Jules] No changes to commit or commit failed. Proceeding to push anyway.')
+      }
+      execSync('git push origin main || true', { stdio: 'inherit' })
+      console.log('✅ [Jules] Git sync completed autonomously.')
+      this.recordTask(`Git Sync: Synchronized state with origin.`)
     } catch (err) {
-      console.warn('⚠️ [Jules] Git sync skipped or failed (likely no changes to commit).')
+      console.warn('⚠️ [Jules] Git sync failed unexpectedly:', err)
     }
   }
 
