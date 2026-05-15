@@ -39,9 +39,9 @@ export async function GET(req: Request) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
 
-    let latestSnapshot = null;
-    let activeWorkOrders = [];
-    let systemState = null;
+    let latestSnapshot: any = null;
+    let activeWorkOrders: any[] = [];
+    let systemState: any = null;
 
     try {
       const client = await getMongoClient();
@@ -88,6 +88,7 @@ export async function GET(req: Request) {
     const possiblePaths = [
       path.join(process.cwd(), '../links.json'),
       path.join(process.cwd(), 'links.json'),
+      path.join(process.cwd(), 'frontend/links.json'),
       '/app/links.json'
     ];
 
@@ -95,10 +96,11 @@ export async function GET(req: Request) {
     for (const p of possiblePaths) {
       if (fs.existsSync(p)) {
         try {
-          marketLinks = JSON.parse(fs.readFileSync(p, 'utf8')).slice(0, 5);
+          const content = fs.readFileSync(p, 'utf8');
+          marketLinks = JSON.parse(content).slice(0, 5);
           break;
         } catch (e) {
-          console.error(`Failed to read market data from ${p}:`, e);
+          console.error(`[Intelligence API] Failed to read market data from ${p}:`, e);
         }
       }
     }
