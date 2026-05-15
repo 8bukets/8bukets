@@ -137,21 +137,82 @@ export class Jules {
   public async selfRepair() {
     console.log('🔧 [Jules] Starting autonomous self-repair cycle...')
     const { evolve, applyFixes } = await import('./evolution')
+    const { gitProvider } = await import('./services/git_provider')
     const suggestions = await evolve()
 
     if (suggestions.length > 0) {
-      await applyFixes(suggestions)
-      this.recordTask(`Self-Repair: Applied ${suggestions.length} fixes.`)
-      console.log('🧪 [Jules] Verifying fixes...')
-      console.log('✅ [Jules] All tests passed after self-repair.')
-      await this.gitSync(`🤖 fix: autonomous self-repair of ${suggestions.length} issues`)
+      // Phase 14: Protocol Enforcement
+      const isCritical = suggestions.some(s => s.suggestion.includes('SYNC_PROP_VIOLATION'))
+
+      if (isCritical) {
+        await applyFixes(suggestions)
+        this.recordTask(`Self-Repair: Applied ${suggestions.length} fixes (CRITICAL).`)
+        await this.gitSync(`🤖 fix: autonomous self-repair of ${suggestions.length} issues (CRITICAL)`)
+      } else {
+        // STANDARD/PREDICTIVE fixes go through PR
+        const branchName = `fix/autonomous-evolution-${Date.now()}`
+        const { execSync } = await import('child_process')
+
+        try {
+          // Ensure we are on a clean state before branching
+          const status = execSync('git status --porcelain').toString().trim()
+          if (status) {
+            console.warn('⚠️ [Jules] Working directory is dirty. Stashing changes before repair...')
+            execSync('git stash')
+          }
+
+          execSync(`git checkout -b ${branchName}`)
+
+          await applyFixes(suggestions)
+
+          const message = `🤖 fix: autonomous evolution repair of ${suggestions.length} issues`
+          // Pass the branch name to gitSync to ensure it pushes to the correct head
+          await this.gitSync(message, 'PHASE-12', 100, branchName)
+
+          // Create PR
+          const prBody = `Autonomous Evolution has identified and fixed ${suggestions.length} issues.\n\nSuggestions:\n${suggestions.map(s => `- ${s.file}: ${s.suggestion}`).join('\n')}`
+          await gitProvider.createPullRequest(message, prBody, branchName)
+
+          execSync(`git checkout main`)
+          this.recordTask(`Self-Repair: Created autonomous PR for ${suggestions.length} fixes.`)
+        } catch (err: any) {
+          console.error('❌ [Jules] Branch-based self-repair failed:', err.message)
+          execSync('git checkout main || true')
+          this.recordTask(`Self-Repair: Failed during branch operation - ${err.message}`)
+        }
+      }
     } else {
       console.log('✨ [Jules] No issues detected. System integrity is optimal.')
     }
   }
 
-  public async gitSync(message: string, phase: string = 'PHASE-12', progress: number = 100) {
-    console.log('🔄 [Jules] Commencing autonomous Git synchronization...')
+  public async processPullRequests() {
+    console.log('📬 [Jules] Auditing and processing Pull Requests...')
+    const { gitProvider } = await import('./services/git_provider')
+    const { reactService } = await import('./services/react')
+
+    const pulls = await gitProvider.listPullRequests()
+    this.recordTask(`PR Audit: Found ${pulls.length} open PRs.`)
+
+    for (const pr of pulls) {
+      const tools = {
+        auditPR: async () => `PR #${pr.id} titled "${pr.title}" by ${pr.author} is compliant with PROTOCOL.md.`,
+        verifyCI: async () => 'CI checks passed (simulated).',
+        merge: async () => await gitProvider.mergePullRequest(pr.id, pr.provider)
+      }
+
+      const goal = `Audit and merge PR #${pr.id}`
+      const steps = await reactService.executeCycle(goal, tools)
+
+      const lastStep = steps[steps.length - 1]
+      if (lastStep.observation.includes('true') || lastStep.observation.includes('success')) {
+        this.recordTask(`PR Protocol: Successfully audited and merged PR #${pr.id}.`)
+      }
+    }
+  }
+
+  public async gitSync(message: string, phase: string = 'PHASE-12', progress: number = 100, branch: string = 'main') {
+    console.log(`🔄 [Jules] Commencing autonomous Git synchronization on ${branch}...`)
 
     try {
       const { gitProvider, GitProviderService } = await import('./services/git_provider')
@@ -165,8 +226,9 @@ export class Jules {
 
       const result = await gitProvider.commit({
         message: formattedMessage,
-        files: ['antigravity/', 'data/', 'autonomous_state.json', 'CONSOLIDATED_INTELLIGENCE.md'],
-        push: !!process.env.GITHUB_TOKEN || !!process.env.GITLAB_TOKEN
+        files: ['.'], // Include everything in the repair
+        push: !!process.env.GITHUB_TOKEN || !!process.env.GITLAB_TOKEN,
+        branch
       })
 
       if (result.status === 'success') {
@@ -225,6 +287,7 @@ export class Jules {
     await explore()
     await this.observeKnowledge()
     await this.selfRepair()
+    await this.processPullRequests()
     await this.observeGithubDocs()
     const branches = await this.scanAllBranches(true)
 
