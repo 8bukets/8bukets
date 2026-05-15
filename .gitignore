@@ -3,7 +3,7 @@ node_modules/
 __pycache__/
 *.pyc
 .pyc
-data/
+!data/
 results/
 links.json
 links.csv

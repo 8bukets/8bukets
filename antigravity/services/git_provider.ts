@@ -22,7 +22,7 @@ export class GitProviderService {
     try {
       // 1. Stage files
       const filesToStage = options.files.join(' ')
-      execSync(`git add ${filesToStage}`)
+      execSync(`git add -f ${filesToStage}`)
 
       // 2. Verify changes
       const status = execSync('git status --porcelain').toString().trim()
