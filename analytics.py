@@ -3,6 +3,20 @@ import argparse
 from collections import Counter
 from datetime import datetime
 import sys
+import html
+
+class Colors:
+    GREEN = '\033[92m'
+    RESET = '\033[0m'
+
+def sanitize_markdown(text):
+    """Sanitize text for Markdown tables to prevent injection."""
+    if not isinstance(text, str):
+        text = str(text)
+    # Escape HTML characters
+    text = html.escape(text)
+    # Replace pipes with HTML entity to prevent table breakage
+    return text.replace('|', '&#124;')
 
 class Colors:
     HEADER = '\033[95m'
@@ -40,12 +54,21 @@ def load_data(filepath):
         UXFormatter.error(f"File '{filepath}' not found.")
         sys.exit(1)
 
+def create_ascii_bar(value, max_value, width=20):
+    if max_value == 0:
+        return ""
+    bar_length = int((value / max_value) * width)
+    if value > 0 and bar_length == 0:
+        return "▏"
+    return "█" * bar_length
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
     # 1. Domain Analysis
     domains = [p.get('domain') for p in data if p.get('domain')]
     domain_counts = Counter(domains).most_common(10)
+    max_domain_count = domain_counts[0][1] if domain_counts else 0
 
     # 2. Category Analysis
     all_categories = []
@@ -54,6 +77,7 @@ def generate_report(data, output_file):
         if cats:
             all_categories.extend(cats)
     category_counts = Counter(all_categories).most_common(10)
+    max_category_count = category_counts[0][1] if category_counts else 0
 
     # 3. Date Analysis
     dates = []
@@ -74,10 +98,12 @@ def generate_report(data, output_file):
         years = [d.year for d in dates]
         year_counts = Counter(years).most_common()
         year_counts.sort(key=lambda x: x[0], reverse=True)
+        max_year_count = max(count for year, count in year_counts) if year_counts else 0
     else:
         start_date = "N/A"
         end_date = "N/A"
         year_counts = []
+        max_year_count = 0
 
     # 4. Author Analysis
     authors = [p.get('author') for p in data if p.get('author')]
@@ -88,32 +114,79 @@ def generate_report(data, output_file):
     md.append("# Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    md.append("\n## General Statistics")
+    # Table of Contents
+    md.append("\n## Table of Contents")
+    md.append("- [General Statistics](#general-statistics)")
+    md.append("- [Top 10 Referenced Domains](#top-10-referenced-domains)")
+    md.append("- [Top 10 Categories](#top-10-categories)")
+    md.append("- [Posts by Year](#posts-by-year)")
+    md.append("- [Authors](#authors)")
+
+    md.append("\n## 📊 General Statistics")
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append("\n[Back to Top](#table-of-contents)")
 
-    md.append("\n## Top 10 Referenced Domains")
+    md.append("\n## 🌐 Top 10 Referenced Domains")
+    md.append("| Domain | Count |")
+    md.append("| :--- | :---: |")
+    for domain, count in domain_counts:
+        md.append(f"| {sanitize_markdown(domain)} | {count} |")
+    md.append("\n## 🔗 Top 10 Referenced Domains")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
     for domain, count in domain_counts:
         md.append(f"| {domain} | {count} |")
+    md.append("\n[Back to Top](#table-of-contents)")
 
-    md.append("\n## Top 10 Categories")
+    md.append("\n## 📂 Top 10 Categories")
     md.append("| Category | Count |")
     md.append("| :--- | :---: |")
     for cat, count in category_counts:
+        md.append(f"| {sanitize_markdown(cat)} | {count} |")
         md.append(f"| {cat} | {count} |")
+    md.append("\n[Back to Top](#table-of-contents)")
 
-    md.append("\n## Posts by Year")
+    md.append("\n## 📅 Posts by Year")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
     for year, count in year_counts:
         md.append(f"| {year} | {count} |")
+    md.append("\n[Back to Top](#table-of-contents)")
+    md.append("\n## 📊 General Statistics")
+    md.append(f"- 📝 **Total Posts:** {total_posts}")
+    md.append(f"- 📅 **Date Range:** {start_date} to {end_date}")
+    md.append(f"- 🔗 **Unique Domains Linked:** {len(set(domains))}")
 
-    md.append("\n## Authors")
+    md.append("\n## 🌐 Top 10 Referenced Domains")
+    md.append("| Domain | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    for domain, count in domain_counts:
+        bar = create_ascii_bar(count, max_domain_count)
+        md.append(f"| {domain} | {count} | {bar} |")
+
+    md.append("\n## 📂 Top 10 Categories")
+    md.append("| Category | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    for cat, count in category_counts:
+        bar = create_ascii_bar(count, max_category_count)
+        md.append(f"| {cat} | {count} | {bar} |")
+
+    md.append("\n## 📅 Posts by Year")
+    md.append("| Year | Count | Distribution |")
+    md.append("| :--- | :---: | :--- |")
+    for year, count in year_counts:
+        bar = create_ascii_bar(count, max_year_count)
+        md.append(f"| {year} | {count} | {bar} |")
+
+    md.append("\n## ✍️ Authors")
     for author, count in author_counts:
+        md.append(f"- {sanitize_markdown(author)}: {count} posts")
+
+    md.append("\n---\nGenerated with ❤️ by Palette")
         md.append(f"- {author}: {count} posts")
+    md.append("\n[Back to Top](#table-of-contents)")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
@@ -125,6 +198,7 @@ def generate_report(data, output_file):
     print(f"- Total Posts: {total_posts}")
     print(f"- Unique Domains: {len(set(domains))}")
     print(f"- Date Range: {start_date} to {end_date}")
+    print(f"{Colors.GREEN}Report generated: {output_file}{Colors.RESET}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
