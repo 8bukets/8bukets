@@ -67,7 +67,8 @@ def run_typescript_cycle():
     """Execute the TypeScript autonomous work cycle."""
     logger.info("🔷 Starting TypeScript Autonomous Cycle (Antigravity)...")
     try:
-        subprocess.run(["npm", "run", "daily"], check=True)
+        # Use npx tsx to ensure it's available
+        subprocess.run(["npx", "tsx", "scripts/run_daily.ts"], check=True)
         logger.info("✅ TypeScript Cycle complete.")
     except subprocess.CalledProcessError as e:
         logger.error(f"❌ TypeScript Cycle failed: {e}")
@@ -84,7 +85,7 @@ def create_autonomous_orders():
     except:
         orders = []
 
-    pending = [o for o in orders if o["status"] == "PENDING"]
+    pending = [o for o in orders if o["status"] == "pending"]
     if len(pending) > 5:
         return
 
@@ -92,22 +93,32 @@ def create_autonomous_orders():
     new_orders = []
 
     # If no research tasks, add one
-    if not any(o["type"] == "RESEARCH" and o["status"] == "PENDING" for o in orders):
+    if not any(o["type"] == "RESEARCH" and o["status"] == "pending" for o in orders):
         new_orders.append({
             "id": f"AUTO_RESEARCH_{datetime.now().strftime('%H%M%S')}",
             "type": "RESEARCH",
             "description": "Autonomous market trend update",
-            "status": "PENDING",
+            "status": "pending",
             "created_at": datetime.now().isoformat()
         })
 
     # Add a maintenance test
-    if not any(o["type"] == "TESTING" and o["status"] == "PENDING" for o in orders):
+    if not any(o["type"] == "TESTING" and o["status"] == "pending" for o in orders):
         new_orders.append({
             "id": f"AUTO_TEST_{datetime.now().strftime('%H%M%S')}",
             "type": "TESTING",
             "description": "Routine system stability check",
-            "status": "PENDING",
+            "status": "pending",
+            "created_at": datetime.now().isoformat()
+        })
+
+    # Add system optimization
+    if not any(o["type"] == "OPTIMIZE_SYSTEM" and o["status"] == "pending" for o in orders):
+        new_orders.append({
+            "id": f"AUTO_OPTIMIZE_{datetime.now().strftime('%H%M%S')}",
+            "type": "OPTIMIZE_SYSTEM",
+            "description": "Autonomous system posture optimization",
+            "status": "pending",
             "created_at": datetime.now().isoformat()
         })
 
@@ -133,50 +144,55 @@ def process_work_orders():
 
     updated = False
     for order in orders:
-        if order["status"] == "PENDING" or order["status"] == "IN_PROGRESS":
+        if order["status"] == "pending" or order["status"] == "in_progress":
             if order["type"] == "DEPLOYMENT":
                 logger.info(f"🔔 Executing Deployment Work Order: {order['id']}")
                 try:
                     # Execute the rollout script
                     subprocess.run(["python3", "scripts/rollout_executor.py"], check=True)
-                    order["status"] = "COMPLETED"
+                    order["status"] = "completed"
                     order["updated_at"] = datetime.now().isoformat()
                     updated = True
-                    logger.info(f"✅ Deployment {order['id']} COMPLETED.")
+                    logger.info(f"✅ Deployment {order['id']} completed.")
                 except subprocess.CalledProcessError as e:
-                    logger.error(f"❌ Deployment {order['id']} FAILED: {e}")
-                    order["status"] = "FAILED"
+                    logger.error(f"❌ Deployment {order['id']} failed: {e}")
+                    order["status"] = "failed"
                     updated = True
             elif order["type"] == "TESTING":
                 logger.info(f"🧪 Executing Testing Work Order: {order['id']}")
                 try:
                     subprocess.run(["pytest"], check=True)
-                    order["status"] = "COMPLETED"
+                    order["status"] = "completed"
                     order["updated_at"] = datetime.now().isoformat()
                     updated = True
-                    logger.info(f"✅ Testing {order['id']} COMPLETED.")
+                    logger.info(f"✅ Testing {order['id']} completed.")
                 except subprocess.CalledProcessError as e:
-                    logger.error(f"❌ Testing {order['id']} FAILED: {e}")
-                    order["status"] = "FAILED"
+                    logger.error(f"❌ Testing {order['id']} failed: {e}")
+                    order["status"] = "failed"
                     updated = True
             elif order["type"] == "CONTENT_CREATION":
                 logger.info(f"📝 Executing Content Creation Work Order: {order['id']}")
-                # Simulated content generation
-                order["status"] = "COMPLETED"
-                order["updated_at"] = datetime.now().isoformat()
-                updated = True
-                logger.info(f"✅ Content Creation {order['id']} COMPLETED.")
+                try:
+                    subprocess.run(["python3", "scripts/execute_content_creation.py", order["id"], order.get("description", "")], check=True)
+                    order["status"] = "completed"
+                    order["updated_at"] = datetime.now().isoformat()
+                    updated = True
+                    logger.info(f"✅ Content Creation {order['id']} completed.")
+                except subprocess.CalledProcessError as e:
+                    logger.error(f"❌ Content Creation {order['id']} failed: {e}")
+                    order["status"] = "failed"
+                    updated = True
             elif order["type"] == "RESEARCH":
                 logger.info(f"🔍 Executing Research Work Order: {order['id']}")
                 try:
                     run_scraper()
-                    order["status"] = "COMPLETED"
+                    order["status"] = "completed"
                     order["updated_at"] = datetime.now().isoformat()
                     updated = True
-                    logger.info(f"✅ Research {order['id']} COMPLETED.")
+                    logger.info(f"✅ Research {order['id']} completed.")
                 except Exception as e:
-                    logger.error(f"❌ Research {order['id']} FAILED: {e}")
-                    order["status"] = "FAILED"
+                    logger.error(f"❌ Research {order['id']} failed: {e}")
+                    order["status"] = "failed"
                     updated = True
 
     if updated:
