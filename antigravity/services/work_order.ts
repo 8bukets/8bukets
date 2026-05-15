@@ -5,11 +5,13 @@ import { logAutonomousAction } from '../core'
 
 export const WorkOrderSchema = z.object({
   id: z.string(),
-  type: z.enum(['BOOTSTRAP_SERVICE', 'OPTIMIZE_SYSTEM', 'CONTENT_GENERATION']),
-  goal: z.string(),
-  payload: z.any(),
-  status: z.enum(['pending', 'executing', 'completed', 'failed']),
+  type: z.string(), // Allow all types, specific ones handled in dispatch
+  goal: z.string().optional(),
+  description: z.string().optional(), // Support Python-style description
+  payload: z.any().optional(),
+  status: z.enum(['pending', 'executing', 'completed', 'failed', 'in_progress']),
   created_at: z.string(),
+  updated_at: z.string().optional(),
   completed_at: z.string().optional(),
   result: z.any().optional(),
   error: z.string().optional()
@@ -106,7 +108,7 @@ export class WorkOrderService {
   }
 
   private async dispatch(order: WorkOrder) {
-    console.log(`🎬 [WorkOrder] Dispatching ${order.type}: ${order.goal}`)
+    console.log(`🎬 [WorkOrder] Dispatching ${order.type}: ${order.goal || order.description}`)
 
     switch (order.type) {
       case 'BOOTSTRAP_SERVICE':
@@ -126,7 +128,8 @@ export class WorkOrderService {
         return { appliedFixes: suggestions.length }
 
       default:
-        throw new Error(`Unknown work order type: ${order.type}`)
+        console.log(`ℹ️ [WorkOrder] Skipping unknown or external order type: ${order.type}`)
+        return { skipped: true, reason: 'external_type' }
     }
   }
 }

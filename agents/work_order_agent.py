@@ -41,7 +41,7 @@ class WorkOrderAgent(BaseAgent):
                     "id": deploy_task_id,
                     "type": "DEPLOYMENT",
                     "description": f"Execute rollout for version {version}",
-                    "status": "PENDING",
+                    "status": "pending",
                     "created_at": datetime.now().isoformat()
                 })
 
@@ -52,7 +52,7 @@ class WorkOrderAgent(BaseAgent):
                     "id": smoke_task_id,
                     "type": "TESTING",
                     "description": f"Verify system stability for version {version}",
-                    "status": "PENDING",
+                    "status": "pending",
                     "created_at": datetime.now().isoformat()
                 })
 
@@ -66,7 +66,7 @@ class WorkOrderAgent(BaseAgent):
                         "id": task_id,
                         "type": "CONTENT_CREATION",
                         "description": f"Generate structured review/content for trend: {trend}",
-                        "status": "PENDING",
+                        "status": "pending",
                         "created_at": datetime.now().isoformat()
                     })
 
@@ -76,7 +76,7 @@ class WorkOrderAgent(BaseAgent):
                     "id": "REFRESH_MARKET_INTELLIGENCE",
                     "type": "RESEARCH",
                     "description": "Perform deep scrape of market trends",
-                    "status": "PENDING",
+                    "status": "pending",
                     "created_at": datetime.now().isoformat()
                 })
 
@@ -90,18 +90,18 @@ class WorkOrderAgent(BaseAgent):
         # 4. Refine Status Transitioning
         # Identify tasks that can be picked up immediately
         for o in orders:
-            if o["status"] == "PENDING":
+            if o["status"] == "pending":
                 # Simulated pick-up: if it's a research task, we might mark it as in progress
                 if o["type"] == "RESEARCH":
-                    o["status"] = "IN_PROGRESS"
+                    o["status"] = "in_progress"
                     o["updated_at"] = datetime.now().isoformat()
 
         self._save_work_orders(orders)
 
         # 5. Prepare provides
-        pending_count = len([o for o in orders if o["status"] == "PENDING"])
-        in_progress_count = len([o for o in orders if o["status"] == "IN_PROGRESS"])
-        completed_count = len([o for o in orders if o["status"] == "COMPLETED"])
+        pending_count = len([o for o in orders if o["status"] == "pending"])
+        in_progress_count = len([o for o in orders if o["status"] == "in_progress"])
+        completed_count = len([o for o in orders if o["status"] == "completed"])
 
         status = {
             "pending_orders": pending_count,
@@ -113,7 +113,7 @@ class WorkOrderAgent(BaseAgent):
 
         return {
             "work_order_status": status,
-            "creation_queue": [o for o in orders if o["status"] != "COMPLETED"]
+            "creation_queue": [o for o in orders if o["status"] != "completed"]
         }
 
     def _load_work_orders(self) -> list:
