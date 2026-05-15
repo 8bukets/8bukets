@@ -7,7 +7,7 @@ class ReActAgent(BaseAgent):
     """
     def __init__(self):
         super().__init__("ReActAgent",
-                         dependencies=["intelligence_insights", "ai_agents_definitions", "agent_use_cases", "agent_best_practices"],
+                         dependencies=["intelligence_insights", "ai_agents_definitions", "agent_use_cases", "agent_best_practices", "google_cloud_tools_list"],
                          provides=["react_reasoning", "react_actions", "react_agent_deployment_config"])
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
@@ -17,6 +17,7 @@ class ReActAgent(BaseAgent):
         definitions = blackboard.get("ai_agents_definitions", {})
         use_cases = blackboard.get("agent_use_cases", {})
         best_practices = blackboard.get("agent_best_practices", [])
+        tools_list = blackboard.get("google_cloud_tools_list", [])
 
         reasoning_log = []
         action_log = []
@@ -60,7 +61,8 @@ class ReActAgent(BaseAgent):
                 "deployment_target": deployment_target,
                 "active_use_cases": active_use_cases,
                 "orchestration_mode": "SYNCHRONIZED",
-                "status": "READY_FOR_DEPLOYMENT"
+                "status": "READY_FOR_DEPLOYMENT",
+                "tools_integration": tools_list
             }
 
         # Prepare payload
