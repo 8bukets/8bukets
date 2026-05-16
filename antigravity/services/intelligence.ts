@@ -53,6 +53,18 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
 
   const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
 
+  report += `## 🤝 Merged Ecosystem Insights\n`
+  report += `Synergy achieved across ${branches.length} branches. Detailed knowledge and results consolidated from specialized agents.\n\n`
+  const insights = branches.filter(b => b.knowledge || (b.results && b.results !== b.lastMessage)).slice(0, 10)
+  if (insights.length > 0) {
+    insights.forEach(b => {
+      report += `- **${b.name}**: ${b.results}${b.knowledge ? ` (*Knowledge: ${b.knowledge}*)` : ''}\n`
+    })
+  } else {
+    report += `- No new specialized insights to merge at this time.\n`
+  }
+  report += `\n`
+
   report += `## 🗺️ Relationship Map\n`
   report += `### Goal Alignment\n`
   Object.entries(relationshipMap.goalAlignment).forEach(([goal, relevantBranches]: [string, any]) => {
