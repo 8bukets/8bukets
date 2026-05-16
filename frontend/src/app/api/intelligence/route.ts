@@ -67,6 +67,7 @@ export async function GET(req: Request) {
 
     // Read latest cognitive logs (fallback to file if needed, but preferably from DB in future)
     const logPath = path.join(/* turbopackIgnore: true */ process.cwd(), '../logs/autonomous.log');
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let recentLogs: any[] = [];
     if (fs.existsSync(logPath)) {
       try {

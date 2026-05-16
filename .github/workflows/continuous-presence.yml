@@ -34,8 +34,13 @@ jobs:
           npm ci
           pip install -r requirements.txt
 
+      - name: Configure Git
+        run: |
+          git config --global user.name "google-labs-jules[bot]"
+          git config --global user.email "161369871+google-labs-jules[bot]@users.noreply.github.com"
+
       - name: Execute Unified Autonomous Cycle
-        run: python3 autonomous_engine.py --token ${{ secrets.SYSTEM_AUTH_TOKEN || 'default_dev_token' }}
+        run: npm run daily
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
