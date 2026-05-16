@@ -48,6 +48,7 @@ function DashboardContent() {
 
   const { messages, append } = useChat({
     onError: (e) => setErrorMessage(e.message),
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   }) as any; // Cast to any to handle experimental useChat types in this environment
 
   useEffect(() => {
@@ -217,9 +218,11 @@ function DashboardContent() {
           <h2 className="text-xl font-semibold mb-4">AI Assistant</h2>
           <div className="flex flex-col w-full min-h-[300px]">
             <div className="flex-1 overflow-y-auto mb-4 space-y-4">
+              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
               {messages.map((message: any) => (
                 <div key={message.id} className="whitespace-pre-wrap">
                   <span className="font-bold">{message.role === "user" ? "You: " : "AI: "}</span>
+                  {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                   {message.parts ? message.parts.map((part: any, i: number) => {
                     switch (part.type) {
                       case "text":
