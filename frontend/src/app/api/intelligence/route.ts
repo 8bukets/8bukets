@@ -40,7 +40,7 @@ export async function GET(req: Request) {
     }
 
     let latestSnapshot = null;
-    let activeWorkOrders = [];
+    let activeWorkOrders: unknown[] = [];
     let systemState = null;
 
     try {
@@ -75,11 +75,11 @@ export async function GET(req: Request) {
           .filter(l => l.trim())
           .slice(-15)
           .map(l => {
-            try { return JSON.parse(l); } catch(e) { return { msg: l, time: new Date().toISOString(), type: 'raw' }; }
+            try { return JSON.parse(l); } catch { return { msg: l, time: new Date().toISOString(), type: 'raw' }; }
           })
           .reverse();
-      } catch (e) {
-        console.error('Failed to read logs:', e);
+      } catch {
+        console.error('Failed to read logs');
       }
     }
 
@@ -97,8 +97,8 @@ export async function GET(req: Request) {
         try {
           marketLinks = JSON.parse(fs.readFileSync(p, 'utf8')).slice(0, 5);
           break;
-        } catch (e) {
-          console.error(`Failed to read market data from ${p}:`, e);
+        } catch {
+          console.error(`Failed to read market data from ${p}:`);
         }
       }
     }
