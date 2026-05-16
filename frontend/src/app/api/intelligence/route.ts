@@ -40,7 +40,7 @@ export async function GET(req: Request) {
     }
 
     let latestSnapshot = null;
-    let activeWorkOrders = [];
+    let activeWorkOrders: any[] = [];
     let systemState = null;
 
     try {
