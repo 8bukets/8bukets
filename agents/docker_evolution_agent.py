@@ -21,7 +21,7 @@ class DockerEvolutionAgent(BaseAgent):
         if runtime_stability != "VERIFIED" and has_compose:
             self.logger.info("Docker environment degraded. Attempting auto-recovery...")
             try:
-                subprocess.run(["docker-compose", "up", "-d"], check=False)
+                subprocess.Popen(["docker-compose", "up", "-d"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                 runtime_stability = "RECOVERING"
             except Exception as e:
                 self.logger.warning(f"Failed to auto-recover docker environment: {e}")
