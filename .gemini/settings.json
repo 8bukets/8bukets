@@ -42,5 +42,11 @@
     "browser": {
       "sessionMode": "persistent"
     }
+  },
+  "general": {
+    "proxy": "http://my-proxy:8080"
+  },
+  "experimental": {
+    "enableAgents": true
   }
 }
