@@ -16,32 +16,79 @@ const MEMORY_PATH = path.join(process.cwd(), 'antigravity/.jules_memory.json')
 
 export class Jules {
   private memory: JulesMemory
+  private initialized: boolean = false
 
   constructor() {
-    if (fs.existsSync(MEMORY_PATH)) {
-      this.memory = JSON.parse(fs.readFileSync(MEMORY_PATH, 'utf8'))
-    } else {
-      this.memory = {
-        lastOptimization: new Date().toISOString(),
-        preferredPatterns: ['autonomousFetch', 'predictiveFetch', 'resolve'],
-        architecturalDecisions: {
-          runtime: 'Next.js 16 Node.js Runtime',
-          caching: 'Phase 4 Predictive',
-          resilience: 'Phase 5 Circuit Breaker',
-          verifiedSignature: 'SHA256:Zey4+Jcqu48gSIuuQaavasF2D7iu+J590Rr1EA3LdbA',
-          neuralSyncSignature: 'SHA256:qhno7SbhBIYwfgNgGhygt2e0kRDBlPkEqjAGdXTVOsA'
-        },
-        autonomousTasks: []
-      }
-      this.save()
+    this.memory = {
+      lastOptimization: new Date().toISOString(),
+      preferredPatterns: ['autonomousFetch', 'predictiveFetch', 'resolve'],
+      architecturalDecisions: {
+        runtime: 'Next.js 16 Node.js Runtime',
+        caching: 'Phase 4 Predictive',
+        resilience: 'Phase 5 Circuit Breaker',
+        verifiedSignature: 'SHA256:Zey4+Jcqu48gSIuuQaavasF2D7iu+J590Rr1EA3LdbA',
+        neuralSyncSignature: 'SHA256:qhno7SbhBIYwfgNgGhygt2e0kRDBlPkEqjAGdXTVOsA'
+      },
+      autonomousTasks: []
     }
   }
 
-  private save() {
+  private async ensureInitialized() {
+    if (this.initialized) return
+    await this.load()
+    this.initialized = true
+  }
+
+  private async load() {
+    // 1. Try MongoDB
+    try {
+      const { getMongoClient } = await import('./core')
+      const client = await getMongoClient()
+      const db = client.db()
+      const storedMemory = await db.collection('agent_memory').findOne({ agent: 'Jules' })
+      if (storedMemory && storedMemory.memory) {
+        this.memory = storedMemory.memory as JulesMemory
+        console.log('✅ [Jules] Cognitive memory loaded from MongoDB.')
+        this.saveLocal() // Keep local in sync
+        return
+      }
+    } catch (e: any) {
+      console.warn('⚠️ [Jules] MongoDB memory load failed, falling back to local:', e.message)
+    }
+
+    // 2. Try Local Fallback
+    if (fs.existsSync(MEMORY_PATH)) {
+      try {
+        this.memory = JSON.parse(fs.readFileSync(MEMORY_PATH, 'utf8'))
+        console.log('✅ [Jules] Cognitive memory loaded from local fallback.')
+      } catch (e) {}
+    }
+  }
+
+  private saveLocal() {
     fs.writeFileSync(MEMORY_PATH, JSON.stringify(this.memory, null, 2))
   }
 
+  private async save() {
+    this.saveLocal()
+
+    try {
+      const { getMongoClient } = await import('./core')
+      const client = await getMongoClient()
+      const db = client.db()
+      await db.collection('agent_memory').updateOne(
+        { agent: 'Jules' },
+        { $set: { agent: 'Jules', memory: this.memory, lastUpdate: new Date().toISOString() } },
+        { upsert: true }
+      )
+      console.log('✅ [Jules] Cognitive memory persisted to MongoDB.')
+    } catch (e: any) {
+      console.warn('⚠️ [Jules] MongoDB memory save failed:', e.message)
+    }
+  }
+
   public async improve() {
+    await this.ensureInitialized()
     console.log('🤖 [Jules] Analyzing current system state for improvements...')
     const suggestions = []
     if (this.memory.preferredPatterns.length < 5) {
@@ -50,21 +97,22 @@ export class Jules {
     return { status: 'learning', suggestions, memorySize: JSON.stringify(this.memory).length }
   }
 
-  public recordTask(goal: string) {
+  public async recordTask(goal: string) {
+    await this.ensureInitialized()
     this.memory.autonomousTasks.push({
       id: Math.random().toString(36).substr(2, 9),
       status: 'completed',
       goal
     })
-    this.save()
+    await this.save()
 
     // Pipe to Core Log Buffer
-    import('./core').then(core => {
-      core.logAutonomousAction(goal, 'cognitive')
-    })
+    const { logAutonomousAction } = await import('./core')
+    logAutonomousAction(goal, 'cognitive')
   }
 
   public async runDailyRoutine() {
+    await this.ensureInitialized()
     console.log('🗓️ [Jules] Executing Daily Autonomous Routine...')
     await this.selfRepair()
     await this.observeGithubDocs()
@@ -83,15 +131,16 @@ export class Jules {
 
     for (const task of tasks) {
       console.log(` - Executing: ${task.name}...`)
-      task.action()
+      await task.action()
     }
 
     this.memory.lastOptimization = new Date().toISOString()
-    this.save()
+    await this.save()
     console.log('✅ [Jules] Daily Routine Completed.')
   }
 
   public async observeGithubDocs() {
+    await this.ensureInitialized()
     console.log('📚 [Jules] Observing technical documentation from GitHub...')
     const { githubDocsObserver } = await import('./services/github_docs_observer')
     const { KnowledgeObserver } = await import('./services/knowledge_observer')
@@ -161,6 +210,7 @@ export class Jules {
   }
 
   public async selfRepair() {
+    await this.ensureInitialized()
     console.log('🔧 [Jules] Starting autonomous self-repair cycle...')
     const { evolve, applyFixes } = await import('./evolution')
     const { gitProvider } = await import('./services/git_provider')
@@ -213,6 +263,7 @@ export class Jules {
   }
 
   public async processPullRequests() {
+    await this.ensureInitialized()
     console.log('📬 [Jules] Auditing and processing Pull Requests...')
     const { gitProvider } = await import('./services/git_provider')
     const { reactService } = await import('./services/react')
@@ -230,7 +281,11 @@ export class Jules {
         merge: async () => await gitProvider.mergePullRequest(pr.id, pr.provider)
       }
 
-      const goal = `Audit and merge PR #${pr.id}`
+      const isAutonomous = pr.title.includes('🤖') || pr.title.toLowerCase().includes('autonomous')
+      const goal = isAutonomous
+        ? `Audit and merge autonomous evolution PR #${pr.id}. Ensure CI passes before merging.`
+        : `Audit and merge PR #${pr.id}. Verify compliance with system protocols.`
+
       const steps = await reactService.executeCycle(goal, tools)
 
       const lastStep = steps[steps.length - 1]
@@ -272,6 +327,7 @@ export class Jules {
   }
 
   public async auditDependencies() {
+    await this.ensureInitialized()
     console.log('📦 [Jules] Auditing dependency sovereignty...')
     const { execSync } = await import('child_process')
     try {
@@ -314,13 +370,20 @@ export class Jules {
     try {
       const client = await getMongoClient()
       const db = client.db()
+
+      const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL)
+      const cloudProvider = process.env.GITHUB_ACTIONS ? 'github-actions' : (process.env.GITLAB_CI ? 'gitlab-ci' : (process.env.VERCEL ? 'vercel' : 'none'))
+
       const presence = {
         agent: 'Jules',
         status: 'online',
         lastSeen: new Date().toISOString(),
         version: '1.2.0-alpha',
         capabilities: ['git-sync', 'self-repair', 'knowledge-ingestion', 'pr-audit'],
-        environment: process.env.GITHUB_ACTIONS ? 'github-actions' : (process.env.GITLAB_CI ? 'gitlab-ci' : 'local')
+        environment: isCloud ? 'cloud' : 'local',
+        execution_mode: isCloud ? 'cloud' : 'local',
+        cloud_provider: cloudProvider,
+        workflow_id: process.env.GITHUB_RUN_ID || process.env.CI_PIPELINE_ID || 'local'
       }
 
       await db.collection('agent_presence').updateOne(
@@ -328,14 +391,15 @@ export class Jules {
         { $set: presence },
         { upsert: true }
       )
-      console.log('✅ [Jules] Online presence heartbeated to MongoDB.')
-      this.recordTask('Presence Sync: Heartbeat broadcasted.')
+      console.log(`✅ [Jules] Online presence heartbeated to MongoDB (Mode: ${presence.execution_mode}).`)
+      await this.recordTask(`Presence Sync: Heartbeat broadcasted (${presence.execution_mode}).`)
     } catch (err: any) {
       console.warn('⚠️ [Jules] Presence sync failed:', err.message)
     }
   }
 
   public async executeWorkCycle() {
+    await this.ensureInitialized()
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
     await this.syncPresence()
 
@@ -413,6 +477,7 @@ export class Jules {
   private readonly SCAN_CACHE_TTL = 1000 * 60 * 5 // 5 minutes
 
   public async scanAllBranches(force: boolean = false) {
+    await this.ensureInitialized()
     if (!force && this.cachedBranchIntelligence && (Date.now() - this.lastScanTimestamp < this.SCAN_CACHE_TTL)) {
       return this.cachedBranchIntelligence
     }
@@ -455,6 +520,7 @@ export class Jules {
   }
 
   public async observeKnowledge() {
+    await this.ensureInitialized()
     console.log('🧠 [Jules] Observing new knowledge foundations...')
 
     const { observeKnowledge: scanUrl } = await import('./services/knowledge')
