@@ -2663,3 +2663,63 @@
   - **Result:** implement AI agent knowledge from Google Cloud Discover (#1529)
 - **Branch:** remotes/origin/wilson-sonsini-docs-9972618481466643391
   - **Result:** add Wilson Sonsini firm profile and practice areas
+
+## Autonomous Observation
+- **Date**: 2026-05-16T21:03:20.892Z
+- **Target**: https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU
+- **Title**: Understanding bidding basics - Google Ads Help
+- **Relationship Map**: Confirmed relationship with https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU (Title: Understanding bidding basics - Google Ads Help) as an intelligence source.
+
+## Autonomous Observation
+- **Date**: 2026-05-16T21:03:22.067Z
+- **Target**: https://business.google.com/uk/ad-tools/bidding/
+- **Title**: Google Ads Smart Bidding - AI-Driven Bid Optimisations & Ad Spend
+- **Relationship Map**: Confirmed relationship with https://business.google.com/uk/ad-tools/bidding/ (Title: Google Ads Smart Bidding - AI-Driven Bid Optimisations & Ad Spend) as an intelligence source.
+
+## Autonomous Observation
+- **Date**: 2026-05-16T21:03:23.328Z
+- **Target**: https://business.google.com/uk/resources/
+- **Title**: Tips & Resources for Online Advertising – Google Ads
+- **Relationship Map**: Confirmed relationship with https://business.google.com/uk/resources/ (Title: Tips & Resources for Online Advertising – Google Ads) as an intelligence source.
+
+## Autonomous Observation
+- **Date**: 2026-05-16T21:03:24.568Z
+- **Target**: https://developers.google.com/ad-manager
+- **Title**: Ad Manager  |  Google for DevelopersGoogleGoogle
+- **Relationship Map**: Confirmed relationship with https://developers.google.com/ad-manager (Title: Ad Manager  |  Google for DevelopersGoogleGoogle) as an intelligence source.
+
+## Autonomous Observation
+- **Date**: 2026-05-16T21:03:25.737Z
+- **Target**: https://developers.google.com/ad-manager/dynamic-ad-insertion
+- **Title**: Dynamic Ad Insertion  |  Google for DevelopersGoogleGoogle
+- **Relationship Map**: Confirmed relationship with https://developers.google.com/ad-manager/dynamic-ad-insertion (Title: Dynamic Ad Insertion  |  Google for DevelopersGoogleGoogle) as an intelligence source.
+
+## Autonomous Observation
+- **Date**: 2026-05-16T21:03:27.201Z
+- **Target**: https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service
+- **Title**: DAI Full Service API  |  Google for DevelopersGoogleGoogle
+- **Relationship Map**: Confirmed relationship with https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service (Title: DAI Full Service API  |  Google for DevelopersGoogleGoogle) as an intelligence source.
+
+## Autonomous Observation
+- **Date**: 2026-05-16T21:03:29.034Z
+- **Target**: https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving
+- **Title**: DAI Pod Serving API  |  Google for DevelopersGoogleGoogle
+- **Relationship Map**: Confirmed relationship with https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving (Title: DAI Pod Serving API  |  Google for DevelopersGoogleGoogle) as an intelligence source.
+
+## Autonomous Observation
+- **Date**: 2026-05-16T21:03:30.488Z
+- **Target**: https://developers.google.com/ad-manager/api/start
+- **Title**: Get started  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle
+- **Relationship Map**: Confirmed relationship with https://developers.google.com/ad-manager/api/start (Title: Get started  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle) as an intelligence source.
+
+## Autonomous Observation
+- **Date**: 2026-05-16T21:03:31.581Z
+- **Target**: https://admanager.google.com/home/resources/
+- **Title**: Resources Overview - Google Ad Manager
+- **Relationship Map**: Confirmed relationship with https://admanager.google.com/home/resources/ (Title: Resources Overview - Google Ad Manager) as an intelligence source.
+
+## Autonomous Observation
+- **Date**: 2026-05-16T21:03:33.890Z
+- **Target**: https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
+- **Title**: ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation
+- **Relationship Map**: Confirmed relationship with https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview (Title: ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation) as an intelligence source.
