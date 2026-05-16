@@ -1,0 +1,5 @@
+[template]
+  required-extensions = ["supabase"]
+
+[template.environment]
+  MONGODB_URI = "Set your MongoDB cluster connection string"
