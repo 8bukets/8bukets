@@ -1,13 +1,14 @@
 {
   "metadata": {
-    "generated_at": "2026-05-15T12:02:22.794Z",
+    "generated_at": "2026-05-16T02:16:38.410Z",
     "version": 1,
     "sources_processed": [
       "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/README.md",
       "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/features.md",
       "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/installation.md",
       "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/gettingStarted.md",
-      "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/support.md"
+      "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/support.md",
+      "local://.github/PULL_REQUEST_TEMPLATE.md"
     ]
   },
   "sections": {},
@@ -41,7 +42,7 @@
       ],
       "metadata": {
         "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/README.md",
-        "ingestedAt": "2026-05-15T12:02:22.416Z"
+        "ingestedAt": "2026-05-16T02:16:38.039Z"
       }
     },
     "Intelephense: features": {
@@ -117,7 +118,7 @@
       ],
       "metadata": {
         "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/features.md",
-        "ingestedAt": "2026-05-15T12:02:22.515Z"
+        "ingestedAt": "2026-05-16T02:16:38.136Z"
       }
     },
     "Intelephense: installation": {
@@ -165,7 +166,7 @@
       ],
       "metadata": {
         "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/installation.md",
-        "ingestedAt": "2026-05-15T12:02:22.596Z"
+        "ingestedAt": "2026-05-16T02:16:38.230Z"
       }
     },
     "Intelephense: gettingStarted": {
@@ -193,7 +194,7 @@
       ],
       "metadata": {
         "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/gettingStarted.md",
-        "ingestedAt": "2026-05-15T12:02:22.691Z"
+        "ingestedAt": "2026-05-16T02:16:38.318Z"
       }
     },
     "Intelephense: support": {
@@ -205,7 +206,39 @@
       ],
       "metadata": {
         "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/support.md",
-        "ingestedAt": "2026-05-15T12:02:22.794Z"
+        "ingestedAt": "2026-05-16T02:16:38.410Z"
+      }
+    },
+    "System: .github/PULL_REQUEST_TEMPLATE.md": {
+      "sections": [
+        {
+          "header": "Pull Request Template",
+          "content": ""
+        },
+        {
+          "header": "Summary",
+          "content": "Describe the changes in this pull request and why they are needed."
+        },
+        {
+          "header": "Type of change",
+          "content": "- [ ] Bug fix\n- [ ] New feature\n- [ ] Documentation\n- [ ] CI / Build change"
+        },
+        {
+          "header": "Related issues",
+          "content": "Resolves: # (issue)"
+        },
+        {
+          "header": "Checklist",
+          "content": "- [ ] I have read the contributing guidelines\n- [ ] I have added tests that prove my fix is effective or that my feature works\n- [ ] I have added necessary documentation (if appropriate)\n- [ ] The PR is ready for review"
+        },
+        {
+          "header": "Testing steps",
+          "content": "Describe how reviewers can test the changes locally or in CI.\n\n<!-- Please delete any sections that are not relevant. -->"
+        }
+      ],
+      "metadata": {
+        "source": "local://.github/PULL_REQUEST_TEMPLATE.md",
+        "ingestedAt": "2026-05-16T02:16:37.854Z"
       }
     }
   }

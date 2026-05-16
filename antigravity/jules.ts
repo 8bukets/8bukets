@@ -105,6 +105,23 @@ export class Jules {
       { owner: 'bmewburn', repo: 'intelephense-docs', path: 'support.md' }
     ]
 
+    // Phase 15: Ingest local system documentation
+    const systemDirs = ['.github', 'antigravity']
+    for (const dir of systemDirs) {
+      const fullDir = path.join(process.cwd(), dir)
+      if (fs.existsSync(fullDir)) {
+        const files = fs.readdirSync(fullDir).filter(f => f.endsWith('.md') || f.endsWith('.yml'))
+        for (const file of files) {
+          try {
+            const content = fs.readFileSync(path.join(fullDir, file), 'utf8')
+            const knowledge = KnowledgeObserver.processContent(`System: ${dir}/${file}`, content, `local://${dir}/${file}`)
+            await observer.persistKnowledge(knowledge)
+            console.log(` ✅ [Jules] Ingested Local Knowledge: ${dir}/${file}`)
+          } catch (e) {}
+        }
+      }
+    }
+
     const allKnowledge: any[] = []
 
     for (const doc of docsToObserve) {
@@ -282,8 +299,37 @@ export class Jules {
     }
   }
 
+  public async syncPresence() {
+    console.log('📡 [Jules] Synchronizing online presence...')
+    const { getMongoClient } = await import('./core')
+    try {
+      const client = await getMongoClient()
+      const db = client.db()
+      const presence = {
+        agent: 'Jules',
+        status: 'online',
+        lastSeen: new Date().toISOString(),
+        version: '1.2.0-alpha',
+        capabilities: ['git-sync', 'self-repair', 'knowledge-ingestion', 'pr-audit'],
+        environment: process.env.GITHUB_ACTIONS ? 'github-actions' : (process.env.GITLAB_CI ? 'gitlab-ci' : 'local')
+      }
+
+      await db.collection('agent_presence').updateOne(
+        { agent: 'Jules' },
+        { $set: presence },
+        { upsert: true }
+      )
+      console.log('✅ [Jules] Online presence heartbeated to MongoDB.')
+      this.recordTask('Presence Sync: Heartbeat broadcasted.')
+    } catch (err: any) {
+      console.warn('⚠️ [Jules] Presence sync failed:', err.message)
+    }
+  }
+
   public async executeWorkCycle() {
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
+    await this.syncPresence()
+
     const { explore } = await import('./explorer')
     const { workOrderService } = await import('./services/work_order')
 
