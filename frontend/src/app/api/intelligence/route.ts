@@ -51,7 +51,7 @@ export async function GET(req: Request) {
       const [snapshot, workOrders, state] = await Promise.all([
         db.collection('system_intelligence').findOne({}, { sort: { timestamp: -1 } }),
         db.collection('work_orders')
-          .find({ status: { $in: ['pending', 'executing', 'PENDING', 'IN_PROGRESS'] } })
+          .find({ status: { $in: ['pending', 'executing', 'in_progress'] } })
           .sort({ created_at: -1 })
           .limit(5)
           .toArray(),

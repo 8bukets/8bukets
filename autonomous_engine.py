@@ -129,7 +129,6 @@ def create_autonomous_orders():
     except:
         orders = []
 
-    pending = [o for o in orders if o["status"] in ["PENDING", "pending"]]
     pending = [o for o in orders if o["status"] == "pending"]
     if len(pending) > 5:
         return

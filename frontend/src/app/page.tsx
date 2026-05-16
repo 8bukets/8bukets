@@ -21,6 +21,11 @@ type IntelligenceResponse = {
       market_trends: string[];
     };
   } | null;
+  state: {
+    execution_mode?: string;
+    cloud_provider?: string;
+    last_sync?: string;
+  } | null;
   workOrders: {
     id: string;
     type: string;
@@ -78,9 +83,20 @@ function DashboardContent() {
             <h1 className="text-4xl font-bold tracking-tight mb-2">Googleov Full-Stack Ekosustav</h1>
             <p className="text-zinc-500">Autonomous Cloud Intelligence Layer v{intel?.snapshot?.evolution?.parameter_shifts?.current_version || '1.0'}</p>
           </div>
-          <div className="flex items-center gap-2 px-3 py-1 bg-green-500/10 text-green-500 rounded-full text-xs font-bold animate-pulse">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            SYSTEM ONLINE
+          <div className="flex flex-col items-end gap-2">
+            <div className="flex items-center gap-2 px-3 py-1 bg-green-500/10 text-green-500 rounded-full text-xs font-bold animate-pulse">
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              SYSTEM ONLINE
+            </div>
+            {intel?.state?.execution_mode === 'cloud' && (
+              <div className="flex items-center gap-2 px-3 py-1 bg-blue-500/10 text-blue-500 rounded-full text-[10px] font-bold border border-blue-500/20">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                CLOUD AUTONOMY ACTIVE ({intel.state.cloud_provider?.toUpperCase()})
+              </div>
+            )}
           </div>
         </div>
 

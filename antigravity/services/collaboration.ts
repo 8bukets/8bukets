@@ -99,6 +99,9 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
   const branches = branchIntelligence || await jules.scanAllBranches()
   const workOrders = await workOrderService.getPendingOrders()
 
+  const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL)
+  const cloudProvider = process.env.GITHUB_ACTIONS ? 'github-actions' : (process.env.GITLAB_CI ? 'gitlab-ci' : (process.env.VERCEL ? 'vercel' : 'none'))
+
   const newState = {
     ...currentState,
     mission: metadata.missionStatement,
@@ -108,6 +111,8 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
       branches: branches.length,
       pendingTasks: workOrders.length
     },
+    execution_mode: isCloud ? 'cloud' : 'local',
+    cloud_provider: cloudProvider,
     last_sync: new Date().toISOString()
   }
 
