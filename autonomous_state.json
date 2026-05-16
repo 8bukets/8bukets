@@ -15,6 +15,10 @@
         }
     ],
     "docker": {
+        "status": "simulated",
+        "containerCount": 2,
+        "simulated": true,
+        "timestamp": "2026-05-16T05:20:42.096Z"
         "status": "disconnected",
         "containerCount": 0,
         "simulated": false,
@@ -24,6 +28,11 @@
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
+        "timestamp": 1778908842097,
+        "url": "http://localhost:8080/job/antigravity-pipeline/42/"
+    },
+    "intelligence": {
+        "branches": 1704,
         "timestamp": 1778902439982,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
@@ -68,6 +77,7 @@
             },
             "goalAlignment": {
                 "Achieve full autonomous work cycles.": [
+                    "jules-5846096999198047757-c3093f0a",
                     "jules-13937591330884389226-42d325ef",
                     "main",
                     "remotes/origin/add-google-edge-agent-9371392929328195231",
@@ -372,6 +382,12 @@
                     "name": "Intelephense: support",
                     "status": "Ingested",
                     "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/support.md"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "software info by fk – software-online-review – Filip Keser",
+                    "status": "Ingested",
+                    "source": "https://software-online-review.com"
                 },
                 {
                     "type": "Documentation",
@@ -970,5 +986,6 @@
             ]
         }
     },
+    "last_sync": "2026-05-16T05:20:54.843Z"
     "last_sync": "2026-05-16T03:34:00.055Z"
 }
