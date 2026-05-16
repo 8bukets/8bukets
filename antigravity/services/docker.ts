@@ -1,6 +1,9 @@
-import { execSync } from 'child_process'
+import { execSync, exec } from 'child_process'
+import { promisify } from 'util'
 import { z } from 'zod'
 import { autonomousFetch } from '@/antigravity/core'
+
+const execAsync = promisify(exec)
 
 /**
  * ANTIGRAVITY DOCKER CONNECTIVITY SERVICE (Phase 1)
@@ -49,6 +52,23 @@ export async function getDockerFleetStatus(): Promise<DockerContainer[]> {
 
 export async function checkDockerHealth() {
   const fleet = await getDockerFleetStatus()
+  let isHealthy = fleet.length > 0
+  let isRecovering = false
+
+  if (!isHealthy) {
+    try {
+      // Use async exec to prevent blocking the event loop
+      execAsync('docker-compose up -d').catch(e => {
+        console.warn('⚠️ [Docker] Async recovery failed.', e)
+      })
+      isRecovering = true
+    } catch (e) {
+      console.warn('⚠️ [Docker] Failed to initiate recovery.', e)
+    }
+  }
+
+  return {
+    status: isHealthy ? 'optimal' : (isRecovering ? 'recovering' : 'disconnected'),
   const isSimulated = process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true' || fleet.some(c => c.id.startsWith('fallback'))
   const isHealthy = fleet.length > 0
 
