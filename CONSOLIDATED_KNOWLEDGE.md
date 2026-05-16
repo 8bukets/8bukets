@@ -1,6 +1,6 @@
 # Consolidated Knowledge Base
 
-**Last Sync (Python):** 2026-05-15T08:30:21.985125
+**Last Sync (Python):** 2026-05-16T06:02:04.185742
 **System Version:** 1.69
 
 ## System Intelligence & Outlook
@@ -50,7 +50,23 @@ Think of Jules Tools as both a command surface and a dashboard for your coding a
 
 ### Knowledge Merge
 
-Knowledge Merge is a process or document that merges key concepts currently spread across Antigravity, Project SOR, the live software-online-review.com domain, and the new software-review-platform starter. It creates one canonical map of what each layer is, what role it plays, and how the project should evolve. All the best - https://markposition.wordpress.com
+Knowledge Merge is a process or document that merges key concepts currently spread across Antigravity, Project SOR, the live software-online-review.com domain, and the new software-review-platform starter. It creates one canonical map of what each layer is, what role it plays, and how the project should evolve.
+
+### Gemini CLI Remote Subagents
+
+Gemini CLI supports connecting to remote subagents using the Agent-to-Agent (A2A) protocol. This allows Gemini CLI to interact with other agents, expanding its capabilities by delegating tasks to remote services.
+
+Remote subagents are defined as Markdown files (.md) with YAML frontmatter. You can place them in:
+- Project-level: .gemini/agents/*.md (Shared with your team)
+- User-level: ~/.gemini/agents/*.md (Personal agents)
+
+Configuration schema requires 'kind' (must be 'remote'), 'name' (unique slug), 'agent_card_url' or 'agent_card_json', and optionally 'auth'.
+
+Auth supports several types:
+- apiKey: Sends a static API key as an HTTP header.
+- http: HTTP authentication (Bearer token, Basic credentials, or any IANA-registered scheme).
+- google-credentials: Uses Google Application Default Credentials (ADC) to authenticate with Google Cloud services and Cloud Run endpoints.
+- oauth: Performs an interactive OAuth 2.0 Authorization Code flow with PKCE.
 
 ### What is an AI agent?
 
@@ -230,7 +246,7 @@ Google Cloud provides a portfolio of products and solutions in the AI agent spac
 
 
 ## 2. Market Intelligence (Markposition)
-Total Market Data Points: 679
+Total Market Data Points: 350
 
 - **advertising.amazon**: https://advertising.amazon.com/ (October 5, 2022)
 - **Drive Advertising Revenue with Google Ad Manager : Google**: https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager (September 26, 2022)
