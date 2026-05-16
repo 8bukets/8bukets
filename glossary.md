@@ -33,8 +33,4 @@ To compile means to gather information from various sources and arrange it into 
 
 ## Knowledge Merge
 
-Knowledge Merge is a process or document that merges key concepts currently spread across Antigravity, Project SOR, the live software-online-review.com domain, and the new software-review-platform starter. It creates one canonical map of what each layer is, what role it plays, and how the project should evolve. All the best - https://markposition.wordpress.com
-
-## Subagents
-
-Subagents are specialized agents that operate within a main agent session (e.g., Gemini CLI). They are designed to handle specific, complex tasks—like deep codebase analysis, documentation lookup, or domain-specific reasoning—without cluttering the main agent’s context or toolset. Each subagent has its own focused system prompt, specialized tools, and an independent context window. Interactions happen in a separate context loop to save tokens in the main conversation history.
+Knowledge Merge is a process or document that merges key concepts currently spread across Antigravity, Project SOR, the live software-online-review.com domain, and the new software-review-platform starter. It creates one canonical map of what each layer is, what role it plays, and how the project should evolve.

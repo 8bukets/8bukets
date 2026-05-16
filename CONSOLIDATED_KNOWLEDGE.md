@@ -53,7 +53,43 @@ Think of Jules Tools as both a command surface and a dashboard for your coding a
 
 ### Knowledge Merge
 
-Knowledge Merge is a process or document that merges key concepts currently spread across Antigravity, Project SOR, the live software-online-review.com domain, and the new software-review-platform starter. It creates one canonical map of what each layer is, what role it plays, and how the project should evolve. All the best - https://markposition.wordpress.com
+Knowledge Merge is a process or document that merges key concepts currently spread across Antigravity, Project SOR, the live software-online-review.com domain, and the new software-review-platform starter. It creates one canonical map of what each layer is, what role it plays, and how the project should evolve.
+
+### Gemini CLI Remote Subagents
+
+Gemini CLI supports connecting to remote subagents using the Agent-to-Agent (A2A) protocol. This allows Gemini CLI to interact with other agents, expanding its capabilities by delegating tasks to remote services.
+
+Gemini CLI can connect to any compliant A2A agent. You can find samples of A2A agents in the following repositories:
+- ADK Samples (Python)
+- ADK Python Contributing Samples
+
+Proxy support:
+Gemini CLI routes traffic to remote agents through an HTTP/HTTPS proxy if one is configured. It uses the general.proxy setting in your settings.json file or standard environment variables (HTTP_PROXY, HTTPS_PROXY).
+
+Defining remote subagents:
+Remote subagents are defined as Markdown files (.md) with YAML frontmatter. You can place them in:
+- Project-level: .gemini/agents/*.md (Shared with your team)
+- User-level: ~/.gemini/agents/*.md (Personal agents)
+
+Configuration schema requires:
+- kind (Must be remote)
+- name (Unique slug)
+- agent_card_url or agent_card_json
+- auth (Authentication configuration)
+
+Supported auth types:
+- apiKey: Send a static API key as an HTTP header (supports dynamic values).
+- http: HTTP authentication (Bearer token, Basic credentials, or any IANA-registered scheme).
+- google-credentials: Uses Google Application Default Credentials (ADC) to authenticate with Google Cloud services and Cloud Run endpoints.
+- oauth: OAuth 2.0 Authorization Code flow with PKCE.
+
+Managing Subagents via commands:
+- /agents list: Displays all available local and remote subagents.
+- /agents reload: Reloads the agent registry.
+- /agents enable <agent_name>: Enables a specific subagent.
+- /agents disable <agent_name>: Disables a specific subagent.
+
+
 
 ### Gemini CLI Remote Subagents
 

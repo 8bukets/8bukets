@@ -2,6 +2,8 @@
 
 import { useChat } from "@ai-sdk/react";
 import { useEffect, useState } from 'react';
+import { TelemetryProvider } from '@/lib/telemetry-context';
+import { TelemetryHeader } from '@/components/telemetry/TelemetryHeader';
 
 type StatusResponse = {
   supabase: { status: string; error: string | null };
@@ -37,15 +39,16 @@ type IntelligenceResponse = {
   }[];
 };
 
-export default function Home() {
+function DashboardContent() {
   const [status, setStatus] = useState<StatusResponse | null>(null);
   const [intel, setIntel] = useState<IntelligenceResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [input, setInput] = useState("");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const { messages, sendMessage } = useChat({
-    onError: async (e) => setErrorMessage(e.message),
-  });
+
+  const { messages, append } = useChat({
+    onError: (e) => setErrorMessage(e.message),
+  }) as any; // Cast to any to handle experimental useChat types in this environment
 
   useEffect(() => {
     async function fetchData() {
@@ -67,9 +70,8 @@ export default function Home() {
     fetchData();
   }, []);
 
-
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start max-w-4xl w-full">
         <div className="flex flex-col sm:flex-row justify-between items-end w-full gap-4">
           <div>
@@ -81,6 +83,9 @@ export default function Home() {
             SYSTEM ONLINE
           </div>
         </div>
+
+        {/* Live Telemetry Header */}
+        <TelemetryHeader />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
           {/* Section 1: Health & Connectivity */}
@@ -207,21 +212,22 @@ export default function Home() {
           </div>
         </div>
 
+        {/* AI Assistant Section */}
         <div className="w-full mt-4 bg-white dark:bg-zinc-900 rounded-xl shadow-md p-6 border border-zinc-200 dark:border-zinc-800">
           <h2 className="text-xl font-semibold mb-4">AI Assistant</h2>
           <div className="flex flex-col w-full min-h-[300px]">
             <div className="flex-1 overflow-y-auto mb-4 space-y-4">
-              {messages.map((message) => (
+              {messages.map((message: any) => (
                 <div key={message.id} className="whitespace-pre-wrap">
                   <span className="font-bold">{message.role === "user" ? "You: " : "AI: "}</span>
-                  {message.parts.map((part, i) => {
+                  {message.parts ? message.parts.map((part: any, i: number) => {
                     switch (part.type) {
                       case "text":
                         return <span key={`${message.id}-${i}`}>{part.text}</span>;
                       default:
                         return null;
                     }
-                  })}
+                  }) : (typeof message.content === 'string' ? message.content : JSON.stringify(message.content))}
                 </div>
               ))}
             </div>
@@ -233,7 +239,8 @@ export default function Home() {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                sendMessage({ text: input });
+                if (!input.trim()) return;
+                append({ role: 'user', content: input });
                 setInput("");
                 setErrorMessage(null);
               }}
@@ -282,42 +289,14 @@ export default function Home() {
           </ul>
         </div>
       </main>
-
-      <div className="flex flex-col w-full max-w-md py-24 mx-auto stretch">
-        {messages.map((message) => (
-          <div key={message.id} className="whitespace-pre-wrap">
-            {message.role === "user" ? "User: " : "AI: "}
-            {message.parts.map((part, i) => {
-              switch (part.type) {
-                case "text":
-                  return <div key={`${message.id}-${i}`}>{part.text}</div>;
-                default:
-                  return null;
-              }
-            })}
-          </div>
-        ))}
-
-        {errorMessage && (
-          <div className="text-red-500 text-sm mb-4">{errorMessage}</div>
-        )}
-
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            sendMessage({ text: input });
-            setInput("");
-            setErrorMessage(null);
-          }}
-        >
-          <input
-            className="fixed dark:bg-zinc-900 bottom-0 w-full max-w-md p-2 mb-8 border border-zinc-300 dark:border-zinc-800 rounded shadow-xl"
-            value={input}
-            placeholder="Say something..."
-            onChange={(e) => setInput(e.currentTarget.value)}
-          />
-        </form>
-      </div>
     </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <TelemetryProvider>
+      <DashboardContent />
+    </TelemetryProvider>
   );
 }
