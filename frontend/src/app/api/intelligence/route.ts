@@ -42,10 +42,6 @@ export async function GET(req: Request) {
     let latestSnapshot: Record<string, unknown> | null = null;
     let activeWorkOrders: Record<string, unknown>[] = [];
     let systemState: Record<string, unknown> | null = null;
-    let latestSnapshot = null;
-    let activeWorkOrders: any[] = [];
-    let activeWorkOrders: unknown[] = [];
-    let systemState = null;
 
     // Phase 12 Optimization: Unified Database Probing with Graceful Degradation
     try {
