@@ -5,47 +5,7 @@
         },
         "episodic": [
             {
-                "timestamp": "2026-05-16T03:42:48.206300",
-                "event": "episodic_event",
-                "data": "episodic_data"
-            },
-            {
-                "timestamp": "2026-05-16T03:42:49.544000",
-                "event": "episodic_event",
-                "data": "episodic_data"
-            },
-            {
-                "timestamp": "2026-05-16T03:44:29.426427",
-                "event": "episodic_event",
-                "data": "episodic_data"
-            },
-            {
-                "timestamp": "2026-05-16T03:44:40.234157",
-                "event": "episodic_event",
-                "data": "episodic_data"
-            },
-            {
-                "timestamp": "2026-05-16T03:46:39.744263",
-                "event": "episodic_event",
-                "data": "episodic_data"
-            },
-            {
-                "timestamp": "2026-05-16T03:46:44.566134",
-                "event": "episodic_event",
-                "data": "episodic_data"
-            },
-            {
-                "timestamp": "2026-05-16T03:51:54.466900",
-                "event": "episodic_event",
-                "data": "episodic_data"
-            },
-            {
-                "timestamp": "2026-05-16T03:52:04.818517",
-                "event": "episodic_event",
-                "data": "episodic_data"
-            },
-            {
-                "timestamp": "2026-05-16T03:52:14.944805",
+                "timestamp": "2026-05-16T02:19:14.891531",
                 "event": "episodic_event",
                 "data": "episodic_data"
             }
@@ -56,35 +16,6 @@
             "test_compatibility_persona": "Compatibility Enthusiast",
             "last_primary_persona": "General Tech Enthusiast",
             "new_key": "new_val"
-        },
-        "episodic": []
-    },
-    "RobotTxtAgent": {
-        "long_term": {
-            "disallowed_paths": [
-                "/public.api/",
-                "/mshots/v1/",
-                "/wp-admin/",
-                "/wp-login.php",
-                "/remote-login.php",
-                "/wp-signup.php",
-                "/cgi-bin/",
-                "/next/",
-                "/press-this.php",
-                "/activate/"
-            ]
-        },
-        "episodic": []
-    },
-    "BidAgent": {
-        "long_term": {
-            "adjustment_factor": 1.030301
-        },
-        "episodic": []
-    },
-    "AutonomousIntelligenceAgent": {
-        "long_term": {
-            "system_health": "healthy"
         },
         "episodic": []
     }

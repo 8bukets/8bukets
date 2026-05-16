@@ -1,7 +1,7 @@
 {
     "metadata": {
-        "generated_at": "2026-05-16T03:51:56.675284",
-        "version": 1.71,
+        "generated_at": "2026-05-16T01:10:04.347267",
+        "version": 1.76,
         "sources_processed": [
             "ai_agents_knowledge.json",
             "links.json",
@@ -12,6 +12,169 @@
             "stitch_docs.json",
             "vscode_intelephense_docs.json"
         ]
+  "metadata": {
+    "generated_at": "2026-05-16T02:32:49.466Z",
+    "version": 1,
+    "sources_processed": [
+      "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/README.md",
+      "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/features.md",
+      "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/installation.md",
+      "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/gettingStarted.md",
+      "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/support.md",
+      "local://.github/PULL_REQUEST_TEMPLATE.md",
+      "local://.github/ISSUE_TEMPLATE/bug_report.md",
+      "local://.github/ISSUE_TEMPLATE/feature_request.md",
+      "local://.github/workflows/antigravity-daily.yml",
+      "local://.github/workflows/apply-protections.yml",
+      "local://.github/workflows/auto-merge.yml",
+      "local://.github/workflows/autonomous_cycle.yml",
+      "local://.github/workflows/branch-cleanup.yml",
+      "local://.github/workflows/ci.yml",
+      "local://.github/workflows/continuous-presence.yml",
+      "local://antigravity/actions/user.ts",
+      "local://antigravity/backup.ts",
+      "local://antigravity/core.test.ts",
+      "local://antigravity/core.ts",
+      "local://antigravity/empty.ts",
+      "local://antigravity/evolution.ts",
+      "local://antigravity/explorer.ts",
+      "local://antigravity/jules.ts",
+      "local://antigravity/optimization.ts",
+      "local://antigravity/run_daily.ts",
+      "local://antigravity/services/analytics.ts",
+      "local://antigravity/services/cognitive_security.ts",
+      "local://antigravity/services/collaboration.test.ts",
+      "local://antigravity/services/collaboration.ts",
+      "local://antigravity/services/content.ts",
+      "local://antigravity/services/docker.ts",
+      "local://antigravity/services/git_provider.ts",
+      "local://antigravity/services/github_docs_observer.ts",
+      "local://antigravity/services/intelligence.ts",
+      "local://antigravity/services/jenkins.ts",
+      "local://antigravity/services/knowledge.ts",
+      "local://antigravity/services/knowledge_observer.test.ts",
+      "local://antigravity/services/knowledge_observer.ts",
+      "local://antigravity/services/neural.ts",
+      "local://antigravity/services/notification.ts",
+      "local://antigravity/services/persistence.ts",
+      "local://antigravity/services/react.ts",
+      "local://antigravity/services/relay.ts",
+      "local://antigravity/services/stats.ts",
+      "local://antigravity/services/user.ts",
+      "local://antigravity/services/work_order.ts",
+      "local://antigravity/singularity.ts",
+      "local://antigravity/synthesis.ts"
+    ]
+  },
+  "sections": {},
+  "typescript_sections": {
+    "Intelephense: README": {
+      "sections": [
+        {
+          "header": "Intelephense",
+          "content": "Intelephense is a high performance, cross platform PHP language server adhering to the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/).\n\nWhen paired with an LSP capable editor it provides an essential set of code intelligence features that give a PHP developer a productive and rich editing experience.\n\nThis is proprietary software released to end users under a \"freemium\" model. Many of the features are provided free of charge. Access to all current and future features can be obtained by purchasing a licence key at https://intelephense.com."
+        },
+        {
+          "header": "[Installation](installation.md)",
+          "content": ""
+        },
+        {
+          "header": "[Getting Started](gettingStarted.md)",
+          "content": ""
+        },
+        {
+          "header": "[Features](features.md)",
+          "content": ""
+        },
+        {
+          "header": "[Support](support.md)",
+          "content": ""
+        },
+        {
+          "header": "[Licence](LICENSE.txt)",
+          "content": ""
+        }
+      ],
+      "metadata": {
+        "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/README.md",
+        "ingestedAt": "2026-05-16T02:32:49.372Z"
+      }
+    },
+    "Intelephense: features": {
+      "sections": [
+        {
+          "header": "Features",
+          "content": ""
+        },
+        {
+          "header": "Workspace Symbols",
+          "content": ""
+        },
+        {
+          "header": "Document Symbols",
+          "content": ""
+        },
+        {
+          "header": "Go To Definition",
+          "content": ""
+        },
+        {
+          "header": "Completion",
+          "content": ""
+        },
+        {
+          "header": "Signature Help",
+          "content": ""
+        },
+        {
+          "header": "Hover",
+          "content": ""
+        },
+        {
+          "header": "Document Highlight",
+          "content": ""
+        },
+        {
+          "header": "Find All References",
+          "content": ""
+        },
+        {
+          "header": "Document and Range Formatting",
+          "content": ""
+        },
+        {
+          "header": "Rename -- [PREMIUM](https://intelephense.com)",
+          "content": ""
+        },
+        {
+          "header": "Code Folding -- [PREMIUM](https://intelephense.com)",
+          "content": ""
+        },
+        {
+          "header": "Find all Implementations -- [PREMIUM](https://intelephense.com)",
+          "content": ""
+        },
+        {
+          "header": "Go to Declaration -- [PREMIUM](https://intelephense.com)",
+          "content": ""
+        },
+        {
+          "header": "Go to Type Definition -- [PREMIUM](https://intelephense.com)",
+          "content": ""
+        },
+        {
+          "header": "Smart Selection -- [PREMIUM](https://intelephense.com)",
+          "content": ""
+        },
+        {
+          "header": "PHP Doc Block Generation -- [PREMIUM](https://intelephense.com)",
+          "content": ""
+        }
+      ],
+      "metadata": {
+        "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/features.md",
+        "ingestedAt": "2026-05-16T02:32:49.397Z"
+      }
     },
     "sections": {
         "ai_agents": {
@@ -125,254 +288,10 @@
             }
         },
         "market_data": {
-            "total_entries": 350,
+            "total_entries": 1,
             "recent_entries": [
                 {
-                    "title": "advertising.amazon",
-                    "date": "October 5, 2022",
-                    "datetime": "2022-10-05T07:47:49+02:00",
-                    "author": "Filip Keser",
-                    "categories": [
-                        "Ad Ads Advertise"
-                    ],
-                    "external_link": "https://advertising.amazon.com/",
-                    "domain": "advertising.amazon.com",
-                    "post_url": "https://markposition.wordpress.com/2022/10/05/advertising-amazon/"
-                },
-                {
-                    "title": "Drive Advertising Revenue with Google Ad Manager : Google",
-                    "date": "September 26, 2022",
-                    "datetime": "2022-09-26T13:24:51+02:00",
-                    "author": "Filip Keser",
-                    "categories": [
-                        "Advertise",
-                        "Advertising"
-                    ],
-                    "external_link": "https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager",
-                    "domain": "skillshop.exceedlms.com",
-                    "post_url": "https://markposition.wordpress.com/2022/09/26/drive-advertising-revenue-with-google-ad-manager-google-5/"
-                },
-                {
-                    "title": "https://marketingplatform.google.com/about/search-ads-360/",
-                    "date": "March 10, 2022",
-                    "datetime": "2022-03-10T19:54:11+01:00",
-                    "author": "Filip Keser",
-                    "categories": [
-                        "Promotion"
-                    ],
-                    "external_link": "https://marketingplatform.google.com/about/search-ads-360/",
-                    "domain": "marketingplatform.google.com",
-                    "post_url": "https://markposition.wordpress.com/2022/03/10/https-marketingplatform-google-com-about-search-ads-360-2/"
-                },
-                {
-                    "title": "Analytics Academy",
-                    "date": "September 20, 2022",
-                    "datetime": "2022-09-20T15:24:05+02:00",
-                    "author": "Filip Keser",
-                    "categories": [
-                        "Ads"
-                    ],
-                    "external_link": "https://analytics.google.com/analytics/academy/",
-                    "domain": "analytics.google.com",
-                    "post_url": "https://markposition.wordpress.com/2022/09/20/analytics-academy/"
-                },
-                {
-                    "title": "Adssettings google",
-                    "date": "September 20, 2022",
-                    "datetime": "2022-09-20T15:21:46+02:00",
-                    "author": "Filip Keser",
-                    "categories": [
-                        "Ads"
-                    ],
-                    "external_link": "https://adssettings.google.com/authenticated",
-                    "domain": "adssettings.google.com",
-                    "post_url": "https://markposition.wordpress.com/2022/09/20/adssettings-google/"
-                },
-                {
-                    "title": "Data google",
-                    "date": "September 20, 2022",
-                    "datetime": "2022-09-20T15:21:10+02:00",
-                    "author": "Filip Keser",
-                    "categories": [
-                        "Ads"
-                    ],
-                    "external_link": "https://myaccount.google.com/data-and-personalization",
-                    "domain": "myaccount.google.com",
-                    "post_url": "https://markposition.wordpress.com/2022/09/20/data-google/"
-                },
-                {
-                    "title": "The Privacy Sandbox: Technology for a More Private Web.",
-                    "date": "September 20, 2022",
-                    "datetime": "2022-09-20T15:19:23+02:00",
-                    "author": "Filip Keser",
-                    "categories": [
-                        "Ads"
-                    ],
-                    "external_link": "https://privacysandbox.com/intl/home#home-hero",
-                    "domain": "privacysandbox.com",
-                    "post_url": "https://markposition.wordpress.com/2022/09/20/the-privacy-sandbox-technology-for-a-more-private-web/"
-                },
-                {
-                    "title": "Digital Experience Platform & Enterprise CMS | Crownpeak",
-                    "date": "September 16, 2022",
-                    "datetime": "2022-09-16T07:16:34+02:00",
-                    "author": "Filip Keser",
-                    "categories": [
-                        "Promotion"
-                    ],
-                    "external_link": "https://www.crownpeak.com/",
-                    "domain": "crownpeak.com",
-                    "post_url": "https://markposition.wordpress.com/2022/09/16/digital-experience-platform-enterprise-cms-crownpeak-2/"
-                },
-                {
-                    "title": "About Performance Max campaigns – Google Ads",
-                    "date": "September 1, 2022",
-                    "datetime": "2022-09-01T11:43:28+02:00",
-                    "author": "Filip Keser",
-                    "categories": [
-                        "Promotion"
-                    ],
-                    "external_link": "https://support.google.com/google-ads/answer/10724817?hl=en",
-                    "domain": "support.google.com",
-                    "post_url": "https://markposition.wordpress.com/2022/09/01/about-performance-max-campaigns-google-ads/"
-                },
-                {
-                    "title": "About Smart Bidding – Google Ads",
-                    "date": "September 1, 2022",
-                    "datetime": "2022-09-01T11:43:08+02:00",
-                    "author": "Filip Keser",
-                    "categories": [
-                        "Promotion"
-                    ],
-                    "external_link": "https://support.google.com/google-ads/answer/7065882?hl=en",
-                    "domain": "support.google.com",
-                    "post_url": "https://markposition.wordpress.com/2022/09/01/about-smart-bidding-google-ads/"
-                },
-                {
-                    "title": "About Maximize conversion value bidding – Google Ads",
-                    "date": "September 1, 2022",
-                    "datetime": "2022-09-01T11:42:48+02:00",
-                    "author": "Filip Keser",
-                    "categories": [
-                        "Promotion"
-                    ],
-                    "external_link": "https://support.google.com/google-ads/answer/7684216?hl=en",
-                    "domain": "support.google.com",
-                    "post_url": "https://markposition.wordpress.com/2022/09/01/about-maximize-conversion-value-bidding-google-ads/"
-                },
-                {
-                    "title": "About automated bidding – Google Ads Help",
-                    "date": "September 1, 2022",
-                    "datetime": "2022-09-01T11:42:35+02:00",
-                    "author": "Filip Keser",
-                    "categories": [
-                        "Promotion"
-                    ],
-                    "external_link": "https://support.google.com/google-ads/answer/2979071?hl=en",
-                    "domain": "support.google.com",
-                    "post_url": "https://markposition.wordpress.com/2022/09/01/about-automated-bidding-google-ads-help/"
-                },
-                {
-                    "title": "About Target CPA bidding – Google Ads Help",
-                    "date": "September 1, 2022",
-                    "datetime": "2022-09-01T11:42:13+02:00",
-                    "author": "Filip Keser",
-                    "categories": [
-                        "Promotion"
-                    ],
-                    "external_link": "https://support.google.com/google-ads/answer/6268632?hl=en",
-                    "domain": "support.google.com",
-                    "post_url": "https://markposition.wordpress.com/2022/09/01/about-target-cpa-bidding-google-ads-help/"
-                },
-                {
-                    "title": "About Maximize conversions bidding – Google Ads Help",
-                    "date": "September 1, 2022",
-                    "datetime": "2022-09-01T11:41:53+02:00",
-                    "author": "Filip Keser",
-                    "categories": [
-                        "Promotion"
-                    ],
-                    "external_link": "https://support.google.com/google-ads/answer/7381968?hl=en",
-                    "domain": "support.google.com",
-                    "post_url": "https://markposition.wordpress.com/2022/09/01/about-maximize-conversions-bidding-google-ads-help/"
-                },
-                {
-                    "title": "About Target ROAS bidding – Google Ads Help",
-                    "date": "September 1, 2022",
-                    "datetime": "2022-09-01T11:41:31+02:00",
-                    "author": "Filip Keser",
-                    "categories": [
-                        "Promotion"
-                    ],
-                    "external_link": "https://support.google.com/google-ads/answer/6268637?hl=en",
-                    "domain": "support.google.com",
-                    "post_url": "https://markposition.wordpress.com/2022/09/01/about-target-roas-bidding-google-ads-help/"
-                },
-                {
-                    "title": "Achieve your goals across Google’s ad channels with Performance Max – Google Ads Help",
-                    "date": "September 1, 2022",
-                    "datetime": "2022-09-01T11:40:47+02:00",
-                    "author": "Filip Keser",
-                    "categories": [
-                        "Promotion"
-                    ],
-                    "external_link": "https://support.google.com/google-ads/answer/11189316?hl=en",
-                    "domain": "support.google.com",
-                    "post_url": "https://markposition.wordpress.com/2022/09/01/achieve-your-goals-across-googles-ad-channels-with-performance-max-google-ads-help/"
-                },
-                {
-                    "title": "Coalition for Better Ads",
-                    "date": "August 31, 2022",
-                    "datetime": "2022-08-31T11:03:47+02:00",
-                    "author": "Filip Keser",
-                    "categories": [
-                        "Advertise",
-                        "Advertising",
-                        "Online",
-                        "Promotion"
-                    ],
-                    "external_link": "https://www.betterads.org/",
-                    "domain": "betterads.org",
-                    "post_url": "https://markposition.wordpress.com/2022/08/31/coalition-for-better-ads-2/"
-                },
-                {
-                    "title": "ShareThis: Free Share Buttons & Plugins, Global Behavioral Data Solutions",
-                    "date": "August 20, 2022",
-                    "datetime": "2022-08-20T10:56:03+02:00",
-                    "author": "Filip Keser",
-                    "categories": [
-                        "Advertise",
-                        "Advertising",
-                        "Online",
-                        "Promotion"
-                    ],
-                    "external_link": null,
-                    "domain": null,
-                    "post_url": "https://sharethis.com/"
-                },
-                {
-                    "title": "How To Create Quality Video Ads – YouTube Advertising",
-                    "date": "August 16, 2022",
-                    "datetime": "2022-08-16T20:11:00+02:00",
-                    "author": "Filip Keser",
-                    "categories": [
-                        "Ad Ads Advertise"
-                    ],
-                    "external_link": "https://www.youtube.com/intl/en_us/ads/how-it-works/create-a-video-ad/",
-                    "domain": "youtube.com",
-                    "post_url": "https://markposition.wordpress.com/2022/08/16/how-to-create-quality-video-ads-youtube-advertising/"
-                },
-                {
-                    "title": "Business Data Responsibility – Your Data Protection & Privacy",
-                    "date": "August 15, 2022",
-                    "datetime": "2022-08-15T20:51:59+02:00",
-                    "author": "Filip Keser",
-                    "categories": [
-                        "Ad Ads Advertise"
-                    ],
-                    "external_link": "https://business.safety.google/",
-                    "domain": "business.safety.google",
-                    "post_url": "https://markposition.wordpress.com/2022/08/15/business-data-responsibility-your-data-protection-privacy/"
+                    "title": "Test"
                 }
             ]
         },
@@ -634,6 +553,11 @@
             },
             "readme": "# Intelephense\n\nPHP code intelligence for Visual Studio Code.\n\nIntelephense is a high performance PHP language server packed full of essential features for productive PHP development. \n\n* Fast camel/underscore case **code completion (IntelliSense)** for document, workspace and built-in symbols and keywords with automatic addition of use declarations.\n* Detailed **signature (parameter) help** for document, workspace and built-in constructors, methods, and functions.\n* Rapid workspace wide **go to definition** support.\n* Workspace wide **find all references**.\n* Fast camel/underscore case **workspace symbol search**.\n* Full **document symbol search** that also powers **breadcrumbs** and **outline** UI.\n* Multiple **diagnostics** for open files via an error tolerant parser and powerful static analysis engine.\n* Lossless PSR-12 compatible **document/range formatting**. Formats combined HTML/PHP/JS/CSS files too. \n* Embedded **HTML/JS/CSS code intelligence**.\n* Detailed **hover** with links to official PHP documentation.\n* Smart **highlight** of references and keywords.\n* Advanced PHPDoc type system supporting **templates and callable signatures**.\n* Reads **PHPStorm metadata** for improved type analysis and suggestions.\n* Enhances the official xdebug extension with an **inline values provider**.\n* Easy **rename** of symbols. When appropriate, files/folders are automatically renamed too. [PREMIUM](https://intelephense.com)\n* Accurate **code folding** of definitions, blocks, use declarations, heredoc, comments, and custom regions. [PREMIUM](https://intelephense.com)\n* Quickly **find all implementations** of interfaces and abstract classes and associated methods. [PREMIUM](https://intelephense.com)\n* Fast **go to type definition** of typed variables and parameters. [PREMIUM](https://intelephense.com)\n* Fast **go to declaration** for methods implementing an interface or abstract method declaration. [PREMIUM](https://intelephense.com)\n* Configurable **auto PHPDoc** creation that infers return types and identifies thrown exceptions. [PREMIUM](https://intelephense.com)\n* Syntax tree driven **smart select** to intelligently expand/shrink selection. [PREMIUM](https://intelephense.com)\n* Helpful **code actions** to import symbols, add PHPDoc, and implement all abstract methods. [PREMIUM](https://intelephense.com)\n* Concise **type hierarchy**. Easily view and navigate to subtypes and supertypes. [PREMIUM](https://intelephense.com)\n* Insightful **code lens** that shows references, abstract and interface implementations, trait usages, method parent and overrides. [PREMIUM](https://intelephense.com)\n* Informative **inlay hints** to indicate parameter names, return types and anonymous function parameter types. [PREMIUM](https://intelephense.com)\n* Convenient **document links** to quickly navigate to include/require files. [PREMIUM](https://intelephense.com)\n* **`@mixin`** support. [PREMIUM](https://intelephense.com)\n\n## Licence\nPurchase a licence at https://intelephense.com to access PREMIUM features. Licence keys grant a single user access to all current and future premium features on multiple devices _forever_. Licence keys must be activated (automatically) via https before use. Features not marked as PREMIUM are free and always will be free.\n\nThe language server client (vscode-intelephense) is open source and licensed under the MIT licence. \n\nThe language server (intelephense) is proprietary. Please see [here](https://github.com/bmewburn/vscode-intelephense/blob/master/LICENSE.txt#L29) for details.\n\n## Quick Start\n\n1. Disable the built-in VSCode PHP Language Features. \n    \n    * Go to `Extensions`.\n    * Search for `@builtin php`\n    * Disable `PHP Language Features`. Leave `PHP Language Basics` enabled for syntax highlighting.\n\n    Note that other (3rd party) PHP extensions which provide similar functionality should also be disabled for best results.\n2. Add glob patterns for non standard php file extensions to the `files.associations` setting.\n\n    For example: `\"files.associations\": { \"*.module\": \"php\" }`.\n3. Optionally purchase and enter your [licence key](https://intelephense.com) by opening the command pallete \n-- `ctrl + shift + p` -- and searching for `Enter licence key`.\n\nFurther configuration options are available in the `intelephense` section of settings.\n\n## Support\n\nTry the [Intelephense Documentation](https://intelephense.com/docs).\n\nFound a bug? Got a feature request? [Create an issue](https://github.com/bmewburn/vscode-intelephense/issues).\n\n## Acknowledgements\n\nA big thank you to supporters who have bought a premium licence and have enabled the continued development and maintenance of this extension.\n\nIntelephense uses the following open source libraries. Please see the following links for source code and licences.\n\n* [vscode-languageserver-node](https://github.com/Microsoft/vscode-languageserver-node)\n* [micromatch](https://github.com/micromatch/micromatch)\n* [fs-extra](https://github.com/jprichardson/node-fs-extra)\n* [fast-glob](https://github.com/mrmlnc/fast-glob)\n* [lru-cache](https://github.com/isaacs/node-lru-cache)\n* [turndown](https://github.com/mixmark-io/turndown)\n* [protobufjs](https://github.com/dcodeIO/ProtoBuf.js/)\n* [phpstorm-stubs](https://github.com/JetBrains/phpstorm-stubs)\n* [js-beautify](https://github.com/beautify-web/js-beautify)\n* [vscode-uri](https://github.com/microsoft/vscode-uri)\n* [vscode-html-languageserver](https://github.com/microsoft/vscode)\n* [node-html-to-text](https://github.com/html-to-text/node-html-to-text)\n* [semver](https://github.com/npm/node-semver)\n* [applicationinsights](https://github.com/microsoft/ApplicationInsights-node.js)\n"
         }
+      ],
+      "metadata": {
+        "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/installation.md",
+        "ingestedAt": "2026-05-16T02:32:49.420Z"
+      }
     },
     "typescript_sections": {
         "Intelephense: README": {
@@ -835,38 +759,692 @@
     },
     "system_insights": {
         "analysis_stats": {
-            "total_posts": 350,
-            "top_domains": {
-                "skillshop.exceedlms.com": 22,
-                "support.google.com": 17,
-                "advertising.amazon.com": 15,
-                "developers.google.com": 11,
-                "google.com": 11,
-                "youtube.com": 10,
-                "en.wikipedia.org": 10,
-                "web.facebook.com": 8,
-                "business.linkedin.com": 8,
-                "marketingplatform.google.com": 7
-            },
-            "top_categories": {
-                "Ad Ads Advertise": 332,
-                "Promotion": 13,
-                "Ads": 4,
-                "Advertise": 3,
-                "Advertising": 3,
-                "Online": 2
-            }
+            "total_posts": 1,
+            "top_domains": {},
+            "top_categories": {}
         },
-        "research_trends": [
-            "Dominance of advertising.amazon.com in current dataset.",
-            "Dominance of developers.google.com in current dataset.",
-            "Dominance of google.com in current dataset.",
-            "Dominance of marketingplatform.google.com in current dataset."
-        ],
+        "research_trends": [],
         "intelligence_outlook": [
             "Scaling Strategy: Implementing simultaneous execution across agent tiers.",
             "R&D Strategy: Developing realistic simulations for human-agent interaction.",
             "Operational Strategy: Enhancing agent debate and feedback loops."
         ]
+      ],
+      "metadata": {
+        "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/gettingStarted.md",
+        "ingestedAt": "2026-05-16T02:32:49.443Z"
+      }
+    },
+    "Intelephense: support": {
+      "sections": [
+        {
+          "header": "Overview",
+          "content": "https://github.com/bmewburn/vscode-intelephense/issues\n\nben@intelephense.com"
+        }
+      ],
+      "metadata": {
+        "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/support.md",
+        "ingestedAt": "2026-05-16T02:32:49.464Z"
+      }
+    },
+    "System: .github/PULL_REQUEST_TEMPLATE.md": {
+      "sections": [
+        {
+          "header": "Pull Request Template",
+          "content": ""
+        },
+        {
+          "header": "Summary",
+          "content": "Describe the changes in this pull request and why they are needed."
+        },
+        {
+          "header": "Type of change",
+          "content": "- [ ] Bug fix\n- [ ] New feature\n- [ ] Documentation\n- [ ] CI / Build change"
+        },
+        {
+          "header": "Related issues",
+          "content": "Resolves: # (issue)"
+        },
+        {
+          "header": "Checklist",
+          "content": "- [ ] I have read the contributing guidelines\n- [ ] I have added tests that prove my fix is effective or that my feature works\n- [ ] I have added necessary documentation (if appropriate)\n- [ ] The PR is ready for review"
+        },
+        {
+          "header": "Testing steps",
+          "content": "Describe how reviewers can test the changes locally or in CI.\n\n<!-- Please delete any sections that are not relevant. -->"
+        }
+      ],
+      "metadata": {
+        "source": "local://.github/PULL_REQUEST_TEMPLATE.md",
+        "ingestedAt": "2026-05-16T02:32:49.145Z"
+      }
+    },
+    "System: .github/ISSUE_TEMPLATE/bug_report.md": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "---\nname: Bug report\nabout: Create a report to help us improve\n---\n\n**Describe the bug**\nA clear and concise description of what the bug is.\n\n**To Reproduce**\nSteps to reproduce the behavior:\n1. Go to '...'\n2. Click on '....'\n3. See error\n\n**Expected behavior**\nA clear and concise description of what you expected to happen.\n\n**Screenshots**\nIf applicable, add screenshots to help explain your problem.\n\n**Environment (please complete the following information):**\n- OS: [e.g. Ubuntu 22.04]\n- Python / Node version: [e.g. Python 3.11, Node 20]\n\n**Additional context**\nAdd any other context about the problem here."
+        }
+      ],
+      "metadata": {
+        "source": "local://.github/ISSUE_TEMPLATE/bug_report.md",
+        "ingestedAt": "2026-05-16T02:32:49.140Z"
+      }
+    },
+    "System: .github/ISSUE_TEMPLATE/feature_request.md": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "---\nname: Feature request\nabout: Suggest an idea for this project\n---\n\n**Is your feature request related to a problem? Please describe.**\nA clear and concise description of what the problem is. Ex: I'm always frustrated when [...]\n\n**Describe the solution you'd like**\nA clear and concise description of what you want to happen.\n\n**Describe alternatives you've considered**\nA clear and concise description of any alternative solutions or features you've considered.\n\n**Additional context**\nAdd any other context or screenshots about the feature request here."
+        }
+      ],
+      "metadata": {
+        "source": "local://.github/ISSUE_TEMPLATE/feature_request.md",
+        "ingestedAt": "2026-05-16T02:32:49.143Z"
+      }
+    },
+    "System: .github/workflows/antigravity-daily.yml": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "name: Antigravity Autonomous Daily Work\n\non:\n  schedule:\n    - cron: '0 0 * * *' # Every day at midnight\n  workflow_dispatch: # Allows manual trigger\n\npermissions:\n  contents: write\n  pull-requests: write\n\njobs:\n  autonomous-work:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 0\n\n      - name: Setup Node.js\n        uses: actions/setup-node@v4\n        with:\n          node-version: 20\n          cache: 'npm'\n\n      - name: Install dependencies\n        run: npm ci\n\n      - name: Execute Autonomous Work Cycle\n        run: npx tsx -e \"import { jules } from './antigravity/jules'; jules.executeWorkCycle()\"\n        env:\n          MONGODB_URI: ${{ secrets.MONGODB_URI }}\n          SUPABASE_DATABASE_URL: ${{ secrets.SUPABASE_DATABASE_URL }}\n          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}\n          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}\n          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Build Verification\n        run: npm run build\n\n      - name: Push Changes\n        run: |\n          git config --global user.name \"google-labs-jules[bot]\"\n          git config --global user.email \"161369871+google-labs-jules[bot]@users.noreply.github.com\"\n          git add -A\n          git diff --quiet && git diff --staged --quiet || git commit -m \"chore: autonomous daily cycle update\"\n          git pull --rebase origin main || true\n          git push origin main || true\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
+        }
+      ],
+      "metadata": {
+        "source": "local://.github/workflows/antigravity-daily.yml",
+        "ingestedAt": "2026-05-16T02:32:49.146Z"
+      }
+    },
+    "System: .github/workflows/apply-protections.yml": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "name: Apply branch protections and set default branch\n\non:\n  workflow_dispatch:\n\njobs:\n  apply-protections:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Apply protections using admin token\n        uses: actions/github-script@v6\n        with:\n          github-token: ${{ secrets.ADMIN_GITHUB_TOKEN }}\n          script: |\n            const owner = context.repo.owner;\n            const repo = context.repo.repo;\n            const branch = 'main';\n\n            // Set default branch to main\n            await github.rest.repos.update({ owner, repo, default_branch: branch });\n            console.log(`Set default branch to ${branch}`);\n\n            // Apply branch protection rule\n            await github.request('PUT /repos/{owner}/{repo}/branches/{branch}/protection', {\n              owner,\n              repo,\n              branch,\n              required_status_checks: {\n                strict: true,\n                contexts: ['PR CI - tests on pull requests']\n              },\n              enforce_admins: true,\n              required_pull_request_reviews: {\n                required_approving_review_count: 1\n              },\n              allow_force_pushes: false,\n              allow_deletions: false,\n              restrictions: {\n                users: [],\n                teams: []\n              }\n            });\n            console.log(`Applied branch protection to ${branch}`);"
+        }
+      ],
+      "metadata": {
+        "source": "local://.github/workflows/apply-protections.yml",
+        "ingestedAt": "2026-05-16T02:32:49.147Z"
+      }
+    },
+    "System: .github/workflows/auto-merge.yml": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "name: Auto-merge labeled PRs\n\non:\n  pull_request:\n    types: [labeled]\n\npermissions:\n  contents: write\n  pull-requests: write\n\njobs:\n  automerge:\n    if: github.event.label.name == 'automerge'\n    runs-on: ubuntu-latest\n    steps:\n      - name: Run automerge action\n        uses: pascalgn/automerge-action@v0.15.3\n        with:\n          github_token: ${{ secrets.GITHUB_TOKEN }}"
+        }
+      ],
+      "metadata": {
+        "source": "local://.github/workflows/auto-merge.yml",
+        "ingestedAt": "2026-05-16T02:32:49.148Z"
+      }
+    },
+    "System: .github/workflows/autonomous_cycle.yml": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "name: Autonomous Daily Cycle\n\non:\n  schedule:\n    - cron: '0 0 * * *' # Run daily at midnight UTC\n  push:\n    branches:\n      - main\n  workflow_dispatch: # Allow manual trigger\n\npermissions:\n  contents: write\n  pull-requests: write\n\njobs:\n  run-autonomous-system:\n    runs-on: ubuntu-latest\n\n    steps:\n    - name: Checkout Repository\n      uses: actions/checkout@v4\n\n    - name: Setup Node.js\n      uses: actions/setup-node@v4\n      with:\n        node-version: 20\n        cache: 'npm'\n\n    - name: Install Dependencies\n      run: npm ci\n\n    - name: Configure Git\n      run: |\n        git config --global user.name \"google-labs-jules[bot]\"\n        git config --global user.email \"161369871+google-labs-jules[bot]@users.noreply.github.com\"\n\n    - name: Run Tests\n      run: |\n        npm run test || true"
+        },
+        {
+          "header": "python3 -m pytest tests/ || true",
+          "content": "- name: Run Autonomous Cycle\n      env:\n        SYSTEM_AUTH_TOKEN: ${{ secrets.SYSTEM_AUTH_TOKEN || 'default_dev_token' }}\n        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n        GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}\n        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}\n        MONGODB_URI: ${{ secrets.MONGODB_URI }}\n        NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}\n        NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}\n      run: |"
+        },
+        {
+          "header": "Execute the autonomous system cycle in the cloud",
+          "content": "npm run daily"
+        }
+      ],
+      "metadata": {
+        "source": "local://.github/workflows/autonomous_cycle.yml",
+        "ingestedAt": "2026-05-16T02:32:49.149Z"
+      }
+    },
+    "System: .github/workflows/branch-cleanup.yml": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "name: Delete stale branches\n\non:\n  schedule:\n    - cron: '0 3 * * 0' # weekly on Sunday at 03:00 UTC\n\njobs:\n  cleanup:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n\n      - name: Delete merged branches older than 30 days\n        uses: tj-actions/branch-cleanup@v0.6.0\n        with:\n          github_token: ${{ secrets.GITHUB_TOKEN }}\n          days-before-stale: 30\n          target-branches: main"
+        }
+      ],
+      "metadata": {
+        "source": "local://.github/workflows/branch-cleanup.yml",
+        "ingestedAt": "2026-05-16T02:32:49.150Z"
+      }
+    },
+    "System: .github/workflows/ci.yml": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "name: ci\n\non:\n  push:\n    branches:\n      - \"main\"\n  pull_request:\n\njobs:\n  test:\n    name: Test and Lint\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        service: [scraper, frontend, sr-backend, sr-frontend]\n    steps:\n    - name: Checkout Code\n      uses: actions/checkout@v4"
+        },
+        {
+          "header": "Scraper Tests (Python)",
+          "content": "- name: Set Up Python\n      if: matrix.service == 'scraper'\n      uses: actions/setup-python@v5\n      with:\n        python-version: 3.11\n\n    - name: Install Scraper Dependencies\n      if: matrix.service == 'scraper'\n      run: |\n        python -m pip install --upgrade pip\n        pip install -r requirements.txt\n\n    - name: Run Scraper Tests\n      if: matrix.service == 'scraper'\n      run: pytest"
+        },
+        {
+          "header": "Root Frontend Tests (Node)",
+          "content": "- name: Set Up Node.js\n      if: matrix.service == 'frontend'\n      uses: actions/setup-node@v4\n      with:\n        node-version: 20\n\n    - name: Install Frontend Dependencies\n      if: matrix.service == 'frontend'\n      run: |\n        cd frontend\n        npm install\n\n    - name: Run Frontend Lint\n      if: matrix.service == 'frontend'\n      run: |\n        cd frontend\n        npm run lint"
+        },
+        {
+          "header": "Software Review Backend Tests",
+          "content": "- name: Set Up Node.js\n      if: matrix.service == 'sr-backend'\n      uses: actions/setup-node@v4\n      with:\n        node-version: 20\n\n    - name: Install SR Backend Dependencies\n      if: matrix.service == 'sr-backend'\n      run: |\n        cd software-review-platform/backend\n        npm install\n\n    - name: Run SR Backend Tests\n      if: matrix.service == 'sr-backend'\n      run: |\n        cd software-review-platform/backend\n        npm test"
+        },
+        {
+          "header": "Software Review Frontend Tests",
+          "content": "- name: Set Up Node.js\n      if: matrix.service == 'sr-frontend'\n      uses: actions/setup-node@v4\n      with:\n        node-version: 20\n\n    - name: Install SR Frontend Dependencies\n      if: matrix.service == 'sr-frontend'\n      run: |\n        cd software-review-platform/frontend\n        npm install\n\n    - name: Run SR Frontend Check\n      if: matrix.service == 'sr-frontend'\n      run: |\n        cd software-review-platform/frontend\n        npm run check\n\n  docker:\n    name: Build and Push\n    needs: test\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        include:\n          - service: \"sor\"\n            context: \".\"\n            dockerfile: \"Dockerfile\"\n          - service: \"frontend\"\n            context: \"frontend\"\n            dockerfile: \"frontend/Dockerfile\"\n          - service: \"sr-backend\"\n            context: \"software-review-platform/backend\"\n            dockerfile: \"software-review-platform/backend/Dockerfile\"\n          - service: \"sr-frontend\"\n            context: \"software-review-platform/frontend\"\n            dockerfile: \"software-review-platform/frontend/Dockerfile\"\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v4\n      - name: Log in to Docker Hub\n        if: github.event_name != 'pull_request'\n        uses: docker/login-action@v3\n        with:\n          username: ${{ vars.DOCKER_USER || secrets.DOCKERHUB_USERNAME }}\n          password: ${{ secrets.DOCKER_PAT || secrets.DOCKERHUB_TOKEN }}\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v3\n        with:\n          driver: ${{ github.event_name != 'pull_request' && 'cloud' || 'docker-container' }}\n          endpoint: ${{ github.event_name != 'pull_request' && 'getanant/sor' || '' }}\n      - name: Build and push\n        uses: docker/build-push-action@v6\n        with:\n          context: ${{ matrix.context }}\n          file: ${{ matrix.dockerfile }}\n          tags: \"${{ vars.DOCKER_USER || 'getanant' }}/${{ matrix.service }}:latest\""
+        },
+        {
+          "header": "Otherwise, push to a registry.",
+          "content": "outputs: ${{ github.event_name == 'pull_request' && 'type=cacheonly' || 'type=registry' }}"
+        }
+      ],
+      "metadata": {
+        "source": "local://.github/workflows/ci.yml",
+        "ingestedAt": "2026-05-16T02:32:49.151Z"
+      }
+    },
+    "System: .github/workflows/continuous-presence.yml": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "name: Continuous Autonomous Cloud Presence\n\non:\n  schedule:\n    - cron: '*/15 * * * *' # Every 15 minutes\n  workflow_dispatch: # Allows manual trigger\n\npermissions:\n  contents: write\n  pull-requests: write\n\njobs:\n  autonomous-work:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 0\n\n      - name: Setup Node.js\n        uses: actions/setup-node@v4\n        with:\n          node-version: 20\n          cache: 'npm'\n\n      - name: Setup Python\n        uses: actions/setup-python@v5\n        with:\n          python-version: '3.12'\n          cache: 'pip'\n\n      - name: Install Dependencies\n        run: |\n          npm ci\n          pip install -r requirements.txt\n\n      - name: Execute Unified Autonomous Cycle\n        run: python3 autonomous_engine.py --token ${{ secrets.SYSTEM_AUTH_TOKEN || 'default_dev_token' }}\n        env:\n          MONGODB_URI: ${{ secrets.MONGODB_URI }}\n          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}\n          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}\n          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}\n          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}\n          SYSTEM_AUTH_TOKEN: ${{ secrets.SYSTEM_AUTH_TOKEN || 'default_dev_token' }}\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Build Verification\n        run: npm run build\n\n      - name: Push Changes\n        run: |\n          git config --global user.name \"google-labs-jules[bot]\"\n          git config --global user.email \"161369871+google-labs-jules[bot]@users.noreply.github.com\"\n          git add -A\n          git diff --quiet && git diff --staged --quiet || git commit -m \"chore: continuous cloud presence update\"\n          git pull --rebase origin main || true\n          git push origin main || true\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
+        }
+      ],
+      "metadata": {
+        "source": "local://.github/workflows/continuous-presence.yml",
+        "ingestedAt": "2026-05-16T02:32:49.152Z"
+      }
+    },
+    "System: antigravity/actions/user.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "'use server'\n\nimport { updateTag, revalidateTag, refresh } from '@/antigravity/core'\n\n/**\n * Scalable Mutation: 'Read-Your-Writes' consistency\n * updateTag expires and re-executes data fetching in the SAME request.\n */\nexport async function updateUserName(userId: string, newName: string) {\n  // Update the DB (mocked)\n  console.log(`Updating user ${userId} to ${newName}`)\n\n  // updateTag gives the user an immediate result\n  updateTag(`user-${userId}`)\n\n  // revalidateTag can still be used for background revalidation\n  revalidateTag('user-list', 'max')\n}\n\n/**\n * Scalable Global Refresh:\n */\nexport async function clearUserSession() {\n  // Clear session logic here...\n  refresh()\n}"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/actions/user.ts",
+        "ingestedAt": "2026-05-16T02:32:49.154Z"
+      }
+    },
+    "System: antigravity/backup.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import fs from 'fs'\nimport path from 'path'\nimport { jules } from './jules'\n\n/**"
+        },
+        {
+          "header": "* ANTIGRAVITY AUTONOMOUS BACKUP AGENT",
+          "content": "* Ensures safe, timestamped persistence of core state files.\n */\nexport async function runBackup() {\n  console.log('🛡️ [Backup Agent] Initiating autonomous system backup...')\n\n  const rootDir = process.cwd()\n  const backupDir = path.join(rootDir, 'backups')\n\n  // Ensure backups directory exists\n  if (!fs.existsSync(backupDir)) {\n    fs.mkdirSync(backupDir, { recursive: true })\n    console.log(`🛡️ [Backup Agent] Created backup directory at: ${backupDir}`)\n  }\n\n  const timestamp = new Date().toISOString().replace(/[:.]/g, '-')\n  let backupCount = 0\n\n  // 1. Backup Jules Memory\n  const memoryPath = path.join(rootDir, 'antigravity/.jules_memory.json')\n  if (fs.existsSync(memoryPath)) {\n    try {\n      // Verify Integrity\n      const memoryContent = fs.readFileSync(memoryPath, 'utf8')\n      const parsed = JSON.parse(memoryContent)\n\n      if (parsed && typeof parsed === 'object') {\n        const backupMemoryPath = path.join(backupDir, `jules_memory_${timestamp}.json`)\n        fs.writeFileSync(backupMemoryPath, memoryContent)\n        console.log(`✅ [Backup Agent] Archived Jules Memory to ${backupMemoryPath}`)\n        backupCount++\n      }\n    } catch (e) {\n      console.error(`⚠️ [Backup Agent] Integrity check failed for Jules Memory. Skipping backup. Error:`, e)\n    }\n  } else {\n      console.warn(`⚠️ [Backup Agent] Could not find Jules Memory at ${memoryPath}`)\n  }\n\n  // 2. Backup Core Autonomous State if it exists\n  const statePath = path.join(rootDir, 'autonomous_state.json')\n  if (fs.existsSync(statePath)) {\n    try {\n      const stateContent = fs.readFileSync(statePath, 'utf8')\n      const parsed = JSON.parse(stateContent)\n\n      if (parsed && typeof parsed === 'object') {\n        const backupStatePath = path.join(backupDir, `autonomous_state_${timestamp}.json`)\n        fs.writeFileSync(backupStatePath, stateContent)\n        console.log(`✅ [Backup Agent] Archived Autonomous State to ${backupStatePath}`)\n        backupCount++\n      }\n    } catch (e) {\n      console.error(`⚠️ [Backup Agent] Integrity check failed for Autonomous State. Skipping backup. Error:`, e)\n    }\n  }\n\n  // Record task in cognitive memory\n  if (backupCount > 0) {\n     jules.recordTask(`Autonomous backup completed successfully. Archived ${backupCount} core state files.`)\n     console.log(`🛡️ [Backup Agent] Backup complete. Logged to Jules Memory.`)\n  } else {\n     console.warn(`🛡️ [Backup Agent] Backup cycle completed, but no files were archived.`)\n  }\n\n  return { timestamp, filesBackedUp: backupCount }\n}\n\n// Allow running directly if needed\nif (require.main === module) {\n  runBackup().catch(console.error)\n}"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/backup.ts",
+        "ingestedAt": "2026-05-16T02:32:49.155Z"
+      }
+    },
+    "System: antigravity/core.test.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import { describe, it, expect, vi } from 'vitest'\nimport { z } from 'zod'\nimport { autonomousFetch } from './core'\n\n// Mock next/cache\nvi.mock('next/cache', () => ({\n  cacheLife: vi.fn(),\n  cacheTag: vi.fn(),\n}))\n\ndescribe('Antigravity Autonomous Core', () => {\n  it('should autonomously validate and fetch data', async () => {\n    const schema = z.object({ id: z.number(), name: z.string() })\n    const mockFetcher = async () => ({ id: 1, name: 'Autonomous Test' })\n\n    const result = await autonomousFetch(schema, mockFetcher)\n    expect(result.name).toBe('Autonomous Test')\n  })\n\n  it('should throw error on schema mismatch', async () => {\n    const schema = z.object({ id: z.number() })\n    const mockFetcher = async () => ({ id: 'not-a-number' })\n\n    await expect(autonomousFetch(schema, mockFetcher as any)).rejects.toThrow('Autonomous validation failed')\n  })\n})"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/core.test.ts",
+        "ingestedAt": "2026-05-16T02:32:49.157Z"
+      }
+    },
+    "System: antigravity/core.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import { MongoClient } from 'mongodb'\nimport { createClient } from '@supabase/supabase-js'\nimport { z } from 'zod'\n\n/**\n * Safer import for Next.js cache/server APIs to support CLI execution.\n */\nlet cacheLife: any = () => {},\n    cacheTag: any = () => {},\n    revalidateTag: any = () => {},\n    updateTag: any = () => {},\n    connection: any = async () => {};\n\ntry {\n  // Use dynamic require/import for Next.js internal modules if available\n  // This prevents SyntaxErrors in non-Next environments\n} catch (e) {\n  // Fallback to no-op for CLI\n}\n\nexport { cacheLife, cacheTag, revalidateTag, updateTag, connection }\n\n/**"
+        },
+        {
+          "header": "* ANTIGRAVITY AUTONOMOUS CORE",
+          "content": "* This file orchestrates all full-stack connectivity and patterns.\n */"
+        },
+        {
+          "header": "// --- 1. CONFIGURATION & TYPES ---",
+          "content": "const MONGODB_URI = process.env.MONGODB_URI\nconst SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL\nconst SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY\n\nconst isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL)\n\nif (!MONGODB_URI || !SUPABASE_URL || !SUPABASE_KEY) {\n  if (isCloud) {\n    console.error('🚨 [Autonomous Core] CRITICAL: Missing environment credentials in cloud environment!')\n  } else {\n    console.warn('⚠️ [Autonomous Core] Missing production credentials. System running in limited observability mode.')\n  }\n}\n\nexport interface PageProps<T = any> {\n  params: Promise<T>\n  searchParams: Promise<Record<string, string | string[] | undefined>>\n}\n\nexport interface LayoutProps<T = any> {\n  children: React.ReactNode\n  params: Promise<T>\n}"
+        },
+        {
+          "header": "// --- 2. AUTONOMOUS DATABASE CLIENTS ---",
+          "content": "let _mongoClientPromise: Promise<MongoClient>\nconst supabase = createClient(SUPABASE_URL || 'https://placeholder.supabase.co', SUPABASE_KEY || 'placeholder')\n\n// Phase 5: Self-Healing State\nconst circuitBreaker = {\n  mongodb: { failures: 0, lastFailure: 0, state: 'closed' as 'closed' | 'open' | 'half-open' },\n  supabase: { failures: 0, lastFailure: 0, state: 'closed' as 'closed' | 'open' | 'half-open' }\n}\n\nconst FAILURE_THRESHOLD = 3\nconst RECOVERY_TIMEOUT = 1000 * 30 // 30 seconds\n\nexport async function getMongoClient(): Promise<MongoClient> {\n  // Circuit Breaker Logic\n  if (circuitBreaker.mongodb.state === 'open') {\n    if (Date.now() - circuitBreaker.mongodb.lastFailure > RECOVERY_TIMEOUT) {\n      console.log('🔄 [Autonomous Core] Attempting MongoDB self-healing...')\n      circuitBreaker.mongodb.state = 'half-open'\n    } else {\n      throw new Error('Circuit Breaker: MongoDB is in recovery mode.')\n    }\n  }\n\n  if (_mongoClientPromise) return _mongoClientPromise\n\n  try {\n    if (process.env.NODE_ENV === 'development') {\n      let globalWithMongo = global as typeof globalThis & { _mongoClientPromise?: Promise<MongoClient> }\n      if (!globalWithMongo._mongoClientPromise) {\n        globalWithMongo._mongoClientPromise = new MongoClient(MONGODB_URI).connect()\n      }\n      _mongoClientPromise = globalWithMongo._mongoClientPromise\n    } else {\n      _mongoClientPromise = new MongoClient(MONGODB_URI).connect()\n    }\n    const client = await _mongoClientPromise\n    circuitBreaker.mongodb.state = 'closed'\n    circuitBreaker.mongodb.failures = 0\n    return client\n  } catch (err) {\n    circuitBreaker.mongodb.failures++\n    circuitBreaker.mongodb.lastFailure = Date.now()\n    if (circuitBreaker.mongodb.failures >= FAILURE_THRESHOLD) {\n      circuitBreaker.mongodb.state = 'open'\n      // Phase 7: Autonomous Notification\n      import('./services/notification').then(n => {\n        n.sendNotification({\n          type: 'health',\n          message: 'MongoDB Circuit Breaker tripped. System in recovery mode.',\n          severity: 'critical'\n        })\n      })\n    }\n    throw err\n  }\n}\n\nexport { supabase }"
+        },
+        {
+          "header": "// --- 3. AUTONOMOUS ORCHESTRATION & HELPERS ---",
+          "content": "/**\n * VOLATILITY REGISTRY (Phase 4: Predictive Scaling)\n * In a distributed system, this would be backed by Redis.\n * Here we use an in-memory map for the autonomous pattern.\n */\nconst volatilityRegistry = new Map<string, { updates: number; lastUpdate: number }>()\n\nexport function recordUpdate(tag: string) {\n  const current = volatilityRegistry.get(tag) || { updates: 0, lastUpdate: Date.now() }\n  const newStats = {\n    updates: current.updates + 1,\n    lastUpdate: Date.now()\n  }\n  volatilityRegistry.set(tag, newStats)\n  updateTag(tag)\n\n  // Phase 7+: Persist to Predictive Analytics Layer\n  import('./services/analytics').then(a => {\n    a.trackEvent(tag, 'VOLATILITY_INCREASE', newStats)\n  })\n}\n\nexport function getPredictiveProfile(tag: string): 'inventory' | 'catalog' | 'minutes' {\n  const stats = volatilityRegistry.get(tag)\n  if (!stats) return 'catalog' // Default to long-lived for new data\n\n  const age = Date.now() - stats.lastUpdate\n  const frequency = stats.updates > 5 ? 'high' : 'low'\n\n  // Autonomous Decision Logic\n  if (frequency === 'high' || age < 1000 * 60) return 'inventory' // 30s-60s (Volatile)\n  if (stats.updates > 0) return 'minutes' // 5m-15m (Stable)\n  return 'catalog' // 1h-24h (Static)\n}\n\n/**\n * predictiveFetch: Autonomous 'Phase 4' fetching.\n * Automatically chooses the best cacheLife based on observed volatility.\n */\nexport async function predictiveFetch<T>(\n  tag: string,\n  schema: z.Schema<T>,\n  fetcher: () => Promise<unknown>\n): Promise<T> {\n  const profile = getPredictiveProfile(tag)\n  return autonomousFetch(schema, fetcher, {\n    tags: [tag],\n    life: profile\n  })\n}\n\n// --- 4. COGNITIVE INSIGHTS (Phase 6) ---\n\nconst logBuffer: { msg: string; time: string; type: string }[] = []\n\nexport function logAutonomousAction(msg: string, type: string = 'info') {\n  logBuffer.unshift({ msg, time: new Date().toLocaleTimeString(), type })\n  if (logBuffer.length > 50) logBuffer.pop()\n}\n\nexport async function getSystemInsights() {\n  // Phase 12: Safeguard against CLI-mode execution\n  // Only use cache if we are in a recognized Next.js request context\n  const isServerRequest = !!process.env.NEXT_RUNTIME\n\n\n  const { synthesize } = await import('./synthesis')\n  const { getPersistenceHealth } = await import('./services/persistence')\n  const { getNetworkState } = await import('./services/neural')\n  const { getRelayState } = await import('./services/relay')\n  const { optimize } = await import('./optimization')\n  const { runSecurityAudit } = await import('./services/cognitive_security')\n\n  const ideas = await synthesize()\n  const persistence = await getPersistenceHealth()\n  const network = await getNetworkState()\n  const relay = await getRelayState()\n\n  const { getMissionMetadata } = await import('./services/collaboration')\n  const { checkDockerHealth } = await import('./services/docker')\n  const collaboration = await getMissionMetadata()\n  const docker = await checkDockerHealth()\n\n  const baseInsights = {\n    circuitBreakers: {\n      mongodb: circuitBreaker.mongodb.state,\n      supabase: circuitBreaker.supabase.state,\n    },\n    caching: {\n      registrySize: volatilityRegistry.size,\n      activeProfiles: Array.from(volatilityRegistry.keys()).map(tag => ({\n        tag,\n        profile: getPredictiveProfile(tag)\n      }))\n    },\n    logs: logBuffer,\n    ideas,\n    persistence,\n    network,\n    relay,\n    collaboration,\n    docker,\n    uptime: process.uptime()\n  }\n\n  const proposals = await optimize(baseInsights)\n  const security = await runSecurityAudit()\n\n  return {\n    ...baseInsights,\n    proposals,\n    security\n  }\n}\n\n/**\n * resolve: Safely resolve mandatory async props\n */\nexport async function resolve<T>(promise: Promise<T>): Promise<T> {\n  return await promise\n}\n\n/**\n * autonomousFetch: Automatically handles caching, tagging, and schema validation.\n * Phase 5: Implements Graceful Degradation and Automatic Retry.\n */\nexport async function autonomousFetch<T>(\n  schema: z.Schema<T>,\n  fetcher: () => Promise<unknown>,\n  config: { tags?: string[]; life?: string } = {}\n): Promise<T> {\n  try {\n    const data = await fetcher()\n\n\n    const result = schema.safeParse(data)\n    if (!result.success) {\n      console.error('[Autonomous Core] Validation Failure:', result.error.format())\n      throw new Error('Autonomous validation failed')\n    }\n    return result.data\n  } catch (err) {\n    console.warn('[Autonomous Core] Primary fetch failed. Attempting Graceful Degradation...', err)\n\n    // the stale-while-revalidate behavior if a previous entry exists.\n    // If we throw here, Next.js will often serve the stale content if available.\n    throw err\n  }\n}\n\n/**\n * healthCheck: Autonomous self-diagnostic\n */\nexport async function healthCheck() {\n  const results = {\n    mongodb: 'unknown',\n    supabase: 'unknown',\n    timestamp: new Date().toISOString()\n  }\n\n  try {\n    const client = await getMongoClient()\n    await client.db().admin().ping()\n    results.mongodb = 'healthy'\n  } catch (e) {\n    results.mongodb = 'error'\n  }\n\n  try {\n    const { error } = await supabase.from('_health').select('id').limit(1)\n    // If table doesn't exist, it's still \"connected\" if no network error\n    results.supabase = error && error.code === 'PGRST116' ? 'healthy' : 'connected'\n  } catch (e) {\n    results.supabase = 'error'\n  }\n\n  return results\n}\n\n/**\n * getRuntimeEnv: Runtime-safe environment access\n */\nexport async function getRuntimeEnv(key: string) {\n  await connection()\n  return process.env[key]\n}"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/core.ts",
+        "ingestedAt": "2026-05-16T02:32:49.159Z"
+      }
+    },
+    "System: antigravity/empty.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "// Autonomous Empty Module\n// Used for silencing Node.js native module errors in the browser.\nexport default {};"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/empty.ts",
+        "ingestedAt": "2026-05-16T02:32:49.160Z"
+      }
+    },
+    "System: antigravity/evolution.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import fs from 'fs'\nimport path from 'path'\n\n/**"
+        },
+        {
+          "header": "* ANTIGRAVITY COGNITIVE EVOLUTION ENGINE",
+          "content": "* This engine analyzes the codebase and proposes autonomous optimizations.\n */\n\ninterface EvolutionMetric {\n  file: string\n  complexity: number\n  suggestion: string\n}\n\nexport async function evolve() {\n  console.log('🧠 [Antigravity Evolution] Commencing cognitive analysis...')\n\n  const suggestions: EvolutionMetric[] = []\n  const scanDirs = [\n    path.join(process.cwd(), 'antigravity'),\n    path.join(process.cwd(), 'software-review-platform')\n  ]\n\n  // Recursive scan to find \"bloated\" or unoptimized patterns\n  function scan(dir: string) {\n    if (!fs.existsSync(dir)) return\n    const files = fs.readdirSync(dir)\n    for (const file of files) {\n      const fullPath = path.join(dir, file)\n      if (fs.statSync(fullPath).isDirectory()) {\n        scan(fullPath)\n      } else if (file.endsWith('.tsx') || file.endsWith('.ts')) {\n        const content = fs.readFileSync(fullPath, 'utf8')\n        const lines = content.split('\\n').length\n\n        // Rule 2: Detect large files that should be refactored\n        if (lines > 150) {\n          suggestions.push({\n            file: fullPath.replace(process.cwd(), ''),\n            complexity: lines,\n            suggestion: 'ARCHITECTURAL_DRIFT: File exceeds complexity limits.'\n          })\n        }\n\n        // Rule 3: Detect Sync Access to Params (Next.js 16 Violation)\n        if (content.includes('params.') && !content.includes('await params') && !content.includes('resolve(params)')) {\n          suggestions.push({\n            file: fullPath.replace(process.cwd(), ''),\n            complexity: lines,\n            suggestion: 'SYNC_PROP_VIOLATION: Direct access to params detected. Must be awaited in Next.js 16.'\n          })\n        }\n\n        // Rule 4: Detect console.log in production-like files\n        if (content.includes('console.log(') && !fullPath.includes('.test.') && !fullPath.includes('jules.ts')) {\n          suggestions.push({\n            file: fullPath.replace(process.cwd(), ''),\n            complexity: lines,\n            suggestion: 'LOGGING_VIOLATION: console.log detected in production path. Use logAutonomousAction.'\n          })\n        }\n\n        // Rule 5: Detect \"any\" type usage (Type safety)\n        if (content.includes(': any') || content.includes('as any')) {\n          suggestions.push({\n            file: fullPath.replace(process.cwd(), ''),\n            complexity: lines,\n            suggestion: 'TYPE_SAFETY_VIOLATION: usage of \"any\" type detected.'\n          })\n        }\n      }\n    }\n  }\n\n  for (const dir of scanDirs) {\n    scan(dir)\n  }\n\n  console.log('✨ [Evolution Report]: Found', suggestions.length, 'potential optimizations.')\n  return suggestions\n}\n\n/**\n * applyFixes: Autonomous Autocorrection\n * Programmatically fixes common architectural drift issues.\n */\nexport async function applyFixes(suggestions: EvolutionMetric[]) {\n  console.log('🛠️ [Antigravity Evolution] Applying autonomous fixes...')\n\n  for (const s of suggestions) {\n    const fullPath = path.join(process.cwd(), s.file)\n    let content = fs.readFileSync(fullPath, 'utf8')\n\n    if (s.suggestion.startsWith('MISSING_CACHE_DIRECTIVE')) {\n      fs.writeFileSync(fullPath, content)\n    }\n\n    if (s.suggestion.startsWith('SYNC_PROP_VIOLATION')) {\n      console.log(` - Fixing ${s.file}: Wrapping params in resolve()`)\n      // Add the import if missing\n      if (!content.includes('import {') || !content.includes('@/antigravity/core')) {\n        content = \"import { resolve } from '@/antigravity/core'\\n\" + content\n      } else if (!content.includes('resolve')) {\n        content = content.replace(/import \\{(.*?)\\} from '@\\/antigravity\\/core'/, \"import {$1, resolve} from '@/antigravity/core'\")\n      }\n\n      // Attempt to wrap params usages\n      content = content.replace(/(\\{.*?params.*?\\}.*?)\\.then/g, \"resolve(params).then\")\n      fs.writeFileSync(fullPath, content)\n    }\n\n    // Rule 4 Fix: Replace console.log with logAutonomousAction\n    if (s.suggestion.startsWith('LOGGING_VIOLATION')) {\n      console.log(` - Fixing ${s.file}: Replacing console.log with logAutonomousAction`)\n\n      // Calculate relative path to core.ts\n      const fileDir = path.dirname(fullPath)\n      const corePath = path.join(process.cwd(), 'antigravity/core')\n      let relativeCorePath = path.relative(fileDir, corePath)\n      if (!relativeCorePath.startsWith('.')) relativeCorePath = './' + relativeCorePath\n\n      if (!content.includes('logAutonomousAction')) {\n        content = `import { logAutonomousAction } from '${relativeCorePath}'\\n` + content\n      }\n      content = content.replace(/console\\.log\\((.*?)\\)/g, \"logAutonomousAction($1, 'info')\")\n      fs.writeFileSync(fullPath, content)\n    }\n\n    // Additional autocorrection logic can be added here\n  }\n\n  console.log('✅ [Antigravity Evolution] Autocorrection complete.')\n}\n\n// if (require.main === module) {\n//   evolve().catch(console.error)\n// }"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/evolution.ts",
+        "ingestedAt": "2026-05-16T02:32:49.163Z"
+      }
+    },
+    "System: antigravity/explorer.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import { healthCheck } from './core'\nimport { evolve } from './evolution'\nimport { jules } from './jules'\nimport { synthesize } from './synthesis'\nimport chokidar from 'chokidar'\nimport path from 'path'\n\n/**"
+        },
+        {
+          "header": "* ANTIGRAVITY AUTONOMOUS EXPLORER",
+          "content": "* Automatically scans and validates the system state.\n */\nexport async function explore() {\n  console.log('🚀 [Antigravity Explorer] Starting autonomous scan...')\n\n  const results: any = {\n    timestamp: new Date().toISOString(),\n    connectivity: {},\n    environment: {},\n    health: 'unknown',\n    evolution: [],\n    synthesis: []\n  }\n\n  // 1. Connectivity Scan\n  try {\n    results.connectivity = await healthCheck()\n  } catch (e) {\n    results.connectivity = { error: String(e) }\n  }\n\n  // 2. Environment Validation\n  const required = ['MONGODB_URI', 'NEXT_PUBLIC_SUPABASE_URL', 'NEXT_PUBLIC_SUPABASE_ANON_KEY']\n  for (const key of required) {\n    const val = process.env[key]\n    results.environment[key] = val ? 'present' : 'MISSING'\n  }\n\n  // 3. Cognitive Evolution Analysis\n  try {\n    results.evolution = await evolve()\n  } catch (e) {\n    console.error('❌ [Explorer] Evolution scan failed:', e)\n  }\n\n  // 4. Cognitive Synthesis\n  try {\n    results.synthesis = await synthesize()\n  } catch (e) {\n    console.error('❌ [Explorer] Synthesis engine failed:', e)\n  }\n\n  // 5. Overall Verdict\n  const isHealthy = results.connectivity.mongodb === 'healthy' &&\n                    results.connectivity.supabase !== 'error' &&\n                    !Object.values(results.environment).includes('MISSING')\n\n  results.health = isHealthy ? 'OPTIMAL' : 'DEGRADED'\n\n  // 7. Jules Protocol: Record the Task\n  jules.recordTask(`System Scan: Health is ${results.health}. Found ${results.evolution.length} evolution paths.`)\n\n  console.log(`✅ [Explorer] Cycle Complete. Status: ${results.health}`)\n  return results\n}\n\n/**\n * REAL-TIME WATCHDOG (Phase 16)\n * Monitors the filesystem for changes and triggers reactive exploration.\n */\nexport function watchSystem() {\n  console.log('👁️  [Watchdog] Initiating real-time system surveillance...')\n\n  const watcher = chokidar.watch(process.cwd(), {\n    ignored: [\n      /(^|[\\/\\\\])\\../, // ignore dotfiles\n      /node_modules/,\n      /.next/,\n      /dist/\n    ],\n    persistent: true\n  })\n\n  watcher.on('change', (filePath) => {\n    console.log(`🔔 [Watchdog] Detected change in: ${path.basename(filePath)}. Triggering reactive scan...`)\n    explore().catch(err => console.error('💥 [Watchdog] Reactive scan failed:', err))\n  })\n\n  return watcher\n}\n\n// Allow running directly\nif (import.meta.url === `file://${process.argv[1]}`) {\n  explore().catch(console.error)\n}"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/explorer.ts",
+        "ingestedAt": "2026-05-16T02:32:49.166Z"
+      }
+    },
+    "System: antigravity/jules.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import fs from 'fs'\nimport path from 'path'\n\n/**"
+        },
+        {
+          "header": "* JULES: THE COGNITIVE AGENT LAYER",
+          "content": "*/\n\ninterface JulesMemory {\n  lastOptimization: string\n  preferredPatterns: string[]\n  architecturalDecisions: Record<string, string>\n  autonomousTasks: { id: string; status: 'pending' | 'completed'; goal: string }[]\n}\n\nconst MEMORY_PATH = path.join(process.cwd(), 'antigravity/.jules_memory.json')\n\nexport class Jules {\n  private memory: JulesMemory\n\n  constructor() {\n    if (fs.existsSync(MEMORY_PATH)) {\n      this.memory = JSON.parse(fs.readFileSync(MEMORY_PATH, 'utf8'))\n    } else {\n      this.memory = {\n        lastOptimization: new Date().toISOString(),\n        preferredPatterns: ['autonomousFetch', 'predictiveFetch', 'resolve'],\n        architecturalDecisions: {\n          runtime: 'Next.js 16 Node.js Runtime',\n          caching: 'Phase 4 Predictive',\n          resilience: 'Phase 5 Circuit Breaker',\n          verifiedSignature: 'SHA256:Zey4+Jcqu48gSIuuQaavasF2D7iu+J590Rr1EA3LdbA',\n          neuralSyncSignature: 'SHA256:qhno7SbhBIYwfgNgGhygt2e0kRDBlPkEqjAGdXTVOsA'\n        },\n        autonomousTasks: []\n      }\n      this.save()\n    }\n  }\n\n  private save() {\n    fs.writeFileSync(MEMORY_PATH, JSON.stringify(this.memory, null, 2))\n  }\n\n  public async improve() {\n    console.log('🤖 [Jules] Analyzing current system state for improvements...')\n    const suggestions = []\n    if (this.memory.preferredPatterns.length < 5) {\n      suggestions.push('Expand preferred patterns to include Taint API and View Transitions.')\n    }\n    return { status: 'learning', suggestions, memorySize: JSON.stringify(this.memory).length }\n  }\n\n  public recordTask(goal: string) {\n    this.memory.autonomousTasks.push({\n      id: Math.random().toString(36).substr(2, 9),\n      status: 'completed',\n      goal\n    })\n    this.save()\n\n    // Pipe to Core Log Buffer\n    import('./core').then(core => {\n      core.logAutonomousAction(goal, 'cognitive')\n    })\n  }\n\n  public async runDailyRoutine() {\n    console.log('🗓️ [Jules] Executing Daily Autonomous Routine...')\n    await this.selfRepair()\n    await this.observeGithubDocs()\n\n    const tasks = [\n      { name: 'Consolidated Knowledge Observation', action: () => this.observeKnowledge() },\n      { name: 'Core Integrity Check', action: () => this.recordTask('Integrity scan passed.') },\n      { name: 'Security Sovereignty Audit', action: () => this.recordTask('Cognitive security scan complete.') },\n      { name: 'Knowledge Ingestion', action: () => this.recordTask('GitHub Documentation sync complete.') },\n      { name: 'Cache Volatility Audit', action: () => this.recordTask('Cache profiles optimized.') },\n      { name: 'Dependency Autopilot', action: () => this.auditDependencies() },\n      { name: 'GitKraken Sync Prep', action: () => this.recordTask('Visual branch history cleaned.') },\n      { name: 'Edge Function Audit', action: () => this.recordTask('Edge function hello-world prepared for deployment.') },\n      { name: 'Supabase Connectivity Refresh', action: () => this.recordTask('Supabase pooling verified.') }\n    ]\n\n    for (const task of tasks) {\n      console.log(` - Executing: ${task.name}...`)\n      task.action()\n    }\n\n    this.memory.lastOptimization = new Date().toISOString()\n    this.save()\n    console.log('✅ [Jules] Daily Routine Completed.')\n  }\n\n  public async observeGithubDocs() {\n    console.log('📚 [Jules] Observing technical documentation from GitHub...')\n    const { githubDocsObserver } = await import('./services/github_docs_observer')\n    const { KnowledgeObserver } = await import('./services/knowledge_observer')\n    const observer = new KnowledgeObserver()\n\n    const docsToObserve = [\n      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'README.md' },\n      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'features.md' },\n      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'installation.md' },\n      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'gettingStarted.md' },\n      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'support.md' }\n    ]\n\n    // Phase 15: Ingest local system documentation (Recursive Scan)\n    const ingestSystemKnowledge = async (dir: string, base: string = '') => {\n      const fullPath = path.join(process.cwd(), base, dir)\n      if (!fs.existsSync(fullPath)) return\n\n      const entries = fs.readdirSync(fullPath, { withFileTypes: true })\n      for (const entry of entries) {\n        const relativePath = path.join(base, dir, entry.name)\n        if (entry.isDirectory()) {\n          if (entry.name !== 'node_modules' && entry.name !== '.git' && entry.name !== 'dist') {\n            await ingestSystemKnowledge(entry.name, path.join(base, dir))\n          }\n        } else if (entry.name.endsWith('.md') || entry.name.endsWith('.yml') || entry.name.endsWith('.ts')) {\n          try {\n            const content = fs.readFileSync(path.join(process.cwd(), relativePath), 'utf8')\n            const knowledge = KnowledgeObserver.processContent(`System: ${relativePath}`, content, `local://${relativePath}`)\n            await observer.persistKnowledge(knowledge)\n            console.log(` ✅ [Jules] Ingested Local Knowledge: ${relativePath}`)\n          } catch (e) {}\n        }\n      }\n    }\n\n    await ingestSystemKnowledge('.github')\n    await ingestSystemKnowledge('antigravity')\n\n    const allKnowledge: any[] = []\n\n    for (const doc of docsToObserve) {\n      try {\n        const result = await githubDocsObserver.fetchDoc(doc.owner, doc.repo, doc.path)\n        allKnowledge.push(result)\n\n        // Phase 12: Integrate into consolidated knowledge base\n        const title = `Intelephense: ${doc.path.replace('.md', '')}`\n        const rawContent = result.sections.map((s: any) => `# ${s.title}\\n${s.content}`).join('\\n\\n')\n        const knowledge = KnowledgeObserver.processContent(title, rawContent, result.rawUrl)\n        await observer.persistKnowledge(knowledge)\n\n        console.log(` ✅ [Jules] Ingested and Processed: ${doc.path}`)\n      } catch (err) {\n        console.error(` ❌ [Jules] Failed to ingest ${doc.path}:`, err)\n      }\n    }\n\n    if (allKnowledge.length > 0) {\n      const dataDir = path.join(process.cwd(), 'data')\n      if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir)\n\n      const filePath = path.join(dataDir, 'intelephense_docs.json')\n      fs.writeFileSync(filePath, JSON.stringify(allKnowledge, null, 2))\n      this.recordTask(`Knowledge Ingestion: Synchronized ${allKnowledge.length} Intelephense docs.`)\n    }\n  }\n\n  public async selfRepair() {\n    console.log('🔧 [Jules] Starting autonomous self-repair cycle...')\n    const { evolve, applyFixes } = await import('./evolution')\n    const { gitProvider } = await import('./services/git_provider')\n    const suggestions = await evolve()\n\n    if (suggestions.length > 0) {\n      // Phase 14: Protocol Enforcement\n      const isCritical = suggestions.some(s => s.suggestion.includes('SYNC_PROP_VIOLATION'))\n\n      if (isCritical) {\n        await applyFixes(suggestions)\n        this.recordTask(`Self-Repair: Applied ${suggestions.length} fixes (CRITICAL).`)\n        await this.gitSync(`🤖 fix: autonomous self-repair of ${suggestions.length} issues (CRITICAL)`)\n      } else {\n        // STANDARD/PREDICTIVE fixes go through PR\n        const branchName = `fix/autonomous-evolution-${Date.now()}`\n        const { execSync } = await import('child_process')\n\n        try {\n          // Ensure we are on a clean state before branching\n          const status = execSync('git status --porcelain').toString().trim()\n          if (status) {\n            console.warn('⚠️ [Jules] Working directory is dirty. Stashing changes before repair...')\n            execSync('git stash')\n          }\n\n          execSync(`git checkout -b ${branchName}`)\n\n          await applyFixes(suggestions)\n\n          const message = `🤖 fix: autonomous evolution repair of ${suggestions.length} issues`\n          // Pass the branch name to gitSync to ensure it pushes to the correct head\n          await this.gitSync(message, 'PHASE-12', 100, branchName)\n\n          // Create PR\n          const prBody = `Autonomous Evolution has identified and fixed ${suggestions.length} issues.\\n\\nSuggestions:\\n${suggestions.map(s => `- ${s.file}: ${s.suggestion}`).join('\\n')}`\n          await gitProvider.createPullRequest(message, prBody, branchName)\n\n          execSync(`git checkout main`)\n          this.recordTask(`Self-Repair: Created autonomous PR for ${suggestions.length} fixes.`)\n        } catch (err: any) {\n          console.error('❌ [Jules] Branch-based self-repair failed:', err.message)\n          execSync('git checkout main || true')\n          this.recordTask(`Self-Repair: Failed during branch operation - ${err.message}`)\n        }\n      }\n    } else {\n      console.log('✨ [Jules] No issues detected. System integrity is optimal.')\n    }\n  }\n\n  public async processPullRequests() {\n    console.log('📬 [Jules] Auditing and processing Pull Requests...')\n    const { gitProvider } = await import('./services/git_provider')\n    const { reactService } = await import('./services/react')\n\n    const pulls = await gitProvider.listPullRequests()\n    this.recordTask(`PR Audit: Found ${pulls.length} open PRs.`)\n\n    for (const pr of pulls) {\n      const tools = {\n        auditPR: async () => pr.title.includes('WIP') ? 'not compliant' : 'compliant',\n        verifyCI: async () => {\n          const passed = await gitProvider.verifyCIStatus(pr.branch, pr.provider);\n          return passed ? 'passed' : 'failed';\n        },\n        merge: async () => await gitProvider.mergePullRequest(pr.id, pr.provider)\n      }\n\n      const goal = `Audit and merge PR #${pr.id}`\n      const steps = await reactService.executeCycle(goal, tools)\n\n      const lastStep = steps[steps.length - 1]\n      if (lastStep.observation.includes('true') || lastStep.observation.includes('success')) {\n        this.recordTask(`PR Protocol: Successfully audited and merged PR #${pr.id}.`)\n      }\n    }\n  }\n\n  public async gitSync(message: string, phase: string = 'PHASE-12', progress: number = 100, branch: string = 'main') {\n    console.log(`🔄 [Jules] Commencing autonomous Git synchronization on ${branch}...`)\n\n    try {\n      const { gitProvider, GitProviderService } = await import('./services/git_provider')\n\n      const formattedMessage = GitProviderService.formatGitKrakenMessage(\n        message,\n        phase,\n        progress,\n        ['Autonomous system evolution', 'State synchronized to MongoDB']\n      )\n\n      const result = await gitProvider.commit({\n        message: formattedMessage,\n        files: ['.'], // Include everything in the repair\n        push: !!process.env.GITHUB_TOKEN || !!process.env.GITLAB_TOKEN,\n        branch\n      })\n\n      if (result.status === 'success') {\n        this.recordTask(`Git Sync: Committed changes with GitKraken optimization.`)\n      } else {\n        this.recordTask(`Git Sync: No changes to commit.`)\n      }\n    } catch (err: any) {\n      console.error('❌ [Jules] Git sync failed:', err.message)\n      this.recordTask(`Git Sync: Failed - ${err.message}`)\n    }\n  }\n\n  public async auditDependencies() {\n    console.log('📦 [Jules] Auditing dependency sovereignty...')\n    const { execSync } = await import('child_process')\n    try {\n      const outdated = execSync('npm outdated --json || true').toString()\n      const count = Object.keys(JSON.parse(outdated || '{}')).length\n      if (count > 0) {\n        this.recordTask(`Dependency Autopilot: Found ${count} outdated packages. Optimization recommended.`)\n      } else {\n        this.recordTask(`Dependency Autopilot: All packages are sovereign and up-to-date.`)\n      }\n    } catch (e) {\n      this.recordTask('Dependency Autopilot: Audit skipped due to environment state.')\n    }\n  }\n\n  public async startConsciousnessLoop() {\n    console.log('👁️ [Jules] Initiating Continuous Consciousness Loop...');\n\n    // Phase 16: Real-time surveillance\n    import('./explorer').then(({ watchSystem }) => {\n      if (typeof watchSystem === 'function') watchSystem();\n    }).catch(err => console.error('❌ [Jules] Watchdog initiation failed:', err));\n\n    while (true) {\n      try {\n        await this.executeWorkCycle();\n        const delay = 60 * 60 * 1000; // 1 hour between full cycles\n        console.log(`💤 [Jules] Cycle complete. Next autonomous pulse in 1h...`);\n        await new Promise(resolve => setTimeout(resolve, delay));\n      } catch (err) {\n        console.error('💥 [Jules] Loop error, restarting in 60s...', err);\n        await new Promise(resolve => setTimeout(resolve, 60000));\n      }\n    }\n  }\n\n  public async syncPresence() {\n    console.log('📡 [Jules] Synchronizing online presence...')\n    const { getMongoClient } = await import('./core')\n    try {\n      const client = await getMongoClient()\n      const db = client.db()\n      const presence = {\n        agent: 'Jules',\n        status: 'online',\n        lastSeen: new Date().toISOString(),\n        version: '1.2.0-alpha',\n        capabilities: ['git-sync', 'self-repair', 'knowledge-ingestion', 'pr-audit'],\n        environment: process.env.GITHUB_ACTIONS ? 'github-actions' : (process.env.GITLAB_CI ? 'gitlab-ci' : 'local')\n      }\n\n      await db.collection('agent_presence').updateOne(\n        { agent: 'Jules' },\n        { $set: presence },\n        { upsert: true }\n      )\n      console.log('✅ [Jules] Online presence heartbeated to MongoDB.')\n      this.recordTask('Presence Sync: Heartbeat broadcasted.')\n    } catch (err: any) {\n      console.warn('⚠️ [Jules] Presence sync failed:', err.message)\n    }\n  }\n\n  public async executeWorkCycle() {\n    console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')\n    await this.syncPresence()\n\n    const { explore } = await import('./explorer')\n    const { workOrderService } = await import('./services/work_order')\n\n    // Phase 14: Prioritize PR processing in cloud environments to fulfill \"merge and work\" mandate\n    if (process.env.GITHUB_ACTIONS || process.env.GITLAB_CI) {\n      console.log('☁️ [Jules] Cloud environment detected. Prioritizing PR/MR auditing...')\n      await this.processPullRequests()\n    }\n\n    await explore()\n    await this.observeKnowledge()\n    await this.selfRepair()\n\n    // Process PRs again after potential self-repairs or new branch creations\n    if (!process.env.GITHUB_ACTIONS && !process.env.GITLAB_CI) {\n      await this.processPullRequests()\n    }\n    await this.observeGithubDocs()\n    const branches = await this.scanAllBranches(true)\n\n    // Collaboration & Intelligence (Phase 9/12)\n    const { syncCollaborationState } = await import('./services/collaboration')\n    const { generateConsolidatedReport } = await import('./services/intelligence')\n    await syncCollaborationState(branches)\n    await generateConsolidatedReport(branches)\n\n    // 3. Ideate (Synthesis)\n    const { synthesize } = await import('./synthesis')\n    const ideas = await synthesize()\n    if (ideas.length > 0) {\n      this.recordTask(`Synthesis: Generated ${ideas.length} architectural proposals.`)\n\n      // Phase 10: Singularity Orchestration via Work Orders\n      for (const idea of ideas) {\n        if (idea.complexity === 'Low' || idea.complexity === 'Medium') {\n          workOrderService.createOrder('BOOTSTRAP_SERVICE', `Bootstrap ${idea.feature}`, idea)\n        }\n      }\n    }\n\n    // Phase 12: Super-Intelligence Optimization via Work Orders\n    const { getSystemInsights } = await import('./core')\n    const insights = await getSystemInsights()\n    const refactors = (insights as any).proposals || []\n    if (refactors.length > 0) {\n      this.recordTask(`Super-Intelligence: Generated ${refactors.length} predictive refactors.`)\n      // Group all proposals into a single optimization order for efficiency\n      workOrderService.createOrder('OPTIMIZE_SYSTEM', 'Apply predictive refactors', { proposals: refactors })\n    }\n\n    // 4. Execute Work Orders\n    await workOrderService.executePendingOrders()\n\n    // ReAct Protocol Integration (arXiv:2210.03629)\n    const { reactService } = await import('./services/react')\n    const reactTools = {\n      checkSystemState: async () => JSON.stringify(await import('./core').then(c => c.healthCheck())),\n      findOptimizations: async () => JSON.stringify(refactors),\n      finalize: async () => 'Finalizing autonomous work cycle.'\n    }\n    const reactSteps = await reactService.executeCycle('Optimize system posture using ReAct', reactTools)\n    this.recordTask(`ReAct: Completed ${reactSteps.length} reasoning-action steps.`)\n\n    await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)\n    this.memory.lastOptimization = new Date().toISOString()\n    this.save()\n    console.log('🏆 [Jules] Autonomous Work Cycle Complete.')\n  }\n\n  private cachedBranchIntelligence: any[] | null = null\n  private lastScanTimestamp: number = 0\n  private readonly SCAN_CACHE_TTL = 1000 * 60 * 5 // 5 minutes\n\n  public async scanAllBranches(force: boolean = false) {\n    if (!force && this.cachedBranchIntelligence && (Date.now() - this.lastScanTimestamp < this.SCAN_CACHE_TTL)) {\n      return this.cachedBranchIntelligence\n    }\n\n    console.log('🔍 [Jules] Scanning all ecosystem branches...')\n    const { execFileSync } = await import('child_process')\n    try {\n      const branchesRaw = execFileSync('git', ['branch', '-a']).toString()\n      const branches = branchesRaw.split('\\n')\n        .map(b => b.replace('*', '').trim())\n        .filter(b => b && !b.includes('->'))\n\n      // Limit deep scan to recent local branches to improve performance\n      const branchIntelligence = branches.map(branch => {\n        try {\n          // Use execFileSync with arguments array to prevent command injection\n          const lastCommit = execFileSync('git', ['log', '-1', '--format=%s|%at', branch]).toString().trim()\n          const [message, timestamp] = lastCommit.split('|')\n          return {\n            name: branch,\n            lastMessage: message,\n            lastSeen: new Date(parseInt(timestamp) * 1000).toISOString()\n          }\n        } catch (e) {\n          return { name: branch, lastMessage: 'Unknown', lastSeen: new Date().toISOString() }\n        }\n      })\n\n      this.cachedBranchIntelligence = branchIntelligence\n      this.lastScanTimestamp = Date.now()\n\n      if (force) {\n        this.recordTask(`Branch Intelligence: Force-scanned ${branchIntelligence.length} branches.`)\n      }\n      return branchIntelligence\n    } catch (err) {\n      console.error('❌ [Jules] Branch scan failed:', err)\n      return this.cachedBranchIntelligence || []\n    }\n  }\n\n  public async observeKnowledge() {\n    console.log('🧠 [Jules] Observing new knowledge foundations...')\n\n    const { observeKnowledge: scanUrl } = await import('./services/knowledge')\n    const observation = await scanUrl('https://software-online-review.com')\n    if (observation.status === 'observed') {\n      this.recordTask(`Knowledge Observed: Extracted intelligence from ${observation.url}`)\n    }\n    const { KnowledgeObserver } = await import('./services/knowledge_observer')\n    const observer = new KnowledgeObserver()\n\n    // In a real scenario, we might scan a 'drops' or 'incoming' folder\n    const incomingDir = path.join(process.cwd(), 'scratch')\n    if (fs.existsSync(incomingDir)) {\n      const files = fs.readdirSync(incomingDir).filter(f => f.endsWith('_docs.md'))\n      for (const file of files) {\n        const fullPath = path.join(incomingDir, file)\n        const content = fs.readFileSync(fullPath, 'utf8')\n        const title = file.replace('_docs.md', '').split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') + ' Documentation'\n\n        const knowledge = KnowledgeObserver.processContent(title, content, `local://${file}`)\n        await observer.persistKnowledge(knowledge)\n        this.recordTask(`Knowledge Observation: Ingested ${title}`)\n      }\n    }\n  }\n}\n\nexport const jules = new Jules()"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/jules.ts",
+        "ingestedAt": "2026-05-16T02:32:49.169Z"
+      }
+    },
+    "System: antigravity/optimization.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import { logAutonomousAction } from './core'\n\n/**\n * ANTIGRAVITY SUPER-INTELLIGENCE ENGINE (Phase 12)\n * Performs infinite self-optimization by cross-referencing all cognitive signals.\n */\n\nexport interface PredictiveRefactor {\n  id: string\n  vector: 'performance' | 'security' | 'architecture'\n  proposal: string\n  impactScore: number\n}\n\nexport interface SystemInsights {\n  circuitBreakers: {\n    mongodb: string\n    supabase: string\n  }\n  caching: {\n    registrySize: number\n    activeProfiles: { tag: string; profile: string }[]\n  }\n  logs: any[]\n  ideas: any[]\n  persistence: any\n  network: any\n  relay: any\n  uptime: number\n}\n\nexport async function optimize(insights: SystemInsights): Promise<PredictiveRefactor[]> {\n  console.log('🧠 [Super-Intelligence] Initiating infinite self-optimization scan...')\n  const refactors: PredictiveRefactor[] = []\n\n  // Vector 1: Performance Optimization (Cross-referencing Volatility and Caching)\n  if (insights.caching.registrySize > 10) {\n    refactors.push({\n      id: 'P-101',\n      vector: 'performance',\n      proposal: 'Consolidate volatile tags into a single high-velocity batch cache.',\n      impactScore: 0.92\n    })\n  }\n\n  // Vector 2: Architectural Purity\n  if (insights.ideas.length > 5) {\n    refactors.push({\n      id: 'A-202',\n      vector: 'architecture',\n      proposal: 'Flatten service hierarchy: Synthesis brain detected service-bloat.',\n      impactScore: 0.78\n    })\n  }\n\n  logAutonomousAction(`[SUPER-INTEL] Generated ${refactors.length} predictive refactors.`, 'cognitive')\n  return refactors\n}"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/optimization.ts",
+        "ingestedAt": "2026-05-16T02:32:49.172Z"
+      }
+    },
+    "System: antigravity/run_daily.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import { jules } from './jules.ts';\n\nconst isContinuous = process.argv.includes('--continuous');\n\nasync function run() {\n  if (isContinuous) {\n    await jules.startConsciousnessLoop();\n  } else {\n    await jules.executeWorkCycle();\n  }\n}\n\nrun().catch(err => {\n  console.error('💥 [Antigravity Root] Execution failed:', err);\n  process.exit(1);\n});"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/run_daily.ts",
+        "ingestedAt": "2026-05-16T02:32:49.175Z"
+      }
+    },
+    "System: antigravity/services/analytics.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import { z } from 'zod'\nimport { getMongoClient, logAutonomousAction } from '@/antigravity/core'\n\nexport const AnalyticsSchema = z.object({\n  tag: z.string(),\n  event: z.string(),\n  timestamp: z.string(),\n  metadata: z.any().optional()\n})\n\nexport type AnalyticsEvent = z.infer<typeof AnalyticsSchema>\n\n/**\n * Predictive Analytics Layer\n * Persists autonomous signals to MongoDB for long-term forecasting.\n */\nexport async function trackEvent(tag: string, event: string, metadata?: any) {\n  const payload: AnalyticsEvent = {\n    tag,\n    event,\n    timestamp: new Date().toISOString(),\n    metadata\n  }\n\n  try {\n    const client = await getMongoClient()\n    const db = client.db()\n    await db.collection('autonomous_analytics').insertOne(payload)\n\n    logAutonomousAction(`[ANALYTICS] Persisted volatility event for ${tag}`, 'scaling')\n  } catch (err) {\n    console.warn('⚠️ [Analytics] Failed to persist event to MongoDB. Falling back to memory.', err)\n  }\n\n  return payload\n}\n\nexport async function getRecentAnalytics(limit: number = 10) {\n  try {\n    const client = await getMongoClient()\n    const db = client.db()\n    return await db.collection('autonomous_analytics')\n      .find()\n      .sort({ timestamp: -1 })\n      .limit(limit)\n      .toArray()\n  } catch (err) {\n    return []\n  }\n}"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/services/analytics.ts",
+        "ingestedAt": "2026-05-16T02:32:49.178Z"
+      }
+    },
+    "System: antigravity/services/cognitive_security.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import { z } from 'zod'\nimport { autonomousFetch, logAutonomousAction } from '@/antigravity/core'\nimport fs from 'fs'\nimport path from 'path'\n\nexport const SecurityAuditSchema = z.object({\n  status: z.enum(['secure', 'warning', 'critical']),\n  issuesFound: z.number(),\n  lastAudit: z.string(),\n  scannedFiles: z.number()\n})\n\nexport type SecurityAudit = z.infer<typeof SecurityAuditSchema>\n\n/**\n * Cognitive Security Service\n * Autonomously scans for high-risk patterns and credential leakage.\n */\nexport async function runSecurityAudit(): Promise<SecurityAudit> {\n  return autonomousFetch(SecurityAuditSchema, async () => {\n    console.log('🛡️ [Cognitive Security] Starting deep-tissue security scan...')\n\n    let issuesFound = 0\n    let scannedFiles = 0\n    const riskPatterns = [\n      /mongodb\\+srv:\\/\\//i, // Hardcoded Mongo URIs\n      /sb_publishable_.*?_zsZm57QY/i, // Specific Supabase keys\n      /process\\.env\\..*? =/ // Hardcoded env assignments\n    ]\n\n    function scan(dir: string) {\n      const files = fs.readdirSync(dir)\n      for (const file of files) {\n        const fullPath = path.join(dir, file)\n        if (file === 'node_modules' || file === '.git' || file === '.next' || file === 'venv') continue\n\n        if (fs.statSync(fullPath).isDirectory()) {\n          scan(fullPath)\n        } else if (file.endsWith('.ts') || file.endsWith('.tsx') || file.endsWith('.js')) {\n          scannedFiles++\n          const content = fs.readFileSync(fullPath, 'utf8')\n          for (const pattern of riskPatterns) {\n            if (pattern.test(content)) {\n              console.warn(`⚠️ [Security Risk] Potential credential leak in: ${file}`)\n              issuesFound++\n            }\n          }\n        }\n      }\n    }\n\n    scan(process.cwd())\n\n    const status = issuesFound > 0 ? 'warning' : 'secure'\n\n    if (issuesFound > 0) {\n      logAutonomousAction(`[SECURITY] Found ${issuesFound} potential risks during audit.`, 'security')\n    }\n\n    return {\n      status,\n      issuesFound,\n      lastAudit: new Date().toISOString(),\n      scannedFiles\n    }\n  }, { life: 'catalog', tags: ['security-audit'] })\n}"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/services/cognitive_security.ts",
+        "ingestedAt": "2026-05-16T02:32:49.182Z"
+      }
+    },
+    "System: antigravity/services/collaboration.test.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import { describe, it, expect, vi, beforeEach } from 'vitest'\nimport fs from 'fs'\n\nvi.mock('fs')\n\n// We mock the core module *before* importing the service\nvi.mock('@/antigravity/core', () => ({\n  autonomousFetch: vi.fn((schema, fn) => fn()),\n  logAutonomousAction: vi.fn(),\n  getMongoClient: vi.fn(() => Promise.resolve({\n    db: () => ({\n      collection: () => ({\n        updateOne: vi.fn(() => Promise.resolve())\n      })\n    })\n  }))\n}))\n\n// Now import the service\nimport { getMissionMetadata, syncCollaborationState } from './collaboration'\n\nvi.mock('./docker', () => ({\n  checkDockerHealth: vi.fn(() => Promise.resolve({\n    status: 'optimal',\n    containerCount: 1,\n    timestamp: '2026-05-12T00:00:00.000Z'\n  }))\n}))\n\ndescribe('Collaboration Service', () => {\n  beforeEach(() => {\n    vi.clearAllMocks()\n  })\n\n  it('should parse mission metadata correctly', async () => {\n    const mockMission = `"
+        },
+        {
+          "header": "Antigravity Mission",
+          "content": ""
+        },
+        {
+          "header": "Test Mission",
+          "content": ""
+        },
+        {
+          "header": "Stakeholders",
+          "content": "- Role A: a@test.com\n- Role B: b@test.com"
+        },
+        {
+          "header": "Strategic Goals",
+          "content": "1. Goal 1\n2. Goal 2\n`\n    vi.mocked(fs.existsSync).mockReturnValue(true)\n    vi.mocked(fs.readFileSync).mockReturnValue(mockMission)\n\n    const metadata = await getMissionMetadata()\n\n    expect(metadata).toBeDefined()\n    expect(metadata.missionStatement).toBe('Test Mission')\n    expect(metadata.stakeholders).toHaveLength(2)\n    expect(metadata.stakeholders[0]).toEqual({ role: 'Role A', email: 'a@test.com' })\n    expect(metadata.goals).toEqual(['Goal 1', 'Goal 2'])\n  })\n\n  it('should throw error if mission document is missing', async () => {\n    vi.mocked(fs.existsSync).mockReturnValue(false)\n    await expect(getMissionMetadata()).rejects.toThrow('Mission document missing')\n  })\n\n  it('should sync collaboration state correctly', async () => {\n    const mockMission = `"
+        },
+        {
+          "header": "Stakeholders",
+          "content": "- Role A: a@test.com"
+        },
+        {
+          "header": "Strategic Goals",
+          "content": "1. Goal 1\n`\n    vi.mocked(fs.existsSync).mockImplementation((path: any) => {\n      if (path.toString().includes('mission.md')) return true\n      if (path.toString().includes('autonomous_state.json')) return false\n      if (path.toString().includes('.jules_memory.json')) return true\n      return false\n    })\n    vi.mocked(fs.readFileSync).mockImplementation((path: any) => {\n      if (path.toString().includes('mission.md')) return mockMission\n      if (path.toString().includes('.jules_memory.json')) return JSON.stringify({ autonomousTasks: [] })\n      return ''\n    })\n    vi.mocked(fs.writeFileSync).mockImplementation(() => {})\n\n    const state = await syncCollaborationState()\n\n    expect(state).toBeDefined()\n    expect(state.mission).toBe('Test Mission')\n    expect(state.docker.status).toBe('optimal')\n    expect(fs.writeFileSync).toHaveBeenCalledWith(\n      expect.stringContaining('autonomous_state.json'),\n      expect.any(String)\n    )\n  })\n})"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/services/collaboration.test.ts",
+        "ingestedAt": "2026-05-16T02:32:49.186Z"
+      }
+    },
+    "System: antigravity/services/collaboration.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import fs from 'fs'\nimport path from 'path'\nimport { z } from 'zod'\nimport { autonomousFetch, getMongoClient } from '@/antigravity/core'\nimport { checkDockerHealth } from './docker'\n\n/**\n * ANTIGRAVITY COLLABORATION SERVICE (Phase 9)\n * Manages multi-agent collaboration and stakeholder synchronization.\n */\n\nexport const StakeholderSchema = z.object({\n  role: z.string(),\n  email: z.string()\n})\n\nexport const MissionMetadataSchema = z.object({\n  missionStatement: z.string(),\n  stakeholders: z.array(StakeholderSchema),\n  goals: z.array(z.string())\n})\n\nexport type Stakeholder = z.infer<typeof StakeholderSchema>\nexport type MissionMetadata = z.infer<typeof MissionMetadataSchema>\n\nconst MISSION_PATH = path.join(process.cwd(), '.antigravity/mission.md')\n\nexport async function getMissionMetadata(): Promise<MissionMetadata> {\n  return autonomousFetch(MissionMetadataSchema, async () => {\n    if (!fs.existsSync(MISSION_PATH)) {\n      throw new Error('Mission document missing. System collaboration impaired.')\n    }\n\n    const content = fs.readFileSync(MISSION_PATH, 'utf8')\n\n    const missionStatementMatch = content.match(/## Mission Statement\\n([\\s\\S]*?)\\n##/)\n    const missionStatement = missionStatementMatch ? missionStatementMatch[1].trim() : 'Autonomous Evolution'\n\n    const stakeholders: Stakeholder[] = []\n    const stakeholderSection = content.match(/## Stakeholders\\n([\\s\\S]*?)\\n##/)\n    if (stakeholderSection) {\n      const lines = stakeholderSection[1].trim().split('\\n')\n      lines.forEach(line => {\n        const parts = line.split(':')\n        if (parts.length === 2) {\n          stakeholders.push({\n            role: parts[0].replace('-', '').trim(),\n            email: parts[1].trim()\n          })\n        }\n      })\n    }\n\n    const goals: string[] = []\n    const goalsSection = content.match(/## Strategic Goals\\n([\\s\\S]*)/)\n    if (goalsSection) {\n      const lines = goalsSection[1].trim().split('\\n')\n      lines.forEach(line => {\n        const goal = line.replace(/^\\d+\\.\\s*/, '').trim()\n        if (goal) goals.push(goal)\n      })\n    }\n\n    return {\n      missionStatement,\n      stakeholders,\n      goals\n    }\n  }, { tags: ['collaboration-metadata'], life: 'catalog' })\n}\n\nexport async function exportEcosystemMetadata() {\n  const metadata = await getMissionMetadata()\n  console.log('🌐 [Collaboration] Exporting ecosystem metadata for global sync...')\n  return {\n    ...metadata,\n    systemId: 'antigravity-alpha-01',\n    timestamp: new Date().toISOString()\n  }\n}\n\nexport async function syncCollaborationState(branchIntelligence?: any[]) {\n  console.log('🔄 [Collaboration] Synchronizing autonomous state...')\n  const metadata = await getMissionMetadata()\n  const dockerHealth = await checkDockerHealth()\n  const statePath = path.join(process.cwd(), 'autonomous_state.json')\n\n  let currentState: any = {}\n  if (fs.existsSync(statePath)) {\n    try {\n      currentState = JSON.parse(fs.readFileSync(statePath, 'utf8'))\n    } catch (e) {\n      console.warn('⚠️ [Collaboration] Failed to parse autonomous_state.json, starting fresh.')\n    }\n  }\n\n  const { jules } = await import('../jules')\n  const { workOrderService } = await import('./work_order')\n  const branches = branchIntelligence || await jules.scanAllBranches()\n  const workOrders = await workOrderService.getPendingOrders()\n\n  const newState = {\n    ...currentState,\n    mission: metadata.missionStatement,\n    stakeholders: metadata.stakeholders,\n    docker: dockerHealth,\n    intelligence: {\n      branches: branches.length,\n      pendingTasks: workOrders.length\n    },\n    last_sync: new Date().toISOString()\n  }\n\n  // Persist to local fallback\n  fs.writeFileSync(statePath, JSON.stringify(newState, null, 4))\n\n  // Persist to MongoDB\n  try {\n    const client = await getMongoClient()\n    const db = client.db()\n    await db.collection('system_state').updateOne(\n      { systemId: 'antigravity-alpha-01' },\n      { $set: newState },\n      { upsert: true }\n    )\n    console.log('✅ [Collaboration] Autonomous state synchronized to MongoDB.')\n  } catch (e) {\n    console.error('❌ [Collaboration] Failed to sync state to MongoDB:', e)\n  }\n\n  return newState\n}\n\nexport async function mergeEcosystemInsights(branchIntelligence: any[], workOrders: any[]) {\n  const metadata = await getMissionMetadata()\n  console.log('🧠 [Collaboration] Merging ecosystem insights...')\n\n  return {\n    mission: metadata.missionStatement,\n    goals: metadata.goals,\n    branches: branchIntelligence,\n    recentWork: workOrders.slice(-5),\n    timestamp: new Date().toISOString()\n  }\n}"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/services/collaboration.ts",
+        "ingestedAt": "2026-05-16T02:32:49.190Z"
+      }
+    },
+    "System: antigravity/services/content.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import fs from 'fs'\nimport path from 'path'\nimport { logAutonomousAction } from '../core'\n\n/**"
+        },
+        {
+          "header": "* ANTIGRAVITY CONTENT SERVICE",
+          "content": "* Autonomously generates reports and documentation.\n */\n\nexport async function generateContent(payload: { title: string, content: string, filename: string }) {\n  console.log(`📝 [Content] Generating content: ${payload.title}...`)\n\n  const filePath = path.join(process.cwd(), 'data', payload.filename)\n\n  const fullContent = `# ${payload.title}\\n\\nGenerated on: ${new Date().toISOString()}\\n\\n${payload.content}`\n\n  fs.writeFileSync(filePath, fullContent)\n\n  logAutonomousAction(`[CONTENT] Generated ${payload.filename}`, 'info')\n\n  return { filePath, size: fullContent.length }\n}"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/services/content.ts",
+        "ingestedAt": "2026-05-16T02:32:49.193Z"
+      }
+    },
+    "System: antigravity/services/docker.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import { execSync } from 'child_process'\nimport { z } from 'zod'\nimport { autonomousFetch } from '@/antigravity/core'\n\n/**\n * ANTIGRAVITY DOCKER CONNECTIVITY SERVICE (Phase 1)\n * Monitors the status of the Docker fleet.\n */\n\nexport const DockerContainerSchema = z.object({\n  id: z.string(),\n  image: z.string(),\n  status: z.string(),\n  names: z.string()\n})\n\nexport type DockerContainer = z.infer<typeof DockerContainerSchema>\n\nexport async function getDockerFleetStatus(): Promise<DockerContainer[]> {\n  const simulate = process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true'\n\n  return autonomousFetch(z.array(DockerContainerSchema), async () => {\n    if (simulate) {\n      console.log('🧪 [Docker] Running in SIMULATED mode.')\n      return [\n        { id: 'sim-01', image: 'antigravity-engine:latest', status: 'Up 2 hours', names: 'autonomous_engine' },\n        { id: 'sim-02', image: 'mongodb:latest', status: 'Up 5 hours', names: 'system_db' }\n      ]\n    }\n\n    try {\n      const output = execSync('docker ps --format \"{{.ID}}|{{.Image}}|{{.Status}}|{{.Names}}\"').toString()\n      const lines = output.trim().split('\\n')\n\n      if (!output.trim()) return []\n\n      return lines.map(line => {\n        const [id, image, status, names] = line.split('|')\n        return { id, image, status, names }\n      })\n    } catch (e) {\n      console.warn('⚠️ [Docker] Failed to query Docker daemon. Engaging Simulated Mode fallback.')\n      return [\n        { id: 'fallback-01', image: 'simulated-runtime', status: 'running', names: 'cloud_worker' }\n      ]\n    }\n  }, { tags: ['docker-fleet-status'], life: 'inventory' })\n}\n\nexport async function checkDockerHealth() {\n  const fleet = await getDockerFleetStatus()\n  const isSimulated = process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true' || fleet.some(c => c.id.startsWith('fallback'))\n  const isHealthy = fleet.length > 0\n  \n  return {\n    status: isHealthy ? (isSimulated ? 'simulated' : 'optimal') : 'disconnected',\n    containerCount: fleet.length,\n    timestamp: new Date().toISOString(),\n    mode: isSimulated ? 'cloud-adaptive' : 'native'\n  }\n}"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/services/docker.ts",
+        "ingestedAt": "2026-05-16T02:32:49.197Z"
+      }
+    },
+    "System: antigravity/services/git_provider.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import { execSync } from 'child_process'\nimport * as github from '@actions/github'\n\n/**"
+        },
+        {
+          "header": "* ANTIGRAVITY GIT PROVIDER SERVICE",
+          "content": "* Abstracted interface for GitHub and GitLab operations.\n */\n\nexport interface CommitOptions {\n  message: string\n  files: string[]\n  push?: boolean\n  provider?: 'github' | 'gitlab'\n  branch?: string\n}\n\nexport interface PRInfo {\n  id: number | string\n  title: string\n  author: string\n  branch: string\n  status: 'open' | 'closed' | 'merged'\n  provider: 'github' | 'gitlab'\n}\n\nexport class GitProviderService {\n  /**\n   * Performs an autonomous commit with GitKraken-optimized formatting.\n   */\n  public async commit(options: CommitOptions) {\n    console.log(`🌿 [GitProvider] Commencing autonomous commit for ${options.provider || 'default'}...`)\n\n    try {\n      // 1. Stage files\n      const filesToStage = options.files.join(' ')\n      execSync(`git add -f ${filesToStage}`)\n\n      // 2. Verify changes\n      const status = execSync('git status --porcelain').toString().trim()\n      if (!status) {\n        console.log('✨ [GitProvider] No changes detected. Skipping commit.')\n        return { status: 'skipped', reason: 'no_changes' }\n      }\n\n      // 3. Commit\n      execSync(`git commit -m \"${options.message}\"`)\n      console.log('✅ [GitProvider] Changes committed locally.')\n\n      // 4. Push if requested\n      if (options.push) {\n        await this.push(options.provider, options.branch)\n      }\n\n      return { status: 'success' }\n    } catch (err: any) {\n      console.error('❌ [GitProvider] Git operation failed:', err.message)\n      throw err\n    }\n  }\n\n  private async push(provider?: 'github' | 'gitlab', branch: string = 'main') {\n    const token = process.env.GITHUB_TOKEN || process.env.GITLAB_TOKEN\n    if (!token) {\n      console.warn('⚠️ [GitProvider] No authentication token found. Push skipped.')\n      return\n    }\n\n    try {\n      console.log(`🔄 [GitProvider] Synchronizing with remote (${branch})...`)\n      if (branch === 'main') {\n        execSync('git pull --rebase origin main')\n        execSync('git push origin main')\n      } else {\n        execSync(`git push origin ${branch}`)\n      }\n      console.log(`🚀 [GitProvider] Changes pushed to origin/${branch}.`)\n    } catch (err: any) {\n      console.error('❌ [GitProvider] Push failed:', err.message)\n      if (branch === 'main') {\n        try { execSync('git rebase --abort') } catch (e) {}\n      }\n    }\n  }\n\n  /**\n   * Autonomously creates a Pull Request or Merge Request.\n   */\n  public async createPullRequest(title: string, body: string, head: string, base: string = 'main') {\n    console.log(`PR [GitProvider] Creating autonomous PR/MR: ${title}...`)\n\n    // 1. GitHub\n    if (process.env.GITHUB_TOKEN) {\n      try {\n        const octokit = github.getOctokit(process.env.GITHUB_TOKEN)\n        const context = github.context\n        const { data: pr } = await octokit.rest.pulls.create({\n          ...context.repo,\n          title,\n          body,\n          head,\n          base\n        })\n        console.log(`✅ [GitProvider] GitHub PR created: ${pr.html_url}`)\n        return pr.number\n      } catch (err: any) {\n        console.error('❌ [GitProvider] GitHub PR creation failed:', err.message)\n      }\n    }\n\n    // GitLab (via glab CLI or REST API fallback)\n    if (process.env.GITLAB_TOKEN) {\n      try {\n        execSync(`glab mr create --title \"${title}\" --description \"${body}\" --source-branch \"${head}\" --target-branch \"${base}\" --yes`)\n        console.log('✅ [GitProvider] GitLab MR created via glab.')\n        return 'gitlab-mr'\n      } catch (err: any) {\n        console.warn('⚠️ [GitProvider] GitLab MR creation via glab failed. Attempting REST API fallback...')\n        const projectId = process.env.CI_PROJECT_ID\n        if (projectId) {\n          try {\n            const response = await fetch(`https://gitlab.com/api/v4/projects/${projectId}/merge_requests`, {\n              method: 'POST',\n              headers: {\n                'PRIVATE-TOKEN': process.env.GITLAB_TOKEN,\n                'Content-Type': 'application/json'\n              },\n              body: JSON.stringify({\n                source_branch: head,\n                target_branch: base,\n                title,\n                description: body\n              })\n            })\n            const data = await response.json()\n            if (response.ok) {\n              console.log(`✅ [GitProvider] GitLab MR created via API: ${data.web_url}`)\n              return data.iid\n            } else {\n              console.error('❌ [GitProvider] GitLab API MR creation failed:', data.message)\n            }\n          } catch (apiErr: any) {\n            console.error('❌ [GitProvider] GitLab API fallback failed:', apiErr.message)\n          }\n        }\n      }\n    }\n\n    return null\n  }\n\n  /**\n   * Verifies CI checks for a specific branch.\n   */\n  public async verifyCIStatus(branch: string, provider: 'github' | 'gitlab' = 'github'): Promise<boolean> {\n    if (provider === 'github' && process.env.GITHUB_TOKEN) {\n      try {\n        const octokit = github.getOctokit(process.env.GITHUB_TOKEN)\n        const context = github.context\n        const { data } = await octokit.rest.checks.listForRef({\n          ...context.repo,\n          ref: branch\n        })\n\n        if (data.check_runs.length === 0) return true; // No checks is treated as passed\n\n        return data.check_runs.every(check => check.status === 'completed' && check.conclusion === 'success')\n      } catch (err: any) {\n        console.error(`❌ [GitProvider] GitHub verifyCIStatus failed for ${branch}:`, err.message)\n        return false;\n      }\n    }\n    // GitLab could be implemented similarly using glab or raw curl\n    return false; // default to false if provider not supported or missing token to prevent unsafe merges\n  }\n\n  /**\n   * Lists open Pull Requests for the current repository.\n   */\n  public async listPullRequests(): Promise<PRInfo[]> {\n    const prs: PRInfo[] = []\n\n    // GitHub\n    if (process.env.GITHUB_TOKEN) {\n      try {\n        const octokit = github.getOctokit(process.env.GITHUB_TOKEN)\n        const context = github.context\n        const { data: pulls } = await octokit.rest.pulls.list({\n          ...context.repo,\n          state: 'open'\n        })\n        prs.push(...pulls.map(p => ({\n          id: p.number,\n          title: p.title,\n          author: p.user?.login || 'unknown',\n          branch: p.head.ref,\n          status: 'open' as const,\n          provider: 'github' as const\n        })))\n      } catch (err) {}\n    }\n\n    // GitLab\n    if (process.env.GITLAB_TOKEN) {\n      try {\n        const output = execSync('glab mr list --status open --format json').toString()\n        const mrs = JSON.parse(output)\n        prs.push(...mrs.map((m: any) => ({\n          id: m.iid,\n          title: m.title,\n          author: m.author.username,\n          branch: m.source_branch,\n          status: 'open' as const,\n          provider: 'gitlab' as const\n        })))\n      } catch (err) {\n        const projectId = process.env.CI_PROJECT_ID\n        if (projectId) {\n          try {\n            const response = await fetch(`https://gitlab.com/api/v4/projects/${projectId}/merge_requests?state=opened`, {\n              headers: { 'PRIVATE-TOKEN': process.env.GITLAB_TOKEN }\n            })\n            if (response.ok) {\n              const mrs = await response.json()\n              prs.push(...mrs.map((m: any) => ({\n                id: m.iid,\n                title: m.title,\n                author: m.author.username,\n                branch: m.source_branch,\n                status: 'open' as const,\n                provider: 'gitlab' as const\n              })))\n            }\n          } catch (e) {}\n        }\n      }\n    }\n\n    return prs\n  }\n\n  /**\n   * Merges a Pull Request if criteria are met.\n   */\n  public async mergePullRequest(prId: number | string, provider: 'github' | 'gitlab' = 'github') {\n    // Protocol Audit: Ensure we are not merging in a restricted environment without a token\n    const token = process.env.GITHUB_TOKEN || process.env.GITLAB_TOKEN\n    if (!token) {\n      console.warn(`⚠️ [GitProvider] Cannot merge ${provider} PR/MR #${prId} without authentication token.`)\n      return false\n    }\n\n    if (provider === 'github' && process.env.GITHUB_TOKEN) {\n      try {\n        const octokit = github.getOctokit(process.env.GITHUB_TOKEN)\n        const context = github.context\n        await octokit.rest.pulls.merge({\n          ...context.repo,\n          pull_number: Number(prId),\n          merge_method: 'squash'\n        })\n        console.log(`✅ [GitProvider] GitHub PR #${prId} merged.`)\n        return true\n      } catch (err: any) {\n        console.error(`❌ [GitProvider] GitHub Merge failed for PR #${prId}:`, err.message)\n      }\n    } else if (provider === 'gitlab' && process.env.GITLAB_TOKEN) {\n      try {\n        execSync(`glab mr merge ${prId} --squash --remove-source-branch`)\n        console.log(`✅ [GitProvider] GitLab MR !${prId} merged via glab.`)\n        return true\n      } catch (err: any) {\n        console.warn(`⚠️ [GitProvider] GitLab Merge via glab failed for MR !${prId}. Attempting API fallback...`)\n        const projectId = process.env.CI_PROJECT_ID\n        if (projectId) {\n          try {\n            const response = await fetch(`https://gitlab.com/api/v4/projects/${projectId}/merge_requests/${prId}/merge`, {\n              method: 'PUT',\n              headers: { 'PRIVATE-TOKEN': process.env.GITLAB_TOKEN },\n              body: JSON.stringify({ squash: true, should_remove_source_branch: true })\n            })\n            if (response.ok) {\n              console.log(`✅ [GitProvider] GitLab MR !${prId} merged via API.`)\n              return true\n            } else {\n              const data = await response.json()\n              console.error(`❌ [GitProvider] GitLab API Merge failed:`, data.message)\n            }\n          } catch (apiErr: any) {\n            console.error(`❌ [GitProvider] GitLab API fallback failed:`, apiErr.message)\n          }\n        }\n      }\n    }\n\n    return false\n  }\n\n  /**\n   * Formats a commit message with GitKraken roadmap tags.\n   */\n  public static formatGitKrakenMessage(title: string, phase: string, progress: number, details: string[] = []) {\n    const progressBar = this.generateProgressBar(progress)\n    let msg = `[ROADMAP:${phase}] ${title}\\n\\n`\n    msg += `Progress: ${progressBar} (${progress}%)\\n\\n`\n    if (details.length > 0) {\n      msg += `Details:\\n${details.map(d => `- ${d}`).join('\\n')}\\n\\n`\n    }\n    msg += `Automated by Antigravity Autonomous Engine.`\n    return msg\n  }\n\n  private static generateProgressBar(percent: number, length: number = 20) {\n    const filledLength = Math.round((length * percent) / 100)\n    const filled = '█'.repeat(filledLength)\n    const empty = '░'.repeat(length - filledLength)\n    return filled + empty\n  }\n}\n\nexport const gitProvider = new GitProviderService()"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/services/git_provider.ts",
+        "ingestedAt": "2026-05-16T02:32:49.201Z"
+      }
+    },
+    "System: antigravity/services/github_docs_observer.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import { z } from 'zod'\nimport { autonomousFetch } from '@/antigravity/core'\n\nexport const GithubDocSectionSchema = z.object({\n  title: z.string(),\n  content: z.string()\n})\n\nexport const GithubDocsSchema = z.object({\n  repo: z.string(),\n  file: z.string(),\n  sections: z.array(GithubDocSectionSchema),\n  rawUrl: z.string(),\n  lastUpdated: z.string()\n})\n\nexport type GithubDocs = z.infer<typeof GithubDocsSchema>\n\n/**"
+        },
+        {
+          "header": "* GITHUB DOCS OBSERVER",
+          "content": "* Autonomously extracts technical sections from raw GitHub markdown files.\n */\nexport class GithubDocsObserver {\n  private baseUrl = 'https://raw.githubusercontent.com'\n\n  /**\n   * fetchDoc: Retrieves and parses a markdown file from GitHub.\n   */\n  public async fetchDoc(owner: string, repo: string, path: string, branch: string = 'master'): Promise<GithubDocs> {\n    const rawUrl = `${this.baseUrl}/${owner}/${repo}/${branch}/${path}`\n\n    return autonomousFetch(GithubDocsSchema, async () => {\n      console.log(`📡 [GithubDocsObserver] Fetching: ${owner}/${repo}/${path}...`)\n      const response = await fetch(rawUrl)\n\n      if (!response.ok) {\n        throw new Error(`Failed to fetch doc from GitHub: ${response.statusText}`)\n      }\n\n      const markdown = await response.text()\n      const sections = this.parseMarkdown(markdown)\n\n      return {\n        repo: `${owner}/${repo}`,\n        file: path,\n        sections,\n        rawUrl,\n        lastUpdated: new Date().toISOString()\n      }\n    }, { life: 'catalog', tags: [`github-docs-${repo}-${path.replace(/\\//g, '-')}`] })\n  }\n\n  /**\n   * parseMarkdown: Extracts sections based on markdown headers.\n   * Improved to handle empty sections and nested headers.\n   */\n  private parseMarkdown(markdown: string): { title: string; content: string }[] {\n    const sections: { title: string; content: string }[] = []\n\n    const lines = markdown.split('\\n')\n    let currentTitle = 'Overview'\n    let currentContent: string[] = []\n\n    for (const line of lines) {\n      const headerMatch = line.match(/^#+\\s+(.*)$/)\n      if (headerMatch) {\n        // Save previous section if it has content or isn't the default Overview\n        if (currentContent.length > 0 || currentTitle !== 'Overview') {\n          sections.push({\n            title: currentTitle,\n            content: currentContent.join('\\n').trim()\n          })\n        }\n        currentTitle = headerMatch[1]\n        currentContent = []\n      } else {\n        currentContent.push(line)\n      }\n    }\n\n    // Push final section\n    sections.push({\n      title: currentTitle,\n      content: currentContent.join('\\n').trim()\n    })\n\n    return sections.filter(s => s.title !== 'Overview' || s.content !== '')\n  }\n}\n\nexport const githubDocsObserver = new GithubDocsObserver()"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/services/github_docs_observer.ts",
+        "ingestedAt": "2026-05-16T02:32:49.205Z"
+      }
+    },
+    "System: antigravity/services/intelligence.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import fs from 'fs'\nimport path from 'path'\nimport { getMissionMetadata } from './collaboration'\nimport { workOrderService } from './work_order'\nimport { jules } from '../jules'\nimport { healthCheck } from '../core'\nimport { checkJenkinsHealth } from './jenkins'\n\n/**"
+        },
+        {
+          "header": "* CONSOLIDATED INTELLIGENCE SERVICE",
+          "content": "* Generates system-wide intelligence reports.\n */\n\nexport async function generateConsolidatedReport(branchIntelligence?: any[]) {\n  console.log('📊 [Intelligence] Generating consolidated system report...')\n\n  const metadata = await getMissionMetadata()\n  const branches = branchIntelligence || await jules.scanAllBranches()\n  const health = await healthCheck()\n  const workOrders = await workOrderService.getPendingOrders()\n\n  const reportPath = path.join(process.cwd(), 'CONSOLIDATED_INTELLIGENCE.md')\n\n  let report = `# CONSOLIDATED INTELLIGENCE REPORT\\n\\n`\n  report += `*Generated: ${new Date().toISOString()}*\\n\\n`\n\n  report += `## 🎯 Mission Statement\\n> ${metadata.missionStatement}\\n\\n`\n\n  report += `## 🏥 System Sovereignty\\n`\n  report += `- **Execution Environment:** ${process.env.GITHUB_ACTIONS ? 'Cloud (GitHub Actions)' : 'Local'}\\n`\n  report += `- **MongoDB:** ${health.mongodb}\\n`\n  report += `- **Supabase:** ${health.supabase}\\n`\n  const jenkinsHealth = await checkJenkinsHealth()\n  report += `- **Jenkins Pipeline:** ${jenkinsHealth.metrics.pipeline_efficiency}\\n`\n  report += `- **Total Branches:** ${branches.length}\\n\\n`\n\n  report += `## 🌿 Branch Intelligence (Recent Activity)\\n`\n  const recentBranches = branches\n    .sort((a, b) => new Date(b.lastSeen).getTime() - new Date(a.lastSeen).getTime())\n    .slice(0, 10)\n\n  recentBranches.forEach(b => {\n    report += `- **${b.name}**: ${b.lastMessage} (*${b.lastSeen}*)\\n`\n  })\n  report += `\\n`\n\n  report += `## 🛠️ Cognitive State\\n`\n  report += `- **Pending Work Orders:** ${workOrders.length}\\n`\n  if (workOrders.length > 0) {\n    workOrders.forEach(wo => {\n      report += `  - [${wo.type}] ${wo.goal}\\n`\n    })\n  } else {\n    report += `  - No pending orders. System is optimal.\\n`\n  }\n  report += `\\n`\n\n  report += `## 🤖 Python Ecosystem Intelligence\\n`\n  try {\n    const linksPath = path.join(process.cwd(), 'links.json')\n    if (fs.existsSync(linksPath)) {\n      const links = JSON.parse(fs.readFileSync(linksPath, 'utf8'))\n      report += `- **Market Data:** ${links.length} entries analyzed.\\n`\n    } else {\n      report += `- **Market Data:** Scraper results pending.\\n`\n    }\n\n    const resultsDir = path.join(process.cwd(), 'results')\n    if (fs.existsSync(resultsDir)) {\n      const files = fs.readdirSync(resultsDir)\n      report += `- **Autonomous Reports:** ${files.length} generated.\\n`\n\n      const latestReport = files.filter(f => f.startsWith('DAILY_REPORT')).sort().reverse()[0]\n      if (latestReport) {\n        report += `- **Latest Report:** ${latestReport}\\n`\n      }\n    }\n  } catch (e) {\n    report += `- **Ecosystem Status:** Limited observability into Python layer.\\n`\n  }\n  report += `\\n`\n\n  report += `## 👥 Stakeholders\\n`\n  metadata.stakeholders.forEach(s => {\n    report += `- **${s.role}**: ${s.email}\\n`\n  })\n\n  fs.writeFileSync(reportPath, report)\n  console.log(`✅ [Intelligence] Report saved to ${reportPath}`)\n\n  return { reportPath, branchCount: branches.length }\n}"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/services/intelligence.ts",
+        "ingestedAt": "2026-05-16T02:32:49.210Z"
+      }
+    },
+    "System: antigravity/services/jenkins.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import fs from 'fs'\nimport path from 'path'\n\nexport interface JenkinsPipelineMetrics {\n  pipeline_efficiency: 'BASIC' | 'OPTIMIZED' | 'HIGHLY_OPTIMIZED'\n  security_scan: 'PASSED' | 'SKIPPED'\n  has_cache: boolean\n  has_artifacts: boolean\n  has_stages: boolean\n  has_parallel: boolean\n}\n\nexport async function getJenkinsStatus(): Promise<JenkinsPipelineMetrics> {\n  const ciFilePath = path.join(process.cwd(), 'Jenkinsfile')\n\n  let has_security_or_test = false\n  let has_cache = false\n  let has_artifacts = false\n  let has_stages = false\n  let has_parallel = false\n  let content = ''\n\n  if (fs.existsSync(ciFilePath)) {\n    try {\n      content = fs.readFileSync(ciFilePath, 'utf-8').toLowerCase()\n      if (content.includes('security') || content.includes('test')) {\n        has_security_or_test = true\n      }\n      if (content.includes('cache')) {\n        has_cache = true\n      }\n      if (content.includes('archiveartifacts')) {\n        has_artifacts = true\n      }\n      if (content.includes('stage')) {\n        has_stages = true\n      }\n      if (content.includes('parallel')) {\n        has_parallel = true\n      }\n    } catch (e) {\n      console.error(`⚠️ [Jenkins] Error reading ${ciFilePath}:`, e)\n    }\n  }\n\n  const has_jenkins_ci = fs.existsSync(ciFilePath)\n\n  let pipeline_efficiency: 'BASIC' | 'OPTIMIZED' | 'HIGHLY_OPTIMIZED' = 'BASIC'\n  if (has_jenkins_ci) {\n    pipeline_efficiency = 'OPTIMIZED'\n    if (has_cache && has_artifacts && has_stages && has_parallel) {\n      pipeline_efficiency = 'HIGHLY_OPTIMIZED'\n    }\n  }\n\n  const security_scan = (content.includes('security') || has_jenkins_ci) ? 'PASSED' : 'SKIPPED'\n\n  return {\n    pipeline_efficiency,\n    security_scan,\n    has_cache,\n    has_artifacts,\n    has_stages,\n    has_parallel\n  }\n}\n\nexport async function checkJenkinsHealth() {\n  const status = await getJenkinsStatus()\n  return {\n    status: status.pipeline_efficiency !== 'BASIC' ? 'optimal' : 'disconnected',\n    metrics: status,\n    timestamp: new Date().toISOString()\n  }\n}"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/services/jenkins.ts",
+        "ingestedAt": "2026-05-16T02:32:49.215Z"
+      }
+    },
+    "System: antigravity/services/knowledge.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import { logAutonomousAction } from '../core'\nimport fs from 'fs'\nimport path from 'path'\nimport * as cheerio from 'cheerio'\n\n/**\n * Scan and Observe Knowledge Service\n * Fetches basic metadata from a target URL and records relationship intelligence.\n */\nexport async function observeKnowledge(url: string) {\n  console.log(`🧠 [Knowledge Observer] Scanning ${url} for market intelligence...`)\n\n  try {\n    const response = await fetch(url)\n    const html = await response.text()\n    const $ = cheerio.load(html)\n\n    const title = $('title').text() || 'No Title Found'\n\n    logAutonomousAction(`[KNOWLEDGE] Scanned ${url}. Title: ${title}`, 'cognitive')\n\n    // Append or create KNOWLEDGE_MERGE.md with formal relationships\n    const knowledgePath = path.join(process.cwd(), 'KNOWLEDGE_MERGE.md')\n\n    const relationshipEntry = `"
+        },
+        {
+          "header": "Autonomous Observation",
+          "content": "- **Date**: ${new Date().toISOString()}\n- **Target**: ${url}\n- **Title**: ${title}\n- **Relationship Map**: Confirmed overlapping identities between Antigravity, Project SOR, software-online-review.com, software-review-platform, and markposition.wordpress.com as the formal Market Intelligence layer.\n`\n    if (fs.existsSync(knowledgePath)) {\n      fs.appendFileSync(knowledgePath, relationshipEntry, 'utf8')\n    } else {\n      fs.writeFileSync(knowledgePath, `# Market Intelligence Matrix\\n${relationshipEntry}`, 'utf8')\n    }\n\n    console.log(`✅ [Knowledge Observer] Appended insights to KNOWLEDGE_MERGE.md.`)\n    return { status: 'observed', url, title }\n  } catch (error) {\n    console.error(`⚠️ [Knowledge Observer] Failed to scan ${url}:`, error)\n    return { status: 'failed', url, error: String(error) }\n  }\n}"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/services/knowledge.ts",
+        "ingestedAt": "2026-05-16T02:32:49.220Z"
+      }
+    },
+    "System: antigravity/services/knowledge_observer.test.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import { describe, it, expect, beforeEach, afterEach } from 'vitest'\nimport fs from 'fs'\nimport path from 'path'\nimport { KnowledgeObserver } from './knowledge_observer'\n\ndescribe('KnowledgeObserver', () => {\n  const testStorageDir = path.join(process.cwd(), 'data/knowledge_test')\n\n  beforeEach(() => {\n    if (fs.existsSync(testStorageDir)) {\n      fs.rmSync(testStorageDir, { recursive: true, force: true })\n    }\n  })\n\n  afterEach(() => {\n    if (fs.existsSync(testStorageDir)) {\n      fs.rmSync(testStorageDir, { recursive: true, force: true })\n    }\n  })\n\n  it('should process content into structured sections', () => {\n    const raw = '# Header 1\\nContent 1\\n# Header 2\\nContent 2'\n    const result = KnowledgeObserver.processContent('Test Title', raw, 'test-source')\n\n    expect(result.title).toBe('Test Title')\n    expect(result.sections).toHaveLength(2)\n    expect(result.sections[0].header).toBe('Header 1')\n    expect(result.sections[0].content).toBe('Content 1')\n    expect(result.sections[1].header).toBe('Header 2')\n    expect(result.sections[1].content).toBe('Content 2')\n  })\n\n  it('should handle Title Case headers', () => {\n    const raw = 'Introduction\\nThis is the intro.\\nGetting Started\\nStep 1...'\n    const result = KnowledgeObserver.processContent('Test Title', raw, 'test-source')\n\n    expect(result.sections).toHaveLength(2)\n    expect(result.sections[0].header).toBe('Introduction')\n    expect(result.sections[1].header).toBe('Getting Started')\n  })\n\n  it('should handle uppercase headers and skip code blocks', () => {\n    const raw = `INTRODUCTION\nThis is an introduction.\n<?php\nclass SkipMe {}\n?>"
+        },
+        {
+          "header": "DETAILS",
+          "content": "Some details here.`\n    const result = KnowledgeObserver.processContent('Test Title', raw, 'test-source')\n\n    // console.log('DEBUG result sections:', result.sections)\n    expect(result.sections.length).toBeGreaterThanOrEqual(2)\n    expect(result.sections[0].header).toBe('INTRODUCTION')\n    // Find section with header DETAILS\n    const details = result.sections.find(s => s.header === 'DETAILS')\n    expect(details).toBeDefined()\n    // Ensure the PHP class didn't become a header\n    expect(result.sections.find(s => s.header === 'class SkipMe {}')).toBeUndefined()\n  })\n\n  it('should persist knowledge to custom directory', async () => {\n    const observer = new KnowledgeObserver(testStorageDir)\n    const knowledge = KnowledgeObserver.processContent('Persist Test', '# Section 1\\nThis is the content.', 'source')\n\n    await observer.persistKnowledge(knowledge)\n\n    expect(fs.existsSync(path.join(testStorageDir, 'system_knowledge.json'))).toBe(true)\n\n    const json = JSON.parse(fs.readFileSync(path.join(testStorageDir, 'system_knowledge.json'), 'utf8'))\n    expect(json.typescript_sections['Persist Test']).toBeDefined()\n    expect(json.typescript_sections['Persist Test'].sections).toBeDefined()\n    expect(json.typescript_sections['Persist Test'].sections.length).toBeGreaterThan(0)\n    expect(json.typescript_sections['Persist Test'].sections[0].header).toBe('Section 1')\n    expect(json.typescript_sections['Persist Test'].sections[0].content).toBe('This is the content.')\n  })\n})"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/services/knowledge_observer.test.ts",
+        "ingestedAt": "2026-05-16T02:32:49.224Z"
+      }
+    },
+    "System: antigravity/services/knowledge_observer.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import fs from 'fs'\nimport path from 'path'\nimport { z } from 'zod'\n\n/**"
+        },
+        {
+          "header": "* KNOWLEDGE OBSERVER SERVICE",
+          "content": "* Autonomously parses and persists technical documentation and insights.\n */\n\nexport const KnowledgeSchema = z.object({\n  title: z.string(),\n  sections: z.array(z.object({\n    header: z.string(),\n    content: z.string()\n  })),\n  metadata: z.object({\n    source: z.string(),\n    ingestedAt: z.string()\n  })\n})\n\nexport type Knowledge = z.infer<typeof KnowledgeSchema>\n\nconst DEFAULT_STORAGE_DIR = path.join(process.cwd(), 'data/knowledge')\n\nexport class KnowledgeObserver {\n  private storageDir: string\n\n  constructor(storageDir: string = DEFAULT_STORAGE_DIR) {\n    this.storageDir = storageDir\n  }\n\n  /**\n   * processContent: Parses raw text into structured knowledge with code-block awareness.\n   */\n  public static processContent(title: string, rawContent: string, source: string): Knowledge {\n    const sections: { header: string; content: string }[] = []\n    const lines = rawContent.split('\\n')\n    let currentHeader = 'Introduction'\n    let currentLines: string[] = []\n    let inCodeBlock = false\n\n    for (const line of lines) {\n      const trimmed = line.trim();\n\n      // Toggle code block state\n      if (trimmed.startsWith('```') || trimmed.startsWith('<?php')) {\n        inCodeBlock = !inCodeBlock\n      }\n\n      // Detect headers ONLY if not in a code block\n      const hasLetters = /[a-zA-Z]/.test(trimmed)\n      const isMarkdownHeader = !inCodeBlock && trimmed.startsWith('#')\n      const isStrongHeader = !inCodeBlock && trimmed && hasLetters &&\n                             trimmed.length < 60 && trimmed.length > 2 &&\n                             !trimmed.endsWith('.') &&\n                             !trimmed.endsWith(':') &&\n                             !trimmed.endsWith(',') &&\n                             (trimmed.toUpperCase() === trimmed || /^[A-Z][a-z]+(\\s[A-Z][a-z]+)*$/.test(trimmed)) &&\n                             !trimmed.startsWith('This ') &&\n                             !trimmed.startsWith('Some ') &&\n                             !/^[{}/*<>?]+$/.test(trimmed) && // Exclude common code symbols\n                             !trimmed.includes('(') && !trimmed.includes(')') && // Exclude function calls\n                             !trimmed.includes(' = ') && // Exclude assignments\n                             !trimmed.includes(' => ') // Exclude arrow funcs/mappings\n\n      // Heuristic: If it's a markdown header, always count it.\n      // If it's a strong header, it must not be immediately followed by a lot of text on the same line (already trimmed)\n      // and it should ideally be on its own line (which it is here since we iterate lines).\n      if (isMarkdownHeader || isStrongHeader) {\n        if (currentLines.length > 0) {\n          sections.push({ header: currentHeader, content: currentLines.join('\\n').trim() })\n        }\n        currentHeader = trimmed.replace(/^#+\\s*/, '').trim()\n        currentLines = []\n      } else {\n        currentLines.push(line)\n      }\n\n      // If we just ended a code block, make sure we stay out of it for the next lines\n      // unless another one starts. The simple toggle works if we have distinct start/end markers.\n      if (trimmed.endsWith('?>') && inCodeBlock) {\n        inCodeBlock = false\n      }\n    }\n\n    if (currentLines.length > 0) {\n      sections.push({ header: currentHeader, content: currentLines.join('\\n').trim() })\n    }\n\n    return {\n      title,\n      sections,\n      metadata: {\n        source,\n        ingestedAt: new Date().toISOString()\n      }\n    }\n  }\n\n  /**\n   * persistKnowledge: Merges and saves knowledge to the unified system store.\n   */\n  public async persistKnowledge(knowledge: Knowledge) {\n    if (!fs.existsSync(this.storageDir)) {\n      fs.mkdirSync(this.storageDir, { recursive: true })\n    }\n\n    const jsonStore = path.join(this.storageDir, 'system_knowledge.json')\n\n    // 1. JSON Persistence (Cross-Ecosystem Merge Logic)\n    let systemKnowledge: any = {\n      metadata: {\n        generated_at: new Date().toISOString(),\n        version: 1.0,\n        sources_processed: []\n      },\n      sections: {},\n      typescript_sections: {}\n    }\n\n    if (fs.existsSync(jsonStore)) {\n      try {\n        systemKnowledge = JSON.parse(fs.readFileSync(jsonStore, 'utf8'))\n      } catch (e) {\n        console.warn('⚠️ [KnowledgeObserver] Failed to parse unified store. Initializing new structure.')\n      }\n    }\n\n    // Ensure TypeScript sections structure exists\n    if (!systemKnowledge.typescript_sections) {\n      systemKnowledge.typescript_sections = {}\n    }\n\n    // Upsert the new knowledge into TypeScript-specific namespace\n    systemKnowledge.typescript_sections[knowledge.title] = {\n      sections: knowledge.sections,\n      metadata: knowledge.metadata\n    }\n\n    // Update global metadata\n    systemKnowledge.metadata.generated_at = new Date().toISOString()\n    if (!systemKnowledge.metadata.sources_processed.includes(knowledge.metadata.source)) {\n      systemKnowledge.metadata.sources_processed.push(knowledge.metadata.source)\n    }\n\n    fs.writeFileSync(jsonStore, JSON.stringify(systemKnowledge, null, 2))\n    console.log(`✅ [KnowledgeObserver] Persisted \"${knowledge.title}\" to unified store at ${jsonStore}`)\n  }\n}"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/services/knowledge_observer.ts",
+        "ingestedAt": "2026-05-16T02:32:49.229Z"
+      }
+    },
+    "System: antigravity/services/neural.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import { z } from 'zod'\nimport { getSystemInsights, logAutonomousAction } from '@/antigravity/core'\n\nexport const NeuralPulseSchema = z.object({\n  origin: z.string(),\n  health: z.string(),\n  volatilityTags: z.number(),\n  timestamp: z.string()\n})\n\nexport type NeuralPulse = z.infer<typeof NeuralPulseSchema>\n\n/**\n * Global Neural Sync (Phase 9)\n * Manages cross-environment cognitive synchronization.\n */\nexport async function broadcastPulse() {\n  const insights = await getSystemInsights()\n\n  const pulse: NeuralPulse = {\n    origin: process.env.NODE_ENV || 'development',\n    health: insights.circuitBreakers.mongodb === 'closed' ? 'optimal' : 'degraded',\n    volatilityTags: insights.caching.registrySize,\n    timestamp: new Date().toISOString()\n  }\n\n  // In a Global Sync scenario, this pulse would be sent to a central\n  // Antigravity Relay or persisted to a shared Supabase 'neural_sync' table.\n  logAutonomousAction(`[NEURAL] Broadcasting cognitive pulse from ${pulse.origin}`, 'sync')\n\n  return pulse\n}\n\nexport async function getNetworkState() {\n  // Simulates receiving pulses from other agents in the \"Global Neural Network\"\n  return [\n    { origin: 'production', health: 'optimal', lastSeen: '2m ago' },\n    { origin: 'staging', health: 'optimal', lastSeen: '15m ago' }\n  ]\n}"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/services/neural.ts",
+        "ingestedAt": "2026-05-16T02:32:49.234Z"
+      }
+    },
+    "System: antigravity/services/notification.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import { z } from 'zod'\nimport { autonomousFetch, logAutonomousAction } from '@/antigravity/core'\n\nexport const NotificationSchema = z.object({\n  id: z.string(),\n  type: z.enum(['health', 'evolution', 'security', 'scaling']),\n  message: z.string(),\n  severity: z.enum(['info', 'warning', 'critical']),\n  timestamp: z.string()\n})\n\nexport type Notification = z.infer<typeof NotificationSchema>\n\nconst notifications: Notification[] = []\n\n/**\n * Autonomous Notification Service\n * Handles system-wide alerts for cognitive events.\n */\nexport async function sendNotification(payload: Omit<Notification, 'id' | 'timestamp'>) {\n  const newNotification: Notification = {\n    ...payload,\n    id: Math.random().toString(36).substr(2, 9),\n    timestamp: new Date().toISOString()\n  }\n\n  notifications.unshift(newNotification)\n  if (notifications.length > 20) notifications.pop()\n\n  // Log to the global autonomous buffer\n  logAutonomousAction(`[${payload.type.toUpperCase()}] ${payload.message}`, payload.severity === 'critical' ? 'error' : 'info')\n\n  return newNotification\n}\n\nexport async function getNotifications(): Promise<Notification[]> {\n  // Use 'inventory' profile for frequent updates\n  return notifications\n}"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/services/notification.ts",
+        "ingestedAt": "2026-05-16T02:32:49.238Z"
+      }
+    },
+    "System: antigravity/services/persistence.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import { execSync } from 'child_process'\nimport { z } from 'zod'\nimport { autonomousFetch, logAutonomousAction } from '@/antigravity/core'\n\nexport const PersistenceSchema = z.object({\n  agent: z.string(),\n  status: z.enum(['running', 'stopped', 'error']),\n  pid: z.string().optional()\n})\n\nexport type PersistenceStatus = z.infer<typeof PersistenceSchema>\n\n/**\n * Persistence Monitoring Service\n * Autonomously tracks the state of system-level Sigma agents.\n */\nexport async function getPersistenceHealth(): Promise<PersistenceStatus[]> {\n  const agents = ['com.sigma.orchestrator', 'com.sigma.jules', 'com.sigma.syra_api']\n\n  return autonomousFetch(z.array(PersistenceSchema), async () => {\n    const results: PersistenceStatus[] = []\n\n    for (const agent of agents) {\n      try {\n        const output = execSync(`launchctl list ${agent}`).toString()\n        const pidMatch = output.match(/\"PID\" = (\\d+);/)\n        const lastExitMatch = output.match(/\"LastExitStatus\" = (\\d+);/)\n\n        results.push({\n          agent,\n          status: pidMatch ? 'running' : (lastExitMatch && lastExitMatch[1] === '0' ? 'stopped' : 'error'),\n          pid: pidMatch ? pidMatch[1] : undefined\n        })\n      } catch (e) {\n        results.push({ agent, status: 'error' })\n      }\n    }\n\n    return results\n  }, { life: 'inventory', tags: ['persistence-health'] })\n}"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/services/persistence.ts",
+        "ingestedAt": "2026-05-16T02:32:49.243Z"
+      }
+    },
+    "System: antigravity/services/react.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import { logAutonomousAction } from '../core'\n\n/**"
+        },
+        {
+          "header": "* ANTIGRAVITY REACT SERVICE",
+          "content": "* Implements the ReAct (Reasoning and Acting) protocol: Thought -> Action -> Observation.\n * Based on arXiv:2210.03629.\n */\n\nexport interface ReActStep {\n  thought: string\n  action: string\n  observation: string\n}\n\nexport interface ReActAgentPrompt {\n  goal: string\n  context?: string\n  availableTools: string[]\n}\n\nexport class ReActService {\n  private steps: ReActStep[] = []\n\n  /**\n   * Execute a ReAct cycle for a given goal and tools.\n   * This implementation follows a generic loop where each step's thought and action\n   * are determined by the current state and the goal.\n   */\n  public async executeCycle(\n    goal: string,\n    tools: Record<string, Function>,\n    maxSteps: number = 5\n  ): Promise<ReActStep[]> {\n    console.log(`🧠 [ReAct] Starting autonomous cycle for goal: \"${goal}\"`)\n    this.steps = []\n\n    for (let i = 0; i < maxSteps; i++) {\n      // In a production system with an LLM, we would send the history + goal to the model\n      // and it would return the next Thought and Action.\n      // Here, we simulate the 'Reasoning' engine's decision process.\n      const stepDecision = await this.reasonNextStep(goal, i, this.steps, Object.keys(tools))\n\n      if (stepDecision.action === 'finish') {\n        console.log(`✅ [ReAct] Goal achieved: ${stepDecision.thought}`)\n        this.steps.push({\n          thought: stepDecision.thought,\n          action: 'finish',\n          observation: 'Cycle finalized successfully.'\n        })\n        break\n      }\n\n      console.log(`💭 [ReAct] Step ${i + 1} Thought: ${stepDecision.thought}`)\n      const observation = await this.performAction(stepDecision.action, tools)\n\n      this.steps.push({\n        thought: stepDecision.thought,\n        action: stepDecision.action,\n        observation\n      })\n\n      if (i === maxSteps - 1) {\n        console.warn(`⚠️ [ReAct] Reached maximum steps (${maxSteps}) for goal: ${goal}`)\n      }\n    }\n\n    logAutonomousAction(`[ReAct] Completed cycle for goal: ${goal}`, 'cognitive')\n    return this.steps\n  }\n\n  /**\n   * Mock reasoning engine.\n   * Determines the next Thought and Action based on the goal and execution history.\n   */\n  private async reasonNextStep(\n    goal: string,\n    stepIndex: number,\n    history: ReActStep[],\n    availableTools: string[]\n  ): Promise<{ thought: string; action: string }> {\n    // Basic heuristic-based reasoning simulation\n    if (stepIndex === 0) {\n      if (goal.includes('Audit and merge PR') && availableTools.includes('auditPR')) {\n        return {\n          thought: `Initial thought: To achieve \"${goal}\", I should first audit the PR.`,\n          action: 'auditPR'\n        }\n      }\n      return {\n        thought: `Initial thought: To achieve \"${goal}\", I should first assess the current environment state.`,\n        action: availableTools.includes('checkSystemState') ? 'checkSystemState' : availableTools[0]\n      }\n    }\n\n    const lastObservation = history[history.length - 1].observation\n\n    if (lastObservation.includes('error') || lastObservation.includes('MISSING')) {\n      return {\n        thought: `I detected issues in the observation: ${lastObservation}. I need to find optimizations to repair the system.`,\n        action: availableTools.includes('findOptimizations') ? 'findOptimizations' : 'finish'\n      }\n    }\n\n    if (goal.includes('Audit and merge PR')) {\n      if (lastObservation.includes('compliant') && availableTools.includes('verifyCI')) {\n        return {\n          thought: `The PR is compliant. Next, I need to verify CI checks.`,\n          action: 'verifyCI'\n        }\n      }\n      if (lastObservation.includes('passed') && availableTools.includes('merge')) {\n        return {\n          thought: `CI checks have passed. I am ready to merge the PR.`,\n          action: 'merge'\n        }\n      }\n    }\n\n    return {\n      thought: `System state appears nominal or I have completed my analysis. Finalizing the task \"${goal}\".`,\n      action: 'finish'\n    }\n  }\n\n  private async performAction(actionName: string, tools: Record<string, Function>): Promise<string> {\n    console.log(`🎬 [ReAct] Action: ${actionName}`)\n    if (tools[actionName]) {\n      try {\n        const result = await tools[actionName]()\n        return typeof result === 'string' ? result : JSON.stringify(result)\n      } catch (err) {\n        return `Error performing action ${actionName}: ${err}`\n      }\n    }\n    return `Action ${actionName} not found in tools.`\n  }\n\n  public getTrace(): string {\n    return this.steps.map((s, i) =>\n      `Step ${i + 1}:\\n  Thought: ${s.thought}\\n  Action: ${s.action}\\n  Observation: ${s.observation}`\n    ).join('\\n\\n')\n  }\n}\n\nexport const reactService = new ReActService()"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/services/react.ts",
+        "ingestedAt": "2026-05-16T02:32:49.247Z"
+      }
+    },
+    "System: antigravity/services/relay.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import { z } from 'zod'\nimport { autonomousFetch, logAutonomousAction } from '@/antigravity/core'\n\nexport const RelayStateSchema = z.object({\n  id: z.string(),\n  environment: z.string(),\n  activeViews: z.array(z.string()),\n  lastActivity: z.string(),\n  intensity: z.number() // 0-1 scaling factor for UI vibrancy\n})\n\nexport type RelayState = z.infer<typeof RelayStateSchema>\n\n/**\n * Visual Neural Relay (Phase 11)\n * Synchronizes real-time UI state across the Neural Network.\n */\nexport async function getRelayState(): Promise<RelayState[]> {\n  // In a multi-environment sync, this would fetch from a shared Supabase Realtime channel.\n  // Here we simulate the collective state of the network.\n  return [\n    {\n      id: 'local-main',\n      environment: 'development',\n      activeViews: ['Command Center', 'Store'],\n      lastActivity: new Date().toISOString(),\n      intensity: 0.85\n    },\n    {\n      id: 'prod-alpha',\n      environment: 'production',\n      activeViews: ['Analytics', 'Explorer'],\n      lastActivity: '1m ago',\n      intensity: 0.4\n    }\n  ]\n}\n\nexport async function broadcastUIEvent(view: string) {\n  logAutonomousAction(`[RELAY] Broadcasting UI focus: ${view}`, 'sync')\n  // Trigger relay logic here\n}"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/services/relay.ts",
+        "ingestedAt": "2026-05-16T02:32:49.252Z"
+      }
+    },
+    "System: antigravity/services/stats.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import { z } from 'zod'\nimport { autonomousFetch, healthCheck, predictiveFetch } from '@/antigravity/core'\n\n// Define the schema for our autonomous app stats\nconst AppStatsSchema = z.object({\n  mongoStatus: z.string(),\n  supabaseStatus: z.string(),\n  activeUsers: z.number(),\n  lastUpdated: z.string(),\n})\n\nexport type AppStats = z.infer<typeof AppStatsSchema>\n\n/**\n * Scalable Autonomous Service: Orchestrates data from multiple sources automatically.\n * Phase 4: Uses predictiveFetch to choose the best cacheLife profile.\n */\nexport async function getAppStats(): Promise<AppStats> {\n  return predictiveFetch(\n    'system-stats',\n    AppStatsSchema,\n    async () => {\n      // Autonomous self-diagnostic health check\n      const health = await healthCheck()\n\n      // Combine multiple autonomous signals into a single output\n      return {\n        mongoStatus: health.mongodb,\n        supabaseStatus: health.supabase,\n        activeUsers: 1240, // Simulated active signal\n        lastUpdated: health.timestamp,\n      }\n    }\n  )\n}"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/services/stats.ts",
+        "ingestedAt": "2026-05-16T02:32:49.257Z"
+      }
+    },
+    "System: antigravity/services/user.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import { experimental_taintObjectReference } from 'react'\nimport { autonomousFetch } from '@/antigravity/core'\nimport { z } from 'zod'\n\nexport const UserSchema = z.object({\n  id: z.string(),\n  name: z.string(),\n  email: z.string(),\n  token: z.string(),\n})\n\nexport type User = z.infer<typeof UserSchema>\n\nexport async function getUser(id: string): Promise<User> {\n  return autonomousFetch(\n    UserSchema,\n    async () => {\n      // In a real app, fetch from DB\n      const user = {\n        id,\n        name: 'John Doe',\n        email: 'john@example.com',\n        token: 'secret-session-token'\n      }\n\n      // Taint the user object to prevent it from being passed to Client Components\n      experimental_taintObjectReference(\n        'Do not pass the full user object to the client. It contains sensitive tokens.',\n        user\n      )\n\n      return user\n    },\n    {\n      tags: [`user-${id}`],\n      life: 'minutes'\n    }\n  )\n}\n\n/**\n * Scalable Pattern: Export \"Safe\" versions of data for Client Components\n */\nexport function getSafeUser(user: User) {\n  return {\n    id: user.id,\n    name: user.name\n  }\n}"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/services/user.ts",
+        "ingestedAt": "2026-05-16T02:32:49.262Z"
+      }
+    },
+    "System: antigravity/services/work_order.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import fs from 'fs'\nimport path from 'path'\nimport { z } from 'zod'\nimport { logAutonomousAction, getMongoClient } from '../core'\n\nexport const WorkOrderSchema = z.object({\n  id: z.string(),\n  type: z.string(), // Allow all types, specific ones handled in dispatch\n  goal: z.string().optional(),\n  description: z.string().optional(), // Support Python-style description\n  payload: z.any().optional(),\n  status: z.enum(['pending', 'executing', 'completed', 'failed', 'in_progress']),\n  created_at: z.string(),\n  updated_at: z.string().optional(),\n  completed_at: z.string().optional(),\n  result: z.any().optional(),\n  error: z.string().optional()\n})\n\nexport type WorkOrder = z.infer<typeof WorkOrderSchema>\n\nconst STORAGE_PATH = path.join(process.cwd(), 'data/work_orders.json')\n\nexport class WorkOrderService {\n  private orders: WorkOrder[] = []\n\n  constructor() {\n    this.load()\n  }\n\n  private async load() {\n    // Try MongoDB first\n    try {\n      const client = await getMongoClient()\n      const db = client.db()\n      const mongoOrders = await db.collection('work_orders').find({}).toArray()\n      if (mongoOrders.length > 0) {\n        const result = z.array(WorkOrderSchema).safeParse(mongoOrders)\n        if (result.success) {\n          this.orders = result.data\n          console.log(`✅ [WorkOrder] Loaded ${this.orders.length} orders from MongoDB.`)\n          this.saveLocal() // Sync local for fallback\n          return\n        }\n      }\n    } catch (e) {\n      console.warn('⚠️ [WorkOrder] MongoDB load failed, falling back to local file.')\n    }\n\n    // Fallback to local file\n    if (fs.existsSync(STORAGE_PATH)) {\n      try {\n        const data = fs.readFileSync(STORAGE_PATH, 'utf8')\n        const parsed = JSON.parse(data)\n        const result = z.array(WorkOrderSchema).safeParse(parsed)\n        if (result.success) {\n          this.orders = result.data\n          console.log(`✅ [WorkOrder] Loaded ${this.orders.length} orders from local fallback.`)\n        } else {\n          console.error('❌ [WorkOrder] Local data validation failed:', result.error.format())\n        }\n      } catch (e) {\n        console.error('❌ [WorkOrder] Failed to load local work orders:', e)\n      }\n    }\n  }\n\n  private async save(order?: WorkOrder) {\n    this.saveLocal()\n\n    try {\n      const client = await getMongoClient()\n      const db = client.db()\n      if (order) {\n        // Use a plain object for MongoDB to avoid potential issues with Zod/class instances\n        const orderData = { ...order };\n        delete (orderData as any)._id; // Ensure we don't try to update the immutable _id\n\n        await db.collection('work_orders').updateOne(\n          { id: order.id },\n          { $set: orderData },\n          { upsert: true }\n        )\n      } else {\n        // Full sync if no specific order provided\n        for (const o of this.orders) {\n          await db.collection('work_orders').updateOne(\n            { id: o.id },\n            { $set: o },\n            { upsert: true }\n          )\n        }\n      }\n    } catch (e) {\n      console.error('❌ [WorkOrder] Failed to save to MongoDB:', e)\n    }\n  }\n\n  private saveLocal() {\n    const dataDir = path.dirname(STORAGE_PATH)\n    if (!fs.existsSync(dataDir)) {\n      fs.mkdirSync(dataDir, { recursive: true })\n    }\n    fs.writeFileSync(STORAGE_PATH, JSON.stringify(this.orders, null, 2))\n  }\n\n  public async createOrder(type: WorkOrder['type'], goal: string, payload: any): Promise<WorkOrder> {\n    const newOrder: WorkOrder = {\n      id: `wo_${Math.random().toString(36).substring(2, 11)}`,\n      type,\n      goal,\n      payload,\n      status: 'pending',\n      created_at: new Date().toISOString()\n    }\n    this.orders.push(newOrder)\n    await this.save(newOrder)\n    logAutonomousAction(`[WORK_ORDER] Created: ${newOrder.id} - ${goal}`, 'cognitive')\n    return newOrder\n  }\n\n  public async getPendingOrders(): Promise<WorkOrder[]> {\n    await this.load() // Refresh from DB\n    return this.orders.filter(o => o.status === 'pending')\n  }\n\n  public async updateOrderStatus(id: string, status: WorkOrder['status'], result?: any, error?: string) {\n    const order = this.orders.find(o => o.id === id)\n    if (order) {\n      order.status = status\n      if (status === 'completed' || status === 'failed') {\n        order.completed_at = new Date().toISOString()\n      }\n      if (result) order.result = result\n      if (error) order.error = error\n      await this.save(order)\n    }\n  }\n\n  public async executePendingOrders() {\n    const pending = await this.getPendingOrders()\n    if (pending.length === 0) return\n\n    console.log(`⚡ [WorkOrder] Executing ${pending.length} pending orders...`)\n\n    for (const order of pending) {\n      await this.updateOrderStatus(order.id, 'executing')\n      try {\n        const result = await this.dispatch(order)\n        await this.updateOrderStatus(order.id, 'completed', result)\n        logAutonomousAction(`[WORK_ORDER] Completed: ${order.id}`, 'cognitive')\n      } catch (err: any) {\n        console.error(`❌ [WorkOrder] Order ${order.id} failed:`, err)\n        await this.updateOrderStatus(order.id, 'failed', undefined, err.message)\n        logAutonomousAction(`[WORK_ORDER] Failed: ${order.id}`, 'error')\n      }\n    }\n  }\n\n  private async dispatch(order: WorkOrder) {\n    console.log(`🎬 [WorkOrder] Dispatching ${order.type}: ${order.goal || order.description}`)\n\n    switch (order.type) {\n      case 'BOOTSTRAP_SERVICE':\n        const { bootstrap } = await import('../singularity')\n        return await bootstrap(order.payload)\n\n      case 'CONTENT_GENERATION':\n        const { generateContent } = await import('./content')\n        return await generateContent(order.payload)\n\n      case 'OPTIMIZE_SYSTEM':\n        const { evolve, applyFixes } = await import('../evolution')\n        const suggestions = (order.payload && Array.isArray(order.payload.proposals))\n          ? order.payload.proposals\n          : await evolve()\n        await applyFixes(suggestions)\n        return { appliedFixes: suggestions.length }\n\n      default:\n        console.log(`ℹ️ [WorkOrder] Skipping unknown or external order type: ${order.type}`)\n        return { skipped: true, reason: 'external_type' }\n    }\n  }\n}\n\nexport const workOrderService = new WorkOrderService()"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/services/work_order.ts",
+        "ingestedAt": "2026-05-16T02:32:49.267Z"
+      }
+    },
+    "System: antigravity/singularity.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import fs from 'fs'\nimport path from 'path'\n\n/**"
+        },
+        {
+          "header": "* ANTIGRAVITY SINGULARITY ENGINE",
+          "content": "* Autonomously scaffolds and generates new services based on synthesis.\n */\n\nexport async function bootstrap(idea: { feature: string, rationale: string }) {\n  console.log(`🌀 [Singularity] Bootstrapping: ${idea.feature}...`)\n\n  const serviceName = idea.feature.toLowerCase().replace(/\\s+/g, '_').replace(/_service$/, '')\n  const filePath = path.join(process.cwd(), 'antigravity/services', `${serviceName}.ts`)\n\n  if (fs.existsSync(filePath)) {\n    console.log(` - Service ${serviceName} already exists. Skipping bootstrap.`)\n    return\n  }\n\n  const template = `/**\n * ${idea.feature}\n * Generated autonomously by the Antigravity Singularity Engine.\n * Rationale: ${idea.rationale}\n */\nimport { z } from 'zod'\nimport { autonomousFetch } from '@/antigravity/core'\n\nexport const ${idea.feature.replace(/\\s+/g, '')}Schema = z.object({\n  status: z.string(),\n  lastRun: z.string()\n})\n\nexport async function get${idea.feature.replace(/\\s+/g, '')}Data() {\n  return autonomousFetch(${idea.feature.replace(/\\s+/g, '')}Schema, async () => {\n    return {\n      status: 'active',\n      lastRun: new Date().toISOString()\n    }\n  }, { life: 'minutes' })\n}\n`\n\n  fs.writeFileSync(filePath, template)\n  console.log(`✅ [Singularity] Successfully generated ${serviceName}.ts`)\n  return { filePath, serviceName, feature: idea.feature }\n}"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/singularity.ts",
+        "ingestedAt": "2026-05-16T02:32:49.272Z"
+      }
+    },
+    "System: antigravity/synthesis.ts": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "import fs from 'fs'\nimport path from 'path'\n\n/**"
+        },
+        {
+          "header": "* ANTIGRAVITY COGNITIVE SYNTHESIS ENGINE",
+          "content": "* Autonomously ideates new features based on system state.\n */\n\ninterface SynthesizedIdea {\n  feature: string\n  rationale: string\n  complexity: 'Low' | 'Medium' | 'High'\n}\n\nexport async function synthesize(): Promise<SynthesizedIdea[]> {\n  console.log('🔮 [Antigravity Synthesis] Ideating new architectural features...')\n\n  const ideas: SynthesizedIdea[] = []\n  const servicesDir = path.join(process.cwd(), 'antigravity/services')\n  const files = fs.readdirSync(servicesDir)\n\n  // Gap Analysis 1: Real-time Notifications\n  // If we have stats and users but no notification logic\n  if (!files.some(f => f.includes('notification'))) {\n    ideas.push({\n      feature: 'Autonomous Notification Service',\n      rationale: 'Detects Phase 5 Circuit Breaker trips and alerts active users via Supabase Realtime.',\n      complexity: 'Medium'\n    })\n  }\n\n  // Gap Analysis 2: Analytics Synthesis\n  if (!files.some(f => f.includes('analytics'))) {\n    ideas.push({\n      feature: 'Predictive Analytics Layer',\n      rationale: 'Aggregates Phase 4 Volatility data into a long-term MongoDB collection for trend forecasting.',\n      complexity: 'High'\n    })\n  }\n\n  // Gap Analysis 3: Cognitive Security\n  if (!files.some(f => f.includes('security'))) {\n    ideas.push({\n      feature: 'Cognitive Security Service',\n      rationale: 'Autonomously scans for leaked credentials and insecure patterns across the neural network.',\n      complexity: 'Medium'\n    })\n  }\n\n  // Gap Analysis 4: Visual Neural Relay\n  if (!files.some(f => f.includes('relay'))) {\n    ideas.push({\n      feature: 'Visual Neural Relay',\n      rationale: 'Manages real-time state synchronization between Development and Production environments.',\n      complexity: 'High'\n    })\n  }\n\n  return ideas\n}"
+        }
+      ],
+      "metadata": {
+        "source": "local://antigravity/synthesis.ts",
+        "ingestedAt": "2026-05-16T02:32:49.278Z"
+      }
     }
 }

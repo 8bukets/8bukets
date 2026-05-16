@@ -38,7 +38,8 @@ jobs:
       run: |
         npm run test || true
         # Keep Python tests as fallback for any legacy components if they still exist
-        # python3 -m pytest tests/ || true
+        pip install filelock aiohttp beautifulsoup4 requests pytest pytest-asyncio opentelemetry-api opentelemetry-sdk python-dotenv
+        PYTHONPATH=. python3 -m pytest tests/ || true
 
     - name: Run Autonomous Cycle
       env:
