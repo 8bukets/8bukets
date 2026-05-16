@@ -42,6 +42,9 @@ export async function GET(req: Request) {
     let latestSnapshot: Record<string, unknown> | null = null;
     let activeWorkOrders: Record<string, unknown>[] = [];
     let systemState: Record<string, unknown> | null = null;
+    let latestSnapshot = null;
+    let activeWorkOrders: unknown[] = [];
+    let systemState = null;
 
     try {
       const client = await getMongoClient();
@@ -78,8 +81,8 @@ export async function GET(req: Request) {
             try { return JSON.parse(l); } catch { return { msg: l, time: new Date().toISOString(), type: 'raw' }; }
           })
           .reverse();
-      } catch (e) {
-        console.error('Failed to read logs:', e);
+      } catch {
+        console.error('Failed to read logs');
       }
     }
 
@@ -97,8 +100,8 @@ export async function GET(req: Request) {
         try {
           marketLinks = JSON.parse(fs.readFileSync(p, 'utf8')).slice(0, 5);
           break;
-        } catch (e) {
-          console.error(`Failed to read market data from ${p}:`, e);
+        } catch {
+          console.error(`Failed to read market data from ${p}:`);
         }
       }
     }
