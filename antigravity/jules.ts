@@ -105,22 +105,31 @@ export class Jules {
       { owner: 'bmewburn', repo: 'intelephense-docs', path: 'support.md' }
     ]
 
-    // Phase 15: Ingest local system documentation
-    const systemDirs = ['.github', 'antigravity']
-    for (const dir of systemDirs) {
-      const fullDir = path.join(process.cwd(), dir)
-      if (fs.existsSync(fullDir)) {
-        const files = fs.readdirSync(fullDir).filter(f => f.endsWith('.md') || f.endsWith('.yml'))
-        for (const file of files) {
+    // Phase 15: Ingest local system documentation (Recursive Scan)
+    const ingestSystemKnowledge = async (dir: string, base: string = '') => {
+      const fullPath = path.join(process.cwd(), base, dir)
+      if (!fs.existsSync(fullPath)) return
+
+      const entries = fs.readdirSync(fullPath, { withFileTypes: true })
+      for (const entry of entries) {
+        const relativePath = path.join(base, dir, entry.name)
+        if (entry.isDirectory()) {
+          if (entry.name !== 'node_modules' && entry.name !== '.git' && entry.name !== 'dist') {
+            await ingestSystemKnowledge(entry.name, path.join(base, dir))
+          }
+        } else if (entry.name.endsWith('.md') || entry.name.endsWith('.yml') || entry.name.endsWith('.ts')) {
           try {
-            const content = fs.readFileSync(path.join(fullDir, file), 'utf8')
-            const knowledge = KnowledgeObserver.processContent(`System: ${dir}/${file}`, content, `local://${dir}/${file}`)
+            const content = fs.readFileSync(path.join(process.cwd(), relativePath), 'utf8')
+            const knowledge = KnowledgeObserver.processContent(`System: ${relativePath}`, content, `local://${relativePath}`)
             await observer.persistKnowledge(knowledge)
-            console.log(` ✅ [Jules] Ingested Local Knowledge: ${dir}/${file}`)
+            console.log(` ✅ [Jules] Ingested Local Knowledge: ${relativePath}`)
           } catch (e) {}
         }
       }
     }
+
+    await ingestSystemKnowledge('.github')
+    await ingestSystemKnowledge('antigravity')
 
     const allKnowledge: any[] = []
 
