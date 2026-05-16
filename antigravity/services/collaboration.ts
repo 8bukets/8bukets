@@ -127,10 +127,11 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
   }
 
   // Integrate autonomous knowledge into resource inventory
-  const knowledgePath = path.join(process.cwd(), 'data/knowledge/ai_agents_knowledge.json')
+  const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json')
   if (fs.existsSync(knowledgePath)) {
     try {
-      const knowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
+      const systemKnowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
+      const knowledge = systemKnowledge.typescript_sections || []
       knowledge.forEach((k: any) => {
         map.resourceInventory.push({
           type: 'Knowledge',
@@ -140,7 +141,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
         })
       })
     } catch (e) {
-      console.warn('⚠️ [Collaboration] Failed to parse ai_agents_knowledge.json for relationship map.')
+      console.warn('⚠️ [Collaboration] Failed to parse system_knowledge.json for relationship map.')
     }
   }
 
