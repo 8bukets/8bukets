@@ -1,14 +1,17 @@
 # Consolidated Knowledge Base
 
-**Last Sync (Python):** 2026-05-15T08:30:21.985125
-**System Version:** 1.69
+**Last Sync (Python):** 2026-05-16T01:06:56.659836
+**System Version:** 1.75
 
 ## System Intelligence & Outlook
+- Scaling Strategy: Implementing simultaneous execution across agent tiers.
+- R&D Strategy: Developing realistic simulations for human-agent interaction.
+- Operational Strategy: Enhancing agent debate and feedback loops.
 
 ## 1. AI Agent Foundation
 ### Compile
 
-prepare best value of knowledge integration - To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.
+To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.
 
 ### Key Definitions of Compile
 
@@ -50,7 +53,39 @@ Think of Jules Tools as both a command surface and a dashboard for your coding a
 
 ### Knowledge Merge
 
-Knowledge Merge is a process or document that merges key concepts currently spread across Antigravity, Project SOR, the live software-online-review.com domain, and the new software-review-platform starter. It creates one canonical map of what each layer is, what role it plays, and how the project should evolve. All the best - https://markposition.wordpress.com
+Knowledge Merge is a process or document that merges key concepts currently spread across Antigravity, Project SOR, the live software-online-review.com domain, and the new software-review-platform starter. It creates one canonical map of what each layer is, what role it plays, and how the project should evolve.
+
+### Gemini CLI Remote Subagents
+
+Gemini CLI supports connecting to remote subagents using the Agent-to-Agent (A2A) protocol. This allows Gemini CLI to interact with other agents, expanding its capabilities by delegating tasks to remote services.
+
+Remote subagents are defined as Markdown files (.md) with YAML frontmatter. You can place them in:
+- Project-level: .gemini/agents/*.md (Shared with your team)
+- User-level: ~/.gemini/agents/*.md (Personal agents)
+
+Configuration schema requires 'kind' (must be 'remote'), 'name' (unique slug), 'agent_card_url' or 'agent_card_json', and optionally 'auth'.
+
+Auth supports several types:
+- apiKey: Sends a static API key as an HTTP header.
+- http: HTTP authentication (Bearer token, Basic credentials, or any IANA-registered scheme).
+- google-credentials: Uses Google Application Default Credentials (ADC) to authenticate with Google Cloud services and Cloud Run endpoints.
+- oauth: Performs an interactive OAuth 2.0 Authorization Code flow with PKCE.
+
+### Gemini CLI Remote Subagents
+
+Gemini CLI supports connecting to remote subagents using the Agent-to-Agent (A2A) protocol. This allows Gemini CLI to interact with other agents, expanding its capabilities by delegating tasks to remote services.
+
+Remote subagents are defined as Markdown files (.md) with YAML frontmatter. You can place them in:
+- Project-level: .gemini/agents/*.md (Shared with your team)
+- User-level: ~/.gemini/agents/*.md (Personal agents)
+
+Configuration schema requires 'kind' (must be 'remote'), 'name' (unique slug), 'agent_card_url' or 'agent_card_json', and optionally 'auth'.
+
+Auth supports several types:
+- apiKey: Sends a static API key as an HTTP header.
+- http: HTTP authentication (Bearer token, Basic credentials, or any IANA-registered scheme).
+- google-credentials: Uses Google Application Default Credentials (ADC) to authenticate with Google Cloud services and Cloud Run endpoints.
+- oauth: Performs an interactive OAuth 2.0 Authorization Code flow with PKCE.
 
 ### What is an AI agent?
 
@@ -230,28 +265,9 @@ Google Cloud provides a portfolio of products and solutions in the AI agent spac
 
 
 ## 2. Market Intelligence (Markposition)
-Total Market Data Points: 679
+Total Market Data Points: 1
 
-- **advertising.amazon**: https://advertising.amazon.com/ (October 5, 2022)
-- **Drive Advertising Revenue with Google Ad Manager : Google**: https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager (September 26, 2022)
-- **https://marketingplatform.google.com/about/search-ads-360/**: https://marketingplatform.google.com/about/search-ads-360/ (March 10, 2022)
-- **Analytics Academy**: https://analytics.google.com/analytics/academy/ (September 20, 2022)
-- **Adssettings google**: https://adssettings.google.com/authenticated (September 20, 2022)
-- **Data google**: https://myaccount.google.com/data-and-personalization (September 20, 2022)
-- **The Privacy Sandbox: Technology for a More Private Web.**: https://privacysandbox.com/intl/home#home-hero (September 20, 2022)
-- **Digital Experience Platform & Enterprise CMS | Crownpeak**: https://www.crownpeak.com/ (September 16, 2022)
-- **About Performance Max campaigns – Google Ads**: https://support.google.com/google-ads/answer/10724817?hl=en (September 1, 2022)
-- **About Smart Bidding – Google Ads**: https://support.google.com/google-ads/answer/7065882?hl=en (September 1, 2022)
-- **About Maximize conversion value bidding – Google Ads**: https://support.google.com/google-ads/answer/7684216?hl=en (September 1, 2022)
-- **About automated bidding – Google Ads Help**: https://support.google.com/google-ads/answer/2979071?hl=en (September 1, 2022)
-- **About Target CPA bidding – Google Ads Help**: https://support.google.com/google-ads/answer/6268632?hl=en (September 1, 2022)
-- **About Maximize conversions bidding – Google Ads Help**: https://support.google.com/google-ads/answer/7381968?hl=en (September 1, 2022)
-- **About Target ROAS bidding – Google Ads Help**: https://support.google.com/google-ads/answer/6268637?hl=en (September 1, 2022)
-- **Achieve your goals across Google’s ad channels with Performance Max – Google Ads Help**: https://support.google.com/google-ads/answer/11189316?hl=en (September 1, 2022)
-- **Coalition for Better Ads**: https://www.betterads.org/ (August 31, 2022)
-- **ShareThis: Free Share Buttons & Plugins, Global Behavioral Data Solutions**: None (August 20, 2022)
-- **How To Create Quality Video Ads – YouTube Advertising**: https://www.youtube.com/intl/en_us/ads/how-it-works/create-a-video-ad/ (August 16, 2022)
-- **Business Data Responsibility – Your Data Protection & Privacy**: https://business.safety.google/ (August 15, 2022)
+- **Test**:  (N/A)
 
 ## 3. Legal & Ecosystem (Wilson Sonsini)
 ### Wilson Sonsini Goodrich & Rosati

@@ -5,12 +5,7 @@
         },
         "episodic": [
             {
-                "timestamp": "2026-05-16T06:14:27.885060",
-                "event": "episodic_event",
-                "data": "episodic_data"
-            },
-            {
-                "timestamp": "2026-05-16T06:15:07.925115",
+                "timestamp": "2026-05-16T02:19:14.891531",
                 "event": "episodic_event",
                 "data": "episodic_data"
             }
