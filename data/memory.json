@@ -1,0 +1,22 @@
+{
+    "TestAgent": {
+        "long_term": {
+            "long_key": "long_value"
+        },
+        "episodic": [
+            {
+                "timestamp": "2026-05-16T02:19:14.891531",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            }
+        ]
+    },
+    "TargetingAgent": {
+        "long_term": {
+            "test_compatibility_persona": "Compatibility Enthusiast",
+            "last_primary_persona": "General Tech Enthusiast",
+            "new_key": "new_val"
+        },
+        "episodic": []
+    }
+}

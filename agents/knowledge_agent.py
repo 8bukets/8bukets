@@ -9,7 +9,7 @@ class KnowledgeAgent(BaseAgent):
     def __init__(self):
         super().__init__("KnowledgeAgent",
                          dependencies=[],
-                         provides=["ai_agents_definitions", "agent_best_practices", "agent_use_cases", "google_cloud_tools_list"])
+                         provides=["ai_agents_definitions", "agent_best_practices", "agent_use_cases", "google_cloud_tools_list", "react_framework_details", "agent_taxonomy"])
         self.knowledge_file = "ai_agents_knowledge.json"
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
@@ -121,5 +121,7 @@ class KnowledgeAgent(BaseAgent):
                 "ai_agents_definitions": {},
                 "agent_best_practices": [],
                 "agent_use_cases": {},
-                "google_cloud_tools_list": []
+                "google_cloud_tools_list": [],
+                "react_framework_details": {},
+                "agent_taxonomy": {}
             }
