@@ -39,6 +39,9 @@ export async function GET(req: Request) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
 
+    let latestSnapshot: Record<string, unknown> | null = null;
+    let activeWorkOrders: Record<string, unknown>[] = [];
+    let systemState: Record<string, unknown> | null = null;
     let latestSnapshot = null;
     let activeWorkOrders: unknown[] = [];
     let systemState = null;
