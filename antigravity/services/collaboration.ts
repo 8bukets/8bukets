@@ -107,7 +107,16 @@ ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
   console.log(summary)
 
   // Dispatch executive briefing for high-level communication
-  await dispatchExecutiveBriefing(`System synchronized: ${state.intelligence.branches} branches, ${state.intelligence.pendingTasks} tasks. Docker: ${state.docker.status}.`)
+  const synergyDetails = state.intelligence.relationshipMap.resourceInventory
+    .filter((r: any) => r.type === 'Branch Result')
+    .slice(0, 5)
+    .map((r: any) => `- ${r.name}: ${r.result}`)
+    .join('\n')
+
+  await dispatchExecutiveBriefing(
+    `System synchronized: ${state.intelligence.branches} branches, ${state.intelligence.pendingTasks} tasks. Docker: ${state.docker.status}.`,
+    synergyDetails || 'No new branch results consolidated in this cycle.'
+  )
 
   const logDir = path.join(process.cwd(), 'logs')
   if (!fs.existsSync(logDir)) fs.mkdirSync(logDir)
@@ -127,10 +136,11 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
   }
 
   // Integrate autonomous knowledge into resource inventory
-  const knowledgePath = path.join(process.cwd(), 'data/knowledge/ai_agents_knowledge.json')
+  const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json')
   if (fs.existsSync(knowledgePath)) {
     try {
-      const knowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
+      const systemKnowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
+      const knowledge = systemKnowledge.typescript_sections || []
       knowledge.forEach((k: any) => {
         map.resourceInventory.push({
           type: 'Knowledge',
@@ -140,7 +150,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
         })
       })
     } catch (e) {
-      console.warn('⚠️ [Collaboration] Failed to parse ai_agents_knowledge.json for relationship map.')
+      console.warn('⚠️ [Collaboration] Failed to parse system_knowledge.json for relationship map.')
     }
   }
 
@@ -171,10 +181,21 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
   map.resourceInventory.push(
     { type: 'Documentation', name: 'AGENTS.md', status: 'Active' },
     { type: 'Documentation', name: 'CONSOLIDATED_INTELLIGENCE.md', status: 'Active' },
+    { type: 'Documentation', name: 'KNOWLEDGE_MERGE.md', status: 'Active' },
     { type: 'Service', name: 'Jules Cognitive Agent', status: 'Optimal' },
     { type: 'Service', name: 'Unified Web Command Center', status: 'Live' },
     { type: 'Service', name: 'Jenkins CI/CD Pipeline', status: 'Active' }
   )
+
+  // Integrate branch results into resources if they implement a specific feature
+  branches.filter(b => b.category === 'feature' && b.results).forEach(b => {
+    map.resourceInventory.push({
+      type: 'Branch Result',
+      name: b.name,
+      status: 'Ready for Merge',
+      result: b.results
+    })
+  })
 
   return map
 }
@@ -200,6 +221,7 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
   const branches = branchIntelligence || await jules.scanAllBranches()
   const workOrders = workOrderService.getPendingOrders() // Simplified for now
   const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
+  await mergeBranchInsights(branches)
 
   const newState = {
     ...currentState,
@@ -220,15 +242,58 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
   return newState
 }
 
+export async function mergeBranchInsights(branches: any[]) {
+  console.log('🧠 [Collaboration] Merging branch insights into ecosystem matrix...')
+  const knowledgePath = path.join(process.cwd(), 'KNOWLEDGE_MERGE.md')
+
+  const relevantBranches = branches.filter(b => b.knowledge || (b.results && b.results !== b.lastMessage))
+
+  if (relevantBranches.length === 0) return
+
+  let newEntries = `\n### Ecosystem Results & Merged Knowledge (${new Date().toISOString()})\n`
+  relevantBranches.forEach(b => {
+    newEntries += `- **Branch:** ${b.name}\n`
+    newEntries += `  - **Result:** ${b.results}\n`
+    if (b.knowledge) {
+      newEntries += `  - **Knowledge:** ${b.knowledge}\n`
+    }
+  })
+
+  if (fs.existsSync(knowledgePath)) {
+    fs.appendFileSync(knowledgePath, newEntries, 'utf8')
+  } else {
+    fs.writeFileSync(knowledgePath, `# Market Intelligence Matrix\n${newEntries}`, 'utf8')
+  }
+
+  console.log(`✅ [Collaboration] Merged ${relevantBranches.length} branch insights.`)
+}
+
 export async function mergeEcosystemInsights(branchIntelligence: any[], workOrders: any[]) {
   const metadata = await getMissionMetadata()
   console.log('🧠 [Collaboration] Merging ecosystem insights...')
+
+  await mergeBranchInsights(branchIntelligence)
+  await broadcastToStakeholders({
+    last_sync: new Date().toISOString(),
+    docker: { status: 'synchronized', containerCount: 0 },
+    intelligence: {
+        branches: branchIntelligence.length,
+        pendingTasks: workOrders.length,
+        relationshipMap: await generateRelationshipMap(branchIntelligence, metadata.stakeholders, metadata.goals)
+    }
+  })
+  let marketIntelligence = ''
+  const knowledgePath = path.join(process.cwd(), 'KNOWLEDGE_MERGE.md')
+  if (fs.existsSync(knowledgePath)) {
+    marketIntelligence = await fs.promises.readFile(knowledgePath, 'utf8')
+  }
 
   return {
     mission: metadata.missionStatement,
     goals: metadata.goals,
     branches: branchIntelligence,
     recentWork: workOrders.slice(-5),
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
+    marketIntelligence
   }
 }

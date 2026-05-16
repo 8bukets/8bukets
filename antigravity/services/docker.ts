@@ -54,9 +54,12 @@ export async function getDockerFleetStatus(): Promise<DockerContainer[]> {
   }, { tags: ['docker-fleet-status'], life: 'inventory' })
 }
 
+import fs from 'fs'
+import path from 'path'
+
 export async function checkDockerHealth() {
   const fleet = await getDockerFleetStatus()
-  const isHealthy = fleet.length > 0
+  let isHealthy = fleet.length > 0
   const isSimulated = fleet.some(c => c.id.startsWith('sim-'))
 
   if (!isHealthy && !isSimulated) {
@@ -82,12 +85,38 @@ export async function checkDockerHealth() {
         timestamp: new Date().toISOString()
       }
     }
+  let status = isHealthy ? (isSimulated ? 'simulated' : 'optimal') : 'disconnected'
+
+  // Attempt recovery if disconnected
+  if (status === 'disconnected') {
+    try {
+      console.log('🔄 [DockerEvolutionAgent] Attempting to recover degraded containers using docker-compose up -d...')
+      execSync('docker-compose up -d', { stdio: 'ignore' })
+      isHealthy = true
+      status = 'recovering'
+    } catch (err) {
+      console.warn('⚠️ [DockerEvolutionAgent] Recovery failed.')
+    }
+  }
+
+  // DockerEvolutionAgent Logic: Parse Dockerfile for multi-stage build status
+  let multiStageStatus = 'unknown'
+  try {
+    const dockerfilePath = path.join(process.cwd(), 'Dockerfile')
+    if (fs.existsSync(dockerfilePath)) {
+      const content = fs.readFileSync(dockerfilePath, 'utf8')
+      const fromCount = (content.match(/^FROM /gm) || []).length
+      multiStageStatus = fromCount > 1 ? 'multi-stage' : 'single-stage'
+    }
+  } catch (err) {
+    console.warn('⚠️ [DockerEvolutionAgent] Failed to parse Dockerfile', err)
   }
 
   return {
-    status: isHealthy ? (isSimulated ? 'simulated' : 'optimal') : 'disconnected',
+    status,
     containerCount: fleet.length,
     simulated: isSimulated,
+    multiStageStatus,
     timestamp: new Date().toISOString()
   }
 }

@@ -53,6 +53,18 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
 
   const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
 
+  report += `## 🤝 Merged Ecosystem Insights\n`
+  report += `Synergy achieved across ${branches.length} branches. Detailed knowledge and results consolidated from specialized agents.\n\n`
+  const insights = branches.filter(b => b.knowledge || (b.results && b.results !== b.lastMessage)).slice(0, 10)
+  if (insights.length > 0) {
+    insights.forEach(b => {
+      report += `- **${b.name}**: ${b.results}${b.knowledge ? ` (*Knowledge: ${b.knowledge}*)` : ''}\n`
+    })
+  } else {
+    report += `- No new specialized insights to merge at this time.\n`
+  }
+  report += `\n`
+
   report += `## 🗺️ Relationship Map\n`
   report += `### Goal Alignment\n`
   Object.entries(relationshipMap.goalAlignment).forEach(([goal, relevantBranches]: [string, any]) => {
@@ -81,10 +93,11 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `\n`
 
   report += `## 🧠 Knowledge Matrix\n`
-  const knowledgePath = path.join(process.cwd(), 'data/knowledge/ai_agents_knowledge.json')
+  const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json')
   if (fs.existsSync(knowledgePath)) {
     try {
-      const knowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
+      const systemKnowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
+      const knowledge = systemKnowledge.typescript_sections || []
       knowledge.forEach((k: any) => {
         report += `### ${k.title}\n`
         report += `- **Source:** ${k.metadata.source}\n`

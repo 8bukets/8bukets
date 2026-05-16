@@ -184,6 +184,24 @@ export class Jules {
     } catch (e) {}
   }
 
+  public async startConsciousnessLoop() {
+    console.log(`🌌 [Jules-${this.role}] Ignition: Starting Continuous Consciousness Loop...`)
+
+    while (true) {
+      try {
+        await this.executeWorkCycle()
+
+        const delayHours = 4
+        console.log(`💤 [Jules] Cycle complete. Sleeping for ${delayHours} hours before next heartbeat...`)
+        await new Promise(resolve => setTimeout(resolve, delayHours * 60 * 60 * 1000))
+      } catch (err) {
+        console.error(`💥 [Jules] Error in consciousness loop:`, err)
+        // Wait 1 minute before retrying on error
+        await new Promise(resolve => setTimeout(resolve, 60000))
+      }
+    }
+  }
+
   public async executeWorkCycle() {
     console.log(`🌟 [Jules-${this.role}] Beginning Autonomous Work Cycle...`)
     const { explore } = await import('./explorer')
@@ -242,6 +260,15 @@ export class Jules {
     const reactSteps = await reactService.executeCycle('Optimize system posture using ReAct', reactTools)
     this.recordTask(`ReAct: Completed ${reactSteps.length} reasoning-action steps.`)
 
+    // Cloud Workflow Agent
+    const { cloudWorkflowAgent } = await import('./services/cloud_workflow')
+    const isFluent = await cloudWorkflowAgent.ensureFluentStatus()
+    if (isFluent) {
+      this.recordTask(`Cloud Workflow: System is FLUENT_ON_AIR.`)
+    } else {
+      this.recordTask(`Cloud Workflow: System degraded, attempted proactive recovery.`)
+    }
+
     await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
     this.memory.lastOptimization = new Date().toISOString()
     await workOrderService.executePendingOrders()
@@ -276,12 +303,21 @@ export class Jules {
           else if (branch.includes('jules/') || branch.includes('agent/')) category = 'agent'
           else if (branch.includes('research/')) category = 'research'
 
+          // Enhanced Result & Knowledge Extraction
+          const resultMatch = message.match(/(?:results|fixes|implements|adds):\s*(.*)/i)
+          const results = resultMatch ? resultMatch[1].trim() : (message.includes(':') ? message.split(':')[1].trim() : message)
+
+          const knowledgeNugget = message.toLowerCase().includes('learn') || message.toLowerCase().includes('observe')
+            ? `Branch ${branch} observed: ${results}`
+            : undefined
+
           return {
             name: branch,
             lastMessage: message,
             lastSeen: new Date(parseInt(timestamp) * 1000).toISOString(),
             category,
-            results: message.includes(':') ? message.split(':')[1].trim() : message
+            results,
+            knowledge: knowledgeNugget
           }
         } catch (e) {
           return {

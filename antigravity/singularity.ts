@@ -15,6 +15,18 @@ export async function bootstrap(idea: { feature: string, rationale: string }) {
   const workflowPath = path.join(process.cwd(), 'antigravity/workflows', `${serviceName}_workflow.ts`)
   const githubActionPath = path.join(process.cwd(), '.github/workflows', `autonomous_${serviceName}.yml`)
 
+  // Ensure directories exist
+  const dirs = [
+    path.join(process.cwd(), 'antigravity/services'),
+    path.join(process.cwd(), 'antigravity/workflows'),
+    path.join(process.cwd(), '.github/workflows')
+  ]
+  for (const dir of dirs) {
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true })
+    }
+  }
+
   if (fs.existsSync(filePath)) {
     console.log(` - Service ${serviceName} already exists. Skipping bootstrap.`)
     return
