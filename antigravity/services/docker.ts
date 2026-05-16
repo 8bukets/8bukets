@@ -85,6 +85,8 @@ export async function checkDockerHealth() {
         timestamp: new Date().toISOString()
       }
     }
+  }
+
   let status = isHealthy ? (isSimulated ? 'simulated' : 'optimal') : 'disconnected'
 
   // Attempt recovery if disconnected
