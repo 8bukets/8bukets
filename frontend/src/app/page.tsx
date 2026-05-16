@@ -15,9 +15,6 @@ type IntelligenceResponse = {
         current_version?: string;
       };
     };
-    research?: {
-      market_trends: string[];
-    };
   } | null;
   workOrders: {
     id: string;
@@ -28,12 +25,6 @@ type IntelligenceResponse = {
     time: string;
     type: string;
     msg: string;
-  }[];
-  marketLinks: {
-    title: string;
-    date: string;
-    external_link: string;
-    domain: string;
   }[];
 };
 
@@ -112,50 +103,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Section 2: Market Intelligence */}
-          <div className="bg-white dark:bg-zinc-900 rounded-xl shadow-md overflow-hidden border border-zinc-200 dark:border-zinc-800">
-            <div className="p-6">
-              <div className="flex justify-between items-center mb-4">
-                <h2 className="text-xl font-semibold">Market Intelligence</h2>
-                <a href="https://markposition.wordpress.com" target="_blank" className="text-[10px] text-zinc-400 hover:text-green-500">markposition.wordpress.com</a>
-              </div>
-              {loading ? (
-                <p className="text-zinc-500 animate-pulse">Scanning market...</p>
-              ) : intel?.marketLinks && intel.marketLinks.length > 0 ? (
-                <div className="space-y-3">
-                  {intel.marketLinks.map((link, idx) => (
-                    <div key={idx} className="p-3 bg-zinc-50 dark:bg-zinc-800 rounded-lg border-l-4 border-green-500">
-                      <div className="flex justify-between items-start mb-1">
-                        <span className="text-[10px] font-bold text-green-600 uppercase">{link.domain || 'Direct Link'}</span>
-                        <span className="text-[10px] text-zinc-400 font-mono">{link.date}</span>
-                      </div>
-                      <a href={link.external_link} target="_blank" className="text-sm font-medium hover:underline block truncate">{link.title}</a>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <div className="flex flex-col items-center justify-center py-8 text-zinc-400">
-                  <span className="text-sm">No market data found. Scraper pending.</span>
-                </div>
-              )}
-
-              {intel?.snapshot?.research?.market_trends && intel.snapshot.research.market_trends.length > 0 && (
-                <div className="mt-6 border-t border-zinc-100 dark:border-zinc-800 pt-4">
-                  <h3 className="text-sm font-bold text-zinc-500 mb-2 uppercase">Emerging Trends</h3>
-                  <ul className="space-y-2">
-                    {intel.snapshot.research.market_trends.map((trend, i) => (
-                      <li key={i} className="text-xs flex items-start gap-2">
-                        <span className="text-green-500">📈</span>
-                        <span>{trend}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Section 3: Active Work Orders */}
+          {/* Section 2: Active Work Orders */}
           <div className="bg-white dark:bg-zinc-900 rounded-xl shadow-md overflow-hidden border border-zinc-200 dark:border-zinc-800">
             <div className="p-6">
               <h2 className="text-xl font-semibold mb-4">Active Work Orders</h2>
@@ -182,7 +130,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Section 4: Cognitive Action Logs */}
+        {/* Section 3: Cognitive Action Logs */}
         <div className="w-full bg-white dark:bg-zinc-900 rounded-xl shadow-md overflow-hidden border border-zinc-200 dark:border-zinc-800">
           <div className="p-6">
             <h2 className="text-xl font-semibold mb-4">Cognitive Stream</h2>

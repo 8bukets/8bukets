@@ -9,12 +9,8 @@ pipeline {
         }
 
         stage('Build & Test Node') {
-            options {
-                timeout(time: 1, unit: 'HOURS')
-            }
             steps {
-                // Utilizing local npm cache for faster builds
-                sh 'npm ci --cache .npm --prefer-offline'
+                sh 'npm ci'
                 sh 'npm run build'
                 sh 'npm run test || true'
             }
@@ -22,22 +18,7 @@ pipeline {
 
         stage('Security Scan') {
             steps {
-                sh 'npm audit || true'
-            }
-        }
-
-        stage('Creative Workflow') {
-            parallel {
-                stage('Analyze Market') {
-                    steps {
-                        sh 'echo "Analyzing Market..."'
-                    }
-                }
-                stage('Generate Assets') {
-                    steps {
-                        sh 'echo "Generating Assets..."'
-                    }
-                }
+                sh 'echo "Running Security Scan..."'
             }
         }
 

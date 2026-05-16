@@ -23,9 +23,9 @@ class CloudWorkflowAgent(BaseAgent):
         # Evaluate combined state
         is_fluent = (
             vcs_status in ["COMMITTED_AND_PUSHED", "COMMITTED_LOCAL", "CLEAN"] and
-            viz_metrics.get("kraken_compatibility_score", 0) > 0.7 and
+            viz_metrics.get("kraken_compatibility_score", 0) > 0.8 and
             (gitlab_metrics.get("pipeline_efficiency") in ["OPTIMIZED", "HIGHLY_OPTIMIZED"] or jenkins_metrics.get("pipeline_efficiency") in ["OPTIMIZED", "HIGHLY_OPTIMIZED"]) and
-            docker_status.get("runtime_stability") in ["VERIFIED", "RECOVERING", "DEGRADED"]
+            docker_status.get("runtime_stability") == "VERIFIED"
         )
 
         if react_deployment_ready:

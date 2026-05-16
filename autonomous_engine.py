@@ -191,10 +191,10 @@ def process_work_orders():
 
     updated = False
     for order in orders:
-        order_status = order.get("status", "pending")
-        order_type = order.get("type", "UNKNOWN")
-        if order_status == "pending" or order_status == "in_progress":
-            if order_type == "DEPLOYMENT":
+        status = order.get("status", "").upper()
+        if status in ["PENDING", "IN_PROGRESS"]:
+        if order["status"] == "pending" or order["status"] == "in_progress":
+            if order["type"] == "DEPLOYMENT":
                 logger.info(f"🔔 Executing Deployment Work Order: {order['id']}")
                 try:
                     # Execute the rollout script
@@ -207,7 +207,7 @@ def process_work_orders():
                     logger.error(f"❌ Deployment {order['id']} failed: {e}")
                     order["status"] = "failed"
                     updated = True
-            elif order_type == "TESTING":
+            elif order["type"] == "TESTING":
                 logger.info(f"🧪 Executing Testing Work Order: {order['id']}")
                 try:
                     subprocess.run(["pytest"], check=True)
@@ -219,7 +219,7 @@ def process_work_orders():
                     logger.error(f"❌ Testing {order['id']} failed: {e}")
                     order["status"] = "failed"
                     updated = True
-            elif order_type == "CONTENT_CREATION":
+            elif order["type"] == "CONTENT_CREATION":
                 logger.info(f"📝 Executing Content Creation Work Order: {order['id']}")
                 try:
                     subprocess.run(["python3", "scripts/execute_content_creation.py", order["id"], order.get("description", "")], check=True)
@@ -231,7 +231,7 @@ def process_work_orders():
                     logger.error(f"❌ Content Creation {order['id']} failed: {e}")
                     order["status"] = "failed"
                     updated = True
-            elif order_type == "RESEARCH":
+            elif order["type"] == "RESEARCH":
                 logger.info(f"🔍 Executing Research Work Order: {order['id']}")
                 try:
                     run_scraper()
@@ -242,12 +242,6 @@ def process_work_orders():
                 except Exception as e:
                     logger.error(f"❌ Research {order['id']} failed: {e}")
                     order["status"] = "failed"
-                    updated = True
-            elif order_type in ["BOOTSTRAP_SERVICE", "OPTIMIZE_SYSTEM", "CONTENT_GENERATION"]:
-                logger.info(f"ℹ️ Delegated to TypeScript Engine (Jules): {order['id']} ({order_type})")
-                if order_status == "pending":
-                    order["status"] = "in_progress"
-                    order["updated_at"] = datetime.now().isoformat()
                     updated = True
 
     if updated:

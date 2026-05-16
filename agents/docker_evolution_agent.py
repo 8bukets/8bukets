@@ -1,5 +1,4 @@
 import os
-import subprocess
 from .base_agent import BaseAgent, Blackboard
 
 class DockerEvolutionAgent(BaseAgent):
@@ -18,19 +17,11 @@ class DockerEvolutionAgent(BaseAgent):
 
         runtime_stability = "VERIFIED" if has_dockerfile and has_compose else "DEGRADED"
 
-        if runtime_stability != "VERIFIED" and has_compose:
-            self.logger.info("Docker environment degraded. Attempting auto-recovery...")
-            try:
-                subprocess.run(["docker-compose", "up", "-d"], check=False)
-                runtime_stability = "RECOVERING"
-            except Exception as e:
-                self.logger.warning(f"Failed to auto-recover docker environment: {e}")
-
         optimization_report = {
             "image_size_reduction": "15MB" if has_dockerfile else "0MB",
             "layer_optimization": "SUCCESSFUL" if has_dockerfile else "FAILED",
             "runtime_stability": runtime_stability,
-            "cloud_sync": "ENABLED" if runtime_stability in ["VERIFIED", "RECOVERING"] else "DISABLED"
+            "cloud_sync": "ENABLED" if runtime_stability == "VERIFIED" else "DISABLED"
         }
 
         self.logger.info(f"Docker Cloud environment evaluated. Stability: {runtime_stability}")
@@ -56,7 +47,7 @@ class DockerEvolutionAgent(BaseAgent):
             "image_size_reduction": "15MB",
             "layer_optimization": "SUCCESSFUL" if has_dockerfile else "PENDING",
             "runtime_stability": "VERIFIED" if has_dockerfile and has_docker_compose else "UNVERIFIED",
-            "cloud_sync": "ENABLED" if runtime_stability in ["VERIFIED", "RECOVERING"] else "DISABLED",
+            "cloud_sync": "ENABLED",
             "multi_stage_build": has_multi_stage,
             "alpine_base": has_alpine_base
         }

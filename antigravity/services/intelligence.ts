@@ -4,7 +4,6 @@ import { getMissionMetadata } from './collaboration'
 import { workOrderService } from './work_order'
 import { jules } from '../jules'
 import { healthCheck } from '../core'
-import { checkJenkinsHealth } from './jenkins'
 
 /**
  * CONSOLIDATED INTELLIGENCE SERVICE
@@ -17,7 +16,7 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   const metadata = await getMissionMetadata()
   const branches = branchIntelligence || await jules.scanAllBranches()
   const health = await healthCheck()
-  const workOrders = await workOrderService.getPendingOrders()
+  const workOrders = workOrderService.getPendingOrders()
 
   const reportPath = path.join(process.cwd(), 'CONSOLIDATED_INTELLIGENCE.md')
 
@@ -30,8 +29,6 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `- **Execution Environment:** ${process.env.GITHUB_ACTIONS ? 'Cloud (GitHub Actions)' : 'Local'}\n`
   report += `- **MongoDB:** ${health.mongodb}\n`
   report += `- **Supabase:** ${health.supabase}\n`
-  const jenkinsHealth = await checkJenkinsHealth()
-  report += `- **Jenkins Pipeline:** ${jenkinsHealth.metrics.pipeline_efficiency}\n`
   report += `- **Total Branches:** ${branches.length}\n\n`
 
   report += `## 🌿 Branch Intelligence (Recent Activity)\n`

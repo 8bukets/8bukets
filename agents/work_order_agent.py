@@ -59,29 +59,13 @@ class WorkOrderAgent(BaseAgent):
         # Scenario: Content Creation based on Market Trends
         market_trends = research.get("market_trends", [])
         if market_trends:
-            # Create content for ALL major trends found (expanded from top 2)
-            for trend in market_trends:
-                task_id = f"CONTENT_{trend.replace(' ', '_').replace('.', '').upper()}"
+            for trend in market_trends[:2]: # Limit to top 2 trends per cycle
+                task_id = f"CONTENT_{trend.replace(' ', '_').upper()}"
                 if not self._order_exists(orders, task_id):
                     new_tasks_identified.append({
                         "id": task_id,
                         "type": "CONTENT_CREATION",
                         "description": f"Generate structured review/content for trend: {trend}",
-                        "status": "pending",
-                        "created_at": datetime.now().isoformat()
-                    })
-
-        # Scenario: Proactive Investigation for Restricted/Unreachable Domains
-        investigations = research.get("external_investigations", [])
-        for inv in investigations:
-            if inv.get("status") in ["RESTRICTED", "UNREACHABLE"]:
-                domain = inv.get("domain")
-                task_id = f"INVESTIGATE_{domain.replace('.', '_').upper()}"
-                if not self._order_exists(orders, task_id):
-                    new_tasks_identified.append({
-                        "id": task_id,
-                        "type": "RESEARCH",
-                        "description": f"Deep investigation of connectivity issues for domain: {domain}",
                         "status": "pending",
                         "created_at": datetime.now().isoformat()
                     })
@@ -95,35 +79,6 @@ class WorkOrderAgent(BaseAgent):
                     "status": "pending",
                     "created_at": datetime.now().isoformat()
                 })
-
-        # Scenario: Identify missing technical documentation
-        tech_docs = ["JULES_CLI.md", "JULES_TOOLS.md", "SYSTEM_PATENT.md"]
-        for doc in tech_docs:
-            if not os.path.exists(doc):
-                task_id = f"GENERATE_{doc.replace('.', '_').upper()}"
-                if not self._order_exists(orders, task_id):
-                    new_tasks_identified.append({
-                        "id": task_id,
-                        "type": "CONTENT_CREATION",
-                        "description": f"Generate missing technical documentation: {doc}",
-                        "status": "pending",
-                        "created_at": datetime.now().isoformat()
-                    })
-
-        # Scenario: Identify STALE_DOCUMENTATION
-        intel_report = "CONSOLIDATED_INTELLIGENCE.md"
-        if os.path.exists(intel_report):
-            mtime = os.path.getmtime(intel_report)
-            if (datetime.now().timestamp() - mtime) > 86400: # 24 hours
-                task_id = "REFRESH_INTELLIGENCE"
-                if not self._order_exists(orders, task_id):
-                    new_tasks_identified.append({
-                        "id": task_id,
-                        "type": "RESEARCH",
-                        "description": "Refresh consolidated system intelligence",
-                        "status": "pending",
-                        "created_at": datetime.now().isoformat()
-                    })
 
         # 3. Update orders and save
         if new_tasks_identified:
