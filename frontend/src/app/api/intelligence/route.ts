@@ -70,8 +70,8 @@ export async function GET(req: Request) {
     }
 
     // Read latest cognitive logs (fallback to file if needed, but preferably from DB in future)
-    const logPath = path.join(process.cwd(), '../logs/autonomous.log');
-    let recentLogs = [];
+    const logPath = path.join(/* turbopackIgnore: true */ process.cwd(), '../logs/autonomous.log');
+    let recentLogs: any[] = [];
     if (fs.existsSync(logPath)) {
       try {
         const logContent = fs.readFileSync(logPath, 'utf8');
@@ -90,7 +90,7 @@ export async function GET(req: Request) {
     // Read local links.json for real-time market data
     // Use multiple path strategies for cross-environment robustness (Cloud vs Local)
     const possiblePaths = [
-      path.join(process.cwd(), '../links.json'),
+      path.join(/* turbopackIgnore: true */ process.cwd(), '../links.json'),
       path.join(process.cwd(), 'links.json'),
       '/app/links.json'
     ];
