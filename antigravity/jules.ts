@@ -303,12 +303,21 @@ export class Jules {
           else if (branch.includes('jules/') || branch.includes('agent/')) category = 'agent'
           else if (branch.includes('research/')) category = 'research'
 
+          // Enhanced Result & Knowledge Extraction
+          const resultMatch = message.match(/(?:results|fixes|implements|adds):\s*(.*)/i)
+          const results = resultMatch ? resultMatch[1].trim() : (message.includes(':') ? message.split(':')[1].trim() : message)
+
+          const knowledgeNugget = message.toLowerCase().includes('learn') || message.toLowerCase().includes('observe')
+            ? `Branch ${branch} observed: ${results}`
+            : undefined
+
           return {
             name: branch,
             lastMessage: message,
             lastSeen: new Date(parseInt(timestamp) * 1000).toISOString(),
             category,
-            results: message.includes(':') ? message.split(':')[1].trim() : message
+            results,
+            knowledge: knowledgeNugget
           }
         } catch (e) {
           return {

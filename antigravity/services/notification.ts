@@ -39,14 +39,18 @@ export async function getNotifications(): Promise<Notification[]> {
   return notifications
 }
 
-export async function dispatchExecutiveBriefing(summary: string) {
+export async function dispatchExecutiveBriefing(summary: string, details?: string) {
   console.log('📢 [Notification] Dispatching executive briefing...')
+
+  const fullMessage = details
+    ? `EXECUTIVE BRIEFING: ${summary}\n\nDETAILED SYNERGY:\n${details}`
+    : `EXECUTIVE BRIEFING: ${summary}`
 
   const briefing: Notification = {
     id: Math.random().toString(36).substr(2, 9),
     type: 'evolution',
     severity: 'info',
-    message: `EXECUTIVE BRIEFING: ${summary}`,
+    message: fullMessage,
     timestamp: new Date().toISOString()
   }
 
