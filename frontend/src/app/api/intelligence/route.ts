@@ -40,12 +40,9 @@ export async function GET(req: Request) {
     }
 
     let latestSnapshot: Record<string, unknown> | null = null;
-    let activeWorkOrders: Record<string, unknown>[] = [];
     let systemState: Record<string, unknown> | null = null;
-    let latestSnapshot = null;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let activeWorkOrders: any[] = [];
-    let activeWorkOrders: unknown[] = [];
-    let systemState = null;
 
     // Phase 12 Optimization: Unified Database Probing with Graceful Degradation
     try {
@@ -71,6 +68,7 @@ export async function GET(req: Request) {
 
     // Read latest cognitive logs (fallback to file if needed, but preferably from DB in future)
     const logPath = path.join(/* turbopackIgnore: true */ process.cwd(), '../logs/autonomous.log');
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let recentLogs: any[] = [];
     if (fs.existsSync(logPath)) {
       try {
