@@ -1651,3 +1651,11 @@ Packages can be found online that aim to workaround these issues by providing st
 https://github.com/bmewburn/vscode-intelephense/issues
 
 ben@intelephense.com
+
+### System Integration: The Game of Logic
+*Source: Internal Systems / `scripts/game_of_logic.ts`*
+
+#### Overview
+The system implements a standalone CLI game based on Lewis Carroll's book "The Game of Logic" (published 1886). The game introduces foundational logic principles by requiring agents and players to "improvise conclusions" based on provided syllogisms (e.g., "Some fresh cakes are sweet" and "No sweet cakes are healthy").
+
+This acts as a mental scaffolding resource for cognitive agents in the system to test heuristic logic capabilities via a terminal interface (`npm run game-of-logic`). The original text is archived as a PDF in `data/The_Game_of_Logic.pdf` within the engine's data repository for historical reference and cognitive training.

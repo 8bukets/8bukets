@@ -1446,5 +1446,17 @@
         "source": "local://antigravity/synthesis.ts",
         "ingestedAt": "2026-05-16T02:32:49.278Z"
       }
+    },
+    "System: The Game of Logic Integration": {
+      "sections": [
+        {
+          "header": "Overview",
+          "content": "The system implements a standalone CLI game based on Lewis Carroll's book 'The Game of Logic' (published 1886). The game introduces foundational logic principles by requiring agents and players to 'improvise conclusions' based on provided syllogisms.\n\nThis acts as a mental scaffolding resource for cognitive agents in the system to test heuristic logic capabilities via a terminal interface (npm run game-of-logic). The original text is archived as a PDF in data/The_Game_of_Logic.pdf within the engine's data repository for historical reference and cognitive training."
+        }
+      ],
+      "metadata": {
+        "source": "local://scripts/game_of_logic.ts",
+        "ingestedAt": "2026-05-16T12:00:00.000Z"
+      }
     }
 }
