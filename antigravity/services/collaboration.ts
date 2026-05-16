@@ -4,6 +4,7 @@ import path from 'path'
 import { z } from 'zod'
 import { autonomousFetch, getMongoClient } from '@/antigravity/core'
 import { checkDockerHealth } from './docker'
+import { checkJenkinsHealth } from './jenkins'
 
 /**
  * ANTIGRAVITY COLLABORATION SERVICE (Phase 9)
@@ -84,6 +85,7 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
   logAutonomousAction('🔄 [Collaboration] Synchronizing autonomous state...', 'info')
   const metadata = await getMissionMetadata()
   const dockerHealth = await checkDockerHealth()
+  const jenkinsHealth = await checkJenkinsHealth()
   const statePath = path.join(process.cwd(), 'autonomous_state.json')
 
   let currentState: any = {}
@@ -108,6 +110,7 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
     mission: metadata.missionStatement,
     stakeholders: metadata.stakeholders,
     docker: dockerHealth,
+    jenkins: jenkinsHealth,
     intelligence: {
       branches: branches.length,
       pendingTasks: workOrders.length

@@ -53,11 +53,25 @@ export async function getDockerFleetStatus(): Promise<DockerContainer[]> {
 
 export async function checkDockerHealth() {
   const fleet = await getDockerFleetStatus()
+  let isHealthy = fleet.length > 0
+  let isRecovering = false
+
+  if (!isHealthy) {
+    try {
+      // Use async exec to prevent blocking the event loop
+      execAsync('docker-compose up -d').catch(e => {
+        console.warn('⚠️ [Docker] Async recovery failed.', e)
+      })
+      isRecovering = true
+    } catch (e) {
+      console.warn('⚠️ [Docker] Failed to initiate recovery.', e)
+    }
+  }
+
   const isSimulated = process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true' || fleet.some(c => c.id.startsWith('fallback'))
-  const isHealthy = fleet.length > 0
 
   return {
-    status: isHealthy ? (isSimulated ? 'simulated' : 'optimal') : 'disconnected',
+    status: isHealthy ? (isSimulated ? 'simulated' : 'optimal') : (isRecovering ? 'recovering' : 'disconnected'),
     containerCount: fleet.length,
     timestamp: new Date().toISOString(),
     mode: isSimulated ? 'cloud-adaptive' : 'native'

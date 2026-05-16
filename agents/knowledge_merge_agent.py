@@ -80,7 +80,8 @@ class KnowledgeMergeAgent(BaseAgent):
                     if key == "market_data":
                         consolidated["sections"][key] = {
                             "total_entries": len(content),
-                            "recent_entries": content[:20] # Store recent 20 for context
+                            "recent_entries": content[:20], # Store recent 20 for context
+                            "all_entries": content
                         }
                     else:
                         consolidated["sections"][key] = {"data": content}
@@ -135,7 +136,7 @@ class KnowledgeMergeAgent(BaseAgent):
                 f.write("\n## 2. Market Intelligence (Markposition)\n")
                 market = consolidated["sections"].get("market_data", {})
                 f.write(f"Total Market Data Points: {market.get('total_entries', 0)}\n\n")
-                for entry in market.get("recent_entries", []):
+                for entry in market.get("all_entries", market.get("recent_entries", [])):
                     f.write(f"- **{entry.get('title', 'N/A')}**: {entry.get('external_link', '')} ({entry.get('date', 'N/A')})\n")
 
                 f.write("\n## 3. Legal & Ecosystem (Wilson Sonsini)\n")

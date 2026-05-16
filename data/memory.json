@@ -28,15 +28,15 @@
         "long_term": {
             "disallowed_paths": [
                 "/next/",
-                "/cgi-bin/",
-                "/public.api/",
-                "/wp-signup.php",
-                "/activate/",
-                "/mshots/v1/",
                 "/wp-admin/",
-                "/press-this.php",
+                "/cgi-bin/",
                 "/wp-login.php",
-                "/remote-login.php"
+                "/remote-login.php",
+                "/wp-signup.php",
+                "/mshots/v1/",
+                "/public.api/",
+                "/press-this.php",
+                "/activate/"
             ]
         },
         "episodic": []
