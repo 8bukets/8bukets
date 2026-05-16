@@ -31,14 +31,8 @@ const MONGODB_URI = process.env.MONGODB_URI
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
 const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
-const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL)
-
 if (!MONGODB_URI || !SUPABASE_URL || !SUPABASE_KEY) {
-  if (isCloud) {
-    console.error('🚨 [Autonomous Core] CRITICAL: Missing environment credentials in cloud environment!')
-  } else {
-    console.warn('⚠️ [Autonomous Core] Missing production credentials. System running in limited observability mode.')
-  }
+  console.warn('⚠️ [Autonomous Core] Missing production credentials. System running in limited observability mode.')
 }
 
 export interface PageProps<T = any> {

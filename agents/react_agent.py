@@ -7,7 +7,7 @@ class ReActAgent(BaseAgent):
     """
     def __init__(self):
         super().__init__("ReActAgent",
-                         dependencies=["intelligence_insights", "ai_agents_definitions", "agent_use_cases", "agent_best_practices", "google_cloud_tools_list", "react_framework_details", "agent_taxonomy"],
+                         dependencies=["intelligence_insights", "ai_agents_definitions", "agent_use_cases", "agent_best_practices", "google_cloud_tools_list"],
                          provides=["react_reasoning", "react_actions", "react_agent_deployment_config"])
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
@@ -18,8 +18,6 @@ class ReActAgent(BaseAgent):
         use_cases = blackboard.get("agent_use_cases", {})
         best_practices = blackboard.get("agent_best_practices", [])
         tools_list = blackboard.get("google_cloud_tools_list", [])
-        react_details = blackboard.get("react_framework_details", {})
-        taxonomy = blackboard.get("agent_taxonomy", {})
 
         reasoning_log = []
         action_log = []
@@ -48,14 +46,10 @@ class ReActAgent(BaseAgent):
         if "DEPLOY_FOCUSED_AD_CAMPAIGN" in action_log or "OPTIMIZE_WORKFLOW_DECISION_MAKING" in action_log:
             reasoning_log.append("Reasoning: Specific actions determined, configuring React Agent deployment.")
 
-            # Dynamically determine deployment target based on best practices and knowledge
+            # Dynamically determine deployment target based on best practices
             deployment_target = "Cloud Run"
-            if "deployment_strategy" in react_details and "Next.js" in react_details["deployment_strategy"]:
+            if any("Next.js" in bp for bp in best_practices) or any("Vercel" in bp for bp in best_practices):
                 deployment_target = "Vercel"
-            elif any("Next.js" in bp for bp in best_practices) or any("Vercel" in bp for bp in best_practices):
-                deployment_target = "Vercel"
-
-            taxonomy_mode = "BACKGROUND" if taxonomy.get("background_processes") else "INTERACTIVE"
 
             # Check if any specific use case is active (e.g., customer, security)
             active_use_cases = list(use_cases.keys()) if isinstance(use_cases, dict) else []
@@ -67,10 +61,8 @@ class ReActAgent(BaseAgent):
                 "deployment_target": deployment_target,
                 "active_use_cases": active_use_cases,
                 "orchestration_mode": "SYNCHRONIZED",
-                "taxonomy_mode": taxonomy_mode,
                 "status": "READY_FOR_DEPLOYMENT",
-                "tools_integration": tools_list,
-                "react_framework_details": react_details
+                "tools_integration": tools_list
             }
 
         # Prepare payload
