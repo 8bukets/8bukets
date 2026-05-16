@@ -27,6 +27,21 @@ vi.mock('./docker', () => ({
   }))
 }))
 
+vi.mock('./jenkins', () => ({
+  checkJenkinsHealth: vi.fn(() => Promise.resolve({
+    status: 'optimal',
+    metrics: {
+      pipeline_efficiency: 'OPTIMIZED',
+      security_scan: 'PASSED',
+      has_cache: true,
+      has_artifacts: true,
+      has_stages: true,
+      has_parallel: true
+    },
+    timestamp: '2026-05-12T00:00:00.000Z'
+  }))
+}))
+
 describe('Collaboration Service', () => {
   beforeEach(() => {
     vi.clearAllMocks()
@@ -92,6 +107,7 @@ Test Mission
     expect(state).toBeDefined()
     expect(state.mission).toBe('Test Mission')
     expect(state.docker.status).toBe('optimal')
+    expect(state.jenkins.status).toBe('optimal')
     expect(fs.writeFileSync).toHaveBeenCalledWith(
       expect.stringContaining('autonomous_state.json'),
       expect.any(String)

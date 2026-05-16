@@ -67,13 +67,10 @@ export async function checkDockerHealth() {
     }
   }
 
-  return {
-    status: isHealthy ? 'optimal' : (isRecovering ? 'recovering' : 'disconnected'),
   const isSimulated = process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true' || fleet.some(c => c.id.startsWith('fallback'))
-  const isHealthy = fleet.length > 0
 
   return {
-    status: isHealthy ? (isSimulated ? 'simulated' : 'optimal') : 'disconnected',
+    status: isHealthy ? (isSimulated ? 'simulated' : 'optimal') : (isRecovering ? 'recovering' : 'disconnected'),
     containerCount: fleet.length,
     timestamp: new Date().toISOString(),
     mode: isSimulated ? 'cloud-adaptive' : 'native'
