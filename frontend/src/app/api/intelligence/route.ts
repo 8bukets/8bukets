@@ -39,9 +39,9 @@ export async function GET(req: Request) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
 
-    let latestSnapshot: any = null;
-    let activeWorkOrders: any[] = [];
-    let systemState: any = null;
+    let latestSnapshot: Record<string, unknown> | null = null;
+    let activeWorkOrders: Record<string, unknown>[] = [];
+    let systemState: Record<string, unknown> | null = null;
 
     try {
       const client = await getMongoClient();
@@ -75,7 +75,7 @@ export async function GET(req: Request) {
           .filter(l => l.trim())
           .slice(-15)
           .map(l => {
-            try { return JSON.parse(l); } catch(e) { return { msg: l, time: new Date().toISOString(), type: 'raw' }; }
+            try { return JSON.parse(l); } catch { return { msg: l, time: new Date().toISOString(), type: 'raw' }; }
           })
           .reverse();
       } catch (e) {
