@@ -214,7 +214,7 @@ export default function Home() {
               {messages.map((message) => (
                 <div key={message.id} className="whitespace-pre-wrap">
                   <span className="font-bold">{message.role === "user" ? "You: " : "AI: "}</span>
-                  {message.parts.map((part, i) => {
+                  {(message.parts as Array<{ type: string; text?: string }>).map((part, i) => {
                     switch (part.type) {
                       case "text":
                         return <span key={`${message.id}-${i}`}>{part.text}</span>;
@@ -287,7 +287,7 @@ export default function Home() {
         {messages.map((message) => (
           <div key={message.id} className="whitespace-pre-wrap">
             {message.role === "user" ? "User: " : "AI: "}
-            {message.parts.map((part, i) => {
+            {(message.parts as Array<{ type: string; text?: string }>).map((part, i) => {
               switch (part.type) {
                 case "text":
                   return <div key={`${message.id}-${i}`}>{part.text}</div>;
