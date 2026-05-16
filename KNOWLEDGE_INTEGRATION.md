@@ -14,6 +14,7 @@ This document is a compiled knowledge base containing the contents of various ex
 8. [IDE Integration](#ide-integration)
 9. [Remote Subagents](#remote-subagents)
 10. [Knowledge Merge](#knowledge-merge)
+11. [Subagents](#subagents)
 
 ---
 
