@@ -1,6 +1,6 @@
 # Markposition Analytics Report
 
-**Generated on:** 2026-05-15 22:48:03
+**Generated on:** 2026-05-16 22:44:17
 
 ## General Statistics
 - **Total Posts:** 350
@@ -39,3 +39,33 @@
 
 ## Authors
 - Filip Keser: 350 posts
+
+## AI Agent Knowledge Synthesis
+Successfully synthesized knowledge from **30** Google AI research articles.
+
+### Emerging Google AI Tools
+- 7 highlights from Google Cloud Next ‘26
+- Gemini
+- Gemini models
+- Gemma
+- Google Cloud Next ‘26
+- Hugging Face
+- Infrastructure & cloud
+- Interactions API
+- Kaggle
+- LiteRT
+- MCP
+- MLX
+- Model Context Protocol
+- Vertex AI
+- vLLM
+
+### Recent Deep Dives
+- **Accelerating Gemma 4: faster inference with multi-token prediction drafters**
+- **Models & research**
+- **Gemini API File Search is now multimodal: build efficient, verifiable RAG**
+- **Google Labs**
+- **Join the new AI Agents Vibe Coding Course from Google and Kaggle**
+
+
+All the best - https://markposition.wordpress.com
