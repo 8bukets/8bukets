@@ -1,47 +1,49 @@
 {
-  "name": "jules-cli",
-  "version": "1.0.0",
-  "type": "module",
-  "bin": {
-    "jules": "./bin/jules.js"
-  },
-  "workspaces": [
-    "packages/*"
-  ],
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
-    "connect": "tsx scripts/connect_and_collaborate.ts",
-    "daily": "tsx scripts/run_daily.ts",
-    "daily-tasks": "gemini @daily-tasks",
-    "ignite": "npm run daily -- --continuous",
-    "build": "npm run build --workspaces --if-present"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "trace": "next internal trace .next/dev/trace-turbopack",
+    "test": "vitest run",
+    "explore": "tsx --env-file=.env antigravity/explorer.ts",
+    "evolve": "tsx --env-file=.env antigravity/evolution.ts",
+    "daily": "tsx --env-file=.env antigravity/run_daily.ts",
+    "ignite": "tsx --env-file=.env antigravity/run_daily.ts --continuous",
+    "connect": "tsx --env-file=.env scripts/connect_and_collaborate.ts",
+    "invoke-hello": "curl -L -X POST 'https://tevdxaufsnpsbvvurddg.supabase.co/functions/v1/hello-world' -H \"Authorization: Bearer $NEXT_PUBLIC_SUPABASE_ANON_KEY\" --data '{\"name\":\"Antigravity\"}'"
   },
   "dependencies": {
-    "@actions/core": "^1.11.1",
-    "@actions/github": "^5.1.1",
-    "@google/gemini-cli-core": "^0.41.2",
-    "chalk": "^5.6.2",
+    "@supabase/supabase-js": "^2",
+    "@swc/helpers": "^0.5.21",
+    "@types/node-fetch": "^2.6.13",
     "cheerio": "^1.2.0",
     "chokidar": "^5.0.0",
-    "commander": "^14.0.3",
-    "next": "^15.1.0"
+    "mongodb": "^6.21.0",
+    "next": "^16.3.0-canary.16",
+    "node-fetch": "^3.3.2",
+    "react": "19.2.4",
+    "react-compiler-runtime": "^1.0.0",
+    "react-dom": "19.2.4",
+    "zod": "^3"
   },
   "devDependencies": {
-    "@supabase/supabase-js": "^2.105.4",
-    "@types/node": "^20.19.41",
-    "@vercel/ncc": "^0.38.4",
-    "@vercel/sandbox": "^1.10.1",
-    "mongodb": "^7.2.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/cheerio": "^0.22.35",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^4",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "^16.3.0-canary.16",
+    "jsdom": "^24",
+    "tailwindcss": "^4",
     "tsx": "^4.21.0",
-    "typescript": "^5.9.3",
-    "vitest": "^4.1.6",
-    "zod": "^4.4.3",
-    "@types/node": "^20.19.41",
-    "@vercel/ncc": "^0.38.4",
-    "@vercel/sandbox": "^1.10.1",
-    "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
-    "typescript": "^5.9.3",
-    "zod": "^4.4.3"
+    "typescript": "^5",
+    "vitest": "^4.1.5"
   }
 }
