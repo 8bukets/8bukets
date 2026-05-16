@@ -79,7 +79,7 @@ export async function GET(req: Request) {
           })
           .reverse();
       } catch {
-        console.error('Failed to read logs:', e);
+        console.error('Failed to read logs');
       }
     }
 
@@ -98,7 +98,7 @@ export async function GET(req: Request) {
           marketLinks = JSON.parse(fs.readFileSync(p, 'utf8')).slice(0, 5);
           break;
         } catch {
-          console.error(`Failed to read market data from ${p}:`, e);
+          console.error(`Failed to read market data from ${p}:`);
         }
       }
     }
