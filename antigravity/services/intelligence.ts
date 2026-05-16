@@ -81,10 +81,11 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `\n`
 
   report += `## 🧠 Knowledge Matrix\n`
-  const knowledgePath = path.join(process.cwd(), 'data/knowledge/ai_agents_knowledge.json')
+  const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json')
   if (fs.existsSync(knowledgePath)) {
     try {
-      const knowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
+      const systemKnowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
+      const knowledge = systemKnowledge.typescript_sections || []
       knowledge.forEach((k: any) => {
         report += `### ${k.title}\n`
         report += `- **Source:** ${k.metadata.source}\n`

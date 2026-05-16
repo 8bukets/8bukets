@@ -125,33 +125,37 @@ export class KnowledgeObserver {
       fs.mkdirSync(this.storageDir, { recursive: true })
     }
 
-    const jsonStore = path.join(this.storageDir, 'ai_agents_knowledge.json')
+    const jsonStore = path.join(this.storageDir, 'system_knowledge.json')
     const mdStore = path.join(this.storageDir, 'ai_agents_knowledge.md')
 
-    // 1. JSON Persistence (Merge Logic)
-    let existingData: Knowledge[] = []
+    // 1. JSON Persistence (Merge Logic - Unified Store)
+    let systemKnowledge: any = { typescript_sections: [] }
     if (fs.existsSync(jsonStore)) {
       try {
-        existingData = JSON.parse(fs.readFileSync(jsonStore, 'utf8'))
+        systemKnowledge = JSON.parse(fs.readFileSync(jsonStore, 'utf8'))
+        if (!systemKnowledge.typescript_sections) {
+          systemKnowledge.typescript_sections = []
+        }
       } catch (e) {
         console.warn('⚠️ [KnowledgeObserver] Failed to parse existing JSON store. Starting fresh.')
       }
     }
 
     // Replace if same title exists, or append
-    const index = existingData.findIndex(k => k.title === knowledge.title)
+    const existingData = systemKnowledge.typescript_sections
+    const index = existingData.findIndex((k: Knowledge) => k.title === knowledge.title)
     if (index !== -1) {
       existingData[index] = knowledge
     } else {
       existingData.push(knowledge)
     }
 
-    fs.writeFileSync(jsonStore, JSON.stringify(existingData, null, 2))
+    fs.writeFileSync(jsonStore, JSON.stringify(systemKnowledge, null, 2))
 
     // 2. Markdown Persistence (Rebuild)
     let mdContent = `# ANTIGRAVITY AI AGENTS KNOWLEDGE BASE\n\n*Last Updated: ${new Date().toISOString()}*\n\n`
 
-    for (const k of existingData) {
+    for (const k of existingData as Knowledge[]) {
       mdContent += `## DOCUMENT: ${k.title}\n`
       mdContent += `**Source:** ${k.metadata.source}  \n`
       mdContent += `**Ingested At:** ${k.metadata.ingestedAt}\n\n`
