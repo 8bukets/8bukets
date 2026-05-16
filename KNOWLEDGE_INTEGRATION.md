@@ -208,7 +208,7 @@ To provide seamless coding assistance, AI agents like the Gemini CLI can integra
 - **Agent Client Protocol (ACP)**: An open protocol enabling interoperability between AI coding agents and diverse IDEs. It relies on the ACP Agent Registry for distribution, making an ACP-compliant agent available directly within supporting tools like JetBrains and Zed.
 ## Compile
 
-prepare best value of knowledge integration - To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.
+To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.
 
 ### Key Definitions of Compile
 
