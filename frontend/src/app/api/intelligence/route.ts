@@ -39,12 +39,8 @@ export async function GET(req: Request) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
 
-    let latestSnapshot: Record<string, unknown> | null = null;
-    let activeWorkOrders: Record<string, unknown>[] = [];
-    let systemState: Record<string, unknown> | null = null;
     let latestSnapshot = null;
-    let activeWorkOrders: any[] = [];
-    let activeWorkOrders: unknown[] = [];
+    let activeWorkOrders: Record<string, unknown>[] = [];
     let systemState = null;
 
     try {
@@ -102,7 +98,7 @@ export async function GET(req: Request) {
           marketLinks = JSON.parse(fs.readFileSync(p, 'utf8')).slice(0, 5);
           break;
         } catch {
-          console.error(`Failed to read market data from ${p}:`);
+          console.error(`Failed to read market data from ${p}:`, e);
         }
       }
     }
