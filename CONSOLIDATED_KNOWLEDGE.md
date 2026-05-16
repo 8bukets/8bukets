@@ -53,7 +53,23 @@ Think of Jules Tools as both a command surface and a dashboard for your coding a
 
 ### Knowledge Merge
 
-Knowledge Merge is a process or document that merges key concepts currently spread across Antigravity, Project SOR, the live software-online-review.com domain, and the new software-review-platform starter. It creates one canonical map of what each layer is, what role it plays, and how the project should evolve. All the best - https://markposition.wordpress.com
+Knowledge Merge is a process or document that merges key concepts currently spread across Antigravity, Project SOR, the live software-online-review.com domain, and the new software-review-platform starter. It creates one canonical map of what each layer is, what role it plays, and how the project should evolve.
+
+### Gemini CLI Remote Subagents
+
+Gemini CLI supports connecting to remote subagents using the Agent-to-Agent (A2A) protocol. This allows Gemini CLI to interact with other agents, expanding its capabilities by delegating tasks to remote services.
+
+Remote subagents are defined as Markdown files (.md) with YAML frontmatter. You can place them in:
+- Project-level: .gemini/agents/*.md (Shared with your team)
+- User-level: ~/.gemini/agents/*.md (Personal agents)
+
+Configuration schema requires 'kind' (must be 'remote'), 'name' (unique slug), 'agent_card_url' or 'agent_card_json', and optionally 'auth'.
+
+Auth supports several types:
+- apiKey: Sends a static API key as an HTTP header.
+- http: HTTP authentication (Bearer token, Basic credentials, or any IANA-registered scheme).
+- google-credentials: Uses Google Application Default Credentials (ADC) to authenticate with Google Cloud services and Cloud Run endpoints.
+- oauth: Performs an interactive OAuth 2.0 Authorization Code flow with PKCE.
 
 ### Gemini CLI Remote Subagents
 
