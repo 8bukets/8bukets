@@ -42,10 +42,6 @@ export async function GET(req: Request) {
     let latestSnapshot: Record<string, unknown> | null = null;
     let activeWorkOrders: Record<string, unknown>[] = [];
     let systemState: Record<string, unknown> | null = null;
-    let latestSnapshot = null;
-    let activeWorkOrders: any[] = [];
-    let activeWorkOrders: unknown[] = [];
-    let systemState = null;
 
     try {
       const client = await getMongoClient();
@@ -71,7 +67,7 @@ export async function GET(req: Request) {
 
     // Read latest cognitive logs (fallback to file if needed, but preferably from DB in future)
     const logPath = path.join(/* turbopackIgnore: true */ process.cwd(), '../logs/autonomous.log');
-    let recentLogs: any[] = [];
+    let recentLogs: unknown[] = [];
     if (fs.existsSync(logPath)) {
       try {
         const logContent = fs.readFileSync(logPath, 'utf8');
