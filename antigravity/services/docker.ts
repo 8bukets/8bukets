@@ -59,6 +59,31 @@ export async function checkDockerHealth() {
   const isHealthy = fleet.length > 0
   const isSimulated = fleet.some(c => c.id.startsWith('sim-'))
 
+  if (!isHealthy && !isSimulated) {
+    console.log('🔄 [Docker] Fleet empty. Autonomously attempting to recover degraded containers...')
+    try {
+      execSync('docker-compose up -d', { stdio: 'ignore' })
+      const recoveredFleet = await getDockerFleetStatus()
+      if (recoveredFleet.length > 0) {
+        console.log('✅ [Docker] Fleet recovered successfully.')
+        return {
+          status: 'recovering',
+          containerCount: recoveredFleet.length,
+          simulated: false,
+          timestamp: new Date().toISOString()
+        }
+      }
+    } catch (e) {
+      console.warn('⚠️ [Docker] Autonomous recovery failed. System degraded.', e)
+      return {
+        status: 'degraded',
+        containerCount: 0,
+        simulated: false,
+        timestamp: new Date().toISOString()
+      }
+    }
+  }
+
   return {
     status: isHealthy ? (isSimulated ? 'simulated' : 'optimal') : 'disconnected',
     containerCount: fleet.length,

@@ -15,19 +15,19 @@
         }
     ],
     "docker": {
-        "status": "disconnected",
-        "containerCount": 0,
-        "simulated": false,
-        "timestamp": "2026-05-15T03:34:00.561Z"
+        "status": "simulated",
+        "containerCount": 2,
+        "simulated": true,
+        "timestamp": "2026-05-16T05:20:42.096Z"
     },
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1778816040562,
+        "timestamp": 1778908842097,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
-        "branches": 1684,
+        "branches": 1704,
         "pendingTasks": 0,
         "relationshipMap": {
             "stakeholderEngagement": {
@@ -64,10 +64,13 @@
             },
             "goalAlignment": {
                 "Achieve full autonomous work cycles.": [
+                    "jules-5846096999198047757-c3093f0a",
+                    "main",
                     "remotes/origin/add-google-edge-agent-9371392929328195231",
                     "remotes/origin/add-malubeach-scraper-16704333902164650708",
                     "remotes/origin/add-mysql-agent-12534386317238704274",
                     "remotes/origin/autonomous-agents-framework-90146205652415261",
+                    "remotes/origin/autonomous-cloud-integration-v2-7175106802837350237",
                     "remotes/origin/autonomous-cloud-organism-8050182996160797424",
                     "remotes/origin/autonomous-daily-work-fix-recursion-and-streamline-17917200239377968784",
                     "remotes/origin/autonomous-engine-and-work-orders-5472523483534806540",
@@ -87,7 +90,12 @@
                     "remotes/origin/codex/software-review-platform-starter",
                     "remotes/origin/dynamic-cloud-workflow-agents-4167178583632810604",
                     "remotes/origin/feat/antigravity-cloud-evolution-3450373713332257591",
+                    "remotes/origin/feat/autonomous-cloud-presence-978332573715716812",
                     "remotes/origin/feat/autonomous-creation-cycle-14040463371825265667",
+                    "remotes/origin/feat/autonomous-protocol-jules-16130780090107402276",
+                    "remotes/origin/feat/autonomous-workflow-creation-13764436247269423073",
+                    "remotes/origin/feat/cloud-autonomous-presence-4768792204367486255",
+                    "remotes/origin/feat/collaboration-intelligence-knowledge-merge-v1-1682981257800000691",
                     "remotes/origin/feat/connect-docker-collaboration-6033606454460470488",
                     "remotes/origin/feat/custom-github-action-10612201952418849138",
                     "remotes/origin/feat/full-autonomous-creation-execution-17830710122661382280",
@@ -98,7 +106,10 @@
                     "remotes/origin/feat/react-agent-integration-8372098972397137891",
                     "remotes/origin/feat/setup-npm-workspaces-gemini-cli-12181861489580932121",
                     "remotes/origin/feat/smarter-cloud-workflow-1168853453825745042",
+                    "remotes/origin/feat/smarter-cloud-workflow-7992378765049941579",
+                    "remotes/origin/feat/unified-autonomous-execution-engine-12129098689674624370",
                     "remotes/origin/feat/unified-autonomous-intelligence-v2-11368535330418373877",
+                    "remotes/origin/feat/unified-cloud-autonomy-6168364407996649590",
                     "remotes/origin/feat/vercel-sandbox-agent-4324012582245511797",
                     "remotes/origin/feature/autonomous-cloud-presence-6564198224759094346",
                     "remotes/origin/feature/autonomous-creation-execution-5649264533760770196",
@@ -108,12 +119,15 @@
                     "remotes/origin/feature/docker-collaboration-sync-2408669220271786015",
                     "remotes/origin/feature/gemini-git-worktrees-13127368067831034197",
                     "remotes/origin/feature/knowledge-observation-1188044699692138518",
+                    "remotes/origin/feature/markposition-autonomous-integration-5824578537508195574",
                     "remotes/origin/feature/orchestrator-active-decisions-12848386406612919414",
                     "remotes/origin/feature/smarter-cloud-workflow-13558470471841766440",
                     "remotes/origin/fix-and-automate-autonomous-system-4910910196834454154",
+                    "remotes/origin/fix-autonomous-workflow-git-add-16103849688586949052",
                     "remotes/origin/fix-cloud-autonomous-presence-9827360869310750655",
                     "remotes/origin/fix/agent-memory-and-tests-14715316655293625624",
                     "remotes/origin/fix/autonomous-system-syntax-16085505803900570829",
+                    "remotes/origin/fix/knowledge-observation-workflow-458143035147139751",
                     "remotes/origin/improve-git-sync-and-ingest-sor-6424222975070794974",
                     "remotes/origin/integrate-google-ai-knowledge-2026-14480721120706312503",
                     "remotes/origin/integrate-google-innovation-ai-knowledge-11329975251392721471",
@@ -122,6 +136,8 @@
                     "remotes/origin/jules-continuous-presence-workflow-3144055533381791740",
                     "remotes/origin/jules-full-autonomus-workflow-8744732568350416698",
                     "remotes/origin/jules-improve-workflow-and-knowledge-observer-11114380607500005512",
+                    "remotes/origin/jules/scraper-markposition-17752547678215960211",
+                    "remotes/origin/main",
                     "remotes/origin/multi-cloud-workflow-intelligence-12208347123975439755",
                     "remotes/origin/opt-scraper-regex-6404737091544860092",
                     "remotes/origin/palette-cli-ux-5136733467430420971",
@@ -155,8 +171,10 @@
                     "remotes/origin/connect-docker-collaborate-17099568282070534570",
                     "remotes/origin/docker-collaboration-enhancement-318251479879768316",
                     "remotes/origin/docker-optimization-8426096848725743190",
+                    "remotes/origin/feat/ai-agents-knowledge-integration-10133877583552684442",
                     "remotes/origin/feat/ai-agents-knowledge-integration-3155871126605591044",
                     "remotes/origin/feat/ai-sdk-streamtext-integration-3734860099537308061",
+                    "remotes/origin/feat/collaboration-intelligence-knowledge-merge-v1-1682981257800000691",
                     "remotes/origin/feat/connect-docker-collaboration-10997916882350002599",
                     "remotes/origin/feat/connect-docker-collaboration-6033606454460470488",
                     "remotes/origin/feat/docker-collaboration-enhancements-2442044575661287661",
@@ -170,13 +188,16 @@
                     "remotes/origin/feat/integrate-oracle-ai-10269913553901722650",
                     "remotes/origin/feat/integrate-oracle-ai-knowledge-17141461773939806605",
                     "remotes/origin/feat/integrate-oracle-ai-knowledge-3394848601696333844",
+                    "remotes/origin/feat/integrate-react-knowledge-1014096584960652610",
                     "remotes/origin/feat/intelephense-docs-integration-15548360236186896654",
                     "remotes/origin/feat/intelephense-docs-integration-9176181955065313741",
+                    "remotes/origin/feat/jenkins-integration-8889480307913922372",
                     "remotes/origin/feat/jules-tools-documentation-3709224248115032248",
                     "remotes/origin/feat/knowledge-merge-automation-4266785228236839027",
                     "remotes/origin/feat/react-agent-integration-8372098972397137891",
                     "remotes/origin/feat/react-integration-v2-8425489280318980511",
                     "remotes/origin/feat/setup-docker-ci-cd-15330021649064333459",
+                    "remotes/origin/feat/unified-knowledge-integration-6924488404722720860",
                     "remotes/origin/feat/vercel-sandbox-agent-4324012582245511797",
                     "remotes/origin/feature/deploy-react-agents-15831022730085051498",
                     "remotes/origin/feature/docker-collaboration-sync-2408669220271786015",
@@ -212,6 +233,7 @@
                     "remotes/origin/chore/docker-collaboration-sync-9465155386456086135",
                     "remotes/origin/collaboration-intelligence-sync-2178443547158728411",
                     "remotes/origin/docker-collaboration-enhancement-318251479879768316",
+                    "remotes/origin/feat/collaboration-intelligence-knowledge-merge-v1-1682981257800000691",
                     "remotes/origin/feat/connect-docker-collaboration-10997916882350002599",
                     "remotes/origin/feat/connect-docker-collaboration-6033606454460470488",
                     "remotes/origin/feat/docker-collaboration-enhancements-2442044575661287661",
@@ -235,8 +257,10 @@
                     "remotes/origin/enable-gitlab-security-scanners-17254273171421596517",
                     "remotes/origin/feat/gitlab-ci-docker-build-cloud-integration-15454130814432814509",
                     "remotes/origin/feat/gitlab-ci-pipeline-15616713096718552061",
+                    "remotes/origin/feat/jenkins-integration-8889480307913922372",
                     "remotes/origin/feat/nextjs-supabase-mongodb-ecosystem-8833511503168317980",
                     "remotes/origin/feat/setup-docker-ci-cd-15330021649064333459",
+                    "remotes/origin/feat/unified-autonomous-execution-engine-12129098689674624370",
                     "remotes/origin/feat/unified-autonomous-intelligence-v2-11368535330418373877",
                     "remotes/origin/feature/autonomous-cloud-presence-6564198224759094346",
                     "remotes/origin/feature/autonomous-work-order-system-2865376496549289667",
@@ -251,11 +275,14 @@
                     "remotes/origin/integrate-google-innovation-ai-knowledge-11329975251392721471",
                     "remotes/origin/integrate-google-innovation-ai-knowledge-2118271840705498457",
                     "remotes/origin/jules-15643813269620827017-18b637fd",
+                    "remotes/origin/jules-15669541233529701765-e7b02c45",
                     "remotes/origin/jules-1717717407806782090-cbdd5077",
                     "remotes/origin/jules-8197540570479854725-c23a5090",
                     "remotes/origin/jules-continuous-presence-workflow-3144055533381791740",
                     "remotes/origin/jules-gitlab-ci-setup-10531506072496288006",
+                    "remotes/origin/jules-gitlab-tutorial-ci-4111694628214868400",
                     "remotes/origin/jules/add-system-patent-947552789592854459",
+                    "remotes/origin/jules/scraper-markposition-17752547678215960211",
                     "remotes/origin/opt-scraper-regex-6404737091544860092",
                     "remotes/origin/palette-analytics-ux-improvement-10522861074342822232",
                     "remotes/origin/palette-cli-enhancement-5441850221004135602",
@@ -318,6 +345,12 @@
                     "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/support.md"
                 },
                 {
+                    "type": "Knowledge",
+                    "name": "software info by fk – software-online-review – Filip Keser",
+                    "status": "Ingested",
+                    "source": "https://software-online-review.com"
+                },
+                {
                     "type": "Documentation",
                     "name": "AGENTS.md",
                     "status": "Active"
@@ -345,5 +378,5 @@
             ]
         }
     },
-    "last_sync": "2026-05-15T03:34:13.146Z"
+    "last_sync": "2026-05-16T05:20:54.843Z"
 }
