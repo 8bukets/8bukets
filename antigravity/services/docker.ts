@@ -1,3 +1,4 @@
+import { logAutonomousAction } from '../core'
 import { execSync, exec } from 'child_process'
 import { promisify } from 'util'
 import { z } from 'zod'
@@ -24,7 +25,7 @@ export async function getDockerFleetStatus(): Promise<DockerContainer[]> {
 
   return autonomousFetch(z.array(DockerContainerSchema), async () => {
     if (simulate) {
-      console.log('🧪 [Docker] Running in SIMULATED mode.')
+      logAutonomousAction('🧪 [Docker] Running in SIMULATED mode.', 'info')
       return [
         { id: 'sim-01', image: 'antigravity-engine:latest', status: 'Up 2 hours', names: 'autonomous_engine' },
         { id: 'sim-02', image: 'mongodb:latest', status: 'Up 5 hours', names: 'system_db' }

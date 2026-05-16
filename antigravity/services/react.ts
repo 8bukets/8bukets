@@ -31,7 +31,7 @@ export class ReActService {
     tools: Record<string, Function>,
     maxSteps: number = 5
   ): Promise<ReActStep[]> {
-    console.log(`🧠 [ReAct] Starting autonomous cycle for goal: "${goal}"`)
+    logAutonomousAction(`🧠 [ReAct] Starting autonomous cycle for goal: "${goal}"`, 'info')
     this.steps = []
 
     for (let i = 0; i < maxSteps; i++) {
@@ -41,7 +41,7 @@ export class ReActService {
       const stepDecision = await this.reasonNextStep(goal, i, this.steps, Object.keys(tools))
 
       if (stepDecision.action === 'finish') {
-        console.log(`✅ [ReAct] Goal achieved: ${stepDecision.thought}`)
+        logAutonomousAction(`✅ [ReAct] Goal achieved: ${stepDecision.thought}`, 'info')
         this.steps.push({
           thought: stepDecision.thought,
           action: 'finish',
@@ -50,7 +50,7 @@ export class ReActService {
         break
       }
 
-      console.log(`💭 [ReAct] Step ${i + 1} Thought: ${stepDecision.thought}`)
+      logAutonomousAction(`💭 [ReAct] Step ${i + 1} Thought: ${stepDecision.thought}`, 'info')
       const observation = await this.performAction(stepDecision.action, tools)
 
       this.steps.push({
@@ -123,7 +123,7 @@ export class ReActService {
   }
 
   private async performAction(actionName: string, tools: Record<string, Function>): Promise<string> {
-    console.log(`🎬 [ReAct] Action: ${actionName}`)
+    logAutonomousAction(`🎬 [ReAct] Action: ${actionName}`, 'info')
     if (tools[actionName]) {
       try {
         const result = await tools[actionName]()

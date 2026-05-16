@@ -172,6 +172,9 @@ def generate_daily_report(context, filename):
             jenkins = context.get("jenkins_pipeline_metrics", {})
             f.write(f"- **Jenkins Pipeline Efficiency:** {jenkins.get('pipeline_efficiency', 'N/A')}\n")
 
+            f.write("\n---\n")
+            f.write("All the best - https://markposition.wordpress.com\n")
+
         logger.info(f"Report generated at {filename}")
     except IOError as e:
         logger.error(f"Failed to write report: {e}")
