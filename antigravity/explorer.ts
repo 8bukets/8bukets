@@ -1,3 +1,4 @@
+import { logAutonomousAction } from './core'
 import { healthCheck } from './core'
 import { evolve } from './evolution'
 import { jules } from './jules'
@@ -10,7 +11,7 @@ import path from 'path'
  * Automatically scans and validates the system state.
  */
 export async function explore() {
-  console.log('🚀 [Antigravity Explorer] Starting autonomous scan...')
+  logAutonomousAction('🚀 [Antigravity Explorer] Starting autonomous scan...', 'info')
 
   const results: any = {
     timestamp: new Date().toISOString(),
@@ -59,7 +60,7 @@ export async function explore() {
   // 7. Jules Protocol: Record the Task
   jules.recordTask(`System Scan: Health is ${results.health}. Found ${results.evolution.length} evolution paths.`)
 
-  console.log(`✅ [Explorer] Cycle Complete. Status: ${results.health}`)
+  logAutonomousAction(`✅ [Explorer] Cycle Complete. Status: ${results.health}`, 'info')
   return results
 }
 
@@ -68,7 +69,7 @@ export async function explore() {
  * Monitors the filesystem for changes and triggers reactive exploration.
  */
 export function watchSystem() {
-  console.log('👁️  [Watchdog] Initiating real-time system surveillance...')
+  logAutonomousAction('👁️  [Watchdog] Initiating real-time system surveillance...', 'info')
 
   const watcher = chokidar.watch(process.cwd(), {
     ignored: [
@@ -81,7 +82,7 @@ export function watchSystem() {
   })
 
   watcher.on('change', (filePath) => {
-    console.log(`🔔 [Watchdog] Detected change in: ${path.basename(filePath)}. Triggering reactive scan...`)
+    logAutonomousAction(`🔔 [Watchdog] Detected change in: ${path.basename(filePath)}. Triggering reactive scan...`)
     explore().catch(err => console.error('💥 [Watchdog] Reactive scan failed:', err))
   })
 

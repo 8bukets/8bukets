@@ -1,3 +1,4 @@
+import { logAutonomousAction } from '../core'
 'use server'
 
 import { updateTag, revalidateTag, refresh } from '@/antigravity/core'
@@ -8,7 +9,7 @@ import { updateTag, revalidateTag, refresh } from '@/antigravity/core'
  */
 export async function updateUserName(userId: string, newName: string) {
   // Update the DB (mocked)
-  console.log(`Updating user ${userId} to ${newName}`)
+  logAutonomousAction(`Updating user ${userId} to ${newName}`, 'info')
 
   // updateTag gives the user an immediate result
   updateTag(`user-${userId}`)

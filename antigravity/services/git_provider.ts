@@ -1,3 +1,4 @@
+import { logAutonomousAction } from '../core'
 import { execSync } from 'child_process'
 import * as github from '@actions/github'
 
@@ -28,7 +29,7 @@ export class GitProviderService {
    * Performs an autonomous commit with GitKraken-optimized formatting.
    */
   public async commit(options: CommitOptions) {
-    console.log(`🌿 [GitProvider] Commencing autonomous commit for ${options.provider || 'default'}...`)
+    logAutonomousAction(`🌿 [GitProvider] Commencing autonomous commit for ${options.provider || 'default'}...`, 'info')
 
     try {
       // 1. Stage files
@@ -38,13 +39,13 @@ export class GitProviderService {
       // 2. Verify changes
       const status = execSync('git status --porcelain').toString().trim()
       if (!status) {
-        console.log('✨ [GitProvider] No changes detected. Skipping commit.')
+        logAutonomousAction('✨ [GitProvider] No changes detected. Skipping commit.', 'info')
         return { status: 'skipped', reason: 'no_changes' }
       }
 
       // 3. Commit
       execSync(`git commit -m "${options.message}"`)
-      console.log('✅ [GitProvider] Changes committed locally.')
+      logAutonomousAction('✅ [GitProvider] Changes committed locally.', 'info')
 
       // 4. Push if requested
       if (options.push) {
@@ -66,14 +67,14 @@ export class GitProviderService {
     }
 
     try {
-      console.log(`🔄 [GitProvider] Synchronizing with remote (${branch})...`)
+      logAutonomousAction(`🔄 [GitProvider] Synchronizing with remote (${branch})...`, 'info')
       if (branch === 'main') {
         execSync('git pull --rebase origin main')
         execSync('git push origin main')
       } else {
         execSync(`git push origin ${branch}`)
       }
-      console.log(`🚀 [GitProvider] Changes pushed to origin/${branch}.`)
+      logAutonomousAction(`🚀 [GitProvider] Changes pushed to origin/${branch}.`, 'info')
     } catch (err: any) {
       console.error('❌ [GitProvider] Push failed:', err.message)
       if (branch === 'main') {
@@ -86,7 +87,7 @@ export class GitProviderService {
    * Autonomously creates a Pull Request or Merge Request.
    */
   public async createPullRequest(title: string, body: string, head: string, base: string = 'main') {
-    console.log(`PR [GitProvider] Creating autonomous PR/MR: ${title}...`)
+    logAutonomousAction(`PR [GitProvider] Creating autonomous PR/MR: ${title}...`, 'info')
 
     // 1. GitHub
     if (process.env.GITHUB_TOKEN) {
@@ -100,7 +101,7 @@ export class GitProviderService {
           head,
           base
         })
-        console.log(`✅ [GitProvider] GitHub PR created: ${pr.html_url}`)
+        logAutonomousAction(`✅ [GitProvider] GitHub PR created: ${pr.html_url}`, 'info')
         return pr.number
       } catch (err: any) {
         console.error('❌ [GitProvider] GitHub PR creation failed:', err.message)
@@ -111,7 +112,7 @@ export class GitProviderService {
     if (process.env.GITLAB_TOKEN) {
       try {
         execSync(`glab mr create --title "${title}" --description "${body}" --source-branch "${head}" --target-branch "${base}" --yes`)
-        console.log('✅ [GitProvider] GitLab MR created via glab.')
+        logAutonomousAction('✅ [GitProvider] GitLab MR created via glab.', 'info')
         return 'gitlab-mr'
       } catch (err: any) {
         console.warn('⚠️ [GitProvider] GitLab MR creation via glab failed. Attempting REST API fallback...')
@@ -133,7 +134,7 @@ export class GitProviderService {
             })
             const data = await response.json()
             if (response.ok) {
-              console.log(`✅ [GitProvider] GitLab MR created via API: ${data.web_url}`)
+              logAutonomousAction(`✅ [GitProvider] GitLab MR created via API: ${data.web_url}`, 'info')
               return data.iid
             } else {
               console.error('❌ [GitProvider] GitLab API MR creation failed:', data.message)
@@ -258,7 +259,7 @@ export class GitProviderService {
           pull_number: Number(prId),
           merge_method: 'squash'
         })
-        console.log(`✅ [GitProvider] GitHub PR #${prId} merged.`)
+        logAutonomousAction(`✅ [GitProvider] GitHub PR #${prId} merged.`, 'info')
         return true
       } catch (err: any) {
         console.error(`❌ [GitProvider] GitHub Merge failed for PR #${prId}:`, err.message)
@@ -266,7 +267,7 @@ export class GitProviderService {
     } else if (provider === 'gitlab' && process.env.GITLAB_TOKEN) {
       try {
         execSync(`glab mr merge ${prId} --squash --remove-source-branch`)
-        console.log(`✅ [GitProvider] GitLab MR !${prId} merged via glab.`)
+        logAutonomousAction(`✅ [GitProvider] GitLab MR !${prId} merged via glab.`, 'info')
         return true
       } catch (err: any) {
         console.warn(`⚠️ [GitProvider] GitLab Merge via glab failed for MR !${prId}. Attempting API fallback...`)
@@ -279,7 +280,7 @@ export class GitProviderService {
               body: JSON.stringify({ squash: true, should_remove_source_branch: true })
             })
             if (response.ok) {
-              console.log(`✅ [GitProvider] GitLab MR !${prId} merged via API.`)
+              logAutonomousAction(`✅ [GitProvider] GitLab MR !${prId} merged via API.`, 'info')
               return true
             } else {
               const data = await response.json()

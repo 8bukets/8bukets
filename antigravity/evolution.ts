@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import { logAutonomousAction } from './core'
 
 /**
  * ANTIGRAVITY COGNITIVE EVOLUTION ENGINE
@@ -13,7 +14,7 @@ interface EvolutionMetric {
 }
 
 export async function evolve() {
-  console.log('🧠 [Antigravity Evolution] Commencing cognitive analysis...')
+  logAutonomousAction('🧠 [Antigravity Evolution] Commencing cognitive analysis...', 'info')
 
   const suggestions: EvolutionMetric[] = []
   const scanDirs = [
@@ -76,7 +77,7 @@ export async function evolve() {
     scan(dir)
   }
 
-  console.log('✨ [Evolution Report]: Found', suggestions.length, 'potential optimizations.')
+  logAutonomousAction('✨ [Evolution Report]: Found', suggestions.length, 'potential optimizations.', 'info')
   return suggestions
 }
 
@@ -85,7 +86,7 @@ export async function evolve() {
  * Programmatically fixes common architectural drift issues.
  */
 export async function applyFixes(suggestions: EvolutionMetric[]) {
-  console.log('🛠️ [Antigravity Evolution] Applying autonomous fixes...')
+  logAutonomousAction('🛠️ [Antigravity Evolution] Applying autonomous fixes...', 'info')
 
   for (const s of suggestions) {
     const fullPath = path.join(process.cwd(), s.file)
@@ -96,7 +97,7 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
     }
 
     if (s.suggestion.startsWith('SYNC_PROP_VIOLATION')) {
-      console.log(` - Fixing ${s.file}: Wrapping params in resolve()`)
+      logAutonomousAction(` - Fixing ${s.file}: Wrapping params in resolve(, 'info')`)
       // Add the import if missing
       if (!content.includes('import {') || !content.includes('@/antigravity/core')) {
         content = "import { resolve } from '@/antigravity/core'\n" + content
@@ -111,7 +112,7 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
 
     // Rule 4 Fix: Replace console.log with logAutonomousAction
     if (s.suggestion.startsWith('LOGGING_VIOLATION')) {
-      console.log(` - Fixing ${s.file}: Replacing console.log with logAutonomousAction`)
+      logAutonomousAction(` - Fixing ${s.file}: Replacing console.log with logAutonomousAction`, 'info')
 
       // Calculate relative path to core.ts
       const fileDir = path.dirname(fullPath)
@@ -129,7 +130,7 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
     // Additional autocorrection logic can be added here
   }
 
-  console.log('✅ [Antigravity Evolution] Autocorrection complete.')
+  logAutonomousAction('✅ [Antigravity Evolution] Autocorrection complete.', 'info')
 }
 
 // if (require.main === module) {

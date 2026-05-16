@@ -19,8 +19,37 @@
     "TargetingAgent": {
         "long_term": {
             "test_compatibility_persona": "Compatibility Enthusiast",
-            "last_primary_persona": "General Tech Enthusiast",
+            "last_primary_persona": "AdTech Professional",
             "new_key": "new_val"
+        },
+        "episodic": []
+    },
+    "RobotTxtAgent": {
+        "long_term": {
+            "disallowed_paths": [
+                "/next/",
+                "/cgi-bin/",
+                "/public.api/",
+                "/wp-signup.php",
+                "/activate/",
+                "/mshots/v1/",
+                "/wp-admin/",
+                "/press-this.php",
+                "/wp-login.php",
+                "/remote-login.php"
+            ]
+        },
+        "episodic": []
+    },
+    "BidAgent": {
+        "long_term": {
+            "adjustment_factor": 1.030301
+        },
+        "episodic": []
+    },
+    "AutonomousIntelligenceAgent": {
+        "long_term": {
+            "system_health": "healthy"
         },
         "episodic": []
     }

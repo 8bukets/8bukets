@@ -30,7 +30,7 @@ export interface SystemInsights {
 }
 
 export async function optimize(insights: SystemInsights): Promise<PredictiveRefactor[]> {
-  console.log('🧠 [Super-Intelligence] Initiating infinite self-optimization scan...')
+  logAutonomousAction('🧠 [Super-Intelligence] Initiating infinite self-optimization scan...', 'info')
   const refactors: PredictiveRefactor[] = []
 
   // Vector 1: Performance Optimization (Cross-referencing Volatility and Caching)
