@@ -2,9 +2,9 @@ import { NextResponse } from 'next/server';
 import { getMongoClient } from '@/lib/mongodb';
 import fs from 'fs';
 import path from 'path';
+import arcjet, { detectPromptInjection, sensitiveInfo } from "@arcjet/next";
 
 export const dynamic = 'force-dynamic';
-import arcjet, { detectPromptInjection, sensitiveInfo } from "@arcjet/next";
 
 const aj = arcjet({
   key: process.env.ARCJET_KEY!,
@@ -47,26 +47,26 @@ export async function GET(req: Request) {
     let activeWorkOrders: unknown[] = [];
     let systemState = null;
 
+    // Phase 12 Optimization: Unified Database Probing with Graceful Degradation
     try {
       const client = await getMongoClient();
       const db = client.db(process.env.MONGODB_DB || 'software_reviews');
 
-      // Fetch latest intelligence snapshot
-      latestSnapshot = await db.collection('system_intelligence')
-        .findOne({}, { sort: { timestamp: -1 } });
+      const [snapshot, workOrders, state] = await Promise.all([
+        db.collection('system_intelligence').findOne({}, { sort: { timestamp: -1 } }),
+        db.collection('work_orders')
+          .find({ status: { $in: ['pending', 'executing', 'PENDING', 'IN_PROGRESS'] } })
+          .sort({ created_at: -1 })
+          .limit(5)
+          .toArray(),
+        db.collection('system_state').findOne({ systemId: 'antigravity-alpha-01' })
+      ]);
 
-      // Fetch active work orders from MongoDB
-      activeWorkOrders = await db.collection('work_orders')
-        .find({ status: { $in: ['pending', 'executing', 'PENDING', 'IN_PROGRESS'] } })
-        .sort({ created_at: -1 })
-        .limit(5)
-        .toArray();
-
-      // Fetch latest system state
-      systemState = await db.collection('system_state')
-        .findOne({ systemId: 'antigravity-alpha-01' });
+      latestSnapshot = snapshot;
+      activeWorkOrders = workOrders;
+      systemState = state;
     } catch (dbErr) {
-      console.warn('MongoDB connection failed, providing limited response', dbErr);
+      console.warn('⚠️ [Intelligence API] MongoDB layer unavailable. Falling back to local data.', dbErr);
     }
 
     // Read latest cognitive logs (fallback to file if needed, but preferably from DB in future)
@@ -87,8 +87,7 @@ export async function GET(req: Request) {
       }
     }
 
-    // Read local links.json for real-time market data
-    // Use multiple path strategies for cross-environment robustness (Cloud vs Local)
+    // Market Intelligence: Multi-path probing for environment resilience
     const possiblePaths = [
       path.join(/* turbopackIgnore: true */ process.cwd(), '../links.json'),
       path.join(process.cwd(), 'links.json'),
@@ -116,6 +115,7 @@ export async function GET(req: Request) {
       timestamp: new Date().toISOString()
     });
   } catch (err: unknown) {
+    console.error('❌ [Intelligence API] Critical failure:', err);
     return NextResponse.json({ error: (err as Error).message }, { status: 500 });
   }
 }
