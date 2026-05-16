@@ -55,7 +55,7 @@ export async function observeKnowledge(url: string) {
 - **Date**: ${new Date().toISOString()}
 - **Target**: ${url}
 - **Title**: ${title}
-- **Relationship Map**: Confirmed overlapping identities between Antigravity, Project SOR, software-online-review.com, software-review-platform, and markposition.wordpress.com as the formal Market Intelligence layer.
+- **Relationship Map**: Confirmed relationship with ${url} (Title: ${title}) as an intelligence source.
 `
     if (fs.existsSync(knowledgePath)) {
       fs.appendFileSync(knowledgePath, relationshipEntry, 'utf8')

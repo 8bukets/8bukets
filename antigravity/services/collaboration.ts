@@ -225,11 +225,18 @@ export async function mergeEcosystemInsights(branchIntelligence: any[], workOrde
   const metadata = await getMissionMetadata()
   console.log('🧠 [Collaboration] Merging ecosystem insights...')
 
+  let marketIntelligence = ''
+  const knowledgePath = path.join(process.cwd(), 'KNOWLEDGE_MERGE.md')
+  if (fs.existsSync(knowledgePath)) {
+    marketIntelligence = await fs.promises.readFile(knowledgePath, 'utf8')
+  }
+
   return {
     mission: metadata.missionStatement,
     goals: metadata.goals,
     branches: branchIntelligence,
     recentWork: workOrders.slice(-5),
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
+    marketIntelligence
   }
 }
