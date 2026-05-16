@@ -1,10 +1,10 @@
 # ANTIGRAVITY AI AGENTS KNOWLEDGE BASE
 
-*Last Updated: 2026-05-15T21:10:25.146Z*
+*Last Updated: 2026-05-16T00:35:18.354Z*
 
 ## DOCUMENT: intelephense_docs.md
 **Source:** local://intelephense_docs.md
-**Ingested At:** 2026-05-15T21:10:24.329Z
+**Ingested At:** 2026-05-16T00:35:18.134Z
 
 ### About
 Intelephense is a high performance, cross platform, cross editor PHP language server adhering to the Language Server Protocol (LSP).
@@ -799,7 +799,7 @@ setColourDoc(''); // Completion suggestions for 'red', 'blue', 'green'
 
 ## DOCUMENT: Intelephense: README
 **Source:** https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/README.md
-**Ingested At:** 2026-05-15T21:10:24.573Z
+**Ingested At:** 2026-05-16T00:35:18.214Z
 
 ### Intelephense
 Intelephense is a high performance, cross platform PHP language server adhering to the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/).
@@ -827,7 +827,7 @@ This is proprietary software released to end users under a "freemium" model. Man
 
 ## DOCUMENT: Intelephense: installation
 **Source:** https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/installation.md
-**Ingested At:** 2026-05-15T21:10:24.695Z
+**Ingested At:** 2026-05-16T00:35:18.251Z
 
 ### Installation
 
@@ -1601,7 +1601,7 @@ interface InitialisationOptions {
 
 ## DOCUMENT: Intelephense: gettingStarted
 **Source:** https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/gettingStarted.md
-**Ingested At:** 2026-05-15T21:10:24.846Z
+**Ingested At:** 2026-05-16T00:35:18.285Z
 
 ### Getting Started
 
@@ -2078,7 +2078,7 @@ Packages can be found online that aim to workaround these issues by providing st
 
 ## DOCUMENT: Intelephense: features
 **Source:** https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/features.md
-**Ingested At:** 2026-05-15T21:10:24.979Z
+**Ingested At:** 2026-05-16T00:35:18.317Z
 
 ### Features
 
@@ -2135,7 +2135,7 @@ Packages can be found online that aim to workaround these issues by providing st
 
 ## DOCUMENT: Intelephense: support
 **Source:** https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/support.md
-**Ingested At:** 2026-05-15T21:10:25.134Z
+**Ingested At:** 2026-05-16T00:35:18.347Z
 
 ### Overview
 https://github.com/bmewburn/vscode-intelephense/issues
@@ -2146,7 +2146,7 @@ ben@intelephense.com
 
 ## DOCUMENT: software info by fk – software-online-review – Filip Keser
 **Source:** https://software-online-review.com
-**Ingested At:** 2026-05-15T21:10:24.297Z
+**Ingested At:** 2026-05-16T00:35:18.116Z
 
 ### Introduction
 [Skip to content](#content)

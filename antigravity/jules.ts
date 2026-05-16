@@ -184,6 +184,24 @@ export class Jules {
     } catch (e) {}
   }
 
+  public async startConsciousnessLoop() {
+    console.log(`🌌 [Jules-${this.role}] Ignition: Starting Continuous Consciousness Loop...`)
+
+    while (true) {
+      try {
+        await this.executeWorkCycle()
+
+        const delayHours = 4
+        console.log(`💤 [Jules] Cycle complete. Sleeping for ${delayHours} hours before next heartbeat...`)
+        await new Promise(resolve => setTimeout(resolve, delayHours * 60 * 60 * 1000))
+      } catch (err) {
+        console.error(`💥 [Jules] Error in consciousness loop:`, err)
+        // Wait 1 minute before retrying on error
+        await new Promise(resolve => setTimeout(resolve, 60000))
+      }
+    }
+  }
+
   public async executeWorkCycle() {
     console.log(`🌟 [Jules-${this.role}] Beginning Autonomous Work Cycle...`)
     const { explore } = await import('./explorer')
