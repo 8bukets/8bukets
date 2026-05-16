@@ -1,0 +1,122 @@
+[
+    {
+        "id": "DEPLOY_V1.7",
+        "type": "DEPLOYMENT",
+        "description": "Execute rollout for version 1.7",
+        "status": "pending",
+        "created_at": "2026-05-16T01:04:35.931894"
+    },
+    {
+        "id": "SMOKE_TEST_V1.7",
+        "type": "TESTING",
+        "description": "Verify system stability for version 1.7",
+        "status": "pending",
+        "created_at": "2026-05-16T01:04:35.931906"
+    },
+    {
+        "id": "REFRESH_MARKET_INTELLIGENCE",
+        "type": "RESEARCH",
+        "description": "Perform deep scrape of market trends",
+        "status": "in_progress",
+        "created_at": "2026-05-16T01:04:35.931911",
+        "updated_at": "2026-05-16T01:04:35.932216"
+    },
+    {
+        "id": "DEPLOY_V1.71",
+        "type": "DEPLOYMENT",
+        "description": "Execute rollout for version 1.71",
+        "status": "pending",
+        "created_at": "2026-05-16T01:04:49.438325"
+    },
+    {
+        "id": "SMOKE_TEST_V1.71",
+        "type": "TESTING",
+        "description": "Verify system stability for version 1.71",
+        "status": "pending",
+        "created_at": "2026-05-16T01:04:49.438337"
+    },
+    {
+        "id": "DEPLOY_V1.72",
+        "type": "DEPLOYMENT",
+        "description": "Execute rollout for version 1.72",
+        "status": "pending",
+        "created_at": "2026-05-16T01:05:00.925884"
+    },
+    {
+        "id": "SMOKE_TEST_V1.72",
+        "type": "TESTING",
+        "description": "Verify system stability for version 1.72",
+        "status": "pending",
+        "created_at": "2026-05-16T01:05:00.925898"
+    },
+    {
+        "id": "DEPLOY_V1.73",
+        "type": "DEPLOYMENT",
+        "description": "Execute rollout for version 1.73",
+        "status": "pending",
+        "created_at": "2026-05-16T01:05:10.362574"
+    },
+    {
+        "id": "SMOKE_TEST_V1.73",
+        "type": "TESTING",
+        "description": "Verify system stability for version 1.73",
+        "status": "pending",
+        "created_at": "2026-05-16T01:05:10.362608"
+    },
+    {
+        "id": "DEPLOY_V1.74",
+        "type": "DEPLOYMENT",
+        "description": "Execute rollout for version 1.74",
+        "status": "pending",
+        "created_at": "2026-05-16T01:05:24.505883"
+    },
+    {
+        "id": "SMOKE_TEST_V1.74",
+        "type": "TESTING",
+        "description": "Verify system stability for version 1.74",
+        "status": "pending",
+        "created_at": "2026-05-16T01:05:24.505933"
+    },
+    {
+        "id": "DEPLOY_V1.75",
+        "type": "DEPLOYMENT",
+        "description": "Execute rollout for version 1.75",
+        "status": "pending",
+        "created_at": "2026-05-16T01:05:37.116894"
+    },
+    {
+        "id": "SMOKE_TEST_V1.75",
+        "type": "TESTING",
+        "description": "Verify system stability for version 1.75",
+        "status": "pending",
+        "created_at": "2026-05-16T01:05:37.116906"
+    },
+    {
+        "id": "DEPLOY_V1.76",
+        "type": "DEPLOYMENT",
+        "description": "Execute rollout for version 1.76",
+        "status": "pending",
+        "created_at": "2026-05-16T01:06:56.699428"
+    },
+    {
+        "id": "SMOKE_TEST_V1.76",
+        "type": "TESTING",
+        "description": "Verify system stability for version 1.76",
+        "status": "pending",
+        "created_at": "2026-05-16T01:06:56.699440"
+    },
+    {
+        "id": "DEPLOY_V1.77",
+        "type": "DEPLOYMENT",
+        "description": "Execute rollout for version 1.77",
+        "status": "pending",
+        "created_at": "2026-05-16T01:10:04.392865"
+    },
+    {
+        "id": "SMOKE_TEST_V1.77",
+        "type": "TESTING",
+        "description": "Verify system stability for version 1.77",
+        "status": "pending",
+        "created_at": "2026-05-16T01:10:04.392878"
+    }
+]
