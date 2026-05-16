@@ -107,18 +107,70 @@ export class GitProviderService {
       }
     }
 
-    // 2. GitLab (via glab CLI if token present)
+    // GitLab (via glab CLI or REST API fallback)
     if (process.env.GITLAB_TOKEN) {
       try {
-        execSync(`glab mr create --title "${title}" --description "${body}" --head "${head}" --base "${base}" --yes`)
-        console.log('✅ [GitProvider] GitLab MR created.')
+        execSync(`glab mr create --title "${title}" --description "${body}" --source-branch "${head}" --target-branch "${base}" --yes`)
+        console.log('✅ [GitProvider] GitLab MR created via glab.')
         return 'gitlab-mr'
       } catch (err: any) {
-        console.error('❌ [GitProvider] GitLab MR creation failed:', err.message)
+        console.warn('⚠️ [GitProvider] GitLab MR creation via glab failed. Attempting REST API fallback...')
+        const projectId = process.env.CI_PROJECT_ID
+        if (projectId) {
+          try {
+            const response = await fetch(`https://gitlab.com/api/v4/projects/${projectId}/merge_requests`, {
+              method: 'POST',
+              headers: {
+                'PRIVATE-TOKEN': process.env.GITLAB_TOKEN,
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                source_branch: head,
+                target_branch: base,
+                title,
+                description: body
+              })
+            })
+            const data = await response.json()
+            if (response.ok) {
+              console.log(`✅ [GitProvider] GitLab MR created via API: ${data.web_url}`)
+              return data.iid
+            } else {
+              console.error('❌ [GitProvider] GitLab API MR creation failed:', data.message)
+            }
+          } catch (apiErr: any) {
+            console.error('❌ [GitProvider] GitLab API fallback failed:', apiErr.message)
+          }
+        }
       }
     }
 
     return null
+  }
+
+  /**
+   * Verifies CI checks for a specific branch.
+   */
+  public async verifyCIStatus(branch: string, provider: 'github' | 'gitlab' = 'github'): Promise<boolean> {
+    if (provider === 'github' && process.env.GITHUB_TOKEN) {
+      try {
+        const octokit = github.getOctokit(process.env.GITHUB_TOKEN)
+        const context = github.context
+        const { data } = await octokit.rest.checks.listForRef({
+          ...context.repo,
+          ref: branch
+        })
+
+        if (data.check_runs.length === 0) return true; // No checks is treated as passed
+
+        return data.check_runs.every(check => check.status === 'completed' && check.conclusion === 'success')
+      } catch (err: any) {
+        console.error(`❌ [GitProvider] GitHub verifyCIStatus failed for ${branch}:`, err.message)
+        return false;
+      }
+    }
+    // GitLab could be implemented similarly using glab or raw curl
+    return false; // default to false if provider not supported or missing token to prevent unsafe merges
   }
 
   /**
@@ -160,7 +212,27 @@ export class GitProviderService {
           status: 'open' as const,
           provider: 'gitlab' as const
         })))
-      } catch (err) {}
+      } catch (err) {
+        const projectId = process.env.CI_PROJECT_ID
+        if (projectId) {
+          try {
+            const response = await fetch(`https://gitlab.com/api/v4/projects/${projectId}/merge_requests?state=opened`, {
+              headers: { 'PRIVATE-TOKEN': process.env.GITLAB_TOKEN }
+            })
+            if (response.ok) {
+              const mrs = await response.json()
+              prs.push(...mrs.map((m: any) => ({
+                id: m.iid,
+                title: m.title,
+                author: m.author.username,
+                branch: m.source_branch,
+                status: 'open' as const,
+                provider: 'gitlab' as const
+              })))
+            }
+          } catch (e) {}
+        }
+      }
     }
 
     return prs
@@ -194,10 +266,29 @@ export class GitProviderService {
     } else if (provider === 'gitlab' && process.env.GITLAB_TOKEN) {
       try {
         execSync(`glab mr merge ${prId} --squash --remove-source-branch`)
-        console.log(`✅ [GitProvider] GitLab MR !${prId} merged.`)
+        console.log(`✅ [GitProvider] GitLab MR !${prId} merged via glab.`)
         return true
       } catch (err: any) {
-        console.error(`❌ [GitProvider] GitLab Merge failed for MR !${prId}:`, err.message)
+        console.warn(`⚠️ [GitProvider] GitLab Merge via glab failed for MR !${prId}. Attempting API fallback...`)
+        const projectId = process.env.CI_PROJECT_ID
+        if (projectId) {
+          try {
+            const response = await fetch(`https://gitlab.com/api/v4/projects/${projectId}/merge_requests/${prId}/merge`, {
+              method: 'PUT',
+              headers: { 'PRIVATE-TOKEN': process.env.GITLAB_TOKEN },
+              body: JSON.stringify({ squash: true, should_remove_source_branch: true })
+            })
+            if (response.ok) {
+              console.log(`✅ [GitProvider] GitLab MR !${prId} merged via API.`)
+              return true
+            } else {
+              const data = await response.json()
+              console.error(`❌ [GitProvider] GitLab API Merge failed:`, data.message)
+            }
+          } catch (apiErr: any) {
+            console.error(`❌ [GitProvider] GitLab API fallback failed:`, apiErr.message)
+          }
+        }
       }
     }
 

@@ -105,6 +105,32 @@ export class Jules {
       { owner: 'bmewburn', repo: 'intelephense-docs', path: 'support.md' }
     ]
 
+    // Phase 15: Ingest local system documentation (Recursive Scan)
+    const ingestSystemKnowledge = async (dir: string, base: string = '') => {
+      const fullPath = path.join(process.cwd(), base, dir)
+      if (!fs.existsSync(fullPath)) return
+
+      const entries = fs.readdirSync(fullPath, { withFileTypes: true })
+      for (const entry of entries) {
+        const relativePath = path.join(base, dir, entry.name)
+        if (entry.isDirectory()) {
+          if (entry.name !== 'node_modules' && entry.name !== '.git' && entry.name !== 'dist') {
+            await ingestSystemKnowledge(entry.name, path.join(base, dir))
+          }
+        } else if (entry.name.endsWith('.md') || entry.name.endsWith('.yml') || entry.name.endsWith('.ts')) {
+          try {
+            const content = fs.readFileSync(path.join(process.cwd(), relativePath), 'utf8')
+            const knowledge = KnowledgeObserver.processContent(`System: ${relativePath}`, content, `local://${relativePath}`)
+            await observer.persistKnowledge(knowledge)
+            console.log(` ✅ [Jules] Ingested Local Knowledge: ${relativePath}`)
+          } catch (e) {}
+        }
+      }
+    }
+
+    await ingestSystemKnowledge('.github')
+    await ingestSystemKnowledge('antigravity')
+
     const allKnowledge: any[] = []
 
     for (const doc of docsToObserve) {
@@ -196,8 +222,11 @@ export class Jules {
 
     for (const pr of pulls) {
       const tools = {
-        auditPR: async () => `PR #${pr.id} titled "${pr.title}" by ${pr.author} is compliant with PROTOCOL.md.`,
-        verifyCI: async () => 'CI checks passed (simulated).',
+        auditPR: async () => pr.title.includes('WIP') ? 'not compliant' : 'compliant',
+        verifyCI: async () => {
+          const passed = await gitProvider.verifyCIStatus(pr.branch, pr.provider);
+          return passed ? 'passed' : 'failed';
+        },
         merge: async () => await gitProvider.mergePullRequest(pr.id, pr.provider)
       }
 
@@ -279,8 +308,37 @@ export class Jules {
     }
   }
 
+  public async syncPresence() {
+    console.log('📡 [Jules] Synchronizing online presence...')
+    const { getMongoClient } = await import('./core')
+    try {
+      const client = await getMongoClient()
+      const db = client.db()
+      const presence = {
+        agent: 'Jules',
+        status: 'online',
+        lastSeen: new Date().toISOString(),
+        version: '1.2.0-alpha',
+        capabilities: ['git-sync', 'self-repair', 'knowledge-ingestion', 'pr-audit'],
+        environment: process.env.GITHUB_ACTIONS ? 'github-actions' : (process.env.GITLAB_CI ? 'gitlab-ci' : 'local')
+      }
+
+      await db.collection('agent_presence').updateOne(
+        { agent: 'Jules' },
+        { $set: presence },
+        { upsert: true }
+      )
+      console.log('✅ [Jules] Online presence heartbeated to MongoDB.')
+      this.recordTask('Presence Sync: Heartbeat broadcasted.')
+    } catch (err: any) {
+      console.warn('⚠️ [Jules] Presence sync failed:', err.message)
+    }
+  }
+
   public async executeWorkCycle() {
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
+    await this.syncPresence()
+
     const { explore } = await import('./explorer')
     const { workOrderService } = await import('./services/work_order')
 
