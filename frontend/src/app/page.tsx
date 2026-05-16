@@ -44,6 +44,13 @@ type IntelligenceResponse = {
   }[];
 };
 
+interface ChatMessage {
+  id: string;
+  role: "user" | "assistant" | "system" | "data";
+  content: string;
+  parts?: { type: string; text?: string }[];
+}
+
 function DashboardContent() {
   const [status, setStatus] = useState<StatusResponse | null>(null);
   const [intel, setIntel] = useState<IntelligenceResponse | null>(null);
@@ -53,7 +60,10 @@ function DashboardContent() {
 
   const { messages, append } = useChat({
     onError: (e) => setErrorMessage(e.message),
-  }) as any; // Cast to any to handle experimental useChat types in this environment
+  }) as {
+    messages: ChatMessage[];
+    append: (message: { role: 'user'; content: string }) => Promise<string | undefined>;
+  };
 
   useEffect(() => {
     async function fetchData() {
@@ -233,10 +243,10 @@ function DashboardContent() {
           <h2 className="text-xl font-semibold mb-4">AI Assistant</h2>
           <div className="flex flex-col w-full min-h-[300px]">
             <div className="flex-1 overflow-y-auto mb-4 space-y-4">
-              {messages.map((message: any) => (
+              {messages.map((message: ChatMessage) => (
                 <div key={message.id} className="whitespace-pre-wrap">
                   <span className="font-bold">{message.role === "user" ? "You: " : "AI: "}</span>
-                  {message.parts ? message.parts.map((part: any, i: number) => {
+                  {message.parts ? message.parts.map((part, i: number) => {
                     switch (part.type) {
                       case "text":
                         return <span key={`${message.id}-${i}`}>{part.text}</span>;

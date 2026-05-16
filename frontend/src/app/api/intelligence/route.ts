@@ -67,7 +67,7 @@ export async function GET(req: Request) {
 
     // Read latest cognitive logs (fallback to file if needed, but preferably from DB in future)
     const logPath = path.join(/* turbopackIgnore: true */ process.cwd(), '../logs/autonomous.log');
-    let recentLogs: any[] = [];
+    let recentLogs: Record<string, unknown>[] = [];
     if (fs.existsSync(logPath)) {
       try {
         const logContent = fs.readFileSync(logPath, 'utf8');
