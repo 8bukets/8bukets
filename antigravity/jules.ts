@@ -260,6 +260,15 @@ export class Jules {
     const reactSteps = await reactService.executeCycle('Optimize system posture using ReAct', reactTools)
     this.recordTask(`ReAct: Completed ${reactSteps.length} reasoning-action steps.`)
 
+    // Cloud Workflow Agent
+    const { cloudWorkflowAgent } = await import('./services/cloud_workflow')
+    const isFluent = await cloudWorkflowAgent.ensureFluentStatus()
+    if (isFluent) {
+      this.recordTask(`Cloud Workflow: System is FLUENT_ON_AIR.`)
+    } else {
+      this.recordTask(`Cloud Workflow: System degraded, attempted proactive recovery.`)
+    }
+
     await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
     this.memory.lastOptimization = new Date().toISOString()
     await workOrderService.executePendingOrders()
