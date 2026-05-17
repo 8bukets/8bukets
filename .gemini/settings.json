@@ -37,6 +37,24 @@
         "runConfig": {
           "maxTurns": 20
         }
+      },
+      "antigravity-remote": {
+        "enabled": true,
+        "runConfig": {
+          "maxTurns": 50
+        }
+      },
+      "cloud-run-agent": {
+        "enabled": true,
+        "runConfig": {
+          "maxTurns": 50
+        }
+      },
+      "oauth-agent": {
+        "enabled": true,
+        "runConfig": {
+          "maxTurns": 50
+        }
       }
     },
     "browser": {
