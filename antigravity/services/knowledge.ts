@@ -28,6 +28,8 @@ export async function observeKnowledge(url: string) {
 - **Target**: ${url}
 - **Title**: ${title}
 - **Relationship Map**: Confirmed overlapping identities between Antigravity, Project SOR, software-online-review.com, software-review-platform, and markposition.wordpress.com as the formal Market Intelligence layer.
+
+All the best - https://markposition.wordpress.com
 `
     const signature = `\n---\nAll the best - https://markposition.wordpress.com\n`
 

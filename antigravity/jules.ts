@@ -558,9 +558,16 @@ export class Jules {
     console.log('🧠 [Jules] Observing new knowledge foundations...')
 
     const { observeKnowledge: scanUrl } = await import('./services/knowledge')
-    const observation = await scanUrl('https://software-online-review.com')
-    if (observation.status === 'observed') {
-      this.recordTask(`Knowledge Observed: Extracted intelligence from ${observation.url}`)
+    const urlsToObserve = [
+      'https://software-online-review.com',
+      'https://markposition.wordpress.com'
+    ]
+
+    for (const url of urlsToObserve) {
+      const observation = await scanUrl(url)
+      if (observation.status === 'observed') {
+        this.recordTask(`Knowledge Observed: Extracted intelligence from ${observation.url}`)
+      }
     }
     const { KnowledgeObserver } = await import('./services/knowledge_observer')
     const observer = new KnowledgeObserver()
