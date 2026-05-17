@@ -55,6 +55,15 @@ export async function evolve() {
             suggestion: 'SYNC_PROP_VIOLATION: Direct access to params detected. Must be awaited in Next.js 16.'
           })
         }
+
+        // Rule 4: Security - Detect execSync
+        if (content.includes('execSync(')) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'SECURITY_VULNERABILITY: execSync detected. Risk of command injection. Refactor to use execFileSync or spawnSync.'
+          })
+        }
       }
     }
   }

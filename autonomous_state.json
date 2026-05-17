@@ -15,20 +15,21 @@
         }
     ],
     "docker": {
-        "status": "degraded",
-        "containerCount": 0,
-        "simulated": false,
-        "timestamp": "2026-05-17T13:08:59.213Z"
+        "status": "simulated",
+        "containerCount": 2,
+        "simulated": true,
+        "multiStageStatus": "multi-stage",
+        "timestamp": "2026-05-17T12:06:19.023Z"
     },
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1779023339214,
+        "timestamp": 1779019579023,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
-        "branches": 1765,
-        "pendingTasks": 0,
+        "branches": 1760,
+        "pendingTasks": 15,
         "relationshipMap": {
             "stakeholderEngagement": {
                 "Strategic Lead": {
@@ -67,6 +68,7 @@
             },
             "goalAlignment": {
                 "Achieve full autonomous work cycles.": [
+                    "jules-17924979559343397018-3cd53bdf",
                     "remotes/origin/add-malubeach-scraper-16704333902164650708",
                     "remotes/origin/add-mysql-agent-12534386317238704274",
                     "remotes/origin/autonomous-agents-framework-90146205652415261",
@@ -1101,7 +1103,7 @@
                     "type": "Branch Result",
                     "name": "remotes/origin/feat/scale-remote-subagents-9068634002929713743",
                     "status": "Ready for Merge",
-                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/scale-remote-subagents-9068634002929713743"
+                    "result": "scale remote subagents and improve task routing"
                 },
                 {
                     "type": "Branch Result",
@@ -1599,5 +1601,5 @@
             ]
         }
     },
-    "last_sync": "2026-05-17T13:09:27.328Z"
+    "last_sync": "2026-05-17T12:06:19.118Z"
 }

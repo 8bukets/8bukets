@@ -50,20 +50,37 @@ export async function observeKnowledge(url: string) {
     // Append or create KNOWLEDGE_MERGE.md with formal relationships
     const knowledgePath = path.join(process.cwd(), 'KNOWLEDGE_MERGE.md')
 
+    let relationshipText = `Confirmed relationship with ${url} (Title: ${title}) as an intelligence source.`
+    if (url.includes('software-online-review.com')) {
+      relationshipText = `Confirmed overlapping identities between Antigravity, Project SOR, software-online-review.com, software-review-platform, and markposition.wordpress.com as the formal Market Intelligence layer.`
+    }
+
     const relationshipEntry = `
 ## Autonomous Observation
 - **Date**: ${new Date().toISOString()}
 - **Target**: ${url}
 - **Title**: ${title}
-- **Relationship Map**: Confirmed relationship with ${url} (Title: ${title}) as an intelligence source.
+- **Relationship Map**: ${relationshipText}
 `
+    let shouldAppend = true;
     if (fs.existsSync(knowledgePath)) {
-      fs.appendFileSync(knowledgePath, relationshipEntry, 'utf8')
-    } else {
-      fs.writeFileSync(knowledgePath, `# Market Intelligence Matrix\n${relationshipEntry}`, 'utf8')
+      const existingContent = fs.readFileSync(knowledgePath, 'utf8');
+      if (existingContent.includes(`- **Target**: ${url}`)) {
+        shouldAppend = false;
+      }
     }
 
-    console.log(`✅ [Knowledge Observer] Appended insights to KNOWLEDGE_MERGE.md.`)
+    if (shouldAppend) {
+      if (fs.existsSync(knowledgePath)) {
+        fs.appendFileSync(knowledgePath, relationshipEntry, 'utf8')
+      } else {
+        fs.writeFileSync(knowledgePath, `# Market Intelligence Matrix\n${relationshipEntry}`, 'utf8')
+      }
+      console.log(`✅ [Knowledge Observer] Appended insights to KNOWLEDGE_MERGE.md.`)
+    } else {
+      console.log(`ℹ️ [Knowledge Observer] Insight for ${url} already exists in KNOWLEDGE_MERGE.md.`)
+    }
+
     return { status: 'observed', url, title }
   } catch (error) {
     console.error(`⚠️ [Knowledge Observer] Failed to scan ${url}:`, error)

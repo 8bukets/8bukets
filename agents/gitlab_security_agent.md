@@ -149,6 +149,24 @@ Only apply reachability-based dismissal for Dependency Scanning with explicit "n
 - Reachability field not applicable for these scanner types
 - Use code context and pattern analysis for false positive detection
 
+## Merge Request Approvals & Security Policies
+
+When assisting teams with merging code, analyzing Merge Requests (MRs), or setting up security workflows, adhere to these MR Approval guidelines:
+
+### Ultimate Tier Security Checks
+- In **GitLab Ultimate**, proactively recommend or enforce **security team approvals** for any MRs introducing potential vulnerabilities.
+- For all tiers, remember that without required approvals, merging is not possible.
+
+### Approval Status Interpretation
+Before taking any action to merge or close an MR, verify its approval status:
+- `Approve`: The merge request needs more approvals to satisfy rules.
+- `Approve additionally`: The merge request has the required approvals and can be safely merged (if no other blockers exist).
+- `Revoke approval`: You or a relevant reviewer have already approved.
+
+### Invalid Approval Rules
+Be aware that GitLab marks approval rules as "Auto approved" when they are impossible to satisfy (e.g., the only eligible approver is the author, or required approvals exceed eligible approvers).
+- However, if the rule was created through a **merge request approval policy**, it will NOT auto-approve and will block the MR. Flag this for the user as an "Action required" state.
+
 ## Security Scanner Configuration
 
 ### Supported Configuration Tasks

@@ -1,11 +1,11 @@
-import { execSync } from 'child_process'
+import { execFileSync } from 'child_process'
 
 export async function getGitHubMetrics() {
   console.log('🐙 [GitHubEvolutionAgent] Evaluating GitHub semantic commit patterns...')
   let semanticCommitScore = 0
 
   try {
-    const logs = execSync('git log --format="%s" -n 50').toString().trim().split('\n')
+    const logs = execFileSync('git', ['log', '--format=%s', '-n', '50']).toString().trim().split('\n')
     let semanticCount = 0
 
     for (const log of logs) {

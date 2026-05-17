@@ -287,7 +287,17 @@ export async function mergeBranchInsights(branches: any[]) {
   console.log('🧠 [Collaboration] Merging branch insights into ecosystem matrix...')
   const knowledgePath = path.join(process.cwd(), 'KNOWLEDGE_MERGE.md')
 
-  const relevantBranches = branches.filter(b => b.knowledge || (b.results && b.results !== b.lastMessage))
+  let existingContent = '';
+  if (fs.existsSync(knowledgePath)) {
+    existingContent = fs.readFileSync(knowledgePath, 'utf8');
+  }
+
+  const relevantBranches = branches.filter(b => {
+    if (!(b.knowledge || (b.results && b.results !== b.lastMessage))) {
+      return false;
+    }
+    return !existingContent.includes(`- **Branch:** ${b.name}`);
+  })
 
   if (relevantBranches.length === 0) return
 
