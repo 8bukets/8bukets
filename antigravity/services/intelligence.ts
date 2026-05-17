@@ -49,7 +49,7 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `- **Pending Work Orders:** ${workOrders.length}\n`
   if (workOrders.length > 0) {
     workOrders.forEach(wo => {
-      report += `  - [${wo.type}] ${wo.goal}\n`
+      report += `  - [${wo.type}] ${wo.goal || wo.description}\n`
     })
   } else {
     report += `  - No pending orders. System is optimal.\n`
