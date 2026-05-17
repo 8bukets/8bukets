@@ -234,5 +234,336 @@
             "insight": "Confirmed core Google node accessibility (HTTP 200).",
             "status": "ACCESSIBLE"
         }
+    },
+    {
+        "timestamp": 1778978289.0026672,
+        "agent": "AnalysisAgent",
+        "event_type": "MARKET_DATA_ANALYSIS",
+        "market_data_ref": "AD_ADS_ADVERTISE",
+        "payload": {
+            "ad_category_density": 0.9485714285714286,
+            "total_ad_posts": 332
+        }
+    },
+    {
+        "timestamp": 1778978289.070516,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "marketingplatform.google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
+    },
+    {
+        "timestamp": 1778978289.0712006,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "support.google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 404).",
+            "status": "RESTRICTED"
+        }
+    },
+    {
+        "timestamp": 1778978289.0998259,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
+    },
+    {
+        "timestamp": 1778978289.3112528,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "developers.google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
+    },
+    {
+        "timestamp": 1778978294.3942797,
+        "agent": "AdsAgent",
+        "event_type": "AD_STRATEGY_GENERATION",
+        "market_data_ref": "AD_ADS_ADVERTISE",
+        "payload": {
+            "ad_count": 3,
+            "target_persona": "AdTech Professional"
+        }
+    },
+    {
+        "timestamp": 1778978369.8113072,
+        "agent": "AnalysisAgent",
+        "event_type": "MARKET_DATA_ANALYSIS",
+        "market_data_ref": "AD_ADS_ADVERTISE",
+        "payload": {
+            "ad_category_density": 0.9485714285714286,
+            "total_ad_posts": 332
+        }
+    },
+    {
+        "timestamp": 1778978369.8791828,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "support.google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 404).",
+            "status": "RESTRICTED"
+        }
+    },
+    {
+        "timestamp": 1778978369.8825378,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "marketingplatform.google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
+    },
+    {
+        "timestamp": 1778978369.9080265,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
+    },
+    {
+        "timestamp": 1778978370.1259959,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "developers.google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
+    },
+    {
+        "timestamp": 1778978370.310123,
+        "agent": "AdsAgent",
+        "event_type": "AD_STRATEGY_GENERATION",
+        "market_data_ref": "AD_ADS_ADVERTISE",
+        "payload": {
+            "ad_count": 3,
+            "target_persona": "AdTech Professional"
+        }
+    },
+    {
+        "timestamp": 1778978446.410198,
+        "agent": "AnalysisAgent",
+        "event_type": "MARKET_DATA_ANALYSIS",
+        "market_data_ref": "AD_ADS_ADVERTISE",
+        "payload": {
+            "ad_category_density": 0.9485714285714286,
+            "total_ad_posts": 332
+        }
+    },
+    {
+        "timestamp": 1778978446.4799693,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "support.google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 404).",
+            "status": "RESTRICTED"
+        }
+    },
+    {
+        "timestamp": 1778978446.4942324,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "marketingplatform.google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
+    },
+    {
+        "timestamp": 1778978446.5165343,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
+    },
+    {
+        "timestamp": 1778978446.768253,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "developers.google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
+    },
+    {
+        "timestamp": 1778978446.9300902,
+        "agent": "AdsAgent",
+        "event_type": "AD_STRATEGY_GENERATION",
+        "market_data_ref": "AD_ADS_ADVERTISE",
+        "payload": {
+            "ad_count": 3,
+            "target_persona": "AdTech Professional"
+        }
+    },
+    {
+        "timestamp": 1778978470.1164658,
+        "agent": "AnalysisAgent",
+        "event_type": "MARKET_DATA_ANALYSIS",
+        "market_data_ref": "AD_ADS_ADVERTISE",
+        "payload": {
+            "ad_category_density": 0.9485714285714286,
+            "total_ad_posts": 332
+        }
+    },
+    {
+        "timestamp": 1778978470.1831276,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "marketingplatform.google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
+    },
+    {
+        "timestamp": 1778978470.1953604,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "support.google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 404).",
+            "status": "RESTRICTED"
+        }
+    },
+    {
+        "timestamp": 1778978470.1995766,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
+    },
+    {
+        "timestamp": 1778978470.4100525,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "developers.google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
+    },
+    {
+        "timestamp": 1778978470.8537033,
+        "agent": "AdsAgent",
+        "event_type": "AD_STRATEGY_GENERATION",
+        "market_data_ref": "AD_ADS_ADVERTISE",
+        "payload": {
+            "ad_count": 3,
+            "target_persona": "AdTech Professional"
+        }
+    },
+    {
+        "timestamp": 1778978802.0111895,
+        "agent": "AnalysisAgent",
+        "event_type": "MARKET_DATA_ANALYSIS",
+        "market_data_ref": "AD_ADS_ADVERTISE",
+        "payload": {
+            "ad_category_density": 0.9485714285714286,
+            "total_ad_posts": 332
+        }
+    },
+    {
+        "timestamp": 1778978802.0880816,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "support.google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 404).",
+            "status": "RESTRICTED"
+        }
+    },
+    {
+        "timestamp": 1778978802.0895774,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "marketingplatform.google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
+    },
+    {
+        "timestamp": 1778978802.105859,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
+    },
+    {
+        "timestamp": 1778978802.4156272,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "developers.google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
+    },
+    {
+        "timestamp": 1778978802.5357964,
+        "agent": "AdsAgent",
+        "event_type": "AD_STRATEGY_GENERATION",
+        "market_data_ref": "AD_ADS_ADVERTISE",
+        "payload": {
+            "ad_count": 3,
+            "target_persona": "AdTech Professional"
+        }
+    },
+    {
+        "timestamp": 1778978943.062234,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
     }
 ]
