@@ -27,8 +27,8 @@ export async function bootstrap(idea: { feature: string, rationale: string }) {
     }
   }
 
-  if (fs.existsSync(filePath)) {
-    console.log(` - Service ${serviceName} already exists. Skipping bootstrap.`)
+  if (fs.existsSync(filePath) || fs.existsSync(workflowPath) || fs.existsSync(githubActionPath)) {
+    console.log(` - Service ${serviceName} artifacts already exist. Skipping bootstrap to prevent overwriting existing logic.`)
     return
   }
 
