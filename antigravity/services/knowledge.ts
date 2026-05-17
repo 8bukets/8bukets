@@ -31,10 +31,32 @@ export async function observeKnowledge(url: string) {
 
 All the best - https://markposition.wordpress.com
 `
+    const signature = `\n---\nAll the best - https://markposition.wordpress.com\n`
+
     if (fs.existsSync(knowledgePath)) {
-      fs.appendFileSync(knowledgePath, relationshipEntry, 'utf8')
+      let content = fs.readFileSync(knowledgePath, 'utf8')
+      const normalizedContent = content.trim()
+      const normalizedEntry = relationshipEntry.trim()
+      const normalizedSignature = signature.trim()
+
+      if (!normalizedContent.includes(normalizedEntry)) {
+        if (content.endsWith(signature)) {
+          content = content.substring(0, content.length - signature.length)
+        } else if (content.endsWith(normalizedSignature)) {
+          content = content.substring(0, content.length - normalizedSignature.length)
+        }
+
+        fs.writeFileSync(knowledgePath, content + relationshipEntry + signature, 'utf8')
+      } else {
+        if (!content.endsWith(signature)) {
+           if (content.endsWith(normalizedSignature)) {
+              content = content.substring(0, content.length - normalizedSignature.length)
+           }
+           fs.writeFileSync(knowledgePath, content + signature, 'utf8')
+        }
+      }
     } else {
-      fs.writeFileSync(knowledgePath, `# Market Intelligence Matrix\n${relationshipEntry}`, 'utf8')
+      fs.writeFileSync(knowledgePath, `# Market Intelligence Matrix\n${relationshipEntry}${signature}`, 'utf8')
     }
 
     logAutonomousAction(`✅ [Knowledge Observer] Appended insights to KNOWLEDGE_MERGE.md.`, 'info')
