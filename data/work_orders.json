@@ -311,14 +311,72 @@
         "id": "DEPLOY_V1.85",
         "type": "DEPLOYMENT",
         "description": "Execute rollout for version 1.85",
-        "status": "pending",
-        "created_at": "2026-05-17T08:32:42.369450"
+        "status": "completed",
+        "created_at": "2026-05-17T08:32:42.369450",
+        "completed_at": "2026-05-17T17:29:27.438Z",
+        "result": {
+            "skipped": true,
+            "reason": "external_type"
+        }
     },
     {
         "id": "SMOKE_TEST_V1.85",
         "type": "TESTING",
         "description": "Verify system stability for version 1.85",
-        "status": "pending",
-        "created_at": "2026-05-17T08:32:42.369466"
+        "status": "completed",
+        "created_at": "2026-05-17T08:32:42.369466",
+        "completed_at": "2026-05-17T17:29:27.439Z",
+        "result": {
+            "skipped": true,
+            "reason": "external_type"
+        }
+    },
+    {
+        "id": "DEPLOY_V1.86",
+        "type": "DEPLOYMENT",
+        "description": "Execute rollout for version 1.86",
+        "status": "completed",
+        "created_at": "2026-05-17T17:28:52.665239",
+        "completed_at": "2026-05-17T17:29:27.440Z",
+        "result": {
+            "skipped": true,
+            "reason": "external_type"
+        }
+    },
+    {
+        "id": "SMOKE_TEST_V1.86",
+        "type": "TESTING",
+        "description": "Verify system stability for version 1.86",
+        "status": "completed",
+        "created_at": "2026-05-17T17:28:52.665255",
+        "completed_at": "2026-05-17T17:29:27.442Z",
+        "result": {
+            "skipped": true,
+            "reason": "external_type"
+        }
+    },
+    {
+        "id": "AUTO_RESEARCH_172934",
+        "type": "RESEARCH",
+        "description": "Autonomous market trend update",
+        "status": "completed",
+        "created_at": "2026-05-17T17:29:34.570785",
+        "updated_at": "2026-05-17T17:29:42.646018"
+    },
+    {
+        "id": "AUTO_TEST_172934",
+        "type": "TESTING",
+        "description": "Routine system stability check",
+        "status": "completed",
+        "created_at": "2026-05-17T17:29:34.570807",
+        "updated_at": "2026-05-17T17:29:44.502128"
+    },
+    {
+        "id": "AUTO_OPTIMIZE_172934",
+        "type": "OPTIMIZE_SYSTEM",
+        "description": "Autonomous system posture optimization",
+        "status": "in_progress",
+        "created_at": "2026-05-17T17:29:34.570821",
+        "updated_at": "2026-05-17T17:29:44.502329"
     }
 ]

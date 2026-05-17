@@ -1,7 +1,7 @@
 {
     "metadata": {
-        "generated_at": "2026-05-17T08:32:42.300578",
-        "version": 1.84,
+        "generated_at": "2026-05-17T17:30:50.923175",
+        "version": 1.86,
         "sources_processed": [
             "ai_agents_knowledge.json",
             "links.json",
@@ -4838,7 +4838,7 @@
                 "full_name": "bmewburn/vscode-intelephense",
                 "description": "PHP intellisense for Visual Studio Code",
                 "html_url": "https://github.com/bmewburn/vscode-intelephense",
-                "stars": 1844,
+                "stars": 1845,
                 "forks": 114,
                 "language": "TypeScript",
                 "license": "Other"
@@ -4856,7 +4856,7 @@
             ],
             "metadata": {
                 "source": "local://.github/ISSUE_TEMPLATE/bug_report.md",
-                "ingestedAt": "2026-05-17T08:21:32.556Z"
+                "ingestedAt": "2026-05-17T17:29:08.484Z"
             }
         },
         "System: .github/ISSUE_TEMPLATE/feature_request.md": {
@@ -4868,7 +4868,7 @@
             ],
             "metadata": {
                 "source": "local://.github/ISSUE_TEMPLATE/feature_request.md",
-                "ingestedAt": "2026-05-17T08:21:32.563Z"
+                "ingestedAt": "2026-05-17T17:29:08.496Z"
             }
         },
         "System: .github/PULL_REQUEST_TEMPLATE.md": {
@@ -4900,7 +4900,7 @@
             ],
             "metadata": {
                 "source": "local://.github/PULL_REQUEST_TEMPLATE.md",
-                "ingestedAt": "2026-05-17T08:21:32.569Z"
+                "ingestedAt": "2026-05-17T17:29:08.510Z"
             }
         },
         "System: .github/workflows/antigravity-daily.yml": {
@@ -5536,7 +5536,7 @@
             ],
             "metadata": {
                 "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/README.md",
-                "ingestedAt": "2026-05-17T08:21:33.156Z"
+                "ingestedAt": "2026-05-17T17:29:08.599Z"
             }
         },
         "Intelephense: features": {
@@ -5612,7 +5612,7 @@
             ],
             "metadata": {
                 "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/features.md",
-                "ingestedAt": "2026-05-17T08:21:33.250Z"
+                "ingestedAt": "2026-05-17T17:29:08.626Z"
             }
         },
         "Intelephense: installation": {
@@ -5660,7 +5660,7 @@
             ],
             "metadata": {
                 "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/installation.md",
-                "ingestedAt": "2026-05-17T08:21:33.330Z"
+                "ingestedAt": "2026-05-17T17:29:08.654Z"
             }
         },
         "Intelephense: gettingStarted": {
@@ -5688,7 +5688,7 @@
             ],
             "metadata": {
                 "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/gettingStarted.md",
-                "ingestedAt": "2026-05-17T08:21:33.415Z"
+                "ingestedAt": "2026-05-17T17:29:08.684Z"
             }
         },
         "Intelephense: support": {
@@ -5700,44 +5700,13 @@
             ],
             "metadata": {
                 "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/support.md",
-                "ingestedAt": "2026-05-17T08:21:33.498Z"
+                "ingestedAt": "2026-05-17T17:29:08.723Z"
             }
         }
     },
     "system_insights": {
-        "analysis_stats": {
-            "total_posts": 350,
-            "top_domains": {
-                "skillshop.exceedlms.com": 22,
-                "support.google.com": 17,
-                "advertising.amazon.com": 15,
-                "developers.google.com": 11,
-                "google.com": 11,
-                "youtube.com": 10,
-                "en.wikipedia.org": 10,
-                "web.facebook.com": 8,
-                "business.linkedin.com": 8,
-                "marketingplatform.google.com": 7
-            },
-            "top_categories": {
-                "Ad Ads Advertise": 332,
-                "Promotion": 13,
-                "Ads": 4,
-                "Advertise": 3,
-                "Advertising": 3,
-                "Online": 2
-            }
-        },
-        "research_trends": [
-            "Dominance of advertising.amazon.com in current dataset.",
-            "Dominance of developers.google.com in current dataset.",
-            "Dominance of google.com in current dataset.",
-            "Dominance of marketingplatform.google.com in current dataset."
-        ],
-        "intelligence_outlook": [
-            "Scaling Strategy: Implementing simultaneous execution across agent tiers.",
-            "R&D Strategy: Developing realistic simulations for human-agent interaction.",
-            "Operational Strategy: Enhancing agent debate and feedback loops."
-        ]
+        "analysis_stats": null,
+        "research_trends": [],
+        "intelligence_outlook": []
     }
 }
