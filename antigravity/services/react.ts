@@ -86,6 +86,13 @@ export class ReActService {
       }
     }
 
+    if (process.env.MACBOOK_CLOUD_SIMULATION === 'true' && stepIndex === 1) {
+        return {
+            thought: `MacBook simulation active. Merging and collaborating with Docker, GitHub, GitKraken, Supabase, MongoDB, and GitLab.`,
+            action: availableTools.includes('simulateCloudSync') ? 'simulateCloudSync' : 'finish'
+        }
+    }
+
     const lastObservation = history[history.length - 1].observation
 
     if (lastObservation.includes('error') || lastObservation.includes('MISSING')) {

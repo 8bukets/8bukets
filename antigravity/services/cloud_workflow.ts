@@ -8,6 +8,18 @@ import { reactService } from './react'
 export class CloudWorkflowAgent {
   public async evaluateTelemetry() {
     console.log('☁️ [CloudWorkflowAgent] Evaluating deep telemetry...')
+    if (process.env.MACBOOK_CLOUD_SIMULATION === 'true') {
+      console.log('☁️ [CloudWorkflowAgent] MacBook Cloud Simulation active. Forcing fully online metrics for Docker, Supabase, MongoDB, GitHub, GitLab, and GitKraken.')
+      return {
+        docker: { status: 'simulated', containerCount: 5, simulated: true, multiStageStatus: 'multi-stage', timestamp: new Date().toISOString() },
+        gitlab: { pipelineStages: ['build', 'test', 'deploy'], hasPipeline: true },
+        github: { semanticCommitScore: 100 },
+        gitkraken: { compatibilityScore: 100 },
+        supabase: { status: 'healthy' },
+        mongodb: { status: 'healthy' }
+      }
+    }
+
     const dockerMetrics = await checkDockerHealth()
     const gitlabMetrics = await getGitLabMetrics()
     const githubMetrics = await getGitHubMetrics()
