@@ -65,6 +65,15 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
+  // Gap Analysis 6: Autonomous Logging
+  if (!files.some(f => f.includes('logging'))) {
+    ideas.push({
+      feature: 'Autonomous Logging Service',
+      rationale: 'Provides a centralized, autonomous logging aggregation layer for all neural nodes.',
+      complexity: 'Low'
+    })
+  }
+
   // Force an idea for demonstration if none exist
   if (ideas.length === 0) {
     ideas.push({
