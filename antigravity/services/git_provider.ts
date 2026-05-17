@@ -116,7 +116,7 @@ export class GitProviderService {
         return 'gitlab-mr'
       } catch (err: any) {
         console.warn('⚠️ [GitProvider] GitLab MR creation via glab failed. Attempting REST API fallback...')
-        const projectId = process.env.CI_PROJECT_ID
+        const projectId = process.env.CI_PROJECT_ID || process.env.GITLAB_PROJECT_ID
         if (projectId) {
           try {
             const response = await fetch(`https://gitlab.com/api/v4/projects/${projectId}/merge_requests`, {
@@ -214,7 +214,7 @@ export class GitProviderService {
           provider: 'gitlab' as const
         })))
       } catch (err) {
-        const projectId = process.env.CI_PROJECT_ID
+        const projectId = process.env.CI_PROJECT_ID || process.env.GITLAB_PROJECT_ID
         if (projectId) {
           try {
             const response = await fetch(`https://gitlab.com/api/v4/projects/${projectId}/merge_requests?state=opened`, {
@@ -271,7 +271,7 @@ export class GitProviderService {
         return true
       } catch (err: any) {
         console.warn(`⚠️ [GitProvider] GitLab Merge via glab failed for MR !${prId}. Attempting API fallback...`)
-        const projectId = process.env.CI_PROJECT_ID
+        const projectId = process.env.CI_PROJECT_ID || process.env.GITLAB_PROJECT_ID
         if (projectId) {
           try {
             const response = await fetch(`https://gitlab.com/api/v4/projects/${projectId}/merge_requests/${prId}/merge`, {

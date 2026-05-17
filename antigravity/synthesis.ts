@@ -57,5 +57,15 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
+  // Gap Analysis 5: Multi-Service Orchestration (Workflows)
+  const workflowsDir = path.join(process.cwd(), 'antigravity/workflows')
+  if (!fs.existsSync(workflowsDir) || fs.readdirSync(workflowsDir).length === 0) {
+    ideas.push({
+      feature: 'Multi-Service Orchestration Workflow',
+      rationale: 'Formalizes autonomous coordination between MongoDB, Supabase, and Docker-based microservices.',
+      complexity: 'Medium'
+    })
+  }
+
   return ideas
 }
