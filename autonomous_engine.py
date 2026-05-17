@@ -261,11 +261,19 @@ def process_work_orders():
 
 async def main():
     parser = argparse.ArgumentParser(description="Full Autonomous Automatic Creation Order and Execution Engine")
+    parser.add_argument("--engine", choices=["macbook", "cloud"], default="macbook", help="Select execution engine (macbook or cloud)")
     parser.add_argument("--loop", action="store_true", help="Run continuously every 24h")
     parser.add_argument("--token", type=str, help="Authentication token", default=os.environ.get("SYSTEM_AUTH_TOKEN", "default_dev_token"))
     parser.add_argument("--skip-scraper", action="store_true", help="Skip the scraping phase")
     parser.add_argument("--dry-run", action="store_true", help="Run a single cycle and exit (test mode)")
     args = parser.parse_args()
+
+    # Set execution mode based on engine flag
+    if args.engine == "cloud":
+        os.environ["AUTONOMOUS_MODE"] = "cloud"
+        logger.info("☁️ Engine set to CLOUD mode. Prioritizing remote collaboration.")
+    else:
+        logger.info("💻 Engine set to MACBOOK mode. Local execution primary.")
 
     bootstrap()
 

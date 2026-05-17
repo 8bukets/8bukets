@@ -50,6 +50,10 @@ from ai_agents_knowledge_scraper import scrape_ai_agents_knowledge
 from vscode_intelephense_scraper import scrape_vscode_intelephense
 from intelephense_scraper import scrape_intelephense_docs
 from google_ads_scraper import scrape_google_ads_docs
+from gemmafour_scraper import scrape_gemmafour_docs
+from litert_scraper import scrape_litert_docs
+from opentelemetry_scraper import scrape_opentelemetry_repos
+from stitch_scraper import scrape_stitch_docs
 
 # Expansion Agents
 from agents.swarm_agent import SwarmAgent
@@ -87,6 +91,18 @@ def run_scraper():
         scrape_intelephense_docs()
         # Google Ads Documentation Scraper
         scrape_google_ads_docs()
+
+        # Gemma 4 Documentation Scraper
+        scrape_gemmafour_docs()
+
+        # LiteRT Documentation Scraper
+        scrape_litert_docs()
+
+        # OpenTelemetry Repos Scraper
+        scrape_opentelemetry_repos()
+
+        # Stitch Documentation Scraper
+        scrape_stitch_docs()
 
         logger.info("Scrapers finished successfully.")
         return True
