@@ -44,7 +44,7 @@
     "TargetingAgent": {
         "long_term": {
             "test_compatibility_persona": "Compatibility Enthusiast",
-            "last_primary_persona": "General Tech Enthusiast",
+            "last_primary_persona": "AdTech Professional",
             "new_key": "new_val"
         },
         "episodic": []
@@ -68,7 +68,7 @@
     },
     "BidAgent": {
         "long_term": {
-            "adjustment_factor": 1.08285670562808
+            "adjustment_factor": 1.0936852726843609
         },
         "episodic": []
     },

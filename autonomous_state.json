@@ -4,14 +4,14 @@
     "docker": {
         "status": "recovering",
         "containerCount": 0,
-        "timestamp": "2026-05-17T08:21:48.212Z",
+        "timestamp": "2026-05-17T16:51:09.453Z",
         "mode": "native"
     },
     "intelligence": {
-        "branches": 1754,
-        "pendingTasks": 14
+        "branches": 1771,
+        "pendingTasks": 0
     },
-    "last_sync": "2026-05-17T08:21:48.215Z",
+    "last_sync": "2026-05-17T16:51:09.459Z",
     "execution_mode": "local",
     "cloud_provider": "none",
     "jenkins": {
@@ -24,6 +24,6 @@
             "has_stages": true,
             "has_parallel": true
         },
-        "timestamp": "2026-05-17T08:21:48.212Z"
+        "timestamp": "2026-05-17T16:51:09.454Z"
     }
 }
