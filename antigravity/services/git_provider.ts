@@ -116,7 +116,7 @@ export class GitProviderService {
         return 'gitlab-mr'
       } catch (err: any) {
         console.warn('⚠️ [GitProvider] GitLab MR creation via glab failed. Attempting REST API fallback...')
-        const projectId = process.env.CI_PROJECT_ID
+        const projectId = process.env.CI_PROJECT_ID || process.env.GITLAB_PROJECT_ID
         if (projectId) {
           try {
             const response = await fetch(`https://gitlab.com/api/v4/projects/${projectId}/merge_requests`, {
@@ -175,6 +175,72 @@ export class GitProviderService {
   }
 
   /**
+   * Checks if a Pull Request / Merge Request has the required approvals.
+   */
+  public async checkApprovals(prId: number | string, provider: 'github' | 'gitlab' = 'github'): Promise<boolean> {
+    logAutonomousAction(`✅ [GitProvider] Checking approvals for ${provider} PR/MR #${prId}...`, 'info')
+
+    if (provider === 'github' && process.env.GITHUB_TOKEN) {
+      try {
+        const octokit = github.getOctokit(process.env.GITHUB_TOKEN)
+        const context = github.context
+        const { data: reviews } = await octokit.rest.pulls.listReviews({
+          ...context.repo,
+          pull_number: Number(prId)
+        })
+
+        // Require at least one APPROVED review and no outstanding CHANGES_REQUESTED
+        const hasApproval = reviews.some(review => review.state === 'APPROVED')
+        const hasChangesRequested = reviews.some(review => review.state === 'CHANGES_REQUESTED')
+
+        if (hasApproval && !hasChangesRequested) {
+          logAutonomousAction(`✅ [GitProvider] GitHub PR #${prId} has required approvals.`, 'info')
+          return true
+        } else {
+          logAutonomousAction(`⚠️ [GitProvider] GitHub PR #${prId} does not have required approvals (Approved: ${hasApproval}, Changes Requested: ${hasChangesRequested}).`, 'info')
+          return false
+        }
+      } catch (err: any) {
+        console.error(`❌ [GitProvider] GitHub approval check failed for PR #${prId}:`, err.message)
+        return false
+      }
+    } else if (provider === 'gitlab' && process.env.GITLAB_TOKEN) {
+      const projectId = process.env.CI_PROJECT_ID
+      if (projectId) {
+        try {
+          const response = await fetch(`https://gitlab.com/api/v4/projects/${projectId}/merge_requests/${prId}/approvals`, {
+            headers: { 'PRIVATE-TOKEN': process.env.GITLAB_TOKEN }
+          })
+
+          if (response.ok) {
+            const data = await response.json()
+            const approvalsLeft = data.approvals_left ?? 0;
+            const approvedBy = data.approved_by?.length ?? 0;
+
+            if (approvalsLeft === 0 && approvedBy > 0) {
+               logAutonomousAction(`✅ [GitProvider] GitLab MR !${prId} has required approvals.`, 'info')
+               return true
+            } else {
+               logAutonomousAction(`⚠️ [GitProvider] GitLab MR !${prId} does not have required approvals (Approvals left: ${approvalsLeft}, Approved by: ${approvedBy}).`, 'info')
+               return false
+            }
+          } else {
+            const errorData = await response.json()
+            console.error(`❌ [GitProvider] GitLab API approval check failed:`, errorData.message)
+            return false
+          }
+        } catch (apiErr: any) {
+          console.error(`❌ [GitProvider] GitLab API fallback failed:`, apiErr.message)
+          return false
+        }
+      }
+    }
+
+    logAutonomousAction(`⚠️ [GitProvider] Could not check approvals for ${provider} PR/MR #${prId} (missing token or unsupported).`, 'info')
+    return false
+  }
+
+  /**
    * Lists open Pull Requests for the current repository.
    */
   public async listPullRequests(): Promise<PRInfo[]> {
@@ -214,7 +280,7 @@ export class GitProviderService {
           provider: 'gitlab' as const
         })))
       } catch (err) {
-        const projectId = process.env.CI_PROJECT_ID
+        const projectId = process.env.CI_PROJECT_ID || process.env.GITLAB_PROJECT_ID
         if (projectId) {
           try {
             const response = await fetch(`https://gitlab.com/api/v4/projects/${projectId}/merge_requests?state=opened`, {
@@ -250,6 +316,13 @@ export class GitProviderService {
       return false
     }
 
+    // Protocol Audit: Verify required approvals before merging
+    const hasApprovals = await this.checkApprovals(prId, provider)
+    if (!hasApprovals) {
+      console.warn(`⚠️ [GitProvider] Cannot merge ${provider} PR/MR #${prId} as it does not meet the required approvals.`)
+      return false
+    }
+
     if (provider === 'github' && process.env.GITHUB_TOKEN) {
       try {
         const octokit = github.getOctokit(process.env.GITHUB_TOKEN)
@@ -271,7 +344,7 @@ export class GitProviderService {
         return true
       } catch (err: any) {
         console.warn(`⚠️ [GitProvider] GitLab Merge via glab failed for MR !${prId}. Attempting API fallback...`)
-        const projectId = process.env.CI_PROJECT_ID
+        const projectId = process.env.CI_PROJECT_ID || process.env.GITLAB_PROJECT_ID
         if (projectId) {
           try {
             const response = await fetch(`https://gitlab.com/api/v4/projects/${projectId}/merge_requests/${prId}/merge`, {

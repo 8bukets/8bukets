@@ -66,6 +66,10 @@ const FAILURE_THRESHOLD = 3
 const RECOVERY_TIMEOUT = 1000 * 30 // 30 seconds
 
 export async function getMongoClient(): Promise<MongoClient> {
+  if (!MONGODB_URI) {
+    throw new Error('MONGODB_URI is not defined')
+  }
+
   // Circuit Breaker Logic
   if (circuitBreaker.mongodb.state === 'open') {
     if (Date.now() - circuitBreaker.mongodb.lastFailure > RECOVERY_TIMEOUT) {

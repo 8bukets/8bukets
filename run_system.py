@@ -49,6 +49,7 @@ from agents.sandbox_agent import SandboxAgent
 from ai_agents_knowledge_scraper import scrape_ai_agents_knowledge
 from vscode_intelephense_scraper import scrape_vscode_intelephense
 from intelephense_scraper import scrape_intelephense_docs
+from google_ads_scraper import scrape_google_ads_docs
 
 # Expansion Agents
 from agents.swarm_agent import SwarmAgent
@@ -84,6 +85,8 @@ def run_scraper():
         scrape_vscode_intelephense()
         # Intelephense Documentation Scraper
         scrape_intelephense_docs()
+        # Google Ads Documentation Scraper
+        scrape_google_ads_docs()
 
         logger.info("Scrapers finished successfully.")
         return True
