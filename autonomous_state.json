@@ -15,20 +15,21 @@
         }
     ],
     "docker": {
-        "status": "degraded",
-        "containerCount": 0,
-        "simulated": false,
-        "timestamp": "2026-05-17T03:37:56.462Z"
+        "status": "simulated",
+        "containerCount": 2,
+        "simulated": true,
+        "multiStageStatus": "multi-stage",
+        "timestamp": "2026-05-17T12:06:19.023Z"
     },
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1778989076463,
+        "timestamp": 1779019579023,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
-        "branches": 1749,
-        "pendingTasks": 0,
+        "branches": 1760,
+        "pendingTasks": 15,
         "relationshipMap": {
             "stakeholderEngagement": {
                 "Strategic Lead": {
@@ -67,7 +68,7 @@
             },
             "goalAlignment": {
                 "Achieve full autonomous work cycles.": [
-                    "jules-11999895773170301462-79aa951a",
+                    "jules-17924979559343397018-3cd53bdf",
                     "remotes/origin/add-malubeach-scraper-16704333902164650708",
                     "remotes/origin/add-mysql-agent-12534386317238704274",
                     "remotes/origin/autonomous-agents-framework-90146205652415261",
@@ -110,6 +111,7 @@
                     "remotes/origin/feat/intelephense-docs-ingestion-5058226112541762188",
                     "remotes/origin/feat/intelephense-docs-sync-14439717062784308623",
                     "remotes/origin/feat/knowledge-merge-automation-4266785228236839027",
+                    "remotes/origin/feat/macbook-cloud-simulation-2306204492187680775",
                     "remotes/origin/feat/react-agent-integration-8372098972397137891",
                     "remotes/origin/feat/setup-npm-workspaces-gemini-cli-12181861489580932121",
                     "remotes/origin/feat/smarter-cloud-workflow-1168853453825745042",
@@ -247,12 +249,15 @@
                     "remotes/origin/integrate-oracle-ai-knowledge-17542849219216672689",
                     "remotes/origin/jules-13052721785252149852-027ffae0",
                     "remotes/origin/jules-16739887525044798643-c54f1fa3",
+                    "remotes/origin/jules-5565625516958485993-49059093",
                     "remotes/origin/jules-cloud-workflow-agent-9594836607216672043",
                     "remotes/origin/jules-cloud-workflow-tolerance-17354439472694641412",
                     "remotes/origin/jules-improve-knowledge-workflows-9958740170618720237",
                     "remotes/origin/jules-knowledge-merge-collaboration-3722212575858302197",
                     "remotes/origin/jules/add-system-patent-947552789592854459",
-                    "remotes/origin/jules/compile-knowledge-integration-4875845775501523719"
+                    "remotes/origin/jules/compile-knowledge-integration-4875845775501523719",
+                    "remotes/origin/oracle-google-cloud-agents-15432798509012982749",
+                    "remotes/origin/update-mcp-docker-security-11834660539572533331"
                 ],
                 "Establish global collaboration protocols.": [
                     "remotes/origin/add-jenkins-metrics-12709603847827089760",
@@ -309,6 +314,7 @@
                     "remotes/origin/integrate-google-ai-knowledge-577515074625960618",
                     "remotes/origin/integrate-google-innovation-ai-knowledge-11329975251392721471",
                     "remotes/origin/integrate-google-innovation-ai-knowledge-2118271840705498457",
+                    "remotes/origin/jules-1164978700782097591-599a1052",
                     "remotes/origin/jules-15643813269620827017-18b637fd",
                     "remotes/origin/jules-15669541233529701765-e7b02c45",
                     "remotes/origin/jules-1717717407806782090-cbdd5077",
@@ -320,7 +326,6 @@
                     "remotes/origin/jules-gitlab-tutorial-ci-4111694628214868400",
                     "remotes/origin/jules/add-system-patent-947552789592854459",
                     "remotes/origin/opt-scraper-regex-6404737091544860092",
-                    "remotes/origin/oracle-google-cloud-agents-15432798509012982749",
                     "remotes/origin/palette-analytics-ux-improvement-10522861074342822232",
                     "remotes/origin/palette-cli-enhancement-5441850221004135602",
                     "remotes/origin/palette-cli-ux-7116481711061595450",
@@ -511,6 +516,12 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "remotes/origin/feat/ai-agents-knowledge-14795660026662295366",
+                    "status": "Ready for Merge",
+                    "result": "implement AI agent knowledge from Google Cloud"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "remotes/origin/feat/ai-agents-knowledge-integration-10133877583552684442",
                     "status": "Ready for Merge",
                     "result": "integrate AI agent knowledge from Google Cloud"
@@ -697,6 +708,12 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "remotes/origin/feat/google-ads-scraper-5253922194982887918",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/google-ads-scraper-5253922194982887918"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "remotes/origin/feat/google-ai-knowledge-integration-17446113522463245373",
                     "status": "Ready for Merge",
                     "result": "Integrated AI Agents knowledge from Google Innovation & AI blog."
@@ -706,6 +723,12 @@
                     "name": "remotes/origin/feat/google-innovation-ai-knowledge-integration-2508984454520338148",
                     "status": "Ready for Merge",
                     "result": "Integrate knowledge from Google Innovation & AI blog"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "remotes/origin/feat/highlander-subagent-14372356893109913488",
+                    "status": "Ready for Merge",
+                    "result": "add highlander subagent"
                 },
                 {
                     "type": "Branch Result",
@@ -841,6 +864,12 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "remotes/origin/feat/macbook-cloud-simulation-2306204492187680775",
+                    "status": "Ready for Merge",
+                    "result": "implement fully online macbook cloud simulation overrides"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "remotes/origin/feat/markposition-knowledge-integration-v2-1630875147127639221",
                     "status": "Ready for Merge",
                     "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/markposition-knowledge-integration-v2-1630875147127639221"
@@ -904,6 +933,12 @@
                     "name": "remotes/origin/feat/react-integration-v2-8425489280318980511",
                     "status": "Ready for Merge",
                     "result": "implement and integrate ReAct reasoning-acting protocol"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "remotes/origin/feat/scale-remote-subagents-9068634002929713743",
+                    "status": "Ready for Merge",
+                    "result": "scale remote subagents and improve task routing"
                 },
                 {
                     "type": "Branch Result",
@@ -1124,5 +1159,5 @@
             ]
         }
     },
-    "last_sync": "2026-05-17T03:37:56.554Z"
+    "last_sync": "2026-05-17T12:06:19.118Z"
 }
