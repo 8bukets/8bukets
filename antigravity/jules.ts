@@ -244,8 +244,7 @@ export class Jules {
     console.log(`🔄 [Jules] Commencing autonomous Git synchronization on ${branch}...`)
 
     try {
-      const { execSync } = await import('child_process')
-      const { GitProviderService } = await import('./services/git_provider')
+      const { gitProvider, GitProviderService } = await import('./services/git_provider')
 
       const formattedMessage = GitProviderService.formatGitKrakenMessage(
         message,
@@ -254,33 +253,18 @@ export class Jules {
         ['Autonomous system evolution', 'State synchronized to MongoDB']
       )
 
-      console.log(`[Jules] Staging and syncing on branch ${branch}...`)
-      execSync('git add -A', { stdio: 'inherit' })
+      const result = await gitProvider.commit({
+        message: formattedMessage,
+        files: ['.'], // Include everything in the repair
+        push: !!process.env.GITHUB_TOKEN || !!process.env.GITLAB_TOKEN,
+        branch
+      })
 
-      try {
-        execSync(`git commit -m "${formattedMessage}"`, { stdio: 'inherit' })
+      if (result.status === 'success') {
         this.recordTask(`Git Sync: Committed changes with GitKraken optimization.`)
-      } catch (commitErr: any) {
-        // Safe empty commit failure tolerance
-        console.warn('⚠️ [Jules] Commit failed, likely no changes.', commitErr.message)
+      } else {
         this.recordTask(`Git Sync: No changes to commit.`)
       }
-
-      if (process.env.GITHUB_TOKEN || process.env.GITLAB_TOKEN) {
-        console.log(`[Jules] Rebase pulling and pushing branch ${branch}...`)
-        try {
-          execSync(`git pull --rebase origin ${branch}`, { stdio: 'inherit' })
-        } catch (pullErr: any) {
-          console.warn('⚠️ [Jules] Pull rebase failed, continuing to push.', pullErr.message)
-        }
-
-        try {
-          execSync(`git push origin ${branch}`, { stdio: 'inherit' })
-        } catch (pushErr: any) {
-          console.warn('⚠️ [Jules] Push failed.', pushErr.message)
-        }
-      }
-
     } catch (err: any) {
       console.error('❌ [Jules] Git sync failed:', err.message)
       this.recordTask(`Git Sync: Failed - ${err.message}`)

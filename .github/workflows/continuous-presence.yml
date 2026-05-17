@@ -34,11 +34,6 @@ jobs:
           npm ci
           pip install -r requirements.txt
 
-      - name: Configure Git
-        run: |
-          git config --global user.name "google-labs-jules[bot]"
-          git config --global user.email "161369871+google-labs-jules[bot]@users.noreply.github.com"
-
       - name: Execute Unified Autonomous Cycle
         run: npm run daily
         env:

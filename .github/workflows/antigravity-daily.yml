@@ -26,11 +26,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Configure Git
-        run: |
-          git config --global user.name "google-labs-jules[bot]"
-          git config --global user.email "161369871+google-labs-jules[bot]@users.noreply.github.com"
-
       - name: Execute Autonomous Work Cycle
         run: npm run daily
         env:
