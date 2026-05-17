@@ -143,112 +143,182 @@
         "id": "DEPLOY_V1.78",
         "type": "DEPLOYMENT",
         "description": "Execute rollout for version 1.78",
-        "status": "pending",
-        "created_at": "2026-05-16T16:05:45.960147"
+        "status": "completed",
+        "created_at": "2026-05-16T16:05:45.960147",
+        "completed_at": "2026-05-17T08:21:55.496Z",
+        "result": {
+            "skipped": true,
+            "reason": "external_type"
+        }
     },
     {
         "id": "SMOKE_TEST_V1.78",
         "type": "TESTING",
         "description": "Verify system stability for version 1.78",
-        "status": "pending",
-        "created_at": "2026-05-16T16:05:45.960158"
+        "status": "completed",
+        "created_at": "2026-05-16T16:05:45.960158",
+        "completed_at": "2026-05-17T08:21:55.498Z",
+        "result": {
+            "skipped": true,
+            "reason": "external_type"
+        }
     },
     {
         "id": "DEPLOY_V1.79",
         "type": "DEPLOYMENT",
         "description": "Execute rollout for version 1.79",
-        "status": "pending",
-        "created_at": "2026-05-16T16:05:59.380051"
+        "status": "completed",
+        "created_at": "2026-05-16T16:05:59.380051",
+        "completed_at": "2026-05-17T08:21:55.499Z",
+        "result": {
+            "skipped": true,
+            "reason": "external_type"
+        }
     },
     {
         "id": "SMOKE_TEST_V1.79",
         "type": "TESTING",
         "description": "Verify system stability for version 1.79",
-        "status": "pending",
-        "created_at": "2026-05-16T16:05:59.380063"
+        "status": "completed",
+        "created_at": "2026-05-16T16:05:59.380063",
+        "completed_at": "2026-05-17T08:21:55.500Z",
+        "result": {
+            "skipped": true,
+            "reason": "external_type"
+        }
     },
     {
         "id": "DEPLOY_V1.8",
         "type": "DEPLOYMENT",
         "description": "Execute rollout for version 1.8",
-        "status": "pending",
-        "created_at": "2026-05-16T16:13:07.022782"
+        "status": "completed",
+        "created_at": "2026-05-16T16:13:07.022782",
+        "completed_at": "2026-05-17T08:21:55.501Z",
+        "result": {
+            "skipped": true,
+            "reason": "external_type"
+        }
     },
     {
         "id": "SMOKE_TEST_V1.8",
         "type": "TESTING",
         "description": "Verify system stability for version 1.8",
-        "status": "pending",
-        "created_at": "2026-05-16T16:13:07.022796"
+        "status": "completed",
+        "created_at": "2026-05-16T16:13:07.022796",
+        "completed_at": "2026-05-17T08:21:55.502Z",
+        "result": {
+            "skipped": true,
+            "reason": "external_type"
+        }
     },
     {
         "id": "DEPLOY_V1.81",
         "type": "DEPLOYMENT",
         "description": "Execute rollout for version 1.81",
-        "status": "pending",
-        "created_at": "2026-05-17T00:38:14.418771"
+        "status": "completed",
+        "created_at": "2026-05-17T01:19:26.625740",
+        "completed_at": "2026-05-17T08:21:55.503Z",
+        "result": {
+            "skipped": true,
+            "reason": "external_type"
+        }
     },
     {
         "id": "SMOKE_TEST_V1.81",
         "type": "TESTING",
         "description": "Verify system stability for version 1.81",
-        "status": "pending",
-        "created_at": "2026-05-17T00:38:14.418787"
+        "status": "completed",
+        "created_at": "2026-05-17T01:19:26.625754",
+        "completed_at": "2026-05-17T08:21:55.505Z",
+        "result": {
+            "skipped": true,
+            "reason": "external_type"
+        }
     },
     {
         "id": "DEPLOY_V1.82",
         "type": "DEPLOYMENT",
         "description": "Execute rollout for version 1.82",
-        "status": "pending",
-        "created_at": "2026-05-17T00:39:30.331503"
+        "status": "completed",
+        "created_at": "2026-05-17T01:20:33.683966",
+        "completed_at": "2026-05-17T08:21:55.506Z",
+        "result": {
+            "skipped": true,
+            "reason": "external_type"
+        }
     },
     {
         "id": "SMOKE_TEST_V1.82",
         "type": "TESTING",
         "description": "Verify system stability for version 1.82",
-        "status": "pending",
-        "created_at": "2026-05-17T00:39:30.331517"
+        "status": "completed",
+        "created_at": "2026-05-17T01:20:33.683980",
+        "completed_at": "2026-05-17T08:21:55.507Z",
+        "result": {
+            "skipped": true,
+            "reason": "external_type"
+        }
     },
     {
         "id": "DEPLOY_V1.83",
         "type": "DEPLOYMENT",
         "description": "Execute rollout for version 1.83",
-        "status": "pending",
-        "created_at": "2026-05-17T00:40:46.951650"
+        "status": "completed",
+        "created_at": "2026-05-17T01:28:31.856362",
+        "completed_at": "2026-05-17T08:21:55.508Z",
+        "result": {
+            "skipped": true,
+            "reason": "external_type"
+        }
     },
     {
         "id": "SMOKE_TEST_V1.83",
         "type": "TESTING",
         "description": "Verify system stability for version 1.83",
-        "status": "pending",
-        "created_at": "2026-05-17T00:40:46.951664"
+        "status": "completed",
+        "created_at": "2026-05-17T01:28:31.856376",
+        "completed_at": "2026-05-17T08:21:55.509Z",
+        "result": {
+            "skipped": true,
+            "reason": "external_type"
+        }
     },
     {
         "id": "DEPLOY_V1.84",
         "type": "DEPLOYMENT",
         "description": "Execute rollout for version 1.84",
-        "status": "pending",
-        "created_at": "2026-05-17T00:41:10.875907"
+        "status": "completed",
+        "created_at": "2026-05-17T08:19:09.666633",
+        "completed_at": "2026-05-17T08:21:55.510Z",
+        "result": {
+            "skipped": true,
+            "reason": "external_type"
+        }
     },
     {
         "id": "SMOKE_TEST_V1.84",
         "type": "TESTING",
         "description": "Verify system stability for version 1.84",
-        "status": "pending",
-        "created_at": "2026-05-17T00:41:10.875922"
+        "status": "completed",
+        "created_at": "2026-05-17T08:19:09.666650",
+        "completed_at": "2026-05-17T08:21:55.511Z",
+        "result": {
+            "skipped": true,
+            "reason": "external_type"
+        }
     },
     {
         "id": "DEPLOY_V1.85",
         "type": "DEPLOYMENT",
         "description": "Execute rollout for version 1.85",
         "status": "pending",
-        "created_at": "2026-05-17T00:46:42.562665"
+        "created_at": "2026-05-17T08:32:42.369450"
     },
     {
         "id": "SMOKE_TEST_V1.85",
         "type": "TESTING",
         "description": "Verify system stability for version 1.85",
         "status": "pending",
-        "created_at": "2026-05-17T00:46:42.562681"
+        "created_at": "2026-05-17T08:32:42.369466"
     }
 ]

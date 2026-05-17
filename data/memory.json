@@ -25,7 +25,17 @@
                 "data": "episodic_data"
             },
             {
-                "timestamp": "2026-05-17T00:49:02.851436",
+                "timestamp": "2026-05-17T01:22:16.846403",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-17T01:28:01.108341",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-17T08:26:52.447742",
                 "event": "episodic_event",
                 "data": "episodic_data"
             }
@@ -34,7 +44,7 @@
     "TargetingAgent": {
         "long_term": {
             "test_compatibility_persona": "Compatibility Enthusiast",
-            "last_primary_persona": "General Tech Enthusiast",
+            "last_primary_persona": "AdTech Professional",
             "new_key": "new_val"
         },
         "episodic": []
