@@ -33,6 +33,11 @@
                 "timestamp": "2026-05-17T01:28:01.108341",
                 "event": "episodic_event",
                 "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-17T08:26:52.447742",
+                "event": "episodic_event",
+                "data": "episodic_data"
             }
         ]
     },
@@ -63,7 +68,7 @@
     },
     "BidAgent": {
         "long_term": {
-            "adjustment_factor": 1.061520150601
+            "adjustment_factor": 1.08285670562808
         },
         "episodic": []
     },

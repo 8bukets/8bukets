@@ -166,7 +166,7 @@ export class Jules {
           if (entry.name !== 'node_modules' && entry.name !== '.git' && entry.name !== 'dist') {
             await ingestSystemKnowledge(entry.name, path.join(base, dir))
           }
-        } else if (entry.name.endsWith('.md') || entry.name.endsWith('.yml') || entry.name.endsWith('.ts')) {
+        } else if (entry.name.endsWith('.md')) {
           try {
             const content = fs.readFileSync(path.join(process.cwd(), relativePath), 'utf8')
             const knowledge = KnowledgeObserver.processContent(`System: ${relativePath}`, content, `local://${relativePath}`)

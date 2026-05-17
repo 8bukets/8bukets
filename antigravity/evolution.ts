@@ -53,7 +53,7 @@ export async function evolve() {
         }
 
         // Rule 4: Detect console.log in production-like files
-        if (content.includes('console.log(') && !fullPath.includes('.test.') && !fullPath.includes('jules.ts')) {
+        if (content.includes('console.log') && !fullPath.includes('.test.') && !fullPath.includes('jules.ts')) {
           suggestions.push({
             file: fullPath.replace(process.cwd(), ''),
             complexity: lines,
