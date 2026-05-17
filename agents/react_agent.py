@@ -45,8 +45,10 @@ class ReActAgent(BaseAgent):
             action_log.append("CONTINUE_MONITORING")
 
         deployment_config = {}
-        if "DEPLOY_FOCUSED_AD_CAMPAIGN" in action_log or "OPTIMIZE_WORKFLOW_DECISION_MAKING" in action_log:
-            reasoning_log.append("Reasoning: Specific actions determined, configuring React Agent deployment.")
+        if action_log or react_details:
+            reasoning_log.append("Reasoning: Specific actions determined or React knowledge found, configuring React Agent deployment.")
+            if "DEPLOY_REACT_AGENT" not in action_log:
+                action_log.append("DEPLOY_REACT_AGENT")
 
             # Dynamically determine deployment target based on best practices and knowledge
             deployment_target = "Cloud Run"

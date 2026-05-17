@@ -63,6 +63,7 @@ class DockerEvolutionAgent(BaseAgent):
 
         if react_config and react_config.get("status") == "READY_FOR_DEPLOYMENT":
             target = react_config.get("deployment_target")
+            optimization_report["react_deployment_status"] = react_config.get("status")
             optimization_report["react_container_status"] = "PROVISIONED_FOR_VERCEL" if target == "Vercel" else "PROVISIONED_FOR_CLOUD_RUN"
             optimization_report["base_image"] = "node:20-alpine"
             if react_config.get("frontend_framework"):
