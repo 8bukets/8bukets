@@ -37,6 +37,9 @@
         "runConfig": {
           "maxTurns": 20
         }
+      },
+      "highlander": {
+        "enabled": true
       }
     },
     "browser": {
