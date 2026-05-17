@@ -50,6 +50,9 @@ class OracleAIScraper:
         # Typical Oracle structure might have a main container
         main_content = soup.find('main') or soup.find(id='maincontent') or soup
 
+        # Initialize key_links list
+        data["key_links"] = []
+
         # Extract headings and following paragraphs/lists
         headings = main_content.find_all(['h1', 'h2', 'h3'])
 
@@ -83,6 +86,18 @@ class OracleAIScraper:
                     "content": section_content
                 })
 
+        # Extract links
+        for a_tag in main_content.find_all('a', href=True):
+            link_text = self.clean_text(a_tag.get_text())
+            href = a_tag['href']
+            # Make relative URLs absolute
+            if href.startswith('/'):
+                href = f"https://www.oracle.com{href}"
+            if link_text and href and not href.startswith('#'):
+                # Avoid duplicates
+                if not any(link['url'] == href for link in data['key_links']):
+                    data["key_links"].append({"text": link_text, "url": href})
+
         return data
 
     async def scrape(self):
@@ -115,8 +130,10 @@ class OracleAIScraper:
                 f.write(f"# {data['title']}\n\n")
                 f.write(f"Source: {self.url}\n\n")
 
+                f.write("## Sections\n\n")
+
                 for section in data['sections']:
-                    f.write(f"## {section['heading']}\n\n")
+                    f.write(f"### {section['heading']}\n\n")
                     for item in section['content']:
                         if isinstance(item, str):
                             f.write(f"{item}\n\n")
@@ -124,6 +141,11 @@ class OracleAIScraper:
                             for li in item["list"]:
                                 f.write(f"- {li}\n")
                             f.write("\n")
+
+                f.write("## Key Links\n\n")
+                for link in data.get('key_links', []):
+                    f.write(f"- [{link['text']}]({link['url']})\n")
+
             logger.info(f"Saved data to {self.output_md}")
         except IOError as e:
             logger.error(f"Failed to save Markdown: {e}")
