@@ -311,13 +311,31 @@ export class Jules {
             ? `Branch ${branch} observed: ${results}`
             : undefined
 
+          // Phase 12: Advanced Branch Analysis (File Changes & Domain Mapping)
+          let changedFiles: string[] = []
+          let domain = 'General'
+          try {
+            const diffCommand = branch === 'main' ? 'git diff --name-only HEAD~1' : `git diff --name-only main...${branch}`
+            const diffOutput = execSync(diffCommand).toString().trim()
+            changedFiles = diffOutput ? diffOutput.split('\n') : []
+
+            if (changedFiles.some(f => f.includes('security') || f.includes('auth') || f.includes('sentinel'))) domain = 'Security'
+            else if (changedFiles.some(f => f.includes('optimization') || f.includes('analytics') || f.includes('scaling'))) domain = 'Performance'
+            else if (changedFiles.some(f => f.includes('docker') || f.includes('jenkins') || f.includes('ci') || f.includes('deployment') || f.includes('orchestrator'))) domain = 'Infrastructure'
+            else if (changedFiles.some(f => f.includes('jules') || f.includes('agent') || f.includes('intelligence') || f.includes('synthesis') || f.includes('react'))) domain = 'AI'
+          } catch (diffErr) {
+            // Fallback for cases where diff fails (e.g., shallow clones or missing merge base)
+          }
+
           return {
             name: branch,
             lastMessage: message,
             lastSeen: new Date(parseInt(timestamp) * 1000).toISOString(),
             category,
             results,
-            knowledge: knowledgeNugget
+            knowledge: knowledgeNugget,
+            changedFiles,
+            domain
           }
         } catch (e) {
           return {

@@ -55,8 +55,20 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
 
   report += `## 🤝 Merged Ecosystem Insights\n`
   report += `Synergy achieved across ${branches.length} branches. Detailed knowledge and results consolidated from specialized agents.\n\n`
+
+  // Phase 12: Synergy & Collaboration Analysis
+  if (relationshipMap.synergies && relationshipMap.synergies.length > 0) {
+    report += `### ⚡ Synergy & Conflict Analysis\n`
+    relationshipMap.synergies.forEach((s: any) => {
+      report += `- **Resource:** \`${s.resource}\` (${s.intensity} Intensity)\n`
+      report += `  - *Collaborating Branches:* ${s.branches.join(', ')}\n`
+    })
+    report += `\n`
+  }
+
   const insights = branches.filter(b => b.knowledge || (b.results && b.results !== b.lastMessage)).slice(0, 10)
   if (insights.length > 0) {
+    report += `### 🧠 Specialized Knowledge Nuggets\n`
     insights.forEach(b => {
       report += `- **${b.name}**: ${b.results}${b.knowledge ? ` (*Knowledge: ${b.knowledge}*)` : ''}\n`
     })

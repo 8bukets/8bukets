@@ -353,6 +353,174 @@
             },
             "resourceInventory": [
                 {
+                    "type": "Service",
+                    "name": "analytics",
+                    "status": "Active",
+                    "path": "antigravity/services/analytics.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "autonomous_audit",
+                    "status": "Active",
+                    "path": "antigravity/services/autonomous_audit.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "autonomous_compliance",
+                    "status": "Active",
+                    "path": "antigravity/services/autonomous_compliance.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "autonomous_logging",
+                    "status": "Active",
+                    "path": "antigravity/services/autonomous_logging.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "cloud_workflow",
+                    "status": "Active",
+                    "path": "antigravity/services/cloud_workflow.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "cognitive_security",
+                    "status": "Active",
+                    "path": "antigravity/services/cognitive_security.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "collaboration",
+                    "status": "Active",
+                    "path": "antigravity/services/collaboration.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "content",
+                    "status": "Active",
+                    "path": "antigravity/services/content.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "docker",
+                    "status": "Active",
+                    "path": "antigravity/services/docker.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "git_provider",
+                    "status": "Active",
+                    "path": "antigravity/services/git_provider.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "github_docs_observer",
+                    "status": "Active",
+                    "path": "antigravity/services/github_docs_observer.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "github_evolution",
+                    "status": "Active",
+                    "path": "antigravity/services/github_evolution.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "gitkraken",
+                    "status": "Active",
+                    "path": "antigravity/services/gitkraken.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "gitkraken_metrics",
+                    "status": "Active",
+                    "path": "antigravity/services/gitkraken_metrics.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "gitlab",
+                    "status": "Active",
+                    "path": "antigravity/services/gitlab.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "intelligence",
+                    "status": "Active",
+                    "path": "antigravity/services/intelligence.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "jenkins",
+                    "status": "Active",
+                    "path": "antigravity/services/jenkins.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "knowledge",
+                    "status": "Active",
+                    "path": "antigravity/services/knowledge.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "knowledge_observer",
+                    "status": "Active",
+                    "path": "antigravity/services/knowledge_observer.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "neural",
+                    "status": "Active",
+                    "path": "antigravity/services/neural.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "notification",
+                    "status": "Active",
+                    "path": "antigravity/services/notification.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "persistence",
+                    "status": "Active",
+                    "path": "antigravity/services/persistence.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "react",
+                    "status": "Active",
+                    "path": "antigravity/services/react.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "relay",
+                    "status": "Active",
+                    "path": "antigravity/services/relay.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "smoke_test",
+                    "status": "Active",
+                    "path": "antigravity/services/smoke_test.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "stats",
+                    "status": "Active",
+                    "path": "antigravity/services/stats.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "user",
+                    "status": "Active",
+                    "path": "antigravity/services/user.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "work_order",
+                    "status": "Active",
+                    "path": "antigravity/services/work_order.ts"
+                },
+                {
                     "type": "Knowledge",
                     "name": "Intelephense Documentation",
                     "status": "Ingested",
@@ -479,21 +647,6 @@
                 {
                     "type": "Documentation",
                     "name": "KNOWLEDGE_MERGE.md",
-                    "status": "Active"
-                },
-                {
-                    "type": "Service",
-                    "name": "Jules Cognitive Agent",
-                    "status": "Optimal"
-                },
-                {
-                    "type": "Service",
-                    "name": "Unified Web Command Center",
-                    "status": "Live"
-                },
-                {
-                    "type": "Service",
-                    "name": "Jenkins CI/CD Pipeline",
                     "status": "Active"
                 },
                 {
@@ -693,6 +846,12 @@
                     "name": "remotes/origin/feat/gemma-4-scraper-14386039384216646408",
                     "status": "Ready for Merge",
                     "result": "Implement autonomous license validation"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "remotes/origin/feat/git-merge-approvals-2916397739730846342",
+                    "status": "Ready for Merge",
+                    "result": "enforce approval rules for GitHub and GitLab PRs/MRs"
                 },
                 {
                     "type": "Branch Result",
@@ -915,6 +1074,12 @@
                     "name": "remotes/origin/feat/otel-genai-semantics-11295433924323540657",
                     "status": "Ready for Merge",
                     "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/otel-genai-semantics-11295433924323540657"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "remotes/origin/feat/prototype-schema-2382889081635482231",
+                    "status": "Ready for Merge",
+                    "result": "introduce Prototype data schema using Zod and Mongoose"
                 },
                 {
                     "type": "Branch Result",
@@ -1155,6 +1320,283 @@
                     "name": "remotes/origin/feature/wilson-sonsini-docs-5223286484754365385",
                     "status": "Ready for Merge",
                     "result": "add Wilson Sonsini documentation in MD and JSON formats"
+                }
+            ],
+            "synergies": [
+                {
+                    "type": "Resource Conflict/Synergy",
+                    "resource": "collaboration",
+                    "branches": [
+                        "main",
+                        "remotes/origin/add-docker-scripts-14962706392589598489",
+                        "remotes/origin/add-gitlab-security-agent-prompt-16540176671068222176",
+                        "remotes/origin/chore/docker-collaboration-sync-9465155386456086135",
+                        "remotes/origin/docker-collaboration-enhancement-318251479879768316",
+                        "remotes/origin/duo-planner-prompt-update-15997034599254729562",
+                        "remotes/origin/feat/connect-docker-collaboration-10997916882350002599",
+                        "remotes/origin/feat/connect-docker-collaboration-6033606454460470488",
+                        "remotes/origin/feat/docker-collaboration-enhancements-2442044575661287661",
+                        "remotes/origin/feat/docker-collaboration-integration-7386073686217533934",
+                        "remotes/origin/feat/docker-collaboration-integration-9536206781039101862",
+                        "remotes/origin/feat/intelephense-docs-integration-15548360236186896654",
+                        "remotes/origin/feat/knowledge-ingestion-intelephense-9344036021876416224",
+                        "remotes/origin/feat/knowledge-observe-integration-17136884743066058279",
+                        "remotes/origin/feat/setup-docker-ci-cd-15330021649064333459",
+                        "remotes/origin/feature/docker-collaboration-sync-2408669220271786015",
+                        "remotes/origin/feature/knowledge-observation-1188044699692138518",
+                        "remotes/origin/fix/restore-page-tsx-and-build-errors-11543629982312211779",
+                        "remotes/origin/improve-git-sync-and-ingest-sor-6424222975070794974",
+                        "remotes/origin/jules-5559433138773811985-39975caf",
+                        "remotes/origin/jules-8197540570479854725-c23a5090",
+                        "remotes/origin/jules-gitlab-ci-setup-10531506072496288006",
+                        "remotes/origin/jules-improve-workflow-and-knowledge-observer-11114380607500005512",
+                        "remotes/origin/jules-knowledge-merge-collaboration-3722212575858302197",
+                        "remotes/origin/tutorial-gitlab-ci-yml-1560275815016283248",
+                        "remotes/origin/update-duo-planner-prompt-17199014817685136177"
+                    ],
+                    "intensity": "High"
+                },
+                {
+                    "type": "Resource Conflict/Synergy",
+                    "resource": "cognitive_security",
+                    "branches": [
+                        "remotes/origin/add-docker-scripts-14962706392589598489",
+                        "remotes/origin/add-duo-planner-agent-config-16696385487941017117",
+                        "remotes/origin/add-gitlab-security-agent-prompt-16540176671068222176",
+                        "remotes/origin/autonomous-daily-work-fix-recursion-and-streamline-17917200239377968784",
+                        "remotes/origin/chore/docker-collaboration-sync-9465155386456086135",
+                        "remotes/origin/docker-optimization-8426096848725743190",
+                        "remotes/origin/duo-planner-prompt-update-15997034599254729562",
+                        "remotes/origin/enable-gitlab-security-scanners-17254273171421596517",
+                        "remotes/origin/feat/ai-sdk-streamtext-integration-3734860099537308061",
+                        "remotes/origin/feat/connect-docker-collaboration-10997916882350002599",
+                        "remotes/origin/feat/docker-collaboration-enhancements-2442044575661287661",
+                        "remotes/origin/feat/docker-collaboration-integration-9536206781039101862",
+                        "remotes/origin/feat/gitlab-ci-pipeline-15616713096718552061",
+                        "remotes/origin/feat/intelephense-docs-integration-15548360236186896654",
+                        "remotes/origin/feat/knowledge-ingestion-intelephense-9344036021876416224",
+                        "remotes/origin/feat/knowledge-observe-integration-17136884743066058279",
+                        "remotes/origin/feat/react-integration-v2-8425489280318980511",
+                        "remotes/origin/feat/setup-docker-ci-cd-15330021649064333459",
+                        "remotes/origin/feature/backup-agent-11331906079381269962",
+                        "remotes/origin/feature/docker-collaboration-sync-2408669220271786015",
+                        "remotes/origin/feature/knowledge-observation-1188044699692138518",
+                        "remotes/origin/fix/restore-page-tsx-and-build-errors-11543629982312211779",
+                        "remotes/origin/fix/restore-page-tsx-and-build-errors-11543629982312211779",
+                        "remotes/origin/improve-git-sync-and-ingest-sor-6424222975070794974",
+                        "remotes/origin/jules-1027089695129073368-c49a1c11",
+                        "remotes/origin/jules-15643813269620827017-18b637fd",
+                        "remotes/origin/jules-1717717407806782090-cbdd5077",
+                        "remotes/origin/jules-5559433138773811985-39975caf",
+                        "remotes/origin/jules-8197540570479854725-c23a5090",
+                        "remotes/origin/jules-gitlab-ci-setup-10531506072496288006",
+                        "remotes/origin/jules-improve-workflow-and-knowledge-observer-11114380607500005512",
+                        "remotes/origin/jules-knowledge-merge-collaboration-3722212575858302197",
+                        "remotes/origin/tutorial-gitlab-ci-yml-1560275815016283248",
+                        "remotes/origin/update-duo-planner-prompt-17199014817685136177",
+                        "remotes/origin/update-gitlab-security-agent-prompt-11069718994655689674"
+                    ],
+                    "intensity": "High"
+                },
+                {
+                    "type": "Resource Conflict/Synergy",
+                    "resource": "docker",
+                    "branches": [
+                        "remotes/origin/add-docker-scripts-14962706392589598489",
+                        "remotes/origin/add-gitlab-security-agent-prompt-16540176671068222176",
+                        "remotes/origin/chore/docker-collaboration-sync-9465155386456086135",
+                        "remotes/origin/docker-collaboration-enhancement-318251479879768316",
+                        "remotes/origin/duo-planner-prompt-update-15997034599254729562",
+                        "remotes/origin/feat/connect-docker-collaboration-10997916882350002599",
+                        "remotes/origin/feat/docker-collaboration-enhancements-2442044575661287661",
+                        "remotes/origin/feat/docker-collaboration-integration-7386073686217533934",
+                        "remotes/origin/feat/docker-collaboration-integration-9536206781039101862",
+                        "remotes/origin/feat/intelephense-docs-integration-15548360236186896654",
+                        "remotes/origin/feat/knowledge-ingestion-intelephense-9344036021876416224",
+                        "remotes/origin/feat/knowledge-observe-integration-17136884743066058279",
+                        "remotes/origin/feat/setup-docker-ci-cd-15330021649064333459",
+                        "remotes/origin/feature/docker-collaboration-sync-2408669220271786015",
+                        "remotes/origin/feature/docker-self-healing-5846096999198047757",
+                        "remotes/origin/feature/knowledge-observation-1188044699692138518",
+                        "remotes/origin/fix/restore-page-tsx-and-build-errors-11543629982312211779",
+                        "remotes/origin/improve-git-sync-and-ingest-sor-6424222975070794974",
+                        "remotes/origin/jules-5559433138773811985-39975caf",
+                        "remotes/origin/jules-8197540570479854725-c23a5090",
+                        "remotes/origin/jules-gitlab-ci-setup-10531506072496288006",
+                        "remotes/origin/jules-improve-workflow-and-knowledge-observer-11114380607500005512",
+                        "remotes/origin/jules-knowledge-merge-collaboration-3722212575858302197",
+                        "remotes/origin/tutorial-gitlab-ci-yml-1560275815016283248",
+                        "remotes/origin/update-duo-planner-prompt-17199014817685136177"
+                    ],
+                    "intensity": "High"
+                },
+                {
+                    "type": "Resource Conflict/Synergy",
+                    "resource": "knowledge_observer",
+                    "branches": [
+                        "remotes/origin/add-docker-scripts-14962706392589598489",
+                        "remotes/origin/add-gitlab-security-agent-prompt-16540176671068222176",
+                        "remotes/origin/chore/docker-collaboration-sync-9465155386456086135",
+                        "remotes/origin/duo-planner-prompt-update-15997034599254729562",
+                        "remotes/origin/feat/connect-docker-collaboration-10997916882350002599",
+                        "remotes/origin/feat/docker-collaboration-enhancements-2442044575661287661",
+                        "remotes/origin/feat/intelephense-docs-ingestion-5058226112541762188",
+                        "remotes/origin/feat/intelephense-docs-integration-15548360236186896654",
+                        "remotes/origin/feat/knowledge-ingestion-intelephense-9344036021876416224",
+                        "remotes/origin/feat/knowledge-observe-integration-17136884743066058279",
+                        "remotes/origin/feat/setup-docker-ci-cd-15330021649064333459",
+                        "remotes/origin/feat/unified-knowledge-integration-6924488404722720860",
+                        "remotes/origin/feature/docker-collaboration-sync-2408669220271786015",
+                        "remotes/origin/feature/knowledge-observation-1188044699692138518",
+                        "remotes/origin/fix/restore-page-tsx-and-build-errors-11543629982312211779",
+                        "remotes/origin/improve-git-sync-and-ingest-sor-6424222975070794974",
+                        "remotes/origin/jules-5559433138773811985-39975caf",
+                        "remotes/origin/jules-8197540570479854725-c23a5090",
+                        "remotes/origin/jules-gitlab-ci-setup-10531506072496288006",
+                        "remotes/origin/jules-improve-workflow-and-knowledge-observer-11114380607500005512",
+                        "remotes/origin/jules-knowledge-merge-collaboration-3722212575858302197",
+                        "remotes/origin/update-duo-planner-prompt-17199014817685136177"
+                    ],
+                    "intensity": "High"
+                },
+                {
+                    "type": "Resource Conflict/Synergy",
+                    "resource": "react",
+                    "branches": [
+                        "remotes/origin/add-docker-scripts-14962706392589598489",
+                        "remotes/origin/add-duo-planner-agent-config-16696385487941017117",
+                        "remotes/origin/add-gitlab-security-agent-prompt-16540176671068222176",
+                        "remotes/origin/chore/docker-collaboration-sync-9465155386456086135",
+                        "remotes/origin/docker-optimization-8426096848725743190",
+                        "remotes/origin/duo-planner-prompt-update-15997034599254729562",
+                        "remotes/origin/enable-gitlab-security-scanners-17254273171421596517",
+                        "remotes/origin/feat/ai-sdk-streamtext-integration-3734860099537308061",
+                        "remotes/origin/feat/connect-docker-collaboration-10997916882350002599",
+                        "remotes/origin/feat/docker-collaboration-enhancements-2442044575661287661",
+                        "remotes/origin/feat/docker-collaboration-integration-9536206781039101862",
+                        "remotes/origin/feat/gitlab-ci-pipeline-15616713096718552061",
+                        "remotes/origin/feat/intelephense-docs-integration-15548360236186896654",
+                        "remotes/origin/feat/knowledge-ingestion-intelephense-9344036021876416224",
+                        "remotes/origin/feat/knowledge-observe-integration-17136884743066058279",
+                        "remotes/origin/feat/react-integration-v2-8425489280318980511",
+                        "remotes/origin/feat/setup-docker-ci-cd-15330021649064333459",
+                        "remotes/origin/feature/backup-agent-11331906079381269962",
+                        "remotes/origin/feature/docker-collaboration-sync-2408669220271786015",
+                        "remotes/origin/feature/knowledge-observation-1188044699692138518",
+                        "remotes/origin/fix/restore-page-tsx-and-build-errors-11543629982312211779",
+                        "remotes/origin/improve-git-sync-and-ingest-sor-6424222975070794974",
+                        "remotes/origin/jules-1027089695129073368-c49a1c11",
+                        "remotes/origin/jules-15643813269620827017-18b637fd",
+                        "remotes/origin/jules-1717717407806782090-cbdd5077",
+                        "remotes/origin/jules-5559433138773811985-39975caf",
+                        "remotes/origin/jules-8197540570479854725-c23a5090",
+                        "remotes/origin/jules-gitlab-ci-setup-10531506072496288006",
+                        "remotes/origin/jules-improve-workflow-and-knowledge-observer-11114380607500005512",
+                        "remotes/origin/jules-knowledge-merge-collaboration-3722212575858302197",
+                        "remotes/origin/tutorial-gitlab-ci-yml-1560275815016283248",
+                        "remotes/origin/update-duo-planner-prompt-17199014817685136177"
+                    ],
+                    "intensity": "High"
+                },
+                {
+                    "type": "Resource Conflict/Synergy",
+                    "resource": "persistence",
+                    "branches": [
+                        "remotes/origin/chore/docker-collaboration-sync-9465155386456086135",
+                        "remotes/origin/duo-planner-prompt-update-15997034599254729562",
+                        "remotes/origin/feat/connect-docker-collaboration-10997916882350002599",
+                        "remotes/origin/feat/docker-collaboration-enhancements-2442044575661287661",
+                        "remotes/origin/feat/intelephense-docs-integration-15548360236186896654",
+                        "remotes/origin/feat/knowledge-ingestion-intelephense-9344036021876416224",
+                        "remotes/origin/feat/knowledge-observe-integration-17136884743066058279",
+                        "remotes/origin/feat/setup-docker-ci-cd-15330021649064333459",
+                        "remotes/origin/feature/docker-collaboration-sync-2408669220271786015",
+                        "remotes/origin/fix/restore-page-tsx-and-build-errors-11543629982312211779",
+                        "remotes/origin/fix/restore-page-tsx-and-build-errors-11543629982312211779",
+                        "remotes/origin/improve-git-sync-and-ingest-sor-6424222975070794974",
+                        "remotes/origin/jules-5559433138773811985-39975caf",
+                        "remotes/origin/jules-8197540570479854725-c23a5090",
+                        "remotes/origin/jules-gitlab-ci-setup-10531506072496288006",
+                        "remotes/origin/jules-improve-workflow-and-knowledge-observer-11114380607500005512",
+                        "remotes/origin/update-gitlab-security-agent-prompt-11069718994655689674"
+                    ],
+                    "intensity": "High"
+                },
+                {
+                    "type": "Resource Conflict/Synergy",
+                    "resource": "github_docs_observer",
+                    "branches": [
+                        "remotes/origin/feat/intelephense-docs-integration-15548360236186896654",
+                        "remotes/origin/feat/intelephense-docs-integration-9176181955065313741",
+                        "remotes/origin/fix/intelephense-docs-sync-refinement-14869498136353830468",
+                        "remotes/origin/jules-knowledge-merge-collaboration-3722212575858302197"
+                    ],
+                    "intensity": "High"
+                },
+                {
+                    "type": "Resource Conflict/Synergy",
+                    "resource": "knowledge",
+                    "branches": [
+                        "remotes/origin/feat/observe-knowledge-14086295564930272800",
+                        "remotes/origin/jules-knowledge-observe-improvements-9236700373896263344",
+                        "remotes/origin/update-gitlab-security-agent-prompt-11069718994655689674",
+                        "remotes/origin/update-gitlab-security-agent-prompt-11069718994655689674"
+                    ],
+                    "intensity": "High"
+                },
+                {
+                    "type": "Resource Conflict/Synergy",
+                    "resource": "analytics",
+                    "branches": [
+                        "remotes/origin/fix/restore-page-tsx-and-build-errors-11543629982312211779",
+                        "remotes/origin/update-gitlab-security-agent-prompt-11069718994655689674"
+                    ],
+                    "intensity": "Medium"
+                },
+                {
+                    "type": "Resource Conflict/Synergy",
+                    "resource": "neural",
+                    "branches": [
+                        "remotes/origin/fix/restore-page-tsx-and-build-errors-11543629982312211779",
+                        "remotes/origin/update-gitlab-security-agent-prompt-11069718994655689674"
+                    ],
+                    "intensity": "Medium"
+                },
+                {
+                    "type": "Resource Conflict/Synergy",
+                    "resource": "notification",
+                    "branches": [
+                        "remotes/origin/fix/restore-page-tsx-and-build-errors-11543629982312211779",
+                        "remotes/origin/update-gitlab-security-agent-prompt-11069718994655689674"
+                    ],
+                    "intensity": "Medium"
+                },
+                {
+                    "type": "Resource Conflict/Synergy",
+                    "resource": "relay",
+                    "branches": [
+                        "remotes/origin/fix/restore-page-tsx-and-build-errors-11543629982312211779",
+                        "remotes/origin/update-gitlab-security-agent-prompt-11069718994655689674"
+                    ],
+                    "intensity": "Medium"
+                },
+                {
+                    "type": "Resource Conflict/Synergy",
+                    "resource": "stats",
+                    "branches": [
+                        "remotes/origin/fix/restore-page-tsx-and-build-errors-11543629982312211779",
+                        "remotes/origin/update-gitlab-security-agent-prompt-11069718994655689674"
+                    ],
+                    "intensity": "Medium"
+                },
+                {
+                    "type": "Resource Conflict/Synergy",
+                    "resource": "user",
+                    "branches": [
+                        "remotes/origin/fix/restore-page-tsx-and-build-errors-11543629982312211779",
+                        "remotes/origin/update-gitlab-security-agent-prompt-11069718994655689674"
+                    ],
+                    "intensity": "Medium"
                 }
             ]
         }

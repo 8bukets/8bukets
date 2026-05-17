@@ -74,6 +74,34 @@ Synergy achieved across 1760 branches. Detailed knowledge and results consolidat
   - *Active Projects:* remotes/origin/jules/scraper-markposition-17752547678215960211, remotes/origin/jules/ingest-intelephense-unified-store-3086939939732869599, remotes/origin/jules/knowledge-merge-integration-4756532437460590133, remotes/origin/jules/scraper-intelephense-2916212763307459692, remotes/origin/jules/compile-knowledge-integration-4875845775501523719, remotes/origin/jules/add-system-patent-947552789592854459
 
 ## 📦 Resource Inventory
+- [Service] **analytics** - Status: Active
+- [Service] **autonomous_audit** - Status: Active
+- [Service] **autonomous_compliance** - Status: Active
+- [Service] **autonomous_logging** - Status: Active
+- [Service] **cloud_workflow** - Status: Active
+- [Service] **cognitive_security** - Status: Active
+- [Service] **collaboration** - Status: Active
+- [Service] **content** - Status: Active
+- [Service] **docker** - Status: Active
+- [Service] **git_provider** - Status: Active
+- [Service] **github_docs_observer** - Status: Active
+- [Service] **github_evolution** - Status: Active
+- [Service] **gitkraken** - Status: Active
+- [Service] **gitkraken_metrics** - Status: Active
+- [Service] **gitlab** - Status: Active
+- [Service] **intelligence** - Status: Active
+- [Service] **jenkins** - Status: Active
+- [Service] **knowledge** - Status: Active
+- [Service] **knowledge_observer** - Status: Active
+- [Service] **neural** - Status: Active
+- [Service] **notification** - Status: Active
+- [Service] **persistence** - Status: Active
+- [Service] **react** - Status: Active
+- [Service] **relay** - Status: Active
+- [Service] **smoke_test** - Status: Active
+- [Service] **stats** - Status: Active
+- [Service] **user** - Status: Active
+- [Service] **work_order** - Status: Active
 - [Knowledge] **Intelephense Documentation** - Status: Ingested (*Source: https://intelephense.com/docs*)
 - [Knowledge] **software info by fk – software-online-review – Filip Keser** - Status: Ingested (*Source: https://software-online-review.com*)
 - [Knowledge] **intelephense_docs.md** - Status: Ingested (*Source: local://intelephense_docs.md*)
