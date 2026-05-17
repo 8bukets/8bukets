@@ -180,5 +180,47 @@
         "description": "Verify system stability for version 1.8",
         "status": "pending",
         "created_at": "2026-05-16T16:13:07.022796"
+    },
+    {
+        "id": "DEPLOY_V1.81",
+        "type": "DEPLOYMENT",
+        "description": "Execute rollout for version 1.81",
+        "status": "pending",
+        "created_at": "2026-05-17T01:19:26.625740"
+    },
+    {
+        "id": "SMOKE_TEST_V1.81",
+        "type": "TESTING",
+        "description": "Verify system stability for version 1.81",
+        "status": "pending",
+        "created_at": "2026-05-17T01:19:26.625754"
+    },
+    {
+        "id": "DEPLOY_V1.82",
+        "type": "DEPLOYMENT",
+        "description": "Execute rollout for version 1.82",
+        "status": "pending",
+        "created_at": "2026-05-17T01:20:33.683966"
+    },
+    {
+        "id": "SMOKE_TEST_V1.82",
+        "type": "TESTING",
+        "description": "Verify system stability for version 1.82",
+        "status": "pending",
+        "created_at": "2026-05-17T01:20:33.683980"
+    },
+    {
+        "id": "DEPLOY_V1.83",
+        "type": "DEPLOYMENT",
+        "description": "Execute rollout for version 1.83",
+        "status": "pending",
+        "created_at": "2026-05-17T01:28:31.856362"
+    },
+    {
+        "id": "SMOKE_TEST_V1.83",
+        "type": "TESTING",
+        "description": "Verify system stability for version 1.83",
+        "status": "pending",
+        "created_at": "2026-05-17T01:28:31.856376"
     }
 ]
