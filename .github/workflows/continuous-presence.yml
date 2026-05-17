@@ -49,6 +49,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           SYSTEM_AUTH_TOKEN: ${{ secrets.SYSTEM_AUTH_TOKEN || 'default_dev_token' }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MACBOOK_CLOUD_SIMULATION: true
 
       - name: Build Verification
         run: npm run build
