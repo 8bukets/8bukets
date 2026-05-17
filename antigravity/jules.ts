@@ -382,13 +382,21 @@ export class Jules {
 
   public async syncPresence() {
     console.log('📡 [Jules] Synchronizing online presence...')
-    const { getMongoClient } = await import('./core')
     try {
-      const client = await getMongoClient()
-      const db = client.db()
+      const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL)
+      const cloudProvider = process.env.GITHUB_ACTIONS ? 'github-actions' : (process.env.GITLAB_CI ? 'gitlab-ci' : (process.env.VERCEL ? 'vercel' : 'none'))
 
-      const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL || process.env.AUTONOMOUS_MODE === 'cloud')
-      const cloudProvider = process.env.GITHUB_ACTIONS ? 'github-actions' : (process.env.GITLAB_CI ? 'gitlab-ci' : (process.env.VERCEL ? 'vercel' : (process.env.AUTONOMOUS_MODE === 'cloud' ? 'autonomous-cloud' : 'none')))
+      let dockerStatus = 'unknown'
+      let containerCount = 0
+
+      try {
+        const { checkDockerHealth } = await import('./services/docker')
+        const dockerHealth = await checkDockerHealth()
+        dockerStatus = dockerHealth.status
+        containerCount = dockerHealth.containerCount
+      } catch (dockerErr: any) {
+        console.warn('⚠️ [Jules] Could not fetch Docker status for presence sync:', dockerErr.message)
+      }
 
       const presence = {
         agent: 'Jules',
@@ -399,15 +407,25 @@ export class Jules {
         environment: isCloud ? 'cloud' : 'local',
         execution_mode: isCloud ? 'cloud' : 'local',
         cloud_provider: cloudProvider,
+        docker_status: dockerStatus,
+        container_count: containerCount,
         workflow_id: process.env.GITHUB_RUN_ID || process.env.CI_PIPELINE_ID || 'local'
       }
 
-      await db.collection('agent_presence').updateOne(
-        { agent: 'Jules' },
-        { $set: presence },
-        { upsert: true }
-      )
-      console.log(`✅ [Jules] Online presence heartbeated to MongoDB (Mode: ${presence.execution_mode}).`)
+      try {
+        const { getMongoClient } = await import('./core')
+        const client = await getMongoClient()
+        const db = client.db()
+        await db.collection('agent_presence').updateOne(
+          { agent: 'Jules' },
+          { $set: presence },
+          { upsert: true }
+        )
+        console.log(`✅ [Jules] Online presence heartbeated to MongoDB (Mode: ${presence.execution_mode}, Docker: ${presence.docker_status}).`)
+      } catch (dbErr: any) {
+        console.warn('⚠️ [Jules] Could not sync presence to MongoDB:', dbErr.message)
+      }
+
       await this.recordTask(`Presence Sync: Heartbeat broadcasted (${presence.execution_mode}).`)
     } catch (err: any) {
       console.warn('⚠️ [Jules] Presence sync failed:', err.message)
@@ -541,9 +559,16 @@ export class Jules {
     console.log('🧠 [Jules] Observing new knowledge foundations...')
 
     const { observeKnowledge: scanUrl } = await import('./services/knowledge')
-    const observation = await scanUrl('https://software-online-review.com')
-    if (observation.status === 'observed') {
-      this.recordTask(`Knowledge Observed: Extracted intelligence from ${observation.url}`)
+    const urlsToObserve = [
+      'https://software-online-review.com',
+      'https://markposition.wordpress.com'
+    ]
+
+    for (const url of urlsToObserve) {
+      const observation = await scanUrl(url)
+      if (observation.status === 'observed') {
+        this.recordTask(`Knowledge Observed: Extracted intelligence from ${observation.url}`)
+      }
     }
     const { KnowledgeObserver } = await import('./services/knowledge_observer')
     const observer = new KnowledgeObserver()

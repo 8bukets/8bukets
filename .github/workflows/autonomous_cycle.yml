@@ -50,6 +50,7 @@ jobs:
         MONGODB_URI: ${{ secrets.MONGODB_URI }}
         NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
         NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+        MACBOOK_CLOUD_SIMULATION: true
       run: |
         # Execute the autonomous system cycle in the cloud
         npm run daily

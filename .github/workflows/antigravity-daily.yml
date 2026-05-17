@@ -40,6 +40,7 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MACBOOK_CLOUD_SIMULATION: true
 
       - name: Build Verification
         run: npm run build

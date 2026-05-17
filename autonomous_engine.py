@@ -70,7 +70,12 @@ def run_typescript_cycle():
     try:
         # Use npx tsx to ensure it's available
         subprocess.run(["npx", "tsx", "scripts/run_daily.ts"], check=True)
-        logger.info("✅ TypeScript Cycle complete.")
+
+        # New: Execute the creation cycle
+        logger.info("🎨 Starting Autonomous Creation Cycle...")
+        subprocess.run(["npx", "tsx", "scripts/execute_creation_cycle.ts"], check=True)
+
+        logger.info("✅ TypeScript Cycles complete.")
     except subprocess.CalledProcessError as e:
         logger.error(f"❌ TypeScript Cycle failed: {e}")
 

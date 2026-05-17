@@ -177,6 +177,34 @@ export class WorkOrderService {
         await applyFixes(suggestions)
         return { appliedFixes: suggestions.length }
 
+      case 'SMOKE_TEST':
+        logAutonomousAction(`🧪 [WorkOrder] Running smoke test for ${order.payload?.serviceName}...`, 'info')
+        // In a real scenario, this would trigger vitest for the specific file
+        // For now, we simulate success if the file exists
+        const { execSync } = await import('child_process')
+        try {
+          // If we have a specific test for the service, run it. Otherwise run general tests.
+          const testPath = `antigravity/services/${order.payload?.serviceName}.test.ts`
+          if (fs.existsSync(path.join(process.cwd(), testPath))) {
+            execSync(`npx vitest run ${testPath}`, { stdio: 'inherit' })
+          } else {
+            logAutonomousAction(`ℹ️ [WorkOrder] No specific test found for ${order.payload?.serviceName}. Running general integrity check.`, 'info')
+            execSync('npx vitest run antigravity/core.test.ts', { stdio: 'inherit' })
+          }
+          return { status: 'passed' }
+        } catch (e: any) {
+          throw new Error(`Smoke test failed: ${e.message}`)
+        }
+
+      case 'DEPLOYMENT':
+        logAutonomousAction(`🚀 [WorkOrder] Triggering rollout for ${order.id}...`, 'info')
+        const { spawnSync } = await import('child_process')
+        const rolloutResult = spawnSync('python3', ['scripts/rollout_executor.py'], { encoding: 'utf8' })
+        if (rolloutResult.status !== 0) {
+          throw new Error(`Rollout failed: ${rolloutResult.stderr}`)
+        }
+        return { status: 'deployed', output: rolloutResult.stdout }
+
       default:
         logAutonomousAction(`ℹ️ [WorkOrder] Skipping unknown or external order type: ${order.type}`, 'info')
         return { skipped: true, reason: 'external_type' }

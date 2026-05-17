@@ -27,6 +27,7 @@ class KnowledgeMergeAgent(BaseAgent):
             "stitch": "stitch_docs.json",
             "vscode_intelephense": "vscode_intelephense_docs.json"
         }
+        self.strategic_source = "KNOWLEDGE_MERGE.md"
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
         self.logger.info("Starting Knowledge Consolidation (Python Layer)...")
@@ -107,7 +108,15 @@ class KnowledgeMergeAgent(BaseAgent):
         except Exception as e:
             self.logger.error(f"Failed to save consolidated JSON: {e}")
 
-        # 4. Generate Human-Readable Markdown
+        # 4. Ingest Strategic Mapping (KNOWLEDGE_MERGE.md)
+        if os.path.exists(self.strategic_source):
+            try:
+                with open(self.strategic_source, "r", encoding="utf-8") as f:
+                    consolidated["strategic_mapping"] = f.read()
+            except Exception as e:
+                self.logger.error(f"Failed to read strategic source {self.strategic_source}: {e}")
+
+        # 5. Generate Human-Readable Markdown
         self._generate_markdown(consolidated)
 
         return {"consolidated_knowledge": consolidated}
@@ -118,6 +127,12 @@ class KnowledgeMergeAgent(BaseAgent):
                 f.write(f"# Consolidated Knowledge Base\n\n")
                 f.write(f"**Last Sync (Python):** {consolidated['metadata']['generated_at']}\n")
                 f.write(f"**System Version:** {consolidated['metadata']['version']}\n\n")
+
+                # Integrate Strategic Mapping from KNOWLEDGE_MERGE.md
+                if "strategic_mapping" in consolidated:
+                    f.write("## 🧩 Strategic Identity & Unified Model\n")
+                    f.write(consolidated["strategic_mapping"])
+                    f.write("\n\n---\n\n")
 
                 f.write("## System Intelligence & Outlook\n")
                 insights = consolidated.get("system_insights", {})
