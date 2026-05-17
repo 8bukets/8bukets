@@ -387,8 +387,8 @@ export class Jules {
       const client = await getMongoClient()
       const db = client.db()
 
-      const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL)
-      const cloudProvider = process.env.GITHUB_ACTIONS ? 'github-actions' : (process.env.GITLAB_CI ? 'gitlab-ci' : (process.env.VERCEL ? 'vercel' : 'none'))
+      const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL || process.env.AUTONOMOUS_MODE === 'cloud')
+      const cloudProvider = process.env.GITHUB_ACTIONS ? 'github-actions' : (process.env.GITLAB_CI ? 'gitlab-ci' : (process.env.VERCEL ? 'vercel' : (process.env.AUTONOMOUS_MODE === 'cloud' ? 'autonomous-cloud' : 'none')))
 
       const presence = {
         agent: 'Jules',
@@ -423,7 +423,8 @@ export class Jules {
     const { workOrderService } = await import('./services/work_order')
 
     // Phase 14: Prioritize PR processing in cloud environments to fulfill "merge and work" mandate
-    if (process.env.GITHUB_ACTIONS || process.env.GITLAB_CI) {
+    const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL || process.env.AUTONOMOUS_MODE === 'cloud')
+    if (isCloud) {
       console.log('☁️ [Jules] Cloud environment detected. Prioritizing PR/MR auditing...')
       await this.processPullRequests()
     }

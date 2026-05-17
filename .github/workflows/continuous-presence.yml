@@ -39,7 +39,18 @@ jobs:
           git config --global user.name "google-labs-jules[bot]"
           git config --global user.email "161369871+google-labs-jules[bot]@users.noreply.github.com"
 
-      - name: Execute Unified Autonomous Cycle
+      - name: Execute Autonomous Engine (Cloud Mode)
+        run: python3 autonomous_engine.py --engine cloud --skip-scraper
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SYSTEM_AUTH_TOKEN: ${{ secrets.SYSTEM_AUTH_TOKEN || 'default_dev_token' }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Execute Unified Autonomous Cycle (TypeScript)
         run: npm run daily
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
