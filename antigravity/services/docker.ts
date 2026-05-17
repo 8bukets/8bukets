@@ -40,7 +40,7 @@ export async function getDockerFleetStatus(): Promise<DockerContainer[]> {
 
       return lines.map(line => {
         const [id, image, status, names] = line.split('|')
-        return { id, image, status, names }
+        return { id: id || '', image: image || '', status: status || '', names: names || '' }
       })
     } catch (e) {
       console.warn('⚠️ [Docker] Failed to query Docker daemon. Engaging Simulated Mode fallback.')
@@ -68,7 +68,7 @@ export async function checkDockerHealth() {
     }
   }
 
-  const isSimulated = process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true' || fleet.some(c => c.id.startsWith('fallback'))
+  const isSimulated = process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true' || (Array.isArray(fleet) && fleet.some(c => c && c.id && c.id.startsWith('fallback')))
 
   return {
     status: isHealthy ? (isSimulated ? 'simulated' : 'optimal') : (isRecovering ? 'recovering' : 'disconnected'),
