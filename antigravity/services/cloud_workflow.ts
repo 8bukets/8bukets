@@ -1,4 +1,4 @@
-import { execSync } from 'child_process'
+import { execFileSync } from 'child_process'
 import { checkDockerHealth } from './docker'
 import { getGitLabMetrics } from './gitlab'
 import { getGitHubMetrics } from './github_evolution'
@@ -50,7 +50,7 @@ export class CloudWorkflowAgent {
       console.warn('⚠️ [CloudWorkflowAgent] System fluency degraded. Attempting proactive recovery...')
       try {
         // Example proactive sub-process commands
-        execSync('git merge --abort || true')
+        execFileSync('git', ['merge', '--abort'])
         console.log('🔄 [CloudWorkflowAgent] Proactive recovery actions executed.')
       } catch (err) {
         console.error('❌ [CloudWorkflowAgent] Proactive recovery failed:', err)
