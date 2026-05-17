@@ -20,7 +20,7 @@ export async function observeKnowledge(url: string) {
 
     let mdContent = ''
     $('h1, h2, h3, h4, h5, h6, p, ul, ol, li, a').each((_, el) => {
-      const tag = el.tagName.toLowerCase()
+      const tag = (el as any).tagName.toLowerCase()
       const text = $(el).text().replace(/\s+/g, ' ').trim()
 
       if (text) {

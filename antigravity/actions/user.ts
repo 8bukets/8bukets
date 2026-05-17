@@ -1,6 +1,6 @@
 'use server'
 
-import { updateTag, revalidateTag, refresh } from '@/antigravity/core'
+import { updateTag, revalidateTag } from '@/antigravity/core'
 
 /**
  * Scalable Mutation: 'Read-Your-Writes' consistency
@@ -22,5 +22,5 @@ export async function updateUserName(userId: string, newName: string) {
  */
 export async function clearUserSession() {
   // Clear session logic here...
-  refresh()
+  // refresh()
 }
