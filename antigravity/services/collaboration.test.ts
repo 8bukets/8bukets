@@ -5,7 +5,14 @@ vi.mock('fs', () => ({
   default: {
     existsSync: vi.fn(),
     readFileSync: vi.fn(),
-    writeFileSync: vi.fn()
+    writeFileSync: vi.fn(),
+    promises: {
+      readFile: vi.fn(),
+      writeFile: vi.fn(),
+      mkdir: vi.fn(),
+      appendFile: vi.fn(),
+      readdir: vi.fn(),
+    }
   },
   existsSync: vi.fn(),
   readFileSync: vi.fn(),
@@ -61,7 +68,7 @@ Test Mission
 2. Goal 2
 `
     vi.mocked(fs.existsSync).mockReturnValue(true as any)
-    vi.mocked(fs.readFileSync).mockReturnValue(mockMission as any)
+    vi.mocked(fs.promises.readFile).mockResolvedValue(mockMission as any)
 
     const metadata = await getMissionMetadata()
 
@@ -93,19 +100,19 @@ Test Mission
       if (path.toString().includes('.jules_memory.json')) return true
       return false
     }) as any)
-    vi.mocked(fs.readFileSync).mockImplementation(((path: any) => {
-      if (path.toString().includes('mission.md')) return mockMission
-      if (path.toString().includes('.jules_memory.json')) return JSON.stringify({ autonomousTasks: [] })
-      return ''
+    vi.mocked(fs.promises.readFile).mockImplementation(((path: any) => {
+      if (path.toString().includes('mission.md')) return Promise.resolve(mockMission)
+      if (path.toString().includes('.jules_memory.json')) return Promise.resolve(JSON.stringify({ autonomousTasks: [] }))
+      return Promise.resolve('')
     }) as any)
-    vi.mocked(fs.writeFileSync).mockImplementation((() => {}) as any)
+    vi.mocked(fs.promises.writeFile).mockImplementation((() => Promise.resolve()) as any)
 
     const state = await syncCollaborationState()
 
     expect(state).toBeDefined()
     expect(state.mission).toBe('Test Mission')
     expect(state.docker.status).toBe('optimal')
-    expect(fs.writeFileSync).toHaveBeenCalledWith(
+    expect(fs.promises.writeFile).toHaveBeenCalledWith(
       expect.stringContaining('autonomous_state.json'),
       expect.any(String)
     )

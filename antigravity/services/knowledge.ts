@@ -63,18 +63,20 @@ export async function observeKnowledge(url: string) {
 - **Relationship Map**: ${relationshipText}
 `
     let shouldAppend = true;
+    let existingContent = '';
+
     if (fs.existsSync(knowledgePath)) {
-      const existingContent = fs.readFileSync(knowledgePath, 'utf8');
+      existingContent = await fs.promises.readFile(knowledgePath, 'utf8');
       if (existingContent.includes(`- **Target**: ${url}`)) {
         shouldAppend = false;
       }
     }
 
     if (shouldAppend) {
-      if (fs.existsSync(knowledgePath)) {
-        fs.appendFileSync(knowledgePath, relationshipEntry, 'utf8')
+      if (existingContent) {
+        await fs.promises.writeFile(knowledgePath, existingContent + relationshipEntry, 'utf8')
       } else {
-        fs.writeFileSync(knowledgePath, `# Market Intelligence Matrix\n${relationshipEntry}`, 'utf8')
+        await fs.promises.writeFile(knowledgePath, `# Market Intelligence Matrix\n${relationshipEntry}`, 'utf8')
       }
       console.log(`✅ [Knowledge Observer] Appended insights to KNOWLEDGE_MERGE.md.`)
     } else {
