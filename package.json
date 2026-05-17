@@ -14,6 +14,7 @@
     "daily": "tsx --env-file=.env antigravity/run_daily.ts",
     "ignite": "tsx --env-file=.env antigravity/run_daily.ts --continuous",
     "connect": "tsx --env-file=.env scripts/connect_and_collaborate.ts",
+    "sync-docker-icloud": "tsx --env-file=.env scripts/sync_docker_icloud.ts",
     "invoke-hello": "curl -L -X POST 'https://tevdxaufsnpsbvvurddg.supabase.co/functions/v1/hello-world' -H \"Authorization: Bearer $NEXT_PUBLIC_SUPABASE_ANON_KEY\" --data '{\"name\":\"Antigravity\"}'"
   },
   "dependencies": {
