@@ -30,6 +30,21 @@ class OracleAIAgent(BaseAgent):
         self.log(f"Processing Oracle AI knowledge...")
 
         data = self._load_data(data)
+        if not data:
+            self.log("No valid Oracle AI data found to process.")
+            return {"status": "No data"}
+
+        # Handle the legacy schema where the top level is a URL mapping to the actual data
+        # Check if the first key is a URL string, and grab the data underneath it
+        if data and isinstance(data, dict):
+            # If the data doesn't contain 'sections' directly, but has one key (the URL), extract it
+            if 'sections' not in data:
+                keys = list(data.keys())
+                if keys:
+                    first_key = keys[0]
+                    if isinstance(data[first_key], dict) and 'sections' in data[first_key]:
+                        data = data[first_key]
+
         if not data or 'sections' not in data:
             self.log("No valid Oracle AI data found to process.")
             return {"status": "No data"}
