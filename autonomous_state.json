@@ -15,20 +15,19 @@
         }
     ],
     "docker": {
-        "status": "simulated",
-        "containerCount": 2,
-        "simulated": true,
-        "multiStageStatus": "multi-stage",
-        "timestamp": "2026-05-18T02:26:00.093Z"
+        "status": "degraded",
+        "containerCount": 0,
+        "simulated": false,
+        "timestamp": "2026-05-18T03:29:03.300Z"
     },
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1779071160094,
+        "timestamp": 1779074943301,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
-        "branches": 1785,
+        "branches": 1788,
         "pendingTasks": 0,
         "relationshipMap": {
             "stakeholderEngagement": {
@@ -127,6 +126,7 @@
                     "remotes/origin/feat/unified-cloud-autonomy-6168364407996649590",
                     "remotes/origin/feat/vercel-sandbox-agent-4324012582245511797",
                     "remotes/origin/feature/autonomous-cloud-presence-6564198224759094346",
+                    "remotes/origin/feature/autonomous-cloud-simulation-presence-15239864471767221481",
                     "remotes/origin/feature/autonomous-creation-execution-5649264533760770196",
                     "remotes/origin/feature/autonomous-work-order-system-2865376496549289667",
                     "remotes/origin/feature/backup-agent-11331906079381269962",
@@ -293,6 +293,7 @@
                     "remotes/origin/feat/docker-collaboration-sync-231662997979975664",
                     "remotes/origin/feat/dual-engine-autonomous-collaboration-180989571444817477",
                     "remotes/origin/feat/ecosystem-merge-collaboration-sync-v1-13937591330884389226",
+                    "remotes/origin/feature/autonomous-cloud-simulation-presence-15239864471767221481",
                     "remotes/origin/feature/docker-collaboration-sync-2408669220271786015",
                     "remotes/origin/fix/docker-collaboration-sync-3245584476125900421",
                     "remotes/origin/jules-knowledge-merge-collaboration-3722212575858302197"
@@ -629,6 +630,12 @@
                 {
                     "type": "Knowledge",
                     "name": "Começar  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle",
+                    "status": "Ingested",
+                    "source": "https://developers.google.com/ad-manager/api/start"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Rozpocznij  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle",
                     "status": "Ingested",
                     "source": "https://developers.google.com/ad-manager/api/start"
                 },
@@ -1219,6 +1226,12 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "remotes/origin/feature/autonomous-cloud-simulation-presence-15239864471767221481",
+                    "status": "Ready for Merge",
+                    "result": "simulate fully online cloud presence and collaboration"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "remotes/origin/feature/autonomous-creation-execution-5649264533760770196",
                     "status": "Ready for Merge",
                     "result": "finalize full autonomous creation order and execution engine"
@@ -1371,5 +1384,5 @@
             "synergies": []
         }
     },
-    "last_sync": "2026-05-18T02:26:25.359Z"
+    "last_sync": "2026-05-18T03:29:03.561Z"
 }

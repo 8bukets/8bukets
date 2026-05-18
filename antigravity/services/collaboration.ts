@@ -107,15 +107,21 @@ ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
   console.log(summary)
 
   // Dispatch executive briefing for high-level communication
-  const synergyDetails = state.intelligence.relationshipMap.resourceInventory
+  const synergySummary = state.intelligence.relationshipMap.synergies && state.intelligence.relationshipMap.synergies.length > 0
+    ? state.intelligence.relationshipMap.synergies.map((s: any) => `- SYNERGY [${s.intensity}]: ${s.resource} (via ${s.branches.length} branches)`).join('\n')
+    : 'No direct resource synergies detected.'
+
+  const branchSummary = state.intelligence.relationshipMap.resourceInventory
     .filter((r: any) => r.type === 'Branch Result')
     .slice(0, 5)
-    .map((r: any) => `- ${r.name}: ${r.result}`)
+    .map((r: any) => `- RESULT: ${r.name} -> ${r.result}`)
     .join('\n')
 
+  const detailedBriefing = `--- SYNERGY ANALYSIS ---\n${synergySummary}\n\n--- KEY RESULTS ---\n${branchSummary}`
+
   await dispatchExecutiveBriefing(
-    `System synchronized: ${state.intelligence.branches} branches, ${state.intelligence.pendingTasks} tasks. Docker: ${state.docker.status}.`,
-    synergyDetails || 'No new branch results consolidated in this cycle.'
+    `System synchronized: ${state.intelligence.branches} branches. Posture: ${state.docker.status}.`,
+    detailedBriefing
   )
 
   const logDir = path.join(process.cwd(), 'logs')
@@ -295,10 +301,24 @@ export async function mergeBranchInsights(branches: any[]) {
   }
 
   const relevantBranches = branches.filter(b => {
-    if (!(b.knowledge || (b.results && b.results !== b.lastMessage))) {
+    // Only include branches with meaningful knowledge or results
+    if (!(b.knowledge || (b.results && b.results !== b.lastMessage && b.results !== 'N/A'))) {
       return false;
     }
-    return !existingContent.includes(`- **Branch:** ${b.name}`);
+
+    // Improved deduplication: Check if this specific result for this branch is already recorded
+    const branchIdentifier = `- **Branch:** \`${b.name}\``;
+    const resultIdentifier = `  - **Result:** ${b.results}`;
+
+    if (existingContent.includes(branchIdentifier)) {
+        // If branch exists, check if the result is also there
+        const branchSection = existingContent.split(branchIdentifier)[1].split('##')[0]; // Crude section isolation
+        if (branchSection.includes(resultIdentifier)) {
+            return false;
+        }
+    }
+
+    return true;
   })
 
   if (relevantBranches.length === 0) return
