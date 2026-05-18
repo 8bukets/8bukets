@@ -39,6 +39,7 @@ from agents.documentation_agent import DocumentationAgent
 from agents.performance_optimization_agent import PerformanceOptimizationAgent
 from agents.knowledge_agent import KnowledgeAgent
 from ai_agents_knowledge_scraper import scrape_ai_agents_knowledge
+from docker_build_cloud_scraper import load_docker_build_cloud_knowledge
 
 # Expansion Agents
 from agents.swarm_agent import SwarmAgent
@@ -68,6 +69,9 @@ def run_scraper():
 
         # AI Agent Knowledge Scraper (Direct module call)
         scrape_ai_agents_knowledge()
+
+        # Docker Build Cloud Knowledge loader
+        load_docker_build_cloud_knowledge()
 
         logger.info("Scrapers finished successfully.")
         return True
