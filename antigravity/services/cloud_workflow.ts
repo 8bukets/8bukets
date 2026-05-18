@@ -11,12 +11,12 @@ export class CloudWorkflowAgent {
     if (process.env.MACBOOK_CLOUD_SIMULATION === 'true') {
       console.log('☁️ [CloudWorkflowAgent] MacBook Cloud Simulation active. Forcing fully online metrics for Docker, Supabase, MongoDB, GitHub, GitLab, and GitKraken.')
       return {
-        docker: { status: 'simulated', containerCount: 5, simulated: true, multiStageStatus: 'multi-stage', timestamp: new Date().toISOString() },
-        gitlab: { pipelineStages: ['build', 'test', 'deploy'], hasPipeline: true },
-        github: { semanticCommitScore: 100 },
-        gitkraken: { compatibilityScore: 100 },
-        supabase: { status: 'healthy' },
-        mongodb: { status: 'healthy' }
+        docker: { status: 'simulated', containerCount: 5, simulated: true, multiStageStatus: 'multi-stage', timestamp: new Date().toISOString(), fullyOnline: true },
+        gitlab: { pipelineStages: ['build', 'test', 'deploy'], hasPipeline: true, fullyOnline: true },
+        github: { semanticCommitScore: 100, fullyOnline: true },
+        gitkraken: { compatibilityScore: 100, fullyOnline: true },
+        supabase: { status: 'healthy', fullyOnline: true },
+        mongodb: { status: 'healthy', fullyOnline: true }
       }
     }
 

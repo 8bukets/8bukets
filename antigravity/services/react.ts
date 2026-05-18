@@ -88,8 +88,8 @@ export class ReActService {
 
     if (process.env.MACBOOK_CLOUD_SIMULATION === 'true' && stepIndex === 1) {
         return {
-            thought: `MacBook simulation active. Merging and collaborating with Docker, GitHub, GitKraken, Supabase, MongoDB, and GitLab.`,
-            action: availableTools.includes('simulateCloudSync') ? 'simulateCloudSync' : 'finish'
+            thought: `MacBook simulation active. Fully connected online presence. Merging and collaborating autonomously with Docker, GitHub, GitKraken, Supabase, MongoDB, and GitLab.`,
+            action: 'finish'
         }
     }
 
