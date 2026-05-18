@@ -200,8 +200,6 @@ Google Cloud provides a portfolio of products and solutions in the AI agent spac
 - Cloud Run A fully managed serverless platform that allows you to deploy containerized agents and applications, providing auto-scaling and pay-per-use efficiency.
 <!-- AI_AGENTS_END -->
 
-## What does Compile mean?
-
 ## IDE Integration for AI Agents
 To provide seamless coding assistance, AI agents like the Gemini CLI can integrate with Integrated Development Environments (IDEs). Interoperability is achieved through standard open protocols and dedicated extensions:
 
@@ -237,7 +235,6 @@ To compile means to gather information from various sources and arrange it into 
 
 - **General**: Focuses on the act of assembling information or materials (e.g., compile a report).
 - **Computing**: Focuses on the automatic transformation of code using a tool known as a compiler.
-
 ## Jules Tools
 
 Jules Tools is a lightweight command-line interface (CLI) for interacting with Jules, Google’s autonomous AI coding agent. It allows you to manage coding sessions, inspect progress, and integrate Jules into your existing development workflows and scripts directly from your terminal.
