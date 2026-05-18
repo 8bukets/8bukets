@@ -1,26 +1,121 @@
 {
-    "RobotTxtAgent": {
-        "disallowed_paths": [
-            "/wp-admin/",
-            "/wp-login.php",
-            "/wp-signup.php",
-            "/press-this.php",
-            "/remote-login.php",
-            "/activate/",
-            "/cgi-bin/",
-            "/mshots/v1/",
-            "/next/",
-            "/public.api/"
+    "TestAgent": {
+        "long_term": {
+            "long_key": "long_value"
+        },
+        "episodic": [
+            {
+                "timestamp": "2026-05-16T02:19:14.891531",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-16T14:01:04.375664",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-16T22:51:28.589335",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-16T22:52:07.662138",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-17T01:22:16.846403",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-17T01:28:01.108341",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-17T08:26:52.447742",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-17T17:29:44.060347",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-17T17:29:45.293922",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-18T05:52:03.874800",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-18T05:52:52.362969",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-18T05:53:43.914574",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-18T05:58:29.195966",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-18T05:59:32.859246",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-18T10:08:13.120789",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            }
         ]
     },
     "TargetingAgent": {
-        "last_primary_persona": "AdTech Professional"
+        "long_term": {
+            "test_compatibility_persona": "Compatibility Enthusiast",
+            "last_primary_persona": "General Tech Enthusiast",
+            "new_key": "new_val"
+        },
+        "episodic": []
+    },
+    "RobotTxtAgent": {
+        "long_term": {
+            "disallowed_paths": [
+                "/next/",
+                "/wp-admin/",
+                "/cgi-bin/",
+                "/wp-login.php",
+                "/remote-login.php",
+                "/wp-signup.php",
+                "/mshots/v1/",
+                "/public.api/",
+                "/press-this.php",
+                "/activate/"
+            ]
+        },
+        "episodic": []
     },
     "BidAgent": {
-        "performance_multiplier": 1.0989414764554153,
-        "adjustment_factor": 1.7285245734721943
+        "long_term": {
+            "adjustment_factor": 1.1268250301319698
+        },
+        "episodic": []
     },
     "AutonomousIntelligenceAgent": {
-        "system_health": "healthy"
+        "long_term": {
+            "system_health": "healthy"
+        },
+        "episodic": []
     }
 }
