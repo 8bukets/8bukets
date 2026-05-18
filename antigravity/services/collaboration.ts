@@ -35,7 +35,7 @@ export async function getMissionMetadata(): Promise<MissionMetadata> {
       throw new Error('Mission document missing. System collaboration impaired.')
     }
 
-    const content = fs.readFileSync(MISSION_PATH, 'utf8')
+    const content = await fs.promises.readFile(MISSION_PATH, 'utf8')
 
     const missionStatementMatch = content.match(/## Mission Statement\n([\s\S]*?)\n##/)
     const missionStatement = missionStatementMatch ? missionStatementMatch[1].trim() : 'Autonomous Evolution'
@@ -119,9 +119,9 @@ ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
   )
 
   const logDir = path.join(process.cwd(), 'logs')
-  if (!fs.existsSync(logDir)) fs.mkdirSync(logDir)
+  if (!fs.existsSync(logDir)) await fs.promises.mkdir(logDir, { recursive: true })
 
-  fs.appendFileSync(path.join(logDir, 'collaboration.log'), summary)
+  await fs.promises.appendFile(path.join(logDir, 'collaboration.log'), summary)
 
   return { notifiedCount: metadata.stakeholders.length }
 }
@@ -139,8 +139,8 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
   // Phase 12: Dynamic Resource Discovery
   const servicesDir = path.join(process.cwd(), 'antigravity/services')
   if (fs.existsSync(servicesDir)) {
-    const files = fs.readdirSync(servicesDir)
-    files.forEach(file => {
+    const files = await fs.promises.readdir(servicesDir)
+    for (const file of files) {
       if (file.endsWith('.ts') && !file.endsWith('.test.ts')) {
         map.resourceInventory.push({
           type: 'Service',
@@ -149,14 +149,15 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
           path: `antigravity/services/${file}`
         })
       }
-    })
+    }
   }
 
   // Integrate autonomous knowledge into resource inventory
   const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json')
   if (fs.existsSync(knowledgePath)) {
     try {
-      const systemKnowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
+      const content = await fs.promises.readFile(knowledgePath, 'utf8')
+      const systemKnowledge = JSON.parse(content)
       const knowledge = systemKnowledge.typescript_sections || []
       knowledge.forEach((k: any) => {
         map.resourceInventory.push({
@@ -251,7 +252,8 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
   let currentState: any = {}
   if (fs.existsSync(statePath)) {
     try {
-      currentState = JSON.parse(fs.readFileSync(statePath, 'utf8'))
+      const content = await fs.promises.readFile(statePath, 'utf8')
+      currentState = JSON.parse(content)
     } catch (e) {
       console.warn('⚠️ [Collaboration] Failed to parse autonomous_state.json, starting fresh.')
     }
@@ -278,7 +280,7 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
     last_sync: new Date().toISOString()
   }
 
-  fs.writeFileSync(statePath, JSON.stringify(newState, null, 4))
+  await fs.promises.writeFile(statePath, JSON.stringify(newState, null, 4))
   console.log('✅ [Collaboration] Autonomous state synchronized successfully.')
   return newState
 }
@@ -289,7 +291,7 @@ export async function mergeBranchInsights(branches: any[]) {
 
   let existingContent = '';
   if (fs.existsSync(knowledgePath)) {
-    existingContent = fs.readFileSync(knowledgePath, 'utf8');
+    existingContent = await fs.promises.readFile(knowledgePath, 'utf8');
   }
 
   const relevantBranches = branches.filter(b => {
@@ -325,10 +327,10 @@ export async function mergeBranchInsights(branches: any[]) {
     newEntries += `\n`
   })
 
-  if (fs.existsSync(knowledgePath)) {
-    fs.appendFileSync(knowledgePath, newEntries, 'utf8')
+  if (existingContent) {
+      await fs.promises.writeFile(knowledgePath, existingContent + newEntries, 'utf8')
   } else {
-    fs.writeFileSync(knowledgePath, `# Market Intelligence Matrix\n${newEntries}`, 'utf8')
+      await fs.promises.writeFile(knowledgePath, `# Market Intelligence Matrix\n${newEntries}`, 'utf8')
   }
 
   console.log(`✅ [Collaboration] Merged ${relevantBranches.length} branch insights across ${Object.keys(domains).length} domains.`)
