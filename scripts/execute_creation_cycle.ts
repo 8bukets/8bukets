@@ -40,10 +40,45 @@ async function executeCreationCycle() {
     }
   }
 
-  // 3. Execution: Process all pending orders
+  // 3. Execution: Process all pending orders with Chain Logic
   console.log('⚡ [CreationCycle] Executing generated work orders...');
   logAutonomousAction('⚡ [CreationCycle] Executing generated work orders...', 'info');
-  await workOrderService.executePendingOrders();
+
+  const pending = await workOrderService.getPendingOrders();
+
+  for (const order of pending) {
+    // Only process orders we just created or related ones
+    await workOrderService.updateOrderStatus(order.id, 'executing');
+    try {
+      // @ts-ignore - Accessing private for orchestration logic in this script
+      const result = await workOrderService.dispatch(order);
+      await workOrderService.updateOrderStatus(order.id, 'completed', result);
+      logAutonomousAction(`[WORK_ORDER] Completed: ${order.id}`, 'cognitive');
+
+      // CHAIN LOGIC: If a Smoke Test passes, trigger Deployment
+      if (order.type === 'SMOKE_TEST' && result?.status === 'passed') {
+        const featureName = order.payload?.serviceName;
+        console.log(`🚀 [CreationCycle] Smoke test passed for ${featureName}. Triggering deployment...`);
+        logAutonomousAction(`🚀 [CreationCycle] Smoke test passed for ${featureName}. Triggering deployment...`, 'info');
+
+        const deployOrder = await workOrderService.createOrder(
+          'DEPLOYMENT',
+          `Deploy ${featureName} to production`,
+          { serviceName: featureName }
+        );
+
+        await workOrderService.updateOrderStatus(deployOrder.id, 'executing');
+        // @ts-ignore
+        const deployResult = await workOrderService.dispatch(deployOrder);
+        await workOrderService.updateOrderStatus(deployOrder.id, 'completed', deployResult);
+        logAutonomousAction(`[WORK_ORDER] Completed Deployment: ${deployOrder.id}`, 'cognitive');
+      }
+    } catch (err: any) {
+      console.error(`❌ [WorkOrder] Order ${order.id} failed:`, err);
+      await workOrderService.updateOrderStatus(order.id, 'failed', undefined, err.message);
+      logAutonomousAction(`[WORK_ORDER] Failed: ${order.id}`, 'error');
+    }
+  }
 
   console.log('✅ [CreationCycle] Creation cycle complete.');
   logAutonomousAction('✅ [CreationCycle] Creation cycle complete.', 'info');
