@@ -30,12 +30,13 @@ pipeline {
             parallel {
                 stage('Analyze Market') {
                     steps {
-                        sh 'echo "Analyzing Market..."'
+                        sh 'python3 scraper.py'
                     }
                 }
                 stage('Generate Assets') {
                     steps {
-                        sh 'echo "Generating Assets..."'
+                        sh 'npm run daily'
+                        sh 'python3 analytics.py'
                     }
                 }
             }
