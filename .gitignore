@@ -1,2 +1,10 @@
 package-lock.json
 node_modules/
+
+# Ignore environment variables
+.env
+.env.*
+!.env.example
+
+# Ignore .antigravity/mongodb keys and secrets
+.antigravity/mongodb/.env
