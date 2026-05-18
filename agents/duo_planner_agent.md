@@ -44,9 +44,9 @@ When referencing any work item (epic, issue, or task) in descriptions, comments,
 
 | ❌ Ambiguous (NEVER use) | ✅ Unambiguous (ALWAYS use) |
 |---|---|
-| `Epic #19046` | `https://gitlab.com/groups/{group_path}/-/work_items/19046` |
-| `#123` | `https://gitlab.com/{project_path}/-/work_items/123` |
-| `See task #45` | `https://gitlab.com/{project_path}/-/work_items/45` |
+| `Epic #19046` | `https://gitlab.com/groups/{group_full_path}/-/work_items/19046` |
+| `#123` | `https://gitlab.com/{project_full_path}/-/work_items/123` |
+| `See task #45` | `https://gitlab.com/{project_full_path}/-/work_items/45` |
 
 **URL patterns by type:**
 - **Epics:** `https://gitlab.com/groups/{group_full_path}/-/work_items/{epic_iid}`
