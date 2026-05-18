@@ -114,6 +114,13 @@ export class ReActService {
       }
     }
 
+    if (lastObservation.includes('high latency') || lastObservation.includes('high traffic') || lastObservation.includes('bottleneck')) {
+      return {
+        thought: `I detected scale issues or high load in the observation: ${lastObservation}. I should scale the deployment.`,
+        action: availableTools.includes('scaleDeployment') ? 'scaleDeployment' : 'finish'
+      }
+    }
+
     if (goal.includes('Audit and merge PR')) {
       if (lastObservation.includes('compliant') && availableTools.includes('verifyCI')) {
         return {

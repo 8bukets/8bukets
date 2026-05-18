@@ -72,6 +72,17 @@ class DockerEvolutionAgent(BaseAgent):
                 optimization_report["backend_framework"] = react_config.get("backend_framework")
             if react_config.get("tools_integration"):
                 optimization_report["tools_integration"] = react_config.get("tools_integration")
+            if react_config.get("auto_scaling"):
+                optimization_report["auto_scaling"] = react_config.get("auto_scaling")
+            if react_config.get("scale_tier"):
+                scale_tier = react_config.get("scale_tier")
+                optimization_report["scale_tier"] = scale_tier
+                if scale_tier == "GLOBAL_EDGE":
+                    optimization_report["resource_limits"] = {"cpu": "4.0", "memory": "8Gi"}
+                elif scale_tier == "ENTERPRISE":
+                    optimization_report["resource_limits"] = {"cpu": "2.0", "memory": "4Gi"}
+                else:
+                    optimization_report["resource_limits"] = {"cpu": "1.0", "memory": "1Gi"}
 
         self.logger.info("Docker Cloud environment synchronized with autonomous evolution strategy.")
 

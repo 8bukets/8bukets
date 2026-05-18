@@ -62,6 +62,17 @@ class ReActAgent(BaseAgent):
             # Check if any specific use case is active (e.g., customer, security)
             active_use_cases = list(use_cases.keys()) if isinstance(use_cases, dict) else []
 
+            scale_tier = "STANDARD"
+            auto_scaling = {"min_replicas": 1, "max_replicas": 3}
+            if len(insights) > 5 or any("High concentration" in i for i in insights):
+                scale_tier = "GLOBAL_EDGE"
+                auto_scaling = {"min_replicas": 5, "max_replicas": 50, "regions": ["us-central1", "europe-west1", "asia-east1"]}
+                reasoning_log.append("Reasoning: High data volume or concentration detected, configuring GLOBAL_EDGE scaling tier.")
+            elif len(insights) > 2:
+                scale_tier = "ENTERPRISE"
+                auto_scaling = {"min_replicas": 3, "max_replicas": 10}
+                reasoning_log.append("Reasoning: Moderate data volume detected, configuring ENTERPRISE scaling tier.")
+
             deployment_config = {
                 "agent_type": "ReactAgent",
                 "frontend_framework": "Next.js",
@@ -72,7 +83,9 @@ class ReActAgent(BaseAgent):
                 "taxonomy_mode": taxonomy_mode,
                 "status": "READY_FOR_DEPLOYMENT",
                 "tools_integration": tools_list,
-                "react_framework_details": react_details
+                "react_framework_details": react_details,
+                "scale_tier": scale_tier,
+                "auto_scaling": auto_scaling
             }
 
         # Prepare payload
