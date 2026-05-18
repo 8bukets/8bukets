@@ -1,2 +1,13 @@
 package-lock.json
 node_modules/
+__pycache__/
+*.pyc
+.pyc
+!data/
+# results/
+# links.json
+# links.csv
+# unique_links.txt
+*.log
+.env
+.env.cloud

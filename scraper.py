@@ -1,6 +1,9 @@
+import re
 import aiohttp
 import asyncio
 from bs4 import BeautifulSoup
+import re
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
 import argparse
@@ -21,6 +24,10 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://markposition.wordpress.com/"
 
 class MarkPositionScraperAsync:
+    # Pre-compile regex patterns for performance
+    CLEAN_TEXT_REGEX = re.compile(r'\s+')
+    URL_REGEX = re.compile(r'^https?://')
+
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = validate_output_path(output_json)
         self.output_csv = validate_output_path(output_csv)
@@ -33,6 +40,12 @@ class MarkPositionScraperAsync:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
+        text = text.replace('\xa0', ' ')
+        return self.CLEAN_TEXT_REGEX.sub(' ', text).strip()
+
+    def is_url(self, text: str) -> bool:
+        """Check if text looks like a URL."""
+        return self.URL_REGEX.match(text.strip()) is not None
         # Optimization: split().join() is faster than re.sub for normalizing whitespace
         # split() handles all unicode whitespace including \xa0 (non-breaking space)
         return " ".join(text.split())
@@ -75,8 +88,19 @@ class MarkPositionScraperAsync:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+        # Use SoupStrainer to only parse article tags, significantly reducing overhead
+        strainer = SoupStrainer('article')
+        soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
         articles = soup.find_all('article', class_='post')
+        soup = BeautifulSoup(html, 'html.parser')
+
+        # Optimization: Narrow search scope to #content div if present to avoid traversing footer/sidebar
+        content = soup.find('div', id='content')
+        if content:
+            articles = content.find_all('article', class_='post')
+        else:
+            articles = soup.find_all('article', class_='post')
+
         page_posts = []
 
         if not articles:
@@ -87,19 +111,26 @@ class MarkPositionScraperAsync:
 
             # Title
             title_text = ""
-            title_tag = article.select_one('h1.entry-title a')
+            # Optimized: replace select_one with find
+            title_header = article.find('h1', class_='entry-title')
+            title_tag = title_header.find('a') if title_header else None
+
             if title_tag:
                 title_text = self.clean_text(title_tag.get_text())
                 post_data['title'] = title_text
 
             # Date
-            date_tag = article.select_one('time.entry-date')
+            # Optimized: replace select_one with find
+            date_tag = article.find('time', class_='entry-date')
             if date_tag:
                 post_data['date'] = self.clean_text(date_tag.get_text())
                 post_data['datetime'] = date_tag.get('datetime')
 
             # Author
-            author_tag = article.select_one('.author.vcard .fn')
+            # Optimized: replace select_one with find
+            author_container = article.find(class_='author')
+            author_tag = author_container.find(class_='fn') if author_container else None
+
             if author_tag:
                 post_data['author'] = self.clean_text(author_tag.get_text())
             else:
@@ -110,15 +141,16 @@ class MarkPositionScraperAsync:
 
             # External Link
             external_link = None
-            content_div = article.select_one('.entry-content')
+            # Optimized: replace select_one with find
+            content_div = article.find(class_='entry-content')
 
             if content_div:
-                link_tag = content_div.select_one('a')
+                link_tag = content_div.find('a')
                 if link_tag:
                     external_link = link_tag.get('href')
 
                 if not external_link:
-                    iframe_tag = content_div.select_one('iframe')
+                    iframe_tag = content_div.find('iframe')
                     if iframe_tag:
                         external_link = iframe_tag.get('src')
 
@@ -259,6 +291,59 @@ class MarkPositionScraperAsync:
             if html:
                 return await self.parse_page(html)
             return None
+
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text to prevent CSV injection."""
+        if not text:
+            return ""
+        text = str(text)
+        if text.startswith(('=', '+', '-', '@')):
+            return "'" + text
+        return text
+
+    def save_data(self, posts: List[Dict]):
+        # JSON
+        try:
+            with open(self.output_json, 'w', encoding='utf-8') as f:
+                json.dump(posts, f, indent=4, ensure_ascii=False)
+            logger.info(f"Saved {len(posts)} posts to {self.output_json}")
+        except IOError as e:
+            logger.error(f"Failed to save JSON: {e}")
+
+        # CSV
+        try:
+            with open(self.output_csv, 'w', newline='', encoding='utf-8') as f:
+                writer = csv.writer(f)
+                writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
+                for post in posts:
+                    writer.writerow([
+                        self.sanitize_for_csv(post.get('title', '')),
+                        self.sanitize_for_csv(post.get('date', '')),
+                        self.sanitize_for_csv(post.get('author', '')),
+                        self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                        self.sanitize_for_csv(post.get('external_link', '')),
+                        self.sanitize_for_csv(post.get('domain', '')),
+                        self.sanitize_for_csv(post.get('post_url', ''))
+                    ])
+            logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
+        except IOError as e:
+            logger.error(f"Failed to save CSV: {e}")
+
+        # Unique Links TXT
+        unique_links = set()
+        for post in posts:
+            link = post.get('external_link')
+            if link:
+                unique_links.add(link)
+
+        sorted_links = sorted(list(unique_links))
+        try:
+            with open(self.output_txt, 'w', encoding='utf-8') as f:
+                for link in sorted_links:
+                    f.write(link + '\n')
+            logger.info(f"Saved {len(sorted_links)} unique links to {self.output_txt}")
+        except IOError as e:
+            logger.error(f"Failed to save TXT: {e}")
 
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
