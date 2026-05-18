@@ -65,7 +65,7 @@ export async function checkDockerHealth() {
   if (!isHealthy && !isSimulated) {
     console.log('🔄 [Docker] Fleet empty. Autonomously attempting to recover degraded containers...')
     try {
-      execFileSync('docker-compose', ['up', '-d'], { stdio: 'ignore' })
+      execFileSync('docker', ['compose', 'up', '-d'], { stdio: 'ignore' })
       const recoveredFleet = await getDockerFleetStatus()
       if (recoveredFleet.length > 0) {
         console.log('✅ [Docker] Fleet recovered successfully.')
@@ -92,8 +92,8 @@ export async function checkDockerHealth() {
   // Attempt recovery if disconnected
   if (status === 'disconnected') {
     try {
-      console.log('🔄 [DockerEvolutionAgent] Attempting to recover degraded containers using docker-compose up -d...')
-      execFileSync('docker-compose', ['up', '-d'], { stdio: 'ignore' })
+      console.log('🔄 [DockerEvolutionAgent] Attempting to recover degraded containers using docker compose up -d...')
+      execFileSync('docker', ['compose', 'up', '-d'], { stdio: 'ignore' })
       isHealthy = true
       status = 'recovering'
     } catch (err) {
