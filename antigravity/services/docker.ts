@@ -1,6 +1,9 @@
-import { execFileSync } from 'child_process'
+import { exec } from 'child_process'
+import { promisify } from 'util'
 import { z } from 'zod'
 import { autonomousFetch } from '@/antigravity/core'
+
+const execAsync = promisify(exec)
 
 /**
  * ANTIGRAVITY DOCKER CONNECTIVITY SERVICE (Phase 1)
@@ -20,7 +23,8 @@ export async function getDockerFleetStatus(): Promise<DockerContainer[]> {
   return autonomousFetch(z.array(DockerContainerSchema), async () => {
     try {
       // Attempt to query the Docker daemon
-      const output = execFileSync('docker', ['ps', '--format', '{{.ID}}|{{.Image}}|{{.Status}}|{{.Names}}']).toString().trim()
+      const { stdout } = await execAsync('docker ps --format "{{.ID}}|{{.Image}}|{{.Status}}|{{.Names}}"')
+      const output = stdout.trim()
 
       if (!output && process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true') {
         throw new Error('Simulation requested')
@@ -65,7 +69,7 @@ export async function checkDockerHealth() {
   if (!isHealthy && !isSimulated) {
     console.log('🔄 [Docker] Fleet empty. Autonomously attempting to recover degraded containers...')
     try {
-      execFileSync('docker', ['compose', 'up', '-d'], { stdio: 'ignore' })
+      await execAsync('docker compose up -d')
       const recoveredFleet = await getDockerFleetStatus()
       if (recoveredFleet.length > 0) {
         console.log('✅ [Docker] Fleet recovered successfully.')
@@ -93,7 +97,7 @@ export async function checkDockerHealth() {
   if (status === 'disconnected') {
     try {
       console.log('🔄 [DockerEvolutionAgent] Attempting to recover degraded containers using docker compose up -d...')
-      execFileSync('docker', ['compose', 'up', '-d'], { stdio: 'ignore' })
+      await execAsync('docker compose up -d')
       isHealthy = true
       status = 'recovering'
     } catch (err) {
