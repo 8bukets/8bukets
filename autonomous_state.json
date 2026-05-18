@@ -15,19 +15,20 @@
         }
     ],
     "docker": {
-        "status": "degraded",
-        "containerCount": 0,
-        "simulated": false,
-        "timestamp": "2026-05-18T03:29:03.300Z"
+        "status": "simulated",
+        "containerCount": 2,
+        "simulated": true,
+        "multiStageStatus": "multi-stage",
+        "timestamp": "2026-05-18T21:18:47.963Z"
     },
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1779074943301,
+        "timestamp": 1779139127963,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
-        "branches": 1788,
+        "branches": 1807,
         "pendingTasks": 0,
         "relationshipMap": {
             "stakeholderEngagement": {
@@ -101,10 +102,13 @@
                     "remotes/origin/feat/autonomous-creation-cycle-10567644799753050340",
                     "remotes/origin/feat/autonomous-creation-cycle-14040463371825265667",
                     "remotes/origin/feat/autonomous-creation-cycle-2519215097742916370",
+                    "remotes/origin/feat/autonomous-creation-cycle-856121647264189672",
+                    "remotes/origin/feat/autonomous-knowledge-integration-17955218427957192278",
                     "remotes/origin/feat/autonomous-multi-ci-workflow-creation-13184263401868233273",
                     "remotes/origin/feat/autonomous-protocol-jules-16130780090107402276",
                     "remotes/origin/feat/autonomous-work-order-engine-4034176882068097834",
                     "remotes/origin/feat/autonomous-workflow-creation-13764436247269423073",
+                    "remotes/origin/feat/cloud-autonomous-evolution-4476041926243078641",
                     "remotes/origin/feat/cloud-autonomous-presence-4768792204367486255",
                     "remotes/origin/feat/collaboration-intelligence-knowledge-merge-v1-1682981257800000691",
                     "remotes/origin/feat/connect-docker-collaboration-6033606454460470488",
@@ -112,6 +116,7 @@
                     "remotes/origin/feat/custom-github-action-10612201952418849138",
                     "remotes/origin/feat/dual-engine-autonomous-collaboration-180989571444817477",
                     "remotes/origin/feat/full-autonomous-creation-execution-17830710122661382280",
+                    "remotes/origin/feat/full-ecosystem-collaboration-sync-2223737222399285274",
                     "remotes/origin/feat/gemma-4-scraper-14386039384216646408",
                     "remotes/origin/feat/intelephense-docs-ingestion-5058226112541762188",
                     "remotes/origin/feat/intelephense-docs-sync-14439717062784308623",
@@ -161,7 +166,6 @@
                     "remotes/origin/jules-full-autonomus-workflow-8744732568350416698",
                     "remotes/origin/jules-improve-knowledge-workflows-9958740170618720237",
                     "remotes/origin/jules-improve-workflow-and-knowledge-observer-11114380607500005512",
-                    "remotes/origin/jules/scraper-markposition-17752547678215960211",
                     "remotes/origin/multi-cloud-workflow-intelligence-12208347123975439755",
                     "remotes/origin/opt-scraper-regex-6404737091544860092",
                     "remotes/origin/palette-cli-ux-5136733467430420971",
@@ -198,12 +202,15 @@
                     "remotes/origin/docker-optimization-8426096848725743190",
                     "remotes/origin/feat/ai-agents-knowledge-integration-10133877583552684442",
                     "remotes/origin/feat/ai-agents-knowledge-integration-3155871126605591044",
+                    "remotes/origin/feat/ai-agents-knowledge-integration-4554182407588547817",
                     "remotes/origin/feat/ai-sdk-streamtext-integration-3734860099537308061",
+                    "remotes/origin/feat/autonomous-knowledge-integration-17955218427957192278",
                     "remotes/origin/feat/collaboration-intelligence-knowledge-merge-v1-1682981257800000691",
                     "remotes/origin/feat/connect-docker-collaboration-10997916882350002599",
                     "remotes/origin/feat/connect-docker-collaboration-6033606454460470488",
                     "remotes/origin/feat/connect-docker-collaboration-sync-final-6753111079424335435",
                     "remotes/origin/feat/connect-docker-collaboration-sync-final-6753111079424335435-11457900944324227307",
+                    "remotes/origin/feat/docker-build-cloud-integration-15193242947855086456",
                     "remotes/origin/feat/docker-collaboration-enhancements-2442044575661287661",
                     "remotes/origin/feat/docker-collaboration-integration-7386073686217533934",
                     "remotes/origin/feat/docker-collaboration-integration-9536206781039101862",
@@ -256,6 +263,7 @@
                     "remotes/origin/integrate-google-innovation-ai-knowledge-1484302248395175800",
                     "remotes/origin/integrate-google-innovation-ai-knowledge-2118271840705498457",
                     "remotes/origin/integrate-intelephense-docs-sync-9702537453152045830",
+                    "remotes/origin/integrate-jenkins-pipeline-generation-14117303396069153360",
                     "remotes/origin/integrate-knowledge-automation-1699996833713122125",
                     "remotes/origin/integrate-knowledge-markposition-11578747878625387044",
                     "remotes/origin/integrate-markposition-knowledge-merge-3452272022805466987",
@@ -271,6 +279,7 @@
                     "remotes/origin/jules-knowledge-merge-collaboration-3722212575858302197",
                     "remotes/origin/jules/add-system-patent-947552789592854459",
                     "remotes/origin/jules/compile-knowledge-integration-4875845775501523719",
+                    "remotes/origin/jules/scraper-markposition-17752547678215960211",
                     "remotes/origin/oracle-ai-database-integration-1558530856752998309",
                     "remotes/origin/oracle-google-cloud-agents-15432798509012982749",
                     "remotes/origin/update-mcp-docker-security-11834660539572533331"
@@ -293,6 +302,7 @@
                     "remotes/origin/feat/docker-collaboration-sync-231662997979975664",
                     "remotes/origin/feat/dual-engine-autonomous-collaboration-180989571444817477",
                     "remotes/origin/feat/ecosystem-merge-collaboration-sync-v1-13937591330884389226",
+                    "remotes/origin/feat/full-ecosystem-collaboration-sync-2223737222399285274",
                     "remotes/origin/feature/autonomous-cloud-simulation-presence-15239864471767221481",
                     "remotes/origin/feature/docker-collaboration-sync-2408669220271786015",
                     "remotes/origin/fix/docker-collaboration-sync-3245584476125900421",
@@ -310,7 +320,9 @@
                     "remotes/origin/ci-consolidation-docker-build-cloud-16058181468570173910",
                     "remotes/origin/codex/software-review-platform-starter",
                     "remotes/origin/enable-gitlab-security-scanners-17254273171421596517",
+                    "remotes/origin/feat/docker-build-cloud-integration-15193242947855086456",
                     "remotes/origin/feat/ecosystem-merge-collaboration-sync-v1-13937591330884389226",
+                    "remotes/origin/feat/full-ecosystem-collaboration-sync-2223737222399285274",
                     "remotes/origin/feat/gitlab-ci-docker-build-cloud-integration-15454130814432814509",
                     "remotes/origin/feat/gitlab-ci-pipeline-15616713096718552061",
                     "remotes/origin/feat/jenkins-integration-8889480307913922372",
@@ -334,6 +346,7 @@
                     "remotes/origin/integrate-google-ai-knowledge-577515074625960618",
                     "remotes/origin/integrate-google-innovation-ai-knowledge-11329975251392721471",
                     "remotes/origin/integrate-google-innovation-ai-knowledge-2118271840705498457",
+                    "remotes/origin/integrate-jenkins-pipeline-generation-14117303396069153360",
                     "remotes/origin/jenkins-orchestration-pipeline-16548850115893572153",
                     "remotes/origin/jules-1164978700782097591-599a1052",
                     "remotes/origin/jules-15643813269620827017-18b637fd",
@@ -692,6 +705,12 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "remotes/origin/feat/ai-agents-knowledge-integration-4554182407588547817",
+                    "status": "Ready for Merge",
+                    "result": "integrate AI agent foundation and strategic knowledge"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "remotes/origin/feat/ai-sdk-streamtext-integration-3734860099537308061",
                     "status": "Ready for Merge",
                     "result": "integrate Vercel AI SDK streamText with Google Gemini"
@@ -746,6 +765,18 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "remotes/origin/feat/autonomous-creation-cycle-856121647264189672",
+                    "status": "Ready for Merge",
+                    "result": "implement and execute full autonomous creation cycle"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "remotes/origin/feat/autonomous-knowledge-integration-17955218427957192278",
+                    "status": "Ready for Merge",
+                    "result": "integrate knowledge merge automate and mandatory branding"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "remotes/origin/feat/autonomous-multi-ci-workflow-creation-13184263401868233273",
                     "status": "Ready for Merge",
                     "result": "enable full autonomous automatic workflow creation across CI providers"
@@ -767,6 +798,12 @@
                     "name": "remotes/origin/feat/autonomous-workflow-creation-13764436247269423073",
                     "status": "Ready for Merge",
                     "result": "auto-generate full autonomous workflows"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "remotes/origin/feat/cloud-autonomous-evolution-4476041926243078641",
+                    "status": "Ready for Merge",
+                    "result": "implement full cloud autonomy and multi-tool integration"
                 },
                 {
                     "type": "Branch Result",
@@ -830,6 +867,12 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "remotes/origin/feat/docker-build-cloud-integration-15193242947855086456",
+                    "status": "Ready for Merge",
+                    "result": "integrate Docker Build Cloud knowledge and pipeline"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "remotes/origin/feat/docker-collaboration-enhancements-2442044575661287661",
                     "status": "Ready for Merge",
                     "result": "enhance docker connectivity and collaboration logic"
@@ -869,6 +912,12 @@
                     "name": "remotes/origin/feat/full-autonomous-creation-execution-17830710122661382280",
                     "status": "Ready for Merge",
                     "result": "implement full autonomous creation order and execution chain"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "remotes/origin/feat/full-ecosystem-collaboration-sync-2223737222399285274",
+                    "status": "Ready for Merge",
+                    "result": "implement and execute full ecosystem collaboration sync"
                 },
                 {
                     "type": "Branch Result",
@@ -923,6 +972,12 @@
                     "name": "remotes/origin/feat/google-innovation-ai-knowledge-integration-2508984454520338148",
                     "status": "Ready for Merge",
                     "result": "Integrate knowledge from Google Innovation & AI blog"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "remotes/origin/feat/high-scale-react-agent-deployment-3564540097483377252",
+                    "status": "Ready for Merge",
+                    "result": "Enhance React agents deployment logic for higher scale"
                 },
                 {
                     "type": "Branch Result",
@@ -1082,6 +1137,12 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "remotes/origin/feat/mongodb-atlas-migration-4131498074566710377",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/mongodb-atlas-migration-4131498074566710377"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "remotes/origin/feat/netlify-deploy-button-8112490364183212293",
                     "status": "Ready for Merge",
                     "result": "add deploy to netlify button and configuration"
@@ -1208,6 +1269,18 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "remotes/origin/feature/adaptive-recovery-service-3883560226543520640",
+                    "status": "Ready for Merge",
+                    "result": "implement adaptive recovery service with creativity dose"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "remotes/origin/feature/add-gitlab-subagents-461501759789154721",
+                    "status": "Ready for Merge",
+                    "result": "add gitlab_security_agent and duo_planner_agent as gemini CLI subagents"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "remotes/origin/feature/add-rag-agent-389407236128300017",
                     "status": "Ready for Merge",
                     "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feature/add-rag-agent-389407236128300017"
@@ -1247,6 +1320,12 @@
                     "name": "remotes/origin/feature/backup-agent-11331906079381269962",
                     "status": "Ready for Merge",
                     "result": "implement autonomous backup agent system"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "remotes/origin/feature/chief-ai-officer-agent-9488345300891255929",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feature/chief-ai-officer-agent-9488345300891255929"
                 },
                 {
                     "type": "Branch Result",
@@ -1364,6 +1443,12 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "remotes/origin/feature/remote-agents-10265795399396816706",
+                    "status": "Ready for Merge",
+                    "result": "Convert local agents to remote agents and add agent card server"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "remotes/origin/feature/smarter-cloud-workflow-13558470471841766440",
                     "status": "Ready for Merge",
                     "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feature/smarter-cloud-workflow-13558470471841766440"
@@ -1384,5 +1469,5 @@
             "synergies": []
         }
     },
-    "last_sync": "2026-05-18T03:29:03.561Z"
+    "last_sync": "2026-05-18T21:18:48.248Z"
 }
