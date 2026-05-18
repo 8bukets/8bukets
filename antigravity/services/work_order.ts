@@ -205,6 +205,18 @@ export class WorkOrderService {
         }
         return { status: 'deployed', output: rolloutResult.stdout }
 
+      case 'KNOWLEDGE_INGESTION':
+        logAutonomousAction(`📚 [WorkOrder] Executing Knowledge Ingestion for ${order.id}...`, 'info')
+        const { jules } = await import('../jules')
+        await jules.observeGithubDocs()
+        return { status: 'ingested' }
+
+      case 'SYSTEM_SYNC':
+        logAutonomousAction(`🔄 [WorkOrder] Executing System Sync for ${order.id}...`, 'info')
+        const { syncCollaborationState } = await import('./collaboration')
+        await syncCollaborationState()
+        return { status: 'synced' }
+
       default:
         logAutonomousAction(`ℹ️ [WorkOrder] Skipping unknown or external order type: ${order.type}`, 'info')
         return { skipped: true, reason: 'external_type' }

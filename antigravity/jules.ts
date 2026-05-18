@@ -383,8 +383,8 @@ export class Jules {
   public async syncPresence() {
     console.log('📡 [Jules] Synchronizing online presence...')
     try {
-      const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL)
-      const cloudProvider = process.env.GITHUB_ACTIONS ? 'github-actions' : (process.env.GITLAB_CI ? 'gitlab-ci' : (process.env.VERCEL ? 'vercel' : 'none'))
+      const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL || process.env.AUTONOMOUS_MODE === 'cloud')
+      const cloudProvider = process.env.GITHUB_ACTIONS ? 'github-actions' : (process.env.GITLAB_CI ? 'gitlab-ci' : (process.env.VERCEL ? 'vercel' : (process.env.AUTONOMOUS_MODE === 'cloud' ? 'autonomous-cloud' : 'none')))
 
       let dockerStatus = 'unknown'
       let containerCount = 0
@@ -398,20 +398,31 @@ export class Jules {
         console.warn('⚠️ [Jules] Could not fetch Docker status for presence sync:', dockerErr.message)
       }
 
+      let jenkinsStatus = 'unknown'
+      try {
+        const { checkJenkinsHealth } = await import('./services/jenkins')
+        const jenkinsHealth = await checkJenkinsHealth()
+        jenkinsStatus = jenkinsHealth.status
+      } catch (e) {}
+
       const presence = {
         agent: 'Jules',
         status: 'online',
         lastSeen: new Date().toISOString(),
-        version: '1.2.0-alpha',
-        capabilities: ['git-sync', 'self-repair', 'knowledge-ingestion', 'pr-audit'],
+        version: '1.3.0-alpha',
+        capabilities: ['git-sync', 'self-repair', 'knowledge-ingestion', 'pr-audit', 'cloud-sync'],
         environment: isCloud ? 'cloud' : 'local',
         execution_mode: isCloud ? 'cloud' : 'local',
+        autonomous_mode: process.env.AUTONOMOUS_MODE || 'standard',
         cloud_provider: cloudProvider,
         docker_status: dockerStatus,
         container_count: containerCount,
-        workflow_id: process.env.GITHUB_RUN_ID || process.env.CI_PIPELINE_ID || 'local'
+        jenkins_status: jenkinsStatus,
+        workflow_id: process.env.GITHUB_RUN_ID || process.env.CI_PIPELINE_ID || 'local',
+        hostname: (await import('os')).hostname()
       }
 
+      // 1. Sync to MongoDB
       try {
         const { getMongoClient } = await import('./core')
         const client = await getMongoClient()
@@ -421,9 +432,22 @@ export class Jules {
           { $set: presence },
           { upsert: true }
         )
-        console.log(`✅ [Jules] Online presence heartbeated to MongoDB (Mode: ${presence.execution_mode}, Docker: ${presence.docker_status}).`)
+        console.log(`✅ [Jules] Online presence heartbeated to MongoDB (Mode: ${presence.execution_mode}/${presence.autonomous_mode}).`)
       } catch (dbErr: any) {
         console.warn('⚠️ [Jules] Could not sync presence to MongoDB:', dbErr.message)
+      }
+
+      // 2. Sync to Supabase
+      try {
+        const { supabase } = await import('./core')
+        const { error } = await supabase
+          .from('agent_presence')
+          .upsert({ ...presence, id: 'jules-alpha-01' })
+
+        if (error) throw error
+        console.log('✅ [Jules] Online presence heartbeated to Supabase.')
+      } catch (sbErr: any) {
+        console.warn('⚠️ [Jules] Could not sync presence to Supabase:', sbErr.message)
       }
 
       await this.recordTask(`Presence Sync: Heartbeat broadcasted (${presence.execution_mode}).`)

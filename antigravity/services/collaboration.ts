@@ -113,10 +113,18 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
     jenkins: jenkinsHealth,
     intelligence: {
       branches: branches.length,
-      pendingTasks: workOrders.length
+      pendingTasks: workOrders.length,
+      totalOrders: (await import('./work_order').then(m => m.workOrderService.getPendingOrders())).length
     },
     execution_mode: isCloud ? 'cloud' : 'local',
+    autonomous_mode: process.env.AUTONOMOUS_MODE || 'standard',
     cloud_provider: cloudProvider,
+    system_presence: {
+      status: 'online',
+      agent: 'Jules',
+      hostname: (await import('os')).hostname(),
+      platform: process.platform
+    },
     last_sync: new Date().toISOString()
   }
 

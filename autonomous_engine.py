@@ -79,8 +79,28 @@ def run_typescript_cycle():
     except subprocess.CalledProcessError as e:
         logger.error(f"❌ TypeScript Cycle failed: {e}")
 
+def sync_state_with_json():
+    """Ensure autonomous_state.json is updated with current engine context."""
+    state_file = "autonomous_state.json"
+    state = {}
+    if os.path.exists(state_file):
+        try:
+            with open(state_file, 'r') as f:
+                state = json.load(f)
+        except:
+            state = {}
+
+    state["last_engine_sync"] = datetime.now().isoformat()
+    state["execution_mode"] = os.environ.get("AUTONOMOUS_MODE", "local")
+    state["engine"] = "python_autonomous_engine"
+
+    with open(state_file, 'w') as f:
+        json.dump(state, f, indent=4)
+    logger.info(f"✅ Synchronized engine state to {state_file}")
+
 def sync_work_orders_with_mongodb():
     """Sync work orders between local file and MongoDB."""
+    sync_state_with_json()
     uri = os.environ.get("MONGODB_URI")
     if not uri:
         return
