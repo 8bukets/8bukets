@@ -1,5 +1,6 @@
 import os
 import subprocess
+import asyncio
 from .base_agent import BaseAgent, Blackboard
 
 class CloudWorkflowAgent(BaseAgent):
@@ -41,7 +42,8 @@ class CloudWorkflowAgent(BaseAgent):
             if vcs_status not in ["COMMITTED_AND_PUSHED", "COMMITTED_LOCAL", "CLEAN", "SKIPPED"]:
                 active_decisions.append("AUTORESOLVE_VCS_CONFLICTS")
                 try:
-                    subprocess.run(["git", "merge", "--abort"], check=False)
+                    process = await asyncio.create_subprocess_exec("git", "merge", "--abort", stdout=asyncio.subprocess.DEVNULL, stderr=asyncio.subprocess.DEVNULL)
+                    await process.wait()
                 except Exception as e:
                     self.logger.warning(f"Failed proactive git merge --abort: {e}")
             if viz_metrics.get("kraken_compatibility_score", 0) <= 0.9:
@@ -51,7 +53,7 @@ class CloudWorkflowAgent(BaseAgent):
             if docker_status.get("runtime_stability") != "VERIFIED":
                 active_decisions.append("AUTO_REBUILD_DOCKER")
                 try:
-                    subprocess.Popen(["docker-compose", "up", "-d", "--build"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                    await asyncio.create_subprocess_exec("docker-compose", "up", "-d", "--build", stdout=asyncio.subprocess.DEVNULL, stderr=asyncio.subprocess.DEVNULL)
                 except Exception as e:
                     self.logger.warning(f"Failed proactive docker rebuild: {e}")
         elif react_deployment_ready:

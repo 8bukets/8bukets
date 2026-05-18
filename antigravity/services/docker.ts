@@ -33,7 +33,8 @@ export async function getDockerFleetStatus(): Promise<DockerContainer[]> {
     }
 
     try {
-      const output = execSync('docker ps --format "{{.ID}}|{{.Image}}|{{.Status}}|{{.Names}}"').toString()
+      const { stdout } = await execAsync('docker ps --format "{{.ID}}|{{.Image}}|{{.Status}}|{{.Names}}"')
+      const output = stdout.toString()
       const lines = output.trim().split('\n')
 
       if (!output.trim()) return []

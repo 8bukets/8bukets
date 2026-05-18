@@ -1,5 +1,6 @@
 import os
 import subprocess
+import asyncio
 from .base_agent import BaseAgent, Blackboard
 
 class GitHubEvolutionAgent(BaseAgent):
@@ -32,10 +33,15 @@ class GitHubEvolutionAgent(BaseAgent):
 
         try:
             # 1. Stage changes (Sanitized config, memory, and results)
-            subprocess.run(["git", "add", "config/evolution_params.json", "config/owner_info.json", "data/", "results/", "links.json", "links.csv", "unique_links.txt"], check=True)
+            process = await asyncio.create_subprocess_exec("git", "add", "config/evolution_params.json", "config/owner_info.json", "data/", "results/", "links.json", "links.csv", "unique_links.txt")
+            await process.wait()
+            if process.returncode != 0:
+                raise subprocess.CalledProcessError(process.returncode, "git add")
 
             # Check for changes before committing
-            status = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True).stdout.strip()
+            process = await asyncio.create_subprocess_exec("git", "status", "--porcelain", stdout=asyncio.subprocess.PIPE)
+            stdout, _ = await process.communicate()
+            status = stdout.decode().strip()
             if not status:
                 self.logger.info("No changes to commit. Skipping Git commit/push.")
                 return {"vcs_status": "CLEAN", "workflow_count": workflow_count}
@@ -57,21 +63,29 @@ class GitHubEvolutionAgent(BaseAgent):
                 f"- Evolution Strategy: {strategy.get('optimization_priority', 'STANDARD')}\n\n"
                 f"Automated commit by collaborative agent unit (Jules + GitHub + GitLab + Jenkins + GitKraken + Docker Cloud)."
             )
-            subprocess.run(["git", "commit", "-m", commit_msg], check=True)
+            process = await asyncio.create_subprocess_exec("git", "commit", "-m", commit_msg)
+            await process.wait()
+            if process.returncode != 0:
+                raise subprocess.CalledProcessError(process.returncode, "git commit")
 
             # 3. Push changes (if GITHUB_TOKEN is available)
             token = os.environ.get("GITHUB_TOKEN")
             if token:
                 self.logger.info("GITHUB_TOKEN detected. Pulling with rebase and attempting to push...")
-                pull_result = subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=False)
+                pull_result = await asyncio.create_subprocess_exec("git", "pull", "--rebase", "origin", "main")
+                await pull_result.wait()
                 if pull_result.returncode != 0:
                     self.logger.warning("Git pull rebase failed (likely merge conflict). Aborting rebase.")
-                    subprocess.run(["git", "rebase", "--abort"], check=False)
+                    process = await asyncio.create_subprocess_exec("git", "rebase", "--abort")
+                    await process.wait()
                     vcs_status = "COMMITTED_LOCAL" # Prevent push from failing
                 else:
                     # Note: This is a simplified push logic. In a real scenario, you'd handle remote URL properly.
                     try:
-                        subprocess.run(["git", "push"], check=True)
+                        process = await asyncio.create_subprocess_exec("git", "push")
+                        await process.wait()
+                        if process.returncode != 0:
+                            raise subprocess.CalledProcessError(process.returncode, "git push")
                         vcs_status = "COMMITTED_AND_PUSHED"
                     except subprocess.CalledProcessError as e:
                         self.logger.error(f"Git push failed: {e}")
@@ -85,7 +99,10 @@ class GitHubEvolutionAgent(BaseAgent):
             if token:
                 try:
                     self.logger.info("Synchronizing with remote to avoid conflicts...")
-                    subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=True)
+                    process = await asyncio.create_subprocess_exec("git", "pull", "--rebase", "origin", "main")
+                    await process.wait()
+                    if process.returncode != 0:
+                        raise subprocess.CalledProcessError(process.returncode, "git pull")
                 except subprocess.CalledProcessError as pull_e:
                     self.logger.warning(f"Failed to synchronize with remote: {pull_e}")
 
