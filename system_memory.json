@@ -1,6 +1,6 @@
 {
     "version": 1.0,
-    "iterations": 1,
+    "iterations": 3,
     "keyword_performance": {},
     "bid_strategy": {
         "base_bid": 1.5,
@@ -14,6 +14,16 @@
         {
             "iteration": 0,
             "engagement": 53,
+            "action": "Maintained strategy"
+        },
+        {
+            "iteration": 1,
+            "engagement": 72,
+            "action": "Maintained strategy"
+        },
+        {
+            "iteration": 2,
+            "engagement": 98,
             "action": "Maintained strategy"
         }
     ],
@@ -42,6 +52,40 @@
             },
             {
                 "Try Oracle AI and get a 30-day trial": "Oracle offers a free pricing tier for most AI services as well as a free trial account with US$300 in credits to try additional cloud services. Get the details and sign up for your free account. Try Oracle AI for free"
+            }
+        ],
+        "database_capabilities": [
+            {
+                "feature": "Database",
+                "url": "https://www.oracle.com/database/"
+            },
+            {
+                "feature": "MySQL HeatWave AutoML",
+                "url": "https://www.oracle.com/mysql/automl/"
+            },
+            {
+                "feature": "Boost customer service Brain4Data helps small businesses leverage AI with Oracle Database 23ai for vector search and app development.",
+                "url": "https://www.oracle.com/customers/brain4data/"
+            },
+            {
+                "feature": "AI Vector Search",
+                "url": "https://www.oracle.com/database/ai-vector-search/"
+            },
+            {
+                "feature": "Machine Learning in Oracle AI Database",
+                "url": "https://www.oracle.com/artificial-intelligence/database-machine-learning/"
+            },
+            {
+                "feature": "Autonomous AI Database Select AI",
+                "url": "https://www.oracle.com/autonomous-database/select-ai/"
+            },
+            {
+                "feature": "MySQL HeatWave GenAI",
+                "url": "https://www.oracle.com/mysql/genai/"
+            },
+            {
+                "feature": "Machine Learning in Oracle AI Database",
+                "url": "https://docs.oracle.com/en/database/oracle/machine-learning/"
             }
         ]
     }
