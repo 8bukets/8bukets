@@ -25,9 +25,10 @@ class BlogScraper:
         self.base_url = base_url
         self.output_json = output_json
         self.db_name = db_name
-        self.headers = {
+        self.session = requests.Session()
+        self.session.headers.update({
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-        }
+        })
         self.data = []
         self.conn = sqlite3.connect(self.db_name)
         self.init_db()
@@ -285,7 +286,8 @@ class BlogScraper:
 
         logger.info(f"Fetching {url}...")
         try:
-            response = requests.get(url, headers=self.headers, timeout=10)
+            # Use session for connection pooling
+            response = self.session.get(url, timeout=10)
             response.raise_for_status()
             return response.content
         except requests.RequestException as e:
