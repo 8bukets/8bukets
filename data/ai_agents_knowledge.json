@@ -420,5 +420,15 @@
         "google_cloud_tools": [
             "Gemini"
         ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/accelerator-ai-for-the-planet/",
+        "title": "We’re launching the Google DeepMind Accelerator program in Asia Pacific to tackle environmental risks.",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini"
+        ]
     }
 ]
