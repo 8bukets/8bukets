@@ -181,11 +181,38 @@ object, \MyNs\MyClass, object{name: string, optional?: string}*, static, self, $
 array, array<TKey, TValue>*, TValue[]*, array{description: string, 'length (cm)': float, optional?: string, ...<int, string>}*.
 
 #### Callable Types
-callable, callable(TParamA $a, TParamB $b): TReturn*.
+callable, callable(TParamA $a, TParamB $b): TReturn*, Closure*.
+
+#### Alias Types
+iterable (Alias for Traversable|array), ?A (Nullable type shorthand for null|A).
+
+#### Union Types
+A|B|C - A type which may have multiple atomic type representations.
+
+#### Intersection Types
+A&B&C - A composite type which consists of multiple atomic types.
+
+#### DNF Types
+A|B|(C&D&E) - When combining union and intersection types, only a single level of nesting is permitted. The union must be the top level.
 
 #### Generic Types
 Supports @template PHPDoc annotations. The following built-in types are templated:
 iterable, Traversable, array, Iterator, IteratorAggregate, ArrayAccess, WeakReference, WeakMap, Fiber, DatePeriod, ReflectionAttribute, ReflectionClass, Generator, ArrayObject, SplDoublyLinkedList, SplQueue, SplStack, SplHeap, SplMinHeap, SplMaxHeap, SplPriorityQueue, SplFixedArray, SplObjectStorage.
+
+#### Conditional Return Type
+(TSubject is TCompare ? TTrue : TFalse)* - Sometimes the return type of a function may depend on the type of a parameter.
+
+#### Array Key Type
+key-of<TArray>* - Resolves to a union of the keys of an array shape.
+
+#### Array Value Type
+value-of<TArray>* - Resolves to a union of the values of an array shape.
+
+#### Index Access Type
+TArray[TKey]* - Resolves to the type of the value at index TKey in TArray.
+
+#### Miscellaneous Types
+resource*, class-string<T>*.
 
 ## PHPDoc Annotations
 Intelephense supports standard PHPDoc annotations as well as non-standard ones from tools like Psalm and PHPStan.
@@ -209,25 +236,25 @@ Intelephense supports standard PHPDoc annotations as well as non-standard ones f
 The following features are available to all users.
 
 #### Workspace Symbols
-Search for symbols in your workspace (Ctrl+T). It is particularly useful for finding and navigating to symbols that are not directly referenced in the current file. When the query contains alphanumeric characters only, the search is performed on the unqualified name of the symbol. Use FQSEN query syntax for specific symbols.
+Search for symbols in your workspace (Ctrl+T). Use FQSEN query syntax for specific symbols.
 
 #### Document Symbols
-Lists all symbols in the current document (Ctrl+Shift+O), providing an overview of the structure of the file. A client can use this information to provide a document outline view, breadcrumb navigation, and a symbol search specific to the current file.
+Lists all symbols in the current document (Ctrl+Shift+O).
 
 #### Go to Definition
-Navigate to the definition of a symbol (F12). Multiple definitions may sometimes be found, and it is up to the client to decide how to present them.
+Navigate to the definition of a symbol (F12).
 
 #### Hover
-Show type information and documentation for a symbol when hovering over a reference in the current file. Includes symbol signature and associated documentation.
+Show type information and documentation for a symbol when hovering.
 
 #### Highlight
-Highlight all references to the symbol at the cursor position in the current file. Read and write contexts are identified.
+Highlight all references to the symbol at the cursor position in the current file.
 
 #### Code Completion
-Context appropriate completion suggestions ($ > : \ / ' " * . <). Can include variables, functions, methods, classes, and other symbols.
+Context appropriate completion suggestions ($ > : \ / ' " * . <).
 
 #### Signature Help
-Information about function/method signatures during a call (Ctrl+Shift+Space). Includes parameter types, return type, and documentation.
+Information about function/method signatures during a call (Ctrl+Shift+Space).
 
 #### Find All References
 List all references to a symbol in the current file or workspace (Shift+F12).
@@ -236,22 +263,22 @@ List all references to a symbol in the current file or workspace (Shift+F12).
 Format a whole document or selected range. Complies with PHP-FIG coding standards.
 
 #### Diagnostics
-Syntax errors, type errors, and language constraints. Performance and minimising false positives are prioritised over exhaustiveness.
+Syntax errors, type errors, and language constraints.
 
 #### Inline Values
-Variable ranges and text for debuggers to display inline values during a session.
+Variable ranges and text for debuggers to display inline values.
 
 #### Embedded Languages
-Language intelligence for HTML, CSS, and JavaScript within PHP files (text outside PHP tags is presumed to be HTML).
+Language intelligence for HTML, CSS, and JavaScript within PHP files.
 
 ### Premium Features
 Requires a licence.
 
 #### Rename
-Refactor a symbol and all its semantic references (F2). Aware of syntax and semantics, and can handle namespace renames.
+Refactor a symbol and all its semantic references (F2).
 
 #### Code Folding
-Fold and unfold regions of code based on the syntax tree (symbol bodies, control structures, comments, imports).
+Fold and unfold regions of code based on the syntax tree.
 
 #### Find All Implementations
 List all implementations of a method or interface (Ctrl+F12).
@@ -260,7 +287,7 @@ List all implementations of a method or interface (Ctrl+F12).
 Navigate to the type definition of a variable rather than its declaration.
 
 #### Go to Declaration
-Navigate to the initial declaration of a symbol in a type hierarchy (e.g., in a super-type).
+Navigate to the initial declaration of a symbol in a type hierarchy.
 
 #### Smart Select
 Expand and shrink selections based on the syntax tree (Shift+Alt+→/←).
