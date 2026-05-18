@@ -49,34 +49,52 @@ def scrape_google_ads_docs():
         page_data = {
             "title": page_title,
             "url": url,
-            "content": []
+            "key_links": [],
+            "sections": []
         }
 
         md_content += f"## {page_title}\n\n"
         md_content += f"Source: [{url}]({url})\n\n"
 
-        extracted_text = []
+        current_section = {
+            "heading": page_title,
+            "content": []
+        }
 
         # Simple extraction logic: grab all text under headings, paragraphs, and list items
         # A more complex one would group by headings, but since the structure varies wildly
         # across support, business, developers, and cloud subdomains, we'll extract the main text.
-        for elem in main_content.find_all(["h1", "h2", "h3", "p", "li"]):
+        for elem in main_content.find_all(["h1", "h2", "h3", "p", "li", "a"]):
+            if elem.name == "a":
+                href = elem.get("href")
+                if href and href.startswith("http") and href not in page_data["key_links"]:
+                    page_data["key_links"].append(href)
+                continue
+
             text = elem.get_text(separator=' ', strip=True)
             if not text:
                 continue
 
             if elem.name in ["h1", "h2", "h3"]:
+                if current_section["content"] or current_section["heading"] != page_title:
+                    page_data["sections"].append(current_section)
+
+                current_section = {
+                    "heading": text,
+                    "content": []
+                }
                 md_prefix = "#" * int(elem.name[1])
                 md_content += f"{md_prefix} {text}\n\n"
-                extracted_text.append({"type": elem.name, "text": text})
             elif elem.name == "p":
                 md_content += f"{text}\n\n"
-                extracted_text.append({"type": "p", "text": text})
+                current_section["content"].append(text)
             elif elem.name == "li":
                 md_content += f"- {text}\n"
-                extracted_text.append({"type": "li", "text": text})
+                current_section["content"].append(f"- {text}")
 
-        page_data["content"] = extracted_text
+        if current_section["content"] or current_section["heading"] != page_title:
+            page_data["sections"].append(current_section)
+
         data[url] = page_data
 
         md_content += "\n---\n\n"
