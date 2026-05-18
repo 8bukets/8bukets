@@ -59,6 +59,11 @@ class CloudWorkflowAgent(BaseAgent):
         elif react_deployment_ready:
             orchestration_mode = "REACT_DEPLOYMENT_ACTIVE"
             active_decisions.extend(["PROVISION_REACT_DEPLOYMENT", "CONFIGURE_REACT_TOOLS", "TRIGGER_NEXTJS_BUILD"])
+            scale_tier = react_config.get("scale_tier", "STANDARD")
+            if scale_tier == "GLOBAL_EDGE":
+                active_decisions.extend(["ENABLE_GLOBAL_LOAD_BALANCER", "DEPLOY_TO_EDGE_REGIONS"])
+            elif scale_tier == "ENTERPRISE":
+                active_decisions.append("PROVISION_KUBERNETES_CLUSTER")
 
         if os.environ.get("MACBOOK_CLOUD_SIMULATION") == "true":
             is_fluent = True

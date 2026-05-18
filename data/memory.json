@@ -48,13 +48,38 @@
                 "timestamp": "2026-05-17T17:29:45.293922",
                 "event": "episodic_event",
                 "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-18T05:52:03.874800",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-18T05:52:52.362969",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-18T05:53:43.914574",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-18T05:58:29.195966",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-18T05:59:32.859246",
+                "event": "episodic_event",
+                "data": "episodic_data"
             }
         ]
     },
     "TargetingAgent": {
         "long_term": {
             "test_compatibility_persona": "Compatibility Enthusiast",
-            "last_primary_persona": "AdTech Professional",
+            "last_primary_persona": "General Tech Enthusiast",
             "new_key": "new_val"
         },
         "episodic": []
