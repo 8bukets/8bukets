@@ -367,6 +367,8 @@ export class Jules {
       if (typeof watchSystem === 'function') watchSystem();
     }).catch(err => console.error('❌ [Jules] Watchdog initiation failed:', err));
 
+    const { adaptiveRecovery } = await import('./services/adaptive_recovery');
+
     while (true) {
       try {
         await this.executeWorkCycle();
@@ -374,7 +376,9 @@ export class Jules {
         console.log(`💤 [Jules] Cycle complete. Next autonomous pulse in 1h...`);
         await new Promise(resolve => setTimeout(resolve, delay));
       } catch (err) {
-        console.error('💥 [Jules] Loop error, restarting in 60s...', err);
+        console.error('💥 [Jules] Loop error, applying self-correction creativity dose...');
+        await adaptiveRecovery.selfCorrect('startConsciousnessLoop', err);
+        console.log('🔄 [Jules] Resuming loop in 60s after recovery attempt...');
         await new Promise(resolve => setTimeout(resolve, 60000));
       }
     }
@@ -435,76 +439,86 @@ export class Jules {
   public async executeWorkCycle() {
     await this.ensureInitialized()
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
-    await this.syncPresence()
 
-    const { explore } = await import('./explorer')
-    const { workOrderService } = await import('./services/work_order')
+    try {
+      await this.syncPresence()
 
-    // Phase 14: Prioritize PR processing in cloud environments to fulfill "merge and work" mandate
-    const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL || process.env.AUTONOMOUS_MODE === 'cloud')
-    if (isCloud) {
-      console.log('☁️ [Jules] Cloud environment detected. Prioritizing PR/MR auditing...')
-      await this.processPullRequests()
-    }
+      const { explore } = await import('./explorer')
+      const { workOrderService } = await import('./services/work_order')
 
-    await explore()
-    await this.observeKnowledge()
-    await this.selfRepair()
+      // Phase 14: Prioritize PR processing in cloud environments to fulfill "merge and work" mandate
+      const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL || process.env.AUTONOMOUS_MODE === 'cloud')
+      if (isCloud) {
+        console.log('☁️ [Jules] Cloud environment detected. Prioritizing PR/MR auditing...')
+        await this.processPullRequests()
+      }
 
-    // Process PRs again after potential self-repairs or new branch creations
-    if (!process.env.GITHUB_ACTIONS && !process.env.GITLAB_CI) {
-      await this.processPullRequests()
-    }
-    await this.observeGithubDocs()
-    const branches = await this.scanAllBranches(true)
+      await explore()
+      await this.observeKnowledge()
+      await this.selfRepair()
 
-    // Collaboration & Intelligence (Phase 9/12)
-    const { syncCollaborationState } = await import('./services/collaboration')
-    const { generateConsolidatedReport } = await import('./services/intelligence')
-    await syncCollaborationState(branches)
-    await generateConsolidatedReport(branches)
+      // Process PRs again after potential self-repairs or new branch creations
+      if (!process.env.GITHUB_ACTIONS && !process.env.GITLAB_CI) {
+        await this.processPullRequests()
+      }
+      await this.observeGithubDocs()
+      const branches = await this.scanAllBranches(true)
 
-    // 3. Ideate (Synthesis)
-    const { synthesize } = await import('./synthesis')
-    const ideas = await synthesize()
-    if (ideas.length > 0) {
-      this.recordTask(`Synthesis: Generated ${ideas.length} architectural proposals.`)
+      // Collaboration & Intelligence (Phase 9/12)
+      const { syncCollaborationState } = await import('./services/collaboration')
+      const { generateConsolidatedReport } = await import('./services/intelligence')
+      await syncCollaborationState(branches)
+      await generateConsolidatedReport(branches)
 
-      // Phase 10: Singularity Orchestration via Work Orders
-      for (const idea of ideas) {
-        if (idea.complexity === 'Low' || idea.complexity === 'Medium') {
-          workOrderService.createOrder('BOOTSTRAP_SERVICE', `Bootstrap ${idea.feature}`, idea)
+      // 3. Ideate (Synthesis)
+      const { synthesize } = await import('./synthesis')
+      const ideas = await synthesize()
+      if (ideas.length > 0) {
+        this.recordTask(`Synthesis: Generated ${ideas.length} architectural proposals.`)
+
+        // Phase 10: Singularity Orchestration via Work Orders
+        for (const idea of ideas) {
+          if (idea.complexity === 'Low' || idea.complexity === 'Medium') {
+            workOrderService.createOrder('BOOTSTRAP_SERVICE', `Bootstrap ${idea.feature}`, idea)
+          }
         }
       }
+
+      // Phase 12: Super-Intelligence Optimization via Work Orders
+      const { getSystemInsights } = await import('./core')
+      const insights = await getSystemInsights()
+      const refactors = (insights as any).proposals || []
+      if (refactors.length > 0) {
+        this.recordTask(`Super-Intelligence: Generated ${refactors.length} predictive refactors.`)
+        // Group all proposals into a single optimization order for efficiency
+        workOrderService.createOrder('OPTIMIZE_SYSTEM', 'Apply predictive refactors', { proposals: refactors })
+      }
+
+      // 4. Execute Work Orders
+      await workOrderService.executePendingOrders()
+
+      // ReAct Protocol Integration (arXiv:2210.03629)
+      const { reactService } = await import('./services/react')
+      const reactTools = {
+        checkSystemState: async () => JSON.stringify(await import('./core').then(c => c.healthCheck())),
+        findOptimizations: async () => JSON.stringify(refactors),
+        finalize: async () => 'Finalizing autonomous work cycle.'
+      }
+      const reactSteps = await reactService.executeCycle('Optimize system posture using ReAct', reactTools)
+      this.recordTask(`ReAct: Completed ${reactSteps.length} reasoning-action steps.`)
+
+      await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
+      this.memory.lastOptimization = new Date().toISOString()
+      this.save()
+      console.log('🏆 [Jules] Autonomous Work Cycle Complete.')
+    } catch (cycleError) {
+      const { adaptiveRecovery } = await import('./services/adaptive_recovery');
+      console.error('💥 [Jules] ExecuteWorkCycle failed, triggering adaptive self-correction...');
+      await adaptiveRecovery.selfCorrect('executeWorkCycle', cycleError);
+
+      // If adaptive recovery finishes successfully (or limits reached), we gracefully log instead of dying
+      console.log('🔄 [Jules] Continuing after executeWorkCycle exception recovery attempt...');
     }
-
-    // Phase 12: Super-Intelligence Optimization via Work Orders
-    const { getSystemInsights } = await import('./core')
-    const insights = await getSystemInsights()
-    const refactors = (insights as any).proposals || []
-    if (refactors.length > 0) {
-      this.recordTask(`Super-Intelligence: Generated ${refactors.length} predictive refactors.`)
-      // Group all proposals into a single optimization order for efficiency
-      workOrderService.createOrder('OPTIMIZE_SYSTEM', 'Apply predictive refactors', { proposals: refactors })
-    }
-
-    // 4. Execute Work Orders
-    await workOrderService.executePendingOrders()
-
-    // ReAct Protocol Integration (arXiv:2210.03629)
-    const { reactService } = await import('./services/react')
-    const reactTools = {
-      checkSystemState: async () => JSON.stringify(await import('./core').then(c => c.healthCheck())),
-      findOptimizations: async () => JSON.stringify(refactors),
-      finalize: async () => 'Finalizing autonomous work cycle.'
-    }
-    const reactSteps = await reactService.executeCycle('Optimize system posture using ReAct', reactTools)
-    this.recordTask(`ReAct: Completed ${reactSteps.length} reasoning-action steps.`)
-
-    await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
-    this.memory.lastOptimization = new Date().toISOString()
-    this.save()
-    console.log('🏆 [Jules] Autonomous Work Cycle Complete.')
   }
 
   private cachedBranchIntelligence: any[] | null = null
