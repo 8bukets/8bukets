@@ -75,7 +75,7 @@
                 "data": "episodic_data"
             },
             {
-                "timestamp": "2026-05-18T10:31:07.955189",
+                "timestamp": "2026-05-18T10:08:13.120789",
                 "event": "episodic_event",
                 "data": "episodic_data"
             }
@@ -108,7 +108,7 @@
     },
     "BidAgent": {
         "long_term": {
-            "adjustment_factor": 1.1046221254112045
+            "adjustment_factor": 1.1268250301319698
         },
         "episodic": []
     },

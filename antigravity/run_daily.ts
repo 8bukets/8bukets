@@ -1,3 +1,4 @@
+import { logAutonomousAction } from './core'
 import { jules } from './jules.ts';
 
 const isContinuous = process.argv.includes('--continuous');
@@ -5,7 +6,7 @@ const isContinuous = process.argv.includes('--continuous');
 async function run() {
   const { healthCheck } = await import('./core');
   const health = await healthCheck();
-  console.log(`🏥 [Antigravity Root] System Health: MongoDB=${health.mongodb}, Supabase=${health.supabase}`);
+  logAutonomousAction(`🏥 [Antigravity Root] System Health: MongoDB=${health.mongodb}, Supabase=${health.supabase}`, 'info');
 
   if (isContinuous) {
     await jules.startConsciousnessLoop();
