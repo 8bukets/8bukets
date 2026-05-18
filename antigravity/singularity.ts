@@ -18,21 +18,22 @@ export async function bootstrap(idea: { feature: string, rationale: string }) {
     return
   }
 
+  const identifier = idea.feature.replace(/[^a-zA-Z0-9]/g, '')
   const template = `/**
  * ${idea.feature}
  * Generated autonomously by the Antigravity Singularity Engine.
  * Rationale: ${idea.rationale}
  */
 import { z } from 'zod'
-import { autonomousFetch } from '@/antigravity/core'
+import { autonomousFetch } from '../core'
 
-export const ${idea.feature.replace(/\s+/g, '')}Schema = z.object({
+export const ${identifier}Schema = z.object({
   status: z.string(),
   lastRun: z.string()
 })
 
-export async function get${idea.feature.replace(/\s+/g, '')}Data() {
-  return autonomousFetch(${idea.feature.replace(/\s+/g, '')}Schema, async () => {
+export async function get${identifier}Data() {
+  return autonomousFetch(${identifier}Schema, async () => {
     return {
       status: 'active',
       lastRun: new Date().toISOString()
@@ -43,5 +44,28 @@ export async function get${idea.feature.replace(/\s+/g, '')}Data() {
 
   fs.writeFileSync(filePath, template)
   logAutonomousAction(`✅ [Singularity] Successfully generated ${serviceName}.ts`, 'info')
-  return { filePath, serviceName, feature: idea.feature }
+
+  // Generate Test File
+  const testPath = path.join(process.cwd(), 'antigravity/services', `${serviceName}.test.ts`)
+  if (!fs.existsSync(testPath)) {
+    const testTemplate = `/**
+ * ${idea.feature} Test
+ * Generated autonomously by the Antigravity Singularity Engine.
+ */
+import { describe, it, expect } from 'vitest'
+import * as service from './${serviceName}'
+
+describe('${idea.feature}', () => {
+  it('should have a functional data fetcher', async () => {
+    const data = await service.get${identifier}Data()
+    expect(data.status).toBe('active')
+    expect(data.lastRun).toBeDefined()
+  })
+})
+`
+    fs.writeFileSync(testPath, testTemplate)
+    logAutonomousAction(`🧪 [Singularity] Successfully generated ${serviceName}.test.ts`, 'info')
+  }
+
+  return { filePath, testPath, serviceName, feature: idea.feature }
 }
