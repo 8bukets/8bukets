@@ -43,8 +43,8 @@ export async function dispatchExecutiveBriefing(summary: string, details?: strin
   console.log('📢 [Notification] Dispatching executive briefing...')
 
   const fullMessage = details
-    ? `EXECUTIVE BRIEFING: ${summary}\n\nDETAILED SYNERGY:\n${details}`
-    : `EXECUTIVE BRIEFING: ${summary}`
+    ? `🔔 EXECUTIVE BRIEFING\n\nSUMMARY: ${summary}\n\n${details}`
+    : `🔔 EXECUTIVE BRIEFING: ${summary}`
 
   const briefing: Notification = {
     id: Math.random().toString(36).substr(2, 9),
