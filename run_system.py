@@ -27,6 +27,7 @@ from agents.autonomous_intelligence_agent import AutonomousIntelligenceAgent
 from agents.telemetry_agent import TelemetryAgent
 from agents.sigma_agent import SixSigmaAgent
 from agents.architect_agent import ArchitectAgent
+from agents.chief_ai_officer_agent import ChiefAIOfficerAgent
 from agents.github_evolution_agent import GitHubEvolutionAgent
 from agents.meta_coding_agent import MetaCodingAgent
 from agents.jules_evolution_agent import JulesEvolutionAgent
@@ -226,7 +227,7 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         ReActAgent(), RagAgent(), AutonomousIntelligenceAgent(),
 
         # Strategy & Execution
-        ArchitectAgent(), TargetingAgent(), CreativityAgent(), AdsAgent(),
+        ArchitectAgent(), ChiefAIOfficerAgent(), TargetingAgent(), CreativityAgent(), AdsAgent(),
         BidAgent(), MonetizationAgent(), ContentAgent(), SixSigmaAgent(),
 
         # DevOps & Evolution
