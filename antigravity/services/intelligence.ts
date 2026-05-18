@@ -28,11 +28,22 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `## 🎯 Mission Statement\n> ${metadata.missionStatement}\n\n`
 
   report += `## 🏥 System Sovereignty\n`
-  report += `- **Execution Environment:** ${process.env.GITHUB_ACTIONS ? 'Cloud (GitHub Actions)' : 'Local'}\n`
+  report += `- **Execution Environment:** ${process.env.GITHUB_ACTIONS ? 'Cloud (GitHub Actions)' : (process.env.GITLAB_CI ? 'Cloud (GitLab CI)' : (process.env.VERCEL ? 'Cloud (Vercel)' : 'Local'))}\n`
+  report += `- **Mode:** ${process.env.AUTONOMOUS_MODE || 'standard'}\n`
   report += `- **MongoDB:** ${health.mongodb}\n`
   report += `- **Supabase:** ${health.supabase}\n`
+
   const jenkinsHealth = await checkJenkinsHealth()
-  report += `- **Jenkins Pipeline:** ${jenkinsHealth.metrics.pipeline_efficiency}\n`
+  report += `- **Jenkins Pipeline:** ${jenkinsHealth.status} (${jenkinsHealth.metrics.pipeline_efficiency})\n`
+
+  const { checkDockerHealth } = await import('./docker')
+  const dockerHealth = await checkDockerHealth()
+  report += `- **Docker Status:** ${dockerHealth.status} (${dockerHealth.containerCount} containers)\n`
+
+  const { GitProviderService } = await import('./git_provider')
+  const prs = await (new GitProviderService()).listPullRequests()
+  report += `- **Open PRs/MRs:** ${prs.length}\n`
+
   report += `- **Total Branches:** ${branches.length}\n\n`
 
   report += `## 🌿 Branch Intelligence (Recent Activity)\n`

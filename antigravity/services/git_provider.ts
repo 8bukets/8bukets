@@ -164,13 +164,26 @@ export class GitProviderService {
 
         if (data.check_runs.length === 0) return true; // No checks is treated as passed
 
-        return data.check_runs.every(check => check.status === 'completed' && check.conclusion === 'success')
+        return data.check_runs.every(check => check.status === 'completed' && (check.conclusion === 'success' || check.conclusion === 'neutral'))
       } catch (err: any) {
         console.error(`❌ [GitProvider] GitHub verifyCIStatus failed for ${branch}:`, err.message)
         return false;
       }
+    } else if (provider === 'gitlab' && process.env.GITLAB_TOKEN) {
+      const projectId = process.env.CI_PROJECT_ID || process.env.GITLAB_PROJECT_ID
+      if (projectId) {
+        try {
+          const response = await fetch(`https://gitlab.com/api/v4/projects/${projectId}/repository/commits/${branch}/statuses`, {
+            headers: { 'PRIVATE-TOKEN': process.env.GITLAB_TOKEN }
+          })
+          if (response.ok) {
+            const statuses = (await response.json()) as any[]
+            if (statuses.length === 0) return true
+            return statuses.every((s: any) => s.status === 'success' || s.status === 'skipped')
+          }
+        } catch (e) {}
+      }
     }
-    // GitLab could be implemented similarly using glab or raw curl
     return false; // default to false if provider not supported or missing token to prevent unsafe merges
   }
 

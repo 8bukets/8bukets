@@ -54,10 +54,11 @@ export async function getDockerFleetStatus(): Promise<DockerContainer[]> {
 
 export async function checkDockerHealth() {
   const fleet = await getDockerFleetStatus()
+  const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL)
   let isHealthy = fleet.length > 0
   let isRecovering = false
 
-  if (!isHealthy) {
+  if (!isHealthy && !isCloud) {
     try {
       // Use async exec to prevent blocking the event loop
       execAsync('docker-compose up -d').catch(e => {
@@ -69,12 +70,15 @@ export async function checkDockerHealth() {
     }
   }
 
-  const isSimulated = process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true' || (Array.isArray(fleet) && fleet.some(c => c && c.id && c.id.startsWith('fallback')))
+  const isSimulated = process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true' ||
+                      (Array.isArray(fleet) && fleet.some(c => c && c.id && c.id.startsWith('fallback'))) ||
+                      (isCloud && !isHealthy)
 
   return {
-    status: isHealthy ? (isSimulated ? 'simulated' : 'optimal') : (isRecovering ? 'recovering' : 'disconnected'),
+    status: isHealthy ? (isSimulated ? 'simulated' : 'optimal') : (isRecovering ? 'recovering' : (isCloud ? 'cloud-active' : 'disconnected')),
     containerCount: fleet.length,
     timestamp: new Date().toISOString(),
-    mode: isSimulated ? 'cloud-adaptive' : 'native'
+    mode: isSimulated ? 'cloud-adaptive' : 'native',
+    is_cloud: isCloud
   }
 }

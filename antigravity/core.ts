@@ -199,6 +199,7 @@ export async function getSystemInsights() {
 
   const { getMissionMetadata } = await import('./services/collaboration')
   const { checkDockerHealth } = await import('./services/docker')
+  const { checkJenkinsHealth } = await import('./services/jenkins')
   const collaboration = await getMissionMetadata()
   const docker = await checkDockerHealth()
 
@@ -214,6 +215,11 @@ export async function getSystemInsights() {
         profile: getPredictiveProfile(tag)
       }))
     },
+    environment: {
+      isCloud,
+      mode: process.env.AUTONOMOUS_MODE || 'local',
+      platform: process.env.GITHUB_ACTIONS ? 'github' : (process.env.GITLAB_CI ? 'gitlab' : (process.env.VERCEL ? 'vercel' : 'macbook'))
+    },
     logs: logBuffer,
     ideas,
     persistence,
@@ -221,6 +227,7 @@ export async function getSystemInsights() {
     relay,
     collaboration,
     docker,
+    jenkins: await checkJenkinsHealth(),
     uptime: process.uptime()
   }
 
