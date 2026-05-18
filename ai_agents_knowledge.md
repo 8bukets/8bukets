@@ -289,3 +289,13 @@ Synthesized from Google Innovation & AI Blog
 - Gemini
 
 ---
+
+## [We’re launching the Google DeepMind Accelerator program in Asia Pacific to tackle environmental risks.](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/accelerator-ai-for-the-planet/)
+
+### Google Cloud Tools
+- Gemini
+
+---
+
+
+All the best - https://markposition.wordpress.com

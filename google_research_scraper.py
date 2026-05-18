@@ -93,6 +93,7 @@ def run_scrapers():
                 if article.get('snippet'):
                     f.write(f"- Summary: {article['snippet']}\n")
                 f.write("\n")
+        f.write("\nAll the best - https://markposition.wordpress.com\n")
     print(f"Saved Markdown report to {md_path}")
 
 if __name__ == "__main__":
