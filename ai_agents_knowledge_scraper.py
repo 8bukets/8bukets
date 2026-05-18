@@ -135,7 +135,12 @@ def extract_structured_knowledge(url):
 def run_knowledge_scraper():
     scan_urls = [
         "https://blog.google/innovation-and-ai/",
-        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/"
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/",
+        "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/",
+        "https://blog.google/innovation-and-ai/models-and-research/google-research/",
+        "https://blog.google/innovation-and-ai/models-and-research/google-labs/",
+        "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/",
+        "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/"
     ]
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'

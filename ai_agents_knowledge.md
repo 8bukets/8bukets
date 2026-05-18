@@ -297,5 +297,117 @@ Synthesized from Google Innovation & AI Blog
 
 ---
 
+## [Cloud Next ‘26: Momentum and innovation at Google scale](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cloud-next-2026-sundar-pichai/)
+
+### Definitions
+- **Basic explainer**: Google is growing its cloud business fast by helping companies build and manage thousands of AI agents. They’re launching new, powerful computer chips to handle all this extra work and keep systems secure from hackers. Google also uses its own AI tools to write code and fix security bugs much faster than before. These updates help businesses get more done with less effort.
+- **3. Introducing our eighth-generation TPUs**: In the era of AI agents, infrastructure needs to evolve to take on the most demanding AI workloads. This year, we’re bringing the eighth generation of our Tensor Processing Units with a dual chip approach: TPU 8t , optimized for training, scales up to 9,600 TPUs and 2 petabytes of shared, high-bandwidth memory in a single superpod. It achieves three times the processing power of Ironwood and delivers up to 2x more performance/watt. TPU 8i , optimized for inference, connects 1,152 TPUs in a single pod, dramatically reducing latency, with 3x more on-chip SRAM, to deliver the massive throughput and low latency needed to concurrently run millions of agents cost-effectively. We’ll offer these to Cloud customers as a core part of our selection of compute processors, along with a portfolio of NVIDIA GPU instances. Read more in our blog post .
+
+### Google Cloud Tools
+- Gemini
+- Kaggle
+
+---
+
+## [7 highlights from Google Cloud Next ‘26](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/google-cloud-next-26-recap/)
+
+### Definitions
+- **Basic explainer**: Google is moving into the "agentic era," where AI acts as a partner that can actually do work for you. They launched new tools that let anyone build these AI helpers without needing to know how to code. They also upgraded their massive computer chips and data systems to make sure these agents run faster and stay secure. Big companies are already using this tech to handle everything from customer orders to complex research.
+
+### Google Cloud Tools
+- Gemini
+- Kaggle
+
+---
+
+## [How Google Does It: An inside look at cybersecurity](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/how-google-does-it-security-series/)
+
+### Google Cloud Tools
+- Gemini
+
+---
+
+## [Google Cloud Next ‘26](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/next-2026/)
+
+### Google Cloud Tools
+- Gemini
+
+---
+
+## [Google Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/rss/)
+
+### Google Cloud Tools
+- Gemini
+- Kaggle
+
+---
+
+## [Measuring progress toward AGI: A cognitive framework](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/measuring-agi-cognitive-framework/)
+
+### Definitions
+- **General summary**: Google DeepMind wants to help measure the progress of Artificial General Intelligence (AGI) using cognitive science. Their new paper, "Measuring Progress Toward AGI: A Cognitive Taxonomy," presents a framework for understanding AI systems' cognitive capabilities. You can participate by designing evaluations for key cognitive abilities in their Kaggle hackathon for a chance to win from a prize pool of $200,000.
+
+### Google Cloud Tools
+- Gemini
+- Kaggle
+
+---
+
+## [Google DeepMind](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/rss/)
+
+### Google Cloud Tools
+- Gemini
+- Kaggle
+
+---
+
+## [Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/rss/)
+
+### Google Cloud Tools
+- Gemini
+
+---
+
+## [Introducing “vibe design” with Stitch](https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-ai-ui-design/)
+
+### Definitions
+- **General summary**: Stitch now uses AI to help you create high-fidelity UI designs from natural language. The new AI-native canvas lets you explore ideas, add images, text, or code, and provides a design agent to track your progress. Use voice commands for real-time design critiques and export designs to developer tools.
+
+### Google Cloud Tools
+- Gemini
+- Gemma
+- MCP
+- Kaggle
+
+---
+
+## [Google Research](https://blog.google/innovation-and-ai/models-and-research/google-research/rss/)
+
+### Google Cloud Tools
+- Gemini
+
+---
+
+## [Research](https://blog.google/innovation-and-ai/technology/research/)
+
+### Google Cloud Tools
+- Gemini
+
+---
+
+## [Building superconducting and neutral atom quantum computers](https://blog.google/innovation-and-ai/technology/research/neutral-atom-quantum-computers/)
+
+### Google Cloud Tools
+- Gemini
+
+---
+
+## [Quantum frontiers may be closer than they appear](https://blog.google/innovation-and-ai/technology/safety-security/cryptography-migration-timeline/)
+
+### Google Cloud Tools
+- Gemini
+
+---
+
 
 All the best - https://markposition.wordpress.com
