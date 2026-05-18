@@ -39,8 +39,20 @@ class OracleAIAgent(BaseAgent):
             "title": data.get("title", "Oracle AI Knowledge"),
             "key_points": [],
             "features": [],
-            "offers": []
+            "offers": [],
+            "database_capabilities": []
         }
+
+        # Process Key Links for database specific features
+        for link in data.get('key_links', []):
+            text = link.get('text', '')
+            url = link.get('url', '')
+            if 'database' in text.lower() or 'database' in url.lower():
+                knowledge_summary['database_capabilities'].append({"feature": text, "url": url})
+            elif 'heatwave' in text.lower() or 'heatwave' in url.lower():
+                knowledge_summary['database_capabilities'].append({"feature": text, "url": url})
+            elif 'vector search' in text.lower():
+                knowledge_summary['database_capabilities'].append({"feature": text, "url": url})
 
         for section in data.get('sections', []):
             heading = section.get('heading', '')
@@ -56,10 +68,19 @@ class OracleAIAgent(BaseAgent):
             else:
                 knowledge_summary["key_points"].append(heading)
 
+        # Remove duplicate database capabilities by URL
+        seen_urls = set()
+        unique_db_caps = []
+        for cap in knowledge_summary['database_capabilities']:
+            if cap['url'] not in seen_urls:
+                seen_urls.add(cap['url'])
+                unique_db_caps.append(cap)
+        knowledge_summary['database_capabilities'] = unique_db_caps
+
         # Update the system memory
         if memory_system is not None:
             memory_system.update("oracle_ai_knowledge", knowledge_summary)
 
-        self.log(f"Successfully integrated {len(knowledge_summary['key_points'])} key points and {len(knowledge_summary['features'])} features into system memory.")
+        self.log(f"Successfully integrated {len(knowledge_summary['key_points'])} key points, {len(knowledge_summary['features'])} features, and {len(knowledge_summary['database_capabilities'])} database capabilities into system memory.")
 
         return knowledge_summary
