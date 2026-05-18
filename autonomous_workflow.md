@@ -17,7 +17,12 @@ Type=simple
 User=root
 WorkingDirectory=/path/to/project
 Environment="SYSTEM_AUTH_TOKEN=your_secure_token"
-ExecStart=/usr/bin/python3 run_system.py --loop
+Environment="MONGODB_URI=your_mongodb_uri"
+Environment="NEXT_PUBLIC_SUPABASE_URL=your_supabase_url"
+Environment="NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key"
+Environment="GOOGLE_API_KEY=your_google_api_key"
+Environment="GEMINI_API_KEY=your_gemini_api_key"
+ExecStart=/usr/bin/npm run ignite
 Restart=on-failure
 RestartSec=10
 
@@ -37,7 +42,7 @@ If you prefer running it daily at a specific time (e.g., 2 AM) instead of a cont
 1. Open crontab: `crontab -e`
 2. Add the following line:
 ```cron
-0 2 * * * cd /path/to/project && SYSTEM_AUTH_TOKEN=your_secure_token /usr/bin/python3 run_system.py > /path/to/project/results/cron.log 2>&1
+0 2 * * * cd /path/to/project && SYSTEM_AUTH_TOKEN=your_secure_token MONGODB_URI=your_mongodb_uri NEXT_PUBLIC_SUPABASE_URL=your_supabase_url NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key GOOGLE_API_KEY=your_google_api_key GEMINI_API_KEY=your_gemini_api_key /usr/bin/npm run daily > /path/to/project/results/cron.log 2>&1
 ```
 
 ## 3. GitHub Actions (CI/CD Automation)

@@ -9,9 +9,9 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=production
-      - MONGODB_URI=${MONGODB_URI}
+      - MONGODB_URI=mongodb+srv://Vercel-Admin-atlas-beige-envelope:<db_password>@atlas-beige-envelope.xdsv2yt.mongodb.net/?appName=atlas-beige-envelope
       # Set your Supabase keys here or in a .env file
-      - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL}
+      - SUPABASE_DATABASE_URL=${SUPABASE_DATABASE_URL}
       - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
     networks:
       - app-network
