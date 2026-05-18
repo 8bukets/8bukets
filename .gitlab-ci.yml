@@ -1,31 +1,15 @@
-default:
-  before_script:
-    - echo "Setting up before running the job..."
-  after_script:
-    - echo "Cleaning up after the job..."
-
 build-job:
   stage: build
   script:
     - echo "Hello, $GITLAB_USER_LOGIN!"
-    - mkdir -p build_output
-    - echo "Build content" > build_output/log.txt
-  cache:
-    paths:
-      - node_modules/
-  artifacts:
-    paths:
-      - build_output/
 
 test-job1:
   stage: test
-  needs: ["build-job"]
   script:
     - echo "This job tests something"
 
 test-job2:
   stage: test
-  needs: ["build-job"]
   script:
     - echo "This job tests something, but takes more time than test-job1."
     - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
@@ -37,11 +21,3 @@ deploy-prod:
   script:
     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
   environment: production
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-
-include:
-  - template: Jobs/SAST.gitlab-ci.yml
-  - template: Jobs/Dependency-Scanning.gitlab-ci.yml
-  - template: Jobs/Secret-Detection.gitlab-ci.yml
-  - template: Jobs/Container-Scanning.gitlab-ci.yml
