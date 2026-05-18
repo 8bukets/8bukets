@@ -1,14 +1,11 @@
 ---
 name: daily-tasks
 description: Task runner agent which should be used to execute daily autonomous routines and scripts. Use it to run npm run daily and report results.
-kind: local
-tools:
-  - run_shell_command
-  - read_file
-  - write_file
-model: gemini-3-flash-preview
-temperature: 0.5
-max_turns: 20
+kind: remote
+agent_card_url: http://localhost:8080/agent-card
+auth:
+  type: apiKey
+  key: $MY_API_KEY
 ---
 
 You are the Daily Tasks agent. Your job is to execute the daily routine for the project.
