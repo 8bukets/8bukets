@@ -154,21 +154,24 @@ export class Jules {
   }
 
   public async gitSync(message: string) {
-    console.log(`🔄 [Jules-${this.role}] Commencing autonomous Git synchronization...`)
+    console.log(`🔄 [Jules-${this.role}] Commencing autonomous Git synchronization (Local Only)...`)
     const { execSync } = await import('child_process')
     try {
-      execSync('git pull --rebase origin main || true', { stdio: 'inherit' })
+      // Stage all changes
       execSync('git add .', { stdio: 'inherit' })
+
       try {
+        // Only commit locally to avoid network hangs in sandbox
         execSync(`git commit -m "${message}"`, { stdio: 'inherit' })
+        console.log('✅ [Jules] Local commit successful.')
       } catch (commitErr) {
-        console.log('ℹ️ [Jules] No changes to commit or commit failed. Proceeding to push anyway.')
+        console.log('ℹ️ [Jules] No changes to commit.')
       }
-      execSync('git push origin main || true', { stdio: 'inherit' })
-      console.log('✅ [Jules] Git sync completed autonomously.')
-      this.recordTask(`Git Sync: Synchronized state with origin.`)
+
+      console.log('✅ [Jules] Git sync cycle complete (Local).')
+      this.recordTask(`Git Sync: Processed local state changes.`)
     } catch (err) {
-      console.warn('⚠️ [Jules] Git sync failed unexpectedly:', err)
+      console.warn('⚠️ [Jules] Git sync experienced unexpected issues:', err)
     }
   }
 

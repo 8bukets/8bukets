@@ -1,6 +1,6 @@
 # ANTIGRAVITY AI AGENTS KNOWLEDGE BASE
 
-*Last Updated: 2026-05-17T12:06:01.078Z*
+*Last Updated: 2026-05-18T01:38:14.590Z*
 
 ## DOCUMENT: Intelephense Documentation
 **Source:** https://intelephense.com/docs
@@ -306,7 +306,7 @@ All the best - https://markposition.wordpress.com
 
 ## DOCUMENT: software info by fk – software-online-review – Filip Keser
 **Source:** https://software-online-review.com
-**Ingested At:** 2026-05-17T12:06:00.368Z
+**Ingested At:** 2026-05-18T01:38:13.945Z
 
 ### Introduction
 [Skip to content](#content)
@@ -4460,7 +4460,7 @@ Skip to content ↓
 
 ## DOCUMENT: intelephense_docs.md
 **Source:** local://intelephense_docs.md
-**Ingested At:** 2026-05-17T12:06:00.420Z
+**Ingested At:** 2026-05-18T01:38:13.986Z
 
 ### Intelephense Documentation
 
@@ -4762,7 +4762,7 @@ All the best - https://markposition.wordpress.com
 
 ## DOCUMENT: Intelephense: README
 **Source:** https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/README.md
-**Ingested At:** 2026-05-17T12:06:00.579Z
+**Ingested At:** 2026-05-18T01:38:14.172Z
 
 ### Intelephense
 Intelephense is a high performance, cross platform PHP language server adhering to the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/).
@@ -4790,7 +4790,7 @@ This is proprietary software released to end users under a "freemium" model. Man
 
 ## DOCUMENT: Intelephense: installation
 **Source:** https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/installation.md
-**Ingested At:** 2026-05-17T12:06:00.673Z
+**Ingested At:** 2026-05-18T01:38:14.285Z
 
 ### Installation
 
@@ -5564,7 +5564,7 @@ interface InitialisationOptions {
 
 ## DOCUMENT: Intelephense: gettingStarted
 **Source:** https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/gettingStarted.md
-**Ingested At:** 2026-05-17T12:06:00.780Z
+**Ingested At:** 2026-05-18T01:38:14.384Z
 
 ### Getting Started
 
@@ -6041,7 +6041,7 @@ Packages can be found online that aim to workaround these issues by providing st
 
 ## DOCUMENT: Intelephense: features
 **Source:** https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/features.md
-**Ingested At:** 2026-05-17T12:06:00.877Z
+**Ingested At:** 2026-05-18T01:38:14.473Z
 
 ### Features
 
@@ -6098,7 +6098,7 @@ Packages can be found online that aim to workaround these issues by providing st
 
 ## DOCUMENT: Intelephense: support
 **Source:** https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/support.md
-**Ingested At:** 2026-05-17T12:06:01.056Z
+**Ingested At:** 2026-05-18T01:38:14.565Z
 
 ### Overview
 https://github.com/bmewburn/vscode-intelephense/issues

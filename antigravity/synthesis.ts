@@ -74,6 +74,15 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
+  // Gap Analysis 7: Neural Performance Relay
+  if (!files.some(f => f.includes('performance_relay'))) {
+    ideas.push({
+      feature: 'Neural Performance Relay',
+      rationale: 'Optimizes cross-node communication latency through predictive relay positioning.',
+      complexity: 'Medium'
+    })
+  }
+
   // Force an idea for demonstration if none exist
   if (ideas.length === 0) {
     ideas.push({
