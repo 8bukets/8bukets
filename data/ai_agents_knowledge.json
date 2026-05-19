@@ -430,5 +430,167 @@
         "google_cloud_tools": [
             "Gemini"
         ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cloud-next-2026-sundar-pichai/",
+        "title": "Cloud Next ‘26: Momentum and innovation at Google scale",
+        "definitions": [
+            {
+                "term": "Basic explainer",
+                "text": "Google is growing its cloud business fast by helping companies build and manage thousands of AI agents. They’re launching new, powerful computer chips to handle all this extra work and keep systems secure from hackers. Google also uses its own AI tools to write code and fix security bugs much faster than before. These updates help businesses get more done with less effort."
+            },
+            {
+                "term": "3. Introducing our eighth-generation TPUs",
+                "text": "In the era of AI agents, infrastructure needs to evolve to take on the most demanding AI workloads. This year, we’re bringing the eighth generation of our Tensor Processing Units with a dual chip approach: TPU 8t , optimized for training, scales up to 9,600 TPUs and 2 petabytes of shared, high-bandwidth memory in a single superpod. It achieves three times the processing power of Ironwood and delivers up to 2x more performance/watt. TPU 8i , optimized for inference, connects 1,152 TPUs in a single pod, dramatically reducing latency, with 3x more on-chip SRAM, to deliver the massive throughput and low latency needed to concurrently run millions of agents cost-effectively. We’ll offer these to Cloud customers as a core part of our selection of compute processors, along with a portfolio of NVIDIA GPU instances. Read more in our blog post ."
+            }
+        ],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini",
+            "Kaggle"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/google-cloud-next-26-recap/",
+        "title": "7 highlights from Google Cloud Next ‘26",
+        "definitions": [
+            {
+                "term": "Basic explainer",
+                "text": "Google is moving into the \"agentic era,\" where AI acts as a partner that can actually do work for you. They launched new tools that let anyone build these AI helpers without needing to know how to code. They also upgraded their massive computer chips and data systems to make sure these agents run faster and stay secure. Big companies are already using this tech to handle everything from customer orders to complex research."
+            }
+        ],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini",
+            "Kaggle"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/how-google-does-it-security-series/",
+        "title": "How Google Does It: An inside look at cybersecurity",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/next-2026/",
+        "title": "Google Cloud Next ‘26",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/rss/",
+        "title": "Google Cloud",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini",
+            "Kaggle"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/measuring-agi-cognitive-framework/",
+        "title": "Measuring progress toward AGI: A cognitive framework",
+        "definitions": [
+            {
+                "term": "General summary",
+                "text": "Google DeepMind wants to help measure the progress of Artificial General Intelligence (AGI) using cognitive science. Their new paper, \"Measuring Progress Toward AGI: A Cognitive Taxonomy,\" presents a framework for understanding AI systems' cognitive capabilities. You can participate by designing evaluations for key cognitive abilities in their Kaggle hackathon for a chance to win from a prize pool of $200,000."
+            }
+        ],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini",
+            "Kaggle"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/rss/",
+        "title": "Google DeepMind",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini",
+            "Kaggle"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/rss/",
+        "title": "Google Labs",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-ai-ui-design/",
+        "title": "Introducing “vibe design” with Stitch",
+        "definitions": [
+            {
+                "term": "General summary",
+                "text": "Stitch now uses AI to help you create high-fidelity UI designs from natural language. The new AI-native canvas lets you explore ideas, add images, text, or code, and provides a design agent to track your progress. Use voice commands for real-time design critiques and export designs to developer tools."
+            }
+        ],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini",
+            "Gemma",
+            "MCP",
+            "Kaggle"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/rss/",
+        "title": "Google Research",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/technology/research/",
+        "title": "Research",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/technology/research/neutral-atom-quantum-computers/",
+        "title": "Building superconducting and neutral atom quantum computers",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/technology/safety-security/cryptography-migration-timeline/",
+        "title": "Quantum frontiers may be closer than they appear",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini"
+        ]
     }
 ]
