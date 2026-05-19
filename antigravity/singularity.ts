@@ -133,7 +133,7 @@ run-autonomous-${serviceName}:
             }
         }\n`
     if (!jenkinsContent.includes(`stage('Run Autonomous ${idea.feature}')`)) {
-      jenkinsContent = jenkinsContent.replace(/        stage\('Ignite System'\) \{/g, jenkinsStage + "        stage('Ignite System') {")
+      jenkinsContent = jenkinsContent.replace(/        stage\('Creative Workflow'\) \{/g, jenkinsStage + "        stage('Creative Workflow') {")
       fs.writeFileSync(jenkinsPath, jenkinsContent)
       console.log(`✅ [Singularity] Successfully updated Jenkinsfile with ${serviceName} stage`)
     }

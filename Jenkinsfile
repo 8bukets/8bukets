@@ -36,6 +36,26 @@ pipeline {
             }
         }
 
+        stage('Creative Workflow') {
+            parallel {
+                stage('Market Analysis') {
+                    steps {
+                        sh 'python3 scraper.py'
+                    }
+                }
+                stage('Daily Tasks') {
+                    steps {
+                        sh 'npm run daily'
+                    }
+                }
+                stage('Asset Generation') {
+                    steps {
+                        sh 'python3 analytics.py'
+                    }
+                }
+            }
+        }
+
         stage('Ignite System') {
             steps {
                 script {
