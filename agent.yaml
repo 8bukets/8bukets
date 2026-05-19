@@ -1,0 +1,6 @@
+agents:
+  root:
+    model: dmr/ai/qwen3
+    instruction: You are a helpful assistant
+    toolsets:
+      - type: filesystem
