@@ -303,7 +303,9 @@ async def main():
             if not args.skip_scraper:
                 run_scraper()
             await run_cycle(args.token, args.skip_scraper)
+            # TypeScript cycle generates new BOOTSTRAP_SERVICE and SMOKE_TEST orders
             run_typescript_cycle()
+            # process_work_orders handles Python-specific tasks (e.g. DEPLOYMENT, CONTENT_CREATION)
             process_work_orders()
             run_audit()
             logger.info("✅ DRY-RUN complete. System is stable.")
@@ -322,6 +324,7 @@ async def main():
                 if not args.skip_scraper:
                     run_scraper()
                 await run_cycle(args.token, args.skip_scraper)
+                # Ensure TypeScript work (order generation) happens before Python processing
                 run_typescript_cycle()
                 process_work_orders()
                 run_audit()
@@ -337,6 +340,7 @@ async def main():
         if not args.skip_scraper:
             run_scraper()
         await run_cycle(args.token, args.skip_scraper)
+        # Ensure TypeScript work (order generation) happens before Python processing
         run_typescript_cycle()
         process_work_orders()
         run_audit()

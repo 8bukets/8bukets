@@ -67,5 +67,23 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
+  // Gap Analysis 6: Performance Monitoring
+  if (!files.some(f => f.includes('performance'))) {
+    ideas.push({
+      feature: 'Performance Monitoring Service',
+      rationale: 'Tracks system latency and resource utilization to identify bottlenecks autonomously.',
+      complexity: 'Medium'
+    })
+  }
+
+  // Gap Analysis 7: Feedback Analysis
+  if (!files.some(f => f.includes('feedback'))) {
+    ideas.push({
+      feature: 'Feedback Analysis Service',
+      rationale: 'Analyzes user feedback and system logs to prioritize feature development and bug fixes.',
+      complexity: 'Medium'
+    })
+  }
+
   return ideas
 }
