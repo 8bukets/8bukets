@@ -1030,6 +1030,41 @@
       "id": "52e7y55sv",
       "status": "completed",
       "goal": "Branch Intelligence: Force-scanned 1819 branches."
+    },
+    {
+      "id": "gns37g8iq",
+      "status": "completed",
+      "goal": "Knowledge Observed: Extracted intelligence from https://software-online-review.com"
+    },
+    {
+      "id": "c7gvljf1u",
+      "status": "completed",
+      "goal": "Knowledge Observed: Extracted intelligence from https://markposition.wordpress.com"
+    },
+    {
+      "id": "c4507jgmy",
+      "status": "completed",
+      "goal": "Knowledge Observation: Ingested Gemma 4 Technical Report"
+    },
+    {
+      "id": "z1kxa8h06",
+      "status": "completed",
+      "goal": "Knowledge Observation: Ingested LiteRT Framework Documentation"
+    },
+    {
+      "id": "2s8s2rmhb",
+      "status": "completed",
+      "goal": "Knowledge Observation: Ingested OpenTelemetry Ecosystem Analysis"
+    },
+    {
+      "id": "kiu5vjusq",
+      "status": "completed",
+      "goal": "Knowledge Observation: Ingested Google Ads Strategic Documentation"
+    },
+    {
+      "id": "nakfsetcw",
+      "status": "completed",
+      "goal": "Knowledge Observation: Ingested AI Agents Concept & Architecture"
     }
   ]
 }
