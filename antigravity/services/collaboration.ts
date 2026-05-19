@@ -142,19 +142,31 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     synergies: []
   }
 
-  // Phase 12: Dynamic Resource Discovery
-  const servicesDir = path.join(process.cwd(), 'antigravity/services')
-  if (fs.existsSync(servicesDir)) {
-    const files = await fs.promises.readdir(servicesDir)
-    for (const file of files) {
-      if (file.endsWith('.ts') && !file.endsWith('.test.ts')) {
-        map.resourceInventory.push({
-          type: 'Service',
-          name: file.replace('.ts', ''),
-          status: 'Active',
-          path: `antigravity/services/${file}`
-        })
-      }
+  // Phase 12: Dynamic Resource Discovery (Expanded)
+  const scanDirs = [
+    { path: 'antigravity/services', type: 'Service', pattern: /\.ts$/ },
+    { path: 'scripts', type: 'Automation Script', pattern: /\.ts$|\.sh$/ },
+    { path: 'app', type: 'UI Component', pattern: /\.tsx$|\.ts$/ },
+    { path: 'web-app', type: 'UI Component', pattern: /\.tsx$|\.ts$/ },
+    { path: 'public', type: 'Asset', pattern: /.*/ }
+  ]
+
+  for (const dir of scanDirs) {
+    const fullPath = path.join(process.cwd(), dir.path)
+    if (fs.existsSync(fullPath)) {
+      try {
+        const files = await fs.promises.readdir(fullPath)
+        for (const file of files) {
+          if (!file.includes('.test.') && (dir.pattern.test(file))) {
+            map.resourceInventory.push({
+              type: dir.type,
+              name: file.split('.')[0],
+              status: 'Active',
+              path: `${dir.path}/${file}`
+            })
+          }
+        }
+      } catch (e) {}
     }
   }
 
@@ -306,15 +318,19 @@ export async function mergeBranchInsights(branches: any[]) {
       return false;
     }
 
-    // Improved deduplication: Check if this specific result for this branch is already recorded
+    // Improved deduplication: Check if this specific result or knowledge for this branch is already recorded
     const branchIdentifier = `- **Branch:** \`${b.name}\``;
     const resultIdentifier = `  - **Result:** ${b.results}`;
+    const knowledgeIdentifier = b.knowledge ? `  - **Knowledge:** ${b.knowledge}` : '';
 
     if (existingContent.includes(branchIdentifier)) {
-        // If branch exists, check if the result is also there
-        const branchSection = existingContent.split(branchIdentifier)[1].split('##')[0]; // Crude section isolation
-        if (branchSection.includes(resultIdentifier)) {
-            return false;
+        // Isolate the section for this branch to avoid cross-branch false positives
+        const parts = existingContent.split(branchIdentifier)
+        for (let i = 1; i < parts.length; i++) {
+          const branchSection = parts[i].split('##')[0];
+          if (branchSection.includes(resultIdentifier) && (!knowledgeIdentifier || branchSection.includes(knowledgeIdentifier))) {
+              return false;
+          }
         }
     }
 

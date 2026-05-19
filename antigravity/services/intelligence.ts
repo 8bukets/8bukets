@@ -23,6 +23,11 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   let report = `# CONSOLIDATED INTELLIGENCE REPORT\n\n`
   report += `*Generated: ${new Date().toISOString()}*\n\n`
 
+  report += `## 📋 Executive Summary\n`
+  report += `- **System Posture:** ${health.mongodb === 'connected' && health.supabase === 'connected' ? '✅ OPTIMAL' : '⚠️ DEGRADED'}\n`
+  report += `- **Active Synergy:** ${branches.length} branches analyzed across multiple domains.\n`
+  report += `- **Mission Alignment:** ${metadata.goals.length} strategic goals tracked.\n\n`
+
   report += `## 🎯 Mission Statement\n> ${metadata.missionStatement}\n\n`
 
   report += `## 🏥 System Sovereignty\n`
@@ -141,6 +146,19 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   metadata.stakeholders.forEach(s => {
     report += `- **${s.role}**: ${s.email}\n`
   })
+  report += `\n`
+
+  report += `## 🚀 Prioritized Action Items\n`
+  if (health.mongodb !== 'connected') report += `- [CRITICAL] Restore MongoDB Atlas connectivity.\n`
+  if (workOrders.length > 5) report += `- [HIGH] Process backlog of ${workOrders.length} pending work orders.\n`
+
+  const highIntensitySynergies = relationshipMap.synergies.filter((s: any) => s.intensity === 'High')
+  highIntensitySynergies.forEach((s: any) => {
+    report += `- [MEDIUM] Resolve High-Intensity conflict/synergy on resource: \`${s.resource}\` (${s.branches.length} branches).\n`
+  })
+
+  if (branches.length > 1500) report += `- [LOW] Prune or merge stagnant ecosystem branches (Total: ${branches.length}).\n`
+  report += `- [INFO] Continue autonomous knowledge ingestion for market intelligence.\n`
 
   fs.writeFileSync(reportPath, report)
   console.log(`✅ [Intelligence] Report saved to ${reportPath}`)
