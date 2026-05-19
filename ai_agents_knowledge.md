@@ -1928,5 +1928,60 @@ Subagents are enabled by default. To disable them, set `enableAgents` to false i
 ```
 
 
+## Docker Gordon
+
+Gordon is an AI-powered assistant that takes action on your Docker workflows. It analyzes your environment, proposes solutions, and executes commands with your permission. Available in Docker Desktop and via the docker ai CLI command.
+
+What Gordon does
+Gordon takes action to help you with Docker tasks:
+
+Explains Docker concepts and commands
+Searches Docker documentation and web resources for solutions
+Writes and modifies Dockerfiles following best practices
+Debugs container failures by reading logs and proposing fixes
+Manages containers, images, volumes, and networks
+Gordon proposes every action before executing. You approve what it does.
+
+Get started
+Prerequisites
+Before you begin:
+
+Docker Desktop 4.74 or later
+Sign in to your Docker account
+Note
+Gordon is enabled by default for signed-in Docker users. If your account belongs to an organization with a Business subscription, access requires two additional steps:
+
+Contact Docker Support to activate Gordon for your organization. Docker will confirm when activation is complete.
+Once confirmed, an organization administrator must set Enable Gordon to Enabled or Always enabled in the Admin Console. Do not leave the setting at its default value, as this will not activate Gordon organization-wide.
+Quick start
+Docker Desktop CLI
+Open Docker Desktop.
+
+Select Gordon in the sidebar.
+
+Select your project directory.
+
+Type a question: "What containers are running?"
+
+Gordon running in Docker Desktop
+Review Gordon's proposed actions and approve.
+
+Permissions
+By default, Gordon asks for approval before executing actions. You can approve individual actions or allow all actions for the current session.
+
+Gordon permission request
+Permissions reset for each session. To configure default permissions or enable auto-approve mode, see Permissions.
+
+Try these examples
+Container inspection:
+
+ docker ai "show me logs from my nginx container"
+Dockerfile review:
+
+ docker ai "review my Dockerfile for best practices"
+Image management:
+
+ docker ai "list my local images and their sizes"
+
 ---
 All the best - https://markposition.wordpress.com
