@@ -19,16 +19,16 @@
         "containerCount": 2,
         "simulated": true,
         "multiStageStatus": "multi-stage",
-        "timestamp": "2026-05-19T00:23:07.379Z"
+        "timestamp": "2026-05-19T03:08:07.843Z"
     },
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1779150187379,
+        "timestamp": 1779160087843,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
-        "branches": 1814,
+        "branches": 1821,
         "pendingTasks": 0,
         "relationshipMap": {
             "stakeholderEngagement": {
@@ -69,7 +69,6 @@
             },
             "goalAlignment": {
                 "Achieve full autonomous work cycles.": [
-                    "jules-2098058797614095194-0ea225b4",
                     "remotes/origin/add-malubeach-scraper-16704333902164650708",
                     "remotes/origin/add-mysql-agent-12534386317238704274",
                     "remotes/origin/autonomous-agents-framework-90146205652415261",
@@ -100,6 +99,7 @@
                     "remotes/origin/feat/autonomous-cloud-evolution-7110023434295372001",
                     "remotes/origin/feat/autonomous-cloud-presence-13349070200456458168",
                     "remotes/origin/feat/autonomous-cloud-presence-978332573715716812",
+                    "remotes/origin/feat/autonomous-cloud-presence-enhancement-11813668786867103175",
                     "remotes/origin/feat/autonomous-creation-cycle-10567644799753050340",
                     "remotes/origin/feat/autonomous-creation-cycle-14040463371825265667",
                     "remotes/origin/feat/autonomous-creation-cycle-2519215097742916370",
@@ -118,6 +118,8 @@
                     "remotes/origin/feat/custom-github-action-10612201952418849138",
                     "remotes/origin/feat/dual-engine-autonomous-collaboration-180989571444817477",
                     "remotes/origin/feat/full-autonomous-creation-execution-17830710122661382280",
+                    "remotes/origin/feat/full-autonomous-creation-execution-v2-2098058797614095194",
+                    "remotes/origin/feat/full-autonomous-online-engine-13146767980189175838",
                     "remotes/origin/feat/full-ecosystem-collaboration-sync-2223737222399285274",
                     "remotes/origin/feat/gemma-4-scraper-14386039384216646408",
                     "remotes/origin/feat/intelephense-docs-ingestion-5058226112541762188",
@@ -169,6 +171,7 @@
                     "remotes/origin/jules-full-autonomus-workflow-8744732568350416698",
                     "remotes/origin/jules-improve-knowledge-workflows-9958740170618720237",
                     "remotes/origin/jules-improve-workflow-and-knowledge-observer-11114380607500005512",
+                    "remotes/origin/jules/scraper-markposition-17752547678215960211",
                     "remotes/origin/multi-cloud-workflow-intelligence-12208347123975439755",
                     "remotes/origin/opt-scraper-regex-6404737091544860092",
                     "remotes/origin/palette-cli-ux-5136733467430420971",
@@ -179,6 +182,7 @@
                     "remotes/origin/palette-report-percentages-17226232511035798370",
                     "remotes/origin/palette-ux-report-improvements-13543414258176947990",
                     "remotes/origin/palette-ux-scraper-logging-11386897257754529243",
+                    "remotes/origin/react-agent-deployment-improvements-5434617022495989509",
                     "remotes/origin/sentinel-csv-injection-fix-10966589273094838978",
                     "remotes/origin/sentinel-csv-injection-fix-15245071254079934303",
                     "remotes/origin/sentinel-csv-injection-fix-2894680455719942553",
@@ -286,7 +290,6 @@
                     "remotes/origin/jules-knowledge-merge-collaboration-3722212575858302197",
                     "remotes/origin/jules/add-system-patent-947552789592854459",
                     "remotes/origin/jules/compile-knowledge-integration-4875845775501523719",
-                    "remotes/origin/jules/scraper-markposition-17752547678215960211",
                     "remotes/origin/oracle-ai-database-integration-1558530856752998309",
                     "remotes/origin/oracle-google-cloud-agents-15432798509012982749",
                     "remotes/origin/update-mcp-docker-security-11834660539572533331"
@@ -310,12 +313,14 @@
                     "remotes/origin/feat/docker-collaboration-sync-231662997979975664",
                     "remotes/origin/feat/dual-engine-autonomous-collaboration-180989571444817477",
                     "remotes/origin/feat/ecosystem-merge-collaboration-sync-v1-13937591330884389226",
+                    "remotes/origin/feat/full-autonomous-online-engine-13146767980189175838",
                     "remotes/origin/feat/full-ecosystem-collaboration-sync-2223737222399285274",
                     "remotes/origin/feature/autonomous-cloud-simulation-presence-15239864471767221481",
                     "remotes/origin/feature/docker-collaboration-sync-2408669220271786015",
                     "remotes/origin/feature/unified-autonomous-creation-execution-9112787488112891184",
                     "remotes/origin/fix/docker-collaboration-sync-3245584476125900421",
-                    "remotes/origin/jules-knowledge-merge-collaboration-3722212575858302197"
+                    "remotes/origin/jules-knowledge-merge-collaboration-3722212575858302197",
+                    "remotes/origin/jules/scraper-markposition-17752547678215960211"
                 ],
                 "Utilize Jenkins CI/CD to facilitate continuous integration, build orchestration, and system ignition.": [
                     "remotes/origin/add-duo-planner-agent-8887381606310982436",
@@ -671,33 +676,9 @@
                 },
                 {
                     "type": "Knowledge",
-                    "name": "Intelephense: README",
+                    "name": "Per iniziare  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle",
                     "status": "Ingested",
-                    "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/README.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Intelephense: installation",
-                    "status": "Ingested",
-                    "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/installation.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Intelephense: gettingStarted",
-                    "status": "Ingested",
-                    "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/gettingStarted.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Intelephense: features",
-                    "status": "Ingested",
-                    "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/features.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Intelephense: support",
-                    "status": "Ingested",
-                    "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/support.md"
+                    "source": "https://developers.google.com/ad-manager/api/start"
                 },
                 {
                     "type": "Documentation",
@@ -797,6 +778,12 @@
                     "name": "remotes/origin/feat/autonomous-cloud-presence-978332573715716812",
                     "status": "Ready for Merge",
                     "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-cloud-presence-978332573715716812"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "remotes/origin/feat/autonomous-cloud-presence-enhancement-11813668786867103175",
+                    "status": "Ready for Merge",
+                    "result": "enhance autonomous cloud presence and PR management"
                 },
                 {
                     "type": "Branch Result",
@@ -908,6 +895,12 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "remotes/origin/feat/consolidate-intelephense-docs-v2-6711603966730800844",
+                    "status": "Ready for Merge",
+                    "result": "consolidate Intelephense documentation into a single entry"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "remotes/origin/feat/consolidated-intelligence-sync-1091614933754712837",
                     "status": "Ready for Merge",
                     "result": "implement consolidated intelligence and branch scanning"
@@ -971,6 +964,18 @@
                     "name": "remotes/origin/feat/full-autonomous-creation-execution-17830710122661382280",
                     "status": "Ready for Merge",
                     "result": "implement full autonomous creation order and execution chain"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "remotes/origin/feat/full-autonomous-creation-execution-v2-2098058797614095194",
+                    "status": "Ready for Merge",
+                    "result": "implement full autonomous creation order and execution chain"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "remotes/origin/feat/full-autonomous-online-engine-13146767980189175838",
+                    "status": "Ready for Merge",
+                    "result": "establish full autonomous cloud-connected engine"
                 },
                 {
                     "type": "Branch Result",
@@ -1067,6 +1072,12 @@
                     "name": "remotes/origin/feat/improve-intelephense-knowledge-ingestion-v2-3857533015746943913",
                     "status": "Ready for Merge",
                     "result": "improve Intelephense documentation ingestion and parser robustness"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "remotes/origin/feat/improve-intelephense-knowledge-ingestion-v3-5924406336570391943",
+                    "status": "Ready for Merge",
+                    "result": "Improve Intelephense knowledge ingestion and parser robustness"
                 },
                 {
                     "type": "Branch Result",
@@ -1531,18 +1542,8 @@
                     "result": "add Wilson Sonsini documentation in MD and JSON formats"
                 }
             ],
-            "synergies": [
-                {
-                    "type": "Resource Conflict/Synergy",
-                    "resource": "work_order",
-                    "branches": [
-                        "jules-2098058797614095194-0ea225b4",
-                        "main"
-                    ],
-                    "intensity": "Medium"
-                }
-            ]
+            "synergies": []
         }
     },
-    "last_sync": "2026-05-19T00:23:07.685Z"
+    "last_sync": "2026-05-19T03:08:08.185Z"
 }

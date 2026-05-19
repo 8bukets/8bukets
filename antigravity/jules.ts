@@ -335,27 +335,43 @@ export class Jules {
           else if (branch.includes('research/')) category = 'research'
 
           // Enhanced Result & Knowledge Extraction
-          const resultMatch = message.match(/(?:results|fixes|implements|adds):\s*(.*)/i)
+          const resultMatch = message.match(/(?:results|fixes|implements|adds|integrates|updates|optimizes):\s*(.*)/i)
           const results = resultMatch ? resultMatch[1].trim() : (message.includes(':') ? message.split(':')[1].trim() : message)
 
-          const knowledgeNugget = message.toLowerCase().includes('learn') || message.toLowerCase().includes('observe')
+          const knowledgeNugget = message.toLowerCase().match(/(?:learn|observe|ingest|knowledge):\s*(.*)/i)
             ? `Branch ${branch} observed: ${results}`
-            : undefined
+            : (message.toLowerCase().includes('learn') || message.toLowerCase().includes('observe') ? `Branch ${branch} observed: ${results}` : undefined)
 
           // Phase 12: Advanced Branch Analysis (File Changes & Domain Mapping)
           let changedFiles: string[] = []
           let domain = 'General'
           try {
-            const diffCommand = branch === 'main' ? 'git diff --name-only HEAD~1' : `git diff --name-only main...${branch}`
-            const diffOutput = execSync(diffCommand).toString().trim()
+            let diffCommand = branch === 'main' ? 'git diff --name-only HEAD~1' : `git diff --name-only main...${branch}`
+            let diffOutput = ''
+
+            try {
+              diffOutput = execSync(diffCommand, { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim()
+            } catch (e) {
+              // Fallback 1: Direct comparison
+              diffCommand = `git diff --name-only main ${branch}`
+              try {
+                diffOutput = execSync(diffCommand, { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim()
+              } catch (e2) {
+                // Fallback 2: Last commit changes
+                diffCommand = `git show --name-only --format="" ${branch}`
+                diffOutput = execSync(diffCommand, { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim()
+              }
+            }
+
             changedFiles = diffOutput ? diffOutput.split('\n') : []
 
-            if (changedFiles.some(f => f.includes('security') || f.includes('auth') || f.includes('sentinel'))) domain = 'Security'
-            else if (changedFiles.some(f => f.includes('optimization') || f.includes('analytics') || f.includes('scaling'))) domain = 'Performance'
-            else if (changedFiles.some(f => f.includes('docker') || f.includes('jenkins') || f.includes('ci') || f.includes('deployment') || f.includes('orchestrator'))) domain = 'Infrastructure'
-            else if (changedFiles.some(f => f.includes('jules') || f.includes('agent') || f.includes('intelligence') || f.includes('synthesis') || f.includes('react'))) domain = 'AI'
+            if (changedFiles.some(f => f.includes('security') || f.includes('auth') || f.includes('sentinel') || f.includes('validation'))) domain = 'Security'
+            else if (changedFiles.some(f => f.includes('optimization') || f.includes('analytics') || f.includes('scaling') || f.includes('perf'))) domain = 'Performance'
+            else if (changedFiles.some(f => f.includes('docker') || f.includes('jenkins') || f.includes('ci') || f.includes('deployment') || f.includes('orchestrator') || f.includes('workflow'))) domain = 'Infrastructure'
+            else if (changedFiles.some(f => f.includes('jules') || f.includes('agent') || f.includes('intelligence') || f.includes('synthesis') || f.includes('react') || f.includes('neural'))) domain = 'AI'
+            else if (changedFiles.some(f => f.includes('app/') || f.includes('web-app/') || f.includes('my-app/') || f.includes('.tsx') || f.includes('.css'))) domain = 'UI/Frontend'
           } catch (diffErr) {
-            // Fallback for cases where diff fails (e.g., shallow clones or missing merge base)
+            // Fallback for cases where all diff strategies fail
           }
 
           return {
