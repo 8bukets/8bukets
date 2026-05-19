@@ -27,6 +27,33 @@ services:
     networks:
       - app-network
 
+  sor8bukets:
+    build:
+      context: ./sor8bukets
+      dockerfile: Dockerfile
+    ports:
+      - "8787:8787"
+    networks:
+      - app-network
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared-tunnel
+    restart: always
+    command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}
+    networks:
+      - app-network
+    depends_on:
+      - sor8bukets
+
 networks:
   app-network:
     driver: bridge
+    enable_ipv6: true
+    ipam:
+      driver: default
+      config:
+        # Default IPv4 Cloudflare Source Subnet
+        - subnet: 100.64.0.0/12
+        # Default IPv6 Cloudflare Source Subnet
+        - subnet: 2606:4700:cf1:5000::/64
