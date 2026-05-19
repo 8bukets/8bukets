@@ -171,16 +171,6 @@ def create_autonomous_orders():
             "created_at": datetime.now().isoformat()
         })
 
-    # NEW ICLOUD SYNC ORDER: Implemented per 8bukets architecture synthesis
-    if not any(o["type"] == "CLOUD_INTELLIGENCE_MERGE" and o["status"] == "pending" for o in orders):
-        new_orders.append({
-            "id": f"AUTO_CLOUD_MERGE_{datetime.now().strftime('%H%M%S')}",
-            "type": "CLOUD_INTELLIGENCE_MERGE",
-            "description": "Autonomous sync of iCloud 8bukets intelligence",
-            "status": "pending",
-            "created_at": datetime.now().isoformat()
-        })
-
     # Add a maintenance test
     if not any(o["type"] == "TESTING" and o["status"] == "pending" for o in orders):
         new_orders.append({
@@ -275,20 +265,6 @@ async def process_work_orders():
                     logger.info(f"✅ Research {order['id']} completed.")
                 except Exception as e:
                     logger.error(f"❌ Research {order['id']} failed: {e}")
-                    order["status"] = "failed"
-                    updated = True
-            elif order_type == "CLOUD_INTELLIGENCE_MERGE":
-                logger.info(f"☁️ Executing Cloud Intelligence Merge Work Order: {order['id']}")
-                try:
-                    # In a real environment, this would execute sync_icloud.py
-                    # and ingest data using the newly enhanced CreativityAgent capabilities.
-                    subprocess.run(["python3", "sync_icloud.py", "--pull"], check=False)
-                    order["status"] = "completed"
-                    order["updated_at"] = datetime.now().isoformat()
-                    updated = True
-                    logger.info(f"✅ Cloud Intelligence Merge {order['id']} completed.")
-                except Exception as e:
-                    logger.error(f"❌ Cloud Intelligence Merge {order['id']} failed: {e}")
                     order["status"] = "failed"
                     updated = True
             elif order_type in ["BOOTSTRAP_SERVICE", "OPTIMIZE_SYSTEM", "CONTENT_GENERATION"]:

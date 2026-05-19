@@ -34,17 +34,4 @@ class CreativityAgent(BaseAgent):
             if use_cases.get("data"):
                 concepts.append("Data Insights: Unleashing Data Agents on Complex Analytics")
 
-        # NEW ENHANCEMENT: Map concepts directly to Work Orders as suggested by 8bukets intelligence
-        executable_orders = []
-        for i, concept in enumerate(concepts):
-            executable_orders.append({
-                "id": f"AUTO_CREATIVE_EXEC_{i}",
-                "type": "CONTENT_CREATION",
-                "description": concept,
-                "status": "pending"
-            })
-
-        # Blackboard doesn't have a sync set() method natively in BaseAgent,
-        # but agents return dicts which are merged into blackboard asynchronously.
-
-        return {"creative_concepts": concepts, "creative_work_orders": executable_orders}
+        return {"creative_concepts": concepts}
