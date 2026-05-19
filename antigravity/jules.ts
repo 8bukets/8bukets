@@ -318,21 +318,22 @@ export class Jules {
     console.log(`🔍 [Jules-${this.role}] Scanning ecosystem branches...`)
     const { execSync } = await import('child_process')
     try {
-      const branchesRaw = execSync('git branch -a').toString()
-      const branches = branchesRaw.split('\n')
-        .map(b => b.replace('*', '').trim())
-        .filter(b => b && !b.includes('->'))
+      // Optimization: Use git for-each-ref to get the 50 most recent branches (local and remote) efficiently.
+      // Format: branch_name|subject|timestamp
+      const cmd = `git for-each-ref --sort=-committerdate --format="%(refname:short)|%(contents:subject)|%(committerdate:unix)" refs/heads refs/remotes/origin --count=50`
+      const branchesRaw = execSync(cmd).toString()
+      const branchLines = branchesRaw.split('\n').filter(l => l.trim() !== '')
 
-      return branches.map(branch => {
+      return branchLines.map(line => {
         try {
-          const lastCommit = execSync(`git log -1 --format="%s|%at" ${branch}`).toString().trim()
-          const [message, timestamp] = lastCommit.split('|')
+          const [branch, message, timestamp] = line.split('|')
 
           let category = 'other'
-          if (branch.includes('feat/') || branch.includes('feature/')) category = 'feature'
-          else if (branch.includes('fix/')) category = 'fix'
-          else if (branch.includes('jules/') || branch.includes('agent/')) category = 'agent'
-          else if (branch.includes('research/')) category = 'research'
+          const branchName = branch.replace('origin/', '')
+          if (branchName.includes('feat/') || branchName.includes('feature/')) category = 'feature'
+          else if (branchName.includes('fix/')) category = 'fix'
+          else if (branchName.includes('jules/') || branchName.includes('agent/')) category = 'agent'
+          else if (branchName.includes('research/')) category = 'research'
 
           // Enhanced Result & Knowledge Extraction
           const resultMatch = message.match(/(?:results|fixes|implements|adds|integrates|updates|optimizes):\s*(.*)/i)
@@ -346,7 +347,13 @@ export class Jules {
           let changedFiles: string[] = []
           let domain = 'General'
           try {
-            let diffCommand = branch === 'main' ? 'git diff --name-only HEAD~1' : `git diff --name-only main...${branch}`
+            // Optimization: Only run diff if forced or for local branches to save time
+            const isLocal = !branch.startsWith('origin/')
+            if (!force && !isLocal) {
+               return { name: branch, lastMessage: message, lastSeen: new Date(parseInt(timestamp) * 1000).toISOString(), category, results, knowledge: knowledgeNugget, changedFiles: [], domain }
+            }
+
+            let diffCommand = branchName === 'main' ? 'git diff --name-only HEAD~1' : `git diff --name-only main...${branch}`
             let diffOutput = ''
 
             try {
