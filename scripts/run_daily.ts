@@ -7,6 +7,11 @@ async function main() {
   const args = process.argv.slice(2);
   const isContinuous = args.includes('--continuous');
 
+  // Ensure we simulate a cloud environment if not explicitly disabled
+  if (process.env.MACBOOK_CLOUD_SIMULATION !== 'false') {
+    process.env.MACBOOK_CLOUD_SIMULATION = 'true';
+  }
+
   // Synchronize with autonomous_state.json
   const statePath = path.join(process.cwd(), 'autonomous_state.json');
   if (fs.existsSync(statePath)) {
