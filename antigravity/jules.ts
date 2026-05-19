@@ -274,6 +274,24 @@ export class Jules {
     this.recordTask(`PR Audit: Found ${pulls.length} open PRs.`)
 
     for (const pr of pulls) {
+      const isAutonomous = pr.title.includes('🤖') || pr.title.toLowerCase().includes('autonomous')
+      const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
+
+      // Phase 14: Fast-track autonomous PRs in cloud environments to fulfill "merge and work" mandate
+      if (isAutonomous && isCloud) {
+        console.log(`🤖 [Jules] Fast-tracking autonomous PR #${pr.id}...`)
+        const ciPassed = await gitProvider.verifyCIStatus(pr.branch, pr.provider)
+        if (ciPassed) {
+          const merged = await gitProvider.mergePullRequest(pr.id, pr.provider)
+          if (merged) {
+            this.recordTask(`PR Protocol: Fast-tracked and merged autonomous PR #${pr.id}.`)
+            continue
+          }
+        } else {
+          console.warn(`⚠️ [Jules] Fast-track skipped for PR #${pr.id}: CI checks pending or failed.`)
+        }
+      }
+
       const tools = {
         auditPR: async () => pr.title.includes('WIP') ? 'not compliant' : 'compliant',
         verifyCI: async () => {
@@ -283,7 +301,6 @@ export class Jules {
         merge: async () => await gitProvider.mergePullRequest(pr.id, pr.provider)
       }
 
-      const isAutonomous = pr.title.includes('🤖') || pr.title.toLowerCase().includes('autonomous')
       const goal = isAutonomous
         ? `Audit and merge autonomous evolution PR #${pr.id}. Ensure CI passes before merging.`
         : `Audit and merge PR #${pr.id}. Verify compliance with system protocols.`
@@ -436,6 +453,9 @@ export class Jules {
         connectivity.supabase = { status: health.supabase, latency: Date.now() - start }
       } catch (e) {}
 
+      const { getPerformanceMonitoringServiceData } = await import('./services/performance_monitoring')
+      const perf = await getPerformanceMonitoringServiceData()
+
       const presence = {
         agent: 'Jules',
         status: 'online',
@@ -456,6 +476,12 @@ export class Jules {
         workflow_id: process.env.GITHUB_RUN_ID || process.env.CI_PIPELINE_ID || 'local',
         hostname: (await import('os')).hostname(),
         memory_usage: process.memoryUsage(),
+        system_metrics: {
+          loadavg: perf.metrics.system.loadavg,
+          totalmem: perf.metrics.system.totalmem,
+          freemem: perf.metrics.system.freemem,
+          rss: perf.metrics.memory.rss
+        },
         uptime: process.uptime()
       }
 
