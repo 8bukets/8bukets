@@ -7,6 +7,7 @@ To build a self-evolving, autonomous organism that transcends traditional softwa
 - Strategic Lead: petar.pan@antigravity.io
 - Technical Architect: jules@antigravity.io
 - Operations: sigma@antigravity.io
+- Chief AI Officer: caio@antigravity.io
 
 ## Strategic Goals
 1. Achieve full autonomous work cycles.
