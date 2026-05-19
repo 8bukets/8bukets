@@ -47,10 +47,8 @@ from agents.knowledge_agent import KnowledgeAgent
 from agents.knowledge_merge_agent import KnowledgeMergeAgent
 from agents.intelephense_agent import IntelephenseAgent
 from agents.sandbox_agent import SandboxAgent
-from ai_agents_knowledge_scraper import scrape_ai_agents_knowledge
 from vscode_intelephense_scraper import scrape_vscode_intelephense
 from intelephense_scraper import scrape_intelephense_docs
-from google_ads_scraper import scrape_google_ads_docs
 from gemmafour_scraper import scrape_gemmafour_docs
 from litert_scraper import scrape_litert_docs
 from opentelemetry_scraper import scrape_opentelemetry_repos
@@ -70,28 +68,32 @@ logging.basicConfig(
 )
 logger = logging.getLogger("SystemOrchestrator")
 
-def run_scraper():
+async def run_scraper():
     logger.info("Starting Scrapers...")
     try:
         # Standard Market Scraper
-        result = subprocess.run(
-            ["python3", "scraper.py", "--limit", "1"],
-            capture_output=True,
-            text=True
+        proc = await asyncio.create_subprocess_exec(
+            "python3", "scraper.py", "--limit", "1",
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE
         )
-        if result.returncode != 0:
-            logger.error(f"Scraper failed with exit code {result.returncode}: {result.stderr}")
-            raise RuntimeError(f"Scraper failed: {result.stderr}")
+        stdout, stderr = await proc.communicate()
+        if proc.returncode != 0:
+            logger.error(f"Scraper failed with exit code {proc.returncode}: {stderr.decode()}")
+            raise RuntimeError(f"Scraper failed: {stderr.decode()}")
 
-        # AI Agent Knowledge Scraper (Direct module call)
-        scrape_ai_agents_knowledge()
+        # AI Agent Knowledge Scraper (TypeScript)
+        proc_ai = await asyncio.create_subprocess_exec("npx", "tsx", "scripts/ingest_ai_agents_knowledge.ts")
+        await proc_ai.wait()
 
         # VSCode Intelephense Scraper
         scrape_vscode_intelephense()
         # Intelephense Documentation Scraper
         scrape_intelephense_docs()
-        # Google Ads Documentation Scraper
-        scrape_google_ads_docs()
+
+        # Google Ads Documentation Scraper (TypeScript)
+        proc_ads = await asyncio.create_subprocess_exec("npx", "tsx", "scripts/ingest_ads_knowledge.ts")
+        await proc_ads.wait()
 
         # Gemma 4 Documentation Scraper
         scrape_gemmafour_docs()
@@ -103,7 +105,7 @@ def run_scraper():
         scrape_opentelemetry_repos()
 
         # Stitch Documentation Scraper
-        scrape_stitch_docs()
+        await scrape_stitch_docs()
 
         logger.info("Scrapers finished successfully.")
         return True
@@ -207,7 +209,7 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         return
 
     if not skip_scraper:
-        run_scraper()
+        await run_scraper()
 
     data = load_data()
     if not data:

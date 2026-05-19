@@ -9,7 +9,7 @@ Total repositories: 100
 OpenTelemetry Collector
 
 - **Language:** Go
-- **Stars:** 7027
+- **Stars:** 7032
 - **Forks:** 2070
 
 ## [opentelemetry-go](https://github.com/open-telemetry/opentelemetry-go)
@@ -18,7 +18,7 @@ OpenTelemetry Go API and SDK
 
 - **Language:** Go
 - **Stars:** 6389
-- **Forks:** 1351
+- **Forks:** 1352
 
 ## [opentelemetry-collector-contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib)
 
@@ -26,7 +26,7 @@ Contrib repository for the OpenTelemetry Collector
 
 - **Language:** Go
 - **Stars:** 4661
-- **Forks:** 3586
+- **Forks:** 3590
 
 ## [opentelemetry-specification](https://github.com/open-telemetry/opentelemetry-specification)
 
@@ -50,14 +50,14 @@ OpenTelemetry JavaScript Client
 
 - **Language:** TypeScript
 - **Stars:** 3377
-- **Forks:** 1042
+- **Forks:** 1043
 
 ## [opentelemetry-ebpf-profiler](https://github.com/open-telemetry/opentelemetry-ebpf-profiler)
 
 The production-scale datacenter profiler (C/C++, Go, Rust, Python, Java, NodeJS, .NET, PHP, Ruby, Perl, ...)
 
 - **Language:** Go
-- **Stars:** 3110
+- **Stars:** 3111
 - **Forks:** 399
 
 ## [opentelemetry-demo](https://github.com/open-telemetry/opentelemetry-demo)
@@ -65,8 +65,8 @@ The production-scale datacenter profiler (C/C++, Go, Rust, Python, Java, NodeJS,
 This repository contains the OpenTelemetry Astronomy Shop, a microservice-based distributed system intended to illustrate the implementation of OpenTelemetry in a near real-world environment.
 
 - **Language:** TypeScript
-- **Stars:** 3081
-- **Forks:** 6475
+- **Stars:** 3083
+- **Forks:** 6478
 
 ## [opentelemetry-rust](https://github.com/open-telemetry/opentelemetry-rust)
 
@@ -82,15 +82,15 @@ OpenTelemetry auto-instrumentation and instrumentation libraries for Java
 
 - **Language:** Java
 - **Stars:** 2537
-- **Forks:** 1097
+- **Forks:** 1096
 
 ## [opentelemetry-python](https://github.com/open-telemetry/opentelemetry-python)
 
 OpenTelemetry Python API and SDK
 
 - **Language:** Python
-- **Stars:** 2449
-- **Forks:** 877
+- **Stars:** 2450
+- **Forks:** 878
 
 ## [opentelemetry-java](https://github.com/open-telemetry/opentelemetry-java)
 
@@ -105,7 +105,7 @@ OpenTelemetry Java SDK
 Kubernetes Operator for OpenTelemetry Collector
 
 - **Language:** Go
-- **Stars:** 1691
+- **Stars:** 1693
 - **Forks:** 626
 
 ## [opentelemetry-go-contrib](https://github.com/open-telemetry/opentelemetry-go-contrib)
@@ -121,7 +121,7 @@ Collection of extensions for OpenTelemetry-Go.
 The OpenTelemetry C++ Client
 
 - **Language:** C++
-- **Stars:** 1282
+- **Stars:** 1283
 - **Forks:** 567
 
 ## [community](https://github.com/open-telemetry/community)
@@ -154,14 +154,14 @@ OpenTelemetry instrumentation for JavaScript modules
 
 - **Language:** TypeScript
 - **Stars:** 906
-- **Forks:** 657
+- **Forks:** 658
 
 ## [opentelemetry.io](https://github.com/open-telemetry/opentelemetry.io)
 
 The OpenTelemetry website and documentation
 
 - **Language:** JavaScript
-- **Stars:** 895
+- **Stars:** 898
 - **Forks:** 1781
 
 ## [opentelemetry-php](https://github.com/open-telemetry/opentelemetry-php)
@@ -170,7 +170,7 @@ The OpenTelemetry PHP Library
 
 - **Language:** PHP
 - **Stars:** 892
-- **Forks:** 224
+- **Forks:** 223
 
 ## [opentelemetry-proto](https://github.com/open-telemetry/opentelemetry-proto)
 
@@ -186,7 +186,7 @@ This repository contains set of components extending functionality of the OpenTe
 
 - **Language:** C#
 - **Stars:** 639
-- **Forks:** 385
+- **Forks:** 386
 
 ## [docs-cn](https://github.com/open-telemetry/docs-cn) **(ARCHIVED)**
 
@@ -202,7 +202,7 @@ Defines standards for generating consistent, accessible telemetry across a varie
 
 - **Language:** Open Policy Agent
 - **Stars:** 580
-- **Forks:** 357
+- **Forks:** 358
 
 ## [opentelemetry-ruby](https://github.com/open-telemetry/opentelemetry-ruby)
 
@@ -226,7 +226,7 @@ OpenTelemetry Collector Official Releases
 
 - **Language:** Go
 - **Stars:** 472
-- **Forks:** 233
+- **Forks:** 234
 
 ## [opentelemetry-ebpf-instrumentation](https://github.com/open-telemetry/opentelemetry-ebpf-instrumentation)
 
@@ -257,7 +257,7 @@ Create your own Lambda Layer in each OTel language using this starter code. Add 
 OTel Weaver lets you easily develop, validate, document, and deploy semantic conventions
 
 - **Language:** Rust
-- **Stars:** 406
+- **Stars:** 408
 - **Forks:** 83
 
 ## [opentelemetry-network](https://github.com/open-telemetry/opentelemetry-network)
@@ -289,7 +289,7 @@ OpenTelemetry Enhancement Proposals
 OpenTelemetry API for Swift
 
 - **Language:** Swift
-- **Stars:** 351
+- **Stars:** 352
 - **Forks:** 223
 
 ## [opentelemetry-java-examples](https://github.com/open-telemetry/opentelemetry-java-examples)
@@ -314,7 +314,7 @@ OpenTelemetry Go Compile Instrumentation
 
 - **Language:** Go
 - **Stars:** 290
-- **Forks:** 69
+- **Forks:** 70
 
 ## [opentelemetry-android](https://github.com/open-telemetry/opentelemetry-android)
 
@@ -361,7 +361,7 @@ No description provided.
 OpAMP Specification
 
 - **Language:** Makefile
-- **Stars:** 140
+- **Stars:** 141
 - **Forks:** 53
 
 ## [opentelemetry-php-instrumentation](https://github.com/open-telemetry/opentelemetry-php-instrumentation)
@@ -489,7 +489,7 @@ Generated code for OpenTelemetry protobuf data model
 No description provided.
 
 - **Language:** Python
-- **Stars:** 39
+- **Stars:** 40
 - **Forks:** 19
 
 ## [semantic-conventions-java](https://github.com/open-telemetry/semantic-conventions-java)

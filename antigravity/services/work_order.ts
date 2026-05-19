@@ -201,23 +201,34 @@ export class WorkOrderService {
       case 'DEPLOYMENT':
         logAutonomousAction(`🚀 [WorkOrder] Triggering rollout for ${order.id}...`, 'info')
         const { spawnSync } = await import('child_process')
+        // In cloud environments, we ensure we use python3 or the relevant entry point
         const rolloutResult = spawnSync('python3', ['scripts/rollout_executor.py'], { encoding: 'utf8' })
         if (rolloutResult.status !== 0) {
           throw new Error(`Rollout failed: ${rolloutResult.stderr}`)
         }
         return { status: 'deployed', output: rolloutResult.stdout }
 
+      case 'SYSTEM_SYNC':
+        logAutonomousAction(`🔄 [WorkOrder] Executing System Sync for ${order.id}...`, 'info')
+        // Ensure we can run the sync script which handles Docker health and stakeholder sync
+        const { spawnSync: spawnSyncSync } = await import('child_process')
+        const isCloudSync = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud')
+
+        // Run both TypeScript sync and Python-based audit if available
+        const syncCmd = isCloudSync ? 'npx' : 'tsx'
+        const syncArgs = isCloudSync ? ['tsx', 'scripts/connect_and_collaborate.ts'] : ['scripts/connect_and_collaborate.ts']
+
+        spawnSyncSync(syncCmd, syncArgs, { encoding: 'utf8' })
+
+        const { syncCollaborationState } = await import('./collaboration')
+        await syncCollaborationState()
+        return { status: 'synced' }
+
       case 'KNOWLEDGE_INGESTION':
         logAutonomousAction(`📚 [WorkOrder] Executing Knowledge Ingestion for ${order.id}...`, 'info')
         const { jules } = await import('../jules')
         await jules.observeGithubDocs()
         return { status: 'ingested' }
-
-      case 'SYSTEM_SYNC':
-        logAutonomousAction(`🔄 [WorkOrder] Executing System Sync for ${order.id}...`, 'info')
-        const { syncCollaborationState } = await import('./collaboration')
-        await syncCollaborationState()
-        return { status: 'synced' }
 
       default:
         logAutonomousAction(`ℹ️ [WorkOrder] Skipping unknown or external order type: ${order.type}`, 'info')

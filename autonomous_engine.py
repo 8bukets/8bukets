@@ -208,7 +208,7 @@ def create_autonomous_orders():
         for o in new_orders:
             logger.info(f"✅ Created Order: {o['id']} ({o['type']})")
 
-def process_work_orders():
+async def process_work_orders():
     """Check for pending work orders and execute appropriate scripts."""
     create_autonomous_orders()
     sync_work_orders_with_mongodb() # Re-sync after creation
@@ -268,7 +268,7 @@ def process_work_orders():
             elif order_type == "RESEARCH":
                 logger.info(f"🔍 Executing Research Work Order: {order['id']}")
                 try:
-                    run_scraper()
+                    await run_scraper()
                     order["status"] = "completed"
                     order["updated_at"] = datetime.now().isoformat()
                     updated = True
@@ -325,12 +325,12 @@ async def main():
         logger.info("🛠️ Executing DRY-RUN cycle (Creation Order & Execution Validation)...")
         try:
             if not args.skip_scraper:
-                run_scraper()
+                await run_scraper()
             await run_cycle(args.token, args.skip_scraper)
             # TypeScript cycle generates new BOOTSTRAP_SERVICE and SMOKE_TEST orders
             run_typescript_cycle()
             # process_work_orders handles Python-specific tasks (e.g. DEPLOYMENT, CONTENT_CREATION)
-            process_work_orders()
+            await process_work_orders()
             run_audit()
             logger.info("✅ DRY-RUN complete. System is stable.")
         except Exception as e:
@@ -346,11 +346,11 @@ async def main():
             while True:
                 logger.info(f"=== Starting New Autonomous Cycle: {datetime.now().isoformat()} ===")
                 if not args.skip_scraper:
-                    run_scraper()
+                    await run_scraper()
                 await run_cycle(args.token, args.skip_scraper)
                 # Ensure TypeScript work (order generation) happens before Python processing
                 run_typescript_cycle()
-                process_work_orders()
+                await process_work_orders()
                 run_audit()
                 logger.info(f"Cycle complete. Sleeping for {sleep_interval}s...")
                 await asyncio.sleep(sleep_interval)
@@ -362,11 +362,11 @@ async def main():
     else:
         logger.info("🏃 Executing Single Autonomous Cycle...")
         if not args.skip_scraper:
-            run_scraper()
+            await run_scraper()
         await run_cycle(args.token, args.skip_scraper)
         # Ensure TypeScript work (order generation) happens before Python processing
         run_typescript_cycle()
-        process_work_orders()
+        await process_work_orders()
         run_audit()
         logger.info("✅ Execution finished.")
 
