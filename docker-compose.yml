@@ -16,6 +16,16 @@ services:
     networks:
       - app-network
 
+  gitlab-runner:
+    image: gitlab/gitlab-runner:latest
+    container_name: gitlab-runner
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./.gitlab-runner-config:/etc/gitlab-runner
+    networks:
+      - app-network
+
 networks:
   app-network:
     driver: bridge
