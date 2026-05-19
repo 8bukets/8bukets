@@ -1,6 +1,3 @@
-variables:
-  MACBOOK_CLOUD_SIMULATION: "true"
-
 build-job:
   stage: build
   script:
