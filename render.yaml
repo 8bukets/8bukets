@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: antigravity-frontend
+    env: node
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: SUPABASE_DATABASE_URL
+        sync: false
+      - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
+        sync: false
+      - key: MACBOOK_CLOUD_SIMULATION
+        value: "true"
+
+  - type: worker
+    name: antigravity-system
+    env: docker
+    dockerfilePath: ./Dockerfile
+    dockerCommand: python run_system.py --loop
+    envVars:
+      - key: MACBOOK_CLOUD_SIMULATION
+        value: "true"
+      - key: SYSTEM_AUTH_TOKEN
+        sync: false
