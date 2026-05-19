@@ -138,16 +138,6 @@
                 "timestamp": "2026-05-19T21:35:42.473474",
                 "event": "episodic_event",
                 "data": "episodic_data"
-            },
-            {
-                "timestamp": "2026-05-19T23:12:57.200233",
-                "event": "episodic_event",
-                "data": "episodic_data"
-            },
-            {
-                "timestamp": "2026-05-19T23:17:34.675787",
-                "event": "episodic_event",
-                "data": "episodic_data"
             }
         ]
     },
