@@ -26,7 +26,7 @@ Synthesized from Google Innovation & AI Blog
 
 ### Google Cloud Tools
 - Gemini
-- Kaggle
+- Google Flow
 
 ---
 
@@ -131,6 +131,7 @@ Synthesized from Google Innovation & AI Blog
 
 ### Google Cloud Tools
 - Gemini
+- SynthID
 
 ---
 
@@ -151,11 +152,10 @@ Synthesized from Google Innovation & AI Blog
 ### Google Cloud Tools
 - Gemini models
 - Gemini
-- Gemma
 - Model Context Protocol
 - MCP
 - Interactions API
-- Kaggle
+- Nano Banana
 
 ---
 
@@ -166,6 +166,7 @@ Synthesized from Google Innovation & AI Blog
 - Gemma
 - Vertex AI
 - Kaggle
+- Nano Banana
 
 ---
 
@@ -174,8 +175,6 @@ Synthesized from Google Innovation & AI Blog
 ### Google Cloud Tools
 - Infrastructure & cloud
 - Gemini
-- Gemma
-- Kaggle
 
 ---
 
@@ -215,7 +214,6 @@ Synthesized from Google Innovation & AI Blog
 
 ### Google Cloud Tools
 - Gemini
-- Gemma
 
 ---
 
@@ -241,7 +239,6 @@ Synthesized from Google Innovation & AI Blog
 
 ### Google Cloud Tools
 - Gemini
-- Gemma
 
 ---
 
@@ -305,7 +302,6 @@ Synthesized from Google Innovation & AI Blog
 
 ### Google Cloud Tools
 - Gemini
-- Kaggle
 
 ---
 
@@ -316,7 +312,7 @@ Synthesized from Google Innovation & AI Blog
 
 ### Google Cloud Tools
 - Gemini
-- Kaggle
+- Nano Banana
 
 ---
 
@@ -358,6 +354,7 @@ Synthesized from Google Innovation & AI Blog
 ### Google Cloud Tools
 - Gemini
 - Kaggle
+- Nano Banana
 
 ---
 
@@ -365,6 +362,8 @@ Synthesized from Google Innovation & AI Blog
 
 ### Google Cloud Tools
 - Gemini
+- Nano Banana
+- Google Flow
 
 ---
 
@@ -375,9 +374,8 @@ Synthesized from Google Innovation & AI Blog
 
 ### Google Cloud Tools
 - Gemini
-- Gemma
 - MCP
-- Kaggle
+- Google Flow
 
 ---
 
@@ -385,6 +383,7 @@ Synthesized from Google Innovation & AI Blog
 
 ### Google Cloud Tools
 - Gemini
+- Nano Banana
 
 ---
 
@@ -406,6 +405,92 @@ Synthesized from Google Innovation & AI Blog
 
 ### Google Cloud Tools
 - Gemini
+
+---
+
+## [Blackstone and Google to develop TPU cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/blackstone-tpu-cloud/)
+
+### Google Cloud Tools
+- Gemini
+
+---
+
+## [Introducing Gemini Omni](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/)
+
+### Use Cases
+- **Edit your videos through conversation**: Gemini Omni gives you an easier way to edit video — with natural language. Every instruction builds on the last. Your characters stay consistent, the physics hold up and the scene remembers what came before. Transform the world around you. Change specific things, or change everything. Your video becomes the starting point for something you never could have filmed yourself.
+- **Bring ideas to life, grounded in Gemini’s world knowledge**: Gemini Omni doesn't just build scenes that look real, it reasons about what should happen next. It combines an intuitive understanding of physics with Gemini's knowledge of history, science and cultural context, bridging the gap from photorealism to meaningful storytelling. Create visuals with more accurate physics. Omni has an improved intuitive understanding of forces like gravity, kinetic energy and fluid dynamics, allowing you to create more realistic scenes.
+- **Create videos from any combination of inputs**: Reference anything. Omni turns any reference — image, text, video or audio — into a single, cohesive output. While only voice references will be supported for audio to start, we’ll roll out other types of audio inputs soon.
+- **Create videos with your own digital avatar**: We're committed to developing AI responsibly and we have clear policies to protect users from harm and governing the use of our AI tools. To start, you can create videos with your own voice by using Avatars , which create a digital version of yourself so you can generate videos that look and sound like you. Beyond the avatar feature, in terms of editing videos to change audio and speech, we are still working to test this and better understand how we can bring this capability to users responsibly. All videos created with Omni include our imperceptible SynthID digital watermark. You can easily verify that videos were generated with Gemini Omni through the Gemini app, Gemini in Chrome and Google Search. You can find out more about how we're expanding our content transparency and verification tools to help you understand how content was created and edited across the web in our blog post .
+
+### Google Cloud Tools
+- Gemini
+- Kaggle
+- Nano Banana
+- Google Flow
+- YouTube Shorts
+- YouTube Create App
+- SynthID
+- Avatars
+
+---
+
+## [Simulate real-world places with Project Genie and Street View](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/)
+
+### Google Cloud Tools
+- Gemini
+- Google Flow
+
+---
+
+## [The Gemini app becomes more agentic, delivering proactive, 24/7 help](https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/)
+
+### Google Cloud Tools
+- Gemini
+- MCP
+
+---
+
+## [Making it easier to understand how content was created and edited](https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/)
+
+### Google Cloud Tools
+- Gemini
+- SynthID
+
+---
+
+## [I/O 2026: Welcome to the agentic Gemini era](https://blog.google/innovation-and-ai/sundar-pichai-io-2026/)
+
+### Google Cloud Tools
+- Infrastructure supporting innovation at scale
+- Gemini
+- MCP
+- Nano Banana
+- Google Flow
+- YouTube Shorts
+- SynthID
+
+---
+
+## [Bring any idea to life: Google AI Studio at I/O 2026](https://blog.google/innovation-and-ai/technology/developers-tools/google-ai-studio-io-2026/)
+
+### Google Cloud Tools
+- Gemini
+- Gemma
+- Nano Banana
+
+---
+
+## [Introducing Managed Agents in the Gemini API](https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/)
+
+### Google Cloud Tools
+- Get access to Google's agent infrastructure
+- Reason, plan and call tools using the harness
+- Execute code and manage files in an isolated Linux sandbox
+- Browse the web to fetch and process live data
+- Gemini
+- Gemma
+- Interactions API
 
 ---
 

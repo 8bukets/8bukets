@@ -75,5 +75,41 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 ### We’re launching the Google DeepMind Accelerator program in Asia Pacific to tackle environmental risks.
 - URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/accelerator-ai-for-the-planet/
 
+### Introducing Gemini Omni
+- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/
+
+### Gemini 3.5: frontier intelligence with action
+- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/
+
+### Simulate real-world places with Project Genie and Street View
+- URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/
+
+### We’re introducing new ways to design in real time with Stitch.
+- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-updates/
+
+### New agents, mobile apps and Gemini Omni for Google Flow and Google Flow Music
+- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-updates/
+
+### Pomelli adds new ways to build brand content and design websites.
+- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/pomelli-agentic-capabilities/
+
+### Making it easier to understand how content was created and edited
+- URL: https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/
+
+### I/O 2026: Welcome to the agentic Gemini era
+- URL: https://blog.google/innovation-and-ai/sundar-pichai-io-2026/
+
+### Introducing Managed Agents in the Gemini API
+- URL: https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/
+
+### The Gemini app becomes more agentic, delivering proactive, 24/7 help
+- URL: https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/
+
+### Bring any idea to life: Google AI Studio at I/O 2026
+- URL: https://blog.google/innovation-and-ai/technology/developers-tools/google-ai-studio-io-2026/
+
+### Blackstone will create a new TPU cloud in a joint venture with Google.
+- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/blackstone-tpu-cloud/
+
 
 All the best - https://markposition.wordpress.com

@@ -90,13 +90,13 @@ def extract_structured_knowledge(url):
             combined_content = " ".join(content)
             low_header = header_text.lower()
 
-            if any(kw in low_header for kw in ["what is", "definition", "introducing", "about", "how it works", "speculative decoding", "choose a research", "accelerating gemma 4"]):
+            if any(kw in low_header for kw in ["what is", "definition", "introducing", "about", "how it works", "speculative decoding", "choose a research", "accelerating gemma 4", "what makes"]):
                 if combined_content:
                     knowledge["definitions"].append({"term": header_text, "text": combined_content})
-            elif any(kw in low_header for kw in ["use case", "how to use", "applications", "example", "unlocking", "drive real-world"]):
+            elif any(kw in low_header for kw in ["use case", "how to use", "applications", "example", "unlocking", "drive real-world", "edit your videos", "create videos", "bring ideas to life"]):
                 if combined_content:
                     knowledge["use_cases"].append({"title": header_text, "description": combined_content})
-            elif any(kw in low_header for kw in ["benefit", "why", "advantage", "impact", "value", "accelerating", "unlock proprietary"]):
+            elif any(kw in low_header for kw in ["benefit", "why", "advantage", "impact", "value", "accelerating", "unlock proprietary", "performance", "responsible"]):
                 if combined_content:
                     knowledge["benefits"].append({"title": header_text, "description": combined_content})
             elif any(kw in low_header for kw in ["cloud", "vertex", "platform", "infrastructure", "tools", "where you can dive", "where to dive", "get started"]):
@@ -111,7 +111,7 @@ def extract_structured_knowledge(url):
                         knowledge["google_cloud_tools"].extend(tools)
 
     # Extract tools by keywords
-    tool_keywords = ["Gemini", "Gemma", "Vertex AI", "Model Context Protocol", "MCP", "LiteRT", "Interactions API", "Hugging Face", "Kaggle", "vLLM", "MLX"]
+    tool_keywords = ["Gemini", "Gemma", "Vertex AI", "Model Context Protocol", "MCP", "LiteRT", "Interactions API", "Hugging Face", "Kaggle", "vLLM", "MLX", "Nano Banana", "Google Flow", "YouTube Shorts", "YouTube Create App", "SynthID", "Avatars"]
     for kw in tool_keywords:
         if kw.lower() in text_content:
             knowledge["google_cloud_tools"].append(kw)
@@ -160,14 +160,16 @@ def run_knowledge_scraper():
                 href = link['href']
                 text = link.get_text(strip=True).lower()
                 if any(kw in text or kw in href.lower() for kw in keywords):
-                    if '/innovation-and-ai/' in href and href != base_url:
+                    if '/innovation-and-ai/' in href and href != base_url and 'mailto:' not in href and 'facebook.com' not in href and 'twitter.com' not in href and 'linkedin.com' not in href:
                         full_url = href if href.startswith('http') else f"https://blog.google{href}"
-                        article_urls.add(full_url)
+                        if 'blog.google' in full_url:
+                            article_urls.add(full_url)
         except Exception as e:
             print(f"Failed to scan {base_url}: {e}")
 
-    # Manually ensure the Deep Research article is included if missed by scan
+    # Manually ensure the Deep Research and Omni articles are included if missed by scan
     article_urls.add("https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/")
+    article_urls.add("https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/")
 
     print(f"Found {len(article_urls)} potential articles. Diving in...")
 
