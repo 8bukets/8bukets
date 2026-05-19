@@ -1,6 +1,6 @@
 {
     "version": 1.0,
-    "iterations": 3,
+    "iterations": 4,
     "keyword_performance": {},
     "bid_strategy": {
         "base_bid": 1.5,
@@ -24,6 +24,11 @@
         {
             "iteration": 2,
             "engagement": 98,
+            "action": "Maintained strategy"
+        },
+        {
+            "iteration": 3,
+            "engagement": 54,
             "action": "Maintained strategy"
         }
     ],
