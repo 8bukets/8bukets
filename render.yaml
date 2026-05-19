@@ -1,7 +1,8 @@
 services:
   - type: web
-    name: antigravity-frontend
+    name: frontend
     env: node
+    region: ohio
     rootDir: frontend
     buildCommand: npm install && npm run build
     startCommand: npm start
@@ -16,14 +17,3 @@ services:
         sync: false
       - key: MACBOOK_CLOUD_SIMULATION
         value: "true"
-
-  - type: worker
-    name: antigravity-system
-    env: docker
-    dockerfilePath: ./Dockerfile
-    dockerCommand: python run_system.py --loop
-    envVars:
-      - key: MACBOOK_CLOUD_SIMULATION
-        value: "true"
-      - key: SYSTEM_AUTH_TOKEN
-        sync: false
