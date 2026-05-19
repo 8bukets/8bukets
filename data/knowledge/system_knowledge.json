@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2026-05-18T16:31:34.136Z",
-    "version": 1.89,
+    "generated_at": "2026-05-18T23:52:10.487Z",
+    "version": 1.91,
     "sources_processed": [
       "ai_agents_knowledge.json",
       "links.json",
@@ -4864,7 +4864,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/bug_report.md",
-        "ingestedAt": "2026-05-18T16:31:33.606Z"
+        "ingestedAt": "2026-05-18T23:52:10.293Z"
       }
     },
     "System: .github/ISSUE_TEMPLATE/feature_request.md": {
@@ -4876,7 +4876,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/feature_request.md",
-        "ingestedAt": "2026-05-18T16:31:33.621Z"
+        "ingestedAt": "2026-05-18T23:52:10.303Z"
       }
     },
     "System: .github/PULL_REQUEST_TEMPLATE.md": {
@@ -4908,7 +4908,7 @@
       ],
       "metadata": {
         "source": "local://.github/PULL_REQUEST_TEMPLATE.md",
-        "ingestedAt": "2026-05-18T16:31:33.633Z"
+        "ingestedAt": "2026-05-18T23:52:10.313Z"
       }
     },
     "System: .github/workflows/antigravity-daily.yml": {
@@ -5544,7 +5544,7 @@
       ],
       "metadata": {
         "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/README.md",
-        "ingestedAt": "2026-05-18T16:31:33.742Z"
+        "ingestedAt": "2026-05-18T23:52:10.376Z"
       }
     },
     "Intelephense: features": {
@@ -5620,7 +5620,7 @@
       ],
       "metadata": {
         "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/features.md",
-        "ingestedAt": "2026-05-18T16:31:33.827Z"
+        "ingestedAt": "2026-05-18T23:52:10.402Z"
       }
     },
     "Intelephense: installation": {
@@ -5668,7 +5668,7 @@
       ],
       "metadata": {
         "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/installation.md",
-        "ingestedAt": "2026-05-18T16:31:33.931Z"
+        "ingestedAt": "2026-05-18T23:52:10.430Z"
       }
     },
     "Intelephense: gettingStarted": {
@@ -5696,7 +5696,7 @@
       ],
       "metadata": {
         "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/gettingStarted.md",
-        "ingestedAt": "2026-05-18T16:31:34.023Z"
+        "ingestedAt": "2026-05-18T23:52:10.456Z"
       }
     },
     "Intelephense: support": {
@@ -5708,7 +5708,7 @@
       ],
       "metadata": {
         "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/support.md",
-        "ingestedAt": "2026-05-18T16:31:34.131Z"
+        "ingestedAt": "2026-05-18T23:52:10.482Z"
       }
     }
   },
