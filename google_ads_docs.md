@@ -20,7 +20,7 @@ You can focus on different things when you bid: clicks, impressions, conversions
 
 If your main goal is to have people visit your website, then clicks are a good place to start. Using cost-per-click (CPC) bidding, you'll pay only when someone actually clicks on your ad and comes to your site.
 
-Example :
+Example:
 
 If you run a hiking club in Vermont, you might want to bid a lot for direct-hit keywords like "Vermont hiking" and a different amount for broader keywords like "hiking maps."
 
@@ -28,7 +28,7 @@ If you run a hiking club in Vermont, you might want to bid a lot for direct-hit 
 
 If your campaign is targeting just the Search Network and your main goal is to increase your brand visibility, consider using Target Impression Share. With this bidding strategy, Google Ads will automatically set your bids to help achieve your Impression Share goal. For example, if you choose an Impression Share target of 65% on the absolute top of the page, Google Ads will automatically set your bids to help show your ads on the absolute top of the page 65% of the total possible amount of times they could show.
 
-If your campaign is targeting just the Display Network, instead of paying by the click, you can pay by the number of times your ad is visibly shown. That's called cost-per-thousand viewable impressions (vCPM) bidding, since you pay for every 1,000 times your ad appears and is viewable. If you're mostly interested in getting your name or logo in front of lots of people, this is a smart option. Learn how ads are measured as viewable .
+If your campaign is targeting just the Display Network, instead of paying by the click, you can pay by the number of times your ad is visibly shown. That's called cost-per-thousand viewable impressions (vCPM) bidding, since you pay for every 1,000 times your ad appears and is viewable. If you're mostly interested in getting your name or logo in front of lots of people, this is a smart option. Learn how ads are measured as viewable.
 
 Viewable CPM bidding, like CPC manual bidding, lets you set bids at the ad group level, or for individual placements.
 
@@ -40,7 +40,7 @@ To use CPA bidding you must have conversion tracking turned on, among other thin
 
 ## Focus on views (for video ads only)
 
-If your main goal is to evaluate how engaged viewers are with your video content, where they choose to watch your videos, and when they drop off from watching your content, you'll use cost-per-view (CPV) bidding . With CPV bidding, you'll pay for video views and other video interactions, such as clicks on the calls-to-action overlay (CTAs), cards, and companion banners.
+If your main goal is to evaluate how engaged viewers are with your video content, where they choose to watch your videos, and when they drop off from watching your content, you'll use cost-per-view (CPV) bidding. With CPV bidding, you'll pay for video views and other video interactions, such as clicks on the calls-to-action overlay (CTAs), cards, and companion banners.
 
 To set a target CPV bid, you enter the average price you want to pay for a view while setting up your Video views campaign. Your bid is called your target CPV bid, or tCPV. This bid applies at the campaign level.
 
@@ -152,11 +152,11 @@ The Experiments page in Google Ads can help you create, manage and optimise your
 
 ---
 
-## Find answersandinspiration
+## Find answers andinspiration
 
 Source: [https://business.google.com/uk/resources/](https://business.google.com/uk/resources/)
 
-# Find answers and inspiration
+# Find answers andinspiration
 
 ## Filter by:
 
@@ -568,26 +568,26 @@ Source: [https://developers.google.com/ad-manager](https://developers.google.com
 
 Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion)
 
-- Home
-- Products
+- 홈
+- 제품
 - Dynamic Ad Insertion
-### Dynamic ad insertion (DAI)
+### 동적 광고 삽입 (DAI)
 
-DAI lets you monetize your video content, taking away the complexity of the ad request and ad response process from the SDK. This approach reduces the likelihood of client-side errors and produces a TV-like experience without latency or buffering between content and ads.
+DAI를 사용하면 동영상 콘텐츠로 수익을 창출할 수 있으며, SDK에서 광고 요청 및 광고 응답 절차의 복잡성을 제거할 수 있습니다. 이 접근 방식을 사용하면 클라이언트 측 오류가 감소하며, TV를 시청할 때와 같이 콘텐츠와 광고 간에 지연이나 버퍼링이 없는 환경이 제공됩니다.
 
-With DAI, you can target individual ads for livestreams and videos on demand programming, obtain multi-screen reach with broad device support, and take advantage of programmatic monetization across all devices with Ad Exchange for video. Regardless of the original format of your content, once it becomes digital, DAI lets you show targeted video ads within your content, based on the individual user viewing the content.
+DAI를 사용하면 라이브 스트림 및 VOD 프로그래밍에 개별 광고를 타겟팅하고, 광범위한 기기 지원을 통해 멀티스크린에 표시할 수 있으며, 동영상용 Ad Exchange를 사용하는 모든 기기에서 프로그래매틱 방식으로 수익을 창출할 수 있습니다. 콘텐츠의 원본 형식과 관계없이, 디지털화되면 DAI를 통해 콘텐츠를 시청 중인 개별 사용자를 기반으로 콘텐츠 내에 타겟팅 동영상 광고를 게재할 수 있습니다.
 
-DAI lets you perform these workflows through the Full service API and Pod serving API, along with supported SDK platforms.
+DAI를 사용하면 지원되는 SDK 플랫폼과 함께 전체 서비스 API 및 광고 모음 게재 API를 통해 이러한 워크플로를 실행할 수 있습니다.
 
-To start using DAI, select one of the following integrations:
+DAI 사용을 시작하려면 다음 통합 중 하나를 선택하세요.
 
-### Full service DAI
+### 전체 서비스 DAI
 
-### Pod serving DAI
+### DAI를 게재하는 광고 모음
 
-### Supported platforms
+### 지원되는 플랫폼
 
-### Get Support
+### 지원받기
 
 
 ---
@@ -608,37 +608,22 @@ Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion/full-serv
 - The web page or app loads the IMA DAI SDK through: an embedded script tag for HTML5 a native app for Android, Google Cast, iOS, tvOS, or Roku
 - an embedded script tag for HTML5
 - a native app for Android, Google Cast, iOS, tvOS, or Roku
-- The SDK requests either a VOD stream or live stream from Google Ad
-    Manager 360.
-- Ad Manager 360 responds with the video stream that includes
-    inserted ad breaks.
-- The SDK parses the response, determines the correct media type
-    based on environment, and delivers the video stream (and companion
-    ads if needed) to the web page or app.
-- The video player negotiates the playback details with the SDK and
-    plays the content.
-- The video player listens for instream metadata and passes it to the
-    SDK for processing.
+- The SDK requests either a VOD stream or live stream from Google Ad Manager 360.
+- Ad Manager 360 responds with the video stream that includes inserted ad breaks.
+- The SDK parses the response, determines the correct media type based on environment, and delivers the video stream (and companion ads if needed) to the web page or app.
+- The video player negotiates the playback details with the SDK and plays the content.
+- The video player listens for instream metadata and passes it to the SDK for processing.
 - The SDK fires impression pings and tracking events as needed.
-For detailed instructions on how to implement a client video player
-  using the IMA DAI SDK, check out our SDK guides:
+For detailed instructions on how to implement a client video player using the IMA DAI SDK, check out our SDK guides:
 
 ### With the DAI API
 
-- The client's player app requests either a VOD stream or live stream
-    from Google Ad Manager 360.
-- Ad Manager 360 responds with the video stream that includes
-    inserted ad breaks.
-- The client's player app begins playback of the stream, and either
-    requests ad metadata once (for VOD streams) OR begins regularly
-    polling for ad metadata (for live streams).
-- The client's player app listens for instream metadata, parses it,
-    and compares it to the values in the ad metadata to identify ad
-    events.
-- The client's video player app fires ad impression pings and
-    tracking events as needed.
-For detailed instructions on how to implement a client video player,
-  using the DAI REST API, check out our API guides:
+- The client's player app requests either a VOD stream or live stream from Google Ad Manager 360.
+- Ad Manager 360 responds with the video stream that includes inserted ad breaks.
+- The client's player app begins playback of the stream, and either requests ad metadata once (for VOD streams) OR begins regularly polling for ad metadata (for live streams).
+- The client's player app listens for instream metadata, parses it, and compares it to the values in the ad metadata to identify ad events.
+- The client's video player app fires ad impression pings and tracking events as needed.
+For detailed instructions on how to implement a client video player, using the DAI REST API, check out our API guides:
 
 
 ---
@@ -654,72 +639,57 @@ Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-servi
 - APIs
 ### DAI Pod Serving
 
-Dynamic Ad Insertion (DAI) Pod Serving lets you request ad pods, from Google or third-party ad servers, for live and video-on-demand (VOD) streams. For more details, see Configure ad pods and break templates .
+Dynamic Ad Insertion (DAI) Pod Serving lets you request ad pods, from Google or third-party ad servers, for live and video-on-demand (VOD) streams. For more details, see Configure ad pods and break templates.
 
-- Pod serving redirect: lets you retrieve manifest segments to implement
-  Server-Side Ad Insertion (SSAI). The segments are dynamic URLs, redirecting to either
-  content or ad media files.
-- Pod serving manifest: lets you retrieve the complete manifest of the ad pods to
-  implement Server-Side Ad Insertion (SSAI). For more details,
-  see Server guided DAI .
+- Pod serving redirect: lets you retrieve manifest segments to implement Server-Side Ad Insertion (SSAI). The segments are dynamic URLs, redirecting to either content or ad media files.
+- Pod serving manifest: lets you retrieve the complete manifest of the ad pods to implement Server-Side Ad Insertion (SSAI). For more details, see Server guided DAI.
 For VOD, Google Ad Manager returns the complete ad pod manifests.
 
-DAI Pod serving offers the following supported platforms: HTML5 Android iOS tvOS Chromecast Roku
+DAI Pod serving offers the following supported platforms:
 
 For details on livestream and VOD, see the following workflows:
 
 ### Stitch ads into a livestream
 
-- To start a livestream session, make a stream registration request.
-    Set ad tag parameters unique for the stream request to
-    override the DAI ad tag's default values. For more details about
-    ad targeting, see Supply targeting parameters to your stream .
-- Retrieve the unique user session ID from the stream registration
-    response. For more details about using the session ID, see Locate a DAI session ID or debug key and Monitor and debug a specific stream session .
-- Make a manifest request to your video stitcher or manifest
-    manipulator, passing the session ID. Repeat the request for
-    manifest updates throughout playback.
+- To start a livestream session, make a stream registration request. Set ad tag parameters unique for the stream request to override the DAI ad tag's default values. For more details about ad targeting, see Supply targeting parameters to your stream.
+- Retrieve the unique user session ID from the stream registration response. For more details about using the session ID, see Locate a DAI session ID or debug key and Monitor and debug a specific stream session.
+- Make a manifest request to your video stitcher or manifest manipulator, passing the session ID. Repeat the request for manifest updates throughout playback.
 - For DASH manifests, make one period template request for the entire session.
-- For DASH manifests, cache the period template. For each ad break,
-    retrieve the cached template and populate all macros with the ad break data.
-    For more details about supported macros,
-    see Populate the period template .
-
-    Then, insert the result period into the final manifest.
-- Return the final manifest that contains content or ad media segments for
-    client playback. Playback begins .
-- Regularly poll Google Ad Manager for updates of ad metadata using the polling frequency
-    returned in the stream request.
-    Store the ad metadata for looking up ad events.
-- During an ad break, the video player loads the media segments and
-    follows Google Ad Manager redirects to the media files.
-- During an ad break, listen to the video player for timed metadata , containing ID3
-    tags. Extract the ad event ID from the ID3 tag to find the
-    associated ad metadata.
+- For DASH manifests, cache the period template. For each ad break, retrieve the cached template and populate all macros with the ad break data. For more details about supported macros, see Populate the period template. Then, insert the result period into the final manifest.
+- Return the final manifest that contains content or ad media segments for client playback. Playback begins.
+- Regularly poll Google Ad Manager for updates of ad metadata using the polling frequency returned in the stream request. Store the ad metadata for looking up ad events.
+- During an ad break, the video player loads the media segments and follows Google Ad Manager redirects to the media files.
+- During an ad break, listen to the video player for timed metadata, containing ID3 tags. Extract the ad event ID from the ID3 tag to find the associated ad metadata.
 - Send media verification pings to Google Ad Manager.
 ### Stitch ads into a VOD stream
 
-- Make a stream request to register a VOD stream
-    session. Set ad tag parameters unique for the stream request to
-    override the DAI ad tag's default values. For more details, see Supply targeting parameters to your stream .
-- Retrieve the session ID from the stream response. To inspect the stream session, see Locate a DAI session ID or debug key and Monitor and debug a specific stream session .
-- Make a manifest request to your video stitcher or manifest
-    manipulator, passing the session ID.
+- Make a stream request to register a VOD stream session. Set ad tag parameters unique for the stream request to override the DAI ad tag's default values. For more details, see Supply targeting parameters to your stream.
+- Retrieve the session ID from the stream response. To inspect the stream session, see Locate a DAI session ID or debug key and Monitor and debug a specific stream session.
+- Make a manifest request to your video stitcher or manifest manipulator, passing the session ID.
 - Use the session ID to request all ad pods at once.
-- Retrieve complete manifests of all ad pods. To create the final manifest, stitch the ad
-    pod manifests with the content stream.
+- Retrieve complete manifests of all ad pods. To create the final manifest, stitch the ad pod manifests with the content stream.
 - Return the final manifest, containing both content and ad segments.
-- Request ad metadata for all ad events. Store the ad metadata for
-    looking up ad events. Playback begins .
-- During an ad break, the video player loads the media segments and
-    follows Google Ad Manager redirects to the media files.
-- During an ad break, listen for ad events containing ID3 tags. To find the ad event metadata, extract
-    the ad event ID from the ID3 tag and match the ID with the ad metadata.
+- Request ad metadata for all ad events. Store the ad metadata for looking up ad events. Playback begins.
+- During an ad break, the video player loads the media segments and follows Google Ad Manager redirects to the media files.
+- During an ad break, listen for ad events containing ID3 tags. To find the ad event metadata, extract the ad event ID from the ID3 tag and match the ID with the ad metadata.
 - Send media verification pings to Google Ad Manager.
 
 ---
 
-## Get startedStay organized with collectionsSave and categorize content based on your preferences.
+## Get started
+
+
+
+
+
+
+
+
+      Stay organized with collections
+
+
+
+      Save and categorize content based on your preferences.
 
 Source: [https://developers.google.com/ad-manager/api/start](https://developers.google.com/ad-manager/api/start)
 
@@ -731,133 +701,86 @@ Looking for a REST API? The Ad Manager API (Beta) is now available.
 - SOAP API
 # Get started Stay organized with collections Save and categorize content based on your preferences.
 
-## Page Summary
+You can use the Google Ad Manager SOAP API to build apps that manage inventory, create orders, pull reports, and more.
 
-- The Google Ad Manager SOAP API allows building applications to manage inventory, create orders, and pull reports.
-The Google Ad Manager SOAP API allows building applications to manage inventory, create orders, and pull reports.
-
-- Client libraries are available for Java, .NET, Python, PHP, and Ruby to help get started with the API.
-Client libraries are available for Java, .NET, Python, PHP, and Ruby to help get started with the API.
-
-- To make your first API request, you need to get access to an Ad Manager network, create authentication credentials using OAuth 2.0, and configure API access in your network settings.
-To make your first API request, you need to get access to an Ad Manager network, create authentication credentials using OAuth 2.0, and configure API access in your network settings.
-
-- After setting up your Ad Manager network and authentication, download and configure one of the provided client libraries to write code and make requests to the API.
-After setting up your Ad Manager network and authentication, download and configure one of the provided client libraries to write code and make requests to the API.
-
-You can use the Google Ad Manager SOAP API to build apps that manage inventory,
-create orders, pull reports, and more.
-
-To help you get started, we offer client
-libraries for Java, .NET, Python, PHP, and Ruby.
+To help you get started, we offer client libraries for Java, .NET, Python, PHP, and Ruby.
 
 To make your first API request, follow these steps:
 
 ## Get access to an Ad Manager network
 
-If you don't already have one, sign up for an Ad Manager
-account . You can also create a test network if you want to test the API in a
-separate environment. Note that you don't need an AdSense account for test
-purposes.
+If you don't already have one, sign up for an Ad Manager account. You can also create a test network if you want to test the API in a separate environment. Note that you don't need an AdSense account for test purposes.
 
-Make a note of your network code. You can find this in the URL when you sign in
-to your network. For example, in the URL https://admanager.google.com/1234#home , 1234 is your network code.
+Make a note of your network code. You can find this in the URL when you sign in to your network. For example, in the URL https://admanager.google.com/1234#home, 1234 is your network code.
 
 ## Create authentication credentials
 
-You must authenticate all Ad Manager SOAP API requests using OAuth 2.0. The
-following steps cover the use case of accessing your own Ad Manager data. For
-more details and other options, see Authentication .
+You must authenticate all Ad Manager SOAP API requests using OAuth 2.0. The following steps cover the use case of accessing your own Ad Manager data. For more details and other options, see Authentication.
 
-- Open the Google API Console
-Credentials page
-Open the Google API Console
-Credentials page
+- Open the Google API Console Credentials page
+Open the Google API Console Credentials page
 
-- From the project menu, choose Create project , enter a name for the
-project, and optionally, edit the provided Project ID. Click Create .
-From the project menu, choose Create project , enter a name for the
-project, and optionally, edit the provided Project ID. Click Create .
+- From the project menu, choose Create project, enter a name for the project, and optionally, edit the provided Project ID. Click Create.
+From the project menu, choose Create project, enter a name for the project, and optionally, edit the provided Project ID. Click Create.
 
-- On the Credentials page, select Create credentials , then select Service account key .
-On the Credentials page, select Create credentials , then select Service account key .
+- On the Credentials page, select Create credentials, then select Service account key.
+On the Credentials page, select Create credentials, then select Service account key.
 
-- Select New service
-account and select JSON as the key type.
-Select New service
-account and select JSON as the key type.
+- Select New service account and select JSON as the key type.
+Select New service account and select JSON as the key type.
 
 - Click Create to download a file containing a private key.
 Click Create to download a file containing a private key.
 
 ## Configure your Ad Manager network
 
-- Sign in to Google Ad
-Manager.
-Sign in to Google Ad
-Manager.
+- Sign in to Google Ad Manager.
+Sign in to Google Ad Manager.
 
-- In the sidebar, click Admin > Global settings .
-In the sidebar, click Admin > Global settings .
+- In the sidebar, click Admin > Global settings.
+In the sidebar, click Admin > Global settings.
 
-- Under General settings > Api access click the slider to Enabled .
-Under General settings > Api access click the slider to Enabled .
+- Under General settings > Api access click the slider to Enabled.
+Under General settings > Api access click the slider to Enabled.
 
 - Click the Save button at the bottom of the page.
 Click the Save button at the bottom of the page.
 
 ## Set up your client
 
-Download one of the Ad Manager client libraries . The
-libraries offer wrapper functions and features that make it easier and faster to
-develop apps.
+Download one of the Ad Manager client libraries. The libraries offer wrapper functions and features that make it easier and faster to develop apps.
 
-The following tabs provide quickstarts for coding in each of the languages for
-which there is a client library.
+The following tabs provide quickstarts for coding in each of the languages for which there is a client library.
 
 ### Java
 
-Here is a basic example that shows how to use the Java client
-library . For more detailed usage information, refer to
-the README file in the client library distribution.
+Here is a basic example that shows how to use the Java client library. For more detailed usage information, refer to the README file in the client library distribution.
 
-- Setup your credentials Run the following command in a shell: curl https://raw.githubusercontent.com/googleads/googleads-java-lib/main/examples/admanager_axis/src/main/resources/ads.properties -o ~/ads.properties Open the ~/ads.properties file and populate the following fields: [...]
-api.admanager.applicationName=INSERT_APPLICATION_NAME_HERE
-api.admanager.jsonKeyFilePath=INSERT_PATH_TO_JSON_KEY_FILE_HERE
-api.admanager.networkCode=INSERT_NETWORK_CODE_HERE
-[...]
+- Setup your credentials Run the following command in a shell: curl https://raw.githubusercontent.com/googleads/googleads-java-lib/main/examples/admanager_axis/src/main/resources/ads.properties -o ~/ads.properties Open the ~/ads.properties file and populate the following fields: [...] api.admanager.applicationName=INSERT_APPLICATION_NAME_HERE api.admanager.jsonKeyFilePath=INSERT_PATH_TO_JSON_KEY_FILE_HERE api.admanager.networkCode=INSERT_NETWORK_CODE_HERE [...]
 Run the following command in a shell:
 
-- Specify dependencies Edit your pom.xml file and add the following to the dependencies tag. You can find the latest version number on Github . <dependency> <groupId>com.google.api-ads</groupId> <artifactId>ads-lib</artifactId> <version>RELEASE</version>
-</dependency>
-<dependency> <groupId>com.google.api-ads</groupId> <artifactId>dfp-axis</artifactId> <version>RELEASE</version>
-</dependency>
+- Specify dependencies Edit your pom.xml file and add the following to the dependencies tag. You can find the latest version number on Github. <dependency> <groupId>com.google.api-ads</groupId> <artifactId>ads-lib</artifactId> <version>RELEASE</version> </dependency> <dependency> <groupId>com.google.api-ads</groupId> <artifactId>dfp-axis</artifactId> <version>RELEASE</version> </dependency>
 Specify dependencies
 
-Edit your pom.xml file and add the following to the dependencies tag. You can find the latest version number on Github . <dependency> <groupId>com.google.api-ads</groupId> <artifactId>ads-lib</artifactId> <version>RELEASE</version>
-</dependency>
-<dependency> <groupId>com.google.api-ads</groupId> <artifactId>dfp-axis</artifactId> <version>RELEASE</version>
-</dependency>
+Edit your pom.xml file and add the following to the dependencies tag. You can find the latest version number on Github.
 
-- Write some code and make a request! import com.google.api.ads.common.lib.auth.OfflineCredentials ; import com.google.api.ads.common.lib.auth.OfflineCredentials.Api ; import com.google.api.ads.admanager.axis.factory.AdManagerServices ; import com.google.api.ads.admanager.axis.v202602.Network ; import com.google.api.ads.admanager.axis.v202602.NetworkServiceInterface ; import com.google.api.ads.admanager.lib.client.AdManagerSession ; import com.google.api.client.auth.oauth2.Credential ; public class App { public static void main ( String [] args ) throws Exception { Credential oAuth2Credential = new OfflineCredentials . Builder () . forApi ( Api . AD_MANAGER ) . fromFile () . build () . generateCredential (); // Construct an AdManagerSession. AdManagerSession session = new AdManagerSession . Builder () . fromFile () . withOAuth2Credential ( oAuth2Credential ) . build (); // Construct a Google Ad Manager service factory, which can only be used once per // thread, but should be reused as much as possible. AdManagerServices adManagerServices = new AdManagerServices (); // Retrieve the appropriate service NetworkServiceInterface networkService = adManagerServices . get ( session , NetworkServiceInterface . class ); // Make a request Network network = networkService . getCurrentNetwork (); System . out . printf ( "Current network has network code '%s' and display" + " name '%s'.%n" , network . getNetworkCode (), network . getDisplayName ()); } } View on GitHub
+- Write some code and make a request! import com.google.api.ads.common.lib.auth.OfflineCredentials; import com.google.api.ads.common.lib.auth.OfflineCredentials.Api; import com.google.api.ads.admanager.axis.factory.AdManagerServices; import com.google.api.ads.admanager.axis.v202602.Network; import com.google.api.ads.admanager.axis.v202602.NetworkServiceInterface; import com.google.api.ads.admanager.lib.client.AdManagerSession; import com.google.api.client.auth.oauth2.Credential; public class App { public static void main(String[] args) throws Exception { Credential oAuth2Credential = new OfflineCredentials.Builder() .forApi(Api.AD_MANAGER) .fromFile() .build() .generateCredential(); // Construct an AdManagerSession. AdManagerSession session = new AdManagerSession.Builder() .fromFile() .withOAuth2Credential(oAuth2Credential) .build(); // Construct a Google Ad Manager service factory, which can only be used once per // thread, but should be reused as much as possible. AdManagerServices adManagerServices = new AdManagerServices(); // Retrieve the appropriate service NetworkServiceInterface networkService = adManagerServices.get(session, NetworkServiceInterface.class); // Make a request Network network = networkService.getCurrentNetwork(); System.out.printf("Current network has network code '%s' and display" + " name '%s'.%n", network.getNetworkCode(), network.getDisplayName()); } } View on GitHub
 Write some code and make a request!
 
 ### Python
 
-Here is a basic example that shows how to use the Python client library .
-The Python Client Library supports Python v3.6+. For more detailed usage
-information, refer to the README file in the client library distribution.
+Here is a basic example that shows how to use the Python client library. The Python Client Library supports Python v3.6+. For more detailed usage information, refer to the README file in the client library distribution.
 
 - Install the library and set up your credentials. Run the following commands in a shell: python3 -m pip install googleads curl https://raw.githubusercontent.com/googleads/googleads-python-lib/main/googleads.yaml \ -o ~/googleads.yaml
 Run the following commands in a shell:
 
-- Set up your ~/googleads.yaml file. Fill in the following fields: ad_manager : application_name : INSERT_APPLICATION_NAME_HERE network_code : INSERT_NETWORK_CODE_HERE path_to_private_key_file : INSERT_PATH_TO_FILE_HERE
+- Set up your ~/googleads.yaml file. Fill in the following fields: ad_manager: application_name: INSERT_APPLICATION_NAME_HERE network_code: INSERT_NETWORK_CODE_HERE path_to_private_key_file: INSERT_PATH_TO_FILE_HERE
 Fill in the following fields:
 
-- Run some code and make a request. # Import the library. from googleads import ad_manager # Initialize a client object, by default uses the credentials in ~/googleads.yaml. client = ad_manager . AdManagerClient . LoadFromStorage () # Initialize a service. network_service = client . GetService ( 'NetworkService' , version = 'v202602' ) # Make a request. current_network = network_service . getCurrentNetwork () print ( "Current network has network code ' %s ' and display name ' %s '." % ( current_network [ 'networkCode' ], current_network [ 'displayName' ])) View on GitHub
+- Run some code and make a request. # Import the library. from googleads import ad_manager # Initialize a client object, by default uses the credentials in ~/googleads.yaml. client = ad_manager.AdManagerClient.LoadFromStorage() # Initialize a service. network_service = client.GetService('NetworkService', version='v202602') # Make a request. current_network = network_service.getCurrentNetwork() print("Current network has network code '%s' and display name '%s'." % (current_network['networkCode'], current_network['displayName'])) View on GitHub
 ### PHP
 
-Here is a basic example that shows how to use the PHP client library .
+Here is a basic example that shows how to use the PHP client library.
 
 - Install the library and setup your credentials. Run the following commands in a shell to install the client library and download the adsapi_php.ini file to your home directory: composer require googleads/googleads-php-lib curl https://raw.githubusercontent.com/googleads/googleads-php-lib/main/examples/AdManager/adsapi_php.ini -o ~/adsapi_php.ini
 Run the following commands in a shell to install the client library and download the adsapi_php.ini file to your home directory:
@@ -865,80 +788,51 @@ Run the following commands in a shell to install the client library and download
 - Setup your ~/adsapi_php.ini file. Fill in the following fields: [AD_MANAGER] networkCode = "INSERT_NETWORK_CODE_HERE" applicationName = "INSERT_APPLICATION_NAME_HERE" [OAUTH2] jsonKeyFilePath = "INSERT_ABSOLUTE_PATH_TO_OAUTH2_JSON_KEY_FILE_HERE" scopes = "https://www.googleapis.com/auth/dfp"
 Fill in the following fields:
 
-- Run some code and make a request! This example code must be run from the command line, not a browser.
-      The file containing this code must reside in the root of the project directory,
-      where composer require was run. < ?php require 'vendor/autoload.php'; use Google\AdsApi\AdManager\AdManagerSession; use Google\AdsApi\AdManager\AdManagerSessionBuilder; use Google\AdsApi\AdManager\v202602\ApiException; use Google\AdsApi\AdManager\v202602\ServiceFactory; use Google\AdsApi\Common\OAuth2TokenBuilder; // Generate a refreshable OAuth2 credential for authentication. $oAuth2Credential = (new OAuth2TokenBuilder()) ->fromFile() ->build(); // Construct an API session configured from a properties file and the OAuth2 // credentials above. $session = (new AdManagerSessionBuilder()) ->fromFile() ->withOAuth2Credential($oAuth2Credential) ->build(); // Get a service. $serviceFactory = new ServiceFactory(); $networkService = $serviceFactory->createNetworkService($session); // Make a request $network = $networkService->getCurrentNetwork(); printf( "Network with code %d and display name '%s' was found.\n", $network->getNetworkCode(), $network->getDisplayName() ); View on GitHub
+- Run some code and make a request! This example code must be run from the command line, not a browser. The file containing this code must reside in the root of the project directory, where composer require was run. <?php require 'vendor/autoload.php'; use Google\AdsApi\AdManager\AdManagerSession; use Google\AdsApi\AdManager\AdManagerSessionBuilder; use Google\AdsApi\AdManager\v202602\ApiException; use Google\AdsApi\AdManager\v202602\ServiceFactory; use Google\AdsApi\Common\OAuth2TokenBuilder; // Generate a refreshable OAuth2 credential for authentication. $oAuth2Credential = (new OAuth2TokenBuilder()) ->fromFile() ->build(); // Construct an API session configured from a properties file and the OAuth2 // credentials above. $session = (new AdManagerSessionBuilder()) ->fromFile() ->withOAuth2Credential($oAuth2Credential) ->build(); // Get a service. $serviceFactory = new ServiceFactory(); $networkService = $serviceFactory->createNetworkService($session); // Make a request $network = $networkService->getCurrentNetwork(); printf( "Network with code %d and display name '%s' was found.\n", $network->getNetworkCode(), $network->getDisplayName() ); View on GitHub
 ### .NET
 
-Here is a basic example that shows how to use the .NET client
-  library Create a new project Open Visual Studio and create a new project (Console Application). Add required library references to your project Add a nuget dependency for Google.Dfp . Setup your App.config Copy src\App.config to your project directory and add it to your project. If your application has its own App.config, then you can copy the following nodes into your App.config: configuration/AdManagerApi configuration/configSections/section[name="AdManagerApi"] configuration/system.net Setup credentials Open App.config and edit the following keys: <add key="ApplicationName" value="INSERT_YOUR_APPLICATION_NAME_HERE" />
-<add key="NetworkCode" value="INSERT_YOUR_NETWORK_CODE_HERE" />
-<add key="OAuth2Mode" value="SERVICE_ACCOUNT" />
-<add key="OAuth2SecretsJsonPath" value="INSERT_OAUTH2_SECRETS_JSON_FILE_PATH_HERE" /> Make a call to the library You can call the library as shown in the following C# code snippet View on GitHub AdManagerUser user = new AdManagerUser (); using ( InventoryService inventoryService = user . GetService<InventoryService> ()) { // Create a statement to select ad units. int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT ; StatementBuilder statementBuilder = new StatementBuilder().OrderBy("id ASC").Limit(pageSize) ; // Retrieve a small amount of ad units at a time, paging through until all // ad units have been retrieved. int totalResultSetSize = 0 ; do { AdUnitPage page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement()) ; // Print out some information for each ad unit. if (page.results != null) { totalResultSetSize = page.totalResultSetSize ; int i = page.startIndex ; foreach (AdUnit adUnit in page.results) { Console.WriteLine( "{0 } ) Ad unit with ID \ "{1}\" and name \"{2}\" was found." , i ++, adUnit . id , adUnit . name ); } } statementBuilder . IncreaseOffsetBy ( pageSize ); } while ( statementBuilder . GetOffset () < totalResultSetSize ); Console . WriteLine ( "Number of results found: {0}" , totalResultSetSize ); } If you don't want to set your credentials in your App.config, then refer
-to this wiki article for alternate ways of using the AdManagerUser class. For more detailed information about using the .NET Client Library, refer
-to the README . If you want to develop in .NET without the client library, please refer to the NoClientLibrary
-wiki article .
+Here is a basic example that shows how to use the .NET client library
 
 - Create a new project Open Visual Studio and create a new project (Console Application).
 Open Visual Studio and create a new project (Console Application).
 
-- Add required library references to your project Add a nuget dependency for Google.Dfp .
-Add a nuget dependency for Google.Dfp .
+- Add required library references to your project Add a nuget dependency for Google.Dfp.
+Add a nuget dependency for Google.Dfp.
 
 - Setup your App.config Copy src\App.config to your project directory and add it to your project. If your application has its own App.config, then you can copy the following nodes into your App.config: configuration/AdManagerApi configuration/configSections/section[name="AdManagerApi"] configuration/system.net
-Copy src\App.config to your project directory and add it to your project. If your application has its own App.config, then you can copy the following nodes into your App.config: configuration/AdManagerApi configuration/configSections/section[name="AdManagerApi"] configuration/system.net
+Copy src\App.config to your project directory and add it to your project. If your application has its own App.config, then you can copy the following nodes into your App.config:
 
 - configuration/AdManagerApi
 - configuration/configSections/section[name="AdManagerApi"]
 - configuration/system.net
-- Setup credentials Open App.config and edit the following keys: <add key="ApplicationName" value="INSERT_YOUR_APPLICATION_NAME_HERE" />
-<add key="NetworkCode" value="INSERT_YOUR_NETWORK_CODE_HERE" />
-<add key="OAuth2Mode" value="SERVICE_ACCOUNT" />
-<add key="OAuth2SecretsJsonPath" value="INSERT_OAUTH2_SECRETS_JSON_FILE_PATH_HERE" />
-Open App.config and edit the following keys: <add key="ApplicationName" value="INSERT_YOUR_APPLICATION_NAME_HERE" />
-<add key="NetworkCode" value="INSERT_YOUR_NETWORK_CODE_HERE" />
-<add key="OAuth2Mode" value="SERVICE_ACCOUNT" />
-<add key="OAuth2SecretsJsonPath" value="INSERT_OAUTH2_SECRETS_JSON_FILE_PATH_HERE" />
+- Setup credentials Open App.config and edit the following keys: <add key="ApplicationName" value="INSERT_YOUR_APPLICATION_NAME_HERE" /> <add key="NetworkCode" value="INSERT_YOUR_NETWORK_CODE_HERE" /> <add key="OAuth2Mode" value="SERVICE_ACCOUNT" /> <add key="OAuth2SecretsJsonPath" value="INSERT_OAUTH2_SECRETS_JSON_FILE_PATH_HERE" />
+Open App.config and edit the following keys:
 
-- Make a call to the library You can call the library as shown in the following C# code snippet View on GitHub AdManagerUser user = new AdManagerUser (); using ( InventoryService inventoryService = user . GetService<InventoryService> ()) { // Create a statement to select ad units. int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT ; StatementBuilder statementBuilder = new StatementBuilder().OrderBy("id ASC").Limit(pageSize) ; // Retrieve a small amount of ad units at a time, paging through until all // ad units have been retrieved. int totalResultSetSize = 0 ; do { AdUnitPage page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement()) ; // Print out some information for each ad unit. if (page.results != null) { totalResultSetSize = page.totalResultSetSize ; int i = page.startIndex ; foreach (AdUnit adUnit in page.results) { Console.WriteLine( "{0 } ) Ad unit with ID \ "{1}\" and name \"{2}\" was found." , i ++, adUnit . id , adUnit . name ); } } statementBuilder . IncreaseOffsetBy ( pageSize ); } while ( statementBuilder . GetOffset () < totalResultSetSize ); Console . WriteLine ( "Number of results found: {0}" , totalResultSetSize ); }
-You can call the library as shown in the following C# code snippet View on GitHub AdManagerUser user = new AdManagerUser (); using ( InventoryService inventoryService = user . GetService<InventoryService> ()) { // Create a statement to select ad units. int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT ; StatementBuilder statementBuilder = new StatementBuilder().OrderBy("id ASC").Limit(pageSize) ; // Retrieve a small amount of ad units at a time, paging through until all // ad units have been retrieved. int totalResultSetSize = 0 ; do { AdUnitPage page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement()) ; // Print out some information for each ad unit. if (page.results != null) { totalResultSetSize = page.totalResultSetSize ; int i = page.startIndex ; foreach (AdUnit adUnit in page.results) { Console.WriteLine( "{0 } ) Ad unit with ID \ "{1}\" and name \"{2}\" was found." , i ++, adUnit . id , adUnit . name ); } } statementBuilder . IncreaseOffsetBy ( pageSize ); } while ( statementBuilder . GetOffset () < totalResultSetSize ); Console . WriteLine ( "Number of results found: {0}" , totalResultSetSize ); }
+- Make a call to the library You can call the library as shown in the following C# code snippet View on GitHub AdManagerUser user = new AdManagerUser(); using (InventoryService inventoryService = user.GetService<InventoryService>()) { // Create a statement to select ad units. int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT; StatementBuilder statementBuilder = new StatementBuilder().OrderBy("id ASC").Limit(pageSize); // Retrieve a small amount of ad units at a time, paging through until all // ad units have been retrieved. int totalResultSetSize = 0; do { AdUnitPage page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement()); // Print out some information for each ad unit. if (page.results != null) { totalResultSetSize = page.totalResultSetSize; int i = page.startIndex; foreach (AdUnit adUnit in page.results) { Console.WriteLine( "{0}) Ad unit with ID \"{1}\" and name \"{2}\" was found.", i++, adUnit.id, adUnit.name); } } statementBuilder.IncreaseOffsetBy(pageSize); } while (statementBuilder.GetOffset() < totalResultSetSize); Console.WriteLine("Number of results found: {0}", totalResultSetSize); }
+You can call the library as shown in the following C# code snippet
 
-If you don't want to set your credentials in your App.config, then refer
-to this wiki article for alternate ways of using the AdManagerUser class. For more detailed information about using the .NET Client Library, refer
-to the README . If you want to develop in .NET without the client library, please refer to the NoClientLibrary
-wiki article .
+If you don't want to set your credentials in your App.config, then refer to this wiki article for alternate ways of using the AdManagerUser class. For more detailed information about using the .NET Client Library, refer to the README . If you want to develop in .NET without the client library, please refer to the NoClientLibrary wiki article.
 
 ### Ruby
 
-Here is a basic example that shows how to use the Ruby
-client library . The Ruby client library requires Ruby 2.1 or later.
+Here is a basic example that shows how to use the Ruby client library. The Ruby client library requires Ruby 2.1 or later.
 
-- Install the Ruby gem and get the configuration file. Run the following commands in a shell: gem install google-dfp-api curl https://raw.githubusercontent.com/googleads/google-api-ads-ruby/main/ad_manager_api/ad_manager_api.yml -o ~/ad_manager_api.yml If you encounter an error such as " cannot load such
-file -- mkmf (LoadError) " at any point while installing your gems, you
-may need to install additional Ruby development libraries such as ruby-dev,
-ruby-devel, xcode-select etc. for your particular environment.
+- Install the Ruby gem and get the configuration file. Run the following commands in a shell: gem install google-dfp-api curl https://raw.githubusercontent.com/googleads/google-api-ads-ruby/main/ad_manager_api/ad_manager_api.yml -o ~/ad_manager_api.yml If you encounter an error such as "cannot load such file -- mkmf (LoadError)" at any point while installing your gems, you may need to install additional Ruby development libraries such as ruby-dev, ruby-devel, xcode-select etc. for your particular environment.
 Run the following commands in a shell:
 
-- Setup your credentials Populate the required fields in the ~/ad_manager_api.yml file. If you don't already have an OAuth2 keyfile, you'll need to follow the
-steps to create your OAuth2
-credentials . :authentication : :oauth2_keyfile : INSERT_PATH_TO_JSON_KEY_FILE_HERE :application_name : INSERT_APPLICATION_NAME_HERE :network_code : INSERT_NETWORK_CODE_HERE
-Populate the required fields in the ~/ad_manager_api.yml file. If you don't already have an OAuth2 keyfile, you'll need to follow the
-steps to create your OAuth2
-credentials .
+- Setup your credentials Populate the required fields in the ~/ad_manager_api.yml file. If you don't already have an OAuth2 keyfile, you'll need to follow the steps to create your OAuth2 credentials. :authentication: :oauth2_keyfile: INSERT_PATH_TO_JSON_KEY_FILE_HERE :application_name: INSERT_APPLICATION_NAME_HERE :network_code: INSERT_NETWORK_CODE_HERE
+Populate the required fields in the ~/ad_manager_api.yml file. If you don't already have an OAuth2 keyfile, you'll need to follow the steps to create your OAuth2 credentials.
 
-- Write some code and make a request! # Import the library. require 'ad_manager_api' # Initialize an Ad Manager client instance (uses credentials in ~/ad_manager_api.yml by default). ad_manager = AdManagerApi :: Api . new # Get a service instance. network_service = ad_manager . service ( :NetworkService , :v202602 ) # Make a request. network = network_service . get_current_network () puts "The current network is %s (%d)." % [ network [ :display_name ] , network [ :network_code ]] View on GitHub
-More detailed steps for getting started can be found in the README file that is distributed with the Ruby client library. Also, check out our full
-example library for Ruby.
+- Write some code and make a request! # Import the library. require 'ad_manager_api' # Initialize an Ad Manager client instance (uses credentials in ~/ad_manager_api.yml by default). ad_manager = AdManagerApi::Api.new # Get a service instance. network_service = ad_manager.service(:NetworkService, :v202602) # Make a request. network = network_service.get_current_network() puts "The current network is %s (%d)." % [network[:display_name], network[:network_code]] View on GitHub
+More detailed steps for getting started can be found in the README file that is distributed with the Ruby client library. Also, check out our full example library for Ruby.
 
 ## Next steps
 
-When you have a client library up and running, modify the examples provided to
-extend them for your needs.
+When you have a client library up and running, modify the examples provided to extend them for your needs.
 
-Browse the reference documentation to learn more
-about the API.
+Browse the reference documentation to learn more about the API.
 
-If you need help, visit our Support page .
+If you need help, visit our Support page.
 
 
 ---
@@ -1179,7 +1073,20 @@ Learn how global publishers are finding success using Ad Manager to power their 
 
 ---
 
-## ad-manager overview (0.50.0)Stay organized with collectionsSave and categorize content based on your preferences.
+## ad-manager overview (0.50.0)
+
+
+
+
+
+
+
+
+      Stay organized with collections
+
+
+
+      Save and categorize content based on your preferences.
 
 Source: [https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview](https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview)
 
@@ -1205,41 +1112,29 @@ In order to use this library, you first need to go through the following steps:
 - Set up authentication
 ## Use the Google Ad Manager API for Java
 
-To ensure that your project uses compatible versions of the libraries
-and their component artifacts, import com.google.cloud:libraries-bom and use
-the BOM to specify dependency versions.  Be sure to remove any versions that you
-set previously. For more information about
-BOMs, see Google Cloud Platform Libraries BOM .
+To ensure that your project uses compatible versions of the libraries and their component artifacts, import com.google.cloud:libraries-bom and use the BOM to specify dependency versions. Be sure to remove any versions that you set previously. For more information about BOMs, see Google Cloud Platform Libraries BOM.
 
 ### Maven
 
-Import the BOM in the dependencyManagement section of your pom.xml file.
-Include specific artifacts you depend on in the dependencies section, but don't
-specify the artifacts' versions in the dependencies section.
+Import the BOM in the dependencyManagement section of your pom.xml file. Include specific artifacts you depend on in the dependencies section, but don't specify the artifacts' versions in the dependencies section.
 
 The example below demonstrates how you would import the BOM and include the ad-manager artifact.
 
 ### Gradle
 
-BOMs are supported by default in Gradle 5.x or later. Add a platform dependency on com.google.cloud:libraries-bom and remove the version from the
-dependency declarations in the artifact's build.gradle file.
+BOMs are supported by default in Gradle 5.x or later. Add a platform dependency on com.google.cloud:libraries-bom and remove the version from the dependency declarations in the artifact's build.gradle file.
 
 The example below demonstrates how you would import the BOM and include the ad-manager artifact.
 
-The platform and enforcedPlatform keywords supply dependency versions
-declared in a BOM. The enforcedPlatform keyword enforces the dependency
-versions declared in the BOM and thus overrides what you specified.
+The platform and enforcedPlatform keywords supply dependency versions declared in a BOM. The enforcedPlatform keyword enforces the dependency versions declared in the BOM and thus overrides what you specified.
 
-For more details of the platform and enforcedPlatform keywords Gradle 5.x or higher, see Gradle: Importing Maven BOMs .
+For more details of the platform and enforcedPlatform keywords Gradle 5.x or higher, see Gradle: Importing Maven BOMs.
 
-If you're using Gradle 4.6 or later, add enableFeaturePreview('IMPROVED_POM_SUPPORT') to your settings.gradle file. For details, see Gradle 4.6 Release Notes: BOM import .
-Versions of Gradle earlier than 4.6 don't support BOMs.
+If you're using Gradle 4.6 or later, add enableFeaturePreview('IMPROVED_POM_SUPPORT') to your settings.gradle file. For details, see Gradle 4.6 Release Notes: BOM import. Versions of Gradle earlier than 4.6 don't support BOMs.
 
 ### SBT
 
-SBT doesn't support BOMs . You can find
-recommended versions of libraries from a particular BOM version on the dashboard and set the versions manually.
-To use the latest version of this library, add this to your dependencies:
+SBT doesn't support BOMs. You can find recommended versions of libraries from a particular BOM version on the dashboard and set the versions manually. To use the latest version of this library, add this to your dependencies:
 
 ## Which version ID should I get started with?
 
@@ -1249,23 +1144,17 @@ For this library, we recommend using com.google.ads.admanager.v1 for new applica
 
 When using a Cloud client library, it's important to distinguish between two types of versions:
 
-- Library Version : The version of the software package (the client library) that helps you interact with the Cloud service. These libraries are
-released and updated frequently with bug fixes, improvements, and support for new service features and versions. The version selector at
-the top of this page represents the client library version.
-- Version ID : The version of the Cloud service itself (e.g. Google Ad Manager API). New Version IDs are introduced infrequently, and often involve
-changes to the core functionality and structure of the Cloud service itself. The packages in the lefthand navigation represent packages tied
-to a specific Version ID of the Cloud service.
+- Library Version: The version of the software package (the client library) that helps you interact with the Cloud service. These libraries are released and updated frequently with bug fixes, improvements, and support for new service features and versions. The version selector at the top of this page represents the client library version.
+- Version ID: The version of the Cloud service itself (e.g. Google Ad Manager API). New Version IDs are introduced infrequently, and often involve changes to the core functionality and structure of the Cloud service itself. The packages in the lefthand navigation represent packages tied to a specific Version ID of the Cloud service.
 ### Managing Library Versions
 
-We recommend using the com.google.cloud:libraries-bom installation method detailed above to streamline dependency management
-across multiple Cloud Java client libraries. This ensures compatibility and simplifies updates.
+We recommend using the com.google.cloud:libraries-bom installation method detailed above to streamline dependency management across multiple Cloud Java client libraries. This ensures compatibility and simplifies updates.
 
 ### Choosing the Right Version ID
 
-Each Cloud Java client library may contain packages tied to specific Version IDs (e.g., v1 , v2alpha ). For new production applications, use
-the latest stable Version ID. This is identified by the highest version number without a suffix (like "alpha" or "beta"). You can read more about Cloud API versioning strategy here .
+Each Cloud Java client library may contain packages tied to specific Version IDs (e.g., v1, v2alpha). For new production applications, use the latest stable Version ID. This is identified by the highest version number without a suffix (like "alpha" or "beta"). You can read more about Cloud API versioning strategy here.
 
-Important : Unstable Version ID releases (those with suffixes) are subject to breaking changes when upgrading. Use them only for testing or if you specifically need their experimental features.
+Important: Unstable Version ID releases (those with suffixes) are subject to breaking changes when upgrading. Use them only for testing or if you specifically need their experimental features.
 
 
 ---
