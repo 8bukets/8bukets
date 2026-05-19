@@ -227,17 +227,19 @@ export class Jules {
       } else {
         // STANDARD/PREDICTIVE fixes go through PR
         const branchName = `fix/autonomous-evolution-${Date.now()}`
-        const { execSync } = await import('child_process')
+        const { exec } = await import('child_process')
+        const { promisify } = await import('util')
+        const execAsync = promisify(exec)
 
         try {
           // Ensure we are on a clean state before branching
-          const status = execSync('git status --porcelain').toString().trim()
-          if (status) {
+          const { stdout: status } = await execAsync('git status --porcelain')
+          if (status.toString().trim()) {
             console.warn('⚠️ [Jules] Working directory is dirty. Stashing changes before repair...')
-            execSync('git stash')
+            await execAsync('git stash')
           }
 
-          execSync(`git checkout -b ${branchName}`)
+          await execAsync(`git checkout -b ${branchName}`)
 
           await applyFixes(suggestions)
 
@@ -249,11 +251,11 @@ export class Jules {
           const prBody = `Autonomous Evolution has identified and fixed ${suggestions.length} issues.\n\nSuggestions:\n${suggestions.map(s => `- ${s.file}: ${s.suggestion}`).join('\n')}`
           await gitProvider.createPullRequest(message, prBody, branchName)
 
-          execSync(`git checkout main`)
+          await execAsync(`git checkout main`)
           this.recordTask(`Self-Repair: Created autonomous PR for ${suggestions.length} fixes.`)
         } catch (err: any) {
           console.error('❌ [Jules] Branch-based self-repair failed:', err.message)
-          execSync('git checkout main || true')
+          try { await execAsync('git checkout main || true') } catch (e) {}
           this.recordTask(`Self-Repair: Failed during branch operation - ${err.message}`)
         }
       }
@@ -299,7 +301,9 @@ export class Jules {
     console.log(`🔄 [Jules] Commencing autonomous Git synchronization on ${branch}...`)
 
     try {
-      const { execSync } = await import('child_process')
+      const { exec } = await import('child_process')
+      const { promisify } = await import('util')
+      const execAsync = promisify(exec)
       const { GitProviderService } = await import('./services/git_provider')
 
       const formattedMessage = GitProviderService.formatGitKrakenMessage(
@@ -310,10 +314,14 @@ export class Jules {
       )
 
       console.log(`[Jules] Staging and syncing on branch ${branch}...`)
-      execSync('git add -A', { stdio: 'inherit' })
+      try {
+        await execAsync('git add -A')
+      } catch (e) {
+        console.warn('⚠️ [Jules] git add failed:', e)
+      }
 
       try {
-        execSync(`git commit -m "${formattedMessage}"`, { stdio: 'inherit' })
+        await execAsync(`git commit -m "${formattedMessage}"`)
         this.recordTask(`Git Sync: Committed changes with GitKraken optimization.`)
       } catch (commitErr: any) {
         // Safe empty commit failure tolerance
@@ -324,13 +332,13 @@ export class Jules {
       if (process.env.GITHUB_TOKEN || process.env.GITLAB_TOKEN) {
         console.log(`[Jules] Rebase pulling and pushing branch ${branch}...`)
         try {
-          execSync(`git pull --rebase origin ${branch}`, { stdio: 'inherit' })
+          await execAsync(`git pull --rebase origin ${branch}`)
         } catch (pullErr: any) {
           console.warn('⚠️ [Jules] Pull rebase failed, continuing to push.', pullErr.message)
         }
 
         try {
-          execSync(`git push origin ${branch}`, { stdio: 'inherit' })
+          await execAsync(`git push origin ${branch}`)
         } catch (pushErr: any) {
           console.warn('⚠️ [Jules] Push failed.', pushErr.message)
         }
@@ -345,9 +353,12 @@ export class Jules {
   public async auditDependencies() {
     await this.ensureInitialized()
     console.log('📦 [Jules] Auditing dependency sovereignty...')
-    const { execSync } = await import('child_process')
+    const { exec } = await import('child_process')
+    const { promisify } = await import('util')
+    const execAsync = promisify(exec)
     try {
-      const outdated = execSync('npm outdated --json || true').toString()
+      const { stdout } = await execAsync('npm outdated --json || true')
+      const outdated = stdout.toString()
       const count = Object.keys(JSON.parse(outdated || '{}')).length
       if (count > 0) {
         this.recordTask(`Dependency Autopilot: Found ${count} outdated packages. Optimization recommended.`)
@@ -556,18 +567,22 @@ export class Jules {
     }
 
     console.log('🔍 [Jules] Scanning all ecosystem branches...')
-    const { execFileSync } = await import('child_process')
+    const { execFile } = await import('child_process')
+    const { promisify } = await import('util')
+    const execFileAsync = promisify(execFile)
     try {
-      const branchesRaw = execFileSync('git', ['branch', '-a']).toString()
+      const { stdout } = await execFileAsync('git', ['branch', '-a'])
+      const branchesRaw = stdout.toString()
       const branches = branchesRaw.split('\n')
         .map(b => b.replace('*', '').trim())
         .filter(b => b && !b.includes('->'))
 
       // Limit deep scan to recent local branches to improve performance
-      const branchIntelligence = branches.map(branch => {
+      const branchIntelligencePromises = branches.map(async branch => {
         try {
-          // Use execFileSync with arguments array to prevent command injection
-          const lastCommit = execFileSync('git', ['log', '-1', '--format=%s|%at', branch]).toString().trim()
+          // Use execFileAsync with arguments array to prevent command injection
+          const { stdout: lastCommitStdout } = await execFileAsync('git', ['log', '-1', '--format=%s|%at', branch])
+          const lastCommit = lastCommitStdout.toString().trim()
           const [message, timestamp] = lastCommit.split('|')
           return {
             name: branch,
@@ -578,6 +593,8 @@ export class Jules {
           return { name: branch, lastMessage: 'Unknown', lastSeen: new Date().toISOString() }
         }
       })
+
+      const branchIntelligence = await Promise.all(branchIntelligencePromises)
 
       this.cachedBranchIntelligence = branchIntelligence
       this.lastScanTimestamp = Date.now()
