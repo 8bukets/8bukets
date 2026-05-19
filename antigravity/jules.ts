@@ -237,12 +237,12 @@ export class Jules {
       for (const idea of ideas) {
         if (idea.complexity === 'Low' || idea.complexity === 'Medium' || idea.complexity === 'High') {
           console.log(`🔗 [Jules] Chaining creation cycle for: ${idea.feature}`)
-          workOrderService.createOrder('BOOTSTRAP_SERVICE', `Bootstrap ${idea.feature}`, idea)
-          workOrderService.createOrder('SMOKE_TEST', `Verify ${idea.feature}`, {
+          const bootstrapOrder = workOrderService.createOrder('BOOTSTRAP_SERVICE', `Bootstrap ${idea.feature}`, idea)
+          const smokeTestOrder = workOrderService.createOrder('SMOKE_TEST', `Verify ${idea.feature}`, {
             serviceName: idea.feature.toLowerCase().replace(/\s+/g, '_').replace(/_service$/, ''),
             feature: idea.feature
-          })
-          workOrderService.createOrder('DEPLOYMENT', `Deploy ${idea.feature}`, idea)
+          }, [bootstrapOrder.id])
+          workOrderService.createOrder('DEPLOYMENT', `Deploy ${idea.feature}`, idea, [smokeTestOrder.id])
         }
       }
     }
