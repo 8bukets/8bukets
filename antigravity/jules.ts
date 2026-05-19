@@ -655,7 +655,8 @@ export class Jules {
       { path: 'gemmafour_docs.md', title: 'Gemma 4 Technical Report' },
       { path: 'litert_docs.md', title: 'LiteRT Framework Documentation' },
       { path: 'opentelemetry_repos.md', title: 'OpenTelemetry Ecosystem Analysis' },
-      { path: 'google_ads_docs.md', title: 'Google Ads Strategic Documentation' }
+      { path: 'google_ads_docs.md', title: 'Google Ads Strategic Documentation' },
+      { path: 'ai_agents_knowledge.md', title: 'AI Agents Concept & Architecture' }
     ]
 
     for (const source of knowledgeSources) {
