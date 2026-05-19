@@ -19,16 +19,16 @@
         "containerCount": 2,
         "simulated": true,
         "multiStageStatus": "multi-stage",
-        "timestamp": "2026-05-18T21:18:47.963Z"
+        "timestamp": "2026-05-19T00:23:07.379Z"
     },
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1779139127963,
+        "timestamp": 1779150187379,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
-        "branches": 1807,
+        "branches": 1814,
         "pendingTasks": 0,
         "relationshipMap": {
             "stakeholderEngagement": {
@@ -69,6 +69,7 @@
             },
             "goalAlignment": {
                 "Achieve full autonomous work cycles.": [
+                    "jules-2098058797614095194-0ea225b4",
                     "remotes/origin/add-malubeach-scraper-16704333902164650708",
                     "remotes/origin/add-mysql-agent-12534386317238704274",
                     "remotes/origin/autonomous-agents-framework-90146205652415261",
@@ -112,6 +113,7 @@
                     "remotes/origin/feat/cloud-autonomous-presence-4768792204367486255",
                     "remotes/origin/feat/collaboration-intelligence-knowledge-merge-v1-1682981257800000691",
                     "remotes/origin/feat/connect-docker-collaboration-6033606454460470488",
+                    "remotes/origin/feat/connect-docker-collaboration-sync-final-11700500964007561939",
                     "remotes/origin/feat/connect-docker-collaboration-sync-final-6753111079424335435",
                     "remotes/origin/feat/custom-github-action-10612201952418849138",
                     "remotes/origin/feat/dual-engine-autonomous-collaboration-180989571444817477",
@@ -143,6 +145,7 @@
                     "remotes/origin/feature/markposition-autonomous-integration-5824578537508195574",
                     "remotes/origin/feature/orchestrator-active-decisions-12848386406612919414",
                     "remotes/origin/feature/smarter-cloud-workflow-13558470471841766440",
+                    "remotes/origin/feature/unified-autonomous-creation-execution-9112787488112891184",
                     "remotes/origin/fix-and-automate-autonomous-system-4910910196834454154",
                     "remotes/origin/fix-autonomous-workflow-git-add-16103849688586949052",
                     "remotes/origin/fix-cloud-autonomous-presence-9827360869310750655",
@@ -195,6 +198,7 @@
                     "remotes/origin/add-docker-push-methods-8792019299013764107",
                     "remotes/origin/add-docker-scripts-14962706392589598489",
                     "remotes/origin/add-google-edge-agent-9371392929328195231",
+                    "remotes/origin/chore-docker-async-13305007447948067377",
                     "remotes/origin/chore/docker-collaboration-sync-9465155386456086135",
                     "remotes/origin/ci-consolidation-docker-build-cloud-16058181468570173910",
                     "remotes/origin/connect-docker-collaborate-17099568282070534570",
@@ -208,6 +212,7 @@
                     "remotes/origin/feat/collaboration-intelligence-knowledge-merge-v1-1682981257800000691",
                     "remotes/origin/feat/connect-docker-collaboration-10997916882350002599",
                     "remotes/origin/feat/connect-docker-collaboration-6033606454460470488",
+                    "remotes/origin/feat/connect-docker-collaboration-sync-final-11700500964007561939",
                     "remotes/origin/feat/connect-docker-collaboration-sync-final-6753111079424335435",
                     "remotes/origin/feat/connect-docker-collaboration-sync-final-6753111079424335435-11457900944324227307",
                     "remotes/origin/feat/docker-build-cloud-integration-15193242947855086456",
@@ -256,6 +261,7 @@
                     "remotes/origin/integrate-google-ai-knowledge-2026-14480721120706312503",
                     "remotes/origin/integrate-google-ai-knowledge-577515074625960618",
                     "remotes/origin/integrate-google-ai-knowledge-6028035298449651450",
+                    "remotes/origin/integrate-google-ai-knowledge-8707811954243291377",
                     "remotes/origin/integrate-google-ai-knowledge-v2-11489467311315949319",
                     "remotes/origin/integrate-google-blog-knowledge-4910820298428248589",
                     "remotes/origin/integrate-google-innovation-ai-knowledge-11329975251392721471",
@@ -276,6 +282,7 @@
                     "remotes/origin/jules-cloud-workflow-agent-9594836607216672043",
                     "remotes/origin/jules-cloud-workflow-tolerance-17354439472694641412",
                     "remotes/origin/jules-improve-knowledge-workflows-9958740170618720237",
+                    "remotes/origin/jules-integrate-oracle-knowledge-9421136010084102746",
                     "remotes/origin/jules-knowledge-merge-collaboration-3722212575858302197",
                     "remotes/origin/jules/add-system-patent-947552789592854459",
                     "remotes/origin/jules/compile-knowledge-integration-4875845775501523719",
@@ -294,6 +301,7 @@
                     "remotes/origin/feat/collaboration-synergy-analysis-9382599357384352288",
                     "remotes/origin/feat/connect-docker-collaboration-10997916882350002599",
                     "remotes/origin/feat/connect-docker-collaboration-6033606454460470488",
+                    "remotes/origin/feat/connect-docker-collaboration-sync-final-11700500964007561939",
                     "remotes/origin/feat/connect-docker-collaboration-sync-final-6753111079424335435",
                     "remotes/origin/feat/connect-docker-collaboration-sync-final-6753111079424335435-11457900944324227307",
                     "remotes/origin/feat/docker-collaboration-enhancements-2442044575661287661",
@@ -305,6 +313,7 @@
                     "remotes/origin/feat/full-ecosystem-collaboration-sync-2223737222399285274",
                     "remotes/origin/feature/autonomous-cloud-simulation-presence-15239864471767221481",
                     "remotes/origin/feature/docker-collaboration-sync-2408669220271786015",
+                    "remotes/origin/feature/unified-autonomous-creation-execution-9112787488112891184",
                     "remotes/origin/fix/docker-collaboration-sync-3245584476125900421",
                     "remotes/origin/jules-knowledge-merge-collaboration-3722212575858302197"
                 ],
@@ -320,6 +329,7 @@
                     "remotes/origin/ci-consolidation-docker-build-cloud-16058181468570173910",
                     "remotes/origin/codex/software-review-platform-starter",
                     "remotes/origin/enable-gitlab-security-scanners-17254273171421596517",
+                    "remotes/origin/feat/add-duo-planner-agent-13826965705256453185",
                     "remotes/origin/feat/docker-build-cloud-integration-15193242947855086456",
                     "remotes/origin/feat/ecosystem-merge-collaboration-sync-v1-13937591330884389226",
                     "remotes/origin/feat/full-ecosystem-collaboration-sync-2223737222399285274",
@@ -358,6 +368,7 @@
                     "remotes/origin/jules-continuous-presence-workflow-3144055533381791740",
                     "remotes/origin/jules-gitlab-ci-setup-10531506072496288006",
                     "remotes/origin/jules-gitlab-tutorial-ci-4111694628214868400",
+                    "remotes/origin/jules-integrate-oracle-knowledge-9421136010084102746",
                     "remotes/origin/jules/add-system-patent-947552789592854459",
                     "remotes/origin/opt-scraper-regex-6404737091544860092",
                     "remotes/origin/oracle-ai-database-integration-1558530856752998309",
@@ -653,6 +664,42 @@
                     "source": "https://developers.google.com/ad-manager/api/start"
                 },
                 {
+                    "type": "Knowledge",
+                    "name": "intelephense_docs.md",
+                    "status": "Ingested",
+                    "source": "local://intelephense_docs.md"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Intelephense: README",
+                    "status": "Ingested",
+                    "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/README.md"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Intelephense: installation",
+                    "status": "Ingested",
+                    "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/installation.md"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Intelephense: gettingStarted",
+                    "status": "Ingested",
+                    "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/gettingStarted.md"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Intelephense: features",
+                    "status": "Ingested",
+                    "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/features.md"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Intelephense: support",
+                    "status": "Ingested",
+                    "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/support.md"
+                },
+                {
                     "type": "Documentation",
                     "name": "AGENTS.md",
                     "status": "Active"
@@ -672,6 +719,12 @@
                     "name": "remotes/origin/feat/add-dry-run-and-docs-355491477019803773",
                     "status": "Ready for Merge",
                     "result": "freeze gcp deployments to bypass credential failures"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "remotes/origin/feat/add-duo-planner-agent-13826965705256453185",
+                    "status": "Ready for Merge",
+                    "result": "Add Duo Planner GitLab agent system prompt"
                 },
                 {
                     "type": "Branch Result",
@@ -834,6 +887,12 @@
                     "name": "remotes/origin/feat/connect-docker-collaboration-6033606454460470488",
                     "status": "Ready for Merge",
                     "result": "implement autonomous docker connectivity and collaboration sync"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "remotes/origin/feat/connect-docker-collaboration-sync-final-11700500964007561939",
+                    "status": "Ready for Merge",
+                    "result": "execute autonomous docker connectivity and collaboration sync"
                 },
                 {
                     "type": "Branch Result",
@@ -1461,13 +1520,29 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "remotes/origin/feature/unified-autonomous-creation-execution-9112787488112891184",
+                    "status": "Ready for Merge",
+                    "result": "Establish full autonomous creation and execution lifecycle"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "remotes/origin/feature/wilson-sonsini-docs-5223286484754365385",
                     "status": "Ready for Merge",
                     "result": "add Wilson Sonsini documentation in MD and JSON formats"
                 }
             ],
-            "synergies": []
+            "synergies": [
+                {
+                    "type": "Resource Conflict/Synergy",
+                    "resource": "work_order",
+                    "branches": [
+                        "jules-2098058797614095194-0ea225b4",
+                        "main"
+                    ],
+                    "intensity": "Medium"
+                }
+            ]
         }
     },
-    "last_sync": "2026-05-18T21:18:48.248Z"
+    "last_sync": "2026-05-19T00:23:07.685Z"
 }

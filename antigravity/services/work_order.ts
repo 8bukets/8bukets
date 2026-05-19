@@ -8,6 +8,7 @@ export const WorkOrderSchema = z.object({
   type: z.enum(['BOOTSTRAP_SERVICE', 'OPTIMIZE_SYSTEM', 'CONTENT_GENERATION', 'SMOKE_TEST', 'DEPLOYMENT']),
   goal: z.string(),
   payload: z.any(),
+  dependsOn: z.array(z.string()).optional(),
   status: z.enum(['pending', 'executing', 'completed', 'failed']),
   created_at: z.string(),
   completed_at: z.string().optional(),
@@ -53,12 +54,13 @@ export class WorkOrderService {
     fs.writeFileSync(STORAGE_PATH, JSON.stringify(this.orders, null, 2))
   }
 
-  public createOrder(type: WorkOrder['type'], goal: string, payload: any): WorkOrder {
+  public createOrder(type: WorkOrder['type'], goal: string, payload: any, dependsOn?: string[]): WorkOrder {
     const newOrder: WorkOrder = {
       id: `wo_${Math.random().toString(36).substring(2, 11)}`,
       type,
       goal,
       payload,
+      dependsOn,
       status: 'pending',
       created_at: new Date().toISOString()
     }
@@ -86,21 +88,49 @@ export class WorkOrderService {
   }
 
   public async executePendingOrders() {
-    const pending = this.getPendingOrders()
-    if (pending.length === 0) return
+    let hasProgress = true
 
-    console.log(`⚡ [WorkOrder] Executing ${pending.length} pending orders...`)
+    while (hasProgress) {
+      hasProgress = false
+      const pending = this.getPendingOrders()
+      if (pending.length === 0) break
 
-    for (const order of pending) {
-      await this.updateOrderStatus(order.id, 'executing')
-      try {
-        const result = await this.dispatch(order)
-        await this.updateOrderStatus(order.id, 'completed', result)
-        logAutonomousAction(`[WORK_ORDER] Completed: ${order.id}`, 'cognitive')
-      } catch (err: any) {
-        console.error(`❌ [WorkOrder] Order ${order.id} failed:`, err)
-        await this.updateOrderStatus(order.id, 'failed', undefined, err.message)
-        logAutonomousAction(`[WORK_ORDER] Failed: ${order.id}`, 'error')
+      console.log(`⚡ [WorkOrder] Processing ${pending.length} pending orders...`)
+
+      for (const order of pending) {
+        // Check dependencies
+        const deps = order.dependsOn || []
+        const allDepsMet = deps.every(depId => {
+          const depOrder = this.orders.find(o => o.id === depId)
+          return depOrder && depOrder.status === 'completed'
+        })
+
+        const anyDepFailed = deps.some(depId => {
+          const depOrder = this.orders.find(o => o.id === depId)
+          return depOrder && depOrder.status === 'failed'
+        })
+
+        if (anyDepFailed) {
+          console.warn(`⚠️ [WorkOrder] Order ${order.id} failed due to dependency failure.`)
+          await this.updateOrderStatus(order.id, 'failed', undefined, 'Dependency failed.')
+          hasProgress = true
+          continue
+        }
+
+        if (allDepsMet) {
+          await this.updateOrderStatus(order.id, 'executing')
+          try {
+            const result = await this.dispatch(order)
+            await this.updateOrderStatus(order.id, 'completed', result)
+            logAutonomousAction(`[WORK_ORDER] Completed: ${order.id}`, 'cognitive')
+            hasProgress = true
+          } catch (err: any) {
+            console.error(`❌ [WorkOrder] Order ${order.id} failed:`, err)
+            await this.updateOrderStatus(order.id, 'failed', undefined, err.message)
+            logAutonomousAction(`[WORK_ORDER] Failed: ${order.id}`, 'error')
+            hasProgress = true
+          }
+        }
       }
     }
   }
