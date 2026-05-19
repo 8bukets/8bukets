@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        MACBOOK_CLOUD_SIMULATION = 'true'
+    }
+
     stages {
         stage('Checkout') {
             steps {

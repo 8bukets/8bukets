@@ -16,6 +16,7 @@ default:
 
 variables:
   IMAGE_NAME: getanant/docker-build-cloud-demo
+  MACBOOK_CLOUD_SIMULATION: "true"
 
 stages:
   - build
