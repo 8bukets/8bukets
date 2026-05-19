@@ -238,3 +238,9 @@ Everything else should be evaluated by whether it helps:
 
 ---
 All the best - https://markposition.wordpress.com
+
+## Render Documentation Integration
+
+The platform now integrates Render deployment documentation into its knowledge base.
+- Data is stored in `render_docs.json` (flat structure for AI Agents) and `render_docs.md`.
+- Ingestion is handled via `scripts/ingest_render_docs.ts`.
