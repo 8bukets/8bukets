@@ -59,6 +59,16 @@ class CloudWorkflowAgent(BaseAgent):
         elif react_deployment_ready:
             orchestration_mode = "REACT_DEPLOYMENT_ACTIVE"
             active_decisions.extend(["PROVISION_REACT_DEPLOYMENT", "CONFIGURE_REACT_TOOLS", "TRIGGER_NEXTJS_BUILD"])
+
+            # Integrate dynamic actions from blackboard
+            react_actions = blackboard.get("react_actions", [])
+            if "DEPLOY_AUTOMATION_RULES" in react_actions:
+                active_decisions.append("CONFIGURE_AUTOMATION_PIPELINES")
+            if "INITIATE_SECURITY_AUDIT" in react_actions:
+                active_decisions.append("ENABLE_SECURITY_SCANNING")
+            if "TRIGGER_PERFORMANCE_OPTIMIZATION" in react_actions:
+                active_decisions.append("OPTIMIZE_DEPLOYMENT_RESOURCES")
+
             scale_tier = react_config.get("scale_tier", "STANDARD")
             if scale_tier == "GLOBAL_EDGE":
                 active_decisions.extend(["ENABLE_GLOBAL_LOAD_BALANCER", "DEPLOY_TO_EDGE_REGIONS"])
