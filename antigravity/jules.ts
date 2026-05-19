@@ -112,7 +112,7 @@ export class Jules {
     const { KnowledgeObserver } = await import('./services/knowledge_observer')
     const observer = new KnowledgeObserver()
 
-    const docsToObserve = [
+    const intelephenseDocs = [
       { owner: 'bmewburn', repo: 'intelephense-docs', path: 'README.md' },
       { owner: 'bmewburn', repo: 'intelephense-docs', path: 'installation.md' },
       { owner: 'bmewburn', repo: 'intelephense-docs', path: 'gettingStarted.md' },
@@ -120,17 +120,42 @@ export class Jules {
       { owner: 'bmewburn', repo: 'intelephense-docs', path: 'support.md' }
     ]
 
-    for (const doc of docsToObserve) {
+    let allSections: any[] = []
+
+    for (const doc of intelephenseDocs) {
       try {
         const result = await githubDocsObserver.fetchDoc(doc.owner, doc.repo, doc.path)
         const title = `Intelephense: ${doc.path.replace('.md', '')}`
         const rawContent = result.sections.map((s: any) => `# ${s.title}\n${s.content}`).join('\n\n')
         const knowledge = KnowledgeObserver.processContent(title, rawContent, result.rawUrl)
-        await observer.persistKnowledge(knowledge)
-        console.log(` ✅ [Jules] Ingested and Processed: ${doc.path}`)
+
+        allSections.push(...knowledge.sections)
+        console.log(` ✅ [Jules] Fetched: ${doc.path}`)
       } catch (err) {
-        console.error(` ❌ [Jules] Failed to ingest ${doc.path}:`, err)
+        console.error(` ❌ [Jules] Failed to fetch ${doc.path}:`, err)
       }
+    }
+
+    if (allSections.length > 0) {
+      // Deduplicate sections by header
+      const seenHeaders = new Set<string>()
+      const uniqueSections = allSections.filter(s => {
+        if (seenHeaders.has(s.header)) return false
+        if (!s.content && !['Getting Started', 'Features', 'Installation'].includes(s.header)) return false
+        seenHeaders.add(s.header)
+        return true
+      })
+
+      const consolidated = {
+        title: 'Intelephense Documentation',
+        sections: uniqueSections,
+        metadata: {
+          source: 'https://intelephense.com/docs',
+          ingestedAt: new Date().toISOString()
+        }
+      }
+      await observer.persistKnowledge(consolidated as any)
+      console.log(` ✅ [Jules] Consolidated Intelephense Documentation persisted.`)
     }
   }
 
