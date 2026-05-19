@@ -68,4 +68,30 @@ Some details here.`
     const systemKnowledge = JSON.parse(fs.readFileSync(path.join(testStorageDir, 'system_knowledge.json'), 'utf8'))
     expect(systemKnowledge.typescript_sections[0].title).toBe('Persist Test')
   })
+
+  it('should handle acronyms and technical terms in headers', () => {
+    const raw = 'DNF Types\nContent about DNF.\nLSP\nLanguage Server Protocol.'
+    const result = KnowledgeObserver.processContent('Test Title', raw, 'test-source')
+
+    expect(result.sections).toHaveLength(2)
+    expect(result.sections[0].header).toBe('DNF Types')
+    expect(result.sections[1].header).toBe('LSP')
+  })
+
+  it('should NOT treat PHP attributes or markdown comments as headers', () => {
+    const raw = `Appendix
+Here is some code:
+\`\`\`php
+#[Attribute]
+class MyClass {}
+# This is a comment
+\`\`\`
+More content.`
+    const result = KnowledgeObserver.processContent('Test Title', raw, 'test-source')
+
+    expect(result.sections).toHaveLength(1)
+    expect(result.sections[0].header).toBe('Appendix')
+    expect(result.sections[0].content).toContain('#[Attribute]')
+    expect(result.sections[0].content).toContain('# This is a comment')
+  })
 })

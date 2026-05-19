@@ -55,7 +55,7 @@ export class KnowledgeObserver {
 
       // Detect header candidates
       const hasLetters = /[a-zA-Z]/.test(trimmed)
-      const isMarkdownHeader = trimmed.startsWith('#')
+      const isMarkdownHeader = trimmed.startsWith('#') && !trimmed.startsWith('#[')
       const isStrongHeaderCandidate = trimmed && hasLetters &&
                              trimmed.length < 60 && trimmed.length > 2 &&
                              !trimmed.endsWith('.') &&
@@ -65,7 +65,7 @@ export class KnowledgeObserver {
                              !trimmed.includes('|') && !trimmed.includes('&') &&
                              !trimmed.includes('[') && !trimmed.includes(']') &&
                              !trimmed.includes('\\') &&
-                             (trimmed.toUpperCase() === trimmed || /^[A-Z][a-z0-9]*(\s[A-Z][a-z0-9]*)*$/.test(trimmed)) &&
+                             (trimmed.toUpperCase() === trimmed || /^([A-Z]{2,}|[A-Z][a-z0-9]*)(\s([A-Z]{2,}|[A-Z][a-z0-9]*))*$/.test(trimmed)) &&
                              !trimmed.startsWith('This ') &&
                              !trimmed.startsWith('Some ') &&
                              !/^[{}/*<>?]+$/.test(trimmed) &&
@@ -76,7 +76,7 @@ export class KnowledgeObserver {
       // Heuristic: If we hit a markdown header or a strong header candidate,
       // we assume any unclosed PHP block has ended.
       let effectiveHeader = false
-      if (isMarkdownHeader) {
+      if (isMarkdownHeader && !inMarkdownCodeBlock) {
         effectiveHeader = true
         inPhpCodeBlock = false // Markdown headers break PHP blocks
       } else if (!inCodeBlock && isStrongHeaderCandidate) {
