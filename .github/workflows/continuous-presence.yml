@@ -30,6 +30,7 @@ jobs:
       - name: Ignite Continuous Autonomous Cycle
         run: npm run ignite
         env:
+          MACBOOK_CLOUD_SIMULATION: true
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
@@ -44,4 +45,5 @@ jobs:
           git pull --rebase origin main || true
           git push origin main || true
         env:
+          MACBOOK_CLOUD_SIMULATION: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

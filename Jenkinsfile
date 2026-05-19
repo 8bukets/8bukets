@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     environment {
+        MACBOOK_CLOUD_SIMULATION = 'true'
         NODE_ENV = 'production'
         // Define any required environment variables for the node/ts execution
         // e.g., JENKINS_URL, SUPABASE variables, etc.
