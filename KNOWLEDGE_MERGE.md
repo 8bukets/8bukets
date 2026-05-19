@@ -239,14 +239,10 @@ Everything else should be evaluated by whether it helps:
 ---
 All the best - https://markposition.wordpress.com
 
-## Cloudflare Integration Layer
 
-Cloudflare Workers can be connected to GitHub or GitLab repositories to enable automated builds and deployments on push.
-This is critical for edge deployments and integrating the Antigravity intelligence layer closer to the user.
+## iCloud Integration (8bukets & antigravity)
+**Date:** 2026-05-19
 
-Key requirements for the system:
-- When a repository is connected to a Workers project, the Worker name in the Cloudflare dashboard must exactly match the name in the `wrangler.toml` file.
-- If no `wrangler.toml` exists, Cloudflare will attempt autoconfiguration via PR.
-- Builds that succeed are uploaded as versions, and if configured properly (e.g. `wrangler deploy`), they are automatically promoted to active deployments.
-
-The canonical implementation for edge routing and logic resides in the `cloudflare-worker/` directory as `antigravity-edge-worker`.
+- **Antigravity Architecture**: The iCloud notes indicate a need for deeper integration between the TypeScript autonomous engine and the Python orchestration cycle. Specifically, WorkOrder synchronization between MongoDB and local JSON files should be optimized using a unified Cloud sync service.
+- **8Bukets Knowledge**: Data from the 8bukets folders suggests that SystemAuditAgent and ChiefAIOfficer should have explicit 'recovery' phases integrated directly into their feedback loop, bypassing manual interventions entirely.
+- **Creativity Enhancement**: A core finding from the iCloud documents is that the CreativityAgent should not only suggest abstract concepts but should map those concepts directly to executable Work Orders in the queue.
