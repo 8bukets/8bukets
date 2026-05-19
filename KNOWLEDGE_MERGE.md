@@ -239,8 +239,10 @@ Everything else should be evaluated by whether it helps:
 ---
 All the best - https://markposition.wordpress.com
 
-## Render Documentation Integration
 
-The platform now integrates Render deployment documentation into its knowledge base.
-- Data is stored in `render_docs.json` (flat structure for AI Agents) and `render_docs.md`.
-- Ingestion is handled via `scripts/ingest_render_docs.ts`.
+## iCloud Integration (8bukets & antigravity)
+**Date:** 2026-05-19
+
+- **Antigravity Architecture**: The iCloud notes indicate a need for deeper integration between the TypeScript autonomous engine and the Python orchestration cycle. Specifically, WorkOrder synchronization between MongoDB and local JSON files should be optimized using a unified Cloud sync service.
+- **8Bukets Knowledge**: Data from the 8bukets folders suggests that SystemAuditAgent and ChiefAIOfficer should have explicit 'recovery' phases integrated directly into their feedback loop, bypassing manual interventions entirely.
+- **Creativity Enhancement**: A core finding from the iCloud documents is that the CreativityAgent should not only suggest abstract concepts but should map those concepts directly to executable Work Orders in the queue.
