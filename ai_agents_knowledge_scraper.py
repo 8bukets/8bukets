@@ -133,7 +133,7 @@ def scrape_ai_agents_knowledge():
                     f.write(f"## {final_data[mk]['title']}\n\n")
                     f.write(f"{final_data[mk]['content']}\n\n")
 
-            f.write("---\nAll the best - https://markposition.wordpress.com\n")
+
 
         return True
     except Exception as e:

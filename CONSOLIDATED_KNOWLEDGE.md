@@ -4257,7 +4257,7 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
     report += `- **${s.role}**: ${s.email}\n`
   })
 
-  report += `\n---\nAll the best - https://markposition.wordpress.com\n`
+  report += `\n---\n\n`
 
   fs.writeFileSync(reportPath, report)
   logAutonomousAction(`✅ [Intelligence] Report saved to ${reportPath}`, 'info')
@@ -6708,4 +6708,3 @@ ben@intelephense.com
 
 
 ---
-All the best - https://markposition.wordpress.com

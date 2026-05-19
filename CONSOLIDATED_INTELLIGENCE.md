@@ -44,4 +44,3 @@
 ## 👥 Stakeholders
 
 ---
-All the best - https://markposition.wordpress.com
