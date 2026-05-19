@@ -1,10 +1,10 @@
 # ANTIGRAVITY AI AGENTS KNOWLEDGE BASE
 
-*Last Updated: 2026-05-12T01:43:55.819Z*
+*Last Updated: 2026-05-19T23:14:08.007Z*
 
 ## DOCUMENT: Intelephense Documentation
-**Source:** https://intelephense.com/docs
-**Ingested At:** 2026-05-12T01:43:55.817Z
+**Source:** local://intelephense_docs.md
+**Ingested At:** 2026-05-19T23:14:08.002Z
 
 ### Introduction
 Getting Started
