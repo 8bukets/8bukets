@@ -30,6 +30,12 @@ pipeline {
             }
         }
 
+        stage('Engine Connection') {
+            steps {
+                sh 'npm run connect'
+            }
+        }
+
         stage('Creative Workflow') {
             parallel {
                 stage('Analyze Market') {
@@ -41,6 +47,11 @@ pipeline {
                     steps {
                         sh 'npm run daily'
                         sh 'python3 analytics.py'
+                    }
+                }
+                stage('Autonomous Evolution') {
+                    steps {
+                        sh 'python3 run_system.py --skip-scrape'
                     }
                 }
             }
