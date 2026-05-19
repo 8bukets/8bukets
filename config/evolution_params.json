@@ -1,9 +1,9 @@
 {
-    "system_concurrency": 95,
-    "seo_impact_threshold": 0.11,
+    "system_concurrency": 97,
+    "seo_impact_threshold": 0.106,
     "research_depth": "STANDARD",
     "evolution_rate": 0.05,
-    "current_version": 1.9,
+    "current_version": 1.92,
     "last_evolution": "2026-05-18",
     "google_seo_focus": true,
     "mandatory_signature": "All the best - https://markposition.wordpress.com"

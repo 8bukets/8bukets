@@ -9,7 +9,7 @@ Total repositories: 100
 OpenTelemetry Collector
 
 - **Language:** Go
-- **Stars:** 7025
+- **Stars:** 7027
 - **Forks:** 2070
 
 ## [opentelemetry-go](https://github.com/open-telemetry/opentelemetry-go)
@@ -17,7 +17,7 @@ OpenTelemetry Collector
 OpenTelemetry Go API and SDK
 
 - **Language:** Go
-- **Stars:** 6388
+- **Stars:** 6389
 - **Forks:** 1351
 
 ## [opentelemetry-collector-contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib)
@@ -26,7 +26,7 @@ Contrib repository for the OpenTelemetry Collector
 
 - **Language:** Go
 - **Stars:** 4661
-- **Forks:** 3584
+- **Forks:** 3586
 
 ## [opentelemetry-specification](https://github.com/open-telemetry/opentelemetry-specification)
 
@@ -66,14 +66,14 @@ This repository contains the OpenTelemetry Astronomy Shop, a microservice-based 
 
 - **Language:** TypeScript
 - **Stars:** 3081
-- **Forks:** 6474
+- **Forks:** 6475
 
 ## [opentelemetry-rust](https://github.com/open-telemetry/opentelemetry-rust)
 
 The Rust OpenTelemetry implementation
 
 - **Language:** Rust
-- **Stars:** 2579
+- **Stars:** 2580
 - **Forks:** 661
 
 ## [opentelemetry-java-instrumentation](https://github.com/open-telemetry/opentelemetry-java-instrumentation)
@@ -81,7 +81,7 @@ The Rust OpenTelemetry implementation
 OpenTelemetry auto-instrumentation and instrumentation libraries for Java
 
 - **Language:** Java
-- **Stars:** 2536
+- **Stars:** 2537
 - **Forks:** 1097
 
 ## [opentelemetry-python](https://github.com/open-telemetry/opentelemetry-python)
@@ -89,7 +89,7 @@ OpenTelemetry auto-instrumentation and instrumentation libraries for Java
 OpenTelemetry Python API and SDK
 
 - **Language:** Python
-- **Stars:** 2448
+- **Stars:** 2449
 - **Forks:** 877
 
 ## [opentelemetry-java](https://github.com/open-telemetry/opentelemetry-java)
@@ -121,15 +121,15 @@ Collection of extensions for OpenTelemetry-Go.
 The OpenTelemetry C++ Client
 
 - **Language:** C++
-- **Stars:** 1281
-- **Forks:** 566
+- **Stars:** 1282
+- **Forks:** 567
 
 ## [community](https://github.com/open-telemetry/community)
 
 OpenTelemetry community content
 
 - **Language:** Python
-- **Stars:** 1047
+- **Stars:** 1048
 - **Forks:** 296
 
 ## [opentelemetry-python-contrib](https://github.com/open-telemetry/opentelemetry-python-contrib)
@@ -137,7 +137,7 @@ OpenTelemetry community content
 OpenTelemetry instrumentation for Python modules
 
 - **Language:** Python
-- **Stars:** 1047
+- **Stars:** 1048
 - **Forks:** 950
 
 ## [opentelemetry-go-instrumentation](https://github.com/open-telemetry/opentelemetry-go-instrumentation)
@@ -161,8 +161,8 @@ OpenTelemetry instrumentation for JavaScript modules
 The OpenTelemetry website and documentation
 
 - **Language:** JavaScript
-- **Stars:** 894
-- **Forks:** 1780
+- **Stars:** 895
+- **Forks:** 1781
 
 ## [opentelemetry-php](https://github.com/open-telemetry/opentelemetry-php)
 
@@ -225,7 +225,7 @@ OpenTelemetry Helm Charts
 OpenTelemetry Collector Official Releases
 
 - **Language:** Go
-- **Stars:** 471
+- **Stars:** 472
 - **Forks:** 233
 
 ## [opentelemetry-ebpf-instrumentation](https://github.com/open-telemetry/opentelemetry-ebpf-instrumentation)
@@ -258,7 +258,7 @@ OTel Weaver lets you easily develop, validate, document, and deploy semantic con
 
 - **Language:** Rust
 - **Stars:** 406
-- **Forks:** 82
+- **Forks:** 83
 
 ## [opentelemetry-network](https://github.com/open-telemetry/opentelemetry-network)
 
@@ -274,7 +274,7 @@ OpenTelemetry Erlang SDK
 
 - **Language:** Erlang
 - **Stars:** 390
-- **Forks:** 136
+- **Forks:** 137
 
 ## [oteps](https://github.com/open-telemetry/oteps) **(ARCHIVED)**
 
@@ -314,7 +314,7 @@ OpenTelemetry Go Compile Instrumentation
 
 - **Language:** Go
 - **Stars:** 290
-- **Forks:** 67
+- **Forks:** 69
 
 ## [opentelemetry-android](https://github.com/open-telemetry/opentelemetry-android)
 
@@ -346,7 +346,7 @@ OpAMP protocol implementation in Go
 
 - **Language:** Go
 - **Stars:** 210
-- **Forks:** 112
+- **Forks:** 113
 
 ## [opentelemetry-cpp-contrib](https://github.com/open-telemetry/opentelemetry-cpp-contrib)
 
@@ -393,7 +393,7 @@ Contrib Packages for the OpenTelemetry Ruby API and SDK implementation.
 An implementation of the OpenTelemetry specification as a Kotlin Multiplatform Library
 
 - **Language:** Kotlin
-- **Stars:** 116
+- **Stars:** 117
 - **Forks:** 19
 
 ## [opentelemetry-php-contrib](https://github.com/open-telemetry/opentelemetry-php-contrib)
@@ -650,7 +650,7 @@ No description provided.
 
 - **Language:** Python
 - **Stars:** 5
-- **Forks:** 10
+- **Forks:** 11
 
 ## [opentelemetry-go-vanityurls](https://github.com/open-telemetry/opentelemetry-go-vanityurls)
 

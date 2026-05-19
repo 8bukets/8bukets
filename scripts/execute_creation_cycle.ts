@@ -52,6 +52,13 @@ async function executeCreationCycle() {
     try {
       // @ts-ignore - Accessing private for orchestration logic in this script
       const result = await workOrderService.dispatch(order);
+
+      if (result?.skipped) {
+        console.log(`ℹ️ [CreationCycle] Order ${order.id} (${order.type}) skipped by TypeScript engine. Reverting to pending for external processing.`);
+        await workOrderService.updateOrderStatus(order.id, 'pending');
+        continue;
+      }
+
       await workOrderService.updateOrderStatus(order.id, 'completed', result);
       logAutonomousAction(`[WORK_ORDER] Completed: ${order.id}`, 'cognitive');
 

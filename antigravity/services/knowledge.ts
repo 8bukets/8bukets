@@ -1,3 +1,4 @@
+import { resolve } from '@/antigravity/core'
 import { logAutonomousAction } from '../core'
 import fs from 'fs'
 import path from 'path'
