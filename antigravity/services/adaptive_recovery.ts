@@ -72,10 +72,12 @@ export class AdaptiveRecoveryService {
 
   private async executeCreativeSolution(solution: { type: string, plan: string }) {
     if (solution.type === 'GIT_RESET') {
-      const { execSync } = await import('child_process');
+      const { exec } = await import('child_process');
+      const { promisify } = await import('util');
+      const execAsync = promisify(exec);
       try {
-         execSync('git reset --hard HEAD || true');
-         execSync('git clean -fd || true');
+         await execAsync('git reset --hard HEAD || true');
+         await execAsync('git clean -fd || true');
       } catch (e) {}
     } else if (solution.type === 'NETWORK_RETRY') {
       // Simulate waiting for network or switching to local

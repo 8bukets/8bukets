@@ -1,5 +1,5 @@
 import os
-import subprocess
+import asyncio
 from .base_agent import BaseAgent, Blackboard
 
 class DockerEvolutionAgent(BaseAgent):
@@ -21,7 +21,7 @@ class DockerEvolutionAgent(BaseAgent):
         if runtime_stability != "VERIFIED" and has_compose:
             self.logger.info("Docker environment degraded. Attempting auto-recovery...")
             try:
-                subprocess.Popen(["docker-compose", "up", "-d"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                await asyncio.create_subprocess_exec("docker-compose", "up", "-d", stdout=asyncio.subprocess.DEVNULL, stderr=asyncio.subprocess.DEVNULL)
                 runtime_stability = "RECOVERING"
             except Exception as e:
                 self.logger.warning(f"Failed to auto-recover docker environment: {e}")

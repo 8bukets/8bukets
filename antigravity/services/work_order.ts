@@ -181,15 +181,17 @@ export class WorkOrderService {
         logAutonomousAction(`🧪 [WorkOrder] Running smoke test for ${order.payload?.serviceName}...`, 'info')
         // In a real scenario, this would trigger vitest for the specific file
         // For now, we simulate success if the file exists
-        const { execSync } = await import('child_process')
+        const { exec } = await import('child_process')
+        const { promisify } = await import('util')
+        const execAsync = promisify(exec)
         try {
           // If we have a specific test for the service, run it. Otherwise run general tests.
           const testPath = `antigravity/services/${order.payload?.serviceName}.test.ts`
           if (fs.existsSync(path.join(process.cwd(), testPath))) {
-            execSync(`npx vitest run ${testPath}`, { stdio: 'inherit' })
+            await execAsync(`npx vitest run ${testPath}`)
           } else {
             logAutonomousAction(`ℹ️ [WorkOrder] No specific test found for ${order.payload?.serviceName}. Running general integrity check.`, 'info')
-            execSync('npx vitest run antigravity/core.test.ts', { stdio: 'inherit' })
+            await execAsync('npx vitest run antigravity/core.test.ts')
           }
           return { status: 'passed' }
         } catch (e: any) {
