@@ -1,3 +1,4 @@
+import { resolve } from '@/antigravity/core'
 import { logAutonomousAction } from '../core'
 import fs from 'fs'
 import path from 'path'
@@ -38,15 +39,32 @@ export async function observeKnowledge(url: string) {
         exists = false;
     }
 
+    let signatureValue = 'All the best - https://markposition.wordpress.com';
+    try {
+        const configPath = path.join(process.cwd(), 'config/evolution_params.json');
+        if (fs.existsSync(configPath)) {
+            const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+            if (config.mandatory_signature) {
+                signatureValue = config.mandatory_signature;
+            }
+        }
+    } catch (e) {}
+
+    const signature = `\n---\n${signatureValue}`;
+
     if (exists) {
       let content = await fs.promises.readFile(knowledgePath, 'utf8')
 
       // Check if URL already exists
       if (!content.includes(`- **Target**: ${url}`)) {
-        await fs.promises.writeFile(knowledgePath, content + relationshipEntry, 'utf8')
+        // Remove old signature if present to append new entry then re-add signature
+        let newContent = content.replace(signature, '').trim();
+        newContent += relationshipEntry;
+        newContent += signature;
+        await fs.promises.writeFile(knowledgePath, newContent, 'utf8')
       }
     } else {
-      await fs.promises.writeFile(knowledgePath, `# Market Intelligence Matrix\n${relationshipEntry}`, 'utf8')
+      await fs.promises.writeFile(knowledgePath, `# Market Intelligence Matrix\n${relationshipEntry}${signature}`, 'utf8')
     }
 
     logAutonomousAction(`✅ [Knowledge Observer] Appended insights to KNOWLEDGE_MERGE.md.`, 'info')

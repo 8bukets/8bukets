@@ -392,12 +392,14 @@ export class Jules {
 
       let dockerStatus = 'unknown'
       let containerCount = 0
+      let dockerMode = 'unknown'
 
       try {
         const { checkDockerHealth } = await import('./services/docker')
         const dockerHealth = await checkDockerHealth()
         dockerStatus = dockerHealth.status
         containerCount = dockerHealth.containerCount
+        dockerMode = dockerHealth.mode
       } catch (dockerErr: any) {
         console.warn('⚠️ [Jules] Could not fetch Docker status for presence sync:', dockerErr.message)
       }
@@ -409,21 +411,41 @@ export class Jules {
         jenkinsStatus = jenkinsHealth.status
       } catch (e) {}
 
+      // Detailed Health Connectivity & Latency
+      const connectivity: any = {
+        mongodb: { status: 'disconnected', latency: -1 },
+        supabase: { status: 'disconnected', latency: -1 }
+      }
+
+      try {
+        const start = Date.now()
+        const { healthCheck } = await import('./core')
+        const health = await healthCheck()
+        connectivity.mongodb = { status: health.mongodb, latency: Date.now() - start }
+        connectivity.supabase = { status: health.supabase, latency: Date.now() - start }
+      } catch (e) {}
+
       const presence = {
         agent: 'Jules',
         status: 'online',
         lastSeen: new Date().toISOString(),
-        version: '1.3.0-alpha',
-        capabilities: ['git-sync', 'self-repair', 'knowledge-ingestion', 'pr-audit', 'cloud-sync'],
+        version: '1.4.0-alpha',
+        capabilities: ['git-sync', 'self-repair', 'knowledge-ingestion', 'pr-audit', 'cloud-sync', 'autonomous-evolution'],
         environment: isCloud ? 'cloud' : 'local',
         execution_mode: isCloud ? 'cloud' : 'local',
         autonomous_mode: process.env.AUTONOMOUS_MODE || 'standard',
         cloud_provider: cloudProvider,
-        docker_status: dockerStatus,
-        container_count: containerCount,
+        docker: {
+           status: dockerStatus,
+           container_count: containerCount,
+           mode: dockerMode
+        },
         jenkins_status: jenkinsStatus,
+        connectivity,
         workflow_id: process.env.GITHUB_RUN_ID || process.env.CI_PIPELINE_ID || 'local',
-        hostname: (await import('os')).hostname()
+        hostname: (await import('os')).hostname(),
+        memory_usage: process.memoryUsage(),
+        uptime: process.uptime()
       }
 
       // 1. Sync to MongoDB
@@ -610,6 +632,26 @@ export class Jules {
     }
     const { KnowledgeObserver } = await import('./services/knowledge_observer')
     const observer = new KnowledgeObserver()
+
+    // Expand Ingestion: Scan for diverse technical documentation artifacts
+    const knowledgeSources = [
+      { path: 'gemmafour_docs.md', title: 'Gemma 4 Technical Report' },
+      { path: 'litert_docs.md', title: 'LiteRT Framework Documentation' },
+      { path: 'opentelemetry_repos.md', title: 'OpenTelemetry Ecosystem Analysis' },
+      { path: 'google_ads_docs.md', title: 'Google Ads Strategic Documentation' }
+    ]
+
+    for (const source of knowledgeSources) {
+       const fullPath = path.join(process.cwd(), source.path)
+       if (fs.existsSync(fullPath)) {
+          try {
+            const content = fs.readFileSync(fullPath, 'utf8')
+            const knowledge = KnowledgeObserver.processContent(source.title, content, `local://${source.path}`)
+            await observer.persistKnowledge(knowledge)
+            this.recordTask(`Knowledge Observation: Ingested ${source.title}`)
+          } catch (e) {}
+       }
+    }
 
     // In a real scenario, we might scan a 'drops' or 'incoming' folder
     const incomingDir = path.join(process.cwd(), 'scratch')
