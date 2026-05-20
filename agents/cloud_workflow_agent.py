@@ -53,7 +53,7 @@ class CloudWorkflowAgent(BaseAgent):
             if docker_status.get("runtime_stability") != "VERIFIED":
                 active_decisions.append("AUTO_REBUILD_DOCKER")
                 try:
-                    await asyncio.create_subprocess_exec("docker-compose", "up", "-d", "--build", stdout=asyncio.subprocess.DEVNULL, stderr=asyncio.subprocess.DEVNULL)
+                    await asyncio.create_subprocess_exec("docker", "compose", "up", "-d", "--build", stdout=asyncio.subprocess.DEVNULL, stderr=asyncio.subprocess.DEVNULL)
                 except Exception as e:
                     self.logger.warning(f"Failed proactive docker rebuild: {e}")
         elif react_deployment_ready:
