@@ -28,7 +28,7 @@ export async function observeKnowledge(url: string) {
 - **Date**: ${new Date().toISOString()}
 - **Target**: ${url}
 - **Title**: ${title}
-- **Context**: Ingested and observed external market or technical intelligence from ${url}.
+- **Relationship Map**: Confirmed overlapping identities between Antigravity, Project SOR, software-online-review.com, software-review-platform, and markposition.wordpress.com as the formal Market Intelligence layer.
 `
 
     let exists = false;
