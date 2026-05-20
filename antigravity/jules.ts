@@ -707,7 +707,8 @@ export class Jules {
       { path: 'litert_docs.md', title: 'LiteRT Framework Documentation' },
       { path: 'opentelemetry_repos.md', title: 'OpenTelemetry Ecosystem Analysis' },
       { path: 'google_ads_docs.md', title: 'Google Ads Strategic Documentation' },
-      { path: 'ai_agents_knowledge.md', title: 'AI Agents Concept & Architecture' }
+      { path: 'ai_agents_knowledge.md', title: 'AI Agents Concept & Architecture' },
+      { path: 'localhost_tools_docs.md', title: 'LocalHost.Co Tools Documentation' }
     ]
 
     for (const source of knowledgeSources) {
