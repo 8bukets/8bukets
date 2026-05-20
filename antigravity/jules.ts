@@ -306,12 +306,13 @@ export class Jules {
   }
 
   public async scanAllBranches(force: boolean = false) {
-    console.log(`🔍 [Jules-${this.role}] Scanning ecosystem branches...`)
+    console.log(`🔍 [Jules-${this.role}] Scanning ecosystem branches (force: ${force})...`)
     const { execSync } = await import('child_process')
     try {
-      // Optimization: Use git for-each-ref to get the 50 most recent branches (local and remote) efficiently.
+      // Optimization: Use git for-each-ref to get the most recent branches (local and remote) efficiently.
       // Format: branch_name|subject|timestamp
-      const cmd = `git for-each-ref --sort=-committerdate --format="%(refname:short)|%(contents:subject)|%(committerdate:unix)" refs/heads refs/remotes/origin --count=50`
+      const limit = force ? '' : '--count=50'
+      const cmd = `git for-each-ref --sort=-committerdate --format="%(refname:short)|%(contents:subject)|%(committerdate:unix)" refs/heads refs/remotes/origin ${limit}`
       const branchesRaw = execSync(cmd).toString()
       const branchLines = branchesRaw.split('\n').filter(l => l.trim() !== '')
 
@@ -344,7 +345,15 @@ export class Jules {
                return { name: branch, lastMessage: message, lastSeen: new Date(parseInt(timestamp) * 1000).toISOString(), category, results, knowledge: knowledgeNugget, changedFiles: [], domain }
             }
 
-            let diffCommand = branchName === 'main' ? 'git diff --name-only HEAD~1' : `git diff --name-only main...${branch}`
+            // Phase 12 Optimization: If force is true and we have many branches, use git show --name-only for a quick look at the most recent changes
+            // instead of a full merge-base diff, unless it's a specific interesting branch.
+            let diffCommand = '';
+            if (force && !isLocal) {
+                diffCommand = `git show --name-only --format="" ${branch}`;
+            } else {
+                diffCommand = branchName === 'main' ? 'git diff --name-only HEAD~1' : `git diff --name-only main...${branch}`;
+            }
+
             let diffOutput = ''
 
             try {
@@ -361,7 +370,7 @@ export class Jules {
               }
             }
 
-            changedFiles = diffOutput ? diffOutput.split('\n') : []
+            changedFiles = diffOutput ? diffOutput.split('\n').filter(f => f.trim() !== '') : []
 
             if (changedFiles.some(f => f.includes('security') || f.includes('auth') || f.includes('sentinel') || f.includes('validation'))) domain = 'Security'
             else if (changedFiles.some(f => f.includes('optimization') || f.includes('analytics') || f.includes('scaling') || f.includes('perf'))) domain = 'Performance'

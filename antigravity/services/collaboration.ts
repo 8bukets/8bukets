@@ -222,28 +222,29 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
   )
 
   // Phase 12: Advanced Synergy Detection (Resource Overlap)
-  const resourceUsage: Record<string, string[]> = {}
+  const resourceUsage: Record<string, Set<string>> = {}
   branches.forEach(b => {
     if (b.changedFiles) {
       b.changedFiles.forEach((f: string) => {
         const matchedResource = map.resourceInventory.find((r: any) => r.path && f.includes(r.path))
         if (matchedResource) {
-          if (!resourceUsage[matchedResource.name]) resourceUsage[matchedResource.name] = []
-          resourceUsage[matchedResource.name].push(b.name)
+          if (!resourceUsage[matchedResource.name]) resourceUsage[matchedResource.name] = new Set()
+          resourceUsage[matchedResource.name].add(b.name)
         }
       })
     }
   })
 
-  Object.entries(resourceUsage).forEach(([resource, branchList]) => {
-    if (branchList.length > 1) {
+  Object.entries(resourceUsage).forEach(([resource, branchSet]) => {
+    if (branchSet.size > 1) {
+      const branches = Array.from(branchSet)
       map.synergies.push({
         type: 'Resource Conflict/Synergy',
         resource,
-        branches: branchList,
-        intensity: branchList.length > 2 ? 'High' : 'Medium'
+        branches,
+        intensity: branches.length > 2 ? 'High' : 'Medium'
       })
-      console.warn(`🤝 [Collaboration] Synergy Detected: ${branchList.length} branches working on ${resource}.`)
+      console.warn(`🤝 [Collaboration] Synergy Detected: ${branches.length} branches working on ${resource}.`)
     }
   })
 
@@ -339,28 +340,33 @@ export async function mergeBranchInsights(branches: any[]) {
 
   if (relevantBranches.length === 0) return
 
-  const domains: Record<string, any[]> = {}
+  const categories: Record<string, Record<string, any[]>> = {}
   relevantBranches.forEach(b => {
+    const category = b.category || 'other'
     const domain = b.domain || 'General'
-    if (!domains[domain]) domains[domain] = []
-    domains[domain].push(b)
+    if (!categories[category]) categories[category] = {}
+    if (!categories[category][domain]) categories[category][domain] = []
+    categories[category][domain].push(b)
   })
 
   let newEntries = `\n## Ecosystem Knowledge Consolidation (${new Date().toISOString()})\n`
 
-  Object.entries(domains).forEach(([domain, branchList]) => {
-    newEntries += `### 🌐 Strategic Domain: ${domain}\n`
-    branchList.forEach(b => {
-      newEntries += `- **Branch:** \`${b.name}\`\n`
-      newEntries += `  - **Result:** ${b.results}\n`
-      if (b.knowledge) {
-        newEntries += `  - **Knowledge:** ${b.knowledge}\n`
-      }
-      if (b.changedFiles && b.changedFiles.length > 0) {
-        newEntries += `  - **Artifacts:** ${b.changedFiles.length} files modified.\n`
-      }
+  Object.entries(categories).forEach(([category, domains]) => {
+    newEntries += `### 📂 Category: ${category.toUpperCase()}\n`
+    Object.entries(domains).forEach(([domain, branchList]) => {
+      newEntries += `#### 🌐 Strategic Domain: ${domain}\n`
+      branchList.forEach(b => {
+        newEntries += `- **Branch:** \`${b.name}\`\n`
+        newEntries += `  - **Result:** ${b.results}\n`
+        if (b.knowledge) {
+          newEntries += `  - **Knowledge:** ${b.knowledge}\n`
+        }
+        if (b.changedFiles && b.changedFiles.length > 0) {
+          newEntries += `  - **Artifacts:** ${b.changedFiles.length} files modified.\n`
+        }
+      })
+      newEntries += `\n`
     })
-    newEntries += `\n`
   })
 
   if (existingContent) {
@@ -369,7 +375,8 @@ export async function mergeBranchInsights(branches: any[]) {
       await fs.promises.writeFile(knowledgePath, `# Market Intelligence Matrix\n${newEntries}`, 'utf8')
   }
 
-  console.log(`✅ [Collaboration] Merged ${relevantBranches.length} branch insights across ${Object.keys(domains).length} domains.`)
+  const domainCount = Object.values(categories).reduce((acc, d) => acc + Object.keys(d).length, 0)
+  console.log(`✅ [Collaboration] Merged ${relevantBranches.length} branch insights across ${Object.keys(categories).length} categories and ${domainCount} domains.`)
 }
 
 export async function mergeEcosystemInsights(branchIntelligence: any[], workOrders: any[]) {
