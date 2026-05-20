@@ -233,6 +233,21 @@ export class Jules {
     }
   }
 
+  public async syncToICloud() {
+    console.log(`☁️ [Jules-${this.role}] Triggering iCloud synchronization...`)
+    try {
+      const { syncToICloud } = await import('./services/icloud')
+      const result = await syncToICloud()
+      if (result.status === 'success') {
+        this.recordTask(`iCloud Sync: Successfully synchronized project to ${result.target}`)
+      } else if (result.status === 'failed') {
+        this.recordTask(`iCloud Sync: Synchronization failed - ${result.error}`, 'Ops')
+      }
+    } catch (err) {
+      console.error('❌ [Jules] Failed to import or execute iCloud sync:', err)
+    }
+  }
+
   public async executeWorkCycle() {
     console.log(`🌟 [Jules-${this.role}] Beginning Autonomous Work Cycle...`)
     const { explore } = await import('./explorer')
@@ -292,6 +307,10 @@ export class Jules {
     }
 
     await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
+
+    // iCloud Sync Integration
+    await this.syncToICloud()
+
     this.memory.lastOptimization = new Date().toISOString()
     await workOrderService.executePendingOrders()
 
