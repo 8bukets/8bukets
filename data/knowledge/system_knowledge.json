@@ -10,7 +10,8 @@
             "intelephense_docs.json",
             "litert_docs.json",
             "stitch_docs.json",
-            "vscode_intelephense_docs.json"
+            "vscode_intelephense_docs.json",
+            "google_ads_docs.json"
         ]
     },
     "sections": {
@@ -4852,39 +4853,8 @@
     },
     "typescript_sections": {},
     "system_insights": {
-        "analysis_stats": {
-            "total_posts": 350,
-            "top_domains": {
-                "skillshop.exceedlms.com": 22,
-                "support.google.com": 17,
-                "advertising.amazon.com": 15,
-                "developers.google.com": 11,
-                "google.com": 11,
-                "youtube.com": 10,
-                "en.wikipedia.org": 10,
-                "web.facebook.com": 8,
-                "business.linkedin.com": 8,
-                "marketingplatform.google.com": 7
-            },
-            "top_categories": {
-                "Ad Ads Advertise": 332,
-                "Promotion": 13,
-                "Ads": 4,
-                "Advertise": 3,
-                "Advertising": 3,
-                "Online": 2
-            }
-        },
-        "research_trends": [
-            "Dominance of advertising.amazon.com in current dataset.",
-            "Dominance of developers.google.com in current dataset.",
-            "Dominance of google.com in current dataset.",
-            "Dominance of marketingplatform.google.com in current dataset."
-        ],
-        "intelligence_outlook": [
-            "Scaling Strategy: Implementing simultaneous execution across agent tiers.",
-            "R&D Strategy: Developing realistic simulations for human-agent interaction.",
-            "Operational Strategy: Enhancing agent debate and feedback loops."
-        ]
+        "analysis_stats": null,
+        "research_trends": [],
+        "intelligence_outlook": []
     }
 }

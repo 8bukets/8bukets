@@ -25,7 +25,8 @@ class KnowledgeMergeAgent(BaseAgent):
             "intelephense": "intelephense_docs.json",
             "litert": "litert_docs.json",
             "stitch": "stitch_docs.json",
-            "vscode_intelephense": "vscode_intelephense_docs.json"
+            "vscode_intelephense": "vscode_intelephense_docs.json",
+            "google_ads": "google_ads_docs.json"
         }
         self.strategic_source = "KNOWLEDGE_MERGE.md"
 
@@ -161,7 +162,7 @@ class KnowledgeMergeAgent(BaseAgent):
                         f.write(f"### {linfo['title']}\n\n{linfo.get('content', '')}\n\n")
 
                 f.write("\n## 4. Technical Documentation\n")
-                for tech_key in ["gemma_model", "intelephense", "litert", "stitch", "vscode_intelephense"]:
+                for tech_key in ["gemma_model", "intelephense", "litert", "stitch", "vscode_intelephense", "google_ads"]:
                     tech_data = consolidated["sections"].get(tech_key, {})
                     if tech_data:
                         title = tech_key.replace("_", " ").title()

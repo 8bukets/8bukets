@@ -1207,7 +1207,7 @@
                     "- Setup your App.config Copy src\\App.config to your project directory and add it to your project. If your application has its own App.config, then you can copy the following nodes into your App.config: configuration/AdManagerApi configuration/configSections/section[name=\"AdManagerApi\"] configuration/system.net",
                     "Copy src\\App.config to your project directory and add it to your project. If your application has its own App.config, then you can copy the following nodes into your App.config:",
                     "- configuration/AdManagerApi",
-                    "- configuration/configSections/section[name=\"AdManagerApi\"]",
+                    "- configuration/configSections/section[name=&quot;AdManagerApi&quot;]",
                     "- configuration/system.net",
                     "- Setup credentials Open App.config and edit the following keys: <add key=\"ApplicationName\" value=\"INSERT_YOUR_APPLICATION_NAME_HERE\" /> <add key=\"NetworkCode\" value=\"INSERT_YOUR_NETWORK_CODE_HERE\" /> <add key=\"OAuth2Mode\" value=\"SERVICE_ACCOUNT\" /> <add key=\"OAuth2SecretsJsonPath\" value=\"INSERT_OAUTH2_SECRETS_JSON_FILE_PATH_HERE\" />",
                     "Open App.config and edit the following keys:",
