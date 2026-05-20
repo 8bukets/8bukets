@@ -400,21 +400,43 @@ export class Jules {
 
   public async observeKnowledge() {
     const { KnowledgeObserver } = await import('./services/knowledge_observer')
+    const { icloudObserver } = await import('./services/icloud_observer')
     const observer = new KnowledgeObserver()
 
-    // Scan external intelligence
-    const { observeKnowledge: scanUrl } = await import('./services/knowledge')
-    await scanUrl('https://software-online-review.com')
+    console.log(`🧠 [Jules-${this.role}] Observing knowledge from all synchronized sources...`)
 
-    // Scan scratch for new knowledge
+    // 1. iCloud Synchronization
+    try {
+      const icloudIngested = await icloudObserver.scan()
+      if (icloudIngested.length > 0) {
+        this.recordTask(`iCloud: Ingested ${icloudIngested.length} documents.`)
+      }
+    } catch (err) {
+      console.error('❌ [Jules] iCloud scan failed:', err)
+    }
+
+    // 2. Scan external intelligence
+    try {
+      const { observeKnowledge: scanUrl } = await import('./services/knowledge')
+      await scanUrl('https://software-online-review.com')
+    } catch (err) {
+      console.error('❌ [Jules] External URL scan failed:', err)
+    }
+
+    // 3. Scan scratch for new local knowledge
     const incomingDir = path.join(process.cwd(), 'scratch')
     if (fs.existsSync(incomingDir)) {
       const files = fs.readdirSync(incomingDir).filter(f => f.endsWith('_docs.md'))
       for (const file of files) {
-        const fullPath = path.join(incomingDir, file)
-        const content = fs.readFileSync(fullPath, 'utf8')
-        const knowledge = KnowledgeObserver.processContent(file, content, `local://${file}`)
-        await observer.persistKnowledge(knowledge)
+        try {
+          const fullPath = path.join(incomingDir, file)
+          const content = fs.readFileSync(fullPath, 'utf8')
+          const knowledge = KnowledgeObserver.processContent(file, content, `local://${file}`)
+          await observer.persistKnowledge(knowledge)
+          console.log(` ✅ [Jules] Ingested scratch doc: ${file}`)
+        } catch (err) {
+          console.error(` ❌ [Jules] Failed to ingest scratch doc ${file}:`, err)
+        }
       }
     }
   }

@@ -92,6 +92,24 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
+  // Gap Analysis 9: Autonomous Discovery Engine
+  if (!files.some(f => f.includes('discovery'))) {
+    ideas.push({
+      feature: 'Autonomous Discovery Engine',
+      rationale: 'Scans external links and references within ingested knowledge base to recursively find new intelligence targets.',
+      complexity: 'Medium'
+    })
+  }
+
+  // Gap Analysis 10: Edge-to-Cloud Bridge
+  if (!files.some(f => f.includes('bridge'))) {
+    ideas.push({
+      feature: 'Edge-to-Cloud Bridge',
+      rationale: 'Facilitates real-time state synchronization between local iCloud-enabled nodes and cloud-based autonomous agents.',
+      complexity: 'High'
+    })
+  }
+
   // Force an idea for demonstration if none exist
   if (ideas.length === 0) {
     ideas.push({
