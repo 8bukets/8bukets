@@ -1,20 +1,26 @@
 # ANTIGRAVITY AI AGENTS KNOWLEDGE BASE
 
-*Last Updated: 2026-05-20T06:55:51.257Z*
+*Last Updated: 2026-05-20T17:57:25.112Z*
 
 ## DOCUMENT: Intelephense Documentation
 **Source:** https://intelephense.com/docs
-**Ingested At:** 2026-05-20T06:55:50.085Z
+**Ingested At:** 2026-05-20T17:57:25.087Z
+
+### Intelephense
+Intelephense is a high performance, cross platform PHP language server adhering to the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/).
+
+When paired with an LSP capable editor it provides an essential set of code intelligence features that give a PHP developer a productive and rich editing experience.
+
+This is proprietary software released to end users under a "freemium" model. Many of the features are provided free of charge. Access to all current and future features can be obtained by purchasing a licence key at https://intelephense.com.
+
+### Installation
+
 
 ### Getting Started
 
 
-### About
-Intelephense is a high performance, cross platform, cross editor PHP language server adhering to the Language Server Protocol (LSP).
+### Features
 
-When paired with an LSP capable editor it provides an essential set of code tools, making for a productive and rich PHP coding experience.
-
-The Intelephense server is proprietary software released to end users under a "freemium" model. Many of the features are provided free of charge. Access to premium features can be obtained by purchasing a licence key.
 
 ### Visual Studio Code
 Visual Studio Code users should install the Intelephense extension from within the extensions view or download from the [marketplace](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client).
@@ -33,310 +39,6 @@ Visual Studio Code users should install the Intelephense extension from within t
 -- `ctrl + shift + p` -- and searching for `Enter licence key`.
 
 Further configuration options are available in the `intelephense` section of settings.
-
-### Other Editors
-Intelephense requires a Node.js runtime environment. It is recommended that you use a current LTS version of Node.js. To install Intelephense server you can use npm.
-
-```bash
-npm i intelephense -g
-```
-
-Intelephense needs an LSP compliant client to communicate with and integrate features into the editor. A list of editors and clients that support the LSP can be found online. Please follow the setup guide of the relevant tool. The information below may help in configuring the client.
-
-To start the intelephense server:
-```bash
-intelephense {transport}
-```
-Where {transport} is one of:
-* --node-ipc
-* --stdio
-* --socket={number}
-* --pipe={string}
-
-If your LSP client exposes initializationOptions, then the following values are accepted:
-```typescript
-interface InitialisationOptions {
-    // Optional absolute path to storage directory for workspace specific data.
-    storagePath?: string;
-
-    // Optional absolute path to a global storage directory for global data.
-    globalStoragePath?: string;
-
-    //Optional licence key or absolute path to a text file containing the licence key.
-    licenceKey?: string;
-
-    //Optional flag to clear server state.
-    //State can also be cleared by deleting {storagePath}/intelephense
-    clearCache?: boolean;
-}
-```
-
-When initializationOptions properties are not provided by the client, the following defaults are used:
-
-| OS | Property | Path | Fallback |
-|---|---|---|---|
-| *nix | storagePath | $XDG_CONFIG_HOME/intelephense/workspace/ | $HOME/.config/intelephense/workspace/ |
-| *nix | globalStoragePath | $XDG_CONFIG_HOME/intelephense/global/ | $HOME/.config/intelephense/global/ |
-| *nix | licenceKey | {globalStoragePath}/licence.txt | {globalStoragePath}/license.txt |
-| Windows | storagePath | %AppData%/intelephense/workspace/ | %UserProfile%/intelephense/workspace/ |
-| Windows | globalStoragePath | %AppData%/intelephense/global/ | %UserProfile%/intelephense/global/ |
-| Windows | licenceKey | {globalStoragePath}/licence.txt | {globalStoragePath}/license.txt |
-
-### Configuration
-Please see the VSCode client package.json configuration property for a full list of configuration options and associated JSON schema. Note that the configuration keys are given in dot notation. As an example, the equivalent JSON object for intelephense.files.exclude would be {"intelephense": {"files": {"exclude": []}}}.
-
-Intelephense attempts to provide reasonable defaults for all settings. Some of the more important settings to consider when getting started include:
-* intelephense.files.associations - File globs that identify PHP files. Defaults to standard PHP file extensions e.g. *.php.
-* intelephense.files.maxSize - Maximum file size in bytes to index and provide analysis for. Defaults to 1000000 (1MB).
-* intelephense.environment.phpVersion - PHP version to use for analysis. Defaults to the most recent stable PHP version.
-* intelephense.stubs - List of stubs to include. Defaults to core symbols and extensions that are bundled with PHP. If you are getting undefined symbols for built-in or PECL extensions, you may need to modify this list.
-
-In VSCode, the settings UI can be used to modify the configuration values. For other LSP clients, please see the client documentation on how to modify these values. Intelephense supports the LSP workspace/didChangeConfiguration and workspace/configuration methods as a way of supplying configuration values to the server.
-
-If neither of the methods above are supported by the client, then configuration values can be supplied via an intelephense.config.json file placed in the workspace folder. The JSON schema for this file is the same as the one used for the VSCode client. The top level intelephense property is not required in this file.
-
-For Intelephense to work effectively it must have access to the definitions of the symbols used in your code. Opening a project folder (LSP InitializeParams rootUri or workspaceFolders) rather than individual files enables these symbols to be discovered by Intelephense via indexing the PHP files in the folder. Large workspaces require more system resources. Consider opening a smaller workspace or exclude unnecessary files via the intelephense.files.exclude setting to reduce resource usage.
-
-If you need to include files from outside of the workspace folder, then add the paths to these files to the intelephense.environment.includePaths setting.
-
-When configuring a multi-root workspace, Intelephense will presume that the folders in the workspace are separate projects and will not provide cross folder symbols unless you link the dependency between the projects via the intelephense.environment.includePaths setting.
-
-### Type System
-Providing type information in your PHP code will result in a better experience when using Intelephense. Type information can be provided via coded type declarations or PHPDoc type annotations. Where both have been provided, PHPDoc type annotations are given precedence as they can provide more detailed type information.
-
-```php
-<?php
-
-/**
- * @param string $s  <- A phpdoc parameter type annotation for $s
- * @return string[] <- A phpdoc return type annotation specifying the array element type
- **/
-function foo(string $s): array {} // <- type declarations for $s (string) and function return (array)
-```
-
-Intelephense will also compute inferred types when a declared or documented type is not found or during control flow analysis. When a type is inferred it may be reduced to its minimal representation. For example, MyClass|object would become object because MyClass is a sub-type of object.
-
-Intelephense provides limited support for PHPStorm metadata as a way of overriding or supplementing type information. It is recommended to use PHPDoc type annotations instead of PHPStorm metadata where possible as they are more widely supported across different tools. Support for PHPStorm metadata may be removed in future releases.
-
-### Type Narrowing
-Intelephense performs type narrowing of variables during control flow analysis. Type narrowing expressions include built-in type assertions such as is_string, custom type assertions annotated with @assert, instanceof, and equality expressions.
-
-```php
-<?php
-
-class Foo {}
-
-function example(string|array|Foo|null $input): void
-{
-    if (!$input) {
-        // $input is narrowed to string|array|null in this block
-        // empty strings, empty arrays and null are all falsey
-    } else {
-        // $input is narrowed to string|array|Foo in this block
-
-        if ($input instanceof Foo) {
-            // $input is narrowed to Foo in this block
-        } else if (is_string($input)) {
-            // $input is narrowed to string in this block
-        } else {
-            // $input is narrowed to array in this block
-        }
-    }
-}
-```
-
-### Type Evolving
-Type evolving is the change in a variable's type after an assignment expression. Simple variables and parameters always change to the type of the assigned expression regardless of initial assignments, type declarations or annotations.
-
-Properties with no type declaration or annotation will also change to the type of the assigned expression. Otherwise they will only widen or narrow according to the bounds of the initial type they have been declared or annotated with.
-
-Intelephense will type evolve array types when mutated only if they are declared with an empty array initialiser. Otherwise they are considered to retain their initial declared, annotated or inferred type.
-
-```php
-<?php
-
-function example(int $a): void
-{
-    $a = "string"; // $a is now type string
-
-    $b = []; // $b is type array and flagged as evolving
-
-    $b[] = "string"; // $b is now type string[]
-
-    $b[] = 9; //$b is now (string|int)[]
-
-    $c = [1, 2]; // $c is type int[] and NOT flagged as evolving
-
-    $c[] = "string"; // $c is still type int[]
-}
-```
-
-### Top Type
-mixed
-The super-type of all types. Any other type can be assigned to a type constraint of mixed. If intelephense cannot determine a more specific type for a symbol or expression then this is the type it is given. Because of this, Intelephense also allows mixed to be assigned to any other type constraint as well, effectively turning off type checking for that instance.
-
-### Bottom Type
-never
-The sub-type of all types. This type can be assigned to any other type constraint. It is used to represent an impossibility in the code and can be used as the return type of a function that exits or always throws an exception.
-
-### Scalar Types
-int, float, bool, string.
-
-### Unit Types
-void, null, true, false, unset* (represents an undefined variable).
-
-### Literal Types
-'myString'*, 9* (integer literal).
-
-### Object Types
-object, \MyNs\MyClass, object{name: string, optional?: string}*, static, self, $this*.
-
-### Array Types
-array, array<TKey, TValue>*, TValue[]*, array{description: string, 'length (cm)': float, optional?: string, ...<int, string>}*.
-
-### Callable Types
-callable, callable(TParamA $a, TParamB $b): TReturn*, Closure*.
-
-### Alias Types
-iterable (Alias for Traversable|array), ?A (Nullable type shorthand for null|A).
-
-### Union Types
-A|B|C - A type which may have multiple atomic type representations.
-
-### Intersection Types
-A&B&C - A composite type which consists of multiple atomic types.
-
-### DNF Types
-A|B|(C&D&E) - When combining union and intersection types, only a single level of nesting is permitted. The union must be the top level.
-
-### Generic Types
-Supports @template PHPDoc annotations. The following built-in types are templated:
-iterable, Traversable, array, Iterator, IteratorAggregate, ArrayAccess, WeakReference, WeakMap, Fiber, DatePeriod, ReflectionAttribute, ReflectionClass, Generator, ArrayObject, SplDoublyLinkedList, SplQueue, SplStack, SplHeap, SplMinHeap, SplMaxHeap, SplPriorityQueue, SplFixedArray, SplObjectStorage.
-
-### Conditional Return Type
-(TSubject is TCompare ? TTrue : TFalse)* - Sometimes the return type of a function may depend on the type of a parameter.
-
-### Array Key Type
-key-of<TArray>* - Resolves to a union of the keys of an array shape.
-
-### Array Value Type
-value-of<TArray>* - Resolves to a union of the values of an array shape.
-
-### Index Access Type
-TArray[TKey]* - Resolves to the type of the value at index TKey in TArray.
-
-### Miscellaneous Types
-resource*, class-string<T>*.
-
-### PHPDoc Annotations
-Intelephense supports standard PHPDoc annotations as well as non-standard ones from tools like Psalm and PHPStan.
-
-* **@template**: Used to declare a type argument of a generic type, function or method.
-* **@template-extends**: Used to declare the type arguments supplied to a generic parent type. Alias @extends is also supported.
-* **@template-implements**: Used to declare the type arguments supplied to a generic interface. Alias @implements is also supported.
-* **@template-use**: Used to declare the type arguments supplied to a generic trait. Alias @use is also supported.
-* **@param-closure-this**: Declares the type of the $this variable inside a closure passed as a parameter.
-* **@param-out**: Declares the out type of a by-reference parameter.
-* **@assert**: Declares a function that asserts an argument is of a specified type.
-* **@assert-if-true / @assert-if-false**: Similar to @assert but for boolean return paths.
-* **@mixin**: (Premium) Declares that members of a specified class are mixed in.
-* **@disregard**: Suppresses a specific diagnostic at the following statement.
-* **@type-alias**: Declares a type alias for improving readability.
-* **@import-type**: Imports a type alias declared in another file.
-
-### Features
-
-
-### Free Features
-The following features are available to all users.
-
-### Workspace Symbols
-Search for symbols in your workspace (Ctrl+T). Use FQSEN query syntax for specific symbols.
-
-### Document Symbols
-Lists all symbols in the current document (Ctrl+Shift+O).
-
-### Go to Definition
-Navigate to the definition of a symbol (F12).
-
-### Hover
-Show type information and documentation for a symbol when hovering.
-
-### Highlight
-Highlight all references to the symbol at the cursor position in the current file.
-
-### Code Completion
-Context appropriate completion suggestions ($ > : \ / ' " * . <).
-
-### Signature Help
-Information about function/method signatures during a call (Ctrl+Shift+Space).
-
-### Find All References
-List all references to a symbol in the current file or workspace (Shift+F12).
-
-### Formatting
-Format a whole document or selected range. Complies with PHP-FIG coding standards.
-
-### Diagnostics
-Syntax errors, type errors, and language constraints.
-
-### Inline Values
-Variable ranges and text for debuggers to display inline values.
-
-### Embedded Languages
-Language intelligence for HTML, CSS, and JavaScript within PHP files.
-
-### Premium Features
-Requires a licence.
-
-### Rename
-Refactor a symbol and all its semantic references (F2).
-
-### Code Folding
-Fold and unfold regions of code based on the syntax tree.
-
-### Find All Implementations
-List all implementations of a method or interface (Ctrl+F12).
-
-### Go to Type Definition
-Navigate to the type definition of a variable rather than its declaration.
-
-### Go to Declaration
-Navigate to the initial declaration of a symbol in a type hierarchy.
-
-### Smart Select
-Expand and shrink selections based on the syntax tree (Shift+Alt+→/←).
-
-### Type Hierarchy
-Understand the inheritance structure of a class, interface, trait, or enum.
-
-### Code Lens
-Reference counts and navigation links above declarations (Implementations, Overrides, Parent, Usages).
-
-### Inlay Hints
-Inferred parameter names and return types inline with the code.
-
-### Document Links
-Clickable links for require/include statements and @see annotations.
-
-### Code Actions
-Quick-fix and refactoring options (Ctrl+.), such as Import Symbol, Add PHPDoc, and Implement All Abstract Methods.
-
-### Frameworks and Libraries
-Intelephense aims to support all PHP frameworks but does not implement specific solutions. Workarounds include type narrowing in code using `instanceof`, PHPDoc `@var` annotations, or using helper files for symbol overrides.
-
-### PHPDoc Instead of PHPStorm Metadata/Attributes
-It is recommended to use PHPDoc types for greater compatibility. Examples include using `@template` for return type mapping and array shapes (e.g., `array{red: RedService}`) for structured array documentation.
-
-### Intelephense
-Intelephense is a high performance, cross platform PHP language server adhering to the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/).
-
-When paired with an LSP capable editor it provides an essential set of code intelligence features that give a PHP developer a productive and rich editing experience.
-
-This is proprietary software released to end users under a "freemium" model. Many of the features are provided free of charge. Access to all current and future features can be obtained by purchasing a licence key at https://intelephense.com.
-
-### Installation
-
 
 ### Requirements
 [Node.js 12+](https://nodejs.org)
@@ -1559,7 +1261,7 @@ ben@intelephense.com
 
 ## DOCUMENT: software info by fk – software-online-review – Filip Keser
 **Source:** https://software-online-review.com
-**Ingested At:** 2026-05-20T06:53:48.599Z
+**Ingested At:** 2026-05-20T17:57:24.524Z
 
 ### Introduction
 [Skip to content](#content)
@@ -5583,6 +5285,9 @@ https://developers.livechat.com
 - Wordpress Upgrade
 [Wordpress Upgrade](https://software-online-review.com/wordpress-upgrade/)
 
+### Translate
+
+
 ### Search
 https://issuu.com/filkes
 
@@ -5875,6 +5580,12 @@ To set a target CPV bid, you enter the average price you want to pay for a view 
 [About Target CPA bidding](https://support.google.com/google-ads/answer/6268632)
 - Determine a bid strategy based on your goals
 [Determine a bid strategy based on your goals](https://support.google.com/google-ads/answer/2472725)
+
+### Was this helpful?
+
+
+### Need more help?
+
 
 ### Try these next steps:
 [Post to the help community Get answers from community members](/google-ads/community?hl=en&help_center_link=CL6NlgESHFVuZGVyc3RhbmRpbmcgYmlkZGluZyBiYXNpY3M)
@@ -6177,6 +5888,21 @@ You're about to create a new Google Ads account. You can create multiple campaig
 ### Deliver better results with automated bidding
 [Start now](https://ads.google.com/signup?subid=uk-en-awhp-g-aw-{device}-m-bid-hero-bgc!o2)
 
+### Set the right bids with Smart Bidding
+
+
+### Reach your audience at the right moment
+
+
+### Increase conversions with billions of combinations of signals
+
+
+### Bid towards conversion values to maximise your ROI
+
+
+### Bid for online and in-store sales
+
+
 ### Grow your business with Google Ads
 - Nespresso boosts direct-to-consumer revenue by leveraging AI-powered Search campaigns 25% increase in purchases
 
@@ -6237,6 +5963,9 @@ The Experiments page in Google Ads can help you create, manage and optimise your
 
 [Learn more](https://business.google.com/uk/ad-tools/google-ad-experiments/)
 
+### Frequently asked questions
+
+
 ### What is bidding in Google Ads? add remove
 [the Understanding bidding basics page](https://support.google.com/google-ads/answer/2459326?hl=en-UK&sjid=3006212573788294621-NA)
 
@@ -6260,6 +5989,12 @@ The Experiments page in Google Ads can help you create, manage and optimise your
 - Meet your ROAS target
 - Get the most conversions or conversion value for your budget
 [the About automated bidding page](https://support.google.com/google-ads/answer/2979071?hl=en&sjid=3006212573788294621-NA)
+
+### How does value based bidding work? add remove
+
+
+### How much should I spend on Google Ads? add remove
+
 
 ### Footer links
 Follow us
@@ -6599,6 +6334,12 @@ You're about to create a new Google Ads account. You can create multiple campaig
 - Get help Browse help topics
 [Get help Browse help topics](https://business.google.com/uk/support/)
 
+### Find answers andinspiration
+
+
+### Filter by:
+
+
 ### Product type
 - Google Ads
 - YouTube Ads
@@ -6636,117 +6377,204 @@ You're about to create a new Google Ads account. You can create multiple campaig
 - Google Ads The Best Paid SEO Strategies for Businesses Article
 [Google Ads The Best Paid SEO Strategies for Businesses Article](https://business.google.com/uk/resources/articles/seo-vs-ppc/)
 
+### Google Ads
+
+
 ### The Best Paid SEO Strategies for Businesses
 - YouTube Ads ABCDs of effective video ads Article
 [YouTube Ads ABCDs of effective video ads Article](https://business.google.com/uk/resources/articles/abcds-of-effective-video-ads/)
+
+### YouTube Ads
+
 
 ### ABCDs of effective video ads
 - Google Ads 10 tips for Google Ads budget management Article
 [Google Ads 10 tips for Google Ads budget management Article](https://business.google.com/uk/resources/articles/stretching-your-google-ads-budget/)
 
+### Google Ads
+
+
 ### 10 tips for Google Ads budget management
 - Google Ads How can you write successful online ads with Google? Article
 [Google Ads How can you write successful online ads with Google? Article](https://business.google.com/uk/resources/articles/write-online-ads/)
+
+### Google Ads
+
 
 ### How can you write successful online ads with Google?
 - Google Ads 5 ways to create better ad copy by utilising AI Article
 [Google Ads 5 ways to create better ad copy by utilising AI Article](https://business.google.com/uk/resources/articles/5-ways-to-create-effective-ad-copy-with-AI/)
 
+### Google Ads
+
+
 ### 5 ways to create better ad copy by utilising AI
 - Google Ads How to make your products stand out to shoppers on Google Ads Article
 [Google Ads How to make your products stand out to shoppers on Google Ads Article](https://business.google.com/uk/resources/articles/make-products-standout-to-shoppers/)
+
+### Google Ads
+
 
 ### How to make your products stand out to shoppers on Google Ads
 - Google Ads How assets can help you connect with valuable customers Article
 [Google Ads How assets can help you connect with valuable customers Article](https://business.google.com/uk/resources/articles/improve-search-ads-with-assets/)
 
+### Google Ads
+
+
 ### How assets can help you connect with valuable customers
 - Google Ads How to use the Keyword Planner tool effectively Article
 [Google Ads How to use the Keyword Planner tool effectively Article](https://business.google.com/uk/resources/articles/using-google-ads-keyword-planner/)
+
+### Google Ads
+
 
 ### How to use the Keyword Planner tool effectively
 - Google Ads Reach a larger or new audience with Google Display Network (GDN) targeting Article
 [Google Ads Reach a larger or new audience with Google Display Network (GDN) targeting Article](https://business.google.com/uk/resources/articles/reach-larger-new-audiences/)
 
+### Google Ads
+
+
 ### Reach a larger or new audience with Google Display Network (GDN) targeting
 - Google Ads What are people searching for online? Article
 [Google Ads What are people searching for online? Article](https://business.google.com/uk/resources/articles/what-are-people-searching/)
+
+### Google Ads
+
 
 ### What are people searching for online?
 - Google Ads What is paid search? Article
 [Google Ads What is paid search? Article](https://business.google.com/uk/resources/articles/what-is-paid-search/)
 
+### Google Ads
+
+
 ### What is paid search?
 - Google Ads Billing and payments in Google Ads Article
 [Google Ads Billing and payments in Google Ads Article](https://business.google.com/uk/resources/articles/basics-of-google-ads-billing-and-payments/)
+
+### Google Ads
+
 
 ### Billing and payments in Google Ads
 - Google Ads 5 things to consider when optimising your mobile landing page Article
 [Google Ads 5 things to consider when optimising your mobile landing page Article](https://business.google.com/uk/resources/articles/mobile-landing-page/)
 
+### Google Ads
+
+
 ### 5 things to consider when optimising your mobile landing page
 - Google Ads 10 Google Ads features that will grow your business Article
 [Google Ads 10 Google Ads features that will grow your business Article](https://business.google.com/uk/resources/articles/10-key-features-for-growth/)
+
+### Google Ads
+
 
 ### 10 Google Ads features that will grow your business
 - Google Ads Understand intent to place ads more effectively Article
 [Google Ads Understand intent to place ads more effectively Article](https://business.google.com/uk/resources/articles/use-google-ads-to-understand-your-audiences-intent/)
 
+### Google Ads
+
+
 ### Understand intent to place ads more effectively
 - Google Ads 4 Google Ads features to improve your keyword strategy Article
 [Google Ads 4 Google Ads features to improve your keyword strategy Article](https://business.google.com/uk/resources/articles/4-features-to-improve-keyword-strategy/)
+
+### Google Ads
+
 
 ### 4 Google Ads features to improve your keyword strategy
 - Google Ads 4:42 Best Practices Guide: Reaching the right customers on Search Article
 [Google Ads 4:42 Best Practices Guide: Reaching the right customers on Search Article](https://business.google.com/uk/resources/articles/reaching-the-right-customers-on-search/)
 
+### Google Ads
+
+
 ### Best Practices Guide: Reaching the right customers on Search
 - Google Ads Analytics in Google Ads Article
 [Google Ads Analytics in Google Ads Article](https://business.google.com/uk/resources/articles/how-to-analyze-google-ads-successfully/)
+
+### Google Ads
+
 
 ### Analytics in Google Ads
 - Google Ads 6:24 Best Practices Guide: Google AI for Video Advertising Article
 [Google Ads 6:24 Best Practices Guide: Google AI for Video Advertising Article](https://business.google.com/uk/resources/articles/build-awareness-with-video/)
 
+### Google Ads
+
+
 ### Best Practices Guide: Google AI for Video Advertising
 - Google Ads How to set up Google Ads: a checklist Article
 [Google Ads How to set up Google Ads: a checklist Article](https://business.google.com/uk/resources/articles/how-to-setup-google-ads-a-checklist/)
+
+### Google Ads
+
 
 ### How to set up Google Ads: a checklist
 - YouTube Ads With help from TrueView for action, Nectar by Resident’s sales rise and shine Success story
 [YouTube Ads With help from TrueView for action, Nectar by Resident’s sales rise and shine Success story](https://business.google.com/uk/resources/success-stories/nectar-a-resident-company/)
 
+### YouTube Ads
+
+
 ### With help from TrueView for action, Nectar by Resident’s sales rise and shine
 - Google Ads How any business can grow online with Local Services Ads Article
 [Google Ads How any business can grow online with Local Services Ads Article](https://business.google.com/uk/resources/articles/build-online-presence-with-local-services-ads/)
+
+### Google Ads
+
 
 ### How any business can grow online with Local Services Ads
 - Google Ads How to set up conversion measurement on your website Article
 [Google Ads How to set up conversion measurement on your website Article](https://business.google.com/uk/resources/articles/conversion-measurement/)
 
+### Google Ads
+
+
 ### How to set up conversion measurement on your website
 - Google Ads Save time and drive efficiency with responsive display ads Article
 [Google Ads Save time and drive efficiency with responsive display ads Article](https://business.google.com/uk/resources/articles/responsive-display-ads/)
+
+### Google Ads
+
 
 ### Save time and drive efficiency with responsive display ads
 - Google Ads 00:30 Currensea boosts customer acquisition 422%, with help of Google Search Success story
 [Google Ads 00:30 Currensea boosts customer acquisition 422%, with help of Google Search Success story](https://business.google.com/uk/resources/success-stories/currensea/)
 
+### Google Ads
+
+
 ### Currensea boosts customer acquisition 422%, with help of Google Search
 - Google Ads How to unlock the value of your creative assets with Google Ads Article
 [Google Ads How to unlock the value of your creative assets with Google Ads Article](https://business.google.com/uk/resources/articles/unlock-value-of-creative-assets/)
+
+### Google Ads
+
 
 ### How to unlock the value of your creative assets with Google Ads
 - Google Ads 00:30 A strong brew: Bird & Blend sees 439% ROAS through Google Ads Success story
 [Google Ads 00:30 A strong brew: Bird & Blend sees 439% ROAS through Google Ads Success story](https://business.google.com/uk/resources/success-stories/bird-and-blend/)
 
+### Google Ads
+
+
 ### A strong brew: Bird & Blend sees 439% ROAS through Google Ads
 - Google Ads 0:30 LØCI achieves 500% ROAS with Google Ads Success story
 [Google Ads 0:30 LØCI achieves 500% ROAS with Google Ads Success story](https://business.google.com/uk/resources/success-stories/loci/)
 
+### Google Ads
+
+
 ### LØCI achieves 500% ROAS with Google Ads
 - Google Ads Kinetica Sports’ full-funnel campaign hits 267% increase in ROAS, with help from Google Ads. Success story
 [Google Ads Kinetica Sports’ full-funnel campaign hits 267% increase in ROAS, with help from Google Ads. Success story](https://business.google.com/uk/resources/success-stories/kinetica-sports/)
+
+### Google Ads
+
 
 ### Kinetica Sports’ full-funnel campaign hits 267% increase in ROAS, with help from Google Ads.
 - How experimenting with their Google Ads Strategy helped Octopus Energy sign up over 2 million customers Success story
@@ -6756,41 +6584,71 @@ You're about to create a new Google Ads account. You can create multiple campaig
 - Google Ads Best Practices Guide: AI Essentials in Google Ads Article
 [Google Ads Best Practices Guide: AI Essentials in Google Ads Article](https://business.google.com/uk/resources/articles/ai-essentials/)
 
+### Google Ads
+
+
 ### Best Practices Guide: AI Essentials in Google Ads
 - Google Ads A beginners’ guide to YouTube video ads: Drive action with video advertising Article
 [Google Ads A beginners’ guide to YouTube video ads: Drive action with video advertising Article](https://business.google.com/uk/resources/articles/beginners-guide-youtube-ads/)
+
+### Google Ads
+
 
 ### A beginners’ guide to YouTube video ads: Drive action with video advertising
 - Google Ads Get better results across all Google Ads channels with Performance Max campaigns Article
 [Google Ads Get better results across all Google Ads channels with Performance Max campaigns Article](https://business.google.com/uk/resources/articles/benefits-of-performance-max/)
 
+### Google Ads
+
+
 ### Get better results across all Google Ads channels with Performance Max campaigns
 - Google Ads Understanding demand: How search data can improve your marketing performance Article
 [Google Ads Understanding demand: How search data can improve your marketing performance Article](https://business.google.com/uk/resources/articles/how-search-data-improves-marketing-performance/)
+
+### Google Ads
+
 
 ### Understanding demand: How search data can improve your marketing performance
 - Google Ads 00:30 How fashion brand Never Fully Dressed achieved 890% ROAS through Google Ads Success story
 [Google Ads 00:30 How fashion brand Never Fully Dressed achieved 890% ROAS through Google Ads Success story](https://business.google.com/uk/resources/success-stories/never-fully-dressed/)
 
+### Google Ads
+
+
 ### How fashion brand Never Fully Dressed achieved 890% ROAS through Google Ads
 - Google Ads A guide to keyword match types in Google Ads Article
 [Google Ads A guide to keyword match types in Google Ads Article](https://business.google.com/uk/resources/articles/guide-to-keyword-match-types/)
+
+### Google Ads
+
 
 ### A guide to keyword match types in Google Ads
 - Google Ads 00:30 Lucy & Yak sees 233% increase in revenue through Google Ads Success story
 [Google Ads 00:30 Lucy & Yak sees 233% increase in revenue through Google Ads Success story](https://business.google.com/uk/resources/success-stories/lucy-and-yak/)
 
+### Google Ads
+
+
 ### Lucy & Yak sees 233% increase in revenue through Google Ads
 - Google Ads The perfect fit: Farai London scales by 400% with Google Ads Success story
 [Google Ads The perfect fit: Farai London scales by 400% with Google Ads Success story](https://business.google.com/uk/resources/success-stories/farai-london/)
+
+### Google Ads
+
 
 ### The perfect fit: Farai London scales by 400% with Google Ads
 - Google Ads Build trust online: How the Google Guarantee works Article
 [Google Ads Build trust online: How the Google Guarantee works Article](https://business.google.com/uk/resources/articles/build-trust-online/)
 
+### Google Ads
+
+
 ### Build trust online: How the Google Guarantee works
 - Google Ads A guide to App campaigns on Google Ads Article
 [Google Ads A guide to App campaigns on Google Ads Article](https://business.google.com/uk/resources/articles/driving-loyalty-through-app-campaigns/)
+
+### Google Ads
+
 
 ### A guide to App campaigns on Google Ads
 - How optimisation helped PensionBee triple their customer base Success story
@@ -6800,117 +6658,207 @@ You're about to create a new Google Ads account. You can create multiple campaig
 - Google Ads 3 consumer shifts to influence your retail paid search strategy Article
 [Google Ads 3 consumer shifts to influence your retail paid search strategy Article](https://business.google.com/uk/resources/articles/how-consumer-shifts-impact-your-paid-search-strategy/)
 
+### Google Ads
+
+
 ### 3 consumer shifts to influence your retail paid search strategy
 - Google Ads Drive awareness and conversions: Cover the entire marketing funnel with Google Display Ads Article
 [Google Ads Drive awareness and conversions: Cover the entire marketing funnel with Google Display Ads Article](https://business.google.com/uk/resources/articles/full-funnel-marketing-with-google-display-ads/)
+
+### Google Ads
+
 
 ### Drive awareness and conversions: Cover the entire marketing funnel with Google Display Ads
 - Google Ads What is Google Customer Match, and how can it help you reach valuable audiences online? Article
 [Google Ads What is Google Customer Match, and how can it help you reach valuable audiences online? Article](https://business.google.com/uk/resources/articles/how-to-drive-ad-performance-with-customer-match/)
 
+### Google Ads
+
+
 ### What is Google Customer Match, and how can it help you reach valuable audiences online?
 - Google Ads Spark interest and inspire action: What are Demand Gen campaigns? Article
 [Google Ads Spark interest and inspire action: What are Demand Gen campaigns? Article](https://business.google.com/uk/resources/articles/what-are-google-demand-gen-campaigns/)
+
+### Google Ads
+
 
 ### Spark interest and inspire action: What are Demand Gen campaigns?
 - Google Ads Get more leads with less effort: a guide to lead form assets Article
 [Google Ads Get more leads with less effort: a guide to lead form assets Article](https://business.google.com/uk/resources/articles/generate-more-leads-with-lead-form-assets/)
 
+### Google Ads
+
+
 ### Get more leads with less effort: a guide to lead form assets
 - Google Ads How to tailor your ads to reach customers at every stage of their purchase journey Article
 [Google Ads How to tailor your ads to reach customers at every stage of their purchase journey Article](https://business.google.com/uk/resources/articles/how-to-tailor-your-online-campaigns-and-win-business/)
+
+### Google Ads
+
 
 ### How to tailor your ads to reach customers at every stage of their purchase journey
 - Google Ads How to save time and boost results with automated bidding Article
 [Google Ads How to save time and boost results with automated bidding Article](https://business.google.com/uk/resources/articles/maximise-your-ad-budget-with-automated-bidding/)
 
+### Google Ads
+
+
 ### How to save time and boost results with automated bidding
 - Google Ads How to improve your Google Ads Quality Score Article
 [Google Ads How to improve your Google Ads Quality Score Article](https://business.google.com/uk/resources/articles/three-ways-to-improve-your-quality-score/)
+
+### Google Ads
+
 
 ### How to improve your Google Ads Quality Score
 - Google Ads From browsing to buying: 7 Search strategies to win new customers Article
 [Google Ads From browsing to buying: 7 Search strategies to win new customers Article](https://business.google.com/uk/resources/articles/7-search-tips-to-boost-your-digital-ad-campaigns/)
 
+### Google Ads
+
+
 ### From browsing to buying: 7 Search strategies to win new customers
 - Google Ads How to increase website traffic and lead generation with Google Ads Article
 [Google Ads How to increase website traffic and lead generation with Google Ads Article](https://business.google.com/uk/resources/articles/how-to-increase-website-traffic-and-leads/)
+
+### Google Ads
+
 
 ### How to increase website traffic and lead generation with Google Ads
 - Google Ads How audience segments can help you find and reach the right customers at the right time Article
 [Google Ads How audience segments can help you find and reach the right customers at the right time Article](https://business.google.com/uk/resources/articles/improve-your-advertising-with-audience-segments/)
 
+### Google Ads
+
+
 ### How audience segments can help you find and reach the right customers at the right time
 - Google Ads Enhanced conversions: Measure ad performance while protecting people’s privacy Article
 [Google Ads Enhanced conversions: Measure ad performance while protecting people’s privacy Article](https://business.google.com/uk/resources/articles/privacy-in-ad-performance-with-enhanced-conversions/)
+
+### Google Ads
+
 
 ### Enhanced conversions: Measure ad performance while protecting people’s privacy
 - Google Ads Discover Mobile Advertising with Google Ads Article
 [Google Ads Discover Mobile Advertising with Google Ads Article](https://business.google.com/uk/resources/articles/reach-your-customers-with-google-mobile-ads/)
 
+### Google Ads
+
+
 ### Discover Mobile Advertising with Google Ads
 - Google Ads Boost your business by advertising on Google Maps Article
 [Google Ads Boost your business by advertising on Google Maps Article](https://business.google.com/uk/resources/articles/get-the-most-out-of-advertising-on-google-maps/)
+
+### Google Ads
+
 
 ### Boost your business by advertising on Google Maps
 - YouTube Ads Bellroy grows sales with shoppable Video action campaigns and value-based bidding Success story
 [YouTube Ads Bellroy grows sales with shoppable Video action campaigns and value-based bidding Success story](https://business.google.com/uk/resources/success-stories/bellroy/)
 
+### YouTube Ads
+
+
 ### Bellroy grows sales with shoppable Video action campaigns and value-based bidding
 - Google Ads Navigating the B2B marketing funnel with Google Ads Article
 [Google Ads Navigating the B2B marketing funnel with Google Ads Article](https://business.google.com/uk/resources/articles/explore-the-b2b-marketing-funnel-with-google-ads/)
+
+### Google Ads
+
 
 ### Navigating the B2B marketing funnel with Google Ads
 - YouTube Ads Majestic Heli Ski get nearly half of their new skiers from YouTube Success story
 [YouTube Ads Majestic Heli Ski get nearly half of their new skiers from YouTube Success story](https://business.google.com/uk/resources/success-stories/majestic-heli-ski/)
 
+### YouTube Ads
+
+
 ### Majestic Heli Ski get nearly half of their new skiers from YouTube
 - YouTube Ads BlendJet’s YouTube strategy led to 413% revenue growth Success story
 [YouTube Ads BlendJet’s YouTube strategy led to 413% revenue growth Success story](https://business.google.com/uk/resources/success-stories/blendjet/)
+
+### YouTube Ads
+
 
 ### BlendJet’s YouTube strategy led to 413% revenue growth
 - YouTube Ads Adidas uses sequencing to move customers from awareness to consideration Success story
 [YouTube Ads Adidas uses sequencing to move customers from awareness to consideration Success story](https://business.google.com/uk/resources/success-stories/adidas/)
 
+### YouTube Ads
+
+
 ### Adidas uses sequencing to move customers from awareness to consideration
 - Google Ads Beyond the last click: Using attribution models to understand your Google Ads performance Article
 [Google Ads Beyond the last click: Using attribution models to understand your Google Ads performance Article](https://business.google.com/uk/resources/articles/understanding-sales-journeys-with-attribution-models/)
+
+### Google Ads
+
 
 ### Beyond the last click: Using attribution models to understand your Google Ads performance
 - YouTube Ads Pringles masters tentpole marketing moments with TrueView for reach Success story
 [YouTube Ads Pringles masters tentpole marketing moments with TrueView for reach Success story](https://business.google.com/uk/resources/success-stories/pringles/)
 
+### YouTube Ads
+
+
 ### Pringles masters tentpole marketing moments with TrueView for reach
 - YouTube Ads Measure your results Article
 [YouTube Ads Measure your results Article](https://business.google.com/uk/resources/articles/measure-your-results/)
+
+### YouTube Ads
+
 
 ### Measure your results
 - YouTube Ads Xfinity Mobile turns data into dollars Success story
 [YouTube Ads Xfinity Mobile turns data into dollars Success story](https://business.google.com/uk/resources/success-stories/xfinity/)
 
+### YouTube Ads
+
+
 ### Xfinity Mobile turns data into dollars
 - Google Ads Maximise your ROI: How to get started with value-based bidding on Google Ads Article
 [Google Ads Maximise your ROI: How to get started with value-based bidding on Google Ads Article](https://business.google.com/uk/resources/articles/increase-your-roi-with-value-based-bidding/)
+
+### Google Ads
+
 
 ### Maximise your ROI: How to get started with value-based bidding on Google Ads
 - YouTube Ads Video action campaigns on YouTube Shorts helped Cider gain new customers at a 33% lower CPA Success story
 [YouTube Ads Video action campaigns on YouTube Shorts helped Cider gain new customers at a 33% lower CPA Success story](https://business.google.com/uk/resources/success-stories/cider/)
 
+### YouTube Ads
+
+
 ### Video action campaigns on YouTube Shorts helped Cider gain new customers at a 33% lower CPA
 - Google Ads A foundation for success: How to structure your Google Ads account for growth on Search with AI Article
 [Google Ads A foundation for success: How to structure your Google Ads account for growth on Search with AI Article](https://business.google.com/uk/resources/articles/account-structures-for-search-growth-with-ai/)
+
+### Google Ads
+
 
 ### A foundation for success: How to structure your Google Ads account for growth on Search with AI
 - Google Ads Paid search optimisation in the age of AI-powered marketing: How advertisers can stand out? Article
 [Google Ads Paid search optimisation in the age of AI-powered marketing: How advertisers can stand out? Article](https://business.google.com/uk/resources/articles/how-to-get-the-edge-with-ai-on-paid-search/)
 
+### Google Ads
+
+
 ### Paid search optimisation in the age of AI-powered marketing: How advertisers can stand out?
 - Google Ads 5 ways to use Google AI for more effective advertising Article
 [Google Ads 5 ways to use Google AI for more effective advertising Article](https://business.google.com/uk/resources/articles/5-tips-for-more-effective-advertising-with-google-ai/)
 
+### Google Ads
+
+
 ### 5 ways to use Google AI for more effective advertising
 - Google Ads Simplifying multi-account management: Streamline your workflow with a Google Ads manager account Article
 [Google Ads Simplifying multi-account management: Streamline your workflow with a Google Ads manager account Article](https://business.google.com/uk/resources/articles/how-to-streamline-multi-account-management/)
+
+### Google Ads
+
+
+### Simplifying multi-account management: Streamline your workflow with a Google Ads manager account
+
 
 ### Footer links
 Follow us
@@ -7548,6 +7496,9 @@ Last updated 2026-02-26 UTC.
 [DAI Full Service API](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service?hl=ar)
 - واجهات برمجة التطبيقات
 [واجهات برمجة التطبيقات](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=ar)
+
+### إدراج DAI للخدمة الكاملة
+
 
 ### باستخدام حزمة تطوير البرامج لإدراج إعلان ديناميكي لإعلانات الوسائط التفاعلية
 - تعمل صفحة الويب أو التطبيق على تحميل حزمة تطوير البرامج لإدراج إعلان ديناميكي لإعلانات الوسائط التفاعلية من خلال: علامة نص برمجي مضمّنة لـ HTML5 تطبيق أصلي متوافق مع Android أو Google Cast أو iOS أو tvOS أو Roku
@@ -8427,6 +8378,9 @@ Congratulations! You are qualified to sign up for Google Ad Manager.
 You need an AdSense account to work with Google Ad Manager. Sign up and come back after your application has been approved.
 
 [Sign up](https://www.google.com/adsense/signup?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)
+
+### Learn more, do more.
+
 
 ### Increase your revenue in browsers with limited signals
 Learn how global publishers are using publisher provided Identifiers to increase programmatic revenue in browsers that no longer support third-party cookies.
@@ -13155,6 +13109,9 @@ Follow us
 - Client libraries
 [Client libraries](https://docs.cloud.google.com/java/docs/reference)
 
+### ad-manager overview (0.50.0) Stay organized with collections Save and categorize content based on your preferences.
+
+
 ### Key Reference Links
 Google Ad Manager API Description: The Ad Manager API enables an app to integrate with Google Ad Manager. You can read Ad Manager data and run reports using the API.
 
@@ -14694,8 +14651,14 @@ App.config খুলুন এবং নিম্নলিখিত কীগু
 **Source:** local://caio_role_docs.md
 **Ingested At:** 2026-05-20T06:53:48.666Z
 
+### Chief AI Officer (CAIO) Role Description
+
+
 ### Core Job Description
 A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an organization’s entire artificial intelligence strategy. The role bridges the gap between advanced technical execution and bottom-line business outcomes. A Chief AI Officer directs how a company develops, procures, and implements AI to boost productivity, enter new markets, and maintain a competitive edge.
+
+### Key Responsibilities
+
 
 ### Strategy & Vision
 Align AI initiatives with the company’s overall business goals.
@@ -14712,6 +14675,9 @@ Educate the board, executives, and general workforce on how to leverage AI safel
 ### Performance Tracking
 Measure the return on investment (ROI) and overall business impact of deployed AI projects.
 
+### Qualifications & Requirements
+
+
 ### Education
 A Master's or Ph.D. in Artificial Intelligence, Machine Learning, Computer Science, or a related quantitative field. An MBA is highly valued for the business-strategy aspect of the role. Because “AI Officer” is an executive title, it does not require a government-issued professional license (like a lawyer or doctor). However, companies typically look for advanced degrees or professional certifications in Data Science, Computer Science, or an MBA.
 
@@ -14720,6 +14686,9 @@ A Master's or Ph.D. in Artificial Intelligence, Machine Learning, Computer Scien
 
 ### Skillset
 A rare blend of technical fluency (understanding AI capabilities and limitations) and executive business acumen.
+
+### CAIO vs. Other C-Suite Tech Roles
+
 
 ### Chief Technology Officer (CTO)
 Focuses on the company’s broad IT infrastructure, software architecture, and system reliability.
@@ -14732,5 +14701,388 @@ Uses the foundations managed by the CTO and CDO to specifically drive business v
 
 ### External Resources
 To explore real-world openings and licensure requirements, you can research available roles on platforms like LinkedIn Jobs or explore executive AI leadership certifications via Coursera.
+
+---
+
+## DOCUMENT: caio_role_docs.md
+**Source:** local://caio_role_docs.md
+**Ingested At:** 2026-05-20T17:57:24.575Z
+
+### Chief AI Officer (CAIO) Role Description
+
+
+### Core Job Description
+A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an organization’s entire artificial intelligence strategy. The role bridges the gap between advanced technical execution and bottom-line business outcomes. A Chief AI Officer directs how a company develops, procures, and implements AI to boost productivity, enter new markets, and maintain a competitive edge.
+
+### Key Responsibilities
+
+
+### Strategy & Vision
+Align AI initiatives with the company’s overall business goals.
+
+### Ethics & Governance
+Establish frameworks to ensure AI algorithms are free from bias, respect user privacy, and meet all legal and cybersecurity regulations.
+
+### Implementation & Tech Stacking
+Decide whether to build proprietary AI models or license third-party tools, managing relationships with external technology vendors.
+
+### Cross-Department Training
+Educate the board, executives, and general workforce on how to leverage AI safely and effectively.
+
+### Performance Tracking
+Measure the return on investment (ROI) and overall business impact of deployed AI projects.
+
+### Qualifications & Requirements
+
+
+### Education
+A Master's or Ph.D. in Artificial Intelligence, Machine Learning, Computer Science, or a related quantitative field. An MBA is highly valued for the business-strategy aspect of the role. Because “AI Officer” is an executive title, it does not require a government-issued professional license (like a lawyer or doctor). However, companies typically look for advanced degrees or professional certifications in Data Science, Computer Science, or an MBA.
+
+### Experience
+8+ to 10+ years of progressive leadership experience in data science, AI development, or enterprise digital transformation.
+
+### Skillset
+A rare blend of technical fluency (understanding AI capabilities and limitations) and executive business acumen.
+
+### CAIO vs. Other C-Suite Tech Roles
+
+
+### Chief Technology Officer (CTO)
+Focuses on the company’s broad IT infrastructure, software architecture, and system reliability.
+
+### Chief Data Officer (CDO)
+Manages data governance, architecture, and data pipelines to make sure data is clean and organized.
+
+### Chief AI Officer (CAIO)
+Uses the foundations managed by the CTO and CDO to specifically drive business value and transform how work gets done.
+
+### External Resources
+To explore real-world openings and licensure requirements, you can research available roles on platforms like LinkedIn Jobs or explore executive AI leadership certifications via Coursera.
+
+---
+
+## DOCUMENT: intelephense_docs.md
+**Source:** local://intelephense_docs.md
+**Ingested At:** 2026-05-20T17:57:24.616Z
+
+### Intelephense Documentation
+
+
+### Getting Started
+
+
+### About
+Intelephense is a high performance, cross platform, cross editor PHP language server adhering to the Language Server Protocol (LSP).
+
+When paired with an LSP capable editor it provides an essential set of code tools, making for a productive and rich PHP coding experience.
+
+The Intelephense server is proprietary software released to end users under a "freemium" model. Many of the features are provided free of charge. Access to premium features can be obtained by purchasing a licence key.
+
+### Visual Studio Code
+Visual Studio Code users should install the Intelephense extension from within the extensions view or download it from the VSCode marketplace.
+
+The built-in VSCode PHP Language Features extension can cause excessive completion suggestions that are out of context and is best disabled. Go to the Extensions UI and search for PHP Language Features to disable it. Alternatively, you can disable parts of it via its configuration settings. Other third party extensions that provide similar functionality to Intelephense may also need to be disabled for best results.
+
+Optionally purchase and enter your licence key by opening the command palette (Ctrl+Shift+P) and searching for Enter licence key.
+
+### Other Editors
+Intelephense requires a Node.js runtime environment. It is recommended that you use a current LTS version of Node.js. To install Intelephense server you can use npm.
+
+```bash
+npm i intelephense -g
+```
+
+Intelephense needs an LSP compliant client to communicate with and integrate features into the editor. A list of editors and clients that support the LSP can be found online. Please follow the setup guide of the relevant tool. The information below may help in configuring the client.
+
+To start the intelephense server:
+```bash
+intelephense {transport}
+```
+Where {transport} is one of:
+* --node-ipc
+* --stdio
+* --socket={number}
+* --pipe={string}
+
+If your LSP client exposes initializationOptions, then the following values are accepted:
+```typescript
+interface InitialisationOptions {
+    // Optional absolute path to storage directory for workspace specific data.
+    storagePath?: string;
+
+    // Optional absolute path to a global storage directory for global data.
+    globalStoragePath?: string;
+
+    //Optional licence key or absolute path to a text file containing the licence key.
+    licenceKey?: string;
+
+    //Optional flag to clear server state.
+    //State can also be cleared by deleting {storagePath}/intelephense
+    clearCache?: boolean;
+}
+```
+
+When initializationOptions properties are not provided by the client, the following defaults are used:
+
+| OS | Property | Path | Fallback |
+|---|---|---|---|
+| *nix | storagePath | $XDG_CONFIG_HOME/intelephense/workspace/ | $HOME/.config/intelephense/workspace/ |
+| *nix | globalStoragePath | $XDG_CONFIG_HOME/intelephense/global/ | $HOME/.config/intelephense/global/ |
+| *nix | licenceKey | {globalStoragePath}/licence.txt | {globalStoragePath}/license.txt |
+| Windows | storagePath | %AppData%/intelephense/workspace/ | %UserProfile%/intelephense/workspace/ |
+| Windows | globalStoragePath | %AppData%/intelephense/global/ | %UserProfile%/intelephense/global/ |
+| Windows | licenceKey | {globalStoragePath}/licence.txt | {globalStoragePath}/license.txt |
+
+### Configuration
+Please see the VSCode client package.json configuration property for a full list of configuration options and associated JSON schema. Note that the configuration keys are given in dot notation. As an example, the equivalent JSON object for intelephense.files.exclude would be {"intelephense": {"files": {"exclude": []}}}.
+
+Intelephense attempts to provide reasonable defaults for all settings. Some of the more important settings to consider when getting started include:
+* intelephense.files.associations - File globs that identify PHP files. Defaults to standard PHP file extensions e.g. *.php.
+* intelephense.files.maxSize - Maximum file size in bytes to index and provide analysis for. Defaults to 1000000 (1MB).
+* intelephense.environment.phpVersion - PHP version to use for analysis. Defaults to the most recent stable PHP version.
+* intelephense.stubs - List of stubs to include. Defaults to core symbols and extensions that are bundled with PHP. If you are getting undefined symbols for built-in or PECL extensions, you may need to modify this list.
+
+In VSCode, the settings UI can be used to modify the configuration values. For other LSP clients, please see the client documentation on how to modify these values. Intelephense supports the LSP workspace/didChangeConfiguration and workspace/configuration methods as a way of supplying configuration values to the server.
+
+If neither of the methods above are supported by the client, then configuration values can be supplied via an intelephense.config.json file placed in the workspace folder. The JSON schema for this file is the same as the one used for the VSCode client. The top level intelephense property is not required in this file.
+
+For Intelephense to work effectively it must have access to the definitions of the symbols used in your code. Opening a project folder (LSP InitializeParams rootUri or workspaceFolders) rather than individual files enables these symbols to be discovered by Intelephense via indexing the PHP files in the folder. Large workspaces require more system resources. Consider opening a smaller workspace or exclude unnecessary files via the intelephense.files.exclude setting to reduce resource usage.
+
+If you need to include files from outside of the workspace folder, then add the paths to these files to the intelephense.environment.includePaths setting.
+
+When configuring a multi-root workspace, Intelephense will presume that the folders in the workspace are separate projects and will not provide cross folder symbols unless you link the dependency between the projects via the intelephense.environment.includePaths setting.
+
+### Type System
+Providing type information in your PHP code will result in a better experience when using Intelephense. Type information can be provided via coded type declarations or PHPDoc type annotations. Where both have been provided, PHPDoc type annotations are given precedence as they can provide more detailed type information.
+
+```php
+<?php
+
+/**
+ * @param string $s  <- A phpdoc parameter type annotation for $s
+ * @return string[] <- A phpdoc return type annotation specifying the array element type
+ **/
+function foo(string $s): array {} // <- type declarations for $s (string) and function return (array)
+```
+
+Intelephense will also compute inferred types when a declared or documented type is not found or during control flow analysis. When a type is inferred it may be reduced to its minimal representation. For example, MyClass|object would become object because MyClass is a sub-type of object.
+
+Intelephense provides limited support for PHPStorm metadata as a way of overriding or supplementing type information. It is recommended to use PHPDoc type annotations instead of PHPStorm metadata where possible as they are more widely supported across different tools. Support for PHPStorm metadata may be removed in future releases.
+
+### Type Narrowing
+Intelephense performs type narrowing of variables during control flow analysis. Type narrowing expressions include built-in type assertions such as is_string, custom type assertions annotated with @assert, instanceof, and equality expressions.
+
+```php
+<?php
+
+class Foo {}
+
+function example(string|array|Foo|null $input): void
+{
+    if (!$input) {
+        // $input is narrowed to string|array|null in this block
+        // empty strings, empty arrays and null are all falsey
+    } else {
+        // $input is narrowed to string|array|Foo in this block
+
+        if ($input instanceof Foo) {
+            // $input is narrowed to Foo in this block
+        } else if (is_string($input)) {
+            // $input is narrowed to string in this block
+        } else {
+            // $input is narrowed to array in this block
+        }
+    }
+}
+```
+
+### Type Evolving
+Type evolving is the change in a variable's type after an assignment expression. Simple variables and parameters always change to the type of the assigned expression regardless of initial assignments, type declarations or annotations.
+
+Properties with no type declaration or annotation will also change to the type of the assigned expression. Otherwise they will only widen or narrow according to the bounds of the initial type they have been declared or annotated with.
+
+Intelephense will type evolve array types when mutated only if they are declared with an empty array initialiser. Otherwise they are considered to retain their initial declared, annotated or inferred type.
+
+```php
+<?php
+
+function example(int $a): void
+{
+    $a = "string"; // $a is now type string
+
+    $b = []; // $b is type array and flagged as evolving
+
+    $b[] = "string"; // $b is now type string[]
+
+    $b[] = 9; //$b is now (string|int)[]
+
+    $c = [1, 2]; // $c is type int[] and NOT flagged as evolving
+
+    $c[] = "string"; // $c is still type int[]
+}
+```
+
+### Supported Types
+
+
+### Top Type
+mixed
+The super-type of all types. Any other type can be assigned to a type constraint of mixed. If intelephense cannot determine a more specific type for a symbol or expression then this is the type it is given. Because of this, Intelephense also allows mixed to be assigned to any other type constraint as well, effectively turning off type checking for that instance.
+
+### Bottom Type
+never
+The sub-type of all types. This type can be assigned to any other type constraint. It is used to represent an impossibility in the code and can be used as the return type of a function that exits or always throws an exception.
+
+### Scalar Types
+int, float, bool, string.
+
+### Unit Types
+void, null, true, false, unset* (represents an undefined variable).
+
+### Literal Types
+'myString'*, 9* (integer literal).
+
+### Object Types
+object, \MyNs\MyClass, object{name: string, optional?: string}*, static, self, $this*.
+
+### Array Types
+array, array<TKey, TValue>*, TValue[]*, array{description: string, 'length (cm)': float, optional?: string, ...<int, string>}*.
+
+### Callable Types
+callable, callable(TParamA $a, TParamB $b): TReturn*, Closure*.
+
+### Alias Types
+iterable (Alias for Traversable|array), ?A (Nullable type shorthand for null|A).
+
+### Union Types
+A|B|C - A type which may have multiple atomic type representations.
+
+### Intersection Types
+A&B&C - A composite type which consists of multiple atomic types.
+
+### DNF Types
+A|B|(C&D&E) - When combining union and intersection types, only a single level of nesting is permitted. The union must be the top level.
+
+### Generic Types
+Supports @template PHPDoc annotations. The following built-in types are templated:
+iterable, Traversable, array, Iterator, IteratorAggregate, ArrayAccess, WeakReference, WeakMap, Fiber, DatePeriod, ReflectionAttribute, ReflectionClass, Generator, ArrayObject, SplDoublyLinkedList, SplQueue, SplStack, SplHeap, SplMinHeap, SplMaxHeap, SplPriorityQueue, SplFixedArray, SplObjectStorage.
+
+### Conditional Return Type
+(TSubject is TCompare ? TTrue : TFalse)* - Sometimes the return type of a function may depend on the type of a parameter.
+
+### Array Key Type
+key-of<TArray>* - Resolves to a union of the keys of an array shape.
+
+### Array Value Type
+value-of<TArray>* - Resolves to a union of the values of an array shape.
+
+### Index Access Type
+TArray[TKey]* - Resolves to the type of the value at index TKey in TArray.
+
+### Miscellaneous Types
+resource*, class-string<T>*.
+
+### PHPDoc Annotations
+Intelephense supports standard PHPDoc annotations as well as non-standard ones from tools like Psalm and PHPStan.
+
+* **@template**: Used to declare a type argument of a generic type, function or method.
+* **@template-extends**: Used to declare the type arguments supplied to a generic parent type. Alias @extends is also supported.
+* **@template-implements**: Used to declare the type arguments supplied to a generic interface. Alias @implements is also supported.
+* **@template-use**: Used to declare the type arguments supplied to a generic trait. Alias @use is also supported.
+* **@param-closure-this**: Declares the type of the $this variable inside a closure passed as a parameter.
+* **@param-out**: Declares the out type of a by-reference parameter.
+* **@assert**: Declares a function that asserts an argument is of a specified type.
+* **@assert-if-true / @assert-if-false**: Similar to @assert but for boolean return paths.
+* **@mixin**: (Premium) Declares that members of a specified class are mixed in.
+* **@disregard**: Suppresses a specific diagnostic at the following statement.
+* **@type-alias**: Declares a type alias for improving readability.
+* **@import-type**: Imports a type alias declared in another file.
+
+### Features
+
+
+### Free Features
+The following features are available to all users.
+
+### Workspace Symbols
+Search for symbols in your workspace (Ctrl+T). Use FQSEN query syntax for specific symbols.
+
+### Document Symbols
+Lists all symbols in the current document (Ctrl+Shift+O).
+
+### Go to Definition
+Navigate to the definition of a symbol (F12).
+
+### Hover
+Show type information and documentation for a symbol when hovering.
+
+### Highlight
+Highlight all references to the symbol at the cursor position in the current file.
+
+### Code Completion
+Context appropriate completion suggestions ($ > : \ / ' " * . <).
+
+### Signature Help
+Information about function/method signatures during a call (Ctrl+Shift+Space).
+
+### Find All References
+List all references to a symbol in the current file or workspace (Shift+F12).
+
+### Formatting
+Format a whole document or selected range. Complies with PHP-FIG coding standards.
+
+### Diagnostics
+Syntax errors, type errors, and language constraints.
+
+### Inline Values
+Variable ranges and text for debuggers to display inline values.
+
+### Embedded Languages
+Language intelligence for HTML, CSS, and JavaScript within PHP files.
+
+### Premium Features
+Requires a licence.
+
+### Rename
+Refactor a symbol and all its semantic references (F2).
+
+### Code Folding
+Fold and unfold regions of code based on the syntax tree.
+
+### Find All Implementations
+List all implementations of a method or interface (Ctrl+F12).
+
+### Go to Type Definition
+Navigate to the type definition of a variable rather than its declaration.
+
+### Go to Declaration
+Navigate to the initial declaration of a symbol in a type hierarchy.
+
+### Smart Select
+Expand and shrink selections based on the syntax tree (Shift+Alt+→/←).
+
+### Type Hierarchy
+Understand the inheritance structure of a class, interface, trait, or enum.
+
+### Code Lens
+Reference counts and navigation links above declarations (Implementations, Overrides, Parent, Usages).
+
+### Inlay Hints
+Inferred parameter names and return types inline with the code.
+
+### Document Links
+Clickable links for require/include statements and @see annotations.
+
+### Code Actions
+Quick-fix and refactoring options (Ctrl+.), such as Import Symbol, Add PHPDoc, and Implement All Abstract Methods.
+
+### Appendix
+
+
+### Frameworks and Libraries
+Intelephense aims to support all PHP frameworks but does not implement specific solutions. Workarounds include type narrowing in code using `instanceof`, PHPDoc `@var` annotations, or using helper files for symbol overrides.
+
+### PHPDoc Instead of PHPStorm Metadata/Attributes
+It is recommended to use PHPDoc types for greater compatibility. Examples include using `@template` for return type mapping and array shapes (e.g., `array{red: RedService}`) for structured array documentation.
 
 ---
