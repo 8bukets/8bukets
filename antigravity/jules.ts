@@ -402,10 +402,6 @@ export class Jules {
     const { KnowledgeObserver } = await import('./services/knowledge_observer')
     const observer = new KnowledgeObserver()
 
-    // Scan external intelligence
-    const { observeKnowledge: scanUrl } = await import('./services/knowledge')
-    await scanUrl('https://software-online-review.com')
-
     // Scan scratch for new knowledge
     const incomingDir = path.join(process.cwd(), 'scratch')
     if (fs.existsSync(incomingDir)) {

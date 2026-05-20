@@ -51,17 +51,12 @@ pipeline {
             parallel {
                 stage('Market Analysis') {
                     steps {
-                        sh 'python3 scraper.py'
+                        sh 'npm run ingest:sor'
                     }
                 }
                 stage('Daily Tasks') {
                     steps {
                         sh 'npm run daily'
-                    }
-                }
-                stage('Asset Generation') {
-                    steps {
-                        sh 'python3 analytics.py'
                     }
                 }
             }
