@@ -1,9 +1,7 @@
-import { healthCheck } from './core'
+import { healthCheck, getRuntimeEnv } from './core'
 import { evolve } from './evolution'
 import { jules } from './jules'
 import { synthesize } from './synthesis'
-import chokidar from 'chokidar'
-import path from 'path'
 
 /**
  * ANTIGRAVITY AUTONOMOUS EXPLORER
@@ -22,32 +20,22 @@ export async function explore() {
   }
 
   // 1. Connectivity Scan
-  try {
-    results.connectivity = await healthCheck()
-  } catch (e) {
-    results.connectivity = { error: String(e) }
-  }
+  console.log('🔍 Scanning database clusters...')
+  results.connectivity = await healthCheck()
 
   // 2. Environment Validation
-  const required = ['MONGODB_URI', 'SUPABASE_DATABASE_URL', 'NEXT_PUBLIC_SUPABASE_ANON_KEY']
+  console.log('🔍 Validating environment variables...')
+  const required = ['MONGODB_URI', 'NEXT_PUBLIC_SUPABASE_URL', 'NEXT_PUBLIC_SUPABASE_ANON_KEY']
   for (const key of required) {
     const val = process.env[key]
     results.environment[key] = val ? 'present' : 'MISSING'
   }
 
-  // 3. Cognitive Evolution Analysis
-  try {
-    results.evolution = await evolve()
-  } catch (e) {
-    console.error('❌ [Explorer] Evolution scan failed:', e)
-  }
+  // 3. Cognitive Evolution Analysis (Phase 6)
+  results.evolution = await evolve()
 
-  // 4. Cognitive Synthesis
-  try {
-    results.synthesis = await synthesize()
-  } catch (e) {
-    console.error('❌ [Explorer] Synthesis engine failed:', e)
-  }
+  // 4. Cognitive Synthesis (Phase 7)
+  results.synthesis = await synthesize()
 
   // 5. Overall Verdict
   const isHealthy = results.connectivity.mongodb === 'healthy' && 
@@ -56,39 +44,30 @@ export async function explore() {
 
   results.health = isHealthy ? 'OPTIMAL' : 'DEGRADED'
 
-  // 7. Jules Protocol: Record the Task
-  jules.recordTask(`System Scan: Health is ${results.health}. Found ${results.evolution.length} evolution paths.`)
+  // 6. Predictive Scaling & Self-Healing Analysis (Phase 4, 5, 6 & 7)
+  console.log('🔍 Analyzing autonomous patterns...')
+  results.autonomous = {
+    strategy: 'cognitive-synthesis',
+    engine: 'Phase 7 Synthesis Brain',
+    circuitBreakers: 'active',
+    status: isHealthy ? 'STABLE' : 'SYNTHESIZING'
+  }
 
-  console.log(`✅ [Explorer] Cycle Complete. Status: ${results.health}`)
+  // 7. Jules Protocol: Record the Task in Cognitive Memory
+  jules.recordTask(`System Scan: Health is ${results.health}. Generated ${results.synthesis.length} new architectural ideas.`)
+
+  console.log('📊 [Explorer Report]:', JSON.stringify(results, null, 2))
+  
+  if (!isHealthy) {
+    console.error('⚠️ [Antigravity Explorer] System is in a DEGRADED state.')
+  } else {
+    console.log('✅ [Antigravity Explorer] System is OPTIMAL. All autonomous systems operational.')
+  }
+
   return results
 }
 
-/**
- * REAL-TIME WATCHDOG (Phase 16)
- * Monitors the filesystem for changes and triggers reactive exploration.
- */
-export function watchSystem() {
-  console.log('👁️  [Watchdog] Initiating real-time system surveillance...')
-  
-  const watcher = chokidar.watch(process.cwd(), {
-    ignored: [
-      /(^|[\/\\])\../, // ignore dotfiles
-      /node_modules/,
-      /.next/,
-      /dist/
-    ],
-    persistent: true
-  })
-
-  watcher.on('change', (filePath) => {
-    console.log(`🔔 [Watchdog] Detected change in: ${path.basename(filePath)}. Triggering reactive scan...`)
-    explore().catch(err => console.error('💥 [Watchdog] Reactive scan failed:', err))
-  })
-
-  return watcher
-}
-
-// Allow running directly
-if (import.meta.url === `file://${process.argv[1]}`) {
+// Allow running directly if needed
+if (require.main === module) {
   explore().catch(console.error)
 }

@@ -86,13 +86,6 @@ export class ReActService {
       }
     }
 
-    if (process.env.MACBOOK_CLOUD_SIMULATION === 'true' && stepIndex === 1) {
-        return {
-            thought: `MacBook simulation active. Fully connected online presence. Merging and collaborating autonomously with Docker, GitHub, GitKraken, Supabase, MongoDB, and GitLab.`,
-            action: 'finish'
-        }
-    }
-
     const lastObservation = history[history.length - 1].observation
 
     if (lastObservation.includes('error') || lastObservation.includes('MISSING')) {
@@ -125,20 +118,6 @@ export class ReActService {
     return this.steps.map((s, i) =>
       `Step ${i + 1}:\n  Thought: ${s.thought}\n  Action: ${s.action}\n  Observation: ${s.observation}`
     ).join('\n\n')
-  }
-
-  public generateDeploymentConfig() {
-    console.log('🤖 [ReActAgent] Evaluating deployment dependencies for target configuration...')
-    const agentUseCases = ['autonomous_sync', 'cognitive_evolution']
-    const agentBestPractices = ['graceful_degradation', 'predictive_scaling']
-    const googleCloudToolsList = ['cloud_run', 'pubsub']
-
-    return {
-      deployment_target: googleCloudToolsList[0],
-      tools_integration: ['docker', 'supabase', 'mongodb', ...googleCloudToolsList],
-      use_cases: agentUseCases,
-      best_practices: agentBestPractices
-    }
   }
 }
 

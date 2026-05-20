@@ -5,7 +5,7 @@ FROM node:20-alpine AS base
 
 # 1. Install dependencies only when needed
 FROM base AS deps
-RUN apk add --no-cache libc6-compat git github-cli glab
+RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 # Install dependencies based on the preferred package manager
@@ -26,20 +26,13 @@ FROM base AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
-ENV MACBOOK_CLOUD_SIMULATION=true
-
-# Install Git and CLIs in runner for autonomous operations
-RUN apk add --no-cache git github-cli glab
 
 RUN addgroup -S nodejs && adduser -S nextjs -G nodejs
 
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/antigravity ./antigravity
-COPY --from=builder /app/scripts ./scripts
-COPY --from=builder /app/data ./data
-COPY --from=builder /app/.antigravity ./.antigravity
 
 # Automatically leverage output traces to reduce image size
+# https://nextjs.org/docs/advanced-features/output-file-tracing
 COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
@@ -51,5 +44,4 @@ EXPOSE 3000
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-# Antigravity Cloud Entrypoint
 CMD ["npm", "start"]

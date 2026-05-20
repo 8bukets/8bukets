@@ -53,16 +53,6 @@ export async function optimize(insights: SystemInsights): Promise<PredictiveRefa
     })
   }
 
-  // Vector 3: Security Optimizations
-  if (insights.circuitBreakers && (insights.circuitBreakers.mongodb === 'open' || insights.circuitBreakers.supabase === 'open')) {
-     refactors.push({
-      id: 'S-301',
-      vector: 'security',
-      proposal: 'Implement strict rate limiting and automated isolation for open circuit breakers.',
-      impactScore: 0.95
-    })
-  }
-
   logAutonomousAction(`[SUPER-INTEL] Generated ${refactors.length} predictive refactors.`, 'cognitive')
   return refactors
 }
