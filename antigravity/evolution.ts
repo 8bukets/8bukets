@@ -20,6 +20,11 @@ export async function evolve() {
 
   // Recursive scan to find "bloated" or unoptimized patterns
   function scan(dir: string) {
+    // Prevent recursion into build artifacts and node_modules which causes OOM errors
+    if (dir.includes('node_modules') || dir.includes('.next') || dir.includes('dist') || dir.includes('build')) {
+      return
+    }
+
     const files = fs.readdirSync(dir)
     for (const file of files) {
       const fullPath = path.join(dir, file)
