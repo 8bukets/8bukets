@@ -12,7 +12,7 @@ export async function generateContent(payload: { title: string, content: string,
 
   const filePath = path.join(process.cwd(), 'data', payload.filename)
 
-  const fullContent = `# ${payload.title}\n\nGenerated on: ${new Date().toISOString()}\n\n${payload.content}\n\n---\nAll the best - https://markposition.wordpress.com`
+  const fullContent = `# ${payload.title}\n\nGenerated on: ${new Date().toISOString()}\n\n${payload.content}`
 
   fs.writeFileSync(filePath, fullContent)
 

@@ -1928,5 +1928,3 @@ Subagents are enabled by default. To disable them, set `enableAgents` to false i
 ```
 
 
----
-All the best - https://markposition.wordpress.com

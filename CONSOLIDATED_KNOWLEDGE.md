@@ -242,8 +242,6 @@ Everything else should be evaluated by whether it helps:
 - **Title**: (position) mRNA
 - **Relationship Map**: Confirmed overlapping identities between Antigravity, Project SOR, software-online-review.com, software-review-platform, and markposition.wordpress.com as the formal Market Intelligence layer.
 
----
-All the best - https://markposition.wordpress.com
 
 
 ---
@@ -5492,7 +5490,7 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
     report += `- **${s.role}**: ${s.email}\n`
   })
 
-  report += `\n---\nAll the best - https://markposition.wordpress.com\n`
+  report += `\n---\n\n`
 
   fs.writeFileSync(reportPath, report)
   logAutonomousAction(`✅ [Intelligence] Report saved to ${reportPath}`, 'info')
@@ -10463,5 +10461,3 @@ Important : Unstable Version ID releases (those with suffixes) are subject to br
 ---
 
 
----
-All the best - https://markposition.wordpress.com
