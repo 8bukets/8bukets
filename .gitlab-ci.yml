@@ -37,3 +37,19 @@ run-autonomous-performance_monitoring:
     - npx tsx antigravity/workflows/performance_monitoring_workflow.ts
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-cognitive_security:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Cognitive Security Service"
+    - npx tsx antigravity/workflows/cognitive_security_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-visual_neural_relay:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Visual Neural Relay"
+    - npx tsx antigravity/workflows/visual_neural_relay_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
