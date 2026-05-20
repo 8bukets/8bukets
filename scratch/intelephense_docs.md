@@ -315,5 +315,3 @@ Intelephense aims to support all PHP frameworks but does not implement specific 
 ### PHPDoc Instead of PHPStorm Metadata/Attributes
 It is recommended to use PHPDoc types for greater compatibility. Examples include using `@template` for return type mapping and array shapes (e.g., `array{red: RedService}`) for structured array documentation.
 
----
-All the best - https://markposition.wordpress.com

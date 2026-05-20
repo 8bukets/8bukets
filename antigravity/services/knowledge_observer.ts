@@ -65,7 +65,7 @@ export class KnowledgeObserver {
                              !trimmed.includes('|') && !trimmed.includes('&') &&
                              !trimmed.includes('[') && !trimmed.includes(']') &&
                              !trimmed.includes('\\') &&
-                             (trimmed.toUpperCase() === trimmed || /^[A-Z][a-z0-9]*(\s[A-Z][a-z0-9]*)*$/.test(trimmed)) &&
+                             (trimmed.toUpperCase() === trimmed || /^[A-Z][a-zA-Z0-9.-]*(\s[A-Z][a-zA-Z0-9.-]*)*$/.test(trimmed)) &&
                              !trimmed.startsWith('This ') &&
                              !trimmed.startsWith('Some ') &&
                              !/^[{}/*<>?]+$/.test(trimmed) &&

@@ -233,6 +233,21 @@ export class Jules {
     }
   }
 
+  public async syncToICloud() {
+    console.log(`☁️ [Jules-${this.role}] Triggering iCloud synchronization...`)
+    try {
+      const { syncToICloud } = await import('./services/icloud')
+      const result = await syncToICloud()
+      if (result.status === 'success') {
+        this.recordTask(`iCloud Sync: Successfully synchronized project to ${result.target}`)
+      } else if (result.status === 'failed') {
+        this.recordTask(`iCloud Sync: Synchronization failed - ${result.error}`, 'Ops')
+      }
+    } catch (err) {
+      console.error('❌ [Jules] Failed to import or execute iCloud sync:', err)
+    }
+  }
+
   public async executeWorkCycle() {
     console.log(`🌟 [Jules-${this.role}] Beginning Autonomous Work Cycle...`)
     const { explore } = await import('./explorer')
@@ -282,6 +297,29 @@ export class Jules {
     const reactSteps = await reactService.executeCycle('Optimize system posture using ReAct', reactTools)
     this.recordTask(`ReAct: Completed ${reactSteps.length} reasoning-action steps.`)
 
+    // Autonomous Improvement Cycle (Analyze Recent Sessions)
+    try {
+      const fs = await import('fs');
+      const path = await import('path');
+      let fullWorkOrders = [];
+      const woPath = path.join(process.cwd(), 'data/work_orders.json');
+      if (fs.existsSync(woPath)) {
+        fullWorkOrders = JSON.parse(fs.readFileSync(woPath, 'utf8'));
+      }
+
+      const sessionAnalysisIdeas = await reactService.analyzeAndImproveSessions({
+        branches,
+        workOrders: fullWorkOrders
+      });
+
+      if (sessionAnalysisIdeas.length > 0) {
+        this.recordTask(`ReAct Improvement: Synthesized ${sessionAnalysisIdeas.length} ideas from recent sessions.`);
+        await creationEngine.processIdeas(sessionAnalysisIdeas);
+      }
+    } catch (err) {
+      console.error(`❌ [Jules] Failed autonomous improvement cycle:`, err);
+    }
+
     // Cloud Workflow Agent
     const { cloudWorkflowAgent } = await import('./services/cloud_workflow')
     const isFluent = await cloudWorkflowAgent.ensureFluentStatus()
@@ -292,6 +330,10 @@ export class Jules {
     }
 
     await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
+
+    // iCloud Sync Integration
+    await this.syncToICloud()
+
     this.memory.lastOptimization = new Date().toISOString()
     await workOrderService.executePendingOrders()
 
@@ -306,12 +348,13 @@ export class Jules {
   }
 
   public async scanAllBranches(force: boolean = false) {
-    console.log(`🔍 [Jules-${this.role}] Scanning ecosystem branches...`)
+    console.log(`🔍 [Jules-${this.role}] Scanning ecosystem branches (force: ${force})...`)
     const { execSync } = await import('child_process')
     try {
-      // Optimization: Use git for-each-ref to get the 50 most recent branches (local and remote) efficiently.
+      // Optimization: Use git for-each-ref to get the most recent branches (local and remote) efficiently.
       // Format: branch_name|subject|timestamp
-      const cmd = `git for-each-ref --sort=-committerdate --format="%(refname:short)|%(contents:subject)|%(committerdate:unix)" refs/heads refs/remotes/origin --count=50`
+      const limit = force ? '' : '--count=50'
+      const cmd = `git for-each-ref --sort=-committerdate --format="%(refname:short)|%(contents:subject)|%(committerdate:unix)" refs/heads refs/remotes/origin ${limit}`
       const branchesRaw = execSync(cmd).toString()
       const branchLines = branchesRaw.split('\n').filter(l => l.trim() !== '')
 
@@ -344,7 +387,15 @@ export class Jules {
                return { name: branch, lastMessage: message, lastSeen: new Date(parseInt(timestamp) * 1000).toISOString(), category, results, knowledge: knowledgeNugget, changedFiles: [], domain }
             }
 
-            let diffCommand = branchName === 'main' ? 'git diff --name-only HEAD~1' : `git diff --name-only main...${branch}`
+            // Phase 12 Optimization: If force is true and we have many branches, use git show --name-only for a quick look at the most recent changes
+            // instead of a full merge-base diff, unless it's a specific interesting branch.
+            let diffCommand = '';
+            if (force && !isLocal) {
+                diffCommand = `git show --name-only --format="" ${branch}`;
+            } else {
+                diffCommand = branchName === 'main' ? 'git diff --name-only HEAD~1' : `git diff --name-only main...${branch}`;
+            }
+
             let diffOutput = ''
 
             try {
@@ -361,7 +412,7 @@ export class Jules {
               }
             }
 
-            changedFiles = diffOutput ? diffOutput.split('\n') : []
+            changedFiles = diffOutput ? diffOutput.split('\n').filter(f => f.trim() !== '') : []
 
             if (changedFiles.some(f => f.includes('security') || f.includes('auth') || f.includes('sentinel') || f.includes('validation'))) domain = 'Security'
             else if (changedFiles.some(f => f.includes('optimization') || f.includes('analytics') || f.includes('scaling') || f.includes('perf'))) domain = 'Performance'
