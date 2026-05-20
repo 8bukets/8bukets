@@ -37,6 +37,16 @@ pipeline {
             }
         }
 
+        stage('Run Autonomous Feedback Analysis Service') {
+            steps {
+                sh 'npx tsx antigravity/workflows/feedback_analysis_workflow.ts'
+            }
+        }
+        stage('Run Autonomous Performance Monitoring Service') {
+            steps {
+                sh 'npx tsx antigravity/workflows/performance_monitoring_workflow.ts'
+            }
+        }
         stage('Creative Workflow') {
             parallel {
                 stage('Market Analysis') {
