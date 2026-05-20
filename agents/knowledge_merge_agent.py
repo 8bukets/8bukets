@@ -181,8 +181,7 @@ class KnowledgeMergeAgent(BaseAgent):
                         for sec in ts_data.get("sections", []):
                             f.write(f"#### {sec['header']}\n{sec['content']}\n\n")
 
-                f.write("\n---\n")
-                f.write("All the best - https://markposition.wordpress.com\n")
+
 
             self.logger.info(f"Consolidated Markdown saved to {self.output_md}")
         except Exception as e:

@@ -197,7 +197,7 @@ def generate_report(data, output_file):
         md.append(f"- **{author}**: {count} posts")
     md.append("\n[Back to Top](#table-of-contents)")
 
-    md.append("\n---\nAll the best - https://markposition.wordpress.com")
+
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
