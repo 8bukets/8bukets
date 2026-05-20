@@ -1,9 +1,6 @@
 import { logAutonomousAction } from '../core'
-import { exec } from 'child_process'
-import { promisify } from 'util'
+import { execSync } from 'child_process'
 import * as github from '@actions/github'
-
-const execAsync = promisify(exec)
 
 /**
  * ANTIGRAVITY GIT PROVIDER SERVICE
@@ -37,17 +34,17 @@ export class GitProviderService {
     try {
       // 1. Stage files
       const filesToStage = options.files.join(' ')
-      await execAsync(`git add -f ${filesToStage}`)
+      execSync(`git add -f ${filesToStage}`)
 
       // 2. Verify changes
-      const { stdout: status } = await execAsync('git status --porcelain')
-      if (!status.trim()) {
+      const status = execSync('git status --porcelain').toString().trim()
+      if (!status) {
         logAutonomousAction('✨ [GitProvider] No changes detected. Skipping commit.', 'info')
         return { status: 'skipped', reason: 'no_changes' }
       }
 
       // 3. Commit
-      await execAsync(`git commit -m "${options.message}"`)
+      execSync(`git commit -m "${options.message}"`)
       logAutonomousAction('✅ [GitProvider] Changes committed locally.', 'info')
 
       // 4. Push if requested
@@ -72,16 +69,16 @@ export class GitProviderService {
     try {
       logAutonomousAction(`🔄 [GitProvider] Synchronizing with remote (${branch})...`, 'info')
       if (branch === 'main') {
-        await execAsync('git pull --rebase origin main')
-        await execAsync('git push origin main')
+        execSync('git pull --rebase origin main')
+        execSync('git push origin main')
       } else {
-        await execAsync(`git push origin ${branch}`)
+        execSync(`git push origin ${branch}`)
       }
       logAutonomousAction(`🚀 [GitProvider] Changes pushed to origin/${branch}.`, 'info')
     } catch (err: any) {
       console.error('❌ [GitProvider] Push failed:', err.message)
       if (branch === 'main') {
-        try { await execAsync('git rebase --abort') } catch (e) {}
+        try { execSync('git rebase --abort') } catch (e) {}
       }
     }
   }
@@ -114,7 +111,7 @@ export class GitProviderService {
     // GitLab (via glab CLI or REST API fallback)
     if (process.env.GITLAB_TOKEN) {
       try {
-        await execAsync(`glab mr create --title "${title}" --description "${body}" --source-branch "${head}" --target-branch "${base}" --yes`)
+        execSync(`glab mr create --title "${title}" --description "${body}" --source-branch "${head}" --target-branch "${base}" --yes`)
         logAutonomousAction('✅ [GitProvider] GitLab MR created via glab.', 'info')
         return 'gitlab-mr'
       } catch (err: any) {
@@ -300,7 +297,7 @@ export class GitProviderService {
     // GitLab
     if (process.env.GITLAB_TOKEN) {
       try {
-        const { stdout: output } = await execAsync('glab mr list --status open --format json')
+        const output = execSync('glab mr list --status open --format json').toString()
         const mrs = JSON.parse(output)
         prs.push(...mrs.map((m: any) => ({
           id: m.iid,
@@ -370,7 +367,7 @@ export class GitProviderService {
       }
     } else if (provider === 'gitlab' && process.env.GITLAB_TOKEN) {
       try {
-        await execAsync(`glab mr merge ${prId} --squash --remove-source-branch`)
+        execSync(`glab mr merge ${prId} --squash --remove-source-branch`)
         logAutonomousAction(`✅ [GitProvider] GitLab MR !${prId} merged via glab.`, 'info')
         return true
       } catch (err: any) {

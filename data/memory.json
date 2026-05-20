@@ -138,11 +138,6 @@
                 "timestamp": "2026-05-19T21:35:42.473474",
                 "event": "episodic_event",
                 "data": "episodic_data"
-            },
-            {
-                "timestamp": "2026-05-20T05:51:29.272897",
-                "event": "episodic_event",
-                "data": "episodic_data"
             }
         ]
     },
@@ -173,7 +168,7 @@
     },
     "BidAgent": {
         "long_term": {
-            "adjustment_factor": 1.1843044313729356
+            "adjustment_factor": 1.1725786449236986
         },
         "episodic": []
     },
@@ -293,28 +288,6 @@
                     "performance_tracking": {
                         "roi_assessment": "POSITIVE",
                         "impact_score": 0.5009469517469364
-                    }
-                }
-            },
-            {
-                "timestamp": "2026-05-20T05:43:07.360640",
-                "event": "strategic_review",
-                "data": {
-                    "strategy_vision": {
-                        "alignment": false,
-                        "notes": "Realignment needed."
-                    },
-                    "ethics_governance": {
-                        "status": "PASS",
-                        "notes": "Algorithms meet compliance."
-                    },
-                    "implementation_stack": {
-                        "status": "APPROVED",
-                        "version": 1.94
-                    },
-                    "performance_tracking": {
-                        "roi_assessment": "NEEDS_IMPROVEMENT",
-                        "impact_score": 0.4958413169781638
                     }
                 }
             }

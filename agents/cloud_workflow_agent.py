@@ -68,10 +68,6 @@ class CloudWorkflowAgent(BaseAgent):
                 active_decisions.append("ENABLE_SECURITY_SCANNING")
             if "TRIGGER_PERFORMANCE_OPTIMIZATION" in react_actions:
                 active_decisions.append("OPTIMIZE_DEPLOYMENT_RESOURCES")
-            if "DEPLOY_FOCUSED_AD_CAMPAIGN" in react_actions:
-                active_decisions.append("PROVISION_AD_TECH_INFRASTRUCTURE")
-            if "OPTIMIZE_WORKFLOW_DECISION_MAKING" in react_actions:
-                active_decisions.append("DEPLOY_STRATEGIC_DECISION_ENGINE")
 
             scale_tier = react_config.get("scale_tier", "STANDARD")
             if scale_tier == "GLOBAL_EDGE":

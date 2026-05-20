@@ -1,5 +1,5 @@
 import { logAutonomousAction } from '../core'
-import { exec } from 'child_process'
+import { execSync, exec } from 'child_process'
 import { promisify } from 'util'
 import { z } from 'zod'
 import { autonomousFetch } from '@/antigravity/core'
