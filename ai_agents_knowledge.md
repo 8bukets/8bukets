@@ -439,7 +439,6 @@ Synthesized from Google Innovation & AI Blog
 
 ### Google Cloud Tools
 - Gemini
-- Google Flow
 
 ---
 
@@ -491,6 +490,28 @@ Synthesized from Google Innovation & AI Blog
 - Gemini
 - Gemma
 - Interactions API
+
+---
+
+## [Google announces new community investments in Missouri](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/missouri-programs/)
+
+### Google Cloud Tools
+- Gemini
+
+---
+
+## [Running Guide agent: A step towards running unbounded](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/running-guide-agent/)
+
+### Google Cloud Tools
+- Gemini
+- Gemma
+
+---
+
+## [A new experiment brings better group meetings to Google Beam](https://blog.google/innovation-and-ai/models-and-research/google-research/google-beam-group-meetings/)
+
+### Google Cloud Tools
+- Gemini
 
 ---
 
