@@ -1,7 +1,6 @@
 import { MongoClient } from 'mongodb'
 import { createClient } from '@supabase/supabase-js'
 import { z } from 'zod'
-import ws from 'ws'
 
 /**
  * Safer import for Next.js cache/server APIs to support CLI execution.
@@ -55,14 +54,7 @@ export interface LayoutProps<T = any> {
 // --- 2. AUTONOMOUS DATABASE CLIENTS ---
 
 let _mongoClientPromise: Promise<MongoClient>
-const supabase = createClient(SUPABASE_URL || 'https://placeholder.supabase.co', SUPABASE_KEY || 'placeholder', {
-  auth: {
-    persistSession: false
-  },
-  realtime: {
-    transport: ws
-  }
-})
+const supabase = createClient(SUPABASE_URL || 'https://placeholder.supabase.co', SUPABASE_KEY || 'placeholder')
 
 // Phase 5: Self-Healing State
 const circuitBreaker = {

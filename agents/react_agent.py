@@ -86,6 +86,9 @@ class ReActAgent(BaseAgent):
                 auto_scaling = {"min_replicas": 3, "max_replicas": 10}
                 reasoning_log.append("Reasoning: Moderate data volume detected, configuring ENTERPRISE scaling tier.")
 
+            if scale_tier == "GLOBAL_EDGE":
+                await blackboard.propose_improvement(self.name, {"react_scaling": "EDGE_OPTIMIZED"})
+
             deployment_config = {
                 "agent_type": "ReactAgent",
                 "frontend_framework": "Next.js",

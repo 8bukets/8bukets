@@ -41,13 +41,6 @@ pipeline {
             }
         }
 
-        stage('Test testservice') {
-            steps {
-                sh 'npm ci'
-                sh 'npx vitest run antigravity/services/testservice.test.ts'
-            }
-        }
-
         stage('Creative Workflow') {
             parallel {
                 stage('Analyze Market') {

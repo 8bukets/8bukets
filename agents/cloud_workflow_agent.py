@@ -79,6 +79,12 @@ class CloudWorkflowAgent(BaseAgent):
             elif scale_tier == "ENTERPRISE":
                 active_decisions.append("PROVISION_KUBERNETES_CLUSTER")
 
+            deployment_target = react_config.get("deployment_target", "")
+            if deployment_target == "Vercel":
+                active_decisions.append("PROVISION_VERCEL_DEPLOYMENT")
+            elif deployment_target == "Cloud Run":
+                active_decisions.append("PROVISION_CLOUD_RUN_DEPLOYMENT")
+
         if os.environ.get("MACBOOK_CLOUD_SIMULATION") == "true":
             is_fluent = True
             active_decisions = []

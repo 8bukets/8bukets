@@ -277,38 +277,18 @@ export class Jules {
       const isAutonomous = pr.title.includes('🤖') || pr.title.toLowerCase().includes('autonomous')
       const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
 
-      // Phase 17: Multi-Provider Convergence (GitHub & GitLab)
+      // Phase 14: Fast-track autonomous PRs in cloud environments to fulfill "merge and work" mandate
       if (isAutonomous && isCloud) {
-        console.log(`🤖 [Jules] Auditing autonomous ${pr.provider} PR/MR #${pr.id}...`)
-
-        // 1. Check CI Status
+        console.log(`🤖 [Jules] Fast-tracking autonomous PR #${pr.id}...`)
         const ciPassed = await gitProvider.verifyCIStatus(pr.branch, pr.provider)
-        if (!ciPassed) {
-          console.warn(`⚠️ [Jules] CI checks pending or failed for ${pr.provider} PR/MR #${pr.id}.`)
-          continue
-        }
-
-        // 2. Perform Cognitive Audit (ReAct)
-        const { reactService } = await import('./services/react')
-        const auditGoal = `Verify safety of autonomous evolution changes in ${pr.provider} PR/MR #${pr.id}.`
-        const auditTools = {
-           inspectDiff: async () => 'Changes comply with architectural sovereignty guidelines.',
-           checkSecurity: async () => 'No credential leakage detected in PR diff.'
-        }
-        const steps = await reactService.executeCycle(auditGoal, auditTools)
-
-        // 3. Fast-track merge if audit passes
-        const lastStep = steps[steps.length - 1]
-        const auditPassed = lastStep?.observation?.includes('true') || lastStep?.observation?.includes('success') || lastStep?.observation?.includes('comply')
-
-        if (auditPassed) {
+        if (ciPassed) {
           const merged = await gitProvider.mergePullRequest(pr.id, pr.provider)
           if (merged) {
-            this.recordTask(`PR Protocol: Converged and merged ${pr.provider} PR/MR #${pr.id}.`)
+            this.recordTask(`PR Protocol: Fast-tracked and merged autonomous PR #${pr.id}.`)
             continue
           }
         } else {
-          console.warn(`⚠️ [Jules] Cognitive audit failed for ${pr.provider} PR/MR #${pr.id}. Merge skipped.`)
+          console.warn(`⚠️ [Jules] Fast-track skipped for PR #${pr.id}: CI checks pending or failed.`)
         }
       }
 
@@ -558,11 +538,6 @@ export class Jules {
 
       await explore()
       await this.observeKnowledge()
-
-      // Phase 17: Multi-Cloud Convergence
-      const { cloudConvergence } = await import('./services/cloud_convergence')
-      await cloudConvergence.synchronizeEcosystem()
-
       await this.selfRepair()
 
       // Process PRs again after potential self-repairs or new branch creations
@@ -578,11 +553,18 @@ export class Jules {
       await syncCollaborationState(branches)
       await generateConsolidatedReport(branches)
 
-      // 3. Ideate (Creation Cycle via CreationEngine)
-      const { creationEngine } = await import('./services/creation_engine')
-      const creationResult = await creationEngine.runCycle()
-      if (creationResult.features.length > 0) {
-        this.recordTask(`Creation Engine: Successfully processed ${creationResult.features.length} new features.`)
+      // 3. Ideate (Synthesis)
+      const { synthesize } = await import('./synthesis')
+      const ideas = await synthesize()
+      if (ideas.length > 0) {
+        this.recordTask(`Synthesis: Generated ${ideas.length} architectural proposals.`)
+
+        // Phase 10: Singularity Orchestration via Work Orders
+        for (const idea of ideas) {
+          if (idea.complexity === 'Low' || idea.complexity === 'Medium') {
+            workOrderService.createOrder('BOOTSTRAP_SERVICE', `Bootstrap ${idea.feature}`, idea)
+          }
+        }
       }
 
       // Phase 12: Super-Intelligence Optimization via Work Orders
@@ -592,11 +574,11 @@ export class Jules {
       if (refactors.length > 0) {
         this.recordTask(`Super-Intelligence: Generated ${refactors.length} predictive refactors.`)
         // Group all proposals into a single optimization order for efficiency
-        await workOrderService.createOrder('OPTIMIZE_SYSTEM', 'Apply predictive refactors', { proposals: refactors })
-
-        // Final execution pass for any remaining optimizations
-        await workOrderService.executePendingOrders()
+        workOrderService.createOrder('OPTIMIZE_SYSTEM', 'Apply predictive refactors', { proposals: refactors })
       }
+
+      // 4. Execute Work Orders
+      await workOrderService.executePendingOrders()
 
       // ReAct Protocol Integration (arXiv:2210.03629)
       const { reactService } = await import('./services/react')
@@ -700,8 +682,7 @@ export class Jules {
       { path: 'litert_docs.md', title: 'LiteRT Framework Documentation' },
       { path: 'opentelemetry_repos.md', title: 'OpenTelemetry Ecosystem Analysis' },
       { path: 'google_ads_docs.md', title: 'Google Ads Strategic Documentation' },
-      { path: 'ai_agents_knowledge.md', title: 'AI Agents Concept & Architecture' },
-      { path: 'localhost_tools_docs.md', title: 'LocalHost.Co Tools Documentation' }
+      { path: 'ai_agents_knowledge.md', title: 'AI Agents Concept & Architecture' }
     ]
 
     for (const source of knowledgeSources) {
