@@ -4,7 +4,7 @@ import os
 import logging
 import sys
 import json
-import subprocess
+import asyncio
 from datetime import datetime
 
 # Import components from existing modules
@@ -64,19 +64,25 @@ def bootstrap():
 
     logger.info("✅ Bootstrap complete.")
 
-def run_typescript_cycle():
+async def run_typescript_cycle():
     """Execute the TypeScript autonomous work cycle."""
     logger.info("🔷 Starting TypeScript Autonomous Cycle (Antigravity)...")
     try:
         # Use npx tsx to ensure it's available
-        subprocess.run(["npx", "tsx", "scripts/run_daily.ts"], check=True)
+        proc1 = await asyncio.create_subprocess_exec("npx", "tsx", "scripts/run_daily.ts")
+        await proc1.wait()
+        if proc1.returncode != 0:
+            raise Exception(f"TypeScript Cycle run_daily failed with code {proc1.returncode}")
 
         # New: Execute the creation cycle
         logger.info("🎨 Starting Autonomous Creation Cycle...")
-        subprocess.run(["npx", "tsx", "scripts/execute_creation_cycle.ts"], check=True)
+        proc2 = await asyncio.create_subprocess_exec("npx", "tsx", "scripts/execute_creation_cycle.ts")
+        await proc2.wait()
+        if proc2.returncode != 0:
+            raise Exception(f"TypeScript Creation Cycle failed with code {proc2.returncode}")
 
         logger.info("✅ TypeScript Cycles complete.")
-    except subprocess.CalledProcessError as e:
+    except Exception as e:
         logger.error(f"❌ TypeScript Cycle failed: {e}")
 
 def sync_state_with_json():
@@ -232,36 +238,45 @@ async def process_work_orders():
                 logger.info(f"🔔 Executing Deployment Work Order: {order['id']}")
                 try:
                     # Execute the rollout script
-                    subprocess.run(["python3", "scripts/rollout_executor.py"], check=True)
+                    proc = await asyncio.create_subprocess_exec("python3", "scripts/rollout_executor.py")
+                    await proc.wait()
+                    if proc.returncode != 0:
+                        raise Exception(f"Deployment failed with code {proc.returncode}")
                     order["status"] = "completed"
                     order["updated_at"] = datetime.now().isoformat()
                     updated = True
                     logger.info(f"✅ Deployment {order['id']} completed.")
-                except subprocess.CalledProcessError as e:
+                except Exception as e:
                     logger.error(f"❌ Deployment {order['id']} failed: {e}")
                     order["status"] = "failed"
                     updated = True
             elif order_type == "TESTING":
                 logger.info(f"🧪 Executing Testing Work Order: {order['id']}")
                 try:
-                    subprocess.run(["pytest"], check=True)
+                    proc = await asyncio.create_subprocess_exec("pytest")
+                    await proc.wait()
+                    if proc.returncode != 0:
+                        raise Exception(f"Testing failed with code {proc.returncode}")
                     order["status"] = "completed"
                     order["updated_at"] = datetime.now().isoformat()
                     updated = True
                     logger.info(f"✅ Testing {order['id']} completed.")
-                except subprocess.CalledProcessError as e:
+                except Exception as e:
                     logger.error(f"❌ Testing {order['id']} failed: {e}")
                     order["status"] = "failed"
                     updated = True
             elif order_type == "CONTENT_CREATION":
                 logger.info(f"📝 Executing Content Creation Work Order: {order['id']}")
                 try:
-                    subprocess.run(["python3", "scripts/execute_content_creation.py", order["id"], order.get("description", "")], check=True)
+                    proc = await asyncio.create_subprocess_exec("python3", "scripts/execute_content_creation.py", order["id"], order.get("description", ""))
+                    await proc.wait()
+                    if proc.returncode != 0:
+                        raise Exception(f"Content Creation failed with code {proc.returncode}")
                     order["status"] = "completed"
                     order["updated_at"] = datetime.now().isoformat()
                     updated = True
                     logger.info(f"✅ Content Creation {order['id']} completed.")
-                except subprocess.CalledProcessError as e:
+                except Exception as e:
                     logger.error(f"❌ Content Creation {order['id']} failed: {e}")
                     order["status"] = "failed"
                     updated = True
@@ -282,7 +297,8 @@ async def process_work_orders():
                 try:
                     # In a real environment, this would execute sync_icloud.py
                     # and ingest data using the newly enhanced CreativityAgent capabilities.
-                    subprocess.run(["python3", "sync_icloud.py", "--pull"], check=False)
+                    proc = await asyncio.create_subprocess_exec("python3", "sync_icloud.py", "--pull")
+                    await proc.wait()
                     order["status"] = "completed"
                     order["updated_at"] = datetime.now().isoformat()
                     updated = True
@@ -328,10 +344,13 @@ async def main():
                 await run_scraper()
             await run_cycle(args.token, args.skip_scraper)
             # TypeScript cycle generates new BOOTSTRAP_SERVICE and SMOKE_TEST orders
-            run_typescript_cycle()
+            await run_typescript_cycle()
             # process_work_orders handles Python-specific tasks (e.g. DEPLOYMENT, CONTENT_CREATION)
             await process_work_orders()
-            run_audit()
+            proc_audit = await asyncio.create_subprocess_exec("python3", "autonomous_audit.py")
+            await proc_audit.wait()
+            if proc_audit.returncode != 0:
+                raise Exception(f"Audit failed with code {proc_audit.returncode}")
             logger.info("✅ DRY-RUN complete. System is stable.")
         except Exception as e:
             logger.error(f"❌ DRY-RUN FAILED: {e}")
@@ -349,9 +368,12 @@ async def main():
                     await run_scraper()
                 await run_cycle(args.token, args.skip_scraper)
                 # Ensure TypeScript work (order generation) happens before Python processing
-                run_typescript_cycle()
+                await run_typescript_cycle()
                 await process_work_orders()
-                run_audit()
+                proc_audit = await asyncio.create_subprocess_exec("python3", "autonomous_audit.py")
+                await proc_audit.wait()
+                if proc_audit.returncode != 0:
+                    raise Exception(f"Audit failed with code {proc_audit.returncode}")
                 logger.info(f"Cycle complete. Sleeping for {sleep_interval}s...")
                 await asyncio.sleep(sleep_interval)
         except asyncio.CancelledError:
@@ -365,9 +387,12 @@ async def main():
             await run_scraper()
         await run_cycle(args.token, args.skip_scraper)
         # Ensure TypeScript work (order generation) happens before Python processing
-        run_typescript_cycle()
+        await run_typescript_cycle()
         await process_work_orders()
-        run_audit()
+        proc_audit = await asyncio.create_subprocess_exec("python3", "autonomous_audit.py")
+        await proc_audit.wait()
+        if proc_audit.returncode != 0:
+            raise Exception(f"Audit failed with code {proc_audit.returncode}")
         logger.info("✅ Execution finished.")
 
 if __name__ == "__main__":
