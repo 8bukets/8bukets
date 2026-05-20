@@ -297,6 +297,29 @@ export class Jules {
     const reactSteps = await reactService.executeCycle('Optimize system posture using ReAct', reactTools)
     this.recordTask(`ReAct: Completed ${reactSteps.length} reasoning-action steps.`)
 
+    // Autonomous Improvement Cycle (Analyze Recent Sessions)
+    try {
+      const fs = await import('fs');
+      const path = await import('path');
+      let fullWorkOrders = [];
+      const woPath = path.join(process.cwd(), 'data/work_orders.json');
+      if (fs.existsSync(woPath)) {
+        fullWorkOrders = JSON.parse(fs.readFileSync(woPath, 'utf8'));
+      }
+
+      const sessionAnalysisIdeas = await reactService.analyzeAndImproveSessions({
+        branches,
+        workOrders: fullWorkOrders
+      });
+
+      if (sessionAnalysisIdeas.length > 0) {
+        this.recordTask(`ReAct Improvement: Synthesized ${sessionAnalysisIdeas.length} ideas from recent sessions.`);
+        await creationEngine.processIdeas(sessionAnalysisIdeas);
+      }
+    } catch (err) {
+      console.error(`❌ [Jules] Failed autonomous improvement cycle:`, err);
+    }
+
     // Cloud Workflow Agent
     const { cloudWorkflowAgent } = await import('./services/cloud_workflow')
     const isFluent = await cloudWorkflowAgent.ensureFluentStatus()
