@@ -1,6 +1,8 @@
 import { logAutonomousAction, getMongoClient, supabase } from '../core'
 import { gitProvider } from './git_provider'
 import { z } from 'zod'
+import fs from 'fs'
+import path from 'path'
 
 /**
  * ANTIGRAVITY CLOUD CONVERGENCE SERVICE
@@ -91,6 +93,32 @@ export class CloudConvergenceService {
         logAutonomousAction('⚠️ [CloudConvergence] Failed to persist convergence state to MongoDB.', 'warning')
       }
 
+      // 5. Active State Recovery (Bridge MongoDB & Supabase)
+      if (workOrderCount > 0 && !supabasePresence) {
+        logAutonomousAction('🔄 [CloudConvergence] Supabase presence missing but MongoDB active. Attempting recovery...', 'info')
+        try {
+          const mongoClient = await getMongoClient()
+          const db = mongoClient.db()
+          const systemState = await db.collection('system_state').findOne({ systemId: 'antigravity-alpha-01' })
+
+          if (systemState) {
+            await supabase.from('agent_presence').upsert({
+              id: 'jules-alpha-01',
+              agent: 'Jules',
+              status: 'recovered',
+              lastSeen: new Date().toISOString(),
+              execution_mode: 'cloud',
+              recovered_from: 'mongodb',
+              context: systemState.cloud_convergence
+            })
+            logAutonomousAction('✅ [CloudConvergence] Supabase presence recovered from MongoDB state.', 'info')
+            state.sync_metrics.supabase_presence = true
+          }
+        } catch (recoveryErr: any) {
+          logAutonomousAction(`⚠️ [CloudConvergence] Active recovery failed: ${recoveryErr.message}`, 'warning')
+        }
+      }
+
       logAutonomousAction('✅ [CloudConvergence] Ecosystem state converged.', 'info')
       return state
     } catch (err: any) {
@@ -105,7 +133,38 @@ export class CloudConvergenceService {
    */
   public async resolveConflicts() {
     logAutonomousAction('⚖️ [CloudConvergence] Auditing for state conflicts...', 'info')
-    // Placeholder for advanced conflict resolution logic (e.g. vector-clock based)
+
+    try {
+      const mongoClient = await getMongoClient()
+      const db = mongoClient.db()
+
+      // Sync work orders from MongoDB to local if running in cloud mode
+      if (process.env.AUTONOMOUS_MODE === 'cloud' || process.env.GITHUB_ACTIONS) {
+        const mongoOrders = await db.collection('work_orders').find({ status: 'pending' }).toArray()
+        const localPath = path.join(process.cwd(), 'data/work_orders.json')
+
+        if (mongoOrders.length > 0) {
+          let localOrders = []
+          if (fs.existsSync(localPath)) {
+            localOrders = JSON.parse(fs.readFileSync(localPath, 'utf8'))
+          }
+
+          // Merge logic: MongoDB pending orders take precedence
+          const orderMap = new Map(localOrders.map((o: any) => [o.id, o]))
+          mongoOrders.forEach((mo: any) => {
+            const { _id, ...orderData } = mo
+            orderMap.set(mo.id, orderData)
+          })
+
+          fs.writeFileSync(localPath, JSON.stringify(Array.from(orderMap.values()), null, 2))
+          logAutonomousAction(`✅ [CloudConvergence] Resolved conflicts: Synced ${mongoOrders.length} orders from MongoDB.`, 'info')
+          return { status: 'resolved', conflicts: mongoOrders.length }
+        }
+      }
+    } catch (e: any) {
+      logAutonomousAction(`⚠️ [CloudConvergence] Conflict resolution failed: ${e.message}`, 'warning')
+    }
+
     return { status: 'resolved', conflicts: 0 }
   }
 }

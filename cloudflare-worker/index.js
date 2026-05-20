@@ -13,12 +13,39 @@ export default {
     const url = new URL(request.url);
 
     if (url.pathname === '/health') {
-      return new Response(JSON.stringify({ status: 'ok', worker: 'antigravity-edge-worker' }), {
-        headers: { 'content-type': 'application/json' },
+      // High-availability status check
+      const status = {
+        status: 'online',
+        agent: 'Jules',
+        version: '1.4.0-alpha',
+        worker: 'antigravity-edge-worker',
+        timestamp: new Date().toISOString(),
+        manifest: 'Cloud-Native Autonomous Presence'
+      };
+
+      return new Response(JSON.stringify(status, null, 2), {
+        headers: {
+          'content-type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        },
       });
     }
 
-    return new Response('Hello World from Antigravity Edge Worker!', {
+    if (url.pathname === '/presence') {
+      return new Response(JSON.stringify({
+        agent: 'Jules',
+        mode: 'cloud-active',
+        presence: 'always-on',
+        ecosystem: 'Antigravity 8Bukets'
+      }), {
+        headers: {
+          'content-type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        },
+      });
+    }
+
+    return new Response('ANTIGRAVITY CLOUD PRESENCE ACTIVE: 🤖 Jules is working autonomously.', {
       headers: { 'content-type': 'text/plain' },
     });
   },
