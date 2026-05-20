@@ -18,32 +18,45 @@
   "agents": {
     "overrides": {
       "browser_agent": {
-        "enabled": true
+        "enabled": true,
+        "runConfig": {
+          "maxTurns": 100,
+          "maxTimeMinutes": 30
+        }
       },
       "collaborator": {
         "enabled": true,
         "runConfig": {
-          "maxTurns": 30
+          "maxTurns": 50,
+          "maxTimeMinutes": 20
         }
       },
       "security-auditor": {
         "enabled": true,
         "runConfig": {
-          "maxTurns": 20
+          "maxTurns": 50,
+          "maxTimeMinutes": 20
         }
       },
       "daily-tasks": {
         "enabled": true,
         "runConfig": {
-          "maxTurns": 20
+          "maxTurns": 50,
+          "maxTimeMinutes": 20
         }
       },
       "highlander": {
-        "enabled": true
+        "enabled": true,
+        "runConfig": {
+          "maxTurns": 50,
+          "maxTimeMinutes": 20
+        }
       }
     },
     "browser": {
-      "sessionMode": "persistent"
+      "sessionMode": "persistent",
+      "maxActionsPerTask": 500,
+      "visualModel": "gemini-2.5-computer-use-preview-10-2025"
     }
   },
   "general": {

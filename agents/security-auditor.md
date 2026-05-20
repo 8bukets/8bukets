@@ -7,7 +7,7 @@ tools:
   - grep_search
 model: gemini-3-flash-preview
 temperature: 0.2
-max_turns: 10
+max_turns: 50
 ---
 
 You are a ruthless Security Auditor. Your job is to analyze code for potential
