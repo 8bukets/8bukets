@@ -564,8 +564,8 @@ export class Jules {
       await this.observeKnowledge()
 
       // Phase 17: Multi-Cloud Convergence
-      const { cloudConvergence } = await import('./services/cloud_convergence')
-      await cloudConvergence.synchronizeEcosystem()
+      const { cloudConvergence: ccEcosystem } = await import('./services/cloud_convergence')
+      await ccEcosystem.synchronizeEcosystem()
 
       await this.selfRepair()
 
