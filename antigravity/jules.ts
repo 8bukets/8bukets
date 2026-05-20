@@ -546,6 +546,10 @@ export class Jules {
     try {
       await this.syncPresence()
 
+      // Phase 17: Resolve State Conflicts early in the cycle
+      const { cloudConvergence } = await import('./services/cloud_convergence')
+      await cloudConvergence.resolveConflicts()
+
       const { explore } = await import('./explorer')
       const { workOrderService } = await import('./services/work_order')
 

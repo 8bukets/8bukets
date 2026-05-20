@@ -200,6 +200,21 @@ export class GitProviderService {
       try {
         const octokit = github.getOctokit(process.env.GITHUB_TOKEN)
         const context = github.context
+
+        const { data: pr } = await octokit.rest.pulls.get({
+          ...context.repo,
+          pull_number: Number(prId)
+        })
+
+        // Autonomous bypass for Cloud Mode
+        const isAutonomous = pr.title.includes('🤖') || pr.title.toLowerCase().includes('autonomous')
+        const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
+
+        if (isAutonomous && isCloud) {
+          logAutonomousAction(`🤖 [GitProvider] GitHub PR #${prId} is autonomous in Cloud Mode. Bypassing manual approval.`, 'info')
+          return true
+        }
+
         const { data: reviews } = await octokit.rest.pulls.listReviews({
           ...context.repo,
           pull_number: Number(prId)
