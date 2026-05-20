@@ -548,18 +548,18 @@ Google Ads
 
 Source: [https://developers.google.com/ad-manager](https://developers.google.com/ad-manager)
 
-- হোম
-- প্রোডাক্ট
+- Home
+- Products
 - Ad Manager
-## আপনার Google বিজ্ঞাপন ম্যানেজার অ্যাকাউন্ট এবং প্রচারাভিযান পরিচালনা করার জন্য সরঞ্জামগুলির একটি সেট৷
+## A set of tools to manage your Google Ad Manager accounts and campaigns.
 
-### অ্যাড ম্যানেজার API (বিটা)
+### Ad Manager API (Beta)
 
-### মোবাইল বিজ্ঞাপন SDK
+### Mobile Ads SDK
 
-### ডায়নামিক বিজ্ঞাপন সন্নিবেশ
+### Dynamic Ad Insertion
 
-### অ্যাড ম্যানেজার SOAP API
+### Ad Manager SOAP API
 
 
 ---
@@ -568,26 +568,26 @@ Source: [https://developers.google.com/ad-manager](https://developers.google.com
 
 Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion)
 
-- Página principal
-- Productos
+- หน้าแรก
+- ผลิตภัณฑ์
 - Dynamic Ad Insertion
-### Inserción de anuncios dinámicos (DAI)
+### การแทรกโฆษณาแบบไดนามิก (DAI)
 
-La DAI te permite monetizar tu contenido de video y elimina la complejidad del proceso de solicitud y respuesta de anuncios del SDK. Este enfoque reduce la probabilidad de que se produzcan errores del lado del cliente y brinda una experiencia similar a la de la TV sin latencia ni almacenamiento en búfer entre el contenido y los anuncios.
+DAI ช่วยให้คุณสร้างรายได้จากเนื้อหาวิดีโอ โดยลดความซับซ้อนของกระบวนการส่งคำขอโฆษณาและการตอบกลับโฆษณาจาก SDK แนวทางนี้ช่วยลดโอกาสที่จะเกิดข้อผิดพลาดฝั่งไคลเอ็นต์และสร้างประสบการณ์การรับชมคล้ายกับทีวีซึ่งไม่มีเวลาในการตอบสนองหรือบัฟเฟอร์ระหว่างเนื้อหาและโฆษณา
 
-Con la DAI, puedes segmentar anuncios individuales para programaciones de transmisiones en vivo y videos on demand, obtener un alcance multipantalla con amplia compatibilidad de dispositivos y aprovechar la monetización programática en todos los dispositivos con Ad Exchange for Video. Más allá del formato original de tu contenido, una vez que este se transforma en digital, la DAI te permite mostrar anuncios de video segmentados dentro de tu contenido en función del usuario específico que mira el contenido.
+DAI ช่วยให้คุณสามารถกำหนดเป้าหมายโฆษณาแต่ละรายการสำหรับโปรแกรมไลฟ์สดและวิดีโอออนดีมานด์ เข้าถึงได้หลายหน้าจอพร้อมการรองรับอุปกรณ์อย่างครอบคลุม และใช้ประโยชน์จากการสร้างรายได้แบบเป็นโปรแกรมในทุกอุปกรณ์ด้วย Ad Exchange สำหรับวิดีโอ ไม่ว่าเนื้อหาจะมีรูปแบบเดิมเป็นอย่างไร เมื่อกลายเป็นแบบดิจิทัลแล้ว DAI จะช่วยให้คุณแสดงโฆษณาวิดีโอที่กำหนดเป้าหมายภายในเนื้อหาได้ โดยอิงตามผู้ใช้แต่ละคนที่ดูเนื้อหา
 
-La DAI te permite realizar estos flujos de trabajo a través de la API de Full service y la API de Pod serving, junto con las plataformas de SDK admitidas.
+DAI ช่วยให้คุณทำเวิร์กโฟลว์เหล่านี้ได้ผ่าน Full Service API และ Pod Serving API พร้อมกับแพลตฟอร์ม SDK ที่รองรับ
 
-Para comenzar a usar la DAI, selecciona una de las siguientes integraciones:
+หากต้องการเริ่มใช้ DAI ให้เลือกการผสานรวมอย่างใดอย่างหนึ่งต่อไปนี้
 
-### DAI de servicio completo
+### DAI บริการเต็มรูปแบบ
 
-### DAI de publicación de grupos de anuncios
+### DAI ที่แสดงพ็อด
 
-### Plataformas compatibles
+### แพลตฟอร์มที่รองรับ
 
-### Obtener asistencia
+### รับความช่วยเหลือ
 
 
 ---
@@ -632,51 +632,51 @@ For detailed instructions on how to implement a client video player, using the D
 
 Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving)
 
-- Accueil
-- Produits
+- Home
+- Products
 - Dynamic Ad Insertion
 - DAI Pod Serving API
-- API
-### Insertion dynamique de séries d'annonces
+- APIs
+### DAI Pod Serving
 
-La diffusion de séries d'annonces avec insertion dynamique d'annonce (DAI) vous permet de demander des séries d'annonces à des serveurs publicitaires Google ou tiers pour les flux en direct et de vidéo à la demande (VOD). Pour en savoir plus, consultez Configurer des pods d'annonces et des modèles d'interruptions.
+Dynamic Ad Insertion (DAI) Pod Serving lets you request ad pods, from Google or third-party ad servers, for live and video-on-demand (VOD) streams. For more details, see Configure ad pods and break templates.
 
-- Redirection de la diffusion de séries d'annonces : vous permet de récupérer des segments de fichier manifeste pour implémenter l'insertion d'annonces côté serveur (SSAI). Les segments sont des URL dynamiques qui redirigent vers des fichiers de contenu ou multimédias publicitaires.
-- Le fichier manifeste de la diffusion de séries d'annonces vous permet de récupérer le fichier manifeste complet des séries d'annonces pour implémenter l'insertion d'annonces côté serveur (SSAI). Pour en savoir plus, consultez DAI guidée par le serveur.
-Pour la VOD, Google Ad Manager renvoie les fichiers manifestes complets de la série d'annonces.
+- Pod serving redirect: lets you retrieve manifest segments to implement Server-Side Ad Insertion (SSAI). The segments are dynamic URLs, redirecting to either content or ad media files.
+- Pod serving manifest: lets you retrieve the complete manifest of the ad pods to implement Server-Side Ad Insertion (SSAI). For more details, see Server guided DAI.
+For VOD, Google Ad Manager returns the complete ad pod manifests.
 
-L'insertion de séries d'annonces DAI est compatible avec les plates-formes suivantes :
+DAI Pod serving offers the following supported platforms:
 
-Pour en savoir plus sur les diffusions en direct et les VOD, consultez les workflows suivants :
+For details on livestream and VOD, see the following workflows:
 
-### Assembler des annonces dans une diffusion en direct
+### Stitch ads into a livestream
 
-- Pour démarrer une session de diffusion en direct, envoyez une demande d'enregistrement de flux. Définissez des paramètres de tag d'annonce uniques pour la demande de flux afin de remplacer les valeurs par défaut du tag d'annonce d'insertion dynamique d'annonces. Pour en savoir plus sur le ciblage des annonces, consultez Indiquer des paramètres de ciblage dans votre flux.
-- Récupérez l'ID de session utilisateur unique à partir de la réponse d'enregistrement du flux. Pour en savoir plus sur l'utilisation de l'ID de session, consultez Trouver une clé de débogage ou un ID de session pour l'insertion dynamique d'annonce et Surveiller et déboguer une session de flux spécifique.
-- Envoyez une demande de fichier manifeste à votre assembleur vidéo ou à votre outil de manipulation de fichier manifeste, en transmettant l'ID de session. Répétez la demande de mise à jour du fichier manifeste tout au long de la lecture.
-- Pour les fichiers manifestes DASH, envoyez une demande de modèle de période pour l'ensemble de la session.
-- Pour les fichiers manifestes DASH, mettez en cache le modèle de période. Pour chaque coupure publicitaire, récupérez le modèle mis en cache et insérez toutes les macros avec les données de la coupure publicitaire. Pour en savoir plus sur les macros compatibles, consultez Remplir le modèle de période. Insérez ensuite la période de résultats dans le fichier manifeste final.
-- Renvoie le fichier manifeste final contenant des segments de contenu ou d'annonces multimédias pour la lecture par le client. La lecture commence.
-- Interrogez régulièrement Google Ad Manager pour obtenir les dernières métadonnées des annonces en utilisant la fréquence d'interrogation renvoyée dans la demande de flux. Stockez les métadonnées des annonces pour rechercher les événements d'annonces.
-- Pendant une coupure publicitaire, le lecteur vidéo charge les segments multimédias et suit les redirections Google Ad Manager vers les fichiers multimédias.
-- Pendant une coupure publicitaire, écoutez le lecteur vidéo pour les métadonnées temporelles, contenant des tags ID3. Extrayez l'ID d'événement publicitaire du tag ID3 pour trouver les métadonnées publicitaires associées.
-- Envoyez des pings de validation des supports à Google Ad Manager.
-### Assembler des annonces dans un flux VOD
+- To start a livestream session, make a stream registration request. Set ad tag parameters unique for the stream request to override the DAI ad tag's default values. For more details about ad targeting, see Supply targeting parameters to your stream.
+- Retrieve the unique user session ID from the stream registration response. For more details about using the session ID, see Locate a DAI session ID or debug key and Monitor and debug a specific stream session.
+- Make a manifest request to your video stitcher or manifest manipulator, passing the session ID. Repeat the request for manifest updates throughout playback.
+- For DASH manifests, make one period template request for the entire session.
+- For DASH manifests, cache the period template. For each ad break, retrieve the cached template and populate all macros with the ad break data. For more details about supported macros, see Populate the period template. Then, insert the result period into the final manifest.
+- Return the final manifest that contains content or ad media segments for client playback. Playback begins.
+- Regularly poll Google Ad Manager for updates of ad metadata using the polling frequency returned in the stream request. Store the ad metadata for looking up ad events.
+- During an ad break, the video player loads the media segments and follows Google Ad Manager redirects to the media files.
+- During an ad break, listen to the video player for timed metadata, containing ID3 tags. Extract the ad event ID from the ID3 tag to find the associated ad metadata.
+- Send media verification pings to Google Ad Manager.
+### Stitch ads into a VOD stream
 
-- Envoyez une requête de flux pour enregistrer une session de flux VOD session. Définissez des paramètres de tag d'annonce uniques pour la requête de flux afin de remplacer les valeurs par défaut du tag d'annonce DAI. Pour en savoir plus, consultez Indiquer des paramètres de ciblage dans votre flux.
-- Récupérez l'ID de session à partir de la réponse du flux. Pour inspecter la session de flux, consultez Trouver une clé de débogage ou un ID de session pour l'insertion dynamique d'annonce et Contrôler et déboguer une session de diffusion en particulier.
-- Envoyez une requête de fichier manifeste à votre assembleur vidéo ou à votre manipulateur de fichier manifeste en transmettant l'ID de session.
-- Utilisez l'ID de session pour demander tous les blocs d'annonces à la fois.
-- Récupérez les fichiers manifestes complets de tous les blocs d'annonces. Pour créer le fichier manifeste final, assemblez les fichiers manifestes des blocs d'annonces avec le flux de contenu.
-- Renvoie le fichier manifeste final, contenant à la fois des segments de contenu et d'annonces.
-- Demandez les métadonnées d'annonce pour tous les événements d'annonce. Stockez les métadonnées d'annonce pour rechercher les événements d'annonce. La lecture commence.
-- Lors d'une coupure publicitaire, le lecteur vidéo charge les segments multimédias et suit les redirections Google Ad Manager vers les fichiers multimédias.
-- Lors d'une coupure publicitaire, écoutez les événements d'annonce contenant des tags ID3. Pour trouver les métadonnées de l'événement d'annonce, extrayez l'ID de l'événement d'annonce du tag ID3 et faites correspondre l'ID aux métadonnées de l'annonce.
-- Envoyez des pings de validation des médias à Google Ad Manager.
+- Make a stream request to register a VOD stream session. Set ad tag parameters unique for the stream request to override the DAI ad tag's default values. For more details, see Supply targeting parameters to your stream.
+- Retrieve the session ID from the stream response. To inspect the stream session, see Locate a DAI session ID or debug key and Monitor and debug a specific stream session.
+- Make a manifest request to your video stitcher or manifest manipulator, passing the session ID.
+- Use the session ID to request all ad pods at once.
+- Retrieve complete manifests of all ad pods. To create the final manifest, stitch the ad pod manifests with the content stream.
+- Return the final manifest, containing both content and ad segments.
+- Request ad metadata for all ad events. Store the ad metadata for looking up ad events. Playback begins.
+- During an ad break, the video player loads the media segments and follows Google Ad Manager redirects to the media files.
+- During an ad break, listen for ad events containing ID3 tags. To find the ad event metadata, extract the ad event ID from the ID3 tag and match the ID with the ad metadata.
+- Send media verification pings to Google Ad Manager.
 
 ---
 
-## Começar
+## Başlama
 
 
 
@@ -685,154 +685,154 @@ Pour en savoir plus sur les diffusions en direct et les VOD, consultez les workf
 
 
 
-      Mantenha tudo organizado com as coleções
+      Koleksiyonlar ile düzeninizi koruyun
 
 
 
-      Salve e categorize o conteúdo com base nas suas preferências.
+      İçeriği tercihlerinize göre kaydedin ve kategorilere ayırın.
 
 Source: [https://developers.google.com/ad-manager/api/start](https://developers.google.com/ad-manager/api/start)
 
-Procurando uma API REST? A API Ad Manager (Beta) já está disponível.
+REST API mi arıyorsunuz? Ad Manager API'si (Beta) artık kullanılabilir.
 
-- Página inicial
-- Produtos
+- Ana Sayfa
+- Ürünler
 - Ad Manager
 - SOAP API
-# Começar Mantenha tudo organizado com as coleções Salve e categorize o conteúdo com base nas suas preferências.
+# Başlama Koleksiyonlar ile düzeninizi koruyun İçeriği tercihlerinize göre kaydedin ve kategorilere ayırın.
 
-É possível usar a API SOAP do Google Ad Manager para criar aplicativos que gerenciam inventário, criar pedidos, gerar relatórios e muito mais.
+Envanteri yöneten uygulamalar oluşturmak için Google Ad Manager SOAP API'sını kullanabilirsiniz. sipariş oluşturabilir, rapor alabilir ve daha fazlasını yapabilirsiniz.
 
-Para ajudar você a começar, oferecemos bibliotecas de cliente para Java, .NET, Python, PHP e Ruby.
+Başlamanıza yardımcı olmak için müşteri desteği kitaplıklarını inceleyin.
 
-Para fazer sua primeira solicitação de API, siga estas etapas:
+İlk API isteğinizi göndermek için aşağıdaki adımları uygulayın:
 
-## Acessar uma rede do Ad Manager
+## Ad Manager ağına erişim elde etme
 
-Se você ainda não tiver, inscreva-se para uma conta do Ad Manager padrão. Também é possível criar test network: se você quiser testar a API em uma separado. Não é necessário ter uma conta do Google AdSense para fazer testes propósitos.
+Henüz bir hesabınız yoksa Ad Manager hesap. API'yi ayrı bir ortamda test etmek istiyorsanız test ağı da oluşturabilirsiniz. Test amacıyla AdSense hesabınızın olması gerekmez.
 
-Anote o código da rede. Você pode encontrar isso no URL ao fazer login à sua rede. Por exemplo, no URL https://admanager.google.com/1234#home, 1234 é o código de rede.
+Ağ kodunuzu not edin. Bunu, oturum açtığınızda URL'de bulabilirsiniz ağınıza ekleyin. Örneğin, https://admanager.google.com/1234#home, 1234, ağ kodunuzdur.
 
-## Criar credenciais de autenticação
+## Kimlik doğrulama kimlik bilgileri oluşturma
 
-É necessário autenticar todas as solicitações da API SOAP do Ad Manager usando o OAuth 2.0. As etapas a seguir abrangem o caso de uso de acesso aos seus próprios dados do Ad Manager. Para mais detalhes e outras opções, consulte Autenticação:
+OAuth 2.0 kullanarak tüm Ad Manager SOAP API isteklerinin kimliğini doğrulamanız gerekir. İlgili içeriği oluşturmak için kullanılan aşağıdaki adımlarda kendi Ad Manager verilerinize erişmenin kullanım alanı açıklanmaktadır. Daha fazla bilgi ve diğer seçenekler için Kimlik doğrulama başlıklı makaleyi inceleyin.
 
-- Abra a página Credenciais do console da API Google.
-Abra a página Credenciais do console da API Google.
+- Google API Konsolu'nu açın Kimlik bilgileri sayfası
+Google API Konsolu'nu açın Kimlik bilgileri sayfası
 
-- No menu do projeto, escolha Criar projeto e insira um nome para o projeto e, opcionalmente, editar o ID do projeto fornecido. Clique em Criar.
-No menu do projeto, escolha Criar projeto e insira um nome para o projeto e, opcionalmente, editar o ID do projeto fornecido. Clique em Criar.
+- Proje menüsünden Proje oluştur'u seçin ve ve isteğe bağlı olarak sağlanan proje kimliğini düzenleyin. Oluştur'u tıklayın.
+Proje menüsünden Proje oluştur'u seçin ve ve isteğe bağlı olarak sağlanan proje kimliğini düzenleyin. Oluştur'u tıklayın.
 
-- Na página "Credenciais", selecione Criar credenciais e escolha Chave da conta de serviço.
-Na página "Credenciais", selecione Criar credenciais e escolha Chave da conta de serviço.
+- Kimlik bilgileri sayfasında Kimlik bilgileri oluştur'u seçin ve ardından Hizmet hesabı anahtarı.
+Kimlik bilgileri sayfasında Kimlik bilgileri oluştur'u seçin ve ardından Hizmet hesabı anahtarı.
 
-- Selecione Novo serviço conta e selecione JSON como o tipo de chave.
-Selecione Novo serviço conta e selecione JSON como o tipo de chave.
+- Yeni hizmet hesap ve anahtar türü olarak JSON'i seçin.
+Yeni hizmet hesap ve anahtar türü olarak JSON'i seçin.
 
-- Clique em Criar para fazer o download de um arquivo com uma chave privada.
-Clique em Criar para fazer o download de um arquivo com uma chave privada.
+- Özel anahtar içeren bir dosyayı indirmek için Oluştur'u tıklayın.
+Özel anahtar içeren bir dosyayı indirmek için Oluştur'u tıklayın.
 
-## Configurar a rede do Ad Manager
+## Ad Manager ağınızı yapılandırma
 
-- Faça login no Google Ads Administrador.
-Faça login no Google Ads Administrador.
+- Google Ads'de oturum açın Yönetici'yi seçin.
+Google Ads'de oturum açın Yönetici'yi seçin.
 
-- Na barra lateral, clique em Administrador > Configurações globais.
-Na barra lateral, clique em Administrador > Configurações globais.
+- Kenar çubuğunda Yönetici > Global ayarlar.
+Kenar çubuğunda Yönetici > Global ayarlar.
 
-- Em Configurações gerais > API. Clique no controle deslizante para colocar em Ativado.
-Em Configurações gerais > API. Clique no controle deslizante para colocar em Ativado.
+- Genel ayarlar > Api erişimi'nde kaydırma çubuğunu tıklayarak Etkin'e gidin.
+Genel ayarlar > Api erişimi'nde kaydırma çubuğunu tıklayarak Etkin'e gidin.
 
-- Clique no botão Salvar na parte de baixo da página.
-Clique no botão Salvar na parte de baixo da página.
+- Sayfanın alt kısmındaki Kaydet düğmesini tıklayın.
+Sayfanın alt kısmındaki Kaydet düğmesini tıklayın.
 
-## Configurar o cliente
+## İstemcinizi kurun
 
-Faça o download de uma das bibliotecas de cliente do Ad Manager. As bibliotecas oferecem funções e recursos de wrapper que facilitam e aceleram o desenvolvimento de apps.
+Ad Manager istemci kitaplıklarından birini indirin. Kitaplıklar, uygulama geliştirmeyi daha kolay ve hızlı hale getiren sarmalayıcı işlevleri ve özellikleri sunar.
 
-As guias a seguir fornecem guias de início rápido para codificação em cada uma das linguagens para no qual há uma biblioteca de cliente.
+Aşağıdaki sekmelerde, istemci kitaplığı bulunan her bir dilde kodlamayla ilgili hızlı başlangıç kılavuzları sağlanmaktadır.
 
 ### Java
 
-Este é um exemplo básico que mostra como usar o cliente Java biblioteca. Para informações de uso mais detalhadas, consulte o arquivo README na distribuição da biblioteca de cliente.
+Java istemci kitaplığının nasıl kullanılacağını gösteren temel bir örneği aşağıda bulabilirsiniz. Daha ayrıntılı kullanım bilgileri için README dosyası'dır.
 
-- Configurar suas credenciais Execute o comando a seguir em um shell: curl https://raw.githubusercontent.com/googleads/googleads-java-lib/main/examples/admanager_axis/src/main/resources/ads.properties -o ~/ads.properties Abra o arquivo ~/ads.properties e preencha os seguintes campos: [...] api.admanager.applicationName=INSERT_APPLICATION_NAME_HERE api.admanager.jsonKeyFilePath=INSERT_PATH_TO_JSON_KEY_FILE_HERE api.admanager.networkCode=INSERT_NETWORK_CODE_HERE [...]
-Execute o comando a seguir em um shell:
+- Kimlik bilgilerinizi ayarlama Bir kabukta aşağıdaki komutu çalıştırın: curl https://raw.githubusercontent.com/googleads/googleads-java-lib/main/examples/admanager_axis/src/main/resources/ads.properties -o ~/ads.properties ~/ads.properties dosyasını açıp aşağıdaki alanları doldurun: [...] api.admanager.applicationName=INSERT_APPLICATION_NAME_HERE api.admanager.jsonKeyFilePath=INSERT_PATH_TO_JSON_KEY_FILE_HERE api.admanager.networkCode=INSERT_NETWORK_CODE_HERE [...]
+Bir kabukta aşağıdaki komutu çalıştırın:
 
-- Especificar as dependências Edite o arquivo pom.xml e adicione o seguinte ao arquivo dependencies. Você pode encontrar o número da versão mais recente em GitHub. <dependency> <groupId>com.google.api-ads</groupId> <artifactId>ads-lib</artifactId> <version>RELEASE</version> </dependency> <dependency> <groupId>com.google.api-ads</groupId> <artifactId>dfp-axis</artifactId> <version>RELEASE</version> </dependency>
-Especificar as dependências
+- Bağımlılıklarını belirtme pom.xml dosyanızı düzenleyin ve aşağıdakileri dependencies etiketine ekleyin. En son sürüm numarasını adresinde bulabilirsiniz GitHub'da bulabilirsiniz. <dependency> <groupId>com.google.api-ads</groupId> <artifactId>ads-lib</artifactId> <version>RELEASE</version> </dependency> <dependency> <groupId>com.google.api-ads</groupId> <artifactId>dfp-axis</artifactId> <version>RELEASE</version> </dependency>
+Bağımlılıklarını belirtme
 
-Edite o arquivo pom.xml e adicione o seguinte ao arquivo dependencies. Você pode encontrar o número da versão mais recente em GitHub.
+pom.xml dosyanızı düzenleyin ve aşağıdakileri dependencies etiketine ekleyin. En son sürüm numarasını adresinde bulabilirsiniz GitHub'da bulabilirsiniz.
 
-- Escreva um código e faça uma solicitação. import com.google.api.ads.common.lib.auth.OfflineCredentials; import com.google.api.ads.common.lib.auth.OfflineCredentials.Api; import com.google.api.ads.admanager.axis.factory.AdManagerServices; import com.google.api.ads.admanager.axis.v202602.Network; import com.google.api.ads.admanager.axis.v202602.NetworkServiceInterface; import com.google.api.ads.admanager.lib.client.AdManagerSession; import com.google.api.client.auth.oauth2.Credential; public class App { public static void main(String[] args) throws Exception { Credential oAuth2Credential = new OfflineCredentials.Builder() .forApi(Api.AD_MANAGER) .fromFile() .build() .generateCredential(); // Construct an AdManagerSession. AdManagerSession session = new AdManagerSession.Builder() .fromFile() .withOAuth2Credential(oAuth2Credential) .build(); // Construct a Google Ad Manager service factory, which can only be used once per // thread, but should be reused as much as possible. AdManagerServices adManagerServices = new AdManagerServices(); // Retrieve the appropriate service NetworkServiceInterface networkService = adManagerServices.get(session, NetworkServiceInterface.class); // Make a request Network network = networkService.getCurrentNetwork(); System.out.printf("Current network has network code '%s' and display" + " name '%s'.%n", network.getNetworkCode(), network.getDisplayName()); } } Ver no GitHub
-Escreva um código e faça uma solicitação.
+- Biraz kod yazın ve istek gönderin. import com.google.api.ads.common.lib.auth.OfflineCredentials; import com.google.api.ads.common.lib.auth.OfflineCredentials.Api; import com.google.api.ads.admanager.axis.factory.AdManagerServices; import com.google.api.ads.admanager.axis.v202602.Network; import com.google.api.ads.admanager.axis.v202602.NetworkServiceInterface; import com.google.api.ads.admanager.lib.client.AdManagerSession; import com.google.api.client.auth.oauth2.Credential; public class App { public static void main(String[] args) throws Exception { Credential oAuth2Credential = new OfflineCredentials.Builder() .forApi(Api.AD_MANAGER) .fromFile() .build() .generateCredential(); // Construct an AdManagerSession. AdManagerSession session = new AdManagerSession.Builder() .fromFile() .withOAuth2Credential(oAuth2Credential) .build(); // Construct a Google Ad Manager service factory, which can only be used once per // thread, but should be reused as much as possible. AdManagerServices adManagerServices = new AdManagerServices(); // Retrieve the appropriate service NetworkServiceInterface networkService = adManagerServices.get(session, NetworkServiceInterface.class); // Make a request Network network = networkService.getCurrentNetwork(); System.out.printf("Current network has network code '%s' and display" + " name '%s'.%n", network.getNetworkCode(), network.getDisplayName()); } } GitHub'da göster
+Biraz kod yazın ve istek gönderin.
 
 ### Python
 
-Confira um exemplo básico que mostra como usar a biblioteca de cliente Python. A biblioteca de cliente Python é compatível com o Python v3.6+. Para usos mais detalhados consulte o arquivo README na distribuição da biblioteca de cliente.
+Python istemci kitaplığının nasıl kullanılacağını gösteren temel bir örneği aşağıda bulabilirsiniz. Python İstemci Kitaplığı, Python v3.6 ve sonraki sürümleri destekler. Daha ayrıntılı kullanım için bilgi edinmek için README dosyası'dır.
 
-- Instale a biblioteca e configure suas credenciais. Execute os seguintes comandos em um shell: python3 -m pip install googleads curl https://raw.githubusercontent.com/googleads/googleads-python-lib/main/googleads.yaml \ -o ~/googleads.yaml
-Execute os seguintes comandos em um shell:
+- Kitaplığı yükleyin ve kimlik bilgilerinizi ayarlayın. Bir kabukta aşağıdaki komutları çalıştırın: python3 -m pip install googleads curl https://raw.githubusercontent.com/googleads/googleads-python-lib/main/googleads.yaml \ -o ~/googleads.yaml
+Bir kabukta aşağıdaki komutları çalıştırın:
 
-- Configure seu arquivo ~/googleads.yaml. Preencha os campos a seguir: ad_manager: application_name: INSERT_APPLICATION_NAME_HERE network_code: INSERT_NETWORK_CODE_HERE path_to_private_key_file: INSERT_PATH_TO_FILE_HERE
-Preencha os campos a seguir:
+- ~/googleads.yaml dosyanızı oluşturun. Aşağıdaki alanları doldurun: ad_manager: application_name: INSERT_APPLICATION_NAME_HERE network_code: INSERT_NETWORK_CODE_HERE path_to_private_key_file: INSERT_PATH_TO_FILE_HERE
+Aşağıdaki alanları doldurun:
 
-- Execute um código e faça uma solicitação. # Import the library. from googleads import ad_manager # Initialize a client object, by default uses the credentials in ~/googleads.yaml. client = ad_manager.AdManagerClient.LoadFromStorage() # Initialize a service. network_service = client.GetService('NetworkService', version='v202602') # Make a request. current_network = network_service.getCurrentNetwork() print("Current network has network code '%s' and display name '%s'." % (current_network['networkCode'], current_network['displayName'])) Ver no GitHub
+- Bir kod çalıştırıp istekte bulunun. # Import the library. from googleads import ad_manager # Initialize a client object, by default uses the credentials in ~/googleads.yaml. client = ad_manager.AdManagerClient.LoadFromStorage() # Initialize a service. network_service = client.GetService('NetworkService', version='v202602') # Make a request. current_network = network_service.getCurrentNetwork() print("Current network has network code '%s' and display name '%s'." % (current_network['networkCode'], current_network['displayName'])) GitHub'da göster
 ### PHP
 
-Confira um exemplo básico que mostra como usar a biblioteca de cliente PHP.
+PHP istemci kitaplığının nasıl kullanılacağını gösteren temel bir örnek aşağıda verilmiştir.
 
-- Instale a biblioteca e configure suas credenciais. Execute os comandos abaixo em um shell para instalar a biblioteca de cliente e fazer o download do arquivo adsapi_php.ini para o diretório principal: composer require googleads/googleads-php-lib curl https://raw.githubusercontent.com/googleads/googleads-php-lib/main/examples/AdManager/adsapi_php.ini -o ~/adsapi_php.ini
-Execute os comandos abaixo em um shell para instalar a biblioteca de cliente e fazer o download do arquivo adsapi_php.ini para o diretório principal:
+- Kitaplığı yükleyin ve kimlik bilgilerinizi ayarlayın. İstemci kitaplığını yüklemek ve adsapi_php.ini dosyasını ana dizininize indirmek için aşağıdaki komutları bir kabukta çalıştırın: composer require googleads/googleads-php-lib curl https://raw.githubusercontent.com/googleads/googleads-php-lib/main/examples/AdManager/adsapi_php.ini -o ~/adsapi_php.ini
+İstemci kitaplığını yüklemek ve adsapi_php.ini dosyasını ana dizininize indirmek için aşağıdaki komutları bir kabukta çalıştırın:
 
-- Configure seu arquivo ~/adsapi_php.ini. Preencha os campos a seguir: [AD_MANAGER] networkCode = "INSERT_NETWORK_CODE_HERE" applicationName = "INSERT_APPLICATION_NAME_HERE" [OAUTH2] jsonKeyFilePath = "INSERT_ABSOLUTE_PATH_TO_OAUTH2_JSON_KEY_FILE_HERE" scopes = "https://www.googleapis.com/auth/dfp"
-Preencha os campos a seguir:
+- ~/adsapi_php.ini dosyanızı oluşturun. Aşağıdaki alanları doldurun: [AD_MANAGER] networkCode = "INSERT_NETWORK_CODE_HERE" applicationName = "INSERT_APPLICATION_NAME_HERE" [OAUTH2] jsonKeyFilePath = "INSERT_ABSOLUTE_PATH_TO_OAUTH2_JSON_KEY_FILE_HERE" scopes = "https://www.googleapis.com/auth/dfp"
+Aşağıdaki alanları doldurun:
 
-- Execute um código e faça uma solicitação. Esse código de exemplo precisa ser executado na linha de comando, não em um navegador. O arquivo que contém esse código deve residir na raiz do diretório do projeto, em que composer require foi executado. <?php require 'vendor/autoload.php'; use Google\AdsApi\AdManager\AdManagerSession; use Google\AdsApi\AdManager\AdManagerSessionBuilder; use Google\AdsApi\AdManager\v202602\ApiException; use Google\AdsApi\AdManager\v202602\ServiceFactory; use Google\AdsApi\Common\OAuth2TokenBuilder; // Generate a refreshable OAuth2 credential for authentication. $oAuth2Credential = (new OAuth2TokenBuilder()) ->fromFile() ->build(); // Construct an API session configured from a properties file and the OAuth2 // credentials above. $session = (new AdManagerSessionBuilder()) ->fromFile() ->withOAuth2Credential($oAuth2Credential) ->build(); // Get a service. $serviceFactory = new ServiceFactory(); $networkService = $serviceFactory->createNetworkService($session); // Make a request $network = $networkService->getCurrentNetwork(); printf( "Network with code %d and display name '%s' was found.\n", $network->getNetworkCode(), $network->getDisplayName() ); Ver no GitHub
+- Biraz kod çalıştırın ve istek gönderin. Bu örnek kod, tarayıcıdan değil komut satırından çalıştırılmalıdır. Bu kodu içeren dosya, composer require'ün çalıştırıldığı proje dizininin kökünde olmalıdır. <?php require 'vendor/autoload.php'; use Google\AdsApi\AdManager\AdManagerSession; use Google\AdsApi\AdManager\AdManagerSessionBuilder; use Google\AdsApi\AdManager\v202602\ApiException; use Google\AdsApi\AdManager\v202602\ServiceFactory; use Google\AdsApi\Common\OAuth2TokenBuilder; // Generate a refreshable OAuth2 credential for authentication. $oAuth2Credential = (new OAuth2TokenBuilder()) ->fromFile() ->build(); // Construct an API session configured from a properties file and the OAuth2 // credentials above. $session = (new AdManagerSessionBuilder()) ->fromFile() ->withOAuth2Credential($oAuth2Credential) ->build(); // Get a service. $serviceFactory = new ServiceFactory(); $networkService = $serviceFactory->createNetworkService($session); // Make a request $network = $networkService->getCurrentNetwork(); printf( "Network with code %d and display name '%s' was found.\n", $network->getNetworkCode(), $network->getDisplayName() ); GitHub'da göster
 ### .NET
 
-Confira um exemplo básico que mostra como usar a biblioteca de cliente .NET.
+.NET istemci kitaplığının nasıl kullanılacağını gösteren temel bir örnek aşağıda verilmiştir.
 
-- Criar um novo projeto Abra o Visual Studio e crie um novo projeto (aplicativo Console).
-Abra o Visual Studio e crie um novo projeto (aplicativo Console).
+- Yeni proje oluşturma Visual Studio'yu açın ve yeni bir proje (Konsol Uygulaması) oluşturun.
+Visual Studio'yu açın ve yeni bir proje (Konsol Uygulaması) oluşturun.
 
-- Adicionar referências de biblioteca necessárias ao projeto Adicione uma dependência do nuget para Google.Dfp.
-Adicione uma dependência do nuget para Google.Dfp.
+- Projenize gerekli kitaplık referanslarını ekleme Google.Dfp için bir nuget bağımlılığı ekleyin.
+Google.Dfp için bir nuget bağımlılığı ekleyin.
 
-- Configurar App.config Copie src\App.config para o diretório do projeto e adicione-o ao projeto. Se o aplicativo tem a própria App.config, copie os seguintes nós para a App.config: configuration/AdManagerApi configuration/configSections/section[name="AdManagerApi"] configuration/system.net
-Copie src\App.config para o diretório do projeto e adicione-o ao projeto. Se o aplicativo tem a própria App.config, copie os seguintes nós para a App.config:
+- App.config dosyanızı ayarlayın src\App.config dosyasını proje dizininize kopyalayın ve projenize ekleyin. Uygulamanızın kendi App.config dosyası varsa aşağıdaki düğümleri App.config dosyanıza kopyalayabilirsiniz: configuration/AdManagerApi configuration/configSections/section[name=&quot;AdManagerApi&quot;] configuration/system.net
+src\App.config dosyasını proje dizininize kopyalayın ve projenize ekleyin. Uygulamanızın kendi App.config dosyası varsa aşağıdaki düğümleri App.config dosyanıza kopyalayabilirsiniz:
 
 - configuration/AdManagerApi
-- configuration/configSections/section[name="AdManagerApi"]
+- configuration/configSections/section[name=&quot;AdManagerApi&quot;]
 - configuration/system.net
-- Configurar credenciais Abra o App.config e edite as seguintes chaves: <add key="ApplicationName" value="INSERT_YOUR_APPLICATION_NAME_HERE" /> <add key="NetworkCode" value="INSERT_YOUR_NETWORK_CODE_HERE" /> <add key="OAuth2Mode" value="SERVICE_ACCOUNT" /> <add key="OAuth2SecretsJsonPath" value="INSERT_OAUTH2_SECRETS_JSON_FILE_PATH_HERE" />
-Abra o App.config e edite as seguintes chaves:
+- Kurulum kimlik bilgileri App.config'i açın ve aşağıdaki anahtarları düzenleyin: <add key="ApplicationName" value="INSERT_YOUR_APPLICATION_NAME_HERE" /> <add key="NetworkCode" value="INSERT_YOUR_NETWORK_CODE_HERE" /> <add key="OAuth2Mode" value="SERVICE_ACCOUNT" /> <add key="OAuth2SecretsJsonPath" value="INSERT_OAUTH2_SECRETS_JSON_FILE_PATH_HERE" />
+App.config'i açın ve aşağıdaki anahtarları düzenleyin:
 
-- Fazer uma chamada para a biblioteca É possível chamar a biblioteca conforme mostrado no seguinte snippet de código C# Ver no GitHub AdManagerUser user = new AdManagerUser(); using (InventoryService inventoryService = user.GetService<InventoryService>()) { // Create a statement to select ad units. int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT; StatementBuilder statementBuilder = new StatementBuilder().OrderBy("id ASC").Limit(pageSize); // Retrieve a small amount of ad units at a time, paging through until all // ad units have been retrieved. int totalResultSetSize = 0; do { AdUnitPage page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement()); // Print out some information for each ad unit. if (page.results != null) { totalResultSetSize = page.totalResultSetSize; int i = page.startIndex; foreach (AdUnit adUnit in page.results) { Console.WriteLine( "{0}) Ad unit with ID \"{1}\" and name \"{2}\" was found.", i++, adUnit.id, adUnit.name); } } statementBuilder.IncreaseOffsetBy(pageSize); } while (statementBuilder.GetOffset() < totalResultSetSize); Console.WriteLine("Number of results found: {0}", totalResultSetSize); }
-É possível chamar a biblioteca conforme mostrado no seguinte snippet de código C#
+- Kitaplığa arama yapma Kitaplığı aşağıdaki C# kod snippet'inde gösterildiği gibi çağırabilirsiniz. GitHub'da göster AdManagerUser user = new AdManagerUser(); using (InventoryService inventoryService = user.GetService<InventoryService>()) { // Create a statement to select ad units. int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT; StatementBuilder statementBuilder = new StatementBuilder().OrderBy("id ASC").Limit(pageSize); // Retrieve a small amount of ad units at a time, paging through until all // ad units have been retrieved. int totalResultSetSize = 0; do { AdUnitPage page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement()); // Print out some information for each ad unit. if (page.results != null) { totalResultSetSize = page.totalResultSetSize; int i = page.startIndex; foreach (AdUnit adUnit in page.results) { Console.WriteLine( "{0}) Ad unit with ID \"{1}\" and name \"{2}\" was found.", i++, adUnit.id, adUnit.name); } } statementBuilder.IncreaseOffsetBy(pageSize); } while (statementBuilder.GetOffset() < totalResultSetSize); Console.WriteLine("Number of results found: {0}", totalResultSetSize); }
+Kitaplığı aşağıdaki C# kod snippet'inde gösterildiği gibi çağırabilirsiniz.
 
-Se você não quiser definir suas credenciais no App.config, consulte este artigo da Wiki para conferir outras maneiras de usar a classe AdManagerUser. Para informações mais detalhadas sobre o uso da biblioteca de cliente .NET, consulte LEIA-ME Se você deseja desenvolver em .NET sem a biblioteca do cliente, consulte a NoClientLibrary artigo da Wikipédia.
+App.config dosyanızda kimlik bilgilerinizi ayarlamak istemiyorsanız bu wiki makalesine kullanmanın alternatif yollarına göz atabilirsiniz. .NET istemci kitaplığını kullanma hakkında daha ayrıntılı bilgi için README dosyasını inceleyin. .NET'te istemci kitaplığı olmadan geliştirme yapmak istiyorsanız lütfen NoClientLibrary wiki makalesine bakın.
 
 ### Ruby
 
-Este é um exemplo básico que mostra como usar a biblioteca Ruby biblioteca de cliente. A biblioteca de cliente do Ruby requer o Ruby 2.1 ou mais recente.
+Ruby istemci kitaplığının nasıl kullanılacağını gösteren temel bir örneği aşağıda bulabilirsiniz. Ruby istemci kitaplığı için Ruby 2.1 veya sonraki bir sürüm gereklidir.
 
-- Instale a gem do Ruby e acesse o arquivo de configuração. Execute os comandos a seguir em um shell: gem install google-dfp-api curl https://raw.githubusercontent.com/googleads/google-api-ads-ruby/main/ad_manager_api/ad_manager_api.yml -o ~/ad_manager_api.yml Se você encontrar um erro como "cannot load such file -- mkmf (LoadError)" a qualquer momento durante a instalação das gemas, pode ser necessário instalar bibliotecas de desenvolvimento Ruby adicionais, como ruby-dev, ruby-devel, xcode-select etc. para o seu ambiente específico.
-Execute os comandos a seguir em um shell:
+- Ruby gem'i yükleyin ve yapılandırma dosyasını alın. Bir kabukta aşağıdaki komutları çalıştırın: gem install google-dfp-api curl https://raw.githubusercontent.com/googleads/google-api-ads-ruby/main/ad_manager_api/ad_manager_api.yml -o ~/ad_manager_api.yml "cannot load such file -- mkmf (LoadError)" gibi bir hatayla karşılaşırsanız istediğiniz zaman bunu yapabilirsiniz. ruby-dev gibi ek Ruby geliştirme kitaplıkları özel ortamınız için ruby-devel, xcode-select vb.
+Bir kabukta aşağıdaki komutları çalıştırın:
 
-- Configurar suas credenciais Preencha os campos obrigatórios no ~/ad_manager_api.yml . Se você ainda não tiver uma chave de arquivo OAuth2, siga as etapas para criar suas credenciais OAuth2. :authentication: :oauth2_keyfile: INSERT_PATH_TO_JSON_KEY_FILE_HERE :application_name: INSERT_APPLICATION_NAME_HERE :network_code: INSERT_NETWORK_CODE_HERE
-Preencha os campos obrigatórios no ~/ad_manager_api.yml . Se você ainda não tiver uma chave de arquivo OAuth2, siga as etapas para criar suas credenciais OAuth2.
+- Kimlik bilgilerinizi ayarlayın ~/ad_manager_api.yml bölümündeki zorunlu alanları doldurun dosyası olarak kaydedebilirsiniz. OAuth2 anahtar dosyanız yoksa OAuth2 kimlik bilgilerinizi oluşturma adımlarını uygulamanız gerekir. :authentication: :oauth2_keyfile: INSERT_PATH_TO_JSON_KEY_FILE_HERE :application_name: INSERT_APPLICATION_NAME_HERE :network_code: INSERT_NETWORK_CODE_HERE
+~/ad_manager_api.yml bölümündeki zorunlu alanları doldurun dosyası olarak kaydedebilirsiniz. OAuth2 anahtar dosyanız yoksa OAuth2 kimlik bilgilerinizi oluşturma adımlarını uygulamanız gerekir.
 
-- Escreva um código e faça uma solicitação. # Import the library. require 'ad_manager_api' # Initialize an Ad Manager client instance (uses credentials in ~/ad_manager_api.yml by default). ad_manager = AdManagerApi::Api.new # Get a service instance. network_service = ad_manager.service(:NetworkService, :v202602) # Make a request. network = network_service.get_current_network() puts "The current network is %s (%d)." % [network[:display_name], network[:network_code]] Ver no GitHub
-Etapas mais detalhadas para começar podem ser encontradas no README distribuído com a biblioteca de cliente Ruby. Confira também nossa biblioteca de exemplos completa para Ruby.
+- Bir kod yazıp istekte bulunun. # Import the library. require 'ad_manager_api' # Initialize an Ad Manager client instance (uses credentials in ~/ad_manager_api.yml by default). ad_manager = AdManagerApi::Api.new # Get a service instance. network_service = ad_manager.service(:NetworkService, :v202602) # Make a request. network = network_service.get_current_network() puts "The current network is %s (%d)." % [network[:display_name], network[:network_code]] GitHub'da göster
+Başlamak için daha ayrıntılı adımları Ruby istemci kitaplığıyla birlikte dağıtılan README dosyasında bulabilirsiniz. Ayrıca, örnek kitaplığı oluşturun.
 
-## Próximas etapas
+## Sonraki adımlar
 
-Quando você tiver uma biblioteca de cliente em funcionamento, modifique os exemplos fornecidos para ampliá-los de acordo com suas necessidades.
+Çalışan bir istemci kitaplığınız olduğunda, sağlanan örnekleri ihtiyaçlarınıza göre genişletmek için değiştirin.
 
-Consulte a documentação de referência para saber mais sobre a API.
+Daha fazla bilgi edinmek için referans belgelerine göz atın bazı bilgiler vereceğim.
 
-Se precisar de ajuda, acesse nossa página de suporte.
+Yardıma ihtiyacınız varsa Destek sayfamızı ziyaret edin.
 
 
 ---
