@@ -1,6 +1,9 @@
-import { execSync } from 'child_process'
+import { exec } from 'child_process'
+import { promisify } from 'util'
 import { z } from 'zod'
 import { autonomousFetch, logAutonomousAction } from '@/antigravity/core'
+
+const execAsync = promisify(exec)
 
 export const PersistenceSchema = z.object({
   agent: z.string(),
@@ -23,7 +26,7 @@ export async function getPersistenceHealth(): Promise<PersistenceStatus[]> {
 
     for (const agent of agents) {
       try {
-        const output = execSync(`launchctl list ${agent}`).toString()
+        const { stdout: output } = await execAsync(`launchctl list ${agent}`)
         const pidMatch = output.match(/"PID" = (\d+);/)
         const lastExitMatch = output.match(/"LastExitStatus" = (\d+);/)
         

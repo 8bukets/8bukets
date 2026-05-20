@@ -56,12 +56,12 @@ export async function evolve() {
           })
         }
 
-        // Rule 4: Security - Detect execSync
-        if (content.includes('execSync(')) {
+        // Rule 4: Security & Performance - Detect blocking execSync/execFileSync
+        if (content.includes('execSync(') || content.includes('execFileSync(')) {
           suggestions.push({
             file: fullPath.replace(process.cwd(), ''),
             complexity: lines,
-            suggestion: 'SECURITY_VULNERABILITY: execSync detected. Risk of command injection. Refactor to use execFileSync or spawnSync.'
+            suggestion: 'SECURITY_PERF_VULNERABILITY: Blocking execSync/execFileSync detected. Risk of command injection and event loop blocking. Refactor to use non-blocking execAsync or execFileAsync via promisify.'
           })
         }
       }
