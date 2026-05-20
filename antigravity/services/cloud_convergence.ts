@@ -36,44 +36,67 @@ export class CloudConvergenceService {
 
     try {
       // 1. Core State Retrieval
-      const mongoClient = await getMongoClient()
-      const db = mongoClient.db()
-      const workOrderCount = await db.collection('work_orders').countDocuments()
+      let workOrderCount = 0
+      try {
+        const mongoClient = await getMongoClient()
+        const db = mongoClient.db()
+        workOrderCount = await db.collection('work_orders').countDocuments()
+      } catch (e) {
+        logAutonomousAction('⚠️ [CloudConvergence] MongoDB unreachable during convergence.', 'warning')
+      }
 
       // 2. Supabase Real-time Pulse
-      const { data: presence, error: sbError } = await supabase
-        .from('agent_presence')
-        .select('*')
-        .eq('agent', 'Jules')
-        .single()
+      let supabasePresence = false
+      try {
+        const { data: presence, error: sbError } = await supabase
+          .from('agent_presence')
+          .select('*')
+          .eq('agent', 'Jules')
+          .single()
+        supabasePresence = !!presence && !sbError
+      } catch (e) {
+        logAutonomousAction('⚠️ [CloudConvergence] Supabase unreachable during convergence.', 'warning')
+      }
 
       // 3. Git Provider Status
-      const pulls = await gitProvider.listPullRequests()
-      const gitStatus = pulls.length > 0 ? `${pulls.length} open PRs/MRs` : 'clean'
+      let gitStatus = 'unknown'
+      try {
+        const pulls = await gitProvider.listPullRequests()
+        gitStatus = pulls.length > 0 ? `${pulls.length} open PRs/MRs` : 'clean'
+      } catch (e) {
+        logAutonomousAction('⚠️ [CloudConvergence] Git providers unreachable during convergence.', 'warning')
+      }
 
       const state: CloudConvergenceState = {
         last_sync: new Date().toISOString(),
         active_providers: providers,
-        ecosystem_health: 'optimal',
+        ecosystem_health: (workOrderCount > 0 || supabasePresence) ? 'optimal' : 'degraded',
         sync_metrics: {
           mongo_records: workOrderCount,
-          supabase_presence: !!presence && !sbError,
+          supabase_presence: supabasePresence,
           git_status: gitStatus
         }
       }
 
       // 4. Cross-Persist Convergence
-      await db.collection('system_state').updateOne(
-        { systemId: 'antigravity-alpha-01' },
-        { $set: { cloud_convergence: state } },
-        { upsert: true }
-      )
+      try {
+        const mongoClient = await getMongoClient()
+        const db = mongoClient.db()
+        await db.collection('system_state').updateOne(
+          { systemId: 'antigravity-alpha-01' },
+          { $set: { cloud_convergence: state } },
+          { upsert: true }
+        )
+      } catch (e) {
+        logAutonomousAction('⚠️ [CloudConvergence] Failed to persist convergence state to MongoDB.', 'warning')
+      }
 
-      logAutonomousAction('✅ [CloudConvergence] Ecosystem state converged successfully.', 'info')
+      logAutonomousAction('✅ [CloudConvergence] Ecosystem state converged.', 'info')
       return state
     } catch (err: any) {
-      logAutonomousAction(`❌ [CloudConvergence] Convergence failed: ${err.message}`, 'error')
-      throw err
+      logAutonomousAction(`❌ [CloudConvergence] Fatal convergence failure: ${err.message}`, 'error')
+      // Do not rethrow to prevent crashing the main loop
+      return null
     }
   }
 

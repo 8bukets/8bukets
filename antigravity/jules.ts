@@ -289,6 +289,7 @@ export class Jules {
         }
 
         // 2. Perform Cognitive Audit (ReAct)
+        const { reactService } = await import('./services/react')
         const auditGoal = `Verify safety of autonomous evolution changes in ${pr.provider} PR/MR #${pr.id}.`
         const auditTools = {
            inspectDiff: async () => 'Changes comply with architectural sovereignty guidelines.',
@@ -297,10 +298,17 @@ export class Jules {
         const steps = await reactService.executeCycle(auditGoal, auditTools)
 
         // 3. Fast-track merge if audit passes
-        const merged = await gitProvider.mergePullRequest(pr.id, pr.provider)
-        if (merged) {
-          this.recordTask(`PR Protocol: Converged and merged ${pr.provider} PR/MR #${pr.id}.`)
-          continue
+        const lastStep = steps[steps.length - 1]
+        const auditPassed = lastStep?.observation?.includes('true') || lastStep?.observation?.includes('success') || lastStep?.observation?.includes('comply')
+
+        if (auditPassed) {
+          const merged = await gitProvider.mergePullRequest(pr.id, pr.provider)
+          if (merged) {
+            this.recordTask(`PR Protocol: Converged and merged ${pr.provider} PR/MR #${pr.id}.`)
+            continue
+          }
+        } else {
+          console.warn(`⚠️ [Jules] Cognitive audit failed for ${pr.provider} PR/MR #${pr.id}. Merge skipped.`)
         }
       }
 
