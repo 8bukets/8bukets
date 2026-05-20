@@ -1,6 +1,15 @@
 pipeline {
     agent any
 
+    environment {
+        MACBOOK_CLOUD_SIMULATION = 'true'
+        ARCH = 'amd64'
+        DOCKER_ACCESS_TOKEN = credentials('docker-access-token')
+        DOCKER_ACCOUNT = credentials('docker-account')
+        CLOUD_BUILDER_NAME = 'sor'
+        IMAGE_NAME = 'getanant/docker-build-cloud-demo'
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -26,6 +35,12 @@ pipeline {
             }
         }
 
+        stage('Engine Connection') {
+            steps {
+                sh 'npm run connect'
+            }
+        }
+
         stage('Creative Workflow') {
             parallel {
                 stage('Analyze Market') {
@@ -39,12 +54,28 @@ pipeline {
                         sh 'python3 analytics.py'
                     }
                 }
+                stage('Autonomous Evolution') {
+                    steps {
+                        sh 'python3 run_system.py --skip-scrape'
+                    }
+                }
             }
         }
 
         stage('Docker Build') {
+            environment {
+                BUILDX_URL = sh(returnStdout: true, script: 'curl -s https://raw.githubusercontent.com/docker/actions-toolkit/main/.github/buildx-lab-releases.json | jq -r ".latest.assets[] | select(endswith(\"linux-$ARCH\"))"').trim()
+                COMPOSE_URL = sh(returnStdout: true, script: 'curl -sL -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/repos/docker/compose-desktop/releases | jq "[ .[] | select(.prerelease==false and .draft==false) ] | .[0].assets.[] | select(.name | endswith(\"linux-${ARCH}\")) | .browser_download_url"').trim()
+            }
             steps {
-                sh 'docker-compose build || true'
+                sh 'mkdir -vp ~/.docker/cli-plugins/'
+                sh 'curl --silent -L --output ~/.docker/cli-plugins/docker-buildx $BUILDX_URL'
+                sh 'curl --silent -L --output ~/.docker/cli-plugins/docker-compose $COMPOSE_URL'
+                sh 'chmod a+x ~/.docker/cli-plugins/docker-buildx'
+                sh 'chmod a+x ~/.docker/cli-plugins/docker-compose'
+                sh 'echo "$DOCKER_ACCESS_TOKEN" | docker login --username $DOCKER_ACCOUNT --password-stdin'
+                sh 'docker buildx create --use --driver cloud "${DOCKER_ACCOUNT}/${CLOUD_BUILDER_NAME}"'
+                sh 'docker compose build || true'
             }
         }
     }
