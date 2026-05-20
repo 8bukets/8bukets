@@ -691,6 +691,19 @@ export class Jules {
         this.recordTask(`Knowledge Observed: Extracted intelligence from ${observation.url}`)
       }
     }
+
+    // Phase 18: Specialized Market Intelligence Ingestion
+    const { exec } = await import('child_process')
+    const { promisify } = await import('util')
+    const execAsync = promisify(exec)
+    try {
+      console.log('📈 [Jules] Executing specialized Markposition ingestion...')
+      await execAsync('npx tsx scripts/ingest_markposition_knowledge.ts')
+      this.recordTask('Knowledge Observed: Unified market intelligence synchronized from markposition.wordpress.com')
+    } catch (e: any) {
+      console.warn('⚠️ [Jules] Specialized ingestion failed:', e.message)
+    }
+
     const { KnowledgeObserver } = await import('./services/knowledge_observer')
     const observer = new KnowledgeObserver()
 
