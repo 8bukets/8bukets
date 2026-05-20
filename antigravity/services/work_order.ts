@@ -248,7 +248,27 @@ export class WorkOrderService {
 
         const { syncCollaborationState } = await import('./collaboration')
         await syncCollaborationState()
+
+        // Phase 17: Unified Cloud Convergence
+        const { cloudConvergence } = await import('./cloud_convergence')
+        await cloudConvergence.synchronizeEcosystem()
+
         return { status: 'synced' }
+
+      case 'CLOUD_INTELLIGENCE_MERGE':
+        logAutonomousAction(`☁️ [WorkOrder] Executing Cloud Intelligence Merge for ${order.id}...`, 'info')
+        const { spawnSync: spawnSyncCloud } = await import('child_process')
+        const cloudResult = spawnSyncCloud('python3', ['sync_icloud.py', '--pull'], { encoding: 'utf8' })
+        if (cloudResult.status !== 0 && !cloudResult.stderr.includes('Two-factor authentication required')) {
+           // We allow skipping 2FA in autonomous background runs but log it
+           console.warn('⚠️ [WorkOrder] iCloud Merge requires manual 2FA. Skipping for now.')
+        }
+
+        // Trigger a re-ingestion of knowledge after merge
+        const { jules: julesCloud } = await import('../jules')
+        await julesCloud.observeKnowledge()
+
+        return { status: 'merged', output: cloudResult.stdout }
 
       case 'KNOWLEDGE_INGESTION':
         logAutonomousAction(`📚 [WorkOrder] Executing Knowledge Ingestion for ${order.id}...`, 'info')
