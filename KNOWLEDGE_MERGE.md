@@ -125,7 +125,7 @@ Antigravity should remain the internal logic and orchestration system.
 It can eventually support:
 
 - moderation intelligence
-- automation
+- automation (Automated Market Intelligence Ingestion from markposition.wordpress.com enabled)
 - internal workflows
 - content and data operations
 
@@ -163,9 +163,9 @@ This layer should:
 
 `markposition.wordpress.com` serves as the external ear of the system where:
 
-- the scraper fetches the latest industry news and tools
+- the automated TypeScript ingestion script (`scripts/ingest_markposition_knowledge.ts`) fetches and merges the latest industry intelligence during each autonomous work cycle.
 - analytics generate reports on market trends
-- the data feeds the Antigravity intelligence layer
+- the structured data directly updates the `market_data` section in the unified `system_knowledge.json`.
 
 ## Architectural Direction
 
