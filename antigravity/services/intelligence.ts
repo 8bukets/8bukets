@@ -114,15 +114,29 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   if (fs.existsSync(knowledgePath)) {
     try {
       const systemKnowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
-      const knowledge = systemKnowledge.typescript_sections || []
-      knowledge.forEach((k: any) => {
-        report += `### ${k.title}\n`
-        report += `- **Source:** ${k.metadata.source}\n`
-        report += `- **Sections:** ${k.sections.length}\n`
-        if (k.sections.length > 0) {
-          report += `  - *Key Topics:* ${k.sections.slice(0, 3).map((s: any) => s.header).join(', ')}\n`
+
+      // Phase 12: Support both nested 'typescript_sections' and unified flat key structure
+      const allKnowledge: any[] = []
+
+      if (Array.isArray(systemKnowledge.sections)) allKnowledge.push(...systemKnowledge.sections)
+      if (Array.isArray(systemKnowledge.typescript_sections)) allKnowledge.push(...systemKnowledge.typescript_sections)
+
+      Object.entries(systemKnowledge).forEach(([key, value]) => {
+        if (key !== 'metadata' && key !== 'sections' && key !== 'typescript_sections' && Array.isArray(value)) {
+          allKnowledge.push(...value)
         }
-        report += `\n`
+      })
+
+      allKnowledge.forEach((k: any) => {
+        if (k && k.title) {
+          report += `### ${k.title}\n`
+          report += `- **Source:** ${k.metadata?.source || 'Internal'}\n`
+          report += `- **Sections:** ${k.sections?.length || 0}\n`
+          if (k.sections && k.sections.length > 0) {
+            report += `  - *Key Topics:* ${k.sections.slice(0, 3).map((s: any) => s.header).join(', ')}\n`
+          }
+          report += `\n`
+        }
       })
     } catch (e) {
       report += `⚠️ Failed to parse Knowledge Matrix.\n\n`
