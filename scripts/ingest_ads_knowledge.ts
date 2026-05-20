@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import * as path from 'path';
 import * as cheerio from 'cheerio';
 
 const URLS = [
@@ -123,6 +124,19 @@ async function scrapeGoogleAdsDocs() {
     const jsonPath = "google_ads_docs.json";
     fs.writeFileSync(jsonPath, JSON.stringify(data, null, 4), 'utf-8');
     console.log(`Saved Google Ads docs JSON to ${jsonPath}`);
+
+    let signatureValue = 'All the best - https://markposition.wordpress.com';
+    try {
+        const configPath = path.join(process.cwd(), 'config/evolution_params.json');
+        if (fs.existsSync(configPath)) {
+            const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+            if (config.mandatory_signature) {
+                signatureValue = config.mandatory_signature;
+            }
+        }
+    } catch (e) {}
+
+    mdContent += `---\n${signatureValue}\n`;
 
     const mdPath = "google_ads_docs.md";
     fs.writeFileSync(mdPath, mdContent, 'utf-8');

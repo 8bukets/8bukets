@@ -12,6 +12,7 @@
     "test": "echo \"Error: no test specified\" && exit 0",
     "connect": "tsx scripts/connect_and_collaborate.ts",
     "daily": "tsx scripts/run_daily.ts",
+    "ingest:sor": "tsx scripts/ingest_software_online_review.ts",
     "sync-all": "tsx scripts/sync_all_branches.ts",
     "daily-tasks": "gemini @daily-tasks",
     "ignite": "npm run daily -- --continuous",
@@ -26,11 +27,13 @@
     "cheerio": "^1.2.0",
     "chokidar": "^5.0.0",
     "commander": "^14.0.3",
-    "next": "^15.1.0"
+    "next": "^15.1.0",
+    "ws": "^8.20.1"
   },
   "devDependencies": {
     "@supabase/supabase-js": "^2.105.4",
     "@types/node": "^20.19.41",
+    "@types/ws": "^8.18.1",
     "@vercel/ncc": "^0.38.4",
     "@vercel/sandbox": "^1.10.1",
     "mongodb": "^7.2.0",

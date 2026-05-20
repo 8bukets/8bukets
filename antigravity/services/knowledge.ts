@@ -28,7 +28,7 @@ export async function observeKnowledge(url: string) {
 - **Date**: ${new Date().toISOString()}
 - **Target**: ${url}
 - **Title**: ${title}
-- **Relationship Map**: Confirmed overlapping identities between Antigravity, Project SOR, software-online-review.com, software-review-platform, and markposition.wordpress.com as the formal Market Intelligence layer.
+- **Context**: Ingested and observed external market or technical intelligence from ${url}.
 `
 
     let exists = false;
@@ -46,7 +46,12 @@ export async function observeKnowledge(url: string) {
       // Check if URL already exists
       if (!content.includes(`- **Target**: ${url}`)) {
         // Remove old signature if present to append new entry then re-add signature
-        let newContent = content.replace(signature, '').trim();
+        // Using regex to remove signature from the end of the file safely
+        let newContent = content.trim();
+        if (newContent.endsWith(signatureValue)) {
+            newContent = newContent.slice(0, newContent.lastIndexOf('---')).trim();
+        }
+
         newContent += relationshipEntry;
         newContent += signature;
         await fs.promises.writeFile(knowledgePath, newContent, 'utf8')

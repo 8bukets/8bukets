@@ -22,12 +22,28 @@ async function scrapeAiAgentsKnowledge() {
         const data: Record<string, Section> = {};
         const orderedScrapedKeys: string[] = [];
 
-        // Skip UI and navigation sections
+        // Stop processing when these are encountered
+        const stopMarkers = [
+            "Additional resources", "Take the next step", "Continue browsing",
+            "Why Google", "Products and pricing", "Solutions", "Resources", "Engage"
+        ];
+
+        // Skip UI and navigation sections if encountered early
         const skipTitles = [
-            "Additional resources", "Take the next step",
-            "Accelerate your digital transformation", "Why Google",
-            "Products and pricing", "Solutions", "Resources",
-            "Engage", "Stay informed", "Topics", "Page Contents"
+            "Stay informed", "Topics", "Page Contents",
+            "arrow_forward", "Key benefits", "Reports and insights",
+            "Industry Solutions", "Featured Products", "Business Intelligence",
+            "Compute", "Containers", "Data Analytics", "Databases",
+            "Developer Tools", "Distributed Cloud", "Hybrid and Multicloud",
+            "Industry Specific", "Integration Services", "Management Tools",
+            "Maps and Geospatial", "Media Services", "Migration",
+            "Networking", "Operations", "Productivity and Collaboration",
+            "Security and Identity", "Serverless", "Storage", "Web3",
+            "Save money with our transparent approach to pricing",
+            "Pricing overview and tools", "Product-specific Pricing",
+            "Learn & build", "Connect", "Consulting and Partners",
+            "Overview", "Products", "Pricing", "Docs", "Support", "Console",
+            "Contact us", "Start free", "Sign in", "Language"
         ];
 
         // Google Cloud content is usually inside a main element or specific class
@@ -37,30 +53,57 @@ async function scrapeAiAgentsKnowledge() {
         let currentSectionId = '';
         let currentSectionTitle = '';
         let currentContent: string[] = [];
+        let stopScraping = false;
 
         // Helper to finalize a section
         const finalizeSection = () => {
             if (currentSectionId && currentContent.length > 0) {
-                data[currentSectionId] = {
-                    title: currentSectionTitle,
-                    content: currentContent.join('\n\n')
-                };
-                if (!orderedScrapedKeys.includes(currentSectionId)) {
-                    orderedScrapedKeys.push(currentSectionId);
+                // Filter out noise from content lines
+                const filteredContent = currentContent.filter(line => {
+                    const trimmed = line.trim();
+                    if (!trimmed) return false;
+                    if (skipTitles.some(skip => trimmed === skip || trimmed.includes(skip))) return false;
+                    if (stopMarkers.some(stop => trimmed === stop || trimmed.includes(stop))) return false;
+                    if (trimmed.includes('arrow_forward')) return false;
+                    return true;
+                });
+
+                if (filteredContent.length > 0) {
+                    data[currentSectionId] = {
+                        title: currentSectionTitle,
+                        content: filteredContent.join('\n\n')
+                    };
+                    if (!orderedScrapedKeys.includes(currentSectionId)) {
+                        orderedScrapedKeys.push(currentSectionId);
+                    }
                 }
             }
         };
 
         // Walk through all elements in the scope
-        scope.find('h1, h2, h3, h4, p, ul, ol, table, pre').each((_, el) => {
+        scope.find('h1, h2, h3, h4, h5, h6, p, ul, ol, table, pre').each((_, el) => {
+            if (stopScraping) return;
+
             const $el = $(el);
             const tagName = el.name.toLowerCase();
 
-            if (['h1', 'h2', 'h3', 'h4'].includes(tagName)) {
+            if (['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(tagName)) {
                 const title = $el.text().trim();
-                if (skipTitles.some(skip => title.includes(skip)) || !title) return;
+
+                if (stopMarkers.some(stop => title === stop || title.includes(stop))) {
+                    finalizeSection();
+                    stopScraping = true;
+                    return;
+                }
 
                 finalizeSection();
+
+                if (skipTitles.some(skip => title === skip || title.includes(skip)) || !title) {
+                    currentSectionId = '';
+                    currentSectionTitle = '';
+                    currentContent = [];
+                    return;
+                }
 
                 currentSectionTitle = title;
                 currentSectionId = $el.attr('id') || title.toLowerCase().replace(/\s+/g, '-').replace(/[?,]/g, '');
@@ -108,7 +151,7 @@ async function scrapeAiAgentsKnowledge() {
 
         // Save to JSON
         const jsonPath = "ai_agents_knowledge.json";
-        const manualKeys = ["compile", "jules-tools", "knowledge-merge", "gemini-cli-remote-subagents", "gemini-cli-subagents"];
+        const manualKeys = ["compile", "jules-tools", "knowledge-merge", "gemini-cli-remote-subagents", "gemini-cli-subagents", "docker-mcp-catalog"];
         let finalData: Record<string, Section> = {};
 
         if (fs.existsSync(jsonPath)) {
@@ -128,6 +171,13 @@ async function scrapeAiAgentsKnowledge() {
 
         fs.writeFileSync(jsonPath, JSON.stringify(finalData, null, 4), 'utf8');
         console.log(`Saved AI Agent knowledge to ${jsonPath} (Sections: ${orderedScrapedKeys.length})`);
+
+        // Also save to data/knowledge/ if it exists
+        const dataKnowledgePath = path.join("data/knowledge", jsonPath);
+        if (fs.existsSync("data/knowledge")) {
+            fs.writeFileSync(dataKnowledgePath, JSON.stringify(finalData, null, 4), 'utf8');
+            console.log(`Synced AI Agent knowledge to ${dataKnowledgePath}`);
+        }
 
         // Save to Markdown
         const mdPath = "ai_agents_knowledge.md";

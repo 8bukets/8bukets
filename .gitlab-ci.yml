@@ -4,7 +4,7 @@ default:
     - docker:24-dind
   before_script:
     - docker info
-    - echo "$DOCKER_PAT" | docker login --username "$DOCKER_USER" --password-stdin
+    - echo "$DOCKER_ACCESS_TOKEN" | docker login --username "$DOCKER_ACCOUNT" --password-stdin
     - |
       apk add curl jq
       ARCH=${CI_RUNNER_EXECUTABLE_ARCH#*/}
@@ -12,10 +12,12 @@ default:
       mkdir -vp ~/.docker/cli-plugins/
       curl --silent -L --output ~/.docker/cli-plugins/docker-buildx $BUILDX_URL
       chmod a+x ~/.docker/cli-plugins/docker-buildx
-    - docker buildx create --use --driver cloud getanant/sor
+    - docker buildx create --use --driver cloud ${DOCKER_ACCOUNT}/${CLOUD_BUILDER_NAME}
 
 variables:
   IMAGE_NAME: getanant/docker-build-cloud-demo
+  DOCKER_ACCOUNT: getanant
+  CLOUD_BUILDER_NAME: sor
   MACBOOK_CLOUD_SIMULATION: "true"
 
 stages:
@@ -73,3 +75,9 @@ deploy-prod:
   script:
     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
   environment: production
+
+test-testservice:
+  stage: test
+  script:
+    - npm ci
+    - npx vitest run antigravity/services/testservice.test.ts

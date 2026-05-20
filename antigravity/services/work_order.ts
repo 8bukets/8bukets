@@ -13,6 +13,7 @@ export const WorkOrderSchema = z.object({
   created_at: z.string(),
   updated_at: z.string().optional(),
   completed_at: z.string().optional(),
+  dependsOn: z.array(z.string()).optional(),
   result: z.any().optional(),
   error: z.string().optional()
 })
@@ -104,12 +105,13 @@ export class WorkOrderService {
     fs.writeFileSync(STORAGE_PATH, JSON.stringify(this.orders, null, 2))
   }
 
-  public async createOrder(type: WorkOrder['type'], goal: string, payload: any): Promise<WorkOrder> {
+  public async createOrder(type: WorkOrder['type'], goal: string, payload: any, dependsOn?: string[]): Promise<WorkOrder> {
     const newOrder: WorkOrder = {
       id: `wo_${Math.random().toString(36).substring(2, 11)}`,
       type,
       goal,
       payload,
+      dependsOn,
       status: 'pending',
       created_at: new Date().toISOString()
     }
@@ -138,22 +140,46 @@ export class WorkOrderService {
   }
 
   public async executePendingOrders() {
-    const pending = await this.getPendingOrders()
+    let pending = await this.getPendingOrders()
     if (pending.length === 0) return
 
     logAutonomousAction(`⚡ [WorkOrder] Executing ${pending.length} pending orders...`, 'info')
 
-    for (const order of pending) {
-      await this.updateOrderStatus(order.id, 'executing')
-      try {
-        const result = await this.dispatch(order)
-        await this.updateOrderStatus(order.id, 'completed', result)
-        logAutonomousAction(`[WORK_ORDER] Completed: ${order.id}`, 'cognitive')
-      } catch (err: any) {
-        console.error(`❌ [WorkOrder] Order ${order.id} failed:`, err)
-        await this.updateOrderStatus(order.id, 'failed', undefined, err.message)
-        logAutonomousAction(`[WORK_ORDER] Failed: ${order.id}`, 'error')
+    let executedInCycle = true
+    while (executedInCycle && pending.length > 0) {
+      executedInCycle = false
+
+      for (const order of pending) {
+        // Check if dependencies are met
+        const deps = order.dependsOn || []
+        const unmetDeps = deps.filter(depId => {
+          const depOrder = this.orders.find(o => o.id === depId)
+          return !depOrder || depOrder.status !== 'completed'
+        })
+
+        if (unmetDeps.length === 0) {
+          await this.updateOrderStatus(order.id, 'executing')
+          try {
+            const result = await this.dispatch(order)
+            await this.updateOrderStatus(order.id, 'completed', result)
+            logAutonomousAction(`[WORK_ORDER] Completed: ${order.id}`, 'cognitive')
+            executedInCycle = true
+          } catch (err: any) {
+            console.error(`❌ [WorkOrder] Order ${order.id} failed:`, err)
+            await this.updateOrderStatus(order.id, 'failed', undefined, err.message)
+            logAutonomousAction(`[WORK_ORDER] Failed: ${order.id}`, 'error')
+            // Even if it fails, we mark cycle as progressed to re-evaluate remaining orders
+            executedInCycle = true
+          }
+        }
       }
+
+      // Refresh pending list
+      pending = await this.getPendingOrders()
+    }
+
+    if (pending.length > 0) {
+      logAutonomousAction(`⚠️ [WorkOrder] ${pending.length} orders remain pending due to unmet or failed dependencies.`, 'warn')
     }
   }
 
@@ -222,7 +248,27 @@ export class WorkOrderService {
 
         const { syncCollaborationState } = await import('./collaboration')
         await syncCollaborationState()
+
+        // Phase 17: Unified Cloud Convergence
+        const { cloudConvergence } = await import('./cloud_convergence')
+        await cloudConvergence.synchronizeEcosystem()
+
         return { status: 'synced' }
+
+      case 'CLOUD_INTELLIGENCE_MERGE':
+        logAutonomousAction(`☁️ [WorkOrder] Executing Cloud Intelligence Merge for ${order.id}...`, 'info')
+        const { spawnSync: spawnSyncCloud } = await import('child_process')
+        const cloudResult = spawnSyncCloud('python3', ['sync_icloud.py', '--pull'], { encoding: 'utf8' })
+        if (cloudResult.status !== 0 && !cloudResult.stderr.includes('Two-factor authentication required')) {
+           // We allow skipping 2FA in autonomous background runs but log it
+           console.warn('⚠️ [WorkOrder] iCloud Merge requires manual 2FA. Skipping for now.')
+        }
+
+        // Trigger a re-ingestion of knowledge after merge
+        const { jules: julesCloud } = await import('../jules')
+        await julesCloud.observeKnowledge()
+
+        return { status: 'merged', output: cloudResult.stdout }
 
       case 'KNOWLEDGE_INGESTION':
         logAutonomousAction(`📚 [WorkOrder] Executing Knowledge Ingestion for ${order.id}...`, 'info')

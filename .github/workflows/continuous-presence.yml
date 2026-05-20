@@ -66,13 +66,27 @@ jobs:
       - name: Build Verification
         run: npm run build
 
-      - name: Push Changes
+      - name: Sync Cloud Intelligence
+        run: python3 sync_icloud.py --pull || true
+        env:
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
+
+      - name: Push Evolved State
         run: |
           git config --global user.name "google-labs-jules[bot]"
           git config --global user.email "161369871+google-labs-jules[bot]@users.noreply.github.com"
-          git add -A
-          git diff --quiet && git diff --staged --quiet || git commit -m "chore: continuous cloud presence update"
-          git pull --rebase origin main || true
-          git push origin main || true
+
+          # Stage evolved artifacts
+          git add data/*.json data/knowledge/*.md autonomous_state.json .jules/
+
+          # Commit evolved changes if any
+          if ! git diff --cached --quiet; then
+            git commit -m "🤖 evolve: autonomous cloud state synchronization ($(date +'%Y-%m-%d %H:%M'))"
+            git pull --rebase origin main || true
+            git push origin main || true
+          else
+            echo "No evolution changes to commit."
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

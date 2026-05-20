@@ -1,5 +1,5 @@
 import { logAutonomousAction } from '../core'
-import { execSync, exec } from 'child_process'
+import { exec } from 'child_process'
 import { promisify } from 'util'
 import { z } from 'zod'
 import { autonomousFetch } from '@/antigravity/core'
@@ -61,7 +61,7 @@ export async function checkDockerHealth() {
   if (!isHealthy && !isCloud) {
     try {
       // Use async exec to prevent blocking the event loop
-      execAsync('docker-compose up -d').catch(e => {
+      execAsync('docker compose up -d').catch(e => {
         console.warn('⚠️ [Docker] Async recovery failed.', e)
       })
       isRecovering = true
