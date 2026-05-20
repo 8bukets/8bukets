@@ -37,7 +37,7 @@
         "benefits": [],
         "google_cloud_tools": [
             "Gemini",
-            "Kaggle"
+            "Google Flow"
         ]
     },
     {
@@ -190,7 +190,8 @@
             }
         ],
         "google_cloud_tools": [
-            "Gemini"
+            "Gemini",
+            "SynthID"
         ]
     },
     {
@@ -229,11 +230,10 @@
         "google_cloud_tools": [
             "Gemini models",
             "Gemini",
-            "Gemma",
             "Model Context Protocol",
             "MCP",
             "Interactions API",
-            "Kaggle"
+            "Nano Banana"
         ]
     },
     {
@@ -246,7 +246,8 @@
             "Gemini",
             "Gemma",
             "Vertex AI",
-            "Kaggle"
+            "Kaggle",
+            "Nano Banana"
         ]
     },
     {
@@ -257,9 +258,7 @@
         "benefits": [],
         "google_cloud_tools": [
             "Infrastructure & cloud",
-            "Gemini",
-            "Gemma",
-            "Kaggle"
+            "Gemini"
         ]
     },
     {
@@ -313,8 +312,7 @@
         "use_cases": [],
         "benefits": [],
         "google_cloud_tools": [
-            "Gemini",
-            "Gemma"
+            "Gemini"
         ]
     },
     {
@@ -350,8 +348,7 @@
             }
         ],
         "google_cloud_tools": [
-            "Gemini",
-            "Gemma"
+            "Gemini"
         ]
     },
     {
@@ -447,8 +444,7 @@
         "use_cases": [],
         "benefits": [],
         "google_cloud_tools": [
-            "Gemini",
-            "Kaggle"
+            "Gemini"
         ]
     },
     {
@@ -464,7 +460,7 @@
         "benefits": [],
         "google_cloud_tools": [
             "Gemini",
-            "Kaggle"
+            "Nano Banana"
         ]
     },
     {
@@ -522,7 +518,8 @@
         "benefits": [],
         "google_cloud_tools": [
             "Gemini",
-            "Kaggle"
+            "Kaggle",
+            "Nano Banana"
         ]
     },
     {
@@ -532,7 +529,9 @@
         "use_cases": [],
         "benefits": [],
         "google_cloud_tools": [
-            "Gemini"
+            "Gemini",
+            "Nano Banana",
+            "Google Flow"
         ]
     },
     {
@@ -548,9 +547,8 @@
         "benefits": [],
         "google_cloud_tools": [
             "Gemini",
-            "Gemma",
             "MCP",
-            "Kaggle"
+            "Google Flow"
         ]
     },
     {
@@ -560,7 +558,8 @@
         "use_cases": [],
         "benefits": [],
         "google_cloud_tools": [
-            "Gemini"
+            "Gemini",
+            "Nano Banana"
         ]
     },
     {
@@ -591,6 +590,127 @@
         "benefits": [],
         "google_cloud_tools": [
             "Gemini"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/blackstone-tpu-cloud/",
+        "title": "Blackstone and Google to develop TPU cloud",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/",
+        "title": "Introducing Gemini Omni",
+        "definitions": [],
+        "use_cases": [
+            {
+                "title": "Edit your videos through conversation",
+                "description": "Gemini Omni gives you an easier way to edit video — with natural language. Every instruction builds on the last. Your characters stay consistent, the physics hold up and the scene remembers what came before. Transform the world around you. Change specific things, or change everything. Your video becomes the starting point for something you never could have filmed yourself."
+            },
+            {
+                "title": "Bring ideas to life, grounded in Gemini’s world knowledge",
+                "description": "Gemini Omni doesn't just build scenes that look real, it reasons about what should happen next. It combines an intuitive understanding of physics with Gemini's knowledge of history, science and cultural context, bridging the gap from photorealism to meaningful storytelling. Create visuals with more accurate physics. Omni has an improved intuitive understanding of forces like gravity, kinetic energy and fluid dynamics, allowing you to create more realistic scenes."
+            },
+            {
+                "title": "Create videos from any combination of inputs",
+                "description": "Reference anything. Omni turns any reference — image, text, video or audio — into a single, cohesive output. While only voice references will be supported for audio to start, we’ll roll out other types of audio inputs soon."
+            },
+            {
+                "title": "Create videos with your own digital avatar",
+                "description": "We're committed to developing AI responsibly and we have clear policies to protect users from harm and governing the use of our AI tools. To start, you can create videos with your own voice by using Avatars , which create a digital version of yourself so you can generate videos that look and sound like you. Beyond the avatar feature, in terms of editing videos to change audio and speech, we are still working to test this and better understand how we can bring this capability to users responsibly. All videos created with Omni include our imperceptible SynthID digital watermark. You can easily verify that videos were generated with Gemini Omni through the Gemini app, Gemini in Chrome and Google Search. You can find out more about how we're expanding our content transparency and verification tools to help you understand how content was created and edited across the web in our blog post ."
+            }
+        ],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini",
+            "Kaggle",
+            "Nano Banana",
+            "Google Flow",
+            "YouTube Shorts",
+            "YouTube Create App",
+            "SynthID",
+            "Avatars"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/",
+        "title": "Simulate real-world places with Project Genie and Street View",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini",
+            "Google Flow"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/",
+        "title": "The Gemini app becomes more agentic, delivering proactive, 24/7 help",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini",
+            "MCP"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/",
+        "title": "Making it easier to understand how content was created and edited",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini",
+            "SynthID"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
+        "title": "I/O 2026: Welcome to the agentic Gemini era",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Infrastructure supporting innovation at scale",
+            "Gemini",
+            "MCP",
+            "Nano Banana",
+            "Google Flow",
+            "YouTube Shorts",
+            "SynthID"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/google-ai-studio-io-2026/",
+        "title": "Bring any idea to life: Google AI Studio at I/O 2026",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini",
+            "Gemma",
+            "Nano Banana"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/",
+        "title": "Introducing Managed Agents in the Gemini API",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Get access to Google's agent infrastructure",
+            "Reason, plan and call tools using the harness",
+            "Execute code and manage files in an isolated Linux sandbox",
+            "Browse the web to fetch and process live data",
+            "Gemini",
+            "Gemma",
+            "Interactions API"
         ]
     }
 ]
