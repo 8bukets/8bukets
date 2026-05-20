@@ -4,24 +4,232 @@
       "title": "Intelephense Documentation",
       "sections": [
         {
-          "header": "Intelephense",
-          "content": "Intelephense is a high performance, cross platform PHP language server adhering to the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/).\n\nWhen paired with an LSP capable editor it provides an essential set of code intelligence features that give a PHP developer a productive and rich editing experience.\n\nThis is proprietary software released to end users under a \"freemium\" model. Many of the features are provided free of charge. Access to all current and future features can be obtained by purchasing a licence key at https://intelephense.com."
-        },
-        {
-          "header": "Installation",
-          "content": ""
-        },
-        {
           "header": "Getting Started",
           "content": ""
+        },
+        {
+          "header": "About",
+          "content": "Intelephense is a high performance, cross platform, cross editor PHP language server adhering to the Language Server Protocol (LSP).\n\nWhen paired with an LSP capable editor it provides an essential set of code tools, making for a productive and rich PHP coding experience.\n\nThe Intelephense server is proprietary software released to end users under a \"freemium\" model. Many of the features are provided free of charge. Access to premium features can be obtained by purchasing a licence key."
+        },
+        {
+          "header": "Visual Studio Code",
+          "content": "Visual Studio Code users should install the Intelephense extension from within the extensions view or download from the [marketplace](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client).\n\n1. Disable the built-in VSCode PHP Language Features. \n    \n    * Go to `Extensions`.\n    * Search for `@builtin php`\n    * Disable `PHP Language Features`. Leave `PHP Language Basics` enabled for syntax highlighting.\n\n    Note that other (3rd party) PHP extensions which provide similar functionality should also be disabled for best results.\n2. Add glob patterns for non standard php file extensions to the `files.associations` setting.\n\n    For example: `\"files.associations\": { \"*.module\": \"php\" }`.\n3. Optionally purchase and enter your [licence key](https://intelephense.com) by opening the command pallete \n-- `ctrl + shift + p` -- and searching for `Enter licence key`.\n\nFurther configuration options are available in the `intelephense` section of settings."
+        },
+        {
+          "header": "Other Editors",
+          "content": "Intelephense requires a Node.js runtime environment. It is recommended that you use a current LTS version of Node.js. To install Intelephense server you can use npm.\n\n```bash\nnpm i intelephense -g\n```\n\nIntelephense needs an LSP compliant client to communicate with and integrate features into the editor. A list of editors and clients that support the LSP can be found online. Please follow the setup guide of the relevant tool. The information below may help in configuring the client.\n\nTo start the intelephense server:\n```bash\nintelephense {transport}\n```\nWhere {transport} is one of:\n* --node-ipc\n* --stdio\n* --socket={number}\n* --pipe={string}\n\nIf your LSP client exposes initializationOptions, then the following values are accepted:\n```typescript\ninterface InitialisationOptions {\n    // Optional absolute path to storage directory for workspace specific data.\n    storagePath?: string;\n\n    // Optional absolute path to a global storage directory for global data.\n    globalStoragePath?: string;\n\n    //Optional licence key or absolute path to a text file containing the licence key.\n    licenceKey?: string;\n\n    //Optional flag to clear server state.\n    //State can also be cleared by deleting {storagePath}/intelephense\n    clearCache?: boolean;\n}\n```\n\nWhen initializationOptions properties are not provided by the client, the following defaults are used:\n\n| OS | Property | Path | Fallback |\n|---|---|---|---|\n| *nix | storagePath | $XDG_CONFIG_HOME/intelephense/workspace/ | $HOME/.config/intelephense/workspace/ |\n| *nix | globalStoragePath | $XDG_CONFIG_HOME/intelephense/global/ | $HOME/.config/intelephense/global/ |\n| *nix | licenceKey | {globalStoragePath}/licence.txt | {globalStoragePath}/license.txt |\n| Windows | storagePath | %AppData%/intelephense/workspace/ | %UserProfile%/intelephense/workspace/ |\n| Windows | globalStoragePath | %AppData%/intelephense/global/ | %UserProfile%/intelephense/global/ |\n| Windows | licenceKey | {globalStoragePath}/licence.txt | {globalStoragePath}/license.txt |"
+        },
+        {
+          "header": "Configuration",
+          "content": "Please see the VSCode client package.json configuration property for a full list of configuration options and associated JSON schema. Note that the configuration keys are given in dot notation. As an example, the equivalent JSON object for intelephense.files.exclude would be {\"intelephense\": {\"files\": {\"exclude\": []}}}.\n\nIntelephense attempts to provide reasonable defaults for all settings. Some of the more important settings to consider when getting started include:\n* intelephense.files.associations - File globs that identify PHP files. Defaults to standard PHP file extensions e.g. *.php.\n* intelephense.files.maxSize - Maximum file size in bytes to index and provide analysis for. Defaults to 1000000 (1MB).\n* intelephense.environment.phpVersion - PHP version to use for analysis. Defaults to the most recent stable PHP version.\n* intelephense.stubs - List of stubs to include. Defaults to core symbols and extensions that are bundled with PHP. If you are getting undefined symbols for built-in or PECL extensions, you may need to modify this list.\n\nIn VSCode, the settings UI can be used to modify the configuration values. For other LSP clients, please see the client documentation on how to modify these values. Intelephense supports the LSP workspace/didChangeConfiguration and workspace/configuration methods as a way of supplying configuration values to the server.\n\nIf neither of the methods above are supported by the client, then configuration values can be supplied via an intelephense.config.json file placed in the workspace folder. The JSON schema for this file is the same as the one used for the VSCode client. The top level intelephense property is not required in this file.\n\nFor Intelephense to work effectively it must have access to the definitions of the symbols used in your code. Opening a project folder (LSP InitializeParams rootUri or workspaceFolders) rather than individual files enables these symbols to be discovered by Intelephense via indexing the PHP files in the folder. Large workspaces require more system resources. Consider opening a smaller workspace or exclude unnecessary files via the intelephense.files.exclude setting to reduce resource usage.\n\nIf you need to include files from outside of the workspace folder, then add the paths to these files to the intelephense.environment.includePaths setting.\n\nWhen configuring a multi-root workspace, Intelephense will presume that the folders in the workspace are separate projects and will not provide cross folder symbols unless you link the dependency between the projects via the intelephense.environment.includePaths setting."
+        },
+        {
+          "header": "Type System",
+          "content": "Providing type information in your PHP code will result in a better experience when using Intelephense. Type information can be provided via coded type declarations or PHPDoc type annotations. Where both have been provided, PHPDoc type annotations are given precedence as they can provide more detailed type information.\n\n```php\n<?php\n\n/**\n * @param string $s  <- A phpdoc parameter type annotation for $s\n * @return string[] <- A phpdoc return type annotation specifying the array element type\n **/\nfunction foo(string $s): array {} // <- type declarations for $s (string) and function return (array)\n```\n\nIntelephense will also compute inferred types when a declared or documented type is not found or during control flow analysis. When a type is inferred it may be reduced to its minimal representation. For example, MyClass|object would become object because MyClass is a sub-type of object.\n\nIntelephense provides limited support for PHPStorm metadata as a way of overriding or supplementing type information. It is recommended to use PHPDoc type annotations instead of PHPStorm metadata where possible as they are more widely supported across different tools. Support for PHPStorm metadata may be removed in future releases."
+        },
+        {
+          "header": "Type Narrowing",
+          "content": "Intelephense performs type narrowing of variables during control flow analysis. Type narrowing expressions include built-in type assertions such as is_string, custom type assertions annotated with @assert, instanceof, and equality expressions.\n\n```php\n<?php\n\nclass Foo {}\n\nfunction example(string|array|Foo|null $input): void\n{\n    if (!$input) {\n        // $input is narrowed to string|array|null in this block\n        // empty strings, empty arrays and null are all falsey\n    } else {\n        // $input is narrowed to string|array|Foo in this block\n\n        if ($input instanceof Foo) {\n            // $input is narrowed to Foo in this block\n        } else if (is_string($input)) {\n            // $input is narrowed to string in this block\n        } else {\n            // $input is narrowed to array in this block\n        }\n    }\n}\n```"
+        },
+        {
+          "header": "Type Evolving",
+          "content": "Type evolving is the change in a variable's type after an assignment expression. Simple variables and parameters always change to the type of the assigned expression regardless of initial assignments, type declarations or annotations.\n\nProperties with no type declaration or annotation will also change to the type of the assigned expression. Otherwise they will only widen or narrow according to the bounds of the initial type they have been declared or annotated with.\n\nIntelephense will type evolve array types when mutated only if they are declared with an empty array initialiser. Otherwise they are considered to retain their initial declared, annotated or inferred type.\n\n```php\n<?php\n\nfunction example(int $a): void\n{\n    $a = \"string\"; // $a is now type string\n\n    $b = []; // $b is type array and flagged as evolving\n\n    $b[] = \"string\"; // $b is now type string[]\n\n    $b[] = 9; //$b is now (string|int)[]\n\n    $c = [1, 2]; // $c is type int[] and NOT flagged as evolving\n\n    $c[] = \"string\"; // $c is still type int[]\n}\n```"
+        },
+        {
+          "header": "Top Type",
+          "content": "mixed\nThe super-type of all types. Any other type can be assigned to a type constraint of mixed. If intelephense cannot determine a more specific type for a symbol or expression then this is the type it is given. Because of this, Intelephense also allows mixed to be assigned to any other type constraint as well, effectively turning off type checking for that instance."
+        },
+        {
+          "header": "Bottom Type",
+          "content": "never\nThe sub-type of all types. This type can be assigned to any other type constraint. It is used to represent an impossibility in the code and can be used as the return type of a function that exits or always throws an exception."
+        },
+        {
+          "header": "Scalar Types",
+          "content": "int, float, bool, string."
+        },
+        {
+          "header": "Unit Types",
+          "content": "void, null, true, false, unset* (represents an undefined variable)."
+        },
+        {
+          "header": "Literal Types",
+          "content": "'myString'*, 9* (integer literal)."
+        },
+        {
+          "header": "Object Types",
+          "content": "object, \\MyNs\\MyClass, object{name: string, optional?: string}*, static, self, $this*."
+        },
+        {
+          "header": "Array Types",
+          "content": "array, array<TKey, TValue>*, TValue[]*, array{description: string, 'length (cm)': float, optional?: string, ...<int, string>}*."
+        },
+        {
+          "header": "Callable Types",
+          "content": "callable, callable(TParamA $a, TParamB $b): TReturn*, Closure*."
+        },
+        {
+          "header": "Alias Types",
+          "content": "iterable (Alias for Traversable|array), ?A (Nullable type shorthand for null|A)."
+        },
+        {
+          "header": "Union Types",
+          "content": "A|B|C - A type which may have multiple atomic type representations."
+        },
+        {
+          "header": "Intersection Types",
+          "content": "A&B&C - A composite type which consists of multiple atomic types."
+        },
+        {
+          "header": "DNF Types",
+          "content": "A|B|(C&D&E) - When combining union and intersection types, only a single level of nesting is permitted. The union must be the top level."
+        },
+        {
+          "header": "Generic Types",
+          "content": "Supports @template PHPDoc annotations. The following built-in types are templated:\niterable, Traversable, array, Iterator, IteratorAggregate, ArrayAccess, WeakReference, WeakMap, Fiber, DatePeriod, ReflectionAttribute, ReflectionClass, Generator, ArrayObject, SplDoublyLinkedList, SplQueue, SplStack, SplHeap, SplMinHeap, SplMaxHeap, SplPriorityQueue, SplFixedArray, SplObjectStorage."
+        },
+        {
+          "header": "Conditional Return Type",
+          "content": "(TSubject is TCompare ? TTrue : TFalse)* - Sometimes the return type of a function may depend on the type of a parameter."
+        },
+        {
+          "header": "Array Key Type",
+          "content": "key-of<TArray>* - Resolves to a union of the keys of an array shape."
+        },
+        {
+          "header": "Array Value Type",
+          "content": "value-of<TArray>* - Resolves to a union of the values of an array shape."
+        },
+        {
+          "header": "Index Access Type",
+          "content": "TArray[TKey]* - Resolves to the type of the value at index TKey in TArray."
+        },
+        {
+          "header": "Miscellaneous Types",
+          "content": "resource*, class-string<T>*."
+        },
+        {
+          "header": "PHPDoc Annotations",
+          "content": "Intelephense supports standard PHPDoc annotations as well as non-standard ones from tools like Psalm and PHPStan.\n\n* **@template**: Used to declare a type argument of a generic type, function or method.\n* **@template-extends**: Used to declare the type arguments supplied to a generic parent type. Alias @extends is also supported.\n* **@template-implements**: Used to declare the type arguments supplied to a generic interface. Alias @implements is also supported.\n* **@template-use**: Used to declare the type arguments supplied to a generic trait. Alias @use is also supported.\n* **@param-closure-this**: Declares the type of the $this variable inside a closure passed as a parameter.\n* **@param-out**: Declares the out type of a by-reference parameter.\n* **@assert**: Declares a function that asserts an argument is of a specified type.\n* **@assert-if-true / @assert-if-false**: Similar to @assert but for boolean return paths.\n* **@mixin**: (Premium) Declares that members of a specified class are mixed in.\n* **@disregard**: Suppresses a specific diagnostic at the following statement.\n* **@type-alias**: Declares a type alias for improving readability.\n* **@import-type**: Imports a type alias declared in another file."
         },
         {
           "header": "Features",
           "content": ""
         },
         {
-          "header": "Visual Studio Code",
-          "content": "Visual Studio Code users should install the Intelephense extension from within the extensions view or download from the [marketplace](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client).\n\n1. Disable the built-in VSCode PHP Language Features. \n    \n    * Go to `Extensions`.\n    * Search for `@builtin php`\n    * Disable `PHP Language Features`. Leave `PHP Language Basics` enabled for syntax highlighting.\n\n    Note that other (3rd party) PHP extensions which provide similar functionality should also be disabled for best results.\n2. Add glob patterns for non standard php file extensions to the `files.associations` setting.\n\n    For example: `\"files.associations\": { \"*.module\": \"php\" }`.\n3. Optionally purchase and enter your [licence key](https://intelephense.com) by opening the command pallete \n-- `ctrl + shift + p` -- and searching for `Enter licence key`.\n\nFurther configuration options are available in the `intelephense` section of settings."
+          "header": "Free Features",
+          "content": "The following features are available to all users."
+        },
+        {
+          "header": "Workspace Symbols",
+          "content": "Search for symbols in your workspace (Ctrl+T). Use FQSEN query syntax for specific symbols."
+        },
+        {
+          "header": "Document Symbols",
+          "content": "Lists all symbols in the current document (Ctrl+Shift+O)."
+        },
+        {
+          "header": "Go to Definition",
+          "content": "Navigate to the definition of a symbol (F12)."
+        },
+        {
+          "header": "Hover",
+          "content": "Show type information and documentation for a symbol when hovering."
+        },
+        {
+          "header": "Highlight",
+          "content": "Highlight all references to the symbol at the cursor position in the current file."
+        },
+        {
+          "header": "Code Completion",
+          "content": "Context appropriate completion suggestions ($ > : \\ / ' \" * . <)."
+        },
+        {
+          "header": "Signature Help",
+          "content": "Information about function/method signatures during a call (Ctrl+Shift+Space)."
+        },
+        {
+          "header": "Find All References",
+          "content": "List all references to a symbol in the current file or workspace (Shift+F12)."
+        },
+        {
+          "header": "Formatting",
+          "content": "Format a whole document or selected range. Complies with PHP-FIG coding standards."
+        },
+        {
+          "header": "Diagnostics",
+          "content": "Syntax errors, type errors, and language constraints."
+        },
+        {
+          "header": "Inline Values",
+          "content": "Variable ranges and text for debuggers to display inline values."
+        },
+        {
+          "header": "Embedded Languages",
+          "content": "Language intelligence for HTML, CSS, and JavaScript within PHP files."
+        },
+        {
+          "header": "Premium Features",
+          "content": "Requires a licence."
+        },
+        {
+          "header": "Rename",
+          "content": "Refactor a symbol and all its semantic references (F2)."
+        },
+        {
+          "header": "Code Folding",
+          "content": "Fold and unfold regions of code based on the syntax tree."
+        },
+        {
+          "header": "Find All Implementations",
+          "content": "List all implementations of a method or interface (Ctrl+F12)."
+        },
+        {
+          "header": "Go to Type Definition",
+          "content": "Navigate to the type definition of a variable rather than its declaration."
+        },
+        {
+          "header": "Go to Declaration",
+          "content": "Navigate to the initial declaration of a symbol in a type hierarchy."
+        },
+        {
+          "header": "Smart Select",
+          "content": "Expand and shrink selections based on the syntax tree (Shift+Alt+→/←)."
+        },
+        {
+          "header": "Type Hierarchy",
+          "content": "Understand the inheritance structure of a class, interface, trait, or enum."
+        },
+        {
+          "header": "Code Lens",
+          "content": "Reference counts and navigation links above declarations (Implementations, Overrides, Parent, Usages)."
+        },
+        {
+          "header": "Inlay Hints",
+          "content": "Inferred parameter names and return types inline with the code."
+        },
+        {
+          "header": "Document Links",
+          "content": "Clickable links for require/include statements and @see annotations."
+        },
+        {
+          "header": "Code Actions",
+          "content": "Quick-fix and refactoring options (Ctrl+.), such as Import Symbol, Add PHPDoc, and Implement All Abstract Methods."
+        },
+        {
+          "header": "Frameworks and Libraries",
+          "content": "Intelephense aims to support all PHP frameworks but does not implement specific solutions. Workarounds include type narrowing in code using `instanceof`, PHPDoc `@var` annotations, or using helper files for symbol overrides."
+        },
+        {
+          "header": "PHPDoc Instead of PHPStorm Metadata/Attributes",
+          "content": "It is recommended to use PHPDoc types for greater compatibility. Examples include using `@template` for return type mapping and array shapes (e.g., `array{red: RedService}`) for structured array documentation."
+        },
+        {
+          "header": "Intelephense",
+          "content": "Intelephense is a high performance, cross platform PHP language server adhering to the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/).\n\nWhen paired with an LSP capable editor it provides an essential set of code intelligence features that give a PHP developer a productive and rich editing experience.\n\nThis is proprietary software released to end users under a \"freemium\" model. Many of the features are provided free of charge. Access to all current and future features can be obtained by purchasing a licence key at https://intelephense.com."
+        },
+        {
+          "header": "Installation",
+          "content": ""
         },
         {
           "header": "Requirements",
@@ -74,7 +282,7 @@
       ],
       "metadata": {
         "source": "https://intelephense.com/docs",
-        "ingestedAt": "2026-05-20T00:32:47.484Z"
+        "ingestedAt": "2026-05-20T01:41:14.253Z"
       }
     },
     {
@@ -3239,247 +3447,6 @@
       }
     },
     {
-      "title": "intelephense_docs.md",
-      "sections": [
-        {
-          "header": "Intelephense Documentation",
-          "content": ""
-        },
-        {
-          "header": "Getting Started",
-          "content": ""
-        },
-        {
-          "header": "About",
-          "content": "Intelephense is a high performance, cross platform, cross editor PHP language server adhering to the Language Server Protocol (LSP).\n\nWhen paired with an LSP capable editor it provides an essential set of code tools, making for a productive and rich PHP coding experience.\n\nThe Intelephense server is proprietary software released to end users under a \"freemium\" model. Many of the features are provided free of charge. Access to premium features can be obtained by purchasing a licence key."
-        },
-        {
-          "header": "Visual Studio Code",
-          "content": "Visual Studio Code users should install the Intelephense extension from within the extensions view or download it from the VSCode marketplace.\n\nThe built-in VSCode PHP Language Features extension can cause excessive completion suggestions that are out of context and is best disabled. Go to the Extensions UI and search for PHP Language Features to disable it. Alternatively, you can disable parts of it via its configuration settings. Other third party extensions that provide similar functionality to Intelephense may also need to be disabled for best results.\n\nOptionally purchase and enter your licence key by opening the command palette (Ctrl+Shift+P) and searching for Enter licence key."
-        },
-        {
-          "header": "Other Editors",
-          "content": "Intelephense requires a Node.js runtime environment. It is recommended that you use a current LTS version of Node.js. To install Intelephense server you can use npm.\n\n```bash\nnpm i intelephense -g\n```\n\nIntelephense needs an LSP compliant client to communicate with and integrate features into the editor. A list of editors and clients that support the LSP can be found online. Please follow the setup guide of the relevant tool. The information below may help in configuring the client.\n\nTo start the intelephense server:\n```bash\nintelephense {transport}\n```\nWhere {transport} is one of:\n* --node-ipc\n* --stdio\n* --socket={number}\n* --pipe={string}\n\nIf your LSP client exposes initializationOptions, then the following values are accepted:\n```typescript\ninterface InitialisationOptions {\n    // Optional absolute path to storage directory for workspace specific data.\n    storagePath?: string;\n\n    // Optional absolute path to a global storage directory for global data.\n    globalStoragePath?: string;\n\n    //Optional licence key or absolute path to a text file containing the licence key.\n    licenceKey?: string;\n\n    //Optional flag to clear server state.\n    //State can also be cleared by deleting {storagePath}/intelephense\n    clearCache?: boolean;\n}\n```\n\nWhen initializationOptions properties are not provided by the client, the following defaults are used:\n\n| OS | Property | Path | Fallback |\n|---|---|---|---|\n| *nix | storagePath | $XDG_CONFIG_HOME/intelephense/workspace/ | $HOME/.config/intelephense/workspace/ |\n| *nix | globalStoragePath | $XDG_CONFIG_HOME/intelephense/global/ | $HOME/.config/intelephense/global/ |\n| *nix | licenceKey | {globalStoragePath}/licence.txt | {globalStoragePath}/license.txt |\n| Windows | storagePath | %AppData%/intelephense/workspace/ | %UserProfile%/intelephense/workspace/ |\n| Windows | globalStoragePath | %AppData%/intelephense/global/ | %UserProfile%/intelephense/global/ |\n| Windows | licenceKey | {globalStoragePath}/licence.txt | {globalStoragePath}/license.txt |"
-        },
-        {
-          "header": "Configuration",
-          "content": "Please see the VSCode client package.json configuration property for a full list of configuration options and associated JSON schema. Note that the configuration keys are given in dot notation. As an example, the equivalent JSON object for intelephense.files.exclude would be {\"intelephense\": {\"files\": {\"exclude\": []}}}.\n\nIntelephense attempts to provide reasonable defaults for all settings. Some of the more important settings to consider when getting started include:\n* intelephense.files.associations - File globs that identify PHP files. Defaults to standard PHP file extensions e.g. *.php.\n* intelephense.files.maxSize - Maximum file size in bytes to index and provide analysis for. Defaults to 1000000 (1MB).\n* intelephense.environment.phpVersion - PHP version to use for analysis. Defaults to the most recent stable PHP version.\n* intelephense.stubs - List of stubs to include. Defaults to core symbols and extensions that are bundled with PHP. If you are getting undefined symbols for built-in or PECL extensions, you may need to modify this list.\n\nIn VSCode, the settings UI can be used to modify the configuration values. For other LSP clients, please see the client documentation on how to modify these values. Intelephense supports the LSP workspace/didChangeConfiguration and workspace/configuration methods as a way of supplying configuration values to the server.\n\nIf neither of the methods above are supported by the client, then configuration values can be supplied via an intelephense.config.json file placed in the workspace folder. The JSON schema for this file is the same as the one used for the VSCode client. The top level intelephense property is not required in this file.\n\nFor Intelephense to work effectively it must have access to the definitions of the symbols used in your code. Opening a project folder (LSP InitializeParams rootUri or workspaceFolders) rather than individual files enables these symbols to be discovered by Intelephense via indexing the PHP files in the folder. Large workspaces require more system resources. Consider opening a smaller workspace or exclude unnecessary files via the intelephense.files.exclude setting to reduce resource usage.\n\nIf you need to include files from outside of the workspace folder, then add the paths to these files to the intelephense.environment.includePaths setting.\n\nWhen configuring a multi-root workspace, Intelephense will presume that the folders in the workspace are separate projects and will not provide cross folder symbols unless you link the dependency between the projects via the intelephense.environment.includePaths setting."
-        },
-        {
-          "header": "Type System",
-          "content": "Providing type information in your PHP code will result in a better experience when using Intelephense. Type information can be provided via coded type declarations or PHPDoc type annotations. Where both have been provided, PHPDoc type annotations are given precedence as they can provide more detailed type information.\n\n```php\n<?php\n\n/**\n * @param string $s  <- A phpdoc parameter type annotation for $s\n * @return string[] <- A phpdoc return type annotation specifying the array element type\n **/\nfunction foo(string $s): array {} // <- type declarations for $s (string) and function return (array)\n```\n\nIntelephense will also compute inferred types when a declared or documented type is not found or during control flow analysis. When a type is inferred it may be reduced to its minimal representation. For example, MyClass|object would become object because MyClass is a sub-type of object.\n\nIntelephense provides limited support for PHPStorm metadata as a way of overriding or supplementing type information. It is recommended to use PHPDoc type annotations instead of PHPStorm metadata where possible as they are more widely supported across different tools. Support for PHPStorm metadata may be removed in future releases."
-        },
-        {
-          "header": "Type Narrowing",
-          "content": "Intelephense performs type narrowing of variables during control flow analysis. Type narrowing expressions include built-in type assertions such as is_string, custom type assertions annotated with @assert, instanceof, and equality expressions.\n\n```php\n<?php\n\nclass Foo {}\n\nfunction example(string|array|Foo|null $input): void\n{\n    if (!$input) {\n        // $input is narrowed to string|array|null in this block\n        // empty strings, empty arrays and null are all falsey\n    } else {\n        // $input is narrowed to string|array|Foo in this block\n\n        if ($input instanceof Foo) {\n            // $input is narrowed to Foo in this block\n        } else if (is_string($input)) {\n            // $input is narrowed to string in this block\n        } else {\n            // $input is narrowed to array in this block\n        }\n    }\n}\n```"
-        },
-        {
-          "header": "Type Evolving",
-          "content": "Type evolving is the change in a variable's type after an assignment expression. Simple variables and parameters always change to the type of the assigned expression regardless of initial assignments, type declarations or annotations.\n\nProperties with no type declaration or annotation will also change to the type of the assigned expression. Otherwise they will only widen or narrow according to the bounds of the initial type they have been declared or annotated with.\n\nIntelephense will type evolve array types when mutated only if they are declared with an empty array initialiser. Otherwise they are considered to retain their initial declared, annotated or inferred type.\n\n```php\n<?php\n\nfunction example(int $a): void\n{\n    $a = \"string\"; // $a is now type string\n\n    $b = []; // $b is type array and flagged as evolving\n\n    $b[] = \"string\"; // $b is now type string[]\n\n    $b[] = 9; //$b is now (string|int)[]\n\n    $c = [1, 2]; // $c is type int[] and NOT flagged as evolving\n\n    $c[] = \"string\"; // $c is still type int[]\n}\n```"
-        },
-        {
-          "header": "Supported Types",
-          "content": ""
-        },
-        {
-          "header": "Top Type",
-          "content": "mixed\nThe super-type of all types. Any other type can be assigned to a type constraint of mixed. If intelephense cannot determine a more specific type for a symbol or expression then this is the type it is given. Because of this, Intelephense also allows mixed to be assigned to any other type constraint as well, effectively turning off type checking for that instance."
-        },
-        {
-          "header": "Bottom Type",
-          "content": "never\nThe sub-type of all types. This type can be assigned to any other type constraint. It is used to represent an impossibility in the code and can be used as the return type of a function that exits or always throws an exception."
-        },
-        {
-          "header": "Scalar Types",
-          "content": "int, float, bool, string."
-        },
-        {
-          "header": "Unit Types",
-          "content": "void, null, true, false, unset* (represents an undefined variable)."
-        },
-        {
-          "header": "Literal Types",
-          "content": "'myString'*, 9* (integer literal)."
-        },
-        {
-          "header": "Object Types",
-          "content": "object, \\MyNs\\MyClass, object{name: string, optional?: string}*, static, self, $this*."
-        },
-        {
-          "header": "Array Types",
-          "content": "array, array<TKey, TValue>*, TValue[]*, array{description: string, 'length (cm)': float, optional?: string, ...<int, string>}*."
-        },
-        {
-          "header": "Callable Types",
-          "content": "callable, callable(TParamA $a, TParamB $b): TReturn*, Closure*."
-        },
-        {
-          "header": "Alias Types",
-          "content": "iterable (Alias for Traversable|array), ?A (Nullable type shorthand for null|A)."
-        },
-        {
-          "header": "Union Types",
-          "content": "A|B|C - A type which may have multiple atomic type representations."
-        },
-        {
-          "header": "Intersection Types",
-          "content": "A&B&C - A composite type which consists of multiple atomic types."
-        },
-        {
-          "header": "DNF Types",
-          "content": "A|B|(C&D&E) - When combining union and intersection types, only a single level of nesting is permitted. The union must be the top level."
-        },
-        {
-          "header": "Generic Types",
-          "content": "Supports @template PHPDoc annotations. The following built-in types are templated:\niterable, Traversable, array, Iterator, IteratorAggregate, ArrayAccess, WeakReference, WeakMap, Fiber, DatePeriod, ReflectionAttribute, ReflectionClass, Generator, ArrayObject, SplDoublyLinkedList, SplQueue, SplStack, SplHeap, SplMinHeap, SplMaxHeap, SplPriorityQueue, SplFixedArray, SplObjectStorage."
-        },
-        {
-          "header": "Conditional Return Type",
-          "content": "(TSubject is TCompare ? TTrue : TFalse)* - Sometimes the return type of a function may depend on the type of a parameter."
-        },
-        {
-          "header": "Array Key Type",
-          "content": "key-of<TArray>* - Resolves to a union of the keys of an array shape."
-        },
-        {
-          "header": "Array Value Type",
-          "content": "value-of<TArray>* - Resolves to a union of the values of an array shape."
-        },
-        {
-          "header": "Index Access Type",
-          "content": "TArray[TKey]* - Resolves to the type of the value at index TKey in TArray."
-        },
-        {
-          "header": "Miscellaneous Types",
-          "content": "resource*, class-string<T>*."
-        },
-        {
-          "header": "PHPDoc Annotations",
-          "content": "Intelephense supports standard PHPDoc annotations as well as non-standard ones from tools like Psalm and PHPStan.\n\n* **@template**: Used to declare a type argument of a generic type, function or method.\n* **@template-extends**: Used to declare the type arguments supplied to a generic parent type. Alias @extends is also supported.\n* **@template-implements**: Used to declare the type arguments supplied to a generic interface. Alias @implements is also supported.\n* **@template-use**: Used to declare the type arguments supplied to a generic trait. Alias @use is also supported.\n* **@param-closure-this**: Declares the type of the $this variable inside a closure passed as a parameter.\n* **@param-out**: Declares the out type of a by-reference parameter.\n* **@assert**: Declares a function that asserts an argument is of a specified type.\n* **@assert-if-true / @assert-if-false**: Similar to @assert but for boolean return paths.\n* **@mixin**: (Premium) Declares that members of a specified class are mixed in.\n* **@disregard**: Suppresses a specific diagnostic at the following statement.\n* **@type-alias**: Declares a type alias for improving readability.\n* **@import-type**: Imports a type alias declared in another file."
-        },
-        {
-          "header": "Features",
-          "content": ""
-        },
-        {
-          "header": "Free Features",
-          "content": "The following features are available to all users."
-        },
-        {
-          "header": "Workspace Symbols",
-          "content": "Search for symbols in your workspace (Ctrl+T). Use FQSEN query syntax for specific symbols."
-        },
-        {
-          "header": "Document Symbols",
-          "content": "Lists all symbols in the current document (Ctrl+Shift+O)."
-        },
-        {
-          "header": "Go to Definition",
-          "content": "Navigate to the definition of a symbol (F12)."
-        },
-        {
-          "header": "Hover",
-          "content": "Show type information and documentation for a symbol when hovering."
-        },
-        {
-          "header": "Highlight",
-          "content": "Highlight all references to the symbol at the cursor position in the current file."
-        },
-        {
-          "header": "Code Completion",
-          "content": "Context appropriate completion suggestions ($ > : \\ / ' \" * . <)."
-        },
-        {
-          "header": "Signature Help",
-          "content": "Information about function/method signatures during a call (Ctrl+Shift+Space)."
-        },
-        {
-          "header": "Find All References",
-          "content": "List all references to a symbol in the current file or workspace (Shift+F12)."
-        },
-        {
-          "header": "Formatting",
-          "content": "Format a whole document or selected range. Complies with PHP-FIG coding standards."
-        },
-        {
-          "header": "Diagnostics",
-          "content": "Syntax errors, type errors, and language constraints."
-        },
-        {
-          "header": "Inline Values",
-          "content": "Variable ranges and text for debuggers to display inline values."
-        },
-        {
-          "header": "Embedded Languages",
-          "content": "Language intelligence for HTML, CSS, and JavaScript within PHP files."
-        },
-        {
-          "header": "Premium Features",
-          "content": "Requires a licence."
-        },
-        {
-          "header": "Rename",
-          "content": "Refactor a symbol and all its semantic references (F2)."
-        },
-        {
-          "header": "Code Folding",
-          "content": "Fold and unfold regions of code based on the syntax tree."
-        },
-        {
-          "header": "Find All Implementations",
-          "content": "List all implementations of a method or interface (Ctrl+F12)."
-        },
-        {
-          "header": "Go to Type Definition",
-          "content": "Navigate to the type definition of a variable rather than its declaration."
-        },
-        {
-          "header": "Go to Declaration",
-          "content": "Navigate to the initial declaration of a symbol in a type hierarchy."
-        },
-        {
-          "header": "Smart Select",
-          "content": "Expand and shrink selections based on the syntax tree (Shift+Alt+→/←)."
-        },
-        {
-          "header": "Type Hierarchy",
-          "content": "Understand the inheritance structure of a class, interface, trait, or enum."
-        },
-        {
-          "header": "Code Lens",
-          "content": "Reference counts and navigation links above declarations (Implementations, Overrides, Parent, Usages)."
-        },
-        {
-          "header": "Inlay Hints",
-          "content": "Inferred parameter names and return types inline with the code."
-        },
-        {
-          "header": "Document Links",
-          "content": "Clickable links for require/include statements and @see annotations."
-        },
-        {
-          "header": "Code Actions",
-          "content": "Quick-fix and refactoring options (Ctrl+.), such as Import Symbol, Add PHPDoc, and Implement All Abstract Methods."
-        },
-        {
-          "header": "Appendix",
-          "content": ""
-        },
-        {
-          "header": "Frameworks and Libraries",
-          "content": "Intelephense aims to support all PHP frameworks but does not implement specific solutions. Workarounds include type narrowing in code using `instanceof`, PHPDoc `@var` annotations, or using helper files for symbol overrides."
-        },
-        {
-          "header": "PHPDoc Instead of PHPStorm Metadata/Attributes",
-          "content": "It is recommended to use PHPDoc types for greater compatibility. Examples include using `@template` for return type mapping and array shapes (e.g., `array{red: RedService}`) for structured array documentation.\n\n---\nAll the best - https://markposition.wordpress.com"
-        }
-      ],
-      "metadata": {
-        "source": "local://intelephense_docs.md",
-        "ingestedAt": "2026-05-20T00:32:46.915Z"
-      }
-    },
-    {
       "title": "Per iniziare  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle",
       "sections": [
         {
@@ -3558,83 +3525,6 @@
       "metadata": {
         "source": "https://developers.google.com/ad-manager/api/start",
         "ingestedAt": "2026-05-19T02:35:45.413Z"
-      }
-    },
-    {
-      "title": "caio_role_docs.md",
-      "sections": [
-        {
-          "header": "Chief AI Officer (CAIO) Role Description",
-          "content": ""
-        },
-        {
-          "header": "Core Job Description",
-          "content": "A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an organization’s entire artificial intelligence strategy. The role bridges the gap between advanced technical execution and bottom-line business outcomes. A Chief AI Officer directs how a company develops, procures, and implements AI to boost productivity, enter new markets, and maintain a competitive edge."
-        },
-        {
-          "header": "Key Responsibilities",
-          "content": ""
-        },
-        {
-          "header": "Strategy & Vision",
-          "content": "Align AI initiatives with the company’s overall business goals."
-        },
-        {
-          "header": "Ethics & Governance",
-          "content": "Establish frameworks to ensure AI algorithms are free from bias, respect user privacy, and meet all legal and cybersecurity regulations."
-        },
-        {
-          "header": "Implementation & Tech Stacking",
-          "content": "Decide whether to build proprietary AI models or license third-party tools, managing relationships with external technology vendors."
-        },
-        {
-          "header": "Cross-Department Training",
-          "content": "Educate the board, executives, and general workforce on how to leverage AI safely and effectively."
-        },
-        {
-          "header": "Performance Tracking",
-          "content": "Measure the return on investment (ROI) and overall business impact of deployed AI projects."
-        },
-        {
-          "header": "Qualifications & Requirements",
-          "content": ""
-        },
-        {
-          "header": "Education",
-          "content": "A Master's or Ph.D. in Artificial Intelligence, Machine Learning, Computer Science, or a related quantitative field. An MBA is highly valued for the business-strategy aspect of the role. Because “AI Officer” is an executive title, it does not require a government-issued professional license (like a lawyer or doctor). However, companies typically look for advanced degrees or professional certifications in Data Science, Computer Science, or an MBA."
-        },
-        {
-          "header": "Experience",
-          "content": "8+ to 10+ years of progressive leadership experience in data science, AI development, or enterprise digital transformation."
-        },
-        {
-          "header": "Skillset",
-          "content": "A rare blend of technical fluency (understanding AI capabilities and limitations) and executive business acumen."
-        },
-        {
-          "header": "CAIO vs. Other C-Suite Tech Roles",
-          "content": ""
-        },
-        {
-          "header": "Chief Technology Officer (CTO)",
-          "content": "Focuses on the company’s broad IT infrastructure, software architecture, and system reliability."
-        },
-        {
-          "header": "Chief Data Officer (CDO)",
-          "content": "Manages data governance, architecture, and data pipelines to make sure data is clean and organized."
-        },
-        {
-          "header": "Chief AI Officer (CAIO)",
-          "content": "Uses the foundations managed by the CTO and CDO to specifically drive business value and transform how work gets done."
-        },
-        {
-          "header": "External Resources",
-          "content": "To explore real-world openings and licensure requirements, you can research available roles on platforms like LinkedIn Jobs or explore executive AI leadership certifications via Coursera."
-        }
-      ],
-      "metadata": {
-        "source": "local://caio_role_docs.md",
-        "ingestedAt": "2026-05-20T00:32:46.886Z"
       }
     }
   ]

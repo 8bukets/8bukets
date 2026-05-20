@@ -36,14 +36,20 @@ async function consolidate() {
     }
   }
 
-  // 3. Deduplicate sections by header
-  const seenHeaders = new Set<string>()
-  const uniqueSections = allSections.filter(s => {
-    if (seenHeaders.has(s.header)) return false
-    if (!s.content && !['Getting Started', 'Features', 'Installation'].includes(s.header)) return false
-    seenHeaders.add(s.header)
-    return true
-  })
+  // 3. Deduplicate sections by header, prioritizing content
+  const headerMap = new Map<string, { header: string; content: string }>()
+
+  for (const section of allSections) {
+    const existing = headerMap.get(section.header)
+    if (!existing || (section.content.length > existing.content.length)) {
+      // Only keep sections with content, unless they are high-level structural headers
+      if (section.content || ['Getting Started', 'Features', 'Installation'].includes(section.header)) {
+        headerMap.set(section.header, section)
+      }
+    }
+  }
+
+  const uniqueSections = Array.from(headerMap.values())
 
   const consolidatedKnowledge: Knowledge = {
     title: 'Intelephense Documentation',
