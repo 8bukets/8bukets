@@ -116,12 +116,9 @@ class OracleAIScraper:
                 logger.error("Failed to fetch page.")
 
     def save_data(self, data: dict):
-        # Save JSON using legacy schema {"url": {...data...}}
-        legacy_data = {self.url: data}
-
         try:
             with open(self.output_json, 'w', encoding='utf-8') as f:
-                json.dump(legacy_data, f, indent=4, ensure_ascii=False)
+                json.dump(data, f, indent=4, ensure_ascii=False)
             logger.info(f"Saved data to {self.output_json}")
         except IOError as e:
             logger.error(f"Failed to save JSON: {e}")
