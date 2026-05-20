@@ -282,7 +282,7 @@
       ],
       "metadata": {
         "source": "https://intelephense.com/docs",
-        "ingestedAt": "2026-05-20T01:41:14.253Z"
+        "ingestedAt": "2026-05-20T06:55:50.085Z"
       }
     },
     {
@@ -1795,7 +1795,7 @@
       ],
       "metadata": {
         "source": "https://software-online-review.com",
-        "ingestedAt": "2026-05-20T00:32:46.838Z"
+        "ingestedAt": "2026-05-20T06:53:48.599Z"
       }
     },
     {
@@ -3662,6 +3662,83 @@
       "metadata": {
         "source": "https://developers.google.com/ad-manager/api/start",
         "ingestedAt": "2026-05-20T05:37:23.857Z"
+      }
+    },
+    {
+      "title": "Chief AI Officer (CAIO) Role",
+      "sections": [
+        {
+          "header": "Chief AI Officer (CAIO) Role Description",
+          "content": ""
+        },
+        {
+          "header": "Core Job Description",
+          "content": "A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an organization’s entire artificial intelligence strategy. The role bridges the gap between advanced technical execution and bottom-line business outcomes. A Chief AI Officer directs how a company develops, procures, and implements AI to boost productivity, enter new markets, and maintain a competitive edge."
+        },
+        {
+          "header": "Key Responsibilities",
+          "content": ""
+        },
+        {
+          "header": "Strategy & Vision",
+          "content": "Align AI initiatives with the company’s overall business goals."
+        },
+        {
+          "header": "Ethics & Governance",
+          "content": "Establish frameworks to ensure AI algorithms are free from bias, respect user privacy, and meet all legal and cybersecurity regulations."
+        },
+        {
+          "header": "Implementation & Tech Stacking",
+          "content": "Decide whether to build proprietary AI models or license third-party tools, managing relationships with external technology vendors."
+        },
+        {
+          "header": "Cross-Department Training",
+          "content": "Educate the board, executives, and general workforce on how to leverage AI safely and effectively."
+        },
+        {
+          "header": "Performance Tracking",
+          "content": "Measure the return on investment (ROI) and overall business impact of deployed AI projects."
+        },
+        {
+          "header": "Qualifications & Requirements",
+          "content": ""
+        },
+        {
+          "header": "Education",
+          "content": "A Master's or Ph.D. in Artificial Intelligence, Machine Learning, Computer Science, or a related quantitative field. An MBA is highly valued for the business-strategy aspect of the role. Because “AI Officer” is an executive title, it does not require a government-issued professional license (like a lawyer or doctor). However, companies typically look for advanced degrees or professional certifications in Data Science, Computer Science, or an MBA."
+        },
+        {
+          "header": "Experience",
+          "content": "8+ to 10+ years of progressive leadership experience in data science, AI development, or enterprise digital transformation."
+        },
+        {
+          "header": "Skillset",
+          "content": "A rare blend of technical fluency (understanding AI capabilities and limitations) and executive business acumen."
+        },
+        {
+          "header": "CAIO vs. Other C-Suite Tech Roles",
+          "content": ""
+        },
+        {
+          "header": "Chief Technology Officer (CTO)",
+          "content": "Focuses on the company’s broad IT infrastructure, software architecture, and system reliability."
+        },
+        {
+          "header": "Chief Data Officer (CDO)",
+          "content": "Manages data governance, architecture, and data pipelines to make sure data is clean and organized."
+        },
+        {
+          "header": "Chief AI Officer (CAIO)",
+          "content": "Uses the foundations managed by the CTO and CDO to specifically drive business value and transform how work gets done."
+        },
+        {
+          "header": "External Resources",
+          "content": "To explore real-world openings and licensure requirements, you can research available roles on platforms like LinkedIn Jobs or explore executive AI leadership certifications via Coursera."
+        }
+      ],
+      "metadata": {
+        "source": "local://caio_role_docs.md",
+        "ingestedAt": "2026-05-20T06:53:48.666Z"
       }
     }
   ]
