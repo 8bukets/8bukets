@@ -193,17 +193,73 @@ auth:
 ---
 ```
 
+#### How token selection works
+The provider automatically selects the correct token type based on the agent’s host:
+
+| Host pattern | Token type | Use case |
+| :--- | :--- | :--- |
+| `*.googleapis.com` | Access token | Google APIs (Agent Engine, Vertex AI, etc.) |
+| `*.run.app` | Identity token | Cloud Run services |
+
+Access tokens authorize API calls to Google services. They are scoped (default: `cloud-platform`) and fetched via `GoogleAuth.getClient()`.
+Identity tokens prove the caller’s identity to a service that validates the token’s audience. The audience is set to the target host. These are fetched via `GoogleAuth.getIdTokenClient()`.
+Both token types are cached and automatically refreshed before expiry.
+
+#### Setup
+`google-credentials` relies on ADC, which means your environment must have credentials configured. Common setups:
+
+*   **Local development:** Run `gcloud auth application-default login` to authenticate with your Google account.
+*   **CI / Cloud environments:** Use a service account. Set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to the path of your service account key file, or use workload identity on GKE / Cloud Run.
+
+#### Allowed hosts
+For security, `google-credentials` only sends tokens to known Google-owned hosts:
+
+*   `*.googleapis.com`
+*   `*.run.app`
+
+Requests to any other host will be rejected with an error. If your agent is hosted on a different domain, use one of the other auth types (`apiKey`, `http`, or `oauth`).
+
+#### Examples
+The following examples demonstrate how to configure Google Application Default Credentials.
+
+**Cloud Run agent:**
+
+```yaml
+---
+kind: remote
+name: cloud-run-agent
+agent_card_url: https://my-agent-xyz.run.app/.well-known/agent.json
+auth:
+  type: google-credentials
+---
+```
+
+**Google API with custom scopes:**
+
+```yaml
+---
+kind: remote
+name: vertex-agent
+agent_card_url: https://us-central1-aiplatform.googleapis.com/.well-known/agent.json
+auth:
+  type: google-credentials
+  scopes:
+    - https://www.googleapis.com/auth/cloud-platform
+    - https://www.googleapis.com/auth/compute
+---
+```
+
 #### OAuth 2.0 (`oauth`)
-Performs an interactive OAuth 2.0 Authorization Code flow with PKCE.
+Performs an interactive OAuth 2.0 Authorization Code flow with PKCE. On first use, Gemini CLI opens your browser for sign-in and persists the resulting tokens for subsequent requests.
 
 | Field | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
 | `type` | string | **Yes** | Must be `oauth`. |
 | `client_id` | string | **Yes*** | OAuth client ID. Required for interactive auth. |
-| `client_secret` | string | No* | OAuth client secret. |
-| `scopes` | string[] | No | Requested scopes. |
-| `authorization_url` | string | No | Authorization endpoint. |
-| `token_url` | string | No | Token endpoint. |
+| `client_secret` | string | No* | OAuth client secret. Required by most authorization servers (confidential clients). Can be omitted for public clients that don't require a secret. |
+| `scopes` | string[] | No | Requested scopes. Can also be discovered from the agent card. |
+| `authorization_url` | string | No | Authorization endpoint. Discovered from the agent card if omitted. |
+| `token_url` | string | No | Token endpoint. Discovered from the agent card if omitted. |
 
 ```yaml
 ---
