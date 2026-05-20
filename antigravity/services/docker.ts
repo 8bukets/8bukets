@@ -61,7 +61,7 @@ export async function checkDockerHealth() {
   if (!isHealthy && !isCloud) {
     try {
       // Use async exec to prevent blocking the event loop
-      execAsync('docker-compose up -d').catch(e => {
+      execAsync('docker compose up -d').catch(e => {
         console.warn('⚠️ [Docker] Async recovery failed.', e)
       })
       isRecovering = true
