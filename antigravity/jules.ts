@@ -578,18 +578,11 @@ export class Jules {
       await syncCollaborationState(branches)
       await generateConsolidatedReport(branches)
 
-      // 3. Ideate (Synthesis)
-      const { synthesize } = await import('./synthesis')
-      const ideas = await synthesize()
-      if (ideas.length > 0) {
-        this.recordTask(`Synthesis: Generated ${ideas.length} architectural proposals.`)
-
-        // Phase 10: Singularity Orchestration via Work Orders
-        for (const idea of ideas) {
-          if (idea.complexity === 'Low' || idea.complexity === 'Medium') {
-            workOrderService.createOrder('BOOTSTRAP_SERVICE', `Bootstrap ${idea.feature}`, idea)
-          }
-        }
+      // 3. Ideate (Creation Cycle via CreationEngine)
+      const { creationEngine } = await import('./services/creation_engine')
+      const creationResult = await creationEngine.runCycle()
+      if (creationResult.features.length > 0) {
+        this.recordTask(`Creation Engine: Successfully processed ${creationResult.features.length} new features.`)
       }
 
       // Phase 12: Super-Intelligence Optimization via Work Orders
@@ -599,11 +592,11 @@ export class Jules {
       if (refactors.length > 0) {
         this.recordTask(`Super-Intelligence: Generated ${refactors.length} predictive refactors.`)
         // Group all proposals into a single optimization order for efficiency
-        workOrderService.createOrder('OPTIMIZE_SYSTEM', 'Apply predictive refactors', { proposals: refactors })
-      }
+        await workOrderService.createOrder('OPTIMIZE_SYSTEM', 'Apply predictive refactors', { proposals: refactors })
 
-      // 4. Execute Work Orders
-      await workOrderService.executePendingOrders()
+        // Final execution pass for any remaining optimizations
+        await workOrderService.executePendingOrders()
+      }
 
       // ReAct Protocol Integration (arXiv:2210.03629)
       const { reactService } = await import('./services/react')

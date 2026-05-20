@@ -94,6 +94,7 @@ jobs:
   docker:
     name: Build and Push
     needs: test
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     strategy:
       matrix:
