@@ -81,6 +81,17 @@ export async function checkDockerHealth() {
         }
       }
     } catch (e) {
+      // Phase 12: Harden simulation fallback if recovery fails in cloud simulation mode
+      if (process.env.MACBOOK_CLOUD_SIMULATION === 'true') {
+        console.log('🧪 [Docker] Recovery restricted. Engaging cloud-native simulated state.')
+        return {
+          status: 'simulated',
+          containerCount: 5,
+          simulated: true,
+          timestamp: new Date().toISOString()
+        }
+      }
+
       console.warn('⚠️ [Docker] Autonomous recovery failed. System degraded.', e)
       return {
         status: 'degraded',

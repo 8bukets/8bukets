@@ -176,14 +176,30 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     try {
       const content = await fs.promises.readFile(knowledgePath, 'utf8')
       const systemKnowledge = JSON.parse(content)
-      const knowledge = systemKnowledge.typescript_sections || []
-      knowledge.forEach((k: any) => {
-        map.resourceInventory.push({
-          type: 'Knowledge',
-          name: k.title,
-          status: 'Ingested',
-          source: k.metadata.source
-        })
+
+      // Phase 12: Support both nested 'typescript_sections' and unified flat key structure
+      const allKnowledge: any[] = []
+
+      // Explicitly handled legacy/standard keys
+      if (Array.isArray(systemKnowledge.sections)) allKnowledge.push(...systemKnowledge.sections)
+      if (Array.isArray(systemKnowledge.typescript_sections)) allKnowledge.push(...systemKnowledge.typescript_sections)
+
+      // Dynamic discovery for flat hierarchical structure (market_data, ai_agents, etc.)
+      Object.entries(systemKnowledge).forEach(([key, value]) => {
+        if (key !== 'metadata' && key !== 'sections' && key !== 'typescript_sections' && Array.isArray(value)) {
+          allKnowledge.push(...value)
+        }
+      })
+
+      allKnowledge.forEach((k: any) => {
+        if (k && k.title) {
+          map.resourceInventory.push({
+            type: 'Knowledge',
+            name: k.title,
+            status: 'Ingested',
+            source: k.metadata?.source
+          })
+        }
       })
     } catch (e) {
       console.warn('⚠️ [Collaboration] Failed to parse system_knowledge.json for relationship map.')
@@ -280,7 +296,8 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
 
   const { jules } = await import('../jules')
   const { workOrderService } = await import('./work_order')
-  const branches = branchIntelligence || await jules.scanAllBranches()
+  // Phase 12: Trigger deep branch scan (force: true) to ensure all 1,800+ branches are analyzed
+  const branches = branchIntelligence || await jules.scanAllBranches(true)
   const workOrders = workOrderService.getPendingOrders() // Simplified for now
   const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
   await mergeBranchInsights(branches)
