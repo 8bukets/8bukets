@@ -47,6 +47,16 @@ pipeline {
                 sh 'npx tsx antigravity/workflows/performance_monitoring_workflow.ts'
             }
         }
+        stage('Run Autonomous Cognitive Security Service') {
+            steps {
+                sh 'npx tsx antigravity/workflows/cognitive_security_workflow.ts'
+            }
+        }
+        stage('Run Autonomous Visual Neural Relay') {
+            steps {
+                sh 'npx tsx antigravity/workflows/visual_neural_relay_workflow.ts'
+            }
+        }
         stage('Creative Workflow') {
             parallel {
                 stage('Market Analysis') {
