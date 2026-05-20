@@ -52,18 +52,17 @@ pipeline {
             parallel {
                 stage('Analyze Market') {
                     steps {
-                        sh 'python3 scraper.py'
+                        sh 'npm run ingest:sor'
                     }
                 }
                 stage('Generate Assets') {
                     steps {
                         sh 'npm run daily'
-                        sh 'python3 analytics.py'
                     }
                 }
                 stage('Autonomous Evolution') {
                     steps {
-                        sh 'python3 run_system.py --skip-scrape'
+                        sh 'npx tsx scripts/execute_creation_cycle.ts'
                     }
                 }
             }
