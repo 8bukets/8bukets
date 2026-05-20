@@ -237,6 +237,7 @@ export class Jules {
     console.log(`🌟 [Jules-${this.role}] Beginning Autonomous Work Cycle...`)
     const { explore } = await import('./explorer')
     const { workOrderService } = await import('./services/work_order')
+    const { creationEngine } = await import('./services/creation_engine')
 
     await explore()
     await this.observeKnowledge()
@@ -259,17 +260,7 @@ export class Jules {
     const ideas = await synthesize()
     if (ideas.length > 0) {
       this.recordTask(`Synthesis: Generated ${ideas.length} proposals.`)
-      for (const idea of ideas) {
-        if (idea.complexity === 'Low' || idea.complexity === 'Medium' || idea.complexity === 'High') {
-          console.log(`🔗 [Jules] Chaining creation cycle for: ${idea.feature}`)
-          const bootstrapOrder = workOrderService.createOrder('BOOTSTRAP_SERVICE', `Bootstrap ${idea.feature}`, idea)
-          const smokeTestOrder = workOrderService.createOrder('SMOKE_TEST', `Verify ${idea.feature}`, {
-            serviceName: idea.feature.toLowerCase().replace(/\s+/g, '_').replace(/_service$/, ''),
-            feature: idea.feature
-          }, [bootstrapOrder.id])
-          workOrderService.createOrder('DEPLOYMENT', `Deploy ${idea.feature}`, idea, [smokeTestOrder.id])
-        }
-      }
+      await creationEngine.processIdeas(ideas)
     }
 
     // Phase 12: Super-Intelligence Optimization

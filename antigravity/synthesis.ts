@@ -74,6 +74,24 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
+  // Gap Analysis 7: Feedback Analysis
+  if (!files.some(f => f.includes('feedback_analysis'))) {
+    ideas.push({
+      feature: 'Feedback Analysis Service',
+      rationale: 'Autonomously parses system logs for error patterns and suggests proactive fixes.',
+      complexity: 'Medium'
+    })
+  }
+
+  // Gap Analysis 8: Performance Monitoring
+  if (!files.some(f => f.includes('performance_monitoring'))) {
+    ideas.push({
+      feature: 'Performance Monitoring Service',
+      rationale: 'Tracks system load averages and memory RSS metrics to optimize neural node distribution.',
+      complexity: 'High'
+    })
+  }
+
   // Force an idea for demonstration if none exist
   if (ideas.length === 0) {
     ideas.push({
