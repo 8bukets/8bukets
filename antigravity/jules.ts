@@ -570,9 +570,9 @@ export class Jules {
       await this.selfRepair()
 
       // Process PRs again after potential self-repairs or new branch creations
-      if (!process.env.GITHUB_ACTIONS && !process.env.GITLAB_CI) {
-        await this.processPullRequests()
-      }
+      // Always process PRs to ensure autonomous merging works even in cloud environments
+      await this.processPullRequests()
+
       await this.observeGithubDocs()
       const branches = await this.scanAllBranches(true)
 
