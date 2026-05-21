@@ -7,7 +7,7 @@ import { gitKrakenMetadataService } from './services/gitkraken'
  * JULES: THE COGNITIVE MULTI-AGENT ORCHESTRATOR
  */
 
-export type AgentRole = 'Coder' | 'Reviewer' | 'Ops' | 'General'
+export type AgentRole = 'Coder' | 'Reviewer' | 'Ops' | 'Chief AI Officer' | 'General'
 
 interface JulesMemory {
   lastOptimization: string
