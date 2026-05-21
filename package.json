@@ -13,6 +13,7 @@
     "connect": "tsx scripts/connect_and_collaborate.ts",
     "daily": "tsx scripts/run_daily.ts",
     "ingest:sor": "tsx scripts/ingest_software_online_review.ts",
+    "ingest:forbes": "tsx scripts/ingest_forbes.ts",
     "sync-all": "tsx scripts/sync_all_branches.ts",
     "daily-tasks": "gemini @daily-tasks",
     "ignite": "npm run daily -- --continuous",
