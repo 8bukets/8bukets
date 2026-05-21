@@ -136,21 +136,6 @@ export class ReActService {
       }
     }
 
-    if (goal.toLowerCase().includes('deploy react agents')) {
-      if (stepIndex === 1 && availableTools.includes('verifyDeployLogic')) {
-        return {
-          thought: `I need to verify the deployment logic for React agents.`,
-          action: 'verifyDeployLogic'
-        }
-      }
-      if (stepIndex === 2 && availableTools.includes('improveWorkflowRun')) {
-        return {
-          thought: `Logic verified. Next, I should improve the workflow run for deployment efficiency.`,
-          action: 'improveWorkflowRun'
-        }
-      }
-    }
-
     return {
       thought: `System state appears nominal or I have completed my analysis. Finalizing the task "${goal}".`,
       action: 'finish'

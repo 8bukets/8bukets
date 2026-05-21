@@ -4,15 +4,15 @@ import * as cheerio from 'cheerio';
 
 const URLS = [
     "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU",
-    "https://business.google.com/uk/ad-tools/bidding/?hl=en",
-    "https://business.google.com/uk/resources/?hl=en",
-    "https://developers.google.com/ad-manager?hl=en",
-    "https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en",
-    "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en",
-    "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en",
-    "https://developers.google.com/ad-manager/api/start?hl=en",
-    "https://admanager.google.com/home/resources/?hl=en",
-    "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en"
+    "https://business.google.com/uk/ad-tools/bidding/",
+    "https://business.google.com/uk/resources/",
+    "https://developers.google.com/ad-manager",
+    "https://developers.google.com/ad-manager/dynamic-ad-insertion",
+    "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
+    "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
+    "https://developers.google.com/ad-manager/api/start",
+    "https://admanager.google.com/home/resources/",
+    "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview"
 ];
 
 interface Section {
@@ -124,6 +124,19 @@ async function scrapeGoogleAdsDocs() {
     const jsonPath = "google_ads_docs.json";
     fs.writeFileSync(jsonPath, JSON.stringify(data, null, 4), 'utf-8');
     console.log(`Saved Google Ads docs JSON to ${jsonPath}`);
+
+    let signatureValue = 'All the best - https://markposition.wordpress.com';
+    try {
+        const configPath = path.join(process.cwd(), 'config/evolution_params.json');
+        if (fs.existsSync(configPath)) {
+            const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+            if (config.mandatory_signature) {
+                signatureValue = config.mandatory_signature;
+            }
+        }
+    } catch (e) {}
+
+    mdContent += `---\n${signatureValue}\n`;
 
     const mdPath = "google_ads_docs.md";
     fs.writeFileSync(mdPath, mdContent, 'utf-8');

@@ -63,9 +63,9 @@
             }
         ]
     },
-    "https://business.google.com/uk/ad-tools/bidding/?hl=en": {
+    "https://business.google.com/uk/ad-tools/bidding/": {
         "title": "Deliver better results with automated bidding",
-        "url": "https://business.google.com/uk/ad-tools/bidding/?hl=en",
+        "url": "https://business.google.com/uk/ad-tools/bidding/",
         "key_links": [
             "https://ads.google.com/signup?subid=uk-en-awhp-g-aw-{device}-m-bid-hero-bgc!o2",
             "https://business.google.com/uk/support/ads-expert/",
@@ -225,9 +225,9 @@
             }
         ]
     },
-    "https://business.google.com/uk/resources/?hl=en": {
+    "https://business.google.com/uk/resources/": {
         "title": "Find answers andinspiration",
-        "url": "https://business.google.com/uk/resources/?hl=en",
+        "url": "https://business.google.com/uk/resources/",
         "key_links": [
             "https://business.google.com/uk/resources/articles/seo-vs-ppc/",
             "https://business.google.com/uk/resources/articles/abcds-of-effective-video-ads/",
@@ -847,9 +847,9 @@
             }
         ]
     },
-    "https://developers.google.com/ad-manager?hl=en": {
-        "title": "https://developers.google.com/ad-manager?hl=en",
-        "url": "https://developers.google.com/ad-manager?hl=en",
+    "https://developers.google.com/ad-manager": {
+        "title": "https://developers.google.com/ad-manager",
+        "url": "https://developers.google.com/ad-manager",
         "key_links": [
             "https://developers.google.com/",
             "https://developers.google.com/products",
@@ -866,7 +866,7 @@
         ],
         "sections": [
             {
-                "heading": "https://developers.google.com/ad-manager?hl=en",
+                "heading": "https://developers.google.com/ad-manager",
                 "content": [
                     "- Home",
                     "- Products",
@@ -895,9 +895,9 @@
             }
         ]
     },
-    "https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en": {
-        "title": "https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en",
-        "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en",
+    "https://developers.google.com/ad-manager/dynamic-ad-insertion": {
+        "title": "https://developers.google.com/ad-manager/dynamic-ad-insertion",
+        "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion",
         "key_links": [
             "https://developers.google.com/",
             "https://developers.google.com/products",
@@ -914,7 +914,7 @@
         ],
         "sections": [
             {
-                "heading": "https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en",
+                "heading": "https://developers.google.com/ad-manager/dynamic-ad-insertion",
                 "content": [
                     "- Home",
                     "- Products",
@@ -948,62 +948,71 @@
             }
         ]
     },
-    "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en": {
-        "title": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en",
-        "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en",
+    "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service": {
+        "title": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
+        "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
         "key_links": [
-            "https://developers.google.com/",
-            "https://developers.google.com/products",
-            "https://developers.google.com/ad-manager/dynamic-ad-insertion",
-            "https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service",
-            "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service"
+            "https://developers.google.com/interactive-media-ads?hl=es-419",
+            "https://developers.google.com/?hl=es-419",
+            "https://developers.google.com/products?hl=es-419",
+            "https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=es-419",
+            "https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service?hl=es-419",
+            "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=es-419",
+            "https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5?service=full&hl=es-419",
+            "https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android?service=full&hl=es-419",
+            "https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios?service=full&hl=es-419",
+            "https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos?service=full&hl=es-419",
+            "https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast?service=full&hl=es-419",
+            "https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku?service=full&hl=es-419",
+            "https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service/video-player-live?hl=es-419",
+            "https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service/video-player-vod?hl=es-419"
         ],
         "sections": [
             {
-                "heading": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en",
+                "heading": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
                 "content": [
-                    "- Home",
-                    "- Products",
+                    "- Página principal",
+                    "- Productos",
                     "- Dynamic Ad Insertion",
                     "- DAI Full Service API",
-                    "- APIs"
+                    "- API"
                 ]
             },
             {
-                "heading": "Full service DAI",
+                "heading": "DAI de servicio completo",
                 "content": []
             },
             {
-                "heading": "With the IMA DAI SDK",
+                "heading": "Con el SDK de IMA de DAI",
                 "content": [
-                    "- The web page or app loads the IMA DAI SDK through: an embedded script tag for HTML5 a native app for Android, Google Cast, iOS, tvOS, or Roku",
-                    "- an embedded script tag for HTML5",
-                    "- a native app for Android, Google Cast, iOS, tvOS, or Roku",
-                    "- The SDK requests either a VOD stream or live stream from Google Ad Manager 360.",
-                    "- Ad Manager 360 responds with the video stream that includes inserted ad breaks.",
-                    "- The SDK parses the response, determines the correct media type based on environment, and delivers the video stream (and companion ads if needed) to the web page or app.",
-                    "- The video player negotiates the playback details with the SDK and plays the content.",
-                    "- The video player listens for instream metadata and passes it to the SDK for processing.",
-                    "- The SDK fires impression pings and tracking events as needed.",
-                    "For detailed instructions on how to implement a client video player using the IMA DAI SDK, check out our SDK guides:"
+                    "- La página web o la aplicación carga el SDK de IMA de DAI mediante lo siguiente: una etiqueta de secuencia de comandos incorporada para HTML5 una aplicación nativa para Android, Google Cast, iOS, tvOS o Roku",
+                    "- una etiqueta de secuencia de comandos incorporada para HTML5",
+                    "- una aplicación nativa para Android, Google Cast, iOS, tvOS o Roku",
+                    "- El SDK solicita una transmisión de VOD o en vivo desde Google Ad Manager 360.",
+                    "- Ad Manager 360 responde con la transmisión de video por Internet que incluye las pausas publicitarias insertadas.",
+                    "- El SDK analiza la respuesta, determina el tipo de contenido multimedia correcto según el entorno y entrega la transmisión de video por Internet (y anuncios complementarios, si es necesario) a la página web o la app.",
+                    "- El reproductor de video negocia los detalles de reproducción con el SDK y reproduce el contenido.",
+                    "- El reproductor de video detecta los metadatos in-stream y los pasa al SDK para su procesamiento.",
+                    "- El SDK activa pings de impresiones y eventos de seguimiento según sea necesario.",
+                    "Si deseas obtener instrucciones detalladas para implementar un reproductor de video cliente con el SDK de IMA de DAI, consulta nuestras guías sobre el SDK:"
                 ]
             },
             {
-                "heading": "With the DAI API",
+                "heading": "Con la API de DAI",
                 "content": [
-                    "- The client's player app requests either a VOD stream or live stream from Google Ad Manager 360.",
-                    "- Ad Manager 360 responds with the video stream that includes inserted ad breaks.",
-                    "- The client's player app begins playback of the stream, and either requests ad metadata once (for VOD streams) OR begins regularly polling for ad metadata (for live streams).",
-                    "- The client's player app listens for instream metadata, parses it, and compares it to the values in the ad metadata to identify ad events.",
-                    "- The client's video player app fires ad impression pings and tracking events as needed.",
-                    "For detailed instructions on how to implement a client video player, using the DAI REST API, check out our API guides:"
+                    "- La app de reproductor del cliente solicita una transmisión de VOD o una transmisión en vivo de Google Ad Manager 360.",
+                    "- Ad Manager 360 responde con la transmisión de video que incluye pausas publicitarias insertadas.",
+                    "- La app del reproductor del cliente comienza a reproducir la transmisión y solicita los metadatos del anuncio una vez (para transmisiones de VOD) O comienza a sondear los metadatos del anuncio con regularidad (para transmisiones en vivo).",
+                    "- La app del reproductor del cliente detecta los metadatos in-stream, los analiza y los compara con los valores de los metadatos del anuncio para identificar los eventos de anuncios.",
+                    "- La app del reproductor de video del cliente activa pings de impresiones de anuncios y eventos de seguimiento según sea necesario.",
+                    "Para obtener instrucciones detalladas sobre cómo implementar un reproductor de video para clientes, con la API de REST de DAI, consulta nuestras guías de API:"
                 ]
             }
         ]
     },
-    "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en": {
-        "title": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en",
-        "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en",
+    "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving": {
+        "title": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
+        "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
         "key_links": [
             "https://developers.google.com/",
             "https://developers.google.com/products",
@@ -1021,7 +1030,7 @@
         ],
         "sections": [
             {
-                "heading": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en",
+                "heading": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
                 "content": [
                     "- Home",
                     "- Products",
@@ -1073,9 +1082,9 @@
             }
         ]
     },
-    "https://developers.google.com/ad-manager/api/start?hl=en": {
+    "https://developers.google.com/ad-manager/api/start": {
         "title": "Get started\n\n    \n    \n      \n    \n\n    \n      \n      Stay organized with collections\n    \n    \n      \n      Save and categorize content based on your preferences.",
-        "url": "https://developers.google.com/ad-manager/api/start?hl=en",
+        "url": "https://developers.google.com/ad-manager/api/start",
         "key_links": [
             "https://developers.google.com/",
             "https://developers.google.com/products",
@@ -1103,19 +1112,7 @@
             },
             {
                 "heading": "Get started Stay organized with collections Save and categorize content based on your preferences.",
-                "content": []
-            },
-            {
-                "heading": "Page Summary",
                 "content": [
-                    "- The Google Ad Manager SOAP API allows building applications to manage inventory, create orders, and pull reports.",
-                    "The Google Ad Manager SOAP API allows building applications to manage inventory, create orders, and pull reports.",
-                    "- Client libraries are available for Java, .NET, Python, PHP, and Ruby to help get started with the API.",
-                    "Client libraries are available for Java, .NET, Python, PHP, and Ruby to help get started with the API.",
-                    "- To make your first API request, you need to get access to an Ad Manager network, create authentication credentials using OAuth 2.0, and configure API access in your network settings.",
-                    "To make your first API request, you need to get access to an Ad Manager network, create authentication credentials using OAuth 2.0, and configure API access in your network settings.",
-                    "- After setting up your Ad Manager network and authentication, download and configure one of the provided client libraries to write code and make requests to the API.",
-                    "After setting up your Ad Manager network and authentication, download and configure one of the provided client libraries to write code and make requests to the API.",
                     "You can use the Google Ad Manager SOAP API to build apps that manage inventory, create orders, pull reports, and more.",
                     "To help you get started, we offer client libraries for Java, .NET, Python, PHP, and Ruby.",
                     "To make your first API request, follow these steps:"
@@ -1210,7 +1207,7 @@
                     "- Setup your App.config Copy src\\App.config to your project directory and add it to your project. If your application has its own App.config, then you can copy the following nodes into your App.config: configuration/AdManagerApi configuration/configSections/section[name=\"AdManagerApi\"] configuration/system.net",
                     "Copy src\\App.config to your project directory and add it to your project. If your application has its own App.config, then you can copy the following nodes into your App.config:",
                     "- configuration/AdManagerApi",
-                    "- configuration/configSections/section[name=\"AdManagerApi\"]",
+                    "- configuration/configSections/section[name=&quot;AdManagerApi&quot;]",
                     "- configuration/system.net",
                     "- Setup credentials Open App.config and edit the following keys: <add key=\"ApplicationName\" value=\"INSERT_YOUR_APPLICATION_NAME_HERE\" /> <add key=\"NetworkCode\" value=\"INSERT_YOUR_NETWORK_CODE_HERE\" /> <add key=\"OAuth2Mode\" value=\"SERVICE_ACCOUNT\" /> <add key=\"OAuth2SecretsJsonPath\" value=\"INSERT_OAUTH2_SECRETS_JSON_FILE_PATH_HERE\" />",
                     "Open App.config and edit the following keys:",
@@ -1241,9 +1238,9 @@
             }
         ]
     },
-    "https://admanager.google.com/home/resources/?hl=en": {
+    "https://admanager.google.com/home/resources/": {
         "title": "Learn more, do more.",
-        "url": "https://admanager.google.com/home/resources/?hl=en",
+        "url": "https://admanager.google.com/home/resources/",
         "key_links": [
             "https://signup.withgoogle.com/newsletter/googlepublisher/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en"
         ],
@@ -1634,9 +1631,9 @@
             }
         ]
     },
-    "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en": {
+    "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview": {
         "title": "ad-manager overview (0.50.0)\n\n    \n    \n      \n    \n\n    \n      \n      Stay organized with collections\n    \n    \n      \n      Save and categorize content based on your preferences.",
-        "url": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en",
+        "url": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview",
         "key_links": [
             "https://docs.cloud.google.com/",
             "https://docs.cloud.google.com/docs",

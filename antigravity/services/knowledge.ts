@@ -39,18 +39,25 @@ export async function observeKnowledge(url: string) {
         exists = false;
     }
 
+    const signature = '';
     if (exists) {
       let content = await fs.promises.readFile(knowledgePath, 'utf8')
 
       // Check if URL already exists
       if (!content.includes(`- **Target**: ${url}`)) {
+        // Remove old signature if present to append new entry then re-add signature
+        // Using regex to remove signature from the end of the file safely
         let newContent = content.trim();
+        if (newContent.endsWith(signatureValue)) {
+            newContent = newContent.slice(0, newContent.lastIndexOf('---')).trim();
+        }
 
         newContent += relationshipEntry;
+        newContent += signature;
         await fs.promises.writeFile(knowledgePath, newContent, 'utf8')
       }
     } else {
-      await fs.promises.writeFile(knowledgePath, `# Market Intelligence Matrix\n${relationshipEntry}`, 'utf8')
+      await fs.promises.writeFile(knowledgePath, `# Market Intelligence Matrix\n${relationshipEntry}${signature}`, 'utf8')
     }
 
     logAutonomousAction(`✅ [Knowledge Observer] Appended insights to KNOWLEDGE_MERGE.md.`, 'info')

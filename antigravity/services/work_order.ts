@@ -276,11 +276,6 @@ export class WorkOrderService {
         await jules.observeGithubDocs()
         return { status: 'ingested' }
 
-      case 'AUTONOMOUS_CREATION':
-        logAutonomousAction(`🚀 [WorkOrder] Executing Autonomous Creation Cycle for ${order.id}...`, 'info')
-        const { creationEngine } = await import('./creation_engine')
-        return await creationEngine.runCycle()
-
       default:
         logAutonomousAction(`ℹ️ [WorkOrder] Skipping unknown or external order type: ${order.type}`, 'info')
         return { skipped: true, reason: 'external_type' }

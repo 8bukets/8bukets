@@ -48,10 +48,10 @@ pipeline {
             }
         }
 
-        stage('Test autonomous_resource_optimizer') {
+        stage('Test ai_agents_orchestrator') {
             steps {
                 sh 'npm ci'
-                sh 'npx vitest run antigravity/services/autonomous_resource_optimizer.test.ts'
+                sh 'npx vitest run antigravity/services/ai_agents_orchestrator.test.ts'
             }
         }
 
@@ -60,7 +60,6 @@ pipeline {
                 stage('Analyze Market') {
                     steps {
                         sh 'npm run ingest:sor'
-                        sh 'npm run ingest:forbes'
                     }
                 }
                 stage('Generate Assets') {

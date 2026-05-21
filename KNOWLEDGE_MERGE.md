@@ -256,18 +256,94 @@ Everything else should be evaluated by whether it helps:
 - **Context**: Ingested comprehensive definition and architectural overview of AI agents from Google Cloud documentation to ground the project's agentic logic in industry standards.
 ---
 All the best - https://markposition.wordpress.com
-## Autonomous Observation
-- **Date**: 2026-05-21T11:37:07.784Z
-- **Target**: https://www.forbes.com/business/
-- **Title**: Business
-- **Context**: Ingested and observed external market or technical intelligence from https://www.forbes.com/business/.
-## Autonomous Observation
-- **Date**: 2026-05-21T11:37:08.054Z
-- **Target**: https://www.forbes.com/innovation/
-- **Title**: Innovation
-- **Context**: Ingested and observed external market or technical intelligence from https://www.forbes.com/innovation/.
-## Autonomous Observation
-- **Date**: 2026-05-21T11:37:08.329Z
-- **Target**: https://www.forbes.com/money/
-- **Title**: Money
-- **Context**: Ingested and observed external market or technical intelligence from https://www.forbes.com/money/.
+
+
+
+## AI Agenti - Pregled i Kategorizacija (Croatian / Hrvatski)
+
+AI agenti su napredni sustavi umjetne inteligencije koji ne samo da odgovaraju na upite, već samostalno planiraju, donose odluke i izvršavaju složene zadatke. Tržištem dominiraju specijalizirane platforme podijeljene prema poslovnim funkcijama. [1, 2]
+U nastavku je izdvojeno 10 najvažnijih AI agenata razvrstanih po ključnim kategorijama primjene. [1, 2]
+
+### Razvoj softvera i programiranje (Coding Agents)
+* **Devin AI:** Prvi potpuno autonomni AI softverski inženjer. Samostalno piše kod, pronalazi bugove, testira i postavlja gotove aplikacije u produkciju.
+* **Cursor:** Napredni AI agent integriran u kodni uređivač. Shvaća cijelu bazu koda u realnom vremenu te omogućuje programerima automatsko generiranje funkcija unutar projekta. [1, 3]
+
+### Korporativno poslovanje i CRM (Enterprise Agents)
+* **Salesforce Agentforce:** Moćan sustav za automatizaciju prodaje i korisničke podrške unutar Salesforce ekosustava. Autonomno rješava upite klijenata uz strogu zaštitu podataka.
+* **Microsoft Copilot Studio:** Alat koji tvrtkama omogućuje izradu prilagođenih agenata integriranih s Microsoft 365 podacima za automatizaciju internih poslovnih procesa. [1, 2, 4]
+
+### Automatizacija radnih procesa (Workflow Automation)
+* **Lindy AI:** Izvrstan osobni asistent za rukovoditelje i timove. Samostalno upravlja e-poštom, dogovara sastanke, provodi regrutaciju i rješava administrativne zadatke.
+* **CrewAI:** Vodeća platforma za programere koja omogućuje spajanje više različitih AI agenata u "timove" koji zajedno rješavaju složene projekte.
+* **Zapier Central:** Agent koji omogućuje korisnicima bez znanja programiranja stvaranje AI pomoćnika povezanih s tisućama svakodnevnih aplikacija. [2, 3]
+
+### Korisnička podrška i CX (Customer Experience)
+* **Sierra:** Autonomni agent za korisničku podršku u velikim tvrtkama. Rješava kompleksne probleme korisnika bez potrebe za ljudskom intervencijom, čak i u strogo reguliranim industrijama.
+* **Decagon:** AI agent specijaliziran za masovnu automatizaciju korisničke podrške na razini velikih poduzeća, drastično smanjujući opterećenje ljudskih timova. [1, 3]
+
+### Interno znanje i pretraga podataka
+* **Glean:** Inteligentni agent za pretraživanje korporativnih podataka. Povezuje sve interne izvore (Slack, Google Drive, Jira) i na temelju pretrage samostalno kreira izvještaje i sažetke. [1, 3]
+
+Zanima li vas određena kategorija (poput programiranja ili automatizacije ureda)? Mogu vam detaljnije pojasniti kako ih besplatno testirati ili integrirati u vaše svakodnevno poslovanje.
+
+**Izvori:**
+[1] https://chatarmin.com/en/blog/best-ai-agent-tools
+[2] https://www.designveloper.com/blog/best-ai-agent/
+[3] https://www.lindy.ai/blog/best-ai-agents
+[4] https://www.forbes.com/sites/bernardmarr/2025/12/29/10-ai-agent-platforms-every-business-leader-needs-to-know/
+
+---
+
+## Scraped English Market Data on AI Agents
+
+Based on recent market research from industry sources:
+
+### 1. The 10 Best AI Agent Tools in 2026 Compared (Chatarmin)
+1. Salesforce Agentforce (Enterprise CRM)
+2. Ruh AI (AI Workforce)
+3. Cursor (Coding)
+4. Devin (Coding)
+5. Windsurf (Coding)
+6. Sierra (CX & Support)
+7. Chatarmin (armincx) (CX & Support - WhatsApp)
+8. Glean (Enterprise Search)
+9. Harvey (Legal AI)
+10. UiPath (RPA + Agents)
+
+### 2. 10 Best AI Agents in 2026: Which Tools Are Actually Worth It? (Designveloper)
+1. Claude Code
+2. Devin
+3. Salesforce Agentforce
+4. Microsoft Copilot
+5. Gumloop
+6. StackAI
+7. ChatGPT Agent
+8. n8n
+9. Lindy AI
+10. Zapier
+
+### 3. The 12 Best AI Agents in 2026: Tested & Reviewed (Lindy)
+1. Lindy (No-code multi-agent workflows)
+2. IBM watsonx.ai (Enterprise-grade AI model development)
+3. CrewAI (Developers building AI agent teams)
+4. Sintra AI (All-in-one business automation)
+5. Decagon (Large-scale AI customer support automation)
+6. Harvey (Automating legal workflows)
+7. Devin AI (Autonomous software development)
+8. Glean (Enterprise-wide AI knowledge and workflow automation)
+9. Dialogflow (Building scalable conversational AI experiences)
+10. AgentGPT (Quick, browser-based AI agent creation)
+11. Kore.ai (Enterprise-grade conversational and generative AI)
+12. AutoGen (Building custom multi-agent AI systems)
+
+### 4. 10 AI Agent Platforms Every Business Leader Needs To Know (Forbes)
+1. Google Vertex And Astra
+2. Microsoft Copilot Studio
+3. Amazon Bedrock AgentCore
+4. OpenAI AgentKit
+5. Salesforce Agentforce
+6. UIPath Studio
+7. HubSpot Breeze Agent
+8. Zapier Agents
+9. QuickBooks AI Agents
+10. Replit Agent 3
