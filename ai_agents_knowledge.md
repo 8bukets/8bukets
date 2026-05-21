@@ -840,4 +840,3 @@ The Docker MCP Catalog.
 The Docker Hub mcp namespace (for MCP servers built by Docker).
 
 ---
-All the best - https://markposition.wordpress.com
