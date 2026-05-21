@@ -73,19 +73,6 @@ async function ingestRenderDocs() {
     fs.writeFileSync(jsonPath, JSON.stringify(finalData, null, 4), 'utf-8');
     console.log(`Saved Render docs JSON to ${jsonPath}`);
 
-    let signatureValue = 'All the best - https://markposition.wordpress.com';
-    try {
-        const configPath = path.join(process.cwd(), 'config/evolution_params.json');
-        if (fs.existsSync(configPath)) {
-            const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-            if (config.mandatory_signature) {
-                signatureValue = config.mandatory_signature;
-            }
-        }
-    } catch (e) {}
-
-    mdContent += `---\n${signatureValue}\n`;
-
     fs.writeFileSync(mdPath, mdContent, 'utf-8');
     console.log(`Saved Render docs Markdown to ${mdPath}`);
 }

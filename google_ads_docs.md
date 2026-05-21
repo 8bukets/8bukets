@@ -55,7 +55,7 @@ To set a target CPV bid, you enter the average price you want to pay for a view 
 
 ## Deliver better results with automated bidding
 
-Source: [https://business.google.com/uk/ad-tools/bidding/](https://business.google.com/uk/ad-tools/bidding/)
+Source: [https://business.google.com/uk/ad-tools/bidding/?hl=en](https://business.google.com/uk/ad-tools/bidding/?hl=en)
 
 # Deliver better results with automated bidding
 
@@ -154,7 +154,7 @@ The Experiments page in Google Ads can help you create, manage and optimise your
 
 ## Find answers andinspiration
 
-Source: [https://business.google.com/uk/resources/](https://business.google.com/uk/resources/)
+Source: [https://business.google.com/uk/resources/?hl=en](https://business.google.com/uk/resources/?hl=en)
 
 # Find answers andinspiration
 
@@ -544,9 +544,9 @@ Google Ads
 
 ---
 
-## https://developers.google.com/ad-manager
+## https://developers.google.com/ad-manager?hl=en
 
-Source: [https://developers.google.com/ad-manager](https://developers.google.com/ad-manager)
+Source: [https://developers.google.com/ad-manager?hl=en](https://developers.google.com/ad-manager?hl=en)
 
 - Home
 - Products
@@ -564,9 +564,9 @@ Source: [https://developers.google.com/ad-manager](https://developers.google.com
 
 ---
 
-## https://developers.google.com/ad-manager/dynamic-ad-insertion
+## https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en
 
-Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion)
+Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en](https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en)
 
 - Home
 - Products
@@ -592,45 +592,45 @@ To start using DAI, select one of the following integrations:
 
 ---
 
-## https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service
+## https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en
 
-Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service)
+Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en)
 
-- Página principal
-- Productos
+- Home
+- Products
 - Dynamic Ad Insertion
 - DAI Full Service API
-- API
-### DAI de servicio completo
+- APIs
+### Full service DAI
 
-### Con el SDK de IMA de DAI
+### With the IMA DAI SDK
 
-- La página web o la aplicación carga el SDK de IMA de DAI mediante lo siguiente: una etiqueta de secuencia de comandos incorporada para HTML5 una aplicación nativa para Android, Google Cast, iOS, tvOS o Roku
-- una etiqueta de secuencia de comandos incorporada para HTML5
-- una aplicación nativa para Android, Google Cast, iOS, tvOS o Roku
-- El SDK solicita una transmisión de VOD o en vivo desde Google Ad Manager 360.
-- Ad Manager 360 responde con la transmisión de video por Internet que incluye las pausas publicitarias insertadas.
-- El SDK analiza la respuesta, determina el tipo de contenido multimedia correcto según el entorno y entrega la transmisión de video por Internet (y anuncios complementarios, si es necesario) a la página web o la app.
-- El reproductor de video negocia los detalles de reproducción con el SDK y reproduce el contenido.
-- El reproductor de video detecta los metadatos in-stream y los pasa al SDK para su procesamiento.
-- El SDK activa pings de impresiones y eventos de seguimiento según sea necesario.
-Si deseas obtener instrucciones detalladas para implementar un reproductor de video cliente con el SDK de IMA de DAI, consulta nuestras guías sobre el SDK:
+- The web page or app loads the IMA DAI SDK through: an embedded script tag for HTML5 a native app for Android, Google Cast, iOS, tvOS, or Roku
+- an embedded script tag for HTML5
+- a native app for Android, Google Cast, iOS, tvOS, or Roku
+- The SDK requests either a VOD stream or live stream from Google Ad Manager 360.
+- Ad Manager 360 responds with the video stream that includes inserted ad breaks.
+- The SDK parses the response, determines the correct media type based on environment, and delivers the video stream (and companion ads if needed) to the web page or app.
+- The video player negotiates the playback details with the SDK and plays the content.
+- The video player listens for instream metadata and passes it to the SDK for processing.
+- The SDK fires impression pings and tracking events as needed.
+For detailed instructions on how to implement a client video player using the IMA DAI SDK, check out our SDK guides:
 
-### Con la API de DAI
+### With the DAI API
 
-- La app de reproductor del cliente solicita una transmisión de VOD o una transmisión en vivo de Google Ad Manager 360.
-- Ad Manager 360 responde con la transmisión de video que incluye pausas publicitarias insertadas.
-- La app del reproductor del cliente comienza a reproducir la transmisión y solicita los metadatos del anuncio una vez (para transmisiones de VOD) O comienza a sondear los metadatos del anuncio con regularidad (para transmisiones en vivo).
-- La app del reproductor del cliente detecta los metadatos in-stream, los analiza y los compara con los valores de los metadatos del anuncio para identificar los eventos de anuncios.
-- La app del reproductor de video del cliente activa pings de impresiones de anuncios y eventos de seguimiento según sea necesario.
-Para obtener instrucciones detalladas sobre cómo implementar un reproductor de video para clientes, con la API de REST de DAI, consulta nuestras guías de API:
+- The client's player app requests either a VOD stream or live stream from Google Ad Manager 360.
+- Ad Manager 360 responds with the video stream that includes inserted ad breaks.
+- The client's player app begins playback of the stream, and either requests ad metadata once (for VOD streams) OR begins regularly polling for ad metadata (for live streams).
+- The client's player app listens for instream metadata, parses it, and compares it to the values in the ad metadata to identify ad events.
+- The client's video player app fires ad impression pings and tracking events as needed.
+For detailed instructions on how to implement a client video player, using the DAI REST API, check out our API guides:
 
 
 ---
 
-## https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving
+## https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en
 
-Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving)
+Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en)
 
 - Home
 - Products
@@ -691,7 +691,7 @@ For details on livestream and VOD, see the following workflows:
 
       Save and categorize content based on your preferences.
 
-Source: [https://developers.google.com/ad-manager/api/start](https://developers.google.com/ad-manager/api/start)
+Source: [https://developers.google.com/ad-manager/api/start?hl=en](https://developers.google.com/ad-manager/api/start?hl=en)
 
 Looking for a REST API? The Ad Manager API (Beta) is now available.
 
@@ -700,6 +700,20 @@ Looking for a REST API? The Ad Manager API (Beta) is now available.
 - Ad Manager
 - SOAP API
 # Get started Stay organized with collections Save and categorize content based on your preferences.
+
+## Page Summary
+
+- The Google Ad Manager SOAP API allows building applications to manage inventory, create orders, and pull reports.
+The Google Ad Manager SOAP API allows building applications to manage inventory, create orders, and pull reports.
+
+- Client libraries are available for Java, .NET, Python, PHP, and Ruby to help get started with the API.
+Client libraries are available for Java, .NET, Python, PHP, and Ruby to help get started with the API.
+
+- To make your first API request, you need to get access to an Ad Manager network, create authentication credentials using OAuth 2.0, and configure API access in your network settings.
+To make your first API request, you need to get access to an Ad Manager network, create authentication credentials using OAuth 2.0, and configure API access in your network settings.
+
+- After setting up your Ad Manager network and authentication, download and configure one of the provided client libraries to write code and make requests to the API.
+After setting up your Ad Manager network and authentication, download and configure one of the provided client libraries to write code and make requests to the API.
 
 You can use the Google Ad Manager SOAP API to build apps that manage inventory, create orders, pull reports, and more.
 
@@ -803,7 +817,7 @@ Add a nuget dependency for Google.Dfp.
 Copy src\App.config to your project directory and add it to your project. If your application has its own App.config, then you can copy the following nodes into your App.config:
 
 - configuration/AdManagerApi
-- configuration/configSections/section[name=&quot;AdManagerApi&quot;]
+- configuration/configSections/section[name="AdManagerApi"]
 - configuration/system.net
 - Setup credentials Open App.config and edit the following keys: <add key="ApplicationName" value="INSERT_YOUR_APPLICATION_NAME_HERE" /> <add key="NetworkCode" value="INSERT_YOUR_NETWORK_CODE_HERE" /> <add key="OAuth2Mode" value="SERVICE_ACCOUNT" /> <add key="OAuth2SecretsJsonPath" value="INSERT_OAUTH2_SECRETS_JSON_FILE_PATH_HERE" />
 Open App.config and edit the following keys:
@@ -839,7 +853,7 @@ If you need help, visit our Support page.
 
 ## Learn more, do more.
 
-Source: [https://admanager.google.com/home/resources/](https://admanager.google.com/home/resources/)
+Source: [https://admanager.google.com/home/resources/?hl=en](https://admanager.google.com/home/resources/?hl=en)
 
 # Learn more, do more.
 
@@ -1088,7 +1102,7 @@ Learn how global publishers are finding success using Ad Manager to power their 
 
       Save and categorize content based on your preferences.
 
-Source: [https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview](https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview)
+Source: [https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en](https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en)
 
 - Home
 - Documentation
