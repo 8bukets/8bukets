@@ -27,8 +27,8 @@ export async function bootstrap(idea: { feature: string, rationale: string }) {
     }
   }
 
-  if (fs.existsSync(filePath)) {
-    console.log(` - Service ${serviceName} already exists. Skipping bootstrap.`)
+  if (fs.existsSync(filePath) || fs.existsSync(workflowPath) || fs.existsSync(githubActionPath)) {
+    console.log(` - Service ${serviceName} artifacts already exist. Skipping bootstrap to prevent overwriting existing logic.`)
     return
   }
 
@@ -103,6 +103,41 @@ jobs:
 
   fs.writeFileSync(githubActionPath, githubActionTemplate)
   console.log(`✅ [Singularity] Successfully generated autonomous_${serviceName}.yml`)
+
+  // Generate GitLab CI entry
+  const gitlabPath = path.join(process.cwd(), '.gitlab-ci.yml')
+  if (fs.existsSync(gitlabPath)) {
+    const gitlabContent = fs.readFileSync(gitlabPath, 'utf8')
+    const gitlabJob = `
+run-autonomous-${serviceName}:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for ${idea.feature}"
+    - npx tsx antigravity/workflows/${serviceName}_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+`
+    if (!gitlabContent.includes(`run-autonomous-${serviceName}:`)) {
+      fs.appendFileSync(gitlabPath, gitlabJob)
+      console.log(`✅ [Singularity] Successfully updated .gitlab-ci.yml with ${serviceName} job`)
+    }
+  }
+
+  // Generate Jenkins pipeline entry
+  const jenkinsPath = path.join(process.cwd(), 'Jenkinsfile')
+  if (fs.existsSync(jenkinsPath)) {
+    let jenkinsContent = fs.readFileSync(jenkinsPath, 'utf8')
+    const jenkinsStage = `        stage('Run Autonomous ${idea.feature}') {
+            steps {
+                sh 'npx tsx antigravity/workflows/${serviceName}_workflow.ts'
+            }
+        }\n`
+    if (!jenkinsContent.includes(`stage('Run Autonomous ${idea.feature}')`)) {
+      jenkinsContent = jenkinsContent.replace(/        stage\('Creative Workflow'\) \{/g, jenkinsStage + "        stage('Creative Workflow') {")
+      fs.writeFileSync(jenkinsPath, jenkinsContent)
+      console.log(`✅ [Singularity] Successfully updated Jenkinsfile with ${serviceName} stage`)
+    }
+  }
 
   return { filePath, workflowPath, githubActionPath, serviceName, feature: idea.feature }
 }

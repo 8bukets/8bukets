@@ -55,6 +55,25 @@ export async function evolve() {
             suggestion: 'SYNC_PROP_VIOLATION: Direct access to params detected. Must be awaited in Next.js 16.'
           })
         }
+
+        // Rule 4: Security - Detect execSync
+        if (content.includes('execSync(')) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'SECURITY_VULNERABILITY: execSync detected. Risk of command injection. Refactor to use execFileSync or spawnSync.'
+          })
+        }
+
+        // Rule 5: Missing Error Handling in Async Functions
+        // Skip Next.js page/layout components (often containing 'use cache') to avoid directive displacement
+        if (content.includes('async function') && !content.includes('try {') && !content.includes("'use cache'")) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'MISSING_ERROR_HANDLING: Async function detected without try-catch block.'
+          })
+        }
       }
     }
   }

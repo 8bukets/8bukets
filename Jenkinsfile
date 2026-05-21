@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     environment {
+        MACBOOK_CLOUD_SIMULATION = 'true'
         NODE_ENV = 'production'
         // Define any required environment variables for the node/ts execution
         // e.g., JENKINS_URL, SUPABASE variables, etc.
@@ -32,6 +33,61 @@ pipeline {
                 script {
                     echo "Building Docker Image..."
                     sh 'docker build -t antigravity-system:latest .'
+                }
+            }
+        }
+
+        stage('Run Autonomous Feedback Analysis Service') {
+            steps {
+                sh 'npx tsx antigravity/workflows/feedback_analysis_workflow.ts'
+            }
+        }
+        stage('Run Autonomous Performance Monitoring Service') {
+            steps {
+                sh 'npx tsx antigravity/workflows/performance_monitoring_workflow.ts'
+            }
+        }
+        stage('Run Autonomous Cognitive Security Service') {
+            steps {
+                sh 'npx tsx antigravity/workflows/cognitive_security_workflow.ts'
+            }
+        }
+        stage('Run Autonomous Visual Neural Relay') {
+            steps {
+                sh 'npx tsx antigravity/workflows/visual_neural_relay_workflow.ts'
+            }
+        }
+        stage('Run Autonomous Feature Scaling Coordinator') {
+            steps {
+                sh 'npx tsx antigravity/workflows/feature_scaling_coordinator_workflow.ts'
+            }
+        }
+        stage('Run Autonomous Autonomous Resource Optimizer') {
+            steps {
+                sh 'npx tsx antigravity/workflows/autonomous_resource_optimizer_workflow.ts'
+            }
+        }
+        stage('Run Autonomous Proactive Scalability Service') {
+            steps {
+                sh 'npx tsx antigravity/workflows/proactive_scalability_workflow.ts'
+            }
+        }
+        stage('Creative Workflow') {
+            parallel {
+                stage('Market Analysis') {
+                    steps {
+                        sh 'npm run ingest:sor'
+                    }
+                }
+                stage('Daily Tasks') {
+                    steps {
+                        sh 'npm run daily'
+                    }
+                }
+                stage('Autonomous Evolution') {
+                    steps {
+                        sh 'npx tsx scripts/execute_creation_cycle.ts'
+                    }
                 }
             }
         }

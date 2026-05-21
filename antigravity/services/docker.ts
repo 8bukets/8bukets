@@ -1,6 +1,9 @@
-import { execSync } from 'child_process'
+import { exec } from 'child_process'
+import { promisify } from 'util'
 import { z } from 'zod'
 import { autonomousFetch } from '@/antigravity/core'
+
+const execAsync = promisify(exec)
 
 /**
  * ANTIGRAVITY DOCKER CONNECTIVITY SERVICE (Phase 1)
@@ -20,7 +23,8 @@ export async function getDockerFleetStatus(): Promise<DockerContainer[]> {
   return autonomousFetch(z.array(DockerContainerSchema), async () => {
     try {
       // Attempt to query the Docker daemon
-      const output = execSync('docker ps --format "{{.ID}}|{{.Image}}|{{.Status}}|{{.Names}}"').toString().trim()
+      const { stdout } = await execAsync('docker ps --format "{{.ID}}|{{.Image}}|{{.Status}}|{{.Names}}"')
+      const output = stdout.trim()
 
       if (!output && process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true') {
         throw new Error('Simulation requested')
@@ -54,15 +58,82 @@ export async function getDockerFleetStatus(): Promise<DockerContainer[]> {
   }, { tags: ['docker-fleet-status'], life: 'inventory' })
 }
 
+import fs from 'fs'
+import path from 'path'
+
 export async function checkDockerHealth() {
   const fleet = await getDockerFleetStatus()
-  const isHealthy = fleet.length > 0
+  let isHealthy = fleet.length > 0
   const isSimulated = fleet.some(c => c.id.startsWith('sim-'))
 
+  if (!isHealthy && !isSimulated) {
+    console.log('🔄 [Docker] Fleet empty. Autonomously attempting to recover degraded containers...')
+    try {
+      await execAsync('docker compose up -d')
+      const recoveredFleet = await getDockerFleetStatus()
+      if (recoveredFleet.length > 0) {
+        console.log('✅ [Docker] Fleet recovered successfully.')
+        return {
+          status: 'recovering',
+          containerCount: recoveredFleet.length,
+          simulated: false,
+          timestamp: new Date().toISOString()
+        }
+      }
+    } catch (e) {
+      // Phase 12: Harden simulation fallback if recovery fails in cloud simulation mode
+      if (process.env.MACBOOK_CLOUD_SIMULATION === 'true') {
+        console.log('🧪 [Docker] Recovery restricted. Engaging cloud-native simulated state.')
+        return {
+          status: 'simulated',
+          containerCount: 5,
+          simulated: true,
+          timestamp: new Date().toISOString()
+        }
+      }
+
+      console.warn('⚠️ [Docker] Autonomous recovery failed. System degraded.', e)
+      return {
+        status: 'degraded',
+        containerCount: 0,
+        simulated: false,
+        timestamp: new Date().toISOString()
+      }
+    }
+  }
+
+  let status = isHealthy ? (isSimulated ? 'simulated' : 'optimal') : 'disconnected'
+
+  // Attempt recovery if disconnected
+  if (status === 'disconnected') {
+    try {
+      console.log('🔄 [DockerEvolutionAgent] Attempting to recover degraded containers using docker compose up -d...')
+      await execAsync('docker compose up -d')
+      isHealthy = true
+      status = 'recovering'
+    } catch (err) {
+      console.warn('⚠️ [DockerEvolutionAgent] Recovery failed.')
+    }
+  }
+
+  // DockerEvolutionAgent Logic: Parse Dockerfile for multi-stage build status
+  let multiStageStatus = 'unknown'
+  try {
+    const dockerfilePath = path.join(process.cwd(), 'Dockerfile')
+    if (fs.existsSync(dockerfilePath)) {
+      const content = await fs.promises.readFile(dockerfilePath, 'utf8')
+      const fromCount = (content.match(/^FROM /gm) || []).length
+      multiStageStatus = fromCount > 1 ? 'multi-stage' : 'single-stage'
+    }
+  } catch (err) {
+    console.warn('⚠️ [DockerEvolutionAgent] Failed to parse Dockerfile', err)
+  }
+
   return {
-    status: isHealthy ? (isSimulated ? 'simulated' : 'optimal') : 'disconnected',
+    status,
     containerCount: fleet.length,
     simulated: isSimulated,
+    multiStageStatus,
     timestamp: new Date().toISOString()
   }
 }

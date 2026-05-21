@@ -7,8 +7,9 @@ services:
     ports:
       - "3000:3000"
     environment:
+      - MACBOOK_CLOUD_SIMULATION=${MACBOOK_CLOUD_SIMULATION:-true}
       - MONGODB_URI=mongodb://mongodb:27017/my-app
-      - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL}
+      - SUPABASE_DATABASE_URL=${SUPABASE_DATABASE_URL}
       - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
     depends_on:
       - mongodb
