@@ -53,3 +53,11 @@ run-autonomous-visual_neural_relay:
     - npx tsx antigravity/workflows/visual_neural_relay_workflow.ts
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-feature_scaling_coordinator:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Feature Scaling Coordinator"
+    - npx tsx antigravity/workflows/feature_scaling_coordinator_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"

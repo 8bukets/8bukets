@@ -5,7 +5,17 @@ import { logAutonomousAction } from '../core'
 
 export const WorkOrderSchema = z.object({
   id: z.string(),
-  type: z.enum(['BOOTSTRAP_SERVICE', 'OPTIMIZE_SYSTEM', 'CONTENT_GENERATION', 'SMOKE_TEST', 'DEPLOYMENT']),
+  type: z.enum([
+    'BOOTSTRAP_SERVICE',
+    'OPTIMIZE_SYSTEM',
+    'CONTENT_GENERATION',
+    'SMOKE_TEST',
+    'DEPLOYMENT',
+    'KNOWLEDGE_INGESTION',
+    'SYSTEM_SYNC',
+    'CLOUD_INTELLIGENCE_MERGE',
+    'AUTONOMOUS_CREATION'
+  ]),
   goal: z.string(),
   payload: z.any(),
   dependsOn: z.array(z.string()).optional(),
@@ -162,6 +172,27 @@ export class WorkOrderService {
           : await evolve()
         await applyFixes(suggestions)
         return { appliedFixes: suggestions.length }
+
+      case 'KNOWLEDGE_INGESTION':
+        const { jules: julesK } = await import('../jules')
+        await julesK.observeKnowledge()
+        return { status: 'knowledge_ingested' }
+
+      case 'SYSTEM_SYNC':
+        const { jules: julesS } = await import('../jules')
+        await julesS.syncToICloud()
+        return { status: 'system_synced' }
+
+      case 'CLOUD_INTELLIGENCE_MERGE':
+        logAutonomousAction('[CLOUD_SYNC] Pulling 8Bukets unified intelligence', 'info')
+        const { jules: julesC } = await import('../jules')
+        await julesC.syncToICloud()
+        return { status: 'cloud_intelligence_merged' }
+
+      case 'AUTONOMOUS_CREATION':
+        const { jules: julesA } = await import('../jules')
+        await julesA.executeWorkCycle()
+        return { status: 'autonomous_creation_executed' }
 
       default:
         throw new Error(`Unknown work order type: ${order.type}`)
