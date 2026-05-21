@@ -44,11 +44,19 @@ export class AutonomousCreationEngine {
         );
 
         // Step C: Deployment (Depends on Smoke Test)
-        await workOrderService.createOrder(
+        const deployOrder = await workOrderService.createOrder(
           'DEPLOYMENT',
           `Deploy ${idea.feature} to production`,
           { serviceName },
           [smokeTestOrder.id]
+        );
+
+        // Step D: Git Sync (Depends on Deployment)
+        await workOrderService.createOrder(
+          'SYSTEM_SYNC',
+          `Synchronize ${idea.feature} evolution to Git`,
+          { feature: idea.feature },
+          [deployOrder.id]
         );
 
         createdFeatures.push(idea.feature);

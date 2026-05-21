@@ -45,12 +45,12 @@ export async function observeKnowledge(url: string) {
       // Check if URL already exists
       if (!content.includes(`- **Target**: ${url}`)) {
         let newContent = content.trim();
+
         newContent += relationshipEntry;
         await fs.promises.writeFile(knowledgePath, newContent, 'utf8')
       }
     } else {
-      await fs.promises.writeFile(knowledgePath, `# Market Intelligence Matrix
-${relationshipEntry}`, 'utf8')
+      await fs.promises.writeFile(knowledgePath, `# Market Intelligence Matrix\n${relationshipEntry}`, 'utf8')
     }
 
     logAutonomousAction(`✅ [Knowledge Observer] Appended insights to KNOWLEDGE_MERGE.md.`, 'info')

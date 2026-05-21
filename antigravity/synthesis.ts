@@ -58,8 +58,7 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
   }
 
   // Gap Analysis 5: Multi-Service Orchestration (Workflows)
-  const workflowsDir = path.join(process.cwd(), 'antigravity/workflows')
-  if (!fs.existsSync(workflowsDir) || fs.readdirSync(workflowsDir).length === 0) {
+  if (!files.some(f => f.includes('multi-service_orchestration_workflow'))) {
     ideas.push({
       feature: 'Multi-Service Orchestration Workflow',
       rationale: 'Formalizes autonomous coordination between MongoDB, Supabase, and Docker-based microservices.',
@@ -82,6 +81,24 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
       feature: 'Feedback Analysis Service',
       rationale: 'Analyzes user feedback and system logs to prioritize feature development and bug fixes.',
       complexity: 'Medium'
+    })
+  }
+
+  // Gap Analysis 8: Autonomous Resource Optimizer
+  if (!files.some(f => f.includes('resource_optimizer'))) {
+    ideas.push({
+      feature: 'Autonomous Resource Optimizer',
+      rationale: 'Autonomously adjusts container resources and scaling parameters based on real-time load analytics.',
+      complexity: 'Medium'
+    })
+  }
+
+  // Gap Analysis 9: Proactive Scalability Service
+  if (!files.some(f => f.includes('proactive_scalability'))) {
+    ideas.push({
+      feature: 'Proactive Scalability Service',
+      rationale: 'Predicts future traffic spikes and pre-allocates resources using neural network forecasting.',
+      complexity: 'High'
     })
   }
 

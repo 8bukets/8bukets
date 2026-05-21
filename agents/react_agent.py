@@ -52,6 +52,14 @@ class ReActAgent(BaseAgent):
                     if "TRIGGER_PERFORMANCE_OPTIMIZATION" not in action_log:
                         action_log.append("TRIGGER_PERFORMANCE_OPTIMIZATION")
 
+        react_deployment_logic = definitions.get("react-agent-deployment-logic")
+        if react_deployment_logic:
+            reasoning_log.append("Reasoning: Found React Agent Deployment Logic, ensuring logic deploy and workflow run improve.")
+            if "VERIFY_LOGIC_DEPLOY_REACT_AGENTS" not in action_log:
+                action_log.append("VERIFY_LOGIC_DEPLOY_REACT_AGENTS")
+            if "IMPROVE_WORKFLOW_RUN" not in action_log:
+                action_log.append("IMPROVE_WORKFLOW_RUN")
+
         # 2. Acting Phase
         if not action_log:
             reasoning_log.append("Reasoning: No specific insights to act upon.")
