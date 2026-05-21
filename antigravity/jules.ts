@@ -423,7 +423,7 @@ export class Jules {
               }
             }
 
-            changedFiles = diffOutput ? diffOutput.split('\n').filter(f => f.trim() !== '') : []
+            changedFiles = diffOutput ? diffOutput.split('\n').filter(f => f.trim() !== '' && !f.includes('.npm') && !f.includes('node_modules') && !f.includes('.next') && !f.includes('dist') && !f.includes('build') && !f.includes('venv') && !f.includes('__pycache__')) : []
 
             if (changedFiles.some(f => f.includes('security') || f.includes('auth') || f.includes('sentinel') || f.includes('validation'))) domain = 'Security'
             else if (changedFiles.some(f => f.includes('optimization') || f.includes('analytics') || f.includes('scaling') || f.includes('perf'))) domain = 'Performance'
