@@ -48,6 +48,13 @@ pipeline {
             }
         }
 
+        stage('Test autonomous_resource_optimizer') {
+            steps {
+                sh 'npm ci'
+                sh 'npx vitest run antigravity/services/autonomous_resource_optimizer.test.ts'
+            }
+        }
+
         stage('Creative Workflow') {
             parallel {
                 stage('Analyze Market') {
