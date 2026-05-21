@@ -81,3 +81,9 @@ test-testservice:
   script:
     - npm ci
     - npx vitest run antigravity/services/testservice.test.ts
+
+test-autonomous_resource_optimizer:
+  stage: test
+  script:
+    - npm ci
+    - npx vitest run antigravity/services/autonomous_resource_optimizer.test.ts
