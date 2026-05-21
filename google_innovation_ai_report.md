@@ -111,5 +111,14 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 ### Blackstone will create a new TPU cloud in a joint venture with Google.
 - URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/blackstone-tpu-cloud/
 
+### Running Guide agent: A step towards running unbounded
+- URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/running-guide-agent/
+
+### A new experiment brings better group meetings to Google Beam
+- URL: https://blog.google/innovation-and-ai/models-and-research/google-research/google-beam-group-meetings/
+
+### We’re announcing new community investments in Missouri.
+- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/missouri-programs/
+
 
 All the best - https://markposition.wordpress.com
