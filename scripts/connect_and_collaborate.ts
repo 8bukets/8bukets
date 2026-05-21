@@ -1,5 +1,9 @@
-import { execSync } from 'child_process';
-import * as fs from 'fs';
+import { exec } from 'child_process';
+import * as fs from 'fs/promises';
+import { promisify } from 'util';
+import { syncCollaborationState } from '../antigravity/services/collaboration';
+
+const execAsync = promisify(exec);
 
 async function main() {
   console.log('Initiating autonomous Docker sovereignty audit and stakeholder collaboration sync...');
@@ -12,7 +16,8 @@ async function main() {
 
   try {
     console.log('Running docker info...');
-    state.dockerInfo = execSync('docker info', { encoding: 'utf-8' });
+    const { stdout: infoOutput } = await execAsync('docker info');
+    state.dockerInfo = infoOutput;
   } catch (error: any) {
     console.error('Failed to run docker info:', error.message);
     state.dockerInfo = 'Error: ' + error.message;
@@ -20,15 +25,24 @@ async function main() {
 
   try {
     console.log('Running docker ps...');
-    state.dockerPs = execSync('docker ps', { encoding: 'utf-8' });
+    const { stdout: psOutput } = await execAsync('docker ps');
+    state.dockerPs = psOutput;
   } catch (error: any) {
     console.error('Failed to run docker ps:', error.message);
     state.dockerPs = 'Error: ' + error.message;
   }
 
   const outputPath = 'autonomous_state.json';
-  fs.writeFileSync(outputPath, JSON.stringify(state, null, 2));
+  await fs.writeFile(outputPath, JSON.stringify(state, null, 2));
   console.log(`Audit complete. State written to ${outputPath}`);
+
+  console.log('Running engine system collaboration sync...');
+  try {
+    await syncCollaborationState();
+    console.log('Engine collaboration sync complete.');
+  } catch (error: any) {
+     console.error('Failed to sync collaboration state:', error.message);
+  }
 }
 
 main().catch(console.error);
