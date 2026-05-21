@@ -1,0 +1,13 @@
+# Go build artifacts
+genai_example
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary
+*.test
+
+# Output
+*.out
