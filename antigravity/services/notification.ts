@@ -42,8 +42,15 @@ export async function getNotifications(): Promise<Notification[]> {
 export async function dispatchExecutiveBriefing(summary: string, details?: string) {
   console.log('📢 [Notification] Dispatching executive briefing...')
 
+  const formattedDetails = details ? details.split('\n\n').map(section => {
+    if (section.startsWith('---')) {
+      return `\n${section.replace(/---/g, '').trim().toUpperCase()}\n${'='.repeat(section.length - 6)}`
+    }
+    return section
+  }).join('\n') : ''
+
   const fullMessage = details
-    ? `🔔 EXECUTIVE BRIEFING\n\nSUMMARY: ${summary}\n\n${details}`
+    ? `🔔 EXECUTIVE BRIEFING\n\nSTATUS: ${summary}\n${formattedDetails}`
     : `🔔 EXECUTIVE BRIEFING: ${summary}`
 
   const briefing: Notification = {

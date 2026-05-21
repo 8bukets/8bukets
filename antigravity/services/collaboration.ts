@@ -107,9 +107,18 @@ ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
   console.log(summary)
 
   // Dispatch executive briefing for high-level communication
+  const highIntensitySynergies = state.intelligence.relationshipMap.synergies?.filter((s: any) => s.intensity === 'High') || []
+  const synergyAlert = highIntensitySynergies.length > 0
+    ? `⚠️ ALERT: ${highIntensitySynergies.length} High-Intensity resource conflicts detected.`
+    : 'System synergy is optimal.'
+
   const synergySummary = state.intelligence.relationshipMap.synergies && state.intelligence.relationshipMap.synergies.length > 0
     ? state.intelligence.relationshipMap.synergies.map((s: any) => `- SYNERGY [${s.intensity}]: ${s.resource} (via ${s.branches.length} branches)`).join('\n')
     : 'No direct resource synergies detected.'
+
+  const recommendations = state.intelligence.relationshipMap.collaborationRecommendations?.length > 0
+    ? state.intelligence.relationshipMap.collaborationRecommendations.map((r: any) => `- [${r.priority}] ${r.action}: ${r.rationale}`).join('\n')
+    : 'No immediate collaboration actions required.'
 
   const branchSummary = state.intelligence.relationshipMap.resourceInventory
     .filter((r: any) => r.type === 'Branch Result')
@@ -117,10 +126,10 @@ ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
     .map((r: any) => `- RESULT: ${r.name} -> ${r.result}`)
     .join('\n')
 
-  const detailedBriefing = `--- SYNERGY ANALYSIS ---\n${synergySummary}\n\n--- KEY RESULTS ---\n${branchSummary}`
+  const detailedBriefing = `--- SYNERGY ANALYSIS ---\n${synergySummary}\n\n--- RECOMMENDATIONS ---\n${recommendations}\n\n--- KEY RESULTS ---\n${branchSummary}`
 
   await dispatchExecutiveBriefing(
-    `System synchronized: ${state.intelligence.branches} branches. Posture: ${state.docker.status}.`,
+    `${synergyAlert} Posture: ${state.docker.status}. Sync: ${state.intelligence.branches} branches.`,
     detailedBriefing
   )
 
@@ -251,15 +260,27 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     }
   })
 
+  map.collaborationRecommendations = []
+
   Object.entries(resourceUsage).forEach(([resource, branchSet]) => {
     if (branchSet.size > 1) {
       const branches = Array.from(branchSet)
+      const intensity = branches.length > 2 ? 'High' : 'Medium'
       map.synergies.push({
         type: 'Resource Conflict/Synergy',
         resource,
         branches,
-        intensity: branches.length > 2 ? 'High' : 'Medium'
+        intensity
       })
+
+      // Phase 12: Generate Actionable Collaboration Recommendations
+      map.collaborationRecommendations.push({
+        priority: intensity === 'High' ? 'Critical' : 'Routine',
+        action: `Consolidate effort on '${resource}'`,
+        branches,
+        rationale: `${branches.length} branches are concurrently modifying the same resource.`
+      })
+
       console.warn(`🤝 [Collaboration] Synergy Detected: ${branches.length} branches working on ${resource}.`)
     }
   })
@@ -296,10 +317,18 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
 
   const { jules } = await import('../jules')
   const { workOrderService } = await import('./work_order')
+  const { broadcastPulse } = await import('./neural')
+  const { getRelayState } = await import('./relay')
+
   // Phase 12: Trigger deep branch scan (force: true) to ensure all 1,800+ branches are analyzed
   const branches = branchIntelligence || await jules.scanAllBranches(true)
   const workOrders = workOrderService.getPendingOrders() // Simplified for now
   const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
+
+  // Phase 12: Synchronize Global Neural Pulse and Omni-Presence Relay
+  const neuralPulse = await broadcastPulse()
+  const relayState = await getRelayState()
+
   await mergeBranchInsights(branches)
 
   const newState = {
@@ -311,7 +340,9 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
     intelligence: {
       branches: branches.length,
       pendingTasks: workOrders.length,
-      relationshipMap
+      relationshipMap,
+      neuralPulse,
+      relayState
     },
     last_sync: new Date().toISOString()
   }
