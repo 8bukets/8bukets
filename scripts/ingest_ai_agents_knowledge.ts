@@ -151,7 +151,7 @@ async function scrapeAiAgentsKnowledge() {
 
         // Save to JSON
         const jsonPath = "ai_agents_knowledge.json";
-        const manualKeys = ["compile", "jules-tools", "knowledge-merge", "gemini-cli-remote-subagents", "gemini-cli-subagents", "docker-mcp-catalog"];
+        const manualKeys = ["compile", "jules-tools", "knowledge-merge", "gemini-cli-remote-subagents", "gemini-cli-subagents", "docker-mcp-catalog", "react-agent-deployment-logic"];
         let finalData: Record<string, Section> = {};
 
         if (fs.existsSync(jsonPath)) {
