@@ -61,3 +61,19 @@ run-autonomous-feature_scaling_coordinator:
     - npx tsx antigravity/workflows/feature_scaling_coordinator_workflow.ts
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-autonomous_resource_optimizer:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Autonomous Resource Optimizer"
+    - npx tsx antigravity/workflows/autonomous_resource_optimizer_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-proactive_scalability:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Proactive Scalability Service"
+    - npx tsx antigravity/workflows/proactive_scalability_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"

@@ -62,6 +62,16 @@ pipeline {
                 sh 'npx tsx antigravity/workflows/feature_scaling_coordinator_workflow.ts'
             }
         }
+        stage('Run Autonomous Autonomous Resource Optimizer') {
+            steps {
+                sh 'npx tsx antigravity/workflows/autonomous_resource_optimizer_workflow.ts'
+            }
+        }
+        stage('Run Autonomous Proactive Scalability Service') {
+            steps {
+                sh 'npx tsx antigravity/workflows/proactive_scalability_workflow.ts'
+            }
+        }
         stage('Creative Workflow') {
             parallel {
                 stage('Market Analysis') {

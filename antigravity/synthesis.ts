@@ -92,6 +92,24 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
+  // Gap Analysis 9: Autonomous Resource Optimization
+  if (!files.some(f => f.includes('resource_optimizer'))) {
+    ideas.push({
+      feature: 'Autonomous Resource Optimizer',
+      rationale: 'Dynamically adjusts CPU and memory limits for neural agents based on real-time execution telemetry.',
+      complexity: 'High'
+    })
+  }
+
+  // Gap Analysis 10: Proactive Scalability
+  if (!files.some(f => f.includes('scalability_service'))) {
+    ideas.push({
+      feature: 'Proactive Scalability Service',
+      rationale: 'Predicts traffic spikes and pre-warms cloud worker instances before demand increases.',
+      complexity: 'High'
+    })
+  }
+
   // Force an idea for demonstration if none exist
   if (ideas.length === 0) {
     ideas.push({
