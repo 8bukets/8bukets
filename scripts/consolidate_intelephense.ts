@@ -36,14 +36,17 @@ async function consolidate() {
     }
   }
 
-  // 3. Deduplicate sections by header, prioritizing content
+  // 3. Deduplicate sections by header, prioritizing content length (quality)
   const headerMap = new Map<string, { header: string; content: string }>()
 
   for (const section of allSections) {
     const existing = headerMap.get(section.header)
-    if (!existing || (section.content.length > existing.content.length)) {
-      // Only keep sections with content, unless they are high-level structural headers
-      if (section.content || ['Getting Started', 'Features', 'Installation'].includes(section.header)) {
+    // Heuristic: Prefer the section with the most content (likely more detailed)
+    // Also ensure we keep structural headers even if empty
+    const isStructural = ['Getting Started', 'Features', 'Installation', 'Type System'].includes(section.header)
+
+    if (!existing || (section.content.length >= existing.content.length)) {
+      if (section.content.trim().length > 0 || isStructural) {
         headerMap.set(section.header, section)
       }
     }
@@ -69,8 +72,8 @@ async function consolidate() {
     const systemKnowledge = JSON.parse(fs.readFileSync(jsonStore, 'utf8'))
     if (systemKnowledge.typescript_sections) {
       systemKnowledge.typescript_sections = systemKnowledge.typescript_sections.filter((k: any) => {
-        // Keep everything that isn't an Intelephense variant, we'll re-add the consolidated one
-        return !k.title.startsWith('Intelephense') || k.title === 'Intelephense Documentation'
+        // Purge any "Intelephense: ..." variants, only keeping the main consolidated one if it exists (it will be updated)
+        return !k.title.startsWith('Intelephense:')
       })
       fs.writeFileSync(jsonStore, JSON.stringify(systemKnowledge, null, 2))
     }

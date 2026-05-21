@@ -137,14 +137,21 @@ export class Jules {
     }
 
     if (allSections.length > 0) {
-      // Deduplicate sections by header
-      const seenHeaders = new Set<string>()
-      const uniqueSections = allSections.filter(s => {
-        if (seenHeaders.has(s.header)) return false
-        if (!s.content && !['Getting Started', 'Features', 'Installation'].includes(s.header)) return false
-        seenHeaders.add(s.header)
-        return true
-      })
+      // Deduplicate sections by header, prioritizing content length (quality)
+      const headerMap = new Map<string, { header: string; content: string }>()
+
+      for (const section of allSections) {
+        const existing = headerMap.get(section.header)
+        const isStructural = ['Getting Started', 'Features', 'Installation', 'Type System'].includes(section.header)
+
+        if (!existing || (section.content.length >= existing.content.length)) {
+          if (section.content.trim().length > 0 || isStructural) {
+            headerMap.set(section.header, section)
+          }
+        }
+      }
+
+      const uniqueSections = Array.from(headerMap.values())
 
       const consolidated = {
         title: 'Intelephense Documentation',
