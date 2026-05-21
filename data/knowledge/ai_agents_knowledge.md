@@ -1,10 +1,10 @@
 # ANTIGRAVITY AI AGENTS KNOWLEDGE BASE
 
-*Last Updated: 2026-05-21T02:38:06.307Z*
+*Last Updated: 2026-05-21T11:26:15.391Z*
 
 ## DOCUMENT: Intelephense Documentation
 **Source:** https://intelephense.com/docs
-**Ingested At:** 2026-05-21T02:38:06.260Z
+**Ingested At:** 2026-05-21T11:26:15.310Z
 
 ### Intelephense
 Intelephense is a high performance, cross platform PHP language server adhering to the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/).
@@ -1261,7 +1261,7 @@ ben@intelephense.com
 
 ## DOCUMENT: software info by fk – software-online-review – Filip Keser
 **Source:** https://software-online-review.com
-**Ingested At:** 2026-05-21T02:38:04.781Z
+**Ingested At:** 2026-05-21T11:26:13.333Z
 
 ### Introduction
 [Skip to content](#content)
@@ -14706,7 +14706,7 @@ To explore real-world openings and licensure requirements, you can research avai
 
 ## DOCUMENT: (position) mRNA
 **Source:** https://markposition.wordpress.com
-**Ingested At:** 2026-05-21T02:38:05.145Z
+**Ingested At:** 2026-05-21T11:26:14.160Z
 
 ### Introduction
 [Skip to content](#content)
@@ -17902,7 +17902,7 @@ Skip to content ↓
 
 ## DOCUMENT: caio_role_docs.md
 **Source:** local://caio_role_docs.md
-**Ingested At:** 2026-05-21T02:38:05.187Z
+**Ingested At:** 2026-05-21T11:26:14.461Z
 
 ### Chief AI Officer (CAIO) Role Description
 
@@ -17959,7 +17959,7 @@ To explore real-world openings and licensure requirements, you can research avai
 
 ## DOCUMENT: intelephense_docs.md
 **Source:** local://intelephense_docs.md
-**Ingested At:** 2026-05-21T02:38:05.227Z
+**Ingested At:** 2026-05-21T11:26:14.553Z
 
 ### Intelephense Documentation
 
