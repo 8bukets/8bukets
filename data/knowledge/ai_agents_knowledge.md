@@ -1,10 +1,10 @@
 # ANTIGRAVITY AI AGENTS KNOWLEDGE BASE
 
-*Last Updated: 2026-05-21T01:23:03.957Z*
+*Last Updated: 2026-05-21T02:29:37.693Z*
 
 ## DOCUMENT: Intelephense Documentation
 **Source:** https://intelephense.com/docs
-**Ingested At:** 2026-05-21T01:23:03.926Z
+**Ingested At:** 2026-05-21T02:29:37.668Z
 
 ### Intelephense
 Intelephense is a high performance, cross platform PHP language server adhering to the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/).
@@ -1261,7 +1261,7 @@ ben@intelephense.com
 
 ## DOCUMENT: software info by fk – software-online-review – Filip Keser
 **Source:** https://software-online-review.com
-**Ingested At:** 2026-05-21T00:27:13.261Z
+**Ingested At:** 2026-05-21T02:29:36.932Z
 
 ### Introduction
 [Skip to content](#content)
@@ -14706,7 +14706,7 @@ To explore real-world openings and licensure requirements, you can research avai
 
 ## DOCUMENT: caio_role_docs.md
 **Source:** local://caio_role_docs.md
-**Ingested At:** 2026-05-21T00:27:13.330Z
+**Ingested At:** 2026-05-21T02:29:36.991Z
 
 ### Chief AI Officer (CAIO) Role Description
 
@@ -14763,7 +14763,7 @@ To explore real-world openings and licensure requirements, you can research avai
 
 ## DOCUMENT: intelephense_docs.md
 **Source:** local://intelephense_docs.md
-**Ingested At:** 2026-05-21T00:27:13.358Z
+**Ingested At:** 2026-05-21T02:29:37.021Z
 
 ### Intelephense Documentation
 
@@ -14777,6 +14777,9 @@ Intelephense is a high performance, cross platform, cross editor PHP language se
 When paired with an LSP capable editor it provides an essential set of code tools, making for a productive and rich PHP coding experience.
 
 The Intelephense server is proprietary software released to end users under a "freemium" model. Many of the features are provided free of charge. Access to premium features can be obtained by purchasing a licence key.
+
+### Installation
+
 
 ### Visual Studio Code
 Visual Studio Code users should install the Intelephense extension from within the extensions view or download it from the VSCode marketplace.
@@ -14792,19 +14795,22 @@ Intelephense requires a Node.js runtime environment. It is recommended that you 
 npm i intelephense -g
 ```
 
-Intelephense needs an LSP compliant client to communicate with and integrate features into the editor. A list of editors and clients that support the LSP can be found online. Please follow the setup guide of the relevant tool. The information below may help in configuring the client.
+Intelephense needs an LSP compliant client to communicate with and integrate features into the editor. A list of editors and clients that support the LSP can be found here. Please follow the setup guide of the relevant tool. The information below may help in configuring the client.
 
 To start the intelephense server:
+
 ```bash
 intelephense {transport}
 ```
+
 Where {transport} is one of:
-* --node-ipc
-* --stdio
-* --socket={number}
-* --pipe={string}
+* `--node-ipc`
+* `--stdio`
+* `--socket={number}`
+* `--pipe={string}`
 
 If your LSP client exposes initializationOptions, then the following values are accepted:
+
 ```typescript
 interface InitialisationOptions {
     // Optional absolute path to storage directory for workspace specific data.
@@ -14825,7 +14831,7 @@ interface InitialisationOptions {
 When initializationOptions properties are not provided by the client, the following defaults are used:
 
 | OS | Property | Path | Fallback |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | *nix | storagePath | $XDG_CONFIG_HOME/intelephense/workspace/ | $HOME/.config/intelephense/workspace/ |
 | *nix | globalStoragePath | $XDG_CONFIG_HOME/intelephense/global/ | $HOME/.config/intelephense/global/ |
 | *nix | licenceKey | {globalStoragePath}/licence.txt | {globalStoragePath}/license.txt |
@@ -14833,14 +14839,17 @@ When initializationOptions properties are not provided by the client, the follow
 | Windows | globalStoragePath | %AppData%/intelephense/global/ | %UserProfile%/intelephense/global/ |
 | Windows | licenceKey | {globalStoragePath}/licence.txt | {globalStoragePath}/license.txt |
 
+If your LSP client does not expose initializationOptions then a licence key can be provided by placing (only) the key in a text file at the default licenceKey path listed above.
+
 ### Configuration
-Please see the VSCode client package.json configuration property for a full list of configuration options and associated JSON schema. Note that the configuration keys are given in dot notation. As an example, the equivalent JSON object for intelephense.files.exclude would be {"intelephense": {"files": {"exclude": []}}}.
+Please see the VSCode client package.json configuration property for a full list of configuration options and associated JSON schema. Note that the configuration keys are given in dot notation. As an example, the equivalent JSON object for intelephense.files.exclude would be `{"intelephense": {"files": {"exclude": []}}}`.
 
 Intelephense attempts to provide reasonable defaults for all settings. Some of the more important settings to consider when getting started include:
-* intelephense.files.associations - File globs that identify PHP files. Defaults to standard PHP file extensions e.g. *.php.
-* intelephense.files.maxSize - Maximum file size in bytes to index and provide analysis for. Defaults to 1000000 (1MB).
-* intelephense.environment.phpVersion - PHP version to use for analysis. Defaults to the most recent stable PHP version.
-* intelephense.stubs - List of stubs to include. Defaults to core symbols and extensions that are bundled with PHP. If you are getting undefined symbols for built-in or PECL extensions, you may need to modify this list.
+
+* **intelephense.files.associations** - File globs that identify PHP files. Defaults to standard PHP file extensions e.g. *.php.
+* **intelephense.files.maxSize** - Maximum file size in bytes to index and provide analysis for. Defaults to 1000000 (1MB).
+* **intelephense.environment.phpVersion** - PHP version to use for analysis. Defaults to the most recent stable PHP version.
+* **intelephense.stubs** - List of stubs to include. Defaults to core symbols and extensions that are bundled with PHP. If you are getting undefined symbols for built-in or PECL extensions, you may need to modify this list.
 
 In VSCode, the settings UI can be used to modify the configuration values. For other LSP clients, please see the client documentation on how to modify these values. Intelephense supports the LSP workspace/didChangeConfiguration and workspace/configuration methods as a way of supplying configuration values to the server.
 
@@ -14865,12 +14874,12 @@ Providing type information in your PHP code will result in a better experience w
 function foo(string $s): array {} // <- type declarations for $s (string) and function return (array)
 ```
 
-Intelephense will also compute inferred types when a declared or documented type is not found or during control flow analysis. When a type is inferred it may be reduced to its minimal representation. For example, MyClass|object would become object because MyClass is a sub-type of object.
+Intelephense will also compute inferred types when a declared or documented type is not found or during control flow analysis. When a type is inferred it may be reduced to its minimal representation. For example, `MyClass|object` would become `object` because `MyClass` is a sub-type of `object`.
 
 Intelephense provides limited support for PHPStorm metadata as a way of overriding or supplementing type information. It is recommended to use PHPDoc type annotations instead of PHPStorm metadata where possible as they are more widely supported across different tools. Support for PHPStorm metadata may be removed in future releases.
 
 ### Type Narrowing
-Intelephense performs type narrowing of variables during control flow analysis. Type narrowing expressions include built-in type assertions such as is_string, custom type assertions annotated with @assert, instanceof, and equality expressions.
+Intelephense performs type narrowing of variables during control flow analysis. Type narrowing expressions include built-in type assertions such as `is_string`, custom type assertions annotated with `@assert`, `instanceof`, and equality expressions.
 
 ```php
 <?php
@@ -14926,163 +14935,201 @@ function example(int $a): void
 
 
 ### Top Type
-mixed
-The super-type of all types. Any other type can be assigned to a type constraint of mixed. If intelephense cannot determine a more specific type for a symbol or expression then this is the type it is given. Because of this, Intelephense also allows mixed to be assigned to any other type constraint as well, effectively turning off type checking for that instance.
+`mixed`
+The super-type of all types. Any other type can be assigned to a type constraint of mixed. If intelephense cannot determine a more specific type for a symbol or expression then this is the type it is given. Because of this, Intelephense also allows mixed to be assigned to any other type constraint as well, effectively turning off type checking for that instance. To switch off this behaviour you can set both `intelephense.diagnostics.relaxedTypeCheck` and `intelephense.diagnostics.noMixedTypeCheck` to `false`.
 
 ### Bottom Type
-never
+`never`
 The sub-type of all types. This type can be assigned to any other type constraint. It is used to represent an impossibility in the code and can be used as the return type of a function that exits or always throws an exception.
 
 ### Scalar Types
-int, float, bool, string.
+Any of these types can be assigned to the other unless the `declare(strict_types=1)` directive is used in the file or `intelephense.diagnostics.strictTypes` is `true`.
+* `int`
+* `float`
+* `bool`
+* `string`
 
 ### Unit Types
-void, null, true, false, unset* (represents an undefined variable).
+* `void`
+* `null`
+* `true`
+* `false`
+* `unset*` - Intelephense uses this PHP keyword to represent the type of an undefined variable.
 
 ### Literal Types
-'myString'*, 9* (integer literal).
+* `'myString'*` - String literals are encapsulated in quotes.
+* `9*` - An integer literal.
 
 ### Object Types
-object, \MyNs\MyClass, object{name: string, optional?: string}*, static, self, $this*.
+* `object`
+* `\MyNs\MyClass` - Classes, interfaces, traits, and enums can be fully qualified or not.
+* `object{name: string, optional?: string}*` - Object shapes.
+* `static`
+* `self`
+* `$this*`
 
 ### Array Types
-array, array<TKey, TValue>*, TValue[]*, array{description: string, 'length (cm)': float, optional?: string, ...<int, string>}*.
+* `array`
+* `array<TKey, TValue>*` - Generic form for an array.
+* `TValue[]*` - Numeric indexed array.
+* `array{description: string, 'length (cm)': float, optional?: string, ...<int, string>}*` - Array shapes.
 
 ### Callable Types
-callable, callable(TParamA $a, TParamB $b): TReturn*, Closure*.
+* `callable` - Base callable type.
+* `callable(TParamA $a, TParamB $b): TReturn*` - Callable type signatures.
 
 ### Alias Types
-iterable (Alias for Traversable|array), ?A (Nullable type shorthand for null|A).
+* `iterable` - Alias for `Traversable|array`.
+* `?A` - Nullable type shorthand for `null|A`.
 
 ### Union Types
-A|B|C - A type which may have multiple atomic type representations.
+`A|B|C` - A type which may have multiple atomic type representations.
 
 ### Intersection Types
-A&B&C - A composite type which consists of multiple atomic types.
+`A&B&C` - A composite type which consists of multiple atomic types.
 
 ### DNF Types
-A|B|(C&D&E) - When combining union and intersection types, only a single level of nesting is permitted. The union must be the top level.
+`A|B|(C&D&E)` - Combining union and intersection types (union must be top level).
 
 ### Generic Types
-Supports @template PHPDoc annotations. The following built-in types are templated:
-iterable, Traversable, array, Iterator, IteratorAggregate, ArrayAccess, WeakReference, WeakMap, Fiber, DatePeriod, ReflectionAttribute, ReflectionClass, Generator, ArrayObject, SplDoublyLinkedList, SplQueue, SplStack, SplHeap, SplMinHeap, SplMaxHeap, SplPriorityQueue, SplFixedArray, SplObjectStorage.
+`MyType<TypeArg1, TypeArg2>*`
+Declared using `@template` PHPDoc annotations. Supported built-in types: `iterable`, `Traversable`, `array`, `Iterator`, `IteratorAggregate`, `ArrayAccess`, `WeakReference`, `WeakMap`, `Fiber`, `DatePeriod`, `ReflectionAttribute`, `ReflectionClass`, `Generator`, `ArrayObject`, `SplDoublyLinkedList`, `SplQueue`, `SplStack`, `SplHeap`, `SplMinHeap`, `SplMaxHeap`, `SplPriorityQueue`, `SplFixedArray`, `SplObjectStorage`.
 
 ### Conditional Return Type
-(TSubject is TCompare ? TTrue : TFalse)* - Sometimes the return type of a function may depend on the type of a parameter.
+`(TSubject is TCompare ? TTrue : TFalse)*`
+Return type depending on the type of a parameter.
 
 ### Array Key Type
-key-of<TArray>* - Resolves to a union of the keys of an array shape.
+`key-of<TArray>*` - Union of the keys of an array shape.
 
 ### Array Value Type
-value-of<TArray>* - Resolves to a union of the values of an array shape.
+`value-of<TArray>*` - Union of the values of an array shape.
 
 ### Index Access Type
-TArray[TKey]* - Resolves to the type of the value at index TKey in TArray.
+`TArray[TKey]*` - Type of the value at index `TKey` in `TArray`.
 
 ### Miscellaneous Types
-resource*, class-string<T>*.
+* `resource*`
+* `class-string<T>*` - String with the name of class `T`.
 
 ### PHPDoc Annotations
-Intelephense supports standard PHPDoc annotations as well as non-standard ones from tools like Psalm and PHPStan.
-
-* **@template**: Used to declare a type argument of a generic type, function or method.
-* **@template-extends**: Used to declare the type arguments supplied to a generic parent type. Alias @extends is also supported.
-* **@template-implements**: Used to declare the type arguments supplied to a generic interface. Alias @implements is also supported.
-* **@template-use**: Used to declare the type arguments supplied to a generic trait. Alias @use is also supported.
-* **@param-closure-this**: Declares the type of the $this variable inside a closure passed as a parameter.
-* **@param-out**: Declares the out type of a by-reference parameter.
-* **@assert**: Declares a function that asserts an argument is of a specified type.
-* **@assert-if-true / @assert-if-false**: Similar to @assert but for boolean return paths.
-* **@mixin**: (Premium) Declares that members of a specified class are mixed in.
-* **@disregard**: Suppresses a specific diagnostic at the following statement.
-* **@type-alias**: Declares a type alias for improving readability.
-* **@import-type**: Imports a type alias declared in another file.
+* **@template** - Declare a type argument of a generic type, function or method.
+* **@template-extends** - Declare the type arguments supplied to a generic parent type. Alias `@extends` supported.
+* **@template-implements** - Declare the type arguments supplied to a generic interface. Alias `@implements` supported.
+* **@template-use** - Declare the type arguments supplied to a generic trait. Alias `@use` supported.
+* **@param-closure-this** - Declare the type of the `$this` variable inside a closure.
+* **@param-out** - Declare the out type of a by-reference parameter.
+* **@assert** - Assert that an argument is of a specified type.
+* **@assert-if-true / @assert-if-false** - Assert type on true or false code path.
+* **@mixin** - (Premium) Declare members of specified class are mixed in.
+* **@disregard** - Suppress a specific diagnostic at the following statement.
+* **@type-alias** - Declare a type alias.
+* **@import-type** - Import a type alias declared in another file.
 
 ### Features
 
 
 ### Free Features
-The following features are available to all users.
 
-### Workspace Symbols
-Search for symbols in your workspace (Ctrl+T). Use FQSEN query syntax for specific symbols.
 
-### Document Symbols
-Lists all symbols in the current document (Ctrl+Shift+O).
+### Workspace Symbols (Ctrl+T)
+Search for symbols in your workspace and navigate to their definitions.
 
-### Go to Definition
-Navigate to the definition of a symbol (F12).
+### Document Symbols (Ctrl+Shift+O)
+Lists all symbols in the current document.
 
-### Hover
-Show type information and documentation for a symbol when hovering.
+### Go to Definition (F12)
+Navigate to the definition of a symbol.
+
+### Hover (Ctrl+K Ctrl+I)
+Provides information about a symbol when hovering.
 
 ### Highlight
-Highlight all references to the symbol at the cursor position in the current file.
+Highlights all references to the symbol at the cursor position.
 
-### Code Completion
-Context appropriate completion suggestions ($ > : \ / ' " * . <).
+### Code Completion (Ctrl+Space)
+Context appropriate completion suggestions.
 
-### Signature Help
-Information about function/method signatures during a call (Ctrl+Shift+Space).
+### Signature Help (Ctrl+Shift+Space)
+Information about the signature of a function or method.
 
-### Find All References
-List all references to a symbol in the current file or workspace (Shift+F12).
+### Find All References (Shift+F12)
+List of all references to a symbol in the workspace.
 
-### Formatting
-Format a whole document or selected range. Complies with PHP-FIG coding standards.
+### Formatting (Ctrl+Shift+I)
+Formatting of a whole document or selected range. Complies with PHP-FIG coding standards.
 
 ### Diagnostics
-Syntax errors, type errors, and language constraints.
+Syntax errors, type errors, language constraints.
 
 ### Inline Values
-Variable ranges and text for debuggers to display inline values.
+Ranges and text for variables relevant for a debugger to display inline.
 
 ### Embedded Languages
-Language intelligence for HTML, CSS, and JavaScript within PHP files.
+Language intelligence for HTML and embedded CSS/JS within PHP tags.
 
 ### Premium Features
-Requires a licence.
 
-### Rename
-Refactor a symbol and all its semantic references (F2).
 
-### Code Folding
+### Rename (F2)
+Rename a symbol and all references to that symbol.
+
+### Code Folding (Ctrl+Shift+[)
 Fold and unfold regions of code based on the syntax tree.
 
-### Find All Implementations
-List all implementations of a method or interface (Ctrl+F12).
+### Find All Implementations (Ctrl+F12)
+List of all implementations of a method or interface.
 
 ### Go to Type Definition
-Navigate to the type definition of a variable rather than its declaration.
+Navigate to the type definition of a variable.
 
 ### Go to Declaration
-Navigate to the initial declaration of a symbol in a type hierarchy.
+Navigate to the initial declaration of a symbol.
 
-### Smart Select
-Expand and shrink selections based on the syntax tree (Shift+Alt+→/←).
+### Smart Select (Shift+Alt+→)
+Expand and shrink selection based on the syntax tree.
 
 ### Type Hierarchy
-Understand the inheritance structure of a class, interface, trait, or enum.
+Type hierarchy for a class, interface, trait or enum.
 
 ### Code Lens
-Reference counts and navigation links above declarations (Implementations, Overrides, Parent, Usages).
+Additional information and navigation rendered above declarations (References, Implementations, Overrides, Parent, Usages).
 
 ### Inlay Hints
-Inferred parameter names and return types inline with the code.
+Additional type and parameter information displayed inline.
 
-### Document Links
-Clickable links for require/include statements and @see annotations.
+### Document Links (Ctrl+Click)
+Clickable links to related files and resources.
 
-### Code Actions
-Quick-fix and refactoring options (Ctrl+.), such as Import Symbol, Add PHPDoc, and Implement All Abstract Methods.
+### Code Actions (Ctrl+.)
+Context appropriate actions (Import Symbol, Add PHPDoc, Implement All Abstract Methods).
 
 ### Appendix
 
 
-### Frameworks and Libraries
-Intelephense aims to support all PHP frameworks but does not implement specific solutions. Workarounds include type narrowing in code using `instanceof`, PHPDoc `@var` annotations, or using helper files for symbol overrides.
+### Compatibility With Frameworks and Libraries
+Intelephense aims to support all PHP frameworks but does not implement specific solutions. For complex cases, use type narrowing (`instanceof`), PHPDoc annotations (`@var`), or helper files for alternate symbol declarations.
 
 ### PHPDoc Instead of PHPStorm Metadata/Attributes
-It is recommended to use PHPDoc types for greater compatibility. Examples include using `@template` for return type mapping and array shapes (e.g., `array{red: RedService}`) for structured array documentation.
+It is recommended to use PHPDoc types instead of PHPStorm metadata and attributes for greater compatibility.
+
+```php
+/**
+ * @template T of string|object
+ * @param T $input
+ * @return T
+ */
+function paintColourDoc(string|object $input): string|object {}
+```
+
+```php
+/**
+ * @template T of array{red: RedService, blue: BlueObject, green: GreenCollection}
+ * @template K of key-of<T>
+ * @param K $value
+ * @return T[K]
+ */
+function getColourDoc(string $value): mixed {}
+```
 
 ---
