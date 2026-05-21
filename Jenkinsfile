@@ -57,6 +57,11 @@ pipeline {
                 sh 'npx tsx antigravity/workflows/visual_neural_relay_workflow.ts'
             }
         }
+        stage('Run Autonomous Feature Scaling Coordinator') {
+            steps {
+                sh 'npx tsx antigravity/workflows/feature_scaling_coordinator_workflow.ts'
+            }
+        }
         stage('Creative Workflow') {
             parallel {
                 stage('Market Analysis') {
