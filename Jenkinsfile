@@ -76,7 +76,7 @@ pipeline {
             parallel {
                 stage('Market Analysis') {
                     steps {
-                        sh 'python3 scraper.py'
+                        sh 'npm run ingest:sor'
                     }
                 }
                 stage('Daily Tasks') {
@@ -84,9 +84,9 @@ pipeline {
                         sh 'npm run daily'
                     }
                 }
-                stage('Asset Generation') {
+                stage('Autonomous Evolution') {
                     steps {
-                        sh 'python3 analytics.py'
+                        sh 'npx tsx scripts/execute_creation_cycle.ts'
                     }
                 }
             }
