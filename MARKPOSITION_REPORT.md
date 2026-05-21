@@ -1,59 +1,121 @@
-# 📈 Markposition Intelligence Report
+# 📊 Markposition Analytics Report
+<a name='table-of-contents'></a>
 
-Generated on: 2026-05-20T16:58:08.713Z
+**Generated on:** 2026-05-21 16:21:58
 
-## Recent Market Intelligence
+## Table of Contents
+* [General Statistics](#general-statistics)
+* [Top 10 Referenced Domains](#top-10-referenced-domains)
+* [Top 10 Categories](#top-10-categories)
+* [Posts by Year](#posts-by-year)
+* [Authors](#authors)
 
-### advertising.amazon
-- **Date**: October 5, 2022
-- **Domain**: advertising.amazon.com
-- **Link**: [https://advertising.amazon.com/](https://advertising.amazon.com/)
+<a name='general-statistics'></a>
+## 📈 General Statistics
+- **Total Posts:** 679
+- **Date Range:** 2020-05-19 to 2022-10-05
+- **Unique Domains Linked:** 367
 
-### Drive Advertising Revenue with Google Ad Manager : Google
-- **Date**: September 26, 2022
-- **Domain**: skillshop.exceedlms.com
-- **Link**: [https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager](https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager)
+[Back to Top](#table-of-contents)
 
-### https://marketingplatform.google.com/about/search-ads-360/
-- **Date**: March 10, 2022
-- **Domain**: N/A
-- **Link**: [Post Link](https://markposition.wordpress.com/2022/03/10/https-marketingplatform-google-com-about-search-ads-360-2/)
+<a name='top-10-referenced-domains'></a>
+## 🌐 Top 10 Referenced Domains
 
-### Analytics Academy
-- **Date**: September 20, 2022
-- **Domain**: analytics.google.com
-- **Link**: [https://analytics.google.com/analytics/academy/](https://analytics.google.com/analytics/academy/)
+## Table of Contents
+- [📊 General Statistics](#general-statistics)
+- [🌐 Top 10 Referenced Domains](#top-10-referenced-domains)
+- [📂 Top 10 Categories](#top-10-categories)
+- [📅 Posts by Year](#posts-by-year)
+- [✍️ Authors](#authors)
 
-### Adssettings google
-- **Date**: September 20, 2022
-- **Domain**: adssettings.google.com
-- **Link**: [https://adssettings.google.com/authenticated](https://adssettings.google.com/authenticated)
+## 📊 General Statistics
+- **Total Posts:** 679
+- **Date Range:** 2020-05-19 to 2022-10-05
+- **Unique Domains Linked:** 367
 
-### Data google
-- **Date**: September 20, 2022
-- **Domain**: myaccount.google.com
-- **Link**: [https://myaccount.google.com/data-and-personalization](https://myaccount.google.com/data-and-personalization)
+> 💡 **Highlight:** The most referenced domain is **skillshop.exceedlms.com** with 23 links.
 
-### The Privacy Sandbox: Technology for a More Private Web.
-- **Date**: September 20, 2022
-- **Domain**: privacysandbox.com
-- **Link**: [https://privacysandbox.com/intl/home#home-hero](https://privacysandbox.com/intl/home#home-hero)
+[Back to Top](#table-of-contents)
 
-### Digital Experience Platform & Enterprise CMS | Crownpeak
-- **Date**: September 16, 2022
-- **Domain**: crownpeak.com
-- **Link**: [https://www.crownpeak.com/](https://www.crownpeak.com/)
+## 🌐 Top 10 Referenced Domains
+| Domain | Count |
+| :--- | :---: |
+| skillshop.exceedlms.com | 23 |
+| support.google.com | 21 |
+| youtube.com | 18 |
+| advertising.amazon.com | 16 |
+| en.wikipedia.org | 14 |
+| google.com | 13 |
+| web.facebook.com | 12 |
+| developers.google.com | 11 |
+| trustarc.com | 11 |
+| ads.google.com | 10 |
 
-### About Performance Max campaigns – Google Ads
-- **Date**: September 1, 2022
-- **Domain**: support.google.com
-- **Link**: [https://support.google.com/google-ads/answer/10724817?hl=en](https://support.google.com/google-ads/answer/10724817?hl=en)
+[Back to Top](#table-of-contents)
 
-### About Smart Bidding – Google Ads
-- **Date**: September 1, 2022
-- **Domain**: support.google.com
-- **Link**: [https://support.google.com/google-ads/answer/7065882?hl=en](https://support.google.com/google-ads/answer/7065882?hl=en)
+<a name='top-10-categories'></a>
+## 📂 Top 10 Categories
 
+## 📂 Top 10 Categories
+| Category | Count |
+| :--- | :---: |
+| Ad Ads Advertise | 660 |
+| Promotion | 14 |
+| Ads | 4 |
+| Advertise | 3 |
+| Advertising | 3 |
+| Online | 2 |
 
----
-All the best - https://markposition.wordpress.com
+[Back to Top](#table-of-contents)
+
+<a name='posts-by-year'></a>
+## 📅 Posts by Year
+
+## 📅 Posts by Year
+| Year | Count |
+| :--- | :---: |
+| 2022 | 235 |
+| 2021 | 190 |
+| 2020 | 254 |
+
+[Back to Top](#table-of-contents)
+
+<a name='authors'></a>
+## ✍️ Authors
+- Filip Keser: 679 posts
+
+## Top 10 Referenced Domains
+| Domain | Count | Distribution |
+| :--- | :---: | :--- |
+| skillshop.exceedlms.com | 23 | ████████████████████ |
+| support.google.com | 21 | ██████████████████░░ |
+| youtube.com | 18 | ████████████████░░░░ |
+| advertising.amazon.com | 16 | ██████████████░░░░░░ |
+| en.wikipedia.org | 14 | ████████████░░░░░░░░ |
+| google.com | 13 | ███████████░░░░░░░░░ |
+| web.facebook.com | 12 | ██████████░░░░░░░░░░ |
+| developers.google.com | 11 | ██████████░░░░░░░░░░ |
+| trustarc.com | 11 | ██████████░░░░░░░░░░ |
+| ads.google.com | 10 | █████████░░░░░░░░░░░ |
+
+## Top 10 Categories
+| Category | Count | Distribution |
+| :--- | :---: | :--- |
+| Ad Ads Advertise | 660 | ████████████████████ |
+| Promotion | 14 | ░░░░░░░░░░░░░░░░░░░░ |
+| Ads | 4 | ░░░░░░░░░░░░░░░░░░░░ |
+| Advertise | 3 | ░░░░░░░░░░░░░░░░░░░░ |
+| Advertising | 3 | ░░░░░░░░░░░░░░░░░░░░ |
+| Online | 2 | ░░░░░░░░░░░░░░░░░░░░ |
+
+## Posts by Year
+| Year | Count | Distribution |
+| :--- | :---: | :--- |
+| 2022 | 235 | ███████████████████░ |
+| 2021 | 190 | ███████████████░░░░░ |
+| 2020 | 254 | ████████████████████ |
+
+## ✍️ Authors
+- **Filip Keser**: 679 posts
+
+[Back to Top](#table-of-contents)
