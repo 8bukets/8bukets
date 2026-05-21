@@ -28,7 +28,8 @@ export class CloudConvergenceService {
    * Orchestrates a full ecosystem synchronization.
    */
   public async synchronizeEcosystem() {
-    logAutonomousAction('🌐 [CloudConvergence] Initiating full ecosystem convergence...', 'info')
+    const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud')
+    logAutonomousAction(`🌐 [CloudConvergence] Initiating full ecosystem convergence (${isCloud ? 'CLOUD' : 'LOCAL'})...`, 'info')
 
     const providers = []
     if (process.env.GITHUB_TOKEN) providers.push('github')
@@ -95,7 +96,7 @@ export class CloudConvergenceService {
 
       // 5. Active State Recovery (Bridge MongoDB & Supabase)
       if (workOrderCount > 0 && !supabasePresence) {
-        logAutonomousAction('🔄 [CloudConvergence] Supabase presence missing but MongoDB active. Attempting recovery...', 'info')
+        logAutonomousAction('🔄 [CloudConvergence] Supabase presence missing but MongoDB active. Attempting Cloud-Native recovery...', 'info')
         try {
           const mongoClient = await getMongoClient()
           const db = mongoClient.db()
@@ -119,7 +120,7 @@ export class CloudConvergenceService {
         }
       }
 
-      logAutonomousAction('✅ [CloudConvergence] Ecosystem state converged.', 'info')
+      logAutonomousAction(`✅ [CloudConvergence] Ecosystem state converged (Mode: ${isCloud ? 'Cloud' : 'MacBook'}).`, 'info')
       return state
     } catch (err: any) {
       logAutonomousAction(`❌ [CloudConvergence] Fatal convergence failure: ${err.message}`, 'error')
@@ -157,7 +158,17 @@ export class CloudConvergenceService {
           })
 
           fs.writeFileSync(localPath, JSON.stringify(Array.from(orderMap.values()), null, 2))
-          logAutonomousAction(`✅ [CloudConvergence] Resolved conflicts: Synced ${mongoOrders.length} orders from MongoDB.`, 'info')
+
+          // Update autonomous_state.json with resolution metadata
+          const statePath = path.join(process.cwd(), 'autonomous_state.json')
+          if (fs.existsSync(statePath)) {
+            const state = JSON.parse(fs.readFileSync(statePath, 'utf8'))
+            state.last_conflict_resolution = new Date().toISOString()
+            state.synced_orders = mongoOrders.length
+            fs.writeFileSync(statePath, JSON.stringify(state, null, 4))
+          }
+
+          logAutonomousAction(`✅ [CloudConvergence] Resolved conflicts: Synced ${mongoOrders.length} orders from MongoDB to local state.`, 'info')
           return { status: 'resolved', conflicts: mongoOrders.length }
         }
       }
