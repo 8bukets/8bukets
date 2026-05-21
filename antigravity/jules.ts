@@ -456,6 +456,7 @@ export class Jules {
     // Scan external intelligence
     const { observeKnowledge: scanUrl } = await import('./services/knowledge')
     await scanUrl('https://software-online-review.com')
+    await scanUrl('https://markposition.wordpress.com')
 
     // Scan scratch for new knowledge
     const incomingDir = path.join(process.cwd(), 'scratch')
@@ -465,6 +466,23 @@ export class Jules {
         const fullPath = path.join(incomingDir, file)
         const content = fs.readFileSync(fullPath, 'utf8')
         const knowledge = KnowledgeObserver.processContent(file, content, `local://${file}`)
+        await observer.persistKnowledge(knowledge)
+      }
+    }
+
+    // Phase 12: Scan iCloud for new knowledge
+    const os = await import('os')
+    const homeDir = os.homedir()
+    const defaultICloudPath = path.join(homeDir, 'Library/Mobile Documents/com~apple~CloudDocs/Antigravity_Sync')
+    const icloudDir = process.env.ICLOUD_SYNC_PATH || defaultICloudPath
+
+    if (fs.existsSync(icloudDir)) {
+      console.log(`☁️ [Jules] Scanning iCloud for new knowledge: ${icloudDir}`)
+      const files = fs.readdirSync(icloudDir).filter(f => f.endsWith('.md'))
+      for (const file of files) {
+        const fullPath = path.join(icloudDir, file)
+        const content = fs.readFileSync(fullPath, 'utf8')
+        const knowledge = KnowledgeObserver.processContent(file, content, `icloud://${file}`)
         await observer.persistKnowledge(knowledge)
       }
     }
