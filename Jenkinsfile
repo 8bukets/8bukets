@@ -60,6 +60,7 @@ pipeline {
                 stage('Analyze Market') {
                     steps {
                         sh 'npm run ingest:sor'
+                        sh 'npm run ingest:forbes'
                     }
                 }
                 stage('Generate Assets') {
