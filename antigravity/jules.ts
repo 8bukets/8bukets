@@ -205,9 +205,11 @@ export class Jules {
 
   public async auditDependencies() {
     console.log(`📦 [Jules-${this.role}] Auditing dependency sovereignty...`)
-    const { execSync } = await import('child_process')
+    const { exec } = await import('child_process')
+    const { promisify } = await import('util')
+    const execAsync = promisify(exec)
     try {
-      const outdated = execSync('npm outdated --json || true').toString()
+      const { stdout: outdated } = await execAsync('npm outdated --json || true')
       const count = Object.keys(JSON.parse(outdated || '{}')).length
       if (count > 0) {
         this.recordTask(`Dependency Autopilot: Found ${count} outdated packages.`)
@@ -349,16 +351,18 @@ export class Jules {
 
   public async scanAllBranches(force: boolean = false) {
     console.log(`🔍 [Jules-${this.role}] Scanning ecosystem branches (force: ${force})...`)
-    const { execSync } = await import('child_process')
+    const { exec } = await import('child_process')
+    const { promisify } = await import('util')
+    const execAsync = promisify(exec)
     try {
       // Optimization: Use git for-each-ref to get the most recent branches (local and remote) efficiently.
       // Format: branch_name|subject|timestamp
       const limit = force ? '' : '--count=50'
       const cmd = `git for-each-ref --sort=-committerdate --format="%(refname:short)|%(contents:subject)|%(committerdate:unix)" refs/heads refs/remotes/origin ${limit}`
-      const branchesRaw = execSync(cmd).toString()
+      const { stdout: branchesRaw } = await execAsync(cmd)
       const branchLines = branchesRaw.split('\n').filter(l => l.trim() !== '')
 
-      return branchLines.map(line => {
+      return await Promise.all(branchLines.map(async line => {
         try {
           const [branch, message, timestamp] = line.split('|')
 
@@ -399,16 +403,23 @@ export class Jules {
             let diffOutput = ''
 
             try {
-              diffOutput = execSync(diffCommand, { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim()
+              const { stdout } = await execAsync(diffCommand)
+              diffOutput = stdout.trim()
             } catch (e) {
               // Fallback 1: Direct comparison
               diffCommand = `git diff --name-only main ${branch}`
               try {
-                diffOutput = execSync(diffCommand, { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim()
+                const { stdout } = await execAsync(diffCommand)
+                diffOutput = stdout.trim()
               } catch (e2) {
                 // Fallback 2: Last commit changes
                 diffCommand = `git show --name-only --format="" ${branch}`
-                diffOutput = execSync(diffCommand, { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim()
+                try {
+                  const { stdout } = await execAsync(diffCommand)
+                  diffOutput = stdout.trim()
+                } catch (e3) {
+                  // Ignore
+                }
               }
             }
 
@@ -442,7 +453,7 @@ export class Jules {
             results: 'N/A'
           }
         }
-      })
+      }))
     } catch (err) {
       console.error(`❌ [Jules-${this.role}] Branch scan failed:`, err)
       return []
