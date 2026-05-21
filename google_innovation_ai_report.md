@@ -120,5 +120,8 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 ### We’re announcing new community investments in Missouri.
 - URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/missouri-programs/
 
+### We’re announcing the first Texas Energy Impact Fund recipients.
+- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/texas-energy-impact-fund/
+
 
 All the best - https://markposition.wordpress.com

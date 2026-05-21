@@ -55,16 +55,12 @@
     {
         "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/",
         "title": "Google Labs",
-        "definitions": [
-            {
-                "term": "Introducing “vibe design” with Stitch",
-                "text": "Stitch is evolving into an AI-native platform that allows anyone to create, iterate, and collaborate on high-fidelity UI."
-            }
-        ],
+        "definitions": [],
         "use_cases": [],
         "benefits": [],
         "google_cloud_tools": [
-            "Gemini"
+            "Gemini",
+            "Google Flow"
         ]
     },
     {
@@ -105,7 +101,12 @@
     {
         "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/",
         "title": "Gemini Models",
-        "definitions": [],
+        "definitions": [
+            {
+                "term": "Introducing Gemini Omni",
+                "text": "Introducing Gemini Omni, which allows you to create anything from any input and edit naturally using conversational language."
+            }
+        ],
         "use_cases": [],
         "benefits": [],
         "google_cloud_tools": [
@@ -129,8 +130,7 @@
         "use_cases": [],
         "benefits": [],
         "google_cloud_tools": [
-            "Gemini",
-            "Kaggle"
+            "Gemini"
         ]
     },
     {
@@ -228,11 +228,11 @@
             }
         ],
         "google_cloud_tools": [
-            "Gemini models",
             "Gemini",
-            "Model Context Protocol",
-            "MCP",
+            "Gemini models",
             "Interactions API",
+            "MCP",
+            "Model Context Protocol",
             "Nano Banana"
         ]
     },
@@ -245,9 +245,9 @@
         "google_cloud_tools": [
             "Gemini",
             "Gemma",
-            "Vertex AI",
             "Kaggle",
-            "Nano Banana"
+            "Nano Banana",
+            "Vertex AI"
         ]
     },
     {
@@ -257,8 +257,8 @@
         "use_cases": [],
         "benefits": [],
         "google_cloud_tools": [
-            "Infrastructure & cloud",
-            "Gemini"
+            "Gemini",
+            "Infrastructure & cloud"
         ]
     },
     {
@@ -269,8 +269,8 @@
         "benefits": [],
         "google_cloud_tools": [
             "7 highlights from Google Cloud Next ‘26",
-            "Google Cloud Next ‘26",
-            "Gemini"
+            "Gemini",
+            "Google Cloud Next ‘26"
         ]
     },
     {
@@ -291,8 +291,8 @@
         "benefits": [],
         "google_cloud_tools": [
             "7 highlights from Google Cloud Next ‘26",
-            "Google Cloud Next ‘26",
-            "Gemini"
+            "Gemini",
+            "Google Cloud Next ‘26"
         ]
     },
     {
@@ -341,12 +341,7 @@
         "title": "AI",
         "definitions": [],
         "use_cases": [],
-        "benefits": [
-            {
-                "title": "AI Impact Summit 2026: How we’re partnering to make AI work for everyone",
-                "description": "An overview of Google’s new global partnerships and funding announcements at the AI Impact Summit in India."
-            }
-        ],
+        "benefits": [],
         "google_cloud_tools": [
             "Gemini"
         ]
@@ -384,8 +379,7 @@
         "use_cases": [],
         "benefits": [],
         "google_cloud_tools": [
-            "Gemini",
-            "Kaggle"
+            "Gemini"
         ]
     },
     {
@@ -530,8 +524,8 @@
         "benefits": [],
         "google_cloud_tools": [
             "Gemini",
-            "Nano Banana",
-            "Google Flow"
+            "Google Flow",
+            "Nano Banana"
         ]
     },
     {
@@ -626,14 +620,14 @@
         ],
         "benefits": [],
         "google_cloud_tools": [
+            "Avatars",
             "Gemini",
+            "Google Flow",
             "Kaggle",
             "Nano Banana",
-            "Google Flow",
-            "YouTube Shorts",
-            "YouTube Create App",
             "SynthID",
-            "Avatars"
+            "YouTube Create App",
+            "YouTube Shorts"
         ]
     },
     {
@@ -675,13 +669,13 @@
         "use_cases": [],
         "benefits": [],
         "google_cloud_tools": [
-            "Infrastructure supporting innovation at scale",
             "Gemini",
+            "Google Flow",
+            "Infrastructure supporting innovation at scale",
             "MCP",
             "Nano Banana",
-            "Google Flow",
-            "YouTube Shorts",
-            "SynthID"
+            "SynthID",
+            "YouTube Shorts"
         ]
     },
     {
@@ -703,13 +697,13 @@
         "use_cases": [],
         "benefits": [],
         "google_cloud_tools": [
-            "Get access to Google's agent infrastructure",
-            "Reason, plan and call tools using the harness",
-            "Execute code and manage files in an isolated Linux sandbox",
             "Browse the web to fetch and process live data",
+            "Execute code and manage files in an isolated Linux sandbox",
             "Gemini",
             "Gemma",
-            "Interactions API"
+            "Get access to Google's agent infrastructure",
+            "Interactions API",
+            "Reason, plan and call tools using the harness"
         ]
     },
     {
@@ -741,6 +735,39 @@
         "benefits": [],
         "google_cloud_tools": [
             "Gemini"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/texas-energy-impact-fund/",
+        "title": "Google announces first Texas Energy Impact Fund recipients",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-updates/",
+        "title": "New agents, mobile apps and Gemini Omni for Google Flow and Google Flow Music",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini",
+            "Google Flow",
+            "Nano Banana"
+        ]
+    },
+    {
+        "url": "https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/",
+        "title": "Gemini for Science: AI experiments and tools for a new era of discovery",
+        "definitions": [],
+        "use_cases": [],
+        "benefits": [],
+        "google_cloud_tools": [
+            "Gemini",
+            "Gemma"
         ]
     }
 ]

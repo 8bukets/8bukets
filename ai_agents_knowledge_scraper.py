@@ -190,11 +190,41 @@ def run_knowledge_scraper():
             new_knowledge.append(k)
 
     # Merge logic
-    merged_knowledge = {item["url"]: item for item in existing_knowledge}
-    for item in new_knowledge:
-        merged_knowledge[item["url"]] = item
+    merged_dict = {item["url"]: item for item in existing_knowledge}
+    for new_item in new_knowledge:
+        url = new_item["url"]
+        if url in merged_dict:
+            existing = merged_dict[url]
+            # Merge definitions
+            existing_defs = {d["term"]: d["text"] for d in existing.get("definitions", [])}
+            for d in new_item["definitions"]:
+                existing_defs[d["term"]] = d["text"]
+            existing["definitions"] = [{"term": k, "text": v} for k, v in existing_defs.items()]
 
-    all_knowledge = list(merged_knowledge.values())
+            # Merge use cases
+            existing_ucs = {u["title"]: u["description"] for u in existing.get("use_cases", [])}
+            for u in new_item["use_cases"]:
+                existing_ucs[u["title"]] = u["description"]
+            existing["use_cases"] = [{"title": k, "description": v} for k, v in existing_ucs.items()]
+
+            # Merge benefits
+            existing_bens = {b["title"]: b["description"] for b in existing.get("benefits", [])}
+            for b in new_item["benefits"]:
+                existing_bens[b["title"]] = b["description"]
+            existing["benefits"] = [{"title": k, "description": v} for k, v in existing_bens.items()]
+
+            # Merge tools
+            existing_tools = set(existing.get("google_cloud_tools", []))
+            existing_tools.update(new_item["google_cloud_tools"])
+            existing["google_cloud_tools"] = sorted(list(existing_tools))
+
+            # Update title if new one is better
+            if len(new_item["title"]) > len(existing.get("title", "")):
+                existing["title"] = new_item["title"]
+        else:
+            merged_dict[url] = new_item
+
+    all_knowledge = list(merged_dict.values())
 
     os.makedirs("data", exist_ok=True)
     with open(json_path, "w", encoding="utf-8") as f:

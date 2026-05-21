@@ -26,8 +26,44 @@ def merge_knowledge():
         except Exception:
             pass
 
-    system_knowledge["google_innovation_ai"] = innovation_data
-    system_knowledge["ai_agents_structured"] = agents_data
+    # Merge innovation data
+    existing_innovation = {item["url"]: item for item in system_knowledge.get("google_innovation_ai", [])}
+    for item in innovation_data:
+        existing_innovation[item["url"]] = item
+    system_knowledge["google_innovation_ai"] = list(existing_innovation.values())
+
+    # Merge agents data
+    existing_agents = {item["url"]: item for item in system_knowledge.get("ai_agents_structured", [])}
+    for item in agents_data:
+        if item["url"] in existing_agents:
+            # Smart merge definitions/tools
+            existing = existing_agents[item["url"]]
+
+            # Definitions
+            existing_defs = {d["term"]: d["text"] for d in existing.get("definitions", [])}
+            for d in item.get("definitions", []):
+                existing_defs[d["term"]] = d["text"]
+            existing["definitions"] = [{"term": k, "text": v} for k, v in existing_defs.items()]
+
+            # Tools
+            existing_tools = set(existing.get("google_cloud_tools", []))
+            existing_tools.update(item.get("google_cloud_tools", []))
+            existing["google_cloud_tools"] = sorted(list(existing_tools))
+
+            # Benefits & Use Cases
+            existing_ucs = {u["title"]: u["description"] for u in existing.get("use_cases", [])}
+            for u in item.get("use_cases", []):
+                existing_ucs[u["title"]] = u["description"]
+            existing["use_cases"] = [{"title": k, "description": v} for k, v in existing_ucs.items()]
+
+            existing_bens = {b["title"]: b["description"] for b in existing.get("benefits", [])}
+            for b in item.get("benefits", []):
+                existing_bens[b["title"]] = b["description"]
+            existing["benefits"] = [{"title": k, "description": v} for k, v in existing_bens.items()]
+        else:
+            existing_agents[item["url"]] = item
+
+    system_knowledge["ai_agents_structured"] = list(existing_agents.values())
 
     with open(system_path, "w", encoding="utf-8") as f:
         json.dump(system_knowledge, f, indent=4, ensure_ascii=False)

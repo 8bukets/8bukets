@@ -41,11 +41,9 @@ Synthesized from Google Innovation & AI Blog
 
 ## [Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/)
 
-### Definitions
-- **Introducing “vibe design” with Stitch**: Stitch is evolving into an AI-native platform that allows anyone to create, iterate, and collaborate on high-fidelity UI.
-
 ### Google Cloud Tools
 - Gemini
+- Google Flow
 
 ---
 
@@ -73,6 +71,9 @@ Synthesized from Google Innovation & AI Blog
 
 ## [Gemini Models](https://blog.google/innovation-and-ai/models-and-research/gemini-models/)
 
+### Definitions
+- **Introducing Gemini Omni**: Introducing Gemini Omni, which allows you to create anything from any input and edit naturally using conversational language.
+
 ### Google Cloud Tools
 - Gemini
 
@@ -89,7 +90,6 @@ Synthesized from Google Innovation & AI Blog
 
 ### Google Cloud Tools
 - Gemini
-- Kaggle
 
 ---
 
@@ -150,11 +150,11 @@ Synthesized from Google Innovation & AI Blog
 - **Take advantage of proven Google scale performance**: When you build with the Deep Research agent, you are tapping into the same autonomous research infrastructure that powers research capabilities within some of Google’s most popular products like Gemini App , NotebookLM , Google Search and Google Finance .
 
 ### Google Cloud Tools
-- Gemini models
 - Gemini
-- Model Context Protocol
-- MCP
+- Gemini models
 - Interactions API
+- MCP
+- Model Context Protocol
 - Nano Banana
 
 ---
@@ -164,17 +164,17 @@ Synthesized from Google Innovation & AI Blog
 ### Google Cloud Tools
 - Gemini
 - Gemma
-- Vertex AI
 - Kaggle
 - Nano Banana
+- Vertex AI
 
 ---
 
 ## [Innovation & AI](https://blog.google/innovation-and-ai/)
 
 ### Google Cloud Tools
-- Infrastructure & cloud
 - Gemini
+- Infrastructure & cloud
 
 ---
 
@@ -182,8 +182,8 @@ Synthesized from Google Innovation & AI Blog
 
 ### Google Cloud Tools
 - 7 highlights from Google Cloud Next ‘26
-- Google Cloud Next ‘26
 - Gemini
+- Google Cloud Next ‘26
 
 ---
 
@@ -198,8 +198,8 @@ Synthesized from Google Innovation & AI Blog
 
 ### Google Cloud Tools
 - 7 highlights from Google Cloud Next ‘26
-- Google Cloud Next ‘26
 - Gemini
+- Google Cloud Next ‘26
 
 ---
 
@@ -234,9 +234,6 @@ Synthesized from Google Innovation & AI Blog
 
 ## [AI](https://blog.google/innovation-and-ai/technology/ai/)
 
-### Benefits
-- **AI Impact Summit 2026: How we’re partnering to make AI work for everyone**: An overview of Google’s new global partnerships and funding announcements at the AI Impact Summit in India.
-
 ### Google Cloud Tools
 - Gemini
 
@@ -262,7 +259,6 @@ Synthesized from Google Innovation & AI Blog
 
 ### Google Cloud Tools
 - Gemini
-- Kaggle
 
 ---
 
@@ -362,8 +358,8 @@ Synthesized from Google Innovation & AI Blog
 
 ### Google Cloud Tools
 - Gemini
-- Nano Banana
 - Google Flow
+- Nano Banana
 
 ---
 
@@ -424,14 +420,14 @@ Synthesized from Google Innovation & AI Blog
 - **Create videos with your own digital avatar**: We're committed to developing AI responsibly and we have clear policies to protect users from harm and governing the use of our AI tools. To start, you can create videos with your own voice by using Avatars , which create a digital version of yourself so you can generate videos that look and sound like you. Beyond the avatar feature, in terms of editing videos to change audio and speech, we are still working to test this and better understand how we can bring this capability to users responsibly. All videos created with Omni include our imperceptible SynthID digital watermark. You can easily verify that videos were generated with Gemini Omni through the Gemini app, Gemini in Chrome and Google Search. You can find out more about how we're expanding our content transparency and verification tools to help you understand how content was created and edited across the web in our blog post .
 
 ### Google Cloud Tools
+- Avatars
 - Gemini
+- Google Flow
 - Kaggle
 - Nano Banana
-- Google Flow
-- YouTube Shorts
-- YouTube Create App
 - SynthID
-- Avatars
+- YouTube Create App
+- YouTube Shorts
 
 ---
 
@@ -461,13 +457,13 @@ Synthesized from Google Innovation & AI Blog
 ## [I/O 2026: Welcome to the agentic Gemini era](https://blog.google/innovation-and-ai/sundar-pichai-io-2026/)
 
 ### Google Cloud Tools
-- Infrastructure supporting innovation at scale
 - Gemini
+- Google Flow
+- Infrastructure supporting innovation at scale
 - MCP
 - Nano Banana
-- Google Flow
-- YouTube Shorts
 - SynthID
+- YouTube Shorts
 
 ---
 
@@ -483,13 +479,13 @@ Synthesized from Google Innovation & AI Blog
 ## [Introducing Managed Agents in the Gemini API](https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/)
 
 ### Google Cloud Tools
-- Get access to Google's agent infrastructure
-- Reason, plan and call tools using the harness
-- Execute code and manage files in an isolated Linux sandbox
 - Browse the web to fetch and process live data
+- Execute code and manage files in an isolated Linux sandbox
 - Gemini
 - Gemma
+- Get access to Google's agent infrastructure
 - Interactions API
+- Reason, plan and call tools using the harness
 
 ---
 
@@ -512,6 +508,30 @@ Synthesized from Google Innovation & AI Blog
 
 ### Google Cloud Tools
 - Gemini
+
+---
+
+## [Google announces first Texas Energy Impact Fund recipients](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/texas-energy-impact-fund/)
+
+### Google Cloud Tools
+- Gemini
+
+---
+
+## [New agents, mobile apps and Gemini Omni for Google Flow and Google Flow Music](https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-updates/)
+
+### Google Cloud Tools
+- Gemini
+- Google Flow
+- Nano Banana
+
+---
+
+## [Gemini for Science: AI experiments and tools for a new era of discovery](https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/)
+
+### Google Cloud Tools
+- Gemini
+- Gemma
 
 ---
 
