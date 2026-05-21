@@ -1,6 +1,6 @@
 # ANTIGRAVITY AI AGENTS KNOWLEDGE BASE
 
-*Last Updated: 2026-05-21T02:38:06.307Z*
+*Last Updated: 2026-05-21T11:41:13.616Z*
 
 ## DOCUMENT: Intelephense Documentation
 **Source:** https://intelephense.com/docs
@@ -1261,7 +1261,7 @@ ben@intelephense.com
 
 ## DOCUMENT: software info by fk – software-online-review – Filip Keser
 **Source:** https://software-online-review.com
-**Ingested At:** 2026-05-21T02:38:04.781Z
+**Ingested At:** 2026-05-21T11:41:13.393Z
 
 ### Introduction
 [Skip to content](#content)

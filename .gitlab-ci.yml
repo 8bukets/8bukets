@@ -77,3 +77,13 @@ run-autonomous-proactive_scalability:
     - npx tsx antigravity/workflows/proactive_scalability_workflow.ts
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-creative-workflow-pipeline:
+  stage: test
+  script:
+    - echo "Running creative workflow pipeline"
+    - npm run ingest:sor
+    - npm run daily
+    - npx tsx scripts/execute_creation_cycle.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
