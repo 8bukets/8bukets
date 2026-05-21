@@ -5913,6 +5913,123 @@
         "source": "icloud://wilson_sonsini.md",
         "ingestedAt": "2026-05-21T02:38:05.798Z"
       }
+    },
+    {
+      "title": "GPG Suite",
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "2025-11-19: Latest beta already includes a GPG Mail version that supports macOS Tahoe. Learn more.\n\n[Learn more.](/tahoe)"
+        },
+        {
+          "header": "GPGTools",
+          "content": "[GPGTools](/)\n- Support Plan\n[Support Plan](/support-plan)\n- Support\n[Support](https://support.gpgtools.com)\n- News\n[News](https://infosec.exchange/@gpgtools)"
+        },
+        {
+          "header": "GPG Suite",
+          "content": ""
+        },
+        {
+          "header": "One simple packagewith everything you need,to protect your emails and files.",
+          "content": "[Downloadfor macOS 10.15 - 13.x](https://releases.gpgtools.com/GPG_Suite-2023.3.dmg)\nBy downloading, you agree to our Terms of Distribution\n\n[Terms of Distribution](/legal)\n[support plan](/support-plan)\n- Release Notes\n[Release Notes](/releases/gpgsuite/2023.3/release-notes.html)\n- GPG Signature\n[GPG Signature](https://releases.gpgtools.com/GPG_Suite-2023.3.dmg.sig)\n- SHA256 57468a4adc55d954ead4fe1f88b07eac1b70ada40fcbc810765fd521ef21eef1\n- Source Code\n[Source Code](https://releases.gpgtools.com/GPG_Suite-2023.3.txz)\nUse GPG Suite to encrypt, decrypt, sign and verify files or messages. Manage your GPG Keychain with a few simple clicks and experience the full power of GPG easier than ever before.\n\n- GPG Mail integrates the full power of GPG seamlessly into macOS Mail. Protecting your emails has never been so simple."
+        },
+        {
+          "header": "GPG Mail",
+          "content": "integrates the full power of GPG seamlessly into macOS Mail. Protecting your emails has never been so simple.\n\n- GPG Keychain allows you to manage your OpenPGP keys. Create new keys, modify existing ones and import your colleagues' keys from a key server."
+        },
+        {
+          "header": "GPG Keychain",
+          "content": "allows you to manage your OpenPGP keys. Create new keys, modify existing ones and import your colleagues' keys from a key server.\n\n- GPG Services integrates the power of GPG into almost any application via the macOS Services context menu. It allows you to encrypt/decrypt, sign/verify text selections, files, folders and much more."
+        },
+        {
+          "header": "GPG Services",
+          "content": "integrates the power of GPG into almost any application via the macOS Services context menu. It allows you to encrypt/decrypt, sign/verify text selections, files, folders and much more.\n\n- MacGPG is the underlying encryption engine of GPG Suite. If you are familiar with the command line, you can use its raw powers. Based on the latest version of GnuPG."
+        },
+        {
+          "header": "MacGPG",
+          "content": "is the underlying encryption engine of GPG Suite. If you are familiar with the command line, you can use its raw powers. Based on the latest version of GnuPG.\n\n[GnuPG](https://gnupg.org)"
+        },
+        {
+          "header": "GPG Suite at a glance",
+          "content": "- It's all about the keys To use GPG to encrypt and verify mails or files you and your friends need GPG keys. GPG Keychain lets you manage your own keys and find and import keys of your friends."
+        },
+        {
+          "header": "It's all about the keys",
+          "content": "To use GPG to encrypt and verify mails or files you and your friends need GPG keys.\n\nGPG Keychain lets you manage your own keys and find and import keys of your friends.\n\n- Create your own key Enter your name and the email address you want to use your key with and you are ready to go. You don't have to bother with more advanced settings, we set good defaults for you."
+        },
+        {
+          "header": "Create your own key",
+          "content": "Enter your name and the email address you want to use your key with and you are ready to go.\n\nYou don't have to bother with more advanced settings, we set good defaults for you.\n\n- Upload your key to a key server so your friends can find it When creating a key, you have the option to upload it to a key server, which makes it very easy for your friends to find and import it."
+        },
+        {
+          "header": "Upload your key to a key server so your friends can find it",
+          "content": "When creating a key, you have the option to upload it to a key server, which makes it very easy for your friends to find and import it.\n\n- Already an expert? When creating a key, you can enable the advanced view, which lets you choose key size, expiration date and algorithm to use for your keys. Have full control over your keys."
+        },
+        {
+          "header": "Already an expert?",
+          "content": "When creating a key, you can enable the advanced view, which lets you choose key size, expiration date and algorithm to use for your keys. Have full control over your keys.\n\n- See all your keys The main window of GPG Keychain shows you all your keys and the keys of your friends. Enable the \"Show secret keys only\" checkbox, to see only the keys you created."
+        },
+        {
+          "header": "See all your keys",
+          "content": "The main window of GPG Keychain shows you all your keys and the keys of your friends.\n\nEnable the \"Show secret keys only\" checkbox, to see only the keys you created.\n\n- The toolbar gives you quick access to the most important actions. Create a new key, import or export an existing key, or search for a specific key using the search field."
+        },
+        {
+          "header": "The toolbar",
+          "content": "gives you quick access to the most important actions. Create a new key, import or export an existing key, or search for a specific key using the search field.\n\n- More options Select a key and right-click on it to bring up a context menu, letting you send your key to a key server, update or manage the details of your key."
+        },
+        {
+          "header": "More options",
+          "content": "Select a key and right-click on it to bring up a context menu, letting you send your key to a key server, update or manage the details of your key.\n\n- Add additional email addresses Select your key and press the info button in the toolbar to add additional email addresses."
+        },
+        {
+          "header": "Add additional email addresses",
+          "content": "Select your key and press the info button in the toolbar to add additional email addresses.\n\n- Write secure messages with Mail After installing GPG Suite, you'll see two new buttons when writing a new email: the lock button and the sign button next to it."
+        },
+        {
+          "header": "Write secure messages with Mail",
+          "content": "After installing GPG Suite, you'll see two new buttons when writing a new email: the lock button and the sign button next to it.\n\n- The lock button Activate the lock button to encrypt an email. Only you and the recipient will be able to read the contents of your message. Toggle between encrypting and not encrypting your email pressing ⌥ ⌘ Y."
+        },
+        {
+          "header": "The lock button",
+          "content": "Activate the lock button to encrypt an email. Only you and the recipient will be able to read the contents of your message. Toggle between encrypting and not encrypting your email pressing ⌥ ⌘ Y.\n\n- The sign button Activate the sign button to sign an email. The recipient will be able to tell, that the email came from you and whether or not it was tampered with in any way. Toggle between signing and not signing your email pressing ⌥ ⌘ X."
+        },
+        {
+          "header": "The sign button",
+          "content": "Activate the sign button to sign an email. The recipient will be able to tell, that the email came from you and whether or not it was tampered with in any way.\n\nToggle between signing and not signing your email pressing ⌥ ⌘ X.\n\n- Choose between PGP and S/MIME Using the security method indicator in the upper right corner, you can quickly switch between PGP and S/MIME. This is very handy if you use both. Press ⌥ ⌘ P to activate PGP or ⌥ ⌘ S to activate S/MIME."
+        },
+        {
+          "header": "Choose between PGP and S/MIME",
+          "content": "Using the security method indicator in the upper right corner, you can quickly switch between PGP and S/MIME. This is very handy if you use both.\n\nPress ⌥ ⌘ P to activate PGP or ⌥ ⌘ S to activate S/MIME.\n\n- Receive secure messages with Mail The \"Security:\" header will tell you, if the message you've received was signed or encrypted. If the message was successfully decrypted, you'll see an open lock. If the signature of the message is valid, you'll see a star icon with a checkmark. Make sure to click \"Details\" to see the security header."
+        },
+        {
+          "header": "Receive secure messages with Mail",
+          "content": "The \"Security:\" header will tell you, if the message you've received was signed or encrypted.\n\nIf the message was successfully decrypted, you'll see an open lock. If the signature of the message is valid, you'll see a star icon with a checkmark.\n\nMake sure to click \"Details\" to see the security header.\n\n- Signed messages will show the email address associated with your friend's key that was used to sign this message. Click on the signature icon to see more infos regarding the key and signature."
+        },
+        {
+          "header": "Signed messages",
+          "content": "will show the email address associated with your friend's key that was used to sign this message.\n\nClick on the signature icon to see more infos regarding the key and signature.\n\n- Encrypted or signed attachments If the message contains encrypted or signed attachments, they will be automatically decrypted and verified. The attachments will look like any other non-encrypted attachments to you, while still being protected."
+        },
+        {
+          "header": "Encrypted or signed attachments",
+          "content": "If the message contains encrypted or signed attachments, they will be automatically decrypted and verified. The attachments will look like any other non-encrypted attachments to you, while still being protected.\n\n- Sometimes things go wrong It might happen that someone encrypted a mail for another recipient but mistakenly sent it to you and so you're not able to read it. Or a signed message you're receiving was modified without your knowledge. Or anything else could have gone wrong. In these cases we're trying to be as helpful as possible by providing good explanations of what happened."
+        },
+        {
+          "header": "Sometimes things go wrong",
+          "content": "It might happen that someone encrypted a mail for another recipient but mistakenly sent it to you and so you're not able to read it. Or a signed message you're receiving was modified without your knowledge. Or anything else could have gone wrong. In these cases we're trying to be as helpful as possible by providing good explanations of what happened.\n\n- Find out what went wrong Whenever we detect that something's not right, you'll see a banner with an error message, letting you know what the problem is. To get detailed information about a problem, click on \"Show Details\" which contains a better description of the problem and possible solutions to it."
+        },
+        {
+          "header": "Find out what went wrong",
+          "content": "Whenever we detect that something's not right, you'll see a banner with an error message, letting you know what the problem is.\n\nTo get detailed information about a problem, click on \"Show Details\" which contains a better description of the problem and possible solutions to it.\n\n- Nr. 1\n[Nr. 1](#)\n- Nr. 2\n[Nr. 2](#)\n- Nr. 3\n[Nr. 3](#)\n- Nr. 4\n[Nr. 4](#)\n- Nr. 5\n[Nr. 5](#)\n[GPGTools Public Key](/GPGTools-00D026C4-240916.asc)\n- Support\n[Support](https://support.gpgtools.com)"
+        },
+        {
+          "header": "- FAQ",
+          "content": "[FAQ](/faq)\n- Mastodon\n[Mastodon](https://infosec.exchange/@GPGTools)\n- Privacy Policy\n[Privacy Policy](/privacy)\n- Terms of Distribution\n[Terms of Distribution](/legal)\n- Contact\n[Contact](javascript:mailTo('yjfrElulyttqx3twl'))\n- Imprint\n[Imprint](/imprint)"
+        }
+      ],
+      "metadata": {
+        "source": "https://gpgtools.org/",
+        "ingestedAt": "2026-05-21T11:33:33.452Z"
+      }
     }
   ]
 }

@@ -77,6 +77,7 @@ pipeline {
                 stage('Market Analysis') {
                     steps {
                         sh 'npm run ingest:sor'
+                        sh 'npm run ingest:gpgtools'
                     }
                 }
                 stage('Daily Tasks') {

@@ -1,6 +1,6 @@
 # ANTIGRAVITY AI AGENTS KNOWLEDGE BASE
 
-*Last Updated: 2026-05-21T02:38:06.307Z*
+*Last Updated: 2026-05-21T11:33:33.610Z*
 
 ## DOCUMENT: Intelephense Documentation
 **Source:** https://intelephense.com/docs
@@ -29267,5 +29267,196 @@ Wilson Sonsini’s history is essentially the history of modern technology:
 • **Regulatory & Compliance:** Handling matters across various sectors, from FDA regulations in life sciences to SEC enforcement and corporate governance.
 • **Employee Benefits & Compensation:** Guiding companies on structuring equity compensation plans and managing employment matters during growth and transactions.
 • **Energy & Climate Solutions:** Representing clean tech, renewable energy, and climate innovation companies in financing, project development, and regulatory matters.
+
+---
+
+## DOCUMENT: GPG Suite
+**Source:** https://gpgtools.org/
+**Ingested At:** 2026-05-21T11:33:33.452Z
+
+### Introduction
+2025-11-19: Latest beta already includes a GPG Mail version that supports macOS Tahoe. Learn more.
+
+[Learn more.](/tahoe)
+
+### GPGTools
+[GPGTools](/)
+- Support Plan
+[Support Plan](/support-plan)
+- Support
+[Support](https://support.gpgtools.com)
+- News
+[News](https://infosec.exchange/@gpgtools)
+
+### GPG Suite
+
+
+### One simple packagewith everything you need,to protect your emails and files.
+[Downloadfor macOS 10.15 - 13.x](https://releases.gpgtools.com/GPG_Suite-2023.3.dmg)
+By downloading, you agree to our Terms of Distribution
+
+[Terms of Distribution](/legal)
+[support plan](/support-plan)
+- Release Notes
+[Release Notes](/releases/gpgsuite/2023.3/release-notes.html)
+- GPG Signature
+[GPG Signature](https://releases.gpgtools.com/GPG_Suite-2023.3.dmg.sig)
+- SHA256 57468a4adc55d954ead4fe1f88b07eac1b70ada40fcbc810765fd521ef21eef1
+- Source Code
+[Source Code](https://releases.gpgtools.com/GPG_Suite-2023.3.txz)
+Use GPG Suite to encrypt, decrypt, sign and verify files or messages. Manage your GPG Keychain with a few simple clicks and experience the full power of GPG easier than ever before.
+
+- GPG Mail integrates the full power of GPG seamlessly into macOS Mail. Protecting your emails has never been so simple.
+
+### GPG Mail
+integrates the full power of GPG seamlessly into macOS Mail. Protecting your emails has never been so simple.
+
+- GPG Keychain allows you to manage your OpenPGP keys. Create new keys, modify existing ones and import your colleagues' keys from a key server.
+
+### GPG Keychain
+allows you to manage your OpenPGP keys. Create new keys, modify existing ones and import your colleagues' keys from a key server.
+
+- GPG Services integrates the power of GPG into almost any application via the macOS Services context menu. It allows you to encrypt/decrypt, sign/verify text selections, files, folders and much more.
+
+### GPG Services
+integrates the power of GPG into almost any application via the macOS Services context menu. It allows you to encrypt/decrypt, sign/verify text selections, files, folders and much more.
+
+- MacGPG is the underlying encryption engine of GPG Suite. If you are familiar with the command line, you can use its raw powers. Based on the latest version of GnuPG.
+
+### MacGPG
+is the underlying encryption engine of GPG Suite. If you are familiar with the command line, you can use its raw powers. Based on the latest version of GnuPG.
+
+[GnuPG](https://gnupg.org)
+
+### GPG Suite at a glance
+- It's all about the keys To use GPG to encrypt and verify mails or files you and your friends need GPG keys. GPG Keychain lets you manage your own keys and find and import keys of your friends.
+
+### It's all about the keys
+To use GPG to encrypt and verify mails or files you and your friends need GPG keys.
+
+GPG Keychain lets you manage your own keys and find and import keys of your friends.
+
+- Create your own key Enter your name and the email address you want to use your key with and you are ready to go. You don't have to bother with more advanced settings, we set good defaults for you.
+
+### Create your own key
+Enter your name and the email address you want to use your key with and you are ready to go.
+
+You don't have to bother with more advanced settings, we set good defaults for you.
+
+- Upload your key to a key server so your friends can find it When creating a key, you have the option to upload it to a key server, which makes it very easy for your friends to find and import it.
+
+### Upload your key to a key server so your friends can find it
+When creating a key, you have the option to upload it to a key server, which makes it very easy for your friends to find and import it.
+
+- Already an expert? When creating a key, you can enable the advanced view, which lets you choose key size, expiration date and algorithm to use for your keys. Have full control over your keys.
+
+### Already an expert?
+When creating a key, you can enable the advanced view, which lets you choose key size, expiration date and algorithm to use for your keys. Have full control over your keys.
+
+- See all your keys The main window of GPG Keychain shows you all your keys and the keys of your friends. Enable the "Show secret keys only" checkbox, to see only the keys you created.
+
+### See all your keys
+The main window of GPG Keychain shows you all your keys and the keys of your friends.
+
+Enable the "Show secret keys only" checkbox, to see only the keys you created.
+
+- The toolbar gives you quick access to the most important actions. Create a new key, import or export an existing key, or search for a specific key using the search field.
+
+### The toolbar
+gives you quick access to the most important actions. Create a new key, import or export an existing key, or search for a specific key using the search field.
+
+- More options Select a key and right-click on it to bring up a context menu, letting you send your key to a key server, update or manage the details of your key.
+
+### More options
+Select a key and right-click on it to bring up a context menu, letting you send your key to a key server, update or manage the details of your key.
+
+- Add additional email addresses Select your key and press the info button in the toolbar to add additional email addresses.
+
+### Add additional email addresses
+Select your key and press the info button in the toolbar to add additional email addresses.
+
+- Write secure messages with Mail After installing GPG Suite, you'll see two new buttons when writing a new email: the lock button and the sign button next to it.
+
+### Write secure messages with Mail
+After installing GPG Suite, you'll see two new buttons when writing a new email: the lock button and the sign button next to it.
+
+- The lock button Activate the lock button to encrypt an email. Only you and the recipient will be able to read the contents of your message. Toggle between encrypting and not encrypting your email pressing ⌥ ⌘ Y.
+
+### The lock button
+Activate the lock button to encrypt an email. Only you and the recipient will be able to read the contents of your message. Toggle between encrypting and not encrypting your email pressing ⌥ ⌘ Y.
+
+- The sign button Activate the sign button to sign an email. The recipient will be able to tell, that the email came from you and whether or not it was tampered with in any way. Toggle between signing and not signing your email pressing ⌥ ⌘ X.
+
+### The sign button
+Activate the sign button to sign an email. The recipient will be able to tell, that the email came from you and whether or not it was tampered with in any way.
+
+Toggle between signing and not signing your email pressing ⌥ ⌘ X.
+
+- Choose between PGP and S/MIME Using the security method indicator in the upper right corner, you can quickly switch between PGP and S/MIME. This is very handy if you use both. Press ⌥ ⌘ P to activate PGP or ⌥ ⌘ S to activate S/MIME.
+
+### Choose between PGP and S/MIME
+Using the security method indicator in the upper right corner, you can quickly switch between PGP and S/MIME. This is very handy if you use both.
+
+Press ⌥ ⌘ P to activate PGP or ⌥ ⌘ S to activate S/MIME.
+
+- Receive secure messages with Mail The "Security:" header will tell you, if the message you've received was signed or encrypted. If the message was successfully decrypted, you'll see an open lock. If the signature of the message is valid, you'll see a star icon with a checkmark. Make sure to click "Details" to see the security header.
+
+### Receive secure messages with Mail
+The "Security:" header will tell you, if the message you've received was signed or encrypted.
+
+If the message was successfully decrypted, you'll see an open lock. If the signature of the message is valid, you'll see a star icon with a checkmark.
+
+Make sure to click "Details" to see the security header.
+
+- Signed messages will show the email address associated with your friend's key that was used to sign this message. Click on the signature icon to see more infos regarding the key and signature.
+
+### Signed messages
+will show the email address associated with your friend's key that was used to sign this message.
+
+Click on the signature icon to see more infos regarding the key and signature.
+
+- Encrypted or signed attachments If the message contains encrypted or signed attachments, they will be automatically decrypted and verified. The attachments will look like any other non-encrypted attachments to you, while still being protected.
+
+### Encrypted or signed attachments
+If the message contains encrypted or signed attachments, they will be automatically decrypted and verified. The attachments will look like any other non-encrypted attachments to you, while still being protected.
+
+- Sometimes things go wrong It might happen that someone encrypted a mail for another recipient but mistakenly sent it to you and so you're not able to read it. Or a signed message you're receiving was modified without your knowledge. Or anything else could have gone wrong. In these cases we're trying to be as helpful as possible by providing good explanations of what happened.
+
+### Sometimes things go wrong
+It might happen that someone encrypted a mail for another recipient but mistakenly sent it to you and so you're not able to read it. Or a signed message you're receiving was modified without your knowledge. Or anything else could have gone wrong. In these cases we're trying to be as helpful as possible by providing good explanations of what happened.
+
+- Find out what went wrong Whenever we detect that something's not right, you'll see a banner with an error message, letting you know what the problem is. To get detailed information about a problem, click on "Show Details" which contains a better description of the problem and possible solutions to it.
+
+### Find out what went wrong
+Whenever we detect that something's not right, you'll see a banner with an error message, letting you know what the problem is.
+
+To get detailed information about a problem, click on "Show Details" which contains a better description of the problem and possible solutions to it.
+
+- Nr. 1
+[Nr. 1](#)
+- Nr. 2
+[Nr. 2](#)
+- Nr. 3
+[Nr. 3](#)
+- Nr. 4
+[Nr. 4](#)
+- Nr. 5
+[Nr. 5](#)
+[GPGTools Public Key](/GPGTools-00D026C4-240916.asc)
+- Support
+[Support](https://support.gpgtools.com)
+
+### - FAQ
+[FAQ](/faq)
+- Mastodon
+[Mastodon](https://infosec.exchange/@GPGTools)
+- Privacy Policy
+[Privacy Policy](/privacy)
+- Terms of Distribution
+[Terms of Distribution](/legal)
+- Contact
+[Contact](javascript:mailTo('yjfrElulyttqx3twl'))
+- Imprint
+[Imprint](/imprint)
 
 ---
