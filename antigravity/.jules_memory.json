@@ -8,9 +8,15 @@
   "architecturalDecisions": {
     "runtime": "Next.js 16 Node.js Runtime",
     "caching": "Phase 4 Predictive",
-    "resilience": "Phase 5 Circuit Breaker"
+    "resilience": "Phase 5 Circuit Breaker",
+    "aiAgentsTaxonomy": "Integrated AI agents taxonomy from Chatarmin, Designveloper, Lindy, and Forbes to provide market context on Coding, CRM, Workflow, and CX agents."
   },
   "autonomousTasks": [
+    {
+      "id": "ai_agents_scrape",
+      "status": "completed",
+      "goal": "Knowledge Merge: Ingested Croatian text and scraped English market data about top AI agents (Devin, Cursor, Salesforce Agentforce, Lindy, etc.) into KNOWLEDGE_MERGE.md and ai_agents_knowledge.json."
+    },
     {
       "id": " xj2fh1pcv",
       "status": "completed",
