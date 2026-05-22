@@ -1,6 +1,17 @@
+package-lock.json
+node_modules/
 __pycache__/
 *.pyc
+.pyc
+!data/
+# results/
+# links.json
+# links.csv
+# unique_links.txt
+*.log
 .env
+.env.cloud
+.gitlab-runner-config/
 data/telemetry.json
 data/memory.json
 data/google_research.json

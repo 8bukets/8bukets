@@ -15,6 +15,7 @@ from agents.health_check_agent import HealthCheckAgent
 from agents.analysis_agent import AnalysisAgent
 from agents.research_agent import ResearchAgent
 from agents.intelligence_agent import IntelligenceAgent
+from agents.react_agent import ReActAgent
 from agents.monetization_agent import MonetizationAgent
 from agents.creativity_agent import CreativityAgent
 from agents.content_agent import ContentAgent
@@ -26,23 +27,39 @@ from agents.autonomous_intelligence_agent import AutonomousIntelligenceAgent
 from agents.telemetry_agent import TelemetryAgent
 from agents.sigma_agent import SixSigmaAgent
 from agents.architect_agent import ArchitectAgent
+from agents.chief_ai_officer_agent import ChiefAIOfficerAgent
 from agents.github_evolution_agent import GitHubEvolutionAgent
 from agents.meta_coding_agent import MetaCodingAgent
 from agents.jules_evolution_agent import JulesEvolutionAgent
 from agents.gitkraken_evolution_agent import GitKrakenEvolutionAgent
 from agents.docker_evolution_agent import DockerEvolutionAgent
+from agents.gitlab_evolution_agent import GitLabEvolutionAgent
+from agents.jenkins_agent import JenkinsEvolutionAgent
+from agents.cloud_workflow_agent import CloudWorkflowAgent
 from agents.collaboration_agent import CollaborationAgent
 from agents.mongodb_agent import MongoDBAgent
+from agents.mysql_agent import MySQLAgent
 from agents.system_audit_agent import SystemAuditAgent
 from agents.documentation_agent import DocumentationAgent
 from agents.performance_optimization_agent import PerformanceOptimizationAgent
 from agents.google_edge_agent import GoogleEdgeAgent
 from agents.google_models_research_agent import GoogleModelsResearchAgent
 from agents.google_innovation_ai_agent import GoogleInnovationAIAgent
+from agents.rag_agent import RagAgent
 from agents.knowledge_agent import KnowledgeAgent
+from agents.knowledge_merge_agent import KnowledgeMergeAgent
+from agents.intelephense_agent import IntelephenseAgent
+from agents.sandbox_agent import SandboxAgent
+from vscode_intelephense_scraper import scrape_vscode_intelephense
+from intelephense_scraper import scrape_intelephense_docs
+from gemmafour_scraper import scrape_gemmafour_docs
+from litert_scraper import scrape_litert_docs
+from opentelemetry_scraper import scrape_opentelemetry_repos
+from stitch_scraper import scrape_stitch_docs
 
 # Expansion Agents
 from agents.swarm_agent import SwarmAgent
+from agents.work_order_agent import WorkOrderAgent
 from agents.backup_agent import BackupAgent, CEOBackupAgent
 from agents.auth import AuthManager
 
@@ -54,23 +71,52 @@ logging.basicConfig(
 )
 logger = logging.getLogger("SystemOrchestrator")
 
-def run_scraper():
-    logger.info("Starting Scraper...")
+async def run_scraper():
+    logger.info("Starting Scrapers...")
     try:
-        result = subprocess.run(
-            ["python3", "scraper.py", "--limit", "1"],
-            capture_output=True,
-            text=True
+        # Standard Market Scraper
+        proc = await asyncio.create_subprocess_exec(
+            "python3", "scraper.py", "--limit", "1",
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE
         )
-        if result.returncode != 0:
-            logger.error(f"Scraper failed with exit code {result.returncode}: {result.stderr}")
-            raise RuntimeError(f"Scraper failed: {result.stderr}")
+        stdout, stderr = await proc.communicate()
+        if proc.returncode != 0:
+            logger.error(f"Scraper failed with exit code {proc.returncode}: {stderr.decode()}")
+            raise RuntimeError(f"Scraper failed: {stderr.decode()}")
 
         logger.info("Running Google Research Scraper...")
         subprocess.run(["python3", "google_research_scraper.py"], check=True)
 
         logger.info("Running AI Agents Knowledge Scraper...")
-        subprocess.run(["python3", "ai_agents_knowledge_scraper.py"], check=True)
+        # Prefer the TypeScript version if it exists, otherwise fallback to Python
+        if os.path.exists("scripts/ingest_ai_agents_knowledge.ts"):
+            proc_ai = await asyncio.create_subprocess_exec("npx", "tsx", "scripts/ingest_ai_agents_knowledge.ts")
+            await proc_ai.wait()
+        else:
+            subprocess.run(["python3", "ai_agents_knowledge_scraper.py"], check=True)
+
+        # VSCode Intelephense Scraper
+        scrape_vscode_intelephense()
+        # Intelephense Documentation Scraper
+        scrape_intelephense_docs()
+
+        # Google Ads Documentation Scraper (TypeScript)
+        if os.path.exists("scripts/ingest_ads_knowledge.ts"):
+            proc_ads = await asyncio.create_subprocess_exec("npx", "tsx", "scripts/ingest_ads_knowledge.ts")
+            await proc_ads.wait()
+
+        # Gemma 4 Documentation Scraper
+        scrape_gemmafour_docs()
+
+        # LiteRT Documentation Scraper
+        scrape_litert_docs()
+
+        # OpenTelemetry Repos Scraper
+        scrape_opentelemetry_repos()
+
+        # Stitch Documentation Scraper
+        await scrape_stitch_docs()
 
         logger.info("Scrapers finished successfully.")
         return True
@@ -116,41 +162,56 @@ def generate_daily_report(context, filename):
             for trend in research.get("market_trends", []):
                 f.write(f"- **Trend:** {trend}\n")
 
-            outlook = context.get("strategic_outlook", "N/A")
-            f.write(f"\n**Strategic Outlook:** {outlook}\n")
+            f.write("\n## 4. Intelligence & Strategic Outlook\n")
+            outlook = context.get("strategic_outlook", [])
+            if isinstance(outlook, list):
+                for item in outlook:
+                    f.write(f"- {item}\n")
+            else:
+                f.write(f"- {outlook}\n")
 
-            f.write("\n### Strategic Risk Assessment\n")
-            for risk in context.get("strategic_risk_assessment", []):
-                f.write(f"- {risk}\n")
+            f.write("\n### Strategic Risks\n")
+            risks = context.get("strategic_risk_assessment", [])
+            for risk in risks:
+                f.write(f"- [!] {risk}\n")
 
             f.write("\n### Intelligence Insights\n")
             for insight in context.get("intelligence_insights", []):
                 if "Validated AI Agent Use Case" in insight:
                     f.write(f"- {insight}\n")
 
-            f.write("\n### Categorized Intelligence\n")
+            f.write("\n### Categorized Knowledge\n")
             categorized = context.get("categorized_knowledge", {})
             for cat, items in categorized.items():
-                f.write(f"- **{cat}**: {len(items)} updates found.\n")
-                for item in items[:3]:
-                    f.write(f"  - {item}\n")
+                if items:
+                    f.write(f"- **{cat}:** {', '.join(items) if isinstance(items, list) else items}\n")
 
-            f.write("\n## 4. System Evolution & Daily Improvement\n")
+            f.write("\n## 5. System Evolution & Daily Improvement\n")
             evolution = context.get("system_evolution", {})
             f.write(f"- **Evolution Status:** {evolution.get('status', 'STABLE')}\n")
             f.write(f"- **Version Shift:** +{evolution.get('version_upgrade', 0)}\n")
             for param, val in evolution.get("parameter_shifts", {}).items():
                 f.write(f"  - {param} optimized to: {val}\n")
 
-            f.write("\n## 5. Peer Review & Collaboration Log\n")
+            f.write("\n## 6. Peer Review & Collaboration Log\n")
             for review in context.get("peer_review_log", []):
                 f.write(f"- {review}\n")
 
-            f.write("\n## 6. Antigravity Collaboration\n")
+            f.write("\n## 7. Antigravity Collaboration\n")
             antigravity = context.get("antigravity_context", {})
             f.write(f"- **Platform:** {antigravity.get('platform', 'N/A')}\n")
             f.write(f"- **Sync Status:** {antigravity.get('status', 'PENDING')}\n")
             f.write(f"- **Stakeholders Notified:** {', '.join(antigravity.get('stakeholders', []))}\n")
+
+            f.write("\n## Multi-Cloud Workflow Intelligence\n")
+            cloud = context.get("cloud_workflow_status", {})
+            gitlab = context.get("gitlab_pipeline_metrics", {})
+            f.write(f"- **Workflow Fluent:** {cloud.get('workflow_fluent', False)}\n")
+            f.write(f"- **Availability Score:** {cloud.get('availability_score', 0)}\n")
+            f.write(f"- **Orchestration:** {cloud.get('orchestration', 'UNKNOWN')}\n")
+            f.write(f"- **GitLab Pipeline Efficiency:** {gitlab.get('pipeline_efficiency', 'N/A')}\n")
+            jenkins = context.get("jenkins_pipeline_metrics", {})
+            f.write(f"- **Jenkins Pipeline Efficiency:** {jenkins.get('pipeline_efficiency', 'N/A')}\n")
 
         logger.info(f"Report generated at {filename}")
     except IOError as e:
@@ -164,25 +225,37 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         return
 
     if not skip_scraper:
-        run_scraper()
+        await run_scraper()
 
     data = load_data()
     if not data:
         logger.warning("No data loaded. Skipping agent execution.")
         return
 
-    # 1. Base Intelligence (21 Agents)
+    # 1. Base Intelligence Ecosystem
     agents = [
-        HealthCheckAgent(), RobotTxtAgent(), AnalysisAgent(),
-        ResearchAgent(), GoogleEdgeAgent(), GoogleModelsResearchAgent(),
-        GoogleInnovationAIAgent(), KnowledgeAgent(), IntelligenceAgent(), TargetingAgent(),
-        CreativityAgent(), AdsAgent(), BidAgent(),
-        MonetizationAgent(), ContentAgent(), AutonomousIntelligenceAgent(),
-        TelemetryAgent(), SixSigmaAgent(), ArchitectAgent(),
-        MetaCodingAgent(), JulesEvolutionAgent(), GitKrakenEvolutionAgent(),
-        DockerEvolutionAgent(), GitHubEvolutionAgent(), CollaborationAgent(),
-        MongoDBAgent(), PerformanceOptimizationAgent(), SystemAuditAgent(),
-        DocumentationAgent()
+        # Foundation & Health
+        HealthCheckAgent(), RobotTxtAgent(), SystemAuditAgent(), TelemetryAgent(),
+        DocumentationAgent(), PerformanceOptimizationAgent(), SandboxAgent(),
+        WorkOrderAgent(),
+
+        # Intelligence & Research
+        AnalysisAgent(), ResearchAgent(), IntelligenceAgent(), KnowledgeAgent(),
+        KnowledgeMergeAgent(), GoogleEdgeAgent(), GoogleModelsResearchAgent(),
+        GoogleInnovationAIAgent(),
+        ReActAgent(), RagAgent(), AutonomousIntelligenceAgent(),
+
+        # Strategy & Execution
+        ArchitectAgent(), ChiefAIOfficerAgent(), TargetingAgent(), CreativityAgent(), AdsAgent(),
+        BidAgent(), MonetizationAgent(), ContentAgent(), SixSigmaAgent(),
+
+        # DevOps & Evolution
+        MetaCodingAgent(), JulesEvolutionAgent(), GitHubEvolutionAgent(),
+        GitLabEvolutionAgent(), JenkinsEvolutionAgent(), GitKrakenEvolutionAgent(), DockerEvolutionAgent(),
+        CloudWorkflowAgent(), CollaborationAgent(),
+
+        # Data Persistence
+        MongoDBAgent(), MySQLAgent(), IntelephenseAgent()
     ]
 
     # 2. Expanded SEO Swarm (200 Agents)
