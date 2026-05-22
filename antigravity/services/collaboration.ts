@@ -108,16 +108,18 @@ ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
 
   // Dispatch executive briefing for high-level communication
   const highIntensitySynergies = state.intelligence.relationshipMap.synergies?.filter((s: any) => s.intensity === 'High') || []
+  const criticalActions = state.intelligence.relationshipMap.collaborationRecommendations?.filter((r: any) => r.priority === 'Critical') || []
+
   const synergyAlert = highIntensitySynergies.length > 0
-    ? `⚠️ ALERT: ${highIntensitySynergies.length} High-Intensity resource conflicts detected.`
+    ? `⚠️ CRITICAL: ${highIntensitySynergies.length} High-Intensity synergies requiring coordination.`
     : 'System synergy is optimal.'
 
   const synergySummary = state.intelligence.relationshipMap.synergies && state.intelligence.relationshipMap.synergies.length > 0
-    ? state.intelligence.relationshipMap.synergies.map((s: any) => `- SYNERGY [${s.intensity}]: ${s.resource} (via ${s.branches.length} branches)`).join('\n')
+    ? state.intelligence.relationshipMap.synergies.slice(0, 5).map((s: any) => `- SYNERGY [${s.intensity}]: ${s.resource} (via ${s.branches.length} branches)`).join('\n')
     : 'No direct resource synergies detected.'
 
   const recommendations = state.intelligence.relationshipMap.collaborationRecommendations?.length > 0
-    ? state.intelligence.relationshipMap.collaborationRecommendations.map((r: any) => `- [${r.priority}] ${r.action}: ${r.rationale}`).join('\n')
+    ? state.intelligence.relationshipMap.collaborationRecommendations.slice(0, 10).map((r: any) => `- [${r.priority}] ${r.action}: ${r.rationale}`).join('\n')
     : 'No immediate collaboration actions required.'
 
   const branchSummary = state.intelligence.relationshipMap.resourceInventory
@@ -126,10 +128,10 @@ ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
     .map((r: any) => `- RESULT: ${r.name} -> ${r.result}`)
     .join('\n')
 
-  const detailedBriefing = `--- SYNERGY ANALYSIS ---\n${synergySummary}\n\n--- RECOMMENDATIONS ---\n${recommendations}\n\n--- KEY RESULTS ---\n${branchSummary}`
+  const detailedBriefing = `--- STRATEGIC SYNERGY ---\n${synergySummary}\n\n--- REQUIRED COORDINATION ---\n${recommendations}\n\n--- KEY RESULTS ---\n${branchSummary}`
 
   await dispatchExecutiveBriefing(
-    `${synergyAlert} Posture: ${state.docker.status}. Sync: ${state.intelligence.branches} branches.`,
+    `${synergyAlert} Posture: ${state.docker.status}. Analyzed ${state.intelligence.branches} branches.`,
     detailedBriefing
   )
 
@@ -155,6 +157,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
   const scanDirs = [
     { path: 'antigravity/services', type: 'Service', pattern: /\.ts$/ },
     { path: 'scripts', type: 'Automation Script', pattern: /\.ts$|\.sh$/ },
+    { path: 'agents', type: 'AI Agent', pattern: /\.md$|\.py$/ },
     { path: 'app', type: 'UI Component', pattern: /\.tsx$|\.ts$/ },
     { path: 'web-app', type: 'UI Component', pattern: /\.tsx$|\.ts$/ },
     { path: 'public', type: 'Asset', pattern: /.*/ }
@@ -264,24 +267,33 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
 
   Object.entries(resourceUsage).forEach(([resource, branchSet]) => {
     if (branchSet.size > 1) {
-      const branches = Array.from(branchSet)
-      const intensity = branches.length > 2 ? 'High' : 'Medium'
+      const synergyBranchNames = Array.from(branchSet)
+      const intensity = synergyBranchNames.length > 2 ? 'High' : 'Medium'
       map.synergies.push({
         type: 'Resource Conflict/Synergy',
         resource,
-        branches,
+        branches: synergyBranchNames,
         intensity
       })
 
       // Phase 12: Generate Actionable Collaboration Recommendations
+      const primaryStakeholders = stakeholders.filter(s => {
+        const rolePrefix = s.role.toLowerCase().split(' ')[0]
+        const emailPrefix = s.email.split('@')[0].toLowerCase()
+        return synergyBranchNames.some(bn =>
+          bn.toLowerCase().includes(rolePrefix) || bn.toLowerCase().includes(emailPrefix)
+        )
+      }).map(s => s.role)
+
       map.collaborationRecommendations.push({
         priority: intensity === 'High' ? 'Critical' : 'Routine',
         action: `Consolidate effort on '${resource}'`,
-        branches,
-        rationale: `${branches.length} branches are concurrently modifying the same resource.`
+        resource,
+        branches: synergyBranchNames,
+        rationale: `${synergyBranchNames.length} branches are concurrently modifying the same resource. ${primaryStakeholders.length > 0 ? `Coordination required between: ${primaryStakeholders.join(', ')}.` : ''}`
       })
 
-      console.warn(`🤝 [Collaboration] Synergy Detected: ${branches.length} branches working on ${resource}.`)
+      console.warn(`🤝 [Collaboration] Synergy Detected: ${synergyBranchNames.length} branches working on ${resource}.`)
     }
   })
 
