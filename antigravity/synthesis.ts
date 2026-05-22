@@ -110,6 +110,15 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
+  // Gap Analysis 11: Cloud Convergence
+  if (!files.some(f => f.includes('cloud_convergence'))) {
+    ideas.push({
+      feature: 'Cloud Convergence Service',
+      rationale: 'Manages ecosystem-wide state recovery and synchronization across multi-cloud deployments (AWS/Azure/GCP).',
+      complexity: 'High'
+    })
+  }
+
   // Force an idea for demonstration if none exist
   if (ideas.length === 0) {
     ideas.push({

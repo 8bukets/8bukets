@@ -1,10 +1,10 @@
 # ANTIGRAVITY AI AGENTS KNOWLEDGE BASE
 
-*Last Updated: 2026-05-22T01:30:30.549Z*
+*Last Updated: 2026-05-22T02:11:48.938Z*
 
 ## DOCUMENT: Intelephense Documentation
 **Source:** https://intelephense.com/docs
-**Ingested At:** 2026-05-22T01:30:30.470Z
+**Ingested At:** 2026-05-22T02:11:19.059Z
 
 ### Intelephense
 Intelephense is a high performance, cross platform PHP language server adhering to the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/).
@@ -1261,7 +1261,7 @@ ben@intelephense.com
 
 ## DOCUMENT: software info by fk – software-online-review – Filip Keser
 **Source:** https://software-online-review.com
-**Ingested At:** 2026-05-21T06:26:39.431Z
+**Ingested At:** 2026-05-22T02:11:48.120Z
 
 ### Introduction
 [Skip to content](#content)
@@ -14660,7 +14660,7 @@ App.config খুলুন এবং নিম্নলিখিত কীগু
 
 ## DOCUMENT: (position) mRNA
 **Source:** https://markposition.wordpress.com
-**Ingested At:** 2026-05-21T06:26:39.873Z
+**Ingested At:** 2026-05-22T02:11:48.569Z
 
 ### Introduction
 [Skip to content](#content)
@@ -28859,5 +28859,469 @@ For those looking to transition into executive AI leadership, several high-impac
   - *MIT Sloan:* Artificial Intelligence: Implications for Business Strategy
   - *Stanford Graduate School of Business:* Harnessing AI for Management
   - *Wharton Executive Education:* AI for Business Leaders: Strategy and Applications
+
+---
+
+## DOCUMENT: caio_role_docs.md
+**Source:** local://caio_role_docs.md
+**Ingested At:** 2026-05-22T02:11:48.662Z
+
+### Chief AI Officer (CAIO) Role Description
+
+
+### Core Job Description
+A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an organization’s entire artificial intelligence strategy. The role bridges the gap between advanced technical execution and bottom-line business outcomes. A Chief AI Officer directs how a company develops, procures, and implements AI to boost productivity, enter new markets, and maintain a competitive edge.
+
+### Key Responsibilities
+
+
+### Strategy & Vision
+Align AI initiatives with the company’s overall business goals.
+
+### Ethics & Governance
+Establish frameworks to ensure AI algorithms are free from bias, respect user privacy, and meet all legal and cybersecurity regulations.
+
+### Implementation & Tech Stacking
+Decide whether to build proprietary AI models or license third-party tools, managing relationships with external technology vendors.
+
+### Cross-Department Training
+Educate the board, executives, and general workforce on how to leverage AI safely and effectively.
+
+### Performance Tracking
+Measure the return on investment (ROI) and overall business impact of deployed AI projects.
+
+### Qualifications & Requirements
+
+
+### Education
+A Master's or Ph.D. in Artificial Intelligence, Machine Learning, Computer Science, or a related quantitative field. An MBA is highly valued for the business-strategy aspect of the role. Because “AI Officer” is an executive title, it does not require a government-issued professional license (like a lawyer or doctor). However, companies typically look for advanced degrees or professional certifications in Data Science, Computer Science, or an MBA.
+
+### Experience
+8+ to 10+ years of progressive leadership experience in data science, AI development, or enterprise digital transformation.
+
+### Skillset
+A rare blend of technical fluency (understanding AI capabilities and limitations) and executive business acumen.
+
+### CAIO vs. Other C-Suite Tech Roles
+
+
+### Chief Technology Officer (CTO)
+Focuses on the company’s broad IT infrastructure, software architecture, and system reliability.
+
+### Chief Data Officer (CDO)
+Manages data governance, architecture, and data pipelines to make sure data is clean and organized.
+
+### Chief AI Officer (CAIO)
+Uses the foundations managed by the CTO and CDO to specifically drive business value and transform how work gets done.
+
+### External Resources & Certifications
+To explore real-world openings and licensure requirements, you can research available roles on platforms like **LinkedIn Jobs** or **Indeed**.
+
+For those looking to transition into executive AI leadership, several high-impact certifications and programs are available:
+- **Coursera:**
+  - *Executive AI Leadership Mastery Specialization* (Starweaver)
+  - *AI Leadership & Strategic Implementation Specialization*
+  - *Generative AI for Executives and Business Leaders* (IBM)
+  - *AI for Executives & Strategy*
+- **Executive Programs:**
+  - *MIT Sloan:* Artificial Intelligence: Implications for Business Strategy
+  - *Stanford Graduate School of Business:* Harnessing AI for Management
+  - *Wharton Executive Education:* AI for Business Leaders: Strategy and Applications
+
+---
+
+## DOCUMENT: intelephense_docs.md
+**Source:** local://intelephense_docs.md
+**Ingested At:** 2026-05-22T02:11:48.740Z
+
+### Intelephense Documentation
+
+
+### Getting Started
+
+
+### About
+Intelephense is a high performance, cross platform, cross editor PHP language server adhering to the Language Server Protocol (LSP).
+
+When paired with an LSP capable editor it provides an essential set of code tools, making for a productive and rich PHP coding experience.
+
+The Intelephense server is proprietary software released to end users under a "freemium" model. Many of the features are provided free of charge. Access to premium features can be obtained by purchasing a licence key.
+
+### Installation
+
+
+### Visual Studio Code
+Visual Studio Code users should install the Intelephense extension from within the extensions view or download it from the VSCode marketplace.
+
+The built-in VSCode PHP Language Features extension can cause excessive completion suggestions that are out of context and is best disabled. Go to the Extensions UI and search for PHP Language Features to disable it. Alternatively, you can disable parts of it via its configuration settings. Other third party extensions that provide similar functionality to Intelephense may also need to be disabled for best results.
+
+Optionally purchase and enter your licence key by opening the command palette (Ctrl+Shift+P) and searching for Enter licence key.
+
+### Other Editors
+Intelephense requires a Node.js runtime environment. It is recommended that you use a current LTS version of Node.js. To install Intelephense server you can use npm.
+
+```bash
+npm i intelephense -g
+```
+
+Intelephense needs an LSP compliant client to communicate with and integrate features into the editor. A list of editors and clients that support the LSP can be found here. Please follow the setup guide of the relevant tool. The information below may help in configuring the client.
+
+To start the intelephense server:
+
+```bash
+intelephense {transport}
+```
+
+Where {transport} is one of:
+* `--node-ipc`
+* `--stdio`
+* `--socket={number}`
+* `--pipe={string}`
+
+If your LSP client exposes initializationOptions, then the following values are accepted:
+
+```typescript
+interface InitialisationOptions {
+    // Optional absolute path to storage directory for workspace specific data.
+    storagePath?: string;
+
+    // Optional absolute path to a global storage directory for global data.
+    globalStoragePath?: string;
+
+    //Optional licence key or absolute path to a text file containing the licence key.
+    licenceKey?: string;
+
+    //Optional flag to clear server state.
+    //State can also be cleared by deleting {storagePath}/intelephense
+    clearCache?: boolean;
+}
+```
+
+When initializationOptions properties are not provided by the client, the following defaults are used:
+
+| OS | Property | Path | Fallback |
+| --- | --- | --- | --- |
+| *nix | storagePath | $XDG_CONFIG_HOME/intelephense/workspace/ | $HOME/.config/intelephense/workspace/ |
+| *nix | globalStoragePath | $XDG_CONFIG_HOME/intelephense/global/ | $HOME/.config/intelephense/global/ |
+| *nix | licenceKey | {globalStoragePath}/licence.txt | {globalStoragePath}/license.txt |
+| Windows | storagePath | %AppData%/intelephense/workspace/ | %UserProfile%/intelephense/workspace/ |
+| Windows | globalStoragePath | %AppData%/intelephense/global/ | %UserProfile%/intelephense/global/ |
+| Windows | licenceKey | {globalStoragePath}/licence.txt | {globalStoragePath}/license.txt |
+
+If your LSP client does not expose initializationOptions then a licence key can be provided by placing (only) the key in a text file at the default licenceKey path listed above.
+
+### Configuration
+Please see the VSCode client package.json configuration property for a full list of configuration options and associated JSON schema. Note that the configuration keys are given in dot notation. As an example, the equivalent JSON object for intelephense.files.exclude would be `{"intelephense": {"files": {"exclude": []}}}`.
+
+Intelephense attempts to provide reasonable defaults for all settings. Some of the more important settings to consider when getting started include:
+
+* **intelephense.files.associations** - File globs that identify PHP files. Defaults to standard PHP file extensions e.g. *.php.
+* **intelephense.files.maxSize** - Maximum file size in bytes to index and provide analysis for. Defaults to 1000000 (1MB).
+* **intelephense.environment.phpVersion** - PHP version to use for analysis. Defaults to the most recent stable PHP version.
+* **intelephense.stubs** - List of stubs to include. Defaults to core symbols and extensions that are bundled with PHP. If you are getting undefined symbols for built-in or PECL extensions, you may need to modify this list.
+
+In VSCode, the settings UI can be used to modify the configuration values. For other LSP clients, please see the client documentation on how to modify these values. Intelephense supports the LSP workspace/didChangeConfiguration and workspace/configuration methods as a way of supplying configuration values to the server.
+
+If neither of the methods above are supported by the client, then configuration values can be supplied via an intelephense.config.json file placed in the workspace folder. The JSON schema for this file is the same as the one used for the VSCode client. The top level intelephense property is not required in this file.
+
+For Intelephense to work effectively it must have access to the definitions of the symbols used in your code. Opening a project folder (LSP InitializeParams rootUri or workspaceFolders) rather than individual files enables these symbols to be discovered by Intelephense via indexing the PHP files in the folder. Large workspaces require more system resources. Consider opening a smaller workspace or exclude unnecessary files via the intelephense.files.exclude setting to reduce resource usage.
+
+If you need to include files from outside of the workspace folder, then add the paths to these files to the intelephense.environment.includePaths setting.
+
+When configuring a multi-root workspace, Intelephense will presume that the folders in the workspace are separate projects and will not provide cross folder symbols unless you link the dependency between the projects via the intelephense.environment.includePaths setting.
+
+### Type System
+Providing type information in your PHP code will result in a better experience when using Intelephense. Type information can be provided via coded type declarations or PHPDoc type annotations. Where both have been provided, PHPDoc type annotations are given precedence as they can provide more detailed type information.
+
+```php
+<?php
+
+/**
+ * @param string $s  <- A phpdoc parameter type annotation for $s
+ * @return string[] <- A phpdoc return type annotation specifying the array element type
+ **/
+function foo(string $s): array {} // <- type declarations for $s (string) and function return (array)
+```
+
+Intelephense will also compute inferred types when a declared or documented type is not found or during control flow analysis. When a type is inferred it may be reduced to its minimal representation. For example, `MyClass|object` would become `object` because `MyClass` is a sub-type of `object`.
+
+Intelephense provides limited support for PHPStorm metadata as a way of overriding or supplementing type information. It is recommended to use PHPDoc type annotations instead of PHPStorm metadata where possible as they are more widely supported across different tools. Support for PHPStorm metadata may be removed in future releases.
+
+### Type Narrowing
+Intelephense performs type narrowing of variables during control flow analysis. Type narrowing expressions include built-in type assertions such as `is_string`, custom type assertions annotated with `@assert`, `instanceof`, and equality expressions.
+
+```php
+<?php
+
+class Foo {}
+
+function example(string|array|Foo|null $input): void
+{
+    if (!$input) {
+        // $input is narrowed to string|array|null in this block
+        // empty strings, empty arrays and null are all falsey
+    } else {
+        // $input is narrowed to string|array|Foo in this block
+
+        if ($input instanceof Foo) {
+            // $input is narrowed to Foo in this block
+        } else if (is_string($input)) {
+            // $input is narrowed to string in this block
+        } else {
+            // $input is narrowed to array in this block
+        }
+    }
+}
+```
+
+### Type Evolving
+Type evolving is the change in a variable's type after an assignment expression. Simple variables and parameters always change to the type of the assigned expression regardless of initial assignments, type declarations or annotations.
+
+Properties with no type declaration or annotation will also change to the type of the assigned expression. Otherwise they will only widen or narrow according to the bounds of the initial type they have been declared or annotated with.
+
+Intelephense will type evolve array types when mutated only if they are declared with an empty array initialiser. Otherwise they are considered to retain their initial declared, annotated or inferred type.
+
+```php
+<?php
+
+function example(int $a): void
+{
+    $a = "string"; // $a is now type string
+
+    $b = []; // $b is type array and flagged as evolving
+
+    $b[] = "string"; // $b is now type string[]
+
+    $b[] = 9; //$b is now (string|int)[]
+
+    $c = [1, 2]; // $c is type int[] and NOT flagged as evolving
+
+    $c[] = "string"; // $c is still type int[]
+}
+```
+
+### Supported Types
+
+
+### Top Type
+`mixed`
+The super-type of all types. Any other type can be assigned to a type constraint of mixed. If intelephense cannot determine a more specific type for a symbol or expression then this is the type it is given. Because of this, Intelephense also allows mixed to be assigned to any other type constraint as well, effectively turning off type checking for that instance. To switch off this behaviour you can set both `intelephense.diagnostics.relaxedTypeCheck` and `intelephense.diagnostics.noMixedTypeCheck` to `false`.
+
+### Bottom Type
+`never`
+The sub-type of all types. This type can be assigned to any other type constraint. It is used to represent an impossibility in the code and can be used as the return type of a function that exits or always throws an exception.
+
+### Scalar Types
+Any of these types can be assigned to the other unless the `declare(strict_types=1)` directive is used in the file or `intelephense.diagnostics.strictTypes` is `true`.
+* `int`
+* `float`
+* `bool`
+* `string`
+
+### Unit Types
+* `void`
+* `null`
+* `true`
+* `false`
+* `unset*` - Intelephense uses this PHP keyword to represent the type of an undefined variable.
+
+### Literal Types
+* `'myString'*` - String literals are encapsulated in quotes.
+* `9*` - An integer literal.
+
+### Object Types
+* `object`
+* `\MyNs\MyClass` - Classes, interfaces, traits, and enums can be fully qualified or not.
+* `object{name: string, optional?: string}*` - Object shapes.
+* `static`
+* `self`
+* `$this*`
+
+### Array Types
+* `array`
+* `array<TKey, TValue>*` - Generic form for an array.
+* `TValue[]*` - Numeric indexed array.
+* `array{description: string, 'length (cm)': float, optional?: string, ...<int, string>}*` - Array shapes.
+
+### Callable Types
+* `callable` - Base callable type.
+* `callable(TParamA $a, TParamB $b): TReturn*` - Callable type signatures.
+
+### Alias Types
+* `iterable` - Alias for `Traversable|array`.
+* `?A` - Nullable type shorthand for `null|A`.
+
+### Union Types
+`A|B|C` - A type which may have multiple atomic type representations.
+
+### Intersection Types
+`A&B&C` - A composite type which consists of multiple atomic types.
+
+### DNF Types
+`A|B|(C&D&E)` - Combining union and intersection types (union must be top level).
+
+### Generic Types
+`MyType<TypeArg1, TypeArg2>*`
+Declared using `@template` PHPDoc annotations. Supported built-in types: `iterable`, `Traversable`, `array`, `Iterator`, `IteratorAggregate`, `ArrayAccess`, `WeakReference`, `WeakMap`, `Fiber`, `DatePeriod`, `ReflectionAttribute`, `ReflectionClass`, `Generator`, `ArrayObject`, `SplDoublyLinkedList`, `SplQueue`, `SplStack`, `SplHeap`, `SplMinHeap`, `SplMaxHeap`, `SplPriorityQueue`, `SplFixedArray`, `SplObjectStorage`.
+
+### Conditional Return Type
+`(TSubject is TCompare ? TTrue : TFalse)*`
+Return type depending on the type of a parameter.
+
+### Array Key Type
+`key-of<TArray>*` - Union of the keys of an array shape.
+
+### Array Value Type
+`value-of<TArray>*` - Union of the values of an array shape.
+
+### Index Access Type
+`TArray[TKey]*` - Type of the value at index `TKey` in `TArray`.
+
+### Miscellaneous Types
+* `resource*`
+* `class-string<T>*` - String with the name of class `T`.
+
+### PHPDoc Annotations
+* **@template** - Declare a type argument of a generic type, function or method.
+* **@template-extends** - Declare the type arguments supplied to a generic parent type. Alias `@extends` supported.
+* **@template-implements** - Declare the type arguments supplied to a generic interface. Alias `@implements` supported.
+* **@template-use** - Declare the type arguments supplied to a generic trait. Alias `@use` supported.
+* **@param-closure-this** - Declare the type of the `$this` variable inside a closure.
+* **@param-out** - Declare the out type of a by-reference parameter.
+* **@assert** - Assert that an argument is of a specified type.
+* **@assert-if-true / @assert-if-false** - Assert type on true or false code path.
+* **@mixin** - (Premium) Declare members of specified class are mixed in.
+* **@disregard** - Suppress a specific diagnostic at the following statement.
+* **@type-alias** - Declare a type alias.
+* **@import-type** - Import a type alias declared in another file.
+
+### Features
+
+
+### Free Features
+
+
+### Workspace Symbols (Ctrl+T)
+Search for symbols in your workspace and navigate to their definitions.
+
+### Document Symbols (Ctrl+Shift+O)
+Lists all symbols in the current document.
+
+### Go to Definition (F12)
+Navigate to the definition of a symbol.
+
+### Hover (Ctrl+K Ctrl+I)
+Provides information about a symbol when hovering.
+
+### Highlight
+Highlights all references to the symbol at the cursor position.
+
+### Code Completion (Ctrl+Space)
+Context appropriate completion suggestions.
+
+### Signature Help (Ctrl+Shift+Space)
+Information about the signature of a function or method.
+
+### Find All References (Shift+F12)
+List of all references to a symbol in the workspace.
+
+### Formatting (Ctrl+Shift+I)
+Formatting of a whole document or selected range. Complies with PHP-FIG coding standards.
+
+### Diagnostics
+Syntax errors, type errors, language constraints.
+
+### Inline Values
+Ranges and text for variables relevant for a debugger to display inline.
+
+### Embedded Languages
+Language intelligence for HTML and embedded CSS/JS within PHP tags.
+
+### Premium Features
+
+
+### Rename (F2)
+Rename a symbol and all references to that symbol.
+
+### Code Folding (Ctrl+Shift+[)
+Fold and unfold regions of code based on the syntax tree.
+
+### Find All Implementations (Ctrl+F12)
+List of all implementations of a method or interface.
+
+### Go to Type Definition
+Navigate to the type definition of a variable.
+
+### Go to Declaration
+Navigate to the initial declaration of a symbol.
+
+### Smart Select (Shift+Alt+→)
+Expand and shrink selection based on the syntax tree.
+
+### Type Hierarchy
+Type hierarchy for a class, interface, trait or enum.
+
+### Code Lens
+Additional information and navigation rendered above declarations (References, Implementations, Overrides, Parent, Usages).
+
+### Inlay Hints
+Additional type and parameter information displayed inline.
+
+### Document Links (Ctrl+Click)
+Clickable links to related files and resources.
+
+### Code Actions (Ctrl+.)
+Context appropriate actions (Import Symbol, Add PHPDoc, Implement All Abstract Methods).
+
+### Appendix
+
+
+### Compatibility With Frameworks and Libraries
+Intelephense aims to support all PHP frameworks but does not implement specific solutions. For complex cases, use type narrowing (`instanceof`), PHPDoc annotations (`@var`), or helper files for alternate symbol declarations.
+
+### PHPDoc Instead of PHPStorm Metadata/Attributes
+It is recommended to use PHPDoc types instead of PHPStorm metadata and attributes for greater compatibility.
+
+```php
+/**
+ * @template T of string|object
+ * @param T $input
+ * @return T
+ */
+function paintColourDoc(string|object $input): string|object {}
+```
+
+```php
+/**
+ * @template T of array{red: RedService, blue: BlueObject, green: GreenCollection}
+ * @template K of key-of<T>
+ * @param K $value
+ * @return T[K]
+ */
+function getColourDoc(string $value): mixed {}
+```
+
+---
+
+## DOCUMENT: test_knowledge.md
+**Source:** icloud://test_knowledge.md
+**Ingested At:** 2026-05-22T02:11:48.887Z
+
+### New Knowledge from iCloud
+This is some test knowledge.
+
+---
+
+## DOCUMENT: neural_sync_docs.md
+**Source:** icloud://neural_sync_docs.md
+**Ingested At:** 2026-05-22T02:11:48.816Z
+
+### Phase 12: Global Neural Synchronization
+Global Neural Synchronization (GNS) is the final milestone in the Antigravity Evolution Roadmap. It enables real-time, zero-latency state convergence across all distributed neural nodes in the ecosystem.
+
+### Core Mechanisms
+- **State Entanglement:** Real-time synchronization of agent memory across cloud providers.
+- **Conflict Resolution:** Autonomous resolution of state divergence using weighted consensus.
+- **Omni-Presence:** Seamless agent migration between environments without context loss.
 
 ---
