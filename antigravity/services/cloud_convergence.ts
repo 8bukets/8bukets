@@ -164,19 +164,38 @@ export class CloudConvergenceService {
       // Sync work orders from MongoDB to local if running in cloud mode
       if (isCloud) {
         logAutonomousAction('🌩️ [CloudConvergence] Cloud mode active. Synchronizing state from MongoDB source of truth.', 'info')
+
+        const localPath = path.join(process.cwd(), 'data/work_orders.json')
+        let localOrders = []
+        if (fs.existsSync(localPath)) {
+          try {
+            localOrders = JSON.parse(fs.readFileSync(localPath, 'utf8'))
+          } catch (e) {
+            logAutonomousAction('⚠️ [CloudConvergence] Failed to parse local work orders during conflict resolution.', 'warning')
+          }
+        }
+
+        // 1. Push local "executing" or "completed" updates to MongoDB first to ensure continuity
+        const updatesToPush = localOrders.filter((o: any) => o.status === 'executing' || o.status === 'completed' || o.status === 'failed')
+        if (updatesToPush.length > 0) {
+          logAutonomousAction(`📤 [CloudConvergence] Pushing ${updatesToPush.length} local status updates to MongoDB...`, 'info')
+          for (const order of updatesToPush) {
+            const { _id, ...orderData } = order
+            await db.collection('work_orders').updateOne(
+              { id: order.id },
+              { $set: { ...orderData, updated_at: new Date().toISOString() } },
+              { upsert: true }
+            )
+          }
+        }
+
+        // 2. Pull active orders from MongoDB
         const mongoOrders = await db.collection('work_orders').find({
            status: { $in: ['pending', 'in_progress', 'executing'] }
         }).toArray()
 
-        const localPath = path.join(process.cwd(), 'data/work_orders.json')
-
         if (mongoOrders.length > 0) {
-          let localOrders = []
-          if (fs.existsSync(localPath)) {
-            localOrders = JSON.parse(fs.readFileSync(localPath, 'utf8'))
-          }
-
-          // Merge logic: MongoDB pending orders take precedence
+          // Merge logic: MongoDB active orders take precedence for the local execution queue
           const orderMap = new Map(localOrders.map((o: any) => [o.id, o]))
           mongoOrders.forEach((mo: any) => {
             const { _id, ...orderData } = mo
