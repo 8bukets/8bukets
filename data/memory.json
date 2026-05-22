@@ -1,4 +1,14 @@
 {
+<<<<<<< HEAD
+    "TargetingAgent": {
+        "last_primary_persona": "AdTech Professional",
+        "long_term": {
+            "new_key": "new_val",
+            "last_primary_persona": "AdTech Professional"
+        }
+    },
+=======
+>>>>>>> origin/jules/scraper-markposition-17752547678215960211
     "TestAgent": {
         "long_term": {
             "long_key": "long_value"
@@ -148,9 +158,34 @@
                 "timestamp": "2026-05-21T18:15:44.193651",
                 "event": "episodic_event",
                 "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-12T20:42:46.132817",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-12T20:43:40.545463",
+                "event": "episodic_event",
+                "data": "episodic_data"
             }
         ]
     },
+<<<<<<< HEAD
+    "RobotTxtAgent": {
+        "long_term": {
+            "disallowed_paths": [
+                "/mshots/v1/",
+                "/next/",
+                "/press-this.php",
+                "/public.api/",
+                "/wp-signup.php",
+                "/wp-admin/",
+                "/wp-login.php",
+                "/activate/",
+                "/cgi-bin/",
+                "/remote-login.php"
+=======
     "TargetingAgent": {
         "long_term": {
             "test_compatibility_persona": "Compatibility Enthusiast",
@@ -172,13 +207,18 @@
                 "/public.api/",
                 "/press-this.php",
                 "/activate/"
+>>>>>>> origin/jules/scraper-markposition-17752547678215960211
             ]
         },
         "episodic": []
     },
     "BidAgent": {
         "long_term": {
+<<<<<<< HEAD
+            "adjustment_factor": 1.08285670562808
+=======
             "adjustment_factor": 1.1843044313729356
+>>>>>>> origin/jules/scraper-markposition-17752547678215960211
         },
         "episodic": []
     },
@@ -187,6 +227,8 @@
             "system_health": "healthy"
         },
         "episodic": []
+<<<<<<< HEAD
+=======
     },
     "ChiefAIOfficer": {
         "long_term": {},
@@ -324,5 +366,6 @@
                 }
             }
         ]
+>>>>>>> origin/jules/scraper-markposition-17752547678215960211
     }
 }
