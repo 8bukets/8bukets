@@ -24,9 +24,16 @@ const STORAGE_PATH = path.join(process.cwd(), 'data/work_orders.json')
 
 export class WorkOrderService {
   private orders: WorkOrder[] = []
+  private loadPromise: Promise<void> | null = null
 
   constructor() {
-    this.load()
+    this.loadPromise = this.load()
+  }
+
+  private async ensureLoaded() {
+    if (this.loadPromise) {
+      await this.loadPromise
+    }
   }
 
   private async load() {
@@ -106,6 +113,7 @@ export class WorkOrderService {
   }
 
   public async createOrder(type: WorkOrder['type'], goal: string, payload: any, dependsOn?: string[]): Promise<WorkOrder> {
+    await this.ensureLoaded()
     const newOrder: WorkOrder = {
       id: `wo_${Math.random().toString(36).substring(2, 11)}`,
       type,
@@ -122,11 +130,13 @@ export class WorkOrderService {
   }
 
   public async getPendingOrders(): Promise<WorkOrder[]> {
+    await this.ensureLoaded()
     await this.load() // Refresh from DB
     return this.orders.filter(o => o.status === 'pending')
   }
 
   public async updateOrderStatus(id: string, status: WorkOrder['status'], result?: any, error?: string) {
+    await this.ensureLoaded()
     const order = this.orders.find(o => o.id === id)
     if (order) {
       order.status = status
@@ -140,6 +150,7 @@ export class WorkOrderService {
   }
 
   public async executePendingOrders() {
+    await this.ensureLoaded()
     let pending = await this.getPendingOrders()
     if (pending.length === 0) return
 

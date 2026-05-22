@@ -87,3 +87,9 @@ test-autonomous_resource_optimizer:
   script:
     - npm ci
     - npx vitest run antigravity/services/autonomous_resource_optimizer.test.ts
+
+test-system_health_dashboard:
+  stage: test
+  script:
+    - npm ci
+    - npx vitest run antigravity/services/system_health_dashboard.test.ts
