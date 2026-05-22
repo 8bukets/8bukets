@@ -195,13 +195,14 @@ export class WorkOrderService {
         const { generateContent } = await import('./content')
         return await generateContent(order.payload)
 
-      case 'OPTIMIZE_SYSTEM':
+      case 'OPTIMIZE_SYSTEM': {
         const { evolve, applyFixes } = await import('../evolution')
         const suggestions = (order.payload && Array.isArray(order.payload.proposals))
           ? order.payload.proposals
           : await evolve()
         await applyFixes(suggestions)
         return { appliedFixes: suggestions.length }
+      }
 
       case 'SMOKE_TEST':
         logAutonomousAction(`🧪 [WorkOrder] Running smoke test for ${order.payload?.serviceName}...`, 'info')
@@ -280,6 +281,17 @@ export class WorkOrderService {
         logAutonomousAction(`🚀 [WorkOrder] Executing Autonomous Creation Cycle for ${order.id}...`, 'info')
         const { creationEngine } = await import('./creation_engine')
         return await creationEngine.runCycle()
+
+      case 'REFACTOR_SYSTEM': {
+        logAutonomousAction(`🔧 [WorkOrder] Executing Large-Scale System Refactor for ${order.id}...`, 'info')
+        const { evolve, applyFixes } = await import('../evolution')
+        const refactorSuggestions = await evolve()
+        if (refactorSuggestions.length > 0) {
+           await applyFixes(refactorSuggestions)
+           return { status: 'refactored', suggestionsApplied: refactorSuggestions.length }
+        }
+        return { status: 'optimal', reason: 'no_suggestions' }
+      }
 
       default:
         logAutonomousAction(`ℹ️ [WorkOrder] Skipping unknown or external order type: ${order.type}`, 'info')
