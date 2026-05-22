@@ -111,12 +111,17 @@ async function scrapeAiAgentsKnowledge() {
             } else if (currentSectionId) {
                 // If we are already in a section, collect content
                 if (tagName === 'p') {
-                    const text = $el.text().trim();
+                    const text = $el.text().replace(/\s+/g, ' ').trim();
                     if (text) currentContent.push(text);
                 } else if (tagName === 'ul' || tagName === 'ol') {
                     const items: string[] = [];
                     $el.find('> li').each((_, li) => {
-                        const liText = $(li).text().trim();
+                        // Add spaces around child elements to prevent mashing
+                        const $li = $(li);
+                        $li.find('*').each((_, child) => {
+                            $(child).prepend(' ').append(' ');
+                        });
+                        const liText = $li.text().replace(/\s+/g, ' ').trim();
                         if (liText) items.push(`- ${liText}`);
                     });
                     if (items.length > 0) currentContent.push(items.join('\n'));
