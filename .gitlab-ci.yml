@@ -77,3 +77,11 @@ run-autonomous-proactive_scalability:
     - npx tsx antigravity/workflows/proactive_scalability_workflow.ts
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-cloud_convergence:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Cloud Convergence Service"
+    - npx tsx antigravity/workflows/cloud_convergence_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"

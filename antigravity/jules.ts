@@ -187,7 +187,6 @@ export class Jules {
     try {
       await execAsync('git pull --rebase origin main || true')
       await execAsync('git add .')
-      await execAsync('git reset HEAD work_cycle.log data/work_orders.json .jules_memory.json autonomous_state.json || true')
 
       try {
         await execAsync(`git commit -m "${message}"`)
