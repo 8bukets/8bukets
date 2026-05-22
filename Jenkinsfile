@@ -72,6 +72,11 @@ pipeline {
                 sh 'npx tsx antigravity/workflows/proactive_scalability_workflow.ts'
             }
         }
+        stage('Run Autonomous Cloud Convergence Service') {
+            steps {
+                sh 'npx tsx antigravity/workflows/cloud_convergence_workflow.ts'
+            }
+        }
         stage('Creative Workflow') {
             parallel {
                 stage('Market Analysis') {

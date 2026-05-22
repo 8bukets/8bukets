@@ -7,7 +7,7 @@ import { gitKrakenMetadataService } from './services/gitkraken'
  * JULES: THE COGNITIVE MULTI-AGENT ORCHESTRATOR
  */
 
-export type AgentRole = 'Coder' | 'Reviewer' | 'Ops' | 'General'
+export type AgentRole = 'Coder' | 'Reviewer' | 'Ops' | 'Chief AI Officer' | 'General'
 
 interface JulesMemory {
   lastOptimization: string
@@ -187,7 +187,6 @@ export class Jules {
     try {
       await execAsync('git pull --rebase origin main || true')
       await execAsync('git add .')
-      await execAsync('git reset HEAD work_cycle.log data/work_orders.json .jules_memory.json autonomous_state.json || true')
 
       try {
         await execAsync(`git commit -m "${message}"`)

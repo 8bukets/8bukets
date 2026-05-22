@@ -58,15 +58,35 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
 
   const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
 
+  // Phase 12: Integrate Global Neural Network Status
+  const { broadcastPulse } = await import('./neural')
+  const { getRelayState } = await import('./relay')
+  const pulse = await broadcastPulse()
+  const relay = await getRelayState()
+
+  report += `## 🌌 Global Neural Network\n`
+  report += `- **Cognitive Origin:** \`${pulse.origin}\`\n`
+  report += `- **Neural Health:** ${pulse.health === 'optimal' ? '✅' : '⚠️'} ${pulse.health.toUpperCase()}\n`
+  report += `- **Volatility Index:** ${pulse.volatilityTags} active cognitive tags.\n\n`
+
+  report += `## 🛰️ Omni-Presence Relay\n`
+  relay.forEach(r => {
+    report += `- **Environment:** \`${r.environment}\` (Intensity: ${(r.intensity * 100).toFixed(0)}%)\n`
+    report += `  - *Active Views:* ${r.activeViews.join(', ')}\n`
+  })
+  report += `\n`
+
   report += `## 🤝 Merged Ecosystem Insights\n`
   report += `Synergy achieved across ${branches.length} branches. Detailed knowledge and results consolidated from specialized agents.\n\n`
 
   // Phase 12: Synergy & Collaboration Analysis
   if (relationshipMap.synergies && relationshipMap.synergies.length > 0) {
-    report += `### ⚡ Synergy & Conflict Analysis\n`
+    report += `### ⚡ Strategic Synergy Matrix\n`
+    report += `| Resource | Intensity | Collaborating Branches | Actionable Recommendation |\n`
+    report += `| :--- | :---: | :--- | :--- |\n`
     relationshipMap.synergies.forEach((s: any) => {
-      report += `- **Resource:** \`${s.resource}\` (${s.intensity} Intensity)\n`
-      report += `  - *Collaborating Branches:* ${s.branches.join(', ')}\n`
+      const recommendation = relationshipMap.collaborationRecommendations.find((r: any) => r.branches.includes(s.branches[0]))
+      report += `| \`${s.resource}\` | ${s.intensity} | ${s.branches.slice(0, 3).join(', ')}${s.branches.length > 3 ? '...' : ''} | ${recommendation?.action || 'Consolidate effort'} |\n`
     })
     report += `\n`
   }
