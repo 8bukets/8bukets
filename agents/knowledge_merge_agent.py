@@ -34,13 +34,13 @@ class KnowledgeMergeAgent(BaseAgent):
         self.logger.info("Starting Knowledge Consolidation (Python Layer)...")
 
         # Load existing unified knowledge to prevent overwriting TypeScript data
+        # Root-level structure for consistency across ecosystem
         consolidated = {
             "metadata": {
                 "generated_at": datetime.now().isoformat(),
                 "version": self.config.get("current_version", 1.0),
                 "sources_processed": []
             },
-            "sections": {},
             "typescript_sections": {} # Preserved for TS agents
         }
 
@@ -53,13 +53,8 @@ class KnowledgeMergeAgent(BaseAgent):
                         if existing.get("metadata", {}).get("version", 0) > consolidated["metadata"]["version"]:
                             consolidated["metadata"]["version"] = existing["metadata"]["version"]
 
-                        # Preserve existing sections (especially those from TS)
-                        if "sections" in existing:
-                            consolidated["sections"].update(existing["sections"])
-                        if "typescript_sections" in existing:
-                            consolidated["typescript_sections"].update(existing["typescript_sections"])
-                        if "system_insights" in existing:
-                            consolidated["system_insights"] = existing["system_insights"]
+                        # Use existing as base to preserve all root-level keys
+                        consolidated.update(existing)
             except Exception as e:
                 self.logger.warning(f"Failed to load existing knowledge from {self.output_json}: {e}")
 
@@ -74,19 +69,20 @@ class KnowledgeMergeAgent(BaseAgent):
                     content = json.load(f)
 
                 if isinstance(content, dict):
-                    consolidated["sections"][key] = content
+                    # Save directly to root
+                    consolidated[key] = content
                     if filepath not in consolidated["metadata"]["sources_processed"]:
                         consolidated["metadata"]["sources_processed"].append(filepath)
                 elif isinstance(content, list):
                     # For market_data (links.json), we might want to summarize or just store a subset
                     if key == "market_data":
-                        consolidated["sections"][key] = {
+                        consolidated[key] = {
                             "total_entries": len(content),
                             "recent_entries": content[:20], # Store recent 20 for context
                             "all_entries": content
                         }
                     else:
-                        consolidated["sections"][key] = {"data": content}
+                        consolidated[key] = {"data": content}
                     if filepath not in consolidated["metadata"]["sources_processed"]:
                         consolidated["metadata"]["sources_processed"].append(filepath)
 
@@ -144,26 +140,26 @@ class KnowledgeMergeAgent(BaseAgent):
                     f.write("Awaiting autonomous intelligence sync...\n")
 
                 f.write("\n## 1. AI Agent Foundation\n")
-                ai_data = consolidated["sections"].get("ai_agents", {})
+                ai_data = consolidated.get("ai_agents", {})
                 for sid, info in ai_data.items():
                     if isinstance(info, dict) and "title" in info:
                         f.write(f"### {info['title']}\n\n{info.get('content', '')}\n\n")
 
                 f.write("\n## 2. Market Intelligence (Markposition)\n")
-                market = consolidated["sections"].get("market_data", {})
+                market = consolidated.get("market_data", {})
                 f.write(f"Total Market Data Points: {market.get('total_entries', 0)}\n\n")
                 for entry in market.get("all_entries", market.get("recent_entries", [])):
                     f.write(f"- **{entry.get('title', 'N/A')}**: {entry.get('external_link', '')} ({entry.get('date', 'N/A')})\n")
 
                 f.write("\n## 3. Legal & Ecosystem (Wilson Sonsini)\n")
-                legal = consolidated["sections"].get("legal_ecosystem", {})
+                legal = consolidated.get("legal_ecosystem", {})
                 for lid, linfo in legal.items():
                     if isinstance(linfo, dict) and "title" in linfo:
                         f.write(f"### {linfo['title']}\n\n{linfo.get('content', '')}\n\n")
 
                 f.write("\n## 4. Technical Documentation\n")
                 for tech_key in ["gemma_model", "intelephense", "litert", "stitch", "vscode_intelephense", "google_ads"]:
-                    tech_data = consolidated["sections"].get(tech_key, {})
+                    tech_data = consolidated.get(tech_key, {})
                     if tech_data:
                         title = tech_key.replace("_", " ").title()
                         f.write(f"### {title}\n")
