@@ -28,15 +28,21 @@ async function main() {
 
   console.log('\n📊 [Antigravity] Cycle Summary:')
   if (!fs.existsSync(storagePath)) {
-    console.log(' - No work orders were created during this cycle.')
+    console.log(' - No work orders file found.')
     return
   }
   const finalOrders = JSON.parse(fs.readFileSync(storagePath, 'utf8'))
-  const recentOrders = finalOrders.slice(-5)
 
-  recentOrders.forEach((o: any) => {
-    console.log(` - [${o.status.toUpperCase()}] ${o.type}: ${o.goal}`)
-  })
+  if (finalOrders.length === 0) {
+    console.log(' - No work orders recorded.')
+  } else {
+    finalOrders.forEach((o: any) => {
+      const deps = o.dependsOn ? ` (depends on: ${o.dependsOn.join(', ')})` : ''
+      console.log(` - [${o.status.toUpperCase()}] ID: ${o.id} | ${o.type}: ${o.goal}${deps}`)
+      if (o.result) console.log(`   └─ Result: ${JSON.stringify(o.result)}`)
+      if (o.error) console.log(`   └─ Error: ${o.error}`)
+    })
+  }
 
   console.log('\n✅ [Antigravity] Autonomous Creation Cycle Complete.')
 }

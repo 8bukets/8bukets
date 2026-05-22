@@ -13,16 +13,20 @@
     "evolve": "tsx --env-file=.env antigravity/evolution.ts",
     "daily": "tsx --env-file=.env antigravity/run_daily.ts",
     "ignite": "tsx --env-file=.env antigravity/run_daily.ts --continuous",
+    "ingest:sor": "tsx --env-file=.env scripts/ingest_software_online_review.ts",
     "connect": "tsx --env-file=.env scripts/connect_and_collaborate.ts",
     "invoke-hello": "curl -L -X POST 'https://tevdxaufsnpsbvvurddg.supabase.co/functions/v1/hello-world' -H \"Authorization: Bearer $NEXT_PUBLIC_SUPABASE_ANON_KEY\" --data '{\"name\":\"Antigravity\"}'"
   },
   "dependencies": {
+    "@google/genai": "^2.5.0",
     "@supabase/supabase-js": "^2",
     "@swc/helpers": "^0.5.21",
     "@types/node-fetch": "^2.6.13",
     "ai": "^6.0.184",
     "cheerio": "^1.2.0",
     "chokidar": "^5.0.0",
+    "dotenv": "^17.4.2",
+    "fs-extra": "^11.3.5",
     "mongodb": "^6.21.0",
     "mongoose": "^9.6.2",
     "next": "^16.3.0-canary.16",
@@ -35,6 +39,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/cheerio": "^0.22.35",
+    "@types/fs-extra": "^11.0.4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
@@ -46,6 +51,6 @@
     "tailwindcss": "^4",
     "tsx": "^4.22.1",
     "typescript": "^5",
-    "vitest": "^4.1.6"
+    "vitest": "^4.1.7"
   }
 }

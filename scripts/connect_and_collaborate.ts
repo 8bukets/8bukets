@@ -13,7 +13,7 @@ async function main() {
     await broadcastToStakeholders(finalState)
 
     console.log('🌐 [Antigravity] System Synchronization Complete.')
-    console.log('📊 Current Posture:', JSON.stringify(finalState.docker, null, 2))
+    console.log('📊 Complete Posture:', JSON.stringify(finalState, null, 2))
   } catch (err) {
     console.error('💥 [Antigravity] Collaboration cycle failed:', err)
     process.exit(1)

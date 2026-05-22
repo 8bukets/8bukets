@@ -50,10 +50,7 @@ export async function observeKnowledge(url: string) {
     // Append or create KNOWLEDGE_MERGE.md with formal relationships
     const knowledgePath = path.join(process.cwd(), 'KNOWLEDGE_MERGE.md')
 
-    let relationshipText = `Confirmed relationship with ${url} (Title: ${title}) as an intelligence source.`
-    if (url.includes('software-online-review.com')) {
-      relationshipText = `Confirmed overlapping identities between Antigravity, Project SOR, software-online-review.com, software-review-platform, and markposition.wordpress.com as the formal Market Intelligence layer.`
-    }
+    const relationshipText = `Confirmed relationship with ${url} (Title: ${title}) as an intelligence source.`
 
     const relationshipEntry = `
 ## Autonomous Observation
@@ -65,7 +62,7 @@ export async function observeKnowledge(url: string) {
     let shouldAppend = true;
     let existingContent = '';
 
-    if (fs.existsSync(knowledgePath)) {
+    if (await fs.promises.access(knowledgePath).then(() => true).catch(() => false)) {
       existingContent = await fs.promises.readFile(knowledgePath, 'utf8');
       if (existingContent.includes(`- **Target**: ${url}`)) {
         shouldAppend = false;

@@ -23,6 +23,11 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   let report = `# CONSOLIDATED INTELLIGENCE REPORT\n\n`
   report += `*Generated: ${new Date().toISOString()}*\n\n`
 
+  report += `## 📋 Executive Summary\n`
+  report += `- **System Posture:** ${health.mongodb === 'connected' && health.supabase === 'connected' ? '✅ OPTIMAL' : '⚠️ DEGRADED'}\n`
+  report += `- **Active Synergy:** ${branches.length} branches analyzed across multiple domains.\n`
+  report += `- **Mission Alignment:** ${metadata.goals.length} strategic goals tracked.\n\n`
+
   report += `## 🎯 Mission Statement\n> ${metadata.missionStatement}\n\n`
 
   report += `## 🏥 System Sovereignty\n`
@@ -53,15 +58,35 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
 
   const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
 
+  // Phase 12: Integrate Global Neural Network Status
+  const { broadcastPulse } = await import('./neural')
+  const { getRelayState } = await import('./relay')
+  const pulse = await broadcastPulse()
+  const relay = await getRelayState()
+
+  report += `## 🌌 Global Neural Network\n`
+  report += `- **Cognitive Origin:** \`${pulse.origin}\`\n`
+  report += `- **Neural Health:** ${pulse.health === 'optimal' ? '✅' : '⚠️'} ${pulse.health.toUpperCase()}\n`
+  report += `- **Volatility Index:** ${pulse.volatilityTags} active cognitive tags.\n\n`
+
+  report += `## 🛰️ Omni-Presence Relay\n`
+  relay.forEach(r => {
+    report += `- **Environment:** \`${r.environment}\` (Intensity: ${(r.intensity * 100).toFixed(0)}%)\n`
+    report += `  - *Active Views:* ${r.activeViews.join(', ')}\n`
+  })
+  report += `\n`
+
   report += `## 🤝 Merged Ecosystem Insights\n`
   report += `Synergy achieved across ${branches.length} branches. Detailed knowledge and results consolidated from specialized agents.\n\n`
 
   // Phase 12: Synergy & Collaboration Analysis
   if (relationshipMap.synergies && relationshipMap.synergies.length > 0) {
-    report += `### ⚡ Synergy & Conflict Analysis\n`
+    report += `### ⚡ Strategic Synergy Matrix\n`
+    report += `| Resource | Intensity | Collaborating Branches | Actionable Recommendation |\n`
+    report += `| :--- | :---: | :--- | :--- |\n`
     relationshipMap.synergies.forEach((s: any) => {
-      report += `- **Resource:** \`${s.resource}\` (${s.intensity} Intensity)\n`
-      report += `  - *Collaborating Branches:* ${s.branches.join(', ')}\n`
+      const recommendation = relationshipMap.collaborationRecommendations.find((r: any) => r.branches.includes(s.branches[0]))
+      report += `| \`${s.resource}\` | ${s.intensity} | ${s.branches.slice(0, 3).join(', ')}${s.branches.length > 3 ? '...' : ''} | ${recommendation?.action || 'Consolidate effort'} |\n`
     })
     report += `\n`
   }
@@ -109,15 +134,29 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   if (fs.existsSync(knowledgePath)) {
     try {
       const systemKnowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
-      const knowledge = systemKnowledge.typescript_sections || []
-      knowledge.forEach((k: any) => {
-        report += `### ${k.title}\n`
-        report += `- **Source:** ${k.metadata.source}\n`
-        report += `- **Sections:** ${k.sections.length}\n`
-        if (k.sections.length > 0) {
-          report += `  - *Key Topics:* ${k.sections.slice(0, 3).map((s: any) => s.header).join(', ')}\n`
+
+      // Phase 12: Support both nested 'typescript_sections' and unified flat key structure
+      const allKnowledge: any[] = []
+
+      if (Array.isArray(systemKnowledge.sections)) allKnowledge.push(...systemKnowledge.sections)
+      if (Array.isArray(systemKnowledge.typescript_sections)) allKnowledge.push(...systemKnowledge.typescript_sections)
+
+      Object.entries(systemKnowledge).forEach(([key, value]) => {
+        if (key !== 'metadata' && key !== 'sections' && key !== 'typescript_sections' && Array.isArray(value)) {
+          allKnowledge.push(...value)
         }
-        report += `\n`
+      })
+
+      allKnowledge.forEach((k: any) => {
+        if (k && k.title) {
+          report += `### ${k.title}\n`
+          report += `- **Source:** ${k.metadata?.source || 'Internal'}\n`
+          report += `- **Sections:** ${k.sections?.length || 0}\n`
+          if (k.sections && k.sections.length > 0) {
+            report += `  - *Key Topics:* ${k.sections.slice(0, 3).map((s: any) => s.header).join(', ')}\n`
+          }
+          report += `\n`
+        }
       })
     } catch (e) {
       report += `⚠️ Failed to parse Knowledge Matrix.\n\n`
@@ -141,6 +180,19 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   metadata.stakeholders.forEach(s => {
     report += `- **${s.role}**: ${s.email}\n`
   })
+  report += `\n`
+
+  report += `## 🚀 Prioritized Action Items\n`
+  if (health.mongodb !== 'connected') report += `- [CRITICAL] Restore MongoDB Atlas connectivity.\n`
+  if (workOrders.length > 5) report += `- [HIGH] Process backlog of ${workOrders.length} pending work orders.\n`
+
+  const highIntensitySynergies = relationshipMap.synergies.filter((s: any) => s.intensity === 'High')
+  highIntensitySynergies.forEach((s: any) => {
+    report += `- [MEDIUM] Resolve High-Intensity conflict/synergy on resource: \`${s.resource}\` (${s.branches.length} branches).\n`
+  })
+
+  if (branches.length > 1500) report += `- [LOW] Prune or merge stagnant ecosystem branches (Total: ${branches.length}).\n`
+  report += `- [INFO] Continue autonomous knowledge ingestion for market intelligence.\n`
 
   fs.writeFileSync(reportPath, report)
   console.log(`✅ [Intelligence] Report saved to ${reportPath}`)
