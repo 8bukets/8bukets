@@ -1,6 +1,6 @@
 # ANTIGRAVITY AI AGENTS KNOWLEDGE BASE
 
-*Last Updated: 2026-05-22T02:11:48.938Z*
+*Last Updated: 2026-05-22T20:20:22.203Z*
 
 ## DOCUMENT: Intelephense Documentation
 **Source:** https://intelephense.com/docs
@@ -5415,7 +5415,7 @@ Skip to content ↓
 
 ## DOCUMENT: Understanding bidding basics - Google Ads Help
 **Source:** https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU
-**Ingested At:** 2026-05-21T02:58:16.529Z
+**Ingested At:** 2026-05-22T20:20:09.682Z
 
 ### Introduction
 [Skip to main content](#search-form)
@@ -5621,7 +5621,7 @@ Register now
 
 ## DOCUMENT: Google Ads Smart Bidding - AI-Driven Bid Optimisations & Ad Spend
 **Source:** https://business.google.com/uk/ad-tools/bidding/?hl=en
-**Ingested At:** 2026-05-21T02:58:17.855Z
+**Ingested At:** 2026-05-22T20:20:11.142Z
 
 ### Introduction
 [Skip to content](#page-content)
@@ -6070,7 +6070,7 @@ Actual results will vary by advertiser.
 
 ## DOCUMENT: Tips & Resources for Online Advertising – Google Ads
 **Source:** https://business.google.com/uk/resources/?hl=en
-**Ingested At:** 2026-05-21T02:58:19.226Z
+**Ingested At:** 2026-05-22T20:20:12.474Z
 
 ### Introduction
 [Skip to content](#page-content)
@@ -6934,7 +6934,7 @@ Actual results will vary by advertiser.
 
 ## DOCUMENT: Ad Manager  |  Google for DevelopersGoogleGoogle
 **Source:** https://developers.google.com/ad-manager?hl=en
-**Ingested At:** 2026-05-21T02:58:20.467Z
+**Ingested At:** 2026-05-22T20:20:13.764Z
 
 ### Introduction
 [Skip to main content](#main-content)
@@ -7090,7 +7090,7 @@ Actual results will vary by advertiser.
 
 ## DOCUMENT: Dynamic Ad Insertion  |  Google for DevelopersGoogleGoogle
 **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en
-**Ingested At:** 2026-05-21T02:58:21.737Z
+**Ingested At:** 2026-05-22T20:20:15.014Z
 
 ### Introduction
 [Skip to main content](#main-content)
@@ -7339,7 +7339,7 @@ Last updated 2026-02-26 UTC.
 
 ## DOCUMENT: DAI Full Service API  |  Google for DevelopersGoogleGoogle
 **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en
-**Ingested At:** 2026-05-21T02:58:22.991Z
+**Ingested At:** 2026-05-22T20:20:16.422Z
 
 ### Introduction
 [Skip to main content](#main-content)
@@ -7625,7 +7625,7 @@ Last updated 2026-03-05 UTC.
 
 ## DOCUMENT: DAI Pod Serving API  |  Google for DevelopersGoogleGoogle
 **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en
-**Ingested At:** 2026-05-21T02:58:24.295Z
+**Ingested At:** 2026-05-22T20:20:17.845Z
 
 ### Introduction
 [Skip to main content](#main-content)
@@ -7958,7 +7958,7 @@ Last updated 2026-03-05 UTC.
 
 ## DOCUMENT: Get started  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle
 **Source:** https://developers.google.com/ad-manager/api/start?hl=en
-**Ingested At:** 2026-05-21T02:58:25.783Z
+**Ingested At:** 2026-05-22T20:20:19.145Z
 
 ### Introduction
 [Skip to main content](#main-content)
@@ -8319,7 +8319,7 @@ Last updated 2026-02-25 UTC.
 
 ## DOCUMENT: Resources Overview - Google Ad Manager
 **Source:** https://admanager.google.com/home/resources/?hl=en
-**Ingested At:** 2026-05-21T02:58:26.925Z
+**Ingested At:** 2026-05-22T20:20:20.322Z
 
 ### Introduction
 [Ad Manager](/home/)
@@ -8742,7 +8742,7 @@ Follow us
 
 ## DOCUMENT: ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation
 **Source:** https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en
-**Ingested At:** 2026-05-21T02:58:28.587Z
+**Ingested At:** 2026-05-22T20:20:22.143Z
 
 ### Introduction
 [Skip to main content](#main-content)
