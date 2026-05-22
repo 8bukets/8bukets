@@ -9,7 +9,7 @@ class KnowledgeAgent(BaseAgent):
     def __init__(self):
         super().__init__("KnowledgeAgent",
                          dependencies=[],
-                         provides=["ai_agents_definitions", "agent_best_practices", "agent_use_cases", "google_cloud_tools_list"])
+                         provides=["ai_agents_definitions", "agent_best_practices", "agent_use_cases", "google_cloud_tools_list", "react_framework_details", "agent_taxonomy"])
         self.knowledge_file = "ai_agents_knowledge.json"
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
@@ -39,10 +39,10 @@ class KnowledgeAgent(BaseAgent):
             definitions = {
                 "ai_agent": knowledge.get("what-is-an-ai-agent", {}).get("content", ""),
                 "features": knowledge.get("key-features-of-an-ai-agent", {}).get("content", ""),
-                "differences": knowledge.get("what-is-the-difference-between-ai-agents,-ai-assistants,-and-bots", {}).get("content", "") + "\n\n" + knowledge.get("key-differences", {}).get("content", ""),
+                "differences": knowledge.get("what-is-the-difference-between-ai-agents-ai-assistants-and-bots", {}).get("content", "") + "\n\n" + knowledge.get("key-differences", {}).get("content", ""),
                 "interaction_types": knowledge.get("based-on-interaction", {}).get("content", ""),
                 "agent_count_types": knowledge.get("based-on-number-of-agents", {}).get("content", ""),
-                "types": knowledge.get("based-on-interaction", {}).get("content", "") + "\n" + knowledge.get("based-on-number-of-agents", {}).get("content", ""),
+                "types": knowledge.get("what-are-the-types-of-agents-in-ai", {}).get("content", "") + "\n\n" + knowledge.get("based-on-interaction", {}).get("content", "") + "\n\n" + knowledge.get("based-on-number-of-agents", {}).get("content", ""),
                 "challenges": knowledge.get("challenges-with-using-ai-agents", {}).get("content", ""),
                 "jules_tools": knowledge.get("jules-tools", {}).get("content", ""),
                 "deployment": knowledge.get("deploy-ai-agents-for-scale-and-efficiency-with-cloud-run", {}).get("content", ""),
@@ -66,7 +66,8 @@ class KnowledgeAgent(BaseAgent):
                     knowledge.get("enhanced-capabilities", {}).get("content", ""),
                     knowledge.get("social-interaction-and-simulation", {}).get("content", "")
                 ]),
-                "google_cloud_tools": knowledge.get("google-cloud-and-ai-agents", {}).get("content", "")
+                "google_cloud_tools": knowledge.get("google-cloud-and-ai-agents", {}).get("content", ""),
+                "react-agent-deployment-logic": knowledge.get("react-agent-deployment-logic", {}).get("content", "")
             }
 
             use_cases = definitions.get("use_cases", {})
@@ -82,11 +83,15 @@ class KnowledgeAgent(BaseAgent):
                         # Regex to capture the first few words which usually form the tool name
                         # Stops at known description start markers or after 4 words
                         # Updated to handle more markers found in the content
-                        match = re.search(r"^- ([\w\s\(\)-]{1,60}?)(?:\s+(?:Secure platform|Create AI|Build hybrid|Build Google-quality|Curated collection|Open-source|An AI|A fully managed|Provides a|Unified|Single|End-to-end|Speech|Language|Custom|Omnichannel)|$)", line)
+                        match = re.search(r"^- ([\w\s\(\)-]{1,60}?)(?:\s+(?:Secure platform|Create AI|Build hybrid|Build Google-quality|Curated collection|Open-source|An AI|A fully managed|Provides a|Unified|Single|End-to-end|Speech|Language|Custom|Omnichannel|Description)|$)", line)
                         if match:
                             tool_name = match.group(1).strip()
                             if tool_name and len(tool_name.split()) <= 6:
                                 tools_list.append(tool_name)
+                        else:
+                            parts = line.split(" ", 2)
+                            if len(parts) >= 2:
+                                tools_list.append(parts[1])
 
             best_practices = [
                 "Use Jules Tools CLI for terminal-based session management and TUI dashboard.",
@@ -108,7 +113,8 @@ class KnowledgeAgent(BaseAgent):
                 "google_cloud_tools_list": tools_list,
                 "react_framework_details": {
                     "features": definitions.get("features", ""),
-                    "deployment_strategy": "Orchestrate React components using Next.js for seamless AI integration."
+                    "deployment_strategy": "Orchestrate React components using Next.js for seamless AI integration.",
+                    "react-agent-deployment-logic": definitions.get("react-agent-deployment-logic", "")
                 },
                 "agent_taxonomy": {
                     "interactive_partners": "Assisting with tasks like customer service via direct conversation.",
@@ -121,5 +127,7 @@ class KnowledgeAgent(BaseAgent):
                 "ai_agents_definitions": {},
                 "agent_best_practices": [],
                 "agent_use_cases": {},
-                "google_cloud_tools_list": []
+                "google_cloud_tools_list": [],
+                "react_framework_details": {},
+                "agent_taxonomy": {}
             }

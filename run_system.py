@@ -27,12 +27,14 @@ from agents.autonomous_intelligence_agent import AutonomousIntelligenceAgent
 from agents.telemetry_agent import TelemetryAgent
 from agents.sigma_agent import SixSigmaAgent
 from agents.architect_agent import ArchitectAgent
+from agents.chief_ai_officer_agent import ChiefAIOfficerAgent
 from agents.github_evolution_agent import GitHubEvolutionAgent
 from agents.meta_coding_agent import MetaCodingAgent
 from agents.jules_evolution_agent import JulesEvolutionAgent
 from agents.gitkraken_evolution_agent import GitKrakenEvolutionAgent
 from agents.docker_evolution_agent import DockerEvolutionAgent
 from agents.gitlab_evolution_agent import GitLabEvolutionAgent
+from agents.jenkins_agent import JenkinsEvolutionAgent
 from agents.cloud_workflow_agent import CloudWorkflowAgent
 from agents.collaboration_agent import CollaborationAgent
 from agents.mongodb_agent import MongoDBAgent
@@ -42,14 +44,19 @@ from agents.documentation_agent import DocumentationAgent
 from agents.performance_optimization_agent import PerformanceOptimizationAgent
 from agents.rag_agent import RagAgent
 from agents.knowledge_agent import KnowledgeAgent
+from agents.knowledge_merge_agent import KnowledgeMergeAgent
 from agents.intelephense_agent import IntelephenseAgent
 from agents.sandbox_agent import SandboxAgent
-from ai_agents_knowledge_scraper import scrape_ai_agents_knowledge
 from vscode_intelephense_scraper import scrape_vscode_intelephense
 from intelephense_scraper import scrape_intelephense_docs
+from gemmafour_scraper import scrape_gemmafour_docs
+from litert_scraper import scrape_litert_docs
+from opentelemetry_scraper import scrape_opentelemetry_repos
+from stitch_scraper import scrape_stitch_docs
 
 # Expansion Agents
 from agents.swarm_agent import SwarmAgent
+from agents.work_order_agent import WorkOrderAgent
 from agents.backup_agent import BackupAgent, CEOBackupAgent
 from agents.auth import AuthManager
 
@@ -61,26 +68,44 @@ logging.basicConfig(
 )
 logger = logging.getLogger("SystemOrchestrator")
 
-def run_scraper():
+async def run_scraper():
     logger.info("Starting Scrapers...")
     try:
         # Standard Market Scraper
-        result = subprocess.run(
-            ["python3", "scraper.py", "--limit", "1"],
-            capture_output=True,
-            text=True
+        proc = await asyncio.create_subprocess_exec(
+            "python3", "scraper.py", "--limit", "1",
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE
         )
-        if result.returncode != 0:
-            logger.error(f"Scraper failed with exit code {result.returncode}: {result.stderr}")
-            raise RuntimeError(f"Scraper failed: {result.stderr}")
+        stdout, stderr = await proc.communicate()
+        if proc.returncode != 0:
+            logger.error(f"Scraper failed with exit code {proc.returncode}: {stderr.decode()}")
+            raise RuntimeError(f"Scraper failed: {stderr.decode()}")
 
-        # AI Agent Knowledge Scraper (Direct module call)
-        scrape_ai_agents_knowledge()
+        # AI Agent Knowledge Scraper (TypeScript)
+        proc_ai = await asyncio.create_subprocess_exec("npx", "tsx", "scripts/ingest_ai_agents_knowledge.ts")
+        await proc_ai.wait()
 
         # VSCode Intelephense Scraper
         scrape_vscode_intelephense()
         # Intelephense Documentation Scraper
         scrape_intelephense_docs()
+
+        # Google Ads Documentation Scraper (TypeScript)
+        proc_ads = await asyncio.create_subprocess_exec("npx", "tsx", "scripts/ingest_ads_knowledge.ts")
+        await proc_ads.wait()
+
+        # Gemma 4 Documentation Scraper
+        scrape_gemmafour_docs()
+
+        # LiteRT Documentation Scraper
+        scrape_litert_docs()
+
+        # OpenTelemetry Repos Scraper
+        scrape_opentelemetry_repos()
+
+        # Stitch Documentation Scraper
+        await scrape_stitch_docs()
 
         logger.info("Scrapers finished successfully.")
         return True
@@ -166,6 +191,8 @@ def generate_daily_report(context, filename):
             f.write(f"- **Availability Score:** {cloud.get('availability_score', 0)}\n")
             f.write(f"- **Orchestration:** {cloud.get('orchestration', 'UNKNOWN')}\n")
             f.write(f"- **GitLab Pipeline Efficiency:** {gitlab.get('pipeline_efficiency', 'N/A')}\n")
+            jenkins = context.get("jenkins_pipeline_metrics", {})
+            f.write(f"- **Jenkins Pipeline Efficiency:** {jenkins.get('pipeline_efficiency', 'N/A')}\n")
 
         logger.info(f"Report generated at {filename}")
     except IOError as e:
@@ -179,35 +206,36 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         return
 
     if not skip_scraper:
-        run_scraper()
+        await run_scraper()
 
     data = load_data()
     if not data:
         logger.warning("No data loaded. Skipping agent execution.")
         return
 
-    # 1. Base Intelligence (22 Agents)
+    # 1. Base Intelligence Ecosystem
     agents = [
-        HealthCheckAgent(), RobotTxtAgent(), AnalysisAgent(),
-        ResearchAgent(), IntelligenceAgent(), TargetingAgent(),
-        CreativityAgent(), AdsAgent(), BidAgent(),
-        MonetizationAgent(), ContentAgent(), AutonomousIntelligenceAgent(),
-        TelemetryAgent(), SixSigmaAgent(), ArchitectAgent(),
-        MetaCodingAgent(), JulesEvolutionAgent(), GitKrakenEvolutionAgent(),
-        DockerEvolutionAgent(), GitHubEvolutionAgent(), CollaborationAgent(),
-        MongoDBAgent(), MySQLAgent(), PerformanceOptimizationAgent(),
-        SystemAuditAgent(), DocumentationAgent(), RagAgent(),
-        HealthCheckAgent(), RobotTxtAgent(), KnowledgeAgent(),
-        AnalysisAgent(), ResearchAgent(), IntelligenceAgent(), ReActAgent(),
-        TargetingAgent(), CreativityAgent(), AdsAgent(),
-        BidAgent(), MonetizationAgent(), ContentAgent(),
-        AutonomousIntelligenceAgent(), TelemetryAgent(), SixSigmaAgent(),
-        ArchitectAgent(), MetaCodingAgent(), JulesEvolutionAgent(),
-        GitKrakenEvolutionAgent(), DockerEvolutionAgent(), GitHubEvolutionAgent(),
-        GitLabEvolutionAgent(), CloudWorkflowAgent(),
-        CollaborationAgent(), MongoDBAgent(), MySQLAgent(),
-        PerformanceOptimizationAgent(), SystemAuditAgent(), DocumentationAgent(),
-        IntelephenseAgent(), SandboxAgent()
+        # Foundation & Health
+        HealthCheckAgent(), RobotTxtAgent(), SystemAuditAgent(), TelemetryAgent(),
+        DocumentationAgent(), PerformanceOptimizationAgent(), SandboxAgent(),
+        WorkOrderAgent(),
+
+        # Intelligence & Research
+        AnalysisAgent(), ResearchAgent(), IntelligenceAgent(), KnowledgeAgent(),
+        KnowledgeMergeAgent(),
+        ReActAgent(), RagAgent(), AutonomousIntelligenceAgent(),
+
+        # Strategy & Execution
+        ArchitectAgent(), ChiefAIOfficerAgent(), TargetingAgent(), CreativityAgent(), AdsAgent(),
+        BidAgent(), MonetizationAgent(), ContentAgent(), SixSigmaAgent(),
+
+        # DevOps & Evolution
+        MetaCodingAgent(), JulesEvolutionAgent(), GitHubEvolutionAgent(),
+        GitLabEvolutionAgent(), JenkinsEvolutionAgent(), GitKrakenEvolutionAgent(), DockerEvolutionAgent(),
+        CloudWorkflowAgent(), CollaborationAgent(),
+
+        # Data Persistence
+        MongoDBAgent(), MySQLAgent(), IntelephenseAgent()
     ]
 
     # 2. Expanded SEO Swarm (200 Agents)
