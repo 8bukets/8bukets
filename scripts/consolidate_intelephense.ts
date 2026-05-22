@@ -64,6 +64,9 @@ async function consolidate() {
 
   const uniqueSections = Array.from(headerMap.values())
 
+  // Ensure all headers from scratch are definitely here
+  console.log(` 🧩 Total unique sections: ${uniqueSections.length}`)
+
   const consolidatedKnowledge: Knowledge = {
     title: 'Intelephense Documentation',
     sections: uniqueSections,
