@@ -3,6 +3,7 @@ import { logAutonomousAction } from '../core'
 import fs from 'fs'
 import path from 'path'
 import * as cheerio from 'cheerio'
+import puppeteer from 'puppeteer'
 
 /**
  * Scan and Observe Knowledge Service
@@ -12,8 +13,21 @@ export async function observeKnowledge(url: string) {
   logAutonomousAction(`🧠 [Knowledge Observer] Scanning ${url} for market intelligence...`, 'info')
 
   try {
-    const response = await fetch(url)
-    const html = await response.text()
+    let html = '';
+    if (url.includes('investopedia.com')) {
+      const browser = await puppeteer.launch({
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
+      });
+      const page = await browser.newPage();
+      await page.goto(url, { waitUntil: 'networkidle2' });
+      html = await page.content();
+      await browser.close();
+    } else {
+      const response = await fetch(url)
+      html = await response.text()
+    }
+
     const $ = cheerio.load(html)
 
     const title = $('title').text() || 'No Title Found'
