@@ -157,11 +157,11 @@ export class KnowledgeObserver {
 
     for (const k of existingData as Knowledge[]) {
       mdContent += `## DOCUMENT: ${k.title}\n`
-      mdContent += `**Source:** ${k.metadata.source}  \n`
-      mdContent += `**Ingested At:** ${k.metadata.ingestedAt}\n\n`
+      mdContent += `**Source:** ${k.metadata.source.trim()}\n`
+      mdContent += `**Ingested At:** ${k.metadata.ingestedAt.trim()}\n\n`
 
       for (const section of k.sections) {
-        mdContent += `### ${section.header}\n${section.content}\n\n`
+        mdContent += `### ${section.header.trim()}\n${section.content.trim()}\n\n`
       }
       mdContent += `---\n\n`
     }

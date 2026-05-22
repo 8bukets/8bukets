@@ -36,15 +36,28 @@ async function consolidate() {
     }
   }
 
-  // 3. Deduplicate sections by header, prioritizing content
+  // 3. Deduplicate sections by header, merging content if necessary
   const headerMap = new Map<string, { header: string; content: string }>()
 
   for (const section of allSections) {
     const existing = headerMap.get(section.header)
-    if (!existing || (section.content.length > existing.content.length)) {
+    if (!existing) {
       // Only keep sections with content, unless they are high-level structural headers
       if (section.content || ['Getting Started', 'Features', 'Installation'].includes(section.header)) {
-        headerMap.set(section.header, section)
+        headerMap.set(section.header, { ...section })
+      }
+    } else {
+      // If header exists, merge content if the new content is different and not empty
+      if (section.content && section.content !== existing.content) {
+        if (existing.content.includes(section.content)) {
+          // New content is already a subset, ignore
+        } else if (section.content.includes(existing.content)) {
+          // New content is more complete, replace
+          existing.content = section.content
+        } else {
+          // Both have unique info, append
+          existing.content += '\n\n' + section.content
+        }
       }
     }
   }
