@@ -1,6 +1,10 @@
 # ANTIGRAVITY AI AGENTS KNOWLEDGE BASE
 
+<<<<<<< HEAD
+*Last Updated: 2026-05-21T11:41:13.616Z*
+=======
 *Last Updated: 2026-05-22T06:36:00.934Z*
+>>>>>>> main
 
 ## DOCUMENT: Intelephense Documentation
 **Source:** https://intelephense.com/docs
@@ -29927,3 +29931,4 @@ setColourDoc(''); // Completion suggestions for 'red', 'blue', 'green'
 ```
 
 ---
+

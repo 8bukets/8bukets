@@ -62,7 +62,7 @@ export async function observeKnowledge(url: string) {
     let shouldAppend = true;
     let existingContent = '';
 
-    if (fs.existsSync(knowledgePath)) {
+    if (await fs.promises.access(knowledgePath).then(() => true).catch(() => false)) {
       existingContent = await fs.promises.readFile(knowledgePath, 'utf8');
       if (existingContent.includes(`- **Target**: ${url}`)) {
         shouldAppend = false;
