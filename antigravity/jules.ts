@@ -275,10 +275,12 @@ export class Jules {
 
     for (const pr of pulls) {
       const isAutonomous = pr.title.includes('🤖') || pr.title.toLowerCase().includes('autonomous')
+      const isAutonomousBranch = pr.branch.startsWith('fix/autonomous-') || pr.branch.startsWith('feat/autonomous-') || pr.branch.startsWith('evolution/')
+      const isEvolutionPR = pr.title.toLowerCase().includes('evolution') || pr.title.toLowerCase().includes('refactor') || pr.title.toLowerCase().includes('hotfix')
       const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
 
       // Phase 17: Multi-Provider Convergence (GitHub & GitLab)
-      if (isAutonomous && isCloud) {
+      if ((isAutonomous || (isAutonomousBranch && isEvolutionPR)) && isCloud) {
         console.log(`🌩️ [Jules] Cloud-Native Convergence: Auditing autonomous ${pr.provider} PR/MR #${pr.id}...`)
 
         // 1. Check CI Status
@@ -514,6 +516,11 @@ export class Jules {
         visual_heartbeat: {
           pulse_intensity: Math.random(),
           last_action: this.memory.autonomousTasks.length > 0 ? this.memory.autonomousTasks[this.memory.autonomousTasks.length - 1].goal : 'initializing'
+        },
+        telemetry: {
+          sync_latency: (connectivity.mongodb.latency || 0) + (connectivity.supabase.latency || 0),
+          provider_health: providers.length > 2 ? 'optimal' : 'limited',
+          cloud_convergence_active: isCloud
         }
       }
 

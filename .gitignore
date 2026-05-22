@@ -12,3 +12,12 @@ __pycache__/
 .env
 .env.cloud
 .gitlab-runner-config/
+data/telemetry.json
+data/memory.json
+data/google_research.json
+data/google_innovation_ai.json
+config/evolution_params.json
+results/
+google_innovation_ai_report.md
+google_research_report.md
+SYSTEM_EVOLUTION.md

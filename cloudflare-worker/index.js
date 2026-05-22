@@ -49,7 +49,9 @@ export default {
           last_seen: presence.lastSeen,
           mode: presence.execution_mode,
           env: presence.environment,
-          connectivity: presence.connectivity
+          connectivity: presence.connectivity,
+          visual_heartbeat: presence.visual_heartbeat,
+          telemetry: presence.telemetry
         } : 'awaiting-heartbeat'
       };
 
@@ -69,7 +71,9 @@ export default {
         mode: presence?.execution_mode || 'cloud-active',
         presence: presence ? 'always-on' : 'standby',
         ecosystem: 'Antigravity 8Bukets',
-        last_pulse: presence?.lastSeen || 'unknown'
+        last_pulse: presence?.lastSeen || 'unknown',
+        heartbeat: presence?.visual_heartbeat || { pulse_intensity: 0, last_action: 'waiting' },
+        telemetry: presence?.telemetry || { provider_health: 'unknown' }
       }), {
         headers: {
           'content-type': 'application/json',
