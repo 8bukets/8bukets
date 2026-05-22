@@ -102,5 +102,14 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
+  // Gap Analysis 10: System Health Dashboard
+  if (!files.some(f => f.includes('system_health_dashboard'))) {
+    ideas.push({
+      feature: 'System Health Dashboard Service',
+      rationale: 'Provides a real-time visual overview of system health and agent status.',
+      complexity: 'Medium'
+    })
+  }
+
   return ideas
 }

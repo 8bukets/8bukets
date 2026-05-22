@@ -55,6 +55,13 @@ pipeline {
             }
         }
 
+        stage('Test system_health_dashboard') {
+            steps {
+                sh 'npm ci'
+                sh 'npx vitest run antigravity/services/system_health_dashboard.test.ts'
+            }
+        }
+
         stage('Creative Workflow') {
             parallel {
                 stage('Analyze Market') {
