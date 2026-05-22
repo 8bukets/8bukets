@@ -67,11 +67,21 @@ export async function evolve() {
 
         // Rule 5: Missing Error Handling in Async Functions
         // Skip Next.js page/layout components (often containing 'use cache') to avoid directive displacement
-        if (content.includes('async function') && !content.includes('try {') && !content.includes("'use cache'")) {
+        // Also skip very small helper functions (< 5 lines)
+        if (lines > 5 && content.includes('async function') && !content.includes('try {') && !content.includes("'use cache'")) {
           suggestions.push({
             file: fullPath.replace(process.cwd(), ''),
             complexity: lines,
             suggestion: 'MISSING_ERROR_HANDLING: Async function detected without try-catch block.'
+          })
+        }
+
+        // Rule 6: Direct process.env access (Suggest getRuntimeEnv)
+        if (content.includes('process.env.') && !fullPath.includes('antigravity/core.ts') && !fullPath.includes('next.config')) {
+           suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'DIRECT_ENV_ACCESS: Use getRuntimeEnv for better cloud-native observability.'
           })
         }
       }
@@ -113,6 +123,13 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
       
       // Attempt to wrap params usages
       content = content.replace(/(\{.*?params.*?\}.*?)\.then/g, "resolve(params).then")
+      fs.writeFileSync(fullPath, content)
+    }
+
+    if (s.suggestion.startsWith('MISSING_ERROR_HANDLING')) {
+      console.log(` - Fixing ${s.file}: Adding error handling TODO`)
+      // Inject a TODO comment at the start of the first async function found
+      content = content.replace(/async function(.*?)\{/, "async function$1{\n  // [Evolution] TODO: Add autonomous error handling (try/catch)")
       fs.writeFileSync(fullPath, content)
     }
     
