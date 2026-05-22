@@ -1,7 +1,7 @@
 # Consolidated Knowledge Base
 
-**Last Sync (Python):** 2026-05-20T06:21:29.904067
-**System Version:** 1.93
+**Last Sync (Python):** 2026-05-22T21:29:47.063070
+**System Version:** 1.94
 
 ## 🧩 Strategic Identity & Unified Model
 # Knowledge Merge
@@ -131,7 +131,7 @@ Antigravity should remain the internal logic and orchestration system.
 It can eventually support:
 
 - moderation intelligence
-- automation
+- automation (Automated Market Intelligence Ingestion from markposition.wordpress.com enabled)
 - internal workflows
 - content and data operations
 
@@ -169,9 +169,9 @@ This layer should:
 
 `markposition.wordpress.com` serves as the external ear of the system where:
 
-- the scraper fetches the latest industry news and tools
+- the automated TypeScript ingestion script (`scripts/ingest_markposition_knowledge.ts`) fetches and merges the latest industry intelligence during each autonomous work cycle.
 - analytics generate reports on market trends
-- the data feeds the Antigravity intelligence layer
+- the structured data directly updates the `market_data` section in the unified `system_knowledge.json`.
 
 ## Architectural Direction
 
@@ -241,6 +241,11 @@ Everything else should be evaluated by whether it helps:
 - **Target**: https://markposition.wordpress.com
 - **Title**: (position) mRNA
 - **Relationship Map**: Confirmed overlapping identities between Antigravity, Project SOR, software-online-review.com, software-review-platform, and markposition.wordpress.com as the formal Market Intelligence layer.
+## Autonomous Observation
+- **Date**: 2026-05-19T23:11:27.645Z
+- **Target**: https://localhost.co/tools/
+- **Title**: Developer Tools - LocalHost.Co
+- **Relationship Map**: Confirmed overlapping identities between Antigravity, Project SOR, software-online-review.com, software-review-platform, and markposition.wordpress.com as the formal Market Intelligence layer.
 
 
 
@@ -250,7 +255,149 @@ Everything else should be evaluated by whether it helps:
 - **Antigravity Architecture**: The iCloud notes indicate a need for deeper integration between the TypeScript autonomous engine and the Python orchestration cycle. Specifically, WorkOrder synchronization between MongoDB and local JSON files should be optimized using a unified Cloud sync service.
 - **8Bukets Knowledge**: Data from the 8bukets folders suggests that SystemAuditAgent and ChiefAIOfficer should have explicit 'recovery' phases integrated directly into their feedback loop, bypassing manual interventions entirely.
 - **Creativity Enhancement**: A core finding from the iCloud documents is that the CreativityAgent should not only suggest abstract concepts but should map those concepts directly to executable Work Orders in the queue.
+## Autonomous Observation
+- **Date**: 2026-05-20T08:51:38.680Z
+- **Target**: https://cloud.google.com/discover/what-are-ai-agents
+- **Title**: What are AI agents? Definition, examples, and types | Google Cloud
+- **Context**: Ingested comprehensive definition and architectural overview of AI agents from Google Cloud documentation to ground the project's agentic logic in industry standards.
+---
 
+## Autonomous Observation
+- **Date**: 2026-05-21T11:37:07.784Z
+- **Target**: https://www.forbes.com/business/
+- **Title**: Business
+- **Context**: Ingested and observed external market or technical intelligence from https://www.forbes.com/business/.
+## Autonomous Observation
+- **Date**: 2026-05-21T11:37:08.054Z
+- **Target**: https://www.forbes.com/innovation/
+- **Title**: Innovation
+- **Context**: Ingested and observed external market or technical intelligence from https://www.forbes.com/innovation/.
+## Autonomous Observation
+- **Date**: 2026-05-21T11:37:08.329Z
+- **Target**: https://www.forbes.com/money/
+- **Title**: Money
+- **Context**: Ingested and observed external market or technical intelligence from https://www.forbes.com/money/.
+# 📊 Markposition Analytics Report
+<a name='table-of-contents'></a>
+
+**Generated on:** 2026-05-21 16:21:58
+
+## Table of Contents
+* [General Statistics](#general-statistics)
+* [Top 10 Referenced Domains](#top-10-referenced-domains)
+* [Top 10 Categories](#top-10-categories)
+* [Posts by Year](#posts-by-year)
+* [Authors](#authors)
+
+<a name='general-statistics'></a>
+## 📈 General Statistics
+- **Total Posts:** 679
+- **Date Range:** 2020-05-19 to 2022-10-05
+- **Unique Domains Linked:** 367
+
+[Back to Top](#table-of-contents)
+
+<a name='top-10-referenced-domains'></a>
+## 🌐 Top 10 Referenced Domains
+
+## Table of Contents
+- [📊 General Statistics](#general-statistics)
+- [🌐 Top 10 Referenced Domains](#top-10-referenced-domains)
+- [📂 Top 10 Categories](#top-10-categories)
+- [📅 Posts by Year](#posts-by-year)
+- [✍️ Authors](#authors)
+
+## 📊 General Statistics
+- **Total Posts:** 679
+- **Date Range:** 2020-05-19 to 2022-10-05
+- **Unique Domains Linked:** 367
+
+> 💡 **Highlight:** The most referenced domain is **skillshop.exceedlms.com** with 23 links.
+
+[Back to Top](#table-of-contents)
+
+## 🌐 Top 10 Referenced Domains
+| Domain | Count |
+| :--- | :---: |
+| skillshop.exceedlms.com | 23 |
+| support.google.com | 21 |
+| youtube.com | 18 |
+| advertising.amazon.com | 16 |
+| en.wikipedia.org | 14 |
+| google.com | 13 |
+| web.facebook.com | 12 |
+| developers.google.com | 11 |
+| trustarc.com | 11 |
+| ads.google.com | 10 |
+
+[Back to Top](#table-of-contents)
+
+<a name='top-10-categories'></a>
+## 📂 Top 10 Categories
+
+## 📂 Top 10 Categories
+| Category | Count |
+| :--- | :---: |
+| Ad Ads Advertise | 660 |
+| Promotion | 14 |
+| Ads | 4 |
+| Advertise | 3 |
+| Advertising | 3 |
+| Online | 2 |
+
+[Back to Top](#table-of-contents)
+
+<a name='posts-by-year'></a>
+## 📅 Posts by Year
+
+## 📅 Posts by Year
+| Year | Count |
+| :--- | :---: |
+| 2022 | 235 |
+| 2021 | 190 |
+| 2020 | 254 |
+
+[Back to Top](#table-of-contents)
+
+<a name='authors'></a>
+## ✍️ Authors
+- Filip Keser: 679 posts
+
+## Top 10 Referenced Domains
+| Domain | Count | Distribution |
+| :--- | :---: | :--- |
+| skillshop.exceedlms.com | 23 | ████████████████████ |
+| support.google.com | 21 | ██████████████████░░ |
+| youtube.com | 18 | ████████████████░░░░ |
+| advertising.amazon.com | 16 | ██████████████░░░░░░ |
+| en.wikipedia.org | 14 | ████████████░░░░░░░░ |
+| google.com | 13 | ███████████░░░░░░░░░ |
+| web.facebook.com | 12 | ██████████░░░░░░░░░░ |
+| developers.google.com | 11 | ██████████░░░░░░░░░░ |
+| trustarc.com | 11 | ██████████░░░░░░░░░░ |
+| ads.google.com | 10 | █████████░░░░░░░░░░░ |
+
+## Top 10 Categories
+| Category | Count | Distribution |
+| :--- | :---: | :--- |
+| Ad Ads Advertise | 660 | ████████████████████ |
+| Promotion | 14 | ░░░░░░░░░░░░░░░░░░░░ |
+| Ads | 4 | ░░░░░░░░░░░░░░░░░░░░ |
+| Advertise | 3 | ░░░░░░░░░░░░░░░░░░░░ |
+| Advertising | 3 | ░░░░░░░░░░░░░░░░░░░░ |
+| Online | 2 | ░░░░░░░░░░░░░░░░░░░░ |
+
+## Posts by Year
+| Year | Count | Distribution |
+| :--- | :---: | :--- |
+| 2022 | 235 | ███████████████████░ |
+| 2021 | 190 | ███████████████░░░░░ |
+| 2020 | 254 | ████████████████████ |
+
+## ✍️ Authors
+- **Filip Keser**: 679 posts
+
+[Back to Top](#table-of-contents)
 
 ---
 
@@ -854,6 +1001,37 @@ Docker Desktop's MCP Toolkit feature.
 The Docker MCP Catalog.
 The Docker Hub mcp namespace (for MCP servers built by Docker).
 
+### Prepare Best Value Of Knowledge Integration
+
+To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.
+
+### Key Definitions of Compile
+
+- **Gathering Information**: To collect and put together data, facts, or documents (e.g., to compile a report or compile a list).
+- **Creating Works**: To produce a book, anthology, or database from various materials.
+- **Computing**: To convert high-level programming code (like C++ or Java) into machine code, allowing a computer to execute the program.
+
+### Usage Examples
+
+- "She is compiling a list of clients for the newsletter."
+- "It took years to compile the dictionary."
+- "The developer needs to compile the code before running the application."
+
+### Synonyms
+
+- Assemble
+- Collect
+- Gather
+- Compose
+- Accumulate
+- Organize
+- Synthesize
+
+### Contextual Usage
+
+- **General**: Focuses on the act of assembling information or materials (e.g., compile a report).
+- **Computing**: Focuses on the automatic transformation of code using a tool known as a compiler.
+
 ### What is an AI agent?
 
 Last Updated: 04/02/2026
@@ -1090,1176 +1268,9 @@ Google Cloud provides a portfolio of products and solutions in the AI agent spac
 - A2A ProtocolAn open-source framework originally developed by Google to help build AI agents. An AI agent built with A2A Protocol will be interoperable with any service, platform, or infrastructure.
 - Cloud RunA fully managed serverless platform that allows you to deploy containerized agents and applications, providing auto-scaling and pay-per-use efficiency.
 
-Continue learning about AI agents with additional resources.
-
-- Google ADK on Github
-- Google Agents White Paper (via Kaggle)
-- Google Agents Companion White Paper (via Kaggle)
-- Skillsboost Advanced Generative AI for Developers Learning
-
-Start building on Google Cloud with $300 in free credits and 20+ always free products.
-
-- Need help getting started?Contact sales
-- Work with a trusted partnerFind a partner
-- Continue browsingSee all products
-
-- Accelerate your digital transformation
-- Whether your business is early in its journey or well on its way to digital transformation, Google Cloud can help solve your toughest challenges.
-- Learn more
-
-- Key benefits
-- Why Google CloudTop reasons businesses choose us.
-- AI and AgentsGet enterprise-ready AI.
-- MulticloudRun your apps wherever you need them.
-- Global infrastructureBuild on the same infrastructure as Google.
-
-- Data CloudMake smarter decisions with unified data.
-- Modern Infrastructure CloudNext generation of cloud infrastructure.
-- SecurityProtect your users, data, and apps.
-- Productivity and collaborationConnect your teams with AI-powered apps.
-
-- Reports and insights
-- Executive insightsCurated C-suite perspectives.
-- Analyst reportsRead what industry analysts say about us.
-- WhitepapersBrowse and download popular whitepapers.
-- Customer storiesExplore case studies and videos.
-
-- Industry Solutions
-- Application Modernization
-- Artificial Intelligence
-- APIs and Applications
-- Data Analytics
-- Databases
-- Infrastructure
-- Productivity and Collaboration
-- Security
-- Startups and SMB
-
-- Industry SolutionsReduce cost, increase operational agility, and capture new market opportunities.
-
-- RetailAnalytics and collaboration tools for the retail value chain.
-
-- Consumer Packaged GoodsSolutions for CPG digital transformation and brand growth.
-
-- Financial ServicesComputing, data management, and analytics tools for financial services.
-
-- Healthcare and Life SciencesAdvance research at scale and empower healthcare innovation.
-
-- Media and EntertainmentSolutions for content production and distribution operations.
-
-- TelecommunicationsHybrid and multi-cloud services to deploy and monetize 5G.
-
-- GamesAI-driven solutions to build and scale games faster.
-
-- ManufacturingMigration and AI tools to optimize the manufacturing value chain.
-
-- Supply Chain and LogisticsEnable sustainable, efficient, and resilient data-driven operations across supply chain and logistics operations.
-
-- GovernmentData storage, AI, and analytics solutions for government agencies.
-
-- EducationTeaching tools to provide more engaging learning experiences.
-
-- Not seeing what you're looking for?
-- See all industry solutions
-
-- Application ModernizationAssess, plan, implement, and measure software practices and capabilities to modernize and simplify your organization’s business application portfolios.
-
-- CAMPProgram that uses DORA to improve your software delivery capabilities.
-
-- Modernize Traditional ApplicationsAnalyze, categorize, and get started with cloud migration on traditional workloads.
-
-- Migrate from PaaS: Cloud Foundry, OpenshiftTools for moving your existing containers into Google's managed container services.
-
-- Migrate from MainframeAutomated tools and prescriptive guidance for moving your mainframe apps to the cloud.
-
-- Modernize Software DeliverySoftware supply chain best practices - innerloop productivity, CI/CD and S3C.
-
-- DevOps Best PracticesProcesses and resources for implementing DevOps in your org.
-
-- SRE PrinciplesTools and resources for adopting SRE in your org.
-
-- Platform EngineeringComprehensive suite of managed services and Golden Paths to build, manage, and scale IDPs.
-
-- Architect for MulticloudManage workloads across multiple clouds with a consistent platform.
-
-- Artificial IntelligenceAdd intelligence and efficiency to your business with AI and machine learning.
-
-- Gemini Enterprise for Customer ExperienceBuild and manage agents that live across the entire customer lifecycle.
-
-- Gemini EnterpriseUnified agentic portfolio for your entire organization.
-
-- AI Commerce SearchGoogle-quality search and product recommendations for retailers.
-
-- Google Cloud with GeminiAI assistants for application development, coding, and more.
-
-- Physical AISimulate, train, and operate the next generation of robots, autonomous vehicles, industrial devices, and machines.
-
-- APIs and ApplicationsSpeed up the pace of innovation without coding, using APIs, apps, and automation.
-
-- New Business Channels Using APIsAttract and empower an ecosystem of developers and partners.
-
-- Unlocking Legacy Applications Using APIsCloud services for extending and modernizing legacy apps.
-
-- Open Banking APIxSimplify and accelerate secure delivery of open banking compliant APIs.
-
-- Data AnalyticsGenerate instant insights from data at any scale with a serverless, fully managed analytics platform that significantly simplifies analytics.
-
-- Data MigrationMigrate and modernize your data warehouse and data lakes with AI-powered migration services.
-
-- Data LakehouseUnify and govern your multimodal data with a high-performance and open data lakehouse.
-
-- Real-time AnalyticsInsights from ingesting, processing, and analyzing event streams.
-
-- Marketing AnalyticsSolutions for collecting, analyzing, and activating customer data.
-
-- DatasetsData from Google, public, and commercial providers to enrich your analytics and AI initiatives.
-
-- Business IntelligenceSolutions for modernizing your BI stack and creating rich data experiences.
-
-- Data Analytics AgentsBuilt-in agents for data lifecycle and tools to build your own agents.
-
-- Geospatial AnalyticsA comprehensive platform to solve for geospatial use cases at scale.
-
-- Data ScienceManaged services and integrated workflows to build, manage, and scale data science.
-
-- DatabasesMigrate and manage enterprise data with security, reliability, high availability, and fully managed data services.
-
-- Database MigrationGuides and tools to simplify your database migration life cycle.
-
-- Database ModernizationUpgrades to modernize your operational database infrastructure.
-
-- Databases for GamesBuild global, live games with Google Cloud databases.
-
-- Google Cloud DatabasesDatabase services to migrate, manage, and modernize data.
-
-- Migrate Oracle workloads to Google CloudRehost, replatform, rewrite your Oracle workloads.
-
-- Open Source DatabasesFully managed open source databases with enterprise-grade support.
-
-- SQL Server on Google CloudOptions for running SQL Server virtual machines on Google Cloud.
-
-- Gemini for DatabasesSupercharge database development and management with AI.
-
-- InfrastructureMigrate quickly with solutions for SAP, VMware, Windows, Oracle, and other workloads.
-
-- Application MigrationDiscovery and analysis tools for moving to the cloud.
-
-- SAP on Google CloudCertifications for running SAP applications and SAP HANA.
-
-- High Performance ComputingCompute, storage, and networking options to support any workload.
-
-- Windows on Google CloudTools and partners for running Windows workloads.
-
-- Data Center MigrationMigration solutions for VMs, apps, databases, and more.
-
-- Active AssistAutomatic cloud resource optimization and increased security.
-
-- Virtual DesktopsRemote work solutions for desktops and applications (VDI & DaaS).
-
-- Rapid Migration and Modernization ProgramEnd-to-end migration program to simplify your path to the cloud.
-
-- Backup and Disaster RecoveryEnsure your business continuity needs are met.
-
-- Red Hat on Google CloudGoogle and Red Hat provide an enterprise-grade platform for traditional on-prem and custom applications.
-
-- Cross-Cloud NetworkSimplify hybrid and multicloud networking, and secure your workloads, data, and users.
-
-- AI InfrastructureTrain, serve and operate your AI applications on the agent-native infrastructure powering Google.
-
-- Productivity and CollaborationChange the way teams work with solutions designed for humans and built for impact.
-
-- Google WorkspaceCollaboration and productivity tools for enterprises.
-
-- Google Workspace EssentialsSecure video meetings and modern collaboration for teams.
-
-- Cloud IdentityUnified platform for IT admins to manage user devices and apps.
-
-- Chrome EnterpriseChromeOS, Chrome Browser, and Chrome devices built for business.
-
-- SecurityDetect, investigate, and respond to online threats to help protect your business.
-
-- Agentic SOCDelivering better security outcomes with AI agents.
-
-- Web App and API ProtectionThreat and fraud protection for your web applications and APIs.
-
-- Security and Resilience FrameworkSolutions for each phase of the security and resilience life cycle.
-
-- Risk and compliance as code (RCaC)Solution to modernize your governance, risk, and compliance function with automation.
-
-- Software Supply Chain SecuritySolution for improving end-to-end software supply chain security.
-
-- Security FoundationRecommended products to help achieve a strong security posture.
-
-- Google Cloud Cybershield™Strengthen nationwide cyber defense.
-
-- Startups and SMBAccelerate startup and SMB growth with tailored solutions and programs.
-
-- Startup ProgramGet financial, business, and technical support to take your startup to the next level.
-
-- Small and Medium BusinessExplore solutions for web hosting, app development, AI, and analytics.
-
-- Software as a ServiceBuild better SaaS products, scale efficiently, and grow your business.
-
-- Featured Products
-- AI and Machine Learning
-- Business Intelligence
-- Compute
-- Containers
-- Data Analytics
-- Databases
-- Developer Tools
-- Distributed Cloud
-- Hybrid and Multicloud
-- Industry Specific
-- Integration Services
-- Management Tools
-- Maps and Geospatial
-- Media Services
-- Migration
-- Networking
-- Operations
-- Productivity and Collaboration
-- Security and Identity
-- Serverless
-- Storage
-- Web3
-
-- Featured Products
-
-- Compute EngineVirtual machines running in Google’s data center.
-
-- Cloud StorageObject storage that’s secure, durable, and scalable.
-
-- BigQueryAutonomous data to AI platform for analytics and data science.
-
-- Cloud RunFully managed environment for running containerized apps.
-
-- Google Kubernetes EngineManaged environment for running containerized apps.
-
-- Agent PlatformUnified platform for ML models, generative AI, and agent building.
-
-- LookerPlatform for BI, data applications, and embedded analytics.
-
-- Apigee API ManagementManage the full life cycle of APIs anywhere with visibility and control.
-
-- Cloud SQLRelational database services for MySQL, PostgreSQL and SQL Server.
-
-- Gemini Enterprise appSecure platform to discover, create, run, and govern AI agents for employees.
-
-- Cloud CDNContent delivery network for delivering web and video.
-
-- Not seeing what you're looking for?
-- See all products (100+)
-
-- AI and Machine Learning
-
-- Gemini Enterprise Agent PlatformUnified platform for ML models, generative AI, and agent building.
-
-- Gemini Enterprise appSecure platform to discover, create, run, and govern AI agents for employees.
-
-- Gemini Enterprise for Customer ExperienceBuild and manage agents that live across the entire customer lifecycle.
-
-- Model GardenSingle place to discover over 200 models from Google and Google partners.
-
-- Customer Experience Agent StudioBuild conversational AI with both deterministic and gen AI functionality.
-
-- Agent SearchBuild Google-quality search for your enterprise apps and experiences.
-
-- Speech-to-TextSpeech recognition and transcription across 125 languages.
-
-- Text-to-SpeechSpeech synthesis in 220+ voices and 40+ languages.
-
-- Translation AILanguage detection, translation, and glossary support.
-
-- Vision AICustom and pre-trained models to detect emotion, text, and more.
-
-- Contact Center as a ServiceOmnichannel contact center solution that is native to the cloud.
-
-- Not seeing what you're looking for?
-- See all AI and machine learning products
-
-- Business Intelligence
-
-- LookerPlatform for BI, data applications, and embedded analytics.
-
-- Data StudioInteractive data suite for dashboarding, reporting, and analytics.
-
-- Compute
-
-- Compute EngineVirtual machines running in Google’s data center.
-
-- App EngineServerless application platform for apps and back ends.
-
-- Cloud GPUsGPUs for ML, scientific computing, and 3D visualization.
-
-- Migrate to Virtual MachinesServer and virtual machine migration to Compute Engine.
-
-- Spot VMsCompute instances for batch jobs and fault-tolerant workloads.
-
-- BatchFully managed service for scheduling batch jobs.
-
-- Sole-Tenant NodesDedicated hardware for compliance, licensing, and management.
-
-- Bare MetalInfrastructure to run specialized workloads on Google Cloud.
-
-- RecommenderUsage recommendations for Google Cloud products and services.
-
-- VMware EngineFully managed, native VMware Cloud Foundation software stack.
-
-- Cloud RunFully managed environment for running containerized apps.
-
-- Not seeing what you're looking for?
-- See all compute products
-
-- Containers
-
-- Google Kubernetes EngineManaged environment for running containerized apps.
-
-- Cloud RunFully managed environment for running containerized apps.
-
-- Cloud BuildSolution for running build steps in a Docker container.
-
-- Artifact RegistryPackage manager for build artifacts and dependencies.
-
-- Cloud CodeIDE support to write, run, and debug Kubernetes applications.
-
-- Cloud DeployFully managed continuous delivery to GKE and Cloud Run.
-
-- Migrate to ContainersComponents for migrating VMs into system containers on GKE.
-
-- Deep Learning ContainersContainers with data science frameworks, libraries, and tools.
-
-- KnativeComponents to create Kubernetes-native cloud-based software.
-
-- Data Analytics
-
-- BigQueryAutonomous data to AI platform for analytics and data science.
-
-- Managed Service for Apache SparkZero-ops serverless or managed clusters, accelerated by Lightning Engine.
-
-- DataflowReal-time analytics for stream and batch processing.
-
-- LookerPlatform for BI, data applications, and embedded analytics.
-
-- LakehouseOpen lakehouse platform with enterprise storage and performance capabilities.
-
-- Pub/SubMessaging service for event ingestion and delivery.
-
-- Managed Service for Apache AirflowWorkflow orchestration service built on Apache Airflow.
-
-- Knowledge CatalogAlways-on catalog for AI that provides universal context for agents.
-
-- Data Analytics AgentsBuilt-in agents for data lifecycle and tools to build your own agents.
-
-- Data Analytics Migration ServicesFree-to-use, cloud-native and AI-powered data migration services.
-
-- Managed Service for Apache KafkaManaged Kafka service to operate highly available Apache Kafka clusters.
-
-- Not seeing what you're looking for?
-- See all data analytics products
-
-- Databases
-
-- AlloyDB for PostgreSQLFully managed, PostgreSQL-compatible database for enterprise workloads.
-
-- Cloud SQLFully managed database for MySQL, PostgreSQL, and SQL Server.
-
-- FirestoreHighly scalable and serverless NoSQL document database, with MongoDB compatibility.
-
-- SpannerCloud-native relational database with unlimited scale and 99.999% availability.
-
-- BigtableCloud-native wide-column database for large-scale, low-latency workloads.
-
-- DatastreamServerless change data capture and replication service.
-
-- Database Migration ServiceServerless, minimal downtime migrations to Cloud SQL.
-
-- Bare Metal SolutionFully managed infrastructure for your Oracle workloads.
-
-- MemorystoreFully managed Redis and Memcached for sub-millisecond data access.
-
-- Developer Tools
-
-- Artifact RegistryUniversal package manager for build artifacts and dependencies.
-
-- Cloud CodeIDE support to write, run, and debug Kubernetes applications.
-
-- Cloud BuildContinuous integration and continuous delivery platform.
-
-- Cloud DeployFully managed continuous delivery to GKE and Cloud Run.
-
-- Cloud Deployment ManagerService for creating and managing Google Cloud resources.
-
-- Cloud SDKCommand-line tools and libraries for Google Cloud.
-
-- Cloud SchedulerCron job scheduler for task automation and management.
-
-- Cloud Source RepositoriesPrivate Git repository to store, manage, and track code.
-
-- Infrastructure ManagerAutomate infrastructure management with Terraform.
-
-- Cloud WorkstationsManaged and secure development environments in the cloud.
-
-- Gemini Code AssistAI-powered assistant available across Google Cloud and your IDE.
-
-- Not seeing what you're looking for?
-- See all developer tools
-
-- Distributed Cloud
-
-- Google Distributed Cloud ConnectedDistributed cloud services for edge workloads.
-
-- Google Distributed Cloud Air-gappedDistributed cloud for air-gapped workloads.
-
-- Hybrid and Multicloud
-
-- Google Kubernetes EngineManaged environment for running containerized apps.
-
-- Apigee API ManagementAPI management, development, and security platform.
-
-- Migrate to ContainersTool to move workloads and existing applications to GKE.
-
-- Cloud BuildService for executing builds on Google Cloud infrastructure.
-
-- ObservabilityMonitoring, logging, and application performance suite.
-
-- Cloud Service MeshFully managed service mesh based on Envoy and Istio.
-
-- Google Distributed CloudFully managed solutions for the edge and data centers.
-
-- Industry Specific
-
-- Anti Money Laundering AIDetect suspicious, potential money laundering activity with AI.
-
-- Cloud Healthcare APISolution for bridging existing care systems and apps on Google Cloud.
-
-- Device Connect for FitbitGain a 360-degree patient view with connected Fitbit data on Google Cloud.
-
-- Telecom Network AutomationReady to use cloud-native automation for telecom networks.
-
-- Telecom Data FabricTelecom data management and analytics with an automated approach.
-
-- Telecom Subscriber InsightsIngests data to improve subscriber acquisition and retention.
-
-- Spectrum Access System (SAS)Controls fundamental access to the Citizens Broadband Radio Service (CBRS).
-
-- Integration Services
-
-- Application IntegrationConnect to 3rd party apps and enable data consistency without code.
-
-- WorkflowsWorkflow orchestration for serverless products and API services.
-
-- Apigee API ManagementManage the full life cycle of APIs anywhere with visibility and control.
-
-- Cloud TasksTask management service for asynchronous task execution.
-
-- Cloud SchedulerCron job scheduler for task automation and management.
-
-- Managed Service for Apache SparkZero-ops serverless or managed clusters, accelerated by Lightning Engine.
-
-- Cloud Data FusionData integration for building and managing data pipelines.
-
-- Managed Service for Apache AirflowWorkflow orchestration service built on Apache Airflow.
-
-- Pub/SubMessaging service for event ingestion and delivery.
-
-- EventarcBuild an event-driven architecture that can connect any service.
-
-- Management Tools
-
-- Cloud ShellInteractive shell environment with a built-in command line.
-
-- Cloud consoleWeb-based interface for managing and monitoring cloud apps.
-
-- Cloud EndpointsDeployment and development management for APIs on Google Cloud.
-
-- Cloud IAMPermissions management system for Google Cloud resources.
-
-- Cloud APIsProgrammatic interfaces for  Google Cloud services.
-
-- Service CatalogService catalog for admins managing internal enterprise solutions.
-
-- Cost ManagementTools for monitoring, controlling, and optimizing your costs.
-
-- ObservabilityMonitoring, logging, and application performance suite.
-
-- Carbon FootprintDashboard to view and export Google Cloud carbon emissions reports.
-
-- Config ConnectorKubernetes add-on for managing Google Cloud resources.
-
-- Active AssistTools for easily managing performance, security, and cost.
-
-- Not seeing what you're looking for?
-- See all management tools
-
-- Maps and Geospatial
-
-- Earth EngineGeospatial platform for Earth observation data and analysis.
-
-- Google Maps PlatformCreate immersive location experiences and improve business operations.
-
-- Media Services
-
-- Cloud CDNContent delivery network for serving web and video content.
-
-- Live Stream APIService to convert live video and package for streaming.
-
-- OpenCueOpen source render manager for visual effects and animation.
-
-- Transcoder APIConvert video files and package them for optimized delivery.
-
-- Video Stitcher APIService for dynamic or server side ad insertion.
-
-- Migration
-
-- Migration CenterUnified platform for migrating and modernizing with Google Cloud.
-
-- Application MigrationApp migration to the cloud for low-cost refresh cycles.
-
-- Migrate to Virtual MachinesComponents for migrating VMs and physical servers to Compute Engine.
-
-- Cloud Foundation ToolkitReference templates for Deployment Manager and Terraform.
-
-- Database Migration ServiceServerless, minimal downtime migrations to Cloud SQL.
-
-- Migrate to ContainersComponents for migrating VMs into system containers on GKE.
-
-- Data Analytics Migration ServicesStreamlined data warehouse and data lake migration tooling and incentives.
-
-- Rapid Migration and Modernization ProgramEnd-to-end migration program to simplify your path to the cloud.
-
-- Transfer ApplianceStorage server for moving large volumes of data to Google Cloud.
-
-- Storage Transfer ServiceData transfers from online and on-premises sources to Cloud Storage.
-
-- VMware EngineMigrate and run your VMware workloads natively on Google Cloud.
-
-- Networking
-
-- Cloud ArmorSecurity policies and defense against web and DDoS attacks.
-
-- Cloud CDN and Media CDNContent delivery network for serving web and video content.
-
-- Cloud DNSDomain name system for reliable and low-latency name lookups.
-
-- Cloud Load BalancingService for distributing traffic across applications and regions.
-
-- Cloud NATNAT service for giving private instances internet access.
-
-- Cloud ConnectivityConnectivity options for VPN, peering, and enterprise needs.
-
-- Network Connectivity CenterConnectivity management to help simplify and scale networks.
-
-- Network Intelligence CenterNetwork monitoring, verification, and optimization platform.
-
-- Network Service TiersCloud network options  based on performance, availability, and cost.
-
-- Virtual Private CloudSingle VPC for an entire organization, isolated within projects.
-
-- Private Service ConnectSecure connection between your VPC and services.
-
-- Not seeing what you're looking for?
-- See all networking products
-
-- Operations
-
-- Cloud LoggingGoogle Cloud audit, platform, and application logs management.
-
-- Cloud MonitoringInfrastructure and application health with rich metrics.
-
-- Error ReportingApplication error identification and analysis.
-
-- Managed Service for PrometheusFully-managed Prometheus on Google Cloud.
-
-- Cloud TraceTracing system collecting latency data from applications.
-
-- Cloud ProfilerCPU and heap profiler for analyzing application performance.
-
-- Cloud QuotasManage quotas for all Google Cloud services.
-
-- Productivity and Collaboration
-
-- AppSheetNo-code development platform to build and extend applications.
-
-- AppSheet AutomationBuild automations and applications on a unified platform.
-
-- Gemini Enterprise appSecure platform to discover, create, run, and govern AI agents for employees.
-
-- Google WorkspaceCollaboration and productivity tools for individuals and organizations.
-
-- Google Workspace EssentialsSecure video meetings and modern collaboration for teams.
-
-- Cloud IdentityUnified platform for IT admins to manage user devices and apps.
-
-- Chrome EnterpriseChromeOS, Chrome browser, and Chrome devices built for business.
-
-- Security and Identity
-
-- Cloud IAMPermissions management system for Google Cloud resources.
-
-- Sensitive Data ProtectionDiscover, classify, and protect your valuable data assets.
-
-- Mandiant Managed DefenseFind and eliminate threats with confidence 24x7.
-
-- Google Threat IntelligenceKnow who’s targeting you.
-
-- Security Command CenterPlatform for defending against threats to your Google Cloud assets.
-
-- Cloud Key ManagementManage encryption keys on Google Cloud.
-
-- Mandiant Incident ResponseMinimize the impact of a breach.
-
-- Chrome Enterprise PremiumGet secure enterprise browsing with extensive endpoint visibility.
-
-- Assured WorkloadsCompliance and security controls for sensitive workloads.
-
-- Google Security OperationsDetect, investigate, and respond to cyber threats.
-
-- Mandiant ConsultingGet expert guidance before, during, and after an incident.
-
-- Not seeing what you're looking for?
-- See all security and identity products
-
-- Serverless
-
-- Cloud RunFully managed environment for running containerized apps.
-
-- Cloud FunctionsPlatform for creating functions that respond to cloud events.
-
-- App EngineServerless application platform for apps and back ends.
-
-- WorkflowsWorkflow orchestration for serverless products and API services.
-
-- API GatewayDevelop, deploy, secure, and manage APIs with a fully managed gateway.
-
-- Storage
-
-- Cloud StorageObject storage that’s secure, durable, and scalable.
-
-- Block StorageHigh-performance storage for AI, analytics, databases, and enterprise applications.
-
-- FilestoreFile storage that is highly scalable and secure.
-
-- Persistent DiskBlock storage for virtual machine instances running on Google Cloud.
-
-- Cloud Storage for FirebaseObject storage for storing and serving user-generated content.
-
-- Local SSDBlock storage that is locally attached for high-performance needs.
-
-- Storage Transfer ServiceData transfers from online and on-premises sources to Cloud Storage.
-
-- Google Cloud Managed LustreHigh performance managed parallel file service.
-
-- Google Cloud NetApp VolumesFile storage service for NFS, SMB, and multi-protocol environments.
-
-- Backup and DR ServiceService for centralized, application-consistent data protection.
-
-- Web3
-
-- Blockchain Node EngineFully managed node hosting for developing on the blockchain.
-
-- Blockchain RPCEnterprise-grade RPC for building on the blockchain.
-
-- Save money with our transparent approach to pricing
-- Google Cloud's pay-as-you-go pricing offers automatic savings based on monthly usage and discounted rates for prepaid resources. Contact us today to get a quote.
-- Request a quote
-
-- Pricing overview and tools
-- Google Cloud pricingPay only for what you use with no lock-in.
-- Pricing calculatorCalculate your cloud savings.
-- Google Cloud free tierExplore products with free monthly usage.
-
-- Cost optimization frameworkGet best practices to optimize workload costs.
-- Cost management toolsTools to monitor and control your costs.
-
-- Product-specific Pricing
-- Compute Engine
-- Cloud SQL
-- Google Kubernetes Engine
-- Cloud Storage
-- BigQuery
-- See full price list with 100+ products
-
-- Learn & build
-- Google Cloud Free Program$300 in free credits and 20+ free products.
-- Solution GeneratorGet AI generated solution recommendations.
-- QuickstartsGet tutorials and walkthroughs.
-- BlogRead our latest product news and stories.
-
-- Learning HubGrow your career with role-based training.
-- Google Cloud certificationPrepare and register for certifications.
-- Cloud computing basicsLearn more about cloud computing basics.
-- Cloud Architecture CenterGet reference architectures and best practices.
-
-- Connect
-- InnovatorsJoin Google Cloud's developer program.
-- Developer CenterStay in the know and stay connected.
-- Events and webinarsBrowse upcoming and on demand events.
-- Google Cloud CommunityAsk questions, find answers, and connect.
-
-- Consulting and Partners
-- Google Cloud ConsultingWork with our experts on cloud projects.
-- Google Cloud MarketplaceDeploy ready-to-go solutions in a few clicks.
-- Find a partnerExplore the benefits of working with a partner.
-- Google Cloud partnersLearn about the ecosystem and resources.
-
-- Overviewarrow_forward
-- Solutionsarrow_forward
-- Productsarrow_forward
-- Pricingarrow_forward
-- Resourcesarrow_forward
-- Docs
-- Support
-- Console
-
-- arrow_forward
-
-- arrow_forward
-
-- arrow_forward
-
-- arrow_forward
-
-- arrow_forward
-
-- Accelerate your digital transformation
-- Learn more
-- Key benefits
-- Why Google Cloud
-- AI and Agents
-- Multicloud
-- Global infrastructure
-- Data Cloud
-- Modern Infrastructure Cloud
-- Security
-- Productivity and collaboration
-- Reports and insights
-- Executive insights
-- Analyst reports
-- Whitepapers
-- Customer stories
-
-- Industry Solutions
-- Retail
-- Consumer Packaged Goods
-- Financial Services
-- Healthcare and Life Sciences
-- Media and Entertainment
-- Telecommunications
-- Games
-- Manufacturing
-- Supply Chain and Logistics
-- Government
-- Education
-- See all industry solutions
-- See all solutions
-- Application Modernization
-- CAMP
-- Modernize Traditional Applications
-- Migrate from PaaS: Cloud Foundry, Openshift
-- Migrate from Mainframe
-- Modernize Software Delivery
-- DevOps Best Practices
-- SRE Principles
-- Platform Engineering
-- Architect for Multicloud
-- Artificial Intelligence
-- Gemini Enterprise for Customer Experience
-- Gemini Enterprise
-- AI Commerce Search
-- Google Cloud with Gemini
-- Physical AI
-- APIs and Applications
-- New Business Channels Using APIs
-- Unlocking Legacy Applications Using APIs
-- Open Banking APIx
-- Data Analytics
-- Data Migration
-- Data Lakehouse
-- Real-time Analytics
-- Marketing Analytics
-- Datasets
-- Business Intelligence
-- Data Analytics Agents
-- Geospatial Analytics
-- Data Science
-- Databases
-- Database Migration
-- Database Modernization
-- Databases for Games
-- Google Cloud Databases
-- Migrate Oracle workloads to Google Cloud
-- Open Source Databases
-- SQL Server on Google Cloud
-- Gemini for Databases
-- Infrastructure
-- Application Migration
-- SAP on Google Cloud
-- High Performance Computing
-- Windows on Google Cloud
-- Data Center Migration
-- Active Assist
-- Virtual Desktops
-- Rapid Migration and Modernization Program
-- Backup and Disaster Recovery
-- Red Hat on Google Cloud
-- Cross-Cloud Network
-- AI Infrastructure
-- Productivity and Collaboration
-- Google Workspace
-- Google Workspace Essentials
-- Cloud Identity
-- Chrome Enterprise
-- Security
-- Agentic SOC
-- Web App and API Protection
-- Security and Resilience Framework
-- Risk and compliance as code (RCaC)
-- Software Supply Chain Security
-- Security Foundation
-- Google Cloud Cybershield™
-- Startups and SMB
-- Startup Program
-- Small and Medium Business
-- Software as a Service
-
-- Featured Products
-- Compute Engine
-- Cloud Storage
-- BigQuery
-- Cloud Run
-- Google Kubernetes Engine
-- Agent Platform
-- Looker
-- Apigee API Management
-- Cloud SQL
-- Gemini Enterprise app
-- Cloud CDN
-- See all products (100+)
-- AI and Machine Learning
-- Gemini Enterprise Agent Platform
-- Gemini Enterprise app
-- Gemini Enterprise for Customer Experience
-- Model Garden
-- Customer Experience Agent Studio
-- Agent Search
-- Speech-to-Text
-- Text-to-Speech
-- Translation AI
-- Vision AI
-- Contact Center as a Service
-- See all AI and machine learning products
-- Business Intelligence
-- Looker
-- Data Studio
-- Compute
-- Compute Engine
-- App Engine
-- Cloud GPUs
-- Migrate to Virtual Machines
-- Spot VMs
-- Batch
-- Sole-Tenant Nodes
-- Bare Metal
-- Recommender
-- VMware Engine
-- Cloud Run
-- See all compute products
-- Containers
-- Google Kubernetes Engine
-- Cloud Run
-- Cloud Build
-- Artifact Registry
-- Cloud Code
-- Cloud Deploy
-- Migrate to Containers
-- Deep Learning Containers
-- Knative
-- Data Analytics
-- BigQuery
-- Managed Service for Apache Spark
-- Dataflow
-- Looker
-- Lakehouse
-- Pub/Sub
-- Managed Service for Apache Airflow
-- Knowledge Catalog
-- Data Analytics Agents
-- Data Analytics Migration Services
-- Managed Service for Apache Kafka
-- See all data analytics products
-- Databases
-- AlloyDB for PostgreSQL
-- Cloud SQL
-- Firestore
-- Spanner
-- Bigtable
-- Datastream
-- Database Migration Service
-- Bare Metal Solution
-- Memorystore
-- Developer Tools
-- Artifact Registry
-- Cloud Code
-- Cloud Build
-- Cloud Deploy
-- Cloud Deployment Manager
-- Cloud SDK
-- Cloud Scheduler
-- Cloud Source Repositories
-- Infrastructure Manager
-- Cloud Workstations
-- Gemini Code Assist
-- See all developer tools
-- Distributed Cloud
-- Google Distributed Cloud Connected
-- Google Distributed Cloud Air-gapped
-- Hybrid and Multicloud
-- Google Kubernetes Engine
-- Apigee API Management
-- Migrate to Containers
-- Cloud Build
-- Observability
-- Cloud Service Mesh
-- Google Distributed Cloud
-- Industry Specific
-- Anti Money Laundering AI
-- Cloud Healthcare API
-- Device Connect for Fitbit
-- Telecom Network Automation
-- Telecom Data Fabric
-- Telecom Subscriber Insights
-- Spectrum Access System (SAS)
-- Integration Services
-- Application Integration
-- Workflows
-- Apigee API Management
-- Cloud Tasks
-- Cloud Scheduler
-- Managed Service for Apache Spark
-- Cloud Data Fusion
-- Managed Service for Apache Airflow
-- Pub/Sub
-- Eventarc
-- Management Tools
-- Cloud Shell
-- Cloud console
-- Cloud Endpoints
-- Cloud IAM
-- Cloud APIs
-- Service Catalog
-- Cost Management
-- Observability
-- Carbon Footprint
-- Config Connector
-- Active Assist
-- See all management tools
-- Maps and Geospatial
-- Earth Engine
-- Google Maps Platform
-- Media Services
-- Cloud CDN
-- Live Stream API
-- OpenCue
-- Transcoder API
-- Video Stitcher API
-- Migration
-- Migration Center
-- Application Migration
-- Migrate to Virtual Machines
-- Cloud Foundation Toolkit
-- Database Migration Service
-- Migrate to Containers
-- Data Analytics Migration Services
-- Rapid Migration and Modernization Program
-- Transfer Appliance
-- Storage Transfer Service
-- VMware Engine
-- Networking
-- Cloud Armor
-- Cloud CDN and Media CDN
-- Cloud DNS
-- Cloud Load Balancing
-- Cloud NAT
-- Cloud Connectivity
-- Network Connectivity Center
-- Network Intelligence Center
-- Network Service Tiers
-- Virtual Private Cloud
-- Private Service Connect
-- See all networking products
-- Operations
-- Cloud Logging
-- Cloud Monitoring
-- Error Reporting
-- Managed Service for Prometheus
-- Cloud Trace
-- Cloud Profiler
-- Cloud Quotas
-- Productivity and Collaboration
-- AppSheet
-- AppSheet Automation
-- Gemini Enterprise app
-- Google Workspace
-- Google Workspace Essentials
-- Cloud Identity
-- Chrome Enterprise
-- Security and Identity
-- Cloud IAM
-- Sensitive Data Protection
-- Mandiant Managed Defense
-- Google Threat Intelligence
-- Security Command Center
-- Cloud Key Management
-- Mandiant Incident Response
-- Chrome Enterprise Premium
-- Assured Workloads
-- Google Security Operations
-- Mandiant Consulting
-- See all security and identity products
-- Serverless
-- Cloud Run
-- Cloud Functions
-- App Engine
-- Workflows
-- API Gateway
-- Storage
-- Cloud Storage
-- Block Storage
-- Filestore
-- Persistent Disk
-- Cloud Storage for Firebase
-- Local SSD
-- Storage Transfer Service
-- Google Cloud Managed Lustre
-- Google Cloud NetApp Volumes
-- Backup and DR Service
-- Web3
-- Blockchain Node Engine
-- Blockchain RPC
-
-- Save money with our transparent approach to pricing
-- Request a quote
-- Pricing overview and tools
-- Google Cloud pricing
-- Pricing calculator
-- Google Cloud free tier
-- Cost optimization framework
-- Cost management tools
-- Product-specific Pricing
-- Compute Engine
-- Cloud SQL
-- Google Kubernetes Engine
-- Cloud Storage
-- BigQuery
-- See full price list with 100+ products
-
-- Learn & build
-- Google Cloud Free Program
-- Solution Generator
-- Quickstarts
-- Blog
-- Learning Hub
-- Google Cloud certification
-- Cloud computing basics
-- Cloud Architecture Center
-- Connect
-- Innovators
-- Developer Center
-- Events and webinars
-- Google Cloud Community
-- Consulting and Partners
-- Google Cloud Consulting
-- Google Cloud Marketplace
-- Find a partner
-- Google Cloud partners
-
-- Why GoogleChoosing Google CloudTrust and securityModern Infrastructure CloudMulticloudGlobal infrastructureLocationsCustomers and case studiesAnalyst reportsWhitepapersBlog
-- Products and pricingGoogle Cloud pricingGoogle Workspace pricingSee all products
-- SolutionsInfrastructure modernizationDatabasesApplication modernizationSmart analyticsArtificial IntelligenceSecurityProductivity & work transformationIndustry solutionsDevOps solutionsSmall business solutionsSee all solutions
-- ResourcesGoogle Cloud Affiliate ProgramGoogle Cloud documentationGoogle Cloud quickstartsGoogle Cloud MarketplaceLearn about cloud computingSupportCode samplesCloud Architecture CenterTrainingCertificationsGoogle for DevelopersGoogle Cloud for StartupsSystem statusRelease Notes
-- EngageContact salesFind a PartnerBecome a PartnerEventsPodcastsDeveloper CenterPress CornerGoogle Cloud on YouTubeGoogle Cloud Tech on YouTubeFollow on XJoin User ResearchWe're hiring. Join Google Cloud!Community forums
-
-- Choosing Google Cloud
-- Trust and security
-- Modern Infrastructure Cloud
-- Multicloud
-- Global infrastructure
-- Locations
-- Customers and case studies
-- Analyst reports
-- Whitepapers
-- Blog
-
-- Google Cloud pricing
-- Google Workspace pricing
-- See all products
-
-- Infrastructure modernization
-- Databases
-- Application modernization
-- Smart analytics
-- Artificial Intelligence
-- Security
-- Productivity & work transformation
-- Industry solutions
-- DevOps solutions
-- Small business solutions
-- See all solutions
-
-- Google Cloud Affiliate Program
-- Google Cloud documentation
-- Google Cloud quickstarts
-- Google Cloud Marketplace
-- Learn about cloud computing
-- Support
-- Code samples
-- Cloud Architecture Center
-- Training
-- Certifications
-- Google for Developers
-- Google Cloud for Startups
-- System status
-- Release Notes
-
-- Contact sales
-- Find a Partner
-- Become a Partner
-- Events
-- Podcasts
-- Developer Center
-- Press Corner
-- Google Cloud on YouTube
-- Google Cloud Tech on YouTube
-- Follow on X
-- Join User Research
-- We're hiring. Join Google Cloud!
-- Community forums
-
-- About Google
-- Privacy
-- Site terms
-- Google Cloud terms
-- Cookies management controls
-- Our third decade of climate action: join us
-- Sign up for the Google Cloud newsletterSubscribe
-
-- ‪English‬
-- ‪Deutsch‬
-- ‪Español‬
-- ‪Español (Latinoamérica)‬
-- ‪Français‬
-- ‪Indonesia‬
-- ‪Italiano‬
-- ‪Português (Brasil)‬
-- ‪简体中文‬
-- ‪繁體中文‬
-- ‪日本語‬
-- ‪한국어‬
-
 
 ## 2. Market Intelligence (Markposition)
-Total Market Data Points: 350
+Total Market Data Points: 679
 
 - **advertising.amazon**: https://advertising.amazon.com/ (October 5, 2022)
 - **Drive Advertising Revenue with Google Ad Manager : Google**: https://skillshop.exceedlms.com/student/path/17117-drive-advertising-revenue-with-google-ad-manager (September 26, 2022)
@@ -2611,6 +1622,335 @@ Total Market Data Points: 350
 - **RedTrack | Cookieless ad tracking solution for media-buyers**: https://redtrack.io/ (May 2, 2021)
 - **SEM with Microsoft Advertising – Microsoft Advertising**: https://about.ads.microsoft.com/en-us (May 2, 2021)
 - **Programmatic Advertising Technology Company | Publift**: https://www.publift.com/ (April 29, 2021)
+- **Facebook Ads vs. Google Ads: Which Is Better? | WordStream**: https://www.wordstream.com/facebook-vs-google (April 10, 2021)
+- **WordStream: Online Advertising Made Easy**: https://www.wordstream.com/ (April 10, 2021)
+- **YouTube Select: Make the best of YouTube yours – YouTube Advertising**: https://www.youtube.com/ads/how-it-works/set-up-a-campaign/youtube-select/ (April 7, 2021)
+- **Google Finance – cijene s burzi, kotacije u stvarnom vremenu i poslovne vijesti**: https://www.google.com/finance (April 5, 2021)
+- **Google – About Google, Our Culture & Company News**: https://about.google/ (April 5, 2021)
+- **Skillshop**: https://skillshop.withgoogle.com/ (April 5, 2021)
+- **Audience Network: your Facebook Ads on mobile apps | Facebook for Business**: https://web.facebook.com/business/marketing/audience-network (April 4, 2021)
+- **Small Business Advertising with Facebook Ads | Facebook for Business | Facebook for Business**: https://web.facebook.com/business/small-business/advertise (April 4, 2021)
+- **Google Data Studio**: https://datastudio.google.com/u/0/navigation/reporting (March 31, 2021)
+- **YouTube**: https://www.youtube.com/ (March 31, 2021)
+- **YouTube video maker | Create smashing YouTube videos – Magisto**: https://www.magisto.com/marketing/youtube-video-maker (March 30, 2021)
+- **Make Quality Advertising Videos – YouTube Advertising**: https://www.youtube.com/ads/making-a-video-ad/ (March 30, 2021)
+- **Make Quality Advertising Videos – YouTube Advertising**: https://www.youtube.com/ads/making-a-video-ad/ (March 30, 2021)
+- **YouTube Advertising – Online Video Advertising Campaigns**: https://www.youtube.com/ads/ (March 30, 2021)
+- **YouTube Advertising – Online Video Advertising Campaigns**: https://www.youtube.com/ads/ (March 30, 2021)
+- **Outbrain – Recommendation Platform Powered by Native Ads | Outbrain.com**: https://www.outbrain.com/ (March 27, 2021)
+- **Advertising – Digital Marketing Center Microsoft**: https://www.microsoft.com/en-us/digital-marketing-center/advertising (March 26, 2021)
+- **Digital Marketing Center – Microsoft**: https://www.microsoft.com/en-us/digital-marketing-center (March 26, 2021)
+- **Digital Marketing Center Sign In microsoft**: https://ui.ads.microsoft.com/campaign/digitalmarketing (March 26, 2021)
+- **Bing**: https://www.bing.com/ (March 26, 2021)
+- **Bing Webmaster Tools**: https://www.bing.com/webmasters/about (March 26, 2021)
+- **Billing & Revenue Management for B2B SaaS | Chargify**: https://www.chargify.com/ (March 26, 2021)
+- **Google Analytics for Beginners**: https://analytics.google.com/analytics/academy/course/6 (March 24, 2021)
+- **Ecommerce business: how to start and grow your online store**: https://sell.amazon.com/ecommerce-business-guide.html (March 24, 2021)
+- **Amazon Advertising | Increase your ecommerce channel visibility and sales**: https://sell.amazon.com/advertising.html (March 24, 2021)
+- **Grow Your Amazon Selling Business | Advertising, Brand Services, Global Selling, and More**: https://sell.amazon.com/grow.html (March 24, 2021)
+- **Google Ads – privucite više korisnika jednostavnim online oglašavanjem**: https://ads.google.com/intl/hr_hr/getstarted/ (March 24, 2021)
+- **Izrada responzivnog prikaznog oglasa – Google Ads**: https://support.google.com/google-ads/answer/7005917?hl=hr (March 24, 2021)
+- **Google Ads**: https://support.google.com/google-ads/?hl=hr (March 24, 2021)
+- **Drive foot traffic to your store with Google Ads : Google**: https://skillshop.exceedlms.com/student/path/29097-drive-foot-traffic-to-your-store-with-google-ads (March 17, 2021)
+- **Acoustic**: https://acoustic.com/ (March 11, 2021)
+- **upRive | Create high-performing Facebook ads in just minutes.**: https://uprive.com/ (February 28, 2021)
+- **The advertising platform for the open Internet | Criteo**: https://www.criteo.com/ (February 28, 2021)
+- **Madgicx – The All-in-One Google & Facebook Advertising Platform**: https://madgicx.com/ (February 27, 2021)
+- **Facebook for Business: Marketing on Facebook**: https://web.facebook.com/business (February 27, 2021)
+- **Advertise Your Short-Term Vacation Rental – TravelNest**: https://travelnest.com/ (February 25, 2021)
+- **Google and Facebook Ads. Automated. – Squared.io**: https://www.squared.io/ (February 17, 2021)
+- **Success Software – Salesforce CRM Apps & Services**: https://success-software.biz/ (February 16, 2021)
+- **Digital Advertising Made Easy, Fast & Effective**: https://adespresso.com/ (February 13, 2021)
+- **Admiral: The Visitor Relationship Management Company**: https://www.getadmiral.com/ (February 3, 2021)
+- **Learn the Basics of Quality Link Building for SEO | WordStream**: https://www.wordstream.com/link-building (January 21, 2021)
+- **WordStream: Online Advertising Made Easy**: https://www.wordstream.com/ (January 21, 2021)
+- **Data Axle USA | Mailing Lists | Email Lists | Sales Leads | Business | Consumer**: https://www.dataaxleusa.com/ (January 15, 2021)
+- **Online Advertising – Get Low Cost PC & Mobile Traffic | TrafficJunky**: https://www.trafficjunky.com/ (January 15, 2021)
+- **Home Page – 4A’s**: https://www.aaaa.org/ (January 14, 2021)
+- **SofaScore – Work with the Best Provider of Sports Results**: https://corporate.sofascore.com/advertising (January 14, 2021)
+- **Supermetrics: the easiest way to move your marketing data**: https://supermetrics.com/ (January 13, 2021)
+- **Adzooma | Simplify, Automate & Optimise Online Ad Campaigns**: https://www.adzooma.com/ (January 12, 2021)
+- **Best Digital Marketing Agencies | Adzooma Marketplace**: https://marketplace.adzooma.com/categories/digital-marketing (January 12, 2021)
+- **Didomi | Privacy and consent management platform**: https://www.didomi.io/ (January 12, 2021)
+- **Talon.One: The World’s Most Powerful Promotion Engine**: https://www.talon.one/ (January 11, 2021)
+- **The Publisher Technology Platform | Sovrn**: https://www.sovrn.com/ (January 8, 2021)
+- **Xandr | Make Advertising Better**: https://www.xandr.com/ (January 8, 2021)
+- **Digital Advertising & Customer Acquisition Solutions | Rakuten Advertising**: https://rakutenadvertising.com/ (January 8, 2021)
+- **Home | Index Exchange**: http://www.indexexchange.com/ (January 8, 2021)
+- **OpenX: Programmatic Advertising | Ad Exchange Network**: https://www.openx.com/ (January 8, 2021)
+- **The advertising platform for the open Internet | Criteo**: https://www.criteo.com/ (January 8, 2021)
+- **Comscore is a trusted currency for planning, transacting, and evaluating media across platforms.**: https://www.comscore.com/ (January 8, 2021)
+- **Google Ads – privucite više korisnika jednostavnim online oglašavanjem**: https://ads.google.com/intl/hr_hr/getstarted (January 7, 2021)
+- **Audience Network | Facebookova oglašivačka mreža Audience Network**: https://hr-hr.facebook.com/audiencenetwork/getting-started (January 6, 2021)
+- **Select a Facebook Business**: https://business.facebook.com/select/ (January 6, 2021)
+- **Audience Network | Facebookova oglašivačka mreža Audience Network**: https://hr-hr.facebook.com/audiencenetwork/ (January 6, 2021)
+- **Everything You Need to Know About Development Stores — Shopify Tutorials**: https://www.shopify.ca/partners/blog/development-stores (January 5, 2021)
+- **Talon.One: The World’s Most Powerful Promotion Engine**: https://www.talon.one/ (January 4, 2021)
+- **FreeWheel – Unifying linear and digital TV**: https://www.freewheel.com/ (January 3, 2021)
+- **Facebook for Business: Marketing on Facebook**: https://web.facebook.com/business (January 3, 2021)
+- **Dstillery – Your Custom Audience Partner**: https://dstillery.com/ (January 3, 2021)
+- **Marketing Automation – Eloqua | Marketing | CX | Oracle**: https://www.oracle.com/cx/marketing/automation/ (January 3, 2021)
+- **Flashtalking**: https://www.flashtalking.com/ (January 3, 2021)
+- **Europe’s leading adtech and video ad monetisation solution**: https://smartclip.tv/ (January 3, 2021)
+- **Smart Adserver | The Most Powerful Adserving and RTB Platform**: https://smartadserver.com/ (January 3, 2021)
+- **Threat Detection and Response | Trustwave**: https://www.trustwave.com/en-us/ (January 3, 2021)
+- **Home – TrustArc The Leader in Privacy Management Software**: https://trustarc.com/ (January 3, 2021)
+- **Think with Google – Discover Marketing Research & Digital Trends**: https://www.thinkwithgoogle.com/ (January 2, 2021)
+- **CMS, Ecommerce, Marketing, PIM and Integration**: https://www.dynamicweb.com/ (January 1, 2021)
+- **Future-Proofed Digital Advertising Platform – Future-Proofed DSP**: https://www.mediamath.com/platform/ (December 31, 2020)
+- **Admiral: The Visitor Relationship Management Company**: https://www.getadmiral.com/ (December 31, 2020)
+- **Midas Network – Platforma za Nativno oglašavanje**: https://www.midas-network.com/rs (December 28, 2020)
+- **Digital technology consultant Customer Centric- Centribal**: https://centribal.com/us/ (December 26, 2020)
+- **Do more with Adobe Marketing Cloud | Adobe Marketing Cloud**: https://www.adobe.com/marketing-cloud.html (December 26, 2020)
+- **Home – Blueknow**: https://www.blueknow.com/en/ (December 26, 2020)
+- **Acquire | A Unified Customer Engagement Platform**: https://acquire.io/ (December 26, 2020)
+- **TAPTAP Digital – TAPTAP, Location Intelligence for Marketing**: https://www.taptapnetworks.com/ (December 26, 2020)
+- **Cookieless Targeting, Audience Targeting, CMP – Sirdata**: https://www.sirdata.com/en/ (December 26, 2020)
+- **Mobile Advertising and App Monetization Platform | Smaato**: https://www.smaato.com/ (December 26, 2020)
+- **Programmatic Advertising Company – SmartyAds**: https://smartyads.com/ (December 26, 2020)
+- **Performance marketing for advertisers & publishers | advanced store**: https://www.advanced-store.com/en/ (December 26, 2020)
+- **digitalAudience | Identify. Enrich. Activate.**: https://digitalaudience.io/ (December 26, 2020)
+- **Platform161**: https://platform161.com/ (December 26, 2020)
+- **The advertising platform for the open Internet | Criteo**: https://www.criteo.com/ (December 26, 2020)
+- **IAB Europe**: https://iabeurope.eu/ (December 26, 2020)
+- **ConnectAd Realtime**: https://www.connectadrealtime.com/ (December 26, 2020)
+- **Between Exchange**: https://en.betweenx.com/ (December 26, 2020)
+- **Audience Solutions**: https://audience-solutions.com/ (December 26, 2020)
+- **AdvertServe | Flexible and Scalable Self-Serve Ad Server**: https://www.advertserve.com/ (December 26, 2020)
+- **ContentExchange: Connect, Grow and Monetize**: https://www.contentexchange.me/ (December 26, 2020)
+- **Browse the catalog – YouTube**: https://creatoracademy.youtube.com/page/browse (December 26, 2020)
+- **Creator Academy – YouTube**: https://creatoracademy.youtube.com/page/home (December 26, 2020)
+- **Signup – YouTube Advertising**: https://www.youtube.com/ads/signup/ (December 26, 2020)
+- **Online Video Advertising Campaigns – YouTube Advertising**: https://www.youtube.com/ads/ (December 26, 2020)
+- **Adspert**: https://www.adspert.net/ (December 26, 2020)
+- **adtarget.me | Self Service Retargeting Platform**: https://adtarget.me/index.html (December 26, 2020)
+- **Home — Amobee**: https://www.amobee.com/ (December 26, 2020)
+- **Branch – A mobile linking platform powering deep links and mobile attribution.**: https://branch.io/ (December 25, 2020)
+- **Firebase Pricing**: https://firebase.google.com/pricing (December 25, 2020)
+- **Firebase Dynamic Links | Deep link potential users to the right place inside your app**: https://firebase.google.com/products/dynamic-links?hl=hr (December 25, 2020)
+- **Deep link – Google Ads Help**: https://support.google.com/google-ads/answer/6046977?hl=en (December 25, 2020)
+- **LoopMe | Closing the Loop on Brand Advertising**: https://loopme.com/ (December 25, 2020)
+- **Business Intelligence (BI) & Data Analytics Platform**: https://looker.com/ (December 23, 2020)
+- **Business Intelligence (BI) & Data Analytics Platform**: https://looker.com/ (December 23, 2020)
+- **Content Monetization For Media Publishers | Skimlinks**: https://skimlinks.com/media-publishers/resources/index/category:all.html (December 23, 2020)
+- **Skimlinks | The monetization platform made for bloggers**: https://skimlinks.com/monetization-platform-for-bloggers/resources/index/category:all.html (December 23, 2020)
+- **Home | Industry Leader In Affiliate Marketing Solutions | Skimlinks**: https://skimlinks.com/resources/index/category:all.html (December 23, 2020)
+- **Cross-Channel Marketing | Oracle**: https://www.oracle.com/cx/marketing/cross-channel-marketing/ (December 23, 2020)
+- **What is digital marketing? | Oracle**: https://www.oracle.com/cx/marketing/digital-marketing/ (December 23, 2020)
+- **Trustpilot Reviews: Experience the power of customer reviews**: https://www.trustpilot.com/ (December 23, 2020)
+- **Dashboard – TrustArc The Leader in Privacy Management Software**: https://trustarc.com/dashboard/ (December 23, 2020)
+- **Home – TrustArc The Leader in Privacy Management Software**: https://trustarc.com/ (December 23, 2020)
+- **Home – TrustArc The Leader in Privacy Management Software**: https://trustarc.com/ (December 23, 2020)
+- **Industry Leading Marketing Cloud | Oracle**: https://www.oracle.com/cx/marketing/ (December 23, 2020)
+- **Company Info**: https://cop.evidon.com/companies/google-adwords (December 23, 2020)
+- **Google Ads – privucite više korisnika jednostavnim online oglašavanjem**: https://ads.google.com/intl/hr_hr/home/ (December 23, 2020)
+- **Company Info**: https://cop.evidon.com/companies/doubleclick (December 23, 2020)
+- **Content Analytics and Insights for Digital Publishing | Chartbeat**: https://chartbeat.com/ (December 23, 2020)
+- **Content Analytics and Insights for Digital Publishing | Chartbeat**: https://chartbeat.com/ (December 23, 2020)
+- **SSL Certificate Authority & PKI Solutions | Sectigo® Official**: https://sectigo.com/ (December 22, 2020)
+- **Cloud Computing Services | Google Cloud**: https://cloud.google.com/ (December 21, 2020)
+- **Google Workspace (Formerly G Suite): Business Collaboration Tools**: https://workspace.google.com/ (December 21, 2020)
+- **Google Domains – Register Your Domain Name – Google Domains**: https://domains.google/ (December 21, 2020)
+- **Verisign is a global provider of domain name registry services and internet infrastructure – Verisign**: https://www.verisign.com/en_US/ (December 21, 2020)
+- **Escrow.com | Never buy or sell online without using Escrow.com.**: https://www.escrow.com/ (December 21, 2020)
+- **Escrow Agents & Brokers – Escrow.com**: https://www.escrow-sandbox.com/broker (December 21, 2020)
+- **Home – TrustArc The Leader in Privacy Management Software**: https://trustarc.com/ (December 21, 2020)
+- **List Business Software at Capterra**: https://www.capterra.com/vendors/sign-up (December 20, 2020)
+- **Top Software at Capterra | Software & Software Reviews For Business & Nonprofit**: https://www.capterra.com/ (December 20, 2020)
+- **The Enterprise Content Management Platform | WordPress VIP**: https://wpvip.com/ (December 20, 2020)
+- **WordPress**: https://www.google.com/url?sa=t&source=web&rct=j&url=https://wordpress.com/&ved=2ahUKEwjn2L7cs93tAhWHtYsKHd9iD6kQFjAAegQITRAD&usg=AOvVaw1DhOsjClCulgIna4V94rRT (December 20, 2020)
+- **Privacy, Security and Data Governance Software | GDPR, CCPA, ISO 27001**: https://www.onetrust.com/ (December 20, 2020)
+- **Cloudflare – The Web Performance & Security Company | Cloudflare**: https://www.cloudflare.com/ (December 20, 2020)
+- **Medallia**: https://www.medallia.com/ (December 20, 2020)
+- **LiveRamp | Data Connectivity Platform**: https://liveramp.com/ (December 20, 2020)
+- **Disqus – The #1 way to build an audience on your website**: https://disqus.com/ (December 20, 2020)
+- **Home | Braze**: https://www.braze.com/ (December 20, 2020)
+- **Installing with Segment – Appcues Docs**: https://docs.appcues.com/article/26-install-appcues-segment (December 20, 2020)
+- **Appcues Flow Builder**: https://chrome.google.com/webstore/detail/appcues-flow-builder/hjdcpbokggnjjmcmbmhkbkmibdekodmk (December 20, 2020)
+- **Appcues Flow Builder**: https://chrome.google.com/webstore/detail/appcues-flow-builder/hjdcpbokggnjjmcmbmhkbkmibdekodmk (December 20, 2020)
+- **Appcues | The Product-Led Growth Platform**: https://www.appcues.com/ (December 20, 2020)
+- **Home | Acoustic**: https://acoustic.com/ (December 20, 2020)
+- **Hotjar: Website Heatmaps & Behavior Analytics Tools**: https://www.hotjar.com/ (December 20, 2020)
+- **WalkMe™ – Digital Adoption Platform**: https://www.walkme.com/ (December 20, 2020)
+- **Homepage | Account-Based Marketing – Demandbase**: https://www.demandbase.com/ (December 20, 2020)
+- **Google Ads – privucite više korisnika jednostavnim online oglašavanjem**: https://ads.google.com/intl/hr_hr/home/ (December 20, 2020)
+- **All Categories Category List | TrustRadius**: https://www.trustradius.com/categories (December 20, 2020)
+- **Welcome to Microsoft Advertising Help**: https://help.ads.microsoft.com/#Apex/ads/en/ext60065/0 (December 20, 2020)
+- **Microsoft Advertising Help Center**: https://help.ads.microsoft.com/ (December 20, 2020)
+- **What is Microsoft Advertising, and how does PPC work? – Training – Microsoft Advertising**: https://about.ads.microsoft.com/en-us/resources/training/what-is-microsoft-advertising (December 20, 2020)
+- **Microsoft Advertising | Search Engine Marketing (SEM) & more**: https://ads.microsoft.com/ (December 20, 2020)
+- **Home – Bound**: https://bound360.com/ (December 20, 2020)
+- **MediaMath – Future-Proofed DSP**: https://www.mediamath.com/ (December 20, 2020)
+- **Free Online Programmatic Advertising Courses – MediaMath Academy**: https://www.mediamath.com/academy/ (December 20, 2020)
+- **Best-in-Class Marketing Automation Software | Marketo Engage**: https://www.marketo.com/ (December 20, 2020)
+- **digidip**: https://digidip.net/ (December 20, 2020)
+- **Home – Ogury**: https://ogury.com/ (December 16, 2020)
+- **Association of National Advertisers | ANA**: https://www.ana.net/ (December 15, 2020)
+- **ANA’s Privacy Policy | ANA**: https://www.ana.net/content/show/id/privacy-policy#yac (December 15, 2020)
+- **TrackAd – Leading Technology**: https://www.trackad.ai/ (December 14, 2020)
+- **Consent Management Platform (CMP) | Usercentrics GmbH**: https://usercentrics.com/ (December 14, 2020)
+- **Marketing Solutions Help**: https://www.linkedin.com/help/lms?lang=en (December 14, 2020)
+- **Set up conversion tracking for your website – Google Ads Help**: https://support.google.com/google-ads/answer/6095821?hl=en (December 14, 2020)
+- **Pardot | Powerful B2B Marketing Automation by Salesforce**: https://www.pardot.com/ (December 14, 2020)
+- **Pardot Pricing – Automation Software Plan Costs | Salesforce Pardot**: https://www.pardot.com/pricing/ (December 14, 2020)
+- **iPROM – Digital agency – Enter the era of programmatic buying**: https://iprom.eu/ (December 14, 2020)
+- **BBB National Programs | Home**: https://bbbprograms.org/ (December 13, 2020)
+- **Association of National Advertisers | ANA**: https://www.ana.net/ (December 13, 2020)
+- **Association of National Advertisers | ANA**: https://www.ana.net/ (December 13, 2020)
+- **American Advertising Federation Homepage | AAF**: https://www.aaf.org/ (December 13, 2020)
+- **Home Page – 4A’s**: https://www.aaaa.org/ (December 13, 2020)
+- **Home Page – 4A’s**: https://www.aaaa.org/ (December 13, 2020)
+- **IAB**: https://www.iab.com/ (December 13, 2020)
+- **Join NAI | NAI: Network Advertising Initiative**: https://www.networkadvertising.org/join-nai/ (December 13, 2020)
+- **YourAdChoices.com | Welcome to YourAdChoices.com**: https://youradchoices.com/ (December 13, 2020)
+- **Homepage – Advertising Association**: https://www.adassoc.org.uk/ (December 13, 2020)
+- **AdChoices – Wikipedia**: https://en.wikipedia.org/wiki/AdChoices (December 13, 2020)
+- **Teradata Partners | Become a Teradata Partner**: https://www.teradata.co.uk/Partners/Become-a-Partner (December 13, 2020)
+- **TERADATA – PartnerIntelligence**: https://partnerintelligence.teradata.com/ (December 13, 2020)
+- **TERADATA – PartnerIntelligence**: http://partnerintelligence.teradata.com/account/registration (December 13, 2020)
+- **Teradata Partners | Browse Our Partners by Industry**: https://www.teradata.co.uk/Partners/All (December 13, 2020)
+- **Paxum: Home**: https://eu.paxum.com/ (December 13, 2020)
+- **Contact Center Solutions | Omnichannel Customer Experience | Genesys**: https://www.genesys.com/ (December 13, 2020)
+- **How To Advertise on Our Ad Network | TrafficJunky**: https://www.trafficjunky.com/advertiser/how-to (December 13, 2020)
+- **Online Advertising – Get Low Cost PC & Mobile Traffic | TrafficJunky**: https://www.trafficjunky.com/ (December 13, 2020)
+- **IMDb ad specs | Amazon Advertising**: https://advertising.amazon.com/resources/ad-specs/imdb (December 13, 2020)
+- **The Power of Affiliate | CJ Affiliate**: https://www.cj.com/what-is-affiliate-marketing (December 12, 2020)
+- **CJ Affiliate Home**: https://www.cj.com/ (December 12, 2020)
+- **JOIN@Home: JOIN Virtual Data Conference 2020 | Looker**: https://looker.com/events/join-2020 (December 12, 2020)
+- **BrightTALK – Discover and learn with the world’s brightest professionals – BrightTALK**: https://www.brighttalk.com/ (December 12, 2020)
+- **The Only Turn-key Solution for Multilingual Web and Digital Content. – MotionPoint**: https://www.motionpoint.com/ (December 11, 2020)
+- **Amazon Kinesis – Process & Analyze Streaming Data – Amazon Web Services**: https://aws.amazon.com/kinesis/ (December 11, 2020)
+- **Integrate your data stack with Snowplow | Snowplow**: https://snowplowanalytics.com/integrations-catalog/ (December 11, 2020)
+- **Integrate your data stack with Snowplow | Snowplow**: https://snowplowanalytics.com/integrations-catalog/ (December 11, 2020)
+- **Collect and operationalize behavioral data at scale | Snowplow**: https://snowplowanalytics.com/ (December 11, 2020)
+- **Collect and operationalize behavioral data at scale | Snowplow**: https://snowplowanalytics.com/ (December 11, 2020)
+- **Website Conversion Rate Optimization – Intellimize Machine Learning**: https://www.intellimize.com/how-it-works/ (December 11, 2020)
+- **Drift | The New Way Businesses Buy From Businesses**: https://www.drift.com/ (December 11, 2020)
+- **Website Personalization and Conversion Optimization Tool – Intellimize**: https://www.intellimize.com/ (December 11, 2020)
+- **Sales Data Analytics & Business Intelligence Software | Looker**: https://looker.com/solutions/sales-analytics (December 11, 2020)
+- **Insurance Data Analytics – Deliver Valuable Insights | GoodData**: https://www.gooddata.com/industry/insurance (December 11, 2020)
+- **Financial Services | GoodData**: https://www.gooddata.com/industry/financial-services (December 11, 2020)
+- **API & SDKs · GoodData Developer Portal**: https://developer.gooddata.com/api-and-sdks (December 11, 2020)
+- **API & SDKs · GoodData Developer Portal**: https://developer.gooddata.com/api-and-sdks (December 11, 2020)
+- **Data Integration · GoodData Developer Portal**: https://developer.gooddata.com/data-integration (December 11, 2020)
+- **GoodData.UI · A powerful JavaScript library for building analytical applications**: https://sdk.gooddata.com/gooddata-ui/ (December 11, 2020)
+- **Business Intelligence, Data Analytics and Visualization | Start for Free | GoodData Software**: https://www.gooddata.com/free (December 11, 2020)
+- **Embedded Analytics – Deliver Insights That Matter | GoodData**: https://www.gooddata.com/embedded-analytics (December 11, 2020)
+- **Enterprise Insights Platform – Actionable Business Intelligence | GoodData**: https://www.gooddata.com/platform (December 11, 2020)
+- **GoodData | The Leader in Embedded Analytics & Intelligence**: https://www.gooddata.com/ (December 11, 2020)
+- **GoodData – Wikipedia**: https://en.wikipedia.org/wiki/GoodData (December 11, 2020)
+- **Embedded Analytics and Reporting Tools & Software | Looker**: https://looker.com/product/embedded-analytics (December 11, 2020)
+- **Advanced Data Analytics Platform | Looker**: https://looker.com/platform/overview (December 11, 2020)
+- **Achieving Marketing Analytics Harmony – Looker for Google BigQuery Data Transfer Service**: https://referworkspace.app.goo.gl/rNNY (December 11, 2020)
+- **Looker University**: https://training.looker.com/ (December 11, 2020)
+- **Certification program | Looker**: https://looker.com/certification (December 11, 2020)
+- **Google BigQuery Analytics & Visualization Tools | Looker**: https://looker.com/solutions/google-bigquery (December 11, 2020)
+- **Google Cloud & Looker | Looker**: https://looker.com/google-cloud (December 11, 2020)
+- **Business Intelligence (BI) & Data Analytics Platform**: https://looker.com/ (December 11, 2020)
+- **Looker (company) – Wikipedia**: https://en.wikipedia.org/wiki/Looker_(company) (December 11, 2020)
+- **Cognos – Wikipedia**: https://en.wikipedia.org/wiki/Cognos (December 11, 2020)
+- **Cognos Analytics – Overview | IBM**: https://www.ibm.com/products/cognos-analytics (December 11, 2020)
+- **Tableau Online | SaaS Analytics For Everyone**: https://www.tableau.com/products/cloud-bi (December 11, 2020)
+- **Tableau Pricing for Individuals and Personal Use**: https://www.tableau.com/pricing/individual (December 11, 2020)
+- **Vantage Analyst | Unleash Easier Predictive Modeling**: https://www.teradata.com/Products/Software/Vantage/Analyst (December 11, 2020)
+- **Teradata Customer Cloud | Purpose-Built Cloud Infrastructure**: https://www.teradata.com/Cloud/Customer-Cloud (December 11, 2020)
+- **Azure Cloud Analytics | Teradata Vantage on Azure**: https://www.teradata.com/Cloud/Azure (December 11, 2020)
+- **Teradata Vantage on Google Cloud | Cloud-First Analytics Platform**: https://www.teradata.com/Cloud/Google-Cloud (December 11, 2020)
+- **Stop compromising on your analytics**: https://www.teradata.com/Resources/Videos/Stop-compromising-on-your-analytics (December 11, 2020)
+- **Advanced Data and Analytics Solutions | Teradata Products**: https://www.teradata.com/Products/All-Products (December 11, 2020)
+- **Teradata Pricing | How Much Does Teradata Really Cost?**: https://www.teradata.com/Cloud/Pricing (December 11, 2020)
+- **Teradata Vantage™ | The Cloud Data Analytics Platform**: https://www.teradata.com/Products/Software/Vantage (December 11, 2020)
+- **Teradata on VMware Developer Tier and Developer Tier Preconfigured | Teradata Downloads**: https://downloads.teradata.com/download/database/teradata-on-vmware-developer-tier-and-developer-tier-preconfigured (December 11, 2020)
+- **Vantage on VMware | Teradata Database on VMware**: https://www.teradata.com/Cloud/VMware (December 11, 2020)
+- **Twitter Ads API | Products | Twitter Developer**: https://developer.twitter.com/en/products/twitter-ads-api (December 9, 2020)
+- **Twitter Ads**: https://ads.twitter.com/mobile/v1/get_started?ref=BTC&onboarding=true (December 9, 2020)
+- **Twitter Ads**: https://ads.twitter.com/mobile/v1/get_started (December 9, 2020)
+- **Increase Revenue & Improve Customer Retention | Intellum**: https://www.intellum.com/ (December 9, 2020)
+- **Deliver Personalized Customer Experiences At Scale | Intellum**: https://www.intellum.com/products (December 9, 2020)
+- **Intellum | Experience : Intellum**: https://experience.intellum.com/student/catalog (December 9, 2020)
+- **Site Search & Discovery powered by AI | Algolia**: https://www.algolia.com/ (December 9, 2020)
+- **Account-Based Platform | RollWorks**: https://www.rollworks.com/ (December 9, 2020)
+- **NextRoll – Home**: https://www.nextroll.com/ (December 9, 2020)
+- **Cookie Opt-out | AdRoll**: https://app.adroll.com/optout (December 9, 2020)
+- **Evidon info**: http://info.evidon.com/pub_info/573?v=1&nt=1&nw=true (December 9, 2020)
+- **Evidon amplitude**: http://info.evidon.com/companies/amplitude (December 9, 2020)
+- **Amplitude | Product Intelligence for Web and Mobile**: https://amplitude.com/ (December 9, 2020)
+- **Ghostery: Online Privacy Made Easy**: https://www.ghostery.com/ (December 9, 2020)
+- **Evidon | Digital Governance, Privacy Compliance, Website Monitoring**: https://www.evidon.com/ (December 9, 2020)
+- **AdRoll – Settings subscribe**: https://app.adroll.com/settings/subscribe/46NAR5IBOZAELOUA3VS4IT/AR/12?advertisable=DUZJXW2VUFAJHK5KCEJQV6&on_cancel_url=%2Fhome%3Fadvertisable%3DDUZJXW2VUFAJHK5KCEJQV6&on_success_url=%2Fhome%3Fadvertisable%3DDUZJXW2VUFAJHK5KCEJQV6 (December 9, 2020)
+- **Pixel Set Up | AdRoll**: https://www.adroll.com/pixel-set-up (December 9, 2020)
+- **Connect AdRoll to your site by installing the AdRoll Pixel – AdRoll Help Center**: https://help.adroll.com/hc/en-us/articles/360040116252-Connect-AdRoll-to-your-site-by-installing-the-AdRoll-Pixel (December 9, 2020)
+- **AdRoll getting started**: https://app.adroll.com/home/getting-started/consent (December 9, 2020)
+- **Digital Marketing & Growth Marketing Platform | AdRoll**: https://www.adroll.com/ (December 9, 2020)
+- **AdRoll signup**: https://app.adroll.com/welcome/signup/?package_code=ADROLL_STARTER (December 9, 2020)
+- **Digital Experience Platform & Enterprise CMS | Crownpeak**: https://www.crownpeak.com/ (December 9, 2020)
+- **Stata | Why Stata**: https://www.stata.com/why-use-stata/#myd (November 11, 2020)
+- **Dictionary.com | Meanings and Definitions of Words at Dictionary.com**: https://www.dictionary.com/ (October 15, 2020)
+- **Dictionary.com | Meanings and Definitions of Words at Dictionary.com**: https://www.dictionary.com/ (October 15, 2020)
+- **Voodoo.io | Games**: https://www.voodoo.io/games (October 12, 2020)
+- **Voodoo.io | Games**: https://www.voodoo.io/games (October 12, 2020)
+- **Prima namještaj – Prijatelj mog doma**: https://www.prima-namjestaj.hr/ (October 11, 2020)
+- **Prima namještaj – Prijatelj mog doma**: https://www.prima-namjestaj.hr/ (October 11, 2020)
+- **Amazon.com Associates Central**: https://affiliate-program.amazon.com/ (October 5, 2020)
+- **Namještaj Mima | Namještaj za savršen dom**: https://namjestaj-mima.hr/ (September 30, 2020)
+- **Fitify Workouts & Plans**: https://gofitify.com/ (September 16, 2020)
+- **Fitify Workouts & Plans**: https://gofitify.com/ (September 16, 2020)
+- **F5 Cloud Services**: https://portal.cloudservices.f5.com/ (July 20, 2020)
+- **Callidus | Ustanova Callidus**: https://www.ustanovacallidus.hr/hr/naslovna/ (July 19, 2020)
+- **odoo**: https://marketing1usa.wordpress.com/2020/07/18/odoo/ (July 18, 2020)
+- **nature**: None (July 17, 2020)
+- **Njuskalo.hr oglasnik**: https://www.njuskalo.hr/ (July 10, 2020)
+- **GROUNDIES® Palermo Men | GROUNDIES® Urban Barefootwear**: https://www.groundies.de/en/barefoot-shoes-men/groundies-palermo-men-black.html (June 30, 2020)
+- **Administration atlassian**: https://admin.atlassian.com/ (June 30, 2020)
+- **id.hr**: https://www.id.hr/ (June 30, 2020)
+- **www.akd.hr**: http://www.akd.hr/ (June 30, 2020)
+- **Akd tpd**: https://tpd.akd.hr/hr (June 30, 2020)
+- **TPD ID issuer akd login**: https://idissuer.akd.hr/login (June 30, 2020)
+- **MagicFix, čarobna pasta za brzi popravak zidova – NetScroll**: https://netscroll.hr/shop/kuca-i-vrt/magicfix/ (June 28, 2020)
+- **Webador Plans Pricing and Comparison | Webador**: https://www.webador.co.uk/pricing (June 28, 2020)
+- **Preparation of shipping | paket.hr**: https://www.paket.hr/wpso (June 26, 2020)
+- **Multicom d.o.o.**: http://www.multicom.hr/ (June 26, 2020)
+- **Globaldizajn | Izrada web stranica, CMS Globaladmin, SEO, web dizajn, mobilne aplikacije**: https://www.globaldizajn.hr/ (June 22, 2020)
+- **Video Conferencing, Online Meetings, Screen Share | Cisco Webex**: https://www.webex.com/ (June 16, 2020)
+- **WeTransfer**: https://wetransfer.com/ (June 16, 2020)
+- **pricing – Creative Motion Development**: https://cm-wp.com/apt/pricing/ (June 16, 2020)
+- **Medical Direct | Medical Direct medicinska trgovina**: https://www.medicaldirect.hr/ (June 15, 2020)
+- **MarfeelPress – WordPress plugin for publishers**: https://www.marfeelpress.com/ (June 15, 2020)
+- **Računovodstvo Fer – Računovodstvene i knjigovodstvene usluge**: https://www.racunovodstvo-fer.hr/ (June 14, 2020)
+- **Liquor.com – Cocktail Recipes, Spirits, and Local Bars**: https://www.liquor.com/ (June 12, 2020)
+- **The Balance – Make Money Personal**: https://www.thebalance.com/ (June 12, 2020)
+- **PwC: Building relationships, creating value**: https://www.pwc.com/gx/en.html (June 12, 2020)
+- **Početna – ADRIATIC osiguranje d.d.**: https://www.adriatic-osiguranje.hr/ (June 10, 2020)
+- **Web Katalog smještaja otoka Krka**: https://holidays.krk.hr/ (June 10, 2020)
+- **Find Jobs in Tech | Dice.com | Find Jobs in Tech**: https://www.dice.com/ (June 10, 2020)
+- **How to Join – Avid Alliance Partner Program – Avid**: https://www.avid.com/alliance-partner-program/partner-with-avid (June 9, 2020)
+- **Footwear News – Shoe News and Fashion Trends**: https://footwearnews.com/ (June 8, 2020)
+- **DroneDJ – Spinning news, information and reviews on the drone ecosystem**: https://dronedj.com/ (June 8, 2020)
+- **9to5Mac – Apple News & Mac Rumors Breaking All Day**: https://9to5mac.com/ (June 8, 2020)
+- **9to5Toys – New Gear, reviews and deals**: https://9to5toys.com/ (June 8, 2020)
+- **9to5Mac – Apple News & Mac Rumors Breaking All Day**: https://9to5mac.com/ (June 8, 2020)
+- **Electrek – EV and Tesla News, Green Energy, Ebikes, and more**: https://electrek.co/ (June 8, 2020)
+- **Android Central – News, Reviews, Deals & Help on all Android devices**: https://www.androidcentral.com/new-homepage (June 8, 2020)
+- **The Gazette | Local Iowa News, Sports, Obituaries, and Headlines – Cedar Rapids, Iowa City**: https://www.thegazette.com/ (June 8, 2020)
+- **Malwarebytes Resellers and Partners | Malwarebytes**: https://www.malwarebytes.com/partners/solution-providers/ (June 8, 2020)
+- **AluK Tim – Sustavi aluminijskih profila i proizvoda za zaštitu od sunca**: https://www.aluk.hr/ (June 8, 2020)
+- **Marefind – Marine Jobs Network**: https://marefind.com/ (June 8, 2020)
+- **KAPRIOL POINT d.o.o. Imotski, zastupnik i distributer branda Kapriol na tržištu Hrvatske**: https://www.kapriol-point.hr/ (June 7, 2020)
+- **Training Courses | Teacher Center | Google for Education**: https://edu.google.com/teacher-center/training/ (June 7, 2020)
+- **PIP**: https://www.pip.hr/ (June 7, 2020)
+- **Space.com: NASA, Space Exploration and Astronomy News**: https://www.space.com/ (June 6, 2020)
+- **View all of Google’s Marketing Products & Tools – Think with Google**: https://www.thinkwithgoogle.com/intl/en-cee/products/ (June 6, 2020)
+- **Smart links for music marketing, artist marketing, and tours promotion**: https://www.linkfire.com/ (June 6, 2020)
+- **Home – University of East London (UEL)**: https://www.uel.ac.uk/clearing-homepage (June 6, 2020)
+- **HotCars – News and Informative Reviews on the Automotive Industry**: https://www.hotcars.com/ (June 6, 2020)
+- **Invest in Estonia — All the details about business in Estonia**: https://investinestonia.com/ (June 2, 2020)
+- **Acta Croatica – naslovnica**: https://actacroatica.com/hr/ (May 28, 2020)
+- **Search – Scenic° USA**: https://www.scenicusa.com/search (May 28, 2020)
+- **Rivian**: https://rivian.com/ (May 26, 2020)
+- **PAR | Visoka Poslovna Škola | Vodeći centar za obrazovanje**: https://par.hr/ (May 26, 2020)
+- **Adweek – Breaking News in Advertising, Media and Technology**: https://www.adweek.com/ (May 19, 2020)
+- **METAL SHARK**: https://www.metalsharkboats.com/ (May 19, 2020)
+- **The New York Times – Breaking News, World News & Multimedia**: https://www.nytimes.com/ (May 19, 2020)
 
 ## 3. Legal & Ecosystem (Wilson Sonsini)
 ### Wilson Sonsini Goodrich & Rosati
@@ -2662,28 +2002,5 @@ Topics covered: title, url, content...
 Topics covered: repository, readme...
 
 ### Google Ads
-Topics covered: https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU, https://business.google.com/uk/ad-tools/bidding/, https://business.google.com/uk/resources/, https://developers.google.com/ad-manager, https://developers.google.com/ad-manager/dynamic-ad-insertion...
+Topics covered: https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU, https://business.google.com/uk/ad-tools/bidding/?hl=en, https://business.google.com/uk/resources/?hl=en, https://developers.google.com/ad-manager?hl=en, https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en...
 
-
----
-
-
-
-### 8BUKETS ARCHITECTURE SYNTHESIS
-Synthesized from iCloud synchronization:
-- Enhance autonomous_engine.py to include an explicit 'sync_icloud_knowledge' step within the loop.
-- Update KNOWLEDGE_MERGE.md to include the '8bukets' unified cloud intelligence strategy.
-- Introduce a new Work Order type: 'CLOUD_INTELLIGENCE_MERGE'.
-
-## ☁️ Cloud-Native Manifest (Phase 17)
-The system has evolved into a "Full Online" autonomous organism.
-
-### Core Connectivity
-- **Multi-Cloud State**: Convergence of MongoDB (Memory), Supabase (Real-time), and GitHub/GitLab (Evolution).
-- **8Bukets Orchestration**: Unified intelligence strategy merging local MacBook execution with always-on Cloud Workers.
-- **Autonomous Convergence**: Jules now prioritizes cross-provider PR management and state synchronization during cloud-active cycles.
-
-### Operational Strategy
-1. **Always-On Presence**: Continuous pulse every 15 minutes via GitHub Actions.
-2. **Integrated Evolution**: Creation cycles autonomously scaffold, test, and deploy services across environments.
-3. **Synchronized Intelligence**: iCloud/8bukets sync ensures that market data and system knowledge are consistent globally.
