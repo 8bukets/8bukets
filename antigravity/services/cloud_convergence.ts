@@ -28,7 +28,7 @@ export class CloudConvergenceService {
    * Orchestrates a full ecosystem synchronization.
    */
   public async synchronizeEcosystem() {
-    const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud')
+    const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
     logAutonomousAction(`🌐 [CloudConvergence] Initiating full ecosystem convergence (${isCloud ? 'CLOUD' : 'LOCAL'})...`, 'info')
 
     const providers = []
@@ -38,14 +38,30 @@ export class CloudConvergenceService {
     if (process.env.NEXT_PUBLIC_SUPABASE_URL) providers.push('supabase')
 
     try {
-      // 1. Core State Retrieval
+      // 1. Core State Retrieval & Bidirectional Sync
       let workOrderCount = 0
       try {
         const mongoClient = await getMongoClient()
         const db = mongoClient.db()
+
+        // Push local orders that might be missing in MongoDB
+        const localPath = path.join(process.cwd(), 'data/work_orders.json')
+        if (fs.existsSync(localPath)) {
+           const localOrders = JSON.parse(fs.readFileSync(localPath, 'utf8'))
+           for (const order of localOrders) {
+              const { _id, ...orderData } = order
+              await db.collection('work_orders').updateOne(
+                { id: order.id },
+                { $set: orderData },
+                { upsert: true }
+              )
+           }
+           logAutonomousAction(`📤 [CloudConvergence] Synced ${localOrders.length} local orders to MongoDB.`, 'info')
+        }
+
         workOrderCount = await db.collection('work_orders').countDocuments()
       } catch (e) {
-        logAutonomousAction('⚠️ [CloudConvergence] MongoDB unreachable during convergence.', 'warning')
+        logAutonomousAction('⚠️ [CloudConvergence] MongoDB unreachable or sync failed during convergence.', 'warning')
       }
 
       // 2. Supabase Real-time Pulse
@@ -131,6 +147,7 @@ export class CloudConvergenceService {
 
   /**
    * Autonomously resolves state conflicts between Cloud and Local.
+   * Prioritizes MongoDB as the source of truth in Cloud/Autonomous mode.
    */
   public async resolveConflicts() {
     logAutonomousAction('⚖️ [CloudConvergence] Auditing for state conflicts...', 'info')
@@ -139,9 +156,18 @@ export class CloudConvergenceService {
       const mongoClient = await getMongoClient()
       const db = mongoClient.db()
 
+      const isCloud = process.env.AUTONOMOUS_MODE === 'cloud' ||
+                      process.env.GITHUB_ACTIONS ||
+                      process.env.GITLAB_CI ||
+                      process.env.MACBOOK_CLOUD_SIMULATION === 'true'
+
       // Sync work orders from MongoDB to local if running in cloud mode
-      if (process.env.AUTONOMOUS_MODE === 'cloud' || process.env.GITHUB_ACTIONS) {
-        const mongoOrders = await db.collection('work_orders').find({ status: 'pending' }).toArray()
+      if (isCloud) {
+        logAutonomousAction('🌩️ [CloudConvergence] Cloud mode active. Synchronizing state from MongoDB source of truth.', 'info')
+        const mongoOrders = await db.collection('work_orders').find({
+           status: { $in: ['pending', 'in_progress', 'executing'] }
+        }).toArray()
+
         const localPath = path.join(process.cwd(), 'data/work_orders.json')
 
         if (mongoOrders.length > 0) {
@@ -165,10 +191,11 @@ export class CloudConvergenceService {
             const state = JSON.parse(fs.readFileSync(statePath, 'utf8'))
             state.last_conflict_resolution = new Date().toISOString()
             state.synced_orders = mongoOrders.length
+            state.execution_mode = 'cloud'
             fs.writeFileSync(statePath, JSON.stringify(state, null, 4))
           }
 
-          logAutonomousAction(`✅ [CloudConvergence] Resolved conflicts: Synced ${mongoOrders.length} orders from MongoDB to local state.`, 'info')
+          logAutonomousAction(`✅ [CloudConvergence] Resolved conflicts: Synced ${mongoOrders.length} active orders from MongoDB to local state.`, 'info')
           return { status: 'resolved', conflicts: mongoOrders.length }
         }
       }

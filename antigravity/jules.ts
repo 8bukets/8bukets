@@ -476,16 +476,23 @@ export class Jules {
       const { getPerformanceMonitoringServiceData } = await import('./services/performance_monitoring')
       const perf = await getPerformanceMonitoringServiceData()
 
+      const providers = []
+      if (process.env.GITHUB_TOKEN) providers.push('github')
+      if (process.env.GITLAB_TOKEN) providers.push('gitlab')
+      if (process.env.MONGODB_URI) providers.push('mongodb')
+      if (process.env.NEXT_PUBLIC_SUPABASE_URL) providers.push('supabase')
+
       const presence = {
         agent: 'Jules',
         status: 'online',
         lastSeen: new Date().toISOString(),
-        version: '1.4.0-alpha',
-        capabilities: ['git-sync', 'self-repair', 'knowledge-ingestion', 'pr-audit', 'cloud-sync', 'autonomous-evolution'],
+        version: '1.5.0-alpha',
+        capabilities: ['git-sync', 'self-repair', 'knowledge-ingestion', 'pr-audit', 'cloud-sync', 'autonomous-evolution', 'multi-provider-convergence'],
         environment: isCloud ? 'cloud' : 'local',
         execution_mode: isCloud ? 'cloud' : 'local',
         autonomous_mode: process.env.AUTONOMOUS_MODE || 'standard',
         cloud_provider: cloudProvider,
+        active_providers: providers,
         docker: {
            status: dockerStatus,
            container_count: containerCount,
@@ -498,11 +505,16 @@ export class Jules {
         memory_usage: process.memoryUsage(),
         system_metrics: {
           loadavg: perf.metrics.system.loadavg,
-          totalmem: perf.metrics.system.totalmem,
-          freemem: perf.metrics.system.freemem,
-          rss: perf.metrics.memory.rss
+          total_memory: perf.metrics.system.totalMemory,
+          free_memory: perf.metrics.system.freeMemory,
+          rss: perf.metrics.memory.rss,
+          heap_used: perf.metrics.memory.heapUsed
         },
-        uptime: process.uptime()
+        uptime: process.uptime(),
+        visual_heartbeat: {
+          pulse_intensity: Math.random(),
+          last_action: this.memory.autonomousTasks.length > 0 ? this.memory.autonomousTasks[this.memory.autonomousTasks.length - 1].goal : 'initializing'
+        }
       }
 
       // 1. Sync to MongoDB
@@ -710,6 +722,33 @@ export class Jules {
 
     const { KnowledgeObserver } = await import('./services/knowledge_observer')
     const observer = new KnowledgeObserver()
+
+    // Phase 19: Deep Ecosystem Ingestion (Internal Knowledge Bridging)
+    const ingestInternalDocs = async (dir: string) => {
+       const fullPath = path.join(process.cwd(), dir)
+       if (!fs.existsSync(fullPath)) return
+
+       const entries = fs.readdirSync(fullPath, { withFileTypes: true })
+       for (const entry of entries) {
+          const relativePath = path.join(dir, entry.name)
+          if (entry.isDirectory()) {
+             if (entry.name !== 'node_modules' && entry.name !== '.git' && entry.name !== 'dist' && entry.name !== 'scratch') {
+                await ingestInternalDocs(relativePath)
+             }
+          } else if (entry.name.endsWith('.md')) {
+             try {
+                const content = fs.readFileSync(path.join(process.cwd(), relativePath), 'utf8')
+                const title = `Internal: ${relativePath}`
+                const knowledge = KnowledgeObserver.processContent(title, content, `local://${relativePath}`)
+                await observer.persistKnowledge(knowledge)
+                console.log(` ✅ [Jules] Bridged Internal Knowledge: ${relativePath}`)
+             } catch (e) {}
+          }
+       }
+    }
+
+    await ingestInternalDocs('.github')
+    await ingestInternalDocs('antigravity')
 
     // Expand Ingestion: Scan for diverse technical documentation artifacts
     const knowledgeSources = [
