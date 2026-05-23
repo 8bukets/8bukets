@@ -37,7 +37,7 @@ export class Jules {
       }
     } else {
       this.memory = this.getDefaultMemory()
-      await this.saveAsync()
+      this.save()
     }
   }
 
@@ -101,8 +101,8 @@ export class Jules {
 
     const tasks = [
       { name: 'Consolidated Knowledge Observation', action: () => this.observeKnowledge() },
-      { name: 'Core Integrity Check', action: () => await this.recordTask('Integrity scan passed.') },
-      { name: 'GitKraken Sync Prep', action: () => await this.recordTask('Visual branch history cleaned.') }
+      { name: 'Core Integrity Check', action: async () => await this.recordTask('Integrity scan passed.') },
+      { name: 'GitKraken Sync Prep', action: async () => await this.recordTask('Visual branch history cleaned.') }
     ]
 
     for (const task of tasks) {
@@ -345,8 +345,6 @@ export class Jules {
         // file does not exist or cannot be read
       }
 
-      }
-
       const sessionAnalysisIdeas = await reactService.analyzeAndImproveSessions({
         branches,
         workOrders: fullWorkOrders
@@ -528,6 +526,8 @@ export class Jules {
           await observer.persistKnowledge(knowledge)
         }
       }
+    } catch (e) {
+      console.error(`❌ [Jules] Failed to observe local scratch knowledge:`, e)
     }
 
     // Phase 12: Scan iCloud for new knowledge
@@ -549,6 +549,8 @@ export class Jules {
         const knowledge = KnowledgeObserver.processContent(file, content, `icloud://${file}`)
         await observer.persistKnowledge(knowledge)
       }
+    } catch (e) {
+      console.error(`❌ [Jules] Failed to observe iCloud knowledge:`, e)
     }
   }
 }
