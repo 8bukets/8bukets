@@ -1,7 +1,7 @@
 import { exec } from 'child_process';
 import * as fs from 'fs/promises';
 import { promisify } from 'util';
-import { syncCollaborationState } from '../antigravity/services/collaboration';
+import { syncCollaborationState, triggerEcosystemCollaboration } from '../antigravity/services/collaboration';
 
 const execAsync = promisify(exec);
 
@@ -40,8 +40,12 @@ async function main() {
   try {
     await syncCollaborationState();
     console.log('Engine collaboration sync complete.');
+
+    console.log('Triggering ecosystem collaboration...');
+    await triggerEcosystemCollaboration();
+    console.log('Ecosystem collaboration triggered successfully.');
   } catch (error: any) {
-     console.error('Failed to sync collaboration state:', error.message);
+     console.error('Failed to sync or trigger collaboration state:', error.message);
   }
 }
 
