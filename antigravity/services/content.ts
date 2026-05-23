@@ -7,8 +7,7 @@ import { logAutonomousAction } from '../core'
  * Autonomously generates reports and documentation.
  */
 
-export async function generateContent(payload: {
-  // [Evolution] TODO: Add autonomous error handling (try/catch) title: string; content: string; filename: string }) {
+export async function generateContent(payload: { title: string; content: string; filename: string }) {
   // [Evolution] TODO: Add autonomous error handling (try/catch)
   console.log(`📝 [Content] Generating content: ${payload.title}...`)
 

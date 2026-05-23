@@ -71,13 +71,16 @@ export async function evolve() {
           })
         }
 
-        // Rule 4: Security - Detect execSync
-        if (content.includes('execSync(')) {
-          suggestions.push({
-            file: fullPath.replace(process.cwd(), ''),
-            complexity: lines,
-            suggestion: 'SECURITY_VULNERABILITY: execSync detected. Risk of command injection. Refactor to use execFileSync or spawnSync.'
-          })
+        // Rule 4: Security and Performance - Detect synchronous I/O and blocking calls
+        const syncCalls = ['execSync', 'execFileSync', 'fs.existsSync', 'fs.readFileSync', 'fs.writeFileSync']
+        for (const call of syncCalls) {
+          if (content.includes(call + '(')) {
+            suggestions.push({
+              file: fullPath.replace(process.cwd(), ''),
+              complexity: lines,
+              suggestion: `SECURITY_PERF_VULNERABILITY: Synchronous, blocking call ${call} detected. This degrades performance and scale. Replace with asynchronous/Promise-based equivalent.`
+            })
+          }
         }
 
         // Rule 5: Missing Error Handling in Async Functions
@@ -153,6 +156,18 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
     if (s.suggestion.startsWith('PHASE_UPGRADE_REQUIRED')) {
       console.log(` - Fixing ${s.file}: Upgrading Phase 9 to Phase 12`)
       content = content.replace(/Phase 9/g, 'Phase 12')
+      fs.writeFileSync(fullPath, content)
+    }
+
+    if (s.suggestion.startsWith('SECURITY_PERF_VULNERABILITY')) {
+      console.log(` - Fixing ${s.file}: Adding async refactor TODO for synchronous call`)
+      // Inject a TODO near the first detected sync call
+      const syncCalls = ['execSync', 'execFileSync', 'fs.existsSync', 'fs.readFileSync', 'fs.writeFileSync']
+      for (const call of syncCalls) {
+        if (content.includes(call + '(')) {
+          content = content.replace(new RegExp(`(\\b${call}\\()`, 'g'), "/* [Evolution] TODO: Refactor to async */ $1")
+        }
+      }
       fs.writeFileSync(fullPath, content)
     }
     
