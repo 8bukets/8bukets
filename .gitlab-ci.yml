@@ -115,3 +115,9 @@ autonomous_evolution:
   script:
     - npm ci
     - npx tsx scripts/execute_creation_cycle.ts
+
+test-proactive_scalability:
+  stage: test
+  script:
+    - npm ci
+    - npx vitest run antigravity/services/proactive_scalability.test.ts

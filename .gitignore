@@ -17,6 +17,8 @@ data/memory.json
 data/google_research.json
 data/google_innovation_ai.json
 config/evolution_params.json
+data/work_orders.json
+autonomous_state.json
 results/
 google_innovation_ai_report.md
 google_research_report.md
