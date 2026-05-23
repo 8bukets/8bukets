@@ -17,6 +17,7 @@ jobs:
       - run: npm ci
       - run: npx tsx antigravity/workflows/performance_monitoring_workflow.ts
         env:
+          MACBOOK_CLOUD_SIMULATION: true
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}

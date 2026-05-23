@@ -20,15 +20,18 @@ export const DockerContainerSchema = z.object({
 export type DockerContainer = z.infer<typeof DockerContainerSchema>
 
 export async function getDockerFleetStatus(): Promise<DockerContainer[]> {
+  'use cache'
   return autonomousFetch(z.array(DockerContainerSchema), async () => {
     try {
+      const isRestrictedEnv = process.env.NODE_ENV === 'test' || process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true' || process.env.MACBOOK_CLOUD_SIMULATION === 'true'
+
+      if (isRestrictedEnv) {
+        throw new Error('Simulation requested')
+      }
+
       // Attempt to query the Docker daemon
       const { stdout } = await execAsync('docker ps --format "{{.ID}}|{{.Image}}|{{.Status}}|{{.Names}}"')
       const output = stdout.trim()
-
-      if (!output && process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true') {
-        throw new Error('Simulation requested')
-      }
 
       if (!output) return []
 
@@ -42,7 +45,7 @@ export async function getDockerFleetStatus(): Promise<DockerContainer[]> {
       // Phase 12: Adaptive Connectivity
       // If we are in a restricted environment (like a serverless sandbox or CI without Docker socket access),
       // we fall back to a simulated but descriptive state rather than just failing.
-      const isRestrictedEnv = process.env.NODE_ENV === 'test' || process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true'
+      const isRestrictedEnv = process.env.NODE_ENV === 'test' || process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true' || process.env.MACBOOK_CLOUD_SIMULATION === 'true'
 
       if (isRestrictedEnv) {
         console.log('🧪 [Docker] Restricted environment detected. Engaging simulated fleet observability.')
@@ -67,6 +70,16 @@ export async function checkDockerHealth() {
   const isSimulated = fleet.some(c => c.id.startsWith('sim-'))
 
   if (!isHealthy && !isSimulated) {
+    if (process.env.MACBOOK_CLOUD_SIMULATION === 'true' || process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true') {
+      console.log('🧪 [Docker] Recovery restricted. Engaging cloud-native simulated state.')
+      return {
+        status: 'simulated',
+        containerCount: 5,
+        simulated: true,
+        timestamp: new Date().toISOString()
+      }
+    }
+
     console.log('🔄 [Docker] Fleet empty. Autonomously attempting to recover degraded containers...')
     try {
       await execAsync('docker compose up -d')
@@ -95,13 +108,18 @@ export async function checkDockerHealth() {
 
   // Attempt recovery if disconnected
   if (status === 'disconnected') {
-    try {
-      console.log('🔄 [DockerEvolutionAgent] Attempting to recover degraded containers using docker compose up -d...')
-      await execAsync('docker compose up -d')
+    if (process.env.MACBOOK_CLOUD_SIMULATION === 'true' || process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true') {
+      status = 'simulated'
       isHealthy = true
-      status = 'recovering'
-    } catch (err) {
-      console.warn('⚠️ [DockerEvolutionAgent] Recovery failed.')
+    } else {
+      try {
+        console.log('🔄 [DockerEvolutionAgent] Attempting to recover degraded containers using docker compose up -d...')
+        await execAsync('docker compose up -d')
+        isHealthy = true
+        status = 'recovering'
+      } catch (err) {
+        console.warn('⚠️ [DockerEvolutionAgent] Recovery failed.')
+      }
     }
   }
 

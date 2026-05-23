@@ -1,7 +1,7 @@
 import { Jules, AgentRole } from './jules'
 
 async function runSequentialAgents() {
-  const roles: AgentRole[] = ['Coder', 'Reviewer', 'Ops']
+  const roles: AgentRole[] = ['Coder', 'Reviewer', 'Ops', 'Chief AI Officer']
 
   console.log(`🚀 [Antigravity] Executing ${roles.length} specialized agents sequentially to prevent Git collisions...`)
 
