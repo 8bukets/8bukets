@@ -189,15 +189,15 @@ export async function getSystemInsights() {
   const { optimize } = await import('./optimization')
   const { runSecurityAudit } = await import('./services/cognitive_security')
   
-  const ideas = await synthesize()
-  const persistence = await getPersistenceHealth()
-  const network = await getNetworkState()
-  const relay = await getRelayState()
-
   const { getMissionMetadata } = await import('./services/collaboration')
   const { checkDockerHealth } = await import('./services/docker')
   const collaboration = await getMissionMetadata()
   const docker = await checkDockerHealth()
+
+  const ideas = await synthesize()
+  const persistence = await getPersistenceHealth()
+  const network = await getNetworkState()
+  const relay = await getRelayState()
 
   const baseInsights = {
     circuitBreakers: {

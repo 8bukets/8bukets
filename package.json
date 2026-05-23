@@ -20,6 +20,8 @@
     "verify-cloud": "tsx --env-file=.env scripts/check_cloud_simulation.ts"
   },
   "dependencies": {
+    "@ai-sdk/google": "^3.0.70",
+    "@ai-sdk/react": "^3.0.178",
     "@google/genai": "^2.5.0",
     "@supabase/supabase-js": "^2",
     "@swc/helpers": "^0.5.21",
@@ -33,6 +35,8 @@
     "mongoose": "^9.6.2",
     "next": "^16.3.0-canary.16",
     "node-fetch": "^3.3.2",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
     "react": "19.2.4",
     "react-compiler-runtime": "^1.0.0",
     "react-dom": "19.2.4",
