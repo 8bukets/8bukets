@@ -56,5 +56,5 @@ jobs:
         NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
         MACBOOK_CLOUD_SIMULATION: true
       run: |
-        # Executing full autonomous system including scrapers (e.g. GoogleEdgeAgent)
-        python3 run_system.py
+        # Executing full autonomous system via TypeScript unified cycle
+        npm run daily
