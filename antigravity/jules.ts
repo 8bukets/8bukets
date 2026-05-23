@@ -146,6 +146,18 @@ export class Jules {
     const { KnowledgeObserver } = await import('./services/knowledge_observer')
     const observer = new KnowledgeObserver()
 
+    // Phase 12: Sync Intelephense Documentation
+    const intelephenseScratchPath = path.join(process.cwd(), 'scratch/intelephense_docs.md')
+    if (fs.existsSync(intelephenseScratchPath)) {
+      try {
+        const scratchContent = fs.readFileSync(intelephenseScratchPath, 'utf8')
+        const knowledge = KnowledgeObserver.processContent('Intelephense Documentation', scratchContent, 'local://scratch/intelephense_docs.md')
+        // Purge redundant entries before persistence
+        await observer.persistKnowledge(knowledge, 'Intelephense:')
+        console.log(' ✅ [Jules] Synchronized Intelephense docs from scratch.')
+      } catch (e) {}
+    }
+
     const docsToObserve = [
       { owner: 'bmewburn', repo: 'intelephense-docs', path: 'README.md' },
       { owner: 'bmewburn', repo: 'intelephense-docs', path: 'features.md' },
@@ -565,6 +577,17 @@ export class Jules {
     try {
       await this.syncPresence()
 
+      // Phase 21: Sentient Orchestration
+      const { sentientOrchestration } = await import('./services/sentient_orchestration')
+      await sentientOrchestration.registerIntent({
+        id: `intent_${Date.now()}`,
+        agent: 'Jules',
+        action: 'executeWorkCycle',
+        priority: 1,
+        context: { cycle: 'daily' },
+        timestamp: new Date().toISOString()
+      })
+
       // Phase 17: Resolve State Conflicts early in the cycle
       const { cloudConvergence } = await import('./services/cloud_convergence')
       await cloudConvergence.resolveConflicts()
@@ -756,6 +779,12 @@ export class Jules {
 
     await ingestInternalDocs('.github')
     await ingestInternalDocs('antigravity')
+
+    // Phase 15: Ingest simulated iCloud data
+    const icloudSimDir = 'scratch/icloud_sim'
+    if (fs.existsSync(path.join(process.cwd(), icloudSimDir))) {
+       await ingestInternalDocs(icloudSimDir)
+    }
 
     // Expand Ingestion: Scan for diverse technical documentation artifacts
     const knowledgeSources = [
