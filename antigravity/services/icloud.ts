@@ -9,6 +9,7 @@ import os from 'os'
  */
 
 export async function syncToICloud() {
+  'use cache'
   console.log('☁️ [iCloud Sync] Initiating autonomous synchronization...')
 
   const sourcePath = process.cwd()
@@ -29,8 +30,14 @@ export async function syncToICloud() {
       console.log(`☁️ [iCloud Sync] Creating target directory: ${targetPath}`)
       fs.mkdirSync(targetPath, { recursive: true })
     }
-  } catch (err) {
-    console.warn(`⚠️ [iCloud Sync] Could not verify or create target path: ${targetPath}. It might be a restricted iCloud location or missing permissions.`)
+
+    // Explicitly verify write access
+    const testFile = path.join(targetPath, '.sync_test')
+    fs.writeFileSync(testFile, 'test')
+    fs.unlinkSync(testFile)
+  } catch (err: any) {
+    console.error(`❌ [iCloud Sync] Target path verification failed: ${targetPath}. Error: ${err.message}`)
+    return { status: 'failed', error: `iCloud target path unreachable or read-only: ${err.message}` }
   }
 
   try {

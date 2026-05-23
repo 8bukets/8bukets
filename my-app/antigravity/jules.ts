@@ -113,12 +113,16 @@ export class Jules {
     try {
       execSync('git pull --rebase origin main || true', { stdio: 'inherit' })
       execSync('git add .', { stdio: 'inherit' })
-      execSync(`git commit -m "${message}"`, { stdio: 'inherit' })
+      try {
+        execSync(`git commit -m "${message}"`, { stdio: 'inherit' })
+      } catch (e) {
+        console.log('ℹ️ [Jules] No changes to commit.')
+      }
       execSync('git push origin main || true', { stdio: 'inherit' })
       console.log('✅ [Jules] Changes committed and pushed autonomously.')
       this.recordTask(`Git Sync: Synchronized repository state autonomously.`)
     } catch (err) {
-      console.warn('⚠️ [Jules] Git sync skipped or failed (likely no changes to commit or upstream issues).')
+      console.warn('⚠️ [Jules] Git sync skipped or failed (likely upstream issues).')
     }
   }
 

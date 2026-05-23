@@ -36,23 +36,38 @@ async function consolidate() {
     }
   }
 
-  // 3. Deduplicate sections by header, prioritizing content length (quality)
+  // 3. Deduplicate sections by header, merging content if necessary
   const headerMap = new Map<string, { header: string; content: string }>()
 
   for (const section of allSections) {
     const existing = headerMap.get(section.header)
-    // Heuristic: Prefer the section with the most content (likely more detailed)
-    // Also ensure we keep structural headers even if empty
     const isStructural = ['Getting Started', 'Features', 'Installation', 'Type System'].includes(section.header)
 
-    if (!existing || (section.content.length >= existing.content.length)) {
-      if (section.content.trim().length > 0 || isStructural) {
-        headerMap.set(section.header, section)
+    if (!existing) {
+      // Only keep sections with content, unless they are high-level structural headers
+      if (section.content || isStructural) {
+        headerMap.set(section.header, { ...section })
+      }
+    } else {
+      // If header exists, merge content if the new content is different and not empty
+      if (section.content && section.content !== existing.content) {
+        if (existing.content.includes(section.content)) {
+          // New content is already a subset, ignore
+        } else if (section.content.includes(existing.content)) {
+          // New content is more complete, replace
+          existing.content = section.content
+        } else {
+          // Both have unique info, append
+          existing.content += '\n\n' + section.content
+        }
       }
     }
   }
 
   const uniqueSections = Array.from(headerMap.values())
+
+  // Ensure all headers from scratch are definitely here
+  console.log(` 🧩 Total unique sections: ${uniqueSections.length}`)
 
   const consolidatedKnowledge: Knowledge = {
     title: 'Intelephense Documentation',
@@ -81,7 +96,7 @@ async function consolidate() {
 
   console.log(' 💾 Persisting consolidated knowledge...')
   const observer = new KnowledgeObserver()
-  await observer.persistKnowledge(consolidatedKnowledge)
+  await observer.persistKnowledge(consolidatedKnowledge, 'Intelephense')
 
   console.log('✅ Consolidation complete.')
 }

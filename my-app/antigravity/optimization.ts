@@ -1,4 +1,4 @@
-import { getSystemInsights, logAutonomousAction } from './core'
+import { logAutonomousAction } from './core'
 
 /**
  * ANTIGRAVITY SUPER-INTELLIGENCE ENGINE (Phase 12)
@@ -12,13 +12,12 @@ export interface PredictiveRefactor {
   impactScore: number
 }
 
-export async function optimize(): Promise<PredictiveRefactor[]> {
+export async function optimize(insights: any): Promise<PredictiveRefactor[]> {
   console.log('🧠 [Super-Intelligence] Initiating infinite self-optimization scan...')
-  const insights = await getSystemInsights()
   const refactors: PredictiveRefactor[] = []
 
   // Vector 1: Performance Optimization (Cross-referencing Volatility and Caching)
-  if (insights.caching.registrySize > 10) {
+  if (insights.caching && insights.caching.registrySize > 10) {
     refactors.push({
       id: 'P-101',
       vector: 'performance',
@@ -28,7 +27,7 @@ export async function optimize(): Promise<PredictiveRefactor[]> {
   }
 
   // Vector 2: Architectural Purity
-  if (insights.ideas.length > 5) {
+  if (insights.ideas && insights.ideas.length > 5) {
     refactors.push({
       id: 'A-202',
       vector: 'architecture',
