@@ -1,6 +1,6 @@
 # ANTIGRAVITY AI AGENTS KNOWLEDGE BASE
 
-*Last Updated: 2026-05-23T01:11:08.844Z*
+*Last Updated: 2026-05-23T01:39:58.648Z*
 
 ## DOCUMENT: software info by fk – software-online-review – Filip Keser
 **Source:** https://software-online-review.com
@@ -8161,7 +8161,7 @@ setColourDoc(''); // Completion suggestions for 'red', 'blue', 'green'
 
 ## DOCUMENT: Intelephense Documentation
 **Source:** https://intelephense.com/docs
-**Ingested At:** 2026-05-23T01:11:08.828Z
+**Ingested At:** 2026-05-23T01:39:58.626Z
 
 ### Getting Started
 
