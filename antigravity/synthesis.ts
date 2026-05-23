@@ -146,6 +146,24 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
+  // Gap Analysis 15: Deep Cognitive Self-Correction
+  if (!files.some(f => f.includes('self_correction'))) {
+    ideas.push({
+      feature: 'Deep Cognitive Self-Correction Service',
+      rationale: 'Continuously cross-references AST structures against performance benchmarks to autonomously rewrite sub-optimal methods.',
+      complexity: 'High'
+    })
+  }
+
+  // Gap Analysis 16: Horizontal Fleet Orchestration
+  if (!files.some(f => f.includes('fleet_orchestrator'))) {
+    ideas.push({
+      feature: 'Horizontal Fleet Orchestration Service',
+      rationale: 'Manages dynamic horizontal scaling and localized routing logic for edge container deployments.',
+      complexity: 'High'
+    })
+  }
+
   // Force an idea for demonstration if none exist
   if (ideas.length === 0) {
     ideas.push({

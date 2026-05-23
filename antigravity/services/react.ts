@@ -170,7 +170,26 @@ export class ReActService {
       })
     }
 
-    // Pattern 3: Default autonomous evolution if no specific anomalies are found,
+    // Pattern 3: Detect frequent error spikes or failures in branches
+    const fixBranches = sessions.branches.filter(b => b.category === 'fix')
+    if (fixBranches.length > 5) {
+      ideas.push({
+        feature: 'Cognitive Code Self-Correction Service',
+        rationale: 'Analyzes root causes of frequent bug fix branches and proactively scans for similar patterns to auto-patch before failure.',
+        complexity: 'High'
+      })
+    }
+
+    // Pattern 4: Analyze overall data density and operations from work orders
+    if (sessions.workOrders.length > 20) {
+      ideas.push({
+        feature: 'Autonomous Database Sharding Service',
+        rationale: 'Monitors transaction volumes and dynamically implements data sharding and partition schemes to support ultra-high scale.',
+        complexity: 'High'
+      })
+    }
+
+    // Pattern 5: Default autonomous evolution if no specific anomalies are found,
     // ensuring the system continues to grow and evolve its architecture.
     if (ideas.length === 0) {
       ideas.push({
