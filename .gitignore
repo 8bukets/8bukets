@@ -78,3 +78,23 @@ db.sqlite3
 secrets.json
 # Local settings often contain secrets and should not be committed
 local_settings.py
+
+# Antigravity Runtime Artifacts
+.jules_memory.json
+.antigravity/.jules_memory.json
+autonomous_state.json
+CONSOLIDATED_INTELLIGENCE.md
+KNOWLEDGE_MERGE.md
+system_knowledge.json
+data/work_orders.json
+api.log
+dashboard.log
+dashboard.error.log
+jules_daily.log
+jules_daily.error.log
+orchestrator.log
+orchestrator.error.log
+syra_api.log
+syra_api.error.log
+syra_api_enterprise.log
+daily_output.txt
