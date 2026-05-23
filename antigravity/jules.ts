@@ -122,6 +122,16 @@ export class Jules {
 
     let allSections: any[] = []
 
+    // 1. Ingest from local scratch (most complete usually)
+    const fs = await import('fs')
+    const path = await import('path')
+    const localPath = path.join(process.cwd(), 'scratch/intelephense_docs.md')
+    if (fs.existsSync(localPath)) {
+      const localContent = fs.readFileSync(localPath, 'utf8')
+      const localKnowledge = KnowledgeObserver.processContent('Intelephense Documentation', localContent, 'local://intelephense_docs.md')
+      allSections.push(...localKnowledge.sections)
+    }
+
     for (const doc of intelephenseDocs) {
       try {
         const result = await githubDocsObserver.fetchDoc(doc.owner, doc.repo, doc.path)
@@ -137,14 +147,29 @@ export class Jules {
     }
 
     if (allSections.length > 0) {
-      // Deduplicate sections by header
-      const seenHeaders = new Set<string>()
-      const uniqueSections = allSections.filter(s => {
-        if (seenHeaders.has(s.header)) return false
-        if (!s.content && !['Getting Started', 'Features', 'Installation'].includes(s.header)) return false
-        seenHeaders.add(s.header)
-        return true
-      })
+      // Deduplicate sections by header, merging content if necessary
+      const headerMap = new Map<string, { header: string; content: string }>()
+
+      for (const section of allSections) {
+        const existing = headerMap.get(section.header)
+        if (!existing) {
+          if (section.content || ['Getting Started', 'Features', 'Installation'].includes(section.header)) {
+            headerMap.set(section.header, { ...section })
+          }
+        } else {
+          if (section.content && section.content !== existing.content) {
+            if (!existing.content.includes(section.content)) {
+              if (section.content.includes(existing.content)) {
+                existing.content = section.content
+              } else {
+                existing.content += '\n\n' + section.content
+              }
+            }
+          }
+        }
+      }
+
+      const uniqueSections = Array.from(headerMap.values())
 
       const consolidated = {
         title: 'Intelephense Documentation',
