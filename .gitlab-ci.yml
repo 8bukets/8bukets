@@ -121,3 +121,15 @@ test-proactive_scalability:
   script:
     - npm ci
     - npx vitest run antigravity/services/proactive_scalability.test.ts
+
+test-autonomous_ux_optimization:
+  stage: test
+  script:
+    - npm ci
+    - npx vitest run antigravity/services/autonomous_ux_optimization.test.ts
+
+test-global_neural_sync_service_phase_12:
+  stage: test
+  script:
+    - npm ci
+    - npx vitest run antigravity/services/global_neural_sync_service_phase_12.test.ts

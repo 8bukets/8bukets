@@ -43,13 +43,13 @@ class GitLabEvolutionAgent(BaseAgent):
 
         security_scan = "PASSED" if ("security" in content or has_gitlab_ci) else "SKIPPED"
 
-pipeline_metrics = {
-    "pipeline_efficiency": pipeline_efficiency,
-    "security_scan": security_scan,
-    "has_cache": has_cache,
-    "has_artifacts": has_artifacts,
-    "has_stages": has_stages
-}
+        pipeline_metrics = {
+            "pipeline_efficiency": pipeline_efficiency,
+            "security_scan": security_scan,
+            "has_cache": has_cache,
+            "has_artifacts": has_artifacts,
+            "has_stages": has_stages
+        }
 
         self.logger.info(f"GitLab pipelines evaluated. Efficiency: {pipeline_efficiency}")
 
