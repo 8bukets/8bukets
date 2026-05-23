@@ -51,7 +51,10 @@ export async function getDockerFleetStatus(): Promise<DockerContainer[]> {
         console.log('🧪 [Docker] Restricted environment detected. Engaging simulated fleet observability.')
         return [
           { id: 'sim-01', image: 'antigravity-core:latest', status: 'Up 24 hours', names: 'primary-node-alpha' },
-          { id: 'sim-02', image: 'mongo:latest', status: 'Up 24 hours', names: 'primary-database' }
+          { id: 'sim-02', image: 'mongo:latest', status: 'Up 24 hours', names: 'primary-database' },
+          { id: 'sim-03', image: 'redis:latest', status: 'Up 24 hours', names: 'neural-cache' },
+          { id: 'sim-04', image: 'chromadb:latest', status: 'Up 24 hours', names: 'vector-db' },
+          { id: 'sim-05', image: 'nginx:latest', status: 'Up 24 hours', names: 'omni-gateway' }
         ]
       }
 
