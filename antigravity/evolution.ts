@@ -28,10 +28,11 @@ export async function evolve() {
     const files = fs.readdirSync(dir)
     for (const file of files) {
       const fullPath = path.join(dir, file)
-      if (fs.statSync(fullPath).isDirectory()) {
-        scan(fullPath)
+      const stat = await fs.promises.stat(fullPath);
+      if (stat.isDirectory()) {
+        await scan(fullPath)
       } else if (file.endsWith('.tsx') || file.endsWith('.ts')) {
-        const content = fs.readFileSync(fullPath, 'utf8')
+        const content = await fs.promises.readFile(fullPath, 'utf8')
         const lines = content.split('\n').length
         
         // Rule 7: Phase 12 Compliance (Upgrade Phase 9 references)
@@ -122,13 +123,13 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
   
   for (const s of suggestions) {
     const fullPath = path.join(process.cwd(), s.file)
-    let content = fs.readFileSync(fullPath, 'utf8')
+    let content = await fs.promises.readFile(fullPath, 'utf8')
 
     if (s.suggestion.startsWith('MISSING_CACHE_DIRECTIVE')) {
       console.log(` - Fixing ${s.file}: Injecting 'use cache'`)
       // Inject 'use cache' at the top of the first async function found
       content = content.replace(/async function(.*?)\{/, "async function$1{\n  'use cache'")
-      fs.writeFileSync(fullPath, content)
+      await fs.promises.writeFile(fullPath, content)
     }
 
     if (s.suggestion.startsWith('SYNC_PROP_VIOLATION')) {
@@ -142,7 +143,7 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
       
       // Attempt to wrap params usages
       content = content.replace(/(\{.*?params.*?\}.*?)\.then/g, "resolve(params).then")
-      fs.writeFileSync(fullPath, content)
+      await fs.promises.writeFile(fullPath, content)
     }
 
     if (s.suggestion.startsWith('MISSING_ERROR_HANDLING')) {

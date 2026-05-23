@@ -38,12 +38,12 @@ export async function getCloudSecret(key: string): Promise<string | undefined> {
   return process.env[key]
 }
 
-export interface PageProps<T = any> {
+export interface PageProps<T = unknown> {
   params: Promise<T>
   searchParams: Promise<Record<string, string | string[] | undefined>>
 }
 
-export interface LayoutProps<T = any> {
+export interface LayoutProps<T = unknown> {
   children: React.ReactNode
   params: Promise<T>
 }
