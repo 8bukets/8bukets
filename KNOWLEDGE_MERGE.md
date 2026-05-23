@@ -10223,3 +10223,13 @@ All the best - https://markposition.wordpress.com
 - **Target**: https://developer.hashicorp.com/terraform/docs
 - **Title**: Terraform overview | Terraform | HashiCorp Developer
 - **Relationship Map**: Confirmed relationship with https://developer.hashicorp.com/terraform/docs (Title: Terraform overview | Terraform | HashiCorp Developer) as an intelligence source.
+
+## Autonomous Observation
+- **Date**: 2026-05-23T11:11:34.877Z
+- **Target**: https://github.com/hashicorp/terraform
+- **Title**: GitHub - hashicorp/terraform: Terraform enables you to safely and predictably create, change, and improve infrastructure. It is a source-available tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned. · GitHub
+- **Relationship Map**: Confirmed relationship with https://github.com/hashicorp/terraform (Title: GitHub - hashicorp/terraform: Terraform enables you to safely and predictably create, change, and improve infrastructure. It is a source-available tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned. · GitHub) as an intelligence source.
+
+- IAM Role knowledge for Terraform/HCP operations has been recorded in `data/knowledge/hcp_iam_knowledge.md`.
+
+- IAM Role knowledge for Terraform/HCP operations has been recorded in `data/knowledge/hcp_iam_knowledge.md`.

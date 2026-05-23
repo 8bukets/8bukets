@@ -4,7 +4,8 @@ async function ingestTerraformKnowledge() {
   const urls = [
     "https://developer.hashicorp.com/terraform/tutorials/docker-get-started",
     "https://developer.hashicorp.com/terraform",
-    "https://developer.hashicorp.com/terraform/docs"
+    "https://developer.hashicorp.com/terraform/docs",
+    "https://github.com/hashicorp/terraform"
   ];
 
   console.log(`Starting ingestion of ${urls.length} URLs...`);

@@ -1,10 +1,10 @@
 # ANTIGRAVITY AI AGENTS KNOWLEDGE BASE
 
-*Last Updated: 2026-05-23T05:24:24.852Z*
+*Last Updated: 2026-05-23T11:14:58.238Z*
 
 ## DOCUMENT: Docker | Terraform | HashiCorp DeveloperInteractive
 **Source:** https://developer.hashicorp.com/terraform/tutorials/docker-get-started
-**Ingested At:** 2026-05-23T05:24:22.035Z
+**Ingested At:** 2026-05-23T11:14:53.693Z
 
 ### Introduction
 [HashiConf 2025 Don't miss the live stream of HashiConf Day 2 happening now View live stream](https://www.hashicorp.com/conferences/hashiconf#livestream)
@@ -224,7 +224,7 @@ Build, change, and destroy Docker infrastructure using Terraform. Step-by-step, 
 
 ## DOCUMENT: Terraform | HashiCorp Developer
 **Source:** https://developer.hashicorp.com/terraform
-**Ingested At:** 2026-05-23T05:24:23.483Z
+**Ingested At:** 2026-05-23T11:14:55.094Z
 
 ### Introduction
 [HashiConf 2025 Don't miss the live stream of HashiConf Day 2 happening now View live stream](https://www.hashicorp.com/conferences/hashiconf#livestream)
@@ -438,7 +438,7 @@ On this page:
 
 ## DOCUMENT: Terraform overview | Terraform | HashiCorp Developer
 **Source:** https://developer.hashicorp.com/terraform/docs
-**Ingested At:** 2026-05-23T05:24:24.851Z
+**Ingested At:** 2026-05-23T11:14:56.512Z
 
 ### Introduction
 [HashiConf 2025 Don't miss the live stream of HashiConf Day 2 happening now View live stream](https://www.hashicorp.com/conferences/hashiconf#livestream)
@@ -618,3 +618,465 @@ On this page:
 
 ---
 
+## DOCUMENT: GitHub - hashicorp/terraform: Terraform enables you to safely and predictably create, change, and improve infrastructure. It is a source-available tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned. · GitHub
+**Source:** https://github.com/hashicorp/terraform
+**Ingested At:** 2026-05-23T11:14:58.238Z
+
+### Introduction
+[Skip to content](#start-of-content)
+
+### Navigation Menu
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fhashicorp%2Fterraform)
+- PlatformAI CODE CREATIONGitHub CopilotWrite better code with AIGitHub SparkBuild and deploy intelligent appsGitHub ModelsManage and compare promptsMCP RegistryNewIntegrate external toolsDEVELOPER WORKFLOWSActionsAutomate any workflowCodespacesInstant dev environmentsIssuesPlan and track workCode ReviewManage code changesAPPLICATION SECURITYGitHub Advanced SecurityFind and fix vulnerabilitiesCode securitySecure your code as you buildSecret protectionStop leaks before they startEXPLOREWhy GitHubDocumentationBlogChangelogMarketplaceView all features
+- AI CODE CREATIONGitHub CopilotWrite better code with AIGitHub SparkBuild and deploy intelligent appsGitHub ModelsManage and compare promptsMCP RegistryNewIntegrate external tools
+- GitHub CopilotWrite better code with AI
+[GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+- GitHub SparkBuild and deploy intelligent apps
+[GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+- GitHub ModelsManage and compare prompts
+[GitHub ModelsManage and compare prompts](https://github.com/features/models)
+- MCP RegistryNewIntegrate external tools
+[MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+- DEVELOPER WORKFLOWSActionsAutomate any workflowCodespacesInstant dev environmentsIssuesPlan and track workCode ReviewManage code changes
+- ActionsAutomate any workflow
+[ActionsAutomate any workflow](https://github.com/features/actions)
+- CodespacesInstant dev environments
+[CodespacesInstant dev environments](https://github.com/features/codespaces)
+- IssuesPlan and track work
+[IssuesPlan and track work](https://github.com/features/issues)
+- Code ReviewManage code changes
+[Code ReviewManage code changes](https://github.com/features/code-review)
+- APPLICATION SECURITYGitHub Advanced SecurityFind and fix vulnerabilitiesCode securitySecure your code as you buildSecret protectionStop leaks before they start
+- GitHub Advanced SecurityFind and fix vulnerabilities
+[GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+- Code securitySecure your code as you build
+[Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+- Secret protectionStop leaks before they start
+[Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+- EXPLOREWhy GitHubDocumentationBlogChangelogMarketplace
+- Why GitHub
+[Why GitHub](https://github.com/why-github)
+- Documentation
+[Documentation](https://docs.github.com)
+- Blog
+[Blog](https://github.blog)
+- Changelog
+[Changelog](https://github.blog/changelog)
+- Marketplace
+[Marketplace](https://github.com/marketplace)
+[View all features](https://github.com/features)
+- SolutionsBY COMPANY SIZEEnterprisesSmall and medium teamsStartupsNonprofitsBY USE CASEApp ModernizationDevSecOpsDevOpsCI/CDView all use casesBY INDUSTRYHealthcareFinancial servicesManufacturingGovernmentView all industriesView all solutions
+- BY COMPANY SIZEEnterprisesSmall and medium teamsStartupsNonprofits
+- Enterprises
+[Enterprises](https://github.com/enterprise)
+- Small and medium teams
+[Small and medium teams](https://github.com/team)
+- Startups
+[Startups](https://github.com/enterprise/startups)
+- Nonprofits
+[Nonprofits](https://github.com/solutions/industry/nonprofits)
+- BY USE CASEApp ModernizationDevSecOpsDevOpsCI/CDView all use cases
+- App Modernization
+[App Modernization](https://github.com/solutions/use-case/app-modernization)
+- DevSecOps
+[DevSecOps](https://github.com/solutions/use-case/devsecops)
+- DevOps
+[DevOps](https://github.com/solutions/use-case/devops)
+
+### - CI/CD
+[CI/CD](https://github.com/solutions/use-case/ci-cd)
+- View all use cases
+[View all use cases](https://github.com/solutions/use-case)
+- BY INDUSTRYHealthcareFinancial servicesManufacturingGovernmentView all industries
+- Healthcare
+[Healthcare](https://github.com/solutions/industry/healthcare)
+- Financial services
+[Financial services](https://github.com/solutions/industry/financial-services)
+- Manufacturing
+[Manufacturing](https://github.com/solutions/industry/manufacturing)
+- Government
+[Government](https://github.com/solutions/industry/government)
+- View all industries
+[View all industries](https://github.com/solutions/industry)
+[View all solutions](https://github.com/solutions)
+- ResourcesEXPLORE BY TOPICAISoftware DevelopmentDevOpsSecurityView all topicsEXPLORE BY TYPECustomer storiesEvents & webinarsEbooks & reportsBusiness insightsGitHub SkillsSUPPORT & SERVICESDocumentationCustomer supportCommunity forumTrust centerPartnersView all resources
+- EXPLORE BY TOPICAISoftware DevelopmentDevOpsSecurityView all topics
+
+### - AI
+[AI](https://github.com/resources/articles?topic=ai)
+- Software Development
+[Software Development](https://github.com/resources/articles?topic=software-development)
+- DevOps
+[DevOps](https://github.com/resources/articles?topic=devops)
+- Security
+[Security](https://github.com/resources/articles?topic=security)
+- View all topics
+[View all topics](https://github.com/resources/articles)
+- EXPLORE BY TYPECustomer storiesEvents & webinarsEbooks & reportsBusiness insightsGitHub Skills
+- Customer stories
+[Customer stories](https://github.com/customer-stories)
+- Events & webinars
+[Events & webinars](https://github.com/resources/events)
+- Ebooks & reports
+[Ebooks & reports](https://github.com/resources/whitepapers)
+- Business insights
+[Business insights](https://github.com/solutions/executive-insights)
+- GitHub Skills
+[GitHub Skills](https://skills.github.com)
+- SUPPORT & SERVICESDocumentationCustomer supportCommunity forumTrust centerPartners
+- Documentation
+[Documentation](https://docs.github.com)
+- Customer support
+[Customer support](https://support.github.com)
+- Community forum
+[Community forum](https://github.com/orgs/community/discussions)
+- Trust center
+[Trust center](https://github.com/trust-center)
+- Partners
+[Partners](https://github.com/partners)
+[View all resources](https://github.com/resources)
+- Open SourceCOMMUNITYGitHub SponsorsFund open source developersPROGRAMSSecurity LabMaintainer CommunityAcceleratorGitHub StarsArchive ProgramREPOSITORIESTopicsTrendingCollections
+- COMMUNITYGitHub SponsorsFund open source developers
+- GitHub SponsorsFund open source developers
+[GitHub SponsorsFund open source developers](https://github.com/sponsors)
+- PROGRAMSSecurity LabMaintainer CommunityAcceleratorGitHub StarsArchive Program
+- Security Lab
+[Security Lab](https://securitylab.github.com)
+- Maintainer Community
+[Maintainer Community](https://maintainers.github.com)
+- Accelerator
+[Accelerator](https://github.com/accelerator)
+- GitHub Stars
+[GitHub Stars](https://stars.github.com)
+- Archive Program
+[Archive Program](https://archiveprogram.github.com)
+- REPOSITORIESTopicsTrendingCollections
+- Topics
+[Topics](https://github.com/topics)
+- Trending
+[Trending](https://github.com/trending)
+- Collections
+[Collections](https://github.com/collections)
+- EnterpriseENTERPRISE SOLUTIONSEnterprise platformAI-powered developer platformAVAILABLE ADD-ONSGitHub Advanced SecurityEnterprise-grade security featuresCopilot for BusinessEnterprise-grade AI featuresPremium SupportEnterprise-grade 24/7 support
+- ENTERPRISE SOLUTIONSEnterprise platformAI-powered developer platform
+- Enterprise platformAI-powered developer platform
+[Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+- AVAILABLE ADD-ONSGitHub Advanced SecurityEnterprise-grade security featuresCopilot for BusinessEnterprise-grade AI featuresPremium SupportEnterprise-grade 24/7 support
+- GitHub Advanced SecurityEnterprise-grade security features
+[GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+- Copilot for BusinessEnterprise-grade AI features
+[Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+- Premium SupportEnterprise-grade 24/7 support
+[Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+- Pricing
+[Pricing](https://github.com/pricing)
+
+### Search code, repositories, users, issues, pull requests...
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+### Provide feedback
+We read every piece of feedback, and take your input very seriously.
+
+### Saved searches
+
+
+### Use saved searches to filter your results more quickly
+To see all available qualifiers, see our documentation.
+
+[documentation](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fhashicorp%2Fterraform)
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=hashicorp%2Fterraform)
+[hashicorp](/hashicorp)
+[terraform](/hashicorp/terraform)
+- Notifications You must be signed in to change notification settings
+[Notifications](/login?return_to=%2Fhashicorp%2Fterraform)
+- Fork 10.3k
+[Fork 10.3k](/login?return_to=%2Fhashicorp%2Fterraform)
+- Star 48.4k
+[Star 48.4k](/login?return_to=%2Fhashicorp%2Fterraform)
+- Code
+[Code](/hashicorp/terraform)
+- Issues 1.8k
+[Issues 1.8k](/hashicorp/terraform/issues)
+- Pull requests 147
+[Pull requests 147](/hashicorp/terraform/pulls)
+- Actions
+[Actions](/hashicorp/terraform/actions)
+- Security and quality 1
+[Security and quality 1](/hashicorp/terraform/security)
+- Insights
+[Insights](/hashicorp/terraform/pulse)
+- Code
+[Code](/hashicorp/terraform)
+- Issues
+[Issues](/hashicorp/terraform/issues)
+- Pull requests
+[Pull requests](/hashicorp/terraform/pulls)
+- Actions
+[Actions](/hashicorp/terraform/actions)
+- Security and quality
+[Security and quality](/hashicorp/terraform/security)
+- Insights
+[Insights](/hashicorp/terraform/pulse)
+
+### hashicorp/terraform
+[Branches](/hashicorp/terraform/branches)
+[Tags](/hashicorp/terraform/tags)
+
+### Folders and files
+
+
+### Latest commit
+
+
+### History
+[35,438 Commits](/hashicorp/terraform/commits/main/)
+[.changes](/hashicorp/terraform/tree/main/.changes)
+[.changes](/hashicorp/terraform/tree/main/.changes)
+[.github](/hashicorp/terraform/tree/main/.github)
+[.github](/hashicorp/terraform/tree/main/.github)
+[.release](/hashicorp/terraform/tree/main/.release)
+[.release](/hashicorp/terraform/tree/main/.release)
+[docs](/hashicorp/terraform/tree/main/docs)
+[docs](/hashicorp/terraform/tree/main/docs)
+[internal](/hashicorp/terraform/tree/main/internal)
+[internal](/hashicorp/terraform/tree/main/internal)
+[scripts](/hashicorp/terraform/tree/main/scripts)
+[scripts](/hashicorp/terraform/tree/main/scripts)
+[testing/equivalence-tests](/hashicorp/terraform/tree/main/testing/equivalence-tests)
+[testing/equivalence-tests](/hashicorp/terraform/tree/main/testing/equivalence-tests)
+[tools](/hashicorp/terraform/tree/main/tools)
+[tools](/hashicorp/terraform/tree/main/tools)
+[version](/hashicorp/terraform/tree/main/version)
+[version](/hashicorp/terraform/tree/main/version)
+[website](/hashicorp/terraform/tree/main/website)
+[website](/hashicorp/terraform/tree/main/website)
+[.changie.yaml](/hashicorp/terraform/blob/main/.changie.yaml)
+[.changie.yaml](/hashicorp/terraform/blob/main/.changie.yaml)
+[.copywrite.hcl](/hashicorp/terraform/blob/main/.copywrite.hcl)
+[.copywrite.hcl](/hashicorp/terraform/blob/main/.copywrite.hcl)
+[.git-blame-ignore-revs](/hashicorp/terraform/blob/main/.git-blame-ignore-revs)
+[.git-blame-ignore-revs](/hashicorp/terraform/blob/main/.git-blame-ignore-revs)
+[.gitignore](/hashicorp/terraform/blob/main/.gitignore)
+[.gitignore](/hashicorp/terraform/blob/main/.gitignore)
+[.go-version](/hashicorp/terraform/blob/main/.go-version)
+[.go-version](/hashicorp/terraform/blob/main/.go-version)
+[.tfdev](/hashicorp/terraform/blob/main/.tfdev)
+[.tfdev](/hashicorp/terraform/blob/main/.tfdev)
+[BUGPROCESS.md](/hashicorp/terraform/blob/main/BUGPROCESS.md)
+[BUGPROCESS.md](/hashicorp/terraform/blob/main/BUGPROCESS.md)
+[BUILDING.md](/hashicorp/terraform/blob/main/BUILDING.md)
+[BUILDING.md](/hashicorp/terraform/blob/main/BUILDING.md)
+[CHANGELOG.md](/hashicorp/terraform/blob/main/CHANGELOG.md)
+[CHANGELOG.md](/hashicorp/terraform/blob/main/CHANGELOG.md)
+[CODEOWNERS](/hashicorp/terraform/blob/main/CODEOWNERS)
+[CODEOWNERS](/hashicorp/terraform/blob/main/CODEOWNERS)
+[Dockerfile](/hashicorp/terraform/blob/main/Dockerfile)
+[Dockerfile](/hashicorp/terraform/blob/main/Dockerfile)
+[LICENSE](/hashicorp/terraform/blob/main/LICENSE)
+[LICENSE](/hashicorp/terraform/blob/main/LICENSE)
+[Makefile](/hashicorp/terraform/blob/main/Makefile)
+[Makefile](/hashicorp/terraform/blob/main/Makefile)
+[README.md](/hashicorp/terraform/blob/main/README.md)
+[README.md](/hashicorp/terraform/blob/main/README.md)
+[build.Dockerfile](/hashicorp/terraform/blob/main/build.Dockerfile)
+[build.Dockerfile](/hashicorp/terraform/blob/main/build.Dockerfile)
+[catalog-info.yaml](/hashicorp/terraform/blob/main/catalog-info.yaml)
+[catalog-info.yaml](/hashicorp/terraform/blob/main/catalog-info.yaml)
+[checkpoint.go](/hashicorp/terraform/blob/main/checkpoint.go)
+[checkpoint.go](/hashicorp/terraform/blob/main/checkpoint.go)
+[commands.go](/hashicorp/terraform/blob/main/commands.go)
+[commands.go](/hashicorp/terraform/blob/main/commands.go)
+[experiments.go](/hashicorp/terraform/blob/main/experiments.go)
+[experiments.go](/hashicorp/terraform/blob/main/experiments.go)
+[go.mod](/hashicorp/terraform/blob/main/go.mod)
+[go.mod](/hashicorp/terraform/blob/main/go.mod)
+[go.sum](/hashicorp/terraform/blob/main/go.sum)
+[go.sum](/hashicorp/terraform/blob/main/go.sum)
+[help.go](/hashicorp/terraform/blob/main/help.go)
+[help.go](/hashicorp/terraform/blob/main/help.go)
+[main.go](/hashicorp/terraform/blob/main/main.go)
+[main.go](/hashicorp/terraform/blob/main/main.go)
+[main_test.go](/hashicorp/terraform/blob/main/main_test.go)
+[main_test.go](/hashicorp/terraform/blob/main/main_test.go)
+[provider_source.go](/hashicorp/terraform/blob/main/provider_source.go)
+[provider_source.go](/hashicorp/terraform/blob/main/provider_source.go)
+[signal_unix.go](/hashicorp/terraform/blob/main/signal_unix.go)
+[signal_unix.go](/hashicorp/terraform/blob/main/signal_unix.go)
+[signal_windows.go](/hashicorp/terraform/blob/main/signal_windows.go)
+[signal_windows.go](/hashicorp/terraform/blob/main/signal_windows.go)
+[staticcheck.conf](/hashicorp/terraform/blob/main/staticcheck.conf)
+[staticcheck.conf](/hashicorp/terraform/blob/main/staticcheck.conf)
+[telemetry.go](/hashicorp/terraform/blob/main/telemetry.go)
+[telemetry.go](/hashicorp/terraform/blob/main/telemetry.go)
+[version.go](/hashicorp/terraform/blob/main/version.go)
+[version.go](/hashicorp/terraform/blob/main/version.go)
+[working_dir.go](/hashicorp/terraform/blob/main/working_dir.go)
+[working_dir.go](/hashicorp/terraform/blob/main/working_dir.go)
+
+### - README
+[README](#)
+- Code of conduct
+[Code of conduct](#)
+- Contributing
+[Contributing](#)
+- License
+[License](#)
+- Security
+[Security](#)
+
+### Terraform
+- Website: https://developer.hashicorp.com/terraform
+[https://developer.hashicorp.com/terraform](https://developer.hashicorp.com/terraform)
+- Forums: HashiCorp Discuss
+[HashiCorp Discuss](https://discuss.hashicorp.com/c/terraform-core)
+- Documentation: https://developer.hashicorp.com/terraform/docs
+[https://developer.hashicorp.com/terraform/docs](https://developer.hashicorp.com/terraform/docs)
+- Tutorials: HashiCorp's Learn Platform
+[HashiCorp's Learn Platform](https://developer.hashicorp.com/terraform/tutorials)
+- Certification Exam: HashiCorp Certified: Terraform Associate
+[HashiCorp Certified: Terraform Associate](https://www.hashicorp.com/certification/#hashicorp-certified-terraform-associate)
+Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently. Terraform can manage existing and popular service providers as well as custom in-house solutions.
+
+The key features of Terraform are:
+
+- Infrastructure as Code: Infrastructure is described using a high-level configuration syntax. This allows a blueprint of your datacenter to be versioned and treated as you would any other code. Additionally, infrastructure can be shared and re-used.
+Infrastructure as Code: Infrastructure is described using a high-level configuration syntax. This allows a blueprint of your datacenter to be versioned and treated as you would any other code. Additionally, infrastructure can be shared and re-used.
+
+- Execution Plans: Terraform has a "planning" step where it generates an execution plan. The execution plan shows what Terraform will do when you call apply. This lets you avoid any surprises when Terraform manipulates infrastructure.
+Execution Plans: Terraform has a "planning" step where it generates an execution plan. The execution plan shows what Terraform will do when you call apply. This lets you avoid any surprises when Terraform manipulates infrastructure.
+
+- Resource Graph: Terraform builds a graph of all your resources, and parallelizes the creation and modification of any non-dependent resources. Because of this, Terraform builds infrastructure as efficiently as possible, and operators get insight into dependencies in their infrastructure.
+Resource Graph: Terraform builds a graph of all your resources, and parallelizes the creation and modification of any non-dependent resources. Because of this, Terraform builds infrastructure as efficiently as possible, and operators get insight into dependencies in their infrastructure.
+
+- Change Automation: Complex changesets can be applied to your infrastructure with minimal human interaction. With the previously mentioned execution plan and resource graph, you know exactly what Terraform will change and in what order, avoiding many possible human errors.
+Change Automation: Complex changesets can be applied to your infrastructure with minimal human interaction. With the previously mentioned execution plan and resource graph, you know exactly what Terraform will change and in what order, avoiding many possible human errors.
+
+For more information, refer to the What is Terraform? page on the Terraform website.
+
+[What is Terraform?](https://www.terraform.io/intro)
+
+### Getting Started & Documentation
+Documentation is available on the Terraform website:
+
+[Terraform website](https://developer.hashicorp.com/terraform)
+- Introduction
+[Introduction](https://developer.hashicorp.com/terraform/intro)
+- Documentation
+[Documentation](https://developer.hashicorp.com/terraform/docs)
+If you're new to Terraform and want to get started creating infrastructure, please check out our Getting Started guides on HashiCorp's learning platform. There are also additional guides to continue your learning.
+
+[Getting Started guides](https://learn.hashicorp.com/terraform#getting-started)
+[additional guides](https://learn.hashicorp.com/terraform#operations-and-development)
+Show off your Terraform knowledge by passing a certification exam. Visit the certification page for information about exams and find study materials on HashiCorp's learning platform.
+
+[certification page](https://www.hashicorp.com/certification/)
+[study materials](https://learn.hashicorp.com/terraform/certification/terraform-associate)
+
+### Developing Terraform
+This repository contains only Terraform core, which includes the command line interface and the main graph engine. Providers are implemented as plugins, and Terraform can automatically download providers that are published on the Terraform Registry. HashiCorp develops some providers, and others are developed by other organizations. For more information, refer to Plugin development.
+
+[the Terraform Registry](https://registry.terraform.io)
+[Plugin development](https://developer.hashicorp.com/terraform/plugin)
+- To learn more about compiling Terraform and contributing suggested changes, refer to the contributing guide.
+To learn more about compiling Terraform and contributing suggested changes, refer to the contributing guide.
+
+[the contributing guide](/hashicorp/terraform/blob/main/.github/CONTRIBUTING.md)
+- To learn more about how we handle bug reports, refer to the bug triage guide.
+To learn more about how we handle bug reports, refer to the bug triage guide.
+
+[bug triage guide](/hashicorp/terraform/blob/main/BUGPROCESS.md)
+- To learn how to contribute to the Terraform documentation, refer to the Web Unified Docs repository.
+To learn how to contribute to the Terraform documentation, refer to the Web Unified Docs repository.
+
+[Web Unified Docs repository](https://github.com/hashicorp/web-unified-docs)
+
+### License
+Business Source License 1.1
+
+[Business Source License 1.1](https://github.com/hashicorp/terraform/blob/main/LICENSE)
+
+### About
+Terraform enables you to safely and predictably create, change, and improve infrastructure. It is a source-available tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned.
+
+[developer.hashicorp.com/terraform](http://developer.hashicorp.com/terraform)
+
+### Topics
+[cloud](/topics/cloud)
+[graph](/topics/graph)
+[terraform](/topics/terraform)
+[cloud-management](/topics/cloud-management)
+[infrastructure-as-code](/topics/infrastructure-as-code)
+
+### Resources
+[Readme](#readme-ov-file)
+
+### License
+[View license](#License-1-ov-file)
+
+### Code of conduct
+[Code of conduct](#coc-ov-file)
+
+### Contributing
+[Contributing](#contributing-ov-file)
+
+### Security policy
+[Security policy](#security-ov-file)
+
+### Uh oh!
+There was an error while loading. Please reload this page.
+
+[Activity](/hashicorp/terraform/activity)
+[Custom properties](/hashicorp/terraform/custom-properties)
+
+### Stars
+[48.4k stars](/hashicorp/terraform/stargazers)
+
+### Watchers
+[1.1k watching](/hashicorp/terraform/watchers)
+
+### Forks
+[10.3k forks](/hashicorp/terraform/forks)
+[Report repository](/contact/report-content?content_url=https%3A%2F%2Fgithub.com%2Fhashicorp%2Fterraform&report=hashicorp+%28user%29)
+
+### Releases 418
+[Releases 418](/hashicorp/terraform/releases)
+[v1.15.4 Latest May 20, 2026](/hashicorp/terraform/releases/tag/v1.15.4)
+[+ 417 releases](/hashicorp/terraform/releases)
+
+### Uh oh!
+There was an error while loading. Please reload this page.
+
+### Contributors
+[Contributors](/hashicorp/terraform/graphs/contributors)
+
+### Uh oh!
+There was an error while loading. Please reload this page.
+
+### Languages
+- Go 99.7%
+[Go 99.7%](/hashicorp/terraform/search?l=go)
+- Other 0.3%
+
+### Footer
+
+
+### Footer navigation
+- Terms
+[Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+- Privacy
+[Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+- Security
+[Security](https://github.com/security)
+- Status
+[Status](https://www.githubstatus.com/)
+- Community
+[Community](https://github.community/)
+- Docs
+[Docs](https://docs.github.com/)
+- Contact
+[Contact](https://support.github.com?tags=dotcom-footer)
+- Manage cookies
+- Do not share my personal information
+
+---
