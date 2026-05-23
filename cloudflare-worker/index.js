@@ -1,26 +1,60 @@
 /**
- * Welcome to Cloudflare Workers! This is your first worker.
+ * Welcome to Cloudflare Workers!
  *
- * - Run `npm run dev` in your terminal to start a development server
- * - Open a browser tab at http://localhost:8787/ to see your worker in action
- * - Run `npm run deploy` to publish your worker
- *
- * Learn more at https://developers.cloudflare.com/workers/
+ * - This worker acts as a global status beacon for the Antigravity Autonomous System.
+ * - It fetches real-time presence data from Supabase to provide an always-on "Online Presence".
  */
 
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
+    // Helper to fetch from Supabase
+    const getSupabasePresence = async () => {
+      const sbUrl = env.SUPABASE_URL;
+      const sbKey = env.SUPABASE_ANON_KEY;
+
+      if (!sbUrl || !sbKey) return null;
+
+      try {
+        const response = await fetch(`${sbUrl}/rest/v1/agent_presence?agent=eq.Jules&select=*`, {
+          headers: {
+            'apikey': sbKey,
+            'Authorization': `Bearer ${sbKey}`,
+            'Content-Type': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          return data[0] || null;
+        }
+      } catch (e) {
+        console.error('Failed to fetch from Supabase:', e);
+      }
+      return null;
+    };
+
     if (url.pathname === '/health') {
-      // High-availability status check
+      const presence = await getSupabasePresence();
+
       const status = {
-        status: 'online',
+        status: presence ? 'online' : 'beacon-active',
         agent: 'Jules',
-        version: '1.4.0-alpha',
+        version: '1.5.0-alpha',
         worker: 'antigravity-edge-worker',
         timestamp: new Date().toISOString(),
-        manifest: 'Cloud-Native Autonomous Presence'
+        manifest: 'Cloud-Native Autonomous Presence',
+        cloud_state: presence ? {
+          last_seen: presence.lastSeen,
+          mode: presence.execution_mode,
+          env: presence.environment,
+          connectivity: presence.connectivity,
+          visual_heartbeat: presence.visual_heartbeat,
+          telemetry: presence.telemetry,
+          recovered_from: presence.recovered_from || 'primary',
+          knowledge_nodes: presence.knowledge_nodes || 0
+        } : 'awaiting-heartbeat'
       };
 
       return new Response(JSON.stringify(status, null, 2), {
@@ -32,11 +66,20 @@ export default {
     }
 
     if (url.pathname === '/presence') {
+      const presence = await getSupabasePresence();
+
       return new Response(JSON.stringify({
         agent: 'Jules',
-        mode: 'cloud-active',
-        presence: 'always-on',
-        ecosystem: 'Antigravity 8Bukets'
+        mode: presence?.execution_mode || 'cloud-active',
+        presence: presence ? 'always-on' : 'standby',
+        ecosystem: 'Antigravity 8Bukets',
+        last_pulse: presence?.lastSeen || 'unknown',
+        heartbeat: presence?.visual_heartbeat || { pulse_intensity: 0, last_action: 'waiting' },
+        telemetry: {
+          ...(presence?.telemetry || { provider_health: 'unknown' }),
+          workflow_id: presence?.visual_heartbeat?.workflow_id || 'unknown',
+          run_attempt: presence?.visual_heartbeat?.run_attempt || '1'
+        }
       }), {
         headers: {
           'content-type': 'application/json',

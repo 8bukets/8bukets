@@ -78,12 +78,21 @@ class KnowledgeMergeAgent(BaseAgent):
                     if filepath not in consolidated["metadata"]["sources_processed"]:
                         consolidated["metadata"]["sources_processed"].append(filepath)
                 elif isinstance(content, list):
-                    # For market_data (links.json), we might want to summarize or just store a subset
+                    # For market_data (links.json), we want to merge with existing data from system_knowledge.json
                     if key == "market_data":
+                        existing_market = consolidated.get("sections", {}).get("market_data", {})
+                        existing_entries = existing_market.get("all_entries", [])
+
+                        # Merge and deduplicate by post_url
+                        urls = {e.get("post_url") for e in existing_entries if e.get("post_url")}
+                        new_entries = [e for e in content if e.get("post_url") not in urls]
+
+                        combined_entries = new_entries + existing_entries
+
                         consolidated["sections"][key] = {
-                            "total_entries": len(content),
-                            "recent_entries": content[:20], # Store recent 20 for context
-                            "all_entries": content
+                            "total_entries": len(combined_entries),
+                            "recent_entries": combined_entries[:20],
+                            "all_entries": combined_entries
                         }
                     else:
                         consolidated["sections"][key] = {"data": content}
@@ -181,7 +190,7 @@ class KnowledgeMergeAgent(BaseAgent):
                         for sec in ts_data.get("sections", []):
                             f.write(f"#### {sec['header']}\n{sec['content']}\n\n")
 
-
+                f.write("\n---\nAll the best - https://markposition.wordpress.com\n")
 
             self.logger.info(f"Consolidated Markdown saved to {self.output_md}")
         except Exception as e:

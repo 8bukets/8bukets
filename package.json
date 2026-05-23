@@ -12,7 +12,8 @@
     "test": "echo \"Error: no test specified\" && exit 0",
     "connect": "tsx scripts/connect_and_collaborate.ts",
     "daily": "tsx scripts/run_daily.ts",
-    "ingest:sor": "tsx scripts/ingest_software_online_review.ts",
+    "ingest:sor": "tsx scripts/ingest_software_online_review.ts https://software-online-review.com/",
+    "ingest:investopedia": "tsx scripts/ingest_investopedia.ts",
     "sync-all": "tsx scripts/sync_all_branches.ts",
     "daily-tasks": "gemini @daily-tasks",
     "ignite": "npm run daily -- --continuous",
@@ -21,16 +22,18 @@
   },
   "dependencies": {
     "@actions/core": "^1.11.1",
-    "@actions/github": "^5.1.1",
+    "@actions/github": "^9.1.1",
     "@google/gemini-cli-core": "^0.41.2",
     "chalk": "^5.6.2",
     "cheerio": "^1.2.0",
     "chokidar": "^5.0.0",
     "commander": "^14.0.3",
-    "next": "^15.1.0",
-    "ws": "^8.20.1"
+    "next": "^16.2.6",
+    "puppeteer": "^25.0.4",
+    "ws": "^8.21.0"
   },
   "devDependencies": {
+    "@google/generative-ai": "^0.24.1",
     "@supabase/supabase-js": "^2.105.4",
     "@types/node": "^20.19.41",
     "@types/ws": "^8.18.1",

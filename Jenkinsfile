@@ -55,11 +55,40 @@ pipeline {
             }
         }
 
+        stage('Test system_health_dashboard') {
+            steps {
+                sh 'npm ci'
+                sh 'npx vitest run antigravity/services/system_health_dashboard.test.ts'
+            }
+        }
+
+        stage('Test proactive_scalability') {
+            steps {
+                sh 'npm ci'
+                sh 'npx vitest run antigravity/services/proactive_scalability.test.ts'
+            }
+        }
+
+        stage('Test autonomous_ux_optimization') {
+            steps {
+                sh 'npm ci'
+                sh 'npx vitest run antigravity/services/autonomous_ux_optimization.test.ts'
+            }
+        }
+
+        stage('Test global_neural_sync_service_phase_12') {
+            steps {
+                sh 'npm ci'
+                sh 'npx vitest run antigravity/services/global_neural_sync_service_phase_12.test.ts'
+            }
+        }
+
         stage('Creative Workflow') {
             parallel {
                 stage('Analyze Market') {
                     steps {
                         sh 'npm run ingest:sor'
+                        sh 'npm run ingest:forbes'
                     }
                 }
                 stage('Generate Assets') {

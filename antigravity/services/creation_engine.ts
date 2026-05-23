@@ -22,10 +22,19 @@ export class AutonomousCreationEngine {
     const createdFeatures = [];
 
     // 2. Order Generation with Dependency Chains
+    const { getSystemInsights } = await import('../core');
+    const insights = await getSystemInsights();
+    const systemOptimal = (insights as any).docker?.status === 'optimal' && (insights as any).circuitBreakers?.mongodb === 'closed';
+
     for (const idea of ideas) {
-      // Only process Low/Medium complexity for safe autonomous evolution
-      if (idea.complexity === 'Low' || idea.complexity === 'Medium') {
-        logAutonomousAction(`📝 [CreationEngine] Generating dependency chain for: ${idea.feature}`, 'info');
+      // Phase 20: Scale Evolution Complexity (Allow High complexity if system is optimal)
+      // For full autonomous creation, we permit High complexity in cloud-adaptive modes.
+      const allowedComplexities = (systemOptimal || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
+        ? ['Low', 'Medium', 'High']
+        : ['Low', 'Medium'];
+
+      if (allowedComplexities.includes(idea.complexity)) {
+        logAutonomousAction(`📝 [CreationEngine] Generating dependency chain for ${idea.complexity}-complexity feature: ${idea.feature}`, 'info');
 
         // Step A: Bootstrap
         const bootstrapOrder = await workOrderService.createOrder(
