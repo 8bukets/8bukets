@@ -179,7 +179,8 @@ export class Jules {
           ingestedAt: new Date().toISOString()
         }
       }
-      await observer.persistKnowledge(consolidated as any)
+
+      await observer.persistKnowledge(consolidated as any, 'Intelephense')
       console.log(` ✅ [Jules] Consolidated Intelephense Documentation persisted.`)
     }
   }
