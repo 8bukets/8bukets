@@ -11,7 +11,7 @@ export const NeuralPulseSchema = z.object({
 export type NeuralPulse = z.infer<typeof NeuralPulseSchema>
 
 /**
- * Global Neural Sync (Phase 9)
+ * Global Neural Sync (Phase 12)
  * Manages cross-environment cognitive synchronization.
  */
 export async function broadcastPulse() {

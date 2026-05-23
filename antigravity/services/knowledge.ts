@@ -9,6 +9,7 @@ import { KnowledgeObserver } from './knowledge_observer'
  * Fetches basic metadata from a target URL and records relationship intelligence.
  */
 export async function observeKnowledge(url: string) {
+  'use cache'
   console.log(`🧠 [Knowledge Observer] Scanning ${url} for market intelligence...`)
 
   try {
