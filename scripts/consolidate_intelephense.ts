@@ -41,9 +41,11 @@ async function consolidate() {
 
   for (const section of allSections) {
     const existing = headerMap.get(section.header)
+    const isStructural = ['Getting Started', 'Features', 'Installation', 'Type System'].includes(section.header)
+
     if (!existing) {
       // Only keep sections with content, unless they are high-level structural headers
-      if (section.content || ['Getting Started', 'Features', 'Installation'].includes(section.header)) {
+      if (section.content || isStructural) {
         headerMap.set(section.header, { ...section })
       }
     } else {
@@ -73,6 +75,22 @@ async function consolidate() {
     metadata: {
       source: 'https://intelephense.com/docs',
       ingestedAt: new Date().toISOString()
+    }
+  }
+
+  // 4. Purge redundant entries from the store before persisting
+  const storageDir = path.join(process.cwd(), 'data/knowledge')
+  const jsonStore = path.join(storageDir, 'system_knowledge.json')
+
+  if (fs.existsSync(jsonStore)) {
+    console.log(' 🧹 Purging redundant Intelephense entries...')
+    const systemKnowledge = JSON.parse(fs.readFileSync(jsonStore, 'utf8'))
+    if (systemKnowledge.typescript_sections) {
+      systemKnowledge.typescript_sections = systemKnowledge.typescript_sections.filter((k: any) => {
+        // Purge any "Intelephense: ..." variants, only keeping the main consolidated one if it exists (it will be updated)
+        return !k.title.startsWith('Intelephense:')
+      })
+      fs.writeFileSync(jsonStore, JSON.stringify(systemKnowledge, null, 2))
     }
   }
 

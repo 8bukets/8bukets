@@ -161,18 +161,22 @@ export class Jules {
 
       for (const section of allSections) {
         const existing = headerMap.get(section.header)
+        const isStructural = ['Getting Started', 'Features', 'Installation', 'Type System'].includes(section.header)
+
         if (!existing) {
-          if (section.content || ['Getting Started', 'Features', 'Installation'].includes(section.header)) {
+          if (section.content || isStructural) {
             headerMap.set(section.header, { ...section })
           }
         } else {
           if (section.content && section.content !== existing.content) {
-            if (!existing.content.includes(section.content)) {
-              if (section.content.includes(existing.content)) {
-                existing.content = section.content
-              } else {
-                existing.content += '\n\n' + section.content
-              }
+            if (existing.content.includes(section.content)) {
+              // New content is already a subset, ignore
+            } else if (section.content.includes(existing.content)) {
+              // New content is more complete, replace
+              existing.content = section.content
+            } else {
+              // Both have unique info, append
+              existing.content += '\n\n' + section.content
             }
           }
         }
