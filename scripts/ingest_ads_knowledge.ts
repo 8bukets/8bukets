@@ -4,15 +4,15 @@ import * as cheerio from 'cheerio';
 
 const URLS = [
     "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU",
-    "https://business.google.com/uk/ad-tools/bidding/?hl=en",
-    "https://business.google.com/uk/resources/?hl=en",
-    "https://developers.google.com/ad-manager?hl=en",
-    "https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en",
-    "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en",
-    "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en",
-    "https://developers.google.com/ad-manager/api/start?hl=en",
-    "https://admanager.google.com/home/resources/?hl=en",
-    "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en"
+    "https://business.google.com/uk/ad-tools/bidding/",
+    "https://business.google.com/uk/resources/",
+    "https://developers.google.com/ad-manager",
+    "https://developers.google.com/ad-manager/dynamic-ad-insertion",
+    "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
+    "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
+    "https://developers.google.com/ad-manager/api/start",
+    "https://admanager.google.com/home/resources/",
+    "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview"
 ];
 
 interface Section {
@@ -32,11 +32,15 @@ async function scrapeGoogleAdsDocs() {
     let mdContent = "# Google Ads & Ad Manager Documentation\n\n";
 
     for (const url of URLS) {
-        console.log(`Fetching Google Ads docs from ${url}...`);
+        const parsedUrl = new URL(url);
+        parsedUrl.searchParams.set('hl', 'en');
+        const fetchUrl = parsedUrl.toString();
+
+        console.log(`Fetching Google Ads docs from ${fetchUrl}...`);
         try {
-            const response = await fetch(url, { signal: AbortSignal.timeout(10000) });
+            const response = await fetch(fetchUrl, { signal: AbortSignal.timeout(10000) });
             if (!response.ok) {
-                console.error(`Error fetching ${url}: HTTP ${response.status}`);
+                console.error(`Error fetching ${fetchUrl}: HTTP ${response.status}`);
                 continue;
             }
 
@@ -117,7 +121,7 @@ async function scrapeGoogleAdsDocs() {
             mdContent += "\n---\n\n";
 
         } catch (error) {
-             console.error(`Error fetching ${url}:`, error);
+             console.error(`Error fetching ${fetchUrl}:`, error);
         }
     }
 

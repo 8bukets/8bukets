@@ -102,7 +102,7 @@ export class KnowledgeObserver {
   /**
    * persistKnowledge: Merges and saves knowledge to the unified system store.
    */
-  public async persistKnowledge(knowledge: Knowledge) {
+  public async persistKnowledge(knowledge: Knowledge, purgePrefix?: string) {
     if (!fs.existsSync(this.storageDir)) {
       fs.mkdirSync(this.storageDir, { recursive: true })
     }
@@ -129,6 +129,15 @@ export class KnowledgeObserver {
 
     // Heuristic: If title is snake_case, treat as top-level key for flat structure compatibility
     const isFlatKey = /^[a-z0-9_]+$/.test(knowledge.title)
+
+    // Phase 12: Purge redundant entries if prefix provided
+    if (purgePrefix && systemKnowledge.typescript_sections) {
+      Object.keys(systemKnowledge.typescript_sections).forEach(title => {
+        if (title.startsWith(purgePrefix)) {
+           delete systemKnowledge.typescript_sections[title]
+        }
+      })
+    }
 
     if (isFlatKey) {
       systemKnowledge[knowledge.title] = {

@@ -1,3 +1,39 @@
+# Glossary
+
+## Compile
+
+To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.
+
+### Key Definitions of Compile
+
+- **Gathering Information**: To collect and put together data, facts, or documents (e.g., to compile a report or compile a list).
+- **Creating Works**: To produce a book, anthology, or database from various materials.
+- **Computing**: To convert high-level programming code (like C++ or Java) into machine code, allowing a computer to execute the program.
+
+### Usage Examples
+
+- "She is compiling a list of clients for the newsletter."
+- "It took years to compile the dictionary."
+- "The developer needs to compile the code before running the application."
+
+### Synonyms
+
+- Assemble
+- Collect
+- Gather
+- Compose
+- Accumulate
+- Organize
+- Synthesize
+
+### Contextual Usage
+
+- **General**: Focuses on the act of assembling information or materials (e.g., compile a report).
+- **Computing**: Focuses on the automatic transformation of code using a tool known as a compiler.
+
+## Knowledge Merge
+
+Knowledge Merge is a process or document that merges key concepts currently spread across Antigravity, Project SOR, the live software-online-review.com domain, and the new software-review-platform starter. It creates one canonical map of what each layer is, what role it plays, and how the project should evolve.
 # Knowledge Merge
 
 ## Purpose
@@ -255,7 +291,7 @@ Everything else should be evaluated by whether it helps:
 - **Title**: What are AI agents? Definition, examples, and types | Google Cloud
 - **Context**: Ingested comprehensive definition and architectural overview of AI agents from Google Cloud documentation to ground the project's agentic logic in industry standards.
 ---
-All the best - https://markposition.wordpress.com
+
 ## Autonomous Observation
 - **Date**: 2026-05-21T11:37:07.784Z
 - **Target**: https://www.forbes.com/business/
@@ -271,3 +307,125 @@ All the best - https://markposition.wordpress.com
 - **Target**: https://www.forbes.com/money/
 - **Title**: Money
 - **Context**: Ingested and observed external market or technical intelligence from https://www.forbes.com/money/.
+# 📊 Markposition Analytics Report
+<a name='table-of-contents'></a>
+
+**Generated on:** 2026-05-21 16:21:58
+
+## Table of Contents
+* [General Statistics](#general-statistics)
+* [Top 10 Referenced Domains](#top-10-referenced-domains)
+* [Top 10 Categories](#top-10-categories)
+* [Posts by Year](#posts-by-year)
+* [Authors](#authors)
+
+<a name='general-statistics'></a>
+## 📈 General Statistics
+- **Total Posts:** 679
+- **Date Range:** 2020-05-19 to 2022-10-05
+- **Unique Domains Linked:** 367
+
+[Back to Top](#table-of-contents)
+
+<a name='top-10-referenced-domains'></a>
+## 🌐 Top 10 Referenced Domains
+
+## Table of Contents
+- [📊 General Statistics](#general-statistics)
+- [🌐 Top 10 Referenced Domains](#top-10-referenced-domains)
+- [📂 Top 10 Categories](#top-10-categories)
+- [📅 Posts by Year](#posts-by-year)
+- [✍️ Authors](#authors)
+
+## 📊 General Statistics
+- **Total Posts:** 679
+- **Date Range:** 2020-05-19 to 2022-10-05
+- **Unique Domains Linked:** 367
+
+> 💡 **Highlight:** The most referenced domain is **skillshop.exceedlms.com** with 23 links.
+
+[Back to Top](#table-of-contents)
+
+## 🌐 Top 10 Referenced Domains
+| Domain | Count |
+| :--- | :---: |
+| skillshop.exceedlms.com | 23 |
+| support.google.com | 21 |
+| youtube.com | 18 |
+| advertising.amazon.com | 16 |
+| en.wikipedia.org | 14 |
+| google.com | 13 |
+| web.facebook.com | 12 |
+| developers.google.com | 11 |
+| trustarc.com | 11 |
+| ads.google.com | 10 |
+
+[Back to Top](#table-of-contents)
+
+<a name='top-10-categories'></a>
+## 📂 Top 10 Categories
+
+## 📂 Top 10 Categories
+| Category | Count |
+| :--- | :---: |
+| Ad Ads Advertise | 660 |
+| Promotion | 14 |
+| Ads | 4 |
+| Advertise | 3 |
+| Advertising | 3 |
+| Online | 2 |
+
+[Back to Top](#table-of-contents)
+
+<a name='posts-by-year'></a>
+## 📅 Posts by Year
+
+## 📅 Posts by Year
+| Year | Count |
+| :--- | :---: |
+| 2022 | 235 |
+| 2021 | 190 |
+| 2020 | 254 |
+
+[Back to Top](#table-of-contents)
+
+<a name='authors'></a>
+## ✍️ Authors
+- Filip Keser: 679 posts
+
+## Top 10 Referenced Domains
+| Domain | Count | Distribution |
+| :--- | :---: | :--- |
+| skillshop.exceedlms.com | 23 | ████████████████████ |
+| support.google.com | 21 | ██████████████████░░ |
+| youtube.com | 18 | ████████████████░░░░ |
+| advertising.amazon.com | 16 | ██████████████░░░░░░ |
+| en.wikipedia.org | 14 | ████████████░░░░░░░░ |
+| google.com | 13 | ███████████░░░░░░░░░ |
+| web.facebook.com | 12 | ██████████░░░░░░░░░░ |
+| developers.google.com | 11 | ██████████░░░░░░░░░░ |
+| trustarc.com | 11 | ██████████░░░░░░░░░░ |
+| ads.google.com | 10 | █████████░░░░░░░░░░░ |
+
+## Top 10 Categories
+| Category | Count | Distribution |
+| :--- | :---: | :--- |
+| Ad Ads Advertise | 660 | ████████████████████ |
+| Promotion | 14 | ░░░░░░░░░░░░░░░░░░░░ |
+| Ads | 4 | ░░░░░░░░░░░░░░░░░░░░ |
+| Advertise | 3 | ░░░░░░░░░░░░░░░░░░░░ |
+| Advertising | 3 | ░░░░░░░░░░░░░░░░░░░░ |
+| Online | 2 | ░░░░░░░░░░░░░░░░░░░░ |
+
+## Posts by Year
+| Year | Count | Distribution |
+| :--- | :---: | :--- |
+| 2022 | 235 | ███████████████████░ |
+| 2021 | 190 | ███████████████░░░░░ |
+| 2020 | 254 | ████████████████████ |
+
+## ✍️ Authors
+- **Filip Keser**: 679 posts
+
+[Back to Top](#table-of-contents)
+All the best - https://markposition.wordpress.com

@@ -42,6 +42,9 @@ from agents.mysql_agent import MySQLAgent
 from agents.system_audit_agent import SystemAuditAgent
 from agents.documentation_agent import DocumentationAgent
 from agents.performance_optimization_agent import PerformanceOptimizationAgent
+from agents.google_edge_agent import GoogleEdgeAgent
+from agents.google_models_research_agent import GoogleModelsResearchAgent
+from agents.google_innovation_ai_agent import GoogleInnovationAIAgent
 from agents.rag_agent import RagAgent
 from agents.knowledge_agent import KnowledgeAgent
 from agents.knowledge_merge_agent import KnowledgeMergeAgent
@@ -82,14 +85,21 @@ async def run_scraper():
             logger.error(f"Scraper failed with exit code {proc.returncode}: {stderr.decode()}")
             raise RuntimeError(f"Scraper failed: {stderr.decode()}")
 
+        logger.info("Running Google Research Scraper...")
+        subprocess.run(["python3", "google_research_scraper.py"], check=True)
+
         # Specialized Markposition Ingestion (TypeScript)
         logger.info("Starting Specialized Markposition Ingestion...")
         proc_mp = await asyncio.create_subprocess_exec("npx", "tsx", "scripts/ingest_markposition_knowledge.ts")
         await proc_mp.wait()
 
-        # AI Agent Knowledge Scraper (TypeScript)
-        proc_ai = await asyncio.create_subprocess_exec("npx", "tsx", "scripts/ingest_ai_agents_knowledge.ts")
-        await proc_ai.wait()
+        logger.info("Running AI Agents Knowledge Scraper...")
+        # Prefer the TypeScript version if it exists, otherwise fallback to Python
+        if os.path.exists("scripts/ingest_ai_agents_knowledge.ts"):
+            proc_ai = await asyncio.create_subprocess_exec("npx", "tsx", "scripts/ingest_ai_agents_knowledge.ts")
+            await proc_ai.wait()
+        else:
+            subprocess.run(["python3", "ai_agents_knowledge_scraper.py"], check=True)
 
         # VSCode Intelephense Scraper
         scrape_vscode_intelephense()
@@ -97,8 +107,9 @@ async def run_scraper():
         scrape_intelephense_docs()
 
         # Google Ads Documentation Scraper (TypeScript)
-        proc_ads = await asyncio.create_subprocess_exec("npx", "tsx", "scripts/ingest_ads_knowledge.ts")
-        await proc_ads.wait()
+        if os.path.exists("scripts/ingest_ads_knowledge.ts"):
+            proc_ads = await asyncio.create_subprocess_exec("npx", "tsx", "scripts/ingest_ads_knowledge.ts")
+            await proc_ads.wait()
 
         # Gemma 4 Documentation Scraper
         scrape_gemmafour_docs()
@@ -151,26 +162,34 @@ def generate_daily_report(context, filename):
             backups = [k for k in context.keys() if "System_Backup" in k]
             f.write(f"- **Active System Backups:** {len(backups)}\n")
 
-            f.write("\n## 3. High-Level Research Insights\n")
+            f.write("\n## 3. High-Level Research & Intelligence\n")
             research = context.get("research_data", {})
             for trend in research.get("market_trends", []):
                 f.write(f"- **Trend:** {trend}\n")
 
             f.write("\n## 4. Intelligence & Strategic Outlook\n")
             outlook = context.get("strategic_outlook", [])
-            for item in outlook:
-                f.write(f"- {item}\n")
+            if isinstance(outlook, list):
+                for item in outlook:
+                    f.write(f"- {item}\n")
+            else:
+                f.write(f"- {outlook}\n")
 
             f.write("\n### Strategic Risks\n")
             risks = context.get("strategic_risk_assessment", [])
             for risk in risks:
                 f.write(f"- [!] {risk}\n")
 
+            f.write("\n### Intelligence Insights\n")
+            for insight in context.get("intelligence_insights", []):
+                if "Validated AI Agent Use Case" in insight:
+                    f.write(f"- {insight}\n")
+
             f.write("\n### Categorized Knowledge\n")
             categorized = context.get("categorized_knowledge", {})
             for cat, items in categorized.items():
                 if items:
-                    f.write(f"- **{cat}:** {', '.join(items)}\n")
+                    f.write(f"- **{cat}:** {', '.join(items) if isinstance(items, list) else items}\n")
 
             f.write("\n## 5. System Evolution & Daily Improvement\n")
             evolution = context.get("system_evolution", {})
@@ -198,6 +217,8 @@ def generate_daily_report(context, filename):
             f.write(f"- **GitLab Pipeline Efficiency:** {gitlab.get('pipeline_efficiency', 'N/A')}\n")
             jenkins = context.get("jenkins_pipeline_metrics", {})
             f.write(f"- **Jenkins Pipeline Efficiency:** {jenkins.get('pipeline_efficiency', 'N/A')}\n")
+
+            f.write(f"\n---\nAll the best - https://markposition.wordpress.com\n")
 
         logger.info(f"Report generated at {filename}")
     except IOError as e:
@@ -227,7 +248,8 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
 
         # Intelligence & Research
         AnalysisAgent(), ResearchAgent(), IntelligenceAgent(), KnowledgeAgent(),
-        KnowledgeMergeAgent(),
+        KnowledgeMergeAgent(), GoogleEdgeAgent(), GoogleModelsResearchAgent(),
+        GoogleInnovationAIAgent(),
         ReActAgent(), RagAgent(), AutonomousIntelligenceAgent(),
 
         # Strategy & Execution
