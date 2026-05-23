@@ -164,6 +164,7 @@ class KnowledgeAgent(BaseAgent):
                 "agent_best_practices": best_practices,
                 "agent_use_cases": use_cases,
                 "google_cloud_tools_list": tools_list,
+                "additional_resources": definitions.get("additional_resources", ""),
                 "react_framework_details": {
                     "features": definitions.get("features", ""),
                     "deployment_strategy": "Orchestrate React components using Next.js for seamless AI integration.",

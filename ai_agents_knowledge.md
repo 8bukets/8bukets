@@ -10,6 +10,8 @@ AI agents are software systems that use AI to pursue goals and complete tasks on
 
 Their capabilities are made possible in large part by the multimodal capacity of generative AI and AI foundation models. AI agents can process multimodal information like text, voice, video, audio, code, and more simultaneously; can converse, reason, learn, and make decisions. They can learn over time and facilitate transactions and business processes. Agents can work with other agents to coordinate and perform more complex workflows.
 
+[2-min AI with Google: AI agents explained - video thumbnail]
+
 ## Key features of an AI agent
 
 As explained above, while the key features of an AI agent are reasoning and acting (as described in ReAct Framework) more features have evolved over time.
@@ -268,16 +270,15 @@ To compile means to gather information from various sources and arrange it into 
 - Organize
 - Synthesize
 
-### Contextual Usage
+Continue learning about AI agents with additional resources.
 
-- **General**: Focuses on the act of assembling information or materials (e.g., compile a report).
-- **Computing**: Focuses on the automatic transformation of code using a tool known as a compiler.
+- Google ADK on Github
 
-## Jules Tools
+- Google Agents White Paper (via Kaggle)
 
-Jules Tools is a lightweight command-line interface (CLI) for interacting with Jules, Google’s autonomous AI coding agent. It allows you to manage coding sessions, inspect progress, and integrate Jules into your existing development workflows and scripts directly from your terminal.
+- Google Agents Companion White Paper (via Kaggle)
 
-Think of Jules Tools as both a command surface and a dashboard for your coding agent, designed to keep you in your flow without needing to switch to a web browser.
+- Skillsboost Advanced Generative AI for Developers Learning
 
 - Installation: `npm install -g @google/jules`.
 - Authentication: `jules login` and `jules logout`.

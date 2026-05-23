@@ -432,5 +432,11 @@
                 }
             }
         ]
+    },
+    "TargetingAgent": {
+        "last_primary_persona": "AdTech Professional",
+        "long_term": {
+            "new_key": "new_val"
+        }
     }
 }
