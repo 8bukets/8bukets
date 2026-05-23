@@ -65,7 +65,7 @@ export class KnowledgeObserver {
                              !trimmed.includes('|') && !trimmed.includes('&') &&
                              !trimmed.includes('[') && !trimmed.includes(']') &&
                              !trimmed.includes('\\') &&
-                             (trimmed.toUpperCase() === trimmed || /^[A-Z][a-z0-9]*(\s[A-Z][a-z0-9]*)*$/.test(trimmed)) &&
+                             (trimmed.toUpperCase() === trimmed || /^[A-Z][a-zA-Z0-9.-]*(\s[A-Z][a-zA-Z0-9.-]*)*$/.test(trimmed)) &&
                              !trimmed.startsWith('This ') &&
                              !trimmed.startsWith('Some ') &&
                              !/^[{}/*<>?]+$/.test(trimmed) &&
@@ -121,10 +121,14 @@ export class KnowledgeObserver {
 
   /**
    * persistKnowledge: Merges and saves knowledge to persistent stores.
+   * @param knowledge The knowledge object to persist.
+   * @param purgePrefix Optional title prefix to purge before adding the new entry.
    */
-  public async persistKnowledge(knowledge: Knowledge) {
+  public async persistKnowledge(knowledge: Knowledge, purgePrefix?: string) {
+    const fsPromises = fs.promises;
+
     if (!fs.existsSync(this.storageDir)) {
-      fs.mkdirSync(this.storageDir, { recursive: true })
+      await fsPromises.mkdir(this.storageDir, { recursive: true })
     }
 
     const jsonStore = path.join(this.storageDir, 'system_knowledge.json')
@@ -134,13 +138,23 @@ export class KnowledgeObserver {
     let systemKnowledge: any = { typescript_sections: [] }
     if (fs.existsSync(jsonStore)) {
       try {
-        systemKnowledge = JSON.parse(fs.readFileSync(jsonStore, 'utf8'))
+        const content = await fsPromises.readFile(jsonStore, 'utf8');
+        systemKnowledge = JSON.parse(content)
         if (!systemKnowledge.typescript_sections) {
           systemKnowledge.typescript_sections = []
         }
       } catch (e) {
         console.warn('⚠️ [KnowledgeObserver] Failed to parse existing JSON store. Starting fresh.')
       }
+    }
+
+    // Purge logic if prefix is provided
+    if (purgePrefix && systemKnowledge.typescript_sections) {
+      systemKnowledge.typescript_sections = systemKnowledge.typescript_sections.filter((k: any) => {
+        // Keep everything that isn't the target or doesn't match the purge prefix
+        // BUT keep the exact match if it's the one we are about to save (it will be updated anyway)
+        return k.title === knowledge.title || !k.title.startsWith(purgePrefix);
+      });
     }
 
     // Replace if same title exists, or append
@@ -152,23 +166,23 @@ export class KnowledgeObserver {
       existingData.push(knowledge)
     }
 
-    fs.writeFileSync(jsonStore, JSON.stringify(systemKnowledge, null, 2))
+    await fsPromises.writeFile(jsonStore, JSON.stringify(systemKnowledge, null, 2))
 
     // 2. Markdown Persistence (Rebuild)
     let mdContent = `# ANTIGRAVITY AI AGENTS KNOWLEDGE BASE\n\n*Last Updated: ${new Date().toISOString()}*\n\n`
 
     for (const k of existingData as Knowledge[]) {
       mdContent += `## DOCUMENT: ${k.title}\n`
-      mdContent += `**Source:** ${k.metadata.source}  \n`
-      mdContent += `**Ingested At:** ${k.metadata.ingestedAt}\n\n`
+      mdContent += `**Source:** ${k.metadata.source.trim()}\n`
+      mdContent += `**Ingested At:** ${k.metadata.ingestedAt.trim()}\n\n`
 
       for (const section of k.sections) {
-        mdContent += `### ${section.header}\n${section.content}\n\n`
+        mdContent += `### ${section.header.trim()}\n${section.content.trim()}\n\n`
       }
       mdContent += `---\n\n`
     }
 
-    fs.writeFileSync(mdStore, mdContent)
+    await fsPromises.writeFile(mdStore, mdContent)
     console.log(`✅ [KnowledgeObserver] Persisted "${knowledge.title}" to ${this.storageDir}`)
   }
 }

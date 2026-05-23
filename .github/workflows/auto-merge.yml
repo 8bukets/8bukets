@@ -15,5 +15,6 @@ jobs:
       - name: Auto Merge PR
         run: gh pr merge --auto --merge "$PR_URL" || true
         env:
+          MACBOOK_CLOUD_SIMULATION: true
           PR_URL: ${{github.event.pull_request.html_url}}
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}

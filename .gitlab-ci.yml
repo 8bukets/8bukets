@@ -1,31 +1,15 @@
-default:
-  before_script:
-    - echo "Setting up before running the job..."
-  after_script:
-    - echo "Cleaning up after the job..."
-
 build-job:
   stage: build
   script:
     - echo "Hello, $GITLAB_USER_LOGIN!"
-    - mkdir -p build_output
-    - echo "Build content" > build_output/log.txt
-  cache:
-    paths:
-      - node_modules/
-  artifacts:
-    paths:
-      - build_output/
 
 test-job1:
   stage: test
-  needs: ["build-job"]
   script:
     - echo "This job tests something"
 
 test-job2:
   stage: test
-  needs: ["build-job"]
   script:
     - echo "This job tests something, but takes more time than test-job1."
     - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
@@ -37,5 +21,112 @@ deploy-prod:
   script:
     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
   environment: production
+
+run-autonomous-feedback_analysis:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Feedback Analysis Service"
+    - npx tsx antigravity/workflows/feedback_analysis_workflow.ts
   rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-performance_monitoring:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Performance Monitoring Service"
+    - npx tsx antigravity/workflows/performance_monitoring_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-cognitive_security:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Cognitive Security Service"
+    - npx tsx antigravity/workflows/cognitive_security_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-visual_neural_relay:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Visual Neural Relay"
+    - npx tsx antigravity/workflows/visual_neural_relay_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-feature_scaling_coordinator:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Feature Scaling Coordinator"
+    - npx tsx antigravity/workflows/feature_scaling_coordinator_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-autonomous_resource_optimizer:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Autonomous Resource Optimizer"
+    - npx tsx antigravity/workflows/autonomous_resource_optimizer_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-proactive_scalability:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Proactive Scalability Service"
+    - npx tsx antigravity/workflows/proactive_scalability_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-creative-workflow-pipeline:
+  stage: test
+  script:
+    - echo "Running creative workflow pipeline"
+    - npm run ingest:sor
+    - npm run daily
+    - npx tsx scripts/execute_creation_cycle.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-cloud_convergence:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Cloud Convergence Service"
+    - npx tsx antigravity/workflows/cloud_convergence_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-autonomous_ux_optimization:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Autonomous UX Optimization Service"
+    - npx tsx antigravity/workflows/autonomous_ux_optimization_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-global_neural_sync_service_(phase_12):
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Global Neural Sync Service (Phase 12)"
+    - npx tsx antigravity/workflows/global_neural_sync_service_(phase_12)_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-autonomous_discovery_engine:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Autonomous Discovery Engine"
+    - npx tsx antigravity/workflows/autonomous_discovery_engine_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-edge-to-cloud_bridge:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Edge-to-Cloud Bridge"
+    - npx tsx antigravity/workflows/edge-to-cloud_bridge_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+variables:
+  MACBOOK_CLOUD_SIMULATION: "true"
