@@ -14,8 +14,6 @@ export default async function CommandCenter(props: PageProps) {
 }
 
 async function CommandCenterContent({ params, searchParams }: PageProps) {
-export default async function CommandCenter({
-  params, searchParams }: PageProps) {
   await Promise.all([resolve(params), resolve(searchParams)]);
 
   return (
