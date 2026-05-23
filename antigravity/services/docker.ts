@@ -50,7 +50,10 @@ export async function getDockerFleetStatus(): Promise<DockerContainer[]> {
         console.log('🧪 [Docker] Restricted environment detected. Engaging simulated fleet observability.')
         return [
           { id: 'sim-01', image: 'antigravity-core:latest', status: 'Up 24 hours', names: 'primary-node-alpha' },
-          { id: 'sim-02', image: 'mongo:latest', status: 'Up 24 hours', names: 'primary-database' }
+          { id: 'sim-02', image: 'mongo:latest', status: 'Up 24 hours', names: 'primary-database' },
+          { id: 'sim-03', image: 'supabase/postgres:latest', status: 'Up 24 hours', names: 'vector-db' },
+          { id: 'sim-04', image: 'redis:alpine', status: 'Up 24 hours', names: 'neural-cache' },
+          { id: 'sim-05', image: 'antigravity-proxy:latest', status: 'Up 24 hours', names: 'omni-gateway' }
         ]
       }
 
@@ -71,9 +74,10 @@ export async function checkDockerHealth() {
   if (!isHealthy && !isSimulated) {
     if (process.env.MACBOOK_CLOUD_SIMULATION === 'true' || process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true') {
       console.log('🧪 [Docker] Recovery restricted. Engaging cloud-native simulated state.')
+      const simulatedFleet = await getDockerFleetStatus()
       return {
         status: 'simulated',
-        containerCount: 5,
+        containerCount: simulatedFleet.length,
         simulated: true,
         timestamp: new Date().toISOString()
       }
