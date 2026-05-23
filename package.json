@@ -11,7 +11,7 @@
     "test": "vitest run",
     "explore": "tsx --env-file=.env antigravity/explorer.ts",
     "evolve": "tsx --env-file=.env antigravity/evolution.ts",
-    "daily": "tsx --env-file=.env antigravity/run_daily.ts",
+    "daily": "tsx --env-file=.env scripts/autonomous_sync.ts",
     "ignite": "tsx --env-file=.env antigravity/run_daily.ts --continuous",
     "ingest:sor": "tsx --env-file=.env scripts/ingest_software_online_review.ts",
     "connect": "tsx --env-file=.env scripts/connect_and_collaborate.ts",
