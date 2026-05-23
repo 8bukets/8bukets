@@ -1,77 +1,188 @@
-export async function observeKnowledge(url: string) {
-  console.log(`👁️ [Knowledge Observer] Scanning ${url} for autonomous insights...`)
-  try {
-    const response = await fetch(url)
-    if (!response.ok) {
-      throw new Error(`Failed to fetch ${url}: ${response.statusText}`)
-    }
-    const html = await response.text()
+import fs from 'fs'
+import path from 'path'
+import { z } from 'zod'
 
-    // Very simple heuristic: look for <title>, some standard meta tags or just general size
-    const titleMatch = html.match(/<title[^>]*>([^<]+)<\/title>/i)
-    const title = titleMatch ? titleMatch[1].trim() : 'Unknown Title'
+/**
+ * KNOWLEDGE OBSERVER SERVICE
+ * Autonomously parses and persists technical documentation and insights.
+ */
 
-    const metaDescriptionMatch = html.match(/<meta[^>]*name=["']description["'][^>]*content=["']([^"']*)["'][^>]*>/i)
-    const description = metaDescriptionMatch ? metaDescriptionMatch[1].trim() : 'No description found'
+export const KnowledgeSchema = z.object({
+  title: z.string(),
+  sections: z.array(z.object({
+    header: z.string(),
+    content: z.string()
+  })),
+  metadata: z.object({
+    source: z.string(),
+    ingestedAt: z.string()
+  })
+})
 
-    // Extract recent post titles and links
-    const recentPosts: { title: string, link: string }[] = []
-    const linkRegex = /<h[1-3][^>]*>.*?<a[^>]*href=["']([^"']+)["'][^>]*>(.*?)<\/a>.*?<\/h[1-3]>/gi
-    let match
+export type Knowledge = z.infer<typeof KnowledgeSchema>
 
-    while ((match = linkRegex.exec(html)) !== null) {
-      const link = match[1]
-      const postTitle = match[2].replace(/<[^>]*>?/gm, '').replace(/&nbsp;/g, ' ').trim()
+const DEFAULT_STORAGE_DIR = path.join(process.cwd(), 'data/knowledge')
 
-      // Filter out general links, attempt to capture actual articles (usually have dates or specific path structure)
-      if (postTitle && link && !recentPosts.some(p => p.link === link) && postTitle.toLowerCase() !== 'software info by fk') {
-          recentPosts.push({ title: postTitle, link })
+export class KnowledgeObserver {
+  private storageDir: string
+
+  constructor(storageDir: string = DEFAULT_STORAGE_DIR) {
+    this.storageDir = storageDir
+  }
+
+  /**
+   * processContent: Parses raw text into structured knowledge with code-block awareness.
+   */
+  public static processContent(title: string, rawContent: string, source: string): Knowledge {
+    const sections: { header: string; content: string }[] = []
+    const lines = rawContent.split('\n')
+    let currentHeader = 'Introduction'
+    let currentLines: string[] = []
+    let inMarkdownCodeBlock = false
+    let inPhpCodeBlock = false
+
+    for (const line of lines) {
+      const trimmed = line.trim();
+
+      // Manage code block states
+      if (trimmed.startsWith('```')) {
+        inMarkdownCodeBlock = !inMarkdownCodeBlock
+      } else if (trimmed.startsWith('<?php')) {
+        inPhpCodeBlock = true
+      }
+
+      const inCodeBlock = inMarkdownCodeBlock || inPhpCodeBlock
+
+      // Detect header candidates
+      const hasLetters = /[a-zA-Z]/.test(trimmed)
+      const isMarkdownHeader = trimmed.startsWith('#')
+      const isStrongHeaderCandidate = trimmed && hasLetters &&
+                             trimmed.length < 60 && trimmed.length > 2 &&
+                             !trimmed.endsWith('.') &&
+                             !trimmed.endsWith(':') &&
+                             !trimmed.endsWith(',') &&
+                             !trimmed.includes('\t') &&
+                             !trimmed.includes('|') && !trimmed.includes('&') &&
+                             !trimmed.includes('[') && !trimmed.includes(']') &&
+                             !trimmed.includes('\\') &&
+                             (trimmed.toUpperCase() === trimmed || /^[A-Z][a-zA-Z0-9.-]*(\s[A-Z][a-zA-Z0-9.-]*)*$/.test(trimmed)) &&
+                             !trimmed.startsWith('This ') &&
+                             !trimmed.startsWith('Some ') &&
+                             !/^[{}/*<>?]+$/.test(trimmed) &&
+                             !trimmed.includes('(') && !trimmed.includes(')') &&
+                             !trimmed.includes(' = ') &&
+                             !trimmed.includes(' => ')
+
+      // Heuristic: If we hit a markdown header or a strong header candidate,
+      // we assume any unclosed PHP block has ended.
+      let effectiveHeader = false
+      if (!inMarkdownCodeBlock) {
+        if (isMarkdownHeader) {
+          effectiveHeader = true
+          inPhpCodeBlock = false // Markdown headers break PHP blocks
+        } else if (!inCodeBlock && isStrongHeaderCandidate) {
+          effectiveHeader = true
+        } else if (inPhpCodeBlock && isStrongHeaderCandidate) {
+          // Strong headers also break PHP blocks (which often lack closing tags in docs)
+          effectiveHeader = true
+          inPhpCodeBlock = false
+        }
+      }
+
+      if (effectiveHeader) {
+        if (currentLines.length > 0) {
+          sections.push({ header: currentHeader, content: currentLines.join('\n').trim() })
+        }
+        currentHeader = trimmed.replace(/^#+\s*/, '').trim()
+        currentLines = []
+      } else {
+        currentLines.push(line)
+      }
+
+      // Close PHP code block if we see the closing tag
+      if (trimmed.includes('?>') && inPhpCodeBlock) {
+        inPhpCodeBlock = false
       }
     }
 
-    // Limit to top 15 recent posts
-    const topRecentPosts = recentPosts.slice(0, 15)
-
-    // Remove inline scripts and styles before keyword extraction
-    const cleanHtml = html
-      .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, ' ')
-      .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, ' ')
-
-    // Naive keyword extraction based on frequency (excluding common stop words)
-    const words = cleanHtml
-      .replace(/<[^>]*>?/gm, ' ') // remove HTML tags
-      .replace(/[^a-zA-Z\s]/g, ' ') // remove non-alpha
-      .toLowerCase()
-      .split(/\s+/)
-      .filter(w => w.length > 4) // filter short words
-
-    const stopWords = new Set(['about', 'above', 'after', 'again', 'against', 'all', 'am', 'an', 'and', 'any', 'are', 'aren', 'as', 'at', 'be', 'because', 'been', 'before', 'being', 'below', 'between', 'both', 'but', 'by', 'can', 'cannot', 'could', 'couldn', 'did', 'didn', 'do', 'does', 'doesn', 'doing', 'don', 'down', 'during', 'each', 'few', 'for', 'from', 'further', 'had', 'hadn', 'has', 'hasn', 'have', 'haven', 'having', 'he', 'her', 'here', 'hers', 'herself', 'him', 'himself', 'his', 'how', 'however', 'i', 'if', 'in', 'into', 'is', 'isn', 'it', 'its', 'itself', 'let', 'me', 'more', 'most', 'mustn', 'my', 'myself', 'no', 'nor', 'not', 'of', 'off', 'on', 'once', 'only', 'or', 'other', 'ought', 'our', 'ours', 'ourselves', 'out', 'over', 'own', 'same', 'shan', 'she', 'should', 'shouldn', 'so', 'some', 'such', 'than', 'that', 'the', 'their', 'theirs', 'them', 'themselves', 'then', 'there', 'these', 'they', 'this', 'those', 'through', 'to', 'too', 'under', 'until', 'up', 'very', 'was', 'wasn', 'we', 'were', 'weren', 'what', 'when', 'where', 'which', 'while', 'who', 'whom', 'why', 'with', 'won', 'would', 'wouldn', 'you', 'your', 'yours', 'yourself', 'yourselves', 'their', 'there', 'class', 'style', 'href', 'https', 'http', 'width', 'height', 'content', 'content', 'title', 'xmlns', 'svg', 'viewbox', 'path', 'fill', 'stroke', 'margin', 'padding', 'false', 'true', 'null', 'undefined', 'function', 'return', 'const', 'let', 'var', 'document', 'window', 'script', 'iframe', 'src', 'alt', 'data'])
-
-    const wordCounts = new Map<string, number>()
-    for (const w of words) {
-      if (!stopWords.has(w)) {
-        wordCounts.set(w, (wordCounts.get(w) || 0) + 1)
-      }
+    if (currentLines.length > 0) {
+      sections.push({ header: currentHeader, content: currentLines.join('\n').trim() })
     }
 
-    const topKeywords = Array.from(wordCounts.entries())
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 10)
-      .map(entry => entry[0])
-
-    const insights = {
-      source: url,
+    return {
       title,
-      description,
-      topKeywords,
-      recentPosts: topRecentPosts,
-      analyzedAt: new Date().toISOString()
+      sections,
+      metadata: {
+        source,
+        ingestedAt: new Date().toISOString()
+      }
+    }
+  }
+
+  /**
+   * persistKnowledge: Merges and saves knowledge to persistent stores.
+   * @param knowledge The knowledge object to persist.
+   * @param purgePrefix Optional title prefix to purge before adding the new entry.
+   */
+  public async persistKnowledge(knowledge: Knowledge, purgePrefix?: string) {
+    const fsPromises = fs.promises;
+
+    if (!fs.existsSync(this.storageDir)) {
+      await fsPromises.mkdir(this.storageDir, { recursive: true })
     }
 
-    console.log(`✅ [Knowledge Observer] Extracted ${topKeywords.length} key concepts and ${topRecentPosts.length} recent posts.`)
-    return insights
-  } catch (error: any) {
-    console.error(`❌ [Knowledge Observer] Error observing ${url}:`, error.message)
-    return null
+    const jsonStore = path.join(this.storageDir, 'system_knowledge.json')
+    const mdStore = path.join(this.storageDir, 'ai_agents_knowledge.md')
+
+    // 1. JSON Persistence (Merge Logic - Unified Store)
+    let systemKnowledge: any = { typescript_sections: [] }
+    if (fs.existsSync(jsonStore)) {
+      try {
+        const content = await fsPromises.readFile(jsonStore, 'utf8');
+        systemKnowledge = JSON.parse(content)
+        if (!systemKnowledge.typescript_sections) {
+          systemKnowledge.typescript_sections = []
+        }
+      } catch (e) {
+        console.warn('⚠️ [KnowledgeObserver] Failed to parse existing JSON store. Starting fresh.')
+      }
+    }
+
+    // Purge logic if prefix is provided
+    if (purgePrefix && systemKnowledge.typescript_sections) {
+      systemKnowledge.typescript_sections = systemKnowledge.typescript_sections.filter((k: any) => {
+        // Keep everything that isn't the target or doesn't match the purge prefix
+        // BUT keep the exact match if it's the one we are about to save (it will be updated anyway)
+        return k.title === knowledge.title || !k.title.startsWith(purgePrefix);
+      });
+    }
+
+    // Replace if same title exists, or append
+    const existingData = systemKnowledge.typescript_sections
+    const index = existingData.findIndex((k: Knowledge) => k.title === knowledge.title)
+    if (index !== -1) {
+      existingData[index] = knowledge
+    } else {
+      existingData.push(knowledge)
+    }
+
+    await fsPromises.writeFile(jsonStore, JSON.stringify(systemKnowledge, null, 2))
+
+    // 2. Markdown Persistence (Rebuild)
+    let mdContent = `# ANTIGRAVITY AI AGENTS KNOWLEDGE BASE\n\n*Last Updated: ${new Date().toISOString()}*\n\n`
+
+    for (const k of existingData as Knowledge[]) {
+      mdContent += `## DOCUMENT: ${k.title}\n`
+      mdContent += `**Source:** ${k.metadata.source.trim()}\n`
+      mdContent += `**Ingested At:** ${k.metadata.ingestedAt.trim()}\n\n`
+
+      for (const section of k.sections) {
+        mdContent += `### ${section.header.trim()}\n${section.content.trim()}\n\n`
+      }
+      mdContent += `---\n\n`
+    }
+
+    await fsPromises.writeFile(mdStore, mdContent)
+    console.log(`✅ [KnowledgeObserver] Persisted "${knowledge.title}" to ${this.storageDir}`)
   }
 }

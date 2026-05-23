@@ -80,6 +80,12 @@ secrets.json
 local_settings.py
 .next_server.log
 
-# runtime state
-antigravity/.jules_memory.json
+# Antigravity logs and state
+*.log
+jules_daily.log
+jules_daily.error.log
 autonomous_state.json
+.jules_memory.json
+antigravity/.jules_memory.json
+work_cycle.log
+data/work_orders.json

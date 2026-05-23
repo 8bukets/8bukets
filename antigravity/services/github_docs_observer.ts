@@ -1,61 +1,107 @@
+import { z } from 'zod'
+import { autonomousFetch } from '@/antigravity/core'
+
+export const GithubDocSectionSchema = z.object({
+  title: z.string(),
+  content: z.string()
+})
+
+export const GithubDocsSchema = z.object({
+  repo: z.string(),
+  file: z.string(),
+  sections: z.array(GithubDocSectionSchema),
+  rawUrl: z.string(),
+  lastUpdated: z.string()
+})
+
+export type GithubDocs = z.infer<typeof GithubDocsSchema>
+
 /**
- * GITHUB DOCUMENTATION OBSERVER
- * Autonomously extracts technical knowledge from GitHub markdown documentation.
+ * GITHUB DOCS OBSERVER
+ * Autonomously extracts technical sections from raw GitHub markdown files.
  */
+export class GithubDocsObserver {
+  private baseUrl = 'https://raw.githubusercontent.com'
 
-export interface GithubDocInsight {
-  source: string;
-  file: string;
-  sections: { title: string; content: string }[];
-  analyzedAt: string;
-}
+  /**
+   * fetchDoc: Retrieves and parses a markdown file from GitHub.
+   */
+  public async fetchDoc(owner: string, repo: string, path: string, branch: string = 'master'): Promise<GithubDocs> {
+    const rawUrl = `${this.baseUrl}/${owner}/${repo}/${branch}/${path}`
 
-export async function observeGithubDocs(repo: string, files: string[]): Promise<GithubDocInsight[]> {
-  console.log(`👁️ [GitHub Docs Observer] Scanning ${repo} for technical insights...`)
+    return autonomousFetch(GithubDocsSchema, async () => {
+      console.log(`📡 [GithubDocsObserver] Fetching: ${owner}/${repo}/${path}...`)
+      const response = await fetch(rawUrl)
 
-  const insights: GithubDocInsight[] = []
-
-  for (const file of files) {
-    const url = `https://raw.githubusercontent.com/${repo}/master/${file}`
-    try {
-      const response = await fetch(url)
       if (!response.ok) {
-        console.warn(`⚠️ [GitHub Docs Observer] Failed to fetch ${file}: ${response.statusText}`)
-        continue
+        throw new Error(`Failed to fetch doc from GitHub: ${response.statusText}`)
       }
+
       const markdown = await response.text()
+      const sections = this.parseMarkdown(markdown)
 
-      const sections: { title: string; content: string }[] = []
-
-      // Robust Markdown header split supporting various header levels
-      const parts = markdown.split(/^(?=#+\s+)/m)
-
-      for (const part of parts) {
-        if (!part.trim()) continue
-
-        const headerMatch = part.match(/^(#+)\s+(.*)/)
-        if (headerMatch) {
-          const title = headerMatch[2].trim()
-          const content = part.substring(headerMatch[0].length).trim()
-
-          if (title) {
-            sections.push({ title, content })
-          }
-        }
-      }
-
-      insights.push({
-        source: `https://github.com/${repo}`,
-        file,
+      return {
+        repo: `${owner}/${repo}`,
+        file: path,
         sections,
-        analyzedAt: new Date().toISOString()
-      })
-
-      console.log(`✅ [GitHub Docs Observer] Extracted ${sections.length} sections from ${file}`)
-    } catch (error: any) {
-      console.error(`❌ [GitHub Docs Observer] Error observing ${file}:`, error.message)
-    }
+        rawUrl,
+        lastUpdated: new Date().toISOString()
+      }
+    }, { life: 'catalog', tags: [`github-docs-${repo}-${path.replace(/\//g, '-')}`] })
   }
 
-  return insights
+  /**
+   * parseMarkdown: Extracts sections based on markdown headers.
+   * Improved to handle empty sections, nested headers, and link-only titles.
+   */
+  private parseMarkdown(markdown: string): { title: string; content: string }[] {
+    const sections: { title: string; content: string }[] = []
+
+    const lines = markdown.split('\n')
+    let currentTitle = 'Overview'
+    let currentContent: string[] = []
+
+    for (const line of lines) {
+      const headerMatch = line.match(/^#+\s+(.*)$/)
+      if (headerMatch) {
+        // Save previous section if it has content or isn't the default Overview
+        const content = currentContent.join('\n').trim()
+        if (content !== '' || (currentTitle !== 'Overview' && currentTitle.length > 0)) {
+          sections.push({
+            title: currentTitle,
+            content: content
+          })
+        }
+
+        // Clean up title: Extract text from link-only headers like "### [Features](features.md)"
+        let nextTitle = headerMatch[1].trim()
+        const linkMatch = nextTitle.match(/^\[(.*)\]\(.*\)$/)
+        if (linkMatch) {
+          nextTitle = linkMatch[1]
+        }
+
+        currentTitle = nextTitle
+        currentContent = []
+      } else {
+        currentContent.push(line)
+      }
+    }
+
+    // Push final section
+    const finalContent = currentContent.join('\n').trim()
+    if (finalContent !== '' || (currentTitle !== 'Overview' && currentTitle.length > 0)) {
+      sections.push({
+        title: currentTitle,
+        content: finalContent
+      })
+    }
+
+    // Filter: Remove sections that are effectively empty placeholders
+    return sections.filter(s => {
+      const isPlaceholder = s.content === '' && (s.title === 'Overview' || s.title.toLowerCase().includes('placeholder'))
+      return !isPlaceholder && s.title !== ''
+    })
+  }
 }
+
+export const githubDocsObserver = new GithubDocsObserver()
