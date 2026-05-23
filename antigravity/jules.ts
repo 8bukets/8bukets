@@ -185,21 +185,21 @@ export class Jules {
     const execAsync = promisify(exec)
 
     try {
-      await execAsync('git pull --rebase origin main || true')
-      await execAsync('git add .')
-      await execAsync('git reset HEAD work_cycle.log data/work_orders.json .jules_memory.json autonomous_state.json || true')
+      await execAsync('git pull --rebase origin main || true', { timeout: 30000 })
+      await execAsync('git add .', { timeout: 10000 })
+      await execAsync('git reset HEAD work_cycle.log data/work_orders.json .jules_memory.json autonomous_state.json || true', { timeout: 10000 })
 
       try {
-        await execAsync(`git commit -m "${message}"`)
+        await execAsync(`git commit -m "${message}"`, { timeout: 10000 })
       } catch (commitErr) {
         console.log('ℹ️ [Jules] No changes to commit or commit failed. Proceeding to push anyway.')
       }
 
-      await execAsync('git push origin main || true')
+      await execAsync('git push origin main || true', { timeout: 30000 })
       console.log('✅ [Jules] Git sync completed autonomously.')
       this.recordTask(`Git Sync: Synchronized state with origin.`)
     } catch (err) {
-      console.warn('⚠️ [Jules] Git sync failed unexpectedly:', err)
+      console.warn('⚠️ [Jules] Git sync failed unexpectedly (possibly timeout):', err)
     }
   }
 
@@ -356,7 +356,7 @@ export class Jules {
       const limit = force ? '' : '--count=50'
       const cmd = `git for-each-ref --sort=-committerdate --format="%(refname:short)|%(contents:subject)|%(committerdate:unix)" refs/heads refs/remotes/origin ${limit}`
       const branchesRaw = execSync(cmd).toString()
-      const branchLines = branchesRaw.split('\n').filter(l => l.trim() !== '')
+      const branchLines = branchesRaw.split('\n').filter(l => l.trim() !== '').slice(0, 50)
 
       return branchLines.map(line => {
         try {
