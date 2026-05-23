@@ -35,13 +35,13 @@ class CloudWorkflowAgent(BaseAgent):
             except Exception as e:
                 self.logger.warning(f"Failed proactive git merge --abort: {e}")
 
-        if viz_metrics.get("kraken_compatibility_score", 0) <= 0.6:
+        if viz_metrics.get("kraken_compatibility_score", 0) <= 0.8:
             active_decisions.append("AUTO_OPTIMIZE_GITKRAKEN_VISUALIZATION")
 
-        if gitlab_metrics.get("pipeline_efficiency") not in ["BASIC", "OPTIMIZED", "HIGHLY_OPTIMIZED"] and jenkins_metrics.get("pipeline_efficiency") not in ["BASIC", "OPTIMIZED", "HIGHLY_OPTIMIZED"]:
+        if gitlab_metrics.get("pipeline_efficiency") not in ["OPTIMIZED", "HIGHLY_OPTIMIZED"]:
             active_decisions.append("AUTO_OPTIMIZE_PIPELINE")
 
-        if docker_status.get("runtime_stability") not in ["VERIFIED", "RECOVERING"]:
+        if docker_status.get("runtime_stability") in ["DEGRADED", "UNVERIFIED"]:
             active_decisions.append("AUTO_REBUILD_DOCKER")
             try:
                 await asyncio.create_subprocess_exec("docker", "compose", "up", "-d", "--build", stdout=asyncio.subprocess.DEVNULL, stderr=asyncio.subprocess.DEVNULL)
@@ -90,6 +90,6 @@ class CloudWorkflowAgent(BaseAgent):
             "tools_integration": react_config.get("tools_integration", [])
         }
 
-        self.logger.info(f"Multi-cloud workflow evaluated: Fluent={is_fluent}, Availability={availability_score}, Mode={orchestration_mode}, Decisions={active_decisions}")
+        self.logger.info(f"Multi-cloud workflow evaluated (GitHub/GitLab/GitKraken/DockerCloud): Fluent={is_fluent}, Availability={availability_score}, Mode={orchestration_mode}, Decisions={active_decisions}")
 
         return {"cloud_workflow_status": cloud_workflow_status}
