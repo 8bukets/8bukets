@@ -8,7 +8,7 @@ import { dispatchExecutiveBriefing } from './notification'
 
 
 /**
- * ANTIGRAVITY COLLABORATION SERVICE (Phase 9)
+ * ANTIGRAVITY COLLABORATION SERVICE (Phase 12)
  * Manages multi-agent collaboration and stakeholder synchronization.
  */
 
@@ -84,7 +84,7 @@ export async function exportEcosystemMetadata() {
 }
 
 /**
- * Phase 9: Multi-Agent Collaboration Protocol
+ * Phase 12: Multi-Agent Collaboration Protocol
  * Notifies stakeholders of the current system state and recent autonomous evolutions.
  */
 export async function broadcastToStakeholders(state: any) {
@@ -102,7 +102,7 @@ Stakeholders notified:
 ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
 ------------------------------------------
 `
-  // In Phase 9, we log this to the console and a collaboration log file.
+  // In Phase 12, we log this to the console and a collaboration log file.
   // In future phases, this could trigger actual email or slack notifications.
   console.log(summary)
 
@@ -157,6 +157,8 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     { path: 'scripts', type: 'Automation Script', pattern: /\.ts$|\.sh$/ },
     { path: 'app', type: 'UI Component', pattern: /\.tsx$|\.ts$/ },
     { path: 'web-app', type: 'UI Component', pattern: /\.tsx$|\.ts$/ },
+    { path: 'agents', type: 'AI Agent', pattern: /\.md$|\.py$/ },
+    { path: 'docs', type: 'Documentation', pattern: /\.md$/ },
     { path: 'public', type: 'Asset', pattern: /.*/ }
   ]
 
@@ -230,11 +232,16 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
 
   // Correlate stakeholders to roles/branches
   stakeholders.forEach(s => {
+    const rolePrefix = s.role.toLowerCase().split(' ')[0]
+    const emailPrefix = s.email.split('@')[0].toLowerCase()
+
     map.stakeholderEngagement[s.role] = {
       email: s.email,
       activeProjects: branches.filter(b => {
-        const branchName = b?.name || '';
-        return b.category === 'agent' || branchName.includes(s.role.toLowerCase().split(' ')[0]);
+        const branchName = (b?.name || '').toLowerCase();
+        return b.category === 'agent' ||
+               branchName.includes(rolePrefix) ||
+               branchName.includes(emailPrefix);
       }).map(b => b.name)
     }
   })
@@ -398,13 +405,15 @@ export async function mergeBranchInsights(branches: any[]) {
   })
 
   let newEntries = `\n## Ecosystem Knowledge Consolidation (${new Date().toISOString()})\n`
+  newEntries += `*Phase 12 Multi-Agent Synergy Protocol Active*\n\n`
 
   Object.entries(categories).forEach(([category, domains]) => {
     newEntries += `### 📂 Category: ${category.toUpperCase()}\n`
     Object.entries(domains).forEach(([domain, branchList]) => {
       newEntries += `#### 🌐 Strategic Domain: ${domain}\n`
       branchList.forEach(b => {
-        newEntries += `- **Branch:** \`${b.name}\`\n`
+        const impactEmoji = (b.changedFiles && b.changedFiles.length > 20) ? '🔥' : (b.changedFiles && b.changedFiles.length > 5 ? '⚡' : '✨');
+        newEntries += `- **Branch:** \`${b.name}\` ${impactEmoji}\n`
         newEntries += `  - **Result:** ${b.results}\n`
         if (b.knowledge) {
           newEntries += `  - **Knowledge:** ${b.knowledge}\n`

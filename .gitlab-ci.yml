@@ -77,3 +77,40 @@ run-autonomous-proactive_scalability:
     - npx tsx antigravity/workflows/proactive_scalability_workflow.ts
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-creative-workflow-pipeline:
+  stage: test
+  script:
+    - echo "Running creative workflow pipeline"
+    - npm run ingest:sor
+    - npm run daily
+    - npx tsx scripts/execute_creation_cycle.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-cloud_convergence:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Cloud Convergence Service"
+    - npx tsx antigravity/workflows/cloud_convergence_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-autonomous_ux_optimization:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Autonomous UX Optimization Service"
+    - npx tsx antigravity/workflows/autonomous_ux_optimization_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-global_neural_sync_service_(phase_12):
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Global Neural Sync Service (Phase 12)"
+    - npx tsx antigravity/workflows/global_neural_sync_service_(phase_12)_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+variables:
+  MACBOOK_CLOUD_SIMULATION: "true"
