@@ -32,7 +32,8 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <nav className="w-full flex justify-end p-4 bg-zinc-50 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
           <div className="flex gap-4">
-             <Link href="/" className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Dashboard</Link>
+             <Link href="/" className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">System</Link>
+             <Link href="/repos" className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Collaboration</Link>
              <Link href="/pricing" className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Pricing</Link>
              <Link href="/login" className="text-sm font-medium px-3 py-1 bg-green-600 text-white rounded-md hover:bg-green-700">Login</Link>
           </div>

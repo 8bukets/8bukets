@@ -41,7 +41,7 @@ export default {
       const status = {
         status: presence ? 'online' : 'beacon-active',
         agent: 'Jules',
-        version: '1.4.0-alpha',
+        version: '1.5.0-alpha',
         worker: 'antigravity-edge-worker',
         timestamp: new Date().toISOString(),
         manifest: 'Cloud-Native Autonomous Presence',
@@ -49,7 +49,11 @@ export default {
           last_seen: presence.lastSeen,
           mode: presence.execution_mode,
           env: presence.environment,
-          connectivity: presence.connectivity
+          connectivity: presence.connectivity,
+          visual_heartbeat: presence.visual_heartbeat,
+          telemetry: presence.telemetry,
+          recovered_from: presence.recovered_from || 'primary',
+          knowledge_nodes: presence.knowledge_nodes || 0
         } : 'awaiting-heartbeat'
       };
 
@@ -69,7 +73,13 @@ export default {
         mode: presence?.execution_mode || 'cloud-active',
         presence: presence ? 'always-on' : 'standby',
         ecosystem: 'Antigravity 8Bukets',
-        last_pulse: presence?.lastSeen || 'unknown'
+        last_pulse: presence?.lastSeen || 'unknown',
+        heartbeat: presence?.visual_heartbeat || { pulse_intensity: 0, last_action: 'waiting' },
+        telemetry: {
+          ...(presence?.telemetry || { provider_health: 'unknown' }),
+          workflow_id: presence?.visual_heartbeat?.workflow_id || 'unknown',
+          run_attempt: presence?.visual_heartbeat?.run_attempt || '1'
+        }
       }), {
         headers: {
           'content-type': 'application/json',

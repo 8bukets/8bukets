@@ -86,10 +86,35 @@ export class CloudConvergenceService {
         logAutonomousAction('⚠️ [CloudConvergence] Git providers unreachable during convergence.', 'warning')
       }
 
+      // 4. Cognitive Memory Health Check
+      let memorySync = 'local-only'
+      try {
+        const mongoClient = await getMongoClient()
+        const db = mongoClient.db()
+        const memory = await db.collection('agent_memory').findOne({ agent: 'Jules' })
+        if (memory) {
+          memorySync = 'synchronized'
+          logAutonomousAction('🧠 [CloudConvergence] Cognitive memory verified in MongoDB.', 'info')
+        }
+      } catch (e) {
+        logAutonomousAction('⚠️ [CloudConvergence] Memory sync verification failed.', 'warning')
+      }
+
+      // 5. Knowledge Metadata Bridge
+      let knowledgeCount = 0
+      try {
+        const mongoClient = await getMongoClient()
+        const db = mongoClient.db()
+        knowledgeCount = await db.collection('knowledge').countDocuments()
+        logAutonomousAction(`📚 [CloudConvergence] ${knowledgeCount} knowledge nodes bridged in MongoDB.`, 'info')
+      } catch (e) {
+        logAutonomousAction('⚠️ [CloudConvergence] Knowledge bridge verification failed.', 'warning')
+      }
+
       const state: CloudConvergenceState = {
         last_sync: new Date().toISOString(),
         active_providers: providers,
-        ecosystem_health: (workOrderCount > 0 || supabasePresence) ? 'optimal' : 'degraded',
+        ecosystem_health: (workOrderCount > 0 || supabasePresence || knowledgeCount > 0) ? 'optimal' : 'degraded',
         sync_metrics: {
           mongo_records: workOrderCount,
           supabase_presence: supabasePresence,
@@ -97,21 +122,21 @@ export class CloudConvergenceService {
         }
       }
 
-      // 4. Cross-Persist Convergence
+      // 6. Cross-Persist Convergence
       try {
         const mongoClient = await getMongoClient()
         const db = mongoClient.db()
         await db.collection('system_state').updateOne(
           { systemId: 'antigravity-alpha-01' },
-          { $set: { cloud_convergence: state } },
+          { $set: { cloud_convergence: state, last_convergence: new Date().toISOString() } },
           { upsert: true }
         )
       } catch (e) {
         logAutonomousAction('⚠️ [CloudConvergence] Failed to persist convergence state to MongoDB.', 'warning')
       }
 
-      // 5. Active State Recovery (Bridge MongoDB & Supabase)
-      if (workOrderCount > 0 && !supabasePresence) {
+      // 7. Active State Recovery (Bridge MongoDB & Supabase)
+      if ((workOrderCount > 0 || knowledgeCount > 0) && !supabasePresence) {
         logAutonomousAction('🔄 [CloudConvergence] Supabase presence missing but MongoDB active. Attempting Cloud-Native recovery...', 'info')
         try {
           const mongoClient = await getMongoClient()
@@ -126,6 +151,7 @@ export class CloudConvergenceService {
               lastSeen: new Date().toISOString(),
               execution_mode: 'cloud',
               recovered_from: 'mongodb',
+              knowledge_nodes: knowledgeCount,
               context: systemState.cloud_convergence
             })
             logAutonomousAction('✅ [CloudConvergence] Supabase presence recovered from MongoDB state.', 'info')
@@ -161,22 +187,54 @@ export class CloudConvergenceService {
                       process.env.GITLAB_CI ||
                       process.env.MACBOOK_CLOUD_SIMULATION === 'true'
 
-      // Sync work orders from MongoDB to local if running in cloud mode
+      // Sync work orders and system configuration from MongoDB to local if running in cloud mode
       if (isCloud) {
         logAutonomousAction('🌩️ [CloudConvergence] Cloud mode active. Synchronizing state from MongoDB source of truth.', 'info')
+
+        // Sync System Configuration (Phase 12 Convergence)
+        try {
+           const systemState = await db.collection('system_state').findOne({ systemId: 'antigravity-alpha-01' })
+           if (systemState && systemState.configuration) {
+              const configPath = path.join(process.cwd(), 'config/evolution_params.json')
+              if (!fs.existsSync(path.dirname(configPath))) fs.mkdirSync(path.dirname(configPath), { recursive: true })
+              fs.writeFileSync(configPath, JSON.stringify(systemState.configuration, null, 4))
+              logAutonomousAction('⚙️ [CloudConvergence] Synchronized evolution configuration from MongoDB.', 'info')
+           }
+        } catch (configErr) {
+           logAutonomousAction('⚠️ [CloudConvergence] Configuration sync failed during conflict resolution.', 'warning')
+        }
+
+        const localPath = path.join(process.cwd(), 'data/work_orders.json')
+        let localOrders = []
+        if (fs.existsSync(localPath)) {
+          try {
+            localOrders = JSON.parse(fs.readFileSync(localPath, 'utf8'))
+          } catch (e) {
+            logAutonomousAction('⚠️ [CloudConvergence] Failed to parse local work orders during conflict resolution.', 'warning')
+          }
+        }
+
+        // 1. Push local "executing" or "completed" updates to MongoDB first to ensure continuity
+        const updatesToPush = localOrders.filter((o: any) => o.status === 'executing' || o.status === 'completed' || o.status === 'failed')
+        if (updatesToPush.length > 0) {
+          logAutonomousAction(`📤 [CloudConvergence] Pushing ${updatesToPush.length} local status updates to MongoDB...`, 'info')
+          for (const order of updatesToPush) {
+            const { _id, ...orderData } = order
+            await db.collection('work_orders').updateOne(
+              { id: order.id },
+              { $set: { ...orderData, updated_at: new Date().toISOString() } },
+              { upsert: true }
+            )
+          }
+        }
+
+        // 2. Pull active orders from MongoDB
         const mongoOrders = await db.collection('work_orders').find({
            status: { $in: ['pending', 'in_progress', 'executing'] }
         }).toArray()
 
-        const localPath = path.join(process.cwd(), 'data/work_orders.json')
-
         if (mongoOrders.length > 0) {
-          let localOrders = []
-          if (fs.existsSync(localPath)) {
-            localOrders = JSON.parse(fs.readFileSync(localPath, 'utf8'))
-          }
-
-          // Merge logic: MongoDB pending orders take precedence
+          // Merge logic: MongoDB active orders take precedence for the local execution queue
           const orderMap = new Map(localOrders.map((o: any) => [o.id, o]))
           mongoOrders.forEach((mo: any) => {
             const { _id, ...orderData } = mo

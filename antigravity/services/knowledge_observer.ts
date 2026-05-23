@@ -102,7 +102,7 @@ export class KnowledgeObserver {
   /**
    * persistKnowledge: Merges and saves knowledge to the unified system store.
    */
-  public async persistKnowledge(knowledge: Knowledge) {
+  public async persistKnowledge(knowledge: Knowledge, purgePrefix?: string) {
     if (!fs.existsSync(this.storageDir)) {
       fs.mkdirSync(this.storageDir, { recursive: true })
     }
@@ -131,6 +131,15 @@ export class KnowledgeObserver {
     // Ensure TypeScript sections structure exists
     if (!systemKnowledge.typescript_sections) {
       systemKnowledge.typescript_sections = {}
+    }
+
+    // Phase 12: Purge redundant entries if prefix provided
+    if (purgePrefix) {
+      Object.keys(systemKnowledge.typescript_sections).forEach(title => {
+        if (title.startsWith(purgePrefix)) {
+           delete systemKnowledge.typescript_sections[title]
+        }
+      })
     }
 
     // Upsert the new knowledge into TypeScript-specific namespace
