@@ -3,6 +3,7 @@ beautifulsoup4
 requests
 pytest
 pytest-asyncio
+aioresponses
 filelock
 motor
 pymongo
@@ -12,3 +13,4 @@ python-dotenv
 vercel
 opentelemetry-api
 opentelemetry-sdk
+pyicloud

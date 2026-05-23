@@ -1,21 +1,23 @@
 import json
 import os
-from playwright.sync_api import sync_playwright
+from playwright.async_api import async_playwright
+import asyncio
 from bs4 import BeautifulSoup
 
-def scrape_stitch_docs():
+async def scrape_stitch_docs():
     url = "https://stitch.withgoogle.com/docs/design-md/specification"
     print(f"Fetching {url} using Playwright...")
 
-    with sync_playwright() as p:
-        browser = p.chromium.launch()
-        page = browser.new_page()
-        page.goto(url)
+    async with async_playwright() as p:
+        browser = await p.chromium.launch()
+        page = await browser.new_page()
+        await page.goto(url)
         # Give the outer page time to load and inject the iframes
-        page.wait_for_timeout(5000)
+        await page.wait_for_timeout(5000)
 
         # The main content is inside nested iframes.
         # The ultimate content is at "https://app-companion-430619.appspot.com/docs/design-md/specification/index.html"
+        await page.wait_for_load_state('networkidle')
         target_frame = None
         for frame in page.frames:
             if frame.url.endswith("index.html"):
@@ -23,15 +25,15 @@ def scrape_stitch_docs():
                 break
 
         if target_frame:
-            html = target_frame.content()
+            html = await target_frame.content()
         else:
             print("Could not find the target iframe. Trying to fetch the inner URL directly...")
             inner_url = "https://app-companion-430619.appspot.com/docs/design-md/specification/index.html"
-            page.goto(inner_url)
-            page.wait_for_timeout(5000)
-            html = page.content()
+            await page.goto(inner_url)
+            await page.wait_for_timeout(5000)
+            html = await page.content()
 
-        browser.close()
+        await browser.close()
 
     soup = BeautifulSoup(html, "html.parser")
     article = soup.find("article") or soup.find("main") or soup.find(id="main-content")
@@ -176,4 +178,4 @@ def scrape_stitch_docs():
     print(f"Saved Markdown data to {md_path}")
 
 if __name__ == "__main__":
-    scrape_stitch_docs()
+    asyncio.run(scrape_stitch_docs())

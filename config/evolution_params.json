@@ -1,14 +1,9 @@
 {
-    "system_concurrency": 37,
-    "seo_impact_threshold": 0.261,
+    "system_concurrency": 103,
+    "seo_impact_threshold": 0.112,
     "research_depth": "STANDARD",
     "evolution_rate": 0.05,
-    "current_version": 1.32,
-    "last_evolution": "2026-04-27"
-    "system_concurrency": 53,
-    "seo_impact_threshold": 0.189,
-    "research_depth": "STANDARD",
-    "evolution_rate": 0.05,
-    "current_version": 1.48,
-    "last_evolution": "2026-05-12"
+    "current_version": 1.98,
+    "last_evolution": "2026-05-23",
+    "google_seo_focus": true
 }
