@@ -110,14 +110,13 @@ export class KnowledgeObserver {
     const jsonStore = path.join(this.storageDir, 'system_knowledge.json')
 
     // 1. JSON Persistence (Cross-Ecosystem Merge Logic)
+    // Phase 18: Move to Unified Flat Key Structure
     let systemKnowledge: any = {
       metadata: {
         generated_at: new Date().toISOString(),
         version: 1.0,
         sources_processed: []
-      },
-      sections: {},
-      typescript_sections: {}
+      }
     }
 
     if (fs.existsSync(jsonStore)) {
@@ -128,15 +127,25 @@ export class KnowledgeObserver {
       }
     }
 
-    // Ensure TypeScript sections structure exists
-    if (!systemKnowledge.typescript_sections) {
-      systemKnowledge.typescript_sections = {}
-    }
+    // Heuristic: If title is snake_case, treat as top-level key for flat structure compatibility
+    const isFlatKey = /^[a-z0-9_]+$/.test(knowledge.title)
 
-    // Upsert the new knowledge into TypeScript-specific namespace
-    systemKnowledge.typescript_sections[knowledge.title] = {
-      sections: knowledge.sections,
-      metadata: knowledge.metadata
+    if (isFlatKey) {
+      systemKnowledge[knowledge.title] = {
+        sections: knowledge.sections,
+        metadata: knowledge.metadata
+      }
+    } else {
+      // Ensure TypeScript sections structure exists for descriptive titles
+      if (!systemKnowledge.typescript_sections) {
+        systemKnowledge.typescript_sections = {}
+      }
+
+      // Upsert the new knowledge into TypeScript-specific namespace
+      systemKnowledge.typescript_sections[knowledge.title] = {
+        sections: knowledge.sections,
+        metadata: knowledge.metadata
+      }
     }
 
     // Update global metadata

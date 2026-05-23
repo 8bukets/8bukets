@@ -81,8 +81,8 @@ class KnowledgeAgent(BaseAgent):
                     if line.startswith("- "):
                         # Regex to capture the first few words which usually form the tool name
                         # Stops at known description start markers or after 4 words
-                        # Updated to handle more markers found in the content
-                        match = re.search(r"^- ([\w\s\(\)-]{1,60}?)(?:\s+(?:Secure platform|Create AI|Build hybrid|Build Google-quality|Curated collection|Open-source|An AI|A fully managed|Provides a|Unified|Single|End-to-end|Speech|Language|Custom|Omnichannel)|$)", line)
+                        # Updated to handle more markers found in the content, including joined words from scraping
+                        match = re.search(r"^- ([\w\s\(\)-]{1,60}?)(?:(?:\s+|[A-Z])(?:Secure platform|Create AI|Build hybrid|Build Google-quality|Curated collection|Open-source|An AI|A fully managed|Provides a|Unified|Single|End-to-end|Speech|Language|Custom|Omnichannel)|$)", line)
                         if match:
                             tool_name = match.group(1).strip()
                             if tool_name and len(tool_name.split()) <= 6:

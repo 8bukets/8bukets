@@ -71,7 +71,7 @@ logger = logging.getLogger("SystemOrchestrator")
 async def run_scraper():
     logger.info("Starting Scrapers...")
     try:
-        # Standard Market Scraper
+        # Standard Market Scraper (Python)
         proc = await asyncio.create_subprocess_exec(
             "python3", "scraper.py", "--limit", "1",
             stdout=asyncio.subprocess.PIPE,
@@ -81,6 +81,11 @@ async def run_scraper():
         if proc.returncode != 0:
             logger.error(f"Scraper failed with exit code {proc.returncode}: {stderr.decode()}")
             raise RuntimeError(f"Scraper failed: {stderr.decode()}")
+
+        # Specialized Markposition Ingestion (TypeScript)
+        logger.info("Starting Specialized Markposition Ingestion...")
+        proc_mp = await asyncio.create_subprocess_exec("npx", "tsx", "scripts/ingest_markposition_knowledge.ts")
+        await proc_mp.wait()
 
         # AI Agent Knowledge Scraper (TypeScript)
         proc_ai = await asyncio.create_subprocess_exec("npx", "tsx", "scripts/ingest_ai_agents_knowledge.ts")

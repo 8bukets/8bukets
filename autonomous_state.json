@@ -7,7 +7,7 @@
     "docker": {
         "status": "recovering",
         "containerCount": 0,
-        "timestamp": "2026-05-21T00:05:29.923Z",
+        "timestamp": "2026-05-23T14:40:31.986Z",
         "mode": "native",
         "is_cloud": false
     },
@@ -21,10 +21,10 @@
             "has_stages": true,
             "has_parallel": true
         },
-        "timestamp": "2026-05-21T00:05:29.923Z"
+        "timestamp": "2026-05-23T14:40:31.987Z"
     },
     "intelligence": {
-        "branches": 1906,
+        "branches": 1945,
         "pendingTasks": 0,
         "totalOrders": 0
     },
@@ -37,5 +37,5 @@
         "hostname": "devbox",
         "platform": "linux"
     },
-    "last_sync": "2026-05-21T00:05:37.040Z"
+    "last_sync": "2026-05-23T14:40:31.992Z"
 }
