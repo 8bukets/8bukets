@@ -111,3 +111,6 @@ run-autonomous-global_neural_sync_service_(phase_12):
     - npx tsx antigravity/workflows/global_neural_sync_service_(phase_12)_workflow.ts
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
+
+variables:
+  MACBOOK_CLOUD_SIMULATION: "true"
