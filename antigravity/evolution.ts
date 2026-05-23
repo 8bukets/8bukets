@@ -102,6 +102,26 @@ export async function evolve() {
             suggestion: 'DIRECT_ENV_ACCESS: Use getRuntimeEnv for better cloud-native observability.'
           })
         }
+
+        // Rule 5: Error Handling - Detect async functions without try-catch
+        if (content.includes('async ') && !content.includes('try {') && lines > 20) {
+          suggestions.push({
+             file: fullPath.replace(process.cwd(), ''),
+             complexity: lines,
+             suggestion: 'MISSING_ERROR_HANDLING: Async logic detected without explicit try-catch blocks.'
+          })
+        }
+
+        // Rule 6: Environment - Detect non-dynamic Node.js imports in potentially shared files
+        if (content.includes("from 'os'") || content.includes("from 'fs'") || content.includes("from 'path'")) {
+           if (!content.includes('NEXT_RUNTIME')) {
+              suggestions.push({
+                file: fullPath.replace(process.cwd(), ''),
+                complexity: lines,
+                suggestion: 'UNSAFE_STATIC_IMPORT: Static import of Node.js built-ins. Prefer dynamic async imports for edge compatibility.'
+              })
+           }
+        }
       }
     }
   }
@@ -169,6 +189,26 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
         }
       }
       fs.writeFileSync(fullPath, content)
+    }
+
+    if (s.suggestion.startsWith('MISSING_ERROR_HANDLING')) {
+      console.log(` - Fixing ${s.file}: Adding safety try-catch block`)
+
+      // Safety improvement: Only auto-fix if it's NOT a page/layout file to avoid Next.js directive issues
+      // and only if it's a relatively simple file.
+      const isPageComponent = s.file.includes('page.tsx') || s.file.includes('layout.tsx')
+
+      if (!isPageComponent) {
+        // Heuristic: Wrap the first async function body in a try-catch
+        content = content.replace(/(async function.*?\{)/, "$1\n  try {")
+        const lastBrace = content.lastIndexOf('}')
+        if (lastBrace !== -1) {
+          content = content.slice(0, lastBrace) + "\n  } catch (err) {\n    console.error('[Evolution Autocorrect] Unhandled error:', err);\n  }\n" + content.slice(lastBrace)
+        }
+        fs.writeFileSync(fullPath, content)
+      } else {
+        console.log(` ℹ️ [Evolution] Skipping auto-fix for ${s.file} due to Next.js directive sensitivity. Manual refactor recommended.`)
+      }
     }
     
     // Additional autocorrection logic can be added here

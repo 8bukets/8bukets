@@ -20,7 +20,6 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
   const files = fs.readdirSync(servicesDir)
 
   // Gap Analysis 1: Real-time Notifications
-  // If we have stats and users but no notification logic
   if (!files.some(f => f.includes('notification'))) {
     ideas.push({
       feature: 'Autonomous Notification Service',
@@ -101,7 +100,25 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
-  // Gap Analysis 10: Autonomous Resource Optimization
+  // Gap Analysis 10: Autonomous Discovery Engine
+  if (!files.some(f => f.includes('discovery'))) {
+    ideas.push({
+      feature: 'Autonomous Discovery Engine',
+      rationale: 'Scans external links and references within ingested knowledge base to recursively find new intelligence targets.',
+      complexity: 'Medium'
+    })
+  }
+
+  // Gap Analysis 11: Edge-to-Cloud Bridge
+  if (!files.some(f => f.includes('bridge'))) {
+    ideas.push({
+      feature: 'Edge-to-Cloud Bridge',
+      rationale: 'Facilitates real-time state synchronization between local iCloud-enabled nodes and cloud-based autonomous agents.',
+      complexity: 'High'
+    })
+  }
+
+  // Gap Analysis 12: Autonomous Resource Optimization
   if (!files.some(f => f.includes('resource_optimizer'))) {
     ideas.push({
       feature: 'Autonomous Resource Optimizer',
@@ -110,7 +127,7 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
-  // Gap Analysis 11: Proactive Scalability
+  // Gap Analysis 13: Proactive Scalability
   if (!files.some(f => f.includes('scalability_service'))) {
     ideas.push({
       feature: 'Proactive Scalability Service',
@@ -119,7 +136,7 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
-  // Gap Analysis 12: Cloud Convergence
+  // Gap Analysis 14: Cloud Convergence
   if (!files.some(f => f.includes('cloud_convergence'))) {
     ideas.push({
       feature: 'Cloud Convergence Service',
@@ -128,7 +145,7 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
-  // Gap Analysis 13: Autonomous UX Optimization
+  // Gap Analysis 15: Autonomous UX Optimization
   if (!files.some(f => f.includes('ux_optimization'))) {
     ideas.push({
       feature: 'Autonomous UX Optimization Service',
@@ -137,7 +154,7 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
-  // Gap Analysis 14: Phase 12 Global Neural Synchronization
+  // Gap Analysis 16: Phase 12 Global Neural Synchronization
   if (!files.some(f => f.includes('neural_sync'))) {
     ideas.push({
       feature: 'Global Neural Sync Service (Phase 12)',
@@ -146,7 +163,7 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
-  // Gap Analysis 15: Deep Cognitive Self-Correction
+  // Gap Analysis 17: Deep Cognitive Self-Correction
   if (!files.some(f => f.includes('self_correction'))) {
     ideas.push({
       feature: 'Deep Cognitive Self-Correction Service',
@@ -155,7 +172,7 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
-  // Gap Analysis 16: Horizontal Fleet Orchestration
+  // Gap Analysis 18: Horizontal Fleet Orchestration
   if (!files.some(f => f.includes('fleet_orchestrator'))) {
     ideas.push({
       feature: 'Horizontal Fleet Orchestration Service',
