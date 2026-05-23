@@ -1,14 +1,14 @@
 {
-    "timestamp": "2026-05-23T01:10:57.132Z",
-    "dockerInfo": "Client: Docker Engine - Community\n Version:    29.2.1\n Context:    default\n Debug Mode: false\n Plugins:\n  buildx: Docker Buildx (Docker Inc.)\n    Version:  v0.31.1\n    Path:     /usr/libexec/docker/cli-plugins/docker-buildx\n  compose: Docker Compose (Docker Inc.)\n    Version:  v5.1.0\n    Path:     /usr/libexec/docker/cli-plugins/docker-compose\n\nServer:\n Containers: 0\n  Running: 0\n  Paused: 0\n  Stopped: 0\n Images: 0\n Server Version: 29.2.1\n Storage Driver: overlayfs\n  driver-type: io.containerd.snapshotter.v1\n Logging Driver: json-file\n Cgroup Driver: systemd\n Cgroup Version: 2\n Plugins:\n  Volume: local\n  Network: bridge host ipvlan macvlan null overlay\n  Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog\n CDI spec directories:\n  /etc/cdi\n  /var/run/cdi\n Swarm: inactive\n Runtimes: io.containerd.runc.v2 runc\n Default Runtime: runc\n Init Binary: docker-init\n containerd version: dea7da592f5d1d2b7755e3a161be07f43fad8f75\n runc version: v1.3.4-0-gd6d73eb8\n init version: de40ad0\n Security Options:\n  cgroupns\n Kernel Version: 6.8.0\n Operating System: Ubuntu 24.04.4 LTS\n OSType: linux\n Architecture: x86_64\n CPUs: 4\n Total Memory: 7.773GiB\n Name: devbox\n ID: 7860afb7-6781-4d96-8226-80465d5e8a87\n Docker Root Dir: /var/lib/docker\n Debug Mode: false\n Experimental: false\n Insecure Registries:\n  ::1/128\n  127.0.0.0/8\n Live Restore Enabled: false\n Firewall Backend: iptables\n\n",
+    "timestamp": "2026-05-23T18:44:56.393Z",
+    "dockerInfo": "Client: Docker Engine - Community\n Version:    29.2.1\n Context:    default\n Debug Mode: false\n Plugins:\n  buildx: Docker Buildx (Docker Inc.)\n    Version:  v0.31.1\n    Path:     /usr/libexec/docker/cli-plugins/docker-buildx\n  compose: Docker Compose (Docker Inc.)\n    Version:  v5.1.0\n    Path:     /usr/libexec/docker/cli-plugins/docker-compose\n\nServer:\n Containers: 0\n  Running: 0\n  Paused: 0\n  Stopped: 0\n Images: 1\n Server Version: 29.2.1\n Storage Driver: overlayfs\n  driver-type: io.containerd.snapshotter.v1\n Logging Driver: json-file\n Cgroup Driver: systemd\n Cgroup Version: 2\n Plugins:\n  Volume: local\n  Network: bridge host ipvlan macvlan null overlay\n  Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog\n CDI spec directories:\n  /etc/cdi\n  /var/run/cdi\n Swarm: inactive\n Runtimes: runc io.containerd.runc.v2\n Default Runtime: runc\n Init Binary: docker-init\n containerd version: dea7da592f5d1d2b7755e3a161be07f43fad8f75\n runc version: v1.3.4-0-gd6d73eb8\n init version: de40ad0\n Security Options:\n  cgroupns\n Kernel Version: 6.8.0\n Operating System: Ubuntu 24.04.4 LTS\n OSType: linux\n Architecture: x86_64\n CPUs: 4\n Total Memory: 7.773GiB\n Name: devbox\n ID: 5813e277-bb67-4c9a-9b68-12f34285cb97\n Docker Root Dir: /var/lib/docker\n Debug Mode: false\n Experimental: false\n Insecure Registries:\n  ::1/128\n  127.0.0.0/8\n Live Restore Enabled: false\n Firewall Backend: iptables\n\n",
     "dockerPs": "CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES\n",
     "mission": "Autonomous Evolution",
     "stakeholders": [],
     "docker": {
-        "status": "simulated",
-        "containerCount": 2,
-        "timestamp": "2026-05-23T01:11:07.684Z",
-        "mode": "cloud-adaptive",
+        "status": "recovering",
+        "containerCount": 0,
+        "timestamp": "2026-05-23T18:45:03.600Z",
+        "mode": "native",
         "is_cloud": false
     },
     "jenkins": {
@@ -21,12 +21,12 @@
             "has_stages": true,
             "has_parallel": true
         },
-        "timestamp": "2026-05-23T01:11:07.684Z"
+        "timestamp": "2026-05-23T18:45:03.600Z"
     },
     "intelligence": {
-        "branches": 1979,
-        "pendingTasks": 0,
-        "totalOrders": 0
+        "branches": 2005,
+        "pendingTasks": 4,
+        "totalOrders": 4
     },
     "execution_mode": "local",
     "autonomous_mode": "standard",
@@ -37,5 +37,5 @@
         "hostname": "devbox",
         "platform": "linux"
     },
-    "last_sync": "2026-05-23T01:11:14.114Z"
+    "last_sync": "2026-05-23T18:45:03.606Z"
 }
