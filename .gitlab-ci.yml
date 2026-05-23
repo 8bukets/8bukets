@@ -95,3 +95,11 @@ run-autonomous-cloud_convergence:
     - npx tsx antigravity/workflows/cloud_convergence_workflow.ts
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-autonomous_ux_optimization:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Autonomous UX Optimization Service"
+    - npx tsx antigravity/workflows/autonomous_ux_optimization_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
