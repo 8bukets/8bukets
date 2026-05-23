@@ -82,6 +82,11 @@ pipeline {
                 sh 'npx tsx antigravity/workflows/autonomous_ux_optimization_workflow.ts'
             }
         }
+        stage('Run Autonomous Global Neural Sync Service (Phase 12)') {
+            steps {
+                sh 'npx tsx antigravity/workflows/global_neural_sync_service_(phase_12)_workflow.ts'
+            }
+        }
         stage('Creative Workflow') {
             parallel {
                 stage('Market Analysis') {

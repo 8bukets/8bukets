@@ -493,6 +493,19 @@ export class Jules {
         const knowledge = KnowledgeObserver.processContent(file, content, `local://${file}`)
         await observer.persistKnowledge(knowledge)
       }
+
+      // Phase 12: Scan iCloud Simulation directory
+      const simDir = path.join(incomingDir, 'icloud_sim')
+      if (fs.existsSync(simDir)) {
+        console.log(`☁️ [Jules] Scanning iCloud Simulation for new knowledge: ${simDir}`)
+        const simFiles = fs.readdirSync(simDir).filter(f => f.endsWith('.md'))
+        for (const file of simFiles) {
+          const fullPath = path.join(simDir, file)
+          const content = fs.readFileSync(fullPath, 'utf8')
+          const knowledge = KnowledgeObserver.processContent(file, content, `icloud-sim://${file}`)
+          await observer.persistKnowledge(knowledge)
+        }
+      }
     }
 
     // Phase 12: Scan iCloud for new knowledge

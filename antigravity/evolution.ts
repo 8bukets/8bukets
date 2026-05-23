@@ -16,10 +16,15 @@ export async function evolve() {
   console.log('🧠 [Antigravity Evolution] Commencing cognitive analysis...')
   
   const suggestions: EvolutionMetric[] = []
-  const baseDir = path.join(process.cwd(), 'app')
+  const scanDirs = [
+    path.join(process.cwd(), 'app'),
+    path.join(process.cwd(), 'antigravity/services')
+  ]
 
   // Recursive scan to find "bloated" or unoptimized patterns
   function scan(dir: string) {
+    if (!fs.existsSync(dir)) return
+
     const files = fs.readdirSync(dir)
     for (const file of files) {
       const fullPath = path.join(dir, file)
@@ -29,6 +34,15 @@ export async function evolve() {
         const content = fs.readFileSync(fullPath, 'utf8')
         const lines = content.split('\n').length
         
+        // Rule 7: Phase 12 Compliance (Upgrade Phase 9 references)
+        if (content.includes('Phase 9')) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'PHASE_UPGRADE_REQUIRED: Phase 9 reference detected. System has evolved to Phase 12.'
+          })
+        }
+
         // Example Evolutionary Logic: Detect lack of 'use cache' in large async components
         if (lines > 50 && content.includes('async function') && !content.includes("'use cache'")) {
           suggestions.push({
@@ -88,7 +102,9 @@ export async function evolve() {
     }
   }
 
-  scan(baseDir)
+  for (const dir of scanDirs) {
+    scan(dir)
+  }
 
   console.log('✨ [Evolution Report]: Found', suggestions.length, 'potential optimizations.')
   return suggestions
@@ -130,6 +146,12 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
       console.log(` - Fixing ${s.file}: Adding error handling TODO`)
       // Inject a TODO comment at the start of the first async function found
       content = content.replace(/async function(.*?)\{/, "async function$1{\n  // [Evolution] TODO: Add autonomous error handling (try/catch)")
+      fs.writeFileSync(fullPath, content)
+    }
+
+    if (s.suggestion.startsWith('PHASE_UPGRADE_REQUIRED')) {
+      console.log(` - Fixing ${s.file}: Upgrading Phase 9 to Phase 12`)
+      content = content.replace(/Phase 9/g, 'Phase 12')
       fs.writeFileSync(fullPath, content)
     }
     
