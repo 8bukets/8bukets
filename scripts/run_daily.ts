@@ -10,6 +10,7 @@ async function main() {
   // Ensure we simulate a cloud environment if not explicitly disabled
   if (process.env.MACBOOK_CLOUD_SIMULATION !== 'false') {
     process.env.MACBOOK_CLOUD_SIMULATION = 'true';
+    process.env.AUTONOMOUS_MODE = 'cloud';
   }
 
   // Synchronize with autonomous_state.json
