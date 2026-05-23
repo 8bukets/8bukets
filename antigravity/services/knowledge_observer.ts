@@ -76,15 +76,17 @@ export class KnowledgeObserver {
       // Heuristic: If we hit a markdown header or a strong header candidate,
       // we assume any unclosed PHP block has ended.
       let effectiveHeader = false
-      if (isMarkdownHeader) {
-        effectiveHeader = true
-        inPhpCodeBlock = false // Markdown headers break PHP blocks
-      } else if (!inCodeBlock && isStrongHeaderCandidate) {
-        effectiveHeader = true
-      } else if (inPhpCodeBlock && isStrongHeaderCandidate) {
-        // Strong headers also break PHP blocks (which often lack closing tags in docs)
-        effectiveHeader = true
-        inPhpCodeBlock = false
+      if (!inMarkdownCodeBlock) {
+        if (isMarkdownHeader) {
+          effectiveHeader = true
+          inPhpCodeBlock = false // Markdown headers break PHP blocks
+        } else if (!inCodeBlock && isStrongHeaderCandidate) {
+          effectiveHeader = true
+        } else if (inPhpCodeBlock && isStrongHeaderCandidate) {
+          // Strong headers also break PHP blocks (which often lack closing tags in docs)
+          effectiveHeader = true
+          inPhpCodeBlock = false
+        }
       }
 
       if (effectiveHeader) {
