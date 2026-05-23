@@ -4,12 +4,13 @@ import fs from 'fs'
 import path from 'path'
 import * as cheerio from 'cheerio'
 import puppeteer from 'puppeteer'
+import { GoogleGenerativeAI } from '@google/generative-ai'
 
 /**
  * Scan and Observe Knowledge Service
  * Fetches basic metadata from a target URL and records relationship intelligence.
  */
-export async function observeKnowledge(url: string) {
+export async function observeKnowledge(url: string = 'https://www.investopedia.com/') {
   logAutonomousAction(`🧠 [Knowledge Observer] Scanning ${url} for market intelligence...`, 'info')
 
   try {
@@ -30,7 +31,34 @@ export async function observeKnowledge(url: string) {
 
     const $ = cheerio.load(html)
 
+    // Remove non-informative elements
+    $('header').remove()
+    $('footer').remove()
+    $('nav').remove()
+    $('.skip-to-content').remove()
+    $('a[href^="#"]').remove()
+    $('script').remove()
+    $('style').remove()
+
     const title = $('title').text() || 'No Title Found'
+    const bodyText = $('body').text().replace(/\s+/g, ' ').trim()
+
+    let summary = 'Basic extraction performed.';
+    if (bodyText) {
+        summary = bodyText.substring(0, 500) + '...'; // Fallback summary
+        const geminiKey = process.env.GEMINI_API_KEY;
+        if (geminiKey) {
+            try {
+                const genAI = new GoogleGenerativeAI(geminiKey);
+                const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+                const prompt = `Summarize the following text, focusing on key topics and market intelligence. Provide a concise bulleted summary:\n\n${bodyText.substring(0, 10000)}`;
+                const result = await model.generateContent(prompt);
+                summary = result.response.text();
+            } catch (err) {
+                console.warn('⚠️ [Knowledge Observer] Failed to generate AI summary, using fallback.', err);
+            }
+        }
+    }
 
     logAutonomousAction(`[KNOWLEDGE] Scanned ${url}. Title: ${title}`, 'cognitive')
 
@@ -43,6 +71,8 @@ export async function observeKnowledge(url: string) {
 - **Target**: ${url}
 - **Title**: ${title}
 - **Context**: Ingested and observed external market or technical intelligence from ${url}.
+- **Summary**:
+${summary}
 `
 
     let exists = false;
