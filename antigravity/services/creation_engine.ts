@@ -28,7 +28,10 @@ export class AutonomousCreationEngine {
 
     for (const idea of ideas) {
       // Phase 20: Scale Evolution Complexity (Allow High complexity if system is optimal)
-      const allowedComplexities = systemOptimal ? ['Low', 'Medium', 'High'] : ['Low', 'Medium'];
+      // For full autonomous creation, we permit High complexity in cloud-adaptive modes.
+      const allowedComplexities = (systemOptimal || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
+        ? ['Low', 'Medium', 'High']
+        : ['Low', 'Medium'];
 
       if (allowedComplexities.includes(idea.complexity)) {
         logAutonomousAction(`📝 [CreationEngine] Generating dependency chain for ${idea.complexity}-complexity feature: ${idea.feature}`, 'info');

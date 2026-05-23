@@ -62,6 +62,13 @@ pipeline {
             }
         }
 
+        stage('Test proactive_scalability') {
+            steps {
+                sh 'npm ci'
+                sh 'npx vitest run antigravity/services/proactive_scalability.test.ts'
+            }
+        }
+
         stage('Creative Workflow') {
             parallel {
                 stage('Analyze Market') {
