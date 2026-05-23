@@ -9,6 +9,7 @@ import { KnowledgeObserver } from './knowledge_observer'
  * Fetches basic metadata from a target URL and records relationship intelligence.
  */
 export async function observeKnowledge(url: string) {
+  'use cache'
   console.log(`🧠 [Knowledge Observer] Scanning ${url} for market intelligence...`)
 
   try {
@@ -62,7 +63,7 @@ export async function observeKnowledge(url: string) {
     let shouldAppend = true;
     let existingContent = '';
 
-    if (fs.existsSync(knowledgePath)) {
+    if (await fs.promises.access(knowledgePath).then(() => true).catch(() => false)) {
       existingContent = await fs.promises.readFile(knowledgePath, 'utf8');
       if (existingContent.includes(`- **Target**: ${url}`)) {
         shouldAppend = false;

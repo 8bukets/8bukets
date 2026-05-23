@@ -64,6 +64,9 @@ async function consolidate() {
 
   const uniqueSections = Array.from(headerMap.values())
 
+  // Ensure all headers from scratch are definitely here
+  console.log(` 🧩 Total unique sections: ${uniqueSections.length}`)
+
   const consolidatedKnowledge: Knowledge = {
     title: 'Intelephense Documentation',
     sections: uniqueSections,
@@ -73,25 +76,9 @@ async function consolidate() {
     }
   }
 
-  // 4. Purge redundant entries from the store before persisting
-  const storageDir = path.join(process.cwd(), 'data/knowledge')
-  const jsonStore = path.join(storageDir, 'system_knowledge.json')
-
-  if (fs.existsSync(jsonStore)) {
-    console.log(' 🧹 Purging redundant Intelephense entries...')
-    const systemKnowledge = JSON.parse(fs.readFileSync(jsonStore, 'utf8'))
-    if (systemKnowledge.typescript_sections) {
-      systemKnowledge.typescript_sections = systemKnowledge.typescript_sections.filter((k: any) => {
-        // Keep everything that isn't an Intelephense variant, we'll re-add the consolidated one
-        return !k.title.startsWith('Intelephense') || k.title === 'Intelephense Documentation'
-      })
-      fs.writeFileSync(jsonStore, JSON.stringify(systemKnowledge, null, 2))
-    }
-  }
-
   console.log(' 💾 Persisting consolidated knowledge...')
   const observer = new KnowledgeObserver()
-  await observer.persistKnowledge(consolidatedKnowledge)
+  await observer.persistKnowledge(consolidatedKnowledge, 'Intelephense')
 
   console.log('✅ Consolidation complete.')
 }

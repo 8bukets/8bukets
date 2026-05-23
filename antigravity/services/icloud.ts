@@ -9,6 +9,7 @@ import os from 'os'
  */
 
 export async function syncToICloud() {
+  'use cache'
   console.log('☁️ [iCloud Sync] Initiating autonomous synchronization...')
 
   const sourcePath = process.cwd()

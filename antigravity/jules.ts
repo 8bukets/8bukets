@@ -131,6 +131,16 @@ export class Jules {
 
     let allSections: any[] = []
 
+    // 1. Ingest from local scratch (most complete usually)
+    const fs = await import('fs')
+    const path = await import('path')
+    const localPath = path.join(process.cwd(), 'scratch/intelephense_docs.md')
+    if (fs.existsSync(localPath)) {
+      const localContent = fs.readFileSync(localPath, 'utf8')
+      const localKnowledge = KnowledgeObserver.processContent('Intelephense Documentation', localContent, 'local://intelephense_docs.md')
+      allSections.push(...localKnowledge.sections)
+    }
+
     for (const doc of intelephenseDocs) {
       try {
         const result = await githubDocsObserver.fetchDoc(doc.owner, doc.repo, doc.path)
@@ -146,14 +156,29 @@ export class Jules {
     }
 
     if (allSections.length > 0) {
-      // Deduplicate sections by header
-      const seenHeaders = new Set<string>()
-      const uniqueSections = allSections.filter(s => {
-        if (seenHeaders.has(s.header)) return false
-        if (!s.content && !['Getting Started', 'Features', 'Installation'].includes(s.header)) return false
-        seenHeaders.add(s.header)
-        return true
-      })
+      // Deduplicate sections by header, merging content if necessary
+      const headerMap = new Map<string, { header: string; content: string }>()
+
+      for (const section of allSections) {
+        const existing = headerMap.get(section.header)
+        if (!existing) {
+          if (section.content || ['Getting Started', 'Features', 'Installation'].includes(section.header)) {
+            headerMap.set(section.header, { ...section })
+          }
+        } else {
+          if (section.content && section.content !== existing.content) {
+            if (!existing.content.includes(section.content)) {
+              if (section.content.includes(existing.content)) {
+                existing.content = section.content
+              } else {
+                existing.content += '\n\n' + section.content
+              }
+            }
+          }
+        }
+      }
+
+      const uniqueSections = Array.from(headerMap.values())
 
       const consolidated = {
         title: 'Intelephense Documentation',
@@ -163,7 +188,8 @@ export class Jules {
           ingestedAt: new Date().toISOString()
         }
       }
-      await observer.persistKnowledge(consolidated as any)
+
+      await observer.persistKnowledge(consolidated as any, 'Intelephense')
       console.log(` ✅ [Jules] Consolidated Intelephense Documentation persisted.`)
     }
   }
@@ -196,19 +222,18 @@ export class Jules {
     try {
       await execAsync('git pull --rebase origin main || true')
       await execAsync('git add .')
-      await execAsync('git reset HEAD work_cycle.log data/work_orders.json .jules_memory.json autonomous_state.json || true')
 
       try {
         await execAsync(`git commit -m "${message}"`)
       } catch (commitErr) {
-        console.log('ℹ️ [Jules] No changes to commit or commit failed. Proceeding to push anyway.')
+        console.log('ℹ️ [Jules] No changes to commit.')
       }
 
       await execAsync('git push origin main || true')
       console.log('✅ [Jules] Git sync completed autonomously.')
       await this.recordTask(`Git Sync: Synchronized state with origin.`)
     } catch (err) {
-      console.warn('⚠️ [Jules] Git sync failed unexpectedly:', err)
+      console.warn('⚠️ [Jules] Git sync experienced unexpected issues:', err)
     }
   }
 
@@ -489,6 +514,19 @@ export class Jules {
         const content = await fs.promises.readFile(fullPath, 'utf8')
         const knowledge = KnowledgeObserver.processContent(file, content, `local://${file}`)
         await observer.persistKnowledge(knowledge)
+      }
+
+      // Phase 12: Scan iCloud Simulation directory
+      const simDir = path.join(incomingDir, 'icloud_sim')
+      if (fs.existsSync(simDir)) {
+        console.log(`☁️ [Jules] Scanning iCloud Simulation for new knowledge: ${simDir}`)
+        const simFiles = fs.readdirSync(simDir).filter(f => f.endsWith('.md'))
+        for (const file of simFiles) {
+          const fullPath = path.join(simDir, file)
+          const content = fs.readFileSync(fullPath, 'utf8')
+          const knowledge = KnowledgeObserver.processContent(file, content, `icloud-sim://${file}`)
+          await observer.persistKnowledge(knowledge)
+        }
       }
     }
 

@@ -14,6 +14,7 @@ const JenkinsConfigSchema = z.object({
 });
 
 export async function getJenkinsConfig() {
+  'use cache'
   const url = process.env.JENKINS_URL || 'http://localhost:8080';
   const user = process.env.JENKINS_USER || 'admin';
   const token = process.env.JENKINS_TOKEN || 'token';
