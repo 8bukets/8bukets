@@ -47,6 +47,21 @@ async function executeCreationCycle() {
   const pending = await workOrderService.getPendingOrders();
 
   for (const order of pending) {
+    // Phase 22: Dependency Sovereignty Check
+    const deps = order.dependsOn || [];
+    const unmetDeps = await Promise.all(deps.map(async depId => {
+      const allOrders = await workOrderService.getPendingOrders(); // This is inefficient but safe for CLI
+      // We need a way to get non-pending orders too
+      const currentOrders = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'data/work_orders.json'), 'utf8'));
+      const depOrder = currentOrders.find((o: any) => o.id === depId);
+      return !depOrder || depOrder.status !== 'completed';
+    }));
+
+    if (unmetDeps.includes(true)) {
+      console.log(`⚠️ [CreationCycle] Skipping order ${order.id} (${order.type}) due to unmet dependencies.`);
+      continue;
+    }
+
     // Only process orders we just created or related ones
     await workOrderService.updateOrderStatus(order.id, 'executing');
     try {

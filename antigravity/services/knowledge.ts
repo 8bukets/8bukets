@@ -90,11 +90,21 @@ ${summary}
       if (!content.includes(`- **Target**: ${url}`)) {
         let newContent = content.trim();
 
+
         newContent += relationshipEntry;
+
+        // Ensure signature is at the bottom
+        const signature = 'All the best - https://markposition.wordpress.com';
+        if (newContent.includes(signature)) {
+            newContent = newContent.split(signature).join('').trim() + '\n\n' + signature + '\n';
+        } else {
+            newContent = newContent.trim() + '\n\n' + signature + '\n';
+        }
+
         await fs.promises.writeFile(knowledgePath, newContent, 'utf8')
       }
     } else {
-      await fs.promises.writeFile(knowledgePath, `# Market Intelligence Matrix\n${relationshipEntry}`, 'utf8')
+      await fs.promises.writeFile(knowledgePath, `# Market Intelligence Matrix\n${relationshipEntry}\n\nAll the best - https://markposition.wordpress.com\n`, 'utf8')
     }
 
     logAutonomousAction(`✅ [Knowledge Observer] Appended insights to KNOWLEDGE_MERGE.md.`, 'info')

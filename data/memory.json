@@ -168,16 +168,21 @@
                 "timestamp": "2026-05-23T15:35:02.935962",
                 "event": "episodic_event",
                 "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-23T19:26:57.907634",
+                "event": "episodic_event",
+                "data": "episodic_data"
             }
         ]
     },
     "TargetingAgent": {
+        "last_primary_persona": "AdTech Professional",
         "long_term": {
+            "new_key": "new_val",
             "test_compatibility_persona": "Compatibility Enthusiast",
-            "last_primary_persona": "General Tech Enthusiast",
-            "new_key": "new_val"
-        },
-        "episodic": []
+            "last_primary_persona": "General Tech Enthusiast"
+        }
     },
     "RobotTxtAgent": {
         "long_term": {
@@ -432,11 +437,5 @@
                 }
             }
         ]
-    },
-    "TargetingAgent": {
-        "last_primary_persona": "AdTech Professional",
-        "long_term": {
-            "new_key": "new_val"
-        }
     }
 }

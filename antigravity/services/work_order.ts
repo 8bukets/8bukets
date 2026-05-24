@@ -109,7 +109,7 @@ export class WorkOrderService {
     if (!fs.existsSync(dataDir)) {
       fs.mkdirSync(dataDir, { recursive: true })
     }
-    fs.writeFileSync(STORAGE_PATH, JSON.stringify(this.orders, null, 2))
+    fs.writeFileSync(STORAGE_PATH, JSON.stringify(this.orders, null, 4))
   }
 
   public async createOrder(type: WorkOrder['type'], goal: string, payload: any, dependsOn?: string[]): Promise<WorkOrder> {
