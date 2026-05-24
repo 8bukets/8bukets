@@ -7,3 +7,4 @@ filelock
 motor
 pymongo
 google-generativeai
+google-genai
