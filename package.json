@@ -19,7 +19,8 @@
     "ignite": "npm run daily -- --continuous",
     "build": "npm run build --workspaces --if-present",
     "game-of-logic": "tsx scripts/game_of_logic.ts",
-    "fix:icloud": "bash scripts/fix_icloud_sync.sh"
+    "fix:icloud": "bash scripts/fix_icloud_sync.sh",
+    "monitor:icloud": "tsx scripts/monitor_icloud.ts"
   },
   "dependencies": {
     "@actions/core": "^1.11.1",
