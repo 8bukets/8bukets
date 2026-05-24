@@ -729,7 +729,7 @@ Select a server to view its description, tools, and configuration options.
 Add servers to a profile
 To add a server fro
 
-### Prepare Best Value Of Knowledge Integration
+### prepare best value of knowledge integration
 
 To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.
 
@@ -760,7 +760,7 @@ To compile means to gather information from various sources and arrange it into 
 - **General**: Focuses on the act of assembling information or materials (e.g., compile a report).
 - **Computing**: Focuses on the automatic transformation of code using a tool known as a compiler.
 
-### Prepare Best Value Of Knowledge Integration
+### prepare best value of knowledge integration
 
 To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.
 
@@ -4615,7 +4615,7 @@ Select a server to view its description, tools, and configuration options.
 Add servers to a profile
 To add a server fro
 
-#### Prepare Best Value Of Knowledge Integration
+#### prepare best value of knowledge integration
 To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.
 
 #### Key Definitions of Compile
