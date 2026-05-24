@@ -2,7 +2,7 @@ name: Continuous Autonomous Presence
 
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '*/15 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -30,6 +30,7 @@ jobs:
       - name: Ignite Continuous Autonomous Cycle
         run: npm run ignite
         env:
+          AUTONOMOUS_MODE: cloud
           MACBOOK_CLOUD_SIMULATION: true
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
@@ -45,5 +46,6 @@ jobs:
           git pull --rebase origin main || true
           git push origin main || true
         env:
+          AUTONOMOUS_MODE: cloud
           MACBOOK_CLOUD_SIMULATION: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
