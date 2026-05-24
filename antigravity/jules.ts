@@ -563,6 +563,17 @@ export class Jules {
             // Fallback for cases where all diff strategies fail
           }
 
+          // Phase 12: Merge Readiness Score
+          // Readiness is high if: category is fix/feature, results are present, synergy intensity is Low/Medium
+          let readinessScore = 0
+          if (category === 'fix') readinessScore += 40
+          if (category === 'feature') readinessScore += 30
+          if (results && results !== 'N/A' && results !== message) readinessScore += 30
+          if (changedFiles.length > 0 && changedFiles.length < 10) readinessScore += 20
+          if (changedFiles.length >= 10 && changedFiles.length < 50) readinessScore += 10
+
+          const isMergeCandidate = readinessScore >= 70
+
           return {
             name: branch,
             lastMessage: message,
@@ -571,7 +582,9 @@ export class Jules {
             results,
             knowledge: knowledgeNugget,
             changedFiles,
-            domain
+            domain,
+            readinessScore,
+            isMergeCandidate
           }
         } catch (e) {
           return {

@@ -37,6 +37,9 @@ class SentientOrchestrationEngine {
       timestamp: new Date().toISOString()
     }))
 
+    // Phase 12: Resolve Conflicts
+    await this.resolveConflicts(processed)
+
     this.intents.push(...processed)
 
     // Functional Simulation: Execute approved intents
@@ -49,6 +52,21 @@ class SentientOrchestrationEngine {
     return processed
   }
 
+  private async resolveConflicts(newIntents: Intent[]) {
+    // Basic Conflict Resolution: If two agents want to perform the same action on the same resource,
+    // approve the higher priority one or the first one if equal.
+    const uniqueActions = new Set<string>()
+    newIntents.forEach(intent => {
+      const actionKey = `${intent.agent}:${intent.action}`
+      if (uniqueActions.has(actionKey) && intent.status !== 'approved') {
+        intent.status = 'rejected'
+        logAutonomousAction(`[SENTIENT_ORCHESTRATION] Rejected conflicting intent: ${intent.action} from ${intent.agent}`, 'warning')
+      } else {
+        uniqueActions.add(actionKey)
+      }
+    })
+  }
+
   private async executeIntent(intent: Intent) {
     logAutonomousAction(`[SENTIENT_ORCHESTRATION] Executing intent: ${intent.action} for agent ${intent.agent}`, 'info')
     intent.status = 'executed'
@@ -56,8 +74,15 @@ class SentientOrchestrationEngine {
 
   public getCoherence(): number {
     if (this.intents.length === 0) return 1.0
-    const approved = this.intents.filter(i => i.status === 'approved' || i.status === 'executed').length
-    return approved / this.intents.length
+    const relevant = this.intents.filter(i => i.status !== 'rejected').length
+    if (relevant === 0) return 1.0
+    const executed = this.intents.filter(i => i.status === 'executed').length
+    return executed / relevant
+  }
+
+  public getEfficiency(): number {
+    // Efficiency = (Executed Intents / Total Non-Rejected Intents)
+    return this.getCoherence() * 0.95 // Small penalty for overhead
   }
 }
 

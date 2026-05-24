@@ -88,7 +88,23 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `- **Agent:** \`${presence.agent}\`\n`
   report += `- **Status:** ${presence.status === 'online' ? '🟢 ONLINE' : '🟠 DEGRADED'}\n`
   report += `- **Latency:** Mongo: ${presence.telemetry.databases.mongodb} | Supabase: ${presence.telemetry.databases.supabase}\n`
-  report += `- **Uptime:** ${(presence.telemetry.uptime / 3600).toFixed(2)} hours\n\n`
+  report += `- **Uptime:** ${(presence.telemetry.uptime / 3600).toFixed(2)} hours\n`
+  report += `- **Orchestration Efficiency:** ${(orchestrationEngine.getEfficiency() * 100).toFixed(1)}%\n\n`
+
+  report += `### 🌐 Ecosystem Topology\n`
+  report += `\`\`\`text\n`
+  report += `       [Cloud Origin]\n`
+  report += `             |\n`
+  report += `      _______|_______\n`
+  report += `     |               |\n`
+  report += `[Primary Node]  [Relay Alpha]\n`
+  report += `     |               |\n`
+  report += ` [Data Store]    [Edge Mesh]\n`
+  report += `\`\`\`\n\n`
+
+  const { generateSyncReport } = await import('./global_neural_sync_service_(phase_12)')
+  report += await generateSyncReport()
+  report += '\n'
 
   report += `## 🤝 Merged Ecosystem Insights\n`
   report += `Synergy achieved across ${branches.length} branches. Detailed knowledge and results consolidated from specialized agents.\n\n`
@@ -195,11 +211,13 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
     report += `*No autonomous knowledge ingested yet.*\n\n`
   }
 
-  report += `## 🏆 Results Summary\n`
+  report += `## 🏆 Results Summary & Merge Readiness\n`
   const resultBranches = branches.filter(b => b.results && b.results !== 'N/A' && b.results !== b.lastMessage).slice(0, 5)
   if (resultBranches.length > 0) {
     resultBranches.forEach(b => {
-      report += `- **${b.name}**: ${b.results}\n`
+      const readinessEmoji = b.isMergeCandidate ? '✅' : '⏳'
+      report += `- **${b.name}** [Readiness: ${b.readinessScore}%] ${readinessEmoji}\n`
+      report += `  - *Result:* ${b.results}\n`
     })
   } else {
     report += `- No explicit results extracted from recent history.\n`
