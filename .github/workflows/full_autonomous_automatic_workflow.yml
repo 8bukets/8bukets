@@ -29,6 +29,7 @@ jobs:
       - name: Execute Full Autonomous Creation Cycle
         run: npx tsx scripts/execute_creation_cycle.ts
         env:
+          AUTONOMOUS_MODE: cloud
           MACBOOK_CLOUD_SIMULATION: true
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
