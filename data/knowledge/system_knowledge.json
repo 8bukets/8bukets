@@ -5220,6 +5220,19 @@
         "source": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en",
         "ingestedAt": "2026-05-23T05:25:01.577Z"
       }
+    },
+    {
+      "title": "Admin",
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": ""
+        }
+      ],
+      "metadata": {
+        "source": "https://e15e881b-2d8b-49da-9306-e8aaf84eef37.boundary.hashicorp.cloud",
+        "ingestedAt": "2026-05-24T10:58:41.999Z"
+      }
     }
   ],
   "nomad": {
