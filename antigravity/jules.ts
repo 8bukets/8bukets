@@ -100,6 +100,10 @@ export class Jules {
     await this.observeGithubDocs()
 
     const tasks = [
+      { name: 'Online Presence Broadcast', action: async () => {
+          const { onlinePresenceService } = await import('./services/presence')
+          await onlinePresenceService.broadcastTelemetry()
+      }},
       { name: 'Consolidated Knowledge Observation', action: () => this.observeKnowledge() },
       { name: 'Core Integrity Check', action: async () => await this.recordTask('Integrity scan passed.') },
       { name: 'Security Sovereignty Audit', action: async () => await this.recordTask('Cognitive security scan complete.') },
@@ -314,6 +318,11 @@ export class Jules {
     const { creationEngine } = await import('./services/creation_engine')
 
     await explore()
+
+    // Phase 12: Online Presence Pulse
+    const { onlinePresenceService } = await import('./services/presence')
+    await onlinePresenceService.broadcastTelemetry()
+
     await this.observeKnowledge()
     await this.observeGithubDocs()
 
@@ -501,9 +510,9 @@ export class Jules {
           const resultMatch = message.match(/(?:results|fixes|implements|adds|integrates|updates|optimizes):\s*(.*)/i)
           const results = resultMatch ? resultMatch[1].trim() : (message.includes(':') ? message.split(':')[1].trim() : message)
 
-          const knowledgeNugget = message.toLowerCase().match(/(?:learn|observe|ingest|knowledge):\s*(.*)/i)
+          const knowledgeNugget = message.toLowerCase().match(/(?:learn|observe|ingest|knowledge|research|result):\s*(.*)/i)
             ? `Branch ${branch} observed: ${results}`
-            : (message.toLowerCase().includes('learn') || message.toLowerCase().includes('observe') ? `Branch ${branch} observed: ${results}` : undefined)
+            : (['learn', 'observe', 'research', 'fix', 'implement', 'add'].some(word => message.toLowerCase().includes(word)) ? `Branch ${branch} observed: ${results}` : undefined)
 
           // Phase 12: Advanced Branch Analysis (File Changes & Domain Mapping)
           let changedFiles: string[] = []
