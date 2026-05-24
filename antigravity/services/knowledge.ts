@@ -3,8 +3,11 @@ import { logAutonomousAction } from '../core'
 import fs from 'fs'
 import path from 'path'
 import * as cheerio from 'cheerio'
-import puppeteer from 'puppeteer'
+import puppeteer from 'puppeteer-extra'
+import StealthPlugin from 'puppeteer-extra-plugin-stealth'
 import { GoogleGenerativeAI } from '@google/generative-ai'
+
+puppeteer.use(StealthPlugin())
 
 /**
  * Scan and Observe Knowledge Service
@@ -21,7 +24,8 @@ export async function observeKnowledge(url: string = 'https://www.investopedia.c
         args: ['--no-sandbox', '--disable-setuid-sandbox']
       });
       const page = await browser.newPage();
-      await page.goto(url, { waitUntil: 'networkidle2' });
+      await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36');
+      await page.goto(url, { waitUntil: 'domcontentloaded' });
       html = await page.content();
       await browser.close();
     } else {
