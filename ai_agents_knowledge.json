@@ -118,5 +118,9 @@
     "google-cloud-and-ai-agents": {
         "title": "Google Cloud and AI agents",
         "content": "Google Cloud provides a portfolio of products and solutions in the AI agent space. These include integrated AI assistants, pre-built AI agents, AI applications, and a platform of agent and developer tools to build custom AI agents.\n\n- Gemini Enterprise AppSecure platform to discover, create, run, and govern AI agents across your organization.\n- Gemini Enterprise Agent PlatformCreate AI agents and applications using natural language or a code-first approach. Easily ground your agents or apps in enterprise data with a range of options.\n- Customer Experience Agent StudioBuild hybrid conversational agents with both deterministic and generative AI functionality.\n- Agent GardenCurated collection of pre-built agent samples, solutions, tools, and frameworks to accelerate the development and deployment of AI agents.\n- Agent Development Kit (ADK)Open-source Python SDK to build sophisticated multi-agent systems with orchestration, memory, and developer tools.\n- A2A ProtocolAn open-source framework originally developed by Google to help build AI agents. An AI agent built with A2A Protocol will be interoperable with any service, platform, or infrastructure.\n- Cloud RunA fully managed serverless platform that allows you to deploy containerized agents and applications, providing auto-scaling and pay-per-use efficiency."
+    },
+    "react-agent-deployment-logic": {
+        "title": "React Agent Deployment Logic",
+        "content": "Deploying React Agents involves ensuring proper scaling logic and CI/CD workflow run optimization. Key steps include verifying logic to deploy react agents and ensuring workflow runs are improved."
     }
 }
