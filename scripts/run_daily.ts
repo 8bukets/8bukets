@@ -7,6 +7,17 @@ async function main() {
   const args = process.argv.slice(2);
   const isContinuous = args.includes('--continuous');
 
+  // Attempt to fix iCloud Sync before proceeding
+  console.log('☁️  Ensuring iCloud Sync is fluid before cycle starts...');
+  const { exec } = await import('child_process');
+  const { promisify } = await import('util');
+  const execAsync = promisify(exec);
+  try {
+    await execAsync('bash scripts/fix_icloud_sync.sh');
+  } catch (e: any) {
+    console.warn('⚠️  Could not fix iCloud sync proactively:', e.message);
+  }
+
   // Ensure we simulate a cloud environment if not explicitly disabled
   if (process.env.MACBOOK_CLOUD_SIMULATION !== 'false') {
     process.env.MACBOOK_CLOUD_SIMULATION = 'true';
