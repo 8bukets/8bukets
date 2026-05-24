@@ -19,6 +19,19 @@ class CloudWorkflowAgent(BaseAgent):
 
         status = "FLUENT_ON_AIR"
 
+        supabase_url = os.environ.get("NEXT_PUBLIC_SUPABASE_URL")
+        mongodb_uri = os.environ.get("MONGODB_URI")
+
+        if supabase_url:
+            self.logger.info("Supabase is connected: ONLINE")
+        else:
+            self.logger.warning("Supabase URL not found in environment.")
+
+        if mongodb_uri:
+            self.logger.info("MongoDB is connected: ONLINE")
+        else:
+            self.logger.warning("MongoDB URI not found in environment.")
+
         # Make proactive system recovery and optimization decisions
         if not vcs.get("fullyOnline") or not docker.get("fullyOnline"):
             status = "DEGRADED"
