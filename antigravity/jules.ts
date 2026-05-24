@@ -467,6 +467,10 @@ export class Jules {
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
 
     try {
+      // Phase 12: Global Neural Sync (Phase 12 Convergence)
+      const { globalNeuralSync } = await import('./services/global_neural_sync_service_phase_12')
+      await globalNeuralSync.convergeState()
+
       // Phase 17: Resolve State Conflicts early in the cycle
       const { cloudConvergence } = await import('./services/cloud_convergence')
       await cloudConvergence.resolveConflicts()
