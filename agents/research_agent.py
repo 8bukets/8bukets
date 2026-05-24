@@ -13,10 +13,20 @@ class ResearchAgent(BaseAgent):
 
         if memory and 'oracle_ai_knowledge' in memory:
             oracle_ai_knowledge = memory['oracle_ai_knowledge']
-            sections = oracle_ai_knowledge.get('sections', [])
-            for section in sections:
-                if 'content' in section and 'AI' in section['content']:
-                    findings.append(section['content'])
+
+            # Extract from key_points
+            for point in oracle_ai_knowledge.get('key_points', []):
+                if isinstance(point, str) and 'AI' in point:
+                    findings.append(point)
+
+            # Extract from features
+            for feature in oracle_ai_knowledge.get('features', []):
+                if isinstance(feature, dict):
+                    for k, v in feature.items():
+                        if isinstance(v, str) and 'AI' in v:
+                            findings.append(v)
+                        elif isinstance(k, str) and 'AI' in k:
+                            findings.append(f"{k}: {v}")
 
         for item in data:
             title = item.get('title', '')
