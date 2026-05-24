@@ -4,7 +4,7 @@ import path from 'path'
 import { z } from 'zod'
 import { autonomousFetch, getMongoClient } from '@/antigravity/core'
 import { checkDockerHealth } from './docker'
-import { checkJenkinsHealth, triggerJenkinsPipeline } from './jenkins'
+import { checkJenkinsHealth } from './jenkins'
 
 /**
  * ANTIGRAVITY COLLABORATION SERVICE (Phase 9)
@@ -78,18 +78,6 @@ export async function exportEcosystemMetadata() {
     ...metadata,
     systemId: 'antigravity-alpha-01',
     timestamp: new Date().toISOString()
-  }
-}
-
-export async function triggerEcosystemCollaboration() {
-  logAutonomousAction('🚀 [Collaboration] Triggering ecosystem collaboration pipeline...', 'info')
-  try {
-    const jenkinsResult = await triggerJenkinsPipeline()
-    logAutonomousAction(`✅ [Collaboration] Jenkins pipeline triggered: ${JSON.stringify(jenkinsResult)}`, 'info')
-    return jenkinsResult
-  } catch (error: any) {
-    console.error('❌ [Collaboration] Failed to trigger Jenkins pipeline:', error.message)
-    throw error
   }
 }
 

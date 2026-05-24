@@ -102,7 +102,7 @@ export class KnowledgeObserver {
   /**
    * persistKnowledge: Merges and saves knowledge to the unified system store.
    */
-  public async persistKnowledge(knowledge: Knowledge, purgePrefix?: string) {
+  public async persistKnowledge(knowledge: Knowledge) {
     if (!fs.existsSync(this.storageDir)) {
       fs.mkdirSync(this.storageDir, { recursive: true })
     }
@@ -110,13 +110,14 @@ export class KnowledgeObserver {
     const jsonStore = path.join(this.storageDir, 'system_knowledge.json')
 
     // 1. JSON Persistence (Cross-Ecosystem Merge Logic)
-    // Phase 18: Move to Unified Flat Key Structure
     let systemKnowledge: any = {
       metadata: {
         generated_at: new Date().toISOString(),
         version: 1.0,
         sources_processed: []
-      }
+      },
+      sections: {},
+      typescript_sections: {}
     }
 
     if (fs.existsSync(jsonStore)) {
@@ -127,17 +128,19 @@ export class KnowledgeObserver {
       }
     }
 
-    // Heuristic: If title is snake_case, treat as top-level key for flat structure compatibility
-    const isFlatKey = /^[a-z0-9_]+$/.test(knowledge.title)
-
-    // Phase 12: Purge redundant entries if prefix provided
-    if (purgePrefix && systemKnowledge.typescript_sections) {
-      Object.keys(systemKnowledge.typescript_sections).forEach(title => {
-        if (title.startsWith(purgePrefix)) {
-           delete systemKnowledge.typescript_sections[title]
-        }
-      })
-    }
+    // Explicit Flat Key Whitelist to ensure ecosystem compatibility
+    const FLAT_KEYS = [
+      'ai_agents',
+      'market_data',
+      'legal_ecosystem',
+      'gemma_model',
+      'intelephense',
+      'litert',
+      'stitch',
+      'vscode_intelephense',
+      'google_ads'
+    ]
+    const isFlatKey = FLAT_KEYS.includes(knowledge.title)
 
     if (isFlatKey) {
       systemKnowledge[knowledge.title] = {
@@ -145,12 +148,12 @@ export class KnowledgeObserver {
         metadata: knowledge.metadata
       }
     } else {
-      // Ensure TypeScript sections structure exists for descriptive titles
+      // For descriptive titles, we still use the typescript_sections namespace
+      // to avoid polluting the top-level flat key space.
       if (!systemKnowledge.typescript_sections) {
         systemKnowledge.typescript_sections = {}
       }
 
-      // Upsert the new knowledge into TypeScript-specific namespace
       systemKnowledge.typescript_sections[knowledge.title] = {
         sections: knowledge.sections,
         metadata: knowledge.metadata

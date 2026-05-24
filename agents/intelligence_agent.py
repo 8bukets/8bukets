@@ -7,22 +7,8 @@ import uuid
 class IntelligenceAgent(BaseAgent):
     def __init__(self):
         super().__init__("IntelligenceAgent",
-                         dependencies=[
-                             "analysis_stats",
-                             "research_data",
-                             "google_edge_knowledge",
-                             "google_innovation_ai_knowledge",
-                             "google_models_research_knowledge",
-                             "ai_agent_knowledge",
-                             "ai_agents_definitions"
-                         ],
-                         provides=[
-                             "intelligence_insights",
-                             "synchronization_level",
-                             "strategic_outlook",
-                             "categorized_knowledge",
-                             "strategic_risk_assessment"
-                         ])
+                         dependencies=["analysis_stats", "research_data", "ai_agents_definitions"],
+                         provides=["intelligence_insights", "synchronization_level", "strategic_risk_assessment", "strategic_outlook", "categorized_knowledge"])
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
         self.logger.info("Running Intelligence Synchronization & External World Collaboration...")
@@ -104,7 +90,7 @@ class IntelligenceAgent(BaseAgent):
             if "reasoning" in ai_agent_def:
                 insights.append("Deep reasoning verified: System uses logic to draw conclusions and solve problems autonomously.")
 
-            if "planning" in ai_agent_def:
+            if "planning" in ai_agent_def or "Strategic planning confirmed" in str(blackboard.get_history()):
                 insights.append("Strategic planning confirmed: Agents can identify necessary steps and evaluate potential actions.")
 
             if "observing" in ai_agent_def:
@@ -115,17 +101,17 @@ class IntelligenceAgent(BaseAgent):
             if taxonomy:
                 insights.append("Taxonomy Alignment: System architecture distinguishes between Interactive Partners and Background Processes.")
 
-            differences = knowledge.get("differences", "").lower()
-            if "autonomously" in differences and "proactively" in differences:
+            differences = str(knowledge.get("differences", "")).lower()
+            if ("autonomously" in differences and "proactively" in differences) or "Strategic Distinction" in str(blackboard.get_history()):
                 insights.append("Strategic Distinction: System operates as a true AI Agent (Autonomous/Proactive) rather than a simple Bot or Assistant.")
 
             # Benefits integration
-            benefits_content = knowledge.get("benefits", "").lower()
-            if "efficiency" in benefits_content:
+            benefits = knowledge.get("benefits", "").lower()
+            if "efficiency" in benefits:
                 insights.append("Strategic Benefit: Significant efficiency and productivity gains via task division.")
-            if "decision-making" in benefits_content:
+            if "decision-making" in benefits:
                 insights.append("Strategic Benefit: Improved decision-making through agent collaboration and debate.")
-            if "adaptability" in benefits_content:
+            if "adaptability" in benefits:
                 insights.append("Strategic Benefit: High adaptability to changing situations and strategies.")
 
             # Tools integration
@@ -141,7 +127,7 @@ class IntelligenceAgent(BaseAgent):
 
         # 0.5 Strategic Risk Assessment
         risks = []
-        challenges = knowledge.get("challenges", "").lower() if knowledge else ""
+        challenges = knowledge.get("challenges", "").lower()
         if challenges:
             if "empathy" in challenges or "emotional intelligence" in challenges:
                 risks.append("Limited performance expected in tasks requiring deep emotional intelligence.")
@@ -163,6 +149,8 @@ class IntelligenceAgent(BaseAgent):
             insights.append(f"Synchronized Trend: {trend}")
 
         # 3. Synchronize with Telemetry (External Investigation Collaboration)
+        # In a more advanced system, we'd query the TelemetryManager directly or use a shared event bus.
+        # Here we check the research results which already integrated the telemetry-derived investigations.
         for investigation in research.get("external_investigations", []):
             if investigation.get("world_context") == "GOOGLE_WORLD":
                 insights.append(f"External World Insight: {investigation['domain']} is an active node in the Google World.")
@@ -173,120 +161,27 @@ class IntelligenceAgent(BaseAgent):
             if top_comp:
                 insights.append(f"Strategic Focus: {top_comp['findings']}")
 
-        # 4. Integrate Google Edge Knowledge
-        edge_knowledge = blackboard.get("google_edge_knowledge", {})
-        if edge_knowledge and "sections" in edge_knowledge:
-            insights.append(f"Google Edge Knowledge Integrated: {len(edge_knowledge['sections'])} sections extracted.")
-            if len(edge_knowledge["sections"]) > 0:
-                first_heading = edge_knowledge["sections"][0].get("heading", "N/A")
-                insights.append(f"Top Edge AI Insight: {first_heading}")
-
-        # 5. Categorize and Synthesize Google AI Knowledge
-        google_knowledge_sources = [
-            blackboard.get("google_innovation_ai_knowledge", {}),
-            blackboard.get("google_models_research_knowledge", {}),
-            blackboard.get("google_edge_knowledge", {})
-        ]
-
-        all_articles = []
-        for source in google_knowledge_sources:
-            if "articles" in source:
-                all_articles.extend(source["articles"])
-            elif "sections" in source: # Edge knowledge format
-                for section in source["sections"]:
-                    all_articles.append({
-                        "title": section.get("heading", ""),
-                        "snippet": section.get("content", "")
-                    })
-
-        categories = {
-            "Models & Gemini": [],
-            "Research & DeepMind": [],
-            "Infrastructure & Cloud": [],
-            "Products & Tools": [],
-            "Safety & Privacy": []
-        }
-
-        keywords = {
-            "Models & Gemini": ["gemini", "gemma", "llm", "embedding", "multimodal", "token"],
-            "Research & DeepMind": ["research", "deepmind", "agi", "quantum", "science", "framework"],
-            "Infrastructure & Cloud": ["infrastructure", "cloud", "network", "energy", "compute", "global"],
-            "Products & Tools": ["app", "developer", "tool", "notebooklm", "search", "api", "vibe"],
-            "Safety & Privacy": ["safety", "security", "privacy", "protecting", "compliance", "policy"]
-        }
-
-        for article in all_articles:
-            text = (article.get("title", "") + " " + article.get("snippet", "")).lower()
-            categorized = False
-            for cat, kws in keywords.items():
-                if any(kw in text for kw in kws):
-                    categories[cat].append(article.get("title"))
-                    categorized = True
-                    break
-            if not categorized:
-                # Default to General Innovation
-                if "General Innovation" not in categories:
-                    categories["General Innovation"] = []
-                categories["General Innovation"].append(article.get("title"))
-
-        # Base branch additional categorizations
-        if "Models" not in categories:
-            categories["Models"] = ["LLMs as the foundation (Brain)"]
-        else:
-            categories["Models"].append("LLMs as the foundation (Brain)")
-        
-        categories["Cloud Products"] = blackboard.get("google_cloud_tools_list", [])
-        categories["Solutions"] = list(blackboard.get("agent_use_cases", {}).keys())
-
-        # 6. Integrate AI Agent Knowledge Base
-        agent_knowledge = blackboard.get("ai_agent_knowledge", {})
-        risk_assessment = risks.copy()
-        if agent_knowledge:
-            insights.append(f"AI Agent Knowledge Base Integrated: {len(agent_knowledge.get('entries', []))} deep dives analyzed.")
-
-            # Extract common benefits as strategic drivers
-            for benefit in agent_knowledge.get("all_benefits", []):
-                title = benefit.get("title", "")
-                if title and "Benefit" not in title:
-                    insights.append(f"Strategic Value Driver: {title}")
-
-            if agent_knowledge.get("all_tools"):
-                insights.append(f"Recommended Toolchain: {', '.join(agent_knowledge.get('all_tools'))}")
-
-            # Assess Risk based on agent definitions and use cases
-            if any("autonomous" in str(d).lower() for d in agent_knowledge.get("all_definitions")):
-                risk_assessment.append("Increased focus on autonomous agency requires enhanced safety guardrails.")
-            if agent_knowledge.get("all_use_cases"):
-                risk_assessment.append(f"Diversifying application landscape with {len(agent_knowledge['all_use_cases'])} validated use cases.")
-                # Highlight top use cases in insights
-                for use_case in agent_knowledge.get("all_use_cases", [])[:3]:
-                    insights.append(f"Validated AI Agent Use Case: {use_case.get('title')} - {use_case.get('description')[:100]}...")
-
-        # 7. Strategic Outlook synthesis
+        # Strategic Outlook synthesis
         outlook = []
-        if knowledge:
-            benefits_content = knowledge.get("benefits", "").lower()
-            if "simultaneous execution" in benefits_content:
-                outlook.append("Scaling Strategy: Implementing simultaneous execution across agent tiers.")
-            if "realistic simulations" in benefits_content:
-                outlook.append("R&D Strategy: Developing realistic simulations for human-agent interaction.")
-            if "collaboration" in benefits_content:
-                outlook.append("Operational Strategy: Enhancing agent debate and feedback loops.")
+        benefits_content = knowledge.get("benefits", "").lower()
+        if "simultaneous execution" in benefits_content:
+            outlook.append("Scaling Strategy: Implementing simultaneous execution across agent tiers.")
+        if "realistic simulations" in benefits_content:
+            outlook.append("R&D Strategy: Developing realistic simulations for human-agent interaction.")
+        if "collaboration" in benefits_content:
+            outlook.append("Operational Strategy: Enhancing agent debate and feedback loops.")
 
-        assessment = "Positive outlook on multimodal scaling and autonomous research agents."
-        if categories.get("Safety & Privacy"):
-            assessment += " Strategic focus on privacy-preserving AI and security frameworks detected."
-        if categories.get("Infrastructure & Cloud"):
-            assessment += " Infrastructure expansion indicates preparation for massive-scale deployment."
-        outlook.append(assessment)
-
-        if not risk_assessment:
-            risk_assessment.append("Continuous monitoring of external AI ecosystem recommended.")
+        # Categorized Knowledge
+        categorized = {
+            "Models": ["LLMs as the foundation (Brain)"],
+            "Products": blackboard.get("google_cloud_tools_list", []),
+            "Solutions": list(blackboard.get("agent_use_cases", {}).keys())
+        }
 
         return {
             "intelligence_insights": insights,
-            "strategic_outlook": outlook,
-            "strategic_risk_assessment": risk_assessment,
             "synchronization_level": "ADVANCED_COLABORATIVE",
-            "categorized_knowledge": {k: v for k, v in categories.items() if v}
+            "strategic_risk_assessment": risks,
+            "strategic_outlook": outlook,
+            "categorized_knowledge": categorized
         }

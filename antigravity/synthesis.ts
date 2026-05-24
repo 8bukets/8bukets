@@ -102,50 +102,5 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
-  // Gap Analysis 10: System Health Dashboard
-  if (!files.some(f => f.includes('system_health_dashboard'))) {
-    ideas.push({
-      feature: 'System Health Dashboard Service',
-      rationale: 'Provides a real-time visual overview of system health and agent status.',
-      complexity: 'Medium'
-    })
-  }
-
-  // Gap Analysis 11: Sentient Orchestration Service
-  if (!files.some(f => f.includes('sentient_orchestration'))) {
-    ideas.push({
-      feature: 'Sentient Orchestration Service',
-      rationale: 'Provides functional multi-agent intent coordination logic using Zod schemas.',
-      complexity: 'High'
-    })
-  }
-
-  // Gap Analysis 12: Cloud Convergence Service
-  if (!files.some(f => f.includes('cloud_convergence'))) {
-    ideas.push({
-      feature: 'Cloud Convergence Service',
-      rationale: 'Synchronizes autonomous state across the multi-cloud ecosystem (MongoDB, Supabase, GitHub).',
-      complexity: 'Medium'
-    })
-  }
-
-  // Gap Analysis 13: Autonomous UX Optimization Service
-  if (!files.some(f => f.includes('ux_optimization'))) {
-    ideas.push({
-      feature: 'Autonomous UX Optimization Service',
-      rationale: 'Analyzes user interaction patterns to propose real-time interface improvements.',
-      complexity: 'Medium'
-    })
-  }
-
-  // Gap Analysis 14: Global Neural Sync Service (Phase 12)
-  if (!files.some(f => f.includes('global_neural_sync'))) {
-    ideas.push({
-      feature: 'Global Neural Sync Service (Phase 12)',
-      rationale: 'Synchronizes neural weights and cognitive state across distributed system nodes.',
-      complexity: 'High'
-    })
-  }
-
   return ideas
 }

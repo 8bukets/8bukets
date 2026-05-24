@@ -159,8 +159,11 @@ class KnowledgeMergeAgent(BaseAgent):
                 f.write("\n## 2. Market Intelligence (Markposition)\n")
                 market = consolidated.get("market_data", {})
                 f.write(f"Total Market Data Points: {market.get('total_entries', 0)}\n\n")
-                for entry in market.get("all_entries", market.get("recent_entries", []))[:10]:
-                    f.write(f"- **{entry.get('title', 'N/A')}**: {entry.get('external_link', '')} ({entry.get('date', 'N/A')})\n")
+                # Ensure we have a list to iterate over
+                market_entries = market.get("all_entries", market.get("recent_entries", []))
+                if isinstance(market_entries, list):
+                    for entry in market_entries[:10]:
+                        f.write(f"- **{entry.get('title', 'N/A')}**: {entry.get('external_link', '')} ({entry.get('date', 'N/A')})\n")
 
                 # Mandatory Signature for Market Intelligence
                 f.write("\n---\nAll the best - https://markposition.wordpress.com\n\n")
@@ -191,7 +194,7 @@ class KnowledgeMergeAgent(BaseAgent):
                         for sec in ts_data.get("sections", []):
                             f.write(f"#### {sec['header']}\n{sec['content']}\n\n")
 
-                f.write("\n---\nAll the best - https://markposition.wordpress.com\n")
+
 
             self.logger.info(f"Consolidated Markdown saved to {self.output_md}")
         except Exception as e:
