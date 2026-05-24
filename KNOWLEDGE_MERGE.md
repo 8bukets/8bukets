@@ -10489,3 +10489,9 @@ vault-namespace=<namespace>: The Vault namespace used for the integration. Requi
 vault-tls-skip-verify: A boolean that determines whether to skip SSL certificate verification.
 
 vault-tls-server-name=<name>: Used to set the SNI host when connecting to Vault over TLS.
+
+## Autonomous Observation
+- **Date**: 2026-05-24T08:52:52.424Z
+- **Target**: https://github.com/hashicorp/web-unified-docs/blob/main/content/hcp-docs/content/docs/hcp/index.mdx
+- **Title**: web-unified-docs/content/hcp-docs/content/docs/hcp/index.mdx at main · hashicorp/web-unified-docs · GitHub
+- **Relationship Map**: Confirmed relationship with https://github.com/hashicorp/web-unified-docs/blob/main/content/hcp-docs/content/docs/hcp/index.mdx (Title: web-unified-docs/content/hcp-docs/content/docs/hcp/index.mdx at main · hashicorp/web-unified-docs · GitHub) as an intelligence source. Extracted key topics: Navigation Menu, Search code, repositories, users, issues, pull requests..., Provide feedback... (Content Length: 11238 chars)

@@ -1,6 +1,6 @@
 # ANTIGRAVITY AI AGENTS KNOWLEDGE BASE
 
-*Last Updated: 2026-05-23T06:39:53.068Z*
+*Last Updated: 2026-05-24T08:58:14.823Z*
 
 ## DOCUMENT: software info by fk – software-online-review – Filip Keser
 **Source:** https://software-online-review.com
@@ -17919,5 +17919,204 @@ Last updated 2026-04-25 UTC.
 - 中文 – 简体
 - 日本語
 - 한국어
+
+---
+
+## DOCUMENT: web-unified-docs/content/hcp-docs/content/docs/hcp/index.mdx at main · hashicorp/web-unified-docs · GitHub
+**Source:** https://github.com/hashicorp/web-unified-docs/blob/main/content/hcp-docs/content/docs/hcp/index.mdx
+**Ingested At:** 2026-05-24T08:58:14.781Z
+
+### Introduction
+
+
+### Navigation Menu
+- [Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fhashicorp%2Fweb-unified-docs%2Fblob%2Fmain%2Fcontent%2Fhcp-docs%2Fcontent%2Fdocs%2Fhcp%2Findex.mdx)
+- [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+- [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+- [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+- [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+- [ActionsAutomate any workflow](https://github.com/features/actions)
+- [CodespacesInstant dev environments](https://github.com/features/codespaces)
+- [IssuesPlan and track work](https://github.com/features/issues)
+- [Code ReviewManage code changes](https://github.com/features/code-review)
+- [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+- [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+- [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+- [Why GitHub](https://github.com/why-github)
+- [Documentation](https://docs.github.com)
+- [Blog](https://github.blog)
+- [Changelog](https://github.blog/changelog)
+- [Marketplace](https://github.com/marketplace)
+- [View all features](https://github.com/features)
+- [Enterprises](https://github.com/enterprise)
+- [Small and medium teams](https://github.com/team)
+- [Startups](https://github.com/enterprise/startups)
+- [Nonprofits](https://github.com/solutions/industry/nonprofits)
+- [App Modernization](https://github.com/solutions/use-case/app-modernization)
+- [DevSecOps](https://github.com/solutions/use-case/devsecops)
+- [DevOps](https://github.com/solutions/use-case/devops)
+- [CI/CD](https://github.com/solutions/use-case/ci-cd)
+- [View all use cases](https://github.com/solutions/use-case)
+- [Healthcare](https://github.com/solutions/industry/healthcare)
+- [Financial services](https://github.com/solutions/industry/financial-services)
+- [Manufacturing](https://github.com/solutions/industry/manufacturing)
+- [Government](https://github.com/solutions/industry/government)
+- [View all industries](https://github.com/solutions/industry)
+- [View all solutions](https://github.com/solutions)
+- [Software Development](https://github.com/resources/articles?topic=software-development)
+- [DevOps](https://github.com/resources/articles?topic=devops)
+- [Security](https://github.com/resources/articles?topic=security)
+- [View all topics](https://github.com/resources/articles)
+- [Customer stories](https://github.com/customer-stories)
+- [Events & webinars](https://github.com/resources/events)
+- [Ebooks & reports](https://github.com/resources/whitepapers)
+- [Business insights](https://github.com/solutions/executive-insights)
+- [GitHub Skills](https://skills.github.com)
+- [Documentation](https://docs.github.com)
+- [Customer support](https://support.github.com)
+- [Community forum](https://github.com/orgs/community/discussions)
+- [Trust center](https://github.com/trust-center)
+- [Partners](https://github.com/partners)
+- [View all resources](https://github.com/resources)
+- [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+- [Security Lab](https://securitylab.github.com)
+- [Maintainer Community](https://maintainers.github.com)
+- [Accelerator](https://github.com/accelerator)
+- [GitHub Stars](https://stars.github.com)
+- [Archive Program](https://archiveprogram.github.com)
+- [Topics](https://github.com/topics)
+- [Trending](https://github.com/trending)
+- [Collections](https://github.com/collections)
+- [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+- [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+- [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+- [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+- [Pricing](https://github.com/pricing)
+
+### Search code, repositories, users, issues, pull requests...
+- [Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+### Provide feedback
+We read every piece of feedback, and take your input very seriously.
+
+### Saved searches
+
+
+### Use saved searches to filter your results more quickly
+To see all available qualifiers, see our documentation.
+
+- [documentation](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+- [Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fhashicorp%2Fweb-unified-docs%2Fblob%2Fmain%2Fcontent%2Fhcp-docs%2Fcontent%2Fdocs%2Fhcp%2Findex.mdx)
+- [Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fblob%2Fshow&source=header-repo&source_repo=hashicorp%2Fweb-unified-docs)
+- [hashicorp](/hashicorp)
+- [web-unified-docs](/hashicorp/web-unified-docs)
+- [Notifications](/login?return_to=%2Fhashicorp%2Fweb-unified-docs)
+- [Fork 217](/login?return_to=%2Fhashicorp%2Fweb-unified-docs)
+- [Star 67](/login?return_to=%2Fhashicorp%2Fweb-unified-docs)
+- [Code](/hashicorp/web-unified-docs)
+- [Issues 125](/hashicorp/web-unified-docs/issues)
+- [Pull requests 102](/hashicorp/web-unified-docs/pulls)
+- [Actions](/hashicorp/web-unified-docs/actions)
+- [Projects](/hashicorp/web-unified-docs/projects)
+- [Security and quality 0](/hashicorp/web-unified-docs/security)
+- [Insights](/hashicorp/web-unified-docs/pulse)
+- [Code](/hashicorp/web-unified-docs)
+- [Issues](/hashicorp/web-unified-docs/issues)
+- [Pull requests](/hashicorp/web-unified-docs/pulls)
+- [Actions](/hashicorp/web-unified-docs/actions)
+- [Projects](/hashicorp/web-unified-docs/projects)
+- [Security and quality](/hashicorp/web-unified-docs/security)
+- [Insights](/hashicorp/web-unified-docs/pulse)
+
+### FilesExpand file tree
+
+
+### Breadcrumbs
+- [web-unified-docs](/hashicorp/web-unified-docs/tree/main)
+- [content](/hashicorp/web-unified-docs/tree/main/content)
+- [hcp-docs](/hashicorp/web-unified-docs/tree/main/content/hcp-docs)
+- [content](/hashicorp/web-unified-docs/tree/main/content/hcp-docs/content)
+- [docs](/hashicorp/web-unified-docs/tree/main/content/hcp-docs/content/docs)
+- [hcp](/hashicorp/web-unified-docs/tree/main/content/hcp-docs/content/docs/hcp)
+
+### index.mdx
+
+
+### Latest commit
+
+
+### History
+- [History](/hashicorp/web-unified-docs/commits/main/content/hcp-docs/content/docs/hcp/index.mdx)
+
+### Breadcrumbs
+- [web-unified-docs](/hashicorp/web-unified-docs/tree/main)
+- [content](/hashicorp/web-unified-docs/tree/main/content)
+- [hcp-docs](/hashicorp/web-unified-docs/tree/main/content/hcp-docs)
+- [content](/hashicorp/web-unified-docs/tree/main/content/hcp-docs/content)
+- [docs](/hashicorp/web-unified-docs/tree/main/content/hcp-docs/content/docs)
+- [hcp](/hashicorp/web-unified-docs/tree/main/content/hcp-docs/content/docs/hcp)
+
+### index.mdx
+
+
+### File metadata and controls
+- Preview
+- Code
+- Blame
+- [Raw](https://github.com/hashicorp/web-unified-docs/raw/refs/heads/main/content/hcp-docs/content/docs/hcp/index.mdx)
+
+### What is HCP?
+HashiCorp Cloud Platform (HCP) is a fully-managed platform offering HashiCorp products-as-a-service. HCP removes the management overhead associated with deploying and maintaining HashiCorp products so that you can focus on reaping the products' benefits.
+
+HCP enables you to easily launch and operate Vault and other HashiCorp services on a HashiCorp Virtual Network (HVN). An HVN connects to resources on your cloud infrastructure. Shared platform functionality such as log in, access control, and billing provide centralized account and organization management. You can manage HCP assets from the web portal interface or using the Terraform provider.
+
+Complete the following tutorials for step-by-step guidance on getting started:
+
+- [Get Started with HCP Vault Dedicated](/hashicorp/web-unified-docs/blob/main/vault/tutorials/cloud)
+- [Get Started with HCP Packer](/hashicorp/web-unified-docs/blob/main/packer/tutorials/hcp-get-started)
+- [Get Started with HCP Boundary](/hashicorp/web-unified-docs/blob/main/boundary/tutorials/hcp-getting-started)
+- [Get Started with HCP Vault Secrets](/hashicorp/web-unified-docs/blob/main/vault/tutorials/hcp-vault-secrets-get-started)
+
+### How does HCP Work?
+The following diagram shows the basic workflow through both the HCP and HCP Terraform portals:
+
+HashiCorp Cloud Platform (HCP) has two main planes for interacting with the platform.
+
+### Control Plane
+The control plane refers to the systems that control your product deployments. You can initiate operations such as user management, product deployment, as well as monitoring and maintenance operations. You can initiate operations in the HCP Portal to interact with your deployed resources (e.g., HashiCorp Virtual Network (HVN), Consul, Vault).
+
+- [the HCP Portal](https://portal.cloud.hashicorp.com/)
+
+### Data Plane
+The data plane consists of your resource deployments on the cloud platforms you use and are managed by the HashiCorp SRE team. HCP has one data plane for hosting multiple tenants, also called organizations. You can create as many organizations as necessary to meet your goals. Organizations are isolated and secured from other organizations.
+
+The HCP data plane is hosted on each supported cloud provider. Each component in the data plane is deployed into separately a managed Virtual Private Connection (VPC) on the host cloud. The VPC is managed by HashiCorp but is unique to each user. Consul, Vault, and other assets are always separated into their own VPCs. You can create as many additional VPCs as needed, but you must have at least one to deploy Consul or Vault. HCP automatically handles the data plane when you create a new HVN.
+
+### Why HCP?
+HashiCorp Cloud Platform (HCP) services offer practitioners and organizations the fastest way to get started with HashiCorp’s tools. Use HCP to accelerate your time-to-value, and leave the day-to-day operational toil to HashiCorp SREs. HashiCorp’s enterprise products prioritize control over convenience.
+
+- Push-button deployments: Production-grade infrastructure, built-in security, and pay-as-you-go pricing accelerate cloud adoption.
+- One workflow across clouds: HashiCorp’s centralized identity, policies, and virtual networks enable consistency and flexibility for your team.
+- Fully managed infrastructure: HashiCorp experts manage, monitor, upgrade, and scale your clusters, to help increase productivity and reduce your costs.
+
+### Community
+Ask questions, make suggestions, and contribute to the community.
+
+- [Ask questions](https://discuss.hashicorp.com/c/hcp/54)
+- [Submit an issue](https://support.hashicorp.com/hc)
+
+### Footer
+
+
+### Footer navigation
+- [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+- [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+- [Security](https://github.com/security)
+- [Status](https://www.githubstatus.com/)
+- [Community](https://github.community/)
+- [Docs](https://docs.github.com/)
+- [Contact](https://support.github.com?tags=dotcom-footer)
+- Manage cookies
+- Do not share my personal information
 
 ---
