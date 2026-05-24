@@ -133,3 +133,9 @@ test-global_neural_sync_service_phase_12:
   script:
     - npm ci
     - npx vitest run antigravity/services/global_neural_sync_service_phase_12.test.ts
+
+test-ai_strategy_advisor:
+  stage: test
+  script:
+    - npm ci
+    - npx vitest run antigravity/services/ai_strategy_advisor.test.ts

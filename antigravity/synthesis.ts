@@ -20,6 +20,20 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
   const servicesDir = path.join(process.cwd(), 'antigravity/services')
   const files = fs.readdirSync(servicesDir)
 
+  // Phase 22: Dynamic Gap Analysis (Discovery Pattern)
+  const coreServices = ['notification', 'analytics', 'security', 'relay', 'orchestration', 'performance', 'feedback', 'resource_optimizer', 'scalability', 'dashboard', 'convergence', 'ux_optimization', 'neural_sync'];
+
+  // Check for missing tests
+  for (const file of files) {
+    if (file.endsWith('.ts') && !file.endsWith('.test.ts') && !file.endsWith('.d.ts')) {
+      const testFile = file.replace('.ts', '.test.ts');
+      if (!files.includes(testFile)) {
+         // Logic to suggest a test-only work order would go here
+         // For now, we prioritize new features
+      }
+    }
+  }
+
   // Gap Analysis 1: Real-time Notifications
   // If we have stats and users but no notification logic
   if (!files.some(f => f.includes('notification'))) {
@@ -144,6 +158,15 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
       feature: 'Global Neural Sync Service (Phase 12)',
       rationale: 'Synchronizes neural weights and cognitive state across distributed system nodes.',
       complexity: 'High'
+    })
+  }
+
+  // Gap Analysis 15: AI Strategy Advisor
+  if (!files.some(f => f.includes('ai_strategy_advisor'))) {
+    ideas.push({
+      feature: 'AI Strategy Advisor Service',
+      rationale: 'Provides high-level strategic guidance for ecosystem evolution based on market intelligence.',
+      complexity: 'Medium'
     })
   }
 

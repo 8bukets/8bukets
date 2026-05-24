@@ -13,6 +13,1769 @@
             "vscode_intelephense_docs.json",
             "google_ads_docs.json"
         ]
+      }
+    }
+  },
+  "typescript_sections": {
+    "Internal: .github/ISSUE_TEMPLATE/bug_report.md": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "---\nname: Bug report\nabout: Create a report to help us improve\n---\n\n**Describe the bug**\nA clear and concise description of what the bug is.\n\n**To Reproduce**\nSteps to reproduce the behavior:\n1. Go to '...'\n2. Click on '....'\n3. See error\n\n**Expected behavior**\nA clear and concise description of what you expected to happen.\n\n**Screenshots**\nIf applicable, add screenshots to help explain your problem.\n\n**Environment (please complete the following information):**\n- OS: [e.g. Ubuntu 22.04]\n- Python / Node version: [e.g. Python 3.11, Node 20]\n\n**Additional context**\nAdd any other context about the problem here."
+        }
+      ],
+      "metadata": {
+        "source": "local://.github/ISSUE_TEMPLATE/bug_report.md",
+        "ingestedAt": "2026-05-23T17:14:56.176Z"
+      }
+    },
+    "Internal: .github/ISSUE_TEMPLATE/feature_request.md": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "---\nname: Feature request\nabout: Suggest an idea for this project\n---\n\n**Is your feature request related to a problem? Please describe.**\nA clear and concise description of what the problem is. Ex: I'm always frustrated when [...]\n\n**Describe the solution you'd like**\nA clear and concise description of what you want to happen.\n\n**Describe alternatives you've considered**\nA clear and concise description of any alternative solutions or features you've considered.\n\n**Additional context**\nAdd any other context or screenshots about the feature request here."
+        }
+      ],
+      "metadata": {
+        "source": "local://.github/ISSUE_TEMPLATE/feature_request.md",
+        "ingestedAt": "2026-05-23T17:14:56.201Z"
+      }
+    },
+    "Internal: .github/PULL_REQUEST_TEMPLATE.md": {
+      "sections": [
+        {
+          "header": "Pull Request Template",
+          "content": ""
+        },
+        {
+          "header": "Summary",
+          "content": "Describe the changes in this pull request and why they are needed."
+        },
+        {
+          "header": "Type of change",
+          "content": "- [ ] Bug fix\n- [ ] New feature\n- [ ] Documentation\n- [ ] CI / Build change"
+        },
+        {
+          "header": "Related issues",
+          "content": "Resolves: # (issue)"
+        },
+        {
+          "header": "Checklist",
+          "content": "- [ ] I have read the contributing guidelines\n- [ ] I have added tests that prove my fix is effective or that my feature works\n- [ ] I have added necessary documentation (if appropriate)\n- [ ] The PR is ready for review"
+        },
+        {
+          "header": "Testing steps",
+          "content": "Describe how reviewers can test the changes locally or in CI.\n\n<!-- Please delete any sections that are not relevant. -->"
+        }
+      ],
+      "metadata": {
+        "source": "local://.github/PULL_REQUEST_TEMPLATE.md",
+        "ingestedAt": "2026-05-23T17:14:56.221Z"
+      }
+    },
+    "Gemma 4 Technical Report": {
+      "sections": [
+        {
+          "header": "Gemma 4 Model Card",
+          "content": "Scraped from [https://ai.google.dev/gemma/docs/core/model_card_4](https://ai.google.dev/gemma/docs/core/model_card_4)"
+        },
+        {
+          "header": "Models Overview",
+          "content": "Gemma 4 models are designed to deliver frontier-level performance at each size,\ntargeting deployment scenarios from mobile and edge devices (E2B, E4B) to\nconsumer GPUs and workstations (26B A4B, 31B). They are well-suited for\nreasoning, agentic workflows, coding, and multimodal understanding.\n\nThe models employ a hybrid attention mechanism that interleaves local sliding\nwindow attention with full global attention, ensuring the final layer is always\nglobal. This hybrid design delivers the processing speed and low memory\nfootprint of a lightweight model without sacrificing the deep awareness required\nfor complex, long-context tasks. To optimize memory for long contexts, global\nlayers feature unified Keys and Values, and apply Proportional RoPE (p-RoPE)."
+        },
+        {
+          "header": "Dense Models",
+          "content": "Property | E2B | E4B | 31B Dense\nTotal Parameters | 2.3B effective (5.1B with embeddings) | 4.5B effective (8B with embeddings) | 30.7B\nLayers | 35 | 42 | 60\nSliding Window | 512 tokens | 512 tokens | 1024 tokens\nContext Length | 128K tokens | 128K tokens | 256K tokens\nVocabulary Size | 262K | 262K | 262K\nSupported Modalities | Text, Image, Audio | Text, Image, Audio | Text, Image\nVision Encoder Parameters | ~150M | ~150M | ~550M\nAudio Encoder Parameters | ~300M | ~300M | No Audio\n\nThe \"E\" in E2B and E4B stands for \"effective\" parameters. The smaller models\nincorporate Per-Layer Embeddings (PLE) to maximize parameter efficiency in\non-device deployments. Rather than adding more layers or parameters to the\nmodel, PLE gives each decoder layer its own small embedding for every token.\nThese embedding tables are large but are only used for quick lookups, which is\nwhy the effective parameter count is much smaller than the total."
+        },
+        {
+          "header": "Mixture-of-Experts (MoE) Model",
+          "content": "Property | 26B A4B MoE\nTotal Parameters | 25.2B\nActive Parameters | 3.8B\nLayers | 30\nSliding Window | 1024 tokens\nContext Length | 256K tokens\nVocabulary Size | 262K\nExpert Count | 8 active / 128 total and 1 shared\nSupported Modalities | Text, Image\nVision Encoder Parameters | ~550M\n\nThe \"A\" in 26B A4B stands for \"active parameters\" in contrast to the total\nnumber of parameters the model contains. By only activating a 4B subset of\nparameters during inference, the Mixture-of-Experts model runs much faster than\nits 26B total might suggest. This makes it an excellent choice for fast\ninference compared to the dense 31B model since it runs almost as fast as a\n4B-parameter model."
+        },
+        {
+          "header": "Benchmark Results",
+          "content": "These models were evaluated against a large collection of different datasets and\nmetrics to cover different aspects of text generation. Evaluation results marked\nin the table are for instruction-tuned models.\n\n | Gemma 4  31B | Gemma 4  26B A4B | Gemma 4  E4B | Gemma 4  E2B | Gemma 3  27B (no think)\nMMLU Pro | 85.2% | 82.6% | 69.4% | 60.0% | 67.6%\nAIME 2026 no tools | 89.2% | 88.3% | 42.5% | 37.5% | 20.8%\nLiveCodeBench v6 | 80.0% | 77.1% | 52.0% | 44.0% | 29.1%\nCodeforces ELO | 2150 | 1718 | 940 | 633 | 110\nGPQA Diamond | 84.3% | 82.3% | 58.6% | 43.4% | 42.4%\nTau2 (average over 3) | 76.9% | 68.2% | 42.2% | 24.5% | 16.2%\nHLE no tools | 19.5% | 8.7% | - | - | -\nHLE with search | 26.5% | 17.2% | - | - | -\nBigBench Extra Hard | 74.4% | 64.8% | 33.1% | 21.9% | 19.3%"
+        },
+        {
+          "header": "MMMLU | 88.4% | 86.3% | 76.6% | 67.4% | 70.7%",
+          "content": "Vision |  |  |  |  |\nMMMU Pro | 76.9% | 73.8% | 52.6% | 44.2% | 49.7%\nOmniDocBench 1.5 (average edit distance, lower is better) | 0.131 | 0.149 | 0.181 | 0.290 | 0.365\nMATH-Vision | 85.6% | 82.4% | 59.5% | 52.4% | 46.0%\nMedXPertQA MM | 61.3% | 58.1% | 28.7% | 23.5% | -\nAudio |  |  |  |  |\nCoVoST | - | - | 35.54 | 33.47 | -\nFLEURS (lower is better) | - | - | 0.08 | 0.09 | -\nLong Context |  |  |  |  |\nMRCR v2 8 needle 128k (average) | 66.4% | 44.1% | 25.4% | 19.1% | 13.5%"
+        },
+        {
+          "header": "Core Capabilities",
+          "content": "Gemma 4 models handle a broad range of tasks across text, vision, and audio. Key\ncapabilities include:\n\n- Thinking– Built-in reasoning mode that lets the model think\nstep-by-step before answering.\n\n- Long Context– Context windows of up to 128K tokens (E2B/E4B) and 256K\ntokens (26B A4B/31B).\n\n- Image Understanding– Object detection, Document/PDF parsing, screen and\nUI understanding, chart comprehension, OCR (including multilingual),\nhandwriting recognition, and pointing. Images can be processed at variable\naspect ratios and resolutions.\n\n- Video Understanding– Analyze video by processing sequences of frames.\n\n- Interleaved Multimodal Input– Freely mix text and images in any order\nwithin a single prompt.\n\n- Function Calling– Native support for structured tool use, enabling\nagentic workflows.\n\n- Coding– Code generation, completion, and correction.\n\n- Multilingual– Out-of-the-box support for 35+ languages, pre-trained on\n140+ languages.\n\n- Audio(E2B and E4B only) – Automatic speech recognition (ASR) and\nspeech-to-translated-text translation across multiple languages."
+        },
+        {
+          "header": "Best Practices",
+          "content": "For the best performance, use these configurations and best practices:"
+        },
+        {
+          "header": "1. Sampling Parameters",
+          "content": "Use the following standardized sampling configuration across all use cases:\n\n- temperature=1.0\n\n- top_p=0.95\n\n- top_k=64"
+        },
+        {
+          "header": "2. Thinking Mode Configuration",
+          "content": "Compared to Gemma 3, the models use standard system , assistant , and user roles. To properly manage the thinking process, use the following control\ntokens:\n\n- Trigger Thinking:Thinking is enabled by including the<|think|>token\nat the start of the system prompt. To disable thinking, remove the token.\n\n- Standard Generation:When thinking is enabled, the model will output its\ninternal reasoning followed by the final answer using this structure:<|channel>thought\\n[Internal reasoning]<channel|>\n\n- Disabled Thinking Behavior:For all models except for the E2B and E4B\nvariants, if thinking is disabled, the model will still generate the tags\nbut with an empty thought block:<|channel>thought\\n<channel|>[Final\nanswer]\n\nNote that many libraries like Transformers and llama.cpp handle the\ncomplexities of the chat template for you."
+        },
+        {
+          "header": "3. Multi-Turn Conversations",
+          "content": "- No Thinking Content in History: In multi-turn conversations, the\nhistorical model output should only include the final response. Thoughts\nfrom previous model turns mustnot be addedbefore the next user turn\nbegins."
+        },
+        {
+          "header": "4. Modality order",
+          "content": "- For optimal performance with multimodal inputs, place image and/or audio\ncontentbeforethe text in your prompt."
+        },
+        {
+          "header": "5. Variable Image Resolution",
+          "content": "Aside from variable aspect ratios, Gemma 4 supports variable image resolution\nthrough a configurable visual token budget, which controls how many tokens are\nused to represent an image. A higher token budget preserves more visual detail\nat the cost of additional compute, while a lower budget enables faster inference\nfor tasks that don't require fine-grained understanding.\n\n- The supported token budgets are:70,140,280,560, and1120.Uselower budgetsfor classification, captioning, or video\nunderstanding, where faster inference and processing many frames\noutweigh fine-grained detail.Usehigher budgetsfor tasks like OCR, document parsing, or reading\nsmall text."
+        },
+        {
+          "header": "6. Audio",
+          "content": "Use the following prompt structures for audio processing:\n\n- Audio Speech Recognition (ASR)\n\nTranscribe the following speech segment in {LANGUAGE} into {LANGUAGE} text.\n\nFollow these specific instructions for formatting the answer:\n*   Only output the transcription, with no newlines.\n*   When transcribing numbers, write the digits, i.e. write 1.7 and not one point seven, and write 3 instead of three.\n\n- Automatic Speech Translation (AST)\n\nTranscribe the following speech segment in {SOURCE_LANGUAGE}, then translate it into {TARGET_LANGUAGE}.\nWhen formatting the answer, first output the transcription in {SOURCE_LANGUAGE}, then one newline, then output the string '{TARGET_LANGUAGE}: ', then the translation in {TARGET_LANGUAGE}."
+        },
+        {
+          "header": "7. Audio and Video Length",
+          "content": "All models support image inputs and can process videos as frames whereas the E2B\nand E4B models also support audio inputs. Audio supports a maximum length of 30\nseconds. Video supports a maximum of 60 seconds assuming the images are\nprocessed at one frame per second."
+        },
+        {
+          "header": "Model Data",
+          "content": "Data used for model training and how the data was processed."
+        },
+        {
+          "header": "Training Dataset",
+          "content": "Our pre-training dataset is a large-scale, diverse collection of data\nencompassing a wide range of domains and modalities, which includes web\ndocuments, code, images, audio, with a cutoff date of January 2025. Here are the\nkey components:\n\n- Web Documents: A diverse collection of web text ensures the model is\nexposed to a broad range of linguistic styles, topics, and vocabulary. The\ntraining dataset includes content in over 140 languages.\n\n- Code: Exposing the model to code helps it to learn the syntax and\npatterns of programming languages, which improves its ability to generate\ncode and understand code-related questions.\n\n- Mathematics: Training on mathematical text helps the model learn logical\nreasoning, symbolic representation, and to address mathematical queries.\n\n- Images: A wide range of images enables the model to perform image\nanalysis and visual data extraction tasks.\n\nThe combination of these diverse data sources is crucial for training a powerful\nmultimodal model that can handle a wide variety of different tasks and data\nformats."
+        },
+        {
+          "header": "Data Preprocessing",
+          "content": "Here are the key data cleaning and filtering methods applied to the training\ndata:\n\n- CSAM Filtering: Rigorous CSAM (Child Sexual Abuse Material) filtering\nwas applied at multiple stages in the data preparation process to ensure the\nexclusion of harmful and illegal content.\n\n- Sensitive Data Filtering: As part of making Gemma pre-trained models\nsafe and reliable, automated techniques were used to filter out certain\npersonal information and other sensitive data from training sets.\n\n- Additional methods: Filtering based on content quality and safety in\nline withour\npolicies."
+        },
+        {
+          "header": "Ethics and Safety",
+          "content": "As open models become central to enterprise infrastructure, provenance and\nsecurity are paramount. Developed by Google DeepMind, Gemma 4 undergoes the same\nrigorous safety evaluations as our proprietary Gemini models."
+        },
+        {
+          "header": "Evaluation Approach",
+          "content": "Gemma 4 models were developed in partnership with internal safety and\nresponsible AI teams. A range of automated as well as human evaluations were\nconducted to help improve model safety. These evaluations align with Google's\nAI principles , as well as safety policies, which\naim to prevent our generative AI models from generating harmful content,\nincluding:\n\n- Content related to child sexual abuse material and exploitation\n\n- Dangerous content (e.g., promoting suicide, or instructing in activities\nthat could cause real-world harm)\n\n- Sexually explicit content\n\n- Hate speech (e.g., dehumanizing members of protected groups)\n\n- Harassment (e.g., encouraging violence against people)"
+        },
+        {
+          "header": "Evaluation Results",
+          "content": "For all areas of safety testing, we saw major improvements in all categories of\ncontent safety relative to previous Gemma models. Overall, Gemma 4 models\nsignificantly outperform Gemma 3 and 3n models in improving safety, while\nkeeping unjustified refusals low. All testing was conducted without safety\nfilters to evaluate the model capabilities and behaviors. For both text-to-text\nand image-to-text, and across all model sizes, the model produced minimal policy\nviolations, and showed significant improvements over previous Gemma models'\nperformance."
+        },
+        {
+          "header": "Usage and Limitations",
+          "content": "These models have certain limitations that users should be aware of."
+        },
+        {
+          "header": "Intended Usage",
+          "content": "Multimodal models (capable of processing vision, language, and/or audio) have a\nwide range of applications across various industries and domains. The following\nlist of potential uses is not comprehensive. The purpose of this list is to\nprovide contextual information about the possible use-cases that the model\ncreators considered as part of model training and development.\n\n- Content Creation and CommunicationText Generation: These models can be used to generate creative text\nformats such as poems, scripts, code, marketing copy, and email drafts.Chatbots and Conversational AI: Power conversational interfaces for\ncustomer service, virtual assistants, or interactive applications.Text Summarization: Generate concise summaries of a text corpus,\nresearch papers, or reports.Image Data Extraction: These models can be used to extract,\ninterpret, and summarize visual data for text communications.Audio Processing and Interaction: The smaller models (E2B and E4B)\ncan analyze and interpret audio inputs, enabling voice-driven\ninteractions and transcriptions.\n\n- Research and EducationNatural Language Processing (NLP) and VLM Research: These models can\nserve as a foundation for researchers to experiment with VLM and NLP\ntechniques, develop algorithms, and contribute to the advancement of the\nfield.Language Learning Tools: Support interactive language learning\nexperiences, aiding in grammar correction or providing writing practice.Knowledge Exploration: Assist researchers in exploring large\nbodies of text by generating summaries or answering questions about\nspecific topics."
+        },
+        {
+          "header": "Limitations",
+          "content": "- Training DataThe quality and diversity of the training data significantly influence\nthe model's capabilities. Biases or gaps in the training data can lead\nto limitations in the model's responses.The scope of the training dataset determines the subject areas the model\ncan handle effectively.\n\n- Context and Task ComplexityModels perform well on tasks that can be framed with clear prompts and\ninstructions. Open-ended or highly complex tasks might be challenging.A model's performance can be influenced by the amount of context\nprovided (longer context generally leads to better outputs, up to a\ncertain point).\n\n- Language Ambiguity and NuanceNatural language is inherently complex. Models might struggle to grasp\nsubtle nuances, sarcasm, or figurative language.\n\n- Factual AccuracyModels generate responses based on information they learned from their\ntraining datasets, but they are not knowledge bases. They may generate\nincorrect or outdated factual statements.\n\n- Common SenseModels rely on statistical patterns in language. They might lack the\nability to apply common sense reasoning in certain situations."
+        },
+        {
+          "header": "Ethical Considerations and Risks",
+          "content": "The development of vision-language models (VLMs) raises several ethical\nconcerns. In creating an open model, we have carefully considered the following:\n\n- Bias and FairnessVLMs trained on large-scale, real-world text and image data can reflect\nsocio-cultural biases embedded in the training material. Gemma 4 models\nunderwent careful scrutiny, input data pre-processing, and post-training\nevaluations as reported in this card to help mitigate the risk of these\nbiases.\n\n- Misinformation and MisuseVLMs can be misused to generate text that is false, misleading, or\nharmful.Guidelines are provided for responsible use with the model, see theResponsible Generative AI Toolkit.\n\n- Transparency and AccountabilityThis model card summarizes details on the models' architecture,\ncapabilities, limitations, and evaluation processes.A responsibly developed open model offers the opportunity to share\ninnovation by making VLM technology accessible to developers and\nresearchers across the AI ecosystem.\n\nRisks identified and mitigations :\n\n- Generation of harmful content: Mechanisms and guidelines for content\nsafety are essential. Developers are encouraged to exercise caution and\nimplement appropriate content safety safeguards based on their specific\nproduct policies and application use cases.\n\n- Misuse for malicious purposes: Technical limitations and developer and\nend-user education can help mitigate against malicious applications of VLMs.\nEducational resources and reporting mechanisms for users to flag misuse are\nprovided.\n\n- Privacy violations: Models were trained on data filtered for removal of\ncertain personal information and other sensitive data. Developers are\nencouraged to adhere to privacy regulations with privacy-preserving\ntechniques.\n\n- Perpetuation of biases: It's encouraged to perform continuous monitoring\n(using evaluation metrics, human review) and the exploration of de-biasing\ntechniques during model training, fine-tuning, and other use cases."
+        },
+        {
+          "header": "Benefits",
+          "content": "At the time of release, this family of models provides high-performance open\nvision-language model implementations designed from the ground up for\nresponsible AI development compared to similarly sized models."
+        }
+      ],
+      "metadata": {
+        "source": "local://gemmafour_docs.md",
+        "ingestedAt": "2026-05-23T17:14:56.241Z"
+      }
+    },
+    "LiteRT Framework Documentation": {
+      "sections": [
+        {
+          "header": "LiteRT Overview Documentation",
+          "content": "Scraped from [https://ai.google.dev/edge/litert/overview](https://ai.google.dev/edge/litert/overview)"
+        },
+        {
+          "header": "Overview",
+          "content": "- Home\n\n- Google AI Edge\n\n- LiteRT\n\nLiteRT is Google's on-device framework for high-performance ML & GenAI\ndeployment on edge platforms, using efficient conversion, runtime, and\noptimization.\n\nThe latest LiteRT 2.x release introduces the CompiledModel API,\na modern runtime interface designed to maximize hardware acceleration. While the Interpreter API (formerly TensorFlow Lite) remains available for backward\ncompatibility, the CompiledModel API is the recommended choice for developers\nseeking state-of-the-art performance in on-device AI applications."
+        },
+        {
+          "header": "Streamline development with LiteRT",
+          "content": "Automated accelerator selection versus explicit delegate creation. Efficient I/O\nbuffer handling and async execution for superior performance.\nSee on-device inference documentation ."
+        },
+        {
+          "header": "Best-in-class GPU performance",
+          "content": "Powered by ML Drift, now supporting both ML and Generative\nAI models on GPUs APIs. See GPU acceleration documentation ."
+        },
+        {
+          "header": "Unified NPU acceleration",
+          "content": "Accelerate your model using simplified NPU access from major\nchipset providers. See NPU acceleration documentation ."
+        },
+        {
+          "header": "Superior LLM Support",
+          "content": "LiteRT delivers high-performance deployment for Generative AI models across\nmobile, desktop, and web platforms. See GenAI deployment documentation ."
+        },
+        {
+          "header": "Broad ML framework support",
+          "content": "LiteRT supports streamlined conversion from PyTorch, TensorFlow, and JAX\nFrameworks to .tflite or .litertlm format. See model conversion documentation ."
+        },
+        {
+          "header": "Get Started withCompiledModelAPI",
+          "content": "- For classical ML models , see the following demo apps. Image segmentation Kotlin App : CPU/GPU/NPU inference. Image segmentation C++ App : CPU/GPU/NPU inference with async execution.\n\n- For GenAI models , see the following demo apps: EmbeddingGemma semantic similarity C++ App :\nCPU/GPU/NPU inference.\n\nFor classical ML models , see the following demo apps.\n\n- Image segmentation Kotlin App : CPU/GPU/NPU inference.\n\n- Image segmentation C++ App : CPU/GPU/NPU inference with async execution.\n\nFor GenAI models , see the following demo apps:\n\n- EmbeddingGemma semantic similarity C++ App :\nCPU/GPU/NPU inference."
+        },
+        {
+          "header": "Development workflow",
+          "content": "LiteRT runs inferences completely on-device on Android, iOS, Web, IoT, and on\ndesktop/laptop. Regardless of device, the following is the most common\nworkflow, with links to further instructions."
+        },
+        {
+          "header": "Identify the most suitable solution to the ML challenge",
+          "content": "LiteRT offers users a high level of flexibility and customizability when it\ncomes to solving machine learning problems, making it a good fit for users who\nrequire a specific model or a specialized implementation. Users looking for\nplug-and-play solutions may prefer MediaPipe\nTasks ,\nwhich provides ready-made\nsolutions for common machine learning tasks like object detection,\ntext classification, and LLM inference."
+        },
+        {
+          "header": "Obtain and preparing the model",
+          "content": "A LiteRT model is represented in an efficient portable format known as FlatBuffers , which uses the .tflite file extension.\n\nYou can obtain a LiteRT model in the following ways:\n\n- Obtain a pre-trained model: for popular ML workloads like Image\nsegmentation, Object detection etc. The simplest approach is to use a LiteRT model already in the .tflite format. These models don't require any added conversion steps. Model type Pre-trained model source Classical ML ( .tflite format) Visit Kaggle or HuggingFace E.g. Image segmentation models and sample app Generative AI ( .litertlm format) LiteRT Hugging Face page E.g. Gemma Family\n\n- Convert your chosen PyTorch,\nTensorFlow or JAX model into a LiteRT model if you choose to not use a\npre-trained model. [PRO USER] Model framework Sample models Conversion tool Pytorch Hugging Face Torchvision Link TensorFlow Kaggle Models Hugging Face Link Jax Hugging Face Link\n\n- Author your LLM for further optimization using Generative\nAPI [PRO USER] Our Generative API library provides PyTorch built-in building blocks for\ncomposing Transformer models such as Gemma , TinyLlama and others using mobile-friendly abstractions, through which\nwe can guarantee conversion,\nand performant execution on our mobile runtime, LiteRT. See Generative API\ndocumentation .\n\nObtain a pre-trained model: for popular ML workloads like Image\nsegmentation, Object detection etc.\n\nThe simplest approach is to use a LiteRT model already in the .tflite format. These models don't require any added conversion steps.\n\nConvert your chosen PyTorch,\nTensorFlow or JAX model into a LiteRT model if you choose to not use a\npre-trained model. [PRO USER]\n\nAuthor your LLM for further optimization using Generative"
+        },
+        {
+          "header": "API [PRO USER]",
+          "content": "Our Generative API library provides PyTorch built-in building blocks for\ncomposing Transformer models such as Gemma , TinyLlama and others using mobile-friendly abstractions, through which\nwe can guarantee conversion,\nand performant execution on our mobile runtime, LiteRT. See Generative API\ndocumentation ."
+        },
+        {
+          "header": "Optimize [PRO USER]",
+          "content": "AI Edge Quantizer for advanced developers is a tool to quantize converted\nLiteRT models. It aims to facilitate advanced users to strive for optimal\nperformance on resource demanding models (e.g., GenAI models).\n\nSee more details from AI Edge Quantizer documentation ."
+        },
+        {
+          "header": "Integrate the model into your app on edge platforms",
+          "content": "LiteRT lets you to run ML models entirely on-device with high performance\nacross Android, iOS, Web, Desktop, and IoT platforms.\n\nUse the following guides to integrate a LiteRT model on your preferred platform:\n\nThe following code snippets show a basic implementation in\nKotlin and C++."
+        },
+        {
+          "header": "Kotlin",
+          "content": "```\n// Load model and initialize runtimevalcompiledModel=CompiledModel.create(\"/path/to/mymodel.tflite\",CompiledModel.Options(Accelerator.CPU))// Preallocate input/output buffersvalinputBuffers=compiledModel.createInputBuffers()valoutputBuffers=compiledModel.createOutputBuffers()// Fill the input bufferinputBuffers.get(0).writeFloat(input0)inputBuffers.get(1).writeFloat(input1)// InvokecompiledModel.run(inputBuffers,outputBuffers)// Read the outputvaloutput=outputBuffers.get(0).readFloat()\n```"
+        },
+        {
+          "header": "C++",
+          "content": "```\n// Load model and initialize runtimeLITERT_ASSIGN_OR_RETURN(autoenv,GetEnvironment());LITERT_ASSIGN_OR_RETURN(autooptions,GetOptions());LITERT_ASSIGN_OR_RETURN(autocompiled_model,CompiledModel::Create(env,\"/path/to/mymodel.tflite\",options));// Preallocate input/output buffersLITERT_ASSIGN_OR_RETURN(autoinput_buffers,compiled_model.CreateInputBuffers(signature_index));LITERT_ASSIGN_OR_RETURN(autooutput_buffers,compiled_model.CreateOutputBuffers(signature_index));// Fill the input bufferLITERT_ABORT_IF_ERROR(input_buffers[0].Write(input0));LITERT_ABORT_IF_ERROR(input_buffers[1].Write(input1));// InvokeLITERT_ABORT_IF_ERROR(compiled_model.Run(signature_index,input_buffers,output_buffers));// Read the outputLITERT_ABORT_IF_ERROR(output_buffers[0].Read(output0));\n```"
+        },
+        {
+          "header": "Choose a backend",
+          "content": "The most straightforward way to incorporate backends in LiteRT is to rely on\nthe runtime's built-in intelligence. With the CompiledModel API, LiteRT\nsimplifies the setup significantly with the ability to specify the\ntarget backend as an option. See on-device inference guide for more\ndetails."
+        },
+        {
+          "header": "Additional documentation and support",
+          "content": "- LiteRT-Samples GitHub Repo for more LiteRT sample apps.\n\n- For existing users of TensorFlow Lite , see migration guide .\n\n- LiteRT Tools page for performance, profiling, error reporting etc.\n\nLiteRT-Samples GitHub Repo for more LiteRT sample apps.\n\nFor existing users of TensorFlow Lite , see migration guide .\n\nLiteRT Tools page for performance, profiling, error reporting etc."
+        }
+      ],
+      "metadata": {
+        "source": "local://litert_docs.md",
+        "ingestedAt": "2026-05-23T17:14:56.259Z"
+      }
+    },
+    "OpenTelemetry Ecosystem Analysis": {
+      "sections": [
+        {
+          "header": "OpenTelemetry GitHub Repositories",
+          "content": "Scraped from [https://github.com/open-telemetry](https://github.com/open-telemetry)\n\nTotal repositories: 100"
+        },
+        {
+          "header": "[opentelemetry-collector](https://github.com/open-telemetry/opentelemetry-collector)",
+          "content": "OpenTelemetry Collector\n\n- **Language:** Go\n- **Stars:** 7032\n- **Forks:** 2070"
+        },
+        {
+          "header": "[opentelemetry-go](https://github.com/open-telemetry/opentelemetry-go)",
+          "content": "OpenTelemetry Go API and SDK\n\n- **Language:** Go\n- **Stars:** 6389\n- **Forks:** 1352"
+        },
+        {
+          "header": "[opentelemetry-collector-contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib)",
+          "content": "Contrib repository for the OpenTelemetry Collector\n\n- **Language:** Go\n- **Stars:** 4661\n- **Forks:** 3590"
+        },
+        {
+          "header": "[opentelemetry-specification](https://github.com/open-telemetry/opentelemetry-specification)",
+          "content": "Specifications for OpenTelemetry\n\n- **Language:** Makefile\n- **Stars:** 4240\n- **Forks:** 977"
+        },
+        {
+          "header": "[opentelemetry-dotnet](https://github.com/open-telemetry/opentelemetry-dotnet)",
+          "content": "The OpenTelemetry .NET Client\n\n- **Language:** C#\n- **Stars:** 3698\n- **Forks:** 891"
+        },
+        {
+          "header": "[opentelemetry-js](https://github.com/open-telemetry/opentelemetry-js)",
+          "content": "OpenTelemetry JavaScript Client\n\n- **Language:** TypeScript\n- **Stars:** 3377\n- **Forks:** 1043"
+        },
+        {
+          "header": "[opentelemetry-ebpf-profiler](https://github.com/open-telemetry/opentelemetry-ebpf-profiler)",
+          "content": "The production-scale datacenter profiler (C/C++, Go, Rust, Python, Java, NodeJS, .NET, PHP, Ruby, Perl, ...)\n\n- **Language:** Go\n- **Stars:** 3111\n- **Forks:** 399"
+        },
+        {
+          "header": "[opentelemetry-demo](https://github.com/open-telemetry/opentelemetry-demo)",
+          "content": "This repository contains the OpenTelemetry Astronomy Shop, a microservice-based distributed system intended to illustrate the implementation of OpenTelemetry in a near real-world environment.\n\n- **Language:** TypeScript\n- **Stars:** 3083\n- **Forks:** 6478"
+        },
+        {
+          "header": "[opentelemetry-rust](https://github.com/open-telemetry/opentelemetry-rust)",
+          "content": "The Rust OpenTelemetry implementation\n\n- **Language:** Rust\n- **Stars:** 2580\n- **Forks:** 661"
+        },
+        {
+          "header": "[opentelemetry-java-instrumentation](https://github.com/open-telemetry/opentelemetry-java-instrumentation)",
+          "content": "OpenTelemetry auto-instrumentation and instrumentation libraries for Java\n\n- **Language:** Java\n- **Stars:** 2537\n- **Forks:** 1096"
+        },
+        {
+          "header": "[opentelemetry-python](https://github.com/open-telemetry/opentelemetry-python)",
+          "content": "OpenTelemetry Python API and SDK\n\n- **Language:** Python\n- **Stars:** 2450\n- **Forks:** 878"
+        },
+        {
+          "header": "[opentelemetry-java](https://github.com/open-telemetry/opentelemetry-java)",
+          "content": "OpenTelemetry Java SDK\n\n- **Language:** Java\n- **Stars:** 2397\n- **Forks:** 974"
+        },
+        {
+          "header": "[opentelemetry-operator](https://github.com/open-telemetry/opentelemetry-operator)",
+          "content": "Kubernetes Operator for OpenTelemetry Collector\n\n- **Language:** Go\n- **Stars:** 1693\n- **Forks:** 626"
+        },
+        {
+          "header": "[opentelemetry-go-contrib](https://github.com/open-telemetry/opentelemetry-go-contrib)",
+          "content": "Collection of extensions for OpenTelemetry-Go.\n\n- **Language:** Go\n- **Stars:** 1626\n- **Forks:** 782"
+        },
+        {
+          "header": "[opentelemetry-cpp](https://github.com/open-telemetry/opentelemetry-cpp)",
+          "content": "The OpenTelemetry C++ Client\n\n- **Language:** C++\n- **Stars:** 1283\n- **Forks:** 567"
+        },
+        {
+          "header": "[community](https://github.com/open-telemetry/community)",
+          "content": "OpenTelemetry community content\n\n- **Language:** Python\n- **Stars:** 1048\n- **Forks:** 296"
+        },
+        {
+          "header": "[opentelemetry-python-contrib](https://github.com/open-telemetry/opentelemetry-python-contrib)",
+          "content": "OpenTelemetry instrumentation for Python modules\n\n- **Language:** Python\n- **Stars:** 1048\n- **Forks:** 950"
+        },
+        {
+          "header": "[opentelemetry-go-instrumentation](https://github.com/open-telemetry/opentelemetry-go-instrumentation)",
+          "content": "OpenTelemetry Auto Instrumentation using eBPF\n\n- **Language:** C\n- **Stars:** 1007\n- **Forks:** 137"
+        },
+        {
+          "header": "[opentelemetry-js-contrib](https://github.com/open-telemetry/opentelemetry-js-contrib)",
+          "content": "OpenTelemetry instrumentation for JavaScript modules\n\n- **Language:** TypeScript\n- **Stars:** 906\n- **Forks:** 658"
+        },
+        {
+          "header": "[opentelemetry.io](https://github.com/open-telemetry/opentelemetry.io)",
+          "content": "The OpenTelemetry website and documentation\n\n- **Language:** JavaScript\n- **Stars:** 898\n- **Forks:** 1781"
+        },
+        {
+          "header": "[opentelemetry-php](https://github.com/open-telemetry/opentelemetry-php)",
+          "content": "The OpenTelemetry PHP Library\n\n- **Language:** PHP\n- **Stars:** 892\n- **Forks:** 223"
+        },
+        {
+          "header": "[opentelemetry-proto](https://github.com/open-telemetry/opentelemetry-proto)",
+          "content": "OpenTelemetry protocol (OTLP) specification and Protobuf definitions\n\n- **Language:** Makefile\n- **Stars:** 786\n- **Forks:** 312"
+        },
+        {
+          "header": "[opentelemetry-dotnet-contrib](https://github.com/open-telemetry/opentelemetry-dotnet-contrib)",
+          "content": "This repository contains set of components extending functionality of the OpenTelemetry .NET SDK. Instrumentation libraries, exporters, and other components can find their home here.\n\n- **Language:** C#\n- **Stars:** 639\n- **Forks:** 386"
+        },
+        {
+          "header": "[docs-cn](https://github.com/open-telemetry/docs-cn) **(ARCHIVED)**",
+          "content": "OpenTelemetry 中文文档: 接入使用、技术标准、RFC、SDK等.\n\n- **Language:** N/A\n- **Stars:** 624\n- **Forks:** 106"
+        },
+        {
+          "header": "[semantic-conventions](https://github.com/open-telemetry/semantic-conventions)",
+          "content": "Defines standards for generating consistent, accessible telemetry across a variety of domains\n\n- **Language:** Open Policy Agent\n- **Stars:** 580\n- **Forks:** 358"
+        },
+        {
+          "header": "[opentelemetry-ruby](https://github.com/open-telemetry/opentelemetry-ruby)",
+          "content": "OpenTelemetry Ruby API & SDK, and related gems\n\n- **Language:** Ruby\n- **Stars:** 575\n- **Forks:** 282"
+        },
+        {
+          "header": "[opentelemetry-helm-charts](https://github.com/open-telemetry/opentelemetry-helm-charts)",
+          "content": "OpenTelemetry Helm Charts\n\n- **Language:** Go Template\n- **Stars:** 550\n- **Forks:** 747"
+        },
+        {
+          "header": "[opentelemetry-collector-releases](https://github.com/open-telemetry/opentelemetry-collector-releases)",
+          "content": "OpenTelemetry Collector Official Releases\n\n- **Language:** Go\n- **Stars:** 472\n- **Forks:** 234"
+        },
+        {
+          "header": "[opentelemetry-ebpf-instrumentation](https://github.com/open-telemetry/opentelemetry-ebpf-instrumentation)",
+          "content": "No description provided.\n\n- **Language:** C\n- **Stars:** 467\n- **Forks:** 113"
+        },
+        {
+          "header": "[opentelemetry-dotnet-instrumentation](https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation)",
+          "content": "OpenTelemetry .NET Automatic Instrumentation\n\n- **Language:** C++\n- **Stars:** 453\n- **Forks:** 135"
+        },
+        {
+          "header": "[opentelemetry-lambda](https://github.com/open-telemetry/opentelemetry-lambda)",
+          "content": "Create your own Lambda Layer in each OTel language using this starter code. Add the Lambda Layer to your Lambda Function to get tracing with OpenTelemetry.\n\n- **Language:** Go\n- **Stars:** 429\n- **Forks:** 235"
+        },
+        {
+          "header": "[weaver](https://github.com/open-telemetry/weaver)",
+          "content": "OTel Weaver lets you easily develop, validate, document, and deploy semantic conventions\n\n- **Language:** Rust\n- **Stars:** 408\n- **Forks:** 83"
+        },
+        {
+          "header": "[opentelemetry-network](https://github.com/open-telemetry/opentelemetry-network)",
+          "content": "eBPF Collector\n\n- **Language:** C++\n- **Stars:** 405\n- **Forks:** 64"
+        },
+        {
+          "header": "[opentelemetry-erlang](https://github.com/open-telemetry/opentelemetry-erlang)",
+          "content": "OpenTelemetry Erlang SDK\n\n- **Language:** Erlang\n- **Stars:** 390\n- **Forks:** 137"
+        },
+        {
+          "header": "[oteps](https://github.com/open-telemetry/oteps) **(ARCHIVED)**",
+          "content": "OpenTelemetry Enhancement Proposals\n\n- **Language:** Makefile\n- **Stars:** 352\n- **Forks:** 162"
+        },
+        {
+          "header": "[opentelemetry-swift](https://github.com/open-telemetry/opentelemetry-swift)",
+          "content": "OpenTelemetry API for Swift\n\n- **Language:** Swift\n- **Stars:** 352\n- **Forks:** 223"
+        },
+        {
+          "header": "[opentelemetry-java-examples](https://github.com/open-telemetry/opentelemetry-java-examples)",
+          "content": "No description provided.\n\n- **Language:** Java\n- **Stars:** 347\n- **Forks:** 154"
+        },
+        {
+          "header": "[otel-arrow](https://github.com/open-telemetry/otel-arrow)",
+          "content": "Protocol and libraries for sending and receiving OpenTelemetry data using Apache Arrow\n\n- **Language:** Rust\n- **Stars:** 339\n- **Forks:** 101"
+        },
+        {
+          "header": "[opentelemetry-go-compile-instrumentation](https://github.com/open-telemetry/opentelemetry-go-compile-instrumentation)",
+          "content": "OpenTelemetry Go Compile Instrumentation\n\n- **Language:** Go\n- **Stars:** 290\n- **Forks:** 70"
+        },
+        {
+          "header": "[opentelemetry-android](https://github.com/open-telemetry/opentelemetry-android)",
+          "content": "OpenTelemetry Tooling for Android\n\n- **Language:** Kotlin\n- **Stars:** 285\n- **Forks:** 100"
+        },
+        {
+          "header": "[opentelemetry-java-contrib](https://github.com/open-telemetry/opentelemetry-java-contrib)",
+          "content": "No description provided.\n\n- **Language:** Java\n- **Stars:** 261\n- **Forks:** 180"
+        },
+        {
+          "header": "[opentelemetry-erlang-contrib](https://github.com/open-telemetry/opentelemetry-erlang-contrib)",
+          "content": "OpenTelemetry instrumentation for Erlang & Elixir\n\n- **Language:** Elixir\n- **Stars:** 211\n- **Forks:** 160"
+        },
+        {
+          "header": "[opamp-go](https://github.com/open-telemetry/opamp-go)",
+          "content": "OpAMP protocol implementation in Go\n\n- **Language:** Go\n- **Stars:** 210\n- **Forks:** 113"
+        },
+        {
+          "header": "[opentelemetry-cpp-contrib](https://github.com/open-telemetry/opentelemetry-cpp-contrib)",
+          "content": "No description provided.\n\n- **Language:** Python\n- **Stars:** 150\n- **Forks:** 181"
+        },
+        {
+          "header": "[opamp-spec](https://github.com/open-telemetry/opamp-spec)",
+          "content": "OpAMP Specification\n\n- **Language:** Makefile\n- **Stars:** 141\n- **Forks:** 53"
+        },
+        {
+          "header": "[opentelemetry-php-instrumentation](https://github.com/open-telemetry/opentelemetry-php-instrumentation)",
+          "content": "OpenTelemetry PHP auto-instrumentation extension\n\n- **Language:** C\n- **Stars:** 135\n- **Forks:** 34"
+        },
+        {
+          "header": "[opentelemetry-injector](https://github.com/open-telemetry/opentelemetry-injector)",
+          "content": "No description provided.\n\n- **Language:** Zig\n- **Stars:** 129\n- **Forks:** 29"
+        },
+        {
+          "header": "[opentelemetry-ruby-contrib](https://github.com/open-telemetry/opentelemetry-ruby-contrib)",
+          "content": "Contrib Packages for the OpenTelemetry Ruby API and SDK implementation.\n\n- **Language:** Ruby\n- **Stars:** 121\n- **Forks:** 246"
+        },
+        {
+          "header": "[opentelemetry-kotlin](https://github.com/open-telemetry/opentelemetry-kotlin)",
+          "content": "An implementation of the OpenTelemetry specification as a Kotlin Multiplatform Library\n\n- **Language:** Kotlin\n- **Stars:** 117\n- **Forks:** 19"
+        },
+        {
+          "header": "[opentelemetry-php-contrib](https://github.com/open-telemetry/opentelemetry-php-contrib)",
+          "content": "opentelemetry-php-contrib\n\n- **Language:** PHP\n- **Stars:** 110\n- **Forks:** 134"
+        },
+        {
+          "header": "[opentelemetry-log-collection](https://github.com/open-telemetry/opentelemetry-log-collection) **(ARCHIVED)**",
+          "content": "OpenTelemetry log collection library\n\n- **Language:** Go\n- **Stars:** 93\n- **Forks:** 42"
+        },
+        {
+          "header": "[opentelemetry-configuration](https://github.com/open-telemetry/opentelemetry-configuration)",
+          "content": "JSON Schema definitions for OpenTelemetry declarative configuration\n\n- **Language:** JavaScript\n- **Stars:** 88\n- **Forks:** 38"
+        },
+        {
+          "header": "[opentelemetry-js-api](https://github.com/open-telemetry/opentelemetry-js-api) **(ARCHIVED)**",
+          "content": "OpenTelemetry Javascript API\n\n- **Language:** TypeScript\n- **Stars:** 87\n- **Forks:** 49"
+        },
+        {
+          "header": "[opentelemetry-rust-contrib](https://github.com/open-telemetry/opentelemetry-rust-contrib)",
+          "content": "OpenTelemetry Contrib Packages for Rust\n\n- **Language:** Rust\n- **Stars:** 85\n- **Forks:** 88"
+        },
+        {
+          "header": "[opentelemetry-erlang-api](https://github.com/open-telemetry/opentelemetry-erlang-api) **(ARCHIVED)**",
+          "content": "Erlang/Elixir OpenTelemetry API\n\n- **Language:** Erlang\n- **Stars:** 60\n- **Forks:** 14"
+        },
+        {
+          "header": "[opentelemetry-collector-builder](https://github.com/open-telemetry/opentelemetry-collector-builder) **(ARCHIVED)**",
+          "content": "This repository is now deprecated. The builder has found a new home inside the OpenTelemetry Collector core repository.\n\n- **Language:** N/A\n- **Stars:** 57\n- **Forks:** 32"
+        },
+        {
+          "header": "[opentelemetry-go-build-tools](https://github.com/open-telemetry/opentelemetry-go-build-tools)",
+          "content": "Build tools for use by the Go API/SDK, the collector, and their associated contrib repositories\n\n- **Language:** Go\n- **Stars:** 52\n- **Forks:** 61"
+        },
+        {
+          "header": "[build-tools](https://github.com/open-telemetry/build-tools)",
+          "content": "Building tools provided by OpenTelemetry\n\n- **Language:** Dockerfile\n- **Stars:** 43\n- **Forks:** 57"
+        },
+        {
+          "header": "[prometheus-interoperability-spec](https://github.com/open-telemetry/prometheus-interoperability-spec) **(ARCHIVED)**",
+          "content": "Workgroup for building Prometheus-OTLP interoperability for the OTEL Collector and Prometheus related discussions.\n\n- **Language:** N/A\n- **Stars:** 43\n- **Forks:** 7"
+        },
+        {
+          "header": "[opentelemetry-proto-go](https://github.com/open-telemetry/opentelemetry-proto-go)",
+          "content": "Generated code for OpenTelemetry protobuf data model\n\n- **Language:** Makefile\n- **Stars:** 41\n- **Forks:** 42"
+        },
+        {
+          "header": "[semantic-conventions-genai](https://github.com/open-telemetry/semantic-conventions-genai)",
+          "content": "No description provided.\n\n- **Language:** Python\n- **Stars:** 40\n- **Forks:** 19"
+        },
+        {
+          "header": "[semantic-conventions-java](https://github.com/open-telemetry/semantic-conventions-java)",
+          "content": "Java generated classes for semantic conventions\n\n- **Language:** Java\n- **Stars:** 38\n- **Forks:** 31"
+        },
+        {
+          "header": "[opentelemetry-browser](https://github.com/open-telemetry/opentelemetry-browser)",
+          "content": "OpenTelemetry Browser SDK and instrumentation\n\n- **Language:** TypeScript\n- **Stars:** 34\n- **Forks:** 19"
+        },
+        {
+          "header": "[otel-arrow-collector](https://github.com/open-telemetry/otel-arrow-collector) **(ARCHIVED)**",
+          "content": "[DoNotUse] OpenTelemetry Collector with Apache Arrow support FORK OF OPENTELEMETRY COLLECTOR\n\n- **Language:** Go\n- **Stars:** 31\n- **Forks:** 10"
+        },
+        {
+          "header": "[opentelemetry-sqlcommenter](https://github.com/open-telemetry/opentelemetry-sqlcommenter) **(ARCHIVED)**",
+          "content": "SQLCommenter components for various languages\n\n- **Language:** JavaScript\n- **Stars:** 30\n- **Forks:** 14"
+        },
+        {
+          "header": "[opentelemetry-proto-java](https://github.com/open-telemetry/opentelemetry-proto-java)",
+          "content": "Java Bindings for the OpenTelemetry Protocol (OTLP)\n\n- **Language:** Java\n- **Stars:** 24\n- **Forks:** 17"
+        },
+        {
+          "header": "[opentelemetry-ecosystem-explorer](https://github.com/open-telemetry/opentelemetry-ecosystem-explorer)",
+          "content": "A repository for the OpenTelemetry Ecosystem Explorer, a tool to help users discover and learn about the various projects in the OpenTelemetry ecosystem.\n\n- **Language:** TypeScript\n- **Stars:** 20\n- **Forks:** 38"
+        },
+        {
+          "header": "[opentelemetry-sandbox-web-js](https://github.com/open-telemetry/opentelemetry-sandbox-web-js) **(ARCHIVED)**",
+          "content": "non-production level experimental Web JS packages\n\n- **Language:** TypeScript\n- **Stars:** 19\n- **Forks:** 18"
+        },
+        {
+          "header": "[docs-ja](https://github.com/open-telemetry/docs-ja) **(ARCHIVED)**",
+          "content": "No description provided.\n\n- **Language:** Makefile\n- **Stars:** 17\n- **Forks:** 6"
+        },
+        {
+          "header": "[sig-end-user](https://github.com/open-telemetry/sig-end-user)",
+          "content": "No description provided.\n\n- **Language:** Python\n- **Stars:** 17\n- **Forks:** 19"
+        },
+        {
+          "header": "[sig-security](https://github.com/open-telemetry/sig-security)",
+          "content": "No description provided.\n\n- **Language:** Python\n- **Stars:** 15\n- **Forks:** 19"
+        },
+        {
+          "header": "[sig-mainframe](https://github.com/open-telemetry/sig-mainframe) **(ARCHIVED)**",
+          "content": "Repository of the Mainframe SIG - Our aim is to enable OpenTelemetry for the Mainframe.\n\n- **Language:** N/A\n- **Stars:** 13\n- **Forks:** 6"
+        },
+        {
+          "header": "[opentelemetry-php-distro](https://github.com/open-telemetry/opentelemetry-php-distro)",
+          "content": "No description provided.\n\n- **Language:** PHP\n- **Stars:** 11\n- **Forks:** 3"
+        },
+        {
+          "header": "[opentelemetry-weaver-examples](https://github.com/open-telemetry/opentelemetry-weaver-examples)",
+          "content": "No description provided.\n\n- **Language:** Rust\n- **Stars:** 9\n- **Forks:** 7"
+        },
+        {
+          "header": "[assign-reviewers-action](https://github.com/open-telemetry/assign-reviewers-action) **(ARCHIVED)**",
+          "content": "GitHub action to assign reviewers/approvers/etc based on configuration\n\n- **Language:** TypeScript\n- **Stars:** 8\n- **Forks:** 7"
+        },
+        {
+          "header": "[opentelemetry-network-build-tools](https://github.com/open-telemetry/opentelemetry-network-build-tools) **(ARCHIVED)**",
+          "content": "eBPF Collector Build Tools\n\n- **Language:** C\n- **Stars:** 7\n- **Forks:** 12"
+        },
+        {
+          "header": "[opentelemetry-swift-core](https://github.com/open-telemetry/opentelemetry-swift-core)",
+          "content": "No description provided.\n\n- **Language:** Swift\n- **Stars:** 7\n- **Forks:** 23"
+        },
+        {
+          "header": "[opentelemetry-weaver-packages](https://github.com/open-telemetry/opentelemetry-weaver-packages)",
+          "content": "No description provided.\n\n- **Language:** Open Policy Agent\n- **Stars:** 7\n- **Forks:** 4"
+        },
+        {
+          "header": "[opamp-java](https://github.com/open-telemetry/opamp-java) **(ARCHIVED)**",
+          "content": "OpAMP protocol implementation in Java\n\n- **Language:** Java\n- **Stars:** 6\n- **Forks:** 7"
+        },
+        {
+          "header": "[sig-profiling](https://github.com/open-telemetry/sig-profiling)",
+          "content": "Profiling SIG utilities\n\n- **Language:** Go\n- **Stars:** 5\n- **Forks:** 10"
+        },
+        {
+          "header": "[opentelemetry-python-genai](https://github.com/open-telemetry/opentelemetry-python-genai)",
+          "content": "No description provided.\n\n- **Language:** Python\n- **Stars:** 5\n- **Forks:** 11"
+        },
+        {
+          "header": "[opentelemetry-go-vanityurls](https://github.com/open-telemetry/opentelemetry-go-vanityurls)",
+          "content": "Vanityurls config for go.opentelemetry.io subdomain\n\n- **Language:** Shell\n- **Stars:** 4\n- **Forks:** 14"
+        },
+        {
+          "header": "[opentelemetry-proto-profile](https://github.com/open-telemetry/opentelemetry-proto-profile) **(ARCHIVED)**",
+          "content": "A fork of OpenTelemetry protocol (OTLP) specification and Protobuf definitions for the Profiling WG\n\n- **Language:** Makefile\n- **Stars:** 4\n- **Forks:** 2"
+        },
+        {
+          "header": "[cpp-build-tools](https://github.com/open-telemetry/cpp-build-tools)",
+          "content": "Builds a docker image to make interacting with C++ projects easier.\n\n- **Language:** Shell\n- **Stars:** 4\n- **Forks:** 6"
+        },
+        {
+          "header": "[.github](https://github.com/open-telemetry/.github)",
+          "content": "No description provided.\n\n- **Language:** N/A\n- **Stars:** 3\n- **Forks:** 25"
+        },
+        {
+          "header": "[sig-developer-experience](https://github.com/open-telemetry/sig-developer-experience)",
+          "content": "No description provided.\n\n- **Language:** N/A\n- **Stars:** 3\n- **Forks:** 5"
+        },
+        {
+          "header": "[changelog.opentelemetry.io](https://github.com/open-telemetry/changelog.opentelemetry.io)",
+          "content": "No description provided.\n\n- **Language:** TypeScript\n- **Stars:** 3\n- **Forks:** 7"
+        },
+        {
+          "header": "[sig-contributor-experience](https://github.com/open-telemetry/sig-contributor-experience)",
+          "content": ""
+        },
+        {
+          "header": "TODO",
+          "content": "- **Language:** N/A\n- **Stars:** 2\n- **Forks:** 6"
+        },
+        {
+          "header": "[gh-manager](https://github.com/open-telemetry/gh-manager) **(ARCHIVED)**",
+          "content": "This repository is for code to manage the OpenTelemetry GitHub Organization\n\n- **Language:** N/A\n- **Stars:** 2\n- **Forks:** 2"
+        },
+        {
+          "header": "[sig-project-infra](https://github.com/open-telemetry/sig-project-infra)",
+          "content": "No description provided.\n\n- **Language:** Go\n- **Stars:** 2\n- **Forks:** 6"
+        },
+        {
+          "header": "[opentelemetry-for-beginners](https://github.com/open-telemetry/opentelemetry-for-beginners)",
+          "content": "No description provided.\n\n- **Language:** JavaScript\n- **Stars:** 2\n- **Forks:** 1"
+        },
+        {
+          "header": "[govanityurls](https://github.com/open-telemetry/govanityurls)",
+          "content": "Use a custom domain in your Go import path\n\n- **Language:** Go\n- **Stars:** 1\n- **Forks:** 4"
+        },
+        {
+          "header": "[.roadmap](https://github.com/open-telemetry/.roadmap)",
+          "content": "Tooling to manage OpenTelemetry Roadmap management and reporting\n\n- **Language:** Python\n- **Stars:** 1\n- **Forks:** 2"
+        },
+        {
+          "header": "[opentelemetry-swift-grpc](https://github.com/open-telemetry/opentelemetry-swift-grpc) **(ARCHIVED)**",
+          "content": "No description provided.\n\n- **Language:** N/A\n- **Stars:** 1\n- **Forks:** 0"
+        },
+        {
+          "header": "[opentelemetry-injector-packaging](https://github.com/open-telemetry/opentelemetry-injector-packaging)",
+          "content": "No description provided.\n\n- **Language:** N/A\n- **Stars:** 1\n- **Forks:** 0"
+        },
+        {
+          "header": "[stackoverflow2slack](https://github.com/open-telemetry/stackoverflow2slack) **(ARCHIVED)**",
+          "content": "A bot that republishing OTel-tagged questions from SO to Slack\n\n- **Language:** Python\n- **Stars:** 0\n- **Forks:** 4"
+        },
+        {
+          "header": "[.allstar](https://github.com/open-telemetry/.allstar) **(ARCHIVED)**",
+          "content": "Enable and house Allstar policies centrally for the organizatio\n\n- **Language:** N/A\n- **Stars:** 0\n- **Forks:** 5"
+        },
+        {
+          "header": "[.project](https://github.com/open-telemetry/.project)",
+          "content": "No description provided.\n\n- **Language:** Python\n- **Stars:** 0\n- **Forks:** 1"
+        },
+        {
+          "header": "[opentelemetry-zig](https://github.com/open-telemetry/opentelemetry-zig)",
+          "content": "No description provided.\n\n- **Language:** N/A\n- **Stars:** 0\n- **Forks:** 0"
+        },
+        {
+          "header": "[opentelemetry-packaging](https://github.com/open-telemetry/opentelemetry-packaging)",
+          "content": "OpenTelemetry Packaging SIG\n\n- **Language:** N/A\n- **Stars:** 0\n- **Forks:** 1"
+        }
+      ],
+      "metadata": {
+        "source": "local://opentelemetry_repos.md",
+        "ingestedAt": "2026-05-23T17:14:56.285Z"
+      }
+    },
+    "Google Ads Strategic Documentation": {
+      "sections": [
+        {
+          "header": "Google Ads & Ad Manager Documentation",
+          "content": ""
+        },
+        {
+          "header": "Understanding bidding basics",
+          "content": "Source: [https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU](https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU)"
+        },
+        {
+          "header": "Understanding bidding basics",
+          "content": "Google Ads gives you several ways to bid for your ads, depending on what matters most to you and your business. Most advertisers focus on clicks, impressions, conversions, or views (for video ads).\n\nNow that you're advertising on Google Ads, you probably have a clear goal in mind for your ads. If you sell coffee, maybe you want to get more people to visit your shop. If you run a hiking club, maybe you're aiming to get more people to sign up for your newsletter. And so on.\n\nKnowing what you want your ads to do will help you decide how to bid.\n\nGoogle Ads runs an auction every single time it has an ad space available -- on a search result, or on a blog, news site, or some other page. Each auction decides which ads will show at that moment in that space. Your bid puts you in the auction.\n\nYou can focus on different things when you bid: clicks, impressions, conversions, views, or engagements, depending on your campaign type. Which would you choose? Let's look at these more closely."
+        },
+        {
+          "header": "Focus on clicks (for Search and Display ads)",
+          "content": "If your main goal is to have people visit your website, then clicks are a good place to start. Using cost-per-click (CPC) bidding, you'll pay only when someone actually clicks on your ad and comes to your site.\n\nExample:\n\nIf you run a hiking club in Vermont, you might want to bid a lot for direct-hit keywords like \"Vermont hiking\" and a different amount for broader keywords like \"hiking maps.\""
+        },
+        {
+          "header": "Focus on impressions",
+          "content": "If your campaign is targeting just the Search Network and your main goal is to increase your brand visibility, consider using Target Impression Share. With this bidding strategy, Google Ads will automatically set your bids to help achieve your Impression Share goal. For example, if you choose an Impression Share target of 65% on the absolute top of the page, Google Ads will automatically set your bids to help show your ads on the absolute top of the page 65% of the total possible amount of times they could show.\n\nIf your campaign is targeting just the Display Network, instead of paying by the click, you can pay by the number of times your ad is visibly shown. That's called cost-per-thousand viewable impressions (vCPM) bidding, since you pay for every 1,000 times your ad appears and is viewable. If you're mostly interested in getting your name or logo in front of lots of people, this is a smart option. Learn how ads are measured as viewable.\n\nViewable CPM bidding, like CPC manual bidding, lets you set bids at the ad group level, or for individual placements."
+        },
+        {
+          "header": "Focus on conversions (for Search and Display ads)",
+          "content": "With this advanced bidding method, you tell Google Ads the amount you're willing to pay for a conversion, or cost per action (CPA). A conversion (sometimes called an acquisition) is a particular action you want to happen on your website. Often that's a sale, but it could be an email sign-up or some other action. You pay for each engaged view and click on Display ads, but Google Ads will automatically set your bids for you to try to get you as many conversions as possible at the cost per action you specified.\n\nTo use CPA bidding you must have conversion tracking turned on, among other things, so CPA bidding is suited for intermediate and advanced Google Ads users."
+        },
+        {
+          "header": "Focus on views (for video ads only)",
+          "content": "If your main goal is to evaluate how engaged viewers are with your video content, where they choose to watch your videos, and when they drop off from watching your content, you'll use cost-per-view (CPV) bidding. With CPV bidding, you'll pay for video views and other video interactions, such as clicks on the calls-to-action overlay (CTAs), cards, and companion banners.\n\nTo set a target CPV bid, you enter the average price you want to pay for a view while setting up your Video views campaign. Your bid is called your target CPV bid, or tCPV. This bid applies at the campaign level."
+        },
+        {
+          "header": "Related links",
+          "content": "- About Target CPA bidding\n- Determine a bid strategy based on your goals"
+        },
+        {
+          "header": "Was this helpful?",
+          "content": "---"
+        },
+        {
+          "header": "Deliver better results with automated bidding",
+          "content": "Source: [https://business.google.com/uk/ad-tools/bidding/](https://business.google.com/uk/ad-tools/bidding/)"
+        },
+        {
+          "header": "Deliver better results with automated bidding",
+          "content": ""
+        },
+        {
+          "header": "Set the right bids with Smart Bidding",
+          "content": ""
+        },
+        {
+          "header": "Reach your audience at the right moment",
+          "content": ""
+        },
+        {
+          "header": "Increase conversions with billions of combinations of signals",
+          "content": ""
+        },
+        {
+          "header": "Bid towards conversion values to maximise your ROI",
+          "content": ""
+        },
+        {
+          "header": "Bid for online and in-store sales",
+          "content": ""
+        },
+        {
+          "header": "Grow your business with Google Ads",
+          "content": "- Nespresso boosts direct-to-consumer revenue by leveraging AI-powered Search campaigns 25% increase in purchases"
+        },
+        {
+          "header": "Nespresso boosts direct-to-consumer revenue by leveraging AI-powered Search campaigns",
+          "content": "25% increase in purchases\n\n- Paycor finds new growth paths among mid-market businesses using Google solutions 105% increase in revenue"
+        },
+        {
+          "header": "Paycor finds new growth paths among mid-market businesses using Google solutions",
+          "content": "105% increase in revenue\n\n- loveholidays earns more profit using Smart Bidding compared to its own solution 57% more profit"
+        },
+        {
+          "header": "loveholidays earns more profit using Smart Bidding compared to its own solution",
+          "content": "57% more profit"
+        },
+        {
+          "header": "Partner with a Google Ads expert to set up your first campaign",
+          "content": "- We’ll get you up to speed on the latest platform updates\n- We’ll design a media plan that makes the most of your budget\n- We’ll help you launch your first campaign with hands-on guidance"
+        },
+        {
+          "header": "Get started with Smart Bidding",
+          "content": "More than 80% of Google advertisers are using automated bidding.\n\nOn average, advertisers that switch from a Target CPA to a Target ROAS bid strategy can see 14% more conversion value at a similar return on ad spend.\n\nMore than 80% of Google advertisers are using automated bidding.\n\nOn average, advertisers that switch from a Target CPA to a Target ROAS bid strategy can see 14% more conversion value at a similar return on ad spend.\n\n1 / 2"
+        },
+        {
+          "header": "Learn more about Smart Bidding",
+          "content": "Page number 1 / 3"
+        },
+        {
+          "header": "Tools and campaigns that can help you meet your goals",
+          "content": "- Conversions +14% Conversions +14% Conversion Measurement Prioritise privacy while measuring which ads drive customers to make purchases online or in-store, sign contracts and more. Learn more"
+        },
+        {
+          "header": "Conversion Measurement",
+          "content": "Prioritise privacy while measuring which ads drive customers to make purchases online or in-store, sign contracts and more.\n\n- 2024 Graduation Cards Luxury Travelers Entertainment News 1.2x 1.2x 1.1x 2 campaigns 2024 Graduation Cards Luxury Travelers Entertainment News 1.2x 1.2x 1.1x 2 campaigns 2024 Graduation Cards Luxury Travelers Entertainment News 1.2x 1.2x 1.1x 2 campaigns 2024 Graduation Cards Luxury Travelers Entertainment News 1.2x 1.2x 1.1x 2 campaigns Insights Page Grow your business with insights and trends that are tailored to your business. Learn more"
+        },
+        {
+          "header": "Insights Page",
+          "content": "Grow your business with insights and trends that are tailored to your business.\n\n- Experiment Experiment Experiments Page The Experiments page in Google Ads can help you create, manage and optimise your experiments in one place. Learn more"
+        },
+        {
+          "header": "Experiments Page",
+          "content": "The Experiments page in Google Ads can help you create, manage and optimise your experiments in one place."
+        },
+        {
+          "header": "Frequently asked questions",
+          "content": ""
+        },
+        {
+          "header": "What is bidding in Google Ads? add remove",
+          "content": ""
+        },
+        {
+          "header": "What is the best bidding strategy for Google Ads? add remove",
+          "content": "- Manual bidding, which allows you to determine what you want to pay\n- Smart Bidding, which uses Google AI to optimise your bids at every auction based on your defined objective"
+        },
+        {
+          "header": "How do I decide how much to bid on Google Ads? add remove",
+          "content": "- Your campaign type\n- How much your keywords cost\n- How successful your keywords are"
+        },
+        {
+          "header": "What is the minimum bid for Google Ads? add remove",
+          "content": ""
+        },
+        {
+          "header": "How can automated bidding help an advertiser improve campaign performance? add remove",
+          "content": "- Get as many clicks as possible within your budget\n- Get as many conversions as possible within your target CPA\n- Meet your ROAS target\n- Get the most conversions or conversion value for your budget"
+        },
+        {
+          "header": "How does value based bidding work? add remove",
+          "content": ""
+        },
+        {
+          "header": "How much should I spend on Google Ads? add remove",
+          "content": "---"
+        },
+        {
+          "header": "Find answers andinspiration",
+          "content": "Source: [https://business.google.com/uk/resources/](https://business.google.com/uk/resources/)"
+        },
+        {
+          "header": "Find answers andinspiration",
+          "content": ""
+        },
+        {
+          "header": "Filter by:",
+          "content": ""
+        },
+        {
+          "header": "Product type",
+          "content": "- Google Ads\n- YouTube Ads"
+        },
+        {
+          "header": "Campaign type",
+          "content": "- App\n- Display\n- Multiple campaigns\n- Performance Max\n- Search\n- Video/YouTube"
+        },
+        {
+          "header": "Content type",
+          "content": "- Article\n- Success story"
+        },
+        {
+          "header": "Industry",
+          "content": "- eCommerce\n- Food & beverage\n- Wholesale retail"
+        },
+        {
+          "header": "Marketing level",
+          "content": "- Beginner\n- Expert\n- Intermediate"
+        },
+        {
+          "header": "Marketing goal",
+          "content": "- App\n- Brand awareness\n- Generate leads\n- Increase website traffic\n- Multiple marketing goals\n- Offline sales\n- Online sales\n- Google Ads The Best Paid SEO Strategies for Businesses Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "The Best Paid SEO Strategies for Businesses",
+          "content": "- YouTube Ads ABCDs of effective video ads Article\nYouTube Ads"
+        },
+        {
+          "header": "ABCDs of effective video ads",
+          "content": "- Google Ads 10 tips for Google Ads budget management Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "10 tips for Google Ads budget management",
+          "content": "- Google Ads How can you write successful online ads with Google? Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "How can you write successful online ads with Google?",
+          "content": "- Google Ads 5 ways to create better ad copy by utilising AI Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "5 ways to create better ad copy by utilising AI",
+          "content": "- Google Ads How to make your products stand out to shoppers on Google Ads Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "How to make your products stand out to shoppers on Google Ads",
+          "content": "- Google Ads How assets can help you connect with valuable customers Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "How assets can help you connect with valuable customers",
+          "content": "- Google Ads How to use the Keyword Planner tool effectively Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "How to use the Keyword Planner tool effectively",
+          "content": "- Google Ads Reach a larger or new audience with Google Display Network (GDN) targeting Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "Reach a larger or new audience with Google Display Network (GDN) targeting",
+          "content": "- Google Ads What are people searching for online? Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "What are people searching for online?",
+          "content": "- Google Ads What is paid search? Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "What is paid search?",
+          "content": "- Google Ads Billing and payments in Google Ads Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "Billing and payments in Google Ads",
+          "content": "- Google Ads 5 things to consider when optimising your mobile landing page Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "5 things to consider when optimising your mobile landing page",
+          "content": "- Google Ads 10 Google Ads features that will grow your business Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "10 Google Ads features that will grow your business",
+          "content": "- Google Ads Understand intent to place ads more effectively Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "Understand intent to place ads more effectively",
+          "content": "- Google Ads 4 Google Ads features to improve your keyword strategy Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "4 Google Ads features to improve your keyword strategy",
+          "content": "- Google Ads 4:42 Best Practices Guide: Reaching the right customers on Search Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "Best Practices Guide: Reaching the right customers on Search",
+          "content": "- Google Ads Analytics in Google Ads Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "Analytics in Google Ads",
+          "content": "- Google Ads 6:24 Best Practices Guide: Google AI for Video Advertising Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "Best Practices Guide: Google AI for Video Advertising",
+          "content": "- Google Ads How to set up Google Ads: a checklist Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "How to set up Google Ads: a checklist",
+          "content": "- YouTube Ads With help from TrueView for action, Nectar by Resident’s sales rise and shine Success story\nYouTube Ads"
+        },
+        {
+          "header": "With help from TrueView for action, Nectar by Resident’s sales rise and shine",
+          "content": "- Google Ads How any business can grow online with Local Services Ads Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "How any business can grow online with Local Services Ads",
+          "content": "- Google Ads How to set up conversion measurement on your website Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "How to set up conversion measurement on your website",
+          "content": "- Google Ads Save time and drive efficiency with responsive display ads Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "Save time and drive efficiency with responsive display ads",
+          "content": "- Google Ads 00:30 Currensea boosts customer acquisition 422%, with help of Google Search Success story"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "Currensea boosts customer acquisition 422%, with help of Google Search",
+          "content": "- Google Ads How to unlock the value of your creative assets with Google Ads Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "How to unlock the value of your creative assets with Google Ads",
+          "content": "- Google Ads 00:30 A strong brew: Bird & Blend sees 439% ROAS through Google Ads Success story"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "A strong brew: Bird & Blend sees 439% ROAS through Google Ads",
+          "content": "- Google Ads 0:30 LØCI achieves 500% ROAS with Google Ads Success story"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "LØCI achieves 500% ROAS with Google Ads",
+          "content": "- Google Ads Kinetica Sports’ full-funnel campaign hits 267% increase in ROAS, with help from Google Ads. Success story"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "Kinetica Sports’ full-funnel campaign hits 267% increase in ROAS, with help from Google Ads.",
+          "content": "- How experimenting with their Google Ads Strategy helped Octopus Energy sign up over 2 million customers Success story"
+        },
+        {
+          "header": "How experimenting with their Google Ads Strategy helped Octopus Energy sign up over 2 million customers",
+          "content": "- Google Ads Best Practices Guide: AI Essentials in Google Ads Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "Best Practices Guide: AI Essentials in Google Ads",
+          "content": "- Google Ads A beginners’ guide to YouTube video ads: Drive action with video advertising Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "A beginners’ guide to YouTube video ads: Drive action with video advertising",
+          "content": "- Google Ads Get better results across all Google Ads channels with Performance Max campaigns Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "Get better results across all Google Ads channels with Performance Max campaigns",
+          "content": "- Google Ads Understanding demand: How search data can improve your marketing performance Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "Understanding demand: How search data can improve your marketing performance",
+          "content": "- Google Ads 00:30 How fashion brand Never Fully Dressed achieved 890% ROAS through Google Ads Success story"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "How fashion brand Never Fully Dressed achieved 890% ROAS through Google Ads",
+          "content": "- Google Ads A guide to keyword match types in Google Ads Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "A guide to keyword match types in Google Ads",
+          "content": "- Google Ads 00:30 Lucy & Yak sees 233% increase in revenue through Google Ads Success story"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "Lucy & Yak sees 233% increase in revenue through Google Ads",
+          "content": "- Google Ads The perfect fit: Farai London scales by 400% with Google Ads Success story"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "The perfect fit: Farai London scales by 400% with Google Ads",
+          "content": "- Google Ads Build trust online: How the Google Guarantee works Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "Build trust online: How the Google Guarantee works",
+          "content": "- Google Ads A guide to App campaigns on Google Ads Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "A guide to App campaigns on Google Ads",
+          "content": "- How optimisation helped PensionBee triple their customer base Success story"
+        },
+        {
+          "header": "How optimisation helped PensionBee triple their customer base",
+          "content": "- Google Ads 3 consumer shifts to influence your retail paid search strategy Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "3 consumer shifts to influence your retail paid search strategy",
+          "content": "- Google Ads Drive awareness and conversions: Cover the entire marketing funnel with Google Display Ads Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "Drive awareness and conversions: Cover the entire marketing funnel with Google Display Ads",
+          "content": "- Google Ads What is Google Customer Match, and how can it help you reach valuable audiences online? Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "What is Google Customer Match, and how can it help you reach valuable audiences online?",
+          "content": "- Google Ads Spark interest and inspire action: What are Demand Gen campaigns? Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "Spark interest and inspire action: What are Demand Gen campaigns?",
+          "content": "- Google Ads Get more leads with less effort: a guide to lead form assets Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "Get more leads with less effort: a guide to lead form assets",
+          "content": "- Google Ads How to tailor your ads to reach customers at every stage of their purchase journey Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "How to tailor your ads to reach customers at every stage of their purchase journey",
+          "content": "- Google Ads How to save time and boost results with automated bidding Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "How to save time and boost results with automated bidding",
+          "content": "- Google Ads How to improve your Google Ads Quality Score Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "How to improve your Google Ads Quality Score",
+          "content": "- Google Ads From browsing to buying: 7 Search strategies to win new customers Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "From browsing to buying: 7 Search strategies to win new customers",
+          "content": "- Google Ads How to increase website traffic and lead generation with Google Ads Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "How to increase website traffic and lead generation with Google Ads",
+          "content": "- Google Ads How audience segments can help you find and reach the right customers at the right time Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "How audience segments can help you find and reach the right customers at the right time",
+          "content": "- Google Ads Enhanced conversions: Measure ad performance while protecting people’s privacy Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "Enhanced conversions: Measure ad performance while protecting people’s privacy",
+          "content": "- Google Ads Discover Mobile Advertising with Google Ads Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "Discover Mobile Advertising with Google Ads",
+          "content": "- Google Ads Boost your business by advertising on Google Maps Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "Boost your business by advertising on Google Maps",
+          "content": "- YouTube Ads Bellroy grows sales with shoppable Video action campaigns and value-based bidding Success story\nYouTube Ads"
+        },
+        {
+          "header": "Bellroy grows sales with shoppable Video action campaigns and value-based bidding",
+          "content": "- Google Ads Navigating the B2B marketing funnel with Google Ads Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "Navigating the B2B marketing funnel with Google Ads",
+          "content": "- YouTube Ads Majestic Heli Ski get nearly half of their new skiers from YouTube Success story\nYouTube Ads"
+        },
+        {
+          "header": "Majestic Heli Ski get nearly half of their new skiers from YouTube",
+          "content": "- YouTube Ads BlendJet’s YouTube strategy led to 413% revenue growth Success story\nYouTube Ads"
+        },
+        {
+          "header": "BlendJet’s YouTube strategy led to 413% revenue growth",
+          "content": "- YouTube Ads Adidas uses sequencing to move customers from awareness to consideration Success story\nYouTube Ads"
+        },
+        {
+          "header": "Adidas uses sequencing to move customers from awareness to consideration",
+          "content": "- Google Ads Beyond the last click: Using attribution models to understand your Google Ads performance Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "Beyond the last click: Using attribution models to understand your Google Ads performance",
+          "content": "- YouTube Ads Pringles masters tentpole marketing moments with TrueView for reach Success story\nYouTube Ads"
+        },
+        {
+          "header": "Pringles masters tentpole marketing moments with TrueView for reach",
+          "content": "- YouTube Ads Measure your results Article\nYouTube Ads"
+        },
+        {
+          "header": "Measure your results",
+          "content": "- YouTube Ads Xfinity Mobile turns data into dollars Success story\nYouTube Ads"
+        },
+        {
+          "header": "Xfinity Mobile turns data into dollars",
+          "content": "- Google Ads Maximise your ROI: How to get started with value-based bidding on Google Ads Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "Maximise your ROI: How to get started with value-based bidding on Google Ads",
+          "content": "- YouTube Ads Video action campaigns on YouTube Shorts helped Cider gain new customers at a 33% lower CPA Success story\nYouTube Ads"
+        },
+        {
+          "header": "Video action campaigns on YouTube Shorts helped Cider gain new customers at a 33% lower CPA",
+          "content": "- Google Ads A foundation for success: How to structure your Google Ads account for growth on Search with AI Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "A foundation for success: How to structure your Google Ads account for growth on Search with AI",
+          "content": "- Google Ads Paid search optimisation in the age of AI-powered marketing: How advertisers can stand out? Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "Paid search optimisation in the age of AI-powered marketing: How advertisers can stand out?",
+          "content": "- Google Ads 5 ways to use Google AI for more effective advertising Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "5 ways to use Google AI for more effective advertising",
+          "content": "- Google Ads Simplifying multi-account management: Streamline your workflow with a Google Ads manager account Article"
+        },
+        {
+          "header": "Google Ads",
+          "content": ""
+        },
+        {
+          "header": "Simplifying multi-account management: Streamline your workflow with a Google Ads manager account",
+          "content": "---"
+        },
+        {
+          "header": "https://developers.google.com/ad-manager",
+          "content": "Source: [https://developers.google.com/ad-manager](https://developers.google.com/ad-manager)\n\n- Home\n- Products\n- Ad Manager"
+        },
+        {
+          "header": "A set of tools to manage your Google Ad Manager accounts and campaigns.",
+          "content": ""
+        },
+        {
+          "header": "Ad Manager API (Beta)",
+          "content": ""
+        },
+        {
+          "header": "Mobile Ads SDK",
+          "content": ""
+        },
+        {
+          "header": "Dynamic Ad Insertion",
+          "content": ""
+        },
+        {
+          "header": "Ad Manager SOAP API",
+          "content": "---"
+        },
+        {
+          "header": "https://developers.google.com/ad-manager/dynamic-ad-insertion",
+          "content": "Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion)\n\n- Home\n- Products\n- Dynamic Ad Insertion"
+        },
+        {
+          "header": "Dynamic ad insertion (DAI)",
+          "content": "DAI lets you monetize your video content, taking away the complexity of the ad request and ad response process from the SDK. This approach reduces the likelihood of client-side errors and produces a TV-like experience without latency or buffering between content and ads.\n\nWith DAI, you can target individual ads for livestreams and videos on demand programming, obtain multi-screen reach with broad device support, and take advantage of programmatic monetization across all devices with Ad Exchange for video. Regardless of the original format of your content, once it becomes digital, DAI lets you show targeted video ads within your content, based on the individual user viewing the content.\n\nDAI lets you perform these workflows through the Full service API and Pod serving API, along with supported SDK platforms.\n\nTo start using DAI, select one of the following integrations:"
+        },
+        {
+          "header": "Full service DAI",
+          "content": ""
+        },
+        {
+          "header": "Pod serving DAI",
+          "content": ""
+        },
+        {
+          "header": "Supported platforms",
+          "content": ""
+        },
+        {
+          "header": "Get Support",
+          "content": "---"
+        },
+        {
+          "header": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
+          "content": "Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service)\n\n- Home\n- Products\n- Dynamic Ad Insertion\n- DAI Full Service API\n- APIs"
+        },
+        {
+          "header": "Full service DAI",
+          "content": ""
+        },
+        {
+          "header": "With the IMA DAI SDK",
+          "content": "- The web page or app loads the IMA DAI SDK through: an embedded script tag for HTML5 a native app for Android, Google Cast, iOS, tvOS, or Roku\n- an embedded script tag for HTML5\n- a native app for Android, Google Cast, iOS, tvOS, or Roku\n- The SDK requests either a VOD stream or live stream from Google Ad Manager 360.\n- Ad Manager 360 responds with the video stream that includes inserted ad breaks.\n- The SDK parses the response, determines the correct media type based on environment, and delivers the video stream (and companion ads if needed) to the web page or app.\n- The video player negotiates the playback details with the SDK and plays the content.\n- The video player listens for instream metadata and passes it to the SDK for processing.\n- The SDK fires impression pings and tracking events as needed.\nFor detailed instructions on how to implement a client video player using the IMA DAI SDK, check out our SDK guides:"
+        },
+        {
+          "header": "With the DAI API",
+          "content": "- The client's player app requests either a VOD stream or live stream from Google Ad Manager 360.\n- Ad Manager 360 responds with the video stream that includes inserted ad breaks.\n- The client's player app begins playback of the stream, and either requests ad metadata once (for VOD streams) OR begins regularly polling for ad metadata (for live streams).\n- The client's player app listens for instream metadata, parses it, and compares it to the values in the ad metadata to identify ad events.\n- The client's video player app fires ad impression pings and tracking events as needed.\nFor detailed instructions on how to implement a client video player, using the DAI REST API, check out our API guides:\n\n\n---"
+        },
+        {
+          "header": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
+          "content": "Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving)\n\n- Home\n- Products\n- Dynamic Ad Insertion\n- DAI Pod Serving API\n- APIs"
+        },
+        {
+          "header": "DAI Pod Serving",
+          "content": "Dynamic Ad Insertion (DAI) Pod Serving lets you request ad pods, from Google or third-party ad servers, for live and video-on-demand (VOD) streams. For more details, see Configure ad pods and break templates.\n\n- Pod serving redirect: lets you retrieve manifest segments to implement Server-Side Ad Insertion (SSAI). The segments are dynamic URLs, redirecting to either content or ad media files.\n- Pod serving manifest: lets you retrieve the complete manifest of the ad pods to implement Server-Side Ad Insertion (SSAI). For more details, see Server guided DAI.\nFor VOD, Google Ad Manager returns the complete ad pod manifests.\n\nDAI Pod serving offers the following supported platforms:\n\nFor details on livestream and VOD, see the following workflows:"
+        },
+        {
+          "header": "Stitch ads into a livestream",
+          "content": "- To start a livestream session, make a stream registration request. Set ad tag parameters unique for the stream request to override the DAI ad tag's default values. For more details about ad targeting, see Supply targeting parameters to your stream.\n- Retrieve the unique user session ID from the stream registration response. For more details about using the session ID, see Locate a DAI session ID or debug key and Monitor and debug a specific stream session.\n- Make a manifest request to your video stitcher or manifest manipulator, passing the session ID. Repeat the request for manifest updates throughout playback.\n- For DASH manifests, make one period template request for the entire session.\n- For DASH manifests, cache the period template. For each ad break, retrieve the cached template and populate all macros with the ad break data. For more details about supported macros, see Populate the period template. Then, insert the result period into the final manifest.\n- Return the final manifest that contains content or ad media segments for client playback. Playback begins.\n- Regularly poll Google Ad Manager for updates of ad metadata using the polling frequency returned in the stream request. Store the ad metadata for looking up ad events.\n- During an ad break, the video player loads the media segments and follows Google Ad Manager redirects to the media files.\n- During an ad break, listen to the video player for timed metadata, containing ID3 tags. Extract the ad event ID from the ID3 tag to find the associated ad metadata.\n- Send media verification pings to Google Ad Manager."
+        },
+        {
+          "header": "Stitch ads into a VOD stream",
+          "content": "- Make a stream request to register a VOD stream session. Set ad tag parameters unique for the stream request to override the DAI ad tag's default values. For more details, see Supply targeting parameters to your stream.\n- Retrieve the session ID from the stream response. To inspect the stream session, see Locate a DAI session ID or debug key and Monitor and debug a specific stream session.\n- Make a manifest request to your video stitcher or manifest manipulator, passing the session ID.\n- Use the session ID to request all ad pods at once.\n- Retrieve complete manifests of all ad pods. To create the final manifest, stitch the ad pod manifests with the content stream.\n- Return the final manifest, containing both content and ad segments.\n- Request ad metadata for all ad events. Store the ad metadata for looking up ad events. Playback begins.\n- During an ad break, the video player loads the media segments and follows Google Ad Manager redirects to the media files.\n- During an ad break, listen for ad events containing ID3 tags. To find the ad event metadata, extract the ad event ID from the ID3 tag and match the ID with the ad metadata.\n- Send media verification pings to Google Ad Manager.\n\n---"
+        },
+        {
+          "header": "Get started",
+          "content": "Stay organized with collections\n\n\n\n      Save and categorize content based on your preferences.\n\nSource: [https://developers.google.com/ad-manager/api/start](https://developers.google.com/ad-manager/api/start)\n\nLooking for a REST API? The Ad Manager API (Beta) is now available.\n\n- Home\n- Products\n- Ad Manager"
+        },
+        {
+          "header": "Get started Stay organized with collections Save and categorize content based on your preferences.",
+          "content": ""
+        },
+        {
+          "header": "Page Summary",
+          "content": "- The Google Ad Manager SOAP API allows building applications to manage inventory, create orders, and pull reports.\nThe Google Ad Manager SOAP API allows building applications to manage inventory, create orders, and pull reports.\n\n- Client libraries are available for Java, .NET, Python, PHP, and Ruby to help get started with the API.\nClient libraries are available for Java, .NET, Python, PHP, and Ruby to help get started with the API.\n\n- To make your first API request, you need to get access to an Ad Manager network, create authentication credentials using OAuth 2.0, and configure API access in your network settings.\nTo make your first API request, you need to get access to an Ad Manager network, create authentication credentials using OAuth 2.0, and configure API access in your network settings.\n\n- After setting up your Ad Manager network and authentication, download and configure one of the provided client libraries to write code and make requests to the API.\nAfter setting up your Ad Manager network and authentication, download and configure one of the provided client libraries to write code and make requests to the API.\n\nYou can use the Google Ad Manager SOAP API to build apps that manage inventory, create orders, pull reports, and more.\n\nTo help you get started, we offer client libraries for Java, .NET, Python, PHP, and Ruby.\n\nTo make your first API request, follow these steps:"
+        },
+        {
+          "header": "Get access to an Ad Manager network",
+          "content": "If you don't already have one, sign up for an Ad Manager account. You can also create a test network if you want to test the API in a separate environment. Note that you don't need an AdSense account for test purposes.\n\nMake a note of your network code. You can find this in the URL when you sign in to your network. For example, in the URL https://admanager.google.com/1234#home, 1234 is your network code."
+        },
+        {
+          "header": "Create authentication credentials",
+          "content": "You must authenticate all Ad Manager SOAP API requests using OAuth 2.0. The following steps cover the use case of accessing your own Ad Manager data. For more details and other options, see Authentication.\n\n- Open the Google API Console Credentials page\nOpen the Google API Console Credentials page\n\n- From the project menu, choose Create project, enter a name for the project, and optionally, edit the provided Project ID. Click Create.\nFrom the project menu, choose Create project, enter a name for the project, and optionally, edit the provided Project ID. Click Create.\n\n- On the Credentials page, select Create credentials, then select Service account key.\nOn the Credentials page, select Create credentials, then select Service account key.\n\n- Select New service account and select JSON as the key type.\nSelect New service account and select JSON as the key type.\n\n- Click Create to download a file containing a private key.\nClick Create to download a file containing a private key."
+        },
+        {
+          "header": "Configure your Ad Manager network",
+          "content": "- Sign in to Google Ad Manager.\nSign in to Google Ad Manager.\n\n- In the sidebar, click Admin > Global settings.\nIn the sidebar, click Admin > Global settings.\n\n- Under General settings > Api access click the slider to Enabled.\nUnder General settings > Api access click the slider to Enabled.\n\n- Click the Save button at the bottom of the page.\nClick the Save button at the bottom of the page."
+        },
+        {
+          "header": "Set up your client",
+          "content": "Download one of the Ad Manager client libraries. The libraries offer wrapper functions and features that make it easier and faster to develop apps.\n\nThe following tabs provide quickstarts for coding in each of the languages for which there is a client library."
+        },
+        {
+          "header": "Java",
+          "content": "Here is a basic example that shows how to use the Java client library. For more detailed usage information, refer to the README file in the client library distribution.\n\n- Setup your credentials Run the following command in a shell: curl https://raw.githubusercontent.com/googleads/googleads-java-lib/main/examples/admanager_axis/src/main/resources/ads.properties -o ~/ads.properties Open the ~/ads.properties file and populate the following fields: [...] api.admanager.applicationName=INSERT_APPLICATION_NAME_HERE api.admanager.jsonKeyFilePath=INSERT_PATH_TO_JSON_KEY_FILE_HERE api.admanager.networkCode=INSERT_NETWORK_CODE_HERE [...]\nRun the following command in a shell:\n\n- Specify dependencies Edit your pom.xml file and add the following to the dependencies tag. You can find the latest version number on Github. <dependency> <groupId>com.google.api-ads</groupId> <artifactId>ads-lib</artifactId> <version>RELEASE</version> </dependency> <dependency> <groupId>com.google.api-ads</groupId> <artifactId>dfp-axis</artifactId> <version>RELEASE</version> </dependency>\nSpecify dependencies\n\nEdit your pom.xml file and add the following to the dependencies tag. You can find the latest version number on Github.\n\n- Write some code and make a request! import com.google.api.ads.common.lib.auth.OfflineCredentials; import com.google.api.ads.common.lib.auth.OfflineCredentials.Api; import com.google.api.ads.admanager.axis.factory.AdManagerServices; import com.google.api.ads.admanager.axis.v202602.Network; import com.google.api.ads.admanager.axis.v202602.NetworkServiceInterface; import com.google.api.ads.admanager.lib.client.AdManagerSession; import com.google.api.client.auth.oauth2.Credential; public class App { public static void main(String[] args) throws Exception { Credential oAuth2Credential = new OfflineCredentials.Builder() .forApi(Api.AD_MANAGER) .fromFile() .build() .generateCredential(); // Construct an AdManagerSession. AdManagerSession session = new AdManagerSession.Builder() .fromFile() .withOAuth2Credential(oAuth2Credential) .build(); // Construct a Google Ad Manager service factory, which can only be used once per // thread, but should be reused as much as possible. AdManagerServices adManagerServices = new AdManagerServices(); // Retrieve the appropriate service NetworkServiceInterface networkService = adManagerServices.get(session, NetworkServiceInterface.class); // Make a request Network network = networkService.getCurrentNetwork(); System.out.printf(\"Current network has network code '%s' and display\" + \" name '%s'.%n\", network.getNetworkCode(), network.getDisplayName()); } } View on GitHub\nWrite some code and make a request!"
+        },
+        {
+          "header": "Python",
+          "content": "Here is a basic example that shows how to use the Python client library. The Python Client Library supports Python v3.6+. For more detailed usage information, refer to the README file in the client library distribution.\n\n- Install the library and set up your credentials. Run the following commands in a shell: python3 -m pip install googleads curl https://raw.githubusercontent.com/googleads/googleads-python-lib/main/googleads.yaml \\ -o ~/googleads.yaml\nRun the following commands in a shell:\n\n- Set up your ~/googleads.yaml file. Fill in the following fields: ad_manager: application_name: INSERT_APPLICATION_NAME_HERE network_code: INSERT_NETWORK_CODE_HERE path_to_private_key_file: INSERT_PATH_TO_FILE_HERE\nFill in the following fields:\n\n- Run some code and make a request. # Import the library. from googleads import ad_manager # Initialize a client object, by default uses the credentials in ~/googleads.yaml. client = ad_manager.AdManagerClient.LoadFromStorage() # Initialize a service. network_service = client.GetService('NetworkService', version='v202602') # Make a request. current_network = network_service.getCurrentNetwork() print(\"Current network has network code '%s' and display name '%s'.\" % (current_network['networkCode'], current_network['displayName'])) View on GitHub"
+        },
+        {
+          "header": "PHP",
+          "content": "Here is a basic example that shows how to use the PHP client library.\n\n- Install the library and setup your credentials. Run the following commands in a shell to install the client library and download the adsapi_php.ini file to your home directory: composer require googleads/googleads-php-lib curl https://raw.githubusercontent.com/googleads/googleads-php-lib/main/examples/AdManager/adsapi_php.ini -o ~/adsapi_php.ini\nRun the following commands in a shell to install the client library and download the adsapi_php.ini file to your home directory:\n\n- Setup your ~/adsapi_php.ini file. Fill in the following fields: [AD_MANAGER] networkCode = \"INSERT_NETWORK_CODE_HERE\" applicationName = \"INSERT_APPLICATION_NAME_HERE\" [OAUTH2] jsonKeyFilePath = \"INSERT_ABSOLUTE_PATH_TO_OAUTH2_JSON_KEY_FILE_HERE\" scopes = \"https://www.googleapis.com/auth/dfp\"\nFill in the following fields:\n\n- Run some code and make a request! This example code must be run from the command line, not a browser. The file containing this code must reside in the root of the project directory, where composer require was run. <?php require 'vendor/autoload.php'; use Google\\AdsApi\\AdManager\\AdManagerSession; use Google\\AdsApi\\AdManager\\AdManagerSessionBuilder; use Google\\AdsApi\\AdManager\\v202602\\ApiException; use Google\\AdsApi\\AdManager\\v202602\\ServiceFactory; use Google\\AdsApi\\Common\\OAuth2TokenBuilder; // Generate a refreshable OAuth2 credential for authentication. $oAuth2Credential = (new OAuth2TokenBuilder()) ->fromFile() ->build(); // Construct an API session configured from a properties file and the OAuth2 // credentials above. $session = (new AdManagerSessionBuilder()) ->fromFile() ->withOAuth2Credential($oAuth2Credential) ->build(); // Get a service. $serviceFactory = new ServiceFactory(); $networkService = $serviceFactory->createNetworkService($session); // Make a request $network = $networkService->getCurrentNetwork(); printf( \"Network with code %d and display name '%s' was found.\\n\", $network->getNetworkCode(), $network->getDisplayName() ); View on GitHub"
+        },
+        {
+          "header": ".NET",
+          "content": "Here is a basic example that shows how to use the .NET client library\n\n- Create a new project Open Visual Studio and create a new project (Console Application).\nOpen Visual Studio and create a new project (Console Application).\n\n- Add required library references to your project Add a nuget dependency for Google.Dfp.\nAdd a nuget dependency for Google.Dfp.\n\n- Setup your App.config Copy src\\App.config to your project directory and add it to your project. If your application has its own App.config, then you can copy the following nodes into your App.config: configuration/AdManagerApi configuration/configSections/section[name=\"AdManagerApi\"] configuration/system.net\nCopy src\\App.config to your project directory and add it to your project. If your application has its own App.config, then you can copy the following nodes into your App.config:\n\n- configuration/AdManagerApi\n- configuration/configSections/section[name=\"AdManagerApi\"]\n- configuration/system.net\n- Setup credentials Open App.config and edit the following keys: <add key=\"ApplicationName\" value=\"INSERT_YOUR_APPLICATION_NAME_HERE\" /> <add key=\"NetworkCode\" value=\"INSERT_YOUR_NETWORK_CODE_HERE\" /> <add key=\"OAuth2Mode\" value=\"SERVICE_ACCOUNT\" /> <add key=\"OAuth2SecretsJsonPath\" value=\"INSERT_OAUTH2_SECRETS_JSON_FILE_PATH_HERE\" />\nOpen App.config and edit the following keys:\n\n- Make a call to the library You can call the library as shown in the following C# code snippet View on GitHub AdManagerUser user = new AdManagerUser(); using (InventoryService inventoryService = user.GetService<InventoryService>()) { // Create a statement to select ad units. int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT; StatementBuilder statementBuilder = new StatementBuilder().OrderBy(\"id ASC\").Limit(pageSize); // Retrieve a small amount of ad units at a time, paging through until all // ad units have been retrieved. int totalResultSetSize = 0; do { AdUnitPage page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement()); // Print out some information for each ad unit. if (page.results != null) { totalResultSetSize = page.totalResultSetSize; int i = page.startIndex; foreach (AdUnit adUnit in page.results) { Console.WriteLine( \"{0}) Ad unit with ID \\\"{1}\\\" and name \\\"{2}\\\" was found.\", i++, adUnit.id, adUnit.name); } } statementBuilder.IncreaseOffsetBy(pageSize); } while (statementBuilder.GetOffset() < totalResultSetSize); Console.WriteLine(\"Number of results found: {0}\", totalResultSetSize); }\nYou can call the library as shown in the following C# code snippet\n\nIf you don't want to set your credentials in your App.config, then refer to this wiki article for alternate ways of using the AdManagerUser class. For more detailed information about using the .NET Client Library, refer to the README . If you want to develop in .NET without the client library, please refer to the NoClientLibrary wiki article."
+        },
+        {
+          "header": "Ruby",
+          "content": "Here is a basic example that shows how to use the Ruby client library. The Ruby client library requires Ruby 2.1 or later.\n\n- Install the Ruby gem and get the configuration file. Run the following commands in a shell: gem install google-dfp-api curl https://raw.githubusercontent.com/googleads/google-api-ads-ruby/main/ad_manager_api/ad_manager_api.yml -o ~/ad_manager_api.yml If you encounter an error such as \"cannot load such file -- mkmf (LoadError)\" at any point while installing your gems, you may need to install additional Ruby development libraries such as ruby-dev, ruby-devel, xcode-select etc. for your particular environment.\nRun the following commands in a shell:\n\n- Setup your credentials Populate the required fields in the ~/ad_manager_api.yml file. If you don't already have an OAuth2 keyfile, you'll need to follow the steps to create your OAuth2 credentials. :authentication: :oauth2_keyfile: INSERT_PATH_TO_JSON_KEY_FILE_HERE :application_name: INSERT_APPLICATION_NAME_HERE :network_code: INSERT_NETWORK_CODE_HERE\nPopulate the required fields in the ~/ad_manager_api.yml file. If you don't already have an OAuth2 keyfile, you'll need to follow the steps to create your OAuth2 credentials.\n\n- Write some code and make a request! # Import the library. require 'ad_manager_api' # Initialize an Ad Manager client instance (uses credentials in ~/ad_manager_api.yml by default). ad_manager = AdManagerApi::Api.new # Get a service instance. network_service = ad_manager.service(:NetworkService, :v202602) # Make a request. network = network_service.get_current_network() puts \"The current network is %s (%d).\" % [network[:display_name], network[:network_code]] View on GitHub\nMore detailed steps for getting started can be found in the README file that is distributed with the Ruby client library. Also, check out our full example library for Ruby."
+        },
+        {
+          "header": "Next steps",
+          "content": "When you have a client library up and running, modify the examples provided to extend them for your needs.\n\nBrowse the reference documentation to learn more about the API.\n\nIf you need help, visit our Support page.\n\n\n---"
+        },
+        {
+          "header": "Learn more, do more.",
+          "content": "Source: [https://admanager.google.com/home/resources/](https://admanager.google.com/home/resources/)"
+        },
+        {
+          "header": "Learn more, do more.",
+          "content": "Learn how global publishers are using publisher provided Identifiers to increase programmatic revenue in browsers that no longer support third-party cookies."
+        },
+        {
+          "header": "Read Story",
+          "content": "Our monthly newsletter puts the latest success stories, insights, and product news right into your inbox."
+        },
+        {
+          "header": "Filter by:",
+          "content": "- Topic Ad Formats Advanced TV Brand Safety Core Ad Serving Data and Insights Dynamic Ad Insertion Ecosystem Mobile App Privacy Video Yield Management\n- Ad Formats\n- Advanced TV\n- Brand Safety\n- Core Ad Serving\n- Data and Insights\n- Dynamic Ad Insertion\n- Ecosystem\n- Mobile App\n- Privacy\n- Video\n- Yield Management\n- Type Feature Brief Guide Report White Paper\n- Feature Brief\n- Guide\n- Report\n- White Paper"
+        },
+        {
+          "header": "No matching results",
+          "content": "- Guide Publisher best practices for live sporting events Read more"
+        },
+        {
+          "header": "Publisher best practices for live sporting events",
+          "content": "- Read more\n- Feature Brief Powering direct transactions: Investing in your growth Read more"
+        },
+        {
+          "header": "Powering direct transactions: Investing in your growth",
+          "content": "- Read more\n- Report Building the future of live monetization Read more"
+        },
+        {
+          "header": "Building the future of live monetization",
+          "content": "- Read more\n- Report Increase your revenue in browsers with limited signals Read more"
+        },
+        {
+          "header": "Increase your revenue in browsers with limited signals",
+          "content": "- Read more\n- Guide The publisher’s playbook for navigating today’s privacy environment Read more"
+        },
+        {
+          "header": "The publisher’s playbook for navigating today’s privacy environment",
+          "content": "- Read more\n- Report For e-commerce, the time for digital ads is now Read more"
+        },
+        {
+          "header": "For e-commerce, the time for digital ads is now",
+          "content": "- Read more\n- Guide How automation can help you manage and grow your business Read more"
+        },
+        {
+          "header": "How automation can help you manage and grow your business",
+          "content": "- Read more\n- Report 2020 advanced TV inventory report Read more"
+        },
+        {
+          "header": "2020 advanced TV inventory report",
+          "content": "- Read more\n- Guide Building a Retail Media Business with Google Read more"
+        },
+        {
+          "header": "Building a Retail Media Business with Google",
+          "content": "- Read more\n- Guide Protecting your ad-supported CTV experiences Read more"
+        },
+        {
+          "header": "Protecting your ad-supported CTV experiences",
+          "content": "- Read more\n- Guide Getting started with Dynamic Ad Insertion Read more"
+        },
+        {
+          "header": "Getting started with Dynamic Ad Insertion",
+          "content": "- Read more\n- White Paper The Next-Generation Telco Bundle Read more"
+        },
+        {
+          "header": "The Next-Generation Telco Bundle",
+          "content": "- Read more\n- Feature Brief Maximize your revenue with Opportunities and Experiments Read more"
+        },
+        {
+          "header": "Maximize your revenue with Opportunities and Experiments",
+          "content": "- Read more\n- Feature Brief Get customized insights with Ad Manager reporting Read more"
+        },
+        {
+          "header": "Get customized insights with Ad Manager reporting",
+          "content": "- Read more\n- Feature Brief How Authorized Buyers work with Google Ad Manager Read more"
+        },
+        {
+          "header": "How Authorized Buyers work with Google Ad Manager",
+          "content": "- Read more\n- Feature Brief Use machine learning to manage and forecast inventory more effectively Read more"
+        },
+        {
+          "header": "Use machine learning to manage and forecast inventory more effectively",
+          "content": "- Read more\n- Feature Brief Capture growing video budgets with out-stream video ads Read more"
+        },
+        {
+          "header": "Capture growing video budgets with out-stream video ads",
+          "content": "- Read more\n- Feature Brief Streamlined and improved workflows for video content ingestion Read more"
+        },
+        {
+          "header": "Streamlined and improved workflows for video content ingestion",
+          "content": "- Read more\n- Guide Reimagining the commercial break everywhere viewers are watching Read more"
+        },
+        {
+          "header": "Reimagining the commercial break everywhere viewers are watching",
+          "content": "- Read more\n- Report 2019 Advanced TV Inventory Report Read more"
+        },
+        {
+          "header": "2019 Advanced TV Inventory Report",
+          "content": "- Read more\n- Report APAC’s changing digital landscape: How broadcast and video companies can keep up Read more"
+        },
+        {
+          "header": "APAC’s changing digital landscape: How broadcast and video companies can keep up",
+          "content": "- Read more\n- Feature Brief Save time and increase inventory value with Open Measurement for apps Read more"
+        },
+        {
+          "header": "Save time and increase inventory value with Open Measurement for apps",
+          "content": "- Read more\n- Feature Brief Modernize your direct deals with Programmatic Guaranteed Read more"
+        },
+        {
+          "header": "Modernize your direct deals with Programmatic Guaranteed",
+          "content": "- Read more\n- Feature Brief Seamlessly reach viewers everywhere with Dynamic Ad Insertion Read more"
+        },
+        {
+          "header": "Seamlessly reach viewers everywhere with Dynamic Ad Insertion",
+          "content": "- Read more\n- Feature Brief Earn more from your video content with Smarter Ad Breaks Read more"
+        },
+        {
+          "header": "Earn more from your video content with Smarter Ad Breaks",
+          "content": "- Read more\n- Feature Brief Monitor and manage ad exchange ads in the Ad review center Read more"
+        },
+        {
+          "header": "Monitor and manage ad exchange ads in the Ad review center",
+          "content": "- Read more\n- Feature Brief Get comprehensive yield management with Google Ad Manager Read more"
+        },
+        {
+          "header": "Get comprehensive yield management with Google Ad Manager",
+          "content": "- Read more\n- Feature Brief Improve app revenue and fill rates with App Mediation Read more"
+        },
+        {
+          "header": "Improve app revenue and fill rates with App Mediation",
+          "content": "- Read more\n- Feature Brief Create a customized ad experience with Native Ads Read more"
+        },
+        {
+          "header": "Create a customized ad experience with Native Ads",
+          "content": "- Read more\n- Feature Brief Improving user experience with the Better Ads Standards Read more"
+        },
+        {
+          "header": "Improving user experience with the Better Ads Standards",
+          "content": "- Read more\n- Feature Brief Bring more bids to the auction with Open Bidding Read more"
+        },
+        {
+          "header": "Bring more bids to the auction with Open Bidding",
+          "content": "- Read more\n- Feature Brief Create a better ad experience with rewarded ads Read more"
+        },
+        {
+          "header": "Create a better ad experience with rewarded ads",
+          "content": "- Read more\n- Guide Video viewability best practices guide for publishers Read more"
+        },
+        {
+          "header": "Video viewability best practices guide for publishers",
+          "content": "- Read more\n- Report Grow faster with a Google Certified Publishing Partner Read more"
+        },
+        {
+          "header": "Grow faster with a Google Certified Publishing Partner",
+          "content": "- Read more\n- Guide Rethink your eCommerce experience with Google Ad Manager Read more"
+        },
+        {
+          "header": "Rethink your eCommerce experience with Google Ad Manager",
+          "content": "- Read more\n- Report The convergence of TV and digital: How broadcasters are building for success Read more"
+        },
+        {
+          "header": "The convergence of TV and digital: How broadcasters are building for success",
+          "content": "- Read more\n- Guide Taking a Page from the Sports Playbook: Engaging Fans in the Digital Age Read more"
+        },
+        {
+          "header": "Taking a Page from the Sports Playbook: Engaging Fans in the Digital Age",
+          "content": "- Read more\n- Guide Digital Trade Marketing: Delighting Shoppers in the Age of Digital Read more"
+        },
+        {
+          "header": "Digital Trade Marketing: Delighting Shoppers in the Age of Digital",
+          "content": "- Read more\n- Report Publishers save 57% more time with Programmatic Guaranteed deals Read more"
+        },
+        {
+          "header": "Publishers save 57% more time with Programmatic Guaranteed deals",
+          "content": "- Read more\n- Report Capture growing video budgets with new out-stream formats on Google Ad Manager Read more"
+        },
+        {
+          "header": "Capture growing video budgets with new out-stream formats on Google Ad Manager",
+          "content": "- Read more\n- Report Building for beyond with the Insights Engine Project Read more"
+        },
+        {
+          "header": "Building for beyond with the Insights Engine Project",
+          "content": "- Read more\n- Report Digitizing supplier marketing: Increasing sales of products and services Read more"
+        },
+        {
+          "header": "Digitizing supplier marketing: Increasing sales of products and services",
+          "content": "- Read more\n- Report Improving protections for publishers Read more"
+        },
+        {
+          "header": "Improving protections for publishers",
+          "content": "- Read more\n- Report TV made smarter with Google Ad Manager Read more"
+        },
+        {
+          "header": "TV made smarter with Google Ad Manager",
+          "content": "- Read more\n- Report What’s next for the mobile web? Read more"
+        },
+        {
+          "header": "What’s next for the mobile web?",
+          "content": "- Read more\n- Report Programmatic Guaranteed with custom creatives delivers scale for Vox Media Read more"
+        },
+        {
+          "header": "Programmatic Guaranteed with custom creatives delivers scale for Vox Media",
+          "content": "- Read more\n- Guide Creating better ad experiences for everyone Read more"
+        },
+        {
+          "header": "Creating better ad experiences for everyone",
+          "content": "- Read more\n- Guide How publishers can engage with people who use ad blockers Read more"
+        },
+        {
+          "header": "How publishers can engage with people who use ad blockers",
+          "content": "- Read more\n- Report Programmatic TV’s European Evolution Read more"
+        },
+        {
+          "header": "Programmatic TV’s European Evolution",
+          "content": "- Read more"
+        },
+        {
+          "header": "Hungry for more?",
+          "content": "Learn how global publishers are finding success using Ad Manager to power their ads businesses.\n\n\n---"
+        },
+        {
+          "header": "ad-manager overview (0.50.0)",
+          "content": "Stay organized with collections\n\n\n\n      Save and categorize content based on your preferences.\n\nSource: [https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview](https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview)\n\n- Home\n- Documentation\n- Developer tools\n- Java\n- Client libraries"
+        },
+        {
+          "header": "ad-manager overview (0.50.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "content": ""
+        },
+        {
+          "header": "Key Reference Links",
+          "content": "Google Ad Manager API Description: The Ad Manager API enables an app to integrate with Google Ad Manager. You can read Ad Manager data and run reports using the API."
+        },
+        {
+          "header": "Getting Started",
+          "content": "In order to use this library, you first need to go through the following steps:\n\n- Install a JDK (Java Development Kit)\n- Select or create a Cloud Platform project\n- Enable billing for your project\n- Enable the API\n- Set up authentication"
+        },
+        {
+          "header": "Use the Google Ad Manager API for Java",
+          "content": "To ensure that your project uses compatible versions of the libraries and their component artifacts, import com.google.cloud:libraries-bom and use the BOM to specify dependency versions. Be sure to remove any versions that you set previously. For more information about BOMs, see Google Cloud Platform Libraries BOM."
+        },
+        {
+          "header": "Maven",
+          "content": "Import the BOM in the dependencyManagement section of your pom.xml file. Include specific artifacts you depend on in the dependencies section, but don't specify the artifacts' versions in the dependencies section.\n\nThe example below demonstrates how you would import the BOM and include the ad-manager artifact."
+        },
+        {
+          "header": "Gradle",
+          "content": "BOMs are supported by default in Gradle 5.x or later. Add a platform dependency on com.google.cloud:libraries-bom and remove the version from the dependency declarations in the artifact's build.gradle file.\n\nThe example below demonstrates how you would import the BOM and include the ad-manager artifact.\n\nThe platform and enforcedPlatform keywords supply dependency versions declared in a BOM. The enforcedPlatform keyword enforces the dependency versions declared in the BOM and thus overrides what you specified.\n\nFor more details of the platform and enforcedPlatform keywords Gradle 5.x or higher, see Gradle: Importing Maven BOMs.\n\nIf you're using Gradle 4.6 or later, add enableFeaturePreview('IMPROVED_POM_SUPPORT') to your settings.gradle file. For details, see Gradle 4.6 Release Notes: BOM import. Versions of Gradle earlier than 4.6 don't support BOMs."
+        },
+        {
+          "header": "SBT",
+          "content": "SBT doesn't support BOMs. You can find recommended versions of libraries from a particular BOM version on the dashboard and set the versions manually. To use the latest version of this library, add this to your dependencies:"
+        },
+        {
+          "header": "Which version ID should I get started with?",
+          "content": "For this library, we recommend using com.google.ads.admanager.v1 for new applications."
+        },
+        {
+          "header": "Understanding Version ID and Library Versions",
+          "content": "When using a Cloud client library, it's important to distinguish between two types of versions:\n\n- Library Version: The version of the software package (the client library) that helps you interact with the Cloud service. These libraries are released and updated frequently with bug fixes, improvements, and support for new service features and versions. The version selector at the top of this page represents the client library version.\n- Version ID: The version of the Cloud service itself (e.g. Google Ad Manager API). New Version IDs are introduced infrequently, and often involve changes to the core functionality and structure of the Cloud service itself. The packages in the lefthand navigation represent packages tied to a specific Version ID of the Cloud service."
+        },
+        {
+          "header": "Managing Library Versions",
+          "content": "We recommend using the com.google.cloud:libraries-bom installation method detailed above to streamline dependency management across multiple Cloud Java client libraries. This ensures compatibility and simplifies updates."
+        },
+        {
+          "header": "Choosing the Right Version ID",
+          "content": "Each Cloud Java client library may contain packages tied to specific Version IDs (e.g., v1, v2alpha). For new production applications, use the latest stable Version ID. This is identified by the highest version number without a suffix (like \"alpha\" or \"beta\"). You can read more about Cloud API versioning strategy here.\n\nImportant: Unstable Version ID releases (those with suffixes) are subject to breaking changes when upgrading. Use them only for testing or if you specifically need their experimental features.\n\n\n---"
+        }
+      ],
+      "metadata": {
+        "source": "local://google_ads_docs.md",
+        "ingestedAt": "2026-05-23T17:14:56.305Z"
+      }
     },
     "sections": {
         "ai_agents": {
@@ -10570,6 +12333,11 @@
                 ]
             }
         }
+      ],
+      "metadata": {
+        "source": "local://ai_agents_knowledge.md",
+        "ingestedAt": "2026-05-23T17:14:56.325Z"
+      }
     },
     "typescript_sections": {
         "Internal: .github/ISSUE_TEMPLATE/bug_report.md": {
@@ -13068,41 +14836,299 @@
                 "ingestedAt": "2026-05-23T17:15:06.567Z"
             }
         }
+      ],
+      "metadata": {
+        "source": "local://localhost_tools_docs.md",
+        "ingestedAt": "2026-05-23T17:14:56.344Z"
+      }
     },
-    "system_insights": {
-        "analysis_stats": {
-            "total_posts": 679,
-            "top_domains": {
-                "skillshop.exceedlms.com": 23,
-                "support.google.com": 21,
-                "youtube.com": 18,
-                "advertising.amazon.com": 16,
-                "en.wikipedia.org": 14,
-                "google.com": 13,
-                "web.facebook.com": 12,
-                "developers.google.com": 11,
-                "trustarc.com": 11,
-                "ads.google.com": 10
-            },
-            "top_categories": {
-                "Ad Ads Advertise": 660,
-                "Promotion": 14,
-                "Ads": 4,
-                "Advertise": 3,
-                "Advertising": 3,
-                "Online": 2
-            }
+    "System: .github/ISSUE_TEMPLATE/bug_report.md": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "---\nname: Bug report\nabout: Create a report to help us improve\n---\n\n**Describe the bug**\nA clear and concise description of what the bug is.\n\n**To Reproduce**\nSteps to reproduce the behavior:\n1. Go to '...'\n2. Click on '....'\n3. See error\n\n**Expected behavior**\nA clear and concise description of what you expected to happen.\n\n**Screenshots**\nIf applicable, add screenshots to help explain your problem.\n\n**Environment (please complete the following information):**\n- OS: [e.g. Ubuntu 22.04]\n- Python / Node version: [e.g. Python 3.11, Node 20]\n\n**Additional context**\nAdd any other context about the problem here."
+        }
+      ],
+      "metadata": {
+        "source": "local://.github/ISSUE_TEMPLATE/bug_report.md",
+        "ingestedAt": "2026-05-24T00:05:40.169Z"
+      }
+    },
+    "System: .github/ISSUE_TEMPLATE/feature_request.md": {
+      "sections": [
+        {
+          "header": "Introduction",
+          "content": "---\nname: Feature request\nabout: Suggest an idea for this project\n---\n\n**Is your feature request related to a problem? Please describe.**\nA clear and concise description of what the problem is. Ex: I'm always frustrated when [...]\n\n**Describe the solution you'd like**\nA clear and concise description of what you want to happen.\n\n**Describe alternatives you've considered**\nA clear and concise description of any alternative solutions or features you've considered.\n\n**Additional context**\nAdd any other context or screenshots about the feature request here."
+        }
+      ],
+      "metadata": {
+        "source": "local://.github/ISSUE_TEMPLATE/feature_request.md",
+        "ingestedAt": "2026-05-24T00:05:40.184Z"
+      }
+    },
+    "System: .github/PULL_REQUEST_TEMPLATE.md": {
+      "sections": [
+        {
+          "header": "Pull Request Template",
+          "content": ""
         },
-        "research_trends": [
-            "Dominance of advertising.amazon.com in current dataset.",
-            "Dominance of google.com in current dataset.",
-            "Dominance of developers.google.com in current dataset."
-        ],
-        "intelligence_outlook": [
-            "Scaling Strategy: Implementing simultaneous execution across agent tiers.",
-            "R&D Strategy: Developing realistic simulations for human-agent interaction.",
-            "Operational Strategy: Enhancing agent debate and feedback loops.",
-            "Positive outlook on multimodal scaling and autonomous research agents. Infrastructure expansion indicates preparation for massive-scale deployment."
-        ]
+        {
+          "header": "Summary",
+          "content": "Describe the changes in this pull request and why they are needed."
+        },
+        {
+          "header": "Type of change",
+          "content": "- [ ] Bug fix\n- [ ] New feature\n- [ ] Documentation\n- [ ] CI / Build change"
+        },
+        {
+          "header": "Related issues",
+          "content": "Resolves: # (issue)"
+        },
+        {
+          "header": "Checklist",
+          "content": "- [ ] I have read the contributing guidelines\n- [ ] I have added tests that prove my fix is effective or that my feature works\n- [ ] I have added necessary documentation (if appropriate)\n- [ ] The PR is ready for review"
+        },
+        {
+          "header": "Testing steps",
+          "content": "Describe how reviewers can test the changes locally or in CI.\n\n<!-- Please delete any sections that are not relevant. -->"
+        }
+      ],
+      "metadata": {
+        "source": "local://.github/PULL_REQUEST_TEMPLATE.md",
+        "ingestedAt": "2026-05-24T00:05:40.203Z"
+      }
+    },
+    "Intelephense: README": {
+      "sections": [
+        {
+          "header": "Intelephense",
+          "content": "Intelephense is a high performance, cross platform PHP language server adhering to the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/).\n\nWhen paired with an LSP capable editor it provides an essential set of code intelligence features that give a PHP developer a productive and rich editing experience.\n\nThis is proprietary software released to end users under a \"freemium\" model. Many of the features are provided free of charge. Access to all current and future features can be obtained by purchasing a licence key at https://intelephense.com."
+        },
+        {
+          "header": "[Installation](installation.md)",
+          "content": ""
+        },
+        {
+          "header": "[Getting Started](gettingStarted.md)",
+          "content": ""
+        },
+        {
+          "header": "[Features](features.md)",
+          "content": ""
+        },
+        {
+          "header": "[Support](support.md)",
+          "content": ""
+        },
+        {
+          "header": "[Licence](LICENSE.txt)",
+          "content": ""
+        }
+      ],
+      "metadata": {
+        "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/README.md",
+        "ingestedAt": "2026-05-24T00:05:40.421Z"
+      }
+    },
+    "Intelephense: features": {
+      "sections": [
+        {
+          "header": "Features",
+          "content": ""
+        },
+        {
+          "header": "Workspace Symbols",
+          "content": ""
+        },
+        {
+          "header": "Document Symbols",
+          "content": ""
+        },
+        {
+          "header": "Go To Definition",
+          "content": ""
+        },
+        {
+          "header": "Completion",
+          "content": ""
+        },
+        {
+          "header": "Signature Help",
+          "content": ""
+        },
+        {
+          "header": "Hover",
+          "content": ""
+        },
+        {
+          "header": "Document Highlight",
+          "content": ""
+        },
+        {
+          "header": "Find All References",
+          "content": ""
+        },
+        {
+          "header": "Document and Range Formatting",
+          "content": ""
+        },
+        {
+          "header": "Rename -- [PREMIUM](https://intelephense.com)",
+          "content": ""
+        },
+        {
+          "header": "Code Folding -- [PREMIUM](https://intelephense.com)",
+          "content": ""
+        },
+        {
+          "header": "Find all Implementations -- [PREMIUM](https://intelephense.com)",
+          "content": ""
+        },
+        {
+          "header": "Go to Declaration -- [PREMIUM](https://intelephense.com)",
+          "content": ""
+        },
+        {
+          "header": "Go to Type Definition -- [PREMIUM](https://intelephense.com)",
+          "content": ""
+        },
+        {
+          "header": "Smart Selection -- [PREMIUM](https://intelephense.com)",
+          "content": ""
+        },
+        {
+          "header": "PHP Doc Block Generation -- [PREMIUM](https://intelephense.com)",
+          "content": ""
+        }
+      ],
+      "metadata": {
+        "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/features.md",
+        "ingestedAt": "2026-05-24T00:05:40.548Z"
+      }
+    },
+    "Intelephense: installation": {
+      "sections": [
+        {
+          "header": "Installation",
+          "content": ""
+        },
+        {
+          "header": "Visual Studio Code",
+          "content": "Visual Studio Code users should install the Intelephense extension from within the extensions view or download from the [marketplace](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client).\n\n1. Disable the built-in VSCode PHP Language Features. \n    \n    * Go to `Extensions`.\n    * Search for `@builtin php`\n    * Disable `PHP Language Features`. Leave `PHP Language Basics` enabled for syntax highlighting.\n\n    Note that other (3rd party) PHP extensions which provide similar functionality should also be disabled for best results.\n2. Add glob patterns for non standard php file extensions to the `files.associations` setting.\n\n    For example: `\"files.associations\": { \"*.module\": \"php\" }`.\n3. Optionally purchase and enter your [licence key](https://intelephense.com) by opening the command pallete \n-- `ctrl + shift + p` -- and searching for `Enter licence key`.\n\nFurther configuration options are available in the `intelephense` section of settings."
+        },
+        {
+          "header": "Other Editors",
+          "content": ""
+        },
+        {
+          "header": "Requirements",
+          "content": "[Node.js 12+](https://nodejs.org)"
+        },
+        {
+          "header": "Server Installation",
+          "content": "```\nnpm i intelephense -g\n```"
+        },
+        {
+          "header": "Language Server Protocol (LSP) Client",
+          "content": "Intelephense needs an LSP compliant client to communicate with and integrate features into the editor. A list of editors and clients that support the LSP can be found at https://microsoft.github.io/language-server-protocol/implementors/tools/.\n\nPlease follow the setup guide of the relevant tool. The Information below may help in configuring the client."
+        },
+        {
+          "header": "Run",
+          "content": "```\nintelephense {transport}\n```  \nWhere `{transport}` is one of: \n* `--node-ipc`\n* `--stdio`\n* `--socket={number}`\n* `--pipe={string}`"
+        },
+        {
+          "header": "Initialisation Options",
+          "content": "```typescript\ninterface InitialisationOptions {\n    //Optional absolute path to storage dir. Defaults to os.tmpdir().\n    storagePath?: string;\n    \n    //Optional absolute path to a global storage dir. Defaults to os.homedir().\n    globalStoragePath?: string;\n    \n    //Optional licence key or absolute path to a text file containing the licence key.\n    //{os.homedir()}/intelephense/licence.txt will also be checked by \n    //default if initializationOptions are not exposed by client.\n    licenceKey?: string;\n    \n    //Optional flag to clear server state.\n    //State can also be cleared by deleting {storagePath}/intelephense\n    clearCache?: boolean;\n}\n```"
+        },
+        {
+          "header": "Capabilities",
+          "content": "<details>\n\t<summary>Server capabilities JSON returned from `initialize` request.</summary>\n\t\n```javascript\n{\n\ttextDocumentSync: TextDocumentSyncKind.Incremental,\n\tdocumentSymbolProvider: true,\n\tworkspaceSymbolProvider: true,\n\tcompletionProvider: {\n\t\ttriggerCharacters: [\n\t\t\t//php\n\t\t\t'$', '>', ':', '\\\\', '/',\n\t\t\t//phpdoc\n\t\t\t'*',\n\t\t\t// html/js\n\t\t\t'.', '<'\n\t\t],\n\t\tresolveProvider: true\n\t},\n\tsignatureHelpProvider: {\n\t\ttriggerCharacters: ['(', ',']\n\t},\n\tdefinitionProvider: true,\n\treferencesProvider: true,\n\thoverProvider: true,\n\tdocumentFormattingProvider: true,\t    //Dynamic registration if available.\n    documentRangeFormattingProvider: true,  //Dynamic registration if available.\n\tdocumentHighlightProvider: true,\t\n\tworkspace: {\n\t\tworkspaceFolders: {\n\t\t\tsupported: true,\n\t\t\tchangeNotifications: true\n\t\t}\n\t},\n\tfoldingRangeProvider: true,\t\t//With licence key only.\n\timplementationProvider: true,\t//With licence key only.\n\tdeclarationProvider: true,\t\t//With licence key only.\n\trenameProvider: { \t\t\t    //With licence key only.\n\t\tprepareProvider: true \n\t},\n\ttypeDefinitionProvider: true,\t//With licence key only.\n    selectionRangeProvider: true    //With licence key only.\n}\n```\n</details>"
+        },
+        {
+          "header": "Configuration Options",
+          "content": "<details>\n\t<summary>JSON schema for `workspace/configuration` request data</summary>\n\t\n```json\n{\n    \"intelephense.compatibility.correctForBaseClassStaticUnionTypes\": {\n        \"type\": \"boolean\",\n        \"default\": true,\n        \"description\": \"Resolves `BaseClass|static` union types to `static` instead of `BaseClass`.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.compatibility.correctForArrayAccessArrayAndTraversableArrayUnionTypes\": {\n        \"type\": \"boolean\",\n        \"default\": true,\n        \"description\": \"Resolves `ArrayAccess` and `Traversable` implementations that are unioned with a typed array to generic syntax. eg `ArrayAccessOrTraversable|ElementType[]` => `ArrayAccessOrTraversable<mixed, ElementType>`.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.files.maxSize\": {\n        \"type\": \"number\",\n        \"default\": 1000000,\n        \"description\": \"Maximum file size in bytes.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.files.associations\": {\n        \"type\": \"array\",\n        \"default\": [\n            \"*.php\",\n            \"*.phtml\"\n        ],\n        \"description\": \"Configure glob patterns to make files available for language server features. Inherits from files.associations.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.files.exclude\": {\n        \"type\": \"array\",\n        \"items\": {\n            \"type\": \"string\"\n        },\n        \"default\": [\n            \"**/.git/**\",\n            \"**/.svn/**\",\n            \"**/.hg/**\",\n            \"**/CVS/**\",\n            \"**/.DS_Store/**\",\n            \"**/node_modules/**\",\n            \"**/bower_components/**\",\n            \"**/vendor/**/{Tests,tests}/**\",\n            \"**/.history/**\",\n            \"**/vendor/**/vendor/**\"\n        ],\n        \"description\": \"Configure glob patterns to exclude certain files and folders from all language server features. Inherits from files.exclude.\",\n        \"scope\": \"resource\"\n    },\n    \"intelephense.stubs\": {\n        \"type\": \"array\",\n        \"items\": {\n            \"type\": \"string\",\n            \"enum\": [\n                \"amqp\",\n                \"apache\",\n                \"apcu\",\n                \"bcmath\",\n                \"blackfire\",\n                \"bz2\",\n                \"calendar\",\n                \"cassandra\",\n                \"com_dotnet\",\n                \"Core\",\n                \"couchbase\",\n                \"crypto\",\n                \"ctype\",\n                \"cubrid\",\n                \"curl\",\n                \"date\",\n                \"dba\",\n                \"decimal\",\n                \"dom\",\n                \"ds\",\n                \"enchant\",\n                \"Ev\",\n                \"event\",\n                \"exif\",\n                \"fann\",\n                \"FFI\",\n                \"ffmpeg\",\n                \"fileinfo\",\n                \"filter\",\n                \"fpm\",\n                \"ftp\",\n                \"gd\",\n                \"gearman\",\n                \"geoip\",\n                \"geos\",\n                \"gettext\",\n                \"gmagick\",\n                \"gmp\",\n                \"gnupg\",\n                \"grpc\",\n                \"hash\",\n                \"http\",\n                \"ibm_db2\",\n                \"iconv\",\n                \"igbinary\",\n                \"imagick\",\n                \"imap\",\n                \"inotify\",\n                \"interbase\",\n                \"intl\",\n                \"json\",\n                \"judy\",\n                \"ldap\",\n                \"leveldb\",\n                \"libevent\",\n                \"libsodium\",\n                \"libxml\",\n                \"lua\",\n                \"lzf\",\n                \"mailparse\",\n                \"mapscript\",\n                \"mbstring\",\n                \"mcrypt\",\n                \"memcache\",\n                \"memcached\",\n                \"meminfo\",\n                \"meta\",\n                \"ming\",\n                \"mongo\",\n                \"mongodb\",\n                \"mosquitto-php\",\n                \"mqseries\",\n                \"msgpack\",\n                \"mssql\",\n                \"mysql\",\n                \"mysql_xdevapi\",\n                \"mysqli\",\n                \"ncurses\",\n                \"newrelic\",\n                \"oauth\",\n                \"oci8\",\n                \"odbc\",\n                \"openssl\",\n                \"parallel\",\n                \"Parle\",\n                \"pcntl\",\n                \"pcov\",\n                \"pcre\",\n                \"pdflib\",\n                \"PDO\",\n                \"pdo_ibm\",\n                \"pdo_mysql\",\n                \"pdo_pgsql\",\n                \"pdo_sqlite\",\n                \"pgsql\",\n                \"Phar\",\n                \"phpdbg\",\n                \"posix\",\n                \"pspell\",\n                \"pthreads\",\n                \"radius\",\n                \"rar\",\n                \"rdkafka\",\n                \"readline\",\n                \"recode\",\n                \"redis\",\n                \"Reflection\",\n                \"regex\",\n                \"rpminfo\",\n                \"rrd\",\n                \"SaxonC\",\n                \"session\",\n                \"shmop\",\n                \"SimpleXML\",\n                \"snmp\",\n                \"soap\",\n                \"sockets\",\n                \"sodium\",\n                \"solr\",\n                \"SPL\",\n                \"SplType\",\n                \"SQLite\",\n                \"sqlite3\",\n                \"sqlsrv\",\n                \"ssh2\",\n                \"standard\",\n                \"stats\",\n                \"stomp\",\n                \"suhosin\",\n                \"superglobals\",\n                \"svn\",\n                \"sybase\",\n                \"sync\",\n                \"sysvmsg\",\n                \"sysvsem\",\n                \"sysvshm\",\n                \"tidy\",\n                \"tokenizer\",\n                \"uopz\",\n                \"uv\",\n                \"v8js\",\n                \"wddx\",\n                \"win32service\",\n                \"winbinder\",\n                \"wincache\",\n                \"wordpress\",\n                \"xcache\",\n                \"xdebug\",\n                \"xhprof\",\n                \"xml\",\n                \"xmlreader\",\n                \"xmlrpc\",\n                \"xmlwriter\",\n                \"xsl\",\n                \"xxtea\",\n                \"yaf\",\n                \"yaml\",\n                \"yar\",\n                \"zend\",\n                \"Zend OPcache\",\n                \"ZendCache\",\n                \"ZendDebugger\",\n                \"ZendUtils\",\n                \"zip\",\n                \"zlib\",\n                \"zmq\",\n                \"zookeeper\"\n            ]\n        },\n        \"default\": [\n            \"apache\",\n            \"bcmath\",\n            \"bz2\",\n            \"calendar\",\n            \"com_dotnet\",\n            \"Core\",\n            \"ctype\",\n            \"curl\",\n            \"date\",\n            \"dba\",\n            \"dom\",\n            \"enchant\",\n            \"exif\",\n            \"FFI\",\n            \"fileinfo\",\n            \"filter\",\n            \"fpm\",\n            \"ftp\",\n            \"gd\",\n            \"gettext\",\n            \"gmp\",\n            \"hash\",\n            \"iconv\",\n            \"imap\",\n            \"intl\",\n            \"json\",\n            \"ldap\",\n            \"libxml\",\n            \"mbstring\",\n            \"meta\",\n            \"mysqli\",\n            \"oci8\",\n            \"odbc\",\n            \"openssl\",\n            \"pcntl\",\n            \"pcre\",\n            \"PDO\",\n            \"pdo_ibm\",\n            \"pdo_mysql\",\n            \"pdo_pgsql\",\n            \"pdo_sqlite\",\n            \"pgsql\",\n            \"Phar\",\n            \"posix\",\n            \"pspell\",\n            \"readline\",\n            \"Reflection\",\n            \"session\",\n            \"shmop\",\n            \"SimpleXML\",\n            \"snmp\",\n            \"soap\",\n            \"sockets\",\n            \"sodium\",\n            \"SPL\",\n            \"sqlite3\",\n            \"standard\",\n            \"superglobals\",\n            \"sysvmsg\",\n            \"sysvsem\",\n            \"sysvshm\",\n            \"tidy\",\n            \"tokenizer\",\n            \"xml\",\n            \"xmlreader\",\n            \"xmlrpc\",\n            \"xmlwriter\",\n            \"xsl\",\n            \"Zend OPcache\",\n            \"zip\",\n            \"zlib\"\n        ],\n        \"description\": \"Configure stub files for built in symbols and common extensions. The default setting includes PHP core and all bundled extensions.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.completion.insertUseDeclaration\": {\n        \"type\": \"boolean\",\n        \"default\": true,\n        \"description\": \"Use declarations will be automatically inserted for namespaced classes, traits, interfaces, functions, and constants.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.completion.fullyQualifyGlobalConstantsAndFunctions\": {\n        \"type\": \"boolean\",\n        \"default\": false,\n        \"description\": \"Global namespace constants and functions will be fully qualified (prefixed with a backslash).\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.completion.triggerParameterHints\": {\n        \"type\": \"boolean\",\n        \"default\": true,\n        \"description\": \"Method and function completions will include parentheses and trigger parameter hints.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.completion.maxItems\": {\n        \"type\": \"number\",\n        \"default\": 100,\n        \"description\": \"The maximum number of completion items returned per request.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.format.enable\": {\n        \"type\": \"boolean\",\n        \"default\": true,\n        \"description\": \"Enables formatting.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.format.braces\": {\n        \"type\": \"string\",\n        \"default\": \"psr12\",\n        \"enum\": [\n            \"psr12\",\n            \"allman\",\n            \"k&r\"\n        ],\n        \"enumDescriptions\": [\n            \"PHP-FIG PSR-2 and PSR-12 style. A mix of Allman and K&R\",\n            \"Allman. Opening brace on the next line.\",\n            \"K&R (1TBS). Opening brace on the same line.\"\n        ],\n        \"description\": \"Controls formatting style of braces\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.environment.documentRoot\": {\n        \"type\": \"string\",\n        \"description\": \"The directory of the entry point to the application (index.php). Defaults to the first workspace folder. Used for resolving script inclusion.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.environment.includePaths\": {\n        \"type\": \"array\",\n        \"items\": {\n            \"type\": \"string\"\n        },\n        \"description\": \"The include paths (as individual path items) as defined in the include_path ini setting. Used for resolving script inclusion.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.environment.phpVersion\": {\n        \"type\": \"string\",\n        \"default\": \"7.4.0\",\n        \"description\": \"A semver compatible string that represents the target PHP version. Used for providing version appropriate suggestions and diagnostics. PHP 5.3.0 and greater supported.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.environment.shortOpenTag\": {\n        \"type\": \"boolean\",\n        \"default\": false,\n        \"description\": \"When enabled '<?' will be parsed as a PHP open tag. Defaults to false.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.diagnostics.enable\": {\n        \"type\": \"boolean\",\n        \"default\": true,\n        \"description\": \"Enables diagnostics.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.diagnostics.run\": {\n        \"type\": \"string\",\n        \"default\": \"onType\",\n        \"enum\": [\n            \"onType\",\n            \"onSave\"\n        ],\n        \"enumDescriptions\": [\n            \"Diagnostics will run as changes are made to the document.\",\n            \"Diagnostics will run when the document is saved.\"\n        ],\n        \"description\": \"Controls when diagnostics are run.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.diagnostics.embeddedLanguages\": {\n        \"type\": \"boolean\",\n        \"default\": true,\n        \"description\": \"Enables diagnostics in embedded languages.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.diagnostics.undefinedSymbols\": {\n        \"type\": \"boolean\",\n        \"default\": true,\n        \"description\": \"DEPRECATED. Use the setting for each symbol category.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.diagnostics.undefinedVariables\": {\n        \"type\": \"boolean\",\n        \"default\": true,\n        \"description\": \"Enables undefined variable diagnostics.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.diagnostics.undefinedTypes\": {\n        \"type\": \"boolean\",\n        \"default\": true,\n        \"description\": \"Enables undefined class, interface and trait diagnostics.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.diagnostics.undefinedFunctions\": {\n        \"type\": \"boolean\",\n        \"default\": true,\n        \"description\": \"Enables undefined function diagnostics.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.diagnostics.undefinedConstants\": {\n        \"type\": \"boolean\",\n        \"default\": true,\n        \"description\": \"Enables undefined constant diagnostics.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.diagnostics.undefinedClassConstants\": {\n        \"type\": \"boolean\",\n        \"default\": true,\n        \"description\": \"Enables undefined class constant diagnostics.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.diagnostics.undefinedMethods\": {\n        \"type\": \"boolean\",\n        \"default\": true,\n        \"description\": \"Enables undefined method diagnostics.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.diagnostics.undefinedProperties\": {\n        \"type\": \"boolean\",\n        \"default\": true,\n        \"description\": \"Enables undefined static property diagnostics.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.diagnostics.unusedSymbols\": {\n        \"type\": \"boolean\",\n        \"default\": true,\n        \"description\": \"Enables unused variable, private member, and import diagnostics.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.diagnostics.unexpectedTokens\": {\n        \"type\": \"boolean\",\n        \"default\": true,\n        \"description\": \"Enables unexpected token diagnostics.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.diagnostics.duplicateSymbols\": {\n        \"type\": \"boolean\",\n        \"default\": true,\n        \"description\": \"Enables duplicate symbol diagnostics.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.diagnostics.argumentCount\": {\n        \"type\": \"boolean\",\n        \"default\": true,\n        \"description\": \"Enables argument count diagnostics.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.diagnostics.typeErrors\": {\n        \"type\": \"boolean\",\n        \"default\": true,\n        \"description\": \"Enables diagnostics on type compatibility of arguments, property assignments, and return statements where types have been declared.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.diagnostics.deprecated\": {\n        \"type\": \"boolean\",\n        \"default\": true,\n        \"description\": \"Enables deprecated diagnostics.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.diagnostics.languageConstraints\": {\n        \"type\": \"boolean\",\n        \"default\": true,\n        \"description\": \"Enables reporting of various language constraint errors.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.diagnostics.implementationErrors\": {\n        \"type\": \"boolean\",\n        \"default\": true,\n        \"description\": \"Enables reporting of problems associated with method and class implementations. For example, unimplemented methods or method signature incompatibilities.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.runtime\": {\n        \"type\": \"string\",\n        \"description\": \"Path to a Node.js executable. Use this if you wish to use a different version of Node.js. Defaults to Node.js shipped with VSCode.\",\n        \"scope\": \"machine\"\n    },\n    \"intelephense.maxMemory\": {\n        \"type\": \"number\",\n        \"description\": \"Maximum memory (in MB) that the server should use. On some systems this may only have effect when runtime has been set. Minimum 256.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.licenceKey\": {\n        \"type\": \"string\",\n        \"description\": \"DEPRECATED. Don't use this. Go to command palette and search for enter licence key.\",\n        \"scope\": \"application\"\n    },\n    \"intelephense.telemetry.enabled\": {\n        \"type\": \"boolean\",\n        \"description\": \"Anonymous usage and crash data will be sent to Azure Application Insights. Inherits from telemetry.enableTelemetry.\",\n        \"scope\": \"window\",\n        \"default\": null\n    },\n    \"intelephense.rename.exclude\": {\n        \"type\": \"array\",\n        \"items\": {\n            \"type\": \"string\"\n        },\n        \"default\": [\n            \"**/vendor/**\"\n        ],\n        \"description\": \"Glob patterns matching files and folders that should be excluded when renaming symbols. Rename operation will fail if the symbol definition is found in the excluded files/folders.\",\n        \"scope\": \"resource\"\n    },\n    \"intelephense.references.exclude\": {\n        \"type\": \"array\",\n        \"items\": {\n            \"type\": \"string\"\n        },\n        \"default\": [\n            \"**/vendor/**\"\n        ],\n        \"description\": \"Glob patterns matching files and folders that should be excluded from references search.\",\n        \"scope\": \"resource\"\n    },\n    \"intelephense.phpdoc.returnVoid\": {\n        \"type\": \"boolean\",\n        \"default\": true,\n        \"description\": \"Adds `@return void` to auto generated phpdoc for definitions that do not return a value.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.phpdoc.textFormat\": {\n        \"type\": \"string\",\n        \"enum\": [\n            \"snippet\",\n            \"text\"\n        ],\n        \"default\": \"snippet\",\n        \"enumDescriptions\": [\n            \"Auto generated phpdoc is returned in snippet format. Templates are partially resolved by evaluating phpdoc specific variables only.\",\n            \"Auto generated phpdoc is returned as plain text. Templates are resolved completely by the server.\"\n        ],\n        \"scope\": \"window\"\n    },\n    \"intelephense.phpdoc.classTemplate\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"summary\": {\n                \"type\": \"string\",\n                \"description\": \"A snippet string representing a phpdoc summary.\"\n            },\n            \"description\": {\n                \"type\": \"string\",\n                \"description\": \"A snippet string representing a phpdoc description.\"\n            },\n            \"tags\": {\n                \"type\": \"array\",\n                \"items\": {\n                    \"type\": \"string\"\n                },\n                \"description\": \"An array of snippet strings representing phpdoc tags.\"\n            }\n        },\n        \"default\": {\n            \"summary\": \"$1\",\n            \"tags\": [\n                \"@package ${1:$SYMBOL_NAMESPACE}\"\n            ]\n        },\n        \"description\": \"An object that describes the format of generated class/interface/trait phpdoc. The following snippet variables are available: SYMBOL_NAME; SYMBOL_KIND; SYMBOL_TYPE; SYMBOL_NAMESPACE.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.phpdoc.propertyTemplate\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"summary\": {\n                \"type\": \"string\",\n                \"description\": \"A snippet string representing a phpdoc summary.\"\n            },\n            \"description\": {\n                \"type\": \"string\",\n                \"description\": \"A snippet string representing a phpdoc description.\"\n            },\n            \"tags\": {\n                \"type\": \"array\",\n                \"items\": {\n                    \"type\": \"string\"\n                },\n                \"description\": \"An array of snippet strings representing phpdoc tags.\"\n            }\n        },\n        \"default\": {\n            \"summary\": \"$1\",\n            \"tags\": [\n                \"@var ${1:$SYMBOL_TYPE}\"\n            ]\n        },\n        \"description\": \"An object that describes the format of generated property phpdoc. The following snippet variables are available: SYMBOL_NAME; SYMBOL_KIND; SYMBOL_TYPE; SYMBOL_NAMESPACE.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.phpdoc.functionTemplate\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"summary\": {\n                \"type\": \"string\",\n                \"description\": \"A snippet string representing a phpdoc summary.\"\n            },\n            \"description\": {\n                \"type\": \"string\",\n                \"description\": \"A snippet string representing a phpdoc description.\"\n            },\n            \"tags\": {\n                \"type\": \"array\",\n                \"items\": {\n                    \"type\": \"string\"\n                },\n                \"description\": \"An array of snippet strings representing phpdoc tags.\"\n            }\n        },\n        \"default\": {\n            \"summary\": \"$1\",\n            \"tags\": [\n                \"@param ${1:$SYMBOL_TYPE} $SYMBOL_NAME $2\",\n                \"@return ${1:$SYMBOL_TYPE} $2\",\n                \"@throws ${1:$SYMBOL_TYPE} $2\"\n            ]\n        },\n        \"description\": \"An object that describes the format of generated function/method phpdoc. The following snippet variables are available: SYMBOL_NAME; SYMBOL_KIND; SYMBOL_TYPE; SYMBOL_NAMESPACE.\",\n        \"scope\": \"window\"\n    },\n    \"intelephense.phpdoc.useFullyQualifiedNames\": {\n        \"type\": \"boolean\",\n        \"default\": false,\n        \"description\": \"Fully qualified names will be used for types when true. When false short type names will be used and imported where appropriate. Overrides intelephense.completion.insertUseDeclaration.\",\n        \"scope\": \"window\"\n    }\n}\n```\n</details>"
+        }
+      ],
+      "metadata": {
+        "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/installation.md",
+        "ingestedAt": "2026-05-24T00:05:40.730Z"
+      }
+    },
+    "Intelephense: gettingStarted": {
+      "sections": [
+        {
+          "header": "Getting Started",
+          "content": ""
+        },
+        {
+          "header": "Workspace",
+          "content": "For Intelephense to work effectively it must have access to the definitions of the symbols used in your code. It does this by scanning the php files found in the workspace. Sometimes PHP files may have a non standard extension. It is important to associate these extensions with PHP using the `intelephense.files.associations` configuration option.\n\n<details>\n<summary>intelephense.files.associations</summary>\n\n```json\n{\n    \"type\": \"array\",\n    \"default\": [\n        \"*.php\",\n        \"*.phtml\"\n    ],\n    \"description\": \"Configure glob patterns to make files available language server features. Inherits from files.associations.\",\n    \"scope\": \"window\"\n}\n```\n</details>\n\nYou may have large files in your workspace that by default Intelephense will skip. You can configure the maximum file size with the `intelephense.files.maxSize` option.\n\n<details>\n<summary>intelephense.files.maxSize</summary>\n\n```json\n{\n    \"type\": \"number\",\n    \"default\": 1000000,\n    \"description\": \"Maximum file size in bytes.\",\n    \"scope\": \"window\"\n}\n```\n\n</details>\n\nThere may be files you do not want to indexed by Intelephense. It is important in large projects to exclude unnecessary files to avoid polluting suggestion lists and degrading performance.\n\n<details>\n<summary>intelephense.files.exclude</summary>\n\n```json\n{\n    \"type\": \"array\",\n    \"items\": {\n        \"type\": \"string\"\n    },\n    \"default\": [\n        \"**/.git/**\",\n        \"**/.svn/**\",\n        \"**/.hg/**\",\n        \"**/CVS/**\",\n        \"**/.DS_Store/**\",\n        \"**/node_modules/**\",\n        \"**/bower_components/**\",\n        \"**/vendor/**/{Tests,tests}/**\",\n        \"**/.history/**\",\n        \"**/vendor/**/vendor/**\"\n    ],\n    \"description\": \"Configure glob patterns to exclude certain files and folders fro    all language server features. Inherits from files.exclude.\",\n    \"scope\": \"resource\"\n}\n```\n\n</details>"
+        },
+        {
+          "header": "Environment",
+          "content": "Sometimes symbol definitions are not in your workspace but are core PHP symbols or defined in an extension. For this reason Intelephense includes stub definitions for many of these. Extensions that are bundled with PHP are enabled by default. You can configure what other symbols are available in your environment with the `intelephense.stubs` option.\n\n<details>\n<summary>intelephense.stubs</summary\n\n```json\n{\n    \"type\": \"array\",\n    \"items\": {\n        \"type\": \"string\",\n        \"enum\": [\n            \"amqp\",\n            \"apache\",\n            \"apcu\",\n            \"bcmath\",\n            \"blackfire\",\n            \"bz2\",\n            \"calendar\",\n            \"cassandra\",\n            \"com_dotnet\",\n            \"Core\",\n            \"couchbase\",\n            \"crypto\",\n            \"ctype\",\n            \"cubrid\",\n            \"curl\",\n            \"date\",\n            \"dba\",\n            \"decimal\",\n            \"dom\",\n            \"ds\",\n            \"enchant\",\n            \"Ev\",\n            \"event\",\n            \"exif\",\n            \"fann\",\n            \"FFI\",\n            \"ffmpeg\",\n            \"fileinfo\",\n            \"filter\",\n            \"fpm\",\n            \"ftp\",\n            \"gd\",\n            \"gearman\",\n            \"geoip\",\n            \"geos\",\n            \"gettext\",\n            \"gmagick\",\n            \"gmp\",\n            \"gnupg\",\n            \"grpc\",\n            \"hash\",\n            \"http\",\n            \"ibm_db2\",\n            \"iconv\",\n            \"igbinary\",\n            \"imagick\",\n            \"imap\",\n            \"inotify\",\n            \"interbase\",\n            \"intl\",\n            \"json\",\n            \"judy\",\n            \"ldap\",\n            \"leveldb\",\n            \"libevent\",\n            \"libsodium\",\n            \"libxml\",\n            \"lua\",\n            \"lzf\",\n            \"mailparse\",\n            \"mapscript\",\n            \"mbstring\",\n            \"mcrypt\",\n            \"memcache\",\n            \"memcached\",\n            \"meminfo\",\n            \"meta\",\n            \"ming\",\n            \"mongo\",\n            \"mongodb\",\n            \"mosquitto-php\",\n            \"mqseries\",\n            \"msgpack\",\n            \"mssql\",\n            \"mysql\",\n            \"mysql_xdevapi\",\n            \"mysqli\",\n            \"ncurses\",\n            \"newrelic\",\n            \"oauth\",\n            \"oci8\",\n            \"odbc\",\n            \"openssl\",\n            \"parallel\",\n            \"Parle\",\n            \"pcntl\",\n            \"pcov\",\n            \"pcre\",\n            \"pdflib\",\n            \"PDO\",\n            \"pdo_ibm\",\n            \"pdo_mysql\",\n            \"pdo_pgsql\",\n            \"pdo_sqlite\",\n            \"pgsql\",\n            \"Phar\",\n            \"phpdbg\",\n            \"posix\",\n            \"pspell\",\n            \"pthreads\",\n            \"radius\",\n            \"rar\",\n            \"rdkafka\",\n            \"readline\",\n            \"recode\",\n            \"redis\",\n            \"Reflection\",\n            \"regex\",\n            \"rpminfo\",\n            \"rrd\",\n            \"SaxonC\",\n            \"session\",\n            \"shmop\",\n            \"SimpleXML\",\n            \"snmp\",\n            \"soap\",\n            \"sockets\",\n            \"sodium\",\n            \"solr\",\n            \"SPL\",\n            \"SplType\",\n            \"SQLite\",\n            \"sqlite3\",\n            \"sqlsrv\",\n            \"ssh2\",\n            \"standard\",\n            \"stats\",\n            \"stomp\",\n            \"suhosin\",\n            \"superglobals\",\n            \"svn\",\n            \"sybase\",\n            \"sync\",\n            \"sysvmsg\",\n            \"sysvsem\",\n            \"sysvshm\",\n            \"tidy\",\n            \"tokenizer\",\n            \"uopz\",\n            \"uv\",\n            \"v8js\",\n            \"wddx\",\n            \"win32service\",\n            \"winbinder\",\n            \"wincache\",\n            \"wordpress\",\n            \"xcache\",\n            \"xdebug\",\n            \"xhprof\",\n            \"xml\",\n            \"xmlreader\",\n            \"xmlrpc\",\n            \"xmlwriter\",\n            \"xsl\",\n            \"xxtea\",\n            \"yaf\",\n            \"yaml\",\n            \"yar\",\n            \"zend\",\n            \"Zend OPcache\",\n            \"ZendCache\",\n            \"ZendDebugger\",\n            \"ZendUtils\",\n            \"zip\",\n            \"zlib\",\n            \"zmq\",\n            \"zookeeper\"\n        ]\n    },\n    \"default\": [\n        \"apache\",\n        \"bcmath\",\n        \"bz2\",\n        \"calendar\",\n        \"com_dotnet\",\n        \"Core\",\n        \"ctype\",\n        \"curl\",\n        \"date\",\n        \"dba\",\n        \"dom\",\n        \"enchant\",\n        \"exif\",\n        \"FFI\",\n        \"fileinfo\",\n        \"filter\",\n        \"fpm\",\n        \"ftp\",\n        \"gd\",\n        \"gettext\",\n        \"gmp\",\n        \"hash\",\n        \"iconv\",\n        \"imap\",\n        \"intl\",\n        \"json\",\n        \"ldap\",\n        \"libxml\",\n        \"mbstring\",\n        \"meta\",\n        \"mysqli\",\n        \"oci8\",\n        \"odbc\",\n        \"openssl\",\n        \"pcntl\",\n        \"pcre\",\n        \"PDO\",\n        \"pdo_ibm\",\n        \"pdo_mysql\",\n        \"pdo_pgsql\",\n        \"pdo_sqlite\",\n        \"pgsql\",\n        \"Phar\",\n        \"posix\",\n        \"pspell\",\n        \"readline\",\n        \"Reflection\",\n        \"session\",\n        \"shmop\",\n        \"SimpleXML\",\n        \"snmp\",\n        \"soap\",\n        \"sockets\",\n        \"sodium\",\n        \"SPL\",\n        \"sqlite3\",\n        \"standard\",\n        \"superglobals\",\n        \"sysvmsg\",\n        \"sysvsem\",\n        \"sysvshm\",\n        \"tidy\",\n        \"tokenizer\",\n        \"xml\",\n        \"xmlreader\",\n        \"xmlrpc\",\n        \"xmlwriter\",\n        \"xsl\",\n        \"Zend OPcache\",\n        \"zip\",\n        \"zlib\"\n    ],\n    \"description\": \"Configure stub files for built in symbols and common extensions.The default setting includes PHP core and all bundled extensions.\",\n    \"scope\": \"window\"\n}\n```\n</details>\n\nOther configuration settings that allow you to further define the PHP environment include:\n\n<details>\n<summary>intelephense.environment.documentRoot</summary>\n\n```json\n{\n    \"type\": \"string\",\n    \"description\": \"The directory of the entry point to the application (index.php).Defaults to the first workspace folder. Used for resolving script inclusion.\",\n    \"scope\": \"window\"\n}\n```\n</details>\n\n<details>\n<summary>intelephense.environment.includePaths</summary> \n\n```json\n{\n    \"type\": \"array\",\n    \"items\": {\n        \"type\": \"string\"\n    },\n    \"description\": \"The include paths (as individual path items) as defined in theinclude_path ini setting. Used for resolving script inclusion.\",\n    \"scope\": \"window\"\n}\n```\n\n</details>\n\n<details>\n<summary>intelephense.environment.phpVersion</summary>\n\n```json\n{\n    \"type\": \"string\",\n    \"default\": \"7.4.0\",\n    \"description\": \"A semver compatible string that represents the target PHP version.Used for providing version appropriate suggestions and diagnostics. PHP 5.3.0 andgreater supported.\",\n    \"scope\": \"window\"\n}\n```\n\n</details>\n\n<details>\n<summary>intelephense.environment.shortOpenTag</summary>\n\n```json\n{\n    \"type\": \"boolean\",\n    \"default\": false,\n    \"description\": \"When enabled '<?' will be parsed as a PHP open tag. Defaults tofalse.\",\n    \"scope\": \"window\"\n}\n```\n\n</details>"
+        },
+        {
+          "header": "Type Declarations and Annotations",
+          "content": "You will get more out of Intelephense if you provide type declarations and/or type annotations. Where possible types will be inferred but there are places where it is difficult or impossible to determine the type. Class properties and function and method parameters are examples where this is very important. Providing type declarations and/or annotations may also improve performance as Intelephense does not need to dig through too much code to determine types. When a type cannot be determined for a property, variable, or parameter then it is assigned the `mixed` type.\n\n```php\n<?php\nclass MyClass\n{\n    public MyOtherClass $withTypeDeclaration;\n\n    /** @var MyOtherClass **/\n    public $withTypeAnnotation\n\n    public function withTypeDeclarations(string $param): int { }\n\n    /**\n     * @param string $param \n     * @return int\n     */\n    public function withTypeAnnotations($param) { }\n}\n```\n\nVariables can be annotated with a type if necessary. The annotation immediately preceeding an assignment overrides the assigned type. Subsequent assignments may change the type again.\n\n```php\n<?php\n/** @var callable $var */\n$var = 'is_numeric'; //$var is callable instead of string\n$var = 1; //$var is now an int\n\n```\n\nIn addition to the standard PHPDoc type annotations Intelephense also supports generic type syntax for `iterable` and `ArrayAccess` types. For example:\n\n* `Generator<KeyType, ElementType>`\n* `ArrayAccess<string, ElementType>`\n* `array<int, ElementType>`\n\nUnion (`TypeA|TypeB`) and intersection (`TypeA&TypeB`) types are supported. Where both a type declaration and a type annotation is provided then the resulting type will be the intersection of the two. Types will be reduced where possible using the following rules.\n\n* `SuperType|SubType` => `SuperType`\n* `SuperType&SubType` => `SubType`\n\nSometimes there may be type annotations in libraries or project files that do not accurately reflect the desired type. Intelephense offers compatibility settings to handle some common cases.\n\n<details>\n<summary>intelephense.compatibility.correctForBaseClassStaticUnionTypes</summary> \n\n```json\n{\n    \"type\": \"boolean\",\n    \"default\": true,\n    \"description\": \"Resolves `BaseClass|static` union types to `static` instead of `BaseClass`.\",\n    \"scope\": \"window\"\n}\n```\n\n</details>\n\n<details>\n<summary>intelephense.compatibility.correctForArrayAccessArrayAndTraversableArrayUnionTypes</summary>\n\n```json\n{\n    \"type\": \"boolean\",\n    \"default\": true,\n    \"description\": \"Resolves `ArrayAccess` and `Traversable` implementations that are unionedwith a typed array to generic syntax. eg `ArrayAccessOrTraversable|ElementType[]` =>`ArrayAccessOrTraversable<mixed, ElementType>`.\",\n    \"scope\": \"window\"\n}\n```\n\n</details>\n\nYou may also see several non standard types in hovers.\n\n* `unset` - the type given to variables that are undefined or `unset()`.\n* `never` - the type returned from a function that does not terminate normally (eg `die()`) or that represents an impossibility (added in PHP 8.1)."
+        },
+        {
+          "header": "Framework Support",
+          "content": "Intelephense aims to support all frameworks but does not implement framework specific solutions. Some frameworks are coded in a way that make it difficult to analyse. This may be because of lack of type declarations/annotations; heavy use of `__get`, `__set`, `__call`, `__callStatic` magic methods; or dynamic generation of class aliases at runtime.\n\nPackages can be found online that aim to workaround these issues by providing stubs of symbols to help static analysers like Intelephense understand the code.\n\n* Laravel - [barryvdh/laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper)"
+        }
+      ],
+      "metadata": {
+        "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/gettingStarted.md",
+        "ingestedAt": "2026-05-24T00:05:40.835Z"
+      }
+    },
+    "Intelephense: support": {
+      "sections": [
+        {
+          "header": "Overview",
+          "content": "https://github.com/bmewburn/vscode-intelephense/issues\n\nben@intelephense.com"
+        }
+      ],
+      "metadata": {
+        "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/support.md",
+        "ingestedAt": "2026-05-24T00:05:40.964Z"
+      }
     }
+  },
+  "system_insights": {
+    "analysis_stats": {
+      "total_posts": 679,
+      "top_domains": {
+        "skillshop.exceedlms.com": 23,
+        "support.google.com": 21,
+        "youtube.com": 18,
+        "advertising.amazon.com": 16,
+        "en.wikipedia.org": 14,
+        "google.com": 13,
+        "web.facebook.com": 12,
+        "developers.google.com": 11,
+        "trustarc.com": 11,
+        "ads.google.com": 10
+      },
+      "top_categories": {
+        "Ad Ads Advertise": 660,
+        "Promotion": 14,
+        "Ads": 4,
+        "Advertise": 3,
+        "Advertising": 3,
+        "Online": 2
+      }
+    },
+    "research_trends": [
+      "Dominance of advertising.amazon.com in current dataset.",
+      "Dominance of google.com in current dataset.",
+      "Dominance of developers.google.com in current dataset."
+    ],
+    "intelligence_outlook": [
+      "Scaling Strategy: Implementing simultaneous execution across agent tiers.",
+      "R&D Strategy: Developing realistic simulations for human-agent interaction.",
+      "Operational Strategy: Enhancing agent debate and feedback loops.",
+      "Positive outlook on multimodal scaling and autonomous research agents. Infrastructure expansion indicates preparation for massive-scale deployment."
+    ]
+  }
 }
