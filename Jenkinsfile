@@ -83,6 +83,13 @@ pipeline {
             }
         }
 
+        stage('Test ai_strategy_advisor') {
+            steps {
+                sh 'npm ci'
+                sh 'npx vitest run antigravity/services/ai_strategy_advisor.test.ts'
+            }
+        }
+
         stage('Creative Workflow') {
             parallel {
                 stage('Analyze Market') {
