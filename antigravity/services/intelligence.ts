@@ -132,9 +132,9 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
 
   report += `## 🧠 Knowledge Matrix\n`
   const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json')
-  if (fs.existsSync(knowledgePath)) {
+  if (/* [Evolution] TODO: Refactor to async */ fs.existsSync(knowledgePath)) {
     try {
-      const systemKnowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
+      const systemKnowledge = JSON.parse(/* [Evolution] TODO: Refactor to async */ fs.readFileSync(knowledgePath, 'utf8'))
 
       // Phase 12: Support both nested 'typescript_sections' and unified flat key structure
       const allKnowledge: any[] = []
@@ -213,7 +213,7 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
     : 100
   report += `\n---\n**Collaboration Health Index:** ${collaborationHealth}% | *Phase 12 Synergy Protocol Active*\n`
 
-  fs.writeFileSync(reportPath, report)
+  /* [Evolution] TODO: Refactor to async */ fs.writeFileSync(reportPath, report)
   console.log(`✅ [Intelligence] Report saved to ${reportPath}`)
 
   return { reportPath, branchCount: branches.length }

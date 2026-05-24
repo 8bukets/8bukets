@@ -38,9 +38,9 @@ export class WorkOrderService {
   }
 
   private load() {
-    if (fs.existsSync(STORAGE_PATH)) {
+    if (/* [Evolution] TODO: Refactor to async */ fs.existsSync(STORAGE_PATH)) {
       try {
-        const data = fs.readFileSync(STORAGE_PATH, 'utf8')
+        const data = /* [Evolution] TODO: Refactor to async */ fs.readFileSync(STORAGE_PATH, 'utf8')
         const parsed = JSON.parse(data)
         const result = z.array(WorkOrderSchema).safeParse(parsed)
         if (result.success) {
@@ -58,10 +58,10 @@ export class WorkOrderService {
 
   private save() {
     const dataDir = path.dirname(STORAGE_PATH)
-    if (!fs.existsSync(dataDir)) {
+    if (!/* [Evolution] TODO: Refactor to async */ fs.existsSync(dataDir)) {
       fs.mkdirSync(dataDir, { recursive: true })
     }
-    fs.writeFileSync(STORAGE_PATH, JSON.stringify(this.orders, null, 2))
+    /* [Evolution] TODO: Refactor to async */ fs.writeFileSync(STORAGE_PATH, JSON.stringify(this.orders, null, 2))
   }
 
   public createOrder(type: WorkOrder['type'], goal: string, payload: any, dependsOn?: string[]): WorkOrder {

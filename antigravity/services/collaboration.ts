@@ -31,7 +31,7 @@ const MISSION_PATH = path.join(process.cwd(), '.antigravity/mission.md')
 export async function getMissionMetadata(): Promise<MissionMetadata> {
   return autonomousFetch(MissionMetadataSchema, async () => {
     // Note: In Next.js server context, we don't use 'use cache' here to avoid some issues we saw earlier
-    if (!fs.existsSync(MISSION_PATH)) {
+    if (!/* [Evolution] TODO: Refactor to async */ fs.existsSync(MISSION_PATH)) {
       throw new Error('Mission document missing. System collaboration impaired.')
     }
 
@@ -134,7 +134,7 @@ ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
   )
 
   const logDir = path.join(process.cwd(), 'logs')
-  if (!fs.existsSync(logDir)) await fs.promises.mkdir(logDir, { recursive: true })
+  if (!/* [Evolution] TODO: Refactor to async */ fs.existsSync(logDir)) await fs.promises.mkdir(logDir, { recursive: true })
 
   await fs.promises.appendFile(path.join(logDir, 'collaboration.log'), summary)
 
@@ -164,7 +164,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
 
   for (const dir of scanDirs) {
     const fullPath = path.join(process.cwd(), dir.path)
-    if (fs.existsSync(fullPath)) {
+    if (/* [Evolution] TODO: Refactor to async */ fs.existsSync(fullPath)) {
       try {
         const files = await fs.promises.readdir(fullPath)
         for (const file of files) {
@@ -183,7 +183,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
 
   // Integrate autonomous knowledge into resource inventory
   const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json')
-  if (fs.existsSync(knowledgePath)) {
+  if (/* [Evolution] TODO: Refactor to async */ fs.existsSync(knowledgePath)) {
     try {
       const content = await fs.promises.readFile(knowledgePath, 'utf8')
       const systemKnowledge = JSON.parse(content)
@@ -313,7 +313,7 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
   const statePath = path.join(process.cwd(), 'autonomous_state.json')
 
   let currentState: any = {}
-  if (fs.existsSync(statePath)) {
+  if (/* [Evolution] TODO: Refactor to async */ fs.existsSync(statePath)) {
     try {
       const content = await fs.promises.readFile(statePath, 'utf8')
       currentState = JSON.parse(content)
@@ -364,7 +364,7 @@ export async function mergeBranchInsights(branches: any[]) {
   const knowledgePath = path.join(process.cwd(), 'KNOWLEDGE_MERGE.md')
 
   let existingContent = '';
-  if (fs.existsSync(knowledgePath)) {
+  if (/* [Evolution] TODO: Refactor to async */ fs.existsSync(knowledgePath)) {
     existingContent = await fs.promises.readFile(knowledgePath, 'utf8');
   }
 
@@ -452,7 +452,7 @@ export async function mergeEcosystemInsights(branchIntelligence: any[], workOrde
   })
   let marketIntelligence = ''
   const knowledgePath = path.join(process.cwd(), 'KNOWLEDGE_MERGE.md')
-  if (fs.existsSync(knowledgePath)) {
+  if (/* [Evolution] TODO: Refactor to async */ fs.existsSync(knowledgePath)) {
     marketIntelligence = await fs.promises.readFile(knowledgePath, 'utf8')
   }
 
