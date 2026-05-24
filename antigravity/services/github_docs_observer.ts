@@ -17,6 +17,25 @@ export const GithubDocsSchema = z.object({
 export type GithubDocs = z.infer<typeof GithubDocsSchema>
 
 /**
+ * observeGithubDocs: Standalone function to fetch multiple docs from a repo.
+ */
+export async function observeGithubDocs(repoPath: string, files: string[]): Promise<GithubDocs[]> {
+  const [owner, repo] = repoPath.split('/')
+  const results: GithubDocs[] = []
+
+  for (const file of files) {
+    try {
+      const doc = await githubDocsObserver.fetchDoc(owner, repo, file)
+      results.push(doc)
+    } catch (err) {
+      console.error(` ❌ [GithubDocsObserver] Failed to fetch ${file}:`, err)
+    }
+  }
+
+  return results
+}
+
+/**
  * GITHUB DOCS OBSERVER
  * Autonomously extracts technical sections from raw GitHub markdown files.
  */
@@ -53,6 +72,7 @@ export class GithubDocsObserver {
   /**
    * parseMarkdown: Extracts sections based on markdown headers.
    * Improved to handle empty sections, nested headers, and link-only titles.
+   * Ensures headers are captured even if content is empty.
    */
   private parseMarkdown(markdown: string): { title: string; content: string }[] {
     const sections: { title: string; content: string }[] = []
@@ -64,9 +84,11 @@ export class GithubDocsObserver {
     for (const line of lines) {
       const headerMatch = line.match(/^#+\s+(.*)$/)
       if (headerMatch) {
-        // Save previous section if it has content or isn't the default Overview
+        // Save previous section. We capture it even if content is empty to ensure headers are preserved.
         const content = currentContent.join('\n').trim()
-        if (content !== '' || (currentTitle !== 'Overview' && currentTitle.length > 0)) {
+
+        // We always push the section if it has a title, unless it's the initial empty Overview
+        if (currentTitle !== 'Overview' || content !== '') {
           sections.push({
             title: currentTitle,
             content: content
@@ -89,14 +111,15 @@ export class GithubDocsObserver {
 
     // Push final section
     const finalContent = currentContent.join('\n').trim()
-    if (finalContent !== '' || (currentTitle !== 'Overview' && currentTitle.length > 0)) {
+    if (currentTitle !== 'Overview' || finalContent !== '') {
       sections.push({
         title: currentTitle,
         content: finalContent
       })
     }
 
-    // Filter: Remove sections that are effectively empty placeholders
+    // Filter: Remove sections that are strictly empty Overview placeholders.
+    // We keep empty sections with meaningful titles (like "Features" in features.md).
     return sections.filter(s => {
       const isPlaceholder = s.content === '' && (s.title === 'Overview' || s.title.toLowerCase().includes('placeholder'))
       return !isPlaceholder && s.title !== ''

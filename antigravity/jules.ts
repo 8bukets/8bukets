@@ -124,17 +124,12 @@ export class Jules {
 
   public async observeGithubDocs() {
     console.log(`📚 [Jules-${this.role}] Observing technical documentation from GitHub...`)
-    const { githubDocsObserver } = await import('./services/github_docs_observer')
+    const { observeGithubDocs } = await import('./services/github_docs_observer')
     const { KnowledgeObserver } = await import('./services/knowledge_observer')
     const observer = new KnowledgeObserver()
 
-    const intelephenseDocs = [
-      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'README.md' },
-      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'installation.md' },
-      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'gettingStarted.md' },
-      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'features.md' },
-      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'support.md' }
-    ]
+    const repoPath = 'bmewburn/intelephense-docs'
+    const files = ['README.md', 'installation.md', 'gettingStarted.md', 'features.md', 'support.md']
 
     let allSections: any[] = []
 
@@ -148,18 +143,18 @@ export class Jules {
       allSections.push(...localKnowledge.sections)
     }
 
-    for (const doc of intelephenseDocs) {
-      try {
-        const result = await githubDocsObserver.fetchDoc(doc.owner, doc.repo, doc.path)
-        const title = `Intelephense: ${doc.path.replace('.md', '')}`
+    try {
+      const results = await observeGithubDocs(repoPath, files)
+      for (const result of results) {
+        const title = `Intelephense: ${result.file.replace('.md', '')}`
         const rawContent = result.sections.map((s: any) => `# ${s.title}\n${s.content}`).join('\n\n')
         const knowledge = KnowledgeObserver.processContent(title, rawContent, result.rawUrl)
 
         allSections.push(...knowledge.sections)
-        console.log(` ✅ [Jules] Fetched: ${doc.path}`)
-      } catch (err) {
-        console.error(` ❌ [Jules] Failed to fetch ${doc.path}:`, err)
+        console.log(` ✅ [Jules] Fetched & Processed: ${result.file}`)
       }
+    } catch (err) {
+      console.error(` ❌ [Jules] Failed to fetch GitHub docs:`, err)
     }
 
     if (allSections.length > 0) {
@@ -398,12 +393,12 @@ export class Jules {
 
     // Knowledge Observation
     console.log('👁️ [Jules] Initiating Knowledge Observation...')
-    const { observeKnowledge } = await import('./services/knowledge_observer')
+    const { observeKnowledge } = await import('./services/knowledge')
     const { observeGithubDocs } = await import('./services/github_docs_observer')
 
     const [webInsights, githubInsights] = await Promise.all([
       observeKnowledge('https://software-online-review.com'),
-      observeGithubDocs('bmewburn/intelephense-docs', ['features.md', 'installation.md', 'gettingStarted.md'])
+      observeGithubDocs('bmewburn/intelephense-docs', ['features.md', 'installation.md', 'gettingStarted.md', 'support.md'])
     ])
 
     const consolidatedKnowledge: any = {
