@@ -12,7 +12,7 @@ The Intelephense server is proprietary software released to end users under a "f
 ### Installation
 Visual Studio Code users should install the Intelephense extension from within the extensions view or download it from the VSCode marketplace.
 
-The built-in VSCode PHP Language Features extension can cause excessive completion suggestions that are out of context and is best disabled. Go to the Extensions UI and search for PHP Language Features to disable it. Alternatively, you can disable parts of it via its configuration settings. Other third party extensions that provide similar functionality to Intelephense may also need to be disabled for best results.
+The built-in VSCode PHP Language Features extension can cause excessive completion suggestions that are out of context and is best disabled. Go to the Extensions UI and search for PHP Language Features to disable it. Alternatively, you can disable parts of it via it's configuration settings. Other third party extensions that provide similar functionality to Intelephense may also need to be disabled for best results.
 
 Optionally purchase and enter your licence key by opening the command palette (Ctrl+Shift+P) and searching for Enter licence key.
 
@@ -105,7 +105,7 @@ Providing type information in your PHP code will result in a better experience w
 function foo(string $s): array {} // <- type declarations for $s (string) and function return (array)
 ```
 
-Intelephense will also compute inferred types when a declared or documented type is not found or during control flow analysis. When a type is inferred it may be reduced to its minimal representation. For example, `MyClass|object` would become `object` because `MyClass` is a sub-type of `object`.
+Intelephense will also compute inferred types when a declared or documented type is not found or during control flow analysis. When a type is inferred it may be reduced to it's minimal representation. For example, `MyClass|object` would become `object` because `MyClass` is a sub-type of `object`.
 
 Intelephense provides limited support for PHPStorm metadata as a way of overriding or supplementing type information. It is recommended to use PHPDoc type annotations instead of PHPStorm metadata where possible as they are more widely supported across different tools. Support for PHPStorm metadata may be removed in future releases. Please see the PHPDoc Instead of PHPStorm Metadata/Attributes section in the appendix for more information.
 
@@ -171,7 +171,7 @@ Additional types used in other static analysis engines that are not listed here 
 #### Top Type
 `mixed`
 
-The super-type of all types. Any other type can be assigned to a type constraint of `mixed`. If intelephense cannot determine a more specific type for a symbol or expression then this is the type it is given. Because of this, Intelephense also allows `mixed` to be assigned to any other type constraint as well, effectively turning off type checking for that instance. To switch off this behaviour you can set both `intelephense.diagnostics.relaxedTypeCheck` and `intelephense.diagnostics.noMixedTypeCheck` to `false`.
+The super-type of all types. Any other type can be assigned to a type constraint of mixed. If intelephense cannot determine a more specific type for a symbol or expression then this is the type it is given. Because of this, Intelephense also allows mixed to be assigned to any other type constraint as well, effectively turning off type checking for that instance. To switch off this behaviour you can set both `intelephense.diagnostics.relaxedTypeCheck` and `intelephense.diagnostics.noMixedTypeCheck` to `false`.
 
 #### Bottom Type
 `never`
@@ -349,7 +349,7 @@ Similar to above but for functions or methods that have a boolean return type. T
 
 ### @mixin
 `/** @mixin ClassName */`
-This annotation is used to declare that the members of the specified class are mixed in to the current class via `__call`, `__callStatic`, `__get` or `__set` magic methods. Only available with a licence in Intelephense Premium.
+This annotation is used to declare that the members of the specified class are mixed in to the current class via `__call`, `__callStatic`, `__get` or `__set magic methods. Only available with a licence in Intelephense Premium.
 
 ### @disregard
 `/** @disregard PXXXX */`
@@ -635,7 +635,7 @@ customView()->customViewMethod();
 ```
 
 #### Solutions that do not form part of the project executable code
-This involves creating a file with alternate symbol declarations and placing it in your workspace folder (not in vendor). Intelephense will prioritise user declared symbols over vendor declared symbols.
+This involves creating a file with alternate symbol declarations and placing it in your workspace folder (not in vendor). Intelephense will prioritize user declared symbols over vendor declared symbols.
 
 The advantage here is that it can be retrofitted easily to existing code, applies to all usages of the symbol and executable code remains untouched. The disadvantage is that it could suppress an actual error that Intelephense would otherwise detect.
 
