@@ -292,6 +292,21 @@ async def process_work_orders():
                     logger.error(f"❌ Research {order['id']} failed: {e}")
                     order["status"] = "failed"
                     updated = True
+            elif order_type == "KNOWLEDGE_MERGE":
+                logger.info(f"🧠 Executing Knowledge Merge Work Order: {order['id']}")
+                try:
+                    proc = await asyncio.create_subprocess_exec("python3", "agents/knowledge_merge_agent.py")
+                    await proc.wait()
+                    if proc.returncode != 0:
+                        raise Exception(f"Knowledge Merge failed with code {proc.returncode}")
+                    order["status"] = "completed"
+                    order["updated_at"] = datetime.now().isoformat()
+                    updated = True
+                    logger.info(f"✅ Knowledge Merge {order['id']} completed.")
+                except Exception as e:
+                    logger.error(f"❌ Knowledge Merge {order['id']} failed: {e}")
+                    order["status"] = "failed"
+                    updated = True
             elif order_type == "CLOUD_INTELLIGENCE_MERGE":
                 logger.info(f"☁️ Executing Cloud Intelligence Merge Work Order: {order['id']}")
                 try:

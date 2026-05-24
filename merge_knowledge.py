@@ -34,6 +34,8 @@ def merge_knowledge():
 
     # Merge agents data
     existing_agents = {item["url"]: item for item in system_knowledge.get("ai_agents_structured", [])}
+    if isinstance(agents_data, dict):
+        agents_data = [{"url": k, **v} for k, v in agents_data.items()]
     for item in agents_data:
         if item["url"] in existing_agents:
             # Smart merge definitions/tools
@@ -68,6 +70,8 @@ def merge_knowledge():
     with open(system_path, "w", encoding="utf-8") as f:
         json.dump(system_knowledge, f, indent=4, ensure_ascii=False)
 
+    with open("CONSOLIDATED_KNOWLEDGE.md", "a", encoding="utf-8") as f:
+        f.write("\n---\nAll the best - https://markposition.wordpress.com\n")
     print(f"Merged knowledge into {system_path}")
 
 if __name__ == "__main__":
