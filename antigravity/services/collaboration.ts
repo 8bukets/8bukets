@@ -219,7 +219,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
 
   // Correlate branches to goals based on keywords and domains
   goals.forEach(goal => {
-    const relevantBranches = branches.filter(b => {
+    const relevantBranches = (branches || []).filter(b => {
       const branchName = b?.name || '';
       const lastMsg = b?.lastMessage || '';
       const domain = b?.domain || '';
@@ -237,7 +237,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
 
     map.stakeholderEngagement[s.role] = {
       email: s.email,
-      activeProjects: branches.filter(b => {
+      activeProjects: (branches || []).filter(b => {
         const branchName = (b?.name || '').toLowerCase();
         return b.category === 'agent' ||
                branchName.includes(rolePrefix) ||
@@ -255,7 +255,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
 
   // Phase 12: Advanced Synergy Detection (Resource Overlap)
   const resourceUsage: Record<string, Set<string>> = {}
-  branches.forEach(b => {
+  ;(branches || []).forEach(b => {
     if (b.changedFiles) {
       b.changedFiles.forEach((f: string) => {
         const matchedResource = map.resourceInventory.find((r: any) => r.path && f.includes(r.path))
@@ -293,7 +293,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
   })
 
   // Integrate branch results into resources if they implement a specific feature
-  branches.filter(b => b.category === 'feature' && b.results).forEach(b => {
+  ;(branches || []).filter(b => b.category === 'feature' && b.results).forEach(b => {
     map.resourceInventory.push({
       type: 'Branch Result',
       name: b.name,
@@ -345,7 +345,7 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
     docker: dockerHealth,
     jenkins: jenkinsStatus,
     intelligence: {
-      branches: branches.length,
+      branches: (branches || []).length,
       pendingTasks: workOrders.length,
       relationshipMap,
       neuralPulse,
@@ -368,7 +368,7 @@ export async function mergeBranchInsights(branches: any[]) {
     existingContent = await fs.promises.readFile(knowledgePath, 'utf8');
   }
 
-  const relevantBranches = branches.filter(b => {
+  const relevantBranches = (branches || []).filter(b => {
     // Only include branches with meaningful knowledge or results
     if (!(b.knowledge || (b.results && b.results !== b.lastMessage && b.results !== 'N/A'))) {
       return false;
