@@ -620,7 +620,8 @@ export class Jules {
     const { observeKnowledge: scanUrl } = await import('./services/knowledge')
     const urlsToObserve = [
       'https://software-online-review.com',
-      'https://markposition.wordpress.com'
+      'https://markposition.wordpress.com',
+      'https://www.investopedia.com/'
     ]
 
     for (const url of urlsToObserve) {
