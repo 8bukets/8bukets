@@ -156,19 +156,13 @@ async function scrapeAiAgentsKnowledge() {
 
         // Save to JSON
         const jsonPath = "ai_agents_knowledge.json";
-        const manualKeys = ["compile", "jules-tools", "knowledge-merge", "gemini-cli-remote-subagents", "gemini-cli-subagents", "docker-mcp-catalog", "prepare-best-value-of-knowledge-integration"];
         let finalData: Record<string, Section> = {};
 
         if (fs.existsSync(jsonPath)) {
             try {
-                const oldData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
-                for (const key of manualKeys) {
-                    if (oldData[key]) {
-                        finalData[key] = oldData[key];
-                    }
-                }
+                finalData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
             } catch (e) {
-                console.warn("Failed to parse old JSON, starting fresh with manual keys.");
+                console.warn("Failed to parse old JSON, starting fresh.");
             }
         }
 
@@ -195,10 +189,9 @@ async function scrapeAiAgentsKnowledge() {
         }
 
         mdContent += "---\n\n# Manual Knowledge Additions\n\n";
+        const manualKeys = Object.keys(finalData).filter(key => !orderedScrapedKeys.includes(key));
         for (const key of manualKeys) {
-            if (finalData[key] && !orderedScrapedKeys.includes(key)) {
-                mdContent += `## ${finalData[key].title}\n\n${finalData[key].content}\n\n`;
-            }
+            mdContent += `## ${finalData[key].title}\n\n${finalData[key].content}\n\n`;
         }
 
 
