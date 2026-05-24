@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "get-prompt": "npx tsx scripts/get_prompt.ts",
+    "fix:icloud": "bash scripts/fix_icloud_sync.sh",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
