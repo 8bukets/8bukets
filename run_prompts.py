@@ -17,7 +17,7 @@ CREATIVE_DEFAULTS = {
     "TOPIC": "The impact of autonomous drones on crop yield optimization",
     "DESCRIBE YOUR AUDIENCE — e.g., \"tech-savvy 25-40 year olds who build with AI tools\"": "Tech-savvy agronomists and climate-conscious investors aged 30-50",
     "SPECIFIC TONE — e.g., \"direct, punchy, slightly irreverent. No corporate speak.\"": "Direct, visionary, and slightly provocative. No corporate jargon.",
-    "WORD COUNT — e.g., \"2,500-3,000 words\"": "500-800 words", # shorter for faster generation
+    "WORD COUNT — e.g., \"2,500-3,000 words\"": "500-800 words",
     "YOUR TOPIC": "Building autonomous AI agents for daily life",
     "YOUR AUDIENCE": "Software engineers looking to automate their workflows",
     "PASTE YOUR CONTENT": "AI agents are moving from research labs to production environments. In the next 5 years, every knowledge worker will have a personal swarm of agents handling scheduling, research, and coding tasks.",
@@ -156,14 +156,12 @@ def parse_prompts(filepath="PROMPTS.md"):
     with open(filepath, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # Split by "### Prompt"
     parts = re.split(r"^### Prompt ", content, flags=re.MULTILINE)
 
     prompts = []
-    for part in parts[1:]: # Skip the first chunk (headers)
+    for part in parts[1:]:
         lines = part.strip().split("\n")
         title_line = lines[0]
-        # Match '1 — Full Article Writer'
         match = re.match(r"(\d+)\s*[—\-]\s*(.*)", title_line)
         if match:
             prompt_num = match.group(1)
@@ -177,34 +175,40 @@ def parse_prompts(filepath="PROMPTS.md"):
     return prompts
 
 def replace_placeholders(prompt_text):
-    """Replaces [PLACEHOLDERS] with creative defaults."""
     filled_prompt = prompt_text
-
-    # Find all brackets
     placeholders = re.findall(r"\[(.*?)\]", prompt_text)
+
+    # Handle the duplicate placeholder edge case in Prompt 50 creatively
+    option_b_handled = False
+
     for p in placeholders:
         replacement = CREATIVE_DEFAULTS.get(p)
         if replacement:
-            filled_prompt = filled_prompt.replace(f"[{p}]", replacement)
+            filled_prompt = filled_prompt.replace(f"[{p}]", replacement, 1) # replace 1 by 1
         else:
-            # Fallback if we missed an exact match, try partial match or generic
             fallback = "Random Value"
             for k, v in CREATIVE_DEFAULTS.items():
                 if k.lower() in p.lower() or p.lower() in k.lower():
                     fallback = v
                     break
+
+            # Specialized edge case handling
+            if p == "DESCRIBE" and option_b_handled:
+                fallback = CREATIVE_DEFAULTS.get("Option B: [DESCRIBE]")
+            elif p == "DESCRIBE":
+                option_b_handled = True # next one will be B
+
             if fallback == "Random Value":
-                 # Some edge cases like [TOPIC] inside a longer string
                  if "TOPIC" in p: fallback = "AI in Agriculture"
                  elif "NICHE" in p: fallback = "Tech Startups"
                  elif "AUDIENCE" in p: fallback = "Developers"
                  elif "B-ROLL" in p: fallback = "Shot of typing on keyboard"
 
-            filled_prompt = filled_prompt.replace(f"[{p}]", fallback)
+            filled_prompt = filled_prompt.replace(f"[{p}]", fallback, 1)
 
     return filled_prompt
 
-async def run_prompt_async(client, prompt_data, output_dir):
+async def run_prompt_async(client, prompt_data, output_dir, max_retries=3):
     prompt_num = prompt_data["num"]
     prompt_title = prompt_data["title"]
     raw_text = prompt_data["text"]
@@ -213,24 +217,46 @@ async def run_prompt_async(client, prompt_data, output_dir):
 
     filename = os.path.join(output_dir, f"prompt_{prompt_num}_{prompt_title.replace(' ', '_').replace('/', '_')}.md")
 
+    # Creative Skip: Resume capability
+    if os.path.exists(filename):
+        logging.info(f"⏭️ Skipping Prompt {prompt_num}: File already exists.")
+        return True
+
     logging.info(f"Running Prompt {prompt_num}: {prompt_title}...")
 
-    try:
-        response = await client.aio.models.generate_content(
-            model='gemini-2.5-flash',
-            contents=filled_text,
-        )
+    for attempt in range(max_retries):
+        try:
+            response = await client.aio.models.generate_content(
+                model='gemini-2.5-flash',
+                contents=filled_text,
+            )
 
-        output = f"# Prompt {prompt_num}: {prompt_title}\n\n"
-        output += f"## Original Prompt (Filled)\n```text\n{filled_text}\n```\n\n"
-        output += f"## AI Response\n\n{response.text}\n"
+            output = f"# Prompt {prompt_num}: {prompt_title}\n\n"
+            output += f"## Original Prompt (Filled)\n```text\n{filled_text}\n```\n\n"
+            output += f"## AI Response\n\n{response.text}\n"
 
-        with open(filename, "w", encoding="utf-8") as f:
-            f.write(output)
+            with open(filename, "w", encoding="utf-8") as f:
+                f.write(output)
 
-        logging.info(f"✅ Saved results for Prompt {prompt_num} to {filename}")
-    except Exception as e:
-        logging.error(f"❌ Failed to run Prompt {prompt_num}: {e}")
+            logging.info(f"✅ Saved results for Prompt {prompt_num} to {filename}")
+            return True
+        except Exception as e:
+            error_str = str(e)
+            if "429" in error_str and "RESOURCE_EXHAUSTED" in error_str:
+                if "retry in" in error_str:
+                    match = re.search(r"retry in (\d+\.\d+)s", error_str)
+                    wait_time = float(match.group(1)) + 1.0 if match else 35.0
+                    logging.warning(f"⚠️ Rate limited on Prompt {prompt_num}. Retrying in {wait_time:.1f}s...")
+                    await asyncio.sleep(wait_time)
+                else:
+                    # Likely daily limit exhausted
+                    logging.error(f"❌ Daily limit exhausted on Prompt {prompt_num}. Cannot retry today.")
+                    return False
+            else:
+                logging.error(f"❌ Failed to run Prompt {prompt_num}: {e}")
+                return False
+
+    return False
 
 async def main():
     parser = argparse.ArgumentParser(description="CLI tool to run AI Prompts.")
@@ -269,24 +295,33 @@ async def main():
 
     if mock_mode:
         for p in to_run:
+            filename = os.path.join(args.outdir, f"prompt_{p['num']}_{p['title'].replace(' ', '_').replace('/', '_')}.md")
+            if os.path.exists(filename):
+                 logging.info(f"⏭️ Skipping Mock Prompt {p['num']}: File already exists.")
+                 continue
             filled = replace_placeholders(p['text'])
-            filename = os.path.join(args.outdir, f"prompt_{p['num']}_mock.md")
             with open(filename, "w", encoding="utf-8") as f:
                 f.write(f"# MOCK RUN - Prompt {p['num']}\n\n{filled}\n\n[MOCK RESPONSE]")
             logging.info(f"✅ Mock saved to {filename}")
         return
 
-    # Run concurrently (batch them so we don't hit rate limits too hard)
-    batch_size = 5
+    # Creative Batching for limits (10 RPM allowed usually, so we batch by 3 and delay heavily if needed)
+    batch_size = 3
     for i in range(0, len(to_run), batch_size):
         batch = to_run[i:i+batch_size]
         tasks = [run_prompt_async(client, p, args.outdir) for p in batch]
-        await asyncio.gather(*tasks)
-        if i + batch_size < len(to_run):
-            logging.info("Waiting 5 seconds to respect rate limits...")
-            await asyncio.sleep(5)
+        results = await asyncio.gather(*tasks)
 
-    logging.info("Done!")
+        # If any returned False due to daily limit, break the whole run gracefully
+        if False in results:
+            logging.error("Stopping execution due to unrecoverable rate limits (Daily Free Tier Quota Exhausted).")
+            break
+
+        if i + batch_size < len(to_run):
+            logging.info("Batch complete. Waiting 10 seconds to respect RPM limits...")
+            await asyncio.sleep(10)
+
+    logging.info("Run finished (or paused due to daily limits)!")
 
 if __name__ == "__main__":
     asyncio.run(main())
