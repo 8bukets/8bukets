@@ -1,15 +1,15 @@
 {
     "version": 1.0,
-    "iterations": 4,
+    "iterations": 5,
     "keyword_performance": {},
     "bid_strategy": {
-        "base_bid": 1.5,
+        "base_bid": 1.65,
         "multipliers": {
             "Canada": 1.2,
             "India": 0.9
         }
     },
-    "innovation_level": 0.1,
+    "innovation_level": 0.2,
     "history": [
         {
             "iteration": 0,
@@ -30,6 +30,11 @@
             "iteration": 3,
             "engagement": 54,
             "action": "Maintained strategy"
+        },
+        {
+            "iteration": 4,
+            "engagement": 16,
+            "action": "Updated strategy"
         }
     ],
     "oracle_ai_knowledge": {
