@@ -32,10 +32,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Ecosystem Collaboration Sync
-        run: npm run connect
-
-      - name: Run Creation Cycle
+      - name: Run Unified Autonomous Cycle
         env:
           SYSTEM_AUTH_TOKEN: ${{ secrets.SYSTEM_AUTH_TOKEN || 'default_dev_token' }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -46,7 +43,7 @@ jobs:
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           MACBOOK_CLOUD_SIMULATION: true
           AUTONOMOUS_MODE: cloud
-        run: npx tsx scripts/execute_creation_cycle.ts
+        run: npm run daily
 
       - name: Commit and Push Changes
         run: |

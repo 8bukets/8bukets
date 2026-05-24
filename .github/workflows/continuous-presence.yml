@@ -52,10 +52,7 @@ jobs:
           AUTONOMOUS_MODE: cloud
           MACBOOK_CLOUD_SIMULATION: true
 
-      - name: Ecosystem Collaboration Sync
-        run: npm run connect
-
-      - name: Execute Unified Autonomous Cycle (TypeScript)
+      - name: Execute Unified Autonomous Cycle (Sync & Work)
         run: npm run daily
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}

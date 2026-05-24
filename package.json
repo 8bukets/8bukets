@@ -11,7 +11,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
     "connect": "tsx scripts/connect_and_collaborate.ts",
-    "daily": "tsx scripts/run_daily.ts",
+    "daily": "tsx scripts/autonomous_sync.ts",
     "ingest:sor": "tsx scripts/ingest_software_online_review.ts https://software-online-review.com/",
     "ingest:investopedia": "tsx scripts/ingest_investopedia.ts",
     "sync-all": "tsx scripts/sync_all_branches.ts",
