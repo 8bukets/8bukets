@@ -22,7 +22,7 @@ export async function evolve() {
   ]
 
   // Recursive scan to find "bloated" or unoptimized patterns
-  function scan(dir: string) {
+  async function scan(dir: string) {
     if (!fs.existsSync(dir)) return
 
     const files = fs.readdirSync(dir)
@@ -127,7 +127,7 @@ export async function evolve() {
   }
 
   for (const dir of scanDirs) {
-    scan(dir)
+    await scan(dir)
   }
 
   console.log('✨ [Evolution Report]: Found', suggestions.length, 'potential optimizations.')
