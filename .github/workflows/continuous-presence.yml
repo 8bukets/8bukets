@@ -52,6 +52,9 @@ jobs:
           AUTONOMOUS_MODE: cloud
           MACBOOK_CLOUD_SIMULATION: true
 
+      - name: Ecosystem Collaboration Sync
+        run: npm run connect
+
       - name: Execute Unified Autonomous Cycle (TypeScript)
         run: npm run daily
         env:
