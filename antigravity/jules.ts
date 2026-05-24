@@ -8,7 +8,7 @@ import { gitKrakenMetadataService } from './services/gitkraken'
  * JULES: THE COGNITIVE MULTI-AGENT ORCHESTRATOR
  */
 
-export type AgentRole = 'Coder' | 'Reviewer' | 'Ops' | 'Chief AI Officer' | 'General'
+export type AgentRole = 'Coder' | 'Reviewer' | 'Ops' | 'Chief AI Officer' | 'CTO' | 'CDO' | 'General'
 
 interface JulesMemory {
   lastOptimization: string
@@ -92,7 +92,7 @@ export class Jules {
   public async runDailyRoutine() {
     console.log(`🗓️ [Jules-${this.role}] Executing Daily Autonomous Routine...`)
 
-    if (this.role === 'Ops' || this.role === 'General') {
+    if (this.role === 'Ops' || this.role === 'General' || this.role === 'Chief AI Officer' || this.role === 'CTO') {
       await this.selfRepair()
       await this.auditDependencies()
     }
@@ -326,7 +326,7 @@ export class Jules {
     await this.observeKnowledge()
     await this.observeGithubDocs()
 
-    if (this.role === 'Coder' || this.role === 'General') {
+    if (this.role === 'Coder' || this.role === 'General' || this.role === 'Chief AI Officer') {
        await this.selfRepair()
     }
 
