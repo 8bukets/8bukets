@@ -23,6 +23,7 @@
     "@ai-sdk/google": "^3.0.70",
     "@ai-sdk/react": "^3.0.178",
     "@google/genai": "^2.5.0",
+    "@google/generative-ai": "^0.24.1",
     "@supabase/supabase-js": "^2",
     "@swc/helpers": "^0.5.21",
     "@types/node-fetch": "^2.6.13",
