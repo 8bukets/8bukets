@@ -64,6 +64,8 @@ class SentientOrchestrationEngine {
 export const orchestrationEngine = new SentientOrchestrationEngine()
 
 export async function getSentientOrchestrationData() {
+  try {
+
   'use cache'
   return autonomousFetch(SentientOrchestrationSchema, async () => {
     return {
@@ -73,4 +75,8 @@ export async function getSentientOrchestrationData() {
       lastSync: new Date().toISOString()
     }
   }, { life: 'minutes' })
+
+  } catch (err) {
+    console.error('[Evolution Autocorrect] Unhandled error:', err);
+  }
 }

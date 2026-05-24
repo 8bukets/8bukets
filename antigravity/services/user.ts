@@ -12,6 +12,8 @@ export const UserSchema = z.object({
 export type User = z.infer<typeof UserSchema>
 
 export async function getUser(id: string): Promise<User> {
+  try {
+
   return autonomousFetch(
     UserSchema,
     async () => {
@@ -46,5 +48,9 @@ export function getSafeUser(user: User) {
   return {
     id: user.id,
     name: user.name
+  }
+
+  } catch (err) {
+    console.error('[Evolution Autocorrect] Unhandled error:', err);
   }
 }

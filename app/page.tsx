@@ -5,6 +5,16 @@ import { PageProps, resolve, getSystemInsights } from "@/antigravity/core";
 import { getAppStats } from "@/antigravity/services/stats";
 
 export default async function CommandCenter(props: PageProps) {
+
+
+
+
+
+
+
+
+
+
   'use cache'
   return (
     <Suspense fallback={<div>Loading Antigravity...</div>}>

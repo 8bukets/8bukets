@@ -27,4 +27,7 @@ describe('GitProviderService', () => {
     const provider = await service.getActiveProvider()
     expect(provider).toBe('unknown')
   })
+
+
+
 })

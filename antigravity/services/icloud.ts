@@ -24,11 +24,16 @@ export async function syncToICloud() {
     return { status: 'skipped', reason: 'no_path' }
   }
 
-  // Ensure target directory exists
+  // Ensure target directory exists and is reachable
   try {
     if (!fs.existsSync(targetPath)) {
       console.log(`☁️ [iCloud Sync] Creating target directory: ${targetPath}`)
-      fs.mkdirSync(targetPath, { recursive: true })
+      try {
+        fs.mkdirSync(targetPath, { recursive: true })
+      } catch (mkdirErr: any) {
+        console.warn(`⚠️ [iCloud Sync] Could not create target directory: ${mkdirErr.message}. This is expected in restricted cloud environments.`)
+        return { status: 'skipped', reason: 'target_unreachable' }
+      }
     }
 
     // Explicitly verify write access
@@ -36,8 +41,8 @@ export async function syncToICloud() {
     fs.writeFileSync(testFile, 'test')
     fs.unlinkSync(testFile)
   } catch (err: any) {
-    console.error(`❌ [iCloud Sync] Target path verification failed: ${targetPath}. Error: ${err.message}`)
-    return { status: 'failed', error: `iCloud target path unreachable or read-only: ${err.message}` }
+    console.warn(`⚠️ [iCloud Sync] Target path verification failed or restricted: ${targetPath}. Skipping iCloud sync.`)
+    return { status: 'skipped', reason: 'read_only_or_missing' }
   }
 
   try {

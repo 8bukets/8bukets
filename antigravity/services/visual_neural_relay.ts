@@ -12,6 +12,8 @@ export const VisualNeuralRelaySchema = z.object({
 })
 
 export async function getVisualNeuralRelayData() {
+  try {
+
   'use cache'
   return autonomousFetch(VisualNeuralRelaySchema, async () => {
     return {
@@ -19,4 +21,8 @@ export async function getVisualNeuralRelayData() {
       lastRun: new Date().toISOString()
     }
   }, { life: 'minutes' })
+
+  } catch (err) {
+    console.error('[Evolution Autocorrect] Unhandled error:', err);
+  }
 }

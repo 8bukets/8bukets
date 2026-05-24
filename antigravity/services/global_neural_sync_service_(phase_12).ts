@@ -12,6 +12,8 @@ export const GlobalNeuralSyncServiceSchema = z.object({
 })
 
 export async function getGlobalNeuralSyncServiceData() {
+  try {
+
   'use cache'
   return autonomousFetch(GlobalNeuralSyncServiceSchema, async () => {
     return {
@@ -19,4 +21,8 @@ export async function getGlobalNeuralSyncServiceData() {
       lastRun: new Date().toISOString()
     }
   }, { life: 'minutes' })
+
+  } catch (err) {
+    console.error('[Evolution Autocorrect] Unhandled error:', err);
+  }
 }

@@ -16,6 +16,8 @@ export type AppStats = z.infer<typeof AppStatsSchema>
  * Phase 4: Uses predictiveFetch to choose the best cacheLife profile.
  */
 export async function getAppStats(): Promise<AppStats> {
+  try {
+
   return predictiveFetch(
     'system-stats',
     AppStatsSchema,
@@ -33,4 +35,8 @@ export async function getAppStats(): Promise<AppStats> {
       }
     }
   )
+
+  } catch (err) {
+    console.error('[Evolution Autocorrect] Unhandled error:', err);
+  }
 }

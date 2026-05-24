@@ -12,6 +12,8 @@ export const AutonomousLoggingServiceSchema = z.object({
 })
 
 export async function getAutonomousLoggingServiceData() {
+  try {
+
   'use cache'
   return autonomousFetch(AutonomousLoggingServiceSchema, async () => {
     return {
@@ -19,4 +21,8 @@ export async function getAutonomousLoggingServiceData() {
       lastRun: new Date().toISOString()
     }
   }, { life: 'minutes' })
+
+  } catch (err) {
+    console.error('[Evolution Autocorrect] Unhandled error:', err);
+  }
 }

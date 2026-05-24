@@ -1,44 +1,19 @@
 # Consolidated Knowledge Observation Insights
 
-*Last Updated: 2026-05-11T01:17:34.289Z*
+*Last Updated: 2026-05-24T06:43:04.297Z*
 
-## 🌐 Web Insights: software info by fk &#8211; software-online-review &#8211; Filip Keser
-**Source:** https://software-online-review.com
-**Description:** software-online-review - Filip Keser
+## 🌐 Web Insights: software info by fk – software-online-review – Filip Keser
+**Source:** undefined
+**Description:** undefined
 
 ### Top Keywords
-- posted
-- software
-- online
-- review
-- filip
-- keser
-- google
-- microsoft
-- august
-- platform
 
 ### Recent Posts
-- [Roadmap and business roadmap](https://software-online-review.com/2025/11/01/roadmap-and-business-roadmap/)
-- [Nvidia Dgx Spark](https://software-online-review.com/2025/10/25/nvidia-dgx-spark/)
-- [Chromium](https://software-online-review.com/2025/10/24/chromium/)
-- [Project Sor](https://software-online-review.com/2024/11/25/project-sor/)
-- [Google marketing](https://software-online-review.com/2023/12/07/google-marketing/)
-- [chronicle](https://software-online-review.com/2023/10/17/chronicle/)
-- [Security key](https://software-online-review.com/2023/04/24/security-key/)
-- [search google](https://software-online-review.com/2022/08/25/search-google/)
-- [software-online-review](https://software-online-review.com/2022/07/22/software-online-review/)
-- [Client Portal](https://software-online-review.com/2022/03/22/client-portal/)
-- [Harvard Business Review &#8211; Ideas and Advice for Leaders](https://software-online-review.com/2022/03/21/harvard-business-review-ideas-and-advice-for-leaders-2/)
-- [Perfect Strangers](https://software-online-review.com/2022/02/24/perfect-strangers/)
-- [Small Business Administration](https://software-online-review.com/2021/05/14/small-business-administration/)
-- [Chromium &#8211; Base](https://software-online-review.com/2026/02/20/chromium-base/)
-- [Schema](https://software-online-review.com/2026/02/17/schema/)
 
 ---
 
 ## 🐙 GitHub Technical Documentation
-**Repository:** https://github.com/bmewburn/intelephense-docs
+**Repository:** undefined
 
 ### File: features.md
 #### Features
@@ -1332,3 +1307,9 @@ Intelephense aims to support all frameworks but does not implement framework spe
 Packages can be found online that aim to workaround these issues by providing stubs of symbols to help static analysers like Intelephense understand the code.
 
 * Laravel - [barryvdh/laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper)
+
+### File: support.md
+#### Overview
+https://github.com/bmewburn/vscode-intelephense/issues
+
+ben@intelephense.com

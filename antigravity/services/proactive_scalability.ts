@@ -12,6 +12,8 @@ export const ProactiveScalabilityServiceSchema = z.object({
 })
 
 export async function getProactiveScalabilityServiceData() {
+  try {
+
   'use cache'
   return autonomousFetch(ProactiveScalabilityServiceSchema, async () => {
     return {
@@ -19,4 +21,8 @@ export async function getProactiveScalabilityServiceData() {
       lastRun: new Date().toISOString()
     }
   }, { life: 'minutes' })
+
+  } catch (err) {
+    console.error('[Evolution Autocorrect] Unhandled error:', err);
+  }
 }

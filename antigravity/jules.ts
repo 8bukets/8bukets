@@ -329,18 +329,16 @@ export class Jules {
     await syncCollaborationState(branches)
     await generateConsolidatedReport(branches)
 
-    // Synthesis
-    const { synthesize } = await import('./synthesis')
-    const ideas = await synthesize()
+    // Phase 12: Super-Intelligence Optimization
+    // getSystemInsights already triggers the synthesis and optimization engine internally
+    const { getSystemInsights } = await import('./core')
+    const insights = await getSystemInsights()
+
+    const ideas = insights.ideas || []
     if (ideas.length > 0) {
       await this.recordTask(`Synthesis: Generated ${ideas.length} proposals.`)
       await creationEngine.processIdeas(ideas)
     }
-
-    // Phase 12: Super-Intelligence Optimization
-    // getSystemInsights already triggers the optimization engine internally
-    const { getSystemInsights } = await import('./core')
-    const insights = await getSystemInsights()
     const refactors = (insights as any).proposals || []
     if (refactors.length > 0) {
       await this.recordTask(`Super-Intelligence: Generated ${refactors.length} predictive refactors.`)
@@ -408,10 +406,10 @@ export class Jules {
     }
 
     if (webInsights || githubInsights) {
-      if (webInsights) {
+      if (webInsights && webInsights.topKeywords) {
         await this.recordTask(`Knowledge Observation: Extracted ${webInsights.topKeywords.length} concepts from ${webInsights.source}`)
       }
-      if (githubInsights && githubInsights.length > 0) {
+      if (githubInsights && githubInsights.length > 0 && githubInsights[0]) {
         await this.recordTask(`Knowledge Observation: Extracted technical documentation from ${githubInsights[0].source}`)
       }
 
@@ -427,15 +425,19 @@ export class Jules {
         mdContent += `**Description:** ${webInsights.description}\n\n`
 
         mdContent += `### Top Keywords\n`
-        webInsights.topKeywords.forEach((kw: string) => {
-          mdContent += `- ${kw}\n`
-        })
+        if (webInsights.topKeywords) {
+          webInsights.topKeywords.forEach((kw: string) => {
+            mdContent += `- ${kw}\n`
+          })
+        }
         mdContent += `\n`
 
         mdContent += `### Recent Posts\n`
-        webInsights.recentPosts.forEach((post: { title: string; link: string }) => {
-          mdContent += `- [${post.title}](${post.link})\n`
-        })
+        if (webInsights.recentPosts) {
+          webInsights.recentPosts.forEach((post: { title: string; link: string }) => {
+            mdContent += `- [${post.title}](${post.link})\n`
+          })
+        }
         mdContent += `\n---\n\n`
       }
 

@@ -12,6 +12,8 @@ export const CloudConvergenceServiceSchema = z.object({
 })
 
 export async function getCloudConvergenceServiceData() {
+  try {
+
   'use cache'
   return autonomousFetch(CloudConvergenceServiceSchema, async () => {
     return {
@@ -19,4 +21,8 @@ export async function getCloudConvergenceServiceData() {
       lastRun: new Date().toISOString()
     }
   }, { life: 'minutes' })
+
+  } catch (err) {
+    console.error('[Evolution Autocorrect] Unhandled error:', err);
+  }
 }

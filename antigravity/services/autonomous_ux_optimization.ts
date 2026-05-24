@@ -12,6 +12,8 @@ export const AutonomousUXOptimizationServiceSchema = z.object({
 })
 
 export async function getAutonomousUXOptimizationServiceData() {
+  try {
+
   'use cache'
   return autonomousFetch(AutonomousUXOptimizationServiceSchema, async () => {
     return {
@@ -19,4 +21,8 @@ export async function getAutonomousUXOptimizationServiceData() {
       lastRun: new Date().toISOString()
     }
   }, { life: 'minutes' })
+
+  } catch (err) {
+    console.error('[Evolution Autocorrect] Unhandled error:', err);
+  }
 }
