@@ -130,3 +130,35 @@ run-autonomous-edge-to-cloud_bridge:
 
 variables:
   MACBOOK_CLOUD_SIMULATION: "true"
+
+run-autonomous-edge_to_cloud_bridge:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Edge-to-Cloud Bridge"
+    - npx tsx antigravity/workflows/edge_to_cloud_bridge_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-deep_cognitive_self_correction:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Deep Cognitive Self-Correction Service"
+    - npx tsx antigravity/workflows/deep_cognitive_self_correction_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-horizontal_fleet_orchestration:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Horizontal Fleet Orchestration Service"
+    - npx tsx antigravity/workflows/horizontal_fleet_orchestration_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-cognitive_code_self_correction:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Cognitive Code Self-Correction Service"
+    - npx tsx antigravity/workflows/cognitive_code_self_correction_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
