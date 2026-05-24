@@ -33,7 +33,12 @@ export const PresenceSchema = z.object({
     hostname: z.string(),
     uptime: z.number(),
     memory_usage: z.record(z.number())
-  })
+  }),
+  telemetry: z.object({
+    workflow_id: z.string().optional(),
+    run_attempt: z.string().optional(),
+    node_id: z.string().optional()
+  }).optional()
 })
 
 export type Presence = z.infer<typeof PresenceSchema>
@@ -86,6 +91,11 @@ export class OnlinePresenceService {
           hostname: os.hostname(),
           uptime: process.uptime(),
           memory_usage: process.memoryUsage() as unknown as Record<string, number>
+        },
+        telemetry: {
+          workflow_id: process.env.GITHUB_RUN_ID,
+          run_attempt: process.env.GITHUB_RUN_ATTEMPT,
+          node_id: isCloud ? 'cloud-relay-01' : 'macbook-primary-01'
         }
       }
 
