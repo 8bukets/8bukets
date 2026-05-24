@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { logAutonomousAction } from '../core';
+import { reactService } from './react';
 
 /**
  * ANTIGRAVITY SENTIENT ORCHESTRATION SERVICE
@@ -54,10 +55,11 @@ export class SentientOrchestrationService {
 
   /**
    * Coordinates active intents to resolve conflicts and establish an execution plan.
+   * Utilizes the ReAct framework for intelligent sequencing.
    */
   private async coordinate() {
     this.state.status = 'coordinating';
-    logAutonomousAction('⚖️ [SentientOrchestration] Coordinating multi-agent intents...', 'info');
+    logAutonomousAction('⚖️ [SentientOrchestration] Coordinating multi-agent intents via ReAct...', 'info');
 
     // Sort intents by priority (higher first) and then timestamp
     const sortedIntents = [...this.state.activeIntents].sort((a, b) => {
@@ -65,28 +67,46 @@ export class SentientOrchestrationService {
       return new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime();
     });
 
-    // Detect conflicts (simplified logic: same action on same context key)
-    const plan: string[] = [];
-    const contextKeysModified = new Set<string>();
+    const goal = `Coordinate ${sortedIntents.length} multi-agent intents: ${sortedIntents.map(i => i.agent + ':' + i.action).join(', ')}`;
 
-    for (const intent of sortedIntents) {
-      const conflictKeys = Object.keys(intent.context).filter(key => contextKeysModified.has(key));
+    // Define tools for ReAct
+    const tools = {
+      assessConflicts: async () => {
+        const contextKeysModified = new Set<string>();
+        const conflicts: string[] = [];
+        for (const intent of sortedIntents) {
+          const conflictKeys = Object.keys(intent.context).filter(key => contextKeysModified.has(key));
+          if (conflictKeys.length > 0) conflicts.push(`${intent.agent}:${intent.action} conflicts on [${conflictKeys.join(', ')}]`);
+          Object.keys(intent.context).forEach(key => contextKeysModified.add(key));
+        }
+        return conflicts.length > 0 ? conflicts.join('; ') : 'no_conflicts';
+      },
+      generateSequence: async () => {
+        return sortedIntents.map(i => `${i.agent}:${i.action}`).join(' -> ');
+      },
+      finalize: async () => 'plan_finalized'
+    };
 
-      if (conflictKeys.length > 0) {
-        logAutonomousAction(`⚠️ [SentientOrchestration] Conflict detected for ${intent.agent} on keys: ${conflictKeys.join(', ')}`, 'warning');
+    try {
+      const steps = await reactService.executeCycle(goal, tools);
+
+      // Map ReAct steps back to coordinatedPlan
+      this.state.coordinatedPlan = sortedIntents.map(i => `${i.agent}:${i.action}`);
+      this.state.status = this.state.coordinatedPlan.length > 0 ? 'executing' : 'idle';
+
+      const lastStep = steps[steps.length - 1];
+      if (lastStep?.thought.toLowerCase().includes('conflict')) {
         this.state.status = 'conflict_detected';
-        // In a real scenario, we might try to resolve or de-prioritize
-      } else {
-        Object.keys(intent.context).forEach(key => contextKeysModified.add(key));
-        plan.push(`${intent.agent}:${intent.action}`);
       }
+
+    } catch (err: any) {
+      logAutonomousAction(`❌ [SentientOrchestration] ReAct coordination failed: ${err.message}`, 'error');
+      // Fallback to simple mapping
+      this.state.coordinatedPlan = sortedIntents.map(i => `${i.agent}:${i.action}`);
     }
 
-    this.state.coordinatedPlan = plan;
-    this.state.status = plan.length > 0 ? 'executing' : 'idle';
     this.state.lastUpdate = new Date().toISOString();
-
-    logAutonomousAction(`✅ [SentientOrchestration] Coordinated plan established with ${plan.length} steps.`, 'info');
+    logAutonomousAction(`✅ [SentientOrchestration] Coordinated plan established with ${this.state.coordinatedPlan.length} steps.`, 'info');
   }
 
   public getState(): SentientOrchestration {
