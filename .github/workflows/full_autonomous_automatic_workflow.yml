@@ -26,6 +26,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Connect and Collaborate
+        run: npm run connect
+
       - name: Execute Full Autonomous Creation Cycle
         run: npx tsx scripts/execute_creation_cycle.ts
         env:
