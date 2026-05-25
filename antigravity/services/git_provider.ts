@@ -161,8 +161,10 @@ export class GitProviderService {
     // GitLab (via glab CLI or REST API fallback)
     if (process.env.GITLAB_TOKEN) {
       try {
-        await execAsync(`glab mr create --title "${title}" --description "${body}" --source-branch "${head}" --target-branch "${base}" --yes --remove-source-branch --squash-before-merge`)
-        logAutonomousAction('✅ [GitProvider] GitLab MR created via glab.', 'info')
+        // Phase 12: Enhanced glab MR creation with auto-merge and labels
+        const labels = 'autonomous,evolution,cloud-native'
+        await execAsync(`glab mr create --title "${title}" --description "${body}" --source-branch "${head}" --target-branch "${base}" --label "${labels}" --yes --remove-source-branch --squash-before-merge --push`)
+        logAutonomousAction('✅ [GitProvider] GitLab MR created via glab with enhanced metadata.', 'info')
         return 'gitlab-mr'
       } catch (err: any) {
         console.warn('⚠️ [GitProvider] GitLab MR creation via glab failed. Attempting REST API fallback...')
@@ -228,6 +230,19 @@ export class GitProviderService {
         return false;
       }
     } else if (provider === 'gitlab' && process.env.GITLAB_TOKEN) {
+      // 1. Try glab CLI first for CI verification
+      try {
+        const { stdout } = await execAsync(`glab ci status -b ${branch} --compact`)
+        if (stdout.includes('success')) {
+           logAutonomousAction(`✅ [GitProvider] GitLab CI passed for ${branch} via glab.`, 'info')
+           return true
+        } else if (stdout.includes('running') || stdout.includes('pending')) {
+           logAutonomousAction(`⏳ [GitProvider] GitLab CI still active for ${branch} via glab.`, 'info')
+           return false
+        }
+      } catch (glabErr) {}
+
+      // 2. REST API Fallback
       const projectId = process.env.CI_PROJECT_ID || process.env.GITLAB_PROJECT_ID
       const gitlabApiUrl = process.env.CI_API_V4_URL || 'https://gitlab.com/api/v4'
       if (projectId) {

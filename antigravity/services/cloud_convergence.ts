@@ -214,8 +214,9 @@ export class CloudConvergenceService {
           }
         }
 
-        // 1. Push local "executing" or "completed" updates to MongoDB first to ensure continuity
-        const updatesToPush = localOrders.filter((o: any) => o.status === 'executing' || o.status === 'completed' || o.status === 'failed')
+        // 1. Bidirectional Work Order Sync
+        // Push local "executing", "completed", or "failed" updates to MongoDB first to ensure continuity
+        const updatesToPush = localOrders.filter((o: any) => ['executing', 'completed', 'failed'].includes(o.status))
         if (updatesToPush.length > 0) {
           logAutonomousAction(`📤 [CloudConvergence] Pushing ${updatesToPush.length} local status updates to MongoDB...`, 'info')
           for (const order of updatesToPush) {
@@ -228,13 +229,16 @@ export class CloudConvergenceService {
           }
         }
 
-        // 2. Pull active orders from MongoDB
+        // 2. Pull all active and recent orders from MongoDB to establish full parity
         const mongoOrders = await db.collection('work_orders').find({
-           status: { $in: ['pending', 'in_progress', 'executing'] }
+           $or: [
+             { status: { $in: ['pending', 'in_progress', 'executing'] } },
+             { updated_at: { $gt: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString() } }
+           ]
         }).toArray()
 
         if (mongoOrders.length > 0) {
-          // Merge logic: MongoDB active orders take precedence for the local execution queue
+          // Merge logic: MongoDB orders take precedence for the local execution queue in cloud mode
           const orderMap = new Map(localOrders.map((o: any) => [o.id, o]))
           mongoOrders.forEach((mo: any) => {
             const { _id, ...orderData } = mo
@@ -250,10 +254,11 @@ export class CloudConvergenceService {
             state.last_conflict_resolution = new Date().toISOString()
             state.synced_orders = mongoOrders.length
             state.execution_mode = 'cloud'
+            state.cloud_parity = true
             fs.writeFileSync(statePath, JSON.stringify(state, null, 4))
           }
 
-          logAutonomousAction(`✅ [CloudConvergence] Resolved conflicts: Synced ${mongoOrders.length} active orders from MongoDB to local state.`, 'info')
+          logAutonomousAction(`✅ [CloudConvergence] Resolved conflicts: Synced ${mongoOrders.length} orders from MongoDB to local state for full cloud parity.`, 'info')
           return { status: 'resolved', conflicts: mongoOrders.length }
         }
       }

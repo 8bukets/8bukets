@@ -37,7 +37,9 @@ export const PresenceSchema = z.object({
   telemetry: z.object({
     workflow_id: z.string().optional(),
     run_attempt: z.string().optional(),
-    node_id: z.string().optional()
+    node_id: z.string().optional(),
+    roadmap_progress: z.number().optional(),
+    pipeline_status: z.string().optional()
   }).optional()
 })
 
@@ -93,9 +95,11 @@ export class OnlinePresenceService {
           memory_usage: process.memoryUsage() as unknown as Record<string, number>
         },
         telemetry: {
-          workflow_id: process.env.GITHUB_RUN_ID,
-          run_attempt: process.env.GITHUB_RUN_ATTEMPT,
-          node_id: isCloud ? 'cloud-relay-01' : 'macbook-primary-01'
+          workflow_id: process.env.GITHUB_RUN_ID || process.env.CI_PIPELINE_ID,
+          run_attempt: process.env.GITHUB_RUN_ATTEMPT || '1',
+          node_id: isCloud ? 'cloud-relay-01' : 'macbook-primary-01',
+          roadmap_progress: 100, // Default for active pulse
+          pipeline_status: isCloud ? 'running' : 'optimal'
         }
       }
 

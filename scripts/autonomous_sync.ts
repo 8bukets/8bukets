@@ -41,7 +41,25 @@ async function main() {
     console.log('🌐 [AutonomousSync] Synchronizing multi-cloud ecosystem state...');
     await cloudConvergence.synchronizeEcosystem();
 
-    // 5. Execute Jules Work Cycle (TypeScript Engine)
+    // 5. Execute Technical Knowledge Scrapers
+    console.log('📚 [AutonomousSync] Updating technical knowledge base...');
+    const scrapers = [
+      'python3 gemmafour_scraper.py',
+      'python3 litert_scraper.py',
+      'python3 intelephense_scraper.py',
+      'python3 ai_agents_knowledge_scraper.py'
+    ];
+
+    for (const scraper of scrapers) {
+      try {
+        console.log(` - Running: ${scraper}...`);
+        await execAsync(scraper);
+      } catch (e: any) {
+        console.warn(` ⚠️  [AutonomousSync] Scraper failed: ${scraper} - ${e.message}`);
+      }
+    }
+
+    // 6. Execute Jules Work Cycle (TypeScript Engine)
     console.log('🌟 [AutonomousSync] Executing Jules (TypeScript) work cycle...');
     await jules.executeWorkCycle();
 

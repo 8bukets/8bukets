@@ -665,10 +665,11 @@ export class Jules {
           } else if (entry.name.endsWith('.md')) {
              try {
                 const content = fs.readFileSync(path.join(process.cwd(), relativePath), 'utf8')
+                // Unified Cloud-Native Knowledge Ingestion
                 const title = `Internal: ${relativePath}`
                 const knowledge = KnowledgeObserver.processContent(title, content, `local://${relativePath}`)
                 await observer.persistKnowledge(knowledge)
-                console.log(` ✅ [Jules] Bridged Internal Knowledge: ${relativePath}`)
+                logAutonomousAction(`✅ [Jules] Bridged Internal Knowledge: ${relativePath}`, 'info')
              } catch (e) {}
           }
        }
