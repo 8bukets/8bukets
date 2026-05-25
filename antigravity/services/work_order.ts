@@ -17,12 +17,12 @@ export const WorkOrderSchema = z.object({
     'AUTONOMOUS_CREATION'
   ]),
   goal: z.string(),
-  payload: z.any(),
+  payload: z.unknown(),
   dependsOn: z.array(z.string()).optional(),
   status: z.enum(['pending', 'executing', 'completed', 'failed']),
   created_at: z.string(),
   completed_at: z.string().optional(),
-  result: z.any().optional(),
+  result: z.unknown().optional(),
   error: z.string().optional()
 })
 
@@ -64,7 +64,7 @@ export class WorkOrderService {
     fs.writeFileSync(STORAGE_PATH, JSON.stringify(this.orders, null, 2))
   }
 
-  public createOrder(type: WorkOrder['type'], goal: string, payload: any, dependsOn?: string[]): WorkOrder {
+  public createOrder(type: WorkOrder['type'], goal: string, payload: unknown, dependsOn?: string[]): WorkOrder {
     const newOrder: WorkOrder = {
       id: `wo_${Math.random().toString(36).substring(2, 11)}`,
       type,
@@ -84,7 +84,7 @@ export class WorkOrderService {
     return this.orders.filter(o => o.status === 'pending')
   }
 
-  public async updateOrderStatus(id: string, status: WorkOrder['status'], result?: any, error?: string) {
+  public async updateOrderStatus(id: string, status: WorkOrder['status'], result?: unknown, error?: string) {
     const order = this.orders.find(o => o.id === id)
     if (order) {
       order.status = status
@@ -134,9 +134,10 @@ export class WorkOrderService {
             await this.updateOrderStatus(order.id, 'completed', result)
             logAutonomousAction(`[WORK_ORDER] Completed: ${order.id}`, 'cognitive')
             hasProgress = true
-          } catch (err: any) {
+          } catch (err: unknown) {
+            const message = err instanceof Error ? err.message : String(err)
             console.error(`❌ [WorkOrder] Order ${order.id} failed:`, err)
-            await this.updateOrderStatus(order.id, 'failed', undefined, err.message)
+            await this.updateOrderStatus(order.id, 'failed', undefined, message)
             logAutonomousAction(`[WORK_ORDER] Failed: ${order.id}`, 'error')
             hasProgress = true
           }
@@ -167,7 +168,7 @@ export class WorkOrderService {
 
       case 'OPTIMIZE_SYSTEM':
         const { evolve, applyFixes } = await import('../evolution')
-        const suggestions = (order.payload && Array.isArray(order.payload.proposals))
+        const suggestions = (order.payload && typeof order.payload === 'object' && 'proposals' in order.payload && Array.isArray(order.payload.proposals))
           ? order.payload.proposals
           : await evolve()
         await applyFixes(suggestions)

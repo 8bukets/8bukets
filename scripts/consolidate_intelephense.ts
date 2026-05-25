@@ -10,7 +10,7 @@ async function consolidate() {
   const repo = 'intelephense-docs'
   const files = ['README.md', 'installation.md', 'gettingStarted.md', 'features.md', 'support.md']
 
-  let allSections: { header: string; content: string }[] = []
+  const allSections: { header: string; content: string }[] = []
 
   // 1. Ingest from local scratch (most complete usually)
   const localPath = path.join(process.cwd(), 'scratch/intelephense_docs.md')
@@ -26,7 +26,7 @@ async function consolidate() {
     try {
       console.log(` 📡 Fetching ${file} from GitHub...`)
       const result = await githubDocsObserver.fetchDoc(owner, repo, file)
-      const rawContent = result.sections.map((s: any) => `# ${s.title}\n${s.content}`).join('\n\n')
+      const rawContent = result.sections.map((s: { title: string; content: string }) => `# ${s.title}\n${s.content}`).join('\n\n')
       const knowledge = KnowledgeObserver.processContent(`Intelephense: ${file.replace('.md', '')}`, rawContent, result.rawUrl)
 
       // Add these sections to our consolidated list
@@ -86,7 +86,7 @@ async function consolidate() {
     console.log(' 🧹 Purging redundant Intelephense entries...')
     const systemKnowledge = JSON.parse(fs.readFileSync(jsonStore, 'utf8'))
     if (systemKnowledge.typescript_sections) {
-      systemKnowledge.typescript_sections = systemKnowledge.typescript_sections.filter((k: any) => {
+      systemKnowledge.typescript_sections = systemKnowledge.typescript_sections.filter((k: Knowledge) => {
         // Purge any "Intelephense: ..." variants, only keeping the main consolidated one if it exists (it will be updated)
         return !k.title.startsWith('Intelephense:')
       })

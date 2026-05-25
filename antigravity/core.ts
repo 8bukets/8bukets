@@ -77,7 +77,7 @@ export async function getMongoClient(): Promise<MongoClient> {
 
   try {
     if (process.env.NODE_ENV === 'development') {
-      let globalWithMongo = global as typeof globalThis & { _mongoClientPromise?: Promise<MongoClient> }
+      const globalWithMongo = global as typeof globalThis & { _mongoClientPromise?: Promise<MongoClient> }
       if (!globalWithMongo._mongoClientPromise) {
         globalWithMongo._mongoClientPromise = new MongoClient(MONGODB_URI).connect()
       }
@@ -245,21 +245,26 @@ export async function resolve<T>(promise: Promise<T>): Promise<T> {
 export async function autonomousFetch<T>(
   schema: z.Schema<T>,
   fetcher: () => Promise<unknown>,
-  config: { tags?: string[]; life?: string } = {}
+  config: { tags?: string[]; life?: string; fallback?: T } = {}
 ): Promise<T> {
   try {
     const data = await fetcher()
     
-
     const result = schema.safeParse(data)
     if (!result.success) {
       console.error('[Autonomous Core] Validation Failure:', result.error.format())
+      if (config.fallback !== undefined) return config.fallback
       throw new Error('Autonomous validation failed')
     }
     return result.data
   } catch (err) {
     console.warn('[Autonomous Core] Primary fetch failed. Attempting Graceful Degradation...', err)
     
+    if (config.fallback !== undefined) {
+      console.log('✅ [Autonomous Core] Returning provided fallback.')
+      return config.fallback
+    }
+
     // In Next.js 16, if we are in a 'use cache' scope, we can rely on 
     // the stale-while-revalidate behavior if a previous entry exists.
     // If we throw here, Next.js will often serve the stale content if available.
