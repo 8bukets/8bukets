@@ -8,7 +8,6 @@ import { logAutonomousAction } from '../core'
  */
 
 export async function generateContent(payload: { title: string; content: string; filename: string }) {
-  // [Evolution] TODO: Add autonomous error handling (try/catch)
   console.log(`📝 [Content] Generating content: ${payload.title}...`)
 
   const filePath = path.join(process.cwd(), 'data', payload.filename)

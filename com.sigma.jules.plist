@@ -17,6 +17,8 @@
         <key>Minute</key>
         <integer>0</integer>
     </dict>
+    <key>RunAtLoad</key>
+    <true/>
     <key>EnvironmentVariables</key>
     <dict>
         <key>PATH</key>
