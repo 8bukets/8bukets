@@ -187,6 +187,15 @@ export class CloudConvergenceService {
                       process.env.GITLAB_CI ||
                       process.env.MACBOOK_CLOUD_SIMULATION === 'true'
 
+      // Phase 22: Node Sovereignty & Cloud Takeover
+      const nodeId = isCloud ? 'cloud-relay-01' : 'macbook-primary-01'
+      const presence = await db.collection('agent_presence').findOne({ agent: 'Jules', 'telemetry.node_id': nodeId })
+      const isLeader = presence?.is_leader ?? !isCloud
+
+      if (isCloud && isLeader) {
+         logAutonomousAction('⚡ [CloudConvergence] Cloud node is currently the LEADER. Assuming full operational sovereignty.', 'info')
+      }
+
       // Sync work orders and system configuration from MongoDB to local if running in cloud mode
       if (isCloud) {
         logAutonomousAction('🌩️ [CloudConvergence] Cloud mode active. Synchronizing state from MongoDB source of truth.', 'info')
