@@ -417,8 +417,8 @@ export class Jules {
     }
 
     if (webInsights || githubInsights) {
-      if (webInsights) {
-        await this.recordTask(`Knowledge Observation: Extracted ${webInsights.topKeywords.length} concepts from ${webInsights.source}`)
+      if (webInsights && (webInsights as any).topKeywords) {
+        await this.recordTask(`Knowledge Observation: Extracted ${(webInsights as any).topKeywords.length} concepts from ${(webInsights as any).url || (webInsights as any).source}`)
       }
       if (githubInsights && githubInsights.length > 0) {
         await this.recordTask(`Knowledge Observation: Extracted technical documentation from ${githubInsights[0].source}`)
@@ -430,27 +430,31 @@ export class Jules {
       let mdContent = `# Consolidated Knowledge Observation Insights\n\n`
       mdContent += `*Last Updated: ${consolidatedKnowledge.lastUpdated}*\n\n`
 
-      if (webInsights) {
-        mdContent += `## 🌐 Web Insights: ${webInsights.title}\n`
-        mdContent += `**Source:** ${webInsights.source}\n`
-        mdContent += `**Description:** ${webInsights.description}\n\n`
+      if (webInsights && (webInsights as any).title) {
+        mdContent += `## 🌐 Web Insights: ${(webInsights as any).title}\n`
+        mdContent += `**Source:** ${(webInsights as any).url || (webInsights as any).source}\n`
+        mdContent += `**Description:** ${(webInsights as any).description || 'No description available'}\n\n`
 
-        mdContent += `### Top Keywords\n`
-        webInsights.topKeywords.forEach((kw: string) => {
-          mdContent += `- ${kw}\n`
-        })
+        if ((webInsights as any).topKeywords) {
+          mdContent += `### Top Keywords\n`
+          (webInsights as any).topKeywords.forEach((kw: string) => {
+            mdContent += `- ${kw}\n`
+          })
+        }
         mdContent += `\n`
 
-        mdContent += `### Recent Posts\n`
-        webInsights.recentPosts.forEach((post: { title: string; link: string }) => {
-          mdContent += `- [${post.title}](${post.link})\n`
-        })
+        if ((webInsights as any).recentPosts) {
+          mdContent += `### Recent Posts\n`
+          (webInsights as any).recentPosts.forEach((post: { title: string; link: string }) => {
+            mdContent += `- [${post.title}](${post.link})\n`
+          })
+        }
         mdContent += `\n---\n\n`
       }
 
       if (githubInsights && githubInsights.length > 0) {
         mdContent += `## 🐙 GitHub Technical Documentation\n`
-        mdContent += `**Repository:** ${githubInsights[0].source}\n\n`
+        mdContent += `**Repository:** ${githubInsights[0].repo}\n\n`
 
         githubInsights.forEach(insight => {
           mdContent += `### File: ${insight.file}\n`

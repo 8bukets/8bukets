@@ -22,7 +22,7 @@ export async function evolve() {
   ]
 
   // Recursive scan to find "bloated" or unoptimized patterns
-  function scan(dir: string) {
+  async function scan(dir: string) {
     if (!fs.existsSync(dir)) return
 
     const files = fs.readdirSync(dir)
@@ -127,7 +127,7 @@ export async function evolve() {
   }
 
   for (const dir of scanDirs) {
-    scan(dir)
+    await scan(dir)
   }
 
   console.log('✨ [Evolution Report]: Found', suggestions.length, 'potential optimizations.')
@@ -166,17 +166,10 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
       await fs.promises.writeFile(fullPath, content)
     }
 
-    if (s.suggestion.startsWith('MISSING_ERROR_HANDLING')) {
-      console.log(` - Fixing ${s.file}: Adding error handling TODO`)
-      // Inject a TODO comment at the start of the first async function found
-      content = content.replace(/async function(.*?)\{/, "async function$1{\n  // [Evolution] TODO: Add autonomous error handling (try/catch)")
-      fs.writeFileSync(fullPath, content)
-    }
-
     if (s.suggestion.startsWith('PHASE_UPGRADE_REQUIRED')) {
       console.log(` - Fixing ${s.file}: Upgrading Phase 9 to Phase 12`)
       content = content.replace(/Phase 9/g, 'Phase 12')
-      fs.writeFileSync(fullPath, content)
+      await fs.promises.writeFile(fullPath, content)
     }
 
     if (s.suggestion.startsWith('SECURITY_PERF_VULNERABILITY')) {
@@ -188,27 +181,7 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
           content = content.replace(new RegExp(`(\\b${call}\\()`, 'g'), "/* [Evolution] TODO: Refactor to async */ $1")
         }
       }
-      fs.writeFileSync(fullPath, content)
-    }
-
-    if (s.suggestion.startsWith('MISSING_ERROR_HANDLING')) {
-      console.log(` - Fixing ${s.file}: Adding safety try-catch block`)
-
-      // Safety improvement: Only auto-fix if it's NOT a page/layout file to avoid Next.js directive issues
-      // and only if it's a relatively simple file.
-      const isPageComponent = s.file.includes('page.tsx') || s.file.includes('layout.tsx')
-
-      if (!isPageComponent) {
-        // Heuristic: Wrap the first async function body in a try-catch
-        content = content.replace(/(async function.*?\{)/, "$1\n  try {")
-        const lastBrace = content.lastIndexOf('}')
-        if (lastBrace !== -1) {
-          content = content.slice(0, lastBrace) + "\n  } catch (err) {\n    console.error('[Evolution Autocorrect] Unhandled error:', err);\n  }\n" + content.slice(lastBrace)
-        }
-        fs.writeFileSync(fullPath, content)
-      } else {
-        console.log(` ℹ️ [Evolution] Skipping auto-fix for ${s.file} due to Next.js directive sensitivity. Manual refactor recommended.`)
-      }
+      await fs.promises.writeFile(fullPath, content)
     }
     
     // Additional autocorrection logic can be added here

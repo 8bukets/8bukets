@@ -97,6 +97,31 @@ pipeline {
                 sh 'npx tsx antigravity/workflows/edge-to-cloud_bridge_workflow.ts'
             }
         }
+        stage('Run Autonomous Deep Cognitive Self-Correction Service') {
+            steps {
+                sh 'npx tsx antigravity/workflows/deep_cognitive_self_correction_workflow.ts'
+            }
+        }
+        stage('Run Autonomous Horizontal Fleet Orchestration Service') {
+            steps {
+                sh 'npx tsx antigravity/workflows/horizontal_fleet_orchestration_workflow.ts'
+            }
+        }
+        stage('Run Autonomous Autonomous API Documentation Service') {
+            steps {
+                sh 'npx tsx antigravity/workflows/autonomous_api_documentation_workflow.ts'
+            }
+        }
+        stage('Run Autonomous Cognitive Code Self-Correction Service') {
+            steps {
+                sh 'npx tsx antigravity/workflows/cognitive_code_self_correction_workflow.ts'
+            }
+        }
+        stage('Run Autonomous Autonomous Database Sharding Service') {
+            steps {
+                sh 'npx tsx antigravity/workflows/autonomous_database_sharding_workflow.ts'
+            }
+        }
         stage('Creative Workflow') {
             parallel {
                 stage('Market Analysis') {
