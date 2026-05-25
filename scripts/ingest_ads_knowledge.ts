@@ -146,11 +146,15 @@ async function scrapeGoogleAdsDocs() {
     if (fs.existsSync(knowledgePath)) {
         const knowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'));
 
-        if (!knowledge.sections) {
-            knowledge.sections = {};
+        // Flattening check during ingest
+        if (knowledge.sections && knowledge.sections.google_ads) {
+            console.log("📦 [Ingest] Migrating nested google_ads to flat structure...");
+            knowledge.google_ads = knowledge.sections.google_ads;
+            delete knowledge.sections.google_ads;
+            if (Object.keys(knowledge.sections).length === 0) delete knowledge.sections;
         }
 
-        knowledge.sections.google_ads = data;
+        knowledge.google_ads = data;
 
         if (!knowledge.metadata.sources_processed.includes("google_ads_docs.json")) {
             knowledge.metadata.sources_processed.push("google_ads_docs.json");

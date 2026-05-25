@@ -41,11 +41,28 @@ async function main() {
     console.log('🌐 [AutonomousSync] Synchronizing multi-cloud ecosystem state...');
     await cloudConvergence.synchronizeEcosystem();
 
-    // 5. Execute Jules Work Cycle (TypeScript Engine)
+    // 5. Run Technical Knowledge Ingestion (Scrapers) before Jules and Python Layer
+    console.log('📚 [AutonomousSync] Running Technical Knowledge Ingestion...');
+    try {
+      await execAsync('python3 gemmafour_scraper.py');
+      await execAsync('python3 litert_scraper.py');
+      await execAsync('python3 intelephense_scraper.py');
+      await execAsync('python3 vscode_intelephense_scraper.py');
+      await execAsync('python3 opentelemetry_scraper.py');
+      await execAsync('python3 dmr_scraper.py');
+      await execAsync('python3 google_research_scraper.py');
+      await execAsync('npx tsx scripts/ingest_ai_agents_knowledge.ts');
+      await execAsync('npx tsx scripts/ingest_ads_knowledge.ts');
+      console.log('✅ [AutonomousSync] Technical Scrapers complete.');
+    } catch (e: any) {
+      console.warn('⚠️ [AutonomousSync] Some Technical Scrapers failed:', e.message);
+    }
+
+    // 6. Execute Jules Work Cycle (TypeScript Engine)
     console.log('🌟 [AutonomousSync] Executing Jules (TypeScript) work cycle...');
     await jules.executeWorkCycle();
 
-    // 6. Execute Python Ecosystem Cycle
+    // 7. Execute Python Ecosystem Cycle
     console.log('🐍 [AutonomousSync] Running Python Ecosystem Autonomous Cycle...');
     try {
       const token = process.env.SYSTEM_AUTH_TOKEN || 'default_dev_token';
