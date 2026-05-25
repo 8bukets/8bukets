@@ -68,6 +68,10 @@ class CloudWorkflowAgent(BaseAgent):
                 active_decisions.append("PROVISION_AD_TECH_INFRASTRUCTURE")
             if "OPTIMIZE_WORKFLOW_DECISION_MAKING" in react_actions:
                 active_decisions.append("DEPLOY_STRATEGIC_DECISION_ENGINE")
+            if "IMPROVE_WORKFLOW_RUN" in react_actions:
+                active_decisions.append("APPLY_WORKFLOW_RUN_IMPROVEMENTS")
+            if "VERIFY_LOGIC_DEPLOY_REACT_AGENTS" in react_actions:
+                active_decisions.append("EXECUTE_DEPLOYMENT_LOGIC_VERIFICATION")
 
             scale_tier = react_config.get("scale_tier", "STANDARD")
             if scale_tier == "GLOBAL_EDGE":
