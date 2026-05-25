@@ -106,14 +106,14 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   }
 
   report += `## 🌐 Cross-Domain Coordination\n`
-  const domains = ['Security', 'Performance', 'Infrastructure', 'AI', 'UI/Frontend']
+  const domains = ['Security', 'Performance', 'Infrastructure', 'AI', 'UI/Frontend', 'General']
   domains.forEach(d => {
     const relevantRecommendations = relationshipMap.collaborationRecommendations.filter((r: any) =>
-      branches.find(b => b.name === r.branches[0] && b.domain === d)
+      r.domain === d
     )
     if (relevantRecommendations.length > 0) {
       report += `### Domain: ${d}\n`
-      relevantRecommendations.slice(0, 3).forEach((r: any) => {
+      relevantRecommendations.slice(0, 5).forEach((r: any) => {
         report += `- **[${r.priority}]** ${r.action}\n`
         report += `  - *Rationale:* ${r.rationale}\n`
       })
@@ -224,15 +224,20 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `\n`
 
   report += `## 🚀 Prioritized Action Items\n`
-  if (health.mongodb !== 'connected') report += `- [CRITICAL] Restore MongoDB Atlas connectivity.\n`
+  if (health.mongodb !== 'connected' && health.mongodb !== 'healthy') report += `- [CRITICAL] Restore MongoDB Atlas connectivity.\n`
   if (workOrders.length > 5) report += `- [HIGH] Process backlog of ${workOrders.length} pending work orders.\n`
 
   const highIntensitySynergies = relationshipMap.synergies.filter((s: any) => s.intensity === 'High')
-  highIntensitySynergies.forEach((s: any) => {
-    const coordinator = metadata.stakeholders.find(sh => relationshipMap.stakeholderEngagement[sh.role]?.activeProjects.includes(s.branches[0]))
-    const coordinationMsg = coordinator ? ` (Coordinate with ${coordinator.role})` : ''
-    report += `- [MEDIUM] Resolve High-Intensity synergy on resource: \`${s.resource}\`${coordinationMsg}.\n`
-  })
+
+  if (highIntensitySynergies.length > 10) {
+    report += `- [HIGH] Resolve ${highIntensitySynergies.length} High-Intensity resource synergies across ecosystem.\n`
+  } else {
+    highIntensitySynergies.forEach((s: any) => {
+      const coordinator = metadata.stakeholders.find(sh => relationshipMap.stakeholderEngagement[sh.role]?.activeProjects.includes(s.branches[0]))
+      const coordinationMsg = coordinator ? ` (Coordinate with ${coordinator.role})` : ''
+      report += `- [MEDIUM] Resolve High-Intensity synergy on resource: \`${s.resource}\`${coordinationMsg}.\n`
+    })
+  }
 
   if (branches.length > 1500) report += `- [LOW] Prune or merge stagnant ecosystem branches (Total: ${branches.length}).\n`
   report += `- [INFO] Continue autonomous knowledge ingestion for market intelligence.\n\n`

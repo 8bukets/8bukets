@@ -82,6 +82,7 @@ local_settings.py
 
 # Antigravity logs and state
 *.log
+logs/
 jules_daily.log
 jules_daily.error.log
 autonomous_state.json
@@ -89,3 +90,5 @@ autonomous_state.json
 antigravity/.jules_memory.json
 work_cycle.log
 data/work_orders.json
+CONSOLIDATED_INTELLIGENCE.md
+KNOWLEDGE_MERGE.md
