@@ -10,6 +10,9 @@ on:
       - 'antigravity/services/dynamic_schema_evolution.ts'
       - 'antigravity/services/dynamic_schema_evolution.test.ts'
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
