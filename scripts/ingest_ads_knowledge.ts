@@ -129,16 +129,8 @@ async function scrapeGoogleAdsDocs() {
     fs.writeFileSync(jsonPath, JSON.stringify(data, null, 4), 'utf-8');
     console.log(`Saved Google Ads docs JSON to ${jsonPath}`);
 
-    const mdPath = "data/knowledge/ai_agents_knowledge.md";
-    // We append to this file instead of overwriting, based on memory:
-    // "Google Ads and Google Ad Manager documentation is ingested into the knowledge base
-    // (updating data/knowledge/system_knowledge.json and data/knowledge/ai_agents_knowledge.md)
-    // using the dedicated script scripts/ingest_ads_knowledge.ts"
-    if (fs.existsSync(mdPath)) {
-         fs.appendFileSync(mdPath, "\n\n" + mdContent, 'utf-8');
-    } else {
-         fs.writeFileSync(mdPath, mdContent, 'utf-8');
-    }
+    const mdPath = "data/knowledge/google_ads_docs.md";
+    fs.writeFileSync(mdPath, mdContent, 'utf-8');
     console.log(`Saved Google Ads docs Markdown to ${mdPath}`);
 
     // Update system_knowledge.json
@@ -157,7 +149,7 @@ async function scrapeGoogleAdsDocs() {
         }
         knowledge.metadata.generated_at = new Date().toISOString();
 
-        fs.writeFileSync(knowledgePath, JSON.stringify(knowledge, null, 4), 'utf8');
+        fs.writeFileSync(knowledgePath, JSON.stringify(knowledge, null, 2), 'utf8');
         console.log(`✅ [Ingest] Merged Google Ads docs into system_knowledge.json.`);
     }
 }
