@@ -95,7 +95,7 @@ export class Jules {
   public async runDailyRoutine() {
     console.log(`🗓️ [Jules-${this.role}] Executing Daily Autonomous Routine...`)
 
-    if (this.role === 'Ops' || this.role === 'General') {
+    if (this.role === 'Ops' || this.role === 'General' || this.role === 'Chief AI Officer') {
       await this.selfRepair()
       await this.auditDependencies()
     }
