@@ -39,6 +39,13 @@ jobs:
           git config --global user.name "google-labs-jules[bot]"
           git config --global user.email "161369871+google-labs-jules[bot]@users.noreply.github.com"
 
+      - name: Ecosystem Collaboration Sync
+        env:
+          SYSTEM_AUTH_TOKEN: ${{ secrets.SYSTEM_AUTH_TOKEN || 'default_dev_token' }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN || secrets.GITHUB_ACTIONS_TOKEN }}
+          MACBOOK_CLOUD_SIMULATION: true
+        run: npm run connect
+
       - name: Execute Autonomous Engine (Cloud Mode)
         run: python3 autonomous_engine.py --engine cloud --skip-scraper
         env:

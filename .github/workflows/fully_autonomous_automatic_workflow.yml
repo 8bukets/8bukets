@@ -36,6 +36,7 @@ jobs:
         env:
           SYSTEM_AUTH_TOKEN: ${{ secrets.SYSTEM_AUTH_TOKEN || 'default_dev_token' }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MACBOOK_CLOUD_SIMULATION: true
         run: npm run connect
 
       - name: Run Autonomous Creation Cycle
