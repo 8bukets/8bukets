@@ -418,7 +418,7 @@ export class Jules {
 
     if (webInsights || githubInsights) {
       if (webInsights) {
-        await this.recordTask(`Knowledge Observation: Extracted ${webInsights.topKeywords.length} concepts from ${webInsights.source}`)
+        await this.recordTask(`Knowledge Observation: Extracted ${(webInsights.topKeywords?.length || 0)} concepts from ${webInsights.source}`)
       }
       if (githubInsights && githubInsights.length > 0) {
         await this.recordTask(`Knowledge Observation: Extracted technical documentation from ${githubInsights[0].source}`)
@@ -436,13 +436,13 @@ export class Jules {
         mdContent += `**Description:** ${webInsights.description}\n\n`
 
         mdContent += `### Top Keywords\n`
-        webInsights.topKeywords.forEach((kw: string) => {
+        (webInsights.topKeywords || []).forEach((kw: string) => {
           mdContent += `- ${kw}\n`
         })
         mdContent += `\n`
 
         mdContent += `### Recent Posts\n`
-        webInsights.recentPosts.forEach((post: { title: string; link: string }) => {
+        (webInsights.recentPosts || []).forEach((post: { title: string; link: string }) => {
           mdContent += `- [${post.title}](${post.link})\n`
         })
         mdContent += `\n---\n\n`

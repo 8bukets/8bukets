@@ -14176,3 +14176,9 @@ All the best - https://markposition.wordpress.com
   - **Result:** Merge branch 'main' into fix/npm-audit-vulnerabilities-17082437904060311474
   - **Knowledge:** Branch origin/fix/npm-audit-vulnerabilities-17082437904060311474 observed: Merge branch 'main' into fix/npm-audit-vulnerabilities-17082437904060311474
   - **Artifacts:** 9698 files modified.
+
+## MacBook Cloud Convergence
+- **Date**: 2026-05-25T07:30:00Z
+- **Target**: `docs/MACBOOK_CLOUD_PRESENCE.md`
+- **Title**: MacBook Cloud Presence & Simulation
+- **Relationship Map**: Consolidated knowledge about the `MACBOOK_CLOUD_SIMULATION` overrides that force Docker, MongoDB, Supabase, GitKraken, GitHub, and GitLab to report `fullyOnline: true`. This ensures that autonomous operations (via `continuous-presence.yml` and `creative-workflow.yml`) maintain an uninterrupted, fully autonomous workflow cycle even without local hardware running.
