@@ -111,7 +111,7 @@ def extract_structured_knowledge(url):
                         knowledge["google_cloud_tools"].extend(tools)
 
     # Extract tools by keywords
-    tool_keywords = ["Gemini", "Gemma", "Vertex AI", "Model Context Protocol", "MCP", "LiteRT", "Interactions API", "Hugging Face", "Kaggle", "vLLM", "MLX", "Nano Banana", "Google Flow", "YouTube Shorts", "YouTube Create App", "SynthID", "Avatars"]
+    tool_keywords = ["Gemini", "Gemma", "Vertex AI", "Model Context Protocol", "MCP", "LiteRT", "Interactions API", "Hugging Face", "Kaggle", "vLLM", "MLX", "Nano Banana", "Google Flow", "YouTube Shorts", "YouTube Create App", "SynthID", "Avatars", "Gemini Enterprise App", "Gemini Enterprise Agent Platform", "Customer Experience Agent Studio", "Agent Garden", "Agent Development Kit (ADK)", "A2A Protocol", "Cloud Run"]
     for kw in tool_keywords:
         if kw.lower() in text_content:
             knowledge["google_cloud_tools"].append(kw)
@@ -190,7 +190,7 @@ def run_knowledge_scraper():
             new_knowledge.append(k)
 
     # Merge logic
-    merged_dict = {item["url"]: item for item in existing_knowledge}
+    merged_dict = {item["url"]: item for item in existing_knowledge if isinstance(item, dict) and "url" in item}
     for new_item in new_knowledge:
         url = new_item["url"]
         if url in merged_dict:

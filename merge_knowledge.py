@@ -1,5 +1,6 @@
 import json
 import os
+from datetime import datetime
 
 def merge_knowledge():
     innovation_path = "data/google_innovation_ai.json"
@@ -14,35 +15,67 @@ def merge_knowledge():
     agents_data = []
     if os.path.exists(agents_path):
         with open(agents_path, "r", encoding="utf-8") as f:
-            agents_data = json.load(f)
+            content = json.load(f)
+            if isinstance(content, list):
+                agents_data = content
+            elif isinstance(content, dict):
+                # For dict-style knowledge, we treat the values as content items if they have url
+                # or just use innovation-style list for ai_agents_structured
+                # However, merge logic below expects a list of items with 'url'
+                agents_data = []
+                for k, v in content.items():
+                    if isinstance(v, dict) and "url" in v:
+                        agents_data.append(v)
+                    elif isinstance(v, dict) and "content" in v:
+                        # Fallback for dict without url
+                        agents_data.append({"url": k, "title": k, "content": v["content"]})
 
     # Prepare the unified structure
-    # Memories suggest a flat key structure for distinct sections
-    system_knowledge = {}
+    system_knowledge = {
+        "metadata": {
+            "generated_at": datetime.now().isoformat(),
+            "version": 1.0,
+            "sources_processed": []
+        },
+        "typescript_sections": {}
+    }
+
     if os.path.exists(system_path):
         try:
             with open(system_path, "r", encoding="utf-8") as f:
-                system_knowledge = json.load(f)
-        except Exception:
-            pass
+                existing = json.load(f)
+                if isinstance(existing, dict):
+                    # Preserve existing structure and migrate sections if needed
+                    for k, v in existing.items():
+                        if k == "sections":
+                            system_knowledge.update(v)
+                        else:
+                            system_knowledge[k] = v
+        except Exception as e:
+            print(f"Warning: Failed to load existing knowledge: {e}")
 
     # Merge innovation data
-    existing_innovation = {item["url"]: item for item in system_knowledge.get("google_innovation_ai", [])}
+    existing_innovation = {item["url"]: item for item in system_knowledge.get("google_innovation_ai", []) if isinstance(item, dict) and "url" in item}
     for item in innovation_data:
-        existing_innovation[item["url"]] = item
+        if isinstance(item, dict) and "url" in item:
+            existing_innovation[item["url"]] = item
     system_knowledge["google_innovation_ai"] = list(existing_innovation.values())
 
     # Merge agents data
-    existing_agents = {item["url"]: item for item in system_knowledge.get("ai_agents_structured", [])}
+    existing_agents = {item["url"]: item for item in system_knowledge.get("ai_agents_structured", []) if isinstance(item, dict) and "url" in item}
     for item in agents_data:
-        if item["url"] in existing_agents:
+        if not isinstance(item, dict) or "url" not in item: continue
+
+        url = item["url"]
+        if url in existing_agents:
             # Smart merge definitions/tools
-            existing = existing_agents[item["url"]]
+            existing = existing_agents[url]
 
             # Definitions
-            existing_defs = {d["term"]: d["text"] for d in existing.get("definitions", [])}
+            existing_defs = {d["term"]: d["text"] for d in existing.get("definitions", []) if isinstance(d, dict)}
             for d in item.get("definitions", []):
-                existing_defs[d["term"]] = d["text"]
+                if isinstance(d, dict):
+                    existing_defs[d["term"]] = d["text"]
             existing["definitions"] = [{"term": k, "text": v} for k, v in existing_defs.items()]
 
             # Tools
@@ -51,24 +84,29 @@ def merge_knowledge():
             existing["google_cloud_tools"] = sorted(list(existing_tools))
 
             # Benefits & Use Cases
-            existing_ucs = {u["title"]: u["description"] for u in existing.get("use_cases", [])}
+            existing_ucs = {u["title"]: u["description"] for u in existing.get("use_cases", []) if isinstance(u, dict)}
             for u in item.get("use_cases", []):
-                existing_ucs[u["title"]] = u["description"]
+                if isinstance(u, dict):
+                    existing_ucs[u["title"]] = u["description"]
             existing["use_cases"] = [{"title": k, "description": v} for k, v in existing_ucs.items()]
 
-            existing_bens = {b["title"]: b["description"] for b in existing.get("benefits", [])}
+            existing_bens = {b["title"]: b["description"] for b in existing.get("benefits", []) if isinstance(b, dict)}
             for b in item.get("benefits", []):
-                existing_bens[b["title"]] = b["description"]
+                if isinstance(b, dict):
+                    existing_bens[b["title"]] = b["description"]
             existing["benefits"] = [{"title": k, "description": v} for k, v in existing_bens.items()]
         else:
-            existing_agents[item["url"]] = item
+            existing_agents[url] = item
 
     system_knowledge["ai_agents_structured"] = list(existing_agents.values())
 
-    with open(system_path, "w", encoding="utf-8") as f:
-        json.dump(system_knowledge, f, indent=4, ensure_ascii=False)
+    # Update metadata
+    system_knowledge["metadata"]["generated_at"] = datetime.now().isoformat()
 
-    print(f"Merged knowledge into {system_path}")
+    with open(system_path, "w", encoding="utf-8") as f:
+        json.dump(system_knowledge, f, indent=2, ensure_ascii=False)
+
+    print(f"Successfully merged knowledge into {system_path}")
 
 if __name__ == "__main__":
     merge_knowledge()
