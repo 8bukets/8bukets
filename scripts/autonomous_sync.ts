@@ -63,7 +63,7 @@ async function main() {
     console.log('🌟 [AutonomousSync] Executing Jules (TypeScript) work cycle...');
     await jules.executeWorkCycle();
 
-    // 6. Execute Python Ecosystem Cycle
+    // 7. Execute Python Ecosystem Cycle
     console.log('🐍 [AutonomousSync] Running Python Ecosystem Autonomous Cycle...');
     try {
       const token = process.env.SYSTEM_AUTH_TOKEN || 'default_dev_token';

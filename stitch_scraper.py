@@ -174,6 +174,7 @@ async def scrape_stitch_docs():
                 f.write(f"### {h3}\n\n")
                 if h3_text_list:
                     f.write("\n\n".join(h3_text_list) + "\n\n")
+        f.write("\n---\nAll the best - https://markposition.wordpress.com\n")
 
     print(f"Saved Markdown data to {md_path}")
 

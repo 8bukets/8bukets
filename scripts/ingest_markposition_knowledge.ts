@@ -98,6 +98,14 @@ async function scrapeMarkpositionKnowledge() {
             const newEntries = entries.filter(e => !existingUrls.has(e.post_url));
 
             if (newEntries.length > 0) {
+                // Flattening check during ingest
+                if (knowledge.sections && knowledge.sections.market_data) {
+                    console.log("📦 [Ingest] Migrating nested market_data to flat structure...");
+                    knowledge.market_data = knowledge.sections.market_data;
+                    delete knowledge.sections.market_data;
+                    if (Object.keys(knowledge.sections).length === 0) delete knowledge.sections;
+                }
+
                 knowledge.market_data.all_entries = [...newEntries, ...knowledge.market_data.all_entries];
                 knowledge.market_data.recent_entries = knowledge.market_data.all_entries.slice(0, 20);
                 knowledge.market_data.total_entries = knowledge.market_data.all_entries.length;
