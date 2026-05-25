@@ -99,7 +99,8 @@ ${summary}
       // Check if URL already exists
       if (newContent.includes(`- **Target**: ${url}`)) {
         // Replace existing block using targeted regular expression, preventing over-matching
-        const blockRegex = new RegExp(`## Autonomous Observation(?:(?!## Autonomous Observation)[\\s\\S])*?- \\*\\*Target\\*\\*: ${url.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')}(?:(?!## Autonomous Observation)[\\s\\S])*`, 'g');
+        const safeUrl = url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const blockRegex = new RegExp(`## Autonomous Observation(?:(?!## Autonomous Observation)[\\s\\S])*?- \\*\\*Target\\*\\*: ${safeUrl}(?:(?!## Autonomous Observation)[\\s\\S])*`, 'g');
         newContent = newContent.replace(blockRegex, () => relationshipEntry + '\n');
       } else {
         // Append new block
