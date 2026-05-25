@@ -170,5 +170,23 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
+  // Gap Analysis 16: Dynamic Schema Evolution
+  if (!files.some(f => f.includes('dynamic_schema_evolution'))) {
+    ideas.push({
+      feature: 'Dynamic Schema Evolution Service',
+      rationale: 'Autonomously adapts Zod schemas based on incoming data patterns and version requirements.',
+      complexity: 'Medium'
+    })
+  }
+
+  // Gap Analysis 17: Autonomous Documentation
+  if (!files.some(f => f.includes('autonomous_documentation'))) {
+    ideas.push({
+      feature: 'Autonomous Documentation Service',
+      rationale: 'Generates and maintains system documentation by analyzing source code and execution logs.',
+      complexity: 'Medium'
+    })
+  }
+
   return ideas
 }
