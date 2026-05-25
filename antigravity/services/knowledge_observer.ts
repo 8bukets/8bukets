@@ -68,6 +68,8 @@ export class KnowledgeObserver {
                              (trimmed.toUpperCase() === trimmed || /^[A-Z][a-zA-Z0-9.-]*(\s[A-Z][a-zA-Z0-9.-]*)*$/.test(trimmed)) &&
                              !trimmed.startsWith('This ') &&
                              !trimmed.startsWith('Some ') &&
+                             !trimmed.startsWith('- ') &&
+                             !trimmed.startsWith('* ') &&
                              !/^[{}/*<>?]+$/.test(trimmed) &&
                              !trimmed.includes('(') && !trimmed.includes(')') &&
                              !trimmed.includes(' = ') &&
