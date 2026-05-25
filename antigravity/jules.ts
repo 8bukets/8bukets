@@ -454,12 +454,12 @@ export class Jules {
           else if (branchName.includes('research/')) category = 'research'
 
           // Enhanced Result & Knowledge Extraction
-          const resultMatch = message.match(/(?:results|fixes|implements|adds|integrates|updates|optimizes):\s*(.*)/i)
+          const resultMatch = message.match(/(?:results|fixes|implements|adds|integrates|updates|optimizes|resolves|replaces|enhances|standardizes):\s*(.*)/i)
           const results = resultMatch ? resultMatch[1].trim() : (message.includes(':') ? message.split(':')[1].trim() : message)
 
-          const knowledgeNugget = message.toLowerCase().match(/(?:learn|observe|ingest|knowledge|research|result):\s*(.*)/i)
+          const knowledgeNugget = message.toLowerCase().match(/(?:learn|observe|ingest|knowledge|research|result|insight|discovery):\s*(.*)/i)
             ? `Branch ${branch} observed: ${results}`
-            : (['learn', 'observe', 'research', 'fix', 'implement', 'add'].some(word => message.toLowerCase().includes(word)) ? `Branch ${branch} observed: ${results}` : undefined)
+            : (['learn', 'observe', 'research', 'fix', 'implement', 'add', 'integrate', 'optimize', 'resolve'].some(word => message.toLowerCase().includes(word)) ? `Branch ${branch} observed: ${results}` : undefined)
 
           // Phase 12: Advanced Branch Analysis (File Changes & Domain Mapping)
           let changedFiles: string[] = []

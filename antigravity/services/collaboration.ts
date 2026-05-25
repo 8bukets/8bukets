@@ -283,50 +283,64 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
   })
 
   map.collaborationRecommendations = []
+  const domainRecommendations: Record<string, any[]> = {}
 
   Object.entries(resourceUsage).forEach(([resourceName, branchSet]) => {
     if (branchSet.size > 1) {
       const resource = map.resourceInventory.find((r: any) => r.name === resourceName)
       const type = resource?.type || 'Other'
       const weight = resourceWeights[type] || 1
-      const branches = Array.from(branchSet)
+      const branchesNames = Array.from(branchSet)
 
       // Suppress high-intensity noise for common boilerplate files unless they have extreme overlap (>10 branches)
       const isBoilerplate = BOILERPLATE_RESOURCES.includes(resourceName)
       let intensity = 'Medium'
-      if (branches.length > 5 || (weight >= 10 && branches.length > 2)) intensity = 'High'
-      if (isBoilerplate && branches.length < 10) intensity = 'Low'
+      if (branchesNames.length > 5 || (weight >= 10 && branchesNames.length > 2)) intensity = 'High'
+      if (isBoilerplate && branchesNames.length < 10) intensity = 'Low'
 
       map.synergies.push({
         type: 'Resource Conflict/Synergy',
         resource: resourceName,
         resourceType: type,
-        branches,
+        branches: branchesNames,
         intensity,
         weight
       })
 
       // Phase 12: Generate Actionable Collaboration Recommendations
       const stakeholdersToCoordinate = stakeholders.filter(s =>
-        map.stakeholderEngagement[s.role]?.activeProjects.some((ap: string) => branches.includes(ap))
+        map.stakeholderEngagement[s.role]?.activeProjects.some((ap: string) => branchesNames.includes(ap))
       )
 
       const coordinationAdvice = stakeholdersToCoordinate.length > 1
         ? `Coordinate with ${stakeholdersToCoordinate.map(s => s.role).join(' and ')}.`
         : (stakeholdersToCoordinate.length === 1 ? `Coordinate with ${stakeholdersToCoordinate[0].role}.` : 'Review branch owners for alignment.')
 
-      map.collaborationRecommendations.push({
+      // Group by Domain
+      const branchObjs = branches.filter(b => branchesNames.includes(b.name))
+      const domain = branchObjs[0]?.domain || 'General'
+
+      if (!domainRecommendations[domain]) domainRecommendations[domain] = []
+
+      domainRecommendations[domain].push({
         priority: intensity === 'High' ? 'Critical' : (intensity === 'Medium' ? 'Routine' : 'Low'),
         action: `Consolidate effort on '${resourceName}' (${type})`,
-        branches,
-        rationale: `${branches.length} branches are concurrently modifying this ${type.toLowerCase()}. ${coordinationAdvice}`,
-        stakeholders: stakeholdersToCoordinate.map(s => s.role)
+        resource: resourceName,
+        branches: branchesNames,
+        rationale: `${branchesNames.length} branches are concurrently modifying this ${type.toLowerCase()}. ${coordinationAdvice}`,
+        stakeholders: stakeholdersToCoordinate.map(s => s.role),
+        domain
       })
 
       if (intensity === 'High') {
-        console.warn(`🤝 [Collaboration] High-Intensity Synergy Detected: ${branches.length} branches working on ${resourceName} (${type}).`)
+        console.warn(`🤝 [Collaboration] High-Intensity Synergy Detected: ${branchesNames.length} branches working on ${resourceName} (${type}).`)
       }
     }
+  })
+
+  // Flatten and Deduplicate recommendations by prioritizing Critical ones
+  Object.values(domainRecommendations).forEach(recs => {
+    map.collaborationRecommendations.push(...recs)
   })
 
   // Integrate branch results into resources if they implement a specific feature
