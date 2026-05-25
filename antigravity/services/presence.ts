@@ -29,6 +29,8 @@ export const PresenceSchema = z.object({
     open_prs: z.number(),
     providers: z.array(z.string())
   }),
+  node_priority: z.number().optional(),
+  is_leader: z.boolean().optional(),
   system: z.object({
     hostname: z.string(),
     uptime: z.number(),
@@ -37,7 +39,9 @@ export const PresenceSchema = z.object({
   telemetry: z.object({
     workflow_id: z.string().optional(),
     run_attempt: z.string().optional(),
-    node_id: z.string().optional()
+    node_id: z.string().optional(),
+    roadmap_progress: z.number().optional(),
+    pipeline_status: z.string().optional()
   }).optional()
 })
 
@@ -52,6 +56,8 @@ export class OnlinePresenceService {
 
     try {
       const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
+      const nodeId = isCloud ? 'cloud-relay-01' : 'macbook-primary-01'
+      const nodePriority = isCloud ? 10 : 100 // MacBook (local) has higher priority by default
 
       // 1. Fetch component health
       const dockerHealth = await checkDockerHealth()
@@ -67,6 +73,26 @@ export class OnlinePresenceService {
       if (process.env.MONGODB_URI) providers.push('mongodb')
       if (process.env.NEXT_PUBLIC_SUPABASE_URL) providers.push('supabase')
 
+      // 2. Determine Leadership (Node Sovereignty)
+      let isLeader = !isCloud // Local node is leader by default if active
+      try {
+        const client = await getMongoClient()
+        const db = client.db()
+        const otherNodes = await db.collection('agent_presence').find({
+           agent: 'Jules',
+           'telemetry.node_id': { $ne: nodeId },
+           lastSeen: { $gt: new Date(Date.now() - 30 * 60 * 1000).toISOString() } // Active in last 30m
+        }).toArray()
+
+        if (isCloud) {
+           // Cloud node only becomes leader if no higher priority node is active
+           const higherPriorityActive = otherNodes.some(n => (n.node_priority || 0) > nodePriority)
+           isLeader = !higherPriorityActive
+        }
+      } catch (e) {
+        logAutonomousAction('⚠️ [OnlinePresence] Leadership audit failed. Assuming default sovereignty.', 'warning')
+      }
+
       const presence: Presence = {
         agent: 'Jules',
         status: 'online',
@@ -74,6 +100,8 @@ export class OnlinePresenceService {
         version: '1.6.0-alpha',
         environment: isCloud ? 'cloud' : 'local',
         active_providers: providers,
+        node_priority: nodePriority,
+        is_leader: isLeader,
         docker: {
           status: dockerHealth.status,
           container_count: dockerHealth.containerCount,
@@ -93,18 +121,20 @@ export class OnlinePresenceService {
           memory_usage: process.memoryUsage() as unknown as Record<string, number>
         },
         telemetry: {
-          workflow_id: process.env.GITHUB_RUN_ID,
-          run_attempt: process.env.GITHUB_RUN_ATTEMPT,
-          node_id: isCloud ? 'cloud-relay-01' : 'macbook-primary-01'
+          workflow_id: process.env.GITHUB_RUN_ID || process.env.CI_PIPELINE_ID,
+          run_attempt: process.env.GITHUB_RUN_ATTEMPT || '1',
+          node_id: nodeId,
+          roadmap_progress: 100, // Default for active pulse
+          pipeline_status: isCloud ? 'running' : 'optimal'
         }
       }
 
-      // 2. Broadcast to MongoDB
+      // 3. Broadcast to MongoDB
       try {
         const client = await getMongoClient()
         const db = client.db()
         await db.collection('agent_presence').updateOne(
-          { agent: 'Jules' },
+          { agent: 'Jules', 'telemetry.node_id': nodeId },
           { $set: presence },
           { upsert: true }
         )
@@ -112,7 +142,7 @@ export class OnlinePresenceService {
         logAutonomousAction('⚠️ [OnlinePresence] Failed to sync to MongoDB.', 'warning')
       }
 
-      // 3. Broadcast to Supabase
+      // 4. Broadcast to Supabase
       try {
         await supabase
           .from('agent_presence')

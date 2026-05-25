@@ -285,6 +285,18 @@ export class Jules {
     const pulls = await gitProvider.listPullRequests()
     this.recordTask(`PR Audit: Found ${pulls.length} open PRs.`)
 
+    // Phase 22: Leadership-aware PR processing
+    const nodeId = (process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true') ? 'cloud-relay-01' : 'macbook-primary-01'
+    let isLeader = nodeId === 'macbook-primary-01' // Default
+
+    try {
+      const { getMongoClient } = await import('./core')
+      const client = await getMongoClient()
+      const db = client.db()
+      const presence = await db.collection('agent_presence').findOne({ agent: 'Jules', 'telemetry.node_id': nodeId })
+      if (presence) isLeader = presence.is_leader
+    } catch (e) {}
+
     for (const pr of pulls) {
       const isAutonomous = pr.title.includes('🤖') || pr.title.toLowerCase().includes('autonomous')
       const isAutonomousBranch = pr.branch.startsWith('fix/autonomous-') || pr.branch.startsWith('feat/autonomous-') || pr.branch.startsWith('evolution/')
@@ -292,7 +304,8 @@ export class Jules {
       const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
 
       // Phase 17: Multi-Provider Convergence (GitHub & GitLab)
-      if ((isAutonomous || (isAutonomousBranch && isEvolutionPR)) && isCloud) {
+      // Enhanced Phase 22: Leadership requirement for autonomous merging
+      if ((isAutonomous || (isAutonomousBranch && isEvolutionPR)) && isCloud && isLeader) {
         console.log(`🌩️ [Jules] Cloud-Native Convergence: Auditing autonomous ${pr.provider} PR/MR #${pr.id}...`)
 
         // 1. Check CI Status
@@ -471,11 +484,12 @@ export class Jules {
       const { globalNeuralSync } = await import('./services/global_neural_sync_service_phase_12')
       await globalNeuralSync.convergeState()
 
+      // Node Sovereignty: syncPresence first to establish leadership
+      await this.syncPresence()
+
       // Phase 17: Resolve State Conflicts early in the cycle
       const { cloudConvergence } = await import('./services/cloud_convergence')
       await cloudConvergence.resolveConflicts()
-
-      await this.syncPresence()
 
       // Phase 21: Sentient Orchestration
       const { sentientOrchestration } = await import('./services/sentient_orchestration')
@@ -665,10 +679,11 @@ export class Jules {
           } else if (entry.name.endsWith('.md')) {
              try {
                 const content = fs.readFileSync(path.join(process.cwd(), relativePath), 'utf8')
+                // Unified Cloud-Native Knowledge Ingestion
                 const title = `Internal: ${relativePath}`
                 const knowledge = KnowledgeObserver.processContent(title, content, `local://${relativePath}`)
                 await observer.persistKnowledge(knowledge)
-                console.log(` ✅ [Jules] Bridged Internal Knowledge: ${relativePath}`)
+                logAutonomousAction(`✅ [Jules] Bridged Internal Knowledge: ${relativePath}`, 'info')
              } catch (e) {}
           }
        }

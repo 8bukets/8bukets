@@ -139,3 +139,15 @@ test-ai_strategy_advisor:
   script:
     - npm ci
     - npx vitest run antigravity/services/ai_strategy_advisor.test.ts
+
+test-dynamic_schema_evolution:
+  stage: test
+  script:
+    - npm ci
+    - npx vitest run antigravity/services/dynamic_schema_evolution.test.ts
+
+test-autonomous_documentation:
+  stage: test
+  script:
+    - npm ci
+    - npx vitest run antigravity/services/autonomous_documentation.test.ts

@@ -90,6 +90,20 @@ pipeline {
             }
         }
 
+        stage('Test dynamic_schema_evolution') {
+            steps {
+                sh 'npm ci'
+                sh 'npx vitest run antigravity/services/dynamic_schema_evolution.test.ts'
+            }
+        }
+
+        stage('Test autonomous_documentation') {
+            steps {
+                sh 'npm ci'
+                sh 'npx vitest run antigravity/services/autonomous_documentation.test.ts'
+            }
+        }
+
         stage('Creative Workflow') {
             parallel {
                 stage('Analyze Market') {

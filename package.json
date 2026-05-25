@@ -14,6 +14,8 @@
     "daily": "tsx scripts/autonomous_sync.ts",
     "ingest:sor": "tsx scripts/ingest_software_online_review.ts https://software-online-review.com/",
     "ingest:investopedia": "tsx scripts/ingest_investopedia.ts",
+    "ingest:knowledge": "python3 merge_knowledge.py",
+    "ingest:subagents": "python3 scripts/ingest_cli_subagents_knowledge.py",
     "sync-all": "tsx scripts/sync_all_branches.ts",
     "daily-tasks": "gemini @daily-tasks",
     "ignite": "npm run daily -- --continuous",
