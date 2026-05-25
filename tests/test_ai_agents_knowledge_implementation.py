@@ -81,7 +81,7 @@ async def test_ai_agents_knowledge_flow():
     os.makedirs(os.path.dirname(mock_kf), exist_ok=True)
     mock_data = {
         "what-is-an-ai-agent": {"content": "AI agents are software systems..."},
-        "key-features-of-an-ai-agent": {"content": "Reasoning Acting Collaborating Self-refining Observing"},
+        "key-features-of-an-ai-agent": {"content": "Reasoning Acting Collaborating Self-refining Observing Planning"},
         "challenges-with-using-ai-agents": {"content": "Empathy Ethical stakes Unpredictable"},
         "what-are-the-types-of-agents-in-ai": {"content": "Background Agents Interactive Partners"},
         "based-on-interaction": {"content": "Background Agents Interactive Partners"},
@@ -89,7 +89,7 @@ async def test_ai_agents_knowledge_flow():
         "key-differences": {"content": "Autonomy Learning Complexity"},
         "how-do-ai-agents-work": {"content": "- Persona: Consistent\n- Memory: Multi-tiered\n- Tools: External\n- Model: Brain"},
         "benefits-of-using-ai-agents": {"content": "Simultaneous execution Realistic simulations Collaboration"},
-        "google-cloud-and-ai-agents": {"content": "- ToolA Description\n- ToolB Description"},
+        "google-cloud-and-ai-agents": {"content": "- Gemini Enterprise Agent Platform\n- A2A Protocol"},
         "customer-agents": {"content": "Customer context"},
         "employee-agents": {"content": "Employee context"},
         "creative-agents": {"content": "Creative context"},

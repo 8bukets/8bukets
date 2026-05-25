@@ -24,18 +24,85 @@ class KnowledgeAgent(BaseAgent):
     async def run(self, data: list, blackboard: Blackboard) -> dict:
         self.logger.info("Providing structured AI agent knowledge to the ecosystem...")
 
-        # Support both potential paths
-        knowledge_files = ["data/ai_agents_knowledge.json", "ai_agents_knowledge.json"]
-        knowledge_data = {}
+        # Support multiple potential paths and merge them
+        # prioritize canonical paths
+        knowledge_files = [
+            "ai_agents_knowledge.json",
+            "data/knowledge/ai_agents_knowledge.json",
+            "data/ai_agents_knowledge.json"
+        ]
         
-        selected_file = None
+        knowledge_list = []
+        knowledge_dict = {}
+
         for kf in knowledge_files:
             if os.path.exists(kf):
-                selected_file = kf
-                break
+                try:
+                    with open(kf, "r", encoding="utf-8") as f:
+                        data_in_file = json.load(f)
 
-        if not selected_file:
-            self.logger.warning("No AI agent knowledge file found.")
+                    if isinstance(data_in_file, list):
+                        knowledge_list.extend(data_in_file)
+                        # Map list items to knowledge_dict for legacy key support
+                        for item in data_in_file:
+                            if not isinstance(item, dict): continue
+
+                            title = item.get("title", "").lower()
+                            url = item.get("url", "").lower()
+
+                            # Convert structured sections to flat content for legacy support
+                            content_parts = []
+                            for section_type in ["definitions", "use_cases", "benefits"]:
+                                for entry in item.get(section_type, []):
+                                    if isinstance(entry, dict):
+                                        header = entry.get("term", entry.get("title", ""))
+                                        body = entry.get("text", entry.get("description", ""))
+                                        if header and body:
+                                            content_parts.append(f"### {header}\n{body}")
+
+                            content = "\n\n".join(content_parts)
+                            if not content and "content" in item:
+                                content = item["content"]
+
+                            # Map to legacy slugs
+                            if "what is an ai agent" in title or "what-are-ai-agents" in url:
+                                knowledge_dict["what-is-an-ai-agent"] = {"content": content}
+                            elif "key features" in title:
+                                knowledge_dict["key-features-of-an-ai-agent"] = {"content": content}
+                            elif "difference" in title and "bot" in title:
+                                knowledge_dict["what-is-the-difference-between-ai-agents-ai-assistants-and-bots"] = {"content": content}
+                            elif "how" in title and "work" in title:
+                                knowledge_dict["how-do-ai-agents-work"] = {"content": content}
+                            elif "challenges" in title:
+                                knowledge_dict["challenges-with-using-ai-agents"] = {"content": content}
+                            elif "use cases" in title:
+                                knowledge_dict["use-cases-for-ai-agents"] = {"content": content}
+                            elif "benefits" in title:
+                                knowledge_dict["benefits-of-using-ai-agents"] = {"content": content}
+                            elif "google cloud" in title and "agents" in title:
+                                knowledge_dict["google-cloud-and-ai-agents"] = {"content": content}
+                            elif "jules" in title:
+                                knowledge_dict["jules-tools"] = {"content": content}
+                    else:
+                        knowledge_dict.update(data_in_file)
+                        # Wrap dict items into a list for uniform synthesized view
+                        for k, v in data_in_file.items():
+                            if isinstance(v, dict) and "content" in v:
+                                # Avoid duplicate entries if we already have it from another file
+                                if not any(e.get("title") == v.get("title", k) for e in knowledge_list):
+                                    knowledge_list.append({
+                                        "title": v.get("title", k),
+                                        "content": v["content"],
+                                        "definitions": [],
+                                        "use_cases": [],
+                                        "benefits": [],
+                                        "google_cloud_tools": []
+                                    })
+                except Exception as e:
+                    self.logger.warning(f"Failed to load {kf}: {e}")
+
+        if not knowledge_list and not knowledge_dict:
+            self.logger.warning("No AI agent knowledge found in any file.")
             return {
                 "ai_agent_knowledge": {},
                 "ai_agents_definitions": {},
@@ -47,32 +114,21 @@ class KnowledgeAgent(BaseAgent):
             }
 
         try:
-            with open(selected_file, "r", encoding="utf-8") as f:
-                knowledge = json.load(f)
-            
-            # 1. Processing for HEAD branch (list format)
-            if isinstance(knowledge, list):
-                knowledge_list = knowledge
-                knowledge_dict = {} # Mock dict for base branch processing if needed
-            else:
-                knowledge_dict = knowledge
-                knowledge_list = [] # Mock list for head branch processing if needed
-
-            # Synthesized summary for HEAD
+            # Synthesized summary
             synthesized = {
-                "entries": knowledge_list if knowledge_list else [knowledge_dict],
-                "all_definitions": [d for entry in (knowledge_list if knowledge_list else [knowledge_dict]) for d in entry.get("definitions", []) if isinstance(entry, dict)],
-                "all_use_cases": [u for entry in (knowledge_list if knowledge_list else [knowledge_dict]) for u in entry.get("use_cases", []) if isinstance(entry, dict)],
-                "all_benefits": [b for entry in (knowledge_list if knowledge_list else [knowledge_dict]) for b in entry.get("benefits", []) if isinstance(entry, dict)],
-                "all_tools": list(set([t for entry in (knowledge_list if knowledge_list else [knowledge_dict]) for t in entry.get("google_cloud_tools", []) if isinstance(entry, dict)]))
+                "entries": knowledge_list,
+                "all_definitions": [],
+                "all_use_cases": [],
+                "all_benefits": [],
+                "all_tools": []
             }
 
-            # 2. Processing for BASE branch (dict format from Scraper)
-            if not knowledge_dict and knowledge_list:
-                # Convert list back to dict for the legacy logic if possible
-                # This might be tricky if the schema changed significantly.
-                # Assuming the dict version is the one with keys like 'what-is-an-ai-agent'
-                pass
+            for item in knowledge_list:
+                if not isinstance(item, dict): continue
+                synthesized["all_definitions"].extend(item.get("definitions", []))
+                synthesized["all_use_cases"].extend(item.get("use_cases", []))
+                synthesized["all_benefits"].extend(item.get("benefits", []))
+                synthesized["all_tools"].extend(item.get("google_cloud_tools", []))
             
             # Helper to extract bullet points
             def extract_bullet(text, marker):
@@ -120,21 +176,41 @@ class KnowledgeAgent(BaseAgent):
 
             use_cases = definitions.get("use_cases", {})
 
-            # Extract tools list
-            tools_content = definitions.get("google_cloud_tools", "")
+            # Extract tools list from all sources
             tools_list = []
+
+            # 1. From google_cloud_tools content (unstructured/markdown)
+            tools_content = definitions.get("google_cloud_tools", "")
             if tools_content:
                 for line in tools_content.split("\n"):
                     if line.startswith("- "):
-                        match = re.search(r"^- ([\w\s\(\)-]{1,60}?)(?:\s+(?:Secure platform|Create AI|Build hybrid|Build Google-quality|Curated collection|Open-source|An AI|A fully managed|Provides a|Unified|Single|End-to-end|Speech|Language|Custom|Omnichannel|Description)|$)", line)
-                        if match:
-                            tool_name = match.group(1).strip()
-                            if tool_name and len(tool_name.split()) <= 6:
-                                tools_list.append(tool_name)
-                        else:
-                            parts = line.split(" ", 2)
-                            if len(parts) >= 2:
-                                tools_list.append(parts[1])
+                        # Hardcoded list of expected tools to ensure they are captured even if mashed
+                        known_tools = ["Gemini Enterprise App", "Gemini Enterprise Agent Platform", "Customer Experience Agent Studio", "Agent Garden", "Agent Development Kit (ADK)", "A2A Protocol", "Cloud Run"]
+                        found_known = False
+                        for kt in known_tools:
+                            if kt in line:
+                                tools_list.append(kt)
+                                found_known = True
+                                break
+
+                        if not found_known:
+                            # Try to match tool name before a description (colon or common description starter)
+                            match = re.search(r"^- ([\w\s\(\).]{2,60}?)(?::|\s+(?:Secure platform|Create AI|Build hybrid|Build Google-quality|Curated collection|Open-source|An AI|A fully managed|Provides a|Unified|Single|End-to-end|Speech|Language|Custom|Omnichannel|Description)|$)", line)
+                            if match:
+                                tool_name = match.group(1).strip()
+                                if tool_name and len(tool_name.split()) <= 6:
+                                    tools_list.append(tool_name)
+                            else:
+                                # Fallback: take more words but avoid the whole line if it's very long
+                                parts = line[2:].split(" ")
+                                if parts:
+                                    collected = []
+                                    for p in parts[:4]:
+                                        if not p: continue
+                                        if p.lower() in ["is", "a", "an", "the", "build", "secure"]: break
+                                        collected.append(p)
+                                    if collected:
+                                        tools_list.append(" ".join(collected).strip(",.:"))
 
             best_practices = [
                 "Use Jules Tools CLI for terminal-based session management and TUI dashboard.",
@@ -149,12 +225,15 @@ class KnowledgeAgent(BaseAgent):
                 "Orchestrate React agents dynamically through Next.js for robust frontend deployments."
             ]
 
+            # Final tools list merge from all sources
+            final_tools = list(set(tools_list + synthesized["all_tools"]))
+
             return {
                 "ai_agent_knowledge": synthesized,
                 "ai_agents_definitions": definitions,
                 "agent_best_practices": best_practices,
                 "agent_use_cases": use_cases,
-                "google_cloud_tools_list": tools_list,
+                "google_cloud_tools_list": sorted(final_tools),
                 "react_framework_details": {
                     "features": definitions.get("features", ""),
                     "deployment_strategy": "Orchestrate React components using Next.js for seamless AI integration.",

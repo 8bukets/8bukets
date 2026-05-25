@@ -1906,5 +1906,71 @@
             "insight": "Confirmed core Google node accessibility (HTTP 200).",
             "status": "ACCESSIBLE"
         }
+    },
+    {
+        "timestamp": 1779627960.98813,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
+    },
+    {
+        "timestamp": 1779628911.9408746,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
+    },
+    {
+        "timestamp": 1779629012.5824118,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
+    },
+    {
+        "timestamp": 1779629101.6840515,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
+    },
+    {
+        "timestamp": 1779731935.7011566,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
+    },
+    {
+        "timestamp": 1779732428.3293464,
+        "agent": "ResearchAgent",
+        "event_type": "EXTERNAL_INVESTIGATION",
+        "market_data_ref": "GOOGLE_WORLD",
+        "payload": {
+            "domain": "google.com",
+            "insight": "Confirmed core Google node accessibility (HTTP 200).",
+            "status": "ACCESSIBLE"
+        }
     }
 ]
