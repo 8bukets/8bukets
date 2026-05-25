@@ -90,25 +90,28 @@ ${summary}
     if (exists) {
       let content = await fs.promises.readFile(knowledgePath, 'utf8')
 
+      // Ensure signature is at the bottom
+      const signature = 'All the best - https://markposition.wordpress.com';
+      const sigRegex = new RegExp(`\\n*---\\n*${signature.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')}\\n*|\\n*${signature.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')}\\n*`, 'g');
+
+      let newContent = content.replace(sigRegex, '').trim();
+
       // Check if URL already exists
-      if (!content.includes(`- **Target**: ${url}`)) {
-        let newContent = content.trim();
-
-
-        newContent += relationshipEntry;
-
-        // Ensure signature is at the bottom
-        const signature = 'All the best - https://markposition.wordpress.com';
-        if (newContent.includes(signature)) {
-            newContent = newContent.split(signature).join('').trim() + '\n\n' + signature + '\n';
-        } else {
-            newContent = newContent.trim() + '\n\n' + signature + '\n';
-        }
-
-        await fs.promises.writeFile(knowledgePath, newContent, 'utf8')
+      if (newContent.includes(`- **Target**: ${url}`)) {
+        // Replace existing block using targeted regular expression, preventing over-matching
+        const blockRegex = new RegExp(`## Autonomous Observation(?:(?!## Autonomous Observation)[\\s\\S])*?- \\*\\*Target\\*\\*: ${url.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')}(?:(?!## Autonomous Observation)[\\s\\S])*`, 'g');
+        newContent = newContent.replace(blockRegex, () => relationshipEntry + '\n');
+      } else {
+        // Append new block
+        newContent += '\n' + relationshipEntry;
       }
+
+      newContent = newContent.trim() + '\n\n---\n' + signature + '\n';
+
+      await fs.promises.writeFile(knowledgePath, newContent, 'utf8')
     } else {
-      await fs.promises.writeFile(knowledgePath, `# Market Intelligence Matrix\n${relationshipEntry}\n\nAll the best - https://markposition.wordpress.com\n`, 'utf8')
+      const signature = 'All the best - https://markposition.wordpress.com';
+      await fs.promises.writeFile(knowledgePath, `# Market Intelligence Matrix\n${relationshipEntry}\n\n---\n${signature}\n`, 'utf8')
     }
 
     logAutonomousAction(`✅ [Knowledge Observer] Appended insights to KNOWLEDGE_MERGE.md.`, 'info')
