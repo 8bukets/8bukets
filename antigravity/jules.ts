@@ -24,21 +24,28 @@ export class Jules {
   private memory: JulesMemory
   private role: AgentRole
 
-  constructor(role: AgentRole = 'General') {
+  constructor(role: AgentRole = 'General', memory?: JulesMemory) {
     this.role = role
-    // NOTE: Synchronous fallback initialization. To fix SECURITY_PERF_VULNERABILITY completely,
-    // instances should ideally be created via an async factory method, but to avoid changing the
-    // export signature and downstream usage right now, we use sync here or we rely on it just once.
-    if (fs.existsSync(MEMORY_PATH)) {
-      try {
-        this.memory = JSON.parse(fs.readFileSync(MEMORY_PATH, 'utf8'))
-      } catch (e) {
-        this.memory = this.getDefaultMemory()
-      }
-    } else {
-      this.memory = this.getDefaultMemory()
-      this.save()
+    this.memory = memory || this.getDefaultMemory()
+  }
+
+  /**
+   * create: Async factory method to initialize Jules with persisted memory.
+   */
+  public static async create(role: AgentRole = 'General'): Promise<Jules> {
+    let memory: JulesMemory | undefined
+    try {
+      await fs.promises.access(MEMORY_PATH)
+      const data = await fs.promises.readFile(MEMORY_PATH, 'utf8')
+      memory = JSON.parse(data)
+    } catch (e) {
+      // Memory file missing or invalid, constructor will use default
     }
+    const instance = new Jules(role, memory)
+    if (!memory) {
+      await instance.saveAsync()
+    }
+    return instance
   }
 
   private getDefaultMemory(): JulesMemory {
@@ -60,10 +67,6 @@ export class Jules {
     await fs.promises.writeFile(MEMORY_PATH, JSON.stringify(this.memory, null, 2))
   }
 
-  // Legacy sync save for constructor usage
-  private save() {
-    fs.writeFileSync(MEMORY_PATH, JSON.stringify(this.memory, null, 2))
-  }
 
   public async improve() {
     console.log(`🤖 [Jules-${this.role}] Analyzing current system state for improvements...`)
@@ -138,14 +141,15 @@ export class Jules {
     let allSections: any[] = []
 
     // 1. Ingest from local scratch (most complete usually)
-    const fs = await import('fs')
+    const fsPromises = (await import('fs')).promises
     const path = await import('path')
     const localPath = path.join(process.cwd(), 'scratch/intelephense_docs.md')
-    if (fs.existsSync(localPath)) {
-      const localContent = fs.readFileSync(localPath, 'utf8')
+    try {
+      await fsPromises.access(localPath)
+      const localContent = await fsPromises.readFile(localPath, 'utf8')
       const localKnowledge = KnowledgeObserver.processContent('Intelephense Documentation', localContent, 'local://intelephense_docs.md')
       allSections.push(...localKnowledge.sections)
-    }
+    } catch (e) {}
 
     try {
       const results = await observeGithubDocs(repoPath, files)
@@ -425,7 +429,7 @@ export class Jules {
       }
 
       const jsonPath = path.join(process.cwd(), 'ai_agents_knowledge.json')
-      fs.writeFileSync(jsonPath, JSON.stringify(consolidatedKnowledge, null, 2), 'utf8')
+      await fs.promises.writeFile(jsonPath, JSON.stringify(consolidatedKnowledge, null, 2), 'utf8')
 
       let mdContent = `# Consolidated Knowledge Observation Insights\n\n`
       mdContent += `*Last Updated: ${consolidatedKnowledge.lastUpdated}*\n\n`
@@ -461,7 +465,7 @@ export class Jules {
       }
 
       const mdPath = path.join(process.cwd(), 'ai_agents_knowledge.md')
-      fs.writeFileSync(mdPath, mdContent, 'utf8')
+      await fs.promises.writeFile(mdPath, mdContent, 'utf8')
       console.log('✅ [Jules] Knowledge successfully merged and integrated into repository (ai_agents_knowledge.json, ai_agents_knowledge.md)')
     }
 
@@ -632,19 +636,6 @@ export class Jules {
           console.log(` ✅ [Jules] Ingested scratch doc: ${file}`)
         } catch (err) {
           console.error(` ❌ [Jules] Failed to ingest scratch doc ${file}:`, err)
-        }
-      }
-
-      // Phase 12: Scan iCloud Simulation directory
-      const simDir = path.join(incomingDir, 'icloud_sim')
-      if (fs.existsSync(simDir)) {
-        console.log(`☁️ [Jules] Scanning iCloud Simulation for new knowledge: ${simDir}`)
-        const simFiles = fs.readdirSync(simDir).filter(f => f.endsWith('.md'))
-        for (const file of simFiles) {
-          const fullPath = path.join(simDir, file)
-          const content = fs.readFileSync(fullPath, 'utf8')
-          const knowledge = KnowledgeObserver.processContent(file, content, `icloud-sim://${file}`)
-          await observer.persistKnowledge(knowledge)
         }
       }
     } catch (e) {
