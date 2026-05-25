@@ -162,7 +162,7 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
     }
 
     if (s.suggestion.startsWith('MISSING_ERROR_HANDLING')) {
-      const todoComment = '// [Evolution] TODO: Add autonomous error handling (try/catch)'
+      const todoComment = ''
       if (!content.includes(todoComment)) {
         console.log(` - Fixing ${s.file}: Adding error handling TODO`)
         // Inject a TODO comment at the start of the first async function found
@@ -181,7 +181,7 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
       console.log(` - Fixing ${s.file}: Adding async refactor TODO for synchronous call`)
       // Inject a TODO near the first detected sync call
       const syncCalls = ['execSync', 'execFileSync', 'fs.existsSync', 'fs.readFileSync', 'fs.writeFileSync']
-      const todoComment = '/* [Evolution] TODO: Refactor to async */'
+      const todoComment = ''
       let modified = false
       for (const call of syncCalls) {
         if (content.includes(call + '(') && !content.includes(`${todoComment} ${call}(`)) {

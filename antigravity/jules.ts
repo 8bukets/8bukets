@@ -269,6 +269,19 @@ export class Jules {
     }
   }
 
+  public async gitPull() {
+    console.log(`🔄 [Jules-${this.role}] Pulling latest changes from origin...`)
+    const { exec } = await import('child_process')
+    const { promisify } = await import('util')
+    const execAsync = promisify(exec)
+    try {
+      await execAsync('git pull --rebase origin main || true')
+      console.log('✅ [Jules] Git pull completed.')
+    } catch (err) {
+      console.warn('⚠️ [Jules] Git pull failed:', err)
+    }
+  }
+
   public async auditDependencies() {
     console.log(`📦 [Jules-${this.role}] Auditing dependency sovereignty...`)
     const { exec } = await import('child_process')
@@ -317,32 +330,39 @@ export class Jules {
 
   public async executeWorkCycle() {
     console.log(`🌟 [Jules-${this.role}] Beginning Autonomous Work Cycle...`)
+
+    // 1. Pull latest state
+    await this.gitPull()
+
     const { explore } = await import('./explorer')
     const { workOrderService } = await import('./services/work_order')
     const { creationEngine } = await import('./services/creation_engine')
 
+    // 2. Initial Assessment
     await explore()
 
-    // Phase 12: Online Presence Pulse
+    // 3. Online Presence Pulse
     const { onlinePresenceService } = await import('./services/presence')
     await onlinePresenceService.broadcastTelemetry()
 
+    // 4. Knowledge Observation
     await this.observeKnowledge()
     await this.observeGithubDocs()
 
+    // 5. Self-Repair (if applicable)
     if (this.role === 'Coder' || this.role === 'General') {
        await this.selfRepair()
     }
 
     const branches = await this.scanAllBranches(true)
 
-    // Collaboration & Intelligence
+    // 6. Collaboration & Intelligence
     const { syncCollaborationState } = await import('./services/collaboration')
     const { generateConsolidatedReport } = await import('./services/intelligence')
     await syncCollaborationState(branches)
     await generateConsolidatedReport(branches)
 
-    // Synthesis
+    // 7. Synthesis
     const { synthesize } = await import('./synthesis')
     const ideas = await synthesize()
     if (ideas.length > 0) {
@@ -350,8 +370,7 @@ export class Jules {
       await creationEngine.processIdeas(ideas)
     }
 
-    // Phase 12: Super-Intelligence Optimization
-    // getSystemInsights already triggers the optimization engine internally
+    // 8. Super-Intelligence Optimization
     const { getSystemInsights } = await import('./core')
     const insights = await getSystemInsights()
     const refactors = (insights as any).proposals || []
@@ -359,7 +378,7 @@ export class Jules {
       await this.recordTask(`Super-Intelligence: Generated ${refactors.length} predictive refactors.`)
     }
 
-    // ReAct Protocol Integration (arXiv:2210.03629)
+    // 9. ReAct Protocol Integration
     const { reactService } = await import('./services/react')
     const reactTools = {
       checkSystemState: async () => JSON.stringify(await import('./core').then(c => c.healthCheck())),
@@ -369,18 +388,14 @@ export class Jules {
     const reactSteps = await reactService.executeCycle('Optimize system posture using ReAct', reactTools)
     await this.recordTask(`ReAct: Completed ${reactSteps.length} reasoning-action steps.`)
 
-    // Autonomous Improvement Cycle (Analyze Recent Sessions)
+    // 10. Autonomous Improvement Cycle
     try {
-      const fs = await import('fs');
-      const path = await import('path');
       let fullWorkOrders = [];
       const woPath = path.join(process.cwd(), 'data/work_orders.json');
       try {
         await fs.promises.access(woPath);
         fullWorkOrders = JSON.parse(await fs.promises.readFile(woPath, 'utf8'));
-      } catch (e) {
-        // file does not exist or cannot be read
-      }
+      } catch (e) { }
 
       const sessionAnalysisIdeas = await reactService.analyzeAndImproveSessions({
         branches,
@@ -395,93 +410,21 @@ export class Jules {
       console.error(`❌ [Jules] Failed autonomous improvement cycle:`, err);
     }
 
-    // Cloud Workflow Agent
+    // 11. Cloud Workflow Agent
     const { cloudWorkflowAgent } = await import('./services/cloud_workflow')
     const isFluent = await cloudWorkflowAgent.ensureFluentStatus()
     if (isFluent) {
       await this.recordTask(`Cloud Workflow: System is FLUENT_ON_AIR.`)
-    } else {
-      await this.recordTask(`Cloud Workflow: System degraded, attempted proactive recovery.`)
     }
 
-    // Knowledge Observation
-    console.log('👁️ [Jules] Initiating Knowledge Observation...')
-    const { observeKnowledge } = await import('./services/knowledge')
-    const { observeGithubDocs } = await import('./services/github_docs_observer')
-
-    const [webInsights, githubInsights] = await Promise.all([
-      observeKnowledge('https://software-online-review.com'),
-      observeGithubDocs('bmewburn/intelephense-docs', ['features.md', 'installation.md', 'gettingStarted.md', 'support.md'])
-    ])
-
-    const consolidatedKnowledge: any = {
-      web: webInsights,
-      github: githubInsights,
-      lastUpdated: new Date().toISOString()
-    }
-
-    if (webInsights || githubInsights) {
-      if (webInsights) {
-        await this.recordTask(`Knowledge Observation: Extracted ${webInsights.topKeywords.length} concepts from ${webInsights.source}`)
-      }
-      if (githubInsights && githubInsights.length > 0) {
-        await this.recordTask(`Knowledge Observation: Extracted technical documentation from ${githubInsights[0].source}`)
-      }
-
-      const jsonPath = path.join(process.cwd(), 'ai_agents_knowledge.json')
-      await fs.promises.writeFile(jsonPath, JSON.stringify(consolidatedKnowledge, null, 2), 'utf8')
-
-      let mdContent = `# Consolidated Knowledge Observation Insights\n\n`
-      mdContent += `*Last Updated: ${consolidatedKnowledge.lastUpdated}*\n\n`
-
-      if (webInsights) {
-        mdContent += `## 🌐 Web Insights: ${webInsights.title}\n`
-        mdContent += `**Source:** ${webInsights.source}\n`
-        mdContent += `**Description:** ${webInsights.description}\n\n`
-
-        mdContent += `### Top Keywords\n`
-        webInsights.topKeywords.forEach((kw: string) => {
-          mdContent += `- ${kw}\n`
-        })
-        mdContent += `\n`
-
-        mdContent += `### Recent Posts\n`
-        webInsights.recentPosts.forEach((post: { title: string; link: string }) => {
-          mdContent += `- [${post.title}](${post.link})\n`
-        })
-        mdContent += `\n---\n\n`
-      }
-
-      if (githubInsights && githubInsights.length > 0) {
-        mdContent += `## 🐙 GitHub Technical Documentation\n`
-        mdContent += `**Repository:** ${githubInsights[0].source}\n\n`
-
-        githubInsights.forEach(insight => {
-          mdContent += `### File: ${insight.file}\n`
-          insight.sections.forEach(section => {
-            mdContent += `#### ${section.title}\n${section.content}\n\n`
-          })
-        })
-      }
-
-      const mdPath = path.join(process.cwd(), 'ai_agents_knowledge.md')
-      await fs.promises.writeFile(mdPath, mdContent, 'utf8')
-      console.log('✅ [Jules] Knowledge successfully merged and integrated into repository (ai_agents_knowledge.json, ai_agents_knowledge.md)')
-    }
-
+    // 12. Final Git Sync (Push results)
     await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
 
-    // iCloud Sync Integration
+    // 13. iCloud Sync Integration
     await this.syncToICloud()
 
     this.memory.lastOptimization = new Date().toISOString()
     await workOrderService.executePendingOrders()
-
-    // Cross-Platform PR Creation if relevant
-    const provider = await gitProviderService.getActiveProvider()
-    if (provider !== 'unknown') {
-       // Logic to create PRs for completed work orders could go here
-    }
 
     await this.saveAsync()
     console.log(`🏆 [Jules-${this.role}] Autonomous Work Cycle Complete.`)
