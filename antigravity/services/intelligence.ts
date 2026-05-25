@@ -235,7 +235,21 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   })
 
   if (branches.length > 1500) report += `- [LOW] Prune or merge stagnant ecosystem branches (Total: ${branches.length}).\n`
-  report += `- [INFO] Continue autonomous knowledge ingestion for market intelligence.\n`
+  report += `- [INFO] Continue autonomous knowledge ingestion for market intelligence.\n\n`
+
+  report += `## 🗺️ Strategic Alignment Roadmap\n`
+  report += `| Strategic Goal | Active Initiatives | Progress | Status |\n`
+  report += `| :--- | :--- | :---: | :--- |\n`
+
+  Object.entries(relationshipMap.goalAlignment).forEach(([goal, relevantBranches]: [string, any]) => {
+    const branchCount = relevantBranches.length
+    const progress = Math.min(100, branchCount * 10)
+    const progressBar = '█'.repeat(Math.floor(progress / 10)) + '░'.repeat(10 - Math.floor(progress / 10))
+    const status = branchCount > 0 ? (branchCount > 5 ? '🔥 ACCELERATED' : '✅ ACTIVE') : '💤 DORMANT'
+
+    report += `| ${goal} | ${branchCount} branches | \`${progressBar}\` ${progress}% | ${status} |\n`
+  })
+  report += `\n`
 
   // Revised Collaboration Health Index (Logarithmic Scaling for High Branch Counts)
   const totalWeight = relationshipMap.synergies.reduce((acc: number, s: any) => {
