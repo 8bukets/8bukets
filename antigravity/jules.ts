@@ -138,15 +138,15 @@ export class Jules {
 
   public async syncCollaboration() {
     console.log('🤝 [Jules] Synchronizing collaboration context...')
-    const { exportCollaborationContext } = await import('./services/collaboration')
-    await exportCollaborationContext()
+    const { exportEcosystemMetadata } = await import('./services/collaboration')
+    await exportEcosystemMetadata()
     await this.recordTask('Collaboration Sync: Exported system context and stakeholder data.')
   }
 
   public async auditDocker() {
     console.log('🐳 [Jules] Auditing Docker sovereignty...')
-    const { getDockerStatus } = await import('./services/docker')
-    const containers = await getDockerStatus()
+    const { getDockerFleetStatus } = await import('./services/docker')
+    const containers = await getDockerFleetStatus()
     if (containers.length > 0) {
       await this.recordTask(`Docker Sovereignty: Found ${containers.length} active containers. Connectivity verified.`)
     } else {

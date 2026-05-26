@@ -320,11 +320,20 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
       const weight = resourceWeights[type] || 1
       const branchesNames = Array.from(branchSet)
 
-      // Suppress high-intensity noise for common boilerplate files unless they have extreme overlap (>10 branches)
+      // Suppress high-intensity noise for common boilerplate files unless they have extreme overlap
+      // Phase 12 High-Scale: Adjust thresholds for environments with 2,000+ branches
       const isBoilerplate = BOILERPLATE_RESOURCES.includes(resourceName)
-      let intensity = 'Medium'
-      if (branchesNames.length > 5 || (weight >= 10 && branchesNames.length > 2)) intensity = 'High'
-      if (isBoilerplate && branchesNames.length < 10) intensity = 'Low'
+      const scaleFactor = Math.max(1, branches.length / 500)
+
+      let intensity = 'Low'
+      if (branchesNames.length > 10 * scaleFactor) intensity = 'Medium'
+      if (branchesNames.length > 30 * scaleFactor || (weight >= 10 && branchesNames.length > 15 * scaleFactor)) intensity = 'High'
+
+      // Boilerplate is almost always low intensity unless it's truly massive
+      if (isBoilerplate && branchesNames.length < 100 * scaleFactor) intensity = 'Low'
+
+      // Only record non-low synergies in high-scale environments to reduce noise
+      if (branches.length > 1000 && intensity === 'Low') return
 
       map.synergies.push({
         type: 'Resource Conflict/Synergy',
@@ -360,15 +369,31 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
         domain
       })
 
-      if (intensity === 'High') {
+      if (intensity === 'High' && map.synergies.length < 20) {
         console.warn(`🤝 [Collaboration] High-Intensity Synergy Detected: ${branchesNames.length} branches working on ${resourceName} (${type}).`)
       }
     }
   })
 
-  // Flatten and Deduplicate recommendations by prioritizing Critical ones
-  Object.values(domainRecommendations).forEach(recs => {
-    map.collaborationRecommendations.push(...recs)
+  // Flatten and Deduplicate recommendations by Strategic Domain
+  // Phase 12 High-Scale: Consolidate all domain-specific conflicts into a single high-level action item
+  Object.entries(domainRecommendations).forEach(([domain, recs]) => {
+    const criticalRecs = recs.filter(r => r.priority === 'Critical')
+    const totalResources = recs.length
+
+    if (recs.length > 5) {
+      map.collaborationRecommendations.push({
+        priority: criticalRecs.length > 0 ? 'Critical' : 'Routine',
+        action: `Unified Domain Consolidation: ${domain}`,
+        resource: 'Multiple',
+        branches: Array.from(new Set(recs.flatMap(r => r.branches))).slice(0, 10),
+        rationale: `Strategic Domain '${domain}' has ${totalResources} concurrent resource conflicts. Executive coordination required across all involved stakeholders.`,
+        stakeholders: Array.from(new Set(recs.flatMap(r => r.stakeholders))),
+        domain
+      })
+    } else {
+      map.collaborationRecommendations.push(...recs)
+    }
   })
 
   // Integrate branch results into resources if they implement a specific feature
