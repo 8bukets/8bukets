@@ -286,16 +286,30 @@ export class Jules {
     this.recordTask(`PR Audit: Found ${pulls.length} open PRs.`)
 
     // Phase 22: Leadership-aware PR processing
-    const nodeId = (process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true') ? 'cloud-relay-01' : 'macbook-primary-01'
-    let isLeader = nodeId === 'macbook-primary-01' // Default
+    const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
+    const nodeId = isCloud ? 'cloud-relay-01' : 'macbook-primary-01'
+
+    // Cloud node becomes leader if MacBook is offline
+    let isLeader = !isCloud
 
     try {
       const { getMongoClient } = await import('./core')
       const client = await getMongoClient()
       const db = client.db()
-      const presence = await db.collection('agent_presence').findOne({ agent: 'Jules', 'telemetry.node_id': nodeId })
-      if (presence) isLeader = presence.is_leader
-    } catch (e) {}
+
+      const macbookPresence = await db.collection('agent_presence').findOne({
+        agent: 'Jules',
+        'telemetry.node_id': 'macbook-primary-01',
+        lastSeen: { $gt: new Date(Date.now() - 30 * 60 * 1000).toISOString() }
+      })
+
+      if (isCloud) {
+        isLeader = !macbookPresence
+        console.log(`🌩️ [Jules] Cloud leadership check: MacBook is ${macbookPresence ? 'ONLINE' : 'OFFLINE'}. Cloud is ${isLeader ? 'LEADER' : 'STANDBY'}.`)
+      }
+    } catch (e) {
+      logAutonomousAction('⚠️ [Jules] Leadership audit failed. Assuming default sovereignty.', 'warning')
+    }
 
     for (const pr of pulls) {
       const isAutonomous = pr.title.includes('🤖') || pr.title.toLowerCase().includes('autonomous')
@@ -528,9 +542,16 @@ export class Jules {
       await this.observeGithubDocs()
       const branches = await this.scanAllBranches(true)
 
-      // Collaboration & Intelligence (Phase 9/12)
-      const { syncCollaborationState } = await import('./services/collaboration')
+      // Collaboration & Intelligence (Phase 12)
+      const { syncCollaborationState, mergeBranchInsights, generateRelationshipMap } = await import('./services/collaboration')
       const { generateConsolidatedReport } = await import('./services/intelligence')
+
+      await mergeBranchInsights(branches)
+      const relMap = await generateRelationshipMap()
+      const mapPath = path.join(process.cwd(), 'data/relationship_map.json')
+      if (!fs.existsSync(path.dirname(mapPath))) fs.mkdirSync(path.dirname(mapPath), { recursive: true })
+      fs.writeFileSync(mapPath, JSON.stringify(relMap, null, 2))
+
       await syncCollaborationState(branches)
       await generateConsolidatedReport(branches)
 
