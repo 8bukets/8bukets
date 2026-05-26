@@ -17,7 +17,7 @@ export class ICloudObserver {
     const homeDir = process.env.HOME || ''
     const standardICloudPath = path.join(homeDir, 'Library/Mobile Documents/com~apple~CloudDocs/8bukets')
 
-    this.syncPath = process.env.ICLOUD_SYNC_PATH || (fs.existsSync(standardICloudPath) ? standardICloudPath : path.join(process.cwd(), 'scratch/icloud_sim'))
+    this.syncPath = process.env.ICLOUD_SYNC_PATH || ( fs.existsSync(standardICloudPath) ? standardICloudPath : path.join(process.cwd(), 'scratch/icloud_sim'))
     this.observer = new KnowledgeObserver()
   }
 
@@ -27,7 +27,7 @@ export class ICloudObserver {
   public async scan() {
     console.log(`☁️ [iCloud Observer] Scanning path: ${this.syncPath}`)
 
-    if (!fs.existsSync(this.syncPath)) {
+    if (! fs.existsSync(this.syncPath)) {
       console.log('ℹ️ [iCloud Observer] Sync path does not exist. Skipping scan.')
       return []
     }

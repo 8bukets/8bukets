@@ -38,7 +38,7 @@ export class WorkOrderService {
   }
 
   private load() {
-    if (fs.existsSync(STORAGE_PATH)) {
+    if ( fs.existsSync(STORAGE_PATH)) {
       try {
         const data = fs.readFileSync(STORAGE_PATH, 'utf8')
         const parsed = JSON.parse(data)
@@ -58,7 +58,7 @@ export class WorkOrderService {
 
   private save() {
     const dataDir = path.dirname(STORAGE_PATH)
-    if (!fs.existsSync(dataDir)) {
+    if (! fs.existsSync(dataDir)) {
       fs.mkdirSync(dataDir, { recursive: true })
     }
     fs.writeFileSync(STORAGE_PATH, JSON.stringify(this.orders, null, 2))
