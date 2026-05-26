@@ -27,21 +27,23 @@ export class ICloudObserver {
   public async scan() {
     console.log(`☁️ [iCloud Observer] Scanning path: ${this.syncPath}`)
 
-    if (! fs.existsSync(this.syncPath)) {
+    try {
+      await fs.promises.access(this.syncPath)
+    } catch {
       console.log('ℹ️ [iCloud Observer] Sync path does not exist. Skipping scan.')
       return []
     }
 
-    const files = fs.readdirSync(this.syncPath)
+    const files = await fs.promises.readdir(this.syncPath)
     const ingested: string[] = []
 
     for (const file of files) {
       const fullPath = path.join(this.syncPath, file)
-      const stats = fs.statSync(fullPath)
+      const stats = await fs.promises.stat(fullPath)
 
       if (stats.isFile() && (file.endsWith('.md') || file.endsWith('.json'))) {
         try {
-          const content = fs.readFileSync(fullPath, 'utf8')
+          const content = await fs.promises.readFile(fullPath, 'utf8')
           let knowledge;
 
           if (file.endsWith('.json')) {

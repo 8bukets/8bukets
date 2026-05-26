@@ -22,7 +22,7 @@ export class IntelephenseService {
 
     // 1. Ingest from local scratch (most complete usually)
     const localPath = path.join(process.cwd(), 'scratch/intelephense_docs.md')
-    if (fs.existsSync(localPath)) {
+    if ( fs.existsSync(localPath)) {
       console.log(' 📄 Ingesting local scratch docs...')
       const localContent = fs.readFileSync(localPath, 'utf8')
       const localKnowledge = KnowledgeObserver.processContent('Intelephense Documentation', localContent, 'local://intelephense_docs.md')
