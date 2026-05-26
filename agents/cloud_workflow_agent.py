@@ -97,7 +97,6 @@ class CloudWorkflowAgent(BaseAgent):
 
         if os.environ.get("MACBOOK_CLOUD_SIMULATION") == "true":
             is_fluent = True
-            active_decisions = []
             orchestration_mode = "FLUENT_ON_AIR"
             availability_score = 1.0
 

@@ -49,7 +49,7 @@ def merge_knowledge():
     system_knowledge["ai_agents_structured"].append(new_entry)
 
     with open(system_path, "w", encoding="utf-8") as f:
-        json.dump(system_knowledge, f, indent=4, ensure_ascii=False)
+        json.dump(system_knowledge, f, indent=2, ensure_ascii=False)
     print(f"Merged knowledge into {system_path}")
 
     # Handle CONSOLIDATED_KNOWLEDGE.md carefully

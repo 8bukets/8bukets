@@ -153,7 +153,7 @@ async function scrapeGoogleAdsDocs() {
         }
         knowledge.metadata.generated_at = new Date().toISOString();
 
-        fs.writeFileSync(knowledgePath, JSON.stringify(knowledge, null, 2), 'utf8');
+        fs.writeFileSync(knowledgePath, JSON.stringify(knowledge, null, 4), 'utf8');
         console.log(`✅ [Ingest] Merged Google Ads docs into system_knowledge.json.`);
     }
 }
