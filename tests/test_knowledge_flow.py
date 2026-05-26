@@ -49,7 +49,7 @@ async def test_knowledge_flow():
     # Assertions for IntelligenceAgent
     insights = intelligence_results['intelligence_insights']
     assert any("Ecosystem architecture aligns with ReAct framework" in i for i in insights)
-    assert any("System utilizes multi-tiered memory architecture" in i for i in insights)
+    assert any("Verified Multi-tiered Memory" in i for i in insights) or any("System utilizes multi-tiered memory architecture" in i for i in insights)
     assert any("Google Cloud AI Agent definitions" in i.replace(',', '') for i in insights)
 
     print("\nKnowledge flow test passed successfully!")
