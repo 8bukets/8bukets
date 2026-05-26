@@ -27,12 +27,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Connect and Collaborate
-        run: npm run connect
-        env:
-          AUTONOMOUS_MODE: cloud
-          MACBOOK_CLOUD_SIMULATION: true
-
       - name: Ignite Continuous Autonomous Cycle
         run: npm run ignite
         env:
