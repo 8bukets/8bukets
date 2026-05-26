@@ -62,6 +62,7 @@ from agents.swarm_agent import SwarmAgent
 from agents.work_order_agent import WorkOrderAgent
 from agents.backup_agent import BackupAgent, CEOBackupAgent
 from agents.auth import AuthManager
+from agents.thinking_agent import ThinkingAgent
 
 # Configure Logging
 logging.basicConfig(
@@ -242,7 +243,7 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         WorkOrderAgent(),
 
         # Intelligence & Research
-        AnalysisAgent(), ResearchAgent(), IntelligenceAgent(), KnowledgeAgent(),
+        ThinkingAgent(), AnalysisAgent(), ResearchAgent(), IntelligenceAgent(), KnowledgeAgent(),
         KnowledgeMergeAgent(), GoogleEdgeAgent(), GoogleModelsResearchAgent(),
         GoogleInnovationAIAgent(),
         ReActAgent(), RagAgent(), AutonomousIntelligenceAgent(),
