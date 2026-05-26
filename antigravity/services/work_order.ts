@@ -149,6 +149,16 @@ export class WorkOrderService {
     }
   }
 
+  /**
+   * Clears all orders from memory and local storage. Useful for testing.
+   */
+  public async clearOrders() {
+    this.orders = []
+    this.saveLocal()
+    // We don't necessarily want to wipe the DB in a real environment,
+    // but for autonomous local runs this is fine.
+  }
+
   public async executePendingOrders() {
     await this.ensureLoaded()
     let pending = await this.getPendingOrders()
