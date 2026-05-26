@@ -180,18 +180,34 @@ export class Jules {
     const execAsync = promisify(exec)
 
     try {
-      await execAsync('git pull --rebase origin main || true')
-      await execAsync('git add .')
+      // 1. Resolve current branch
+      const { stdout: branchRaw } = await execAsync('git rev-parse --abbrev-ref HEAD')
+      const branch = branchRaw.trim()
+      console.log(`   [Git Sync] Working on branch: ${branch}`)
 
+      // 2. Always Pull/Rebase first (even if no local changes)
+      await execAsync(`git pull --rebase origin ${branch} || true`)
+
+      // 3. Check for changes after potential pull/rebase
+      const { stdout: statusRaw } = await execAsync('git status --porcelain')
+      if (!statusRaw.trim()) {
+        console.log('ℹ️ [Jules] No local changes to commit or push. Git sync complete.')
+        return
+      }
+
+      // 4. Commit & Push changes
+      await execAsync('git add .')
       try {
         await execAsync(`git commit -m "${message}"`)
       } catch (commitErr) {
-        console.log('ℹ️ [Jules] No changes to commit.')
+        console.log('ℹ️ [Jules] No changes to commit after rebase.')
+        return
       }
 
-      await execAsync('git push origin main || true')
+      // 5. Push
+      await execAsync(`git push origin ${branch} || true`)
       console.log('✅ [Jules] Git sync completed autonomously.')
-      await this.recordTask(`Git Sync: Synchronized state with origin.`)
+      await this.recordTask(`Git Sync: Synchronized state on branch ${branch} with origin.`)
     } catch (err) {
       console.warn('⚠️ [Jules] Git sync experienced unexpected issues:', err)
     }
@@ -203,8 +219,10 @@ export class Jules {
     const { promisify } = await import('util')
     const execAsync = promisify(exec)
     try {
-      await execAsync('git pull --rebase origin main || true')
-      console.log('✅ [Jules] Git pull completed.')
+      const { stdout: branchRaw } = await execAsync('git rev-parse --abbrev-ref HEAD')
+      const branch = branchRaw.trim()
+      await execAsync(`git pull --rebase origin ${branch} || true`)
+      console.log(`✅ [Jules] Git pull completed on branch ${branch}.`)
     } catch (err) {
       console.warn('⚠️ [Jules] Git pull failed:', err)
     }
