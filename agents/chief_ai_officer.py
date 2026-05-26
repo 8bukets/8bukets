@@ -22,17 +22,22 @@ class ChiefAIOfficerAgent(BaseAgent):
         strategic_directives = []
 
         # Phase 12 Maturity Check
-        try:
-            with open('AGENTS.md', 'r') as f:
-                agents_docs = f.read()
-                if "Phase 12: Autonomous Super-Intelligence (Current)" in agents_docs:
-                    self.logger.info("CAIO: System confirmed at Phase 12. Enabling sentient orchestration protocols.")
-                    strategic_directives.append("ACTIVATE_SENTIENT_ORCHESTRATION")
-                else:
-                    self.logger.warning("CAIO: System below Phase 12. Mandating roadmap acceleration.")
-                    strategic_directives.append("ACCELERATE_ROADMAP_UPGRADE")
-        except Exception as e:
-            self.logger.error(f"CAIO: Failed to read AGENTS.md for maturity check: {e}")
+        is_phase_12 = blackboard.get("is_phase_12", False)
+        if not is_phase_12:
+            try:
+                if os.path.exists('AGENTS.md'):
+                    with open('AGENTS.md', 'r') as f:
+                        if "Phase 12: Autonomous Super-Intelligence (Current)" in f.read():
+                            is_phase_12 = True
+            except Exception as e:
+                self.logger.error(f"CAIO: Maturity check error: {e}")
+
+        if is_phase_12:
+            self.logger.info("CAIO: System confirmed at Phase 12. Enabling sentient orchestration protocols.")
+            strategic_directives.append("ACTIVATE_SENTIENT_ORCHESTRATION")
+        else:
+            self.logger.warning("CAIO: System below Phase 12. Mandating roadmap acceleration.")
+            strategic_directives.append("ACCELERATE_ROADMAP_UPGRADE")
 
         if cloud_status == "DEGRADED":
             self.logger.warning("CAIO: Cloud workflow degraded. Triggering infrastructure optimization.")
@@ -58,6 +63,13 @@ class ChiefAIOfficerAgent(BaseAgent):
              strategy_status = "REVIEW_REQUIRED"
              infrastructure_opt["action"] = "halt_evolution"
              strategic_directives.append("CONSOLIDATE_SYSTEM_CORE")
+
+        # Phase 12 Compliance & Governance (EU AI Act alignment)
+        if "ACTIVATE_SENTIENT_ORCHESTRATION" in strategic_directives:
+            self.logger.info("CAIO: Mandating Ethics & Governance framework (EU AI Act compliance).")
+            strategic_directives.append("ESTABLISH_ETHICS_FRAMEWORK")
+            strategic_directives.append("OPTIMIZE_ROI_TRACKING")
+            strategic_directives.append("AI_PORTFOLIO_CONSOLIDATION")
 
         return {
             "ai_strategy_status": strategy_status,
