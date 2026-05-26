@@ -92,8 +92,11 @@ export class KnowledgeObserver {
       }
 
       if (effectiveHeader) {
-        if (currentLines.length > 0) {
-          sections.push({ header: currentHeader, content: currentLines.join('\n').trim() })
+        const sectionContent = currentLines.join('\n').trim()
+        const isStructural = ['Getting Started', 'Features', 'Installation', 'Type System'].includes(currentHeader)
+
+        if (sectionContent || isStructural) {
+          sections.push({ header: currentHeader, content: sectionContent })
         }
         currentHeader = trimmed.replace(/^#+\s*/, '').trim()
         currentLines = []
@@ -107,8 +110,11 @@ export class KnowledgeObserver {
       }
     }
 
-    if (currentLines.length > 0) {
-      sections.push({ header: currentHeader, content: currentLines.join('\n').trim() })
+    const finalSectionContent = currentLines.join('\n').trim()
+    const isFinalStructural = ['Getting Started', 'Features', 'Installation', 'Type System'].includes(currentHeader)
+
+    if (finalSectionContent || isFinalStructural) {
+      sections.push({ header: currentHeader, content: finalSectionContent })
     }
 
     return {
