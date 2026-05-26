@@ -47,7 +47,8 @@ async function main() {
       'python3 gemmafour_scraper.py',
       'python3 litert_scraper.py',
       'python3 intelephense_scraper.py',
-      'python3 ai_agents_knowledge_scraper.py'
+      'python3 ai_agents_knowledge_scraper.py',
+      'npx tsx scripts/ingest_markposition_knowledge.ts'
     ];
 
     for (const scraper of scrapers) {

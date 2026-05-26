@@ -79,6 +79,24 @@ class KnowledgeMergeAgent(BaseAgent):
                     # Smart merge for ai_agents if it follows the structured pattern
                     if key == "ai_agents" and "ai_agents_structured" in consolidated:
                         self._merge_ai_agents(consolidated, content)
+                    elif key == "market_data":
+                        # If market_data is a dict (likely from system_knowledge.json),
+                        # we merge it carefully with potentially new content from links.json
+                        existing_market = consolidated.get("market_data", {})
+                        if isinstance(existing_market, list): existing_market = {"all_entries": existing_market}
+
+                        existing_entries = existing_market.get("all_entries", [])
+                        new_entries = content.get("all_entries", []) if isinstance(content, dict) else content
+
+                        if isinstance(new_entries, list):
+                            urls = {e.get("post_url") for e in existing_entries if e.get("post_url")}
+                            unique_new = [e for e in new_entries if e.get("post_url") not in urls]
+                            combined = unique_new + existing_entries
+                            consolidated[key] = {
+                                "total_entries": len(combined),
+                                "recent_entries": combined[:20],
+                                "all_entries": combined
+                            }
                     else:
                         consolidated[key] = content
 
@@ -88,6 +106,8 @@ class KnowledgeMergeAgent(BaseAgent):
                     # For market_data (links.json), we want to merge with existing data
                     if key == "market_data":
                         existing_market = consolidated.get("market_data", {})
+                        if isinstance(existing_market, list): existing_market = {"all_entries": existing_market}
+
                         existing_entries = existing_market.get("all_entries", [])
 
                         # Merge and deduplicate by post_url
@@ -265,6 +285,7 @@ class KnowledgeMergeAgent(BaseAgent):
                            for sec in ts_data.get("sections", []):
                                f.write(f"#### {sec['header']}\n{sec['content']}\n\n")
 
+                # Ensure the signature is always present at the very end
                 f.write("\n---\nAll the best - https://markposition.wordpress.com\n")
 
             self.logger.info(f"Consolidated Markdown saved to {self.output_md}")
