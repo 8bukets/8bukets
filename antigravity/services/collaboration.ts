@@ -7,7 +7,7 @@ import { checkDockerHealth } from './docker'
 import { checkJenkinsHealth, triggerJenkinsPipeline } from './jenkins'
 
 /**
- * ANTIGRAVITY COLLABORATION SERVICE (Phase 9)
+ * ANTIGRAVITY COLLABORATION SERVICE (Phase 9/12)
  * Manages multi-agent collaboration and stakeholder synchronization.
  */
 

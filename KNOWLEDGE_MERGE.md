@@ -1,450 +1,126 @@
-# Glossary
+# ECOSYSTEM KNOWLEDGE MERGE
+
+*Generated: 2026-05-26T16:10:36.230Z*
+
+## 🧠 Discovered Knowledge Nuggets
+- ROADMAP:PHASE-12: Unified Cloud-Native Autonomous Evolution (Source: remotes/origin/feat/cloud-native-autonomy-3438116551041896813)
+- ROADMAP:PHASE-12: 🤖 fix: autonomous evolution repair of 3 issues (Source: remotes/origin/fix/autonomous-evolution-1779764401136)
+- MEDIUM: Fix Markdown Injection and Stored XSS in Analytics Report (Source: remotes/origin/sentinel-analytics-security-4671865652902331047)
+- HIGH: Fix CSV Injection vulnerability (Source: remotes/origin/sentinel-csv-injection-11171345795536949565)
+- CRITICAL: Fix CSV Injection in Scraper (Source: remotes/origin/sentinel-csv-injection-196586466427306611)
+- HIGH: Fix CSV Injection vulnerability in scraper (Source: remotes/origin/sentinel-csv-injection-fix-10533494504783963835)
+- HIGH: Fix CSV Injection vulnerability in scraper (Source: remotes/origin/sentinel-csv-injection-fix-10553252584862984034)
+- CRITICAL: Fix CSV Injection vulnerability in scraper (Source: remotes/origin/sentinel-csv-injection-fix-10726122690278576956)
+- CRITICAL: Fix CSV Injection vulnerability (Source: remotes/origin/sentinel-csv-injection-fix-10929502802886218209)
+- CRITICAL: Fix CSV Injection vulnerability in scraper.py (Source: remotes/origin/sentinel-csv-injection-fix-11406993561405723358)
+- HIGH: Fix CSV Injection vulnerability (Source: remotes/origin/sentinel-csv-injection-fix-12502953329308944649)
+- HIGH: Fix CSV Injection vulnerability in scraper (Source: remotes/origin/sentinel-csv-injection-fix-12825710681451950296)
+- CRITICAL: Fix CSV Formula Injection (Source: remotes/origin/sentinel-csv-injection-fix-13230148290788168806)
+- CRITICAL: Fix CSV Injection vulnerability in scraper output (Source: remotes/origin/sentinel-csv-injection-fix-1369174769441350864)
+- CRITICAL: Fix CSV Injection vulnerability in scraper (Source: remotes/origin/sentinel-csv-injection-fix-13940069351560810244)
+- CRITICAL: Fix CSV Injection vulnerability and add network timeouts (Source: remotes/origin/sentinel-csv-injection-fix-15245071254079934303)
+- HIGH: Fix CSV Injection vulnerability (Source: remotes/origin/sentinel-csv-injection-fix-15525481074093328612)
+- CRITICAL: Fix CSV Injection vulnerability (Source: remotes/origin/sentinel-csv-injection-fix-16486355164975308903)
+- CRITICAL: Fix CSV Injection vulnerability in scraper (Source: remotes/origin/sentinel-csv-injection-fix-17111531682822942428)
+- CRITICAL: Fix CSV Formula Injection in scraper.py (Source: remotes/origin/sentinel-csv-injection-fix-17183412811193110878)
+- CRITICAL: Fix CSV Formula Injection in Scraper (Source: remotes/origin/sentinel-csv-injection-fix-173522705526840343)
+- CRITICAL: Fix CSV Injection vulnerability (Source: remotes/origin/sentinel-csv-injection-fix-17447751349152713566)
+- MEDIUM: Fix CSV Formula Injection in scraper (Source: remotes/origin/sentinel-csv-injection-fix-18101383076845295276)
+- HIGH: Fix CSV Injection vulnerability (Source: remotes/origin/sentinel-csv-injection-fix-18110555379625017064)
+- CRITICAL: Fix CSV Injection in scraper (Source: remotes/origin/sentinel-csv-injection-fix-18436195312292293727)
+- HIGH: Fix CSV Injection vulnerability (Source: remotes/origin/sentinel-csv-injection-fix-2367946494447138013)
+- MEDIUM: Fix CSV Injection vulnerability in scraper (Source: remotes/origin/sentinel-csv-injection-fix-2649491938498643870)
+- HIGH: Fix CSV injection vulnerability (Source: remotes/origin/sentinel-csv-injection-fix-322900077655964364)
+- HIGH: Fix CSV Injection vulnerability (Source: remotes/origin/sentinel-csv-injection-fix-3372756158524792787)
+- HIGH: Fix CSV Injection vulnerability (Source: remotes/origin/sentinel-csv-injection-fix-3642945773278234521)
+- HIGH: Fix CSV Injection vulnerability (Source: remotes/origin/sentinel-csv-injection-fix-3645820419479198365)
+- HIGH: Fix CSV Injection vulnerability (Source: remotes/origin/sentinel-csv-injection-fix-4282466816023869874)
+- HIGH: Fix CSV Injection vulnerability in scraper (Source: remotes/origin/sentinel-csv-injection-fix-4585330664271559396)
+- CRITICAL: Fix CSV injection vulnerability in scraper (Source: remotes/origin/sentinel-csv-injection-fix-470987651178611651)
+- MEDIUM: Fix CSV Injection vulnerability in scraper (Source: remotes/origin/sentinel-csv-injection-fix-4827530763294816913)
+- CRITICAL: Fix CSV injection vulnerability in scraper (Source: remotes/origin/sentinel-csv-injection-fix-5620695880031672864)
+- HIGH: Fix CSV Injection vulnerability (Source: remotes/origin/sentinel-csv-injection-fix-6097070558699072843)
+- CRITICAL: Fix CSV Injection vulnerability in scraper (Source: remotes/origin/sentinel-csv-injection-fix-6507758882169212767)
+- CRITICAL: Fix CSV Injection in Scraper (Source: remotes/origin/sentinel-csv-injection-fix-7147169420011568758)
+- HIGH: Fix CSV Injection vulnerability in scraper (Source: remotes/origin/sentinel-csv-injection-fix-7180554626673421136)
+- HIGH: Fix CSV Injection vulnerability (Source: remotes/origin/sentinel-csv-injection-fix-739509856525276517)
+- HIGH: Fix CSV Injection vulnerability in scraper (Source: remotes/origin/sentinel-csv-injection-fix-759890926967212504)
+- CRITICAL: Fix CSV Injection in Scraper (Source: remotes/origin/sentinel-csv-injection-fix-7887612146044764431)
+- MEDIUM: Fix CSV Injection vulnerability (Source: remotes/origin/sentinel-csv-injection-fix-8672779981271268413)
+- HIGH: Fix CSV Injection vulnerability in scraper (Source: remotes/origin/sentinel-csv-injection-fix-8804107294486031886)
+- HIGH: Fix CSV Formula Injection (Source: remotes/origin/sentinel-csv-injection-fix-8806247147444025249)
+- HIGH: Fix CSV Injection vulnerability (Source: remotes/origin/sentinel-csv-injection-fix-9409254303197152043)
+- CRITICAL: Fix CSV Injection in scraper (Source: remotes/origin/sentinel-csv-injection-fix-9914982601243693922)
+- CRITICAL: Fix CSV Injection vulnerability in scraper.py (Source: remotes/origin/sentinel-fix-csv-injection-10197426659133330232)
+- CRITICAL: Fix CSV Injection vulnerability in scraper.py (Source: remotes/origin/sentinel-fix-csv-injection-10464065853925467841)
+- MEDIUM: Fix CSV Injection vulnerability (Source: remotes/origin/sentinel-fix-csv-injection-11037533236384530390)
+- HIGH: Fix CSV Injection (Source: remotes/origin/sentinel-fix-csv-injection-13633884253574264448)
+- CRITICAL: Fix CSV Injection vulnerability (Source: remotes/origin/sentinel-fix-csv-injection-14114537918126303723)
+- CRITICAL: Fix CSV Injection vulnerability (Source: remotes/origin/sentinel-fix-csv-injection-14543086347564108493)
+- CRITICAL: Fix CSV Injection in scraper (Source: remotes/origin/sentinel-fix-csv-injection-15309749905560169066)
+- HIGH: Fix CSV Injection in Scraper (Source: remotes/origin/sentinel-fix-csv-injection-16995034832963539276)
+- HIGH: Fix CSV Injection in scraper (Source: remotes/origin/sentinel-fix-csv-injection-2231238030429809287)
+- HIGH: Fix CSV Injection vulnerability (Source: remotes/origin/sentinel-fix-csv-injection-2402028977967656957)
+- HIGH: Fix CSV Injection vulnerability (Source: remotes/origin/sentinel-fix-csv-injection-4507642298066037592)
+- CRITICAL: Fix CSV Injection in scraper output (Source: remotes/origin/sentinel-fix-csv-injection-5798817782401239409)
+- HIGH: Fix CSV Injection in Scraper (Source: remotes/origin/sentinel-fix-csv-injection-7376886150336937618)
+- HIGH: Fix CSV Injection vulnerability (Source: remotes/origin/sentinel-fix-csv-injection-9652304579813962192)
+- MEDIUM: Fix Unbounded Scraping Requests in `scrape_informatic.py` (Source: remotes/origin/sentinel-fix-dos-scrape-informatic-6075769755342439148)
+- HIGH: Fix Markdown injection in analytics report (Source: remotes/origin/sentinel-fix-markdown-injection-18133297793763601152)
+- HIGH: Fix Markdown Injection in Reports (Source: remotes/origin/sentinel-fix-markdown-injection-477337563318989740)
+- MEDIUM: Fix Markdown injection in analytics report (Source: remotes/origin/sentinel-fix-markdown-injection-8681751187497699731)
+- CRITICAL: Fix path traversal in file download (Source: remotes/origin/sentinel-fix-path-traversal-10046544138462922136)
+- CRITICAL: Fix Path Traversal in scraper.py (Source: remotes/origin/sentinel-fix-path-traversal-11151724369375188674)
+- HIGH: Fix path traversal in file output (Source: remotes/origin/sentinel-fix-path-traversal-11747719043464611104)
+- CRITICAL: Fix Path Traversal in output file handling (Source: remotes/origin/sentinel-fix-path-traversal-13097985426424939248)
+- CRITICAL: Fix path traversal in scraper output (Source: remotes/origin/sentinel-fix-path-traversal-scraper-5008528989288231016)
+- CRITICAL: Fix SSRF vulnerability in scraper (Source: remotes/origin/sentinel-fix-ssrf-12489127144822087081)
+- HIGH: Fix SSRF vulnerability in scraper (Source: remotes/origin/sentinel-fix-ssrf-15051376789843126320)
+- CRITICAL: Fix SSRF in scraper pagination (Source: remotes/origin/sentinel-fix-ssrf-6066388601659048152)
+- HIGH: Fix SSRF/Scope Creep in Scraper (Source: remotes/origin/sentinel-fix-ssrf-scope-creep-7819911338616714080)
+- HIGH: Fix SSRF in scraper (Source: remotes/origin/sentinel-fix-ssrf-scraper-11819724564068421400)
+- HIGH: Fix SSRF vulnerability in BlogScraper (Source: remotes/origin/sentinel-fix-ssrf-scraper-13895071583699444516)
+- HIGH: Fix unsafe URL extraction in scraper (Source: remotes/origin/sentinel-fix-unsafe-url-extraction-2825055263495837340)
+- HIGH: Fix Stored XSS in ContentCreationAgent (Source: remotes/origin/sentinel-fix-xss-content-agent-7343531926858651240)
+- HIGH: Fix Stored XSS in scraper (Source: remotes/origin/sentinel-fix-xss-scraper-6801267101093428567)
+- HIGH: Fix Stored XSS vulnerability in scraper (Source: remotes/origin/sentinel-fix-xss-scraper-7020460309446305791)
+- MEDIUM: Fix Markdown Injection and XSS in Analytics Report (Source: remotes/origin/sentinel-markdown-sanitization-7412755230245189501)
+- CRITICAL: Fix path traversal in scraper scripts (Source: remotes/origin/sentinel-path-traversal-fix-10456735655567635784)
+- HIGH: Fix path traversal in ResearcherAgent (Source: remotes/origin/sentinel-path-traversal-fix-14234483393294961327)
+- CRITICAL: Fix Path Traversal in Scraper (Source: remotes/origin/sentinel-path-traversal-fix-16876609028682252936)
+- MEDIUM: Fix DoS risk in scraper (Source: remotes/origin/sentinel-scraper-dos-protection-6869785927635506295)
+- HIGH: Fix unsafe URL scheme extraction in scraper (Source: remotes/origin/sentinel-security-fix-url-validation-15877893798096309132)
+- CRITICAL/MEDIUM: Fix Path Traversal and CSV Injection in scraper.py (Source: remotes/origin/sentinel-security-fixes-9176948662016609493)
+- HIGH: Prevent SSRF in scraper (Source: remotes/origin/sentinel-ssrf-fix-14822598003080253673)
+- HIGH: Fix SSRF vulnerability in scraper (Source: remotes/origin/sentinel-ssrf-fix-3696920812745344524)
+- HIGH: Fix SSRF in scraper pagination (Source: remotes/origin/sentinel-ssrf-fix-3716478283625253282)
+- HIGH: Fix SSRF vulnerability in scraper (Source: remotes/origin/sentinel-ssrf-fix-4537331546277807709)
+- MEDIUM: Fix missing timeout in scraper (Source: remotes/origin/sentinel-timeout-fix-6727440236869099341)
+- HIGH: Sanitize scraped URLs to prevent XSS (Source: remotes/origin/sentinel-url-sanitization-3468833797875970492)
+- CRITICAL: Fix CSV Injection vulnerability in scraper (Source: remotes/origin/sentinel/fix-csv-injection-10353048706525775384)
+- CRITICAL: Fix CSV Injection vulnerability in scraper (Source: remotes/origin/sentinel/fix-csv-injection-11137622632039534003)
+- MEDIUM: Fix CSV Injection vulnerability in scraper (Source: remotes/origin/sentinel/fix-csv-injection-1271702522999364117)
+- CRITICAL: Fix CSV injection vulnerability in scraper (Source: remotes/origin/sentinel/fix-csv-injection-14785501448313010884)
+- CRITICAL: Fix CSV injection in scraper (Source: remotes/origin/sentinel/fix-csv-injection-18292111345999615126)
+- CRITICAL: Fix CSV Injection in Scraper (Source: remotes/origin/sentinel/fix-csv-injection-2795873645337088864)
+- HIGH: Fix CSV Injection in scraper output (Source: remotes/origin/sentinel/fix-csv-injection-3791034134137478787)
+- HIGH: Fix CSV Injection in scraper output (Source: remotes/origin/sentinel/fix-csv-injection-3861579726719101131)
+- HIGH: Fix CSV Injection in scraper (Source: remotes/origin/sentinel/fix-csv-injection-5756251649576385500)
+- HIGH: Prevent CSV Injection in scraper (Source: remotes/origin/sentinel/fix-csv-injection-5998751836772194145)
+- HIGH: Fix CSV Injection in Scraper (Source: remotes/origin/sentinel/fix-csv-injection-8718980999403222499)
+- CRITICAL: Fix CSV Injection vulnerability in scraper output (Source: remotes/origin/sentinel/fix-csv-injection-9210533501834948716)
+- HIGH: Fix Markdown injection in analytics report (Source: remotes/origin/sentinel/fix-markdown-injection-16528079574555238506)
+- CRITICAL: Fix Path Traversal in scrape_informatic.py (Source: remotes/origin/sentinel/fix-path-traversal-13515095468763134399)
+- CRITICAL: Fix Path Traversal in Scrapers (Source: remotes/origin/sentinel/fix-path-traversal-1539865993913556303)
+- CRITICAL: Fix Path Traversal in scraper.py (Source: remotes/origin/sentinel/fix-path-traversal-7103619358321639504)
+- MEDIUM: Fix missing timeout in HTTP requests (Source: remotes/origin/sentinel/fix-request-timeout-14772585893024475880)
+
+## 🌿 Branch Map by Tag
+- **ROADMAP:PHASE-12**: remotes/origin/feat/cloud-native-autonomy-3438116551041896813, remotes/origin/fix/autonomous-evolution-1779764401136
+- **MEDIUM**: remotes/origin/sentinel-analytics-security-4671865652902331047, remotes/origin/sentinel-csv-injection-fix-18101383076845295276, remotes/origin/sentinel-csv-injection-fix-2649491938498643870, remotes/origin/sentinel-csv-injection-fix-4827530763294816913, remotes/origin/sentinel-csv-injection-fix-8672779981271268413, remotes/origin/sentinel-fix-csv-injection-11037533236384530390, remotes/origin/sentinel-fix-dos-scrape-informatic-6075769755342439148, remotes/origin/sentinel-fix-markdown-injection-8681751187497699731, remotes/origin/sentinel-markdown-sanitization-7412755230245189501, remotes/origin/sentinel-scraper-dos-protection-6869785927635506295, remotes/origin/sentinel-timeout-fix-6727440236869099341, remotes/origin/sentinel/fix-csv-injection-1271702522999364117, remotes/origin/sentinel/fix-request-timeout-14772585893024475880
+- **HIGH**: remotes/origin/sentinel-csv-injection-11171345795536949565, remotes/origin/sentinel-csv-injection-fix-10533494504783963835, remotes/origin/sentinel-csv-injection-fix-10553252584862984034, remotes/origin/sentinel-csv-injection-fix-12502953329308944649, remotes/origin/sentinel-csv-injection-fix-12825710681451950296, remotes/origin/sentinel-csv-injection-fix-15525481074093328612, remotes/origin/sentinel-csv-injection-fix-18110555379625017064, remotes/origin/sentinel-csv-injection-fix-2367946494447138013, remotes/origin/sentinel-csv-injection-fix-322900077655964364, remotes/origin/sentinel-csv-injection-fix-3372756158524792787, remotes/origin/sentinel-csv-injection-fix-3642945773278234521, remotes/origin/sentinel-csv-injection-fix-3645820419479198365, remotes/origin/sentinel-csv-injection-fix-4282466816023869874, remotes/origin/sentinel-csv-injection-fix-4585330664271559396, remotes/origin/sentinel-csv-injection-fix-6097070558699072843, remotes/origin/sentinel-csv-injection-fix-7180554626673421136, remotes/origin/sentinel-csv-injection-fix-739509856525276517, remotes/origin/sentinel-csv-injection-fix-759890926967212504, remotes/origin/sentinel-csv-injection-fix-8804107294486031886, remotes/origin/sentinel-csv-injection-fix-8806247147444025249, remotes/origin/sentinel-csv-injection-fix-9409254303197152043, remotes/origin/sentinel-fix-csv-injection-13633884253574264448, remotes/origin/sentinel-fix-csv-injection-16995034832963539276, remotes/origin/sentinel-fix-csv-injection-2231238030429809287, remotes/origin/sentinel-fix-csv-injection-2402028977967656957, remotes/origin/sentinel-fix-csv-injection-4507642298066037592, remotes/origin/sentinel-fix-csv-injection-7376886150336937618, remotes/origin/sentinel-fix-csv-injection-9652304579813962192, remotes/origin/sentinel-fix-markdown-injection-18133297793763601152, remotes/origin/sentinel-fix-markdown-injection-477337563318989740, remotes/origin/sentinel-fix-path-traversal-11747719043464611104, remotes/origin/sentinel-fix-ssrf-15051376789843126320, remotes/origin/sentinel-fix-ssrf-scope-creep-7819911338616714080, remotes/origin/sentinel-fix-ssrf-scraper-11819724564068421400, remotes/origin/sentinel-fix-ssrf-scraper-13895071583699444516, remotes/origin/sentinel-fix-unsafe-url-extraction-2825055263495837340, remotes/origin/sentinel-fix-xss-content-agent-7343531926858651240, remotes/origin/sentinel-fix-xss-scraper-6801267101093428567, remotes/origin/sentinel-fix-xss-scraper-7020460309446305791, remotes/origin/sentinel-path-traversal-fix-14234483393294961327, remotes/origin/sentinel-security-fix-url-validation-15877893798096309132, remotes/origin/sentinel-ssrf-fix-14822598003080253673, remotes/origin/sentinel-ssrf-fix-3696920812745344524, remotes/origin/sentinel-ssrf-fix-3716478283625253282, remotes/origin/sentinel-ssrf-fix-4537331546277807709, remotes/origin/sentinel-url-sanitization-3468833797875970492, remotes/origin/sentinel/fix-csv-injection-3791034134137478787, remotes/origin/sentinel/fix-csv-injection-3861579726719101131, remotes/origin/sentinel/fix-csv-injection-5756251649576385500, remotes/origin/sentinel/fix-csv-injection-5998751836772194145, remotes/origin/sentinel/fix-csv-injection-8718980999403222499, remotes/origin/sentinel/fix-markdown-injection-16528079574555238506
+- **CRITICAL**: remotes/origin/sentinel-csv-injection-196586466427306611, remotes/origin/sentinel-csv-injection-fix-10726122690278576956, remotes/origin/sentinel-csv-injection-fix-10929502802886218209, remotes/origin/sentinel-csv-injection-fix-11406993561405723358, remotes/origin/sentinel-csv-injection-fix-13230148290788168806, remotes/origin/sentinel-csv-injection-fix-1369174769441350864, remotes/origin/sentinel-csv-injection-fix-13940069351560810244, remotes/origin/sentinel-csv-injection-fix-15245071254079934303, remotes/origin/sentinel-csv-injection-fix-16486355164975308903, remotes/origin/sentinel-csv-injection-fix-17111531682822942428, remotes/origin/sentinel-csv-injection-fix-17183412811193110878, remotes/origin/sentinel-csv-injection-fix-173522705526840343, remotes/origin/sentinel-csv-injection-fix-17447751349152713566, remotes/origin/sentinel-csv-injection-fix-18436195312292293727, remotes/origin/sentinel-csv-injection-fix-470987651178611651, remotes/origin/sentinel-csv-injection-fix-5620695880031672864, remotes/origin/sentinel-csv-injection-fix-6507758882169212767, remotes/origin/sentinel-csv-injection-fix-7147169420011568758, remotes/origin/sentinel-csv-injection-fix-7887612146044764431, remotes/origin/sentinel-csv-injection-fix-9914982601243693922, remotes/origin/sentinel-fix-csv-injection-10197426659133330232, remotes/origin/sentinel-fix-csv-injection-10464065853925467841, remotes/origin/sentinel-fix-csv-injection-14114537918126303723, remotes/origin/sentinel-fix-csv-injection-14543086347564108493, remotes/origin/sentinel-fix-csv-injection-15309749905560169066, remotes/origin/sentinel-fix-csv-injection-5798817782401239409, remotes/origin/sentinel-fix-path-traversal-10046544138462922136, remotes/origin/sentinel-fix-path-traversal-11151724369375188674, remotes/origin/sentinel-fix-path-traversal-13097985426424939248, remotes/origin/sentinel-fix-path-traversal-scraper-5008528989288231016, remotes/origin/sentinel-fix-ssrf-12489127144822087081, remotes/origin/sentinel-fix-ssrf-6066388601659048152, remotes/origin/sentinel-path-traversal-fix-10456735655567635784, remotes/origin/sentinel-path-traversal-fix-16876609028682252936, remotes/origin/sentinel/fix-csv-injection-10353048706525775384, remotes/origin/sentinel/fix-csv-injection-11137622632039534003, remotes/origin/sentinel/fix-csv-injection-14785501448313010884, remotes/origin/sentinel/fix-csv-injection-18292111345999615126, remotes/origin/sentinel/fix-csv-injection-2795873645337088864, remotes/origin/sentinel/fix-csv-injection-9210533501834948716, remotes/origin/sentinel/fix-path-traversal-13515095468763134399, remotes/origin/sentinel/fix-path-traversal-1539865993913556303, remotes/origin/sentinel/fix-path-traversal-7103619358321639504
+- **CRITICAL/MEDIUM**: remotes/origin/sentinel-security-fixes-9176948662016609493
 
-## Compile
-
-To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.
-
-### Key Definitions of Compile
-
-- **Gathering Information**: To collect and put together data, facts, or documents (e.g., to compile a report or compile a list).
-- **Creating Works**: To produce a book, anthology, or database from various materials.
-- **Computing**: To convert high-level programming code (like C++ or Java) into machine code, allowing a computer to execute the program.
-
-### Usage Examples
-
-- "She is compiling a list of clients for the newsletter."
-- "It took years to compile the dictionary."
-- "The developer needs to compile the code before running the application."
-
-### Synonyms
-
-- Assemble
-- Collect
-- Gather
-- Compose
-- Accumulate
-- Organize
-- Synthesize
-
-### Contextual Usage
-
-- **General**: Focuses on the act of assembling information or materials (e.g., compile a report).
-- **Computing**: Focuses on the automatic transformation of code using a tool known as a compiler.
-
-## Knowledge Merge
-
-Knowledge Merge is a process or document that merges key concepts currently spread across Antigravity, Project SOR, the live software-online-review.com domain, and the new software-review-platform starter. It creates one canonical map of what each layer is, what role it plays, and how the project should evolve.
-# Knowledge Merge
-
-## Purpose
-
-This document merges the key concepts currently spread across Antigravity, Project SOR, the live `software-online-review.com` domain, and the new `software-review-platform` starter.
-
-The goal is to create one canonical map of what each layer is, what role it plays, and how the project should evolve.
-
-## Executive Summary
-
-The workspace currently contains multiple overlapping identities:
-
-- Antigravity
-- Project SOR
-- `software-online-review.com`
-- `software-review-platform`
-- `markposition.wordpress.com`
-
-These are not separate businesses. They are five layers of the same evolving asset.
-
-## Canonical Interpretation
-
-### Antigravity
-
-Antigravity appears to represent the broader operating system, agentic logic layer, and internal platform vision.
-
-Examples found in the repo:
-
-- `web-app/app/antigravity`
-- `web-app/scripts/antigravity-cortex.js`
-- `web-app/data/antigravity-state.json`
-- `web-app/data/antigravity_vision_manifest.md`
-
-Canonical role:
-
-- internal intelligence layer
-- automation and orchestration layer
-- long-term system vision
-
-### Project SOR
-
-Project SOR is the brand and conceptual product identity around `software-online-review.com`.
-
-Examples found in the repo:
-
-- root Next app metadata and pages
-- `src/app/page.js`
-- `src/app/about/page.js`
-- `src/app/blog/*`
-
-Canonical role:
-
-- public-facing brand narrative
-- content and editorial layer
-- bridge between legacy content and future product
-
-### software-online-review.com
-
-This is the actual live domain and public web asset.
-
-Observed current state:
-
-- content-heavy site
-- WordPress-like publishing structure
-- broad topic coverage
-- mixed content and product intent
-
-Canonical role:
-
-- current public domain
-- traffic and SEO asset
-- existing trust surface for future migration
-
-### software-review-platform
-
-This is the cleanest current implementation of the future product direction.
-
-Examples found in the repo:
-
-- `software-review-platform/README.md`
-- `software-review-platform/PRODUCT.md`
-- `software-review-platform/PITCH.md`
-- `software-review-platform/MIGRATION.md`
-
-Canonical role:
-
-- new review engine
-- MVP product foundation
-- structured application layer for the future platform
-
-### markposition.wordpress.com
-
-This is the market intelligence and external data source layer.
-
-Examples found in the repo:
-
-- `scraper.py`
-- `analytics.py`
-- `links.json` and `REPORT.md`
-
-Canonical role:
-
-- market intelligence layer
-- data source for tracking ad tech, CMS, and marketing tools
-- external trend analysis feeding the intelligence system
-
-## Recommended Unified Model
-
-The best working model is:
-
-- Antigravity = intelligence and system layer
-- Project SOR = brand and editorial layer
-- `software-online-review.com` = current public distribution layer
-- `software-review-platform` = future product engine
-- `markposition.wordpress.com` = market intelligence and data source layer
-
-This gives the project a coherent internal structure instead of five competing interpretations.
-
-## How These Layers Connect
-
-### Operational Layer
-
-Antigravity should remain the internal logic and orchestration system.
-
-It can eventually support:
-
-- moderation intelligence
-- automation (Automated Market Intelligence Ingestion from markposition.wordpress.com enabled)
-- internal workflows
-- content and data operations
-
-### Public Brand Layer
-
-Project SOR should communicate the bigger idea:
-
-- software discovery
-- trust in reviews
-- modern software intelligence
-
-This is where narrative, editorial direction, and product positioning live.
-
-### Public Domain Layer
-
-`software-online-review.com` should remain the discoverable public shell during migration.
-
-This layer should:
-
-- keep current traffic alive
-- explain the product
-- route users into the new app
-
-### Product Layer
-
-`software-review-platform` should become the actual application where:
-
-- software is listed
-- users authenticate
-- reviews are submitted
-- moderation happens
-- comments and ratings live
-
-### Market Intelligence Layer
-
-`markposition.wordpress.com` serves as the external ear of the system where:
-
-- the automated TypeScript ingestion script (`scripts/ingest_markposition_knowledge.ts`) fetches and merges the latest industry intelligence during each autonomous work cycle.
-- analytics generate reports on market trends
-- the structured data directly updates the `market_data` section in the unified `system_knowledge.json`.
-
-## Architectural Direction
-
-Short term:
-
-- keep the current public site
-- deploy the new app separately
-- connect them through links and navigation
-
-Mid term:
-
-- make the app the center of review functionality
-- reduce public confusion between content and product flows
-
-Long term:
-
-- decide whether the platform remains content-plus-app
-- or becomes fully app-first
-
-## Naming Guidance
-
-To reduce confusion, use this naming consistently:
-
-- Antigravity: internal platform or intelligence system
-- Project SOR: brand and strategic initiative
-- Software Review Platform: product implementation
-- `software-online-review.com`: public domain and customer-facing distribution point
-- Markposition Scraper & Analytics: market intelligence toolset capturing data from `markposition.wordpress.com`
-
-## Product Implications
-
-This merged view suggests:
-
-- the review platform should be treated as the product core
-- the current live site should be treated as the distribution bridge
-- Antigravity should not be mixed directly into MVP UX unless it adds clear value
-- Project SOR should help unify messaging rather than introduce extra structural complexity
-
-## Risks
-
-Current risk areas:
-
-- too many overlapping identities
-- unclear boundary between legacy and future code
-- confusion between content platform and application platform
-- sensitive infrastructure files potentially stored in repo
-
-## Recommendation
-
-Going forward, treat `software-review-platform` as the canonical MVP implementation and use the rest of the workspace as support context around it.
-
-Everything else should be evaluated by whether it helps:
-
-- product clarity
-- migration safety
-- trust-first positioning
-- practical delivery
-
-
-## Autonomous Observation
-- **Date**: 2026-05-14T00:11:55.884Z
-- **Target**: https://software-online-review.com
-- **Title**: software info by fk – software-online-review – Filip Keser
-- **Relationship Map**: Confirmed overlapping identities between Antigravity, Project SOR, software-online-review.com, software-review-platform, and markposition.wordpress.com as the formal Market Intelligence layer.
-## Autonomous Observation
-- **Date**: 2026-05-18T16:31:30.816Z
-- **Target**: https://markposition.wordpress.com
-- **Title**: (position) mRNA
-- **Relationship Map**: Confirmed overlapping identities between Antigravity, Project SOR, software-online-review.com, software-review-platform, and markposition.wordpress.com as the formal Market Intelligence layer.
-## Autonomous Observation
-- **Date**: 2026-05-19T23:11:27.645Z
-- **Target**: https://localhost.co/tools/
-- **Title**: Developer Tools - LocalHost.Co
-- **Relationship Map**: Confirmed overlapping identities between Antigravity, Project SOR, software-online-review.com, software-review-platform, and markposition.wordpress.com as the formal Market Intelligence layer.
-
-
-
-## iCloud Integration (8bukets & antigravity)
-**Date:** 2026-05-19
-
-- **Antigravity Architecture**: The iCloud notes indicate a need for deeper integration between the TypeScript autonomous engine and the Python orchestration cycle. Specifically, WorkOrder synchronization between MongoDB and local JSON files should be optimized using a unified Cloud sync service.
-- **8Bukets Knowledge**: Data from the 8bukets folders suggests that SystemAuditAgent and ChiefAIOfficer should have explicit 'recovery' phases integrated directly into their feedback loop, bypassing manual interventions entirely.
-- **Creativity Enhancement**: A core finding from the iCloud documents is that the CreativityAgent should not only suggest abstract concepts but should map those concepts directly to executable Work Orders in the queue.
-## Autonomous Observation
-- **Date**: 2026-05-20T08:51:38.680Z
-- **Target**: https://cloud.google.com/discover/what-are-ai-agents
-- **Title**: What are AI agents? Definition, examples, and types | Google Cloud
-- **Context**: Ingested comprehensive definition and architectural overview of AI agents from Google Cloud documentation to ground the project's agentic logic in industry standards.
 ---
-
-## Autonomous Observation
-- **Date**: 2026-05-21T11:37:07.784Z
-- **Target**: https://www.forbes.com/business/
-- **Title**: Business
-- **Context**: Ingested and observed external market or technical intelligence from https://www.forbes.com/business/.
-## Autonomous Observation
-- **Date**: 2026-05-21T11:37:08.054Z
-- **Target**: https://www.forbes.com/innovation/
-- **Title**: Innovation
-- **Context**: Ingested and observed external market or technical intelligence from https://www.forbes.com/innovation/.
-## Autonomous Observation
-- **Date**: 2026-05-21T11:37:08.329Z
-- **Target**: https://www.forbes.com/money/
-- **Title**: Money
-- **Context**: Ingested and observed external market or technical intelligence from https://www.forbes.com/money/.
-# 📊 Markposition Analytics Report
-<a name='table-of-contents'></a>
-
-**Generated on:** 2026-05-21 16:21:58
-
-## Table of Contents
-* [General Statistics](#general-statistics)
-* [Top 10 Referenced Domains](#top-10-referenced-domains)
-* [Top 10 Categories](#top-10-categories)
-* [Posts by Year](#posts-by-year)
-* [Authors](#authors)
-
-<a name='general-statistics'></a>
-## 📈 General Statistics
-- **Total Posts:** 679
-- **Date Range:** 2020-05-19 to 2022-10-05
-- **Unique Domains Linked:** 367
-
-[Back to Top](#table-of-contents)
-
-<a name='top-10-referenced-domains'></a>
-## 🌐 Top 10 Referenced Domains
-
-## Table of Contents
-- [📊 General Statistics](#general-statistics)
-- [🌐 Top 10 Referenced Domains](#top-10-referenced-domains)
-- [📂 Top 10 Categories](#top-10-categories)
-- [📅 Posts by Year](#posts-by-year)
-- [✍️ Authors](#authors)
-
-## 📊 General Statistics
-- **Total Posts:** 679
-- **Date Range:** 2020-05-19 to 2022-10-05
-- **Unique Domains Linked:** 367
-
-> 💡 **Highlight:** The most referenced domain is **skillshop.exceedlms.com** with 23 links.
-
-[Back to Top](#table-of-contents)
-
-## 🌐 Top 10 Referenced Domains
-| Domain | Count |
-| :--- | :---: |
-| skillshop.exceedlms.com | 23 |
-| support.google.com | 21 |
-| youtube.com | 18 |
-| advertising.amazon.com | 16 |
-| en.wikipedia.org | 14 |
-| google.com | 13 |
-| web.facebook.com | 12 |
-| developers.google.com | 11 |
-| trustarc.com | 11 |
-| ads.google.com | 10 |
-
-[Back to Top](#table-of-contents)
-
-<a name='top-10-categories'></a>
-## 📂 Top 10 Categories
-
-## 📂 Top 10 Categories
-| Category | Count |
-| :--- | :---: |
-| Ad Ads Advertise | 660 |
-| Promotion | 14 |
-| Ads | 4 |
-| Advertise | 3 |
-| Advertising | 3 |
-| Online | 2 |
-
-[Back to Top](#table-of-contents)
-
-<a name='posts-by-year'></a>
-## 📅 Posts by Year
-
-## 📅 Posts by Year
-| Year | Count |
-| :--- | :---: |
-| 2022 | 235 |
-| 2021 | 190 |
-| 2020 | 254 |
-
-[Back to Top](#table-of-contents)
-
-<a name='authors'></a>
-## ✍️ Authors
-- Filip Keser: 679 posts
-
-## Top 10 Referenced Domains
-| Domain | Count | Distribution |
-| :--- | :---: | :--- |
-| skillshop.exceedlms.com | 23 | ████████████████████ |
-| support.google.com | 21 | ██████████████████░░ |
-| youtube.com | 18 | ████████████████░░░░ |
-| advertising.amazon.com | 16 | ██████████████░░░░░░ |
-| en.wikipedia.org | 14 | ████████████░░░░░░░░ |
-| google.com | 13 | ███████████░░░░░░░░░ |
-| web.facebook.com | 12 | ██████████░░░░░░░░░░ |
-| developers.google.com | 11 | ██████████░░░░░░░░░░ |
-| trustarc.com | 11 | ██████████░░░░░░░░░░ |
-| ads.google.com | 10 | █████████░░░░░░░░░░░ |
-
-## Top 10 Categories
-| Category | Count | Distribution |
-| :--- | :---: | :--- |
-| Ad Ads Advertise | 660 | ████████████████████ |
-| Promotion | 14 | ░░░░░░░░░░░░░░░░░░░░ |
-| Ads | 4 | ░░░░░░░░░░░░░░░░░░░░ |
-| Advertise | 3 | ░░░░░░░░░░░░░░░░░░░░ |
-| Advertising | 3 | ░░░░░░░░░░░░░░░░░░░░ |
-| Online | 2 | ░░░░░░░░░░░░░░░░░░░░ |
-
-## Posts by Year
-| Year | Count | Distribution |
-| :--- | :---: | :--- |
-| 2022 | 235 | ███████████████████░ |
-| 2021 | 190 | ███████████████░░░░░ |
-| 2020 | 254 | ████████████████████ |
-
-## ✍️ Authors
-- **Filip Keser**: 679 posts
-
-[Back to Top](#table-of-contents)
-
-## Autonomous Observation
-- **Date**: 2026-05-23T19:24:11.523Z
-- **Target**: https://example.com
-- **Title**: Example Domain
-- **Context**: Ingested and observed external market or technical intelligence from https://example.com.
-- **Summary**:
-Example DomainThis domain is for use in documentation examples without needing permission. Avoid use in operations.Learn more...
-
-
-
-## Autonomous Observation
-- **Date**: 2026-05-24T09:36:28.136Z
-- **Target**: https://www.investopedia.com/
-- **Title**: Investopedia
-- **Context**: Ingested and observed external market or technical intelligence from https://www.investopedia.com/.
-- **Summary**:
-​ <iframe src="//www.googletagmanager.com/ns.html?id=GTM-5P3SZGS" height="0" width="0" style="display:none;visibility:hidden"></iframe> SpaceX Is Lining Up a Huge IPO. Big Deals Don't Guarantee Big Returns. By Peter Gratton 1 day ago Related Wall Street Is Getting More Bullish on Stocks Despite Risks Dow Hits Record High; S&P 500 Logs 8th Straight Week of Gains Has Nvidia Stock Lost Its Edge With AI Investors? Jeff Bezos Has a Tax Plan. Here's How It Might Look. The Amazon.com billionaire this w...
-
 All the best - https://markposition.wordpress.com

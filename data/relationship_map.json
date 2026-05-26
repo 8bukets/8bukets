@@ -1,0 +1,451 @@
+{
+  "agents": [
+    {
+      "id": "ads_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "analysis_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "architect_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "auth.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "autonomous_decision_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "autonomous_intelligence_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "backup_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "base_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "bid_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "chief_ai_officer_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "cloud_workflow_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "collaboration_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "content_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "creativity_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "docker_evolution_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "documentation_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "github_evolution_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "gitkraken_evolution_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "gitlab_evolution_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "google_edge_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "google_innovation_ai_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "google_models_research_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "health_check_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "intelephense_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "intelligence_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "jenkins_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "jules_evolution_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "knowledge_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "knowledge_merge_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "meta_coding_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "monetization_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "mongodb_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "mysql_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "orchestrator.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "performance_optimization_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "rag_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "react_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "research_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "robot_txt_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "sandbox_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "sigma_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "swarm_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "system_audit_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "targeting_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "telemetry.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "telemetry_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "thinking_agent.py",
+      "type": "python",
+      "status": "active"
+    },
+    {
+      "id": "work_order_agent.py",
+      "type": "python",
+      "status": "active"
+    }
+  ],
+  "documentation": [
+    {
+      "id": "AGENTS.md",
+      "location": "root"
+    },
+    {
+      "id": "CONSOLIDATED_INTELLIGENCE.md",
+      "location": "root"
+    },
+    {
+      "id": "CONSOLIDATED_KNOWLEDGE.md",
+      "location": "root"
+    },
+    {
+      "id": "CONTRIBUTING.md",
+      "location": "root"
+    },
+    {
+      "id": "JULES_CLI.md",
+      "location": "root"
+    },
+    {
+      "id": "JULES_TOOLS.md",
+      "location": "root"
+    },
+    {
+      "id": "KNOWLEDGE_INTEGRATION.md",
+      "location": "root"
+    },
+    {
+      "id": "KNOWLEDGE_MERGE.md",
+      "location": "root"
+    },
+    {
+      "id": "MARKPOSITION_REPORT.md",
+      "location": "root"
+    },
+    {
+      "id": "PACKAGE_OVERVIEW.md",
+      "location": "root"
+    },
+    {
+      "id": "PROJECT_OPINION.md",
+      "location": "root"
+    },
+    {
+      "id": "PROTOCOL.md",
+      "location": "root"
+    },
+    {
+      "id": "README.md",
+      "location": "root"
+    },
+    {
+      "id": "REPORT.md",
+      "location": "root"
+    },
+    {
+      "id": "REVIEW_STATUS.md",
+      "location": "root"
+    },
+    {
+      "id": "SECURITY.md",
+      "location": "root"
+    },
+    {
+      "id": "SYSTEM_EVOLUTION.md",
+      "location": "root"
+    },
+    {
+      "id": "SYSTEM_PATENT.md",
+      "location": "root"
+    },
+    {
+      "id": "WILSON_SONSINI.md",
+      "location": "root"
+    },
+    {
+      "id": "a2a_agent_docs.md",
+      "location": "root"
+    },
+    {
+      "id": "ai_agents_knowledge.md",
+      "location": "root"
+    },
+    {
+      "id": "autonomous_workflow.md",
+      "location": "root"
+    },
+    {
+      "id": "dmr_docs.md",
+      "location": "root"
+    },
+    {
+      "id": "gemini_cli_ide_docs.md",
+      "location": "root"
+    },
+    {
+      "id": "gemini_cli_remote_agents.md",
+      "location": "root"
+    },
+    {
+      "id": "gemini_cli_subagents_docs.md",
+      "location": "root"
+    },
+    {
+      "id": "gemmafour_docs.md",
+      "location": "root"
+    },
+    {
+      "id": "glossary.md",
+      "location": "root"
+    },
+    {
+      "id": "google_ads_docs.md",
+      "location": "root"
+    },
+    {
+      "id": "google_innovation_ai_report.md",
+      "location": "root"
+    },
+    {
+      "id": "intelephense_docs.md",
+      "location": "root"
+    },
+    {
+      "id": "litert_docs.md",
+      "location": "root"
+    },
+    {
+      "id": "localhost_tools_docs.md",
+      "location": "root"
+    },
+    {
+      "id": "opentelemetry_repos.md",
+      "location": "root"
+    },
+    {
+      "id": "plan.md",
+      "location": "root"
+    },
+    {
+      "id": "render_docs.md",
+      "location": "root"
+    },
+    {
+      "id": "sharing_agents.md",
+      "location": "root"
+    },
+    {
+      "id": "stitch_docs.md",
+      "location": "root"
+    },
+    {
+      "id": "vscode_intelephense_docs.md",
+      "location": "root"
+    },
+    {
+      "id": "wilson_sonsini_docs.md",
+      "location": "root"
+    },
+    {
+      "id": "acp_integration.md",
+      "location": "docs/"
+    },
+    {
+      "id": "docker-agent-model-providers.md",
+      "location": "docs/"
+    },
+    {
+      "id": "docker_model_runner.md",
+      "location": "docs/"
+    },
+    {
+      "id": "gemini-local-dev-guide.md",
+      "location": "docs/"
+    },
+    {
+      "id": "github-pages-quickstart.md",
+      "location": "docs/"
+    },
+    {
+      "id": "wilson_sonsini.md",
+      "location": "docs/"
+    }
+  ],
+  "synergies": [
+    {
+      "pair": [
+        "EvolutionAgents",
+        "IntelligenceAgents"
+      ],
+      "type": "COGNITIVE_FEEDBACK_LOOP",
+      "intensity": 0.9,
+      "actionable_item": "Integrate real-time intelligence into autonomous refactoring cycles."
+    },
+    {
+      "pair": [
+        "CloudAgents",
+        "DevOpsPipeline"
+      ],
+      "type": "INFRASTRUCTURE_SOVEREIGNTY",
+      "intensity": 0.85,
+      "actionable_item": "Enable automated container recovery and multi-cloud failover."
+    }
+  ],
+  "timestamp": "2026-05-26T16:10:36.231Z"
+}
