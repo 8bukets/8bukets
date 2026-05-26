@@ -121,8 +121,17 @@ async function scrapeAiAgentsKnowledge() {
                     const items: string[] = [];
                     $el.find('> li').each((_, li) => {
                         const $li = $(li);
-                        const liText = $li.text().replace(/\s+/g, ' ').trim();
-                        if (liText) items.push(`- ${liText}`);
+                        // Ensure spaces between elements within the li to prevent word concatenation
+                        let liText = $li.contents().map((_, node) => {
+                            const $node = $(node);
+                            return node.type === 'text' ? $node.text() : ` ${$node.text()} `;
+                        }).get().join('').replace(/\s+/g, ' ').trim();
+
+                        if (liText) {
+                            // Specifically fix known concatenations if they still occur or for better formatting
+                            liText = liText.replace(/([a-z])([A-Z])/g, '$1 $2'); // Basic camelCase split for likely joined words
+                            items.push(`- ${liText}`);
+                        }
                     });
                     if (items.length > 0) currentContent.push(items.join('\n'));
                 } else if (tagName === 'table') {
@@ -159,7 +168,7 @@ async function scrapeAiAgentsKnowledge() {
             fs.mkdirSync(targetDir, { recursive: true });
         }
         const jsonPath = path.join(targetDir, "ai_agents_knowledge.json");
-        fs.writeFileSync(jsonPath, JSON.stringify(data, null, 4), 'utf8');
+        fs.writeFileSync(jsonPath, JSON.stringify(data, null, 2), 'utf8');
 
         const mdPath = "ai_agents_knowledge.md";
         let mdContent = `# What are AI Agents?\n\nScraped from [${URL}](${URL})\n\n`;
