@@ -21,6 +21,19 @@ class ChiefAIOfficerAgent(BaseAgent):
         infrastructure_opt = {}
         strategic_directives = []
 
+        # Phase 12 Maturity Check
+        try:
+            with open('AGENTS.md', 'r') as f:
+                agents_docs = f.read()
+                if "Phase 12: Autonomous Super-Intelligence (Current)" in agents_docs:
+                    self.logger.info("CAIO: System confirmed at Phase 12. Enabling sentient orchestration protocols.")
+                    strategic_directives.append("ACTIVATE_SENTIENT_ORCHESTRATION")
+                else:
+                    self.logger.warning("CAIO: System below Phase 12. Mandating roadmap acceleration.")
+                    strategic_directives.append("ACCELERATE_ROADMAP_UPGRADE")
+        except Exception as e:
+            self.logger.error(f"CAIO: Failed to read AGENTS.md for maturity check: {e}")
+
         if cloud_status == "DEGRADED":
             self.logger.warning("CAIO: Cloud workflow degraded. Triggering infrastructure optimization.")
             strategy_status = "RECOVERY_MODE"
