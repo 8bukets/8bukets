@@ -151,3 +151,9 @@ test-autonomous_documentation:
   script:
     - npm ci
     - npx vitest run antigravity/services/autonomous_documentation.test.ts
+
+test-test_autonomous:
+  stage: test
+  script:
+    - npm ci
+    - npx vitest run antigravity/services/test_autonomous.test.ts
