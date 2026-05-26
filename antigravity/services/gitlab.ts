@@ -7,7 +7,7 @@ export async function getGitLabMetrics() {
 
   try {
     const gitlabYamlPath = path.join(process.cwd(), '.gitlab-ci.yml')
-    if (fs.existsSync(gitlabYamlPath)) {
+    if ( fs.existsSync(gitlabYamlPath)) {
       const content = fs.readFileSync(gitlabYamlPath, 'utf8')
       const stagesMatch = content.match(/stages:\s*\n((?:\s*-\s*\w+\s*\n)+)/)
 

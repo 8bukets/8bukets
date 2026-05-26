@@ -17,12 +17,10 @@ export async function syncToICloud() {
   // Use os.homedir() to make it more portable
   const homeDir = os.homedir()
   const defaultICloudPath = path.join(homeDir, 'Library/Mobile Documents/com~apple~CloudDocs/Antigravity_Sync')
-  const targetPath = process.env.ICLOUD_SYNC_PATH || defaultICloudPath
 
-  if (!targetPath) {
-    console.warn('⚠️ [iCloud Sync] No target path configured. Skipping sync.')
-    return { status: 'skipped', reason: 'no_path' }
-  }
+  // Resolve target path with priority: ENV > Standard iCloud Path > Local Simulated Path
+  const targetPath = process.env.ICLOUD_SYNC_PATH ||
+                     (os.platform() === 'darwin' ? defaultICloudPath : path.join(process.cwd(), 'scratch/icloud_sync'))
 
   // Ensure target directory exists
   try {
@@ -32,7 +30,7 @@ export async function syncToICloud() {
     }
 
     // Explicitly verify write access
-    const testFile = path.join(targetPath, '.sync_test')
+    const testFile = path.join(targetPath, `.sync_test_${Date.now()}`)
     fs.writeFileSync(testFile, 'test')
     fs.unlinkSync(testFile)
   } catch (err: any) {

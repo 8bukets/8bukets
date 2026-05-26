@@ -131,81 +131,9 @@ export class Jules {
 
   public async observeGithubDocs() {
     console.log(`📚 [Jules-${this.role}] Observing technical documentation from GitHub...`)
-    const { observeGithubDocs } = await import('./services/github_docs_observer')
-    const { KnowledgeObserver } = await import('./services/knowledge_observer')
-    const observer = new KnowledgeObserver()
-
-    const repoPath = 'bmewburn/intelephense-docs'
-    const files = ['README.md', 'installation.md', 'gettingStarted.md', 'features.md', 'support.md']
-
-    let allSections: any[] = []
-
-    // 1. Ingest from local scratch (most complete usually)
-    const fsPromises = (await import('fs')).promises
-    const path = await import('path')
-    const localPath = path.join(process.cwd(), 'scratch/intelephense_docs.md')
-    try {
-      await fsPromises.access(localPath)
-      const localContent = await fsPromises.readFile(localPath, 'utf8')
-      const localKnowledge = KnowledgeObserver.processContent('Intelephense Documentation', localContent, 'local://intelephense_docs.md')
-      allSections.push(...localKnowledge.sections)
-    } catch (e) {}
-
-    try {
-      const results = await observeGithubDocs(repoPath, files)
-      for (const result of results) {
-        const title = `Intelephense: ${result.file.replace('.md', '')}`
-        const rawContent = result.sections.map((s: any) => `# ${s.title}\n${s.content}`).join('\n\n')
-        const knowledge = KnowledgeObserver.processContent(title, rawContent, result.rawUrl)
-
-        allSections.push(...knowledge.sections)
-        console.log(` ✅ [Jules] Fetched & Processed: ${result.file}`)
-      }
-    } catch (err) {
-      console.error(` ❌ [Jules] Failed to fetch GitHub docs:`, err)
-    }
-
-    if (allSections.length > 0) {
-      // Deduplicate sections by header, merging content if necessary
-      const headerMap = new Map<string, { header: string; content: string }>()
-
-      for (const section of allSections) {
-        const existing = headerMap.get(section.header)
-        const isStructural = ['Getting Started', 'Features', 'Installation', 'Type System'].includes(section.header)
-
-        if (!existing) {
-          if (section.content || isStructural) {
-            headerMap.set(section.header, { ...section })
-          }
-        } else {
-          if (section.content && section.content !== existing.content) {
-            if (existing.content.includes(section.content)) {
-              // New content is already a subset, ignore
-            } else if (section.content.includes(existing.content)) {
-              // New content is more complete, replace
-              existing.content = section.content
-            } else {
-              // Both have unique info, append
-              existing.content += '\n\n' + section.content
-            }
-          }
-        }
-      }
-
-      const uniqueSections = Array.from(headerMap.values())
-
-      const consolidated = {
-        title: 'Intelephense Documentation',
-        sections: uniqueSections,
-        metadata: {
-          source: 'https://intelephense.com/docs',
-          ingestedAt: new Date().toISOString()
-        }
-      }
-
-      await observer.persistKnowledge(consolidated as any, 'Intelephense')
-      console.log(` ✅ [Jules] Consolidated Intelephense Documentation persisted.`)
-    }
+    const { intelephenseService } = await import('./services/intelephense_service')
+    await intelephenseService.consolidate()
+    console.log(` ✅ [Jules] Technical documentation (Intelephense) observed and consolidated.`)
   }
 
   public async syncCollaboration() {
@@ -252,18 +180,34 @@ export class Jules {
     const execAsync = promisify(exec)
 
     try {
-      await execAsync('git pull --rebase origin main || true')
-      await execAsync('git add .')
+      // 1. Resolve current branch
+      const { stdout: branchRaw } = await execAsync('git rev-parse --abbrev-ref HEAD')
+      const branch = branchRaw.trim()
+      console.log(`   [Git Sync] Working on branch: ${branch}`)
 
+      // 2. Always Pull/Rebase first (even if no local changes)
+      await execAsync(`git pull --rebase origin ${branch} || true`)
+
+      // 3. Check for changes after potential pull/rebase
+      const { stdout: statusRaw } = await execAsync('git status --porcelain')
+      if (!statusRaw.trim()) {
+        console.log('ℹ️ [Jules] No local changes to commit or push. Git sync complete.')
+        return
+      }
+
+      // 4. Commit & Push changes
+      await execAsync('git add .')
       try {
         await execAsync(`git commit -m "${message}"`)
       } catch (commitErr) {
-        console.log('ℹ️ [Jules] No changes to commit.')
+        console.log('ℹ️ [Jules] No changes to commit after rebase.')
+        return
       }
 
-      await execAsync('git push origin main || true')
+      // 5. Push
+      await execAsync(`git push origin ${branch} || true`)
       console.log('✅ [Jules] Git sync completed autonomously.')
-      await this.recordTask(`Git Sync: Synchronized state with origin.`)
+      await this.recordTask(`Git Sync: Synchronized state on branch ${branch} with origin.`)
     } catch (err) {
       console.warn('⚠️ [Jules] Git sync experienced unexpected issues:', err)
     }
@@ -275,8 +219,10 @@ export class Jules {
     const { promisify } = await import('util')
     const execAsync = promisify(exec)
     try {
-      await execAsync('git pull --rebase origin main || true')
-      console.log('✅ [Jules] Git pull completed.')
+      const { stdout: branchRaw } = await execAsync('git rev-parse --abbrev-ref HEAD')
+      const branch = branchRaw.trim()
+      await execAsync(`git pull --rebase origin ${branch} || true`)
+      console.log(`✅ [Jules] Git pull completed on branch ${branch}.`)
     } catch (err) {
       console.warn('⚠️ [Jules] Git pull failed:', err)
     }
