@@ -54,4 +54,11 @@ program
     runCommand('npx', ['tsx', '--env-file=.env', 'scripts/execute_creation_cycle.ts']);
   });
 
+program
+  .command('icloud')
+  .description('Fix iCloud sync issues (NSFileProviderErrorDomain error -5009)')
+  .action(() => {
+    runCommand('bash', ['scripts/fix_icloud_sync.sh']);
+  });
+
 program.parse(process.argv);
