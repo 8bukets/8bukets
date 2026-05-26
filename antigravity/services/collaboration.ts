@@ -253,9 +253,24 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     { type: 'Documentation', name: 'KNOWLEDGE_MERGE.md', status: 'Active' }
   )
 
-  // Phase 12: Advanced Synergy Detection (Resource Overlap)
+  // Phase 12: Advanced Synergy Detection (Resource Overlap & Weighted Analysis)
   const resourceUsage: Record<string, Set<string>> = {}
+  const BASELINE_BRANCHES = ['main', 'origin/main', 'origin/HEAD', 'origin']
+  const BOILERPLATE_RESOURCES = ['layout', 'page', 'globals', 'favicon', 'file', 'globe', 'next', 'vercel', 'window']
+
+  const resourceWeights: Record<string, number> = {
+    'Service': 10,
+    'Automation Script': 8,
+    'AI Agent': 15,
+    'UI Component': 5,
+    'Documentation': 3,
+    'Knowledge': 2,
+    'Asset': 1
+  }
+
   branches.forEach(b => {
+    if (BASELINE_BRANCHES.includes(b.name)) return // Skip baseline branches for synergy detection
+
     if (b.changedFiles) {
       b.changedFiles.forEach((f: string) => {
         const matchedResource = map.resourceInventory.find((r: any) => r.path && f.includes(r.path))
@@ -269,26 +284,48 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
 
   map.collaborationRecommendations = []
 
-  Object.entries(resourceUsage).forEach(([resource, branchSet]) => {
+  Object.entries(resourceUsage).forEach(([resourceName, branchSet]) => {
     if (branchSet.size > 1) {
+      const resource = map.resourceInventory.find((r: any) => r.name === resourceName)
+      const type = resource?.type || 'Other'
+      const weight = resourceWeights[type] || 1
       const branches = Array.from(branchSet)
-      const intensity = branches.length > 2 ? 'High' : 'Medium'
+
+      // Suppress high-intensity noise for common boilerplate files unless they have extreme overlap (>10 branches)
+      const isBoilerplate = BOILERPLATE_RESOURCES.includes(resourceName)
+      let intensity = 'Medium'
+      if (branches.length > 5 || (weight >= 10 && branches.length > 2)) intensity = 'High'
+      if (isBoilerplate && branches.length < 10) intensity = 'Low'
+
       map.synergies.push({
         type: 'Resource Conflict/Synergy',
-        resource,
+        resource: resourceName,
+        resourceType: type,
         branches,
-        intensity
+        intensity,
+        weight
       })
 
       // Phase 12: Generate Actionable Collaboration Recommendations
+      const stakeholdersToCoordinate = stakeholders.filter(s =>
+        map.stakeholderEngagement[s.role]?.activeProjects.some((ap: string) => branches.includes(ap))
+      )
+
+      const coordinationAdvice = stakeholdersToCoordinate.length > 1
+        ? `Coordinate with ${stakeholdersToCoordinate.map(s => s.role).join(' and ')}.`
+        : (stakeholdersToCoordinate.length === 1 ? `Coordinate with ${stakeholdersToCoordinate[0].role}.` : 'Review branch owners for alignment.')
+
       map.collaborationRecommendations.push({
-        priority: intensity === 'High' ? 'Critical' : 'Routine',
-        action: `Consolidate effort on '${resource}'`,
+        priority: intensity === 'High' ? 'Critical' : (intensity === 'Medium' ? 'Routine' : 'Low'),
+        action: `Consolidate effort on '${resourceName}' (${type})`,
         branches,
-        rationale: `${branches.length} branches are concurrently modifying the same resource.`
+        rationale: `${branches.length} branches are concurrently modifying this ${type.toLowerCase()}. ${coordinationAdvice}`,
+        stakeholders: stakeholdersToCoordinate.map(s => s.role)
       })
 
-      console.warn(`🤝 [Collaboration] Synergy Detected: ${branches.length} branches working on ${resource}.`)
+      if (intensity === 'High') {
+        console.warn(`🤝 [Collaboration] High-Intensity Synergy Detected: ${branches.length} branches working on ${resourceName} (${type}).`)
+      }
     }
   })
 

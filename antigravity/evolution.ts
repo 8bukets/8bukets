@@ -23,19 +23,23 @@ export async function evolve() {
 
   // Recursive scan to find "bloated" or unoptimized patterns
   async function scan(dir: string) {
-    if (!fs.existsSync(dir)) return
+    try {
+      await fs.promises.access(dir)
+    } catch {
+      return
+    }
 
-    const files = fs.readdirSync(dir)
+    const files = await fs.promises.readdir(dir)
     for (const file of files) {
       const fullPath = path.join(dir, file)
-      const stat = await fs.promises.stat(fullPath);
+      const stat = await fs.promises.stat(fullPath)
       if (stat.isDirectory()) {
         await scan(fullPath)
       } else if (file.endsWith('.tsx') || file.endsWith('.ts')) {
         const content = await fs.promises.readFile(fullPath, 'utf8')
         const lines = content.split('\n').length
-        
-        // Rule 7: Phase 12 Compliance (Upgrade Phase 9 references)
+
+        // Rule 1: Phase 12 Compliance (Upgrade Phase 9 references)
         if (content.includes('Phase 9')) {
           suggestions.push({
             file: fullPath.replace(process.cwd(), ''),
@@ -44,7 +48,7 @@ export async function evolve() {
           })
         }
 
-        // Example Evolutionary Logic: Detect lack of 'use cache' in large async components
+        // Rule 2: Next.js 16 Caching - Detect lack of 'use cache' in large async components
         if (lines > 50 && content.includes('async function') && !content.includes("'use cache'")) {
           suggestions.push({
             file: fullPath.replace(process.cwd(), ''),
@@ -53,7 +57,7 @@ export async function evolve() {
           })
         }
 
-        // Rule 2: Detect large files that should be refactored
+        // Rule 3: Detect large files that should be refactored
         if (lines > 150) {
           suggestions.push({
             file: fullPath.replace(process.cwd(), ''),
@@ -62,7 +66,7 @@ export async function evolve() {
           })
         }
 
-        // Rule 3: Detect Sync Access to Params (Next.js 16 Violation)
+        // Rule 4: Detect Sync Access to Params (Next.js 16 Violation)
         if (content.includes('params.') && !content.includes('await params') && !content.includes('resolve(params)')) {
           suggestions.push({
             file: fullPath.replace(process.cwd(), ''),
@@ -71,7 +75,7 @@ export async function evolve() {
           })
         }
 
-        // Rule 4: Security and Performance - Detect synchronous I/O and blocking calls
+        // Rule 5: Security and Performance - Detect synchronous I/O and blocking calls
         const syncCalls = ['execSync', 'execFileSync', 'fs.existsSync', 'fs.readFileSync', 'fs.writeFileSync']
         for (const call of syncCalls) {
           if (content.includes(call + '(')) {
@@ -83,44 +87,35 @@ export async function evolve() {
           }
         }
 
-        // Rule 5: Missing Error Handling in Async Functions
+        // Rule 6: Error Handling - Detect async functions without try-catch
         // Skip Next.js page/layout components (often containing 'use cache') to avoid directive displacement
         // Also skip very small helper functions (< 5 lines)
-        if (lines > 5 && content.includes('async function') && !content.includes('try {') && !content.includes("'use cache'")) {
+        if (lines > 5 && content.includes('async ') && !content.includes('try {') && !content.includes("'use cache'")) {
           suggestions.push({
             file: fullPath.replace(process.cwd(), ''),
             complexity: lines,
-            suggestion: 'MISSING_ERROR_HANDLING: Async function detected without try-catch block.'
+            suggestion: 'MISSING_ERROR_HANDLING: Async logic detected without explicit try-catch blocks.'
           })
         }
 
-        // Rule 6: Direct process.env access (Suggest getRuntimeEnv)
+        // Rule 7: Direct process.env access (Suggest getRuntimeEnv)
         if (content.includes('process.env.') && !fullPath.includes('antigravity/core.ts') && !fullPath.includes('next.config')) {
-           suggestions.push({
+          suggestions.push({
             file: fullPath.replace(process.cwd(), ''),
             complexity: lines,
             suggestion: 'DIRECT_ENV_ACCESS: Use getRuntimeEnv for better cloud-native observability.'
           })
         }
 
-        // Rule 5: Error Handling - Detect async functions without try-catch
-        if (content.includes('async ') && !content.includes('try {') && lines > 20) {
-          suggestions.push({
-             file: fullPath.replace(process.cwd(), ''),
-             complexity: lines,
-             suggestion: 'MISSING_ERROR_HANDLING: Async logic detected without explicit try-catch blocks.'
-          })
-        }
-
-        // Rule 6: Environment - Detect non-dynamic Node.js imports in potentially shared files
+        // Rule 8: Environment - Detect non-dynamic Node.js imports in potentially shared files
         if (content.includes("from 'os'") || content.includes("from 'fs'") || content.includes("from 'path'")) {
-           if (!content.includes('NEXT_RUNTIME')) {
-              suggestions.push({
-                file: fullPath.replace(process.cwd(), ''),
-                complexity: lines,
-                suggestion: 'UNSAFE_STATIC_IMPORT: Static import of Node.js built-ins. Prefer dynamic async imports for edge compatibility.'
-              })
-           }
+          if (!content.includes('NEXT_RUNTIME')) {
+            suggestions.push({
+              file: fullPath.replace(process.cwd(), ''),
+              complexity: lines,
+              suggestion: 'UNSAFE_STATIC_IMPORT: Static import of Node.js built-ins. Prefer dynamic async imports for edge compatibility.'
+            })
+          }
         }
       }
     }
@@ -167,32 +162,34 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
     }
 
     if (s.suggestion.startsWith('MISSING_ERROR_HANDLING')) {
-      if (!content.includes('[Evolution] TODO: Add autonomous error handling')) {
+      const todoComment = '// [Evolution] TODO: Add autonomous error handling'
+      if (!content.includes(todoComment)) {
         console.log(` - Fixing ${s.file}: Adding error handling TODO`)
         // Inject a TODO comment at the start of the first async function found
-        content = content.replace(/async function(.*?)\{/, "async function$1{\n  ")
-        fs.writeFileSync(fullPath, content)
+        content = content.replace(/async function(.*?)\{/, `async function$1{\n  ${todoComment}`)
+        await fs.promises.writeFile(fullPath, content)
       }
     }
 
     if (s.suggestion.startsWith('PHASE_UPGRADE_REQUIRED')) {
       console.log(` - Fixing ${s.file}: Upgrading Phase 9 to Phase 12`)
       content = content.replace(/Phase 9/g, 'Phase 12')
-      fs.writeFileSync(fullPath, content)
+      await fs.promises.writeFile(fullPath, content)
     }
 
     if (s.suggestion.startsWith('SECURITY_PERF_VULNERABILITY')) {
-      if (!content.includes('[Evolution] TODO: Refactor to async')) {
-        console.log(` - Fixing ${s.file}: Adding async refactor TODO for synchronous call`)
-        // Inject a TODO near the first detected sync call
-        const syncCalls = ['execSync', 'execFileSync', 'fs.existsSync', 'fs.readFileSync', 'fs.writeFileSync']
-        for (const call of syncCalls) {
-          if (content.includes(call + '(')) {
-            content = content.replace(new RegExp(`(\\b${call}\\()`, 'g'), "$1")
-          }
+      console.log(` - Fixing ${s.file}: Adding async refactor TODO for synchronous call`)
+      // Inject a TODO near the first detected sync call
+      const syncCalls = ['execSync', 'execFileSync', 'fs.existsSync', 'fs.readFileSync', 'fs.writeFileSync']
+      const todoComment = '// [Evolution] TODO: Refactor to async'
+      let modified = false
+      for (const call of syncCalls) {
+        if (content.includes(call + '(') && !content.includes(`${todoComment} ${call}(`)) {
+          content = content.replace(new RegExp(`(\\b${call}\\()`, 'g'), `${todoComment} $1`)
+          modified = true
         }
-        fs.writeFileSync(fullPath, content)
       }
+      if (modified) await fs.promises.writeFile(fullPath, content)
     }
 
     if (s.suggestion.startsWith('MISSING_ERROR_HANDLING')) {

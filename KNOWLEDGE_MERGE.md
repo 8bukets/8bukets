@@ -10429,7 +10429,7 @@ All the best - https://markposition.wordpress.com
   - **Result:** optimize scanAllBranches and autonomous git sync timeouts
   - **Artifacts:** 9828 files modified.
 
-## Ecosystem Knowledge Consolidation (2026-05-24T03:20:22.161Z)
+## Ecosystem Knowledge Consolidation (2026-05-24T04:29:47.353Z)
 *Phase 12 Multi-Agent Synergy Protocol Active*
 
 ### 📂 Category: OTHER
@@ -10455,6 +10455,11 @@ All the best - https://markposition.wordpress.com
 
 ### 📂 Category: FEATURE
 #### 🌐 Strategic Domain: Security
+- **Branch:** `origin/feat/add-chief-ai-officer-agent-1329096278704697703` 🔥
+  - **Result:** Add Chief AI Officer Python agent
+  - **Artifacts:** 9870 files modified.
+- **Branch:** `origin/feat/fix-icloud-sync-10523504471527145361` 🔥
+  - **Result:** add fix
 - **Branch:** `origin/feat/evolve-autonomous-engine-phase-12-3914839114884356859` 🔥
   - **Result:** evolve autonomous engine with cloud-native presence and sentient orchestration
   - **Artifacts:** 453 files modified.
@@ -10479,3 +10484,3877 @@ All the best - https://markposition.wordpress.com
 - **Branch:** `origin/jules/scraper-markposition-17752547678215960211` 🔥
   - **Result:** lowercase knowledge integration entry titles (#2025)
   - **Artifacts:** 452 files modified.
+### 📂 Category: OTHER
+#### 🌐 Strategic Domain: Security
+- **Branch:** `origin` 🔥
+  - **Result:** add fix
+  - **Artifacts:** 10224 files modified.
+- **Branch:** `origin/ingest-google-ads-knowledge-10194667248273296076` 🔥
+  - **Result:** ingest Google Ads and Ad Manager documentation into knowledge base
+  - **Artifacts:** 9869 files modified.
+- **Branch:** `origin/jules-5679297940668698803-4384a9af` 🔥
+  - **Result:** add full autonomous automatic workflow creation
+  - **Artifacts:** 9868 files modified.
+- **Branch:** `origin/jules-11912267709594997729-d10b0e1f` 🔥
+  - **Result:** lowercase knowledge integration entry titles
+  - **Artifacts:** 451 files modified.
+- **Branch:** `origin/jules-6528044095388834739-5a6c8bcf` 🔥
+  - **Result:** Add cloud workflow integration test
+  - **Artifacts:** 452 files modified.
+- **Branch:** `origin/chore-connect-with-docker-13566063638443538481` 🔥
+  - **Result:** connect with docker and collaborate
+  - **Artifacts:** 9867 files modified.
+
+### 📂 Category: AGENT
+#### 🌐 Strategic Domain: Security
+- **Branch:** `origin/jules/scraper-markposition-17752547678215960211` 🔥
+  - **Result:** add fix
+  - **Artifacts:** 456 files modified.
+
+
+## Ecosystem Knowledge Consolidation (2026-05-24T04:43:53.892Z)
+*Phase 12 Multi-Agent Synergy Protocol Active*
+
+### 📂 Category: OTHER
+#### 🌐 Strategic Domain: General
+- **Branch:** `jules-3380172087610971607-2d5e383c` ✨
+  - **Result:** Merge pull request #2035 from 8bukets/feat/add-chief-ai-officer-agent-1329096278704697703
+  - **Knowledge:** Branch jules-3380172087610971607-2d5e383c observed: Merge pull request #2035 from 8bukets/feat/add-chief-ai-officer-agent-1329096278704697703
+- **Branch:** `main` ✨
+  - **Result:** Merge pull request #2035 from 8bukets/feat/add-chief-ai-officer-agent-1329096278704697703
+  - **Knowledge:** Branch main observed: Merge pull request #2035 from 8bukets/feat/add-chief-ai-officer-agent-1329096278704697703
+- **Branch:** `origin/jules-2952753656715436592-50f1624f` ⚡
+  - **Result:** Add robots.txt and SEO tools
+  - **Knowledge:** Branch origin/jules-2952753656715436592-50f1624f observed: Add robots.txt and SEO tools
+  - **Artifacts:** 10 files modified.
+
+#### 🌐 Strategic Domain: Security
+- **Branch:** `origin/main` 🔥
+  - **Result:** Merge pull request #2035 from 8bukets/feat/add-chief-ai-officer-agent-1329096278704697703
+  - **Knowledge:** Branch origin/main observed: Merge pull request #2035 from 8bukets/feat/add-chief-ai-officer-agent-1329096278704697703
+  - **Artifacts:** 9870 files modified.
+- **Branch:** `origin` 🔥
+  - **Result:** add fix
+  - **Knowledge:** Branch origin observed: add fix
+  - **Artifacts:** 10224 files modified.
+- **Branch:** `origin/jules-8471382387327462147-5395dec8` 🔥
+  - **Result:** Ingest Google Ads knowledge and fix output paths
+  - **Knowledge:** Branch origin/jules-8471382387327462147-5395dec8 observed: Ingest Google Ads knowledge and fix output paths
+  - **Artifacts:** 452 files modified.
+- **Branch:** `origin/jules-5679297940668698803-4384a9af` 🔥
+  - **Result:** add full autonomous automatic workflow creation
+  - **Knowledge:** Branch origin/jules-5679297940668698803-4384a9af observed: add full autonomous automatic workflow creation
+  - **Artifacts:** 9868 files modified.
+- **Branch:** `origin/jules-6528044095388834739-5a6c8bcf` 🔥
+  - **Result:** Add cloud workflow integration test
+  - **Knowledge:** Branch origin/jules-6528044095388834739-5a6c8bcf observed: Add cloud workflow integration test
+  - **Artifacts:** 452 files modified.
+- **Branch:** `origin/jenkins-pipeline-integration-2917487616063889464` 🔥
+  - **Result:** Implement Jenkins ecosystem collaboration trigger
+  - **Knowledge:** Branch origin/jenkins-pipeline-integration-2917487616063889464 observed: Implement Jenkins ecosystem collaboration trigger
+  - **Artifacts:** 451 files modified.
+- **Branch:** `origin/add-a2a-remote-agent-152042865285525971` 🔥
+  - **Result:** add generic A2A remote agent configuration
+  - **Knowledge:** Branch origin/add-a2a-remote-agent-152042865285525971 observed: add generic A2A remote agent configuration
+  - **Artifacts:** 443 files modified.
+- **Branch:** `origin/implement-ai-agents-knowledge-8036846396761105562` 🔥
+  - **Result:** Merge branch 'jules/scraper-markposition-17752547678215960211' into implement-ai-agents-knowledge-8036846396761105562
+  - **Knowledge:** Branch origin/implement-ai-agents-knowledge-8036846396761105562 observed: Merge branch 'jules/scraper-markposition-17752547678215960211' into implement-ai-agents-knowledge-8036846396761105562
+  - **Artifacts:** 451 files modified.
+- **Branch:** `origin/nomad-cli-agent-docs-15478110730395729144` 🔥
+  - **Result:** Update GitHub Actions to non-deprecated versions and fix bandit issues
+  - **Knowledge:** Branch origin/nomad-cli-agent-docs-15478110730395729144 observed: Update GitHub Actions to non-deprecated versions and fix bandit issues
+  - **Artifacts:** 9846 files modified.
+- **Branch:** `origin/jules-13607206307106246227-38f47801` 🔥
+  - **Result:** implement autonomous PR merge conflict resolution with Gemini\n\n- Add a TypeScript script `scripts/resolve_pr_conflicts.ts` to identify open PRs with conflicts.\n- Leverage `@google/generative-ai` to safely and logically resolve git conflict markers.\n- Safely manage GitHub and Gemini API tokens, avoiding logging sensitive credentials.\n- Apply robust security checks to only process PRs from trusted repository collaborators.\n- Merge and squash the resolved pull requests via Octokit.\n- Setup GitHub Actions cron job `.github/workflows/resolve-conflicts.yml` to trigger every 4 hours.
+  - **Knowledge:** Branch origin/jules-13607206307106246227-38f47801 observed: implement autonomous PR merge conflict resolution with Gemini\n\n- Add a TypeScript script `scripts/resolve_pr_conflicts.ts` to identify open PRs with conflicts.\n- Leverage `@google/generative-ai` to safely and logically resolve git conflict markers.\n- Safely manage GitHub and Gemini API tokens, avoiding logging sensitive credentials.\n- Apply robust security checks to only process PRs from trusted repository collaborators.\n- Merge and squash the resolved pull requests via Octokit.\n- Setup GitHub Actions cron job `.github/workflows/resolve-conflicts.yml` to trigger every 4 hours.
+  - **Artifacts:** 420 files modified.
+- **Branch:** `origin/jules-fix-subagent-prompts-16967744904311493464` 🔥
+  - **Result:** Fix subagent definition files location and update duo_planner_agent prompt
+  - **Knowledge:** Branch origin/jules-fix-subagent-prompts-16967744904311493464 observed: Fix subagent definition files location and update duo_planner_agent prompt
+  - **Artifacts:** 9835 files modified.
+- **Branch:** `origin/jules-11867509925832320780-8aa8894a` 🔥
+  - **Result:** automatically append english locale parameter for Google Ads/Ad Manager docs
+  - **Knowledge:** Branch origin/jules-11867509925832320780-8aa8894a observed: automatically append english locale parameter for Google Ads/Ad Manager docs
+  - **Artifacts:** 415 files modified.
+- **Branch:** `origin/add-google-edge-agent-9371392929328195231` 🔥
+  - **Result:** Merge branch 'jules/scraper-markposition-17752547678215960211' into add-google-edge-agent-9371392929328195231
+  - **Knowledge:** Branch origin/add-google-edge-agent-9371392929328195231 observed: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-google-edge-agent-9371392929328195231
+  - **Artifacts:** 434 files modified.
+- **Branch:** `origin/fix-daily-sync-recursion-2513362835835522754` 🔥
+  - **Result:** daily routine robustness and recursion in optimization engine
+  - **Knowledge:** Branch origin/fix-daily-sync-recursion-2513362835835522754 observed: daily routine robustness and recursion in optimization engine
+  - **Artifacts:** 9833 files modified.
+- **Branch:** `origin/update-react-deployment-logic-11252325931757869303` 🔥
+  - **Result:** integrate react agent deployment logic and fix tools list parsing
+  - **Knowledge:** Branch origin/update-react-deployment-logic-11252325931757869303 observed: integrate react agent deployment logic and fix tools list parsing
+  - **Artifacts:** 415 files modified.
+- **Branch:** `origin/add-gemini-test-csharp-11995490696655996242` 🔥
+  - **Result:** Add standalone C# script for Gemini API test
+  - **Knowledge:** Branch origin/add-gemini-test-csharp-11995490696655996242 observed: Add standalone C# script for Gemini API test
+  - **Artifacts:** 9820 files modified.
+- **Branch:** `origin/jules-17345361020910170827-8e192329` 🔥
+  - **Result:** Add Gemini API invocation script for explaining AI
+  - **Knowledge:** Branch origin/jules-17345361020910170827-8e192329 observed: Add Gemini API invocation script for explaining AI
+  - **Artifacts:** 9818 files modified.
+- **Branch:** `origin/java-gemini-example-4885310981980819263` 🔥
+  - **Result:** add Java example using Google GenAI client
+  - **Knowledge:** Branch origin/java-gemini-example-4885310981980819263 observed: add Java example using Google GenAI client
+  - **Artifacts:** 9820 files modified.
+- **Branch:** `origin/add-gemini-test-script-13275281353682128728` 🔥
+  - **Result:** Add script to test gemini model
+  - **Knowledge:** Branch origin/add-gemini-test-script-13275281353682128728 observed: Add script to test gemini model
+  - **Artifacts:** 9818 files modified.
+- **Branch:** `origin/add-test-gemini-script-4486670142137442635` 🔥
+  - **Result:** add script to test google genai sdk
+  - **Knowledge:** Branch origin/add-test-gemini-script-4486670142137442635 observed: add script to test google genai sdk
+  - **Artifacts:** 9818 files modified.
+- **Branch:** `origin/prototype-analytics-research-app-14135302904355352635` 🔥
+  - **Result:** Add cross-platform Analytics and Research app prototype
+  - **Knowledge:** Branch origin/prototype-analytics-research-app-14135302904355352635 observed: Add cross-platform Analytics and Research app prototype
+  - **Artifacts:** 9815 files modified.
+- **Branch:** `origin/update-docker-env-example-767789022386331497` 🔥
+  - **Result:** add docker hub credentials to .env.example
+  - **Knowledge:** Branch origin/update-docker-env-example-767789022386331497 observed: add docker hub credentials to .env.example
+  - **Artifacts:** 411 files modified.
+- **Branch:** `origin/jules-fix-autonomous-creation-cycle-5331330201427680768` 🔥
+  - **Result:** Ensure autonomous workflow creation scripts have necessary dependencies
+  - **Knowledge:** Branch origin/jules-fix-autonomous-creation-cycle-5331330201427680768 observed: Ensure autonomous workflow creation scripts have necessary dependencies
+  - **Artifacts:** 9794 files modified.
+- **Branch:** `origin/fix-inline-agent-card-json-15069810893663467340` 🔥
+  - **Result:** add missing Inline Agent Card JSON section
+  - **Knowledge:** Branch origin/fix-inline-agent-card-json-15069810893663467340 observed: add missing Inline Agent Card JSON section
+  - **Artifacts:** 411 files modified.
+- **Branch:** `origin/add-subagents-14416725836573894587` 🔥
+  - **Result:** Add generalist and browser_agent subagents
+  - **Knowledge:** Branch origin/add-subagents-14416725836573894587 observed: Add generalist and browser_agent subagents
+  - **Artifacts:** 413 files modified.
+- **Branch:** `origin/fix-ingest-ads-locale-9506371311839128383` 🔥
+  - **Result:** Merge main into fix-ingest-ads-locale-9506371311839128383 and resolve conflicts
+  - **Knowledge:** Branch origin/fix-ingest-ads-locale-9506371311839128383 observed: Merge main into fix-ingest-ads-locale-9506371311839128383 and resolve conflicts
+  - **Artifacts:** 9808 files modified.
+- **Branch:** `origin/jules-knowledge-integration-compile-14557175907207924867` 🔥
+  - **Result:** add "prepare best value of knowledge integration" to ai agents knowledge base
+  - **Knowledge:** Branch origin/jules-knowledge-integration-compile-14557175907207924867 observed: add "prepare best value of knowledge integration" to ai agents knowledge base
+  - **Artifacts:** 407 files modified.
+- **Branch:** `origin/fix-docker-compose-deprecation-3059408130568618537` 🔥
+  - **Result:** Update obsolete docker-compose commands to docker compose
+  - **Knowledge:** Branch origin/fix-docker-compose-deprecation-3059408130568618537 observed: Update obsolete docker-compose commands to docker compose
+  - **Artifacts:** 403 files modified.
+- **Branch:** `origin/feat-render-worker-macbook-cloud-4132104054450648073` 🔥
+  - **Result:** add render.yaml worker for continuous cloud execution
+  - **Knowledge:** Branch origin/feat-render-worker-macbook-cloud-4132104054450648073 observed: add render.yaml worker for continuous cloud execution
+  - **Artifacts:** 404 files modified.
+- **Branch:** `origin/fix-backend-tests-and-subagents-9232679682193337097` 🔥
+  - **Result:** supercharge subagent execution limits and backend stability\n\n- Increases maxTurns across all subagents to 50 for deep multi-step execution.\n- Configures .gemini/settings.json to allow 500 maxActionsPerTask for browser_agent.\n- Fixes backend testing dependencies and ESM compatibility logic in moderation.js.\n- Mirrors updated configuration to root agents/ directory to ensure seamless discovery.
+  - **Knowledge:** Branch origin/fix-backend-tests-and-subagents-9232679682193337097 observed: supercharge subagent execution limits and backend stability\n\n- Increases maxTurns across all subagents to 50 for deep multi-step execution.\n- Configures .gemini/settings.json to allow 500 maxActionsPerTask for browser_agent.\n- Fixes backend testing dependencies and ESM compatibility logic in moderation.js.\n- Mirrors updated configuration to root agents/ directory to ensure seamless discovery.
+  - **Artifacts:** 412 files modified.
+- **Branch:** `origin/ci-cd-docker-hub-3636239622790037637` 🔥
+  - **Result:** Add CI/CD pipeline to test and push Docker image to Docker Hub
+  - **Knowledge:** Branch origin/ci-cd-docker-hub-3636239622790037637 observed: Add CI/CD pipeline to test and push Docker image to Docker Hub
+  - **Artifacts:** 9684 files modified.
+- **Branch:** `origin/jules-integrate-signature-6068322876973646017` 🔥
+  - **Result:** add signature to newly discovered typescript knowledge ingesters
+  - **Knowledge:** Branch origin/jules-integrate-signature-6068322876973646017 observed: add signature to newly discovered typescript knowledge ingesters
+  - **Artifacts:** 404 files modified.
+- **Branch:** `origin/add-google-ads-knowledge-4095321584408330018` 🔥
+  - **Result:** add google ads and ad manager documentation\n\n- Fix locale fetching issue in ingest script\n- Add google_ads source to knowledge merge agent\n- Regenerate system knowledge artifacts
+  - **Knowledge:** Branch origin/add-google-ads-knowledge-4095321584408330018 observed: add google ads and ad manager documentation\n\n- Fix locale fetching issue in ingest script\n- Add google_ads source to knowledge merge agent\n- Regenerate system knowledge artifacts
+  - **Artifacts:** 392 files modified.
+- **Branch:** `origin/jules-fix-oracle-scraper-schema-6080803583651507344` 🔥
+  - **Result:** modify oracle AI scraper to output flat JSON schema
+  - **Knowledge:** Branch origin/jules-fix-oracle-scraper-schema-6080803583651507344 observed: modify oracle AI scraper to output flat JSON schema
+  - **Artifacts:** 94 files modified.
+- **Branch:** `origin/update-gitlab-security-agent-prompt-15007723366612838738` 🔥
+  - **Result:** add Merge Request Management to gitlab_security_agent prompt
+  - **Knowledge:** Branch origin/update-gitlab-security-agent-prompt-15007723366612838738 observed: add Merge Request Management to gitlab_security_agent prompt
+  - **Artifacts:** 9772 files modified.
+- **Branch:** `origin/add-acp-integration-docs-10087323336683703862` 🔥
+  - **Result:** add ACP integration guide for Docker Agent
+  - **Knowledge:** Branch origin/add-acp-integration-docs-10087323336683703862 observed: add ACP integration guide for Docker Agent
+  - **Artifacts:** 362 files modified.
+- **Branch:** `origin/add-docker-agent-model-docs-997437020929679972` 🔥
+  - **Result:** add docker agent model providers documentation
+  - **Knowledge:** Branch origin/add-docker-agent-model-docs-997437020929679972 observed: add docker agent model providers documentation
+  - **Artifacts:** 362 files modified.
+- **Branch:** `origin/add-golang-developer-agents-5802231143872030735` 🔥
+  - **Result:** Add golang developer subagents
+  - **Knowledge:** Branch origin/add-golang-developer-agents-5802231143872030735 observed: Add golang developer subagents
+  - **Artifacts:** 364 files modified.
+- **Branch:** `origin/add-sharing-agents-doc-12054475314514014573` 🔥
+  - **Result:** add documentation for sharing agents via Docker
+  - **Knowledge:** Branch origin/add-sharing-agents-doc-12054475314514014573 observed: add documentation for sharing agents via Docker
+  - **Artifacts:** 362 files modified.
+- **Branch:** `origin/add-github-pages-setup-3416434342592822830` 🔥
+  - **Result:** Add GitHub Pages quickstart documentation and automation script
+  - **Knowledge:** Branch origin/add-github-pages-setup-3416434342592822830 observed: Add GitHub Pages quickstart documentation and automation script
+  - **Artifacts:** 358 files modified.
+- **Branch:** `origin/add-gitlab-runner-service-1151466855069035440` 🔥
+  - **Result:** add autonomous GitLab Runner service to docker-compose
+  - **Knowledge:** Branch origin/add-gitlab-runner-service-1151466855069035440 observed: add autonomous GitLab Runner service to docker-compose
+  - **Artifacts:** 353 files modified.
+- **Branch:** `origin/update-subagent-prompts-18414997782670082926` 🔥
+  - **Result:** add explicit MR management to security and planner agents
+  - **Knowledge:** Branch origin/update-subagent-prompts-18414997782670082926 observed: add explicit MR management to security and planner agents
+  - **Artifacts:** 353 files modified.
+- **Branch:** `origin/jules-autonomous-workflow-fix-2826640413281112163` 🔥
+  - **Result:** Setup full autonomous workflow and fix python scrapers
+  - **Knowledge:** Branch origin/jules-autonomous-workflow-fix-2826640413281112163 observed: Setup full autonomous workflow and fix python scrapers
+  - **Artifacts:** 354 files modified.
+- **Branch:** `origin/update-mongodb-uri-2808493771476678278` 🔥
+  - **Result:** add secure script to test MongoDB Atlas connection
+  - **Knowledge:** Branch origin/update-mongodb-uri-2808493771476678278 observed: add secure script to test MongoDB Atlas connection
+  - **Artifacts:** 224 files modified.
+- **Branch:** `origin/add-gitlab-security-agent-1535791743023514868` 🔥
+  - **Result:** Add GitLab Security Analyst Agent prompt to .gemini/agents
+  - **Knowledge:** Branch origin/add-gitlab-security-agent-1535791743023514868 observed: Add GitLab Security Analyst Agent prompt to .gemini/agents
+  - **Artifacts:** 9768 files modified.
+- **Branch:** `origin/add-mongodb-atlas-credentials-17739045232478792657` 🔥
+  - **Result:** Merge branch 'jules/scraper-markposition-17752547678215960211' into add-mongodb-atlas-credentials-17739045232478792657
+  - **Knowledge:** Branch origin/add-mongodb-atlas-credentials-17739045232478792657 observed: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-mongodb-atlas-credentials-17739045232478792657
+  - **Artifacts:** 347 files modified.
+- **Branch:** `origin/jules-duo-planner-agent-url-fix-5677968275200464330` 🔥
+  - **Result:** Fix URL patterns in duo_planner_agent.md
+  - **Knowledge:** Branch origin/jules-duo-planner-agent-url-fix-5677968275200464330 observed: Fix URL patterns in duo_planner_agent.md
+  - **Artifacts:** 9765 files modified.
+- **Branch:** `origin/autonomous-creation-evolution-14168201882249018244` 🔥
+  - **Result:** implement full autonomous creation and execution cycle
+  - **Knowledge:** Branch origin/autonomous-creation-evolution-14168201882249018244 observed: implement full autonomous creation and execution cycle
+  - **Artifacts:** 337 files modified.
+- **Branch:** `origin/feat-macbook-cloud-simulation-5272995196293351855` 🔥
+  - **Result:** add macbook cloud simulation for autonomous workflow integration
+  - **Knowledge:** Branch origin/feat-macbook-cloud-simulation-5272995196293351855 observed: add macbook cloud simulation for autonomous workflow integration
+  - **Artifacts:** 336 files modified.
+- **Branch:** `origin/add-filip-keser-license-9070216148560290832` 🔥
+  - **Result:** Add proprietary intellectual property license for Filip Keser
+  - **Knowledge:** Branch origin/add-filip-keser-license-9070216148560290832 observed: Add proprietary intellectual property license for Filip Keser
+  - **Artifacts:** 9757 files modified.
+- **Branch:** `origin/jules-5565625516958485993-49059093` 🔥
+  - **Result:** integrate knowledge with oracle ai scraper
+  - **Knowledge:** Branch origin/jules-5565625516958485993-49059093 observed: integrate knowledge with oracle ai scraper
+  - **Artifacts:** 94 files modified.
+- **Branch:** `origin/jules-15669541233529701765-e7b02c45` 🔥
+  - **Result:** Implement Jenkins Integration and Pipeline
+  - **Knowledge:** Branch origin/jules-15669541233529701765-e7b02c45 observed: Implement Jenkins Integration and Pipeline
+  - **Artifacts:** 310 files modified.
+- **Branch:** `origin/jules-knowledge-integration-subagents-16636673178408066825` 🔥
+  - **Result:** resolve linting errors and telemetry effect dependency
+  - **Knowledge:** Branch origin/jules-knowledge-integration-subagents-16636673178408066825 observed: resolve linting errors and telemetry effect dependency
+  - **Artifacts:** 326 files modified.
+- **Branch:** `origin/add-jenkins-metrics-12709603847827089760` 🔥
+  - **Result:** Add Jenkins pipeline metrics to collaboration service
+  - **Knowledge:** Branch origin/add-jenkins-metrics-12709603847827089760 observed: Add Jenkins pipeline metrics to collaboration service
+  - **Artifacts:** 330 files modified.
+- **Branch:** `origin/remote-subagents-config-5573674147411038862` 🔥
+  - **Result:** Resolve TypeScript any errors in intelligence API route
+  - **Knowledge:** Branch origin/remote-subagents-config-5573674147411038862 observed: Resolve TypeScript any errors in intelligence API route
+  - **Artifacts:** 322 files modified.
+- **Branch:** `origin/jules-16739887525044798643-c54f1fa3` 🔥
+  - **Result:** Implement fluent multi-cloud workflow orchestration and async Docker auto-recovery
+  - **Knowledge:** Branch origin/jules-16739887525044798643-c54f1fa3 observed: Implement fluent multi-cloud workflow orchestration and async Docker auto-recovery
+  - **Artifacts:** 320 files modified.
+- **Branch:** `origin/jules-3444915640748353694-63419224` 🔥
+  - **Result:** Generate initial project backlog for GitLab mirroring\n\n- Add `project_backlog.md` detailing current repository health\n- Outline Epics, Issues, and Tasks for Turbopack compilation errors, TypeScript/ESLint warnings, and degraded test states\n- Provide structured format ready for GitLab import
+  - **Knowledge:** Branch origin/jules-3444915640748353694-63419224 observed: Generate initial project backlog for GitLab mirroring\n\n- Add `project_backlog.md` detailing current repository health\n- Outline Epics, Issues, and Tasks for Turbopack compilation errors, TypeScript/ESLint warnings, and degraded test states\n- Provide structured format ready for GitLab import
+  - **Artifacts:** 9740 files modified.
+- **Branch:** `origin/jules-18406338226598714071-aab43e45` 🔥
+  - **Result:** correct system memory json syntax formatting
+  - **Knowledge:** Branch origin/jules-18406338226598714071-aab43e45 observed: correct system memory json syntax formatting
+  - **Artifacts:** 94 files modified.
+- **Branch:** `origin/fix-frontend-build-and-cleanup-4571735554462941732` 🔥
+  - **Result:** Merge branch 'jules/scraper-markposition-17752547678215960211' into fix-frontend-build-and-cleanup-4571735554462941732
+  - **Knowledge:** Branch origin/fix-frontend-build-and-cleanup-4571735554462941732 observed: Merge branch 'jules/scraper-markposition-17752547678215960211' into fix-frontend-build-and-cleanup-4571735554462941732
+  - **Artifacts:** 321 files modified.
+- **Branch:** `origin/jules-improve-react-agents-deploy-6633287448450705076` 🔥
+  - **Result:** resolve explicit type any and unused variable typescript lint errors
+  - **Knowledge:** Branch origin/jules-improve-react-agents-deploy-6633287448450705076 observed: resolve explicit type any and unused variable typescript lint errors
+  - **Artifacts:** 318 files modified.
+- **Branch:** `origin/jules-cloud-workflow-agent-9594836607216672043` 🔥
+  - **Result:** implement CloudWorkflowAgent and integrate across cloud ecosystem
+  - **Knowledge:** Branch origin/jules-cloud-workflow-agent-9594836607216672043 observed: implement CloudWorkflowAgent and integrate across cloud ecosystem
+  - **Artifacts:** 9745 files modified.
+- **Branch:** `origin/jules-15004287550758535025-a71549d8` 🔥
+  - **Result:** remove incorrect prefix from compile definition
+  - **Knowledge:** Branch origin/jules-15004287550758535025-a71549d8 observed: remove incorrect prefix from compile definition
+  - **Artifacts:** 318 files modified.
+- **Branch:** `origin/fix-consciousness-loop-11913002333680574261` 🔥
+  - **Result:** implement startConsciousnessLoop for continuous workflows
+  - **Knowledge:** Branch origin/fix-consciousness-loop-11913002333680574261 observed: implement startConsciousnessLoop for continuous workflows
+  - **Artifacts:** 9739 files modified.
+- **Branch:** `origin/autonomous-loop-enhancement-4557411631469647525` 🔥
+  - **Result:** implement autonomous consciousness loop and robust bootstrapping
+  - **Knowledge:** Branch origin/autonomous-loop-enhancement-4557411631469647525 observed: implement autonomous consciousness loop and robust bootstrapping
+  - **Artifacts:** 9738 files modified.
+- **Branch:** `origin/fix-autonomous-workflow-git-add-16103849688586949052` 🔥
+  - **Result:** allow data folder in gitignore for autonomous workflow to commit
+  - **Knowledge:** Branch origin/fix-autonomous-workflow-git-add-16103849688586949052 observed: allow data folder in gitignore for autonomous workflow to commit
+  - **Artifacts:** 313 files modified.
+- **Branch:** `origin/palette-report-ux-16950258538465395817` 🔥
+  - **Result:** Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette-report-ux-16950258538465395817
+  - **Knowledge:** Branch origin/palette-report-ux-16950258538465395817 observed: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette-report-ux-16950258538465395817
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-6855106868508477486` ⚡
+  - **Result:** fix Markdown injection and XSS vulnerability in reports (#1449)
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-6855106868508477486 observed: fix Markdown injection and XSS vulnerability in reports (#1449)
+  - **Artifacts:** 14 files modified.
+- **Branch:** `origin/sentinel-markdown-injection-fix-5071286642658606448` ⚡
+  - **Result:** Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into sentinel-markdown-injection-fix-5071286642658606448
+  - **Knowledge:** Branch origin/sentinel-markdown-injection-fix-5071286642658606448 observed: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into sentinel-markdown-injection-fix-5071286642658606448
+  - **Artifacts:** 14 files modified.
+- **Branch:** `origin/fix-package-json-duplicate-deps-10439884539185109676` 🔥
+  - **Result:** Fix syntax and linting errors in frontend route
+  - **Knowledge:** Branch origin/fix-package-json-duplicate-deps-10439884539185109676 observed: Fix syntax and linting errors in frontend route
+  - **Artifacts:** 308 files modified.
+- **Branch:** `origin/palette-cli-ux-17758522128434594634` 🔥
+  - **Result:** Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette-cli-ux-17758522128434594634
+  - **Knowledge:** Branch origin/palette-cli-ux-17758522128434594634 observed: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette-cli-ux-17758522128434594634
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/update-compile-definition-9206230129012668911` 🔥
+  - **Result:** resolve eslint and build errors causing CI failure
+  - **Knowledge:** Branch origin/update-compile-definition-9206230129012668911 observed: resolve eslint and build errors causing CI failure
+  - **Artifacts:** 308 files modified.
+- **Branch:** `origin/fix-cloud-autonomous-presence-9827360869310750655` 🔥
+  - **Result:** resolve CI syntax and module failures
+  - **Knowledge:** Branch origin/fix-cloud-autonomous-presence-9827360869310750655 observed: resolve CI syntax and module failures
+  - **Artifacts:** 297 files modified.
+- **Branch:** `origin/fix-duo-planner-agent-typo-12908828223794405027` 🔥
+  - **Result:** Merge branch 'main' into fix-duo-planner-agent-typo-12908828223794405027
+  - **Knowledge:** Branch origin/fix-duo-planner-agent-typo-12908828223794405027 observed: Merge branch 'main' into fix-duo-planner-agent-typo-12908828223794405027
+  - **Artifacts:** 9736 files modified.
+- **Branch:** `origin/oci-wordpress-deployment-9120692360420901713` 🔥
+  - **Result:** add terraform and kubernetes configuration for wordpress on OCI
+  - **Knowledge:** Branch origin/oci-wordpress-deployment-9120692360420901713 observed: add terraform and kubernetes configuration for wordpress on OCI
+  - **Artifacts:** 231 files modified.
+- **Branch:** `origin/update-autonomous-workflow-to-nodejs-12950846570803253744` 🔥
+  - **Result:** resolve syntax errors causing CI build failure in Next.js frontend
+  - **Knowledge:** Branch origin/update-autonomous-workflow-to-nodejs-12950846570803253744 observed: resolve syntax errors causing CI build failure in Next.js frontend
+  - **Artifacts:** 297 files modified.
+- **Branch:** `origin/improve-gemini-cli-remote-agents-docs-7138939385768704032` 🔥
+  - **Result:** correct syntax error in page.tsx caused by incorrect formatting
+  - **Knowledge:** Branch origin/improve-gemini-cli-remote-agents-docs-7138939385768704032 observed: correct syntax error in page.tsx caused by incorrect formatting
+  - **Artifacts:** 299 files modified.
+- **Branch:** `origin/jules-arcjet-integration-16980338037533745889` 🔥
+  - **Result:** update eslint config formatting and remove extraneous bracket in page.tsx
+  - **Knowledge:** Branch origin/jules-arcjet-integration-16980338037533745889 observed: update eslint config formatting and remove extraneous bracket in page.tsx
+  - **Artifacts:** 254 files modified.
+- **Branch:** `origin/jules-continuous-presence-workflow-3144055533381791740` 🔥
+  - **Result:** add continuous autonomous presence workflow
+  - **Knowledge:** Branch origin/jules-continuous-presence-workflow-3144055533381791740 observed: add continuous autonomous presence workflow
+  - **Artifacts:** 9723 files modified.
+- **Branch:** `origin/collaboration-intelligence-sync-2178443547158728411` 🔥
+  - **Result:** implement cross-branch collaboration and intelligence synthesis
+  - **Knowledge:** Branch origin/collaboration-intelligence-sync-2178443547158728411 observed: implement cross-branch collaboration and intelligence synthesis
+  - **Artifacts:** 9726 files modified.
+- **Branch:** `origin/jules-5559433138773811985-39975caf` 🔥
+  - **Result:** Add `.gitlab-ci.yml` pipeline tutorial configuration
+  - **Knowledge:** Branch origin/jules-5559433138773811985-39975caf observed: Add `.gitlab-ci.yml` pipeline tutorial configuration
+  - **Artifacts:** 9691 files modified.
+- **Branch:** `origin/fix-duo-planner-prompt-962434380336539480` 🔥
+  - **Result:** Update duo planner agent prompt and fix package.json
+  - **Knowledge:** Branch origin/fix-duo-planner-prompt-962434380336539480 observed: Update duo planner agent prompt and fix package.json
+  - **Artifacts:** 9722 files modified.
+- **Branch:** `origin/jules-full-autonomus-workflow-8744732568350416698` 🔥
+  - **Result:** Enable full autonomous web scraping workflow
+  - **Knowledge:** Branch origin/jules-full-autonomus-workflow-8744732568350416698 observed: Enable full autonomous web scraping workflow
+  - **Artifacts:** 249 files modified.
+- **Branch:** `origin/add-compile-definition-17628200376543609981` 🔥
+  - **Result:** Merge branch 'jules/scraper-markposition-17752547678215960211' into add-compile-definition-17628200376543609981
+  - **Knowledge:** Branch origin/add-compile-definition-17628200376543609981 observed: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-compile-definition-17628200376543609981
+  - **Artifacts:** 249 files modified.
+- **Branch:** `origin/wilson-sonsini-docs-9972618481466643391` 🔥
+  - **Result:** add Wilson Sonsini firm profile and practice areas
+  - **Knowledge:** Branch origin/wilson-sonsini-docs-9972618481466643391 observed: add Wilson Sonsini firm profile and practice areas
+  - **Artifacts:** 240 files modified.
+- **Branch:** `origin/docs/wilson-sonsini-17936625149736010375` 🔥
+  - **Result:** add Wilson Sonsini documentation
+  - **Knowledge:** Branch origin/docs/wilson-sonsini-17936625149736010375 observed: add Wilson Sonsini documentation
+  - **Artifacts:** 9713 files modified.
+- **Branch:** `origin/add-wilson-sonsini-docs-11494390792641278551` 🔥
+  - **Result:** add documentation for Wilson Sonsini Goodrich & Rosati
+  - **Knowledge:** Branch origin/add-wilson-sonsini-docs-11494390792641278551 observed: add documentation for Wilson Sonsini Goodrich & Rosati
+  - **Artifacts:** 239 files modified.
+- **Branch:** `origin/palette-ux-improvement-analytics-17483918169126367172` 🔥
+  - **Result:** Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette-ux-improvement-analytics-17483918169126367172
+  - **Knowledge:** Branch origin/palette-ux-improvement-analytics-17483918169126367172 observed: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette-ux-improvement-analytics-17483918169126367172
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/connect-docker-collaborate-17099568282070534570` 🔥
+  - **Result:** Add connect and collaborate script
+  - **Knowledge:** Branch origin/connect-docker-collaborate-17099568282070534570 observed: Add connect and collaborate script
+  - **Artifacts:** 9711 files modified.
+- **Branch:** `origin/jules-1401381832535268992-101c53a9` 🔥
+  - **Result:** import re module in scraper.py
+  - **Knowledge:** Branch origin/jules-1401381832535268992-101c53a9 observed: import re module in scraper.py
+  - **Artifacts:** 219 files modified.
+- **Branch:** `origin/fix-docs-json-errors-7026823761144797836` 🔥
+  - **Result:** update Gemini remote agent documentation and fix JSON files
+  - **Knowledge:** Branch origin/fix-docs-json-errors-7026823761144797836 observed: update Gemini remote agent documentation and fix JSON files
+  - **Artifacts:** 281 files modified.
+- **Branch:** `origin/analytics-single-pass-optimization-8605272393071134080` 🔥
+  - **Result:** Add ASCII bar charts to analytics report (#1473)
+  - **Knowledge:** Branch origin/analytics-single-pass-optimization-8605272393071134080 observed: Add ASCII bar charts to analytics report (#1473)
+  - **Artifacts:** 29 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-2739836513252277633` 🔥
+  - **Result:** Merge branch 'jules/scraper-markposition-17752547678215960211' into sentinel/fix-csv-injection-2739836513252277633
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-2739836513252277633 observed: Merge branch 'jules/scraper-markposition-17752547678215960211' into sentinel/fix-csv-injection-2739836513252277633
+  - **Artifacts:** 287 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-11594538796228867279` 🔥
+  - **Result:** Merge branch 'jules-scrape-informatic-6598290821327070927' into sentinel-path-traversal-fix-11594538796228867279
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-11594538796228867279 observed: Merge branch 'jules-scrape-informatic-6598290821327070927' into sentinel-path-traversal-fix-11594538796228867279
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/bolt-optimize-scraper-12240886470808254228` ⚡
+  - **Result:** Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into bolt-optimize-scraper-12240886470808254228
+  - **Knowledge:** Branch origin/bolt-optimize-scraper-12240886470808254228 observed: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into bolt-optimize-scraper-12240886470808254228
+  - **Artifacts:** 14 files modified.
+- **Branch:** `origin/bolt-optimize-scraper-parsing-11280633053696081598` 🔥
+  - **Result:** Merge branch 'blocking-async-batch-fix-8387232668981368166' into bolt-optimize-scraper-parsing-11280633053696081598
+  - **Knowledge:** Branch origin/bolt-optimize-scraper-parsing-11280633053696081598 observed: Merge branch 'blocking-async-batch-fix-8387232668981368166' into bolt-optimize-scraper-parsing-11280633053696081598
+  - **Artifacts:** 31 files modified.
+- **Branch:** `origin/scrape-oracle-news-9936778584663660002` 🔥
+  - **Result:** Fix path traversal in scraper and add CSV injection protection (#1126)
+  - **Knowledge:** Branch origin/scrape-oracle-news-9936778584663660002 observed: Fix path traversal in scraper and add CSV injection protection (#1126)
+  - **Artifacts:** 31 files modified.
+- **Branch:** `origin/sentinel-security-fix-8692130279913781488` 🔥
+  - **Result:** Merge branch 'scrape-oracle-news-9936778584663660002' into sentinel-security-fix-8692130279913781488
+  - **Knowledge:** Branch origin/sentinel-security-fix-8692130279913781488 observed: Merge branch 'scrape-oracle-news-9936778584663660002' into sentinel-security-fix-8692130279913781488
+  - **Artifacts:** 31 files modified.
+- **Branch:** `origin/bolt-regex-optimization-1111975510194507736` 🔥
+  - **Result:** Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into bolt-regex-optimization-1111975510194507736
+  - **Knowledge:** Branch origin/bolt-regex-optimization-1111975510194507736 observed: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into bolt-regex-optimization-1111975510194507736
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-fix-xss-report-generator-15539437928159722919` 🔥
+  - **Result:** Merge branch 'scrape-wishlist-blog-8562532477839035494' into sentinel-fix-xss-report-generator-15539437928159722919
+  - **Knowledge:** Branch origin/sentinel-fix-xss-report-generator-15539437928159722919 observed: Merge branch 'scrape-wishlist-blog-8562532477839035494' into sentinel-fix-xss-report-generator-15539437928159722919
+  - **Artifacts:** 29 files modified.
+- **Branch:** `origin/sentinel-fix-path-traversal-15680085493985051693` 🔥
+  - **Result:** Merge branch 'analytics-single-pass-optimization-8605272393071134080' into sentinel-fix-path-traversal-15680085493985051693
+  - **Knowledge:** Branch origin/sentinel-fix-path-traversal-15680085493985051693 observed: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into sentinel-fix-path-traversal-15680085493985051693
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/bolt-soupstrainer-optimization-12556546636567708746` 🔥
+  - **Result:** Merge branch 'unbounded-memory-fix-2399372418864956220' into bolt-soupstrainer-optimization-12556546636567708746
+  - **Knowledge:** Branch origin/bolt-soupstrainer-optimization-12556546636567708746 observed: Merge branch 'unbounded-memory-fix-2399372418864956220' into bolt-soupstrainer-optimization-12556546636567708746
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/sentinel/fix-path-traversal-9909177477694886926` 🔥
+  - **Result:** Merge branch 'unbounded-memory-fix-2399372418864956220' into sentinel/fix-path-traversal-9909177477694886926
+  - **Knowledge:** Branch origin/sentinel/fix-path-traversal-9909177477694886926 observed: Merge branch 'unbounded-memory-fix-2399372418864956220' into sentinel/fix-path-traversal-9909177477694886926
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/bolt/parallel-researcher-3732082642823576207` 🔥
+  - **Result:** Merge branch 'jules-scrape-informatic-6598290821327070927' into bolt/parallel-researcher-3732082642823576207
+  - **Knowledge:** Branch origin/bolt/parallel-researcher-3732082642823576207 observed: Merge branch 'jules-scrape-informatic-6598290821327070927' into bolt/parallel-researcher-3732082642823576207
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/palette/analytics-report-ux-1743774692152261155` 🔥
+  - **Result:** Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette/analytics-report-ux-1743774692152261155
+  - **Knowledge:** Branch origin/palette/analytics-report-ux-1743774692152261155 observed: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette/analytics-report-ux-1743774692152261155
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/palette-ascii-analytics-11257540586507137065` ⚡
+  - **Result:** Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into palette-ascii-analytics-11257540586507137065
+  - **Knowledge:** Branch origin/palette-ascii-analytics-11257540586507137065 observed: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into palette-ascii-analytics-11257540586507137065
+  - **Artifacts:** 14 files modified.
+- **Branch:** `origin/palette-ux-report-improvements-3538068568817014543` 🔥
+  - **Result:** Merge branch 'unbounded-memory-fix-2399372418864956220' into palette-ux-report-improvements-3538068568817014543
+  - **Knowledge:** Branch origin/palette-ux-report-improvements-3538068568817014543 observed: Merge branch 'unbounded-memory-fix-2399372418864956220' into palette-ux-report-improvements-3538068568817014543
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/sentinel-fix-csv-path-traversal-17631474637171594831` 🔥
+  - **Result:** Merge branch 'blocking-async-batch-fix-8387232668981368166' into sentinel-fix-csv-path-traversal-17631474637171594831
+  - **Knowledge:** Branch origin/sentinel-fix-csv-path-traversal-17631474637171594831 observed: Merge branch 'blocking-async-batch-fix-8387232668981368166' into sentinel-fix-csv-path-traversal-17631474637171594831
+  - **Artifacts:** 31 files modified.
+- **Branch:** `origin/sentinel-fix-path-traversal-scraper-13213867928439084408` 🔥
+  - **Result:** Merge branch 'oracle-google-cloud-agents-15432798509012982749' into sentinel-fix-path-traversal-scraper-13213867928439084408
+  - **Knowledge:** Branch origin/sentinel-fix-path-traversal-scraper-13213867928439084408 observed: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into sentinel-fix-path-traversal-scraper-13213867928439084408
+  - **Artifacts:** 54 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-13129809503624389550` ⚡
+  - **Result:** Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into sentinel-path-traversal-fix-13129809503624389550
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-13129809503624389550 observed: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into sentinel-path-traversal-fix-13129809503624389550
+  - **Artifacts:** 12 files modified.
+- **Branch:** `origin/palette-analytics-ux-7505744370262329436` ⚡
+  - **Result:** Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into palette-analytics-ux-7505744370262329436
+  - **Knowledge:** Branch origin/palette-analytics-ux-7505744370262329436 observed: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into palette-analytics-ux-7505744370262329436
+  - **Artifacts:** 11 files modified.
+- **Branch:** `origin/sentinel-fix-path-traversal-10143509999486515676` 🔥
+  - **Result:** Merge branch 'optimize-scraper-lxml-10625319758147758999' into sentinel-fix-path-traversal-10143509999486515676
+  - **Knowledge:** Branch origin/sentinel-fix-path-traversal-10143509999486515676 observed: Merge branch 'optimize-scraper-lxml-10625319758147758999' into sentinel-fix-path-traversal-10143509999486515676
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/sentinel/fix-path-traversal-5310615808568024057` 🔥
+  - **Result:** Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into sentinel/fix-path-traversal-5310615808568024057
+  - **Knowledge:** Branch origin/sentinel/fix-path-traversal-5310615808568024057 observed: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into sentinel/fix-path-traversal-5310615808568024057
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/palette-analytics-report-ux-2082125199399639839` 🔥
+  - **Result:** Merge branch 'blocking-async-batch-fix-8387232668981368166' into palette-analytics-report-ux-2082125199399639839
+  - **Knowledge:** Branch origin/palette-analytics-report-ux-2082125199399639839 observed: Merge branch 'blocking-async-batch-fix-8387232668981368166' into palette-analytics-report-ux-2082125199399639839
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/bolt/scraper-optimization-5038895935936123886` 🔥
+  - **Result:** Merge branch 'blocking-async-batch-fix-8387232668981368166' into bolt/scraper-optimization-5038895935936123886
+  - **Knowledge:** Branch origin/bolt/scraper-optimization-5038895935936123886 observed: Merge branch 'blocking-async-batch-fix-8387232668981368166' into bolt/scraper-optimization-5038895935936123886
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-15311644006132140553` 🔥
+  - **Result:** Merge branch 'optimize-scraper-lxml-10625319758147758999' into sentinel-csv-injection-fix-15311644006132140553
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-15311644006132140553 observed: Merge branch 'optimize-scraper-lxml-10625319758147758999' into sentinel-csv-injection-fix-15311644006132140553
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/sentinel-fix-ssrf-robottxt-10466184040354898507` 🔥
+  - **Result:** Merge branch 'unbounded-memory-fix-2399372418864956220' into sentinel-fix-ssrf-robottxt-10466184040354898507
+  - **Knowledge:** Branch origin/sentinel-fix-ssrf-robottxt-10466184040354898507 observed: Merge branch 'unbounded-memory-fix-2399372418864956220' into sentinel-fix-ssrf-robottxt-10466184040354898507
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/integrate-markposition-knowledge-merge-3452272022805466987` 🔥
+  - **Result:** Fix CI failures due to missing pythonpath in pytest
+  - **Knowledge:** Branch origin/integrate-markposition-knowledge-merge-3452272022805466987 observed: Fix CI failures due to missing pythonpath in pytest
+  - **Artifacts:** 222 files modified.
+- **Branch:** `origin/add-jules-cli-7658708591293792322` 🔥
+  - **Result:** Merge branch 'jules/scraper-markposition-17752547678215960211' into add-jules-cli-7658708591293792322
+  - **Knowledge:** Branch origin/add-jules-cli-7658708591293792322 observed: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-jules-cli-7658708591293792322
+  - **Artifacts:** 239 files modified.
+- **Branch:** `origin/add-compile-definition-8931819634976410807` 🔥
+  - **Result:** Merge branch 'jules/scraper-markposition-17752547678215960211' into add-compile-definition-8931819634976410807
+  - **Knowledge:** Branch origin/add-compile-definition-8931819634976410807 observed: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-compile-definition-8931819634976410807
+  - **Artifacts:** 237 files modified.
+- **Branch:** `origin/add-gemini-ide-docs-5507798578309108991` 🔥
+  - **Result:** Merge branch 'jules/scraper-markposition-17752547678215960211' into add-gemini-ide-docs-5507798578309108991
+  - **Knowledge:** Branch origin/add-gemini-ide-docs-5507798578309108991 observed: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-gemini-ide-docs-5507798578309108991
+  - **Artifacts:** 234 files modified.
+- **Branch:** `origin/add-gitlab-security-agent-prompt-6060929454808838034` 🔥
+  - **Result:** add GitLab Security Analyst Agent system prompt
+  - **Knowledge:** Branch origin/add-gitlab-security-agent-prompt-6060929454808838034 observed: add GitLab Security Analyst Agent system prompt
+  - **Artifacts:** 9689 files modified.
+- **Branch:** `origin/add-duo-planner-agent-8887381606310982436` 🔥
+  - **Result:** Add Duo Planner Agent system prompt
+  - **Knowledge:** Branch origin/add-duo-planner-agent-8887381606310982436 observed: Add Duo Planner Agent system prompt
+  - **Artifacts:** 9689 files modified.
+- **Branch:** `origin/docs-automation-triage-10895721213891935153` 🔥
+  - **Result:** add automation and triage processes to CONTRIBUTING.md
+  - **Knowledge:** Branch origin/docs-automation-triage-10895721213891935153 observed: add automation and triage processes to CONTRIBUTING.md
+  - **Artifacts:** 219 files modified.
+- **Branch:** `origin/add-geminiignore-3994117053724199623` 🔥
+  - **Result:** add .geminiignore file to exclude sensitive/irrelevant files
+  - **Knowledge:** Branch origin/add-geminiignore-3994117053724199623 observed: add .geminiignore file to exclude sensitive/irrelevant files
+  - **Artifacts:** 220 files modified.
+- **Branch:** `origin/improve-git-sync-and-ingest-sor-6424222975070794974` 🔥
+  - **Result:** improve autonomous git workflow and add knowledge ingestion for sor\n\n- Update `gitSync` in `antigravity/jules.ts` to execute `git pull --rebase` and `git push` to autonomously handle conflicts and push changes.\n- Add `scripts/ingest_software_online_review.ts` to ingest knowledge from https
+  - **Knowledge:** Branch origin/improve-git-sync-and-ingest-sor-6424222975070794974 observed: improve autonomous git workflow and add knowledge ingestion for sor\n\n- Update `gitSync` in `antigravity/jules.ts` to execute `git pull --rebase` and `git push` to autonomously handle conflicts and push changes.\n- Add `scripts/ingest_software_online_review.ts` to ingest knowledge from https
+  - **Artifacts:** 9699 files modified.
+- **Branch:** `origin/add-gitlab-security-agent-prompt-16540176671068222176` 🔥
+  - **Result:** Add GitLab Security Analyst Agent prompt
+  - **Knowledge:** Branch origin/add-gitlab-security-agent-prompt-16540176671068222176 observed: Add GitLab Security Analyst Agent prompt
+  - **Artifacts:** 9694 files modified.
+- **Branch:** `origin/add-docker-scripts-14962706392589598489` 🔥
+  - **Result:** add docker deployment scripts
+  - **Knowledge:** Branch origin/add-docker-scripts-14962706392589598489 observed: add docker deployment scripts
+  - **Artifacts:** 9695 files modified.
+- **Branch:** `origin/add-vercel-sandbox-script-10704006226783687744` 🔥
+  - **Result:** Added sandbox_test.ts with @vercel/sandbox usage and installed required dependencies
+  - **Knowledge:** Branch origin/add-vercel-sandbox-script-10704006226783687744 observed: Added sandbox_test.ts with @vercel/sandbox usage and installed required dependencies
+  - **Artifacts:** 224 files modified.
+- **Branch:** `origin/add-vercel-sandbox-test-15599509857500160318` 🔥
+  - **Result:** Add Vercel Sandbox integration test script
+  - **Knowledge:** Branch origin/add-vercel-sandbox-test-15599509857500160318 observed: Add Vercel Sandbox integration test script
+  - **Artifacts:** 224 files modified.
+- **Branch:** `origin/implement-ai-agent-knowledge-12940849847121991383` 🔥
+  - **Result:** Implement AI Agent knowledge from Google Cloud Discover
+  - **Knowledge:** Branch origin/implement-ai-agent-knowledge-12940849847121991383 observed: Implement AI Agent knowledge from Google Cloud Discover
+  - **Artifacts:** 213 files modified.
+- **Branch:** `origin/add-compile-definition-6604126612521959588` 🔥
+  - **Result:** add definition and context of compile
+  - **Knowledge:** Branch origin/add-compile-definition-6604126612521959588 observed: add definition and context of compile
+  - **Artifacts:** 224 files modified.
+- **Branch:** `origin/multi-cloud-workflow-intelligence-12208347123975439755` 🔥
+  - **Result:** implement multi-cloud workflow orchestration
+  - **Knowledge:** Branch origin/multi-cloud-workflow-intelligence-12208347123975439755 observed: implement multi-cloud workflow orchestration
+  - **Artifacts:** 213 files modified.
+- **Branch:** `origin/add-duo-planner-agent-config-16696385487941017117` 🔥
+  - **Result:** Add Duo Planner AI Agent configuration
+  - **Knowledge:** Branch origin/add-duo-planner-agent-config-16696385487941017117 observed: Add Duo Planner AI Agent configuration
+  - **Artifacts:** 9684 files modified.
+- **Branch:** `origin/enable-gitlab-security-scanners-17254273171421596517` 🔥
+  - **Result:** add gitlab security scanner templates to ci/cd config
+  - **Knowledge:** Branch origin/enable-gitlab-security-scanners-17254273171421596517 observed: add gitlab security scanner templates to ci/cd config
+  - **Artifacts:** 9683 files modified.
+- **Branch:** `origin/v0/8bukets-bd43e85b` 🔥
+  - **Result:** implement AI agent knowledge from Google Cloud Discover (#1529)
+  - **Knowledge:** Branch origin/v0/8bukets-bd43e85b observed: implement AI agent knowledge from Google Cloud Discover (#1529)
+  - **Artifacts:** 223 files modified.
+- **Branch:** `origin/implement-ai-agent-knowledge-21882567880054537` 🔥
+  - **Result:** implement AI agent knowledge from Google Cloud Discover
+  - **Knowledge:** Branch origin/implement-ai-agent-knowledge-21882567880054537 observed: implement AI agent knowledge from Google Cloud Discover
+  - **Artifacts:** 223 files modified.
+- **Branch:** `origin/implement-ai-agents-knowledge-11176623184876779780` 🔥
+  - **Result:** implement expanded AI agents knowledge from Google Cloud
+  - **Knowledge:** Branch origin/implement-ai-agents-knowledge-11176623184876779780 observed: implement expanded AI agents knowledge from Google Cloud
+  - **Artifacts:** 229 files modified.
+- **Branch:** `origin/setup-gitlab-ci-pipeline-2613952253405968723` 🔥
+  - **Result:** Setup GitLab CI/CD and fix connectivity test flakiness
+  - **Knowledge:** Branch origin/setup-gitlab-ci-pipeline-2613952253405968723 observed: Setup GitLab CI/CD and fix connectivity test flakiness
+  - **Artifacts:** 212 files modified.
+- **Branch:** `origin/implement-ai-agents-knowledge-10544419529497787617` 🔥
+  - **Result:** Implement AI Agents knowledge from Google Cloud Discover.
+  - **Knowledge:** Branch origin/implement-ai-agents-knowledge-10544419529497787617 observed: Implement AI Agents knowledge from Google Cloud Discover.
+  - **Artifacts:** 203 files modified.
+- **Branch:** `origin/add-google-research-agent-6251052890466246126` 🔥
+  - **Result:** add GoogleModelsResearchAgent and standalone scraper
+  - **Knowledge:** Branch origin/add-google-research-agent-6251052890466246126 observed: add GoogleModelsResearchAgent and standalone scraper
+  - **Artifacts:** 83 files modified.
+- **Branch:** `origin/project-opinion-evolution-18306036414363557055` 🔥
+  - **Result:** replace hallucinated PII with explicit placeholders in PROJECT_OPINION.md
+  - **Knowledge:** Branch origin/project-opinion-evolution-18306036414363557055 observed: replace hallucinated PII with explicit placeholders in PROJECT_OPINION.md
+  - **Artifacts:** 210 files modified.
+- **Branch:** `origin/add-stitch-scraper-10970862194903572827` 🔥
+  - **Result:** Consolidate and apply security fixes
+  - **Knowledge:** Branch origin/add-stitch-scraper-10970862194903572827 observed: Consolidate and apply security fixes
+  - **Artifacts:** 78 files modified.
+- **Branch:** `origin/add-mysql-agent-12534386317238704274` 🔥
+  - **Result:** implement autonomous capabilities for JulesEvolutionAgent
+  - **Knowledge:** Branch origin/add-mysql-agent-12534386317238704274 observed: implement autonomous capabilities for JulesEvolutionAgent
+  - **Artifacts:** 88 files modified.
+- **Branch:** `origin/add-litert-scraper-14251549664882389876` 🔥
+  - **Result:** Add scraper for Google LiteRT documentation
+  - **Knowledge:** Branch origin/add-litert-scraper-14251549664882389876 observed: Add scraper for Google LiteRT documentation
+  - **Artifacts:** 78 files modified.
+- **Branch:** `origin/add-docker-push-methods-8792019299013764107` 🔥
+  - **Result:** Add Docker push automation mechanisms
+  - **Knowledge:** Branch origin/add-docker-push-methods-8792019299013764107 observed: Add Docker push automation mechanisms
+  - **Artifacts:** 78 files modified.
+- **Branch:** `origin/add-intelephense-scraper-1993524492524163396` 🔥
+  - **Result:** Add intelephense_scraper.py to extract Intelephense docs
+  - **Knowledge:** Branch origin/add-intelephense-scraper-1993524492524163396 observed: Add intelephense_scraper.py to extract Intelephense docs
+  - **Artifacts:** 75 files modified.
+- **Branch:** `origin/codex/software-review-platform-pr` 🔥
+  - **Result:** Add Railway deploy config
+  - **Knowledge:** Branch origin/codex/software-review-platform-pr observed: Add Railway deploy config
+  - **Artifacts:** 130 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-8672779981271268413` ⚡
+  - **Result:** [MEDIUM] Fix CSV Injection vulnerability
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-8672779981271268413 observed: [MEDIUM] Fix CSV Injection vulnerability
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-5760919047341012368` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper export
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-5760919047341012368 observed: Fix CSV injection vulnerability in scraper export
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel/fix-markdown-injection-18346561083266000842` ⚡
+  - **Result:** Fix Markdown and HTML injection in analytics report
+  - **Knowledge:** Branch origin/sentinel/fix-markdown-injection-18346561083266000842 observed: Fix Markdown and HTML injection in analytics report
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/sentinel-fix-markdown-injection-682484590421741626` 🔥
+  - **Result:** Fix Markdown injection in analytics report
+  - **Knowledge:** Branch origin/sentinel-fix-markdown-injection-682484590421741626 observed: Fix Markdown injection in analytics report
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/sentinel/fix-markdown-injection-17509944772710987348` ⚡
+  - **Result:** Fix Markdown table injection and XSS vulnerability in analytics report
+  - **Knowledge:** Branch origin/sentinel/fix-markdown-injection-17509944772710987348 observed: Fix Markdown table injection and XSS vulnerability in analytics report
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-17501930990885364981` 🔥
+  - **Result:** Fix CSV Injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-17501930990885364981 observed: Fix CSV Injection vulnerability in scraper.py
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/sentinel-fix-developer-agent-secrets-7041287385946193103` 🔥
+  - **Result:** Fix hardcoded secrets in DeveloperAgent snippets
+  - **Knowledge:** Branch origin/sentinel-fix-developer-agent-secrets-7041287385946193103 observed: Fix hardcoded secrets in DeveloperAgent snippets
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-13077768089564060512` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-13077768089564060512 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-13037407619798804311` ⚡
+  - **Result:** Fix CSV Injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-13037407619798804311 observed: Fix CSV Injection vulnerability in scraper.py
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-14541326570194157665` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-14541326570194157665 observed: Fix CSV injection vulnerability in scraper.py
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel/fix-scraper-ssrf-1182726048773637235` ⚡
+  - **Result:** Prevent SSRF in scraper pagination logic
+  - **Knowledge:** Branch origin/sentinel/fix-scraper-ssrf-1182726048773637235 observed: Prevent SSRF in scraper pagination logic
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/palette-cli-ux-6451827673105305913` ⚡
+  - **Result:** add colored logging and summary table to scraper
+  - **Knowledge:** Branch origin/palette-cli-ux-6451827673105305913 observed: add colored logging and summary table to scraper
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-8148266777407041766` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper export
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-8148266777407041766 observed: Fix CSV injection vulnerability in scraper export
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-14114537918126303723` ⚡
+  - **Result:** [CRITICAL] Fix CSV Injection vulnerability
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-14114537918126303723 observed: [CRITICAL] Fix CSV Injection vulnerability
+  - **Artifacts:** 9 files modified.
+- **Branch:** `origin/sentinel-fix-path-traversal-10371328394414970725` ⚡
+  - **Result:** fix path traversal and hanging risks in scraper
+  - **Knowledge:** Branch origin/sentinel-fix-path-traversal-10371328394414970725 observed: fix path traversal and hanging risks in scraper
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-18109389210743040134` 🔥
+  - **Result:** Fix CSV Injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-18109389210743040134 observed: Fix CSV Injection vulnerability in scraper.py
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-8718980999403222499` ⚡
+  - **Result:** [HIGH] Fix CSV Injection in Scraper
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-8718980999403222499 observed: [HIGH] Fix CSV Injection in Scraper
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/palette-ux-scraper-logs-18341771312200934138` ⚡
+  - **Result:** Add emoji feedback to CLI scraper
+  - **Knowledge:** Branch origin/palette-ux-scraper-logs-18341771312200934138 observed: Add emoji feedback to CLI scraper
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-15572259258648426988` ⚡
+  - **Result:** Fix CSV Injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-15572259258648426988 observed: Fix CSV Injection vulnerability in scraper.py
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-9699897401225629135` 🔥
+  - **Result:** Fix CSV Injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-9699897401225629135 observed: Fix CSV Injection vulnerability in scraper.py
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-16076674435631694662` 🔥
+  - **Result:** Fix CSV Injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-16076674435631694662 observed: Fix CSV Injection vulnerability in scraper.py
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-fix-markdown-injection-12930383619686102391` 🔥
+  - **Result:** Fix Markdown injection and XSS in analytics report
+  - **Knowledge:** Branch origin/sentinel-fix-markdown-injection-12930383619686102391 observed: Fix Markdown injection and XSS in analytics report
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-7371159905653815278` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper output
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-7371159905653815278 observed: Fix CSV injection vulnerability in scraper output
+  - **Artifacts:** 9 files modified.
+- **Branch:** `origin/sentinel/fix-path-traversal-1539865993913556303` ⚡
+  - **Result:** [CRITICAL] Fix Path Traversal in Scrapers
+  - **Knowledge:** Branch origin/sentinel/fix-path-traversal-1539865993913556303 observed: [CRITICAL] Fix Path Traversal in Scrapers
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-fix-markdown-injection-8681751187497699731` ⚡
+  - **Result:** [MEDIUM] Fix Markdown injection in analytics report
+  - **Knowledge:** Branch origin/sentinel-fix-markdown-injection-8681751187497699731 observed: [MEDIUM] Fix Markdown injection in analytics report
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/sentinel/fix-markdown-injection-796801966410983912` 🔥
+  - **Result:** sanitize inputs in Markdown report generation
+  - **Knowledge:** Branch origin/sentinel/fix-markdown-injection-796801966410983912 observed: sanitize inputs in Markdown report generation
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-12822134464045250176` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper output
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-12822134464045250176 observed: Fix CSV injection vulnerability in scraper output
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/palette-ux-cli-colors-9624439488845995317` ⚡
+  - **Result:** add colors and emojis to CLI output
+  - **Knowledge:** Branch origin/palette-ux-cli-colors-9624439488845995317 observed: add colors and emojis to CLI output
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-13230148290788168806` 🔥
+  - **Result:** [CRITICAL] Fix CSV Formula Injection
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-13230148290788168806 observed: [CRITICAL] Fix CSV Formula Injection
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/sentinel-fix-markdown-injection-5126944907342105696` 🔥
+  - **Result:** Fix Markdown Injection in analytics.py
+  - **Knowledge:** Branch origin/sentinel-fix-markdown-injection-5126944907342105696 observed: Fix Markdown Injection in analytics.py
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-1546845939770947284` 🔥
+  - **Result:** fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-1546845939770947284 observed: fix CSV injection vulnerability in scraper
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-18204894269063058873` ⚡
+  - **Result:** Fix CSV Injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-18204894269063058873 observed: Fix CSV Injection vulnerability in scraper
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-6097070558699072843` 🔥
+  - **Result:** [HIGH] Fix CSV Injection vulnerability
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-6097070558699072843 observed: [HIGH] Fix CSV Injection vulnerability
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-6481770825108670160` ⚡
+  - **Result:** fix CSV injection in scraper.py
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-6481770825108670160 observed: fix CSV injection in scraper.py
+  - **Artifacts:** 9 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-2231238030429809287` ⚡
+  - **Result:** [HIGH] Fix CSV Injection in scraper
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-2231238030429809287 observed: [HIGH] Fix CSV Injection in scraper
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-fix-path-traversal-scraper-5008528989288231016` 🔥
+  - **Result:** [CRITICAL] Fix path traversal in scraper output
+  - **Knowledge:** Branch origin/sentinel-fix-path-traversal-scraper-5008528989288231016 observed: [CRITICAL] Fix path traversal in scraper output
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-5798817782401239409` 🔥
+  - **Result:** [CRITICAL] Fix CSV Injection in scraper output
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-5798817782401239409 observed: [CRITICAL] Fix CSV Injection in scraper output
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-6985959726167139118` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-6985959726167139118 observed: Fix CSV injection vulnerability in scraper.py
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-5620695880031672864` 🔥
+  - **Result:** [CRITICAL] Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-5620695880031672864 observed: [CRITICAL] Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-5842212844507239476` 🔥
+  - **Result:** Fix CSV Injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-5842212844507239476 observed: Fix CSV Injection vulnerability in scraper
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-4415051374640604322` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper and add security test
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-4415051374640604322 observed: Fix CSV injection vulnerability in scraper and add security test
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-markdown-injection-fix-17260266237222771190` ⚡
+  - **Result:** Fix Markdown Table Injection and Stored XSS in Analytics Report
+  - **Knowledge:** Branch origin/sentinel-markdown-injection-fix-17260266237222771190 observed: Fix Markdown Table Injection and Stored XSS in Analytics Report
+  - **Artifacts:** 6 files modified.
+- **Branch:** `origin/sentinel-fix-path-traversal-scraper-16504973600351558814` ⚡
+  - **Result:** fix path traversal vulnerability in scrape_informatic.py
+  - **Knowledge:** Branch origin/sentinel-fix-path-traversal-scraper-16504973600351558814 observed: fix path traversal vulnerability in scrape_informatic.py
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-3271170795453668053` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-3271170795453668053 observed: Fix CSV injection vulnerability in scraper.py
+  - **Artifacts:** 10 files modified.
+- **Branch:** `origin/sentinel-fix-ssrf-13141535001444282200` 🔥
+  - **Result:** add SSRF protection to BlogScraper
+  - **Knowledge:** Branch origin/sentinel-fix-ssrf-13141535001444282200 observed: add SSRF protection to BlogScraper
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-17447751349152713566` 🔥
+  - **Result:** [CRITICAL] Fix CSV Injection vulnerability
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-17447751349152713566 observed: [CRITICAL] Fix CSV Injection vulnerability
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-1387259514847696259` 🔥
+  - **Result:** Fix CSV Injection and add request timeout
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-1387259514847696259 observed: Fix CSV Injection and add request timeout
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-1837485357128189949` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-1837485357128189949 observed: Fix CSV injection vulnerability in scraper.py
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-18292111345999615126` ⚡
+  - **Result:** [CRITICAL] Fix CSV injection in scraper
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-18292111345999615126 observed: [CRITICAL] Fix CSV injection in scraper
+  - **Artifacts:** 14 files modified.
+- **Branch:** `origin/sentinel/fix-scraper-timeout-15962352070527931210` ⚡
+  - **Result:** Fix missing timeout in scraper to prevent DoS
+  - **Knowledge:** Branch origin/sentinel/fix-scraper-timeout-15962352070527931210 observed: Fix missing timeout in scraper to prevent DoS
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-markdown-sanitization-7412755230245189501` 🔥
+  - **Result:** [MEDIUM] Fix Markdown Injection and XSS in Analytics Report
+  - **Knowledge:** Branch origin/sentinel-markdown-sanitization-7412755230245189501 observed: [MEDIUM] Fix Markdown Injection and XSS in Analytics Report
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-15191188867369355221` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-15191188867369355221 observed: Fix CSV injection vulnerability in scraper.py
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-2795873645337088864` ⚡
+  - **Result:** [CRITICAL] Fix CSV Injection in Scraper
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-2795873645337088864 observed: [CRITICAL] Fix CSV Injection in Scraper
+  - **Artifacts:** 9 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-11796924900035192869` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-11796924900035192869 observed: Fix CSV injection vulnerability in scraper.py
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/sentinel/fix-ssrf-pagination-12840024860908839` ⚡
+  - **Result:** Fix SSRF vulnerability in scraper pagination
+  - **Knowledge:** Branch origin/sentinel/fix-ssrf-pagination-12840024860908839 observed: Fix SSRF vulnerability in scraper pagination
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-17111531682822942428` ⚡
+  - **Result:** [CRITICAL] Fix CSV Injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-17111531682822942428 observed: [CRITICAL] Fix CSV Injection vulnerability in scraper
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-3035923625563795177` 🔥
+  - **Result:** Fix CSV Injection in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-3035923625563795177 observed: Fix CSV Injection in scraper
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-3645820419479198365` 🔥
+  - **Result:** [HIGH] Fix CSV Injection vulnerability
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-3645820419479198365 observed: [HIGH] Fix CSV Injection vulnerability
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-10553252584862984034` 🔥
+  - **Result:** [HIGH] Fix CSV Injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-10553252584862984034 observed: [HIGH] Fix CSV Injection vulnerability in scraper
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/palette/analytics-navigation-436511791889280438` ⚡
+  - **Result:** add TOC and navigation anchors to analytics report
+  - **Knowledge:** Branch origin/palette/analytics-navigation-436511791889280438 observed: add TOC and navigation anchors to analytics report
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/sentinel-ssrf-fix-15679479573064166638` 🔥
+  - **Result:** Add SSRF protection to BlogScraper
+  - **Knowledge:** Branch origin/sentinel-ssrf-fix-15679479573064166638 observed: Add SSRF protection to BlogScraper
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-7147169420011568758` ⚡
+  - **Result:** [CRITICAL] Fix CSV Injection in Scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-7147169420011568758 observed: [CRITICAL] Fix CSV Injection in Scraper
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-fix-markdown-injection-12887486750391469562` 🔥
+  - **Result:** Fix Markdown Injection and XSS vulnerability in analytics report.
+  - **Knowledge:** Branch origin/sentinel-fix-markdown-injection-12887486750391469562 observed: Fix Markdown Injection and XSS vulnerability in analytics report.
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/sentinel/fix-markdown-injection-16528079574555238506` ✨
+  - **Result:** [HIGH] Fix Markdown injection in analytics report
+  - **Knowledge:** Branch origin/sentinel/fix-markdown-injection-16528079574555238506 observed: [HIGH] Fix Markdown injection in analytics report
+  - **Artifacts:** 5 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-2671742778872724140` ⚡
+  - **Result:** fix CSV injection in scraper.py
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-2671742778872724140 observed: fix CSV injection in scraper.py
+  - **Artifacts:** 10 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-12477550236890892701` ⚡
+  - **Result:** Fix CSV Formula Injection in scraper.py
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-12477550236890892701 observed: Fix CSV Formula Injection in scraper.py
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-markdown-sanitization-7125974230705097522` 🔥
+  - **Result:** add Markdown sanitization to report generator
+  - **Knowledge:** Branch origin/sentinel-markdown-sanitization-7125974230705097522 observed: add Markdown sanitization to report generator
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-fix-ssrf-6066388601659048152` ⚡
+  - **Result:** [CRITICAL] Fix SSRF in scraper pagination
+  - **Knowledge:** Branch origin/sentinel-fix-ssrf-6066388601659048152 observed: [CRITICAL] Fix SSRF in scraper pagination
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-7180315405969834431` 🔥
+  - **Result:** Fix CSV injection vulnerability in OracleNewsScraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-7180315405969834431 observed: Fix CSV injection vulnerability in OracleNewsScraper
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-16105451329157671557` 🔥
+  - **Result:** prevent CSV formula injection in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-16105451329157671557 observed: prevent CSV formula injection in scraper
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-10398875479069463137` 🔥
+  - **Result:** Fix CSV Injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-10398875479069463137 observed: Fix CSV Injection vulnerability in scraper.py
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-8347650018740812298` 🔥
+  - **Result:** Fix CSV Injection in Scraper
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-8347650018740812298 observed: Fix CSV Injection in Scraper
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-455270542941409687` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-455270542941409687 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-report-navigation-6685589132510964882` ⚡
+  - **Result:** add TOC and navigation to generated reports
+  - **Knowledge:** Branch origin/palette-report-navigation-6685589132510964882 observed: add TOC and navigation to generated reports
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/sentinel/fix-markdown-injection-10552938949682893680` ⚡
+  - **Result:** Fix Markdown injection vulnerability in analytics report generator
+  - **Knowledge:** Branch origin/sentinel/fix-markdown-injection-10552938949682893680 observed: Fix Markdown injection vulnerability in analytics report generator
+  - **Artifacts:** 10 files modified.
+- **Branch:** `origin/sentinel-fix-markdown-injection-1745658489602604890` 🔥
+  - **Result:** Fix Markdown injection in analytics report
+  - **Knowledge:** Branch origin/sentinel-fix-markdown-injection-1745658489602604890 observed: Fix Markdown injection in analytics report
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-4856694323076265204` ⚡
+  - **Result:** Fix CSV Injection vulnerability in scraper by sanitizing outputs.
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-4856694323076265204 observed: Fix CSV Injection vulnerability in scraper by sanitizing outputs.
+  - **Artifacts:** 9 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-18110555379625017064` 🔥
+  - **Result:** [HIGH] Fix CSV Injection vulnerability
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-18110555379625017064 observed: [HIGH] Fix CSV Injection vulnerability
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/sentinel-analytics-security-4671865652902331047` ⚡
+  - **Result:** [MEDIUM] Fix Markdown Injection and Stored XSS in Analytics Report
+  - **Knowledge:** Branch origin/sentinel-analytics-security-4671865652902331047 observed: [MEDIUM] Fix Markdown Injection and Stored XSS in Analytics Report
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-12502953329308944649` 🔥
+  - **Result:** [HIGH] Fix CSV Injection vulnerability
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-12502953329308944649 observed: [HIGH] Fix CSV Injection vulnerability
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-fix-ssrf-scraper-14046740573993078652` ⚡
+  - **Result:** Fix SSRF risk and add timeout in scraper
+  - **Knowledge:** Branch origin/sentinel-fix-ssrf-scraper-14046740573993078652 observed: Fix SSRF risk and add timeout in scraper
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-16486355164975308903` 🔥
+  - **Result:** [CRITICAL] Fix CSV Injection vulnerability
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-16486355164975308903 observed: [CRITICAL] Fix CSV Injection vulnerability
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-fix-markdown-injection-18133297793763601152` 🔥
+  - **Result:** [HIGH] Fix Markdown injection in analytics report
+  - **Knowledge:** Branch origin/sentinel-fix-markdown-injection-18133297793763601152 observed: [HIGH] Fix Markdown injection in analytics report
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-2502077377827287714` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-2502077377827287714 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/sentinel-fix-xss-8439526911048077965` 🔥
+  - **Result:** Fix Stored XSS via Malicious Links
+  - **Knowledge:** Branch origin/sentinel-fix-xss-8439526911048077965 observed: Fix Stored XSS via Malicious Links
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-fix-report-injection-1488382414768619374` ⚡
+  - **Result:** add markdown sanitization to prevent injection
+  - **Knowledge:** Branch origin/sentinel-fix-report-injection-1488382414768619374 observed: add markdown sanitization to prevent injection
+  - **Artifacts:** 6 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-17728883922707922928` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-17728883922707922928 observed: Fix CSV injection vulnerability in scraper.py
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/palette-analytics-ux-3624889402201605206` ⚡
+  - **Result:** Add TOC and visual polish to analytics report
+  - **Knowledge:** Branch origin/palette-analytics-ux-3624889402201605206 observed: Add TOC and visual polish to analytics report
+  - **Artifacts:** 6 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-322900077655964364` ⚡
+  - **Result:** [HIGH] Fix CSV injection vulnerability
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-322900077655964364 observed: [HIGH] Fix CSV injection vulnerability
+  - **Artifacts:** 9 files modified.
+- **Branch:** `origin/sentinel-fix-markdown-injection-584275950262231611` 🔥
+  - **Result:** Fix Markdown injection and XSS in analytics.py
+  - **Knowledge:** Branch origin/sentinel-fix-markdown-injection-584275950262231611 observed: Fix Markdown injection and XSS in analytics.py
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-1964543136044474218` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-1964543136044474218 observed: Fix CSV injection vulnerability in scraper.py
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-csv-injection-196586466427306611` ⚡
+  - **Result:** [CRITICAL] Fix CSV Injection in Scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-196586466427306611 observed: [CRITICAL] Fix CSV Injection in Scraper
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-fix-markdown-injection-12782230076673312738` ⚡
+  - **Result:** Fix Markdown injection and stored XSS in analytics report
+  - **Knowledge:** Branch origin/sentinel-fix-markdown-injection-12782230076673312738 observed: Fix Markdown injection and stored XSS in analytics report
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-470987651178611651` 🔥
+  - **Result:** [CRITICAL] Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-470987651178611651 observed: [CRITICAL] Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel/fix-scraper-ssrf-timeout-839827095267002364` ⚡
+  - **Result:** Fix SSRF risk and add timeouts in scraper
+  - **Knowledge:** Branch origin/sentinel/fix-scraper-ssrf-timeout-839827095267002364 observed: Fix SSRF risk and add timeouts in scraper
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-ssrf-fix-4537331546277807709` 🔥
+  - **Result:** [HIGH] Fix SSRF vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-ssrf-fix-4537331546277807709 observed: [HIGH] Fix SSRF vulnerability in scraper
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-716833391018549425` 🔥
+  - **Result:** Fix CSV Injection vulnerability in scraper output
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-716833391018549425 observed: Fix CSV Injection vulnerability in scraper output
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-csv-injection-11171345795536949565` ⚡
+  - **Result:** [HIGH] Fix CSV Injection vulnerability
+  - **Knowledge:** Branch origin/sentinel-csv-injection-11171345795536949565 observed: [HIGH] Fix CSV Injection vulnerability
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-2649491938498643870` 🔥
+  - **Result:** [MEDIUM] Fix CSV Injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-2649491938498643870 observed: [MEDIUM] Fix CSV Injection vulnerability in scraper
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-8670746319559752468` 🔥
+  - **Result:** fix path traversal in file outputs
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-8670746319559752468 observed: fix path traversal in file outputs
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-4054564814748295224` 🔥
+  - **Result:** Fix CSV Injection in scraper.py
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-4054564814748295224 observed: Fix CSV Injection in scraper.py
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/palette/report-navigation-18425629165094388685` ⚡
+  - **Result:** Add ToC and navigation to analytics report
+  - **Knowledge:** Branch origin/palette/report-navigation-18425629165094388685 observed: Add ToC and navigation to analytics report
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-9615340353460481815` 🔥
+  - **Result:** sanitize CSV output to prevent formula injection
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-9615340353460481815 observed: sanitize CSV output to prevent formula injection
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/sentinel-fix-path-traversal-13097985426424939248` 🔥
+  - **Result:** [CRITICAL] Fix Path Traversal in output file handling
+  - **Knowledge:** Branch origin/sentinel-fix-path-traversal-13097985426424939248 observed: [CRITICAL] Fix Path Traversal in output file handling
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-17327093040459172563` 🔥
+  - **Result:** Fix path traversal vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-17327093040459172563 observed: Fix path traversal vulnerability in scraper.py
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/sentinel-fix-path-traversal-12978408799617571456` ⚡
+  - **Result:** Fix Path Traversal vulnerability in file outputs
+  - **Knowledge:** Branch origin/sentinel-fix-path-traversal-12978408799617571456 observed: Fix Path Traversal vulnerability in file outputs
+  - **Artifacts:** 13 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-14362573612841171516` ⚡
+  - **Result:** Fix path traversal in scrape_informatic.py
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-14362573612841171516 observed: Fix path traversal in scrape_informatic.py
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-scraper-security-3468579950298759361` 🔥
+  - **Result:** Fix stored XSS via scraper URL validation
+  - **Knowledge:** Branch origin/sentinel-scraper-security-3468579950298759361 observed: Fix stored XSS via scraper URL validation
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-3861579726719101131` ⚡
+  - **Result:** [HIGH] Fix CSV Injection in scraper output
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-3861579726719101131 observed: [HIGH] Fix CSV Injection in scraper output
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel/fix-path-traversal-9188874187141553419` ⚡
+  - **Result:** Fix path traversal vulnerability in scraper.py and analytics.py
+  - **Knowledge:** Branch origin/sentinel/fix-path-traversal-9188874187141553419 observed: Fix path traversal vulnerability in scraper.py and analytics.py
+  - **Artifacts:** 10 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-1424126792917896007` 🔥
+  - **Result:** Fix CSV Injection vulnerability in scraper output
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-1424126792917896007 observed: Fix CSV Injection vulnerability in scraper output
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-310785540738272778` ⚡
+  - **Result:** Fix CSV Injection vulnerability in scraper output
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-310785540738272778 observed: Fix CSV Injection vulnerability in scraper output
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-fix-path-traversal-11151724369375188674` 🔥
+  - **Result:** [CRITICAL] Fix Path Traversal in scraper.py
+  - **Knowledge:** Branch origin/sentinel-fix-path-traversal-11151724369375188674 observed: [CRITICAL] Fix Path Traversal in scraper.py
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-8645236588093434852` 🔥
+  - **Result:** Fix Path Traversal vulnerability in scraper output arguments
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-8645236588093434852 observed: Fix Path Traversal vulnerability in scraper output arguments
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel/fix-path-traversal-2695657045169320867` ⚡
+  - **Result:** Fix Path Traversal vulnerability in scraper and analytics tools
+  - **Knowledge:** Branch origin/sentinel/fix-path-traversal-2695657045169320867 observed: Fix Path Traversal vulnerability in scraper and analytics tools
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-15894353305636399400` ⚡
+  - **Result:** Fix CSV Injection vulnerability in scraper output
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-15894353305636399400 observed: Fix CSV Injection vulnerability in scraper output
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-scraper-ux-5424877083715030058` ⚡
+  - **Result:** add colored logging and summary table
+  - **Knowledge:** Branch origin/palette-scraper-ux-5424877083715030058 observed: add colored logging and summary table
+  - **Artifacts:** 6 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-15771572653654019647` 🔥
+  - **Result:** Fix CSV Injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-15771572653654019647 observed: Fix CSV Injection vulnerability in scraper
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/sentinel/fix-path-traversal-scraper-15595414302913607334` 🔥
+  - **Result:** Fix path traversal vulnerability in scraper output arguments.
+  - **Knowledge:** Branch origin/sentinel/fix-path-traversal-scraper-15595414302913607334 observed: Fix path traversal vulnerability in scraper output arguments.
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-fix-path-traversal-scraper-11209913813544277514` 🔥
+  - **Result:** Fix path traversal vulnerability in scraper.py CLI arguments
+  - **Knowledge:** Branch origin/sentinel-fix-path-traversal-scraper-11209913813544277514 observed: Fix path traversal vulnerability in scraper.py CLI arguments
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/sentinel-fix-path-traversal-17914056010192129632` ⚡
+  - **Result:** Fix path traversal vulnerability in scrape_informatic.py
+  - **Knowledge:** Branch origin/sentinel-fix-path-traversal-17914056010192129632 observed: Fix path traversal vulnerability in scrape_informatic.py
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-fix-path-traversal-10046544138462922136` ⚡
+  - **Result:** [CRITICAL] Fix path traversal in file download
+  - **Knowledge:** Branch origin/sentinel-fix-path-traversal-10046544138462922136 observed: [CRITICAL] Fix path traversal in file download
+  - **Artifacts:** 10 files modified.
+- **Branch:** `origin/sentinel-fix-path-traversal-15570821654986088312` 🔥
+  - **Result:** Fix path traversal vulnerability in scraper output paths
+  - **Knowledge:** Branch origin/sentinel-fix-path-traversal-15570821654986088312 observed: Fix path traversal vulnerability in scraper output paths
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-739509856525276517` 🔥
+  - **Result:** [HIGH] Fix CSV Injection vulnerability
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-739509856525276517 observed: [HIGH] Fix CSV Injection vulnerability
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-fix-path-traversal-14907330338659942512` ⚡
+  - **Result:** Fix Arbitrary File Write via Path Traversal
+  - **Knowledge:** Branch origin/sentinel-fix-path-traversal-14907330338659942512 observed: Fix Arbitrary File Write via Path Traversal
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-18436195312292293727` 🔥
+  - **Result:** [CRITICAL] Fix CSV Injection in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-18436195312292293727 observed: [CRITICAL] Fix CSV Injection in scraper
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-fix-path-traversal-4284819763695223084` 🔥
+  - **Result:** Fix Path Traversal in Scraper
+  - **Knowledge:** Branch origin/sentinel-fix-path-traversal-4284819763695223084 observed: Fix Path Traversal in Scraper
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-10298970558848162615` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-10298970558848162615 observed: Fix CSV injection vulnerability in scraper.py
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-10929502802886218209` 🔥
+  - **Result:** [CRITICAL] Fix CSV Injection vulnerability
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-10929502802886218209 observed: [CRITICAL] Fix CSV Injection vulnerability
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-7924678315596277000` ⚡
+  - **Result:** Fix path traversal vulnerability in scraper output paths
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-7924678315596277000 observed: Fix path traversal vulnerability in scraper output paths
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-12279666712111008639` 🔥
+  - **Result:** Fix path traversal vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-12279666712111008639 observed: Fix path traversal vulnerability in scraper.py
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-8570611774437113541` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-8570611774437113541 observed: Fix CSV injection vulnerability in scraper.py
+  - **Artifacts:** 10 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-14923274991046567104` 🔥
+  - **Result:** Fix Path Traversal vulnerability in scraper output paths
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-14923274991046567104 observed: Fix Path Traversal vulnerability in scraper output paths
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-11232382863201934682` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper output
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-11232382863201934682 observed: Fix CSV injection vulnerability in scraper output
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-11016573727348401190` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-11016573727348401190 observed: Fix CSV injection vulnerability in scraper.py
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-3785289375321426037` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-3785289375321426037 observed: Fix CSV injection vulnerability in scraper.py
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/sentinel-fix-path-traversal-9841026382038604128` ⚡
+  - **Result:** Fix path traversal vulnerability in scrape_informatic.py
+  - **Knowledge:** Branch origin/sentinel-fix-path-traversal-9841026382038604128 observed: Fix path traversal vulnerability in scrape_informatic.py
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-6719136545275287346` 🔥
+  - **Result:** Fix CSV Injection in Scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-6719136545275287346 observed: Fix CSV Injection in Scraper
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-fix-path-traversal-5132007929293032238` 🔥
+  - **Result:** Fix path traversal vulnerability in scraper.py and analytics.py
+  - **Knowledge:** Branch origin/sentinel-fix-path-traversal-5132007929293032238 observed: Fix path traversal vulnerability in scraper.py and analytics.py
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/palette-ux-report-toc-16462217141887198687` ⚡
+  - **Result:** Add TOC and emojis to analytics report
+  - **Knowledge:** Branch origin/palette-ux-report-toc-16462217141887198687 observed: Add TOC and emojis to analytics report
+  - **Artifacts:** 6 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-2336053112863136471` 🔥
+  - **Result:** Fix CSV Injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-2336053112863136471 observed: Fix CSV Injection vulnerability in scraper.py
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-5108054978514907420` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper output
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-5108054978514907420 observed: Fix CSV injection vulnerability in scraper output
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-fix-xss-report-17694993639350070672` ⚡
+  - **Result:** Fix Stored XSS in Analytics Report
+  - **Knowledge:** Branch origin/sentinel-fix-xss-report-17694993639350070672 observed: Fix Stored XSS in Analytics Report
+  - **Artifacts:** 6 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-759890926967212504` 🔥
+  - **Result:** [HIGH] Fix CSV Injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-759890926967212504 observed: [HIGH] Fix CSV Injection vulnerability in scraper
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-fix-ssrf-scraper-11819724564068421400` 🔥
+  - **Result:** [HIGH] Fix SSRF in scraper
+  - **Knowledge:** Branch origin/sentinel-fix-ssrf-scraper-11819724564068421400 observed: [HIGH] Fix SSRF in scraper
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-10967338732695959755` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-10967338732695959755 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-10456735655567635784` ⚡
+  - **Result:** [CRITICAL] Fix path traversal in scraper scripts
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-10456735655567635784 observed: [CRITICAL] Fix path traversal in scraper scripts
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-10197426659133330232` 🔥
+  - **Result:** [CRITICAL] Fix CSV Injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-10197426659133330232 observed: [CRITICAL] Fix CSV Injection vulnerability in scraper.py
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-7180554626673421136` 🔥
+  - **Result:** [HIGH] Fix CSV Injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-7180554626673421136 observed: [HIGH] Fix CSV Injection vulnerability in scraper
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-fix-scraper-url-validation-5666735410169343396` 🔥
+  - **Result:** add strict URL scheme validation to scraper
+  - **Knowledge:** Branch origin/sentinel-fix-scraper-url-validation-5666735410169343396 observed: add strict URL scheme validation to scraper
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-fix-markdown-injection-xss-348040355104541990` ⚡
+  - **Result:** Fix Markdown injection and XSS in analytics report
+  - **Knowledge:** Branch origin/sentinel-fix-markdown-injection-xss-348040355104541990 observed: Fix Markdown injection and XSS in analytics report
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-5445349269422867455` 🔥
+  - **Result:** Fix CSV Injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-5445349269422867455 observed: Fix CSV Injection vulnerability in scraper.py
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-18101383076845295276` ⚡
+  - **Result:** [MEDIUM] Fix CSV Formula Injection in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-18101383076845295276 observed: [MEDIUM] Fix CSV Formula Injection in scraper
+  - **Artifacts:** 10 files modified.
+- **Branch:** `origin/sentinel-markdown-sanitization-11985779393416298758` ⚡
+  - **Result:** Add markdown sanitization for analytics report
+  - **Knowledge:** Branch origin/sentinel-markdown-sanitization-11985779393416298758 observed: Add markdown sanitization for analytics report
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-5756251649576385500` 🔥
+  - **Result:** [HIGH] Fix CSV Injection in scraper
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-5756251649576385500 observed: [HIGH] Fix CSV Injection in scraper
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-4896609571382596345` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper and sanitize agent outputs
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-4896609571382596345 observed: Fix CSV injection vulnerability in scraper and sanitize agent outputs
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-fix-xss-content-agent-7343531926858651240` 🔥
+  - **Result:** [HIGH] Fix Stored XSS in ContentCreationAgent
+  - **Knowledge:** Branch origin/sentinel-fix-xss-content-agent-7343531926858651240 observed: [HIGH] Fix Stored XSS in ContentCreationAgent
+  - **Artifacts:** 29 files modified.
+- **Branch:** `origin/sentinel-fix-markdown-injection-477337563318989740` ⚡
+  - **Result:** [HIGH] Fix Markdown Injection in Reports
+  - **Knowledge:** Branch origin/sentinel-fix-markdown-injection-477337563318989740 observed: [HIGH] Fix Markdown Injection in Reports
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-9914982601243693922` 🔥
+  - **Result:** [CRITICAL] Fix CSV Injection in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-9914982601243693922 observed: [CRITICAL] Fix CSV Injection in scraper
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-241262454098810507` ⚡
+  - **Result:** Fix CSV Injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-241262454098810507 observed: Fix CSV Injection vulnerability in scraper.py
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/sentinel-fix-markdown-injection-12642553917768757487` 🔥
+  - **Result:** Sanitize inputs in analytics report to prevent Markdown Injection and XSS
+  - **Knowledge:** Branch origin/sentinel-fix-markdown-injection-12642553917768757487 observed: Sanitize inputs in analytics report to prevent Markdown Injection and XSS
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-9409254303197152043` 🔥
+  - **Result:** [HIGH] Fix CSV Injection vulnerability
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-9409254303197152043 observed: [HIGH] Fix CSV Injection vulnerability
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-11137622632039534003` ⚡
+  - **Result:** [CRITICAL] Fix CSV Injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-11137622632039534003 observed: [CRITICAL] Fix CSV Injection vulnerability in scraper
+  - **Artifacts:** 10 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-10353048706525775384` 🔥
+  - **Result:** [CRITICAL] Fix CSV Injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-10353048706525775384 observed: [CRITICAL] Fix CSV Injection vulnerability in scraper
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-3791034134137478787` ⚡
+  - **Result:** [HIGH] Fix CSV Injection in scraper output
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-3791034134137478787 observed: [HIGH] Fix CSV Injection in scraper output
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/sentinel-analytics-security-fix-15562163645125731451` 🔥
+  - **Result:** Fix Stored XSS and Markdown Table Injection in analytics.py
+  - **Knowledge:** Branch origin/sentinel-analytics-security-fix-15562163645125731451 observed: Fix Stored XSS and Markdown Table Injection in analytics.py
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-fix-ssrf-scraper-13895071583699444516` 🔥
+  - **Result:** [HIGH] Fix SSRF vulnerability in BlogScraper
+  - **Knowledge:** Branch origin/sentinel-fix-ssrf-scraper-13895071583699444516 observed: [HIGH] Fix SSRF vulnerability in BlogScraper
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/sentinel-fix-xss-sanitization-2461129736912468133` ⚡
+  - **Result:** implement output sanitization in orchestrator
+  - **Knowledge:** Branch origin/sentinel-fix-xss-sanitization-2461129736912468133 observed: implement output sanitization in orchestrator
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-14407786113626138861` 🔥
+  - **Result:** Fix CSV injection vulnerability in OracleNewsScraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-14407786113626138861 observed: Fix CSV injection vulnerability in OracleNewsScraper
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-9365968688429257416` ⚡
+  - **Result:** prevent CSV formula injection
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-9365968688429257416 observed: prevent CSV formula injection
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-3346587777523784849` ⚡
+  - **Result:** Fix CSV Formula Injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-3346587777523784849 observed: Fix CSV Formula Injection vulnerability in scraper
+  - **Artifacts:** 10 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-2465392663025969514` 🔥
+  - **Result:** Fix CSV Injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-2465392663025969514 observed: Fix CSV Injection vulnerability in scraper
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-fix-xss-scraper-6801267101093428567` 🔥
+  - **Result:** [HIGH] Fix Stored XSS in scraper
+  - **Knowledge:** Branch origin/sentinel-fix-xss-scraper-6801267101093428567 observed: [HIGH] Fix Stored XSS in scraper
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-17594469209047067087` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-17594469209047067087 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/sentinel-ssrf-fix-2673881214172986462` ⚡
+  - **Result:** Add SSRF protection to scraper
+  - **Knowledge:** Branch origin/sentinel-ssrf-fix-2673881214172986462 observed: Add SSRF protection to scraper
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-17919228704656273105` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-17919228704656273105 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/sentinel-ssrf-fix-2624088104699189240` 🔥
+  - **Result:** add SSRF protection to scraper
+  - **Knowledge:** Branch origin/sentinel-ssrf-fix-2624088104699189240 observed: add SSRF protection to scraper
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-17984937653566116919` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-17984937653566116919 observed: Fix CSV injection vulnerability in scraper.py
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-12679590305741242527` 🔥
+  - **Result:** sanitize CSV output to prevent formula injection
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-12679590305741242527 observed: sanitize CSV output to prevent formula injection
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/sentinel-fix-unsafe-url-extraction-2825055263495837340` ✨
+  - **Result:** [HIGH] Fix unsafe URL extraction in scraper
+  - **Knowledge:** Branch origin/sentinel-fix-unsafe-url-extraction-2825055263495837340 observed: [HIGH] Fix unsafe URL extraction in scraper
+  - **Artifacts:** 5 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-5200529072792038966` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-5200529072792038966 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-16763427666603364889` ⚡
+  - **Result:** Fix CSV Injection Vulnerability in Scraper
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-16763427666603364889 observed: Fix CSV Injection Vulnerability in Scraper
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-10688693902130886614` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-10688693902130886614 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-fix-xss-content-agent-15220868101376936351` 🔥
+  - **Result:** Fix Stored XSS in Content Agent by escaping Markdown characters
+  - **Knowledge:** Branch origin/sentinel-fix-xss-content-agent-15220868101376936351 observed: Fix Stored XSS in Content Agent by escaping Markdown characters
+  - **Artifacts:** 31 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-12899560490042954915` 🔥
+  - **Result:** sanitize CSV output to prevent formula injection
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-12899560490042954915 observed: sanitize CSV output to prevent formula injection
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-2516929716089250135` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper output
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-2516929716089250135 observed: Fix CSV injection vulnerability in scraper output
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-fix-ssrf-12489127144822087081` ⚡
+  - **Result:** [CRITICAL] Fix SSRF vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-fix-ssrf-12489127144822087081 observed: [CRITICAL] Fix SSRF vulnerability in scraper
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-15309749905560169066` 🔥
+  - **Result:** [CRITICAL] Fix CSV Injection in scraper
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-15309749905560169066 observed: [CRITICAL] Fix CSV Injection in scraper
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/sentinel-fix-ssrf-15051376789843126320` 🔥
+  - **Result:** [HIGH] Fix SSRF vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-fix-ssrf-15051376789843126320 observed: [HIGH] Fix SSRF vulnerability in scraper
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/sentinel-fix-xss-links-14504327509896996257` ⚡
+  - **Result:** Fix XSS vulnerability by validating extracted links protocols
+  - **Knowledge:** Branch origin/sentinel-fix-xss-links-14504327509896996257 observed: Fix XSS vulnerability by validating extracted links protocols
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-13940069351560810244` ⚡
+  - **Result:** [CRITICAL] Fix CSV Injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-13940069351560810244 observed: [CRITICAL] Fix CSV Injection vulnerability in scraper
+  - **Artifacts:** 9 files modified.
+- **Branch:** `origin/sentinel-ssrf-fix-4228425810213735351` 🔥
+  - **Result:** Add URL validation to scraper for SSRF protection
+  - **Knowledge:** Branch origin/sentinel-ssrf-fix-4228425810213735351 observed: Add URL validation to scraper for SSRF protection
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-14202911627973574008` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper exports
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-14202911627973574008 observed: Fix CSV injection vulnerability in scraper exports
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/sentinel-ssrf-fix-3044566237611297460` 🔥
+  - **Result:** Add URL validation to prevent SSRF in BlogScraper
+  - **Knowledge:** Branch origin/sentinel-ssrf-fix-3044566237611297460 observed: Add URL validation to prevent SSRF in BlogScraper
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-3586558718788844991` 🔥
+  - **Result:** fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-3586558718788844991 observed: fix CSV injection vulnerability in scraper
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/sentinel/fix-analytics-xss-17804299682407068975` ⚡
+  - **Result:** Fix XSS and Markdown injection in analytics report
+  - **Knowledge:** Branch origin/sentinel/fix-analytics-xss-17804299682407068975 observed: Fix XSS and Markdown injection in analytics report
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/palette-analytics-cli-summary-14007342154187471292` ⚡
+  - **Result:** Add console summary to analytics.py
+  - **Knowledge:** Branch origin/palette-analytics-cli-summary-14007342154187471292 observed: Add console summary to analytics.py
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-12497847357551567150` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-12497847357551567150 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel/ssrf-protection-3166067632750321151` 🔥
+  - **Result:** Add SSRF protection to scraper
+  - **Knowledge:** Branch origin/sentinel/ssrf-protection-3166067632750321151 observed: Add SSRF protection to scraper
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-8806247147444025249` 🔥
+  - **Result:** [HIGH] Fix CSV Formula Injection
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-8806247147444025249 observed: [HIGH] Fix CSV Formula Injection
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-14785501448313010884` ⚡
+  - **Result:** [CRITICAL] Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-14785501448313010884 observed: [CRITICAL] Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-173522705526840343` 🔥
+  - **Result:** [CRITICAL] Fix CSV Formula Injection in Scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-173522705526840343 observed: [CRITICAL] Fix CSV Formula Injection in Scraper
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-7887612146044764431` 🔥
+  - **Result:** [CRITICAL] Fix CSV Injection in Scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-7887612146044764431 observed: [CRITICAL] Fix CSV Injection in Scraper
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-dos-protection-3458073205470456928` ✨
+  - **Result:** Add DoS protection (max response size limit)
+  - **Knowledge:** Branch origin/sentinel-dos-protection-3458073205470456928 observed: Add DoS protection (max response size limit)
+  - **Artifacts:** 5 files modified.
+- **Branch:** `origin/sentinel-fix-ssrf-pagination-955563201961260698` ⚡
+  - **Result:** Fix SSRF vulnerability in scraper pagination by validating URLs.
+  - **Knowledge:** Branch origin/sentinel-fix-ssrf-pagination-955563201961260698 observed: Fix SSRF vulnerability in scraper pagination by validating URLs.
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/palette-analytics-ux-17971427170191617297` ⚡
+  - **Result:** Add visual CLI summary to analytics report generator
+  - **Knowledge:** Branch origin/palette-analytics-ux-17971427170191617297 observed: Add visual CLI summary to analytics report generator
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-7284469719528354445` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-7284469719528354445 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-7120478869350967203` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper output
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-7120478869350967203 observed: Fix CSV injection vulnerability in scraper output
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-14234483393294961327` ⚡
+  - **Result:** [HIGH] Fix path traversal in ResearcherAgent
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-14234483393294961327 observed: [HIGH] Fix path traversal in ResearcherAgent
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-ssrf-fix-3881955097333769994` 🔥
+  - **Result:** Fix SSRF in BlogScraper by validating URL scheme and domain
+  - **Knowledge:** Branch origin/sentinel-ssrf-fix-3881955097333769994 observed: Fix SSRF in BlogScraper by validating URL scheme and domain
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-12004926439260226376` ⚡
+  - **Result:** Fix CSV Injection vulnerability in scraper output
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-12004926439260226376 observed: Fix CSV Injection vulnerability in scraper output
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-2735194479684746444` 🔥
+  - **Result:** Fix CSV Formula Injection in Scraper
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-2735194479684746444 observed: Fix CSV Formula Injection in Scraper
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/palette-ascii-charts-16467333056139699036` ⚡
+  - **Result:** add ASCII bar charts to distribution columns
+  - **Knowledge:** Branch origin/palette-ascii-charts-16467333056139699036 observed: add ASCII bar charts to distribution columns
+  - **Artifacts:** 6 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-8272419126965358914` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-8272419126965358914 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-8097827664947199765` ⚡
+  - **Result:** prevent CSV injection in scraper output
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-8097827664947199765 observed: prevent CSV injection in scraper output
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/sentinel/fix-url-validation-1428990983008492380` ⚡
+  - **Result:** Add URL validation to scraper
+  - **Knowledge:** Branch origin/sentinel/fix-url-validation-1428990983008492380 observed: Add URL validation to scraper
+  - **Artifacts:** 6 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-13435687001292355366` 🔥
+  - **Result:** Fix CSV Formula Injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-13435687001292355366 observed: Fix CSV Formula Injection vulnerability in scraper
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-7308075484168403329` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-7308075484168403329 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/sentinel-scraper-timeout-13066185992077732922` ⚡
+  - **Result:** add network timeout to scrape_informatic.py
+  - **Knowledge:** Branch origin/sentinel-scraper-timeout-13066185992077732922 observed: add network timeout to scrape_informatic.py
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-url-validation-3025430015714192386` ⚡
+  - **Result:** add URL validation to scraper
+  - **Knowledge:** Branch origin/sentinel-url-validation-3025430015714192386 observed: add URL validation to scraper
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-11406993561405723358` 🔥
+  - **Result:** [CRITICAL] Fix CSV Injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-11406993561405723358 observed: [CRITICAL] Fix CSV Injection vulnerability in scraper.py
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/palette-analytics-ux-14026773784102748859` ⚡
+  - **Result:** Add ASCII bar charts and emojis to analytics report
+  - **Knowledge:** Branch origin/palette-analytics-ux-14026773784102748859 observed: Add ASCII bar charts and emojis to analytics report
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-3619295018585111086` 🔥
+  - **Result:** add CSV formula injection prevention to scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-3619295018585111086 observed: add CSV formula injection prevention to scraper
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-ssrf-fix-11285404620217692066` 🔥
+  - **Result:** add SSRF protection to BlogScraper
+  - **Knowledge:** Branch origin/sentinel-ssrf-fix-11285404620217692066 observed: add SSRF protection to BlogScraper
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-18040119516066267885` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-18040119516066267885 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-16604048284398953621` 🔥
+  - **Result:** Fix CSV Formula Injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-16604048284398953621 observed: Fix CSV Formula Injection vulnerability in scraper.py
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-2728798420725278990` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-2728798420725278990 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/palette-ascii-charts-16785128241519727077` ⚡
+  - **Result:** add ASCII bar charts to generated reports
+  - **Knowledge:** Branch origin/palette-ascii-charts-16785128241519727077 observed: add ASCII bar charts to generated reports
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-15245071254079934303` 🔥
+  - **Result:** [CRITICAL] Fix CSV Injection vulnerability and add network timeouts
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-15245071254079934303 observed: [CRITICAL] Fix CSV Injection vulnerability and add network timeouts
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-17183412811193110878` ⚡
+  - **Result:** [CRITICAL] Fix CSV Formula Injection in scraper.py
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-17183412811193110878 observed: [CRITICAL] Fix CSV Formula Injection in scraper.py
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/sentinel-fix-timeout-14878674085611384594` ⚡
+  - **Result:** Add timeout to scraper network requests
+  - **Knowledge:** Branch origin/sentinel-fix-timeout-14878674085611384594 observed: Add timeout to scraper network requests
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-6113448530836767636` ⚡
+  - **Result:** Fix CSV Injection Vulnerability in Scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-6113448530836767636 observed: Fix CSV Injection Vulnerability in Scraper
+  - **Artifacts:** 9 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-14810873340249906468` 🔥
+  - **Result:** Fix CSV injection vulnerability and add request timeouts
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-14810873340249906468 observed: Fix CSV injection vulnerability and add request timeouts
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-8170535379154520582` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-8170535379154520582 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-3207276377854702451` 🔥
+  - **Result:** add CSV injection protection to scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-3207276377854702451 observed: add CSV injection protection to scraper
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-17134124741547873274` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper output
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-17134124741547873274 observed: Fix CSV injection vulnerability in scraper output
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/sentinel-dos-protection-3230700475893840806` ⚡
+  - **Result:** add DoS protection to scraper
+  - **Knowledge:** Branch origin/sentinel-dos-protection-3230700475893840806 observed: add DoS protection to scraper
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-11483888091103395100` ⚡
+  - **Result:** Fix CSV Injection vulnerability in scraper output - Implemented `sanitize_for_csv` to escape formula characters (=, +, -, @) - Applied sanitization to all CSV output fields - Added unit test `tests/test_scraper_security.py` to verify the fix
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-11483888091103395100 observed: Fix CSV Injection vulnerability in scraper output - Implemented `sanitize_for_csv` to escape formula characters (=, +, -, @) - Applied sanitization to all CSV output fields - Added unit test `tests/test_scraper_security.py` to verify the fix
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-4898138830369691020` 🔥
+  - **Result:** Fix CSV Injection vulnerability in scraper output - Add `sanitize_for_csv` method to `MarkPositionScraperAsync` class in `scraper.py` - Prepend `'` to CSV fields starting with `=`, `+`, `-`, `@` to prevent formula execution - Add entry to `.jules/sentinel.md`
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-4898138830369691020 observed: Fix CSV Injection vulnerability in scraper output - Add `sanitize_for_csv` method to `MarkPositionScraperAsync` class in `scraper.py` - Prepend `'` to CSV fields starting with `=`, `+`, `-`, `@` to prevent formula execution - Add entry to `.jules/sentinel.md`
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-5151600923195756418` ⚡
+  - **Result:** Fix CSV Injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-5151600923195756418 observed: Fix CSV Injection vulnerability in scraper.py
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-62725330299232375` 🔥
+  - **Result:** add CSV injection protection to scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-62725330299232375 observed: add CSV injection protection to scraper
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-10533494504783963835` ⚡
+  - **Result:** [HIGH] Fix CSV Injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-10533494504783963835 observed: [HIGH] Fix CSV Injection vulnerability in scraper
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-11203776991615878317` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-11203776991615878317 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/sentinel-scraper-dos-fix-5795128343399673854` ⚡
+  - **Result:** Add response size limit to scraper to prevent DoS
+  - **Knowledge:** Branch origin/sentinel-scraper-dos-fix-5795128343399673854 observed: Add response size limit to scraper to prevent DoS
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-fix-dos-scrape-informatic-6075769755342439148` ⚡
+  - **Result:** [MEDIUM] Fix Unbounded Scraping Requests in `scrape_informatic.py`
+  - **Knowledge:** Branch origin/sentinel-fix-dos-scrape-informatic-6075769755342439148 observed: [MEDIUM] Fix Unbounded Scraping Requests in `scrape_informatic.py`
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-ssrf-fix-15708222487213179440` 🔥
+  - **Result:** Add SSRF protection to scraper
+  - **Knowledge:** Branch origin/sentinel-ssrf-fix-15708222487213179440 observed: Add SSRF protection to scraper
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-3372756158524792787` ⚡
+  - **Result:** [HIGH] Fix CSV Injection vulnerability
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-3372756158524792787 observed: [HIGH] Fix CSV Injection vulnerability
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-3642945773278234521` 🔥
+  - **Result:** [HIGH] Fix CSV Injection vulnerability
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-3642945773278234521 observed: [HIGH] Fix CSV Injection vulnerability
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-7862227408339325944` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-7862227408339325944 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-1998633714457818686` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-1998633714457818686 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-11266115485320186447` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-11266115485320186447 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-timeout-fix-11256009627229693809` ⚡
+  - **Result:** add request timeout to scraper
+  - **Knowledge:** Branch origin/sentinel-timeout-fix-11256009627229693809 observed: add request timeout to scraper
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-10823602123792792122` 🔥
+  - **Result:** add CSV injection protection, URL validation and update schedule
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-10823602123792792122 observed: add CSV injection protection, URL validation and update schedule
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-fix-markdown-injection-4574407536048453465` ✨
+  - **Result:** Sanitize input in analytics report to prevent Markdown Injection and XSS
+  - **Knowledge:** Branch origin/sentinel-fix-markdown-injection-4574407536048453465 observed: Sanitize input in analytics report to prevent Markdown Injection and XSS
+  - **Artifacts:** 5 files modified.
+- **Branch:** `origin/sentinel-xss-fix-4307107486313997364` ⚡
+  - **Result:** Fix Stored XSS in Markdown reports
+  - **Knowledge:** Branch origin/sentinel-xss-fix-4307107486313997364 observed: Fix Stored XSS in Markdown reports
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-11077555139908489589` ⚡
+  - **Result:** prevent CSV injection in scraper output
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-11077555139908489589 observed: prevent CSV injection in scraper output
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-10425248433369273234` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-10425248433369273234 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-fix-ssrf-8873580170841012512` ⚡
+  - **Result:** Fix SSRF and DoS risks in scraper
+  - **Knowledge:** Branch origin/sentinel-fix-ssrf-8873580170841012512 observed: Fix SSRF and DoS risks in scraper
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-4507642298066037592` ⚡
+  - **Result:** [HIGH] Fix CSV Injection vulnerability
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-4507642298066037592 observed: [HIGH] Fix CSV Injection vulnerability
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/sentinel-scraper-dos-protection-6869785927635506295` 🔥
+  - **Result:** [MEDIUM] Fix DoS risk in scraper
+  - **Knowledge:** Branch origin/sentinel-scraper-dos-protection-6869785927635506295 observed: [MEDIUM] Fix DoS risk in scraper
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-11695626658180939497` 🔥
+  - **Result:** Fix CSV Injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-11695626658180939497 observed: Fix CSV Injection vulnerability in scraper.py
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-fix-xss-scraper-7020460309446305791` 🔥
+  - **Result:** [HIGH] Fix Stored XSS vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-fix-xss-scraper-7020460309446305791 observed: [HIGH] Fix Stored XSS vulnerability in scraper
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-1369174769441350864` ⚡
+  - **Result:** [CRITICAL] Fix CSV Injection vulnerability in scraper output
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-1369174769441350864 observed: [CRITICAL] Fix CSV Injection vulnerability in scraper output
+  - **Artifacts:** 9 files modified.
+- **Branch:** `origin/palette-ascii-bars-4314152341351796533` ⚡
+  - **Result:** Add ASCII bars to analytics report
+  - **Knowledge:** Branch origin/palette-ascii-bars-4314152341351796533 observed: Add ASCII bars to analytics report
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-6685334984184848027` ⚡
+  - **Result:** Fix CSV injection vulnerability and add request timeout
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-6685334984184848027 observed: Fix CSV injection vulnerability and add request timeout
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-3226420374077565204` ⚡
+  - **Result:** Fix CSV injection and add request timeout
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-3226420374077565204 observed: Fix CSV injection and add request timeout
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-16350341539819739877` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper output
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-16350341539819739877 observed: Fix CSV injection vulnerability in scraper output
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-fix-scraper-timeout-1149197347818136170` ⚡
+  - **Result:** Add request timeout to prevent scraper hang
+  - **Knowledge:** Branch origin/sentinel-fix-scraper-timeout-1149197347818136170 observed: Add request timeout to prevent scraper hang
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-11799255373234289459` 🔥
+  - **Result:** prevent CSV injection in scraper output
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-11799255373234289459 observed: prevent CSV injection in scraper output
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-4073728526691781890` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper output
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-4073728526691781890 observed: Fix CSV injection vulnerability in scraper output
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/sentinel-ssrf-fix-3716478283625253282` 🔥
+  - **Result:** [HIGH] Fix SSRF in scraper pagination
+  - **Knowledge:** Branch origin/sentinel-ssrf-fix-3716478283625253282 observed: [HIGH] Fix SSRF in scraper pagination
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-9865659268675506574` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper output
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-9865659268675506574 observed: Fix CSV injection vulnerability in scraper output
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-7376886150336937618` ⚡
+  - **Result:** [HIGH] Fix CSV Injection in Scraper
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-7376886150336937618 observed: [HIGH] Fix CSV Injection in Scraper
+  - **Artifacts:** 9 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-5692806866209313893` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper output - Implemented `sanitize_for_csv` method in `MarkPositionScraperAsync`. - Prepends single quote to values starting with =, +, -, or @ to prevent formula execution. - Updated `save_batch` to sanitize all fields before writing to CSV. - Added `tests/test_scraper_security.py` to verify the fix.
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-5692806866209313893 observed: Fix CSV injection vulnerability in scraper output - Implemented `sanitize_for_csv` method in `MarkPositionScraperAsync`. - Prepends single quote to values starting with =, +, -, or @ to prevent formula execution. - Updated `save_batch` to sanitize all fields before writing to CSV. - Added `tests/test_scraper_security.py` to verify the fix.
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-2676143552655600062` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper - Add `sanitize_for_csv` method to `MarkPositionScraperAsync` - Sanitize all fields before writing to CSV - Add regression test `tests/test_csv_security.py`
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-2676143552655600062 observed: Fix CSV injection vulnerability in scraper - Add `sanitize_for_csv` method to `MarkPositionScraperAsync` - Sanitize all fields before writing to CSV - Add regression test `tests/test_csv_security.py`
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-1326975499108887889` 🔥
+  - **Result:** Fix CSV Injection vulnerability in scraper output
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-1326975499108887889 observed: Fix CSV Injection vulnerability in scraper output
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/sentinel/fix-ssrf-url-validation-8246286317573036494` 🔥
+  - **Result:** add URL validation to scraper to prevent SSRF
+  - **Knowledge:** Branch origin/sentinel/fix-ssrf-url-validation-8246286317573036494 observed: add URL validation to scraper to prevent SSRF
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-16822017676195484048` 🔥
+  - **Result:** add CSV sanitization to prevent formula injection
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-16822017676195484048 observed: add CSV sanitization to prevent formula injection
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/sentinel/fix-timeout-scraper-8563168967022148924` ⚡
+  - **Result:** Add request timeout to scraper
+  - **Knowledge:** Branch origin/sentinel/fix-timeout-scraper-8563168967022148924 observed: Add request timeout to scraper
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-2367946494447138013` ⚡
+  - **Result:** [HIGH] Fix CSV Injection vulnerability
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-2367946494447138013 observed: [HIGH] Fix CSV Injection vulnerability
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-12513139928667827617` 🔥
+  - **Result:** Implement autonomous multi-agent system
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-12513139928667827617 observed: Implement autonomous multi-agent system
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/bolt-performance-soupstrainer-14059433622013418020` ⚡
+  - **Result:** implement autonomous multi-agent system and optimize scraper
+  - **Knowledge:** Branch origin/bolt-performance-soupstrainer-14059433622013418020 observed: implement autonomous multi-agent system and optimize scraper
+  - **Artifacts:** 15 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-3613197660478104645` 🔥
+  - **Result:** Implement autonomous agents and evolutionary architecture
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-3613197660478104645 observed: Implement autonomous agents and evolutionary architecture
+  - **Artifacts:** 42 files modified.
+- **Branch:** `origin/sentinel-timeout-fix-6727440236869099341` ⚡
+  - **Result:** [MEDIUM] Fix missing timeout in scraper
+  - **Knowledge:** Branch origin/sentinel-timeout-fix-6727440236869099341 observed: [MEDIUM] Fix missing timeout in scraper
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-17281405972681966215` 🔥
+  - **Result:** Fix CSV Injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-17281405972681966215 observed: Fix CSV Injection vulnerability in scraper.py
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-3161629447767220060` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-3161629447767220060 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 9 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-7686823291032293657` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper output
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-7686823291032293657 observed: Fix CSV injection vulnerability in scraper output
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-4568401042117456863` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-4568401042117456863 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/sentinel-security-fix-3723865700498354440` 🔥
+  - **Result:** Fix CSV Injection and Path Traversal in Scraper
+  - **Knowledge:** Branch origin/sentinel-security-fix-3723865700498354440 observed: Fix CSV Injection and Path Traversal in Scraper
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/sentinel-ssrf-fix-3696920812745344524` 🔥
+  - **Result:** [HIGH] Fix SSRF vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-ssrf-fix-3696920812745344524 observed: [HIGH] Fix SSRF vulnerability in scraper
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel/fix-path-traversal-13515095468763134399` ⚡
+  - **Result:** [CRITICAL] Fix Path Traversal in scrape_informatic.py
+  - **Knowledge:** Branch origin/sentinel/fix-path-traversal-13515095468763134399 observed: [CRITICAL] Fix Path Traversal in scrape_informatic.py
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-1768906505361909663` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-1768906505361909663 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-16876609028682252936` ⚡
+  - **Result:** [CRITICAL] Fix Path Traversal in Scraper
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-16876609028682252936 observed: [CRITICAL] Fix Path Traversal in Scraper
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-9949658350522574715` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-9949658350522574715 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/sentinel-fix-timeout-5116426609939890096` ⚡
+  - **Result:** Add timeout to HTTP requests in scraper
+  - **Knowledge:** Branch origin/sentinel-fix-timeout-5116426609939890096 observed: Add timeout to HTTP requests in scraper
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-13434890408938991283` 🔥
+  - **Result:** Fix path traversal vulnerability in scraper output paths
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-13434890408938991283 observed: Fix path traversal vulnerability in scraper output paths
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-4616410932219879606` ⚡
+  - **Result:** Fix CSV Formula Injection in scraper.py
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-4616410932219879606 observed: Fix CSV Formula Injection in scraper.py
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-7184062183178777693` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper output
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-7184062183178777693 observed: Fix CSV injection vulnerability in scraper output
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-2888261879459732740` 🔥
+  - **Result:** sanitize CSV output to prevent formula injection
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-2888261879459732740 observed: sanitize CSV output to prevent formula injection
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-10464065853925467841` ⚡
+  - **Result:** [CRITICAL] Fix CSV Injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-10464065853925467841 observed: [CRITICAL] Fix CSV Injection vulnerability in scraper.py
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/sentinel-fix-markdown-injection-12251977205690620315` ⚡
+  - **Result:** Implement daily reporting schedule and security enhancements
+  - **Knowledge:** Branch origin/sentinel-fix-markdown-injection-12251977205690620315 observed: Implement daily reporting schedule and security enhancements
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-9007503405729872080` ⚡
+  - **Result:** Fix CSV injection and add daily report workflow
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-9007503405729872080 observed: Fix CSV injection and add daily report workflow
+  - **Artifacts:** 11 files modified.
+- **Branch:** `origin/palette-scraper-summary-15872742580256462158` ⚡
+  - **Result:** Add polished summary box to scraper output
+  - **Knowledge:** Branch origin/palette-scraper-summary-15872742580256462158 observed: Add polished summary box to scraper output
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-10966589273094838978` 🔥
+  - **Result:** Implement bi-weekly autonomous schedule and fix CSV injection
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-10966589273094838978 observed: Implement bi-weekly autonomous schedule and fix CSV injection
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/sentinel-path-traversal-csv-fix-3823511554369856865` 🔥
+  - **Result:** implement bi-weekly reporting schedule
+  - **Knowledge:** Branch origin/sentinel-path-traversal-csv-fix-3823511554369856865 observed: implement bi-weekly reporting schedule
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel/fix-scraper-path-traversal-12683996464696937820` 🔥
+  - **Result:** prevent path traversal and update schedule
+  - **Knowledge:** Branch origin/sentinel/fix-scraper-path-traversal-12683996464696937820 observed: prevent path traversal and update schedule
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-15621383846195780888` ⚡
+  - **Result:** Switch reporting to bi-weekly and fix CSV injection vulnerability
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-15621383846195780888 observed: Switch reporting to bi-weekly and fix CSV injection vulnerability
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-fix-path-traversal-11747719043464611104` ⚡
+  - **Result:** [HIGH] Fix path traversal in file output
+  - **Knowledge:** Branch origin/sentinel-fix-path-traversal-11747719043464611104 observed: [HIGH] Fix path traversal in file output
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-10967416420667337264` 🔥
+  - **Result:** Fix critical path traversal vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-10967416420667337264 observed: Fix critical path traversal vulnerability in scraper.py
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-10038367286056826803` 🔥
+  - **Result:** add CSV injection protection and http timeout
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-10038367286056826803 observed: add CSV injection protection and http timeout
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/palette-cli-visual-polish-16944835121603968346` ⚡
+  - **Result:** Add colored summary box to scraper CLI
+  - **Knowledge:** Branch origin/palette-cli-visual-polish-16944835121603968346 observed: Add colored summary box to scraper CLI
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-10221947977265973375` ⚡
+  - **Result:** Fix CSV Formula Injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-10221947977265973375 observed: Fix CSV Formula Injection vulnerability in scraper
+  - **Artifacts:** 15 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-5703429857431099385` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper output - Add sanitize_csv_field method to MarkPositionScraperAsync - Sanitize all fields before writing to CSV - Prepend single quote to fields starting with =, +, -, @ - Add security journal entry
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-5703429857431099385 observed: Fix CSV injection vulnerability in scraper output - Add sanitize_csv_field method to MarkPositionScraperAsync - Sanitize all fields before writing to CSV - Prepend single quote to fields starting with =, +, -, @ - Add security journal entry
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-16999341900923167805` ⚡
+  - **Result:** Fix CSV Formula Injection in scraper output
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-16999341900923167805 observed: Fix CSV Formula Injection in scraper output
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-18413042180626318993` 🔥
+  - **Result:** Fix path traversal vulnerability in file outputs
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-18413042180626318993 observed: Fix path traversal vulnerability in file outputs
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-14543086347564108493` 🔥
+  - **Result:** [CRITICAL] Fix CSV Injection vulnerability
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-14543086347564108493 observed: [CRITICAL] Fix CSV Injection vulnerability
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-fix-markdown-injection-3776990642729282253` ⚡
+  - **Result:** Fix XSS and Markdown injection in analytics report
+  - **Knowledge:** Branch origin/sentinel-fix-markdown-injection-3776990642729282253 observed: Fix XSS and Markdown injection in analytics report
+  - **Artifacts:** 6 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-9391699529269145596` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-9391699529269145596 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-fixes-path-traversal-csv-injection-1218736827201610874` 🔥
+  - **Result:** Fix Path Traversal and CSV Injection in Scraper
+  - **Knowledge:** Branch origin/sentinel-fixes-path-traversal-csv-injection-1218736827201610874 observed: Fix Path Traversal and CSV Injection in Scraper
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-15314743226139648978` 🔥
+  - **Result:** Fix critical path traversal vulnerability in scraper output
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-15314743226139648978 observed: Fix critical path traversal vulnerability in scraper output
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-fix-markdown-injection-17432524011574370293` 🔥
+  - **Result:** Sanitize markdown output to prevent injection
+  - **Knowledge:** Branch origin/sentinel-fix-markdown-injection-17432524011574370293 observed: Sanitize markdown output to prevent injection
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/sentinel/fix-scraper-timeout-7976927589477460081` ⚡
+  - **Result:** Add timeout to scraper HTTP requests
+  - **Knowledge:** Branch origin/sentinel/fix-scraper-timeout-7976927589477460081 observed: Add timeout to scraper HTTP requests
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-16927322662053655175` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-16927322662053655175 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-11587562362806338360` ⚡
+  - **Result:** Fix path traversal vulnerability in scraper output
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-11587562362806338360 observed: Fix path traversal vulnerability in scraper output
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/sentinel/fix-path-traversal-7103619358321639504` 🔥
+  - **Result:** [CRITICAL] Fix Path Traversal in scraper.py
+  - **Knowledge:** Branch origin/sentinel/fix-path-traversal-7103619358321639504 observed: [CRITICAL] Fix Path Traversal in scraper.py
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/palette-scraper-summary-10400250517688153163` ⚡
+  - **Result:** Add CLI summary box with execution stats
+  - **Knowledge:** Branch origin/palette-scraper-summary-10400250517688153163 observed: Add CLI summary box with execution stats
+  - **Artifacts:** 9 files modified.
+- **Branch:** `origin/sentinel-security-fixes-9176948662016609493` ⚡
+  - **Result:** [CRITICAL/MEDIUM] Fix Path Traversal and CSV Injection in scraper.py
+  - **Knowledge:** Branch origin/sentinel-security-fixes-9176948662016609493 observed: [CRITICAL/MEDIUM] Fix Path Traversal and CSV Injection in scraper.py
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-10577458576876896305` 🔥
+  - **Result:** prevent path traversal in scraper.py output
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-10577458576876896305 observed: prevent path traversal in scraper.py output
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-4117566252947461341` 🔥
+  - **Result:** Fix path traversal vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-4117566252947461341 observed: Fix path traversal vulnerability in scraper.py
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-4227351371045424943` ⚡
+  - **Result:** prevent path traversal in scraper output
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-4227351371045424943 observed: prevent path traversal in scraper output
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/sentinel-fix-markdown-injection-12358420040259215492` ⚡
+  - **Result:** Fix Markdown injection vulnerability in analytics report
+  - **Knowledge:** Branch origin/sentinel-fix-markdown-injection-12358420040259215492 observed: Fix Markdown injection vulnerability in analytics report
+  - **Artifacts:** 9 files modified.
+- **Branch:** `origin/sentinel-fix-markdown-injection-1749769319501119142` 🔥
+  - **Result:** Sanitize inputs in analytics report generation
+  - **Knowledge:** Branch origin/sentinel-fix-markdown-injection-1749769319501119142 observed: Sanitize inputs in analytics report generation
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/sentinel-fix-markdown-injection-3339496328156938030` 🔥
+  - **Result:** Fix Markdown table injection in analytics report
+  - **Knowledge:** Branch origin/sentinel-fix-markdown-injection-3339496328156938030 observed: Fix Markdown table injection in analytics report
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-fix-report-xss-injection-17246759234620652764` 🔥
+  - **Result:** Fix Markdown injection and XSS in report generator
+  - **Knowledge:** Branch origin/sentinel-fix-report-xss-injection-17246759234620652764 observed: Fix Markdown injection and XSS in report generator
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/palette-cli-summary-box-16566719087269269209` ⚡
+  - **Result:** Add summary box to scraper output
+  - **Knowledge:** Branch origin/palette-cli-summary-box-16566719087269269209 observed: Add summary box to scraper output
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-514632539404655191` ⚡
+  - **Result:** Fix CSV Injection vulnerability in scraper output
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-514632539404655191 observed: Fix CSV Injection vulnerability in scraper output
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel/fix-request-timeout-14772585893024475880` ⚡
+  - **Result:** [MEDIUM] Fix missing timeout in HTTP requests
+  - **Knowledge:** Branch origin/sentinel/fix-request-timeout-14772585893024475880 observed: [MEDIUM] Fix missing timeout in HTTP requests
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-9210533501834948716` 🔥
+  - **Result:** [CRITICAL] Fix CSV Injection vulnerability in scraper output
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-9210533501834948716 observed: [CRITICAL] Fix CSV Injection vulnerability in scraper output
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-15525481074093328612` 🔥
+  - **Result:** [HIGH] Fix CSV Injection vulnerability
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-15525481074093328612 observed: [HIGH] Fix CSV Injection vulnerability
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-10726122690278576956` 🔥
+  - **Result:** [CRITICAL] Fix CSV Injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-10726122690278576956 observed: [CRITICAL] Fix CSV Injection vulnerability in scraper
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-fix-scraper-vulnerability-10920558774423191235` ⚡
+  - **Result:** prevent scraper from following off-domain links
+  - **Knowledge:** Branch origin/sentinel-fix-scraper-vulnerability-10920558774423191235 observed: prevent scraper from following off-domain links
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-11537968662341487277` 🔥
+  - **Result:** Fix CSV Injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-11537968662341487277 observed: Fix CSV Injection vulnerability in scraper.py
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/sentinel-fix-path-traversal-290759818619950664` ⚡
+  - **Result:** prevent path traversal in ResearcherAgent
+  - **Knowledge:** Branch origin/sentinel-fix-path-traversal-290759818619950664 observed: prevent path traversal in ResearcherAgent
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/palette-cli-polish-7245288327755008219` ⚡
+  - **Result:** Add visual polish to CLI output
+  - **Knowledge:** Branch origin/palette-cli-polish-7245288327755008219 observed: Add visual polish to CLI output
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/sentinel-fix-unsafe-links-5959924612481434328` ⚡
+  - **Result:** Fix XSS vulnerability in scraper by validating extracted URLs
+  - **Knowledge:** Branch origin/sentinel-fix-unsafe-links-5959924612481434328 observed: Fix XSS vulnerability in scraper by validating extracted URLs
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-2894680455719942553` 🔥
+  - **Result:** Implement Autonomous Intelligence System and Agents
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-2894680455719942553 observed: Implement Autonomous Intelligence System and Agents
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-10734782859675009310` ⚡
+  - **Result:** Fix path traversal vulnerability in scraper scripts
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-10734782859675009310 observed: Fix path traversal vulnerability in scraper scripts
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-11037533236384530390` 🔥
+  - **Result:** [MEDIUM] Fix CSV Injection vulnerability
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-11037533236384530390 observed: [MEDIUM] Fix CSV Injection vulnerability
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-16208060421848314312` 🔥
+  - **Result:** add CSV injection protection to scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-16208060421848314312 observed: add CSV injection protection to scraper
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/sentinel-security-fix-url-validation-15877893798096309132` ⚡
+  - **Result:** [HIGH] Fix unsafe URL scheme extraction in scraper
+  - **Knowledge:** Branch origin/sentinel-security-fix-url-validation-15877893798096309132 observed: [HIGH] Fix unsafe URL scheme extraction in scraper
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-14090242410722960324` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper output
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-14090242410722960324 observed: Fix CSV injection vulnerability in scraper output
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/sentinel-ssrf-fix-7650991945586945721` 🔥
+  - **Result:** Add SSRF protection to scraper
+  - **Knowledge:** Branch origin/sentinel-ssrf-fix-7650991945586945721 observed: Add SSRF protection to scraper
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-14090242410722960324` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-14090242410722960324 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 15 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-3792279438009718609` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper export
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-3792279438009718609 observed: Fix CSV injection vulnerability in scraper export
+  - **Artifacts:** 9 files modified.
+
+#### 🌐 Strategic Domain: Performance
+- **Branch:** `origin/artmusicpage-scraper-13642650452924627148` 🔥
+  - **Result:** add ToC, anchors and emojis to generated report (#1140)
+  - **Knowledge:** Branch origin/artmusicpage-scraper-13642650452924627148 observed: add ToC, anchors and emojis to generated report (#1140)
+  - **Artifacts:** 29 files modified.
+- **Branch:** `origin/palette-analytics-visual-polish-4470200487089544601` ⚡
+  - **Result:** add ASCII charts and emojis to analytics report
+  - **Knowledge:** Branch origin/palette-analytics-visual-polish-4470200487089544601 observed: add ASCII charts and emojis to analytics report
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette/analytics-console-summary-16842850884408171374` 🔥
+  - **Result:** Add colorful console summary to analytics
+  - **Knowledge:** Branch origin/palette/analytics-console-summary-16842850884408171374 observed: Add colorful console summary to analytics
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/palette/ascii-bars-report-13186514826592072461` 🔥
+  - **Result:** Add ASCII distribution bars to analytics report
+  - **Knowledge:** Branch origin/palette/ascii-bars-report-13186514826592072461 observed: Add ASCII distribution bars to analytics report
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-4827530763294816913` 🔥
+  - **Result:** [MEDIUM] Fix CSV Injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-4827530763294816913 observed: [MEDIUM] Fix CSV Injection vulnerability in scraper
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/palette-analytics-visualization-7864555049711578186` ⚡
+  - **Result:** add ASCII bar charts to analytics report
+  - **Knowledge:** Branch origin/palette-analytics-visualization-7864555049711578186 observed: add ASCII bar charts to analytics report
+  - **Artifacts:** 11 files modified.
+- **Branch:** `origin/palette-ascii-bars-4716182374226108315` 🔥
+  - **Result:** add ASCII bar charts to analytics report tables
+  - **Knowledge:** Branch origin/palette-ascii-bars-4716182374226108315 observed: add ASCII bar charts to analytics report tables
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/palette-ascii-bars-1937977779725986035` 🔥
+  - **Result:** add ASCII bar charts to report tables
+  - **Knowledge:** Branch origin/palette-ascii-bars-1937977779725986035 observed: add ASCII bar charts to report tables
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/palette-ascii-charts-6299104478852342158` 🔥
+  - **Result:** add ASCII bar charts to analytics report
+  - **Knowledge:** Branch origin/palette-ascii-charts-6299104478852342158 observed: add ASCII bar charts to analytics report
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/palette-ascii-viz-2715057583589414713` ⚡
+  - **Result:** Add ASCII visualizations to analytics report
+  - **Knowledge:** Branch origin/palette-ascii-viz-2715057583589414713 observed: Add ASCII visualizations to analytics report
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/palette-scraper-summary-1208629136224129021` 🔥
+  - **Result:** add summary table to CLI output
+  - **Knowledge:** Branch origin/palette-scraper-summary-1208629136224129021 observed: add summary table to CLI output
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/palette-scraper-summary-12144256042396089785` 🔥
+  - **Result:** Add summary table with stats and colors to scraper.py output
+  - **Knowledge:** Branch origin/palette-scraper-summary-12144256042396089785 observed: Add summary table with stats and colors to scraper.py output
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/palette-ux-formatter-4201185919690314961` 🔥
+  - **Result:** add UXFormatter for colorful CLI logs
+  - **Knowledge:** Branch origin/palette-ux-formatter-4201185919690314961 observed: add UXFormatter for colorful CLI logs
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/palette-scraper-ux-7786747023368569446` ⚡
+  - **Result:** add emojis and colors to scraper CLI output for better UX
+  - **Knowledge:** Branch origin/palette-scraper-ux-7786747023368569446 observed: add emojis and colors to scraper CLI output for better UX
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/palette-cli-ux-726014719767405393` ⚡
+  - **Result:** add UX formatting to CLI output
+  - **Knowledge:** Branch origin/palette-cli-ux-726014719767405393 observed: add UX formatting to CLI output
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-analytics-cli-summary-378562869972733659` 🔥
+  - **Result:** Add rich CLI summary to analytics
+  - **Knowledge:** Branch origin/palette-analytics-cli-summary-378562869972733659 observed: Add rich CLI summary to analytics
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/palette-cli-ux-7383645213978227588` 🔥
+  - **Result:** Add delightful CLI output with colors and emojis
+  - **Knowledge:** Branch origin/palette-cli-ux-7383645213978227588 observed: Add delightful CLI output with colors and emojis
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/palette-cli-ux-improvements-6092607382424465804` 🔥
+  - **Result:** add rich visual feedback to scraper
+  - **Knowledge:** Branch origin/palette-cli-ux-improvements-6092607382424465804 observed: add rich visual feedback to scraper
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/palette-analytics-summary-4728899381542685866` ⚡
+  - **Result:** add delightful CLI summary to analytics.py
+  - **Knowledge:** Branch origin/palette-analytics-summary-4728899381542685866 observed: add delightful CLI summary to analytics.py
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/bolt-scraper-optimization-2789910246289122534` ⚡
+  - **Result:** Implement sliding window concurrency for scraper
+  - **Knowledge:** Branch origin/bolt-scraper-optimization-2789910246289122534 observed: Implement sliding window concurrency for scraper
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-analytics-dashboard-4568468974815810948` 🔥
+  - **Result:** Add console dashboard and fix date parsing in analytics
+  - **Knowledge:** Branch origin/palette-analytics-dashboard-4568468974815810948 observed: Add console dashboard and fix date parsing in analytics
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/palette-analytics-console-feedback-14979050134191655648` ⚡
+  - **Result:** Add console summary to analytics.py for immediate feedback
+  - **Knowledge:** Branch origin/palette-analytics-console-feedback-14979050134191655648 observed: Add console summary to analytics.py for immediate feedback
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/palette/analytics-visualization-3131876872723686653` ⚡
+  - **Result:** Add accessible distribution bars to analytics report tables
+  - **Knowledge:** Branch origin/palette/analytics-visualization-3131876872723686653 observed: Add accessible distribution bars to analytics report tables
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette/report-ux-enhancements-9890536469987073968` 🔥
+  - **Result:** Add visual analytics and navigation to reports
+  - **Knowledge:** Branch origin/palette/report-ux-enhancements-9890536469987073968 observed: Add visual analytics and navigation to reports
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/palette-report-navigation-10356776487469594333` 🔥
+  - **Result:** Add TOC to report and fix date parsing
+  - **Knowledge:** Branch origin/palette-report-navigation-10356776487469594333 observed: Add TOC to report and fix date parsing
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/palette-visualization-17481071303345446799` ⚡
+  - **Result:** add ASCII distribution bars to report
+  - **Knowledge:** Branch origin/palette-visualization-17481071303345446799 observed: add ASCII distribution bars to report
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-analytics-nav-7571403874915432374` ⚡
+  - **Result:** Add TOC and Back-to-Top Navigation to Analytics Report
+  - **Knowledge:** Branch origin/palette-analytics-nav-7571403874915432374 observed: Add TOC and Back-to-Top Navigation to Analytics Report
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/palette-analytics-report-navigation-2126016171697891726` 🔥
+  - **Result:** add ToC and navigation anchors to analytics report
+  - **Knowledge:** Branch origin/palette-analytics-report-navigation-2126016171697891726 observed: add ToC and navigation anchors to analytics report
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/palette-ux-report-nav-593001278126873956` 🔥
+  - **Result:** Add ToC and navigation to analytics report
+  - **Knowledge:** Branch origin/palette-ux-report-nav-593001278126873956 observed: Add ToC and navigation to analytics report
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/palette-analytics-toc-7303821586011748698` ⚡
+  - **Result:** Add Table of Contents and visual polish to analytics report
+  - **Knowledge:** Branch origin/palette-analytics-toc-7303821586011748698 observed: Add Table of Contents and visual polish to analytics report
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/palette-ux-analytics-toc-6237905989823681222` 🔥
+  - **Result:** Add TOC and emojis to analytics report
+  - **Knowledge:** Branch origin/palette-ux-analytics-toc-6237905989823681222 observed: Add TOC and emojis to analytics report
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/palette-analytics-report-ux-2678528789063330717` 🔥
+  - **Result:** Add TOC, emojis, and navigation to analytics report
+  - **Knowledge:** Branch origin/palette-analytics-report-ux-2678528789063330717 observed: Add TOC, emojis, and navigation to analytics report
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/bolt/optimize-analytics-counters-3356972243942763781` 🔥
+  - **Result:** Optimize analytics aggregation and fix date parsing
+  - **Knowledge:** Branch origin/bolt/optimize-analytics-counters-3356972243942763781 observed: Optimize analytics aggregation and fix date parsing
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/palette-report-ux-14048412210578992959` 🔥
+  - **Result:** add navigation and visual polish to analytics report
+  - **Knowledge:** Branch origin/palette-report-ux-14048412210578992959 observed: add navigation and visual polish to analytics report
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/palette-ux-report-navigation-14402610223237389946` 🔥
+  - **Result:** add TOC and improved navigation to REPORT.md
+  - **Knowledge:** Branch origin/palette-ux-report-navigation-14402610223237389946 observed: add TOC and improved navigation to REPORT.md
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/palette-report-ux-7438110987153342447` 🔥
+  - **Result:** add navigation and visual polish to generated analytics report
+  - **Knowledge:** Branch origin/palette-report-ux-7438110987153342447 observed: add navigation and visual polish to generated analytics report
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/palette-report-ux-6836477238955573134` ⚡
+  - **Result:** add TOC, anchors, and emojis to analytics report
+  - **Knowledge:** Branch origin/palette-report-ux-6836477238955573134 observed: add TOC, anchors, and emojis to analytics report
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/palette-analytics-report-ux-18318316321736345338` 🔥
+  - **Result:** add TOC and navigation to analytics report
+  - **Knowledge:** Branch origin/palette-analytics-report-ux-18318316321736345338 observed: add TOC and navigation to analytics report
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/palette-ux-report-improvements-2448419094629096150` ⚡
+  - **Result:** Refactor analytics.py to add TOC, emojis, and navigation anchors to generated report
+  - **Knowledge:** Branch origin/palette-ux-report-improvements-2448419094629096150 observed: Refactor analytics.py to add TOC, emojis, and navigation anchors to generated report
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-ux-analytics-report-8996666478931275733` 🔥
+  - **Result:** Add TOC, emojis, and anchors to analytics report
+  - **Knowledge:** Branch origin/palette-ux-analytics-report-8996666478931275733 observed: Add TOC, emojis, and anchors to analytics report
+  - **Artifacts:** 29 files modified.
+- **Branch:** `origin/palette/report-navigation-13835048160804897717` ⚡
+  - **Result:** add TOC, emojis, and navigation to analytics report
+  - **Knowledge:** Branch origin/palette/report-navigation-13835048160804897717 observed: add TOC, emojis, and navigation to analytics report
+  - **Artifacts:** 9 files modified.
+- **Branch:** `origin/palette-analytics-report-ux-8715451132490550236` 🔥
+  - **Result:** add TOC, anchors, and emojis to report
+  - **Knowledge:** Branch origin/palette-analytics-report-ux-8715451132490550236 observed: add TOC, anchors, and emojis to report
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/palette-ux-report-navigation-1278181711471932664` ⚡
+  - **Result:** add navigation to generated report
+  - **Knowledge:** Branch origin/palette-ux-report-navigation-1278181711471932664 observed: add navigation to generated report
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-analytics-ux-3085333679140130358` ⚡
+  - **Result:** Add ToC and visual polish to analytics report
+  - **Knowledge:** Branch origin/palette-analytics-ux-3085333679140130358 observed: Add ToC and visual polish to analytics report
+  - **Artifacts:** 16 files modified.
+- **Branch:** `origin/palette-report-ux-improvement-6775578047897650791` ⚡
+  - **Result:** add ToC, anchors and emojis to analytics report
+  - **Knowledge:** Branch origin/palette-report-ux-improvement-6775578047897650791 observed: add ToC, anchors and emojis to analytics report
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/palette-ux-report-navigation-9929514783226057505` 🔥
+  - **Result:** Add navigation and emojis to generated analytics report
+  - **Knowledge:** Branch origin/palette-ux-report-navigation-9929514783226057505 observed: Add navigation and emojis to generated analytics report
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/palette-ux-report-navigation-1055201088429066015` ⚡
+  - **Result:** add TOC, anchors, and navigation links to report
+  - **Knowledge:** Branch origin/palette-ux-report-navigation-1055201088429066015 observed: add TOC, anchors, and navigation links to report
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-ux-report-nav-14965712706576844094` 🔥
+  - **Result:** add navigation and visual polish to analytics report
+  - **Knowledge:** Branch origin/palette-ux-report-nav-14965712706576844094 observed: add navigation and visual polish to analytics report
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/palette-ux-report-enhancement-6200692128049010692` ⚡
+  - **Result:** add TOC and emojis to analytics report
+  - **Knowledge:** Branch origin/palette-ux-report-enhancement-6200692128049010692 observed: add TOC and emojis to analytics report
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/palette-analytics-ux-2099745595997314595` ⚡
+  - **Result:** Add TOC and navigation to analytics report
+  - **Knowledge:** Branch origin/palette-analytics-ux-2099745595997314595 observed: Add TOC and navigation to analytics report
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-analytics-report-toc-4869005931920220226` 🔥
+  - **Result:** Add TOC and navigation to analytics report
+  - **Knowledge:** Branch origin/palette-analytics-report-toc-4869005931920220226 observed: Add TOC and navigation to analytics report
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/palette/report-navigation-ux-5720051547511983391` 🔥
+  - **Result:** add TOC and back-to-top links to analytics report
+  - **Knowledge:** Branch origin/palette/report-navigation-ux-5720051547511983391 observed: add TOC and back-to-top links to analytics report
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/palette-add-report-toc-14550766222336483339` 🔥
+  - **Result:** add TOC and navigation links to analytics report
+  - **Knowledge:** Branch origin/palette-add-report-toc-14550766222336483339 observed: add TOC and navigation links to analytics report
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/palette-ux-report-navigation-13412494468983508002` ⚡
+  - **Result:** add ToC and navigation links to analytics report
+  - **Knowledge:** Branch origin/palette-ux-report-navigation-13412494468983508002 observed: add ToC and navigation links to analytics report
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-analytics-report-ux-12591573171027613457` 🔥
+  - **Result:** add TOC and 'Back to Top' links to report
+  - **Knowledge:** Branch origin/palette-analytics-report-ux-12591573171027613457 observed: add TOC and 'Back to Top' links to report
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/palette-ux-report-nav-14262782421623851357` ⚡
+  - **Result:** Add navigation (TOC & Back-to-Top) to analytics report
+  - **Knowledge:** Branch origin/palette-ux-report-nav-14262782421623851357 observed: Add navigation (TOC & Back-to-Top) to analytics report
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/palette-add-report-navigation-5682476892525167581` 🔥
+  - **Result:** Add navigation (TOC, anchors) to analytics report
+  - **Knowledge:** Branch origin/palette-add-report-navigation-5682476892525167581 observed: Add navigation (TOC, anchors) to analytics report
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/palette-cli-colors-1479913510295186930` ⚡
+  - **Result:** Add CLI colors and execution summary to scraper.py
+  - **Knowledge:** Branch origin/palette-cli-colors-1479913510295186930 observed: Add CLI colors and execution summary to scraper.py
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-report-navigation-16469273364235841712` 🔥
+  - **Result:** Add Table of Contents and Back to Top links to analytics report
+  - **Knowledge:** Branch origin/palette-report-navigation-16469273364235841712 observed: Add Table of Contents and Back to Top links to analytics report
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/palette-analytics-report-nav-1565448853703765405` 🔥
+  - **Result:** Add TOC and Back to Top links to analytics report
+  - **Knowledge:** Branch origin/palette-analytics-report-nav-1565448853703765405 observed: Add TOC and Back to Top links to analytics report
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/palette-cli-ux-5434733662486237818` 🔥
+  - **Result:** Add CLI colors and summary stats to scraper
+  - **Knowledge:** Branch origin/palette-cli-ux-5434733662486237818 observed: Add CLI colors and summary stats to scraper
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/palette-ux-analytics-report-17442789238565895596` 🔥
+  - **Result:** add navigation and improve date parsing in analytics report
+  - **Knowledge:** Branch origin/palette-ux-analytics-report-17442789238565895596 observed: add navigation and improve date parsing in analytics report
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/palette-report-navigation-16056318434640743559` 🔥
+  - **Result:** Add navigation and visual polish to generated report
+  - **Knowledge:** Branch origin/palette-report-navigation-16056318434640743559 observed: Add navigation and visual polish to generated report
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/palette-ux-report-enhancement-11593647151328807214` ⚡
+  - **Result:** Add TOC and visual polish to analytics report
+  - **Knowledge:** Branch origin/palette-ux-report-enhancement-11593647151328807214 observed: Add TOC and visual polish to analytics report
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-analytics-report-ux-15329964485464931220` ⚡
+  - **Result:** Add TOC and visual enhancements to analytics report
+  - **Knowledge:** Branch origin/palette-analytics-report-ux-15329964485464931220 observed: Add TOC and visual enhancements to analytics report
+  - **Artifacts:** 9 files modified.
+- **Branch:** `origin/palette-analytics-ux-9996966549873603846` 🔥
+  - **Result:** Add emojis and TOC to analytics report
+  - **Knowledge:** Branch origin/palette-analytics-ux-9996966549873603846 observed: Add emojis and TOC to analytics report
+  - **Artifacts:** 29 files modified.
+- **Branch:** `origin/palette-analytics-toc-8074372532609925284` 🔥
+  - **Result:** Add Table of Contents with explicit anchors to generated analytics report.
+  - **Knowledge:** Branch origin/palette-analytics-toc-8074372532609925284 observed: Add Table of Contents with explicit anchors to generated analytics report.
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/palette-analytics-report-ux-15030314568688647799` ⚡
+  - **Result:** add TOC and visual polish to generated report
+  - **Knowledge:** Branch origin/palette-analytics-report-ux-15030314568688647799 observed: add TOC and visual polish to generated report
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/palette-cli-progress-8547163842398693145` 🔥
+  - **Result:** add CLI progress indicator to scraper
+  - **Knowledge:** Branch origin/palette-cli-progress-8547163842398693145 observed: add CLI progress indicator to scraper
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/palette-scraper-progress-6239093521074756069` ⚡
+  - **Result:** Add dynamic progress bar to scraper CLI
+  - **Knowledge:** Branch origin/palette-scraper-progress-6239093521074756069 observed: Add dynamic progress bar to scraper CLI
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-ux-report-toc-5253280815386000455` 🔥
+  - **Result:** Add TOC and emojis to analytics report
+  - **Knowledge:** Branch origin/palette-ux-report-toc-5253280815386000455 observed: Add TOC and emojis to analytics report
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/palette-analytics-ux-15537034640905896812` ⚡
+  - **Result:** Add TOC, emojis, and navigation anchors to analytics report
+  - **Knowledge:** Branch origin/palette-analytics-ux-15537034640905896812 observed: Add TOC, emojis, and navigation anchors to analytics report
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/palette-md-toc-15408984183661595183` ⚡
+  - **Result:** Add TOC and semantic emojis to analytics report
+  - **Knowledge:** Branch origin/palette-md-toc-15408984183661595183 observed: Add TOC and semantic emojis to analytics report
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-6507758882169212767` ⚡
+  - **Result:** [CRITICAL] Fix CSV Injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-6507758882169212767 observed: [CRITICAL] Fix CSV Injection vulnerability in scraper
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-report-ux-6858294670111624762` ⚡
+  - **Result:** add TOC and emojis to analytics report for better UX
+  - **Knowledge:** Branch origin/palette-report-ux-6858294670111624762 observed: add TOC and emojis to analytics report for better UX
+  - **Artifacts:** 16 files modified.
+- **Branch:** `origin/palette-ux-report-nav-16569108711170597601` ⚡
+  - **Result:** add TOC, emojis and navigation to generated report
+  - **Knowledge:** Branch origin/palette-ux-report-nav-16569108711170597601 observed: add TOC, emojis and navigation to generated report
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/palette-report-ux-improvement-10193181344057520742` ⚡
+  - **Result:** add navigation and visual polish to generated reports
+  - **Knowledge:** Branch origin/palette-report-ux-improvement-10193181344057520742 observed: add navigation and visual polish to generated reports
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-8908501396910626441` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-8908501396910626441 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-2402028977967656957` ⚡
+  - **Result:** [HIGH] Fix CSV Injection vulnerability
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-2402028977967656957 observed: [HIGH] Fix CSV Injection vulnerability
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/jules-10805447442179148911-1d117cf3` ⚡
+  - **Result:** Improve report navigation and fix date display
+  - **Knowledge:** Branch origin/jules-10805447442179148911-1d117cf3 observed: Improve report navigation and fix date display
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/palette/report-navigation-10848490221973178016` 🔥
+  - **Result:** Add navigation and visual improvements to analytics report
+  - **Knowledge:** Branch origin/palette/report-navigation-10848490221973178016 observed: Add navigation and visual improvements to analytics report
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/palette-improve-report-ux-3142867670552745548` ⚡
+  - **Result:** add navigation and visual polish to analytics report
+  - **Knowledge:** Branch origin/palette-improve-report-ux-3142867670552745548 observed: add navigation and visual polish to analytics report
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-improve-report-ux-1244892965393033926` ⚡
+  - **Result:** add TOC and navigation anchors to analytics report
+  - **Knowledge:** Branch origin/palette-improve-report-ux-1244892965393033926 observed: add TOC and navigation anchors to analytics report
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/palette-analytics-report-ux-4099564144535097926` ⚡
+  - **Result:** Add Table of Contents and visual polish to analytics report
+  - **Knowledge:** Branch origin/palette-analytics-report-ux-4099564144535097926 observed: Add Table of Contents and visual polish to analytics report
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/palette-add-report-toc-1273852051673532647` ⚡
+  - **Result:** Add Table of Contents to analytics report
+  - **Knowledge:** Branch origin/palette-add-report-toc-1273852051673532647 observed: Add Table of Contents to analytics report
+  - **Artifacts:** 16 files modified.
+- **Branch:** `origin/palette-ux-report-toc-289613292753469592` 🔥
+  - **Result:** Add Table of Contents to Markdown reports
+  - **Knowledge:** Branch origin/palette-ux-report-toc-289613292753469592 observed: Add Table of Contents to Markdown reports
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-9652304579813962192` ⚡
+  - **Result:** [HIGH] Fix CSV Injection vulnerability
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-9652304579813962192 observed: [HIGH] Fix CSV Injection vulnerability
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-13633884253574264448` 🔥
+  - **Result:** [HIGH] Fix CSV Injection
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-13633884253574264448 observed: [HIGH] Fix CSV Injection
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/palette-report-ux-2586385590797545719` 🔥
+  - **Result:** add TOC and percentage shares to report
+  - **Knowledge:** Branch origin/palette-report-ux-2586385590797545719 observed: add TOC and percentage shares to report
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/palette-add-toc-to-report-4251887735189678169` ⚡
+  - **Result:** Add Table of Contents to analytics report
+  - **Knowledge:** Branch origin/palette-add-toc-to-report-4251887735189678169 observed: Add Table of Contents to analytics report
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/palette-add-toc-report-14784174799878095511` ⚡
+  - **Result:** add table of contents to generated analytics report
+  - **Knowledge:** Branch origin/palette-add-toc-report-14784174799878095511 observed: add table of contents to generated analytics report
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/palette-add-toc-to-report-13463853514148026577` 🔥
+  - **Result:** add Table of Contents to generated agent report
+  - **Knowledge:** Branch origin/palette-add-toc-to-report-13463853514148026577 observed: add Table of Contents to generated agent report
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/palette-fix-markdown-escaping-930315787144321424` 🔥
+  - **Result:** escape special characters in markdown report
+  - **Knowledge:** Branch origin/palette-fix-markdown-escaping-930315787144321424 observed: escape special characters in markdown report
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/palette-cli-ux-17335050180511200643` 🔥
+  - **Result:** add CLI visual polish with emojis and colors
+  - **Knowledge:** Branch origin/palette-cli-ux-17335050180511200643 observed: add CLI visual polish with emojis and colors
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/sentinel/fix-markdown-injection-2058121724437501855` ⚡
+  - **Result:** sanitize markdown input in analytics report
+  - **Knowledge:** Branch origin/sentinel/fix-markdown-injection-2058121724437501855 observed: sanitize markdown input in analytics report
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/palette-cli-spinner-ux-9775132984312638180` 🔥
+  - **Result:** Add Spinner for better CLI UX
+  - **Knowledge:** Branch origin/palette-cli-spinner-ux-9775132984312638180 observed: Add Spinner for better CLI UX
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/palette-cli-spinner-ux-17355742632069179967` 🔥
+  - **Result:** Add CLI spinner and emoji feedback
+  - **Knowledge:** Branch origin/palette-cli-spinner-ux-17355742632069179967 observed: Add CLI spinner and emoji feedback
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/palette-improve-analytics-ux-11358974436321208229` ⚡
+  - **Result:** Improve analytics report UX with emojis, highlights, and CLI feedback. Add .gitignore.
+  - **Knowledge:** Branch origin/palette-improve-analytics-ux-11358974436321208229 observed: Improve analytics report UX with emojis, highlights, and CLI feedback. Add .gitignore.
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-colored-logging-874743676843453366` ⚡
+  - **Result:** Add colored logging to scraper
+  - **Knowledge:** Branch origin/palette-colored-logging-874743676843453366 observed: Add colored logging to scraper
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/palette/cli-colors-8575730962200631478` 🔥
+  - **Result:** add colored logging and output to scraper and analytics
+  - **Knowledge:** Branch origin/palette/cli-colors-8575730962200631478 observed: add colored logging and output to scraper and analytics
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/palette-cli-summary-2446121824441803209` 🔥
+  - **Result:** Add visual summary box to CLI output
+  - **Knowledge:** Branch origin/palette-cli-summary-2446121824441803209 observed: Add visual summary box to CLI output
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/palette/analytics-visuals-7279214207657992734` 🔥
+  - **Result:** Add colorful visual summary to analytics CLI
+  - **Knowledge:** Branch origin/palette/analytics-visuals-7279214207657992734 observed: Add colorful visual summary to analytics CLI
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/palette-analytics-ux-13601104017469084835` ⚡
+  - **Result:** Add visual summary to analytics CLI output
+  - **Knowledge:** Branch origin/palette-analytics-ux-13601104017469084835 observed: Add visual summary to analytics CLI output
+  - **Artifacts:** 16 files modified.
+- **Branch:** `origin/palette-analytics-visuals-11507232120657592034` ⚡
+  - **Result:** Add visual feedback to analytics CLI
+  - **Knowledge:** Branch origin/palette-analytics-visuals-11507232120657592034 observed: Add visual feedback to analytics CLI
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/palette-analytics-ux-9573677768644785747` ⚡
+  - **Result:** add visual summary to analytics CLI and fix date parsing
+  - **Knowledge:** Branch origin/palette-analytics-ux-9573677768644785747 observed: add visual summary to analytics CLI and fix date parsing
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/palette-analytics-visual-summary-2764218655727614121` 🔥
+  - **Result:** Add visual summary with ASCII charts to analytics CLI output
+  - **Knowledge:** Branch origin/palette-analytics-visual-summary-2764218655727614121 observed: Add visual summary with ASCII charts to analytics CLI output
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/palette-analytics-dashboard-8316831572934760504` ⚡
+  - **Result:** add colorful terminal dashboard to analytics script
+  - **Knowledge:** Branch origin/palette-analytics-dashboard-8316831572934760504 observed: add colorful terminal dashboard to analytics script
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/palette-ascii-charts-5993052222468580086` 🔥
+  - **Result:** add ASCII bar charts to text reports
+  - **Knowledge:** Branch origin/palette-ascii-charts-5993052222468580086 observed: add ASCII bar charts to text reports
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/palette-analytics-visuals-1727987223613819693` 🔥
+  - **Result:** add visual enhancements to analytics report\n\n- Add ASCII bar charts to tables for better data visualization\n- Add emojis to section headers for better hierarchy\n- Improve docstrings and exception handling in analytics.py (Pylint 9.79/10)
+  - **Knowledge:** Branch origin/palette-analytics-visuals-1727987223613819693 observed: add visual enhancements to analytics report\n\n- Add ASCII bar charts to tables for better data visualization\n- Add emojis to section headers for better hierarchy\n- Improve docstrings and exception handling in analytics.py (Pylint 9.79/10)
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-12055798594259206278` ⚡
+  - **Result:** Fix CSV Formula Injection vulnerability
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-12055798594259206278 observed: Fix CSV Formula Injection vulnerability
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/palette-ascii-bars-6236831282512919053` ⚡
+  - **Result:** add ASCII bar charts to generated reports
+  - **Knowledge:** Branch origin/palette-ascii-bars-6236831282512919053 observed: add ASCII bar charts to generated reports
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/palette-ux-report-enhancement-15172318103977119583` ⚡
+  - **Result:** add ASCII bar charts and emojis to report
+  - **Knowledge:** Branch origin/palette-ux-report-enhancement-15172318103977119583 observed: add ASCII bar charts and emojis to report
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-analytics-charts-2666464073759843485` ⚡
+  - **Result:** add ASCII bar charts and emoji headers to reports
+  - **Knowledge:** Branch origin/palette-analytics-charts-2666464073759843485 observed: add ASCII bar charts and emoji headers to reports
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/palette-ascii-charts-7286146975517193000` 🔥
+  - **Result:** add ASCII bar charts to generated Markdown report
+  - **Knowledge:** Branch origin/palette-ascii-charts-7286146975517193000 observed: add ASCII bar charts to generated Markdown report
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/palette-analytics-charts-9684146293746097755` ⚡
+  - **Result:** add ASCII bar charts to generated report
+  - **Knowledge:** Branch origin/palette-analytics-charts-9684146293746097755 observed: add ASCII bar charts to generated report
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/palette-analytics-ux-15956843867430969547` 🔥
+  - **Result:** add ASCII bar charts and emojis to reports
+  - **Knowledge:** Branch origin/palette-analytics-ux-15956843867430969547 observed: add ASCII bar charts and emojis to reports
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/palette-analytics-report-visuals-17665906749060305966` ⚡
+  - **Result:** Add visual bar charts to analytics report
+  - **Knowledge:** Branch origin/palette-analytics-report-visuals-17665906749060305966 observed: Add visual bar charts to analytics report
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-analytics-charts-4206491572955874021` ⚡
+  - **Result:** add ASCII bar charts and visual polish to reports
+  - **Knowledge:** Branch origin/palette-analytics-charts-4206491572955874021 observed: add ASCII bar charts and visual polish to reports
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-analytics-ux-13652391697026705295` 🔥
+  - **Result:** Add ASCII charts and emojis to analytics report
+  - **Knowledge:** Branch origin/palette-analytics-ux-13652391697026705295 observed: Add ASCII charts and emojis to analytics report
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/palette-analytics-visuals-7638117604363083084` ⚡
+  - **Result:** add ASCII bar charts and emojis to reports
+  - **Knowledge:** Branch origin/palette-analytics-visuals-7638117604363083084 observed: add ASCII bar charts and emojis to reports
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/palette-ascii-bars-14633850369654553391` 🔥
+  - **Result:** add ASCII bar charts to reports
+  - **Knowledge:** Branch origin/palette-ascii-bars-14633850369654553391 observed: add ASCII bar charts to reports
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/palette-ascii-charts-15757732960728587034` ⚡
+  - **Result:** add ASCII bar charts to analytics report
+  - **Knowledge:** Branch origin/palette-ascii-charts-15757732960728587034 observed: add ASCII bar charts to analytics report
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/bolt-scraper-optimization-6197596434771922189` ⚡
+  - **Result:** Optimize scraper parsing and fix lxml dependency
+  - **Knowledge:** Branch origin/bolt-scraper-optimization-6197596434771922189 observed: Optimize scraper parsing and fix lxml dependency
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/sentinel-timeout-fix-9908235734266386535` ⚡
+  - **Result:** Add 30s timeout to scraper requests
+  - **Knowledge:** Branch origin/sentinel-timeout-fix-9908235734266386535 observed: Add 30s timeout to scraper requests
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/sentinel-ssrf-fix-7380402867883374496` ⚡
+  - **Result:** Add strict SSRF protection to scraper
+  - **Knowledge:** Branch origin/sentinel-ssrf-fix-7380402867883374496 observed: Add strict SSRF protection to scraper
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/bolt-connection-pooling-8020030636571914955` 🔥
+  - **Result:** Implement shared aiohttp session for agents
+  - **Knowledge:** Branch origin/bolt-connection-pooling-8020030636571914955 observed: Implement shared aiohttp session for agents
+  - **Artifacts:** 39 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-2409511118285483263` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-2409511118285483263 observed: Fix CSV injection vulnerability in scraper.py
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/palette-ux-improvements-15719746936022958602` ⚡
+  - **Result:** Enhance CLI output and Report format - Refactored `run_system.py` to collect agent results for summary generation. - Added Executive Summary table to the daily report. - Wrapped individual agent reports in collapsible `<details>` tags. - Added emojis to CLI output for better visual feedback. - Added `.gitignore` to exclude runtime artifacts.
+  - **Knowledge:** Branch origin/palette-ux-improvements-15719746936022958602 observed: Enhance CLI output and Report format - Refactored `run_system.py` to collect agent results for summary generation. - Added Executive Summary table to the daily report. - Wrapped individual agent reports in collapsible `<details>` tags. - Added emojis to CLI output for better visual feedback. - Added `.gitignore` to exclude runtime artifacts.
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/sentinel-security-fixes-1698740501071019689` ⚡
+  - **Result:** Add timeout to network requests and validate output paths in scraper
+  - **Knowledge:** Branch origin/sentinel-security-fixes-1698740501071019689 observed: Add timeout to network requests and validate output paths in scraper
+  - **Artifacts:** 16 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-16277687269627577921` ⚡
+  - **Result:** add CSV sanitization to scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-16277687269627577921 observed: add CSV sanitization to scraper
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-11369382377147325845` 🔥
+  - **Result:** Implement bi-weekly scheduler
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-11369382377147325845 observed: Implement bi-weekly scheduler
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-4282466816023869874` ⚡
+  - **Result:** [HIGH] Fix CSV Injection vulnerability
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-4282466816023869874 observed: [HIGH] Fix CSV Injection vulnerability
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-17518560069698695789` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-17518560069698695789 observed: Fix CSV injection vulnerability in scraper
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/palette-add-report-percentages-11439172869140532830` 🔥
+  - **Result:** Add percentages to analytics report tables
+  - **Knowledge:** Branch origin/palette-add-report-percentages-11439172869140532830 observed: Add percentages to analytics report tables
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/palette-analytics-summary-8453671355123458848` ⚡
+  - **Result:** add cli summary output
+  - **Knowledge:** Branch origin/palette-analytics-summary-8453671355123458848 observed: add cli summary output
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-analytics-summary-3021361405572412376` 🔥
+  - **Result:** Add console summary to analytics.py for immediate feedback.
+  - **Knowledge:** Branch origin/palette-analytics-summary-3021361405572412376 observed: Add console summary to analytics.py for immediate feedback.
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/palette-emoji-cli-16267915948995606301` 🔥
+  - **Result:** Add emoji to CLI output for better readability
+  - **Knowledge:** Branch origin/palette-emoji-cli-16267915948995606301 observed: Add emoji to CLI output for better readability
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/palette-ux-report-links-5553853487436011261` 🔥
+  - **Result:** make report domains clickable and add emojis
+  - **Knowledge:** Branch origin/palette-ux-report-links-5553853487436011261 observed: make report domains clickable and add emojis
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/palette-analytics-emojis-3339331463941271199` ⚡
+  - **Result:** Add emojis to analytics report headers
+  - **Knowledge:** Branch origin/palette-analytics-emojis-3339331463941271199 observed: Add emojis to analytics report headers
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/palette-ascii-bars-4569634660869863011` ⚡
+  - **Result:** Add ASCII bars to analytics report
+  - **Knowledge:** Branch origin/palette-ascii-bars-4569634660869863011 observed: Add ASCII bars to analytics report
+  - **Artifacts:** 9 files modified.
+- **Branch:** `origin/palette-ascii-bars-12554319188292046492` 🔥
+  - **Result:** Add ASCII bar charts to analytics report
+  - **Knowledge:** Branch origin/palette-ascii-bars-12554319188292046492 observed: Add ASCII bar charts to analytics report
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/palette-ascii-bars-10852289251684581107` 🔥
+  - **Result:** add ASCII bar charts to report tables
+  - **Knowledge:** Branch origin/palette-ascii-bars-10852289251684581107 observed: add ASCII bar charts to report tables
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/palette-ascii-bars-8727413594208371857` ⚡
+  - **Result:** add ASCII bar charts to analytics report
+  - **Knowledge:** Branch origin/palette-ascii-bars-8727413594208371857 observed: add ASCII bar charts to analytics report
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-add-distribution-bars-2985599301363690621` 🔥
+  - **Result:** Add ASCII distribution bars to analytics report
+  - **Knowledge:** Branch origin/palette-add-distribution-bars-2985599301363690621 observed: Add ASCII distribution bars to analytics report
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/palette-ascii-charts-7527273603289417794` ⚡
+  - **Result:** add ASCII bar charts to generated report
+  - **Knowledge:** Branch origin/palette-ascii-charts-7527273603289417794 observed: add ASCII bar charts to generated report
+  - **Artifacts:** 16 files modified.
+- **Branch:** `origin/palette-ux-improvement-report-visuals-10910068111888807905` 🔥
+  - **Result:** add visual bar charts and percentages to analytics report
+  - **Knowledge:** Branch origin/palette-ux-improvement-report-visuals-10910068111888807905 observed: add visual bar charts and percentages to analytics report
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/palette-ascii-charts-15534847136011173808` 🔥
+  - **Result:** add ascii bar charts to analytics report
+  - **Knowledge:** Branch origin/palette-ascii-charts-15534847136011173808 observed: add ascii bar charts to analytics report
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/palette-ascii-charts-11999396775685685771` ⚡
+  - **Result:** add ASCII bar charts to analytics report
+  - **Knowledge:** Branch origin/palette-ascii-charts-11999396775685685771 observed: add ASCII bar charts to analytics report
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-12825710681451950296` ⚡
+  - **Result:** [HIGH] Fix CSV Injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-12825710681451950296 observed: [HIGH] Fix CSV Injection vulnerability in scraper
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/palette-colored-logs-4026752911446886464` 🔥
+  - **Result:** Add colored logging for better CLI UX
+  - **Knowledge:** Branch origin/palette-colored-logs-4026752911446886464 observed: Add colored logging for better CLI UX
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/bolt-optimize-trend-identification-6164653202853995715` 🔥
+  - **Result:** Optimize ResearchAgent trend lookup
+  - **Knowledge:** Branch origin/bolt-optimize-trend-identification-6164653202853995715 observed: Optimize ResearchAgent trend lookup
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-1271702522999364117` ⚡
+  - **Result:** [MEDIUM] Fix CSV Injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-1271702522999364117 observed: [MEDIUM] Fix CSV Injection vulnerability in scraper
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/palette-ux-scraper-logging-11386897257754529243` 🔥
+  - **Result:** Implement Autonomous Evolutionary Agents System
+  - **Knowledge:** Branch origin/palette-ux-scraper-logging-11386897257754529243 observed: Implement Autonomous Evolutionary Agents System
+  - **Artifacts:** 50 files modified.
+- **Branch:** `origin/bolt-soup-strainer-optimization-8380713953647872097` 🔥
+  - **Result:** Implement Autonomous Agent System with Evolutionary Architecture
+  - **Knowledge:** Branch origin/bolt-soup-strainer-optimization-8380713953647872097 observed: Implement Autonomous Agent System with Evolutionary Architecture
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/bolt-scraper-optimization-4366988920377669204` 🔥
+  - **Result:** Implement parallel agent pipeline and evolutionary architecture
+  - **Knowledge:** Branch origin/bolt-scraper-optimization-4366988920377669204 observed: Implement parallel agent pipeline and evolutionary architecture
+  - **Artifacts:** 46 files modified.
+- **Branch:** `origin/palette-report-percentages-17226232511035798370` 🔥
+  - **Result:** Implement autonomous evolutionary architecture with DNA-based agents
+  - **Knowledge:** Branch origin/palette-report-percentages-17226232511035798370 observed: Implement autonomous evolutionary architecture with DNA-based agents
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/palette-cli-colors-3206504166430713796` 🔥
+  - **Result:** Add color and emoji to scraper CLI output
+  - **Knowledge:** Branch origin/palette-cli-colors-3206504166430713796 observed: Add color and emoji to scraper CLI output
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-1455302439657418501` ⚡
+  - **Result:** fix CSV injection vulnerability and add request timeout
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-1455302439657418501 observed: fix CSV injection vulnerability and add request timeout
+  - **Artifacts:** 16 files modified.
+- **Branch:** `origin/palette-cli-polish-4689025684559590847` ⚡
+  - **Result:** Add colored logging and summary box to scraper CLI
+  - **Knowledge:** Branch origin/palette-cli-polish-4689025684559590847 observed: Add colored logging and summary box to scraper CLI
+  - **Artifacts:** 9 files modified.
+- **Branch:** `origin/palette-cli-visual-polish-3698444401610641769` 🔥
+  - **Result:** Add visual polish to CLI output with colored logging
+  - **Knowledge:** Branch origin/palette-cli-visual-polish-3698444401610641769 observed: Add visual polish to CLI output with colored logging
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/palette-colored-logging-1757555013383239299` ⚡
+  - **Result:** Add colored logging with emojis
+  - **Knowledge:** Branch origin/palette-colored-logging-1757555013383239299 observed: Add colored logging with emojis
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/palette-cli-colors-v1-4047913124623383228` 🔥
+  - **Result:** Add CLI colors and emojis for better UX
+  - **Knowledge:** Branch origin/palette-cli-colors-v1-4047913124623383228 observed: Add CLI colors and emojis for better UX
+  - **Artifacts:** 32 files modified.
+- **Branch:** `origin/palette-cli-ux-colors-16711790772227801289` 🔥
+  - **Result:** Add CLI color support and visual polish
+  - **Knowledge:** Branch origin/palette-cli-ux-colors-16711790772227801289 observed: Add CLI color support and visual polish
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/palette-ux-improvements-5803008523500848273` 🔥
+  - **Result:** add CLI colors and emojis for better UX
+  - **Knowledge:** Branch origin/palette-ux-improvements-5803008523500848273 observed: add CLI colors and emojis for better UX
+  - **Artifacts:** 29 files modified.
+- **Branch:** `origin/bolt-scraper-optimization-16491499678156145300` ⚡
+  - **Result:** Implement SoupStrainer and Regex Compilation in Scraper
+  - **Knowledge:** Branch origin/bolt-scraper-optimization-16491499678156145300 observed: Implement SoupStrainer and Regex Compilation in Scraper
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/palette-cli-polish-8263686010400234400` 🔥
+  - **Result:** Add colored logging and summary table
+  - **Knowledge:** Branch origin/palette-cli-polish-8263686010400234400 observed: Add colored logging and summary table
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/palette-cli-colors-v3-11994937576468000160` 🔥
+  - **Result:** Add color-coded logs and .gitignore for better DX
+  - **Knowledge:** Branch origin/palette-cli-colors-v3-11994937576468000160 observed: Add color-coded logs and .gitignore for better DX
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-4585330664271559396` ⚡
+  - **Result:** [HIGH] Fix CSV Injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-4585330664271559396 observed: [HIGH] Fix CSV Injection vulnerability in scraper
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/palette-cli-dashboard-2336811404384765093` ⚡
+  - **Result:** add colorful summary dashboard to scraper output
+  - **Knowledge:** Branch origin/palette-cli-dashboard-2336811404384765093 observed: add colorful summary dashboard to scraper output
+  - **Artifacts:** 16 files modified.
+- **Branch:** `origin/palette-scraper-cli-ux-5822096783494386588` 🔥
+  - **Result:** Add visual polish to scraper CLI output
+  - **Knowledge:** Branch origin/palette-scraper-cli-ux-5822096783494386588 observed: Add visual polish to scraper CLI output
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/palette-cli-polish-10024653573136516829` 🔥
+  - **Result:** add colored summary box to scraper CLI
+  - **Knowledge:** Branch origin/palette-cli-polish-10024653573136516829 observed: add colored summary box to scraper CLI
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/sentinel/fix-csv-injection-7073829351286481379` ⚡
+  - **Result:** fix CSV injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel/fix-csv-injection-7073829351286481379 observed: fix CSV injection vulnerability in scraper
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/palette-analytics-cli-summary-4779315143647098313` 🔥
+  - **Result:** Add emojis to analytics report headers
+  - **Knowledge:** Branch origin/palette-analytics-cli-summary-4779315143647098313 observed: Add emojis to analytics report headers
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/palette-cli-polish-7681580200009180365` ⚡
+  - **Result:** Add colored output and summary box to scraper CLI
+  - **Knowledge:** Branch origin/palette-cli-polish-7681580200009180365 observed: Add colored output and summary box to scraper CLI
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/palette-scraper-cli-summary-3176708108112650471` 🔥
+  - **Result:** Add visual summary dashboard to CLI output
+  - **Knowledge:** Branch origin/palette-scraper-cli-summary-3176708108112650471 observed: Add visual summary dashboard to CLI output
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/bolt-perf-lxml-17997966610705320667` 🔥
+  - **Result:** implement autonomous daily scheduler
+  - **Knowledge:** Branch origin/bolt-perf-lxml-17997966610705320667 observed: implement autonomous daily scheduler
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/bolt-scraper-optimization-12894303675301140287` 🔥
+  - **Result:** Optimize scraper parsing and implement daily schedule
+  - **Knowledge:** Branch origin/bolt-scraper-optimization-12894303675301140287 observed: Optimize scraper parsing and implement daily schedule
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/palette-cli-ux-5136733467430420971` 🔥
+  - **Result:** implement bi-weekly autonomous scheduling and CLI polish
+  - **Knowledge:** Branch origin/palette-cli-ux-5136733467430420971 observed: implement bi-weekly autonomous scheduling and CLI polish
+  - **Artifacts:** 30 files modified.
+- **Branch:** `origin/palette-cli-ux-biweekly-16790383014690096100` ⚡
+  - **Result:** add CLI polish and bi-weekly scheduling
+  - **Knowledge:** Branch origin/palette-cli-ux-biweekly-16790383014690096100 observed: add CLI polish and bi-weekly scheduling
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/palette-cli-colors-v1-15537575789263225364` 🔥
+  - **Result:** implement bi-weekly reporting schedule
+  - **Knowledge:** Branch origin/palette-cli-colors-v1-15537575789263225364 observed: implement bi-weekly reporting schedule
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/palette-cli-summary-box-15724779665177572819` ⚡
+  - **Result:** Automate bi-weekly reporting and add scraper UX
+  - **Knowledge:** Branch origin/palette-cli-summary-box-15724779665177572819 observed: Automate bi-weekly reporting and add scraper UX
+  - **Artifacts:** 12 files modified.
+- **Branch:** `origin/palette-cli-ux-summary-box-1793080287147073634` 🔥
+  - **Result:** Implement autonomous bi-weekly schedule
+  - **Knowledge:** Branch origin/palette-cli-ux-summary-box-1793080287147073634 observed: Implement autonomous bi-weekly schedule
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-17397953527120298966` 🔥
+  - **Result:** Update scheduler to bi-weekly and fix CSV injection
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-17397953527120298966 observed: Update scheduler to bi-weekly and fix CSV injection
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/palette-scraper-ux-6961191182929731002` 🔥
+  - **Result:** Add colorful summary box to scraper CLI
+  - **Knowledge:** Branch origin/palette-scraper-ux-6961191182929731002 observed: Add colorful summary box to scraper CLI
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/palette-scraper-ux-summary-1616700660320259607` ⚡
+  - **Result:** Add colored summary box to scraper CLI output
+  - **Knowledge:** Branch origin/palette-scraper-ux-summary-1616700660320259607 observed: Add colored summary box to scraper CLI output
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-1187373065145967330` ⚡
+  - **Result:** Fix CSV injection vulnerability in scraper output
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-1187373065145967330 observed: Fix CSV injection vulnerability in scraper output
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-cli-ux-summary-box-17623971089060669166` 🔥
+  - **Result:** Add polished summary box to CLI output
+  - **Knowledge:** Branch origin/palette-cli-ux-summary-box-17623971089060669166 observed: Add polished summary box to CLI output
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/palette-cli-summary-box-15876395418728927629` ⚡
+  - **Result:** Add summary box and colors to scraper CLI output
+  - **Knowledge:** Branch origin/palette-cli-summary-box-15876395418728927629 observed: Add summary box and colors to scraper CLI output
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/palette-cli-ux-summary-8843972802041575160` ⚡
+  - **Result:** Add CLI summary box to scraper output
+  - **Knowledge:** Branch origin/palette-cli-ux-summary-8843972802041575160 observed: Add CLI summary box to scraper output
+  - **Artifacts:** 15 files modified.
+- **Branch:** `origin/palette-scraper-cli-summary-16839144126479902630` 🔥
+  - **Result:** Add colorful CLI summary box, robustness, and tests
+  - **Knowledge:** Branch origin/palette-scraper-cli-summary-16839144126479902630 observed: Add colorful CLI summary box, robustness, and tests
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/palette-cli-summary-box-7747250997461256954` 🔥
+  - **Result:** Add colored summary box to scraper CLI
+  - **Knowledge:** Branch origin/palette-cli-summary-box-7747250997461256954 observed: Add colored summary box to scraper CLI
+  - **Artifacts:** 28 files modified.
+- **Branch:** `origin/palette-scraper-summary-5050498537794358617` ⚡
+  - **Result:** Add scraping summary box
+  - **Knowledge:** Branch origin/palette-scraper-summary-5050498537794358617 observed: Add scraping summary box
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/palette-cli-polish-5860890348609218987` ⚡
+  - **Result:** Add summary box and colors to CLI output
+  - **Knowledge:** Branch origin/palette-cli-polish-5860890348609218987 observed: Add summary box and colors to CLI output
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/palette-scraper-ux-9017003330469506880` 🔥
+  - **Result:** 🎨 Add styled summary box to scraper CLI output
+  - **Knowledge:** Branch origin/palette-scraper-ux-9017003330469506880 observed: 🎨 Add styled summary box to scraper CLI output
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-2209257127317318783` 🔥
+  - **Result:** Fix CSV injection vulnerability in scraper and add request timeout
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-2209257127317318783 observed: Fix CSV injection vulnerability in scraper and add request timeout
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/palette-scraper-cli-summary-5336252547540046399` 🔥
+  - **Result:** Add visual summary box to scraper CLI output
+  - **Knowledge:** Branch origin/palette-scraper-cli-summary-5336252547540046399 observed: Add visual summary box to scraper CLI output
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/palette-cli-summary-box-12028055253848911084` 🔥
+  - **Result:** Add colorful summary box to CLI output
+  - **Knowledge:** Branch origin/palette-cli-summary-box-12028055253848911084 observed: Add colorful summary box to CLI output
+  - **Artifacts:** 43 files modified.
+- **Branch:** `origin/palette-cli-summary-box-17004344822758906732` ⚡
+  - **Result:** Add colored summary box to CLI output
+  - **Knowledge:** Branch origin/palette-cli-summary-box-17004344822758906732 observed: Add colored summary box to CLI output
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/palette-scraper-summary-13588156777621832992` 🔥
+  - **Result:** Add summary box to scraper output
+  - **Knowledge:** Branch origin/palette-scraper-summary-13588156777621832992 observed: Add summary box to scraper output
+  - **Artifacts:** 29 files modified.
+- **Branch:** `origin/palette-scraper-summary-8932535949334759673` ⚡
+  - **Result:** Add visual summary box to scraper output
+  - **Knowledge:** Branch origin/palette-scraper-summary-8932535949334759673 observed: Add visual summary box to scraper output
+  - **Artifacts:** 9 files modified.
+- **Branch:** `origin/palette-cli-ux-7116481711061595450` 🔥
+  - **Result:** Add Colors class and summary box to run_system.py
+  - **Knowledge:** Branch origin/palette-cli-ux-7116481711061595450 observed: Add Colors class and summary box to run_system.py
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/palette-execution-summary-605686719773700306` 🔥
+  - **Result:** Add execution summary box and gitignore
+  - **Knowledge:** Branch origin/palette-execution-summary-605686719773700306 observed: Add execution summary box and gitignore
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/palette-cli-summary-6668663755277861295` ⚡
+  - **Result:** Add Summary Box and Colors to CLI
+  - **Knowledge:** Branch origin/palette-cli-summary-6668663755277861295 observed: Add Summary Box and Colors to CLI
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-11971151149383577133` 🔥
+  - **Result:** Fix path traversal vulnerability in scraper.py
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-11971151149383577133 observed: Fix path traversal vulnerability in scraper.py
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/palette-scraper-summary-17513207039517705474` 🔥
+  - **Result:** Add colored summary box to scraper CLI
+  - **Knowledge:** Branch origin/palette-scraper-summary-17513207039517705474 observed: Add colored summary box to scraper CLI
+  - **Artifacts:** 21 files modified.
+- **Branch:** `origin/sentinel-security-fixes-2926280521022127220` ⚡
+  - **Result:** Implement CSV injection protection and path traversal prevention in scraper
+  - **Knowledge:** Branch origin/sentinel-security-fixes-2926280521022127220 observed: Implement CSV injection protection and path traversal prevention in scraper
+  - **Artifacts:** 16 files modified.
+- **Branch:** `origin/palette-scraper-summary-3653925137678397379` ⚡
+  - **Result:** Add colorized summary box to scraper output
+  - **Knowledge:** Branch origin/palette-scraper-summary-3653925137678397379 observed: Add colorized summary box to scraper output
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-scraper-summary-5881723373928113015` ⚡
+  - **Result:** Add summary box to scraper output
+  - **Knowledge:** Branch origin/palette-scraper-summary-5881723373928113015 observed: Add summary box to scraper output
+  - **Artifacts:** 16 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-17847315453125522921` 🔥
+  - **Result:** prevent path traversal in scraper output and add timeout
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-17847315453125522921 observed: prevent path traversal in scraper output and add timeout
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/bolt-scraper-optimization-193945379704205017` 🔥
+  - **Result:** Use lxml parser and add request timeout
+  - **Knowledge:** Branch origin/bolt-scraper-optimization-193945379704205017 observed: Use lxml parser and add request timeout
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/palette-scraper-ux-11462642934307875723` 🔥
+  - **Result:** Add colorful summary box to scraper CLI
+  - **Knowledge:** Branch origin/palette-scraper-ux-11462642934307875723 observed: Add colorful summary box to scraper CLI
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-16995034832963539276` ⚡
+  - **Result:** [HIGH] Fix CSV Injection in Scraper
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-16995034832963539276 observed: [HIGH] Fix CSV Injection in Scraper
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/palette-analytics-summary-box-4031844974106884823` 🔥
+  - **Result:** Add colored summary box to analytics report generation
+  - **Knowledge:** Branch origin/palette-analytics-summary-box-4031844974106884823 observed: Add colored summary box to analytics report generation
+  - **Artifacts:** 27 files modified.
+- **Branch:** `origin/palette-analytics-summary-box-8939838279506558518` ⚡
+  - **Result:** Add colored summary box to analytics CLI output
+  - **Knowledge:** Branch origin/palette-analytics-summary-box-8939838279506558518 observed: Add colored summary box to analytics CLI output
+  - **Artifacts:** 10 files modified.
+- **Branch:** `origin/palette-scraper-ux-summary-7200015495059057194` ⚡
+  - **Result:** Add execution summary box to scraper CLI
+  - **Knowledge:** Branch origin/palette-scraper-ux-summary-7200015495059057194 observed: Add execution summary box to scraper CLI
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/palette-scraper-ux-920842883582367998` ⚡
+  - **Result:** Add colorized summary box to scraper CLI output
+  - **Knowledge:** Branch origin/palette-scraper-ux-920842883582367998 observed: Add colorized summary box to scraper CLI output
+  - **Artifacts:** 16 files modified.
+- **Branch:** `origin/palette-ux-analytics-summary-2709532664525857663` 🔥
+  - **Result:** Add visual summary box to analytics CLI output
+  - **Knowledge:** Branch origin/palette-ux-analytics-summary-2709532664525857663 observed: Add visual summary box to analytics CLI output
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/palette-cli-visual-polish-15892369352802865338` 🔥
+  - **Result:** Add colored logging for improved CLI UX
+  - **Knowledge:** Branch origin/palette-cli-visual-polish-15892369352802865338 observed: Add colored logging for improved CLI UX
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/palette-analytics-ux-11549541802920057325` ⚡
+  - **Result:** add rich console summary and markdown sanitization
+  - **Knowledge:** Branch origin/palette-analytics-ux-11549541802920057325 observed: add rich console summary and markdown sanitization
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-2777825542353398891` ⚡
+  - **Result:** Fix CSV Injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-2777825542353398891 observed: Fix CSV Injection vulnerability in scraper
+  - **Artifacts:** 16 files modified.
+- **Branch:** `origin/sentinel-csv-injection-fix-8804107294486031886` 🔥
+  - **Result:** [HIGH] Fix CSV Injection vulnerability in scraper
+  - **Knowledge:** Branch origin/sentinel-csv-injection-fix-8804107294486031886 observed: [HIGH] Fix CSV Injection vulnerability in scraper
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/palette-cli-colors-18422454405439662270` 🔥
+  - **Result:** add colored log formatter for improved CLI experience
+  - **Knowledge:** Branch origin/palette-cli-colors-18422454405439662270 observed: add colored log formatter for improved CLI experience
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/sentinel-fix-csv-injection-15688476494678190926` 🔥
+  - **Result:** Verified with a reproduction script that attempted to inject formulas, confirming that they are now escaped.
+  - **Knowledge:** Branch origin/sentinel-fix-csv-injection-15688476494678190926 observed: Verified with a reproduction script that attempted to inject formulas, confirming that they are now escaped.
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/palette-colored-logging-4205972882040105240` 🔥
+  - **Result:** add colored logging with emojis
+  - **Knowledge:** Branch origin/palette-colored-logging-4205972882040105240 observed: add colored logging with emojis
+  - **Artifacts:** 29 files modified.
+- **Branch:** `origin/palette-cli-ux-colors-17941664392335633230` ⚡
+  - **Result:** Add CLI colors and emojis for better UX
+  - **Knowledge:** Branch origin/palette-cli-ux-colors-17941664392335633230 observed: Add CLI colors and emojis for better UX
+  - **Artifacts:** 7 files modified.
+- **Branch:** `origin/palette-log-formatting-9683465973312644975` 🔥
+  - **Result:** add gemini-powered build, debug & deploy cli
+  - **Knowledge:** Branch origin/palette-log-formatting-9683465973312644975 observed: add gemini-powered build, debug & deploy cli
+  - **Artifacts:** 29 files modified.
+- **Branch:** `origin/palette-cli-colors-16970097531222949087` ⚡
+  - **Result:** Add colorful emoji logging to CLI
+  - **Knowledge:** Branch origin/palette-cli-colors-16970097531222949087 observed: Add colorful emoji logging to CLI
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/palette-cli-visual-polish-10160750518849227089` ⚡
+  - **Result:** Add visual polish to CLI logs with emojis and colors
+  - **Knowledge:** Branch origin/palette-cli-visual-polish-10160750518849227089 observed: Add visual polish to CLI logs with emojis and colors
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/palette-log-formatting-15971220591968669569` 🔥
+  - **Result:** Add colored logging with emojis
+  - **Knowledge:** Branch origin/palette-log-formatting-15971220591968669569 observed: Add colored logging with emojis
+  - **Artifacts:** 29 files modified.
+- **Branch:** `origin/bolt-regex-optimization-12519421487946893253` 🔥
+  - **Result:** Implement Autonomous Agents System & Optimize Scraper
+  - **Knowledge:** Branch origin/bolt-regex-optimization-12519421487946893253 observed: Implement Autonomous Agents System & Optimize Scraper
+  - **Artifacts:** 22 files modified.
+- **Branch:** `origin/palette-cli-ux-improvements-8617716335041011148` 🔥
+  - **Result:** Implement Autonomous Agents Expansion with System IQ
+  - **Knowledge:** Branch origin/palette-cli-ux-improvements-8617716335041011148 observed: Implement Autonomous Agents Expansion with System IQ
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/bolt-scraper-optimization-14139347642198043635` ⚡
+  - **Result:** Implement Autonomous Agent Framework with IQ Tracking
+  - **Knowledge:** Branch origin/bolt-scraper-optimization-14139347642198043635 observed: Implement Autonomous Agent Framework with IQ Tracking
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/opt-scraper-regex-6404737091544860092` 🔥
+  - **Result:** Implement self-evolving autonomous system
+  - **Knowledge:** Branch origin/opt-scraper-regex-6404737091544860092 observed: Implement self-evolving autonomous system
+  - **Artifacts:** 44 files modified.
+- **Branch:** `origin/update-scraper-target-14564535453076268184` 🔥
+  - **Result:** Implement collaborative autonomous agent system
+  - **Knowledge:** Branch origin/update-scraper-target-14564535453076268184 observed: Implement collaborative autonomous agent system
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/palette-analytics-bar-chart-7462251999169566505` 🔥
+  - **Result:** Add ASCII bar chart to analytics report
+  - **Knowledge:** Branch origin/palette-analytics-bar-chart-7462251999169566505 observed: Add ASCII bar chart to analytics report
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/palette-ux-analytics-bar-chart-17866123775961156330` ⚡
+  - **Result:** add visual distribution chart to analytics report
+  - **Knowledge:** Branch origin/palette-ux-analytics-bar-chart-17866123775961156330 observed: add visual distribution chart to analytics report
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/palette-graceful-shutdown-6686216384600575838` ⚡
+  - **Result:** add graceful shutdown to save data on interrupt
+  - **Knowledge:** Branch origin/palette-graceful-shutdown-6686216384600575838 observed: add graceful shutdown to save data on interrupt
+  - **Artifacts:** 8 files modified.
+- **Branch:** `origin/update-scraper-target-15910668004309817623` ⚡
+  - **Result:** Implement autonomous multi-agent system for 24/7 operations
+  - **Knowledge:** Branch origin/update-scraper-target-15910668004309817623 observed: Implement autonomous multi-agent system for 24/7 operations
+  - **Artifacts:** 19 files modified.
+
+#### 🌐 Strategic Domain: Infrastructure
+- **Branch:** `origin/palette-ascii-bar-chart-4704095013089866243` 🔥
+  - **Result:** Add ASCII bar chart to keyword trends report
+  - **Knowledge:** Branch origin/palette-ascii-bar-chart-4704095013089866243 observed: Add ASCII bar chart to keyword trends report
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/palette-colored-logging-13485015561319652881` ⚡
+  - **Result:** Add colored logging and emojis to orchestrator
+  - **Knowledge:** Branch origin/palette-colored-logging-13485015561319652881 observed: Add colored logging and emojis to orchestrator
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/bolt-parallel-research-2647431887195173891` ⚡
+  - **Result:** Parallelize independent scraping tasks in ResearcherAgent
+  - **Knowledge:** Branch origin/bolt-parallel-research-2647431887195173891 observed: Parallelize independent scraping tasks in ResearcherAgent
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/palette/report-ux-improvements-17015543897776799811` 🔥
+  - **Result:** 🎨 Add dynamic TOC and Footer to Daily Report
+  - **Knowledge:** Branch origin/palette/report-ux-improvements-17015543897776799811 observed: 🎨 Add dynamic TOC and Footer to Daily Report
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/bolt/parallel-research-9725055391058247925` ⚡
+  - **Result:** Parallelize Research Scrapers
+  - **Knowledge:** Branch origin/bolt/parallel-research-9725055391058247925 observed: Parallelize Research Scrapers
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/palette/cli-ux-improvements-18294687491796103663` ⚡
+  - **Result:** Add delightful CLI logging with emojis and colors
+  - **Knowledge:** Branch origin/palette/cli-ux-improvements-18294687491796103663 observed: Add delightful CLI logging with emojis and colors
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/palette-cli-ux-13954950043505493397` 🔥
+  - **Result:** Add rich CLI feedback with emojis and colors
+  - **Knowledge:** Branch origin/palette-cli-ux-13954950043505493397 observed: Add rich CLI feedback with emojis and colors
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/bolt-parallel-research-17289593056697154887` ⚡
+  - **Result:** parallelize research scraping tasks
+  - **Knowledge:** Branch origin/bolt-parallel-research-17289593056697154887 observed: parallelize research scraping tasks
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/palette-daily-report-ux-12337725128930830373` ⚡
+  - **Result:** Add TOC and navigation to daily report
+  - **Knowledge:** Branch origin/palette-daily-report-ux-12337725128930830373 observed: Add TOC and navigation to daily report
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/palette/report-ux-toc-35647320164543380` 🔥
+  - **Result:** Add Table of Contents and Navigation Anchors to Report
+  - **Knowledge:** Branch origin/palette/report-ux-toc-35647320164543380 observed: Add Table of Contents and Navigation Anchors to Report
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/palette-report-navigation-10884479842753729590` 🔥
+  - **Result:** add TOC and navigation to daily reports
+  - **Knowledge:** Branch origin/palette-report-navigation-10884479842753729590 observed: add TOC and navigation to daily reports
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/palette/improve-report-ux-9149599354572464593` ⚡
+  - **Result:** add TOC, emojis, and navigation to daily reports
+  - **Knowledge:** Branch origin/palette/improve-report-ux-9149599354572464593 observed: add TOC, emojis, and navigation to daily reports
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/palette-ux-report-improvements-5742295436253287865` ⚡
+  - **Result:** add TOC, anchors, and emojis to daily report
+  - **Knowledge:** Branch origin/palette-ux-report-improvements-5742295436253287865 observed: add TOC, anchors, and emojis to daily report
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/palette-ux-report-nav-8282303934729668343` 🔥
+  - **Result:** Add TOC and navigation anchors to daily reports
+  - **Knowledge:** Branch origin/palette-ux-report-nav-8282303934729668343 observed: Add TOC and navigation anchors to daily reports
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/palette-report-ux-1122938860109314687` 🔥
+  - **Result:** add table of contents and anchors to daily report
+  - **Knowledge:** Branch origin/palette-report-ux-1122938860109314687 observed: add table of contents and anchors to daily report
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/bolt-performance-researcher-parallel-14083446913808093201` ⚡
+  - **Result:** Parallelize ResearcherAgent scraping tasks
+  - **Knowledge:** Branch origin/bolt-performance-researcher-parallel-14083446913808093201 observed: Parallelize ResearcherAgent scraping tasks
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/palette/report-ux-toc-4596925936165849228` 🔥
+  - **Result:** Add Table of Contents and navigation anchors to daily reports
+  - **Knowledge:** Branch origin/palette/report-ux-toc-4596925936165849228 observed: Add Table of Contents and navigation anchors to daily reports
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/palette-report-navigation-4813868009156738406` 🔥
+  - **Result:** add navigation to generated reports
+  - **Knowledge:** Branch origin/palette-report-navigation-4813868009156738406 observed: add navigation to generated reports
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/palette-colored-logging-ux-17992992893836772305` ⚡
+  - **Result:** add colored logging and fix double logging issue
+  - **Knowledge:** Branch origin/palette-colored-logging-ux-17992992893836772305 observed: add colored logging and fix double logging issue
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/palette-colored-logging-1491286074497741313` ⚡
+  - **Result:** Add colored logging and emoji indicators to CLI output
+  - **Knowledge:** Branch origin/palette-colored-logging-1491286074497741313 observed: Add colored logging and emoji indicators to CLI output
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/palette-report-navigation-9686279638515215567` 🔥
+  - **Result:** Add TOC and navigation anchors to daily report
+  - **Knowledge:** Branch origin/palette-report-navigation-9686279638515215567 observed: Add TOC and navigation anchors to daily report
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/palette/report-navigation-16735365326145153163` 🔥
+  - **Result:** Add TOC and accessible anchors to reports
+  - **Knowledge:** Branch origin/palette/report-navigation-16735365326145153163 observed: Add TOC and accessible anchors to reports
+  - **Artifacts:** 26 files modified.
+- **Branch:** `origin/bolt/optimize-researcher-agent-14491778410455862210` ⚡
+  - **Result:** Optimize ResearcherAgent with direct module calls
+  - **Knowledge:** Branch origin/bolt/optimize-researcher-agent-14491778410455862210 observed: Optimize ResearcherAgent with direct module calls
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/palette-report-navigation-2240518606700983656` 🔥
+  - **Result:** add navigation aids to daily report
+  - **Knowledge:** Branch origin/palette-report-navigation-2240518606700983656 observed: add navigation aids to daily report
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/bolt-requests-session-3076311538911381225` 🔥
+  - **Result:** implement requests.Session for connection pooling
+  - **Knowledge:** Branch origin/bolt-requests-session-3076311538911381225 observed: implement requests.Session for connection pooling
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-fix-monetization-markdown-injection-4346962235570198500` ⚡
+  - **Result:** Fix Markdown Injection vulnerability in MonetizationAgent
+  - **Knowledge:** Branch origin/sentinel-fix-monetization-markdown-injection-4346962235570198500 observed: Fix Markdown Injection vulnerability in MonetizationAgent
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-report-ux-improvement-9188687414031330182` 🔥
+  - **Result:** Add Table of Contents and Back-to-Top links to report generator
+  - **Knowledge:** Branch origin/palette-report-ux-improvement-9188687414031330182 observed: Add Table of Contents and Back-to-Top links to report generator
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/palette-improve-report-ux-4874508048051784270` 🔥
+  - **Result:** Add Table of Contents and navigation anchors to daily reports
+  - **Knowledge:** Branch origin/palette-improve-report-ux-4874508048051784270 observed: Add Table of Contents and navigation anchors to daily reports
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/bolt-debounce-search-15937062067363092227` ⚡
+  - **Result:** add debounce to search input
+  - **Knowledge:** Branch origin/bolt-debounce-search-15937062067363092227 observed: add debounce to search input
+  - **Artifacts:** 16 files modified.
+- **Branch:** `origin/bolt-researcher-optimization-1888456818967514733` ⚡
+  - **Result:** Refactor ResearcherAgent to use parallel direct execution
+  - **Knowledge:** Branch origin/bolt-researcher-optimization-1888456818967514733 observed: Refactor ResearcherAgent to use parallel direct execution
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/palette-add-report-toc-13017065858519563862` 🔥
+  - **Result:** Add dynamic Table of Contents to daily reports
+  - **Knowledge:** Branch origin/palette-add-report-toc-13017065858519563862 observed: Add dynamic Table of Contents to daily reports
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/palette-report-ux-3403375425654783519` 🔥
+  - **Result:** Add Table of Contents to agent reports and ignore report artifacts
+  - **Knowledge:** Branch origin/palette-report-ux-3403375425654783519 observed: Add Table of Contents to agent reports and ignore report artifacts
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-ssrf-fix-12142424289060745521` ⚡
+  - **Result:** Fix SSRF Vulnerability in Scraper
+  - **Knowledge:** Branch origin/sentinel-ssrf-fix-12142424289060745521 observed: Fix SSRF Vulnerability in Scraper
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-cli-ux-improvements-5318917015708801227` ⚡
+  - **Result:** add emojis to orchestrator logs for better CLI UX
+  - **Knowledge:** Branch origin/palette-cli-ux-improvements-5318917015708801227 observed: add emojis to orchestrator logs for better CLI UX
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/palette-cli-ux-summary-11132373574447212764` ⚡
+  - **Result:** Add colorful CLI summary using Palette class
+  - **Knowledge:** Branch origin/palette-cli-ux-summary-11132373574447212764 observed: Add colorful CLI summary using Palette class
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/palette-scraper-cli-ux-594719543184978660` 🔥
+  - **Result:** add colorful summary to scraper CLI output
+  - **Knowledge:** Branch origin/palette-scraper-cli-ux-594719543184978660 observed: add colorful summary to scraper CLI output
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/palette-ux-improvements-15774868112759434697` 🔥
+  - **Result:** Add keyword distribution visualization and accessible links
+  - **Knowledge:** Branch origin/palette-ux-improvements-15774868112759434697 observed: Add keyword distribution visualization and accessible links
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/palette-ux-report-emojis-17126566663041790687` ⚡
+  - **Result:** add status emojis to daily report
+  - **Knowledge:** Branch origin/palette-ux-report-emojis-17126566663041790687 observed: add status emojis to daily report
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/bolt-subprocess-optimization-18368677201782107584` ⚡
+  - **Result:** Refactor `ResearcherAgent` to invoke `scrape_informatic` directly
+  - **Knowledge:** Branch origin/bolt-subprocess-optimization-18368677201782107584 observed: Refactor `ResearcherAgent` to invoke `scrape_informatic` directly
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/sentinel-url-validation-800829515985496089` 🔥
+  - **Result:** Implement URL input validation in scraper
+  - **Knowledge:** Branch origin/sentinel-url-validation-800829515985496089 observed: Implement URL input validation in scraper
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/palette-exec-summary-6369051085132382588` 🔥
+  - **Result:** add executive summary table to agent report
+  - **Knowledge:** Branch origin/palette-exec-summary-6369051085132382588 observed: add executive summary table to agent report
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/bolt-subprocess-optimization-3686568767361641898` ⚡
+  - **Result:** Refactor researcher to use direct imports instead of subprocess
+  - **Knowledge:** Branch origin/bolt-subprocess-optimization-3686568767361641898 observed: Refactor researcher to use direct imports instead of subprocess
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/sentinel-add-timeout-15463043223349410513` ⚡
+  - **Result:** Add timeout to requests.get in scraper
+  - **Knowledge:** Branch origin/sentinel-add-timeout-15463043223349410513 observed: Add timeout to requests.get in scraper
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/bolt-scraper-optimization-10743061150109398195` 🔥
+  - **Result:** Implement HTTP and DB connection pooling in scraper
+  - **Knowledge:** Branch origin/bolt-scraper-optimization-10743061150109398195 observed: Implement HTTP and DB connection pooling in scraper
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/bolt-debounce-search-11570184838163532728` ⚡
+  - **Result:** Add debounce to search input
+  - **Knowledge:** Branch origin/bolt-debounce-search-11570184838163532728 observed: Add debounce to search input
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/bolt-parallel-scraping-3456726109416695191` ⚡
+  - **Result:** parallelize researcher agent tasks
+  - **Knowledge:** Branch origin/bolt-parallel-scraping-3456726109416695191 observed: parallelize researcher agent tasks
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/palette-ascii-charts-16355594758621519726` 🔥
+  - **Result:** add ASCII bar charts to daily report keyword trends
+  - **Knowledge:** Branch origin/palette-ascii-charts-16355594758621519726 observed: add ASCII bar charts to daily report keyword trends
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/bolt-optimize-researcher-agent-subprocess-15744281419787264708` ⚡
+  - **Result:** Optimize ResearcherAgent by removing subprocess calls
+  - **Knowledge:** Branch origin/bolt-optimize-researcher-agent-subprocess-15744281419787264708 observed: Optimize ResearcherAgent by removing subprocess calls
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/bolt-optimize-db-connection-12196506237305672986` 🔥
+  - **Result:** Implement Autonomous Agents & Evolutionary Architecture
+  - **Knowledge:** Branch origin/bolt-optimize-db-connection-12196506237305672986 observed: Implement Autonomous Agents & Evolutionary Architecture
+  - **Artifacts:** 29 files modified.
+- **Branch:** `origin/palette-color-logging-7081539865744827473` ⚡
+  - **Result:** Implement semantic color logging for agent swarm CLI
+  - **Knowledge:** Branch origin/palette-color-logging-7081539865744827473 observed: Implement semantic color logging for agent swarm CLI
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/palette-cli-visual-polish-12024230895845903893` ⚡
+  - **Result:** add CLI visual polish with colored logging and emojis
+  - **Knowledge:** Branch origin/palette-cli-visual-polish-12024230895845903893 observed: add CLI visual polish with colored logging and emojis
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/bolt-debounce-search-17010444202675904265` ⚡
+  - **Result:** Add debounce to search input
+  - **Knowledge:** Branch origin/bolt-debounce-search-17010444202675904265 observed: Add debounce to search input
+  - **Artifacts:** 16 files modified.
+- **Branch:** `origin/sentinel-fix-ssrf-scope-creep-7819911338616714080` 🔥
+  - **Result:** [HIGH] Fix SSRF/Scope Creep in Scraper
+  - **Knowledge:** Branch origin/sentinel-fix-ssrf-scope-creep-7819911338616714080 observed: [HIGH] Fix SSRF/Scope Creep in Scraper
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/bolt-debounce-search-7271068831945520749` ⚡
+  - **Result:** add debounce to search input
+  - **Knowledge:** Branch origin/bolt-debounce-search-7271068831945520749 observed: add debounce to search input
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-cli-polish-10617303078140811985` 🔥
+  - **Result:** add colors and summary box to scraper output
+  - **Knowledge:** Branch origin/palette-cli-polish-10617303078140811985 observed: add colors and summary box to scraper output
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/sentinel-path-traversal-fix-5954497886422508667` ⚡
+  - **Result:** Fix Path Traversal vulnerability in scraper scripts
+  - **Knowledge:** Branch origin/sentinel-path-traversal-fix-5954497886422508667 observed: Fix Path Traversal vulnerability in scraper scripts
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/sentinel/fix-scraper-timeout-6444312596237572236` ⚡
+  - **Result:** Add timeout to requests in scrape_informatic.py
+  - **Knowledge:** Branch origin/sentinel/fix-scraper-timeout-6444312596237572236 observed: Add timeout to requests in scrape_informatic.py
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/sentinel-markdown-sanitization-7145404824939616399` 🔥
+  - **Result:** Add markdown sanitization to agent reports
+  - **Knowledge:** Branch origin/sentinel-markdown-sanitization-7145404824939616399 observed: Add markdown sanitization to agent reports
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/palette-cli-dashboard-5972362359914062540` ⚡
+  - **Result:** Add colorful CLI summary dashboard
+  - **Knowledge:** Branch origin/palette-cli-dashboard-5972362359914062540 observed: Add colorful CLI summary dashboard
+  - **Artifacts:** 17 files modified.
+- **Branch:** `origin/palette-ux-cli-colors-7681114719260817655` ⚡
+  - **Result:** Add colored logging with agent emojis
+  - **Knowledge:** Branch origin/palette-ux-cli-colors-7681114719260817655 observed: Add colored logging with agent emojis
+  - **Artifacts:** 20 files modified.
+- **Branch:** `origin/palette-scraper-summary-15144327026346819071` 🔥
+  - **Result:** Add visual summary box to scraper CLI
+  - **Knowledge:** Branch origin/palette-scraper-summary-15144327026346819071 observed: Add visual summary box to scraper CLI
+  - **Artifacts:** 25 files modified.
+- **Branch:** `origin/palette-cli-summary-fix-logging-8776526000522908466` ⚡
+  - **Result:** Add CLI summary box and unify logging stream
+  - **Knowledge:** Branch origin/palette-cli-summary-fix-logging-8776526000522908466 observed: Add CLI summary box and unify logging stream
+  - **Artifacts:** 18 files modified.
+- **Branch:** `origin/palette-scraper-summary-box-7474193270213142188` 🔥
+  - **Result:** Add CLI summary box to scraper.py
+  - **Knowledge:** Branch origin/palette-scraper-summary-box-7474193270213142188 observed: Add CLI summary box to scraper.py
+  - **Artifacts:** 24 files modified.
+- **Branch:** `origin/bolt-debounce-search-3754580611737527363` ⚡
+  - **Result:** Implement debounce for search input
+  - **Knowledge:** Branch origin/bolt-debounce-search-3754580611737527363 observed: Implement debounce for search input
+  - **Artifacts:** 16 files modified.
+- **Branch:** `origin/palette-log-colors-12337295467778807267` ⚡
+  - **Result:** add colored logging and emojis to CLI output
+  - **Knowledge:** Branch origin/palette-log-colors-12337295467778807267 observed: add colored logging and emojis to CLI output
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/bolt-scraper-prefetch-14547517538477471181` ⚡
+  - **Result:** Implement page prefetching in scrape_informatic.py
+  - **Knowledge:** Branch origin/bolt-scraper-prefetch-14547517538477471181 observed: Implement page prefetching in scrape_informatic.py
+  - **Artifacts:** 17 files modified.
+
+#### 🌐 Strategic Domain: AI
+- **Branch:** `origin/autonomous-agents-framework-90146205652415261` ⚡
+  - **Result:** Implement autonomous multi-agent system for ads and content
+  - **Knowledge:** Branch origin/autonomous-agents-framework-90146205652415261 observed: Implement autonomous multi-agent system for ads and content
+  - **Artifacts:** 10 files modified.
+- **Branch:** `origin/add-malubeach-scraper-16704333902164650708` ⚡
+  - **Result:** Implement Autonomous Multi-Agent System architecture
+  - **Knowledge:** Branch origin/add-malubeach-scraper-16704333902164650708 observed: Implement Autonomous Multi-Agent System architecture
+  - **Artifacts:** 19 files modified.
+- **Branch:** `origin/update-target-url-11001924703670317262` ⚡
+  - **Result:** Implement Autonomous Multi-Agent System
+  - **Knowledge:** Branch origin/update-target-url-11001924703670317262 observed: Implement Autonomous Multi-Agent System
+  - **Artifacts:** 16 files modified.
+
+### 📂 Category: FEATURE
+#### 🌐 Strategic Domain: Security
+- **Branch:** `origin/feat/add-chief-ai-officer-agent-1329096278704697703` 🔥
+  - **Result:** Add Chief AI Officer Python agent
+  - **Knowledge:** Branch origin/feat/add-chief-ai-officer-agent-1329096278704697703 observed: Add Chief AI Officer Python agent
+  - **Artifacts:** 9870 files modified.
+- **Branch:** `origin/feat/fix-icloud-sync-10523504471527145361` 🔥
+  - **Result:** add fix
+  - **Knowledge:** Branch origin/feat/fix-icloud-sync-10523504471527145361 observed: add fix
+  - **Artifacts:** 453 files modified.
+- **Branch:** `origin/feat/autonomous-cloud-workflow-agent-17352121164725625008` 🔥
+  - **Result:** implement cloud workflow agent and autonomous presence
+  - **Knowledge:** Branch origin/feat/autonomous-cloud-workflow-agent-17352121164725625008 observed: implement cloud workflow agent and autonomous presence
+  - **Artifacts:** 9869 files modified.
+- **Branch:** `origin/feat/hcp-terraform-run-task-3528016114234953749` 🔥
+  - **Result:** Add HCP Terraform run task configuration for Packer validation
+  - **Knowledge:** Branch origin/feat/hcp-terraform-run-task-3528016114234953749 observed: Add HCP Terraform run task configuration for Packer validation
+  - **Artifacts:** 9844 files modified.
+- **Branch:** `origin/feat/vault-radar-agent-8481917393959699580` 🔥
+  - **Result:** Add Vault Radar CLI installation and execution scripts
+  - **Knowledge:** Branch origin/feat/vault-radar-agent-8481917393959699580 observed: Add Vault Radar CLI installation and execution scripts
+  - **Artifacts:** 9848 files modified.
+- **Branch:** `origin/feat/collaboration-dashboard-13924371239853665910` 🔥
+  - **Result:** add collaboration dashboard to track multiple repos
+  - **Knowledge:** Branch origin/feat/collaboration-dashboard-13924371239853665910 observed: add collaboration dashboard to track multiple repos
+  - **Artifacts:** 443 files modified.
+- **Branch:** `origin/feat/macbook-cloud-simulation-verification-18070016345319943441` 🔥
+  - **Result:** implement fully online macbook cloud simulation overrides
+  - **Knowledge:** Branch origin/feat/macbook-cloud-simulation-verification-18070016345319943441 observed: implement fully online macbook cloud simulation overrides
+  - **Artifacts:** 9844 files modified.
+- **Branch:** `origin/feat/autonomous-creation-execution-cycle-15305595999665058256` 🔥
+  - **Result:** implement autonomous creation and execution cycle
+  - **Knowledge:** Branch origin/feat/autonomous-creation-execution-cycle-15305595999665058256 observed: implement autonomous creation and execution cycle
+  - **Artifacts:** 9840 files modified.
+- **Branch:** `origin/feat/autonomous-creation-workflow-3405864056735781942` 🔥
+  - **Result:** add daily autonomous creation cycle workflow
+  - **Knowledge:** Branch origin/feat/autonomous-creation-workflow-3405864056735781942 observed: add daily autonomous creation cycle workflow
+  - **Artifacts:** 9831 files modified.
+- **Branch:** `origin/feat/cloud-native-convergence-16112457665657205536` 🔥
+  - **Result:** implement cloud-native autonomous convergence and online presence
+  - **Knowledge:** Branch origin/feat/cloud-native-convergence-16112457665657205536 observed: implement cloud-native autonomous convergence and online presence
+  - **Artifacts:** 434 files modified.
+- **Branch:** `origin/feature/cloud-autonomous-convergence-1900133257466601663` 🔥
+  - **Result:** implement cloud-integrated autonomous evolution and convergence
+  - **Knowledge:** Branch origin/feature/cloud-autonomous-convergence-1900133257466601663 observed: implement cloud-integrated autonomous evolution and convergence
+  - **Artifacts:** 415 files modified.
+- **Branch:** `origin/feat/ai-architecture-docs-2911584593714899836` 🔥
+  - **Result:** exclude cache directories from branch diff scanner
+  - **Knowledge:** Branch origin/feat/ai-architecture-docs-2911584593714899836 observed: exclude cache directories from branch diff scanner
+  - **Artifacts:** 9805 files modified.
+- **Branch:** `origin/feat/go-genai-sdk-example-5056505739912335467` 🔥
+  - **Result:** add Gemini GenAI SDK example with error handling
+  - **Knowledge:** Branch origin/feat/go-genai-sdk-example-5056505739912335467 observed: add Gemini GenAI SDK example with error handling
+  - **Artifacts:** 9823 files modified.
+- **Branch:** `origin/feature/autonomous-creation-ignition-13474937502856613693` 🔥
+  - **Result:** implement full autonomous creation order and execution
+  - **Knowledge:** Branch origin/feature/autonomous-creation-ignition-13474937502856613693 observed: implement full autonomous creation order and execution
+  - **Artifacts:** 9794 files modified.
+- **Branch:** `origin/feat/autonomous-creation-order-15598638641975305660` 🔥
+  - **Result:** implement autonomous creation order and execution cycle
+  - **Knowledge:** Branch origin/feat/autonomous-creation-order-15598638641975305660 observed: implement autonomous creation order and execution cycle
+  - **Artifacts:** 411 files modified.
+- **Branch:** `origin/feature/autonomous-improvement-cycle-1978975673869849123` 🔥
+  - **Result:** implement autonomous improvement cycle
+  - **Knowledge:** Branch origin/feature/autonomous-improvement-cycle-1978975673869849123 observed: implement autonomous improvement cycle
+  - **Artifacts:** 9784 files modified.
+- **Branch:** `origin/feature/a2a-agent-implementation-12474626317752077342` 🔥
+  - **Result:** add a2a client demonstrating multi-agent workflow
+  - **Knowledge:** Branch origin/feature/a2a-agent-implementation-12474626317752077342 observed: add a2a client demonstrating multi-agent workflow
+  - **Artifacts:** 364 files modified.
+- **Branch:** `origin/feat/cloud-native-autonomy-presence-7653289006767349445` 🔥
+  - **Result:** implement cloud-native autonomy and online presence
+  - **Knowledge:** Branch origin/feat/cloud-native-autonomy-presence-7653289006767349445 observed: implement cloud-native autonomy and online presence
+  - **Artifacts:** 404 files modified.
+- **Branch:** `origin/feat/update-intelephense-knowledge-3532439720427266436` 🔥
+  - **Result:** update Intelephense knowledge base and fix consolidation logic
+  - **Knowledge:** Branch origin/feat/update-intelephense-knowledge-3532439720427266436 observed: update Intelephense knowledge base and fix consolidation logic
+  - **Artifacts:** 9779 files modified.
+- **Branch:** `origin/feat/icloud-sync-daily-work-3416451490970137960` 🔥
+  - **Result:** implement autonomous project sync to iCloud folder
+  - **Knowledge:** Branch origin/feat/icloud-sync-daily-work-3416451490970137960 observed: implement autonomous project sync to iCloud folder
+  - **Artifacts:** 9780 files modified.
+- **Branch:** `origin/feat/high-scale-ecosystem-sync-5489708808675678101` 🔥
+  - **Result:** implement high-scale branch scanning and hierarchical knowledge merge
+  - **Knowledge:** Branch origin/feat/high-scale-ecosystem-sync-5489708808675678101 observed: implement high-scale branch scanning and hierarchical knowledge merge
+  - **Artifacts:** 9779 files modified.
+- **Branch:** `origin/feat/cloud-convergence-phase-17-526028351036584856` 🔥
+  - **Result:** implement full online cloud convergence and multi-provider evolution (Phase 17)
+  - **Knowledge:** Branch origin/feat/cloud-convergence-phase-17-526028351036584856 observed: implement full online cloud convergence and multi-provider evolution (Phase 17)
+  - **Artifacts:** 393 files modified.
+- **Branch:** `origin/feat/macbook-cloud-simulation-4201425406939094947` 🔥
+  - **Result:** implement fully online macbook cloud simulation globally
+  - **Knowledge:** Branch origin/feat/macbook-cloud-simulation-4201425406939094947 observed: implement fully online macbook cloud simulation globally
+  - **Artifacts:** 9779 files modified.
+- **Branch:** `origin/feat/autonomous-creation-engine-4025311903308148897` 🔥
+  - **Result:** implement autonomous creation engine and enhance synthesis
+  - **Knowledge:** Branch origin/feat/autonomous-creation-engine-4025311903308148897 observed: implement autonomous creation engine and enhance synthesis
+  - **Artifacts:** 9779 files modified.
+- **Branch:** `origin/feature/add-coding-agents-16251765228471500021` 🔥
+  - **Result:** Add agents.yml with root, librarian, and creativity agents
+  - **Knowledge:** Branch origin/feature/add-coding-agents-16251765228471500021 observed: Add agents.yml with root, librarian, and creativity agents
+  - **Artifacts:** 362 files modified.
+- **Branch:** `origin/feat/mcp-docker-agent-config-10215645950897788310` 🔥
+  - **Result:** add Docker Agent MCP mode configuration and setup script
+  - **Knowledge:** Branch origin/feat/mcp-docker-agent-config-10215645950897788310 observed: add Docker Agent MCP mode configuration and setup script
+  - **Artifacts:** 363 files modified.
+- **Branch:** `origin/feature/render-docs-integration-8046385424973720288` 🔥
+  - **Result:** configure Netlify build base and plugin for Next.js
+  - **Knowledge:** Branch origin/feature/render-docs-integration-8046385424973720288 observed: configure Netlify build base and plugin for Next.js
+  - **Artifacts:** 361 files modified.
+- **Branch:** `origin/feat/monetization-stripe-supabase-475749064302525361` 🔥
+  - **Result:** implement stripe billing and supabase auth
+  - **Knowledge:** Branch origin/feat/monetization-stripe-supabase-475749064302525361 observed: implement stripe billing and supabase auth
+  - **Artifacts:** 360 files modified.
+- **Branch:** `origin/feat/chief-ai-officer-agents-7425185603236409614` 🔥
+  - **Result:** add local and remote Chief AI Officer agents
+  - **Knowledge:** Branch origin/feat/chief-ai-officer-agents-7425185603236409614 observed: add local and remote Chief AI Officer agents
+  - **Artifacts:** 9770 files modified.
+- **Branch:** `origin/feature/autonomous-workflow-creation-9438939026043204544` 🔥
+  - **Result:** implement full autonomous automatic workflow creation
+  - **Knowledge:** Branch origin/feature/autonomous-workflow-creation-9438939026043204544 observed: implement full autonomous automatic workflow creation
+  - **Artifacts:** 9769 files modified.
+- **Branch:** `origin/feat/ai-agents-knowledge-ingestion-51848187449270745` 🔥
+  - **Result:** implement AI Agents knowledge ingestion in TypeScript
+  - **Knowledge:** Branch origin/feat/ai-agents-knowledge-ingestion-51848187449270745 observed: implement AI Agents knowledge ingestion in TypeScript
+  - **Artifacts:** 353 files modified.
+- **Branch:** `origin/feat/full-autonomous-creation-execution-v2-2098058797614095194` 🔥
+  - **Result:** implement full autonomous creation order and execution chain
+  - **Knowledge:** Branch origin/feat/full-autonomous-creation-execution-v2-2098058797614095194 observed: implement full autonomous creation order and execution chain
+  - **Artifacts:** 9769 files modified.
+- **Branch:** `origin/feat/add-duo-planner-agent-13826965705256453185` 🔥
+  - **Result:** Add Duo Planner GitLab agent system prompt
+  - **Knowledge:** Branch origin/feat/add-duo-planner-agent-13826965705256453185 observed: Add Duo Planner GitLab agent system prompt
+  - **Artifacts:** 9769 files modified.
+- **Branch:** `origin/feature/remote-agents-10265795399396816706` 🔥
+  - **Result:** Convert local agents to remote agents and add agent card server
+  - **Knowledge:** Branch origin/feature/remote-agents-10265795399396816706 observed: Convert local agents to remote agents and add agent card server
+  - **Artifacts:** 338 files modified.
+- **Branch:** `origin/feature/add-gitlab-subagents-461501759789154721` 🔥
+  - **Result:** add gitlab_security_agent and duo_planner_agent as gemini CLI subagents
+  - **Knowledge:** Branch origin/feature/add-gitlab-subagents-461501759789154721 observed: add gitlab_security_agent and duo_planner_agent as gemini CLI subagents
+  - **Artifacts:** 339 files modified.
+- **Branch:** `origin/feature/adaptive-recovery-service-3883560226543520640` 🔥
+  - **Result:** implement adaptive recovery service with creativity dose
+  - **Knowledge:** Branch origin/feature/adaptive-recovery-service-3883560226543520640 observed: implement adaptive recovery service with creativity dose
+  - **Artifacts:** 338 files modified.
+- **Branch:** `origin/feat/cloud-autonomous-evolution-4476041926243078641` 🔥
+  - **Result:** implement full cloud autonomy and multi-tool integration
+  - **Knowledge:** Branch origin/feat/cloud-autonomous-evolution-4476041926243078641 observed: implement full cloud autonomy and multi-tool integration
+  - **Artifacts:** 337 files modified.
+- **Branch:** `origin/feat/full-ecosystem-collaboration-sync-2223737222399285274` 🔥
+  - **Result:** implement and execute full ecosystem collaboration sync
+  - **Knowledge:** Branch origin/feat/full-ecosystem-collaboration-sync-2223737222399285274 observed: implement and execute full ecosystem collaboration sync
+  - **Artifacts:** 9766 files modified.
+- **Branch:** `origin/feat/autonomous-cloud-evolution-2894233982958127060` 🔥
+  - **Result:** implement autonomous cloud evolution engine
+  - **Knowledge:** Branch origin/feat/autonomous-cloud-evolution-2894233982958127060 observed: implement autonomous cloud evolution engine
+  - **Artifacts:** 331 files modified.
+- **Branch:** `origin/feat/highlander-subagent-14372356893109913488` 🔥
+  - **Result:** add highlander subagent
+  - **Knowledge:** Branch origin/feat/highlander-subagent-14372356893109913488 observed: add highlander subagent
+  - **Artifacts:** 336 files modified.
+- **Branch:** `origin/feat/ai-agents-knowledge-14795660026662295366` 🔥
+  - **Result:** implement AI agent knowledge from Google Cloud
+  - **Knowledge:** Branch origin/feat/ai-agents-knowledge-14795660026662295366 observed: implement AI agent knowledge from Google Cloud
+  - **Artifacts:** 335 files modified.
+- **Branch:** `origin/feat/macbook-cloud-simulation-2306204492187680775` 🔥
+  - **Result:** implement fully online macbook cloud simulation overrides
+  - **Knowledge:** Branch origin/feat/macbook-cloud-simulation-2306204492187680775 observed: implement fully online macbook cloud simulation overrides
+  - **Artifacts:** 9755 files modified.
+- **Branch:** `origin/feat/autonomous-creation-cycle-10567644799753050340` 🔥
+  - **Result:** implement full autonomous creation order and execution
+  - **Knowledge:** Branch origin/feat/autonomous-creation-cycle-10567644799753050340 observed: implement full autonomous creation order and execution
+  - **Artifacts:** 9755 files modified.
+- **Branch:** `origin/feat/netlify-deploy-button-8112490364183212293` 🔥
+  - **Result:** add deploy to netlify button and configuration
+  - **Knowledge:** Branch origin/feat/netlify-deploy-button-8112490364183212293 observed: add deploy to netlify button and configuration
+  - **Artifacts:** 9748 files modified.
+- **Branch:** `origin/feature/icloud-sync-291682100632365852` 🔥
+  - **Result:** add iCloud Drive synchronization script for core folders
+  - **Knowledge:** Branch origin/feature/icloud-sync-291682100632365852 observed: add iCloud Drive synchronization script for core folders
+  - **Artifacts:** 331 files modified.
+- **Branch:** `origin/feat/autonomous-cloud-presence-13349070200456458168` 🔥
+  - **Result:** resolve linting and react hook errors in frontend
+  - **Knowledge:** Branch origin/feat/autonomous-cloud-presence-13349070200456458168 observed: resolve linting and react hook errors in frontend
+  - **Artifacts:** 326 files modified.
+- **Branch:** `origin/feat/autonomous-creation-cycle-14040463371825265667` 🔥
+  - **Result:** implement full autonomous creation order and execution cycle
+  - **Knowledge:** Branch origin/feat/autonomous-creation-cycle-14040463371825265667 observed: implement full autonomous creation order and execution cycle
+  - **Artifacts:** 9738 files modified.
+- **Branch:** `origin/feat/netlify-supabase-extension-config-2964669740529404630` 🔥
+  - **Result:** resolve ESLint parsing errors from merge conflict
+  - **Knowledge:** Branch origin/feat/netlify-supabase-extension-config-2964669740529404630 observed: resolve ESLint parsing errors from merge conflict
+  - **Artifacts:** 224 files modified.
+- **Branch:** `origin/feat/ai-agents-knowledge-integration-3155871126605591044` 🔥
+  - **Result:** integrate Google Cloud AI agent knowledge and fix frontend regressions
+  - **Knowledge:** Branch origin/feat/ai-agents-knowledge-integration-3155871126605591044 observed: integrate Google Cloud AI agent knowledge and fix frontend regressions
+  - **Artifacts:** 297 files modified.
+- **Branch:** `origin/feat/smarter-cloud-workflow-1168853453825745042` 🔥
+  - **Result:** correct JSON syntax error in package.json devDependencies
+  - **Knowledge:** Branch origin/feat/smarter-cloud-workflow-1168853453825745042 observed: correct JSON syntax error in package.json devDependencies
+  - **Artifacts:** 293 files modified.
+- **Branch:** `origin/feat/full-autonomous-creation-execution-17830710122661382280` 🔥
+  - **Result:** implement full autonomous creation order and execution chain
+  - **Knowledge:** Branch origin/feat/full-autonomous-creation-execution-17830710122661382280 observed: implement full autonomous creation order and execution chain
+  - **Artifacts:** 9724 files modified.
+- **Branch:** `origin/feature/autonomous-cloud-presence-6564198224759094346` 🔥
+  - **Result:** implement continuous cloud presence and autonomous daily cycle
+  - **Knowledge:** Branch origin/feature/autonomous-cloud-presence-6564198224759094346 observed: implement continuous cloud presence and autonomous daily cycle
+  - **Artifacts:** 253 files modified.
+- **Branch:** `origin/feat/implement-google-ai-agents-knowledge-17341300705636515353` 🔥
+  - **Result:** implement high-quality AI agents knowledge integration
+  - **Knowledge:** Branch origin/feat/implement-google-ai-agents-knowledge-17341300705636515353 observed: implement high-quality AI agents knowledge integration
+  - **Artifacts:** 246 files modified.
+- **Branch:** `origin/feat/gemini-cli-subagents-docs-8356808256042543281` 🔥
+  - **Result:** add Gemini CLI Subagents documentation
+  - **Knowledge:** Branch origin/feat/gemini-cli-subagents-docs-8356808256042543281 observed: add Gemini CLI Subagents documentation
+  - **Artifacts:** 242 files modified.
+- **Branch:** `origin/feature/wilson-sonsini-docs-5223286484754365385` 🔥
+  - **Result:** add Wilson Sonsini documentation in MD and JSON formats
+  - **Knowledge:** Branch origin/feature/wilson-sonsini-docs-5223286484754365385 observed: add Wilson Sonsini documentation in MD and JSON formats
+  - **Artifacts:** 240 files modified.
+- **Branch:** `origin/feat/consolidated-intelligence-sync-1091614933754712837` 🔥
+  - **Result:** implement consolidated intelligence and branch scanning
+  - **Knowledge:** Branch origin/feat/consolidated-intelligence-sync-1091614933754712837 observed: implement consolidated intelligence and branch scanning
+  - **Artifacts:** 9719 files modified.
+- **Branch:** `origin/feature/autonomous-work-order-system-2865376496549289667` 🔥
+  - **Result:** implement autonomous work order creation and execution system
+  - **Knowledge:** Branch origin/feature/autonomous-work-order-system-2865376496549289667 observed: implement autonomous work order creation and execution system
+  - **Artifacts:** 9715 files modified.
+- **Branch:** `origin/feature/cloud-workflow-fluent-availability-1140691908336489716` 🔥
+  - **Result:** Fix scraper and intelligence tests for python CI checks
+  - **Knowledge:** Branch origin/feature/cloud-workflow-fluent-availability-1140691908336489716 observed: Fix scraper and intelligence tests for python CI checks
+  - **Artifacts:** 239 files modified.
+- **Branch:** `origin/feat/add-subagents-docs-1971776765739377795` 🔥
+  - **Result:** remove compiled pyc files and fix CI failures
+  - **Knowledge:** Branch origin/feat/add-subagents-docs-1971776765739377795 observed: remove compiled pyc files and fix CI failures
+  - **Artifacts:** 284 files modified.
+- **Branch:** `origin/feat/connect-docker-collaboration-6033606454460470488` 🔥
+  - **Result:** implement autonomous docker connectivity and collaboration sync
+  - **Knowledge:** Branch origin/feat/connect-docker-collaboration-6033606454460470488 observed: implement autonomous docker connectivity and collaboration sync
+  - **Artifacts:** 9712 files modified.
+- **Branch:** `origin/feat/add-vscode-intelephense-scraper-14077541109460571924` 🔥
+  - **Result:** add scraper to fetch vscode-intelephense repository docs
+  - **Knowledge:** Branch origin/feat/add-vscode-intelephense-scraper-14077541109460571924 observed: add scraper to fetch vscode-intelephense repository docs
+  - **Artifacts:** 222 files modified.
+- **Branch:** `origin/feat/opentelemetry-scraper-16848949473178496467` 🔥
+  - **Result:** resolve CI failures by fixing tests and updating requirements
+  - **Knowledge:** Branch origin/feat/opentelemetry-scraper-16848949473178496467 observed: resolve CI failures by fixing tests and updating requirements
+  - **Artifacts:** 222 files modified.
+- **Branch:** `origin/feature/google-ai-agent-knowledge-13116341653253101712` 🔥
+  - **Result:** Fix and complete Google Cloud AI Agent knowledge integration
+  - **Knowledge:** Branch origin/feature/google-ai-agent-knowledge-13116341653253101712 observed: Fix and complete Google Cloud AI Agent knowledge integration
+  - **Artifacts:** 220 files modified.
+- **Branch:** `origin/feature/add-rag-agent-389407236128300017` 🔥
+  - **Result:** Merge branch 'jules/scraper-markposition-17752547678215960211' into feature/add-rag-agent-389407236128300017
+  - **Knowledge:** Branch origin/feature/add-rag-agent-389407236128300017 observed: Merge branch 'jules/scraper-markposition-17752547678215960211' into feature/add-rag-agent-389407236128300017
+  - **Artifacts:** 281 files modified.
+- **Branch:** `origin/feature/gemini-git-worktrees-13127368067831034197` 🔥
+  - **Result:** implement gemini git worktrees experimental feature
+  - **Knowledge:** Branch origin/feature/gemini-git-worktrees-13127368067831034197 observed: implement gemini git worktrees experimental feature
+  - **Artifacts:** 220 files modified.
+- **Branch:** `origin/feature/cloud-and-local-autonomy-9538834322956606637` 🔥
+  - **Result:** Implement cloud autonomy and macOS background execution
+  - **Knowledge:** Branch origin/feature/cloud-and-local-autonomy-9538834322956606637 observed: Implement cloud autonomy and macOS background execution
+  - **Artifacts:** 224 files modified.
+- **Branch:** `origin/feat/jules-tools-documentation-3709224248115032248` 🔥
+  - **Result:** add Jules Tools reference and integrate into knowledge base
+  - **Knowledge:** Branch origin/feat/jules-tools-documentation-3709224248115032248 observed: add Jules Tools reference and integrate into knowledge base
+  - **Artifacts:** 220 files modified.
+- **Branch:** `origin/feat/knowledge-ingestion-intelephense-9344036021876416224` 🔥
+  - **Result:** implement robust knowledge ingestion and merge Intelephense docs
+  - **Knowledge:** Branch origin/feat/knowledge-ingestion-intelephense-9344036021876416224 observed: implement robust knowledge ingestion and merge Intelephense docs
+  - **Artifacts:** 9697 files modified.
+- **Branch:** `origin/feature/docker-collaboration-sync-2408669220271786015` 🔥
+  - **Result:** add autonomous docker and collaboration sync script
+  - **Knowledge:** Branch origin/feature/docker-collaboration-sync-2408669220271786015 observed: add autonomous docker and collaboration sync script
+  - **Artifacts:** 9697 files modified.
+- **Branch:** `origin/feature/google-ai-agents-knowledge-5091496677341900649` 🔥
+  - **Result:** Implement and integrate AI Agent knowledge from Google Cloud
+  - **Knowledge:** Branch origin/feature/google-ai-agents-knowledge-5091496677341900649 observed: Implement and integrate AI Agent knowledge from Google Cloud
+  - **Artifacts:** 219 files modified.
+- **Branch:** `origin/feature/ai-agent-knowledge-refinement-4060124279711853146` 🔥
+  - **Result:** Refine AI agent knowledge implementation based on Google Cloud Discovery article.
+  - **Knowledge:** Branch origin/feature/ai-agent-knowledge-refinement-4060124279711853146 observed: Refine AI agent knowledge implementation based on Google Cloud Discovery article.
+  - **Artifacts:** 218 files modified.
+- **Branch:** `origin/feat/react-agent-integration-8372098972397137891` 🔥
+  - **Result:** implement and integrate ReActAgent into autonomous workflow
+  - **Knowledge:** Branch origin/feat/react-agent-integration-8372098972397137891 observed: implement and integrate ReActAgent into autonomous workflow
+  - **Artifacts:** 224 files modified.
+- **Branch:** `origin/feature/knowledge-observation-1188044699692138518` 🔥
+  - **Result:** add autonomous knowledge observation service and integrate into workflow
+  - **Knowledge:** Branch origin/feature/knowledge-observation-1188044699692138518 observed: add autonomous knowledge observation service and integrate into workflow
+  - **Artifacts:** 9691 files modified.
+- **Branch:** `origin/feature/backup-agent-11331906079381269962` 🔥
+  - **Result:** implement autonomous backup agent system
+  - **Knowledge:** Branch origin/feature/backup-agent-11331906079381269962 observed: implement autonomous backup agent system
+  - **Artifacts:** 9685 files modified.
+- **Branch:** `origin/feat/implement-google-ai-agent-knowledge-8032750828008841906` 🔥
+  - **Result:** implement AI agent knowledge from Google Cloud
+  - **Knowledge:** Branch origin/feat/implement-google-ai-agent-knowledge-8032750828008841906 observed: implement AI agent knowledge from Google Cloud
+  - **Artifacts:** 229 files modified.
+- **Branch:** `origin/feat/gitlab-ci-pipeline-15616713096718552061` 🔥
+  - **Result:** add initial GitLab CI/CD pipeline configuration
+  - **Knowledge:** Branch origin/feat/gitlab-ci-pipeline-15616713096718552061 observed: add initial GitLab CI/CD pipeline configuration
+  - **Artifacts:** 9683 files modified.
+- **Branch:** `origin/feat/react-integration-v2-8425489280318980511` 🔥
+  - **Result:** implement and integrate ReAct reasoning-acting protocol
+  - **Knowledge:** Branch origin/feat/react-integration-v2-8425489280318980511 observed: implement and integrate ReAct reasoning-acting protocol
+  - **Artifacts:** 9682 files modified.
+- **Branch:** `origin/feat/add-dry-run-and-docs-355491477019803773` 🔥
+  - **Result:** freeze gcp deployments to bypass credential failures
+  - **Knowledge:** Branch origin/feat/add-dry-run-and-docs-355491477019803773 observed: freeze gcp deployments to bypass credential failures
+  - **Artifacts:** 198 files modified.
+- **Branch:** `origin/feat/custom-github-action-10612201952418849138` 🔥
+  - **Result:** Add workflow to test custom GitHub action execution
+  - **Knowledge:** Branch origin/feat/custom-github-action-10612201952418849138 observed: Add workflow to test custom GitHub action execution
+  - **Artifacts:** 202 files modified.
+- **Branch:** `origin/feat/nextjs-supabase-mongodb-ecosystem-8833511503168317980` 🔥
+  - **Result:** implement Supabase auth, MongoDB integration, CI/CD, and Playwright tests
+  - **Knowledge:** Branch origin/feat/nextjs-supabase-mongodb-ecosystem-8833511503168317980 observed: implement Supabase auth, MongoDB integration, CI/CD, and Playwright tests
+  - **Artifacts:** 120 files modified.
+- **Branch:** `origin/feat/gemma-4-scraper-14386039384216646408` 🔥
+  - **Result:** Implement autonomous license validation
+  - **Knowledge:** Branch origin/feat/gemma-4-scraper-14386039384216646408 observed: Implement autonomous license validation
+  - **Artifacts:** 80 files modified.
+
+### 📂 Category: AGENT
+#### 🌐 Strategic Domain: Security
+- **Branch:** `origin/jules/scraper-markposition-17752547678215960211` 🔥
+  - **Result:** add fix
+  - **Knowledge:** Branch origin/jules/scraper-markposition-17752547678215960211 observed: add fix
+  - **Artifacts:** 456 files modified.
+- **Branch:** `origin/jules/knowledge-merge-integration-4756532437460590133` 🔥
+  - **Result:** Fix frontend lint errors
+  - **Knowledge:** Branch origin/jules/knowledge-merge-integration-4756532437460590133 observed: Fix frontend lint errors
+  - **Artifacts:** 297 files modified.
+- **Branch:** `origin/jules/scraper-intelephense-2916212763307459692` 🔥
+  - **Result:** Add python scraper and scraped docs for intelephense
+  - **Knowledge:** Branch origin/jules/scraper-intelephense-2916212763307459692 observed: Add python scraper and scraped docs for intelephense
+  - **Artifacts:** 219 files modified.
+
+### 📂 Category: FIX
+#### 🌐 Strategic Domain: Security
+- **Branch:** `origin/fix/autonomous-evolution-cloud-presence-13859954936909571932` 🔥
+  - **Result:** ensure autonomous mode works in cloud disconnected environments\n\n- Added AUTONOMOUS_MODE=cloud in .env.example\n- Edited run_daily.ts to enforce AUTONOMOUS_MODE=cloud when MACBOOK_CLOUD_SIMULATION is enabled.
+  - **Knowledge:** Branch origin/fix/autonomous-evolution-cloud-presence-13859954936909571932 observed: ensure autonomous mode works in cloud disconnected environments\n\n- Added AUTONOMOUS_MODE=cloud in .env.example\n- Edited run_daily.ts to enforce AUTONOMOUS_MODE=cloud when MACBOOK_CLOUD_SIMULATION is enabled.
+  - **Artifacts:** 451 files modified.
+- **Branch:** `origin/fix/autonomous-markposition-integration-8301978892774040495` 🔥
+  - **Result:** Merge branch 'jules/scraper-markposition-17752547678215960211' into fix/autonomous-markposition-integration-8301978892774040495
+  - **Knowledge:** Branch origin/fix/autonomous-markposition-integration-8301978892774040495 observed: Merge branch 'jules/scraper-markposition-17752547678215960211' into fix/autonomous-markposition-integration-8301978892774040495
+  - **Artifacts:** 440 files modified.
+- **Branch:** `origin/fix/optimize-execute-creation-cycle-9988671085706556406` 🔥
+  - **Result:** optimize scanAllBranches and autonomous git sync timeouts
+  - **Knowledge:** Branch origin/fix/optimize-execute-creation-cycle-9988671085706556406 observed: optimize scanAllBranches and autonomous git sync timeouts
+  - **Artifacts:** 9828 files modified.
+- **Branch:** `origin/fix/docker-simulate-fallback-790646999147421628` 🔥
+  - **Result:** respect cloud simulation flags before executing docker commands
+  - **Knowledge:** Branch origin/fix/docker-simulate-fallback-790646999147421628 observed: respect cloud simulation flags before executing docker commands
+  - **Artifacts:** 9839 files modified.
+- **Branch:** `origin/fix/autonomous-system-syntax-16085505803900570829` 🔥
+  - **Result:** Merge branch 'jules/scraper-markposition-17752547678215960211' into fix/autonomous-system-syntax-16085505803900570829
+  - **Knowledge:** Branch origin/fix/autonomous-system-syntax-16085505803900570829 observed: Merge branch 'jules/scraper-markposition-17752547678215960211' into fix/autonomous-system-syntax-16085505803900570829
+  - **Artifacts:** 419 files modified.
+- **Branch:** `origin/fix/autonomous-evolution-1779420795460` 🔥
+  - **Result:** integrate react agent deployment logic and fix tools list parsing (#1955)
+  - **Knowledge:** Branch origin/fix/autonomous-evolution-1779420795460 observed: integrate react agent deployment logic and fix tools list parsing (#1955)
+  - **Artifacts:** 418 files modified.
+- **Branch:** `origin/fix/consolidate-intelephense-docs-v2-2578430462449537596` 🔥
+  - **Result:** improve Intelephense documentation consolidation and knowledge persistence
+  - **Knowledge:** Branch origin/fix/consolidate-intelephense-docs-v2-2578430462449537596 observed: improve Intelephense documentation consolidation and knowledge persistence
+  - **Artifacts:** 9828 files modified.
+- **Branch:** `origin/fix/ingest-ads-knowledge-locale-and-signature-14080839341570734784` 🔥
+  - **Result:** remove unauthorized markposition signature and update Google Ads docs with locale enforcement
+  - **Knowledge:** Branch origin/fix/ingest-ads-knowledge-locale-and-signature-14080839341570734784 observed: remove unauthorized markposition signature and update Google Ads docs with locale enforcement
+  - **Artifacts:** 407 files modified.
+- **Branch:** `origin/fix/autonomous-evolution-1779330683942` 🔥
+  - **Result:** remove unauthorized markposition signature from codebase to prevent prompt injection (#1904)
+  - **Knowledge:** Branch origin/fix/autonomous-evolution-1779330683942 observed: remove unauthorized markposition signature from codebase to prevent prompt injection (#1904)
+  - **Artifacts:** 407 files modified.
+- **Branch:** `origin/fix/autonomous-evolution-1779334460476` 🔥
+  - **Result:** remove unauthorized markposition signature from codebase to prevent prompt injection (#1904)
+  - **Knowledge:** Branch origin/fix/autonomous-evolution-1779334460476 observed: remove unauthorized markposition signature from codebase to prevent prompt injection (#1904)
+  - **Artifacts:** 407 files modified.
+- **Branch:** `origin/fix/google-ads-scraper-json-schema-4403805607853141439` 🔥
+  - **Result:** align google_ads_docs.json with legacy schema
+  - **Knowledge:** Branch origin/fix/google-ads-scraper-json-schema-4403805607853141439 observed: align google_ads_docs.json with legacy schema
+  - **Artifacts:** 337 files modified.
+- **Branch:** `origin/fix/docker-collaboration-sync-3245584476125900421` 🔥
+  - **Result:** implement autonomous iCloud sync for Docker configurations
+  - **Knowledge:** Branch origin/fix/docker-collaboration-sync-3245584476125900421 observed: implement autonomous iCloud sync for Docker configurations
+  - **Artifacts:** 9750 files modified.
+- **Branch:** `origin/fix/knowledge-merge-signature-10908129405278233651` 🔥
+  - **Result:** ensure correct signature appended to knowledge merge docs
+  - **Knowledge:** Branch origin/fix/knowledge-merge-signature-10908129405278233651 observed: ensure correct signature appended to knowledge merge docs
+  - **Artifacts:** 336 files modified.
+- **Branch:** `origin/fix/knowledge-merge-deduplication-11999895773170301462` 🔥
+  - **Result:** deduplicate and canonicalize observations in knowledge merge
+  - **Knowledge:** Branch origin/fix/knowledge-merge-deduplication-11999895773170301462 observed: deduplicate and canonicalize observations in knowledge merge
+  - **Artifacts:** 9756 files modified.
+- **Branch:** `origin/fix/autonomous-cloud-presence-17176660160653043958` 🔥
+  - **Result:** configure cloud-native docker architecture and 03
+  - **Knowledge:** Branch origin/fix/autonomous-cloud-presence-17176660160653043958 observed: configure cloud-native docker architecture and 03
+  - **Artifacts:** 328 files modified.
+- **Branch:** `origin/fix/docker-service-syntax-17329685845215630638` 🔥
+  - **Result:** Merge branch 'main' into fix/docker-service-syntax-17329685845215630638
+  - **Knowledge:** Branch origin/fix/docker-service-syntax-17329685845215630638 observed: Merge branch 'main' into fix/docker-service-syntax-17329685845215630638
+  - **Artifacts:** 9747 files modified.
+- **Branch:** `origin/fix/frontend-lint-and-syntax-errors-2082968033055005265` 🔥
+  - **Result:** Fix frontend CI regressions and missing telemetry context
+  - **Knowledge:** Branch origin/fix/frontend-lint-and-syntax-errors-2082968033055005265 observed: Fix frontend CI regressions and missing telemetry context
+  - **Artifacts:** 322 files modified.
+- **Branch:** `origin/fix/frontend-regressions-telemetry-2487658633912563856` 🔥
+  - **Result:** Merge branch 'jules/scraper-markposition-17752547678215960211' into fix/frontend-regressions-telemetry-2487658633912563856
+  - **Knowledge:** Branch origin/fix/frontend-regressions-telemetry-2487658633912563856 observed: Merge branch 'jules/scraper-markposition-17752547678215960211' into fix/frontend-regressions-telemetry-2487658633912563856
+  - **Artifacts:** 323 files modified.
+- **Branch:** `origin/fix/knowledge-observation-workflow-458143035147139751` 🔥
+  - **Result:** Merge branch 'main' into fix/knowledge-observation-workflow-458143035147139751
+  - **Knowledge:** Branch origin/fix/knowledge-observation-workflow-458143035147139751 observed: Merge branch 'main' into fix/knowledge-observation-workflow-458143035147139751
+  - **Artifacts:** 9738 files modified.
+- **Branch:** `origin/fix/connect-and-collaborate-docker-17108642608090644795` 🔥
+  - **Result:** Merge branch 'main' into fix/connect-and-collaborate-docker-17108642608090644795
+  - **Knowledge:** Branch origin/fix/connect-and-collaborate-docker-17108642608090644795 observed: Merge branch 'main' into fix/connect-and-collaborate-docker-17108642608090644795
+  - **Artifacts:** 9728 files modified.
+- **Branch:** `origin/fix/intelephense-docs-sync-refinement-14869498136353830468` 🔥
+  - **Result:** Merge branch 'main' into fix/intelephense-docs-sync-refinement-14869498136353830468
+  - **Knowledge:** Branch origin/fix/intelephense-docs-sync-refinement-14869498136353830468 observed: Merge branch 'main' into fix/intelephense-docs-sync-refinement-14869498136353830468
+  - **Artifacts:** 9727 files modified.
+- **Branch:** `origin/fix/restore-page-tsx-and-build-errors-11543629982312211779` 🔥
+  - **Result:** restore corrupted Next.js page components, fix type errors and stabilize build
+  - **Knowledge:** Branch origin/fix/restore-page-tsx-and-build-errors-11543629982312211779 observed: restore corrupted Next.js page components, fix type errors and stabilize build
+  - **Artifacts:** 9646 files modified.
+- **Branch:** `origin/fix/npm-audit-vulnerabilities-17082437904060311474` 🔥
+  - **Result:** Merge branch 'main' into fix/npm-audit-vulnerabilities-17082437904060311474
+  - **Knowledge:** Branch origin/fix/npm-audit-vulnerabilities-17082437904060311474 observed: Merge branch 'main' into fix/npm-audit-vulnerabilities-17082437904060311474
+  - **Artifacts:** 9698 files modified.
+
+## Ecosystem Knowledge Consolidation (2026-05-25T05:10:56.704Z)
+*Phase 12 Multi-Agent Synergy Protocol Active*
+
+### 📂 Category: OTHER
+#### 🌐 Strategic Domain: Security
+- **Branch:** `jules-5320368611823718820-88506061` 🔥
+  - **Result:** autonomous self-repair of 59 issues
+  - **Knowledge:** Branch jules-5320368611823718820-88506061 observed: autonomous self-repair of 59 issues
+  - **Artifacts:** 23 files modified.
+- **Branch:** `origin/jules-autonomous-connect-sync-13567552938698989059` 🔥
+  - **Result:** add connect and collaborate step to autonomous workflows
+  - **Knowledge:** Branch origin/jules-autonomous-connect-sync-13567552938698989059 observed: add connect and collaborate step to autonomous workflows
+  - **Artifacts:** 9877 files modified.
+- **Branch:** `origin` 🔥
+  - **Result:** PHASE-12] Unified Cloud-Native Autonomous Evolution (#2069)
+  - **Artifacts:** 10238 files modified.
+- **Branch:** `origin/oracle-google-cloud-agents-15432798509012982749` 🔥
+  - **Result:** integrate Oracle AI knowledge correctly in agents (#2066)
+  - **Knowledge:** Branch origin/oracle-google-cloud-agents-15432798509012982749 observed: integrate Oracle AI knowledge correctly in agents (#2066)
+  - **Artifacts:** 94 files modified.
+- **Branch:** `origin/fix-oracle-ai-knowledge-integration-2128253207995593297` 🔥
+  - **Result:** integrate Oracle AI knowledge correctly in agents
+  - **Knowledge:** Branch origin/fix-oracle-ai-knowledge-integration-2128253207995593297 observed: integrate Oracle AI knowledge correctly in agents
+  - **Artifacts:** 94 files modified.
+- **Branch:** `origin/chore/update-gitlab-security-agent-prompt-3893550657493055839` 🔥
+  - **Result:** update gitlab_security_agent system prompt and remove duplicates
+  - **Artifacts:** 9876 files modified.
+- **Branch:** `origin/jules-integrate-knowledge-merge-5016273102093085264` 🔥
+  - **Result:** integrate knowledge merge and signature
+  - **Artifacts:** 461 files modified.
+- **Branch:** `origin/add-prompts-md-15347215170790120341` 🔥
+  - **Result:** handle API rate limits and resume capabilities in prompt runner
+  - **Artifacts:** 97 files modified.
+- **Branch:** `origin/implement-full-autonomous-automatic-workflow-12697350452626035149` 🔥
+  - **Result:** Implement fully autonomous automatic workflow via GitHub Actions
+  - **Knowledge:** Branch origin/implement-full-autonomous-automatic-workflow-12697350452626035149 observed: Implement fully autonomous automatic workflow via GitHub Actions
+  - **Artifacts:** 458 files modified.
+- **Branch:** `origin/jules-7690709006081030781-1ea88831` 🔥
+  - **Result:** autonomous self-correction and code scaling engine
+  - **Artifacts:** 9870 files modified.
+- **Branch:** `origin/perf-optimize-url-parsing-15164027586550123662` 🔥
+  - **Result:** optimize URL parsing and fix knowledge iteration bug
+  - **Knowledge:** Branch origin/perf-optimize-url-parsing-15164027586550123662 observed: optimize URL parsing and fix knowledge iteration bug
+  - **Artifacts:** 457 files modified.
+- **Branch:** `origin/implement-ai-agents-knowledge-4687692969505756547` 🔥
+  - **Result:** implement AI agents knowledge from Google Cloud
+  - **Knowledge:** Branch origin/implement-ai-agents-knowledge-4687692969505756547 observed: implement AI agents knowledge from Google Cloud
+  - **Artifacts:** 457 files modified.
+- **Branch:** `origin/jules-ingest-hcp-knowledge-14291451140571066747` 🔥
+  - **Result:** add script to ingest HCP documentation
+  - **Knowledge:** Branch origin/jules-ingest-hcp-knowledge-14291451140571066747 observed: add script to ingest HCP documentation
+  - **Artifacts:** 9849 files modified.
+- **Branch:** `origin/fix-agent-duo-planner-6673195564802177862` 🔥
+  - **Result:** Add Duo Planner agent
+  - **Knowledge:** Branch origin/fix-agent-duo-planner-6673195564802177862 observed: Add Duo Planner agent
+  - **Artifacts:** 9868 files modified.
+- **Branch:** `origin/update-gitlab-ci-parallel-7473238444607453645` 🔥
+  - **Result:** enable parallel job execution via DAG pipeline needs
+  - **Artifacts:** 9872 files modified.
+- **Branch:** `origin/update-gemini-remote-agents-docs-18356627524095625467` 🔥
+  - **Result:** update Remote Subagents documentation
+  - **Artifacts:** 456 files modified.
+- **Branch:** `origin/improve-knowledge-merge-workflow-2767993471474005337` 🔥
+  - **Result:** integrate generative AI to knowledge observation summary and resolve target URL ingestions
+  - **Artifacts:** 9869 files modified.
+- **Branch:** `origin/jules-12457892104228508063-41c0c28d` 🔥
+  - **Result:** integrate knowledge from Oracle AI in agents
+  - **Knowledge:** Branch origin/jules-12457892104228508063-41c0c28d observed: integrate knowledge from Oracle AI in agents
+  - **Artifacts:** 94 files modified.
+- **Branch:** `origin/update-subagents-knowledge-6325422281065488321` 🔥
+  - **Result:** update Subagents documentation in AI Agents knowledge base\n\n- Replaces the truncated Subagents section with the full documentation text.\n- Syncs the update across `ai_agents_knowledge.json`, `data/knowledge/ai_agents_knowledge.json`, and `ai_agents_knowledge.md`.\n- Preserves the existing file structure and manual keys.
+  - **Artifacts:** 456 files modified.
+- **Branch:** `origin/fix-missing-diff-edit-engine-8402215637682154858` 🔥
+  - **Result:** add diff / edit engine to AI agent architecture summary
+  - **Knowledge:** Branch origin/fix-missing-diff-edit-engine-8402215637682154858 observed: add diff / edit engine to AI agent architecture summary
+  - **Artifacts:** 9871 files modified.
+
+### 📂 Category: FEATURE
+#### 🌐 Strategic Domain: Security
+- **Branch:** `origin/feat/intelephense-docs-consolidation-14111284160958463433` 🔥
+  - **Result:** consolidate Intelephense documentation
+  - **Artifacts:** 9877 files modified.
+- **Branch:** `origin/feat/icloud-knowledge-integration-and-engine-improvement-v3-7738040317614912379` 🔥
+  - **Result:** integrate iCloud knowledge and improve system engine and agents
+  - **Artifacts:** 9877 files modified.
+- **Branch:** `origin/feat/cloud-native-autonomy-3438116551041896813` 🔥
+  - **Result:** PHASE-12] Unified Cloud-Native Autonomous Evolution
+  - **Artifacts:** 461 files modified.
+- **Branch:** `origin/feat/full-autonomous-creation-cycle-12087260732508548696` 🔥
+  - **Result:** Potential fix for pull request finding 'CodeQL / Workflow does not contain permissions'
+  - **Knowledge:** Branch origin/feat/full-autonomous-creation-cycle-12087260732508548696 observed: Potential fix for pull request finding 'CodeQL / Workflow does not contain permissions'
+  - **Artifacts:** 467 files modified.
+- **Branch:** `origin/feature/icloud-knowledge-engine-1776910588788387485` 🔥
+  - **Result:** scan and integrate new knowledge from icloud and improve system engine
+  - **Artifacts:** 9886 files modified.
+- **Branch:** `origin/feat/autonomous-cloud-convergence-phase-12-11379028617689834826` 🔥
+  - **Result:** implement unified autonomous cloud convergence (Phase 12)
+  - **Knowledge:** Branch origin/feat/autonomous-cloud-convergence-phase-12-11379028617689834826 observed: implement unified autonomous cloud convergence (Phase 12)
+  - **Artifacts:** 461 files modified.
+- **Branch:** `origin/feature/50-prompts-cli-11662647561508639317` 🔥
+  - **Result:** Adjust prompt structure, execute LLM simulations, and add visualization dashboards
+  - **Knowledge:** Branch origin/feature/50-prompts-cli-11662647561508639317 observed: Adjust prompt structure, execute LLM simulations, and add visualization dashboards
+  - **Artifacts:** 9931 files modified.
+- **Branch:** `origin/feat/autonomous-creation-cycle-stabilization-15042891493316655880` 🔥
+  - **Result:** stabilize and execute full autonomous creation cycle
+  - **Artifacts:** 9882 files modified.
+- **Branch:** `origin/feat/boundary-integration-3444742037386565893` 🔥
+  - **Result:** integrate HashiCorp Boundary mock service and knowledge ingestion
+  - **Artifacts:** 9849 files modified.
+- **Branch:** `origin/feat/document-hcp-credentials-12060712897845222769` 🔥
+  - **Result:** add HCP credential placeholders to env template
+  - **Knowledge:** Branch origin/feat/document-hcp-credentials-12060712897845222769 observed: add HCP credential placeholders to env template
+  - **Artifacts:** 456 files modified.
+- **Branch:** `origin/feat/investopedia-ingestion-17078894864582667817` 🔥
+  - **Result:** continually scrape and ingest Investopedia market intelligence
+  - **Artifacts:** 457 files modified.
+- **Branch:** `origin/feature/hcp-packer-registry-3457585994433865197` 🔥
+  - **Result:** prevent errors during collaboration sync
+  - **Knowledge:** Branch origin/feature/hcp-packer-registry-3457585994433865197 observed: prevent errors during collaboration sync
+  - **Artifacts:** 9847 files modified.
+- **Branch:** `origin/feat/daily-sync-resilience-12294637765009606506` 🔥
+  - **Result:** enhance daily autonomous cycle and iCloud synchronization
+  - **Artifacts:** 9869 files modified.
+- **Branch:** `origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326-10745185975815563107-revised-21447012398436571932-3380172087610971607` 🔥
+  - **Result:** advance sentient orchestration and neural parity
+  - **Artifacts:** 9871 files modified.
+- **Branch:** `origin/feat/autonomous-cloud-workflow-agent-17352121164725625008` 🔥
+  - **Result:** restore missing base_agent and ensure cloud_workflow_agent leverages environment fully
+  - **Knowledge:** Branch origin/feat/autonomous-cloud-workflow-agent-17352121164725625008 observed: restore missing base_agent and ensure cloud_workflow_agent leverages environment fully
+  - **Artifacts:** 9870 files modified.
+- **Branch:** `origin/feat/refine-caio-role-knowledge-v2-5295767818736859988` 🔥
+  - **Result:** refine CAIO agent and expand executive agent roles
+  - **Artifacts:** 9871 files modified.
+
+### 📂 Category: AGENT
+#### 🌐 Strategic Domain: Security
+- **Branch:** `origin/jules/scraper-markposition-17752547678215960211` 🔥
+  - **Result:** PHASE-12] Unified Cloud-Native Autonomous Evolution (#2069)
+  - **Artifacts:** 467 files modified.
+- **Branch:** `origin/jules/add-system-patent-947552789592854459` 🔥
+  - **Result:** add PROMPTS.md containing the list of 50 AI prompts (#2057)
+  - **Knowledge:** Branch origin/jules/add-system-patent-947552789592854459 observed: add PROMPTS.md containing the list of 50 AI prompts (#2057)
+  - **Artifacts:** 93 files modified.
+
+### 📂 Category: FIX
+#### 🌐 Strategic Domain: Security
+- **Branch:** `origin/fix/autonomous-evolution-1779620400378-8609616731264738090` 🔥
+  - **Result:** Merge branch 'jules/scraper-markposition-17752547678215960211' into fix/autonomous-evolution-1779620400378-8609616731264738090
+  - **Knowledge:** Branch origin/fix/autonomous-evolution-1779620400378-8609616731264738090 observed: Merge branch 'jules/scraper-markposition-17752547678215960211' into fix/autonomous-evolution-1779620400378-8609616731264738090
+  - **Artifacts:** 460 files modified.
+- **Branch:** `origin/fix/autonomous-markposition-integration-8301978892774040495` 🔥
+  - **Result:** integrate markposition intelligence and resolve CI auth issues
+  - **Artifacts:** 415 files modified.

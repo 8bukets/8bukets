@@ -24,21 +24,28 @@ export class Jules {
   private memory: JulesMemory
   private role: AgentRole
 
-  constructor(role: AgentRole = 'General') {
+  constructor(role: AgentRole = 'General', memory?: JulesMemory) {
     this.role = role
-    // NOTE: Synchronous fallback initialization. To fix SECURITY_PERF_VULNERABILITY completely,
-    // instances should ideally be created via an async factory method, but to avoid changing the
-    // export signature and downstream usage right now, we use sync here or we rely on it just once.
-    if (fs.existsSync(MEMORY_PATH)) {
-      try {
-        this.memory = JSON.parse(fs.readFileSync(MEMORY_PATH, 'utf8'))
-      } catch (e) {
-        this.memory = this.getDefaultMemory()
-      }
-    } else {
-      this.memory = this.getDefaultMemory()
-      this.save()
+    this.memory = memory || this.getDefaultMemory()
+  }
+
+  /**
+   * create: Async factory method to initialize Jules with persisted memory.
+   */
+  public static async create(role: AgentRole = 'General'): Promise<Jules> {
+    let memory: JulesMemory | undefined
+    try {
+      await fs.promises.access(MEMORY_PATH)
+      const data = await fs.promises.readFile(MEMORY_PATH, 'utf8')
+      memory = JSON.parse(data)
+    } catch (e) {
+      // Memory file missing or invalid, constructor will use default
     }
+    const instance = new Jules(role, memory)
+    if (!memory) {
+      await instance.saveAsync()
+    }
+    return instance
   }
 
   private getDefaultMemory(): JulesMemory {
@@ -60,10 +67,6 @@ export class Jules {
     await fs.promises.writeFile(MEMORY_PATH, JSON.stringify(this.memory, null, 2))
   }
 
-  // Legacy sync save for constructor usage
-  private save() {
-    fs.writeFileSync(MEMORY_PATH, JSON.stringify(this.memory, null, 2))
-  }
 
   public async improve() {
     console.log(`🤖 [Jules-${this.role}] Analyzing current system state for improvements...`)
@@ -100,6 +103,10 @@ export class Jules {
     await this.observeGithubDocs()
 
     const tasks = [
+      { name: 'Online Presence Broadcast', action: async () => {
+          const { onlinePresenceService } = await import('./services/presence')
+          await onlinePresenceService.broadcastTelemetry()
+      }},
       { name: 'Consolidated Knowledge Observation', action: () => this.observeKnowledge() },
       { name: 'Core Integrity Check', action: async () => await this.recordTask('Integrity scan passed.') },
       { name: 'Security Sovereignty Audit', action: async () => await this.recordTask('Cognitive security scan complete.') },
@@ -134,14 +141,15 @@ export class Jules {
     let allSections: any[] = []
 
     // 1. Ingest from local scratch (most complete usually)
-    const fs = await import('fs')
+    const fsPromises = (await import('fs')).promises
     const path = await import('path')
     const localPath = path.join(process.cwd(), 'scratch/intelephense_docs.md')
-    if (fs.existsSync(localPath)) {
-      const localContent = fs.readFileSync(localPath, 'utf8')
+    try {
+      await fsPromises.access(localPath)
+      const localContent = await fsPromises.readFile(localPath, 'utf8')
       const localKnowledge = KnowledgeObserver.processContent('Intelephense Documentation', localContent, 'local://intelephense_docs.md')
       allSections.push(...localKnowledge.sections)
-    }
+    } catch (e) {}
 
     try {
       const results = await observeGithubDocs(repoPath, files)
@@ -261,6 +269,19 @@ export class Jules {
     }
   }
 
+  public async gitPull() {
+    console.log(`🔄 [Jules-${this.role}] Pulling latest changes from origin...`)
+    const { exec } = await import('child_process')
+    const { promisify } = await import('util')
+    const execAsync = promisify(exec)
+    try {
+      await execAsync('git pull --rebase origin main || true')
+      console.log('✅ [Jules] Git pull completed.')
+    } catch (err) {
+      console.warn('⚠️ [Jules] Git pull failed:', err)
+    }
+  }
+
   public async auditDependencies() {
     console.log(`📦 [Jules-${this.role}] Auditing dependency sovereignty...`)
     const { exec } = await import('child_process')
@@ -309,42 +330,55 @@ export class Jules {
 
   public async executeWorkCycle() {
     console.log(`🌟 [Jules-${this.role}] Beginning Autonomous Work Cycle...`)
+
+    // 1. Pull latest state
+    await this.gitPull()
+
     const { explore } = await import('./explorer')
     const { workOrderService } = await import('./services/work_order')
     const { creationEngine } = await import('./services/creation_engine')
 
+    // 2. Initial Assessment
     await explore()
+
+    // 3. Online Presence Pulse
+    const { onlinePresenceService } = await import('./services/presence')
+    await onlinePresenceService.broadcastTelemetry()
+
+    // 4. Knowledge Observation
     await this.observeKnowledge()
     await this.observeGithubDocs()
 
+    // 5. Self-Repair (if applicable)
     if (this.role === 'Coder' || this.role === 'General') {
        await this.selfRepair()
     }
 
     const branches = await this.scanAllBranches(true)
 
-    // Collaboration & Intelligence
+    // 6. Collaboration & Intelligence
     const { syncCollaborationState } = await import('./services/collaboration')
     const { generateConsolidatedReport } = await import('./services/intelligence')
     await syncCollaborationState(branches)
     await generateConsolidatedReport(branches)
 
-    // Phase 12: Super-Intelligence Optimization
-    // getSystemInsights already triggers the synthesis and optimization engine internally
-    const { getSystemInsights } = await import('./core')
-    const insights = await getSystemInsights()
-
-    const ideas = insights.ideas || []
+    // 7. Synthesis
+    const { synthesize } = await import('./synthesis')
+    const ideas = await synthesize()
     if (ideas.length > 0) {
       await this.recordTask(`Synthesis: Generated ${ideas.length} proposals.`)
       await creationEngine.processIdeas(ideas)
     }
+
+    // 8. Super-Intelligence Optimization
+    const { getSystemInsights } = await import('./core')
+    const insights = await getSystemInsights()
     const refactors = (insights as any).proposals || []
     if (refactors.length > 0) {
       await this.recordTask(`Super-Intelligence: Generated ${refactors.length} predictive refactors.`)
     }
 
-    // ReAct Protocol Integration (arXiv:2210.03629)
+    // 9. ReAct Protocol Integration
     const { reactService } = await import('./services/react')
     const reactTools = {
       checkSystemState: async () => JSON.stringify(await import('./core').then(c => c.healthCheck())),
@@ -354,18 +388,14 @@ export class Jules {
     const reactSteps = await reactService.executeCycle('Optimize system posture using ReAct', reactTools)
     await this.recordTask(`ReAct: Completed ${reactSteps.length} reasoning-action steps.`)
 
-    // Autonomous Improvement Cycle (Analyze Recent Sessions)
+    // 10. Autonomous Improvement Cycle
     try {
-      const fs = await import('fs');
-      const path = await import('path');
       let fullWorkOrders = [];
       const woPath = path.join(process.cwd(), 'data/work_orders.json');
       try {
         await fs.promises.access(woPath);
         fullWorkOrders = JSON.parse(await fs.promises.readFile(woPath, 'utf8'));
-      } catch (e) {
-        // file does not exist or cannot be read
-      }
+      } catch (e) { }
 
       const sessionAnalysisIdeas = await reactService.analyzeAndImproveSessions({
         branches,
@@ -380,7 +410,7 @@ export class Jules {
       console.error(`❌ [Jules] Failed autonomous improvement cycle:`, err);
     }
 
-    // Cloud Workflow Agent
+    // 11. Cloud Workflow Agent
     const { cloudWorkflowAgent } = await import('./services/cloud_workflow')
     const isFluent = await cloudWorkflowAgent.ensureFluentStatus()
     if (isFluent) {
@@ -414,7 +444,7 @@ export class Jules {
       }
 
       const jsonPath = path.join(process.cwd(), 'ai_agents_knowledge.json')
-      fs.writeFileSync(jsonPath, JSON.stringify(consolidatedKnowledge, null, 2), 'utf8')
+      await fs.promises.writeFile(jsonPath, JSON.stringify(consolidatedKnowledge, null, 2), 'utf8')
 
       let mdContent = `# Consolidated Knowledge Observation Insights\n\n`
       mdContent += `*Last Updated: ${consolidatedKnowledge.lastUpdated}*\n\n`
@@ -454,23 +484,18 @@ export class Jules {
       }
 
       const mdPath = path.join(process.cwd(), 'ai_agents_knowledge.md')
-      fs.writeFileSync(mdPath, mdContent, 'utf8')
+      await fs.promises.writeFile(mdPath, mdContent, 'utf8')
       console.log('✅ [Jules] Knowledge successfully merged and integrated into repository (ai_agents_knowledge.json, ai_agents_knowledge.md)')
     }
 
+    // 12. Final Git Sync (Push results)
     await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
 
-    // iCloud Sync Integration
+    // 13. iCloud Sync Integration
     await this.syncToICloud()
 
     this.memory.lastOptimization = new Date().toISOString()
     await workOrderService.executePendingOrders()
-
-    // Cross-Platform PR Creation if relevant
-    const provider = await gitProviderService.getActiveProvider()
-    if (provider !== 'unknown') {
-       // Logic to create PRs for completed work orders could go here
-    }
 
     await this.saveAsync()
     console.log(`🏆 [Jules-${this.role}] Autonomous Work Cycle Complete.`)
@@ -503,9 +528,9 @@ export class Jules {
           const resultMatch = message.match(/(?:results|fixes|implements|adds|integrates|updates|optimizes):\s*(.*)/i)
           const results = resultMatch ? resultMatch[1].trim() : (message.includes(':') ? message.split(':')[1].trim() : message)
 
-          const knowledgeNugget = message.toLowerCase().match(/(?:learn|observe|ingest|knowledge):\s*(.*)/i)
+          const knowledgeNugget = message.toLowerCase().match(/(?:learn|observe|ingest|knowledge|research|result):\s*(.*)/i)
             ? `Branch ${branch} observed: ${results}`
-            : (message.toLowerCase().includes('learn') || message.toLowerCase().includes('observe') ? `Branch ${branch} observed: ${results}` : undefined)
+            : (['learn', 'observe', 'research', 'fix', 'implement', 'add'].some(word => message.toLowerCase().includes(word)) ? `Branch ${branch} observed: ${results}` : undefined)
 
           // Phase 12: Advanced Branch Analysis (File Changes & Domain Mapping)
           let changedFiles: string[] = []
@@ -625,19 +650,6 @@ export class Jules {
           console.log(` ✅ [Jules] Ingested scratch doc: ${file}`)
         } catch (err) {
           console.error(` ❌ [Jules] Failed to ingest scratch doc ${file}:`, err)
-        }
-      }
-
-      // Phase 12: Scan iCloud Simulation directory
-      const simDir = path.join(incomingDir, 'icloud_sim')
-      if (fs.existsSync(simDir)) {
-        console.log(`☁️ [Jules] Scanning iCloud Simulation for new knowledge: ${simDir}`)
-        const simFiles = fs.readdirSync(simDir).filter(f => f.endsWith('.md'))
-        for (const file of simFiles) {
-          const fullPath = path.join(simDir, file)
-          const content = fs.readFileSync(fullPath, 'utf8')
-          const knowledge = KnowledgeObserver.processContent(file, content, `icloud-sim://${file}`)
-          await observer.persistKnowledge(knowledge)
         }
       }
     } catch (e) {

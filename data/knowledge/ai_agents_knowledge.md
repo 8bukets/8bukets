@@ -1,6 +1,7 @@
 # ANTIGRAVITY AI AGENTS KNOWLEDGE BASE
 
 *Last Updated: 2026-05-24T06:43:04.265Z*
+*Last Updated: 2026-05-25T05:09:57.700Z*
 
 ## DOCUMENT: AGENTS.md
 **Source:** icloud://AGENTS.md
@@ -11812,6 +11813,7 @@ Wilson Sonsini’s history is essentially the history of modern technology:
 ## DOCUMENT: software info by fk – software-online-review – Filip Keser
 **Source:** https://software-online-review.com
 **Ingested At:** 2026-05-24T06:43:04.211Z
+**Ingested At:** 2026-05-25T05:09:56.461Z
 
 ### Introduction
 - [ads – analitics – advertising](https://software-online-review.com/ads-analitics/)
@@ -15856,6 +15858,7 @@ Skip to content ↓
 ## DOCUMENT: (position) mRNA
 **Source:** https://markposition.wordpress.com
 **Ingested At:** 2026-05-24T06:41:44.306Z
+**Ingested At:** 2026-05-25T05:09:56.851Z
 
 ### Introduction
 - [Home](https://markposition.wordpress.com/blog/)
@@ -19033,9 +19036,10 @@ Skip to content ↓
 
 ---
 
-## DOCUMENT: caio_role_docs.md
+## DOCUMENT: Chief AI Officer (CAIO) Role
 **Source:** local://caio_role_docs.md
 **Ingested At:** 2026-05-24T06:41:44.460Z
+**Ingested At:** 2026-05-25T02:38:15.982Z
 
 ### Chief AI Officer (CAIO) Role Description
 
@@ -19047,7 +19051,8 @@ A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an o
 - **Growth:** 300% year-over-year growth in CAIO role demand.
 - **Adoption:** 73% of Fortune 500 companies plan to hire or have hired a CAIO by the end of 2026.
 - **ROI Impact:** Organizations with a dedicated CAIO report up to 45% higher AI ROI than those without.
-- **Salary Range:** Typically ranges from $300,000 to $2.5M+ depending on industry and company scale.
+- **LinkedIn Trends:** AI-related positions continue to lead growth in 2025 and 2026, with both technical and strategic roles in high demand.
+- **Salary Benchmarks:** Typically ranges from $300,000 to $2.5M+ depending on industry and company scale.
 
 ### Key Responsibilities
 
@@ -19094,7 +19099,7 @@ Uses the foundations managed by the CTO and CDO to specifically drive business v
 ### External Resources & Certifications
 To explore real-world openings and licensure requirements, research available roles on platforms like **LinkedIn Jobs** or **Indeed**.
 
-For those looking to transition into executive AI leadership, several high-impact certifications and programs are available:
+For those looking to transition into executive AI leadership, several high-impact certifications and programs are available via **Coursera** and other institutions:
 - **Coursera:**
   - *The Chief AI Officer's Handbook*
   - *Executive AI Leadership Mastery Specialization* (Starweaver)
@@ -19111,6 +19116,6765 @@ For those looking to transition into executive AI leadership, several high-impac
 ## DOCUMENT: intelephense_docs.md
 **Source:** local://intelephense_docs.md
 **Ingested At:** 2026-05-24T06:41:44.614Z
+## DOCUMENT: Intelephense Documentation
+**Source:** https://intelephense.com/docs
+**Ingested At:** 2026-05-25T05:09:57.658Z
+
+### Getting Started
+
+
+### About
+Intelephense is a high performance, cross platform, cross editor PHP language server adhering to the Language Server Protocol (LSP).
+
+When paired with an LSP capable editor it provides an essential set of code tools, making for a productive and rich PHP coding experience.
+
+The Intelephense server is proprietary software released to end users under a "freemium" model. Many of the features are provided free of charge. Access to premium features can be obtained by purchasing a licence key.
+
+### Installation
+Visual Studio Code users should install the Intelephense extension from within the extensions view or download it from the VSCode marketplace.
+
+The built-in VSCode PHP Language Features extension can cause excessive completion suggestions that are out of context and is best disabled. Go to the Extensions UI and search for PHP Language Features to disable it. Alternatively, you can disable parts of it via it's configuration settings. Other third party extensions that provide similar functionality to Intelephense may also need to be disabled for best results.
+
+Optionally purchase and enter your licence key by opening the command palette (Ctrl+Shift+P) and searching for Enter licence key.
+
+### Other Editors
+Intelephense requires a Node.js runtime environment. It is recommended that you use a current LTS version of Node.js. To install Intelephense server you can use npm.
+
+```bash
+npm i intelephense -g
+```
+
+Intelephense needs an LSP compliant client to communicate with and integrate features into the editor. A list of editors and clients that support the LSP can be found online. Please follow the setup guide of the relevant tool. The information below may help in configuring the client.
+
+To start the intelephense server:
+
+```bash
+intelephense {transport}
+```
+
+Where {transport} is one of:
+* `--node-ipc`
+* `--stdio`
+* `--socket={number}`
+* `--pipe={string}`
+
+If your LSP client exposes `initializationOptions`, then the following values are accepted:
+
+```typescript
+interface InitialisationOptions {
+    // Optional absolute path to storage directory for workspace specific data.
+    storagePath?: string;
+
+    // Optional absolute path to a global storage directory for global data.
+    globalStoragePath?: string;
+
+    //Optional licence key or absolute path to a text file containing the licence key.
+    licenceKey?: string;
+
+    //Optional flag to clear server state.
+    //State can also be cleared by deleting {storagePath}/intelephense
+    clearCache?: boolean;
+}
+```
+
+When `initializationOptions` properties are not provided by the client, the following defaults are used:
+
+| OS | Property | Path | Fallback |
+|---|---|---|---|
+| *nix | storagePath | $XDG_CONFIG_HOME/intelephense/workspace/ | $HOME/.config/intelephense/workspace/ |
+| *nix | globalStoragePath | $XDG_CONFIG_HOME/intelephense/global/ | $HOME/.config/intelephense/global/ |
+| *nix | licenceKey | {globalStoragePath}/licence.txt | {globalStoragePath}/license.txt |
+| Windows | storagePath | %AppData%/intelephense/workspace/ | %UserProfile%/intelephense/workspace/ |
+| Windows | globalStoragePath | %AppData%/intelephense/global/ | %UserProfile%/intelephense/global/ |
+| Windows | licenceKey | {globalStoragePath}/licence.txt | {globalStoragePath}/license.txt |
+
+If your LSP client does not expose `initializationOptions` then a licence key can be provided by placing (only) the key in a text file at the default `licenceKey` path listed above.
+
+### Configuration
+Please see the VSCode client package.json configuration property for a full list of configuration options and associated JSON schema. Note that the configuration keys are given in dot notation. As an example, the equivalent JSON object for `intelephense.files.exclude` would be `{"intelephense": {"files": {"exclude": []}}}`.
+
+Intelephense attempts to provide reasonable defaults for all settings. Some of the more important settings to consider when getting started include:
+
+* `intelephense.files.associations` - File globs that identify PHP files. Defaults to standard PHP file extensions e.g. *.php.
+* `intelephense.files.maxSize` - Maximum file size in bytes to index and provide analysis for. Defaults to 1000000 (1MB).
+* `intelephense.environment.phpVersion` - PHP version to use for analysis. Defaults to the most recent stable PHP version.
+* `intelephense.stubs` - List of stubs to include. Defaults to core symbols and extensions that are bundled with PHP. If you are getting undefined symbols for built-in or PECL extensions, you may need to modify this list.
+
+In VSCode, the settings UI can be used to modify the configuration values. For other LSP clients, please see the client documentation on how to modify these values. Intelephense supports the LSP `workspace/didChangeConfiguration` and `workspace/configuration` methods as a way of supplying configuration values to the server.
+
+If neither of the methods above are supported by the client, then configuration values can be supplied via an `intelephense.config.json` file placed in the workspace folder. The JSON schema for this file is the same as the one used for the VSCode client. The top level `intelephense` property is not required in this file.
+
+For Intelephense to work effectively it must have access to the definitions of the symbols used in your code. Opening a project folder (LSP `InitializeParams` `rootUri` or `workspaceFolders`) rather than individual files enables these symbols to be discovered by Intelephense via indexing the PHP files in the folder. Large workspaces require more system resources. Consider opening a smaller workspace or exclude unnecessary files via the `intelephense.files.exclude` setting to reduce resource usage.
+
+If you need to include files from outside of the workspace folder, then add the paths to these files to the `intelephense.environment.includePaths` setting.
+
+When configuring a multi-root workspace, Intelephense will presume that the folders in the workspace are separate projects and will not provide cross folder symbols unless you link the dependency between the projects via the `intelephense.environment.includePaths` setting.
+
+Depending on the framework or library you use, you may find you need additional configuration to provide method declarations or override existing ones. Please see the Frameworks and Libraries section in the appendix for more information on this.
+
+### Type System
+Providing type information in your PHP code will result in a better experience when using Intelephense. Type information can be provided via coded type declarations or PHPDoc type annotations. Where both have been provided, PHPDoc type annotations are given precedence as they can provide more detailed type information.
+
+```php
+<?php
+
+/**
+ * @param string $s  <- A phpdoc parameter type annotation for $s
+ * @return string[] <- A phpdoc return type annotation specifying the array element type
+ **/
+function foo(string $s): array {} // <- type declarations for $s (string) and function return (array)
+```
+
+Intelephense will also compute inferred types when a declared or documented type is not found or during control flow analysis. When a type is inferred it may be reduced to it's minimal representation. For example, `MyClass|object` would become `object` because `MyClass` is a sub-type of `object`.
+
+Intelephense provides limited support for PHPStorm metadata as a way of overriding or supplementing type information. It is recommended to use PHPDoc type annotations instead of PHPStorm metadata where possible as they are more widely supported across different tools. Support for PHPStorm metadata may be removed in future releases. Please see the PHPDoc Instead of PHPStorm Metadata/Attributes section in the appendix for more information.
+
+### Type Narrowing
+Intelephense performs type narrowing of variables during control flow analysis. Type narrowing expressions include built-in type assertions such as `is_string`, custom type assertions annotated with `@assert`, `instanceof`, and equality expressions. The example below demonstrates type narrowing.
+
+```php
+<?php
+
+class Foo {}
+
+function example(string|array|Foo|null $input): void
+{
+    if (!$input) {
+        // $input is narrowed to string|array|null in this block
+        // empty strings, empty arrays and null are all falsey
+    } else {
+        // $input is narrowed to string|array|Foo in this block
+
+        if ($input instanceof Foo) {
+            // $input is narrowed to Foo in this block
+        } else if (is_string($input)) {
+            // $input is narrowed to string in this block
+        } else {
+            // $input is narrowed to array in this block
+        }
+    }
+}
+```
+
+### Type Evolving
+Type evolving is the change in a variable's type after an assignment expression. Simple variables and parameters always change to the type of the assigned expression regardless of initial assignments, type declarations or annotations.
+
+Properties with no type declaration or annotation will also change to the type of the assigned expression. Otherwise they will only widen or narrow according to the bounds of the initial type they have been declared or annotated with.
+
+Intelephense will type evolve array types when mutated only if they are declared with an empty array initialiser. Otherwise they are considered to retain their initial declared, annotated or inferred type. The example below demonstrates type evolving.
+
+```php
+<?php
+
+function example(int $a): void
+{
+    $a = "string"; // $a is now type string
+
+    $b = []; // $b is type array and flagged as evolving
+
+    $b[] = "string"; // $b is now type string[]
+
+    $b[] = 9; //$b is now (string|int)[]
+
+    $c = [1, 2]; // $c is type int[] and NOT flagged as evolving
+
+    $c[] = "string"; // $c is still type int[]
+}
+```
+
+### Supported Types
+In the list of supported types below, some can only be used in PHPDoc as documented types. Please see the PHP type system documentation if you are unfamiliar with the standard PHP types. PHPDoc only, or internal types, are flagged with an asterisk.
+
+Additional types used in other static analysis engines that are not listed here are not fully supported. Intelephense attempts to fallback to an appropriate alternative in this situation.
+
+### Top Type
+`mixed`
+
+The super-type of all types. Any other type can be assigned to a type constraint of mixed. If intelephense cannot determine a more specific type for a symbol or expression then this is the type it is given. Because of this, Intelephense also allows mixed to be assigned to any other type constraint as well, effectively turning off type checking for that instance. To switch off this behaviour you can set both `intelephense.diagnostics.relaxedTypeCheck` and `intelephense.diagnostics.noMixedTypeCheck` to `false`.
+
+### Bottom Type
+`never`
+
+The sub-type of all types. This type can be assigned to any other type constraint. It is used to represent an impossibility in the code and can be used as the return type of a function that exits or always throws an exception.
+
+### Scalar Types
+Any of these types can be assigned to the other unless the `declare(strict_types=1)` directive is used in the file or `intelephense.diagnostics.strictTypes` is `true`.
+
+* `int`
+* `float`
+* `bool`
+* `string`
+
+### Unit Types
+* `void`
+* `null`
+* `true`
+* `false`
+* `unset`* Intelephense uses this PHP keyword to represent the type of an undefined variable.
+
+### Literal Types
+* `'myString'`* String literals are encapsulated in quotes.
+* `9`* An integer literal.
+
+### Object Types
+* `object`
+* `\MyNs\MyClass` Classes, interfaces, traits, and enums can be fully qualified or not. If not fully qualified then the standard PHP name resolution rules apply to determine the fully qualified name.
+* `object{name: string, optional?: string}`* Object shapes can be used to provide further information on dynamic object properties. This improves completion suggestions and type inference when accessing these properties. Optional properties can be declared by adding a `?` at the end of the name.
+* `static`
+* `self`
+* `$this`*
+
+### Array Types
+* `array`
+* `array<TKey, TValue>`* Generic form for an array where the type arguments represent the array key and value types respectively. If only a single type argument is provided then it will be normalised to `array<string|int, TValue>`.
+* `TValue[]`* Represents a numeric indexed array where the element type is `TValue`.
+* `array{description: string, 'length (cm)': float, optional?: string, ...<int, string>}`* Array shapes can be used to provide further information on array element keys and value types. This improves completion suggestions and type inference when accessing these elements. Keys with non alphanumeric characters need to be in quotes. Optional keys can be declared by adding a `?` at the end of the key. Unspecified extra elements can be declared by adding an element of form `...<TKey, TValue>`. Keys are optional and default to numerically indexed. For example a two element tuple would be `array{Type0, Type1}`. A mix of keyed and unkeyed elements is not supported.
+
+### Callable Types
+* `callable` Base callable type that represents a callable string, callable array or a class that implements `__invoke`.
+* `callable(TParamA $a, TParamB $b): TReturn`* Callable type signatures can be defined to improve language intelligence. Parameter names are optional. The callable type should be wrapped in parentheses if it forms part of a union. `Closure` can be used instead of `callable` for a more specific type.
+
+### Alias Types
+* `iterable` Alias for `Traversable|array`.
+* `?A` Nullable type that is shorthand for `null|A`. Cannot be used as part of a union or intersection type.
+
+### Union Types
+`A|B|C`
+
+A type which may have multiple atomic type representations. For example, a type constraint of `A|B` can be assigned type `A` or `B`.
+
+### Intersection Types
+`A&B&C`
+
+A composite type which consists of multiple atomic types. For example, a type of `A&B` can be assigned to type `A` and to type `B`.
+
+### DNF Types
+`A|B|(C&D&E)`
+
+When combining union and intersection types, only a single level of nesting is permitted. The union must be the top level.
+
+### Generic Types
+`MyType<TypeArg1, TypeArg2>`*
+
+A generic type can be declared using one or many `@template` PHPDoc annotations above the target class, interface, or trait. Type arguments can then be supplied in the same order as the `@template` declarations. The following built-in types are templated:
+
+* `iterable<TKey, TValue>`
+* `Traversable<TKey, TValue>`
+* `array<TKey, TValue>`
+* `Iterator<TKey, TValue>`
+* `IteratorAggregate<TKey, TValue>`
+* `ArrayAccess<TKey, TValue>`
+* `WeakReference<TObject>`
+* `WeakMap<TKey, TValue>`
+* `Fiber<TStart, TResume, TReturn, TSuspend>`
+* `DatePeriod<TDate, TEnd>`
+* `ReflectionAttribute<TObject>`
+* `ReflectionClass<TObject>`
+* `Generator<TKey, TYield, TSend, TReturn>`
+* `ArrayObject<TKey, TValue>`
+* `SplDoublyLinkedList<TValue>`
+* `SplQueue<TValue>`
+* `SplStack<TValue>`
+* `SplHeap<TValue>`
+* `SplMinHeap<TValue>`
+* `SplMaxHeap<TValue>`
+* `SplPriorityQueue<TPriority, TValue>`
+* `SplFixedArray<TValue>`
+* `SplObjectStorage<TObject, TValue>`
+
+### Conditional Return Type
+`(TSubject is TCompare ? TTrue : TFalse)`*
+
+Sometimes the return type of a function may depend on the type of a parameter. A conditional type can be used without templates too by using the parameter name. For example, `($myParam is string ? string : null)`. Conditional types must be wrapped in parentheses. Conditional types may also be nested.
+
+### Array Key Type
+`key-of<TArray>`*
+
+This type will resolve to a union of the keys of an array shape.
+
+### Array Value Type
+`value-of<TArray>`*
+
+This type will resolve to a union of the values of an array shape.
+
+### Index Access Type
+`TArray[TKey]`*
+
+This type will resolve to the type of the value at index `TKey` in `TArray`. It is particularly useful in conjunction with `key-of<TArray>` and shape types for mapping the return type when accessing container items with arbitrary strings. For example:
+
+```php
+<?php
+
+class MyContainerItem {}
+
+class MyContainer
+{
+    /**
+     * @template TMap of array{item: MyContainerItem, other: object}
+     * @template TKey of key-of<TMap>
+     * @param TKey $name
+     * @return TMap[TKey]
+     */
+    function get($name): mixed {}
+}
+
+$container = new MyContainer();
+$item = $container->get('item'); //$item is MyContainerItem
+```
+
+### Miscellaneous Types
+* `resource`*
+* `class-string<T>`* A string where the value is the name of class `T`.
+
+### PHPDoc Annotations
+Intelephense supports standard PHPDoc annotations as well as non-standard annotations which have been popularised by other static analysis tools such as Psalm and PHPStan. The below list describes the non-standard annotations that Intelephense supports. For further information on standard PHPDoc annotations, please see the PHP_FIG and phpDocumentor references.
+
+Some libraries or projects that have adopted static analysis tools such as Psalm or PHPStan may prefix some annotations with the tool name to avoid conflicts with other tools.
+
+To make Intelephense prefer these prefixed annotations over the un-prefixed ones, you can set the `intelephense.compatibility.preferPsalmPhpstanPrefixedAnnotations` setting to `true`. Intelephense does not aim to support all types and features of these tools but will attempt to fallback to appropriate alternatives where possible.
+
+### @template
+`/** @template TemplateName of OptionalTypeConstraint = OptionalDefaultType */`
+This annotation is used to declare a type argument of a generic type, function or method. The order that the template types appear is the same order in which the type arguments must be supplied in a generic type expression. The template type can be optionally constrained to a specific type and given an optional default type to be used when no type argument is supplied.
+
+### @template-extends
+`/** @template-extends ParentType<TypeArg1, TypeArg2> */`
+This annotation is used to declare the type arguments supplied to a generic parent type. It can be used on classes and interfaces when extending a parent class or interface. The alias `@extends` is also supported.
+
+### @template-implements
+`/** @template-implements InterfaceType<TypeArg1, TypeArg2> */`
+This annotation is used to declare the type arguments supplied to a generic interface. It can be used on classes and enums when implementing an interface. The alias `@implements` is also supported.
+
+### @template-use
+`/** @template-use TraitType<TypeArg1, TypeArg2> */`
+This annotation is used to declare the type arguments supplied to a generic trait. It can be used on classes, traits and enums when using a trait. The alias `@use` is also supported.
+
+### @param-closure-this
+`/** @param-closure-this Type $parameter */`
+This annotation is used to declare the type of the `$this` variable inside a closure that is passed as a parameter to a function or method. An example of a standard PHP method that benefits internally from this annotation is `Closure::bind()`.
+
+### @param-out
+`/** @param-out Type &$parameter */`
+This annotation is used to declare the out type of a by-reference parameter. Intelephense will not modify the type of a by-reference parameter unless this annotation is used.
+
+### @assert
+`/** @assert Type $parameter */`
+This annotation is used to declare a function or method that asserts that an argument is of the specified type. Intelephense will narrow the type of the passed variable to the asserted type after the function or method call. It is presumed that the function or method has no false path and that it will throw an exception or exit if the assertion fails.
+
+### @assert-if-true @assert-if-false
+`/** @assert-if-true Type $parameter */`
+Similar to above but for functions or methods that have a boolean return type. This asserts that the passed variable is of the specified type on the true or false code path respectively at the call location.
+
+### @mixin
+`/** @mixin ClassName */`
+This annotation is used to declare that the members of the specified class are mixed in to the current class via `__call`, `__callStatic`, `__get` or `__set magic methods. Only available with a licence in Intelephense Premium.
+
+### @disregard
+`/** @disregard PXXXX */`
+This annotation is used to suppress a specific diagnostic at the statement following the annotation. For example, `@disregard P1010` would suppress the diagnostic with code `P1010`. This can be useful when you have a specific case where you want to allow something that Intelephense would normally report as an issue.
+
+### @type-alias
+`/** @type-alias TypeName = Type */`
+This annotation is used to declare a type alias. A type alias allows you to create a new name for an existing type, which can be useful for improving code readability or for creating more meaningful type names. It functions the same as `@phpstan-type` and `@psalm-type` annotations which are also recognised. Intelephense type aliases follow normal PHP namespace rules.
+
+### @import-type
+`/** @import-type TypeName as OptionalAlias */`
+This annotation is used to import a type alias that has been declared in another file. It functions similarly to `@phpstan-import-type` and `@psalm-import-type` and both these annotations may also be used. However, type aliases are not bound to classes in Intelephense and as such the `from ClassName` specifier is unnecessary but still supported. Type aliases in Intelephense follow normal PHP namespace rules.
+
+### Features
+Intelephense provides a variety of features to enhance the development experience when working with PHP code. Many of these features are provided for free while others require a Premium licence to access. All images and videos in this section are taken from the VS Code client. The features are available to all LSP clients that support the relevant LSP methods. Keybindings listed for each feature are the defaults for the VS Code client.
+
+### Free Features
+The following features are available to all users of Intelephense. A licence is not necessary.
+
+### Workspace Symbols
+* **Availability**: FREE
+* **LSP**: `workspace/symbol`
+* **Keybinding**: `Ctrl+T`
+
+This feature allows you to search for symbols in your workspace and navigate to their definitions. It is particularly useful for finding and navigating to symbols that are not directly referenced in the current file. When the query contains alphanumeric characters only, the search is performed on the unqualified name of the symbol. You can narrow your search to a specific symbol by using a query containing characters found in the Fully Qualified Structural Element Name (FQSEN) of the symbol. For example, a query of `m\pt:u(` would find the method with FQSEN `App\Models\Post::user()`.
+
+Unfortunately, VS Code has a current issue where it will discard results if the query contains a backslash. This means that you cannot search on the namespace part of a type.
+
+### Document Symbols
+* **Availability**: FREE
+* **LSP**: `textDocument/documentSymbol`
+* **Keybinding**: `Ctrl+Shift+O`
+
+This feature lists all symbols in the current document, providing an overview of the structure of the file. A client can use this information to provide a document outline view, breadcrumb navigation, and a symbol search specific to the current file.
+
+### Go to Definition
+* **Availability**: FREE
+* **LSP**: `textDocument/definition`
+* **Keybinding**: `F12` | right-click context menu
+
+This feature allows you to navigate to the definition of a symbol when invoked on a reference to that symbol in the current file. Multiple definitions may sometimes be found for a symbol. For example, invoking the feature on the type name in a new expression may find both the constructor method and the class declaration as definitions. It is up to the client to decide how to present multiple definitions to the user. For example a peek definitions window may open or the user may simply be navigated to the first definition in the list.
+
+### Hover
+* **Availability**: FREE
+* **LSP**: `textDocument/hover`
+* **Keybinding**: `Ctrl+K Ctrl+I` | mouse-over
+
+This feature provides information about a symbol when hovering over a reference to that symbol in the current file. The information provided can include the type of the symbol, it's signature if it is a function or method, and any associated documentation.
+
+### Highlight
+* **Availability**: FREE
+* **LSP**: `textDocument/documentHighlight`
+* **Keybinding**: Displayed automatically at the cursor position
+
+This feature highlights all references to the symbol at the cursor position in the current file. This can be useful for quickly identifying all usages of a symbol in the current file. Read and write contexts will be identified if applicable and the client can choose to highlight them differently if desired.
+
+### Code Completion
+* **Availability**: FREE
+* **LSP**: `textDocument/completion`
+* **Keybinding**: `Ctrl+Space`
+* **Trigger characters**: `$ > : \ / ' " * . <`
+
+This feature provides a list of context appropriate completion suggestions for a symbol at the cursor position in the current file. The completions can include variables, functions, methods, classes, and other symbols. Where appropriate, additional edits are provided to automatically import a symbol.
+
+### Signature Help
+* **Availability**: FREE
+* **LSP**: `textDocument/signatureHelp`
+* **Keybinding**: `Ctrl+Shift+Space`
+* **Trigger characters**: `( , :`
+
+This feature provides information about the signature of a function or method when the cursor is within the argument list of a function or method call. The information provided can include the types of the parameters, the return type, and any associated documentation.
+
+### Find All References
+* **Availability**: FREE
+* **LSP**: `textDocument/references`
+* **Keybinding**: `Shift+F12` | right-click context menu
+
+This feature provides a list of all references to a symbol in the current file or workspace. The references can include variables, functions, methods, classes, and other symbols. When there is a hierarchy of types, references to a type member will be determined relative to the initial base members.
+
+### Formatting
+* **Availability**: FREE
+* **LSP**: `textDocument/formatting`
+* **Keybinding**: `Ctrl+Shift+I` (format document)
+* **LSP**: `textDocument/rangeFormatting`
+* **Keybinding**: `Ctrl+K Ctrl+F` (format selection)
+
+This feature provides formatting of a whole document or a selected range within a document. The Intelephense formatter is opinionated and aims to comply with PHP-FIG coding standards. Limited configuration options are available to allow some customisation of brace style.
+
+### Diagnostics
+* **Availability**: FREE
+* **LSP**: `textDocument/publishDiagnostics`
+* **Keybinding**: Published automatically onType or onSave | `F8` (next) | `Shift+F8` (previous)
+
+This feature provides diagnostics for the currently opened files. Diagnostics include syntax errors, type errors, language constraints and other issues detected by Intelephense. Intelephense aims to provide rapid diagnostics that are aligned with the PHP engine where possible.
+
+Performance and minimising false positives are prioritised over exhaustiveness. It should not be used as a substitute for testing your code. The diagnostics emitted can be configured in the settings to be more or less thorough or ignored altogether depending on your preferences and the codebase you are working with.
+
+If you need fine grain control over which diagnostics are shown, try the `intelephense.diagnostics.exclude` setting. This setting allows you to map a file glob to an array of diagnostic codes to exclude from diagnostics. A full list of diagnostic codes can be found in the vscode-intelephense repository.
+
+By default, Intelephense performs type checking on declared types only and in a relaxed mode in order to reduce false positives. In a hierarchy of types, a sub-type satisfies a super-type constraint. Intelephense also permits the reverse. That is, a super-type or wider type can be assigned to a sub-type or narrower type constraint. This default behaviour has been chosen due to inherent limitations in static analysis, the lack of syntax in PHP or PHPDoc to enable a developer to inline cast an expression or variable, and due to the variable quality of type information in some codebases.
+
+To make type checks more thorough, there are several settings available.
+
+* `intelephense.diagnostics.relaxedTypeCheck` controls whether to emit diagnostics when a super-type (excluding `mixed`) is assigned to a sub-type constraint.
+* `intelephense.diagnostics.noMixedTypeCheck` controls whether to emit diagnostics when `mixed` is assigned to narrower type constraints.
+* `intelephense.diagnostics.strictTypes` is a global equivalent to adding `declare(strict_types=1);` to the top of each file.
+* `intelephense.diagnostics.typeCheckDocumentedTypes` controls whether documented types are included in type checking.
+
+### Inline Values
+* **Availability**: FREE
+* **LSP**: `textDocument/inlineValues`
+* **Keybinding**: Displayed automatically during a debug session
+
+This feature provides ranges and text for variables in a file that may be relevant for a debugger to display inline values for during a debugging session. To see this feature in action in VS Code, install the official Xdebug extension.
+
+### Embedded Languages
+Intelephense presumes that text outside of PHP tags is HTML. Basic language intelligence is provided for HTML and embedded CSS and JavaScript within HTML.
+
+### Premium Features
+The following features require a licence to access. A licence can be purchased at the checkout page.
+
+### Rename
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/rename`
+* **Keybinding**: `F2` | right-click context menu
+
+This feature allows you to rename a symbol and all references to that symbol in the current file or workspace. This differs from a simple text find and replace in that it is aware of the syntax and semantics of the code, and will only rename the specific symbol.
+
+Intelephense will prefer to limit renames to the current file if possible. For example, renaming a class reference in a file where the class has been imported with a use declaration will result in the references in that file only being renamed and the use declaration being updated with an alias. In such cases, to rename a symbol across the whole workspace, invoke the rename feature on the class declaration itself or the Fully Qualified Name (FQN) in the use declaration instead.
+
+Renaming a namespace in a file updates imports and FQN references for the file symbols in that namespace through the workspace. If using PSR-4 style folder structures then renaming the namespace of a class is also the equivalent of a move class to file operation. Intelephense will return file rename instructions to the client in such cases.
+
+### Code Folding
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/foldingRange`
+* **Keybinding**: `Ctrl+Shift+[` (fold) | `Ctrl+Shift+]` (unfold) | left-click editor gutter | right-click context menu
+
+This feature allows you to fold and unfold regions of code in the current file. Intelephense provides folding ranges for symbol definition bodies, control structures, comments, imports, and custom regions identified by `#region` and `#endregion` comments. The folding provider is syntax tree driven and is more reliable than indent based folding providers such as the default provider in VS Code.
+
+### Find All Implementations
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/implementation`
+* **Keybinding**: `Ctrl+F12` | right-click context menu
+
+This feature provides a list of all implementations of a method or interface when invoked on a reference. This functions similar to go to definition but differs in that it will find the classes that implement the interface or methods that implement an abstract method declaration.
+
+### Go to Type Definition
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/typeDefinition`
+* **Keybinding**: Right-click context menu
+
+This feature allows you to navigate to the type definition of a variable. Similar to go to definition but differs in that it will navigate to the type definition rather than the variable declaration itself.
+
+### Go to Declaration
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/declaration`
+* **Keybinding**: Right-click context menu
+
+This feature allows you to navigate to the initial declaration of a symbol. Similar to go to definition, and depending on the context may function the same, it differs in that it will navigate to the initial declaration of a symbol in a hierarchy of types. For example, invoking this feature on a sub-type method reference will navigate to the initial declaration of the method in a super-type rather than the sub-type method declaration itself.
+
+### Smart Select
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/selectionRange`
+* **Keybinding**: `Shift+Alt+→` (expand) | `Shift+Alt+←` (shrink)
+
+This feature allows you to expand and shrink the current selection in the current file based on the syntax tree of the code. For example, if the cursor is on a variable name, the first expansion would select the variable name, the second expansion would select the whole variable declaration, the third expansion would select the whole statement, the fourth expansion would select the whole block, and so on. Being syntax tree driven, it is more precise than regex or indent based selection providers such as the default provider in VS Code.
+
+### Type Hierarchy
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/typeHierarchy`
+* **Keybinding**: Right-click context menu
+
+This feature provides a type hierarchy for a class, interface, trait or enum when invoked on a reference to the type. It is useful for understanding the inheritance structure of a type and for quick navigation to types in the hierarchy.
+
+### Code Lens
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/codeLens`
+* **Keybinding**: Rendered inline above declarations | activated by left-clicking
+
+This feature provides additional information and navigation for symbol declarations in the current file. Several lenses are provided by Intelephense. They are disabled by default to reduce visual clutter, see the `intelephense.codeLens` settings to enable them.
+
+* **References**: shows the number of references to a symbol in the workspace and provides a link to view those references.
+* **Implementations**: shows the number of implementations of an interface or abstract method and provides a link to view those implementations.
+* **Overrides**: shows the number of overrides of a method in a type hierarchy and provides a link to view those overrides.
+* **Parent**: shows whether a method overrides a parent method and provides a link to view the parent method.
+* **Usages**: shows the number of types that use a trait and provides a link to view those usages.
+
+### Inlay Hints
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/inlayHint`
+* **Keybinding**: Displayed inline automatically
+
+This feature provides additional type and parameter information in the form of hints that are displayed inline with the code in the current file. Intelephense provides several types of inlay hints. They are enabled by default. See the `intelephense.inlayHints` settings to configure them.
+
+* **Parameter Name**: shows the name of a parameter for a function or method argument.
+* **Parameter Type**: shows the inferred type of a parameter in a closure that is an argument to another function or method when it has not been explicitly declared.
+* **Return Type**: shows the inferred return type of a function or method when it has not been explicitly declared.
+
+### Document Links
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/documentLink`
+* **Keybinding**: `Ctrl+Click` | mouse-over
+
+This feature provides clickable links to related files and resources from the current file. Intelephense will show links to files referenced in `require` and `include` statements, and to local files referenced in `@see` annotations.
+
+If your `require` statements are relative or you reference `$_SERVER['DOCUMENT_ROOT']`, you may need to configure the `intelephense.environment.documentRoot` setting to the correct path for the links to work. Intelephense will fallback to the workspace folder path if this setting has no value.
+
+### Code Actions
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/codeAction`
+* **Keybinding**: `Ctrl+.` | left-click lightbulb
+
+This feature provides a list of context appropriate actions that can be performed at the cursor position in the current file. VS Code will show a lightbulb icon on the current line when code actions are available. Intelephense provides several code actions.
+
+* **Import Symbol**: Import (use) a type, function or constant to resolve an undefined symbol error.
+* **Add PHPDoc**: Generate PHPDoc for functions, classes, and methods.
+* **Implement All Abstract Methods**: Generate method stubs for all abstract methods that have not been implemented in a class.
+
+### Compatibility With Frameworks and Libraries
+Intelephense aims to support all PHP frameworks and libraries but does not implement specific solutions for these. Limited or unexpected language intelligence can sometimes be provided if the package:
+
+1. Declares symbols at runtime via bootstrapping code or configuration.
+2. Uses interfaces heavily but encourages calling methods only declared on implementations.
+3. Uses `__get`,`__call`, or `__callStatic` magic heavily without corresponding `@property` or `@method` annotations.
+4. Has insufficient or incorrect type declarations/annotations.
+
+In such cases you may notice a lack of completion suggestions, trouble jumping to definitions or undefined symbol diagnostics may appear even though the code may work when executed.
+
+For example, a common problem can be when a framework returns an interface from a function but the project has been bootstrapped to use a particular concrete type that has additional methods not declared on the interface.
+
+```php
+<?php
+
+interface View {}
+
+class CustomView implements View
+{
+  public function customViewMethod() {}
+}
+
+function view(): View
+{
+  //some code that happens to return CustomView at runtime based on some bootstrapping code or config
+}
+
+view()->customViewMethod(); //undefined method 😭
+```
+
+There are several ways to workaround the problem above. These workarounds can fall into two categories. Either they become part of the project executable code itself, or they are declared in a non-executable helper file and are there only to override the default Intelephense behaviour.
+
+### Solutions that form part of the executable code
+The advantage here is that problems in the code would become more apparent if the bootstrapping logic ever changed and returned a different class. The disadvantage is it is more code to write and perhaps difficult to retrofit to existing code.
+
+```php
+<?php
+
+//Assign the return value to a variable and narrow the type
+$view = view();
+if (! $view instanceof CustomView) {
+  throw new Exception('Unexpected View instance');
+}
+$view->customViewMethod();
+
+//Or with an annotation.
+//This won't alter the execution of the code but still involves modifying the executable code.
+
+/** @var CustomView $view */
+$view = view();
+$view->customViewMethod();
+
+//A custom function could also be created and called instead to narrow the type
+function customView(): CustomView
+{
+  $view = view();
+  assert($view instanceof CustomView);
+  return $view;
+}
+
+customView()->customViewMethod();
+```
+
+### Solutions that do not form part of the project executable code
+This involves creating a file with alternate symbol declarations and placing it in your workspace folder (not in vendor). Intelephense will prioritize user declared symbols over vendor declared symbols.
+
+The advantage here is that it can be retrofitted easily to existing code, applies to all usages of the symbol and executable code remains untouched. The disadvantage is that it could suppress an actual error that Intelephense would otherwise detect.
+
+```php
+<?php
+// Create a file and add it to your workspace.
+// eg intelephense_helper.php
+
+// Declare a different signature for the view function.
+// One that declares the concrete return type.
+function view(): CustomView {}
+
+// Or add the undefined method to the interface instead.
+interface View
+{
+  function customViewMethod();
+}
+```
+
+If classes, interfaces, traits, or enums have override definitions then Intelephense will treat them as partial types and merge them with the vendor declared types. Type overrides should either not use extends or implements clauses, or, alternatively keep them the same as the real type because implements and extends values are not merged.
+
+There are also packages that provide or generate IDE helper files that may improve the experience when using various frameworks and libraries. For example: `laravel-ide-helper`.
+
+### PHPDoc Instead of PHPStorm Metadata/Attributes
+PHPStorm provides a way to override or express types using metadata and custom attributes in order to provide better language intelligence for code that is difficult to analyse statically, and to address limitations in the PHP language.
+
+The same can be achieved with PHPDoc types. For greater compatibility with Intelephense and other PHP static analysis tools such as Psalm and PHPStan it is recommended to use PHPDoc types instead of PHPStorm metadata and attributes.
+
+Intelephense does not support PHPStorm attributes and provides only limited support for PHPStorm metadata. Support for PHPStorm metadata may be removed in future versions of Intelephense.
+
+The following examples show how to express types using PHPDoc types instead of PHPStorm metadata and attributes.
+
+```php
+<?php
+
+class RedService {}
+class BlueObject {}
+class GreenCollection {}
+
+// ----------------------------------------------------------------------------------------------
+// Problem:
+// A function accepts string|object and returns this type after performing some operation.
+// We want to return a string if a string is passed or a specific object if an object is passed,
+// not a string|object.
+
+// Using PHPStorm metadata:
+function paintColourMeta(string|object $input): string|object {}
+
+PHPSTORM_METADATA\override(paintColourMeta(), PHPSTORM_METADATA\type(0));
+
+// Using PHPDoc annotations:
+
+/**
+ * @template T of string|object
+ * @param T $input
+ * @return T
+ */
+function paintColourDoc(string|object $input): string|object {}
+$result = paintColourDoc(new BlueObject); // $result is inferred as BlueObject
+
+// ----------------------------------------------------------------------------------------------
+// Problem:
+// A function accepts a string and returns a different type based on the string passed in.
+// We want to return a specific type based on the string argument, not a union of all possible return types.
+
+// Using PHPStorm metadata:
+function getColourMeta(string $value): mixed {}
+
+PHPSTORM_META\override(getColourMeta(), PHPSTORM_META\map([
+    'red' => RedService::class,
+    'blue' => BlueObject::class,
+    'green' => GreenCollection::class,
+]));
+
+// Using PHPDoc annotations:
+
+/**
+ * @template T of array{red: RedService, blue: BlueObject, green: GreenCollection}
+ * @template K of key-of<T>
+ * @param K $value
+ * @return T[K]
+ */
+function getColourDoc(string $value): mixed {}
+$obj = getColourDoc('red'); // $obj is inferred as RedService
+
+// ----------------------------------------------------------------------------------------------
+// Problem:
+// A function returns an array with a specific set of string keys.
+// We want to provide language intelligence based on the keys and value types of the returned array.
+
+// Using PHPStorm attributes:
+
+#[\JetBrains\PhpStorm\ArrayShape(['red' => RedService::class, 'blue' => BlueObject::class, 'green' => GreenCollection::class])]
+function getColoursAttr(): array {}
+
+// Using PHPDoc annotations:
+
+/**
+ * @return array{red: RedService, blue: BlueObject, green: GreenCollection}
+ */
+function getColoursDoc(): array {}
+$green = getColoursDoc()['green']; // $green is inferred as GreenCollection
+
+// ----------------------------------------------------------------------------------------------
+// Problem:
+// A function accepts a specific set of string literals as arguments.
+// We want to provide language intelligence based on the allowed string literals
+
+// Using PHPStorm attributes:
+
+#[\JetBrains\PhpStorm\ExpectedValues(values: ['red', 'blue', 'green'])]
+function setColourAttr(string $colour): void {}
+
+// Using PHPDoc annotations:
+
+/**
+ * @param 'red'|'blue'|'green' $colour
+ * @return void
+ */
+function setColourDoc(string $colour): void {}
+setColourDoc(''); // Completion suggestions for 'red', 'blue', 'green'
+```
+
+---
+All the best - https://markposition.wordpress.com
+
+### Intelephense
+Intelephense is a high performance, cross platform PHP language server adhering to the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/).
+
+When paired with an LSP capable editor it provides an essential set of code intelligence features that give a PHP developer a productive and rich editing experience.
+
+This is proprietary software released to end users under a "freemium" model. Many of the features are provided free of charge. Access to all current and future features can be obtained by purchasing a licence key at https://intelephense.com.
+
+### Visual Studio Code
+Visual Studio Code users should install the Intelephense extension from within the extensions view or download from the [marketplace](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client).
+
+1. Disable the built-in VSCode PHP Language Features.
+
+    * Go to `Extensions`.
+    * Search for `@builtin php`
+    * Disable `PHP Language Features`. Leave `PHP Language Basics` enabled for syntax highlighting.
+
+    Note that other (3rd party) PHP extensions which provide similar functionality should also be disabled for best results.
+2. Add glob patterns for non standard php file extensions to the `files.associations` setting.
+
+    For example: `"files.associations": { "*.module": "php" }`.
+3. Optionally purchase and enter your [licence key](https://intelephense.com) by opening the command pallete
+-- `ctrl + shift + p` -- and searching for `Enter licence key`.
+
+Further configuration options are available in the `intelephense` section of settings.
+
+### Requirements
+[Node.js 12+](https://nodejs.org)
+
+### Server Installation
+```
+npm i intelephense -g
+```
+
+### Language Server Protocol (LSP) Client
+Intelephense needs an LSP compliant client to communicate with and integrate features into the editor. A list of editors and clients that support the LSP can be found at https://microsoft.github.io/language-server-protocol/implementors/tools/.
+
+Please follow the setup guide of the relevant tool. The Information below may help in configuring the client.
+
+### Run
+```
+intelephense {transport}
+```
+Where `{transport}` is one of:
+* `--node-ipc`
+* `--stdio`
+* `--socket={number}`
+* `--pipe={string}`
+
+### Initialisation Options
+```typescript
+interface InitialisationOptions {
+    //Optional absolute path to storage dir. Defaults to os.tmpdir().
+    storagePath?: string;
+
+    //Optional absolute path to a global storage dir. Defaults to os.homedir().
+    globalStoragePath?: string;
+
+    //Optional licence key or absolute path to a text file containing the licence key.
+    //{os.homedir()}/intelephense/licence.txt will also be checked by
+    //default if initializationOptions are not exposed by client.
+    licenceKey?: string;
+
+    //Optional flag to clear server state.
+    //State can also be cleared by deleting {storagePath}/intelephense
+    clearCache?: boolean;
+}
+```
+
+### Capabilities
+<details>
+	<summary>Server capabilities JSON returned from `initialize` request.</summary>
+
+```javascript
+{
+	textDocumentSync: TextDocumentSyncKind.Incremental,
+	documentSymbolProvider: true,
+	workspaceSymbolProvider: true,
+	completionProvider: {
+		triggerCharacters: [
+			//php
+			'$', '>', ':', '\\', '/',
+			//phpdoc
+			'*',
+			// html/js
+			'.', '<'
+		],
+		resolveProvider: true
+	},
+	signatureHelpProvider: {
+		triggerCharacters: ['(', ',']
+	},
+	definitionProvider: true,
+	referencesProvider: true,
+	hoverProvider: true,
+	documentFormattingProvider: true,	    //Dynamic registration if available.
+    documentRangeFormattingProvider: true,  //Dynamic registration if available.
+	documentHighlightProvider: true,
+	workspace: {
+		workspaceFolders: {
+			supported: true,
+			changeNotifications: true
+		}
+	},
+	foldingRangeProvider: true,		//With licence key only.
+	implementationProvider: true,	//With licence key only.
+	declarationProvider: true,		//With licence key only.
+	renameProvider: { 			    //With licence key only.
+		prepareProvider: true
+	},
+	typeDefinitionProvider: true,	//With licence key only.
+    selectionRangeProvider: true    //With licence key only.
+}
+```
+</details>
+
+### Configuration Options
+<details>
+	<summary>JSON schema for `workspace/configuration` request data</summary>
+
+```json
+{
+    "intelephense.compatibility.correctForBaseClassStaticUnionTypes": {
+        "type": "boolean",
+        "default": true,
+        "description": "Resolves `BaseClass|static` union types to `static` instead of `BaseClass`.",
+        "scope": "window"
+    },
+    "intelephense.compatibility.correctForArrayAccessArrayAndTraversableArrayUnionTypes": {
+        "type": "boolean",
+        "default": true,
+        "description": "Resolves `ArrayAccess` and `Traversable` implementations that are unioned with a typed array to generic syntax. eg `ArrayAccessOrTraversable|ElementType[]` => `ArrayAccessOrTraversable<mixed, ElementType>`.",
+        "scope": "window"
+    },
+    "intelephense.files.maxSize": {
+        "type": "number",
+        "default": 1000000,
+        "description": "Maximum file size in bytes.",
+        "scope": "window"
+    },
+    "intelephense.files.associations": {
+        "type": "array",
+        "default": [
+            "*.php",
+            "*.phtml"
+        ],
+        "description": "Configure glob patterns to make files available for language server features. Inherits from files.associations.",
+        "scope": "window"
+    },
+    "intelephense.files.exclude": {
+        "type": "array",
+        "items": {
+            "type": "string"
+        },
+        "default": [
+            "**/.git/**",
+            "**/.svn/**",
+            "**/.hg/**",
+            "**/CVS/**",
+            "**/.DS_Store/**",
+            "**/node_modules/**",
+            "**/bower_components/**",
+            "**/vendor/**/{Tests,tests}/**",
+            "**/.history/**",
+            "**/vendor/**/vendor/**"
+        ],
+        "description": "Configure glob patterns to exclude certain files and folders from all language server features. Inherits from files.exclude.",
+        "scope": "resource"
+    },
+    "intelephense.stubs": {
+        "type": "array",
+        "items": {
+            "type": "string",
+            "enum": [
+                "amqp",
+                "apache",
+                "apcu",
+                "bcmath",
+                "blackfire",
+                "bz2",
+                "calendar",
+                "cassandra",
+                "com_dotnet",
+                "Core",
+                "couchbase",
+                "crypto",
+                "ctype",
+                "cubrid",
+                "curl",
+                "date",
+                "dba",
+                "decimal",
+                "dom",
+                "ds",
+                "enchant",
+                "Ev",
+                "event",
+                "exif",
+                "fann",
+                "FFI",
+                "ffmpeg",
+                "fileinfo",
+                "filter",
+                "fpm",
+                "ftp",
+                "gd",
+                "gearman",
+                "geoip",
+                "geos",
+                "gettext",
+                "gmagick",
+                "gmp",
+                "gnupg",
+                "grpc",
+                "hash",
+                "http",
+                "ibm_db2",
+                "iconv",
+                "igbinary",
+                "imagick",
+                "imap",
+                "inotify",
+                "interbase",
+                "intl",
+                "json",
+                "judy",
+                "ldap",
+                "leveldb",
+                "libevent",
+                "libsodium",
+                "libxml",
+                "lua",
+                "lzf",
+                "mailparse",
+                "mapscript",
+                "mbstring",
+                "mcrypt",
+                "memcache",
+                "memcached",
+                "meminfo",
+                "meta",
+                "ming",
+                "mongo",
+                "mongodb",
+                "mosquitto-php",
+                "mqseries",
+                "msgpack",
+                "mssql",
+                "mysql",
+                "mysql_xdevapi",
+                "mysqli",
+                "ncurses",
+                "newrelic",
+                "oauth",
+                "oci8",
+                "odbc",
+                "openssl",
+                "parallel",
+                "Parle",
+                "pcntl",
+                "pcov",
+                "pcre",
+                "pdflib",
+                "PDO",
+                "pdo_ibm",
+                "pdo_mysql",
+                "pdo_pgsql",
+                "pdo_sqlite",
+                "pgsql",
+                "Phar",
+                "phpdbg",
+                "posix",
+                "pspell",
+                "pthreads",
+                "radius",
+                "rar",
+                "rdkafka",
+                "readline",
+                "recode",
+                "redis",
+                "Reflection",
+                "regex",
+                "rpminfo",
+                "rrd",
+                "SaxonC",
+                "session",
+                "shmop",
+                "SimpleXML",
+                "snmp",
+                "soap",
+                "sockets",
+                "sodium",
+                "solr",
+                "SPL",
+                "SplType",
+                "SQLite",
+                "sqlite3",
+                "sqlsrv",
+                "ssh2",
+                "standard",
+                "stats",
+                "stomp",
+                "suhosin",
+                "superglobals",
+                "svn",
+                "sybase",
+                "sync",
+                "sysvmsg",
+                "sysvsem",
+                "sysvshm",
+                "tidy",
+                "tokenizer",
+                "uopz",
+                "uv",
+                "v8js",
+                "wddx",
+                "win32service",
+                "winbinder",
+                "wincache",
+                "wordpress",
+                "xcache",
+                "xdebug",
+                "xhprof",
+                "xml",
+                "xmlreader",
+                "xmlrpc",
+                "xmlwriter",
+                "xsl",
+                "xxtea",
+                "yaf",
+                "yaml",
+                "yar",
+                "zend",
+                "Zend OPcache",
+                "ZendCache",
+                "ZendDebugger",
+                "ZendUtils",
+                "zip",
+                "zlib",
+                "zmq",
+                "zookeeper"
+            ]
+        },
+        "default": [
+            "apache",
+            "bcmath",
+            "bz2",
+            "calendar",
+            "com_dotnet",
+            "Core",
+            "ctype",
+            "curl",
+            "date",
+            "dba",
+            "dom",
+            "enchant",
+            "exif",
+            "FFI",
+            "fileinfo",
+            "filter",
+            "fpm",
+            "ftp",
+            "gd",
+            "gettext",
+            "gmp",
+            "hash",
+            "iconv",
+            "imap",
+            "intl",
+            "json",
+            "ldap",
+            "libxml",
+            "mbstring",
+            "meta",
+            "mysqli",
+            "oci8",
+            "odbc",
+            "openssl",
+            "pcntl",
+            "pcre",
+            "PDO",
+            "pdo_ibm",
+            "pdo_mysql",
+            "pdo_pgsql",
+            "pdo_sqlite",
+            "pgsql",
+            "Phar",
+            "posix",
+            "pspell",
+            "readline",
+            "Reflection",
+            "session",
+            "shmop",
+            "SimpleXML",
+            "snmp",
+            "soap",
+            "sockets",
+            "sodium",
+            "SPL",
+            "sqlite3",
+            "standard",
+            "superglobals",
+            "sysvmsg",
+            "sysvsem",
+            "sysvshm",
+            "tidy",
+            "tokenizer",
+            "xml",
+            "xmlreader",
+            "xmlrpc",
+            "xmlwriter",
+            "xsl",
+            "Zend OPcache",
+            "zip",
+            "zlib"
+        ],
+        "description": "Configure stub files for built in symbols and common extensions. The default setting includes PHP core and all bundled extensions.",
+        "scope": "window"
+    },
+    "intelephense.completion.insertUseDeclaration": {
+        "type": "boolean",
+        "default": true,
+        "description": "Use declarations will be automatically inserted for namespaced classes, traits, interfaces, functions, and constants.",
+        "scope": "window"
+    },
+    "intelephense.completion.fullyQualifyGlobalConstantsAndFunctions": {
+        "type": "boolean",
+        "default": false,
+        "description": "Global namespace constants and functions will be fully qualified (prefixed with a backslash).",
+        "scope": "window"
+    },
+    "intelephense.completion.triggerParameterHints": {
+        "type": "boolean",
+        "default": true,
+        "description": "Method and function completions will include parentheses and trigger parameter hints.",
+        "scope": "window"
+    },
+    "intelephense.completion.maxItems": {
+        "type": "number",
+        "default": 100,
+        "description": "The maximum number of completion items returned per request.",
+        "scope": "window"
+    },
+    "intelephense.format.enable": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enables formatting.",
+        "scope": "window"
+    },
+    "intelephense.format.braces": {
+        "type": "string",
+        "default": "psr12",
+        "enum": [
+            "psr12",
+            "allman",
+            "k&r"
+        ],
+        "enumDescriptions": [
+            "PHP-FIG PSR-2 and PSR-12 style. A mix of Allman and K&R",
+            "Allman. Opening brace on the next line.",
+            "K&R (1TBS). Opening brace on the same line."
+        ],
+        "description": "Controls formatting style of braces",
+        "scope": "window"
+    },
+    "intelephense.environment.documentRoot": {
+        "type": "string",
+        "description": "The directory of the entry point to the application (index.php). Defaults to the first workspace folder. Used for resolving script inclusion.",
+        "scope": "window"
+    },
+    "intelephense.environment.includePaths": {
+        "type": "array",
+        "items": {
+            "type": "string"
+        },
+        "description": "The include paths (as individual path items) as defined in the include_path ini setting. Used for resolving script inclusion.",
+        "scope": "window"
+    },
+    "intelephense.environment.phpVersion": {
+        "type": "string",
+        "default": "7.4.0",
+        "description": "A semver compatible string that represents the target PHP version. Used for providing version appropriate suggestions and diagnostics. PHP 5.3.0 and greater supported.",
+        "scope": "window"
+    },
+    "intelephense.environment.shortOpenTag": {
+        "type": "boolean",
+        "default": false,
+        "description": "When enabled '<?' will be parsed as a PHP open tag. Defaults to false.",
+        "scope": "window"
+    },
+    "intelephense.diagnostics.enable": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enables diagnostics.",
+        "scope": "window"
+    },
+    "intelephense.diagnostics.run": {
+        "type": "string",
+        "default": "onType",
+        "enum": [
+            "onType",
+            "onSave"
+        ],
+        "enumDescriptions": [
+            "Diagnostics will run as changes are made to the document.",
+            "Diagnostics will run when the document is saved."
+        ],
+        "description": "Controls when diagnostics are run.",
+        "scope": "window"
+    },
+    "intelephense.diagnostics.embeddedLanguages": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enables diagnostics in embedded languages.",
+        "scope": "window"
+    },
+    "intelephense.diagnostics.undefinedSymbols": {
+        "type": "boolean",
+        "default": true,
+        "description": "DEPRECATED. Use the setting for each symbol category.",
+        "scope": "window"
+    },
+    "intelephense.diagnostics.undefinedVariables": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enables undefined variable diagnostics.",
+        "scope": "window"
+    },
+    "intelephense.diagnostics.undefinedTypes": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enables undefined class, interface and trait diagnostics.",
+        "scope": "window"
+    },
+    "intelephense.diagnostics.undefinedFunctions": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enables undefined function diagnostics.",
+        "scope": "window"
+    },
+    "intelephense.diagnostics.undefinedConstants": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enables undefined constant diagnostics.",
+        "scope": "window"
+    },
+    "intelephense.diagnostics.undefinedClassConstants": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enables undefined class constant diagnostics.",
+        "scope": "window"
+    },
+    "intelephense.diagnostics.undefinedMethods": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enables undefined method diagnostics.",
+        "scope": "window"
+    },
+    "intelephense.diagnostics.undefinedProperties": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enables undefined static property diagnostics.",
+        "scope": "window"
+    },
+    "intelephense.diagnostics.unusedSymbols": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enables unused variable, private member, and import diagnostics.",
+        "scope": "window"
+    },
+    "intelephense.diagnostics.unexpectedTokens": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enables unexpected token diagnostics.",
+        "scope": "window"
+    },
+    "intelephense.diagnostics.duplicateSymbols": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enables duplicate symbol diagnostics.",
+        "scope": "window"
+    },
+    "intelephense.diagnostics.argumentCount": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enables argument count diagnostics.",
+        "scope": "window"
+    },
+    "intelephense.diagnostics.typeErrors": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enables diagnostics on type compatibility of arguments, property assignments, and return statements where types have been declared.",
+        "scope": "window"
+    },
+    "intelephense.diagnostics.deprecated": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enables deprecated diagnostics.",
+        "scope": "window"
+    },
+    "intelephense.diagnostics.languageConstraints": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enables reporting of various language constraint errors.",
+        "scope": "window"
+    },
+    "intelephense.diagnostics.implementationErrors": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enables reporting of problems associated with method and class implementations. For example, unimplemented methods or method signature incompatibilities.",
+        "scope": "window"
+    },
+    "intelephense.runtime": {
+        "type": "string",
+        "description": "Path to a Node.js executable. Use this if you wish to use a different version of Node.js. Defaults to Node.js shipped with VSCode.",
+        "scope": "machine"
+    },
+    "intelephense.maxMemory": {
+        "type": "number",
+        "description": "Maximum memory (in MB) that the server should use. On some systems this may only have effect when runtime has been set. Minimum 256.",
+        "scope": "window"
+    },
+    "intelephense.licenceKey": {
+        "type": "string",
+        "description": "DEPRECATED. Don't use this. Go to command palette and search for enter licence key.",
+        "scope": "application"
+    },
+    "intelephense.telemetry.enabled": {
+        "type": "boolean",
+        "description": "Anonymous usage and crash data will be sent to Azure Application Insights. Inherits from telemetry.enableTelemetry.",
+        "scope": "window",
+        "default": null
+    },
+    "intelephense.rename.exclude": {
+        "type": "array",
+        "items": {
+            "type": "string"
+        },
+        "default": [
+            "**/vendor/**"
+        ],
+        "description": "Glob patterns matching files and folders that should be excluded when renaming symbols. Rename operation will fail if the symbol definition is found in the excluded files/folders.",
+        "scope": "resource"
+    },
+    "intelephense.references.exclude": {
+        "type": "array",
+        "items": {
+            "type": "string"
+        },
+        "default": [
+            "**/vendor/**"
+        ],
+        "description": "Glob patterns matching files and folders that should be excluded from references search.",
+        "scope": "resource"
+    },
+    "intelephense.phpdoc.returnVoid": {
+        "type": "boolean",
+        "default": true,
+        "description": "Adds `@return void` to auto generated phpdoc for definitions that do not return a value.",
+        "scope": "window"
+    },
+    "intelephense.phpdoc.textFormat": {
+        "type": "string",
+        "enum": [
+            "snippet",
+            "text"
+        ],
+        "default": "snippet",
+        "enumDescriptions": [
+            "Auto generated phpdoc is returned in snippet format. Templates are partially resolved by evaluating phpdoc specific variables only.",
+            "Auto generated phpdoc is returned as plain text. Templates are resolved completely by the server."
+        ],
+        "scope": "window"
+    },
+    "intelephense.phpdoc.classTemplate": {
+        "type": "object",
+        "properties": {
+            "summary": {
+                "type": "string",
+                "description": "A snippet string representing a phpdoc summary."
+            },
+            "description": {
+                "type": "string",
+                "description": "A snippet string representing a phpdoc description."
+            },
+            "tags": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                },
+                "description": "An array of snippet strings representing phpdoc tags."
+            }
+        },
+        "default": {
+            "summary": "$1",
+            "tags": [
+                "@package ${1:$SYMBOL_NAMESPACE}"
+            ]
+        },
+        "description": "An object that describes the format of generated class/interface/trait phpdoc. The following snippet variables are available: SYMBOL_NAME; SYMBOL_KIND; SYMBOL_TYPE; SYMBOL_NAMESPACE.",
+        "scope": "window"
+    },
+    "intelephense.phpdoc.propertyTemplate": {
+        "type": "object",
+        "properties": {
+            "summary": {
+                "type": "string",
+                "description": "A snippet string representing a phpdoc summary."
+            },
+            "description": {
+                "type": "string",
+                "description": "A snippet string representing a phpdoc description."
+            },
+            "tags": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                },
+                "description": "An array of snippet strings representing phpdoc tags."
+            }
+        },
+        "default": {
+            "summary": "$1",
+            "tags": [
+                "@var ${1:$SYMBOL_TYPE}"
+            ]
+        },
+        "description": "An object that describes the format of generated property phpdoc. The following snippet variables are available: SYMBOL_NAME; SYMBOL_KIND; SYMBOL_TYPE; SYMBOL_NAMESPACE.",
+        "scope": "window"
+    },
+    "intelephense.phpdoc.functionTemplate": {
+        "type": "object",
+        "properties": {
+            "summary": {
+                "type": "string",
+                "description": "A snippet string representing a phpdoc summary."
+            },
+            "description": {
+                "type": "string",
+                "description": "A snippet string representing a phpdoc description."
+            },
+            "tags": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                },
+                "description": "An array of snippet strings representing phpdoc tags."
+            }
+        },
+        "default": {
+            "summary": "$1",
+            "tags": [
+                "@param ${1:$SYMBOL_TYPE} $SYMBOL_NAME $2",
+                "@return ${1:$SYMBOL_TYPE} $2",
+                "@throws ${1:$SYMBOL_TYPE} $2"
+            ]
+        },
+        "description": "An object that describes the format of generated function/method phpdoc. The following snippet variables are available: SYMBOL_NAME; SYMBOL_KIND; SYMBOL_TYPE; SYMBOL_NAMESPACE.",
+        "scope": "window"
+    },
+    "intelephense.phpdoc.useFullyQualifiedNames": {
+        "type": "boolean",
+        "default": false,
+        "description": "Fully qualified names will be used for types when true. When false short type names will be used and imported where appropriate. Overrides intelephense.completion.insertUseDeclaration.",
+        "scope": "window"
+    }
+}
+```
+</details>
+
+### Workspace
+For Intelephense to work effectively it must have access to the definitions of the symbols used in your code. It does this by scanning the php files found in the workspace. Sometimes PHP files may have a non standard extension. It is important to associate these extensions with PHP using the `intelephense.files.associations` configuration option.
+
+<details>
+<summary>intelephense.files.associations</summary>
+
+```json
+{
+    "type": "array",
+    "default": [
+        "*.php",
+        "*.phtml"
+    ],
+    "description": "Configure glob patterns to make files available language server features. Inherits from files.associations.",
+    "scope": "window"
+}
+```
+</details>
+
+You may have large files in your workspace that by default Intelephense will skip. You can configure the maximum file size with the `intelephense.files.maxSize` option.
+
+<details>
+<summary>intelephense.files.maxSize</summary>
+
+```json
+{
+    "type": "number",
+    "default": 1000000,
+    "description": "Maximum file size in bytes.",
+    "scope": "window"
+}
+```
+
+</details>
+
+There may be files you do not want to indexed by Intelephense. It is important in large projects to exclude unnecessary files to avoid polluting suggestion lists and degrading performance.
+
+<details>
+<summary>intelephense.files.exclude</summary>
+
+```json
+{
+    "type": "array",
+    "items": {
+        "type": "string"
+    },
+    "default": [
+        "**/.git/**",
+        "**/.svn/**",
+        "**/.hg/**",
+        "**/CVS/**",
+        "**/.DS_Store/**",
+        "**/node_modules/**",
+        "**/bower_components/**",
+        "**/vendor/**/{Tests,tests}/**",
+        "**/.history/**",
+        "**/vendor/**/vendor/**"
+    ],
+    "description": "Configure glob patterns to exclude certain files and folders fro    all language server features. Inherits from files.exclude.",
+    "scope": "resource"
+}
+```
+
+</details>
+
+### Environment
+Sometimes symbol definitions are not in your workspace but are core PHP symbols or defined in an extension. For this reason Intelephense includes stub definitions for many of these. Extensions that are bundled with PHP are enabled by default. You can configure what other symbols are available in your environment with the `intelephense.stubs` option.
+
+<details>
+<summary>intelephense.stubs</summary
+
+```json
+{
+    "type": "array",
+    "items": {
+        "type": "string",
+        "enum": [
+            "amqp",
+            "apache",
+            "apcu",
+            "bcmath",
+            "blackfire",
+            "bz2",
+            "calendar",
+            "cassandra",
+            "com_dotnet",
+            "Core",
+            "couchbase",
+            "crypto",
+            "ctype",
+            "cubrid",
+            "curl",
+            "date",
+            "dba",
+            "decimal",
+            "dom",
+            "ds",
+            "enchant",
+            "Ev",
+            "event",
+            "exif",
+            "fann",
+            "FFI",
+            "ffmpeg",
+            "fileinfo",
+            "filter",
+            "fpm",
+            "ftp",
+            "gd",
+            "gearman",
+            "geoip",
+            "geos",
+            "gettext",
+            "gmagick",
+            "gmp",
+            "gnupg",
+            "grpc",
+            "hash",
+            "http",
+            "ibm_db2",
+            "iconv",
+            "igbinary",
+            "imagick",
+            "imap",
+            "inotify",
+            "interbase",
+            "intl",
+            "json",
+            "judy",
+            "ldap",
+            "leveldb",
+            "libevent",
+            "libsodium",
+            "libxml",
+            "lua",
+            "lzf",
+            "mailparse",
+            "mapscript",
+            "mbstring",
+            "mcrypt",
+            "memcache",
+            "memcached",
+            "meminfo",
+            "meta",
+            "ming",
+            "mongo",
+            "mongodb",
+            "mosquitto-php",
+            "mqseries",
+            "msgpack",
+            "mssql",
+            "mysql",
+            "mysql_xdevapi",
+            "mysqli",
+            "ncurses",
+            "newrelic",
+            "oauth",
+            "oci8",
+            "odbc",
+            "openssl",
+            "parallel",
+            "Parle",
+            "pcntl",
+            "pcov",
+            "pcre",
+            "pdflib",
+            "PDO",
+            "pdo_ibm",
+            "pdo_mysql",
+            "pdo_pgsql",
+            "pdo_sqlite",
+            "pgsql",
+            "Phar",
+            "phpdbg",
+            "posix",
+            "pspell",
+            "pthreads",
+            "radius",
+            "rar",
+            "rdkafka",
+            "readline",
+            "recode",
+            "redis",
+            "Reflection",
+            "regex",
+            "rpminfo",
+            "rrd",
+            "SaxonC",
+            "session",
+            "shmop",
+            "SimpleXML",
+            "snmp",
+            "soap",
+            "sockets",
+            "sodium",
+            "solr",
+            "SPL",
+            "SplType",
+            "SQLite",
+            "sqlite3",
+            "sqlsrv",
+            "ssh2",
+            "standard",
+            "stats",
+            "stomp",
+            "suhosin",
+            "superglobals",
+            "svn",
+            "sybase",
+            "sync",
+            "sysvmsg",
+            "sysvsem",
+            "sysvshm",
+            "tidy",
+            "tokenizer",
+            "uopz",
+            "uv",
+            "v8js",
+            "wddx",
+            "win32service",
+            "winbinder",
+            "wincache",
+            "wordpress",
+            "xcache",
+            "xdebug",
+            "xhprof",
+            "xml",
+            "xmlreader",
+            "xmlrpc",
+            "xmlwriter",
+            "xsl",
+            "xxtea",
+            "yaf",
+            "yaml",
+            "yar",
+            "zend",
+            "Zend OPcache",
+            "ZendCache",
+            "ZendDebugger",
+            "ZendUtils",
+            "zip",
+            "zlib",
+            "zmq",
+            "zookeeper"
+        ]
+    },
+    "default": [
+        "apache",
+        "bcmath",
+        "bz2",
+        "calendar",
+        "com_dotnet",
+        "Core",
+        "ctype",
+        "curl",
+        "date",
+        "dba",
+        "dom",
+        "enchant",
+        "exif",
+        "FFI",
+        "fileinfo",
+        "filter",
+        "fpm",
+        "ftp",
+        "gd",
+        "gettext",
+        "gmp",
+        "hash",
+        "iconv",
+        "imap",
+        "intl",
+        "json",
+        "ldap",
+        "libxml",
+        "mbstring",
+        "meta",
+        "mysqli",
+        "oci8",
+        "odbc",
+        "openssl",
+        "pcntl",
+        "pcre",
+        "PDO",
+        "pdo_ibm",
+        "pdo_mysql",
+        "pdo_pgsql",
+        "pdo_sqlite",
+        "pgsql",
+        "Phar",
+        "posix",
+        "pspell",
+        "readline",
+        "Reflection",
+        "session",
+        "shmop",
+        "SimpleXML",
+        "snmp",
+        "soap",
+        "sockets",
+        "sodium",
+        "SPL",
+        "sqlite3",
+        "standard",
+        "superglobals",
+        "sysvmsg",
+        "sysvsem",
+        "sysvshm",
+        "tidy",
+        "tokenizer",
+        "xml",
+        "xmlreader",
+        "xmlrpc",
+        "xmlwriter",
+        "xsl",
+        "Zend OPcache",
+        "zip",
+        "zlib"
+    ],
+    "description": "Configure stub files for built in symbols and common extensions.The default setting includes PHP core and all bundled extensions.",
+    "scope": "window"
+}
+```
+</details>
+
+Other configuration settings that allow you to further define the PHP environment include:
+
+<details>
+<summary>intelephense.environment.documentRoot</summary>
+
+```json
+{
+    "type": "string",
+    "description": "The directory of the entry point to the application (index.php).Defaults to the first workspace folder. Used for resolving script inclusion.",
+    "scope": "window"
+}
+```
+</details>
+
+<details>
+<summary>intelephense.environment.includePaths</summary>
+
+```json
+{
+    "type": "array",
+    "items": {
+        "type": "string"
+    },
+    "description": "The include paths (as individual path items) as defined in theinclude_path ini setting. Used for resolving script inclusion.",
+    "scope": "window"
+}
+```
+
+</details>
+
+<details>
+<summary>intelephense.environment.phpVersion</summary>
+
+```json
+{
+    "type": "string",
+    "default": "7.4.0",
+    "description": "A semver compatible string that represents the target PHP version.Used for providing version appropriate suggestions and diagnostics. PHP 5.3.0 andgreater supported.",
+    "scope": "window"
+}
+```
+
+</details>
+
+<details>
+<summary>intelephense.environment.shortOpenTag</summary>
+
+```json
+{
+    "type": "boolean",
+    "default": false,
+    "description": "When enabled '<?' will be parsed as a PHP open tag. Defaults tofalse.",
+    "scope": "window"
+}
+```
+
+</details>
+
+### Type Declarations and Annotations
+You will get more out of Intelephense if you provide type declarations and/or type annotations. Where possible types will be inferred but there are places where it is difficult or impossible to determine the type. Class properties and function and method parameters are examples where this is very important. Providing type declarations and/or annotations may also improve performance as Intelephense does not need to dig through too much code to determine types. When a type cannot be determined for a property, variable, or parameter then it is assigned the `mixed` type.
+
+```php
+<?php
+class MyClass
+{
+    public MyOtherClass $withTypeDeclaration;
+
+    /** @var MyOtherClass **/
+    public $withTypeAnnotation
+
+    public function withTypeDeclarations(string $param): int { }
+
+    /**
+     * @param string $param
+     * @return int
+     */
+    public function withTypeAnnotations($param) { }
+}
+```
+
+Variables can be annotated with a type if necessary. The annotation immediately preceeding an assignment overrides the assigned type. Subsequent assignments may change the type again.
+
+```php
+<?php
+/** @var callable $var */
+$var = 'is_numeric'; //$var is callable instead of string
+$var = 1; //$var is now an int
+
+```
+
+In addition to the standard PHPDoc type annotations Intelephense also supports generic type syntax for `iterable` and `ArrayAccess` types. For example:
+
+* `Generator<KeyType, ElementType>`
+* `ArrayAccess<string, ElementType>`
+* `array<int, ElementType>`
+
+Union (`TypeA|TypeB`) and intersection (`TypeA&TypeB`) types are supported. Where both a type declaration and a type annotation is provided then the resulting type will be the intersection of the two. Types will be reduced where possible using the following rules.
+
+* `SuperType|SubType` => `SuperType`
+* `SuperType&SubType` => `SubType`
+
+Sometimes there may be type annotations in libraries or project files that do not accurately reflect the desired type. Intelephense offers compatibility settings to handle some common cases.
+
+<details>
+<summary>intelephense.compatibility.correctForBaseClassStaticUnionTypes</summary>
+
+```json
+{
+    "type": "boolean",
+    "default": true,
+    "description": "Resolves `BaseClass|static` union types to `static` instead of `BaseClass`.",
+    "scope": "window"
+}
+```
+
+</details>
+
+<details>
+<summary>intelephense.compatibility.correctForArrayAccessArrayAndTraversableArrayUnionTypes</summary>
+
+```json
+{
+    "type": "boolean",
+    "default": true,
+    "description": "Resolves `ArrayAccess` and `Traversable` implementations that are unionedwith a typed array to generic syntax. eg `ArrayAccessOrTraversable|ElementType[]` =>`ArrayAccessOrTraversable<mixed, ElementType>`.",
+    "scope": "window"
+}
+```
+
+</details>
+
+You may also see several non standard types in hovers.
+
+* `unset` - the type given to variables that are undefined or `unset()`.
+* `never` - the type returned from a function that does not terminate normally (eg `die()`) or that represents an impossibility (added in PHP 8.1).
+
+### Framework Support
+Intelephense aims to support all frameworks but does not implement framework specific solutions. Some frameworks are coded in a way that make it difficult to analyse. This may be because of lack of type declarations/annotations; heavy use of `__get`, `__set`, `__call`, `__callStatic` magic methods; or dynamic generation of class aliases at runtime.
+
+Packages can be found online that aim to workaround these issues by providing stubs of symbols to help static analysers like Intelephense understand the code.
+
+* Laravel - [barryvdh/laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper)
+
+### Overview
+https://github.com/bmewburn/vscode-intelephense/issues
+
+ben@intelephense.com
+
+---
+
+## DOCUMENT: neural_sync_docs.md
+**Source:** icloud-sim://neural_sync_docs.md
+**Ingested At:** 2026-05-25T02:36:28.390Z
+
+### Phase 12: Global Neural Synchronization
+Global Neural Synchronization (GNS) is the final milestone in the Antigravity Evolution Roadmap. It enables real-time, zero-latency state convergence across all distributed neural nodes in the ecosystem.
+
+### Core Mechanisms
+- **State Entanglement:** Real-time synchronization of agent memory across cloud providers.
+- **Conflict Resolution:** Autonomous resolution of state divergence using weighted consensus.
+- **Omni-Presence:** Seamless agent migration between environments without context loss.
+
+---
+
+## DOCUMENT: test_knowledge.md
+**Source:** icloud-sim://test_knowledge.md
+**Ingested At:** 2026-05-25T02:36:28.447Z
+
+### New Knowledge from iCloud
+This is some test knowledge.
+
+---
+
+## DOCUMENT: Understanding bidding basics - Google Ads Help
+**Source:** https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU
+**Ingested At:** 2026-05-24T02:51:17.355Z
+
+### Introduction
+- [Google Ads Help](/google-ads)
+- [Help Center](/google-ads/supporthub?hl=en)
+- [Community](/google-ads/community?hl=en&help_center_link=CL6NlgESHFVuZGVyc3RhbmRpbmcgYmlkZGluZyBiYXNpY3M)
+- [Announcements](/google-ads/announcements/9048695)
+- [Sign in](https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=http://support.google.com/google-ads/answer/2459326%3Fhl%3Den%26ref_topic%3D10289453%26sjid%3D5167206403107665975-EU&ec=GAZAdQ)
+- [Google Help](/)
+- [Help Center](/google-ads/supporthub?hl=en)
+- Help Center
+- [Start advertising](/google-ads/topic/10286612?hl=en&ref_topic=3181080,3126923,)
+- Start advertising
+- [Campaigns](/google-ads/topic/10287124?hl=en&ref_topic=3181080,3126923,)
+- Campaigns
+- [Explore features](/google-ads/topic/10286611?hl=en&ref_topic=3181080,3126923,)
+- Explore features
+- [Optimize performance](/google-ads/topic/10287125?hl=en&ref_topic=3181080,3126923,)
+- Optimize performance
+- [Account & billing](/google-ads/topic/10287126?hl=en&ref_topic=3181080,3126923,)
+- Account & billing
+- [Fix issues](/google-ads/topic/10286468?hl=en&ref_topic=3181080,3126923,)
+- Fix issues
+- [Google Partners](/google-ads/topic/9028736?hl=en&ref_topic=3181080,3126923,)
+- Google Partners
+- [Community](/google-ads/community?hl=en&help_center_link=CL6NlgESHFVuZGVyc3RhbmRpbmcgYmlkZGluZyBiYXNpY3M)
+- Community
+- [Google Ads](https://ads.google.com/home/?subid=ww-ww-et-g-aw-a-helpcenter_1!02#?modal_active=none)
+- Google Ads
+- [Privacy Policy](//www.google.com/intl/en/privacy.html)
+- Privacy Policy
+- [Terms of Service](https://www.google.com/accounts/TOS)
+- Terms of Service
+- Submit feedback
+- [Help Center](/google-ads/supporthub?hl=en)
+- [Community](/google-ads/community?hl=en&help_center_link=CL6NlgESHFVuZGVyc3RhbmRpbmcgYmlkZGluZyBiYXNpY3M)
+- [Announcements](/google-ads/announcements/9048695)
+- [Google Ads](https://ads.google.com/home/?subid=ww-ww-et-g-aw-a-helpcenter_1!02#?modal_active=none)
+- [Your guide to Google Ads](/google-ads/topic/6146239?hl=en&ref_topic=10286612,3181080,3126923,)
+- [8 steps to prepare your campaign for success](/google-ads/topic/10554989?hl=en&ref_topic=10286612,3181080,3126923,)
+- [Choose the right campaign type](/google-ads/topic/10555253?hl=en&ref_topic=10286612,3181080,3126923,)
+- [Determine your advertising goals](/google-ads/topic/10550578?hl=en&ref_topic=10286612,3181080,3126923,)
+- [How Google Ads can work for your industry](/google-ads/topic/10560736?hl=en&ref_topic=10286612,3181080,3126923,)
+- [Google Ads specs: ad formats, sizes, and best practices](/google-ads/topic/14121862?hl=en&ref_topic=10286612,3181080,3126923,)
+- [More advertising tools](/google-ads/topic/10543915?hl=en&ref_topic=10286612,3181080,3126923,)
+- [Google Ads basics](/google-ads/topic/3119115?hl=en&ref_topic=10286612,3181080,3126923,)
+- [Google Ads privacy](/google-ads/topic/11337105?hl=en&ref_topic=10286612,3181080,3126923,)
+- [Glossary](/google-ads/topic/3121777?hl=en&ref_topic=10286612,3181080,3126923,)
+- [Performance Max](/google-ads/topic/11335698?hl=en&ref_topic=10287124,3181080,3126923,)
+- [AI Max for Search campaigns](/google-ads/topic/15847196?hl=en&ref_topic=10287124,3181080,3126923,)
+- [AI Max for Shopping campaigns](/google-ads/topic/17090059?hl=en&ref_topic=10287124,3181080,3126923,)
+- [Search campaigns](/google-ads/topic/10022492?hl=en&ref_topic=10287124,3181080,3126923,)
+- [Display campaigns](/google-ads/topic/10016807?hl=en&ref_topic=10287124,3181080,3126923,)
+- [Smart Campaigns](/google-ads/topic/10710930?hl=en&ref_topic=10287124,3181080,3126923,)
+- [App campaigns](/google-ads/topic/10011871?hl=en&ref_topic=10287124,3181080,3126923,)
+- [Shopping ads](/google-ads/topic/10011319?hl=en&ref_topic=10287124,3181080,3126923,)
+- [Video campaigns](/google-ads/topic/10513839?hl=en&ref_topic=10287124,3181080,3126923,)
+- [Hotel campaigns](/google-ads/topic/10021188?hl=en&ref_topic=10287124,3181080,3126923,)
+- [Demand Gen campaigns](/google-ads/topic/13689668?hl=en&ref_topic=10287124,3181080,3126923,)
+- [Call campaigns](/google-ads/topic/10285738?hl=en&ref_topic=10287124,3181080,3126923,)
+- [Things to do](/google-ads/topic/12852463?hl=en&ref_topic=10287124,3181080,3126923,)
+- [Events ticketing](/google-ads/topic/16999118?hl=en&ref_topic=10287124,3181080,3126923,)
+- [Ads, assets & landing pages](/google-ads/topic/10272277?hl=en&ref_topic=10286611,3181080,3126923,)
+- [Ad groups](/google-ads/topic/10283838?hl=en&ref_topic=10286611,3181080,3126923,)
+- [Keywords](/google-ads/topic/10546785?hl=en&ref_topic=10286611,3181080,3126923,)
+- [Bidding](/google-ads/topic/10286469?hl=en&ref_topic=10286611,3181080,3126923,)
+- [Targeting](/google-ads/topic/10543621?hl=en&ref_topic=10286611,3181080,3126923,)
+- [Measure results](/google-ads/topic/10546485?hl=en&ref_topic=10286611,3181080,3126923,)
+- [Bulk uploads & edits](/google-ads/topic/10703532?hl=en&ref_topic=10286611,3181080,3126923,)
+- [Campaign settings](/google-ads/topic/3119078?hl=en&ref_topic=10286611,3181080,3126923,)
+- [12 tips to advertising with Google Ads](/google-ads/topic/10560748?hl=en&ref_topic=10287125,3181080,3126923,)
+- [Google Ads Best Practices](/google-ads/topic/10550430?hl=en&ref_topic=10287125,3181080,3126923,)
+- [Optimization features](/google-ads/topic/2795276?hl=en&ref_topic=10287125,3181080,3126923,)
+- [Create effective Search ads](/google-ads/topic/6167075?hl=en&ref_topic=10287125,3181080,3126923,)
+- [Generative AI tools in Google Ads](/google-ads/topic/16424071?hl=en&ref_topic=10287125,3181080,3126923,)
+- [Improve with AI-powered Search](/google-ads/topic/12301558?hl=en&ref_topic=10287125,3181080,3126923,)
+- [Finding success with Smart Bidding](/google-ads/topic/6167089?hl=en&ref_topic=10287125,3181080,3126923,)
+- [Measure results](/google-ads/topic/3119141?hl=en&ref_topic=10287125,3181080,3126923,)
+- [Optimize performance with App Connect](/google-ads/topic/12472817?hl=en&ref_topic=10287125,3181080,3126923,)
+- [Google Ads training on Skillshop](/google-ads/topic/7540379?hl=en&ref_topic=10287125,3181080,3126923,)
+- [The Google Ads mobile app](/google-ads/topic/4600287?hl=en&ref_topic=10287125,3181080,3126923,)
+- [Billing](/google-ads/topic/10552214?hl=en&ref_topic=10287126,3181080,3126923,)
+- [Account settings](/google-ads/topic/10552609?hl=en&ref_topic=10287126,3181080,3126923,)
+- [Account access](/google-ads/topic/10551601?hl=en&ref_topic=10287126,3181080,3126923,)
+- [Manager accounts](/google-ads/topic/10551905?hl=en&ref_topic=10287126,3181080,3126923,)
+- [Account security and safety](/google-ads/topic/3121774?hl=en&ref_topic=10287126,3181080,3126923,)
+- [Cancel or reactivate your account](/google-ads/topic/3121946?hl=en&ref_topic=10287126,3181080,3126923,)
+- [Working with client accounts](/google-ads/topic/7554359?hl=en&ref_topic=10287126,3181080,3126923,)
+- [Useful tools](/google-ads/topic/6031980?hl=en&ref_topic=10287126,3181080,3126923,)
+- [Ad disapprovals and reviews](/google-ads/topic/10555950?hl=en&ref_topic=10286468,3181080,3126923,)
+- [Billing & payments](/google-ads/topic/10552611?hl=en&ref_topic=10286468,3181080,3126923,)
+- [Policy issues](/google-ads/topic/10554731?hl=en&ref_topic=10286468,3181080,3126923,)
+- [Performance issues](/google-ads/topic/12265337?hl=en&ref_topic=10286468,3181080,3126923,)
+- [Account access issues](/google-ads/topic/10555493?hl=en&ref_topic=10286468,3181080,3126923,)
+- [Reporting issues](/google-ads/topic/10546486?hl=en&ref_topic=10286468,3181080,3126923,)
+- [Request implementation support for Google Ads and YouTube Reserve](/google-ads/troubleshooter/11489852?hl=en&ref_topic=10286468,3181080,3126923,)
+- [Google Ads API](/google-ads/topic/14428231?hl=en&ref_topic=10286468,3181080,3126923,)
+- [Google Partners Program](/google-ads/topic/9800548?hl=en&ref_topic=9028736,3181080,3126923,)
+- [Help Center Topics](/google-ads/topic/3181080?hl=en&ref_topic=3126923)
+- [Campaigns](/google-ads/topic/10287124?hl=en&ref_topic=3181080)
+- [Display campaigns](/google-ads/topic/10016807?hl=en&ref_topic=10287124)
+- [Setup & management](/google-ads/topic/10289172?hl=en&ref_topic=10016807)
+- [Bidding](/google-ads/topic/10289453?hl=en&ref_topic=10289172)
+- [Understanding bidding basics](/google-ads/answer/2459326)
+
+### Understanding bidding basics
+Google Ads gives you several ways to bid for your ads, depending on what matters most to you and your business. Most advertisers focus on clicks, impressions, conversions, or views (for video ads).
+
+Now that you're advertising on Google Ads, you probably have a clear goal in mind for your ads. If you sell coffee, maybe you want to get more people to visit your shop. If you run a hiking club, maybe you're aiming to get more people to sign up for your newsletter. And so on.
+
+Knowing what you want your ads to do will help you decide how to bid.
+
+Google Ads runs an auction every single time it has an ad space available -- on a search result, or on a blog, news site, or some other page. Each auction decides which ads will show at that moment in that space. Your bid puts you in the auction.
+
+You can focus on different things when you bid: clicks, impressions, conversions, views, or engagements, depending on your campaign type. Which would you choose? Let's look at these more closely.
+
+### Focus on clicks (for Search and Display ads)
+If your main goal is to have people visit your website, then clicks are a good place to start. Using cost-per-click (CPC) bidding, you'll pay only when someone actually clicks on your ad and comes to your site.
+
+Example:
+
+If you run a hiking club in Vermont, you might want to bid a lot for direct-hit keywords like "Vermont hiking" and a different amount for broader keywords like "hiking maps."
+
+### Focus on impressions
+If your campaign is targeting just the Search Network and your main goal is to increase your brand visibility, consider using Target Impression Share. With this bidding strategy, Google Ads will automatically set your bids to help achieve your Impression Share goal. For example, if you choose an Impression Share target of 65% on the absolute top of the page, Google Ads will automatically set your bids to help show your ads on the absolute top of the page 65% of the total possible amount of times they could show.
+
+If your campaign is targeting just the Display Network, instead of paying by the click, you can pay by the number of times your ad is visibly shown. That's called cost-per-thousand viewable impressions (vCPM) bidding, since you pay for every 1,000 times your ad appears and is viewable. If you're mostly interested in getting your name or logo in front of lots of people, this is a smart option. Learn how ads are measured as viewable.
+
+- [Learn how ads are measured as viewable](https://support.google.com/google-ads/answer/6085471)
+Viewable CPM bidding, like CPC manual bidding, lets you set bids at the ad group level, or for individual placements.
+
+### Focus on conversions (for Search and Display ads)
+With this advanced bidding method, you tell Google Ads the amount you're willing to pay for a conversion, or cost per action (CPA). A conversion (sometimes called an acquisition) is a particular action you want to happen on your website. Often that's a sale, but it could be an email sign-up or some other action. You pay for each engaged view and click on Display ads, but Google Ads will automatically set your bids for you to try to get you as many conversions as possible at the cost per action you specified.
+
+To use CPA bidding you must have conversion tracking turned on, among other things, so CPA bidding is suited for intermediate and advanced Google Ads users.
+
+- [conversion tracking](https://support.google.com/google-ads/bin/answer.py?answer=6308)
+
+### Focus on views (for video ads only)
+If your main goal is to evaluate how engaged viewers are with your video content, where they choose to watch your videos, and when they drop off from watching your content, you'll use cost-per-view (CPV) bidding. With CPV bidding, you'll pay for video views and other video interactions, such as clicks on the calls-to-action overlay (CTAs), cards, and companion banners.
+
+- [cost-per-view (CPV) bidding](https://support.google.com/google-ads/answer/2472735)
+To set a target CPV bid, you enter the average price you want to pay for a view while setting up your Video views campaign. Your bid is called your target CPV bid, or tCPV. This bid applies at the campaign level.
+
+### Related links
+- [About Target CPA bidding](https://support.google.com/google-ads/answer/6268632)
+- [Determine a bid strategy based on your goals](https://support.google.com/google-ads/answer/2472725)
+
+### Was this helpful?
+
+
+### Need more help?
+
+
+### Try these next steps:
+- [Post to the help community Get answers from community members](/google-ads/community?hl=en&help_center_link=CL6NlgESHFVuZGVyc3RhbmRpbmcgYmlkZGluZyBiYXNpY3M)
+- [Contact us Tell us more and we’ll help you get there](/google-ads/gethelp)
+
+### Bidding
+- [Bidding](/google-ads/topic/10289453?hl=en&ref_topic=10289172)
+- [About the Display Network ad auction](/google-ads/answer/2996564?hl=en&ref_topic=10289453)
+- [About bidding features in Display campaigns](/google-ads/answer/2947304?hl=en&ref_topic=10289453)
+- [Choose a bid for your Display Network campaign](/google-ads/answer/2454058?hl=en&ref_topic=10289453)
+- [Achieve your advertising goals today!](https://adsonair.withgoogle.com/pmaxstellar)
+Attend our Performance Max Masterclass, a livestream workshop session bringing together industry and Google ads PMax experts.
+
+Register now
+
+- [Register now](https://adsonair.withgoogle.com/pmaxstellar)
+- [Privacy Policy](//www.google.com/intl/en/privacy.html)
+- [Terms of Service](https://www.google.com/accounts/TOS)
+- [Google Ads Advertising Policies](//support.google.com/adwordspolicy/?hl=en)
+- [About the Help Center](//support.google.com/google-ads/answer/3094231)
+
+---
+
+## DOCUMENT: Google Ads Smart Bidding - AI-Driven Bid Optimisations & Ad Spend
+**Source:** https://business.google.com/uk/ad-tools/bidding/?hl=en
+**Ingested At:** 2026-05-24T02:51:18.730Z
+
+### Introduction
+- [Manage your Google account](https://myaccount.google.com/)
+- [add Add another account](https://accounts.google.com/AddSession?hl=en&continue=https://business.google.com/)
+Add another account
+
+- [logout Sign out of all accounts](https://accounts.google.com/Logout?continue=https://business.google.com/)
+Sign out of all accounts
+
+- [add Add account](https://accounts.google.com/AddSession?hl=en&continue=https://business.google.com/)
+Add account
+
+- [logout Sign out](https://accounts.google.com/Logout?continue=https://business.google.com/)
+Sign out
+
+Create new Google Ads account
+
+More business products from Google
+
+- [Google Ads](//ads.google.com/nav/selectaccount?dst=/aw/campaigns/new/express&subid={locale}-{lang}-awhp-g-aw-{device}-m-bid-sso-bgc!o2)
+
+### Google Ads
+- [Merchant Center](https://merchants.google.com/mc/default?mcsubid=uk-en-bgc-mc-web!o3&gfr_referral=true&hl=en&fmp=1)
+
+### Merchant Center
+- [Google Business Profile](https://business.google.com/?gmbsrc=uk-en-z-z-z-gmb-s-z-u~bgcmhp-sso-u&hl=en&skipLandingPage=true&skipPagesList=1&cbl=sso&cbp=bgc&cbt=sso)
+
+### Google Business Profile
+- [Google Analytics](https://analytics.google.com/analytics/?utm_campaign=bgc-website-ga&utm_source=google&utm_medium=ga-organic-website&utm_content=ga-create-account&utm_term=cta-website-ga-organic)
+
+### Google Analytics
+Manage your site content preferences
+
+Marketing profile settings
+
+- [Privacy Policy](https://policies.google.com/privacy)
+- [Terms of Service](https://myaccount.google.com/termsofservice)
+Access your Google accounts in one place.
+
+- [Sign in with Google](https://accounts.google.com/ServiceLogin?&continue=https://business.google.com/)
+
+### Want to create a new Google Ads account?
+You're about to create a new Google Ads account. You can create multiple campaigns in the same account without creating a new account.
+
+- [Create New Account](//ads.google.com/nav/selectaccount?dst=/aw/campaigns/new/express&subid={locale}-{lang}-awhp-g-aw-{device}-m-bid-sso-bgc!o2)
+- [Overview](https://business.google.com/uk/google-ads/)
+- [Goals](https://business.google.com/uk/google-ads/campaign-goals/)
+- [How it works](https://business.google.com/uk/google-ads/how-ads-work/)
+- [Cost](https://business.google.com/uk/google-ads/campaign-budget/)
+- [Articles & case studies](https://business.google.com/uk/resources/)
+- [Expert support](https://business.google.com/uk/support/ads-expert/)
+- Start with foundations
+- [Merchant Center Help shoppers discover and buy your products](https://business.google.com/uk/merchant-center/)
+- [Google Business Profile List your business on Search and Maps](https://business.google.com/uk/business-profile/)
+- Start advertising
+- [Overview Explore all that Google Ads has to offer](https://business.google.com/uk/google-ads/)
+- [How it works Create, set up, and launch a campaign](https://business.google.com/uk/google-ads/how-ads-work/)
+- [Meet your goals Find solutions to meet your advertising goal](https://business.google.com/uk/google-ads/campaign-goals/)
+- [Cost Get the most out of your budget](https://business.google.com/uk/google-ads/campaign-budget/)
+- [Privacy Drive performance with privacy-centric solutions](https://business.google.com/uk/privacy/)
+- Create ads
+- [Performance Max Multiply conversions across Google channels](https://business.google.com/uk/ad-solutions/performance-max/)
+- [YouTube Ads Reach and build connections with engaged viewers](https://business.google.com/uk/ad-solutions/youtube-ads/)
+- [Search Reach people searching for the products or services you offer](https://business.google.com/uk/ad-solutions/search/)
+- [Demand Gen Create and convert new customer demand](https://business.google.com/uk/ad-solutions/demand-generation/)
+- [Display Promote your business where people browse online](https://business.google.com/uk/ad-solutions/display-ads/)
+- [Local Services Ads Attract more local customers](https://business.google.com/uk/ad-solutions/local-service-ads/)
+- [View all](https://business.google.com/uk/ad-solutions/)
+- Ad tools
+- [Manager Accounts Manage multiple ads accounts](https://business.google.com/uk/ad-tools/manage-accounts/)
+- [Keyword Planner Optimise with the right keyword](https://business.google.com/uk/ad-tools/keyword-planner/)
+- [Google Ads Editor Quickly and easily edit campaigns at scale](https://business.google.com/uk/ad-tools/google-ads-editor/)
+- [Google Ads Mobile App Track your campaign anywhere in real-time](https://business.google.com/uk/ad-tools/google-ads-app/)
+- [Reach Planner Customise your YouTube media strategy](https://business.google.com/uk/ad-tools/reach-planner/)
+- [View all](https://business.google.com/uk/ad-tools/)
+- No-cost solutions
+- [Google Analytics Understand your website traffic](https://business.google.com/uk/google-analytics/)
+- [Merchant Center Help shoppers discover and buy your product](https://business.google.com/uk/merchant-center/)
+- [Google Business Profile Get your business on Google](https://business.google.com/uk/business-profile/)
+- Expertise
+- [Think with Google Explore the latest insights and marketing strategies](https://business.google.com/uk/think/)
+- [Accelerate with Google Get a personalised marketing strategy and learning plan](https://business.google.com/uk/accelerate/home/)
+- Partners
+- [Become a partner Gain training, insights, and rewards](https://business.google.com/uk/support/become-a-partner/)
+- [Work with a partner Get expert guidance for your campaign](https://business.google.com/uk/support/work-with-a-partner/)
+- Help
+- [Get expert support Contact us for support with Google Ads](https://business.google.com/uk/support/ads-expert/)
+- [Get help Browse help topics](https://business.google.com/uk/support/)
+- [Manage your Google account](https://myaccount.google.com/)
+- [add Add another account](https://accounts.google.com/AddSession?hl=en&continue=https://business.google.com/)
+Add another account
+
+- [logout Sign out of all accounts](https://accounts.google.com/Logout?continue=https://business.google.com/)
+Sign out of all accounts
+
+- [add Add account](https://accounts.google.com/AddSession?hl=en&continue=https://business.google.com/)
+Add account
+
+- [logout Sign out](https://accounts.google.com/Logout?continue=https://business.google.com/)
+Sign out
+
+Create new Google Ads account
+
+More business products from Google
+
+- [Google Ads](//ads.google.com/nav/selectaccount?dst=/aw/campaigns/new/express&subid={locale}-{lang}-awhp-g-aw-{device}-m-bid-sso-bgc!o2)
+
+### Google Ads
+- [Merchant Center](https://merchants.google.com/mc/default?mcsubid=uk-en-bgc-mc-web!o3&gfr_referral=true&hl=en&fmp=1)
+
+### Merchant Center
+- [Google Business Profile](https://business.google.com/?gmbsrc=uk-en-z-z-z-gmb-s-z-u~bgcmhp-sso-u&hl=en&skipLandingPage=true&skipPagesList=1&cbl=sso&cbp=bgc&cbt=sso)
+
+### Google Business Profile
+- [Google Analytics](https://analytics.google.com/analytics/?utm_campaign=bgc-website-ga&utm_source=google&utm_medium=ga-organic-website&utm_content=ga-create-account&utm_term=cta-website-ga-organic)
+
+### Google Analytics
+Manage your site content preferences
+
+Marketing profile settings
+
+- [Privacy Policy](https://policies.google.com/privacy)
+- [Terms of Service](https://myaccount.google.com/termsofservice)
+Access your Google accounts in one place.
+
+- [Sign in with Google](https://accounts.google.com/ServiceLogin?&continue=https://business.google.com/)
+
+### Want to create a new Google Ads account?
+You're about to create a new Google Ads account. You can create multiple campaigns in the same account without creating a new account.
+
+- [Create New Account](//ads.google.com/nav/selectaccount?dst=/aw/campaigns/new/express&subid={locale}-{lang}-awhp-g-aw-{device}-m-bid-sso-bgc!o2)
+- [Start now](https://ads.google.com/signup?subid=uk-en-awhp-g-aw-{device}-m-bid-top-bgc!o2)
+- [Sign in](https://ads.google.com/nav/login?subid=uk-en-awhp-g-aw-{device}-m-bid-signin-bgc!o2)
+- [Schedule a meeting](https://business.google.com/uk/support/schedule-appointment/)
+- [Sign in with Google](https://accounts.google.com/ServiceLogin?&continue=https://business.google.com/)
+- [Google Ads](https://business.google.com/uk/google-ads/)
+- [Goals](https://business.google.com/uk/google-ads/campaign-goals/)
+- [How it works](https://business.google.com/uk/google-ads/how-ads-work/)
+- [Cost](https://business.google.com/uk/google-ads/campaign-budget/)
+- [Articles & case studies](https://business.google.com/uk/resources/)
+- [Expert support](https://business.google.com/uk/support/ads-expert/)
+- [Schedule a meeting](https://business.google.com/uk/support/schedule-appointment/)
+- [Sign in](https://ads.google.com/nav/login?subid=uk-en-awhp-g-aw-{device}-m-bid-signin-bgc!o2)
+- [Start now](https://ads.google.com/signup?subid=uk-en-awhp-g-aw-{device}-m-bid-top-bgc!o2)
+- [Overview](https://business.google.com/uk/google-ads/)
+- [Goals](https://business.google.com/uk/google-ads/campaign-goals/)
+- [How it works](https://business.google.com/uk/google-ads/how-ads-work/)
+- [Cost](https://business.google.com/uk/google-ads/campaign-budget/)
+- [Articles & case studies](https://business.google.com/uk/resources/)
+- [Expert support](https://business.google.com/uk/support/ads-expert/)
+- [Merchant Center Help shoppers discover and buy your products](https://business.google.com/uk/merchant-center/)
+- [Google Business Profile List your business on Search and Maps](https://business.google.com/uk/business-profile/)
+- [Overview Explore all that Google Ads has to offer](https://business.google.com/uk/google-ads/)
+- [How it works Create, set up, and launch a campaign](https://business.google.com/uk/google-ads/how-ads-work/)
+- [Meet your goals Find solutions to meet your advertising goal](https://business.google.com/uk/google-ads/campaign-goals/)
+- [Cost Get the most out of your budget](https://business.google.com/uk/google-ads/campaign-budget/)
+- [Privacy Drive performance with privacy-centric solutions](https://business.google.com/uk/privacy/)
+- [Performance Max Multiply conversions across Google channels](https://business.google.com/uk/ad-solutions/performance-max/)
+- [YouTube Ads Reach and build connections with engaged viewers](https://business.google.com/uk/ad-solutions/youtube-ads/)
+- [Search Reach people searching for the products or services you offer](https://business.google.com/uk/ad-solutions/search/)
+- [Demand Gen Create and convert new customer demand](https://business.google.com/uk/ad-solutions/demand-generation/)
+- [Display Promote your business where people browse online](https://business.google.com/uk/ad-solutions/display-ads/)
+- [Local Services Ads Attract more local customers](https://business.google.com/uk/ad-solutions/local-service-ads/)
+- [View all](https://business.google.com/uk/ad-solutions/)
+- [Manager Accounts Manage multiple ads accounts](https://business.google.com/uk/ad-tools/manage-accounts/)
+- [Keyword Planner Optimise with the right keyword](https://business.google.com/uk/ad-tools/keyword-planner/)
+- [Google Ads Editor Quickly and easily edit campaigns at scale](https://business.google.com/uk/ad-tools/google-ads-editor/)
+- [Google Ads Mobile App Track your campaign anywhere in real-time](https://business.google.com/uk/ad-tools/google-ads-app/)
+- [Reach Planner Customise your YouTube media strategy](https://business.google.com/uk/ad-tools/reach-planner/)
+- [View all](https://business.google.com/uk/ad-tools/)
+- [Google Analytics Understand your website traffic](https://business.google.com/uk/google-analytics/)
+- [Merchant Center Help shoppers discover and buy your product](https://business.google.com/uk/merchant-center/)
+- [Google Business Profile Get your business on Google](https://business.google.com/uk/business-profile/)
+- [Think with Google Explore the latest insights and marketing strategies](https://business.google.com/uk/think/)
+- [Accelerate with Google Get a personalised marketing strategy and learning plan](https://business.google.com/uk/accelerate/home/)
+- [Become a partner Gain training, insights, and rewards](https://business.google.com/uk/support/become-a-partner/)
+- [Work with a partner Get expert guidance for your campaign](https://business.google.com/uk/support/work-with-a-partner/)
+- [Get expert support Contact us for support with Google Ads](https://business.google.com/uk/support/ads-expert/)
+- [Get help Browse help topics](https://business.google.com/uk/support/)
+
+### Deliver better results with automated bidding
+- [Start now](https://ads.google.com/signup?subid=uk-en-awhp-g-aw-{device}-m-bid-hero-bgc!o2)
+
+### Set the right bids with Smart Bidding
+
+
+### Reach your audience at the right moment
+
+
+### Increase conversions with billions of combinations of signals
+
+
+### Bid towards conversion values to maximise your ROI
+
+
+### Bid for online and in-store sales
+
+
+### Grow your business with Google Ads
+- Nespresso boosts direct-to-consumer revenue by leveraging AI-powered Search campaigns 25% increase in purchases
+
+### Nespresso boosts direct-to-consumer revenue by leveraging AI-powered Search campaigns
+25% increase in purchases
+
+- Paycor finds new growth paths among mid-market businesses using Google solutions 105% increase in revenue
+
+### Paycor finds new growth paths among mid-market businesses using Google solutions
+105% increase in revenue
+
+- loveholidays earns more profit using Smart Bidding compared to its own solution 57% more profit
+
+### loveholidays earns more profit using Smart Bidding compared to its own solution
+57% more profit
+
+### Partner with a Google Ads expert to set up your first campaign
+- We’ll get you up to speed on the latest platform updates
+- We’ll design a media plan that makes the most of your budget
+- We’ll help you launch your first campaign with hands-on guidance
+- [Start now](https://business.google.com/uk/support/ads-expert/)
+
+### Get started with Smart Bidding
+- [Start now](https://ads.google.com/signup?subid=uk-en-awhp-g-aw-{device}-m-bid-mid-bgc!o2)
+More than 80% of Google advertisers are using automated bidding.
+
+On average, advertisers that switch from a Target CPA to a Target ROAS bid strategy can see 14% more conversion value at a similar return on ad spend.
+
+More than 80% of Google advertisers are using automated bidding.
+
+On average, advertisers that switch from a Target CPA to a Target ROAS bid strategy can see 14% more conversion value at a similar return on ad spend.
+
+1 / 2
+
+### Learn more about Smart Bidding
+- [Finding success with Smart Bidding](https://support.google.com/google-ads/answer/6167140)
+- [Setting Smarter Search Bids](https://services.google.com/fh/files/misc/setting_smarter_search_bids_2021.pdf)
+- [Bid strategy report for automated bidding strategies](https://support.google.com/google-ads/answer/7074566)
+Page number 1 / 3
+
+### Tools and campaigns that can help you meet your goals
+
+
+### Conversion Measurement
+Prioritise privacy while measuring which ads drive customers to make purchases online or in-store, sign contracts and more.
+
+- [Learn more](https://business.google.com/uk/ad-tools/conversion-tracking/)
+
+### Insights Page
+Grow your business with insights and trends that are tailored to your business.
+
+- [Learn more](https://business.google.com/uk/ad-tools/audience-insights/)
+
+### Experiments Page
+The Experiments page in Google Ads can help you create, manage and optimise your experiments in one place.
+
+- [Learn more](https://business.google.com/uk/ad-tools/google-ad-experiments/)
+
+### Frequently asked questions
+
+
+### What is bidding in Google Ads? add remove
+- [the Understanding bidding basics page](https://support.google.com/google-ads/answer/2459326?hl=en-UK&sjid=3006212573788294621-NA)
+
+### What is the best bidding strategy for Google Ads? add remove
+- Manual bidding, which allows you to determine what you want to pay
+- Smart Bidding, which uses Google AI to optimise your bids at every auction based on your defined objective
+- [the Determine a bid strategy based on your goals page](https://support.google.com/google-ads/answer/2472725?hl=en-UK&sjid=3006212573788294621-NA)
+
+### How do I decide how much to bid on Google Ads? add remove
+- Your campaign type
+- How much your keywords cost
+- How successful your keywords are
+- [the Choose a bid amount that works for you page](https://support.google.com/google-ads/answer/2471184?hl=en)
+
+### What is the minimum bid for Google Ads? add remove
+- [the Choose a bid amount that works for you page](https://support.google.com/google-ads/answer/2471184?hl=en-UK&sjid=3006212573788294621-NA)
+
+### How can automated bidding help an advertiser improve campaign performance? add remove
+- Get as many clicks as possible within your budget
+- Get as many conversions as possible within your target CPA
+- Meet your ROAS target
+- Get the most conversions or conversion value for your budget
+- [the About automated bidding page](https://support.google.com/google-ads/answer/2979071?hl=en&sjid=3006212573788294621-NA)
+
+### How does value based bidding work? add remove
+
+
+### How much should I spend on Google Ads? add remove
+
+
+### Footer links
+Follow us
+
+### Products
+- [Google Ads](https://business.google.com/uk/google-ads/)
+- [YouTube Ads](https://business.google.com/uk/ad-solutions/youtube-ads/)
+- [Merchant Center](https://business.google.com/uk/merchant-center/)
+- [Business Profile](https://business.google.com/uk/business-profile/)
+- [Google Analytics](https://business.google.com/uk/google-analytics/)
+- [Manufacturer Center](https://business.google.com/uk/merchant-center/manufacturer-center/)
+
+### Learning and support
+- [Accelerate with Google](https://business.google.com/uk/accelerate/home/)
+- [Think with Google](https://business.google.com/uk/think/)
+- [Google Ads Help Center](https://support.google.com/google-ads/#topic=10286612&utm_source=smb_marketing&utm_medium=referral&utm_campaign=uk-en-et-awhp-footer&utm_content=)
+- [Your guide to Merchant Center](https://support.google.com/merchants/answer/12159157)
+- [Your guide to Google Ads](https://support.google.com/google-ads/answer/6146252?utm_medium=et&utm_campaign=en&utm_source=ww-ww-et-b2bfooter_adwords)
+- [Google Advertiser Community](https://support.google.com/google-ads/community?ctx=lithium)
+
+### Partners and developers
+- [Google Partners](https://partnersdirectory.withgoogle.com/?premier=true)
+- [Google Developers site](https://developers.google.com/)
+- [Google Ads Scripts](https://developers.google.com/google-ads/scripts/docs/start)
+- [Google Ads Remarketing Tags](https://support.google.com/google-ads/answer/2476688)
+- [Google Ads API](https://business.google.com/uk/ad-tools/google-ads-api/)
+
+### More solutions
+- [Workspace](https://workspace.google.com/)
+- [Chrome](https://www.google.com/chrome/)
+- [Google Cloud](https://cloud.google.com/)
+- [AdSense](https://adsense.google.com/start/)
+- [AdMob](https://admob.google.com/home/get-started/)
+Actual results will vary by advertiser.
+
+- [About Google](https://www.google.com/intl/en/about)
+- [Google products](https://www.google.com/intl/en/about/products)
+- [Privacy](https://policies.google.com/privacy?authuser=0)
+- [Terms](https://policies.google.com/terms)
+- [Help](https://support.google.com/google-ads/)
+- Australia and New Zealand - English Brasil - Português (Brasil) Canada - English Canada - Français Česká Republika - Čeština Deutschland - Deutsch English (Global) España - Español Español (Latinoamérica) France - Français India - English Indonesia - Bahasa Indonesia Italia - Italiano Nederland - Nederlands Polska - Polski Русский România - Română Sverige - Svenska Türkiye - Türkçe United Kingdom - English United States - English Việt Nam - Tiếng Việt ישראל - עברית العربية 简体中文 繁體中文 日本 - 日本語 대한민국 - 한국어 ไทย - ไทย Україна - Українська
+- [Start now](https://ads.google.com/signup?subid=uk-en-awhp-g-aw-{device}-m-bid-flo-bgc!o2)
+
+---
+
+## DOCUMENT: Tips & Resources for Online Advertising – Google Ads
+**Source:** https://business.google.com/uk/resources/?hl=en
+**Ingested At:** 2026-05-24T02:51:20.058Z
+
+### Introduction
+- [Manage your Google account](https://myaccount.google.com/)
+- [add Add another account](https://accounts.google.com/AddSession?hl=en&continue=https://business.google.com/)
+Add another account
+
+- [logout Sign out of all accounts](https://accounts.google.com/Logout?continue=https://business.google.com/)
+Sign out of all accounts
+
+- [add Add account](https://accounts.google.com/AddSession?hl=en&continue=https://business.google.com/)
+Add account
+
+- [logout Sign out](https://accounts.google.com/Logout?continue=https://business.google.com/)
+Sign out
+
+Create new Google Ads account
+
+More business products from Google
+
+- [Google Ads](//ads.google.com/nav/selectaccount?dst=/aw/campaigns/new/express&subid={locale}-{lang}-awhp-g-aw-{device}-res-sso-bgc!o2)
+
+### Google Ads
+- [Merchant Center](https://merchants.google.com/mc/default?mcsubid=uk-en-bgc-mc-web!o3&gfr_referral=true&hl=en&fmp=1)
+
+### Merchant Center
+- [Google Business Profile](https://business.google.com/?gmbsrc=uk-en-z-z-z-gmb-s-z-u~bgcmhp-sso-u&hl=en&skipLandingPage=true&skipPagesList=1&cbl=sso&cbp=bgc&cbt=sso)
+
+### Google Business Profile
+- [Google Analytics](https://analytics.google.com/analytics/?utm_campaign=bgc-website-ga&utm_source=google&utm_medium=ga-organic-website&utm_content=ga-create-account&utm_term=cta-website-ga-organic)
+
+### Google Analytics
+Manage your site content preferences
+
+Marketing profile settings
+
+- [Privacy Policy](https://policies.google.com/privacy)
+- [Terms of Service](https://myaccount.google.com/termsofservice)
+Access your Google accounts in one place.
+
+- [Sign in with Google](https://accounts.google.com/ServiceLogin?&continue=https://business.google.com/)
+
+### Want to create a new Google Ads account?
+You're about to create a new Google Ads account. You can create multiple campaigns in the same account without creating a new account.
+
+- [Create New Account](//ads.google.com/nav/selectaccount?dst=/aw/campaigns/new/express&subid={locale}-{lang}-awhp-g-aw-{device}-res-sso-bgc!o2)
+- [Overview](https://business.google.com/uk/google-ads/)
+- [Goals](https://business.google.com/uk/google-ads/campaign-goals/)
+- [How it works](https://business.google.com/uk/google-ads/how-ads-work/)
+- [Cost](https://business.google.com/uk/google-ads/campaign-budget/)
+- [Articles & case studies](https://business.google.com/uk/resources/)
+- [Expert support](https://business.google.com/uk/support/ads-expert/)
+- Start with foundations
+- [Merchant Center Help shoppers discover and buy your products](https://business.google.com/uk/merchant-center/)
+- [Google Business Profile List your business on Search and Maps](https://business.google.com/uk/business-profile/)
+- Start advertising
+- [Overview Explore all that Google Ads has to offer](https://business.google.com/uk/google-ads/)
+- [How it works Create, set up, and launch a campaign](https://business.google.com/uk/google-ads/how-ads-work/)
+- [Meet your goals Find solutions to meet your advertising goal](https://business.google.com/uk/google-ads/campaign-goals/)
+- [Cost Get the most out of your budget](https://business.google.com/uk/google-ads/campaign-budget/)
+- [Privacy Drive performance with privacy-centric solutions](https://business.google.com/uk/privacy/)
+- Create ads
+- [Performance Max Multiply conversions across Google channels](https://business.google.com/uk/ad-solutions/performance-max/)
+- [YouTube Ads Reach and build connections with engaged viewers](https://business.google.com/uk/ad-solutions/youtube-ads/)
+- [Search Reach people searching for the products or services you offer](https://business.google.com/uk/ad-solutions/search/)
+- [Demand Gen Create and convert new customer demand](https://business.google.com/uk/ad-solutions/demand-generation/)
+- [Display Promote your business where people browse online](https://business.google.com/uk/ad-solutions/display-ads/)
+- [Local Services Ads Attract more local customers](https://business.google.com/uk/ad-solutions/local-service-ads/)
+- [View all](https://business.google.com/uk/ad-solutions/)
+- Ad tools
+- [Manager Accounts Manage multiple ads accounts](https://business.google.com/uk/ad-tools/manage-accounts/)
+- [Keyword Planner Optimise with the right keyword](https://business.google.com/uk/ad-tools/keyword-planner/)
+- [Google Ads Editor Quickly and easily edit campaigns at scale](https://business.google.com/uk/ad-tools/google-ads-editor/)
+- [Google Ads Mobile App Track your campaign anywhere in real-time](https://business.google.com/uk/ad-tools/google-ads-app/)
+- [Reach Planner Customise your YouTube media strategy](https://business.google.com/uk/ad-tools/reach-planner/)
+- [View all](https://business.google.com/uk/ad-tools/)
+- No-cost solutions
+- [Google Analytics Understand your website traffic](https://business.google.com/uk/google-analytics/)
+- [Merchant Center Help shoppers discover and buy your product](https://business.google.com/uk/merchant-center/)
+- [Google Business Profile Get your business on Google](https://business.google.com/uk/business-profile/)
+- Expertise
+- [Think with Google Explore the latest insights and marketing strategies](https://business.google.com/uk/think/)
+- [Accelerate with Google Get a personalised marketing strategy and learning plan](https://business.google.com/uk/accelerate/home/)
+- Partners
+- [Become a partner Gain training, insights, and rewards](https://business.google.com/uk/support/become-a-partner/)
+- [Work with a partner Get expert guidance for your campaign](https://business.google.com/uk/support/work-with-a-partner/)
+- Help
+- [Get expert support Contact us for support with Google Ads](https://business.google.com/uk/support/ads-expert/)
+- [Get help Browse help topics](https://business.google.com/uk/support/)
+- [Manage your Google account](https://myaccount.google.com/)
+- [add Add another account](https://accounts.google.com/AddSession?hl=en&continue=https://business.google.com/)
+Add another account
+
+- [logout Sign out of all accounts](https://accounts.google.com/Logout?continue=https://business.google.com/)
+Sign out of all accounts
+
+- [add Add account](https://accounts.google.com/AddSession?hl=en&continue=https://business.google.com/)
+Add account
+
+- [logout Sign out](https://accounts.google.com/Logout?continue=https://business.google.com/)
+Sign out
+
+Create new Google Ads account
+
+More business products from Google
+
+- [Google Ads](//ads.google.com/nav/selectaccount?dst=/aw/campaigns/new/express&subid={locale}-{lang}-awhp-g-aw-{device}-res-sso-bgc!o2)
+
+### Google Ads
+- [Merchant Center](https://merchants.google.com/mc/default?mcsubid=uk-en-bgc-mc-web!o3&gfr_referral=true&hl=en&fmp=1)
+
+### Merchant Center
+- [Google Business Profile](https://business.google.com/?gmbsrc=uk-en-z-z-z-gmb-s-z-u~bgcmhp-sso-u&hl=en&skipLandingPage=true&skipPagesList=1&cbl=sso&cbp=bgc&cbt=sso)
+
+### Google Business Profile
+- [Google Analytics](https://analytics.google.com/analytics/?utm_campaign=bgc-website-ga&utm_source=google&utm_medium=ga-organic-website&utm_content=ga-create-account&utm_term=cta-website-ga-organic)
+
+### Google Analytics
+Manage your site content preferences
+
+Marketing profile settings
+
+- [Privacy Policy](https://policies.google.com/privacy)
+- [Terms of Service](https://myaccount.google.com/termsofservice)
+Access your Google accounts in one place.
+
+- [Sign in with Google](https://accounts.google.com/ServiceLogin?&continue=https://business.google.com/)
+
+### Want to create a new Google Ads account?
+You're about to create a new Google Ads account. You can create multiple campaigns in the same account without creating a new account.
+
+- [Create New Account](//ads.google.com/nav/selectaccount?dst=/aw/campaigns/new/express&subid={locale}-{lang}-awhp-g-aw-{device}-res-sso-bgc!o2)
+- [Start now](https://ads.google.com/signup?subid=uk-en-awhp-g-aw-{device}-res-top-bgc!o2)
+- [Sign in](https://ads.google.com/nav/login?subid=uk-en-awhp-g-aw-{device}-res-signin-bgc!o2)
+- [Schedule a meeting](https://business.google.com/uk/support/schedule-appointment/)
+- [Sign in with Google](https://accounts.google.com/ServiceLogin?&continue=https://business.google.com/)
+- [Google Ads](https://business.google.com/uk/google-ads/)
+- [Goals](https://business.google.com/uk/google-ads/campaign-goals/)
+- [How it works](https://business.google.com/uk/google-ads/how-ads-work/)
+- [Cost](https://business.google.com/uk/google-ads/campaign-budget/)
+- [Articles & case studies](https://business.google.com/uk/resources/)
+- [Expert support](https://business.google.com/uk/support/ads-expert/)
+- [Schedule a meeting](https://business.google.com/uk/support/schedule-appointment/)
+- [Sign in](https://ads.google.com/nav/login?subid=uk-en-awhp-g-aw-{device}-res-signin-bgc!o2)
+- [Start now](https://ads.google.com/signup?subid=uk-en-awhp-g-aw-{device}-res-top-bgc!o2)
+- [Overview](https://business.google.com/uk/google-ads/)
+- [Goals](https://business.google.com/uk/google-ads/campaign-goals/)
+- [How it works](https://business.google.com/uk/google-ads/how-ads-work/)
+- [Cost](https://business.google.com/uk/google-ads/campaign-budget/)
+- [Articles & case studies](https://business.google.com/uk/resources/)
+- [Expert support](https://business.google.com/uk/support/ads-expert/)
+- [Merchant Center Help shoppers discover and buy your products](https://business.google.com/uk/merchant-center/)
+- [Google Business Profile List your business on Search and Maps](https://business.google.com/uk/business-profile/)
+- [Overview Explore all that Google Ads has to offer](https://business.google.com/uk/google-ads/)
+- [How it works Create, set up, and launch a campaign](https://business.google.com/uk/google-ads/how-ads-work/)
+- [Meet your goals Find solutions to meet your advertising goal](https://business.google.com/uk/google-ads/campaign-goals/)
+- [Cost Get the most out of your budget](https://business.google.com/uk/google-ads/campaign-budget/)
+- [Privacy Drive performance with privacy-centric solutions](https://business.google.com/uk/privacy/)
+- [Performance Max Multiply conversions across Google channels](https://business.google.com/uk/ad-solutions/performance-max/)
+- [YouTube Ads Reach and build connections with engaged viewers](https://business.google.com/uk/ad-solutions/youtube-ads/)
+- [Search Reach people searching for the products or services you offer](https://business.google.com/uk/ad-solutions/search/)
+- [Demand Gen Create and convert new customer demand](https://business.google.com/uk/ad-solutions/demand-generation/)
+- [Display Promote your business where people browse online](https://business.google.com/uk/ad-solutions/display-ads/)
+- [Local Services Ads Attract more local customers](https://business.google.com/uk/ad-solutions/local-service-ads/)
+- [View all](https://business.google.com/uk/ad-solutions/)
+- [Manager Accounts Manage multiple ads accounts](https://business.google.com/uk/ad-tools/manage-accounts/)
+- [Keyword Planner Optimise with the right keyword](https://business.google.com/uk/ad-tools/keyword-planner/)
+- [Google Ads Editor Quickly and easily edit campaigns at scale](https://business.google.com/uk/ad-tools/google-ads-editor/)
+- [Google Ads Mobile App Track your campaign anywhere in real-time](https://business.google.com/uk/ad-tools/google-ads-app/)
+- [Reach Planner Customise your YouTube media strategy](https://business.google.com/uk/ad-tools/reach-planner/)
+- [View all](https://business.google.com/uk/ad-tools/)
+- [Google Analytics Understand your website traffic](https://business.google.com/uk/google-analytics/)
+- [Merchant Center Help shoppers discover and buy your product](https://business.google.com/uk/merchant-center/)
+- [Google Business Profile Get your business on Google](https://business.google.com/uk/business-profile/)
+- [Think with Google Explore the latest insights and marketing strategies](https://business.google.com/uk/think/)
+- [Accelerate with Google Get a personalised marketing strategy and learning plan](https://business.google.com/uk/accelerate/home/)
+- [Become a partner Gain training, insights, and rewards](https://business.google.com/uk/support/become-a-partner/)
+- [Work with a partner Get expert guidance for your campaign](https://business.google.com/uk/support/work-with-a-partner/)
+- [Get expert support Contact us for support with Google Ads](https://business.google.com/uk/support/ads-expert/)
+- [Get help Browse help topics](https://business.google.com/uk/support/)
+
+### Find answers andinspiration
+
+
+### Filter by:
+
+
+### Product type
+- Google Ads
+- YouTube Ads
+
+### Campaign type
+- App
+- Display
+- Multiple campaigns
+- Performance Max
+- Search
+- Video/YouTube
+
+### Content type
+- Article
+- Success story
+
+### Industry
+- eCommerce
+- Food & beverage
+- Wholesale retail
+
+### Marketing level
+- Beginner
+- Expert
+- Intermediate
+
+### Marketing goal
+- App
+- Brand awareness
+- Generate leads
+- Increase website traffic
+- Multiple marketing goals
+- Offline sales
+- Online sales
+- [Google Ads The Best Paid SEO Strategies for Businesses Article](https://business.google.com/uk/resources/articles/seo-vs-ppc/)
+
+### Google Ads
+
+
+### The Best Paid SEO Strategies for Businesses
+- [YouTube Ads ABCDs of effective video ads Article](https://business.google.com/uk/resources/articles/abcds-of-effective-video-ads/)
+
+### YouTube Ads
+
+
+### ABCDs of effective video ads
+- [Google Ads 10 tips for Google Ads budget management Article](https://business.google.com/uk/resources/articles/stretching-your-google-ads-budget/)
+
+### Google Ads
+
+
+### 10 tips for Google Ads budget management
+- [Google Ads How can you write successful online ads with Google? Article](https://business.google.com/uk/resources/articles/write-online-ads/)
+
+### Google Ads
+
+
+### How can you write successful online ads with Google?
+- [Google Ads 5 ways to create better ad copy by utilising AI Article](https://business.google.com/uk/resources/articles/5-ways-to-create-effective-ad-copy-with-AI/)
+
+### Google Ads
+
+
+### 5 ways to create better ad copy by utilising AI
+- [Google Ads How to make your products stand out to shoppers on Google Ads Article](https://business.google.com/uk/resources/articles/make-products-standout-to-shoppers/)
+
+### Google Ads
+
+
+### How to make your products stand out to shoppers on Google Ads
+- [Google Ads How assets can help you connect with valuable customers Article](https://business.google.com/uk/resources/articles/improve-search-ads-with-assets/)
+
+### Google Ads
+
+
+### How assets can help you connect with valuable customers
+- [Google Ads How to use the Keyword Planner tool effectively Article](https://business.google.com/uk/resources/articles/using-google-ads-keyword-planner/)
+
+### Google Ads
+
+
+### How to use the Keyword Planner tool effectively
+- [Google Ads Reach a larger or new audience with Google Display Network (GDN) targeting Article](https://business.google.com/uk/resources/articles/reach-larger-new-audiences/)
+
+### Google Ads
+
+
+### Reach a larger or new audience with Google Display Network (GDN) targeting
+- [Google Ads What are people searching for online? Article](https://business.google.com/uk/resources/articles/what-are-people-searching/)
+
+### Google Ads
+
+
+### What are people searching for online?
+- [Google Ads What is paid search? Article](https://business.google.com/uk/resources/articles/what-is-paid-search/)
+
+### Google Ads
+
+
+### What is paid search?
+- [Google Ads Billing and payments in Google Ads Article](https://business.google.com/uk/resources/articles/basics-of-google-ads-billing-and-payments/)
+
+### Google Ads
+
+
+### Billing and payments in Google Ads
+- [Google Ads 5 things to consider when optimising your mobile landing page Article](https://business.google.com/uk/resources/articles/mobile-landing-page/)
+
+### Google Ads
+
+
+### 5 things to consider when optimising your mobile landing page
+- [Google Ads 10 Google Ads features that will grow your business Article](https://business.google.com/uk/resources/articles/10-key-features-for-growth/)
+
+### Google Ads
+
+
+### 10 Google Ads features that will grow your business
+- [Google Ads Understand intent to place ads more effectively Article](https://business.google.com/uk/resources/articles/use-google-ads-to-understand-your-audiences-intent/)
+
+### Google Ads
+
+
+### Understand intent to place ads more effectively
+- [Google Ads 4 Google Ads features to improve your keyword strategy Article](https://business.google.com/uk/resources/articles/4-features-to-improve-keyword-strategy/)
+
+### Google Ads
+
+
+### 4 Google Ads features to improve your keyword strategy
+- [Google Ads 4:42 Best Practices Guide: Reaching the right customers on Search Article](https://business.google.com/uk/resources/articles/reaching-the-right-customers-on-search/)
+
+### Google Ads
+
+
+### Best Practices Guide: Reaching the right customers on Search
+- [Google Ads Analytics in Google Ads Article](https://business.google.com/uk/resources/articles/how-to-analyze-google-ads-successfully/)
+
+### Google Ads
+
+
+### Analytics in Google Ads
+- [Google Ads 6:24 Best Practices Guide: Google AI for Video Advertising Article](https://business.google.com/uk/resources/articles/build-awareness-with-video/)
+
+### Google Ads
+
+
+### Best Practices Guide: Google AI for Video Advertising
+- [Google Ads How to set up Google Ads: a checklist Article](https://business.google.com/uk/resources/articles/how-to-setup-google-ads-a-checklist/)
+
+### Google Ads
+
+
+### How to set up Google Ads: a checklist
+- [YouTube Ads With help from TrueView for action, Nectar by Resident’s sales rise and shine Success story](https://business.google.com/uk/resources/success-stories/nectar-a-resident-company/)
+
+### YouTube Ads
+
+
+### With help from TrueView for action, Nectar by Resident’s sales rise and shine
+- [Google Ads How any business can grow online with Local Services Ads Article](https://business.google.com/uk/resources/articles/build-online-presence-with-local-services-ads/)
+
+### Google Ads
+
+
+### How any business can grow online with Local Services Ads
+- [Google Ads How to set up conversion measurement on your website Article](https://business.google.com/uk/resources/articles/conversion-measurement/)
+
+### Google Ads
+
+
+### How to set up conversion measurement on your website
+- [Google Ads Save time and drive efficiency with responsive display ads Article](https://business.google.com/uk/resources/articles/responsive-display-ads/)
+
+### Google Ads
+
+
+### Save time and drive efficiency with responsive display ads
+- [Google Ads 00:30 Currensea boosts customer acquisition 422%, with help of Google Search Success story](https://business.google.com/uk/resources/success-stories/currensea/)
+
+### Google Ads
+
+
+### Currensea boosts customer acquisition 422%, with help of Google Search
+- [Google Ads How to unlock the value of your creative assets with Google Ads Article](https://business.google.com/uk/resources/articles/unlock-value-of-creative-assets/)
+
+### Google Ads
+
+
+### How to unlock the value of your creative assets with Google Ads
+- [Google Ads 00:30 A strong brew: Bird & Blend sees 439% ROAS through Google Ads Success story](https://business.google.com/uk/resources/success-stories/bird-and-blend/)
+
+### Google Ads
+
+
+### A strong brew: Bird & Blend sees 439% ROAS through Google Ads
+- [Google Ads 0:30 LØCI achieves 500% ROAS with Google Ads Success story](https://business.google.com/uk/resources/success-stories/loci/)
+
+### Google Ads
+
+
+### LØCI achieves 500% ROAS with Google Ads
+- [Google Ads Kinetica Sports’ full-funnel campaign hits 267% increase in ROAS, with help from Google Ads. Success story](https://business.google.com/uk/resources/success-stories/kinetica-sports/)
+
+### Google Ads
+
+
+### Kinetica Sports’ full-funnel campaign hits 267% increase in ROAS, with help from Google Ads.
+- [How experimenting with their Google Ads Strategy helped Octopus Energy sign up over 2 million customers Success story](https://business.google.com/uk/resources/success-stories/octopus-energy/)
+
+### How experimenting with their Google Ads Strategy helped Octopus Energy sign up over 2 million customers
+- [Google Ads Best Practices Guide: AI Essentials in Google Ads Article](https://business.google.com/uk/resources/articles/ai-essentials/)
+
+### Google Ads
+
+
+### Best Practices Guide: AI Essentials in Google Ads
+- [Google Ads A beginners’ guide to YouTube video ads: Drive action with video advertising Article](https://business.google.com/uk/resources/articles/beginners-guide-youtube-ads/)
+
+### Google Ads
+
+
+### A beginners’ guide to YouTube video ads: Drive action with video advertising
+- [Google Ads Get better results across all Google Ads channels with Performance Max campaigns Article](https://business.google.com/uk/resources/articles/benefits-of-performance-max/)
+
+### Google Ads
+
+
+### Get better results across all Google Ads channels with Performance Max campaigns
+- [Google Ads Understanding demand: How search data can improve your marketing performance Article](https://business.google.com/uk/resources/articles/how-search-data-improves-marketing-performance/)
+
+### Google Ads
+
+
+### Understanding demand: How search data can improve your marketing performance
+- [Google Ads 00:30 How fashion brand Never Fully Dressed achieved 890% ROAS through Google Ads Success story](https://business.google.com/uk/resources/success-stories/never-fully-dressed/)
+
+### Google Ads
+
+
+### How fashion brand Never Fully Dressed achieved 890% ROAS through Google Ads
+- [Google Ads A guide to keyword match types in Google Ads Article](https://business.google.com/uk/resources/articles/guide-to-keyword-match-types/)
+
+### Google Ads
+
+
+### A guide to keyword match types in Google Ads
+- [Google Ads 00:30 Lucy & Yak sees 233% increase in revenue through Google Ads Success story](https://business.google.com/uk/resources/success-stories/lucy-and-yak/)
+
+### Google Ads
+
+
+### Lucy & Yak sees 233% increase in revenue through Google Ads
+- [Google Ads The perfect fit: Farai London scales by 400% with Google Ads Success story](https://business.google.com/uk/resources/success-stories/farai-london/)
+
+### Google Ads
+
+
+### The perfect fit: Farai London scales by 400% with Google Ads
+- [Google Ads Build trust online: How the Google Guarantee works Article](https://business.google.com/uk/resources/articles/build-trust-online/)
+
+### Google Ads
+
+
+### Build trust online: How the Google Guarantee works
+- [Google Ads A guide to App campaigns on Google Ads Article](https://business.google.com/uk/resources/articles/driving-loyalty-through-app-campaigns/)
+
+### Google Ads
+
+
+### A guide to App campaigns on Google Ads
+- [How optimisation helped PensionBee triple their customer base Success story](https://business.google.com/uk/resources/success-stories/pensionbee/)
+
+### How optimisation helped PensionBee triple their customer base
+- [Google Ads 3 consumer shifts to influence your retail paid search strategy Article](https://business.google.com/uk/resources/articles/how-consumer-shifts-impact-your-paid-search-strategy/)
+
+### Google Ads
+
+
+### 3 consumer shifts to influence your retail paid search strategy
+- [Google Ads Drive awareness and conversions: Cover the entire marketing funnel with Google Display Ads Article](https://business.google.com/uk/resources/articles/full-funnel-marketing-with-google-display-ads/)
+
+### Google Ads
+
+
+### Drive awareness and conversions: Cover the entire marketing funnel with Google Display Ads
+- [Google Ads What is Google Customer Match, and how can it help you reach valuable audiences online? Article](https://business.google.com/uk/resources/articles/how-to-drive-ad-performance-with-customer-match/)
+
+### Google Ads
+
+
+### What is Google Customer Match, and how can it help you reach valuable audiences online?
+- [Google Ads Spark interest and inspire action: What are Demand Gen campaigns? Article](https://business.google.com/uk/resources/articles/what-are-google-demand-gen-campaigns/)
+
+### Google Ads
+
+
+### Spark interest and inspire action: What are Demand Gen campaigns?
+- [Google Ads Get more leads with less effort: a guide to lead form assets Article](https://business.google.com/uk/resources/articles/generate-more-leads-with-lead-form-assets/)
+
+### Google Ads
+
+
+### Get more leads with less effort: a guide to lead form assets
+- [Google Ads How to tailor your ads to reach customers at every stage of their purchase journey Article](https://business.google.com/uk/resources/articles/how-to-tailor-your-online-campaigns-and-win-business/)
+
+### Google Ads
+
+
+### How to tailor your ads to reach customers at every stage of their purchase journey
+- [Google Ads How to save time and boost results with automated bidding Article](https://business.google.com/uk/resources/articles/maximise-your-ad-budget-with-automated-bidding/)
+
+### Google Ads
+
+
+### How to save time and boost results with automated bidding
+- [Google Ads How to improve your Google Ads Quality Score Article](https://business.google.com/uk/resources/articles/three-ways-to-improve-your-quality-score/)
+
+### Google Ads
+
+
+### How to improve your Google Ads Quality Score
+- [Google Ads From browsing to buying: 7 Search strategies to win new customers Article](https://business.google.com/uk/resources/articles/7-search-tips-to-boost-your-digital-ad-campaigns/)
+
+### Google Ads
+
+
+### From browsing to buying: 7 Search strategies to win new customers
+- [Google Ads How to increase website traffic and lead generation with Google Ads Article](https://business.google.com/uk/resources/articles/how-to-increase-website-traffic-and-leads/)
+
+### Google Ads
+
+
+### How to increase website traffic and lead generation with Google Ads
+- [Google Ads How audience segments can help you find and reach the right customers at the right time Article](https://business.google.com/uk/resources/articles/improve-your-advertising-with-audience-segments/)
+
+### Google Ads
+
+
+### How audience segments can help you find and reach the right customers at the right time
+- [Google Ads Enhanced conversions: Measure ad performance while protecting people’s privacy Article](https://business.google.com/uk/resources/articles/privacy-in-ad-performance-with-enhanced-conversions/)
+
+### Google Ads
+
+
+### Enhanced conversions: Measure ad performance while protecting people’s privacy
+- [Google Ads Discover Mobile Advertising with Google Ads Article](https://business.google.com/uk/resources/articles/reach-your-customers-with-google-mobile-ads/)
+
+### Google Ads
+
+
+### Discover Mobile Advertising with Google Ads
+- [Google Ads Boost your business by advertising on Google Maps Article](https://business.google.com/uk/resources/articles/get-the-most-out-of-advertising-on-google-maps/)
+
+### Google Ads
+
+
+### Boost your business by advertising on Google Maps
+- [YouTube Ads Bellroy grows sales with shoppable Video action campaigns and value-based bidding Success story](https://business.google.com/uk/resources/success-stories/bellroy/)
+
+### YouTube Ads
+
+
+### Bellroy grows sales with shoppable Video action campaigns and value-based bidding
+- [Google Ads Navigating the B2B marketing funnel with Google Ads Article](https://business.google.com/uk/resources/articles/explore-the-b2b-marketing-funnel-with-google-ads/)
+
+### Google Ads
+
+
+### Navigating the B2B marketing funnel with Google Ads
+- [YouTube Ads Majestic Heli Ski get nearly half of their new skiers from YouTube Success story](https://business.google.com/uk/resources/success-stories/majestic-heli-ski/)
+
+### YouTube Ads
+
+
+### Majestic Heli Ski get nearly half of their new skiers from YouTube
+- [YouTube Ads BlendJet’s YouTube strategy led to 413% revenue growth Success story](https://business.google.com/uk/resources/success-stories/blendjet/)
+
+### YouTube Ads
+
+
+### BlendJet’s YouTube strategy led to 413% revenue growth
+- [YouTube Ads Adidas uses sequencing to move customers from awareness to consideration Success story](https://business.google.com/uk/resources/success-stories/adidas/)
+
+### YouTube Ads
+
+
+### Adidas uses sequencing to move customers from awareness to consideration
+- [Google Ads Beyond the last click: Using attribution models to understand your Google Ads performance Article](https://business.google.com/uk/resources/articles/understanding-sales-journeys-with-attribution-models/)
+
+### Google Ads
+
+
+### Beyond the last click: Using attribution models to understand your Google Ads performance
+- [YouTube Ads Pringles masters tentpole marketing moments with TrueView for reach Success story](https://business.google.com/uk/resources/success-stories/pringles/)
+
+### YouTube Ads
+
+
+### Pringles masters tentpole marketing moments with TrueView for reach
+- [YouTube Ads Measure your results Article](https://business.google.com/uk/resources/articles/measure-your-results/)
+
+### YouTube Ads
+
+
+### Measure your results
+- [YouTube Ads Xfinity Mobile turns data into dollars Success story](https://business.google.com/uk/resources/success-stories/xfinity/)
+
+### YouTube Ads
+
+
+### Xfinity Mobile turns data into dollars
+- [Google Ads Maximise your ROI: How to get started with value-based bidding on Google Ads Article](https://business.google.com/uk/resources/articles/increase-your-roi-with-value-based-bidding/)
+
+### Google Ads
+
+
+### Maximise your ROI: How to get started with value-based bidding on Google Ads
+- [YouTube Ads Video action campaigns on YouTube Shorts helped Cider gain new customers at a 33% lower CPA Success story](https://business.google.com/uk/resources/success-stories/cider/)
+
+### YouTube Ads
+
+
+### Video action campaigns on YouTube Shorts helped Cider gain new customers at a 33% lower CPA
+- [Google Ads A foundation for success: How to structure your Google Ads account for growth on Search with AI Article](https://business.google.com/uk/resources/articles/account-structures-for-search-growth-with-ai/)
+
+### Google Ads
+
+
+### A foundation for success: How to structure your Google Ads account for growth on Search with AI
+- [Google Ads Paid search optimisation in the age of AI-powered marketing: How advertisers can stand out? Article](https://business.google.com/uk/resources/articles/how-to-get-the-edge-with-ai-on-paid-search/)
+
+### Google Ads
+
+
+### Paid search optimisation in the age of AI-powered marketing: How advertisers can stand out?
+- [Google Ads 5 ways to use Google AI for more effective advertising Article](https://business.google.com/uk/resources/articles/5-tips-for-more-effective-advertising-with-google-ai/)
+
+### Google Ads
+
+
+### 5 ways to use Google AI for more effective advertising
+- [Google Ads Simplifying multi-account management: Streamline your workflow with a Google Ads manager account Article](https://business.google.com/uk/resources/articles/how-to-streamline-multi-account-management/)
+
+### Google Ads
+
+
+### Simplifying multi-account management: Streamline your workflow with a Google Ads manager account
+
+
+### Footer links
+Follow us
+
+### Products
+- [Google Ads](https://business.google.com/uk/google-ads/)
+- [YouTube Ads](https://business.google.com/uk/ad-solutions/youtube-ads/)
+- [Merchant Center](https://business.google.com/uk/merchant-center/)
+- [Business Profile](https://business.google.com/uk/business-profile/)
+- [Google Analytics](https://business.google.com/uk/google-analytics/)
+- [Manufacturer Center](https://business.google.com/uk/merchant-center/manufacturer-center/)
+
+### Learning and support
+- [Accelerate with Google](https://business.google.com/uk/accelerate/home/)
+- [Think with Google](https://business.google.com/uk/think/)
+- [Google Ads Help Center](https://support.google.com/google-ads/#topic=10286612&utm_source=smb_marketing&utm_medium=referral&utm_campaign=uk-en-et-awhp-footer&utm_content=)
+- [Your guide to Merchant Center](https://support.google.com/merchants/answer/12159157)
+- [Your guide to Google Ads](https://support.google.com/google-ads/answer/6146252?utm_medium=et&utm_campaign=en&utm_source=ww-ww-et-b2bfooter_adwords)
+- [Google Advertiser Community](https://support.google.com/google-ads/community?ctx=lithium)
+
+### Partners and developers
+- [Google Partners](https://partnersdirectory.withgoogle.com/?premier=true)
+- [Google Developers site](https://developers.google.com/)
+- [Google Ads Scripts](https://developers.google.com/google-ads/scripts/docs/start)
+- [Google Ads Remarketing Tags](https://support.google.com/google-ads/answer/2476688)
+- [Google Ads API](https://business.google.com/uk/ad-tools/google-ads-api/)
+
+### More solutions
+- [Workspace](https://workspace.google.com/)
+- [Chrome](https://www.google.com/chrome/)
+- [Google Cloud](https://cloud.google.com/)
+- [AdSense](https://adsense.google.com/start/)
+- [AdMob](https://admob.google.com/home/get-started/)
+Actual results will vary by advertiser.
+
+- [About Google](https://www.google.com/intl/en/about)
+- [Google products](https://www.google.com/intl/en/about/products)
+- [Privacy](https://policies.google.com/privacy?authuser=0)
+- [Terms](https://policies.google.com/terms)
+- [Help](https://support.google.com/google-ads/)
+- Australia and New Zealand - English Brasil - Português (Brasil) Canada - English Canada - Français Česká Republika - Čeština Deutschland - Deutsch English (Global) España - Español Español (Latinoamérica) France - Français India - English Indonesia - Bahasa Indonesia Italia - Italiano Nederland - Nederlands Polska - Polski Русский România - Română Sverige - Svenska Türkiye - Türkçe United Kingdom - English United States - English Việt Nam - Tiếng Việt ישראל - עברית العربية 简体中文 日本 - 日本語 대한민국 - 한국어 ไทย - ไทย Україна - Українська
+- [Start now](https://ads.google.com/signup?subid=uk-en-awhp-g-aw-{device}-res-flo-bgc!o2)
+
+---
+
+## DOCUMENT: Ad Manager  |  Google for DevelopersGoogleGoogle
+**Source:** https://developers.google.com/ad-manager?hl=en
+**Ingested At:** 2026-05-24T02:51:21.322Z
+
+### Introduction
+- [Google Ad Manager](https://developers.google.com/ad-manager)
+
+### Google Ad Manager
+- [Google Ad Manager](https://developers.google.com/ad-manager)
+- [Home](https://developers.google.com/)
+- [Products](https://developers.google.com/products)
+- [Ad Manager](https://developers.google.com/ad-manager)
+
+### A set of tools to manage your Google Ad Manager accounts and campaigns.
+- [api](https://developers.google.com/ad-manager/api/beta)
+
+### Ad Manager API (Beta)
+- [Ad Manager API (Beta)](https://developers.google.com/ad-manager/api/beta)
+- [Get started](https://developers.google.com/ad-manager/api/beta)
+- [phone_iphone](https://developers.google.com/ad-manager/mobile-ads-sdk)
+
+### Mobile Ads SDK
+- [Mobile Ads SDK](https://developers.google.com/ad-manager/mobile-ads-sdk)
+- [Android](https://developers.google.com/ad-manager/mobile-ads-sdk/android/next-gen/quick-start)
+- [Android](https://developers.google.com/ad-manager/mobile-ads-sdk/android/quick-start)
+- [iOS](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/quick-start)
+- [Unity](https://developers.google.com/ad-manager/mobile-ads-sdk/unity/quick-start)
+- [Flutter](https://developers.google.com/ad-manager/mobile-ads-sdk/flutter/quick-start)
+- [live_tv](https://developers.google.com/ad-manager/dynamic-ad-insertion)
+
+### Dynamic Ad Insertion
+- [Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion)
+- [Get started](https://developers.google.com/ad-manager/dynamic-ad-insertion)
+- [track_changes](https://developers.google.com/ad-manager/api)
+
+### Ad Manager SOAP API
+- [Ad Manager SOAP API](https://developers.google.com/ad-manager/api)
+- [Get started](https://developers.google.com/ad-manager/api)
+
+### Connect
+- [Blog](//googledevelopers.blogspot.com)
+- [Bluesky](https://goo.gle/3FReQXN)
+- [Instagram](https://www.instagram.com/googlefordevs/)
+- [LinkedIn](https://www.linkedin.com/showcase/googledevelopers/)
+- [X (Twitter)](//twitter.com/googledevs)
+- [YouTube](//www.youtube.com/user/GoogleDevelopers)
+
+### Programs
+- [Google Developer Program](/program)
+- [Google Developer Groups](/community)
+- [Google Developer Experts](/community/experts)
+- [Accelerators](/community/accelerators)
+- [Google Cloud & NVIDIA](/community/nvidia)
+
+### Developer consoles
+- [Google API Console](//console.developers.google.com)
+- [Google Cloud Platform Console](//console.cloud.google.com)
+- [Google Play Console](//play.google.com/apps/publish)
+- [Firebase Console](//console.firebase.google.com)
+- [Actions on Google Console](//console.actions.google.com)
+- [Cast SDK Developer Console](//cast.google.com/publish)
+- [Chrome Web Store Dashboard](//chrome.google.com/webstore/developer/dashboard)
+- [Google Home Developer Console](//console.home.google.com)
+- [Android](//developer.android.com)
+- [Chrome](//developer.chrome.com/home)
+- [Firebase](//firebase.google.com)
+- [Google Cloud Platform](//cloud.google.com)
+- [Google AI](//ai.google.dev/)
+- [All products](/products)
+- [Terms](/terms/site-terms)
+- [Privacy](//policies.google.com/privacy)
+
+---
+
+## DOCUMENT: Dynamic Ad Insertion  |  Google for DevelopersGoogleGoogle
+**Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en
+**Ingested At:** 2026-05-24T02:51:22.590Z
+
+### Introduction
+- [Google Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion)
+
+### Google Dynamic Ad Insertion
+- [Home](https://developers.google.com/ad-manager/dynamic-ad-insertion)
+- [HTML5](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5)
+- [Android](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android)
+- [iOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios)
+- [tvOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos)
+- [Chromecast](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast)
+- [Roku](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku)
+- [Full service DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service)
+- [Pod serving DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving)
+- [Ad break](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/ad-break)
+- Support
+- [Ad Manager Help Community](//support.google.com/admanager/community)
+- [Contact support](//support.google.com/admanager/contact/contact_us_ima_sdk)
+- [Terms of service](https://developers.google.com/ad-manager/dynamic-ad-insertion/terms)
+- [Official Google Ad Manager Discord channel](//goo.gle/google-ad-manager-discord)
+- [Ads developer blog](//ads-developers.googleblog.com/search/label/ima_sdk)
+- Test tools
+- [Video Suite Inspector](//googleads.github.io/googleads-ima-html5-dai/vsi/)
+- [Sample streams](https://developers.google.com/ad-manager/dynamic-ad-insertion/streams)
+- [Google Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion)
+- Home More
+- More
+- SDKs More
+- More
+- APIs More
+- More
+- Resources More
+- More
+- [Home](/ad-manager/dynamic-ad-insertion)
+- [HTML5](/ad-manager/dynamic-ad-insertion/sdk/html5)
+- [Android](/ad-manager/dynamic-ad-insertion/sdk/android)
+- [iOS](/ad-manager/dynamic-ad-insertion/sdk/ios)
+- [tvOS](/ad-manager/dynamic-ad-insertion/sdk/tvos)
+- [Chromecast](/ad-manager/dynamic-ad-insertion/sdk/cast)
+- [Roku](/ad-manager/dynamic-ad-insertion/sdk/roku)
+- [Full service DAI](/ad-manager/dynamic-ad-insertion/full-service)
+- [Pod serving DAI](/ad-manager/dynamic-ad-insertion/pod-serving)
+- [Ad break](/ad-manager/dynamic-ad-insertion/api/ad-break)
+- Support
+- [Ad Manager Help Community](//support.google.com/admanager/community)
+- [Contact support](//support.google.com/admanager/contact/contact_us_ima_sdk)
+- [Terms of service](/ad-manager/dynamic-ad-insertion/terms)
+- [Official Google Ad Manager Discord channel](//goo.gle/google-ad-manager-discord)
+- [Ads developer blog](//ads-developers.googleblog.com/search/label/ima_sdk)
+- Test tools
+- [Video Suite Inspector](//googleads.github.io/googleads-ima-html5-dai/vsi/)
+- [Sample streams](/ad-manager/dynamic-ad-insertion/streams)
+- [Home](https://developers.google.com/)
+- [Products](https://developers.google.com/products)
+- [Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion)
+
+### Dynamic ad insertion (DAI)
+DAI lets you monetize your video content, taking away the complexity of the ad request and ad response process from the SDK. This approach reduces the likelihood of client-side errors and produces a TV-like experience without latency or buffering between content and ads.
+
+With DAI, you can target individual ads for livestreams and videos on demand programming, obtain multi-screen reach with broad device support, and take advantage of programmatic monetization across all devices with Ad Exchange for video. Regardless of the original format of your content, once it becomes digital, DAI lets you show targeted video ads within your content, based on the individual user viewing the content.
+
+DAI lets you perform these workflows through the Full service API and Pod serving API, along with supported SDK platforms.
+
+To start using DAI, select one of the following integrations:
+
+### Full service DAI
+- [Full service DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service)
+- [Learn More](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service)
+
+### Pod serving DAI
+- [Pod serving DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving)
+- [Learn More](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving)
+
+### Supported platforms
+- [Supported platforms](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5/get-started)
+- [HTML5](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5/get-started)
+- [Android](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android/get-started)
+- [iOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios/get-started)
+- [tvOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos/get-started)
+- [Chromecast](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/chromecast/get-started)
+- [Roku](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku/get-started)
+
+### Get Support
+- [Get Support](https://support.google.com/admanager/contact/contact_us_ima_sdk)
+- [Contact IMA SDK Support](https://support.google.com/admanager/contact/contact_us_ima_sdk)
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+
+- [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/)
+- [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0)
+- [Google Developers Site Policies](https://developers.google.com/site-policies)
+Last updated 2026-02-26 UTC.
+
+### Connect
+- [Blog](//googledevelopers.blogspot.com)
+- [Bluesky](https://goo.gle/3FReQXN)
+- [Instagram](https://www.instagram.com/googlefordevs/)
+- [LinkedIn](https://www.linkedin.com/showcase/googledevelopers/)
+- [X (Twitter)](//twitter.com/googledevs)
+- [YouTube](//www.youtube.com/user/GoogleDevelopers)
+
+### Programs
+- [Google Developer Program](/program)
+- [Google Developer Groups](/community)
+- [Google Developer Experts](/community/experts)
+- [Accelerators](/community/accelerators)
+- [Google Cloud & NVIDIA](/community/nvidia)
+
+### Developer consoles
+- [Google API Console](//console.developers.google.com)
+- [Google Cloud Platform Console](//console.cloud.google.com)
+- [Google Play Console](//play.google.com/apps/publish)
+- [Firebase Console](//console.firebase.google.com)
+- [Actions on Google Console](//console.actions.google.com)
+- [Cast SDK Developer Console](//cast.google.com/publish)
+- [Chrome Web Store Dashboard](//chrome.google.com/webstore/developer/dashboard)
+- [Google Home Developer Console](//console.home.google.com)
+- [Android](//developer.android.com)
+- [Chrome](//developer.chrome.com/home)
+- [Firebase](//firebase.google.com)
+- [Google Cloud Platform](//cloud.google.com)
+- [Google AI](//ai.google.dev/)
+- [All products](/products)
+- [Terms](/terms/site-terms)
+- [Privacy](//policies.google.com/privacy)
+
+---
+
+## DOCUMENT: DAI Full Service API  |  Google for DevelopersGoogleGoogle
+**Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en
+**Ingested At:** 2026-05-24T02:51:23.974Z
+
+### Introduction
+- [Google Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service)
+
+### Google Dynamic Ad Insertion
+- [Home](https://developers.google.com/ad-manager/dynamic-ad-insertion)
+- [HTML5](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5)
+- [Android](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android)
+- [iOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios)
+- [tvOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos)
+- [Chromecast](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast)
+- [Roku](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku)
+- [APIs](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service)
+- [Full service DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service)
+- [Pod serving DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving)
+- [Ad break](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/ad-break)
+- Support
+- [Ad Manager Help Community](//support.google.com/admanager/community)
+- [Contact support](//support.google.com/admanager/contact/contact_us_ima_sdk)
+- [Terms of service](https://developers.google.com/ad-manager/dynamic-ad-insertion/terms)
+- [Official Google Ad Manager Discord channel](//goo.gle/google-ad-manager-discord)
+- [Ads developer blog](//ads-developers.googleblog.com/search/label/ima_sdk)
+- Test tools
+- [Video Suite Inspector](//googleads.github.io/googleads-ima-html5-dai/vsi/)
+- [Sample streams](https://developers.google.com/ad-manager/dynamic-ad-insertion/streams)
+- [Full service DAI API](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service)
+- [Guides](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service)
+- [Reference](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service/reference/live)
+- [Google Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service)
+- Home More
+- More
+- SDKs More
+- More
+- [APIs](/ad-manager/dynamic-ad-insertion/full-service)
+- More
+- [Guides](/ad-manager/dynamic-ad-insertion/full-service)
+- [Reference](/ad-manager/dynamic-ad-insertion/api/full-service/reference/live)
+- Resources More
+- More
+- [Overview](/ad-manager/dynamic-ad-insertion/full-service)
+- [Learn the DAI Full Service API](/ad-manager/dynamic-ad-insertion/api/full-service/get-started)
+- [Overview](/ad-manager/dynamic-ad-insertion/api/full-service/stream-session-overview)
+- [Authenticate Stream Session Requests](/ad-manager/dynamic-ad-insertion/api/full-service/stream-session-requests)
+- Develop
+- [Manage DAI livestreams](/ad-manager/dynamic-ad-insertion/api/full-service/video-player-live)
+- [Request DAI VOD streams](/ad-manager/dynamic-ad-insertion/api/full-service/video-player-vod)
+- [Implement AdChoices](/ad-manager/dynamic-ad-insertion/api/full-service/wta)
+- [Enable skippable ads in VOD streams](/ad-manager/dynamic-ad-insertion/api/full-service/vod-skippable-ads)
+- [Home](/ad-manager/dynamic-ad-insertion)
+- [HTML5](/ad-manager/dynamic-ad-insertion/sdk/html5)
+- [Android](/ad-manager/dynamic-ad-insertion/sdk/android)
+- [iOS](/ad-manager/dynamic-ad-insertion/sdk/ios)
+- [tvOS](/ad-manager/dynamic-ad-insertion/sdk/tvos)
+- [Chromecast](/ad-manager/dynamic-ad-insertion/sdk/cast)
+- [Roku](/ad-manager/dynamic-ad-insertion/sdk/roku)
+- [Full service DAI](/ad-manager/dynamic-ad-insertion/full-service)
+- [Pod serving DAI](/ad-manager/dynamic-ad-insertion/pod-serving)
+- [Ad break](/ad-manager/dynamic-ad-insertion/api/ad-break)
+- Support
+- [Ad Manager Help Community](//support.google.com/admanager/community)
+- [Contact support](//support.google.com/admanager/contact/contact_us_ima_sdk)
+- [Terms of service](/ad-manager/dynamic-ad-insertion/terms)
+- [Official Google Ad Manager Discord channel](//goo.gle/google-ad-manager-discord)
+- [Ads developer blog](//ads-developers.googleblog.com/search/label/ima_sdk)
+- Test tools
+- [Video Suite Inspector](//googleads.github.io/googleads-ima-html5-dai/vsi/)
+- [Sample streams](/ad-manager/dynamic-ad-insertion/streams)
+- [IMA SDK](/interactive-media-ads)
+- [Home](https://developers.google.com/)
+- [Products](https://developers.google.com/products)
+- [Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion)
+- [DAI Full Service API](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service)
+- [APIs](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service)
+
+### Full service DAI
+
+
+### With the IMA DAI SDK
+- The web page or app loads the IMA DAI SDK through: an embedded script tag for HTML5 a native app for Android, Google Cast, iOS, tvOS, or Roku
+- an embedded script tag for HTML5
+- a native app for Android, Google Cast, iOS, tvOS, or Roku
+- The SDK requests either a VOD stream or live stream from Google Ad Manager 360.
+- Ad Manager 360 responds with the video stream that includes inserted ad breaks.
+- The SDK parses the response, determines the correct media type based on environment, and delivers the video stream (and companion ads if needed) to the web page or app.
+- The video player negotiates the playback details with the SDK and plays the content.
+- The video player listens for instream metadata and passes it to the SDK for processing.
+- The SDK fires impression pings and tracking events as needed.
+For detailed instructions on how to implement a client video player using the IMA DAI SDK, check out our SDK guides:
+
+- [HTML5](/ad-manager/dynamic-ad-insertion/sdk/html5?service=full)
+- [Android](/ad-manager/dynamic-ad-insertion/sdk/android?service=full)
+- [iOS](/ad-manager/dynamic-ad-insertion/sdk/ios?service=full)
+- [tvOS](/ad-manager/dynamic-ad-insertion/sdk/tvos?service=full)
+- [Chromecast](/ad-manager/dynamic-ad-insertion/sdk/cast?service=full)
+- [Roku](/ad-manager/dynamic-ad-insertion/sdk/roku?service=full)
+
+### With the DAI API
+- The client's player app requests either a VOD stream or live stream from Google Ad Manager 360.
+- Ad Manager 360 responds with the video stream that includes inserted ad breaks.
+- The client's player app begins playback of the stream, and either requests ad metadata once (for VOD streams) OR begins regularly polling for ad metadata (for live streams).
+- The client's player app listens for instream metadata, parses it, and compares it to the values in the ad metadata to identify ad events.
+- The client's video player app fires ad impression pings and tracking events as needed.
+For detailed instructions on how to implement a client video player, using the DAI REST API, check out our API guides:
+
+- [Live API](/ad-manager/dynamic-ad-insertion/api/full-service/video-player-live)
+- [VOD API](/ad-manager/dynamic-ad-insertion/api/full-service/video-player-vod)
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+
+- [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/)
+- [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0)
+- [Google Developers Site Policies](https://developers.google.com/site-policies)
+Last updated 2026-03-05 UTC.
+
+### Connect
+- [Blog](//googledevelopers.blogspot.com)
+- [Bluesky](https://goo.gle/3FReQXN)
+- [Instagram](https://www.instagram.com/googlefordevs/)
+- [LinkedIn](https://www.linkedin.com/showcase/googledevelopers/)
+- [X (Twitter)](//twitter.com/googledevs)
+- [YouTube](//www.youtube.com/user/GoogleDevelopers)
+
+### Programs
+- [Google Developer Program](/program)
+- [Google Developer Groups](/community)
+- [Google Developer Experts](/community/experts)
+- [Accelerators](/community/accelerators)
+- [Google Cloud & NVIDIA](/community/nvidia)
+
+### Developer consoles
+- [Google API Console](//console.developers.google.com)
+- [Google Cloud Platform Console](//console.cloud.google.com)
+- [Google Play Console](//play.google.com/apps/publish)
+- [Firebase Console](//console.firebase.google.com)
+- [Actions on Google Console](//console.actions.google.com)
+- [Cast SDK Developer Console](//cast.google.com/publish)
+- [Chrome Web Store Dashboard](//chrome.google.com/webstore/developer/dashboard)
+- [Google Home Developer Console](//console.home.google.com)
+- [Android](//developer.android.com)
+- [Chrome](//developer.chrome.com/home)
+- [Firebase](//firebase.google.com)
+- [Google Cloud Platform](//cloud.google.com)
+- [Google AI](//ai.google.dev/)
+- [All products](/products)
+- [Terms](/terms/site-terms)
+- [Privacy](//policies.google.com/privacy)
+
+---
+
+## DOCUMENT: DAI Pod Serving API  |  Google for DevelopersGoogleGoogle
+**Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en
+**Ingested At:** 2026-05-24T02:51:25.368Z
+
+### Introduction
+- [Google Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving)
+
+### Google Dynamic Ad Insertion
+- [Home](https://developers.google.com/ad-manager/dynamic-ad-insertion)
+- [HTML5](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5)
+- [Android](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android)
+- [iOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios)
+- [tvOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos)
+- [Chromecast](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast)
+- [Roku](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku)
+- [APIs](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving)
+- [Full service DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service)
+- [Pod serving DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving)
+- [Ad break](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/ad-break)
+- Support
+- [Ad Manager Help Community](//support.google.com/admanager/community)
+- [Contact support](//support.google.com/admanager/contact/contact_us_ima_sdk)
+- [Terms of service](https://developers.google.com/ad-manager/dynamic-ad-insertion/terms)
+- [Official Google Ad Manager Discord channel](//goo.gle/google-ad-manager-discord)
+- [Ads developer blog](//ads-developers.googleblog.com/search/label/ima_sdk)
+- Test tools
+- [Video Suite Inspector](//googleads.github.io/googleads-ima-html5-dai/vsi/)
+- [Sample streams](https://developers.google.com/ad-manager/dynamic-ad-insertion/streams)
+- [DAI pod serving API](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving)
+- [Guides](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving)
+- [Reference](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/reference/live)
+- [Google Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving)
+- Home More
+- More
+- SDKs More
+- More
+- [APIs](/ad-manager/dynamic-ad-insertion/pod-serving)
+- More
+- [Guides](/ad-manager/dynamic-ad-insertion/pod-serving)
+- [Reference](/ad-manager/dynamic-ad-insertion/api/pod-serving/reference/live)
+- Resources More
+- More
+- [Overview](/ad-manager/dynamic-ad-insertion/pod-serving)
+- [Learn DAI Pod Serving API](/ad-manager/dynamic-ad-insertion/api/pod-serving)
+- [Overview](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/stream-session-overview)
+- [Authenticate Stream Session Requests](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/stream-session-requests)
+- [Overview](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/pod-request-overview)
+- [Authenticate Pod Segment Requests](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/pod-segment-requests)
+- [Authenticate Pod Manifest Requests](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/pod-manifest-requests)
+- [Authenticate Ad Pod Timing Metadata Request](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/atm-request)
+- [Token Generator](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/token)
+- Develop server-side ad insertion
+- [Overview](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/get-started)
+- [Prepare client video player app](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client)
+- [Insert ads with ad pod timing metadata](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/manipulator)
+- [Insert ads using segment redirects](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/manipulator-basic)
+- [Overview](/ad-manager/dynamic-ad-insertion/api/pod-serving/vod)
+- [Prepare your client video player app](/ad-manager/dynamic-ad-insertion/api/pod-serving/vod/client)
+- [Configure your manifest manipulation server](/ad-manager/dynamic-ad-insertion/api/pod-serving/vod/manipulator)
+- Set up server-guided ad insertion
+- [About server-guided ad insertion](/ad-manager/dynamic-ad-insertion/server-guided)
+- [Get started with SGAI for livestream](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/get-started/sgai)
+- [Home](/ad-manager/dynamic-ad-insertion)
+- [HTML5](/ad-manager/dynamic-ad-insertion/sdk/html5)
+- [Android](/ad-manager/dynamic-ad-insertion/sdk/android)
+- [iOS](/ad-manager/dynamic-ad-insertion/sdk/ios)
+- [tvOS](/ad-manager/dynamic-ad-insertion/sdk/tvos)
+- [Chromecast](/ad-manager/dynamic-ad-insertion/sdk/cast)
+- [Roku](/ad-manager/dynamic-ad-insertion/sdk/roku)
+- [Full service DAI](/ad-manager/dynamic-ad-insertion/full-service)
+- [Pod serving DAI](/ad-manager/dynamic-ad-insertion/pod-serving)
+- [Ad break](/ad-manager/dynamic-ad-insertion/api/ad-break)
+- Support
+- [Ad Manager Help Community](//support.google.com/admanager/community)
+- [Contact support](//support.google.com/admanager/contact/contact_us_ima_sdk)
+- [Terms of service](/ad-manager/dynamic-ad-insertion/terms)
+- [Official Google Ad Manager Discord channel](//goo.gle/google-ad-manager-discord)
+- [Ads developer blog](//ads-developers.googleblog.com/search/label/ima_sdk)
+- Test tools
+- [Video Suite Inspector](//googleads.github.io/googleads-ima-html5-dai/vsi/)
+- [Sample streams](/ad-manager/dynamic-ad-insertion/streams)
+- [Home](https://developers.google.com/)
+- [Products](https://developers.google.com/products)
+- [Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion)
+- [DAI Pod Serving API](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving)
+- [APIs](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving)
+
+### DAI Pod Serving
+Dynamic Ad Insertion (DAI) Pod Serving lets you request ad pods, from Google or third-party ad servers, for live and video-on-demand (VOD) streams. For more details, see Configure ad pods and break templates.
+
+- [Configure ad pods and break templates](https://support.google.com/admanager/answer/9204132#zippy=%2Cconfigure-ad-pods-and-break-templates)
+- Pod serving redirect: lets you retrieve manifest segments to implement Server-Side Ad Insertion (SSAI). The segments are dynamic URLs, redirecting to either content or ad media files.
+- [Server guided DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/server-guided)
+For VOD, Google Ad Manager returns the complete ad pod manifests.
+
+DAI Pod serving offers the following supported platforms:
+
+- [HTML5](/ad-manager/dynamic-ad-insertion/sdk/html5?service=pod)
+- [Android](/ad-manager/dynamic-ad-insertion/sdk/android?service=pod)
+- [iOS](/ad-manager/dynamic-ad-insertion/sdk/ios?service=pod)
+- [tvOS](/ad-manager/dynamic-ad-insertion/sdk/tvos?service=pod)
+- [Chromecast](/ad-manager/dynamic-ad-insertion/sdk/cast?service=pod)
+- [Roku](/ad-manager/dynamic-ad-insertion/sdk/roku?service=pod)
+For details on livestream and VOD, see the following workflows:
+
+### Stitch ads into a livestream
+- [livestream](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/get-started)
+- [Supply targeting parameters to your stream](https://support.google.com/admanager/answer/7320899)
+- [Locate a DAI session ID or debug key](https://support.google.com/admanager/answer/7257678)
+- [Monitor and debug a specific stream session](https://support.google.com/admanager/answer/7009058)
+- Make a manifest request to your video stitcher or manifest manipulator, passing the session ID. Repeat the request for manifest updates throughout playback.
+- For DASH manifests, make one period template request for the entire session.
+- [Populate the period template](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/manipulator#populate_the_period_template)
+- Return the final manifest that contains content or ad media segments for client playback. Playback begins.
+- Regularly poll Google Ad Manager for updates of ad metadata using the polling frequency returned in the stream request. Store the ad metadata for looking up ad events.
+- During an ad break, the video player loads the media segments and follows Google Ad Manager redirects to the media files.
+- [listen to the video player for timed metadata](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client#listen_for_ad_events)
+- [Send media verification pings](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client#send_media_verification_pings)
+
+### Stitch ads into a VOD stream
+- [VOD stream](/ad-manager/dynamic-ad-insertion/api/pod-serving/vod)
+- [Supply targeting parameters to your stream](https://support.google.com/admanager/answer/7320899)
+- [Locate a DAI session ID or debug key](https://support.google.com/admanager/answer/7257678)
+- [Monitor and debug a specific stream session](https://support.google.com/admanager/answer/7009058)
+- Make a manifest request to your video stitcher or manifest manipulator, passing the session ID.
+- Use the session ID to request all ad pods at once.
+- Retrieve complete manifests of all ad pods. To create the final manifest, stitch the ad pod manifests with the content stream.
+- Return the final manifest, containing both content and ad segments.
+- Request ad metadata for all ad events. Store the ad metadata for looking up ad events. Playback begins.
+- During an ad break, the video player loads the media segments and follows Google Ad Manager redirects to the media files.
+- [listen for ad events](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client#listen_for_ad_events)
+- [Send media verification pings](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client#send_media_verification_pings)
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+
+- [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/)
+- [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0)
+- [Google Developers Site Policies](https://developers.google.com/site-policies)
+Last updated 2026-03-05 UTC.
+
+### Connect
+- [Blog](//googledevelopers.blogspot.com)
+- [Bluesky](https://goo.gle/3FReQXN)
+- [Instagram](https://www.instagram.com/googlefordevs/)
+- [LinkedIn](https://www.linkedin.com/showcase/googledevelopers/)
+- [X (Twitter)](//twitter.com/googledevs)
+- [YouTube](//www.youtube.com/user/GoogleDevelopers)
+
+### Programs
+- [Google Developer Program](/program)
+- [Google Developer Groups](/community)
+- [Google Developer Experts](/community/experts)
+- [Accelerators](/community/accelerators)
+- [Google Cloud & NVIDIA](/community/nvidia)
+
+### Developer consoles
+- [Google API Console](//console.developers.google.com)
+- [Google Cloud Platform Console](//console.cloud.google.com)
+- [Google Play Console](//play.google.com/apps/publish)
+- [Firebase Console](//console.firebase.google.com)
+- [Actions on Google Console](//console.actions.google.com)
+- [Cast SDK Developer Console](//cast.google.com/publish)
+- [Chrome Web Store Dashboard](//chrome.google.com/webstore/developer/dashboard)
+- [Google Home Developer Console](//console.home.google.com)
+- [Android](//developer.android.com)
+- [Chrome](//developer.chrome.com/home)
+- [Firebase](//firebase.google.com)
+- [Google Cloud Platform](//cloud.google.com)
+- [Google AI](//ai.google.dev/)
+- [All products](/products)
+- [Terms](/terms/site-terms)
+- [Privacy](//policies.google.com/privacy)
+
+---
+
+## DOCUMENT: Get started  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle
+**Source:** https://developers.google.com/ad-manager/api/start?hl=en
+**Ingested At:** 2026-05-24T02:51:26.666Z
+
+### Introduction
+- [Google Ad Manager](https://developers.google.com/ad-manager)
+- [SOAP API](https://developers.google.com/ad-manager/api/start)
+- [Guides](https://developers.google.com/ad-manager/api/start)
+- [Reference](https://developers.google.com/ad-manager/api/rel_notes)
+- [Samples](https://developers.google.com/ad-manager/api/clients)
+- [Support](https://developers.google.com/ad-manager/api/community)
+- [Google Ad Manager](https://developers.google.com/ad-manager)
+- [SOAP API](https://developers.google.com/ad-manager/api/start)
+- [Guides](/ad-manager/api/start)
+- [Reference](/ad-manager/api/rel_notes)
+- [Samples](/ad-manager/api/clients)
+- [Support](/ad-manager/api/community)
+- [Get Started](/ad-manager/api/start)
+- [Authentication](/ad-manager/api/authentication)
+- [PQL Guide](/ad-manager/api/pqlreference)
+- [Third Parties](/ad-manager/api/third-parties)
+- [Basic Concepts](/ad-manager/api/intro)
+- [How To](/ad-manager/api/how_to)
+- [Reports](/ad-manager/api/reporting)
+- [Forecasts](/ad-manager/api/forecasting)
+- [Native](/ad-manager/api/native)
+- [Programmatic](/ad-manager/api/programmatic)
+- [Best Practices](/ad-manager/api/bestpractices)
+- [Test Networks vs. Production](/ad-manager/api/environments)
+Looking for a REST API? The Ad Manager API (Beta) is now available.
+
+- [Ad Manager API (Beta)](/ad-manager/api/beta)
+- [Home](https://developers.google.com/)
+- [Products](https://developers.google.com/products)
+- [Ad Manager](https://developers.google.com/ad-manager)
+- [SOAP API](https://developers.google.com/ad-manager/api/start)
+
+### Get started Stay organized with collections Save and categorize content based on your preferences.
+
+
+### Page Summary
+- The Google Ad Manager SOAP API allows building applications to manage inventory, create orders, and pull reports.
+The Google Ad Manager SOAP API allows building applications to manage inventory, create orders, and pull reports.
+
+- Client libraries are available for Java, .NET, Python, PHP, and Ruby to help get started with the API.
+Client libraries are available for Java, .NET, Python, PHP, and Ruby to help get started with the API.
+
+- To make your first API request, you need to get access to an Ad Manager network, create authentication credentials using OAuth 2.0, and configure API access in your network settings.
+To make your first API request, you need to get access to an Ad Manager network, create authentication credentials using OAuth 2.0, and configure API access in your network settings.
+
+- After setting up your Ad Manager network and authentication, download and configure one of the provided client libraries to write code and make requests to the API.
+After setting up your Ad Manager network and authentication, download and configure one of the provided client libraries to write code and make requests to the API.
+
+You can use the Google Ad Manager SOAP API to build apps that manage inventory, create orders, pull reports, and more.
+
+To help you get started, we offer client libraries for Java, .NET, Python, PHP, and Ruby.
+
+- [client libraries](/ad-manager/api/clients)
+To make your first API request, follow these steps:
+
+### Get access to an Ad Manager network
+If you don't already have one, sign up for an Ad Manager account. You can also create a test network if you want to test the API in a separate environment. Note that you don't need an AdSense account for test purposes.
+
+- [Ad Manager account](//support.google.com/admanager/answer/7084151)
+- [test network](/ad-manager/api/environments)
+Make a note of your network code. You can find this in the URL when you sign in to your network. For example, in the URL https://admanager.google.com/1234#home, 1234 is your network code.
+
+- [Terms of Service](//www.google.com/intl/en_ALL/doubleclick/tos/dfp-api-terms.html)
+
+### Create authentication credentials
+You must authenticate all Ad Manager SOAP API requests using OAuth 2.0. The following steps cover the use case of accessing your own Ad Manager data. For more details and other options, see Authentication.
+
+- [Authentication](/ad-manager/api/authentication)
+Open the Google API Console Credentials page
+
+- [Google API Console Credentials page](https://console.cloud.google.com/apis/credentials)
+- From the project menu, choose Create project, enter a name for the project, and optionally, edit the provided Project ID. Click Create.
+From the project menu, choose Create project, enter a name for the project, and optionally, edit the provided Project ID. Click Create.
+
+- On the Credentials page, select Create credentials, then select Service account key.
+On the Credentials page, select Create credentials, then select Service account key.
+
+Select New service account and select JSON as the key type.
+
+- [New service account](//console.developers.google.com/apis/credentials/serviceaccountkey)
+- Click Create to download a file containing a private key.
+Click Create to download a file containing a private key.
+
+### Configure your Ad Manager network
+Sign in to Google Ad Manager.
+
+- [Sign in](//admanager.google.com/)
+- In the sidebar, click Admin > Global settings.
+In the sidebar, click Admin > Global settings.
+
+- Under General settings > Api access click the slider to Enabled.
+Under General settings > Api access click the slider to Enabled.
+
+- Click the Save button at the bottom of the page.
+Click the Save button at the bottom of the page.
+
+### Set up your client
+Download one of the Ad Manager client libraries. The libraries offer wrapper functions and features that make it easier and faster to develop apps.
+
+- [Ad Manager client libraries](/ad-manager/api/clients)
+The following tabs provide quickstarts for coding in each of the languages for which there is a client library.
+
+### Java
+Here is a basic example that shows how to use the Java client library. For more detailed usage information, refer to the README file in the client library distribution.
+
+- [Java client library](//github.com/googleads/googleads-java-lib)
+- [README](//github.com/googleads/googleads-java-lib/blob/main/README.md)
+- Setup your credentials Run the following command in a shell: curl https://raw.githubusercontent.com/googleads/googleads-java-lib/main/examples/admanager_axis/src/main/resources/ads.properties -o ~/ads.properties Open the ~/ads.properties file and populate the following fields: [...] api.admanager.applicationName=INSERT_APPLICATION_NAME_HERE api.admanager.jsonKeyFilePath=INSERT_PATH_TO_JSON_KEY_FILE_HERE api.admanager.networkCode=INSERT_NETWORK_CODE_HERE [...]
+Run the following command in a shell:
+
+Specify dependencies
+
+Edit your pom.xml file and add the following to the dependencies tag. You can find the latest version number on Github.
+
+- [Github](https://github.com/googleads/googleads-java-lib/releases)
+Write some code and make a request!
+
+- [View on GitHub](https://github.com/googleads/googleads-java-lib/blob/main/examples/admanager_axis/src/main/java/admanager/axis/v202602/networkservice/GetCurrentNetwork.java)
+
+### Python
+Here is a basic example that shows how to use the Python client library. The Python Client Library supports Python v3.6+. For more detailed usage information, refer to the README file in the client library distribution.
+
+- [Python client library](//github.com/googleads/googleads-python-lib)
+- [README](//github.com/googleads/googleads-python-lib/blob/main/README.md)
+- Install the library and set up your credentials. Run the following commands in a shell: python3 -m pip install googleads curl https://raw.githubusercontent.com/googleads/googleads-python-lib/main/googleads.yaml \ -o ~/googleads.yaml
+Run the following commands in a shell:
+
+- Set up your ~/googleads.yaml file. Fill in the following fields: ad_manager: application_name: INSERT_APPLICATION_NAME_HERE network_code: INSERT_NETWORK_CODE_HERE path_to_private_key_file: INSERT_PATH_TO_FILE_HERE
+Fill in the following fields:
+
+- [View on GitHub](https://github.com/googleads/googleads-python-lib/blob/main/examples/ad_manager/v202602/network_service/get_current_network.py)
+
+### PHP
+Here is a basic example that shows how to use the PHP client library.
+
+- [PHP client library](//github.com/googleads/googleads-php-lib)
+Run the following commands in a shell to install the client library and download the adsapi_php.ini file to your home directory:
+
+- [adsapi_php.ini](//github.com/googleads/googleads-php-lib/blob/HEAD/examples/AdManager/adsapi_php.ini)
+- Setup your ~/adsapi_php.ini file. Fill in the following fields: [AD_MANAGER] networkCode = "INSERT_NETWORK_CODE_HERE" applicationName = "INSERT_APPLICATION_NAME_HERE" [OAUTH2] jsonKeyFilePath = "INSERT_ABSOLUTE_PATH_TO_OAUTH2_JSON_KEY_FILE_HERE" scopes = "https://www.googleapis.com/auth/dfp"
+Fill in the following fields:
+
+- [View on GitHub](https://github.com/googleads/googleads-php-lib/blob/main/examples/AdManager/v202602/NetworkService/GetCurrentNetwork.php)
+
+### .NET
+Here is a basic example that shows how to use the .NET client library
+
+- [.NET client library](//github.com/googleads/googleads-dotnet-lib)
+- Create a new project Open Visual Studio and create a new project (Console Application).
+Open Visual Studio and create a new project (Console Application).
+
+Add a nuget dependency for Google.Dfp.
+
+- [Google.Dfp](//www.nuget.org/packages/Google.Dfp/)
+- Setup your App.config Copy src\App.config to your project directory and add it to your project. If your application has its own App.config, then you can copy the following nodes into your App.config: configuration/AdManagerApi configuration/configSections/section[name="AdManagerApi"] configuration/system.net
+Copy src\App.config to your project directory and add it to your project. If your application has its own App.config, then you can copy the following nodes into your App.config:
+
+- configuration/AdManagerApi
+- configuration/configSections/section[name="AdManagerApi"]
+- configuration/system.net
+- Setup credentials Open App.config and edit the following keys: <add key="ApplicationName" value="INSERT_YOUR_APPLICATION_NAME_HERE" /> <add key="NetworkCode" value="INSERT_YOUR_NETWORK_CODE_HERE" /> <add key="OAuth2Mode" value="SERVICE_ACCOUNT" /> <add key="OAuth2SecretsJsonPath" value="INSERT_OAUTH2_SECRETS_JSON_FILE_PATH_HERE" />
+Open App.config and edit the following keys:
+
+You can call the library as shown in the following C# code snippet
+
+- [View on GitHub](https://github.com/googleads/googleads-dotnet-lib/blob/main/examples/AdManager/CSharp/v202602/InventoryService/GetAllAdUnits.cs)
+If you don't want to set your credentials in your App.config, then refer to this wiki article for alternate ways of using the AdManagerUser class. For more detailed information about using the .NET Client Library, refer to the README . If you want to develop in .NET without the client library, please refer to the NoClientLibrary wiki article.
+
+- [this wiki article](//github.com/googleads/googleads-dotnet-lib/wiki/Getting-Started)
+- [README](//github.com/googleads/googleads-dotnet-lib/blob/main/README.md)
+- [NoClientLibrary wiki article](//github.com/googleads/googleads-dotnet-lib/wiki/NoClientLibrary)
+
+### Ruby
+Here is a basic example that shows how to use the Ruby client library. The Ruby client library requires Ruby 2.1 or later.
+
+- [Ruby client library](//github.com/googleads/google-api-ads-ruby/tree/HEAD/ad_manager_api)
+- Install the Ruby gem and get the configuration file. Run the following commands in a shell: gem install google-dfp-api curl https://raw.githubusercontent.com/googleads/google-api-ads-ruby/main/ad_manager_api/ad_manager_api.yml -o ~/ad_manager_api.yml If you encounter an error such as "cannot load such file -- mkmf (LoadError)" at any point while installing your gems, you may need to install additional Ruby development libraries such as ruby-dev, ruby-devel, xcode-select etc. for your particular environment.
+Run the following commands in a shell:
+
+Populate the required fields in the ~/ad_manager_api.yml file. If you don't already have an OAuth2 keyfile, you'll need to follow the steps to create your OAuth2 credentials.
+
+- [create your OAuth2 credentials](/ad-manager/api/authentication#service)
+- [View on GitHub](https://github.com/googleads/google-api-ads-ruby/blob/main/ad_manager_api/examples/v202602/network_service/get_current_network.rb)
+More detailed steps for getting started can be found in the README file that is distributed with the Ruby client library. Also, check out our full example library for Ruby.
+
+- [README](//github.com/googleads/google-api-ads-ruby/wiki/DFP-Readme)
+- [full example library](https://github.com/googleads/google-api-ads-ruby/tree/HEAD/ad_manager_api/examples)
+
+### Next steps
+When you have a client library up and running, modify the examples provided to extend them for your needs.
+
+Browse the reference documentation to learn more about the API.
+
+- [reference documentation](/ad-manager/api/rel_notes)
+If you need help, visit our Support page.
+
+- [Support page](/ad-manager/api/community)
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+
+- [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/)
+- [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0)
+- [Google Developers Site Policies](https://developers.google.com/site-policies)
+Last updated 2026-02-25 UTC.
+
+### Connect
+- [Blog](//googledevelopers.blogspot.com)
+- [Bluesky](https://goo.gle/3FReQXN)
+- [Instagram](https://www.instagram.com/googlefordevs/)
+- [LinkedIn](https://www.linkedin.com/showcase/googledevelopers/)
+- [X (Twitter)](//twitter.com/googledevs)
+- [YouTube](//www.youtube.com/user/GoogleDevelopers)
+
+### Programs
+- [Google Developer Program](/program)
+- [Google Developer Groups](/community)
+- [Google Developer Experts](/community/experts)
+- [Accelerators](/community/accelerators)
+- [Google Cloud & NVIDIA](/community/nvidia)
+
+### Developer consoles
+- [Google API Console](//console.developers.google.com)
+- [Google Cloud Platform Console](//console.cloud.google.com)
+- [Google Play Console](//play.google.com/apps/publish)
+- [Firebase Console](//console.firebase.google.com)
+- [Actions on Google Console](//console.actions.google.com)
+- [Cast SDK Developer Console](//cast.google.com/publish)
+- [Chrome Web Store Dashboard](//chrome.google.com/webstore/developer/dashboard)
+- [Google Home Developer Console](//console.home.google.com)
+- [Android](//developer.android.com)
+- [Chrome](//developer.chrome.com/home)
+- [Firebase](//firebase.google.com)
+- [Google Cloud Platform](//cloud.google.com)
+- [Google AI](//ai.google.dev/)
+- [All products](/products)
+- [Terms](/terms/site-terms)
+- [Privacy](//policies.google.com/privacy)
+
+---
+
+## DOCUMENT: Resources Overview - Google Ad Manager
+**Source:** https://admanager.google.com/home/resources/?hl=en
+**Ingested At:** 2026-05-24T02:51:27.815Z
+
+### Introduction
+- [Ad Manager](/home/)
+- [Capabilities](/home/capabilities/)
+- [Partner Solutions](/home/partner-solutions/)
+- [Success Stories](/home/success-stories/)
+- [Resources](/home/resources/)
+- [Blog](https://www.blog.google/products/admanager/)
+- [Support](https://support.google.com/admanager/?#topic=7505988&utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)
+- [Sign in](https://admanager.google.com?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)
+- [Ad Manager](/home/)
+- [Capabilities](/home/capabilities/)
+- [Formats](/home/capabilities/formats/)
+- [Video](/home/capabilities/video/)
+- [Yield Management](/home/capabilities/yield-management/)
+- [Data & Insights](/home/capabilities/data-insights/)
+- [Brand Safety](/home/capabilities/brand-safety/)
+- [Partner Solutions](/home/partner-solutions/)
+- [Apps](/home/partner-solutions/apps/)
+- [TV & Broadcast](/home/partner-solutions/broadcast/)
+- [Commerce](/home/partner-solutions/commerce/)
+- [News & Publishing](/home/partner-solutions/news-publishing/)
+- [Small Business](/home/partner-solutions/small-business/)
+- [Success Stories](/home/success-stories/)
+- [Resources](/home/resources/)
+- [Blog](https://www.blog.google/products/admanager/)
+- [Support](https://support.google.com/admanager/?#topic=7505988&utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)
+- [Sign in](https://admanager.google.com?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)
+
+### Tell us about your business
+Approximately how many monthly pageviews does your website have?
+
+Do you have a Google AdSense account?
+
+### Congratulations!
+Congratulations! You are qualified to sign up for Google Ad Manager.
+
+- [Continue to sign up](https://admanager.google.com/settings/signup/start?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)
+
+### Sign Up for Google AdSense
+You need an AdSense account to work with Google Ad Manager. Sign up and come back after your application has been approved.
+
+- [Sign up](https://www.google.com/adsense/signup?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)
+
+### Learn more, do more.
+
+
+### Increase your revenue in browsers with limited signals
+Learn how global publishers are using publisher provided Identifiers to increase programmatic revenue in browsers that no longer support third-party cookies.
+
+### Read Story
+- [Read Story](/home/resources/increase-your-revenue-in-browsers-with-limited-signals/)
+
+### Get the latest, delivered.
+Our monthly newsletter puts the latest success stories, insights, and product news right into your inbox.
+
+- [Subscribe](https://signup.withgoogle.com/newsletter/googlepublisher/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)
+
+### Filter by:
+- Topic Ad Formats Advanced TV Brand Safety Core Ad Serving Data and Insights Dynamic Ad Insertion Ecosystem Mobile App Privacy Video Yield Management
+
+### Topic
+- Ad Formats
+- Advanced TV
+- Brand Safety
+- Core Ad Serving
+- Data and Insights
+- Dynamic Ad Insertion
+- Ecosystem
+- Mobile App
+- Privacy
+- Video
+- Yield Management
+- Type Feature Brief Guide Report White Paper
+
+### Type
+- Feature Brief
+- Guide
+- Report
+- White Paper
+
+### No matching results
+- [Guide Publisher best practices for live sporting events Read more](/home/resources/publisher-best-practices-for-live-sporting-events/)
+
+### Publisher best practices for live sporting events
+- Read more
+- [Feature Brief Powering direct transactions: Investing in your growth Read more](/home/resources/powering-direct-transactions-investing-in-your-growth/)
+
+### Powering direct transactions: Investing in your growth
+- Read more
+- [Report Building the future of live monetization Read more](/home/resources/building-the-future-of-live-monetization/)
+
+### Building the future of live monetization
+- Read more
+- [Report Increase your revenue in browsers with limited signals Read more](/home/resources/increase-your-revenue-in-browsers-with-limited-signals/)
+
+### Increase your revenue in browsers with limited signals
+- Read more
+- [Guide The publisher’s playbook for navigating today’s privacy environment Read more](/home/resources/publisher-privacy-playbook/)
+
+### The publisher’s playbook for navigating today’s privacy environment
+- Read more
+- [Report For e-commerce, the time for digital ads is now Read more](/home/resources/for-e-commerce-the-time-for-digital-ads-is-now/)
+
+### For e-commerce, the time for digital ads is now
+- Read more
+- [Guide How automation can help you manage and grow your business Read more](/home/resources/how-automation-can-help-you-manage-and-grow-your-business/)
+
+### How automation can help you manage and grow your business
+- Read more
+- [Report 2020 advanced TV inventory report Read more](/home/resources/2020-advanced-tv-inventory-report/)
+
+### 2020 advanced TV inventory report
+- Read more
+- [Guide Building a Retail Media Business with Google Read more](/home/resources/building-retail-media-business-with-google-ad-manager/)
+
+### Building a Retail Media Business with Google
+- Read more
+- [Guide Protecting your ad-supported CTV experiences Read more](/home/resources/protecting-ad-supported-ctv-experiences/)
+
+### Protecting your ad-supported CTV experiences
+- Read more
+- [Guide Getting started with Dynamic Ad Insertion Read more](/home/resources/getting-started-with-dynamic-ad-insertion/)
+
+### Getting started with Dynamic Ad Insertion
+- Read more
+- [White Paper The Next-Generation Telco Bundle Read more](/home/resources/next-generation-telco-bundle-white-paper/)
+
+### The Next-Generation Telco Bundle
+- Read more
+- [Feature Brief Maximize your revenue with Opportunities and Experiments Read more](/home/resources/feature_brief_opportunities_and_experiments/)
+
+### Maximize your revenue with Opportunities and Experiments
+- Read more
+- [Feature Brief Get customized insights with Ad Manager reporting Read more](/home/resources/feature_brief_reporting/)
+
+### Get customized insights with Ad Manager reporting
+- Read more
+- [Feature Brief How Authorized Buyers work with Google Ad Manager Read more](/home/resources/how_authorized_buyers_work_with_google/)
+
+### How Authorized Buyers work with Google Ad Manager
+- Read more
+- [Feature Brief Use machine learning to manage and forecast inventory more effectively Read more](/home/resources/feature_brief_inventory_management_and_forecasting/)
+
+### Use machine learning to manage and forecast inventory more effectively
+- Read more
+- [Feature Brief Capture growing video budgets with out-stream video ads Read more](/home/resources/feature_brief_outstream_video/)
+
+### Capture growing video budgets with out-stream video ads
+- Read more
+- [Feature Brief Streamlined and improved workflows for video content ingestion Read more](/home/resources/feature_brief_video_content_ingestion/)
+
+### Streamlined and improved workflows for video content ingestion
+- Read more
+- [Guide Reimagining the commercial break everywhere viewers are watching Read more](/home/resources/2019-advanced-tv-guide/)
+
+### Reimagining the commercial break everywhere viewers are watching
+- Read more
+- [Report 2019 Advanced TV Inventory Report Read more](/home/resources/2019-advanced-tv-report/)
+
+### 2019 Advanced TV Inventory Report
+- Read more
+- [Report APAC’s changing digital landscape: How broadcast and video companies can keep up Read more](/home/resources/apacs-changing-broadcast-and-video-landscape/)
+
+### APAC’s changing digital landscape: How broadcast and video companies can keep up
+- Read more
+- [Feature Brief Save time and increase inventory value with Open Measurement for apps Read more](/home/resources/feature-brief-open-measurement/)
+
+### Save time and increase inventory value with Open Measurement for apps
+- Read more
+- [Feature Brief Modernize your direct deals with Programmatic Guaranteed Read more](/home/resources/feature-brief-programmatic-guaranteed/)
+
+### Modernize your direct deals with Programmatic Guaranteed
+- Read more
+- [Feature Brief Seamlessly reach viewers everywhere with Dynamic Ad Insertion Read more](/home/resources/feature-brief-dynamic-ad-insertion/)
+
+### Seamlessly reach viewers everywhere with Dynamic Ad Insertion
+- Read more
+- [Feature Brief Earn more from your video content with Smarter Ad Breaks Read more](/home/resources/feature-brief-smarter-ad-breaks/)
+
+### Earn more from your video content with Smarter Ad Breaks
+- Read more
+- [Feature Brief Monitor and manage ad exchange ads in the Ad review center Read more](/home/resources/feature-brief-ad-review-center/)
+
+### Monitor and manage ad exchange ads in the Ad review center
+- Read more
+- [Feature Brief Get comprehensive yield management with Google Ad Manager Read more](/home/resources/feature-brief-yield-management/)
+
+### Get comprehensive yield management with Google Ad Manager
+- Read more
+- [Feature Brief Improve app revenue and fill rates with App Mediation Read more](/home/resources/feature-brief-app-mediation/)
+
+### Improve app revenue and fill rates with App Mediation
+- Read more
+- [Feature Brief Create a customized ad experience with Native Ads Read more](/home/resources/feature-brief-native-ads/)
+
+### Create a customized ad experience with Native Ads
+- Read more
+- [Feature Brief Improving user experience with the Better Ads Standards Read more](/home/resources/feature-brief-better-ads-standards/)
+
+### Improving user experience with the Better Ads Standards
+- Read more
+- [Feature Brief Bring more bids to the auction with Open Bidding Read more](/home/resources/feature-brief-open-bidding/)
+
+### Bring more bids to the auction with Open Bidding
+- Read more
+- [Feature Brief Create a better ad experience with rewarded ads Read more](/home/resources/feature-brief-rewarded-ads/)
+
+### Create a better ad experience with rewarded ads
+- Read more
+- [Guide Video viewability best practices guide for publishers Read more](/home/resources/video-viewability-best-practices-publishers/)
+
+### Video viewability best practices guide for publishers
+- Read more
+- [Report Grow faster with a Google Certified Publishing Partner Read more](/home/resources/grow-faster-google-certified-publishing-partner/)
+
+### Grow faster with a Google Certified Publishing Partner
+- Read more
+- [Guide Rethink your eCommerce experience with Google Ad Manager Read more](/home/resources/ecommerce-guide/)
+
+### Rethink your eCommerce experience with Google Ad Manager
+- Read more
+- [Report The convergence of TV and digital: How broadcasters are building for success Read more](/home/resources/convergence-of-tv-and-digital-broadcasters-are-building-for-success/)
+
+### The convergence of TV and digital: How broadcasters are building for success
+- Read more
+- [Guide Taking a Page from the Sports Playbook: Engaging Fans in the Digital Age Read more](/home/resources/taking-page-sports-playbook-engaging-fans-digital-age/)
+
+### Taking a Page from the Sports Playbook: Engaging Fans in the Digital Age
+- Read more
+- [Guide Digital Trade Marketing: Delighting Shoppers in the Age of Digital Read more](/home/resources/digital-trade-marketing-guide/)
+
+### Digital Trade Marketing: Delighting Shoppers in the Age of Digital
+- Read more
+- [Report Publishers save 57% more time with Programmatic Guaranteed deals Read more](/home/resources/publishers-save-time-with-programmatic-guaranteed/)
+
+### Publishers save 57% more time with Programmatic Guaranteed deals
+- Read more
+- [Report Capture growing video budgets with new out-stream formats on Google Ad Manager Read more](/home/resources/capture-growing-video-budgets-new-out-stream-formats/)
+
+### Capture growing video budgets with new out-stream formats on Google Ad Manager
+- Read more
+- [Report Building for beyond with the Insights Engine Project Read more](/home/resources/building-beyond-insights-engine/)
+
+### Building for beyond with the Insights Engine Project
+- Read more
+- [Report Digitizing supplier marketing: Increasing sales of products and services Read more](/home/resources/digitizing-supplier-marketing/)
+
+### Digitizing supplier marketing: Increasing sales of products and services
+- Read more
+- [Report Improving protections for publishers Read more](/home/resources/improving-protections-publishers/)
+
+### Improving protections for publishers
+- Read more
+- [Report TV made smarter with Google Ad Manager Read more](/home/resources/tv-made-smarter/)
+
+### TV made smarter with Google Ad Manager
+- Read more
+- [Report What’s next for the mobile web? Read more](/home/resources/whats-next-mobile-web/)
+
+### What’s next for the mobile web?
+- Read more
+- [Report Programmatic Guaranteed with custom creatives delivers scale for Vox Media Read more](/home/resources/article-programmatic-delivers-scale-vox-media/)
+
+### Programmatic Guaranteed with custom creatives delivers scale for Vox Media
+- Read more
+- [Guide Creating better ad experiences for everyone Read more](/home/resources/creating-better-ad-experiences-guide/)
+
+### Creating better ad experiences for everyone
+- Read more
+- [Guide How publishers can engage with people who use ad blockers Read more](/home/resources/guide-how-publishers-engage-with-ad-blockers/)
+
+### How publishers can engage with people who use ad blockers
+- Read more
+- [Report Programmatic TV’s European Evolution Read more](/home/resources/report-programmatic-tv-europe-evolution/)
+
+### Programmatic TV’s European Evolution
+- Read more
+
+### Hungry for more?
+Learn how global publishers are finding success using Ad Manager to power their ads businesses.
+
+- [Success Stories](/home/success-stories/)
+Follow us
+
+### About Google Ad Manager
+- [Overview](/home/)
+- [Capabilities](/home/capabilities/)
+- [Partner Solutions](/home/partner-solutions/)
+
+### Learning & support
+- [Support](https://support.google.com/admanager/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)
+- [Blog](https://www.blog.google/products/admanager/)
+- [Skillshop](https://skillshop.withgoogle.com/)
+
+### Developers & partners
+- [Google developers site](https://developers.google.com/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)
+- [Ad Manager for developers](https://developers.google.com/ad-manager/api/start?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)
+- [Certified Publishing Partners](https://www.google.com/ads/publisher/partners/find-a-partner/?utm_source=admanager&utm_campaign=footer)
+
+### Related products
+- [Google Marketing Platform](https://marketingplatform.google.com/about/)
+- [Google Ads](https://ads.google.com/home/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)
+- [Google AdSense](https://www.google.com/adsense/start/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)
+- [Google AdMob](https://www.google.com/admob/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)
+- [Google Cloud](https://cloud.google.com/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)
+
+### More from Google
+- [Think with Google](https://www.thinkwithgoogle.com/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)
+- [Google Revenue Solutions](https://www.google.com/ads/publisher/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)
+- [Business Solutions](https://www.google.com/services/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)
+- [Google Workspace](https://workspace.google.com/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)
+- [Privacy](https://www.google.com/intl/en/policies/privacy/)
+- [Terms](https://www.google.com/intl/en/policies/terms/)
+- [About Google](https://www.google.com/intl/en/about/)
+- [Google Products](https://www.google.com/intl/en/about/products/)
+- Cookies management controls
+- [Help](https://support.google.com/?hl=en)
+- Change language or region 简体中文DeutschEnglish (UK)English (US)EspañolFrançaisItaliano日本語한국어NederlandsPortuguês (Brasil)
+
+---
+
+## DOCUMENT: ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation
+**Source:** https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en
+**Ingested At:** 2026-05-24T02:51:29.403Z
+
+### Introduction
+- [Technology areas](https://docs.cloud.google.com/docs)
+- [AI and ML](https://docs.cloud.google.com/docs/ai-ml)
+- [Application development](https://docs.cloud.google.com/docs/application-development)
+- [Application hosting](https://docs.cloud.google.com/docs/application-hosting)
+- [Compute](https://docs.cloud.google.com/docs/compute-area)
+- [Data analytics and pipelines](https://docs.cloud.google.com/docs/data)
+- [Databases](https://docs.cloud.google.com/docs/databases)
+- [Distributed, hybrid, and multicloud](https://docs.cloud.google.com/docs/dhm-cloud)
+- [Industry solutions](https://docs.cloud.google.com/docs/industry)
+- [Migration](https://docs.cloud.google.com/docs/migration)
+- [Networking](https://docs.cloud.google.com/docs/networking)
+- [Observability and monitoring](https://docs.cloud.google.com/docs/observability)
+- [Security](https://docs.cloud.google.com/docs/security)
+- [Storage](https://docs.cloud.google.com/docs/storage)
+- [Cross-product tools](https://docs.cloud.google.com/docs/cross-product-overviews)
+- [Access and resources management](https://docs.cloud.google.com/docs/access-resources)
+- [Costs and usage management](https://docs.cloud.google.com/docs/costs-usage)
+- [Infrastructure as code](https://docs.cloud.google.com/docs/iac)
+- [SDK, languages, frameworks, and tools](https://docs.cloud.google.com/docs/devtools)
+- [Console](//console.cloud.google.com/)
+- [Java](https://docs.cloud.google.com/java/docs)
+- [Client libraries](https://docs.cloud.google.com/java/docs/reference)
+- [Start free](//console.cloud.google.com/freetrial)
+- [Overview](https://docs.cloud.google.com/java/docs)
+- [Guides](https://docs.cloud.google.com/java/docs/setup)
+- [Reference](https://docs.cloud.google.com/java/docs/reference)
+- [Samples](https://docs.cloud.google.com/docs/samples/?language=java)
+- [Technology areas](/docs)
+- More
+- [Overview](/java/docs)
+- [Guides](/java/docs/setup)
+- [Reference](/java/docs/reference)
+- [Samples](/docs/samples/?language=java)
+- [Cross-product tools](/docs/cross-product-overviews)
+- More
+- [Console](//console.cloud.google.com/)
+- [Overview](/java/docs/reference)
+- Library reference docs
+- [Overview](/java/docs/reference/ad-manager/latest/overview)
+- [Version history](/java/docs/reference/ad-manager/latest/history)
+- [Package summary](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1)
+- [AdBreakServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdBreakServiceClient)
+- [AdReviewCenterAdServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdReviewCenterAdServiceClient)
+- [AdUnitServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitServiceClient)
+- [ApplicationServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ApplicationServiceClient)
+- [AudienceSegmentServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AudienceSegmentServiceClient)
+- [BandwidthGroupServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BandwidthGroupServiceClient)
+- [BrowserLanguageServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserLanguageServiceClient)
+- [BrowserServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserServiceClient)
+- [CmsMetadataKeyServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataKeyServiceClient)
+- [CmsMetadataValueServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataValueServiceClient)
+- [CompanyServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CompanyServiceClient)
+- [ContactServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContactServiceClient)
+- [ContentBundleServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentBundleServiceClient)
+- [ContentLabelServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentLabelServiceClient)
+- [ContentServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentServiceClient)
+- [CreativeTemplateServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateServiceClient)
+- [CustomFieldServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldServiceClient)
+- [CustomTargetingKeyServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKeyServiceClient)
+- [CustomTargetingValueServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingValueServiceClient)
+- [DeviceCapabilityServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCapabilityServiceClient)
+- [DeviceCategoryServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCategoryServiceClient)
+- [DeviceManufacturerServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceManufacturerServiceClient)
+- [EntitySignalsMappingServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.EntitySignalsMappingServiceClient)
+- [GeoTargetServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GeoTargetServiceClient)
+- [LineItemServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LineItemServiceClient)
+- [MobileCarrierServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileCarrierServiceClient)
+- [MobileDeviceServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDeviceServiceClient)
+- [MobileDeviceSubmodelServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDeviceSubmodelServiceClient)
+- [NetworkServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.NetworkServiceClient)
+- [OperatingSystemServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemServiceClient)
+- [OperatingSystemVersionServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemVersionServiceClient)
+- [OrderServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OrderServiceClient)
+- [PlacementServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PlacementServiceClient)
+- [PrivateAuctionDealServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionDealServiceClient)
+- [PrivateAuctionServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionServiceClient)
+- [ProgrammaticBuyerServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ProgrammaticBuyerServiceClient)
+- [ReportServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportServiceClient)
+- [RoleServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RoleServiceClient)
+- [SiteServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SiteServiceClient)
+- [TaxonomyCategoryServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TaxonomyCategoryServiceClient)
+- [TeamServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TeamServiceClient)
+- [UserServiceClient](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UserServiceClient)
+- [AdBreakServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdBreakServiceSettings)
+- [AdReviewCenterAdServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdReviewCenterAdServiceSettings)
+- [AdUnitServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitServiceSettings)
+- [ApplicationServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ApplicationServiceSettings)
+- [AudienceSegmentServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AudienceSegmentServiceSettings)
+- [BandwidthGroupServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BandwidthGroupServiceSettings)
+- [BrowserLanguageServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserLanguageServiceSettings)
+- [BrowserServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserServiceSettings)
+- [CmsMetadataKeyServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataKeyServiceSettings)
+- [CmsMetadataValueServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataValueServiceSettings)
+- [CompanyServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CompanyServiceSettings)
+- [ContactServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContactServiceSettings)
+- [ContentBundleServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentBundleServiceSettings)
+- [ContentLabelServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentLabelServiceSettings)
+- [ContentServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentServiceSettings)
+- [CreativeTemplateServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateServiceSettings)
+- [CustomFieldServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldServiceSettings)
+- [CustomTargetingKeyServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKeyServiceSettings)
+- [CustomTargetingValueServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingValueServiceSettings)
+- [DeviceCapabilityServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCapabilityServiceSettings)
+- [DeviceCategoryServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCategoryServiceSettings)
+- [DeviceManufacturerServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceManufacturerServiceSettings)
+- [EntitySignalsMappingServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.EntitySignalsMappingServiceSettings)
+- [GeoTargetServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GeoTargetServiceSettings)
+- [LineItemServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LineItemServiceSettings)
+- [MobileCarrierServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileCarrierServiceSettings)
+- [MobileDeviceServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDeviceServiceSettings)
+- [MobileDeviceSubmodelServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDeviceSubmodelServiceSettings)
+- [NetworkServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.NetworkServiceSettings)
+- [OperatingSystemServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemServiceSettings)
+- [OperatingSystemVersionServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemVersionServiceSettings)
+- [OrderServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OrderServiceSettings)
+- [PlacementServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PlacementServiceSettings)
+- [PrivateAuctionDealServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionDealServiceSettings)
+- [PrivateAuctionServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionServiceSettings)
+- [ProgrammaticBuyerServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ProgrammaticBuyerServiceSettings)
+- [ReportServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportServiceSettings)
+- [RoleServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RoleServiceSettings)
+- [SiteServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SiteServiceSettings)
+- [TaxonomyCategoryServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TaxonomyCategoryServiceSettings)
+- [TeamServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TeamServiceSettings)
+- [UserServiceSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UserServiceSettings)
+- [AdBreakServiceClient.ListAdBreaksPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdBreakServiceClient.ListAdBreaksPagedResponse)
+- [AdReviewCenterAdServiceClient.SearchAdReviewCenterAdsPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdReviewCenterAdServiceClient.SearchAdReviewCenterAdsPagedResponse)
+- [AdUnitServiceClient.ListAdUnitSizesPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitServiceClient.ListAdUnitSizesPagedResponse)
+- [AdUnitServiceClient.ListAdUnitsPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitServiceClient.ListAdUnitsPagedResponse)
+- [ApplicationServiceClient.ListApplicationsPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ApplicationServiceClient.ListApplicationsPagedResponse)
+- [AudienceSegmentServiceClient.ListAudienceSegmentsPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AudienceSegmentServiceClient.ListAudienceSegmentsPagedResponse)
+- [BandwidthGroupServiceClient.ListBandwidthGroupsPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BandwidthGroupServiceClient.ListBandwidthGroupsPagedResponse)
+- [BatchActivateAdUnitsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivateAdUnitsRequest)
+- [BatchActivateAdUnitsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivateAdUnitsResponse)
+- [BatchActivateCustomFieldsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivateCustomFieldsRequest)
+- [BatchActivateCustomFieldsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivateCustomFieldsResponse)
+- [BatchActivateCustomTargetingKeysRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivateCustomTargetingKeysRequest)
+- [BatchActivateCustomTargetingKeysResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivateCustomTargetingKeysResponse)
+- [BatchActivatePlacementsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivatePlacementsRequest)
+- [BatchActivatePlacementsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivatePlacementsResponse)
+- [BatchActivateTeamsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivateTeamsRequest)
+- [BatchActivateTeamsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivateTeamsResponse)
+- [BatchAllowAdReviewCenterAdsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchAllowAdReviewCenterAdsRequest)
+- [BatchAllowAdReviewCenterAdsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchAllowAdReviewCenterAdsResponse)
+- [BatchArchiveAdUnitsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchArchiveAdUnitsRequest)
+- [BatchArchiveAdUnitsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchArchiveAdUnitsResponse)
+- [BatchArchivePlacementsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchArchivePlacementsRequest)
+- [BatchArchivePlacementsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchArchivePlacementsResponse)
+- [BatchBlockAdReviewCenterAdsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchBlockAdReviewCenterAdsRequest)
+- [BatchBlockAdReviewCenterAdsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchBlockAdReviewCenterAdsResponse)
+- [BatchCreateAdUnitsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateAdUnitsRequest)
+- [BatchCreateAdUnitsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateAdUnitsResponse)
+- [BatchCreateContactsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateContactsRequest)
+- [BatchCreateContactsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateContactsResponse)
+- [BatchCreateCustomFieldsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateCustomFieldsRequest)
+- [BatchCreateCustomFieldsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateCustomFieldsResponse)
+- [BatchCreateCustomTargetingKeysRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateCustomTargetingKeysRequest)
+- [BatchCreateCustomTargetingKeysResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateCustomTargetingKeysResponse)
+- [BatchCreateEntitySignalsMappingsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateEntitySignalsMappingsRequest)
+- [BatchCreateEntitySignalsMappingsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateEntitySignalsMappingsResponse)
+- [BatchCreatePlacementsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreatePlacementsRequest)
+- [BatchCreatePlacementsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreatePlacementsResponse)
+- [BatchCreateSitesRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateSitesRequest)
+- [BatchCreateSitesResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateSitesResponse)
+- [BatchCreateTeamsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateTeamsRequest)
+- [BatchCreateTeamsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateTeamsResponse)
+- [BatchDeactivateAdUnitsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateAdUnitsRequest)
+- [BatchDeactivateAdUnitsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateAdUnitsResponse)
+- [BatchDeactivateCustomFieldsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateCustomFieldsRequest)
+- [BatchDeactivateCustomFieldsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateCustomFieldsResponse)
+- [BatchDeactivateCustomTargetingKeysRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateCustomTargetingKeysRequest)
+- [BatchDeactivateCustomTargetingKeysResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateCustomTargetingKeysResponse)
+- [BatchDeactivatePlacementsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivatePlacementsRequest)
+- [BatchDeactivatePlacementsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivatePlacementsResponse)
+- [BatchDeactivateSitesRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateSitesRequest)
+- [BatchDeactivateSitesResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateSitesResponse)
+- [BatchDeactivateTeamsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateTeamsRequest)
+- [BatchDeactivateTeamsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateTeamsResponse)
+- [BatchSubmitSitesForApprovalRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchSubmitSitesForApprovalRequest)
+- [BatchSubmitSitesForApprovalResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchSubmitSitesForApprovalResponse)
+- [BatchUpdateAdUnitsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateAdUnitsRequest)
+- [BatchUpdateAdUnitsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateAdUnitsResponse)
+- [BatchUpdateContactsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateContactsRequest)
+- [BatchUpdateContactsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateContactsResponse)
+- [BatchUpdateCustomFieldsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateCustomFieldsRequest)
+- [BatchUpdateCustomFieldsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateCustomFieldsResponse)
+- [BatchUpdateCustomTargetingKeysRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateCustomTargetingKeysRequest)
+- [BatchUpdateCustomTargetingKeysResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateCustomTargetingKeysResponse)
+- [BatchUpdateEntitySignalsMappingsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateEntitySignalsMappingsRequest)
+- [BatchUpdateEntitySignalsMappingsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateEntitySignalsMappingsResponse)
+- [BatchUpdatePlacementsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdatePlacementsRequest)
+- [BatchUpdatePlacementsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdatePlacementsResponse)
+- [BatchUpdateSitesRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateSitesRequest)
+- [BatchUpdateSitesResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateSitesResponse)
+- [BatchUpdateTeamsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateTeamsRequest)
+- [BatchUpdateTeamsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateTeamsResponse)
+- [BrowserLanguageServiceClient.ListBrowserLanguagesPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserLanguageServiceClient.ListBrowserLanguagesPagedResponse)
+- [BrowserServiceClient.ListBrowsersPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserServiceClient.ListBrowsersPagedResponse)
+- [CmsMetadataKeyServiceClient.ListCmsMetadataKeysPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataKeyServiceClient.ListCmsMetadataKeysPagedResponse)
+- [CmsMetadataValueServiceClient.ListCmsMetadataValuesPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataValueServiceClient.ListCmsMetadataValuesPagedResponse)
+- [CompanyServiceClient.ListCompaniesPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CompanyServiceClient.ListCompaniesPagedResponse)
+- [ContactServiceClient.ListContactsPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContactServiceClient.ListContactsPagedResponse)
+- [ContentBundleServiceClient.ListContentBundlesPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentBundleServiceClient.ListContentBundlesPagedResponse)
+- [ContentLabelServiceClient.ListContentLabelsPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentLabelServiceClient.ListContentLabelsPagedResponse)
+- [ContentServiceClient.ListContentPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentServiceClient.ListContentPagedResponse)
+- [CreateAdBreakRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateAdBreakRequest)
+- [CreateAdUnitRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateAdUnitRequest)
+- [CreateContactRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateContactRequest)
+- [CreateCustomFieldRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateCustomFieldRequest)
+- [CreateCustomTargetingKeyRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateCustomTargetingKeyRequest)
+- [CreateEntitySignalsMappingRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateEntitySignalsMappingRequest)
+- [CreatePlacementRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreatePlacementRequest)
+- [CreatePrivateAuctionDealRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreatePrivateAuctionDealRequest)
+- [CreatePrivateAuctionRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreatePrivateAuctionRequest)
+- [CreateReportRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateReportRequest)
+- [CreateSiteRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateSiteRequest)
+- [CreateTeamRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateTeamRequest)
+- [CreativeTemplateServiceClient.ListCreativeTemplatesPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateServiceClient.ListCreativeTemplatesPagedResponse)
+- [CustomFieldServiceClient.ListCustomFieldsPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldServiceClient.ListCustomFieldsPagedResponse)
+- [CustomTargetingKeyServiceClient.ListCustomTargetingKeysPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKeyServiceClient.ListCustomTargetingKeysPagedResponse)
+- [CustomTargetingValueServiceClient.ListCustomTargetingValuesPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingValueServiceClient.ListCustomTargetingValuesPagedResponse)
+- [DeleteAdBreakRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeleteAdBreakRequest)
+- [DeviceCapabilityServiceClient.ListDeviceCapabilitiesPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCapabilityServiceClient.ListDeviceCapabilitiesPagedResponse)
+- [DeviceCategoryServiceClient.ListDeviceCategoriesPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCategoryServiceClient.ListDeviceCategoriesPagedResponse)
+- [DeviceManufacturerServiceClient.ListDeviceManufacturersPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceManufacturerServiceClient.ListDeviceManufacturersPagedResponse)
+- [EntitySignalsMappingServiceClient.ListEntitySignalsMappingsPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.EntitySignalsMappingServiceClient.ListEntitySignalsMappingsPagedResponse)
+- [FetchReportResultRowsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.FetchReportResultRowsRequest)
+- [FetchReportResultRowsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.FetchReportResultRowsResponse)
+- [GeoTargetServiceClient.ListGeoTargetsPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GeoTargetServiceClient.ListGeoTargetsPagedResponse)
+- [GetAdBreakRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetAdBreakRequest)
+- [GetAdUnitRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetAdUnitRequest)
+- [GetApplicationRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetApplicationRequest)
+- [GetAudienceSegmentRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetAudienceSegmentRequest)
+- [GetBandwidthGroupRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetBandwidthGroupRequest)
+- [GetBrowserLanguageRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetBrowserLanguageRequest)
+- [GetBrowserRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetBrowserRequest)
+- [GetCmsMetadataKeyRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetCmsMetadataKeyRequest)
+- [GetCmsMetadataValueRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetCmsMetadataValueRequest)
+- [GetCompanyRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetCompanyRequest)
+- [GetContactRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetContactRequest)
+- [GetContentBundleRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetContentBundleRequest)
+- [GetContentLabelRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetContentLabelRequest)
+- [GetContentRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetContentRequest)
+- [GetCreativeTemplateRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetCreativeTemplateRequest)
+- [GetCustomFieldRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetCustomFieldRequest)
+- [GetCustomTargetingKeyRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetCustomTargetingKeyRequest)
+- [GetCustomTargetingValueRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetCustomTargetingValueRequest)
+- [GetDeviceCapabilityRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetDeviceCapabilityRequest)
+- [GetDeviceCategoryRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetDeviceCategoryRequest)
+- [GetDeviceManufacturerRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetDeviceManufacturerRequest)
+- [GetEntitySignalsMappingRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetEntitySignalsMappingRequest)
+- [GetGeoTargetRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetGeoTargetRequest)
+- [GetLineItemRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetLineItemRequest)
+- [GetMobileCarrierRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetMobileCarrierRequest)
+- [GetMobileDeviceRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetMobileDeviceRequest)
+- [GetMobileDeviceSubmodelRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetMobileDeviceSubmodelRequest)
+- [GetNetworkRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetNetworkRequest)
+- [GetOperatingSystemRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetOperatingSystemRequest)
+- [GetOperatingSystemVersionRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetOperatingSystemVersionRequest)
+- [GetOrderRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetOrderRequest)
+- [GetPlacementRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetPlacementRequest)
+- [GetPrivateAuctionDealRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetPrivateAuctionDealRequest)
+- [GetPrivateAuctionRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetPrivateAuctionRequest)
+- [GetProgrammaticBuyerRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetProgrammaticBuyerRequest)
+- [GetReportRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetReportRequest)
+- [GetRoleRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetRoleRequest)
+- [GetSiteRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetSiteRequest)
+- [GetTaxonomyCategoryRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetTaxonomyCategoryRequest)
+- [GetTeamRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetTeamRequest)
+- [GetUserRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetUserRequest)
+- [LineItemServiceClient.ListLineItemsPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LineItemServiceClient.ListLineItemsPagedResponse)
+- [ListAdBreaksRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListAdBreaksRequest)
+- [ListAdBreaksResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListAdBreaksResponse)
+- [ListAdUnitSizesRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListAdUnitSizesRequest)
+- [ListAdUnitSizesResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListAdUnitSizesResponse)
+- [ListAdUnitsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListAdUnitsRequest)
+- [ListAdUnitsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListAdUnitsResponse)
+- [ListApplicationsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListApplicationsRequest)
+- [ListApplicationsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListApplicationsResponse)
+- [ListAudienceSegmentsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListAudienceSegmentsRequest)
+- [ListAudienceSegmentsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListAudienceSegmentsResponse)
+- [ListBandwidthGroupsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListBandwidthGroupsRequest)
+- [ListBandwidthGroupsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListBandwidthGroupsResponse)
+- [ListBrowserLanguagesRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListBrowserLanguagesRequest)
+- [ListBrowserLanguagesResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListBrowserLanguagesResponse)
+- [ListBrowsersRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListBrowsersRequest)
+- [ListBrowsersResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListBrowsersResponse)
+- [ListCmsMetadataKeysRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCmsMetadataKeysRequest)
+- [ListCmsMetadataKeysResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCmsMetadataKeysResponse)
+- [ListCmsMetadataValuesRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCmsMetadataValuesRequest)
+- [ListCmsMetadataValuesResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCmsMetadataValuesResponse)
+- [ListCompaniesRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCompaniesRequest)
+- [ListCompaniesResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCompaniesResponse)
+- [ListContactsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListContactsRequest)
+- [ListContactsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListContactsResponse)
+- [ListContentBundlesRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListContentBundlesRequest)
+- [ListContentBundlesResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListContentBundlesResponse)
+- [ListContentLabelsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListContentLabelsRequest)
+- [ListContentLabelsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListContentLabelsResponse)
+- [ListContentRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListContentRequest)
+- [ListContentResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListContentResponse)
+- [ListCreativeTemplatesRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCreativeTemplatesRequest)
+- [ListCreativeTemplatesResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCreativeTemplatesResponse)
+- [ListCustomFieldsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCustomFieldsRequest)
+- [ListCustomFieldsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCustomFieldsResponse)
+- [ListCustomTargetingKeysRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCustomTargetingKeysRequest)
+- [ListCustomTargetingKeysResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCustomTargetingKeysResponse)
+- [ListCustomTargetingValuesRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCustomTargetingValuesRequest)
+- [ListCustomTargetingValuesResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCustomTargetingValuesResponse)
+- [ListDeviceCapabilitiesRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListDeviceCapabilitiesRequest)
+- [ListDeviceCapabilitiesResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListDeviceCapabilitiesResponse)
+- [ListDeviceCategoriesRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListDeviceCategoriesRequest)
+- [ListDeviceCategoriesResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListDeviceCategoriesResponse)
+- [ListDeviceManufacturersRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListDeviceManufacturersRequest)
+- [ListDeviceManufacturersResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListDeviceManufacturersResponse)
+- [ListEntitySignalsMappingsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListEntitySignalsMappingsRequest)
+- [ListEntitySignalsMappingsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListEntitySignalsMappingsResponse)
+- [ListGeoTargetsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListGeoTargetsRequest)
+- [ListGeoTargetsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListGeoTargetsResponse)
+- [ListLineItemsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListLineItemsRequest)
+- [ListLineItemsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListLineItemsResponse)
+- [ListMobileCarriersRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListMobileCarriersRequest)
+- [ListMobileCarriersResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListMobileCarriersResponse)
+- [ListMobileDeviceSubmodelsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListMobileDeviceSubmodelsRequest)
+- [ListMobileDeviceSubmodelsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListMobileDeviceSubmodelsResponse)
+- [ListMobileDevicesRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListMobileDevicesRequest)
+- [ListMobileDevicesResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListMobileDevicesResponse)
+- [ListNetworksRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListNetworksRequest)
+- [ListNetworksResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListNetworksResponse)
+- [ListOperatingSystemVersionsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListOperatingSystemVersionsRequest)
+- [ListOperatingSystemVersionsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListOperatingSystemVersionsResponse)
+- [ListOperatingSystemsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListOperatingSystemsRequest)
+- [ListOperatingSystemsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListOperatingSystemsResponse)
+- [ListOrdersRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListOrdersRequest)
+- [ListOrdersResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListOrdersResponse)
+- [ListPlacementsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListPlacementsRequest)
+- [ListPlacementsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListPlacementsResponse)
+- [ListPrivateAuctionDealsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListPrivateAuctionDealsRequest)
+- [ListPrivateAuctionDealsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListPrivateAuctionDealsResponse)
+- [ListPrivateAuctionsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListPrivateAuctionsRequest)
+- [ListPrivateAuctionsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListPrivateAuctionsResponse)
+- [ListProgrammaticBuyersRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListProgrammaticBuyersRequest)
+- [ListProgrammaticBuyersResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListProgrammaticBuyersResponse)
+- [ListReportsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListReportsRequest)
+- [ListReportsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListReportsResponse)
+- [ListRolesRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListRolesRequest)
+- [ListRolesResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListRolesResponse)
+- [ListSitesRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListSitesRequest)
+- [ListSitesResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListSitesResponse)
+- [ListTaxonomyCategoriesRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListTaxonomyCategoriesRequest)
+- [ListTaxonomyCategoriesResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListTaxonomyCategoriesResponse)
+- [ListTeamsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListTeamsRequest)
+- [ListTeamsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListTeamsResponse)
+- [MobileCarrierServiceClient.ListMobileCarriersPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileCarrierServiceClient.ListMobileCarriersPagedResponse)
+- [MobileDeviceServiceClient.ListMobileDevicesPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDeviceServiceClient.ListMobileDevicesPagedResponse)
+- [MobileDeviceSubmodelServiceClient.ListMobileDeviceSubmodelsPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDeviceSubmodelServiceClient.ListMobileDeviceSubmodelsPagedResponse)
+- [NetworkServiceClient.ListNetworksPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.NetworkServiceClient.ListNetworksPagedResponse)
+- [OperatingSystemServiceClient.ListOperatingSystemsPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemServiceClient.ListOperatingSystemsPagedResponse)
+- [OperatingSystemVersionServiceClient.ListOperatingSystemVersionsPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemVersionServiceClient.ListOperatingSystemVersionsPagedResponse)
+- [OrderServiceClient.ListOrdersPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OrderServiceClient.ListOrdersPagedResponse)
+- [PlacementServiceClient.ListPlacementsPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PlacementServiceClient.ListPlacementsPagedResponse)
+- [PrivateAuctionDealServiceClient.ListPrivateAuctionDealsPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionDealServiceClient.ListPrivateAuctionDealsPagedResponse)
+- [PrivateAuctionServiceClient.ListPrivateAuctionsPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionServiceClient.ListPrivateAuctionsPagedResponse)
+- [ProgrammaticBuyerServiceClient.ListProgrammaticBuyersPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ProgrammaticBuyerServiceClient.ListProgrammaticBuyersPagedResponse)
+- [ReportServiceClient.FetchReportResultRowsPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportServiceClient.FetchReportResultRowsPagedResponse)
+- [ReportServiceClient.ListReportsPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportServiceClient.ListReportsPagedResponse)
+- [RoleServiceClient.ListRolesPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RoleServiceClient.ListRolesPagedResponse)
+- [RunReportRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RunReportRequest)
+- [RunReportResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RunReportResponse)
+- [SearchAdReviewCenterAdsRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SearchAdReviewCenterAdsRequest)
+- [SearchAdReviewCenterAdsResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SearchAdReviewCenterAdsResponse)
+- [SiteServiceClient.ListSitesPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SiteServiceClient.ListSitesPagedResponse)
+- [TaxonomyCategoryServiceClient.ListTaxonomyCategoriesPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TaxonomyCategoryServiceClient.ListTaxonomyCategoriesPagedResponse)
+- [TeamServiceClient.ListTeamsPagedResponse](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TeamServiceClient.ListTeamsPagedResponse)
+- [UpdateAdBreakRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateAdBreakRequest)
+- [UpdateAdUnitRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateAdUnitRequest)
+- [UpdateContactRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateContactRequest)
+- [UpdateCustomFieldRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateCustomFieldRequest)
+- [UpdateCustomTargetingKeyRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateCustomTargetingKeyRequest)
+- [UpdateEntitySignalsMappingRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateEntitySignalsMappingRequest)
+- [UpdatePlacementRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdatePlacementRequest)
+- [UpdatePrivateAuctionDealRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdatePrivateAuctionDealRequest)
+- [UpdatePrivateAuctionRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdatePrivateAuctionRequest)
+- [UpdateReportRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateReportRequest)
+- [UpdateSiteRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateSiteRequest)
+- [UpdateTeamRequest](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateTeamRequest)
+- [AdBreak.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdBreak.Builder)
+- [AdBreakName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdBreakName.Builder)
+- [AdBreakServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdBreakServiceSettings.Builder)
+- [AdBreakStateEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdBreakStateEnum.Builder)
+- [AdManagerError.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdManagerError.Builder)
+- [AdReviewCenterAd.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdReviewCenterAd.Builder)
+- [AdReviewCenterAdServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdReviewCenterAdServiceSettings.Builder)
+- [AdReviewCenterAdStatusEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.Builder)
+- [AdUnit.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnit.Builder)
+- [AdUnitName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitName.Builder)
+- [AdUnitParent.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitParent.Builder)
+- [AdUnitServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitServiceSettings.Builder)
+- [AdUnitSize.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitSize.Builder)
+- [AdUnitStatusEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitStatusEnum.Builder)
+- [AdUnitTargeting.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitTargeting.Builder)
+- [Application.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Application.Builder)
+- [ApplicationName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ApplicationName.Builder)
+- [ApplicationServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ApplicationServiceSettings.Builder)
+- [AppliedLabel.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AppliedLabel.Builder)
+- [AudienceSegment.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AudienceSegment.Builder)
+- [AudienceSegmentName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AudienceSegmentName.Builder)
+- [AudienceSegmentServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AudienceSegmentServiceSettings.Builder)
+- [AudienceSegmentTargeting.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AudienceSegmentTargeting.Builder)
+- [BandwidthGroup.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BandwidthGroup.Builder)
+- [BandwidthGroupName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BandwidthGroupName.Builder)
+- [BandwidthGroupServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BandwidthGroupServiceSettings.Builder)
+- [BandwidthTargeting.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BandwidthTargeting.Builder)
+- [BatchActivateAdUnitsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivateAdUnitsRequest.Builder)
+- [BatchActivateAdUnitsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivateAdUnitsResponse.Builder)
+- [BatchActivateCustomFieldsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivateCustomFieldsRequest.Builder)
+- [BatchActivateCustomFieldsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivateCustomFieldsResponse.Builder)
+- [BatchActivateCustomTargetingKeysRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivateCustomTargetingKeysRequest.Builder)
+- [BatchActivateCustomTargetingKeysResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivateCustomTargetingKeysResponse.Builder)
+- [BatchActivatePlacementsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivatePlacementsRequest.Builder)
+- [BatchActivatePlacementsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivatePlacementsResponse.Builder)
+- [BatchActivateTeamsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivateTeamsRequest.Builder)
+- [BatchActivateTeamsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivateTeamsResponse.Builder)
+- [BatchAdReviewCenterAdsOperationMetadata.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchAdReviewCenterAdsOperationMetadata.Builder)
+- [BatchAllowAdReviewCenterAdsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchAllowAdReviewCenterAdsRequest.Builder)
+- [BatchAllowAdReviewCenterAdsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchAllowAdReviewCenterAdsResponse.Builder)
+- [BatchArchiveAdUnitsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchArchiveAdUnitsRequest.Builder)
+- [BatchArchiveAdUnitsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchArchiveAdUnitsResponse.Builder)
+- [BatchArchivePlacementsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchArchivePlacementsRequest.Builder)
+- [BatchArchivePlacementsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchArchivePlacementsResponse.Builder)
+- [BatchBlockAdReviewCenterAdsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchBlockAdReviewCenterAdsRequest.Builder)
+- [BatchBlockAdReviewCenterAdsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchBlockAdReviewCenterAdsResponse.Builder)
+- [BatchCreateAdUnitsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateAdUnitsRequest.Builder)
+- [BatchCreateAdUnitsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateAdUnitsResponse.Builder)
+- [BatchCreateContactsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateContactsRequest.Builder)
+- [BatchCreateContactsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateContactsResponse.Builder)
+- [BatchCreateCustomFieldsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateCustomFieldsRequest.Builder)
+- [BatchCreateCustomFieldsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateCustomFieldsResponse.Builder)
+- [BatchCreateCustomTargetingKeysRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateCustomTargetingKeysRequest.Builder)
+- [BatchCreateCustomTargetingKeysResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateCustomTargetingKeysResponse.Builder)
+- [BatchCreateEntitySignalsMappingsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateEntitySignalsMappingsRequest.Builder)
+- [BatchCreateEntitySignalsMappingsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateEntitySignalsMappingsResponse.Builder)
+- [BatchCreatePlacementsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreatePlacementsRequest.Builder)
+- [BatchCreatePlacementsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreatePlacementsResponse.Builder)
+- [BatchCreateSitesRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateSitesRequest.Builder)
+- [BatchCreateSitesResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateSitesResponse.Builder)
+- [BatchCreateTeamsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateTeamsRequest.Builder)
+- [BatchCreateTeamsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateTeamsResponse.Builder)
+- [BatchDeactivateAdUnitsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateAdUnitsRequest.Builder)
+- [BatchDeactivateAdUnitsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateAdUnitsResponse.Builder)
+- [BatchDeactivateCustomFieldsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateCustomFieldsRequest.Builder)
+- [BatchDeactivateCustomFieldsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateCustomFieldsResponse.Builder)
+- [BatchDeactivateCustomTargetingKeysRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateCustomTargetingKeysRequest.Builder)
+- [BatchDeactivateCustomTargetingKeysResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateCustomTargetingKeysResponse.Builder)
+- [BatchDeactivatePlacementsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivatePlacementsRequest.Builder)
+- [BatchDeactivatePlacementsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivatePlacementsResponse.Builder)
+- [BatchDeactivateSitesRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateSitesRequest.Builder)
+- [BatchDeactivateSitesResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateSitesResponse.Builder)
+- [BatchDeactivateTeamsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateTeamsRequest.Builder)
+- [BatchDeactivateTeamsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateTeamsResponse.Builder)
+- [BatchSubmitSitesForApprovalRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchSubmitSitesForApprovalRequest.Builder)
+- [BatchSubmitSitesForApprovalResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchSubmitSitesForApprovalResponse.Builder)
+- [BatchUpdateAdUnitsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateAdUnitsRequest.Builder)
+- [BatchUpdateAdUnitsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateAdUnitsResponse.Builder)
+- [BatchUpdateContactsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateContactsRequest.Builder)
+- [BatchUpdateContactsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateContactsResponse.Builder)
+- [BatchUpdateCustomFieldsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateCustomFieldsRequest.Builder)
+- [BatchUpdateCustomFieldsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateCustomFieldsResponse.Builder)
+- [BatchUpdateCustomTargetingKeysRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateCustomTargetingKeysRequest.Builder)
+- [BatchUpdateCustomTargetingKeysResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateCustomTargetingKeysResponse.Builder)
+- [BatchUpdateEntitySignalsMappingsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateEntitySignalsMappingsRequest.Builder)
+- [BatchUpdateEntitySignalsMappingsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateEntitySignalsMappingsResponse.Builder)
+- [BatchUpdatePlacementsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdatePlacementsRequest.Builder)
+- [BatchUpdatePlacementsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdatePlacementsResponse.Builder)
+- [BatchUpdateSitesRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateSitesRequest.Builder)
+- [BatchUpdateSitesResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateSitesResponse.Builder)
+- [BatchUpdateTeamsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateTeamsRequest.Builder)
+- [BatchUpdateTeamsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateTeamsResponse.Builder)
+- [Browser.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Browser.Builder)
+- [BrowserLanguage.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserLanguage.Builder)
+- [BrowserLanguageName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserLanguageName.Builder)
+- [BrowserLanguageServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserLanguageServiceSettings.Builder)
+- [BrowserLanguageTargeting.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserLanguageTargeting.Builder)
+- [BrowserName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserName.Builder)
+- [BrowserServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserServiceSettings.Builder)
+- [BrowserTargeting.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserTargeting.Builder)
+- [CmsMetadataKey.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataKey.Builder)
+- [CmsMetadataKeyName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataKeyName.Builder)
+- [CmsMetadataKeyServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataKeyServiceSettings.Builder)
+- [CmsMetadataKeyStatusEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataKeyStatusEnum.Builder)
+- [CmsMetadataTargeting.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataTargeting.Builder)
+- [CmsMetadataValue.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataValue.Builder)
+- [CmsMetadataValueName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataValueName.Builder)
+- [CmsMetadataValueServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataValueServiceSettings.Builder)
+- [CmsMetadataValueStatusEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataValueStatusEnum.Builder)
+- [Company.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Company.Builder)
+- [CompanyCreditStatusEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CompanyCreditStatusEnum.Builder)
+- [CompanyName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CompanyName.Builder)
+- [CompanyServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CompanyServiceSettings.Builder)
+- [CompanyTypeEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CompanyTypeEnum.Builder)
+- [Contact.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Contact.Builder)
+- [ContactName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContactName.Builder)
+- [ContactServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContactServiceSettings.Builder)
+- [ContactStatusEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContactStatusEnum.Builder)
+- [Content.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Content.Builder)
+- [ContentBundle.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentBundle.Builder)
+- [ContentBundleName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentBundleName.Builder)
+- [ContentBundleServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentBundleServiceSettings.Builder)
+- [ContentLabel.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentLabel.Builder)
+- [ContentLabelName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentLabelName.Builder)
+- [ContentLabelServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentLabelServiceSettings.Builder)
+- [ContentName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentName.Builder)
+- [ContentServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentServiceSettings.Builder)
+- [ContentTargeting.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentTargeting.Builder)
+- [CreateAdBreakRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateAdBreakRequest.Builder)
+- [CreateAdUnitRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateAdUnitRequest.Builder)
+- [CreateContactRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateContactRequest.Builder)
+- [CreateCustomFieldRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateCustomFieldRequest.Builder)
+- [CreateCustomTargetingKeyRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateCustomTargetingKeyRequest.Builder)
+- [CreateEntitySignalsMappingRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateEntitySignalsMappingRequest.Builder)
+- [CreatePlacementRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreatePlacementRequest.Builder)
+- [CreatePrivateAuctionDealRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreatePrivateAuctionDealRequest.Builder)
+- [CreatePrivateAuctionRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreatePrivateAuctionRequest.Builder)
+- [CreateReportRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateReportRequest.Builder)
+- [CreateSiteRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateSiteRequest.Builder)
+- [CreateTeamRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateTeamRequest.Builder)
+- [CreativeTemplate.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplate.Builder)
+- [CreativeTemplateName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateName.Builder)
+- [CreativeTemplateServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateServiceSettings.Builder)
+- [CreativeTemplateStatusEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateStatusEnum.Builder)
+- [CreativeTemplateTypeEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateTypeEnum.Builder)
+- [CreativeTemplateVariable.AssetCreativeTemplateVariable.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariable.AssetCreativeTemplateVariable.Builder)
+- [CreativeTemplateVariable.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariable.Builder)
+- [CreativeTemplateVariable.ListStringCreativeTemplateVariable.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariable.ListStringCreativeTemplateVariable.Builder)
+- [CreativeTemplateVariable.ListStringCreativeTemplateVariable.VariableChoice.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariable.ListStringCreativeTemplateVariable.VariableChoice.Builder)
+- [CreativeTemplateVariable.LongCreativeTemplateVariable.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariable.LongCreativeTemplateVariable.Builder)
+- [CreativeTemplateVariable.StringCreativeTemplateVariable.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariable.StringCreativeTemplateVariable.Builder)
+- [CreativeTemplateVariable.UrlCreativeTemplateVariable.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariable.UrlCreativeTemplateVariable.Builder)
+- [CreativeTemplateVariableUrlTypeEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariableUrlTypeEnum.Builder)
+- [CustomField.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomField.Builder)
+- [CustomFieldDataTypeEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldDataTypeEnum.Builder)
+- [CustomFieldEntityTypeEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldEntityTypeEnum.Builder)
+- [CustomFieldName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldName.Builder)
+- [CustomFieldOption.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldOption.Builder)
+- [CustomFieldServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldServiceSettings.Builder)
+- [CustomFieldStatusEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldStatusEnum.Builder)
+- [CustomFieldValue.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldValue.Builder)
+- [CustomFieldValue.Value.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldValue.Value.Builder)
+- [CustomFieldVisibilityEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldVisibilityEnum.Builder)
+- [CustomTargeting.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargeting.Builder)
+- [CustomTargetingClause.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingClause.Builder)
+- [CustomTargetingKey.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKey.Builder)
+- [CustomTargetingKeyName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKeyName.Builder)
+- [CustomTargetingKeyReportableTypeEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKeyReportableTypeEnum.Builder)
+- [CustomTargetingKeyServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKeyServiceSettings.Builder)
+- [CustomTargetingKeyStatusEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKeyStatusEnum.Builder)
+- [CustomTargetingKeyTypeEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKeyTypeEnum.Builder)
+- [CustomTargetingLiteral.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingLiteral.Builder)
+- [CustomTargetingValue.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingValue.Builder)
+- [CustomTargetingValueMatchTypeEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum.Builder)
+- [CustomTargetingValueName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingValueName.Builder)
+- [CustomTargetingValueServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingValueServiceSettings.Builder)
+- [CustomTargetingValueStatusEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingValueStatusEnum.Builder)
+- [DataSegmentTargeting.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DataSegmentTargeting.Builder)
+- [DealBuyerPermissionTypeEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DealBuyerPermissionTypeEnum.Builder)
+- [DeleteAdBreakRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeleteAdBreakRequest.Builder)
+- [DeviceCapability.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCapability.Builder)
+- [DeviceCapabilityName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCapabilityName.Builder)
+- [DeviceCapabilityServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCapabilityServiceSettings.Builder)
+- [DeviceCapabilityTargeting.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCapabilityTargeting.Builder)
+- [DeviceCategory.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCategory.Builder)
+- [DeviceCategoryName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCategoryName.Builder)
+- [DeviceCategoryServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCategoryServiceSettings.Builder)
+- [DeviceCategoryTargeting.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCategoryTargeting.Builder)
+- [DeviceManufacturer.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceManufacturer.Builder)
+- [DeviceManufacturerName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceManufacturerName.Builder)
+- [DeviceManufacturerServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceManufacturerServiceSettings.Builder)
+- [DeviceManufacturerTargeting.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceManufacturerTargeting.Builder)
+- [DisapprovalReason.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DisapprovalReason.Builder)
+- [EntitySignalsMapping.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.EntitySignalsMapping.Builder)
+- [EntitySignalsMappingName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.EntitySignalsMappingName.Builder)
+- [EntitySignalsMappingServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.EntitySignalsMappingServiceSettings.Builder)
+- [EnvironmentTypeEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.EnvironmentTypeEnum.Builder)
+- [ExchangeSyndicationProductEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ExchangeSyndicationProductEnum.Builder)
+- [FetchReportResultRowsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.FetchReportResultRowsRequest.Builder)
+- [FetchReportResultRowsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.FetchReportResultRowsResponse.Builder)
+- [FirstPartyMobileApplicationTargeting.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.FirstPartyMobileApplicationTargeting.Builder)
+- [FrequencyCap.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.FrequencyCap.Builder)
+- [GeoTarget.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GeoTarget.Builder)
+- [GeoTargetName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GeoTargetName.Builder)
+- [GeoTargetServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GeoTargetServiceSettings.Builder)
+- [GeoTargeting.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GeoTargeting.Builder)
+- [GetAdBreakRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetAdBreakRequest.Builder)
+- [GetAdUnitRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetAdUnitRequest.Builder)
+- [GetApplicationRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetApplicationRequest.Builder)
+- [GetAudienceSegmentRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetAudienceSegmentRequest.Builder)
+- [GetBandwidthGroupRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetBandwidthGroupRequest.Builder)
+- [GetBrowserLanguageRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetBrowserLanguageRequest.Builder)
+- [GetBrowserRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetBrowserRequest.Builder)
+- [GetCmsMetadataKeyRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetCmsMetadataKeyRequest.Builder)
+- [GetCmsMetadataValueRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetCmsMetadataValueRequest.Builder)
+- [GetCompanyRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetCompanyRequest.Builder)
+- [GetContactRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetContactRequest.Builder)
+- [GetContentBundleRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetContentBundleRequest.Builder)
+- [GetContentLabelRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetContentLabelRequest.Builder)
+- [GetContentRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetContentRequest.Builder)
+- [GetCreativeTemplateRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetCreativeTemplateRequest.Builder)
+- [GetCustomFieldRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetCustomFieldRequest.Builder)
+- [GetCustomTargetingKeyRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetCustomTargetingKeyRequest.Builder)
+- [GetCustomTargetingValueRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetCustomTargetingValueRequest.Builder)
+- [GetDeviceCapabilityRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetDeviceCapabilityRequest.Builder)
+- [GetDeviceCategoryRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetDeviceCategoryRequest.Builder)
+- [GetDeviceManufacturerRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetDeviceManufacturerRequest.Builder)
+- [GetEntitySignalsMappingRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetEntitySignalsMappingRequest.Builder)
+- [GetGeoTargetRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetGeoTargetRequest.Builder)
+- [GetLineItemRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetLineItemRequest.Builder)
+- [GetMobileCarrierRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetMobileCarrierRequest.Builder)
+- [GetMobileDeviceRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetMobileDeviceRequest.Builder)
+- [GetMobileDeviceSubmodelRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetMobileDeviceSubmodelRequest.Builder)
+- [GetNetworkRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetNetworkRequest.Builder)
+- [GetOperatingSystemRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetOperatingSystemRequest.Builder)
+- [GetOperatingSystemVersionRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetOperatingSystemVersionRequest.Builder)
+- [GetOrderRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetOrderRequest.Builder)
+- [GetPlacementRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetPlacementRequest.Builder)
+- [GetPrivateAuctionDealRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetPrivateAuctionDealRequest.Builder)
+- [GetPrivateAuctionRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetPrivateAuctionRequest.Builder)
+- [GetProgrammaticBuyerRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetProgrammaticBuyerRequest.Builder)
+- [GetReportRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetReportRequest.Builder)
+- [GetRoleRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetRoleRequest.Builder)
+- [GetSiteRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetSiteRequest.Builder)
+- [GetTaxonomyCategoryRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetTaxonomyCategoryRequest.Builder)
+- [GetTeamRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetTeamRequest.Builder)
+- [GetUserRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetUserRequest.Builder)
+- [Goal.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Goal.Builder)
+- [GoalTypeEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GoalTypeEnum.Builder)
+- [InventoryTargeting.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.InventoryTargeting.Builder)
+- [Label.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Label.Builder)
+- [LabelFrequencyCap.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LabelFrequencyCap.Builder)
+- [LineItem.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LineItem.Builder)
+- [LineItemName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LineItemName.Builder)
+- [LineItemServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LineItemServiceSettings.Builder)
+- [LineItemTypeEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LineItemTypeEnum.Builder)
+- [ListAdBreaksRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListAdBreaksRequest.Builder)
+- [ListAdBreaksResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListAdBreaksResponse.Builder)
+- [ListAdUnitSizesRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListAdUnitSizesRequest.Builder)
+- [ListAdUnitSizesResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListAdUnitSizesResponse.Builder)
+- [ListAdUnitsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListAdUnitsRequest.Builder)
+- [ListAdUnitsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListAdUnitsResponse.Builder)
+- [ListApplicationsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListApplicationsRequest.Builder)
+- [ListApplicationsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListApplicationsResponse.Builder)
+- [ListAudienceSegmentsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListAudienceSegmentsRequest.Builder)
+- [ListAudienceSegmentsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListAudienceSegmentsResponse.Builder)
+- [ListBandwidthGroupsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListBandwidthGroupsRequest.Builder)
+- [ListBandwidthGroupsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListBandwidthGroupsResponse.Builder)
+- [ListBrowserLanguagesRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListBrowserLanguagesRequest.Builder)
+- [ListBrowserLanguagesResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListBrowserLanguagesResponse.Builder)
+- [ListBrowsersRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListBrowsersRequest.Builder)
+- [ListBrowsersResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListBrowsersResponse.Builder)
+- [ListCmsMetadataKeysRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCmsMetadataKeysRequest.Builder)
+- [ListCmsMetadataKeysResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCmsMetadataKeysResponse.Builder)
+- [ListCmsMetadataValuesRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCmsMetadataValuesRequest.Builder)
+- [ListCmsMetadataValuesResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCmsMetadataValuesResponse.Builder)
+- [ListCompaniesRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCompaniesRequest.Builder)
+- [ListCompaniesResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCompaniesResponse.Builder)
+- [ListContactsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListContactsRequest.Builder)
+- [ListContactsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListContactsResponse.Builder)
+- [ListContentBundlesRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListContentBundlesRequest.Builder)
+- [ListContentBundlesResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListContentBundlesResponse.Builder)
+- [ListContentLabelsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListContentLabelsRequest.Builder)
+- [ListContentLabelsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListContentLabelsResponse.Builder)
+- [ListContentRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListContentRequest.Builder)
+- [ListContentResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListContentResponse.Builder)
+- [ListCreativeTemplatesRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCreativeTemplatesRequest.Builder)
+- [ListCreativeTemplatesResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCreativeTemplatesResponse.Builder)
+- [ListCustomFieldsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCustomFieldsRequest.Builder)
+- [ListCustomFieldsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCustomFieldsResponse.Builder)
+- [ListCustomTargetingKeysRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCustomTargetingKeysRequest.Builder)
+- [ListCustomTargetingKeysResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCustomTargetingKeysResponse.Builder)
+- [ListCustomTargetingValuesRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCustomTargetingValuesRequest.Builder)
+- [ListCustomTargetingValuesResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCustomTargetingValuesResponse.Builder)
+- [ListDeviceCapabilitiesRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListDeviceCapabilitiesRequest.Builder)
+- [ListDeviceCapabilitiesResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListDeviceCapabilitiesResponse.Builder)
+- [ListDeviceCategoriesRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListDeviceCategoriesRequest.Builder)
+- [ListDeviceCategoriesResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListDeviceCategoriesResponse.Builder)
+- [ListDeviceManufacturersRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListDeviceManufacturersRequest.Builder)
+- [ListDeviceManufacturersResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListDeviceManufacturersResponse.Builder)
+- [ListEntitySignalsMappingsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListEntitySignalsMappingsRequest.Builder)
+- [ListEntitySignalsMappingsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListEntitySignalsMappingsResponse.Builder)
+- [ListGeoTargetsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListGeoTargetsRequest.Builder)
+- [ListGeoTargetsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListGeoTargetsResponse.Builder)
+- [ListLineItemsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListLineItemsRequest.Builder)
+- [ListLineItemsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListLineItemsResponse.Builder)
+- [ListMobileCarriersRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListMobileCarriersRequest.Builder)
+- [ListMobileCarriersResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListMobileCarriersResponse.Builder)
+- [ListMobileDeviceSubmodelsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListMobileDeviceSubmodelsRequest.Builder)
+- [ListMobileDeviceSubmodelsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListMobileDeviceSubmodelsResponse.Builder)
+- [ListMobileDevicesRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListMobileDevicesRequest.Builder)
+- [ListMobileDevicesResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListMobileDevicesResponse.Builder)
+- [ListNetworksRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListNetworksRequest.Builder)
+- [ListNetworksResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListNetworksResponse.Builder)
+- [ListOperatingSystemVersionsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListOperatingSystemVersionsRequest.Builder)
+- [ListOperatingSystemVersionsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListOperatingSystemVersionsResponse.Builder)
+- [ListOperatingSystemsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListOperatingSystemsRequest.Builder)
+- [ListOperatingSystemsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListOperatingSystemsResponse.Builder)
+- [ListOrdersRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListOrdersRequest.Builder)
+- [ListOrdersResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListOrdersResponse.Builder)
+- [ListPlacementsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListPlacementsRequest.Builder)
+- [ListPlacementsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListPlacementsResponse.Builder)
+- [ListPrivateAuctionDealsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListPrivateAuctionDealsRequest.Builder)
+- [ListPrivateAuctionDealsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListPrivateAuctionDealsResponse.Builder)
+- [ListPrivateAuctionsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListPrivateAuctionsRequest.Builder)
+- [ListPrivateAuctionsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListPrivateAuctionsResponse.Builder)
+- [ListProgrammaticBuyersRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListProgrammaticBuyersRequest.Builder)
+- [ListProgrammaticBuyersResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListProgrammaticBuyersResponse.Builder)
+- [ListReportsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListReportsRequest.Builder)
+- [ListReportsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListReportsResponse.Builder)
+- [ListRolesRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListRolesRequest.Builder)
+- [ListRolesResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListRolesResponse.Builder)
+- [ListSitesRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListSitesRequest.Builder)
+- [ListSitesResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListSitesResponse.Builder)
+- [ListTaxonomyCategoriesRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListTaxonomyCategoriesRequest.Builder)
+- [ListTaxonomyCategoriesResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListTaxonomyCategoriesResponse.Builder)
+- [ListTeamsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListTeamsRequest.Builder)
+- [ListTeamsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListTeamsResponse.Builder)
+- [LiveStreamEvent.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LiveStreamEvent.Builder)
+- [LiveStreamEventName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LiveStreamEventName.Builder)
+- [MobileApplicationTargeting.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileApplicationTargeting.Builder)
+- [MobileCarrier.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileCarrier.Builder)
+- [MobileCarrierName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileCarrierName.Builder)
+- [MobileCarrierServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileCarrierServiceSettings.Builder)
+- [MobileCarrierTargeting.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileCarrierTargeting.Builder)
+- [MobileDevice.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDevice.Builder)
+- [MobileDeviceName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDeviceName.Builder)
+- [MobileDeviceServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDeviceServiceSettings.Builder)
+- [MobileDeviceSubmodel.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDeviceSubmodel.Builder)
+- [MobileDeviceSubmodelName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDeviceSubmodelName.Builder)
+- [MobileDeviceSubmodelServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDeviceSubmodelServiceSettings.Builder)
+- [Network.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Network.Builder)
+- [NetworkName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.NetworkName.Builder)
+- [NetworkServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.NetworkServiceSettings.Builder)
+- [OperatingSystem.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystem.Builder)
+- [OperatingSystemName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemName.Builder)
+- [OperatingSystemServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemServiceSettings.Builder)
+- [OperatingSystemTargeting.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemTargeting.Builder)
+- [OperatingSystemVersion.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemVersion.Builder)
+- [OperatingSystemVersionName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemVersionName.Builder)
+- [OperatingSystemVersionServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemVersionServiceSettings.Builder)
+- [Order.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Order.Builder)
+- [OrderName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OrderName.Builder)
+- [OrderServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OrderServiceSettings.Builder)
+- [OrderStatusEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OrderStatusEnum.Builder)
+- [Placement.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Placement.Builder)
+- [PlacementName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PlacementName.Builder)
+- [PlacementServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PlacementServiceSettings.Builder)
+- [PlacementStatusEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PlacementStatusEnum.Builder)
+- [PrivateAuction.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuction.Builder)
+- [PrivateAuctionDeal.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionDeal.Builder)
+- [PrivateAuctionDeal.BuyerData.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionDeal.BuyerData.Builder)
+- [PrivateAuctionDealName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionDealName.Builder)
+- [PrivateAuctionDealServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionDealServiceSettings.Builder)
+- [PrivateAuctionName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionName.Builder)
+- [PrivateAuctionServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionServiceSettings.Builder)
+- [PrivateMarketplaceDealStatusEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateMarketplaceDealStatusEnum.Builder)
+- [ProgrammaticBuyer.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ProgrammaticBuyer.Builder)
+- [ProgrammaticBuyerName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ProgrammaticBuyerName.Builder)
+- [ProgrammaticBuyerServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ProgrammaticBuyerServiceSettings.Builder)
+- [Report.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Report.Builder)
+- [ReportDataTable.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDataTable.Builder)
+- [ReportDataTable.MetricValueGroup.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDataTable.MetricValueGroup.Builder)
+- [ReportDataTable.Row.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDataTable.Row.Builder)
+- [ReportDefinition.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.Builder)
+- [ReportDefinition.DateRange.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.DateRange.Builder)
+- [ReportDefinition.DateRange.FixedDateRange.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange.Builder)
+- [ReportDefinition.Field.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.Field.Builder)
+- [ReportDefinition.Filter.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.Filter.Builder)
+- [ReportDefinition.Filter.FieldFilter.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.Filter.FieldFilter.Builder)
+- [ReportDefinition.Filter.FilterList.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.Filter.FilterList.Builder)
+- [ReportDefinition.Flag.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.Flag.Builder)
+- [ReportDefinition.Slice.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.Slice.Builder)
+- [ReportDefinition.Sort.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.Sort.Builder)
+- [ReportName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportName.Builder)
+- [ReportServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportServiceSettings.Builder)
+- [ReportValue.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportValue.Builder)
+- [ReportValue.DoubleList.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportValue.DoubleList.Builder)
+- [ReportValue.IntList.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportValue.IntList.Builder)
+- [ReportValue.StringList.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportValue.StringList.Builder)
+- [RequestPlatformEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RequestPlatformEnum.Builder)
+- [RequestPlatformTargeting.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RequestPlatformTargeting.Builder)
+- [Role.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Role.Builder)
+- [RoleName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RoleName.Builder)
+- [RoleServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RoleServiceSettings.Builder)
+- [RoleStatusEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RoleStatusEnum.Builder)
+- [RunReportMetadata.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RunReportMetadata.Builder)
+- [RunReportRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RunReportRequest.Builder)
+- [RunReportResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RunReportResponse.Builder)
+- [ScheduleOptions.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ScheduleOptions.Builder)
+- [ScheduleOptions.Schedule.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ScheduleOptions.Schedule.Builder)
+- [ScheduleOptions.Schedule.MonthlySchedule.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule.Builder)
+- [ScheduleOptions.Schedule.WeeklySchedule.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule.Builder)
+- [SearchAdReviewCenterAdsRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SearchAdReviewCenterAdsRequest.Builder)
+- [SearchAdReviewCenterAdsResponse.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SearchAdReviewCenterAdsResponse.Builder)
+- [Site.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Site.Builder)
+- [SiteApprovalStatusEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SiteApprovalStatusEnum.Builder)
+- [SiteDisapprovalReasonEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SiteDisapprovalReasonEnum.Builder)
+- [SiteName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SiteName.Builder)
+- [SiteServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SiteServiceSettings.Builder)
+- [Size.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Size.Builder)
+- [SizeTypeEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SizeTypeEnum.Builder)
+- [SmartSizeModeEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SmartSizeModeEnum.Builder)
+- [TargetWindowEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TargetWindowEnum.Builder)
+- [TargetedVideoBumperTypeEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TargetedVideoBumperTypeEnum.Builder)
+- [Targeting.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Targeting.Builder)
+- [TaxonomyCategory.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TaxonomyCategory.Builder)
+- [TaxonomyCategoryName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TaxonomyCategoryName.Builder)
+- [TaxonomyCategoryServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TaxonomyCategoryServiceSettings.Builder)
+- [TaxonomyTypeEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TaxonomyTypeEnum.Builder)
+- [Team.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Team.Builder)
+- [TeamAccessTypeEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TeamAccessTypeEnum.Builder)
+- [TeamName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TeamName.Builder)
+- [TeamServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TeamServiceSettings.Builder)
+- [TeamStatusEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TeamStatusEnum.Builder)
+- [TechnologyTargeting.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TechnologyTargeting.Builder)
+- [TimeUnitEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TimeUnitEnum.Builder)
+- [UnitTypeEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UnitTypeEnum.Builder)
+- [UpdateAdBreakRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateAdBreakRequest.Builder)
+- [UpdateAdUnitRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateAdUnitRequest.Builder)
+- [UpdateContactRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateContactRequest.Builder)
+- [UpdateCustomFieldRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateCustomFieldRequest.Builder)
+- [UpdateCustomTargetingKeyRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateCustomTargetingKeyRequest.Builder)
+- [UpdateEntitySignalsMappingRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateEntitySignalsMappingRequest.Builder)
+- [UpdatePlacementRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdatePlacementRequest.Builder)
+- [UpdatePrivateAuctionDealRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdatePrivateAuctionDealRequest.Builder)
+- [UpdatePrivateAuctionRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdatePrivateAuctionRequest.Builder)
+- [UpdateReportRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateReportRequest.Builder)
+- [UpdateSiteRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateSiteRequest.Builder)
+- [UpdateTeamRequest.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateTeamRequest.Builder)
+- [User.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.User.Builder)
+- [UserDomainTargeting.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UserDomainTargeting.Builder)
+- [UserName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UserName.Builder)
+- [UserServiceSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UserServiceSettings.Builder)
+- [VideoPosition.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.VideoPosition.Builder)
+- [VideoPositionEnum.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.VideoPositionEnum.Builder)
+- [VideoPositionTargeting.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.VideoPositionTargeting.Builder)
+- [WebProperty.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.WebProperty.Builder)
+- [WebPropertyName.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.WebPropertyName.Builder)
+- [AdBreakStateEnum.AdBreakState](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdBreakStateEnum.AdBreakState)
+- [AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus)
+- [AdUnitStatusEnum.AdUnitStatus](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitStatusEnum.AdUnitStatus)
+- [CmsMetadataKeyStatusEnum.CmsMetadataKeyStatus](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataKeyStatusEnum.CmsMetadataKeyStatus)
+- [CmsMetadataValueStatusEnum.CmsMetadataValueStatus](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataValueStatusEnum.CmsMetadataValueStatus)
+- [CompanyCreditStatusEnum.CompanyCreditStatus](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CompanyCreditStatusEnum.CompanyCreditStatus)
+- [CompanyTypeEnum.CompanyType](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CompanyTypeEnum.CompanyType)
+- [ContactStatusEnum.ContactStatus](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContactStatusEnum.ContactStatus)
+- [CreativeTemplateStatusEnum.CreativeTemplateStatus](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateStatusEnum.CreativeTemplateStatus)
+- [CreativeTemplateTypeEnum.CreativeTemplateType](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateTypeEnum.CreativeTemplateType)
+- [CreativeTemplateVariable.AssetCreativeTemplateVariable.MimeType](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariable.AssetCreativeTemplateVariable.MimeType)
+- [CreativeTemplateVariable.SubTypeCase](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariable.SubTypeCase)
+- [CreativeTemplateVariableUrlTypeEnum.CreativeTemplateVariableUrlType](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariableUrlTypeEnum.CreativeTemplateVariableUrlType)
+- [CustomFieldDataTypeEnum.CustomFieldDataType](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType)
+- [CustomFieldEntityTypeEnum.CustomFieldEntityType](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldEntityTypeEnum.CustomFieldEntityType)
+- [CustomFieldStatusEnum.CustomFieldStatus](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldStatusEnum.CustomFieldStatus)
+- [CustomFieldValue.Value.ValueCase](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldValue.Value.ValueCase)
+- [CustomFieldVisibilityEnum.CustomFieldVisibility](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldVisibilityEnum.CustomFieldVisibility)
+- [CustomTargetingKeyReportableTypeEnum.CustomTargetingKeyReportableType](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKeyReportableTypeEnum.CustomTargetingKeyReportableType)
+- [CustomTargetingKeyStatusEnum.CustomTargetingKeyStatus](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKeyStatusEnum.CustomTargetingKeyStatus)
+- [CustomTargetingKeyTypeEnum.CustomTargetingKeyType](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKeyTypeEnum.CustomTargetingKeyType)
+- [CustomTargetingValueMatchTypeEnum.CustomTargetingValueMatchType](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum.CustomTargetingValueMatchType)
+- [CustomTargetingValueStatusEnum.CustomTargetingValueStatus](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingValueStatusEnum.CustomTargetingValueStatus)
+- [DealBuyerPermissionTypeEnum.DealBuyerPermissionType](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DealBuyerPermissionTypeEnum.DealBuyerPermissionType)
+- [EntitySignalsMapping.EntityCase](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.EntitySignalsMapping.EntityCase)
+- [EnvironmentTypeEnum.EnvironmentType](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType)
+- [ExchangeSyndicationProductEnum.ExchangeSyndicationProduct](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ExchangeSyndicationProductEnum.ExchangeSyndicationProduct)
+- [GoalTypeEnum.GoalType](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GoalTypeEnum.GoalType)
+- [LineItemTypeEnum.LineItemType](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LineItemTypeEnum.LineItemType)
+- [MobileApplicationTargeting.TargetingCase](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileApplicationTargeting.TargetingCase)
+- [OrderStatusEnum.OrderStatus](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OrderStatusEnum.OrderStatus)
+- [PlacementStatusEnum.PlacementStatus](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PlacementStatusEnum.PlacementStatus)
+- [PrivateMarketplaceDealStatusEnum.PrivateMarketplaceDealStatus](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateMarketplaceDealStatusEnum.PrivateMarketplaceDealStatus)
+- [Report.Visibility](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Report.Visibility)
+- [ReportDefinition.DateRange.DateRangeTypeCase](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.DateRange.DateRangeTypeCase)
+- [ReportDefinition.DateRange.RelativeDateRange](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.DateRange.RelativeDateRange)
+- [ReportDefinition.Dimension](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.Dimension)
+- [ReportDefinition.Field.FieldCase](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.Field.FieldCase)
+- [ReportDefinition.Filter.Operation](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.Filter.Operation)
+- [ReportDefinition.Filter.TypeCase](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.Filter.TypeCase)
+- [ReportDefinition.Metric](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.Metric)
+- [ReportDefinition.MetricValueType](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.MetricValueType)
+- [ReportDefinition.ReportType](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.ReportType)
+- [ReportDefinition.TimePeriodColumn](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.TimePeriodColumn)
+- [ReportDefinition.TimeZoneSource](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.TimeZoneSource)
+- [ReportValue.ValueCase](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportValue.ValueCase)
+- [RequestPlatformEnum.RequestPlatform](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RequestPlatformEnum.RequestPlatform)
+- [RoleStatusEnum.RoleStatus](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RoleStatusEnum.RoleStatus)
+- [ScheduleOptions.DeliveryCondition](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ScheduleOptions.DeliveryCondition)
+- [ScheduleOptions.Schedule.Frequency](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ScheduleOptions.Schedule.Frequency)
+- [ScheduleOptions.Schedule.FrequencyScheduleCase](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ScheduleOptions.Schedule.FrequencyScheduleCase)
+- [SiteApprovalStatusEnum.SiteApprovalStatus](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SiteApprovalStatusEnum.SiteApprovalStatus)
+- [SiteDisapprovalReasonEnum.SiteDisapprovalReason](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SiteDisapprovalReasonEnum.SiteDisapprovalReason)
+- [SizeTypeEnum.SizeType](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SizeTypeEnum.SizeType)
+- [SmartSizeModeEnum.SmartSizeMode](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SmartSizeModeEnum.SmartSizeMode)
+- [TargetWindowEnum.TargetWindow](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TargetWindowEnum.TargetWindow)
+- [TargetedVideoBumperTypeEnum.TargetedVideoBumperType](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TargetedVideoBumperTypeEnum.TargetedVideoBumperType)
+- [TaxonomyTypeEnum.TaxonomyType](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TaxonomyTypeEnum.TaxonomyType)
+- [TeamAccessTypeEnum.TeamAccessType](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TeamAccessTypeEnum.TeamAccessType)
+- [TeamStatusEnum.TeamStatus](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TeamStatusEnum.TeamStatus)
+- [TimeUnitEnum.TimeUnit](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TimeUnitEnum.TimeUnit)
+- [UnitTypeEnum.UnitType](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UnitTypeEnum.UnitType)
+- [VideoPositionEnum.VideoPosition](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.VideoPositionEnum.VideoPosition)
+- [AdBreak](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdBreak)
+- [AdBreakStateEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdBreakStateEnum)
+- [AdManagerError](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdManagerError)
+- [AdReviewCenterAd](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdReviewCenterAd)
+- [AdReviewCenterAdStatusEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum)
+- [AdUnit](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnit)
+- [AdUnitParent](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitParent)
+- [AdUnitSize](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitSize)
+- [AdUnitStatusEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitStatusEnum)
+- [AdUnitTargeting](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitTargeting)
+- [Application](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Application)
+- [AppliedLabel](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AppliedLabel)
+- [AudienceSegment](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AudienceSegment)
+- [AudienceSegmentTargeting](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AudienceSegmentTargeting)
+- [BandwidthGroup](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BandwidthGroup)
+- [BandwidthTargeting](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BandwidthTargeting)
+- [BatchAdReviewCenterAdsOperationMetadata](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchAdReviewCenterAdsOperationMetadata)
+- [Browser](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Browser)
+- [BrowserLanguage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserLanguage)
+- [BrowserLanguageTargeting](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserLanguageTargeting)
+- [BrowserTargeting](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserTargeting)
+- [CmsMetadataKey](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataKey)
+- [CmsMetadataKeyStatusEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataKeyStatusEnum)
+- [CmsMetadataTargeting](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataTargeting)
+- [CmsMetadataValue](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataValue)
+- [CmsMetadataValueStatusEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataValueStatusEnum)
+- [Company](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Company)
+- [CompanyCreditStatusEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CompanyCreditStatusEnum)
+- [CompanyTypeEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CompanyTypeEnum)
+- [Contact](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Contact)
+- [ContactStatusEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContactStatusEnum)
+- [Content](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Content)
+- [ContentBundle](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentBundle)
+- [ContentLabel](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentLabel)
+- [ContentTargeting](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentTargeting)
+- [CreativeTemplate](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplate)
+- [CreativeTemplateStatusEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateStatusEnum)
+- [CreativeTemplateTypeEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateTypeEnum)
+- [CreativeTemplateVariable](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariable)
+- [CreativeTemplateVariable.AssetCreativeTemplateVariable](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariable.AssetCreativeTemplateVariable)
+- [CreativeTemplateVariable.ListStringCreativeTemplateVariable](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariable.ListStringCreativeTemplateVariable)
+- [CreativeTemplateVariable.ListStringCreativeTemplateVariable.VariableChoice](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariable.ListStringCreativeTemplateVariable.VariableChoice)
+- [CreativeTemplateVariable.LongCreativeTemplateVariable](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariable.LongCreativeTemplateVariable)
+- [CreativeTemplateVariable.StringCreativeTemplateVariable](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariable.StringCreativeTemplateVariable)
+- [CreativeTemplateVariable.UrlCreativeTemplateVariable](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariable.UrlCreativeTemplateVariable)
+- [CreativeTemplateVariableUrlTypeEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariableUrlTypeEnum)
+- [CustomField](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomField)
+- [CustomFieldDataTypeEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldDataTypeEnum)
+- [CustomFieldEntityTypeEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldEntityTypeEnum)
+- [CustomFieldOption](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldOption)
+- [CustomFieldStatusEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldStatusEnum)
+- [CustomFieldValue](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldValue)
+- [CustomFieldValue.Value](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldValue.Value)
+- [CustomFieldVisibilityEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldVisibilityEnum)
+- [CustomTargeting](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargeting)
+- [CustomTargetingClause](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingClause)
+- [CustomTargetingKey](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKey)
+- [CustomTargetingKeyReportableTypeEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKeyReportableTypeEnum)
+- [CustomTargetingKeyStatusEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKeyStatusEnum)
+- [CustomTargetingKeyTypeEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKeyTypeEnum)
+- [CustomTargetingLiteral](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingLiteral)
+- [CustomTargetingValue](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingValue)
+- [CustomTargetingValueMatchTypeEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum)
+- [CustomTargetingValueStatusEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingValueStatusEnum)
+- [DataSegmentTargeting](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DataSegmentTargeting)
+- [DealBuyerPermissionTypeEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DealBuyerPermissionTypeEnum)
+- [DeviceCapability](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCapability)
+- [DeviceCapabilityTargeting](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCapabilityTargeting)
+- [DeviceCategory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCategory)
+- [DeviceCategoryTargeting](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCategoryTargeting)
+- [DeviceManufacturer](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceManufacturer)
+- [DeviceManufacturerTargeting](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceManufacturerTargeting)
+- [DisapprovalReason](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DisapprovalReason)
+- [EntitySignalsMapping](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.EntitySignalsMapping)
+- [EnvironmentTypeEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.EnvironmentTypeEnum)
+- [ExchangeSyndicationProductEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ExchangeSyndicationProductEnum)
+- [FirstPartyMobileApplicationTargeting](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.FirstPartyMobileApplicationTargeting)
+- [FrequencyCap](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.FrequencyCap)
+- [GeoTarget](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GeoTarget)
+- [GeoTargeting](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GeoTargeting)
+- [Goal](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Goal)
+- [GoalTypeEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GoalTypeEnum)
+- [InventoryTargeting](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.InventoryTargeting)
+- [Label](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Label)
+- [LabelFrequencyCap](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LabelFrequencyCap)
+- [LineItem](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LineItem)
+- [LineItemTypeEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LineItemTypeEnum)
+- [LiveStreamEvent](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LiveStreamEvent)
+- [MobileApplicationTargeting](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileApplicationTargeting)
+- [MobileCarrier](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileCarrier)
+- [MobileCarrierTargeting](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileCarrierTargeting)
+- [MobileDevice](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDevice)
+- [MobileDeviceSubmodel](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDeviceSubmodel)
+- [Network](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Network)
+- [OperatingSystem](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystem)
+- [OperatingSystemTargeting](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemTargeting)
+- [OperatingSystemVersion](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemVersion)
+- [Order](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Order)
+- [OrderStatusEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OrderStatusEnum)
+- [Placement](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Placement)
+- [PlacementStatusEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PlacementStatusEnum)
+- [PrivateAuction](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuction)
+- [PrivateAuctionDeal](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionDeal)
+- [PrivateAuctionDeal.BuyerData](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionDeal.BuyerData)
+- [PrivateMarketplaceDealStatusEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateMarketplaceDealStatusEnum)
+- [ProgrammaticBuyer](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ProgrammaticBuyer)
+- [Report](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Report)
+- [ReportDataTable](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDataTable)
+- [ReportDataTable.MetricValueGroup](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDataTable.MetricValueGroup)
+- [ReportDataTable.Row](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDataTable.Row)
+- [ReportDefinition](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition)
+- [ReportDefinition.DateRange](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.DateRange)
+- [ReportDefinition.DateRange.FixedDateRange](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange)
+- [ReportDefinition.Field](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.Field)
+- [ReportDefinition.Filter](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.Filter)
+- [ReportDefinition.Filter.FieldFilter](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.Filter.FieldFilter)
+- [ReportDefinition.Filter.FilterList](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.Filter.FilterList)
+- [ReportDefinition.Flag](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.Flag)
+- [ReportDefinition.Slice](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.Slice)
+- [ReportDefinition.Sort](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.Sort)
+- [ReportValue](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportValue)
+- [ReportValue.DoubleList](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportValue.DoubleList)
+- [ReportValue.IntList](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportValue.IntList)
+- [ReportValue.StringList](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportValue.StringList)
+- [RequestPlatformEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RequestPlatformEnum)
+- [RequestPlatformTargeting](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RequestPlatformTargeting)
+- [Role](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Role)
+- [RoleStatusEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RoleStatusEnum)
+- [RunReportMetadata](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RunReportMetadata)
+- [ScheduleOptions](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ScheduleOptions)
+- [ScheduleOptions.Schedule](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ScheduleOptions.Schedule)
+- [ScheduleOptions.Schedule.MonthlySchedule](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule)
+- [ScheduleOptions.Schedule.WeeklySchedule](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule)
+- [Site](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Site)
+- [SiteApprovalStatusEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SiteApprovalStatusEnum)
+- [SiteDisapprovalReasonEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SiteDisapprovalReasonEnum)
+- [Size](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Size)
+- [SizeTypeEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SizeTypeEnum)
+- [SmartSizeModeEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SmartSizeModeEnum)
+- [TargetWindowEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TargetWindowEnum)
+- [TargetedVideoBumperTypeEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TargetedVideoBumperTypeEnum)
+- [Targeting](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Targeting)
+- [TaxonomyCategory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TaxonomyCategory)
+- [TaxonomyTypeEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TaxonomyTypeEnum)
+- [Team](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.Team)
+- [TeamAccessTypeEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TeamAccessTypeEnum)
+- [TeamStatusEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TeamStatusEnum)
+- [TechnologyTargeting](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TechnologyTargeting)
+- [TimeUnitEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TimeUnitEnum)
+- [UnitTypeEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UnitTypeEnum)
+- [User](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.User)
+- [UserDomainTargeting](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UserDomainTargeting)
+- [VideoPosition](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.VideoPosition)
+- [VideoPositionEnum](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.VideoPositionEnum)
+- [VideoPositionTargeting](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.VideoPositionTargeting)
+- [WebProperty](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.WebProperty)
+- [AdBreakServiceClient.ListAdBreaksFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdBreakServiceClient.ListAdBreaksFixedSizeCollection)
+- [AdBreakServiceClient.ListAdBreaksPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdBreakServiceClient.ListAdBreaksPage)
+- [AdReviewCenterAdServiceClient.SearchAdReviewCenterAdsFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdReviewCenterAdServiceClient.SearchAdReviewCenterAdsFixedSizeCollection)
+- [AdReviewCenterAdServiceClient.SearchAdReviewCenterAdsPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdReviewCenterAdServiceClient.SearchAdReviewCenterAdsPage)
+- [AdUnitServiceClient.ListAdUnitSizesFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitServiceClient.ListAdUnitSizesFixedSizeCollection)
+- [AdUnitServiceClient.ListAdUnitSizesPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitServiceClient.ListAdUnitSizesPage)
+- [AdUnitServiceClient.ListAdUnitsFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitServiceClient.ListAdUnitsFixedSizeCollection)
+- [AdUnitServiceClient.ListAdUnitsPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitServiceClient.ListAdUnitsPage)
+- [ApplicationServiceClient.ListApplicationsFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ApplicationServiceClient.ListApplicationsFixedSizeCollection)
+- [ApplicationServiceClient.ListApplicationsPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ApplicationServiceClient.ListApplicationsPage)
+- [AudienceSegmentServiceClient.ListAudienceSegmentsFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AudienceSegmentServiceClient.ListAudienceSegmentsFixedSizeCollection)
+- [AudienceSegmentServiceClient.ListAudienceSegmentsPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AudienceSegmentServiceClient.ListAudienceSegmentsPage)
+- [BandwidthGroupServiceClient.ListBandwidthGroupsFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BandwidthGroupServiceClient.ListBandwidthGroupsFixedSizeCollection)
+- [BandwidthGroupServiceClient.ListBandwidthGroupsPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BandwidthGroupServiceClient.ListBandwidthGroupsPage)
+- [BrowserLanguageServiceClient.ListBrowserLanguagesFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserLanguageServiceClient.ListBrowserLanguagesFixedSizeCollection)
+- [BrowserLanguageServiceClient.ListBrowserLanguagesPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserLanguageServiceClient.ListBrowserLanguagesPage)
+- [BrowserServiceClient.ListBrowsersFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserServiceClient.ListBrowsersFixedSizeCollection)
+- [BrowserServiceClient.ListBrowsersPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserServiceClient.ListBrowsersPage)
+- [CmsMetadataKeyServiceClient.ListCmsMetadataKeysFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataKeyServiceClient.ListCmsMetadataKeysFixedSizeCollection)
+- [CmsMetadataKeyServiceClient.ListCmsMetadataKeysPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataKeyServiceClient.ListCmsMetadataKeysPage)
+- [CmsMetadataValueServiceClient.ListCmsMetadataValuesFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataValueServiceClient.ListCmsMetadataValuesFixedSizeCollection)
+- [CmsMetadataValueServiceClient.ListCmsMetadataValuesPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataValueServiceClient.ListCmsMetadataValuesPage)
+- [CompanyServiceClient.ListCompaniesFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CompanyServiceClient.ListCompaniesFixedSizeCollection)
+- [CompanyServiceClient.ListCompaniesPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CompanyServiceClient.ListCompaniesPage)
+- [ContactServiceClient.ListContactsFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContactServiceClient.ListContactsFixedSizeCollection)
+- [ContactServiceClient.ListContactsPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContactServiceClient.ListContactsPage)
+- [ContentBundleServiceClient.ListContentBundlesFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentBundleServiceClient.ListContentBundlesFixedSizeCollection)
+- [ContentBundleServiceClient.ListContentBundlesPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentBundleServiceClient.ListContentBundlesPage)
+- [ContentLabelServiceClient.ListContentLabelsFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentLabelServiceClient.ListContentLabelsFixedSizeCollection)
+- [ContentLabelServiceClient.ListContentLabelsPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentLabelServiceClient.ListContentLabelsPage)
+- [ContentServiceClient.ListContentFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentServiceClient.ListContentFixedSizeCollection)
+- [ContentServiceClient.ListContentPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentServiceClient.ListContentPage)
+- [CreativeTemplateServiceClient.ListCreativeTemplatesFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateServiceClient.ListCreativeTemplatesFixedSizeCollection)
+- [CreativeTemplateServiceClient.ListCreativeTemplatesPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateServiceClient.ListCreativeTemplatesPage)
+- [CustomFieldServiceClient.ListCustomFieldsFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldServiceClient.ListCustomFieldsFixedSizeCollection)
+- [CustomFieldServiceClient.ListCustomFieldsPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldServiceClient.ListCustomFieldsPage)
+- [CustomTargetingKeyServiceClient.ListCustomTargetingKeysFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKeyServiceClient.ListCustomTargetingKeysFixedSizeCollection)
+- [CustomTargetingKeyServiceClient.ListCustomTargetingKeysPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKeyServiceClient.ListCustomTargetingKeysPage)
+- [CustomTargetingValueServiceClient.ListCustomTargetingValuesFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingValueServiceClient.ListCustomTargetingValuesFixedSizeCollection)
+- [CustomTargetingValueServiceClient.ListCustomTargetingValuesPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingValueServiceClient.ListCustomTargetingValuesPage)
+- [DeviceCapabilityServiceClient.ListDeviceCapabilitiesFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCapabilityServiceClient.ListDeviceCapabilitiesFixedSizeCollection)
+- [DeviceCapabilityServiceClient.ListDeviceCapabilitiesPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCapabilityServiceClient.ListDeviceCapabilitiesPage)
+- [DeviceCategoryServiceClient.ListDeviceCategoriesFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCategoryServiceClient.ListDeviceCategoriesFixedSizeCollection)
+- [DeviceCategoryServiceClient.ListDeviceCategoriesPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCategoryServiceClient.ListDeviceCategoriesPage)
+- [DeviceManufacturerServiceClient.ListDeviceManufacturersFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceManufacturerServiceClient.ListDeviceManufacturersFixedSizeCollection)
+- [DeviceManufacturerServiceClient.ListDeviceManufacturersPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceManufacturerServiceClient.ListDeviceManufacturersPage)
+- [EntitySignalsMappingServiceClient.ListEntitySignalsMappingsFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.EntitySignalsMappingServiceClient.ListEntitySignalsMappingsFixedSizeCollection)
+- [EntitySignalsMappingServiceClient.ListEntitySignalsMappingsPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.EntitySignalsMappingServiceClient.ListEntitySignalsMappingsPage)
+- [GeoTargetServiceClient.ListGeoTargetsFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GeoTargetServiceClient.ListGeoTargetsFixedSizeCollection)
+- [GeoTargetServiceClient.ListGeoTargetsPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GeoTargetServiceClient.ListGeoTargetsPage)
+- [LineItemServiceClient.ListLineItemsFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LineItemServiceClient.ListLineItemsFixedSizeCollection)
+- [LineItemServiceClient.ListLineItemsPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LineItemServiceClient.ListLineItemsPage)
+- [MobileCarrierServiceClient.ListMobileCarriersFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileCarrierServiceClient.ListMobileCarriersFixedSizeCollection)
+- [MobileCarrierServiceClient.ListMobileCarriersPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileCarrierServiceClient.ListMobileCarriersPage)
+- [MobileDeviceServiceClient.ListMobileDevicesFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDeviceServiceClient.ListMobileDevicesFixedSizeCollection)
+- [MobileDeviceServiceClient.ListMobileDevicesPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDeviceServiceClient.ListMobileDevicesPage)
+- [MobileDeviceSubmodelServiceClient.ListMobileDeviceSubmodelsFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDeviceSubmodelServiceClient.ListMobileDeviceSubmodelsFixedSizeCollection)
+- [MobileDeviceSubmodelServiceClient.ListMobileDeviceSubmodelsPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDeviceSubmodelServiceClient.ListMobileDeviceSubmodelsPage)
+- [NetworkServiceClient.ListNetworksFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.NetworkServiceClient.ListNetworksFixedSizeCollection)
+- [NetworkServiceClient.ListNetworksPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.NetworkServiceClient.ListNetworksPage)
+- [OperatingSystemServiceClient.ListOperatingSystemsFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemServiceClient.ListOperatingSystemsFixedSizeCollection)
+- [OperatingSystemServiceClient.ListOperatingSystemsPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemServiceClient.ListOperatingSystemsPage)
+- [OperatingSystemVersionServiceClient.ListOperatingSystemVersionsFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemVersionServiceClient.ListOperatingSystemVersionsFixedSizeCollection)
+- [OperatingSystemVersionServiceClient.ListOperatingSystemVersionsPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemVersionServiceClient.ListOperatingSystemVersionsPage)
+- [OrderServiceClient.ListOrdersFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OrderServiceClient.ListOrdersFixedSizeCollection)
+- [OrderServiceClient.ListOrdersPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OrderServiceClient.ListOrdersPage)
+- [PlacementServiceClient.ListPlacementsFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PlacementServiceClient.ListPlacementsFixedSizeCollection)
+- [PlacementServiceClient.ListPlacementsPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PlacementServiceClient.ListPlacementsPage)
+- [PrivateAuctionDealServiceClient.ListPrivateAuctionDealsFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionDealServiceClient.ListPrivateAuctionDealsFixedSizeCollection)
+- [PrivateAuctionDealServiceClient.ListPrivateAuctionDealsPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionDealServiceClient.ListPrivateAuctionDealsPage)
+- [PrivateAuctionServiceClient.ListPrivateAuctionsFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionServiceClient.ListPrivateAuctionsFixedSizeCollection)
+- [PrivateAuctionServiceClient.ListPrivateAuctionsPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionServiceClient.ListPrivateAuctionsPage)
+- [ProgrammaticBuyerServiceClient.ListProgrammaticBuyersFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ProgrammaticBuyerServiceClient.ListProgrammaticBuyersFixedSizeCollection)
+- [ProgrammaticBuyerServiceClient.ListProgrammaticBuyersPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ProgrammaticBuyerServiceClient.ListProgrammaticBuyersPage)
+- [ReportServiceClient.FetchReportResultRowsFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportServiceClient.FetchReportResultRowsFixedSizeCollection)
+- [ReportServiceClient.FetchReportResultRowsPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportServiceClient.FetchReportResultRowsPage)
+- [ReportServiceClient.ListReportsFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportServiceClient.ListReportsFixedSizeCollection)
+- [ReportServiceClient.ListReportsPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportServiceClient.ListReportsPage)
+- [RoleServiceClient.ListRolesFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RoleServiceClient.ListRolesFixedSizeCollection)
+- [RoleServiceClient.ListRolesPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RoleServiceClient.ListRolesPage)
+- [SiteServiceClient.ListSitesFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SiteServiceClient.ListSitesFixedSizeCollection)
+- [SiteServiceClient.ListSitesPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SiteServiceClient.ListSitesPage)
+- [TaxonomyCategoryServiceClient.ListTaxonomyCategoriesFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TaxonomyCategoryServiceClient.ListTaxonomyCategoriesFixedSizeCollection)
+- [TaxonomyCategoryServiceClient.ListTaxonomyCategoriesPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TaxonomyCategoryServiceClient.ListTaxonomyCategoriesPage)
+- [TeamServiceClient.ListTeamsFixedSizeCollection](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TeamServiceClient.ListTeamsFixedSizeCollection)
+- [TeamServiceClient.ListTeamsPage](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TeamServiceClient.ListTeamsPage)
+- [AdBreakName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdBreakName)
+- [AdUnitName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitName)
+- [ApplicationName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ApplicationName)
+- [AudienceSegmentName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AudienceSegmentName)
+- [BandwidthGroupName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BandwidthGroupName)
+- [BrowserLanguageName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserLanguageName)
+- [BrowserName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserName)
+- [CmsMetadataKeyName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataKeyName)
+- [CmsMetadataValueName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataValueName)
+- [CompanyName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CompanyName)
+- [ContactName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContactName)
+- [ContentBundleName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentBundleName)
+- [ContentLabelName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentLabelName)
+- [ContentName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentName)
+- [CreativeTemplateName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateName)
+- [CustomFieldName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldName)
+- [CustomTargetingKeyName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKeyName)
+- [CustomTargetingValueName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingValueName)
+- [DeviceCapabilityName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCapabilityName)
+- [DeviceCategoryName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCategoryName)
+- [DeviceManufacturerName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceManufacturerName)
+- [EntitySignalsMappingName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.EntitySignalsMappingName)
+- [GeoTargetName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GeoTargetName)
+- [LineItemName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LineItemName)
+- [LiveStreamEventName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LiveStreamEventName)
+- [MobileCarrierName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileCarrierName)
+- [MobileDeviceName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDeviceName)
+- [MobileDeviceSubmodelName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDeviceSubmodelName)
+- [NetworkName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.NetworkName)
+- [OperatingSystemName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemName)
+- [OperatingSystemVersionName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemVersionName)
+- [OrderName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OrderName)
+- [PlacementName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PlacementName)
+- [PrivateAuctionDealName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionDealName)
+- [PrivateAuctionName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionName)
+- [ProgrammaticBuyerName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ProgrammaticBuyerName)
+- [ReportName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportName)
+- [RoleName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RoleName)
+- [SiteName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SiteName)
+- [TaxonomyCategoryName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TaxonomyCategoryName)
+- [TeamName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TeamName)
+- [UserName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UserName)
+- [WebPropertyName](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.WebPropertyName)
+- [AdBreakOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdBreakOrBuilder)
+- [AdBreakStateEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdBreakStateEnumOrBuilder)
+- [AdManagerErrorOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdManagerErrorOrBuilder)
+- [AdReviewCenterAdOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdReviewCenterAdOrBuilder)
+- [AdReviewCenterAdStatusEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdReviewCenterAdStatusEnumOrBuilder)
+- [AdUnitOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitOrBuilder)
+- [AdUnitParentOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitParentOrBuilder)
+- [AdUnitSizeOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitSizeOrBuilder)
+- [AdUnitStatusEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitStatusEnumOrBuilder)
+- [AdUnitTargetingOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitTargetingOrBuilder)
+- [ApplicationOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ApplicationOrBuilder)
+- [AppliedLabelOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AppliedLabelOrBuilder)
+- [AudienceSegmentOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AudienceSegmentOrBuilder)
+- [AudienceSegmentTargetingOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AudienceSegmentTargetingOrBuilder)
+- [BandwidthGroupOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BandwidthGroupOrBuilder)
+- [BandwidthTargetingOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BandwidthTargetingOrBuilder)
+- [BatchActivateAdUnitsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivateAdUnitsRequestOrBuilder)
+- [BatchActivateAdUnitsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivateAdUnitsResponseOrBuilder)
+- [BatchActivateCustomFieldsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivateCustomFieldsRequestOrBuilder)
+- [BatchActivateCustomFieldsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivateCustomFieldsResponseOrBuilder)
+- [BatchActivateCustomTargetingKeysRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivateCustomTargetingKeysRequestOrBuilder)
+- [BatchActivateCustomTargetingKeysResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivateCustomTargetingKeysResponseOrBuilder)
+- [BatchActivatePlacementsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivatePlacementsRequestOrBuilder)
+- [BatchActivatePlacementsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivatePlacementsResponseOrBuilder)
+- [BatchActivateTeamsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivateTeamsRequestOrBuilder)
+- [BatchActivateTeamsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchActivateTeamsResponseOrBuilder)
+- [BatchAdReviewCenterAdsOperationMetadataOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchAdReviewCenterAdsOperationMetadataOrBuilder)
+- [BatchAllowAdReviewCenterAdsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchAllowAdReviewCenterAdsRequestOrBuilder)
+- [BatchAllowAdReviewCenterAdsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchAllowAdReviewCenterAdsResponseOrBuilder)
+- [BatchArchiveAdUnitsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchArchiveAdUnitsRequestOrBuilder)
+- [BatchArchiveAdUnitsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchArchiveAdUnitsResponseOrBuilder)
+- [BatchArchivePlacementsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchArchivePlacementsRequestOrBuilder)
+- [BatchArchivePlacementsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchArchivePlacementsResponseOrBuilder)
+- [BatchBlockAdReviewCenterAdsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchBlockAdReviewCenterAdsRequestOrBuilder)
+- [BatchBlockAdReviewCenterAdsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchBlockAdReviewCenterAdsResponseOrBuilder)
+- [BatchCreateAdUnitsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateAdUnitsRequestOrBuilder)
+- [BatchCreateAdUnitsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateAdUnitsResponseOrBuilder)
+- [BatchCreateContactsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateContactsRequestOrBuilder)
+- [BatchCreateContactsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateContactsResponseOrBuilder)
+- [BatchCreateCustomFieldsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateCustomFieldsRequestOrBuilder)
+- [BatchCreateCustomFieldsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateCustomFieldsResponseOrBuilder)
+- [BatchCreateCustomTargetingKeysRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateCustomTargetingKeysRequestOrBuilder)
+- [BatchCreateCustomTargetingKeysResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateCustomTargetingKeysResponseOrBuilder)
+- [BatchCreateEntitySignalsMappingsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateEntitySignalsMappingsRequestOrBuilder)
+- [BatchCreateEntitySignalsMappingsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateEntitySignalsMappingsResponseOrBuilder)
+- [BatchCreatePlacementsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreatePlacementsRequestOrBuilder)
+- [BatchCreatePlacementsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreatePlacementsResponseOrBuilder)
+- [BatchCreateSitesRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateSitesRequestOrBuilder)
+- [BatchCreateSitesResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateSitesResponseOrBuilder)
+- [BatchCreateTeamsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateTeamsRequestOrBuilder)
+- [BatchCreateTeamsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchCreateTeamsResponseOrBuilder)
+- [BatchDeactivateAdUnitsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateAdUnitsRequestOrBuilder)
+- [BatchDeactivateAdUnitsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateAdUnitsResponseOrBuilder)
+- [BatchDeactivateCustomFieldsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateCustomFieldsRequestOrBuilder)
+- [BatchDeactivateCustomFieldsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateCustomFieldsResponseOrBuilder)
+- [BatchDeactivateCustomTargetingKeysRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateCustomTargetingKeysRequestOrBuilder)
+- [BatchDeactivateCustomTargetingKeysResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateCustomTargetingKeysResponseOrBuilder)
+- [BatchDeactivatePlacementsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivatePlacementsRequestOrBuilder)
+- [BatchDeactivatePlacementsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivatePlacementsResponseOrBuilder)
+- [BatchDeactivateSitesRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateSitesRequestOrBuilder)
+- [BatchDeactivateSitesResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateSitesResponseOrBuilder)
+- [BatchDeactivateTeamsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateTeamsRequestOrBuilder)
+- [BatchDeactivateTeamsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchDeactivateTeamsResponseOrBuilder)
+- [BatchSubmitSitesForApprovalRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchSubmitSitesForApprovalRequestOrBuilder)
+- [BatchSubmitSitesForApprovalResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchSubmitSitesForApprovalResponseOrBuilder)
+- [BatchUpdateAdUnitsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateAdUnitsRequestOrBuilder)
+- [BatchUpdateAdUnitsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateAdUnitsResponseOrBuilder)
+- [BatchUpdateContactsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateContactsRequestOrBuilder)
+- [BatchUpdateContactsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateContactsResponseOrBuilder)
+- [BatchUpdateCustomFieldsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateCustomFieldsRequestOrBuilder)
+- [BatchUpdateCustomFieldsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateCustomFieldsResponseOrBuilder)
+- [BatchUpdateCustomTargetingKeysRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateCustomTargetingKeysRequestOrBuilder)
+- [BatchUpdateCustomTargetingKeysResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateCustomTargetingKeysResponseOrBuilder)
+- [BatchUpdateEntitySignalsMappingsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateEntitySignalsMappingsRequestOrBuilder)
+- [BatchUpdateEntitySignalsMappingsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateEntitySignalsMappingsResponseOrBuilder)
+- [BatchUpdatePlacementsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdatePlacementsRequestOrBuilder)
+- [BatchUpdatePlacementsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdatePlacementsResponseOrBuilder)
+- [BatchUpdateSitesRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateSitesRequestOrBuilder)
+- [BatchUpdateSitesResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateSitesResponseOrBuilder)
+- [BatchUpdateTeamsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateTeamsRequestOrBuilder)
+- [BatchUpdateTeamsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BatchUpdateTeamsResponseOrBuilder)
+- [BrowserLanguageOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserLanguageOrBuilder)
+- [BrowserLanguageTargetingOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserLanguageTargetingOrBuilder)
+- [BrowserOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserOrBuilder)
+- [BrowserTargetingOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserTargetingOrBuilder)
+- [CmsMetadataKeyOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataKeyOrBuilder)
+- [CmsMetadataKeyStatusEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataKeyStatusEnumOrBuilder)
+- [CmsMetadataTargetingOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataTargetingOrBuilder)
+- [CmsMetadataValueOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataValueOrBuilder)
+- [CmsMetadataValueStatusEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataValueStatusEnumOrBuilder)
+- [CompanyCreditStatusEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CompanyCreditStatusEnumOrBuilder)
+- [CompanyOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CompanyOrBuilder)
+- [CompanyTypeEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CompanyTypeEnumOrBuilder)
+- [ContactOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContactOrBuilder)
+- [ContactStatusEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContactStatusEnumOrBuilder)
+- [ContentBundleOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentBundleOrBuilder)
+- [ContentLabelOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentLabelOrBuilder)
+- [ContentOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentOrBuilder)
+- [ContentTargetingOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentTargetingOrBuilder)
+- [CreateAdBreakRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateAdBreakRequestOrBuilder)
+- [CreateAdUnitRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateAdUnitRequestOrBuilder)
+- [CreateContactRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateContactRequestOrBuilder)
+- [CreateCustomFieldRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateCustomFieldRequestOrBuilder)
+- [CreateCustomTargetingKeyRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateCustomTargetingKeyRequestOrBuilder)
+- [CreateEntitySignalsMappingRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateEntitySignalsMappingRequestOrBuilder)
+- [CreatePlacementRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreatePlacementRequestOrBuilder)
+- [CreatePrivateAuctionDealRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreatePrivateAuctionDealRequestOrBuilder)
+- [CreatePrivateAuctionRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreatePrivateAuctionRequestOrBuilder)
+- [CreateReportRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateReportRequestOrBuilder)
+- [CreateSiteRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateSiteRequestOrBuilder)
+- [CreateTeamRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreateTeamRequestOrBuilder)
+- [CreativeTemplateOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateOrBuilder)
+- [CreativeTemplateStatusEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateStatusEnumOrBuilder)
+- [CreativeTemplateTypeEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateTypeEnumOrBuilder)
+- [CreativeTemplateVariable.AssetCreativeTemplateVariableOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariable.AssetCreativeTemplateVariableOrBuilder)
+- [CreativeTemplateVariable.ListStringCreativeTemplateVariable.VariableChoiceOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariable.ListStringCreativeTemplateVariable.VariableChoiceOrBuilder)
+- [CreativeTemplateVariable.ListStringCreativeTemplateVariableOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariable.ListStringCreativeTemplateVariableOrBuilder)
+- [CreativeTemplateVariable.LongCreativeTemplateVariableOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariable.LongCreativeTemplateVariableOrBuilder)
+- [CreativeTemplateVariable.StringCreativeTemplateVariableOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariable.StringCreativeTemplateVariableOrBuilder)
+- [CreativeTemplateVariable.UrlCreativeTemplateVariableOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariable.UrlCreativeTemplateVariableOrBuilder)
+- [CreativeTemplateVariableOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariableOrBuilder)
+- [CreativeTemplateVariableUrlTypeEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariableUrlTypeEnumOrBuilder)
+- [CustomFieldDataTypeEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldDataTypeEnumOrBuilder)
+- [CustomFieldEntityTypeEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldEntityTypeEnumOrBuilder)
+- [CustomFieldOptionOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldOptionOrBuilder)
+- [CustomFieldOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldOrBuilder)
+- [CustomFieldStatusEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldStatusEnumOrBuilder)
+- [CustomFieldValue.ValueOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldValue.ValueOrBuilder)
+- [CustomFieldValueOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldValueOrBuilder)
+- [CustomFieldVisibilityEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldVisibilityEnumOrBuilder)
+- [CustomTargetingClauseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingClauseOrBuilder)
+- [CustomTargetingKeyOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKeyOrBuilder)
+- [CustomTargetingKeyReportableTypeEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKeyReportableTypeEnumOrBuilder)
+- [CustomTargetingKeyStatusEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKeyStatusEnumOrBuilder)
+- [CustomTargetingKeyTypeEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKeyTypeEnumOrBuilder)
+- [CustomTargetingLiteralOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingLiteralOrBuilder)
+- [CustomTargetingOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingOrBuilder)
+- [CustomTargetingValueMatchTypeEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingValueMatchTypeEnumOrBuilder)
+- [CustomTargetingValueOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingValueOrBuilder)
+- [CustomTargetingValueStatusEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingValueStatusEnumOrBuilder)
+- [DataSegmentTargetingOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DataSegmentTargetingOrBuilder)
+- [DealBuyerPermissionTypeEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DealBuyerPermissionTypeEnumOrBuilder)
+- [DeleteAdBreakRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeleteAdBreakRequestOrBuilder)
+- [DeviceCapabilityOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCapabilityOrBuilder)
+- [DeviceCapabilityTargetingOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCapabilityTargetingOrBuilder)
+- [DeviceCategoryOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCategoryOrBuilder)
+- [DeviceCategoryTargetingOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCategoryTargetingOrBuilder)
+- [DeviceManufacturerOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceManufacturerOrBuilder)
+- [DeviceManufacturerTargetingOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceManufacturerTargetingOrBuilder)
+- [DisapprovalReasonOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DisapprovalReasonOrBuilder)
+- [EntitySignalsMappingOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.EntitySignalsMappingOrBuilder)
+- [EnvironmentTypeEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.EnvironmentTypeEnumOrBuilder)
+- [ExchangeSyndicationProductEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ExchangeSyndicationProductEnumOrBuilder)
+- [FetchReportResultRowsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.FetchReportResultRowsRequestOrBuilder)
+- [FetchReportResultRowsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.FetchReportResultRowsResponseOrBuilder)
+- [FirstPartyMobileApplicationTargetingOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.FirstPartyMobileApplicationTargetingOrBuilder)
+- [FrequencyCapOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.FrequencyCapOrBuilder)
+- [GeoTargetOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GeoTargetOrBuilder)
+- [GeoTargetingOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GeoTargetingOrBuilder)
+- [GetAdBreakRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetAdBreakRequestOrBuilder)
+- [GetAdUnitRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetAdUnitRequestOrBuilder)
+- [GetApplicationRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetApplicationRequestOrBuilder)
+- [GetAudienceSegmentRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetAudienceSegmentRequestOrBuilder)
+- [GetBandwidthGroupRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetBandwidthGroupRequestOrBuilder)
+- [GetBrowserLanguageRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetBrowserLanguageRequestOrBuilder)
+- [GetBrowserRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetBrowserRequestOrBuilder)
+- [GetCmsMetadataKeyRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetCmsMetadataKeyRequestOrBuilder)
+- [GetCmsMetadataValueRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetCmsMetadataValueRequestOrBuilder)
+- [GetCompanyRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetCompanyRequestOrBuilder)
+- [GetContactRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetContactRequestOrBuilder)
+- [GetContentBundleRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetContentBundleRequestOrBuilder)
+- [GetContentLabelRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetContentLabelRequestOrBuilder)
+- [GetContentRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetContentRequestOrBuilder)
+- [GetCreativeTemplateRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetCreativeTemplateRequestOrBuilder)
+- [GetCustomFieldRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetCustomFieldRequestOrBuilder)
+- [GetCustomTargetingKeyRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetCustomTargetingKeyRequestOrBuilder)
+- [GetCustomTargetingValueRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetCustomTargetingValueRequestOrBuilder)
+- [GetDeviceCapabilityRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetDeviceCapabilityRequestOrBuilder)
+- [GetDeviceCategoryRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetDeviceCategoryRequestOrBuilder)
+- [GetDeviceManufacturerRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetDeviceManufacturerRequestOrBuilder)
+- [GetEntitySignalsMappingRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetEntitySignalsMappingRequestOrBuilder)
+- [GetGeoTargetRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetGeoTargetRequestOrBuilder)
+- [GetLineItemRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetLineItemRequestOrBuilder)
+- [GetMobileCarrierRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetMobileCarrierRequestOrBuilder)
+- [GetMobileDeviceRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetMobileDeviceRequestOrBuilder)
+- [GetMobileDeviceSubmodelRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetMobileDeviceSubmodelRequestOrBuilder)
+- [GetNetworkRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetNetworkRequestOrBuilder)
+- [GetOperatingSystemRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetOperatingSystemRequestOrBuilder)
+- [GetOperatingSystemVersionRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetOperatingSystemVersionRequestOrBuilder)
+- [GetOrderRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetOrderRequestOrBuilder)
+- [GetPlacementRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetPlacementRequestOrBuilder)
+- [GetPrivateAuctionDealRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetPrivateAuctionDealRequestOrBuilder)
+- [GetPrivateAuctionRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetPrivateAuctionRequestOrBuilder)
+- [GetProgrammaticBuyerRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetProgrammaticBuyerRequestOrBuilder)
+- [GetReportRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetReportRequestOrBuilder)
+- [GetRoleRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetRoleRequestOrBuilder)
+- [GetSiteRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetSiteRequestOrBuilder)
+- [GetTaxonomyCategoryRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetTaxonomyCategoryRequestOrBuilder)
+- [GetTeamRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetTeamRequestOrBuilder)
+- [GetUserRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GetUserRequestOrBuilder)
+- [GoalOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GoalOrBuilder)
+- [GoalTypeEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GoalTypeEnumOrBuilder)
+- [InventoryTargetingOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.InventoryTargetingOrBuilder)
+- [LabelFrequencyCapOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LabelFrequencyCapOrBuilder)
+- [LabelOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LabelOrBuilder)
+- [LineItemOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LineItemOrBuilder)
+- [LineItemTypeEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LineItemTypeEnumOrBuilder)
+- [ListAdBreaksRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListAdBreaksRequestOrBuilder)
+- [ListAdBreaksResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListAdBreaksResponseOrBuilder)
+- [ListAdUnitSizesRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListAdUnitSizesRequestOrBuilder)
+- [ListAdUnitSizesResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListAdUnitSizesResponseOrBuilder)
+- [ListAdUnitsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListAdUnitsRequestOrBuilder)
+- [ListAdUnitsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListAdUnitsResponseOrBuilder)
+- [ListApplicationsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListApplicationsRequestOrBuilder)
+- [ListApplicationsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListApplicationsResponseOrBuilder)
+- [ListAudienceSegmentsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListAudienceSegmentsRequestOrBuilder)
+- [ListAudienceSegmentsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListAudienceSegmentsResponseOrBuilder)
+- [ListBandwidthGroupsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListBandwidthGroupsRequestOrBuilder)
+- [ListBandwidthGroupsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListBandwidthGroupsResponseOrBuilder)
+- [ListBrowserLanguagesRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListBrowserLanguagesRequestOrBuilder)
+- [ListBrowserLanguagesResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListBrowserLanguagesResponseOrBuilder)
+- [ListBrowsersRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListBrowsersRequestOrBuilder)
+- [ListBrowsersResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListBrowsersResponseOrBuilder)
+- [ListCmsMetadataKeysRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCmsMetadataKeysRequestOrBuilder)
+- [ListCmsMetadataKeysResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCmsMetadataKeysResponseOrBuilder)
+- [ListCmsMetadataValuesRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCmsMetadataValuesRequestOrBuilder)
+- [ListCmsMetadataValuesResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCmsMetadataValuesResponseOrBuilder)
+- [ListCompaniesRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCompaniesRequestOrBuilder)
+- [ListCompaniesResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCompaniesResponseOrBuilder)
+- [ListContactsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListContactsRequestOrBuilder)
+- [ListContactsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListContactsResponseOrBuilder)
+- [ListContentBundlesRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListContentBundlesRequestOrBuilder)
+- [ListContentBundlesResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListContentBundlesResponseOrBuilder)
+- [ListContentLabelsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListContentLabelsRequestOrBuilder)
+- [ListContentLabelsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListContentLabelsResponseOrBuilder)
+- [ListContentRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListContentRequestOrBuilder)
+- [ListContentResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListContentResponseOrBuilder)
+- [ListCreativeTemplatesRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCreativeTemplatesRequestOrBuilder)
+- [ListCreativeTemplatesResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCreativeTemplatesResponseOrBuilder)
+- [ListCustomFieldsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCustomFieldsRequestOrBuilder)
+- [ListCustomFieldsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCustomFieldsResponseOrBuilder)
+- [ListCustomTargetingKeysRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCustomTargetingKeysRequestOrBuilder)
+- [ListCustomTargetingKeysResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCustomTargetingKeysResponseOrBuilder)
+- [ListCustomTargetingValuesRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCustomTargetingValuesRequestOrBuilder)
+- [ListCustomTargetingValuesResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListCustomTargetingValuesResponseOrBuilder)
+- [ListDeviceCapabilitiesRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListDeviceCapabilitiesRequestOrBuilder)
+- [ListDeviceCapabilitiesResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListDeviceCapabilitiesResponseOrBuilder)
+- [ListDeviceCategoriesRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListDeviceCategoriesRequestOrBuilder)
+- [ListDeviceCategoriesResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListDeviceCategoriesResponseOrBuilder)
+- [ListDeviceManufacturersRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListDeviceManufacturersRequestOrBuilder)
+- [ListDeviceManufacturersResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListDeviceManufacturersResponseOrBuilder)
+- [ListEntitySignalsMappingsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListEntitySignalsMappingsRequestOrBuilder)
+- [ListEntitySignalsMappingsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListEntitySignalsMappingsResponseOrBuilder)
+- [ListGeoTargetsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListGeoTargetsRequestOrBuilder)
+- [ListGeoTargetsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListGeoTargetsResponseOrBuilder)
+- [ListLineItemsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListLineItemsRequestOrBuilder)
+- [ListLineItemsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListLineItemsResponseOrBuilder)
+- [ListMobileCarriersRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListMobileCarriersRequestOrBuilder)
+- [ListMobileCarriersResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListMobileCarriersResponseOrBuilder)
+- [ListMobileDeviceSubmodelsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListMobileDeviceSubmodelsRequestOrBuilder)
+- [ListMobileDeviceSubmodelsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListMobileDeviceSubmodelsResponseOrBuilder)
+- [ListMobileDevicesRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListMobileDevicesRequestOrBuilder)
+- [ListMobileDevicesResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListMobileDevicesResponseOrBuilder)
+- [ListNetworksRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListNetworksRequestOrBuilder)
+- [ListNetworksResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListNetworksResponseOrBuilder)
+- [ListOperatingSystemVersionsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListOperatingSystemVersionsRequestOrBuilder)
+- [ListOperatingSystemVersionsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListOperatingSystemVersionsResponseOrBuilder)
+- [ListOperatingSystemsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListOperatingSystemsRequestOrBuilder)
+- [ListOperatingSystemsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListOperatingSystemsResponseOrBuilder)
+- [ListOrdersRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListOrdersRequestOrBuilder)
+- [ListOrdersResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListOrdersResponseOrBuilder)
+- [ListPlacementsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListPlacementsRequestOrBuilder)
+- [ListPlacementsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListPlacementsResponseOrBuilder)
+- [ListPrivateAuctionDealsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListPrivateAuctionDealsRequestOrBuilder)
+- [ListPrivateAuctionDealsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListPrivateAuctionDealsResponseOrBuilder)
+- [ListPrivateAuctionsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListPrivateAuctionsRequestOrBuilder)
+- [ListPrivateAuctionsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListPrivateAuctionsResponseOrBuilder)
+- [ListProgrammaticBuyersRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListProgrammaticBuyersRequestOrBuilder)
+- [ListProgrammaticBuyersResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListProgrammaticBuyersResponseOrBuilder)
+- [ListReportsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListReportsRequestOrBuilder)
+- [ListReportsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListReportsResponseOrBuilder)
+- [ListRolesRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListRolesRequestOrBuilder)
+- [ListRolesResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListRolesResponseOrBuilder)
+- [ListSitesRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListSitesRequestOrBuilder)
+- [ListSitesResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListSitesResponseOrBuilder)
+- [ListTaxonomyCategoriesRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListTaxonomyCategoriesRequestOrBuilder)
+- [ListTaxonomyCategoriesResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListTaxonomyCategoriesResponseOrBuilder)
+- [ListTeamsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListTeamsRequestOrBuilder)
+- [ListTeamsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ListTeamsResponseOrBuilder)
+- [LiveStreamEventOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LiveStreamEventOrBuilder)
+- [MobileApplicationTargetingOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileApplicationTargetingOrBuilder)
+- [MobileCarrierOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileCarrierOrBuilder)
+- [MobileCarrierTargetingOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileCarrierTargetingOrBuilder)
+- [MobileDeviceOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDeviceOrBuilder)
+- [MobileDeviceSubmodelOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDeviceSubmodelOrBuilder)
+- [NetworkOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.NetworkOrBuilder)
+- [OperatingSystemOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemOrBuilder)
+- [OperatingSystemTargetingOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemTargetingOrBuilder)
+- [OperatingSystemVersionOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemVersionOrBuilder)
+- [OrderOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OrderOrBuilder)
+- [OrderStatusEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OrderStatusEnumOrBuilder)
+- [PlacementOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PlacementOrBuilder)
+- [PlacementStatusEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PlacementStatusEnumOrBuilder)
+- [PrivateAuctionDeal.BuyerDataOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionDeal.BuyerDataOrBuilder)
+- [PrivateAuctionDealOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionDealOrBuilder)
+- [PrivateAuctionOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionOrBuilder)
+- [PrivateMarketplaceDealStatusEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateMarketplaceDealStatusEnumOrBuilder)
+- [ProgrammaticBuyerOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ProgrammaticBuyerOrBuilder)
+- [ReportDataTable.MetricValueGroupOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDataTable.MetricValueGroupOrBuilder)
+- [ReportDataTable.RowOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDataTable.RowOrBuilder)
+- [ReportDataTableOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDataTableOrBuilder)
+- [ReportDefinition.DateRange.FixedDateRangeOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRangeOrBuilder)
+- [ReportDefinition.DateRangeOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.DateRangeOrBuilder)
+- [ReportDefinition.FieldOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.FieldOrBuilder)
+- [ReportDefinition.Filter.FieldFilterOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.Filter.FieldFilterOrBuilder)
+- [ReportDefinition.Filter.FilterListOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.Filter.FilterListOrBuilder)
+- [ReportDefinition.FilterOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.FilterOrBuilder)
+- [ReportDefinition.FlagOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.FlagOrBuilder)
+- [ReportDefinition.SliceOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.SliceOrBuilder)
+- [ReportDefinition.SortOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinition.SortOrBuilder)
+- [ReportDefinitionOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinitionOrBuilder)
+- [ReportOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportOrBuilder)
+- [ReportValue.DoubleListOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportValue.DoubleListOrBuilder)
+- [ReportValue.IntListOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportValue.IntListOrBuilder)
+- [ReportValue.StringListOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportValue.StringListOrBuilder)
+- [ReportValueOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportValueOrBuilder)
+- [RequestPlatformEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RequestPlatformEnumOrBuilder)
+- [RequestPlatformTargetingOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RequestPlatformTargetingOrBuilder)
+- [RoleOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RoleOrBuilder)
+- [RoleStatusEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RoleStatusEnumOrBuilder)
+- [RunReportMetadataOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RunReportMetadataOrBuilder)
+- [RunReportRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RunReportRequestOrBuilder)
+- [RunReportResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RunReportResponseOrBuilder)
+- [ScheduleOptions.Schedule.MonthlyScheduleOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlyScheduleOrBuilder)
+- [ScheduleOptions.Schedule.WeeklyScheduleOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklyScheduleOrBuilder)
+- [ScheduleOptions.ScheduleOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ScheduleOptions.ScheduleOrBuilder)
+- [ScheduleOptionsOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ScheduleOptionsOrBuilder)
+- [SearchAdReviewCenterAdsRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SearchAdReviewCenterAdsRequestOrBuilder)
+- [SearchAdReviewCenterAdsResponseOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SearchAdReviewCenterAdsResponseOrBuilder)
+- [SiteApprovalStatusEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SiteApprovalStatusEnumOrBuilder)
+- [SiteDisapprovalReasonEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SiteDisapprovalReasonEnumOrBuilder)
+- [SiteOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SiteOrBuilder)
+- [SizeOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SizeOrBuilder)
+- [SizeTypeEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SizeTypeEnumOrBuilder)
+- [SmartSizeModeEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SmartSizeModeEnumOrBuilder)
+- [TargetWindowEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TargetWindowEnumOrBuilder)
+- [TargetedVideoBumperTypeEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TargetedVideoBumperTypeEnumOrBuilder)
+- [TargetingOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TargetingOrBuilder)
+- [TaxonomyCategoryOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TaxonomyCategoryOrBuilder)
+- [TaxonomyTypeEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TaxonomyTypeEnumOrBuilder)
+- [TeamAccessTypeEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TeamAccessTypeEnumOrBuilder)
+- [TeamOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TeamOrBuilder)
+- [TeamStatusEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TeamStatusEnumOrBuilder)
+- [TechnologyTargetingOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TechnologyTargetingOrBuilder)
+- [TimeUnitEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TimeUnitEnumOrBuilder)
+- [UnitTypeEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UnitTypeEnumOrBuilder)
+- [UpdateAdBreakRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateAdBreakRequestOrBuilder)
+- [UpdateAdUnitRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateAdUnitRequestOrBuilder)
+- [UpdateContactRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateContactRequestOrBuilder)
+- [UpdateCustomFieldRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateCustomFieldRequestOrBuilder)
+- [UpdateCustomTargetingKeyRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateCustomTargetingKeyRequestOrBuilder)
+- [UpdateEntitySignalsMappingRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateEntitySignalsMappingRequestOrBuilder)
+- [UpdatePlacementRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdatePlacementRequestOrBuilder)
+- [UpdatePrivateAuctionDealRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdatePrivateAuctionDealRequestOrBuilder)
+- [UpdatePrivateAuctionRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdatePrivateAuctionRequestOrBuilder)
+- [UpdateReportRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateReportRequestOrBuilder)
+- [UpdateSiteRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateSiteRequestOrBuilder)
+- [UpdateTeamRequestOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UpdateTeamRequestOrBuilder)
+- [UserDomainTargetingOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UserDomainTargetingOrBuilder)
+- [UserOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UserOrBuilder)
+- [VideoPositionEnumOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.VideoPositionEnumOrBuilder)
+- [VideoPositionOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.VideoPositionOrBuilder)
+- [VideoPositionTargetingOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.VideoPositionTargetingOrBuilder)
+- [WebPropertyOrBuilder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.WebPropertyOrBuilder)
+- [AdBreakMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdBreakMessagesProto)
+- [AdBreakServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdBreakServiceProto)
+- [AdManagerErrorProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdManagerErrorProto)
+- [AdReviewCenterAdEnumsProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdReviewCenterAdEnumsProto)
+- [AdReviewCenterAdMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdReviewCenterAdMessagesProto)
+- [AdReviewCenterAdServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdReviewCenterAdServiceProto)
+- [AdUnitEnumsProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitEnumsProto)
+- [AdUnitMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitMessagesProto)
+- [AdUnitServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AdUnitServiceProto)
+- [ApplicationMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ApplicationMessagesProto)
+- [ApplicationServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ApplicationServiceProto)
+- [AppliedLabelProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AppliedLabelProto)
+- [AudienceSegmentMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AudienceSegmentMessagesProto)
+- [AudienceSegmentServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.AudienceSegmentServiceProto)
+- [BandwidthGroupMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BandwidthGroupMessagesProto)
+- [BandwidthGroupServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BandwidthGroupServiceProto)
+- [BrowserLanguageMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserLanguageMessagesProto)
+- [BrowserLanguageServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserLanguageServiceProto)
+- [BrowserMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserMessagesProto)
+- [BrowserServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.BrowserServiceProto)
+- [CmsMetadataKeyEnumsProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataKeyEnumsProto)
+- [CmsMetadataKeyMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataKeyMessagesProto)
+- [CmsMetadataKeyServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataKeyServiceProto)
+- [CmsMetadataValueEnumsProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataValueEnumsProto)
+- [CmsMetadataValueMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataValueMessagesProto)
+- [CmsMetadataValueServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CmsMetadataValueServiceProto)
+- [CompanyEnumsProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CompanyEnumsProto)
+- [CompanyMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CompanyMessagesProto)
+- [CompanyServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CompanyServiceProto)
+- [ContactEnumsProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContactEnumsProto)
+- [ContactMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContactMessagesProto)
+- [ContactServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContactServiceProto)
+- [ContentBundleMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentBundleMessagesProto)
+- [ContentBundleServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentBundleServiceProto)
+- [ContentLabelMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentLabelMessagesProto)
+- [ContentLabelServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentLabelServiceProto)
+- [ContentMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentMessagesProto)
+- [ContentServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ContentServiceProto)
+- [CreativeTemplateEnumsProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateEnumsProto)
+- [CreativeTemplateMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateMessagesProto)
+- [CreativeTemplateServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateServiceProto)
+- [CreativeTemplateVariableUrlTypeEnumProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CreativeTemplateVariableUrlTypeEnumProto)
+- [CustomFieldEnumsProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldEnumsProto)
+- [CustomFieldMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldMessagesProto)
+- [CustomFieldServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldServiceProto)
+- [CustomFieldValueProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomFieldValueProto)
+- [CustomTargetingKeyEnumsProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKeyEnumsProto)
+- [CustomTargetingKeyMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKeyMessagesProto)
+- [CustomTargetingKeyServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingKeyServiceProto)
+- [CustomTargetingValueEnumsProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingValueEnumsProto)
+- [CustomTargetingValueMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingValueMessagesProto)
+- [CustomTargetingValueServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.CustomTargetingValueServiceProto)
+- [DealBuyerPermissionTypeEnumProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DealBuyerPermissionTypeEnumProto)
+- [DeviceCapabilityMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCapabilityMessagesProto)
+- [DeviceCapabilityServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCapabilityServiceProto)
+- [DeviceCategoryMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCategoryMessagesProto)
+- [DeviceCategoryServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceCategoryServiceProto)
+- [DeviceManufacturerMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceManufacturerMessagesProto)
+- [DeviceManufacturerServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.DeviceManufacturerServiceProto)
+- [EarlyAdBreakNotificationEnumsProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.EarlyAdBreakNotificationEnumsProto)
+- [EntitySignalsMappingMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.EntitySignalsMappingMessagesProto)
+- [EntitySignalsMappingServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.EntitySignalsMappingServiceProto)
+- [EnvironmentTypeEnumProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.EnvironmentTypeEnumProto)
+- [ExchangeSyndicationProductEnumProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ExchangeSyndicationProductEnumProto)
+- [FrequencyCapProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.FrequencyCapProto)
+- [GeoTargetMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GeoTargetMessagesProto)
+- [GeoTargetServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GeoTargetServiceProto)
+- [GoalEnumsProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GoalEnumsProto)
+- [GoalProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.GoalProto)
+- [LabelMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LabelMessagesProto)
+- [LineItemEnumsProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LineItemEnumsProto)
+- [LineItemMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LineItemMessagesProto)
+- [LineItemServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LineItemServiceProto)
+- [LiveStreamEventMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.LiveStreamEventMessagesProto)
+- [MobileCarrierMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileCarrierMessagesProto)
+- [MobileCarrierServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileCarrierServiceProto)
+- [MobileDeviceMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDeviceMessagesProto)
+- [MobileDeviceServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDeviceServiceProto)
+- [MobileDeviceSubmodelMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDeviceSubmodelMessagesProto)
+- [MobileDeviceSubmodelServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.MobileDeviceSubmodelServiceProto)
+- [NetworkMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.NetworkMessagesProto)
+- [NetworkServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.NetworkServiceProto)
+- [OperatingSystemMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemMessagesProto)
+- [OperatingSystemServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemServiceProto)
+- [OperatingSystemVersionMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemVersionMessagesProto)
+- [OperatingSystemVersionServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OperatingSystemVersionServiceProto)
+- [OrderEnumsProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OrderEnumsProto)
+- [OrderMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OrderMessagesProto)
+- [OrderServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.OrderServiceProto)
+- [PlacementEnumsProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PlacementEnumsProto)
+- [PlacementMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PlacementMessagesProto)
+- [PlacementServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PlacementServiceProto)
+- [PrivateAuctionDealMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionDealMessagesProto)
+- [PrivateAuctionDealServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionDealServiceProto)
+- [PrivateAuctionMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionMessagesProto)
+- [PrivateAuctionServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateAuctionServiceProto)
+- [PrivateMarketplaceEnumsProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.PrivateMarketplaceEnumsProto)
+- [ProgrammaticBuyerMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ProgrammaticBuyerMessagesProto)
+- [ProgrammaticBuyerServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ProgrammaticBuyerServiceProto)
+- [ReportDefinitionProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportDefinitionProto)
+- [ReportMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportMessagesProto)
+- [ReportServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportServiceProto)
+- [ReportValueProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.ReportValueProto)
+- [RequestPlatformEnumProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RequestPlatformEnumProto)
+- [RoleEnumsProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RoleEnumsProto)
+- [RoleMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RoleMessagesProto)
+- [RoleServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.RoleServiceProto)
+- [SiteEnumsProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SiteEnumsProto)
+- [SiteMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SiteMessagesProto)
+- [SiteServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SiteServiceProto)
+- [SizeProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SizeProto)
+- [SizeTypeEnumProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.SizeTypeEnumProto)
+- [TargetedVideoBumperTypeEnumProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TargetedVideoBumperTypeEnumProto)
+- [TargetingProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TargetingProto)
+- [TaxonomyCategoryMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TaxonomyCategoryMessagesProto)
+- [TaxonomyCategoryServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TaxonomyCategoryServiceProto)
+- [TaxonomyTypeEnumProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TaxonomyTypeEnumProto)
+- [TeamEnumsProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TeamEnumsProto)
+- [TeamMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TeamMessagesProto)
+- [TeamServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TeamServiceProto)
+- [TimeUnitEnumProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.TimeUnitEnumProto)
+- [UserMessagesProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UserMessagesProto)
+- [UserServiceProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.UserServiceProto)
+- [VideoPositionEnumProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.VideoPositionEnumProto)
+- [WebPropertyProto](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.WebPropertyProto)
+- [Package summary](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub)
+- [AdBreakServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.AdBreakServiceStub)
+- [AdReviewCenterAdServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.AdReviewCenterAdServiceStub)
+- [AdUnitServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.AdUnitServiceStub)
+- [ApplicationServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.ApplicationServiceStub)
+- [AudienceSegmentServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.AudienceSegmentServiceStub)
+- [BandwidthGroupServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.BandwidthGroupServiceStub)
+- [BrowserLanguageServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.BrowserLanguageServiceStub)
+- [BrowserServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.BrowserServiceStub)
+- [CmsMetadataKeyServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.CmsMetadataKeyServiceStub)
+- [CmsMetadataValueServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.CmsMetadataValueServiceStub)
+- [CompanyServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.CompanyServiceStub)
+- [ContactServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.ContactServiceStub)
+- [ContentBundleServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.ContentBundleServiceStub)
+- [ContentLabelServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.ContentLabelServiceStub)
+- [ContentServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.ContentServiceStub)
+- [CreativeTemplateServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.CreativeTemplateServiceStub)
+- [CustomFieldServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.CustomFieldServiceStub)
+- [CustomTargetingKeyServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.CustomTargetingKeyServiceStub)
+- [CustomTargetingValueServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.CustomTargetingValueServiceStub)
+- [DeviceCapabilityServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.DeviceCapabilityServiceStub)
+- [DeviceCategoryServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.DeviceCategoryServiceStub)
+- [DeviceManufacturerServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.DeviceManufacturerServiceStub)
+- [EntitySignalsMappingServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.EntitySignalsMappingServiceStub)
+- [GeoTargetServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.GeoTargetServiceStub)
+- [HttpJsonAdBreakServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonAdBreakServiceStub)
+- [HttpJsonAdReviewCenterAdServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonAdReviewCenterAdServiceStub)
+- [HttpJsonAdUnitServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonAdUnitServiceStub)
+- [HttpJsonApplicationServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonApplicationServiceStub)
+- [HttpJsonAudienceSegmentServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonAudienceSegmentServiceStub)
+- [HttpJsonBandwidthGroupServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonBandwidthGroupServiceStub)
+- [HttpJsonBrowserLanguageServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonBrowserLanguageServiceStub)
+- [HttpJsonBrowserServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonBrowserServiceStub)
+- [HttpJsonCmsMetadataKeyServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonCmsMetadataKeyServiceStub)
+- [HttpJsonCmsMetadataValueServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonCmsMetadataValueServiceStub)
+- [HttpJsonCompanyServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonCompanyServiceStub)
+- [HttpJsonContactServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonContactServiceStub)
+- [HttpJsonContentBundleServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonContentBundleServiceStub)
+- [HttpJsonContentLabelServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonContentLabelServiceStub)
+- [HttpJsonContentServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonContentServiceStub)
+- [HttpJsonCreativeTemplateServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonCreativeTemplateServiceStub)
+- [HttpJsonCustomFieldServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonCustomFieldServiceStub)
+- [HttpJsonCustomTargetingKeyServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonCustomTargetingKeyServiceStub)
+- [HttpJsonCustomTargetingValueServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonCustomTargetingValueServiceStub)
+- [HttpJsonDeviceCapabilityServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonDeviceCapabilityServiceStub)
+- [HttpJsonDeviceCategoryServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonDeviceCategoryServiceStub)
+- [HttpJsonDeviceManufacturerServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonDeviceManufacturerServiceStub)
+- [HttpJsonEntitySignalsMappingServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonEntitySignalsMappingServiceStub)
+- [HttpJsonGeoTargetServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonGeoTargetServiceStub)
+- [HttpJsonLineItemServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonLineItemServiceStub)
+- [HttpJsonMobileCarrierServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonMobileCarrierServiceStub)
+- [HttpJsonMobileDeviceServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonMobileDeviceServiceStub)
+- [HttpJsonMobileDeviceSubmodelServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonMobileDeviceSubmodelServiceStub)
+- [HttpJsonNetworkServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonNetworkServiceStub)
+- [HttpJsonOperatingSystemServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonOperatingSystemServiceStub)
+- [HttpJsonOperatingSystemVersionServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonOperatingSystemVersionServiceStub)
+- [HttpJsonOrderServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonOrderServiceStub)
+- [HttpJsonPlacementServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonPlacementServiceStub)
+- [HttpJsonPrivateAuctionDealServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonPrivateAuctionDealServiceStub)
+- [HttpJsonPrivateAuctionServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonPrivateAuctionServiceStub)
+- [HttpJsonProgrammaticBuyerServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonProgrammaticBuyerServiceStub)
+- [HttpJsonReportServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonReportServiceStub)
+- [HttpJsonRoleServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonRoleServiceStub)
+- [HttpJsonSiteServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonSiteServiceStub)
+- [HttpJsonTaxonomyCategoryServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonTaxonomyCategoryServiceStub)
+- [HttpJsonTeamServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonTeamServiceStub)
+- [HttpJsonUserServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonUserServiceStub)
+- [LineItemServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.LineItemServiceStub)
+- [MobileCarrierServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.MobileCarrierServiceStub)
+- [MobileDeviceServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.MobileDeviceServiceStub)
+- [MobileDeviceSubmodelServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.MobileDeviceSubmodelServiceStub)
+- [NetworkServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.NetworkServiceStub)
+- [OperatingSystemServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.OperatingSystemServiceStub)
+- [OperatingSystemVersionServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.OperatingSystemVersionServiceStub)
+- [OrderServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.OrderServiceStub)
+- [PlacementServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.PlacementServiceStub)
+- [PrivateAuctionDealServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.PrivateAuctionDealServiceStub)
+- [PrivateAuctionServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.PrivateAuctionServiceStub)
+- [ProgrammaticBuyerServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.ProgrammaticBuyerServiceStub)
+- [ReportServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.ReportServiceStub)
+- [RoleServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.RoleServiceStub)
+- [SiteServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.SiteServiceStub)
+- [TaxonomyCategoryServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.TaxonomyCategoryServiceStub)
+- [TeamServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.TeamServiceStub)
+- [UserServiceStub](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.UserServiceStub)
+- [AdBreakServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.AdBreakServiceStubSettings)
+- [AdBreakServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.AdBreakServiceStubSettings.Builder)
+- [AdReviewCenterAdServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.AdReviewCenterAdServiceStubSettings)
+- [AdReviewCenterAdServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.AdReviewCenterAdServiceStubSettings.Builder)
+- [AdUnitServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.AdUnitServiceStubSettings)
+- [AdUnitServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.AdUnitServiceStubSettings.Builder)
+- [ApplicationServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.ApplicationServiceStubSettings)
+- [ApplicationServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.ApplicationServiceStubSettings.Builder)
+- [AudienceSegmentServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.AudienceSegmentServiceStubSettings)
+- [AudienceSegmentServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.AudienceSegmentServiceStubSettings.Builder)
+- [BandwidthGroupServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.BandwidthGroupServiceStubSettings)
+- [BandwidthGroupServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.BandwidthGroupServiceStubSettings.Builder)
+- [BrowserLanguageServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.BrowserLanguageServiceStubSettings)
+- [BrowserLanguageServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.BrowserLanguageServiceStubSettings.Builder)
+- [BrowserServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.BrowserServiceStubSettings)
+- [BrowserServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.BrowserServiceStubSettings.Builder)
+- [CmsMetadataKeyServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.CmsMetadataKeyServiceStubSettings)
+- [CmsMetadataKeyServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.CmsMetadataKeyServiceStubSettings.Builder)
+- [CmsMetadataValueServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.CmsMetadataValueServiceStubSettings)
+- [CmsMetadataValueServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.CmsMetadataValueServiceStubSettings.Builder)
+- [CompanyServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.CompanyServiceStubSettings)
+- [CompanyServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.CompanyServiceStubSettings.Builder)
+- [ContactServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.ContactServiceStubSettings)
+- [ContactServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.ContactServiceStubSettings.Builder)
+- [ContentBundleServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.ContentBundleServiceStubSettings)
+- [ContentBundleServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.ContentBundleServiceStubSettings.Builder)
+- [ContentLabelServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.ContentLabelServiceStubSettings)
+- [ContentLabelServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.ContentLabelServiceStubSettings.Builder)
+- [ContentServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.ContentServiceStubSettings)
+- [ContentServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.ContentServiceStubSettings.Builder)
+- [CreativeTemplateServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.CreativeTemplateServiceStubSettings)
+- [CreativeTemplateServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.CreativeTemplateServiceStubSettings.Builder)
+- [CustomFieldServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.CustomFieldServiceStubSettings)
+- [CustomFieldServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.CustomFieldServiceStubSettings.Builder)
+- [CustomTargetingKeyServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.CustomTargetingKeyServiceStubSettings)
+- [CustomTargetingKeyServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.CustomTargetingKeyServiceStubSettings.Builder)
+- [CustomTargetingValueServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.CustomTargetingValueServiceStubSettings)
+- [CustomTargetingValueServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.CustomTargetingValueServiceStubSettings.Builder)
+- [DeviceCapabilityServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.DeviceCapabilityServiceStubSettings)
+- [DeviceCapabilityServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.DeviceCapabilityServiceStubSettings.Builder)
+- [DeviceCategoryServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.DeviceCategoryServiceStubSettings)
+- [DeviceCategoryServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.DeviceCategoryServiceStubSettings.Builder)
+- [DeviceManufacturerServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.DeviceManufacturerServiceStubSettings)
+- [DeviceManufacturerServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.DeviceManufacturerServiceStubSettings.Builder)
+- [EntitySignalsMappingServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.EntitySignalsMappingServiceStubSettings)
+- [EntitySignalsMappingServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.EntitySignalsMappingServiceStubSettings.Builder)
+- [GeoTargetServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.GeoTargetServiceStubSettings)
+- [GeoTargetServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.GeoTargetServiceStubSettings.Builder)
+- [LineItemServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.LineItemServiceStubSettings)
+- [LineItemServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.LineItemServiceStubSettings.Builder)
+- [MobileCarrierServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.MobileCarrierServiceStubSettings)
+- [MobileCarrierServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.MobileCarrierServiceStubSettings.Builder)
+- [MobileDeviceServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.MobileDeviceServiceStubSettings)
+- [MobileDeviceServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.MobileDeviceServiceStubSettings.Builder)
+- [MobileDeviceSubmodelServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.MobileDeviceSubmodelServiceStubSettings)
+- [MobileDeviceSubmodelServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.MobileDeviceSubmodelServiceStubSettings.Builder)
+- [NetworkServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.NetworkServiceStubSettings)
+- [NetworkServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.NetworkServiceStubSettings.Builder)
+- [OperatingSystemServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.OperatingSystemServiceStubSettings)
+- [OperatingSystemServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.OperatingSystemServiceStubSettings.Builder)
+- [OperatingSystemVersionServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.OperatingSystemVersionServiceStubSettings)
+- [OperatingSystemVersionServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.OperatingSystemVersionServiceStubSettings.Builder)
+- [OrderServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.OrderServiceStubSettings)
+- [OrderServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.OrderServiceStubSettings.Builder)
+- [PlacementServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.PlacementServiceStubSettings)
+- [PlacementServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.PlacementServiceStubSettings.Builder)
+- [PrivateAuctionDealServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.PrivateAuctionDealServiceStubSettings)
+- [PrivateAuctionDealServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.PrivateAuctionDealServiceStubSettings.Builder)
+- [PrivateAuctionServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.PrivateAuctionServiceStubSettings)
+- [PrivateAuctionServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.PrivateAuctionServiceStubSettings.Builder)
+- [ProgrammaticBuyerServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.ProgrammaticBuyerServiceStubSettings)
+- [ProgrammaticBuyerServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.ProgrammaticBuyerServiceStubSettings.Builder)
+- [ReportServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.ReportServiceStubSettings)
+- [ReportServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.ReportServiceStubSettings.Builder)
+- [RoleServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.RoleServiceStubSettings)
+- [RoleServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.RoleServiceStubSettings.Builder)
+- [SiteServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.SiteServiceStubSettings)
+- [SiteServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.SiteServiceStubSettings.Builder)
+- [TaxonomyCategoryServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.TaxonomyCategoryServiceStubSettings)
+- [TaxonomyCategoryServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.TaxonomyCategoryServiceStubSettings.Builder)
+- [TeamServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.TeamServiceStubSettings)
+- [TeamServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.TeamServiceStubSettings.Builder)
+- [UserServiceStubSettings](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.UserServiceStubSettings)
+- [UserServiceStubSettings.Builder](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.UserServiceStubSettings.Builder)
+- [HttpJsonAdBreakServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonAdBreakServiceCallableFactory)
+- [HttpJsonAdReviewCenterAdServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonAdReviewCenterAdServiceCallableFactory)
+- [HttpJsonAdUnitServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonAdUnitServiceCallableFactory)
+- [HttpJsonApplicationServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonApplicationServiceCallableFactory)
+- [HttpJsonAudienceSegmentServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonAudienceSegmentServiceCallableFactory)
+- [HttpJsonBandwidthGroupServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonBandwidthGroupServiceCallableFactory)
+- [HttpJsonBrowserLanguageServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonBrowserLanguageServiceCallableFactory)
+- [HttpJsonBrowserServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonBrowserServiceCallableFactory)
+- [HttpJsonCmsMetadataKeyServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonCmsMetadataKeyServiceCallableFactory)
+- [HttpJsonCmsMetadataValueServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonCmsMetadataValueServiceCallableFactory)
+- [HttpJsonCompanyServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonCompanyServiceCallableFactory)
+- [HttpJsonContactServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonContactServiceCallableFactory)
+- [HttpJsonContentBundleServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonContentBundleServiceCallableFactory)
+- [HttpJsonContentLabelServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonContentLabelServiceCallableFactory)
+- [HttpJsonContentServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonContentServiceCallableFactory)
+- [HttpJsonCreativeTemplateServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonCreativeTemplateServiceCallableFactory)
+- [HttpJsonCustomFieldServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonCustomFieldServiceCallableFactory)
+- [HttpJsonCustomTargetingKeyServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonCustomTargetingKeyServiceCallableFactory)
+- [HttpJsonCustomTargetingValueServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonCustomTargetingValueServiceCallableFactory)
+- [HttpJsonDeviceCapabilityServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonDeviceCapabilityServiceCallableFactory)
+- [HttpJsonDeviceCategoryServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonDeviceCategoryServiceCallableFactory)
+- [HttpJsonDeviceManufacturerServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonDeviceManufacturerServiceCallableFactory)
+- [HttpJsonEntitySignalsMappingServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonEntitySignalsMappingServiceCallableFactory)
+- [HttpJsonGeoTargetServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonGeoTargetServiceCallableFactory)
+- [HttpJsonLineItemServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonLineItemServiceCallableFactory)
+- [HttpJsonMobileCarrierServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonMobileCarrierServiceCallableFactory)
+- [HttpJsonMobileDeviceServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonMobileDeviceServiceCallableFactory)
+- [HttpJsonMobileDeviceSubmodelServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonMobileDeviceSubmodelServiceCallableFactory)
+- [HttpJsonNetworkServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonNetworkServiceCallableFactory)
+- [HttpJsonOperatingSystemServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonOperatingSystemServiceCallableFactory)
+- [HttpJsonOperatingSystemVersionServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonOperatingSystemVersionServiceCallableFactory)
+- [HttpJsonOrderServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonOrderServiceCallableFactory)
+- [HttpJsonPlacementServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonPlacementServiceCallableFactory)
+- [HttpJsonPrivateAuctionDealServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonPrivateAuctionDealServiceCallableFactory)
+- [HttpJsonPrivateAuctionServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonPrivateAuctionServiceCallableFactory)
+- [HttpJsonProgrammaticBuyerServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonProgrammaticBuyerServiceCallableFactory)
+- [HttpJsonReportServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonReportServiceCallableFactory)
+- [HttpJsonRoleServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonRoleServiceCallableFactory)
+- [HttpJsonSiteServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonSiteServiceCallableFactory)
+- [HttpJsonTaxonomyCategoryServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonTaxonomyCategoryServiceCallableFactory)
+- [HttpJsonTeamServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonTeamServiceCallableFactory)
+- [HttpJsonUserServiceCallableFactory](/java/docs/reference/ad-manager/latest/com.google.ads.admanager.v1.stub.HttpJsonUserServiceCallableFactory)
+- [admin](/java/docs/reference/admin/latest/overview)
+- [alloydb-connector](/java/docs/reference/alloydb-jdbc-connector/latest/overview)
+- [api-common](/java/docs/reference/api-common/latest/overview)
+- [data-manager](/java/docs/reference/data-manager/latest/overview)
+- [gax](/java/docs/reference/gax/latest/overview)
+- [google-analytics-admin](/java/docs/reference/google-analytics-admin/latest/overview)
+- [google-analytics-data](/java/docs/reference/google-analytics-data/latest/overview)
+- [google-api-client](/java/docs/reference/google-api-client/latest/overview)
+- [google-area120-tables](/java/docs/reference/google-area120-tables/latest/overview)
+- [google-auth-library](/java/docs/reference/google-auth-library/latest/overview)
+- [google-cloud-accessapproval](/java/docs/reference/google-cloud-accessapproval/latest/overview)
+- [google-cloud-advisorynotifications](/java/docs/reference/google-cloud-advisorynotifications/latest/overview)
+- [google-cloud-aiplatform](/java/docs/reference/google-cloud-aiplatform/latest/overview)
+- [google-cloud-alloydb](/java/docs/reference/google-cloud-alloydb/latest/overview)
+- [google-cloud-alloydb-connectors](/java/docs/reference/google-cloud-alloydb-connectors/latest/overview)
+- [google-cloud-analyticshub](/java/docs/reference/google-cloud-analyticshub/latest/overview)
+- [google-cloud-api-gateway](/java/docs/reference/google-cloud-api-gateway/latest/overview)
+- [google-cloud-apigee-connect](/java/docs/reference/google-cloud-apigee-connect/latest/overview)
+- [google-cloud-apigee-registry](/java/docs/reference/google-cloud-apigee-registry/latest/overview)
+- [google-cloud-apihub](/java/docs/reference/google-cloud-apihub/latest/overview)
+- [google-cloud-apikeys](/java/docs/reference/google-cloud-apikeys/latest/overview)
+- [google-cloud-appengine-admin](/java/docs/reference/google-cloud-appengine-admin/latest/overview)
+- [google-cloud-apphub](/java/docs/reference/google-cloud-apphub/latest/overview)
+- [google-cloud-artifact-registry](/java/docs/reference/google-cloud-artifact-registry/latest/overview)
+- [google-cloud-asset](/java/docs/reference/google-cloud-asset/latest/overview)
+- [google-cloud-assured-workloads](/java/docs/reference/google-cloud-assured-workloads/latest/overview)
+- [google-cloud-auditmanager](/java/docs/reference/google-cloud-auditmanager/latest/overview)
+- [google-cloud-automl](/java/docs/reference/google-cloud-automl/latest/overview)
+- [google-cloud-backupdr](/java/docs/reference/google-cloud-backupdr/latest/overview)
+- [google-cloud-bare-metal-solution](/java/docs/reference/google-cloud-bare-metal-solution/latest/overview)
+- [google-cloud-batch](/java/docs/reference/google-cloud-batch/latest/overview)
+- [google-cloud-beyondcorp-appconnections](/java/docs/reference/google-cloud-beyondcorp-appconnections/latest/overview)
+- [google-cloud-beyondcorp-appconnectors](/java/docs/reference/google-cloud-beyondcorp-appconnectors/latest/overview)
+- [google-cloud-beyondcorp-appgateways](/java/docs/reference/google-cloud-beyondcorp-appgateways/latest/overview)
+- [google-cloud-beyondcorp-clientconnectorservices](/java/docs/reference/google-cloud-beyondcorp-clientconnectorservices/latest/overview)
+- [google-cloud-beyondcorp-clientgateways](/java/docs/reference/google-cloud-beyondcorp-clientgateways/latest/overview)
+- [google-cloud-biglake](/java/docs/reference/google-cloud-biglake/latest/overview)
+- [google-cloud-bigquery](/java/docs/reference/google-cloud-bigquery/latest/overview)
+- [google-cloud-bigquery-data-exchange](/java/docs/reference/google-cloud-bigquery-data-exchange/latest/overview)
+- [google-cloud-bigqueryconnection](/java/docs/reference/google-cloud-bigqueryconnection/latest/overview)
+- [google-cloud-bigquerydatapolicy](/java/docs/reference/google-cloud-bigquerydatapolicy/latest/overview)
+- [google-cloud-bigquerydatatransfer](/java/docs/reference/google-cloud-bigquerydatatransfer/latest/overview)
+- [google-cloud-bigquerymigration](/java/docs/reference/google-cloud-bigquerymigration/latest/overview)
+- [google-cloud-bigqueryreservation](/java/docs/reference/google-cloud-bigqueryreservation/latest/overview)
+- [google-cloud-bigquerystorage](/java/docs/reference/google-cloud-bigquerystorage/latest/overview)
+- [google-cloud-bigtable](/java/docs/reference/google-cloud-bigtable/latest/overview)
+- [google-cloud-billing](/java/docs/reference/google-cloud-billing/latest/overview)
+- [google-cloud-billingbudgets](/java/docs/reference/google-cloud-billingbudgets/latest/overview)
+- [google-cloud-binary-authorization](/java/docs/reference/google-cloud-binary-authorization/latest/overview)
+- [google-cloud-build](/java/docs/reference/google-cloud-build/latest/overview)
+- [google-cloud-capacityplanner](/java/docs/reference/google-cloud-capacityplanner/latest/overview)
+- [google-cloud-certificate-manager](/java/docs/reference/google-cloud-certificate-manager/latest/overview)
+- [google-cloud-ces](/java/docs/reference/google-cloud-ces/latest/overview)
+- [google-cloud-channel](/java/docs/reference/google-cloud-channel/latest/overview)
+- [google-cloud-chat](/java/docs/reference/google-cloud-chat/latest/overview)
+- [google-cloud-chronicle](/java/docs/reference/google-cloud-chronicle/latest/overview)
+- [google-cloud-cloudapiregistry](/java/docs/reference/google-cloud-cloudapiregistry/latest/overview)
+- [google-cloud-cloudcommerceconsumerprocurement](/java/docs/reference/google-cloud-cloudcommerceconsumerprocurement/latest/overview)
+- [google-cloud-cloudcontrolspartner](/java/docs/reference/google-cloud-cloudcontrolspartner/latest/overview)
+- [google-cloud-cloudquotas](/java/docs/reference/google-cloud-cloudquotas/latest/overview)
+- [google-cloud-cloudsecuritycompliance](/java/docs/reference/google-cloud-cloudsecuritycompliance/latest/overview)
+- [google-cloud-cloudsupport](/java/docs/reference/google-cloud-cloudsupport/latest/overview)
+- [google-cloud-compute](/java/docs/reference/google-cloud-compute/latest/overview)
+- [google-cloud-confidentialcomputing](/java/docs/reference/google-cloud-confidentialcomputing/latest/overview)
+- [google-cloud-configdelivery](/java/docs/reference/google-cloud-configdelivery/latest/overview)
+- [google-cloud-connectgateway](/java/docs/reference/google-cloud-connectgateway/latest/overview)
+- [google-cloud-contact-center-insights](/java/docs/reference/google-cloud-contact-center-insights/latest/overview)
+- [google-cloud-container](/java/docs/reference/google-cloud-container/latest/overview)
+- [google-cloud-containeranalysis](/java/docs/reference/google-cloud-containeranalysis/latest/overview)
+- [google-cloud-contentwarehouse](/java/docs/reference/google-cloud-contentwarehouse/latest/overview)
+- [google-cloud-core](/java/docs/reference/google-cloud-core/latest/overview)
+- [google-cloud-data-fusion](/java/docs/reference/google-cloud-data-fusion/latest/overview)
+- [google-cloud-databasecenter](/java/docs/reference/google-cloud-databasecenter/latest/overview)
+- [google-cloud-datacatalog](/java/docs/reference/google-cloud-datacatalog/latest/overview)
+- [google-cloud-dataflow](/java/docs/reference/google-cloud-dataflow/latest/overview)
+- [google-cloud-dataform](/java/docs/reference/google-cloud-dataform/latest/overview)
+- [google-cloud-datalabeling](/java/docs/reference/google-cloud-datalabeling/latest/overview)
+- [google-cloud-datalineage](/java/docs/reference/google-cloud-datalineage/latest/overview)
+- [google-cloud-dataplex](/java/docs/reference/google-cloud-dataplex/latest/overview)
+- [google-cloud-dataproc](/java/docs/reference/google-cloud-dataproc/latest/overview)
+- [google-cloud-dataproc-metastore](/java/docs/reference/google-cloud-dataproc-metastore/latest/overview)
+- [google-cloud-datastore](/java/docs/reference/google-cloud-datastore/latest/overview)
+- [google-cloud-datastream](/java/docs/reference/google-cloud-datastream/latest/overview)
+- [google-cloud-debugger-client](/java/docs/reference/google-cloud-debugger-client/latest/overview)
+- [google-cloud-deploy](/java/docs/reference/google-cloud-deploy/latest/overview)
+- [google-cloud-developerconnect](/java/docs/reference/google-cloud-developerconnect/latest/overview)
+- [google-cloud-devicestreaming](/java/docs/reference/google-cloud-devicestreaming/latest/overview)
+- [google-cloud-dialogflow](/java/docs/reference/google-cloud-dialogflow/latest/overview)
+- [google-cloud-dialogflow-cx](/java/docs/reference/google-cloud-dialogflow-cx/latest/overview)
+- [google-cloud-discoveryengine](/java/docs/reference/google-cloud-discoveryengine/latest/overview)
+- [google-cloud-distributedcloudedge](/java/docs/reference/google-cloud-distributedcloudedge/latest/overview)
+- [google-cloud-dlp](/java/docs/reference/google-cloud-dlp/latest/overview)
+- [google-cloud-dms](/java/docs/reference/google-cloud-dms/latest/overview)
+- [google-cloud-dns](/java/docs/reference/google-cloud-dns/latest/overview)
+- [google-cloud-document-ai](/java/docs/reference/google-cloud-document-ai/latest/overview)
+- [google-cloud-domains](/java/docs/reference/google-cloud-domains/latest/overview)
+- [google-cloud-edgenetwork](/java/docs/reference/google-cloud-edgenetwork/latest/overview)
+- [google-cloud-enterpriseknowledgegraph](/java/docs/reference/google-cloud-enterpriseknowledgegraph/latest/overview)
+- [google-cloud-errorreporting](/java/docs/reference/google-cloud-errorreporting/latest/overview)
+- [google-cloud-essential-contacts](/java/docs/reference/google-cloud-essential-contacts/latest/overview)
+- [google-cloud-eventarc](/java/docs/reference/google-cloud-eventarc/latest/overview)
+- [google-cloud-eventarc-publishing](/java/docs/reference/google-cloud-eventarc-publishing/latest/overview)
+- [google-cloud-filestore](/java/docs/reference/google-cloud-filestore/latest/overview)
+- [google-cloud-financialservices](/java/docs/reference/google-cloud-financialservices/latest/overview)
+- [google-cloud-firestore](/java/docs/reference/google-cloud-firestore/latest/overview)
+- [google-cloud-functions](/java/docs/reference/google-cloud-functions/latest/overview)
+- [google-cloud-gdchardwaremanagement](/java/docs/reference/google-cloud-gdchardwaremanagement/latest/overview)
+- [google-cloud-geminidataanalytics](/java/docs/reference/google-cloud-geminidataanalytics/latest/overview)
+- [google-cloud-gke-backup](/java/docs/reference/google-cloud-gke-backup/latest/overview)
+- [google-cloud-gke-connect-gateway](/java/docs/reference/google-cloud-gke-connect-gateway/latest/overview)
+- [google-cloud-gke-multi-cloud](/java/docs/reference/google-cloud-gke-multi-cloud/latest/overview)
+- [google-cloud-gkehub](/java/docs/reference/google-cloud-gkehub/latest/overview)
+- [google-cloud-gkerecommender](/java/docs/reference/google-cloud-gkerecommender/latest/overview)
+- [google-cloud-gsuite-addons](/java/docs/reference/google-cloud-gsuite-addons/latest/overview)
+- [google-cloud-hypercomputecluster](/java/docs/reference/google-cloud-hypercomputecluster/latest/overview)
+- [google-cloud-iamcredentials](/java/docs/reference/google-cloud-iamcredentials/latest/overview)
+- [google-cloud-iap](/java/docs/reference/google-cloud-iap/latest/overview)
+- [google-cloud-ids](/java/docs/reference/google-cloud-ids/latest/overview)
+- [google-cloud-infra-manager](/java/docs/reference/google-cloud-infra-manager/latest/overview)
+- [google-cloud-iot](/java/docs/reference/google-cloud-iot/latest/overview)
+- [google-cloud-kms](/java/docs/reference/google-cloud-kms/latest/overview)
+- [google-cloud-kmsinventory](/java/docs/reference/google-cloud-kmsinventory/latest/overview)
+- [google-cloud-language](/java/docs/reference/google-cloud-language/latest/overview)
+- [google-cloud-licensemanager](/java/docs/reference/google-cloud-licensemanager/latest/overview)
+- [google-cloud-life-sciences](/java/docs/reference/google-cloud-life-sciences/latest/overview)
+- [google-cloud-live-stream](/java/docs/reference/google-cloud-live-stream/latest/overview)
+- [google-cloud-locationfinder](/java/docs/reference/google-cloud-locationfinder/latest/overview)
+- [google-cloud-logging](/java/docs/reference/google-cloud-logging/latest/overview)
+- [google-cloud-logging-logback](/java/docs/reference/google-cloud-logging-logback/latest/overview)
+- [google-cloud-logging-servlet-initializer](/java/docs/reference/google-cloud-logging-servlet-initializer/latest/overview)
+- [google-cloud-lustre](/java/docs/reference/google-cloud-lustre/latest/overview)
+- [google-cloud-maintenance](/java/docs/reference/google-cloud-maintenance/latest/overview)
+- [google-cloud-managed-identities](/java/docs/reference/google-cloud-managed-identities/latest/overview)
+- [google-cloud-managedkafka](/java/docs/reference/google-cloud-managedkafka/latest/overview)
+- [google-cloud-mediatranslation](/java/docs/reference/google-cloud-mediatranslation/latest/overview)
+- [google-cloud-meet](/java/docs/reference/google-cloud-meet/latest/overview)
+- [google-cloud-memcache](/java/docs/reference/google-cloud-memcache/latest/overview)
+- [google-cloud-migrationcenter](/java/docs/reference/google-cloud-migrationcenter/latest/overview)
+- [google-cloud-modelarmor](/java/docs/reference/google-cloud-modelarmor/latest/overview)
+- [google-cloud-monitoring](/java/docs/reference/google-cloud-monitoring/latest/overview)
+- [google-cloud-monitoring-dashboard](/java/docs/reference/google-cloud-monitoring-dashboard/latest/overview)
+- [google-cloud-monitoring-metricsscope](/java/docs/reference/google-cloud-monitoring-metricsscope/latest/overview)
+- [google-cloud-netapp](/java/docs/reference/google-cloud-netapp/latest/overview)
+- [google-cloud-network-management](/java/docs/reference/google-cloud-network-management/latest/overview)
+- [google-cloud-network-security](/java/docs/reference/google-cloud-network-security/latest/overview)
+- [google-cloud-networkconnectivity](/java/docs/reference/google-cloud-networkconnectivity/latest/overview)
+- [google-cloud-networkservices](/java/docs/reference/google-cloud-networkservices/latest/overview)
+- [google-cloud-nio](/java/docs/reference/google-cloud-nio/latest/overview)
+- [google-cloud-notebooks](/java/docs/reference/google-cloud-notebooks/latest/overview)
+- [google-cloud-notification](/java/docs/reference/google-cloud-notification/latest/overview)
+- [google-cloud-optimization](/java/docs/reference/google-cloud-optimization/latest/overview)
+- [google-cloud-oracledatabase](/java/docs/reference/google-cloud-oracledatabase/latest/overview)
+- [google-cloud-orchestration-airflow](/java/docs/reference/google-cloud-orchestration-airflow/latest/overview)
+- [google-cloud-orgpolicy](/java/docs/reference/google-cloud-orgpolicy/latest/overview)
+- [google-cloud-os-config](/java/docs/reference/google-cloud-os-config/latest/overview)
+- [google-cloud-os-login](/java/docs/reference/google-cloud-os-login/latest/overview)
+- [google-cloud-parallelstore](/java/docs/reference/google-cloud-parallelstore/latest/overview)
+- [google-cloud-parametermanager](/java/docs/reference/google-cloud-parametermanager/latest/overview)
+- [google-cloud-phishingprotection](/java/docs/reference/google-cloud-phishingprotection/latest/overview)
+- [google-cloud-policy-troubleshooter](/java/docs/reference/google-cloud-policy-troubleshooter/latest/overview)
+- [google-cloud-policysimulator](/java/docs/reference/google-cloud-policysimulator/latest/overview)
+- [google-cloud-private-catalog](/java/docs/reference/google-cloud-private-catalog/latest/overview)
+- [google-cloud-privilegedaccessmanager](/java/docs/reference/google-cloud-privilegedaccessmanager/latest/overview)
+- [google-cloud-profiler](/java/docs/reference/google-cloud-profiler/latest/overview)
+- [google-cloud-publicca](/java/docs/reference/google-cloud-publicca/latest/overview)
+- [google-cloud-pubsub](/java/docs/reference/google-cloud-pubsub/latest/overview)
+- [google-cloud-pubsublite](/java/docs/reference/google-cloud-pubsublite/latest/overview)
+- [google-cloud-rapidmigrationassessment](/java/docs/reference/google-cloud-rapidmigrationassessment/latest/overview)
+- [google-cloud-recaptchaenterprise](/java/docs/reference/google-cloud-recaptchaenterprise/latest/overview)
+- [google-cloud-recommendations-ai](/java/docs/reference/google-cloud-recommendations-ai/latest/overview)
+- [google-cloud-recommender](/java/docs/reference/google-cloud-recommender/latest/overview)
+- [google-cloud-redis](/java/docs/reference/google-cloud-redis/latest/overview)
+- [google-cloud-redis-cluster](/java/docs/reference/google-cloud-redis-cluster/latest/overview)
+- [google-cloud-resourcemanager](/java/docs/reference/google-cloud-resourcemanager/latest/overview)
+- [google-cloud-retail](/java/docs/reference/google-cloud-retail/latest/overview)
+- [google-cloud-run](/java/docs/reference/google-cloud-run/latest/overview)
+- [google-cloud-saasservicemgmt](/java/docs/reference/google-cloud-saasservicemgmt/latest/overview)
+- [google-cloud-scheduler](/java/docs/reference/google-cloud-scheduler/latest/overview)
+- [google-cloud-secretmanager](/java/docs/reference/google-cloud-secretmanager/latest/overview)
+- [google-cloud-securesourcemanager](/java/docs/reference/google-cloud-securesourcemanager/latest/overview)
+- [google-cloud-security-private-ca](/java/docs/reference/google-cloud-security-private-ca/latest/overview)
+- [google-cloud-securitycenter](/java/docs/reference/google-cloud-securitycenter/latest/overview)
+- [google-cloud-securitycenter-settings](/java/docs/reference/google-cloud-securitycenter-settings/latest/overview)
+- [google-cloud-securitycentermanagement](/java/docs/reference/google-cloud-securitycentermanagement/latest/overview)
+- [google-cloud-securityposture](/java/docs/reference/google-cloud-securityposture/latest/overview)
+- [google-cloud-service-control](/java/docs/reference/google-cloud-service-control/latest/overview)
+- [google-cloud-service-management](/java/docs/reference/google-cloud-service-management/latest/overview)
+- [google-cloud-service-usage](/java/docs/reference/google-cloud-service-usage/latest/overview)
+- [google-cloud-servicedirectory](/java/docs/reference/google-cloud-servicedirectory/latest/overview)
+- [google-cloud-servicehealth](/java/docs/reference/google-cloud-servicehealth/latest/overview)
+- [google-cloud-shell](/java/docs/reference/google-cloud-shell/latest/overview)
+- [google-cloud-spanner](/java/docs/reference/google-cloud-spanner/latest/overview)
+- [google-cloud-spanner-jdbc](/java/docs/reference/google-cloud-spanner-jdbc/latest/overview)
+- [google-cloud-spanner-pgadapter](/java/docs/reference/pgadapter/latest/overview)
+- [google-cloud-spanneradapter](/java/docs/reference/google-cloud-spanneradapter/latest/overview)
+- [google-cloud-speech](/java/docs/reference/google-cloud-speech/latest/overview)
+- [google-cloud-storage](/java/docs/reference/google-cloud-storage/latest/overview)
+- [google-cloud-storage-transfer](/java/docs/reference/google-cloud-storage-transfer/latest/overview)
+- [google-cloud-storagebatchoperations](/java/docs/reference/google-cloud-storagebatchoperations/latest/overview)
+- [google-cloud-storageinsights](/java/docs/reference/google-cloud-storageinsights/latest/overview)
+- [google-cloud-talent](/java/docs/reference/google-cloud-talent/latest/overview)
+- [google-cloud-tasks](/java/docs/reference/google-cloud-tasks/latest/overview)
+- [google-cloud-telcoautomation](/java/docs/reference/google-cloud-telcoautomation/latest/overview)
+- [google-cloud-texttospeech](/java/docs/reference/google-cloud-texttospeech/latest/overview)
+- [google-cloud-tpu](/java/docs/reference/google-cloud-tpu/latest/overview)
+- [google-cloud-trace](/java/docs/reference/google-cloud-trace/latest/overview)
+- [google-cloud-translate](/java/docs/reference/google-cloud-translate/latest/overview)
+- [google-cloud-valkey](/java/docs/reference/google-cloud-valkey/latest/overview)
+- [google-cloud-vectorsearch](/java/docs/reference/google-cloud-vectorsearch/latest/overview)
+- [google-cloud-vertexai](/java/docs/reference/google-cloud-vertexai/latest/overview)
+- [google-cloud-video-intelligence](/java/docs/reference/google-cloud-video-intelligence/latest/overview)
+- [google-cloud-video-stitcher](/java/docs/reference/google-cloud-video-stitcher/latest/overview)
+- [google-cloud-video-transcoder](/java/docs/reference/google-cloud-video-transcoder/latest/overview)
+- [google-cloud-vision](/java/docs/reference/google-cloud-vision/latest/overview)
+- [google-cloud-visionai](/java/docs/reference/google-cloud-visionai/latest/overview)
+- [google-cloud-vmmigration](/java/docs/reference/google-cloud-vmmigration/latest/overview)
+- [google-cloud-vmwareengine](/java/docs/reference/google-cloud-vmwareengine/latest/overview)
+- [google-cloud-vpcaccess](/java/docs/reference/google-cloud-vpcaccess/latest/overview)
+- [google-cloud-webrisk](/java/docs/reference/google-cloud-webrisk/latest/overview)
+- [google-cloud-websecurityscanner](/java/docs/reference/google-cloud-websecurityscanner/latest/overview)
+- [google-cloud-workflow-executions](/java/docs/reference/google-cloud-workflow-executions/latest/overview)
+- [google-cloud-workflows](/java/docs/reference/google-cloud-workflows/latest/overview)
+- [google-cloud-workloadmanager](/java/docs/reference/google-cloud-workloadmanager/latest/overview)
+- [google-cloud-workspaceevents](/java/docs/reference/google-cloud-workspaceevents/latest/overview)
+- [google-cloud-workstations](/java/docs/reference/google-cloud-workstations/latest/overview)
+- [google-cloudevent-types](/java/docs/reference/google-cloudevent-types/latest/overview)
+- [google-common-protos](/java/docs/reference/proto-google-common-protos/latest/overview)
+- [google-http-client](/java/docs/reference/google-http-client/latest/overview)
+- [google-iam](/java/docs/reference/proto-google-iam-v1/latest/overview)
+- [google-iam-admin](/java/docs/reference/google-iam-admin/latest/overview)
+- [google-iam-policy](/java/docs/reference/google-iam-policy/latest/overview)
+- [google-identity-accesscontextmanager](/java/docs/reference/google-identity-accesscontextmanager/latest/overview)
+- [google-oauth-client](/java/docs/reference/google-oauth-client/latest/overview)
+- [google-shopping-css](/java/docs/reference/google-shopping-css/latest/overview)
+- [google-shopping-merchant-accounts](/java/docs/reference/google-shopping-merchant-accounts/latest/overview)
+- [google-shopping-merchant-conversions](/java/docs/reference/google-shopping-merchant-conversions/latest/overview)
+- [google-shopping-merchant-datasources](/java/docs/reference/google-shopping-merchant-datasources/latest/overview)
+- [google-shopping-merchant-inventories](/java/docs/reference/google-shopping-merchant-inventories/latest/overview)
+- [google-shopping-merchant-issue-resolution](/java/docs/reference/google-shopping-merchant-issue-resolution/latest/overview)
+- [google-shopping-merchant-lfp](/java/docs/reference/google-shopping-merchant-lfp/latest/overview)
+- [google-shopping-merchant-notifications](/java/docs/reference/google-shopping-merchant-notifications/latest/overview)
+- [google-shopping-merchant-order-tracking](/java/docs/reference/google-shopping-merchant-order-tracking/latest/overview)
+- [google-shopping-merchant-products](/java/docs/reference/google-shopping-merchant-products/latest/overview)
+- [google-shopping-merchant-productstudio](/java/docs/reference/google-shopping-merchant-productstudio/latest/overview)
+- [google-shopping-merchant-promotions](/java/docs/reference/google-shopping-merchant-promotions/latest/overview)
+- [google-shopping-merchant-quota](/java/docs/reference/google-shopping-merchant-quota/latest/overview)
+- [google-shopping-merchant-reports](/java/docs/reference/google-shopping-merchant-reports/latest/overview)
+- [google-shopping-merchant-reviews](/java/docs/reference/google-shopping-merchant-reviews/latest/overview)
+- [grafeas](/java/docs/reference/grafeas/latest/overview)
+- [jdbc-socket-factory](/java/docs/reference/jdbc-socket-factory-parent/latest/overview)
+- [protobuf](/java/docs/reference/protobuf/latest/overview)
+- [pubsub-group-kafka-connector](/java/docs/reference/pubsub-group-kafka-connector/latest/overview)
+- [pubsublite-kafka](/java/docs/reference/pubsublite-kafka/latest/overview)
+- [pubsublite-spark-sql-streaming](/java/docs/reference/pubsublite-spark-sql-streaming/latest/overview)
+- [AI and ML](/docs/ai-ml)
+- [Application development](/docs/application-development)
+- [Application hosting](/docs/application-hosting)
+- [Compute](/docs/compute-area)
+- [Data analytics and pipelines](/docs/data)
+- [Databases](/docs/databases)
+- [Distributed, hybrid, and multicloud](/docs/dhm-cloud)
+- [Industry solutions](/docs/industry)
+- [Migration](/docs/migration)
+- [Networking](/docs/networking)
+- [Observability and monitoring](/docs/observability)
+- [Security](/docs/security)
+- [Storage](/docs/storage)
+- [Access and resources management](/docs/access-resources)
+- [Costs and usage management](/docs/costs-usage)
+- [Infrastructure as code](/docs/iac)
+- [SDK, languages, frameworks, and tools](/docs/devtools)
+- [Home](https://docs.cloud.google.com/)
+- [Documentation](https://docs.cloud.google.com/docs)
+- [Developer tools](https://docs.cloud.google.com/docs/costs-usage)
+- [Java](https://docs.cloud.google.com/java/docs)
+- [Client libraries](https://docs.cloud.google.com/java/docs/reference)
+
+### ad-manager overview (0.50.0) Stay organized with collections Save and categorize content based on your preferences.
+
+
+### Key Reference Links
+Google Ad Manager API Description: The Ad Manager API enables an app to integrate with Google Ad Manager. You can read Ad Manager data and run reports using the API.
+
+- [Google Ad Manager API Product Reference](https://developers.google.com/ad-manager/api/beta)
+- [GitHub Repository](https://github.com/googleapis/google-cloud-java/tree/main/java-admanager)
+- [Maven artifact](https://central.sonatype.com/artifact/com.google.api-ads/ad-manager)
+
+### Getting Started
+In order to use this library, you first need to go through the following steps:
+
+- [Install a JDK (Java Development Kit)](https://cloud.google.com/java/docs/setup#install_a_jdk_java_development_kit)
+- [Select or create a Cloud Platform project](https://console.cloud.google.com/project)
+- [Enable billing for your project](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project)
+- [Enable the API](https://console.cloud.google.com/apis/library/admanager.googleapis.com)
+- [Set up authentication](https://cloud.google.com/docs/authentication/client-libraries)
+
+### Use the Google Ad Manager API for Java
+To ensure that your project uses compatible versions of the libraries and their component artifacts, import com.google.cloud:libraries-bom and use the BOM to specify dependency versions. Be sure to remove any versions that you set previously. For more information about BOMs, see Google Cloud Platform Libraries BOM.
+
+- [Google Cloud Platform Libraries BOM](https://cloud.google.com/java/docs/bom)
+
+### Maven
+Import the BOM in the dependencyManagement section of your pom.xml file. Include specific artifacts you depend on in the dependencies section, but don't specify the artifacts' versions in the dependencies section.
+
+The example below demonstrates how you would import the BOM and include the ad-manager artifact.
+
+### Gradle
+BOMs are supported by default in Gradle 5.x or later. Add a platform dependency on com.google.cloud:libraries-bom and remove the version from the dependency declarations in the artifact's build.gradle file.
+
+The example below demonstrates how you would import the BOM and include the ad-manager artifact.
+
+The platform and enforcedPlatform keywords supply dependency versions declared in a BOM. The enforcedPlatform keyword enforces the dependency versions declared in the BOM and thus overrides what you specified.
+
+For more details of the platform and enforcedPlatform keywords Gradle 5.x or higher, see Gradle: Importing Maven BOMs.
+
+- [Gradle: Importing Maven BOMs](https://docs.gradle.org/current/userguide/platforms.html#sub:bom_import)
+If you're using Gradle 4.6 or later, add enableFeaturePreview('IMPROVED_POM_SUPPORT') to your settings.gradle file. For details, see Gradle 4.6 Release Notes: BOM import. Versions of Gradle earlier than 4.6 don't support BOMs.
+
+- [Gradle 4.6 Release Notes: BOM import](https://docs.gradle.org/4.6/release-notes.html#bom-import)
+
+### SBT
+SBT doesn't support BOMs. You can find recommended versions of libraries from a particular BOM version on the dashboard and set the versions manually. To use the latest version of this library, add this to your dependencies:
+
+- [doesn't support BOMs](https://github.com/sbt/sbt/issues/4531)
+- [dashboard](https://storage.googleapis.com/cloud-opensource-java-dashboard/com.google.cloud/libraries-bom/index.html)
+
+### Which version ID should I get started with?
+For this library, we recommend using com.google.ads.admanager.v1 for new applications.
+
+- [com.google.ads.admanager.v1](https://cloud.google.com/java/docs/reference/ad-manager/0.50.0/com.google.ads.admanager.v1)
+
+### Understanding Version ID and Library Versions
+When using a Cloud client library, it's important to distinguish between two types of versions:
+
+- Library Version: The version of the software package (the client library) that helps you interact with the Cloud service. These libraries are released and updated frequently with bug fixes, improvements, and support for new service features and versions. The version selector at the top of this page represents the client library version.
+- Version ID: The version of the Cloud service itself (e.g. Google Ad Manager API). New Version IDs are introduced infrequently, and often involve changes to the core functionality and structure of the Cloud service itself. The packages in the lefthand navigation represent packages tied to a specific Version ID of the Cloud service.
+
+### Managing Library Versions
+We recommend using the com.google.cloud:libraries-bom installation method detailed above to streamline dependency management across multiple Cloud Java client libraries. This ensures compatibility and simplifies updates.
+
+### Choosing the Right Version ID
+Each Cloud Java client library may contain packages tied to specific Version IDs (e.g., v1, v2alpha). For new production applications, use the latest stable Version ID. This is identified by the highest version number without a suffix (like "alpha" or "beta"). You can read more about Cloud API versioning strategy here.
+
+- [Cloud API versioning strategy here](https://cloud.google.com/apis/design/versioning)
+Important: Unstable Version ID releases (those with suffixes) are subject to breaking changes when upgrading. Use them only for testing or if you specifically need their experimental features.
+
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+
+- [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/)
+- [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0)
+- [Google Developers Site Policies](https://developers.google.com/site-policies)
+Last updated 2026-04-25 UTC.
+
+### Products and pricing
+- [See all products](//cloud.google.com/products/)
+- [Google Cloud pricing](//cloud.google.com/pricing/)
+- [Google Cloud Marketplace](//cloud.google.com/marketplace/)
+- [Contact sales](//cloud.google.com/contact/)
+
+### Support
+- [Community forums](//discuss.google.dev/c/google-cloud/14/)
+- [Support](//cloud.google.com/support-hub/)
+- [Release Notes](//docs.cloud.google.com/release-notes)
+- [System status](//status.cloud.google.com)
+
+### Resources
+- [GitHub](//github.com/googlecloudPlatform/)
+- [Getting Started with Google Cloud](/docs/get-started/)
+- [Code samples](/docs/samples)
+- [Cloud Architecture Center](/architecture/)
+- [Training and Certification](//cloud.google.com/learn/training/)
+
+### Engage
+- [Blog](//cloud.google.com/blog/)
+- [Events](//cloud.google.com/events/)
+- [X (Twitter)](//x.com/googlecloud)
+- [Google Cloud on YouTube](//www.youtube.com/googlecloud)
+- [Google Cloud Tech on YouTube](//www.youtube.com/googlecloudplatform)
+- [About Google](//about.google/)
+- [Privacy](//policies.google.com/privacy)
+- [Site terms](//policies.google.com/terms?hl=en)
+- [Google Cloud terms](//cloud.google.com/product-terms)
+- [Our third decade of climate action: join us](//cloud.google.com/sustainability)
+- [Subscribe](//cloud.google.com/newsletter/)
+
+---
+
+## DOCUMENT: iCloud: autonomous_strategies.md
+**Source:** icloud://autonomous_strategies.md
+**Ingested At:** 2026-05-25T05:09:55.213Z
+
+### Autonomous Strategies for 2026
+
+
+### Multi-Cloud Mesh
+Implement a decentralized mesh of autonomous agents across AWS, GCP, and Azure to ensure 100% availability.
+
+### Neural Node Balancing
+Nodes should autonomously migrate between regions based on latency and compute cost metrics.
+
+---
+
+## DOCUMENT: 2026 Market Intelligence
+**Source:** icloud://market_intelligence.json
+**Ingested At:** 2026-05-25T05:09:55.366Z
+
+### Emerging Frontiers
+Autonomous organisms are becoming the standard for enterprise digital architecture.
+
+---
+
+## DOCUMENT: iCloud: neural_sync_docs.md
+**Source:** icloud://neural_sync_docs.md
+**Ingested At:** 2026-05-25T05:09:55.445Z
+
+### Phase 12: Global Neural Synchronization
+Global Neural Synchronization (GNS) is the final milestone in the Antigravity Evolution Roadmap. It enables real-time, zero-latency state convergence across all distributed neural nodes in the ecosystem.
+
+### Core Mechanisms
+- **State Entanglement:** Real-time synchronization of agent memory across cloud providers.
+- **Conflict Resolution:** Autonomous resolution of state divergence using weighted consensus.
+- **Omni-Presence:** Seamless agent migration between environments without context loss.
+
+---
+
+## DOCUMENT: iCloud: test_knowledge.md
+**Source:** icloud://test_knowledge.md
+**Ingested At:** 2026-05-25T05:09:55.517Z
+
+### New Knowledge from iCloud
+This is some test knowledge.
+
+---
+
+## DOCUMENT: autonomous_strategies.md
+**Source:** icloud-sim://autonomous_strategies.md
+**Ingested At:** 2026-05-25T02:36:28.332Z
+
+### Autonomous Strategies for 2026
+
+
+### Multi-Cloud Mesh
+Implement a decentralized mesh of autonomous agents across AWS, GCP, and Azure to ensure 100% availability.
+
+### Neural Node Balancing
+Nodes should autonomously migrate between regions based on latency and compute cost metrics.
+
+---
+
+## DOCUMENT: caio_role_docs.md
+**Source:** local://caio_role_docs.md
+**Ingested At:** 2026-05-25T05:09:56.924Z
+
+### Chief AI Officer (CAIO) Role Description
+
+
+### Core Job Description
+A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an organization’s entire artificial intelligence strategy. The role bridges the gap between advanced technical execution and bottom-line business outcomes. A Chief AI Officer directs how a company develops, procures, and implements AI to boost productivity, enter new markets, and maintain a competitive edge.
+
+### Market Context & Demand (2025-2026)
+- **Growth:** 300% year-over-year growth in CAIO role demand.
+- **Adoption:** 73% of Fortune 500 companies plan to hire or have hired a CAIO by the end of 2026.
+- **ROI Impact:** Organizations with a dedicated CAIO report up to 45% higher AI ROI than those without.
+- **LinkedIn Trends:** AI-related positions continue to lead growth in 2025 and 2026, with both technical and strategic roles in high demand.
+- **Salary Benchmarks:** Typically ranges from $300,000 to $2.5M+ depending on industry and company scale.
+
+### Key Responsibilities
+
+
+### Strategy & Vision
+Align AI initiatives with the company’s overall business goals. Develop and articulate the company's AI vision and strategy, identifying opportunities across business functions.
+
+### Ethics & Governance
+Establish frameworks to ensure AI algorithms are free from bias, respect user privacy, and meet all legal and cybersecurity regulations (e.g., EU AI Act, US Executive Order 14110).
+
+### Implementation & Tech Stacking
+Decide whether to build proprietary AI models or license third-party tools, managing relationships with external technology vendors. Oversee end-to-end implementation from ideation to deployment.
+
+### Cross-Department Training
+Educate the board, executives, and general workforce on how to leverage AI safely and effectively. Foster a culture of continuous learning and ethical AI practices.
+
+### Performance Tracking
+Measure the return on investment (ROI) and overall business impact of deployed AI projects.
+
+### Qualifications & Requirements
+
+
+### Education
+A Master's or Ph.D. in Artificial Intelligence, Machine Learning, Computer Science, or a related quantitative field. An MBA is highly valued for the business-strategy aspect of the role. Because “AI Officer” is an executive title, it does not require a government-issued professional license (like a lawyer or doctor). However, companies typically look for advanced degrees or professional certifications in Data Science, Computer Science, or an MBA.
+
+### Experience
+8+ to 10+ years of progressive leadership experience in data science, AI development, or enterprise digital transformation.
+
+### Skillset
+A rare blend of technical fluency (understanding AI capabilities and limitations) and executive business acumen.
+
+### CAIO vs. Other C-Suite Tech Roles
+
+
+### Chief Technology Officer (CTO)
+Focuses on the company’s broad IT infrastructure, software architecture, and system reliability.
+
+### Chief Data Officer (CDO)
+Manages data governance, architecture, and data pipelines to make sure data is clean and organized.
+
+### Chief AI Officer (CAIO)
+Uses the foundations managed by the CTO and CDO to specifically drive business value and transform how work gets done. Reports directly to the CEO in most modern structures.
+
+### External Resources & Certifications
+To explore real-world openings and licensure requirements, research available roles on platforms like **LinkedIn Jobs** or **Indeed**.
+
+For those looking to transition into executive AI leadership, several high-impact certifications and programs are available via **Coursera** and other institutions:
+- **Coursera:**
+  - *The Chief AI Officer's Handbook*
+  - *Executive AI Leadership Mastery Specialization* (Starweaver)
+  - *Strategic AI Governance Specialization* (Starweaver)
+  - *Generative AI for Executives and Business Leaders* (IBM)
+- **Executive Programs:**
+  - *Wharton Executive Education:* Leadership Program in AI and Analytics
+  - *MIT Sloan:* Artificial Intelligence: Implications for Business Strategy
+  - *Stanford Graduate School of Business:* Harnessing AI for Management
+  - *Wharton Executive Education:* AI for Business Leaders: Strategy and Applications
+
+---
+
+## DOCUMENT: intelephense_docs.md
+**Source:** local://intelephense_docs.md
+**Ingested At:** 2026-05-25T05:09:56.978Z
 
 ### Intelephense Documentation
 

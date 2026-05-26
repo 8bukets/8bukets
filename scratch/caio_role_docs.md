@@ -7,7 +7,8 @@ A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an o
 - **Growth:** 300% year-over-year growth in CAIO role demand.
 - **Adoption:** 73% of Fortune 500 companies plan to hire or have hired a CAIO by the end of 2026.
 - **ROI Impact:** Organizations with a dedicated CAIO report up to 45% higher AI ROI than those without.
-- **Salary Range:** Typically ranges from $300,000 to $2.5M+ depending on industry and company scale.
+- **LinkedIn Trends:** AI-related positions continue to lead growth in 2025 and 2026, with both technical and strategic roles in high demand.
+- **Salary Benchmarks:** Typically ranges from $300,000 to $2.5M+ depending on industry and company scale.
 
 ### Key Responsibilities
 
@@ -51,7 +52,7 @@ Uses the foundations managed by the CTO and CDO to specifically drive business v
 ### External Resources & Certifications
 To explore real-world openings and licensure requirements, research available roles on platforms like **LinkedIn Jobs** or **Indeed**.
 
-For those looking to transition into executive AI leadership, several high-impact certifications and programs are available:
+For those looking to transition into executive AI leadership, several high-impact certifications and programs are available via **Coursera** and other institutions:
 - **Coursera:**
   - *The Chief AI Officer's Handbook*
   - *Executive AI Leadership Mastery Specialization* (Starweaver)

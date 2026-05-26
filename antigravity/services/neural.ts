@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { getSystemInsights, logAutonomousAction } from '@/antigravity/core'
+import { healthCheck, logAutonomousAction } from '@/antigravity/core'
 
 export const NeuralPulseSchema = z.object({
   origin: z.string(),
@@ -15,17 +15,14 @@ export type NeuralPulse = z.infer<typeof NeuralPulseSchema>
  * Manages cross-environment cognitive synchronization.
  */
 export async function broadcastPulse() {
-  
-
-
-
-
+  // Use lightweight healthCheck instead of heavy getSystemInsights to break recursion
+  const health = await healthCheck()
 
   // Use a minimal check instead of full getSystemInsights to avoid recursion
   const pulse: NeuralPulse = {
     origin: process.env.NODE_ENV || 'development',
-    health: 'optimal', // Simplified for pulse broadcast
-    volatilityTags: 0,
+    health: health.mongodb === 'healthy' ? 'optimal' : 'degraded',
+    volatilityTags: 0, // Simplified for heartbeat
     timestamp: new Date().toISOString()
   }
 
