@@ -78,7 +78,7 @@ class OracleAIAgent(BaseAgent):
 
             if "free pricing tier" in content_text.lower() or "free trial" in content_text.lower():
                 knowledge_summary["offers"].append({heading: content_text})
-            elif "services" in content_text.lower() or "infrastructure" in content_text.lower():
+            elif "services" in content_text.lower() or "infrastructure" in content_text.lower() or "action" in heading.lower() or "hands-on" in heading.lower():
                 knowledge_summary["features"].append({heading: content_text})
             else:
                 knowledge_summary["key_points"].append(heading)
