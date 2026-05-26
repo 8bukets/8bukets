@@ -505,6 +505,7 @@ export class Jules {
       const { observeKnowledge: scanUrl } = await import('./services/knowledge')
       await scanUrl('https://software-online-review.com')
       await scanUrl('https://markposition.wordpress.com')
+      await scanUrl('https://antigravity.google/product/antigravity-cli')
     } catch (err) {
       console.error('❌ [Jules] External URL scan failed:', err)
     }
