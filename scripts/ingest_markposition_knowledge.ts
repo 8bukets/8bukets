@@ -15,19 +15,29 @@ interface MarketEntry {
     post_url: string;
 }
 
-async function scrapeMarkpositionKnowledge() {
-    console.log(`🤖 [Ingest] Fetching market intelligence from ${BASE_URL}...`);
+async function scrapeMarkpositionKnowledge(maxPages: number = 3) {
+    console.log(`🤖 [Ingest] Fetching market intelligence from ${BASE_URL} (max ${maxPages} pages)...`);
     try {
-        const response = await fetch(BASE_URL, { signal: AbortSignal.timeout(20000) });
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const html = await response.text();
-        const $ = cheerio.load(html);
+        const allEntries: MarketEntry[] = [];
 
-        const entries: MarketEntry[] = [];
+        for (let page = 1; page <= maxPages; page++) {
+            const url = page === 1 ? BASE_URL : `${BASE_URL}page/${page}/`;
+            console.log(` - Scraping page ${page}: ${url}`);
 
-        $('article.post').each((_, el) => {
+            const response = await fetch(url, { signal: AbortSignal.timeout(20000) });
+            if (!response.ok) {
+                if (response.status === 404) {
+                    console.log(` ✨ [Ingest] Page ${page} not found. Ending pagination.`);
+                    break;
+                }
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const html = await response.text();
+            const $ = cheerio.load(html);
+
+            const pageEntries: MarketEntry[] = [];
+
+            $('article.post').each((_, el) => {
             const $el = $(el);
             const titleHeader = $el.find('h1.entry-title');
             const titleTag = titleHeader.find('a');
@@ -70,19 +80,31 @@ async function scrapeMarkpositionKnowledge() {
                 } catch (e) {}
             }
 
-            entries.push({
-                title,
-                date,
-                datetime,
-                author,
-                categories,
-                external_link,
-                domain,
-                post_url
+                pageEntries.push({
+                    title,
+                    date,
+                    datetime,
+                    author,
+                    categories,
+                    external_link,
+                    domain,
+                    post_url
+                });
             });
-        });
 
-        console.log(`✅ [Ingest] Parsed ${entries.length} entries.`);
+            if (pageEntries.length === 0) {
+                console.log(` ✨ [Ingest] No entries found on page ${page}. Ending pagination.`);
+                break;
+            }
+
+            allEntries.push(...pageEntries);
+            console.log(` ✅ [Ingest] Parsed ${pageEntries.length} entries from page ${page}.`);
+
+            // Avoid rate limiting
+            if (page < maxPages) await new Promise(resolve => setTimeout(resolve, 500));
+        }
+
+        console.log(`✅ [Ingest] Total entries parsed: ${allEntries.length}`);
 
         // Update system_knowledge.json
         const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json');
@@ -95,7 +117,7 @@ async function scrapeMarkpositionKnowledge() {
 
             // Merge logic: avoid duplicates based on post_url
             const existingUrls = new Set(knowledge.market_data.all_entries.map((e: any) => e.post_url));
-            const newEntries = entries.filter(e => !existingUrls.has(e.post_url));
+            const newEntries = allEntries.filter(e => !existingUrls.has(e.post_url));
 
             if (newEntries.length > 0) {
                 // Flattening check during ingest
@@ -127,7 +149,7 @@ async function scrapeMarkpositionKnowledge() {
         let mdContent = `# 📈 Markposition Intelligence Report\n\nGenerated on: ${new Date().toISOString()}\n\n`;
         mdContent += `## Recent Market Intelligence\n\n`;
 
-        entries.slice(0, 10).forEach(e => {
+        allEntries.slice(0, 20).forEach(e => {
             mdContent += `### ${e.title}\n`;
             mdContent += `- **Date**: ${e.date}\n`;
             mdContent += `- **Domain**: ${e.domain || 'N/A'}\n`;
