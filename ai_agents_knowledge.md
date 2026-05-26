@@ -63,36 +63,6 @@ Reactive; responds to user requests
 
 Reactive; responds to triggers or commands
 
-AI agent
-
-AI assistant
-
-Bot
-
-Purpose
-
-Autonomously and proactively perform tasks
-
-Assisting users with tasks
-
-Automating simple tasks or conversations
-
-Capabilities
-
-Can perform complex, multi-step actions; learns and adapts; can make decisions independently
-
-Responds to requests or prompts; provides information and completes simple tasks; can recommend actions but the user makes decisions
-
-Follows pre-defined rules; limited learning; basic interactions
-
-Interaction
-
-Proactive; goal-oriented
-
-Reactive; responds to user requests
-
-Reactive; responds to triggers or commands
-
 ## Key differences
 
 - Autonomy : AI agents have the highest degree of autonomy, able to operate and make decisions independently to achieve a goal. AI assistants are less autonomous, requiring user input and direction. Bots are the least autonomous, typically following pre-programmed rules.
@@ -234,7 +204,7 @@ Google Cloud provides a portfolio of products and solutions in the AI agent spac
 - Gemini Enterprise Agent Platform Create AI agents and applications using natural language or a code-first approach. Easily ground your agents or apps in enterprise data with a range of options.
 - Customer Experience Agent Studio Build hybrid conversational agents with both deterministic and generative AI functionality.
 - Agent Garden Curated collection of pre-built agent samples, solutions, tools, and frameworks to accelerate the development and deployment of AI agents.
-- Agent Development Kit (ADK) Open-source Python SDK to build sophisticated multi-agent systems with orchestration, memory, and developer tools.
+- Agent Development Kit (ADK)Open-source Python SDK to build sophisticated multi-agent systems with orchestration, memory, and developer tools.
 - A2A Protocol An open-source framework originally developed by Google to help build AI agents. An AI agent built with A2A Protocol will be interoperable with any service, platform, or infrastructure.
 - Cloud Run A fully managed serverless platform that allows you to deploy containerized agents and applications, providing auto-scaling and pay-per-use efficiency.
 

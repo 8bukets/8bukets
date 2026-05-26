@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-05-26T02:47:22.511Z",
+    "generated_at": "2026-05-25T22:31:18.663Z",
     "version": 1,
     "sources_processed": [
       "local://.github/ISSUE_TEMPLATE/bug_report.md",
@@ -4724,21 +4724,6 @@
             "Interaction",
             "Proactive; goal-oriented",
             "Reactive; responds to user requests",
-            "Reactive; responds to triggers or commands",
-            "AI agent",
-            "AI assistant",
-            "Bot",
-            "Purpose",
-            "Autonomously and proactively perform tasks",
-            "Assisting users with tasks",
-            "Automating simple tasks or conversations",
-            "Capabilities",
-            "Can perform complex, multi-step actions; learns and adapts; can make decisions independently",
-            "Responds to requests or prompts; provides information and completes simple tasks; can recommend actions but the user makes decisions",
-            "Follows pre-defined rules; limited learning; basic interactions",
-            "Interaction",
-            "Proactive; goal-oriented",
-            "Reactive; responds to user requests",
             "Reactive; responds to triggers or commands"
           ]
         },
@@ -4884,7 +4869,7 @@
           "header": "Google Cloud and AI agents",
           "content": [
             "Google Cloud provides a portfolio of products and solutions in the AI agent space. These include integrated AI assistants, pre-built AI agents, AI applications, and a platform of agent and developer tools to build custom AI agents.",
-            "- Gemini Enterprise App Secure platform to discover, create, run, and govern AI agents across your organization.\n- Gemini Enterprise Agent Platform Create AI agents and applications using natural language or a code-first approach. Easily ground your agents or apps in enterprise data with a range of options.\n- Customer Experience Agent Studio Build hybrid conversational agents with both deterministic and generative AI functionality.\n- Agent Garden Curated collection of pre-built agent samples, solutions, tools, and frameworks to accelerate the development and deployment of AI agents.\n- Agent Development Kit (ADK) Open-source Python SDK to build sophisticated multi-agent systems with orchestration, memory, and developer tools.\n- A2A Protocol An open-source framework originally developed by Google to help build AI agents. An AI agent built with A2A Protocol will be interoperable with any service, platform, or infrastructure.\n- Cloud Run A fully managed serverless platform that allows you to deploy containerized agents and applications, providing auto-scaling and pay-per-use efficiency."
+            "- Gemini Enterprise App Secure platform to discover, create, run, and govern AI agents across your organization.\n- Gemini Enterprise Agent Platform Create AI agents and applications using natural language or a code-first approach. Easily ground your agents or apps in enterprise data with a range of options.\n- Customer Experience Agent Studio Build hybrid conversational agents with both deterministic and generative AI functionality.\n- Agent Garden Curated collection of pre-built agent samples, solutions, tools, and frameworks to accelerate the development and deployment of AI agents.\n- Agent Development Kit (ADK)Open-source Python SDK to build sophisticated multi-agent systems with orchestration, memory, and developer tools.\n- A2A Protocol An open-source framework originally developed by Google to help build AI agents. An AI agent built with A2A Protocol will be interoperable with any service, platform, or infrastructure.\n- Cloud Run A fully managed serverless platform that allows you to deploy containerized agents and applications, providing auto-scaling and pay-per-use efficiency."
           ]
         }
       ]
@@ -4899,7 +4884,7 @@
     ],
     "metadata": {
       "source": "local://.github/ISSUE_TEMPLATE/bug_report.md",
-      "ingestedAt": "2026-05-26T02:47:22.273Z"
+      "ingestedAt": "2026-05-25T22:31:18.474Z"
     }
   },
   "System: .github/ISSUE_TEMPLATE/feature_request.md": {
@@ -4911,7 +4896,7 @@
     ],
     "metadata": {
       "source": "local://.github/ISSUE_TEMPLATE/feature_request.md",
-      "ingestedAt": "2026-05-26T02:47:22.286Z"
+      "ingestedAt": "2026-05-25T22:31:18.487Z"
     }
   },
   "System: .github/PULL_REQUEST_TEMPLATE.md": {
@@ -4943,7 +4928,7 @@
     ],
     "metadata": {
       "source": "local://.github/PULL_REQUEST_TEMPLATE.md",
-      "ingestedAt": "2026-05-26T02:47:22.296Z"
+      "ingestedAt": "2026-05-25T22:31:18.497Z"
     }
   },
   "Intelephense: README": {
@@ -4975,7 +4960,7 @@
     ],
     "metadata": {
       "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/README.md",
-      "ingestedAt": "2026-05-26T02:47:22.391Z"
+      "ingestedAt": "2026-05-25T22:31:18.553Z"
     }
   },
   "Intelephense: features": {
@@ -5051,7 +5036,7 @@
     ],
     "metadata": {
       "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/features.md",
-      "ingestedAt": "2026-05-26T02:47:22.418Z"
+      "ingestedAt": "2026-05-25T22:31:18.580Z"
     }
   },
   "Intelephense: installation": {
@@ -5099,7 +5084,7 @@
     ],
     "metadata": {
       "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/installation.md",
-      "ingestedAt": "2026-05-26T02:47:22.447Z"
+      "ingestedAt": "2026-05-25T22:31:18.606Z"
     }
   },
   "Intelephense: gettingStarted": {
@@ -5127,7 +5112,7 @@
     ],
     "metadata": {
       "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/gettingStarted.md",
-      "ingestedAt": "2026-05-26T02:47:22.475Z"
+      "ingestedAt": "2026-05-25T22:31:18.635Z"
     }
   },
   "Intelephense: support": {
@@ -5139,7 +5124,7 @@
     ],
     "metadata": {
       "source": "https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/support.md",
-      "ingestedAt": "2026-05-26T02:47:22.507Z"
+      "ingestedAt": "2026-05-25T22:31:18.659Z"
     }
   },
   "google_ads": {

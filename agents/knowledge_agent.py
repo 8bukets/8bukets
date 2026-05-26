@@ -25,7 +25,7 @@ class KnowledgeAgent(BaseAgent):
         self.logger.info("Providing structured AI agent knowledge to the ecosystem...")
 
         # Support both potential paths
-        knowledge_files = ["data/ai_agents_knowledge.json", "ai_agents_knowledge.json"]
+        knowledge_files = ["data/knowledge/ai_agents_knowledge.json", "data/ai_agents_knowledge.json", "ai_agents_knowledge.json"]
         knowledge_data = {}
         
         selected_file = None
