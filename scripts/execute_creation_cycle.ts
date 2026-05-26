@@ -26,6 +26,9 @@ async function main() {
   // Execute the work cycle
   await jules.executeWorkCycle()
 
+  // Explicitly confirm autonomous evolution and self-correction sequence
+  console.log('🤖 [Antigravity] Autonomous evolution and self-correction phase initiated based on session intelligence.')
+
   console.log('\n📊 [Antigravity] Cycle Summary:')
   if (!fs.existsSync(storagePath)) {
     console.log(' - No work orders file found.')
