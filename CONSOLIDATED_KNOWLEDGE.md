@@ -266,7 +266,6 @@ Everything else should be evaluated by whether it helps:
 - trust-first positioning
 - practical delivery
 
-
 ## Autonomous Observation
 - **Date**: 2026-05-14T00:11:55.884Z
 - **Target**: https://software-online-review.com
@@ -282,8 +281,6 @@ Everything else should be evaluated by whether it helps:
 - **Target**: https://localhost.co/tools/
 - **Title**: Developer Tools - LocalHost.Co
 - **Relationship Map**: Confirmed overlapping identities between Antigravity, Project SOR, software-online-review.com, software-review-platform, and markposition.wordpress.com as the formal Market Intelligence layer.
-
-
 
 ## iCloud Integration (8bukets & antigravity)
 **Date:** 2026-05-19
@@ -662,7 +659,6 @@ Managing Subagents via commands:
 - /agents enable <agent_name>: Enables a specific subagent.
 - /agents disable <agent_name>: Disables a specific subagent.
 
-
 ### Gemini CLI Subagents
 
 # Subagents
@@ -728,68 +724,6 @@ Select the Catalog tab to browse available servers.
 Select a server to view its description, tools, and configuration options.
 Add servers to a profile
 To add a server fro
-
-### prepare best value of knowledge integration
-
-To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.
-
-### Key Definitions of Compile
-
-- **Gathering Information**: To collect and put together data, facts, or documents (e.g., to compile a report or compile a list).
-- **Creating Works**: To produce a book, anthology, or database from various materials.
-- **Computing**: To convert high-level programming code (like C++ or Java) into machine code, allowing a computer to execute the program.
-
-### Usage Examples
-
-- "She is compiling a list of clients for the newsletter."
-- "It took years to compile the dictionary."
-- "The developer needs to compile the code before running the application."
-
-### Synonyms
-
-- Assemble
-- Collect
-- Gather
-- Compose
-- Accumulate
-- Organize
-- Synthesize
-
-### Contextual Usage
-
-- **General**: Focuses on the act of assembling information or materials (e.g., compile a report).
-- **Computing**: Focuses on the automatic transformation of code using a tool known as a compiler.
-
-### prepare best value of knowledge integration
-
-To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.
-
-### Key Definitions of Compile
-
-- **Gathering Information**: To collect and put together data, facts, or documents (e.g., to compile a report or compile a list).
-- **Creating Works**: To produce a book, anthology, or database from various materials.
-- **Computing**: To convert high-level programming code (like C++ or Java) into machine code, allowing a computer to execute the program.
-
-### Usage Examples
-
-- "She is compiling a list of clients for the newsletter."
-- "It took years to compile the dictionary."
-- "The developer needs to compile the code before running the application."
-
-### Synonyms
-
-- Assemble
-- Collect
-- Gather
-- Compose
-- Accumulate
-- Organize
-- Synthesize
-
-### Contextual Usage
-
-- **General**: Focuses on the act of assembling information or materials (e.g., compile a report).
-- **Computing**: Focuses on the automatic transformation of code using a tool known as a compiler.
 
 ### What is an AI agent?
 
@@ -1026,7 +960,6 @@ Google Cloud provides a portfolio of products and solutions in the AI agent spac
 - Agent Development Kit (ADK)Open-source Python SDK to build sophisticated multi-agent systems with orchestration, memory, and developer tools.
 - A2A ProtocolAn open-source framework originally developed by Google to help build AI agents. An AI agent built with A2A Protocol will be interoperable with any service, platform, or infrastructure.
 - Cloud RunA fully managed serverless platform that allows you to deploy containerized agents and applications, providing auto-scaling and pay-per-use efficiency.
-
 
 ## 2. Market Intelligence (Markposition)
 Total Market Data Points: 681
@@ -1745,7 +1678,6 @@ Wilson Sonsini’s history is essentially the history of modern technology:
 - **Mergers & Acquisitions**: Advising on multi-billion dollar global transactions in tech and life sciences.
 - **Regulatory & Compliance**: Navigating the complex regulatory landscape facing technology-driven businesses.
 
-
 ## 4. Technical Documentation
 ### Gemma Model
 Topics covered: models_overview, benchmark_results, core_capabilities, best_practices, model_data...
@@ -1764,7 +1696,6 @@ Topics covered: repository, readme...
 
 ### Google Ads
 Topics covered: https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU, https://business.google.com/uk/ad-tools/bidding/, https://business.google.com/uk/resources/, https://developers.google.com/ad-manager, https://developers.google.com/ad-manager/dynamic-ad-insertion...
-
 
 ## 5. TypeScript Ecosystem Intelligence
 ### Internal: .github/ISSUE_TEMPLATE/bug_report.md
@@ -1823,7 +1754,6 @@ Add any other context or screenshots about the feature request here.
 *Source: local://.github/PULL_REQUEST_TEMPLATE.md*
 
 #### Pull Request Template
-
 
 #### Summary
 Describe the changes in this pull request and why they are needed.
@@ -2982,7 +2912,6 @@ No description provided.
 
 #### [sig-contributor-experience](https://github.com/open-telemetry/sig-contributor-experience)
 
-
 #### TODO
 - **Language:** N/A
 - **Stars:** 2
@@ -3077,7 +3006,6 @@ OpenTelemetry Packaging SIG
 
 #### Google Ads & Ad Manager Documentation
 
-
 #### Understanding bidding basics
 Source: [https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU](https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU)
 
@@ -3128,21 +3056,15 @@ Source: [https://business.google.com/uk/ad-tools/bidding/](https://business.goog
 
 #### Deliver better results with automated bidding
 
-
 #### Set the right bids with Smart Bidding
-
 
 #### Reach your audience at the right moment
 
-
 #### Increase conversions with billions of combinations of signals
-
 
 #### Bid towards conversion values to maximise your ROI
 
-
 #### Bid for online and in-store sales
-
 
 #### Grow your business with Google Ads
 - Nespresso boosts direct-to-consumer revenue by leveraging AI-powered Search campaigns 25% increase in purchases
@@ -3197,9 +3119,7 @@ The Experiments page in Google Ads can help you create, manage and optimise your
 
 #### Frequently asked questions
 
-
 #### What is bidding in Google Ads? add remove
-
 
 #### What is the best bidding strategy for Google Ads? add remove
 - Manual bidding, which allows you to determine what you want to pay
@@ -3212,7 +3132,6 @@ The Experiments page in Google Ads can help you create, manage and optimise your
 
 #### What is the minimum bid for Google Ads? add remove
 
-
 #### How can automated bidding help an advertiser improve campaign performance? add remove
 - Get as many clicks as possible within your budget
 - Get as many conversions as possible within your target CPA
@@ -3220,7 +3139,6 @@ The Experiments page in Google Ads can help you create, manage and optimise your
 - Get the most conversions or conversion value for your budget
 
 #### How does value based bidding work? add remove
-
 
 #### How much should I spend on Google Ads? add remove
 ---
@@ -3230,9 +3148,7 @@ Source: [https://business.google.com/uk/resources/](https://business.google.com/
 
 #### Find answers andinspiration
 
-
 #### Filter by:
-
 
 #### Product type
 - Google Ads
@@ -3272,7 +3188,6 @@ Source: [https://business.google.com/uk/resources/](https://business.google.com/
 
 #### Google Ads
 
-
 #### The Best Paid SEO Strategies for Businesses
 - YouTube Ads ABCDs of effective video ads Article
 YouTube Ads
@@ -3282,108 +3197,90 @@ YouTube Ads
 
 #### Google Ads
 
-
 #### 10 tips for Google Ads budget management
 - Google Ads How can you write successful online ads with Google? Article
 
 #### Google Ads
-
 
 #### How can you write successful online ads with Google?
 - Google Ads 5 ways to create better ad copy by utilising AI Article
 
 #### Google Ads
 
-
 #### 5 ways to create better ad copy by utilising AI
 - Google Ads How to make your products stand out to shoppers on Google Ads Article
 
 #### Google Ads
-
 
 #### How to make your products stand out to shoppers on Google Ads
 - Google Ads How assets can help you connect with valuable customers Article
 
 #### Google Ads
 
-
 #### How assets can help you connect with valuable customers
 - Google Ads How to use the Keyword Planner tool effectively Article
 
 #### Google Ads
-
 
 #### How to use the Keyword Planner tool effectively
 - Google Ads Reach a larger or new audience with Google Display Network (GDN) targeting Article
 
 #### Google Ads
 
-
 #### Reach a larger or new audience with Google Display Network (GDN) targeting
 - Google Ads What are people searching for online? Article
 
 #### Google Ads
-
 
 #### What are people searching for online?
 - Google Ads What is paid search? Article
 
 #### Google Ads
 
-
 #### What is paid search?
 - Google Ads Billing and payments in Google Ads Article
 
 #### Google Ads
-
 
 #### Billing and payments in Google Ads
 - Google Ads 5 things to consider when optimising your mobile landing page Article
 
 #### Google Ads
 
-
 #### 5 things to consider when optimising your mobile landing page
 - Google Ads 10 Google Ads features that will grow your business Article
 
 #### Google Ads
-
 
 #### 10 Google Ads features that will grow your business
 - Google Ads Understand intent to place ads more effectively Article
 
 #### Google Ads
 
-
 #### Understand intent to place ads more effectively
 - Google Ads 4 Google Ads features to improve your keyword strategy Article
 
 #### Google Ads
-
 
 #### 4 Google Ads features to improve your keyword strategy
 - Google Ads 4:42 Best Practices Guide: Reaching the right customers on Search Article
 
 #### Google Ads
 
-
 #### Best Practices Guide: Reaching the right customers on Search
 - Google Ads Analytics in Google Ads Article
 
 #### Google Ads
-
 
 #### Analytics in Google Ads
 - Google Ads 6:24 Best Practices Guide: Google AI for Video Advertising Article
 
 #### Google Ads
 
-
 #### Best Practices Guide: Google AI for Video Advertising
 - Google Ads How to set up Google Ads: a checklist Article
 
 #### Google Ads
-
 
 #### How to set up Google Ads: a checklist
 - YouTube Ads With help from TrueView for action, Nectar by Resident’s sales rise and shine Success story
@@ -3394,48 +3291,40 @@ YouTube Ads
 
 #### Google Ads
 
-
 #### How any business can grow online with Local Services Ads
 - Google Ads How to set up conversion measurement on your website Article
 
 #### Google Ads
-
 
 #### How to set up conversion measurement on your website
 - Google Ads Save time and drive efficiency with responsive display ads Article
 
 #### Google Ads
 
-
 #### Save time and drive efficiency with responsive display ads
 - Google Ads 00:30 Currensea boosts customer acquisition 422%, with help of Google Search Success story
 
 #### Google Ads
-
 
 #### Currensea boosts customer acquisition 422%, with help of Google Search
 - Google Ads How to unlock the value of your creative assets with Google Ads Article
 
 #### Google Ads
 
-
 #### How to unlock the value of your creative assets with Google Ads
 - Google Ads 00:30 A strong brew: Bird & Blend sees 439% ROAS through Google Ads Success story
 
 #### Google Ads
-
 
 #### A strong brew: Bird & Blend sees 439% ROAS through Google Ads
 - Google Ads 0:30 LØCI achieves 500% ROAS with Google Ads Success story
 
 #### Google Ads
 
-
 #### LØCI achieves 500% ROAS with Google Ads
 - Google Ads Kinetica Sports’ full-funnel campaign hits 267% increase in ROAS, with help from Google Ads. Success story
 
 #### Google Ads
-
 
 #### Kinetica Sports’ full-funnel campaign hits 267% increase in ROAS, with help from Google Ads.
 - How experimenting with their Google Ads Strategy helped Octopus Energy sign up over 2 million customers Success story
@@ -3445,60 +3334,50 @@ YouTube Ads
 
 #### Google Ads
 
-
 #### Best Practices Guide: AI Essentials in Google Ads
 - Google Ads A beginners’ guide to YouTube video ads: Drive action with video advertising Article
 
 #### Google Ads
-
 
 #### A beginners’ guide to YouTube video ads: Drive action with video advertising
 - Google Ads Get better results across all Google Ads channels with Performance Max campaigns Article
 
 #### Google Ads
 
-
 #### Get better results across all Google Ads channels with Performance Max campaigns
 - Google Ads Understanding demand: How search data can improve your marketing performance Article
 
 #### Google Ads
-
 
 #### Understanding demand: How search data can improve your marketing performance
 - Google Ads 00:30 How fashion brand Never Fully Dressed achieved 890% ROAS through Google Ads Success story
 
 #### Google Ads
 
-
 #### How fashion brand Never Fully Dressed achieved 890% ROAS through Google Ads
 - Google Ads A guide to keyword match types in Google Ads Article
 
 #### Google Ads
-
 
 #### A guide to keyword match types in Google Ads
 - Google Ads 00:30 Lucy & Yak sees 233% increase in revenue through Google Ads Success story
 
 #### Google Ads
 
-
 #### Lucy & Yak sees 233% increase in revenue through Google Ads
 - Google Ads The perfect fit: Farai London scales by 400% with Google Ads Success story
 
 #### Google Ads
-
 
 #### The perfect fit: Farai London scales by 400% with Google Ads
 - Google Ads Build trust online: How the Google Guarantee works Article
 
 #### Google Ads
 
-
 #### Build trust online: How the Google Guarantee works
 - Google Ads A guide to App campaigns on Google Ads Article
 
 #### Google Ads
-
 
 #### A guide to App campaigns on Google Ads
 - How optimisation helped PensionBee triple their customer base Success story
@@ -3508,84 +3387,70 @@ YouTube Ads
 
 #### Google Ads
 
-
 #### 3 consumer shifts to influence your retail paid search strategy
 - Google Ads Drive awareness and conversions: Cover the entire marketing funnel with Google Display Ads Article
 
 #### Google Ads
-
 
 #### Drive awareness and conversions: Cover the entire marketing funnel with Google Display Ads
 - Google Ads What is Google Customer Match, and how can it help you reach valuable audiences online? Article
 
 #### Google Ads
 
-
 #### What is Google Customer Match, and how can it help you reach valuable audiences online?
 - Google Ads Spark interest and inspire action: What are Demand Gen campaigns? Article
 
 #### Google Ads
-
 
 #### Spark interest and inspire action: What are Demand Gen campaigns?
 - Google Ads Get more leads with less effort: a guide to lead form assets Article
 
 #### Google Ads
 
-
 #### Get more leads with less effort: a guide to lead form assets
 - Google Ads How to tailor your ads to reach customers at every stage of their purchase journey Article
 
 #### Google Ads
-
 
 #### How to tailor your ads to reach customers at every stage of their purchase journey
 - Google Ads How to save time and boost results with automated bidding Article
 
 #### Google Ads
 
-
 #### How to save time and boost results with automated bidding
 - Google Ads How to improve your Google Ads Quality Score Article
 
 #### Google Ads
-
 
 #### How to improve your Google Ads Quality Score
 - Google Ads From browsing to buying: 7 Search strategies to win new customers Article
 
 #### Google Ads
 
-
 #### From browsing to buying: 7 Search strategies to win new customers
 - Google Ads How to increase website traffic and lead generation with Google Ads Article
 
 #### Google Ads
-
 
 #### How to increase website traffic and lead generation with Google Ads
 - Google Ads How audience segments can help you find and reach the right customers at the right time Article
 
 #### Google Ads
 
-
 #### How audience segments can help you find and reach the right customers at the right time
 - Google Ads Enhanced conversions: Measure ad performance while protecting people’s privacy Article
 
 #### Google Ads
-
 
 #### Enhanced conversions: Measure ad performance while protecting people’s privacy
 - Google Ads Discover Mobile Advertising with Google Ads Article
 
 #### Google Ads
 
-
 #### Discover Mobile Advertising with Google Ads
 - Google Ads Boost your business by advertising on Google Maps Article
 
 #### Google Ads
-
 
 #### Boost your business by advertising on Google Maps
 - YouTube Ads Bellroy grows sales with shoppable Video action campaigns and value-based bidding Success story
@@ -3595,7 +3460,6 @@ YouTube Ads
 - Google Ads Navigating the B2B marketing funnel with Google Ads Article
 
 #### Google Ads
-
 
 #### Navigating the B2B marketing funnel with Google Ads
 - YouTube Ads Majestic Heli Ski get nearly half of their new skiers from YouTube Success story
@@ -3614,7 +3478,6 @@ YouTube Ads
 
 #### Google Ads
 
-
 #### Beyond the last click: Using attribution models to understand your Google Ads performance
 - YouTube Ads Pringles masters tentpole marketing moments with TrueView for reach Success story
 YouTube Ads
@@ -3632,7 +3495,6 @@ YouTube Ads
 
 #### Google Ads
 
-
 #### Maximise your ROI: How to get started with value-based bidding on Google Ads
 - YouTube Ads Video action campaigns on YouTube Shorts helped Cider gain new customers at a 33% lower CPA Success story
 YouTube Ads
@@ -3642,24 +3504,20 @@ YouTube Ads
 
 #### Google Ads
 
-
 #### A foundation for success: How to structure your Google Ads account for growth on Search with AI
 - Google Ads Paid search optimisation in the age of AI-powered marketing: How advertisers can stand out? Article
 
 #### Google Ads
-
 
 #### Paid search optimisation in the age of AI-powered marketing: How advertisers can stand out?
 - Google Ads 5 ways to use Google AI for more effective advertising Article
 
 #### Google Ads
 
-
 #### 5 ways to use Google AI for more effective advertising
 - Google Ads Simplifying multi-account management: Streamline your workflow with a Google Ads manager account Article
 
 #### Google Ads
-
 
 #### Simplifying multi-account management: Streamline your workflow with a Google Ads manager account
 ---
@@ -3673,15 +3531,11 @@ Source: [https://developers.google.com/ad-manager](https://developers.google.com
 
 #### A set of tools to manage your Google Ad Manager accounts and campaigns.
 
-
 #### Ad Manager API (Beta)
-
 
 #### Mobile Ads SDK
 
-
 #### Dynamic Ad Insertion
-
 
 #### Ad Manager SOAP API
 ---
@@ -3704,12 +3558,9 @@ To start using DAI, select one of the following integrations:
 
 #### Full service DAI
 
-
 #### Pod serving DAI
 
-
 #### Supported platforms
-
 
 #### Get Support
 ---
@@ -3724,7 +3575,6 @@ Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion/full-serv
 - APIs
 
 #### Full service DAI
-
 
 #### With the IMA DAI SDK
 - The web page or app loads the IMA DAI SDK through: an embedded script tag for HTML5 a native app for Android, Google Cast, iOS, tvOS, or Roku
@@ -3745,7 +3595,6 @@ For detailed instructions on how to implement a client video player using the IM
 - The client's player app listens for instream metadata, parses it, and compares it to the values in the ad metadata to identify ad events.
 - The client's video player app fires ad impression pings and tracking events as needed.
 For detailed instructions on how to implement a client video player, using the DAI REST API, check out our API guides:
-
 
 ---
 
@@ -3798,8 +3647,6 @@ For details on livestream and VOD, see the following workflows:
 #### Get started
 Stay organized with collections
 
-
-
       Save and categorize content based on your preferences.
 
 Source: [https://developers.google.com/ad-manager/api/start](https://developers.google.com/ad-manager/api/start)
@@ -3811,7 +3658,6 @@ Looking for a REST API? The Ad Manager API (Beta) is now available.
 - Ad Manager
 
 #### Get started Stay organized with collections Save and categorize content based on your preferences.
-
 
 #### Page Summary
 - The Google Ad Manager SOAP API allows building applications to manage inventory, create orders, and pull reports.
@@ -3950,7 +3796,6 @@ When you have a client library up and running, modify the examples provided to e
 Browse the reference documentation to learn more about the API.
 
 If you need help, visit our Support page.
-
 
 ---
 
@@ -4183,13 +4028,10 @@ Our monthly newsletter puts the latest success stories, insights, and product ne
 #### Hungry for more?
 Learn how global publishers are finding success using Ad Manager to power their ads businesses.
 
-
 ---
 
 #### ad-manager overview (0.50.0)
 Stay organized with collections
-
-
 
       Save and categorize content based on your preferences.
 
@@ -4202,7 +4044,6 @@ Source: [https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/ove
 - Client libraries
 
 #### ad-manager overview (0.50.0) Stay organized with collections Save and categorize content based on your preferences.
-
 
 #### Key Reference Links
 Google Ad Manager API Description: The Ad Manager API enables an app to integrate with Google Ad Manager. You can read Ad Manager data and run reports using the API.
@@ -4255,7 +4096,6 @@ Each Cloud Java client library may contain packages tied to specific Version IDs
 
 Important: Unstable Version ID releases (those with suffixes) are subject to breaking changes when upgrading. Use them only for testing or if you specifically need their experimental features.
 
-
 ---
 
 ### AI Agents Concept & Architecture
@@ -4298,7 +4138,6 @@ AI assistant
 
 #### Bot
 
-
 #### Purpose
 Autonomously and proactively perform tasks
 
@@ -4325,7 +4164,6 @@ AI agent
 AI assistant
 
 #### Bot
-
 
 #### Purpose
 Autonomously and proactively perform tasks
@@ -4477,7 +4315,6 @@ Google Cloud provides a portfolio of products and solutions in the AI agent spac
 
 #### Manual Knowledge Additions
 
-
 #### Compile
 To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.
 
@@ -4552,7 +4389,6 @@ Managing Subagents via commands:
 
 #### Gemini CLI Subagents
 
-
 #### Subagents
 Subagents are specialized agents that operate within your main Gemini CLI session. They are designed to handle specific, complex tasks—like deep codebase analysis, documentation lookup, or domain-specific reasoning—without cluttering the main agent’s context or toolset.
 
@@ -4615,32 +4451,6 @@ Select a server to view its description, tools, and configuration options.
 Add servers to a profile
 To add a server fro
 
-#### prepare best value of knowledge integration
-To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.
-
-#### Key Definitions of Compile
-- **Gathering Information**: To collect and put together data, facts, or documents (e.g., to compile a report or compile a list).
-- **Creating Works**: To produce a book, anthology, or database from various materials.
-- **Computing**: To convert high-level programming code (like C++ or Java) into machine code, allowing a computer to execute the program.
-
-#### Usage Examples
-- "She is compiling a list of clients for the newsletter."
-- "It took years to compile the dictionary."
-- "The developer needs to compile the code before running the application."
-
-#### Synonyms
-- Assemble
-- Collect
-- Gather
-- Compose
-- Accumulate
-- Organize
-- Synthesize
-
-#### Contextual Usage
-- **General**: Focuses on the act of assembling information or materials (e.g., compile a report).
-- **Computing**: Focuses on the automatic transformation of code using a tool known as a compiler.
-
 ### LocalHost.Co Tools Documentation
 *Source: local://localhost_tools_docs.md*
 
@@ -4648,7 +4458,6 @@ To compile means to gather information from various sources and arrange it into 
 Scraped from [https://localhost.co/tools/](https://localhost.co/tools/)
 
 #### CODE
-
 
 #### Markdown Viewer
 - **Description**: Preview rendered Markdown while editing your source text.
@@ -4679,7 +4488,6 @@ Scraped from [https://localhost.co/tools/](https://localhost.co/tools/)
 - **URL**: [https://localhost.co/tools/regex-tester](https://localhost.co/tools/regex-tester)
 
 #### DATA
-
 
 #### XML Validator
 - **Description**: Validate XML structure and detect malformed tags.
@@ -4739,7 +4547,6 @@ Scraped from [https://localhost.co/tools/](https://localhost.co/tools/)
 
 #### DEVOPS
 
-
 #### Gitignore Generator
 - **Description**: Generate .gitignore templates for common stacks and frameworks.
 - **URL**: [https://localhost.co/tools/gitignore-generator](https://localhost.co/tools/gitignore-generator)
@@ -4754,7 +4561,6 @@ Scraped from [https://localhost.co/tools/](https://localhost.co/tools/)
 
 #### ENCODING
 
-
 #### HTML Entity Encode Decode
 - **Description**: Encode or decode HTML entities for safe markup output.
 - **URL**: [https://localhost.co/tools/html-entity-encode-decode](https://localhost.co/tools/html-entity-encode-decode)
@@ -4768,7 +4574,6 @@ Scraped from [https://localhost.co/tools/](https://localhost.co/tools/)
 - **URL**: [https://localhost.co/tools/base64-encode-decode](https://localhost.co/tools/base64-encode-decode)
 
 #### GENERATORS
-
 
 #### UUID Generator
 - **Description**: Generate UUID values for apps, APIs, and database records.
@@ -4788,7 +4593,6 @@ Scraped from [https://localhost.co/tools/](https://localhost.co/tools/)
 
 #### SECURITY
 
-
 #### JWT Decoder
 - **Description**: Decode JWT tokens and inspect headers, payloads, and expiry data.
 - **URL**: [https://localhost.co/tools/jwt-decoder](https://localhost.co/tools/jwt-decoder)
@@ -4803,7 +4607,6 @@ Scraped from [https://localhost.co/tools/](https://localhost.co/tools/)
 
 #### SEO
 
-
 #### Keyword Density Checker
 - **Description**: Analyze keyword usage and density in pasted content.
 - **URL**: [https://localhost.co/tools/keyword-density-checker](https://localhost.co/tools/keyword-density-checker)
@@ -4813,7 +4616,6 @@ Scraped from [https://localhost.co/tools/](https://localhost.co/tools/)
 - **URL**: [https://localhost.co/tools/slug-generator](https://localhost.co/tools/slug-generator)
 
 #### TEXT
-
 
 #### Remove Duplicates
 - **Description**: Remove repeated lines from pasted text while preserving clean readable output.
@@ -4857,13 +4659,11 @@ Scraped from [https://localhost.co/tools/](https://localhost.co/tools/)
 
 #### TIME
 
-
 #### Unix Timestamp Converter
 - **Description**: Convert Unix timestamps to human-readable dates and back.
 - **URL**: [https://localhost.co/tools/unix-timestamp-converter](https://localhost.co/tools/unix-timestamp-converter)
 
 #### WEB
-
 
 #### Color Converter
 - **Description**: Convert color values between HEX, RGB, HSL, and related formats.
@@ -4940,7 +4740,6 @@ Add any other context or screenshots about the feature request here.
 
 #### Pull Request Template
 
-
 #### Summary
 Describe the changes in this pull request and why they are needed.
 
@@ -4976,78 +4775,55 @@ This is proprietary software released to end users under a "freemium" model. Man
 
 #### [Installation](installation.md)
 
-
 #### [Getting Started](gettingStarted.md)
-
 
 #### [Features](features.md)
 
-
 #### [Support](support.md)
 
-
 #### [Licence](LICENSE.txt)
-
 
 ### Intelephense: features
 *Source: https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/features.md*
 
 #### Features
 
-
 #### Workspace Symbols
-
 
 #### Document Symbols
 
-
 #### Go To Definition
-
 
 #### Completion
 
-
 #### Signature Help
-
 
 #### Hover
 
-
 #### Document Highlight
-
 
 #### Find All References
 
-
 #### Document and Range Formatting
-
 
 #### Rename -- [PREMIUM](https://intelephense.com)
 
-
 #### Code Folding -- [PREMIUM](https://intelephense.com)
-
 
 #### Find all Implementations -- [PREMIUM](https://intelephense.com)
 
-
 #### Go to Declaration -- [PREMIUM](https://intelephense.com)
-
 
 #### Go to Type Definition -- [PREMIUM](https://intelephense.com)
 
-
 #### Smart Selection -- [PREMIUM](https://intelephense.com)
 
-
 #### PHP Doc Block Generation -- [PREMIUM](https://intelephense.com)
-
 
 ### Intelephense: installation
 *Source: https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/installation.md*
 
 #### Installation
-
 
 #### Visual Studio Code
 Visual Studio Code users should install the Intelephense extension from within the extensions view or download from the [marketplace](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client).
@@ -5068,7 +4844,6 @@ Visual Studio Code users should install the Intelephense extension from within t
 Further configuration options are available in the `intelephense` section of settings.
 
 #### Other Editors
-
 
 #### Requirements
 [Node.js 12+](https://nodejs.org)
@@ -5818,7 +5593,6 @@ interface InitialisationOptions {
 *Source: https://raw.githubusercontent.com/bmewburn/intelephense-docs/master/gettingStarted.md*
 
 #### Getting Started
-
 
 #### Workspace
 For Intelephense to work effectively it must have access to the definitions of the symbols used in your code. It does this by scanning the php files found in the workspace. Sometimes PHP files may have a non standard extension. It is important to associate these extensions with PHP using the `intelephense.files.associations` configuration option.
