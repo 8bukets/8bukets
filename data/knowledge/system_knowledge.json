@@ -5690,6 +5690,14 @@
         "source": "icloud-sim://autonomous_strategies.md",
         "ingestedAt": "2026-05-25T02:36:28.332Z"
       }
+    },
+    {
+      "title": "Google Antigravity",
+      "sections": [],
+      "metadata": {
+        "source": "https://antigravity.google/product/antigravity-cli",
+        "ingestedAt": "2026-05-26T12:46:28.945Z"
+      }
     }
   ],
   "nomad": {
