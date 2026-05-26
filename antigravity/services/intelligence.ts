@@ -161,9 +161,9 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
 
   report += `## 🧠 Knowledge Matrix\n`
   const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json')
-  if (fs.existsSync(knowledgePath)) {
+  if ( fs.existsSync(knowledgePath)) {
     try {
-      const systemKnowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
+      const systemKnowledge = JSON.parse( fs.readFileSync(knowledgePath, 'utf8'))
 
       // Phase 12: Support both nested 'typescript_sections' and unified flat key structure
       const allKnowledge: any[] = []

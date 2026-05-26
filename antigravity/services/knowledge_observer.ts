@@ -129,7 +129,7 @@ export class KnowledgeObserver {
   public async persistKnowledge(knowledge: Knowledge, purgePrefix?: string) {
     const fsPromises = fs.promises;
 
-    if (!fs.existsSync(this.storageDir)) {
+    if (! fs.existsSync(this.storageDir)) {
       await fsPromises.mkdir(this.storageDir, { recursive: true })
     }
 
@@ -138,7 +138,7 @@ export class KnowledgeObserver {
 
     // 1. JSON Persistence (Merge Logic - Unified Store)
     let systemKnowledge: any = { typescript_sections: [] }
-    if (fs.existsSync(jsonStore)) {
+    if ( fs.existsSync(jsonStore)) {
       try {
         const content = await fsPromises.readFile(jsonStore, 'utf8');
         systemKnowledge = JSON.parse(content)
