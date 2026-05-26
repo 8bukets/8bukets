@@ -38,6 +38,12 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
 
   report += `## 🎯 Mission Statement\n> ${metadata.missionStatement}\n\n`
 
+  const coherence = orchestrationEngine.getCoherence()
+  const strategicCoherence = (coherence * 0.7 + (metadata.goals.length > 0 ? 0.3 : 0)) * 100
+  report += `## 📈 Strategic Coherence\n`
+  report += `- **Consolidated Coherence Index:** ${strategicCoherence.toFixed(1)}%\n`
+  report += `- **Alignment Status:** ${strategicCoherence > 80 ? '🟢 SYNERGIZED' : (strategicCoherence > 50 ? '🟡 ALIGNING' : '🔴 DRIFTING')}\n\n`
+
   report += `## 🏥 System Sovereignty\n`
   report += `- **MongoDB:** ${health.mongodb}\n`
   report += `- **Supabase:** ${health.supabase}\n`
@@ -65,6 +71,15 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `\n`
 
   const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
+
+  report += `## 🕸️ Resource Dependency Graph\n`
+  report += `\`\`\`mermaid\ngraph TD\n`
+  relationshipMap.synergies.forEach((s: any) => {
+    s.branches.forEach((b: string) => {
+      report += `  ${b.replace(/[^a-zA-Z0-9]/g, '_')} --> ${s.resource.replace(/[^a-zA-Z0-9]/g, '_')}\n`
+    })
+  })
+  report += `\`\`\`\n\n`
 
   // Phase 12: Integrate Global Neural Network Status
   const { broadcastPulse } = await import('./neural')
@@ -133,11 +148,15 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `\n`
 
   report += `## 🗺️ Relationship Map\n`
-  report += `### Goal Alignment\n`
+  report += `### Goal Alignment & Results\n`
   Object.entries(relationshipMap.goalAlignment).forEach(([goal, relevantBranches]: [string, any]) => {
     report += `- **Goal:** ${goal}\n`
     if (relevantBranches.length > 0) {
-      report += `  - *Branches:* ${relevantBranches.join(', ')}\n`
+      report += `  - *Active Branches:* ${relevantBranches.join(', ')}\n`
+      const results = branches.filter(b => relevantBranches.includes(b.name) && b.results && b.results !== 'N/A')
+      if (results.length > 0) {
+        report += `  - *Key Results:* ${results.map(r => r.results).join('; ')}\n`
+      }
     } else {
       report += `  - *No direct branch alignment detected.*\n`
     }
