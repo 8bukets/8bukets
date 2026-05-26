@@ -72,7 +72,7 @@ jobs:
           MACBOOK_CLOUD_SIMULATION: true
         run: npm run connect
 
-      - name: Run Autonomous Creation Cycle
+      - name: Run Full Autonomous Daily Cycle
         env:
           SYSTEM_AUTH_TOKEN: ${{ secrets.SYSTEM_AUTH_TOKEN || 'default_dev_token' }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -83,7 +83,7 @@ jobs:
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           MACBOOK_CLOUD_SIMULATION: true
           AUTONOMOUS_MODE: cloud
-        run: npx tsx scripts/execute_creation_cycle.ts
+        run: npm run daily
 
       - name: Post-Cycle Documentation Update
         run: npx tsx scripts/ingest_localhost_tools_knowledge.ts || true
