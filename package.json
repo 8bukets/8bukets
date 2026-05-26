@@ -2,6 +2,10 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "bin": {
+    "antigravity": "./bin/antigravity.js",
+    "antigravity-cli": "./bin/antigravity.js"
+  },
   "scripts": {
     "get-prompt": "npx tsx scripts/get_prompt.ts",
     "fix:icloud": "bash scripts/fix_icloud_sync.sh",
@@ -32,6 +36,7 @@
     "ai": "^6.0.184",
     "cheerio": "^1.2.0",
     "chokidar": "^5.0.0",
+    "commander": "^14.0.3",
     "dotenv": "^17.4.2",
     "fs-extra": "^11.3.5",
     "mongodb": "^6.21.0",
