@@ -41,5 +41,9 @@
 
 ## 👥 Stakeholders
 
+## ☁️ Cloud Simulation Intelligence
+- **Status**: Active
+- **Description**: We make processing easier and smarter and cooperate with github gitlab gitkraken and docker cloud to make decisions and workflow on the air fluent and always available.
+
 ---
 All the best - https://markposition.wordpress.com
