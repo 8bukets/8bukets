@@ -2,6 +2,17 @@
 
 
 
+
+## Autonomous Observation
+- **Date**: 2026-05-27T05:13:31.969Z
+- **Target**: local://docs/agent_architecture_terminology.html
+- **Title**: Agent Framework Architecture Terminology
+- **Relationship Map**: Confirmed relationship between agent architecture concepts and overall system design.
+- **Extracted Summary**:
+  Agent Framework Architecture Terminology Agent - Logika ponašanja Agent odlučuje: što napraviti, kojim redoslijedom, treba li koristiti alat, treba li iterirati, treba li popraviti grešku. To je “brain workflow”. Harness - Execution/runtime layer poziva alate, izvršava komande, upravlja memoryjem, daje modelu context, kontrolira loop, upravlja retryjima, sandboxa sustav, prati stanje taska. To je “operating environment”. Tooling layer Vrlo bitno. ima duboku integraciju s: terminalom, gitom, file...
+
+All the best - https://markposition.wordpress.com
+
 ## Autonomous Observation
 - **Date**: 2026-05-27T04:04:38.000Z
 - **Target**: Local MacBook / Sandbox Environment
