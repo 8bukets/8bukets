@@ -111,6 +111,27 @@ pipeline {
             }
         }
 
+        stage('Test cognitive_load_balancer') {
+            steps {
+                sh 'npm ci'
+                sh 'npx vitest run antigravity/services/cognitive_load_balancer.test.ts'
+            }
+        }
+
+        stage('Test performance-scalability_bridge') {
+            steps {
+                sh 'npm ci'
+                sh 'npx vitest run antigravity/services/performance-scalability_bridge.test.ts'
+            }
+        }
+
+        stage('Test performance_scalability_bridge') {
+            steps {
+                sh 'npm ci'
+                sh 'npx vitest run antigravity/services/performance_scalability_bridge.test.ts'
+            }
+        }
+
         stage('Creative Workflow') {
             parallel {
                 stage('Analyze Market') {
