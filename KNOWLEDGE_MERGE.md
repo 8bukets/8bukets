@@ -455,10 +455,19 @@ Example DomainThis domain is for use in documentation examples without needing p
 - **Summary**:
 We make processing easier and smarter and cooperate with github gitlab gitkraken and docker cloud to make decisions and workflow on the air fluent and always available.
 
----
-All the best - https://markposition.wordpress.com
 ## Autonomous Observation: Gemini CLI Remote Subagents
 
 The system observed documentation regarding Gemini CLI Remote Subagents.
 Remote subagents are defined as Markdown files with YAML frontmatter containing `kind: remote`, `name`, and agent card details.
 Authentication supports `apiKey`, `http`, `google-credentials`, and `oauth`.
+
+## Autonomous Observation
+- **Date**: 2026-05-27T07:03:35.496Z
+- **Target**: internal://knowledge-merge
+- **Title**: Knowledge Merge
+- **Context**: Ingested Knowledge Merge capability intelligence.
+- **Summary**:
+Knowledge Merge is a process or document that merges key concepts currently spread across Antigravity, Project SOR, the live software-online-review.com domain, and the new software-review-platform starter. It creates one canonical map of what each layer is, what role it plays, and how the project should evolve.
+
+---
+All the best - https://markposition.wordpress.com
