@@ -18,6 +18,7 @@
     "creation": "tsx --env-file=.env scripts/execute_creation_cycle.ts",
     "ingest:sor": "tsx --env-file=.env scripts/ingest_software_online_review.ts",
     "ingest:antigravity-cli": "tsx --env-file=.env scripts/ingest_antigravity_cli.ts",
+    "ingest:macbook-cloud": "tsx --env-file=.env scripts/ingest_macbook_cloud_knowledge.ts",
     "consolidate:intelephense": "tsx --env-file=.env scripts/consolidate_intelephense.ts",
     "connect": "tsx --env-file=.env scripts/connect_and_collaborate.ts",
     "invoke-hello": "curl -L -X POST 'https://tevdxaufsnpsbvvurddg.supabase.co/functions/v1/hello-world' -H \"Authorization: Bearer $NEXT_PUBLIC_SUPABASE_ANON_KEY\" --data '{\"name\":\"Antigravity\"}'",
