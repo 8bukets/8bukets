@@ -117,6 +117,29 @@ export async function evolve() {
             })
           }
         }
+
+        // Rule 9: Identity Anchoring Compliance (Phase 12)
+        if (fullPath.includes('antigravity/core.ts') || fullPath.includes('antigravity/jules.ts')) {
+          const authorizedSignature = 'SHA256:Zey4+Jcqu48gSIuuQaavasF2D7iu+J590Rr1EA3LdbA'
+          if (!content.includes(authorizedSignature)) {
+            suggestions.push({
+              file: fullPath.replace(process.cwd(), ''),
+              complexity: lines,
+              suggestion: 'IDENTITY_ANCHORING_VIOLATION: Core file missing authorized Phase 12 identity signature.'
+            })
+          }
+        }
+
+        // Rule 10: System Authentication Enforcement
+        if (fullPath.includes('services/') && content.includes('export async function') && !content.includes('SYSTEM_AUTH_TOKEN')) {
+             if (content.includes('db') || content.includes('fetch') || content.includes('exec')) {
+                 suggestions.push({
+                   file: fullPath.replace(process.cwd(), ''),
+                   complexity: lines,
+                   suggestion: 'MISSING_AUTH_ENFORCEMENT: Sensitive service function detected without SYSTEM_AUTH_TOKEN validation.'
+                 })
+             }
+        }
       }
     }
   }

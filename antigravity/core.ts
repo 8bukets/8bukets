@@ -277,6 +277,25 @@ export async function autonomousFetch<T>(
 }
 
 /**
+ * authorizeOperation: Validates identity anchoring for Phase 12 operations.
+ */
+export async function authorizeOperation(signature: string): Promise<boolean> {
+  const authorizedSignatures = [
+    'SHA256:Zey4+Jcqu48gSIuuQaavasF2D7iu+J590Rr1EA3LdbA', // Admin
+    'SHA256:qhno7SbhBIYwfgNgGhygt2e0kRDBlPkEqjAGdXTVOsA'  // Neural Sync
+  ]
+
+  const isAuthorized = authorizedSignatures.includes(signature)
+  if (isAuthorized) {
+    logAutonomousAction(`[SECURITY] Authorized operation with signature: ${signature}`, 'security')
+  } else {
+    logAutonomousAction(`[SECURITY] Unauthorized operation attempt with signature: ${signature}`, 'security')
+  }
+
+  return isAuthorized
+}
+
+/**
  * healthCheck: Autonomous self-diagnostic
  */
 export async function healthCheck() {
