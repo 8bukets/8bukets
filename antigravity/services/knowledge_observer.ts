@@ -1,163 +1,64 @@
-import { logAutonomousAction } from '../core'
-import fs from 'fs'
-import path from 'path'
-import { z } from 'zod'
+import fs from 'fs';
+import path from 'path';
 
-/**
- * KNOWLEDGE OBSERVER SERVICE
- * Autonomously parses and persists technical documentation and insights.
- */
-
-export const KnowledgeSchema = z.object({
-  title: z.string(),
-  sections: z.array(z.object({
-    header: z.string(),
-    content: z.string()
-  })),
-  metadata: z.object({
-    source: z.string(),
-    ingestedAt: z.string()
-  })
-})
-
-export type Knowledge = z.infer<typeof KnowledgeSchema>
-
-const DEFAULT_STORAGE_DIR = path.join(process.cwd(), 'data/knowledge')
+export interface KnowledgeInsight {
+  topic: string;
+  insight: string;
+  source: string;
+  timestamp: string;
+}
 
 export class KnowledgeObserver {
-  private storageDir: string
+  private knowledgeJsonPath = path.join(process.cwd(), 'ai_agents_knowledge.json');
+  private knowledgeMdPath = path.join(process.cwd(), 'ai_agents_knowledge.md');
 
-  constructor(storageDir: string = DEFAULT_STORAGE_DIR) {
-    this.storageDir = storageDir
+  public processContent(content: string, source: string): KnowledgeInsight[] {
+    const insights: KnowledgeInsight[] = [];
+    const timestamp = new Date().toISOString();
+
+    // Simplified regex-based extraction for the autonomous organism
+    const markers = [
+      { topic: 'Architecture', regex: /architecture|design|structure/i },
+      { topic: 'Tools', regex: /tool|utility|plugin/i },
+      { topic: 'Security', regex: /security|auth|encryption/i }
+    ];
+
+    for (const marker of markers) {
+      if (marker.regex.test(content)) {
+        insights.push({
+          topic: marker.topic,
+          insight: `Detected ${marker.topic} related information in ${source}`,
+          source,
+          timestamp
+        });
+      }
+    }
+
+    return insights;
   }
 
-  /**
-   * processContent: Parses raw text into structured knowledge with code-block awareness.
-   */
-  public static processContent(title: string, rawContent: string, source: string): Knowledge {
-    const sections: { header: string; content: string }[] = []
-    const lines = rawContent.split('\n')
-    let currentHeader = 'Introduction'
-    let currentLines: string[] = []
-    let inCodeBlock = false
-
-    for (const line of lines) {
-      const trimmed = line.trim();
-
-      // Toggle code block state
-      if (trimmed.startsWith('```') || trimmed.startsWith('<?php')) {
-        inCodeBlock = !inCodeBlock
-      }
-
-      // Detect headers ONLY if not in a code block
-      const hasLetters = /[a-zA-Z]/.test(trimmed)
-      const isMarkdownHeader = !inCodeBlock && trimmed.startsWith('#')
-      const isStrongHeader = !inCodeBlock && trimmed && hasLetters &&
-                             trimmed.length < 60 && trimmed.length > 2 &&
-                             !trimmed.endsWith('.') &&
-                             !trimmed.endsWith(':') &&
-                             !trimmed.endsWith(',') &&
-                             (trimmed.toUpperCase() === trimmed || /^[A-Z][a-z]+(\s[A-Z][a-z]+)*$/.test(trimmed)) &&
-                             !trimmed.startsWith('This ') &&
-                             !trimmed.startsWith('Some ') &&
-                             !/^[{}/*<>?]+$/.test(trimmed) && // Exclude common code symbols
-                             !trimmed.includes('(') && !trimmed.includes(')') && // Exclude function calls
-                             !trimmed.includes(' = ') && // Exclude assignments
-                             !trimmed.includes(' => ') // Exclude arrow funcs/mappings
-
-      // Heuristic: If it's a markdown header, always count it.
-      // If it's a strong header, it must not be immediately followed by a lot of text on the same line (already trimmed)
-      // and it should ideally be on its own line (which it is here since we iterate lines).
-      if (isMarkdownHeader || isStrongHeader) {
-        if (currentLines.length > 0) {
-          sections.push({ header: currentHeader, content: currentLines.join('\n').trim() })
-        }
-        currentHeader = trimmed.replace(/^#+\s*/, '').trim()
-        currentLines = []
-      } else {
-        currentLines.push(line)
-      }
-
-      // If we just ended a code block, make sure we stay out of it for the next lines
-      // unless another one starts. The simple toggle works if we have distinct start/end markers.
-      if (trimmed.endsWith('?>') && inCodeBlock) {
-        inCodeBlock = false
-      }
+  public persistKnowledge(newInsights: KnowledgeInsight[]): void {
+    let existingKnowledge: any = {};
+    if (fs.existsSync(this.knowledgeJsonPath)) {
+      existingKnowledge = JSON.parse(fs.readFileSync(this.knowledgeJsonPath, 'utf8'));
     }
 
-    if (currentLines.length > 0) {
-      sections.push({ header: currentHeader, content: currentLines.join('\n').trim() })
-    }
+    // Merge logic
+    const updatedKnowledge = {
+      ...existingKnowledge,
+      last_updated: new Date().toISOString(),
+      insights: [...(existingKnowledge.insights || []), ...newInsights].slice(-100) // Keep last 100
+    };
 
-    return {
-      title,
-      sections,
-      metadata: {
-        source,
-        ingestedAt: new Date().toISOString()
-      }
-    }
-  }
+    fs.writeFileSync(this.knowledgeJsonPath, JSON.stringify(updatedKnowledge, null, 2));
 
-  /**
-   * persistKnowledge: Merges and saves knowledge to the unified system store.
-   */
-  public async persistKnowledge(knowledge: Knowledge, purgePrefix?: string) {
-    if (!fs.existsSync(this.storageDir)) {
-      fs.mkdirSync(this.storageDir, { recursive: true })
+    // Also update Markdown for human readability
+    let mdContent = `# AI Agents Knowledge Base\n\nLast Updated: ${updatedKnowledge.last_updated}\n\n`;
+    for (const insight of updatedKnowledge.insights) {
+      mdContent += `### ${insight.topic} (${insight.timestamp})\n- **Source:** ${insight.source}\n- **Insight:** ${insight.insight}\n\n`;
     }
-
-    const jsonStore = path.join(this.storageDir, 'system_knowledge.json')
-
-    // 1. JSON Persistence (Cross-Ecosystem Merge Logic)
-    let systemKnowledge: any = {
-      metadata: {
-        generated_at: new Date().toISOString(),
-        version: 1.0,
-        sources_processed: []
-      }
-    }
-
-    if (fs.existsSync(jsonStore)) {
-      try {
-        systemKnowledge = JSON.parse(fs.readFileSync(jsonStore, 'utf8'))
-      } catch (e) {
-        console.warn('⚠️ [KnowledgeObserver] Failed to parse unified store. Initializing new structure.')
-      }
-    }
-
-    // Migration to Flat Structure: flatten 'sections' and 'typescript_sections'
-    if (systemKnowledge.sections) {
-        Object.assign(systemKnowledge, systemKnowledge.sections);
-        delete systemKnowledge.sections;
-    }
-    if (systemKnowledge.typescript_sections) {
-        Object.assign(systemKnowledge, systemKnowledge.typescript_sections);
-        delete systemKnowledge.typescript_sections;
-    }
-
-    // Phase 12: Purge redundant entries if prefix provided
-    if (purgePrefix) {
-      Object.keys(systemKnowledge).forEach(title => {
-        if (title.startsWith(purgePrefix)) {
-           delete systemKnowledge[title]
-        }
-      })
-    }
-
-    // Upsert the new knowledge into the flat structure
-    systemKnowledge[knowledge.title] = {
-      sections: knowledge.sections,
-      metadata: knowledge.metadata
-    }
-
-    // Update global metadata
-    systemKnowledge.metadata.generated_at = new Date().toISOString()
-    if (!systemKnowledge.metadata.sources_processed.includes(knowledge.metadata.source)) {
-      systemKnowledge.metadata.sources_processed.push(knowledge.metadata.source)
-    }
-
-    fs.writeFileSync(jsonStore, JSON.stringify(systemKnowledge, null, 2))
-    logAutonomousAction(`✅ [KnowledgeObserver] Persisted "${knowledge.title}" to unified store at ${jsonStore}`, 'info')
+    fs.writeFileSync(this.knowledgeMdPath, mdContent);
   }
 }
+
+export const knowledgeObserver = new KnowledgeObserver();
