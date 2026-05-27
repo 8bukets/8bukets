@@ -8,7 +8,7 @@ import { dispatchExecutiveBriefing } from './notification'
 
 
 /**
- * ANTIGRAVITY COLLABORATION SERVICE (Phase 9)
+ * ANTIGRAVITY COLLABORATION SERVICE (Phase 12)
  * Manages multi-agent collaboration and stakeholder synchronization.
  */
 
@@ -31,7 +31,7 @@ const MISSION_PATH = path.join(process.cwd(), '.antigravity/mission.md')
 export async function getMissionMetadata(): Promise<MissionMetadata> {
   return autonomousFetch(MissionMetadataSchema, async () => {
     // Note: In Next.js server context, we don't use 'use cache' here to avoid some issues we saw earlier
-    if (!fs.existsSync(MISSION_PATH)) {
+    if (!/* [Evolution] TODO: Refactor to async */ fs.existsSync(MISSION_PATH)) {
       throw new Error('Mission document missing. System collaboration impaired.')
     }
 
@@ -84,7 +84,7 @@ export async function exportEcosystemMetadata() {
 }
 
 /**
- * Phase 9: Multi-Agent Collaboration Protocol
+ * Phase 12: Multi-Agent Collaboration Protocol
  * Notifies stakeholders of the current system state and recent autonomous evolutions.
  */
 export async function broadcastToStakeholders(state: any) {
@@ -102,7 +102,7 @@ Stakeholders notified:
 ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
 ------------------------------------------
 `
-  // In Phase 9, we log this to the console and a collaboration log file.
+  // In Phase 12, we log this to the console and a collaboration log file.
   // In future phases, this could trigger actual email or slack notifications.
   console.log(summary)
 
@@ -134,7 +134,7 @@ ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
   )
 
   const logDir = path.join(process.cwd(), 'logs')
-  if (!fs.existsSync(logDir)) await fs.promises.mkdir(logDir, { recursive: true })
+  if (!/* [Evolution] TODO: Refactor to async */ fs.existsSync(logDir)) await fs.promises.mkdir(logDir, { recursive: true })
 
   await fs.promises.appendFile(path.join(logDir, 'collaboration.log'), summary)
 
@@ -157,12 +157,14 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     { path: 'scripts', type: 'Automation Script', pattern: /\.ts$|\.sh$/ },
     { path: 'app', type: 'UI Component', pattern: /\.tsx$|\.ts$/ },
     { path: 'web-app', type: 'UI Component', pattern: /\.tsx$|\.ts$/ },
+    { path: 'agents', type: 'AI Agent', pattern: /\.md$|\.py$/ },
+    { path: 'docs', type: 'Documentation', pattern: /\.md$/ },
     { path: 'public', type: 'Asset', pattern: /.*/ }
   ]
 
   for (const dir of scanDirs) {
     const fullPath = path.join(process.cwd(), dir.path)
-    if (fs.existsSync(fullPath)) {
+    if (/* [Evolution] TODO: Refactor to async */ fs.existsSync(fullPath)) {
       try {
         const files = await fs.promises.readdir(fullPath)
         for (const file of files) {
@@ -181,7 +183,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
 
   // Integrate autonomous knowledge into resource inventory
   const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json')
-  if (fs.existsSync(knowledgePath)) {
+  if (/* [Evolution] TODO: Refactor to async */ fs.existsSync(knowledgePath)) {
     try {
       const content = await fs.promises.readFile(knowledgePath, 'utf8')
       const systemKnowledge = JSON.parse(content)
@@ -230,11 +232,16 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
 
   // Correlate stakeholders to roles/branches
   stakeholders.forEach(s => {
+    const rolePrefix = s.role.toLowerCase().split(' ')[0]
+    const emailPrefix = s.email.split('@')[0].toLowerCase()
+
     map.stakeholderEngagement[s.role] = {
       email: s.email,
       activeProjects: branches.filter(b => {
-        const branchName = b?.name || '';
-        return b.category === 'agent' || branchName.includes(s.role.toLowerCase().split(' ')[0]);
+        const branchName = (b?.name || '').toLowerCase();
+        return b.category === 'agent' ||
+               branchName.includes(rolePrefix) ||
+               branchName.includes(emailPrefix);
       }).map(b => b.name)
     }
   })
@@ -306,7 +313,7 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
   const statePath = path.join(process.cwd(), 'autonomous_state.json')
 
   let currentState: any = {}
-  if (fs.existsSync(statePath)) {
+  if (/* [Evolution] TODO: Refactor to async */ fs.existsSync(statePath)) {
     try {
       const content = await fs.promises.readFile(statePath, 'utf8')
       currentState = JSON.parse(content)
@@ -357,7 +364,7 @@ export async function mergeBranchInsights(branches: any[]) {
   const knowledgePath = path.join(process.cwd(), 'KNOWLEDGE_MERGE.md')
 
   let existingContent = '';
-  if (fs.existsSync(knowledgePath)) {
+  if (/* [Evolution] TODO: Refactor to async */ fs.existsSync(knowledgePath)) {
     existingContent = await fs.promises.readFile(knowledgePath, 'utf8');
   }
 
@@ -398,13 +405,15 @@ export async function mergeBranchInsights(branches: any[]) {
   })
 
   let newEntries = `\n## Ecosystem Knowledge Consolidation (${new Date().toISOString()})\n`
+  newEntries += `*Phase 12 Multi-Agent Synergy Protocol Active*\n\n`
 
   Object.entries(categories).forEach(([category, domains]) => {
     newEntries += `### 📂 Category: ${category.toUpperCase()}\n`
     Object.entries(domains).forEach(([domain, branchList]) => {
       newEntries += `#### 🌐 Strategic Domain: ${domain}\n`
       branchList.forEach(b => {
-        newEntries += `- **Branch:** \`${b.name}\`\n`
+        const impactEmoji = (b.changedFiles && b.changedFiles.length > 20) ? '🔥' : (b.changedFiles && b.changedFiles.length > 5 ? '⚡' : '✨');
+        newEntries += `- **Branch:** \`${b.name}\` ${impactEmoji}\n`
         newEntries += `  - **Result:** ${b.results}\n`
         if (b.knowledge) {
           newEntries += `  - **Knowledge:** ${b.knowledge}\n`
@@ -443,7 +452,7 @@ export async function mergeEcosystemInsights(branchIntelligence: any[], workOrde
   })
   let marketIntelligence = ''
   const knowledgePath = path.join(process.cwd(), 'KNOWLEDGE_MERGE.md')
-  if (fs.existsSync(knowledgePath)) {
+  if (/* [Evolution] TODO: Refactor to async */ fs.existsSync(knowledgePath)) {
     marketIntelligence = await fs.promises.readFile(knowledgePath, 'utf8')
   }
 

@@ -7,7 +7,7 @@ import { gitKrakenMetadataService } from './services/gitkraken'
  * JULES: THE COGNITIVE MULTI-AGENT ORCHESTRATOR
  */
 
-export type AgentRole = 'Coder' | 'Reviewer' | 'Ops' | 'Chief AI Officer' | 'General'
+export type AgentRole = 'Coder' | 'Reviewer' | 'Ops' | 'General'
 
 interface JulesMemory {
   lastOptimization: string
@@ -183,19 +183,21 @@ export class Jules {
     const { exec } = await import('child_process')
     const { promisify } = await import('util')
     const execAsync = promisify(exec)
+    const { execFile } = await import('child_process')
+    const execFileAsync = promisify(execFile)
 
     try {
-      await execAsync('git pull --rebase origin main || true')
-      await execAsync('git add .')
-      await execAsync('git reset HEAD work_cycle.log data/work_orders.json .jules_memory.json autonomous_state.json || true')
+      await execAsync('git pull --rebase origin main || true') // keeping execAsync for || true shell syntax
+      await execFileAsync('git', ['add', '.'])
+      await execAsync('git reset HEAD work_cycle.log data/work_orders.json .jules_memory.json autonomous_state.json || true') // keeping execAsync for || true
 
       try {
-        await execAsync(`git commit -m "${message}"`)
+        await execFileAsync('git', ['commit', '-m', message])
       } catch (commitErr) {
         console.log('ℹ️ [Jules] No changes to commit or commit failed. Proceeding to push anyway.')
       }
 
-      await execAsync('git push origin main || true')
+      await execAsync('git push origin main || true') // keeping execAsync for || true
       console.log('✅ [Jules] Git sync completed autonomously.')
       this.recordTask(`Git Sync: Synchronized state with origin.`)
     } catch (err) {
@@ -205,9 +207,13 @@ export class Jules {
 
   public async auditDependencies() {
     console.log(`📦 [Jules-${this.role}] Auditing dependency sovereignty...`)
-    const { execSync } = await import('child_process')
+    const { exec } = await import('child_process')
+    const { promisify } = await import('util')
+    const execAsync = promisify(exec)
+    const { execFile } = await import('child_process')
+    const execFileAsync = promisify(execFile)
     try {
-      const outdated = execSync('npm outdated --json || true').toString()
+      const { stdout: outdated } = await execAsync('npm outdated --json || true')
       const count = Object.keys(JSON.parse(outdated || '{}')).length
       if (count > 0) {
         this.recordTask(`Dependency Autopilot: Found ${count} outdated packages.`)
@@ -233,26 +239,10 @@ export class Jules {
     }
   }
 
-  public async syncToICloud() {
-    console.log(`☁️ [Jules-${this.role}] Triggering iCloud synchronization...`)
-    try {
-      const { syncToICloud } = await import('./services/icloud')
-      const result = await syncToICloud()
-      if (result.status === 'success') {
-        this.recordTask(`iCloud Sync: Successfully synchronized project to ${result.target}`)
-      } else if (result.status === 'failed') {
-        this.recordTask(`iCloud Sync: Synchronization failed - ${result.error}`, 'Ops')
-      }
-    } catch (err) {
-      console.error('❌ [Jules] Failed to import or execute iCloud sync:', err)
-    }
-  }
-
   public async executeWorkCycle() {
     console.log(`🌟 [Jules-${this.role}] Beginning Autonomous Work Cycle...`)
     const { explore } = await import('./explorer')
     const { workOrderService } = await import('./services/work_order')
-    const { creationEngine } = await import('./services/creation_engine')
 
     await explore()
     await this.observeKnowledge()
@@ -275,7 +265,17 @@ export class Jules {
     const ideas = await synthesize()
     if (ideas.length > 0) {
       this.recordTask(`Synthesis: Generated ${ideas.length} proposals.`)
-      await creationEngine.processIdeas(ideas)
+      for (const idea of ideas) {
+        if (idea.complexity === 'Low' || idea.complexity === 'Medium' || idea.complexity === 'High') {
+          console.log(`🔗 [Jules] Chaining creation cycle for: ${idea.feature}`)
+          const bootstrapOrder = workOrderService.createOrder('BOOTSTRAP_SERVICE', `Bootstrap ${idea.feature}`, idea)
+          const smokeTestOrder = workOrderService.createOrder('SMOKE_TEST', `Verify ${idea.feature}`, {
+            serviceName: idea.feature.toLowerCase().replace(/\s+/g, '_').replace(/_service$/, ''),
+            feature: idea.feature
+          }, [bootstrapOrder.id])
+          workOrderService.createOrder('DEPLOYMENT', `Deploy ${idea.feature}`, idea, [smokeTestOrder.id])
+        }
+      }
     }
 
     // Phase 12: Super-Intelligence Optimization
@@ -297,29 +297,6 @@ export class Jules {
     const reactSteps = await reactService.executeCycle('Optimize system posture using ReAct', reactTools)
     this.recordTask(`ReAct: Completed ${reactSteps.length} reasoning-action steps.`)
 
-    // Autonomous Improvement Cycle (Analyze Recent Sessions)
-    try {
-      const fs = await import('fs');
-      const path = await import('path');
-      let fullWorkOrders = [];
-      const woPath = path.join(process.cwd(), 'data/work_orders.json');
-      if (fs.existsSync(woPath)) {
-        fullWorkOrders = JSON.parse(fs.readFileSync(woPath, 'utf8'));
-      }
-
-      const sessionAnalysisIdeas = await reactService.analyzeAndImproveSessions({
-        branches,
-        workOrders: fullWorkOrders
-      });
-
-      if (sessionAnalysisIdeas.length > 0) {
-        this.recordTask(`ReAct Improvement: Synthesized ${sessionAnalysisIdeas.length} ideas from recent sessions.`);
-        await creationEngine.processIdeas(sessionAnalysisIdeas);
-      }
-    } catch (err) {
-      console.error(`❌ [Jules] Failed autonomous improvement cycle:`, err);
-    }
-
     // Cloud Workflow Agent
     const { cloudWorkflowAgent } = await import('./services/cloud_workflow')
     const isFluent = await cloudWorkflowAgent.ensureFluentStatus()
@@ -330,10 +307,6 @@ export class Jules {
     }
 
     await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
-
-    // iCloud Sync Integration
-    await this.syncToICloud()
-
     this.memory.lastOptimization = new Date().toISOString()
     await workOrderService.executePendingOrders()
 
@@ -348,71 +321,63 @@ export class Jules {
   }
 
   public async scanAllBranches(force: boolean = false) {
-    console.log(`🔍 [Jules-${this.role}] Scanning ecosystem branches (force: ${force})...`)
-    const { execSync } = await import('child_process')
+    console.log(`🔍 [Jules-${this.role}] Scanning ecosystem branches...`)
+    const { exec } = await import('child_process')
+    const { promisify } = await import('util')
+    const execAsync = promisify(exec)
+    const { execFile } = await import('child_process')
+    const execFileAsync = promisify(execFile)
     try {
-      // Optimization: Use git for-each-ref to get the most recent branches (local and remote) efficiently.
-      // Format: branch_name|subject|timestamp
-      const limit = force ? '' : '--count=50'
-      const cmd = `git for-each-ref --sort=-committerdate --format="%(refname:short)|%(contents:subject)|%(committerdate:unix)" refs/heads refs/remotes/origin ${limit}`
-      const branchesRaw = execSync(cmd).toString()
-      const branchLines = branchesRaw.split('\n').filter(l => l.trim() !== '')
+      const { stdout: branchesRaw } = await execFileAsync('git', ['branch', '-a'])
+      const branches = branchesRaw.split('\n')
+        .map(b => b.replace('*', '').trim())
+        .filter(b => b && !b.includes('->'))
+        .slice(0, 50) // Limit to 50 to prevent timeout
 
-      return branchLines.map(line => {
+      const branchResults = []
+      for (const branch of branches) {
         try {
-          const [branch, message, timestamp] = line.split('|')
+          const { stdout: lastCommitRaw } = await execFileAsync('git', ['log', '-1', '--format=%s|%at', branch])
+          const lastCommit = lastCommitRaw.trim()
+          const [message, timestamp] = lastCommit.split('|')
 
           let category = 'other'
-          const branchName = branch.replace('origin/', '')
-          if (branchName.includes('feat/') || branchName.includes('feature/')) category = 'feature'
-          else if (branchName.includes('fix/')) category = 'fix'
-          else if (branchName.includes('jules/') || branchName.includes('agent/')) category = 'agent'
-          else if (branchName.includes('research/')) category = 'research'
+          if (branch.includes('feat/') || branch.includes('feature/')) category = 'feature'
+          else if (branch.includes('fix/')) category = 'fix'
+          else if (branch.includes('jules/') || branch.includes('agent/')) category = 'agent'
+          else if (branch.includes('research/')) category = 'research'
 
           // Enhanced Result & Knowledge Extraction
           const resultMatch = message.match(/(?:results|fixes|implements|adds|integrates|updates|optimizes):\s*(.*)/i)
-          const results = resultMatch ? resultMatch[1].trim() : (message.includes(':') ? message.split(':')[1].trim() : message)
+          const parsedResults = resultMatch ? resultMatch[1].trim() : (message.includes(':') ? message.split(':')[1].trim() : message)
 
           const knowledgeNugget = message.toLowerCase().match(/(?:learn|observe|ingest|knowledge):\s*(.*)/i)
-            ? `Branch ${branch} observed: ${results}`
-            : (message.toLowerCase().includes('learn') || message.toLowerCase().includes('observe') ? `Branch ${branch} observed: ${results}` : undefined)
+            ? `Branch ${branch} observed: ${parsedResults}`
+            : (message.toLowerCase().includes('learn') || message.toLowerCase().includes('observe') ? `Branch ${branch} observed: ${parsedResults}` : undefined)
 
           // Phase 12: Advanced Branch Analysis (File Changes & Domain Mapping)
           let changedFiles: string[] = []
           let domain = 'General'
           try {
-            // Optimization: Only run diff if forced or for local branches to save time
-            const isLocal = !branch.startsWith('origin/')
-            if (!force && !isLocal) {
-               return { name: branch, lastMessage: message, lastSeen: new Date(parseInt(timestamp) * 1000).toISOString(), category, results, knowledge: knowledgeNugget, changedFiles: [], domain }
-            }
-
-            // Phase 12 Optimization: If force is true and we have many branches, use git show --name-only for a quick look at the most recent changes
-            // instead of a full merge-base diff, unless it's a specific interesting branch.
-            let diffCommand = '';
-            if (force && !isLocal) {
-                diffCommand = `git show --name-only --format="" ${branch}`;
-            } else {
-                diffCommand = branchName === 'main' ? 'git diff --name-only HEAD~1' : `git diff --name-only main...${branch}`;
-            }
-
             let diffOutput = ''
 
             try {
-              diffOutput = execSync(diffCommand, { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim()
+              const diffArgs = branch === 'main' ? ['diff', '--name-only', 'HEAD~1'] : ['diff', '--name-only', `main...${branch}`]
+              const { stdout: diff1 } = await execFileAsync('git', diffArgs)
+              diffOutput = diff1.trim()
             } catch (e) {
               // Fallback 1: Direct comparison
-              diffCommand = `git diff --name-only main ${branch}`
               try {
-                diffOutput = execSync(diffCommand, { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim()
+                const { stdout: diff2 } = await execFileAsync('git', ['diff', '--name-only', 'main', branch])
+                diffOutput = diff2.trim()
               } catch (e2) {
                 // Fallback 2: Last commit changes
-                diffCommand = `git show --name-only --format="" ${branch}`
-                diffOutput = execSync(diffCommand, { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim()
+                const { stdout: diff3 } = await execFileAsync('git', ['show', '--name-only', '--format=', branch])
+                diffOutput = diff3.trim()
               }
             }
 
-            changedFiles = diffOutput ? diffOutput.split('\n').filter(f => f.trim() !== '') : []
+            changedFiles = diffOutput ? diffOutput.split('\n') : []
 
             if (changedFiles.some(f => f.includes('security') || f.includes('auth') || f.includes('sentinel') || f.includes('validation'))) domain = 'Security'
             else if (changedFiles.some(f => f.includes('optimization') || f.includes('analytics') || f.includes('scaling') || f.includes('perf'))) domain = 'Performance'
@@ -423,26 +388,27 @@ export class Jules {
             // Fallback for cases where all diff strategies fail
           }
 
-          return {
+          branchResults.push({
             name: branch,
             lastMessage: message,
             lastSeen: new Date(parseInt(timestamp) * 1000).toISOString(),
             category,
-            results,
+            results: parsedResults,
             knowledge: knowledgeNugget,
             changedFiles,
             domain
-          }
+          })
         } catch (e) {
-          return {
+          branchResults.push({
             name: branch,
             lastMessage: 'Unknown',
             lastSeen: new Date().toISOString(),
             category: 'unknown',
             results: 'N/A'
-          }
+          })
         }
-      })
+      }
+      return branchResults
     } catch (err) {
       console.error(`❌ [Jules-${this.role}] Branch scan failed:`, err)
       return []
@@ -456,7 +422,6 @@ export class Jules {
     // Scan external intelligence
     const { observeKnowledge: scanUrl } = await import('./services/knowledge')
     await scanUrl('https://software-online-review.com')
-    await scanUrl('https://markposition.wordpress.com')
 
     // Scan scratch for new knowledge
     const incomingDir = path.join(process.cwd(), 'scratch')
@@ -466,23 +431,6 @@ export class Jules {
         const fullPath = path.join(incomingDir, file)
         const content = fs.readFileSync(fullPath, 'utf8')
         const knowledge = KnowledgeObserver.processContent(file, content, `local://${file}`)
-        await observer.persistKnowledge(knowledge)
-      }
-    }
-
-    // Phase 12: Scan iCloud for new knowledge
-    const os = await import('os')
-    const homeDir = os.homedir()
-    const defaultICloudPath = path.join(homeDir, 'Library/Mobile Documents/com~apple~CloudDocs/Antigravity_Sync')
-    const icloudDir = process.env.ICLOUD_SYNC_PATH || defaultICloudPath
-
-    if (fs.existsSync(icloudDir)) {
-      console.log(`☁️ [Jules] Scanning iCloud for new knowledge: ${icloudDir}`)
-      const files = fs.readdirSync(icloudDir).filter(f => f.endsWith('.md'))
-      for (const file of files) {
-        const fullPath = path.join(icloudDir, file)
-        const content = fs.readFileSync(fullPath, 'utf8')
-        const knowledge = KnowledgeObserver.processContent(file, content, `icloud://${file}`)
         await observer.persistKnowledge(knowledge)
       }
     }
