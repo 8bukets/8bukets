@@ -1,2 +1,13 @@
-package-lock.json
-node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv
+env/
+venv/
+.Python
+env/
+venv/
+.env
+.DS_Store
