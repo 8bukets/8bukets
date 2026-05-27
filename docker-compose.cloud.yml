@@ -11,3 +11,17 @@ services:
       - MONGODB_URI=${MONGODB_URI}
       - SUPABASE_DATABASE_URL=${SUPABASE_DATABASE_URL}
       - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+
+  # Autonomous presence container
+  connect:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - MACBOOK_CLOUD_SIMULATION=${MACBOOK_CLOUD_SIMULATION:-true}
+      - MONGODB_URI=${MONGODB_URI}
+      - SUPABASE_DATABASE_URL=${SUPABASE_DATABASE_URL}
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+    command: ["npm", "run", "connect"]
+    depends_on:
+      - app

@@ -1,4 +1,4 @@
-name: Full Autonomous Automatic Workflow
+name: Daily Autonomous Evolution
 
 on:
   schedule:
@@ -10,7 +10,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  full-autonomous:
+  evolution-cycle:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,9 +26,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Execute Full Autonomous Creation Cycle
+      - name: Connect and Collaborate
+        run: npm run connect
+        env:
+          MACBOOK_CLOUD_SIMULATION: true
+
+      - name: Execute Autonomous Session Analysis and Self-Correction
         run: npx tsx scripts/execute_creation_cycle.ts
         env:
+          AUTONOMOUS_MODE: cloud
           MACBOOK_CLOUD_SIMULATION: true
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
