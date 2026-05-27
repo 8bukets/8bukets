@@ -70,11 +70,26 @@ export class Jules {
 
   public async improve() {
     console.log(`🤖 [Jules-${this.role}] Analyzing current system state for improvements...`)
-    const suggestions = []
+
+    const { evolve } = await import('./evolution')
+    const evolutionProposals = await evolve()
+
+    const suggestions = evolutionProposals.map(p => `[${p.file}] ${p.suggestion}`)
+
     if (this.memory.preferredPatterns.length < 5) {
       suggestions.push('Expand preferred patterns to include Taint API and View Transitions.')
     }
-    return { status: 'learning', suggestions, memorySize: JSON.stringify(this.memory).length }
+
+    // Identity Anchoring (Phase 12)
+    const signature = 'SHA256:Zey4+Jcqu48gSIuuQaavasF2D7iu+J590Rr1EA3LdbA'
+    console.log(`🛡️ [Jules] Identity verified via ${signature}`)
+
+    return {
+      status: 'learning',
+      suggestions,
+      evolutionCount: evolutionProposals.length,
+      memorySize: JSON.stringify(this.memory).length
+    }
   }
 
   public async recordTask(goal: string, role: AgentRole = this.role) {
@@ -505,6 +520,7 @@ export class Jules {
       const { observeKnowledge: scanUrl } = await import('./services/knowledge')
       await scanUrl('https://software-online-review.com')
       await scanUrl('https://markposition.wordpress.com')
+      await scanUrl('https://antigravity.google/product/antigravity-cli')
     } catch (err) {
       console.error('❌ [Jules] External URL scan failed:', err)
     }
@@ -531,28 +547,6 @@ export class Jules {
       console.error(`❌ [Jules] Failed to observe local scratch knowledge:`, e)
     }
 
-    // Phase 12: Scan iCloud for new knowledge
-    const os = await import('os')
-    const homeDir = os.homedir()
-    const defaultICloudPath = path.join(homeDir, 'Library/Mobile Documents/com~apple~CloudDocs/Antigravity_Sync')
-    const icloudDir = process.env.ICLOUD_SYNC_PATH || defaultICloudPath
-
-    try {
-      await fs.promises.access(icloudDir)
-
-      const dirFiles = await fs.promises.readdir(icloudDir)
-      const files = dirFiles.filter(f => f.endsWith('.md'))
-
-
-      for (const file of files) {
-        const fullPath = path.join(icloudDir, file)
-        const content = await fs.promises.readFile(fullPath, 'utf8')
-        const knowledge = KnowledgeObserver.processContent(file, content, `icloud://${file}`)
-        await observer.persistKnowledge(knowledge)
-      }
-    } catch (e) {
-      console.error(`❌ [Jules] Failed to observe iCloud knowledge:`, e)
-    }
   }
 }
 

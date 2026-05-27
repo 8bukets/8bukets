@@ -117,6 +117,11 @@ pipeline {
                 sh 'npx tsx antigravity/workflows/autonomous_api_documentation_workflow.ts'
             }
         }
+        stage('Run Autonomous Sentiment Analysis Service') {
+            steps {
+                sh 'npx tsx antigravity/workflows/sentiment_analysis_workflow.ts'
+            }
+        }
         stage('Creative Workflow') {
             parallel {
                 stage('Market Analysis') {
