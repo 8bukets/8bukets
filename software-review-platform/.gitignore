@@ -1,0 +1,13 @@
+.DS_Store
+.npm-cache/
+.backup/
+
+backend/node_modules/
+backend/package.json.bak
+backend/.env
+
+frontend/node_modules/
+frontend/.next/
+frontend/.env.local
+
+*.log
