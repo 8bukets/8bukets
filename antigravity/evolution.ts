@@ -55,6 +55,15 @@ export async function evolve() {
             suggestion: 'SYNC_PROP_VIOLATION: Direct access to params detected. Must be awaited in Next.js 16.'
           })
         }
+
+        // Rule 4: Security & Performance - Detect blocking execSync/execFileSync
+        if (content.includes('execSync(') || content.includes('execFileSync(')) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'SECURITY_PERF_VULNERABILITY: Blocking execSync/execFileSync detected. Risk of command injection and event loop blocking. Refactor to use non-blocking execAsync or execFileAsync via promisify.'
+          })
+        }
       }
     }
   }

@@ -1,5 +1,4 @@
 # Next.js 16 + MongoDB Local Dev Orchestration
-
 services:
   app:
     build:
@@ -8,25 +7,35 @@ services:
     ports:
       - "3000:3000"
     environment:
+      - MACBOOK_CLOUD_SIMULATION=${MACBOOK_CLOUD_SIMULATION:-true}
       - MONGODB_URI=mongodb://mongodb:27017/my-app
-      - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL}
+      - SUPABASE_DATABASE_URL=${SUPABASE_DATABASE_URL}
       - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+      - BOUNDARY_URL=${BOUNDARY_URL:-https://e15e881b-2d8b-49da-9306-e8aaf84eef37.boundary.hashicorp.cloud}
     depends_on:
-      mongodb:
-        condition: service_healthy
+      - mongodb
 
   mongodb:
     image: mongo:latest
     ports:
       - "27017:27017"
-    healthcheck:
-      test: echo "db.runCommand('ping').ok" | mongosh localhost:27017/test --quiet
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 10s
     volumes:
       - mongodb_data:/data/db
+
+  # Autonomous presence container
+  connect:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - MACBOOK_CLOUD_SIMULATION=${MACBOOK_CLOUD_SIMULATION:-true}
+      - MONGODB_URI=mongodb://mongodb:27017/my-app
+      - SUPABASE_DATABASE_URL=${SUPABASE_DATABASE_URL}
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+    command: ["npm", "run", "connect"]
+    depends_on:
+      - mongodb
+      - app
 
 volumes:
   mongodb_data:

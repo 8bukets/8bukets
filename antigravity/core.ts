@@ -11,20 +11,39 @@ import { z } from 'zod'
 
 // --- 1. CONFIGURATION & TYPES ---
 
-const MONGODB_URI = process.env.MONGODB_URI
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
-const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+const MONGODB_URI = process.env.MONGODB_URI || process.env.DATABASE_URL
+const SUPABASE_URL = process.env.SUPABASE_DATABASE_URL
+const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY
 
 if (!MONGODB_URI || !SUPABASE_URL || !SUPABASE_KEY) {
   console.warn('⚠️ [Autonomous Core] Missing production credentials. System running in limited observability mode.')
 }
 
-export interface PageProps<T = any> {
+/**
+ * CLOUD SECRETS INGESTION
+ * In a production cloud environment, secrets may be mapped to specific headers or vault files.
+ */
+export async function getCloudSecret(key: string): Promise<string | undefined> {
+  // Support for common cloud-native secret env names
+  const cloudKeyMap: Record<string, string[]> = {
+    'MONGODB_URI': ['DATABASE_URL', 'MONGO_URL'],
+    'SUPABASE_KEY': ['SUPABASE_SERVICE_ROLE_KEY', 'SERVICE_ROLE_KEY']
+  }
+
+  const aliases = cloudKeyMap[key] || []
+  for (const alias of aliases) {
+    if (process.env[alias]) return process.env[alias]
+  }
+
+  return process.env[key]
+}
+
+export interface PageProps<T = unknown> {
   params: Promise<T>
   searchParams: Promise<Record<string, string | string[] | undefined>>
 }
 
-export interface LayoutProps<T = any> {
+export interface LayoutProps<T = unknown> {
   children: React.ReactNode
   params: Promise<T>
 }
@@ -151,6 +170,7 @@ export async function predictiveFetch<T>(
 // --- 4. COGNITIVE INSIGHTS (Phase 6) ---
 
 const logBuffer: { msg: string; time: string; type: string }[] = []
+let isInsightsActive = false
 
 export function logAutonomousAction(msg: string, type: string = 'info') {
   logBuffer.unshift({ msg, time: new Date().toLocaleTimeString(), type })
@@ -158,60 +178,65 @@ export function logAutonomousAction(msg: string, type: string = 'info') {
 }
 
 export async function getSystemInsights() {
+  if (isInsightsActive) {
+    return { status: 're-entrant', message: 'Insights already in progress' }
+  }
+  isInsightsActive = true
+
   // Phase 12: Safeguard against CLI-mode execution
   // Only use cache if we are in a recognized Next.js request context
   const isServerRequest = !!process.env.NEXT_RUNTIME
 
-  if (isServerRequest) {
-    'use cache'
-    cacheLife('inventory')
-  }
-  
-  const { synthesize } = await import('./synthesis')
-  const { getPersistenceHealth } = await import('./services/persistence')
-  const { getNetworkState } = await import('./services/neural')
-  const { getRelayState } = await import('./services/relay')
-  const { getDockerStatus } = await import('./services/docker')
-  const { getCollaborationContext } = await import('./services/collaboration')
-  const { optimize } = await import('./optimization')
-  const { runSecurityAudit } = await import('./services/cognitive_security')
-  
-  const ideas = await synthesize()
-  const persistence = await getPersistenceHealth()
-  const network = await getNetworkState()
-  const relay = await getRelayState()
-  const docker = await getDockerStatus()
-  const collaboration = await getCollaborationContext()
+  try {
+    const { synthesize } = await import('./synthesis')
+    const { getPersistenceHealth } = await import('./services/persistence')
+    const { getNetworkState } = await import('./services/neural')
+    const { getRelayState } = await import('./services/relay')
+    const { optimize } = await import('./optimization')
+    const { runSecurityAudit } = await import('./services/cognitive_security')
 
-  const baseInsights = {
-    circuitBreakers: {
-      mongodb: circuitBreaker.mongodb.state,
-      supabase: circuitBreaker.supabase.state,
-    },
-    caching: {
-      registrySize: volatilityRegistry.size,
-      activeProfiles: Array.from(volatilityRegistry.keys()).map(tag => ({
-        tag,
-        profile: getPredictiveProfile(tag)
-      }))
-    },
-    logs: logBuffer,
-    ideas,
-    persistence,
-    network,
-    relay,
-    docker,
-    collaboration,
-    uptime: process.uptime()
-  }
+    const { getMissionMetadata } = await import('./services/collaboration')
+    const { checkDockerHealth } = await import('./services/docker')
+    const collaboration = await getMissionMetadata()
+    const docker = await checkDockerHealth()
 
-  const proposals = await optimize(baseInsights)
-  const security = await runSecurityAudit()
+    const ideas = await synthesize()
+    const persistence = await getPersistenceHealth()
+    const network = await getNetworkState()
+    const relay = await getRelayState()
 
-  return {
-    ...baseInsights,
-    proposals,
-    security
+    const baseInsights = {
+      circuitBreakers: {
+        mongodb: circuitBreaker.mongodb.state,
+        supabase: circuitBreaker.supabase.state,
+      },
+      caching: {
+        registrySize: volatilityRegistry.size,
+        activeProfiles: Array.from(volatilityRegistry.keys()).map(tag => ({
+          tag,
+          profile: getPredictiveProfile(tag)
+        }))
+      },
+      logs: logBuffer,
+      ideas,
+      persistence,
+      network,
+      relay,
+      collaboration,
+      docker,
+      uptime: process.uptime()
+    }
+
+    const proposals = await optimize(baseInsights)
+    const security = await runSecurityAudit()
+
+    return {
+      ...baseInsights,
+      proposals,
+      security
+    }
+  } finally {
+    isInsightsActive = false
   }
 }
 
@@ -234,13 +259,6 @@ export async function autonomousFetch<T>(
   try {
     const data = await fetcher()
     
-    // Phase 12: Safeguard against non-server environments
-    const isServerRequest = !!process.env.NEXT_RUNTIME
-
-    if (isServerRequest) {
-      if (config.tags) config.tags.forEach(tag => cacheTag(tag))
-      if (config.life) cacheLife(config.life as any)
-    }
 
     const result = schema.safeParse(data)
     if (!result.success) {
@@ -256,6 +274,25 @@ export async function autonomousFetch<T>(
     // If we throw here, Next.js will often serve the stale content if available.
     throw err 
   }
+}
+
+/**
+ * authorizeOperation: Validates identity anchoring for Phase 12 operations.
+ */
+export async function authorizeOperation(signature: string): Promise<boolean> {
+  const authorizedSignatures = [
+    'SHA256:Zey4+Jcqu48gSIuuQaavasF2D7iu+J590Rr1EA3LdbA', // Admin
+    'SHA256:qhno7SbhBIYwfgNgGhygt2e0kRDBlPkEqjAGdXTVOsA'  // Neural Sync
+  ]
+
+  const isAuthorized = authorizedSignatures.includes(signature)
+  if (isAuthorized) {
+    logAutonomousAction(`[SECURITY] Authorized operation with signature: ${signature}`, 'security')
+  } else {
+    logAutonomousAction(`[SECURITY] Unauthorized operation attempt with signature: ${signature}`, 'security')
+  }
+
+  return isAuthorized
 }
 
 /**

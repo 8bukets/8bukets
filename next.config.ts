@@ -1,9 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "standalone",
   cacheComponents: true,
-  reactCompiler: true,
+  reactCompiler: false,
   experimental: {
     viewTransition: true,
     optimizePackageImports: ["lucide-react", "lodash", "@supabase/supabase-js", "mongodb"],
@@ -27,9 +26,6 @@ const nextConfig: NextConfig = {
   turbopack: {
     // Resolve alias fallback to silence Node.js native module errors in browser
     resolveAlias: {
-      fs: './antigravity/empty.ts',
-      path: 'path-browserify',
-      os: 'os-browserify/browser',
     },
   },
 };
