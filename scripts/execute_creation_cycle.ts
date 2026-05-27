@@ -14,6 +14,13 @@ import path from 'path'
 async function main() {
   console.log('🚀 [Antigravity] Starting Full Autonomous Creation & Execution Cycle...')
 
+  // Ensure data directory exists
+  const dataDir = path.join(process.cwd(), 'data')
+  if (!fs.existsSync(dataDir)) {
+    fs.mkdirSync(dataDir, { recursive: true })
+    console.log('📁 [Antigravity] Created data directory.')
+  }
+
   // Clear existing pending orders to ensure a clean run for this demo
   const storagePath = path.join(process.cwd(), 'data/work_orders.json')
   if (fs.existsSync(storagePath)) {
