@@ -42,4 +42,11 @@
 ## 👥 Stakeholders
 
 ---
+
+## Gemini CLI Remote Subagents
+
+- **Definition:** Gemini CLI can connect to remote subagents using the A2A protocol, configured via Markdown files with YAML frontmatter.
+- **Authentication:** Supports apiKey, http, google-credentials, and oauth.
+- **Management:** Use `/agents list`, `/agents reload`, `/agents enable`, and `/agents disable`.
+
 All the best - https://markposition.wordpress.com
