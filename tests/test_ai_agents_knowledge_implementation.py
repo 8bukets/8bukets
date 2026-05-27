@@ -53,7 +53,7 @@ async def test_backward_compatibility():
     val = agent.get_agent_memory("last_primary_persona")
     assert val == "General Tech Enthusiast"
 
-    # Update and check nested
+    # Update and check nested (new format)
     agent.update_agent_memory("new_key", "new_val")
     assert agent.get_agent_memory("new_key") == "new_val"
     assert agent.get_agent_memory("test_compatibility_persona") == "Compatibility Enthusiast"

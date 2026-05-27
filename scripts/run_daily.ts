@@ -7,6 +7,17 @@ async function main() {
   const args = process.argv.slice(2);
   const isContinuous = args.includes('--continuous');
 
+  // Attempt to fix iCloud Sync before proceeding
+  console.log('☁️  Ensuring iCloud Sync is fluid before cycle starts...');
+  const { exec } = await import('child_process');
+  const { promisify } = await import('util');
+  const execAsync = promisify(exec);
+  try {
+    await execAsync('bash scripts/fix_icloud_sync.sh');
+  } catch (e: any) {
+    console.warn('⚠️  Could not fix iCloud sync proactively:', e.message);
+  }
+
   // Ensure we simulate a cloud environment if not explicitly disabled
   if (process.env.MACBOOK_CLOUD_SIMULATION !== 'false') {
     process.env.MACBOOK_CLOUD_SIMULATION = 'true';
@@ -32,6 +43,21 @@ async function main() {
   } else {
     console.log('Running single daily cycle...');
     await jules.executeWorkCycle();
+
+    // Integrate Python Ecosystem Cycle
+    console.log('🐍 Running Python Ecosystem Autonomous Cycle...');
+    const { exec } = await import('child_process');
+    const { promisify } = await import('util');
+    const execAsync = promisify(exec);
+
+    try {
+      const token = process.env.SYSTEM_AUTH_TOKEN || 'default_dev_token';
+      const { stdout } = await execAsync(`python3 run_system.py --skip-scraper --token ${token}`);
+      console.log(stdout);
+      console.log('✅ Python Ecosystem Cycle Complete.');
+    } catch (e: any) {
+      console.error('❌ Python Ecosystem Cycle Failed:', e.message);
+    }
   }
 }
 

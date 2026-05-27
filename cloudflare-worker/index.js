@@ -41,7 +41,7 @@ export default {
       const status = {
         status: presence ? 'online' : 'beacon-active',
         agent: 'Jules',
-        version: '1.4.0-alpha',
+        version: '1.6.0-alpha',
         worker: 'antigravity-edge-worker',
         timestamp: new Date().toISOString(),
         manifest: 'Cloud-Native Autonomous Presence',
@@ -49,9 +49,13 @@ export default {
           last_seen: presence.lastSeen,
           mode: presence.execution_mode,
           env: presence.environment,
+          is_leader: presence.is_leader,
+          node_priority: presence.node_priority,
           connectivity: presence.connectivity,
-          visual_heartbeat: presence.visual_heartbeat,
-          telemetry: presence.telemetry
+          git: presence.git,
+          system: presence.system,
+          telemetry: presence.telemetry,
+          knowledge_nodes: presence.knowledge_nodes || 0
         } : 'awaiting-heartbeat'
       };
 
@@ -68,12 +72,21 @@ export default {
 
       return new Response(JSON.stringify({
         agent: 'Jules',
-        mode: presence?.execution_mode || 'cloud-active',
+        mode: presence?.execution_mode || (presence?.environment === 'cloud' ? 'cloud-active' : 'local-primary'),
         presence: presence ? 'always-on' : 'standby',
         ecosystem: 'Antigravity 8Bukets',
+        node_sovereignty: {
+           is_leader: presence?.is_leader || false,
+           node_priority: presence?.node_priority || 0,
+           node_id: presence?.telemetry?.node_id || 'unknown'
+        },
         last_pulse: presence?.lastSeen || 'unknown',
-        heartbeat: presence?.visual_heartbeat || { pulse_intensity: 0, last_action: 'waiting' },
-        telemetry: presence?.telemetry || { provider_health: 'unknown' }
+        heartbeat: presence?.visual_heartbeat || { pulse_intensity: 1, last_action: 'synchronized' },
+        telemetry: {
+          ...(presence?.telemetry || { provider_health: 'unknown' }),
+          workflow_id: presence?.telemetry?.workflow_id || 'unknown',
+          run_attempt: presence?.telemetry?.run_attempt || '1'
+        }
       }), {
         headers: {
           'content-type': 'application/json',

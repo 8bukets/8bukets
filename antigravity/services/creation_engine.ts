@@ -1,6 +1,7 @@
 import { synthesize } from '../synthesis';
 import { workOrderService } from './work_order';
 import { logAutonomousAction } from '../core';
+import { sentientOrchestration } from './sentient_orchestration';
 
 /**
  * ANTIGRAVITY AUTONOMOUS CREATION ENGINE
@@ -9,6 +10,16 @@ import { logAutonomousAction } from '../core';
 export class AutonomousCreationEngine {
   public async runCycle() {
     logAutonomousAction('🚀 [CreationEngine] Starting full autonomous creation cycle...', 'info');
+
+    // Phase 21: Sentient Orchestration - Register Creation Intent
+    await sentientOrchestration.registerIntent({
+      id: `intent_creation_${Date.now()}`,
+      agent: 'CreationEngine',
+      action: 'runCycle',
+      priority: 2, // Higher than general work cycle
+      context: { cycle: 'autonomous_creation' },
+      timestamp: new Date().toISOString()
+    });
 
     // 1. Synthesis: Gap Analysis & Idea Generation
     const ideas = await synthesize();
@@ -27,8 +38,10 @@ export class AutonomousCreationEngine {
     const systemOptimal = (insights as any).docker?.status === 'optimal' && (insights as any).circuitBreakers?.mongodb === 'closed';
 
     for (const idea of ideas) {
-      // Phase 20: Scale Evolution Complexity (Allow High complexity if system is optimal)
-      const allowedComplexities = systemOptimal ? ['Low', 'Medium', 'High'] : ['Low', 'Medium'];
+      // Phase 20: Scale Evolution Complexity
+      const allowedComplexities = (systemOptimal || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
+        ? ['Low', 'Medium', 'High']
+        : ['Low', 'Medium'];
 
       if (allowedComplexities.includes(idea.complexity)) {
         logAutonomousAction(`📝 [CreationEngine] Generating dependency chain for ${idea.complexity}-complexity feature: ${idea.feature}`, 'info');
@@ -74,6 +87,10 @@ export class AutonomousCreationEngine {
     await workOrderService.executePendingOrders();
 
     logAutonomousAction('✅ [CreationEngine] Autonomous creation cycle complete.', 'info');
+
+    // Clear intent after completion
+    sentientOrchestration.clearIntents();
+
     return { status: 'completed', features: createdFeatures };
   }
 }

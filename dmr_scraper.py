@@ -66,6 +66,7 @@ def scrape_dmr_docs():
             f.write(f"## {section['title']}\n\n")
             if section['content']:
                 f.write(f"{section['content']}\n\n")
+        f.write("\n---\nAll the best - https://markposition.wordpress.com\n")
     print(f"Saved Markdown data to {md_path}")
 
 if __name__ == "__main__":
