@@ -9,27 +9,24 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=production
-      - MONGODB_URI=mongodb://mongodb:27017/ekosustav
+      - MONGODB_URI=mongodb+srv://Vercel-Admin-atlas-beige-envelope:<db_password>@atlas-beige-envelope.xdsv2yt.mongodb.net/?appName=atlas-beige-envelope
       # Set your Supabase keys here or in a .env file
-      - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL}
+      - SUPABASE_DATABASE_URL=${SUPABASE_DATABASE_URL}
       - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
-    depends_on:
-      - mongodb
+      - MACBOOK_CLOUD_SIMULATION=true
     networks:
       - app-network
 
-  mongodb:
-    image: mongo:latest
-    ports:
-      - "27017:27017"
+  gitlab-runner:
+    image: gitlab/gitlab-runner:latest
+    container_name: gitlab-runner
+    restart: always
     volumes:
-      - mongodb_data:/data/db
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./.gitlab-runner-config:/etc/gitlab-runner
     networks:
       - app-network
 
 networks:
   app-network:
     driver: bridge
-
-volumes:
-  mongodb_data:

@@ -1,0 +1,307 @@
+[
+    {
+        "title": "code",
+        "tools": [
+            {
+                "name": "Markdown Viewer",
+                "description": "Preview rendered Markdown while editing your source text.",
+                "url": "https://localhost.co/tools/markdown-viewer"
+            },
+            {
+                "name": "JavaScript Formatter",
+                "description": "Beautify JavaScript code for easier reading and debugging.",
+                "url": "https://localhost.co/tools/javascript-formatter"
+            },
+            {
+                "name": "CSS Formatter",
+                "description": "Format CSS stylesheets with consistent indentation and spacing.",
+                "url": "https://localhost.co/tools/css-formatter"
+            },
+            {
+                "name": "SQL Formatter",
+                "description": "Format SQL queries for easier review, editing, and debugging.",
+                "url": "https://localhost.co/tools/sql-formatter"
+            },
+            {
+                "name": "HTML Formatter",
+                "description": "Beautify HTML markup into clean, readable source code.",
+                "url": "https://localhost.co/tools/html-formatter"
+            },
+            {
+                "name": "Markdown to HTML",
+                "description": "Convert Markdown content into HTML instantly in the browser.",
+                "url": "https://localhost.co/tools/markdown-to-html"
+            },
+            {
+                "name": "Regex Tester",
+                "description": "Test regular expressions with live match and replace results.",
+                "url": "https://localhost.co/tools/regex-tester"
+            }
+        ]
+    },
+    {
+        "title": "data",
+        "tools": [
+            {
+                "name": "XML Validator",
+                "description": "Validate XML structure and detect malformed tags.",
+                "url": "https://localhost.co/tools/xml-validator"
+            },
+            {
+                "name": "YAML Validator",
+                "description": "Validate YAML syntax and catch indentation problems fast.",
+                "url": "https://localhost.co/tools/yaml-validator"
+            },
+            {
+                "name": "JSON to JSON Schema",
+                "description": "Create a JSON Schema definition from example JSON data.",
+                "url": "https://localhost.co/tools/json-to-json-schema"
+            },
+            {
+                "name": "JSON Diff Checker",
+                "description": "Compare two JSON documents and highlight structural differences.",
+                "url": "https://localhost.co/tools/json-diff-checker"
+            },
+            {
+                "name": "JSON Validator",
+                "description": "Validate JSON payloads and quickly detect syntax errors.",
+                "url": "https://localhost.co/tools/json-validator"
+            },
+            {
+                "name": "YAML Formatter",
+                "description": "Beautify YAML files for cleaner reading and editing.",
+                "url": "https://localhost.co/tools/yaml-formatter"
+            },
+            {
+                "name": "JSON Formatter",
+                "description": "Format and beautify raw JSON into a readable structured layout.",
+                "url": "https://localhost.co/tools/json-formatter"
+            },
+            {
+                "name": "JSON Fixer",
+                "description": "Repair common malformed JSON issues before parsing or saving.",
+                "url": "https://localhost.co/tools/json-fixer"
+            },
+            {
+                "name": "JSON to TypeScript",
+                "description": "Generate TypeScript interfaces directly from JSON samples.",
+                "url": "https://localhost.co/tools/json-to-typescript"
+            },
+            {
+                "name": "JSON to Table",
+                "description": "Convert JSON arrays and objects into clean tabular output.",
+                "url": "https://localhost.co/tools/json-to-table"
+            },
+            {
+                "name": "JSON to YAML",
+                "description": "Transform JSON payloads into YAML with preserved structure.",
+                "url": "https://localhost.co/tools/json-to-yaml"
+            },
+            {
+                "name": "XML Formatter",
+                "description": "Format XML documents with readable indentation and spacing.",
+                "url": "https://localhost.co/tools/xml-formatter"
+            },
+            {
+                "name": "CSV to JSON",
+                "description": "Convert CSV rows into machine-readable JSON output.",
+                "url": "https://localhost.co/tools/csv-to-json"
+            },
+            {
+                "name": "JSON to CSV",
+                "description": "Turn JSON arrays into CSV for spreadsheets and exports.",
+                "url": "https://localhost.co/tools/json-to-csv"
+            }
+        ]
+    },
+    {
+        "title": "devops",
+        "tools": [
+            {
+                "name": "Gitignore Generator",
+                "description": "Generate .gitignore templates for common stacks and frameworks.",
+                "url": "https://localhost.co/tools/gitignore-generator"
+            },
+            {
+                "name": "cURL to Code Converter",
+                "description": "Convert cURL commands into language-specific request code.",
+                "url": "https://localhost.co/tools/curl-to-code-converter"
+            },
+            {
+                "name": "Cron Expression Builder",
+                "description": "Build and inspect cron expressions for scheduled tasks.",
+                "url": "https://localhost.co/tools/cron-expression-builder"
+            }
+        ]
+    },
+    {
+        "title": "encoding",
+        "tools": [
+            {
+                "name": "HTML Entity Encode Decode",
+                "description": "Encode or decode HTML entities for safe markup output.",
+                "url": "https://localhost.co/tools/html-entity-encode-decode"
+            },
+            {
+                "name": "URL Encode Decode",
+                "description": "Encode or decode URLs and query components safely.",
+                "url": "https://localhost.co/tools/url-encode-decode"
+            },
+            {
+                "name": "Base64 Encode Decode",
+                "description": "Encode or decode Base64 strings for data transfer and debugging.",
+                "url": "https://localhost.co/tools/base64-encode-decode"
+            }
+        ]
+    },
+    {
+        "title": "generators",
+        "tools": [
+            {
+                "name": "UUID Generator",
+                "description": "Generate UUID values for apps, APIs, and database records.",
+                "url": "https://localhost.co/tools/uuid-generator"
+            },
+            {
+                "name": "Password Generator",
+                "description": "Create strong passwords with configurable length and character rules.",
+                "url": "https://localhost.co/tools/password-generator"
+            },
+            {
+                "name": "QR Code Generator",
+                "description": "Generate QR codes from text, URLs, and short payloads.",
+                "url": "https://localhost.co/tools/qr-code-generator"
+            },
+            {
+                "name": "Lorem Ipsum Generator",
+                "description": "Generate placeholder paragraphs, sentences, or words on demand.",
+                "url": "https://localhost.co/tools/lorem-ipsum-generator"
+            }
+        ]
+    },
+    {
+        "title": "security",
+        "tools": [
+            {
+                "name": "JWT Decoder",
+                "description": "Decode JWT tokens and inspect headers, payloads, and expiry data.",
+                "url": "https://localhost.co/tools/jwt-decoder"
+            },
+            {
+                "name": "Bcrypt Hash Generator",
+                "description": "Create bcrypt password hashes for authentication workflows.",
+                "url": "https://localhost.co/tools/bcrypt-hash-generator"
+            },
+            {
+                "name": "Hash Generator",
+                "description": "Generate common cryptographic hashes from text input.",
+                "url": "https://localhost.co/tools/hash-generator"
+            }
+        ]
+    },
+    {
+        "title": "seo",
+        "tools": [
+            {
+                "name": "Keyword Density Checker",
+                "description": "Analyze keyword usage and density in pasted content.",
+                "url": "https://localhost.co/tools/keyword-density-checker"
+            },
+            {
+                "name": "Slug Generator",
+                "description": "Create clean URL slugs from titles and arbitrary text.",
+                "url": "https://localhost.co/tools/slug-generator"
+            }
+        ]
+    },
+    {
+        "title": "text",
+        "tools": [
+            {
+                "name": "Remove Duplicates",
+                "description": "Remove repeated lines from pasted text while preserving clean readable output.",
+                "url": "https://localhost.co/tools/remove-duplicates"
+            },
+            {
+                "name": "Text Minifier",
+                "description": "Collapse text spacing and remove unnecessary blank lines quickly.",
+                "url": "https://localhost.co/tools/text-minifier"
+            },
+            {
+                "name": "Delimiter Converter",
+                "description": "Convert text between comma, pipe, tab, and custom delimiters.",
+                "url": "https://localhost.co/tools/delimiter-converter"
+            },
+            {
+                "name": "Text Beautifier",
+                "description": "Clean and normalize pasted text into a readable format.",
+                "url": "https://localhost.co/tools/text-beautifier"
+            },
+            {
+                "name": "Word Counter",
+                "description": "Count words and measure text length while you type or paste.",
+                "url": "https://localhost.co/tools/word-counter"
+            },
+            {
+                "name": "Text Diff Checker",
+                "description": "Compare two text blocks and see their differences instantly.",
+                "url": "https://localhost.co/tools/text-diff-checker"
+            },
+            {
+                "name": "Line Sorter",
+                "description": "Sort lines alphabetically, numerically, or by custom rules.",
+                "url": "https://localhost.co/tools/line-sorter"
+            },
+            {
+                "name": "Case Converter",
+                "description": "Convert text to upper, lower, title, camel, snake, or kebab case.",
+                "url": "https://localhost.co/tools/case-converter"
+            },
+            {
+                "name": "Character Counter",
+                "description": "Count characters, spaces, lines, and paragraphs in text input.",
+                "url": "https://localhost.co/tools/character-counter"
+            },
+            {
+                "name": "Find and Replace",
+                "description": "Find repeated patterns in text and replace them quickly.",
+                "url": "https://localhost.co/tools/find-and-replace"
+            }
+        ]
+    },
+    {
+        "title": "time",
+        "tools": [
+            {
+                "name": "Unix Timestamp Converter",
+                "description": "Convert Unix timestamps to human-readable dates and back.",
+                "url": "https://localhost.co/tools/unix-timestamp-converter"
+            }
+        ]
+    },
+    {
+        "title": "web",
+        "tools": [
+            {
+                "name": "Color Converter",
+                "description": "Convert color values between HEX, RGB, HSL, and related formats.",
+                "url": "https://localhost.co/tools/color-converter"
+            },
+            {
+                "name": "URL Parser",
+                "description": "Break down full URLs into protocol, host, path, and query parts.",
+                "url": "https://localhost.co/tools/url-parser"
+            },
+            {
+                "name": "Query String Parser",
+                "description": "Parse URL query strings into readable key-value output.",
+                "url": "https://localhost.co/tools/query-string-parser"
+            },
+            {
+                "name": "Query String Builder",
+                "description": "Build URL query strings from structured input fields.",
+                "url": "https://localhost.co/tools/query-string-builder"
+            }
+        ]
+    }
+]
