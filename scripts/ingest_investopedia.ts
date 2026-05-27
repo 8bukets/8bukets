@@ -46,9 +46,11 @@ async function ingestInvestopedia() {
     await observeKnowledge(defaultUrl);
 
     const subpages = await getInvestopediaLinks(defaultUrl);
-    console.log(`🤖 [Ingest] Found ${subpages.length} subpages. Observing all subpages...`);
+    // Limit to top 10 to prevent infinite or extremely long runs by default
+    const limit = 10;
+    console.log(`🤖 [Ingest] Found ${subpages.length} subpages. Observing top ${limit}...`);
 
-    for (let i = 0; i < subpages.length; i++) {
+    for (let i = 0; i < Math.min(subpages.length, limit); i++) {
         const url = subpages[i];
         if (url !== defaultUrl) {
             console.log(`- Observing knowledge from subpage: ${url}`);

@@ -656,19 +656,22 @@ export class Jules {
     await this.ensureInitialized()
     console.log('🧠 [Jules] Observing new knowledge foundations...')
 
-    const { exec } = await import('child_process')
-    const { promisify } = await import('util')
-    const execAsync = promisify(exec)
+    const { observeKnowledge: scanUrl } = await import('./services/knowledge')
+    const urlsToObserve = [
+      'https://www.investopedia.com/'
+    ]
 
-    try {
-      console.log('📈 [Jules] Executing Investopedia knowledge ingestion...')
-      await execAsync('npx tsx scripts/ingest_investopedia.ts')
-      this.recordTask('Knowledge Observed: Extracted intelligence from Investopedia.')
-    } catch (e: any) {
-      console.warn('⚠️ [Jules] Investopedia ingestion failed:', e.message)
+    for (const url of urlsToObserve) {
+      const observation = await scanUrl(url)
+      if (observation.status === 'observed') {
+        this.recordTask(`Knowledge Observed: Extracted intelligence from ${observation.url}`)
+      }
     }
 
     // Phase 18: Specialized Market Intelligence Ingestion
+    const { exec } = await import('child_process')
+    const { promisify } = await import('util')
+    const execAsync = promisify(exec)
     try {
       console.log('📈 [Jules] Executing specialized Markposition ingestion...')
       await execAsync('npx tsx scripts/ingest_markposition_knowledge.ts')
