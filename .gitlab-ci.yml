@@ -5,13 +5,11 @@ build-job:
 
 test-job1:
   stage: test
-  needs: ["build-job"]
   script:
     - echo "This job tests something"
 
 test-job2:
   stage: test
-  needs: ["build-job"]
   script:
     - echo "This job tests something, but takes more time than test-job1."
     - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
@@ -20,7 +18,6 @@ test-job2:
 
 deploy-prod:
   stage: deploy
-  needs: ["test-job1", "test-job2"]
   script:
     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
   environment: production
@@ -155,14 +152,6 @@ run-autonomous-horizontal_fleet_orchestration:
   script:
     - echo "Running autonomous cycle for Horizontal Fleet Orchestration Service"
     - npx tsx antigravity/workflows/horizontal_fleet_orchestration_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-run-autonomous-autonomous_api_documentation:
-  stage: test
-  script:
-    - echo "Running autonomous cycle for Autonomous API Documentation Service"
-    - npx tsx antigravity/workflows/autonomous_api_documentation_workflow.ts
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
 

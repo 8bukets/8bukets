@@ -107,11 +107,6 @@ pipeline {
                 sh 'npx tsx antigravity/workflows/horizontal_fleet_orchestration_workflow.ts'
             }
         }
-        stage('Run Autonomous Autonomous API Documentation Service') {
-            steps {
-                sh 'npx tsx antigravity/workflows/autonomous_api_documentation_workflow.ts'
-            }
-        }
         stage('Run Autonomous Cognitive Code Self-Correction Service') {
             steps {
                 sh 'npx tsx antigravity/workflows/cognitive_code_self_correction_workflow.ts'

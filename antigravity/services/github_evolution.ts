@@ -5,7 +5,7 @@ export async function getGitHubMetrics() {
   let semanticCommitScore = 0
 
   try {
-    const logs = /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ execFileSync('git', ['log', '--format=%s', '-n', '50']).toString().trim().split('\n')
+    const logs = /* [Evolution] TODO: Refactor to async */ execFileSync('git', ['log', '--format=%s', '-n', '50']).toString().trim().split('\n')
     let semanticCount = 0
 
     for (const log of logs) {

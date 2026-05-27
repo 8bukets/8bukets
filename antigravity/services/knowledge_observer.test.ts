@@ -7,13 +7,13 @@ describe('KnowledgeObserver', () => {
   const testStorageDir = path.join(process.cwd(), 'data/knowledge_test')
 
   beforeEach(() => {
-    if (/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(testStorageDir)) {
+    if (/* [Evolution] TODO: Refactor to async */ fs.existsSync(testStorageDir)) {
       fs.rmSync(testStorageDir, { recursive: true, force: true })
     }
   })
 
   afterEach(() => {
-    if (/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(testStorageDir)) {
+    if (/* [Evolution] TODO: Refactor to async */ fs.existsSync(testStorageDir)) {
       fs.rmSync(testStorageDir, { recursive: true, force: true })
     }
   })
@@ -62,10 +62,14 @@ Some details here.`
 
     await observer.persistKnowledge(knowledge)
 
-    expect(/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(path.join(testStorageDir, 'system_knowledge.json'))).toBe(true)
-    expect(/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(path.join(testStorageDir, 'ai_agents_knowledge.md'))).toBe(true)
+    expect(/* [Evolution] TODO: Refactor to async */ fs.existsSync(path.join(testStorageDir, 'system_knowledge.json'))).toBe(true)
+    expect(/* [Evolution] TODO: Refactor to async */ fs.existsSync(path.join(testStorageDir, 'ai_agents_knowledge.md'))).toBe(true)
 
-    const systemKnowledge = JSON.parse(/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.readFileSync(path.join(testStorageDir, 'system_knowledge.json'), 'utf8'))
+    const systemKnowledge = JSON.parse(/* [Evolution] TODO: Refactor to async */ fs.readFileSync(path.join(testStorageDir, 'system_knowledge.json'), 'utf8'))
     expect(systemKnowledge.typescript_sections[0].title).toBe('Persist Test')
   })
+
+  } catch (err) {
+    console.error('[Evolution Autocorrect] Unhandled error:', err);
+  }
 })

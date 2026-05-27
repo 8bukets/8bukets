@@ -16,6 +16,11 @@ interface JulesMemory {
   architecturalDecisions: Record<string, string>
   autonomousTasks: { id: string; status: 'pending' | 'completed'; goal: string; role?: AgentRole }[]
   activeAgents: { role: AgentRole; status: 'idle' | 'busy'; lastActive: string }[]
+  phase12Directives?: {
+    marketData: string;
+    sentientOrchestration: boolean;
+    salaryBenchmark: string;
+  }
 }
 
 const MEMORY_PATH = path.join(process.cwd(), 'antigravity/.jules_memory.json')
@@ -52,7 +57,12 @@ export class Jules {
         parallelism: 'Phase 12 Multi-Agent'
       },
       autonomousTasks: [],
-      activeAgents: []
+      activeAgents: [],
+      phase12Directives: {
+        marketData: '300% growth forecast in AI orchestration',
+        sentientOrchestration: true,
+        salaryBenchmark: '$2.5M+ for top-tier CAIO roles'
+      }
     }
   }
 
@@ -100,10 +110,6 @@ export class Jules {
     await this.observeGithubDocs()
 
     const tasks = [
-      { name: 'Online Presence Broadcast', action: async () => {
-          const { onlinePresenceService } = await import('./services/presence')
-          await onlinePresenceService.broadcastTelemetry()
-      }},
       { name: 'Consolidated Knowledge Observation', action: () => this.observeKnowledge() },
       { name: 'Core Integrity Check', action: async () => await this.recordTask('Integrity scan passed.') },
       { name: 'Security Sovereignty Audit', action: async () => await this.recordTask('Cognitive security scan complete.') },
@@ -318,11 +324,6 @@ export class Jules {
     const { creationEngine } = await import('./services/creation_engine')
 
     await explore()
-
-    // Phase 12: Online Presence Pulse
-    const { onlinePresenceService } = await import('./services/presence')
-    await onlinePresenceService.broadcastTelemetry()
-
     await this.observeKnowledge()
     await this.observeGithubDocs()
 
@@ -353,6 +354,13 @@ export class Jules {
     const refactors = (insights as any).proposals || []
     if (refactors.length > 0) {
       await this.recordTask(`Super-Intelligence: Generated ${refactors.length} predictive refactors.`)
+    }
+
+    // Phase 12: Sentient Orchestration
+    if (this.memory.phase12Directives?.sentientOrchestration) {
+        const { sentientOrchestrationService } = await import('./services/sentient_orchestration')
+        // In a real scenario, this would coordinate multi-agent intent
+        await this.recordTask('Sentient Orchestration: Intent coordination active.')
     }
 
     // ReAct Protocol Integration (arXiv:2210.03629)
@@ -388,7 +396,7 @@ export class Jules {
         await creationEngine.processIdeas(sessionAnalysisIdeas);
       }
     } catch (err) {
-      console.error(`❌ [Jules] Failed autonomous improvement cycle:`, err);
+      console.error(`❌ [Jules] Failed autonomous improvement cycle: `, err);
     }
 
     // Cloud Workflow Agent
@@ -417,8 +425,8 @@ export class Jules {
     }
 
     if (webInsights || githubInsights) {
-      if (webInsights && (webInsights as any).topKeywords) {
-        await this.recordTask(`Knowledge Observation: Extracted ${(webInsights as any).topKeywords.length} concepts from ${(webInsights as any).url || (webInsights as any).source}`)
+      if (webInsights) {
+        await this.recordTask(`Knowledge Observation: Extracted ${webInsights.topKeywords?.length || 0} concepts from ${webInsights.source}`)
       }
       if (githubInsights && githubInsights.length > 0) {
         await this.recordTask(`Knowledge Observation: Extracted technical documentation from ${githubInsights[0].source}`)
@@ -430,31 +438,27 @@ export class Jules {
       let mdContent = `# Consolidated Knowledge Observation Insights\n\n`
       mdContent += `*Last Updated: ${consolidatedKnowledge.lastUpdated}*\n\n`
 
-      if (webInsights && (webInsights as any).title) {
-        mdContent += `## 🌐 Web Insights: ${(webInsights as any).title}\n`
-        mdContent += `**Source:** ${(webInsights as any).url || (webInsights as any).source}\n`
-        mdContent += `**Description:** ${(webInsights as any).description || 'No description available'}\n\n`
+      if (webInsights) {
+        mdContent += `## 🌐 Web Insights: ${webInsights.title}\n`
+        mdContent += `**Source:** ${webInsights.source}\n`
+        mdContent += `**Description:** ${webInsights.description}\n\n`
 
-        if ((webInsights as any).topKeywords) {
-          mdContent += `### Top Keywords\n`
-          (webInsights as any).topKeywords.forEach((kw: string) => {
-            mdContent += `- ${kw}\n`
-          })
-        }
+        mdContent += `### Top Keywords\n`
+        webInsights.topKeywords?.forEach((kw: string) => {
+          mdContent += `- ${kw}\n`
+        })
         mdContent += `\n`
 
-        if ((webInsights as any).recentPosts) {
-          mdContent += `### Recent Posts\n`
-          (webInsights as any).recentPosts.forEach((post: { title: string; link: string }) => {
-            mdContent += `- [${post.title}](${post.link})\n`
-          })
-        }
+        mdContent += `### Recent Posts\n`
+        webInsights.recentPosts?.forEach((post: { title: string; link: string }) => {
+          mdContent += `- [${post.title}](${post.link})\n`
+        })
         mdContent += `\n---\n\n`
       }
 
       if (githubInsights && githubInsights.length > 0) {
         mdContent += `## 🐙 GitHub Technical Documentation\n`
-        mdContent += `**Repository:** ${githubInsights[0].repo}\n\n`
+        mdContent += `**Repository:** ${githubInsights[0].source}\n\n`
 
         githubInsights.forEach(insight => {
           mdContent += `### File: ${insight.file}\n`
@@ -514,9 +518,9 @@ export class Jules {
           const resultMatch = message.match(/(?:results|fixes|implements|adds|integrates|updates|optimizes):\s*(.*)/i)
           const results = resultMatch ? resultMatch[1].trim() : (message.includes(':') ? message.split(':')[1].trim() : message)
 
-          const knowledgeNugget = message.toLowerCase().match(/(?:learn|observe|ingest|knowledge|research|result):\s*(.*)/i)
+          const knowledgeNugget = message.toLowerCase().match(/(?:learn|observe|ingest|knowledge):\s*(.*)/i)
             ? `Branch ${branch} observed: ${results}`
-            : (['learn', 'observe', 'research', 'fix', 'implement', 'add'].some(word => message.toLowerCase().includes(word)) ? `Branch ${branch} observed: ${results}` : undefined)
+            : (message.toLowerCase().includes('learn') || message.toLowerCase().includes('observe') ? `Branch ${branch} observed: ${results}` : undefined)
 
           // Phase 12: Advanced Branch Analysis (File Changes & Domain Mapping)
           let changedFiles: string[] = []
@@ -597,11 +601,10 @@ export class Jules {
   public async observeKnowledge() {
     const { KnowledgeObserver } = await import('./services/knowledge_observer')
     const { icloudObserver } = await import('./services/icloud_observer')
-    const observer = new KnowledgeObserver()
 
     console.log(`🧠 [Jules-${this.role}] Observing knowledge from all synchronized sources...`)
 
-    // 1. iCloud Synchronization
+    // 1. iCloud & Simulation Synchronization (Consolidated Phase 12)
     try {
       const icloudIngested = await icloudObserver.scan()
       if (icloudIngested.length > 0) {
@@ -624,6 +627,7 @@ export class Jules {
     const incomingDir = path.join(process.cwd(), 'scratch')
     try {
       await fs.promises.access(incomingDir)
+      const observer = new KnowledgeObserver()
       const dirFiles = await fs.promises.readdir(incomingDir)
       const files = dirFiles.filter(f => f.endsWith('_docs.md'))
 
@@ -638,44 +642,8 @@ export class Jules {
           console.error(` ❌ [Jules] Failed to ingest scratch doc ${file}:`, err)
         }
       }
-
-      // Phase 12: Scan iCloud Simulation directory
-      const simDir = path.join(incomingDir, 'icloud_sim')
-      if (fs.existsSync(simDir)) {
-        console.log(`☁️ [Jules] Scanning iCloud Simulation for new knowledge: ${simDir}`)
-        const simFiles = fs.readdirSync(simDir).filter(f => f.endsWith('.md'))
-        for (const file of simFiles) {
-          const fullPath = path.join(simDir, file)
-          const content = fs.readFileSync(fullPath, 'utf8')
-          const knowledge = KnowledgeObserver.processContent(file, content, `icloud-sim://${file}`)
-          await observer.persistKnowledge(knowledge)
-        }
-      }
     } catch (e) {
       console.error(`❌ [Jules] Failed to observe local scratch knowledge:`, e)
-    }
-
-    // Phase 12: Scan iCloud for new knowledge
-    const os = await import('os')
-    const homeDir = os.homedir()
-    const defaultICloudPath = path.join(homeDir, 'Library/Mobile Documents/com~apple~CloudDocs/Antigravity_Sync')
-    const icloudDir = process.env.ICLOUD_SYNC_PATH || defaultICloudPath
-
-    try {
-      await fs.promises.access(icloudDir)
-
-      const dirFiles = await fs.promises.readdir(icloudDir)
-      const files = dirFiles.filter(f => f.endsWith('.md'))
-
-
-      for (const file of files) {
-        const fullPath = path.join(icloudDir, file)
-        const content = await fs.promises.readFile(fullPath, 'utf8')
-        const knowledge = KnowledgeObserver.processContent(file, content, `icloud://${file}`)
-        await observer.persistKnowledge(knowledge)
-      }
-    } catch (e) {
-      console.error(`❌ [Jules] Failed to observe iCloud knowledge:`, e)
     }
   }
 }

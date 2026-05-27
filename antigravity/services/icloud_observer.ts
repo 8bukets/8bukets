@@ -17,7 +17,7 @@ export class ICloudObserver {
     const homeDir = process.env.HOME || ''
     const standardICloudPath = path.join(homeDir, 'Library/Mobile Documents/com~apple~CloudDocs/8bukets')
 
-    this.syncPath = process.env.ICLOUD_SYNC_PATH || (/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(standardICloudPath) ? standardICloudPath : path.join(process.cwd(), 'scratch/icloud_sim'))
+    this.syncPath = process.env.ICLOUD_SYNC_PATH || (/* [Evolution] TODO: Refactor to async */ fs.existsSync(standardICloudPath) ? standardICloudPath : path.join(process.cwd(), 'scratch/icloud_sim'))
     this.observer = new KnowledgeObserver()
   }
 
@@ -27,21 +27,21 @@ export class ICloudObserver {
   public async scan() {
     console.log(`☁️ [iCloud Observer] Scanning path: ${this.syncPath}`)
 
-    if (!/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(this.syncPath)) {
+    if (!/* [Evolution] TODO: Refactor to async */ fs.existsSync(this.syncPath)) {
       console.log('ℹ️ [iCloud Observer] Sync path does not exist. Skipping scan.')
       return []
     }
 
-    const files = fs.readdirSync(this.syncPath)
+    const files = /* [Evolution] TODO: Refactor to async */ fs.readdirSync(this.syncPath)
     const ingested: string[] = []
 
     for (const file of files) {
       const fullPath = path.join(this.syncPath, file)
-      const stats = fs.statSync(fullPath)
+      const stats = /* [Evolution] TODO: Refactor to async */ fs.statSync(fullPath)
 
       if (stats.isFile() && (file.endsWith('.md') || file.endsWith('.json'))) {
         try {
-          const content = /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.readFileSync(fullPath, 'utf8')
+          const content = /* [Evolution] TODO: Refactor to async */ fs.readFileSync(fullPath, 'utf8')
           let knowledge;
 
           if (file.endsWith('.json')) {
