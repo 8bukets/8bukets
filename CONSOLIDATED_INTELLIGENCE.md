@@ -25131,3 +25131,10 @@ All the best - https://markposition.wordpress.com
 - **Summary:** The system is fully capable of autonomous cloud execution using MACBOOK_CLOUD_SIMULATION=true, integrating with Docker, GitHub, GitKraken, Supabase, MongoDB, and GitLab to ensure a continuous online presence and evolutionary coding capabilities.
 
 All the best - https://markposition.wordpress.com
+
+## 🚀 Agent Framework Architecture Terminology Intelligence
+- **Ingested on:** 2026-05-27T05:13:31.969Z
+- **Source:** local://docs/agent_architecture_terminology.html
+- **Summary:** The provided text breaks down an agent framework into its core layers including logic, harness, tooling, context, and prompts.
+
+All the best - https://markposition.wordpress.com
