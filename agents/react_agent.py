@@ -7,7 +7,7 @@ class ReActAgent(BaseAgent):
     """
     def __init__(self):
         super().__init__("ReActAgent",
-                         dependencies=["intelligence_insights", "ai_agents_definitions", "agent_use_cases", "agent_best_practices", "google_cloud_tools_list", "react_framework_details", "agent_taxonomy"],
+                         dependencies=["intelligence_insights", "ai_agents_definitions", "agent_use_cases", "agent_best_practices"],
                          provides=["react_reasoning", "react_actions", "react_agent_deployment_config"])
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
@@ -17,9 +17,6 @@ class ReActAgent(BaseAgent):
         definitions = blackboard.get("ai_agents_definitions", {})
         use_cases = blackboard.get("agent_use_cases", {})
         best_practices = blackboard.get("agent_best_practices", [])
-        tools_list = blackboard.get("google_cloud_tools_list", [])
-        react_details = blackboard.get("react_framework_details", {})
-        taxonomy = blackboard.get("agent_taxonomy", {})
 
         reasoning_log = []
         action_log = []
@@ -28,85 +25,58 @@ class ReActAgent(BaseAgent):
         if "reasoning" in str(definitions.get("features", "")).lower():
             reasoning_log.append("ReAct feature 'Reasoning' confirmed in knowledge base.")
 
+        if best_practices:
+            reasoning_log.append("Integrating Agent Best Practices into reasoning logic.")
+            if any("serverless" in bp.lower() for bp in best_practices):
+                reasoning_log.append("Best Practice: Serverless deployment (e.g., Cloud Run/Vercel) identified as optimal.")
+
+        has_creative_use_case = "creative" in use_cases and use_cases["creative"]
+        has_code_use_case = "code" in use_cases and use_cases["code"]
+
+        if has_creative_use_case:
+            reasoning_log.append("Reasoning: Creative agent use case detected. Suggesting enhanced content generation.")
+
+        if has_code_use_case:
+            reasoning_log.append("Reasoning: Code agent use case detected. Suggesting integration with coding environments.")
+
         if insights:
             reasoning_log.append(f"Analyzing {len(insights)} intelligence insights for actionable items.")
             for insight in insights:
                 if "High concentration" in insight:
                     reasoning_log.append("Reasoning: High concentration detected, requires focused ad targeting.")
-                    if "DEPLOY_FOCUSED_AD_CAMPAIGN" not in action_log:
-                        action_log.append("DEPLOY_FOCUSED_AD_CAMPAIGN")
                 elif "efficiency" in insight.lower() or "decision-making" in insight.lower():
                     reasoning_log.append("Reasoning: Strategic benefits identified, should optimize workflow.")
-                    if "OPTIMIZE_WORKFLOW_DECISION_MAKING" not in action_log:
-                        action_log.append("OPTIMIZE_WORKFLOW_DECISION_MAKING")
-                elif "automation" in insight.lower():
-                    reasoning_log.append("Reasoning: Automation opportunity identified, should deploy automation rules.")
-                    if "DEPLOY_AUTOMATION_RULES" not in action_log:
-                        action_log.append("DEPLOY_AUTOMATION_RULES")
-                elif "security" in insight.lower():
-                    reasoning_log.append("Reasoning: Security focus required, initiating security audit.")
-                    if "INITIATE_SECURITY_AUDIT" not in action_log:
-                        action_log.append("INITIATE_SECURITY_AUDIT")
-                elif "performance" in insight.lower():
-                    reasoning_log.append("Reasoning: Performance bottleneck detected, triggering performance optimization.")
-                    if "TRIGGER_PERFORMANCE_OPTIMIZATION" not in action_log:
-                        action_log.append("TRIGGER_PERFORMANCE_OPTIMIZATION")
-
-        react_deployment_logic = definitions.get("react-agent-deployment-logic") or definitions.get("react_framework_details", {}).get("react-agent-deployment-logic")
-        if react_deployment_logic:
-            reasoning_log.append("Reasoning: Found React Agent Deployment Logic, ensuring logic deploy and workflow run improve.")
-            if "VERIFY_LOGIC_DEPLOY_REACT_AGENTS" not in action_log:
-                action_log.append("VERIFY_LOGIC_DEPLOY_REACT_AGENTS")
-            if "IMPROVE_WORKFLOW_RUN" not in action_log:
-                action_log.append("IMPROVE_WORKFLOW_RUN")
 
         # 2. Acting Phase
-        if not action_log:
+        deployment_config = {}
+
+        if reasoning_log:
+            if "High concentration" in str(reasoning_log):
+                action_log.append("DEPLOY_FOCUSED_AD_CAMPAIGN")
+            if "efficiency" in str(reasoning_log).lower():
+                action_log.append("OPTIMIZE_WORKFLOW_DECISION_MAKING")
+            if has_creative_use_case:
+                action_log.append("DEPLOY_CREATIVE_REACT_AGENT")
+            if has_code_use_case:
+                action_log.append("DEPLOY_CODE_REACT_AGENT")
+
+            if not action_log:
+                 action_log.append("CONTINUE_MONITORING")
+        else:
             reasoning_log.append("Reasoning: No specific insights to act upon.")
             action_log.append("CONTINUE_MONITORING")
 
-        deployment_config = {}
-        if action_log or react_details:
-            reasoning_log.append("Reasoning: Specific actions determined or React knowledge found, configuring React Agent deployment.")
-            if "DEPLOY_REACT_AGENT" not in action_log:
-                action_log.append("DEPLOY_REACT_AGENT")
-
-            # Dynamically determine deployment target based on best practices and knowledge
-            deployment_target = "Cloud Run"
-            if "deployment_strategy" in react_details and "Next.js" in react_details["deployment_strategy"]:
-                deployment_target = "Vercel"
-            elif any("Next.js" in bp for bp in best_practices) or any("Vercel" in bp for bp in best_practices):
-                deployment_target = "Vercel"
-
-            taxonomy_mode = "BACKGROUND" if taxonomy.get("background_processes") else "INTERACTIVE"
-
-            # Check if any specific use case is active (e.g., customer, security)
-            active_use_cases = list(use_cases.keys()) if isinstance(use_cases, dict) else []
-
-            scale_tier = "STANDARD"
-            auto_scaling = {"min_replicas": 1, "max_replicas": 3}
-            if len(insights) > 5 or any("High concentration" in i for i in insights):
-                scale_tier = "GLOBAL_EDGE"
-                auto_scaling = {"min_replicas": 5, "max_replicas": 50, "regions": ["us-central1", "europe-west1", "asia-east1"]}
-                reasoning_log.append("Reasoning: High data volume or concentration detected, configuring GLOBAL_EDGE scaling tier.")
-            elif len(insights) > 2:
-                scale_tier = "ENTERPRISE"
-                auto_scaling = {"min_replicas": 3, "max_replicas": 10}
-                reasoning_log.append("Reasoning: Moderate data volume detected, configuring ENTERPRISE scaling tier.")
+        if any("DEPLOY_" in action for action in action_log):
+            target = "Cloud Run"
+            if any("Vercel" in bp for bp in best_practices) or any("serverless" in bp.lower() for bp in best_practices):
+                target = "Vercel / Cloud Run"
 
             deployment_config = {
                 "agent_type": "ReactAgent",
-                "frontend_framework": "Next.js",
-                "backend_framework": "Node.js",
-                "deployment_target": deployment_target,
-                "active_use_cases": active_use_cases,
-                "orchestration_mode": "SYNCHRONIZED",
-                "taxonomy_mode": taxonomy_mode,
+                "framework": "Next.js",
+                "deployment_target": target,
                 "status": "READY_FOR_DEPLOYMENT",
-                "tools_integration": tools_list,
-                "react_framework_details": react_details,
-                "scale_tier": scale_tier,
-                "auto_scaling": auto_scaling
+                "active_use_cases": [k for k, v in use_cases.items() if v]
             }
 
         # Prepare payload
