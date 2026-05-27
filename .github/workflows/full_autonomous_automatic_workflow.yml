@@ -1,4 +1,4 @@
-name: Fully Autonomous Automatic Workflow
+name: Full Autonomous Automatic Workflow
 
 # ==============================================================================
 # FULLY AUTONOMOUS AUTOMATIC WORKFLOW SYSTEM PIPELINE
@@ -32,7 +32,7 @@ name: Fully Autonomous Automatic Workflow
 
 on:
   schedule:
-    - cron: '0 * * * *' # Run hourly
+    - cron: '*/30 * * * *' # Run every 30 minutes
   workflow_dispatch:
 
 permissions:
@@ -83,7 +83,7 @@ jobs:
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           MACBOOK_CLOUD_SIMULATION: true
           AUTONOMOUS_MODE: cloud
-        run: npm run daily
+        run: npx tsx scripts/execute_creation_cycle.ts
 
       - name: Post-Cycle Documentation Update
         run: npx tsx scripts/ingest_localhost_tools_knowledge.ts || true
