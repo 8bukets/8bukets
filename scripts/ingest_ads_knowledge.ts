@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import * as cheerio from 'cheerio';
+import puppeteer from 'puppeteer';
 
 const URLS = [
     "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU",
@@ -31,6 +31,8 @@ async function scrapeGoogleAdsDocs() {
     const data: Record<string, PageData> = {};
     let mdContent = "# Google Ads & Ad Manager Documentation\n\n";
 
+    const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
+
     for (const url of URLS) {
         const parsedUrl = new URL(url);
         parsedUrl.searchParams.set('hl', 'en');
@@ -38,84 +40,90 @@ async function scrapeGoogleAdsDocs() {
 
         console.log(`Fetching Google Ads docs from ${fetchUrl}...`);
         try {
-            const response = await fetch(fetchUrl, { signal: AbortSignal.timeout(10000) });
-            if (!response.ok) {
-                console.error(`Error fetching ${fetchUrl}: HTTP ${response.status}`);
-                continue;
-            }
+            const page = await browser.newPage();
+            // Network idle is better for SPAs/JS-heavy pages
+            await page.goto(fetchUrl, { waitUntil: 'networkidle2', timeout: 30000 });
 
-            const html = await response.text();
-            const $ = cheerio.load(html);
+            // Extract the data using evaluation within the page context
+            const result = await page.evaluate(() => {
+                // Find main content area (heuristics)
+                let main = document.querySelector('article') ||
+                           document.querySelector('main') ||
+                           document.querySelector('.devsite-article-body') ||
+                           document.querySelector('body');
 
-            const mainContent = $('article').length ? $('article') :
-                                $('main').length ? $('main') :
-                                $('body');
+                if (!main) return null;
 
-            if (!mainContent.length) {
-                console.warn(`Could not find main content for ${url}`);
-                continue;
-            }
+                const titleEl = document.querySelector('h1');
+                const title = titleEl ? titleEl.innerText.trim() : document.title;
 
-            const h1 = mainContent.find('h1').first();
-            const pageTitle = h1.length ? h1.text().trim() : url;
+                const extractedSections: {heading: string, content: string[]}[] = [];
 
-            const pageData: PageData = {
-                title: pageTitle,
-                url: url,
-                key_links: [],
-                sections: []
-            };
+                // Get all links globally within main
+                const links: string[] = Array.from(main.querySelectorAll('a'))
+                    .map(el => (el as HTMLAnchorElement).href)
+                    .filter(href => href && href.startsWith('http'));
 
-            mdContent += `## ${pageTitle}\n\n`;
-            mdContent += `Source: [${url}](${url})\n\n`;
+                // Deduplicate links
+                const uniqueLinks = [...new Set(links)];
 
-            let currentSection: Section = {
-                heading: pageTitle,
-                content: []
-            };
+                let currentSection = { heading: title, content: [] as string[] };
 
-            const elements = mainContent.find('h1, h2, h3, p, li, a');
+                // Get all relevant elements for text content
+                const elements = main.querySelectorAll('h1, h2, h3, h4, p, li');
 
-            elements.each((_, elem) => {
-                const $elem = $(elem);
-                const tagName = elem.name.toLowerCase();
+                elements.forEach(el => {
+                    const tag = el.tagName.toLowerCase();
+                    const text = (el as HTMLElement).innerText?.replace(/\s+/g, ' ').trim();
 
-                if (tagName === 'a') {
-                    const href = $elem.attr('href');
-                    if (href && href.startsWith('http') && !pageData.key_links.includes(href)) {
-                        pageData.key_links.push(href);
+                    if (!text) return;
+
+                    if (tag.match(/^h[1-4]$/)) {
+                        if (currentSection.content.length > 0 || currentSection.heading !== title) {
+                            extractedSections.push({...currentSection});
+                        }
+                        currentSection = { heading: text, content: [] };
+                    } else if (tag === 'p' || tag === 'li') {
+                        currentSection.content.push(tag === 'li' ? `- ${text}` : text);
                     }
-                    return;
+                });
+
+                if (currentSection.content.length > 0 || currentSection.heading !== title) {
+                    extractedSections.push(currentSection);
                 }
 
-                const text = $elem.text().replace(/\s+/g, ' ').trim();
-                if (!text) {
-                    return;
-                }
-
-                if (['h1', 'h2', 'h3'].includes(tagName)) {
-                    if (currentSection.content.length > 0 || currentSection.heading !== pageTitle) {
-                        pageData.sections.push(currentSection);
-                    }
-
-                    currentSection = {
-                        heading: text,
-                        content: []
-                    };
-                    const mdPrefix = '#'.repeat(parseInt(tagName[1]));
-                    mdContent += `${mdPrefix} ${text}\n\n`;
-                } else if (tagName === 'p') {
-                    mdContent += `${text}\n\n`;
-                    currentSection.content.push(text);
-                } else if (tagName === 'li') {
-                    mdContent += `- ${text}\n`;
-                    currentSection.content.push(`- ${text}`);
-                }
+                return {
+                    title,
+                    sections: extractedSections,
+                    links: uniqueLinks
+                };
             });
 
-            if (currentSection.content.length > 0 || currentSection.heading !== pageTitle) {
-                pageData.sections.push(currentSection);
+            await page.close();
+
+            if (!result) {
+                console.warn(`Could not extract content for ${url}`);
+                continue;
             }
+
+            const pageData: PageData = {
+                title: result.title,
+                url: url,
+                key_links: result.links,
+                sections: result.sections
+            };
+
+            mdContent += `## ${result.title}\n\n`;
+            mdContent += `Source: [${url}](${url})\n\n`;
+
+            result.sections.forEach((section: any) => {
+                if (section.heading !== result.title) {
+                    mdContent += `### ${section.heading}\n\n`;
+                }
+                section.content.forEach((text: string) => {
+                    mdContent += `${text}\n\n`;
+                });
+            });
 
             data[url] = pageData;
             mdContent += "\n---\n\n";
@@ -124,6 +132,8 @@ async function scrapeGoogleAdsDocs() {
              console.error(`Error fetching ${fetchUrl}:`, error);
         }
     }
+
+    await browser.close();
 
     const jsonPath = "data/knowledge/google_ads_docs.json";
     fs.writeFileSync(jsonPath, JSON.stringify(data, null, 4), 'utf-8');
