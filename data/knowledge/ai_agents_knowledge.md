@@ -1,6 +1,6 @@
 # ANTIGRAVITY AI AGENTS KNOWLEDGE BASE
 
-*Last Updated: 2026-05-27T14:20:44.824Z*
+*Last Updated: 2026-05-27T00:52:19.040Z*
 
 ## DOCUMENT: AGENTS.md
 **Source:** icloud://AGENTS.md
@@ -11237,7 +11237,7 @@ Wilson Sonsini’s history is essentially the history of modern technology:
 
 ## DOCUMENT: software info by fk – software-online-review – Filip Keser
 **Source:** https://software-online-review.com
-**Ingested At:** 2026-05-27T02:02:08.077Z
+**Ingested At:** 2026-05-27T00:52:17.903Z
 
 ### Introduction
 - [ads – analitics – advertising](https://software-online-review.com/ads-analitics/)
@@ -15278,7 +15278,7 @@ Skip to content ↓
 
 ## DOCUMENT: (position) mRNA
 **Source:** https://markposition.wordpress.com
-**Ingested At:** 2026-05-27T02:02:09.011Z
+**Ingested At:** 2026-05-27T00:52:18.273Z
 
 ### Introduction
 - [Home](https://markposition.wordpress.com/blog/)
@@ -18534,7 +18534,7 @@ For those looking to transition into executive AI leadership, several high-impac
 
 ## DOCUMENT: Intelephense Documentation
 **Source:** https://intelephense.com/docs
-**Ingested At:** 2026-05-27T14:20:44.757Z
+**Ingested At:** 2026-05-27T00:52:18.995Z
 
 ### Getting Started
 
@@ -18552,7 +18552,7 @@ The Intelephense server is proprietary software released to end users under a "f
 ### Visual Studio Code
 Visual Studio Code users should install the Intelephense extension from within the extensions view or download it from the VSCode marketplace.
 
-The built-in VSCode `PHP Language Features` extension can cause excessive completion suggestions that are out of context and is best disabled. Go to the Extensions UI and search for `PHP Language Features` to disable it. Alternatively, you can disable parts of it via its configuration settings. Other third party extensions that provide similar functionality to Intelephense may also need to be disabled for best results.
+The built-in VSCode PHP Language Features extension can cause excessive completion suggestions that are out of context and is best disabled. Go to the Extensions UI and search for `PHP Language Features` to disable it. Alternatively, you can disable parts of it via its configuration settings. Other third party extensions that provide similar functionality to Intelephense may also need to be disabled for best results.
 
 Optionally purchase and enter your licence key by opening the command palette (`Ctrl+Shift+P`) and searching for `Enter licence key`.
 
@@ -18574,7 +18574,7 @@ Visual Studio Code users should install the Intelephense extension from within t
 Further configuration options are available in the `intelephense` section of settings.
 
 ### Other Editors
-Intelephense requires a Node.js runtime environment. It is recommended that you use a current LTS version of Node.js. To install Intelephense server you can use `npm`.
+Intelephense requires a Node.js runtime environment. It is recommended that you use a current LTS version of Node.js. To install Intelephense server you can use npm.
 
 ```bash
 npm i intelephense -g
@@ -18582,17 +18582,17 @@ npm i intelephense -g
 
 Intelephense needs an LSP compliant client to communicate with and integrate features into the editor. Please follow the setup guide of the relevant tool. The information below may help in configuring the client.
 
-To start the Intelephense server:
+To start the intelephense server:
 
 ```bash
 intelephense {transport}
 ```
 
 Where `{transport}` is one of:
-- `--node-ipc`
-- `--stdio`
-- `--socket={number}`
-- `--pipe={string}`
+* `--node-ipc`
+* `--stdio`
+* `--socket={number}`
+* `--pipe={string}`
 
 If your LSP client exposes `initializationOptions`, then the following values are accepted:
 
@@ -18631,10 +18631,10 @@ Please see the VSCode client `package.json` configuration property for a full li
 
 Intelephense attempts to provide reasonable defaults for all settings. Some of the more important settings to consider when getting started include:
 
-- `intelephense.files.associations` - File globs that identify PHP files. Defaults to standard PHP file extensions e.g. `*.php`.
-- `intelephense.files.maxSize` - Maximum file size in bytes to index and provide analysis for. Defaults to `1000000` (1MB).
-- `intelephense.environment.phpVersion` - PHP version to use for analysis. Defaults to the most recent stable PHP version.
-- `intelephense.stubs` - List of stubs to include. Defaults to core symbols and extensions that are bundled with PHP. If you are getting undefined symbols for built-in or PECL extensions, you may need to modify this list.
+* `intelephense.files.associations` - File globs that identify PHP files. Defaults to standard PHP file extensions e.g. `*.php`.
+* `intelephense.files.maxSize` - Maximum file size in bytes to index and provide analysis for. Defaults to `1000000` (1MB).
+* `intelephense.environment.phpVersion` - PHP version to use for analysis. Defaults to the most recent stable PHP version.
+* `intelephense.stubs` - List of stubs to include. Defaults to core symbols and extensions that are bundled with PHP. If you are getting undefined symbols for built-in or PECL extensions, you may need to modify this list.
 
 In VSCode, the settings UI can be used to modify the configuration values. For other LSP clients, please see the client documentation on how to modify these values. Intelephense supports the LSP `workspace/didChangeConfiguration` and `workspace/configuration` methods as a way of supplying configuration values to the server.
 
@@ -18736,43 +18736,43 @@ The sub-type of all types. This type can be assigned to any other type constrain
 ### Scalar Types
 Any of these types can be assigned to the other unless the `declare(strict_types=1)` directive is used in the file or `intelephense.diagnostics.strictTypes` is `true`.
 
-- `int`
-- `float`
-- `bool`
-- `string`
+* `int`
+* `float`
+* `bool`
+* `string`
 
 ### Unit Types
-- `void`
-- `null`
-- `true`
-- `false`
-- `unset`* Intelephense uses this PHP keyword to represent the type of an undefined variable.
+* `void`
+* `null`
+* `true`
+* `false`
+* `unset`* Intelephense uses this PHP keyword to represent the type of an undefined variable.
 
 ### Literal Types
-- `'myString'`* String literals are encapsulated in quotes.
-- `9`* An integer literal.
+* `'myString'`* String literals are encapsulated in quotes.
+* `9`* An integer literal.
 
 ### Object Types
-- `object`
-- `\MyNs\MyClass` Classes, interfaces, traits, and enums can be fully qualified or not. If not fully qualified then the standard PHP name resolution rules apply to determine the fully qualified name.
-- `object{name: string, optional?: string}`* Object shapes can be used to provide further information on dynamic object properties. This improves completion suggestions and type inference when accessing these properties. Optional properties can be declared by adding a `?` at the end of the name.
-- `static`
-- `self`
-- `$this`*
+* `object`
+* `\MyNs\MyClass` Classes, interfaces, traits, and enums can be fully qualified or not. If not fully qualified then the standard PHP name resolution rules apply to determine the fully qualified name.
+* `object{name: string, optional?: string}`* Object shapes can be used to provide further information on dynamic object properties. This improves completion suggestions and type inference when accessing these properties. Optional properties can be declared by adding a `?` at the end of the name.
+* `static`
+* `self`
+* `$this`*
 
 ### Array Types
-- `array`
-- `array<TKey, TValue>`* Generic form for an array where the type arguments represent the array key and value types respectively. If only a single type argument is provided then it will be normalised to `array<string|int, TValue>`.
-- `TValue[]`* Represents a numeric indexed array where the element type is `TValue`.
-- `array{description: string, 'length (cm)': float, optional?: string, ...<int, string>}`* Array shapes can be used to provide further information on array element keys and value types. This improves completion suggestions and type inference when accessing these elements. Keys with non alphanumeric characters need to be in quotes. Optional keys can be declared by adding a `?` at the end of the key. Unspecified extra elements can be declared by adding an element of form `...<TKey, TValue>`. Keys are optional and default to numerically indexed. For example a two element tuple would be `array{Type0, Type1}`. A mix of keyed and unkeyed elements is not supported.
+* `array`
+* `array<TKey, TValue>`* Generic form for an array where the type arguments represent the array key and value types respectively. If only a single type argument is provided then it will be normalised to `array<string|int, TValue>`.
+* `TValue[]`* Represents a numeric indexed array where the element type is `TValue`.
+* `array{description: string, 'length (cm)': float, optional?: string, ...<int, string>}`* Array shapes can be used to provide further information on array element keys and value types. This improves completion suggestions and type inference when accessing these elements. Keys with non alphanumeric characters need to be in quotes. Optional keys can be declared by adding a `?` at the end of the key. Unspecified extra elements can be declared by adding an element of form `...<TKey, TValue>`. Keys are optional and default to numerically indexed. For example a two element tuple would be `array{Type0, Type1}`. A mix of keyed and unkeyed elements is not supported.
 
 ### Callable Types
-- `callable` Base callable type that represents a callable string, callable array or a class that implements `__invoke`.
-- `callable(TParamA $a, TParamB $b): TReturn`* Callable type signatures can be defined to improve language intelligence. Parameter names are optional. The callable type should be wrapped in parentheses if it forms part of a union. `Closure` can be used instead of `callable` for a more specific type.
+* `callable` Base callable type that represents a callable string, callable array or a class that implements `__invoke`.
+* `callable(TParamA $a, TParamB $b): TReturn`* Callable type signatures can be defined to improve language intelligence. Parameter names are optional. The callable type should be wrapped in parentheses if it forms part of a union. `Closure` can be used instead of `callable` for a more specific type.
 
 ### Alias Types
-- `iterable` Alias for `Traversable|array`.
-- `?A` Nullable type that is shorthand for `null|A`. Cannot be used as part of a union or intersection type.
+* `iterable` Alias for `Traversable|array`.
+* `?A` Nullable type that is shorthand for `null|A`. Cannot be used as part of a union or intersection type.
 
 ### Union Types
 `A|B|C`
@@ -18794,29 +18794,29 @@ When combining union and intersection types, only a single level of nesting is p
 
 A generic type can be declared using one or many `@template` PHPDoc annotations above the target class, interface, or trait. Type arguments can then be supplied in the same order as the `@template` declarations. The following built-in types are templated:
 
-- `iterable<TKey, TValue>`
-- `Traversable<TKey, TValue>`
-- `array<TKey, TValue>`
-- `Iterator<TKey, TValue>`
-- `IteratorAggregate<TKey, TValue>`
-- `ArrayAccess<TKey, TValue>`
-- `WeakReference<TObject>`
-- `WeakMap<TKey, TValue>`
-- `Fiber<TStart, TResume, TReturn, TSuspend>`
-- `DatePeriod<TDate, TEnd>`
-- `ReflectionAttribute<TObject>`
-- `ReflectionClass<TObject>`
-- `Generator<TKey, TYield, TSend, TReturn>`
-- `ArrayObject<TKey, TValue>`
-- `SplDoublyLinkedList<TValue>`
-- `SplQueue<TValue>`
-- `SplStack<TValue>`
-- `SplHeap<TValue>`
-- `SplMinHeap<TValue>`
-- `SplMaxHeap<TValue>`
-- `SplPriorityQueue<TPriority, TValue>`
-- `SplFixedArray<TValue>`
-- `SplObjectStorage<TObject, TValue>`
+* `iterable<TKey, TValue>`
+* `Traversable<TKey, TValue>`
+* `array<TKey, TValue>`
+* `Iterator<TKey, TValue>`
+* `IteratorAggregate<TKey, TValue>`
+* `ArrayAccess<TKey, TValue>`
+* `WeakReference<TObject>`
+* `WeakMap<TKey, TValue>`
+* `Fiber<TStart, TResume, TReturn, TSuspend>`
+* `DatePeriod<TDate, TEnd>`
+* `ReflectionAttribute<TObject>`
+* `ReflectionClass<TObject>`
+* `Generator<TKey, TYield, TSend, TReturn>`
+* `ArrayObject<TKey, TValue>`
+* `SplDoublyLinkedList<TValue>`
+* `SplQueue<TValue>`
+* `SplStack<TValue>`
+* `SplHeap<TValue>`
+* `SplMinHeap<TValue>`
+* `SplMaxHeap<TValue>`
+* `SplPriorityQueue<TPriority, TValue>`
+* `SplFixedArray<TValue>`
+* `SplObjectStorage<TObject, TValue>`
 
 ### Conditional Return Type
 `(TSubject is TCompare ? TTrue : TFalse)`*
@@ -18859,15 +18859,13 @@ $item = $container->get('item'); //$item is MyContainerItem
 ```
 
 ### Miscellaneous Types
-- `resource`*
-- `class-string<T>`* A string where the value is the name of class `T`.
+* `resource`*
+* `class-string<T>`* A string where the value is the name of class `T`.
 
 ### PHPDoc Annotations
 Intelephense supports standard PHPDoc annotations as well as non-standard annotations which have been popularised by other static analysis tools such as Psalm and PHPStan. The below list describes the non-standard annotations that Intelephense supports.
 
-Some libraries or projects that have adopted static analysis tools such as Psalm or PHPStan may prefix some annotations with the tool name to avoid conflicts with other tools.
-
-To make Intelephense prefer these prefixed annotations over the un-prefixed ones, you can set the `intelephense.compatibility.preferPsalmPhpstanPrefixedAnnotations` setting to `true`.
+To make Intelephense prefer tool-prefixed annotations over un-prefixed ones, you can set the `intelephense.compatibility.preferPsalmPhpstanPrefixedAnnotations` setting to `true`.
 
 ### @template
 `/** @template TemplateName of OptionalTypeConstraint = OptionalDefaultType */`
@@ -18887,7 +18885,7 @@ Used to declare the type arguments supplied to a generic trait. The alias `@use`
 
 ### @param-closure-this
 `/** @param-closure-this Type $parameter */`
-Declares the type of the `$this` variable inside a closure that is passed as a parameter to a function or method.
+Declares the type of the `$this` variable inside a closure passed as a parameter.
 
 ### @param-out
 `/** @param-out Type &$parameter */`
@@ -18895,19 +18893,19 @@ Declares the out type of a by-reference parameter.
 
 ### @assert
 `/** @assert Type $parameter */`
-Declares a function or method that asserts that an argument is of the specified type.
+Declares that a function asserts an argument is of a specified type.
 
 ### @assert-if-true @assert-if-false
 `/** @assert-if-true Type $parameter */`
-Asserts that the passed variable is of the specified type on the true or false code path respectively.
+Asserts type narrowing on the true or false code paths.
 
 ### @mixin
 `/** @mixin ClassName */`
-Declares that the members of the specified class are mixed in via magic methods. (Premium feature).
+Declares that members of a class are mixed in via magic methods. (Premium feature).
 
 ### @disregard
 `/** @disregard PXXXX */`
-Used to suppress a specific diagnostic at the statement following the annotation.
+Suppresses a specific diagnostic at the following statement.
 
 ### @type-alias
 `/** @type-alias TypeName = Type */`
@@ -18915,141 +18913,135 @@ Declares a type alias.
 
 ### @import-type
 `/** @import-type TypeName as OptionalAlias */`
-Used to import a type alias that has been declared in another file.
+Imports a type alias from another file.
 
 ### Features
-Intelephense provides a variety of features to enhance the development experience when working with PHP code. Many of these features are provided for free while others require a Premium licence to access.  The features are available to all LSP clients that support the relevant LSP methods. Keybindings listed for each feature are the defaults for the VS Code client.
 
-### Free Features
-The following features are available to all users of Intelephense. A licence is not necessary.
 
 ### Workspace Symbols
-- **Availability**: FREE
-- **LSP**: `workspace/symbol`
-- **Keybinding**: `Ctrl+T`
+* **Availability**: FREE
+* **LSP**: `workspace/symbol`
+* **Keybinding**: `Ctrl+T`
 Search for symbols in your workspace and navigate to their definitions. Supports Fully Qualified Structural Element Name (FQSEN) queries.
 
 ### Document Symbols
-- **Availability**: FREE
-- **LSP**: `textDocument/documentSymbol`
-- **Keybinding**: `Ctrl+Shift+O`
+* **Availability**: FREE
+* **LSP**: `textDocument/documentSymbol`
+* **Keybinding**: `Ctrl+Shift+O`
 Lists all symbols in the current document for outline views and breadcrumb navigation.
 
 ### Go to Definition
-- **Availability**: FREE
-- **LSP**: `textDocument/definition`
-- **Keybinding**: `F12`
+* **Availability**: FREE
+* **LSP**: `textDocument/definition`
+* **Keybinding**: `F12`
 Navigate to the definition of a symbol.
 
 ### Hover
-- **Availability**: FREE
-- **LSP**: `textDocument/hover`
-- **Keybinding**: `Ctrl+K Ctrl+I`
+* **Availability**: FREE
+* **LSP**: `textDocument/hover`
+* **Keybinding**: `Ctrl+K Ctrl+I`
 Shows type information, signature, and documentation on mouse-over.
 
 ### Highlight
-- **Availability**: FREE
-- **LSP**: `textDocument/documentHighlight`
+* **Availability**: FREE
+* **LSP**: `textDocument/documentHighlight`
 Highlights all references to the symbol at the cursor position in the current file.
 
 ### Code Completion
-- **Availability**: FREE
-- **LSP**: `textDocument/completion`
-- **Keybinding**: `Ctrl+Space`
+* **Availability**: FREE
+* **LSP**: `textDocument/completion`
+* **Keybinding**: `Ctrl+Space`
 Context-aware suggestions for symbols as you type.
 
 ### Signature Help
-- **Availability**: FREE
-- **LSP**: `textDocument/signatureHelp`
-- **Keybinding**: `Ctrl+Shift+Space`
+* **Availability**: FREE
+* **LSP**: `textDocument/signatureHelp`
+* **Keybinding**: `Ctrl+Shift+Space`
 Displays parameter information during function or method calls.
 
 ### Find All References
-- **Availability**: FREE
-- **LSP**: `textDocument/references`
-- **Keybinding**: `Shift+F12`
+* **Availability**: FREE
+* **LSP**: `textDocument/references`
+* **Keybinding**: `Shift+F12`
 Lists every usage of a symbol across the workspace.
 
 ### Formatting
-- **Availability**: FREE
-- **LSP**: `textDocument/formatting`
+* **Availability**: FREE
+* **LSP**: `textDocument/formatting`
 Opinionated formatter complying with PHP-FIG coding standards.
 
 ### Diagnostics
-- **Availability**: FREE
-- **LSP**: `textDocument/publishDiagnostics`
+* **Availability**: FREE
+* **LSP**: `textDocument/publishDiagnostics`
 Surfaces syntax errors, type errors, and other issues as you type or on save.
 
 ### Inline Values
-- **Availability**: FREE
-- **LSP**: `textDocument/inlineValues`
+* **Availability**: FREE
+* **LSP**: `textDocument/inlineValues`
 Displays variable states inline during a debug session (requires Xdebug).
 
 ### Embedded Languages
 Provides language intelligence for HTML, CSS, and JavaScript within PHP files.
 
-### Premium Features
-The following features require a licence to access. A licence can be purchased at the checkout page.
-
 ### Rename
-- **Availability**: PREMIUM
-- **LSP**: `textDocument/rename`
-- **Keybinding**: `F2`
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/rename`
+* **Keybinding**: `F2`
 Refactors a symbol and all its references across the workspace.
 
 ### Code Folding
-- **Availability**: PREMIUM
-- **LSP**: `textDocument/foldingRange`
-- **Keybinding**: `Ctrl+Shift+[`
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/foldingRange`
+* **Keybinding**: `Ctrl+Shift+[`
 Collapses and expands regions based on the syntax tree.
 
 ### Find All Implementations
-- **Availability**: PREMIUM
-- **LSP**: `textDocument/implementation`
-- **Keybinding**: `Ctrl+F12`
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/implementation`
+* **Keybinding**: `Ctrl+F12`
 Lists concrete classes implementing an interface or abstract method.
 
 ### Go to Type Definition
-- **Availability**: PREMIUM
-- **LSP**: `textDocument/typeDefinition`
-Navigates to the type definition of a variable.
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/typeDefinition`
+Navigates to the type of a variable.
 
 ### Go to Declaration
-- **Availability**: PREMIUM
-- **LSP**: `textDocument/declaration`
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/declaration`
 Navigates to the initial declaration in a type hierarchy.
 
 ### Smart Select
-- **Availability**: PREMIUM
-- **LSP**: `textDocument/selectionRange`
-- **Keybinding**: `Shift+Alt+→`
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/selectionRange`
+* **Keybinding**: `Shift+Alt+→`
 Expands or shrinks the selection based on the syntax tree.
 
 ### Type Hierarchy
-- **Availability**: PREMIUM
-- **LSP**: `textDocument/typeHierarchy`
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/typeHierarchy`
 Shows the inheritance structure of a type.
 
 ### Code Lens
-- **Availability**: PREMIUM
-- **LSP**: `textDocument/codeLens`
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/codeLens`
 Displays reference counts and navigation links above declarations.
 
 ### Inlay Hints
-- **Availability**: PREMIUM
-- **LSP**: `textDocument/inlayHint`
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/inlayHint`
 Shows inferred parameter names and return types inline.
 
 ### Document Links
-- **Availability**: PREMIUM
-- **LSP**: `textDocument/documentLink`
-- **Keybinding**: `Ctrl+Click`
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/documentLink`
+* **Keybinding**: `Ctrl+Click`
 Makes `require`/`include` paths and `@see` annotations clickable.
 
 ### Code Actions
-- **Availability**: PREMIUM
-- **LSP**: `textDocument/codeAction`
-- **Keybinding**: `Ctrl+.`
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/codeAction`
+* **Keybinding**: `Ctrl+.`
 Provides quick-fix and refactoring options (e.g., Import Symbol, Add PHPDoc).
 
 ### Compatibility With Frameworks and Libraries
@@ -24959,7 +24951,7 @@ Last updated 2026-04-25 UTC.
 
 ## DOCUMENT: iCloud: autonomous_strategies.md
 **Source:** icloud://autonomous_strategies.md
-**Ingested At:** 2026-05-27T02:02:05.250Z
+**Ingested At:** 2026-05-27T00:52:16.751Z
 
 ### Multi-Cloud Mesh
 Implement a decentralized mesh of autonomous agents across AWS, GCP, and Azure to ensure 100% availability.
@@ -24971,7 +24963,7 @@ Nodes should autonomously migrate between regions based on latency and compute c
 
 ## DOCUMENT: 2026 Market Intelligence
 **Source:** icloud://market_intelligence.json
-**Ingested At:** 2026-05-27T02:02:05.580Z
+**Ingested At:** 2026-05-27T00:52:16.849Z
 
 ### Emerging Frontiers
 Autonomous organisms are becoming the standard for enterprise digital architecture.
@@ -24980,7 +24972,7 @@ Autonomous organisms are becoming the standard for enterprise digital architectu
 
 ## DOCUMENT: iCloud: neural_sync_docs.md
 **Source:** icloud://neural_sync_docs.md
-**Ingested At:** 2026-05-27T02:02:05.895Z
+**Ingested At:** 2026-05-27T00:52:16.927Z
 
 ### Phase 12: Global Neural Synchronization
 Global Neural Synchronization (GNS) is the final milestone in the Antigravity Evolution Roadmap. It enables real-time, zero-latency state convergence across all distributed neural nodes in the ecosystem.
@@ -24994,7 +24986,7 @@ Global Neural Synchronization (GNS) is the final milestone in the Antigravity Ev
 
 ## DOCUMENT: iCloud: test_knowledge.md
 **Source:** icloud://test_knowledge.md
-**Ingested At:** 2026-05-27T02:02:06.150Z
+**Ingested At:** 2026-05-27T00:52:16.977Z
 
 ### New Knowledge from iCloud
 This is some test knowledge.
@@ -25018,13 +25010,13 @@ Nodes should autonomously migrate between regions based on latency and compute c
 
 ## DOCUMENT: Google Antigravity
 **Source:** https://antigravity.google/product/antigravity-cli
-**Ingested At:** 2026-05-27T02:02:09.482Z
+**Ingested At:** 2026-05-27T00:52:18.385Z
 
 ---
 
 ## DOCUMENT: caio_role_docs.md
 **Source:** local://caio_role_docs.md
-**Ingested At:** 2026-05-27T02:02:09.619Z
+**Ingested At:** 2026-05-27T00:52:18.445Z
 
 ### Core Job Description
 A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an organization’s entire artificial intelligence strategy. The role bridges the gap between advanced technical execution and bottom-line business outcomes. A Chief AI Officer directs how a company develops, procures, and implements AI to boost productivity, enter new markets, and maintain a competitive edge.
@@ -25106,7 +25098,7 @@ For those looking to transition into executive AI leadership, high-impact certif
 
 ## DOCUMENT: intelephense_docs.md
 **Source:** local://intelephense_docs.md
-**Ingested At:** 2026-05-27T02:02:09.869Z
+**Ingested At:** 2026-05-27T00:52:18.502Z
 
 ### Getting Started
 
@@ -25124,12 +25116,12 @@ The Intelephense server is proprietary software released to end users under a "f
 ### Visual Studio Code
 Visual Studio Code users should install the Intelephense extension from within the extensions view or download it from the VSCode marketplace.
 
-The built-in VSCode `PHP Language Features` extension can cause excessive completion suggestions that are out of context and is best disabled. Go to the Extensions UI and search for `PHP Language Features` to disable it. Alternatively, you can disable parts of it via its configuration settings. Other third party extensions that provide similar functionality to Intelephense may also need to be disabled for best results.
+The built-in VSCode PHP Language Features extension can cause excessive completion suggestions that are out of context and is best disabled. Go to the Extensions UI and search for `PHP Language Features` to disable it. Alternatively, you can disable parts of it via its configuration settings. Other third party extensions that provide similar functionality to Intelephense may also need to be disabled for best results.
 
 Optionally purchase and enter your licence key by opening the command palette (`Ctrl+Shift+P`) and searching for `Enter licence key`.
 
 ### Other Editors
-Intelephense requires a Node.js runtime environment. It is recommended that you use a current LTS version of Node.js. To install Intelephense server you can use `npm`.
+Intelephense requires a Node.js runtime environment. It is recommended that you use a current LTS version of Node.js. To install Intelephense server you can use npm.
 
 ```bash
 npm i intelephense -g
@@ -25137,17 +25129,17 @@ npm i intelephense -g
 
 Intelephense needs an LSP compliant client to communicate with and integrate features into the editor. Please follow the setup guide of the relevant tool. The information below may help in configuring the client.
 
-To start the Intelephense server:
+To start the intelephense server:
 
 ```bash
 intelephense {transport}
 ```
 
 Where `{transport}` is one of:
-- `--node-ipc`
-- `--stdio`
-- `--socket={number}`
-- `--pipe={string}`
+* `--node-ipc`
+* `--stdio`
+* `--socket={number}`
+* `--pipe={string}`
 
 If your LSP client exposes `initializationOptions`, then the following values are accepted:
 
@@ -25186,10 +25178,10 @@ Please see the VSCode client `package.json` configuration property for a full li
 
 Intelephense attempts to provide reasonable defaults for all settings. Some of the more important settings to consider when getting started include:
 
-- `intelephense.files.associations` - File globs that identify PHP files. Defaults to standard PHP file extensions e.g. `*.php`.
-- `intelephense.files.maxSize` - Maximum file size in bytes to index and provide analysis for. Defaults to `1000000` (1MB).
-- `intelephense.environment.phpVersion` - PHP version to use for analysis. Defaults to the most recent stable PHP version.
-- `intelephense.stubs` - List of stubs to include. Defaults to core symbols and extensions that are bundled with PHP. If you are getting undefined symbols for built-in or PECL extensions, you may need to modify this list.
+* `intelephense.files.associations` - File globs that identify PHP files. Defaults to standard PHP file extensions e.g. `*.php`.
+* `intelephense.files.maxSize` - Maximum file size in bytes to index and provide analysis for. Defaults to `1000000` (1MB).
+* `intelephense.environment.phpVersion` - PHP version to use for analysis. Defaults to the most recent stable PHP version.
+* `intelephense.stubs` - List of stubs to include. Defaults to core symbols and extensions that are bundled with PHP. If you are getting undefined symbols for built-in or PECL extensions, you may need to modify this list.
 
 In VSCode, the settings UI can be used to modify the configuration values. For other LSP clients, please see the client documentation on how to modify these values. Intelephense supports the LSP `workspace/didChangeConfiguration` and `workspace/configuration` methods as a way of supplying configuration values to the server.
 
@@ -25291,43 +25283,43 @@ The sub-type of all types. This type can be assigned to any other type constrain
 ### Scalar Types
 Any of these types can be assigned to the other unless the `declare(strict_types=1)` directive is used in the file or `intelephense.diagnostics.strictTypes` is `true`.
 
-- `int`
-- `float`
-- `bool`
-- `string`
+* `int`
+* `float`
+* `bool`
+* `string`
 
 ### Unit Types
-- `void`
-- `null`
-- `true`
-- `false`
-- `unset`* Intelephense uses this PHP keyword to represent the type of an undefined variable.
+* `void`
+* `null`
+* `true`
+* `false`
+* `unset`* Intelephense uses this PHP keyword to represent the type of an undefined variable.
 
 ### Literal Types
-- `'myString'`* String literals are encapsulated in quotes.
-- `9`* An integer literal.
+* `'myString'`* String literals are encapsulated in quotes.
+* `9`* An integer literal.
 
 ### Object Types
-- `object`
-- `\MyNs\MyClass` Classes, interfaces, traits, and enums can be fully qualified or not. If not fully qualified then the standard PHP name resolution rules apply to determine the fully qualified name.
-- `object{name: string, optional?: string}`* Object shapes can be used to provide further information on dynamic object properties. This improves completion suggestions and type inference when accessing these properties. Optional properties can be declared by adding a `?` at the end of the name.
-- `static`
-- `self`
-- `$this`*
+* `object`
+* `\MyNs\MyClass` Classes, interfaces, traits, and enums can be fully qualified or not. If not fully qualified then the standard PHP name resolution rules apply to determine the fully qualified name.
+* `object{name: string, optional?: string}`* Object shapes can be used to provide further information on dynamic object properties. This improves completion suggestions and type inference when accessing these properties. Optional properties can be declared by adding a `?` at the end of the name.
+* `static`
+* `self`
+* `$this`*
 
 ### Array Types
-- `array`
-- `array<TKey, TValue>`* Generic form for an array where the type arguments represent the array key and value types respectively. If only a single type argument is provided then it will be normalised to `array<string|int, TValue>`.
-- `TValue[]`* Represents a numeric indexed array where the element type is `TValue`.
-- `array{description: string, 'length (cm)': float, optional?: string, ...<int, string>}`* Array shapes can be used to provide further information on array element keys and value types. This improves completion suggestions and type inference when accessing these elements. Keys with non alphanumeric characters need to be in quotes. Optional keys can be declared by adding a `?` at the end of the key. Unspecified extra elements can be declared by adding an element of form `...<TKey, TValue>`. Keys are optional and default to numerically indexed. For example a two element tuple would be `array{Type0, Type1}`. A mix of keyed and unkeyed elements is not supported.
+* `array`
+* `array<TKey, TValue>`* Generic form for an array where the type arguments represent the array key and value types respectively. If only a single type argument is provided then it will be normalised to `array<string|int, TValue>`.
+* `TValue[]`* Represents a numeric indexed array where the element type is `TValue`.
+* `array{description: string, 'length (cm)': float, optional?: string, ...<int, string>}`* Array shapes can be used to provide further information on array element keys and value types. This improves completion suggestions and type inference when accessing these elements. Keys with non alphanumeric characters need to be in quotes. Optional keys can be declared by adding a `?` at the end of the key. Unspecified extra elements can be declared by adding an element of form `...<TKey, TValue>`. Keys are optional and default to numerically indexed. For example a two element tuple would be `array{Type0, Type1}`. A mix of keyed and unkeyed elements is not supported.
 
 ### Callable Types
-- `callable` Base callable type that represents a callable string, callable array or a class that implements `__invoke`.
-- `callable(TParamA $a, TParamB $b): TReturn`* Callable type signatures can be defined to improve language intelligence. Parameter names are optional. The callable type should be wrapped in parentheses if it forms part of a union. `Closure` can be used instead of `callable` for a more specific type.
+* `callable` Base callable type that represents a callable string, callable array or a class that implements `__invoke`.
+* `callable(TParamA $a, TParamB $b): TReturn`* Callable type signatures can be defined to improve language intelligence. Parameter names are optional. The callable type should be wrapped in parentheses if it forms part of a union. `Closure` can be used instead of `callable` for a more specific type.
 
 ### Alias Types
-- `iterable` Alias for `Traversable|array`.
-- `?A` Nullable type that is shorthand for `null|A`. Cannot be used as part of a union or intersection type.
+* `iterable` Alias for `Traversable|array`.
+* `?A` Nullable type that is shorthand for `null|A`. Cannot be used as part of a union or intersection type.
 
 ### Union Types
 `A|B|C`
@@ -25349,29 +25341,29 @@ When combining union and intersection types, only a single level of nesting is p
 
 A generic type can be declared using one or many `@template` PHPDoc annotations above the target class, interface, or trait. Type arguments can then be supplied in the same order as the `@template` declarations. The following built-in types are templated:
 
-- `iterable<TKey, TValue>`
-- `Traversable<TKey, TValue>`
-- `array<TKey, TValue>`
-- `Iterator<TKey, TValue>`
-- `IteratorAggregate<TKey, TValue>`
-- `ArrayAccess<TKey, TValue>`
-- `WeakReference<TObject>`
-- `WeakMap<TKey, TValue>`
-- `Fiber<TStart, TResume, TReturn, TSuspend>`
-- `DatePeriod<TDate, TEnd>`
-- `ReflectionAttribute<TObject>`
-- `ReflectionClass<TObject>`
-- `Generator<TKey, TYield, TSend, TReturn>`
-- `ArrayObject<TKey, TValue>`
-- `SplDoublyLinkedList<TValue>`
-- `SplQueue<TValue>`
-- `SplStack<TValue>`
-- `SplHeap<TValue>`
-- `SplMinHeap<TValue>`
-- `SplMaxHeap<TValue>`
-- `SplPriorityQueue<TPriority, TValue>`
-- `SplFixedArray<TValue>`
-- `SplObjectStorage<TObject, TValue>`
+* `iterable<TKey, TValue>`
+* `Traversable<TKey, TValue>`
+* `array<TKey, TValue>`
+* `Iterator<TKey, TValue>`
+* `IteratorAggregate<TKey, TValue>`
+* `ArrayAccess<TKey, TValue>`
+* `WeakReference<TObject>`
+* `WeakMap<TKey, TValue>`
+* `Fiber<TStart, TResume, TReturn, TSuspend>`
+* `DatePeriod<TDate, TEnd>`
+* `ReflectionAttribute<TObject>`
+* `ReflectionClass<TObject>`
+* `Generator<TKey, TYield, TSend, TReturn>`
+* `ArrayObject<TKey, TValue>`
+* `SplDoublyLinkedList<TValue>`
+* `SplQueue<TValue>`
+* `SplStack<TValue>`
+* `SplHeap<TValue>`
+* `SplMinHeap<TValue>`
+* `SplMaxHeap<TValue>`
+* `SplPriorityQueue<TPriority, TValue>`
+* `SplFixedArray<TValue>`
+* `SplObjectStorage<TObject, TValue>`
 
 ### Conditional Return Type
 `(TSubject is TCompare ? TTrue : TFalse)`*
@@ -25414,15 +25406,13 @@ $item = $container->get('item'); //$item is MyContainerItem
 ```
 
 ### Miscellaneous Types
-- `resource`*
-- `class-string<T>`* A string where the value is the name of class `T`.
+* `resource`*
+* `class-string<T>`* A string where the value is the name of class `T`.
 
 ### PHPDoc Annotations
 Intelephense supports standard PHPDoc annotations as well as non-standard annotations which have been popularised by other static analysis tools such as Psalm and PHPStan. The below list describes the non-standard annotations that Intelephense supports.
 
-Some libraries or projects that have adopted static analysis tools such as Psalm or PHPStan may prefix some annotations with the tool name to avoid conflicts with other tools.
-
-To make Intelephense prefer these prefixed annotations over the un-prefixed ones, you can set the `intelephense.compatibility.preferPsalmPhpstanPrefixedAnnotations` setting to `true`.
+To make Intelephense prefer tool-prefixed annotations over un-prefixed ones, you can set the `intelephense.compatibility.preferPsalmPhpstanPrefixedAnnotations` setting to `true`.
 
 ### @template
 `/** @template TemplateName of OptionalTypeConstraint = OptionalDefaultType */`
@@ -25442,7 +25432,7 @@ Used to declare the type arguments supplied to a generic trait. The alias `@use`
 
 ### @param-closure-this
 `/** @param-closure-this Type $parameter */`
-Declares the type of the `$this` variable inside a closure that is passed as a parameter to a function or method.
+Declares the type of the `$this` variable inside a closure passed as a parameter.
 
 ### @param-out
 `/** @param-out Type &$parameter */`
@@ -25450,19 +25440,19 @@ Declares the out type of a by-reference parameter.
 
 ### @assert
 `/** @assert Type $parameter */`
-Declares a function or method that asserts that an argument is of the specified type.
+Declares that a function asserts an argument is of a specified type.
 
 ### @assert-if-true @assert-if-false
 `/** @assert-if-true Type $parameter */`
-Asserts that the passed variable is of the specified type on the true or false code path respectively.
+Asserts type narrowing on the true or false code paths.
 
 ### @mixin
 `/** @mixin ClassName */`
-Declares that the members of the specified class are mixed in via magic methods. (Premium feature).
+Declares that members of a class are mixed in via magic methods. (Premium feature).
 
 ### @disregard
 `/** @disregard PXXXX */`
-Used to suppress a specific diagnostic at the statement following the annotation.
+Suppresses a specific diagnostic at the following statement.
 
 ### @type-alias
 `/** @type-alias TypeName = Type */`
@@ -25470,141 +25460,135 @@ Declares a type alias.
 
 ### @import-type
 `/** @import-type TypeName as OptionalAlias */`
-Used to import a type alias that has been declared in another file.
+Imports a type alias from another file.
 
 ### Features
-Intelephense provides a variety of features to enhance the development experience when working with PHP code. Many of these features are provided for free while others require a Premium licence to access. All images and videos in this section are taken from the VS Code client. The features are available to all LSP clients that support the relevant LSP methods. Keybindings listed for each feature are the defaults for the VS Code client.
 
-### Free Features
-The following features are available to all users of Intelephense. A licence is not necessary.
 
 ### Workspace Symbols
-- **Availability**: FREE
-- **LSP**: `workspace/symbol`
-- **Keybinding**: `Ctrl+T`
+* **Availability**: FREE
+* **LSP**: `workspace/symbol`
+* **Keybinding**: `Ctrl+T`
 Search for symbols in your workspace and navigate to their definitions. Supports Fully Qualified Structural Element Name (FQSEN) queries.
 
 ### Document Symbols
-- **Availability**: FREE
-- **LSP**: `textDocument/documentSymbol`
-- **Keybinding**: `Ctrl+Shift+O`
+* **Availability**: FREE
+* **LSP**: `textDocument/documentSymbol`
+* **Keybinding**: `Ctrl+Shift+O`
 Lists all symbols in the current document for outline views and breadcrumb navigation.
 
 ### Go to Definition
-- **Availability**: FREE
-- **LSP**: `textDocument/definition`
-- **Keybinding**: `F12`
+* **Availability**: FREE
+* **LSP**: `textDocument/definition`
+* **Keybinding**: `F12`
 Navigate to the definition of a symbol.
 
 ### Hover
-- **Availability**: FREE
-- **LSP**: `textDocument/hover`
-- **Keybinding**: `Ctrl+K Ctrl+I`
+* **Availability**: FREE
+* **LSP**: `textDocument/hover`
+* **Keybinding**: `Ctrl+K Ctrl+I`
 Shows type information, signature, and documentation on mouse-over.
 
 ### Highlight
-- **Availability**: FREE
-- **LSP**: `textDocument/documentHighlight`
+* **Availability**: FREE
+* **LSP**: `textDocument/documentHighlight`
 Highlights all references to the symbol at the cursor position in the current file.
 
 ### Code Completion
-- **Availability**: FREE
-- **LSP**: `textDocument/completion`
-- **Keybinding**: `Ctrl+Space`
+* **Availability**: FREE
+* **LSP**: `textDocument/completion`
+* **Keybinding**: `Ctrl+Space`
 Context-aware suggestions for symbols as you type.
 
 ### Signature Help
-- **Availability**: FREE
-- **LSP**: `textDocument/signatureHelp`
-- **Keybinding**: `Ctrl+Shift+Space`
+* **Availability**: FREE
+* **LSP**: `textDocument/signatureHelp`
+* **Keybinding**: `Ctrl+Shift+Space`
 Displays parameter information during function or method calls.
 
 ### Find All References
-- **Availability**: FREE
-- **LSP**: `textDocument/references`
-- **Keybinding**: `Shift+F12`
+* **Availability**: FREE
+* **LSP**: `textDocument/references`
+* **Keybinding**: `Shift+F12`
 Lists every usage of a symbol across the workspace.
 
 ### Formatting
-- **Availability**: FREE
-- **LSP**: `textDocument/formatting`
+* **Availability**: FREE
+* **LSP**: `textDocument/formatting`
 Opinionated formatter complying with PHP-FIG coding standards.
 
 ### Diagnostics
-- **Availability**: FREE
-- **LSP**: `textDocument/publishDiagnostics`
+* **Availability**: FREE
+* **LSP**: `textDocument/publishDiagnostics`
 Surfaces syntax errors, type errors, and other issues as you type or on save.
 
 ### Inline Values
-- **Availability**: FREE
-- **LSP**: `textDocument/inlineValues`
+* **Availability**: FREE
+* **LSP**: `textDocument/inlineValues`
 Displays variable states inline during a debug session (requires Xdebug).
 
 ### Embedded Languages
 Provides language intelligence for HTML, CSS, and JavaScript within PHP files.
 
-### Premium Features
-The following features require a licence to access. A licence can be purchased at the checkout page.
-
 ### Rename
-- **Availability**: PREMIUM
-- **LSP**: `textDocument/rename`
-- **Keybinding**: `F2`
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/rename`
+* **Keybinding**: `F2`
 Refactors a symbol and all its references across the workspace.
 
 ### Code Folding
-- **Availability**: PREMIUM
-- **LSP**: `textDocument/foldingRange`
-- **Keybinding**: `Ctrl+Shift+[`
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/foldingRange`
+* **Keybinding**: `Ctrl+Shift+[`
 Collapses and expands regions based on the syntax tree.
 
 ### Find All Implementations
-- **Availability**: PREMIUM
-- **LSP**: `textDocument/implementation`
-- **Keybinding**: `Ctrl+F12`
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/implementation`
+* **Keybinding**: `Ctrl+F12`
 Lists concrete classes implementing an interface or abstract method.
 
 ### Go to Type Definition
-- **Availability**: PREMIUM
-- **LSP**: `textDocument/typeDefinition`
-Navigates to the type definition of a variable.
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/typeDefinition`
+Navigates to the type of a variable.
 
 ### Go to Declaration
-- **Availability**: PREMIUM
-- **LSP**: `textDocument/declaration`
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/declaration`
 Navigates to the initial declaration in a type hierarchy.
 
 ### Smart Select
-- **Availability**: PREMIUM
-- **LSP**: `textDocument/selectionRange`
-- **Keybinding**: `Shift+Alt+→`
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/selectionRange`
+* **Keybinding**: `Shift+Alt+→`
 Expands or shrinks the selection based on the syntax tree.
 
 ### Type Hierarchy
-- **Availability**: PREMIUM
-- **LSP**: `textDocument/typeHierarchy`
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/typeHierarchy`
 Shows the inheritance structure of a type.
 
 ### Code Lens
-- **Availability**: PREMIUM
-- **LSP**: `textDocument/codeLens`
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/codeLens`
 Displays reference counts and navigation links above declarations.
 
 ### Inlay Hints
-- **Availability**: PREMIUM
-- **LSP**: `textDocument/inlayHint`
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/inlayHint`
 Shows inferred parameter names and return types inline.
 
 ### Document Links
-- **Availability**: PREMIUM
-- **LSP**: `textDocument/documentLink`
-- **Keybinding**: `Ctrl+Click`
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/documentLink`
+* **Keybinding**: `Ctrl+Click`
 Makes `require`/`include` paths and `@see` annotations clickable.
 
 ### Code Actions
-- **Availability**: PREMIUM
-- **LSP**: `textDocument/codeAction`
-- **Keybinding**: `Ctrl+.`
+* **Availability**: PREMIUM
+* **LSP**: `textDocument/codeAction`
+* **Keybinding**: `Ctrl+.`
 Provides quick-fix and refactoring options (e.g., Import Symbol, Add PHPDoc).
 
 ### Compatibility With Frameworks and Libraries

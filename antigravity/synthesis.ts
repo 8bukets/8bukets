@@ -190,12 +190,12 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
-  // Gap Analysis 20: Decentralized Swarm Orchestrator (Phase 13)
-  if (!files.some(f => f.includes('swarm_orchestrator'))) {
+  // Gap Analysis 20: Sentiment Analysis Service
+  if (!files.some(f => f.includes('sentiment_analysis'))) {
     ideas.push({
-      feature: 'Decentralized Swarm Orchestrator',
-      rationale: 'Implements Phase 13 swarm intelligence protocols for cross-cloud agent coordination and identity anchoring.',
-      complexity: 'High'
+      feature: 'Sentiment Analysis Service',
+      rationale: 'Autonomously analyzes user feedback and system logs to gauge ecosystem sentiment and health.',
+      complexity: 'Medium'
     })
   }
 
