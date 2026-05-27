@@ -27,6 +27,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Connect and Collaborate
+        run: npm run connect
+
       - name: Ignite Continuous Autonomous Cycle
         run: npm run ignite
         env:
