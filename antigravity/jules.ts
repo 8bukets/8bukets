@@ -300,7 +300,7 @@ export class Jules {
       const macbookPresence = await db.collection('agent_presence').findOne({
         agent: 'Jules',
         'telemetry.node_id': 'macbook-primary-01',
-        lastSeen: { $gt: new Date(Date.now() - 30 * 60 * 1000).toISOString() }
+        lastSeen: { $gt: new Date(Date.now() - 15 * 60 * 1000).toISOString() }
       })
 
       if (isCloud) {
@@ -492,6 +492,13 @@ export class Jules {
   public async executeWorkCycle() {
     await this.ensureInitialized()
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
+
+    // Phase 22: Immediate Cloud Sovereignty Handover
+    const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
+    if (isCloud) {
+      console.log('☁️ [Jules] Cloud environment detected. Ensuring immediate PR/MR audit for "Merge and Work" mandate...')
+      await this.processPullRequests()
+    }
 
     try {
       // Phase 12: Global Neural Sync (Phase 12 Convergence)
