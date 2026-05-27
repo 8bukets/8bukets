@@ -1,0 +1,101 @@
+build-job:
+  stage: build
+  script:
+    - echo "Hello, $GITLAB_USER_LOGIN!"
+
+test-job1:
+  stage: test
+  script:
+    - echo "This job tests something"
+
+test-job2:
+  stage: test
+  script:
+    - echo "This job tests something, but takes more time than test-job1."
+    - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
+    - echo "which simulates a test that runs 20 seconds longer than test-job1"
+    - sleep 20
+
+deploy-prod:
+  stage: deploy
+  script:
+    - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
+  environment: production
+
+run-autonomous-feedback_analysis:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Feedback Analysis Service"
+    - npx tsx antigravity/workflows/feedback_analysis_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-performance_monitoring:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Performance Monitoring Service"
+    - npx tsx antigravity/workflows/performance_monitoring_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-cognitive_security:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Cognitive Security Service"
+    - npx tsx antigravity/workflows/cognitive_security_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-visual_neural_relay:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Visual Neural Relay"
+    - npx tsx antigravity/workflows/visual_neural_relay_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-feature_scaling_coordinator:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Feature Scaling Coordinator"
+    - npx tsx antigravity/workflows/feature_scaling_coordinator_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-autonomous_resource_optimizer:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Autonomous Resource Optimizer"
+    - npx tsx antigravity/workflows/autonomous_resource_optimizer_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-proactive_scalability:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Proactive Scalability Service"
+    - npx tsx antigravity/workflows/proactive_scalability_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+market-analysis:
+  stage: test
+  script:
+    - npm run ingest:sor
+    - npm run ingest:forbes
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+daily-tasks:
+  stage: test
+  script:
+    - npm run daily
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+autonomous-evolution:
+  stage: test
+  script:
+    - npx tsx scripts/execute_creation_cycle.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"

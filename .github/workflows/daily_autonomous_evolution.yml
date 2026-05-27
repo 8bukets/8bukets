@@ -1,0 +1,42 @@
+name: Daily Autonomous Evolution
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  evolution-cycle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Connect and Collaborate
+        run: npm run connect
+        env:
+          MACBOOK_CLOUD_SIMULATION: true
+
+      - name: Execute Autonomous Session Analysis and Self-Correction
+        run: npx tsx scripts/execute_creation_cycle.ts
+        env:
+          AUTONOMOUS_MODE: cloud
+          MACBOOK_CLOUD_SIMULATION: true
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
