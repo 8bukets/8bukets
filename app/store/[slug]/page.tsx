@@ -5,6 +5,8 @@ import { PageProps, resolve } from '@/antigravity/core'
 
 // Mock fetching function
 async function getProduct(slug: string) {
+  // [Evolution] TODO: Add autonomous error handling (try/catch)
+  // [Evolution] TODO: Add autonomous error handling (try/catch)
   'use cache'
   // In a real app, this would fetch from a database or API
   return {

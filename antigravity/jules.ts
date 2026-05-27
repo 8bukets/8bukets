@@ -383,6 +383,13 @@ export class Jules {
         await this.recordTask(`ReAct Improvement: Synthesized ${sessionAnalysisIdeas.length} ideas from recent sessions.`);
         await creationEngine.processIdeas(sessionAnalysisIdeas);
       }
+
+      // Deep Cognitive Self-Correction
+      const { deepCognitiveSelfCorrectionService } = await import('./services/deep_cognitive_self_correction');
+      const corrections = await deepCognitiveSelfCorrectionService.analyzeAndCorrect({ branches, workOrders: fullWorkOrders });
+      if (corrections.length > 0) {
+        await this.recordTask(`Deep Self-Correction: Identified and processed ${corrections.length} advanced optimizations.`);
+      }
     } catch (err) {
       console.error(`❌ [Jules] Failed autonomous improvement cycle:`, err);
     }
