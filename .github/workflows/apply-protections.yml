@@ -1,0 +1,43 @@
+name: Apply branch protections and set default branch
+
+on:
+  workflow_dispatch:
+
+jobs:
+  apply-protections:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Apply protections using admin token
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const branch = 'main';
+
+            // Set default branch to main
+            await github.rest.repos.update({ owner, repo, default_branch: branch });
+            console.log(`Set default branch to ${branch}`);
+
+            // Apply branch protection rule
+            await github.request('PUT /repos/{owner}/{repo}/branches/{branch}/protection', {
+              owner,
+              repo,
+              branch,
+              required_status_checks: {
+                strict: true,
+                contexts: ['PR CI - tests on pull requests']
+              },
+              enforce_admins: true,
+              required_pull_request_reviews: {
+                required_approving_review_count: 1
+              },
+              allow_force_pushes: false,
+              allow_deletions: false,
+              restrictions: {
+                users: [],
+                teams: []
+              }
+            });
+            console.log(`Applied branch protection to ${branch}`);
