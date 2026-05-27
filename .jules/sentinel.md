@@ -1,11 +1,8 @@
-<<<<<<< sentinel/fix-csv-injection-2739836513252277633
-## 2025-02-18 - CSV Injection in Scraper Output
-**Vulnerability:** The scraper directly wrote unsanitized user content (titles, authors, categories) into a CSV file. Malicious content starting with `=`, `+`, `-`, or `@` could execute formulas when opened in spreadsheet software.
-**Learning:** Data extracted from web pages, even if seemingly harmless text like "Category", can contain payloads targeting the *viewer* of the data (in this case, an analyst using Excel).
-**Prevention:** Always sanitize data before writing to CSV. Prepend a single quote `'` to fields starting with dangerous characters (`=`, `+`, `-`, `@`) to force them to be treated as strings.
-=======
-## 2024-05-22 - [CLI Path Traversal]
-**Vulnerability:** `scraper.py` and `analytics.py` allowed writing output files to arbitrary paths via CLI arguments (e.g., `../evil.json`).
-**Learning:** Even local CLI tools can be vectors for path traversal if they accept file paths as arguments without validation, especially if wrapped by other systems.
-**Prevention:** Implemented `validate_output_path` in `utils.py` to enforce that output paths are within the current working directory using `os.path.abspath` and `os.path.commonpath`.
->>>>>>> jules/scraper-markposition-17752547678215960211
+## 2025-02-18 - Path Traversal in Scraper Output
+**Vulnerability:** The `scraper.py` script accepted file paths for output (`--json`, `--csv`, `--txt`) without validation, allowing a user to write files to arbitrary locations on the filesystem (Path Traversal).
+**Learning:** Command-line tools that accept file paths are often overlooked for security compared to web apps, but they can be just as dangerous if used in automated pipelines or setuid contexts. Standard libraries like `argparse` do not sanitize paths by default.
+**Prevention:** Always validate user-provided file paths using a strict allow-list or by ensuring they resolve within a specific safe directory using `os.path.abspath` and `os.path.commonpath`.
+## 2026-02-06 - Markdown Report Injection
+**Vulnerability:** The analytics report generator (`analytics.py`) directly embedded user-controlled data (domain names, categories, authors) into Markdown tables without escaping. Malicious inputs containing `|` could break the table structure, and inputs with `<script>` could introduce XSS if rendered in a browser.
+**Learning:** Generating structured text formats (Markdown, CSV, JSON) manually requires careful escaping of delimiters. Trusting `urlparse` to sanitize domains is insufficient as it preserves characters like `|`.
+**Prevention:** Use a dedicated `escape_markdown` function for all dynamic content inserted into Markdown reports. Ensure tests cover malicious inputs with special characters (`|`, `<`, `>`, `[`, `]`).

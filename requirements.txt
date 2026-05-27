@@ -1,15 +1,5 @@
 aiohttp
 beautifulsoup4
-requests
+lxml
 pytest
 pytest-asyncio
-filelock
-motor
-pymongo
-aiomysql
-cryptography
-python-dotenv
-vercel
-opentelemetry-api
-opentelemetry-sdk
-pyicloud

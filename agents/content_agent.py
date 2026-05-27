@@ -1,22 +1,25 @@
-from .base_agent import BaseAgent, Blackboard
+from datetime import datetime
+from .base_agent import BaseAgent
 
 class ContentAgent(BaseAgent):
     def __init__(self):
-        super().__init__("ContentAgent", dependencies=["creative_concepts", "intelligence_insights"], provides=["generated_content"])
+        super().__init__("Content Agent")
 
-    async def run(self, data: list, blackboard: Blackboard) -> dict:
-        self.logger.info("Generating Content...")
+    def run(self):
+        self.log("Drafting content...")
 
-        concepts = blackboard.get("creative_concepts", [])
-        insights = blackboard.get("intelligence_insights", [])
+        # In a real pipeline, this would take input from CreativityAgent
+        title = f"The Future of AdTech: Insights for {datetime.now().strftime('%B %Y')}"
+        body = (
+            "As we analyze the latest trends in the digital advertising space, one thing is clear: "
+            "integration and privacy are top of mind. "
+            "Our latest data shows a significant shift towards privacy-first platforms. "
+            "Stay tuned as we explore these developments."
+        )
 
-        title = concepts[0] if concepts else "Autonomous Insight"
-
-        content = f"Title: {title}\n\n"
-        content += f"Date: 2026-02-27\n\n"
-        content += "Introduction:\nIn today's fast-paced digital landscape, understanding market position is crucial.\n\n"
-        content += "Key Takeaways:\n"
-        for insight in insights:
-            content += f"- {insight}\n"
-
-        return {"generated_content": content}
+        self.results = {
+            "blog_post_title": title,
+            "blog_post_snippet": body,
+            "social_media_tweet": f"Just published: {title}. #AdTech #Marketing #Trends"
+        }
+        self.log("Content drafted.")

@@ -1,14 +1,13 @@
-package-lock.json
-node_modules/
 __pycache__/
 *.pyc
-.pyc
-!data/
-# results/
-# links.json
-# links.csv
-# unique_links.txt
-*.log
+*.pyo
+*.pyd
 .env
-.env.cloud
-.gitlab-runner-config/
+.venv
+env/
+venv/
+.Python
+env/
+venv/
+.env
+.DS_Store
