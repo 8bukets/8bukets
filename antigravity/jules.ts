@@ -757,7 +757,8 @@ export class Jules {
       { path: 'opentelemetry_repos.md', title: 'OpenTelemetry Ecosystem Analysis' },
       { path: 'google_ads_docs.md', title: 'Google Ads Strategic Documentation' },
       { path: 'ai_agents_knowledge.md', title: 'AI Agents Concept & Architecture' },
-      { path: 'localhost_tools_docs.md', title: 'LocalHost.Co Tools Documentation' }
+      { path: 'localhost_tools_docs.md', title: 'LocalHost.Co Tools Documentation' },
+      { path: 'google_innovation_ai_report.md', title: 'Google Innovation & AI Blog' }
     ]
 
     for (const source of knowledgeSources) {
