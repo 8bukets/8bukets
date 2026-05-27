@@ -1,5 +1,10 @@
 name: Daily Autonomous Evolution
 
+# This workflow handles the daily autonomous evolution task.
+# It ensures that recent sessions are thoroughly evaluated,
+# triggering self-correction mechanisms to scale and improve functionality.
+# The core system engine and project capabilities are enhanced autonomously.
+
 on:
   schedule:
     - cron: '0 0 * * *'
@@ -18,20 +23,29 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node.js
+        # Ensures that Node.js v20 is used, aligning with current project standards
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
 
       - name: Install dependencies
+        # Installs all necessary dependencies for the project ecosystem
         run: npm ci
 
       - name: Connect and Collaborate
+        # Establishes connection to the cloud simulation to ensure
+        # autonomous sync works seamlessly
         run: npm run connect
         env:
           MACBOOK_CLOUD_SIMULATION: true
 
+      - name: Pre-flight Health Checks
+        # Validate that everything works before proceeding with the creation cycle
+        run: npm run test
+
       - name: Execute Autonomous Session Analysis and Self-Correction
+        # Triggers the main cycle for evolution and execution
         run: npx tsx scripts/execute_creation_cycle.ts
         env:
           AUTONOMOUS_MODE: cloud
@@ -40,3 +54,8 @@ jobs:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+# Additional documentation block to explain functionality clearly.
+# The Daily Autonomous Evolution is critical for long-term health,
+# making sure our systems self-correct and adjust appropriately over time.
+# All tests must pass before the evolution cycle fully commits its changes.
