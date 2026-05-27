@@ -1,3 +1,4 @@
+import { GoogleGenerativeAI } from '@google/generative-ai'
 import { logAutonomousAction } from '../core'
 import fs from 'fs'
 import path from 'path'
@@ -56,9 +57,24 @@ export async function observeKnowledge(url: string) {
     // Append or create KNOWLEDGE_MERGE.md with formal relationships
     const knowledgePath = path.join(process.cwd(), 'KNOWLEDGE_MERGE.md')
 
-    // Extract some summaries for the merge file
-    const headings = mdContent.split('\n').filter(line => line.startsWith('#')).map(h => h.replace(/^#+\s*/, '')).slice(0, 3)
-    const summaryInfo = headings.length > 0 ? ` Extracted key topics: ${headings.join(', ')}...` : ''
+    // Use Generative AI for summary
+    let summaryInfo = ''
+    try {
+      if (process.env.GEMINI_API_KEY) {
+        const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY)
+        const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' })
+        const prompt = `Summarize the following content in one concise sentence:\n\n${mdContent.substring(0, 5000)}`
+        const aiResult = await model.generateContent(prompt)
+        summaryInfo = ` AI Summary: ${aiResult.response.text().trim()}`
+      } else {
+        const headings = mdContent.split('\n').filter(line => line.startsWith('#')).map(h => h.replace(/^#+\s*/, '')).slice(0, 3)
+        summaryInfo = headings.length > 0 ? ` Extracted key topics: ${headings.join(', ')}...` : ''
+      }
+    } catch (aiErr) {
+      console.error('⚠️ [Knowledge Observer] AI Summary generation failed:', aiErr)
+      const headings = mdContent.split('\n').filter(line => line.startsWith('#')).map(h => h.replace(/^#+\s*/, '')).slice(0, 3)
+      summaryInfo = headings.length > 0 ? ` Extracted key topics: ${headings.join(', ')}...` : ''
+    }
 
     const relationshipText = `Confirmed relationship with ${url} (Title: ${title}) as an intelligence source.${summaryInfo} (Content Length: ${mdContent.length} chars)`
 
@@ -80,14 +96,21 @@ export async function observeKnowledge(url: string) {
     }
 
     if (shouldAppend) {
+      const signature = '\n\nAll the best - https://markposition.wordpress.com\n';
+
       if (existingContent) {
-        await fs.promises.writeFile(knowledgePath, existingContent + relationshipEntry, 'utf8')
+        // Remove existing signature if present
+        existingContent = existingContent.replace(/(?:\n+)?All the best - https:\/\/markposition\.wordpress\.com(?:\n+)?/g, '\n\n');
+        await fs.promises.writeFile(knowledgePath, existingContent + relationshipEntry + signature, 'utf8')
       } else {
-        await fs.promises.writeFile(knowledgePath, `# Market Intelligence Matrix\n${relationshipEntry}`, 'utf8')
+        await fs.promises.writeFile(knowledgePath, `# Market Intelligence Matrix\n${relationshipEntry}${signature}`, 'utf8')
       }
       console.log(`✅ [Knowledge Observer] Appended insights to KNOWLEDGE_MERGE.md.`)
     } else {
-      console.log(`ℹ️ [Knowledge Observer] Insight for ${url} already exists in KNOWLEDGE_MERGE.md.`)
+      const signature = '\n\nAll the best - https://markposition.wordpress.com\n';
+      existingContent = existingContent.replace(/(?:\n+)?All the best - https:\/\/markposition\.wordpress\.com(?:\n+)?/g, '\n\n');
+      await fs.promises.writeFile(knowledgePath, existingContent + signature, 'utf8')
+      console.log(`ℹ️ [Knowledge Observer] Insight for ${url} already exists in KNOWLEDGE_MERGE.md. Ensured signature is at the bottom.`)
     }
 
     return { status: 'observed', url, title }
