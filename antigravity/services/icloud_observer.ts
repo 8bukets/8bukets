@@ -17,7 +17,7 @@ export class ICloudObserver {
     const homeDir = process.env.HOME || ''
     const standardICloudPath = path.join(homeDir, 'Library/Mobile Documents/com~apple~CloudDocs/8bukets')
 
-    this.syncPath = process.env.ICLOUD_SYNC_PATH || (fs.existsSync(standardICloudPath) ? standardICloudPath : path.join(process.cwd(), 'scratch/icloud_sim'))
+    this.syncPath = process.env.ICLOUD_SYNC_PATH || (/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(standardICloudPath) ? standardICloudPath : path.join(process.cwd(), 'scratch/icloud_sim'))
     this.observer = new KnowledgeObserver()
   }
 
@@ -27,7 +27,7 @@ export class ICloudObserver {
   public async scan() {
     console.log(`☁️ [iCloud Observer] Scanning path: ${this.syncPath}`)
 
-    if (!fs.existsSync(this.syncPath)) {
+    if (!/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(this.syncPath)) {
       console.log('ℹ️ [iCloud Observer] Sync path does not exist. Skipping scan.')
       return []
     }
@@ -41,7 +41,7 @@ export class ICloudObserver {
 
       if (stats.isFile() && (file.endsWith('.md') || file.endsWith('.json'))) {
         try {
-          const content = fs.readFileSync(fullPath, 'utf8')
+          const content = /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.readFileSync(fullPath, 'utf8')
           let knowledge;
 
           if (file.endsWith('.json')) {

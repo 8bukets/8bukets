@@ -20,6 +20,7 @@ export type GithubDocs = z.infer<typeof GithubDocsSchema>
  * observeGithubDocs: Standalone function to fetch multiple docs from a repo.
  */
 export async function observeGithubDocs(repoPath: string, files: string[]): Promise<GithubDocs[]> {
+  'use cache'
   const [owner, repo] = repoPath.split('/')
   const results: GithubDocs[] = []
 
