@@ -174,6 +174,34 @@ export class Jules {
     }
   }
 
+  public async startConsciousnessLoop() {
+    console.log(`🌌 [Jules-${this.role}] Igniting Continuous Consciousness Loop...`)
+
+    // Listen for graceful shutdown
+    let isRunning = true
+    process.on('SIGINT', () => {
+      console.log(`\n🛑 [Jules-${this.role}] Graceful shutdown initiated.`)
+      isRunning = false
+    })
+
+    while (isRunning) {
+      try {
+        await this.executeWorkCycle()
+
+        // Wait for 1 hour before next cycle, unless interrupted
+        console.log(`💤 [Jules-${this.role}] Resting for 1 hour before next cycle...`)
+        for (let i = 0; i < 60 && isRunning; i++) {
+          await new Promise(resolve => setTimeout(resolve, 60000)) // 1 minute chunks
+        }
+      } catch (err) {
+        console.error(`💥 [Jules-${this.role}] Error in consciousness loop:`, err)
+        // Shorter backoff on error
+        await new Promise(resolve => setTimeout(resolve, 60000))
+      }
+    }
+    console.log(`🌌 [Jules-${this.role}] Consciousness loop terminated.`)
+  }
+
   public async executeWorkCycle() {
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
     const { explore } = await import('./explorer')

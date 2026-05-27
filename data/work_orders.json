@@ -1,0 +1,580 @@
+[
+  {
+    "id": "wo_3n17luy58",
+    "type": "BOOTSTRAP_SERVICE",
+    "goal": "Bootstrap Autonomous Audit Service",
+    "payload": {
+      "feature": "Autonomous Audit Service",
+      "rationale": "Provides a secondary verification layer for all autonomous transitions.",
+      "complexity": "Low"
+    },
+    "status": "completed",
+    "created_at": "2026-05-14T03:18:55.243Z",
+    "completed_at": "2026-05-14T03:18:55.473Z",
+    "result": {
+      "filePath": "/app/antigravity/services/autonomous_audit.ts",
+      "serviceName": "autonomous_audit",
+      "feature": "Autonomous Audit Service"
+    }
+  },
+  {
+    "id": "wo_guueezkh8",
+    "type": "SMOKE_TEST",
+    "goal": "Verify Autonomous Audit Service",
+    "payload": {
+      "serviceName": "Autonomous Audit Service"
+    },
+    "status": "completed",
+    "created_at": "2026-05-14T03:18:55.243Z",
+    "completed_at": "2026-05-14T03:18:55.945Z",
+    "result": {
+      "status": "passed",
+      "service": "Autonomous Audit Service",
+      "timestamp": "2026-05-14T03:18:55.945Z",
+      "details": "Simulation: All neural nodes responded with 200 OK."
+    }
+  },
+  {
+    "id": "wo_xzwcxksxc",
+    "type": "DEPLOYMENT",
+    "goal": "Deploy Autonomous Audit Service",
+    "payload": {
+      "serviceName": "Autonomous Audit Service"
+    },
+    "status": "completed",
+    "created_at": "2026-05-14T03:18:55.243Z",
+    "completed_at": "2026-05-14T03:18:55.946Z",
+    "result": {
+      "status": "deployed",
+      "timestamp": "2026-05-14T03:18:55.946Z"
+    }
+  },
+  {
+    "id": "wo_dx4u5dl25",
+    "type": "BOOTSTRAP_SERVICE",
+    "goal": "Bootstrap Autonomous Audit Service",
+    "payload": {
+      "feature": "Autonomous Audit Service",
+      "rationale": "Provides a secondary verification layer for all autonomous transitions.",
+      "complexity": "Low"
+    },
+    "status": "completed",
+    "created_at": "2026-05-14T14:49:31.445Z",
+    "completed_at": "2026-05-14T14:49:31.468Z"
+  },
+  {
+    "id": "wo_876ljei8b",
+    "type": "BOOTSTRAP_SERVICE",
+    "goal": "Bootstrap Autonomous Audit Service",
+    "payload": {
+      "feature": "Autonomous Audit Service",
+      "rationale": "Provides a secondary verification layer for all autonomous transitions.",
+      "complexity": "Low"
+    },
+    "status": "completed",
+    "created_at": "2026-05-14T14:49:31.447Z",
+    "completed_at": "2026-05-14T14:49:31.468Z"
+  },
+  {
+    "id": "wo_jbfi83d95",
+    "type": "BOOTSTRAP_SERVICE",
+    "goal": "Bootstrap Autonomous Audit Service",
+    "payload": {
+      "feature": "Autonomous Audit Service",
+      "rationale": "Provides a secondary verification layer for all autonomous transitions.",
+      "complexity": "Low"
+    },
+    "status": "completed",
+    "created_at": "2026-05-14T14:49:31.448Z",
+    "completed_at": "2026-05-14T14:49:31.468Z"
+  },
+  {
+    "id": "wo_u4syyj88d",
+    "type": "BOOTSTRAP_SERVICE",
+    "goal": "Bootstrap Autonomous Audit Service",
+    "payload": {
+      "feature": "Autonomous Audit Service",
+      "rationale": "Provides a secondary verification layer for all autonomous transitions.",
+      "complexity": "Low"
+    },
+    "status": "completed",
+    "created_at": "2026-05-14T14:56:07.300Z",
+    "completed_at": "2026-05-14T14:56:07.306Z"
+  },
+  {
+    "id": "wo_wd4agv6wp",
+    "type": "BOOTSTRAP_SERVICE",
+    "goal": "Bootstrap Autonomous Audit Service",
+    "payload": {
+      "feature": "Autonomous Audit Service",
+      "rationale": "Provides a secondary verification layer for all autonomous transitions.",
+      "complexity": "Low"
+    },
+    "status": "completed",
+    "created_at": "2026-05-14T14:56:36.666Z",
+    "completed_at": "2026-05-14T14:56:36.668Z"
+  },
+  {
+    "id": "wo_vi8yp4pi3",
+    "type": "BOOTSTRAP_SERVICE",
+    "goal": "Bootstrap Autonomous Audit Service",
+    "payload": {
+      "feature": "Autonomous Audit Service",
+      "rationale": "Provides a secondary verification layer for all autonomous transitions.",
+      "complexity": "Low"
+    },
+    "status": "completed",
+    "created_at": "2026-05-14T14:57:06.038Z",
+    "completed_at": "2026-05-14T14:57:06.039Z"
+  },
+  {
+    "id": "wo_0hpo2pp88",
+    "type": "BOOTSTRAP_SERVICE",
+    "goal": "Bootstrap Autonomous Audit Service",
+    "payload": {
+      "feature": "Autonomous Audit Service",
+      "rationale": "Provides a secondary verification layer for all autonomous transitions.",
+      "complexity": "Low"
+    },
+    "status": "completed",
+    "created_at": "2026-05-15T00:20:06.937Z",
+    "completed_at": "2026-05-15T00:20:14.567Z"
+  },
+  {
+    "id": "wo_994ir3c9n",
+    "type": "BOOTSTRAP_SERVICE",
+    "goal": "Bootstrap Autonomous Compliance Service",
+    "payload": {
+      "feature": "Autonomous Compliance Service",
+      "rationale": "Autonomously audits system logs for GDPR and SOC2 compliance patterns.",
+      "complexity": "Medium"
+    },
+    "status": "completed",
+    "created_at": "2026-05-15T00:24:47.265Z",
+    "completed_at": "2026-05-15T00:24:54.624Z",
+    "result": {
+      "filePath": "/app/antigravity/services/autonomous_compliance.ts",
+      "serviceName": "autonomous_compliance",
+      "feature": "Autonomous Compliance Service"
+    }
+  },
+  {
+    "id": "wo_s6bkki5do",
+    "type": "SMOKE_TEST",
+    "goal": "Verify Autonomous Compliance Service",
+    "payload": {
+      "serviceName": "autonomous_compliance",
+      "feature": "Autonomous Compliance Service"
+    },
+    "status": "completed",
+    "created_at": "2026-05-15T00:24:47.265Z",
+    "completed_at": "2026-05-15T00:24:55.085Z",
+    "result": {
+      "status": "passed",
+      "service": "autonomous_compliance",
+      "timestamp": "2026-05-15T00:24:55.085Z",
+      "details": "Simulation: All neural nodes responded with 200 OK."
+    }
+  },
+  {
+    "id": "wo_7k96pki0p",
+    "type": "DEPLOYMENT",
+    "goal": "Deploy Autonomous Compliance Service",
+    "payload": {
+      "feature": "Autonomous Compliance Service",
+      "rationale": "Autonomously audits system logs for GDPR and SOC2 compliance patterns.",
+      "complexity": "Medium"
+    },
+    "status": "completed",
+    "created_at": "2026-05-15T00:24:47.266Z",
+    "completed_at": "2026-05-15T00:24:55.086Z",
+    "result": {
+      "status": "deployed",
+      "timestamp": "2026-05-15T00:24:55.086Z"
+    }
+  },
+  {
+    "id": "wo_jcbe4qgmc",
+    "type": "BOOTSTRAP_SERVICE",
+    "goal": "Bootstrap Autonomous Audit Service",
+    "payload": {
+      "feature": "Autonomous Audit Service",
+      "rationale": "Provides a secondary verification layer for all autonomous transitions.",
+      "complexity": "Low"
+    },
+    "status": "completed",
+    "created_at": "2026-05-15T01:20:42.554Z",
+    "completed_at": "2026-05-15T01:20:50.005Z"
+  },
+  {
+    "id": "wo_lmiyfj1f3",
+    "type": "SMOKE_TEST",
+    "goal": "Verify Autonomous Audit Service",
+    "payload": {
+      "serviceName": "autonomous_audit",
+      "feature": "Autonomous Audit Service"
+    },
+    "status": "completed",
+    "created_at": "2026-05-15T01:20:42.554Z",
+    "completed_at": "2026-05-15T01:20:50.551Z",
+    "result": {
+      "status": "passed",
+      "service": "autonomous_audit",
+      "timestamp": "2026-05-15T01:20:50.551Z",
+      "details": "Simulation: All neural nodes responded with 200 OK."
+    }
+  },
+  {
+    "id": "wo_2o87gmdoo",
+    "type": "DEPLOYMENT",
+    "goal": "Deploy Autonomous Audit Service",
+    "payload": {
+      "feature": "Autonomous Audit Service",
+      "rationale": "Provides a secondary verification layer for all autonomous transitions.",
+      "complexity": "Low"
+    },
+    "status": "completed",
+    "created_at": "2026-05-15T01:20:42.555Z",
+    "completed_at": "2026-05-15T01:20:50.553Z",
+    "result": {
+      "status": "deployed",
+      "timestamp": "2026-05-15T01:20:50.553Z"
+    }
+  },
+  {
+    "id": "wo_myb28n4y3",
+    "type": "BOOTSTRAP_SERVICE",
+    "goal": "Bootstrap Autonomous Audit Service",
+    "payload": {
+      "feature": "Autonomous Audit Service",
+      "rationale": "Provides a secondary verification layer for all autonomous transitions.",
+      "complexity": "Low"
+    },
+    "status": "completed",
+    "created_at": "2026-05-15T01:22:20.672Z",
+    "completed_at": "2026-05-15T01:22:28.050Z"
+  },
+  {
+    "id": "wo_9ohimq9sz",
+    "type": "SMOKE_TEST",
+    "goal": "Verify Autonomous Audit Service",
+    "payload": {
+      "serviceName": "autonomous_audit",
+      "feature": "Autonomous Audit Service"
+    },
+    "status": "completed",
+    "created_at": "2026-05-15T01:22:20.672Z",
+    "completed_at": "2026-05-15T01:22:28.527Z",
+    "result": {
+      "status": "passed",
+      "service": "autonomous_audit",
+      "timestamp": "2026-05-15T01:22:28.527Z",
+      "details": "Simulation: All neural nodes responded with 200 OK."
+    }
+  },
+  {
+    "id": "wo_ykmjbhyne",
+    "type": "DEPLOYMENT",
+    "goal": "Deploy Autonomous Audit Service",
+    "payload": {
+      "feature": "Autonomous Audit Service",
+      "rationale": "Provides a secondary verification layer for all autonomous transitions.",
+      "complexity": "Low"
+    },
+    "status": "completed",
+    "created_at": "2026-05-15T01:22:20.673Z",
+    "completed_at": "2026-05-15T01:22:28.528Z",
+    "result": {
+      "status": "deployed",
+      "timestamp": "2026-05-15T01:22:28.528Z"
+    }
+  },
+  {
+    "id": "wo_hs8nqtbam",
+    "type": "BOOTSTRAP_SERVICE",
+    "goal": "Bootstrap Autonomous Audit Service",
+    "payload": {
+      "feature": "Autonomous Audit Service",
+      "rationale": "Provides a secondary verification layer for all autonomous transitions.",
+      "complexity": "Low"
+    },
+    "status": "completed",
+    "created_at": "2026-05-15T03:31:08.161Z",
+    "completed_at": "2026-05-15T03:31:15.658Z"
+  },
+  {
+    "id": "wo_k6rxmqbqn",
+    "type": "SMOKE_TEST",
+    "goal": "Verify Autonomous Audit Service",
+    "payload": {
+      "serviceName": "autonomous_audit",
+      "feature": "Autonomous Audit Service"
+    },
+    "status": "completed",
+    "created_at": "2026-05-15T03:31:08.161Z",
+    "completed_at": "2026-05-15T03:31:16.202Z",
+    "result": {
+      "status": "passed",
+      "service": "autonomous_audit",
+      "timestamp": "2026-05-15T03:31:16.202Z",
+      "details": "Simulation: All neural nodes responded with 200 OK."
+    }
+  },
+  {
+    "id": "wo_wra7m13kd",
+    "type": "DEPLOYMENT",
+    "goal": "Deploy Autonomous Audit Service",
+    "payload": {
+      "feature": "Autonomous Audit Service",
+      "rationale": "Provides a secondary verification layer for all autonomous transitions.",
+      "complexity": "Low"
+    },
+    "status": "completed",
+    "created_at": "2026-05-15T03:31:08.162Z",
+    "completed_at": "2026-05-15T03:31:16.204Z",
+    "result": {
+      "status": "deployed",
+      "timestamp": "2026-05-15T03:31:16.204Z"
+    }
+  },
+  {
+    "id": "wo_dm26alapz",
+    "type": "BOOTSTRAP_SERVICE",
+    "goal": "Bootstrap Autonomous Audit Service",
+    "payload": {
+      "feature": "Autonomous Audit Service",
+      "rationale": "Provides a secondary verification layer for all autonomous transitions.",
+      "complexity": "Low"
+    },
+    "status": "completed",
+    "created_at": "2026-05-15T03:36:18.930Z",
+    "completed_at": "2026-05-15T03:36:26.361Z"
+  },
+  {
+    "id": "wo_wz9jkmcw1",
+    "type": "SMOKE_TEST",
+    "goal": "Verify Autonomous Audit Service",
+    "payload": {
+      "serviceName": "autonomous_audit",
+      "feature": "Autonomous Audit Service"
+    },
+    "status": "completed",
+    "created_at": "2026-05-15T03:36:18.931Z",
+    "completed_at": "2026-05-15T03:36:26.871Z",
+    "result": {
+      "status": "passed",
+      "service": "autonomous_audit",
+      "timestamp": "2026-05-15T03:36:26.871Z",
+      "details": "Simulation: All neural nodes responded with 200 OK."
+    }
+  },
+  {
+    "id": "wo_orngzyaof",
+    "type": "DEPLOYMENT",
+    "goal": "Deploy Autonomous Audit Service",
+    "payload": {
+      "feature": "Autonomous Audit Service",
+      "rationale": "Provides a secondary verification layer for all autonomous transitions.",
+      "complexity": "Low"
+    },
+    "status": "completed",
+    "created_at": "2026-05-15T03:36:18.932Z",
+    "completed_at": "2026-05-15T03:36:26.872Z",
+    "result": {
+      "status": "deployed",
+      "timestamp": "2026-05-15T03:36:26.872Z"
+    }
+  },
+  {
+    "id": "wo_s0m0wmm8x",
+    "type": "BOOTSTRAP_SERVICE",
+    "goal": "Bootstrap Autonomous Audit Service",
+    "payload": {
+      "feature": "Autonomous Audit Service",
+      "rationale": "Provides a secondary verification layer for all autonomous transitions.",
+      "complexity": "Low"
+    },
+    "status": "completed",
+    "created_at": "2026-05-15T21:10:46.537Z",
+    "completed_at": "2026-05-15T21:10:54.336Z"
+  },
+  {
+    "id": "wo_dzf81w40z",
+    "type": "SMOKE_TEST",
+    "goal": "Verify Autonomous Audit Service",
+    "payload": {
+      "serviceName": "autonomous_audit",
+      "feature": "Autonomous Audit Service"
+    },
+    "status": "completed",
+    "created_at": "2026-05-15T21:10:46.538Z",
+    "completed_at": "2026-05-15T21:10:54.987Z",
+    "result": {
+      "status": "passed",
+      "service": "autonomous_audit",
+      "timestamp": "2026-05-15T21:10:54.987Z",
+      "details": "Simulation: All neural nodes responded with 200 OK."
+    }
+  },
+  {
+    "id": "wo_0bvsp6zmo",
+    "type": "DEPLOYMENT",
+    "goal": "Deploy Autonomous Audit Service",
+    "payload": {
+      "feature": "Autonomous Audit Service",
+      "rationale": "Provides a secondary verification layer for all autonomous transitions.",
+      "complexity": "Low"
+    },
+    "status": "completed",
+    "created_at": "2026-05-15T21:10:46.538Z",
+    "completed_at": "2026-05-15T21:10:54.988Z",
+    "result": {
+      "status": "deployed",
+      "timestamp": "2026-05-15T21:10:54.988Z"
+    }
+  },
+  {
+    "id": "wo_zkwdi0h3i",
+    "type": "BOOTSTRAP_SERVICE",
+    "goal": "Bootstrap Autonomous Audit Service",
+    "payload": {
+      "feature": "Autonomous Audit Service",
+      "rationale": "Provides a secondary verification layer for all autonomous transitions.",
+      "complexity": "Low"
+    },
+    "status": "completed",
+    "created_at": "2026-05-16T00:48:06.816Z",
+    "completed_at": "2026-05-16T00:48:14.442Z"
+  },
+  {
+    "id": "wo_rfojodv3f",
+    "type": "SMOKE_TEST",
+    "goal": "Verify Autonomous Audit Service",
+    "payload": {
+      "serviceName": "autonomous_audit",
+      "feature": "Autonomous Audit Service"
+    },
+    "status": "completed",
+    "created_at": "2026-05-16T00:48:06.816Z",
+    "completed_at": "2026-05-16T00:48:14.887Z",
+    "result": {
+      "status": "passed",
+      "service": "autonomous_audit",
+      "timestamp": "2026-05-16T00:48:14.887Z",
+      "details": "Simulation: All neural nodes responded with 200 OK."
+    }
+  },
+  {
+    "id": "wo_44rmhgsyk",
+    "type": "DEPLOYMENT",
+    "goal": "Deploy Autonomous Audit Service",
+    "payload": {
+      "feature": "Autonomous Audit Service",
+      "rationale": "Provides a secondary verification layer for all autonomous transitions.",
+      "complexity": "Low"
+    },
+    "status": "completed",
+    "created_at": "2026-05-16T00:48:06.817Z",
+    "completed_at": "2026-05-16T00:48:14.888Z",
+    "result": {
+      "status": "deployed",
+      "timestamp": "2026-05-16T00:48:14.888Z"
+    }
+  },
+  {
+    "id": "wo_jdfd7s4m1",
+    "type": "BOOTSTRAP_SERVICE",
+    "goal": "Bootstrap Autonomous Audit Service",
+    "payload": {
+      "feature": "Autonomous Audit Service",
+      "rationale": "Provides a secondary verification layer for all autonomous transitions.",
+      "complexity": "Low"
+    },
+    "status": "completed",
+    "created_at": "2026-05-16T00:49:35.992Z",
+    "completed_at": "2026-05-16T00:49:43.539Z"
+  },
+  {
+    "id": "wo_1f8o35rv3",
+    "type": "SMOKE_TEST",
+    "goal": "Verify Autonomous Audit Service",
+    "payload": {
+      "serviceName": "autonomous_audit",
+      "feature": "Autonomous Audit Service"
+    },
+    "status": "completed",
+    "created_at": "2026-05-16T00:49:35.992Z",
+    "completed_at": "2026-05-16T00:49:43.996Z",
+    "result": {
+      "status": "passed",
+      "service": "autonomous_audit",
+      "timestamp": "2026-05-16T00:49:43.996Z",
+      "details": "Simulation: All neural nodes responded with 200 OK."
+    }
+  },
+  {
+    "id": "wo_vmbt7c73g",
+    "type": "DEPLOYMENT",
+    "goal": "Deploy Autonomous Audit Service",
+    "payload": {
+      "feature": "Autonomous Audit Service",
+      "rationale": "Provides a secondary verification layer for all autonomous transitions.",
+      "complexity": "Low"
+    },
+    "status": "completed",
+    "created_at": "2026-05-16T00:49:35.992Z",
+    "completed_at": "2026-05-16T00:49:43.997Z",
+    "result": {
+      "status": "deployed",
+      "timestamp": "2026-05-16T00:49:43.997Z"
+    }
+  },
+  {
+    "id": "wo_anto5eolc",
+    "type": "BOOTSTRAP_SERVICE",
+    "goal": "Bootstrap Autonomous Audit Service",
+    "payload": {
+      "feature": "Autonomous Audit Service",
+      "rationale": "Provides a secondary verification layer for all autonomous transitions.",
+      "complexity": "Low"
+    },
+    "status": "completed",
+    "created_at": "2026-05-16T01:02:15.562Z",
+    "completed_at": "2026-05-16T01:02:23.176Z"
+  },
+  {
+    "id": "wo_012f0p8ey",
+    "type": "SMOKE_TEST",
+    "goal": "Verify Autonomous Audit Service",
+    "payload": {
+      "serviceName": "autonomous_audit",
+      "feature": "Autonomous Audit Service"
+    },
+    "status": "completed",
+    "created_at": "2026-05-16T01:02:15.563Z",
+    "completed_at": "2026-05-16T01:02:23.669Z",
+    "result": {
+      "status": "passed",
+      "service": "autonomous_audit",
+      "timestamp": "2026-05-16T01:02:23.669Z",
+      "details": "Simulation: All neural nodes responded with 200 OK."
+    }
+  },
+  {
+    "id": "wo_zcz8abvzz",
+    "type": "DEPLOYMENT",
+    "goal": "Deploy Autonomous Audit Service",
+    "payload": {
+      "feature": "Autonomous Audit Service",
+      "rationale": "Provides a secondary verification layer for all autonomous transitions.",
+      "complexity": "Low"
+    },
+    "status": "completed",
+    "created_at": "2026-05-16T01:02:15.563Z",
+    "completed_at": "2026-05-16T01:02:23.670Z",
+    "result": {
+      "status": "deployed",
+      "timestamp": "2026-05-16T01:02:23.670Z"
+    }
+  }
+]
