@@ -1,7 +1,7 @@
-name: Fully Autonomous Automatic Workflow
+name: Full Autonomous Automatic Workflow
 
 # ==============================================================================
-# FULLY AUTONOMOUS AUTOMATIC WORKFLOW SYSTEM PIPELINE
+# FULL AUTONOMOUS AUTOMATIC WORKFLOW SYSTEM PIPELINE
 # ==============================================================================
 #
 # This GitHub Actions workflow orchestrates the core autonomous lifecycle of the
@@ -13,7 +13,7 @@ name: Fully Autonomous Automatic Workflow
 # 2. Ecosystem Synchronization: Uses `npm run connect` with cloud simulation
 #    enabled (`MACBOOK_CLOUD_SIMULATION=true`) to fetch the latest state from
 #    the decentralized network and sync internal agent behaviors.
-# 3. Autonomous Creation Cycle: Executes `scripts/execute_creation_cycle.ts`
+# 3. Autonomous Creation Cycle: Executes `npx tsx scripts/execute_creation_cycle.ts`
 #    which triggers the underlying generative agents to produce new workflows,
 #    services, and UI components natively.
 # 4. Git Operations: Automatically detects changes, creates a commit, and pushes
@@ -83,7 +83,7 @@ jobs:
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           MACBOOK_CLOUD_SIMULATION: true
           AUTONOMOUS_MODE: cloud
-        run: npm run daily
+        run: npx tsx scripts/execute_creation_cycle.ts
 
       - name: Post-Cycle Documentation Update
         run: npx tsx scripts/ingest_localhost_tools_knowledge.ts || true
