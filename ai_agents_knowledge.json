@@ -13,21 +13,6 @@
     "microsoft",
     "august",
     "platform",
-    "types",
-    "intelephense",
-    "server",
-    "features",
-    "assert",
-    "template",
-    "string",
-    "narrowing",
-    "array",
-    "cross",
-    "editor",
-    "language",
-    "experience",
-    "provided",
-    "access",
     "october",
     "dynamics",
     "business",
@@ -35,22 +20,6 @@
     "march"
   ],
   "recentPosts": [
-    {
-      "title": "Intelligence: Type System & Narrowing",
-      "link": "https://intelephense.com/#type-system"
-    },
-    {
-      "title": "Intelligence: Control Flow Analysis",
-      "link": "https://intelephense.com/#control-flow"
-    },
-    {
-      "title": "Feature: Workspace Symbols (LSP)",
-      "link": "https://intelephense.com/#workspace-symbols"
-    },
-    {
-      "title": "Premium: Rename & Refactoring",
-      "link": "https://intelephense.com/#premium"
-    },
     {
       "title": "Roadmap and business roadmap",
       "link": "https://software-online-review.com/2025/11/01/roadmap-and-business-roadmap/"
@@ -114,13 +83,13 @@
   ],
   "history": [
     {
-      "source": "User-Provided Documentation: Intelephense",
-      "analyzedAt": "2026-05-11T01:07:57.957Z"
+      "source": "https://software-online-review.com",
+      "analyzedAt": "2026-05-12T15:17:50.451Z"
     },
     {
       "source": "https://software-online-review.com",
-      "analyzedAt": "2026-05-11T03:13:56.239Z"
+      "analyzedAt": "2026-05-12T15:19:06.131Z"
     }
   ],
-  "analyzedAt": "2026-05-11T03:13:56.239Z"
+  "analyzedAt": "2026-05-12T15:19:06.131Z"
 }
