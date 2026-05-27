@@ -1,19 +1,27 @@
-from .base_agent import BaseAgent, Blackboard
+from .base_agent import BaseAgent
 
 class MonetizationAgent(BaseAgent):
     def __init__(self):
-        super().__init__("MonetizationAgent", dependencies=["analysis_stats", "bid_strategy"], provides=["monetization_plan"])
+        super().__init__("Monetization Agent")
 
-    async def run(self, data: list, blackboard: Blackboard) -> dict:
-        self.logger.info("Running Monetization Analysis...")
+    def run(self):
+        self.log("Identifying revenue opportunities...")
 
-        stats = blackboard.get("analysis_stats", {})
-        bid = blackboard.get("bid_strategy", {})
+        affiliate_keywords = ["hosting", "vpn", "seo tool", "email marketing"]
+        opportunities = []
 
-        plan = {
-            "projected_revenue": stats.get("total_posts", 0) * 0.05,
-            "cpm_target": bid.get("recommended_cpm", 0.0),
-            "channels": ["Direct", "Programmatic"]
+        for p in self.data:
+            title = p.get('title', '').lower()
+            for kw in affiliate_keywords:
+                if kw in title:
+                    opportunities.append({
+                        "keyword": kw,
+                        "source": p.get('title'),
+                        "action": "Add affiliate link"
+                    })
+
+        self.results = {
+            "potential_revenue_streams": len(opportunities),
+            "top_opportunities": opportunities[:5]
         }
-
-        return {"monetization_plan": plan}
+        self.log("Monetization check complete.")

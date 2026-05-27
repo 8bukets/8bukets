@@ -6,7 +6,7 @@ class GitHubEvolutionAgent(BaseAgent):
     """Autonomously stages, commits, and pushes code changes based on system evolution."""
     def __init__(self):
         super().__init__("GitHubEvolutionAgent",
-                         dependencies=["system_evolution", "evolution_strategy", "git_visualization_metrics", "container_status"],
+                         dependencies=["system_evolution", "evolution_strategy", "git_visualization_metrics", "container_status", "gitlab_pipeline_metrics"],
                          provides=["vcs_status"])
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
@@ -14,6 +14,7 @@ class GitHubEvolutionAgent(BaseAgent):
         strategy = blackboard.get("evolution_strategy", {})
         viz_metrics = blackboard.get("git_visualization_metrics", {})
         docker_status = blackboard.get("container_status", {})
+        gitlab_metrics = blackboard.get("gitlab_pipeline_metrics", {})
         if evolution.get("status") != "EVOLVED":
             self.logger.info("No system evolution detected. Skipping Git operations.")
             return {"vcs_status": "SKIPPED"}
@@ -37,8 +38,9 @@ class GitHubEvolutionAgent(BaseAgent):
                 f"Collaborative Evolution Metrics:\n"
                 f"- GitKraken Visualization: {viz_metrics.get('kraken_compatibility_score', 0)*100}%\n"
                 f"- Docker Stability: {docker_status.get('runtime_stability', 'N/A')}\n"
+                f"- GitLab Pipeline: {gitlab_metrics.get('pipeline_efficiency', 'N/A')}\n"
                 f"- Evolution Strategy: {strategy.get('optimization_priority', 'STANDARD')}\n\n"
-                f"Automated commit by collaborative agent unit (Jules + GitHub + GitKraken + Docker)."
+                f"Automated commit by collaborative agent unit (Jules + GitHub + GitLab + GitKraken + Docker Cloud)."
             )
             subprocess.run(["git", "commit", "-m", commit_msg], check=True)
 
@@ -52,6 +54,30 @@ class GitHubEvolutionAgent(BaseAgent):
             else:
                 self.logger.warning("GITHUB_TOKEN not found. Changes committed but not pushed.")
                 vcs_status = "COMMITTED_LOCAL"
+
+            # Dynamic repository state validation before attempting to push
+            # Automatically pull latest changes to prevent push failures when multiple agents are working
+            if token:
+                try:
+                    self.logger.info("Synchronizing with remote to avoid conflicts...")
+                    subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=True)
+                except subprocess.CalledProcessError as pull_e:
+                    self.logger.warning(f"Failed to synchronize with remote: {pull_e}")
+
+            # 4. Handle Auto-Merge and Synchronization
+            if token:
+                try:
+                    self.logger.info("Synchronizing with remote to ensure seamless evolution...")
+                    subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=True)
+                    subprocess.run(["git", "push", "origin", "main"], check=True)
+
+                    # Signal for auto-merge workflow if this was a PR (via label)
+                    # For direct pushes, we ensure the commit message is descriptive
+                    self.logger.info("Autonomous merge and synchronization successful.")
+                    vcs_status = "COMMITTED_AND_PUSHED"
+                except subprocess.CalledProcessError as sync_e:
+                    self.logger.warning(f"Failed to finalize sync: {sync_e}")
+                    vcs_status = "SYNC_FAILED"
 
             return {"vcs_status": vcs_status}
 

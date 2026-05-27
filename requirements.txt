@@ -1,10 +1,5 @@
 aiohttp
 beautifulsoup4
-requests
+lxml
 pytest
 pytest-asyncio
-filelock
-motor
-pymongo
-aiomysql
-cryptography

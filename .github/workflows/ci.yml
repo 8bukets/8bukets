@@ -6,6 +6,9 @@ on:
       - "main"
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   test:
     name: Test and Lint
@@ -16,6 +19,10 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
+
+    - name: Configure Git for private dependencies
+      run: |
+        git config --global url."https://x-access-token:${{ github.token }}@github.com/".insteadOf "https://github.com/"
 
     # Scraper Tests (Python)
     - name: Set Up Python
@@ -39,7 +46,7 @@ jobs:
       if: matrix.service == 'frontend'
       uses: actions/setup-node@v4
       with:
-        node-version: 20
+        node-version: 24
 
     - name: Install Frontend Dependencies
       if: matrix.service == 'frontend'
@@ -58,7 +65,7 @@ jobs:
       if: matrix.service == 'sr-backend'
       uses: actions/setup-node@v4
       with:
-        node-version: 20
+        node-version: 24
 
     - name: Install SR Backend Dependencies
       if: matrix.service == 'sr-backend'
@@ -77,7 +84,7 @@ jobs:
       if: matrix.service == 'sr-frontend'
       uses: actions/setup-node@v4
       with:
-        node-version: 20
+        node-version: 24
 
     - name: Install SR Frontend Dependencies
       if: matrix.service == 'sr-frontend'
@@ -91,9 +98,30 @@ jobs:
         cd software-review-platform/frontend
         npm run check
 
+  market-analysis:
+    name: Market Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Configure Git for private dependencies
+        run: |
+          git config --global url."https://x-access-token:${{ github.token }}@github.com/".insteadOf "https://github.com/"
+      - name: Set Up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install Dependencies
+        run: npm ci --cache .npm --prefer-offline || npm install
+      - name: Run Market Analysis
+        run: |
+          npm run ingest:sor
+          npm run ingest:forbes
+
   docker:
     name: Build and Push
     needs: test
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -114,22 +142,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Log in to Docker Hub
-        if: github.event_name != 'pull_request'
-        uses: docker/login-action@v3
+        if: secrets.DOCKER_ACCESS_TOKEN != ''
+        uses: docker/login-action@v4
         with:
-          username: ${{ vars.DOCKER_USER || secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKER_PAT || secrets.DOCKERHUB_TOKEN }}
+          username: ${{ vars.DOCKER_ACCOUNT || 'getanant' }}
+          password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@v4
         with:
-          driver: ${{ github.event_name != 'pull_request' && 'cloud' || 'docker-container' }}
-          endpoint: ${{ github.event_name != 'pull_request' && 'getanant/sor' || '' }}
+          driver: ${{ (secrets.DOCKER_ACCESS_TOKEN != '' && vars.CLOUD_BUILDER_NAME != '') && 'cloud' || 'docker-container' }}
+          endpoint: ${{ (secrets.DOCKER_ACCESS_TOKEN != '' && vars.CLOUD_BUILDER_NAME != '') && format('{0}/{1}', vars.DOCKER_ACCOUNT || 'getanant', vars.CLOUD_BUILDER_NAME) || '' }}
       - name: Build and push
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: ${{ matrix.context }}
           file: ${{ matrix.dockerfile }}
-          tags: "${{ vars.DOCKER_USER || 'getanant' }}/${{ matrix.service }}:latest"
+          tags: "${{ vars.DOCKER_ACCOUNT || 'getanant' }}/${{ matrix.service }}:latest"
           # For pull requests, export results to the build cache.
           # Otherwise, push to a registry.
-          outputs: ${{ github.event_name == 'pull_request' && 'type=cacheonly' || 'type=registry' }}
+          outputs: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && 'type=registry' || 'type=cacheonly' }}
