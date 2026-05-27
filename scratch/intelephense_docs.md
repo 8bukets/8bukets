@@ -305,7 +305,7 @@ This annotation is used to declare the out type of a by-reference parameter. Int
 
 @assert
 /** @assert Type $parameter */
-This annotation is used to declare a function or method that asserts that an argument is of the specified type. Intelephense will narrow the type of the passed variable to the asserted type after the function or method call. It is presumed that the function or method has no false path and that it will throw an exception or exit if the assertion fails.
+This annotation is used to declare a function or method that asserts an argument is of the specified type. Intelephense will narrow the type of the passed variable to the asserted type after the function or method call. It is presumed that the function or method has no false path and that it will throw an exception or exit if the assertion fails.
 
 @assert-if-true @assert-if-false
 /** @assert-if-true Type $parameter */

@@ -1,3 +1,5 @@
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/8bukets/8bukets&fullConfiguration=true)
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
@@ -42,3 +44,27 @@ The autonomous system supports continuous cloud deployments using standard infra
 - **Docker Configs:** Ensure you use `docker-compose.cloud.yml` when spinning up nodes in external environments (it bypasses local MongoDB expectations).
 - **Online Presence:** The autonomous system remains permanently on via GitHub Actions (`.github/workflows/continuous-presence.yml`) and GitLab CI schedules (`.gitlab-ci.yml`), performing data sync back to the main branches using GitKraken visual commit strategies.
 - **Data Persistence:** Relies purely on remote MongoDB clusters and remote Supabase APIs, connected via standard deployment variables.
+
+## Autonomous Daily Sync & Persistence
+
+The Antigravity system includes an autonomous daily work cycle that performs Git synchronization (pull/upload) and iCloud folder backups.
+
+### 1. macOS Persistence (LaunchAgent)
+
+A `com.sigma.jules.plist` file is provided to automate the daily routine. To install it:
+
+1. Open `com.sigma.jules.plist` and replace `YOUR_USERNAME` with your actual macOS username (e.g., `filipkeser`).
+2. Copy the file to your LaunchAgents directory:
+   ```bash
+   cp com.sigma.jules.plist ~/Library/LaunchAgents/
+   ```
+3. Load the agent:
+   ```bash
+   launchctl load ~/Library/LaunchAgents/com.sigma.jules.plist
+   ```
+
+The script will now run every day at midnight.
+
+### 2. iCloud Synchronization
+
+By default, the system syncs to `~/Library/Mobile Documents/com~apple~CloudDocs/Antigravity_Sync`. You can customize this by setting the `ICLOUD_SYNC_PATH` environment variable in your `.env` file.
