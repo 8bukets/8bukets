@@ -1,0 +1,9 @@
+aiohttp
+beautifulsoup4
+requests
+pytest
+pytest-asyncio
+psycopg2-binary
+pydantic
+google-generativeai
+google-genai
