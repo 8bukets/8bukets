@@ -172,17 +172,8 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
       await fs.promises.writeFile(fullPath, content)
     }
 
-    if (s.suggestion.startsWith('SECURITY_PERF_VULNERABILITY')) {
-      console.log(` - Fixing ${s.file}: Adding async refactor TODO for synchronous call`)
-      // Inject a TODO near the first detected sync call
-      const syncCalls = ['execSync', 'execFileSync', 'fs.existsSync', 'fs.readFileSync', 'fs.writeFileSync']
-      for (const call of syncCalls) {
-        if (content.includes(call + '(')) {
-          content = content.replace(new RegExp(`(\\b${call}\\()`, 'g'), "/* [Evolution] TODO: Refactor to async */ $1")
-        }
-      }
-      await fs.promises.writeFile(fullPath, content)
-    }
+    // [Jules] Disabled fragile TODO and try-catch injection heuristics to prevent code pollution and duplicated comments.
+    // Manual architectural refinement is preferred for complex error handling and async refactors.
     
     // Additional autocorrection logic can be added here
   }
