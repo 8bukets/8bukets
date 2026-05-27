@@ -1,0 +1,54 @@
+{
+  "name": "jules-cli",
+  "version": "1.0.0",
+  "type": "module",
+  "bin": {
+    "jules": "./bin/jules.js"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "connect": "tsx scripts/connect_and_collaborate.ts",
+    "daily": "tsx scripts/autonomous_sync.ts",
+    "ingest:sor": "tsx scripts/ingest_software_online_review.ts https://software-online-review.com/",
+    "ingest:investopedia": "tsx scripts/ingest_investopedia.ts",
+    "ingest:knowledge": "python3 merge_knowledge.py",
+    "ingest:subagents": "python3 scripts/ingest_cli_subagents_knowledge.py",
+    "sync-all": "tsx scripts/sync_all_branches.ts",
+    "daily-tasks": "gemini @daily-tasks",
+    "ignite": "npm run daily -- --continuous",
+    "build": "npm run build --workspaces --if-present",
+    "game-of-logic": "tsx scripts/game_of_logic.ts",
+    "fix:icloud": "bash scripts/fix_icloud_sync.sh",
+    "monitor:icloud": "tsx scripts/monitor_icloud.ts"
+  },
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^9.1.1",
+    "@google/gemini-cli-core": "^0.41.2",
+    "chalk": "^5.6.2",
+    "cheerio": "^1.2.0",
+    "chokidar": "^5.0.0",
+    "commander": "^14.0.3",
+    "next": "^16.2.6",
+    "puppeteer": "^25.1.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "ws": "^8.21.0"
+  },
+  "devDependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@supabase/supabase-js": "^2.105.4",
+    "@types/node": "^20.19.41",
+    "@types/ws": "^8.18.1",
+    "@vercel/ncc": "^0.38.4",
+    "@vercel/sandbox": "^1.10.1",
+    "mongodb": "^7.2.0",
+    "tsx": "^4.22.3",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.7",
+    "zod": "^4.4.3"
+  }
+}

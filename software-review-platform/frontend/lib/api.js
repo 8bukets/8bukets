@@ -1,7 +1,20 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+import { API_URL } from "./config";
+
+function buildUrl(path, params = {}) {
+  const searchParams = new URLSearchParams();
+
+  Object.entries(params).forEach(([key, value]) => {
+    if (value !== undefined && value !== null && value !== "") {
+      searchParams.set(key, value);
+    }
+  });
+
+  const query = searchParams.toString();
+  return `${API_URL}${path}${query ? `?${query}` : ""}`;
+}
 
 export async function fetchJson(path, options = {}) {
-  const response = await fetch(`${API_URL}${path}`, {
+  const response = await fetch(buildUrl(path, options.params), {
     ...options,
     headers: {
       "Content-Type": "application/json",
@@ -21,6 +34,30 @@ export async function fetchJson(path, options = {}) {
 export async function getSoftwareList() {
   try {
     return await fetchJson("/software");
+  } catch {
+    return [];
+  }
+}
+
+export async function getSoftwareCatalogSnapshot(filters = {}) {
+  const [allSoftware, filteredSoftware] = await Promise.allSettled([
+    fetchJson("/software"),
+    fetchJson("/software", { params: filters }),
+  ]);
+
+  const allSoftwareValue = allSoftware.status === "fulfilled" ? allSoftware.value : [];
+  const filteredSoftwareValue = filteredSoftware.status === "fulfilled" ? filteredSoftware.value : [];
+
+  return {
+    allSoftware: allSoftwareValue,
+    filteredSoftware: filteredSoftwareValue,
+    isApiAvailable: allSoftware.status === "fulfilled" && filteredSoftware.status === "fulfilled",
+  };
+}
+
+export async function getFilteredSoftwareList(filters = {}) {
+  try {
+    return await fetchJson("/software", { params: filters });
   } catch {
     return [];
   }

@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { API_URL } from "../lib/config";
 import { getStoredToken } from "../lib/session";
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
 
 export default function ReviewRatingForm({ reviewId }) {
   const [score, setScore] = useState(5);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -20,6 +20,8 @@ export default function ReviewRatingForm({ reviewId }) {
       setError("Log in before rating a review.");
       return;
     }
+
+    setIsSubmitting(true);
 
     try {
       const response = await fetch(`${API_URL}/reviews/${reviewId}/ratings`, {
@@ -39,6 +41,8 @@ export default function ReviewRatingForm({ reviewId }) {
       setMessage(`Saved score ${data.score}/5`);
     } catch (submitError) {
       setError(submitError.message);
+    } finally {
+      setIsSubmitting(false);
     }
   }
 
@@ -55,7 +59,9 @@ export default function ReviewRatingForm({ reviewId }) {
             ))}
           </select>
         </div>
-        <button className="btn btn-outline" type="submit">Save rating</button>
+        <button className="btn btn-outline" type="submit" disabled={isSubmitting}>
+          {isSubmitting ? "Saving..." : "Save rating"}
+        </button>
       </form>
       {message ? <p className="message-success" style={{ marginTop: "16px" }}>{message}</p> : null}
       {error ? <p className="message-error" style={{ marginTop: "16px" }}>{error}</p> : null}

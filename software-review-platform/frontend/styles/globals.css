@@ -199,6 +199,35 @@ a {
   margin-bottom: 60px;
 }
 
+.filter-card {
+  margin-bottom: 32px;
+}
+
+.status-banner {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 32px;
+  border-color: rgba(249, 115, 22, 0.35);
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.08), rgba(20, 20, 22, 0.96));
+}
+
+.filter-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(200px, 1fr) minmax(180px, 1fr) auto;
+  gap: 16px;
+  align-items: end;
+}
+
+.filter-field {
+  min-width: 0;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 /* Forms */
 .form-group {
   margin-bottom: 20px;
@@ -415,4 +444,18 @@ a {
 
 .animate-fade {
   animation: fadeIn 0.4s ease-out forwards;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-form {
+    grid-template-columns: 1fr;
+  }
 }

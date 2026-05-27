@@ -1,6 +1,7 @@
 // software-review-platform/backend/src/controllers/reviewController.js
 import db from "../db/index.js";
 import { analyzeSentiment } from "../utils/moderation.js";
+import { isIntegerInRange, normalizedString } from "../utils/validation.js";
 
 export const getReviews = async (req, res) => {
   const { software_id, status } = req.query;
@@ -100,13 +101,33 @@ export const getReviewById = async (req, res) => {
 };
 
 export const createReview = async (req, res) => {
-  const { software_id, title, content, score } = req.body;
+  const software_id = Number(req.body.software_id);
+  const title = normalizedString(req.body.title);
+  const content = normalizedString(req.body.content);
+  const score = Number(req.body.score);
 
   if (!software_id || !title || !content || !score) {
     return res.status(400).json({ error: "software_id, title, content, and score are required" });
   }
 
+  if (title.length < 5) {
+    return res.status(400).json({ error: "Title must be at least 5 characters long" });
+  }
+
+  if (content.length < 20) {
+    return res.status(400).json({ error: "Review must be at least 20 characters long" });
+  }
+
+  if (!isIntegerInRange(score, 1, 5)) {
+    return res.status(400).json({ error: "Score must be between 1 and 5" });
+  }
+
   try {
+    const softwareResult = await db.query("SELECT id FROM software WHERE id = $1", [software_id]);
+    if (!softwareResult.rows[0]) {
+      return res.status(404).json({ error: "Software not found" });
+    }
+
     const reviewInsert = await db.query(
       `INSERT INTO reviews (user_id, software_id, title, content, status)
        VALUES ($1, $2, $3, $4, 'pending') RETURNING *`,
@@ -116,7 +137,7 @@ export const createReview = async (req, res) => {
     const review = reviewInsert.rows[0];
 
     // AI analiza (mock)
-    const sentiment = analyzeSentiment(content);
+    const sentiment = await analyzeSentiment(content);
 
     await db.query(
       `UPDATE reviews SET sentiment_score=$1 WHERE id=$2`,
@@ -143,13 +164,22 @@ export const createReview = async (req, res) => {
 };
 
 export const addComment = async (req, res) => {
-  const { content } = req.body;
+  const content = normalizedString(req.body.content);
 
   if (!content) {
     return res.status(400).json({ error: "Comment content is required" });
   }
 
+  if (content.length < 3) {
+    return res.status(400).json({ error: "Comment must be at least 3 characters long" });
+  }
+
   try {
+    const reviewResult = await db.query("SELECT id FROM reviews WHERE id = $1", [req.params.id]);
+    if (!reviewResult.rows[0]) {
+      return res.status(404).json({ error: "Review not found" });
+    }
+
     const result = await db.query(
       `INSERT INTO comments (user_id, review_id, content)
        VALUES ($1, $2, $3)
@@ -165,13 +195,18 @@ export const addComment = async (req, res) => {
 };
 
 export const rateReview = async (req, res) => {
-  const { score } = req.body;
+  const score = Number(req.body.score);
 
-  if (!score || score < 1 || score > 5) {
+  if (!isIntegerInRange(score, 1, 5)) {
     return res.status(400).json({ error: "Score must be between 1 and 5" });
   }
 
   try {
+    const reviewResult = await db.query("SELECT id FROM reviews WHERE id = $1", [req.params.id]);
+    if (!reviewResult.rows[0]) {
+      return res.status(404).json({ error: "Review not found" });
+    }
+
     const result = await db.query(
       `INSERT INTO ratings (user_id, review_id, score)
        VALUES ($1, $2, $3)
@@ -211,7 +246,7 @@ export const moderateReview = async (req, res) => {
     await db.query(
       `INSERT INTO moderation (review_id, status, reason, reviewed_by)
        VALUES ($1, $2, $3, $4)`,
-      [req.params.id, status, reason || null, req.user.id]
+      [req.params.id, status, normalizedString(reason) || null, req.user.id]
     );
 
     res.json(review);

@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { API_URL } from "../lib/config";
 import { getStoredToken } from "../lib/session";
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
 
 export default function CommentForm({ reviewId }) {
   const [content, setContent] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -20,6 +20,8 @@ export default function CommentForm({ reviewId }) {
       setError("Log in before posting a comment.");
       return;
     }
+
+    setIsSubmitting(true);
 
     try {
       const response = await fetch(`${API_URL}/reviews/${reviewId}/comments`, {
@@ -40,6 +42,8 @@ export default function CommentForm({ reviewId }) {
       setContent("");
     } catch (submitError) {
       setError(submitError.message);
+    } finally {
+      setIsSubmitting(false);
     }
   }
 
@@ -50,7 +54,9 @@ export default function CommentForm({ reviewId }) {
         <div className="form-group">
           <textarea className="textarea" value={content} onChange={(event) => setContent(event.target.value)} required />
         </div>
-        <button className="btn btn-primary" type="submit">Post comment</button>
+        <button className="btn btn-primary" type="submit" disabled={isSubmitting}>
+          {isSubmitting ? "Posting..." : "Post comment"}
+        </button>
       </form>
       {message ? <p className="message-success" style={{ marginTop: "16px" }}>{message}</p> : null}
       {error ? <p className="message-error" style={{ marginTop: "16px" }}>{error}</p> : null}

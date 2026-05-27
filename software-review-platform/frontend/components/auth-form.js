@@ -2,9 +2,8 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { API_URL } from "../lib/config";
 import { storeSession } from "../lib/session";
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
 
 export default function AuthForm({ mode }) {
   const router = useRouter();
@@ -13,11 +12,13 @@ export default function AuthForm({ mode }) {
   const [inviteCode, setInviteCode] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   async function handleSubmit(event) {
     event.preventDefault();
     setMessage("");
     setError("");
+    setIsSubmitting(true);
 
     try {
       const response = await fetch(`${API_URL}/auth/${mode}`, {
@@ -44,8 +45,11 @@ export default function AuthForm({ mode }) {
 
       setMessage("Registration complete. You can log in now.");
       setPassword("");
+      setInviteCode("");
     } catch (submitError) {
       setError(submitError.message);
+    } finally {
+      setIsSubmitting(false);
     }
   }
 
@@ -87,10 +91,15 @@ export default function AuthForm({ mode }) {
             />
           </div>
         ) : null}
-        <button type="submit" className="btn btn-primary" style={{ width: "100%" }}>
-          {mode === "login" ? "Log in" : "Register"}
+        <button type="submit" className="btn btn-primary" style={{ width: "100%" }} disabled={isSubmitting}>
+          {isSubmitting ? "Working..." : mode === "login" ? "Log in" : "Register"}
         </button>
       </form>
+      {mode === "register" ? (
+        <p className="muted" style={{ marginTop: "12px" }}>
+          Leave the invite code empty for a normal user account.
+        </p>
+      ) : null}
       {message ? <p className="message-success" style={{ marginTop: "16px" }}>{message}</p> : null}
       {error ? <p className="message-error" style={{ marginTop: "16px" }}>{error}</p> : null}
     </div>

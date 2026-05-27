@@ -4,22 +4,44 @@ import dotenv from "dotenv";
 import authRoutes from "./routes/auth.js";
 import reviewRoutes from "./routes/reviews.js";
 import softwareRoutes from "./routes/software.js";
+import db from "./db/index.js";
 
 dotenv.config();
 
+export async function healthHandler(_req, res) {
+  try {
+    await db.healthcheck();
+
+    res.json({
+      ok: true,
+      service: "software-review-platform-backend",
+      database: "ok",
+    });
+  } catch (error) {
+    res.status(503).json({
+      ok: false,
+      service: "software-review-platform-backend",
+      database: "error",
+      error: error.message,
+    });
+  }
+}
+
 export function createApp() {
   const app = express();
+  const allowedOrigin =
+    process.env.CORS_ORIGIN ||
+    process.env.CLIENT_ORIGIN ||
+    "http://localhost:3000";
 
   app.use(
     cors({
-      origin: process.env.CLIENT_ORIGIN || "http://localhost:3000",
+      origin: allowedOrigin,
     })
   );
   app.use(express.json());
 
-  app.get("/api/health", (_req, res) => {
-    res.json({ ok: true, service: "software-review-platform-backend" });
-  });
+  app.get("/api/health", healthHandler);
 
   app.use("/api/auth", authRoutes);
   app.use("/api/reviews", reviewRoutes);
@@ -32,9 +54,15 @@ const app = createApp();
 
 if (process.env.NO_LISTEN !== "1") {
   const port = process.env.PORT || 5000;
-  const host = process.env.HOST || "127.0.0.1";
+  const host = process.env.HOST;
 
-  app.listen(port, host, () => {
-    console.log(`Server running on http://${host}:${port}`);
-  });
+  if (host) {
+    app.listen(port, host, () => {
+      console.log(`Server running on http://${host}:${port}`);
+    });
+  } else {
+    app.listen(port, () => {
+      console.log(`Server running on port ${port}`);
+    });
+  }
 }

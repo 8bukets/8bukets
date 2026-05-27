@@ -2,10 +2,24 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import db from "../db/index.js";
+import { isValidEmail, isValidPassword, normalizedString } from "../utils/validation.js";
 
 export const register = async (req, res) => {
-  const { email, password, invite_code } = req.body;
-  if (!email || !password) return res.status(400).json({ error: "Email and password are required" });
+  const email = normalizedString(req.body.email).toLowerCase();
+  const password = req.body.password;
+  const invite_code = normalizedString(req.body.invite_code);
+
+  if (!email || !password) {
+    return res.status(400).json({ error: "Email and password are required" });
+  }
+
+  if (!isValidEmail(email)) {
+    return res.status(400).json({ error: "Enter a valid email address" });
+  }
+
+  if (!isValidPassword(password)) {
+    return res.status(400).json({ error: "Password must be at least 8 characters long" });
+  }
 
   try {
     const hash = await bcrypt.hash(password, 10);
@@ -26,8 +40,20 @@ export const register = async (req, res) => {
 };
 
 export const login = async (req, res) => {
-  const { email, password } = req.body;
-  if (!email || !password) return res.status(400).json({ error: "Email and password are required" });
+  const email = normalizedString(req.body.email).toLowerCase();
+  const password = req.body.password;
+
+  if (!email || !password) {
+    return res.status(400).json({ error: "Email and password are required" });
+  }
+
+  if (!isValidEmail(email)) {
+    return res.status(400).json({ error: "Enter a valid email address" });
+  }
+
+  if (!process.env.JWT_SECRET) {
+    return res.status(500).json({ error: "JWT secret is not configured" });
+  }
 
   try {
     const result = await db.query("SELECT * FROM users WHERE email = $1", [email]);
@@ -39,7 +65,7 @@ export const login = async (req, res) => {
 
     const token = jwt.sign(
       { id: user.id, email: user.email, role: user.role },
-      process.env.JWT_SECRET || "default_jwt_secret",
+      process.env.JWT_SECRET,
       { expiresIn: "7d" }
     );
     res.json({ token, user: { id: user.id, email: user.email, role: user.role } });
@@ -58,7 +84,11 @@ export const me = async (req, res) => {
 
   try {
     const token = header.slice(7);
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || "default_jwt_secret");
+    if (!process.env.JWT_SECRET) {
+      return res.status(500).json({ error: "JWT secret is not configured" });
+    }
+
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     res.json({
       id: decoded.id,
       email: decoded.email,

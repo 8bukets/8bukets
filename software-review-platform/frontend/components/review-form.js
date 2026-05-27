@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { API_URL } from "../lib/config";
 import { getStoredToken } from "../lib/session";
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
 
 export default function ReviewForm({ softwareId }) {
   const [title, setTitle] = useState("");
@@ -11,6 +10,7 @@ export default function ReviewForm({ softwareId }) {
   const [score, setScore] = useState(5);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -22,6 +22,8 @@ export default function ReviewForm({ softwareId }) {
       setError("Log in before submitting a review.");
       return;
     }
+
+    setIsSubmitting(true);
 
     try {
       const response = await fetch(`${API_URL}/reviews`, {
@@ -49,6 +51,8 @@ export default function ReviewForm({ softwareId }) {
       setScore(5);
     } catch (submitError) {
       setError(submitError.message);
+    } finally {
+      setIsSubmitting(false);
     }
   }
 
@@ -74,7 +78,9 @@ export default function ReviewForm({ softwareId }) {
           <label className="label">Review</label>
           <textarea className="textarea" value={content} onChange={(event) => setContent(event.target.value)} required />
         </div>
-        <button type="submit" className="btn btn-primary">Submit review</button>
+        <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
+          {isSubmitting ? "Submitting..." : "Submit review"}
+        </button>
       </form>
       {message ? <p className="message-success" style={{ marginTop: "16px" }}>{message}</p> : null}
       {error ? <p className="message-error" style={{ marginTop: "16px" }}>{error}</p> : null}
