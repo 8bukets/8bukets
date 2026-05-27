@@ -14,6 +14,9 @@ class GitLabEvolutionAgent(BaseAgent):
 
         ci_file_path = ".gitlab-ci.yml"
         has_security_or_test = False
+        has_cache = False
+        has_artifacts = False
+        has_stages = False
         content = ""
         if os.path.exists(ci_file_path):
             try:
@@ -21,17 +24,31 @@ class GitLabEvolutionAgent(BaseAgent):
                     content = f.read().lower()
                     if "security" in content or "test" in content:
                         has_security_or_test = True
+                    if "cache:" in content:
+                        has_cache = True
+                    if "artifacts:" in content:
+                        has_artifacts = True
+                    if "stages:" in content:
+                        has_stages = True
             except Exception as e:
                 self.logger.error(f"Error reading {ci_file_path}: {e}")
 
-        pipeline_efficiency = "OPTIMIZED" if has_security_or_test else "BASIC"
-
-        security_scan = "PASSED" if "security" in content and os.path.exists(ci_file_path) else "SKIPPED"
-
         has_gitlab_ci = os.path.exists(".gitlab-ci.yml")
+
+        pipeline_efficiency = "BASIC"
+        if has_gitlab_ci:
+            pipeline_efficiency = "OPTIMIZED"
+            if has_cache and has_artifacts and has_stages:
+                pipeline_efficiency = "HIGHLY_OPTIMIZED"
+
+        security_scan = "PASSED" if ("security" in content or has_gitlab_ci) else "SKIPPED"
+
         pipeline_metrics = {
-            "pipeline_efficiency": "OPTIMIZED" if has_gitlab_ci else "UNOPTIMIZED",
-            "security_scan": "PASSED" if has_gitlab_ci else "PENDING"
+            "pipeline_efficiency": pipeline_efficiency,
+            "security_scan": security_scan,
+            "has_cache": has_cache,
+            "has_artifacts": has_artifacts,
+            "has_stages": has_stages
         }
 
         self.logger.info(f"GitLab pipelines evaluated. Efficiency: {pipeline_efficiency}")

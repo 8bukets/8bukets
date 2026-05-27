@@ -2,18 +2,21 @@ import json
 import os
 
 def merge_knowledge():
-    # Only merge from the intended path
-    agents_path = "data/knowledge/ai_agents_knowledge.json"
+    innovation_path = "data/google_innovation_ai.json"
+    agents_path = "data/ai_agents_knowledge.json"
     system_path = "data/knowledge/system_knowledge.json"
-    consolidated_path = "CONSOLIDATED_KNOWLEDGE.md"
 
-    if not os.path.exists(agents_path):
-        print(f"Source file {agents_path} not found.")
-        return
+    innovation_data = []
+    if os.path.exists(innovation_path):
+        with open(innovation_path, "r", encoding="utf-8") as f:
+            innovation_data = json.load(f)
 
-    with open(agents_path, "r", encoding="utf-8") as f:
-        agents_data = json.load(f)
+    agents_data = []
+    if os.path.exists(agents_path):
+        with open(agents_path, "r", encoding="utf-8") as f:
+            agents_data = json.load(f)
 
+    # Prepare the unified structure
     system_knowledge = {}
     if os.path.exists(system_path):
         try:
@@ -22,49 +25,62 @@ def merge_knowledge():
         except Exception:
             pass
 
-    # Ensure sections exist
-    if "ai_agents_structured" not in system_knowledge:
-        system_knowledge["ai_agents_structured"] = []
+    # Merge innovation data
+    if isinstance(innovation_data, list):
+        existing_innovation = {item.get("url", str(i)): item for i, item in enumerate(system_knowledge.get("google_innovation_ai", []))}
+        for item in innovation_data:
+            url = item.get("url", f"generated_{len(existing_innovation)}")
+            existing_innovation[url] = item
+        system_knowledge["google_innovation_ai"] = list(existing_innovation.values())
 
-    # Map existing by URL or Title for merging
-    # For this specific source, we are merging by sections from the single page
-    # The script in ingest_ai_agents_knowledge.ts outputs sections as keys
+    # Merge agents data
+    if isinstance(agents_data, list):
+        existing_agents = {item.get("url", str(i)): item for i, item in enumerate(system_knowledge.get("ai_agents_structured", []))}
+        for item in agents_data:
+            url = item.get("url")
+            if url and url in existing_agents:
+                # Smart merge definitions/tools
+                existing = existing_agents[url]
 
-    # We will clear old scraped data from this URL to avoid duplication/pollution
-    source_url = "https://cloud.google.com/discover/what-are-ai-agents"
-    system_knowledge["ai_agents_structured"] = [
-        item for item in system_knowledge["ai_agents_structured"]
-        if item.get("url") != source_url
-    ]
+                # Definitions
+                existing_defs = {d["term"]: d["text"] for d in existing.get("definitions", [])}
+                for d in item.get("definitions", []):
+                    existing_defs[d["term"]] = d["text"]
+                existing["definitions"] = [{"term": k, "text": v} for k, v in existing_defs.items()]
 
-    # Add the new unified entry
-    new_entry = {
-        "url": source_url,
-        "title": "What are AI agents?",
-        "sections": [
-            {"header": v["title"], "content": v["content"].split("\n\n")}
-            for k, v in agents_data.items()
-        ]
-    }
-    system_knowledge["ai_agents_structured"].append(new_entry)
+                # Tools
+                existing_tools = set(existing.get("google_cloud_tools", []))
+                existing_tools.update(item.get("google_cloud_tools", []))
+                existing["google_cloud_tools"] = sorted(list(existing_tools))
+
+                # Benefits & Use Cases
+                existing_ucs = {u["title"]: u["description"] for u in existing.get("use_cases", [])}
+                for u in item.get("use_cases", []):
+                    existing_ucs[u["title"]] = u["description"]
+                existing["use_cases"] = [{"title": k, "description": v} for k, v in existing_ucs.items()]
+
+                existing_bens = {b["title"]: b["description"] for b in existing.get("benefits", [])}
+                for b in item.get("benefits", []):
+                    existing_bens[b["title"]] = b["description"]
+                existing["benefits"] = [{"title": k, "description": v} for k, v in existing_bens.items()]
+            elif url:
+                existing_agents[url] = item
+            else:
+                # If no URL, maybe it's a different format?
+                # For now, just append if it's a dict and we don't know where it goes
+                pass
+        system_knowledge["ai_agents_structured"] = list(existing_agents.values())
+    elif isinstance(agents_data, dict):
+        # If it's a dictionary (like what we saw in data/ai_agents_knowledge.json),
+        # it might be keyed by section name.
+        if "ai_agents_definitions" not in system_knowledge:
+            system_knowledge["ai_agents_definitions"] = {}
+        system_knowledge["ai_agents_definitions"].update(agents_data)
 
     with open(system_path, "w", encoding="utf-8") as f:
-        json.dump(system_knowledge, f, indent=2, ensure_ascii=False)
+        json.dump(system_knowledge, f, indent=4, ensure_ascii=False)
+
     print(f"Merged knowledge into {system_path}")
-
-    # Handle CONSOLIDATED_KNOWLEDGE.md carefully
-    if os.path.exists(consolidated_path):
-        with open(consolidated_path, "r", encoding="utf-8") as f:
-            lines = f.readlines()
-
-        # Check if signature already exists at the end
-        signature = "All the best - https://markposition.wordpress.com"
-        has_signature = any(signature in line for line in lines[-5:])
-
-        if not has_signature:
-            with open(consolidated_path, "a", encoding="utf-8") as f:
-                f.write(f"\n---\n{signature}\n")
-            print(f"Signed {consolidated_path}")
 
 if __name__ == "__main__":
     merge_knowledge()

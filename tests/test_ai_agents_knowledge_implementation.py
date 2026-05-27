@@ -2,6 +2,7 @@ import pytest
 import asyncio
 import os
 import json
+import shutil
 from agents.knowledge_agent import KnowledgeAgent
 from agents.intelligence_agent import IntelligenceAgent
 from agents.creativity_agent import CreativityAgent
@@ -78,6 +79,12 @@ async def test_ai_agents_knowledge_flow():
     
     # Mock knowledge file for test stability
     mock_kf = "data/ai_agents_knowledge.json"
+    backup_kf = "data/ai_agents_knowledge.json.bak"
+
+    # Backup original
+    if os.path.exists(mock_kf):
+        shutil.copy(mock_kf, backup_kf)
+
     os.makedirs(os.path.dirname(mock_kf), exist_ok=True)
     mock_data = {
         "what-is-an-ai-agent": {"content": "AI agents are software systems..."},
@@ -89,7 +96,7 @@ async def test_ai_agents_knowledge_flow():
         "key-differences": {"content": "Autonomy Learning Complexity"},
         "how-do-ai-agents-work": {"content": "- Persona: Consistent\n- Memory: Multi-tiered\n- Tools: External\n- Model: Brain"},
         "benefits-of-using-ai-agents": {"content": "Simultaneous execution Realistic simulations Collaboration"},
-        "google-cloud-and-ai-agents": {"content": "- ToolA Description\n- ToolB Description"},
+        "google-cloud-and-ai-agents": {"content": "- Gemini Enterprise Agent Platform Description\n- ToolB Description"},
         "customer-agents": {"content": "Customer context"},
         "employee-agents": {"content": "Employee context"},
         "creative-agents": {"content": "Creative context"},
@@ -98,37 +105,44 @@ async def test_ai_agents_knowledge_flow():
         "security-agents": {"content": "Security context"},
         "deploy-ai-agents-for-scale-and-efficiency-with-cloud-run": {"content": "Cloud Run deployment"}
     }
-    with open(mock_kf, "w") as f:
-        json.dump(mock_data, f)
 
-    k_result = await k_agent.run([], blackboard)
-    await blackboard.update(k_agent.name, k_result)
+    try:
+        with open(mock_kf, "w") as f:
+            json.dump(mock_data, f)
 
-    assert "ai_agent_knowledge" in k_result
-    assert "ai_agents_definitions" in k_result
-    assert "challenges" in k_result["ai_agents_definitions"]
-    assert "customer" in k_result["agent_use_cases"]
+        k_result = await k_agent.run([], blackboard)
+        await blackboard.update(k_agent.name, k_result)
 
-    # 3. Test IntelligenceAgent
-    i_agent = IntelligenceAgent()
-    i_result = await i_agent.run([], blackboard)
-    await blackboard.update(i_agent.name, i_result)
+        assert "ai_agent_knowledge" in k_result
+        assert "ai_agents_definitions" in k_result
+        assert "challenges" in k_result["ai_agents_definitions"]
+        assert "customer" in k_result["agent_use_cases"]
+        assert "Gemini Enterprise Agent Platform" in k_result["google_cloud_tools_list"]
 
-    assert "intelligence_insights" in i_result
-    assert any("AI Agent Knowledge Base Integrated" in insight for insight in i_result["intelligence_insights"])
-    assert i_result["synchronization_level"] == "ADVANCED_COLABORATIVE"
+        # 3. Test IntelligenceAgent
+        i_agent = IntelligenceAgent()
+        i_result = await i_agent.run([], blackboard)
+        await blackboard.update(i_agent.name, i_result)
 
-    # 4. Test CreativityAgent
-    c_agent = CreativityAgent()
-    # Provide necessary concepts via mock if not already there
-    await blackboard.update("MockKnowledge", {
-        "agent_taxonomy": {
-            "interactive_partners": "Assisting with tasks like customer service via direct conversation.",
-            "background_processes": "Automating routine tasks and optimizing processes behind the scenes."
-        }
-    })
-    c_result = await c_agent.run([], blackboard)
-    assert any("Background Agents" in concept for concept in c_result["creative_concepts"])
+        assert "intelligence_insights" in i_result
+        assert any("AI Agent Knowledge Base Integrated" in insight for insight in i_result["intelligence_insights"])
+        assert i_result["synchronization_level"] == "ADVANCED_COLABORATIVE"
+
+        # 4. Test CreativityAgent
+        c_agent = CreativityAgent()
+        # Provide necessary concepts via mock if not already there
+        await blackboard.update("MockKnowledge", {
+            "agent_taxonomy": {
+                "interactive_partners": "Assisting with tasks like customer service via direct conversation.",
+                "background_processes": "Automating routine tasks and optimizing processes behind the scenes."
+            }
+        })
+        c_result = await c_agent.run([], blackboard)
+        assert any("Background Agents" in concept for concept in c_result["creative_concepts"])
+    finally:
+        # Restore original
+        if os.path.exists(backup_kf):
+            shutil.move(backup_kf, mock_kf)
 
 if __name__ == "__main__":
     pytest.main([__file__])
