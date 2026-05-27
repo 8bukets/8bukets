@@ -1,5 +1,5 @@
-aiohttp==3.10.11
+aiohttp==3.13.4
 beautifulsoup4==4.12.3
-requests==2.32.3
-pytest==8.3.3
+requests==2.33.0
+pytest==9.0.3
 pytest-asyncio==0.24.0
