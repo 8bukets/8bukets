@@ -52,9 +52,9 @@ export async function getDockerFleetStatus(): Promise<DockerContainer[]> {
         return [
           { id: 'sim-01', image: 'antigravity-core:latest', status: 'Up 24 hours', names: 'primary-node-alpha' },
           { id: 'sim-02', image: 'mongo:latest', status: 'Up 24 hours', names: 'primary-database' },
-          { id: 'sim-03', image: 'supabase/postgres:latest', status: 'Up 24 hours', names: 'vector-db' },
-          { id: 'sim-04', image: 'redis:alpine', status: 'Up 24 hours', names: 'neural-cache' },
-          { id: 'sim-05', image: 'antigravity-proxy:latest', status: 'Up 24 hours', names: 'omni-gateway' }
+          { id: 'sim-03', image: 'redis:latest', status: 'Up 24 hours', names: 'neural-cache' },
+          { id: 'sim-04', image: 'chromadb:latest', status: 'Up 24 hours', names: 'vector-db' },
+          { id: 'sim-05', image: 'nginx:latest', status: 'Up 24 hours', names: 'omni-gateway' }
         ]
       }
 
@@ -75,10 +75,9 @@ export async function checkDockerHealth() {
   if (!isHealthy && !isSimulated) {
     if (process.env.MACBOOK_CLOUD_SIMULATION === 'true' || process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true') {
       console.log('🧪 [Docker] Recovery restricted. Engaging cloud-native simulated state.')
-      const simulatedFleet = await getDockerFleetStatus()
       return {
         status: 'simulated',
-        containerCount: simulatedFleet.length,
+        containerCount: 5,
         simulated: true,
         timestamp: new Date().toISOString()
       }
@@ -131,7 +130,7 @@ export async function checkDockerHealth() {
   let multiStageStatus = 'unknown'
   try {
     const dockerfilePath = path.join(process.cwd(), 'Dockerfile')
-    if (/* [Evolution] TODO: Refactor to async */ fs.existsSync(dockerfilePath)) {
+    if (fs.existsSync(dockerfilePath)) {
       const content = await fs.promises.readFile(dockerfilePath, 'utf8')
       const fromCount = (content.match(/^FROM /gm) || []).length
       multiStageStatus = fromCount > 1 ? 'multi-stage' : 'single-stage'
