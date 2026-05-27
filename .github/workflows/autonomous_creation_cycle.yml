@@ -1,0 +1,47 @@
+name: Antigravity Autonomous Creation Cycle
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Every day at midnight
+  workflow_dispatch: # Allows manual trigger
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  autonomous-creation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Execute Full Autonomous Creation Cycle
+        run: npx tsx scripts/execute_creation_cycle.ts
+        env:
+          MACBOOK_CLOUD_SIMULATION: true
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+
+      - name: Commit and Push Autonomous Improvements
+        run: |
+          git config --global user.name "antigravity-bot"
+          git config --global user.email "bot@antigravity.ai"
+          git add .
+          git commit -m "🤖 chore: autonomous creation cycle improvements and self-corrections" || echo "No changes to commit"
+          git push origin HEAD || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

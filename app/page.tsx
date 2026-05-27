@@ -5,6 +5,8 @@ import { PageProps, resolve, getSystemInsights } from "@/antigravity/core";
 import { getAppStats } from "@/antigravity/services/stats";
 
 export default async function CommandCenter(props: PageProps) {
+  // [Evolution] TODO: Add autonomous error handling (try/catch)
+  // [Evolution] TODO: Add autonomous error handling (try/catch)
   'use cache'
   return (
     <Suspense fallback={<div>Loading Antigravity...</div>}>

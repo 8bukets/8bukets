@@ -112,7 +112,7 @@ export class Jules {
     const { KnowledgeObserver } = await import('./services/knowledge_observer')
     const observer = new KnowledgeObserver()
 
-    const docsToObserve = [
+    const intelephenseDocs = [
       { owner: 'bmewburn', repo: 'intelephense-docs', path: 'README.md' },
       { owner: 'bmewburn', repo: 'intelephense-docs', path: 'installation.md' },
       { owner: 'bmewburn', repo: 'intelephense-docs', path: 'gettingStarted.md' },
@@ -120,17 +120,42 @@ export class Jules {
       { owner: 'bmewburn', repo: 'intelephense-docs', path: 'support.md' }
     ]
 
-    for (const doc of docsToObserve) {
+    let allSections: any[] = []
+
+    for (const doc of intelephenseDocs) {
       try {
         const result = await githubDocsObserver.fetchDoc(doc.owner, doc.repo, doc.path)
         const title = `Intelephense: ${doc.path.replace('.md', '')}`
         const rawContent = result.sections.map((s: any) => `# ${s.title}\n${s.content}`).join('\n\n')
         const knowledge = KnowledgeObserver.processContent(title, rawContent, result.rawUrl)
-        await observer.persistKnowledge(knowledge)
-        console.log(` ✅ [Jules] Ingested and Processed: ${doc.path}`)
+
+        allSections.push(...knowledge.sections)
+        console.log(` ✅ [Jules] Fetched: ${doc.path}`)
       } catch (err) {
-        console.error(` ❌ [Jules] Failed to ingest ${doc.path}:`, err)
+        console.error(` ❌ [Jules] Failed to fetch ${doc.path}:`, err)
       }
+    }
+
+    if (allSections.length > 0) {
+      // Deduplicate sections by header
+      const seenHeaders = new Set<string>()
+      const uniqueSections = allSections.filter(s => {
+        if (seenHeaders.has(s.header)) return false
+        if (!s.content && !['Getting Started', 'Features', 'Installation'].includes(s.header)) return false
+        seenHeaders.add(s.header)
+        return true
+      })
+
+      const consolidated = {
+        title: 'Intelephense Documentation',
+        sections: uniqueSections,
+        metadata: {
+          source: 'https://intelephense.com/docs',
+          ingestedAt: new Date().toISOString()
+        }
+      }
+      await observer.persistKnowledge(consolidated as any)
+      console.log(` ✅ [Jules] Consolidated Intelephense Documentation persisted.`)
     }
   }
 
@@ -158,19 +183,21 @@ export class Jules {
     const { exec } = await import('child_process')
     const { promisify } = await import('util')
     const execAsync = promisify(exec)
+    const { execFile } = await import('child_process')
+    const execFileAsync = promisify(execFile)
 
     try {
-      await execAsync('git pull --rebase origin main || true')
-      await execAsync('git add .')
-      await execAsync('git reset HEAD work_cycle.log data/work_orders.json .jules_memory.json autonomous_state.json || true')
+      await execAsync('git pull --rebase origin main || true') // keeping execAsync for || true shell syntax
+      await execFileAsync('git', ['add', '.'])
+      await execAsync('git reset HEAD work_cycle.log data/work_orders.json .jules_memory.json autonomous_state.json || true') // keeping execAsync for || true
 
       try {
-        await execAsync(`git commit -m "${message}"`)
+        await execFileAsync('git', ['commit', '-m', message])
       } catch (commitErr) {
         console.log('ℹ️ [Jules] No changes to commit or commit failed. Proceeding to push anyway.')
       }
 
-      await execAsync('git push origin main || true')
+      await execAsync('git push origin main || true') // keeping execAsync for || true
       console.log('✅ [Jules] Git sync completed autonomously.')
       this.recordTask(`Git Sync: Synchronized state with origin.`)
     } catch (err) {
@@ -180,9 +207,13 @@ export class Jules {
 
   public async auditDependencies() {
     console.log(`📦 [Jules-${this.role}] Auditing dependency sovereignty...`)
-    const { execSync } = await import('child_process')
+    const { exec } = await import('child_process')
+    const { promisify } = await import('util')
+    const execAsync = promisify(exec)
+    const { execFile } = await import('child_process')
+    const execFileAsync = promisify(execFile)
     try {
-      const outdated = execSync('npm outdated --json || true').toString()
+      const { stdout: outdated } = await execAsync('npm outdated --json || true')
       const count = Object.keys(JSON.parse(outdated || '{}')).length
       if (count > 0) {
         this.recordTask(`Dependency Autopilot: Found ${count} outdated packages.`)
@@ -291,16 +322,23 @@ export class Jules {
 
   public async scanAllBranches(force: boolean = false) {
     console.log(`🔍 [Jules-${this.role}] Scanning ecosystem branches...`)
-    const { execSync } = await import('child_process')
+    const { exec } = await import('child_process')
+    const { promisify } = await import('util')
+    const execAsync = promisify(exec)
+    const { execFile } = await import('child_process')
+    const execFileAsync = promisify(execFile)
     try {
-      const branchesRaw = execSync('git branch -a').toString()
+      const { stdout: branchesRaw } = await execFileAsync('git', ['branch', '-a'])
       const branches = branchesRaw.split('\n')
         .map(b => b.replace('*', '').trim())
         .filter(b => b && !b.includes('->'))
+        .slice(0, 50) // Limit to 50 to prevent timeout
 
-      return branches.map(branch => {
+      const branchResults = []
+      for (const branch of branches) {
         try {
-          const lastCommit = execSync(`git log -1 --format="%s|%at" ${branch}`).toString().trim()
+          const { stdout: lastCommitRaw } = await execFileAsync('git', ['log', '-1', '--format=%s|%at', branch])
+          const lastCommit = lastCommitRaw.trim()
           const [message, timestamp] = lastCommit.split('|')
 
           let category = 'other'
@@ -310,49 +348,67 @@ export class Jules {
           else if (branch.includes('research/')) category = 'research'
 
           // Enhanced Result & Knowledge Extraction
-          const resultMatch = message.match(/(?:results|fixes|implements|adds):\s*(.*)/i)
-          const results = resultMatch ? resultMatch[1].trim() : (message.includes(':') ? message.split(':')[1].trim() : message)
+          const resultMatch = message.match(/(?:results|fixes|implements|adds|integrates|updates|optimizes):\s*(.*)/i)
+          const parsedResults = resultMatch ? resultMatch[1].trim() : (message.includes(':') ? message.split(':')[1].trim() : message)
 
-          const knowledgeNugget = message.toLowerCase().includes('learn') || message.toLowerCase().includes('observe')
-            ? `Branch ${branch} observed: ${results}`
-            : undefined
+          const knowledgeNugget = message.toLowerCase().match(/(?:learn|observe|ingest|knowledge):\s*(.*)/i)
+            ? `Branch ${branch} observed: ${parsedResults}`
+            : (message.toLowerCase().includes('learn') || message.toLowerCase().includes('observe') ? `Branch ${branch} observed: ${parsedResults}` : undefined)
 
           // Phase 12: Advanced Branch Analysis (File Changes & Domain Mapping)
           let changedFiles: string[] = []
           let domain = 'General'
           try {
-            const diffCommand = branch === 'main' ? 'git diff --name-only HEAD~1' : `git diff --name-only main...${branch}`
-            const diffOutput = execSync(diffCommand).toString().trim()
+            let diffOutput = ''
+
+            try {
+              const diffArgs = branch === 'main' ? ['diff', '--name-only', 'HEAD~1'] : ['diff', '--name-only', `main...${branch}`]
+              const { stdout: diff1 } = await execFileAsync('git', diffArgs)
+              diffOutput = diff1.trim()
+            } catch (e) {
+              // Fallback 1: Direct comparison
+              try {
+                const { stdout: diff2 } = await execFileAsync('git', ['diff', '--name-only', 'main', branch])
+                diffOutput = diff2.trim()
+              } catch (e2) {
+                // Fallback 2: Last commit changes
+                const { stdout: diff3 } = await execFileAsync('git', ['show', '--name-only', '--format=', branch])
+                diffOutput = diff3.trim()
+              }
+            }
+
             changedFiles = diffOutput ? diffOutput.split('\n') : []
 
-            if (changedFiles.some(f => f.includes('security') || f.includes('auth') || f.includes('sentinel'))) domain = 'Security'
-            else if (changedFiles.some(f => f.includes('optimization') || f.includes('analytics') || f.includes('scaling'))) domain = 'Performance'
-            else if (changedFiles.some(f => f.includes('docker') || f.includes('jenkins') || f.includes('ci') || f.includes('deployment') || f.includes('orchestrator'))) domain = 'Infrastructure'
-            else if (changedFiles.some(f => f.includes('jules') || f.includes('agent') || f.includes('intelligence') || f.includes('synthesis') || f.includes('react'))) domain = 'AI'
+            if (changedFiles.some(f => f.includes('security') || f.includes('auth') || f.includes('sentinel') || f.includes('validation'))) domain = 'Security'
+            else if (changedFiles.some(f => f.includes('optimization') || f.includes('analytics') || f.includes('scaling') || f.includes('perf'))) domain = 'Performance'
+            else if (changedFiles.some(f => f.includes('docker') || f.includes('jenkins') || f.includes('ci') || f.includes('deployment') || f.includes('orchestrator') || f.includes('workflow'))) domain = 'Infrastructure'
+            else if (changedFiles.some(f => f.includes('jules') || f.includes('agent') || f.includes('intelligence') || f.includes('synthesis') || f.includes('react') || f.includes('neural'))) domain = 'AI'
+            else if (changedFiles.some(f => f.includes('app/') || f.includes('web-app/') || f.includes('my-app/') || f.includes('.tsx') || f.includes('.css'))) domain = 'UI/Frontend'
           } catch (diffErr) {
-            // Fallback for cases where diff fails (e.g., shallow clones or missing merge base)
+            // Fallback for cases where all diff strategies fail
           }
 
-          return {
+          branchResults.push({
             name: branch,
             lastMessage: message,
             lastSeen: new Date(parseInt(timestamp) * 1000).toISOString(),
             category,
-            results,
+            results: parsedResults,
             knowledge: knowledgeNugget,
             changedFiles,
             domain
-          }
+          })
         } catch (e) {
-          return {
+          branchResults.push({
             name: branch,
             lastMessage: 'Unknown',
             lastSeen: new Date().toISOString(),
             category: 'unknown',
             results: 'N/A'
-          }
+          })
         }
-      })
+      }
+      return branchResults
     } catch (err) {
       console.error(`❌ [Jules-${this.role}] Branch scan failed:`, err)
       return []
