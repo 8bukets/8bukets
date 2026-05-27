@@ -1,6 +1,6 @@
 # CONSOLIDATED INTELLIGENCE REPORT
 
-*Generated: 2026-05-22T21:41:09.474Z*
+*Generated: 2026-05-20T10:24:41.908Z*
 
 ## 🎯 Mission Statement
 > Autonomous Evolution
@@ -13,34 +13,31 @@
 - **Jenkins Pipeline:** optimal (HIGHLY_OPTIMIZED)
 - **Docker Status:** recovering (0 containers)
 - **Open PRs/MRs:** 0
-- **Total Branches:** 1963
+- **Total Branches:** 1886
 
 ## 🌿 Branch Intelligence (Recent Activity)
-- **jules-13778106542075090453-8b4856fa**: [ROADMAP:PHASE-12] 🤖 fix: autonomous self-repair of 2699 issues (CRITICAL) (*2026-05-22T21:40:25.000Z*)
-- **jules/scraper-markposition-17752547678215960211**: feat: implement cloud-native autonomous convergence and online presence (#1964) (*2026-05-22T16:17:57.000Z*)
-- **remotes/origin/jules/scraper-markposition-17752547678215960211**: feat: implement cloud-native autonomous convergence and online presence (#1964) (*2026-05-22T16:17:57.000Z*)
-- **remotes/origin/feat/cloud-native-convergence-16112457665657205536**: feat: implement cloud-native autonomous convergence and online presence (*2026-05-22T15:48:05.000Z*)
-- **remotes/origin/add-google-edge-agent-9371392929328195231**: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-google-edge-agent-9371392929328195231 (*2026-05-22T14:24:38.000Z*)
-- **remotes/origin/fix/autonomous-system-syntax-16085505803900570829**: Merge branch 'jules/scraper-markposition-17752547678215960211' into fix/autonomous-system-syntax-16085505803900570829 (*2026-05-22T14:13:16.000Z*)
-- **remotes/origin/main**: Merge pull request #1796 from 8bukets/feat/autonomous-creation-cycle-856121647264189672 (*2026-05-22T14:06:00.000Z*)
-- **remotes/origin/feat/autonomous-creation-cycle-856121647264189672**: Merge branch 'main' into feat/autonomous-creation-cycle-856121647264189672 (*2026-05-22T14:05:44.000Z*)
-- **remotes/origin/jules-improve-knowledge-workflows-16068111765054687314-3907595530513115604**: Merge branch 'main' into jules-improve-knowledge-workflows-16068111765054687314-3907595530513115604 (*2026-05-22T13:51:24.000Z*)
-- **remotes/origin/jules-remote-subagents-docs-1653073469927459457**: docs: verify remote subagents documentation (*2026-05-22T06:54:34.000Z*)
+- **jules-3059408130568618537-dcf320fb**: [ROADMAP:PHASE-12] 🤖 fix: autonomous self-repair of 2698 issues (CRITICAL) (*2026-05-20T10:24:26.000Z*)
+- **remotes/origin/feat/ingest-google-cloud-ai-agents-knowledge-10482240976459445252**: feat: ingest Google Cloud AI Agents knowledge (*2026-05-20T08:56:56.000Z*)
+- **remotes/origin/oracle-google-cloud-agents-15432798509012982749**: fix: modify oracle AI scraper to output flat JSON schema (#1890) (*2026-05-20T08:45:15.000Z*)
+- **remotes/origin/jules-fix-oracle-scraper-schema-6080803583651507344**: fix: modify oracle AI scraper to output flat JSON schema (*2026-05-20T07:59:39.000Z*)
+- **remotes/origin/main**: Merge pull request #1889 from 8bukets/feat/add-first-gitlab-pipeline-16997691605119051204 (*2026-05-20T07:52:01.000Z*)
+- **remotes/origin/feat/add-first-gitlab-pipeline-16997691605119051204**: ci: configure first gitlab ci/cd pipeline (*2026-05-20T07:51:44.000Z*)
+- **remotes/origin/add-chief-ai-officer-agent-9719417263665099785**: feat: orchestrate Chief AI Officer agent in Jules cycle (*2026-05-20T07:50:47.000Z*)
+- **remotes/origin/add-google-ads-knowledge-4095321584408330018**: feat(knowledge): add google ads and ad manager documentation (*2026-05-20T07:48:34.000Z*)
+- **jules/scraper-markposition-17752547678215960211**: feat(knowledge): add google ads and ad manager documentation\n\n- Fix locale fetching issue in ingest script\n- Add google_ads source to knowledge merge agent\n- Regenerate system knowledge artifacts (#1887) (*2026-05-20T07:13:18.000Z*)
+- **remotes/origin/jules/scraper-markposition-17752547678215960211**: feat(knowledge): add google ads and ad manager documentation\n\n- Fix locale fetching issue in ingest script\n- Add google_ads source to knowledge merge agent\n- Regenerate system knowledge artifacts (#1887) (*2026-05-20T07:13:18.000Z*)
 
 ## 🛠️ Cognitive State
-- **Pending Work Orders:** 2
-  - [DEPLOYMENT] Execute rollout for version 2.0
-  - [TESTING] Verify system stability for version 2.0
-- **System Load:** 0.43
-- **Memory RSS:** 150MB
+- **Pending Work Orders:** 0
+  - No pending orders. System is optimal.
+- **System Load:** 0.26
+- **Memory RSS:** 280MB
 - **Autonomous Feedback:** 0 errors, 0 warnings detected.
 
-## 🤖 Unified Knowledge & Market Intelligence
-- **Market Intelligence:** 679 specialized entries analyzed from Markposition.
-  - *Recent Signals:* Tracking advertising.amazon.com, skillshop.exceedlms.com, marketingplatform.google.com, analytics.google.com, adssettings.google.com and others.
-- **Technical Foundation:** 6 deep documentation domains ingested.
-- **Legacy Market Data:** 679 entries in raw buffer.
-- **Autonomous Reports:** 7 history files available.
-- **Latest Daily Summary:** DAILY_REPORT_2026-05-22.md
+## 🤖 Python Ecosystem Intelligence
+- **Market Data:** 350 entries analyzed.
+- **Autonomous Reports:** 4 generated.
+- **Latest Report:** DAILY_REPORT_2026-05-19.md
 
 ## 👥 Stakeholders
+

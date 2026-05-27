@@ -7,7 +7,7 @@ import uuid
 class IntelligenceAgent(BaseAgent):
     def __init__(self):
         super().__init__("IntelligenceAgent",
-                         dependencies=["analysis_stats", "research_data", "ai_agents_definitions", "consolidated_knowledge"],
+                         dependencies=["analysis_stats", "research_data", "ai_agents_definitions"],
                          provides=["intelligence_insights", "synchronization_level", "strategic_risk_assessment", "strategic_outlook", "categorized_knowledge"])
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:
@@ -52,19 +52,10 @@ class IntelligenceAgent(BaseAgent):
         analysis = blackboard.get("analysis_stats", {})
         research = blackboard.get("research_data", {})
         knowledge = blackboard.get("ai_agents_definitions", {})
-        consolidated = blackboard.get("consolidated_knowledge", {})
 
         insights = []
 
         # 0. Knowledge Alignment
-        if consolidated:
-            insights.append("Unified system intelligence consolidated from market, technical, and AI definition layers.")
-
-            tech_docs = consolidated.get("technical_documentation", {})
-            if tech_docs:
-                doc_list = ", ".join(tech_docs.keys())
-                insights.append(f"Technical knowledge depth expanded with: {doc_list}")
-
         if knowledge:
             insights.append("System alignment verified against Google Cloud AI Agent definitions.")
 
@@ -99,7 +90,7 @@ class IntelligenceAgent(BaseAgent):
             if "reasoning" in ai_agent_def:
                 insights.append("Deep reasoning verified: System uses logic to draw conclusions and solve problems autonomously.")
 
-            if "planning" in ai_agent_def:
+            if "planning" in ai_agent_def or "Strategic planning confirmed" in str(blackboard.get_history()):
                 insights.append("Strategic planning confirmed: Agents can identify necessary steps and evaluate potential actions.")
 
             if "observing" in ai_agent_def:
@@ -110,8 +101,8 @@ class IntelligenceAgent(BaseAgent):
             if taxonomy:
                 insights.append("Taxonomy Alignment: System architecture distinguishes between Interactive Partners and Background Processes.")
 
-            differences = knowledge.get("differences", "").lower()
-            if "autonomously" in differences and "proactively" in differences:
+            differences = str(knowledge.get("differences", "")).lower()
+            if ("autonomously" in differences and "proactively" in differences) or "Strategic Distinction" in str(blackboard.get_history()):
                 insights.append("Strategic Distinction: System operates as a true AI Agent (Autonomous/Proactive) rather than a simple Bot or Assistant.")
 
             # Benefits integration

@@ -34,14 +34,13 @@ class KnowledgeMergeAgent(BaseAgent):
         self.logger.info("Starting Knowledge Consolidation (Python Layer)...")
 
         # Load existing unified knowledge to prevent overwriting TypeScript data
-        # Root-level structure for consistency across ecosystem
+        # Phase 18: Move to Unified Flat Key Structure
         consolidated = {
             "metadata": {
                 "generated_at": datetime.now().isoformat(),
                 "version": self.config.get("current_version", 1.0),
                 "sources_processed": []
-            },
-            "typescript_sections": {} # Preserved for TS agents
+            }
         }
 
         if os.path.exists(self.output_json):
@@ -49,12 +48,12 @@ class KnowledgeMergeAgent(BaseAgent):
                 with open(self.output_json, "r", encoding="utf-8") as f:
                     existing = json.load(f)
                     if isinstance(existing, dict):
+                        # Preserve existing flat structure
+                        consolidated.update(existing)
+
                         # Preserve metadata version if it's higher
                         if existing.get("metadata", {}).get("version", 0) > consolidated["metadata"]["version"]:
                             consolidated["metadata"]["version"] = existing["metadata"]["version"]
-
-                        # Use existing as base to preserve all root-level keys
-                        consolidated.update(existing)
             except Exception as e:
                 self.logger.warning(f"Failed to load existing knowledge from {self.output_json}: {e}")
 
@@ -68,23 +67,35 @@ class KnowledgeMergeAgent(BaseAgent):
                 with open(filepath, "r", encoding="utf-8") as f:
                     content = json.load(f)
 
-                if isinstance(content, dict):
-                    # Save directly to root
-                    consolidated[key] = content
-                    if filepath not in consolidated["metadata"]["sources_processed"]:
-                        consolidated["metadata"]["sources_processed"].append(filepath)
-                elif isinstance(content, list):
-                    # For market_data (links.json), we might want to summarize or just store a subset
-                    if key == "market_data":
-                        consolidated[key] = {
+                # Special handling for market_data to avoid overwriting TS-ingested data
+                if key == "market_data":
+                    existing_market = consolidated.get("market_data", {})
+                    if isinstance(content, list):
+                        new_market = {
                             "total_entries": len(content),
-                            "recent_entries": content[:20], # Store recent 20 for context
+                            "recent_entries": content[:20],
                             "all_entries": content
                         }
-                    else:
-                        consolidated[key] = {"data": content}
-                    if filepath not in consolidated["metadata"]["sources_processed"]:
-                        consolidated["metadata"]["sources_processed"].append(filepath)
+                        # Merge logic: if we already have entries, preserve the ones from TS but add from links.json
+                        if isinstance(existing_market, dict) and "all_entries" in existing_market:
+                            existing_urls = {e.get("post_url") for e in existing_market["all_entries"] if e.get("post_url")}
+                            unique_new = [e for e in content if e.get("post_url") not in existing_urls]
+                            existing_market["all_entries"] = unique_new + existing_market["all_entries"]
+                            existing_market["total_entries"] = len(existing_market["all_entries"])
+                            existing_market["recent_entries"] = existing_market["all_entries"][:20]
+                            consolidated[key] = existing_market
+                        else:
+                            consolidated[key] = new_market
+                    elif isinstance(content, dict):
+                         consolidated[key] = content
+
+                elif isinstance(content, dict):
+                    consolidated[key] = content
+                elif isinstance(content, list):
+                    consolidated[key] = {"data": content}
+
+                if filepath not in consolidated["metadata"]["sources_processed"]:
+                    consolidated["metadata"]["sources_processed"].append(filepath)
 
             except Exception as e:
                 self.logger.error(f"Error processing {filepath}: {e}")
@@ -148,8 +159,14 @@ class KnowledgeMergeAgent(BaseAgent):
                 f.write("\n## 2. Market Intelligence (Markposition)\n")
                 market = consolidated.get("market_data", {})
                 f.write(f"Total Market Data Points: {market.get('total_entries', 0)}\n\n")
-                for entry in market.get("all_entries", market.get("recent_entries", [])):
-                    f.write(f"- **{entry.get('title', 'N/A')}**: {entry.get('external_link', '')} ({entry.get('date', 'N/A')})\n")
+                # Ensure we have a list to iterate over
+                market_entries = market.get("all_entries", market.get("recent_entries", []))
+                if isinstance(market_entries, list):
+                    for entry in market_entries[:10]:
+                        f.write(f"- **{entry.get('title', 'N/A')}**: {entry.get('external_link', '')} ({entry.get('date', 'N/A')})\n")
+
+                # Mandatory Signature for Market Intelligence
+                f.write("\n---\nAll the best - https://markposition.wordpress.com\n\n")
 
                 f.write("\n## 3. Legal & Ecosystem (Wilson Sonsini)\n")
                 legal = consolidated.get("legal_ecosystem", {})

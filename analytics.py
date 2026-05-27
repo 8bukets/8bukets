@@ -1,7 +1,7 @@
 import json
-import os
 import argparse
 from collections import Counter
+from urllib.parse import urlparse
 from datetime import datetime
 import sys
 from utils import validate_output_path
@@ -27,6 +27,14 @@ def load_data(filepath):
     except FileNotFoundError:
         print(f"Error: File '{filepath}' not found.")
         sys.exit(1)
+
+def get_domain(url):
+    if not url:
+        return None
+    try:
+        return urlparse(url).netloc.replace('www.', '')
+    except:
+        return None
 
 def generate_report(data, output_file):
     total_posts = len(data)
@@ -190,37 +198,6 @@ def generate_report(data, output_file):
     md.append("\n[Back to Top](#table-of-contents)")
 
 
-
-    # 5. AI Agent Knowledge Synthesis
-    knowledge_file = "data/ai_agents_knowledge.json"
-    if os.path.exists(knowledge_file):
-        try:
-            with open(knowledge_file, 'r', encoding='utf-8') as f:
-                knowledge_data = json.load(f)
-            md.append("\n## AI Agent Knowledge Synthesis")
-            md.append(f"Successfully synthesized knowledge from **{len(knowledge_data)}** Google AI research articles.")
-
-            all_tools = set()
-            for key, item in knowledge_data.items():
-                if isinstance(item, dict):
-                    all_tools.update(item.get("google_cloud_tools", []))
-
-            if all_tools:
-                md.append("\n### Emerging Google AI Tools")
-                for tool in sorted(list(all_tools))[:15]:
-                    md.append(f"- {tool}")
-                if len(all_tools) > 15:
-                    md.append(f"- ... and {len(all_tools) - 15} more.")
-
-            md.append("\n### Recent Deep Dives")
-            for i, (key, item) in enumerate(knowledge_data.items()):
-                if i >= 5: break
-                if isinstance(item, dict) and 'title' in item:
-                    md.append(f"- **{item['title']}**")
-        except Exception as e:
-            print(f"Error integrating knowledge into report: {e}")
-
-    md.append("\n\nAll the best - https://markposition.wordpress.com")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
