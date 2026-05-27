@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 type StatusResponse = {
   supabase: { status: string; error: string | null };
   mongodb: { status: string; error: string | null };
+  react_agent?: { status: string; details: string | null; error: string | null };
 };
 
 export default function Home() {
@@ -56,6 +57,20 @@ export default function Home() {
                   <span className="text-sm font-mono text-zinc-500">{status.mongodb.status}</span>
                 </div>
                 {status.mongodb.error && <p className="text-sm text-red-500 px-4">Error: {status.mongodb.error}</p>}
+
+                {status.react_agent && (
+                  <>
+                    <div className="flex items-center justify-between p-4 bg-zinc-50 dark:bg-zinc-800 rounded-lg border border-blue-100 dark:border-blue-900">
+                      <div className="flex items-center gap-3">
+                        <div className={`w-3 h-3 rounded-full ${status.react_agent.status === 'ready' ? 'bg-blue-500' : 'bg-red-500'}`}></div>
+                        <span className="font-medium text-blue-700 dark:text-blue-400">React Agent Orchestration</span>
+                      </div>
+                      <span className="text-sm font-mono text-blue-600 dark:text-blue-500">{status.react_agent.status}</span>
+                    </div>
+                    {status.react_agent.details && <p className="text-sm text-blue-500 px-4">{status.react_agent.details}</p>}
+                    {status.react_agent.error && <p className="text-sm text-red-500 px-4">Error: {status.react_agent.error}</p>}
+                  </>
+                )}
               </div>
             ) : (
               <p className="text-red-500">Failed to load status.</p>
