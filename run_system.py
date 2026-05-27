@@ -40,17 +40,9 @@ from agents.mysql_agent import MySQLAgent
 from agents.system_audit_agent import SystemAuditAgent
 from agents.documentation_agent import DocumentationAgent
 from agents.performance_optimization_agent import PerformanceOptimizationAgent
-from agents.rag_agent import RagAgent
 from agents.knowledge_agent import KnowledgeAgent
-from agents.knowledge_merge_agent import KnowledgeMergeAgent
-from agents.intelephense_agent import IntelephenseAgent
 from agents.sandbox_agent import SandboxAgent
 from ai_agents_knowledge_scraper import scrape_ai_agents_knowledge
-from vscode_intelephense_scraper import scrape_vscode_intelephense
-from intelephense_scraper import scrape_intelephense_docs
-from gemmafour_scraper import scrape_gemmafour_docs
-from litert_scraper import scrape_litert_docs
-from stitch_scraper import scrape_stitch_docs
 
 # Expansion Agents
 from agents.swarm_agent import SwarmAgent
@@ -80,20 +72,6 @@ def run_scraper():
 
         # AI Agent Knowledge Scraper (Direct module call)
         scrape_ai_agents_knowledge()
-
-        # VSCode Intelephense Scraper
-        scrape_vscode_intelephense()
-        # Intelephense Documentation Scraper
-        scrape_intelephense_docs()
-
-        # Gemma 4 Documentation Scraper
-        scrape_gemmafour_docs()
-
-        # LiteRT Documentation Scraper
-        scrape_litert_docs()
-
-        # Stitch Documentation Scraper
-        scrape_stitch_docs()
 
         logger.info("Scrapers finished successfully.")
         return True
@@ -143,11 +121,6 @@ def generate_daily_report(context, filename):
             outlook = context.get("strategic_outlook", [])
             for item in outlook:
                 f.write(f"- {item}\n")
-
-            f.write("\n### Intelligence Insights\n")
-            insights = context.get("intelligence_insights", [])
-            for insight in insights:
-                f.write(f"- {insight}\n")
 
             f.write("\n### Strategic Risks\n")
             risks = context.get("strategic_risk_assessment", [])
@@ -204,11 +177,10 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         logger.warning("No data loaded. Skipping agent execution.")
         return
 
-    # 1. Base Intelligence
+    # 1. Base Intelligence (22 Agents)
     agents = [
         HealthCheckAgent(), RobotTxtAgent(), KnowledgeAgent(),
-        AnalysisAgent(), ResearchAgent(), KnowledgeMergeAgent(),
-        IntelligenceAgent(), ReActAgent(),
+        AnalysisAgent(), ResearchAgent(), IntelligenceAgent(), ReActAgent(),
         TargetingAgent(), CreativityAgent(), AdsAgent(),
         BidAgent(), MonetizationAgent(), ContentAgent(),
         AutonomousIntelligenceAgent(), TelemetryAgent(), SixSigmaAgent(),
@@ -217,7 +189,7 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
         GitLabEvolutionAgent(), CloudWorkflowAgent(),
         CollaborationAgent(), MongoDBAgent(), MySQLAgent(),
         PerformanceOptimizationAgent(), SystemAuditAgent(), DocumentationAgent(),
-        RagAgent(), IntelephenseAgent(), SandboxAgent()
+        SandboxAgent()
     ]
 
     # 2. Expanded SEO Swarm (200 Agents)

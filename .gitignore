@@ -1,14 +1,37 @@
-__pycache__/
+# Node modules
 node_modules/
-dist/
-build/
-target/
+
+# Python artifacts
+__pycache__/
 *.pyc
-results/
-data/
+.pytest_cache/
+
+# Local configuration
+.env
+.env.local
+
+# Build outputs
+dist/
+.next/
+out/
+build/
+
+# Runtime artifacts and local state
+data/telemetry.json
+data/memory.json
+autonomous_state.json
+ai_agents_knowledge.json
 links.json
 links.csv
 unique_links.txt
-REPORT.md
-.jules/
-antigravity-ide/environment/.agent/
+results/
+*.log
+
+# System memory and internal state
+antigravity/.jules_memory.json
+config/evolution_params.json
+config/owner_info.json
+
+# Scratch and temporary files
+scratch/
+/home/jules/verification/

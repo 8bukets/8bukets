@@ -1,55 +1,12 @@
 {
-  "hooks": {
-    "BeforeTool": [
-      {
-        "matcher": ".*",
-        "hooks": [
-          {
-            "name": "security-check",
-            "type": "command",
-            "command": "$GEMINI_PROJECT_DIR/.gemini/hooks/security.py",
-            "timeout": 5000,
-            "description": "Blocks execution of dangerous bash commands and queries."
-          }
-        ]
-      }
-    ]
-  },
   "agents": {
     "overrides": {
       "browser_agent": {
-        "enabled": true
-      },
-      "collaborator": {
-        "enabled": true,
-        "runConfig": {
-          "maxTurns": 30
-        }
-      },
-      "security-auditor": {
-        "enabled": true,
-        "runConfig": {
-          "maxTurns": 20
-        }
-      },
-      "daily-tasks": {
-        "enabled": true,
-        "runConfig": {
-          "maxTurns": 20
-        }
-      },
-      "highlander": {
         "enabled": true
       }
     },
     "browser": {
       "sessionMode": "persistent"
     }
-  },
-  "general": {
-    "proxy": "http://my-proxy:8080"
-  },
-  "experimental": {
-    "enableAgents": true
   }
 }

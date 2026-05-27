@@ -15,7 +15,7 @@ export class Jules {
     // 2. Knowledge Observation (Mock content ingestion)
     const mockContent = 'The system architecture uses Docker for virtualization and Next.js for the frontend.';
     const newInsights = knowledgeObserver.processContent(mockContent, 'System_Internal_Audit');
-    knowledgeObserver.persistKnowledge(newInsights);
+    await knowledgeObserver.persistKnowledge(newInsights);
     console.log(`[Jules] Captured ${newInsights.length} new insights.`);
 
     // 3. Collaboration Sync

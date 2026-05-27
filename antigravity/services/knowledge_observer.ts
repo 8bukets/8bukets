@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { MongoClient } from 'mongodb';
 
 export interface KnowledgeInsight {
   topic: string;
@@ -37,7 +38,7 @@ export class KnowledgeObserver {
     return insights;
   }
 
-  public persistKnowledge(newInsights: KnowledgeInsight[]): void {
+  public async persistKnowledge(newInsights: KnowledgeInsight[]): Promise<void> {
     let existingKnowledge: any = {};
     if (fs.existsSync(this.knowledgeJsonPath)) {
       existingKnowledge = JSON.parse(fs.readFileSync(this.knowledgeJsonPath, 'utf8'));
@@ -58,6 +59,27 @@ export class KnowledgeObserver {
       mdContent += `### ${insight.topic} (${insight.timestamp})\n- **Source:** ${insight.source}\n- **Insight:** ${insight.insight}\n\n`;
     }
     fs.writeFileSync(this.knowledgeMdPath, mdContent);
+
+    // Sync to MongoDB
+    const uri = process.env.MONGODB_URI;
+    if (uri && newInsights.length > 0) {
+      try {
+        const client = new MongoClient(uri);
+        await client.connect();
+        const db = client.db(process.env.MONGODB_DB || 'markposition_db');
+        const collection = db.collection('knowledge_base');
+
+        await collection.insertMany(newInsights.map(i => ({
+          ...i,
+          synced_at: new Date().toISOString()
+        })));
+
+        await client.close();
+        console.log(`[KnowledgeObserver] Synced ${newInsights.length} insights to MongoDB.`);
+      } catch (e) {
+        console.error('[KnowledgeObserver] Failed to sync with MongoDB:', e);
+      }
+    }
   }
 }
 

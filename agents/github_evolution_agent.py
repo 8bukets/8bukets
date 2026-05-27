@@ -22,6 +22,10 @@ class GitHubEvolutionAgent(BaseAgent):
         self.logger.info("System evolved. Performing autonomous Git operations...")
 
         try:
+            # 0. Setup Git Identity if not set (for headless CI)
+            subprocess.run(["git", "config", "user.name", "google-labs-jules[bot]"], check=False)
+            subprocess.run(["git", "config", "user.email", "161369871+google-labs-jules[bot]@users.noreply.github.com"], check=False)
+
             # 1. Stage changes (Sanitized config, memory, and results)
             subprocess.run(["git", "add", "config/evolution_params.json", "config/owner_info.json", "data/", "results/", "links.json", "links.csv", "unique_links.txt"], check=True)
 
@@ -48,8 +52,13 @@ class GitHubEvolutionAgent(BaseAgent):
             token = os.environ.get("GITHUB_TOKEN")
             if token:
                 self.logger.info("GITHUB_TOKEN detected. Attempting to push...")
-                # Note: This is a simplified push logic. In a real scenario, you'd handle remote URL properly.
-                subprocess.run(["git", "push"], check=True)
+                # Ensure the remote URL includes the token for authentication
+                remote_url = subprocess.run(["git", "remote", "get-url", "origin"], capture_output=True, text=True).stdout.strip()
+                if "github.com" in remote_url and token not in remote_url:
+                    auth_url = remote_url.replace("https://", f"https://x-access-token:{token}@")
+                    subprocess.run(["git", "remote", "set-url", "origin", auth_url], check=True)
+
+                subprocess.run(["git", "push", "origin", "main"], check=True)
                 vcs_status = "COMMITTED_AND_PUSHED"
             else:
                 self.logger.warning("GITHUB_TOKEN not found. Changes committed but not pushed.")

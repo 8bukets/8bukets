@@ -1,0 +1,103 @@
+{
+    "RobotTxtAgent": {
+        "disallowed_paths": [
+            "/wp-admin/",
+            "/wp-login.php",
+            "/wp-signup.php",
+            "/press-this.php",
+            "/remote-login.php",
+            "/activate/",
+            "/cgi-bin/",
+            "/mshots/v1/",
+            "/next/",
+            "/public.api/"
+        ]
+    },
+    "TargetingAgent": {
+        "last_primary_persona": "AdTech Professional",
+        "long_term": {
+            "new_key": "new_val",
+            "last_primary_persona": "AdTech Professional"
+        }
+    },
+    "BidAgent": {
+        "performance_multiplier": 1.0989414764554153,
+        "adjustment_factor": 1.7632679173989854,
+        "long_term": {
+            "adjustment_factor": 1.8166966985640922
+        }
+    },
+    "AutonomousIntelligenceAgent": {
+        "system_health": "healthy",
+        "long_term": {
+            "system_health": "healthy"
+        }
+    },
+    "TestAgent": {
+        "long_term": {
+            "long_key": "long_value"
+        },
+        "episodic": [
+            {
+                "timestamp": "2026-05-09T08:23:59.181005",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-09T08:28:19.995976",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-09T08:28:56.042349",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-09T08:29:26.817186",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-10T08:08:33.103807",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-10T08:18:35.185808",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-11T02:58:12.906705",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-11T15:14:16.662334",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-12T15:14:07.790969",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-27T19:57:04.784068",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-27T20:05:09.722762",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            },
+            {
+                "timestamp": "2026-05-27T20:09:46.013126",
+                "event": "episodic_event",
+                "data": "episodic_data"
+            }
+        ]
+    }
+}

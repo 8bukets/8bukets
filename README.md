@@ -2,13 +2,6 @@
 
 A robust, asynchronous toolset for scraping and analyzing data from `https://markposition.wordpress.com/`.
 
-## Supabase Configuration
-This project is configured to work with the Netlify Supabase Extension.
-To set up the project locally:
-1.  Connect your Netlify site to your Supabase project via the Netlify extension.
-2.  The extension will automatically inject the required environment variables: `SUPABASE_DATABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
-3.  For local development, ensure these variables are present in your `.env` file or exported in your environment.
-
 ## Features
 
 ### Scraper (`scraper.py`)
@@ -51,26 +44,12 @@ The system relies on various API keys and connection strings to operate both loc
       ```bash
       cp .env.example .env
       ```
-    - Note for iCloud sync: Add your Apple ID and your primary Apple ID Password to the `APPLE_ID` and `APPLE_PASSWORD` variables in `.env` to use the iCloud sync functionality.
     - Update `.env` with your actual credentials (e.g., `GOOGLE_API_KEY`, `GEMINI_API_KEY`, database URIs). **Do not commit `.env` to source control.**
 
 2.  **GitHub Actions / CI/CD**:
     - In your GitHub repository, go to **Settings > Secrets and variables > Actions**.
     - Add the variables listed in `.env.example` as Repository Secrets (e.g., `GOOGLE_API_KEY`, `GEMINI_API_KEY`).
     - The workflows are pre-configured to pass these secrets as environment variables to the system.
-
-## Canonical Knowledge Merge
-
-The components of this repository, including the scraper tools and analytics for `markposition.wordpress.com`, form the **Market Intelligence Layer** of the broader Antigravity ecosystem.
-
-This ecosystem contains five core identities mapped in the [KNOWLEDGE_MERGE.md](software-review-platform/KNOWLEDGE_MERGE.md) file:
-1. **Antigravity**: internal intelligence and automation layer.
-2. **Project SOR**: public-facing brand and editorial narrative.
-3. **`software-online-review.com`**: the current distribution domain.
-4. **`software-review-platform`**: the future product engine and new review platform MVP.
-5. **`markposition.wordpress.com`**: the external data source tracking ad tech and market trends feeding the intelligence system.
-
-Please refer to `software-review-platform/KNOWLEDGE_MERGE.md` for a comprehensive breakdown of how these layers interact.
 
 ## Usage
 
@@ -100,31 +79,6 @@ python3 analytics.py
 **Options:**
 *   `--input`: Input JSON file (default: `links.json`)
 *   `--output`: Output Markdown file (default: `REPORT.md`)
-
-### 3. Sync with iCloud Drive
-
-You can manually pull or upload core repository folders (`antigravity/` and `.github/`) to a folder named `8bukets` in your iCloud Drive. This is useful for maintaining the system across devices like an iPhone.
-
-Make sure `APPLE_ID` and `APPLE_PASSWORD` (use your primary Apple ID password) are set in your `.env` file.
-
-**Troubleshooting NSFileProviderErrorDomain error -5009:**
-If you encounter the "NSFileProviderErrorDomain error -5009" (or "Postupak se ne može dovršiti") in macOS Finder, it means the iCloud background sync services have become stuck. You can automatically restart these services and resolve the error by running:
-```bash
-npm run fix:icloud
-```
-
-**To upload files to iCloud:**
-```bash
-python3 sync_icloud.py --upload
-```
-
-**To pull files from iCloud:**
-```bash
-python3 sync_icloud.py --pull
-```
-
-**First-Time Authentication (2FA):**
-The first time you run this script, it will prompt you in the terminal for a Two-Factor Authentication (2FA) code sent to your Apple devices. Once entered, the script will request to trust the session so subsequent runs can proceed autonomously.
 
 ## Output Files
 

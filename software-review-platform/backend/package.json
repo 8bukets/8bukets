@@ -11,13 +11,12 @@
     "test": "node --test"
   },
   "dependencies": {
-    "@google/gemini-cli-core": "^0.41.2",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.6",
     "dotenv": "^16.6.1",
-    "express": "^4.22.2",
+    "express": "^4.22.1",
     "jsonwebtoken": "^9.0.3",
-    "pg": "^8.21.0"
+    "pg": "^8.20.0"
   },
   "description": "",
   "main": "index.js",
