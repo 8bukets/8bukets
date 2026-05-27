@@ -3758,15 +3758,15 @@
         },
         {
           "header": "Visual Studio Code",
-          "content": "Visual Studio Code users should install the Intelephense extension from within the extensions view or download it from the VSCode marketplace.\n\nThe built-in VSCode PHP Language Features extension can cause excessive completion suggestions that are out of context and is best disabled. Go to the Extensions UI and search for `PHP Language Features` to disable it. Alternatively, you can disable parts of it via its configuration settings. Other third party extensions that provide similar functionality to Intelephense may also need to be disabled for best results.\n\nOptionally purchase and enter your licence key by opening the command palette (`Ctrl+Shift+P`) and searching for `Enter licence key`.\n\nVisual Studio Code users should install the Intelephense extension from within the extensions view or download from the [marketplace](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client).\n\n1. Disable the built-in VSCode PHP Language Features. \n    \n    * Go to `Extensions`.\n    * Search for `@builtin php`\n    * Disable `PHP Language Features`. Leave `PHP Language Basics` enabled for syntax highlighting.\n\n    Note that other (3rd party) PHP extensions which provide similar functionality should also be disabled for best results.\n2. Add glob patterns for non standard php file extensions to the `files.associations` setting.\n\n    For example: `\"files.associations\": { \"*.module\": \"php\" }`.\n3. Optionally purchase and enter your [licence key](https://intelephense.com) by opening the command pallete \n-- `ctrl + shift + p` -- and searching for `Enter licence key`.\n\nFurther configuration options are available in the `intelephense` section of settings."
+          "content": "Visual Studio Code users should install the Intelephense extension from within the extensions view or download it from the VSCode marketplace.\n\nThe built-in VSCode `PHP Language Features` extension can cause excessive completion suggestions that are out of context and is best disabled. Go to the Extensions UI and search for `PHP Language Features` to disable it. Alternatively, you can disable parts of it via its configuration settings. Other third party extensions that provide similar functionality to Intelephense may also need to be disabled for best results.\n\nOptionally purchase and enter your licence key by opening the command palette (`Ctrl+Shift+P`) and searching for `Enter licence key`.\n\nVisual Studio Code users should install the Intelephense extension from within the extensions view or download from the [marketplace](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client).\n\n1. Disable the built-in VSCode PHP Language Features. \n    \n    * Go to `Extensions`.\n    * Search for `@builtin php`\n    * Disable `PHP Language Features`. Leave `PHP Language Basics` enabled for syntax highlighting.\n\n    Note that other (3rd party) PHP extensions which provide similar functionality should also be disabled for best results.\n2. Add glob patterns for non standard php file extensions to the `files.associations` setting.\n\n    For example: `\"files.associations\": { \"*.module\": \"php\" }`.\n3. Optionally purchase and enter your [licence key](https://intelephense.com) by opening the command pallete \n-- `ctrl + shift + p` -- and searching for `Enter licence key`.\n\nFurther configuration options are available in the `intelephense` section of settings."
         },
         {
           "header": "Other Editors",
-          "content": "Intelephense requires a Node.js runtime environment. It is recommended that you use a current LTS version of Node.js. To install Intelephense server you can use npm.\n\n```bash\nnpm i intelephense -g\n```\n\nIntelephense needs an LSP compliant client to communicate with and integrate features into the editor. Please follow the setup guide of the relevant tool. The information below may help in configuring the client.\n\nTo start the intelephense server:\n\n```bash\nintelephense {transport}\n```\n\nWhere `{transport}` is one of:\n* `--node-ipc`\n* `--stdio`\n* `--socket={number}`\n* `--pipe={string}`\n\nIf your LSP client exposes `initializationOptions`, then the following values are accepted:\n\n```typescript\ninterface InitialisationOptions {\n    // Optional absolute path to storage directory for workspace specific data. \n    storagePath?: string;\n\n    // Optional absolute path to a global storage directory for global data. \n    globalStoragePath?: string;\n\n    //Optional licence key or absolute path to a text file containing the licence key.\n    licenceKey?: string;\n\n    //Optional flag to clear server state.\n    //State can also be cleared by deleting {storagePath}/intelephense\n    clearCache?: boolean;\n}\n```\n\nWhen `initializationOptions` properties are not provided by the client, the following defaults are used:\n\n| OS | Property | Path | Fallback |\n| :--- | :--- | :--- | :--- |\n| *nix | `storagePath` | `$XDG_CONFIG_HOME/intelephense/workspace/` | `$HOME/.config/intelephense/workspace/` |\n| *nix | `globalStoragePath` | `$XDG_CONFIG_HOME/intelephense/global/` | `$HOME/.config/intelephense/global/` |\n| *nix | `licenceKey` | `{globalStoragePath}/licence.txt` | `{globalStoragePath}/license.txt` |\n| Windows | `storagePath` | `%AppData%/intelephense/workspace/` | `%UserProfile%/intelephense/workspace/` |\n| Windows | `globalStoragePath` | `%AppData%/intelephense/global/` | `%UserProfile%/intelephense/global/` |\n| Windows | `licenceKey` | `{globalStoragePath}/licence.txt` | `{globalStoragePath}/license.txt` |\n\nIf your LSP client does not expose `initializationOptions` then a licence key can be provided by placing (only) the key in a text file at the default `licenceKey` path listed above."
+          "content": "Intelephense requires a Node.js runtime environment. It is recommended that you use a current LTS version of Node.js. To install Intelephense server you can use `npm`.\n\n```bash\nnpm i intelephense -g\n```\n\nIntelephense needs an LSP compliant client to communicate with and integrate features into the editor. Please follow the setup guide of the relevant tool. The information below may help in configuring the client.\n\nTo start the Intelephense server:\n\n```bash\nintelephense {transport}\n```\n\nWhere `{transport}` is one of:\n- `--node-ipc`\n- `--stdio`\n- `--socket={number}`\n- `--pipe={string}`\n\nIf your LSP client exposes `initializationOptions`, then the following values are accepted:\n\n```typescript\ninterface InitialisationOptions {\n    // Optional absolute path to storage directory for workspace specific data. \n    storagePath?: string;\n\n    // Optional absolute path to a global storage directory for global data. \n    globalStoragePath?: string;\n\n    //Optional licence key or absolute path to a text file containing the licence key.\n    licenceKey?: string;\n\n    //Optional flag to clear server state.\n    //State can also be cleared by deleting {storagePath}/intelephense\n    clearCache?: boolean;\n}\n```\n\nWhen `initializationOptions` properties are not provided by the client, the following defaults are used:\n\n| OS | Property | Path | Fallback |\n| :--- | :--- | :--- | :--- |\n| *nix | `storagePath` | `$XDG_CONFIG_HOME/intelephense/workspace/` | `$HOME/.config/intelephense/workspace/` |\n| *nix | `globalStoragePath` | `$XDG_CONFIG_HOME/intelephense/global/` | `$HOME/.config/intelephense/global/` |\n| *nix | `licenceKey` | `{globalStoragePath}/licence.txt` | `{globalStoragePath}/license.txt` |\n| Windows | `storagePath` | `%AppData%/intelephense/workspace/` | `%UserProfile%/intelephense/workspace/` |\n| Windows | `globalStoragePath` | `%AppData%/intelephense/global/` | `%UserProfile%/intelephense/global/` |\n| Windows | `licenceKey` | `{globalStoragePath}/licence.txt` | `{globalStoragePath}/license.txt` |\n\nIf your LSP client does not expose `initializationOptions` then a licence key can be provided by placing (only) the key in a text file at the default `licenceKey` path listed above."
         },
         {
           "header": "Configuration",
-          "content": "Please see the VSCode client `package.json` configuration property for a full list of configuration options and associated JSON schema. Note that the configuration keys are given in dot notation. As an example, the equivalent JSON object for `intelephense.files.exclude` would be `{\"intelephense\": {\"files\": {\"exclude\": []}}}`.\n\nIntelephense attempts to provide reasonable defaults for all settings. Some of the more important settings to consider when getting started include:\n\n* `intelephense.files.associations` - File globs that identify PHP files. Defaults to standard PHP file extensions e.g. `*.php`.\n* `intelephense.files.maxSize` - Maximum file size in bytes to index and provide analysis for. Defaults to `1000000` (1MB).\n* `intelephense.environment.phpVersion` - PHP version to use for analysis. Defaults to the most recent stable PHP version.\n* `intelephense.stubs` - List of stubs to include. Defaults to core symbols and extensions that are bundled with PHP. If you are getting undefined symbols for built-in or PECL extensions, you may need to modify this list.\n\nIn VSCode, the settings UI can be used to modify the configuration values. For other LSP clients, please see the client documentation on how to modify these values. Intelephense supports the LSP `workspace/didChangeConfiguration` and `workspace/configuration` methods as a way of supplying configuration values to the server.\n\nIf neither of the methods above are supported by the client, then configuration values can be supplied via an `intelephense.config.json` file placed in the workspace folder. The JSON schema for this file is the same as the one used for the VSCode client. The top level `intelephense` property is not required in this file.\n\nFor Intelephense to work effectively it must have access to the definitions of the symbols used in your code. Opening a project folder (LSP `InitializeParams` `rootUri` or `workspaceFolders`) rather than individual files enables these symbols to be discovered by Intelephense via indexing the PHP files in the folder. Large workspaces require more system resources. Consider opening a smaller workspace or exclude unnecessary files via the `intelephense.files.exclude` setting to reduce resource usage.\n\nIf you need to include files from outside of the workspace folder, then add the paths to these files to the `intelephense.environment.includePaths` setting.\n\nWhen configuring a multi-root workspace, Intelephense will presume that the folders in the workspace are separate projects and will not provide cross folder symbols unless you link the dependency between the projects via the `intelephense.environment.includePaths` setting.\n\nDepending on the framework or library you use, you may find you need additional configuration to provide method declarations or override existing ones. Please see the Frameworks and Libraries section in the appendix for more information on this."
+          "content": "Please see the VSCode client `package.json` configuration property for a full list of configuration options and associated JSON schema. Note that the configuration keys are given in dot notation. As an example, the equivalent JSON object for `intelephense.files.exclude` would be `{\"intelephense\": {\"files\": {\"exclude\": []}}}`.\n\nIntelephense attempts to provide reasonable defaults for all settings. Some of the more important settings to consider when getting started include:\n\n- `intelephense.files.associations` - File globs that identify PHP files. Defaults to standard PHP file extensions e.g. `*.php`.\n- `intelephense.files.maxSize` - Maximum file size in bytes to index and provide analysis for. Defaults to `1000000` (1MB).\n- `intelephense.environment.phpVersion` - PHP version to use for analysis. Defaults to the most recent stable PHP version.\n- `intelephense.stubs` - List of stubs to include. Defaults to core symbols and extensions that are bundled with PHP. If you are getting undefined symbols for built-in or PECL extensions, you may need to modify this list.\n\nIn VSCode, the settings UI can be used to modify the configuration values. For other LSP clients, please see the client documentation on how to modify these values. Intelephense supports the LSP `workspace/didChangeConfiguration` and `workspace/configuration` methods as a way of supplying configuration values to the server.\n\nIf neither of the methods above are supported by the client, then configuration values can be supplied via an `intelephense.config.json` file placed in the workspace folder. The JSON schema for this file is the same as the one used for the VSCode client. The top level `intelephense` property is not required in this file.\n\nFor Intelephense to work effectively it must have access to the definitions of the symbols used in your code. Opening a project folder (LSP `InitializeParams` `rootUri` or `workspaceFolders`) rather than individual files enables these symbols to be discovered by Intelephense via indexing the PHP files in the folder. Large workspaces require more system resources. Consider opening a smaller workspace or exclude unnecessary files via the `intelephense.files.exclude` setting to reduce resource usage.\n\nIf you need to include files from outside of the workspace folder, then add the paths to these files to the `intelephense.environment.includePaths` setting.\n\nWhen configuring a multi-root workspace, Intelephense will presume that the folders in the workspace are separate projects and will not provide cross folder symbols unless you link the dependency between the projects via the `intelephense.environment.includePaths` setting.\n\nDepending on the framework or library you use, you may find you need additional configuration to provide method declarations or override existing ones. Please see the Frameworks and Libraries section in the appendix for more information on this."
         },
         {
           "header": "Type System",
@@ -3794,31 +3794,31 @@
         },
         {
           "header": "Scalar Types",
-          "content": "Any of these types can be assigned to the other unless the `declare(strict_types=1)` directive is used in the file or `intelephense.diagnostics.strictTypes` is `true`.\n\n* `int`\n* `float`\n* `bool`\n* `string`"
+          "content": "Any of these types can be assigned to the other unless the `declare(strict_types=1)` directive is used in the file or `intelephense.diagnostics.strictTypes` is `true`.\n\n- `int`\n- `float`\n- `bool`\n- `string`"
         },
         {
           "header": "Unit Types",
-          "content": "* `void`\n* `null`\n* `true`\n* `false`\n* `unset`* Intelephense uses this PHP keyword to represent the type of an undefined variable."
+          "content": "- `void`\n- `null`\n- `true`\n- `false`\n- `unset`* Intelephense uses this PHP keyword to represent the type of an undefined variable."
         },
         {
           "header": "Literal Types",
-          "content": "* `'myString'`* String literals are encapsulated in quotes.\n* `9`* An integer literal."
+          "content": "- `'myString'`* String literals are encapsulated in quotes.\n- `9`* An integer literal."
         },
         {
           "header": "Object Types",
-          "content": "* `object`\n* `\\MyNs\\MyClass` Classes, interfaces, traits, and enums can be fully qualified or not. If not fully qualified then the standard PHP name resolution rules apply to determine the fully qualified name.\n* `object{name: string, optional?: string}`* Object shapes can be used to provide further information on dynamic object properties. This improves completion suggestions and type inference when accessing these properties. Optional properties can be declared by adding a `?` at the end of the name.\n* `static`\n* `self`\n* `$this`*"
+          "content": "- `object`\n- `\\MyNs\\MyClass` Classes, interfaces, traits, and enums can be fully qualified or not. If not fully qualified then the standard PHP name resolution rules apply to determine the fully qualified name.\n- `object{name: string, optional?: string}`* Object shapes can be used to provide further information on dynamic object properties. This improves completion suggestions and type inference when accessing these properties. Optional properties can be declared by adding a `?` at the end of the name.\n- `static`\n- `self`\n- `$this`*"
         },
         {
           "header": "Array Types",
-          "content": "* `array`\n* `array<TKey, TValue>`* Generic form for an array where the type arguments represent the array key and value types respectively. If only a single type argument is provided then it will be normalised to `array<string|int, TValue>`.\n* `TValue[]`* Represents a numeric indexed array where the element type is `TValue`.\n* `array{description: string, 'length (cm)': float, optional?: string, ...<int, string>}`* Array shapes can be used to provide further information on array element keys and value types. This improves completion suggestions and type inference when accessing these elements. Keys with non alphanumeric characters need to be in quotes. Optional keys can be declared by adding a `?` at the end of the key. Unspecified extra elements can be declared by adding an element of form `...<TKey, TValue>`. Keys are optional and default to numerically indexed. For example a two element tuple would be `array{Type0, Type1}`. A mix of keyed and unkeyed elements is not supported."
+          "content": "- `array`\n- `array<TKey, TValue>`* Generic form for an array where the type arguments represent the array key and value types respectively. If only a single type argument is provided then it will be normalised to `array<string|int, TValue>`.\n- `TValue[]`* Represents a numeric indexed array where the element type is `TValue`.\n- `array{description: string, 'length (cm)': float, optional?: string, ...<int, string>}`* Array shapes can be used to provide further information on array element keys and value types. This improves completion suggestions and type inference when accessing these elements. Keys with non alphanumeric characters need to be in quotes. Optional keys can be declared by adding a `?` at the end of the key. Unspecified extra elements can be declared by adding an element of form `...<TKey, TValue>`. Keys are optional and default to numerically indexed. For example a two element tuple would be `array{Type0, Type1}`. A mix of keyed and unkeyed elements is not supported."
         },
         {
           "header": "Callable Types",
-          "content": "* `callable` Base callable type that represents a callable string, callable array or a class that implements `__invoke`.\n* `callable(TParamA $a, TParamB $b): TReturn`* Callable type signatures can be defined to improve language intelligence. Parameter names are optional. The callable type should be wrapped in parentheses if it forms part of a union. `Closure` can be used instead of `callable` for a more specific type."
+          "content": "- `callable` Base callable type that represents a callable string, callable array or a class that implements `__invoke`.\n- `callable(TParamA $a, TParamB $b): TReturn`* Callable type signatures can be defined to improve language intelligence. Parameter names are optional. The callable type should be wrapped in parentheses if it forms part of a union. `Closure` can be used instead of `callable` for a more specific type."
         },
         {
           "header": "Alias Types",
-          "content": "* `iterable` Alias for `Traversable|array`.\n* `?A` Nullable type that is shorthand for `null|A`. Cannot be used as part of a union or intersection type."
+          "content": "- `iterable` Alias for `Traversable|array`.\n- `?A` Nullable type that is shorthand for `null|A`. Cannot be used as part of a union or intersection type."
         },
         {
           "header": "Union Types",
@@ -3834,7 +3834,7 @@
         },
         {
           "header": "Generic Types",
-          "content": "`MyType<TypeArg1, TypeArg2>`*\n\nA generic type can be declared using one or many `@template` PHPDoc annotations above the target class, interface, or trait. Type arguments can then be supplied in the same order as the `@template` declarations. The following built-in types are templated:\n\n* `iterable<TKey, TValue>`\n* `Traversable<TKey, TValue>`\n* `array<TKey, TValue>`\n* `Iterator<TKey, TValue>`\n* `IteratorAggregate<TKey, TValue>`\n* `ArrayAccess<TKey, TValue>`\n* `WeakReference<TObject>`\n* `WeakMap<TKey, TValue>`\n* `Fiber<TStart, TResume, TReturn, TSuspend>`\n* `DatePeriod<TDate, TEnd>`\n* `ReflectionAttribute<TObject>`\n* `ReflectionClass<TObject>`\n* `Generator<TKey, TYield, TSend, TReturn>`\n* `ArrayObject<TKey, TValue>`\n* `SplDoublyLinkedList<TValue>`\n* `SplQueue<TValue>`\n* `SplStack<TValue>`\n* `SplHeap<TValue>`\n* `SplMinHeap<TValue>`\n* `SplMaxHeap<TValue>`\n* `SplPriorityQueue<TPriority, TValue>`\n* `SplFixedArray<TValue>`\n* `SplObjectStorage<TObject, TValue>`"
+          "content": "`MyType<TypeArg1, TypeArg2>`*\n\nA generic type can be declared using one or many `@template` PHPDoc annotations above the target class, interface, or trait. Type arguments can then be supplied in the same order as the `@template` declarations. The following built-in types are templated:\n\n- `iterable<TKey, TValue>`\n- `Traversable<TKey, TValue>`\n- `array<TKey, TValue>`\n- `Iterator<TKey, TValue>`\n- `IteratorAggregate<TKey, TValue>`\n- `ArrayAccess<TKey, TValue>`\n- `WeakReference<TObject>`\n- `WeakMap<TKey, TValue>`\n- `Fiber<TStart, TResume, TReturn, TSuspend>`\n- `DatePeriod<TDate, TEnd>`\n- `ReflectionAttribute<TObject>`\n- `ReflectionClass<TObject>`\n- `Generator<TKey, TYield, TSend, TReturn>`\n- `ArrayObject<TKey, TValue>`\n- `SplDoublyLinkedList<TValue>`\n- `SplQueue<TValue>`\n- `SplStack<TValue>`\n- `SplHeap<TValue>`\n- `SplMinHeap<TValue>`\n- `SplMaxHeap<TValue>`\n- `SplPriorityQueue<TPriority, TValue>`\n- `SplFixedArray<TValue>`\n- `SplObjectStorage<TObject, TValue>`"
         },
         {
           "header": "Conditional Return Type",
@@ -3854,11 +3854,11 @@
         },
         {
           "header": "Miscellaneous Types",
-          "content": "* `resource`*\n* `class-string<T>`* A string where the value is the name of class `T`."
+          "content": "- `resource`*\n- `class-string<T>`* A string where the value is the name of class `T`."
         },
         {
           "header": "PHPDoc Annotations",
-          "content": "Intelephense supports standard PHPDoc annotations as well as non-standard annotations which have been popularised by other static analysis tools such as Psalm and PHPStan. The below list describes the non-standard annotations that Intelephense supports.\n\nTo make Intelephense prefer tool-prefixed annotations over un-prefixed ones, you can set the `intelephense.compatibility.preferPsalmPhpstanPrefixedAnnotations` setting to `true`."
+          "content": "Intelephense supports standard PHPDoc annotations as well as non-standard annotations which have been popularised by other static analysis tools such as Psalm and PHPStan. The below list describes the non-standard annotations that Intelephense supports.\n\nSome libraries or projects that have adopted static analysis tools such as Psalm or PHPStan may prefix some annotations with the tool name to avoid conflicts with other tools.\n\nTo make Intelephense prefer these prefixed annotations over the un-prefixed ones, you can set the `intelephense.compatibility.preferPsalmPhpstanPrefixedAnnotations` setting to `true`."
         },
         {
           "header": "@template",
@@ -3878,7 +3878,7 @@
         },
         {
           "header": "@param-closure-this",
-          "content": "`/** @param-closure-this Type $parameter */`\nDeclares the type of the `$this` variable inside a closure passed as a parameter."
+          "content": "`/** @param-closure-this Type $parameter */`\nDeclares the type of the `$this` variable inside a closure that is passed as a parameter to a function or method."
         },
         {
           "header": "@param-out",
@@ -3886,19 +3886,19 @@
         },
         {
           "header": "@assert",
-          "content": "`/** @assert Type $parameter */`\nDeclares that a function asserts an argument is of a specified type."
+          "content": "`/** @assert Type $parameter */`\nDeclares a function or method that asserts that an argument is of the specified type."
         },
         {
           "header": "@assert-if-true @assert-if-false",
-          "content": "`/** @assert-if-true Type $parameter */`\nAsserts type narrowing on the true or false code paths."
+          "content": "`/** @assert-if-true Type $parameter */`\nAsserts that the passed variable is of the specified type on the true or false code path respectively."
         },
         {
           "header": "@mixin",
-          "content": "`/** @mixin ClassName */`\nDeclares that members of a class are mixed in via magic methods. (Premium feature)."
+          "content": "`/** @mixin ClassName */`\nDeclares that the members of the specified class are mixed in via magic methods. (Premium feature)."
         },
         {
           "header": "@disregard",
-          "content": "`/** @disregard PXXXX */`\nSuppresses a specific diagnostic at the following statement."
+          "content": "`/** @disregard PXXXX */`\nUsed to suppress a specific diagnostic at the statement following the annotation."
         },
         {
           "header": "@type-alias",
@@ -3906,103 +3906,111 @@
         },
         {
           "header": "@import-type",
-          "content": "`/** @import-type TypeName as OptionalAlias */`\nImports a type alias from another file."
+          "content": "`/** @import-type TypeName as OptionalAlias */`\nUsed to import a type alias that has been declared in another file."
         },
         {
           "header": "Features",
-          "content": ""
+          "content": "Intelephense provides a variety of features to enhance the development experience when working with PHP code. Many of these features are provided for free while others require a Premium licence to access. All images and videos in this section are taken from the VS Code client. The features are available to all LSP clients that support the relevant LSP methods. Keybindings listed for each feature are the defaults for the VS Code client."
+        },
+        {
+          "header": "Free Features",
+          "content": "The following features are available to all users of Intelephense. A licence is not necessary."
         },
         {
           "header": "Workspace Symbols",
-          "content": "* **Availability**: FREE\n* **LSP**: `workspace/symbol`\n* **Keybinding**: `Ctrl+T`\nSearch for symbols in your workspace and navigate to their definitions. Supports Fully Qualified Structural Element Name (FQSEN) queries."
+          "content": "- **Availability**: FREE\n- **LSP**: `workspace/symbol`\n- **Keybinding**: `Ctrl+T`\nSearch for symbols in your workspace and navigate to their definitions. Supports Fully Qualified Structural Element Name (FQSEN) queries."
         },
         {
           "header": "Document Symbols",
-          "content": "* **Availability**: FREE\n* **LSP**: `textDocument/documentSymbol`\n* **Keybinding**: `Ctrl+Shift+O`\nLists all symbols in the current document for outline views and breadcrumb navigation."
+          "content": "- **Availability**: FREE\n- **LSP**: `textDocument/documentSymbol`\n- **Keybinding**: `Ctrl+Shift+O`\nLists all symbols in the current document for outline views and breadcrumb navigation."
         },
         {
           "header": "Go to Definition",
-          "content": "* **Availability**: FREE\n* **LSP**: `textDocument/definition`\n* **Keybinding**: `F12`\nNavigate to the definition of a symbol."
+          "content": "- **Availability**: FREE\n- **LSP**: `textDocument/definition`\n- **Keybinding**: `F12`\nNavigate to the definition of a symbol."
         },
         {
           "header": "Hover",
-          "content": "* **Availability**: FREE\n* **LSP**: `textDocument/hover`\n* **Keybinding**: `Ctrl+K Ctrl+I`\nShows type information, signature, and documentation on mouse-over."
+          "content": "- **Availability**: FREE\n- **LSP**: `textDocument/hover`\n- **Keybinding**: `Ctrl+K Ctrl+I`\nShows type information, signature, and documentation on mouse-over."
         },
         {
           "header": "Highlight",
-          "content": "* **Availability**: FREE\n* **LSP**: `textDocument/documentHighlight`\nHighlights all references to the symbol at the cursor position in the current file."
+          "content": "- **Availability**: FREE\n- **LSP**: `textDocument/documentHighlight`\nHighlights all references to the symbol at the cursor position in the current file."
         },
         {
           "header": "Code Completion",
-          "content": "* **Availability**: FREE\n* **LSP**: `textDocument/completion`\n* **Keybinding**: `Ctrl+Space`\nContext-aware suggestions for symbols as you type."
+          "content": "- **Availability**: FREE\n- **LSP**: `textDocument/completion`\n- **Keybinding**: `Ctrl+Space`\nContext-aware suggestions for symbols as you type."
         },
         {
           "header": "Signature Help",
-          "content": "* **Availability**: FREE\n* **LSP**: `textDocument/signatureHelp`\n* **Keybinding**: `Ctrl+Shift+Space`\nDisplays parameter information during function or method calls."
+          "content": "- **Availability**: FREE\n- **LSP**: `textDocument/signatureHelp`\n- **Keybinding**: `Ctrl+Shift+Space`\nDisplays parameter information during function or method calls."
         },
         {
           "header": "Find All References",
-          "content": "* **Availability**: FREE\n* **LSP**: `textDocument/references`\n* **Keybinding**: `Shift+F12`\nLists every usage of a symbol across the workspace."
+          "content": "- **Availability**: FREE\n- **LSP**: `textDocument/references`\n- **Keybinding**: `Shift+F12`\nLists every usage of a symbol across the workspace."
         },
         {
           "header": "Formatting",
-          "content": "* **Availability**: FREE\n* **LSP**: `textDocument/formatting`\nOpinionated formatter complying with PHP-FIG coding standards."
+          "content": "- **Availability**: FREE\n- **LSP**: `textDocument/formatting`\nOpinionated formatter complying with PHP-FIG coding standards."
         },
         {
           "header": "Diagnostics",
-          "content": "* **Availability**: FREE\n* **LSP**: `textDocument/publishDiagnostics`\nSurfaces syntax errors, type errors, and other issues as you type or on save."
+          "content": "- **Availability**: FREE\n- **LSP**: `textDocument/publishDiagnostics`\nSurfaces syntax errors, type errors, and other issues as you type or on save."
         },
         {
           "header": "Inline Values",
-          "content": "* **Availability**: FREE\n* **LSP**: `textDocument/inlineValues`\nDisplays variable states inline during a debug session (requires Xdebug)."
+          "content": "- **Availability**: FREE\n- **LSP**: `textDocument/inlineValues`\nDisplays variable states inline during a debug session (requires Xdebug)."
         },
         {
           "header": "Embedded Languages",
           "content": "Provides language intelligence for HTML, CSS, and JavaScript within PHP files."
         },
         {
+          "header": "Premium Features",
+          "content": "The following features require a licence to access. A licence can be purchased at the checkout page."
+        },
+        {
           "header": "Rename",
-          "content": "* **Availability**: PREMIUM\n* **LSP**: `textDocument/rename`\n* **Keybinding**: `F2`\nRefactors a symbol and all its references across the workspace."
+          "content": "- **Availability**: PREMIUM\n- **LSP**: `textDocument/rename`\n- **Keybinding**: `F2`\nRefactors a symbol and all its references across the workspace."
         },
         {
           "header": "Code Folding",
-          "content": "* **Availability**: PREMIUM\n* **LSP**: `textDocument/foldingRange`\n* **Keybinding**: `Ctrl+Shift+[`\nCollapses and expands regions based on the syntax tree."
+          "content": "- **Availability**: PREMIUM\n- **LSP**: `textDocument/foldingRange`\n- **Keybinding**: `Ctrl+Shift+[`\nCollapses and expands regions based on the syntax tree."
         },
         {
           "header": "Find All Implementations",
-          "content": "* **Availability**: PREMIUM\n* **LSP**: `textDocument/implementation`\n* **Keybinding**: `Ctrl+F12`\nLists concrete classes implementing an interface or abstract method."
+          "content": "- **Availability**: PREMIUM\n- **LSP**: `textDocument/implementation`\n- **Keybinding**: `Ctrl+F12`\nLists concrete classes implementing an interface or abstract method."
         },
         {
           "header": "Go to Type Definition",
-          "content": "* **Availability**: PREMIUM\n* **LSP**: `textDocument/typeDefinition`\nNavigates to the type of a variable."
+          "content": "- **Availability**: PREMIUM\n- **LSP**: `textDocument/typeDefinition`\nNavigates to the type definition of a variable."
         },
         {
           "header": "Go to Declaration",
-          "content": "* **Availability**: PREMIUM\n* **LSP**: `textDocument/declaration`\nNavigates to the initial declaration in a type hierarchy."
+          "content": "- **Availability**: PREMIUM\n- **LSP**: `textDocument/declaration`\nNavigates to the initial declaration in a type hierarchy."
         },
         {
           "header": "Smart Select",
-          "content": "* **Availability**: PREMIUM\n* **LSP**: `textDocument/selectionRange`\n* **Keybinding**: `Shift+Alt+→`\nExpands or shrinks the selection based on the syntax tree."
+          "content": "- **Availability**: PREMIUM\n- **LSP**: `textDocument/selectionRange`\n- **Keybinding**: `Shift+Alt+→`\nExpands or shrinks the selection based on the syntax tree."
         },
         {
           "header": "Type Hierarchy",
-          "content": "* **Availability**: PREMIUM\n* **LSP**: `textDocument/typeHierarchy`\nShows the inheritance structure of a type."
+          "content": "- **Availability**: PREMIUM\n- **LSP**: `textDocument/typeHierarchy`\nShows the inheritance structure of a type."
         },
         {
           "header": "Code Lens",
-          "content": "* **Availability**: PREMIUM\n* **LSP**: `textDocument/codeLens`\nDisplays reference counts and navigation links above declarations."
+          "content": "- **Availability**: PREMIUM\n- **LSP**: `textDocument/codeLens`\nDisplays reference counts and navigation links above declarations."
         },
         {
           "header": "Inlay Hints",
-          "content": "* **Availability**: PREMIUM\n* **LSP**: `textDocument/inlayHint`\nShows inferred parameter names and return types inline."
+          "content": "- **Availability**: PREMIUM\n- **LSP**: `textDocument/inlayHint`\nShows inferred parameter names and return types inline."
         },
         {
           "header": "Document Links",
-          "content": "* **Availability**: PREMIUM\n* **LSP**: `textDocument/documentLink`\n* **Keybinding**: `Ctrl+Click`\nMakes `require`/`include` paths and `@see` annotations clickable."
+          "content": "- **Availability**: PREMIUM\n- **LSP**: `textDocument/documentLink`\n- **Keybinding**: `Ctrl+Click`\nMakes `require`/`include` paths and `@see` annotations clickable."
         },
         {
           "header": "Code Actions",
-          "content": "* **Availability**: PREMIUM\n* **LSP**: `textDocument/codeAction`\n* **Keybinding**: `Ctrl+.`\nProvides quick-fix and refactoring options (e.g., Import Symbol, Add PHPDoc)."
+          "content": "- **Availability**: PREMIUM\n- **LSP**: `textDocument/codeAction`\n- **Keybinding**: `Ctrl+.`\nProvides quick-fix and refactoring options (e.g., Import Symbol, Add PHPDoc)."
         },
         {
           "header": "Compatibility With Frameworks and Libraries",
@@ -4034,7 +4042,7 @@
         },
         {
           "header": "Expected values",
-          "content": "```php\n/**\n * @param 'red'|'blue'|'green' $colour \n */\nfunction setColourDoc(string $colour): void {}\n```"
+          "content": "```php\n/**\n * @param 'red'|'blue'|'green' $colour\n */\nfunction setColourDoc(string $colour): void {}\n```"
         },
         {
           "header": "Intelephense",
@@ -4091,7 +4099,7 @@
       ],
       "metadata": {
         "source": "https://intelephense.com/docs",
-        "ingestedAt": "2026-05-26T02:52:13.466Z"
+        "ingestedAt": "2026-05-27T01:22:56.123Z"
       }
     },
     {
