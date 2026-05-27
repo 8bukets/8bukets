@@ -17,7 +17,8 @@
     "ingest:boundary": "tsx --env-file=.env scripts/ingest_boundary_knowledge.ts",
     "connect": "tsx --env-file=.env scripts/connect_and_collaborate.ts",
     "invoke-hello": "curl -L -X POST 'https://tevdxaufsnpsbvvurddg.supabase.co/functions/v1/hello-world' -H \"Authorization: Bearer $NEXT_PUBLIC_SUPABASE_ANON_KEY\" --data '{\"name\":\"Antigravity\"}'",
-    "verify-cloud": "tsx --env-file=.env scripts/check_cloud_simulation.ts"
+    "verify-cloud": "tsx --env-file=.env scripts/check_cloud_simulation.ts",
+    "ingest:hcp": "tsx --env-file=.env scripts/ingest_hcp_knowledge.ts"
   },
   "dependencies": {
     "@google/genai": "^2.5.0",
