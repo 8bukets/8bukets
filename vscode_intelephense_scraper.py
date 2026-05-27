@@ -59,7 +59,7 @@ def scrape_vscode_intelephense():
             f.write(f"---\n\n")
             f.write(f"## README\n\n")
             f.write(data["readme"])
-            f.write("\n\n---\nAll the best - https://markposition.wordpress.com\n")
+            f.write("\n")
 
         logger.info(f"Saved VSCode Intelephense data to {md_path}")
         return True

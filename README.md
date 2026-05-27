@@ -2,13 +2,6 @@
 
 A robust, asynchronous toolset for scraping and analyzing data from `https://markposition.wordpress.com/`.
 
-## Supabase Configuration
-This project is configured to work with the Netlify Supabase Extension.
-To set up the project locally:
-1.  Connect your Netlify site to your Supabase project via the Netlify extension.
-2.  The extension will automatically inject the required environment variables: `SUPABASE_DATABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
-3.  For local development, ensure these variables are present in your `.env` file or exported in your environment.
-
 ## Features
 
 ### Scraper (`scraper.py`)
@@ -51,7 +44,6 @@ The system relies on various API keys and connection strings to operate both loc
       ```bash
       cp .env.example .env
       ```
-    - Note for iCloud sync: Add your Apple ID and your primary Apple ID Password to the `APPLE_ID` and `APPLE_PASSWORD` variables in `.env` to use the iCloud sync functionality.
     - Update `.env` with your actual credentials (e.g., `GOOGLE_API_KEY`, `GEMINI_API_KEY`, database URIs). **Do not commit `.env` to source control.**
 
 2.  **GitHub Actions / CI/CD**:
@@ -100,31 +92,6 @@ python3 analytics.py
 **Options:**
 *   `--input`: Input JSON file (default: `links.json`)
 *   `--output`: Output Markdown file (default: `REPORT.md`)
-
-### 3. Sync with iCloud Drive
-
-You can manually pull or upload core repository folders (`antigravity/` and `.github/`) to a folder named `8bukets` in your iCloud Drive. This is useful for maintaining the system across devices like an iPhone.
-
-Make sure `APPLE_ID` and `APPLE_PASSWORD` (use your primary Apple ID password) are set in your `.env` file.
-
-**Troubleshooting NSFileProviderErrorDomain error -5009:**
-If you encounter the "NSFileProviderErrorDomain error -5009" (or "Postupak se ne može dovršiti") in macOS Finder, it means the iCloud background sync services have become stuck. You can automatically restart these services and resolve the error by running:
-```bash
-npm run fix:icloud
-```
-
-**To upload files to iCloud:**
-```bash
-python3 sync_icloud.py --upload
-```
-
-**To pull files from iCloud:**
-```bash
-python3 sync_icloud.py --pull
-```
-
-**First-Time Authentication (2FA):**
-The first time you run this script, it will prompt you in the terminal for a Two-Factor Authentication (2FA) code sent to your Apple devices. Once entered, the script will request to trust the session so subsequent runs can proceed autonomously.
 
 ## Output Files
 

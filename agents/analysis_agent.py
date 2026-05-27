@@ -14,7 +14,7 @@ class AnalysisAgent(BaseAgent):
         self.logger.info("Running Analysis...")
 
         total_posts = len(data)
-        domains = [d for p in data if (d := p.get('domain'))]
+        domains = [analytics.get_domain(p.get('external_link')) for p in data if p.get('external_link')]
         domain_counts = analytics.Counter(domains).most_common(10)
 
         categories = []

@@ -1,6 +1,5 @@
-import * as pkg from '@google/gemini-cli-core';
-const { runInDevTraceSpan } = pkg;
-const { GeminiCliOperation } = pkg;
+import { runInDevTraceSpan } from '@google/gemini-cli-core';
+import { GeminiCliOperation } from '@google/gemini-cli-core/dist/src/telemetry/constants.js';
 
 export async function analyzeSentiment(content) {
   return await runInDevTraceSpan(
