@@ -4,6 +4,7 @@ import json
 import os
 import subprocess
 import logging
+from logging.handlers import RotatingFileHandler
 import asyncio
 from datetime import datetime
 
@@ -64,11 +65,22 @@ from agents.backup_agent import BackupAgent, CEOBackupAgent
 from agents.auth import AuthManager
 from agents.thinking_agent import ThinkingAgent
 
-# Configure Logging
+# Configure Logging with Log Rotation for Production
+os.makedirs("results", exist_ok=True)
+log_file_path = "results/system_run.log"
+
+# Define handlers
+stream_handler = logging.StreamHandler()
+file_handler = RotatingFileHandler(
+    log_file_path, maxBytes=10*1024*1024, backupCount=5, encoding="utf-8"
+)
+
+# Apply configuration
 logging.basicConfig(
-    level=logging.INFO,
+    level=os.environ.get("LOG_LEVEL", "INFO").upper(),
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
+    datefmt='%H:%M:%S',
+    handlers=[stream_handler, file_handler]
 )
 logger = logging.getLogger("SystemOrchestrator")
 
