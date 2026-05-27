@@ -1,9 +1,12 @@
-import { execFileSync } from 'child_process'
+import { execFile } from 'child_process'
+import { promisify } from 'util'
 import { checkDockerHealth } from './docker'
 import { getGitLabMetrics } from './gitlab'
 import { getGitHubMetrics } from './github_evolution'
 import { getGitKrakenMetrics } from './gitkraken_metrics' // We will mock this or implement later
 import { reactService } from './react'
+
+const execFileAsync = promisify(execFile)
 
 export class CloudWorkflowAgent {
   public async evaluateTelemetry() {
@@ -50,7 +53,7 @@ export class CloudWorkflowAgent {
       console.warn('⚠️ [CloudWorkflowAgent] System fluency degraded. Attempting proactive recovery...')
       try {
         // Example proactive sub-process commands
-        /* [Evolution] TODO: Refactor to async */ execFileSync('git', ['merge', '--abort'])
+        await execFileAsync('git', ['merge', '--abort'])
         console.log('🔄 [CloudWorkflowAgent] Proactive recovery actions executed.')
       } catch (err) {
         console.error('❌ [CloudWorkflowAgent] Proactive recovery failed:', err)

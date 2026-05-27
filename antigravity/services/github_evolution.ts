@@ -1,11 +1,15 @@
-import { execFileSync } from 'child_process'
+import { execFile } from 'child_process'
+import { promisify } from 'util'
+
+const execFileAsync = promisify(execFile)
 
 export async function getGitHubMetrics() {
   console.log('🐙 [GitHubEvolutionAgent] Evaluating GitHub semantic commit patterns...')
   let semanticCommitScore = 0
 
   try {
-    const logs = /* [Evolution] TODO: Refactor to async */ execFileSync('git', ['log', '--format=%s', '-n', '50']).toString().trim().split('\n')
+    const { stdout: logsRaw } = await execFileAsync('git', ['log', '--format=%s', '-n', '50'])
+    const logs = logsRaw.trim().split('\n')
     let semanticCount = 0
 
     for (const log of logs) {
