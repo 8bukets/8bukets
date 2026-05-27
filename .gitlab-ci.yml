@@ -78,20 +78,24 @@ run-autonomous-proactive_scalability:
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
 
-run-creative-workflow-pipeline:
+market-analysis:
   stage: test
   script:
-    - echo "Running creative workflow pipeline"
     - npm run ingest:sor
-    - npm run daily
-    - npx tsx scripts/execute_creation_cycle.ts
+    - npm run ingest:forbes
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
 
-run-autonomous-cloud_convergence:
+daily-tasks:
   stage: test
   script:
-    - echo "Running autonomous cycle for Cloud Convergence Service"
-    - npx tsx antigravity/workflows/cloud_convergence_workflow.ts
+    - npm run daily
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+autonomous-evolution:
+  stage: test
+  script:
+    - npx tsx scripts/execute_creation_cycle.ts
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"

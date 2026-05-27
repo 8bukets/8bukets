@@ -78,19 +78,18 @@ db.sqlite3
 secrets.json
 # Local settings often contain secrets and should not be committed
 local_settings.py
+.next_server.log
 
 # Antigravity logs and state
 *.log
+logs/
 jules_daily.log
 jules_daily.error.log
 autonomous_state.json
 .jules_memory.json
+antigravity/.jules_memory.json
 work_cycle.log
-
-# Antigravity logs and state
-*.log
-jules_daily.log
-jules_daily.error.log
-autonomous_state.json
-.jules_memory.json
-work_cycle.log
+data/work_orders.json
+CONSOLIDATED_INTELLIGENCE.md
+KNOWLEDGE_MERGE.md
+scratch/icloud_sync/

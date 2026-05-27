@@ -4,18 +4,7 @@ import { Suspense } from "react";
 import { PageProps, resolve, getSystemInsights } from "@/antigravity/core";
 import { getAppStats } from "@/antigravity/services/stats";
 
-export default async function CommandCenter(props: PageProps) {
-  'use cache'
-  return (
-    <Suspense fallback={<div>Loading Antigravity...</div>}>
-      <CommandCenterContent {...props} />
-    </Suspense>
-  )
-}
-
-async function CommandCenterContent({ params, searchParams }: PageProps) {
-export default async function CommandCenter({
-  params, searchParams }: PageProps) {
+export default async function CommandCenter({ params, searchParams }: PageProps) {
   await Promise.all([resolve(params), resolve(searchParams)]);
 
   return (
@@ -111,13 +100,6 @@ export default async function CommandCenter({
                 <h3 className="text-xs font-black uppercase tracking-widest text-zinc-500 mb-4">Global Neural Network</h3>
                 <Suspense fallback={<div className="h-20 bg-white/5 rounded-xl animate-pulse" />}>
                   <NeuralNetworkList />
-                </Suspense>
-              </div>
-
-              <div>
-                <h3 className="text-xs font-black uppercase tracking-widest text-zinc-500 mb-4">Collaboration Matrix</h3>
-                <Suspense fallback={<div className="h-20 bg-white/5 rounded-xl animate-pulse" />}>
-                  <CollaborationMatrix />
                 </Suspense>
               </div>
 
@@ -250,7 +232,6 @@ async function SystemHealthGrid() {
     <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
       <StatusItem label="MongoDB" value={stats.mongoStatus} ok={stats.mongoStatus === 'healthy'} />
       <StatusItem label="Supabase" value={stats.supabaseStatus} ok={stats.supabaseStatus === 'healthy' || stats.supabaseStatus === 'connected'} />
-      <StatusItem label="Docker" value={insights.docker.status.toUpperCase()} ok={insights.docker.status === 'optimal'} />
       <StatusItem label="Security" value={insights.security.status.toUpperCase()} ok={insights.security.status === 'secure'} />
       <StatusItem label="Users" value={stats.activeUsers.toString()} ok={true} />
       <StatusItem label="Uptime" value={`${Math.floor(insights.uptime / 60)}m`} ok={true} />
@@ -266,7 +247,6 @@ function StatusItem({ label, value, ok }: { label: string, value: string, ok: bo
     </div>
   )
 }
-
 async function AnalyticsForecast() {
   const { getRecentAnalytics } = await import('@/antigravity/services/analytics');
   const events = await getRecentAnalytics(3);
@@ -317,25 +297,6 @@ async function EvolutionInsights() {
   )
 }
 
-async function CollaborationMatrix() {
-  const { getMissionMetadata } = await import('@/antigravity/services/collaboration');
-  const metadata = await getMissionMetadata();
-
-  return (
-    <div className="space-y-3">
-      {metadata.stakeholders.map((s: any, i: number) => (
-        <div key={i} className="p-3 bg-white/5 rounded-xl border border-white/10 flex flex-col gap-1">
-          <span className="text-[10px] font-black text-blue-400 uppercase tracking-widest">{s.role}</span>
-          <span className="text-[11px] text-zinc-300 font-mono truncate">{s.email}</span>
-        </div>
-      ))}
-      <div className="mt-2 p-2 bg-blue-500/5 border border-blue-500/10 rounded-lg">
-        <p className="text-[9px] text-blue-400 italic leading-tight">"{metadata.missionStatement}"</p>
-      </div>
-    </div>
-  )
-}
-
 async function ActivityFeed() {
   const insights = await getSystemInsights();
   const { getNotifications } = await import('@/antigravity/services/notification');
@@ -343,20 +304,20 @@ async function ActivityFeed() {
   
   // Merge logs and notifications for the feed
   const feed = [
-    ...notifications.map(n => ({ message: n.message, timestamp: n.timestamp, type: n.type })),
-    ...insights.logs.map(l => ({ message: l.msg, timestamp: l.time, type: l.type }))
-  ].sort((a, b) => b.timestamp.localeCompare(a.timestamp));
+    ...notifications.map(n => ({ msg: n.message, time: new Date(n.timestamp).toLocaleTimeString(), type: n.type })),
+    ...insights.logs
+  ].sort((a, b) => b.time.localeCompare(a.time));
 
-  const finalFeed = feed.length > 0 ? feed : [{ message: 'System initialized. Awaiting autonomous signals...', timestamp: '--:--', type: 'init' }];
+  const finalFeed = feed.length > 0 ? feed : [{ msg: 'System initialized. Awaiting autonomous signals...', time: '--:--', type: 'init' }];
 
   return (
     <div className="flex flex-col gap-3 max-h-[300px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-zinc-800">
       {finalFeed.map((log, i) => (
         <div key={i} className="flex gap-3 text-[11px] leading-relaxed animate-in fade-in slide-in-from-left-2">
-          <span className="text-zinc-600 font-mono whitespace-nowrap">{log.timestamp}</span>
+          <span className="text-zinc-600 font-mono whitespace-nowrap">{log.time}</span>
           <p className={`${log.type === 'init' ? 'text-zinc-500 italic' : 'text-zinc-300'}`}>
             <span className={`font-bold mr-1 ${log.type === 'health' ? 'text-red-500' : 'text-blue-500'}`}>[{log.type.toUpperCase()}]</span>
-            {log.message}
+            {log.msg}
           </p>
         </div>
       ))}

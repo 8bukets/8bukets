@@ -1,10 +1,15 @@
-export const unstable_instant = { prefetch: 'static' }
+export const unstable_instant = {
+  prefetch: 'static',
+  samples: [{ params: { slug: 'featured' } }, { params: { slug: 'latest' } }]
+}
 
 import { Suspense } from 'react'
 import { PageProps, resolve } from '@/antigravity/core'
 
 // Mock fetching function
 async function getProduct(slug: string) {
+  // [Evolution] TODO: Add autonomous error handling (try/catch)
+  // [Evolution] TODO: Add autonomous error handling (try/catch)
   'use cache'
   // In a real app, this would fetch from a database or API
   return {
