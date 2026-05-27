@@ -1,12 +1,5 @@
-aiohttp
-beautifulsoup4
-requests
-pytest
-pytest-asyncio
-filelock
-motor
-pymongo
-aiomysql
-cryptography
-python-dotenv
-vercel
+aiohttp==3.10.11
+beautifulsoup4==4.12.3
+requests==2.32.3
+pytest==8.3.3
+pytest-asyncio==0.24.0
