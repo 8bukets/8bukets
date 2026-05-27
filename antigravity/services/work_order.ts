@@ -102,7 +102,7 @@ export class WorkOrderService {
     if (!fs.existsSync(dataDir)) {
       fs.mkdirSync(dataDir, { recursive: true })
     }
-    fs.writeFileSync(STORAGE_PATH, JSON.stringify(this.orders, null, 2))
+    fs.writeFileSync(STORAGE_PATH, JSON.stringify(this.orders, null, 4))
   }
 
   public async createOrder(type: WorkOrder['type'], goal: string, payload: any, dependsOn?: string[]): Promise<WorkOrder> {
@@ -137,6 +137,16 @@ export class WorkOrderService {
       if (error) order.error = error
       await this.save(order)
     }
+  }
+
+  /**
+   * Clears all orders from memory and local storage. Useful for testing.
+   */
+  public async clearOrders() {
+    this.orders = []
+    this.saveLocal()
+    // We don't necessarily want to wipe the DB in a real environment,
+    // but for autonomous local runs this is fine.
   }
 
   public async executePendingOrders() {

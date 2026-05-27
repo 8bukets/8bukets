@@ -116,8 +116,13 @@ async function scrapeAiAgentsKnowledge() {
                 } else if (tagName === 'ul' || tagName === 'ol') {
                     const items: string[] = [];
                     $el.find('> li').each((_, li) => {
-                        const liText = $(li).text().trim();
-                        if (liText) items.push(`- ${liText}`);
+                        const $li = $(li);
+                        // Add spaces around all child elements to prevent concatenation
+                        $li.find('*').each((_, child) => {
+                            $(child).prepend(' ').append(' ');
+                        });
+                        const finalLiText = $li.text().replace(/\s+/g, ' ').trim();
+                        if (finalLiText) items.push(`- ${finalLiText}`);
                     });
                     if (items.length > 0) currentContent.push(items.join('\n'));
                 } else if (tagName === 'table') {
@@ -171,6 +176,11 @@ async function scrapeAiAgentsKnowledge() {
 
         fs.writeFileSync(jsonPath, JSON.stringify(finalData, null, 4), 'utf8');
         console.log(`Saved AI Agent knowledge to ${jsonPath} (Sections: ${orderedScrapedKeys.length})`);
+
+        // Also sync to data/ai_agents_knowledge.json (where KnowledgeAgent primarily looks)
+        const dataPath = path.join("data", jsonPath);
+        fs.writeFileSync(dataPath, JSON.stringify(finalData, null, 4), 'utf8');
+        console.log(`Synced AI Agent knowledge to ${dataPath}`);
 
         // Also save to data/knowledge/ if it exists
         const dataKnowledgePath = path.join("data/knowledge", jsonPath);
