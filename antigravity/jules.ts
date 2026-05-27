@@ -146,18 +146,6 @@ export class Jules {
     const { KnowledgeObserver } = await import('./services/knowledge_observer')
     const observer = new KnowledgeObserver()
 
-    // Phase 12: Sync Intelephense Documentation
-    const intelephenseScratchPath = path.join(process.cwd(), 'scratch/intelephense_docs.md')
-    if (fs.existsSync(intelephenseScratchPath)) {
-      try {
-        const scratchContent = fs.readFileSync(intelephenseScratchPath, 'utf8')
-        const knowledge = KnowledgeObserver.processContent('Intelephense Documentation', scratchContent, 'local://scratch/intelephense_docs.md')
-        // Purge redundant entries before persistence
-        await observer.persistKnowledge(knowledge, 'Intelephense:')
-        console.log(' ✅ [Jules] Synchronized Intelephense docs from scratch.')
-      } catch (e) {}
-    }
-
     const docsToObserve = [
       { owner: 'bmewburn', repo: 'intelephense-docs', path: 'README.md' },
       { owner: 'bmewburn', repo: 'intelephense-docs', path: 'features.md' },
@@ -287,13 +275,11 @@ export class Jules {
 
     for (const pr of pulls) {
       const isAutonomous = pr.title.includes('🤖') || pr.title.toLowerCase().includes('autonomous')
-      const isAutonomousBranch = pr.branch.startsWith('fix/autonomous-') || pr.branch.startsWith('feat/autonomous-') || pr.branch.startsWith('evolution/')
-      const isEvolutionPR = pr.title.toLowerCase().includes('evolution') || pr.title.toLowerCase().includes('refactor') || pr.title.toLowerCase().includes('hotfix')
       const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
 
       // Phase 17: Multi-Provider Convergence (GitHub & GitLab)
-      if ((isAutonomous || (isAutonomousBranch && isEvolutionPR)) && isCloud) {
-        console.log(`🌩️ [Jules] Cloud-Native Convergence: Auditing autonomous ${pr.provider} PR/MR #${pr.id}...`)
+      if (isAutonomous && isCloud) {
+        console.log(`🤖 [Jules] Auditing autonomous ${pr.provider} PR/MR #${pr.id}...`)
 
         // 1. Check CI Status
         const ciPassed = await gitProvider.verifyCIStatus(pr.branch, pr.provider)
@@ -318,7 +304,7 @@ export class Jules {
         if (auditPassed) {
           const merged = await gitProvider.mergePullRequest(pr.id, pr.provider)
           if (merged) {
-            this.recordTask(`Cloud-Native Convergence: Successfully merged ${pr.provider} PR/MR #${pr.id} autonomously.`)
+            this.recordTask(`PR Protocol: Converged and merged ${pr.provider} PR/MR #${pr.id}.`)
             continue
           }
         } else {
@@ -490,23 +476,16 @@ export class Jules {
       const { getPerformanceMonitoringServiceData } = await import('./services/performance_monitoring')
       const perf = await getPerformanceMonitoringServiceData()
 
-      const providers = []
-      if (process.env.GITHUB_TOKEN) providers.push('github')
-      if (process.env.GITLAB_TOKEN) providers.push('gitlab')
-      if (process.env.MONGODB_URI) providers.push('mongodb')
-      if (process.env.NEXT_PUBLIC_SUPABASE_URL) providers.push('supabase')
-
       const presence = {
         agent: 'Jules',
         status: 'online',
         lastSeen: new Date().toISOString(),
-        version: '1.5.0-alpha',
-        capabilities: ['git-sync', 'self-repair', 'knowledge-ingestion', 'pr-audit', 'cloud-sync', 'autonomous-evolution', 'multi-provider-convergence'],
+        version: '1.4.0-alpha',
+        capabilities: ['git-sync', 'self-repair', 'knowledge-ingestion', 'pr-audit', 'cloud-sync', 'autonomous-evolution'],
         environment: isCloud ? 'cloud' : 'local',
         execution_mode: isCloud ? 'cloud' : 'local',
         autonomous_mode: process.env.AUTONOMOUS_MODE || 'standard',
         cloud_provider: cloudProvider,
-        active_providers: providers,
         docker: {
            status: dockerStatus,
            container_count: containerCount,
@@ -519,21 +498,11 @@ export class Jules {
         memory_usage: process.memoryUsage(),
         system_metrics: {
           loadavg: perf.metrics.system.loadavg,
-          total_memory: perf.metrics.system.totalMemory,
-          free_memory: perf.metrics.system.freeMemory,
-          rss: perf.metrics.memory.rss,
-          heap_used: perf.metrics.memory.heapUsed
+          totalmem: perf.metrics.system.totalmem,
+          freemem: perf.metrics.system.freemem,
+          rss: perf.metrics.memory.rss
         },
-        uptime: process.uptime(),
-        visual_heartbeat: {
-          pulse_intensity: Math.random(),
-          last_action: this.memory.autonomousTasks.length > 0 ? this.memory.autonomousTasks[this.memory.autonomousTasks.length - 1].goal : 'initializing'
-        },
-        telemetry: {
-          sync_latency: (connectivity.mongodb.latency || 0) + (connectivity.supabase.latency || 0),
-          provider_health: providers.length > 2 ? 'optimal' : 'limited',
-          cloud_convergence_active: isCloud
-        }
+        uptime: process.uptime()
       }
 
       // 1. Sync to MongoDB
@@ -577,17 +546,6 @@ export class Jules {
     try {
       await this.syncPresence()
 
-      // Phase 21: Sentient Orchestration
-      const { sentientOrchestration } = await import('./services/sentient_orchestration')
-      await sentientOrchestration.registerIntent({
-        id: `intent_${Date.now()}`,
-        agent: 'Jules',
-        action: 'executeWorkCycle',
-        priority: 1,
-        context: { cycle: 'daily' },
-        timestamp: new Date().toISOString()
-      })
-
       // Phase 17: Resolve State Conflicts early in the cycle
       const { cloudConvergence } = await import('./services/cloud_convergence')
       await cloudConvergence.resolveConflicts()
@@ -612,9 +570,9 @@ export class Jules {
       await this.selfRepair()
 
       // Process PRs again after potential self-repairs or new branch creations
-      // Always process PRs to ensure autonomous merging works even in cloud environments
-      await this.processPullRequests()
-
+      if (!process.env.GITHUB_ACTIONS && !process.env.GITLAB_CI) {
+        await this.processPullRequests()
+      }
       await this.observeGithubDocs()
       const branches = await this.scanAllBranches(true)
 
@@ -752,39 +710,6 @@ export class Jules {
 
     const { KnowledgeObserver } = await import('./services/knowledge_observer')
     const observer = new KnowledgeObserver()
-
-    // Phase 19: Deep Ecosystem Ingestion (Internal Knowledge Bridging)
-    const ingestInternalDocs = async (dir: string) => {
-       const fullPath = path.join(process.cwd(), dir)
-       if (!fs.existsSync(fullPath)) return
-
-       const entries = fs.readdirSync(fullPath, { withFileTypes: true })
-       for (const entry of entries) {
-          const relativePath = path.join(dir, entry.name)
-          if (entry.isDirectory()) {
-             if (entry.name !== 'node_modules' && entry.name !== '.git' && entry.name !== 'dist' && entry.name !== 'scratch') {
-                await ingestInternalDocs(relativePath)
-             }
-          } else if (entry.name.endsWith('.md')) {
-             try {
-                const content = fs.readFileSync(path.join(process.cwd(), relativePath), 'utf8')
-                const title = `Internal: ${relativePath}`
-                const knowledge = KnowledgeObserver.processContent(title, content, `local://${relativePath}`)
-                await observer.persistKnowledge(knowledge)
-                console.log(` ✅ [Jules] Bridged Internal Knowledge: ${relativePath}`)
-             } catch (e) {}
-          }
-       }
-    }
-
-    await ingestInternalDocs('.github')
-    await ingestInternalDocs('antigravity')
-
-    // Phase 15: Ingest simulated iCloud data
-    const icloudSimDir = 'scratch/icloud_sim'
-    if (fs.existsSync(path.join(process.cwd(), icloudSimDir))) {
-       await ingestInternalDocs(icloudSimDir)
-    }
 
     // Expand Ingestion: Scan for diverse technical documentation artifacts
     const knowledgeSources = [

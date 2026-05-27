@@ -1,11 +1,10 @@
 import pytest
-import asyncio
-import os
-import json
 from agents.knowledge_agent import KnowledgeAgent
 from agents.intelligence_agent import IntelligenceAgent
 from agents.creativity_agent import CreativityAgent
 from agents.base_agent import Blackboard, BaseAgent
+import os
+import json
 
 class MockAgent(BaseAgent):
     async def run(self, data, blackboard):
@@ -58,77 +57,69 @@ async def test_backward_compatibility():
     assert agent.get_agent_memory("test_compatibility_persona") == "Compatibility Enthusiast"
 
 @pytest.mark.asyncio(loop_scope="function")
-async def test_ai_agents_knowledge_flow():
+async def test_knowledge_integration_flow():
     # Setup Blackboard
     blackboard = Blackboard()
 
-    # 1. Mock external knowledge
-    await blackboard.update("MockInnovation", {
-        "google_innovation_ai_knowledge": {
-            "articles": [{"title": "Autonomous Agents in 2026", "url": "https://blog.google/agent-1"}]
-        }
-    })
-    await blackboard.update("MockAnalysis", {"analysis_stats": {"top_categories": {}}})
-    await blackboard.update("MockResearch", {"research_data": {"market_trends": [], "external_investigations": []}})
-    await blackboard.update("MockEdge", {"google_edge_knowledge": {"sections": []}})
-    await blackboard.update("MockResearchBlog", {"google_models_research_knowledge": {"articles": []}})
-
-    # 2. Test KnowledgeAgent
+    # 1. Test KnowledgeAgent
     k_agent = KnowledgeAgent()
-    
-    # Mock knowledge file for test stability
-    mock_kf = "data/ai_agents_knowledge.json"
-    os.makedirs(os.path.dirname(mock_kf), exist_ok=True)
-    mock_data = {
-        "what-is-an-ai-agent": {"content": "AI agents are software systems..."},
-        "key-features-of-an-ai-agent": {"content": "Reasoning Acting Collaborating Self-refining Observing"},
-        "challenges-with-using-ai-agents": {"content": "Empathy Ethical stakes Unpredictable"},
-        "what-are-the-types-of-agents-in-ai": {"content": "Background Agents Interactive Partners"},
-        "based-on-interaction": {"content": "Background Agents Interactive Partners"},
-        "what-is-the-difference-between-ai-agents,-ai-assistants,-and-bots": {"content": "AI agents autonomously and proactively perform tasks..."},
-        "key-differences": {"content": "Autonomy Learning Complexity"},
-        "how-do-ai-agents-work": {"content": "- Persona: Consistent\n- Memory: Multi-tiered\n- Tools: External\n- Model: Brain"},
-        "benefits-of-using-ai-agents": {"content": "Simultaneous execution Realistic simulations Collaboration"},
-        "google-cloud-and-ai-agents": {"content": "- ToolA Description\n- ToolB Description"},
-        "customer-agents": {"content": "Customer context"},
-        "employee-agents": {"content": "Employee context"},
-        "creative-agents": {"content": "Creative context"},
-        "data-agents": {"content": "Data context"},
-        "code-agents": {"content": "Code context"},
-        "security-agents": {"content": "Security context"},
-        "deploy-ai-agents-for-scale-and-efficiency-with-cloud-run": {"content": "Cloud Run deployment"}
-    }
-    with open(mock_kf, "w") as f:
-        json.dump(mock_data, f)
+    # Mock knowledge file if not exists or use the existing one
+    if not os.path.exists("ai_agents_knowledge.json"):
+        mock_data = {
+            "what-is-an-ai-agent": {"content": "AI agents are software systems..."},
+            "key-features-of-an-ai-agent": {"content": "Reasoning Acting Collaborating Self-refining Observing"},
+            "challenges-with-using-ai-agents": {"content": "Empathy Ethical stakes Unpredictable"},
+            "what-are-the-types-of-agents-in-ai": {"content": "Background Agents Interactive Partners"},
+            "based-on-interaction": {"content": "Background Agents Interactive Partners"},
+            "what-is-the-difference-between-ai-agents,-ai-assistants,-and-bots": {"content": "AI agents autonomously and proactively perform tasks..."},
+            "benefits-of-using-ai-agents": {"content": "Simultaneous execution Realistic simulations Collaboration"},
+            "google-cloud-and-ai-agents": {"content": "- ToolA Description\n- ToolB Description"},
+            "customer-agents": {"content": "Customer context"},
+            "employee-agents": {"content": "Employee context"},
+            "creative-agents": {"content": "Creative context"},
+            "data-agents": {"content": "Data context"},
+            "code-agents": {"content": "Code context"},
+            "security-agents": {"content": "Security context"},
+            "deploy-ai-agents-for-scale-and-efficiency-with-cloud-run": {"content": "Cloud Run deployment"}
+        }
+        with open("ai_agents_knowledge.json", "w") as f:
+            json.dump(mock_data, f)
 
     k_result = await k_agent.run([], blackboard)
     await blackboard.update(k_agent.name, k_result)
 
-    assert "ai_agent_knowledge" in k_result
-    assert "ai_agents_definitions" in k_result
-    assert "challenges" in k_result["ai_agents_definitions"]
-    assert "customer" in k_result["agent_use_cases"]
+    # Update blackboard with taxonomy for IntelligenceAgent
+    if "agent_taxonomy" in k_result:
+        await blackboard.update(k_agent.name, {"agent_taxonomy": k_result["agent_taxonomy"]})
 
-    # 3. Test IntelligenceAgent
+    assert "challenges" in k_result["ai_agents_definitions"]
+    assert "deployment" in k_result["ai_agents_definitions"]
+    assert any("Cloud Run" in bp for bp in k_result["agent_best_practices"])
+    assert "customer" in k_result["agent_use_cases"]
+    assert len(k_result["google_cloud_tools_list"]) > 0
+    assert "agent_taxonomy" in k_result
+
+    # 2. Test IntelligenceAgent
+    # Needs analysis_stats and research_data
+    await blackboard.update("MockAnalysis", {"analysis_stats": {"top_categories": {}}})
+    await blackboard.update("MockResearch", {"research_data": {}})
+
     i_agent = IntelligenceAgent()
     i_result = await i_agent.run([], blackboard)
     await blackboard.update(i_agent.name, i_result)
 
-    assert "intelligence_insights" in i_result
-    assert any("AI Agent Knowledge Base Integrated" in insight for insight in i_result["intelligence_insights"])
-    assert i_result["synchronization_level"] == "ADVANCED_COLABORATIVE"
+    assert any("multi-agent collaboration" in insight for insight in i_result["intelligence_insights"])
+    assert any("self-improvement" in insight for insight in i_result["intelligence_insights"])
+    assert any("Taxonomy Alignment" in insight for insight in i_result["intelligence_insights"])
+    assert any("Strategic Distinction" in insight for insight in i_result["intelligence_insights"])
+    assert len(i_result["strategic_risk_assessment"]) > 0
+    assert any("emotional intelligence" in risk for risk in i_result["strategic_risk_assessment"])
+    assert len(i_result["strategic_outlook"]) > 0
+    assert "Models" in i_result["categorized_knowledge"]
 
-    # 4. Test CreativityAgent
+    # 3. Test CreativityAgent
     c_agent = CreativityAgent()
-    # Provide necessary concepts via mock if not already there
-    await blackboard.update("MockKnowledge", {
-        "agent_taxonomy": {
-            "interactive_partners": "Assisting with tasks like customer service via direct conversation.",
-            "background_processes": "Automating routine tasks and optimizing processes behind the scenes."
-        }
-    })
     c_result = await c_agent.run([], blackboard)
-    assert any("Background Agents" in concept for concept in c_result["creative_concepts"])
 
-if __name__ == "__main__":
-    pytest.main([__file__])
+    assert any("Background Agents" in concept for concept in c_result["creative_concepts"])
+    assert any("Interactive Partner" in concept for concept in c_result["creative_concepts"])

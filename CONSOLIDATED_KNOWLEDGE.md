@@ -2666,7 +2666,7 @@ Topics covered: https://support.google.com/google-ads/answer/2459326?hl=en&ref_t
 
 
 ---
-
+All the best - https://markposition.wordpress.com
 
 
 ### 8BUKETS ARCHITECTURE SYNTHESIS

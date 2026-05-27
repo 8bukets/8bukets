@@ -102,7 +102,7 @@ export class KnowledgeObserver {
   /**
    * persistKnowledge: Merges and saves knowledge to the unified system store.
    */
-  public async persistKnowledge(knowledge: Knowledge, purgePrefix?: string) {
+  public async persistKnowledge(knowledge: Knowledge) {
     if (!fs.existsSync(this.storageDir)) {
       fs.mkdirSync(this.storageDir, { recursive: true })
     }
@@ -128,24 +128,36 @@ export class KnowledgeObserver {
       }
     }
 
-    // Ensure TypeScript sections structure exists
-    if (!systemKnowledge.typescript_sections) {
-      systemKnowledge.typescript_sections = {}
-    }
+    // Explicit Flat Key Whitelist to ensure ecosystem compatibility
+    const FLAT_KEYS = [
+      'ai_agents',
+      'market_data',
+      'legal_ecosystem',
+      'gemma_model',
+      'intelephense',
+      'litert',
+      'stitch',
+      'vscode_intelephense',
+      'google_ads'
+    ]
+    const isFlatKey = FLAT_KEYS.includes(knowledge.title)
 
-    // Phase 12: Purge redundant entries if prefix provided
-    if (purgePrefix) {
-      Object.keys(systemKnowledge.typescript_sections).forEach(title => {
-        if (title.startsWith(purgePrefix)) {
-           delete systemKnowledge.typescript_sections[title]
-        }
-      })
-    }
+    if (isFlatKey) {
+      systemKnowledge[knowledge.title] = {
+        sections: knowledge.sections,
+        metadata: knowledge.metadata
+      }
+    } else {
+      // For descriptive titles, we still use the typescript_sections namespace
+      // to avoid polluting the top-level flat key space.
+      if (!systemKnowledge.typescript_sections) {
+        systemKnowledge.typescript_sections = {}
+      }
 
-    // Upsert the new knowledge into TypeScript-specific namespace
-    systemKnowledge.typescript_sections[knowledge.title] = {
-      sections: knowledge.sections,
-      metadata: knowledge.metadata
+      systemKnowledge.typescript_sections[knowledge.title] = {
+        sections: knowledge.sections,
+        metadata: knowledge.metadata
+      }
     }
 
     // Update global metadata
