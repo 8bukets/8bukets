@@ -1,4 +1,7 @@
-export const unstable_instant = { prefetch: 'static' }
+export const unstable_instant = {
+  prefetch: 'static',
+  samples: [{ params: { slug: 'featured' } }, { params: { slug: 'latest' } }]
+}
 
 import { Suspense } from 'react'
 import { PageProps, resolve } from '@/antigravity/core'

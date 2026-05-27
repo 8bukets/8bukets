@@ -79,11 +79,11 @@ export async function getMongoClient(): Promise<MongoClient> {
     if (process.env.NODE_ENV === 'development') {
       let globalWithMongo = global as typeof globalThis & { _mongoClientPromise?: Promise<MongoClient> }
       if (!globalWithMongo._mongoClientPromise) {
-        globalWithMongo._mongoClientPromise = new MongoClient(MONGODB_URI).connect()
+    globalWithMongo._mongoClientPromise = new MongoClient(MONGODB_URI!).connect()
       }
       _mongoClientPromise = globalWithMongo._mongoClientPromise
     } else {
-      _mongoClientPromise = new MongoClient(MONGODB_URI).connect()
+      _mongoClientPromise = new MongoClient(MONGODB_URI!).connect()
     }
     const client = await _mongoClientPromise
     circuitBreaker.mongodb.state = 'closed'
