@@ -2,6 +2,10 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "bin": {
+    "antigravity": "./bin/antigravity.js",
+    "antigravity-cli": "./bin/antigravity.js"
+  },
   "scripts": {
     "get-prompt": "npx tsx scripts/get_prompt.ts",
     "fix:icloud": "bash scripts/fix_icloud_sync.sh",

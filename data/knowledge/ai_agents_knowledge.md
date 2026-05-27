@@ -1,6 +1,6 @@
 # ANTIGRAVITY AI AGENTS KNOWLEDGE BASE
 
-*Last Updated: 2026-05-27T00:52:19.040Z*
+*Last Updated: 2026-05-26T12:42:55.299Z*
 
 ## DOCUMENT: AGENTS.md
 **Source:** icloud://AGENTS.md
@@ -11237,7 +11237,7 @@ Wilson Sonsini’s history is essentially the history of modern technology:
 
 ## DOCUMENT: software info by fk – software-online-review – Filip Keser
 **Source:** https://software-online-review.com
-**Ingested At:** 2026-05-27T00:52:17.903Z
+**Ingested At:** 2026-05-26T12:42:54.063Z
 
 ### Introduction
 - [ads – analitics – advertising](https://software-online-review.com/ads-analitics/)
@@ -15278,7 +15278,7 @@ Skip to content ↓
 
 ## DOCUMENT: (position) mRNA
 **Source:** https://markposition.wordpress.com
-**Ingested At:** 2026-05-27T00:52:18.273Z
+**Ingested At:** 2026-05-26T12:42:54.452Z
 
 ### Introduction
 - [Home](https://markposition.wordpress.com/blog/)
@@ -18534,7 +18534,7 @@ For those looking to transition into executive AI leadership, several high-impac
 
 ## DOCUMENT: Intelephense Documentation
 **Source:** https://intelephense.com/docs
-**Ingested At:** 2026-05-27T00:52:18.995Z
+**Ingested At:** 2026-05-26T12:42:55.147Z
 
 ### Getting Started
 
@@ -24951,7 +24951,7 @@ Last updated 2026-04-25 UTC.
 
 ## DOCUMENT: iCloud: autonomous_strategies.md
 **Source:** icloud://autonomous_strategies.md
-**Ingested At:** 2026-05-27T00:52:16.751Z
+**Ingested At:** 2026-05-26T12:42:52.844Z
 
 ### Multi-Cloud Mesh
 Implement a decentralized mesh of autonomous agents across AWS, GCP, and Azure to ensure 100% availability.
@@ -24963,7 +24963,7 @@ Nodes should autonomously migrate between regions based on latency and compute c
 
 ## DOCUMENT: 2026 Market Intelligence
 **Source:** icloud://market_intelligence.json
-**Ingested At:** 2026-05-27T00:52:16.849Z
+**Ingested At:** 2026-05-26T12:42:52.977Z
 
 ### Emerging Frontiers
 Autonomous organisms are becoming the standard for enterprise digital architecture.
@@ -24972,7 +24972,7 @@ Autonomous organisms are becoming the standard for enterprise digital architectu
 
 ## DOCUMENT: iCloud: neural_sync_docs.md
 **Source:** icloud://neural_sync_docs.md
-**Ingested At:** 2026-05-27T00:52:16.927Z
+**Ingested At:** 2026-05-26T12:42:53.071Z
 
 ### Phase 12: Global Neural Synchronization
 Global Neural Synchronization (GNS) is the final milestone in the Antigravity Evolution Roadmap. It enables real-time, zero-latency state convergence across all distributed neural nodes in the ecosystem.
@@ -24986,7 +24986,7 @@ Global Neural Synchronization (GNS) is the final milestone in the Antigravity Ev
 
 ## DOCUMENT: iCloud: test_knowledge.md
 **Source:** icloud://test_knowledge.md
-**Ingested At:** 2026-05-27T00:52:16.977Z
+**Ingested At:** 2026-05-26T12:42:53.125Z
 
 ### New Knowledge from iCloud
 This is some test knowledge.
@@ -25008,15 +25008,9 @@ Nodes should autonomously migrate between regions based on latency and compute c
 
 ---
 
-## DOCUMENT: Google Antigravity
-**Source:** https://antigravity.google/product/antigravity-cli
-**Ingested At:** 2026-05-27T00:52:18.385Z
-
----
-
 ## DOCUMENT: caio_role_docs.md
 **Source:** local://caio_role_docs.md
-**Ingested At:** 2026-05-27T00:52:18.445Z
+**Ingested At:** 2026-05-26T12:42:54.527Z
 
 ### Core Job Description
 A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an organization’s entire artificial intelligence strategy. The role bridges the gap between advanced technical execution and bottom-line business outcomes. A Chief AI Officer directs how a company develops, procures, and implements AI to boost productivity, enter new markets, and maintain a competitive edge.
@@ -25098,7 +25092,7 @@ For those looking to transition into executive AI leadership, high-impact certif
 
 ## DOCUMENT: intelephense_docs.md
 **Source:** local://intelephense_docs.md
-**Ingested At:** 2026-05-27T00:52:18.502Z
+**Ingested At:** 2026-05-26T12:42:54.578Z
 
 ### Getting Started
 
