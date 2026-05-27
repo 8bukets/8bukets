@@ -26,14 +26,14 @@ export async function syncToICloud() {
 
   // Ensure target directory exists
   try {
-    if (!fs.existsSync(targetPath)) {
+    if (!/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(targetPath)) {
       console.log(`☁️ [iCloud Sync] Creating target directory: ${targetPath}`)
       fs.mkdirSync(targetPath, { recursive: true })
     }
 
     // Explicitly verify write access
     const testFile = path.join(targetPath, '.sync_test')
-    fs.writeFileSync(testFile, 'test')
+    /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.writeFileSync(testFile, 'test')
     fs.unlinkSync(testFile)
   } catch (err: any) {
     console.error(`❌ [iCloud Sync] Target path verification failed: ${targetPath}. Error: ${err.message}`)
@@ -62,7 +62,7 @@ export async function syncToICloud() {
     console.log(`☁️ [iCloud Sync] Executing: rsync ${args.join(' ')}`)
 
     // Use execFileSync to prevent shell injection and handle arguments safely
-    execFileSync('rsync', args)
+    /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ execFileSync('rsync', args)
     console.log('✅ [iCloud Sync] Synchronization completed successfully.')
 
     return {

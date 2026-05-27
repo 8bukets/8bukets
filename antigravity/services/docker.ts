@@ -127,7 +127,7 @@ export async function checkDockerHealth() {
   let multiStageStatus = 'unknown'
   try {
     const dockerfilePath = path.join(process.cwd(), 'Dockerfile')
-    if (fs.existsSync(dockerfilePath)) {
+    if (/* [Evolution] TODO: Refactor to async */ fs.existsSync(dockerfilePath)) {
       const content = await fs.promises.readFile(dockerfilePath, 'utf8')
       const fromCount = (content.match(/^FROM /gm) || []).length
       multiStageStatus = fromCount > 1 ? 'multi-stage' : 'single-stage'
