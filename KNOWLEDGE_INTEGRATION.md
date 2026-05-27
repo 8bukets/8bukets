@@ -34,7 +34,7 @@ Their capabilities are made possible in large part by the multimodal capacity of
 
 ## Key features of an AI agent
 
-As explained above, while the key features of an AI agent are reasoning and acting (as described in ReAct Framework ) more features have evolved over time.
+As explained above, while the key features of an AI agent are reasoning and acting (as described in ReAct Framework) more features have evolved over time.
 
 - Reasoning: This core cognitive process involves using logic and available information to draw conclusions, make inferences, and solve problems. AI agents with strong reasoning capabilities can analyze data, identify patterns, and make informed decisions based on evidence and context.
 - Acting : The ability to take action or perform tasks based on decisions, plans, or external input is crucial for AI agents to interact with their environment and achieve goals. This can include physical actions in the case of embodied AI, or digital actions like sending messages, updating data, or triggering other processes.
@@ -49,24 +49,84 @@ AI assistants are AI agents designed as applications or products to collaborate 
 
 AI assistants are often embedded in the product being used. A key characteristic is the interaction between the assistant and user through the different steps of the task. The assistant responds to requests or prompts from the user, and can recommend actions but decision-making is done by the user.
 
- | AI agent | AI assistant | Bot ﻿
+ | AI agent | AI assistant | Bot
 --- | --- | --- | ---
 Purpose | Autonomously and proactively perform tasks | Assisting users with tasks | Automating simple tasks or conversations
 Capabilities | Can perform complex, multi-step actions; learns and adapts; can make decisions independently | Responds to requests or prompts; provides information and completes simple tasks; can recommend actions but the user makes decisions | Follows pre-defined rules; limited learning; basic interactions
 Interaction | Proactive; goal-oriented | Reactive; responds to user requests | Reactive; responds to triggers or commands
 
+AI agent
+
+AI assistant
+
+Bot
+
+Purpose
+
+Autonomously and proactively perform tasks
+
+Assisting users with tasks
+
+Automating simple tasks or conversations
+
+Capabilities
+
+Can perform complex, multi-step actions; learns and adapts; can make decisions independently
+
+Responds to requests or prompts; provides information and completes simple tasks; can recommend actions but the user makes decisions
+
+Follows pre-defined rules; limited learning; basic interactions
+
+Interaction
+
+Proactive; goal-oriented
+
+Reactive; responds to user requests
+
+Reactive; responds to triggers or commands
+
+AI agent
+
+AI assistant
+
+Bot
+
+Purpose
+
+Autonomously and proactively perform tasks
+
+Assisting users with tasks
+
+Automating simple tasks or conversations
+
+Capabilities
+
+Can perform complex, multi-step actions; learns and adapts; can make decisions independently
+
+Responds to requests or prompts; provides information and completes simple tasks; can recommend actions but the user makes decisions
+
+Follows pre-defined rules; limited learning; basic interactions
+
+Interaction
+
+Proactive; goal-oriented
+
+Reactive; responds to user requests
+
+Reactive; responds to triggers or commands
+
 ## Key differences
 
-- Autonomy : AI agents have the highest degree of autonomy, able to operate and make decisions independently to achieve a goal. AI assistants are less autonomous, requiring user input and direction. Bots are the least autonomous, typically following pre-programmed rules.
+- Autonomy : AI agents have the highest degree of autonomy, able to operate and make decisions independently to achieve a goal. AI assistants are less autonomous, requiring user input and direction. Bots are the least autonomous, typically following pre-programmed rules.
 - Complexity : AI agents are designed to handle complex tasks and workflows, while AI assistants and bots are better suited for simpler tasks and interactions.
-- Learning : AI agents often employ machine learning to adapt and improve their performance over time. AI assistants may have some learning capabilities, while bots typically have limited or no learning.
+- Learning : AI agents often employ machine learning to adapt and improve their performance over time. AI assistants may have some learning capabilities, while bots typically have limited or no learning.
 
 ## How do AI agents work?
 
 Every agent defines its role, personality, and communication style, including specific instructions and descriptions of available tools.
 
 - Persona : A well defined persona allows an agent to maintain a consistent character and behave in a manner appropriate to its assigned role, evolving as the agent gains experience and interacts with its environment.
-- Memory : The agent is equipped in general with short term, long term, consensus, and episodic memory. Short term memory for immediate interactions, long-term memory for historical data and conversations, episodic memory for past interactions, and consensus memory for shared information among agents. The agent can maintain context, learn from experiences, and improve performance by recalling past interactions and adapting to new situations.
+- Memory : The agent is equipped in general with short term, long term, consensus, and episodic memory. Short term memory for immediate interactions, long-term memory for historical data and conversations, episodic memory for past interactions, and consensus memory for shared information among agents. The agent can maintain context, learn from experiences, and improve performance by recalling past interactions and adapting to new situations.
 - Tools : Tools are functions or external resources that an agent can utilize to interact with its environment and enhance its capabilities. They allow agents to perform complex tasks by accessing information, manipulating data, or controlling external systems, and can be categorized based on their user interface, including physical, graphical, and program-based interfaces. Tool learning involves teaching agents how to effectively use these tools by understanding their functionalities and the context in which they should be applied.
 - Model : Large language models (LLMs) serve as the foundation for building AI agents, providing them with the ability to understand, reason, and act. LLMs act as the "brain" of an agent, enabling them to process and generate language, while other components facilitate reason and action.
 
@@ -94,35 +154,35 @@ AI agents can enhance the capabilities of language models by providing autonomy,
 
 ## Efficiency and productivity
 
-Increased output : Agents divide tasks like specialized workers, getting more done overall
+Increased output: Agents divide tasks like specialized workers, getting more done overall
 
-Simultaneous execution : Agents can work on different things at the same time without getting in each other's way
+Simultaneous execution: Agents can work on different things at the same time without getting in each other's way
 
-Automation : Agents take care of repetitive tasks, freeing up humans for more creative work
+Automation: Agents take care of repetitive tasks, freeing up humans for more creative work
 
 ## Improved decision-making
 
-Collaboration : Agents work together, debate ideas, and learn from each other, leading to better decisions
+Collaboration: Agents work together, debate ideas, and learn from each other, leading to better decisions
 
-Adaptability : Agents can adjust their plans and strategies as situations change
+Adaptability: Agents can adjust their plans and strategies as situations change
 
-Robust reasoning : Through discussion and feedback, agents can refine their reasoning and avoid errors
+Robust reasoning: Through discussion and feedback, agents can refine their reasoning and avoid errors
 
 ## Enhanced capabilities
 
-Complex problem-solving : Agents can tackle challenging real-world problems by combining their strengths
+Complex problem-solving: Agents can tackle challenging real-world problems by combining their strengths
 
-Natural language communication : Agents can understand and use human language to interact with people and each other
+Natural language communication: Agents can understand and use human language to interact with people and each other
 
-Tool use : Agents can interact with the external world by using tools and accessing information
+Tool use: Agents can interact with the external world by using tools and accessing information
 
-Learning and self-improvement : Agents learn from their experiences and get better over time
+Learning and self-improvement: Agents learn from their experiences and get better over time
 
 ## Social interaction and simulation
 
-Realistic simulations : Agents can model human-like social behaviors, such as forming relationships and sharing information
+Realistic simulations: Agents can model human-like social behaviors, such as forming relationships and sharing information
 
-Emergent behavior : Complex social interactions can arise organically from the interactions of individual agents
+Emergent behavior: Complex social interactions can arise organically from the interactions of individual agents
 
 ## Challenges with using AI agents
 
@@ -138,7 +198,7 @@ Resource-intensive applications – Developing and deploying sophisticated AI ag
 
 ## Deploy AI agents for scale and efficiency with Cloud Run
 
-AI agents, with their inherent need for flexible compute power to handle reasoning, planning, and tool use, can be an excellent fit for Cloud Run . This fully managed serverless platform allows you to deploy your agent's code—often packaged within a container—as a scalable, reliable service or job. This approach abstracts away infrastructure management, letting developers concentrate on refining the agent's logic.
+AI agents, with their inherent need for flexible compute power to handle reasoning, planning, and tool use, can be an excellent fit for Cloud Run. This fully managed serverless platform allows you to deploy your agent's code—often packaged within a container—as a scalable, reliable service or job. This approach abstracts away infrastructure management, letting developers concentrate on refining the agent's logic.
 
 Cloud Run offers several features that directly support the architecture and demands of sophisticated AI agents:
 
@@ -150,7 +210,7 @@ By leveraging Cloud Run's secure, auto-scaling, and flexible environment, organi
 
 ## Use cases for AI agents
 
-Organizations have been deploying agents to address a variety use cases , which we group into six key broader categories:
+Organizations have been deploying agents to address a variety use cases, which we group into six key broader categories:
 
 ## Customer agents
 
@@ -199,6 +259,7 @@ Google Cloud provides a portfolio of products and solutions in the AI agent spac
 - Agent Development Kit (ADK) Open-source Python SDK to build sophisticated multi-agent systems with orchestration, memory, and developer tools.
 - A2A Protocol An open-source framework originally developed by Google to help build AI agents. An AI agent built with A2A Protocol will be interoperable with any service, platform, or infrastructure.
 - Cloud Run A fully managed serverless platform that allows you to deploy containerized agents and applications, providing auto-scaling and pay-per-use efficiency.
+
 <!-- AI_AGENTS_END -->
 
 ## IDE Integration for AI Agents

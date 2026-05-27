@@ -47,7 +47,8 @@ async function main() {
       'python3 gemmafour_scraper.py',
       'python3 litert_scraper.py',
       'python3 intelephense_scraper.py',
-      'python3 ai_agents_knowledge_scraper.py'
+      'python3 ai_agents_knowledge_scraper.py',
+      'npx tsx scripts/ingest_markposition_knowledge.ts'
     ];
 
     for (const scraper of scrapers) {
@@ -63,7 +64,7 @@ async function main() {
     console.log('🌟 [AutonomousSync] Executing Jules (TypeScript) work cycle...');
     await jules.executeWorkCycle();
 
-    // 6. Execute Python Ecosystem Cycle
+    // 7. Execute Python Ecosystem Cycle
     console.log('🐍 [AutonomousSync] Running Python Ecosystem Autonomous Cycle...');
     try {
       const token = process.env.SYSTEM_AUTH_TOKEN || 'default_dev_token';

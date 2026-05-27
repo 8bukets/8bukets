@@ -104,6 +104,13 @@ pipeline {
             }
         }
 
+        stage('Test test_autonomous') {
+            steps {
+                sh 'npm ci'
+                sh 'npx vitest run antigravity/services/test_autonomous.test.ts'
+            }
+        }
+
         stage('Creative Workflow') {
             parallel {
                 stage('Analyze Market') {

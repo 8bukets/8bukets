@@ -15,6 +15,7 @@
     "ingest:sor": "tsx scripts/ingest_software_online_review.ts https://software-online-review.com/",
     "ingest:investopedia": "tsx scripts/ingest_investopedia.ts",
     "ingest:knowledge": "python3 merge_knowledge.py",
+    "ingest:subagents": "python3 scripts/ingest_cli_subagents_knowledge.py",
     "sync-all": "tsx scripts/sync_all_branches.ts",
     "daily-tasks": "gemini @daily-tasks",
     "ignite": "npm run daily -- --continuous",
@@ -32,7 +33,7 @@
     "chokidar": "^5.0.0",
     "commander": "^14.0.3",
     "next": "^16.2.6",
-    "puppeteer": "^25.0.4",
+    "puppeteer": "^25.1.0",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2",
     "ws": "^8.21.0"

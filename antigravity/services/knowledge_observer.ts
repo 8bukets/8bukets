@@ -115,9 +115,7 @@ export class KnowledgeObserver {
         generated_at: new Date().toISOString(),
         version: 1.0,
         sources_processed: []
-      },
-      sections: {},
-      typescript_sections: {}
+      }
     }
 
     if (fs.existsSync(jsonStore)) {
@@ -128,22 +126,27 @@ export class KnowledgeObserver {
       }
     }
 
-    // Ensure TypeScript sections structure exists
-    if (!systemKnowledge.typescript_sections) {
-      systemKnowledge.typescript_sections = {}
+    // Migration to Flat Structure: flatten 'sections' and 'typescript_sections'
+    if (systemKnowledge.sections) {
+        Object.assign(systemKnowledge, systemKnowledge.sections);
+        delete systemKnowledge.sections;
+    }
+    if (systemKnowledge.typescript_sections) {
+        Object.assign(systemKnowledge, systemKnowledge.typescript_sections);
+        delete systemKnowledge.typescript_sections;
     }
 
     // Phase 12: Purge redundant entries if prefix provided
     if (purgePrefix) {
-      Object.keys(systemKnowledge.typescript_sections).forEach(title => {
+      Object.keys(systemKnowledge).forEach(title => {
         if (title.startsWith(purgePrefix)) {
-           delete systemKnowledge.typescript_sections[title]
+           delete systemKnowledge[title]
         }
       })
     }
 
-    // Upsert the new knowledge into TypeScript-specific namespace
-    systemKnowledge.typescript_sections[knowledge.title] = {
+    // Upsert the new knowledge into the flat structure
+    systemKnowledge[knowledge.title] = {
       sections: knowledge.sections,
       metadata: knowledge.metadata
     }

@@ -187,6 +187,15 @@ export class CloudConvergenceService {
                       process.env.GITLAB_CI ||
                       process.env.MACBOOK_CLOUD_SIMULATION === 'true'
 
+      // Phase 22: Node Sovereignty & Cloud Takeover
+      const nodeId = isCloud ? 'cloud-relay-01' : 'macbook-primary-01'
+      const presence = await db.collection('agent_presence').findOne({ agent: 'Jules', 'telemetry.node_id': nodeId })
+      const isLeader = presence?.is_leader ?? !isCloud
+
+      if (isCloud && isLeader) {
+         logAutonomousAction('⚡ [CloudConvergence] Cloud node is currently the LEADER. Assuming full operational sovereignty.', 'info')
+      }
+
       // Sync work orders and system configuration from MongoDB to local if running in cloud mode
       if (isCloud) {
         logAutonomousAction('🌩️ [CloudConvergence] Cloud mode active. Synchronizing state from MongoDB source of truth.', 'info')
@@ -239,11 +248,23 @@ export class CloudConvergenceService {
 
         if (mongoOrders.length > 0) {
           // Merge logic: MongoDB orders take precedence for the local execution queue in cloud mode
-          const orderMap = new Map(localOrders.map((o: any) => [o.id, o]))
-          mongoOrders.forEach((mo: any) => {
-            const { _id, ...orderData } = mo
-            orderMap.set(mo.id, orderData)
-          })
+          // Phase 22: If cloud leader, strictly prioritize MongoDB state to ensure continuity when MacBook is offline
+          const orderMap = new Map();
+
+          if (isLeader) {
+             // In Cloud Leader mode, the DB is the only source of truth for current state
+             mongoOrders.forEach((mo: any) => {
+               const { _id, ...orderData } = mo;
+               orderMap.set(mo.id, orderData);
+             });
+          } else {
+             // Standard merge
+             localOrders.forEach((o: any) => orderMap.set(o.id, o));
+             mongoOrders.forEach((mo: any) => {
+               const { _id, ...orderData } = mo;
+               orderMap.set(mo.id, orderData);
+             });
+          }
 
           fs.writeFileSync(localPath, JSON.stringify(Array.from(orderMap.values()), null, 2))
 

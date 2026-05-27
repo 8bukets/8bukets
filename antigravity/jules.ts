@@ -285,6 +285,32 @@ export class Jules {
     const pulls = await gitProvider.listPullRequests()
     this.recordTask(`PR Audit: Found ${pulls.length} open PRs.`)
 
+    // Phase 22: Leadership-aware PR processing
+    const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
+    const nodeId = isCloud ? 'cloud-relay-01' : 'macbook-primary-01'
+
+    // Cloud node becomes leader if MacBook is offline
+    let isLeader = !isCloud
+
+    try {
+      const { getMongoClient } = await import('./core')
+      const client = await getMongoClient()
+      const db = client.db()
+
+      const macbookPresence = await db.collection('agent_presence').findOne({
+        agent: 'Jules',
+        'telemetry.node_id': 'macbook-primary-01',
+        lastSeen: { $gt: new Date(Date.now() - 15 * 60 * 1000).toISOString() }
+      })
+
+      if (isCloud) {
+        isLeader = !macbookPresence
+        console.log(`🌩️ [Jules] Cloud leadership check: MacBook is ${macbookPresence ? 'ONLINE' : 'OFFLINE'}. Cloud is ${isLeader ? 'LEADER' : 'STANDBY'}.`)
+      }
+    } catch (e) {
+      logAutonomousAction('⚠️ [Jules] Leadership audit failed. Assuming default sovereignty.', 'warning')
+    }
+
     for (const pr of pulls) {
       const isAutonomous = pr.title.includes('🤖') || pr.title.toLowerCase().includes('autonomous')
       const isAutonomousBranch = pr.branch.startsWith('fix/autonomous-') || pr.branch.startsWith('feat/autonomous-') || pr.branch.startsWith('evolution/')
@@ -292,7 +318,8 @@ export class Jules {
       const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
 
       // Phase 17: Multi-Provider Convergence (GitHub & GitLab)
-      if ((isAutonomous || (isAutonomousBranch && isEvolutionPR)) && isCloud) {
+      // Enhanced Phase 22: Leadership requirement for autonomous merging
+      if ((isAutonomous || (isAutonomousBranch && isEvolutionPR)) && isCloud && isLeader) {
         console.log(`🌩️ [Jules] Cloud-Native Convergence: Auditing autonomous ${pr.provider} PR/MR #${pr.id}...`)
 
         // 1. Check CI Status
@@ -466,16 +493,24 @@ export class Jules {
     await this.ensureInitialized()
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
 
+    // Phase 22: Immediate Cloud Sovereignty Handover
+    const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
+    if (isCloud) {
+      console.log('☁️ [Jules] Cloud environment detected. Ensuring immediate PR/MR audit for "Merge and Work" mandate...')
+      await this.processPullRequests()
+    }
+
     try {
       // Phase 12: Global Neural Sync (Phase 12 Convergence)
       const { globalNeuralSync } = await import('./services/global_neural_sync_service_phase_12')
       await globalNeuralSync.convergeState()
 
+      // Node Sovereignty: syncPresence first to establish leadership
+      await this.syncPresence()
+
       // Phase 17: Resolve State Conflicts early in the cycle
       const { cloudConvergence } = await import('./services/cloud_convergence')
       await cloudConvergence.resolveConflicts()
-
-      await this.syncPresence()
 
       // Phase 21: Sentient Orchestration
       const { sentientOrchestration } = await import('./services/sentient_orchestration')
@@ -514,9 +549,16 @@ export class Jules {
       await this.observeGithubDocs()
       const branches = await this.scanAllBranches(true)
 
-      // Collaboration & Intelligence (Phase 9/12)
-      const { syncCollaborationState } = await import('./services/collaboration')
+      // Collaboration & Intelligence (Phase 12)
+      const { syncCollaborationState, mergeBranchInsights, generateRelationshipMap } = await import('./services/collaboration')
       const { generateConsolidatedReport } = await import('./services/intelligence')
+
+      await mergeBranchInsights(branches)
+      const relMap = await generateRelationshipMap()
+      const mapPath = path.join(process.cwd(), 'data/relationship_map.json')
+      if (!fs.existsSync(path.dirname(mapPath))) fs.mkdirSync(path.dirname(mapPath), { recursive: true })
+      fs.writeFileSync(mapPath, JSON.stringify(relMap, null, 2))
+
       await syncCollaborationState(branches)
       await generateConsolidatedReport(branches)
 
@@ -623,8 +665,6 @@ export class Jules {
 
     const { observeKnowledge: scanUrl } = await import('./services/knowledge')
     const urlsToObserve = [
-      'https://software-online-review.com',
-      'https://markposition.wordpress.com',
       'https://www.investopedia.com/'
     ]
 
