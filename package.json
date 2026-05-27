@@ -2,6 +2,10 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "bin": {
+    "antigravity": "./bin/antigravity.js",
+    "antigravity-cli": "./bin/antigravity.js"
+  },
   "scripts": {
     "get-prompt": "npx tsx scripts/get_prompt.ts",
     "fix:icloud": "bash scripts/fix_icloud_sync.sh",
@@ -17,10 +21,13 @@
     "ignite": "tsx --env-file=.env antigravity/run_daily.ts --continuous",
     "creation": "tsx --env-file=.env scripts/execute_creation_cycle.ts",
     "ingest:sor": "tsx --env-file=.env scripts/ingest_software_online_review.ts",
+    "ingest:antigravity-cli": "tsx --env-file=.env scripts/ingest_antigravity_cli.ts",
+    "ingest:macbook-cloud": "tsx --env-file=.env scripts/ingest_macbook_cloud_knowledge.ts",
     "consolidate:intelephense": "tsx --env-file=.env scripts/consolidate_intelephense.ts",
     "connect": "tsx --env-file=.env scripts/connect_and_collaborate.ts",
     "invoke-hello": "curl -L -X POST 'https://tevdxaufsnpsbvvurddg.supabase.co/functions/v1/hello-world' -H \"Authorization: Bearer $NEXT_PUBLIC_SUPABASE_ANON_KEY\" --data '{\"name\":\"Antigravity\"}'",
-    "verify-cloud": "tsx --env-file=.env scripts/check_cloud_simulation.ts"
+    "verify-cloud": "tsx --env-file=.env scripts/check_cloud_simulation.ts",
+    "antigravity": "tsx --env-file=.env antigravity-cli.ts"
   },
   "dependencies": {
     "@ai-sdk/google": "^3.0.70",
@@ -32,6 +39,7 @@
     "ai": "^6.0.184",
     "cheerio": "^1.2.0",
     "chokidar": "^5.0.0",
+    "commander": "^14.0.3",
     "dotenv": "^17.4.2",
     "fs-extra": "^11.3.5",
     "mongodb": "^6.21.0",
