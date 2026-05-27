@@ -198,7 +198,6 @@ Google Cloud provides a portfolio of products and solutions in the AI agent spac
 
 - Cloud Run A fully managed serverless platform that allows you to deploy containerized agents and applications, providing auto-scaling and pay-per-use efficiency.
 
-
 ## Compile
 
 To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.

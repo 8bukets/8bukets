@@ -95,6 +95,12 @@ Seeded demo accounts:
 
 The SQL seed uses placeholder password hashes for these accounts. For a real local run, create fresh accounts through the app after bootstrapping the database.
 
+## Architecture & Knowledge Merge
+
+This platform is the product engine layer of the broader Antigravity ecosystem. It works alongside the **Market Intelligence Layer**, which scrapes data and trends from `markposition.wordpress.com` via the scripts in the root directory.
+
+For the complete map of how this platform connects to the intelligence layer, the public domain, and the brand identity, see [KNOWLEDGE_MERGE.md](KNOWLEDGE_MERGE.md).
+
 ## Documentation
 
 - [PRODUCT.md](/Users/filipkeser/Documents/MapAntigravity/software-review-platform/PRODUCT.md) for the product brief, user flows, and roadmap

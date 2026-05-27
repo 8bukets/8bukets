@@ -53,7 +53,8 @@ class MongoDBAgent(BaseAgent):
                 "timestamp": asyncio.get_event_loop().time(),
                 "evolution": blackboard.get("system_evolution"),
                 "sigma_status": blackboard.get("sigma_performance_report"),
-                "analysis": blackboard.get("analysis_stats")
+                "analysis": blackboard.get("analysis_stats"),
+                "research": blackboard.get("research_data")
             }
             await snapshots_collection.insert_one(snapshot)
 
