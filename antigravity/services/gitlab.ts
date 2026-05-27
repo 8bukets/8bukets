@@ -7,8 +7,8 @@ export async function getGitLabMetrics() {
 
   try {
     const gitlabYamlPath = path.join(process.cwd(), '.gitlab-ci.yml')
-    if (/* [Evolution] TODO: Refactor to async */ fs.existsSync(gitlabYamlPath)) {
-      const content = /* [Evolution] TODO: Refactor to async */ fs.readFileSync(gitlabYamlPath, 'utf8')
+    if (/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(gitlabYamlPath)) {
+      const content = /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.readFileSync(gitlabYamlPath, 'utf8')
       const stagesMatch = content.match(/stages:\s*\n((?:\s*-\s*\w+\s*\n)+)/)
 
       if (stagesMatch && stagesMatch[1]) {

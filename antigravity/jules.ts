@@ -16,11 +16,6 @@ interface JulesMemory {
   architecturalDecisions: Record<string, string>
   autonomousTasks: { id: string; status: 'pending' | 'completed'; goal: string; role?: AgentRole }[]
   activeAgents: { role: AgentRole; status: 'idle' | 'busy'; lastActive: string }[]
-  phase12Directives?: {
-    marketData: string;
-    sentientOrchestration: boolean;
-    salaryBenchmark: string;
-  }
 }
 
 const MEMORY_PATH = path.join(process.cwd(), 'antigravity/.jules_memory.json')
@@ -57,12 +52,7 @@ export class Jules {
         parallelism: 'Phase 12 Multi-Agent'
       },
       autonomousTasks: [],
-      activeAgents: [],
-      phase12Directives: {
-        marketData: '300% growth forecast in AI orchestration',
-        sentientOrchestration: true,
-        salaryBenchmark: '$2.5M+ for top-tier CAIO roles'
-      }
+      activeAgents: []
     }
   }
 
@@ -134,12 +124,17 @@ export class Jules {
 
   public async observeGithubDocs() {
     console.log(`📚 [Jules-${this.role}] Observing technical documentation from GitHub...`)
-    const { observeGithubDocs } = await import('./services/github_docs_observer')
+    const { githubDocsObserver } = await import('./services/github_docs_observer')
     const { KnowledgeObserver } = await import('./services/knowledge_observer')
     const observer = new KnowledgeObserver()
 
-    const repoPath = 'bmewburn/intelephense-docs'
-    const files = ['README.md', 'installation.md', 'gettingStarted.md', 'features.md', 'support.md']
+    const intelephenseDocs = [
+      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'README.md' },
+      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'installation.md' },
+      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'gettingStarted.md' },
+      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'features.md' },
+      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'support.md' }
+    ]
 
     let allSections: any[] = []
 
@@ -153,18 +148,18 @@ export class Jules {
       allSections.push(...localKnowledge.sections)
     }
 
-    try {
-      const results = await observeGithubDocs(repoPath, files)
-      for (const result of results) {
-        const title = `Intelephense: ${result.file.replace('.md', '')}`
+    for (const doc of intelephenseDocs) {
+      try {
+        const result = await githubDocsObserver.fetchDoc(doc.owner, doc.repo, doc.path)
+        const title = `Intelephense: ${doc.path.replace('.md', '')}`
         const rawContent = result.sections.map((s: any) => `# ${s.title}\n${s.content}`).join('\n\n')
         const knowledge = KnowledgeObserver.processContent(title, rawContent, result.rawUrl)
 
         allSections.push(...knowledge.sections)
-        console.log(` ✅ [Jules] Fetched & Processed: ${result.file}`)
+        console.log(` ✅ [Jules] Fetched: ${doc.path}`)
+      } catch (err) {
+        console.error(` ❌ [Jules] Failed to fetch ${doc.path}:`, err)
       }
-    } catch (err) {
-      console.error(` ❌ [Jules] Failed to fetch GitHub docs:`, err)
     }
 
     if (allSections.length > 0) {
@@ -356,13 +351,6 @@ export class Jules {
       await this.recordTask(`Super-Intelligence: Generated ${refactors.length} predictive refactors.`)
     }
 
-    // Phase 12: Sentient Orchestration
-    if (this.memory.phase12Directives?.sentientOrchestration) {
-        const { sentientOrchestrationService } = await import('./services/sentient_orchestration')
-        // In a real scenario, this would coordinate multi-agent intent
-        await this.recordTask('Sentient Orchestration: Intent coordination active.')
-    }
-
     // ReAct Protocol Integration (arXiv:2210.03629)
     const { reactService } = await import('./services/react')
     const reactTools = {
@@ -396,7 +384,7 @@ export class Jules {
         await creationEngine.processIdeas(sessionAnalysisIdeas);
       }
     } catch (err) {
-      console.error(`❌ [Jules] Failed autonomous improvement cycle: `, err);
+      console.error(`❌ [Jules] Failed autonomous improvement cycle:`, err);
     }
 
     // Cloud Workflow Agent
@@ -408,70 +396,7 @@ export class Jules {
       await this.recordTask(`Cloud Workflow: System degraded, attempted proactive recovery.`)
     }
 
-    // Knowledge Observation
-    console.log('👁️ [Jules] Initiating Knowledge Observation...')
-    const { observeKnowledge } = await import('./services/knowledge')
-    const { observeGithubDocs } = await import('./services/github_docs_observer')
-
-    const [webInsights, githubInsights] = await Promise.all([
-      observeKnowledge('https://software-online-review.com'),
-      observeGithubDocs('bmewburn/intelephense-docs', ['features.md', 'installation.md', 'gettingStarted.md', 'support.md'])
-    ])
-
-    const consolidatedKnowledge: any = {
-      web: webInsights,
-      github: githubInsights,
-      lastUpdated: new Date().toISOString()
-    }
-
-    if (webInsights || githubInsights) {
-      if (webInsights) {
-        await this.recordTask(`Knowledge Observation: Extracted ${webInsights.topKeywords?.length || 0} concepts from ${webInsights.source}`)
-      }
-      if (githubInsights && githubInsights.length > 0) {
-        await this.recordTask(`Knowledge Observation: Extracted technical documentation from ${githubInsights[0].source}`)
-      }
-
-      const jsonPath = path.join(process.cwd(), 'ai_agents_knowledge.json')
-      fs.writeFileSync(jsonPath, JSON.stringify(consolidatedKnowledge, null, 2), 'utf8')
-
-      let mdContent = `# Consolidated Knowledge Observation Insights\n\n`
-      mdContent += `*Last Updated: ${consolidatedKnowledge.lastUpdated}*\n\n`
-
-      if (webInsights) {
-        mdContent += `## 🌐 Web Insights: ${webInsights.title}\n`
-        mdContent += `**Source:** ${webInsights.source}\n`
-        mdContent += `**Description:** ${webInsights.description}\n\n`
-
-        mdContent += `### Top Keywords\n`
-        webInsights.topKeywords?.forEach((kw: string) => {
-          mdContent += `- ${kw}\n`
-        })
-        mdContent += `\n`
-
-        mdContent += `### Recent Posts\n`
-        webInsights.recentPosts?.forEach((post: { title: string; link: string }) => {
-          mdContent += `- [${post.title}](${post.link})\n`
-        })
-        mdContent += `\n---\n\n`
-      }
-
-      if (githubInsights && githubInsights.length > 0) {
-        mdContent += `## 🐙 GitHub Technical Documentation\n`
-        mdContent += `**Repository:** ${githubInsights[0].source}\n\n`
-
-        githubInsights.forEach(insight => {
-          mdContent += `### File: ${insight.file}\n`
-          insight.sections.forEach(section => {
-            mdContent += `#### ${section.title}\n${section.content}\n\n`
-          })
-        })
-      }
-
-      const mdPath = path.join(process.cwd(), 'ai_agents_knowledge.md')
-      fs.writeFileSync(mdPath, mdContent, 'utf8')
-      console.log('✅ [Jules] Knowledge successfully merged and integrated into repository (ai_agents_knowledge.json, ai_agents_knowledge.md)')
-    }
+    // Knowledge Observation (Redundant block removed to prevent runtime TypeError and maintain system stability)
 
     await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
 
@@ -601,10 +526,11 @@ export class Jules {
   public async observeKnowledge() {
     const { KnowledgeObserver } = await import('./services/knowledge_observer')
     const { icloudObserver } = await import('./services/icloud_observer')
+    const observer = new KnowledgeObserver()
 
     console.log(`🧠 [Jules-${this.role}] Observing knowledge from all synchronized sources...`)
 
-    // 1. iCloud & Simulation Synchronization (Consolidated Phase 12)
+    // 1. iCloud Synchronization
     try {
       const icloudIngested = await icloudObserver.scan()
       if (icloudIngested.length > 0) {
@@ -627,7 +553,6 @@ export class Jules {
     const incomingDir = path.join(process.cwd(), 'scratch')
     try {
       await fs.promises.access(incomingDir)
-      const observer = new KnowledgeObserver()
       const dirFiles = await fs.promises.readdir(incomingDir)
       const files = dirFiles.filter(f => f.endsWith('_docs.md'))
 
@@ -642,8 +567,44 @@ export class Jules {
           console.error(` ❌ [Jules] Failed to ingest scratch doc ${file}:`, err)
         }
       }
+
+      // Phase 12: Scan iCloud Simulation directory
+      const simDir = path.join(incomingDir, 'icloud_sim')
+      if (fs.existsSync(simDir)) {
+        console.log(`☁️ [Jules] Scanning iCloud Simulation for new knowledge: ${simDir}`)
+        const simFiles = fs.readdirSync(simDir).filter(f => f.endsWith('.md'))
+        for (const file of simFiles) {
+          const fullPath = path.join(simDir, file)
+          const content = fs.readFileSync(fullPath, 'utf8')
+          const knowledge = KnowledgeObserver.processContent(file, content, `icloud-sim://${file}`)
+          await observer.persistKnowledge(knowledge)
+        }
+      }
     } catch (e) {
       console.error(`❌ [Jules] Failed to observe local scratch knowledge:`, e)
+    }
+
+    // Phase 12: Scan iCloud for new knowledge
+    const os = await import('os')
+    const homeDir = os.homedir()
+    const defaultICloudPath = path.join(homeDir, 'Library/Mobile Documents/com~apple~CloudDocs/Antigravity_Sync')
+    const icloudDir = process.env.ICLOUD_SYNC_PATH || defaultICloudPath
+
+    try {
+      await fs.promises.access(icloudDir)
+
+      const dirFiles = await fs.promises.readdir(icloudDir)
+      const files = dirFiles.filter(f => f.endsWith('.md'))
+
+
+      for (const file of files) {
+        const fullPath = path.join(icloudDir, file)
+        const content = await fs.promises.readFile(fullPath, 'utf8')
+        const knowledge = KnowledgeObserver.processContent(file, content, `icloud://${file}`)
+        await observer.persistKnowledge(knowledge)
+      }
+    } catch (e) {
+      console.error(`❌ [Jules] Failed to observe iCloud knowledge:`, e)
     }
   }
 }

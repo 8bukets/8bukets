@@ -112,11 +112,6 @@ pipeline {
                 sh 'npx tsx antigravity/workflows/cognitive_code_self_correction_workflow.ts'
             }
         }
-        stage('Run Autonomous Autonomous Database Sharding Service') {
-            steps {
-                sh 'npx tsx antigravity/workflows/autonomous_database_sharding_workflow.ts'
-            }
-        }
         stage('Creative Workflow') {
             parallel {
                 stage('Market Analysis') {

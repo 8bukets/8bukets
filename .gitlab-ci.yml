@@ -162,11 +162,3 @@ run-autonomous-cognitive_code_self_correction:
     - npx tsx antigravity/workflows/cognitive_code_self_correction_workflow.ts
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
-
-run-autonomous-autonomous_database_sharding:
-  stage: test
-  script:
-    - echo "Running autonomous cycle for Autonomous Database Sharding Service"
-    - npx tsx antigravity/workflows/autonomous_database_sharding_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
