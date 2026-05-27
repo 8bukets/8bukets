@@ -46,4 +46,11 @@
 - **Description**: We make processing easier and smarter and cooperate with github gitlab gitkraken and docker cloud to make decisions and workflow on the air fluent and always available.
 
 ---
+
+## Gemini CLI Remote Subagents
+
+- **Definition:** Gemini CLI can connect to remote subagents using the A2A protocol, configured via Markdown files with YAML frontmatter.
+- **Authentication:** Supports apiKey, http, google-credentials, and oauth.
+- **Management:** Use `/agents list`, `/agents reload`, `/agents enable`, and `/agents disable`.
+
 All the best - https://markposition.wordpress.com

@@ -457,3 +457,8 @@ We make processing easier and smarter and cooperate with github gitlab gitkraken
 
 ---
 All the best - https://markposition.wordpress.com
+## Autonomous Observation: Gemini CLI Remote Subagents
+
+The system observed documentation regarding Gemini CLI Remote Subagents.
+Remote subagents are defined as Markdown files with YAML frontmatter containing `kind: remote`, `name`, and agent card details.
+Authentication supports `apiKey`, `http`, `google-credentials`, and `oauth`.
