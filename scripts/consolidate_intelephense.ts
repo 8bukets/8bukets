@@ -36,38 +36,22 @@ async function consolidate() {
     }
   }
 
-  // 3. Deduplicate sections by header, merging content if necessary
-  const headerMap = new Map<string, { header: string; content: string }>()
+  // 3. Deduplicate sections by header and filter low-value content
+  const seenHeaders = new Set<string>()
+  const uniqueSections = allSections.filter(s => {
+    const trimmedHeader = s.header.trim()
+    const trimmedContent = s.content.trim()
 
-  for (const section of allSections) {
-    const existing = headerMap.get(section.header)
-    const isStructural = ['Getting Started', 'Features', 'Installation', 'Type System'].includes(section.header)
+    if (seenHeaders.has(trimmedHeader)) return false
 
-    if (!existing) {
-      // Only keep sections with content, unless they are high-level structural headers
-      if (section.content || isStructural) {
-        headerMap.set(section.header, { ...section })
-      }
-    } else {
-      // If header exists, merge content if the new content is different and not empty
-      if (section.content && section.content !== existing.content) {
-        if (existing.content.includes(section.content)) {
-          // New content is already a subset, ignore
-        } else if (section.content.includes(existing.content)) {
-          // New content is more complete, replace
-          existing.content = section.content
-        } else {
-          // Both have unique info, append
-          existing.content += '\n\n' + section.content
-        }
-      }
+    // Ignore empty sections or those that are just navigation/placeholders
+    if (!trimmedContent || trimmedContent.length < 5) {
+      if (!['Getting Started', 'Features', 'Installation'].includes(trimmedHeader)) return false
     }
-  }
 
-  const uniqueSections = Array.from(headerMap.values())
-
-  // Ensure all headers from scratch are definitely here
-  console.log(` 🧩 Total unique sections: ${uniqueSections.length}`)
+    seenHeaders.add(trimmedHeader)
+    return true
+  })
 
   const consolidatedKnowledge: Knowledge = {
     title: 'Intelephense Documentation',
@@ -87,8 +71,10 @@ async function consolidate() {
     const systemKnowledge = JSON.parse(fs.readFileSync(jsonStore, 'utf8'))
     if (systemKnowledge.typescript_sections) {
       systemKnowledge.typescript_sections = systemKnowledge.typescript_sections.filter((k: any) => {
-        // Purge any "Intelephense: ..." variants, only keeping the main consolidated one if it exists (it will be updated)
-        return !k.title.startsWith('Intelephense:')
+        // Purge ALL Intelephense variants and the local filename entry to avoid duplication
+        const isLegacyIntelephense = k.title.startsWith('Intelephense')
+        const isLocalFilename = k.title === 'intelephense_docs.md'
+        return !isLegacyIntelephense && !isLocalFilename
       })
       fs.writeFileSync(jsonStore, JSON.stringify(systemKnowledge, null, 2))
     }
@@ -96,7 +82,7 @@ async function consolidate() {
 
   console.log(' 💾 Persisting consolidated knowledge...')
   const observer = new KnowledgeObserver()
-  await observer.persistKnowledge(consolidatedKnowledge, 'Intelephense')
+  await observer.persistKnowledge(consolidatedKnowledge)
 
   console.log('✅ Consolidation complete.')
 }
