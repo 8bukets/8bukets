@@ -20,6 +20,7 @@ export const DockerContainerSchema = z.object({
 export type DockerContainer = z.infer<typeof DockerContainerSchema>
 
 export async function getDockerFleetStatus(): Promise<DockerContainer[]> {
+  'use cache'
   return autonomousFetch(z.array(DockerContainerSchema), async () => {
     try {
       const isRestrictedEnv = process.env.NODE_ENV === 'test' || process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true' || process.env.MACBOOK_CLOUD_SIMULATION === 'true'
@@ -130,7 +131,7 @@ export async function checkDockerHealth() {
   let multiStageStatus = 'unknown'
   try {
     const dockerfilePath = path.join(process.cwd(), 'Dockerfile')
-    if (fs.existsSync(dockerfilePath)) {
+    if (/* [Evolution] TODO: Refactor to async */ fs.existsSync(dockerfilePath)) {
       const content = await fs.promises.readFile(dockerfilePath, 'utf8')
       const fromCount = (content.match(/^FROM /gm) || []).length
       multiStageStatus = fromCount > 1 ? 'multi-stage' : 'single-stage'

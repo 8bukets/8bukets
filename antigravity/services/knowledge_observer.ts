@@ -76,15 +76,17 @@ export class KnowledgeObserver {
       // Heuristic: If we hit a markdown header or a strong header candidate,
       // we assume any unclosed PHP block has ended.
       let effectiveHeader = false
-      if (isMarkdownHeader) {
-        effectiveHeader = true
-        inPhpCodeBlock = false // Markdown headers break PHP blocks
-      } else if (!inCodeBlock && isStrongHeaderCandidate) {
-        effectiveHeader = true
-      } else if (inPhpCodeBlock && isStrongHeaderCandidate) {
-        // Strong headers also break PHP blocks (which often lack closing tags in docs)
-        effectiveHeader = true
-        inPhpCodeBlock = false
+      if (!inMarkdownCodeBlock) {
+        if (isMarkdownHeader) {
+          effectiveHeader = true
+          inPhpCodeBlock = false // Markdown headers break PHP blocks
+        } else if (!inCodeBlock && isStrongHeaderCandidate) {
+          effectiveHeader = true
+        } else if (inPhpCodeBlock && isStrongHeaderCandidate) {
+          // Strong headers also break PHP blocks (which often lack closing tags in docs)
+          effectiveHeader = true
+          inPhpCodeBlock = false
+        }
       }
 
       if (effectiveHeader) {
@@ -125,7 +127,7 @@ export class KnowledgeObserver {
   public async persistKnowledge(knowledge: Knowledge, purgePrefix?: string) {
     const fsPromises = fs.promises;
 
-    if (!fs.existsSync(this.storageDir)) {
+    if (!/* [Evolution] TODO: Refactor to async */ fs.existsSync(this.storageDir)) {
       await fsPromises.mkdir(this.storageDir, { recursive: true })
     }
 
@@ -134,7 +136,7 @@ export class KnowledgeObserver {
 
     // 1. JSON Persistence (Merge Logic - Unified Store)
     let systemKnowledge: any = { typescript_sections: [] }
-    if (fs.existsSync(jsonStore)) {
+    if (/* [Evolution] TODO: Refactor to async */ fs.existsSync(jsonStore)) {
       try {
         const content = await fsPromises.readFile(jsonStore, 'utf8');
         systemKnowledge = JSON.parse(content)
