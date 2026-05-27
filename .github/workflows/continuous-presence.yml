@@ -20,7 +20,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: 'npm'
 
       - name: Setup Python
@@ -74,6 +74,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN || secrets.GITHUB_ACTIONS_TOKEN }}
           AUTONOMOUS_MODE: cloud
           MACBOOK_CLOUD_SIMULATION: true
+
+      - name: Post-Cycle Documentation Update
+        run: npx tsx scripts/ingest_localhost_tools_knowledge.ts || true
 
       - name: Build Verification
         run: npm run build

@@ -248,11 +248,23 @@ export class CloudConvergenceService {
 
         if (mongoOrders.length > 0) {
           // Merge logic: MongoDB orders take precedence for the local execution queue in cloud mode
-          const orderMap = new Map(localOrders.map((o: any) => [o.id, o]))
-          mongoOrders.forEach((mo: any) => {
-            const { _id, ...orderData } = mo
-            orderMap.set(mo.id, orderData)
-          })
+          // Phase 22: If cloud leader, strictly prioritize MongoDB state to ensure continuity when MacBook is offline
+          const orderMap = new Map();
+
+          if (isLeader) {
+             // In Cloud Leader mode, the DB is the only source of truth for current state
+             mongoOrders.forEach((mo: any) => {
+               const { _id, ...orderData } = mo;
+               orderMap.set(mo.id, orderData);
+             });
+          } else {
+             // Standard merge
+             localOrders.forEach((o: any) => orderMap.set(o.id, o));
+             mongoOrders.forEach((mo: any) => {
+               const { _id, ...orderData } = mo;
+               orderMap.set(mo.id, orderData);
+             });
+          }
 
           fs.writeFileSync(localPath, JSON.stringify(Array.from(orderMap.values()), null, 2))
 

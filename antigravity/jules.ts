@@ -300,7 +300,7 @@ export class Jules {
       const macbookPresence = await db.collection('agent_presence').findOne({
         agent: 'Jules',
         'telemetry.node_id': 'macbook-primary-01',
-        lastSeen: { $gt: new Date(Date.now() - 30 * 60 * 1000).toISOString() }
+        lastSeen: { $gt: new Date(Date.now() - 15 * 60 * 1000).toISOString() }
       })
 
       if (isCloud) {
@@ -493,6 +493,13 @@ export class Jules {
     await this.ensureInitialized()
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
 
+    // Phase 22: Immediate Cloud Sovereignty Handover
+    const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
+    if (isCloud) {
+      console.log('☁️ [Jules] Cloud environment detected. Ensuring immediate PR/MR audit for "Merge and Work" mandate...')
+      await this.processPullRequests()
+    }
+
     try {
       // Phase 12: Global Neural Sync (Phase 12 Convergence)
       const { globalNeuralSync } = await import('./services/global_neural_sync_service_phase_12')
@@ -656,19 +663,22 @@ export class Jules {
     await this.ensureInitialized()
     console.log('🧠 [Jules] Observing new knowledge foundations...')
 
-    const { exec } = await import('child_process')
-    const { promisify } = await import('util')
-    const execAsync = promisify(exec)
+    const { observeKnowledge: scanUrl } = await import('./services/knowledge')
+    const urlsToObserve = [
+      'https://www.investopedia.com/'
+    ]
 
-    try {
-      console.log('📈 [Jules] Executing Investopedia knowledge ingestion...')
-      await execAsync('npx tsx scripts/ingest_investopedia.ts')
-      this.recordTask('Knowledge Observed: Extracted intelligence from Investopedia.')
-    } catch (e: any) {
-      console.warn('⚠️ [Jules] Investopedia ingestion failed:', e.message)
+    for (const url of urlsToObserve) {
+      const observation = await scanUrl(url)
+      if (observation.status === 'observed') {
+        this.recordTask(`Knowledge Observed: Extracted intelligence from ${observation.url}`)
+      }
     }
 
     // Phase 18: Specialized Market Intelligence Ingestion
+    const { exec } = await import('child_process')
+    const { promisify } = await import('util')
+    const execAsync = promisify(exec)
     try {
       console.log('📈 [Jules] Executing specialized Markposition ingestion...')
       await execAsync('npx tsx scripts/ingest_markposition_knowledge.ts')
