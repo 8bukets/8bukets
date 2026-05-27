@@ -5,7 +5,17 @@ import { logAutonomousAction } from '../core'
 
 export const WorkOrderSchema = z.object({
   id: z.string(),
-  type: z.enum(['BOOTSTRAP_SERVICE', 'OPTIMIZE_SYSTEM', 'CONTENT_GENERATION', 'SMOKE_TEST', 'DEPLOYMENT']),
+  type: z.enum([
+    'BOOTSTRAP_SERVICE',
+    'OPTIMIZE_SYSTEM',
+    'CONTENT_GENERATION',
+    'SMOKE_TEST',
+    'DEPLOYMENT',
+    'KNOWLEDGE_INGESTION',
+    'SYSTEM_SYNC',
+    'CLOUD_INTELLIGENCE_MERGE',
+    'AUTONOMOUS_CREATION'
+  ]),
   goal: z.string(),
   payload: z.any(),
   dependsOn: z.array(z.string()).optional(),
@@ -28,9 +38,9 @@ export class WorkOrderService {
   }
 
   private load() {
-    if (fs.existsSync(STORAGE_PATH)) {
+    if (/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(STORAGE_PATH)) {
       try {
-        const data = fs.readFileSync(STORAGE_PATH, 'utf8')
+        const data = /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.readFileSync(STORAGE_PATH, 'utf8')
         const parsed = JSON.parse(data)
         const result = z.array(WorkOrderSchema).safeParse(parsed)
         if (result.success) {
@@ -48,10 +58,10 @@ export class WorkOrderService {
 
   private save() {
     const dataDir = path.dirname(STORAGE_PATH)
-    if (!fs.existsSync(dataDir)) {
+    if (!/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(dataDir)) {
       fs.mkdirSync(dataDir, { recursive: true })
     }
-    fs.writeFileSync(STORAGE_PATH, JSON.stringify(this.orders, null, 2))
+    /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.writeFileSync(STORAGE_PATH, JSON.stringify(this.orders, null, 2))
   }
 
   public createOrder(type: WorkOrder['type'], goal: string, payload: any, dependsOn?: string[]): WorkOrder {
@@ -162,6 +172,27 @@ export class WorkOrderService {
           : await evolve()
         await applyFixes(suggestions)
         return { appliedFixes: suggestions.length }
+
+      case 'KNOWLEDGE_INGESTION':
+        const { jules: julesK } = await import('../jules')
+        await julesK.observeKnowledge()
+        return { status: 'knowledge_ingested' }
+
+      case 'SYSTEM_SYNC':
+        const { jules: julesS } = await import('../jules')
+        await julesS.syncToICloud()
+        return { status: 'system_synced' }
+
+      case 'CLOUD_INTELLIGENCE_MERGE':
+        logAutonomousAction('[CLOUD_SYNC] Pulling 8Bukets unified intelligence', 'info')
+        const { jules: julesC } = await import('../jules')
+        await julesC.syncToICloud()
+        return { status: 'cloud_intelligence_merged' }
+
+      case 'AUTONOMOUS_CREATION':
+        const { jules: julesA } = await import('../jules')
+        await julesA.executeWorkCycle()
+        return { status: 'autonomous_creation_executed' }
 
       default:
         throw new Error(`Unknown work order type: ${order.type}`)

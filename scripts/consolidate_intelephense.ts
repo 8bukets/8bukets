@@ -36,12 +36,20 @@ async function consolidate() {
     }
   }
 
-  // 3. Deduplicate sections by header
+  // 3. Deduplicate sections by header and filter low-value content
   const seenHeaders = new Set<string>()
   const uniqueSections = allSections.filter(s => {
-    if (seenHeaders.has(s.header)) return false
-    if (!s.content && !['Getting Started', 'Features', 'Installation'].includes(s.header)) return false
-    seenHeaders.add(s.header)
+    const trimmedHeader = s.header.trim()
+    const trimmedContent = s.content.trim()
+
+    if (seenHeaders.has(trimmedHeader)) return false
+
+    // Ignore empty sections or those that are just navigation/placeholders
+    if (!trimmedContent || trimmedContent.length < 5) {
+      if (!['Getting Started', 'Features', 'Installation'].includes(trimmedHeader)) return false
+    }
+
+    seenHeaders.add(trimmedHeader)
     return true
   })
 
@@ -63,8 +71,10 @@ async function consolidate() {
     const systemKnowledge = JSON.parse(fs.readFileSync(jsonStore, 'utf8'))
     if (systemKnowledge.typescript_sections) {
       systemKnowledge.typescript_sections = systemKnowledge.typescript_sections.filter((k: any) => {
-        // Keep everything that isn't an Intelephense variant, we'll re-add the consolidated one
-        return !k.title.startsWith('Intelephense') || k.title === 'Intelephense Documentation'
+        // Purge ALL Intelephense variants and the local filename entry to avoid duplication
+        const isLegacyIntelephense = k.title.startsWith('Intelephense')
+        const isLocalFilename = k.title === 'intelephense_docs.md'
+        return !isLegacyIntelephense && !isLocalFilename
       })
       fs.writeFileSync(jsonStore, JSON.stringify(systemKnowledge, null, 2))
     }
