@@ -21,9 +21,22 @@ export async function getPersistenceHealth(): Promise<PersistenceStatus[]> {
     'use cache'
     const results: PersistenceStatus[] = []
 
+    let hasLaunchctl = false
+    try {
+      /* [Evolution] TODO: Refactor to async */ execSync('which launchctl', { stdio: 'ignore' })
+      hasLaunchctl = true
+    } catch (e) {
+      // launchctl not available (likely Linux or Windows)
+    }
+
     for (const agent of agents) {
+      if (!hasLaunchctl) {
+        results.push({ agent, status: 'stopped' })
+        continue
+      }
+
       try {
-        const output = execSync(`launchctl list ${agent}`).toString()
+        const output = /* [Evolution] TODO: Refactor to async */ execSync(`launchctl list ${agent}`).toString()
         const pidMatch = output.match(/"PID" = (\d+);/)
         const lastExitMatch = output.match(/"LastExitStatus" = (\d+);/)
         

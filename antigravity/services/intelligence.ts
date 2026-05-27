@@ -11,6 +11,7 @@ import { healthCheck } from '../core'
  */
 
 export async function generateConsolidatedReport(branchIntelligence?: any[]) {
+  'use cache'
   console.log('📊 [Intelligence] Generating consolidated system report...')
 
   const metadata = await getMissionMetadata()
@@ -131,9 +132,9 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
 
   report += `## 🧠 Knowledge Matrix\n`
   const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json')
-  if (fs.existsSync(knowledgePath)) {
+  if (/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(knowledgePath)) {
     try {
-      const systemKnowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
+      const systemKnowledge = JSON.parse(/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.readFileSync(knowledgePath, 'utf8'))
 
       // Phase 12: Support both nested 'typescript_sections' and unified flat key structure
       const allKnowledge: any[] = []
@@ -176,9 +177,20 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   }
   report += `\n`
 
-  report += `## 👥 Stakeholders\n`
+  report += `## 👥 Stakeholder Collaboration Hub\n`
   metadata.stakeholders.forEach(s => {
-    report += `- **${s.role}**: ${s.email}\n`
+    const engagement = relationshipMap.stakeholderEngagement[s.role] || { activeProjects: [] }
+    report += `### ${s.role} (${s.email})\n`
+    report += `- **Current Focus:** ${engagement.activeProjects.length > 0 ? engagement.activeProjects.slice(0, 3).join(', ') : 'Global Monitoring'}\n`
+    const recommendedTasks = relationshipMap.collaborationRecommendations
+      .filter((r: any) => r.priority === 'Critical' && r.branches.some((rb: string) => engagement.activeProjects.includes(rb)))
+    if (recommendedTasks.length > 0) {
+      report += `- **Priority Coordination Required:**\n`
+      recommendedTasks.forEach((rt: any) => {
+        report += `  - ⚠️ [${rt.priority}] ${rt.action} (Resource: ${rt.resource || 'Multiple'})\n`
+      })
+    }
+    report += `\n`
   })
   report += `\n`
 
@@ -188,13 +200,20 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
 
   const highIntensitySynergies = relationshipMap.synergies.filter((s: any) => s.intensity === 'High')
   highIntensitySynergies.forEach((s: any) => {
-    report += `- [MEDIUM] Resolve High-Intensity conflict/synergy on resource: \`${s.resource}\` (${s.branches.length} branches).\n`
+    const coordinator = metadata.stakeholders.find(sh => relationshipMap.stakeholderEngagement[sh.role]?.activeProjects.includes(s.branches[0]))
+    const coordinationMsg = coordinator ? ` (Coordinate with ${coordinator.role})` : ''
+    report += `- [MEDIUM] Resolve High-Intensity synergy on resource: \`${s.resource}\`${coordinationMsg}.\n`
   })
 
   if (branches.length > 1500) report += `- [LOW] Prune or merge stagnant ecosystem branches (Total: ${branches.length}).\n`
   report += `- [INFO] Continue autonomous knowledge ingestion for market intelligence.\n`
 
-  fs.writeFileSync(reportPath, report)
+  const collaborationHealth = relationshipMap.synergies.length > 0
+    ? Math.max(0, 100 - (relationshipMap.synergies.length * 5))
+    : 100
+  report += `\n---\n**Collaboration Health Index:** ${collaborationHealth}% | *Phase 12 Synergy Protocol Active*\n`
+
+  /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.writeFileSync(reportPath, report)
   console.log(`✅ [Intelligence] Report saved to ${reportPath}`)
 
   return { reportPath, branchCount: branches.length }
