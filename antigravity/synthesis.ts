@@ -181,6 +181,15 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
+  // Gap Analysis 19: Autonomous API Documentation
+  if (!files.some(f => f.includes('api_documentation'))) {
+    ideas.push({
+      feature: 'Autonomous API Documentation Service',
+      rationale: 'Autonomously generates and maintains OpenAPI specifications by scanning service definitions and Zod schemas.',
+      complexity: 'Medium'
+    })
+  }
+
   // Force an idea for demonstration if none exist
   if (ideas.length === 0) {
     ideas.push({
