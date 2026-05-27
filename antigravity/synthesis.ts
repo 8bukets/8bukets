@@ -24,7 +24,7 @@ const SERVICE_REGISTRY: Record<string, { title: string, rationale: string, compl
     rationale: 'Aggregates Phase 4 Volatility data into a long-term MongoDB collection for trend forecasting.',
     complexity: 'High'
   },
-  security: {
+  cognitive_security: {
     title: 'Cognitive Security Service',
     rationale: 'Autonomously scans for leaked credentials and insecure patterns across the neural network.',
     complexity: 'Medium'
@@ -39,7 +39,7 @@ const SERVICE_REGISTRY: Record<string, { title: string, rationale: string, compl
     rationale: 'Formalizes autonomous coordination between MongoDB, Supabase, and Docker-based microservices.',
     complexity: 'Medium'
   },
-  performance: {
+  performance_monitoring: {
     title: 'Performance Monitoring Service',
     rationale: 'Tracks system latency and resource utilization to identify bottlenecks autonomously.',
     complexity: 'Medium'
@@ -49,7 +49,7 @@ const SERVICE_REGISTRY: Record<string, { title: string, rationale: string, compl
     rationale: 'Analyzes user feedback and system logs to prioritize feature development and bug fixes.',
     complexity: 'Medium'
   },
-  resource_optimizer: {
+  autonomous_resource_optimizer: {
     title: 'Autonomous Resource Optimizer',
     rationale: 'Autonomously adjusts container resources and scaling parameters based on real-time load analytics.',
     complexity: 'Medium'
@@ -74,7 +74,7 @@ const SERVICE_REGISTRY: Record<string, { title: string, rationale: string, compl
     rationale: 'Synchronizes autonomous state across the multi-cloud ecosystem (MongoDB, Supabase, GitHub).',
     complexity: 'Medium'
   },
-  ux_optimization: {
+  autonomous_ux_optimization: {
     title: 'Autonomous UX Optimization Service',
     rationale: 'Analyzes user interaction patterns to propose real-time interface improvements.',
     complexity: 'Medium'
@@ -103,6 +103,11 @@ const SERVICE_REGISTRY: Record<string, { title: string, rationale: string, compl
     title: 'Adaptive Recovery Service',
     rationale: 'Implements self-healing logic for system crashes and environment-specific failures.',
     complexity: 'High'
+  },
+  cognitive_load_balancer: {
+    title: 'Cognitive Load Balancer',
+    rationale: 'Optimizes request distribution across autonomous agent nodes based on cognitive load and resource availability.',
+    complexity: 'Medium'
   }
 }
 
@@ -128,10 +133,10 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
 
   // Cross-Service Integration Gap Analysis
   if (files.includes('performance_monitoring.ts') && files.includes('proactive_scalability.ts')) {
-    const integrationExists = files.some(f => f.includes('perf_scale_bridge'))
+    const integrationExists = files.some(f => f.includes('performance_scalability_bridge'))
     if (!integrationExists) {
       ideas.push({
-        feature: 'Performance-Scalability Bridge',
+        feature: 'Performance Scalability Bridge',
         rationale: 'Links real-time performance metrics directly to proactive scaling triggers for tighter feedback loops.',
         complexity: 'Medium'
       })

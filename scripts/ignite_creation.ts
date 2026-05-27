@@ -5,6 +5,9 @@ async function igniteCreation() {
   console.log('🔥 [Ignite] Igniting Full Autonomous Creation Cycle...');
   logAutonomousAction('🔥 [Ignite] Igniting Full Autonomous Creation Cycle...', 'info');
 
+  // Ensure a clean state for the demonstration
+  await workOrderService.clearOrders();
+
   // Create the top-level creation order
   const creationOrder = await workOrderService.createOrder(
     'AUTONOMOUS_CREATION',
