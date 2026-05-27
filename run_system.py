@@ -1,243 +1,199 @@
-import argparse
-import time
 import json
 import os
+import argparse
 import subprocess
 import logging
+import time
 import asyncio
 from datetime import datetime
-
-# Orchestrator
-from agents.orchestrator import AgentOrchestrator
-
-# Base Agents
-from agents.health_check_agent import HealthCheckAgent
+from oracle_ai_scraper import OracleAIScraper
 from agents.analysis_agent import AnalysisAgent
 from agents.research_agent import ResearchAgent
 from agents.intelligence_agent import IntelligenceAgent
+from agents.content_agent import ContentAgent
+from agents.health_check_agent import HealthCheckAgent
 from agents.monetization_agent import MonetizationAgent
 from agents.creativity_agent import CreativityAgent
-from agents.content_agent import ContentAgent
-from agents.robot_txt_agent import RobotTxtAgent
-from agents.targeting_agent import TargetingAgent
-from agents.ads_agent import AdsAgent
-from agents.bid_agent import BidAgent
 from agents.autonomous_intelligence_agent import AutonomousIntelligenceAgent
-from agents.telemetry_agent import TelemetryAgent
-from agents.sigma_agent import SixSigmaAgent
-from agents.architect_agent import ArchitectAgent
-from agents.github_evolution_agent import GitHubEvolutionAgent
-from agents.meta_coding_agent import MetaCodingAgent
-from agents.jules_evolution_agent import JulesEvolutionAgent
-from agents.gitkraken_evolution_agent import GitKrakenEvolutionAgent
-from agents.docker_evolution_agent import DockerEvolutionAgent
-from agents.collaboration_agent import CollaborationAgent
-from agents.mongodb_agent import MongoDBAgent
-from agents.mysql_agent import MySQLAgent
-from agents.system_audit_agent import SystemAuditAgent
-from agents.documentation_agent import DocumentationAgent
-from agents.performance_optimization_agent import PerformanceOptimizationAgent
-from agents.knowledge_agent import KnowledgeAgent
-from ai_agents_knowledge_scraper import scrape_ai_agents_knowledge
-from docker_build_cloud_scraper import load_docker_build_cloud_knowledge
+from agents.programmatic_ads_agent import ProgrammaticAdsAgent
+from agents.ads_agent import AdsAgent
+from agents.targeting_agent import TargetingAgent
+from agents.bidding_agent import BiddingAgent
+from agents.innovation_agent import InnovationAgent
+from agents.developer_agent import DeveloperAgent
+from agents.jules_orchestrator_agent import JulesIntelligenceAgent
+from agents.oracle_ai_agent import OracleAIAgent
+from agents.memory_system import MemorySystem
 
-# Expansion Agents
-from agents.swarm_agent import SwarmAgent
-from agents.backup_agent import BackupAgent, CEOBackupAgent
-from agents.auth import AuthManager
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
+logger = logging.getLogger(__name__)
 
-# Configure Logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
-logger = logging.getLogger("SystemOrchestrator")
+RESULTS_DIR = "results"
 
-def run_scraper():
-    logger.info("Starting Scrapers...")
-    try:
-        # Standard Market Scraper
-        result = subprocess.run(
-            ["python3", "scraper.py", "--limit", "1"],
-            capture_output=True,
-            text=True
-        )
-        if result.returncode != 0:
-            logger.error(f"Scraper failed with exit code {result.returncode}: {result.stderr}")
-            raise RuntimeError(f"Scraper failed: {result.stderr}")
-
-        # AI Agent Knowledge Scraper (Direct module call)
-        scrape_ai_agents_knowledge()
-
-        # Docker Build Cloud Knowledge loader
-        load_docker_build_cloud_knowledge()
-
-        logger.info("Scrapers finished successfully.")
-        return True
-    except Exception as e:
-        logger.error(f"Failed to execute scraper: {e}")
-        raise
-
-def load_data(filepath="links.json"):
-    if not os.path.exists(filepath):
-        logger.error(f"Data file {filepath} not found.")
-        return []
+def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             return json.load(f)
-    except json.JSONDecodeError as e:
-        logger.error(f"Failed to parse JSON data: {e}")
+    except FileNotFoundError:
+        logger.error(f"File {filepath} not found. Run scraper first.")
         return []
 
-def generate_daily_report(context, filename):
-    try:
-        os.makedirs(os.path.dirname(filename), exist_ok=True)
-        with open(filename, 'w', encoding='utf-8') as f:
-            f.write(f"# Massive-Scale Autonomous Sigma Report: {datetime.now().strftime('%Y-%m-%d')}\n\n")
+def save_result(filename, content, date_str=None):
+    os.makedirs(RESULTS_DIR, exist_ok=True)
 
-            sigma = context.get("sigma_performance_report", {})
-            f.write(f"**Sigma Status:** {sigma.get('average_impact_score', 0):.2f} Impact Score\n")
-            f.write(f"**Total Agent Count:** {len([k for k in context.keys() if 'Agent' in k or 'Backup' in k])}\n")
-            f.write(f"**System Owner:** {sigma.get('legal_owner', 'N/A')} ({sigma.get('owner_reference', 'N/A')})\n\n")
+    if date_str:
+        filename = f"{date_str}_{filename}"
 
-            f.write("## 1. Governance & CEO Redundancy\n")
-            f.write(f"- Champion Belt: SixSigmaChampion (CEO)\n")
-            ceo_backups = [k for k in context.keys() if "CEO_Backup" in k]
-            f.write(f"- **CEO Backup Nodes:** {len(ceo_backups)} (Status: ACTIVE_REDUNDANCY)\n")
+    filepath = os.path.join(RESULTS_DIR, filename)
+    with open(filepath, 'w', encoding='utf-8') as f:
+        if isinstance(content, (dict, list)):
+            json.dump(content, f, indent=4)
+        else:
+            f.write(str(content))
+    logger.info(f"Saved result to {filepath}")
 
-            f.write("\n## 2. SEO Swarm & System Redundancy\n")
-            swarms = [k for k in context.keys() if "SwarmAgent" in k]
-            f.write(f"- **Active Swarm Agents:** {len(swarms)}\n")
-            backups = [k for k in context.keys() if "System_Backup" in k]
-            f.write(f"- **Active System Backups:** {len(backups)}\n")
+def run_pipeline(skip_scrape=False):
+    current_date = datetime.now().strftime('%Y-%m-%d')
+    logger.info(f"Starting Pipeline for {current_date}...")
 
-            f.write("\n## 3. High-Level Research Insights\n")
-            research = context.get("research_data", {})
-            for trend in research.get("market_trends", []):
-                f.write(f"- **Trend:** {trend}\n")
+    # 0. Initialize Memory
+    memory_system = MemorySystem()
+    logger.info(f"Memory Loaded. Iteration: {memory_system.get('iterations')}")
 
-            f.write("\n## 4. Intelligence & Strategic Outlook\n")
-            outlook = context.get("strategic_outlook", [])
-            for item in outlook:
-                f.write(f"- {item}\n")
+    # 1. Scrape
+    if not skip_scrape:
+        logger.info("Starting Scraper...")
+        subprocess.run(["python3", "scraper.py"], check=True)
 
-            f.write("\n### Strategic Risks\n")
-            risks = context.get("strategic_risk_assessment", [])
-            for risk in risks:
-                f.write(f"- [!] {risk}\n")
+        logger.info("Starting Oracle AI Scraper...")
+        scraper = OracleAIScraper(output_json="oracle_ai_docs.json", output_md="oracle_ai_docs.md")
+        asyncio.run(scraper.scrape())
+    else:
+        logger.info("Skipping scrape...")
 
-            f.write("\n### Categorized Knowledge\n")
-            categorized = context.get("categorized_knowledge", {})
-            for cat, items in categorized.items():
-                if items:
-                    f.write(f"- **{cat}:** {', '.join(items)}\n")
+    # 2. Load Data
+    data = load_data("links.json")
+    oracle_ai_data = load_data("oracle_ai_docs.json")
 
-            f.write("\n## 5. System Evolution & Daily Improvement\n")
-            evolution = context.get("system_evolution", {})
-            f.write(f"- **Evolution Status:** {evolution.get('status', 'STABLE')}\n")
-            f.write(f"- **Version Shift:** +{evolution.get('version_upgrade', 0)}\n")
-            for param, val in evolution.get("parameter_shifts", {}).items():
-                f.write(f"  - {param} optimized to: {val}\n")
+    # Update memory with Oracle AI knowledge
+    if oracle_ai_data:
+        memory_system.update("oracle_ai_knowledge", oracle_ai_data)
+        logger.info("Loaded Oracle AI knowledge into memory.")
 
-            f.write("\n## 6. Peer Review & Collaboration Log\n")
-            for review in context.get("peer_review_log", []):
-                f.write(f"- {review}\n")
-
-            f.write("\n## 7. Antigravity Collaboration\n")
-            antigravity = context.get("antigravity_context", {})
-            f.write(f"- **Platform:** {antigravity.get('platform', 'N/A')}\n")
-            f.write(f"- **Sync Status:** {antigravity.get('status', 'PENDING')}\n")
-            f.write(f"- **Stakeholders Notified:** {', '.join(antigravity.get('stakeholders', []))}\n")
-
-        logger.info(f"Report generated at {filename}")
-    except IOError as e:
-        logger.error(f"Failed to write report: {e}")
-
-async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
-    logger.info("=== Starting Massive Synchronized Autonomous Cycle ===")
-
-    if not AuthManager.verify_token(auth_token):
-        logger.error("Authentication failed. Aborting cycle.")
-        return
-
-    if not skip_scraper:
-        run_scraper()
-
-    data = load_data()
     if not data:
-        logger.warning("No data loaded. Skipping agent execution.")
+        logger.warning("No data to process.")
         return
 
-    # 1. Base Intelligence (22 Agents)
-    agents = [
-        HealthCheckAgent(), RobotTxtAgent(), KnowledgeAgent(),
-        AnalysisAgent(), ResearchAgent(), IntelligenceAgent(),
-        TargetingAgent(), CreativityAgent(), AdsAgent(),
-        BidAgent(), MonetizationAgent(), ContentAgent(),
-        AutonomousIntelligenceAgent(), TelemetryAgent(), SixSigmaAgent(),
-        ArchitectAgent(), MetaCodingAgent(), JulesEvolutionAgent(),
-        GitKrakenEvolutionAgent(), DockerEvolutionAgent(), GitHubEvolutionAgent(),
-        CollaborationAgent(), MongoDBAgent(), MySQLAgent(),
-        PerformanceOptimizationAgent(), SystemAuditAgent(), DocumentationAgent()
-    ]
+    # 3. Instantiate Agents
+    analysis_agent = AnalysisAgent()
+    research_agent = ResearchAgent()
+    intelligence_agent = IntelligenceAgent()
+    content_agent = ContentAgent()
+    health_agent = HealthCheckAgent()
+    monetization_agent = MonetizationAgent()
+    creativity_agent = CreativityAgent()
+    ai_agent = AutonomousIntelligenceAgent()
+    # ads_agent = AdsAgent() # Legacy, keeping if needed or replaced by specialized
 
-    # 2. Expanded SEO Swarm (200 Agents)
-    swarm_tasks = ["SEO Audit", "Market Probe", "Domain Research", "Keyword Sync"]
-    phases = ["DEFINE", "MEASURE", "ANALYZE", "IMPROVE", "CONTROL", "RESEARCH_WORLD", "AD_TECH_PROBE"]
-    for i in range(200):
-        phase = phases[i % len(phases)]
-        agents.append(SwarmAgent(agent_id=i, phase=phase, tasks=swarm_tasks))
+    # New Specialized Agents
+    targeting_agent = TargetingAgent()
+    bidding_agent = BiddingAgent()
+    innovation_agent = InnovationAgent()
+    developer_agent = DeveloperAgent()
+    jules_agent = JulesIntelligenceAgent()
+    oracle_ai_agent = OracleAIAgent()
 
-    # 3. CEO Redundancy (4 Agents)
-    for i in range(4):
-        agents.append(CEOBackupAgent(backup_id=i))
+    # 4. Pipeline Execution
+    logger.info("Starting Agent Pipeline...")
+    results_aggregator = {}
 
-    # 4. System Redundancy (50 Agents)
-    for i in range(50):
-        agents.append(BackupAgent(name=f"System_Backup_{i:02d}", role="FAILOVER"))
+    # Oracle AI Knowledge Processing
+    if 'oracle_ai_data' in locals() and oracle_ai_data:
+        oracle_agent_results = oracle_ai_agent.process(data=oracle_ai_data, memory_system=memory_system)
+        results_aggregator['oracle_ai'] = oracle_agent_results
+        save_result("oracle_ai_insights.json", oracle_agent_results, current_date)
 
-    logger.info(f"Instantiated ecosystem with {len(agents)} autonomous agents.")
+    # Health Check
+    health_results = health_agent.process(data)
+    save_result("health_check.json", health_results, current_date)
+    results_aggregator['health'] = health_results
 
-    orchestrator = AgentOrchestrator(agents)
+    if health_results['status'] != "Healthy" and health_results['record_count'] == 0:
+        logger.error("Data unhealthy or empty. Aborting pipeline.")
+        return
 
-    # 1. Primary Execution Cycle
-    await orchestrator.execute_cycle(data)
+    # Analysis
+    analysis_results = analysis_agent.process(data)
+    save_result("analysis.json", analysis_results, current_date)
 
-    # 2. Peer Review Phase
-    await orchestrator.run_peer_review()
+    # Research
+    research_results = research_agent.process(data, memory_system.memory)
+    save_result("research.json", research_results, current_date)
 
-    # 3. Final Synthesis
-    context = orchestrator.blackboard.get_all()
+    # Intelligence
+    intelligence_results = intelligence_agent.process(analysis_results)
+    save_result("intelligence.json", intelligence_results, current_date)
+    results_aggregator['intelligence'] = intelligence_results
 
-    # 4. Report
-    report_file = f"results/DAILY_REPORT_{datetime.now().strftime('%Y-%m-%d')}.md"
-    generate_daily_report(context, report_file)
+    # Targeting & Bidding (New)
+    targeting_config = targeting_agent.process(analysis_results['common_keywords'], memory_system.memory)
+    save_result("targeting_config.json", targeting_config, current_date)
 
-    logger.info("=== Cycle Complete ===")
+    bidding_config = bidding_agent.process(targeting_config, memory_system.memory)
+    save_result("bidding_config.json", bidding_config, current_date)
 
-async def main_async():
-    parser = argparse.ArgumentParser(description="Massive Scale Autonomous System")
-    parser.add_argument("--loop", action="store_true", help="Run continuously every 24h")
-    # Use default_dev_token if nothing is provided
-    parser.add_argument("--token", type=str, help="Authentication token", default=os.environ.get("SYSTEM_AUTH_TOKEN", "default_dev_token"))
-    parser.add_argument("--skip-scraper", action="store_true", help="Skip the scraping phase and use existing data")
+    # Content Generation with Innovation (Antigravity)
+    base_content = content_agent.process(data, intelligence_results, memory_system.memory)
+    final_content = innovation_agent.process(base_content, memory_system.memory)
+    save_result("content_draft.md", final_content, current_date)
+
+    # Code Generation (Developer Agent)
+    code_snippets = developer_agent.process(research_results)
+    save_result("developer_code.md", code_snippets, current_date)
+
+    # Monetization
+    monetization_strategies = monetization_agent.process(research_results)
+    save_result("monetization.json", monetization_strategies, current_date)
+    results_aggregator['monetization'] = monetization_strategies
+
+    # Creativity
+    headlines = creativity_agent.process(analysis_results['common_keywords'], memory_system.memory)
+    save_result("creative_headlines.json", headlines, current_date)
+
+    # Integrate Oracle AI Knowledge
+    oracle_ai_knowledge = oracle_ai_agent.process(memory_system=memory_system)
+    save_result("oracle_ai_knowledge.json", oracle_ai_knowledge, current_date)
+
+    # High-level Synthesis
+    summary = ai_agent.process(results_aggregator, memory_system.memory)
+    save_result("executive_summary.txt", summary, current_date)
+
+    # 5. Jules Intelligence (Evolution & Learning)
+    # Analyze all results and update memory for next run
+    jules_agent.process(memory_system, results_aggregator)
+
+    logger.info(f"Pipeline Complete for {current_date}. Check 'results/' directory.")
+
+def main():
+    parser = argparse.ArgumentParser(description="Run Autonomous Agents System")
+    parser.add_argument("--skip-scrape", action="store_true", help="Skip the scraping step")
+    parser.add_argument("--daemon", action="store_true", help="Run continuously every day")
+    parser.add_argument("--interval", type=int, default=86400, help="Interval in seconds (default 24h)")
     args = parser.parse_args()
 
-    if args.loop:
-        logger.info("System starting in LOOP mode.")
-        try:
-            while True:
-                await run_cycle(args.token, args.skip_scraper)
-                logger.info("Sleeping for 24 hours...")
-                await asyncio.sleep(86400)
-        except asyncio.CancelledError:
-            logger.info("Loop interrupted.")
+    if args.daemon:
+        logger.info(f"Starting Daemon Mode. Running every {args.interval} seconds.")
+        while True:
+            try:
+                run_pipeline(skip_scrape=args.skip_scrape)
+            except Exception as e:
+                logger.error(f"Pipeline failed: {e}")
+
+            logger.info(f"Sleeping for {args.interval} seconds...")
+            time.sleep(args.interval)
     else:
-        await run_cycle(args.token, args.skip_scraper)
+        run_pipeline(skip_scrape=args.skip_scrape)
 
 if __name__ == "__main__":
-    try:
-        asyncio.run(main_async())
-    except KeyboardInterrupt:
-        pass
+    main()

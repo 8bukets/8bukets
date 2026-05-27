@@ -1,54 +1,71 @@
-import pytest
+import unittest
 import os
-from utils import validate_output_path
+from scraper import OracleNewsScraper
+import logging
 
-class TestSecurity:
-    def test_validate_output_path_valid(self):
-        """Test that valid paths in CWD are accepted."""
-        # Current directory
-        cwd = os.getcwd()
-        path = "test.json"
-        assert validate_output_path(path) == os.path.join(cwd, path)
+# Disable logging for tests to keep output clean
+logging.disable(logging.CRITICAL)
 
-        # Subdirectory (assumed valid as long as it's under CWD)
-        # Note: validate_output_path doesn't check if directory EXISTS, just if it's safe.
-        path = "subdir/test.json"
-        assert validate_output_path(path) == os.path.join(cwd, "subdir", "test.json")
+class TestScraperSecurity(unittest.TestCase):
+    def setUp(self):
+        self.vuln_file = "../vuln_test.json"
+        self.safe_file = "safe_test.json"
+        self.dummy_files = ["dummy.csv", "dummy.txt"]
+        # Cleanup
+        self._cleanup()
 
-    def test_validate_output_path_traversal(self):
-        """Test that traversal attempts raise ValueError."""
-        # This assumes we are not at the filesystem root, which is safe for this env
-        with pytest.raises(ValueError, match="Security Error"):
-            validate_output_path("../outside.json")
+    def tearDown(self):
+        self._cleanup()
 
-        with pytest.raises(ValueError, match="Security Error"):
-            validate_output_path("/etc/passwd")
+    def _cleanup(self):
+        if os.path.exists(self.safe_file):
+            os.remove(self.safe_file)
+        if os.path.exists(self.vuln_file):
+            os.remove(self.vuln_file)
+        for f in self.dummy_files:
+            if os.path.exists(f):
+                os.remove(f)
 
-    def test_validate_output_path_custom_base(self):
-        """Test that validation works with a custom base directory."""
-        cwd = os.getcwd()
-        base = os.path.join(cwd, "agents")
+    def test_validate_path_direct(self):
+        """Test validate_path method directly."""
+        scraper = OracleNewsScraper("x","y","z")
 
-        # Valid inside base
-        path = os.path.join(base, "test.json")
-        # We pass absolute path to simulate what validate_output_path does internally for relative
-        # But wait, validate_output_path(filepath) calls abspath(filepath).
-        # If I pass "test.json", it resolves to CWD/test.json.
-        # If I want it to be inside 'agents', I must pass "agents/test.json" OR run from inside agents.
+        # Should raise ValueError
+        with self.assertRaises(ValueError):
+            scraper.validate_path("../vuln.json")
 
-        # Let's test providing a full path that IS inside base
-        full_path_inside = os.path.join(base, "test.json")
-        assert validate_output_path(full_path_inside, base_dir=base) == full_path_inside
+        with self.assertRaises(ValueError):
+            scraper.validate_path("/tmp/vuln.json")
 
-        # Invalid: outside base (even if inside CWD!)
-        full_path_outside = os.path.join(cwd, "outside_agents.json")
-        with pytest.raises(ValueError, match="Security Error"):
-            validate_output_path(full_path_outside, base_dir=base)
+        # Should pass
+        result = scraper.validate_path("safe.json")
+        self.assertTrue(result.endswith("safe.json"))
+        self.assertTrue(os.path.isabs(result))
 
-    def test_validate_output_path_empty(self):
-        """Test that empty or None paths raise ValueError."""
-        with pytest.raises(ValueError, match="Output path cannot be empty"):
-            validate_output_path(None)
+    def test_save_data_traversal_prevention(self):
+        """
+        Test that save_data handles traversal attempts gracefully (logs error, doesn't write).
+        """
+        scraper = OracleNewsScraper(
+            output_json=self.vuln_file,
+            output_csv="dummy.csv",
+            output_txt="dummy.txt"
+        )
 
-        with pytest.raises(ValueError, match="Output path cannot be empty"):
-            validate_output_path("")
+        # save_data catches the ValueError, so no exception raised here
+        scraper.save_data([])
+
+        # Verify file does NOT exist
+        self.assertFalse(os.path.exists(self.vuln_file), "Vulnerable file should not exist")
+
+    def test_safe_path(self):
+        scraper = OracleNewsScraper(
+            output_json=self.safe_file,
+            output_csv="dummy.csv",
+            output_txt="dummy.txt"
+        )
+        scraper.save_data([])
+        self.assertTrue(os.path.exists(self.safe_file), "Safe file should be created")
+
+if __name__ == '__main__':
+    unittest.main()

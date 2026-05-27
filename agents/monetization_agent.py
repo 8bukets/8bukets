@@ -1,27 +1,24 @@
 from .base_agent import BaseAgent
+from typing import Dict, List
 
 class MonetizationAgent(BaseAgent):
     def __init__(self):
         super().__init__("Monetization Agent")
 
-    def run(self):
-        self.log("Identifying revenue opportunities...")
+    def process(self, research: Dict) -> List[str]:
+        self.log("Brainstorming monetization...")
 
-        affiliate_keywords = ["hosting", "vpn", "seo tool", "email marketing"]
-        opportunities = []
+        strategies = [
+            "Affiliate marketing for Google Cloud courses",
+            "Consulting services for Oracle-to-GCP migration",
+            "Premium newsletter for multi-cloud architecture"
+        ]
 
-        for p in self.data:
-            title = p.get('title', '').lower()
-            for kw in affiliate_keywords:
-                if kw in title:
-                    opportunities.append({
-                        "keyword": kw,
-                        "source": p.get('title'),
-                        "action": "Add affiliate link"
-                    })
+        if "Canada" in str(research):
+            strategies.append("Target Canadian enterprise sector with localization services.")
 
-        self.results = {
-            "potential_revenue_streams": len(opportunities),
-            "top_opportunities": opportunities[:5]
-        }
-        self.log("Monetization check complete.")
+        if "AI" in str(research):
+            strategies.append("Consulting services for AI implementations on Oracle Cloud")
+            strategies.append("Develop custom generative AI solutions leveraging Oracle infrastructure")
+
+        return strategies

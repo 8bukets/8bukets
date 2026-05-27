@@ -1,27 +1,43 @@
-from collections import Counter
-import re
 from .base_agent import BaseAgent
+from typing import Dict, List, Any
 
 class ResearchAgent(BaseAgent):
     def __init__(self):
         super().__init__("Research Agent")
 
-    def run(self):
-        self.log("Starting research...")
-        if not self.data:
-            return
+    def process(self, data: List[Dict], memory: Dict[str, Any] = None) -> Dict:
+        self.log("Synthesizing research...")
 
-        # Extract topics from titles
-        all_text = " ".join([p.get('title', '') for p in self.data])
-        # Simple keyword extraction (ignore common stop words - simplified list)
-        stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'it'}
-        words = re.findall(r'\w+', all_text.lower())
-        filtered_words = [w for w in words if w not in stop_words and len(w) > 3]
+        # Simulate research findings based on titles
+        findings = []
 
-        common_topics = Counter(filtered_words).most_common(20)
+        if memory and 'oracle_ai_knowledge' in memory:
+            oracle_ai_knowledge = memory['oracle_ai_knowledge']
 
-        self.results = {
-            "trending_keywords": common_topics,
-            "sample_titles": [p.get('title') for p in self.data[:5]]
+            # Extract from key_points
+            for point in oracle_ai_knowledge.get('key_points', []):
+                if isinstance(point, str) and 'AI' in point:
+                    findings.append(point)
+
+            # Extract from features
+            for feature in oracle_ai_knowledge.get('features', []):
+                if isinstance(feature, dict):
+                    for k, v in feature.items():
+                        if isinstance(v, str) and 'AI' in v:
+                            findings.append(v)
+                        elif isinstance(k, str) and 'AI' in k:
+                            findings.append(f"{k}: {v}")
+
+        for item in data:
+            title = item.get('title', '')
+            if "Canada" in title:
+                findings.append("Expansion into Canadian market identified.")
+            if "India" in title:
+                findings.append("Expansion into Indian market identified.")
+            if "Available" in title:
+                findings.append("Service availability confirmed in new regions.")
+
+        return {
+            "key_findings": findings,
+            "research_summary": f"Identified {len(findings)} key strategic moves."
         }
-        self.log("Research complete.")

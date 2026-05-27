@@ -1,25 +1,53 @@
-from datetime import datetime
 from .base_agent import BaseAgent
+from typing import Dict, List, Any
 
 class ContentAgent(BaseAgent):
     def __init__(self):
         super().__init__("Content Agent")
 
-    def run(self):
-        self.log("Drafting content...")
+    def process(self, data: List[Dict], insights: Dict, memory: Dict[str, Any] = None) -> str:
+        self.log("Generating content...")
 
-        # In a real pipeline, this would take input from CreativityAgent
-        title = f"The Future of AdTech: Insights for {datetime.now().strftime('%B %Y')}"
-        body = (
-            "As we analyze the latest trends in the digital advertising space, one thing is clear: "
-            "integration and privacy are top of mind. "
-            "Our latest data shows a significant shift towards privacy-first platforms. "
-            "Stay tuned as we explore these developments."
-        )
+        articles = "\n".join([f"- {item['title']} ({item.get('date', 'N/A')})" for item in data])
+        focus = ", ".join(insights.get('focus_areas', []))
 
-        self.results = {
-            "blog_post_title": title,
-            "blog_post_snippet": body,
-            "social_media_tweet": f"Just published: {title}. #AdTech #Marketing #Trends"
-        }
-        self.log("Content drafted.")
+        oracle_ai_section = ""
+        if memory and 'oracle_ai_knowledge' in memory:
+            oracle_ai_knowledge = memory['oracle_ai_knowledge']
+            ai_points = []
+
+            # Extract from key_points
+            for point in oracle_ai_knowledge.get('key_points', []):
+                if isinstance(point, str) and 'AI' in point:
+                    ai_points.append(point)
+
+            # Extract from features
+            for feature in oracle_ai_knowledge.get('features', []):
+                if isinstance(feature, dict):
+                    for k, v in feature.items():
+                        if isinstance(v, str) and 'AI' in v:
+                            ai_points.append(v)
+                        elif isinstance(k, str) and 'AI' in k:
+                            ai_points.append(f"{k}: {v}")
+
+            if ai_points:
+                ai_summary = "\n".join([f"- {point}" for point in ai_points[:5]])
+                oracle_ai_section = f"""
+## Oracle AI Intelligence
+{ai_summary}
+"""
+
+        blog_post = f"""
+# Oracle Database @ Google Cloud Update
+
+## Latest Developments
+{articles}
+
+## Analysis
+The market is currently in a {insights.get('strategic_insight')} state.
+Key focus areas include: {focus}.
+{oracle_ai_section}
+## Takeaway
+Enterprises should prepare for multi-cloud data strategies leveraging these new availabilities.
+"""
+        return blog_post
