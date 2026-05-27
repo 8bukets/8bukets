@@ -121,20 +121,11 @@ Step 6: Report: "Found X items matching [filters] across Y pages"
 Page 1: list_work_items(labels='bug', types=["ISSUE"], after=null)
   → Returns items, pageInfo.hasNextPage=true, pageInfo.endCursor='cursor123'
 
-
-
-
 Page 2: list_work_items(labels='bug', types=["ISSUE"], after='cursor123')
   → Returns items, pageInfo.hasNextPage=true, pageInfo.endCursor='cursor456'
 
-
-
-
 Page 3: list_work_items(labels='bug', types=["ISSUE"], after='cursor456')
   → Returns items, pageInfo.hasNextPage=false
-
-
-
 
 Result: "Analyzed all 247 bugs across 3 pages"
 ```

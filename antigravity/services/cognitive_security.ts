@@ -39,7 +39,7 @@ export async function runSecurityAudit(): Promise<SecurityAudit> {
           scan(fullPath)
         } else if (file.endsWith('.ts') || file.endsWith('.tsx') || file.endsWith('.js')) {
           scannedFiles++
-          const content = fs.readFileSync(fullPath, 'utf8')
+          const content = /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.readFileSync(fullPath, 'utf8')
           for (const pattern of riskPatterns) {
             if (pattern.test(content)) {
               console.warn(`⚠️ [Security Risk] Potential credential leak in: ${file}`)
