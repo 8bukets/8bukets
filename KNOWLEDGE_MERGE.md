@@ -10310,18 +10310,7 @@ All the best - https://markposition.wordpress.com
   - **Result:** implement autonomous creation and execution cycle
   - **Artifacts:** 9840 files modified.
 
-## Ecosystem Knowledge Consolidation (2026-05-23T03:07:40.702Z)
-### 📂 Category: OTHER
-#### 🌐 Strategic Domain: AI
-- **Branch:** `jules-17898063665932042144-22071f4f`
-  - **Result:** autonomous self-repair of 17 issues
-  - **Artifacts:** 3 files modified.
-
-#### 🌐 Strategic Domain: Security
-- **Branch:** `origin`
-  - **Result:** enable and execute full autonomous creation cycle (#1982)
-  - **Artifacts:** 10188 files modified.
-
+## Ecosystem Knowledge Consolidation (2026-05-23T03:30:39.955Z)
 ### 📂 Category: FEATURE
 #### 🌐 Strategic Domain: Security
 - **Branch:** `origin/feat/connect-docker-collaboration-sync-final-11700500964007561939-5613862418405546964-revised-8145830076406452013`
@@ -10331,6 +10320,12 @@ All the best - https://markposition.wordpress.com
   - **Result:** integrate iCloud knowledge and upgrade system to Phase 12
   - **Artifacts:** 9843 files modified.
 
+### 📂 Category: OTHER
+#### 🌐 Strategic Domain: Security
+- **Branch:** `origin`
+  - **Result:** enable and execute full autonomous creation cycle (#1982)
+  - **Artifacts:** 10188 files modified.
+
 ### 📂 Category: AGENT
 #### 🌐 Strategic Domain: Security
 - **Branch:** `origin/jules/scraper-markposition-17752547678215960211`
@@ -10338,117 +10333,165 @@ All the best - https://markposition.wordpress.com
   - **Artifacts:** 438 files modified.
 
 
-## Ecosystem Knowledge Consolidation (2026-05-23T05:48:45.707Z)
-### 📂 Category: OTHER
-#### 🌐 Strategic Domain: AI
-- **Branch:** `jules-17898063665932042144-22071f4f`
-  - **Result:** autonomous daily work completion (5/23/2026)
-  - **Artifacts:** 10 files modified.
+## Nomad Agent Command Reference
 
-## Ecosystem Knowledge Consolidation (2026-05-23T21:38:51.742Z)
-*Phase 12 Multi-Agent Synergy Protocol Active*
+nomad agent command reference
+The nomad agent command starts the Nomad agent, which handles client or server functionality, including exposing interfaces for client consumption and running jobs. The agent runs until it receives an interrupt signal.
 
-### 📂 Category: AGENT
-#### 🌐 Strategic Domain: Security
-- **Branch:** `origin/jules/integrate-knowledge-merge-signature-9637748484475924203` 🔥
-  - **Result:** Integrate knowledge merge and append markposition signature
-  - **Artifacts:** 445 files modified.
-- **Branch:** `origin/jules/scraper-markposition-17752547678215960211` 🔥
-  - **Result:** Implement Jenkins ecosystem collaboration trigger (#2020)
-  - **Artifacts:** 451 files modified.
+Refer to Operating Nomad agents and Nomad agent configuration for more information on how to use this command and the options it has.
 
-### 📂 Category: OTHER
-#### 🌐 Strategic Domain: Security
-- **Branch:** `origin` 🔥
-  - **Result:** Implement Jenkins ecosystem collaboration trigger (#2020)
-  - **Artifacts:** 10218 files modified.
-- **Branch:** `origin/jenkins-pipeline-integration-2917487616063889464` 🔥
-  - **Result:** Implement Jenkins ecosystem collaboration trigger
-  - **Artifacts:** 451 files modified.
-- **Branch:** `origin/jules-autonomous-workflow-unified-14967929050804960809` 🔥
-  - **Result:** migrate remaining workflows to typescript cycle\n\nMigrates `.github/workflows/autonomous_cycle.yml` to use `npm run daily` instead of the legacy `python3 run_system.py`, unifying the core execution paths. The `npm run ignite` and systemd commands were already correctly configured in the repository.
-  - **Artifacts:** 447 files modified.
-- **Branch:** `origin/add-a2a-remote-agent-152042865285525971` 🔥
-  - **Result:** add generic A2A remote agent configuration
-  - **Artifacts:** 443 files modified.
-- **Branch:** `origin/jules-17430343990571925541-c81c147a` 🔥
-  - **Result:** generate AI Ecosystem Rollup mapping agents to 12-layer architecture
-  - **Artifacts:** 9841 files modified.
-- **Branch:** `origin/nomad-cli-agent-docs-15478110730395729144` 🔥
-  - **Result:** Update GitHub Actions to non-deprecated versions and fix bandit issues
-  - **Artifacts:** 9846 files modified.
-- **Branch:** `origin/jules-terraform-knowledge-17709827572083509678` 🔥
-  - **Result:** ingest terraform github repo and hcp iam roles
-  - **Artifacts:** 9841 files modified.
-- **Branch:** `origin/verify-gitlab-ci-tutorial-12600342277583614221` 🔥
-  - **Result:** verify GitLab CI tutorial jobs in configuration
-  - **Artifacts:** 9840 files modified.
-- **Branch:** `origin/jules-13607206307106246227-38f47801` 🔥
-  - **Result:** implement autonomous PR merge conflict resolution with Gemini\n\n- Add a TypeScript script `scripts/resolve_pr_conflicts.ts` to identify open PRs with conflicts.\n- Leverage `@google/generative-ai` to safely and logically resolve git conflict markers.\n- Safely manage GitHub and Gemini API tokens, avoiding logging sensitive credentials.\n- Apply robust security checks to only process PRs from trusted repository collaborators.\n- Merge and squash the resolved pull requests via Octokit.\n- Setup GitHub Actions cron job `.github/workflows/resolve-conflicts.yml` to trigger every 4 hours.
-  - **Artifacts:** 420 files modified.
+Usage
+If you are running Nomad on Linux, you need to run client agents as root, or with sudo, so that cpuset accounting and network namespaces work correctly.
 
-### 📂 Category: FEATURE
-#### 🌐 Strategic Domain: Security
-- **Branch:** `origin/feat/caio-role-refinement-14139776390756160770` 🔥
-  - **Result:** refine CAIO strategy and enhance autonomous core resilience
-  - **Artifacts:** 9840 files modified.
-- **Branch:** `origin/feat/cloud-native-autonomy-13870741608362044054` 🔥
-  - **Result:** enable cloud-native autonomy and online presence
-  - **Artifacts:** 445 files modified.
-- **Branch:** `origin/feature/hcp-packer-registry-3457585994433865197` 🔥
-  - **Result:** integrate HCP Packer knowledge and tutorial execution
-  - **Artifacts:** 9847 files modified.
-- **Branch:** `origin/feat/hcp-terraform-run-task-3528016114234953749` 🔥
-  - **Result:** Add HCP Terraform run task configuration for Packer validation
-  - **Artifacts:** 9844 files modified.
-- **Branch:** `origin/feat/vault-radar-agent-8481917393959699580` 🔥
-  - **Result:** Add Vault Radar CLI installation and execution scripts
-  - **Artifacts:** 9848 files modified.
-- **Branch:** `origin/feat/collaboration-dashboard-13924371239853665910` 🔥
-  - **Result:** add collaboration dashboard to track multiple repos
-  - **Artifacts:** 443 files modified.
-- **Branch:** `origin/feat/investopedia-ingestion-10809640050459136774` 🔥
-  - **Result:** integrate investopedia knowledge ingestion
-  - **Artifacts:** 443 files modified.
-- **Branch:** `origin/feat/autonomous-creation-cycle-components-16091962715675237550` 🔥
-  - **Result:** run workflow to generate Feature Scaling Coordinator and Proactive Scalability Service
-  - **Artifacts:** 9839 files modified.
-- **Branch:** `origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326-10745185975815563107` 🔥
-  - **Result:** enhance ecosystem collaboration merge and communication
-  - **Artifacts:** 9843 files modified.
-- **Branch:** `origin/feat/macbook-cloud-simulation-verification-18070016345319943441` 🔥
-  - **Result:** implement fully online macbook cloud simulation overrides
-  - **Artifacts:** 9844 files modified.
+nomad agent [options]
 
-### 📂 Category: FIX
-#### 🌐 Strategic Domain: Security
-- **Branch:** `origin/fix/autonomous-evolution-cloud-presence-13859954936909571932` 🔥
-  - **Result:** ensure autonomous mode works in cloud disconnected environments\n\n- Added AUTONOMOUS_MODE=cloud in .env.example\n- Edited run_daily.ts to enforce AUTONOMOUS_MODE=cloud when MACBOOK_CLOUD_SIMULATION is enabled.
-  - **Artifacts:** 451 files modified.
-- **Branch:** `origin/fix/optimize-execute-creation-cycle-9988671085706556406` 🔥
-  - **Result:** optimize scanAllBranches and autonomous git sync timeouts
-  - **Artifacts:** 9828 files modified.
+Options
+We recommend configuring a Nomad agent with configuration files. Refer to Nomad agent configuration for details.
 
-## Ecosystem Knowledge Consolidation (2026-05-24T13:17:57.294Z)
-*Phase 12 Multi-Agent Synergy Protocol Active*
+You may, however, may pass the following configuration options as CLI arguments:
 
-### 📂 Category: OTHER
-#### 🌐 Strategic Domain: Security
-- **Branch:** `jules-15042891493316655880-422b7277` ⚡
-  - **Result:** autonomous self-repair of 31 issues
-  - **Artifacts:** 20 files modified.
-- **Branch:** `origin/jules-11912267709594997729-d10b0e1f` 🔥
-  - **Result:** lowercase knowledge integration entry titles
-  - **Artifacts:** 451 files modified.
-- **Branch:** `origin/jules-6528044095388834739-5a6c8bcf` 🔥
-  - **Result:** Add cloud workflow integration test
-  - **Artifacts:** 452 files modified.
-- **Branch:** `origin/chore-connect-with-docker-13566063638443538481` 🔥
-  - **Result:** connect with docker and collaborate
-  - **Artifacts:** 9867 files modified.
+-alloc-dir=<path>: Equivalent to the Client alloc_dir config option.
 
-### 📂 Category: FEATURE
-#### 🌐 Strategic Domain: Security
-- **Branch:** `origin/feat/connect-docker-collaboration-high-fidelity-sim-12659027097554184106` 🔥
-  - **Result:** upgrade docker simulation and execute collaboration sync
-  - **Artifacts:** 9867 files modified.
+-acl-enabled: Equivalent to the ACL enabled config option.
+
+-acl-replication-token: Equivalent to the ACL replication_token config option.
+
+-bind=<address>: Equivalent to the bind_addr config option.
+
+-bootstrap-expect=<num>: Equivalent to the bootstrap_expect config option.
+
+-client: Enable client mode on the local agent.
+
+-client-intro-token: The JWT token used to authenticate with servers during the client's initial registration. You may also set the token via the NOMAD_CLIENT_INTRO_TOKEN environment variable, which overrides this flag. If neither is set, the agent looks for an intro_token.jwt file within the client_state_dir. It is not possible to set the intro token via a configuration file.
+
+-config=<path>: Specifies the path to a configuration file or a directory of configuration files to load. Can be specified multiple times.
+
+-consul-address=<addr>: Equivalent to the address config option.
+
+-consul-auth=<auth>: Equivalent to the auth config option.
+
+-consul-auto-advertise: Equivalent to the auto_advertise config option.
+
+-consul-ca-file=<path>: Equivalent to the ca_file config option.
+
+-consul-cert-file=<path>: Equivalent to the cert_file config option.
+
+-consul-checks-use-advertise: Equivalent to the checks_use_advertise config option.
+
+-consul-client-auto-join: Equivalent to the client_auto_join config option.
+
+-consul-client-service-name=<name>: Equivalent to the client_service_name config option.
+
+-consul-client-http-check-name=<name>: Equivalent to the client_http_check_name config option.
+
+-consul-client-failures-before-critical=<num>: Equivalent to the client_failures_before_critical config option.
+
+-consul-client-failures-before-warning=<num>: Equivalent to the client_failures_before_warning config option.
+
+-consul-key-file=<path>: Equivalent to the key_file config option.
+
+-consul-server-service-name=<name>: Equivalent to the server_service_name config option.
+
+-consul-server-http-check-name=<name>: Equivalent to the server_http_check_name config option.
+
+-consul-server-serf-check-name=<name>: Equivalent to the server_serf_check_name config option.
+
+-consul-server-rpc-check-name=<name>: Equivalent to the server_rpc_check_name config option.
+
+-consul-server-auto-join: Equivalent to the server_auto_join config option.
+
+-consul-server-failures-before-critical=<num>: Equivalent to the server_failures_before_critical config option.
+
+-consul-server-failures-before-warning=<num>: Equivalent to the server_failures_before_warning config option.
+
+-consul-ssl: Equivalent to the ssl config option.
+
+-consul-token=<token>: Equivalent to the token config option.
+
+-consul-verify-ssl: Equivalent to the verify_ssl config option.
+
+-data-dir=<path>: Equivalent to the data_dir config option.
+
+-dc=<datacenter>: Equivalent to the datacenter config option.
+
+-dev: Start the agent in development mode. This enables a pre-configured dual-role agent (client + server) which is useful for developing or testing Nomad. No other configuration is required to start the agent in this mode, but you may pass an optional comma-separated list of mode configurations:
+
+-dev-connect: Start the agent in development mode, but bind to a public network interface rather than localhost for using Consul service mesh. It may be used with -dev-consul to configure default workload identities for Consul. This mode is supported only on Linux as root.
+
+-dev-consul: Starts the agent in development mode with a default Consul configuration for Nomad workload identity. It may be used with -dev-connect to configure the agent for Consul Service Mesh.
+
+-dev-vault: Starts the agent in development mode with a default Vault configuration for Nomad workload identity.
+
+-encrypt: Set the Serf encryption key. See the Encryption Overview for more details.
+
+-eventlog: Equivalent to the eventlog.enabled config option.
+
+-eventlog-level: Equivalent to the eventlog.level config option.
+
+-join=<address>: Address of another agent to join upon starting up. This can be specified multiple times to specify multiple agents to join.
+
+-log-level=<level>: Equivalent to the log_level config option.
+
+-log-include-location: Equivalent to the log_include_location config option.
+
+-log-json: Equivalent to the log_json config option.
+
+-meta=<key=value>: Equivalent to the Client meta config option.
+
+-network-interface=<interface>: Equivalent to the Client network_interface config option.
+
+-node=<name>: Equivalent to the name config option.
+
+-node-class=<class>: Equivalent to the Client node_class config option.
+
+-node-pool=<node-pool>: Equivalent to the Client node_pool config option.
+
+-plugin-dir=<path>: Equivalent to the plugin_dir config option.
+
+-region=<region>: Equivalent to the region config option.
+
+-rejoin: Equivalent to the rejoin_after_leave config option.
+
+-retry-interval: Equivalent to the retry_interval config option.
+
+-retry-join: Similar to -join but allows retrying a join if the first attempt fails.
+
+$ nomad agent -retry-join "127.0.0.1:4648"
+
+retry-join can be defined as a command line flag only for servers. Clients can configure retry-join only in configuration files.
+
+-retry-max: Similar to the retry_max config option.
+
+-server: Enable server mode on the local agent.
+
+-servers=<host:port>: Equivalent to the Client servers config option.
+
+-state-dir=<path>: Equivalent to the Client state_dir config option.
+
+-vault-enabled: Whether to enable or disabled Vault integration.
+
+-vault-address=<addr>: The address to communicate with Vault.
+
+-vault-token=<token>: The Vault token used to derive tokens. Only needs to be set on Servers. Overrides the Vault token read from the VAULT_TOKEN environment variable.
+
+-vault-create-from-role=<role>: The role name to create tokens for tasks from.
+
+-vault-ca-file=<path>: Path to a PEM-encoded CA cert file used to verify the Vault server SSL certificate.
+
+-vault-ca-path=<path>: Path to a directory of PEM-encoded CA cert files used to verify the Vault server SSL certificate.Whether to enable or disabled Vault integration.
+
+vault-cert-file=<path>: The path to the certificate for Vault communication.
+
+vault-key-file=<path>: The path to the private key for Vault communication.
+
+vault-namespace=<namespace>: The Vault namespace used for the integration. Required for servers and clients. Overrides the Vault namespace read from the VAULT_NAMESPACE environment variable.
+
+vault-tls-skip-verify: A boolean that determines whether to skip SSL certificate verification.
+
+vault-tls-server-name=<name>: Used to set the SNI host when connecting to Vault over TLS.
+
+## Autonomous Observation
+- **Date**: 2026-05-24T10:58:42.103Z
+- **Target**: https://e15e881b-2d8b-49da-9306-e8aaf84eef37.boundary.hashicorp.cloud
+- **Title**: Admin
+- **Relationship Map**: Confirmed relationship with https://e15e881b-2d8b-49da-9306-e8aaf84eef37.boundary.hashicorp.cloud (Title: Admin) as an intelligence source. (Content Length: 0 chars)
