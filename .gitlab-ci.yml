@@ -22,10 +22,10 @@ deploy-prod:
     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
   environment: production
 
-run-autonomous-autonomous_api_documentation:
+run-autonomous-sentiment_analysis:
   stage: test
   script:
-    - echo "Running autonomous cycle for Autonomous API Documentation Service"
-    - npx tsx antigravity/workflows/autonomous_api_documentation_workflow.ts
+    - echo "Running autonomous cycle for Sentiment Analysis Service"
+    - npx tsx antigravity/workflows/sentiment_analysis_workflow.ts
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"

@@ -24,7 +24,7 @@ export async function syncToICloud() {
 
   // Ensure target directory exists
   try {
-    if (!fs.existsSync(targetPath)) {
+    if (! fs.existsSync(targetPath)) {
       console.log(`☁️ [iCloud Sync] Creating target directory: ${targetPath}`)
       fs.mkdirSync(targetPath, { recursive: true })
     }

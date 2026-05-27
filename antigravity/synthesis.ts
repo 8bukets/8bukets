@@ -190,6 +190,15 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
+  // Gap Analysis 20: Sentiment Analysis Service
+  if (!files.some(f => f.includes('sentiment_analysis'))) {
+    ideas.push({
+      feature: 'Sentiment Analysis Service',
+      rationale: 'Autonomously analyzes user feedback and system logs to gauge ecosystem sentiment and health.',
+      complexity: 'Medium'
+    })
+  }
+
   // Force an idea for demonstration if none exist
   if (ideas.length === 0) {
     ideas.push({
