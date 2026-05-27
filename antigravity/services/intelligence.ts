@@ -86,8 +86,13 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
     report += `| Resource | Intensity | Collaborating Branches | Actionable Recommendation |\n`
     report += `| :--- | :---: | :--- | :--- |\n`
     relationshipMap.synergies.forEach((s: any) => {
-      const recommendation = relationshipMap.collaborationRecommendations.find((r: any) => r.branches.includes(s.branches[0]))
-      report += `| \`${s.resource}\` | ${s.intensity} | ${s.branches.slice(0, 3).join(', ')}${s.branches.length > 3 ? '...' : ''} | ${recommendation?.action || 'Consolidate effort'} |\n`
+      const recommendation = relationshipMap.collaborationRecommendations.find((r: any) =>
+        r.resource === s.resource || r.action.includes(`'${s.resource}'`)
+      )
+      const recommendationText = recommendation
+        ? `${recommendation.action}${recommendation.rationale.includes('Coordination required') ? `<br/>*${recommendation.rationale.split('. ')[1]}*` : ''}`
+        : 'Consolidate effort'
+      report += `| \`${s.resource}\` | ${s.intensity} | ${s.branches.slice(0, 3).join(', ')}${s.branches.length > 3 ? '...' : ''} | ${recommendationText} |\n`
     })
     report += `\n`
   }
