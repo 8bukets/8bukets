@@ -185,16 +185,7 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
   if (!files.some(f => f.includes('api_documentation'))) {
     ideas.push({
       feature: 'Autonomous API Documentation Service',
-      rationale: 'Generates and maintains real-time OpenAPI/Swagger documentation by analyzing Zod schemas and route handlers.',
-      complexity: 'Medium'
-    })
-  }
-
-  // Gap Analysis 20: Sentiment Analysis Service
-  if (!files.some(f => f.includes('sentiment_analysis'))) {
-    ideas.push({
-      feature: 'Sentiment Analysis Service',
-      rationale: 'Autonomously analyzes user feedback and system logs to gauge ecosystem sentiment and health.',
+      rationale: 'Autonomously generates and maintains OpenAPI specifications by scanning service definitions and Zod schemas.',
       complexity: 'Medium'
     })
   }

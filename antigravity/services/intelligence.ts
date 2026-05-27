@@ -38,12 +38,6 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
 
   report += `## 🎯 Mission Statement\n> ${metadata.missionStatement}\n\n`
 
-  const coherence = orchestrationEngine.getCoherence()
-  const strategicCoherence = (coherence * 0.7 + (metadata.goals.length > 0 ? 0.3 : 0)) * 100
-  report += `## 📈 Strategic Coherence\n`
-  report += `- **Consolidated Coherence Index:** ${strategicCoherence.toFixed(1)}%\n`
-  report += `- **Alignment Status:** ${strategicCoherence > 80 ? '🟢 SYNERGIZED' : (strategicCoherence > 50 ? '🟡 ALIGNING' : '🔴 DRIFTING')}\n\n`
-
   report += `## 🏥 System Sovereignty\n`
   report += `- **MongoDB:** ${health.mongodb}\n`
   report += `- **Supabase:** ${health.supabase}\n`
@@ -71,15 +65,6 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `\n`
 
   const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
-
-  report += `## 🕸️ Resource Dependency Graph\n`
-  report += `\`\`\`mermaid\ngraph TD\n`
-  relationshipMap.synergies.forEach((s: any) => {
-    s.branches.forEach((b: string) => {
-      report += `  ${b.replace(/[^a-zA-Z0-9]/g, '_')} --> ${s.resource.replace(/[^a-zA-Z0-9]/g, '_')}\n`
-    })
-  })
-  report += `\`\`\`\n\n`
 
   // Phase 12: Integrate Global Neural Network Status
   const { broadcastPulse } = await import('./neural')
@@ -121,14 +106,14 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   }
 
   report += `## 🌐 Cross-Domain Coordination\n`
-  const domains = ['Security', 'Performance', 'Infrastructure', 'AI', 'UI/Frontend', 'General']
+  const domains = ['Security', 'Performance', 'Infrastructure', 'AI', 'UI/Frontend']
   domains.forEach(d => {
     const relevantRecommendations = relationshipMap.collaborationRecommendations.filter((r: any) =>
-      r.domain === d
+      branches.find(b => b.name === r.branches[0] && b.domain === d)
     )
     if (relevantRecommendations.length > 0) {
       report += `### Domain: ${d}\n`
-      relevantRecommendations.slice(0, 5).forEach((r: any) => {
+      relevantRecommendations.slice(0, 3).forEach((r: any) => {
         report += `- **[${r.priority}]** ${r.action}\n`
         report += `  - *Rationale:* ${r.rationale}\n`
       })
@@ -148,15 +133,11 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `\n`
 
   report += `## 🗺️ Relationship Map\n`
-  report += `### Goal Alignment & Results\n`
+  report += `### Goal Alignment\n`
   Object.entries(relationshipMap.goalAlignment).forEach(([goal, relevantBranches]: [string, any]) => {
     report += `- **Goal:** ${goal}\n`
     if (relevantBranches.length > 0) {
-      report += `  - *Active Branches:* ${relevantBranches.join(', ')}\n`
-      const results = branches.filter(b => relevantBranches.includes(b.name) && b.results && b.results !== 'N/A')
-      if (results.length > 0) {
-        report += `  - *Key Results:* ${results.map(r => r.results).join('; ')}\n`
-      }
+      report += `  - *Branches:* ${relevantBranches.join(', ')}\n`
     } else {
       report += `  - *No direct branch alignment detected.*\n`
     }
@@ -180,9 +161,9 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
 
   report += `## 🧠 Knowledge Matrix\n`
   const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json')
-  if ( fs.existsSync(knowledgePath)) {
+  if (/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(knowledgePath)) {
     try {
-      const systemKnowledge = JSON.parse( fs.readFileSync(knowledgePath, 'utf8'))
+      const systemKnowledge = JSON.parse(/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.readFileSync(knowledgePath, 'utf8'))
 
       // Phase 12: Support both nested 'typescript_sections' and unified flat key structure
       const allKnowledge: any[] = []
@@ -243,37 +224,18 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `\n`
 
   report += `## 🚀 Prioritized Action Items\n`
-  if (health.mongodb !== 'connected' && health.mongodb !== 'healthy') report += `- [CRITICAL] Restore MongoDB Atlas connectivity.\n`
+  if (health.mongodb !== 'connected') report += `- [CRITICAL] Restore MongoDB Atlas connectivity.\n`
   if (workOrders.length > 5) report += `- [HIGH] Process backlog of ${workOrders.length} pending work orders.\n`
 
   const highIntensitySynergies = relationshipMap.synergies.filter((s: any) => s.intensity === 'High')
-
-  if (highIntensitySynergies.length > 10) {
-    report += `- [HIGH] Resolve ${highIntensitySynergies.length} High-Intensity resource synergies across ecosystem.\n`
-  } else {
-    highIntensitySynergies.forEach((s: any) => {
-      const coordinator = metadata.stakeholders.find(sh => relationshipMap.stakeholderEngagement[sh.role]?.activeProjects.includes(s.branches[0]))
-      const coordinationMsg = coordinator ? ` (Coordinate with ${coordinator.role})` : ''
-      report += `- [MEDIUM] Resolve High-Intensity synergy on resource: \`${s.resource}\`${coordinationMsg}.\n`
-    })
-  }
+  highIntensitySynergies.forEach((s: any) => {
+    const coordinator = metadata.stakeholders.find(sh => relationshipMap.stakeholderEngagement[sh.role]?.activeProjects.includes(s.branches[0]))
+    const coordinationMsg = coordinator ? ` (Coordinate with ${coordinator.role})` : ''
+    report += `- [MEDIUM] Resolve High-Intensity synergy on resource: \`${s.resource}\`${coordinationMsg}.\n`
+  })
 
   if (branches.length > 1500) report += `- [LOW] Prune or merge stagnant ecosystem branches (Total: ${branches.length}).\n`
-  report += `- [INFO] Continue autonomous knowledge ingestion for market intelligence.\n\n`
-
-  report += `## 🗺️ Strategic Alignment Roadmap\n`
-  report += `| Strategic Goal | Active Initiatives | Progress | Status |\n`
-  report += `| :--- | :--- | :---: | :--- |\n`
-
-  Object.entries(relationshipMap.goalAlignment).forEach(([goal, relevantBranches]: [string, any]) => {
-    const branchCount = relevantBranches.length
-    const progress = Math.min(100, branchCount * 10)
-    const progressBar = '█'.repeat(Math.floor(progress / 10)) + '░'.repeat(10 - Math.floor(progress / 10))
-    const status = branchCount > 0 ? (branchCount > 5 ? '🔥 ACCELERATED' : '✅ ACTIVE') : '💤 DORMANT'
-
-    report += `| ${goal} | ${branchCount} branches | \`${progressBar}\` ${progress}% | ${status} |\n`
-  })
-  report += `\n`
+  report += `- [INFO] Continue autonomous knowledge ingestion for market intelligence.\n`
 
   // Revised Collaboration Health Index (Logarithmic Scaling for High Branch Counts)
   const totalWeight = relationshipMap.synergies.reduce((acc: number, s: any) => {
@@ -285,7 +247,7 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
 
   report += `\n---\n**Collaboration Health Index:** ${collaborationHealth}% | **Coherence:** ${(orchestrationEngine.getCoherence() * 100).toFixed(0)}% | *Phase 12 Synergy Protocol Active*\n`
 
-  fs.writeFileSync(reportPath, report)
+  /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.writeFileSync(reportPath, report)
   console.log(`✅ [Intelligence] Report saved to ${reportPath}`)
 
   return { reportPath, branchCount: branches.length }

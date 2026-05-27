@@ -1,6 +1,5 @@
 import fs from 'fs'
 import path from 'path'
-import os from 'os'
 import { KnowledgeObserver } from './knowledge_observer'
 import { logAutonomousAction } from '../core'
 
@@ -10,59 +9,39 @@ import { logAutonomousAction } from '../core'
  */
 
 export class ICloudObserver {
-  private syncPaths: string[]
+  private syncPath: string
   private observer: KnowledgeObserver
 
   constructor() {
-    const homeDir = os.homedir()
+    // Default to the known 8bukets iCloud path with a local fallback for simulation
+    const homeDir = process.env.HOME || ''
+    const standardICloudPath = path.join(homeDir, 'Library/Mobile Documents/com~apple~CloudDocs/8bukets')
 
-    // Support multiple possible iCloud sync paths
-    const candidates = [
-      path.join(homeDir, 'Library/Mobile Documents/com~apple~CloudDocs/8bukets'),
-      path.join(homeDir, 'Library/Mobile Documents/com~apple~CloudDocs/Antigravity_Sync')
-    ]
-
-    if (process.env.ICLOUD_SYNC_PATH) {
-      candidates.unshift(process.env.ICLOUD_SYNC_PATH)
-    }
-
-    // Filter to existing paths or fallback to simulation
-    this.syncPaths = candidates.filter(p => fs.existsSync(p))
-
-    if (this.syncPaths.length === 0) {
-      const simPath = path.join(process.cwd(), 'scratch/icloud_sim')
-      if (fs.existsSync(simPath)) {
-        this.syncPaths.push(simPath)
-      }
-    }
-
+    this.syncPath = process.env.ICLOUD_SYNC_PATH || (/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(standardICloudPath) ? standardICloudPath : path.join(process.cwd(), 'scratch/icloud_sim'))
     this.observer = new KnowledgeObserver()
   }
 
   /**
-   * scan: Iterates through the sync directories and ingests new documents.
+   * scan: Iterates through the sync directory and ingests new documents.
    */
   public async scan() {
-    const ingested: string[] = []
+    console.log(`☁️ [iCloud Observer] Scanning path: ${this.syncPath}`)
 
-    if (this.syncPaths.length === 0) {
-       console.log('ℹ️ [iCloud Observer] No sync paths found. Skipping scan.')
-       return ingested
+    if (!/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(this.syncPath)) {
+      console.log('ℹ️ [iCloud Observer] Sync path does not exist. Skipping scan.')
+      return []
     }
 
-    for (const syncPath of this.syncPaths) {
-      console.log(`☁️ [iCloud Observer] Scanning path: ${syncPath}`)
+    const files = fs.readdirSync(this.syncPath)
+    const ingested: string[] = []
 
-      try {
-        const files = await fs.promises.readdir(syncPath)
-
-        for (const file of files) {
-          const fullPath = path.join(syncPath, file)
-      const stats = await fs.promises.stat(fullPath)
+    for (const file of files) {
+      const fullPath = path.join(this.syncPath, file)
+      const stats = fs.statSync(fullPath)
 
       if (stats.isFile() && (file.endsWith('.md') || file.endsWith('.json'))) {
         try {
-          const content = await fs.promises.readFile(fullPath, 'utf8')
+          const content = /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.readFileSync(fullPath, 'utf8')
           let knowledge;
 
           if (file.endsWith('.json')) {
@@ -81,7 +60,7 @@ export class ICloudObserver {
           }
 
           await this.observer.persistKnowledge(knowledge)
-          if (!ingested.includes(file)) ingested.push(file)
+          ingested.push(file)
           logAutonomousAction(`[ICLOUD] Ingested ${file}`, 'cognitive')
           console.log(` ✅ [iCloud Observer] Successfully ingested: ${file}`)
         } catch (err) {
@@ -89,10 +68,6 @@ export class ICloudObserver {
         }
       }
     }
-  } catch (err) {
-    console.error(` ❌ [iCloud Observer] Failed to scan path ${syncPath}:`, err)
-  }
-}
 
     return ingested
   }

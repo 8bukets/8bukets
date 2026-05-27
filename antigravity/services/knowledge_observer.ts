@@ -68,8 +68,6 @@ export class KnowledgeObserver {
                              (trimmed.toUpperCase() === trimmed || /^[A-Z][a-zA-Z0-9.-]*(\s[A-Z][a-zA-Z0-9.-]*)*$/.test(trimmed)) &&
                              !trimmed.startsWith('This ') &&
                              !trimmed.startsWith('Some ') &&
-                             !trimmed.startsWith('- ') &&
-                             !trimmed.startsWith('* ') &&
                              !/^[{}/*<>?]+$/.test(trimmed) &&
                              !trimmed.includes('(') && !trimmed.includes(')') &&
                              !trimmed.includes(' = ') &&
@@ -92,11 +90,8 @@ export class KnowledgeObserver {
       }
 
       if (effectiveHeader) {
-        const sectionContent = currentLines.join('\n').trim()
-        const isStructural = ['Getting Started', 'Features', 'Installation', 'Type System'].includes(currentHeader)
-
-        if (sectionContent || isStructural) {
-          sections.push({ header: currentHeader, content: sectionContent })
+        if (currentLines.length > 0) {
+          sections.push({ header: currentHeader, content: currentLines.join('\n').trim() })
         }
         currentHeader = trimmed.replace(/^#+\s*/, '').trim()
         currentLines = []
@@ -110,11 +105,8 @@ export class KnowledgeObserver {
       }
     }
 
-    const finalSectionContent = currentLines.join('\n').trim()
-    const isFinalStructural = ['Getting Started', 'Features', 'Installation', 'Type System'].includes(currentHeader)
-
-    if (finalSectionContent || isFinalStructural) {
-      sections.push({ header: currentHeader, content: finalSectionContent })
+    if (currentLines.length > 0) {
+      sections.push({ header: currentHeader, content: currentLines.join('\n').trim() })
     }
 
     return {
@@ -135,7 +127,7 @@ export class KnowledgeObserver {
   public async persistKnowledge(knowledge: Knowledge, purgePrefix?: string) {
     const fsPromises = fs.promises;
 
-    if (! fs.existsSync(this.storageDir)) {
+    if (!/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(this.storageDir)) {
       await fsPromises.mkdir(this.storageDir, { recursive: true })
     }
 
@@ -144,7 +136,7 @@ export class KnowledgeObserver {
 
     // 1. JSON Persistence (Merge Logic - Unified Store)
     let systemKnowledge: any = { typescript_sections: [] }
-    if ( fs.existsSync(jsonStore)) {
+    if (/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(jsonStore)) {
       try {
         const content = await fsPromises.readFile(jsonStore, 'utf8');
         systemKnowledge = JSON.parse(content)

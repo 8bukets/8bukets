@@ -5,7 +5,6 @@ import { autonomousFetch } from '@/antigravity/core'
 import { checkDockerHealth } from './docker'
 import { getLatestBuildStatus } from './jenkins'
 import { dispatchExecutiveBriefing } from './notification'
-import { getStakeholderDirectives, generateActionableBriefing, dispatchStakeholderAlert } from './communication'
 
 
 /**
@@ -32,7 +31,7 @@ const MISSION_PATH = path.join(process.cwd(), '.antigravity/mission.md')
 export async function getMissionMetadata(): Promise<MissionMetadata> {
   return autonomousFetch(MissionMetadataSchema, async () => {
     // Note: In Next.js server context, we don't use 'use cache' here to avoid some issues we saw earlier
-    if (! fs.existsSync(MISSION_PATH)) {
+    if (!/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(MISSION_PATH)) {
       throw new Error('Mission document missing. System collaboration impaired.')
     }
 
@@ -90,8 +89,6 @@ export async function exportEcosystemMetadata() {
  */
 export async function broadcastToStakeholders(state: any) {
   const metadata = await getMissionMetadata()
-  const directives = await getStakeholderDirectives()
-
   console.log('📢 [Collaboration] Broadcasting system posture to stakeholders...')
 
   const summary = `
@@ -105,9 +102,9 @@ Stakeholders notified:
 ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
 ------------------------------------------
 `
+  // In Phase 12, we log this to the console and a collaboration log file.
+  // In future phases, this could trigger actual email or slack notifications.
   console.log(summary)
-
-  const actionableBriefing = await generateActionableBriefing(state, directives)
 
   // Dispatch executive briefing for high-level communication
   const highIntensitySynergies = state.intelligence.relationshipMap.synergies?.filter((s: any) => s.intensity === 'High') || []
@@ -119,23 +116,25 @@ ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
     ? state.intelligence.relationshipMap.synergies.map((s: any) => `- SYNERGY [${s.intensity}]: ${s.resource} (via ${s.branches.length} branches)`).join('\n')
     : 'No direct resource synergies detected.'
 
-  const detailedBriefing = `--- ACTIONABLE INSIGHTS ---\n${actionableBriefing}\n\n--- SYNERGY ANALYSIS ---\n${synergySummary}`
+  const recommendations = state.intelligence.relationshipMap.collaborationRecommendations?.length > 0
+    ? state.intelligence.relationshipMap.collaborationRecommendations.map((r: any) => `- [${r.priority}] ${r.action}: ${r.rationale}`).join('\n')
+    : 'No immediate collaboration actions required.'
+
+  const branchSummary = state.intelligence.relationshipMap.resourceInventory
+    .filter((r: any) => r.type === 'Branch Result')
+    .slice(0, 5)
+    .map((r: any) => `- RESULT: ${r.name} -> ${r.result}`)
+    .join('\n')
+
+  const detailedBriefing = `--- SYNERGY ANALYSIS ---\n${synergySummary}\n\n--- RECOMMENDATIONS ---\n${recommendations}\n\n--- KEY RESULTS ---\n${branchSummary}`
 
   await dispatchExecutiveBriefing(
     `${synergyAlert} Posture: ${state.docker.status}. Sync: ${state.intelligence.branches} branches.`,
     detailedBriefing
   )
 
-  if (highIntensitySynergies.length > 0) {
-    await dispatchStakeholderAlert(
-      'High Intensity Resource Synergy Detected',
-      `System has detected ${highIntensitySynergies.length} clusters of high-intensity resource overlap. Immediate consolidation recommended.`,
-      'warning'
-    )
-  }
-
   const logDir = path.join(process.cwd(), 'logs')
-  if (! fs.existsSync(logDir)) await fs.promises.mkdir(logDir, { recursive: true })
+  if (!/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(logDir)) await fs.promises.mkdir(logDir, { recursive: true })
 
   await fs.promises.appendFile(path.join(logDir, 'collaboration.log'), summary)
 
@@ -149,9 +148,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     stakeholderEngagement: {},
     goalAlignment: {},
     resourceInventory: [],
-    synergies: [],
-    domainOwnership: {},
-    resourceHealth: {}
+    synergies: []
   }
 
   // Phase 12: Dynamic Resource Discovery (Expanded)
@@ -167,28 +164,17 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
 
   for (const dir of scanDirs) {
     const fullPath = path.join(process.cwd(), dir.path)
-    if ( fs.existsSync(fullPath)) {
+    if (/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(fullPath)) {
       try {
         const files = await fs.promises.readdir(fullPath)
         for (const file of files) {
           if (!file.includes('.test.') && (dir.pattern.test(file))) {
-            const fileName = file.split('.')[0];
-            const filePath = `${dir.path}/${file}`;
-            const stats = await fs.promises.stat(fullPath + '/' + file);
-
             map.resourceInventory.push({
               type: dir.type,
-              name: fileName,
+              name: file.split('.')[0],
               status: 'Active',
-              path: filePath
+              path: `${dir.path}/${file}`
             })
-
-            // Resource Health Metrics
-            map.resourceHealth[fileName] = {
-              lastModified: stats.mtime.toISOString(),
-              contributorCount: branches.filter(b => b.changedFiles?.includes(filePath)).length,
-              status: (Date.now() - stats.mtime.getTime() > 1000 * 60 * 60 * 24 * 7) ? 'Stale' : 'Healthy'
-            }
           }
         }
       } catch (e) {}
@@ -197,7 +183,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
 
   // Integrate autonomous knowledge into resource inventory
   const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json')
-  if ( fs.existsSync(knowledgePath)) {
+  if (/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(knowledgePath)) {
     try {
       const content = await fs.promises.readFile(knowledgePath, 'utf8')
       const systemKnowledge = JSON.parse(content)
@@ -249,30 +235,16 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     const rolePrefix = s.role.toLowerCase().split(' ')[0]
     const emailPrefix = s.email.split('@')[0].toLowerCase()
 
-    const activeBranches = branches.filter(b => {
-      const branchName = (b?.name || '').toLowerCase();
-      return b.category === 'agent' ||
-             branchName.includes(rolePrefix) ||
-             branchName.includes(emailPrefix);
-    });
-
     map.stakeholderEngagement[s.role] = {
       email: s.email,
-      activeProjects: activeBranches.map(b => b.name)
+      activeProjects: branches.filter(b => {
+        const branchName = (b?.name || '').toLowerCase();
+        return b.category === 'agent' ||
+               branchName.includes(rolePrefix) ||
+               branchName.includes(emailPrefix);
+      }).map(b => b.name)
     }
-
-    // Domain Ownership Tracking
-    activeBranches.forEach(b => {
-      const domain = b.domain || 'General';
-      if (!map.domainOwnership[domain]) map.domainOwnership[domain] = new Set();
-      map.domainOwnership[domain].add(s.role);
-    });
   })
-
-  // Convert Sets to Arrays for JSON serialization
-  Object.keys(map.domainOwnership).forEach(d => {
-    map.domainOwnership[d] = Array.from(map.domainOwnership[d]);
-  });
 
   // Identify Static "Resources" (Documentation)
   map.resourceInventory.push(
@@ -311,88 +283,49 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
   })
 
   map.collaborationRecommendations = []
-  const domainRecommendations: Record<string, any[]> = {}
 
   Object.entries(resourceUsage).forEach(([resourceName, branchSet]) => {
     if (branchSet.size > 1) {
       const resource = map.resourceInventory.find((r: any) => r.name === resourceName)
       const type = resource?.type || 'Other'
       const weight = resourceWeights[type] || 1
-      const branchesNames = Array.from(branchSet)
+      const branches = Array.from(branchSet)
 
-      // Suppress high-intensity noise for common boilerplate files unless they have extreme overlap
-      // Phase 12 High-Scale: Adjust thresholds for environments with 2,000+ branches
+      // Suppress high-intensity noise for common boilerplate files unless they have extreme overlap (>10 branches)
       const isBoilerplate = BOILERPLATE_RESOURCES.includes(resourceName)
-      const scaleFactor = Math.max(1, branches.length / 500)
-
-      let intensity = 'Low'
-      if (branchesNames.length > 10 * scaleFactor) intensity = 'Medium'
-      if (branchesNames.length > 30 * scaleFactor || (weight >= 10 && branchesNames.length > 15 * scaleFactor)) intensity = 'High'
-
-      // Boilerplate is almost always low intensity unless it's truly massive
-      if (isBoilerplate && branchesNames.length < 100 * scaleFactor) intensity = 'Low'
-
-      // Only record non-low synergies in high-scale environments to reduce noise
-      if (branches.length > 1000 && intensity === 'Low') return
+      let intensity = 'Medium'
+      if (branches.length > 5 || (weight >= 10 && branches.length > 2)) intensity = 'High'
+      if (isBoilerplate && branches.length < 10) intensity = 'Low'
 
       map.synergies.push({
         type: 'Resource Conflict/Synergy',
         resource: resourceName,
         resourceType: type,
-        branches: branchesNames,
+        branches,
         intensity,
         weight
       })
 
       // Phase 12: Generate Actionable Collaboration Recommendations
       const stakeholdersToCoordinate = stakeholders.filter(s =>
-        map.stakeholderEngagement[s.role]?.activeProjects.some((ap: string) => branchesNames.includes(ap))
+        map.stakeholderEngagement[s.role]?.activeProjects.some((ap: string) => branches.includes(ap))
       )
 
       const coordinationAdvice = stakeholdersToCoordinate.length > 1
         ? `Coordinate with ${stakeholdersToCoordinate.map(s => s.role).join(' and ')}.`
         : (stakeholdersToCoordinate.length === 1 ? `Coordinate with ${stakeholdersToCoordinate[0].role}.` : 'Review branch owners for alignment.')
 
-      // Group by Domain
-      const branchObjs = branches.filter(b => branchesNames.includes(b.name))
-      const domain = branchObjs[0]?.domain || 'General'
-
-      if (!domainRecommendations[domain]) domainRecommendations[domain] = []
-
-      domainRecommendations[domain].push({
+      map.collaborationRecommendations.push({
         priority: intensity === 'High' ? 'Critical' : (intensity === 'Medium' ? 'Routine' : 'Low'),
         action: `Consolidate effort on '${resourceName}' (${type})`,
-        resource: resourceName,
-        branches: branchesNames,
-        rationale: `${branchesNames.length} branches are concurrently modifying this ${type.toLowerCase()}. ${coordinationAdvice}`,
-        stakeholders: stakeholdersToCoordinate.map(s => s.role),
-        domain
+        branches,
+        rationale: `${branches.length} branches are concurrently modifying this ${type.toLowerCase()}. ${coordinationAdvice}`,
+        stakeholders: stakeholdersToCoordinate.map(s => s.role)
       })
 
-      if (intensity === 'High' && map.synergies.length < 20) {
-        console.warn(`🤝 [Collaboration] High-Intensity Synergy Detected: ${branchesNames.length} branches working on ${resourceName} (${type}).`)
+      if (intensity === 'High') {
+        console.warn(`🤝 [Collaboration] High-Intensity Synergy Detected: ${branches.length} branches working on ${resourceName} (${type}).`)
       }
-    }
-  })
-
-  // Flatten and Deduplicate recommendations by Strategic Domain
-  // Phase 12 High-Scale: Consolidate all domain-specific conflicts into a single high-level action item
-  Object.entries(domainRecommendations).forEach(([domain, recs]) => {
-    const criticalRecs = recs.filter(r => r.priority === 'Critical')
-    const totalResources = recs.length
-
-    if (recs.length > 5) {
-      map.collaborationRecommendations.push({
-        priority: criticalRecs.length > 0 ? 'Critical' : 'Routine',
-        action: `Unified Domain Consolidation: ${domain}`,
-        resource: 'Multiple',
-        branches: Array.from(new Set(recs.flatMap(r => r.branches))).slice(0, 10),
-        rationale: `Strategic Domain '${domain}' has ${totalResources} concurrent resource conflicts. Executive coordination required across all involved stakeholders.`,
-        stakeholders: Array.from(new Set(recs.flatMap(r => r.stakeholders))),
-        domain
-      })
-    } else {
-      map.collaborationRecommendations.push(...recs)
     }
   })
 
@@ -417,7 +350,7 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
   const statePath = path.join(process.cwd(), 'autonomous_state.json')
 
   let currentState: any = {}
-  if ( fs.existsSync(statePath)) {
+  if (/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(statePath)) {
     try {
       const content = await fs.promises.readFile(statePath, 'utf8')
       currentState = JSON.parse(content)
@@ -468,7 +401,7 @@ export async function mergeBranchInsights(branches: any[]) {
   const knowledgePath = path.join(process.cwd(), 'KNOWLEDGE_MERGE.md')
 
   let existingContent = '';
-  if ( fs.existsSync(knowledgePath)) {
+  if (/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(knowledgePath)) {
     existingContent = await fs.promises.readFile(knowledgePath, 'utf8');
   }
 
@@ -488,10 +421,7 @@ export async function mergeBranchInsights(branches: any[]) {
         const parts = existingContent.split(branchIdentifier)
         for (let i = 1; i < parts.length; i++) {
           const branchSection = parts[i].split('##')[0];
-          const hasResult = branchSection.includes(resultIdentifier);
-          const hasKnowledge = !knowledgeIdentifier || branchSection.includes(knowledgeIdentifier);
-
-          if (hasResult && hasKnowledge) {
+          if (branchSection.includes(resultIdentifier) && (!knowledgeIdentifier || branchSection.includes(knowledgeIdentifier))) {
               return false;
           }
         }
@@ -559,7 +489,7 @@ export async function mergeEcosystemInsights(branchIntelligence: any[], workOrde
   })
   let marketIntelligence = ''
   const knowledgePath = path.join(process.cwd(), 'KNOWLEDGE_MERGE.md')
-  if ( fs.existsSync(knowledgePath)) {
+  if (/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(knowledgePath)) {
     marketIntelligence = await fs.promises.readFile(knowledgePath, 'utf8')
   }
 

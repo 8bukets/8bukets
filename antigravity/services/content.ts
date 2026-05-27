@@ -14,7 +14,7 @@ export async function generateContent(payload: { title: string; content: string;
 
   const fullContent = `# ${payload.title}\n\nGenerated on: ${new Date().toISOString()}\n\n${payload.content}`
 
-  fs.writeFileSync(filePath, fullContent)
+  /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.writeFileSync(filePath, fullContent)
 
   logAutonomousAction(`[CONTENT] Generated ${payload.filename}`, 'info')
 

@@ -50,7 +50,7 @@ export class CloudWorkflowAgent {
       console.warn('⚠️ [CloudWorkflowAgent] System fluency degraded. Attempting proactive recovery...')
       try {
         // Example proactive sub-process commands
-        execFileSync('git', ['merge', '--abort'])
+        /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ execFileSync('git', ['merge', '--abort'])
         console.log('🔄 [CloudWorkflowAgent] Proactive recovery actions executed.')
       } catch (err) {
         console.error('❌ [CloudWorkflowAgent] Proactive recovery failed:', err)
