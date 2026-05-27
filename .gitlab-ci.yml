@@ -77,3 +77,25 @@ run-autonomous-proactive_scalability:
     - npx tsx antigravity/workflows/proactive_scalability_workflow.ts
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
+
+market-analysis:
+  stage: test
+  script:
+    - npm run ingest:sor
+    - npm run ingest:forbes
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+daily-tasks:
+  stage: test
+  script:
+    - npm run daily
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+autonomous-evolution:
+  stage: test
+  script:
+    - npx tsx scripts/execute_creation_cycle.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"

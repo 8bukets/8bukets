@@ -36,33 +36,22 @@ async function consolidate() {
     }
   }
 
-  // 3. Deduplicate sections by header, merging content if necessary
-  const headerMap = new Map<string, { header: string; content: string }>()
+  // 3. Deduplicate sections by header and filter low-value content
+  const seenHeaders = new Set<string>()
+  const uniqueSections = allSections.filter(s => {
+    const trimmedHeader = s.header.trim()
+    const trimmedContent = s.content.trim()
 
-  for (const section of allSections) {
-    const existing = headerMap.get(section.header)
-    if (!existing) {
-      // Only keep sections with content, unless they are high-level structural headers
-      if (section.content || ['Getting Started', 'Features', 'Installation'].includes(section.header)) {
-        headerMap.set(section.header, { ...section })
-      }
-    } else {
-      // If header exists, merge content if the new content is different and not empty
-      if (section.content && section.content !== existing.content) {
-        if (existing.content.includes(section.content)) {
-          // New content is already a subset, ignore
-        } else if (section.content.includes(existing.content)) {
-          // New content is more complete, replace
-          existing.content = section.content
-        } else {
-          // Both have unique info, append
-          existing.content += '\n\n' + section.content
-        }
-      }
+    if (seenHeaders.has(trimmedHeader)) return false
+
+    // Ignore empty sections or those that are just navigation/placeholders
+    if (!trimmedContent || trimmedContent.length < 5) {
+      if (!['Getting Started', 'Features', 'Installation'].includes(trimmedHeader)) return false
     }
-  }
 
-  const uniqueSections = Array.from(headerMap.values())
+    seenHeaders.add(trimmedHeader)
+    return true
+  })
 
   const consolidatedKnowledge: Knowledge = {
     title: 'Intelephense Documentation',
@@ -82,8 +71,10 @@ async function consolidate() {
     const systemKnowledge = JSON.parse(fs.readFileSync(jsonStore, 'utf8'))
     if (systemKnowledge.typescript_sections) {
       systemKnowledge.typescript_sections = systemKnowledge.typescript_sections.filter((k: any) => {
-        // Keep everything that isn't an Intelephense variant, we'll re-add the consolidated one
-        return !k.title.startsWith('Intelephense') || k.title === 'Intelephense Documentation'
+        // Purge ALL Intelephense variants and the local filename entry to avoid duplication
+        const isLegacyIntelephense = k.title.startsWith('Intelephense')
+        const isLocalFilename = k.title === 'intelephense_docs.md'
+        return !isLegacyIntelephense && !isLocalFilename
       })
       fs.writeFileSync(jsonStore, JSON.stringify(systemKnowledge, null, 2))
     }
