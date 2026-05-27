@@ -72,36 +72,12 @@ pipeline {
                 sh 'npx tsx antigravity/workflows/proactive_scalability_workflow.ts'
             }
         }
-        stage('Run Autonomous Cloud Convergence Service') {
-            steps {
-                sh 'npx tsx antigravity/workflows/cloud_convergence_workflow.ts'
-            }
-        }
-        stage('Run Autonomous Autonomous UX Optimization Service') {
-            steps {
-                sh 'npx tsx antigravity/workflows/autonomous_ux_optimization_workflow.ts'
-            }
-        }
-        stage('Run Autonomous Global Neural Sync Service (Phase 12)') {
-            steps {
-                sh 'npx tsx antigravity/workflows/global_neural_sync_service_(phase_12)_workflow.ts'
-            }
-        }
-        stage('Run Autonomous Autonomous Discovery Engine') {
-            steps {
-                sh 'npx tsx antigravity/workflows/autonomous_discovery_engine_workflow.ts'
-            }
-        }
-        stage('Run Autonomous Edge-to-Cloud Bridge') {
-            steps {
-                sh 'npx tsx antigravity/workflows/edge-to-cloud_bridge_workflow.ts'
-            }
-        }
         stage('Creative Workflow') {
             parallel {
                 stage('Market Analysis') {
                     steps {
                         sh 'npm run ingest:sor'
+                        sh 'npm run ingest:forbes'
                     }
                 }
                 stage('Daily Tasks') {

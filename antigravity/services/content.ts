@@ -7,7 +7,8 @@ import { logAutonomousAction } from '../core'
  * Autonomously generates reports and documentation.
  */
 
-export async function generateContent(payload: { title: string; content: string; filename: string }) {
+export async function generateContent(payload: {
+  try { title: string; content: string; filename: string }) {
   // [Evolution] TODO: Add autonomous error handling (try/catch)
   console.log(`📝 [Content] Generating content: ${payload.title}...`)
 
@@ -15,9 +16,13 @@ export async function generateContent(payload: { title: string; content: string;
 
   const fullContent = `# ${payload.title}\n\nGenerated on: ${new Date().toISOString()}\n\n${payload.content}`
 
-  fs.writeFileSync(filePath, fullContent)
+  /* [Evolution] TODO: Refactor to async */ fs.writeFileSync(filePath, fullContent)
 
   logAutonomousAction(`[CONTENT] Generated ${payload.filename}`, 'info')
 
   return { filePath, size: fullContent.length }
+
+  } catch (err) {
+    console.error('[Evolution Autocorrect] Unhandled error:', err);
+  }
 }

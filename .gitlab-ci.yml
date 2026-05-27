@@ -78,55 +78,24 @@ run-autonomous-proactive_scalability:
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
 
-run-creative-workflow-pipeline:
+market-analysis:
   stage: test
   script:
-    - echo "Running creative workflow pipeline"
     - npm run ingest:sor
+    - npm run ingest:forbes
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+daily-tasks:
+  stage: test
+  script:
     - npm run daily
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+autonomous-evolution:
+  stage: test
+  script:
     - npx tsx scripts/execute_creation_cycle.ts
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
-
-run-autonomous-cloud_convergence:
-  stage: test
-  script:
-    - echo "Running autonomous cycle for Cloud Convergence Service"
-    - npx tsx antigravity/workflows/cloud_convergence_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-run-autonomous-autonomous_ux_optimization:
-  stage: test
-  script:
-    - echo "Running autonomous cycle for Autonomous UX Optimization Service"
-    - npx tsx antigravity/workflows/autonomous_ux_optimization_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-run-autonomous-global_neural_sync_service_(phase_12):
-  stage: test
-  script:
-    - echo "Running autonomous cycle for Global Neural Sync Service (Phase 12)"
-    - npx tsx antigravity/workflows/global_neural_sync_service_(phase_12)_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-run-autonomous-autonomous_discovery_engine:
-  stage: test
-  script:
-    - echo "Running autonomous cycle for Autonomous Discovery Engine"
-    - npx tsx antigravity/workflows/autonomous_discovery_engine_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-run-autonomous-edge-to-cloud_bridge:
-  stage: test
-  script:
-    - echo "Running autonomous cycle for Edge-to-Cloud Bridge"
-    - npx tsx antigravity/workflows/edge-to-cloud_bridge_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-
-variables:
-  MACBOOK_CLOUD_SIMULATION: "true"
