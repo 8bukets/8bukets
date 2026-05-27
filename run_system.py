@@ -286,6 +286,10 @@ async def run_cycle(auth_token: str = None, skip_scraper: bool = False):
     # 2. Peer Review Phase
     await orchestrator.run_peer_review()
 
+    # Jenkins Collaboration & Integration
+    proc_jenkins = await asyncio.create_subprocess_exec("npx", "tsx", "scripts/connect_and_collaborate.ts")
+    await proc_jenkins.wait()
+
     # 3. Final Synthesis
     context = orchestrator.blackboard.get_all()
 
