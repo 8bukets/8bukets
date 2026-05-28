@@ -33,7 +33,7 @@ async function ingestAgentArchitecture() {
 - **Extracted Summary**:
   ${readmeText.substring(0, 500)}...
 
-All the best - https://markposition.wordpress.com
+
 `;
 
     // Safely append to KNOWLEDGE_MERGE.md using greedy negative lookaheads and callback functions
@@ -57,7 +57,7 @@ All the best - https://markposition.wordpress.com
     const consolidatedPath = 'CONSOLIDATED_INTELLIGENCE.md';
     if (fs.existsSync(consolidatedPath)) {
        let content = fs.readFileSync(consolidatedPath, 'utf-8');
-       content += `\n## 🚀 Agent Framework Architecture Terminology Intelligence\n- **Ingested on:** ${now}\n- **Source:** ${url}\n- **Summary:** The provided text breaks down an agent framework into its core layers including logic, harness, tooling, context, and prompts.\n\nAll the best - https://markposition.wordpress.com\n`;
+       content += `\n## 🚀 Agent Framework Architecture Terminology Intelligence\n- **Ingested on:** ${now}\n- **Source:** ${url}\n- **Summary:** The provided text breaks down an agent framework into its core layers including logic, harness, tooling, context, and prompts.\n\n\n`;
        fs.writeFileSync(consolidatedPath, content, 'utf-8');
        console.log(`Successfully ingested and updated ${consolidatedPath}.`);
     } else {
