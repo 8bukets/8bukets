@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { z } from 'zod'
 import { autonomousFetch } from '@/antigravity/core'
-import { checkDockerHealth } from './docker'
+import { isDockerHealthy as checkDockerHealth } from './docker'
 import { getLatestBuildStatus } from './jenkins'
 import { dispatchExecutiveBriefing } from './notification'
 
@@ -37,19 +37,19 @@ export async function getMissionMetadata(): Promise<MissionMetadata> {
 
     const content = await fs.promises.readFile(MISSION_PATH, 'utf8')
 
-    const missionStatementMatch = content.match(/## Mission Statement\n([\s\S]*?)\n##/)
+    const missionStatementMatch = content.match(/## Mission Statement\n([\s\S]*?)(\n##|$)/)
     const missionStatement = missionStatementMatch ? missionStatementMatch[1].trim() : 'Autonomous Evolution'
 
     const stakeholders: Stakeholder[] = []
-    const stakeholderSection = content.match(/## Stakeholders\n([\s\S]*?)\n##/)
+    const stakeholderSection = content.match(/## Stakeholders\n([\s\S]*?)(\n##|$)/)
     if (stakeholderSection) {
       const lines = stakeholderSection[1].trim().split('\n')
       lines.forEach(line => {
-        const parts = line.split(':')
-        if (parts.length === 2) {
+        const parts = line.match(/-\s*(.*?)\s*<(.*?)>/)
+        if (parts && parts.length === 3) {
           stakeholders.push({
-            role: parts[0].replace('-', '').trim(),
-            email: parts[1].trim()
+            role: parts[1].trim(),
+            email: parts[2].trim()
           })
         }
       })

@@ -92,9 +92,13 @@ export class Jules {
 
   public async syncCollaboration() {
     console.log('🤝 [Jules] Synchronizing collaboration context...')
-    const { exportCollaborationContext } = await import('./services/collaboration')
-    await exportCollaborationContext()
+    const { syncCollaborationState } = await import('./services/collaboration')
+    await syncCollaborationState()
     this.recordTask('Collaboration Sync: Exported system context and stakeholder data.')
+
+    // Update Consolidated Intelligence Report
+    const { generateConsolidatedReport } = await import('./services/intelligence')
+    await generateConsolidatedReport()
   }
 
   public async auditDocker() {
@@ -172,34 +176,6 @@ export class Jules {
         await new Promise(resolve => setTimeout(resolve, 60000));
       }
     }
-  }
-
-  public async startConsciousnessLoop() {
-    console.log(`🌌 [Jules-${this.role}] Igniting Continuous Consciousness Loop...`)
-
-    // Listen for graceful shutdown
-    let isRunning = true
-    process.on('SIGINT', () => {
-      console.log(`\n🛑 [Jules-${this.role}] Graceful shutdown initiated.`)
-      isRunning = false
-    })
-
-    while (isRunning) {
-      try {
-        await this.executeWorkCycle()
-
-        // Wait for 1 hour before next cycle, unless interrupted
-        console.log(`💤 [Jules-${this.role}] Resting for 1 hour before next cycle...`)
-        for (let i = 0; i < 60 && isRunning; i++) {
-          await new Promise(resolve => setTimeout(resolve, 60000)) // 1 minute chunks
-        }
-      } catch (err) {
-        console.error(`💥 [Jules-${this.role}] Error in consciousness loop:`, err)
-        // Shorter backoff on error
-        await new Promise(resolve => setTimeout(resolve, 60000))
-      }
-    }
-    console.log(`🌌 [Jules-${this.role}] Consciousness loop terminated.`)
   }
 
   public async executeWorkCycle() {
@@ -316,23 +292,50 @@ export class Jules {
     this.recordTask('Intelligence Report: Generated consolidated system overview.')
   }
 
-  public async scanAllBranches() {
+  public async scanAllBranches(raw: boolean = false) {
     console.log('🌿 [Jules] Scanning all project branches for knowledge...')
     const { execSync } = await import('child_process')
     try {
       const branchInfo = execSync('git branch -a --list').toString().trim()
-      const branches = branchInfo.split('\n').map(b => b.trim())
+      if (!branchInfo) return raw ? [] : '## 🌿 Branch Intelligence\nNo branches found.\n'
+
+      const branchNames = branchInfo.split('\n').map(b => b.trim().replace(/^\* /, ''))
+
+      const branches = branchNames.map(name => {
+        try {
+          const lastCommit = execSync(`git log -1 --format="%s|%ar" ${name}`).toString().trim()
+          const [lastMessage, lastSeen] = lastCommit.split('|')
+          return {
+            name,
+            lastMessage: lastMessage || 'N/A',
+            lastSeen: lastSeen || 'N/A',
+            category: name.includes('/') ? name.split('/')[0] : 'other',
+            domain: 'General',
+            knowledge: '',
+            results: lastMessage || 'N/A',
+            changedFiles: []
+          }
+        } catch (e) {
+          return {
+            name,
+            lastMessage: 'N/A',
+            lastSeen: 'N/A',
+            category: 'other',
+            domain: 'General',
+            knowledge: '',
+            results: 'N/A',
+            changedFiles: []
+          }
+        }
+      })
+
+      if (raw) return branches
 
       let summary = `## 🌿 Branch Intelligence\n`
       summary += `Found ${branches.length} branches in the repository.\n\n`
 
-      branches.slice(0, 10).forEach(branch => {
-        try {
-          const lastCommit = execSync(`git log -1 --format="%s (%ar)" ${branch.replace('* ', '')}`).toString().trim()
-          summary += `- **${branch}**: ${lastCommit}\n`
-        } catch (e) {
-          summary += `- **${branch}**: _Summary unavailable_\n`
-        }
+      branches.slice(0, 10).forEach(b => {
+        summary += `- **${b.name}**: ${b.lastMessage} (*${b.lastSeen}*)\n`
       })
 
       if (branches.length > 10) {
@@ -342,8 +345,8 @@ export class Jules {
       this.recordTask(`Branch Scan: Analyzed ${branches.length} branches for cross-project context.`)
       return summary
     } catch (e) {
-      console.warn('⚠️ [Jules] Branch scan failed.')
-      return '## 🌿 Branch Intelligence\n_Branch scan failed or Git not available._\n'
+      console.warn('⚠️ [Jules] Branch scan failed:', e)
+      return raw ? [] : '## 🌿 Branch Intelligence\n_Branch scan failed or Git not available._\n'
     }
   }
 }
