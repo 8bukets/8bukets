@@ -92,8 +92,8 @@ export class Jules {
 
   public async syncCollaboration() {
     console.log('🤝 [Jules] Synchronizing collaboration context...')
-    const { exportCollaborationContext } = await import('./services/collaboration')
-    await exportCollaborationContext()
+    const { syncCollaborationState } = await import('./services/collaboration')
+    await syncCollaborationState()
     this.recordTask('Collaboration Sync: Exported system context and stakeholder data.')
   }
 
@@ -213,14 +213,10 @@ export class Jules {
     if (ideas.length > 0) {
       this.recordTask(`Synthesis: Generated ${ideas.length} architectural proposals.`)
 
-      // Phase 10: Singularity Orchestration
-      const { bootstrap } = await import('./singularity')
-      for (const idea of ideas) {
-        if (idea.complexity === 'Low' || idea.complexity === 'Medium') {
-          await bootstrap(idea)
-          this.recordTask(`Singularity: Autonomously bootstrapped ${idea.feature}.`)
-        }
-      }
+      // Phase 10: Singularity Orchestration (Managed Creation Lifecycle)
+      const { creationEngine } = await import('./services/creation_engine')
+      await creationEngine.processIdeas(ideas)
+      this.recordTask(`Creation Engine: Triggered creation cycle for ${ideas.length} ideas.`)
     }
 
     // Phase 12: Super-Intelligence Optimization
@@ -316,19 +312,23 @@ export class Jules {
     this.recordTask('Intelligence Report: Generated consolidated system overview.')
   }
 
-  public async scanAllBranches() {
+  public async scanAllBranches(raw = false) {
     console.log('🌿 [Jules] Scanning all project branches for knowledge...')
     const { execSync } = await import('child_process')
     try {
       const branchInfo = execSync('git branch -a --list').toString().trim()
-      const branches = branchInfo.split('\n').map(b => b.trim())
+      const branches = branchInfo.split('\n').map(b => b.trim().replace('* ', ''))
+
+      if (raw) {
+        return branches.map(name => ({ name }))
+      }
 
       let summary = `## 🌿 Branch Intelligence\n`
       summary += `Found ${branches.length} branches in the repository.\n\n`
 
       branches.slice(0, 10).forEach(branch => {
         try {
-          const lastCommit = execSync(`git log -1 --format="%s (%ar)" ${branch.replace('* ', '')}`).toString().trim()
+          const lastCommit = execSync(`git log -1 --format="%s (%ar)" ${branch}`).toString().trim()
           summary += `- **${branch}**: ${lastCommit}\n`
         } catch (e) {
           summary += `- **${branch}**: _Summary unavailable_\n`
@@ -343,7 +343,7 @@ export class Jules {
       return summary
     } catch (e) {
       console.warn('⚠️ [Jules] Branch scan failed.')
-      return '## 🌿 Branch Intelligence\n_Branch scan failed or Git not available._\n'
+      return raw ? [] : '## 🌿 Branch Intelligence\n_Branch scan failed or Git not available._\n'
     }
   }
 }
