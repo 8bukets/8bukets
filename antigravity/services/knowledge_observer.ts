@@ -76,7 +76,7 @@ export class KnowledgeObserver {
       fs.mkdirSync(storageDir, { recursive: true });
     }
 
-    const filename = (knowledge.title || 'unknown').toLowerCase().replace(/\s+/g, '_').replace(/[^\w]/g, '') + '.json';
+    const filename = (knowledge.title || 'unknown').toLowerCase().replace(/\s+/g, '_').replace(/[^\w]/g, '').substring(0, 100) + '.json';
     const jsonPath = path.join(storageDir, filename);
 
     console.log(`✅ [Knowledge Observer] Persisted "${knowledge.title}" to ${storageDir}`);

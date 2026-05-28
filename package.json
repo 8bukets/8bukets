@@ -16,7 +16,8 @@
     "ingest:sor": "tsx --env-file=.env scripts/ingest_software_online_review.ts",
     "ingest:terraform": "tsx --env-file=.env scripts/ingest_terraform_knowledge.ts",
     "connect": "tsx --env-file=.env scripts/connect_and_collaborate.ts",
-    "invoke-hello": "curl -L -X POST 'https://tevdxaufsnpsbvvurddg.supabase.co/functions/v1/hello-world' -H \"Authorization: Bearer $NEXT_PUBLIC_SUPABASE_ANON_KEY\" --data '{\"name\":\"Antigravity\"}'"
+    "invoke-hello": "curl -L -X POST 'https://tevdxaufsnpsbvvurddg.supabase.co/functions/v1/hello-world' -H \"Authorization: Bearer $NEXT_PUBLIC_SUPABASE_ANON_KEY\" --data '{\"name\":\"Antigravity\"}'",
+    "ingest:knowledge": "npm run ingest:sor && npm run ingest:terraform"
   },
   "dependencies": {
     "@google/genai": "^2.5.0",

@@ -81,6 +81,7 @@
       "link": "https://software-online-review.com/2026/02/17/schema/"
     }
   ],
+  "analyzedAt": "2026-05-28T03:38:29.364Z",
   "history": [
     {
       "source": "https://software-online-review.com",
@@ -105,7 +106,10 @@
     {
       "source": "https://software-online-review.com",
       "analyzedAt": "2026-05-28T00:57:41.020Z"
+    },
+    {
+      "source": "https://software-online-review.com",
+      "analyzedAt": "2026-05-28T03:38:29.364Z"
     }
-  ],
-  "analyzedAt": "2026-05-28T00:57:41.020Z"
+  ]
 }
