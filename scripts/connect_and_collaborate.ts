@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import { SandboxCloudSimulation } from '../antigravity/services/sandbox_cloud_simulation';
 
 async function main() {
-  console.log('Initiating autonomous Docker sovereignty audit and stakeholder collaboration sync...');
+  console.log('🌐 Initiating Comprehensive Ecosystem Connectivity Sync...');
 
   const simulation = new SandboxCloudSimulation();
   simulation.enforceCloudExecutionState();
@@ -38,9 +38,31 @@ async function main() {
     }
   }
 
+  // 2. Synchronize Online Presence & Leadership
+  console.log(' - Synchronizing online presence...');
+  const presence = await onlinePresence.syncPresence();
+
+  // 3. Resolve Cloud/Local State Conflicts
+  console.log(' - Resolving ecosystem conflicts...');
+  await cloudConvergence.resolveConflicts();
+
+  // 4. Synchronize Collaboration State
+  console.log(' - Synchronizing collaboration state...');
+  const collaborationState = await syncCollaborationState();
+
+  const finalState = {
+    ...collaborationState,
+    audit: auditState,
+    presence_summary: {
+      is_leader: presence?.is_leader,
+      node_id: presence?.telemetry?.node_id,
+      environment: presence?.environment
+    }
+  };
+
   const outputPath = 'autonomous_state.json';
-  fs.writeFileSync(outputPath, JSON.stringify(state, null, 2));
-  console.log(`Audit complete. State written to ${outputPath}`);
+  fs.writeFileSync(outputPath, JSON.stringify(finalState, null, 4));
+  console.log(`✅ Connectivity sync complete. State persisted to ${outputPath}`);
 }
 
 main().catch(console.error);
