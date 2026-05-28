@@ -33,8 +33,9 @@ async function ingestAdsKnowledge() {
     const targetUrl = url.toString();
 
     console.log(`Fetching ${targetUrl}...`);
+    let page;
     try {
-      const page = await browser.newPage();
+      page = await browser.newPage();
       await page.goto(targetUrl, { waitUntil: 'networkidle2', timeout: 60000 });
       const html = await page.content();
       const $ = cheerio.load(html);
@@ -65,10 +66,13 @@ async function ingestAdsKnowledge() {
           contentPreview: pageText.substring(0, 500) + '...'
       });
 
-      await page.close();
       await new Promise(resolve => setTimeout(resolve, 1000));
     } catch (err) {
       console.error(`Failed to fetch ${targetUrl}:`, err);
+    } finally {
+      if (page) {
+        await page.close().catch(e => console.error("Error closing page", e));
+      }
     }
   }
 
