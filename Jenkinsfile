@@ -72,6 +72,11 @@ pipeline {
                 sh 'npx tsx antigravity/workflows/proactive_scalability_workflow.ts'
             }
         }
+        stage('Run Autonomous Autonomous Neural Cache Bridge') {
+            steps {
+                sh 'npx tsx antigravity/workflows/autonomous_neural_cache_bridge_workflow.ts'
+            }
+        }
         stage('Creative Workflow') {
             parallel {
                 stage('Market Analysis') {

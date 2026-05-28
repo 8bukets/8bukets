@@ -27,8 +27,4 @@ describe('GitProviderService', () => {
     const provider = await service.getActiveProvider()
     expect(provider).toBe('unknown')
   })
-
-  } catch (err) {
-    console.error('[Evolution Autocorrect] Unhandled error:', err);
-  }
 })

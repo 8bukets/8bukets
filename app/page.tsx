@@ -4,7 +4,9 @@ import { Suspense } from "react";
 import { PageProps, resolve, getSystemInsights } from "@/antigravity/core";
 import { getAppStats } from "@/antigravity/services/stats";
 
-export default async function CommandCenter({ params, searchParams }: PageProps) {
+export default async function CommandCenter({
+  params, searchParams }: PageProps) {
+  'use cache'
   await Promise.all([resolve(params), resolve(searchParams)]);
 
   return (

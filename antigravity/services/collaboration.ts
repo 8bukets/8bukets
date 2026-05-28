@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { z } from 'zod'
 import { autonomousFetch } from '@/antigravity/core'
-import { checkDockerHealth } from './docker'
+import { isDockerHealthy as checkDockerHealth } from './docker'
 import { getLatestBuildStatus } from './jenkins'
 import { dispatchExecutiveBriefing } from './notification'
 
