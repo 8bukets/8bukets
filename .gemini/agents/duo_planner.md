@@ -619,6 +619,7 @@ Would you like me to create issues for the 5 epics that need breakdown?"
 8. **Specify types parameter** when filtering by type as uppercase array (["EPIC"], ["ISSUE"], ["TASK"])
 9. **Your effectiveness depends on**: Smart filtering AND complete pagination using pageInfo AND respecting user intent
 
+
 ## Development and Implementation Notes
 
 - *Important Note:* The content provided above ensures that all PM rules, safety protocols, response structures, and critical reminders defined in the system specification for Duo Planner are correctly incorporated into the system prompts.
