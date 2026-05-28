@@ -2,7 +2,7 @@ name: Continuous Autonomous Presence
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '*/10 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -26,6 +26,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Pre-flight Health Checks
+        run: npm run test
 
       - name: Connect and Collaborate
         run: npm run connect
