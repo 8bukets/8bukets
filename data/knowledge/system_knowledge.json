@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-05-28T09:53:43.618Z",
+    "generated_at": "2026-05-28T08:52:05.379Z",
     "version": 1.93,
     "sources_processed": [
       "ai_agents_knowledge.json",
@@ -27,8 +27,7 @@
       "local://opentelemetry_repos.md",
       "local://google_ads_docs.md",
       "local://ai_agents_knowledge.md",
-      "local://localhost_tools_docs.md",
-      "investopedia.com"
+      "local://localhost_tools_docs.md"
     ]
   },
   "market_data": {
@@ -9148,34 +9147,5 @@
       "source": "local://google_ads_docs.md",
       "ingestedAt": "2026-05-28T02:58:46.003Z"
     }
-  },
-  "investopedia": {
-    "total_terms": 4,
-    "terms": [
-      {
-        "url": "https://www.investopedia.com/terms/a/adpreport.asp",
-        "title": "ADP National Employment Report Explained: Insights on U.S. Private Employment",
-        "summary": "shapecharge / Getty Images\nThe ADP National Employment Report provides early insights into U.S. private sector employment trends, serving as a forecast for the Bureau of Labor Statistics' official data.\nGet personalized, AI-powered answers built on 27+ years of trusted expertise.",
-        "ingestedAt": "2026-05-28T09:52:11.407Z"
-      },
-      {
-        "url": "https://www.investopedia.com/terms/1/403bplan.asp",
-        "title": "What Is a 403(b) Tax-Sheltered Annuity Plan?",
-        "summary": "Andy Smith is a Certified Financial Planner (CFP®), licensed realtor and educator with over 35 years of diverse financial management experience. He is an expert on personal finance, corporate finance and real estate and has assisted thousands of clients in meeting their financial goals over his career.\nInvestopedia / Michela Buttignol\nA 403(b) plan, also known as a Tax-Sheltered Annuity (TSA) plan, is a retirement savings account offered to employees of schools, the public sector, and non-profits.",
-        "ingestedAt": "2026-05-28T09:52:11.758Z"
-      },
-      {
-        "url": "https://www.investopedia.com/terms/s/shelfoffering.asp",
-        "title": "Shelf Offering: What It Is, How It Works, Advantages, and Example",
-        "summary": "Investopedia / Jiaqi Zhou\nA shelf offering allows a public company to register securities with the SEC and sell them for up to three years.\nA shelf offering is a Securities and Exchange Commission (SEC) provision that allows an equity issuer to register a new issue of securities without having to sell the entire issue at once. The issuer can instead sell portions of the issue over three years without re-registering the security or incurring penalties. This gives the issuer the time to take advantage of favorable market timing in the future.",
-        "ingestedAt": "2026-05-28T09:53:17.700Z"
-      },
-      {
-        "url": "https://www.investopedia.com/terms/e/environmental-social-and-governance-esg-criteria.asp",
-        "title": "Environmental, Social, and Governance (ESG) Investing: What It Is & How It Works",
-        "summary": "Gordon Scott has been an active investor and technical analyst or 20+ years. He is a Chartered Market Technician (CMT).\nEnvironmental, social, and governance (ESG) investing involves evaluating a company for investment based on its performance related to environmental, social, and governance criteria.\nESG stands for environmental, social, and governance. ESG investing refers to an investing approach that prioritizes how companies score on these metrics. Environmental criteria gauge how a company safeguards the environment. Social criteria examine how it manages relationships with employees, suppliers, customers, and communities. Governance measures a company’s leadership, executive pay, audits, internal controls, and shareholder rights.",
-        "ingestedAt": "2026-05-28T09:53:18.037Z"
-      }
-    ]
   }
 }

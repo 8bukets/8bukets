@@ -684,21 +684,10 @@ export class Jules {
     console.log('🧠 [Jules] Observing new knowledge foundations...')
 
     const { observeKnowledge: scanUrl } = await import('./services/knowledge')
-    // Investopedia integration via ingestion script
-    try {
-      console.log('📈 [Jules] Executing specialized Investopedia ingestion...');
-      const { exec } = await import('child_process');
-      const { promisify } = await import('util');
-      const execAsync = promisify(exec);
-      await execAsync('npx tsx scripts/ingest_investopedia.ts');
-      this.recordTask('Knowledge Observed: Unified market intelligence synchronized from investopedia.com');
-    } catch (e: any) {
-      console.warn('⚠️ [Jules] Investopedia ingestion failed:', e.message);
-    }
-
     const urlsToObserve = [
       'https://software-online-review.com',
-      'https://markposition.wordpress.com'
+      'https://markposition.wordpress.com',
+      'https://www.investopedia.com'
     ]
 
     for (const url of urlsToObserve) {
