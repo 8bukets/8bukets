@@ -34,6 +34,19 @@ vi.mock('./git_provider', () => ({
   }
 }))
 
+vi.mock('./performance_monitoring', () => ({
+  getPerformanceMonitoringServiceData: vi.fn(() => Promise.resolve({
+    metrics: {
+      system: { loadavg: [0, 0, 0], totalmem: 100, freemem: 50 },
+      memory: { rss: 20 }
+    }
+  }))
+}))
+
+vi.mock('./jenkins', () => ({
+  checkJenkinsHealth: vi.fn(() => Promise.resolve({ status: 'optimal' }))
+}))
+
 describe('OnlinePresenceService', () => {
   beforeEach(() => {
     vi.clearAllMocks()
