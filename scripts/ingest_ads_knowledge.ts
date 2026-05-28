@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as cheerio from 'cheerio';
+import puppeteer from 'puppeteer';
 
 const URLS = [
     "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU",
@@ -31,16 +32,16 @@ async function scrapeGoogleAdsDocs() {
     const data: Record<string, PageData> = {};
     let mdContent = "# Google Ads & Ad Manager Documentation\n\n";
 
+    const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
+
     for (const url of URLS) {
         console.log(`Fetching Google Ads docs from ${url}...`);
         try {
-            const response = await fetch(url, { signal: AbortSignal.timeout(10000) });
-            if (!response.ok) {
-                console.error(`Error fetching ${url}: HTTP ${response.status}`);
-                continue;
-            }
+            const page = await browser.newPage();
+            await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
+            const html = await page.content();
+            await page.close();
 
-            const html = await response.text();
             const $ = cheerio.load(html);
 
             const mainContent = $('article').length ? $('article') :
@@ -121,13 +122,49 @@ async function scrapeGoogleAdsDocs() {
         }
     }
 
-    const jsonPath = "google_ads_docs.json";
+    await browser.close();
+
+    const jsonPath = "data/knowledge/google_ads_docs.json";
     fs.writeFileSync(jsonPath, JSON.stringify(data, null, 4), 'utf-8');
     console.log(`Saved Google Ads docs JSON to ${jsonPath}`);
 
-    const mdPath = "google_ads_docs.md";
+    const mdPath = "data/knowledge/google_ads_docs.md";
     fs.writeFileSync(mdPath, mdContent, 'utf-8');
     console.log(`Saved Google Ads docs Markdown to ${mdPath}`);
+
+    const systemKnowledgePath = "data/knowledge/system_knowledge.json";
+    if (fs.existsSync(systemKnowledgePath)) {
+        try {
+            const systemKnowledgeContent = fs.readFileSync(systemKnowledgePath, 'utf-8');
+            const systemKnowledge = JSON.parse(systemKnowledgeContent);
+
+            const newEntry = {
+                sections: [],
+                metadata: {
+                    source: "local://google_ads_docs.md",
+                    ingestedAt: new Date().toISOString()
+                }
+            };
+
+            // Populate sections from our parsed data
+            for (const key of Object.keys(data)) {
+                const pageData = data[key];
+                for (const section of pageData.sections) {
+                    newEntry.sections.push({
+                        header: section.heading,
+                        content: section.content.join('\n')
+                    });
+                }
+            }
+
+            systemKnowledge["Google Ads Strategic Documentation"] = newEntry;
+
+            fs.writeFileSync(systemKnowledgePath, JSON.stringify(systemKnowledge, null, 2), 'utf-8');
+            console.log(`Updated system knowledge in ${systemKnowledgePath}`);
+        } catch (error) {
+            console.error(`Error updating system knowledge:`, error);
+        }
+    }
 }
 
 scrapeGoogleAdsDocs().catch(console.error);
