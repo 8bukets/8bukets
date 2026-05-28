@@ -48,7 +48,8 @@ async function main() {
       'python3 litert_scraper.py',
       'python3 intelephense_scraper.py',
       'python3 ai_agents_knowledge_scraper.py',
-      'npx tsx scripts/ingest_markposition_knowledge.ts'
+      'npx tsx scripts/ingest_markposition_knowledge.ts',
+      'npx tsx scripts/automate_knowledge_integration.ts'
     ];
 
     for (const scraper of scrapers) {
