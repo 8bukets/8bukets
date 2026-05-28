@@ -33,8 +33,13 @@ jobs:
       - name: Pre-flight Health Checks
         run: npm run test
 
+      - name: Docker Health Check
+        run: docker info && docker ps
+
       - name: Connect and Collaborate
         run: npm run connect
+        env:
+          MACBOOK_CLOUD_SIMULATION: true
 
       - name: Ignite Continuous Autonomous Cycle
         run: npm run ignite

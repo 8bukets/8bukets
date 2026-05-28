@@ -32,6 +32,9 @@ jobs:
       - name: Pre-flight Health Checks
         run: npm run test
 
+      - name: Docker Health Check
+        run: docker info && docker ps
+
       - name: Connect and Collaborate
         run: npm run connect
         env:
