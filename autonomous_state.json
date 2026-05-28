@@ -5,12 +5,12 @@
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1779993847335,
+        "timestamp": 1780006477926,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
-        "branches": 2192,
-        "pendingTasks": 0,
+        "branches": 2203,
+        "pendingTasks": 18,
         "relationshipMap": {
             "stakeholderEngagement": {},
             "goalAlignment": {},
@@ -629,15 +629,15 @@
                 },
                 {
                     "type": "AI Agent",
-                    "name": "chief_ai_officer_agent",
+                    "name": "chief_ai_officer",
                     "status": "Active",
-                    "path": "agents/chief_ai_officer_agent.md"
+                    "path": "agents/chief_ai_officer.py"
                 },
                 {
                     "type": "AI Agent",
                     "name": "chief_ai_officer_agent",
                     "status": "Active",
-                    "path": "agents/chief_ai_officer_agent.py"
+                    "path": "agents/chief_ai_officer_agent.md"
                 },
                 {
                     "type": "AI Agent",
@@ -878,6 +878,12 @@
                     "name": "Chief AI Officer (CAIO) Role",
                     "status": "Ingested",
                     "source": "user_provided_research"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "iCloud: test_intelligence.md",
+                    "status": "Ingested",
+                    "source": "icloud://test_intelligence.md"
                 },
                 {
                     "type": "Knowledge",
@@ -1264,6 +1270,12 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "origin/feat/autonomous-knowledge-refinement-16335548248808539628",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-knowledge-refinement-16335548248808539628"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "origin/feat/autonomous-multi-ci-workflow-creation-13184263401868233273",
                     "status": "Ready for Merge",
                     "result": "feat(singularity): enable full autonomous automatic workflow creation across CI providers"
@@ -1303,6 +1315,12 @@
                     "name": "origin/feat/boundary-integration-3444742037386565893",
                     "status": "Ready for Merge",
                     "result": "Merge branch 'main' into feat/boundary-integration-3444742037386565893 (Resolved conflicts by favoring PR changes)"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/caio-agent-creation-11276937148352669506",
+                    "status": "Ready for Merge",
+                    "result": "feat: create Chief AI Officer agent with standard framework compliance\\n\\n- Renames incorrectly suffixed `chief_ai_officer_agent.*` files to standard `chief_ai_officer.*` naming convention.\\n- Provides a clean, functional implementation of the CAIO agent within `agents/`.\\n- Ensures framework properly registers the CAIO agent logic.\\n- Expands agent documentation regarding ethics, governance, and log auditing."
                 },
                 {
                     "type": "Branch Result",
@@ -1582,9 +1600,21 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "origin/feat/docker-collaboration-sync-16687311699313336221",
+                    "status": "Ready for Merge",
+                    "result": "feat: connect with docker and synchronize collaboration state"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "origin/feat/docker-collaboration-sync-231662997979975664",
                     "status": "Ready for Merge",
                     "result": "feat: enable adaptive docker connectivity and collaboration sync"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/docker-collaboration-sync-6891326808988151099",
+                    "status": "Ready for Merge",
+                    "result": "feat: connect with docker and synchronize collaboration state"
                 },
                 {
                     "type": "Branch Result",
@@ -1861,6 +1891,12 @@
                     "name": "origin/feat/icloud-sync-daily-work-3416451490970137960",
                     "status": "Ready for Merge",
                     "result": "feat(icloud): implement autonomous project sync to iCloud folder"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/icloud-sync-system-evolution-8651898857989200077",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/icloud-sync-system-evolution-8651898857989200077"
                 },
                 {
                     "type": "Branch Result",
@@ -2392,6 +2428,12 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "origin/feat/unified-collaboration-intelligence-10789658545646187286",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement Phase 12 Unified Collaboration and Intelligence"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "origin/feat/unified-collaboration-intelligence-merge-v12-4808907432766111944",
                     "status": "Ready for Merge",
                     "result": "feat: implement unified collaboration and intelligence roadmap"
@@ -2464,7 +2506,7 @@
             "origin": "development",
             "health": "degraded",
             "volatilityTags": 0,
-            "timestamp": "2026-05-28T18:44:14.457Z"
+            "timestamp": "2026-05-28T22:15:15.971Z"
         },
         "relayState": [
             {
@@ -2474,7 +2516,7 @@
                     "Command Center",
                     "Store"
                 ],
-                "lastActivity": "2026-05-28T18:44:14.479Z",
+                "lastActivity": "2026-05-28T22:15:15.971Z",
                 "intensity": 0.85
             },
             {
@@ -2489,5 +2531,5 @@
             }
         ]
     },
-    "last_sync": "2026-05-28T18:44:14.484Z"
+    "last_sync": "2026-05-28T22:15:15.978Z"
 }

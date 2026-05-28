@@ -60,3 +60,7 @@ export async function isDockerHealthy(): Promise<boolean> {
     return false
   }
 }
+
+// Phase 12: Standardized Aliases for high-fidelity simulation and tests
+export const getDockerFleetStatus = getDockerStatus
+export const checkDockerHealth = isDockerHealthy
