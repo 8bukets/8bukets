@@ -5,6 +5,7 @@ import { autonomousFetch } from '@/antigravity/core'
 import { isDockerHealthy as checkDockerHealth } from './docker'
 import { getLatestBuildStatus } from './jenkins'
 import { dispatchExecutiveBriefing } from './notification'
+import { getStakeholderDirectives } from './communication'
 
 
 /**
@@ -89,6 +90,7 @@ export async function exportEcosystemMetadata() {
  */
 export async function broadcastToStakeholders(state: any) {
   const metadata = await getMissionMetadata()
+  const directives = await getStakeholderDirectives()
   console.log('📢 [Collaboration] Broadcasting system posture to stakeholders...')
 
   const summary = `
@@ -97,6 +99,9 @@ Timestamp: ${state.last_sync}
 Mission: ${metadata.missionStatement}
 Docker Status: ${state.docker.status} (${state.docker.containerCount} containers)
 Intelligence: ${state.intelligence.branches} branches synchronized, ${state.intelligence.pendingTasks} tasks pending.
+
+Active Directives:
+${directives.filter(d => d.status === 'Active').map(d => ` - [${d.priority}] ${d.intent}`).join('\n')}
 
 Stakeholders notified:
 ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
@@ -128,7 +133,10 @@ ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
     .map((r: any) => `- RESULT: ${r.name} -> ${r.result}`)
     .join('\n')
 
-  const detailedBriefing = `--- STRATEGIC SYNERGY ---\n${synergySummary}\n\n--- REQUIRED COORDINATION ---\n${recommendations}\n\n--- KEY RESULTS ---\n${branchSummary}`
+  const directiveSummary = directives.filter(d => d.status === 'Active')
+    .map(d => `- DIRECTIVE [${d.priority}]: ${d.intent}`).join('\n')
+
+  const detailedBriefing = `--- ACTIVE DIRECTIVES ---\n${directiveSummary}\n\n--- STRATEGIC SYNERGY ---\n${synergySummary}\n\n--- REQUIRED COORDINATION ---\n${recommendations}\n\n--- KEY RESULTS ---\n${branchSummary}`
 
   await dispatchExecutiveBriefing(
     `${synergyAlert} Posture: ${state.docker.status}. Analyzed ${state.intelligence.branches} branches.`,
