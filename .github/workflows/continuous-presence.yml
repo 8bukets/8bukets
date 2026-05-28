@@ -2,7 +2,7 @@ name: Continuous Autonomous Cloud Presence
 
 on:
   schedule:
-    - cron: '*/5 * * * *' # Every 5 minutes for rapid persistent connection
+    - cron: '*/4 * * * *' # Every 5 minutes for rapid persistent connection
   workflow_dispatch: # Allows manual trigger
 
 permissions:
@@ -48,6 +48,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN || secrets.GITHUB_ACTIONS_TOKEN }}
           MACBOOK_CLOUD_SIMULATION: true
         run: npm run connect
+
+      - name: Verify Cloud Simulation Enforcement
+        run: |
+          echo "Verifying cloud telemetry in autonomous_state.json..."
+          grep -q '"simulationActive": true' autonomous_state.json || (echo "Cloud simulation failed" && false)
+          echo "Cloud simulation verified active."
 
       - name: Execute Autonomous Engine (Cloud Mode)
         run: python3 autonomous_engine.py --engine cloud --skip-scraper

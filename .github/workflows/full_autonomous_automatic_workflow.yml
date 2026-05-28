@@ -32,7 +32,7 @@ name: Full Autonomous Automatic Workflow
 
 on:
   schedule:
-    - cron: '0 * * * *' # Run every hour
+    - cron: '*/30 * * * *' # Run every hour
   workflow_dispatch:
 
 permissions:
@@ -71,6 +71,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MACBOOK_CLOUD_SIMULATION: true
         run: npm run connect
+
+      - name: Verify Cloud Simulation Enforcement
+        run: |
+          echo "Verifying cloud telemetry in autonomous_state.json..."
+          grep -q '"simulationActive": true' autonomous_state.json || (echo "Cloud simulation failed" && false)
+          echo "Cloud simulation verified active."
 
       - name: Execute Autonomous Creation Cycle
         env:
