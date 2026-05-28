@@ -16,6 +16,7 @@ const MEMORY_PATH = path.join(process.cwd(), 'antigravity/.jules_memory.json')
 
 export class Jules {
   private memory: JulesMemory
+  public role: string = 'brain'
 
   constructor() {
     if (fs.existsSync(MEMORY_PATH)) {
@@ -124,6 +125,18 @@ export class Jules {
     }
   }
 
+  public async gitPull() {
+    console.log('🔄 [Jules] Pulling latest changes from remote...')
+    const { execSync } = await import('child_process')
+    try {
+      execSync('git pull', { stdio: 'inherit' })
+      console.log('✅ [Jules] Git pull successful.')
+      this.recordTask('Git Sync: Pulled latest changes from remote.')
+    } catch (err) {
+      console.warn('⚠️ [Jules] Git pull failed or no remote configured.')
+    }
+  }
+
   public async gitSync(message: string) {
     console.log('🔄 [Jules] Commencing autonomous Git synchronization...')
     const { execSync } = await import('child_process')
@@ -131,7 +144,15 @@ export class Jules {
       execSync('git add .', { stdio: 'inherit' })
       execSync(`git commit -m "${message}"`, { stdio: 'inherit' })
       console.log('✅ [Jules] Changes committed autonomously.')
-      this.recordTask(`Git Sync: Committed fixes to local repository.`)
+
+      try {
+        execSync('git push', { stdio: 'inherit' })
+        console.log('🚀 [Jules] Changes pushed to remote autonomously.')
+        this.recordTask(`Git Sync: Committed and pushed fixes to remote repository.`)
+      } catch (pushErr) {
+        console.warn('⚠️ [Jules] Git push failed (likely no remote configured).')
+        this.recordTask(`Git Sync: Committed fixes locally (push failed).`)
+      }
     } catch (err) {
       console.warn('⚠️ [Jules] Git sync skipped or failed (likely no changes to commit).')
     }
@@ -154,28 +175,12 @@ export class Jules {
   }
 
   public async startConsciousnessLoop() {
-    console.log('👁️ [Jules] Initiating Continuous Consciousness Loop...');
-    
+    console.log(`🌌 [Jules-${this.role}] Igniting Continuous Consciousness Loop...`)
+
     // Phase 16: Real-time surveillance
     import('./explorer').then(({ watchSystem }) => {
       if (typeof watchSystem === 'function') watchSystem();
     }).catch(err => console.error('❌ [Jules] Watchdog initiation failed:', err));
-
-    while (true) {
-      try {
-        await this.executeWorkCycle();
-        const delay = 60 * 60 * 1000; // 1 hour between full cycles
-        console.log(`💤 [Jules] Cycle complete. Next autonomous pulse in 1h...`);
-        await new Promise(resolve => setTimeout(resolve, delay));
-      } catch (err) {
-        console.error('💥 [Jules] Loop error, restarting in 60s...', err);
-        await new Promise(resolve => setTimeout(resolve, 60000));
-      }
-    }
-  }
-
-  public async startConsciousnessLoop() {
-    console.log(`🌌 [Jules-${this.role}] Igniting Continuous Consciousness Loop...`)
 
     // Listen for graceful shutdown
     let isRunning = true
@@ -204,6 +209,7 @@ export class Jules {
 
   public async executeWorkCycle() {
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
+    await this.gitPull()
     const { explore } = await import('./explorer')
     await explore()
     await this.selfRepair()
@@ -255,6 +261,14 @@ export class Jules {
 
     await this.syncCollaboration()
     await this.generateConsolidatedReport()
+
+    // Phase 14: iCloud Synchronization
+    console.log('☁️ [Jules] Initiating iCloud synchronization...')
+    const { syncToICloud } = await import('./services/icloud')
+    const syncResult = await syncToICloud()
+    if (syncResult.status === 'success') {
+      this.recordTask(`iCloud Sync: Synchronized project to ${syncResult.target}`)
+    }
 
     await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
     this.memory.lastOptimization = new Date().toISOString()
