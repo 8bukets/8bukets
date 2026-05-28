@@ -134,6 +134,9 @@ export class CloudConvergenceService {
   public async resolveConflicts() {
     logAutonomousAction('⚖️ [CloudConvergence] Auditing for state conflicts...', 'info')
 
+    const { workOrderService } = await import('./work_order')
+    await workOrderService.recoverStalledOrders()
+
     try {
       const mongoClient = await getMongoClient()
       const db = mongoClient.db()
