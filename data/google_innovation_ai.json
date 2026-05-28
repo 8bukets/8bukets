@@ -1,5 +1,45 @@
 [
     {
+        "title": "LinkedIn",
+        "url": "https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/innovation-and-ai/models-and-research/&title=Models%20%26%20research",
+        "snippet": ""
+    },
+    {
+        "title": "Google DeepMind",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/",
+        "snippet": ""
+    },
+    {
+        "title": "Google Research",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/",
+        "snippet": ""
+    },
+    {
+        "title": "Google Labs",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/",
+        "snippet": ""
+    },
+    {
+        "title": "Gemini models",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/",
+        "snippet": ""
+    },
+    {
+        "title": "Quantum computing",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/",
+        "snippet": ""
+    },
+    {
+        "title": "Introducing Gemini Omni",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/",
+        "snippet": ""
+    },
+    {
+        "title": "Gemini 3.5: frontier intelligence with action",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
+        "snippet": ""
+    },
+    {
         "title": "Gemini Embedding 2 is now generally available.",
         "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2-generally-available/",
         "snippet": ""
@@ -7,6 +47,156 @@
     {
         "title": "Deep Research Max: a step change for autonomous research agents",
         "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/",
+        "snippet": ""
+    },
+    {
+        "title": "Running Guide agent: A step towards running unbounded",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/running-guide-agent/",
+        "snippet": ""
+    },
+    {
+        "title": "Simulate real-world places with Project Genie and Street View",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/",
+        "snippet": ""
+    },
+    {
+        "title": "A new experiment brings better group meetings to Google Beam",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/google-beam-group-meetings/",
+        "snippet": ""
+    },
+    {
+        "title": "Our new study explores how AI can reduce the climate impact of air travel.",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/contrail-avoidance-research/",
+        "snippet": ""
+    },
+    {
+        "title": "We’re introducing new ways to design in real time with Stitch.",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-updates/",
+        "snippet": ""
+    },
+    {
+        "title": "New agents, mobile apps and Gemini Omni for Google Flow and Google Flow Music",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-updates/",
+        "snippet": ""
+    },
+    {
+        "title": "Pomelli adds new ways to build brand content and design websites.",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/pomelli-agentic-capabilities/",
+        "snippet": ""
+    },
+    {
+        "title": "Google Flow Music and Believe bring next-gen tools to artists",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/believe-flow-music-partnership/",
+        "snippet": ""
+    },
+    {
+        "title": "Our new initiative to apply quantum science and AI to the life sciences",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/repliqa-quantum-computing-life-sciences/",
+        "snippet": ""
+    },
+    {
+        "title": "Answering your trending questions on World Quantum Day",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/world-quantum-day-2026/",
+        "snippet": ""
+    },
+    {
+        "title": "LinkedIn",
+        "url": "https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/innovation-and-ai/&title=Innovation%20%26%20AI",
+        "snippet": ""
+    },
+    {
+        "title": "See all",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/",
+        "snippet": ""
+    },
+    {
+        "title": "Developer tools",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/",
+        "snippet": ""
+    },
+    {
+        "title": "Gemini app",
+        "url": "https://blog.google/innovation-and-ai/products/gemini-app/",
+        "snippet": ""
+    },
+    {
+        "title": "NotebookLM",
+        "url": "https://blog.google/innovation-and-ai/products/notebooklm/",
+        "snippet": ""
+    },
+    {
+        "title": "See all",
+        "url": "https://blog.google/innovation-and-ai/products/",
+        "snippet": ""
+    },
+    {
+        "title": "Global network",
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/",
+        "snippet": ""
+    },
+    {
+        "title": "Google Cloud",
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/",
+        "snippet": ""
+    },
+    {
+        "title": "See all",
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/",
+        "snippet": ""
+    },
+    {
+        "title": "Safety & Security",
+        "url": "https://blog.google/innovation-and-ai/technology/safety-security/",
+        "snippet": ""
+    },
+    {
+        "title": "Health",
+        "url": "https://blog.google/innovation-and-ai/technology/health/",
+        "snippet": ""
+    },
+    {
+        "title": "See all",
+        "url": "https://blog.google/innovation-and-ai/technology/",
+        "snippet": ""
+    },
+    {
+        "title": "Google Research",
+        "url": "https://blog.google/innovation-and-ai/technology/research/",
+        "snippet": ""
+    },
+    {
+        "title": "I/O 2026: Welcome to the agentic Gemini era",
+        "url": "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
+        "snippet": ""
+    },
+    {
+        "title": "Dive deeper into I/O 2026 with NotebookLM.",
+        "url": "https://blog.google/innovation-and-ai/products/notebooklm/notebooklm-google-io-2026/",
+        "snippet": ""
+    },
+    {
+        "title": "Introducing Managed Agents in the Gemini API",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/",
+        "snippet": ""
+    },
+    {
+        "title": "The Gemini app becomes more agentic, delivering proactive, 24/7 help",
+        "url": "https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/",
+        "snippet": ""
+    },
+    {
+        "title": "We’re announcing the first Texas Energy Impact Fund recipients.",
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/texas-energy-impact-fund/",
+        "snippet": ""
+    },
+    {
+        "title": "We’re announcing new community investments in Missouri.",
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/missouri-programs/",
+        "snippet": ""
+    },
+    {
+        "title": "Making it easier to understand how content was created and edited",
+        "url": "https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/",
         "snippet": ""
     },
     {
@@ -25,21 +215,6 @@
         "snippet": ""
     },
     {
-        "title": "View more from Google DeepMind",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/",
-        "snippet": ""
-    },
-    {
-        "title": "Our new study explores how AI can reduce the climate impact of air travel.",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/contrail-avoidance-research/",
-        "snippet": ""
-    },
-    {
-        "title": "Google Flow Music and Believe bring next-gen tools to artists",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/believe-flow-music-partnership/",
-        "snippet": ""
-    },
-    {
         "title": "3 creative tips from our Flow Sessions artists",
         "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-sessions-artists-lessons/",
         "snippet": ""
@@ -52,26 +227,6 @@
     {
         "title": "Google brings Pomelli in English to small businesses in Europe.",
         "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/pomelli-in-europe/",
-        "snippet": ""
-    },
-    {
-        "title": "View more from Google Labs",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/",
-        "snippet": ""
-    },
-    {
-        "title": "Our new initiative to apply quantum science and AI to the life sciences",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/repliqa-quantum-computing-life-sciences/",
-        "snippet": ""
-    },
-    {
-        "title": "Answering your trending questions on World Quantum Day",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/world-quantum-day-2026/",
-        "snippet": ""
-    },
-    {
-        "title": "View more from Quantum computing",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/",
         "snippet": ""
     },
     {
@@ -120,56 +275,6 @@
         "snippet": ""
     },
     {
-        "title": "Introducing Gemini Omni",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/",
-        "snippet": ""
-    },
-    {
-        "title": "Gemini 3.5: frontier intelligence with action",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
-        "snippet": ""
-    },
-    {
-        "title": "Simulate real-world places with Project Genie and Street View",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/",
-        "snippet": ""
-    },
-    {
-        "title": "We’re introducing new ways to design in real time with Stitch.",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-updates/",
-        "snippet": ""
-    },
-    {
-        "title": "New agents, mobile apps and Gemini Omni for Google Flow and Google Flow Music",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-updates/",
-        "snippet": ""
-    },
-    {
-        "title": "Pomelli adds new ways to build brand content and design websites.",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/pomelli-agentic-capabilities/",
-        "snippet": ""
-    },
-    {
-        "title": "Making it easier to understand how content was created and edited",
-        "url": "https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/",
-        "snippet": ""
-    },
-    {
-        "title": "I/O 2026: Welcome to the agentic Gemini era",
-        "url": "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
-        "snippet": ""
-    },
-    {
-        "title": "Introducing Managed Agents in the Gemini API",
-        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/",
-        "snippet": ""
-    },
-    {
-        "title": "The Gemini app becomes more agentic, delivering proactive, 24/7 help",
-        "url": "https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/",
-        "snippet": ""
-    },
-    {
         "title": "Bring any idea to life: Google AI Studio at I/O 2026",
         "url": "https://blog.google/innovation-and-ai/technology/developers-tools/google-ai-studio-io-2026/",
         "snippet": ""
@@ -177,26 +282,6 @@
     {
         "title": "Blackstone will create a new TPU cloud in a joint venture with Google.",
         "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/blackstone-tpu-cloud/",
-        "snippet": ""
-    },
-    {
-        "title": "Running Guide agent: A step towards running unbounded",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/running-guide-agent/",
-        "snippet": ""
-    },
-    {
-        "title": "A new experiment brings better group meetings to Google Beam",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/google-beam-group-meetings/",
-        "snippet": ""
-    },
-    {
-        "title": "We’re announcing new community investments in Missouri.",
-        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/missouri-programs/",
-        "snippet": ""
-    },
-    {
-        "title": "We’re announcing the first Texas Energy Impact Fund recipients.",
-        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/texas-energy-impact-fund/",
         "snippet": ""
     }
 ]
