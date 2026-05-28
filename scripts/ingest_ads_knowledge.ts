@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import * as cheerio from 'cheerio';
+import puppeteer from 'puppeteer';
 
 async function ingestAdsKnowledge() {
   const baseUrls = [
@@ -21,6 +22,11 @@ async function ingestAdsKnowledge() {
   let mdContentTotal = '# Google Ads and Ad Manager Documentation\n\n';
   const jsonResults: any[] = [];
 
+  const browser = await puppeteer.launch({
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
+  });
+
   for (let rawUrl of baseUrls) {
     const url = new URL(rawUrl);
     url.searchParams.set('hl', 'en');
@@ -28,8 +34,9 @@ async function ingestAdsKnowledge() {
 
     console.log(`Fetching ${targetUrl}...`);
     try {
-      const response = await fetch(targetUrl);
-      const html = await response.text();
+      const page = await browser.newPage();
+      await page.goto(targetUrl, { waitUntil: 'networkidle2', timeout: 60000 });
+      const html = await page.content();
       const $ = cheerio.load(html);
 
       const title = $('title').text().trim() || 'No Title';
@@ -58,11 +65,14 @@ async function ingestAdsKnowledge() {
           contentPreview: pageText.substring(0, 500) + '...'
       });
 
+      await page.close();
       await new Promise(resolve => setTimeout(resolve, 1000));
     } catch (err) {
       console.error(`Failed to fetch ${targetUrl}:`, err);
     }
   }
+
+  await browser.close();
 
   // Write MD
   const mdPath = path.join(process.cwd(), 'data', 'knowledge', 'google_ads_docs.md');
@@ -86,7 +96,6 @@ async function ingestAdsKnowledge() {
   if (fs.existsSync(jsonPath)) {
       sysKnowledge = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
   }
-
   sysKnowledge['google_ads'] = jsonResults;
 
   // Use 4-space indentation for system_knowledge.json
