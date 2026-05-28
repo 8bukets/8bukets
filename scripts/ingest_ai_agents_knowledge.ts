@@ -22,11 +22,15 @@ async function scrapeAiAgentsKnowledge() {
         const data: Record<string, Section> = {};
         const orderedScrapedKeys: string[] = [];
 
+        // Stop processing when these are encountered
         const stopMarkers = [
             "Additional resources", "Take the next step", "Continue browsing",
-            "Why Google", "Products and pricing", "Solutions", "Resources", "Engage"
+            "Why Google", "Products and pricing", "Solutions", "Resources", "Engage",
+            "Accelerate your digital transformation", "Key benefits", "Industry Solutions",
+            "Featured Products"
         ];
 
+        // Skip UI and navigation sections if encountered early
         const skipTitles = [
             "Stay informed", "Topics", "Page Contents",
             "arrow_forward", "Key benefits", "Reports and insights",
@@ -41,10 +45,13 @@ async function scrapeAiAgentsKnowledge() {
             "Pricing overview and tools", "Product-specific Pricing",
             "Learn & build", "Connect", "Consulting and Partners",
             "Overview", "Products", "Pricing", "Docs", "Support", "Console",
-            "Contact us", "Start free", "Sign in", "Language"
+            "Contact us", "Start free", "Sign in", "Language",
+            "Next steps", "Frequently asked questions", "Filter by:", "Product type", "Campaign type"
         ];
 
-        const main = $('main, article, [role="main"]').first();
+        // Google Cloud content is usually inside a main element or specific class
+        // Specifically for this page, let's target the article content
+        const main = $('article, main, [role="main"], .c-content, #main-content').first();
         const scope = main.length ? main : $('body');
 
         let currentSectionId = '';
@@ -52,52 +59,67 @@ async function scrapeAiAgentsKnowledge() {
         let currentContent: string[] = [];
         let stopScraping = false;
 
+        // Helper to finalize a section
         const finalizeSection = () => {
             if (currentSectionId && currentContent.length > 0) {
+                // Filter out noise from content lines
                 const filteredContent = currentContent.filter(line => {
                     const trimmed = line.trim();
                     if (!trimmed) return false;
-                    if (skipTitles.some(skip => trimmed === skip || (trimmed.length < 50 && trimmed.includes(skip)))) return false;
+                    if (skipTitles.some(skip => trimmed === skip || trimmed.includes(skip))) return false;
                     if (stopMarkers.some(stop => trimmed === stop || trimmed.includes(stop))) return false;
+                    if (trimmed.includes('arrow_forward')) return false;
                     return true;
                 });
 
                 if (filteredContent.length > 0) {
-                    // Deduplicate within the section content (e.g. if table data is repeated as text)
-                    const uniqueLines: string[] = [];
+                    // Deduplicate content lines
+                    const uniqueContent: string[] = [];
                     const seenLines = new Set<string>();
                     for (const line of filteredContent) {
-                        const normalized = line.trim().toLowerCase();
-                        if (!seenLines.has(normalized)) {
-                            uniqueLines.push(line);
-                            seenLines.add(normalized);
+                        const trimmed = line.trim();
+                        if (!seenLines.has(trimmed)) {
+                            uniqueContent.push(line);
+                            seenLines.add(trimmed);
                         }
                     }
 
-                    data[currentSectionId] = {
-                        title: currentSectionTitle,
-                        content: uniqueLines.join('\n\n')
-                    };
-                    if (!orderedScrapedKeys.includes(currentSectionId)) {
-                        orderedScrapedKeys.push(currentSectionId);
+                    if (uniqueContent.length > 0) {
+                        data[currentSectionId] = {
+                            title: currentSectionTitle,
+                            content: uniqueContent.join('\n\n')
+                        };
+                        if (!orderedScrapedKeys.includes(currentSectionId)) {
+                            orderedScrapedKeys.push(currentSectionId);
+                        }
                     }
                 }
             }
         };
 
+        // Walk through all elements in the scope
+        // Filter out elements that are clearly navigation or sidebars
         scope.find('h1, h2, h3, h4, h5, h6, p, ul, ol, table, pre').each((_, el) => {
             if (stopScraping) return;
 
             const $el = $(el);
+
+            // Check if element is hidden or part of navigation
+            if ($el.closest('nav, footer, .nav, .sidebar, .menu').length > 0) {
+                return;
+            }
+
             const tagName = el.name.toLowerCase();
 
             if (['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(tagName)) {
                 const title = $el.text().trim();
+
                 if (!title) return;
 
                 if (stopMarkers.some(stop => title === stop || title.includes(stop))) {
                     finalizeSection();
                     stopScraping = true;
+                    console.log(`Stopping scraping at: ${title}`);
                     return;
                 }
 
@@ -111,27 +133,23 @@ async function scrapeAiAgentsKnowledge() {
                 }
 
                 currentSectionTitle = title;
-                currentSectionId = $el.attr('id') || title.toLowerCase().replace(/\s+/g, '-').replace(/[?,]/g, '');
+                currentSectionId = $el.attr('id') || title.toLowerCase().replace(/\s+/g, '-').replace(/[?,!:]/g, '');
                 currentContent = [];
-            } else if (currentSectionId) {
+            } else if (currentSectionId && currentSectionTitle) {
+                // If we are already in a section, collect content
                 if (tagName === 'p') {
-                    const text = $el.text().replace(/\s+/g, ' ').trim();
-                    if (text && text.length > 1) currentContent.push(text);
+                    const text = $el.text().trim();
+                    if (text) currentContent.push(text);
                 } else if (tagName === 'ul' || tagName === 'ol') {
                     const items: string[] = [];
                     $el.find('> li').each((_, li) => {
                         const $li = $(li);
-                        // Ensure spaces between elements within the li to prevent word concatenation
-                        let liText = $li.contents().map((_, node) => {
-                            const $node = $(node);
-                            return node.type === 'text' ? $node.text() : ` ${$node.text()} `;
-                        }).get().join('').replace(/\s+/g, ' ').trim();
-
-                        if (liText) {
-                            // Specifically fix known concatenations if they still occur or for better formatting
-                            liText = liText.replace(/([a-z])([A-Z])/g, '$1 $2'); // Basic camelCase split for likely joined words
-                            items.push(`- ${liText}`);
-                        }
+                        // Add spaces around all child elements to prevent concatenation
+                        $li.find('*').each((_, child) => {
+                            $(child).prepend(' ').append(' ');
+                        });
+                        const finalLiText = $li.text().replace(/\s+/g, ' ').trim();
+                        if (finalLiText) items.push(`- ${finalLiText}`);
                     });
                     if (items.length > 0) currentContent.push(items.join('\n'));
                 } else if (tagName === 'table') {
@@ -163,24 +181,63 @@ async function scrapeAiAgentsKnowledge() {
 
         finalizeSection();
 
-        const targetDir = "data/knowledge";
-        if (!fs.existsSync(targetDir)) {
-            fs.mkdirSync(targetDir, { recursive: true });
-        }
-        const jsonPath = path.join(targetDir, "ai_agents_knowledge.json");
-        fs.writeFileSync(jsonPath, JSON.stringify(data, null, 2), 'utf8');
+        // Save to JSON
+        const jsonPath = "ai_agents_knowledge.json";
+        const manualKeys = ["compile", "jules-tools", "knowledge-merge", "gemini-cli-remote-subagents", "gemini-cli-subagents", "docker-mcp-catalog", "prepare-best-value-of-knowledge-integration"];
+        let finalData: Record<string, Section> = {};
 
+        if (fs.existsSync(jsonPath)) {
+            try {
+                const oldData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+                for (const key of manualKeys) {
+                    if (oldData[key]) {
+                        finalData[key] = oldData[key];
+                    }
+                }
+            } catch (e) {
+                console.warn("Failed to parse old JSON, starting fresh with manual keys.");
+            }
+        }
+
+        Object.assign(finalData, data);
+
+        fs.writeFileSync(jsonPath, JSON.stringify(finalData, null, 4), 'utf8');
+        console.log(`Saved AI Agent knowledge to ${jsonPath} (Sections: ${orderedScrapedKeys.length})`);
+
+        // Also sync to data/ai_agents_knowledge.json (where KnowledgeAgent primarily looks)
+        const dataPath = path.join("data", jsonPath);
+        fs.writeFileSync(dataPath, JSON.stringify(finalData, null, 4), 'utf8');
+        console.log(`Synced AI Agent knowledge to ${dataPath}`);
+
+        // Also save to data/knowledge/ if it exists
+        const dataKnowledgePath = path.join("data/knowledge", jsonPath);
+        if (fs.existsSync("data/knowledge")) {
+            fs.writeFileSync(dataKnowledgePath, JSON.stringify(finalData, null, 4), 'utf8');
+            console.log(`Synced AI Agent knowledge to ${dataKnowledgePath}`);
+        }
+
+        // Save to Markdown
         const mdPath = "ai_agents_knowledge.md";
         let mdContent = `# What are AI Agents?\n\nScraped from [${URL}](${URL})\n\n`;
 
         for (const key of orderedScrapedKeys) {
-            if (data[key]) {
-                mdContent += `## ${data[key].title}\n\n${data[key].content}\n\n`;
+            if (finalData[key]) {
+                mdContent += `## ${finalData[key].title}\n\n${finalData[key].content}\n\n`;
             }
         }
 
+        mdContent += "\nAll the best - https://cloud.google.com/discover/what-are-ai-agents\n";
+
+        mdContent += "---\n\n# Manual Knowledge Additions\n\n";
+        for (const key of manualKeys) {
+            if (finalData[key] && !orderedScrapedKeys.includes(key)) {
+                mdContent += `## ${finalData[key].title}\n\n${finalData[key].content}\n\n`;
+            }
+        }
+
+
         fs.writeFileSync(mdPath, mdContent, 'utf8');
-        console.log(`Updated knowledge files successfully.`);
+        console.log(`Saved AI Agent knowledge to ${mdPath}`);
 
         return true;
     } catch (error) {

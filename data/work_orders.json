@@ -1,6 +1,6 @@
 [
     {
-        "id": "wo_dgrb5h5z4",
+        "id": "wo_n6auy4yfr",
         "type": "BOOTSTRAP_SERVICE",
         "goal": "Bootstrap Test Autonomous Service",
         "payload": {
@@ -9,136 +9,61 @@
             "complexity": "Low"
         },
         "status": "completed",
-        "created_at": "2026-05-26T14:07:23.935Z",
-        "completed_at": "2026-05-26T14:07:23.937Z",
+        "created_at": "2026-05-28T15:37:20.936Z",
+        "completed_at": "2026-05-28T15:37:20.942Z",
         "result": {
             "status": "success"
         }
     },
     {
-        "id": "wo_7cbq40g56",
+        "id": "wo_37vt2svna",
         "type": "SMOKE_TEST",
         "goal": "Verify Test Autonomous Service integrity",
         "payload": {
             "serviceName": "test_autonomous"
         },
         "status": "completed",
-        "created_at": "2026-05-26T14:07:23.935Z",
+        "created_at": "2026-05-28T15:37:20.938Z",
         "dependsOn": [
-            "wo_dgrb5h5z4"
+            "wo_n6auy4yfr"
         ],
-        "completed_at": "2026-05-26T14:07:23.938Z",
+        "completed_at": "2026-05-28T15:37:20.943Z",
         "result": {
             "status": "passed"
         }
     },
     {
-        "id": "wo_i1m2jiehl",
+        "id": "wo_hm8og7iic",
         "type": "DEPLOYMENT",
         "goal": "Deploy Test Autonomous Service to production",
         "payload": {
             "serviceName": "test_autonomous"
         },
         "status": "completed",
-        "created_at": "2026-05-26T14:07:23.936Z",
+        "created_at": "2026-05-28T15:37:20.938Z",
         "dependsOn": [
-            "wo_7cbq40g56"
+            "wo_37vt2svna"
         ],
-        "completed_at": "2026-05-26T14:07:23.939Z",
+        "completed_at": "2026-05-28T15:37:20.948Z",
         "result": {
             "status": "success"
         }
     },
     {
-        "id": "wo_2gt3xz0du",
+        "id": "wo_kr6xl45xx",
         "type": "SYSTEM_SYNC",
         "goal": "Synchronize Test Autonomous Service evolution to Git",
         "payload": {
             "feature": "Test Autonomous Service"
         },
         "status": "completed",
-        "created_at": "2026-05-26T14:07:23.936Z",
+        "created_at": "2026-05-28T15:37:20.939Z",
         "dependsOn": [
-            "wo_i1m2jiehl"
+            "wo_hm8og7iic"
         ],
-        "completed_at": "2026-05-26T14:07:23.940Z",
+        "completed_at": "2026-05-28T15:37:20.952Z",
         "result": {
             "status": "success"
         }
-    },
-    {
-        "id": "DEPLOY_V1.99",
-        "type": "DEPLOYMENT",
-        "description": "Execute rollout for version 1.99",
-        "status": "pending",
-        "created_at": "2026-05-26T16:46:26.166534"
-    },
-    {
-        "id": "SMOKE_TEST_V1.99",
-        "type": "SMOKE_TEST",
-        "description": "Verify system stability for version 1.99",
-        "status": "pending",
-        "created_at": "2026-05-26T16:46:26.166545"
-    },
-    {
-        "id": "CONTENT_DOMINANCE_OF_ADVERTISINGAMAZONCOM_IN_CURRENT_DATASET",
-        "type": "CONTENT_GENERATION",
-        "description": "Generate structured review/content for trend: Dominance of advertising.amazon.com in current dataset.",
-        "status": "pending",
-        "created_at": "2026-05-26T16:46:26.166553"
-    },
-    {
-        "id": "CONTENT_DOMINANCE_OF_GOOGLECOM_IN_CURRENT_DATASET",
-        "type": "CONTENT_GENERATION",
-        "description": "Generate structured review/content for trend: Dominance of google.com in current dataset.",
-        "status": "pending",
-        "created_at": "2026-05-26T16:46:26.166559"
-    },
-    {
-        "id": "CONTENT_DOMINANCE_OF_DEVELOPERSGOOGLECOM_IN_CURRENT_DATASET",
-        "type": "CONTENT_GENERATION",
-        "description": "Generate structured review/content for trend: Dominance of developers.google.com in current dataset.",
-        "status": "pending",
-        "created_at": "2026-05-26T16:46:26.166563"
-    },
-    {
-        "id": "INVESTIGATE_SUPPORT_GOOGLE_COM",
-        "type": "RESEARCH",
-        "description": "Deep investigation of connectivity issues for domain: support.google.com",
-        "status": "in_progress",
-        "created_at": "2026-05-26T16:46:26.166570",
-        "updated_at": "2026-05-26T16:46:26.167381"
-    },
-    {
-        "id": "INVESTIGATE_EN_WIKIPEDIA_ORG",
-        "type": "RESEARCH",
-        "description": "Deep investigation of connectivity issues for domain: en.wikipedia.org",
-        "status": "in_progress",
-        "created_at": "2026-05-26T16:46:26.166576",
-        "updated_at": "2026-05-26T16:46:26.167389"
-    },
-    {
-        "id": "INVESTIGATE_TRUSTARC_COM",
-        "type": "RESEARCH",
-        "description": "Deep investigation of connectivity issues for domain: trustarc.com",
-        "status": "in_progress",
-        "created_at": "2026-05-26T16:46:26.166581",
-        "updated_at": "2026-05-26T16:46:26.167392"
-    },
-    {
-        "id": "INVESTIGATE_ADS_GOOGLE_COM",
-        "type": "RESEARCH",
-        "description": "Deep investigation of connectivity issues for domain: ads.google.com",
-        "status": "in_progress",
-        "created_at": "2026-05-26T16:46:26.166585",
-        "updated_at": "2026-05-26T16:46:26.167394"
-    },
-    {
-        "id": "REFRESH_MARKET_INTELLIGENCE",
-        "type": "RESEARCH",
-        "description": "Perform deep scrape of market trends",
-        "status": "in_progress",
-        "created_at": "2026-05-26T16:46:26.166588",
-        "updated_at": "2026-05-26T16:46:26.167396"
     }
 ]

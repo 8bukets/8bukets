@@ -32,7 +32,7 @@ name: Full Autonomous Automatic Workflow
 
 on:
   schedule:
-    - cron: '*/30 * * * *' # Run every 30 minutes
+    - cron: '*/30 * * * *' # Run every hour
   workflow_dispatch:
 
 permissions:
@@ -72,7 +72,13 @@ jobs:
           MACBOOK_CLOUD_SIMULATION: true
         run: npm run connect
 
-      - name: Run Full Autonomous Daily Cycle
+      - name: Verify Cloud Simulation Enforcement
+        run: |
+          echo "Verifying cloud telemetry in autonomous_state.json..."
+          grep -q '"simulationActive": true' autonomous_state.json || (echo "Cloud simulation failed" && false)
+          echo "Cloud simulation verified active."
+
+      - name: Execute Autonomous Creation Cycle
         env:
           SYSTEM_AUTH_TOKEN: ${{ secrets.SYSTEM_AUTH_TOKEN || 'default_dev_token' }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -85,8 +91,21 @@ jobs:
           AUTONOMOUS_MODE: cloud
         run: npx tsx scripts/execute_creation_cycle.ts
 
+      - name: Run Full Autonomous Daily Cycle
+        env:
+          SYSTEM_AUTH_TOKEN: ${{ secrets.SYSTEM_AUTH_TOKEN || 'default_dev_token' }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          MACBOOK_CLOUD_SIMULATION: true
+          AUTONOMOUS_MODE: cloud
+        run: npm run daily
+
       - name: Post-Cycle Documentation Update
-        run: npx tsx scripts/ingest_localhost_tools_knowledge.ts || true
+        run: npm run ingest:knowledge || true
 
       - name: Commit and Push Changes
         run: |

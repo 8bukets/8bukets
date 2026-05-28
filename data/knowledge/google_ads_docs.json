@@ -3,8 +3,6 @@
         "title": "Understanding bidding basics",
         "url": "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU",
         "key_links": [
-            "https://support.google.com/google-ads/topic/10289453?hl=en&ref_topic=10289172",
-            "https://support.google.com/google-ads/answer/2459326",
             "https://support.google.com/google-ads/answer/6085471",
             "https://support.google.com/google-ads/bin/answer.py?answer=6308",
             "https://support.google.com/google-ads/answer/2472735",
@@ -15,8 +13,8 @@
             {
                 "heading": "Understanding bidding basics",
                 "content": [
-                    "- Help Center Topics",
-                    "- ...",
+                    "- Help Center TopicsStart advertisingCampaignsExplore featuresOptimize performanceAccount & billingFix issuesGoogle Partners",
+                    "- ...CampaignsDisplay campaignsSetup & management",
                     "- Bidding",
                     "- Understanding bidding basics"
                 ]
@@ -74,9 +72,9 @@
             }
         ]
     },
-    "https://business.google.com/uk/ad-tools/bidding/": {
+    "https://business.google.com/uk/ad-tools/bidding/?hl=en": {
         "title": "Deliver better results with automated bidding",
-        "url": "https://business.google.com/uk/ad-tools/bidding/",
+        "url": "https://business.google.com/uk/ad-tools/bidding/?hl=en",
         "key_links": [
             "https://ads.google.com/signup?subid=uk-en-awhp-g-aw-c-m-bid-hero-bgc!o2&hl=en&authuser=0",
             "https://business.google.com/uk/support/ads-expert/?hl=en",
@@ -167,21 +165,21 @@
             {
                 "heading": "Tools and campaigns that can help you meet your goals",
                 "content": [
-                    "- Conversions +14% Conversion Measurement Prioritise privacy while measuring which ads drive customers to make purchases online or in-store, sign contracts and more. Learn more"
+                    "- Conversions +14% Conversions +14% Conversion Measurement Prioritise privacy while measuring which ads drive customers to make purchases online or in-store, sign contracts and more. Learn more"
                 ]
             },
             {
                 "heading": "Conversion Measurement",
                 "content": [
                     "Prioritise privacy while measuring which ads drive customers to make purchases online or in-store, sign contracts and more.",
-                    "- 2024 Graduation Cards Luxury Travelers Entertainment News 1.2x 1.2x 1.1x 2 campaigns Insights Page Grow your business with insights and trends that are tailored to your business. Learn more"
+                    "- 2024 Graduation Cards Luxury Travelers Entertainment News 1.2x 1.2x 1.1x 2 campaigns 2024 Graduation Cards Luxury Travelers Entertainment News 1.2x 1.2x 1.1x 2 campaigns 2024 Graduation Cards Luxury Travelers Entertainment News 1.2x 1.2x 1.1x 2 campaigns 2024 Graduation Cards Luxury Travelers Entertainment News 1.2x 1.2x 1.1x 2 campaigns Insights Page Grow your business with insights and trends that are tailored to your business. Learn more"
                 ]
             },
             {
                 "heading": "Insights Page",
                 "content": [
                     "Grow your business with insights and trends that are tailored to your business.",
-                    "- Experiment Experiments Page The Experiments page in Google Ads can help you create, manage and optimise your experiments in one place. Learn more"
+                    "- Experiment Experiment Experiments Page The Experiments page in Google Ads can help you create, manage and optimise your experiments in one place. Learn more"
                 ]
             },
             {
@@ -195,18 +193,18 @@
                 "content": []
             },
             {
-                "heading": "What is bidding in Google Ads? add",
+                "heading": "What is bidding in Google Ads? add remove",
                 "content": []
             },
             {
-                "heading": "What is the best bidding strategy for Google Ads? add",
+                "heading": "What is the best bidding strategy for Google Ads? add remove",
                 "content": [
                     "- Manual bidding, which allows you to determine what you want to pay",
                     "- Smart Bidding, which uses Google AI to optimise your bids at every auction based on your defined objective"
                 ]
             },
             {
-                "heading": "How do I decide how much to bid on Google Ads? add",
+                "heading": "How do I decide how much to bid on Google Ads? add remove",
                 "content": [
                     "- Your campaign type",
                     "- How much your keywords cost",
@@ -214,11 +212,11 @@
                 ]
             },
             {
-                "heading": "What is the minimum bid for Google Ads? add",
+                "heading": "What is the minimum bid for Google Ads? add remove",
                 "content": []
             },
             {
-                "heading": "How can automated bidding help an advertiser improve campaign performance? add",
+                "heading": "How can automated bidding help an advertiser improve campaign performance? add remove",
                 "content": [
                     "- Get as many clicks as possible within your budget",
                     "- Get as many conversions as possible within your target CPA",
@@ -227,7 +225,7 @@
                 ]
             },
             {
-                "heading": "How does value based bidding work? add",
+                "heading": "How does value based bidding work? add remove",
                 "content": []
             },
             {
@@ -236,9 +234,9 @@
             }
         ]
     },
-    "https://business.google.com/uk/resources/": {
-        "title": "Find answers and\ninspiration",
-        "url": "https://business.google.com/uk/resources/",
+    "https://business.google.com/uk/resources/?hl=en": {
+        "title": "Find answers andinspiration",
+        "url": "https://business.google.com/uk/resources/?hl=en",
         "key_links": [
             "https://business.google.com/uk/resources/articles/seo-vs-ppc/?hl=en",
             "https://business.google.com/uk/resources/articles/abcds-of-effective-video-ads/?hl=en",
@@ -313,10 +311,6 @@
         ],
         "sections": [
             {
-                "heading": "Find answers and inspiration",
-                "content": []
-            },
-            {
                 "heading": "Filter by:",
                 "content": []
             },
@@ -371,113 +365,113 @@
                     "- Multiple marketing goals",
                     "- Offline sales",
                     "- Online sales",
-                    "- GOOGLE ADS The Best Paid SEO Strategies for Businesses Article",
-                    "GOOGLE ADS"
+                    "- Google Ads The Best Paid SEO Strategies for Businesses Article",
+                    "Google Ads"
                 ]
             },
             {
                 "heading": "The Best Paid SEO Strategies for Businesses",
                 "content": [
-                    "- YOUTUBE ADS ABCDs of effective video ads Article",
-                    "YOUTUBE ADS"
+                    "- YouTube Ads ABCDs of effective video ads Article",
+                    "YouTube Ads"
                 ]
             },
             {
                 "heading": "ABCDs of effective video ads",
                 "content": [
-                    "- GOOGLE ADS 10 tips for Google Ads budget management Article",
-                    "GOOGLE ADS"
+                    "- Google Ads 10 tips for Google Ads budget management Article",
+                    "Google Ads"
                 ]
             },
             {
                 "heading": "10 tips for Google Ads budget management",
                 "content": [
-                    "- GOOGLE ADS How can you write successful online ads with Google? Article",
-                    "GOOGLE ADS"
+                    "- Google Ads How can you write successful online ads with Google? Article",
+                    "Google Ads"
                 ]
             },
             {
                 "heading": "How can you write successful online ads with Google?",
                 "content": [
-                    "- GOOGLE ADS 5 ways to create better ad copy by utilising AI Article",
-                    "GOOGLE ADS"
+                    "- Google Ads 5 ways to create better ad copy by utilising AI Article",
+                    "Google Ads"
                 ]
             },
             {
                 "heading": "5 ways to create better ad copy by utilising AI",
                 "content": [
-                    "- GOOGLE ADS How to make your products stand out to shoppers on Google Ads Article",
-                    "GOOGLE ADS"
+                    "- Google Ads How to make your products stand out to shoppers on Google Ads Article",
+                    "Google Ads"
                 ]
             },
             {
                 "heading": "How to make your products stand out to shoppers on Google Ads",
                 "content": [
-                    "- GOOGLE ADS How assets can help you connect with valuable customers Article",
-                    "GOOGLE ADS"
+                    "- Google Ads How assets can help you connect with valuable customers Article",
+                    "Google Ads"
                 ]
             },
             {
                 "heading": "How assets can help you connect with valuable customers",
                 "content": [
-                    "- GOOGLE ADS How to use the Keyword Planner tool effectively Article",
-                    "GOOGLE ADS"
+                    "- Google Ads How to use the Keyword Planner tool effectively Article",
+                    "Google Ads"
                 ]
             },
             {
                 "heading": "How to use the Keyword Planner tool effectively",
                 "content": [
-                    "- GOOGLE ADS Reach a larger or new audience with Google Display Network (GDN) targeting Article",
-                    "GOOGLE ADS"
+                    "- Google Ads Reach a larger or new audience with Google Display Network (GDN) targeting Article",
+                    "Google Ads"
                 ]
             },
             {
                 "heading": "Reach a larger or new audience with Google Display Network (GDN) targeting",
                 "content": [
-                    "- GOOGLE ADS What are people searching for online? Article",
-                    "GOOGLE ADS"
+                    "- Google Ads What are people searching for online? Article",
+                    "Google Ads"
                 ]
             },
             {
                 "heading": "What are people searching for online?",
                 "content": [
-                    "- GOOGLE ADS What is paid search? Article",
-                    "GOOGLE ADS"
+                    "- Google Ads What is paid search? Article",
+                    "Google Ads"
                 ]
             },
             {
                 "heading": "What is paid search?",
                 "content": [
-                    "- GOOGLE ADS Billing and payments in Google Ads Article",
-                    "GOOGLE ADS"
+                    "- Google Ads Billing and payments in Google Ads Article",
+                    "Google Ads"
                 ]
             },
             {
                 "heading": "Billing and payments in Google Ads",
                 "content": [
-                    "- GOOGLE ADS 5 things to consider when optimising your mobile landing page Article",
-                    "GOOGLE ADS"
+                    "- Google Ads 5 things to consider when optimising your mobile landing page Article",
+                    "Google Ads"
                 ]
             },
             {
                 "heading": "5 things to consider when optimising your mobile landing page",
                 "content": [
-                    "- GOOGLE ADS 10 Google Ads features that will grow your business Article",
-                    "GOOGLE ADS"
+                    "- Google Ads 10 Google Ads features that will grow your business Article",
+                    "Google Ads"
                 ]
             },
             {
                 "heading": "10 Google Ads features that will grow your business",
                 "content": [
-                    "- GOOGLE ADS Understand intent to place ads more effectively Article",
-                    "GOOGLE ADS"
+                    "- Google Ads Understand intent to place ads more effectively Article",
+                    "Google Ads"
                 ]
             },
             {
                 "heading": "Understand intent to place ads more effectively",
                 "content": [
-                    "- GOOGLE ADS 4 Google Ads features to improve your keyword strategy Article",
-                    "GOOGLE ADS"
+                    "- Google Ads 4 Google Ads features to improve your keyword strategy Article",
+                    "Google Ads"
                 ]
             },
             {
@@ -862,9 +856,9 @@
             }
         ]
     },
-    "https://developers.google.com/ad-manager": {
-        "title": "Ad Manager",
-        "url": "https://developers.google.com/ad-manager",
+    "https://developers.google.com/ad-manager?hl=en": {
+        "title": "https://developers.google.com/ad-manager?hl=en",
+        "url": "https://developers.google.com/ad-manager?hl=en",
         "key_links": [
             "https://developers.google.com/",
             "https://developers.google.com/products",
@@ -881,7 +875,7 @@
         ],
         "sections": [
             {
-                "heading": "Ad Manager",
+                "heading": "https://developers.google.com/ad-manager?hl=en",
                 "content": [
                     "- Home",
                     "- Products",
@@ -910,9 +904,9 @@
             }
         ]
     },
-    "https://developers.google.com/ad-manager/dynamic-ad-insertion": {
-        "title": "Dynamic Ad Insertion",
-        "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion",
+    "https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en": {
+        "title": "https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en",
+        "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en",
         "key_links": [
             "https://developers.google.com/",
             "https://developers.google.com/products",
@@ -929,7 +923,7 @@
         ],
         "sections": [
             {
-                "heading": "Dynamic Ad Insertion",
+                "heading": "https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en",
                 "content": [
                     "- Home",
                     "- Products",
@@ -963,28 +957,19 @@
             }
         ]
     },
-    "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service": {
-        "title": "Dynamic Ad Insertion",
-        "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
+    "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en": {
+        "title": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en",
+        "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en",
         "key_links": [
-            "https://developers.google.com/interactive-media-ads",
             "https://developers.google.com/",
             "https://developers.google.com/products",
             "https://developers.google.com/ad-manager/dynamic-ad-insertion",
             "https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service",
-            "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
-            "https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5?service=full",
-            "https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android?service=full",
-            "https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios?service=full",
-            "https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos?service=full",
-            "https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast?service=full",
-            "https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku?service=full",
-            "https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service/video-player-live",
-            "https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service/video-player-vod"
+            "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service"
         ],
         "sections": [
             {
-                "heading": "Dynamic Ad Insertion",
+                "heading": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en",
                 "content": [
                     "- Home",
                     "- Products",
@@ -1025,9 +1010,9 @@
             }
         ]
     },
-    "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving": {
-        "title": "Dynamic Ad Insertion",
-        "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
+    "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en": {
+        "title": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en",
+        "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en",
         "key_links": [
             "https://developers.google.com/",
             "https://developers.google.com/products",
@@ -1036,24 +1021,16 @@
             "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
             "https://support.google.com/admanager/answer/9204132#zippy=%2Cconfigure-ad-pods-and-break-templates",
             "https://developers.google.com/ad-manager/dynamic-ad-insertion/server-guided",
-            "https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5?service=pod",
-            "https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android?service=pod",
-            "https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios?service=pod",
-            "https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos?service=pod",
-            "https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast?service=pod",
-            "https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku?service=pod",
-            "https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/get-started",
             "https://support.google.com/admanager/answer/7320899",
             "https://support.google.com/admanager/answer/7257678",
             "https://support.google.com/admanager/answer/7009058",
             "https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/manipulator#populate_the_period_template",
             "https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client#listen_for_ad_events",
-            "https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client#send_media_verification_pings",
-            "https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/vod"
+            "https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client#send_media_verification_pings"
         ],
         "sections": [
             {
-                "heading": "Dynamic Ad Insertion",
+                "heading": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en",
                 "content": [
                     "- Home",
                     "- Products",
@@ -1105,60 +1082,26 @@
             }
         ]
     },
-    "https://developers.google.com/ad-manager/api/start": {
-        "title": "Get started",
-        "url": "https://developers.google.com/ad-manager/api/start",
+    "https://developers.google.com/ad-manager/api/start?hl=en": {
+        "title": "Get started\n\n    \n    \n      \n    \n\n    \n      \n      Stay organized with collections\n    \n    \n      \n      Save and categorize content based on your preferences.",
+        "url": "https://developers.google.com/ad-manager/api/start?hl=en",
         "key_links": [
-            "https://developers.google.com/ad-manager/api/beta",
             "https://developers.google.com/",
             "https://developers.google.com/products",
             "https://developers.google.com/ad-manager",
             "https://developers.google.com/ad-manager/api/start",
-            "https://developers.google.com/ad-manager/api/start?hl=en#signup",
-            "https://developers.google.com/ad-manager/api/start?hl=en#auth",
-            "https://developers.google.com/ad-manager/api/start?hl=en#enable_api",
-            "https://developers.google.com/ad-manager/api/start?hl=en#downloadlibs",
-            "https://developers.google.com/ad-manager/api/start?hl=en#next",
-            "https://developers.google.com/ad-manager/api/clients",
-            "https://support.google.com/admanager/answer/7084151",
-            "https://developers.google.com/ad-manager/api/environments",
-            "https://www.google.com/intl/en_ALL/doubleclick/tos/dfp-api-terms.html",
-            "https://developers.google.com/ad-manager/api/authentication",
             "https://console.cloud.google.com/apis/credentials",
-            "https://console.developers.google.com/apis/credentials/serviceaccountkey",
-            "https://admanager.google.com/",
-            "https://developers.google.com/ad-manager/api/start?hl=en#java",
-            "https://developers.google.com/ad-manager/api/start?hl=en#python",
-            "https://developers.google.com/ad-manager/api/start?hl=en#php",
-            "https://developers.google.com/ad-manager/api/start?hl=en#.net",
-            "https://developers.google.com/ad-manager/api/start?hl=en#ruby",
-            "https://github.com/googleads/googleads-java-lib",
-            "https://github.com/googleads/googleads-java-lib/blob/main/README.md",
             "https://github.com/googleads/googleads-java-lib/releases",
             "https://github.com/googleads/googleads-java-lib/blob/main/examples/admanager_axis/src/main/java/admanager/axis/v202602/networkservice/GetCurrentNetwork.java",
-            "https://github.com/googleads/googleads-python-lib",
-            "https://github.com/googleads/googleads-python-lib/blob/main/README.md",
             "https://github.com/googleads/googleads-python-lib/blob/main/examples/ad_manager/v202602/network_service/get_current_network.py",
-            "https://github.com/googleads/googleads-php-lib",
-            "https://github.com/googleads/googleads-php-lib/blob/HEAD/examples/AdManager/adsapi_php.ini",
             "https://github.com/googleads/googleads-php-lib/blob/main/examples/AdManager/v202602/NetworkService/GetCurrentNetwork.php",
-            "https://github.com/googleads/googleads-dotnet-lib",
-            "https://www.nuget.org/packages/Google.Dfp/",
             "https://github.com/googleads/googleads-dotnet-lib/blob/main/examples/AdManager/CSharp/v202602/InventoryService/GetAllAdUnits.cs",
-            "https://github.com/googleads/googleads-dotnet-lib/wiki/Getting-Started",
-            "https://github.com/googleads/googleads-dotnet-lib/blob/main/README.md",
-            "https://github.com/googleads/googleads-dotnet-lib/wiki/NoClientLibrary",
-            "https://github.com/googleads/google-api-ads-ruby/tree/HEAD/ad_manager_api",
-            "https://developers.google.com/ad-manager/api/authentication#service",
             "https://github.com/googleads/google-api-ads-ruby/blob/main/ad_manager_api/examples/v202602/network_service/get_current_network.rb",
-            "https://github.com/googleads/google-api-ads-ruby/wiki/DFP-Readme",
-            "https://github.com/googleads/google-api-ads-ruby/tree/HEAD/ad_manager_api/examples",
-            "https://developers.google.com/ad-manager/api/rel_notes",
-            "https://developers.google.com/ad-manager/api/community"
+            "https://github.com/googleads/google-api-ads-ruby/tree/HEAD/ad_manager_api/examples"
         ],
         "sections": [
             {
-                "heading": "Get started",
+                "heading": "Get started\n\n    \n    \n      \n    \n\n    \n      \n      Stay organized with collections\n    \n    \n      \n      Save and categorize content based on your preferences.",
                 "content": [
                     "Looking for a REST API? The Ad Manager API (Beta) is now available.",
                     "- Home",
@@ -1168,7 +1111,7 @@
                 ]
             },
             {
-                "heading": "Get started",
+                "heading": "Get started Stay organized with collections Save and categorize content based on your preferences.",
                 "content": [
                     "- On this page",
                     "- Get access to an Ad Manager network",
@@ -1289,85 +1232,25 @@
             }
         ]
     },
-    "https://admanager.google.com/home/resources/": {
+    "https://admanager.google.com/home/resources/?hl=en": {
         "title": "Learn more, do more.",
-        "url": "https://admanager.google.com/home/resources/",
+        "url": "https://admanager.google.com/home/resources/?hl=en",
         "key_links": [
-            "https://admanager.google.com/home/resources/increase-your-revenue-in-browsers-with-limited-signals/",
-            "https://signup.withgoogle.com/newsletter/googlepublisher/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en",
-            "https://admanager.google.com/home/resources/publisher-best-practices-for-live-sporting-events/",
-            "https://admanager.google.com/home/resources/powering-direct-transactions-investing-in-your-growth/",
-            "https://admanager.google.com/home/resources/building-the-future-of-live-monetization/",
-            "https://admanager.google.com/home/resources/publisher-privacy-playbook/",
-            "https://admanager.google.com/home/resources/for-e-commerce-the-time-for-digital-ads-is-now/",
-            "https://admanager.google.com/home/resources/how-automation-can-help-you-manage-and-grow-your-business/",
-            "https://admanager.google.com/home/resources/2020-advanced-tv-inventory-report/",
-            "https://admanager.google.com/home/resources/building-retail-media-business-with-google-ad-manager/",
-            "https://admanager.google.com/home/resources/protecting-ad-supported-ctv-experiences/",
-            "https://admanager.google.com/home/resources/getting-started-with-dynamic-ad-insertion/",
-            "https://admanager.google.com/home/resources/next-generation-telco-bundle-white-paper/",
-            "https://admanager.google.com/home/resources/feature_brief_opportunities_and_experiments/",
-            "https://admanager.google.com/home/resources/feature_brief_reporting/",
-            "https://admanager.google.com/home/resources/how_authorized_buyers_work_with_google/",
-            "https://admanager.google.com/home/resources/feature_brief_inventory_management_and_forecasting/",
-            "https://admanager.google.com/home/resources/feature_brief_outstream_video/",
-            "https://admanager.google.com/home/resources/feature_brief_video_content_ingestion/",
-            "https://admanager.google.com/home/resources/2019-advanced-tv-guide/",
-            "https://admanager.google.com/home/resources/2019-advanced-tv-report/",
-            "https://admanager.google.com/home/resources/apacs-changing-broadcast-and-video-landscape/",
-            "https://admanager.google.com/home/resources/feature-brief-open-measurement/",
-            "https://admanager.google.com/home/resources/feature-brief-programmatic-guaranteed/",
-            "https://admanager.google.com/home/resources/feature-brief-dynamic-ad-insertion/",
-            "https://admanager.google.com/home/resources/feature-brief-smarter-ad-breaks/",
-            "https://admanager.google.com/home/resources/feature-brief-ad-review-center/",
-            "https://admanager.google.com/home/resources/feature-brief-yield-management/",
-            "https://admanager.google.com/home/resources/feature-brief-app-mediation/",
-            "https://admanager.google.com/home/resources/feature-brief-native-ads/",
-            "https://admanager.google.com/home/resources/feature-brief-better-ads-standards/",
-            "https://admanager.google.com/home/resources/feature-brief-open-bidding/",
-            "https://admanager.google.com/home/resources/feature-brief-rewarded-ads/",
-            "https://admanager.google.com/home/resources/video-viewability-best-practices-publishers/",
-            "https://admanager.google.com/home/resources/grow-faster-google-certified-publishing-partner/",
-            "https://admanager.google.com/home/resources/ecommerce-guide/",
-            "https://admanager.google.com/home/resources/convergence-of-tv-and-digital-broadcasters-are-building-for-success/",
-            "https://admanager.google.com/home/resources/taking-page-sports-playbook-engaging-fans-digital-age/",
-            "https://admanager.google.com/home/resources/digital-trade-marketing-guide/",
-            "https://admanager.google.com/home/resources/publishers-save-time-with-programmatic-guaranteed/",
-            "https://admanager.google.com/home/resources/capture-growing-video-budgets-new-out-stream-formats/",
-            "https://admanager.google.com/home/resources/building-beyond-insights-engine/",
-            "https://admanager.google.com/home/resources/digitizing-supplier-marketing/",
-            "https://admanager.google.com/home/resources/improving-protections-publishers/",
-            "https://admanager.google.com/home/resources/tv-made-smarter/",
-            "https://admanager.google.com/home/resources/whats-next-mobile-web/",
-            "https://admanager.google.com/home/resources/article-programmatic-delivers-scale-vox-media/",
-            "https://admanager.google.com/home/resources/creating-better-ad-experiences-guide/",
-            "https://admanager.google.com/home/resources/guide-how-publishers-engage-with-ad-blockers/",
-            "https://admanager.google.com/home/resources/report-programmatic-tv-europe-evolution/",
-            "https://admanager.google.com/home/success-stories/"
+            "https://signup.withgoogle.com/newsletter/googlepublisher/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en"
         ],
         "sections": [
             {
-                "heading": "Increase your revenue in browsers with limited signals",
+                "heading": "Learn more, do more.",
                 "content": [
                     "Learn how global publishers are using publisher provided Identifiers to increase programmatic revenue in browsers that no longer support third-party cookies.",
-                    "Read Story"
-                ]
-            },
-            {
-                "heading": "Get the latest, delivered.",
-                "content": [
+                    "Read Story",
                     "Our monthly newsletter puts the latest success stories, insights, and product news right into your inbox."
                 ]
             },
             {
                 "heading": "Filter by:",
                 "content": [
-                    "- Topic Ad Formats Advanced TV Brand Safety Core Ad Serving Data and Insights Dynamic Ad Insertion Ecosystem Mobile App Privacy Video Yield Management"
-                ]
-            },
-            {
-                "heading": "Topic",
-                "content": [
+                    "- Topic Ad Formats Advanced TV Brand Safety Core Ad Serving Data and Insights Dynamic Ad Insertion Ecosystem Mobile App Privacy Video Yield Management",
                     "- Ad Formats",
                     "- Advanced TV",
                     "- Brand Safety",
@@ -1379,12 +1262,7 @@
                     "- Privacy",
                     "- Video",
                     "- Yield Management",
-                    "- Type Feature Brief Guide Report White Paper"
-                ]
-            },
-            {
-                "heading": "Type",
-                "content": [
+                    "- Type Feature Brief Guide Report White Paper",
                     "- Feature Brief",
                     "- Guide",
                     "- Report",
@@ -1394,42 +1272,42 @@
             {
                 "heading": "No matching results",
                 "content": [
-                    "- GUIDE Publisher best practices for live sporting events Read more"
+                    "- Guide Publisher best practices for live sporting events Read more"
                 ]
             },
             {
                 "heading": "Publisher best practices for live sporting events",
                 "content": [
                     "- Read more",
-                    "- FEATURE BRIEF Powering direct transactions: Investing in your growth Read more"
+                    "- Feature Brief Powering direct transactions: Investing in your growth Read more"
                 ]
             },
             {
                 "heading": "Powering direct transactions: Investing in your growth",
                 "content": [
                     "- Read more",
-                    "- REPORT Building the future of live monetization Read more"
+                    "- Report Building the future of live monetization Read more"
                 ]
             },
             {
                 "heading": "Building the future of live monetization",
                 "content": [
                     "- Read more",
-                    "- REPORT Increase your revenue in browsers with limited signals Read more"
+                    "- Report Increase your revenue in browsers with limited signals Read more"
                 ]
             },
             {
                 "heading": "Increase your revenue in browsers with limited signals",
                 "content": [
                     "- Read more",
-                    "- GUIDE The publisher’s playbook for navigating today’s privacy environment Read more"
+                    "- Guide The publisher’s playbook for navigating today’s privacy environment Read more"
                 ]
             },
             {
                 "heading": "The publisher’s playbook for navigating today’s privacy environment",
                 "content": [
                     "- Read more",
-                    "- REPORT For e-commerce, the time for digital ads is now Read more"
+                    "- Report For e-commerce, the time for digital ads is now Read more"
                 ]
             },
             {
@@ -1747,63 +1625,15 @@
             }
         ]
     },
-    "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview": {
-        "title": "ad-manager overview (0.50.0)",
-        "url": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview",
+    "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en": {
+        "title": "ad-manager overview (0.50.0)\n\n    \n    \n      \n    \n\n    \n      \n      Stay organized with collections\n    \n    \n      \n      Save and categorize content based on your preferences.",
+        "url": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en",
         "key_links": [
             "https://docs.cloud.google.com/",
             "https://docs.cloud.google.com/docs",
             "https://docs.cloud.google.com/docs/costs-usage",
             "https://docs.cloud.google.com/java/docs",
             "https://docs.cloud.google.com/java/docs/reference",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en#key-reference-links",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en#getting-started",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en#use-the-google-ad-manager-api-for-java",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en#maven",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en#gradle",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en#sbt",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en#which-version-id-should-i-get-started-with",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en#understanding-version-id-and-library-versions",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en#managing-library-versions",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en#choosing-the-right-version-id",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.47.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.46.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.44.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.42.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.41.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.40.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.39.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.37.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.35.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.34.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.33.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.32.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.31.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.29.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.27.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.26.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.23.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.22.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.21.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.19.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.18.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.17.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.16.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.15.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.14.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.13.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.12.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.11.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.10.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.8.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.7.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.6.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.5.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.4.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.3.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.2.0/overview",
-            "https://docs.cloud.google.com/java/docs/reference/ad-manager/0.1.0/overview",
             "https://developers.google.com/ad-manager/api/beta",
             "https://github.com/googleapis/google-cloud-java/tree/main/java-admanager",
             "https://central.sonatype.com/artifact/com.google.api-ads/ad-manager",
@@ -1822,7 +1652,7 @@
         ],
         "sections": [
             {
-                "heading": "ad-manager overview (0.50.0)",
+                "heading": "ad-manager overview (0.50.0)\n\n    \n    \n      \n    \n\n    \n      \n      Stay organized with collections\n    \n    \n      \n      Save and categorize content based on your preferences.",
                 "content": [
                     "- Home",
                     "- Documentation",
@@ -1832,16 +1662,16 @@
                 ]
             },
             {
-                "heading": "ad-manager overview (0.50.0)",
+                "heading": "ad-manager overview (0.50.0) Stay organized with collections Save and categorize content based on your preferences.",
                 "content": [
                     "- On this page",
                     "- Key Reference Links",
                     "- Getting Started",
-                    "- Use the Google Ad Manager API for Java Maven Gradle SBT",
+                    "- Use the Google Ad Manager API for JavaMavenGradleSBT",
                     "- Maven",
                     "- Gradle",
                     "- SBT",
-                    "- Which version ID should I get started with? Understanding Version ID and Library Versions",
+                    "- Which version ID should I get started with?Understanding Version ID and Library VersionsManaging Library VersionsChoosing the Right Version ID",
                     "- Understanding Version ID and Library Versions",
                     "- Managing Library Versions",
                     "- Choosing the Right Version ID",

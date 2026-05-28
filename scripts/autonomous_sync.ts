@@ -1,93 +1,62 @@
 import { jules } from '../antigravity/jules';
-import { cloudConvergence } from '../antigravity/services/cloud_convergence';
-import { onlinePresence } from '../antigravity/services/presence';
-import { globalNeuralSync } from '../antigravity/services/global_neural_sync_service_phase_12';
 import { exec } from 'child_process';
 import { promisify } from 'util';
 import * as fs from 'fs';
 import * as path from 'path';
+import { generateConsolidatedReport } from '../antigravity/services/intelligence';
 
 const execAsync = promisify(exec);
 
 /**
- * UNIFIED AUTONOMOUS SYNCHRONIZATION ORCHESTRATOR
- * Coordinates full ecosystem state convergence, Jules work cycles, and Python agent execution.
+ * UNIFIED AUTONOMOUS ORCHESTRATOR
+ * Bridges TypeScript and Python intelligence layers for a complete system pulse.
  */
-async function main() {
-  console.log('🚀 [AutonomousSync] Initiating unified ecosystem synchronization...');
-
-  const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true');
+async function autonomousSync() {
+  console.log('🚀 [Orchestrator] Starting Unified Autonomous Synchronization...');
 
   try {
-    // 1. Initial Presence Heartbeat
-    console.log('📡 [AutonomousSync] Broadcasting initial presence heartbeat...');
-    await onlinePresence.syncPresence();
-
-    // 2. Proactive iCloud Sync Fix (if local)
-    if (!isCloud) {
-       console.log('☁️  [AutonomousSync] Ensuring iCloud Sync is fluid...');
-       try {
-         await execAsync('bash scripts/fix_icloud_sync.sh');
-       } catch (e: any) {
-         console.warn('⚠️  [AutonomousSync] Could not fix iCloud sync proactively:', e.message);
-       }
+    // 1. Ensure environment is ready
+    if (!fs.existsSync(path.join(process.cwd(), 'results'))) {
+        fs.mkdirSync(path.join(process.cwd(), 'results'));
     }
 
-    // 3. Global Neural Convergence (Phase 12)
-    console.log('🧠 [AutonomousSync] Performing global neural convergence...');
-    await globalNeuralSync.convergeState();
-
-    // 4. Cloud Ecosystem Convergence
-    console.log('🌐 [AutonomousSync] Synchronizing multi-cloud ecosystem state...');
-    await cloudConvergence.synchronizeEcosystem();
-
-    // 5. Execute Technical Knowledge Scrapers
-    console.log('📚 [AutonomousSync] Updating technical knowledge base...');
-    const scrapers = [
-      'python3 gemmafour_scraper.py',
-      'python3 litert_scraper.py',
-      'python3 intelephense_scraper.py',
-      'python3 ai_agents_knowledge_scraper.py',
-      'npx tsx scripts/ingest_markposition_knowledge.ts',
-      'npx tsx scripts/automate_knowledge_integration.ts'
-    ];
-
-    for (const scraper of scrapers) {
-      try {
-        console.log(` - Running: ${scraper}...`);
-        await execAsync(scraper);
-      } catch (e: any) {
-        console.warn(` ⚠️  [AutonomousSync] Scraper failed: ${scraper} - ${e.message}`);
-      }
-    }
-
-    // 6. Execute Jules Work Cycle (TypeScript Engine)
-    console.log('🌟 [AutonomousSync] Executing Jules (TypeScript) work cycle...');
+    // 2. Run TypeScript Work Cycle
+    // This includes knowledge ingestion, self-repair, PR auditing, and reporting.
+    console.log('🔷 [TS] Executing Jules Work Cycle...');
     await jules.executeWorkCycle();
 
-    // 7. Execute Python Ecosystem Cycle
-    console.log('🐍 [AutonomousSync] Running Python Ecosystem Autonomous Cycle...');
+    // 3. Run Python Intelligence & Knowledge Merge
+    // Bridging the Python agents' data into the unified foundation.
+    console.log('🔶 [Python] Running Knowledge Merge & System Analytics...');
     try {
-      const token = process.env.SYSTEM_AUTH_TOKEN || 'default_dev_token';
-      const { stdout } = await execAsync(`python3 run_system.py --skip-scraper --token ${token}`);
-      console.log(stdout);
-      console.log('✅ [AutonomousSync] Python Ecosystem Cycle Complete.');
-    } catch (e: any) {
-      console.error('❌ [AutonomousSync] Python Ecosystem Cycle Failed:', e.message);
+      console.log(' - Executing merge_knowledge.py...');
+      await execAsync('python3 merge_knowledge.py');
+
+      console.log(' - Executing analytics.py...');
+      await execAsync('python3 analytics.py');
+
+      console.log(' - Running Python Orchestrator (Subset)...');
+      // Running with --skip-scraper since TS already handled fresh ingestion
+      // and --token default_dev_token for local auth
+      await execAsync('python3 run_system.py --skip-scraper --token default_dev_token');
+
+      console.log(' ✅ [Python] Intelligence sub-cycle complete.');
+    } catch (pyErr: any) {
+      console.warn(' ⚠️ [Python] Intelligence sub-cycle encountered issues:', pyErr.message);
     }
 
-    // 7. Final Presence Heartbeat
-    console.log('📡 [AutonomousSync] Broadcasting final presence heartbeat...');
-    await onlinePresence.syncPresence();
+    // 4. Final Verification & Final Report Generation
+    // We re-run the report generation to capture the results from the Python cycle.
+    console.log('📊 [Orchestrator] Finalizing artifacts and generating final report...');
+    const branches = await jules.scanAllBranches();
+    const result = await generateConsolidatedReport(branches);
+    console.log(` ✅ Consolidated Report updated at ${result.reportPath}`);
 
-    console.log('🏆 [AutonomousSync] Unified synchronization complete.');
-  } catch (error: any) {
-    console.error('💥 [AutonomousSync] Fatal orchestration error:', error.message);
+    console.log('🏆 [Orchestrator] Unified Synchronization Complete.');
+  } catch (err) {
+    console.error('💥 [Orchestrator] Critical Synchronization Failure:', err);
     process.exit(1);
   }
 }
 
-main().catch(err => {
-  console.error('💥 [AutonomousSync] Unhandled error:', err);
-  process.exit(1);
-});
+autonomousSync().catch(console.error);

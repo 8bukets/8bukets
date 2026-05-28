@@ -12,6 +12,7 @@ export const WorkOrderSchema = z.object({
   status: z.enum(['pending', 'executing', 'completed', 'failed', 'in_progress']),
   created_at: z.string(),
   updated_at: z.string().optional(),
+  node_id: z.string().optional(),
   completed_at: z.string().optional(),
   dependsOn: z.array(z.string()).optional(),
   result: z.any().optional(),
@@ -24,16 +25,9 @@ const STORAGE_PATH = path.join(process.cwd(), 'data/work_orders.json')
 
 export class WorkOrderService {
   private orders: WorkOrder[] = []
-  private loadPromise: Promise<void> | null = null
 
   constructor() {
-    this.loadPromise = this.load()
-  }
-
-  private async ensureLoaded() {
-    if (this.loadPromise) {
-      await this.loadPromise
-    }
+    this.load()
   }
 
   private async load() {
@@ -113,7 +107,9 @@ export class WorkOrderService {
   }
 
   public async createOrder(type: WorkOrder['type'], goal: string, payload: any, dependsOn?: string[]): Promise<WorkOrder> {
-    await this.ensureLoaded()
+    const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
+    const nodeId = isCloud ? 'cloud-relay-01' : 'macbook-primary-01'
+
     const newOrder: WorkOrder = {
       id: `wo_${Math.random().toString(36).substring(2, 11)}`,
       type,
@@ -121,6 +117,7 @@ export class WorkOrderService {
       payload,
       dependsOn,
       status: 'pending',
+      node_id: nodeId,
       created_at: new Date().toISOString()
     }
     this.orders.push(newOrder)
@@ -130,16 +127,15 @@ export class WorkOrderService {
   }
 
   public async getPendingOrders(): Promise<WorkOrder[]> {
-    await this.ensureLoaded()
     await this.load() // Refresh from DB
     return this.orders.filter(o => o.status === 'pending')
   }
 
   public async updateOrderStatus(id: string, status: WorkOrder['status'], result?: any, error?: string) {
-    await this.ensureLoaded()
     const order = this.orders.find(o => o.id === id)
     if (order) {
       order.status = status
+      order.updated_at = new Date().toISOString()
       if (status === 'completed' || status === 'failed') {
         order.completed_at = new Date().toISOString()
       }
@@ -147,6 +143,54 @@ export class WorkOrderService {
       if (error) order.error = error
       await this.save(order)
     }
+  }
+
+  /**
+   * Resets orders that have been stuck in 'executing' or 'in_progress' for too long,
+   * or if the assigned node is no longer active.
+   */
+  public async recoverStalledOrders() {
+    logAutonomousAction('⚖️ [WorkOrder] Scanning for stalled work orders...', 'info')
+    await this.load()
+
+    const now = Date.now()
+    const STALL_TIMEOUT = 30 * 60 * 1000 // 30 minutes
+
+    let recoveredCount = 0
+
+    try {
+      const client = await getMongoClient()
+      const db = client.db()
+      const activeNodes = await db.collection('agent_presence').find({
+        lastSeen: { $gt: new Date(now - 15 * 60 * 1000).toISOString() }
+      }).toArray()
+
+      const activeNodeIds = new Set(activeNodes.map((n: any) => n.telemetry?.node_id))
+
+      for (const order of this.orders) {
+        const isExecuting = order.status === 'executing' || order.status === 'in_progress'
+        if (!isExecuting) continue
+
+        const updatedAt = order.updated_at ? new Date(order.updated_at).getTime() : new Date(order.created_at).getTime()
+        const isTimedOut = (now - updatedAt) > STALL_TIMEOUT
+        const isNodeOffline = order.node_id && !activeNodeIds.has(order.node_id)
+
+        if (isTimedOut || isNodeOffline) {
+          logAutonomousAction(`🔄 [WorkOrder] Recovering stalled order ${order.id} (Reason: ${isTimedOut ? 'timeout' : 'node offline'}).`, 'warning')
+          order.status = 'pending'
+          order.error = `Recovered from stall (Node: ${order.node_id}, Timed out: ${isTimedOut})`
+          await this.save(order)
+          recoveredCount++
+        }
+      }
+    } catch (e: any) {
+      console.warn('⚠️ [WorkOrder] Could not recover stalled orders from DB:', e.message)
+    }
+
+    if (recoveredCount > 0) {
+      logAutonomousAction(`✅ [WorkOrder] Recovered ${recoveredCount} stalled orders.`, 'info')
+    }
+    return recoveredCount
   }
 
   /**
@@ -160,7 +204,6 @@ export class WorkOrderService {
   }
 
   public async executePendingOrders() {
-    await this.ensureLoaded()
     let pending = await this.getPendingOrders()
     if (pending.length === 0) return
 
@@ -208,26 +251,23 @@ export class WorkOrderService {
     logAutonomousAction(`🎬 [WorkOrder] Dispatching ${order.type}: ${order.goal || order.description}`, 'info')
 
     switch (order.type) {
-      case 'BOOTSTRAP_SERVICE': {
+      case 'BOOTSTRAP_SERVICE':
         const { bootstrap } = await import('../singularity')
         return await bootstrap(order.payload)
-      }
 
-      case 'CONTENT_GENERATION': {
+      case 'CONTENT_GENERATION':
         const { generateContent } = await import('./content')
         return await generateContent(order.payload)
-      }
 
-      case 'OPTIMIZE_SYSTEM': {
+      case 'OPTIMIZE_SYSTEM':
         const { evolve, applyFixes } = await import('../evolution')
         const suggestions = (order.payload && Array.isArray(order.payload.proposals))
           ? order.payload.proposals
           : await evolve()
         await applyFixes(suggestions)
         return { appliedFixes: suggestions.length }
-      }
 
-      case 'SMOKE_TEST': {
+      case 'SMOKE_TEST':
         logAutonomousAction(`🧪 [WorkOrder] Running smoke test for ${order.payload?.serviceName}...`, 'info')
         // In a real scenario, this would trigger vitest for the specific file
         // For now, we simulate success if the file exists
@@ -247,9 +287,8 @@ export class WorkOrderService {
         } catch (e: any) {
           throw new Error(`Smoke test failed: ${e.message}`)
         }
-      }
 
-      case 'DEPLOYMENT': {
+      case 'DEPLOYMENT':
         logAutonomousAction(`🚀 [WorkOrder] Triggering rollout for ${order.id}...`, 'info')
         const { spawnSync } = await import('child_process')
         // In cloud environments, we ensure we use python3 or the relevant entry point
@@ -258,9 +297,8 @@ export class WorkOrderService {
           throw new Error(`Rollout failed: ${rolloutResult.stderr}`)
         }
         return { status: 'deployed', output: rolloutResult.stdout }
-      }
 
-      case 'SYSTEM_SYNC': {
+      case 'SYSTEM_SYNC':
         logAutonomousAction(`🔄 [WorkOrder] Executing System Sync for ${order.id}...`, 'info')
         // Ensure we can run the sync script which handles Docker health and stakeholder sync
         const { spawnSync: spawnSyncSync } = await import('child_process')
@@ -280,9 +318,8 @@ export class WorkOrderService {
         await cloudConvergence.synchronizeEcosystem()
 
         return { status: 'synced' }
-      }
 
-      case 'CLOUD_INTELLIGENCE_MERGE': {
+      case 'CLOUD_INTELLIGENCE_MERGE':
         logAutonomousAction(`☁️ [WorkOrder] Executing Cloud Intelligence Merge for ${order.id}...`, 'info')
         const { spawnSync: spawnSyncCloud } = await import('child_process')
         const cloudResult = spawnSyncCloud('python3', ['sync_icloud.py', '--pull'], { encoding: 'utf8' })
@@ -296,31 +333,17 @@ export class WorkOrderService {
         await julesCloud.observeKnowledge()
 
         return { status: 'merged', output: cloudResult.stdout }
-      }
 
-      case 'KNOWLEDGE_INGESTION': {
+      case 'KNOWLEDGE_INGESTION':
         logAutonomousAction(`📚 [WorkOrder] Executing Knowledge Ingestion for ${order.id}...`, 'info')
         const { jules } = await import('../jules')
         await jules.observeGithubDocs()
         return { status: 'ingested' }
-      }
 
-      case 'AUTONOMOUS_CREATION': {
+      case 'AUTONOMOUS_CREATION':
         logAutonomousAction(`🚀 [WorkOrder] Executing Autonomous Creation Cycle for ${order.id}...`, 'info')
         const { creationEngine } = await import('./creation_engine')
         return await creationEngine.runCycle()
-      }
-
-      case 'REFACTOR_SYSTEM': {
-        logAutonomousAction(`🔧 [WorkOrder] Executing Large-Scale System Refactor for ${order.id}...`, 'info')
-        const { evolve, applyFixes } = await import('../evolution')
-        const refactorSuggestions = await evolve()
-        if (refactorSuggestions.length > 0) {
-           await applyFixes(refactorSuggestions)
-           return { status: 'refactored', suggestionsApplied: refactorSuggestions.length }
-        }
-        return { status: 'optimal', reason: 'no_suggestions' }
-      }
 
       default:
         logAutonomousAction(`ℹ️ [WorkOrder] Skipping unknown or external order type: ${order.type}`, 'info')

@@ -1,31 +1,34 @@
 import os
 
-def validate_output_path(path: str) -> str:
+def validate_output_path(filepath: str, base_dir: str = None) -> str:
     """
-    Validates that the output path is within the current working directory.
-    Returns the absolute path if valid, otherwise raises ValueError.
+    Validates that the output path is within the base directory.
+
+    Args:
+        filepath: The path to validate.
+        base_dir: The base directory to restrict access to. Defaults to current working directory.
+
+    Returns:
+        The absolute path if valid.
+
+    Raises:
+        ValueError: If the path is outside the base directory or invalid.
     """
-    # Get absolute path of the requested file
-    abs_path = os.path.abspath(path)
+    if not filepath:
+        raise ValueError("Security Error: Output path cannot be empty.")
 
-    # Get absolute path of current working directory
-    cwd = os.getcwd()
+    if base_dir is None:
+        base_dir = os.getcwd()
 
-    # Check if the file path is within the CWD
-    # commonpath returns the longest common sub-path
-    # We put both paths in a list. If the common path is the CWD (or CWD is a prefix), it's okay.
-    # Note: commonpath works on paths, not strings, so it handles separators correctly.
+    abs_base = os.path.abspath(base_dir)
 
-    try:
-        common = os.path.commonpath([abs_path, cwd])
-    except ValueError:
-        # Can happen on Windows if drives are different
-        raise ValueError(f"Security Error: Output path '{path}' is on a different drive/location than current working directory.")
+    # If I run `scraper.py --json foo.json`, filepath is "foo.json".
+    # os.path.abspath("foo.json") resolves to CWD/foo.json.
 
-    if common != cwd:
-        # There's a subtle edge case: if cwd is /a/b and abs_path is /a/b/c, common is /a/b. Correct.
-        # If abs_path is /a/b, common is /a/b. Correct.
-        # If abs_path is /a/x, common is /a. Incorrect.
-        raise ValueError(f"Security Error: Output path '{path}' is outside the current working directory.")
+    abs_path = os.path.abspath(filepath)
+
+    # commonpath ensures that abs_path is a subdirectory of abs_base
+    if os.path.commonpath([abs_base, abs_path]) != abs_base:
+        raise ValueError(f"Security Error: Path '{filepath}' traverses outside the allowed directory.")
 
     return abs_path
