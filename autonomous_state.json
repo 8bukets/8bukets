@@ -5,12 +5,12 @@
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1779929861182,
+        "timestamp": 1779935721811,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
-        "branches": 2167,
-        "pendingTasks": 6,
+        "branches": 2169,
+        "pendingTasks": 18,
         "relationshipMap": {
             "stakeholderEngagement": {},
             "goalAlignment": {},
@@ -779,18 +779,6 @@
                 },
                 {
                     "type": "Knowledge",
-                    "name": "intelephense_docs.md",
-                    "status": "Ingested",
-                    "source": "local://intelephense_docs.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Intelephense Documentation",
-                    "status": "Ingested",
-                    "source": "local://intelephense_docs.md"
-                },
-                {
-                    "type": "Knowledge",
                     "name": "neural_sync_docs.md",
                     "status": "Ingested",
                     "source": "icloud-sim://neural_sync_docs.md"
@@ -862,6 +850,18 @@
                     "source": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en"
                 },
                 {
+                    "type": "Knowledge",
+                    "name": "Intelephense Documentation",
+                    "status": "Ingested",
+                    "source": "https://intelephense.com/docs"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "iCloud: test_intelligence.md",
+                    "status": "Ingested",
+                    "source": "icloud://test_intelligence.md"
+                },
+                {
                     "type": "Documentation",
                     "name": "AGENTS.md",
                     "status": "Active"
@@ -884,7 +884,7 @@
             "origin": "development",
             "health": "degraded",
             "volatilityTags": 0,
-            "timestamp": "2026-05-28T00:57:48.309Z"
+            "timestamp": "2026-05-28T02:35:28.916Z"
         },
         "relayState": [
             {
@@ -894,7 +894,7 @@
                     "Command Center",
                     "Store"
                 ],
-                "lastActivity": "2026-05-28T00:57:48.309Z",
+                "lastActivity": "2026-05-28T02:35:28.916Z",
                 "intensity": 0.85
             },
             {
@@ -909,5 +909,5 @@
             }
         ]
     },
-    "last_sync": "2026-05-28T00:57:48.316Z"
+    "last_sync": "2026-05-28T02:35:28.923Z"
 }

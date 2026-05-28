@@ -5593,6 +5593,23 @@
         "source": "https://intelephense.com/docs",
         "ingestedAt": "2026-05-28T01:33:25.014Z"
       }
+    },
+    {
+      "title": "iCloud: test_intelligence.md",
+      "sections": [
+        {
+          "header": "Test Intelligence",
+          "content": "This is a test intelligence file for iCloud scanning."
+        },
+        {
+          "header": "Key Concepts",
+          "content": "- Autonomous Sync\n- iCloud Observation\n- Jules Cognitive Engine"
+        }
+      ],
+      "metadata": {
+        "source": "icloud://test_intelligence.md",
+        "ingestedAt": "2026-05-28T02:35:21.386Z"
+      }
     }
   ],
   "nomad": {
