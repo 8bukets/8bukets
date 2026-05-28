@@ -330,23 +330,61 @@ export class Jules {
     console.log('🌿 [Jules] Scanning all project branches for knowledge...')
     const { execSync } = await import('child_process')
     try {
-      const branchInfo = execSync('git branch -a --list').toString().trim()
-      const branches = branchInfo.split('\n').map(b => b.trim().replace('* ', ''))
+      // Phase 12: High-efficiency branch scanning with metadata
+      const format = '%(refname:short)|%(contents:subject)|%(committerdate:iso8601)|%(objectname)'
+      const branchInfo = execSync(`git for-each-ref --format='${format}' refs/heads refs/remotes`).toString().trim()
+      const lines = branchInfo.split('\n')
+
+      const branches = lines.map(line => {
+        const [name, lastMessage, lastSeen, hash] = line.split('|')
+
+        // Categorization logic
+        let category = 'other'
+        const shortName = name.replace('origin/', '')
+        if (shortName.startsWith('feat/')) category = 'feature'
+        else if (shortName.startsWith('fix/')) category = 'fix'
+        else if (shortName.startsWith('bolt-')) category = 'bolt'
+        else if (shortName.startsWith('jules-')) category = 'agent'
+
+        // Domain extraction heuristic
+        let domain = 'General'
+        if (shortName.includes('-')) {
+          domain = shortName.split('-')[1].charAt(0).toUpperCase() + shortName.split('-')[1].slice(1)
+        } else if (shortName.includes('/')) {
+          domain = shortName.split('/')[1].split('-')[0]
+          domain = domain.charAt(0).toUpperCase() + domain.slice(1)
+        }
+
+        // Changed files for the latest commit (limit to avoid extreme overhead)
+        let changedFiles: string[] = []
+        if (raw && hash) {
+          try {
+            const files = execSync(`git diff-tree --no-commit-id --name-only -r ${hash}`).toString().trim()
+            changedFiles = files.split('\n').filter(f => f.length > 0)
+          } catch (e) {}
+        }
+
+        return {
+          name,
+          lastMessage: lastMessage || 'N/A',
+          lastSeen: lastSeen || 'N/A',
+          category,
+          domain,
+          changedFiles,
+          results: lastMessage, // Default result to last message
+          knowledge: '' // Placeholder for derived knowledge
+        }
+      })
 
       if (raw) {
-        return branches.map(name => ({ name }))
+        return branches
       }
 
       let summary = `## 🌿 Branch Intelligence\n`
       summary += `Found ${branches.length} branches in the repository.\n\n`
 
-      branches.slice(0, 10).forEach(branch => {
-        try {
-          const lastCommit = execSync(`git log -1 --format="%s (%ar)" ${branch}`).toString().trim()
-          summary += `- **${branch}**: ${lastCommit}\n`
-        } catch (e) {
-          summary += `- **${branch}**: _Summary unavailable_\n`
-        }
+      branches.slice(0, 10).forEach(b => {
+        summary += `- **${b.name}**: ${b.lastMessage} (*${b.lastSeen}*)\n`
       })
 
       if (branches.length > 10) {
@@ -356,7 +394,7 @@ export class Jules {
       this.recordTask(`Branch Scan: Analyzed ${branches.length} branches for cross-project context.`)
       return summary
     } catch (e) {
-      console.warn('⚠️ [Jules] Branch scan failed.')
+      console.warn('⚠️ [Jules] Branch scan failed.', e)
       return raw ? [] : '## 🌿 Branch Intelligence\n_Branch scan failed or Git not available._\n'
     }
   }
