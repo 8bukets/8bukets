@@ -5,12 +5,12 @@
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1779935721811,
+        "timestamp": 1779993847335,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
-        "branches": 2169,
-        "pendingTasks": 18,
+        "branches": 2192,
+        "pendingTasks": 0,
         "relationshipMap": {
             "stakeholderEngagement": {},
             "goalAlignment": {},
@@ -92,6 +92,12 @@
                     "name": "cloud_convergence",
                     "status": "Active",
                     "path": "antigravity/services/cloud_convergence.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "cloud_simulation",
+                    "status": "Active",
+                    "path": "antigravity/services/cloud_simulation.ts"
                 },
                 {
                     "type": "Service",
@@ -359,6 +365,12 @@
                 },
                 {
                     "type": "Automation Script",
+                    "name": "analyze_recent_sessions",
+                    "status": "Active",
+                    "path": "scripts/analyze_recent_sessions.ts"
+                },
+                {
+                    "type": "Automation Script",
                     "name": "autonomous_evolution_task",
                     "status": "Active",
                     "path": "scripts/autonomous_evolution_task.sh"
@@ -619,6 +631,12 @@
                     "type": "AI Agent",
                     "name": "chief_ai_officer_agent",
                     "status": "Active",
+                    "path": "agents/chief_ai_officer_agent.md"
+                },
+                {
+                    "type": "AI Agent",
+                    "name": "chief_ai_officer_agent",
+                    "status": "Active",
                     "path": "agents/chief_ai_officer_agent.py"
                 },
                 {
@@ -857,9 +875,59 @@
                 },
                 {
                     "type": "Knowledge",
-                    "name": "iCloud: test_intelligence.md",
+                    "name": "Chief AI Officer (CAIO) Role",
                     "status": "Ingested",
-                    "source": "icloud://test_intelligence.md"
+                    "source": "user_provided_research"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Understanding bidding basics - Google Ads Help",
+                    "status": "Ingested"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Google Ads Smart Bidding - AI-Driven Bid Optimisations & Ad Spend",
+                    "status": "Ingested"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Tips & Resources for Online Advertising – Google Ads",
+                    "status": "Ingested"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Ad Manager  |  Google for DevelopersGoogleGoogle",
+                    "status": "Ingested"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Dynamic Ad Insertion  |  Google for DevelopersGoogleGoogle",
+                    "status": "Ingested"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "DAI Full Service API  |  Google for DevelopersGoogleGoogle",
+                    "status": "Ingested"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "DAI Pod Serving API  |  Google for DevelopersGoogleGoogle",
+                    "status": "Ingested"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Get started  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle",
+                    "status": "Ingested"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Resources Overview - Google Ad Manager",
+                    "status": "Ingested"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation",
+                    "status": "Ingested"
                 },
                 {
                     "type": "Documentation",
@@ -875,6 +943,1518 @@
                     "type": "Documentation",
                     "name": "KNOWLEDGE_MERGE.md",
                     "status": "Active"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/add-chief-ai-officer-agent-1329096278704697703",
+                    "status": "Ready for Merge",
+                    "result": "feat: Add Chief AI Officer Python agent"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/add-dry-run-and-docs-355491477019803773",
+                    "status": "Ready for Merge",
+                    "result": "fix(ci): freeze gcp deployments to bypass credential failures"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/add-duo-planner-agent-13826965705256453185",
+                    "status": "Ready for Merge",
+                    "result": "feat: Add Duo Planner GitLab agent system prompt"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/add-first-gitlab-pipeline-16997691605119051204",
+                    "status": "Ready for Merge",
+                    "result": "ci: configure first gitlab ci/cd pipeline"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/add-subagents-docs-1971776765739377795",
+                    "status": "Ready for Merge",
+                    "result": "chore: remove compiled pyc files and fix CI failures"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/add-vscode-intelephense-scraper-14077541109460571924",
+                    "status": "Ready for Merge",
+                    "result": "feat: add scraper to fetch vscode-intelephense repository docs"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/ai-agents-knowledge-14795660026662295366",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement AI agent knowledge from Google Cloud"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/ai-agents-knowledge-15681133979794376101",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement knowledge ingestion for AI agents"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/ai-agents-knowledge-ingestion-3432960869783854018",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/ai-agents-knowledge-ingestion-3432960869783854018"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/ai-agents-knowledge-ingestion-51848187449270745",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement AI Agents knowledge ingestion in TypeScript"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/ai-agents-knowledge-integration-10133877583552684442",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate AI agent knowledge from Google Cloud"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/ai-agents-knowledge-integration-17962488157664900856",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/ai-agents-knowledge-integration-17962488157664900856"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/ai-agents-knowledge-integration-3155871126605591044",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate Google Cloud AI agent knowledge and fix frontend regressions"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/ai-agents-knowledge-integration-4554182407588547817",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate AI agent foundation and strategic knowledge"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/ai-agents-knowledge-update-2880934032855437252",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/ai-agents-knowledge-update-2880934032855437252"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/ai-architecture-docs-2911584593714899836",
+                    "status": "Ready for Merge",
+                    "result": "fix(jules): exclude cache directories from branch diff scanner"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/ai-sdk-streamtext-integration-3734860099537308061",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate Vercel AI SDK streamText with Google Gemini"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/antigravity-cloud-evolution-3450373713332257591",
+                    "status": "Ready for Merge",
+                    "result": "feat(cloud): evolve Antigravity to fully online multi-agent architecture"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-cloud-convergence-phase-12-11379028617689834826",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement unified autonomous cloud convergence (Phase 12)"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-cloud-evolution-2894233982958127060",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement autonomous cloud evolution engine"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-cloud-evolution-7110023434295372001",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-cloud-evolution-7110023434295372001"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-cloud-failover-13782442138819724713",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-cloud-failover-13782442138819724713"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-cloud-knowledge-consolidation-6778083691317646306",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/autonomous-cloud-knowledge-consolidation-6778083691317646306 (Resolved conflicts by favoring PR changes)"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-cloud-merge-bypass-8712146839008626317",
+                    "status": "Ready for Merge",
+                    "result": "feat: enable autonomous cloud merging and continuous pull request processing"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-cloud-presence-13349070200456458168",
+                    "status": "Ready for Merge",
+                    "result": "fix: resolve linting and react hook errors in frontend"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-cloud-presence-978332573715716812",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-cloud-presence-978332573715716812"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-cloud-presence-enhancement-11813668786867103175",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-cloud-presence-enhancement-11813668786867103175"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-cloud-presence-v12-14478074314535541001",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement autonomous cloud presence and ecosystem collaboration (Final)"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-cloud-sovereignty-10617479099026703774",
+                    "status": "Ready for Merge",
+                    "result": "feat: enable autonomous cloud sovereignty and presence"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-cloud-sovereignty-9356824831657033971",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement node sovereignty and cloud takeover for always-on autonomy"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-cloud-workflow-agent-17352121164725625008",
+                    "status": "Ready for Merge",
+                    "result": "fix: restore missing base_agent and ensure cloud_workflow_agent leverages environment fully"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-creation-cycle-10141862539312644533",
+                    "status": "Ready for Merge",
+                    "result": "feat: execute full autonomous creation cycle for System Health Dashboard"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-creation-cycle-10567644799753050340",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement full autonomous creation order and execution"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-creation-cycle-14040463371825265667",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement full autonomous creation order and execution cycle"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-creation-cycle-2519215097742916370",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-creation-cycle-2519215097742916370"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-creation-cycle-856121647264189672",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/autonomous-creation-cycle-856121647264189672"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-creation-cycle-8889704769332571568",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/autonomous-creation-cycle-8889704769332571568 (Resolved conflicts by favoring PR changes)"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-creation-cycle-alignment-17511680594965504532",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement fully autonomous creation and execution lifecycle"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-creation-cycle-components-16091962715675237550",
+                    "status": "Ready for Merge",
+                    "result": "feat(autonomous): run workflow to generate Feature Scaling Coordinator and Proactive Scalability Service"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-creation-cycle-stabilization-15042891493316655880",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/autonomous-creation-cycle-stabilization-15042891493316655880 (Resolved conflicts by favoring PR changes)"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-creation-engine-2254624505132207048",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-creation-engine-2254624505132207048"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-creation-engine-4025311903308148897",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement autonomous creation engine and enhance synthesis"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-creation-engine-8264207274703386634",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/autonomous-creation-engine-8264207274703386634"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-creation-evolution-15095668826431318009",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement full autonomous creation and execution cycle"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-creation-evolution-8400947059595205490",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-creation-evolution-8400947059595205490"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-creation-evolution-9797261657817492019",
+                    "status": "Ready for Merge",
+                    "result": "feat: enable and execute full autonomous creation cycle"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-creation-execution-cycle-15305595999665058256",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement autonomous creation and execution cycle"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-creation-ignition-8279236901022115183",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement full autonomous creation ignition and execution loop"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-creation-order-15598638641975305660",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement autonomous creation order and execution cycle"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-creation-workflow-3405864056735781942",
+                    "status": "Ready for Merge",
+                    "result": "feat: add daily autonomous creation cycle workflow"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-creation-workflow-3510228137813384837",
+                    "status": "Ready for Merge",
+                    "result": "feat: setup autonomous creation cycle workflow"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-knowledge-integration-17955218427957192278",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate knowledge merge automate and mandatory branding"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-knowledge-merge-integration-7336376174653750666",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-knowledge-merge-integration-7336376174653750666"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-multi-ci-workflow-creation-13184263401868233273",
+                    "status": "Ready for Merge",
+                    "result": "feat(singularity): enable full autonomous automatic workflow creation across CI providers"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-protocol-jules-16130780090107402276",
+                    "status": "Ready for Merge",
+                    "result": "feat: autonomous PR management and protocolization in Jules"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-scale-improvements-3306739590977021046",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/autonomous-scale-improvements-3306739590977021046"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-sync-orch-3205070913479590018",
+                    "status": "Ready for Merge",
+                    "result": "feat: enhance autonomous work cycle with Git sync and iCloud"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-work-order-engine-4034176882068097834",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-work-order-engine-4034176882068097834"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/autonomous-workflow-creation-13764436247269423073",
+                    "status": "Ready for Merge",
+                    "result": "feat(singularity): auto-generate full autonomous workflows"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/boundary-integration-3444742037386565893",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/boundary-integration-3444742037386565893 (Resolved conflicts by favoring PR changes)"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/caio-intelligence-integration-11172055964198786485",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/caio-intelligence-integration-11172055964198786485 (Resolved conflicts)"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/caio-role-definition-2687968350619526686",
+                    "status": "Ready for Merge",
+                    "result": "feat: define Chief AI Officer (CAIO) role and responsibilities"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/caio-role-documentation-939377481223590530",
+                    "status": "Ready for Merge",
+                    "result": "feat: document Chief AI Officer (CAIO) role"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/caio-role-orchestration-enhancement-8826405201008920940",
+                    "status": "Ready for Merge",
+                    "result": "feat: enhance CAIO role intelligence and system stabilization"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/caio-role-refinement-14139776390756160770",
+                    "status": "Ready for Merge",
+                    "result": "feat: refine CAIO strategy and enhance autonomous core resilience"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/chief-ai-officer-agent-16063286064953907813",
+                    "status": "Ready for Merge",
+                    "result": "feat: create CAIO dispatch script to initialize system optimizations"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/chief-ai-officer-agents-7425185603236409614",
+                    "status": "Ready for Merge",
+                    "result": "feat: add local and remote Chief AI Officer agents"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/chief-ai-officer-creation-17511905373912707701",
+                    "status": "Ready for Merge",
+                    "result": "feat: create Chief AI Officer agent"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/cloud-autonomous-evolution-4476041926243078641",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement full cloud autonomy and multi-tool integration"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/cloud-autonomous-presence-4768792204367486255",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/cloud-autonomous-presence-4768792204367486255"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/cloud-autonomous-presence-7598106438601862770",
+                    "status": "Ready for Merge",
+                    "result": "feat: autonomous cloud presence and fast-track merging"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/cloud-connection-sync-9636399974461911067",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/cloud-connection-sync-9636399974461911067"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/cloud-convergence-phase-17-526028351036584856",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement full online cloud convergence and multi-provider evolution (Phase 17)"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/cloud-native-autonomy-13870741608362044054",
+                    "status": "Ready for Merge",
+                    "result": "feat: enable cloud-native autonomy and online presence"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/cloud-native-autonomy-3438116551041896813",
+                    "status": "Ready for Merge",
+                    "result": "[ROADMAP:PHASE-12] Unified Cloud-Native Autonomous Evolution"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/cloud-native-autonomy-presence-7653289006767349445",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement cloud-native autonomy and online presence"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/cloud-native-convergence-16112457665657205536",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement cloud-native autonomous convergence and online presence"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/cloud-native-online-presence-8372655786114667910",
+                    "status": "Ready for Merge",
+                    "result": "feat: reinforce cloud-native online presence and autonomous work"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/cloud-simulation-intelligence-18003609215898643719",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate cloud simulation intelligence into autonomous workflows"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/cloud-workflow-agent-proactive-logic-7308921529560854073",
+                    "status": "Ready for Merge",
+                    "result": "feat: enhance CloudWorkflowAgent with smarter integrations"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/collaboration-dashboard-13924371239853665910",
+                    "status": "Ready for Merge",
+                    "result": "feat(dashboard): add collaboration dashboard to track multiple repos"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/collaboration-intelligence-knowledge-merge-v1-1682981257800000691",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate autonomous knowledge into collaboration map and intelligence reports"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/collaboration-synergy-analysis-9382599357384352288",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/collaboration-synergy-analysis-9382599357384352288"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/compile-knowledge-ingestion-4339613978296539768",
+                    "status": "Ready for Merge",
+                    "result": "feat: ingest dictionary definition of Compile into central trackers"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/connect-docker-collaboration-10997916882350002599",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/connect-docker-collaboration (Resolved conflicts by favoring PR changes)"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/connect-docker-collaboration-6033606454460470488",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement autonomous docker connectivity and collaboration sync"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/connect-docker-collaboration-high-fidelity-sim-12659027097554184106",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/connect-docker-collaboration-high-fidelity-sim (Resolved conflicts by favoring PR changes)"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/connect-docker-collaboration-sync-final-11700500964007561939",
+                    "status": "Ready for Merge",
+                    "result": "feat: execute autonomous docker connectivity and collaboration sync"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/connect-docker-collaboration-sync-final-11700500964007561939-14187345688277018919",
+                    "status": "Ready for Merge",
+                    "result": "feat: execute autonomous docker connectivity and collaboration sync"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/connect-docker-collaboration-sync-final-11700500964007561939-5613862418405546964",
+                    "status": "Ready for Merge",
+                    "result": "feat: optimize branch scanning and execute autonomous collaboration sync"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/connect-docker-collaboration-sync-final-11700500964007561939-5613862418405546964-revised-8145830076406452013",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/connect-docker-collaboration-sync-final-revised (Resolved conflicts by favoring PR changes)"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/connect-docker-collaboration-sync-final-6753111079424335435",
+                    "status": "Ready for Merge",
+                    "result": "feat: synchronize autonomous state and collaborate with stakeholders"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/connect-docker-collaboration-sync-final-6753111079424335435-11457900944324227307",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/connect-docker-collaboration-sync-final-6753111079424335435-11457900944324227307"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/consolidate-intelephense-docs-v2-6711603966730800844",
+                    "status": "Ready for Merge",
+                    "result": "feat: consolidate Intelephense documentation into a single entry"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/consolidated-intelligence-sync-1091614933754712837",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement consolidated intelligence and branch scanning"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/custom-github-action-10612201952418849138",
+                    "status": "Ready for Merge",
+                    "result": "test: Add workflow to test custom GitHub action execution"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/daily-sync-resilience-12294637765009606506",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/daily-sync-resilience-12294637765009606506"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/daily-sync-workflow-5320368611823718820",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement daily pull-work-push-sync cycle"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/decision-maker-agent-8910670838096441234",
+                    "status": "Ready for Merge",
+                    "result": "feat: create decision maker agent for antigravity cli"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/deploy-react-agents-logic-12098199206590490844",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/deploy-react-agents-logic-12098199206590490844"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/docker-build-cloud-13144983304345154316",
+                    "status": "Ready for Merge",
+                    "result": "ci: Configure Docker Build Cloud across GitHub, GitLab, and Jenkins"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/docker-build-cloud-integration-15193242947855086456",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/docker-build-cloud-integration (Resolved conflicts by removing bytecode/telemetry and favoring PR changes)"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/docker-collaboration-enhancements-2442044575661287661",
+                    "status": "Ready for Merge",
+                    "result": "feat: enhance docker connectivity and collaboration logic"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/docker-collaboration-integration-7386073686217533934",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/docker-collaboration-integration-7386073686217533934"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/docker-collaboration-integration-9536206781039101862",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate Docker monitoring and collaboration services"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/docker-collaboration-scale-fix-12248709556243193254",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/docker-collaboration-scale-fix-12248709556243193254"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/docker-collaboration-sync-231662997979975664",
+                    "status": "Ready for Merge",
+                    "result": "feat: enable adaptive docker connectivity and collaboration sync"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/document-hcp-credentials-12060712897845222769",
+                    "status": "Ready for Merge",
+                    "result": "chore: add HCP credential placeholders to env template"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/dual-engine-autonomous-collaboration-180989571444817477",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/dual-engine-autonomous-collaboration-180989571444817477"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/ecosystem-merge-collaboration-sync-v1-13937591330884389226",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/ecosystem-merge-collaboration-sync-v1-13937591330884389226"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/enhanced-collaboration-intelligence-16362331248901214239",
+                    "status": "Ready for Merge",
+                    "result": "feat: enhance branch scanning and consolidated intelligence"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/enhanced-collaboration-intelligence-sync-15907336332787904375",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/enhanced-collaboration-intelligence-sync (Resolved conflicts by favoring PR changes)"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326",
+                    "status": "Ready for Merge",
+                    "result": "feat: enhance collaboration merge and global neural sync (Phase 12)"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326-10745185975815563107",
+                    "status": "Ready for Merge",
+                    "result": "feat: enhance ecosystem collaboration merge and communication"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326-10745185975815563107-revised-21447012398436571932-3380172087610971607",
+                    "status": "Ready for Merge",
+                    "result": "feat(collaboration): advance sentient orchestration and neural parity"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/evolve-autonomous-engine-phase-12-3914839114884356859",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/evolve-autonomous-engine-phase-12-3914839114884356859"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/evolve-chief-ai-officer-agent-5969082472717140886",
+                    "status": "Ready for Merge",
+                    "result": "feat: evolve Chief AI Officer agent with market intelligence and resource allocation capabilities"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/fix-icloud-sync-10523504471527145361",
+                    "status": "Ready for Merge",
+                    "result": "feat: add fix:icloud script to resolve macOS NSFileProviderErrorDomain -5009"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/full-autonomous-creation-cycle-12087260732508548696",
+                    "status": "Ready for Merge",
+                    "result": "Potential fix for pull request finding 'CodeQL / Workflow does not contain permissions'"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/full-autonomous-creation-engine-2520836336596562790",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement fully autonomous creation order and execution chain"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/full-autonomous-creation-execution-17830710122661382280",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement full autonomous creation order and execution chain"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/full-autonomous-creation-execution-v2-2098058797614095194",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement full autonomous creation order and execution chain"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/full-autonomous-online-engine-13146767980189175838",
+                    "status": "Ready for Merge",
+                    "result": "feat: establish full autonomous cloud-connected engine"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/full-ecosystem-collaboration-sync-2223737222399285274",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement and execute full ecosystem collaboration sync"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/fully-autonomous-automatic-workflow-13826864228372455189",
+                    "status": "Ready for Merge",
+                    "result": "feat: Implement fully autonomous automatic workflow with concrete steps\\n\\n- Deletes the previous placeholder workflow file to reset Git rename state.\\n- Creates a new `.github/workflows/fully_autonomous_automatic_workflow.yml` from scratch.\\n- Implements the core `npm run connect` and `execute_creation_cycle.ts` steps with correct cloud simulation variables.\\n- Adds concrete functionality (`npm run test` as pre-flight checks and `npm run ingest:knowledge` as a post-cycle operation) to fulfill reviewer requirements for functional improvements.\\n- Adds extensive file documentation to prevent Git rename similarity conflicts."
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/fully-autonomous-automatic-workflow-15126988086375924911",
+                    "status": "Ready for Merge",
+                    "result": "feat: setup fully autonomous automatic workflow pipeline"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/fully-autonomous-workflow-17826823643615309371",
+                    "status": "Ready for Merge",
+                    "result": "feat: fully autonomous automatic workflow creation"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/gemini-cli-security-hook-12046243673500680117",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/gemini-cli-security-hook-12046243673500680117"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/gemini-cli-subagents-docs-8356808256042543281",
+                    "status": "Ready for Merge",
+                    "result": "docs: add Gemini CLI Subagents documentation"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/gemma-4-scraper-14386039384216646408",
+                    "status": "Ready for Merge",
+                    "result": "test(audit): Implement autonomous license validation"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/git-merge-approvals-2916397739730846342",
+                    "status": "Ready for Merge",
+                    "result": "feat: enforce approval rules for GitHub and GitLab PRs/MRs"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/gitlab-ci-docker-build-cloud-integration-15454130814432814509",
+                    "status": "Ready for Merge",
+                    "result": "Merge Docker Build Cloud configuration into GitLab CI pipeline"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/gitlab-ci-pipeline-15616713096718552061",
+                    "status": "Ready for Merge",
+                    "result": "feat: add initial GitLab CI/CD pipeline configuration"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/gitlab-ci-setup-14268875280165103242",
+                    "status": "Ready for Merge",
+                    "result": "No changes needed for .gitlab-ci.yml tutorial"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/gitlab-security-agent-15511716266568375880",
+                    "status": "Ready for Merge",
+                    "result": "feat: update GitLab Security Agent prompt"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/go-genai-sdk-example-5056505739912335467",
+                    "status": "Ready for Merge",
+                    "result": "feat(go-sim): add Gemini GenAI SDK example with error handling"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/go-parallel-simulation-12127722696321938947",
+                    "status": "Ready for Merge",
+                    "result": "feat: create go parallel simulation prototype"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/google-ads-scraper-5253922194982887918",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/google-ads-scraper-5253922194982887918"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/google-ai-knowledge-integration-17446113522463245373",
+                    "status": "Ready for Merge",
+                    "result": "Integrated AI Agents knowledge from Google Innovation & AI blog."
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/google-innovation-ai-knowledge-integration-2508984454520338148",
+                    "status": "Ready for Merge",
+                    "result": "Integrate knowledge from Google Innovation & AI blog"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/google-innovation-knowledge-3073243176804240163",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate Google Innovation & AI blog knowledge"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/hcp-terraform-run-task-3528016114234953749",
+                    "status": "Ready for Merge",
+                    "result": "feat: Add HCP Terraform run task configuration for Packer validation"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/high-scale-ecosystem-sync-5489708808675678101",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement high-scale branch scanning and hierarchical knowledge merge"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/high-scale-react-agent-deployment-3564540097483377252",
+                    "status": "Ready for Merge",
+                    "result": "feat: Enhance React agents deployment logic for higher scale"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/highlander-subagent-14372356893109913488",
+                    "status": "Ready for Merge",
+                    "result": "feat: add highlander subagent"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/icloud-knowledge-integration-and-engine-improvement-2061584058297730102",
+                    "status": "Ready for Merge",
+                    "result": "feat: scan and integrate iCloud knowledge and improve system engine"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/icloud-knowledge-integration-and-engine-improvement-460748262715860893",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/icloud-knowledge-integration-and-engine-improvement-460748262715860893"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/icloud-knowledge-integration-and-engine-improvement-v2-13334952668195963162",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate iCloud knowledge and enhance system engine/agents"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/icloud-knowledge-integration-and-engine-improvement-v2-5900978067024052098",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate iCloud knowledge and improve system engines and CAIO agent"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/icloud-knowledge-integration-and-engine-improvement-v3-7738040317614912379",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate iCloud knowledge and improve system engine and agents"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/icloud-knowledge-integration-engine-improvement-v12-14525154319708806006",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate iCloud knowledge and improve system engine and agents"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/icloud-knowledge-phase12-upgrade-11553884983056269678",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate iCloud knowledge and upgrade system to Phase 12"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/icloud-sync-daily-work-3416451490970137960",
+                    "status": "Ready for Merge",
+                    "result": "feat(icloud): implement autonomous project sync to iCloud folder"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/implement-google-ai-agent-knowledge-8032750828008841906",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement AI agent knowledge from Google Cloud"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/implement-google-ai-agents-knowledge-17341300705636515353",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement high-quality AI agents knowledge integration"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/improve-intelephense-ingestion-9141821199438539105",
+                    "status": "Ready for Merge",
+                    "result": "feat: improve KnowledgeObserver parser and update Intelephense docs"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/improve-intelephense-knowledge-ingestion-v2-3857533015746943913",
+                    "status": "Ready for Merge",
+                    "result": "feat: improve Intelephense documentation ingestion and parser robustness"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/improve-intelephense-knowledge-ingestion-v3-5924406336570391943",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/improve-intelephense-knowledge-ingestion (Resolved conflicts by favoring PR changes)"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/improve-sor-knowledge-observation-workflow-12368605147794196208",
+                    "status": "Ready for Merge",
+                    "result": "feat: improve software-online-review ingestion and add AI summaries"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/ingest-agent-architecture-terminology-6454380025085424990",
+                    "status": "Ready for Merge",
+                    "result": "feat: ingest agent architecture terminology and tracking"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/ingest-caio-role-4517363704390160540",
+                    "status": "Ready for Merge",
+                    "result": "feat: ingest Chief AI Officer (CAIO) role description"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/ingest-caio-role-knowledge-12304134703620086270",
+                    "status": "Ready for Merge",
+                    "result": "feat: ingest Chief AI Officer (CAIO) role description"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/ingest-caio-role-knowledge-v2-8305785302400580683",
+                    "status": "Ready for Merge",
+                    "result": "feat: enhance and synchronize Chief AI Officer (CAIO) role knowledge"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/ingest-gemini-cli-subagents-2252664288604789575",
+                    "status": "Ready for Merge",
+                    "result": "ci: fix node 20 deprecation warning in all workflows"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/ingest-gitlab-ci-tutorial-4208330200923391769",
+                    "status": "Ready for Merge",
+                    "result": "feat: ingest GitLab CI/CD tutorial into knowledge base"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/ingest-google-ads-docs-v2-13679528452571479134",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/ingest-google-ads-docs-v2-13679528452571479134 (Resolved conflicts by favoring PR changes)"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/ingest-google-ads-knowledge-6737559819071582346",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/ingest-google-ads-knowledge-6737559819071582346"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/ingest-google-cloud-ai-agents-knowledge-10482240976459445252",
+                    "status": "Ready for Merge",
+                    "result": "feat: ingest Google Cloud AI Agents knowledge"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/ingest-gpgtools-knowledge-5020055793248780056",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/ingest-gpgtools-knowledge (Resolved conflicts by favoring PR changes)"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/ingest-investopedia-10368440207233601793",
+                    "status": "Ready for Merge",
+                    "result": "feat(knowledge): use puppeteer for investopedia.com to satisfy scraping axioms"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/ingest-subagents-3786532283562026658",
+                    "status": "Ready for Merge",
+                    "result": "feat: Ingest Gemini CLI Subagents knowledge"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/instrument-gemini-telemetry-2423728923945984767",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/instrument-gemini-telemetry-2423728923945984767"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/integrate-antigravity-cli-1970974784687429419",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/integrate-antigravity-cli-1970974784687429419"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/integrate-google-ai-knowledge-17317066349600220724",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate Google Innovation & AI blog knowledge"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/integrate-google-ai-knowledge-1914861070610569858",
+                    "status": "Ready for Merge",
+                    "result": "Integrate latest knowledge from Google Innovation & AI Blog"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/integrate-google-ai-knowledge-7980540438595824425",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate latest Google Innovation & AI knowledge"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/integrate-google-innovation-ai-knowledge-v2-1038711777020334701",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate knowledge from Google Innovation & AI blog"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/integrate-knowledge-merge-7649916960782275169",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate knowledge merge and all the best - https://markposition.wordpress.com"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/integrate-markposition-autonomy-14681474804703419515",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/integrate-markposition-autonomy-14681474804703419515"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/integrate-markposition-knowledge-and-automate-merge-15099676768518099214",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/integrate-markposition-knowledge-and-automate-merge-15099676768518099214"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/integrate-oracle-ai-10269913553901722650",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate Oracle AI knowledge into agent swarm"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/integrate-oracle-ai-knowledge-17141461773939806605",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate Oracle AI knowledge with orchestrator"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/integrate-oracle-ai-knowledge-3394848601696333844",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate oracle ai knowledge"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/integrate-oracle-knowledge-15758201363519659377",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate oracle ai knowledge"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/integrate-react-knowledge-1014096584960652610",
+                    "status": "Ready for Merge",
+                    "result": "feat(react-agents): integrate knowledge extraction for deployment"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/intelephense-docs-consolidation-14111284160958463433",
+                    "status": "Ready for Merge",
+                    "result": "feat(knowledge): consolidate Intelephense documentation"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/intelephense-docs-consolidation-v2-13428827528883240394",
+                    "status": "Ready for Merge",
+                    "result": "feat: consolidate Intelephense documentation workflow"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/intelephense-docs-ingestion-5058226112541762188",
+                    "status": "Ready for Merge",
+                    "result": "feat: autonomous knowledge ingestion and Intelephense documentation integration"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/intelephense-docs-ingestion-5441794929729176117",
+                    "status": "Ready for Merge",
+                    "result": "feat(knowledge): ingest Intelephense documentation and refactor observers"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/intelephense-docs-integration-15548360236186896654",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/intelephense-docs-integration-15548360236186896654"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/intelephense-docs-integration-390578372691536711",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate Intelephense documentation from GitHub"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/intelephense-docs-integration-9176181955065313741",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate Intelephense documentation ingestion"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/intelephense-docs-sync-14439717062784308623",
+                    "status": "Ready for Merge",
+                    "result": "feat(jules): autonomously synchronize all Intelephense documentation"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/intelephense-docs-sync-6999221207327014913",
+                    "status": "Ready for Merge",
+                    "result": "docs: ingest and consolidate Intelephense documentation"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/intelephense-docs-update-v2-4092727352639534773",
+                    "status": "Ready for Merge",
+                    "result": "feat: update Intelephense documentation and consolidate knowledge base"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/intelephense-knowledge-optimization-6916201581932605219",
+                    "status": "Ready for Merge",
+                    "result": "feat: optimize Intelephense knowledge ingestion and cleanup"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/investopedia-ingestion-10809640050459136774",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate investopedia knowledge ingestion"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/investopedia-ingestion-17078894864582667817",
+                    "status": "Ready for Merge",
+                    "result": "feat: continually scrape and ingest Investopedia market intelligence"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/jenkins-integration-8889480307913922372",
+                    "status": "Ready for Merge",
+                    "result": "feat(ci): integrate jenkins configuration parsing into cognitive engine"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/jenkins-pipeline-17650508759045310490",
+                    "status": "Ready for Merge",
+                    "result": "feat: connect jenkins into autonomous engine pipeline"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/jules-tools-documentation-3709224248115032248",
+                    "status": "Ready for Merge",
+                    "result": "feat: add Jules Tools reference and integrate into knowledge base"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/knowledge-ingestion-intelephense-9344036021876416224",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement robust knowledge ingestion and merge Intelephense docs"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/knowledge-merge-automation-1708085777270583651",
+                    "status": "Ready for Merge",
+                    "result": "feat: autonomous knowledge merge and automation"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/knowledge-merge-automation-4266785228236839027",
+                    "status": "Ready for Merge",
+                    "result": "Integrate Knowledge Merge Automation and Autonomous Cycle"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/knowledge-observe-integration-17136884743066058279",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement knowledge saving in knowledge_observer"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/macbook-cloud-presence-simulation-16607574531277439639",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/macbook-cloud-presence-simulation-16607574531277439639"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/macbook-cloud-simulation-2306204492187680775",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement fully online macbook cloud simulation overrides"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/macbook-cloud-simulation-4201425406939094947",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement fully online macbook cloud simulation globally"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/macbook-cloud-simulation-knowledge-9264395958360396877",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement macbook cloud simulation and online presence knowledge ingestion"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/macbook-cloud-simulation-verification-18070016345319943441",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement fully online macbook cloud simulation overrides"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/macbook-cloud-simulation-verification-18070016345319943441-479083842667788180",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement functional cloud simulation and collaboration integrations\\n\\n- Created SandboxCloudSimulation to explicitly manage and enforce cloud mode environments (MACBOOK_CLOUD_SIMULATION).\\n- Integrated cloud simulation directly into `scripts/connect_and_collaborate.ts` to trigger simulated ReAct workflows during connection syncs.\\n- Adjusted cron schedules in `.github/workflows/continuous-presence.yml` and `.github/workflows/fully_autonomous_automatic_workflow.yml` for higher frequency checks.\\n- Ensured valid `npm run test` is executed during pre-flight health checks in `.gitlab-ci.yml` and `.github` workflows."
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/markposition-bridge-15977356106835229406",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate and automate markposition knowledge bridge"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/markposition-knowledge-integration-v2-1630875147127639221",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/markposition-knowledge-integration-v2-1630875147127639221"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/mcp-docker-agent-config-10215645950897788310",
+                    "status": "Ready for Merge",
+                    "result": "feat: add Docker Agent MCP mode configuration and setup script"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/monetization-stripe-supabase-475749064302525361",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement stripe billing and supabase auth"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/mongodb-atlas-migration-4131498074566710377",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/mongodb-atlas-migration-4131498074566710377"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/netlify-deploy-button-8112490364183212293",
+                    "status": "Ready for Merge",
+                    "result": "feat: add deploy to netlify button and configuration"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/netlify-supabase-extension-config-2964669740529404630",
+                    "status": "Ready for Merge",
+                    "result": "fix: resolve ESLint parsing errors from merge conflict"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/nextjs-supabase-mongodb-ecosystem-8833511503168317980",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement Supabase auth, MongoDB integration, CI/CD, and Playwright tests"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/observe-knowledge-14086295564930272800",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/observe-knowledge-14086295564930272800"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/opentelemetry-scraper-16848949473178496467",
+                    "status": "Ready for Merge",
+                    "result": "fix: resolve CI failures by fixing tests and updating requirements"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/oracle-ai-knowledge-integration-15680791915741879380",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'oracle-google-cloud-agents-15432798509012982749' into feat/oracle-ai-knowledge-integration-15680791915741879380"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/otel-genai-semantics-11295433924323540657",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/otel-genai-semantics-11295433924323540657"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/phase-12-cloud-convergence-and-sentient-orchestration-8137990793219294746",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/phase-12-cloud-convergence-and-sentient-orchestration-8137990793219294746"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/phase-22-cloud-super-intelligence-7069863824765684745",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/phase-22-cloud-super-intelligence-7069863824765684745"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/prototype-schema-2382889081635482231",
+                    "status": "Ready for Merge",
+                    "result": "feat: introduce Prototype data schema using Zod and Mongoose"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/react-agent-deployment-improvements-4418304449912244036",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/react-agent-deployment-improvements (Resolved conflicts by favoring PR changes)"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/react-agent-integration-8372098972397137891",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement and integrate ReActAgent into autonomous workflow"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/react-integration-v2-8425489280318980511",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement and integrate ReAct reasoning-acting protocol"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/refine-caio-role-knowledge-v2-5295767818736859988",
+                    "status": "Ready for Merge",
+                    "result": "feat: refine CAIO agent and expand executive agent roles"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/remote-subagents-knowledge-10304987597767701842",
+                    "status": "Ready for Merge",
+                    "result": "feat: add Remote Subagents knowledge documentation"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/scale-remote-subagents-9068634002929713743",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/scale-remote-subagents-9068634002929713743"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/setup-docker-ci-cd-15330021649064333459",
+                    "status": "Ready for Merge",
+                    "result": "feat: Create Docker CI/CD pipelines for GitHub and GitLab"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/setup-npm-workspaces-gemini-cli-12181861489580932121",
+                    "status": "Ready for Merge",
+                    "result": "feat: setup monorepo for Gemini CLI"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/smarter-cloud-workflow-1168853453825745042",
+                    "status": "Ready for Merge",
+                    "result": "fix: correct JSON syntax error in package.json devDependencies"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/smarter-cloud-workflow-7992378765049941579",
+                    "status": "Ready for Merge",
+                    "result": "feat: make multi-cloud workflow processing smarter and always available"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/sor8bukets-worker-9724254739940303207",
+                    "status": "Ready for Merge",
+                    "result": "feat: containerize sor8bukets and integrate cloudflared tunnel"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/thinking-agent-graph-of-thought-8628973372365797019",
+                    "status": "Ready for Merge",
+                    "result": "feat: add ThinkingAgent for continuous Graph of Thought evaluation"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/unified-autonomous-execution-engine-12129098689674624370",
+                    "status": "Ready for Merge",
+                    "result": "feat: Unify Work Order system and enhance autonomous execution engine"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/unified-autonomous-intelligence-v2-11368535330418373877",
+                    "status": "Ready for Merge",
+                    "result": "feat: unify autonomous knowledge architecture and stabilize ecosystem"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/unified-cloud-autonomy-6168364407996649590",
+                    "status": "Ready for Merge",
+                    "result": "feat: unify autonomous orchestration for cloud persistence"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/unified-collaboration-intelligence-merge-v12-4808907432766111944",
+                    "status": "Ready for Merge",
+                    "result": "feat: implement unified collaboration and intelligence roadmap"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/unified-collaboration-intelligence-v12-3867223440127640861",
+                    "status": "Ready for Merge",
+                    "result": "feat: unified collaboration and strategic communication (Phase 12)"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/unified-knowledge-integration-6924488404722720860",
+                    "status": "Ready for Merge",
+                    "result": "feat: unify knowledge architecture and integrate Intelephense docs"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/update-autonomous-workflow-9631298294249766702",
+                    "status": "Ready for Merge",
+                    "result": "feat: update fully autonomous automatic workflow"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/update-intelephense-docs-8706527771111135696",
+                    "status": "Ready for Merge",
+                    "result": "feat: update and consolidate Intelephense documentation"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/update-intelephense-docs-comprehensive-14607207959398176805",
+                    "status": "Ready for Merge",
+                    "result": "feat: update Intelephense documentation with comprehensive content"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/update-intelephense-knowledge-16942753363135723418",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/update-intelephense-knowledge-16942753363135723418"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/update-intelephense-knowledge-3532439720427266436",
+                    "status": "Ready for Merge",
+                    "result": "Merge branch 'main' into feat/update-intelephense-knowledge (Resolved conflicts by favoring PR changes)"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/update-intelephense-knowledge-v3-10649927759915972956",
+                    "status": "Ready for Merge",
+                    "result": "feat: update Intelephense documentation in knowledge base"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/vault-radar-agent-8481917393959699580",
+                    "status": "Ready for Merge",
+                    "result": "feat: Add Vault Radar CLI installation and execution scripts"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "origin/feat/vercel-sandbox-agent-4324012582245511797",
+                    "status": "Ready for Merge",
+                    "result": "feat: integrate Vercel Sandbox CLI via new autonomous SandboxAgent"
                 }
             ],
             "synergies": [],
@@ -884,7 +2464,7 @@
             "origin": "development",
             "health": "degraded",
             "volatilityTags": 0,
-            "timestamp": "2026-05-28T02:35:28.916Z"
+            "timestamp": "2026-05-28T18:44:14.457Z"
         },
         "relayState": [
             {
@@ -894,7 +2474,7 @@
                     "Command Center",
                     "Store"
                 ],
-                "lastActivity": "2026-05-28T02:35:28.916Z",
+                "lastActivity": "2026-05-28T18:44:14.479Z",
                 "intensity": 0.85
             },
             {
@@ -909,5 +2489,5 @@
             }
         ]
     },
-    "last_sync": "2026-05-28T02:35:28.923Z"
+    "last_sync": "2026-05-28T18:44:14.484Z"
 }

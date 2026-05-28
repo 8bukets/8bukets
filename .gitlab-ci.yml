@@ -96,6 +96,7 @@ daily-tasks:
 autonomous-evolution:
   stage: test
   script:
+    - npm run test
     - npx tsx scripts/execute_creation_cycle.ts
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
