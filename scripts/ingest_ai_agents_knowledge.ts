@@ -25,9 +25,7 @@ async function scrapeAiAgentsKnowledge() {
         // Stop processing when these are encountered
         const stopMarkers = [
             "Additional resources", "Take the next step", "Continue browsing",
-            "Why Google", "Products and pricing", "Solutions", "Resources", "Engage",
-            "Accelerate your digital transformation", "Key benefits", "Industry Solutions",
-            "Featured Products"
+            "Why Google", "Products and pricing", "Solutions", "Resources", "Engage"
         ];
 
         // Skip UI and navigation sections if encountered early
@@ -45,13 +43,11 @@ async function scrapeAiAgentsKnowledge() {
             "Pricing overview and tools", "Product-specific Pricing",
             "Learn & build", "Connect", "Consulting and Partners",
             "Overview", "Products", "Pricing", "Docs", "Support", "Console",
-            "Contact us", "Start free", "Sign in", "Language",
-            "Next steps", "Frequently asked questions", "Filter by:", "Product type", "Campaign type"
+            "Contact us", "Start free", "Sign in", "Language"
         ];
 
         // Google Cloud content is usually inside a main element or specific class
-        // Specifically for this page, let's target the article content
-        const main = $('article, main, [role="main"], .c-content, #main-content').first();
+        const main = $('main, article, [role="main"]').first();
         const scope = main.length ? main : $('body');
 
         let currentSectionId = '';
@@ -73,59 +69,36 @@ async function scrapeAiAgentsKnowledge() {
                 });
 
                 if (filteredContent.length > 0) {
-                    // Deduplicate content lines
-                    const uniqueContent: string[] = [];
-                    const seenLines = new Set<string>();
-                    for (const line of filteredContent) {
-                        const trimmed = line.trim();
-                        if (!seenLines.has(trimmed)) {
-                            uniqueContent.push(line);
-                            seenLines.add(trimmed);
-                        }
-                    }
-
-                    if (uniqueContent.length > 0) {
-                        data[currentSectionId] = {
-                            title: currentSectionTitle,
-                            content: uniqueContent.join('\n\n')
-                        };
-                        if (!orderedScrapedKeys.includes(currentSectionId)) {
-                            orderedScrapedKeys.push(currentSectionId);
-                        }
+                    data[currentSectionId] = {
+                        title: currentSectionTitle,
+                        content: filteredContent.join('\n\n')
+                    };
+                    if (!orderedScrapedKeys.includes(currentSectionId)) {
+                        orderedScrapedKeys.push(currentSectionId);
                     }
                 }
             }
         };
 
         // Walk through all elements in the scope
-        // Filter out elements that are clearly navigation or sidebars
         scope.find('h1, h2, h3, h4, h5, h6, p, ul, ol, table, pre').each((_, el) => {
             if (stopScraping) return;
 
             const $el = $(el);
-
-            // Check if element is hidden or part of navigation
-            if ($el.closest('nav, footer, .nav, .sidebar, .menu').length > 0) {
-                return;
-            }
-
             const tagName = el.name.toLowerCase();
 
             if (['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(tagName)) {
                 const title = $el.text().trim();
 
-                if (!title) return;
-
                 if (stopMarkers.some(stop => title === stop || title.includes(stop))) {
                     finalizeSection();
                     stopScraping = true;
-                    console.log(`Stopping scraping at: ${title}`);
                     return;
                 }
 
                 finalizeSection();
 
-                if (skipTitles.some(skip => title === skip || title.includes(skip))) {
+                if (skipTitles.some(skip => title === skip || title.includes(skip)) || !title) {
                     currentSectionId = '';
                     currentSectionTitle = '';
                     currentContent = [];
@@ -133,9 +106,9 @@ async function scrapeAiAgentsKnowledge() {
                 }
 
                 currentSectionTitle = title;
-                currentSectionId = $el.attr('id') || title.toLowerCase().replace(/\s+/g, '-').replace(/[?,!:]/g, '');
+                currentSectionId = $el.attr('id') || title.toLowerCase().replace(/\s+/g, '-').replace(/[?,]/g, '');
                 currentContent = [];
-            } else if (currentSectionId && currentSectionTitle) {
+            } else if (currentSectionId) {
                 // If we are already in a section, collect content
                 if (tagName === 'p') {
                     const text = $el.text().trim();
@@ -225,8 +198,6 @@ async function scrapeAiAgentsKnowledge() {
                 mdContent += `## ${finalData[key].title}\n\n${finalData[key].content}\n\n`;
             }
         }
-
-        mdContent += "\nAll the best - https://cloud.google.com/discover/what-are-ai-agents\n";
 
         mdContent += "---\n\n# Manual Knowledge Additions\n\n";
         for (const key of manualKeys) {

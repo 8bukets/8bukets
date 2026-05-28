@@ -12,7 +12,6 @@ export const WorkOrderSchema = z.object({
   status: z.enum(['pending', 'executing', 'completed', 'failed', 'in_progress']),
   created_at: z.string(),
   updated_at: z.string().optional(),
-  node_id: z.string().optional(),
   completed_at: z.string().optional(),
   dependsOn: z.array(z.string()).optional(),
   result: z.any().optional(),
@@ -107,9 +106,6 @@ export class WorkOrderService {
   }
 
   public async createOrder(type: WorkOrder['type'], goal: string, payload: any, dependsOn?: string[]): Promise<WorkOrder> {
-    const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
-    const nodeId = isCloud ? 'cloud-relay-01' : 'macbook-primary-01'
-
     const newOrder: WorkOrder = {
       id: `wo_${Math.random().toString(36).substring(2, 11)}`,
       type,
@@ -117,7 +113,6 @@ export class WorkOrderService {
       payload,
       dependsOn,
       status: 'pending',
-      node_id: nodeId,
       created_at: new Date().toISOString()
     }
     this.orders.push(newOrder)
@@ -135,7 +130,6 @@ export class WorkOrderService {
     const order = this.orders.find(o => o.id === id)
     if (order) {
       order.status = status
-      order.updated_at = new Date().toISOString()
       if (status === 'completed' || status === 'failed') {
         order.completed_at = new Date().toISOString()
       }
@@ -143,54 +137,6 @@ export class WorkOrderService {
       if (error) order.error = error
       await this.save(order)
     }
-  }
-
-  /**
-   * Resets orders that have been stuck in 'executing' or 'in_progress' for too long,
-   * or if the assigned node is no longer active.
-   */
-  public async recoverStalledOrders() {
-    logAutonomousAction('⚖️ [WorkOrder] Scanning for stalled work orders...', 'info')
-    await this.load()
-
-    const now = Date.now()
-    const STALL_TIMEOUT = 30 * 60 * 1000 // 30 minutes
-
-    let recoveredCount = 0
-
-    try {
-      const client = await getMongoClient()
-      const db = client.db()
-      const activeNodes = await db.collection('agent_presence').find({
-        lastSeen: { $gt: new Date(now - 15 * 60 * 1000).toISOString() }
-      }).toArray()
-
-      const activeNodeIds = new Set(activeNodes.map((n: any) => n.telemetry?.node_id))
-
-      for (const order of this.orders) {
-        const isExecuting = order.status === 'executing' || order.status === 'in_progress'
-        if (!isExecuting) continue
-
-        const updatedAt = order.updated_at ? new Date(order.updated_at).getTime() : new Date(order.created_at).getTime()
-        const isTimedOut = (now - updatedAt) > STALL_TIMEOUT
-        const isNodeOffline = order.node_id && !activeNodeIds.has(order.node_id)
-
-        if (isTimedOut || isNodeOffline) {
-          logAutonomousAction(`🔄 [WorkOrder] Recovering stalled order ${order.id} (Reason: ${isTimedOut ? 'timeout' : 'node offline'}).`, 'warning')
-          order.status = 'pending'
-          order.error = `Recovered from stall (Node: ${order.node_id}, Timed out: ${isTimedOut})`
-          await this.save(order)
-          recoveredCount++
-        }
-      }
-    } catch (e: any) {
-      console.warn('⚠️ [WorkOrder] Could not recover stalled orders from DB:', e.message)
-    }
-
-    if (recoveredCount > 0) {
-      logAutonomousAction(`✅ [WorkOrder] Recovered ${recoveredCount} stalled orders.`, 'info')
-    }
-    return recoveredCount
   }
 
   /**

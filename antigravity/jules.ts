@@ -433,10 +433,109 @@ export class Jules {
   }
 
   public async syncPresence() {
-    const { onlinePresence } = await import('./services/presence')
-    const presence = await onlinePresence.syncPresence()
-    if (presence) {
-      await this.recordTask(`Presence Sync: Heartbeat broadcasted (${presence.environment}).`)
+    console.log('📡 [Jules] Synchronizing online presence...')
+    try {
+      const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
+      const cloudProvider = process.env.GITHUB_ACTIONS ? 'github-actions' : (process.env.GITLAB_CI ? 'gitlab-ci' : (process.env.VERCEL ? 'vercel' : (process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true' ? 'autonomous-cloud' : 'none')))
+
+      let dockerStatus = 'unknown'
+      let containerCount = 0
+      let dockerMode = 'unknown'
+
+      try {
+        const { checkDockerHealth } = await import('./services/docker')
+        const dockerHealth = await checkDockerHealth()
+        dockerStatus = dockerHealth.status
+        containerCount = dockerHealth.containerCount
+        dockerMode = dockerHealth.mode
+      } catch (dockerErr: any) {
+        console.warn('⚠️ [Jules] Could not fetch Docker status for presence sync:', dockerErr.message)
+      }
+
+      let jenkinsStatus = 'unknown'
+      try {
+        const { checkJenkinsHealth } = await import('./services/jenkins')
+        const jenkinsHealth = await checkJenkinsHealth()
+        jenkinsStatus = jenkinsHealth.status
+      } catch (e) {}
+
+      // Detailed Health Connectivity & Latency
+      const connectivity: any = {
+        mongodb: { status: 'disconnected', latency: -1 },
+        supabase: { status: 'disconnected', latency: -1 }
+      }
+
+      try {
+        const start = Date.now()
+        const { healthCheck } = await import('./core')
+        const health = await healthCheck()
+        connectivity.mongodb = { status: health.mongodb, latency: Date.now() - start }
+        connectivity.supabase = { status: health.supabase, latency: Date.now() - start }
+      } catch (e) {}
+
+      const { getPerformanceMonitoringServiceData } = await import('./services/performance_monitoring')
+      const perf = await getPerformanceMonitoringServiceData()
+
+      const presence = {
+        agent: 'Jules',
+        status: 'online',
+        lastSeen: new Date().toISOString(),
+        version: '1.4.0-alpha',
+        capabilities: ['git-sync', 'self-repair', 'knowledge-ingestion', 'pr-audit', 'cloud-sync', 'autonomous-evolution'],
+        environment: isCloud ? 'cloud' : 'local',
+        execution_mode: isCloud ? 'cloud' : 'local',
+        autonomous_mode: process.env.AUTONOMOUS_MODE || 'standard',
+        cloud_provider: cloudProvider,
+        docker: {
+           status: dockerStatus,
+           container_count: containerCount,
+           mode: dockerMode
+        },
+        jenkins_status: jenkinsStatus,
+        connectivity,
+        workflow_id: process.env.GITHUB_RUN_ID || process.env.CI_PIPELINE_ID || 'local',
+        hostname: (await import('os')).hostname(),
+        memory_usage: process.memoryUsage(),
+        system_metrics: {
+          loadavg: perf.metrics.system.loadavg,
+          totalmem: perf.metrics.system.totalmem,
+          freemem: perf.metrics.system.freemem,
+          rss: perf.metrics.memory.rss
+        },
+        uptime: process.uptime()
+      }
+
+      // 1. Sync to MongoDB
+      try {
+        const { getMongoClient } = await import('./core')
+        const client = await getMongoClient()
+        const db = client.db()
+        await db.collection('agent_presence').updateOne(
+          { agent: 'Jules' },
+          { $set: presence },
+          { upsert: true }
+        )
+        console.log(`✅ [Jules] Online presence heartbeated to MongoDB (Mode: ${presence.execution_mode}/${presence.autonomous_mode}).`)
+      } catch (dbErr: any) {
+        console.warn('⚠️ [Jules] Could not sync presence to MongoDB:', dbErr.message)
+      }
+
+      // 2. Sync to Supabase
+      try {
+        const { supabase } = await import('./core')
+        const { error } = await supabase
+          .from('agent_presence')
+          .upsert({ ...presence, id: 'jules-alpha-01' })
+
+        if (error) throw error
+        console.log('✅ [Jules] Online presence heartbeated to Supabase.')
+      } catch (sbErr: any) {
+        console.warn('⚠️ [Jules] Could not sync presence to Supabase:', sbErr.message)
+      }
+
+      await this.recordTask(`Presence Sync: Heartbeat broadcasted (${presence.execution_mode}).`)
+    } catch (err: any) {
+      console.warn('⚠️ [Jules] Presence sync failed:', err.message)
     }
   }
 
@@ -447,27 +546,15 @@ export class Jules {
     try {
       await this.syncPresence()
 
-      const { onlinePresence } = await import('./services/presence')
-      const isLeader = onlinePresence.isLeader()
-
       // Phase 17: Resolve State Conflicts early in the cycle
       const { cloudConvergence } = await import('./services/cloud_convergence')
       await cloudConvergence.resolveConflicts()
-
-      const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
-
-      if (!isLeader && isCloud) {
-        console.log('📡 [Jules] Node is not leader. Standing by for cloud-relay duties...')
-        // Even if not leader, we still do some maintenance
-        await this.processPullRequests()
-        await this.observeKnowledge()
-        return
-      }
 
       const { explore } = await import('./explorer')
       const { workOrderService } = await import('./services/work_order')
 
       // Phase 14: Prioritize PR processing in cloud environments to fulfill "merge and work" mandate
+      const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
       if (isCloud) {
         console.log('☁️ [Jules] Cloud environment detected. Prioritizing PR/MR auditing...')
         await this.processPullRequests()
@@ -597,18 +684,6 @@ export class Jules {
     console.log('🧠 [Jules] Observing new knowledge foundations...')
 
     const { observeKnowledge: scanUrl } = await import('./services/knowledge')
-    // Investopedia integration via ingestion script
-    try {
-      console.log('📈 [Jules] Executing specialized Investopedia ingestion...');
-      const { exec } = await import('child_process');
-      const { promisify } = await import('util');
-      const execAsync = promisify(exec);
-      await execAsync('npx tsx scripts/ingest_investopedia.ts');
-      this.recordTask('Knowledge Observed: Unified market intelligence synchronized from investopedia.com');
-    } catch (e: any) {
-      console.warn('⚠️ [Jules] Investopedia ingestion failed:', e.message);
-    }
-
     const urlsToObserve = [
       'https://software-online-review.com',
       'https://markposition.wordpress.com'
