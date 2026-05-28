@@ -26,7 +26,7 @@ async function ingestKnowledgeMerge() {
             const escapedSignature = signature.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
             const sigRegex = new RegExp(`\\n*---\\n*${escapedSignature}\\n*|\\n*${escapedSignature}\\n*`, 'g');
 
-            fileContent = fileContent.replace(sigRegex, () => '');
+            fileContent = fileContent.replace(sigRegex, () => '\n\n');
             fileContent = fileContent.trim();
 
             // Check if context already exists
