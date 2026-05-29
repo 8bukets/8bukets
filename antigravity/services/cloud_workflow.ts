@@ -9,6 +9,32 @@ import { reactService } from './react'
 const execFileAsync = promisify(execFile)
 
 export class CloudWorkflowAgent {
+  /**
+   * Implements a "Cloud Takeover" protocol that heightens cloud activity
+   * when the primary node is offline.
+   */
+  public async enforceCloudTakeover() {
+    console.log('⚖️ [CloudWorkflowAgent] Auditing for Cloud Takeover necessity...')
+
+    const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
+    if (!isCloud) return { takeover: false, reason: 'not_in_cloud_env' }
+
+    const { onlinePresence } = await import('./presence')
+    const isLeader = onlinePresence.isLeader()
+
+    if (isLeader) {
+       console.log('🚀 [CloudWorkflowAgent] Cloud Node has Leadership. Enabling HIGH_INTENSITY mode.')
+
+       // Perform state recovery via bridge
+       const { edgeToCloudBridge } = await import('./edge_to_cloud_bridge')
+       await edgeToCloudBridge.recoverCloudToLocal()
+
+       return { takeover: true, intensity: 'high' }
+    }
+
+    return { takeover: false, reason: 'primary_node_online' }
+  }
+
   public async evaluateTelemetry() {
     console.log('☁️ [CloudWorkflowAgent] Evaluating deep telemetry...')
     if (process.env.MACBOOK_CLOUD_SIMULATION === 'true') {

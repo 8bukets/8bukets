@@ -28,6 +28,24 @@ export interface PRInfo {
 }
 
 export class GitProviderService {
+  private _execAsync: any
+
+  constructor(execOverride?: any) {
+    this._execAsync = execOverride || execAsync
+  }
+
+  /**
+   * Detects the active git provider based on remote URLs.
+   */
+  public async getActiveProvider(): Promise<'github' | 'gitlab' | 'unknown'> {
+    try {
+      const { stdout } = await this._execAsync('git remote -v')
+      if (stdout.includes('github.com')) return 'github'
+      if (stdout.includes('gitlab.com')) return 'gitlab'
+    } catch (e) {}
+    return 'unknown'
+  }
+
   /**
    * Performs an autonomous commit with GitKraken-optimized formatting.
    */
@@ -37,17 +55,17 @@ export class GitProviderService {
     try {
       // 1. Stage files
       const filesToStage = options.files.join(' ')
-      await execAsync(`git add -f ${filesToStage}`)
+      await this._execAsync(`git add -f ${filesToStage}`)
 
       // 2. Verify changes
-      const { stdout: status } = await execAsync('git status --porcelain')
+      const { stdout: status } = await this._execAsync('git status --porcelain')
       if (!status.trim()) {
         logAutonomousAction('✨ [GitProvider] No changes detected. Skipping commit.', 'info')
         return { status: 'skipped', reason: 'no_changes' }
       }
 
       // 3. Commit
-      await execAsync(`git commit -m "${options.message}"`)
+      await this._execAsync(`git commit -m "${options.message}"`)
       logAutonomousAction('✅ [GitProvider] Changes committed locally.', 'info')
 
       // 4. Push if requested
@@ -72,16 +90,16 @@ export class GitProviderService {
     try {
       logAutonomousAction(`🔄 [GitProvider] Synchronizing with remote (${branch})...`, 'info')
       if (branch === 'main') {
-        await execAsync('git pull --rebase origin main')
-        await execAsync('git push origin main')
+        await this._execAsync('git pull --rebase origin main')
+        await this._execAsync('git push origin main')
       } else {
-        await execAsync(`git push origin ${branch}`)
+        await this._execAsync(`git push origin ${branch}`)
       }
       logAutonomousAction(`🚀 [GitProvider] Changes pushed to origin/${branch}.`, 'info')
     } catch (err: any) {
       console.error('❌ [GitProvider] Push failed:', err.message)
       if (branch === 'main') {
-        try { await execAsync('git rebase --abort') } catch (e) {}
+        try { await this._execAsync('git rebase --abort') } catch (e) {}
       }
     }
   }
@@ -114,7 +132,7 @@ export class GitProviderService {
     // GitLab (via glab CLI or REST API fallback)
     if (process.env.GITLAB_TOKEN) {
       try {
-        await execAsync(`glab mr create --title "${title}" --description "${body}" --source-branch "${head}" --target-branch "${base}" --yes`)
+        await this._execAsync(`glab mr create --title "${title}" --description "${body}" --source-branch "${head}" --target-branch "${base}" --yes`)
         logAutonomousAction('✅ [GitProvider] GitLab MR created via glab.', 'info')
         return 'gitlab-mr'
       } catch (err: any) {
@@ -385,7 +403,7 @@ export class GitProviderService {
       }
     } else if (provider === 'gitlab' && process.env.GITLAB_TOKEN) {
       try {
-        await execAsync(`glab mr merge ${prId} --squash --remove-source-branch`)
+        await this._execAsync(`glab mr merge ${prId} --squash --remove-source-branch`)
         logAutonomousAction(`✅ [GitProvider] GitLab MR !${prId} merged via glab.`, 'info')
         return true
       } catch (err: any) {

@@ -189,6 +189,18 @@ export class OnlinePresenceService {
         logAutonomousAction('⚠️ [OnlinePresence] Failed to sync to Supabase.', 'warning')
       }
 
+      // 5. Broadcast to Edge Worker (Simulated)
+      try {
+        const workerUrl = process.env.EDGE_WORKER_URL || 'https://antigravity-edge-worker.sigma.workers.dev'
+        await fetch(`${workerUrl}/heartbeat`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(presence)
+        })
+      } catch (e) {
+        // Silent fail for simulation if worker URL is not reachable
+      }
+
       this.lastPresence = presence
       logAutonomousAction(`✅ [OnlinePresence] Presence heartbeated (Environment: ${presence.environment}, Leader: ${presence.is_leader}).`, 'info')
       return presence
