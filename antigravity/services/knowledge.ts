@@ -1,4 +1,3 @@
-import { GoogleGenerativeAI } from '@google/generative-ai'
 import { logAutonomousAction } from '../core'
 import fs from 'fs'
 import path from 'path'
@@ -57,24 +56,9 @@ export async function observeKnowledge(url: string) {
     // Append or create KNOWLEDGE_MERGE.md with formal relationships
     const knowledgePath = path.join(process.cwd(), 'KNOWLEDGE_MERGE.md')
 
-    // Use Generative AI for summary
-    let summaryInfo = ''
-    try {
-      if (process.env.GEMINI_API_KEY) {
-        const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY)
-        const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' })
-        const prompt = `Summarize the following content in one concise sentence:\n\n${mdContent.substring(0, 5000)}`
-        const aiResult = await model.generateContent(prompt)
-        summaryInfo = ` AI Summary: ${aiResult.response.text().trim()}`
-      } else {
-        const headings = mdContent.split('\n').filter(line => line.startsWith('#')).map(h => h.replace(/^#+\s*/, '')).slice(0, 3)
-        summaryInfo = headings.length > 0 ? ` Extracted key topics: ${headings.join(', ')}...` : ''
-      }
-    } catch (aiErr) {
-      console.error('⚠️ [Knowledge Observer] AI Summary generation failed:', aiErr)
-      const headings = mdContent.split('\n').filter(line => line.startsWith('#')).map(h => h.replace(/^#+\s*/, '')).slice(0, 3)
-      summaryInfo = headings.length > 0 ? ` Extracted key topics: ${headings.join(', ')}...` : ''
-    }
+    // Extract some summaries for the merge file
+    const headings = mdContent.split('\n').filter(line => line.startsWith('#')).map(h => h.replace(/^#+\s*/, '')).slice(0, 3)
+    const summaryInfo = headings.length > 0 ? ` Extracted key topics: ${headings.join(', ')}...` : ''
 
     const relationshipText = `Confirmed relationship with ${url} (Title: ${title}) as an intelligence source.${summaryInfo} (Content Length: ${mdContent.length} chars)`
 
@@ -85,33 +69,53 @@ export async function observeKnowledge(url: string) {
 - **Title**: ${title}
 - **Relationship Map**: ${relationshipText}
 `
-    let shouldAppend = true;
-    let existingContent = '';
-
-    if (await fs.promises.access(knowledgePath).then(() => true).catch(() => false)) {
-      existingContent = await fs.promises.readFile(knowledgePath, 'utf8');
-      if (existingContent.includes(`- **Target**: ${url}`)) {
-        shouldAppend = false;
-      }
+    let existingContent = ''
+    try {
+      existingContent = await fs.promises.readFile(knowledgePath, 'utf8')
+    } catch (e) {
+      existingContent = '# Market Intelligence Matrix\n'
     }
 
-    if (shouldAppend) {
-      const signature = '\n\nAll the best - https://markposition.wordpress.com\n';
+    const signature = 'All the best - https://markposition.wordpress.com'
 
-      if (existingContent) {
-        // Remove existing signature if present
-        existingContent = existingContent.replace(/(?:\n+)?All the best - https:\/\/markposition\.wordpress\.com(?:\n+)?/g, '\n\n');
-        await fs.promises.writeFile(knowledgePath, existingContent + relationshipEntry + signature, 'utf8')
-      } else {
-        await fs.promises.writeFile(knowledgePath, `# Market Intelligence Matrix\n${relationshipEntry}${signature}`, 'utf8')
-      }
-      console.log(`✅ [Knowledge Observer] Appended insights to KNOWLEDGE_MERGE.md.`)
-    } else {
-      const signature = '\n\nAll the best - https://markposition.wordpress.com\n';
-      existingContent = existingContent.replace(/(?:\n+)?All the best - https:\/\/markposition\.wordpress\.com(?:\n+)?/g, '\n\n');
-      await fs.promises.writeFile(knowledgePath, existingContent + signature, 'utf8')
-      console.log(`ℹ️ [Knowledge Observer] Insight for ${url} already exists in KNOWLEDGE_MERGE.md. Ensured signature is at the bottom.`)
+    // Instead of regex, split on signature and trim
+    let cleanContent = existingContent
+    if (existingContent.includes(signature)) {
+       cleanContent = existingContent.split(signature)[0]
     }
+    cleanContent = cleanContent.trimEnd()
+
+    let updated = false
+    // Use string parsing to avoid regex bugs
+    const blockRegex = /## Autonomous Observation(?:(?!## Autonomous Observation)[\s\S])*/g
+
+    let blocks = [];
+    let match;
+    while ((match = blockRegex.exec(cleanContent)) !== null) {
+        blocks.push(match[0]);
+    }
+
+    let newBlocks = blocks.map(block => {
+        if (block.includes(`- **Target**: ${url}\n`) || block.includes(`- **Target**: ${url}\r`)) {
+            updated = true;
+            return relationshipEntry.trimStart();
+        }
+        return block;
+    });
+
+    if (!updated) {
+        newBlocks.push(relationshipEntry.trimStart());
+    }
+
+    // Replace the part of string where the blocks are
+    let newContent = cleanContent.split(/## Autonomous Observation/)[0].trimEnd()
+    if (newBlocks.length > 0) {
+        newContent += '\n\n' + newBlocks.join('\n\n')
+    }
+
+    newContent = newContent.trimEnd() + '\n\n' + signature + '\n'
+    await fs.promises.writeFile(knowledgePath, newContent, 'utf8')
+    console.log(`✅ [Knowledge Observer] ${updated ? 'Updated' : 'Appended'} insights in KNOWLEDGE_MERGE.md.`)
 
     return { status: 'observed', url, title }
   } catch (error) {
