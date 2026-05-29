@@ -325,7 +325,8 @@ export class Jules {
 
       const branches = branchNames.map(name => {
         try {
-          const lastCommit = execSync(`git log -1 --format="%s|%ar" ${name}`).toString().trim()
+          const cleanName = name.replace(/.* -> /, '');
+          const lastCommit = execSync(`git log -1 --format="%s|%ar" ${cleanName}`).toString().trim()
           const [lastMessage, lastSeen] = lastCommit.split('|')
           return {
             name,
