@@ -6,6 +6,14 @@ export default defineConfig({
     globals: true,
     environment: 'node',
     testTimeout: 15000,
+    exclude: [
+      '**/node_modules/**',
+      '**/dist/**',
+      '**/cypress/**',
+      '**/.{idea,git,cache,output,temp}/**',
+      '**/{karma,rollup,webpack,vite,vitest,ava,babel,nyc,cypress,tsup,build}.config.*',
+      'software-review-platform/backend/test/**',
+    ],
   },
   resolve: {
     alias: {
