@@ -1,5 +1,8 @@
-import { execSync } from 'child_process'
+import { exec } from 'child_process'
+import { promisify } from 'util'
 import { logAutonomousAction } from '../core'
+
+const execAsync = promisify(exec)
 
 /**
  * ANTIGRAVITY SMOKE TEST SERVICE
@@ -14,7 +17,7 @@ export async function runSmokeTest(payload: { filePath?: string, serviceName?: s
     // For this autonomous demonstration, we will simulate the test execution
     // but also run a real 'vitest run' to ensure the test runner is healthy.
 
-    const output = execSync('npx vitest run --help').toString()
+    const { stdout: output } = await execAsync('npx vitest run --help')
 
     logAutonomousAction(`[SMOKE_TEST] Passed for ${payload.serviceName}`, 'info')
 

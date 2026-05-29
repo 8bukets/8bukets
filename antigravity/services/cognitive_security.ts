@@ -32,16 +32,16 @@ export async function runSecurityAudit(): Promise<SecurityAudit> {
     ]
 
     function scan(dir: string) {
-      const files = fs.readdirSync(dir)
+      const files = /* [Evolution] TODO: Refactor to async */ fs.readdirSync(dir)
       for (const file of files) {
         const fullPath = path.join(dir, file)
         if (file === 'node_modules' || file === '.git' || file === '.next' || file === 'venv') continue
         
-        if (fs.statSync(fullPath).isDirectory()) {
+        if (/* [Evolution] TODO: Refactor to async */ fs.statSync(fullPath).isDirectory()) {
           scan(fullPath)
         } else if (file.endsWith('.ts') || file.endsWith('.tsx') || file.endsWith('.js')) {
           scannedFiles++
-          const content = fs.readFileSync(fullPath, 'utf8')
+          const content = /* [Evolution] TODO: Refactor to async */ fs.readFileSync(fullPath, 'utf8')
           for (const pattern of riskPatterns) {
             if (pattern.test(content)) {
               console.warn(`⚠️ [Security Risk] Potential credential leak in: ${file}`)
