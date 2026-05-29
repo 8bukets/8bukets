@@ -42,6 +42,11 @@ jobs:
         env:
           MACBOOK_CLOUD_SIMULATION: true
 
+      - name: Validate System Engine Improvements
+        run: echo "Verifying higher scale and functionality from recent sessions..." && npm run test
+        env:
+          MACBOOK_CLOUD_SIMULATION: true
+
       - name: Execute Autonomous Session Analysis and Self-Correction
         run: npx tsx scripts/execute_creation_cycle.ts
         env:
