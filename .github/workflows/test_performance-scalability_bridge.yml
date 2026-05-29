@@ -10,6 +10,9 @@ on:
       - 'antigravity/services/performance-scalability_bridge.ts'
       - 'antigravity/services/performance-scalability_bridge.test.ts'
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
