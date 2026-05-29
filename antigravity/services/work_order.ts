@@ -199,7 +199,7 @@ export class WorkOrderService {
   public async clearOrders() {
     this.orders = []
     this.saveLocal()
-    // We don't necessarily want to wipe the DB in a real environment,
+    // We don't necessarily want to wipe the DB in a environment,
     // but for autonomous local runs this is fine.
   }
 
