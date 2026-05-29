@@ -16,7 +16,6 @@ const MEMORY_PATH = path.join(process.cwd(), 'antigravity/.jules_memory.json')
 
 export class Jules {
   private memory: JulesMemory
-  public role: string = 'brain'
 
   constructor() {
     if (fs.existsSync(MEMORY_PATH)) {
@@ -96,6 +95,10 @@ export class Jules {
     const { syncCollaborationState } = await import('./services/collaboration')
     await syncCollaborationState()
     this.recordTask('Collaboration Sync: Exported system context and stakeholder data.')
+
+    // Update Consolidated Intelligence Report
+    const { generateConsolidatedReport } = await import('./services/intelligence')
+    await generateConsolidatedReport()
   }
 
   public async auditDocker() {
@@ -125,45 +128,16 @@ export class Jules {
     }
   }
 
-  public async gitPull() {
-    console.log('🔄 [Jules] Pulling latest changes from remote...')
-    const { execSync } = await import('child_process')
-    try {
-      execSync('git pull', { stdio: 'inherit' })
-      console.log('✅ [Jules] Git pull successful.')
-      this.recordTask('Git Sync: Pulled latest changes from remote.')
-    } catch (err) {
-      console.warn('⚠️ [Jules] Git pull failed or no remote configured.')
-    }
-  }
-
   public async gitSync(message: string) {
     console.log('🔄 [Jules] Commencing autonomous Git synchronization...')
-    const { execSync, execFileSync } = await import('child_process')
+    const { execSync } = await import('child_process')
     try {
-      // Check for changes before committing
-      const status = execSync('git status --porcelain').toString().trim()
-      if (!status) {
-        console.log('✨ [Jules] No changes detected. Git sync skipped.')
-        return
-      }
-
-      console.log('📝 [Jules] Changes detected. Preparing to commit...')
-      execFileSync('git', ['add', '.'], { stdio: 'inherit' })
-      execFileSync('git', ['commit', '-m', message], { stdio: 'inherit' })
+      execSync('git add .', { stdio: 'inherit' })
+      execSync(`git commit -m "${message}"`, { stdio: 'inherit' })
       console.log('✅ [Jules] Changes committed autonomously.')
-
-      try {
-        console.log('🚀 [Jules] Pushing changes to remote...')
-        execFileSync('git', ['push'], { stdio: 'inherit' })
-        console.log('✅ [Jules] Changes pushed to remote autonomously.')
-        this.recordTask(`Git Sync: Committed and pushed changes to remote repository.`)
-      } catch (pushErr) {
-        console.warn('⚠️ [Jules] Git push failed (likely no remote configured or network issue).')
-        this.recordTask(`Git Sync: Committed changes locally (push failed).`)
-      }
-    } catch (err: any) {
-      console.error('❌ [Jules] Git sync failed:', err.message)
+      this.recordTask(`Git Sync: Committed fixes to local repository.`)
+    } catch (err) {
+      console.warn('⚠️ [Jules] Git sync skipped or failed (likely no changes to commit).')
     }
   }
 
@@ -184,41 +158,28 @@ export class Jules {
   }
 
   public async startConsciousnessLoop() {
-    console.log(`🌌 [Jules-${this.role}] Igniting Continuous Consciousness Loop...`)
-
+    console.log('👁️ [Jules] Initiating Continuous Consciousness Loop...');
+    
     // Phase 16: Real-time surveillance
     import('./explorer').then(({ watchSystem }) => {
       if (typeof watchSystem === 'function') watchSystem();
     }).catch(err => console.error('❌ [Jules] Watchdog initiation failed:', err));
 
-    // Listen for graceful shutdown
-    let isRunning = true
-    process.on('SIGINT', () => {
-      console.log(`\n🛑 [Jules-${this.role}] Graceful shutdown initiated.`)
-      isRunning = false
-    })
-
-    while (isRunning) {
+    while (true) {
       try {
-        await this.executeWorkCycle()
-
-        // Wait for 1 hour before next cycle, unless interrupted
-        console.log(`💤 [Jules-${this.role}] Resting for 1 hour before next cycle...`)
-        for (let i = 0; i < 60 && isRunning; i++) {
-          await new Promise(resolve => setTimeout(resolve, 60000)) // 1 minute chunks
-        }
+        await this.executeWorkCycle();
+        const delay = 60 * 60 * 1000; // 1 hour between full cycles
+        console.log(`💤 [Jules] Cycle complete. Next autonomous pulse in 1h...`);
+        await new Promise(resolve => setTimeout(resolve, delay));
       } catch (err) {
-        console.error(`💥 [Jules-${this.role}] Error in consciousness loop:`, err)
-        // Shorter backoff on error
-        await new Promise(resolve => setTimeout(resolve, 60000))
+        console.error('💥 [Jules] Loop error, restarting in 60s...', err);
+        await new Promise(resolve => setTimeout(resolve, 60000));
       }
     }
-    console.log(`🌌 [Jules-${this.role}] Consciousness loop terminated.`)
   }
 
   public async executeWorkCycle() {
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
-    await this.gitPull()
     const { explore } = await import('./explorer')
     await explore()
     await this.selfRepair()
@@ -228,10 +189,14 @@ export class Jules {
     if (ideas.length > 0) {
       this.recordTask(`Synthesis: Generated ${ideas.length} architectural proposals.`)
 
-      // Phase 10: Singularity Orchestration (Managed Creation Lifecycle)
-      const { creationEngine } = await import('./services/creation_engine')
-      await creationEngine.processIdeas(ideas)
-      this.recordTask(`Creation Engine: Triggered creation cycle for ${ideas.length} ideas.`)
+      // Phase 10: Singularity Orchestration
+      const { bootstrap } = await import('./singularity')
+      for (const idea of ideas) {
+        if (idea.complexity === 'Low' || idea.complexity === 'Medium') {
+          await bootstrap(idea)
+          this.recordTask(`Singularity: Autonomously bootstrapped ${idea.feature}.`)
+        }
+      }
     }
 
     // Phase 12: Super-Intelligence Optimization
@@ -260,22 +225,16 @@ export class Jules {
       persistKnowledge(knowledgeInsights)
     }
 
-    // GitHub Docs Observation (Intelephense)
-    console.log('👁️ [Jules] Consolidating Intelephense Documentation...')
-    const { intelephenseService } = await import('./services/intelephense_service')
-    await intelephenseService.consolidate()
-    this.recordTask('Intelephense: Consolidated documentation from local and GitHub sources.')
+    // GitHub Docs Observation
+    console.log('👁️ [Jules] Scanning GitHub Docs...')
+    const { observeGithubDocs } = await import('./services/github_docs_observer')
+    const githubInsights = await observeGithubDocs('bmewburn/intelephense-docs', ['installation.md', 'configuration.md'])
+    if (githubInsights.length > 0) {
+      this.recordTask(`GitHub Docs: Observed ${githubInsights.length} files from Intelephense docs.`)
+    }
 
     await this.syncCollaboration()
     await this.generateConsolidatedReport()
-
-    // Phase 14: iCloud Synchronization
-    console.log('☁️ [Jules] Initiating iCloud synchronization...')
-    const { syncToICloud } = await import('./services/icloud')
-    const syncResult = await syncToICloud()
-    if (syncResult.status === 'success') {
-      this.recordTask(`iCloud Sync: Synchronized project to ${syncResult.target}`)
-    }
 
     await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
     this.memory.lastOptimization = new Date().toISOString()
@@ -333,59 +292,44 @@ export class Jules {
     this.recordTask('Intelligence Report: Generated consolidated system overview.')
   }
 
-  public async scanAllBranches(raw = false) {
+  public async scanAllBranches(raw: boolean = false) {
     console.log('🌿 [Jules] Scanning all project branches for knowledge...')
     const { execSync } = await import('child_process')
     try {
-      // Phase 12: High-efficiency branch scanning with metadata
-      const format = '%(refname:short)|%(contents:subject)|%(committerdate:iso8601)|%(objectname)'
-      const branchInfo = execSync(`git for-each-ref --format='${format}' refs/heads refs/remotes`).toString().trim()
-      const lines = branchInfo.split('\n')
+      const branchInfo = execSync('git branch -a --list').toString().trim()
+      if (!branchInfo) return raw ? [] : '## 🌿 Branch Intelligence\nNo branches found.\n'
 
-      const branches = lines.map(line => {
-        const [name, lastMessage, lastSeen, hash] = line.split('|')
+      const branchNames = branchInfo.split('\n').map(b => b.trim().replace(/^\* /, ''))
 
-        // Categorization logic
-        let category = 'other'
-        const shortName = name.replace('origin/', '')
-        if (shortName.startsWith('feat/')) category = 'feature'
-        else if (shortName.startsWith('fix/')) category = 'fix'
-        else if (shortName.startsWith('bolt-')) category = 'bolt'
-        else if (shortName.startsWith('jules-')) category = 'agent'
-
-        // Domain extraction heuristic
-        let domain = 'General'
-        if (shortName.includes('-')) {
-          domain = shortName.split('-')[1].charAt(0).toUpperCase() + shortName.split('-')[1].slice(1)
-        } else if (shortName.includes('/')) {
-          domain = shortName.split('/')[1].split('-')[0]
-          domain = domain.charAt(0).toUpperCase() + domain.slice(1)
-        }
-
-        // Changed files for the latest commit (limit to avoid extreme overhead)
-        let changedFiles: string[] = []
-        if (raw && hash) {
-          try {
-            const files = execSync(`git diff-tree --no-commit-id --name-only -r ${hash}`).toString().trim()
-            changedFiles = files.split('\n').filter(f => f.length > 0)
-          } catch (e) {}
-        }
-
-        return {
-          name,
-          lastMessage: lastMessage || 'N/A',
-          lastSeen: lastSeen || 'N/A',
-          category,
-          domain,
-          changedFiles,
-          results: lastMessage, // Default result to last message
-          knowledge: '' // Placeholder for derived knowledge
+      const branches = branchNames.map(name => {
+        try {
+          const lastCommit = execSync(`git log -1 --format="%s|%ar" ${name}`).toString().trim()
+          const [lastMessage, lastSeen] = lastCommit.split('|')
+          return {
+            name,
+            lastMessage: lastMessage || 'N/A',
+            lastSeen: lastSeen || 'N/A',
+            category: name.includes('/') ? name.split('/')[0] : 'other',
+            domain: 'General',
+            knowledge: '',
+            results: lastMessage || 'N/A',
+            changedFiles: []
+          }
+        } catch (e) {
+          return {
+            name,
+            lastMessage: 'N/A',
+            lastSeen: 'N/A',
+            category: 'other',
+            domain: 'General',
+            knowledge: '',
+            results: 'N/A',
+            changedFiles: []
+          }
         }
       })
 
-      if (raw) {
-        return branches
-      }
+      if (raw) return branches
 
       let summary = `## 🌿 Branch Intelligence\n`
       summary += `Found ${branches.length} branches in the repository.\n\n`
@@ -401,7 +345,7 @@ export class Jules {
       this.recordTask(`Branch Scan: Analyzed ${branches.length} branches for cross-project context.`)
       return summary
     } catch (e) {
-      console.warn('⚠️ [Jules] Branch scan failed.', e)
+      console.warn('⚠️ [Jules] Branch scan failed:', e)
       return raw ? [] : '## 🌿 Branch Intelligence\n_Branch scan failed or Git not available._\n'
     }
   }

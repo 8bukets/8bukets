@@ -5,7 +5,6 @@ import { autonomousFetch } from '@/antigravity/core'
 import { isDockerHealthy as checkDockerHealth } from './docker'
 import { getLatestBuildStatus } from './jenkins'
 import { dispatchExecutiveBriefing } from './notification'
-import { getStakeholderDirectives } from './communication'
 
 
 /**
@@ -38,41 +37,30 @@ export async function getMissionMetadata(): Promise<MissionMetadata> {
 
     const content = await fs.promises.readFile(MISSION_PATH, 'utf8')
 
-    const missionStatementMatch = content.match(/## Mission Statement\n([\s\S]*?)\n##/) || content.match(/^# (.*?)\n/)
+    const missionStatementMatch = content.match(/## Mission Statement\n([\s\S]*?)(\n##|$)/)
     const missionStatement = missionStatementMatch ? missionStatementMatch[1].trim() : 'Autonomous Evolution'
 
     const stakeholders: Stakeholder[] = []
-    const stakeholderSection = content.match(/## Stakeholders\n([\s\S]*?)\n(?:##|$)/)
+    const stakeholderSection = content.match(/## Stakeholders\n([\s\S]*?)(\n##|$)/)
     if (stakeholderSection) {
       const lines = stakeholderSection[1].trim().split('\n')
       lines.forEach(line => {
-        // Support format: - Name (Role) <Email>
-        const complexMatch = line.match(/-\s*(.*?)\s*\((.*?)\)\s*<(.*?)>/)
-        if (complexMatch) {
+        const parts = line.match(/-\s*(.*?)\s*<(.*?)>/)
+        if (parts && parts.length === 3) {
           stakeholders.push({
-            role: `${complexMatch[1]} (${complexMatch[2]})`,
-            email: complexMatch[3].trim()
-          })
-          return
-        }
-
-        // Support format: Role: Email
-        const parts = line.split(':')
-        if (parts.length === 2) {
-          stakeholders.push({
-            role: parts[0].replace('-', '').trim(),
-            email: parts[1].trim()
+            role: parts[1].trim(),
+            email: parts[2].trim()
           })
         }
       })
     }
 
     const goals: string[] = []
-    const goalsSection = content.match(/## (?:Strategic )?Goals\n([\s\S]*?)(?:\n##|$)/)
+    const goalsSection = content.match(/## Strategic Goals\n([\s\S]*)/)
     if (goalsSection) {
       const lines = goalsSection[1].trim().split('\n')
       lines.forEach(line => {
-        const goal = line.replace(/^[-\d.]+\s*/, '').trim()
+        const goal = line.replace(/^\d+\.\s*/, '').trim()
         if (goal) goals.push(goal)
       })
     }
@@ -101,7 +89,6 @@ export async function exportEcosystemMetadata() {
  */
 export async function broadcastToStakeholders(state: any) {
   const metadata = await getMissionMetadata()
-  const directives = await getStakeholderDirectives()
   console.log('📢 [Collaboration] Broadcasting system posture to stakeholders...')
 
   const summary = `
@@ -110,9 +97,6 @@ Timestamp: ${state.last_sync}
 Mission: ${metadata.missionStatement}
 Docker Status: ${state.docker.status} (${state.docker.containerCount} containers)
 Intelligence: ${state.intelligence.branches} branches synchronized, ${state.intelligence.pendingTasks} tasks pending.
-
-Active Directives:
-${directives.filter(d => d.status === 'Active').map(d => ` - [${d.priority}] ${d.intent}`).join('\n')}
 
 Stakeholders notified:
 ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
@@ -144,25 +128,12 @@ ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
     .map((r: any) => `- RESULT: ${r.name} -> ${r.result}`)
     .join('\n')
 
-  const directiveSummary = directives.filter(d => d.status === 'Active')
-    .map(d => `- DIRECTIVE [${d.priority}]: ${d.intent}`).join('\n')
-
-  const detailedBriefing = `--- ACTIVE DIRECTIVES ---\n${directiveSummary}\n\n--- STRATEGIC SYNERGY ---\n${synergySummary}\n\n--- REQUIRED COORDINATION ---\n${recommendations}\n\n--- KEY RESULTS ---\n${branchSummary}`
+  const detailedBriefing = `--- STRATEGIC SYNERGY ---\n${synergySummary}\n\n--- REQUIRED COORDINATION ---\n${recommendations}\n\n--- KEY RESULTS ---\n${branchSummary}`
 
   await dispatchExecutiveBriefing(
     `${synergyAlert} Posture: ${state.docker.status}. Analyzed ${state.intelligence.branches} branches.`,
     detailedBriefing
   )
-
-  // Phase 12: Direct Stakeholder Alerts for high-priority synergy/results
-  const { dispatchStakeholderAlert } = await import('./communication')
-  for (const stakeholder of metadata.stakeholders) {
-    await dispatchStakeholderAlert(
-        `[Antigravity] Ecosystem Synergy Alert: ${state.intelligence.branches} branches synchronized`,
-        `Hello ${stakeholder.role},\n\nThe Antigravity engine has completed a full ecosystem synchronization.\n\n${detailedBriefing}\n\nAll the best,\nAntigravity Intelligence`,
-        highIntensitySynergies.length > 0 ? 'warning' : 'info'
-    )
-  }
 
   const logDir = path.join(process.cwd(), 'logs')
   if (!fs.existsSync(logDir)) await fs.promises.mkdir(logDir, { recursive: true })
@@ -342,12 +313,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
 export async function syncCollaborationState(branchIntelligence?: any[]) {
   console.log('🔄 [Collaboration] Synchronizing autonomous state...')
   const metadata = await getMissionMetadata()
-  const dockerHealthy = await checkDockerHealth()
-  const dockerStatus = await (await import('./docker')).getDockerStatus()
-  const dockerHealth = {
-    status: dockerHealthy ? 'optimal' : 'degraded',
-    containerCount: dockerStatus.length
-  }
+  const dockerHealth = await checkDockerHealth()
   const jenkinsStatus = await getLatestBuildStatus()
   const statePath = path.join(process.cwd(), 'autonomous_state.json')
 
@@ -415,7 +381,7 @@ export async function mergeBranchInsights(branches: any[]) {
 
     // Improved deduplication: Check if this specific result or knowledge for this branch is already recorded
     const branchIdentifier = `- **Branch:** \`${b.name}\``;
-    const resultIdentifier = b.results ? `  - **Result:** ${b.results}` : '';
+    const resultIdentifier = `  - **Result:** ${b.results}`;
     const knowledgeIdentifier = b.knowledge ? `  - **Knowledge:** ${b.knowledge}` : '';
 
     if (existingContent.includes(branchIdentifier)) {
@@ -423,9 +389,7 @@ export async function mergeBranchInsights(branches: any[]) {
         const parts = existingContent.split(branchIdentifier)
         for (let i = 1; i < parts.length; i++) {
           const branchSection = parts[i].split('##')[0];
-          const hasResult = resultIdentifier ? branchSection.includes(resultIdentifier) : true;
-          const hasKnowledge = knowledgeIdentifier ? branchSection.includes(knowledgeIdentifier) : true;
-          if (hasResult && hasKnowledge) {
+          if (branchSection.includes(resultIdentifier) && (!knowledgeIdentifier || branchSection.includes(knowledgeIdentifier))) {
               return false;
           }
         }
