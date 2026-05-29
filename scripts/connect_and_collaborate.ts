@@ -20,6 +20,13 @@ async function main() {
   await jules.auditDocker();
 
   // 2. Synchronize collaboration context
+  console.log('🐳 [Jules] Connecting to Docker...');
+  try {
+    const { execSync } = require('child_process');
+    execSync('docker info && docker ps');
+  } catch (e) {
+    console.warn('⚠️ [Jules] Docker not running or inaccessible.');
+  }
   await jules.syncCollaboration();
 
   console.log('✅ [Antigravity] Connection and Collaboration Sync Finished.');
