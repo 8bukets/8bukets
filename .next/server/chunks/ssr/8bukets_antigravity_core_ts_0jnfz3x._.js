@@ -1,3 +1,0 @@
-module.exports=[48e3,a=>{"use strict";var b=a.i(31359),c=a.i(51679);a.s(["autonomousFetch",()=>b.autonomousFetch,"cacheLife",()=>c.cacheLife,"cacheTag",()=>c.cacheTag,"getCloudSecret",()=>b.getCloudSecret,"getMongoClient",()=>b.getMongoClient,"getPredictiveProfile",()=>b.getPredictiveProfile,"getRuntimeEnv",()=>b.getRuntimeEnv,"getSystemInsights",()=>b.getSystemInsights,"healthCheck",()=>b.healthCheck,"logAutonomousAction",()=>b.logAutonomousAction,"predictiveFetch",()=>b.predictiveFetch,"recordUpdate",()=>b.recordUpdate,"refresh",()=>c.refresh,"resolve",()=>b.resolve,"revalidateTag",()=>c.revalidateTag,"supabase",()=>b.supabase,"updateTag",()=>c.updateTag])}];
-
-//# sourceMappingURL=8bukets_antigravity_core_ts_0jnfz3x._.js.map

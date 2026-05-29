@@ -1,30 +1,33 @@
-from .base_agent import BaseAgent
-from typing import Dict, List, Any
+from .base_agent import BaseAgent, Blackboard
 
 class TargetingAgent(BaseAgent):
     def __init__(self):
-        super().__init__("Targeting Agent")
+        super().__init__("TargetingAgent", dependencies=["analysis_stats", "intelligence_insights"], provides=["targeting_profile"])
 
-    def process(self, keywords: List[tuple], memory: Dict[str, Any]) -> Dict:
-        self.log("Defining targeting segments...")
+    async def run(self, data: list, blackboard: Blackboard) -> dict:
+        self.logger.info("Building Audience Personas...")
 
-        # Learn from memory: boost segments that match high-performing keywords
-        perf_map = memory.get("keyword_performance", {})
+        insights = blackboard.get("intelligence_insights", [])
+        categories = blackboard.get("analysis_stats", {}).get("top_categories", {})
 
-        segments = ["IT Decision Makers", "Cloud Architects", "DBAs"]
+        primary_persona = "General Tech Enthusiast"
 
-        # Dynamic targeting based on scraped keywords
-        top_kws = [k[0] for k in keywords[:5]]
+        if any("advertising" in str(cat).lower() for cat in categories):
+            primary_persona = "AdTech Professional"
 
-        # If "Canada" or "India" is in top keywords, add geo-targeting
-        geo_targets = []
-        for kw in top_kws:
-            if kw.lower() in ["canada", "india", "uk", "usa"]:
-                geo_targets.append(kw)
+        if any("Google ecosystem" in str(insight) for insight in insights):
+            primary_persona += " (Google Stack Focus)"
+
+        last_persona = self.get_agent_memory("last_primary_persona")
+        if last_persona and last_persona != primary_persona:
+            self.logger.info(f"EVOLUTION: Audience shifted from {last_persona} to {primary_persona}")
+
+        self.update_agent_memory("last_primary_persona", primary_persona)
 
         return {
-            "audience_segments": segments,
-            "geo_targeting": geo_targets if geo_targets else ["Global"],
-            "keyword_targeting": top_kws,
-            "exclusion_list": ["Competitors", "Students"]
+            "targeting_profile": {
+                "primary_persona": primary_persona,
+                "keywords": list(categories.keys())[:5],
+                "intent": "Research & Optimization"
+            }
         }

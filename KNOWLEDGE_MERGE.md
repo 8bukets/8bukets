@@ -1,3 +1,39 @@
+# Glossary
+
+## Compile
+
+To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.
+
+### Key Definitions of Compile
+
+- **Gathering Information**: To collect and put together data, facts, or documents (e.g., to compile a report or compile a list).
+- **Creating Works**: To produce a book, anthology, or database from various materials.
+- **Computing**: To convert high-level programming code (like C++ or Java) into machine code, allowing a computer to execute the program.
+
+### Usage Examples
+
+- "She is compiling a list of clients for the newsletter."
+- "It took years to compile the dictionary."
+- "The developer needs to compile the code before running the application."
+
+### Synonyms
+
+- Assemble
+- Collect
+- Gather
+- Compose
+- Accumulate
+- Organize
+- Synthesize
+
+### Contextual Usage
+
+- **General**: Focuses on the act of assembling information or materials (e.g., compile a report).
+- **Computing**: Focuses on the automatic transformation of code using a tool known as a compiler.
+
+## Knowledge Merge
+
+Knowledge Merge is a process or document that merges key concepts currently spread across Antigravity, Project SOR, the live software-online-review.com domain, and the new software-review-platform starter. It creates one canonical map of what each layer is, what role it plays, and how the project should evolve.
 # Knowledge Merge
 
 ## Purpose
@@ -254,6 +290,7 @@ Everything else should be evaluated by whether it helps:
 - **Target**: https://cloud.google.com/discover/what-are-ai-agents
 - **Title**: What are AI agents? Definition, examples, and types | Google Cloud
 - **Context**: Ingested comprehensive definition and architectural overview of AI agents from Google Cloud documentation to ground the project's agentic logic in industry standards.
+---
 
 ## Autonomous Observation
 - **Date**: 2026-05-21T11:37:07.784Z
@@ -270,36 +307,144 @@ Everything else should be evaluated by whether it helps:
 - **Target**: https://www.forbes.com/money/
 - **Title**: Money
 - **Context**: Ingested and observed external market or technical intelligence from https://www.forbes.com/money/.
+# 📊 Markposition Analytics Report
+<a name='table-of-contents'></a>
 
-### Investopedia Intelligence Sync (2026-05-28T09:53:43.626Z)
-Synchronized 2 financial terms from Investopedia.
+**Generated on:** 2026-05-21 16:21:58
 
-## Value of Knowledge Integration: Compile
+## Table of Contents
+* [General Statistics](#general-statistics)
+* [Top 10 Referenced Domains](#top-10-referenced-domains)
+* [Top 10 Categories](#top-10-categories)
+* [Posts by Year](#posts-by-year)
+* [Authors](#authors)
 
-To compile means to gather information from various sources and arrange it into a structured format, such as a report, list, book, or file. In computing, it refers to translating human-readable source code into machine-readable, executable instructions.
+<a name='general-statistics'></a>
+## 📈 General Statistics
+- **Total Posts:** 679
+- **Date Range:** 2020-05-19 to 2022-10-05
+- **Unique Domains Linked:** 367
 
-### Key Definitions of Compile
+[Back to Top](#table-of-contents)
 
-- Gathering Information: To collect and put together data, facts, or documents (e.g., to compile a report or compile a list).
-- Creating Works: To produce a book, anthology, or database from various materials.
-- Computing: To convert high-level programming code (like C++ or Java) into machine code, allowing a computer to execute the program.
+<a name='top-10-referenced-domains'></a>
+## 🌐 Top 10 Referenced Domains
 
-### Usage Examples
+## Table of Contents
+- [📊 General Statistics](#general-statistics)
+- [🌐 Top 10 Referenced Domains](#top-10-referenced-domains)
+- [📂 Top 10 Categories](#top-10-categories)
+- [📅 Posts by Year](#posts-by-year)
+- [✍️ Authors](#authors)
 
-- "She is compiling a list of clients for the newsletter."
-- "It took years to compile the dictionary."
-- "The developer needs to compile the code before running the application."
+## 📊 General Statistics
+- **Total Posts:** 679
+- **Date Range:** 2020-05-19 to 2022-10-05
+- **Unique Domains Linked:** 367
 
-### Synonyms
+> 💡 **Highlight:** The most referenced domain is **skillshop.exceedlms.com** with 23 links.
 
-Assemble, Collect, Gather, Compose, Accumulate, Organize, Synthesize
+[Back to Top](#table-of-contents)
 
-### Contextual Usage
+## 🌐 Top 10 Referenced Domains
+| Domain | Count |
+| :--- | :---: |
+| skillshop.exceedlms.com | 23 |
+| support.google.com | 21 |
+| youtube.com | 18 |
+| advertising.amazon.com | 16 |
+| en.wikipedia.org | 14 |
+| google.com | 13 |
+| web.facebook.com | 12 |
+| developers.google.com | 11 |
+| trustarc.com | 11 |
+| ads.google.com | 10 |
 
-- General: Focuses on the act of assembling information or materials (e.g., compile a report).
-- Computing: Focuses on the automatic transformation of code using a tool known as a compiler.
+[Back to Top](#table-of-contents)
+
+<a name='top-10-categories'></a>
+## 📂 Top 10 Categories
+
+## 📂 Top 10 Categories
+| Category | Count |
+| :--- | :---: |
+| Ad Ads Advertise | 660 |
+| Promotion | 14 |
+| Ads | 4 |
+| Advertise | 3 |
+| Advertising | 3 |
+| Online | 2 |
+
+[Back to Top](#table-of-contents)
+
+<a name='posts-by-year'></a>
+## 📅 Posts by Year
+
+## 📅 Posts by Year
+| Year | Count |
+| :--- | :---: |
+| 2022 | 235 |
+| 2021 | 190 |
+| 2020 | 254 |
+
+[Back to Top](#table-of-contents)
+
+<a name='authors'></a>
+## ✍️ Authors
+- Filip Keser: 679 posts
+
+## Top 10 Referenced Domains
+| Domain | Count | Distribution |
+| :--- | :---: | :--- |
+| skillshop.exceedlms.com | 23 | ████████████████████ |
+| support.google.com | 21 | ██████████████████░░ |
+| youtube.com | 18 | ████████████████░░░░ |
+| advertising.amazon.com | 16 | ██████████████░░░░░░ |
+| en.wikipedia.org | 14 | ████████████░░░░░░░░ |
+| google.com | 13 | ███████████░░░░░░░░░ |
+| web.facebook.com | 12 | ██████████░░░░░░░░░░ |
+| developers.google.com | 11 | ██████████░░░░░░░░░░ |
+| trustarc.com | 11 | ██████████░░░░░░░░░░ |
+| ads.google.com | 10 | █████████░░░░░░░░░░░ |
+
+## Top 10 Categories
+| Category | Count | Distribution |
+| :--- | :---: | :--- |
+| Ad Ads Advertise | 660 | ████████████████████ |
+| Promotion | 14 | ░░░░░░░░░░░░░░░░░░░░ |
+| Ads | 4 | ░░░░░░░░░░░░░░░░░░░░ |
+| Advertise | 3 | ░░░░░░░░░░░░░░░░░░░░ |
+| Advertising | 3 | ░░░░░░░░░░░░░░░░░░░░ |
+| Online | 2 | ░░░░░░░░░░░░░░░░░░░░ |
+
+## Posts by Year
+| Year | Count | Distribution |
+| :--- | :---: | :--- |
+| 2022 | 235 | ███████████████████░ |
+| 2021 | 190 | ███████████████░░░░░ |
+| 2020 | 254 | ████████████████████ |
+
+## ✍️ Authors
+- **Filip Keser**: 679 posts
+
+[Back to Top](#table-of-contents)
+
+## Autonomous Observation
+- **Date**: 2026-05-23T19:24:11.523Z
+- **Target**: https://example.com
+- **Title**: Example Domain
+- **Context**: Ingested and observed external market or technical intelligence from https://example.com.
+- **Summary**:
+Example DomainThis domain is for use in documentation examples without needing permission. Avoid use in operations.Learn more...
 
 
 
----
+## Autonomous Observation
+- **Date**: 2026-05-24T09:36:28.136Z
+- **Target**: https://www.investopedia.com/
+- **Title**: Investopedia
+- **Context**: Ingested and observed external market or technical intelligence from https://www.investopedia.com/.
+- **Summary**:
+​ <iframe src="//www.googletagmanager.com/ns.html?id=GTM-5P3SZGS" height="0" width="0" style="display:none;visibility:hidden"></iframe> SpaceX Is Lining Up a Huge IPO. Big Deals Don't Guarantee Big Returns. By Peter Gratton 1 day ago Related Wall Street Is Getting More Bullish on Stocks Despite Risks Dow Hits Record High; S&P 500 Logs 8th Straight Week of Gains Has Nvidia Stock Lost Its Edge With AI Investors? Jeff Bezos Has a Tax Plan. Here's How It Might Look. The Amazon.com billionaire this w...
+
 All the best - https://markposition.wordpress.com

@@ -1,27 +1,39 @@
-from .base_agent import BaseAgent
-from collections import Counter
-from typing import List, Dict
-import re
+from .base_agent import BaseAgent, Blackboard
+import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import analytics
+from agents.telemetry import telemetry_manager
 
 class AnalysisAgent(BaseAgent):
     def __init__(self):
-        super().__init__("Analysis Agent")
+        super().__init__("AnalysisAgent", provides=["analysis_stats"])
 
-    def process(self, data: List[Dict]) -> Dict:
-        self.log("Analyzing data...")
-        text_corpus = ""
-        dates = []
-        for item in data:
-            text_corpus += item.get('title', '') + " "
-            if item.get('date'):
-                dates.append(item['date'])
+    async def run(self, data: list, blackboard: Blackboard) -> dict:
+        self.logger.info("Running Analysis...")
 
-        # Simple keyword frequency
-        words = re.findall(r'\w+', text_corpus.lower())
-        common_words = Counter(words).most_common(10)
+        total_posts = len(data)
+        domains = [d for p in data if (d := p.get('domain'))]
+        domain_counts = analytics.Counter(domains).most_common(10)
 
-        return {
-            "total_articles": len(data),
-            "common_keywords": common_words,
-            "date_range": [min(dates), max(dates)] if dates else []
+        categories = []
+        for p in data:
+            if p.get('categories'):
+                categories.extend(p.get('categories'))
+        category_counts = analytics.Counter(categories).most_common(10)
+
+        # Telemetry for "Ad Ads Advertise"
+        ad_count = dict(category_counts).get("Ad Ads Advertise", 0)
+        telemetry_manager.record_event(self.name, "MARKET_DATA_ANALYSIS", {
+            "ad_category_density": ad_count / total_posts if total_posts > 0 else 0,
+            "total_ad_posts": ad_count
+        })
+
+        result = {
+            "total_posts": total_posts,
+            "top_domains": dict(domain_counts),
+            "top_categories": dict(category_counts)
         }
+
+        return {"analysis_stats": result}

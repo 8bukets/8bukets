@@ -1,26 +1,50 @@
-from .base_agent import BaseAgent
-from typing import Dict, List, Any
-import random
+from .base_agent import BaseAgent, Blackboard
 
 class CreativityAgent(BaseAgent):
     def __init__(self):
-        super().__init__("Creativity Agent")
+        super().__init__("CreativityAgent", dependencies=["intelligence_insights", "ai_agents_definitions"], provides=["creative_concepts"])
 
-    def process(self, keywords: List[tuple], memory: Dict[str, Any] = None) -> List[str]:
-        self.log("Generating creative headlines...")
+    async def run(self, data: list, blackboard: Blackboard) -> dict:
+        self.logger.info("Running Creativity Session...")
 
-        words = [w[0].title() for w in keywords]
-        if not words:
-            words = ["Cloud", "Future", "Tech"]
+        insights = blackboard.get("intelligence_insights", [])
+        knowledge = blackboard.get("ai_agents_definitions", {})
 
-        headlines = [
-            f"Why {words[0]} is the New Gold",
-            f"The Secret Behind Oracle's {words[1] if len(words)>1 else 'Move'}",
-            f"10 Things You Didn't Know About {words[0]} and Google"
+        concepts = [
+            "5 Trends Shaping the Future",
+            "Why Your Strategy Needs a Reboot",
+            "Monetization: Beyond the Basics"
         ]
 
-        if memory and 'oracle_ai_knowledge' in memory:
-            headlines.append("How Oracle AI is Transforming Business")
-            headlines.append("Unleashing Generative AI and Machine Learning with Oracle")
+        if any("advertising" in str(insight).lower() for insight in insights):
+            concepts.append("Deep Dive: High concentration of advertising-related content.")
 
-        return headlines
+        agent_types = knowledge.get("types", "").lower()
+        if "background agents" in agent_types:
+            concepts.append("Efficiency Playbook: Automating with Background Agents")
+        if "interactive partners" in agent_types:
+            concepts.append("User Engagement: Building Interactive Partner Agents")
+
+        use_cases = knowledge.get("use_cases", {})
+        if use_cases:
+            if use_cases.get("code"):
+                concepts.append("The Future of Dev: Accelerating with Code Agents")
+            if use_cases.get("security"):
+                concepts.append("Autonomous Defense: Protecting the Perimeter with Security Agents")
+            if use_cases.get("data"):
+                concepts.append("Data Insights: Unleashing Data Agents on Complex Analytics")
+
+        # NEW ENHANCEMENT: Map concepts directly to Work Orders as suggested by 8bukets intelligence
+        executable_orders = []
+        for i, concept in enumerate(concepts):
+            executable_orders.append({
+                "id": f"AUTO_CREATIVE_EXEC_{i}",
+                "type": "CONTENT_CREATION",
+                "description": concept,
+                "status": "pending"
+            })
+
+        # Blackboard doesn't have a sync set() method natively in BaseAgent,
+        # but agents return dicts which are merged into blackboard asynchronously.
+
+        return {"creative_concepts": concepts, "creative_work_orders": executable_orders}

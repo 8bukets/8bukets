@@ -5,7 +5,7 @@ echo "🚀 Starting Deployment Process..."
 
 # 1. Environment Setup
 echo "📦 Installing dependencies..."
-pip install -r requirements.txt
+pip install aiohttp beautifulsoup4 requests pytest pytest-asyncio
 
 # 2. Directory Creation
 echo "📂 Creating data and results directories..."

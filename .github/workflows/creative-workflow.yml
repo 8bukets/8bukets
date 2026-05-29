@@ -1,49 +1,53 @@
-name: Antigravity Creative Workflow
+name: Creative Workflow
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Every day at midnight
-  workflow_dispatch: # Allows manual trigger
-
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    - cron: '0 2 * * *'
+  workflow_dispatch:
 
 jobs:
-  market-analysis:
+  analyze-market:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 24
-      - run: npm ci
-      - name: Market Analysis
+          node-version: 20
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Analyze Market
         run: |
           npm run ingest:sor
           npm run ingest:forbes
 
   daily-tasks:
     runs-on: ubuntu-latest
+    needs: analyze-market
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 24
-      - run: npm ci
+          node-version: 20
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
       - name: Daily Tasks
         run: npm run daily
-        env:
-          MACBOOK_CLOUD_SIMULATION: true
 
   autonomous-evolution:
     runs-on: ubuntu-latest
+    needs: daily-tasks
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 24
-      - run: npm ci
+          node-version: 20
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
       - name: Autonomous Evolution
         run: npx tsx scripts/execute_creation_cycle.ts
-        env:
-          MACBOOK_CLOUD_SIMULATION: true

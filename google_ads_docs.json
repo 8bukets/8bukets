@@ -63,9 +63,9 @@
             }
         ]
     },
-    "https://business.google.com/uk/ad-tools/bidding/?hl=en": {
+    "https://business.google.com/uk/ad-tools/bidding/": {
         "title": "Deliver better results with automated bidding",
-        "url": "https://business.google.com/uk/ad-tools/bidding/?hl=en",
+        "url": "https://business.google.com/uk/ad-tools/bidding/",
         "key_links": [
             "https://ads.google.com/signup?subid=uk-en-awhp-g-aw-{device}-m-bid-hero-bgc!o2",
             "https://business.google.com/uk/support/ads-expert/",
@@ -225,9 +225,9 @@
             }
         ]
     },
-    "https://business.google.com/uk/resources/?hl=en": {
+    "https://business.google.com/uk/resources/": {
         "title": "Find answers andinspiration",
-        "url": "https://business.google.com/uk/resources/?hl=en",
+        "url": "https://business.google.com/uk/resources/",
         "key_links": [
             "https://business.google.com/uk/resources/articles/seo-vs-ppc/",
             "https://business.google.com/uk/resources/articles/abcds-of-effective-video-ads/",
@@ -847,9 +847,9 @@
             }
         ]
     },
-    "https://developers.google.com/ad-manager?hl=en": {
-        "title": "https://developers.google.com/ad-manager?hl=en",
-        "url": "https://developers.google.com/ad-manager?hl=en",
+    "https://developers.google.com/ad-manager": {
+        "title": "https://developers.google.com/ad-manager",
+        "url": "https://developers.google.com/ad-manager",
         "key_links": [
             "https://developers.google.com/",
             "https://developers.google.com/products",
@@ -866,7 +866,7 @@
         ],
         "sections": [
             {
-                "heading": "https://developers.google.com/ad-manager?hl=en",
+                "heading": "https://developers.google.com/ad-manager",
                 "content": [
                     "- Home",
                     "- Products",
@@ -895,9 +895,9 @@
             }
         ]
     },
-    "https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en": {
-        "title": "https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en",
-        "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en",
+    "https://developers.google.com/ad-manager/dynamic-ad-insertion": {
+        "title": "https://developers.google.com/ad-manager/dynamic-ad-insertion",
+        "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion",
         "key_links": [
             "https://developers.google.com/",
             "https://developers.google.com/products",
@@ -914,7 +914,7 @@
         ],
         "sections": [
             {
-                "heading": "https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en",
+                "heading": "https://developers.google.com/ad-manager/dynamic-ad-insertion",
                 "content": [
                     "- Home",
                     "- Products",
@@ -948,9 +948,9 @@
             }
         ]
     },
-    "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en": {
-        "title": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en",
-        "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en",
+    "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service": {
+        "title": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
+        "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
         "key_links": [
             "https://developers.google.com/",
             "https://developers.google.com/products",
@@ -960,7 +960,7 @@
         ],
         "sections": [
             {
-                "heading": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en",
+                "heading": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
                 "content": [
                     "- Home",
                     "- Products",
@@ -1001,9 +1001,9 @@
             }
         ]
     },
-    "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en": {
-        "title": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en",
-        "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en",
+    "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving": {
+        "title": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
+        "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
         "key_links": [
             "https://developers.google.com/",
             "https://developers.google.com/products",
@@ -1021,7 +1021,7 @@
         ],
         "sections": [
             {
-                "heading": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en",
+                "heading": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
                 "content": [
                     "- Home",
                     "- Products",
@@ -1073,9 +1073,9 @@
             }
         ]
     },
-    "https://developers.google.com/ad-manager/api/start?hl=en": {
+    "https://developers.google.com/ad-manager/api/start": {
         "title": "Get started\n\n    \n    \n      \n    \n\n    \n      \n      Stay organized with collections\n    \n    \n      \n      Save and categorize content based on your preferences.",
-        "url": "https://developers.google.com/ad-manager/api/start?hl=en",
+        "url": "https://developers.google.com/ad-manager/api/start",
         "key_links": [
             "https://developers.google.com/",
             "https://developers.google.com/products",
@@ -1241,9 +1241,9 @@
             }
         ]
     },
-    "https://admanager.google.com/home/resources/?hl=en": {
+    "https://admanager.google.com/home/resources/": {
         "title": "Learn more, do more.",
-        "url": "https://admanager.google.com/home/resources/?hl=en",
+        "url": "https://admanager.google.com/home/resources/",
         "key_links": [
             "https://signup.withgoogle.com/newsletter/googlepublisher/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en"
         ],
@@ -1634,9 +1634,9 @@
             }
         ]
     },
-    "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en": {
+    "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview": {
         "title": "ad-manager overview (0.50.0)\n\n    \n    \n      \n    \n\n    \n      \n      Stay organized with collections\n    \n    \n      \n      Save and categorize content based on your preferences.",
-        "url": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en",
+        "url": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview",
         "key_links": [
             "https://docs.cloud.google.com/",
             "https://docs.cloud.google.com/docs",

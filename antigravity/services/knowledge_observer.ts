@@ -102,7 +102,7 @@ export class KnowledgeObserver {
   /**
    * persistKnowledge: Merges and saves knowledge to the unified system store.
    */
-  public async persistKnowledge(knowledge: Knowledge) {
+  public async persistKnowledge(knowledge: Knowledge, purgePrefix?: string) {
     if (!fs.existsSync(this.storageDir)) {
       fs.mkdirSync(this.storageDir, { recursive: true })
     }
@@ -115,9 +115,7 @@ export class KnowledgeObserver {
         generated_at: new Date().toISOString(),
         version: 1.0,
         sources_processed: []
-      },
-      sections: {},
-      typescript_sections: {}
+      }
     }
 
     if (fs.existsSync(jsonStore)) {
@@ -128,36 +126,29 @@ export class KnowledgeObserver {
       }
     }
 
-    // Explicit Flat Key Whitelist to ensure ecosystem compatibility
-    const FLAT_KEYS = [
-      'ai_agents',
-      'market_data',
-      'legal_ecosystem',
-      'gemma_model',
-      'intelephense',
-      'litert',
-      'stitch',
-      'vscode_intelephense',
-      'google_ads'
-    ]
-    const isFlatKey = FLAT_KEYS.includes(knowledge.title)
+    // Migration to Flat Structure: flatten 'sections' and 'typescript_sections'
+    if (systemKnowledge.sections) {
+        Object.assign(systemKnowledge, systemKnowledge.sections);
+        delete systemKnowledge.sections;
+    }
+    if (systemKnowledge.typescript_sections) {
+        Object.assign(systemKnowledge, systemKnowledge.typescript_sections);
+        delete systemKnowledge.typescript_sections;
+    }
 
-    if (isFlatKey) {
-      systemKnowledge[knowledge.title] = {
-        sections: knowledge.sections,
-        metadata: knowledge.metadata
-      }
-    } else {
-      // For descriptive titles, we still use the typescript_sections namespace
-      // to avoid polluting the top-level flat key space.
-      if (!systemKnowledge.typescript_sections) {
-        systemKnowledge.typescript_sections = {}
-      }
+    // Phase 12: Purge redundant entries if prefix provided
+    if (purgePrefix) {
+      Object.keys(systemKnowledge).forEach(title => {
+        if (title.startsWith(purgePrefix)) {
+           delete systemKnowledge[title]
+        }
+      })
+    }
 
-      systemKnowledge.typescript_sections[knowledge.title] = {
-        sections: knowledge.sections,
-        metadata: knowledge.metadata
-      }
+    // Upsert the new knowledge into the flat structure
+    systemKnowledge[knowledge.title] = {
+      sections: knowledge.sections,
+      metadata: knowledge.metadata
     }
 
     // Update global metadata

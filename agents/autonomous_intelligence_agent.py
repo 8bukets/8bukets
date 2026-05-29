@@ -1,27 +1,33 @@
-from .base_agent import BaseAgent
-from typing import Dict, Any
+from .base_agent import BaseAgent, Blackboard
 
 class AutonomousIntelligenceAgent(BaseAgent):
     def __init__(self):
-        super().__init__("Autonomous Intelligence Agent")
+        super().__init__("AutonomousIntelligenceAgent", dependencies=["health_report", "generated_ads", "bid_strategy", "targeting_profile", "robots_txt"], provides=["autonomous_status", "ecosystem_health"])
 
-    def process(self, all_results: Dict[str, Any], memory: Dict[str, Any] = None) -> str:
-        self.log("Synthesizing high-level intelligence...")
+    async def run(self, data: list, blackboard: Blackboard) -> dict:
+        self.logger.info("Overseeing Ecosystem...")
 
-        health = all_results.get('health', {}).get('status', 'Unknown')
-        strategy = all_results.get('intelligence', {}).get('strategic_insight', 'None')
-        monetization_count = len(all_results.get('monetization', []))
+        checks = {
+            "has_ads": blackboard.get("generated_ads") is not None,
+            "has_bids": blackboard.get("bid_strategy") is not None,
+            "has_persona": blackboard.get("targeting_profile") is not None,
+            "has_robots": blackboard.get("robots_txt") is not None
+        }
 
-        summary = f"""
-EXECUTIVE SUMMARY
------------------
-System Health: {health}
-Market Phase: {strategy}
-Monetization Opportunities Identified: {monetization_count}
+        status = "OPTIMAL"
+        issues = []
+        for k, v in checks.items():
+            if not v:
+                status = "DEGRADED"
+                issues.append(f"Missing context: {k}")
 
-Strategic Direction: Continue monitoring regional rollouts and engage with partner ecosystems.
-"""
-        if memory and 'oracle_ai_knowledge' in memory:
-            summary += "\nOracle AI Knowledge Integrated: Active\n"
+        if status == "DEGRADED":
+            self.logger.warning(f"System degraded: {issues}")
+            self.update_agent_memory("system_health", "degraded")
+        else:
+            self.update_agent_memory("system_health", "healthy")
 
-        return summary
+        return {
+            "autonomous_status": status,
+            "ecosystem_health": "Healthy" if status == "OPTIMAL" else "Needs Attention"
+        }

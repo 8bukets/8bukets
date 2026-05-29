@@ -62,37 +62,19 @@ def update_md_files(new_content):
             with open(md_path, 'r', encoding='utf-8') as f:
                 content = f.read()
 
+            # Find the signature if it exists, so we can insert before it
             signature = "All the best - https://markposition.wordpress.com"
-            new_section = f"{new_content}\n"
+            new_section = f"\n\n## Gemini CLI Subagents\n\n{new_content}\n\n"
 
-            # Remove signature temporarily if it exists to make processing easier
-            has_signature = False
             if signature in content:
-                has_signature = True
-                content = content.replace(f"---{signature}", "").replace(f"---\n{signature}", "").replace(signature, "").strip()
-
-            # Now content is without signature.
-            # We want to replace "## Gemini CLI Subagents" block if it exists, otherwise append it.
-            # The automated reviewer instructions state:
-            # "A simpler string split (e.g., splitting on "## Gemini CLI Subagents" since it is always appended at the very end of the file) or a more robust parsing method is required."
-
-            if "## Gemini CLI Subagents" in content:
-                # Split at "## Gemini CLI Subagents" and replace everything after it.
-                # Since it's always appended at the very end (as the reviewer noted), we just take the part before it.
-                parts = content.split("## Gemini CLI Subagents")
-                content = parts[0].strip() + f"\n\n## Gemini CLI Subagents\n\n{new_section}\n"
+                # Remove all occurrences of the signature, trim, append new content, then re-add signature
+                cleaned_content = content.replace(f"---{signature}", "").replace(f"---\n{signature}", "").replace(signature, "").strip()
+                final_content = cleaned_content + new_section + f"---\n{signature}\n"
             else:
-                # Append to the end
-                content = content.strip() + f"\n\n## Gemini CLI Subagents\n\n{new_section}\n"
-
-            # Re-add signature
-            if has_signature:
-                content = content.strip() + f"\n\n---\n{signature}\n"
-            else:
-                content = content.strip() + "\n"
+                final_content = content.strip() + new_section
 
             with open(md_path, 'w', encoding='utf-8') as f:
-                f.write(content)
+                f.write(final_content)
             print(f"Updated {md_path}")
         except Exception as e:
             print(f"Failed to update {md_path}: {e}")

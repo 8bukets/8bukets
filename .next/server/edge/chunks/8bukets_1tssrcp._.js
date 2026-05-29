@@ -1,3 +1,0 @@
-(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["chunks/8bukets_1tssrcp._.js",75759,e=>{"use strict";async function t(e,t){console.error(`[Request Error] ${t.method} ${t.url}:`,e)}e.s(["onRequestError",0,t])},51556,(e,t,r)=>{self._ENTRIES||={};let s=Promise.resolve().then(()=>e.i(75759));s.catch(()=>{}),self._ENTRIES.middleware_instrumentation=new Proxy(s,{get(e,t){if("then"===t)return(t,r)=>e.then(t,r);let r=(...r)=>e.then(e=>(0,e[t])(...r));return r.then=(r,s)=>e.then(e=>e[t]).then(r,s),r}})}]);
-
-//# sourceMappingURL=8bukets_1tssrcp._.js.map
