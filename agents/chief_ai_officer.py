@@ -62,6 +62,8 @@ class ChiefAIOfficerAgent(BaseAgent):
                     self.logger.info("CAIO [SYNC]: System maturity confirmed at Phase 12/13. Authorizing sentient orchestration protocols.")
                     strategic_directives.append("ACTIVATE_SENTIENT_ORCHESTRATION")
                     strategic_directives.append("ENABLE_PREDICTIVE_RESOURCE_ALLOCATION")
+                    strategic_directives.append("ESTABLISH_ETHICS_FRAMEWORK")
+                    strategic_directives.append("OPTIMIZE_ROI_TRACKING")
                 else:
                     self.logger.warning("CAIO [ALERT]: System maturity falls below Phase 12. Mandating immediate roadmap acceleration.")
                     strategic_directives.append("ACCELERATE_ROADMAP_UPGRADE")
