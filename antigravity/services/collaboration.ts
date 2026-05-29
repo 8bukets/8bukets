@@ -321,7 +321,12 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
 export async function syncCollaborationState(branchIntelligence?: any[]) {
   console.log('🔄 [Collaboration] Synchronizing autonomous state...')
   const metadata = await getMissionMetadata()
-  const dockerHealth = await checkDockerHealth()
+  const dockerHealthy = await checkDockerHealth()
+  const dockerStatus = await (await import('./docker')).getDockerStatus()
+  const dockerHealth = {
+    status: dockerHealthy ? 'optimal' : 'degraded',
+    containerCount: dockerStatus.length
+  }
   const jenkinsStatus = await getLatestBuildStatus()
   const statePath = path.join(process.cwd(), 'autonomous_state.json')
 
