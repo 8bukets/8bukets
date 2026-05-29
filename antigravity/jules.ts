@@ -505,6 +505,17 @@ export class Jules {
       await syncCollaborationState(branches)
       await generateConsolidatedReport(branches)
 
+      // Phase 12/17: Unified Collaboration & Knowledge Integration
+      try {
+        console.log('🔗 [Jules] Orchestrating unified collaboration and knowledge integration...');
+        await execAsync('npx tsx scripts/ingest_knowledge_merge.ts');
+        await execAsync('npx tsx scripts/unified_collaboration.ts');
+        await execAsync('npx tsx scripts/automate_knowledge_integration.ts');
+        this.recordTask('Collaboration: Unified ecosystem sync and knowledge integration complete.');
+      } catch (e: any) {
+        console.warn('⚠️ [Jules] Unified orchestration sub-cycle failed:', e.message);
+      }
+
       // 3. Ideate (Creation Cycle via CreationEngine)
       const { creationEngine } = await import('./services/creation_engine')
       const creationResult = await creationEngine.runCycle()
