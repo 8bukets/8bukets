@@ -1,0 +1,135 @@
+default:
+  image: docker:24-dind
+  services:
+    - docker:24-dind
+  before_script:
+    - docker info
+    - echo "$DOCKER_ACCESS_TOKEN" | docker login --username "$DOCKER_ACCOUNT" --password-stdin
+    - |
+      apk add curl jq
+      ARCH=${CI_RUNNER_EXECUTABLE_ARCH#*/}
+      BUILDX_URL=$(curl -s https://raw.githubusercontent.com/docker/actions-toolkit/main/.github/buildx-lab-releases.json | jq -r ".latest.assets[] | select(endswith(\"linux-$ARCH\"))")
+      mkdir -vp ~/.docker/cli-plugins/
+      curl --silent -L --output ~/.docker/cli-plugins/docker-buildx $BUILDX_URL
+      chmod a+x ~/.docker/cli-plugins/docker-buildx
+    - docker buildx create --use --driver cloud ${DOCKER_ACCOUNT}/${CLOUD_BUILDER_NAME}
+
+variables:
+  IMAGE_NAME: getanant/docker-build-cloud-demo
+  DOCKER_ACCOUNT: getanant
+  CLOUD_BUILDER_NAME: sor
+  MACBOOK_CLOUD_SIMULATION: "true"
+
+stages:
+  - creative_workflow
+  - build
+  - test
+  - deploy
+
+build-job:
+  stage: build
+  script:
+    - echo "Hello, $GITLAB_USER_LOGIN!"
+
+# Build multi-platform image and push to a registry
+build_push:
+  stage: build
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  script:
+    - |
+      docker buildx build \
+        --platform linux/amd64,linux/arm64 \
+        --tag "${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA}" \
+        --push .
+
+# Build an image and discard the result
+build_cache:
+  stage: build
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  script:
+    - |
+      docker buildx build \
+        --platform linux/amd64,linux/arm64 \
+        --tag "${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA}" \
+        --output type=cacheonly \
+        .
+
+test-job1:
+  stage: test
+  needs: []
+  script:
+    - echo "This job tests something"
+
+test-job2:
+  stage: test
+  needs: []
+  script:
+    - echo "This job tests something, but takes more time than test-job1."
+    - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
+    - echo "which simulates a test that runs 20 seconds longer than test-job1"
+    - sleep 20
+
+deploy-prod:
+  stage: deploy
+  script:
+    - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
+  environment: production
+
+test-testservice:
+  stage: test
+  script:
+    - npm ci
+    - npx vitest run antigravity/services/testservice.test.ts
+
+test-autonomous_resource_optimizer:
+  stage: test
+  script:
+    - npm ci
+    - npx vitest run antigravity/services/autonomous_resource_optimizer.test.ts
+
+test-system_health_dashboard:
+  stage: test
+  script:
+    - npm ci
+    - npx vitest run antigravity/services/system_health_dashboard.test.ts
+
+analyze_market:
+  stage: creative_workflow
+  script:
+    - npm ci
+    - npm run ingest:sor
+    - npm run ingest:forbes
+
+daily_tasks:
+  stage: creative_workflow
+  needs: ["analyze_market"]
+  script:
+    - npm ci
+    - npm run daily
+
+autonomous_evolution:
+  stage: creative_workflow
+  needs: ["daily_tasks"]
+  script:
+    - npm ci
+    - npx tsx scripts/execute_creation_cycle.ts
+
+test-proactive_scalability:
+  stage: test
+  script:
+    - npm ci
+    - npx vitest run antigravity/services/proactive_scalability.test.ts
+
+test-autonomous_ux_optimization:
+  stage: test
+  script:
+    - npm ci
+    - npx vitest run antigravity/services/autonomous_ux_optimization.test.ts
+
+test-global_neural_sync_service_(phase_12):
+  stage: test
+  script:
+    - npm ci
+    - npx vitest run antigravity/services/global_neural_sync_service_(phase_12).test.ts
