@@ -233,6 +233,14 @@ export class Jules {
       this.recordTask(`GitHub Docs: Observed ${githubInsights.length} files from Intelephense docs.`)
     }
 
+    // iCloud Knowledge Observation
+    console.log('☁️ [Jules] Initiating iCloud Knowledge Scan...')
+    const { icloudObserver } = await import('./services/icloud_observer')
+    const ingestedICloud = await icloudObserver.scan()
+    if (ingestedICloud.length > 0) {
+      this.recordTask(`iCloud: Ingested ${ingestedICloud.length} new files.`)
+    }
+
     await this.syncCollaboration()
     await this.generateConsolidatedReport()
 
@@ -267,7 +275,21 @@ export class Jules {
     report += `## 🧠 Cognitive State\n`
     report += `- **Architectural Proposals:** ${insights.ideas.length}\n`
     report += `- **Predictive Refactors:** ${insights.proposals.length}\n`
-    report += `- **Active Caching Profiles:** ${insights.caching.registrySize}\n\n`
+    report += `- **Active Caching Profiles:** ${insights.caching.registrySize}\n`
+
+    // Phase 12: Integrated Service Insights
+    try {
+      const { getAutonomousPerformanceAuditorData } = await import('./services/autonomous_performance_auditor')
+      const perfData = await getAutonomousPerformanceAuditorData()
+      report += `- **Performance Auditor:** ${perfData.status} (Last run: ${perfData.lastRun})\n`
+
+      const { getAutonomousDiscoveryEngineData } = await import('./services/autonomous_discovery_engine')
+      const discoveryData = await getAutonomousDiscoveryEngineData()
+      report += `- **Discovery Engine:** ${discoveryData.status} (Last run: ${discoveryData.lastRun})\n`
+    } catch (e) {
+      console.warn('⚠️ [Jules] Failed to fetch extended service insights.')
+    }
+    report += `\n`
 
     report += `## 🤝 Collaboration & Stakeholders\n`
     if (fs.existsSync(path.join(process.cwd(), 'autonomous_state.json'))) {
