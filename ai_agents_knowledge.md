@@ -334,6 +334,7 @@ Gemini CLI comes with the following built-in subagents:
 *   **Purpose:** Analyze the codebase, reverse engineer, and understand complex dependencies.
 *   **When to use:** “How does the authentication system work?”, “Map out the dependencies of the AgentRegistry class.”
 *   **Configuration:** Enabled by default. You can override its settings in `settings.json` under `agents.overrides`. Example (forcing a specific model and increasing turns):
+
 ```json
 {
   "agents": {
@@ -368,13 +369,12 @@ Gemini CLI comes with the following built-in subagents:
 *   **When to use:** “Go to example.com and fill out the contact form,” “Extract the pricing table from this page,” “Click the login button and enter my credentials.”
 
 > **Note**
->
 > This is a preview feature currently under active development.
 
 #### Prerequisites
 The browser agent requires:
 
-*   Chrome version 144 or later (any recent stable release works).
+*   **Chrome version 144 or later** (any recent stable release works).
 *   The underlying `chrome-devtools-mcp` server is bundled with Gemini CLI and launched automatically — no separate installation is needed.
 
 #### Enabling the browser agent
@@ -426,15 +426,15 @@ All browser-specific settings go under `agents.browser` in your `settings.json`.
 
 | Setting | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
-| `sessionMode` | string | `"persistent"` | How Chrome is managed: `"persistent"`, `"isolated"`, or `"existing"`. |
-| `headless` | boolean | `false` | Run Chrome in headless mode (no visible window). |
-| `profilePath` | string | — | Custom path to a browser profile directory. |
-| `visualModel` | string | — | Model override for the visual agent. |
-| `allowedDomains` | string[] | — | Restrict navigation to specific domains (for example, `["github.com"]`). |
-| `disableUserInput` | boolean | `true` | Disable user input on the browser window during automation (non-headless only). |
-| `maxActionsPerTask` | number | `100` | Maximum tool calls per task. The agent is terminated when the limit is reached. |
-| `confirmSensitiveActions` | boolean | `false` | Require manual confirmation for `upload_file` and `evaluate_script`. |
-| `blockFileUploads` | boolean | `false` | Hard-block all file upload requests from the agent. |
+| `sessionMode` | `string` | `"persistent"` | How Chrome is managed: `"persistent"`, `"isolated"`, or `"existing"`. |
+| `headless` | `boolean` | `false` | Run Chrome in headless mode (no visible window). |
+| `profilePath` | `string` | — | Custom path to a browser profile directory. |
+| `visualModel` | `string` | — | Model override for the visual agent. |
+| `allowedDomains` | `string[]` | — | Restrict navigation to specific domains (for example, `["github.com"]`). |
+| `disableUserInput` | `boolean` | `true` | Disable user input on the browser window during automation (non-headless only). |
+| `maxActionsPerTask` | `number` | `100` | Maximum tool calls per task. The agent is terminated when the limit is reached. |
+| `confirmSensitiveActions` | `boolean` | `false` | Require manual confirmation for `upload_file` and `evaluate_script`. |
+| `blockFileUploads` | `boolean` | `false` | Hard-block all file upload requests from the agent. |
 
 #### Automation overlay and input blocking
 In non-headless mode, the browser agent injects a visual overlay into the browser window to indicate that automation is in progress. By default, user input (keyboard and mouse) is also blocked to prevent accidental interference. You can disable this by setting `disableUserInput` to `false`.
@@ -469,17 +469,16 @@ By default, the browser agent interacts with pages through the accessibility tre
 When enabled, the agent gains access to the `analyze_screenshot` tool, which captures a screenshot and sends it to the vision model for analysis. The model returns coordinates and element descriptions that the browser agent uses with the `click_at` tool for precise, coordinate-based interactions.
 
 > **Note**
->
 > The visual agent requires API key or Vertex AI authentication. It is not available when using “Sign in with Google”.
 
 #### Sandbox support
 The browser agent adjusts its behavior automatically when running inside a sandbox.
 
-##### macOS seatbelt (`sandbox-exec`)
-When the CLI runs under the macOS seatbelt sandbox, persistent and isolated session modes are forced to isolated with headless enabled. This avoids permission errors caused by seatbelt file-system restrictions on persistent browser profiles. If `sessionMode` is set to `existing`, no override is applied.
+**macOS seatbelt (sandbox-exec)**
+When the CLI runs under the macOS seatbelt sandbox, `persistent` and `isolated` session modes are forced to `isolated` with headless enabled. This avoids permission errors caused by seatbelt file-system restrictions on persistent browser profiles. If `sessionMode` is set to `existing`, no override is applied.
 
-##### Container sandboxes (Docker / Podman)
-Chrome is not available inside the container, so the browser agent is disabled unless `sessionMode` is set to `"existing"`. When enabled with existing mode, the agent automatically connects to Chrome on the host via the resolved IP of `host.docker.internal:9222` instead of using local pipe discovery. Port 9222 is currently hardcoded and cannot be customized.
+**Container sandboxes (Docker / Podman)**
+Chrome is not available inside the container, so the browser agent is disabled unless `sessionMode` is set to `"existing"`. When enabled with existing mode, the agent automatically connects to Chrome on the host via the resolved IP of `host.docker.internal:9222` instead of using local pipe discovery. Port `9222` is currently hardcoded and cannot be customized.
 
 To use the browser agent in a Docker sandbox:
 
@@ -493,7 +492,6 @@ To use the browser agent in a Docker sandbox:
     # Option B: Enable in Chrome settings
     # Navigate to chrome://inspect/#remote-debugging and enable
     ```
-
 2.  Configure `sessionMode` and allowed domains in your project’s `.gemini/settings.json`:
 
     ```json
@@ -509,7 +507,6 @@ To use the browser agent in a Docker sandbox:
       }
     }
     ```
-
 3.  Launch the CLI with port forwarding:
 
     **Terminal window**
@@ -559,17 +556,18 @@ When you find a vulnerability, explain it clearly and suggest a fix. Do not fix
 it yourself; just report it.
 
 ### Configuration schema
+
 | Field | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `name` | string | Yes | Unique identifier (slug) used as the tool name for the agent. Only lowercase letters, numbers, hyphens, and underscores. |
-| `description` | string | Yes | Short description of what the agent does. This is visible to the main agent to help it decide when to call this subagent. |
-| `kind` | string | No | `local` (default) or `remote`. |
-| `tools` | array | No | List of tool names this agent can use. Supports wildcards: `*` (all tools), `mcp_*` (all MCP tools), `mcp_server_*` (all tools from a server). If omitted, it inherits all tools from the parent session. |
-| `mcpServers` | object | No | Configuration for inline Model Context Protocol (MCP) servers isolated to this specific agent. |
-| `model` | string | No | Specific model to use (for example, `gemini-3-preview`). Defaults to `inherit` (uses the main session model). |
-| `temperature` | number | No | Model temperature (0.0 - 2.0). Defaults to 1. |
-| `max_turns` | number | No | Maximum number of conversation turns allowed for this agent before it must return. Defaults to 30. |
-| `timeout_mins` | number | No | Maximum execution time in minutes. Defaults to 10. |
+| `name` | `string` | **Yes** | Unique identifier (slug) used as the tool name for the agent. Only lowercase letters, numbers, hyphens, and underscores. |
+| `description` | `string` | **Yes** | Short description of what the agent does. This is visible to the main agent to help it decide when to call this subagent. |
+| `kind` | `string` | No | `local` (default) or `remote`. |
+| `tools` | `array` | No | List of tool names this agent can use. Supports wildcards: `*` (all tools), `mcp_*` (all MCP tools), `mcp_server_*` (all tools from a server). If omitted, it inherits all tools from the parent session. |
+| `mcpServers` | `object` | No | Configuration for inline Model Context Protocol (MCP) servers isolated to this specific agent. |
+| `model` | `string` | No | Specific model to use (for example, `gemini-3-preview`). Defaults to `inherit` (uses the main session model). |
+| `temperature` | `number` | No | Model temperature (0.0 - 2.0). Defaults to `1`. |
+| `max_turns` | `number` | No | Maximum number of conversation turns allowed for this agent before it must return. Defaults to `30`. |
+| `timeout_mins` | `number` | No | Maximum execution time in minutes. Defaults to `10`. |
 
 ### Tool wildcards
 When defining tools for a subagent, you can use wildcards to quickly grant access to groups of tools:
@@ -585,7 +583,7 @@ Each subagent runs in its own isolated context loop. This means:
 *   **Isolated tools:** The subagent only has access to the tools you explicitly grant it.
 *   **Recursion protection:** To prevent infinite loops and excessive token usage, subagents cannot call other subagents. If a subagent is granted the `*` tool wildcard, it will still be unable to see or invoke other agents.
 
-### Subagent tool isolation
+## Subagent tool isolation
 Subagent tool isolation moves Gemini CLI away from a single global tool registry. By providing isolated execution environments, you can ensure that subagents only interact with the parts of the system they are designed for. This prevents unintended side effects, improves reliability by avoiding state contamination, and enables fine-grained permission control.
 
 With this feature, you can:
@@ -595,7 +593,7 @@ With this feature, you can:
 *   **Maintain state isolation:** Ensure that subagents only interact with their own set of tools and servers, preventing side effects and state contamination.
 *   **Apply subagent-specific policies:** Enforce granular rules in your Policy Engine TOML configuration based on the executing subagent’s name.
 
-#### Configuring isolated tools and servers
+### Configuring isolated tools and servers
 You can configure tool isolation for a subagent by updating its markdown frontmatter. This lets you explicitly state which tools the subagent can use, rather than relying on the global registry.
 
 Add an `mcpServers` object to define inline MCP servers that are unique to the agent.
@@ -615,7 +613,7 @@ mcpServers:
 ---
 ```
 
-#### Subagent-specific policies
+### Subagent-specific policies
 You can enforce fine-grained control over subagents using the Policy Engine’s TOML configuration. This allows you to grant or restrict permissions specifically for an agent, without affecting the rest of your CLI session.
 
 To restrict a policy rule to a specific subagent, add the `subagent` property to the `[[rules]]` block in your `policy.toml` file.
@@ -645,7 +643,7 @@ For a full list of sub-commands and usage, see the `/agents` command reference.
 ### Persistent configuration (settings.json)
 While the `/agents` command and agent definition files provide a starting point, you can use `settings.json` for global, persistent overrides. This is useful for enforcing specific models or execution limits across all sessions.
 
-#### agents.overrides
+`agents.overrides`
 Use this to enable or disable specific agents or override their run configurations.
 
 ```json
@@ -664,7 +662,7 @@ Use this to enable or disable specific agents or override their run configuratio
 }
 ```
 
-#### modelConfigs.overrides
+`modelConfigs.overrides`
 You can target specific subagents with custom model settings (like system instruction prefixes or specific safety settings) using the `overrideScope` field.
 
 ```json
@@ -708,7 +706,6 @@ The main agent’s system prompt encourages it to use an expert subagent when on
 For example, the following subagent description should be called fairly consistently for Git operations.
 
 > Git expert agent which should be used for all local and remote git operations. For example:
->
 > *   Making commits
 > *   Searching for regressions with bisect
 > *   Interacting with source control and issues providers such as GitHub.
@@ -724,14 +721,13 @@ See the Remote Subagents documentation for detailed configuration, authenticatio
 Extensions can bundle and distribute subagents. See the Extensions documentation for details on how to package agents within an extension.
 
 ## Disabling subagents
-Subagents are enabled by default. To disable them, set `enableAgents` to false in your `settings.json`:
+Subagents are enabled by default. To disable them, set `enableAgents` to `false` in your `settings.json`:
 
 ```json
 {
   "experimental": { "enableAgents": false }
 }
 ```
-
 
 ## Docker MCP Catalog
 
@@ -810,4 +806,3 @@ When your pull request is reviewed and approved, your MCP server is available wi
 Docker Desktop's MCP Toolkit feature.
 The Docker MCP Catalog.
 The Docker Hub mcp namespace (for MCP servers built by Docker).
-
