@@ -299,6 +299,9 @@ Assemble, Collect, Gather, Compose, Accumulate, Organize, Synthesize
 - General: Focuses on the act of assembling information or materials (e.g., compile a report).
 - Computing: Focuses on the automatic transformation of code using a tool known as a compiler.
 
+## Knowledge Merge
+
+integrate knowledge merge and all the best - https://markposition.wordpress.com
 
 
 ---
