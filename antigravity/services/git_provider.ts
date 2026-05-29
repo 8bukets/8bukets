@@ -40,8 +40,9 @@ export class GitProviderService {
   public async getActiveProvider(): Promise<'github' | 'gitlab' | 'unknown'> {
     try {
       const { stdout } = await this._execAsync('git remote -v')
-      if (stdout.includes('github.com')) return 'github'
-      if (stdout.includes('gitlab.com')) return 'gitlab'
+      // CodeQL mitigation: checking for host with prefix to ensure it's not a subdomain of another host
+      if (stdout.includes('@github.com') || stdout.includes('/github.com/')) return 'github'
+      if (stdout.includes('@gitlab.com') || stdout.includes('/gitlab.com/')) return 'gitlab'
     } catch (e) {}
     return 'unknown'
   }
