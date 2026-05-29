@@ -1,18 +1,174 @@
 {
     "mission": "Autonomous Evolution",
-    "stakeholders": [],
+    "stakeholders": [
+        {
+            "role": "Filip Keser (Founder)",
+            "email": "filip@example.com"
+        },
+        {
+            "role": "Jules (Lead Architect)",
+            "email": "jules@antigravity.ai"
+        },
+        {
+            "role": "Sigma Bot (Operations)",
+            "email": "sigma@antigravity.ai"
+        }
+    ],
     "docker": true,
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1779919713213,
+        "timestamp": 1780051022900,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
-        "branches": 2165,
+        "branches": 2220,
         "pendingTasks": 0,
         "relationshipMap": {
-            "stakeholderEngagement": {},
+            "stakeholderEngagement": {
+                "Filip Keser (Founder)": {
+                    "email": "filip@example.com",
+                    "activeProjects": [
+                        "remotes/origin/add-filip-keser-license-9070216148560290832"
+                    ]
+                },
+                "Jules (Lead Architect)": {
+                    "email": "jules@antigravity.ai",
+                    "activeProjects": [
+                        "jules-13516138989655533197-e0f4d0db",
+                        "remotes/origin/HEAD -> origin/jules/scraper-markposition-17752547678215960211",
+                        "remotes/origin/add-jules-cli-7658708591293792322",
+                        "remotes/origin/feat/autonomous-protocol-jules-16130780090107402276",
+                        "remotes/origin/feat/jules-tools-documentation-3709224248115032248",
+                        "remotes/origin/jules-1027089695129073368-c49a1c11",
+                        "remotes/origin/jules-10724586028665085971-3ad9c277",
+                        "remotes/origin/jules-10786450698186069009-a6894be5",
+                        "remotes/origin/jules-10805447442179148911-1d117cf3",
+                        "remotes/origin/jules-11023925826679396999-efd664fa",
+                        "remotes/origin/jules-1103377942034451673-51f864ca",
+                        "remotes/origin/jules-11082628370387662325-cceae0c4",
+                        "remotes/origin/jules-1164978700782097591-599a1052",
+                        "remotes/origin/jules-11867509925832320780-8aa8894a",
+                        "remotes/origin/jules-11912267709594997729-d10b0e1f",
+                        "remotes/origin/jules-12160844108883332984-433a6b56",
+                        "remotes/origin/jules-12457892104228508063-41c0c28d",
+                        "remotes/origin/jules-128426962084555676-bc641743",
+                        "remotes/origin/jules-13052721785252149852-027ffae0",
+                        "remotes/origin/jules-13238206488982251887-d6084712",
+                        "remotes/origin/jules-13431006678473017081-2cf66aa8",
+                        "remotes/origin/jules-13607206307106246227-38f47801",
+                        "remotes/origin/jules-13703867818161648472-ca00df1e",
+                        "remotes/origin/jules-1401381832535268992-101c53a9",
+                        "remotes/origin/jules-14402645048061780023-73b2e4f9",
+                        "remotes/origin/jules-14816450646255710907-9a961bea",
+                        "remotes/origin/jules-14846758043150100113-f0cfbc39",
+                        "remotes/origin/jules-15004287550758535025-a71549d8",
+                        "remotes/origin/jules-15373376258129096424-b615f592",
+                        "remotes/origin/jules-15643813269620827017-18b637fd",
+                        "remotes/origin/jules-15669541233529701765-e7b02c45",
+                        "remotes/origin/jules-16739887525044798643-c54f1fa3",
+                        "remotes/origin/jules-16746668095937525271-5d5787ff",
+                        "remotes/origin/jules-16888796621400029054-460e13c4",
+                        "remotes/origin/jules-1717717407806782090-cbdd5077",
+                        "remotes/origin/jules-17345361020910170827-8e192329",
+                        "remotes/origin/jules-17430343990571925541-c81c147a",
+                        "remotes/origin/jules-17664332290031173343-55f5ab91",
+                        "remotes/origin/jules-18406338226598714071-aab43e45",
+                        "remotes/origin/jules-2331529788625810491-30fe029d",
+                        "remotes/origin/jules-269848640437748724-d6177096",
+                        "remotes/origin/jules-2767932536649645053-195aa658",
+                        "remotes/origin/jules-2952753656715436592-50f1624f",
+                        "remotes/origin/jules-3284237235346634220-17de23f1",
+                        "remotes/origin/jules-3377716076333327453-2d27a121",
+                        "remotes/origin/jules-3444915640748353694-63419224",
+                        "remotes/origin/jules-361744050208613117-0f82961f",
+                        "remotes/origin/jules-3816100636150667016-130985d0",
+                        "remotes/origin/jules-4102353982491655498-fda2bbfe",
+                        "remotes/origin/jules-4230806492568327711-dd0d7dbe",
+                        "remotes/origin/jules-4843122813281068614-8b4499aa",
+                        "remotes/origin/jules-5125461103553111919-d5f7a47b",
+                        "remotes/origin/jules-5559433138773811985-39975caf",
+                        "remotes/origin/jules-5565625516958485993-49059093",
+                        "remotes/origin/jules-5679297940668698803-4384a9af",
+                        "remotes/origin/jules-6528044095388834739-5a6c8bcf",
+                        "remotes/origin/jules-7690709006081030781-1ea88831",
+                        "remotes/origin/jules-8197540570479854725-c23a5090",
+                        "remotes/origin/jules-8471382387327462147-5395dec8",
+                        "remotes/origin/jules-add-gemini-remote-agent-12873027587560108654",
+                        "remotes/origin/jules-ads-knowledge-ingestion-14603073081341889171",
+                        "remotes/origin/jules-agent-architecture-ingestion-315896060065751771",
+                        "remotes/origin/jules-ai-agent-knowledge-merge-15121321797956756234",
+                        "remotes/origin/jules-arcjet-integration-16980338037533745889",
+                        "remotes/origin/jules-autonomous-connect-sync-13567552938698989059",
+                        "remotes/origin/jules-autonomous-evolution-12208946204085721942",
+                        "remotes/origin/jules-autonomous-workflow-18354041674138581290",
+                        "remotes/origin/jules-autonomous-workflow-creation-1089913609311419813",
+                        "remotes/origin/jules-autonomous-workflow-fix-2826640413281112163",
+                        "remotes/origin/jules-autonomous-workflow-unified-14967929050804960809",
+                        "remotes/origin/jules-cloud-autonomy-16506302087474217798",
+                        "remotes/origin/jules-cloud-simulation-enforcement-7338891043576217515",
+                        "remotes/origin/jules-cloud-workflow-agent-9594836607216672043",
+                        "remotes/origin/jules-cloud-workflow-tolerance-17354439472694641412",
+                        "remotes/origin/jules-compile-knowledge-2707648609195220904",
+                        "remotes/origin/jules-continuous-presence-workflow-3144055533381791740",
+                        "remotes/origin/jules-daily-autonomous-evolution-8968243163984956068",
+                        "remotes/origin/jules-download-cli-page-4874267122039212944",
+                        "remotes/origin/jules-duo-planner-agent-url-fix-5677968275200464330",
+                        "remotes/origin/jules-feature-integrate-knowledge-merge-9200679916314149754",
+                        "remotes/origin/jules-fix-autonomous-creation-cycle-5331330201427680768",
+                        "remotes/origin/jules-fix-knowledge-integration-cleanup-10144234766340686184",
+                        "remotes/origin/jules-fix-oracle-scraper-schema-6080803583651507344",
+                        "remotes/origin/jules-fix-subagent-prompts-16967744904311493464",
+                        "remotes/origin/jules-full-autonomous-automatic-workflow-8311799048599272217",
+                        "remotes/origin/jules-full-autonomus-workflow-8744732568350416698",
+                        "remotes/origin/jules-gitlab-ci-setup-10531506072496288006",
+                        "remotes/origin/jules-gitlab-ci-tutorial-10758887820992568383",
+                        "remotes/origin/jules-gitlab-ci-tutorial-5613378872543284671",
+                        "remotes/origin/jules-gitlab-ci-yml-3154565573179389543",
+                        "remotes/origin/jules-gitlab-tutorial-ci-4111694628214868400",
+                        "remotes/origin/jules-improve-knowledge-workflows-16068111765054687314",
+                        "remotes/origin/jules-improve-knowledge-workflows-16068111765054687314-3907595530513115604",
+                        "remotes/origin/jules-improve-knowledge-workflows-9958740170618720237",
+                        "remotes/origin/jules-improve-react-agents-deploy-6633287448450705076",
+                        "remotes/origin/jules-improve-workflow-and-knowledge-observer-11114380607500005512",
+                        "remotes/origin/jules-ingest-ads-knowledge-7862837446767067464",
+                        "remotes/origin/jules-ingest-google-ads-docs-12444511274572846717",
+                        "remotes/origin/jules-ingest-hcp-knowledge-14291451140571066747",
+                        "remotes/origin/jules-integrate-knowledge-merge-5016273102093085264",
+                        "remotes/origin/jules-integrate-oracle-knowledge-9421136010084102746",
+                        "remotes/origin/jules-integrate-signature-6068322876973646017",
+                        "remotes/origin/jules-intelephense-docs-consolidation-6380568782621863083",
+                        "remotes/origin/jules-investopedia-all-knowledge-14799525503188502250",
+                        "remotes/origin/jules-knowledge-ads-ingestion-612535887181382298",
+                        "remotes/origin/jules-knowledge-integration-compile-14557175907207924867",
+                        "remotes/origin/jules-knowledge-integration-subagents-16636673178408066825",
+                        "remotes/origin/jules-knowledge-merge-collaboration-3722212575858302197",
+                        "remotes/origin/jules-knowledge-merge-markposition-11506824174069569507",
+                        "remotes/origin/jules-knowledge-observe-improvements-9236700373896263344",
+                        "remotes/origin/jules-remote-subagents-docs-1653073469927459457",
+                        "remotes/origin/jules-scrape-informatic-6598290821327070927",
+                        "remotes/origin/jules-security-optimizations-6605171866180417523",
+                        "remotes/origin/jules-sor-workflow-improvement-8463337196227161862",
+                        "remotes/origin/jules-ssh-key-setup-7319492468583803481",
+                        "remotes/origin/jules-terraform-knowledge-17709827572083509678",
+                        "remotes/origin/jules-update-gitlab-ci-16275426523578740483",
+                        "remotes/origin/jules/add-system-patent-947552789592854459",
+                        "remotes/origin/jules/compile-knowledge-integration-4875845775501523719",
+                        "remotes/origin/jules/improve-react-workflow-orchestration-10305698287333015349",
+                        "remotes/origin/jules/ingest-cli-creativity-9044833233025653876",
+                        "remotes/origin/jules/ingest-intelephense-unified-store-3086939939732869599",
+                        "remotes/origin/jules/integrate-knowledge-merge-signature-9637748484475924203",
+                        "remotes/origin/jules/knowledge-merge-integration-4756532437460590133",
+                        "remotes/origin/jules/scraper-intelephense-2916212763307459692",
+                        "remotes/origin/jules/scraper-markposition-17752547678215960211",
+                        "remotes/origin/restore-jules-tasks-17924979559343397018"
+                    ]
+                },
+                "Sigma Bot (Operations)": {
+                    "email": "sigma@antigravity.ai",
+                    "activeProjects": []
+                }
+            },
             "goalAlignment": {},
             "resourceInventory": [
                 {
@@ -59,9 +215,21 @@
                 },
                 {
                     "type": "Service",
+                    "name": "autonomous_neural_cache_bridge",
+                    "status": "Active",
+                    "path": "antigravity/services/autonomous_neural_cache_bridge.ts"
+                },
+                {
+                    "type": "Service",
                     "name": "autonomous_notification",
                     "status": "Active",
                     "path": "antigravity/services/autonomous_notification.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "autonomous_performance_auditor",
+                    "status": "Active",
+                    "path": "antigravity/services/autonomous_performance_auditor.ts"
                 },
                 {
                     "type": "Service",
@@ -86,6 +254,12 @@
                     "name": "cloud_convergence",
                     "status": "Active",
                     "path": "antigravity/services/cloud_convergence.ts"
+                },
+                {
+                    "type": "Service",
+                    "name": "cloud_simulation",
+                    "status": "Active",
+                    "path": "antigravity/services/cloud_simulation.ts"
                 },
                 {
                     "type": "Service",
@@ -353,6 +527,12 @@
                 },
                 {
                     "type": "Automation Script",
+                    "name": "analyze_recent_sessions",
+                    "status": "Active",
+                    "path": "scripts/analyze_recent_sessions.ts"
+                },
+                {
+                    "type": "Automation Script",
                     "name": "autonomous_evolution_task",
                     "status": "Active",
                     "path": "scripts/autonomous_evolution_task.sh"
@@ -362,6 +542,12 @@
                     "name": "autonomous_sync",
                     "status": "Active",
                     "path": "scripts/autonomous_sync.ts"
+                },
+                {
+                    "type": "Automation Script",
+                    "name": "autonomous_workflow_creation",
+                    "status": "Active",
+                    "path": "scripts/autonomous_workflow_creation.ts"
                 },
                 {
                     "type": "Automation Script",
@@ -521,6 +707,12 @@
                 },
                 {
                     "type": "Automation Script",
+                    "name": "install_launchd",
+                    "status": "Active",
+                    "path": "scripts/install_launchd.sh"
+                },
+                {
+                    "type": "Automation Script",
                     "name": "install_vault_radar",
                     "status": "Active",
                     "path": "scripts/install_vault_radar.sh"
@@ -611,9 +803,15 @@
                 },
                 {
                     "type": "AI Agent",
+                    "name": "chief_ai_officer",
+                    "status": "Active",
+                    "path": "agents/chief_ai_officer.py"
+                },
+                {
+                    "type": "AI Agent",
                     "name": "chief_ai_officer_agent",
                     "status": "Active",
-                    "path": "agents/chief_ai_officer_agent.py"
+                    "path": "agents/chief_ai_officer_agent.md"
                 },
                 {
                     "type": "AI Agent",
@@ -626,6 +824,12 @@
                     "name": "duo_planner_agent",
                     "status": "Active",
                     "path": "agents/duo_planner_agent.md"
+                },
+                {
+                    "type": "AI Agent",
+                    "name": "gitlab_security_agent",
+                    "status": "Active",
+                    "path": "agents/gitlab_security_agent.md"
                 },
                 {
                     "type": "AI Agent",
@@ -761,21 +965,15 @@
                 },
                 {
                     "type": "Knowledge",
-                    "name": "caio_role_docs.md",
+                    "name": "Chief AI Officer (CAIO) Role",
                     "status": "Ingested",
                     "source": "local://caio_role_docs.md"
                 },
                 {
                     "type": "Knowledge",
-                    "name": "intelephense_docs.md",
-                    "status": "Ingested",
-                    "source": "local://intelephense_docs.md"
-                },
-                {
-                    "type": "Knowledge",
                     "name": "Intelephense Documentation",
                     "status": "Ingested",
-                    "source": "local://intelephense_docs.md"
+                    "source": "https://intelephense.com/docs"
                 },
                 {
                     "type": "Knowledge",
@@ -850,6 +1048,66 @@
                     "source": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en"
                 },
                 {
+                    "type": "Knowledge",
+                    "name": "iCloud: autonomous_strategies.md",
+                    "status": "Ingested",
+                    "source": "icloud://autonomous_strategies.md"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "2026 Market Intelligence",
+                    "status": "Ingested",
+                    "source": "icloud://market_intelligence.json"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "iCloud: neural_sync_docs.md",
+                    "status": "Ingested",
+                    "source": "icloud://neural_sync_docs.md"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "iCloud: test_knowledge.md",
+                    "status": "Ingested",
+                    "source": "icloud://test_knowledge.md"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "autonomous_strategies.md",
+                    "status": "Ingested",
+                    "source": "icloud-sim://autonomous_strategies.md"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Google Antigravity",
+                    "status": "Ingested",
+                    "source": "https://antigravity.google/product/antigravity-cli"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "caio_role_docs.md",
+                    "status": "Ingested",
+                    "source": "local://caio_role_docs.md"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "intelephense_docs.md",
+                    "status": "Ingested",
+                    "source": "local://intelephense_docs.md"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Web Insight",
+                    "status": "Ingested",
+                    "source": "https://software-online-review.com"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "iCloud: new_intel.md",
+                    "status": "Ingested",
+                    "source": "icloud://new_intel.md"
+                },
+                {
                     "type": "Documentation",
                     "name": "AGENTS.md",
                     "status": "Active"
@@ -872,7 +1130,7 @@
             "origin": "development",
             "health": "degraded",
             "volatilityTags": 0,
-            "timestamp": "2026-05-27T22:08:55.742Z"
+            "timestamp": "2026-05-29T10:37:27.207Z"
         },
         "relayState": [
             {
@@ -882,7 +1140,7 @@
                     "Command Center",
                     "Store"
                 ],
-                "lastActivity": "2026-05-27T22:08:55.742Z",
+                "lastActivity": "2026-05-29T10:37:27.207Z",
                 "intensity": 0.85
             },
             {
@@ -897,5 +1155,5 @@
             }
         ]
     },
-    "last_sync": "2026-05-27T22:08:55.747Z"
+    "last_sync": "2026-05-29T10:37:27.209Z"
 }
