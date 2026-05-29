@@ -251,13 +251,11 @@ export class Jules {
       persistKnowledge(knowledgeInsights)
     }
 
-    // GitHub Docs Observation
-    console.log('👁️ [Jules] Scanning GitHub Docs...')
-    const { observeGithubDocs } = await import('./services/github_docs_observer')
-    const githubInsights = await observeGithubDocs('bmewburn/intelephense-docs', ['installation.md', 'configuration.md'])
-    if (githubInsights.length > 0) {
-      this.recordTask(`GitHub Docs: Observed ${githubInsights.length} files from Intelephense docs.`)
-    }
+    // GitHub Docs Observation (Intelephense)
+    console.log('👁️ [Jules] Consolidating Intelephense Documentation...')
+    const { intelephenseService } = await import('./services/intelephense_service')
+    await intelephenseService.consolidate()
+    this.recordTask('Intelephense: Consolidated documentation from local and GitHub sources.')
 
     await this.syncCollaboration()
     await this.generateConsolidatedReport()
