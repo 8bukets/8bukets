@@ -1,8 +1,16 @@
 # 📈 Investopedia Knowledge Report
 
-Generated on: 2026-05-28T09:53:43.625Z
+Generated on: 2026-05-29T03:09:59.031Z
 
 ## Recent Financial Terms
+
+### SEC Form 13F Explained: Filing Requirements, Insights, and Common Issues
+- **Link**: [https://www.investopedia.com/terms/f/form-13f.asp](https://www.investopedia.com/terms/f/form-13f.asp)
+- **Summary**: Katrina Ávila Munichiello is an experienced editor, writer, fact-checker, and proofreader with more than fourteen years of experience working with pri...
+
+### Understanding Last Mile Logistics in Customer Delivery
+- **Link**: [https://www.investopedia.com/terms/l/lastmile.asp](https://www.investopedia.com/terms/l/lastmile.asp)
+- **Summary**: Erika Rasure is globally-recognized as a leading consumer economics subject matter expert, researcher, and educator. She is a financial therapist and ...
 
 ### Environmental, Social, and Governance (ESG) Investing: What It Is & How It Works
 - **Link**: [https://www.investopedia.com/terms/e/environmental-social-and-governance-esg-criteria.asp](https://www.investopedia.com/terms/e/environmental-social-and-governance-esg-criteria.asp)
