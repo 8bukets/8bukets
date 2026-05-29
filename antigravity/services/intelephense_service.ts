@@ -90,7 +90,25 @@ export class IntelephenseService {
       }
     }
 
-    // 4. Persist consolidated knowledge
+    // 4. Purge redundant entries from the store before persisting
+    const storageDir = path.join(process.cwd(), 'data/knowledge')
+    const jsonStore = path.join(storageDir, 'system_knowledge.json')
+
+    if (fs.existsSync(jsonStore)) {
+      console.log(' 🧹 Purging redundant Intelephense entries...')
+      const systemKnowledge = JSON.parse(fs.readFileSync(jsonStore, 'utf8'))
+      if (systemKnowledge.typescript_sections) {
+        systemKnowledge.typescript_sections = systemKnowledge.typescript_sections.filter((k: any) => {
+          // Purge ALL Intelephense variants and the local filename entry to avoid duplication
+          const isLegacyIntelephense = k.title.startsWith('Intelephense')
+          const isLocalFilename = k.title === 'intelephense_docs.md'
+          return !isLegacyIntelephense && !isLocalFilename
+        })
+        fs.writeFileSync(jsonStore, JSON.stringify(systemKnowledge, null, 2))
+      }
+    }
+
+    // 5. Persist consolidated knowledge
     const observer = new KnowledgeObserver()
     await observer.persistKnowledge(consolidatedKnowledge, 'Intelephense')
 

@@ -96,6 +96,23 @@ daily-tasks:
 autonomous-evolution:
   stage: test
   script:
+    - npm run test
     - npx tsx scripts/execute_creation_cycle.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-autonomous_neural_cache_bridge:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Autonomous Neural Cache Bridge"
+    - npx tsx antigravity/workflows/autonomous_neural_cache_bridge_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-autonomous_performance_auditor:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Autonomous Performance Auditor"
+    - npx tsx antigravity/workflows/autonomous_performance_auditor_workflow.ts
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"

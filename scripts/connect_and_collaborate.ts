@@ -8,9 +8,13 @@
  */
 
 import { jules } from '@/antigravity/jules';
+import { sandboxCloudSimulation } from '@/antigravity/services/cloud_simulation';
 
 async function main() {
   console.log('🚀 [Antigravity] Starting Docker and Collaboration Connection...');
+
+  // 0. Force cloud sandbox execution if in simulation
+  await sandboxCloudSimulation.forceCloudCollaboration();
 
   // 1. Audit Docker sovereignty
   await jules.auditDocker();

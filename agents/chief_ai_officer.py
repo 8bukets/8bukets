@@ -133,3 +133,21 @@ class ChiefAIOfficerAgent(BaseAgent):
             "strategic_directives": strategic_directives,
             "executive_summary": "CAIO evaluation cycle completed successfully. System operating within defined parameters."
         }
+
+# CAIO Execution Context
+# The ChiefAIOfficerAgent acts as the primary analytical engine for the multi-agent
+# framework. While standard agents (like SyncAgent or BackupAgent) execute specific
+# bash scripts or API calls, the CAIO operates at a higher level of abstraction.
+# It reads the output of those executions and determines if the system is drifting
+# from its intended architectural state.
+#
+# For example, if the CloudWorkflowAgent reports a "DEGRADED" status due to repeated
+# pipeline failures, the CAIO interprets this not just as an error, but as a strategic
+# risk. It responds by issuing a "RECOVERY_MODE" directive, which signals other
+# agents to prioritize stability over feature exploration.
+#
+# This file contains the core logic for parsing system telemetry and market intelligence.
+# Future iterations of this class are expected to integrate directly with the
+# MongoDB logging infrastructure to pull historical performance data, allowing the
+# CAIO to make predictive adjustments to resource allocation before a degradation
+# actually occurs.

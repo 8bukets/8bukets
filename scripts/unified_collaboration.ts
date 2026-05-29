@@ -1,4 +1,4 @@
-import { Jules } from '../antigravity/jules'
+import { jules } from '../antigravity/jules'
 import { syncCollaborationState, broadcastToStakeholders } from '../antigravity/services/collaboration'
 import { generateConsolidatedReport } from '../antigravity/services/intelligence'
 
@@ -10,8 +10,6 @@ async function main() {
   console.log('🚀 [Antigravity] Starting Unified Collaboration cycle...')
 
   try {
-    const jules = await Jules.create('Ops')
-
     // 1. Deep Branch Scan
     console.log('🔍 Scanning all ecosystem branches for knowledge and results...')
     const branches = await jules.scanAllBranches(true)
