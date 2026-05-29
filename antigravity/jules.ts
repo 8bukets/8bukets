@@ -139,22 +139,31 @@ export class Jules {
 
   public async gitSync(message: string) {
     console.log('🔄 [Jules] Commencing autonomous Git synchronization...')
-    const { execSync } = await import('child_process')
+    const { execSync, execFileSync } = await import('child_process')
     try {
-      execSync('git add .', { stdio: 'inherit' })
-      execSync(`git commit -m "${message}"`, { stdio: 'inherit' })
+      // Check for changes before committing
+      const status = execSync('git status --porcelain').toString().trim()
+      if (!status) {
+        console.log('✨ [Jules] No changes detected. Git sync skipped.')
+        return
+      }
+
+      console.log('📝 [Jules] Changes detected. Preparing to commit...')
+      execFileSync('git', ['add', '.'], { stdio: 'inherit' })
+      execFileSync('git', ['commit', '-m', message], { stdio: 'inherit' })
       console.log('✅ [Jules] Changes committed autonomously.')
 
       try {
-        execSync('git push', { stdio: 'inherit' })
-        console.log('🚀 [Jules] Changes pushed to remote autonomously.')
-        this.recordTask(`Git Sync: Committed and pushed fixes to remote repository.`)
+        console.log('🚀 [Jules] Pushing changes to remote...')
+        execFileSync('git', ['push'], { stdio: 'inherit' })
+        console.log('✅ [Jules] Changes pushed to remote autonomously.')
+        this.recordTask(`Git Sync: Committed and pushed changes to remote repository.`)
       } catch (pushErr) {
-        console.warn('⚠️ [Jules] Git push failed (likely no remote configured).')
-        this.recordTask(`Git Sync: Committed fixes locally (push failed).`)
+        console.warn('⚠️ [Jules] Git push failed (likely no remote configured or network issue).')
+        this.recordTask(`Git Sync: Committed changes locally (push failed).`)
       }
-    } catch (err) {
-      console.warn('⚠️ [Jules] Git sync skipped or failed (likely no changes to commit).')
+    } catch (err: any) {
+      console.error('❌ [Jules] Git sync failed:', err.message)
     }
   }
 
