@@ -2,7 +2,7 @@ name: Fully Autonomous Automatic Workflow
 
 on:
   schedule:
-    - cron: '0 */4 * * *'
+    - cron: '0 */2 * * *'
   workflow_dispatch:
 
 permissions:
@@ -54,6 +54,10 @@ jobs:
         run: npm run ingest:knowledge || true
         env:
           MACBOOK_CLOUD_SIMULATION: true
+
+      - name: Verify Knowledge Files
+        run: |
+          ls -la data/knowledge/ || echo "No knowledge directory"
 
       - name: Commit and Push Evolution
         run: |
