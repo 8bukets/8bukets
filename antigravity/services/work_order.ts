@@ -203,6 +203,15 @@ export class WorkOrderService {
     // but for autonomous local runs this is fine.
   }
 
+  /**
+   * Clears only pending orders.
+   */
+  public async clearPendingOrders() {
+    await this.load()
+    this.orders = this.orders.filter(o => o.status !== 'pending')
+    await this.save()
+  }
+
   public async executePendingOrders() {
     let pending = await this.getPendingOrders()
     if (pending.length === 0) return
