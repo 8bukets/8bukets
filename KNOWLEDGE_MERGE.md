@@ -3,6 +3,15 @@
 
 
 
+
+## Autonomous Observation
+- **Date**: 2026-05-29T18:32:28.000Z
+- **Target**: local://data/raw_agent_architecture.html
+- **Title**: Agent Framework Architecture Terminology
+- **Relationship Map**: Confirmed relationship between agent architecture concepts and overall system design.
+- **Extracted Summary**:
+  The provided text breaks down an agent framework into its core functional layers. The "Agent" layer represents the behavioral logic (deciding what to do and managing loop/iteration), while the "Harness" serves as the runtime environment executing commands and managing memory. The "Tooling layer" bridges deep integrations with terminals and file systems, acting as capability adapters. Crucially, "Context engineering" decides what to show the model, making the difference between an AI understanding a project versus being lost. Other key components include "Prompt orchestration" (system and task prompts), "Autonomy loop" (analyze, execute, observe, fix), "Retrieval system" (semantic search), "Diff engine" (safe repo editing), "Verification layer" (build/test checks to prevent hallucination), "Memory system", "Safety permissions", and "UX layer".
+
 ## Autonomous Observation
 - **Date**: 2026-05-29T02:44:00.613Z
 - **Task**: Daily Autonomous Session Analysis
