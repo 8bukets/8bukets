@@ -38,14 +38,25 @@ export async function getMissionMetadata(): Promise<MissionMetadata> {
 
     const content = await fs.promises.readFile(MISSION_PATH, 'utf8')
 
-    const missionStatementMatch = content.match(/## Mission Statement\n([\s\S]*?)\n##/)
+    const missionStatementMatch = content.match(/## Mission Statement\n([\s\S]*?)\n##/) || content.match(/^# (.*?)\n/)
     const missionStatement = missionStatementMatch ? missionStatementMatch[1].trim() : 'Autonomous Evolution'
 
     const stakeholders: Stakeholder[] = []
-    const stakeholderSection = content.match(/## Stakeholders\n([\s\S]*?)\n##/)
+    const stakeholderSection = content.match(/## Stakeholders\n([\s\S]*?)\n(?:##|$)/)
     if (stakeholderSection) {
       const lines = stakeholderSection[1].trim().split('\n')
       lines.forEach(line => {
+        // Support format: - Name (Role) <Email>
+        const complexMatch = line.match(/-\s*(.*?)\s*\((.*?)\)\s*<(.*?)>/)
+        if (complexMatch) {
+          stakeholders.push({
+            role: `${complexMatch[1]} (${complexMatch[2]})`,
+            email: complexMatch[3].trim()
+          })
+          return
+        }
+
+        // Support format: Role: Email
         const parts = line.split(':')
         if (parts.length === 2) {
           stakeholders.push({
@@ -57,11 +68,11 @@ export async function getMissionMetadata(): Promise<MissionMetadata> {
     }
 
     const goals: string[] = []
-    const goalsSection = content.match(/## Strategic Goals\n([\s\S]*)/)
+    const goalsSection = content.match(/## (?:Strategic )?Goals\n([\s\S]*?)(?:\n##|$)/)
     if (goalsSection) {
       const lines = goalsSection[1].trim().split('\n')
       lines.forEach(line => {
-        const goal = line.replace(/^\d+\.\s*/, '').trim()
+        const goal = line.replace(/^[-\d.]+\s*/, '').trim()
         if (goal) goals.push(goal)
       })
     }
@@ -142,6 +153,16 @@ ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
     `${synergyAlert} Posture: ${state.docker.status}. Analyzed ${state.intelligence.branches} branches.`,
     detailedBriefing
   )
+
+  // Phase 12: Direct Stakeholder Alerts for high-priority synergy/results
+  const { dispatchStakeholderAlert } = await import('./communication')
+  for (const stakeholder of metadata.stakeholders) {
+    await dispatchStakeholderAlert(
+        `[Antigravity] Ecosystem Synergy Alert: ${state.intelligence.branches} branches synchronized`,
+        `Hello ${stakeholder.role},\n\nThe Antigravity engine has completed a full ecosystem synchronization.\n\n${detailedBriefing}\n\nAll the best,\nAntigravity Intelligence`,
+        highIntensitySynergies.length > 0 ? 'warning' : 'info'
+    )
+  }
 
   const logDir = path.join(process.cwd(), 'logs')
   if (!fs.existsSync(logDir)) await fs.promises.mkdir(logDir, { recursive: true })
@@ -394,7 +415,7 @@ export async function mergeBranchInsights(branches: any[]) {
 
     // Improved deduplication: Check if this specific result or knowledge for this branch is already recorded
     const branchIdentifier = `- **Branch:** \`${b.name}\``;
-    const resultIdentifier = `  - **Result:** ${b.results}`;
+    const resultIdentifier = b.results ? `  - **Result:** ${b.results}` : '';
     const knowledgeIdentifier = b.knowledge ? `  - **Knowledge:** ${b.knowledge}` : '';
 
     if (existingContent.includes(branchIdentifier)) {
@@ -402,7 +423,9 @@ export async function mergeBranchInsights(branches: any[]) {
         const parts = existingContent.split(branchIdentifier)
         for (let i = 1; i < parts.length; i++) {
           const branchSection = parts[i].split('##')[0];
-          if (branchSection.includes(resultIdentifier) && (!knowledgeIdentifier || branchSection.includes(knowledgeIdentifier))) {
+          const hasResult = resultIdentifier ? branchSection.includes(resultIdentifier) : true;
+          const hasKnowledge = knowledgeIdentifier ? branchSection.includes(knowledgeIdentifier) : true;
+          if (hasResult && hasKnowledge) {
               return false;
           }
         }
