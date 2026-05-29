@@ -1,4 +1,5 @@
-import { execSync } from 'child_process'
+import { execFile } from 'child_process'
+import { promisify } from 'util'
 
 /**
  * GIT PROVIDER SERVICE
@@ -12,15 +13,17 @@ export interface PullRequest {
   provider: 'github' | 'gitlab'
 }
 
+type ExecFileAsync = (file: string, args: string[]) => Promise<{ stdout: string, stderr: string }>
+
 export class GitProviderService {
   private githubToken: string | undefined
   private gitlabToken: string | undefined
-  private _execSync: typeof execSync
+  private _execFileAsync: ExecFileAsync
 
-  constructor(customExec?: typeof execSync) {
+  constructor(customExec?: ExecFileAsync) {
     this.githubToken = process.env.GITHUB_TOKEN
     this.gitlabToken = process.env.GITLAB_TOKEN
-    this._execSync = customExec || execSync
+    this._execFileAsync = customExec || promisify(execFile)
   }
 
   /**
@@ -28,7 +31,7 @@ export class GitProviderService {
    */
   public async getActiveProvider(): Promise<'github' | 'gitlab' | 'unknown'> {
     try {
-      const remotes = this._execSync('git remote -v').toString()
+      const { stdout: remotes } = await this._execFileAsync('git', ['remote', '-v'])
       if (remotes.includes('github.com')) return 'github'
       if (remotes.includes('gitlab.com')) return 'gitlab'
       return 'unknown'
@@ -57,8 +60,8 @@ export class GitProviderService {
     console.log(`🚀 [GitProvider] Creating GitHub PR: ${title}`)
     try {
       // Use GitHub CLI if available, otherwise fallback to API
-      const cmd = `gh pr create --title "${title}" --body "${body}" --head "${head}" --base "${base}"`
-      const result = this._execSync(cmd).toString().trim()
+      const { stdout: resultRaw } = await this._execFileAsync('gh', ['pr', 'create', '--title', title, '--body', body, '--head', head, '--base', base])
+      const result = resultRaw.trim()
       return { id: result, title, url: result, provider: 'github' }
     } catch (e) {
       console.error('❌ [GitProvider] GitHub PR creation failed:', e)
@@ -70,8 +73,8 @@ export class GitProviderService {
     console.log(`🚀 [GitProvider] Creating GitLab MR: ${title}`)
     try {
       // Use glab CLI if available
-      const cmd = `glab mr create --title "${title}" --description "${body}" --head "${head}" --base "${base}" -y`
-      const result = this._execSync(cmd).toString().trim()
+      const { stdout: resultRaw } = await this._execFileAsync('glab', ['mr', 'create', '--title', title, '--description', body, '--head', head, '--base', base, '-y'])
+      const result = resultRaw.trim()
       return { id: result, title, url: result, provider: 'gitlab' }
     } catch (e) {
       console.error('❌ [GitProvider] GitLab MR creation failed:', e)
@@ -86,9 +89,9 @@ export class GitProviderService {
     const provider = await this.getActiveProvider()
     try {
       if (provider === 'github') {
-        this._execSync(`gh pr comment ${id} --body "${comment}"`)
+        await this._execFileAsync('gh', ['pr', 'comment', id, '--body', comment])
       } else if (provider === 'gitlab') {
-        this._execSync(`glab mr note ${id} --message "${comment}"`)
+        await this._execFileAsync('glab', ['mr', 'note', id, '--message', comment])
       }
       return true
     } catch (e) {
@@ -104,9 +107,9 @@ export class GitProviderService {
     console.log(`🔄 [GitProvider] Attempting autonomous merge for ${id} on ${provider}...`)
     try {
       if (provider === 'github') {
-        this._execSync(`gh pr merge ${id} --auto --merge`)
+        await this._execFileAsync('gh', ['pr', 'merge', id, '--auto', '--merge'])
       } else if (provider === 'gitlab') {
-        this._execSync(`glab mr merge ${id} --when-pipeline-succeeds`)
+        await this._execFileAsync('glab', ['mr', 'merge', id, '--when-pipeline-succeeds'])
       }
       return true
     } catch (e) {

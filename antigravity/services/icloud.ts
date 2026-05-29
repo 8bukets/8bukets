@@ -1,7 +1,10 @@
-import { execFileSync } from 'child_process'
+import { execFile } from 'child_process'
 import path from 'path'
-import fs from 'fs'
+import fs from 'fs/promises'
 import os from 'os'
+import { promisify } from 'util'
+
+const execFileAsync = promisify(execFile)
 
 /**
  * ANTIGRAVITY ICLOUD SYNCHRONIZATION SERVICE
@@ -17,22 +20,26 @@ export async function syncToICloud() {
   // Use os.homedir() to make it more portable
   const homeDir = os.homedir()
   const defaultICloudPath = path.join(homeDir, 'Library/Mobile Documents/com~apple~CloudDocs/Antigravity_Sync')
+  const targetPath = process.env.ICLOUD_SYNC_PATH || defaultICloudPath
 
-  // Resolve target path with priority: ENV > Standard iCloud Path > Local Simulated Path
-  const targetPath = process.env.ICLOUD_SYNC_PATH ||
-                     (os.platform() === 'darwin' ? defaultICloudPath : path.join(process.cwd(), 'scratch/icloud_sync'))
+  if (!targetPath) {
+    console.warn('⚠️ [iCloud Sync] No target path configured. Skipping sync.')
+    return { status: 'skipped', reason: 'no_path' }
+  }
 
   // Ensure target directory exists
   try {
-    if (!fs.existsSync(targetPath)) {
+    try {
+      await fs.access(targetPath)
+    } catch {
       console.log(`☁️ [iCloud Sync] Creating target directory: ${targetPath}`)
-      fs.mkdirSync(targetPath, { recursive: true })
+      await fs.mkdir(targetPath, { recursive: true })
     }
 
     // Explicitly verify write access
-    const testFile = path.join(targetPath, `.sync_test_${Date.now()}`)
-    fs.writeFileSync(testFile, 'test')
-    fs.unlinkSync(testFile)
+    const testFile = path.join(targetPath, '.sync_test')
+    await fs.writeFile(testFile, 'test')
+    await fs.unlink(testFile)
   } catch (err: any) {
     console.error(`❌ [iCloud Sync] Target path verification failed: ${targetPath}. Error: ${err.message}`)
     return { status: 'failed', error: `iCloud target path unreachable or read-only: ${err.message}` }
@@ -59,8 +66,8 @@ export async function syncToICloud() {
 
     console.log(`☁️ [iCloud Sync] Executing: rsync ${args.join(' ')}`)
 
-    // Use execFileSync to prevent shell injection and handle arguments safely
-    execFileSync('rsync', args)
+    // Use execFile to prevent shell injection and handle arguments safely
+    await execFileAsync('rsync', args)
     console.log('✅ [iCloud Sync] Synchronization completed successfully.')
 
     return {

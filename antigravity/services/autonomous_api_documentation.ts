@@ -1,7 +1,7 @@
 /**
  * Autonomous API Documentation Service
  * Generated autonomously by the Antigravity Singularity Engine.
- * Rationale: Generates and maintains real-time OpenAPI/Swagger documentation by analyzing Zod schemas and route handlers.
+ * Rationale: Autonomously generates and maintains OpenAPI specifications by scanning service definitions and Zod schemas.
  */
 import { z } from 'zod'
 import { autonomousFetch } from '@/antigravity/core'

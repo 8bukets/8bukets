@@ -15,14 +15,9 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   console.log('📊 [Intelligence] Generating consolidated system report...')
 
   const metadata = await getMissionMetadata()
-  const branches = branchIntelligence || await jules.scanAllBranches()
+  const branches = branchIntelligence || await jules.scanAllBranches(true)
   const health = await healthCheck()
   const workOrders = workOrderService.getPendingOrders()
-
-  // Phase 12: Integrate Presence and Orchestration Pulse
-  const { onlinePresenceService } = await import('./presence')
-  const { orchestrationEngine } = await import('./sentient_orchestration')
-  const presence = await onlinePresenceService.getSystemPosture()
 
   const reportPath = path.join(process.cwd(), 'CONSOLIDATED_INTELLIGENCE.md')
 
@@ -30,19 +25,11 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `*Generated: ${new Date().toISOString()}*\n\n`
 
   report += `## 📋 Executive Summary\n`
-  report += `- **System Posture:** ${presence.status === 'online' ? '✅ OPTIMAL' : '⚠️ DEGRADED'}\n`
-  report += `- **Active Node:** \`${presence.agent}\` (${presence.environment})\n`
+  report += `- **System Posture:** ${health.mongodb === 'connected' && health.supabase === 'connected' ? '✅ OPTIMAL' : '⚠️ DEGRADED'}\n`
   report += `- **Active Synergy:** ${branches.length} branches analyzed across multiple domains.\n`
-  report += `- **System Coherence:** ${(orchestrationEngine.getCoherence() * 100).toFixed(0)}%\n`
   report += `- **Mission Alignment:** ${metadata.goals.length} strategic goals tracked.\n\n`
 
   report += `## 🎯 Mission Statement\n> ${metadata.missionStatement}\n\n`
-
-  const coherence = orchestrationEngine.getCoherence()
-  const strategicCoherence = (coherence * 0.7 + (metadata.goals.length > 0 ? 0.3 : 0)) * 100
-  report += `## 📈 Strategic Coherence\n`
-  report += `- **Consolidated Coherence Index:** ${strategicCoherence.toFixed(1)}%\n`
-  report += `- **Alignment Status:** ${strategicCoherence > 80 ? '🟢 SYNERGIZED' : (strategicCoherence > 50 ? '🟡 ALIGNING' : '🔴 DRIFTING')}\n\n`
 
   report += `## 🏥 System Sovereignty\n`
   report += `- **MongoDB:** ${health.mongodb}\n`
@@ -50,12 +37,14 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `- **Total Branches:** ${branches.length}\n\n`
 
   report += `## 🌿 Branch Intelligence (Recent Activity)\n`
-  const recentBranches = branches
+  // Ensure branches is an array of objects
+  const branchArray = Array.isArray(branches) ? branches : []
+  const recentBranches = branchArray
     .sort((a, b) => new Date(b.lastSeen).getTime() - new Date(a.lastSeen).getTime())
     .slice(0, 10)
 
   recentBranches.forEach(b => {
-    report += `- **${b.name}**: ${b.lastMessage} (*${b.lastSeen}*)\n`
+    report += `- **${b.name}** [${b.category}]: ${b.lastMessage} (*${b.lastSeen}*)\n`
   })
   report += `\n`
 
@@ -71,15 +60,6 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `\n`
 
   const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
-
-  report += `## 🕸️ Resource Dependency Graph\n`
-  report += `\`\`\`mermaid\ngraph TD\n`
-  relationshipMap.synergies.forEach((s: any) => {
-    s.branches.forEach((b: string) => {
-      report += `  ${b.replace(/[^a-zA-Z0-9]/g, '_')} --> ${s.resource.replace(/[^a-zA-Z0-9]/g, '_')}\n`
-    })
-  })
-  report += `\`\`\`\n\n`
 
   // Phase 12: Integrate Global Neural Network Status
   const { broadcastPulse } = await import('./neural')
@@ -99,42 +79,25 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   })
   report += `\n`
 
-  report += `## ⚡ Agent Pulse (Real-Time)\n`
-  report += `- **Agent:** \`${presence.agent}\`\n`
-  report += `- **Status:** ${presence.status === 'online' ? '🟢 ONLINE' : '🟠 DEGRADED'}\n`
-  report += `- **Latency:** Mongo: ${presence.telemetry.databases.mongodb} | Supabase: ${presence.telemetry.databases.supabase}\n`
-  report += `- **Uptime:** ${(presence.telemetry.uptime / 3600).toFixed(2)} hours\n\n`
-
   report += `## 🤝 Merged Ecosystem Insights\n`
   report += `Synergy achieved across ${branches.length} branches. Detailed knowledge and results consolidated from specialized agents.\n\n`
 
   // Phase 12: Synergy & Collaboration Analysis
   if (relationshipMap.synergies && relationshipMap.synergies.length > 0) {
     report += `### ⚡ Strategic Synergy Matrix\n`
-    report += `| Resource | Type | Intensity | Collaborating Branches | Actionable Recommendation |\n`
-    report += `| :--- | :--- | :---: | :--- | :--- |\n`
+    report += `| Resource | Intensity | Collaborating Branches | Actionable Recommendation |\n`
+    report += `| :--- | :---: | :--- | :--- |\n`
     relationshipMap.synergies.forEach((s: any) => {
-      const recommendation = relationshipMap.collaborationRecommendations.find((r: any) => r.branches.includes(s.branches[0]))
-      report += `| \`${s.resource}\` | ${s.resourceType} | ${s.intensity} | ${s.branches.slice(0, 2).join(', ')}${s.branches.length > 2 ? '...' : ''} | ${recommendation?.action || 'Consolidate effort'} |\n`
+      const recommendation = relationshipMap.collaborationRecommendations.find((r: any) =>
+        r.resource === s.resource || r.action.includes(`'${s.resource}'`)
+      )
+      const recommendationText = recommendation
+        ? `${recommendation.action}${recommendation.rationale.includes('Coordination required') ? `<br/>*${recommendation.rationale.split('. ')[1]}*` : ''}`
+        : 'Consolidate effort'
+      report += `| \`${s.resource}\` | ${s.intensity} | ${s.branches.slice(0, 3).join(', ')}${s.branches.length > 3 ? '...' : ''} | ${recommendationText} |\n`
     })
     report += `\n`
   }
-
-  report += `## 🌐 Cross-Domain Coordination\n`
-  const domains = ['Security', 'Performance', 'Infrastructure', 'AI', 'UI/Frontend', 'General']
-  domains.forEach(d => {
-    const relevantRecommendations = relationshipMap.collaborationRecommendations.filter((r: any) =>
-      r.domain === d
-    )
-    if (relevantRecommendations.length > 0) {
-      report += `### Domain: ${d}\n`
-      relevantRecommendations.slice(0, 5).forEach((r: any) => {
-        report += `- **[${r.priority}]** ${r.action}\n`
-        report += `  - *Rationale:* ${r.rationale}\n`
-      })
-      report += `\n`
-    }
-  })
 
   const insights = branches.filter(b => b.knowledge || (b.results && b.results !== b.lastMessage)).slice(0, 10)
   if (insights.length > 0) {
@@ -148,15 +111,11 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `\n`
 
   report += `## 🗺️ Relationship Map\n`
-  report += `### Goal Alignment & Results\n`
+  report += `### Goal Alignment\n`
   Object.entries(relationshipMap.goalAlignment).forEach(([goal, relevantBranches]: [string, any]) => {
     report += `- **Goal:** ${goal}\n`
     if (relevantBranches.length > 0) {
-      report += `  - *Active Branches:* ${relevantBranches.join(', ')}\n`
-      const results = branches.filter(b => relevantBranches.includes(b.name) && b.results && b.results !== 'N/A')
-      if (results.length > 0) {
-        report += `  - *Key Results:* ${results.map(r => r.results).join('; ')}\n`
-      }
+      report += `  - *Branches:* ${relevantBranches.join(', ')}\n`
     } else {
       report += `  - *No direct branch alignment detected.*\n`
     }
@@ -180,9 +139,9 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
 
   report += `## 🧠 Knowledge Matrix\n`
   const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json')
-  if ( fs.existsSync(knowledgePath)) {
+  if (/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(knowledgePath)) {
     try {
-      const systemKnowledge = JSON.parse( fs.readFileSync(knowledgePath, 'utf8'))
+      const systemKnowledge = JSON.parse(/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.readFileSync(knowledgePath, 'utf8'))
 
       // Phase 12: Support both nested 'typescript_sections' and unified flat key structure
       const allKnowledge: any[] = []
@@ -243,49 +202,25 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `\n`
 
   report += `## 🚀 Prioritized Action Items\n`
-  if (health.mongodb !== 'connected' && health.mongodb !== 'healthy') report += `- [CRITICAL] Restore MongoDB Atlas connectivity.\n`
+  if (health.mongodb !== 'connected') report += `- [CRITICAL] Restore MongoDB Atlas connectivity.\n`
   if (workOrders.length > 5) report += `- [HIGH] Process backlog of ${workOrders.length} pending work orders.\n`
 
   const highIntensitySynergies = relationshipMap.synergies.filter((s: any) => s.intensity === 'High')
-
-  if (highIntensitySynergies.length > 10) {
-    report += `- [HIGH] Resolve ${highIntensitySynergies.length} High-Intensity resource synergies across ecosystem.\n`
-  } else {
-    highIntensitySynergies.forEach((s: any) => {
-      const coordinator = metadata.stakeholders.find(sh => relationshipMap.stakeholderEngagement[sh.role]?.activeProjects.includes(s.branches[0]))
-      const coordinationMsg = coordinator ? ` (Coordinate with ${coordinator.role})` : ''
-      report += `- [MEDIUM] Resolve High-Intensity synergy on resource: \`${s.resource}\`${coordinationMsg}.\n`
-    })
-  }
+  highIntensitySynergies.forEach((s: any) => {
+    const coordinator = metadata.stakeholders.find(sh => relationshipMap.stakeholderEngagement[sh.role]?.activeProjects.includes(s.branches[0]))
+    const coordinationMsg = coordinator ? ` (Coordinate with ${coordinator.role})` : ''
+    report += `- [MEDIUM] Resolve High-Intensity synergy on resource: \`${s.resource}\`${coordinationMsg}.\n`
+  })
 
   if (branches.length > 1500) report += `- [LOW] Prune or merge stagnant ecosystem branches (Total: ${branches.length}).\n`
-  report += `- [INFO] Continue autonomous knowledge ingestion for market intelligence.\n\n`
+  report += `- [INFO] Continue autonomous knowledge ingestion for market intelligence.\n`
 
-  report += `## 🗺️ Strategic Alignment Roadmap\n`
-  report += `| Strategic Goal | Active Initiatives | Progress | Status |\n`
-  report += `| :--- | :--- | :---: | :--- |\n`
+  const collaborationHealth = relationshipMap.synergies.length > 0
+    ? Math.max(0, 100 - (relationshipMap.synergies.length * 5))
+    : 100
+  report += `\n---\n**Collaboration Health Index:** ${collaborationHealth}% | *Phase 12 Synergy Protocol Active*\n`
 
-  Object.entries(relationshipMap.goalAlignment).forEach(([goal, relevantBranches]: [string, any]) => {
-    const branchCount = relevantBranches.length
-    const progress = Math.min(100, branchCount * 10)
-    const progressBar = '█'.repeat(Math.floor(progress / 10)) + '░'.repeat(10 - Math.floor(progress / 10))
-    const status = branchCount > 0 ? (branchCount > 5 ? '🔥 ACCELERATED' : '✅ ACTIVE') : '💤 DORMANT'
-
-    report += `| ${goal} | ${branchCount} branches | \`${progressBar}\` ${progress}% | ${status} |\n`
-  })
-  report += `\n`
-
-  // Revised Collaboration Health Index (Logarithmic Scaling for High Branch Counts)
-  const totalWeight = relationshipMap.synergies.reduce((acc: number, s: any) => {
-    const intensityFactor = s.intensity === 'High' ? 3 : (s.intensity === 'Medium' ? 2 : 1)
-    return acc + (s.weight * intensityFactor)
-  }, 0)
-
-  const collaborationHealth = totalWeight === 0 ? 100 : Math.max(5, Math.round(100 * Math.exp(-totalWeight / (branches.length * 0.5))))
-
-  report += `\n---\n**Collaboration Health Index:** ${collaborationHealth}% | **Coherence:** ${(orchestrationEngine.getCoherence() * 100).toFixed(0)}% | *Phase 12 Synergy Protocol Active*\n`
-
-  fs.writeFileSync(reportPath, report)
+  /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.writeFileSync(reportPath, report)
   console.log(`✅ [Intelligence] Report saved to ${reportPath}`)
 
   return { reportPath, branchCount: branches.length }

@@ -1,23 +1,31 @@
-import { syncCollaborationState, broadcastToStakeholders } from '../antigravity/services/collaboration'
-
 /**
- * CONNECT AND COLLABORATE SCRIPT
- * Triggers autonomous Docker auditing and stakeholder collaboration synchronization.
+ * ANTIGRAVITY CONNECT & COLLABORATE
+ *
+ * This script leverages the Jules agent to perform an autonomous Docker sovereignty audit
+ * and synchronize collaboration context with stakeholders defined in .antigravity/mission.md.
+ *
+ * It bridges the local environment state with the project's autonomous state.
  */
 
+import { jules } from '@/antigravity/jules';
+import { sandboxCloudSimulation } from '@/antigravity/services/cloud_simulation';
+
 async function main() {
-  console.log('🚀 [Antigravity] Starting Connect & Collaborate cycle...')
+  console.log('🚀 [Antigravity] Starting Docker and Collaboration Connection...');
 
-  try {
-    const finalState = await syncCollaborationState()
-    await broadcastToStakeholders(finalState)
+  // 0. Force cloud sandbox execution if in simulation
+  await sandboxCloudSimulation.forceCloudCollaboration();
 
-    console.log('🌐 [Antigravity] System Synchronization Complete.')
-    console.log('📊 Complete Posture:', JSON.stringify(finalState, null, 2))
-  } catch (err) {
-    console.error('💥 [Antigravity] Collaboration cycle failed:', err)
-    process.exit(1)
-  }
+  // 1. Audit Docker sovereignty
+  await jules.auditDocker();
+
+  // 2. Synchronize collaboration context
+  await jules.syncCollaboration();
+
+  console.log('✅ [Antigravity] Connection and Collaboration Sync Finished.');
 }
 
-main()
+main().catch((error) => {
+  console.error('❌ [Antigravity] Connection failed:', error);
+  process.exit(1);
+});

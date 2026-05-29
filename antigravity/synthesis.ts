@@ -28,6 +28,15 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
+  // Gap Analysis 20: Autonomous Neural Cache Bridge
+  if (!files.some(f => f.includes('neural_cache_bridge'))) {
+    ideas.push({
+      feature: 'Autonomous Neural Cache Bridge',
+      rationale: 'Facilitates zero-latency state synchronization across distributed neural nodes using a predictive caching layer.',
+      complexity: 'Low'
+    })
+  }
+
   // Gap Analysis 2: Analytics Synthesis
   if (!files.some(f => f.includes('analytics'))) {
     ideas.push({
@@ -185,17 +194,8 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
   if (!files.some(f => f.includes('api_documentation'))) {
     ideas.push({
       feature: 'Autonomous API Documentation Service',
-      rationale: 'Generates and maintains real-time OpenAPI/Swagger documentation by analyzing Zod schemas and route handlers.',
+      rationale: 'Autonomously generates and maintains OpenAPI specifications by scanning service definitions and Zod schemas.',
       complexity: 'Medium'
-    })
-  }
-
-  // Gap Analysis 20: Decentralized Swarm Orchestrator (Phase 13)
-  if (!files.some(f => f.includes('swarm_orchestrator'))) {
-    ideas.push({
-      feature: 'Decentralized Swarm Orchestrator',
-      rationale: 'Implements Phase 13 swarm intelligence protocols for cross-cloud agent coordination and identity anchoring.',
-      complexity: 'High'
     })
   }
 

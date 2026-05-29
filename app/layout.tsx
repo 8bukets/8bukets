@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { LayoutProps } from "@/antigravity/core";
+import { Suspense } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +34,11 @@ export default function RootLayout({
         and using the ViewTransition API in React 19.2 allows you to scale 
         your UI animations without extra JS weight.
       */}
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Suspense fallback={<div>Loading...</div>}>
+          {children}
+        </Suspense>
+      </body>
     </html>
   );
 }

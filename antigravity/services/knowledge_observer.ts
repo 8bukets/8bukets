@@ -1,120 +1,59 @@
-import fs from 'fs'
-import path from 'path'
-import { z } from 'zod'
+import fs from 'fs';
+import path from 'path';
 
-/**
- * KNOWLEDGE OBSERVER SERVICE
- * Autonomously parses and persists technical documentation and insights.
- */
+export interface KnowledgeSection {
+  header: string;
+  content: string;
+}
 
-export const KnowledgeSchema = z.object({
-  title: z.string(),
-  sections: z.array(z.object({
-    header: z.string(),
-    content: z.string()
-  })),
-  metadata: z.object({
-    source: z.string(),
-    ingestedAt: z.string()
-  })
-})
+export interface Knowledge {
+  title: string;
+  sections: KnowledgeSection[];
+  metadata?: {
+    source: string;
+    ingestedAt: string;
+  };
+}
 
-export type Knowledge = z.infer<typeof KnowledgeSchema>
-
-const DEFAULT_STORAGE_DIR = path.join(process.cwd(), 'data/knowledge')
+export interface KnowledgeInsights {
+  source: string;
+  title: string;
+  description: string;
+  topKeywords: string[];
+  recentPosts: { title: string; link: string }[];
+  analyzedAt: string;
+  history?: { source: string; analyzedAt: string }[];
+}
 
 export class KnowledgeObserver {
-  private storageDir: string
-
-  constructor(storageDir: string = DEFAULT_STORAGE_DIR) {
-    this.storageDir = storageDir
-  }
-
   /**
-   * processContent: Parses raw text into structured knowledge with code-block awareness.
+   * processContent: Splits raw content into sections (Title, Content, Source).
+   * Restored for compatibility with intelephense_service and consolidate_intelephense.
    */
-  public static processContent(title: string, rawContent: string, source: string): Knowledge {
-    const sections: { header: string; content: string }[] = []
-    const lines = rawContent.split('\n')
-    let currentHeader = 'Introduction'
-    let currentLines: string[] = []
-    let inMarkdownCodeBlock = false
-    let inPhpCodeBlock = false
+  public static processContent(title: string, content: string, source: string): Knowledge {
+    console.log(`🧠 [Knowledge Observer] Processing content for: ${title}`);
 
-    for (const line of lines) {
-      const trimmed = line.trim();
+    const sections: KnowledgeSection[] = [];
+    // Split by markdown headers
+    const parts = content.split(/^(?=#+\s+)/m);
 
-      // Manage code block states
-      if (trimmed.startsWith('```')) {
-        inMarkdownCodeBlock = !inMarkdownCodeBlock
-      } else if (trimmed.startsWith('<?php')) {
-        inPhpCodeBlock = true
-      }
+    for (const part of parts) {
+      if (!part.trim()) continue;
 
-      const inCodeBlock = inMarkdownCodeBlock || inPhpCodeBlock
-
-      // Detect header candidates
-      const hasLetters = /[a-zA-Z]/.test(trimmed)
-      const isMarkdownHeader = trimmed.startsWith('#')
-      const isStrongHeaderCandidate = trimmed && hasLetters &&
-                             trimmed.length < 60 && trimmed.length > 2 &&
-                             !trimmed.endsWith('.') &&
-                             !trimmed.endsWith(':') &&
-                             !trimmed.endsWith(',') &&
-                             !trimmed.includes('\t') &&
-                             !trimmed.includes('|') && !trimmed.includes('&') &&
-                             !trimmed.includes('[') && !trimmed.includes(']') &&
-                             !trimmed.includes('\\') &&
-                             (trimmed.toUpperCase() === trimmed || /^[A-Z][a-zA-Z0-9.-]*(\s[A-Z][a-zA-Z0-9.-]*)*$/.test(trimmed)) &&
-                             !trimmed.startsWith('This ') &&
-                             !trimmed.startsWith('Some ') &&
-                             !trimmed.startsWith('- ') &&
-                             !trimmed.startsWith('* ') &&
-                             !/^[{}/*<>?]+$/.test(trimmed) &&
-                             !trimmed.includes('(') && !trimmed.includes(')') &&
-                             !trimmed.includes(' = ') &&
-                             !trimmed.includes(' => ')
-
-      // Heuristic: If we hit a markdown header or a strong header candidate,
-      // we assume any unclosed PHP block has ended.
-      let effectiveHeader = false
-      if (!inMarkdownCodeBlock) {
-        if (isMarkdownHeader) {
-          effectiveHeader = true
-          inPhpCodeBlock = false // Markdown headers break PHP blocks
-        } else if (!inCodeBlock && isStrongHeaderCandidate) {
-          effectiveHeader = true
-        } else if (inPhpCodeBlock && isStrongHeaderCandidate) {
-          // Strong headers also break PHP blocks (which often lack closing tags in docs)
-          effectiveHeader = true
-          inPhpCodeBlock = false
-        }
-      }
-
-      if (effectiveHeader) {
-        const sectionContent = currentLines.join('\n').trim()
-        const isStructural = ['Getting Started', 'Features', 'Installation', 'Type System'].includes(currentHeader)
-
-        if (sectionContent || isStructural) {
-          sections.push({ header: currentHeader, content: sectionContent })
-        }
-        currentHeader = trimmed.replace(/^#+\s*/, '').trim()
-        currentLines = []
+      const headerMatch = part.match(/^(#+)\s+(.*)/);
+      if (headerMatch) {
+        const header = headerMatch[2].trim();
+        const sectionContent = part.substring(headerMatch[0].length).trim();
+        sections.push({ header, content: sectionContent });
       } else {
-        currentLines.push(line)
+        // No header found, use title as header if sections is empty
+        if (sections.length === 0) {
+          sections.push({ header: title, content: part.trim() });
+        } else {
+          // Append to last section
+          sections[sections.length - 1].content += '\n\n' + part.trim();
+        }
       }
-
-      // Close PHP code block if we see the closing tag
-      if (trimmed.includes('?>') && inPhpCodeBlock) {
-        inPhpCodeBlock = false
-      }
-    }
-
-    const finalSectionContent = currentLines.join('\n').trim()
-    const isFinalStructural = ['Getting Started', 'Features', 'Installation', 'Type System'].includes(currentHeader)
-
-    if (finalSectionContent || isFinalStructural) {
-      sections.push({ header: currentHeader, content: finalSectionContent })
     }
 
     return {
@@ -124,73 +63,171 @@ export class KnowledgeObserver {
         source,
         ingestedAt: new Date().toISOString()
       }
-    }
+    };
   }
 
   /**
-   * persistKnowledge: Merges and saves knowledge to persistent stores.
-   * @param knowledge The knowledge object to persist.
-   * @param purgePrefix Optional title prefix to purge before adding the new entry.
+   * persistKnowledge: Saves consolidated knowledge to JSON and Markdown.
+   * Handles both new Knowledge format and legacy KnowledgeInsights format.
    */
-  public async persistKnowledge(knowledge: Knowledge, purgePrefix?: string) {
-    const fsPromises = fs.promises;
-
-    if (! fs.existsSync(this.storageDir)) {
-      await fsPromises.mkdir(this.storageDir, { recursive: true })
+  public async persistKnowledge(knowledge: Knowledge | KnowledgeInsights, domain: string = 'General'): Promise<void> {
+    const storageDir = path.join(process.cwd(), 'data/knowledge');
+    if (!fs.existsSync(storageDir)) {
+      fs.mkdirSync(storageDir, { recursive: true });
     }
 
-    const jsonStore = path.join(this.storageDir, 'system_knowledge.json')
-    const mdStore = path.join(this.storageDir, 'ai_agents_knowledge.md')
+    const filename = (knowledge.title || 'unknown').toLowerCase().replace(/\s+/g, '_').replace(/[^\w]/g, '') + '.json';
+    const jsonPath = path.join(storageDir, filename);
 
-    // 1. JSON Persistence (Merge Logic - Unified Store)
-    let systemKnowledge: any = { typescript_sections: [] }
-    if ( fs.existsSync(jsonStore)) {
-      try {
-        const content = await fsPromises.readFile(jsonStore, 'utf8');
-        systemKnowledge = JSON.parse(content)
-        if (!systemKnowledge.typescript_sections) {
-          systemKnowledge.typescript_sections = []
-        }
-      } catch (e) {
-        console.warn('⚠️ [KnowledgeObserver] Failed to parse existing JSON store. Starting fresh.')
+    console.log(`✅ [Knowledge Observer] Persisted "${knowledge.title}" to ${storageDir}`);
+
+    if ('sections' in knowledge) {
+      // New format handling
+      fs.writeFileSync(jsonPath, JSON.stringify(knowledge, null, 2), 'utf8');
+
+      // Update system_knowledge.json if applicable
+      const systemStore = path.join(storageDir, 'system_knowledge.json');
+      let systemData: any = { typescript_sections: [] };
+      if (fs.existsSync(systemStore)) {
+        try {
+          systemData = JSON.parse(fs.readFileSync(systemStore, 'utf8'));
+        } catch (e) {}
       }
-    }
 
-    // Purge logic if prefix is provided
-    if (purgePrefix && systemKnowledge.typescript_sections) {
-      systemKnowledge.typescript_sections = systemKnowledge.typescript_sections.filter((k: any) => {
-        // Keep everything that isn't the target or doesn't match the purge prefix
-        // BUT keep the exact match if it's the one we are about to save (it will be updated anyway)
-        return k.title === knowledge.title || !k.title.startsWith(purgePrefix);
-      });
-    }
+      if (!systemData.typescript_sections) systemData.typescript_sections = [];
 
-    // Replace if same title exists, or append
-    const existingData = systemKnowledge.typescript_sections
-    const index = existingData.findIndex((k: Knowledge) => k.title === knowledge.title)
-    if (index !== -1) {
-      existingData[index] = knowledge
+      // Add or update entries
+      const existingIdx = systemData.typescript_sections.findIndex((s: any) => s.title === knowledge.title);
+      if (existingIdx !== -1) {
+        systemData.typescript_sections[existingIdx] = knowledge;
+      } else {
+        systemData.typescript_sections.push(knowledge);
+      }
+
+      fs.writeFileSync(systemStore, JSON.stringify(systemData, null, 2), 'utf8');
     } else {
-      existingData.push(knowledge)
-    }
+      // Legacy format handling (ai_agents_knowledge logic)
+      const legacyJsonPath = path.join(process.cwd(), 'ai_agents_knowledge.json');
+      const legacyMdPath = path.join(process.cwd(), 'ai_agents_knowledge.md');
 
-    await fsPromises.writeFile(jsonStore, JSON.stringify(systemKnowledge, null, 2))
-
-    // 2. Markdown Persistence (Rebuild)
-    let mdContent = `# ANTIGRAVITY AI AGENTS KNOWLEDGE BASE\n\n*Last Updated: ${new Date().toISOString()}*\n\n`
-
-    for (const k of existingData as Knowledge[]) {
-      mdContent += `## DOCUMENT: ${k.title}\n`
-      mdContent += `**Source:** ${k.metadata.source.trim()}\n`
-      mdContent += `**Ingested At:** ${k.metadata.ingestedAt.trim()}\n\n`
-
-      for (const section of k.sections) {
-        mdContent += `### ${section.header.trim()}\n${section.content.trim()}\n\n`
+      let existingData: any = { topKeywords: [], recentPosts: [], history: [] };
+      if (fs.existsSync(legacyJsonPath)) {
+        try {
+          existingData = JSON.parse(fs.readFileSync(legacyJsonPath, 'utf8'));
+        } catch (e) {}
       }
-      mdContent += `---\n\n`
-    }
 
-    await fsPromises.writeFile(mdStore, mdContent)
-    console.log(`✅ [KnowledgeObserver] Persisted "${knowledge.title}" to ${this.storageDir}`)
+      const mergedKeywords = Array.from(new Set([...(existingData.topKeywords || []), ...knowledge.topKeywords])).slice(0, 30);
+      const existingLinks = new Set(existingData.recentPosts?.map((p: any) => p.link) || []);
+      const newUniquePosts = knowledge.recentPosts.filter(p => !existingLinks.has(p.link));
+      const mergedPosts = [...newUniquePosts, ...(existingData.recentPosts || [])].slice(0, 50);
+      const history = existingData.history || [];
+      history.push({ source: knowledge.source, analyzedAt: knowledge.analyzedAt });
+
+      const finalInsights = {
+        ...knowledge,
+        topKeywords: mergedKeywords,
+        recentPosts: mergedPosts,
+        history: history.slice(-10)
+      };
+
+      fs.writeFileSync(legacyJsonPath, JSON.stringify(finalInsights, null, 2), 'utf8');
+
+      let mdContent = `# Knowledge Observation Insights (Unified)\n\n`;
+      mdContent += `**Latest Source:** ${finalInsights.source}\n`;
+      mdContent += `**Latest Analysis:** ${finalInsights.analyzedAt}\n\n`;
+      mdContent += `## 🔑 Top Keywords (Merged)\n`;
+      finalInsights.topKeywords.forEach((kw: string) => { mdContent += `- ${kw}\n`; });
+      mdContent += `\n## 📰 Recent Intelligence & Posts\n`;
+      finalInsights.recentPosts.forEach((post: { title: string; link: string }) => { mdContent += `- [${post.title}](${post.link})\n`; });
+      mdContent += `\n## 📜 Observation History\n`;
+      finalInsights.history.forEach((h: any) => { mdContent += `- ${h.source} (${h.analyzedAt})\n`; });
+
+      fs.writeFileSync(legacyMdPath, mdContent, 'utf8');
+    }
+  }
+}
+
+/**
+ * processLegacyContent: Original processContent logic renamed but compatible with KnowledgeInsights.
+ */
+export function processContent(html: string, source: string): KnowledgeInsights {
+  console.log(`🧠 [Knowledge Observer] Processing content from ${source}...`);
+
+  const titleMatch = html.match(/<title[^>]*>([^<]+)<\/title>/i);
+  const title = titleMatch ? titleMatch[1].trim() : (source.startsWith('http') ? 'Unknown Title' : 'Direct Document');
+
+  const metaDescriptionMatch = html.match(/<meta[^>]*name=["']description["'][^>]*content=["']([^"']*)["'][^>]*>/i);
+  const description = metaDescriptionMatch ? metaDescriptionMatch[1].trim() : 'No description found';
+
+  const recentPosts: { title: string, link: string }[] = [];
+  const linkRegex = /<h[1-3][^>]*>.*?<a[^>]*href=["']([^"']+)["'][^>]*>(.*?)<\/a>.*?<\/h[1-3]>/gi;
+  let match;
+
+  while ((match = linkRegex.exec(html)) !== null) {
+    const link = match[1];
+    const postTitle = match[2].replace(/<[^>]*>?/gm, '').replace(/&nbsp;/g, ' ').trim();
+    if (postTitle && link && !recentPosts.some(p => p.link === link) && postTitle.toLowerCase() !== 'software info by fk') {
+        recentPosts.push({ title: postTitle, link });
+    }
+  }
+
+  const cleanHtml = html
+    .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, ' ')
+    .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, ' ');
+
+  const words = cleanHtml
+    .replace(/<[^>]*>?/gm, ' ')
+    .replace(/[^a-zA-Z\s]/g, ' ')
+    .toLowerCase()
+    .split(/\s+/)
+    .filter(w => w.length > 4);
+
+  const stopWords = new Set(['about', 'above', 'after', 'again', 'against', 'all', 'am', 'an', 'and', 'any', 'are', 'aren', 'as', 'at', 'be', 'because', 'been', 'before', 'being', 'below', 'between', 'both', 'but', 'by', 'can', 'cannot', 'could', 'couldn', 'did', 'didn', 'do', 'does', 'doesn', 'doing', 'don', 'down', 'during', 'each', 'few', 'for', 'from', 'further', 'had', 'hadn', 'has', 'hasn', 'have', 'haven', 'having', 'he', 'her', 'here', 'hers', 'herself', 'him', 'himself', 'his', 'how', 'however', 'i', 'if', 'in', 'into', 'is', 'isn', 'it', 'its', 'itself', 'let', 'me', 'more', 'most', 'mustn', 'my', 'myself', 'no', 'nor', 'not', 'of', 'off', 'on', 'once', 'only', 'or', 'other', 'ought', 'our', 'ours', 'ourselves', 'out', 'over', 'own', 'same', 'shan', 'she', 'should', 'shouldn', 'so', 'some', 'such', 'than', 'that', 'the', 'their', 'theirs', 'them', 'themselves', 'then', 'there', 'these', 'they', 'this', 'those', 'through', 'to', 'too', 'under', 'until', 'up', 'very', 'was', 'wasn', 'we', 'were', 'weren', 'what', 'when', 'where', 'which', 'while', 'who', 'whom', 'why', 'with', 'won', 'would', 'wouldn', 'you', 'your', 'yours', 'yourself', 'yourselves', 'their', 'there', 'class', 'style', 'href', 'https', 'http', 'width', 'height', 'content', 'title', 'xmlns', 'svg', 'viewbox', 'path', 'fill', 'stroke', 'margin', 'padding', 'false', 'true', 'null', 'undefined', 'function', 'return', 'const', 'let', 'var', 'document', 'window', 'script', 'iframe', 'src', 'alt', 'data']);
+
+  const wordCounts = new Map<string, number>();
+  for (const w of words) {
+    if (!stopWords.has(w)) {
+      wordCounts.set(w, (wordCounts.get(w) || 0) + 1);
+    }
+  }
+
+  const topKeywords = Array.from(wordCounts.entries())
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 15)
+    .map(entry => entry[0]);
+
+  return {
+    source: source,
+    title,
+    description,
+    topKeywords,
+    recentPosts: recentPosts.slice(0, 15),
+    analyzedAt: new Date().toISOString()
+  };
+}
+
+export function persistKnowledge(newInsights: KnowledgeInsights) {
+  const observer = new KnowledgeObserver();
+  return observer.persistKnowledge(newInsights);
+}
+
+export async function observeKnowledge(url: string) {
+  console.log(`👁️ [Knowledge Observer] Scanning ${url} for autonomous insights...`);
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000);
+
+    const response = await fetch(url, { signal: controller.signal });
+    clearTimeout(timeoutId);
+
+    if (!response.ok) throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
+    const html = await response.text();
+    if (!html || html.length < 100) throw new Error(`Received insufficient content from ${url}`);
+
+    return processContent(html, url);
+  } catch (error: any) {
+    console.error(`❌ [Knowledge Observer] Error observing ${url}:`, error.message);
+    return null;
   }
 }
