@@ -21,8 +21,9 @@
     "ingest:knowledge": "npm run ingest:sor && npx tsx scripts/ingest_localhost_tools_knowledge.ts && npx tsx scripts/ingest_markposition_knowledge.ts && npx tsx scripts/ingest_render_docs.ts && npx tsx scripts/ingest_ai_agents_knowledge.ts && npx tsx scripts/ingest_ads_knowledge.ts && npx tsx scripts/ingest_knowledge_merge.ts"
   },
   "dependencies": {
-    "@actions/core": "^1.11.1",
+    "@actions/core": "^3.0.1",
     "@actions/github": "^9.1.1",
+    "@actions/http-client": "^4.0.1",
     "@google/gemini-cli-core": "^0.41.2",
     "@vitejs/plugin-react": "^6.0.2",
     "chalk": "^5.6.2",
@@ -31,6 +32,7 @@
     "commander": "^14.0.3",
     "next": "^16.2.6",
     "puppeteer": "^25.1.0",
+    "undici": "^8.3.0",
     "ws": "^8.21.0"
   },
   "devDependencies": {
@@ -44,5 +46,8 @@
     "typescript": "^5.9.3",
     "vitest": "^4.1.7",
     "zod": "^4.4.3"
+  },
+  "overrides": {
+    "postcss": "latest"
   }
 }
