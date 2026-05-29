@@ -84,28 +84,53 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
 
   report += `\n`
 
-  report += `## 🤖 Python Ecosystem Intelligence\n`
+  report += `## 🤖 Unified Knowledge & Market Intelligence\n`
   try {
+    const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json')
+    if (fs.existsSync(knowledgePath)) {
+      const knowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
+
+      // 1. Market Data (Markposition)
+      if (knowledge.market_data) {
+        report += `- **Market Intelligence:** ${knowledge.market_data.total_entries} specialized entries analyzed from Markposition.\n`
+        if (knowledge.market_data.recent_entries && knowledge.market_data.recent_entries.length > 0) {
+           const topDomains = Array.from(new Set(knowledge.market_data.recent_entries.map((e: any) => e.domain).filter(Boolean))).slice(0, 5)
+           report += `  - *Recent Signals:* Tracking ${topDomains.join(', ')} and others.\n`
+        }
+      }
+
+      // 2. Technical Documentation
+      const techSections = ['gemma_model', 'intelephense', 'litert', 'stitch', 'vscode_intelephense', 'google_innovation_ai']
+      let techCount = 0
+      techSections.forEach(s => { if (knowledge[s]) techCount++ })
+      report += `- **Technical Foundation:** ${techCount} deep documentation domains ingested.\n`
+
+      // 3. AI Agents
+      if (knowledge.ai_agents_structured) {
+        report += `- **Agentic Framework:** ${knowledge.ai_agents_structured.length} AI agent definitions and architectural patterns merged.\n`
+      }
+    } else {
+      report += `- **Knowledge Base:** Unified store pending initialization.\n`
+    }
+
     const linksPath = path.join(process.cwd(), 'links.json')
     if (fs.existsSync(linksPath)) {
       const links = JSON.parse(fs.readFileSync(linksPath, 'utf8'))
-      report += `- **Market Data:** ${links.length} entries analyzed.\n`
-    } else {
-      report += `- **Market Data:** Scraper results pending.\n`
+      report += `- **Legacy Market Data:** ${links.length} entries in raw buffer.\n`
     }
 
     const resultsDir = path.join(process.cwd(), 'results')
     if (fs.existsSync(resultsDir)) {
       const files = fs.readdirSync(resultsDir)
-      report += `- **Autonomous Reports:** ${files.length} generated.\n`
+      report += `- **Autonomous Reports:** ${files.length} history files available.\n`
 
       const latestReport = files.filter(f => f.startsWith('DAILY_REPORT')).sort().reverse()[0]
       if (latestReport) {
-        report += `- **Latest Report:** ${latestReport}\n`
+        report += `- **Latest Daily Summary:** ${latestReport}\n`
       }
     }
   } catch (e) {
-    report += `- **Ecosystem Status:** Limited observability into Python layer.\n`
+    report += `- **Ecosystem Status:** Limited observability into knowledge layer.\n`
   }
   report += `\n`
 
@@ -113,8 +138,6 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   metadata.stakeholders.forEach(s => {
     report += `- **${s.role}**: ${s.email}\n`
   })
-
-  report += `\n---\nAll the best - https://markposition.wordpress.com\n`
 
   fs.writeFileSync(reportPath, report)
   logAutonomousAction(`✅ [Intelligence] Report saved to ${reportPath}`, 'info')

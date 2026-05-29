@@ -1,13 +1,13 @@
 {
-    "timestamp": "2026-05-26T14:03:49.024Z",
-    "dockerInfo": "Client: Docker Engine - Community\n Version:    29.2.1\n Context:    default\n Debug Mode: false\n Plugins:\n  buildx: Docker Buildx (Docker Inc.)\n    Version:  v0.31.1\n    Path:     /usr/libexec/docker/cli-plugins/docker-buildx\n  compose: Docker Compose (Docker Inc.)\n    Version:  v5.1.0\n    Path:     /usr/libexec/docker/cli-plugins/docker-compose\n\nServer:\n Containers: 0\n  Running: 0\n  Paused: 0\n  Stopped: 0\n Images: 0\n Server Version: 29.2.1\n Storage Driver: overlayfs\n  driver-type: io.containerd.snapshotter.v1\n Logging Driver: json-file\n Cgroup Driver: systemd\n Cgroup Version: 2\n Plugins:\n  Volume: local\n  Network: bridge host ipvlan macvlan null overlay\n  Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog\n CDI spec directories:\n  /etc/cdi\n  /var/run/cdi\n Swarm: inactive\n Runtimes: io.containerd.runc.v2 runc\n Default Runtime: runc\n Init Binary: docker-init\n containerd version: dea7da592f5d1d2b7755e3a161be07f43fad8f75\n runc version: v1.3.4-0-gd6d73eb8\n init version: de40ad0\n Security Options:\n  cgroupns\n Kernel Version: 6.8.0\n Operating System: Ubuntu 24.04.4 LTS\n OSType: linux\n Architecture: x86_64\n CPUs: 4\n Total Memory: 7.773GiB\n Name: devbox\n ID: 07389b60-b14d-45a4-be86-a6f570186f9b\n Docker Root Dir: /var/lib/docker\n Debug Mode: false\n Experimental: false\n Insecure Registries:\n  ::1/128\n  127.0.0.0/8\n Live Restore Enabled: false\n Firewall Backend: iptables\n\n",
+    "timestamp": "2026-05-23T15:29:58.691Z",
+    "dockerInfo": "Client: Docker Engine - Community\n Version:    29.2.1\n Context:    default\n Debug Mode: false\n Plugins:\n  buildx: Docker Buildx (Docker Inc.)\n    Version:  v0.31.1\n    Path:     /usr/libexec/docker/cli-plugins/docker-buildx\n  compose: Docker Compose (Docker Inc.)\n    Version:  v5.1.0\n    Path:     /usr/libexec/docker/cli-plugins/docker-compose\n\nServer:\n Containers: 0\n  Running: 0\n  Paused: 0\n  Stopped: 0\n Images: 1\n Server Version: 29.2.1\n Storage Driver: overlayfs\n  driver-type: io.containerd.snapshotter.v1\n Logging Driver: json-file\n Cgroup Driver: systemd\n Cgroup Version: 2\n Plugins:\n  Volume: local\n  Network: bridge host ipvlan macvlan null overlay\n  Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog\n CDI spec directories:\n  /etc/cdi\n  /var/run/cdi\n Swarm: inactive\n Runtimes: io.containerd.runc.v2 runc\n Default Runtime: runc\n Init Binary: docker-init\n containerd version: dea7da592f5d1d2b7755e3a161be07f43fad8f75\n runc version: v1.3.4-0-gd6d73eb8\n init version: de40ad0\n Security Options:\n  cgroupns\n Kernel Version: 6.8.0\n Operating System: Ubuntu 24.04.4 LTS\n OSType: linux\n Architecture: x86_64\n CPUs: 4\n Total Memory: 7.773GiB\n Name: devbox\n ID: 67c40696-7c20-45d1-a2c6-c575bcfc78e0\n Docker Root Dir: /var/lib/docker\n Debug Mode: false\n Experimental: false\n Insecure Registries:\n  ::1/128\n  127.0.0.0/8\n Live Restore Enabled: false\n Firewall Backend: iptables\n\n",
     "dockerPs": "CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES\n",
     "mission": "Autonomous Evolution",
     "stakeholders": [],
     "docker": {
         "status": "recovering",
         "containerCount": 0,
-        "timestamp": "2026-05-26T14:03:53.550Z",
+        "timestamp": "2026-05-29T03:08:36.941Z",
         "mode": "native",
         "is_cloud": false
     },
@@ -21,21 +21,26 @@
             "has_stages": true,
             "has_parallel": true
         },
-        "timestamp": "2026-05-26T14:03:53.550Z"
+        "timestamp": "2026-05-29T03:08:36.941Z"
     },
     "intelligence": {
-        "branches": 2131,
+        "branches": 2214,
         "pendingTasks": 0,
         "totalOrders": 0
     },
-    "execution_mode": "local",
-    "autonomous_mode": "standard",
-    "cloud_provider": "none",
+    "execution_mode": "cloud",
+    "autonomous_mode": "cloud",
+    "cloud_provider": "autonomous-cloud",
     "system_presence": {
         "status": "online",
         "agent": "Jules",
         "hostname": "devbox",
         "platform": "linux"
     },
-    "last_sync": "2026-05-26T14:04:02.260Z"
+    "last_sync": "2026-05-29T03:08:36.947Z",
+    "presence_summary": {
+        "is_leader": false,
+        "node_id": "cloud-relay-01",
+        "environment": "cloud"
+    }
 }

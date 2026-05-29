@@ -21,6 +21,7 @@ async function main() {
   // Ensure we simulate a cloud environment if not explicitly disabled
   if (process.env.MACBOOK_CLOUD_SIMULATION !== 'false') {
     process.env.MACBOOK_CLOUD_SIMULATION = 'true';
+    process.env.AUTONOMOUS_MODE = 'cloud';
   }
 
   // Synchronize with autonomous_state.json
@@ -43,21 +44,6 @@ async function main() {
   } else {
     console.log('Running single daily cycle...');
     await jules.executeWorkCycle();
-
-    // Integrate Python Ecosystem Cycle
-    console.log('🐍 Running Python Ecosystem Autonomous Cycle...');
-    const { exec } = await import('child_process');
-    const { promisify } = await import('util');
-    const execAsync = promisify(exec);
-
-    try {
-      const token = process.env.SYSTEM_AUTH_TOKEN || 'default_dev_token';
-      const { stdout } = await execAsync(`python3 run_system.py --skip-scraper --token ${token}`);
-      console.log(stdout);
-      console.log('✅ Python Ecosystem Cycle Complete.');
-    } catch (e: any) {
-      console.error('❌ Python Ecosystem Cycle Failed:', e.message);
-    }
   }
 }
 
