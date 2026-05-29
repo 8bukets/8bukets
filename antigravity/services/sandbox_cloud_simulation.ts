@@ -1,3 +1,4 @@
+import { logAutonomousAction } from '../core'
 import * as os from 'os';
 
 export class SandboxCloudSimulation {
@@ -7,13 +8,13 @@ export class SandboxCloudSimulation {
 
   public enforceCloudExecutionState(): void {
     if (this.isCloudModeActive()) {
-      console.log('☁️ [SandboxCloudSimulation] Cloud Simulation Active: Bypassing local checks and forcing online presence.');
+      logAutonomousAction('☁️ [SandboxCloudSimulation] Cloud Simulation Active: Bypassing local checks and forcing online presence.', 'info');
       process.env.DOCKER_BYPASS = 'true';
       process.env.GITLAB_BYPASS = 'true';
       process.env.GITHUB_BYPASS = 'true';
       process.env.CLOUD_PROVIDER = 'autonomous-cloud';
     } else {
-      console.log('💻 [SandboxCloudSimulation] Local Mode Active.');
+      logAutonomousAction('💻 [SandboxCloudSimulation] Local Mode Active.', 'info');
     }
   }
 

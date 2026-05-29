@@ -1,6 +1,10 @@
 import { execSync } from 'child_process';
 import * as fs from 'fs';
 import { SandboxCloudSimulation } from '../antigravity/services/sandbox_cloud_simulation';
+import { onlinePresence } from '../antigravity/services/presence';
+import { cloudConvergence } from '../antigravity/services/cloud_convergence';
+import { syncCollaborationState } from '../antigravity/services/collaboration';
+import { jules } from '../antigravity/jules';
 
 async function main() {
   console.log('🌐 Initiating Comprehensive Ecosystem Connectivity Sync...');
@@ -48,11 +52,11 @@ async function main() {
 
   // 4. Synchronize Collaboration State
   console.log(' - Synchronizing collaboration state...');
-  const collaborationState = await syncCollaborationState();
+  const branches = await jules.scanAllBranches(true);
+  const collaborationState = await syncCollaborationState(branches);
 
   const finalState = {
     ...collaborationState,
-    audit: auditState,
     presence_summary: {
       is_leader: presence?.is_leader,
       node_id: presence?.telemetry?.node_id,
