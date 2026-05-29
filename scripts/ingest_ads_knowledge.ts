@@ -98,8 +98,8 @@ async function ingestAdsKnowledge() {
   }
   sysKnowledge['google_ads'] = jsonResults;
 
-  // Use 4-space indentation for system_knowledge.json
-  fs.writeFileSync(jsonPath, JSON.stringify(sysKnowledge, null, 4), 'utf8');
+  // Use 2-space indentation for system_knowledge.json
+  fs.writeFileSync(jsonPath, JSON.stringify(sysKnowledge, null, 2), 'utf8');
 
   console.log('Ingestion complete!');
 }
