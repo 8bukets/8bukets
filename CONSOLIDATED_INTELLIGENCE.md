@@ -171,7 +171,6 @@ Synergy achieved across 2216 branches. Detailed knowledge and results consolidat
 - [AI Agent] **backup_agent_prompt** - Status: Active
 - [AI Agent] **base_agent** - Status: Active
 - [AI Agent] **chief_ai_officer** - Status: Active
-- [AI Agent] **chief_ai_officer_agent** - Status: Active
 - [AI Agent] **cloud_workflow_agent** - Status: Active
 - [AI Agent] **duo_planner_agent** - Status: Active
 - [AI Agent] **gitlab_security_agent** - Status: Active
