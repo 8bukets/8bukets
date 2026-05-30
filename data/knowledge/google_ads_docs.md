@@ -4,6 +4,8 @@
 **Title**: Understanding bidding basics - Google Ads Help
 
 - Help Center
+- Community
+- Announcements
 - Start advertising
 - Campaigns
 - Explore features
@@ -11,25 +13,14 @@
 - Account & billing
 - Fix issues
 - Google Partners
-- Community
-- Google Ads
-- Privacy Policy
-- Terms of Service
-- Submit feedback
-- Help Center
-- Community
-- Announcements
-- Start advertisingYour guide to Google Ads8 steps to prepare your campaign for successChoose the right campaign typeDetermine your advertising goals How Google Ads can work for your industryGoogle Ads specs: ad formats, sizes, and best practicesMore advertising toolsGoogle Ads basicsGoogle Ads privacyGlossary
-- CampaignsPerformance MaxAI Max for Search campaignsAI Max for Shopping campaignsSearch campaignsDisplay campaignsSmart CampaignsApp campaignsShopping adsVideo campaignsHotel campaignsDemand Gen campaignsCall campaignsThings to doEvents ticketing
-- Explore featuresAds, assets & landing pagesAd groupsKeywordsBiddingTargetingMeasure resultsBulk uploads & editsCampaign settings
-- Optimize performance12 tips to advertising with Google AdsGoogle Ads Best PracticesOptimization featuresCreate effective Search adsGenerative AI tools in Google AdsImprove with AI-powered SearchFinding success with Smart BiddingMeasure resultsOptimize performance with App ConnectGoogle Ads training on SkillshopThe Google Ads mobile app
-- Account & billingBillingAccount settingsAccount accessManager accountsAccount security and safetyCancel or reactivate your accountWorking with client accountsUseful tools
-- Fix issuesAd disapprovals and reviewsBilling & paymentsPolicy issuesPerformance issuesAccount access issuesReporting issuesRequest implementation support for Google Ads and YouTube ReserveGoogle Ads API
-- Google PartnersGoogle Partners Program
 - Help Center Topics
 - Campaigns
 - Display campaigns
 - Setup & management
+- Bidding
+- Understanding bidding basics
+- Help Center TopicsStart advertisingCampaignsExplore featuresOptimize performanceAccount & billingFix issuesGoogle Partners
+- ...CampaignsDisplay campaignsSetup & management
 - Bidding
 - Understanding bidding basics
 
@@ -96,6 +87,64 @@ Register now
 - Terms of Service
 - Google Ads Advertising Policies
 - About the Help Center
+- català‎
+- dansk‎
+- Deutsch‎
+- eesti‎
+- English (Australia)‎
+- English (United Kingdom)‎
+- español‎
+- español (Latinoamérica)‎
+- Filipino‎
+- français‎
+- hrvatski‎
+- Indonesia‎
+- italiano‎
+- latviešu‎
+- lietuvių‎
+- magyar‎
+- Melayu‎
+- Nederlands‎
+- norsk‎
+- polski‎
+- português‎
+- português (Brasil)‎
+- română‎
+- slovenčina‎
+- slovenščina‎
+- suomi‎
+- svenska‎
+- Tiếng Việt‎
+- Türkçe‎
+- čeština‎
+- Ελληνικά‎
+- български‎
+- русский‎
+- српски‎
+- українська‎
+- ‏עברית
+- ‏العربية
+- हिन्दी‎
+- ไทย‎
+- 中文（简体）‎
+- 中文（繁體）‎
+- 中文（香港）‎
+- 日本語‎
+- 한국어‎
+- English‎
+- Help Center
+- Start advertising
+- Campaigns
+- Explore features
+- Optimize performance
+- Account & billing
+- Fix issues
+- Google Partners
+- Community
+- Google Ads
+- Privacy Policy
+- Terms of Service
+- Submit feedback
 
 
 ---
@@ -139,6 +188,47 @@ You're about to create a new Google Ads account. You can create multiple campaig
 - Cost
 - Articles & case studies
 - Expert support
+- Where to start?
+- Solutions
+- Learning & insights
+- Get support
+- Start with foundations
+- Merchant Center Help shoppers discover and buy your products
+- Google Business Profile List your business on Search and Maps
+- Start advertising
+- Overview Explore all that Google Ads has to offer
+- How it works Create, set up, and launch a campaign
+- Meet your goals Find solutions to meet your advertising goal
+- Cost Get the most out of your budget
+- Privacy Drive performance with privacy-centric solutions
+- Create ads
+- Performance Max Multiply conversions across Google channels
+- YouTube Ads Reach and build connections with engaged viewers
+- Search Reach people searching for the products or services you offer
+- Demand Gen Create and convert new customer demand
+- Display Promote your business where people browse online
+- Local Services Ads Attract more local customers
+- View all
+- Ad tools
+- Manager Accounts Manage multiple ads accounts
+- Keyword Planner Optimise with the right keyword
+- Google Ads Editor Quickly and easily edit campaigns at scale
+- Google Ads Mobile App Track your campaign anywhere in real-time
+- Reach Planner Customise your YouTube media strategy
+- View all
+- No-cost solutions
+- Google Analytics Understand your website traffic
+- Merchant Center Help shoppers discover and buy your product
+- Google Business Profile Get your business on Google
+- Expertise
+- Think with Google Explore the latest insights and marketing strategies
+- Accelerate with Google Get a personalised marketing strategy and learning plan
+- Partners
+- Become a partner Gain training, insights, and rewards
+- Work with a partner Get expert guidance for your campaign
+- Help
+- Get expert support Contact us for support with Google Ads
+- Get help Browse help topics
 - Where to start? Start with foundations Merchant Center Help shoppers discover and buy your products Google Business Profile List your business on Search and Maps Start advertising Overview Explore all that Google Ads has to offer How it works Create, set up, and launch a campaign Meet your goals Find solutions to meet your advertising goal Cost Get the most out of your budget Privacy Drive performance with privacy-centric solutions
 - Start with foundations
 - Merchant Center Help shoppers discover and buy your products
@@ -298,7 +388,7 @@ On average, advertisers that switch from a Target CPA to a Target ROAS bid strat
 
 
 ## Learn more about Smart Bidding
-Page number 1 / 3
+Page number 1 / 2
 
 
 ## Tools and campaigns that can help you meet your goals
@@ -427,6 +517,47 @@ You're about to create a new Google Ads account. You can create multiple campaig
 - Cost
 - Articles & case studies
 - Expert support
+- Where to start?
+- Solutions
+- Learning & insights
+- Get support
+- Start with foundations
+- Merchant Center Help shoppers discover and buy your products
+- Google Business Profile List your business on Search and Maps
+- Start advertising
+- Overview Explore all that Google Ads has to offer
+- How it works Create, set up, and launch a campaign
+- Meet your goals Find solutions to meet your advertising goal
+- Cost Get the most out of your budget
+- Privacy Drive performance with privacy-centric solutions
+- Create ads
+- Performance Max Multiply conversions across Google channels
+- YouTube Ads Reach and build connections with engaged viewers
+- Search Reach people searching for the products or services you offer
+- Demand Gen Create and convert new customer demand
+- Display Promote your business where people browse online
+- Local Services Ads Attract more local customers
+- View all
+- Ad tools
+- Manager Accounts Manage multiple ads accounts
+- Keyword Planner Optimise with the right keyword
+- Google Ads Editor Quickly and easily edit campaigns at scale
+- Google Ads Mobile App Track your campaign anywhere in real-time
+- Reach Planner Customise your YouTube media strategy
+- View all
+- No-cost solutions
+- Google Analytics Understand your website traffic
+- Merchant Center Help shoppers discover and buy your product
+- Google Business Profile Get your business on Google
+- Expertise
+- Think with Google Explore the latest insights and marketing strategies
+- Accelerate with Google Get a personalised marketing strategy and learning plan
+- Partners
+- Become a partner Gain training, insights, and rewards
+- Work with a partner Get expert guidance for your campaign
+- Help
+- Get expert support Contact us for support with Google Ads
+- Get help Browse help topics
 - Where to start? Start with foundations Merchant Center Help shoppers discover and buy your products Google Business Profile List your business on Search and Maps Start advertising Overview Explore all that Google Ads has to offer How it works Create, set up, and launch a campaign Meet your goals Find solutions to meet your advertising goal Cost Get the most out of your budget Privacy Drive performance with privacy-centric solutions
 - Start with foundations
 - Merchant Center Help shoppers discover and buy your products
@@ -1679,6 +1810,12 @@ Last updated 2026-03-05 UTC.
 - Programmatic
 - Best Practices
 - Test Networks vs. Production
+- On this page
+- Get access to an Ad Manager network
+- Create authentication credentials
+- Configure your Ad Manager network
+- Set up your client
+- Next steps
 Looking for a REST API? The Ad Manager API (Beta) is now available.
 
 - Home
@@ -1687,6 +1824,12 @@ Looking for a REST API? The Ad Manager API (Beta) is now available.
 - SOAP API
 
 # Get started Stay organized with collections Save and categorize content based on your preferences.
+- On this page
+- Get access to an Ad Manager network
+- Create authentication credentials
+- Configure your Ad Manager network
+- Set up your client
+- Next steps
 
 ## Page Summary
 - The Google Ad Manager SOAP API allows building applications to manage inventory, create orders, and pull reports.
@@ -1752,8 +1895,6 @@ Download one of the Ad Manager client libraries. The libraries offer wrapper fun
 
 The following tabs provide quickstarts for coding in each of the languages for which there is a client library.
 
-
-### Java
 Here is a basic example that shows how to use the Java client library. For more detailed usage information, refer to the README file in the client library distribution.
 
 - Setup your credentials Run the following command in a shell: curl https://raw.githubusercontent.com/googleads/googleads-java-lib/main/examples/admanager_axis/src/main/resources/ads.properties -o ~/ads.properties Open the ~/ads.properties file and populate the following fields: [...] api.admanager.applicationName=INSERT_APPLICATION_NAME_HERE api.admanager.jsonKeyFilePath=INSERT_PATH_TO_JSON_KEY_FILE_HERE api.admanager.networkCode=INSERT_NETWORK_CODE_HERE [...]
@@ -1767,8 +1908,6 @@ Edit your pom.xml file and add the following to the dependencies tag. You can fi
 - Write some code and make a request! import com.google.api.ads.common.lib.auth.OfflineCredentials; import com.google.api.ads.common.lib.auth.OfflineCredentials.Api; import com.google.api.ads.admanager.axis.factory.AdManagerServices; import com.google.api.ads.admanager.axis.v202602.Network; import com.google.api.ads.admanager.axis.v202602.NetworkServiceInterface; import com.google.api.ads.admanager.lib.client.AdManagerSession; import com.google.api.client.auth.oauth2.Credential; public class App { public static void main(String[] args) throws Exception { Credential oAuth2Credential = new OfflineCredentials.Builder() .forApi(Api.AD_MANAGER) .fromFile() .build() .generateCredential(); // Construct an AdManagerSession. AdManagerSession session = new AdManagerSession.Builder() .fromFile() .withOAuth2Credential(oAuth2Credential) .build(); // Construct a Google Ad Manager service factory, which can only be used once per // thread, but should be reused as much as possible. AdManagerServices adManagerServices = new AdManagerServices(); // Retrieve the appropriate service NetworkServiceInterface networkService = adManagerServices.get(session, NetworkServiceInterface.class); // Make a request Network network = networkService.getCurrentNetwork(); System.out.printf("Current network has network code '%s' and display" + " name '%s'.%n", network.getNetworkCode(), network.getDisplayName()); } } View on GitHub
 Write some code and make a request!
 
-
-### Python
 Here is a basic example that shows how to use the Python client library. The Python Client Library supports Python v3.6+. For more detailed usage information, refer to the README file in the client library distribution.
 
 - Install the library and set up your credentials. Run the following commands in a shell: python3 -m pip install googleads curl https://raw.githubusercontent.com/googleads/googleads-python-lib/main/googleads.yaml \ -o ~/googleads.yaml
@@ -1778,8 +1917,6 @@ Run the following commands in a shell:
 Fill in the following fields:
 
 - Run some code and make a request. # Import the library. from googleads import ad_manager # Initialize a client object, by default uses the credentials in ~/googleads.yaml. client = ad_manager.AdManagerClient.LoadFromStorage() # Initialize a service. network_service = client.GetService('NetworkService', version='v202602') # Make a request. current_network = network_service.getCurrentNetwork() print("Current network has network code '%s' and display name '%s'." % (current_network['networkCode'], current_network['displayName'])) View on GitHub
-
-### PHP
 Here is a basic example that shows how to use the PHP client library.
 
 - Install the library and setup your credentials. Run the following commands in a shell to install the client library and download the adsapi_php.ini file to your home directory: composer require googleads/googleads-php-lib curl https://raw.githubusercontent.com/googleads/googleads-php-lib/main/examples/AdManager/adsapi_php.ini -o ~/adsapi_php.ini
@@ -1789,8 +1926,6 @@ Run the following commands in a shell to install the client library and download
 Fill in the following fields:
 
 - Run some code and make a request! This example code must be run from the command line, not a browser. The file containing this code must reside in the root of the project directory, where composer require was run. <?php require 'vendor/autoload.php'; use Google\AdsApi\AdManager\AdManagerSession; use Google\AdsApi\AdManager\AdManagerSessionBuilder; use Google\AdsApi\AdManager\v202602\ApiException; use Google\AdsApi\AdManager\v202602\ServiceFactory; use Google\AdsApi\Common\OAuth2TokenBuilder; // Generate a refreshable OAuth2 credential for authentication. $oAuth2Credential = (new OAuth2TokenBuilder()) ->fromFile() ->build(); // Construct an API session configured from a properties file and the OAuth2 // credentials above. $session = (new AdManagerSessionBuilder()) ->fromFile() ->withOAuth2Credential($oAuth2Credential) ->build(); // Get a service. $serviceFactory = new ServiceFactory(); $networkService = $serviceFactory->createNetworkService($session); // Make a request $network = $networkService->getCurrentNetwork(); printf( "Network with code %d and display name '%s' was found.\n", $network->getNetworkCode(), $network->getDisplayName() ); View on GitHub
-
-### .NET
 Here is a basic example that shows how to use the .NET client library
 
 - Create a new project Open Visual Studio and create a new project (Console Application).
@@ -1813,8 +1948,6 @@ You can call the library as shown in the following C# code snippet
 
 If you don't want to set your credentials in your App.config, then refer to this wiki article for alternate ways of using the AdManagerUser class. For more detailed information about using the .NET Client Library, refer to the README . If you want to develop in .NET without the client library, please refer to the NoClientLibrary wiki article.
 
-
-### Ruby
 Here is a basic example that shows how to use the Ruby client library. The Ruby client library requires Ruby 2.1 or later.
 
 - Install the Ruby gem and get the configuration file. Run the following commands in a shell: gem install google-dfp-api curl https://raw.githubusercontent.com/googleads/google-api-ads-ruby/main/ad_manager_api/ad_manager_api.yml -o ~/ad_manager_api.yml If you encounter an error such as "cannot load such file -- mkmf (LoadError)" at any point while installing your gems, you may need to install additional Ruby development libraries such as ruby-dev, ruby-devel, xcode-select etc. for your particular environment.
@@ -4417,6 +4550,17 @@ Follow us
 - Costs and usage management
 - Infrastructure as code
 - SDK, languages, frameworks, and tools
+- On this page
+- Key Reference Links
+- Getting Started
+- Use the Google Ad Manager API for JavaMavenGradleSBT
+- Maven
+- Gradle
+- SBT
+- Which version ID should I get started with?Understanding Version ID and Library VersionsManaging Library VersionsChoosing the Right Version ID
+- Understanding Version ID and Library Versions
+- Managing Library Versions
+- Choosing the Right Version ID
 - Home
 - Documentation
 - Developer tools
@@ -4424,6 +4568,55 @@ Follow us
 - Client libraries
 
 # ad-manager overview (0.50.0) Stay organized with collections Save and categorize content based on your preferences.
+- On this page
+- Key Reference Links
+- Getting Started
+- Use the Google Ad Manager API for JavaMavenGradleSBT
+- Maven
+- Gradle
+- SBT
+- Which version ID should I get started with?Understanding Version ID and Library VersionsManaging Library VersionsChoosing the Right Version ID
+- Understanding Version ID and Library Versions
+- Managing Library Versions
+- Choosing the Right Version ID
+- 0.50.0 (latest)
+- 0.47.0
+- 0.46.0
+- 0.44.0
+- 0.42.0
+- 0.41.0
+- 0.40.0
+- 0.39.0
+- 0.37.0
+- 0.35.0
+- 0.34.0
+- 0.33.0
+- 0.32.0
+- 0.31.0
+- 0.29.0
+- 0.27.0
+- 0.26.0
+- 0.23.0
+- 0.22.0
+- 0.21.0
+- 0.19.0
+- 0.18.0
+- 0.17.0
+- 0.16.0
+- 0.15.0
+- 0.14.0
+- 0.13.0
+- 0.12.0
+- 0.11.0
+- 0.10.0
+- 0.8.0
+- 0.7.0
+- 0.6.0
+- 0.5.0
+- 0.4.0
+- 0.3.0
+- 0.2.0
+- 0.1.0
 
 ## Key Reference Links
 Google Ad Manager API Description: The Ad Manager API enables an app to integrate with Google Ad Manager. You can read Ad Manager data and run reports using the API.
