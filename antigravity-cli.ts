@@ -35,4 +35,20 @@ program
     }
   });
 
+program
+  .command('workflow')
+  .description('Generate automated workflow pipelines')
+  .action(() => {
+    const { spawn } = require('child_process');
+    const child = spawn('npx', ['tsx', '--env-file=.env', 'scripts/autonomous_workflow_creation.ts'], { stdio: 'inherit', shell: true });
+    child.on('error', (error: Error) => {
+      console.error(`Error executing command: ${error.message}`);
+    });
+    child.on('exit', (code: number | null) => {
+      if (code !== 0) {
+        console.error(`Process exited with code ${code}`);
+      }
+    });
+  });
+
 program.parse();
