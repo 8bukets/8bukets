@@ -131,7 +131,7 @@ export class KnowledgeObserver {
     const filteredSections = sections.filter(s => {
       const junkPatterns = [/{/, /}/, /@media/, /\.wp-/, /!important/];
       const isJunk = junkPatterns.some(p => p.test(s.content)) && s.content.length > 100;
-      return s.content.length > 10 && !isJunk;
+      return s.content.trim().length > 10 && !isJunk;
     });
 
     // Naive keyword extraction based on frequency (excluding common stop words)

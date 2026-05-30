@@ -19,19 +19,19 @@ describe('KnowledgeObserver', () => {
   })
 
   it('should process content into structured sections', () => {
-    const raw = '# Header 1\nContent 1\n# Header 2\nContent 2'
+    const raw = '# Header 1\nContent 1 is long enough to pass filter\n# Header 2\nContent 2 is also long enough'
     const result = KnowledgeObserver.processContent('Test Title', raw, 'test-source')
 
     expect(result.title).toBe('Test Title')
     expect(result.sections).toHaveLength(2)
     expect(result.sections[0].header).toBe('Header 1')
-    expect(result.sections[0].content).toBe('Content 1')
+    expect(result.sections[0].content).toBe('Content 1 is long enough to pass filter')
     expect(result.sections[1].header).toBe('Header 2')
-    expect(result.sections[1].content).toBe('Content 2')
+    expect(result.sections[1].content).toBe('Content 2 is also long enough')
   })
 
   it('should handle Title Case headers', () => {
-    const raw = 'Introduction\nThis is the intro.\nGetting Started\nStep 1...'
+    const raw = 'Introduction\nThis is the intro and it is long enough.\nGetting Started\nStep 1 is also long enough.'
     const result = KnowledgeObserver.processContent('Test Title', raw, 'test-source')
 
     expect(result.sections).toHaveLength(2)
