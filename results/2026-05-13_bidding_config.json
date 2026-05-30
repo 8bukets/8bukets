@@ -1,8 +1,0 @@
-{
-    "strategy": "Maximize Conversion Value",
-    "base_bid": 1.99,
-    "geo_bids": {
-        "Global": 1.99
-    },
-    "budget_allocation": "Daily $500"
-}

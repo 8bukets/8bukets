@@ -52,7 +52,7 @@ class ReActAgent(BaseAgent):
                     if "TRIGGER_PERFORMANCE_OPTIMIZATION" not in action_log:
                         action_log.append("TRIGGER_PERFORMANCE_OPTIMIZATION")
 
-        react_deployment_logic = definitions.get("react-agent-deployment-logic")
+        react_deployment_logic = definitions.get("react-agent-deployment-logic") or definitions.get("react_framework_details", {}).get("react-agent-deployment-logic")
         if react_deployment_logic:
             reasoning_log.append("Reasoning: Found React Agent Deployment Logic, ensuring logic deploy and workflow run improve.")
             if "VERIFY_LOGIC_DEPLOY_REACT_AGENTS" not in action_log:
