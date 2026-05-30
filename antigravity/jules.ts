@@ -245,10 +245,13 @@ export class Jules {
     // Knowledge Observation
     console.log('👁️ [Jules] Initiating Knowledge Observation...')
     const { observeKnowledge, persistKnowledge } = await import('./services/knowledge_observer')
-    const knowledgeInsights = await observeKnowledge('https://software-online-review.com')
-    if (knowledgeInsights) {
-      this.recordTask(`Knowledge Observation: Extracted ${knowledgeInsights.topKeywords.length} concepts from ${knowledgeInsights.source}`)
-      persistKnowledge(knowledgeInsights)
+    const urlsToObserve = ['https://software-online-review.com']
+    for (const url of urlsToObserve) {
+      const knowledgeInsights = await observeKnowledge(url)
+      if (knowledgeInsights) {
+        this.recordTask(`Knowledge Observation: Extracted ${knowledgeInsights.topKeywords.length} concepts from ${knowledgeInsights.source}`)
+        persistKnowledge(knowledgeInsights)
+      }
     }
 
     // GitHub Docs Observation
