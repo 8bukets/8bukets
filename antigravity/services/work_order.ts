@@ -204,12 +204,12 @@ export class WorkOrderService {
   }
 
   /**
-   * Clears only pending orders.
+   * Clears only pending orders from memory and local storage.
    */
   public async clearPendingOrders() {
-    await this.load()
     this.orders = this.orders.filter(o => o.status !== 'pending')
-    await this.save()
+    this.saveLocal()
+    logAutonomousAction('🧹 [WorkOrder] Cleared all pending work orders.', 'info')
   }
 
   public async executePendingOrders() {
