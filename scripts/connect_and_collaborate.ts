@@ -8,14 +8,25 @@
  */
 
 import { jules } from '@/antigravity/jules';
+import { sandboxCloudSimulation } from '@/antigravity/services/cloud_simulation';
 
 async function main() {
   console.log('🚀 [Antigravity] Starting Docker and Collaboration Connection...');
+
+  // 0. Force cloud sandbox execution if in simulation
+  await sandboxCloudSimulation.forceCloudCollaboration();
 
   // 1. Audit Docker sovereignty
   await jules.auditDocker();
 
   // 2. Synchronize collaboration context
+  console.log('🐳 [Jules] Connecting to Docker...');
+  try {
+    const { execSync } = require('child_process');
+    execSync('docker info && docker ps');
+  } catch (e) {
+    console.warn('⚠️ [Jules] Docker not running or inaccessible.');
+  }
   await jules.syncCollaboration();
 
   console.log('✅ [Antigravity] Connection and Collaboration Sync Finished.');

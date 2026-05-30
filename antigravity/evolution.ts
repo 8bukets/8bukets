@@ -16,39 +16,20 @@ export async function evolve() {
   console.log('🧠 [Antigravity Evolution] Commencing cognitive analysis...')
   
   const suggestions: EvolutionMetric[] = []
-  const scanDirs = [
-    path.join(process.cwd(), 'app'),
-    path.join(process.cwd(), 'antigravity/services')
-  ]
+  const baseDir = path.join(process.cwd(), 'app')
 
   // Recursive scan to find "bloated" or unoptimized patterns
-  async function scan(dir: string) {
-    try {
-      await fs.promises.access(dir)
-    } catch {
-      return
-    }
-
-    const files = await fs.promises.readdir(dir)
+  function scan(dir: string) {
+    const files = fs.readdirSync(dir)
     for (const file of files) {
       const fullPath = path.join(dir, file)
-      const stat = await fs.promises.stat(fullPath)
-      if (stat.isDirectory()) {
-        await scan(fullPath)
+      if (fs.statSync(fullPath).isDirectory()) {
+        scan(fullPath)
       } else if (file.endsWith('.tsx') || file.endsWith('.ts')) {
-        const content = await fs.promises.readFile(fullPath, 'utf8')
+        const content = fs.readFileSync(fullPath, 'utf8')
         const lines = content.split('\n').length
-
-        // Rule 1: Phase 12 Compliance (Upgrade Phase 9 references)
-        if (content.includes('Phase 9')) {
-          suggestions.push({
-            file: fullPath.replace(process.cwd(), ''),
-            complexity: lines,
-            suggestion: 'PHASE_UPGRADE_REQUIRED: Phase 9 reference detected. System has evolved to Phase 12.'
-          })
-        }
-
-        // Rule 2: Next.js 16 Caching - Detect lack of 'use cache' in large async components
+        
+        // Example Evolutionary Logic: Detect lack of 'use cache' in large async components
         if (lines > 50 && content.includes('async function') && !content.includes("'use cache'")) {
           suggestions.push({
             file: fullPath.replace(process.cwd(), ''),
@@ -57,7 +38,7 @@ export async function evolve() {
           })
         }
 
-        // Rule 3: Detect large files that should be refactored
+        // Rule 2: Detect large files that should be refactored
         if (lines > 150) {
           suggestions.push({
             file: fullPath.replace(process.cwd(), ''),
@@ -66,7 +47,7 @@ export async function evolve() {
           })
         }
 
-        // Rule 4: Detect Sync Access to Params (Next.js 16 Violation)
+        // Rule 3: Detect Sync Access to Params (Next.js 16 Violation)
         if (content.includes('params.') && !content.includes('await params') && !content.includes('resolve(params)')) {
           suggestions.push({
             file: fullPath.replace(process.cwd(), ''),
@@ -75,55 +56,28 @@ export async function evolve() {
           })
         }
 
-        // Rule 5: Security and Performance - Detect synchronous I/O and blocking calls
-        const syncCalls = ['execSync', 'execFileSync', 'fs.existsSync', 'fs.readFileSync', 'fs.writeFileSync']
-        for (const call of syncCalls) {
-          if (content.includes(call + '(')) {
-            suggestions.push({
-              file: fullPath.replace(process.cwd(), ''),
-              complexity: lines,
-              suggestion: `SECURITY_PERF_VULNERABILITY: Synchronous, blocking call ${call} detected. This degrades performance and scale. Replace with asynchronous/Promise-based equivalent.`
-            })
-          }
-        }
-
-        // Rule 6: Error Handling - Detect async functions without try-catch
-        // Skip Next.js page/layout components (often containing 'use cache') to avoid directive displacement
-        // Also skip very small helper functions (< 5 lines)
-        if (lines > 5 && content.includes('async ') && !content.includes('try {') && !content.includes("'use cache'")) {
+        // Rule 4: Security & Performance - Detect blocking execSync/execFileSync
+        if (content.includes('execSync(') || content.includes('execFileSync(')) {
           suggestions.push({
             file: fullPath.replace(process.cwd(), ''),
             complexity: lines,
-            suggestion: 'MISSING_ERROR_HANDLING: Async logic detected without explicit try-catch blocks.'
+            suggestion: 'SECURITY_PERF_VULNERABILITY: Blocking execSync/execFileSync detected. Risk of command injection and event loop blocking. Refactor to use non-blocking execAsync or execFileAsync via promisify.'
           })
         }
 
-        // Rule 7: Direct process.env access (Suggest getRuntimeEnv)
-        if (content.includes('process.env.') && !fullPath.includes('antigravity/core.ts') && !fullPath.includes('next.config')) {
+        // Rule 5: Async Hygiene - Detect sync fs in async contexts
+        if (content.includes('async function') && (content.includes('fs.readFileSync') || content.includes('fs.writeFileSync') || content.includes('fs.existsSync'))) {
           suggestions.push({
             file: fullPath.replace(process.cwd(), ''),
             complexity: lines,
-            suggestion: 'DIRECT_ENV_ACCESS: Use getRuntimeEnv for better cloud-native observability.'
+            suggestion: 'ASYNC_HYGIENE_VIOLATION: Synchronous fs operation detected inside an asynchronous function. This blocks the event loop. Refactor to use fs.promises.'
           })
-        }
-
-        // Rule 8: Environment - Detect non-dynamic Node.js imports in potentially shared files
-        if (content.includes("from 'os'") || content.includes("from 'fs'") || content.includes("from 'path'")) {
-          if (!content.includes('NEXT_RUNTIME')) {
-            suggestions.push({
-              file: fullPath.replace(process.cwd(), ''),
-              complexity: lines,
-              suggestion: 'UNSAFE_STATIC_IMPORT: Static import of Node.js built-ins. Prefer dynamic async imports for edge compatibility.'
-            })
-          }
         }
       }
     }
   }
 
-  for (const dir of scanDirs) {
-    await scan(dir)
-  }
+  scan(baseDir)
 
   console.log('✨ [Evolution Report]: Found', suggestions.length, 'potential optimizations.')
   return suggestions
@@ -138,13 +92,13 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
   
   for (const s of suggestions) {
     const fullPath = path.join(process.cwd(), s.file)
-    let content = await fs.promises.readFile(fullPath, 'utf8')
+    let content = fs.readFileSync(fullPath, 'utf8')
 
     if (s.suggestion.startsWith('MISSING_CACHE_DIRECTIVE')) {
       console.log(` - Fixing ${s.file}: Injecting 'use cache'`)
       // Inject 'use cache' at the top of the first async function found
       content = content.replace(/async function(.*?)\{/, "async function$1{\n  'use cache'")
-      await fs.promises.writeFile(fullPath, content)
+      fs.writeFileSync(fullPath, content)
     }
 
     if (s.suggestion.startsWith('SYNC_PROP_VIOLATION')) {
@@ -158,43 +112,7 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
       
       // Attempt to wrap params usages
       content = content.replace(/(\{.*?params.*?\}.*?)\.then/g, "resolve(params).then")
-      await fs.promises.writeFile(fullPath, content)
-    }
-
-    if (s.suggestion.startsWith('MISSING_ERROR_HANDLING')) {
-      const todoComment = '// [Evolution] TODO: Add autonomous error handling'
-      if (!content.includes(todoComment)) {
-        console.log(` - Fixing ${s.file}: Adding error handling TODO`)
-        // Inject a TODO comment at the start of the first async function found
-        content = content.replace(/async function(.*?)\{/, `async function$1{\n  ${todoComment}`)
-        await fs.promises.writeFile(fullPath, content)
-      }
-    }
-
-    if (s.suggestion.startsWith('PHASE_UPGRADE_REQUIRED')) {
-      console.log(` - Fixing ${s.file}: Upgrading Phase 9 to Phase 12`)
-      content = content.replace(/Phase 9/g, 'Phase 12')
-      await fs.promises.writeFile(fullPath, content)
-    }
-
-    if (s.suggestion.startsWith('SECURITY_PERF_VULNERABILITY')) {
-      console.log(` - Fixing ${s.file}: Adding async refactor TODO for synchronous call`)
-      // Inject a TODO near the first detected sync call
-      const syncCalls = ['execSync', 'execFileSync', 'fs.existsSync', 'fs.readFileSync', 'fs.writeFileSync']
-      const todoComment = '// [Evolution] TODO: Refactor to async'
-      let modified = false
-      for (const call of syncCalls) {
-        if (content.includes(call + '(') && !content.includes(`${todoComment} ${call}(`)) {
-          content = content.replace(new RegExp(`(\\b${call}\\()`, 'g'), `${todoComment} $1`)
-          modified = true
-        }
-      }
-      if (modified) await fs.promises.writeFile(fullPath, content)
-    }
-
-    if (s.suggestion.startsWith('MISSING_ERROR_HANDLING')) {
-      console.log(` - Fixing ${s.file}: Adding safety try-catch block (Skipped: Heuristic too fragile)`)
-      // [Jules] Disabled fragile heuristic that breaks class/multi-function files.
+      fs.writeFileSync(fullPath, content)
     }
     
     // Additional autocorrection logic can be added here

@@ -54,21 +54,25 @@ export class IntelephenseService {
     const headerMap = new Map<string, { header: string; content: string }>()
 
     for (const section of allSections) {
-      const existing = headerMap.get(section.header)
-      const isStructural = ['Getting Started', 'Features', 'Installation', 'Type System'].includes(section.header)
+      const trimmedHeader = section.header.trim()
+      const existing = headerMap.get(trimmedHeader)
+      const isStructural = ['Getting Started', 'Features', 'Installation', 'Type System', 'Visual Studio Code', 'Other Editors'].includes(trimmedHeader)
 
       if (!existing) {
         // Only keep sections with content, unless they are high-level structural headers
         if (section.content || isStructural) {
-          headerMap.set(section.header, { ...section })
+          headerMap.set(trimmedHeader, { header: trimmedHeader, content: section.content })
         }
       } else {
         // If header exists, merge content if the new content is different and not empty
         if (section.content && section.content !== existing.content) {
-          if (existing.content.includes(section.content)) {
-            // New content is already a subset, ignore
-          } else if (section.content.includes(existing.content)) {
-            // New content is more complete, replace
+          const cleanExisting = existing.content.replace(/\s+/g, ' ').trim()
+          const cleanNew = section.content.replace(/\s+/g, ' ').trim()
+
+          if (cleanExisting.includes(cleanNew)) {
+            // New content is already a subset (ignoring whitespace), ignore
+          } else if (cleanNew.includes(cleanExisting)) {
+            // New content is more complete (ignoring whitespace), replace
             existing.content = section.content
           } else {
             // Both have unique info, append
@@ -81,16 +85,35 @@ export class IntelephenseService {
     const uniqueSections = Array.from(headerMap.values())
     console.log(` 🧩 Total unique sections: ${uniqueSections.length}`)
 
-    const consolidatedKnowledge: Knowledge = {
+    const consolidatedKnowledge: any = {
       title: 'Intelephense Documentation',
       sections: uniqueSections,
-      metadata: {
-        source: 'https://intelephense.com/docs',
-        ingestedAt: new Date().toISOString()
+      source: 'https://intelephense.com/docs',
+      description: 'Consolidated Intelephense documentation from local and remote sources.',
+      topKeywords: ['intelephense', 'php', 'lsp', 'types', 'completion'],
+      recentPosts: [],
+      analyzedAt: new Date().toISOString()
+    }
+
+    // 4. Purge redundant entries from the store before persisting
+    const storageDir = path.join(process.cwd(), 'data/knowledge')
+    const jsonStore = path.join(storageDir, 'system_knowledge.json')
+
+    if (fs.existsSync(jsonStore)) {
+      console.log(' 🧹 Purging redundant Intelephense entries...')
+      const systemKnowledge = JSON.parse(fs.readFileSync(jsonStore, 'utf8'))
+      if (systemKnowledge.typescript_sections) {
+        systemKnowledge.typescript_sections = systemKnowledge.typescript_sections.filter((k: any) => {
+          // Purge ALL Intelephense variants and the local filename entry to avoid duplication
+          const isLegacyIntelephense = k.title.startsWith('Intelephense')
+          const isLocalFilename = k.title === 'intelephense_docs.md'
+          return !isLegacyIntelephense && !isLocalFilename
+        })
+        fs.writeFileSync(jsonStore, JSON.stringify(systemKnowledge, null, 2))
       }
     }
 
-    // 4. Persist consolidated knowledge
+    // 5. Persist consolidated knowledge
     const observer = new KnowledgeObserver()
     await observer.persistKnowledge(consolidatedKnowledge, 'Intelephense')
 

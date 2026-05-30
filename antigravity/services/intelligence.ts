@@ -15,7 +15,7 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   console.log('📊 [Intelligence] Generating consolidated system report...')
 
   const metadata = await getMissionMetadata()
-  const branches = branchIntelligence || await jules.scanAllBranches()
+  const branches = branchIntelligence || await jules.scanAllBranches(true)
   const health = await healthCheck()
   const workOrders = workOrderService.getPendingOrders()
 
@@ -37,12 +37,14 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `- **Total Branches:** ${branches.length}\n\n`
 
   report += `## 🌿 Branch Intelligence (Recent Activity)\n`
-  const recentBranches = branches
+  // Ensure branches is an array of objects
+  const branchArray = Array.isArray(branches) ? branches : []
+  const recentBranches = branchArray
     .sort((a, b) => new Date(b.lastSeen).getTime() - new Date(a.lastSeen).getTime())
     .slice(0, 10)
 
   recentBranches.forEach(b => {
-    report += `- **${b.name}**: ${b.lastMessage} (*${b.lastSeen}*)\n`
+    report += `- **${b.name}** [${b.category}]: ${b.lastMessage} (*${b.lastSeen}*)\n`
   })
   report += `\n`
 

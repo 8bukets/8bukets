@@ -35,7 +35,12 @@ class OnlinePresenceService {
    * Aggregates system-wide status for the current node.
    */
   public async getSystemPosture(): Promise<Presence> {
-    const docker = await checkDockerHealth()
+    const dockerHealthy = await checkDockerHealth()
+    const dockerStatus = await (await import('./docker')).getDockerStatus()
+    const docker = {
+      status: dockerHealthy ? 'optimal' : 'degraded',
+      containerCount: dockerStatus.length
+    }
     const gitProvider = await gitProviderService.getActiveProvider()
 
     // Check DB Latency/Status
