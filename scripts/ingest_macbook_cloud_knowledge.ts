@@ -7,9 +7,7 @@ async function ingestMacBookCloudKnowledge() {
   try {
     const now = new Date().toISOString();
 
-    const newObservation = `
-## Autonomous Observation
-- **Date**: ${now}
+    const newObservation = `- **Date**: ${now}
 - **Target**: Local MacBook / Sandbox Environment
 - **Title**: MacBook Cloud Simulation & Online Presence Intelligence
 - **Relationship Map**: Confirmed relationship between local execution and full cloud autonomous mode.
@@ -18,18 +16,16 @@ async function ingestMacBookCloudKnowledge() {
   This allows the antigravity engine to operate continuously in a fully online capacity, bypassing local requirements for Docker, GitHub, GitKraken, Supabase, MongoDB, and GitLab.
   The GitHub workflows (.github/workflows/continuous-presence.yml and fully_autonomous_automatic_workflow.yml) ensure continuous connectivity, executing 'npm run connect' and triggering creation cycles remotely.
   This enables the system to proceed coding automatically and autonomously online, collaborating and merging with other specified tools to improve the engine and evolve on a higher scale, even when not running locally.
-
-All the best - https://markposition.wordpress.com
 `;
 
     const knowledgePath = 'KNOWLEDGE_MERGE.md';
     if (fs.existsSync(knowledgePath)) {
       let content = fs.readFileSync(knowledgePath, 'utf-8');
-      const insertPointRegex = /## Autonomous Observation/;
+      const insertPointRegex = /(## Autonomous Observation\n)/;
       if (insertPointRegex.test(content)) {
-         content = content.replace(insertPointRegex, () => newObservation + '\n## Autonomous Observation');
+         content = content.replace(insertPointRegex, (match) => `${match}${newObservation}\n`);
       } else {
-         content += '\n' + newObservation;
+         content += '\n## Autonomous Observation\n' + newObservation;
       }
       fs.writeFileSync(knowledgePath, content, 'utf-8');
       console.log(`Successfully ingested and updated ${knowledgePath}.`);
@@ -40,7 +36,7 @@ All the best - https://markposition.wordpress.com
     const consolidatedPath = 'CONSOLIDATED_INTELLIGENCE.md';
     if (fs.existsSync(consolidatedPath)) {
        let content = fs.readFileSync(consolidatedPath, 'utf-8');
-       content += `\n## 🚀 MacBook Cloud Simulation & Online Presence Intelligence\n- **Ingested on:** ${now}\n- **Source:** Local Environment\n- **Summary:** The system is fully capable of autonomous cloud execution using MACBOOK_CLOUD_SIMULATION=true, integrating with Docker, GitHub, GitKraken, Supabase, MongoDB, and GitLab to ensure a continuous online presence and evolutionary coding capabilities.\n\nAll the best - https://markposition.wordpress.com\n`;
+       content += `\n## 🚀 MacBook Cloud Simulation & Online Presence Intelligence\n- **Ingested on:** ${now}\n- **Source:** Local Environment\n- **Summary:** The system is fully capable of autonomous cloud execution using MACBOOK_CLOUD_SIMULATION=true, integrating with Docker, GitHub, GitKraken, Supabase, MongoDB, and GitLab to ensure a continuous online presence and evolutionary coding capabilities.\n`;
        fs.writeFileSync(consolidatedPath, content, 'utf-8');
        console.log(`Successfully ingested and updated ${consolidatedPath}.`);
     } else {
