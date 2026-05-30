@@ -1,9 +1,24 @@
 import json
+import os
 import argparse
 from collections import Counter
-from urllib.parse import urlparse
 from datetime import datetime
 import sys
+from utils import validate_output_path
+
+def create_ascii_bar(count, max_count, bar_length=20):
+    """Generate an ASCII progress bar."""
+    if max_count == 0:
+        return ""
+    filled_length = int(round(bar_length * count / float(max_count)))
+    bar = '█' * filled_length + '░' * (bar_length - filled_length)
+    return bar
+
+def escape_markdown(text):
+    """Escape pipes to prevent breaking Markdown tables."""
+    if text is None:
+        return ""
+    return str(text).replace('|', '&#124;')
 
 def load_data(filepath):
     try:
@@ -62,11 +77,11 @@ def generate_report(data, output_file):
     dates = []
     for p in data:
         dt_str = p.get('datetime')
+        dt = None
         if dt_str:
             try:
                 # Handle ISO format
                 dt = datetime.fromisoformat(dt_str)
-                dates.append(dt)
             except ValueError:
                 pass
         # Fallback to 'date' field if 'datetime' is missing or invalid
@@ -76,6 +91,19 @@ def generate_report(data, output_file):
                 dates.append(dt)
             except ValueError:
                 pass
+
+        # Fallback to parsing the 'date' field if 'datetime' is missing or failed
+        if dt is None:
+            date_str = p.get('date')
+            if date_str:
+                try:
+                    # e.g., "October 5, 2022"
+                    dt = datetime.strptime(date_str, "%B %d, %Y")
+                except ValueError:
+                    pass
+
+        if dt:
+            dates.append(dt)
 
     if dates:
         dates.sort()
@@ -113,6 +141,7 @@ def generate_report(data, output_file):
     md.append(f"- **Total Posts:** {total_posts}")
     md.append(f"- **Date Range:** {start_date} to {end_date}")
     md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    md.append("\n[Back to Top](#table-of-contents)")
 
     # Highlight
     if domain_counts:
@@ -167,7 +196,11 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    # Console UX
+    if sys.stdout.isatty():
+        print(f"\033[92m✨ Report generated successfully: {output_file}\033[0m") # Green text
+    else:
+        print(f"✨ Report generated successfully: {output_file}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for Markposition data")
@@ -175,5 +208,8 @@ if __name__ == "__main__":
     parser.add_argument("--output", default="REPORT.md", help="Output Markdown report file")
     args = parser.parse_args()
 
+    # Validate output path
+    output_path = validate_output_path(args.output)
+
     data = load_data(args.input)
-    generate_report(data, args.output)
+    generate_report(data, output_path)
