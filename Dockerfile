@@ -26,6 +26,7 @@ FROM base AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
+ENV MACBOOK_CLOUD_SIMULATION=true
 
 # Install Git and CLIs in runner for autonomous operations
 RUN apk add --no-cache git github-cli glab

@@ -25,11 +25,10 @@
     "MCP_DOCKER_SECURITY": {
       "command": "docker",
       "args": [
-        "mcp",
-        "gateway",
         "run",
-        "--profile",
-        "antigravity-security"
+        "-i",
+        "--rm",
+        "docker.io/getanant/antigravity-security:latest"
       ],
       "type": "stdio"
     },

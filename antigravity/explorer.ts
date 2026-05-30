@@ -29,7 +29,7 @@ export async function explore() {
   }
 
   // 2. Environment Validation
-  const required = ['MONGODB_URI', 'NEXT_PUBLIC_SUPABASE_URL', 'NEXT_PUBLIC_SUPABASE_ANON_KEY']
+  const required = ['MONGODB_URI', 'SUPABASE_DATABASE_URL', 'NEXT_PUBLIC_SUPABASE_ANON_KEY']
   for (const key of required) {
     const val = process.env[key]
     results.environment[key] = val ? 'present' : 'MISSING'

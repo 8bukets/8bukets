@@ -63,9 +63,12 @@ Some details here.`
     await observer.persistKnowledge(knowledge)
 
     expect(fs.existsSync(path.join(testStorageDir, 'system_knowledge.json'))).toBe(true)
-    expect(fs.existsSync(path.join(process.cwd(), 'KNOWLEDGE_INTEGRATION.md'))).toBe(true)
+    expect(fs.existsSync(path.join(testStorageDir, 'ai_agents_knowledge.md'))).toBe(true)
 
-    const json = JSON.parse(fs.readFileSync(path.join(testStorageDir, 'system_knowledge.json'), 'utf8'))
-    expect(json.typescript_sections[0].title).toBe('Persist Test')
+    const systemKnowledge = JSON.parse(fs.readFileSync(path.join(testStorageDir, 'system_knowledge.json'), 'utf8'))
+    expect(systemKnowledge.typescript_sections[0].title).toBe('Persist Test')
   })
+
+
+
 })
