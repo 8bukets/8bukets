@@ -1,6 +1,6 @@
 [
     {
-        "id": "wo_zc6v6dlkx",
+        "id": "wo_dykbq99ap",
         "type": "BOOTSTRAP_SERVICE",
         "goal": "Bootstrap Test Autonomous Service",
         "payload": {
@@ -9,67 +9,59 @@
             "complexity": "Low"
         },
         "status": "completed",
-        "created_at": "2026-05-30T01:27:29.278Z",
-        "node_id": "macbook-primary-01",
-        "updated_at": "2026-05-30T01:27:29.283Z",
-        "completed_at": "2026-05-30T01:27:29.283Z",
+        "created_at": "2026-05-30T12:57:32.211Z",
+        "completed_at": "2026-05-30T12:57:32.214Z",
         "result": {
             "status": "success"
         }
     },
     {
-        "id": "wo_ptq6xjis4",
+        "id": "wo_p82mxy9bg",
         "type": "SMOKE_TEST",
         "goal": "Verify Test Autonomous Service integrity",
         "payload": {
             "serviceName": "test_autonomous"
         },
         "status": "completed",
-        "created_at": "2026-05-30T01:27:29.279Z",
-        "node_id": "macbook-primary-01",
+        "created_at": "2026-05-30T12:57:32.211Z",
         "dependsOn": [
-            "wo_zc6v6dlkx"
+            "wo_dykbq99ap"
         ],
-        "updated_at": "2026-05-30T01:27:29.286Z",
-        "completed_at": "2026-05-30T01:27:29.286Z",
+        "completed_at": "2026-05-30T12:57:32.215Z",
         "result": {
             "status": "passed"
         }
     },
     {
-        "id": "wo_abgfkmi09",
+        "id": "wo_08exnwn0y",
         "type": "DEPLOYMENT",
         "goal": "Deploy Test Autonomous Service to production",
         "payload": {
             "serviceName": "test_autonomous"
         },
         "status": "completed",
-        "created_at": "2026-05-30T01:27:29.279Z",
-        "node_id": "macbook-primary-01",
+        "created_at": "2026-05-30T12:57:32.212Z",
         "dependsOn": [
-            "wo_ptq6xjis4"
+            "wo_p82mxy9bg"
         ],
-        "updated_at": "2026-05-30T01:27:29.288Z",
-        "completed_at": "2026-05-30T01:27:29.288Z",
+        "completed_at": "2026-05-30T12:57:32.216Z",
         "result": {
             "status": "success"
         }
     },
     {
-        "id": "wo_n0ww4awco",
+        "id": "wo_6swmoshwq",
         "type": "SYSTEM_SYNC",
         "goal": "Synchronize Test Autonomous Service evolution to Git",
         "payload": {
             "feature": "Test Autonomous Service"
         },
         "status": "completed",
-        "created_at": "2026-05-30T01:27:29.280Z",
-        "node_id": "macbook-primary-01",
+        "created_at": "2026-05-30T12:57:32.212Z",
         "dependsOn": [
-            "wo_abgfkmi09"
+            "wo_08exnwn0y"
         ],
-        "updated_at": "2026-05-30T01:27:29.288Z",
-        "completed_at": "2026-05-30T01:27:29.288Z",
+        "completed_at": "2026-05-30T12:57:32.218Z",
         "result": {
             "status": "success"
         }
