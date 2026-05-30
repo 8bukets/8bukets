@@ -1,17 +1,18 @@
 import pytest
 import asyncio
 import os
-from agents.base_agent import Blackboard
 from agents.cloud_workflow_agent import CloudWorkflowAgent
+class Blackboard(dict):
+    pass
 
 @pytest.mark.asyncio
 async def test_cloud_workflow_agent():
     bb = Blackboard()
 
-    await bb.update("System", {"vcs_status": "CLEAN"})
-    await bb.update("System", {"git_visualization_metrics": {"kraken_compatibility_score": 0.9}})
-    await bb.update("System", {"gitlab_pipeline_metrics": {"pipeline_efficiency": "OPTIMIZED"}})
-    await bb.update("System", {"container_status": {"runtime_stability": "VERIFIED"}})
+    bb["vcs_status"] = {"status": "CLEAN"}
+    bb["git_visualization_metrics"] = {"kraken_compatibility_score": 0.9}
+    bb["gitlab_pipeline_metrics"] = {"pipeline_efficiency": "OPTIMIZED"}
+    bb["container_status"] = {"runtime_stability": "VERIFIED"}
 
     agent = CloudWorkflowAgent()
     result = await agent.run([], bb)
@@ -25,10 +26,10 @@ async def test_cloud_workflow_agent():
 async def test_cloud_workflow_agent_degraded():
     bb = Blackboard()
 
-    await bb.update("System", {"vcs_status": "UNKNOWN"})
-    await bb.update("System", {"git_visualization_metrics": {"kraken_compatibility_score": 0.5}})
-    await bb.update("System", {"gitlab_pipeline_metrics": {"pipeline_efficiency": "DEGRADED"}})
-    await bb.update("System", {"container_status": {"runtime_stability": "DEGRADED"}})
+    bb["vcs_status"] = {"status": "UNKNOWN"}
+    bb["git_visualization_metrics"] = {"kraken_compatibility_score": 0.5}
+    bb["gitlab_pipeline_metrics"] = {"pipeline_efficiency": "DEGRADED"}
+    bb["container_status"] = {"runtime_stability": "DEGRADED"}
 
     agent = CloudWorkflowAgent()
     result = await agent.run([], bb)
