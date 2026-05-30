@@ -64,8 +64,6 @@ class ChiefAIOfficerAgent(BaseAgent):
                     strategic_directives.append("ESTABLISH_ETHICS_FRAMEWORK")
                     strategic_directives.append("OPTIMIZE_ROI_TRACKING")
                     strategic_directives.append("ENABLE_PREDICTIVE_RESOURCE_ALLOCATION")
-                    strategic_directives.append("ESTABLISH_ETHICS_FRAMEWORK")
-                    strategic_directives.append("OPTIMIZE_ROI_TRACKING")
                 else:
                     self.logger.warning("CAIO [ALERT]: System maturity falls below Phase 12. Mandating immediate roadmap acceleration.")
                     strategic_directives.append("ACCELERATE_ROADMAP_UPGRADE")
@@ -124,6 +122,19 @@ class ChiefAIOfficerAgent(BaseAgent):
             strategy_status = "STABILIZATION_REQUIRED"
             strategic_directives.append("STABILIZE_SYSTEM_CORE")
             strategic_directives.append("REFACTOR_ASYNC_VIOLATIONS")
+
+        # Specific Directive Logic Implementation (v2.1)
+        if "ESTABLISH_ETHICS_FRAMEWORK" in strategic_directives:
+            ethics_path = os.path.join(os.getcwd(), 'data/governance/ethics_framework.json')
+            if not os.path.exists(ethics_path):
+                self.logger.info("CAIO [ETHICS]: Ethics framework missing. Mandating initialization.")
+                strategic_directives.append("INITIALIZE_ETHICS_DOCUMENTATION")
+
+        if "OPTIMIZE_ROI_TRACKING" in strategic_directives:
+            roi_metrics = resource_alloc.get("roi_efficiency", 1.0)
+            if roi_metrics < 0.8:
+                self.logger.warning(f"CAIO [ROI]: Low ROI efficiency detected ({roi_metrics}). Mandating cost optimization.")
+                strategic_directives.append("REDUCE_NON_CRITICAL_COMPUTE")
 
         if evolution_status == "UNSTABLE":
              self.logger.warning("CAIO [GOVERNANCE]: System evolution matrix reporting UNSTABLE state. Mandating immediate strategy review and core consolidation.")

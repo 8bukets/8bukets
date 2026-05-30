@@ -23,6 +23,14 @@ const CAIO_SECTIONS = [
   {
     "header": "CAIO vs. Other C-Suite Tech Roles",
     "content": "- **Chief Technology Officer (CTO):** Focuses on the company’s broad IT infrastructure, software architecture, and system reliability.\n- **Chief Data Officer (CDO):** Manages data governance, architecture, and data pipelines to make sure data is clean and organized.\n- **Chief AI Officer (CAIO):** Uses the foundations managed by the CTO and CDO to specifically drive business value and transform how work gets done."
+  },
+  {
+    "header": "Recommended Certifications (via Coursera)",
+    "content": "- **AI Leadership & Strategic Implementation Specialization (Starweaver):** Focuses on using Generative AI to drive executive decisions, enterprise strategy, and sustainable transformation. [Link](https://www.coursera.org/specializations/ai-leadership-and-strategic-implementation)\n- **AI for Executives & Strategy (AI CERTs):** Covers AI-driven business strategy, opportunity/risk evaluation, and organizational transformation. [Link](https://www.coursera.org/learn/ai-for-executives--strategy)\n- **Generative AI for Executives and Business Leaders (IBM):** Provides a foundation-level understanding of generative AI and how it creates business value. [Link](https://www.coursera.org/learn/generative-ai-for-executives-business-leaders-introduction)"
+  },
+  {
+    "header": "Market Trends & Job Insights (via LinkedIn)",
+    "content": "- **Rising Demand:** LinkedIn's 2024 Work Trends reports show that AI skills are among the fastest-growing competencies, with demand significantly outpacing supply.\n- **Beyond Engineering:** Companies are increasingly hiring for \"applied competence\"—marketers, strategists, and operations managers who can critically evaluate AI tools and oversee automated workflows.\n- **Strategic Literacy:** AI literacy is becoming \"table stakes\" for leadership roles, as organizations move from surface-level familiarity to deep integration of AI into business operations."
   }
 ]
 
