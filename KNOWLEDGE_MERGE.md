@@ -9,6 +9,15 @@
 - **Extracted Summary**:
   Tutorial: Create and run your first GitLab CI/CD pipeline Tier: Free, Premium, Ultimate Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab. If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline. Prerequisites Before you start, make sure you have: A project in GitLab that you would like to use CI/CD for. The Maintainer or Owner r...
 
+
+## Autonomous Observation
+- **Date**: 2026-05-29T18:32:28.000Z
+- **Target**: local://data/raw_agent_architecture.html
+- **Title**: Agent Framework Architecture Terminology
+- **Relationship Map**: Confirmed relationship between agent architecture concepts and overall system design.
+- **Extracted Summary**:
+  The provided text breaks down an agent framework into its core functional layers. The "Agent" layer represents the behavioral logic (deciding what to do and managing loop/iteration), while the "Harness" serves as the runtime environment executing commands and managing memory. The "Tooling layer" bridges deep integrations with terminals and file systems, acting as capability adapters. Crucially, "Context engineering" decides what to show the model, making the difference between an AI understanding a project versus being lost. Other key components include "Prompt orchestration" (system and task prompts), "Autonomy loop" (analyze, execute, observe, fix), "Retrieval system" (semantic search), "Diff engine" (safe repo editing), "Verification layer" (build/test checks to prevent hallucination), "Memory system", "Safety permissions", and "UX layer".
+
 ## Autonomous Observation
 - **Date**: 2026-05-30T03:08:28.904Z
 - **Task**: Daily Autonomous Session Analysis & System Engine Evolution
