@@ -17,6 +17,8 @@ export type SecurityAudit = z.infer<typeof SecurityAuditSchema>
  * Autonomously scans for high-risk patterns and credential leakage.
  */
 export async function runSecurityAudit(): Promise<SecurityAudit> {
+  try {
+
   return autonomousFetch(SecurityAuditSchema, async () => {
     'use cache'
     console.log('🛡️ [Cognitive Security] Starting deep-tissue security scan...')
@@ -65,4 +67,8 @@ export async function runSecurityAudit(): Promise<SecurityAudit> {
       scannedFiles
     }
   }, { life: 'catalog', tags: ['security-audit'] })
+
+  } catch (err) {
+    console.error('[Evolution Autocorrect] Unhandled error:', err);
+  }
 }

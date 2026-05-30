@@ -12,6 +12,8 @@ export const AutonomousNotificationServiceSchema = z.object({
 })
 
 export async function getAutonomousNotificationServiceData() {
+  try {
+
   'use cache'
   return autonomousFetch(AutonomousNotificationServiceSchema, async () => {
     return {
@@ -19,4 +21,8 @@ export async function getAutonomousNotificationServiceData() {
       lastRun: new Date().toISOString()
     }
   }, { life: 'minutes' })
+
+  } catch (err) {
+    console.error('[Evolution Autocorrect] Unhandled error:', err);
+  }
 }

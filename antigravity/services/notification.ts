@@ -18,6 +18,13 @@ const notifications: Notification[] = []
  * Handles system-wide alerts for cognitive events.
  */
 export async function sendNotification(payload: Omit<Notification, 'id' | 'timestamp'>) {
+
+
+
+
+
+
+
   const newNotification: Notification = {
     ...payload,
     id: Math.random().toString(36).substr(2, 9),
