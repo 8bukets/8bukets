@@ -1,4 +1,5 @@
 import json
+import os
 import argparse
 from collections import Counter
 from datetime import datetime
@@ -91,13 +92,26 @@ def generate_report(data, output_file):
     dates = []
     for p in data:
         dt_str = p.get('datetime')
+        dt = None
         if dt_str:
             try:
                 # Handle ISO format
                 dt = datetime.fromisoformat(dt_str)
-                dates.append(dt)
             except ValueError:
                 pass
+
+        # Fallback to parsing the 'date' field if 'datetime' is missing or failed
+        if dt is None:
+            date_str = p.get('date')
+            if date_str:
+                try:
+                    # e.g., "October 5, 2022"
+                    dt = datetime.strptime(date_str, "%B %d, %Y")
+                except ValueError:
+                    pass
+
+        if dt:
+            dates.append(dt)
 
     if dates:
         dates.sort()
@@ -240,5 +254,8 @@ if __name__ == "__main__":
     parser.add_argument("--output", default="REPORT.md", help="Output Markdown report file")
     args = parser.parse_args()
 
+    # Validate output path
+    output_path = validate_output_path(args.output)
+
     data = load_data(args.input)
-    generate_report(data, args.output)
+    generate_report(data, output_path)

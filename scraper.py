@@ -1,15 +1,18 @@
+import re
 import aiohttp
 import asyncio
 from bs4 import BeautifulSoup
+import re
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
-import re
 import argparse
 import logging
 import time
 import os
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
+from utils import validate_output_path
 
 # Configure logging
 logging.basicConfig(
@@ -56,9 +59,9 @@ class MarkPositionScraperAsync:
     URL_REGEX = re.compile(r'^https?://')
 
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
-        self.output_json = output_json
-        self.output_csv = output_csv
-        self.output_txt = output_txt
+        self.output_json = validate_output_path(output_json)
+        self.output_csv = validate_output_path(output_csv)
+        self.output_txt = validate_output_path(output_txt)
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
@@ -120,8 +123,19 @@ class MarkPositionScraperAsync:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+        # Use SoupStrainer to only parse article tags, significantly reducing overhead
+        strainer = SoupStrainer('article')
+        soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
         articles = soup.find_all('article', class_='post')
+        soup = BeautifulSoup(html, 'html.parser')
+
+        # Optimization: Narrow search scope to #content div if present to avoid traversing footer/sidebar
+        content = soup.find('div', id='content')
+        if content:
+            articles = content.find_all('article', class_='post')
+        else:
+            articles = soup.find_all('article', class_='post')
+
         page_posts = []
 
         if not articles:
@@ -132,19 +146,26 @@ class MarkPositionScraperAsync:
 
             # Title
             title_text = ""
-            title_tag = article.select_one('h1.entry-title a')
+            # Optimized: replace select_one with find
+            title_header = article.find('h1', class_='entry-title')
+            title_tag = title_header.find('a') if title_header else None
+
             if title_tag:
                 title_text = self.clean_text(title_tag.get_text())
                 post_data['title'] = title_text
 
             # Date
-            date_tag = article.select_one('time.entry-date')
+            # Optimized: replace select_one with find
+            date_tag = article.find('time', class_='entry-date')
             if date_tag:
                 post_data['date'] = self.clean_text(date_tag.get_text())
                 post_data['datetime'] = date_tag.get('datetime')
 
             # Author
-            author_tag = article.select_one('.author.vcard .fn')
+            # Optimized: replace select_one with find
+            author_container = article.find(class_='author')
+            author_tag = author_container.find(class_='fn') if author_container else None
+
             if author_tag:
                 post_data['author'] = self.clean_text(author_tag.get_text())
             else:
@@ -155,15 +176,16 @@ class MarkPositionScraperAsync:
 
             # External Link
             external_link = None
-            content_div = article.select_one('.entry-content')
+            # Optimized: replace select_one with find
+            content_div = article.find(class_='entry-content')
 
             if content_div:
-                link_tag = content_div.select_one('a')
+                link_tag = content_div.find('a')
                 if link_tag:
                     external_link = link_tag.get('href')
 
                 if not external_link:
-                    iframe_tag = content_div.select_one('iframe')
+                    iframe_tag = content_div.find('iframe')
                     if iframe_tag:
                         external_link = iframe_tag.get('src')
 
@@ -182,7 +204,6 @@ class MarkPositionScraperAsync:
         return page_posts
 
     async def scrape(self):
-        all_posts = []
         page_num = 1
         sem = asyncio.Semaphore(self.concurrency)
 
@@ -191,41 +212,43 @@ class MarkPositionScraperAsync:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
 
-        async with aiohttp.ClientSession(headers=headers) as session:
-            # We don't know the total pages, so we have to fetch sequentially or in chunks until we hit 404/empty.
-            # Pure concurrent fetching of all pages requires knowing the max page.
-            # Heuristic: fetch in batches of `concurrency`. If any page in batch returns 404 or empty, stop.
+        # Open files for incremental writing
+        with open(self.output_json, 'w', encoding='utf-8') as json_f, \
+             open(self.output_csv, 'w', newline='', encoding='utf-8') as csv_f, \
+             open(self.output_txt, 'w', encoding='utf-8') as txt_f:
 
-            # Actually, WordPress pages are sequential. If page N is 404, N+1 is likely 404 too.
-            # But fetching 100 pages 1-by-1 is slow.
-            # Let's try fetching chunks.
+            # Initialize CSV
+            csv_writer = csv.writer(csv_f)
+            csv_writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
 
-            active = True
-            while active:
-                tasks = []
-                # Prepare a batch of pages
-                batch_start = page_num
-                # If max_pages is set, clamp the batch size
-                current_concurrency = self.concurrency
+            # Initialize JSON
+            json_f.write('[')
+            first_json_item = True
 
-                for i in range(current_concurrency):
-                    current_page = batch_start + i
-                    if self.max_pages and current_page > self.max_pages:
-                        active = False
-                        break
+            # Initialize Unique Links tracking
+            seen_links = set()
 
-                    # We create a task that acquires semaphore (though sem is less useful if we just create batch size = concurrency)
-                    tasks.append(self.fetch_and_parse(session, current_page, sem))
+            try:
+                async with aiohttp.ClientSession(headers=headers) as session:
+                    active = True
+                    while active:
+                        tasks = []
+                        # Prepare a batch of pages
+                        batch_start = page_num
+                        # If max_pages is set, clamp the batch size
+                        current_concurrency = self.concurrency
 
-                if not tasks:
-                    break
+                        for i in range(current_concurrency):
+                            current_page = batch_start + i
+                            if self.max_pages and current_page > self.max_pages:
+                                active = False
+                                break
 
                 UXFormatter.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
                 results = await asyncio.gather(*tasks)
 
-                # Check results
-                batch_posts_count = 0
-                stop_detected = False
+                        if not tasks:
+                            break
 
                 # Results are ordered by page number
                 for idx, page_posts in enumerate(results):
@@ -243,18 +266,60 @@ class MarkPositionScraperAsync:
                         all_posts.extend(page_posts)
                         batch_posts_count += len(page_posts)
 
-                if stop_detected:
-                    break
+                        # Check results
+                        stop_detected = False
+                        total_batch_posts = 0
 
                 if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
                     UXFormatter.info("Reached max pages limit.")
                     break
 
-                page_num += len(tasks)
-                # Small delay between batches
-                await asyncio.sleep(0.5)
+                        if total_batch_posts > 0:
+                            logger.info(f"Saved {total_batch_posts} posts from batch.")
 
-        self.save_data(all_posts)
+                        if stop_detected:
+                            break
+
+                        if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
+                            logger.info("Reached max pages limit.")
+                            break
+
+                        page_num += len(tasks)
+                        # Small delay between batches
+                        await asyncio.sleep(0.5)
+            finally:
+                # Finalize JSON even on error
+                json_f.write('\n]')
+
+    def save_batch(self, posts: List[Dict], json_f, csv_writer, txt_f, seen_links: Set[str], is_first_item: bool) -> bool:
+        for post in posts:
+            # CSV
+            csv_writer.writerow([
+                post.get('title', ''),
+                post.get('date', ''),
+                post.get('author', ''),
+                ", ".join(post.get('categories', [])),
+                post.get('external_link', ''),
+                post.get('domain', ''),
+                post.get('post_url', '')
+            ])
+
+            # TXT
+            link = post.get('external_link')
+            if link and link not in seen_links:
+                seen_links.add(link)
+                txt_f.write(link + '\n')
+
+            # JSON
+            if not is_first_item:
+                json_f.write(',\n')
+            else:
+                json_f.write('\n')
+                is_first_item = False
+
+            json.dump(post, json_f, indent=4, ensure_ascii=False)
+
+        return is_first_item
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
