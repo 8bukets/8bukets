@@ -6,11 +6,11 @@ const KNOWLEDGE_PATH = path.join(process.cwd(), 'data/knowledge/system_knowledge
 const CAIO_SECTIONS = [
   {
     "header": "Chief AI Officer (CAIO) Role Description",
-    "content": "A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an organization’s entire artificial intelligence strategy. To explore real-world openings and licensure requirements, you can research available roles on platforms like LinkedIn Jobs or explore executive AI leadership certifications via Coursera. The role bridges the gap between advanced technical execution and bottom-line business outcomes."
+    "content": "A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an organization’s entire artificial intelligence strategy. To explore real-world openings and licensure requirements, you can research available roles on platforms like LinkedIn Jobs or explore executive AI leadership certifications via Coursera. The role bridges the gap between advanced technical execution and bottom-line business outcomes. Because “AI Officer” is an executive title, it does not require a government-issued professional license (like a lawyer or doctor). However, companies typically look for advanced degrees (Ph.D., Master's) or professional certifications in Data Science, Computer Science, or an MBA."
   },
   {
     "header": "Core Job Description",
-    "content": "A Chief AI Officer directs how a company develops, procures, and implements AI to boost productivity, enter new markets, and maintain a competitive edge. Because “AI Officer” is an executive title, it does not require a government-issued professional license (like a lawyer or doctor). However, companies typically look for advanced degrees (Ph.D., Master's) or professional certifications in Data Science, Computer Science, or an MBA."
+    "content": "A Chief AI Officer directs how a company develops, procures, and implements AI to boost productivity, enter new markets, and maintain a competitive edge."
   },
   {
     "header": "Key Responsibilities",
@@ -27,7 +27,7 @@ const CAIO_SECTIONS = [
 ]
 
 async function updateCaioSurgical() {
-  console.log('🧪 Starting refined surgical update of CAIO role knowledge...')
+  console.log('🧪 Starting grounded surgical update of CAIO role knowledge...')
 
   if (!fs.existsSync(KNOWLEDGE_PATH)) {
     console.error('❌ system_knowledge.json not found!')
@@ -45,7 +45,7 @@ async function updateCaioSurgical() {
       typescriptSections[i].metadata = {
         ...typescriptSections[i].metadata,
         updatedAt: new Date().toISOString(),
-        source: 'consolidated_intelligence_v2'
+        source: 'user_provided_research'
       }
       found = true
       break
@@ -66,7 +66,7 @@ async function updateCaioSurgical() {
 
   data.typescript_sections = typescriptSections
   fs.writeFileSync(KNOWLEDGE_PATH, JSON.stringify(data, null, 2))
-  console.log('✅ Refined surgical update complete.')
+  console.log('✅ Grounded surgical update complete.')
 }
 
 updateCaioSurgical()
