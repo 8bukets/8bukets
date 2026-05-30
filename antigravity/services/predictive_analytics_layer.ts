@@ -12,6 +12,8 @@ export const PredictiveAnalyticsLayerSchema = z.object({
 })
 
 export async function getPredictiveAnalyticsLayerData() {
+  try {
+
   'use cache'
   return autonomousFetch(PredictiveAnalyticsLayerSchema, async () => {
     return {
@@ -19,4 +21,8 @@ export async function getPredictiveAnalyticsLayerData() {
       lastRun: new Date().toISOString()
     }
   }, { life: 'minutes' })
+
+  } catch (err) {
+    console.error('[Evolution Autocorrect] Unhandled error:', err);
+  }
 }

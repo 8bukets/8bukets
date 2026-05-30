@@ -12,6 +12,8 @@ export const FeedbackAnalysisServiceSchema = z.object({
 })
 
 export async function getFeedbackAnalysisServiceData() {
+  try {
+
   'use cache'
   return autonomousFetch(FeedbackAnalysisServiceSchema, async () => {
     return {
@@ -19,4 +21,8 @@ export async function getFeedbackAnalysisServiceData() {
       lastRun: new Date().toISOString()
     }
   }, { life: 'minutes' })
+
+  } catch (err) {
+    console.error('[Evolution Autocorrect] Unhandled error:', err);
+  }
 }

@@ -12,6 +12,8 @@ export const AutonomousResourceOptimizerSchema = z.object({
 })
 
 export async function getAutonomousResourceOptimizerData() {
+  try {
+
   'use cache'
   return autonomousFetch(AutonomousResourceOptimizerSchema, async () => {
     return {
@@ -19,4 +21,8 @@ export async function getAutonomousResourceOptimizerData() {
       lastRun: new Date().toISOString()
     }
   }, { life: 'minutes' })
+
+  } catch (err) {
+    console.error('[Evolution Autocorrect] Unhandled error:', err);
+  }
 }

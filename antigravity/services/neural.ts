@@ -17,7 +17,8 @@ export type NeuralPulse = z.infer<typeof NeuralPulseSchema>
 export async function broadcastPulse() {
   // Use lightweight healthCheck instead of heavy getSystemInsights to break recursion
   const health = await healthCheck()
-  
+
+  // Use a minimal check instead of full getSystemInsights to avoid recursion
   const pulse: NeuralPulse = {
     origin: process.env.NODE_ENV || 'development',
     health: health.mongodb === 'healthy' ? 'optimal' : 'degraded',
