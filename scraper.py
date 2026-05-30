@@ -91,6 +91,15 @@ class MarkPositionScraperAsync:
         # Use pre-compiled regex
         return self.URL_REGEX.match(text.strip()) is not None
 
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text to prevent CSV injection (formula injection)."""
+        if not text:
+            return ""
+        # If the text starts with =, +, -, or @, prepend a single quote
+        if text.startswith(('=', '+', '-', '@')):
+            return "'" + text
+        return text
+
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
         categories = []
