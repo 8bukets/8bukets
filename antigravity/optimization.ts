@@ -1,4 +1,4 @@
-import { logAutonomousAction } from './core'
+import { getSystemInsights, logAutonomousAction } from './core'
 
 /**
  * ANTIGRAVITY SUPER-INTELLIGENCE ENGINE (Phase 12)
@@ -12,29 +12,15 @@ export interface PredictiveRefactor {
   impactScore: number
 }
 
-export interface SystemInsights {
-  circuitBreakers: {
-    mongodb: string
-    supabase: string
-  }
-  caching: {
-    registrySize: number
-    activeProfiles: { tag: string; profile: string }[]
-  }
-  logs: any[]
-  ideas: any[]
-  persistence: any
-  network: any
-  relay: any
-  uptime: number
-}
-
-export async function optimize(insights: SystemInsights): Promise<PredictiveRefactor[]> {
+export async function optimize(data?: { registrySize: number, ideasCount: number }): Promise<PredictiveRefactor[]> {
   console.log('🧠 [Super-Intelligence] Initiating infinite self-optimization scan...')
+
+  const registrySize = data?.registrySize ?? 0
+  const ideasCount = data?.ideasCount ?? 0
   const refactors: PredictiveRefactor[] = []
 
   // Vector 1: Performance Optimization (Cross-referencing Volatility and Caching)
-  if (insights.caching.registrySize > 10) {
+  if (registrySize > 10) {
     refactors.push({
       id: 'P-101',
       vector: 'performance',
@@ -44,7 +30,7 @@ export async function optimize(insights: SystemInsights): Promise<PredictiveRefa
   }
 
   // Vector 2: Architectural Purity
-  if (insights.ideas.length > 5) {
+  if (ideasCount > 5) {
     refactors.push({
       id: 'A-202',
       vector: 'architecture',
@@ -53,13 +39,16 @@ export async function optimize(insights: SystemInsights): Promise<PredictiveRefa
     })
   }
 
-  // Vector 3: Security Optimizations
-  if (insights.circuitBreakers && (insights.circuitBreakers.mongodb === 'open' || insights.circuitBreakers.supabase === 'open')) {
-     refactors.push({
-      id: 'S-301',
-      vector: 'security',
-      proposal: 'Implement strict rate limiting and automated isolation for open circuit breakers.',
-      impactScore: 0.95
+  // Vector 3: Technical Debt (Cognitive Signal)
+  const { evolve } = await import('./evolution')
+  const technicalDebt = await evolve()
+  const syncViolations = technicalDebt.filter(s => s.suggestion.includes('ASYNC_HYGIENE_VIOLATION'))
+  if (syncViolations.length > 0) {
+    refactors.push({
+      id: 'D-303',
+      vector: 'architecture',
+      proposal: `Refactor ${syncViolations.length} sync-over-async violations to maintain event-loop health.`,
+      impactScore: 0.85
     })
   }
 
