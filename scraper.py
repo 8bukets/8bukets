@@ -30,6 +30,7 @@ class WordpressScraperAsync:
         self.concurrency = concurrency
         self.session = None
         self.disallowed_paths = []
+        self.CLEAN_TEXT_REGEX = re.compile(r'\s+')
 
     def set_disallowed_paths(self, paths: List[str]):
         self.disallowed_paths = paths
@@ -89,7 +90,7 @@ class WordpressScraperAsync:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+        soup = BeautifulSoup(html, 'lxml')
         articles = soup.find_all('article', class_='post')
         page_posts = []
 
