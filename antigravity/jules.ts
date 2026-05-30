@@ -128,16 +128,41 @@ export class Jules {
     }
   }
 
+  public async gitPull() {
+    console.log('📥 [Jules] Pulling latest changes from remote...')
+    const { execFileSync } = await import('child_process')
+    try {
+      execFileSync('git', ['pull', '--rebase'], { stdio: 'inherit' })
+      this.recordTask('Git Pull: Synchronized with remote.')
+    } catch (err) {
+      console.warn('⚠️ [Jules] Git pull failed. Continuing with local state.')
+    }
+  }
+
   public async gitSync(message: string) {
     console.log('🔄 [Jules] Commencing autonomous Git synchronization...')
-    const { execSync } = await import('child_process')
+    const { execFileSync } = await import('child_process')
     try {
-      execSync('git add .', { stdio: 'inherit' })
-      execSync(`git commit -m "${message}"`, { stdio: 'inherit' })
-      console.log('✅ [Jules] Changes committed autonomously.')
-      this.recordTask(`Git Sync: Committed fixes to local repository.`)
+      const status = execFileSync('git', ['status', '--porcelain']).toString().trim()
+      if (status) {
+        execFileSync('git', ['add', '.'], { stdio: 'inherit' })
+        execFileSync('git', ['commit', '-m', message], { stdio: 'inherit' })
+        console.log('✅ [Jules] Changes committed autonomously.')
+        this.recordTask(`Git Sync: Committed fixes to local repository.`)
+      }
+
+      try {
+        execFileSync('git', ['push'], { stdio: 'inherit' })
+        console.log('🚀 [Jules] Changes pushed to remote.')
+        this.recordTask('Git Sync: Pushed changes to remote.')
+      } catch (pushErr) {
+        console.log('🔄 [Jules] Standard push failed, attempting with upstream set...')
+        execFileSync('git', ['push', '--set-upstream', 'origin', 'HEAD'], { stdio: 'inherit' })
+        console.log('🚀 [Jules] Changes pushed to remote with upstream set.')
+        this.recordTask('Git Sync: Pushed changes to remote (with upstream).')
+      }
     } catch (err) {
-      console.warn('⚠️ [Jules] Git sync skipped or failed (likely no changes to commit).')
+      console.warn('⚠️ [Jules] Git sync failed or nothing to push.')
     }
   }
 
@@ -180,6 +205,7 @@ export class Jules {
 
   public async executeWorkCycle() {
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
+    await this.gitPull()
     const { explore } = await import('./explorer')
     await explore()
     await this.selfRepair()
@@ -243,6 +269,9 @@ export class Jules {
 
     await this.syncCollaboration()
     await this.generateConsolidatedReport()
+
+    const { syncToICloud } = await import('./services/icloud')
+    await syncToICloud()
 
     await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
     this.memory.lastOptimization = new Date().toISOString()
