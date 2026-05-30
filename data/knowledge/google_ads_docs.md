@@ -4,10 +4,6 @@
 
 Source: [https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU](https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU)
 
-- Help Center TopicsStart advertisingCampaignsExplore featuresOptimize performanceAccount & billingFix issuesGoogle Partners
-- ...CampaignsDisplay campaignsSetup & management
-- Bidding
-- Understanding bidding basics
 # Understanding bidding basics
 
 Google Ads gives you several ways to bid for your ads, depending on what matters most to you and your business. Most advertisers focus on clicks, impressions, conversions, or views (for video ads).
@@ -59,7 +55,7 @@ To set a target CPV bid, you enter the average price you want to pay for a view 
 
 ## Deliver better results with automated bidding
 
-Source: [https://business.google.com/uk/ad-tools/bidding/?hl=en](https://business.google.com/uk/ad-tools/bidding/?hl=en)
+Source: [https://business.google.com/uk/ad-tools/bidding/](https://business.google.com/uk/ad-tools/bidding/)
 
 # Deliver better results with automated bidding
 
@@ -109,7 +105,7 @@ On average, advertisers that switch from a Target CPA to a Target ROAS bid strat
 
 ## Learn more about Smart Bidding
 
-Page number 1 / 2
+Page number 1 / 3
 
 ## Tools and campaigns that can help you meet your goals
 
@@ -158,7 +154,7 @@ The Experiments page in Google Ads can help you create, manage and optimise your
 
 ## Find answers andinspiration
 
-Source: [https://business.google.com/uk/resources/?hl=en](https://business.google.com/uk/resources/?hl=en)
+Source: [https://business.google.com/uk/resources/](https://business.google.com/uk/resources/)
 
 # Find answers andinspiration
 
@@ -548,9 +544,9 @@ Google Ads
 
 ---
 
-## https://developers.google.com/ad-manager?hl=en
+## https://developers.google.com/ad-manager
 
-Source: [https://developers.google.com/ad-manager?hl=en](https://developers.google.com/ad-manager?hl=en)
+Source: [https://developers.google.com/ad-manager](https://developers.google.com/ad-manager)
 
 - Home
 - Products
@@ -568,9 +564,9 @@ Source: [https://developers.google.com/ad-manager?hl=en](https://developers.goog
 
 ---
 
-## https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en
+## https://developers.google.com/ad-manager/dynamic-ad-insertion
 
-Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en](https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en)
+Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion)
 
 - Home
 - Products
@@ -596,9 +592,9 @@ To start using DAI, select one of the following integrations:
 
 ---
 
-## https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en
+## https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service
 
-Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en)
+Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service)
 
 - Home
 - Products
@@ -632,9 +628,9 @@ For detailed instructions on how to implement a client video player, using the D
 
 ---
 
-## https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en
+## https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving
 
-Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en)
+Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving)
 
 - Home
 - Products
@@ -695,7 +691,7 @@ For details on livestream and VOD, see the following workflows:
 
       Save and categorize content based on your preferences.
 
-Source: [https://developers.google.com/ad-manager/api/start?hl=en](https://developers.google.com/ad-manager/api/start?hl=en)
+Source: [https://developers.google.com/ad-manager/api/start](https://developers.google.com/ad-manager/api/start)
 
 Looking for a REST API? The Ad Manager API (Beta) is now available.
 
@@ -705,12 +701,6 @@ Looking for a REST API? The Ad Manager API (Beta) is now available.
 - SOAP API
 # Get started Stay organized with collections Save and categorize content based on your preferences.
 
-- On this page
-- Get access to an Ad Manager network
-- Create authentication credentials
-- Configure your Ad Manager network
-- Set up your client
-- Next steps
 ## Page Summary
 
 - The Google Ad Manager SOAP API allows building applications to manage inventory, create orders, and pull reports.
@@ -776,6 +766,8 @@ Download one of the Ad Manager client libraries. The libraries offer wrapper fun
 
 The following tabs provide quickstarts for coding in each of the languages for which there is a client library.
 
+### Java
+
 Here is a basic example that shows how to use the Java client library. For more detailed usage information, refer to the README file in the client library distribution.
 
 - Setup your credentials Run the following command in a shell: curl https://raw.githubusercontent.com/googleads/googleads-java-lib/main/examples/admanager_axis/src/main/resources/ads.properties -o ~/ads.properties Open the ~/ads.properties file and populate the following fields: [...] api.admanager.applicationName=INSERT_APPLICATION_NAME_HERE api.admanager.jsonKeyFilePath=INSERT_PATH_TO_JSON_KEY_FILE_HERE api.admanager.networkCode=INSERT_NETWORK_CODE_HERE [...]
@@ -789,6 +781,8 @@ Edit your pom.xml file and add the following to the dependencies tag. You can fi
 - Write some code and make a request! import com.google.api.ads.common.lib.auth.OfflineCredentials; import com.google.api.ads.common.lib.auth.OfflineCredentials.Api; import com.google.api.ads.admanager.axis.factory.AdManagerServices; import com.google.api.ads.admanager.axis.v202602.Network; import com.google.api.ads.admanager.axis.v202602.NetworkServiceInterface; import com.google.api.ads.admanager.lib.client.AdManagerSession; import com.google.api.client.auth.oauth2.Credential; public class App { public static void main(String[] args) throws Exception { Credential oAuth2Credential = new OfflineCredentials.Builder() .forApi(Api.AD_MANAGER) .fromFile() .build() .generateCredential(); // Construct an AdManagerSession. AdManagerSession session = new AdManagerSession.Builder() .fromFile() .withOAuth2Credential(oAuth2Credential) .build(); // Construct a Google Ad Manager service factory, which can only be used once per // thread, but should be reused as much as possible. AdManagerServices adManagerServices = new AdManagerServices(); // Retrieve the appropriate service NetworkServiceInterface networkService = adManagerServices.get(session, NetworkServiceInterface.class); // Make a request Network network = networkService.getCurrentNetwork(); System.out.printf("Current network has network code '%s' and display" + " name '%s'.%n", network.getNetworkCode(), network.getDisplayName()); } } View on GitHub
 Write some code and make a request!
 
+### Python
+
 Here is a basic example that shows how to use the Python client library. The Python Client Library supports Python v3.6+. For more detailed usage information, refer to the README file in the client library distribution.
 
 - Install the library and set up your credentials. Run the following commands in a shell: python3 -m pip install googleads curl https://raw.githubusercontent.com/googleads/googleads-python-lib/main/googleads.yaml \ -o ~/googleads.yaml
@@ -798,6 +792,8 @@ Run the following commands in a shell:
 Fill in the following fields:
 
 - Run some code and make a request. # Import the library. from googleads import ad_manager # Initialize a client object, by default uses the credentials in ~/googleads.yaml. client = ad_manager.AdManagerClient.LoadFromStorage() # Initialize a service. network_service = client.GetService('NetworkService', version='v202602') # Make a request. current_network = network_service.getCurrentNetwork() print("Current network has network code '%s' and display name '%s'." % (current_network['networkCode'], current_network['displayName'])) View on GitHub
+### PHP
+
 Here is a basic example that shows how to use the PHP client library.
 
 - Install the library and setup your credentials. Run the following commands in a shell to install the client library and download the adsapi_php.ini file to your home directory: composer require googleads/googleads-php-lib curl https://raw.githubusercontent.com/googleads/googleads-php-lib/main/examples/AdManager/adsapi_php.ini -o ~/adsapi_php.ini
@@ -807,6 +803,8 @@ Run the following commands in a shell to install the client library and download
 Fill in the following fields:
 
 - Run some code and make a request! This example code must be run from the command line, not a browser. The file containing this code must reside in the root of the project directory, where composer require was run. <?php require 'vendor/autoload.php'; use Google\AdsApi\AdManager\AdManagerSession; use Google\AdsApi\AdManager\AdManagerSessionBuilder; use Google\AdsApi\AdManager\v202602\ApiException; use Google\AdsApi\AdManager\v202602\ServiceFactory; use Google\AdsApi\Common\OAuth2TokenBuilder; // Generate a refreshable OAuth2 credential for authentication. $oAuth2Credential = (new OAuth2TokenBuilder()) ->fromFile() ->build(); // Construct an API session configured from a properties file and the OAuth2 // credentials above. $session = (new AdManagerSessionBuilder()) ->fromFile() ->withOAuth2Credential($oAuth2Credential) ->build(); // Get a service. $serviceFactory = new ServiceFactory(); $networkService = $serviceFactory->createNetworkService($session); // Make a request $network = $networkService->getCurrentNetwork(); printf( "Network with code %d and display name '%s' was found.\n", $network->getNetworkCode(), $network->getDisplayName() ); View on GitHub
+### .NET
+
 Here is a basic example that shows how to use the .NET client library
 
 - Create a new project Open Visual Studio and create a new project (Console Application).
@@ -828,6 +826,8 @@ Open App.config and edit the following keys:
 You can call the library as shown in the following C# code snippet
 
 If you don't want to set your credentials in your App.config, then refer to this wiki article for alternate ways of using the AdManagerUser class. For more detailed information about using the .NET Client Library, refer to the README . If you want to develop in .NET without the client library, please refer to the NoClientLibrary wiki article.
+
+### Ruby
 
 Here is a basic example that shows how to use the Ruby client library. The Ruby client library requires Ruby 2.1 or later.
 
@@ -853,7 +853,7 @@ If you need help, visit our Support page.
 
 ## Learn more, do more.
 
-Source: [https://admanager.google.com/home/resources/?hl=en](https://admanager.google.com/home/resources/?hl=en)
+Source: [https://admanager.google.com/home/resources/](https://admanager.google.com/home/resources/)
 
 # Learn more, do more.
 
@@ -1102,7 +1102,7 @@ Learn how global publishers are finding success using Ad Manager to power their 
 
       Save and categorize content based on your preferences.
 
-Source: [https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en](https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en)
+Source: [https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview](https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview)
 
 - Home
 - Documentation
@@ -1111,55 +1111,6 @@ Source: [https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/ove
 - Client libraries
 # ad-manager overview (0.50.0) Stay organized with collections Save and categorize content based on your preferences.
 
-- On this page
-- Key Reference Links
-- Getting Started
-- Use the Google Ad Manager API for JavaMavenGradleSBT
-- Maven
-- Gradle
-- SBT
-- Which version ID should I get started with?Understanding Version ID and Library VersionsManaging Library VersionsChoosing the Right Version ID
-- Understanding Version ID and Library Versions
-- Managing Library Versions
-- Choosing the Right Version ID
-- 0.50.0 (latest)
-- 0.47.0
-- 0.46.0
-- 0.44.0
-- 0.42.0
-- 0.41.0
-- 0.40.0
-- 0.39.0
-- 0.37.0
-- 0.35.0
-- 0.34.0
-- 0.33.0
-- 0.32.0
-- 0.31.0
-- 0.29.0
-- 0.27.0
-- 0.26.0
-- 0.23.0
-- 0.22.0
-- 0.21.0
-- 0.19.0
-- 0.18.0
-- 0.17.0
-- 0.16.0
-- 0.15.0
-- 0.14.0
-- 0.13.0
-- 0.12.0
-- 0.11.0
-- 0.10.0
-- 0.8.0
-- 0.7.0
-- 0.6.0
-- 0.5.0
-- 0.4.0
-- 0.3.0
-- 0.2.0
-- 0.1.0
 ## Key Reference Links
 
 Google Ad Manager API Description: The Ad Manager API enables an app to integrate with Google Ad Manager. You can read Ad Manager data and run reports using the API.

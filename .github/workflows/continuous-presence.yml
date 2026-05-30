@@ -2,7 +2,7 @@ name: Continuous Autonomous Cloud Presence
 
 on:
   schedule:
-    - cron: '*/4 * * * *' # Every 5 minutes for rapid persistent connection
+    - cron: '*/2 * * * *' # Every 5 minutes for rapid persistent connection
   workflow_dispatch: # Allows manual trigger
 
 permissions:
@@ -20,7 +20,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 20
           cache: 'npm'
 
       - name: Setup Python
@@ -48,6 +48,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN || secrets.GITHUB_ACTIONS_TOKEN }}
           MACBOOK_CLOUD_SIMULATION: true
         run: npm run connect
+
+      - name: Verify Presence Summary
+        run: |
+          echo "Verifying presence summary in autonomous_state.json..."
+          cat autonomous_state.json | grep presence_summary || echo "No presence summary"
 
       - name: Verify Cloud Simulation Enforcement
         run: |

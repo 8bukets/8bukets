@@ -456,7 +456,17 @@ export class Jules {
 
       const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
 
-      if (!isLeader && isCloud) {
+      if (isLeader) {
+        if (isCloud) {
+          const { cloudWorkflowAgent } = await import('./services/cloud_workflow')
+          await cloudWorkflowAgent.enforceCloudTakeover()
+        } else {
+          // Phase 19: Local leader recovery (MacBook turned back on)
+          // Prevents data regression by pulling latest state from cloud bridge.
+          const { edgeToCloudBridge } = await import('./services/edge_to_cloud_bridge')
+          await edgeToCloudBridge.recoverCloudToLocal()
+        }
+      } else if (!isLeader && isCloud) {
         console.log('📡 [Jules] Node is not leader. Standing by for cloud-relay duties...')
         // Even if not leader, we still do some maintenance
         await this.processPullRequests()
@@ -495,6 +505,17 @@ export class Jules {
       await syncCollaborationState(branches)
       await generateConsolidatedReport(branches)
 
+      // Phase 12/17: Unified Collaboration & Knowledge Integration
+      try {
+        console.log('🔗 [Jules] Orchestrating unified collaboration and knowledge integration...');
+        await execAsync('npx tsx scripts/ingest_knowledge_merge.ts');
+        await execAsync('npx tsx scripts/unified_collaboration.ts');
+        await execAsync('npx tsx scripts/automate_knowledge_integration.ts');
+        this.recordTask('Collaboration: Unified ecosystem sync and knowledge integration complete.');
+      } catch (e: any) {
+        console.warn('⚠️ [Jules] Unified orchestration sub-cycle failed:', e.message);
+      }
+
       // 3. Ideate (Creation Cycle via CreationEngine)
       const { creationEngine } = await import('./services/creation_engine')
       const creationResult = await creationEngine.runCycle()
@@ -528,6 +549,13 @@ export class Jules {
       await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
       this.memory.lastOptimization = new Date().toISOString()
       this.save()
+
+      // Phase 19: Sync back to cloud bridge if local leader
+      if (isLeader && !isCloud) {
+        const { edgeToCloudBridge } = await import('./services/edge_to_cloud_bridge')
+        await edgeToCloudBridge.syncLocalToCloud()
+      }
+
       console.log('🏆 [Jules] Autonomous Work Cycle Complete.')
     } catch (cycleError) {
       const { adaptiveRecovery } = await import('./services/adaptive_recovery');

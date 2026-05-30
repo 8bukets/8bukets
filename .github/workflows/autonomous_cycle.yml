@@ -41,6 +41,10 @@ jobs:
         pip install filelock aiohttp beautifulsoup4 requests pytest pytest-asyncio opentelemetry-api opentelemetry-sdk python-dotenv
         PYTHONPATH=. python3 -m pytest tests/ || true
 
+    - name: Run GoogleEdgeAgent Specific Tests
+      run: |
+        PYTHONPATH=. python3 -m pytest tests/test_google_edge.py -v
+
     - name: Run Autonomous Cycle
       env:
         SYSTEM_AUTH_TOKEN: ${{ secrets.SYSTEM_AUTH_TOKEN || 'default_dev_token' }}
@@ -50,7 +54,8 @@ jobs:
         MONGODB_URI: ${{ secrets.MONGODB_URI }}
         NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
         NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+        AUTONOMOUS_MODE: cloud
         MACBOOK_CLOUD_SIMULATION: true
       run: |
-        # Execute the autonomous system cycle in the cloud
+        # Executing full autonomous system via TypeScript unified cycle
         npm run daily

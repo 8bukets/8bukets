@@ -1,9 +1,24 @@
 import json
+import os
 import argparse
 from collections import Counter
-from urllib.parse import urlparse
 from datetime import datetime
 import sys
+from utils import validate_output_path
+
+def create_ascii_bar(count, max_count, bar_length=20):
+    """Generate an ASCII progress bar."""
+    if max_count == 0:
+        return ""
+    filled_length = int(round(bar_length * count / float(max_count)))
+    bar = '█' * filled_length + '░' * (bar_length - filled_length)
+    return bar
+
+def escape_markdown(text):
+    """Escape pipes to prevent breaking Markdown tables."""
+    if text is None:
+        return ""
+    return str(text).replace('|', '&#124;')
 
 def load_data(filepath):
     try:
@@ -34,6 +49,8 @@ def generate_report(data, output_file):
     # 1. Domain Analysis
     domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
     domain_counts = Counter(domains).most_common(10)
+    top_domain = domain_counts[0][0] if domain_counts else "N/A"
+    top_domain_count = domain_counts[0][1] if domain_counts else 0
 
     # 2. Category Analysis
     all_categories = []
@@ -51,9 +68,21 @@ def generate_report(data, output_file):
             try:
                 # Handle ISO format
                 dt = datetime.fromisoformat(dt_str)
-                dates.append(dt)
             except ValueError:
                 pass
+
+        # Fallback to parsing the 'date' field if 'datetime' is missing or failed
+        if dt is None:
+            date_str = p.get('date')
+            if date_str:
+                try:
+                    # e.g., "October 5, 2022"
+                    dt = datetime.strptime(date_str, "%B %d, %Y")
+                except ValueError:
+                    pass
+
+        if dt:
+            dates.append(dt)
 
     if dates:
         dates.sort()
@@ -148,12 +177,63 @@ def generate_report(data, output_file):
     max_category_count = category_counts[0][1] if category_counts else 0
     max_year_count = max((count for year, count in year_counts), default=0)
 
+    md.append("\n<a name='top-10-referenced-domains'></a>")
+    md.append("## 🌐 Top 10 Referenced Domains")
+    # Table of Contents
+    md.append("\n## Table of Contents")
+    md.append("- [📊 General Statistics](#general-statistics)")
+    md.append("- [🌐 Top 10 Referenced Domains](#top-10-referenced-domains)")
+    md.append("- [📂 Top 10 Categories](#top-10-categories)")
+    md.append("- [📅 Posts by Year](#posts-by-year)")
+    md.append("- [✍️ Authors](#authors)")
+
+    # General Statistics
+    md.append("\n## 📊 General Statistics")
+    md.append(f"- **Total Posts:** {total_posts}")
+    md.append(f"- **Date Range:** {start_date} to {end_date}")
+    md.append(f"- **Unique Domains Linked:** {len(set(domains))}")
+    if top_domain != "N/A":
+        md.append(f"\n> 💡 **Highlight:** The most referenced domain is **{top_domain}** with {top_domain_count} links.")
+    md.append("\n[Back to Top](#table-of-contents)")
+
+    # Domains
+    md.append("\n## 🌐 Top 10 Referenced Domains")
+    md.append("| Domain | Count |")
+    md.append("| :--- | :---: |")
+    for domain, count in domain_counts:
+        md.append(f"| {domain} | {count} |")
+    md.append("\n[Back to Top](#table-of-contents)")
+
+    md.append("\n<a name='top-10-categories'></a>")
+    md.append("## 📂 Top 10 Categories")
+    # Categories
+    md.append("\n## 📂 Top 10 Categories")
+    md.append("| Category | Count |")
+    md.append("| :--- | :---: |")
+    for cat, count in category_counts:
+        md.append(f"| {cat} | {count} |")
+    md.append("\n[Back to Top](#table-of-contents)")
+
+    md.append("\n<a name='posts-by-year'></a>")
+    md.append("## 📅 Posts by Year")
+    # Years
+    md.append("\n## 📅 Posts by Year")
+    md.append("| Year | Count |")
+    md.append("| :--- | :---: |")
+    for year, count in year_counts:
+        md.append(f"| {year} | {count} |")
+    md.append("\n[Back to Top](#table-of-contents)")
+
+    md.append("\n<a name='authors'></a>")
+    md.append("## ✍️ Authors")
+    for author, count in author_counts:
+        md.append(f"- {author}: {count} posts")
     md.append("\n## Top 10 Referenced Domains")
     md.append("| Domain | Count | Distribution |")
     md.append("| :--- | :---: | :--- |")
     for domain, count in domain_counts:
         bar = create_ascii_bar(count, max_domain_count)
-        md.append(f"| {domain} | {count} | {bar} |")
+        md.append(f"| {escape_markdown(domain)} | {count} | {bar} |")
 
     md.append("\n## Top 10 Categories")
     md.append("| Category | Count | Distribution |")
@@ -178,7 +258,11 @@ def generate_report(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
-    print(f"Report generated: {output_file}")
+    # Console UX
+    if sys.stdout.isatty():
+        print(f"\033[92m✨ Report generated successfully: {output_file}\033[0m") # Green text
+    else:
+        print(f"✨ Report generated successfully: {output_file}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate analytics report for WordPress blog data")
@@ -186,5 +270,8 @@ if __name__ == "__main__":
     parser.add_argument("--output", default="REPORT.md", help="Output Markdown report file")
     args = parser.parse_args()
 
+    # Validate output path
+    output_path = validate_output_path(args.output)
+
     data = load_data(args.input)
-    generate_report(data, args.output)
+    generate_report(data, output_path)
