@@ -5690,6 +5690,74 @@
           "content": "Intelephense aims to support all frameworks but does not implement framework specific solutions. Some frameworks are coded in a way that make it difficult to analyse. This may be because of lack of type declarations/annotations; heavy use of `__get`, `__set`, `__call`, `__callStatic` magic methods; or dynamic generation of class aliases at runtime.\nPackages can be found online that aim to workaround these issues by providing stubs of symbols to help static analysers like Intelephense understand the code.\n* Laravel - [barryvdh/laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper)"
         }
       ]
+    },
+    {
+      "title": "iCloud: evolution_directives.md",
+      "metadata": {
+        "source": "icloud://evolution_directives.md",
+        "analyzedAt": "2026-05-30T21:23:19.255Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": [
+        {
+          "header": "Directive 1: Type Purity",
+          "content": "All autonomous services must avoid the 'any' type to ensure structural integrity during self-mutation."
+        },
+        {
+          "header": "Directive 2: Zero-Latency Sync",
+          "content": "Global neural synchronization must achieve sub-50ms latency across edge nodes."
+        }
+      ]
+    },
+    {
+      "title": "Strategic Market Trends 2026",
+      "metadata": {},
+      "sections": [
+        {
+          "header": "AI Agent Proliferation",
+          "content": "In 2026, autonomous agents will constitute 40% of all enterprise software interactions."
+        },
+        {
+          "header": "Sovereign Cloud Networks",
+          "content": "Shift towards decentralized, sovereign cloud networks to ensure data integrity and agent autonomy."
+        }
+      ]
+    },
+    {
+      "title": "iCloud: evolution_directives.md",
+      "metadata": {
+        "source": "icloud://evolution_directives.md",
+        "analyzedAt": "2026-05-30T21:26:37.755Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": [
+        {
+          "header": "Directive 1: Type Purity",
+          "content": "All autonomous services must avoid the 'any' type to ensure structural integrity during self-mutation."
+        },
+        {
+          "header": "Directive 2: Zero-Latency Sync",
+          "content": "Global neural synchronization must achieve sub-50ms latency across edge nodes."
+        }
+      ]
+    },
+    {
+      "title": "Strategic Market Trends 2026",
+      "metadata": {
+        "source": "icloud://market_trends_2026.json",
+        "analyzedAt": "2026-05-30T21:26:38.020Z",
+        "description": "Extracted system knowledge from iCloud JSON"
+      },
+      "sections": [
+        {
+          "header": "AI Agent Proliferation",
+          "content": "In 2026, autonomous agents will constitute 40% of all enterprise software interactions."
+        },
+        {
+          "header": "Sovereign Cloud Networks",
+          "content": "Shift towards decentralized, sovereign cloud networks to ensure data integrity and agent autonomy."
+        }
+      ]
     }
   ],
   "nomad": {

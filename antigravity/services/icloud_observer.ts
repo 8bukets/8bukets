@@ -58,12 +58,13 @@ export class ICloudObserver {
              const data = JSON.parse(content)
              // Handle both structured and raw JSON
              knowledge = {
+               source: `icloud://${file}`,
                title: data.title || `iCloud: ${file}`,
-               sections: data.sections || [{ header: 'Content', content: JSON.stringify(data, null, 2) }],
-               metadata: {
-                 source: `icloud://${file}`,
-                 ingestedAt: new Date().toISOString()
-               }
+               description: data.description || 'Extracted system knowledge from iCloud JSON',
+               topKeywords: [],
+               recentPosts: [],
+               analyzedAt: new Date().toISOString(),
+               sections: data.sections || [{ header: 'Content', content: JSON.stringify(data, null, 2) }]
              }
           } else {
              knowledge = KnowledgeObserver.processContent(`iCloud: ${file}`, content, `icloud://${file}`)
