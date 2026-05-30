@@ -101,6 +101,10 @@ async function ingestAdsKnowledge() {
   // Use 2-space indentation for system_knowledge.json
   fs.writeFileSync(jsonPath, JSON.stringify(sysKnowledge, null, 2), 'utf8');
 
+  // Also write legacy schema
+  const legacyJsonPath = path.join(process.cwd(), 'data', 'knowledge', 'google_ads_docs.json');
+  fs.writeFileSync(legacyJsonPath, JSON.stringify(jsonResults, null, 2), 'utf8');
+
   console.log('Ingestion complete!');
 }
 
