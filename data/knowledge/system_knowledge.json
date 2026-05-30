@@ -6124,6 +6124,15 @@
           "content": "Agents are self-directed entities.\n\n"
         }
       ]
+    },
+    {
+      "title": "Web Insight",
+      "metadata": {
+        "source": "https://software-online-review.com",
+        "analyzedAt": "2026-05-30T01:23:00.196Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": []
     }
   ],
   "nomad": {
