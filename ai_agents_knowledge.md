@@ -557,7 +557,6 @@ Remote subagents are enabled by default. To disable them, set `enableAgents` to 
   }
 }
 ```
-
 ## Gemini CLI Subagents
 
 # Subagents
