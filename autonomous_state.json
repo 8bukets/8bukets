@@ -1050,9 +1050,9 @@
                 },
                 {
                     "type": "AI Agent",
-                    "name": "chief_ai_officer_agent",
+                    "name": "chief_ai_officer",
                     "status": "Active",
-                    "path": "agents/chief_ai_officer_agent.md"
+                    "path": "agents/chief_ai_officer.md"
                 },
                 {
                     "type": "AI Agent",
