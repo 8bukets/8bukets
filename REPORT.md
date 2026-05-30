@@ -48,13 +48,19 @@
 | News | 39 | ████████████████████ |
 | Announcement | 39 | ████████████████████ |
 
-## Posts by Year
+[Back to Top](#table-of-contents)
+
+<a name='posts-by-year'></a>
+## 📅 Posts by Year
 | Year | Count | Distribution |
 | :--- | :---: | :--- |
 | 2025 | 39 | ████████████████████ |
 
 [⬆️ Back to Top](#table-of-contents)
 
+[Back to Top](#table-of-contents)
+
+<a name='authors'></a>
 ## ✍️ Authors
 - Oracle: 39 posts
 

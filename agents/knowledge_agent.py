@@ -27,7 +27,7 @@ class KnowledgeAgent(BaseAgent):
         # Support both potential paths
         knowledge_files = ["data/knowledge/ai_agents_knowledge.json", "data/ai_agents_knowledge.json", "ai_agents_knowledge.json"]
         knowledge_data = {}
-        
+
         selected_file = None
         for kf in knowledge_files:
             if os.path.exists(kf):
@@ -49,7 +49,7 @@ class KnowledgeAgent(BaseAgent):
         try:
             with open(selected_file, "r", encoding="utf-8") as f:
                 knowledge = json.load(f)
-            
+
             # 1. Processing for HEAD branch (list format)
             if isinstance(knowledge, list):
                 knowledge_list = knowledge
@@ -73,7 +73,7 @@ class KnowledgeAgent(BaseAgent):
                 # This might be tricky if the schema changed significantly.
                 # Assuming the dict version is the one with keys like 'what-is-an-ai-agent'
                 pass
-            
+
             # Helper to extract bullet points
             def extract_bullet(text, marker):
                 if not text: return ""
