@@ -66,7 +66,10 @@ export class KnowledgeObserver {
 
     if (newInsights.sections) {
       newInsights.sections.forEach(s => {
-        mdContent += `## ${s.header}\n${s.content}\n\n`;
+        // Double check for junk content before writing to MD
+        if (s.content.length > 5 && !s.content.includes('{')) {
+          mdContent += `## ${s.header}\n${s.content}\n\n`;
+        }
       });
     }
 
@@ -78,8 +81,16 @@ export class KnowledgeObserver {
   public static processContent(title: string, raw: string, source: string): KnowledgeInsights {
     console.log(`🧠 [Knowledge Observer] Processing content from ${source}...`);
 
+    // Pre-filtering: Remove scripts, styles, and other non-content tags
+    const cleanRaw = raw
+      .replace(/<script\b[^>]*>([\s\S]*?)<\/script>/gim, '')
+      .replace(/<style\b[^>]*>([\s\S]*?)<\/style>/gim, '')
+      .replace(/<svg\b[^>]*>([\s\S]*?)<\/svg>/gim, '')
+      .replace(/<noscript\b[^>]*>([\s\S]*?)<\/noscript>/gim, '')
+      .replace(/<iframe\b[^>]*>([\s\S]*?)<\/iframe>/gim, '');
+
     const sections: KnowledgeSection[] = [];
-    const lines = raw.split('\n');
+    const lines = cleanRaw.split('\n');
     let currentSection: KnowledgeSection | null = null;
 
     let inCodeBlock = false;
@@ -88,17 +99,40 @@ export class KnowledgeObserver {
         inCodeBlock = !inCodeBlock;
       }
 
+      const trimmedLine = line.trim();
+
+      // Skip lines that look like minified CSS or JS remnants if not in code block
+      if (!inCodeBlock && (trimmedLine.includes('{') && trimmedLine.includes('}') && trimmedLine.length > 50)) {
+        return;
+      }
+
       const headerMatch = !inCodeBlock && (line.match(/^#+\s*(.*)/) || line.match(/^[A-Z][A-Za-z\s]{2,20}$/));
 
       if (headerMatch && !line.includes('<?php') && !line.startsWith('//') && !line.includes('#[')) {
         if (currentSection) sections.push(currentSection);
         currentSection = { header: headerMatch[1] || line.trim(), content: '' };
       } else if (currentSection) {
-        currentSection.content += (currentSection.content ? '\n' : '') + line;
+        // Only strip HTML tags if we're not in a code block and it looks like a real tag
+        // Simple heuristic: if it contains generic-like patterns, don't strip
+        let contentLine = line.trim();
+        if (!inCodeBlock) {
+           contentLine = contentLine.replace(/<(?!T[A-Z][a-zA-Z0-9]*|T[0-9]|T[,\s]|T>)[^>]*>/gm, '');
+        }
+
+        if (contentLine) {
+          currentSection.content += (currentSection.content ? '\n' : '') + contentLine;
+        }
       }
     });
 
     if (currentSection) sections.push(currentSection);
+
+    // Filter out sections that have too much junk or too little content
+    const filteredSections = sections.filter(s => {
+      const junkPatterns = [/{/, /}/, /@media/, /\.wp-/, /!important/];
+      const isJunk = junkPatterns.some(p => p.test(s.content)) && s.content.length > 100;
+      return s.content.length > 10 && !isJunk;
+    });
 
     // Naive keyword extraction based on frequency (excluding common stop words)
     const words = raw
@@ -129,7 +163,7 @@ export class KnowledgeObserver {
       topKeywords,
       recentPosts: [],
       analyzedAt: new Date().toISOString(),
-      sections
+      sections: filteredSections
     };
   }
 }

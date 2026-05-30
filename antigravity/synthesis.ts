@@ -199,6 +199,15 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
+  // Gap Analysis 21: Autonomous Performance Auditor
+  if (!files.some(f => f.includes('performance_auditor'))) {
+    ideas.push({
+      feature: 'Autonomous Performance Auditor',
+      rationale: 'Continuously monitors service execution times and proposes architectural optimizations to maintain Phase 12 latency targets.',
+      complexity: 'Low'
+    })
+  }
+
   // Force an idea for demonstration if none exist
   if (ideas.length === 0) {
     ideas.push({

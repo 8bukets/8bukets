@@ -39,6 +39,19 @@ export async function optimize(data?: { registrySize: number, ideasCount: number
     })
   }
 
+  // Vector 3: Technical Debt (Cognitive Signal)
+  const { evolve } = await import('./evolution')
+  const technicalDebt = await evolve()
+  const syncViolations = technicalDebt.filter(s => s.suggestion.includes('ASYNC_HYGIENE_VIOLATION'))
+  if (syncViolations.length > 0) {
+    refactors.push({
+      id: 'D-303',
+      vector: 'architecture',
+      proposal: `Refactor ${syncViolations.length} sync-over-async violations to maintain event-loop health.`,
+      impactScore: 0.85
+    })
+  }
+
   logAutonomousAction(`[SUPER-INTEL] Generated ${refactors.length} predictive refactors.`, 'cognitive')
   return refactors
 }
