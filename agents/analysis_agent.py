@@ -1,48 +1,39 @@
-from collections import Counter
-from typing import List, Dict, Any
-from .base_agent import BaseAgent
+from .base_agent import BaseAgent, Blackboard
+import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import analytics
+from agents.telemetry import telemetry_manager
 
 class AnalysisAgent(BaseAgent):
     def __init__(self):
-        super().__init__("Analysis Agent")
+        super().__init__("AnalysisAgent", provides=["analysis_stats"])
 
-    def run(self, data: List[Dict[str, Any]]) -> Dict[str, Any]:
-        if not data:
-            return {"error": "No data to analyze"}
+    async def run(self, data: list, blackboard: Blackboard) -> dict:
+        self.logger.info("Running Analysis...")
 
         total_posts = len(data)
+        domains = [d for p in data if (d := p.get('domain'))]
+        domain_counts = analytics.Counter(domains).most_common(10)
 
-        # Category Analysis
-        all_categories = []
-        for post in data:
-            all_categories.extend(post.get('categories', []))
-        category_counts = dict(Counter(all_categories).most_common(5))
+        categories = []
+        for p in data:
+            if p.get('categories'):
+                categories.extend(p.get('categories'))
+        category_counts = analytics.Counter(categories).most_common(10)
 
-        # Author Analysis
-        authors = [post.get('author') for post in data if post.get('author')]
-        author_counts = dict(Counter(authors).most_common(5))
+        # Telemetry for "Ad Ads Advertise"
+        ad_count = dict(category_counts).get("Ad Ads Advertise", 0)
+        telemetry_manager.record_event(self.name, "MARKET_DATA_ANALYSIS", {
+            "ad_category_density": ad_count / total_posts if total_posts > 0 else 0,
+            "total_ad_posts": ad_count
+        })
 
-        # Domain Analysis
-        domains = [post.get('domain') for post in data if post.get('domain')]
-        domain_counts = dict(Counter(domains).most_common(5))
-
-        return {
+        result = {
             "total_posts": total_posts,
-            "top_categories": category_counts,
-            "top_authors": author_counts,
-            "top_domains": domain_counts
+            "top_domains": dict(domain_counts),
+            "top_categories": dict(category_counts)
         }
 
-    def format_report(self, results: Dict[str, Any]) -> str:
-        lines = [f"## {self.name} Report"]
-        lines.append(f"**Total Posts Scanned:** {results.get('total_posts', 0)}")
-
-        lines.append("\n### Top Categories")
-        for cat, count in results.get('top_categories', {}).items():
-            lines.append(f"- {cat}: {count}")
-
-        lines.append("\n### Top Authors")
-        for author, count in results.get('top_authors', {}).items():
-            lines.append(f"- {author}: {count}")
-
-        return "\n".join(lines)
+        return {"analysis_stats": result}

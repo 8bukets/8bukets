@@ -1,8 +1,9 @@
-## 2026-01-27 - [Anchor Links with Emojis]
-**Learning:** Markdown headers with emojis (e.g., `## 📊 Title`) create unreliable anchor links across different renderers. Implicit slugs often strip emojis or handle them inconsistently.
-**Action:** Use explicit HTML anchors (e.g., `## <a id="title"></a>📊 Title`) in generated Markdown reports to guarantee functional navigation.
-# Palette's Journal
-
-## 2024-05-22 - [ASCII Visualizations]
-**Learning:** Text-based visualizations (ASCII bars) in Markdown reports significantly improve data scanability without requiring external image dependencies or complex rendering. Users can instantly see distributions (like the massive skew in categories) without parsing numbers.
-**Action:** Apply this pattern to other CLI-generated reports where data distribution is key.
+<<<<<<< palette-analytics-report-ux-1529011215089105936
+## 2026-01-27 - Markdown Reports as UI
+**Learning:** For CLI tools where the primary output is a Markdown report, users treat it as a read-only UI. Lacking navigation (TOC, anchors) makes data consumption difficult, similar to a webpage without a menu.
+**Action:** Always include a Table of Contents, explicit HTML anchors (for reliability with emojis), and "Back to Top" links in generated Markdown reports to simulate web navigation.
+=======
+## 2026-02-06 - ASCII Visualizations in CLI Reports
+**Learning:** Text-based reports (Markdown/CLI) are often hard to scan for trends. Adding simple ASCII bar charts (e.g., `█████░░░`) to tables significantly improves the ability to visualize distributions at a glance without needing external tools.
+**Action:** When generating text-based reports, always look for opportunities to add "Distribution" columns with ASCII visualizations for numerical data.
+>>>>>>> jules/scraper-markposition-17752547678215960211

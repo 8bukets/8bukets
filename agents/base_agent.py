@@ -1,25 +1,20 @@
+import logging
 from abc import ABC, abstractmethod
-from typing import Any, Dict, List
+from typing import Dict, List, Any
+
+class Blackboard(dict):
+    pass
 
 class BaseAgent(ABC):
-    def __init__(self, name: str):
+    def __init__(self, name: str, dependencies=None, provides=None):
         self.name = name
+        self.dependencies = dependencies or []
+        self.provides = provides or []
+        self.logger = logging.getLogger(name)
 
     @abstractmethod
-    def run(self, data: List[Dict[str, Any]]) -> Dict[str, Any]:
-        """
-        Process the data and return a dictionary of results.
-        :param data: The list of scraped posts.
-        :return: A dictionary containing the agent's findings/output.
-        """
+    def process(self, data: Any) -> Any:
         pass
 
-    def format_report(self, results: Dict[str, Any]) -> str:
-        """
-        Optional helper to format results into a markdown section.
-        """
-        report = [f"## {self.name} Report"]
-        for key, value in results.items():
-            report.append(f"### {key.replace('_', ' ').title()}")
-            report.append(str(value))
-        return "\n\n".join(report)
+    def log(self, message: str):
+        print(f"[{self.name}] {message}")
