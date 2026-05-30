@@ -1,42 +1,41 @@
-import { workOrderService } from '../antigravity/services/work_order'
-import { logAutonomousAction } from '../antigravity/core'
+import { workOrderService } from '../antigravity/services/work_order';
 
 /**
- * FULL AUTONOMOUS CREATION ORDER SCRIPT
- * Triggers the complete autonomous cycle: Synthesis -> Work Order -> Execution.
- * Ensures a clean state by clearing pending orders before ignition.
+ * AUTONOMOUS CREATION ORDER AND EXECUTION
+ *
+ * This script initializes the full autonomous lifecycle by:
+ * 1. Purging all existing pending work orders for a clean state.
+ * 2. Creating a root AUTONOMOUS_CREATION work order.
+ * 3. Executing all pending orders (including those generated mid-cycle).
  */
 
 async function main() {
-  console.log('🚀 [Antigravity] Starting Full Autonomous Creation Order...')
-  logAutonomousAction('🚀 [Antigravity] Starting Full Autonomous Creation Order...', 'info')
+  console.log('🚀 [Antigravity] Initializing Autonomous Creation Order...');
 
-  // Clear existing pending orders to ensure a clean run
-  console.log('🧹 [Antigravity] Clearing existing pending orders...')
-  await workOrderService.clearPendingOrders()
+  // Step 1: Clear existing pending orders
+  workOrderService.clearPendingOrders();
+  console.log('🧹 [Antigravity] Pending orders cleared.');
 
-  // Create the root autonomous creation order
-  console.log('📝 [Antigravity] Creating ignition order...')
-  const igniteOrder = await workOrderService.createOrder(
+  // Step 2: Create the root creation order
+  const rootOrder = workOrderService.createOrder(
     'AUTONOMOUS_CREATION',
     'Execute full autonomous creation cycle (Synthesis -> Bootstrap -> Smoke Test -> Deployment)',
     {
-      source: 'autonomous_creation_order',
+      source: 'autonomous_creation_script',
       timestamp: new Date().toISOString()
     }
-  )
+  );
 
-  console.log(`✅ [Antigravity] Created ignition order: ${igniteOrder.id}`)
-  console.log('⚡ [Antigravity] Executing pending orders...')
+  console.log(`📝 [Antigravity] Created root order: ${rootOrder.id}`);
 
-  // Execute the orders
-  await workOrderService.executePendingOrders()
+  // Step 3: Execute the cycle
+  console.log('⚡ [Antigravity] Beginning execution pulse...');
+  await workOrderService.executePendingOrders();
 
-  console.log('\n🏁 [Antigravity] Full autonomous ignition cycle finished.')
-  logAutonomousAction('🏁 [Antigravity] Full autonomous ignition cycle finished.', 'info')
+  console.log('✅ [Antigravity] Autonomous creation order sequence completed.');
 }
 
 main().catch(err => {
-  console.error('💥 [Antigravity] Ignition failed:', err)
-  process.exit(1)
-})
+  console.error('💥 [Antigravity] Autonomous creation failed:', err);
+  process.exit(1);
+});

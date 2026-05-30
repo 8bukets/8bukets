@@ -1,1177 +1,394 @@
-# Google Ads & Ad Manager Documentation
-
-## Understanding bidding basics
-
-Source: [https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU](https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU)
-
-# Understanding bidding basics
-
-Google Ads gives you several ways to bid for your ads, depending on what matters most to you and your business. Most advertisers focus on clicks, impressions, conversions, or views (for video ads).
-
-Now that you're advertising on Google Ads, you probably have a clear goal in mind for your ads. If you sell coffee, maybe you want to get more people to visit your shop. If you run a hiking club, maybe you're aiming to get more people to sign up for your newsletter. And so on.
-
-Knowing what you want your ads to do will help you decide how to bid.
-
-Google Ads runs an auction every single time it has an ad space available -- on a search result, or on a blog, news site, or some other page. Each auction decides which ads will show at that moment in that space. Your bid puts you in the auction.
-
-You can focus on different things when you bid: clicks, impressions, conversions, views, or engagements, depending on your campaign type. Which would you choose? Let's look at these more closely.
-
-## Focus on clicks (for Search and Display ads)
-
-If your main goal is to have people visit your website, then clicks are a good place to start. Using cost-per-click (CPC) bidding, you'll pay only when someone actually clicks on your ad and comes to your site.
-
-Example:
-
-If you run a hiking club in Vermont, you might want to bid a lot for direct-hit keywords like "Vermont hiking" and a different amount for broader keywords like "hiking maps."
-
-## Focus on impressions
-
-If your campaign is targeting just the Search Network and your main goal is to increase your brand visibility, consider using Target Impression Share. With this bidding strategy, Google Ads will automatically set your bids to help achieve your Impression Share goal. For example, if you choose an Impression Share target of 65% on the absolute top of the page, Google Ads will automatically set your bids to help show your ads on the absolute top of the page 65% of the total possible amount of times they could show.
-
-If your campaign is targeting just the Display Network, instead of paying by the click, you can pay by the number of times your ad is visibly shown. That's called cost-per-thousand viewable impressions (vCPM) bidding, since you pay for every 1,000 times your ad appears and is viewable. If you're mostly interested in getting your name or logo in front of lots of people, this is a smart option. Learn how ads are measured as viewable.
-
-Viewable CPM bidding, like CPC manual bidding, lets you set bids at the ad group level, or for individual placements.
-
-## Focus on conversions (for Search and Display ads)
-
-With this advanced bidding method, you tell Google Ads the amount you're willing to pay for a conversion, or cost per action (CPA). A conversion (sometimes called an acquisition) is a particular action you want to happen on your website. Often that's a sale, but it could be an email sign-up or some other action. You pay for each engaged view and click on Display ads, but Google Ads will automatically set your bids for you to try to get you as many conversions as possible at the cost per action you specified.
-
-To use CPA bidding you must have conversion tracking turned on, among other things, so CPA bidding is suited for intermediate and advanced Google Ads users.
-
-## Focus on views (for video ads only)
-
-If your main goal is to evaluate how engaged viewers are with your video content, where they choose to watch your videos, and when they drop off from watching your content, you'll use cost-per-view (CPV) bidding. With CPV bidding, you'll pay for video views and other video interactions, such as clicks on the calls-to-action overlay (CTAs), cards, and companion banners.
-
-To set a target CPV bid, you enter the average price you want to pay for a view while setting up your Video views campaign. Your bid is called your target CPV bid, or tCPV. This bid applies at the campaign level.
-
-### Related links
-
-- About Target CPA bidding
-- Determine a bid strategy based on your goals
-## Was this helpful?
-
-
----
-
-## Deliver better results with automated bidding
-
-Source: [https://business.google.com/uk/ad-tools/bidding/](https://business.google.com/uk/ad-tools/bidding/)
-
-# Deliver better results with automated bidding
-
-## Set the right bids with Smart Bidding
-
-## Reach your audience at the right moment
-
-## Increase conversions with billions of combinations of signals
-
-## Bid towards conversion values to maximise your ROI
-
-## Bid for online and in-store sales
-
-## Grow your business with Google Ads
-
-- Nespresso boosts direct-to-consumer revenue by leveraging AI-powered Search campaigns 25% increase in purchases
-### Nespresso boosts direct-to-consumer revenue by leveraging AI-powered Search campaigns
-
-25% increase in purchases
-
-- Paycor finds new growth paths among mid-market businesses using Google solutions 105% increase in revenue
-### Paycor finds new growth paths among mid-market businesses using Google solutions
-
-105% increase in revenue
-
-- loveholidays earns more profit using Smart Bidding compared to its own solution 57% more profit
-### loveholidays earns more profit using Smart Bidding compared to its own solution
-
-57% more profit
-
-## Partner with a Google Ads expert to set up your first campaign
-
-- We’ll get you up to speed on the latest platform updates
-- We’ll design a media plan that makes the most of your budget
-- We’ll help you launch your first campaign with hands-on guidance
-## Get started with Smart Bidding
-
-More than 80% of Google advertisers are using automated bidding.
-
-On average, advertisers that switch from a Target CPA to a Target ROAS bid strategy can see 14% more conversion value at a similar return on ad spend.
-
-More than 80% of Google advertisers are using automated bidding.
-
-On average, advertisers that switch from a Target CPA to a Target ROAS bid strategy can see 14% more conversion value at a similar return on ad spend.
-
-1 / 2
-
-## Learn more about Smart Bidding
-
-Page number 1 / 3
-
-## Tools and campaigns that can help you meet your goals
-
-- Conversions +14% Conversions +14% Conversion Measurement Prioritise privacy while measuring which ads drive customers to make purchases online or in-store, sign contracts and more. Learn more
-### Conversion Measurement
-
-Prioritise privacy while measuring which ads drive customers to make purchases online or in-store, sign contracts and more.
-
-- 2024 Graduation Cards Luxury Travelers Entertainment News 1.2x 1.2x 1.1x 2 campaigns 2024 Graduation Cards Luxury Travelers Entertainment News 1.2x 1.2x 1.1x 2 campaigns 2024 Graduation Cards Luxury Travelers Entertainment News 1.2x 1.2x 1.1x 2 campaigns 2024 Graduation Cards Luxury Travelers Entertainment News 1.2x 1.2x 1.1x 2 campaigns Insights Page Grow your business with insights and trends that are tailored to your business. Learn more
-### Insights Page
-
-Grow your business with insights and trends that are tailored to your business.
-
-- Experiment Experiment Experiments Page The Experiments page in Google Ads can help you create, manage and optimise your experiments in one place. Learn more
-### Experiments Page
-
-The Experiments page in Google Ads can help you create, manage and optimise your experiments in one place.
-
-## Frequently asked questions
-
-### What is bidding in Google Ads? add remove
-
-### What is the best bidding strategy for Google Ads? add remove
-
-- Manual bidding, which allows you to determine what you want to pay
-- Smart Bidding, which uses Google AI to optimise your bids at every auction based on your defined objective
-### How do I decide how much to bid on Google Ads? add remove
-
-- Your campaign type
-- How much your keywords cost
-- How successful your keywords are
-### What is the minimum bid for Google Ads? add remove
-
-### How can automated bidding help an advertiser improve campaign performance? add remove
-
-- Get as many clicks as possible within your budget
-- Get as many conversions as possible within your target CPA
-- Meet your ROAS target
-- Get the most conversions or conversion value for your budget
-### How does value based bidding work? add remove
-
-### How much should I spend on Google Ads? add remove
-
-
----
-
-## Find answers andinspiration
-
-Source: [https://business.google.com/uk/resources/](https://business.google.com/uk/resources/)
-
-# Find answers andinspiration
-
-## Filter by:
-
-### Product type
-
-- Google Ads
-- YouTube Ads
-### Campaign type
-
-- App
-- Display
-- Multiple campaigns
-- Performance Max
-- Search
-- Video/YouTube
-### Content type
-
-- Article
-- Success story
-### Industry
-
-- eCommerce
-- Food & beverage
-- Wholesale retail
-### Marketing level
-
-- Beginner
-- Expert
-- Intermediate
-### Marketing goal
-
-- App
-- Brand awareness
-- Generate leads
-- Increase website traffic
-- Multiple marketing goals
-- Offline sales
-- Online sales
-- Google Ads The Best Paid SEO Strategies for Businesses Article
-Google Ads
-
-## The Best Paid SEO Strategies for Businesses
-
-- YouTube Ads ABCDs of effective video ads Article
-YouTube Ads
-
-## ABCDs of effective video ads
-
-- Google Ads 10 tips for Google Ads budget management Article
-Google Ads
-
-## 10 tips for Google Ads budget management
-
-- Google Ads How can you write successful online ads with Google? Article
-Google Ads
-
-## How can you write successful online ads with Google?
-
-- Google Ads 5 ways to create better ad copy by utilising AI Article
-Google Ads
-
-## 5 ways to create better ad copy by utilising AI
-
-- Google Ads How to make your products stand out to shoppers on Google Ads Article
-Google Ads
-
-## How to make your products stand out to shoppers on Google Ads
-
-- Google Ads How assets can help you connect with valuable customers Article
-Google Ads
-
-## How assets can help you connect with valuable customers
-
-- Google Ads How to use the Keyword Planner tool effectively Article
-Google Ads
-
-## How to use the Keyword Planner tool effectively
-
-- Google Ads Reach a larger or new audience with Google Display Network (GDN) targeting Article
-Google Ads
-
-## Reach a larger or new audience with Google Display Network (GDN) targeting
-
-- Google Ads What are people searching for online? Article
-Google Ads
-
-## What are people searching for online?
-
-- Google Ads What is paid search? Article
-Google Ads
-
-## What is paid search?
-
-- Google Ads Billing and payments in Google Ads Article
-Google Ads
-
-## Billing and payments in Google Ads
-
-- Google Ads 5 things to consider when optimising your mobile landing page Article
-Google Ads
-
-## 5 things to consider when optimising your mobile landing page
-
-- Google Ads 10 Google Ads features that will grow your business Article
-Google Ads
-
-## 10 Google Ads features that will grow your business
-
-- Google Ads Understand intent to place ads more effectively Article
-Google Ads
-
-## Understand intent to place ads more effectively
-
-- Google Ads 4 Google Ads features to improve your keyword strategy Article
-Google Ads
-
-## 4 Google Ads features to improve your keyword strategy
-
-- Google Ads 4:42 Best Practices Guide: Reaching the right customers on Search Article
-Google Ads
-
-## Best Practices Guide: Reaching the right customers on Search
-
-- Google Ads Analytics in Google Ads Article
-Google Ads
-
-## Analytics in Google Ads
-
-- Google Ads 6:24 Best Practices Guide: Google AI for Video Advertising Article
-Google Ads
-
-## Best Practices Guide: Google AI for Video Advertising
-
-- Google Ads How to set up Google Ads: a checklist Article
-Google Ads
-
-## How to set up Google Ads: a checklist
-
-- YouTube Ads With help from TrueView for action, Nectar by Resident’s sales rise and shine Success story
-YouTube Ads
-
-## With help from TrueView for action, Nectar by Resident’s sales rise and shine
-
-- Google Ads How any business can grow online with Local Services Ads Article
-Google Ads
-
-## How any business can grow online with Local Services Ads
-
-- Google Ads How to set up conversion measurement on your website Article
-Google Ads
-
-## How to set up conversion measurement on your website
-
-- Google Ads Save time and drive efficiency with responsive display ads Article
-Google Ads
-
-## Save time and drive efficiency with responsive display ads
-
-- Google Ads 00:30 Currensea boosts customer acquisition 422%, with help of Google Search Success story
-Google Ads
-
-## Currensea boosts customer acquisition 422%, with help of Google Search
-
-- Google Ads How to unlock the value of your creative assets with Google Ads Article
-Google Ads
-
-## How to unlock the value of your creative assets with Google Ads
-
-- Google Ads 00:30 A strong brew: Bird & Blend sees 439% ROAS through Google Ads Success story
-Google Ads
-
-## A strong brew: Bird & Blend sees 439% ROAS through Google Ads
-
-- Google Ads 0:30 LØCI achieves 500% ROAS with Google Ads Success story
-Google Ads
-
-## LØCI achieves 500% ROAS with Google Ads
-
-- Google Ads Kinetica Sports’ full-funnel campaign hits 267% increase in ROAS, with help from Google Ads. Success story
-Google Ads
-
-## Kinetica Sports’ full-funnel campaign hits 267% increase in ROAS, with help from Google Ads.
-
-- How experimenting with their Google Ads Strategy helped Octopus Energy sign up over 2 million customers Success story
-## How experimenting with their Google Ads Strategy helped Octopus Energy sign up over 2 million customers
-
-- Google Ads Best Practices Guide: AI Essentials in Google Ads Article
-Google Ads
-
-## Best Practices Guide: AI Essentials in Google Ads
-
-- Google Ads A beginners’ guide to YouTube video ads: Drive action with video advertising Article
-Google Ads
-
-## A beginners’ guide to YouTube video ads: Drive action with video advertising
-
-- Google Ads Get better results across all Google Ads channels with Performance Max campaigns Article
-Google Ads
-
-## Get better results across all Google Ads channels with Performance Max campaigns
-
-- Google Ads Understanding demand: How search data can improve your marketing performance Article
-Google Ads
-
-## Understanding demand: How search data can improve your marketing performance
-
-- Google Ads 00:30 How fashion brand Never Fully Dressed achieved 890% ROAS through Google Ads Success story
-Google Ads
-
-## How fashion brand Never Fully Dressed achieved 890% ROAS through Google Ads
-
-- Google Ads A guide to keyword match types in Google Ads Article
-Google Ads
-
-## A guide to keyword match types in Google Ads
-
-- Google Ads 00:30 Lucy & Yak sees 233% increase in revenue through Google Ads Success story
-Google Ads
-
-## Lucy & Yak sees 233% increase in revenue through Google Ads
-
-- Google Ads The perfect fit: Farai London scales by 400% with Google Ads Success story
-Google Ads
-
-## The perfect fit: Farai London scales by 400% with Google Ads
-
-- Google Ads Build trust online: How the Google Guarantee works Article
-Google Ads
-
-## Build trust online: How the Google Guarantee works
-
-- Google Ads A guide to App campaigns on Google Ads Article
-Google Ads
-
-## A guide to App campaigns on Google Ads
-
-- How optimisation helped PensionBee triple their customer base Success story
-## How optimisation helped PensionBee triple their customer base
-
-- Google Ads 3 consumer shifts to influence your retail paid search strategy Article
-Google Ads
-
-## 3 consumer shifts to influence your retail paid search strategy
-
-- Google Ads Drive awareness and conversions: Cover the entire marketing funnel with Google Display Ads Article
-Google Ads
-
-## Drive awareness and conversions: Cover the entire marketing funnel with Google Display Ads
-
-- Google Ads What is Google Customer Match, and how can it help you reach valuable audiences online? Article
-Google Ads
-
-## What is Google Customer Match, and how can it help you reach valuable audiences online?
-
-- Google Ads Spark interest and inspire action: What are Demand Gen campaigns? Article
-Google Ads
-
-## Spark interest and inspire action: What are Demand Gen campaigns?
-
-- Google Ads Get more leads with less effort: a guide to lead form assets Article
-Google Ads
-
-## Get more leads with less effort: a guide to lead form assets
-
-- Google Ads How to tailor your ads to reach customers at every stage of their purchase journey Article
-Google Ads
-
-## How to tailor your ads to reach customers at every stage of their purchase journey
-
-- Google Ads How to save time and boost results with automated bidding Article
-Google Ads
-
-## How to save time and boost results with automated bidding
-
-- Google Ads How to improve your Google Ads Quality Score Article
-Google Ads
-
-## How to improve your Google Ads Quality Score
-
-- Google Ads From browsing to buying: 7 Search strategies to win new customers Article
-Google Ads
-
-## From browsing to buying: 7 Search strategies to win new customers
-
-- Google Ads How to increase website traffic and lead generation with Google Ads Article
-Google Ads
-
-## How to increase website traffic and lead generation with Google Ads
-
-- Google Ads How audience segments can help you find and reach the right customers at the right time Article
-Google Ads
-
-## How audience segments can help you find and reach the right customers at the right time
-
-- Google Ads Enhanced conversions: Measure ad performance while protecting people’s privacy Article
-Google Ads
-
-## Enhanced conversions: Measure ad performance while protecting people’s privacy
-
-- Google Ads Discover Mobile Advertising with Google Ads Article
-Google Ads
-
-## Discover Mobile Advertising with Google Ads
-
-- Google Ads Boost your business by advertising on Google Maps Article
-Google Ads
-
-## Boost your business by advertising on Google Maps
-
-- YouTube Ads Bellroy grows sales with shoppable Video action campaigns and value-based bidding Success story
-YouTube Ads
-
-## Bellroy grows sales with shoppable Video action campaigns and value-based bidding
-
-- Google Ads Navigating the B2B marketing funnel with Google Ads Article
-Google Ads
-
-## Navigating the B2B marketing funnel with Google Ads
-
-- YouTube Ads Majestic Heli Ski get nearly half of their new skiers from YouTube Success story
-YouTube Ads
-
-## Majestic Heli Ski get nearly half of their new skiers from YouTube
-
-- YouTube Ads BlendJet’s YouTube strategy led to 413% revenue growth Success story
-YouTube Ads
-
-## BlendJet’s YouTube strategy led to 413% revenue growth
-
-- YouTube Ads Adidas uses sequencing to move customers from awareness to consideration Success story
-YouTube Ads
-
-## Adidas uses sequencing to move customers from awareness to consideration
-
-- Google Ads Beyond the last click: Using attribution models to understand your Google Ads performance Article
-Google Ads
-
-## Beyond the last click: Using attribution models to understand your Google Ads performance
-
-- YouTube Ads Pringles masters tentpole marketing moments with TrueView for reach Success story
-YouTube Ads
-
-## Pringles masters tentpole marketing moments with TrueView for reach
-
-- YouTube Ads Measure your results Article
-YouTube Ads
-
-## Measure your results
-
-- YouTube Ads Xfinity Mobile turns data into dollars Success story
-YouTube Ads
-
-## Xfinity Mobile turns data into dollars
-
-- Google Ads Maximise your ROI: How to get started with value-based bidding on Google Ads Article
-Google Ads
-
-## Maximise your ROI: How to get started with value-based bidding on Google Ads
-
-- YouTube Ads Video action campaigns on YouTube Shorts helped Cider gain new customers at a 33% lower CPA Success story
-YouTube Ads
-
-## Video action campaigns on YouTube Shorts helped Cider gain new customers at a 33% lower CPA
-
-- Google Ads A foundation for success: How to structure your Google Ads account for growth on Search with AI Article
-Google Ads
-
-## A foundation for success: How to structure your Google Ads account for growth on Search with AI
-
-- Google Ads Paid search optimisation in the age of AI-powered marketing: How advertisers can stand out? Article
-Google Ads
-
-## Paid search optimisation in the age of AI-powered marketing: How advertisers can stand out?
-
-- Google Ads 5 ways to use Google AI for more effective advertising Article
-Google Ads
-
-## 5 ways to use Google AI for more effective advertising
-
-- Google Ads Simplifying multi-account management: Streamline your workflow with a Google Ads manager account Article
-Google Ads
-
-## Simplifying multi-account management: Streamline your workflow with a Google Ads manager account
-
-
----
-
-## https://developers.google.com/ad-manager
-
-Source: [https://developers.google.com/ad-manager](https://developers.google.com/ad-manager)
-
-- Home
-- Products
-- Ad Manager
-## A set of tools to manage your Google Ad Manager accounts and campaigns.
-
-### Ad Manager API (Beta)
-
-### Mobile Ads SDK
-
-### Dynamic Ad Insertion
-
-### Ad Manager SOAP API
-
-
----
-
-## https://developers.google.com/ad-manager/dynamic-ad-insertion
-
-Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion)
-
-- Home
-- Products
-- Dynamic Ad Insertion
-### Dynamic ad insertion (DAI)
-
-DAI lets you monetize your video content, taking away the complexity of the ad request and ad response process from the SDK. This approach reduces the likelihood of client-side errors and produces a TV-like experience without latency or buffering between content and ads.
-
-With DAI, you can target individual ads for livestreams and videos on demand programming, obtain multi-screen reach with broad device support, and take advantage of programmatic monetization across all devices with Ad Exchange for video. Regardless of the original format of your content, once it becomes digital, DAI lets you show targeted video ads within your content, based on the individual user viewing the content.
-
-DAI lets you perform these workflows through the Full service API and Pod serving API, along with supported SDK platforms.
-
-To start using DAI, select one of the following integrations:
-
-### Full service DAI
-
-### Pod serving DAI
-
-### Supported platforms
-
-### Get Support
-
-
----
-
-## https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service
-
-Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service)
-
-- Home
-- Products
-- Dynamic Ad Insertion
-- DAI Full Service API
-- APIs
-### Full service DAI
-
-### With the IMA DAI SDK
-
-- The web page or app loads the IMA DAI SDK through: an embedded script tag for HTML5 a native app for Android, Google Cast, iOS, tvOS, or Roku
-- an embedded script tag for HTML5
-- a native app for Android, Google Cast, iOS, tvOS, or Roku
-- The SDK requests either a VOD stream or live stream from Google Ad Manager 360.
-- Ad Manager 360 responds with the video stream that includes inserted ad breaks.
-- The SDK parses the response, determines the correct media type based on environment, and delivers the video stream (and companion ads if needed) to the web page or app.
-- The video player negotiates the playback details with the SDK and plays the content.
-- The video player listens for instream metadata and passes it to the SDK for processing.
-- The SDK fires impression pings and tracking events as needed.
-For detailed instructions on how to implement a client video player using the IMA DAI SDK, check out our SDK guides:
-
-### With the DAI API
-
-- The client's player app requests either a VOD stream or live stream from Google Ad Manager 360.
-- Ad Manager 360 responds with the video stream that includes inserted ad breaks.
-- The client's player app begins playback of the stream, and either requests ad metadata once (for VOD streams) OR begins regularly polling for ad metadata (for live streams).
-- The client's player app listens for instream metadata, parses it, and compares it to the values in the ad metadata to identify ad events.
-- The client's video player app fires ad impression pings and tracking events as needed.
-For detailed instructions on how to implement a client video player, using the DAI REST API, check out our API guides:
-
-
----
-
-## https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving
-
-Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving)
-
-- Home
-- Products
-- Dynamic Ad Insertion
-- DAI Pod Serving API
-- APIs
-### DAI Pod Serving
-
-Dynamic Ad Insertion (DAI) Pod Serving lets you request ad pods, from Google or third-party ad servers, for live and video-on-demand (VOD) streams. For more details, see Configure ad pods and break templates.
-
-- Pod serving redirect: lets you retrieve manifest segments to implement Server-Side Ad Insertion (SSAI). The segments are dynamic URLs, redirecting to either content or ad media files.
-- Pod serving manifest: lets you retrieve the complete manifest of the ad pods to implement Server-Side Ad Insertion (SSAI). For more details, see Server guided DAI.
-For VOD, Google Ad Manager returns the complete ad pod manifests.
-
-DAI Pod serving offers the following supported platforms:
-
-For details on livestream and VOD, see the following workflows:
-
-### Stitch ads into a livestream
-
-- To start a livestream session, make a stream registration request. Set ad tag parameters unique for the stream request to override the DAI ad tag's default values. For more details about ad targeting, see Supply targeting parameters to your stream.
-- Retrieve the unique user session ID from the stream registration response. For more details about using the session ID, see Locate a DAI session ID or debug key and Monitor and debug a specific stream session.
-- Make a manifest request to your video stitcher or manifest manipulator, passing the session ID. Repeat the request for manifest updates throughout playback.
-- For DASH manifests, make one period template request for the entire session.
-- For DASH manifests, cache the period template. For each ad break, retrieve the cached template and populate all macros with the ad break data. For more details about supported macros, see Populate the period template. Then, insert the result period into the final manifest.
-- Return the final manifest that contains content or ad media segments for client playback. Playback begins.
-- Regularly poll Google Ad Manager for updates of ad metadata using the polling frequency returned in the stream request. Store the ad metadata for looking up ad events.
-- During an ad break, the video player loads the media segments and follows Google Ad Manager redirects to the media files.
-- During an ad break, listen to the video player for timed metadata, containing ID3 tags. Extract the ad event ID from the ID3 tag to find the associated ad metadata.
-- Send media verification pings to Google Ad Manager.
-### Stitch ads into a VOD stream
-
-- Make a stream request to register a VOD stream session. Set ad tag parameters unique for the stream request to override the DAI ad tag's default values. For more details, see Supply targeting parameters to your stream.
-- Retrieve the session ID from the stream response. To inspect the stream session, see Locate a DAI session ID or debug key and Monitor and debug a specific stream session.
-- Make a manifest request to your video stitcher or manifest manipulator, passing the session ID.
-- Use the session ID to request all ad pods at once.
-- Retrieve complete manifests of all ad pods. To create the final manifest, stitch the ad pod manifests with the content stream.
-- Return the final manifest, containing both content and ad segments.
-- Request ad metadata for all ad events. Store the ad metadata for looking up ad events. Playback begins.
-- During an ad break, the video player loads the media segments and follows Google Ad Manager redirects to the media files.
-- During an ad break, listen for ad events containing ID3 tags. To find the ad event metadata, extract the ad event ID from the ID3 tag and match the ID with the ad metadata.
-- Send media verification pings to Google Ad Manager.
-
----
-
-## Get started
-
-
-
-
-
-
-
-
-      Stay organized with collections
-
-
-
-      Save and categorize content based on your preferences.
-
-Source: [https://developers.google.com/ad-manager/api/start](https://developers.google.com/ad-manager/api/start)
-
-Looking for a REST API? The Ad Manager API (Beta) is now available.
-
-- Home
-- Products
-- Ad Manager
-- SOAP API
-# Get started Stay organized with collections Save and categorize content based on your preferences.
-
-## Page Summary
-
-- The Google Ad Manager SOAP API allows building applications to manage inventory, create orders, and pull reports.
-The Google Ad Manager SOAP API allows building applications to manage inventory, create orders, and pull reports.
-
-- Client libraries are available for Java, .NET, Python, PHP, and Ruby to help get started with the API.
-Client libraries are available for Java, .NET, Python, PHP, and Ruby to help get started with the API.
-
-- To make your first API request, you need to get access to an Ad Manager network, create authentication credentials using OAuth 2.0, and configure API access in your network settings.
-To make your first API request, you need to get access to an Ad Manager network, create authentication credentials using OAuth 2.0, and configure API access in your network settings.
-
-- After setting up your Ad Manager network and authentication, download and configure one of the provided client libraries to write code and make requests to the API.
-After setting up your Ad Manager network and authentication, download and configure one of the provided client libraries to write code and make requests to the API.
-
-You can use the Google Ad Manager SOAP API to build apps that manage inventory, create orders, pull reports, and more.
-
-To help you get started, we offer client libraries for Java, .NET, Python, PHP, and Ruby.
-
-To make your first API request, follow these steps:
-
-## Get access to an Ad Manager network
-
-If you don't already have one, sign up for an Ad Manager account. You can also create a test network if you want to test the API in a separate environment. Note that you don't need an AdSense account for test purposes.
-
-Make a note of your network code. You can find this in the URL when you sign in to your network. For example, in the URL https://admanager.google.com/1234#home, 1234 is your network code.
-
-## Create authentication credentials
-
-You must authenticate all Ad Manager SOAP API requests using OAuth 2.0. The following steps cover the use case of accessing your own Ad Manager data. For more details and other options, see Authentication.
-
-- Open the Google API Console Credentials page
-Open the Google API Console Credentials page
-
-- From the project menu, choose Create project, enter a name for the project, and optionally, edit the provided Project ID. Click Create.
-From the project menu, choose Create project, enter a name for the project, and optionally, edit the provided Project ID. Click Create.
-
-- On the Credentials page, select Create credentials, then select Service account key.
-On the Credentials page, select Create credentials, then select Service account key.
-
-- Select New service account and select JSON as the key type.
-Select New service account and select JSON as the key type.
-
-- Click Create to download a file containing a private key.
-Click Create to download a file containing a private key.
-
-## Configure your Ad Manager network
-
-- Sign in to Google Ad Manager.
-Sign in to Google Ad Manager.
-
-- In the sidebar, click Admin > Global settings.
-In the sidebar, click Admin > Global settings.
-
-- Under General settings > Api access click the slider to Enabled.
-Under General settings > Api access click the slider to Enabled.
-
-- Click the Save button at the bottom of the page.
-Click the Save button at the bottom of the page.
-
-## Set up your client
-
-Download one of the Ad Manager client libraries. The libraries offer wrapper functions and features that make it easier and faster to develop apps.
-
-The following tabs provide quickstarts for coding in each of the languages for which there is a client library.
-
-### Java
-
-Here is a basic example that shows how to use the Java client library. For more detailed usage information, refer to the README file in the client library distribution.
-
-- Setup your credentials Run the following command in a shell: curl https://raw.githubusercontent.com/googleads/googleads-java-lib/main/examples/admanager_axis/src/main/resources/ads.properties -o ~/ads.properties Open the ~/ads.properties file and populate the following fields: [...] api.admanager.applicationName=INSERT_APPLICATION_NAME_HERE api.admanager.jsonKeyFilePath=INSERT_PATH_TO_JSON_KEY_FILE_HERE api.admanager.networkCode=INSERT_NETWORK_CODE_HERE [...]
-Run the following command in a shell:
-
-- Specify dependencies Edit your pom.xml file and add the following to the dependencies tag. You can find the latest version number on Github. <dependency> <groupId>com.google.api-ads</groupId> <artifactId>ads-lib</artifactId> <version>RELEASE</version> </dependency> <dependency> <groupId>com.google.api-ads</groupId> <artifactId>dfp-axis</artifactId> <version>RELEASE</version> </dependency>
-Specify dependencies
-
-Edit your pom.xml file and add the following to the dependencies tag. You can find the latest version number on Github.
-
-- Write some code and make a request! import com.google.api.ads.common.lib.auth.OfflineCredentials; import com.google.api.ads.common.lib.auth.OfflineCredentials.Api; import com.google.api.ads.admanager.axis.factory.AdManagerServices; import com.google.api.ads.admanager.axis.v202602.Network; import com.google.api.ads.admanager.axis.v202602.NetworkServiceInterface; import com.google.api.ads.admanager.lib.client.AdManagerSession; import com.google.api.client.auth.oauth2.Credential; public class App { public static void main(String[] args) throws Exception { Credential oAuth2Credential = new OfflineCredentials.Builder() .forApi(Api.AD_MANAGER) .fromFile() .build() .generateCredential(); // Construct an AdManagerSession. AdManagerSession session = new AdManagerSession.Builder() .fromFile() .withOAuth2Credential(oAuth2Credential) .build(); // Construct a Google Ad Manager service factory, which can only be used once per // thread, but should be reused as much as possible. AdManagerServices adManagerServices = new AdManagerServices(); // Retrieve the appropriate service NetworkServiceInterface networkService = adManagerServices.get(session, NetworkServiceInterface.class); // Make a request Network network = networkService.getCurrentNetwork(); System.out.printf("Current network has network code '%s' and display" + " name '%s'.%n", network.getNetworkCode(), network.getDisplayName()); } } View on GitHub
-Write some code and make a request!
-
-### Python
-
-Here is a basic example that shows how to use the Python client library. The Python Client Library supports Python v3.6+. For more detailed usage information, refer to the README file in the client library distribution.
-
-- Install the library and set up your credentials. Run the following commands in a shell: python3 -m pip install googleads curl https://raw.githubusercontent.com/googleads/googleads-python-lib/main/googleads.yaml \ -o ~/googleads.yaml
-Run the following commands in a shell:
-
-- Set up your ~/googleads.yaml file. Fill in the following fields: ad_manager: application_name: INSERT_APPLICATION_NAME_HERE network_code: INSERT_NETWORK_CODE_HERE path_to_private_key_file: INSERT_PATH_TO_FILE_HERE
-Fill in the following fields:
-
-- Run some code and make a request. # Import the library. from googleads import ad_manager # Initialize a client object, by default uses the credentials in ~/googleads.yaml. client = ad_manager.AdManagerClient.LoadFromStorage() # Initialize a service. network_service = client.GetService('NetworkService', version='v202602') # Make a request. current_network = network_service.getCurrentNetwork() print("Current network has network code '%s' and display name '%s'." % (current_network['networkCode'], current_network['displayName'])) View on GitHub
-### PHP
-
-Here is a basic example that shows how to use the PHP client library.
-
-- Install the library and setup your credentials. Run the following commands in a shell to install the client library and download the adsapi_php.ini file to your home directory: composer require googleads/googleads-php-lib curl https://raw.githubusercontent.com/googleads/googleads-php-lib/main/examples/AdManager/adsapi_php.ini -o ~/adsapi_php.ini
-Run the following commands in a shell to install the client library and download the adsapi_php.ini file to your home directory:
-
-- Setup your ~/adsapi_php.ini file. Fill in the following fields: [AD_MANAGER] networkCode = "INSERT_NETWORK_CODE_HERE" applicationName = "INSERT_APPLICATION_NAME_HERE" [OAUTH2] jsonKeyFilePath = "INSERT_ABSOLUTE_PATH_TO_OAUTH2_JSON_KEY_FILE_HERE" scopes = "https://www.googleapis.com/auth/dfp"
-Fill in the following fields:
-
-- Run some code and make a request! This example code must be run from the command line, not a browser. The file containing this code must reside in the root of the project directory, where composer require was run. <?php require 'vendor/autoload.php'; use Google\AdsApi\AdManager\AdManagerSession; use Google\AdsApi\AdManager\AdManagerSessionBuilder; use Google\AdsApi\AdManager\v202602\ApiException; use Google\AdsApi\AdManager\v202602\ServiceFactory; use Google\AdsApi\Common\OAuth2TokenBuilder; // Generate a refreshable OAuth2 credential for authentication. $oAuth2Credential = (new OAuth2TokenBuilder()) ->fromFile() ->build(); // Construct an API session configured from a properties file and the OAuth2 // credentials above. $session = (new AdManagerSessionBuilder()) ->fromFile() ->withOAuth2Credential($oAuth2Credential) ->build(); // Get a service. $serviceFactory = new ServiceFactory(); $networkService = $serviceFactory->createNetworkService($session); // Make a request $network = $networkService->getCurrentNetwork(); printf( "Network with code %d and display name '%s' was found.\n", $network->getNetworkCode(), $network->getDisplayName() ); View on GitHub
-### .NET
-
-Here is a basic example that shows how to use the .NET client library
-
-- Create a new project Open Visual Studio and create a new project (Console Application).
-Open Visual Studio and create a new project (Console Application).
-
-- Add required library references to your project Add a nuget dependency for Google.Dfp.
-Add a nuget dependency for Google.Dfp.
-
-- Setup your App.config Copy src\App.config to your project directory and add it to your project. If your application has its own App.config, then you can copy the following nodes into your App.config: configuration/AdManagerApi configuration/configSections/section[name="AdManagerApi"] configuration/system.net
-Copy src\App.config to your project directory and add it to your project. If your application has its own App.config, then you can copy the following nodes into your App.config:
-
-- configuration/AdManagerApi
-- configuration/configSections/section[name="AdManagerApi"]
-- configuration/system.net
-- Setup credentials Open App.config and edit the following keys: <add key="ApplicationName" value="INSERT_YOUR_APPLICATION_NAME_HERE" /> <add key="NetworkCode" value="INSERT_YOUR_NETWORK_CODE_HERE" /> <add key="OAuth2Mode" value="SERVICE_ACCOUNT" /> <add key="OAuth2SecretsJsonPath" value="INSERT_OAUTH2_SECRETS_JSON_FILE_PATH_HERE" />
-Open App.config and edit the following keys:
-
-- Make a call to the library You can call the library as shown in the following C# code snippet View on GitHub AdManagerUser user = new AdManagerUser(); using (InventoryService inventoryService = user.GetService<InventoryService>()) { // Create a statement to select ad units. int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT; StatementBuilder statementBuilder = new StatementBuilder().OrderBy("id ASC").Limit(pageSize); // Retrieve a small amount of ad units at a time, paging through until all // ad units have been retrieved. int totalResultSetSize = 0; do { AdUnitPage page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement()); // Print out some information for each ad unit. if (page.results != null) { totalResultSetSize = page.totalResultSetSize; int i = page.startIndex; foreach (AdUnit adUnit in page.results) { Console.WriteLine( "{0}) Ad unit with ID \"{1}\" and name \"{2}\" was found.", i++, adUnit.id, adUnit.name); } } statementBuilder.IncreaseOffsetBy(pageSize); } while (statementBuilder.GetOffset() < totalResultSetSize); Console.WriteLine("Number of results found: {0}", totalResultSetSize); }
-You can call the library as shown in the following C# code snippet
-
-If you don't want to set your credentials in your App.config, then refer to this wiki article for alternate ways of using the AdManagerUser class. For more detailed information about using the .NET Client Library, refer to the README . If you want to develop in .NET without the client library, please refer to the NoClientLibrary wiki article.
-
-### Ruby
-
-Here is a basic example that shows how to use the Ruby client library. The Ruby client library requires Ruby 2.1 or later.
-
-- Install the Ruby gem and get the configuration file. Run the following commands in a shell: gem install google-dfp-api curl https://raw.githubusercontent.com/googleads/google-api-ads-ruby/main/ad_manager_api/ad_manager_api.yml -o ~/ad_manager_api.yml If you encounter an error such as "cannot load such file -- mkmf (LoadError)" at any point while installing your gems, you may need to install additional Ruby development libraries such as ruby-dev, ruby-devel, xcode-select etc. for your particular environment.
-Run the following commands in a shell:
-
-- Setup your credentials Populate the required fields in the ~/ad_manager_api.yml file. If you don't already have an OAuth2 keyfile, you'll need to follow the steps to create your OAuth2 credentials. :authentication: :oauth2_keyfile: INSERT_PATH_TO_JSON_KEY_FILE_HERE :application_name: INSERT_APPLICATION_NAME_HERE :network_code: INSERT_NETWORK_CODE_HERE
-Populate the required fields in the ~/ad_manager_api.yml file. If you don't already have an OAuth2 keyfile, you'll need to follow the steps to create your OAuth2 credentials.
-
-- Write some code and make a request! # Import the library. require 'ad_manager_api' # Initialize an Ad Manager client instance (uses credentials in ~/ad_manager_api.yml by default). ad_manager = AdManagerApi::Api.new # Get a service instance. network_service = ad_manager.service(:NetworkService, :v202602) # Make a request. network = network_service.get_current_network() puts "The current network is %s (%d)." % [network[:display_name], network[:network_code]] View on GitHub
-More detailed steps for getting started can be found in the README file that is distributed with the Ruby client library. Also, check out our full example library for Ruby.
-
-## Next steps
-
-When you have a client library up and running, modify the examples provided to extend them for your needs.
-
-Browse the reference documentation to learn more about the API.
-
-If you need help, visit our Support page.
-
-
----
-
-## Learn more, do more.
-
-Source: [https://admanager.google.com/home/resources/](https://admanager.google.com/home/resources/)
-
-# Learn more, do more.
-
-Learn how global publishers are using publisher provided Identifiers to increase programmatic revenue in browsers that no longer support third-party cookies.
-
-Read Story
-
-Our monthly newsletter puts the latest success stories, insights, and product news right into your inbox.
-
-### Filter by:
-
-- Topic Ad Formats Advanced TV Brand Safety Core Ad Serving Data and Insights Dynamic Ad Insertion Ecosystem Mobile App Privacy Video Yield Management
-- Ad Formats
-- Advanced TV
-- Brand Safety
-- Core Ad Serving
-- Data and Insights
-- Dynamic Ad Insertion
-- Ecosystem
-- Mobile App
-- Privacy
-- Video
-- Yield Management
-- Type Feature Brief Guide Report White Paper
-- Feature Brief
-- Guide
-- Report
-- White Paper
-### No matching results
-
-- Guide Publisher best practices for live sporting events Read more
-### Publisher best practices for live sporting events
-
-- Read more
-- Feature Brief Powering direct transactions: Investing in your growth Read more
-### Powering direct transactions: Investing in your growth
-
-- Read more
-- Report Building the future of live monetization Read more
-### Building the future of live monetization
-
-- Read more
-- Report Increase your revenue in browsers with limited signals Read more
-### Increase your revenue in browsers with limited signals
-
-- Read more
-- Guide The publisher’s playbook for navigating today’s privacy environment Read more
-### The publisher’s playbook for navigating today’s privacy environment
-
-- Read more
-- Report For e-commerce, the time for digital ads is now Read more
-### For e-commerce, the time for digital ads is now
-
-- Read more
-- Guide How automation can help you manage and grow your business Read more
-### How automation can help you manage and grow your business
-
-- Read more
-- Report 2020 advanced TV inventory report Read more
-### 2020 advanced TV inventory report
-
-- Read more
-- Guide Building a Retail Media Business with Google Read more
-### Building a Retail Media Business with Google
-
-- Read more
-- Guide Protecting your ad-supported CTV experiences Read more
-### Protecting your ad-supported CTV experiences
-
-- Read more
-- Guide Getting started with Dynamic Ad Insertion Read more
-### Getting started with Dynamic Ad Insertion
-
-- Read more
-- White Paper The Next-Generation Telco Bundle Read more
-### The Next-Generation Telco Bundle
-
-- Read more
-- Feature Brief Maximize your revenue with Opportunities and Experiments Read more
-### Maximize your revenue with Opportunities and Experiments
-
-- Read more
-- Feature Brief Get customized insights with Ad Manager reporting Read more
-### Get customized insights with Ad Manager reporting
-
-- Read more
-- Feature Brief How Authorized Buyers work with Google Ad Manager Read more
-### How Authorized Buyers work with Google Ad Manager
-
-- Read more
-- Feature Brief Use machine learning to manage and forecast inventory more effectively Read more
-### Use machine learning to manage and forecast inventory more effectively
-
-- Read more
-- Feature Brief Capture growing video budgets with out-stream video ads Read more
-### Capture growing video budgets with out-stream video ads
-
-- Read more
-- Feature Brief Streamlined and improved workflows for video content ingestion Read more
-### Streamlined and improved workflows for video content ingestion
-
-- Read more
-- Guide Reimagining the commercial break everywhere viewers are watching Read more
-### Reimagining the commercial break everywhere viewers are watching
-
-- Read more
-- Report 2019 Advanced TV Inventory Report Read more
-### 2019 Advanced TV Inventory Report
-
-- Read more
-- Report APAC’s changing digital landscape: How broadcast and video companies can keep up Read more
-### APAC’s changing digital landscape: How broadcast and video companies can keep up
-
-- Read more
-- Feature Brief Save time and increase inventory value with Open Measurement for apps Read more
-### Save time and increase inventory value with Open Measurement for apps
-
-- Read more
-- Feature Brief Modernize your direct deals with Programmatic Guaranteed Read more
-### Modernize your direct deals with Programmatic Guaranteed
-
-- Read more
-- Feature Brief Seamlessly reach viewers everywhere with Dynamic Ad Insertion Read more
-### Seamlessly reach viewers everywhere with Dynamic Ad Insertion
-
-- Read more
-- Feature Brief Earn more from your video content with Smarter Ad Breaks Read more
-### Earn more from your video content with Smarter Ad Breaks
-
-- Read more
-- Feature Brief Monitor and manage ad exchange ads in the Ad review center Read more
-### Monitor and manage ad exchange ads in the Ad review center
-
-- Read more
-- Feature Brief Get comprehensive yield management with Google Ad Manager Read more
-### Get comprehensive yield management with Google Ad Manager
-
-- Read more
-- Feature Brief Improve app revenue and fill rates with App Mediation Read more
-### Improve app revenue and fill rates with App Mediation
-
-- Read more
-- Feature Brief Create a customized ad experience with Native Ads Read more
-### Create a customized ad experience with Native Ads
-
-- Read more
-- Feature Brief Improving user experience with the Better Ads Standards Read more
-### Improving user experience with the Better Ads Standards
-
-- Read more
-- Feature Brief Bring more bids to the auction with Open Bidding Read more
-### Bring more bids to the auction with Open Bidding
-
-- Read more
-- Feature Brief Create a better ad experience with rewarded ads Read more
-### Create a better ad experience with rewarded ads
-
-- Read more
-- Guide Video viewability best practices guide for publishers Read more
-### Video viewability best practices guide for publishers
-
-- Read more
-- Report Grow faster with a Google Certified Publishing Partner Read more
-### Grow faster with a Google Certified Publishing Partner
-
-- Read more
-- Guide Rethink your eCommerce experience with Google Ad Manager Read more
-### Rethink your eCommerce experience with Google Ad Manager
-
-- Read more
-- Report The convergence of TV and digital: How broadcasters are building for success Read more
-### The convergence of TV and digital: How broadcasters are building for success
-
-- Read more
-- Guide Taking a Page from the Sports Playbook: Engaging Fans in the Digital Age Read more
-### Taking a Page from the Sports Playbook: Engaging Fans in the Digital Age
-
-- Read more
-- Guide Digital Trade Marketing: Delighting Shoppers in the Age of Digital Read more
-### Digital Trade Marketing: Delighting Shoppers in the Age of Digital
-
-- Read more
-- Report Publishers save 57% more time with Programmatic Guaranteed deals Read more
-### Publishers save 57% more time with Programmatic Guaranteed deals
-
-- Read more
-- Report Capture growing video budgets with new out-stream formats on Google Ad Manager Read more
-### Capture growing video budgets with new out-stream formats on Google Ad Manager
-
-- Read more
-- Report Building for beyond with the Insights Engine Project Read more
-### Building for beyond with the Insights Engine Project
-
-- Read more
-- Report Digitizing supplier marketing: Increasing sales of products and services Read more
-### Digitizing supplier marketing: Increasing sales of products and services
-
-- Read more
-- Report Improving protections for publishers Read more
-### Improving protections for publishers
-
-- Read more
-- Report TV made smarter with Google Ad Manager Read more
-### TV made smarter with Google Ad Manager
-
-- Read more
-- Report What’s next for the mobile web? Read more
-### What’s next for the mobile web?
-
-- Read more
-- Report Programmatic Guaranteed with custom creatives delivers scale for Vox Media Read more
-### Programmatic Guaranteed with custom creatives delivers scale for Vox Media
-
-- Read more
-- Guide Creating better ad experiences for everyone Read more
-### Creating better ad experiences for everyone
-
-- Read more
-- Guide How publishers can engage with people who use ad blockers Read more
-### How publishers can engage with people who use ad blockers
-
-- Read more
-- Report Programmatic TV’s European Evolution Read more
-### Programmatic TV’s European Evolution
-
-- Read more
-### Hungry for more?
-
-Learn how global publishers are finding success using Ad Manager to power their ads businesses.
-
-
----
-
-## ad-manager overview (0.50.0)
-
-
-
-
-
-
-
-
-      Stay organized with collections
-
-
-
-      Save and categorize content based on your preferences.
-
-Source: [https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview](https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview)
-
-- Home
-- Documentation
-- Developer tools
-- Java
-- Client libraries
-# ad-manager overview (0.50.0) Stay organized with collections Save and categorize content based on your preferences.
-
-## Key Reference Links
-
-Google Ad Manager API Description: The Ad Manager API enables an app to integrate with Google Ad Manager. You can read Ad Manager data and run reports using the API.
-
-## Getting Started
-
-In order to use this library, you first need to go through the following steps:
-
-- Install a JDK (Java Development Kit)
-- Select or create a Cloud Platform project
-- Enable billing for your project
-- Enable the API
-- Set up authentication
-## Use the Google Ad Manager API for Java
-
-To ensure that your project uses compatible versions of the libraries and their component artifacts, import com.google.cloud:libraries-bom and use the BOM to specify dependency versions. Be sure to remove any versions that you set previously. For more information about BOMs, see Google Cloud Platform Libraries BOM.
-
-### Maven
-
-Import the BOM in the dependencyManagement section of your pom.xml file. Include specific artifacts you depend on in the dependencies section, but don't specify the artifacts' versions in the dependencies section.
-
-The example below demonstrates how you would import the BOM and include the ad-manager artifact.
-
-### Gradle
-
-BOMs are supported by default in Gradle 5.x or later. Add a platform dependency on com.google.cloud:libraries-bom and remove the version from the dependency declarations in the artifact's build.gradle file.
-
-The example below demonstrates how you would import the BOM and include the ad-manager artifact.
-
-The platform and enforcedPlatform keywords supply dependency versions declared in a BOM. The enforcedPlatform keyword enforces the dependency versions declared in the BOM and thus overrides what you specified.
-
-For more details of the platform and enforcedPlatform keywords Gradle 5.x or higher, see Gradle: Importing Maven BOMs.
-
-If you're using Gradle 4.6 or later, add enableFeaturePreview('IMPROVED_POM_SUPPORT') to your settings.gradle file. For details, see Gradle 4.6 Release Notes: BOM import. Versions of Gradle earlier than 4.6 don't support BOMs.
-
-### SBT
-
-SBT doesn't support BOMs. You can find recommended versions of libraries from a particular BOM version on the dashboard and set the versions manually. To use the latest version of this library, add this to your dependencies:
-
-## Which version ID should I get started with?
-
-For this library, we recommend using com.google.ads.admanager.v1 for new applications.
-
-### Understanding Version ID and Library Versions
-
-When using a Cloud client library, it's important to distinguish between two types of versions:
-
-- Library Version: The version of the software package (the client library) that helps you interact with the Cloud service. These libraries are released and updated frequently with bug fixes, improvements, and support for new service features and versions. The version selector at the top of this page represents the client library version.
-- Version ID: The version of the Cloud service itself (e.g. Google Ad Manager API). New Version IDs are introduced infrequently, and often involve changes to the core functionality and structure of the Cloud service itself. The packages in the lefthand navigation represent packages tied to a specific Version ID of the Cloud service.
-### Managing Library Versions
-
-We recommend using the com.google.cloud:libraries-bom installation method detailed above to streamline dependency management across multiple Cloud Java client libraries. This ensures compatibility and simplifies updates.
-
-### Choosing the Right Version ID
-
-Each Cloud Java client library may contain packages tied to specific Version IDs (e.g., v1, v2alpha). For new production applications, use the latest stable Version ID. This is identified by the highest version number without a suffix (like "alpha" or "beta"). You can read more about Cloud API versioning strategy here.
-
-Important: Unstable Version ID releases (those with suffixes) are subject to breaking changes when upgrading. Use them only for testing or if you specifically need their experimental features.
-
-
----
+# Knowledge Observation Insights (Unified)
+
+**Latest Source:** https://intelephense.com/docs
+**Latest Analysis:** 2026-05-30T03:07:44.001Z
+
+## About
+Intelephense is a high performance, cross platform, cross editor PHP language server adhering to the Language Server Protocol (LSP).
+When paired with an LSP capable editor it provides an essential set of code tools, making for a productive and rich PHP coding experience.
+The Intelephense server is proprietary software released to end users under a "freemium" model. Many of the features are provided free of charge. Access to premium features can be obtained by purchasing a licence key.
+
+## Visual Studio Code
+Visual Studio Code users should install the Intelephense extension from within the extensions view or download it from the VSCode marketplace.
+The built-in VSCode PHP Language Features extension can cause excessive completion suggestions that are out of context and is best disabled. Go to the Extensions UI and search for PHP Language Features to disable it. Alternatively, you can disable parts of it via it's configuration settings. Other third party extensions that provide similar functionality to Intelephense may also need to be disabled for best results.
+Optionally purchase and enter your licence key by opening the command palette (Ctrl+Shift+P) and searching for Enter licence key.
+A screen capture showing how to enter your intelephense licence key into VSCode.
+Entering a licence key via the VS Code command palette
+
+Visual Studio Code users should install the Intelephense extension from within the extensions view or download from the [marketplace](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client).
+1. Disable the built-in VSCode PHP Language Features.
+* Go to `Extensions`.
+* Search for `@builtin php`
+* Disable `PHP Language Features`. Leave `PHP Language Basics` enabled for syntax highlighting.
+Note that other (3rd party) PHP extensions which provide similar functionality should also be disabled for best results.
+2. Add glob patterns for non standard php file extensions to the `files.associations` setting.
+3. Optionally purchase and enter your [licence key](https://intelephense.com) by opening the command pallete
+-- `ctrl + shift + p` -- and searching for `Enter licence key`.
+Further configuration options are available in the `intelephense` section of settings.
+
+## Configuration
+Intelephense attempts to provide reasonable defaults for all settings. Some of the more important settings to consider when getting started include:
+- **intelephense.files.associations** - File globs that identify PHP files. Defaults to standard PHP file extensions e.g. *.php.
+- **intelephense.files.maxSize** - Maximum file size in bytes to index and provide analysis for. Defaults to 1000000 (1MB).
+- **intelephense.environment.phpVersion** - PHP version to use for analysis. Defaults to the most recent stable PHP version.
+- **intelephense.stubs** - List of stubs to include. Defaults to core symbols and extensions that are bundled with PHP. If you are getting undefined symbols for built-in or PECL extensions, you may need to modify this list.
+In VSCode, the settings UI can be used to modify the configuration values. For other LSP clients, please see the client documentation on how to modify these values. Intelephense supports the LSP workspace/didChangeConfiguration and workspace/configuration methods as a way of supplying configuration values to the server.
+If neither of the methods above are supported by the client, then configuration values can be supplied via an intelephense.config.json file placed in the workspace folder. The JSON schema for this file is the same as the one used for the VSCode client. The top level intelephense property is not required in this file.
+For Intelephense to work effectively it must have access to the definitions of the symbols used in your code. Opening a project folder (LSP InitializeParams rootUri or workspaceFolders) rather than individual files enables these symbols to be discovered by Intelephense via indexing the PHP files in the folder. Large workspaces require more system resources. Consider opening a smaller workspace or exclude unnecessary files via the intelephense.files.exclude setting to reduce resource usage.
+If you need to include files from outside of the workspace folder, then add the paths to these files to the intelephense.environment.includePaths setting.
+When configuring a multi-root workspace, Intelephense will presume that the folders in the workspace are separate projects and will not provide cross folder symbols unless you link the dependency between the projects via the intelephense.environment.includePaths setting.
+Depending on the framework or library you use, you may find you need additional configuration to provide method declarations or override existing ones. Please see the Frameworks and Libraries section in the appendix for more information on this.
+
+## Supported Types
+In the list of supported types below, some can only be used in PHPDoc as documented types. Please see the PHP type system documentation if you are unfamiliar with the standard PHP types. PHPDoc only, or internal types, are flagged with an asterisk.
+Additional types used in other static analysis engines that are not listed here are not fully supported. Intelephense attempts to fallback to an appropriate alternative in this situation.
+
+## Top Type
+`mixed`
+The super-type of all types. Any other type can be assigned to a type constraint of mixed. If intelephense cannot determine a more specific type for a symbol or expression then this is the type it is given. Because of this, Intelephense also allows mixed to be assigned to any other type constraint as well, effectively turning off type checking for that instance. To switch off this behaviour you can set both `intelephense.diagnostics.relaxedTypeCheck` and `intelephense.diagnostics.noMixedTypeCheck` to `false`.
+
+## Bottom Type
+`never`
+The sub-type of all types. This type can be assigned to any other type constraint. It is used to represent an impossibility in the code and can be used as the return type of a function that exits or always throws an exception.
+
+## Scalar Types
+Any of these types can be assigned to the other unless the `declare(strict_types=1)` directive is used in the file or `intelephense.diagnostics.strictTypes` is `true`.
+- `int`
+- `float`
+- `bool`
+- `string`
+
+## Unit Types
+- `void`
+- `null`
+- `true`
+- `false`
+- `unset*` Intelephense uses this PHP keyword to represent the type of an undefined variable.
+
+## Literal Types
+- `'myString'*` String literals are encapsulated in quotes.
+- `9*` An integer literal.
+
+## Object Types
+- `object`
+- `\MyNs\MyClass` Classes, interfaces, traits, and enums can be fully qualified or not. If not fully qualified then the standard PHP name resolution rules apply to determine the fully qualified name.
+- `static`
+- `self`
+- `$this*`
+
+## Array Types
+- `array`
+- `array<TKey, TValue>*` Generic form for an array where the type arguments represent the array key and value types respectively. If only a single type argument is provided then it will be normalised to `array`.
+- `TValue[]*` Represents a numeric indexed array where the element type is `TValue`.
+
+## Callable Types
+- `callable` Base callable type that represents a callable string, callable array or a class that implements `__invoke`.
+- `callable(TParamA $a, TParamB $b): TReturn*` Callable type signatures can be defined to improve language intelligence. Parameter names are optional. The callable type should be wrapped in parentheses if it forms part of a union. `Closure` can be used instead of `callable` for a more specific type.
+
+## Alias Types
+- `iterable` Alias for `Traversable|array`.
+- `?A` Nullable type that is shorthand for `null|A`. Cannot be used as part of a union or intersection type.
+
+## Union Types
+`A|B|C`
+A type which may have multiple atomic type representations. For example, a type constraint of `A|B` can be assigned type `A` or `B`.
+
+## Intersection Types
+`A&B&C`
+A composite type which consists of multiple atomic types. For example, a type of `A&B` can be assigned to type `A` and to type `B`.
+
+## DNF Types
+`A|B|(C&D&E)`
+When combining union and intersection types, only a single level of nesting is permitted. The union must be the top level.
+
+## Generic Types
+`MyType*`
+A generic type can be declared using one or many `@template` PHPDoc annotations above the target class, interface, or trait. Type arguments can then be supplied in the same order as the `@template` declarations. The following built-in types are templated:
+- `iterable<TKey, TValue>`
+- `Traversable<TKey, TValue>`
+- `array<TKey, TValue>`
+- `Iterator<TKey, TValue>`
+- `IteratorAggregate<TKey, TValue>`
+- `ArrayAccess<TKey, TValue>`
+- `WeakReference<TObject>`
+- `WeakMap<TKey, TValue>`
+- `Fiber<TStart, TResume, TReturn, TSuspend>`
+- `DatePeriod<TDate, TEnd>`
+- `ReflectionAttribute<TObject>`
+- `ReflectionClass<TObject>`
+- `Generator<TKey, TYield, TSend, TReturn>`
+- `ArrayObject<TKey, TValue>`
+- `SplDoublyLinkedList<TValue>`
+- `SplQueue<TValue>`
+- `SplStack<TValue>`
+- `SplHeap<TValue>`
+- `SplMinHeap<TValue>`
+- `SplMaxHeap<TValue>`
+- `SplPriorityQueue<TPriority, TValue>`
+- `SplFixedArray<TValue>`
+- `SplObjectStorage<TObject, TValue>`
+
+## Conditional Return Type
+`(TSubject is TCompare ? TTrue : TFalse)*`
+Sometimes the return type of a function may depend on the type of a parameter. A conditional type can be used without templates too by using the parameter name. For example, `($myParam is string ? string : null)`. Conditional types must be wrapped in parentheses. Conditional types may also be nested.
+
+## Array Key Type
+`key-of<TArray>*`
+This type will resolve to a union of the keys of an array shape.
+
+## Array Value Type
+`value-of<TArray>*`
+This type will resolve to a union of the values of an array shape.
+
+## Miscellaneous Types
+- `resource*`
+- `class-string<T>*` A string where the value is the name of class `T`.
+
+## PHPDoc Annotations
+Intelephense supports standard PHPDoc annotations as well as non-standard annotations which have been popularised by other static analysis tools such as Psalm and PHPStan. The below list describes the non-standard annotations that Intelephense supports. For further information on standard PHPDoc annotations, please see the PHP_FIG and phpDocumentor references.
+Some libraries or projects that have adopted static analysis tools such as Psalm or PHPStan may prefix some annotations with the tool name to avoid conflicts with other tools.
+To make Intelephense prefer these prefixed annotations over the un-prefixed ones, you can set the `intelephense.compatibility.preferPsalmPhpstanPrefixedAnnotations` setting to `true`. Intelephense does not aim to support all types and features of these tools but will attempt to fallback to appropriate alternatives where possible.
+
+## @template
+`/** @template TemplateName of OptionalTypeConstraint = OptionalDefaultType */`
+This annotation is used to declare a type argument of a generic type, function or method. The order that the template types appear is the same order in which the type arguments must be supplied in a generic type expression. The template type can be optionally constrained to a specific type and given an optional default type to be used when no type argument is supplied.
+
+## @template-extends
+`/** @template-extends ParentType */`
+This annotation is used to declare the type arguments supplied to a generic parent type. It can be used on classes and interfaces when extending a parent class or interface. The alias `@extends` is also supported.
+
+## @template-implements
+`/** @template-implements InterfaceType */`
+This annotation is used to declare the type arguments supplied to a generic interface. It can be used on classes and enums when implementing an interface. The alias `@implements` is also supported.
+
+## @template-use
+`/** @template-use TraitType */`
+This annotation is used to declare the type arguments supplied to a generic trait. It can be used on classes, traits and enums when using a trait. The alias `@use` is also supported.
+
+## @param-closure-this
+`/** @param-closure-this Type $parameter */`
+This annotation is used to declare the type of the `$this` variable inside a closure that is passed as a parameter to a function or method. An example of a standard PHP method that benefits internally from this annotation is `Closure::bind()`.
+
+## @param-out
+`/** @param-out Type &$parameter */`
+This annotation is used to declare the out type of a by-reference parameter. Intelephense will not modify the type of a by-reference parameter unless this annotation is used.
+
+## @assert
+`/** @assert Type $parameter */`
+This annotation is used to declare a function or method that asserts that an argument is of the specified type. Intelephense will narrow the type of the passed variable to the asserted type after the function or method call. It is presumed that the function or method has no false path and that it will throw an exception or exit if the assertion fails.
+
+## @assert-if-true @assert-if-false
+`/** @assert-if-true Type $parameter */`
+Similar to above but for functions or methods that have a boolean return type. This asserts that the passed variable is of the specified type on the true or false code path respectively at the call location.
+
+## @mixin
+`/** @mixin ClassName */`
+This annotation is used to declare that the members of the specified class are mixed in to the current class via `__call`, `__callStatic`, `__get` or `__set` magic methods. Only available with a licence in Intelephense Premium.
+
+## @disregard
+`/** @disregard PXXXX */`
+This annotation is used to suppress a specific diagnostic at the statement following the annotation. For example, `@disregard P1010` would suppress the diagnostic with code `P1010`. This can be useful when you have a specific case where you want to allow something that Intelephense would normally report as an issue.
+
+## @type-alias
+`/** @type-alias TypeName = Type */`
+This annotation is used to declare a type alias. A type alias allows you to create a new name for an existing type, which can be useful for improving code readability or for creating more meaningful type names. It functions the same as `@phpstan-type` and `@psalm-type` annotations which are also recognised. Intelephense type aliases follow normal PHP namespace rules.
+
+## @import-type
+`/** @import-type TypeName as OptionalAlias */`
+This annotation is used to import a type alias that has been declared in another file. It functions similarly to `@phpstan-import-type` and `@psalm-import-type` and both these annotations may also be used. However, type aliases are not bound to classes in Intelephense and as such the `from ClassName` specifier is unnecessary but still supported. Type aliases in Intelephense follow normal PHP namespace rules.
+
+## Features
+Intelephense provides a variety of features to enhance the development experience when working with PHP code. Many of these features are provided for free while others require a Premium licence to access. All images and videos in this section are taken from the VS Code client. The features are available to all LSP clients that support the relevant LSP methods. Keybindings listed for each feature are the defaults for the VS Code client.
+
+## Free Features
+The following features are available to all users of Intelephense. A licence is not necessary.
+
+## Workspace Symbols
+- **Availability:** FREE
+- **LSP:** `workspace/symbol`
+- **Keybinding:** `Ctrl+T`
+This feature allows you to search for symbols in your workspace and navigate to their definitions. It is particularly useful for finding and navigating to symbols that are not directly referenced in the current file. When the query contains alphanumeric characters only, the search is performed on the unqualified name of the symbol. You can narrow your search to a specific symbol by using a query containing characters found in the Fully Qualified Structural Element Name (FQSEN) of the symbol. For example, a query of `m\pt:u(` would find the method with FQSEN `App\Models\Post::user()`.
+Unfortunately, VS Code has a current issue where it will discard results if the query contains a backslash. This means that you cannot search on the namespace part of a type.
+
+## Document Symbols
+- **Availability:** FREE
+- **LSP:** `textDocument/documentSymbol`
+- **Keybinding:** `Ctrl+Shift+O`
+This feature lists all symbols in the current document, providing an overview of the structure of the file. A client can use this information to provide a document outline view, breadcrumb navigation, and a symbol search specific to the current file.
+
+## Go to Definition
+- **Availability:** FREE
+- **LSP:** `textDocument/definition`
+- **Keybinding:** `F12` | right-click context menu
+This feature allows you to navigate to the definition of a symbol when invoked on a reference to that symbol in the current file. Multiple definitions may sometimes be found for a symbol. For example, invoking the feature on the type name in a new expression may find both the constructor method and the class declaration as definitions. It is up to the client to decide how to present multiple definitions to the user. For example a peek definitions window may open or the user may simply be navigated to the first definition in the list.
+
+## Hover
+- **Availability:** FREE
+- **LSP:** `textDocument/hover`
+- **Keybinding:** `Ctrl+K Ctrl+I` | mouse-over
+This feature provides information about a symbol when hovering over a reference to that symbol in the current file. The information provided can include the type of the symbol, it's signature if it is a function or method, and any associated documentation.
+
+## Highlight
+- **Availability:** FREE
+- **LSP:** `textDocument/documentHighlight`
+- **Keybinding:** Displayed automatically at the cursor position
+This feature highlights all references to the symbol at the cursor position in the current file. This can be useful for quickly identifying all usages of a symbol in the current file. Read and write contexts will be identified if applicable and the client can choose to highlight them differently if desired.
+
+## Code Completion
+- **Availability:** FREE
+- **LSP:** `textDocument/completion`
+- **Keybinding:** `Ctrl+Space`
+- **Trigger characters:** `$ > : \ / ' " * . <`
+This feature provides a list of context appropriate completion suggestions for a symbol at the cursor position in the current file. The completions can include variables, functions, methods, classes, and other symbols. Where appropriate, additional edits are provided to automatically import a symbol.
+
+## Signature Help
+- **Availability:** FREE
+- **LSP:** `textDocument/signatureHelp`
+- **Keybinding:** `Ctrl+Shift+Space`
+- **Trigger characters:** `( , :`
+This feature provides information about the signature of a function or method when the cursor is within the argument list of a function or method call. The information provided can include the types of the parameters, the return type, and any associated documentation.
+
+## Find All References
+- **Availability:** FREE
+- **LSP:** `textDocument/references`
+- **Keybinding:** `Shift+F12` | right-click context menu
+This feature provides a list of all references to a symbol in the current file or workspace. The references can include variables, functions, methods, classes, and other symbols. When there is a hierarchy of types, references to a type member will be determined relative to the initial base members.
+
+## Formatting
+- **Availability:** FREE
+- **LSP:** `textDocument/formatting`
+- **Keybinding:** `Ctrl+Shift+I` (format document)
+- **LSP:** `textDocument/rangeFormatting`
+- **Keybinding:** `Ctrl+K Ctrl+F` (format selection)
+This feature provides formatting of a whole document or a selected range within a document. The Intelephense formatter is opinionated and aims to comply with PHP-FIG coding standards. Limited configuration options are available to allow some customisation of brace style.
+
+## Diagnostics
+- **Availability:** FREE
+- **LSP:** `textDocument/publishDiagnostics`
+- **Keybinding:** Published automatically `onType` or `onSave` | `F8` (next) | `Shift+F8` (previous)
+This feature provides diagnostics for the currently opened files. Diagnostics include syntax errors, type errors, language constraints and other issues detected by Intelephense. Intelephense aims to provide rapid diagnostics that are aligned with the PHP engine where possible.
+Performance and minimising false positives are prioritised over exhaustiveness. It should not be used as a substitute for testing your code. The diagnostics emitted can be configured in the settings to be more or less thorough or ignored altogether depending on your preferences and the codebase you are working with.
+If you need fine grain control over which diagnostics are shown, try the `intelephense.diagnostics.exclude` setting. This setting allows you to map a file glob to an array of diagnostic codes to exclude from diagnostics. A full list of diagnostic codes can be found in the vscode-intelephense repository.
+By default, Intelephense performs type checking on declared types only and in a relaxed mode in order to reduce false positives. In a hierarchy of types, a sub-type satisfies a super-type constraint. Intelephense also permits the reverse. That is, a super-type or wider type can be assigned to a sub-type or narrower type constraint. This default behaviour has been chosen due to inherent limitations in static analysis, the lack of syntax in PHP or PHPDoc to enable a developer to inline cast an expression or variable, and due to the variable quality of type information in some codebases.
+To make type checks more thorough, there are several settings available.
+- `intelephense.diagnostics.relaxedTypeCheck` controls whether to emit diagnostics when a super-type (excluding mixed) is assigned to a sub-type constraint.
+- `intelephense.diagnostics.noMixedTypeCheck` controls whether to emit diagnostics when mixed is assigned to narrower type constraints.
+- `intelephense.diagnostics.strictTypes` is a global equivalent to adding `declare(strict_types=1);` to the top of each file.
+- `intelephense.diagnostics.typeCheckDocumentedTypes` controls whether documented types are included in type checking.
+
+## Inline Values
+- **Availability:** FREE
+- **LSP:** `textDocument/inlineValues`
+- **Keybinding:** Displayed automatically during a debug session
+This feature provides ranges and text for variables in a file that may be relevant for a debugger to display inline values for during a debugging session. To see this feature in action in VS Code, install the official Xdebug extension.
+
+## Embedded Languages
+Intelephense presumes that text outside of PHP tags is HTML. Basic language intelligence is provided for HTML and embedded CSS and JavaScript within HTML.
+
+## Premium Features
+The following features require a licence to access. A licence can be purchased at the checkout page.
+
+## Rename
+- **Availability:** PREMIUM
+- **LSP:** `textDocument/rename`
+- **Keybinding:** `F2` | right-click context menu
+This feature allows you to rename a symbol and all references to that symbol in the current file or workspace. This differs from a simple text find and replace in that it is aware of the syntax and semantics of the code, and will only rename the specific symbol.
+Intelephense will prefer to limit renames to the current file if possible. For example, renaming a class reference in a file where the class has been imported with a use declaration will result in the references in that file only being renamed and the use declaration being updated with an alias. In such cases, to rename a symbol across the whole workspace, invoke the rename feature on the class declaration itself or the Fully Qualified Name (FQN) in the use declaration instead.
+Renaming a namespace in a file updates imports and FQN references for the file symbols in that namespace through the workspace. If using PSR-4 style folder structures then renaming the namespace of a class is also the equivalent of a move class to file operation. Intelephense will return file rename instructions to the client in such cases.
+
+## Code Folding
+- **Availability:** PREMIUM
+- **LSP:** `textDocument/foldingRange`
+- **Keybinding:** `Ctrl+Shift+[` (fold) | `Ctrl+Shift+]` (unfold) | left-click editor gutter | right-click context menu
+This feature allows you to fold and unfold regions of code in the current file. Intelephense provides folding ranges for symbol definition bodies, control structures, comments, imports, and custom regions identified by `#region` and `#endregion` comments. The folding provider is syntax tree driven and is more reliable than indent based folding providers such as the default provider in VS Code.
+
+## Find All Implementations
+- **Availability:** PREMIUM
+- **LSP:** `textDocument/implementation`
+- **Keybinding:** `Ctrl+F12` | right-click context menu
+This feature provides a list of all implementations of a method or interface when invoked on a reference. This functions similar to go to definition but differs in that it will find the classes that implement the interface or methods that implement an abstract method declaration.
+
+## Go to Type Definition
+- **Availability:** PREMIUM
+- **LSP:** `textDocument/typeDefinition`
+- **Keybinding:** Right-click context menu
+This feature allows you to navigate to the type definition of a variable. Similar to go to definition but differs in that it will navigate to the type definition rather than the variable declaration itself.
+
+## Go to Declaration
+- **Availability:** PREMIUM
+- **LSP:** `textDocument/declaration`
+- **Keybinding:** Right-click context menu
+This feature allows you to navigate to the initial declaration of a symbol. Similar to go to definition, and depending on the context may function the same, it differs in that it will navigate to the initial declaration of a symbol in a hierarchy of types. For example, invoking this feature on a sub-type method reference will navigate to the initial declaration of the method in a super-type rather than the sub-type method declaration itself.
+
+## Smart Select
+- **Availability:** PREMIUM
+- **LSP:** `textDocument/selectionRange`
+- **Keybinding:** `Shift+Alt+→` (expand) | `Shift+Alt+←` (shrink)
+This feature allows you to expand and shrink the current selection in the current file based on the syntax tree of the code. For example, if the cursor is on a variable name, the first expansion would select the variable name, the second expansion would select the whole variable declaration, the third expansion would select the whole statement, the fourth expansion would select the whole block, and so on. Being syntax tree driven, it is more precise than regex or indent based selection providers such as the default provider in VS Code.
+
+## Type Hierarchy
+- **Availability:** PREMIUM
+- **LSP:** `textDocument/typeHierarchy`
+- **Keybinding:** Right-click context menu
+This feature provides a type hierarchy for a class, interface, trait or enum when invoked on a reference to the type. It is useful for understanding the inheritance structure of a type and for quick navigation to types in the hierarchy.
+
+## Code Lens
+- **Availability:** PREMIUM
+- **LSP:** `textDocument/codeLens`
+- **Keybinding:** Rendered inline above declarations | activated by left-clicking
+This feature provides additional information and navigation for symbol declarations in the current file. Several lenses are provided by Intelephense. They are disabled by default to reduce visual clutter, see the `intelephense.codeLens` settings to enable them.
+- **References**: shows the number of references to a symbol in the workspace and provides a link to view those references.
+- **Implementations**: shows the number of implementations of an interface or abstract method and provides a link to view those implementations.
+- **Overrides**: shows the number of overrides of a method in a type hierarchy and provides a link to view those overrides.
+- **Parent**: shows whether a method overrides a parent method and provides a link to view the parent method.
+- **Usages**: shows the number of types that use a trait and provides a link to view those usages.
+
+## Inlay Hints
+- **Availability:** PREMIUM
+- **LSP:** `textDocument/inlayHint`
+- **Keybinding:** Displayed inline automatically
+This feature provides additional type and parameter information in the form of hints that are displayed inline with the code in the current file. Intelephense provides several types of inlay hints. They are enabled by default. See the `intelephense.inlayHints` settings to configure them.
+- **Parameter Name**: shows the name of a parameter for a function or method argument.
+- **Parameter Type**: shows the inferred type of a parameter in a closure that is an argument to another function or method when it has not been explicitly declared.
+- **Return Type**: shows the inferred return type of a function or method when it has not been explicitly declared.
+
+## Document Links
+- **Availability:** PREMIUM
+- **LSP:** `textDocument/documentLink`
+- **Keybinding:** `Ctrl+Click` | mouse-over
+This feature provides clickable links to related files and resources from the current file. Intelephense will show links to files referenced in `require` and `include` statements, and to local files referenced in `@see` annotations.
+If your `require` statements are relative or you reference `$_SERVER['DOCUMENT_ROOT']`, you may need to configure the `intelephense.environment.documentRoot` setting to the correct path for the links to work. Intelephense will fallback to the workspace folder path if this setting has no value.
+
+## Code Actions
+- **Availability:** PREMIUM
+- **LSP:** `textDocument/codeAction`
+- **Keybinding:** `Ctrl+.` | left-click lightbulb
+This feature provides a list of context appropriate actions that can be performed at the cursor position in the current file. VS Code will show a lightbulb icon on the current line when code actions are available. Intelephense provides several code actions.
+- **Import Symbol**: Import (`use`) a type, function or constant to resolve an undefined symbol error.
+- **Add PHPDoc**: Generate PHPDoc for functions, classes, and methods.
+- **Implement All Abstract Methods**: Generate method stubs for all abstract methods that have not been implemented in a class.
+
+## Intelephense
+Intelephense is a high performance, cross platform PHP language server adhering to the [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/).
+When paired with an LSP capable editor it provides an essential set of code intelligence features that give a PHP developer a productive and rich editing experience.
+This is proprietary software released to end users under a "freemium" model. Many of the features are provided free of charge. Access to all current and future features can be obtained by purchasing a licence key at https://intelephense.com.
+
+## Requirements
+[Node.js 12+](https://nodejs.org)
+
+## Server Installation
+```
+npm i intelephense -g
+```
+
+## Language Server Protocol (LSP) Client
+Intelephense needs an LSP compliant client to communicate with and integrate features into the editor. A list of editors and clients that support the LSP can be found at https://microsoft.github.io/language-server-protocol/implementors/tools/.
+Please follow the setup guide of the relevant tool. The Information below may help in configuring the client.
+
+## Framework Support
+Intelephense aims to support all frameworks but does not implement framework specific solutions. Some frameworks are coded in a way that make it difficult to analyse. This may be because of lack of type declarations/annotations; heavy use of `__get`, `__set`, `__call`, `__callStatic` magic methods; or dynamic generation of class aliases at runtime.
+Packages can be found online that aim to workaround these issues by providing stubs of symbols to help static analysers like Intelephense understand the code.
+* Laravel - [barryvdh/laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper)
 
 
 ## Gemini CLI Remote Subagents

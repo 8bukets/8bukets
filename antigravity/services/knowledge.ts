@@ -1,4 +1,3 @@
-import { resolve } from '@/antigravity/core'
 import { logAutonomousAction } from '../core'
 import fs from 'fs'
 import path from 'path'
@@ -69,6 +68,12 @@ export async function observeKnowledge(url: string = 'https://www.investopedia.c
     // Append or create KNOWLEDGE_MERGE.md with formal relationships
     const knowledgePath = path.join(process.cwd(), 'KNOWLEDGE_MERGE.md')
 
+    // Extract some summaries for the merge file
+    const headings = mdContent.split('\n').filter(line => line.startsWith('#')).map(h => h.replace(/^#+\s*/, '')).slice(0, 3)
+    const summaryInfo = headings.length > 0 ? ` Extracted key topics: ${headings.join(', ')}...` : ''
+
+    const relationshipText = `Confirmed relationship with ${url} (Title: ${title}) as an intelligence source.${summaryInfo} (Content Length: ${mdContent.length} chars)`
+
     const relationshipEntry = `
 ## Autonomous Observation
 - **Date**: ${new Date().toISOString()}
@@ -78,45 +83,53 @@ export async function observeKnowledge(url: string = 'https://www.investopedia.c
 - **Summary**:
 ${summary}
 `
-
-    let exists = false;
+    let existingContent = ''
     try {
-        await fs.promises.access(knowledgePath, fs.constants.F_OK);
-        exists = true;
+      existingContent = await fs.promises.readFile(knowledgePath, 'utf8')
     } catch (e) {
-        exists = false;
+      existingContent = '# Market Intelligence Matrix\n'
     }
 
-    if (exists) {
-      let content = await fs.promises.readFile(knowledgePath, 'utf8')
+    const signature = 'All the best - https://markposition.wordpress.com'
 
-      // Ensure signature is at the bottom
-      const signature = 'All the best - https://markposition.wordpress.com';
-      const sigRegex = new RegExp(`\\n*---\\n*${signature.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')}\\n*|\\n*${signature.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')}\\n*`, 'g');
-
-      let newContent = content.replace(sigRegex, '').trim();
-
-      // Check if URL already exists
-      if (newContent.includes(`- **Target**: ${url}\n`) || newContent.includes(`- **Target**: ${url}\r\n`)) {
-        // Replace existing block using targeted regular expression, without using dynamic strings in RegExp to satisfy CodeQL
-        const blockRegex = /(## Autonomous Observation(?:(?!## Autonomous Observation)[\s\S])*)/g;
-        newContent = newContent.replace(blockRegex, (match) => {
-          return match.includes(`- **Target**: ${url}\n`) || match.includes(`- **Target**: ${url}\r\n`)
-            ? relationshipEntry + '\n'
-            : match;
-        });
-      } else {
-        // Append new block
-        newContent += '\n' + relationshipEntry;
-      }
-
-      newContent = newContent.trim() + '\n\n---\n' + signature + '\n';
-
-      await fs.promises.writeFile(knowledgePath, newContent, 'utf8')
-    } else {
-      const signature = 'All the best - https://markposition.wordpress.com';
-      await fs.promises.writeFile(knowledgePath, `# Market Intelligence Matrix\n${relationshipEntry}\n\n---\n${signature}\n`, 'utf8')
+    // Instead of regex, split on signature and trim
+    let cleanContent = existingContent
+    if (existingContent.includes(signature)) {
+       cleanContent = existingContent.split(signature)[0]
     }
+    cleanContent = cleanContent.trimEnd()
+
+    let updated = false
+    // Use string parsing to avoid regex bugs
+    const blockRegex = /## Autonomous Observation(?:(?!## Autonomous Observation)[\s\S])*/g
+
+    let blocks = [];
+    let match;
+    while ((match = blockRegex.exec(cleanContent)) !== null) {
+        blocks.push(match[0]);
+    }
+
+    let newBlocks = blocks.map(block => {
+        if (block.includes(`- **Target**: ${url}\n`) || block.includes(`- **Target**: ${url}\r`)) {
+            updated = true;
+            return relationshipEntry.trimStart();
+        }
+        return block;
+    });
+
+    if (!updated) {
+        newBlocks.push(relationshipEntry.trimStart());
+    }
+
+    // Replace the part of string where the blocks are
+    let newContent = cleanContent.split(/## Autonomous Observation/)[0].trimEnd()
+    if (newBlocks.length > 0) {
+        newContent += '\n\n' + newBlocks.join('\n\n')
+    }
+
+    newContent = newContent.trimEnd() + '\n\n' + signature + '\n'
+    await fs.promises.writeFile(knowledgePath, newContent, 'utf8')
+    console.log(`✅ [Knowledge Observer] ${updated ? 'Updated' : 'Appended'} insights in KNOWLEDGE_MERGE.md.`)
 
     logAutonomousAction(`✅ [Knowledge Observer] Appended insights to KNOWLEDGE_MERGE.md.`, 'info')
     return { status: 'observed', url, title }
