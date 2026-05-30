@@ -1,0 +1,122 @@
+<html>
+<body>
+<h1>Tutorial: Create and run your first GitLab CI/CD pipeline</h1>
+<p>Tier: Free, Premium, Ultimate<br>
+Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated</p>
+<p>This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab.</p>
+
+<p>If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline.</p>
+
+<h2>Prerequisites</h2>
+<p>Before you start, make sure you have:</p>
+<ul>
+<li>A project in GitLab that you would like to use CI/CD for.</li>
+<li>The Maintainer or Owner role for the project.</li>
+<li>If you don’t have a project, you can create a public project for free on https://gitlab.com.</li>
+</ul>
+
+<h2>Steps</h2>
+<p>To create and run your first pipeline:</p>
+<ol>
+<li>Ensure you have runners available to run your jobs. If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.</li>
+<li>Create a .gitlab-ci.yml file at the root of your repository. This file is where you define the CI/CD jobs.</li>
+<li>When you commit the file to your repository, the runner runs your jobs. The job results are displayed in a pipeline.</li>
+</ol>
+
+<h2>Ensure you have runners available</h2>
+<p>In GitLab, runners are agents that run your CI/CD jobs.</p>
+<p>If you’re using GitLab.com, you can skip this step. GitLab.com provides instance runners for you.</p>
+<p>To view available runners:</p>
+<ol>
+<li>In the top bar, select Search or go to and find your project.</li>
+<li>In the left sidebar, select Settings > CI/CD.</li>
+<li>Expand Runners.</li>
+<li>As long as you have at least one runner that’s active, with a green circle next to it, you have a runner available to process your jobs.</li>
+</ol>
+<p>If you don’t have access to these settings, contact your GitLab administrator.</p>
+
+<h3>If you don’t have a runner</h3>
+<p>If you don’t have a runner:</p>
+<ol>
+<li>Install GitLab Runner on your local machine.</li>
+<li>Register the runner for your project. Choose the shell executor.</li>
+<li>When your CI/CD jobs run, in a later step, they will run on your local machine.</li>
+</ol>
+
+<h2>Create a .gitlab-ci.yml file</h2>
+<p>Now create a .gitlab-ci.yml file. It is a YAML file where you specify instructions for GitLab CI/CD.</p>
+<p>In this file, you define:</p>
+<ul>
+<li>The structure and order of jobs that the runner should execute.</li>
+<li>The decisions the runner should make when specific conditions are encountered.</li>
+</ul>
+<p>To create a .gitlab-ci.yml file in your project:</p>
+<ol>
+<li>In the top bar, select Search or go to and find your project.</li>
+<li>In the left sidebar, select Code > Repository.</li>
+<li>Above the file list, select the branch you want to commit to. If you’re not sure, leave master or main. Then, in the upper-right corner, select the plus icon ( ) and New file: The new file button to create a file in the current folder.</li>
+<li>For the Filename, type .gitlab-ci.yml and in the larger window, paste this sample code:</li>
+</ol>
+<pre>
+build-job:
+  stage: build
+  script:
+    - echo "Hello, $GITLAB_USER_LOGIN!"
+
+test-job1:
+  stage: test
+  script:
+    - echo "This job tests something"
+
+test-job2:
+  stage: test
+  script:
+    - echo "This job tests something, but takes more time than test-job1."
+    - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
+    - echo "which simulates a test that runs 20 seconds longer than test-job1"
+    - sleep 20
+
+deploy-prod:
+  stage: deploy
+  script:
+    - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
+  environment: production
+</pre>
+<p>This example shows four jobs: build-job, test-job1, test-job2, and deploy-prod. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are populated when the jobs run.</p>
+<ol start="5">
+<li>Select Commit changes.</li>
+<li>The pipeline starts and runs the jobs you defined in the .gitlab-ci.yml file.</li>
+</ol>
+
+<h2>View the status of your pipeline and jobs</h2>
+<p>Now take a look at your pipeline and the jobs within.</p>
+<ol>
+<li>Go to Build > Pipelines. A pipeline with three stages should be displayed: The pipeline list shows a running pipeline with 3 stages</li>
+<li>View a visual representation of your pipeline by selecting the pipeline ID (#676 in this example): The pipeline graph shows each job, its status, and its dependencies across all stages.</li>
+<li>View details of a job by selecting the job name. For example, deploy-prod: The job details page shows the current status, timing information, and the output of the job log.</li>
+</ol>
+<p>You have successfully created your first CI/CD pipeline in GitLab. Congratulations!</p>
+<p>Now you can get started customizing your .gitlab-ci.yml and defining more advanced jobs.</p>
+
+<h2>.gitlab-ci.yml tips</h2>
+<p>Here are some tips to get started working with the .gitlab-ci.yml file.</p>
+<p>For the complete .gitlab-ci.yml syntax, see the full CI/CD YAML syntax reference.</p>
+<ul>
+<li>Use the pipeline editor to edit your .gitlab-ci.yml file.</li>
+<li>Each job contains a script section and belongs to a stage:
+<ul>
+<li>stage describes the sequential execution of jobs. If there are runners available, jobs in a single stage run in parallel.</li>
+</ul>
+</li>
+<li>Use the needs keyword to run jobs out of stage order, to increase pipeline speed and efficiency.</li>
+<li>You can set additional configuration to customize how your jobs and stages perform:
+<ul>
+<li>Use the rules keyword to specify when to run or skip jobs. The only and except legacy keywords are still supported, but can’t be used with rules in the same job.</li>
+<li>Keep information across jobs and stages persistent in a pipeline with cache and artifacts. These keywords are ways to store dependencies and job output, even when using ephemeral runners for each job.</li>
+<li>Use the default keyword to specify additional configurations that are applied to all jobs. This keyword is often used to define before_script and after_script sections that should run on every job.</li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>

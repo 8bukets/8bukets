@@ -199,8 +199,17 @@ export class WorkOrderService {
   public async clearOrders() {
     this.orders = []
     this.saveLocal()
-    // We don't necessarily want to wipe the DB in a real environment,
+    // We don't necessarily want to wipe the DB in a environment,
     // but for autonomous local runs this is fine.
+  }
+
+  /**
+   * Clears only pending orders from memory and local storage.
+   */
+  public async clearPendingOrders() {
+    this.orders = this.orders.filter(o => o.status !== 'pending')
+    this.saveLocal()
+    logAutonomousAction('🧹 [WorkOrder] Cleared all pending work orders.', 'info')
   }
 
   public async executePendingOrders() {

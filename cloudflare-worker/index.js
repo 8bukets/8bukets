@@ -12,6 +12,23 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
+    if (request.method === 'POST' && url.pathname === '/heartbeat') {
+      try {
+        const payload = await request.json();
+        // In a real worker, we would use env.PRESENCE_KV.put(payload.node_id, JSON.stringify(payload))
+        // For simulation, we just acknowledge the heartbeat.
+        return new Response(JSON.stringify({
+          status: 'received',
+          node_id: payload.telemetry?.node_id,
+          timestamp: new Date().toISOString()
+        }), {
+          headers: { 'content-type': 'application/json' },
+        });
+      } catch (e) {
+        return new Response('Invalid heartbeat payload', { status: 400 });
+      }
+    }
+
     if (url.pathname === '/health') {
       // High-availability status check
       const status = {
@@ -36,7 +53,11 @@ export default {
         agent: 'Jules',
         mode: 'cloud-active',
         presence: 'always-on',
-        ecosystem: 'Antigravity 8Bukets'
+        ecosystem: 'Antigravity 8Bukets',
+        nodes: [
+          { id: 'macbook-primary-01', status: 'online_monitored' },
+          { id: 'cloud-relay-01', status: 'active_standby' }
+        ]
       }), {
         headers: {
           'content-type': 'application/json',
