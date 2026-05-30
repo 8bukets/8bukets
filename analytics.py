@@ -1,7 +1,7 @@
 import json
+import os
 import argparse
 from collections import Counter
-from urllib.parse import urlparse
 from datetime import datetime
 import sys
 import html
@@ -91,7 +91,9 @@ def generate_report(data, output_file):
     total_posts = len(data)
 
     # 1. Domain Analysis
-    domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
+    # Optimization: Use pre-calculated domain directly to avoid expensive parsing
+    domains = [d for p in data if (d := p.get('domain'))]
+
     domain_counts = Counter(domains).most_common(10)
     max_domain_count = domain_counts[0][1] if domain_counts else 0
 
@@ -122,6 +124,7 @@ def generate_report(data, output_file):
 
         # Date Analysis
         dt_str = p.get('datetime')
+        dt = None
         if dt_str:
             try:
                 # Handle ISO format
@@ -277,5 +280,8 @@ if __name__ == "__main__":
     parser.add_argument("--output", default="REPORT.md", help="Output Markdown report file")
     args = parser.parse_args()
 
+    # Validate output path
+    output_path = validate_output_path(args.output)
+
     data = load_data(args.input)
-    generate_report(data, args.output)
+    generate_report(data, output_path)

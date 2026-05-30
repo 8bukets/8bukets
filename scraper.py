@@ -1,9 +1,9 @@
+import re
 import aiohttp
 import asyncio
 from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
-import re
 import argparse
 import logging
 import time
@@ -255,6 +255,15 @@ class MarkPositionScraperAsync:
         strainer = SoupStrainer('article')
         soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
         articles = soup.find_all('article', class_='post')
+        soup = BeautifulSoup(html, 'html.parser')
+
+        # Optimization: Narrow search scope to #content div if present to avoid traversing footer/sidebar
+        content = soup.find('div', id='content')
+        if content:
+            articles = content.find_all('article', class_='post')
+        else:
+            articles = soup.find_all('article', class_='post')
+
         page_posts = []
 
         if not articles:
@@ -325,7 +334,6 @@ class MarkPositionScraperAsync:
 =======
 >>>>>>> sentinel-csv-injection-fix-6855106868508477486
     async def scrape(self):
-        all_posts = []
         page_num = 1
         sem = asyncio.Semaphore(self.concurrency)
 
@@ -414,7 +422,49 @@ class MarkPositionScraperAsync:
         finally:
             self.executor.shutdown()
 
-        self.save_data(all_posts)
+                        if stop_detected:
+                            break
+
+                        if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
+                            logger.info("Reached max pages limit.")
+                            break
+
+                        page_num += len(tasks)
+                        # Small delay between batches
+                        await asyncio.sleep(0.5)
+            finally:
+                # Finalize JSON even on error
+                json_f.write('\n]')
+
+    def save_batch(self, posts: List[Dict], json_f, csv_writer, txt_f, seen_links: Set[str], is_first_item: bool) -> bool:
+        for post in posts:
+            # CSV
+            csv_writer.writerow([
+                post.get('title', ''),
+                post.get('date', ''),
+                post.get('author', ''),
+                ", ".join(post.get('categories', [])),
+                post.get('external_link', ''),
+                post.get('domain', ''),
+                post.get('post_url', '')
+            ])
+
+            # TXT
+            link = post.get('external_link')
+            if link and link not in seen_links:
+                seen_links.add(link)
+                txt_f.write(link + '\n')
+
+            # JSON
+            if not is_first_item:
+                json_f.write(',\n')
+            else:
+                json_f.write('\n')
+                is_first_item = False
+
+            json.dump(post, json_f, indent=4, ensure_ascii=False)
+
+        return is_first_item
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
@@ -423,6 +473,15 @@ class MarkPositionScraperAsync:
                 loop = asyncio.get_running_loop()
                 return await loop.run_in_executor(self.executor, parse_page, html)
             return None
+
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text to prevent CSV injection."""
+        if not text:
+            return ""
+        text = str(text)
+        if text.startswith(('=', '+', '-', '@')):
+            return "'" + text
+        return text
 
     def save_data(self, posts: List[Dict]):
         # JSON
