@@ -3,7 +3,7 @@ import Stripe from 'stripe'
 
 // In a real environment, you must set STRIPE_SECRET_KEY in your .env
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_mock', {
-  apiVersion: '2026-05-27.dahlia', // Latest stable Stripe API version (per type definition...
+  apiVersion: '2026-04-22.dahlia', // Latest stable Stripe API version (per type definitions in installed version)
 })
 
 export async function GET(request: NextRequest) {
