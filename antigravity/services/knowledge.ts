@@ -69,26 +69,53 @@ export async function observeKnowledge(url: string) {
 - **Title**: ${title}
 - **Relationship Map**: ${relationshipText}
 `
-    let shouldAppend = true;
-    let existingContent = '';
-
-    if (await fs.promises.access(knowledgePath).then(() => true).catch(() => false)) {
-      existingContent = await fs.promises.readFile(knowledgePath, 'utf8');
-      if (existingContent.includes(`- **Target**: ${url}`)) {
-        shouldAppend = false;
-      }
+    let existingContent = ''
+    try {
+      existingContent = await fs.promises.readFile(knowledgePath, 'utf8')
+    } catch (e) {
+      existingContent = '# Market Intelligence Matrix\n'
     }
 
-    if (shouldAppend) {
-      if (existingContent) {
-        await fs.promises.writeFile(knowledgePath, existingContent + relationshipEntry, 'utf8')
-      } else {
-        await fs.promises.writeFile(knowledgePath, `# Market Intelligence Matrix\n${relationshipEntry}`, 'utf8')
-      }
-      console.log(`✅ [Knowledge Observer] Appended insights to KNOWLEDGE_MERGE.md.`)
-    } else {
-      console.log(`ℹ️ [Knowledge Observer] Insight for ${url} already exists in KNOWLEDGE_MERGE.md.`)
+    const signature = 'All the best - https://markposition.wordpress.com'
+
+    // Instead of regex, split on signature and trim
+    let cleanContent = existingContent
+    if (existingContent.includes(signature)) {
+       cleanContent = existingContent.split(signature)[0]
     }
+    cleanContent = cleanContent.trimEnd()
+
+    let updated = false
+    // Use string parsing to avoid regex bugs
+    const blockRegex = /## Autonomous Observation(?:(?!## Autonomous Observation)[\s\S])*/g
+
+    let blocks = [];
+    let match;
+    while ((match = blockRegex.exec(cleanContent)) !== null) {
+        blocks.push(match[0]);
+    }
+
+    let newBlocks = blocks.map(block => {
+        if (block.includes(`- **Target**: ${url}\n`) || block.includes(`- **Target**: ${url}\r`)) {
+            updated = true;
+            return relationshipEntry.trimStart();
+        }
+        return block;
+    });
+
+    if (!updated) {
+        newBlocks.push(relationshipEntry.trimStart());
+    }
+
+    // Replace the part of string where the blocks are
+    let newContent = cleanContent.split(/## Autonomous Observation/)[0].trimEnd()
+    if (newBlocks.length > 0) {
+        newContent += '\n\n' + newBlocks.join('\n\n')
+    }
+
+    newContent = newContent.trimEnd() + '\n\n' + signature + '\n'
+    await fs.promises.writeFile(knowledgePath, newContent, 'utf8')
+    console.log(`✅ [Knowledge Observer] ${updated ? 'Updated' : 'Appended'} insights in KNOWLEDGE_MERGE.md.`)
 
     return { status: 'observed', url, title }
   } catch (error) {

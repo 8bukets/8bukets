@@ -9,7 +9,7 @@ import path from 'path'
 export async function bootstrap(idea: { feature: string, rationale: string }) {
   console.log(`🌀 [Singularity] Bootstrapping: ${idea.feature}...`)
   
-  const serviceName = idea.feature.toLowerCase().replace(/[()]/g, '').replace(/\s+/g, '_').replace(/_service$/, '')
+  const serviceName = idea.feature.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/_service$/, '')
   const filePath = path.join(process.cwd(), 'antigravity/services', `${serviceName}.ts`)
 
   const workflowPath = path.join(process.cwd(), 'antigravity/workflows', `${serviceName}_workflow.ts`)
@@ -47,18 +47,19 @@ export async function bootstrap(idea: { feature: string, rationale: string }) {
 import { z } from 'zod'
 import { autonomousFetch } from '@/antigravity/core'
 
-export const ${idea.feature.replace(/[()]/g, '').replace(/\s+/g, '')}Schema = z.object({
+export const ${idea.feature.replace(/[^a-zA-Z0-9]+/g, '')}Schema = z.object({
   status: z.string(),
   lastRun: z.string()
 })
 
-export async function get${idea.feature.replace(/[()]/g, '').replace(/\s+/g, '')}Data() {
+export async function get${idea.feature.replace(/[^a-zA-Z0-9]+/g, '')}Data() {
   'use cache'
-  return autonomousFetch(${idea.feature.replace(/[()]/g, '').replace(/\s+/g, '')}Schema, async () => {
+  return autonomousFetch(${idea.feature.replace(/[^a-zA-Z0-9]+/g, '')}Schema, async () => {
     return {
       status: 'active',
       lastRun: new Date().toISOString()
     }
+  })
 }
 `
 
@@ -69,11 +70,11 @@ export async function get${idea.feature.replace(/[()]/g, '').replace(/\s+/g, '')
  * ${idea.feature} Autonomous Workflow
  * Generated autonomously by the Antigravity Singularity Engine.
  */
-import { get${idea.feature.replace(/[()]/g, '').replace(/\s+/g, '')}Data } from '../services/${serviceName}'
+import { get${idea.feature.replace(/[^a-zA-Z0-9]+/g, '')}Data } from '../services/${serviceName}'
 
 async function run() {
   console.log('🤖 [Workflow] Starting autonomous cycle for ${idea.feature}...')
-  const data = await get${idea.feature.replace(/[()]/g, '').replace(/\s+/g, '')}Data()
+  const data = await get${idea.feature.replace(/[^a-zA-Z0-9]+/g, '')}Data()
   console.log('✅ [Workflow] Data fetched:', data)
 }
 
@@ -143,6 +144,7 @@ run-autonomous-${serviceName}:
             steps {
                 sh 'npx tsx antigravity/workflows/${serviceName}_workflow.ts'
             }
+        }\n`
     if (!jenkinsContent.includes(`stage('Run Autonomous ${idea.feature}')`)) {
       jenkinsContent = jenkinsContent.replace(/        stage\('Creative Workflow'\) \{/g, jenkinsStage + "        stage('Creative Workflow') {")
       await fs.promises.writeFile(jenkinsPath, jenkinsContent)
