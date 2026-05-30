@@ -1069,3 +1069,7 @@ When your pull request is reviewed and approved, your MCP server is available wi
 Docker Desktop's MCP Toolkit feature.
 The Docker MCP Catalog.
 The Docker Hub mcp namespace (for MCP servers built by Docker).
+
+## React Agent Deployment Logic
+
+The react agent deployment logic is responsible for verifying the deployment of react agents and improving the workflow run.
