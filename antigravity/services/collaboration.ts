@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { z } from 'zod'
 import { autonomousFetch } from '@/antigravity/core'
-import { checkDockerHealth } from './docker'
+import { isDockerHealthy as checkDockerHealth } from './docker'
 import { getLatestBuildStatus } from './jenkins'
 import { dispatchExecutiveBriefing } from './notification'
 
@@ -37,30 +37,31 @@ export async function getMissionMetadata(): Promise<MissionMetadata> {
 
     const content = await fs.promises.readFile(MISSION_PATH, 'utf8')
 
-    const missionStatementMatch = content.match(/## Mission Statement\n([\s\S]*?)\n##/)
-    const missionStatement = missionStatementMatch ? missionStatementMatch[1].trim() : 'Autonomous Evolution'
+    const missionStatementMatch = content.match(/#(?:# Mission Statement| Antigravity Mission)\n([\s\S]*?)(\n##|$)/)
+    let missionStatement = missionStatementMatch ? missionStatementMatch[1].trim() : 'Autonomous Evolution'
+    if (!missionStatement) missionStatement = 'Autonomous Evolution'
 
     const stakeholders: Stakeholder[] = []
-    const stakeholderSection = content.match(/## Stakeholders\n([\s\S]*?)\n##/)
+    const stakeholderSection = content.match(/## Stakeholders\n([\s\S]*?)(\n##|$)/)
     if (stakeholderSection) {
       const lines = stakeholderSection[1].trim().split('\n')
       lines.forEach(line => {
-        const parts = line.split(':')
-        if (parts.length === 2) {
+        const parts = line.match(/-\s*(.*?)\s*<(.*?)>/)
+        if (parts && parts.length === 3) {
           stakeholders.push({
-            role: parts[0].replace('-', '').trim(),
-            email: parts[1].trim()
+            role: parts[1].trim(),
+            email: parts[2].trim()
           })
         }
       })
     }
 
     const goals: string[] = []
-    const goalsSection = content.match(/## Strategic Goals\n([\s\S]*)/)
+    const goalsSection = content.match(/## (?:Strategic Goals|Goals)\n([\s\S]*?)(\n##|$)/)
     if (goalsSection) {
       const lines = goalsSection[1].trim().split('\n')
       lines.forEach(line => {
-        const goal = line.replace(/^\d+\.\s*/, '').trim()
+        const goal = line.replace(/^(?:\d+\.|\-)\s*/, '').trim()
         if (goal) goals.push(goal)
       })
     }
@@ -107,9 +108,20 @@ ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
   console.log(summary)
 
   // Dispatch executive briefing for high-level communication
+  const highIntensitySynergies = state.intelligence.relationshipMap.synergies?.filter((s: any) => s.intensity === 'High') || []
+  const criticalActions = state.intelligence.relationshipMap.collaborationRecommendations?.filter((r: any) => r.priority === 'Critical') || []
+
+  const synergyAlert = highIntensitySynergies.length > 0
+    ? `⚠️ CRITICAL: ${highIntensitySynergies.length} High-Intensity synergies requiring coordination.`
+    : 'System synergy is optimal.'
+
   const synergySummary = state.intelligence.relationshipMap.synergies && state.intelligence.relationshipMap.synergies.length > 0
-    ? state.intelligence.relationshipMap.synergies.map((s: any) => `- SYNERGY [${s.intensity}]: ${s.resource} (via ${s.branches.length} branches)`).join('\n')
+    ? state.intelligence.relationshipMap.synergies.slice(0, 5).map((s: any) => `- SYNERGY [${s.intensity}]: ${s.resource} (via ${s.branches.length} branches)`).join('\n')
     : 'No direct resource synergies detected.'
+
+  const recommendations = state.intelligence.relationshipMap.collaborationRecommendations?.length > 0
+    ? state.intelligence.relationshipMap.collaborationRecommendations.slice(0, 10).map((r: any) => `- [${r.priority}] ${r.action}: ${r.rationale}`).join('\n')
+    : 'No immediate collaboration actions required.'
 
   const branchSummary = state.intelligence.relationshipMap.resourceInventory
     .filter((r: any) => r.type === 'Branch Result')
@@ -117,10 +129,10 @@ ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
     .map((r: any) => `- RESULT: ${r.name} -> ${r.result}`)
     .join('\n')
 
-  const detailedBriefing = `--- SYNERGY ANALYSIS ---\n${synergySummary}\n\n--- KEY RESULTS ---\n${branchSummary}`
+  const detailedBriefing = `--- STRATEGIC SYNERGY ---\n${synergySummary}\n\n--- REQUIRED COORDINATION ---\n${recommendations}\n\n--- KEY RESULTS ---\n${branchSummary}`
 
   await dispatchExecutiveBriefing(
-    `System synchronized: ${state.intelligence.branches} branches. Posture: ${state.docker.status}.`,
+    `${synergyAlert} Posture: ${state.docker.status}. Analyzed ${state.intelligence.branches} branches.`,
     detailedBriefing
   )
 
@@ -146,6 +158,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
   const scanDirs = [
     { path: 'antigravity/services', type: 'Service', pattern: /\.ts$/ },
     { path: 'scripts', type: 'Automation Script', pattern: /\.ts$|\.sh$/ },
+    { path: 'agents', type: 'AI Agent', pattern: /\.md$|\.py$/ },
     { path: 'app', type: 'UI Component', pattern: /\.tsx$|\.ts$/ },
     { path: 'web-app', type: 'UI Component', pattern: /\.tsx$|\.ts$/ },
     { path: 'public', type: 'Asset', pattern: /.*/ }
@@ -251,16 +264,37 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     }
   })
 
+  map.collaborationRecommendations = []
+
   Object.entries(resourceUsage).forEach(([resource, branchSet]) => {
     if (branchSet.size > 1) {
-      const branches = Array.from(branchSet)
+      const synergyBranchNames = Array.from(branchSet)
+      const intensity = synergyBranchNames.length > 2 ? 'High' : 'Medium'
       map.synergies.push({
         type: 'Resource Conflict/Synergy',
         resource,
-        branches,
-        intensity: branches.length > 2 ? 'High' : 'Medium'
+        branches: synergyBranchNames,
+        intensity
       })
-      console.warn(`🤝 [Collaboration] Synergy Detected: ${branches.length} branches working on ${resource}.`)
+
+      // Phase 12: Generate Actionable Collaboration Recommendations
+      const primaryStakeholders = stakeholders.filter(s => {
+        const rolePrefix = s.role.toLowerCase().split(' ')[0]
+        const emailPrefix = s.email.split('@')[0].toLowerCase()
+        return synergyBranchNames.some(bn =>
+          bn.toLowerCase().includes(rolePrefix) || bn.toLowerCase().includes(emailPrefix)
+        )
+      }).map(s => s.role)
+
+      map.collaborationRecommendations.push({
+        priority: intensity === 'High' ? 'Critical' : 'Routine',
+        action: `Consolidate effort on '${resource}'`,
+        resource,
+        branches: synergyBranchNames,
+        rationale: `${synergyBranchNames.length} branches are concurrently modifying the same resource. ${primaryStakeholders.length > 0 ? `Coordination required between: ${primaryStakeholders.join(', ')}.` : ''}`
+      })
+
+      console.warn(`🤝 [Collaboration] Synergy Detected: ${synergyBranchNames.length} branches working on ${resource}.`)
     }
   })
 
@@ -280,7 +314,14 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
 export async function syncCollaborationState(branchIntelligence?: any[]) {
   console.log('🔄 [Collaboration] Synchronizing autonomous state...')
   const metadata = await getMissionMetadata()
-  const dockerHealth = await checkDockerHealth()
+
+  const dockerHealthy = await checkDockerHealth()
+  const dockerContainers = await (await import('./docker')).getDockerStatus()
+  const docker = {
+    status: dockerHealthy ? 'optimal' : 'degraded',
+    containerCount: dockerContainers.length
+  }
+
   const jenkinsStatus = await getLatestBuildStatus()
   const statePath = path.join(process.cwd(), 'autonomous_state.json')
 
@@ -296,22 +337,32 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
 
   const { jules } = await import('../jules')
   const { workOrderService } = await import('./work_order')
+  const { broadcastPulse } = await import('./neural')
+  const { getRelayState } = await import('./relay')
+
   // Phase 12: Trigger deep branch scan (force: true) to ensure all 1,800+ branches are analyzed
   const branches = branchIntelligence || await jules.scanAllBranches(true)
   const workOrders = workOrderService.getPendingOrders() // Simplified for now
   const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
+
+  // Phase 12: Synchronize Global Neural Pulse and Omni-Presence Relay
+  const neuralPulse = await broadcastPulse()
+  const relayState = await getRelayState()
+
   await mergeBranchInsights(branches)
 
   const newState = {
     ...currentState,
     mission: metadata.missionStatement,
     stakeholders: metadata.stakeholders,
-    docker: dockerHealth,
+    docker,
     jenkins: jenkinsStatus,
     intelligence: {
       branches: branches.length,
       pendingTasks: workOrders.length,
-      relationshipMap
+      relationshipMap,
+      neuralPulse,
+      relayState
     },
     last_sync: new Date().toISOString()
   }

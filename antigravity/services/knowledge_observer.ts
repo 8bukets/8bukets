@@ -1,172 +1,202 @@
-import fs from 'fs'
-import path from 'path'
-import { z } from 'zod'
+import fs from 'fs';
+import path from 'path';
 
-/**
- * KNOWLEDGE OBSERVER SERVICE
- * Autonomously parses and persists technical documentation and insights.
- */
+export interface KnowledgeSection {
+  header: string;
+  content: string;
+}
 
-export const KnowledgeSchema = z.object({
-  title: z.string(),
-  sections: z.array(z.object({
-    header: z.string(),
-    content: z.string()
-  })),
-  metadata: z.object({
-    source: z.string(),
-    ingestedAt: z.string()
-  })
-})
-
-export type Knowledge = z.infer<typeof KnowledgeSchema>
-
-const DEFAULT_STORAGE_DIR = path.join(process.cwd(), 'data/knowledge')
+export interface KnowledgeInsights {
+  source: string;
+  title: string;
+  description: string;
+  topKeywords: string[];
+  recentPosts: { title: string; link: string }[];
+  analyzedAt: string;
+  history?: { source: string; analyzedAt: string }[];
+  sections?: KnowledgeSection[];
+}
 
 export class KnowledgeObserver {
-  private storageDir: string
+  private storageDir: string;
 
-  constructor(storageDir: string = DEFAULT_STORAGE_DIR) {
-    this.storageDir = storageDir
+  constructor(storageDir?: string) {
+    this.storageDir = storageDir || path.join(process.cwd(), 'data/knowledge');
   }
 
-  /**
-   * processContent: Parses raw text into structured knowledge with code-block awareness.
-   */
-  public static processContent(title: string, rawContent: string, source: string): Knowledge {
-    const sections: { header: string; content: string }[] = []
-    const lines = rawContent.split('\n')
-    let currentHeader = 'Introduction'
-    let currentLines: string[] = []
-    let inMarkdownCodeBlock = false
-    let inPhpCodeBlock = false
+  public async persistKnowledge(newInsights: KnowledgeInsights) {
+    if (!fs.existsSync(this.storageDir)) {
+      fs.mkdirSync(this.storageDir, { recursive: true });
+    }
 
-    for (const line of lines) {
-      const trimmed = line.trim();
+    const jsonPath = path.join(this.storageDir, 'system_knowledge.json');
+    const mdPath = path.join(this.storageDir, 'ai_agents_knowledge.md');
 
-      // Manage code block states
-      if (trimmed.startsWith('```')) {
-        inMarkdownCodeBlock = !inMarkdownCodeBlock
-      } else if (trimmed.startsWith('<?php')) {
-        inPhpCodeBlock = true
+    let existingData: any = { typescript_sections: [] };
+
+    if (fs.existsSync(jsonPath)) {
+      try {
+        existingData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+      } catch (e) {
+        console.warn('⚠️ [Knowledge Observer] Could not parse existing knowledge JSON, starting fresh.');
       }
+    }
 
-      const inCodeBlock = inMarkdownCodeBlock || inPhpCodeBlock
+    // Phase 12: Knowledge Synchronization logic
+    const section = {
+      title: newInsights.title,
+      metadata: {
+        source: newInsights.source,
+        analyzedAt: newInsights.analyzedAt,
+        description: newInsights.description
+      },
+      sections: newInsights.sections || []
+    };
 
-      // Detect header candidates
-      const hasLetters = /[a-zA-Z]/.test(trimmed)
-      const isMarkdownHeader = trimmed.startsWith('#')
-      const isStrongHeaderCandidate = trimmed && hasLetters &&
-                             trimmed.length < 60 && trimmed.length > 2 &&
-                             !trimmed.endsWith('.') &&
-                             !trimmed.endsWith(':') &&
-                             !trimmed.endsWith(',') &&
-                             !trimmed.includes('\t') &&
-                             !trimmed.includes('|') && !trimmed.includes('&') &&
-                             !trimmed.includes('[') && !trimmed.includes(']') &&
-                             !trimmed.includes('\\') &&
-                             (trimmed.toUpperCase() === trimmed || /^[A-Z][a-zA-Z0-9.-]*(\s[A-Z][a-zA-Z0-9.-]*)*$/.test(trimmed)) &&
-                             !trimmed.startsWith('This ') &&
-                             !trimmed.startsWith('Some ') &&
-                             !/^[{}/*<>?]+$/.test(trimmed) &&
-                             !trimmed.includes('(') && !trimmed.includes(')') &&
-                             !trimmed.includes(' = ') &&
-                             !trimmed.includes(' => ')
+    if (!existingData.typescript_sections) existingData.typescript_sections = [];
+    existingData.typescript_sections.push(section);
 
-      // Heuristic: If we hit a markdown header or a strong header candidate,
-      // we assume any unclosed PHP block has ended.
-      let effectiveHeader = false
-      if (isMarkdownHeader) {
-        effectiveHeader = true
-        inPhpCodeBlock = false // Markdown headers break PHP blocks
-      } else if (!inCodeBlock && isStrongHeaderCandidate) {
-        effectiveHeader = true
-      } else if (inPhpCodeBlock && isStrongHeaderCandidate) {
-        // Strong headers also break PHP blocks (which often lack closing tags in docs)
-        effectiveHeader = true
-        inPhpCodeBlock = false
-      }
+    // Write JSON
+    fs.writeFileSync(jsonPath, JSON.stringify(existingData, null, 2), 'utf8');
 
-      if (effectiveHeader) {
-        if (currentLines.length > 0) {
-          sections.push({ header: currentHeader, content: currentLines.join('\n').trim() })
+    // Write Markdown
+    let mdContent = `# Knowledge Observation Insights (Unified)\n\n`;
+    mdContent += `**Latest Source:** ${newInsights.source}\n`;
+    mdContent += `**Latest Analysis:** ${newInsights.analyzedAt}\n\n`;
+
+    if (newInsights.sections) {
+      newInsights.sections.forEach(s => {
+        // Double check for junk content before writing to MD
+        if (s.content.length > 5 && !s.content.includes('{')) {
+          mdContent += `## ${s.header}\n${s.content}\n\n`;
         }
-        currentHeader = trimmed.replace(/^#+\s*/, '').trim()
-        currentLines = []
-      } else {
-        currentLines.push(line)
-      }
-
-      // Close PHP code block if we see the closing tag
-      if (trimmed.includes('?>') && inPhpCodeBlock) {
-        inPhpCodeBlock = false
-      }
+      });
     }
 
-    if (currentLines.length > 0) {
-      sections.push({ header: currentHeader, content: currentLines.join('\n').trim() })
+    fs.writeFileSync(mdPath, mdContent, 'utf8');
+    console.log(`✅ [Knowledge Observer] Knowledge successfully merged into ${jsonPath} and ${mdPath}`);
+    return existingData;
+  }
+
+  public static processContent(title: string, raw: string, source: string): KnowledgeInsights {
+    console.log(`🧠 [Knowledge Observer] Processing content from ${source}...`);
+
+    // Pre-filtering: Remove scripts, styles, and other non-content tags
+    const cleanRaw = raw
+      .replace(/<script\b[^>]*>([\s\S]*?)<\/script>/gim, '')
+      .replace(/<style\b[^>]*>([\s\S]*?)<\/style>/gim, '')
+      .replace(/<svg\b[^>]*>([\s\S]*?)<\/svg>/gim, '')
+      .replace(/<noscript\b[^>]*>([\s\S]*?)<\/noscript>/gim, '')
+      .replace(/<iframe\b[^>]*>([\s\S]*?)<\/iframe>/gim, '');
+
+    const sections: KnowledgeSection[] = [];
+    const lines = cleanRaw.split('\n');
+    let currentSection: KnowledgeSection | null = null;
+
+    let inCodeBlock = false;
+    lines.forEach(line => {
+      if (line.trim().startsWith('```')) {
+        inCodeBlock = !inCodeBlock;
+      }
+
+      const trimmedLine = line.trim();
+
+      // Skip lines that look like minified CSS or JS remnants if not in code block
+      if (!inCodeBlock && (trimmedLine.includes('{') && trimmedLine.includes('}') && trimmedLine.length > 50)) {
+        return;
+      }
+
+      const headerMatch = !inCodeBlock && (line.match(/^#+\s*(.*)/) || line.match(/^[A-Z][A-Za-z\s]{2,20}$/));
+
+      if (headerMatch && !line.includes('<?php') && !line.startsWith('//') && !line.includes('#[')) {
+        if (currentSection) sections.push(currentSection);
+        currentSection = { header: headerMatch[1] || line.trim(), content: '' };
+      } else if (currentSection) {
+        // Only strip HTML tags if we're not in a code block and it looks like a real tag
+        // Simple heuristic: if it contains generic-like patterns, don't strip
+        let contentLine = line.trim();
+        if (!inCodeBlock) {
+           contentLine = contentLine.replace(/<(?!T[A-Z][a-zA-Z0-9]*|T[0-9]|T[,\s]|T>)[^>]*>/gm, '');
+        }
+
+        if (contentLine) {
+          currentSection.content += (currentSection.content ? '\n' : '') + contentLine;
+        }
+      }
+    });
+
+    if (currentSection) sections.push(currentSection);
+
+    // Filter out sections that have too much junk or too little content
+    const filteredSections = sections.filter(s => {
+      const junkPatterns = [/{/, /}/, /@media/, /\.wp-/, /!important/];
+      const isJunk = junkPatterns.some(p => p.test(s.content)) && s.content.length > 100;
+      return s.content.length > 10 && !isJunk;
+    });
+
+    // Naive keyword extraction based on frequency (excluding common stop words)
+    const words = raw
+        .replace(/<[^>]*>?/gm, ' ')
+        .replace(/[^a-zA-Z\s]/g, ' ')
+        .toLowerCase()
+        .split(/\s+/)
+        .filter(w => w.length > 4);
+
+    const stopWords = new Set(['about', 'above', 'after', 'again', 'against', 'all', 'am', 'an', 'and', 'any', 'are', 'aren', 'as', 'at', 'be', 'because', 'been', 'before', 'being', 'below', 'between', 'both', 'but', 'by', 'can', 'cannot', 'could', 'couldn', 'did', 'didn', 'do', 'does', 'doesn', 'doing', 'don', 'down', 'during', 'each', 'few', 'for', 'from', 'further', 'had', 'hadn', 'has', 'hasn', 'have', 'haven', 'having', 'he', 'her', 'here', 'hers', 'herself', 'him', 'himself', 'his', 'how', 'however', 'i', 'if', 'in', 'into', 'is', 'isn', 'it', 'its', 'itself', 'let', 'me', 'more', 'most', 'mustn', 'my', 'myself', 'no', 'nor', 'not', 'of', 'off', 'on', 'once', 'only', 'or', 'other', 'ought', 'our', 'ours', 'ourselves', 'out', 'over', 'own', 'same', 'shan', 'she', 'should', 'shouldn', 'so', 'some', 'such', 'than', 'that', 'the', 'their', 'theirs', 'them', 'themselves', 'then', 'there', 'these', 'they', 'this', 'those', 'through', 'to', 'too', 'under', 'until', 'up', 'very', 'was', 'wasn', 'we', 'were', 'weren', 'what', 'when', 'where', 'which', 'while', 'who', 'whom', 'why', 'with', 'won', 'would', 'wouldn', 'you', 'your', 'yours', 'yourself', 'yourselves', 'their', 'there', 'class', 'style', 'href', 'https', 'http', 'width', 'height', 'content', 'content', 'title', 'xmlns', 'svg', 'viewbox', 'path', 'fill', 'stroke', 'margin', 'padding', 'false', 'true', 'null', 'undefined', 'function', 'return', 'const', 'let', 'var', 'document', 'window', 'script', 'iframe', 'src', 'alt', 'data']);
+
+    const wordCounts = new Map<string, number>();
+    for (const w of words) {
+        if (!stopWords.has(w)) {
+            wordCounts.set(w, (wordCounts.get(w) || 0) + 1);
+        }
     }
+
+    const topKeywords = Array.from(wordCounts.entries())
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 15)
+        .map(entry => entry[0]);
 
     return {
+      source,
       title,
-      sections,
-      metadata: {
-        source,
-        ingestedAt: new Date().toISOString()
-      }
-    }
+      description: 'Extracted system knowledge',
+      topKeywords,
+      recentPosts: [],
+      analyzedAt: new Date().toISOString(),
+      sections: filteredSections
+    };
   }
+}
 
-  /**
-   * persistKnowledge: Merges and saves knowledge to persistent stores.
-   */
-  public async persistKnowledge(knowledge: Knowledge) {
-    if (!fs.existsSync(this.storageDir)) {
-      fs.mkdirSync(this.storageDir, { recursive: true })
+export function persistKnowledge(newInsights: KnowledgeInsights) {
+    const observer = new KnowledgeObserver();
+    return observer.persistKnowledge(newInsights);
+}
+
+export async function observeKnowledge(url: string) {
+  console.log(`👁️ [Knowledge Observer] Scanning ${url} for autonomous insights...`);
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
+
+    const response = await fetch(url, { signal: controller.signal });
+    clearTimeout(timeoutId);
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
+    }
+    const html = await response.text();
+    if (!html || html.length < 100) {
+      throw new Error(`Received insufficient content from ${url}`);
     }
 
-    const jsonStore = path.join(this.storageDir, 'system_knowledge.json')
-    const mdStore = path.join(this.storageDir, 'ai_agents_knowledge.md')
-
-    // 1. JSON Persistence (Merge Logic - Unified Store)
-    let systemKnowledge: any = { typescript_sections: [] }
-    if (fs.existsSync(jsonStore)) {
-      try {
-        systemKnowledge = JSON.parse(fs.readFileSync(jsonStore, 'utf8'))
-        if (!systemKnowledge.typescript_sections) {
-          systemKnowledge.typescript_sections = []
-        }
-      } catch (e) {
-        console.warn('⚠️ [KnowledgeObserver] Failed to parse existing JSON store. Starting fresh.')
-      }
-    }
-
-    // Replace if same title exists, or append
-    const existingData = systemKnowledge.typescript_sections
-    const index = existingData.findIndex((k: Knowledge) => k.title === knowledge.title)
-    if (index !== -1) {
-      existingData[index] = knowledge
+    return KnowledgeObserver.processContent('Web Insight', html, url);
+  } catch (error: any) {
+    if (error.name === 'AbortError') {
+      console.error(`❌ [Knowledge Observer] Timeout observing ${url}`);
     } else {
-      existingData.push(knowledge)
+      console.error(`❌ [Knowledge Observer] Error observing ${url}:`, error.message);
     }
-
-    fs.writeFileSync(jsonStore, JSON.stringify(systemKnowledge, null, 2))
-
-    // 2. Markdown Persistence (Rebuild)
-    let mdContent = `# ANTIGRAVITY AI AGENTS KNOWLEDGE BASE\n\n*Last Updated: ${new Date().toISOString()}*\n\n`
-
-    for (const k of existingData as Knowledge[]) {
-      mdContent += `## DOCUMENT: ${k.title}\n`
-      mdContent += `**Source:** ${k.metadata.source}  \n`
-      mdContent += `**Ingested At:** ${k.metadata.ingestedAt}\n\n`
-
-      for (const section of k.sections) {
-        mdContent += `### ${section.header}\n${section.content}\n\n`
-      }
-      mdContent += `---\n\n`
-    }
-
-    fs.writeFileSync(mdStore, mdContent)
-    console.log(`✅ [KnowledgeObserver] Persisted "${knowledge.title}" to ${this.storageDir}`)
+    return null;
   }
 }

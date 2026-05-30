@@ -37,6 +37,7 @@ We use **Vitest** for unit and integration tests.
 - All autonomous core changes MUST pass validation before being merged.
 
 ## Synchronization Protocols (Update)
+- **Connect:** Use `npm run connect` to trigger Docker auditing and stakeholder collaboration sync.
 - **GitHub:** Autonomous PR validation is triggered by the Explorer.
 - **GitKraken:** Visual branch validation should reflect the "Clean Architecture" maintained by the Core.
 
@@ -46,7 +47,8 @@ To "work better," the agent (Jules) follows these self-improving directives:
 2.  **Architectural Stewardship:** Jules proactively guards the Next.js 16 core patterns, preventing "drift" toward legacy React patterns.
 3.  **Predictive Refinement:** Jules analyzes the Explorer's output to automatically suggest Phase 6 cognitive upgrades.
 4. **Self-Correction:** If a Circuit Breaker trips (Phase 5), Jules automatically logs the failure and adjusts the Predictive Scaling (Phase 4) profile to be more conservative.
-5. **Identity Anchoring:** All Phase 9/10 operations are authorized against the verified signatures:
+5. **Identity Anchoring:** All Phase 12 operations are authorized against the verified signatures:
     - Admin: `SHA256:Zey4+Jcqu48gSIuuQaavasF2D7iu+J590Rr1EA3LdbA`
     - Neural Sync: `SHA256:qhno7SbhBIYwfgNgGhygt2e0kRDBlPkEqjAGdXTVOsA`
 
+All the best - https://markposition.wordpress.com
