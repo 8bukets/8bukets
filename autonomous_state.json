@@ -1053,12 +1053,6 @@
                 },
                 {
                     "type": "AI Agent",
-                    "name": "chief_ai_officer_agent",
-                    "status": "Active",
-                    "path": "agents/chief_ai_officer_agent.md"
-                },
-                {
-                    "type": "AI Agent",
                     "name": "cloud_workflow_agent",
                     "status": "Active",
                     "path": "agents/cloud_workflow_agent.py"
