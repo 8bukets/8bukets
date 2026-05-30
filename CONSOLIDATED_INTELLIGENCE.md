@@ -431,3 +431,13 @@ Synergy achieved across 2254 branches. Detailed knowledge and results consolidat
 - **Ingested on:** 2026-05-30T10:38:14.111Z
 - **Source:** Visual Architecture Diagram
 - **Summary:** The architecture shifts from fragile Stateless Agents to Long-Running Agents that are durable and context-aware. They support multi-day workflows via Persistent Session Storage, Durable Memory Schemas, Event-Driven Dormancy Gates, and Multi-Agent Delegation to survive idle time and restarts.
+
+## 🚀 MacBook Cloud Simulation & Online Presence Intelligence
+- **Ingested on:** 2026-05-30T10:47:39.754Z
+- **Source:** Local Environment
+- **Summary:** The system is fully capable of autonomous cloud execution using MACBOOK_CLOUD_SIMULATION=true, integrating with Docker, GitHub, GitKraken, Supabase, MongoDB, and GitLab to ensure a continuous online presence and evolutionary coding capabilities.
+
+## 🚀 Architecture for Time: State Management for Multi-Day Agents
+- **Ingested on:** 2026-05-30T10:47:40.612Z
+- **Source:** Visual Architecture Diagram
+- **Summary:** The architecture shifts from fragile Stateless Agents to Long-Running Agents that are durable and context-aware. They support multi-day workflows via Persistent Session Storage, Durable Memory Schemas, Event-Driven Dormancy Gates, and Multi-Agent Delegation to survive idle time and restarts.
