@@ -12,6 +12,8 @@ export const NeuralPerformanceRelaySchema = z.object({
 })
 
 export async function getNeuralPerformanceRelayData() {
+  try {
+
   'use cache'
   return autonomousFetch(NeuralPerformanceRelaySchema, async () => {
     return {
@@ -19,4 +21,8 @@ export async function getNeuralPerformanceRelayData() {
       lastRun: new Date().toISOString()
     }
   }, { life: 'minutes' })
+
+  } catch (err) {
+    console.error('[Evolution Autocorrect] Unhandled error:', err);
+  }
 }

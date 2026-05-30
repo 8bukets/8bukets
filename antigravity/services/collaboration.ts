@@ -291,7 +291,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
         action: `Consolidate effort on '${resource}'`,
         resource,
         branches: synergyBranchNames,
-        rationale: `${synergyBranchNames.length} branches are concurrently modifying the same resource. ${primaryStakeholders.length > 0 ? `Coordination required between: ${primaryStakeholders.join(', ')}.` : ''}`
+        rationale: `${synergyBranchNames.length} branches are concurrently modifying '${resource}'. This indicates high developmental contention. ${primaryStakeholders.length > 0 ? `Urgent coordination required between: ${primaryStakeholders.join(', ')}.` : 'Strategic alignment recommended across independent teams.'}`
       })
 
       console.warn(`🤝 [Collaboration] Synergy Detected: ${synergyBranchNames.length} branches working on ${resource}.`)
@@ -382,8 +382,10 @@ export async function mergeBranchInsights(branches: any[]) {
   }
 
   const relevantBranches = branches.filter(b => {
-    // Only include branches with meaningful knowledge or results
-    if (!(b.knowledge || (b.results && b.results !== b.lastMessage && b.results !== 'N/A'))) {
+    // Phase 12: Broadened filter to include more meaningful results
+    const hasMeaningfulResult = b.results && b.results !== 'N/A' && b.results.length > 10;
+
+    if (!(b.knowledge || hasMeaningfulResult)) {
       return false;
     }
 

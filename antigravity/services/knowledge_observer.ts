@@ -112,8 +112,13 @@ export class KnowledgeObserver {
         if (currentSection) sections.push(currentSection);
         currentSection = { header: headerMatch[1] || line.trim(), content: '' };
       } else if (currentSection) {
-        // Strip other HTML tags from content but keep text
-        const contentLine = line.replace(/<[^>]*>?/gm, '').trim();
+        // Only strip HTML tags if we're not in a code block and it looks like a real tag
+        // Simple heuristic: if it contains generic-like patterns, don't strip
+        let contentLine = line.trim();
+        if (!inCodeBlock) {
+           contentLine = contentLine.replace(/<(?!T[A-Z][a-zA-Z0-9]*|T[0-9]|T[,\s]|T>)[^>]*>/gm, '');
+        }
+
         if (contentLine) {
           currentSection.content += (currentSection.content ? '\n' : '') + contentLine;
         }
