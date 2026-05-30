@@ -103,8 +103,9 @@ export class KnowledgeObserver {
    * persistKnowledge: Merges and saves knowledge to the unified system store.
    */
   public async persistKnowledge(knowledge: Knowledge) {
-    if (!fs.existsSync(this.storageDir)) {
-      fs.mkdirSync(this.storageDir, { recursive: true })
+    const dirExists = await fs.promises.stat(this.storageDir).then(() => true).catch(() => false)
+    if (!dirExists) {
+      await fs.promises.mkdir(this.storageDir, { recursive: true })
     }
 
     const jsonStore = path.join(this.storageDir, 'system_knowledge.json')
@@ -120,9 +121,10 @@ export class KnowledgeObserver {
       typescript_sections: {}
     }
 
-    if (fs.existsSync(jsonStore)) {
+    const storeExists = await fs.promises.stat(jsonStore).then(() => true).catch(() => false)
+    if (storeExists) {
       try {
-        systemKnowledge = JSON.parse(fs.readFileSync(jsonStore, 'utf8'))
+        systemKnowledge = JSON.parse(await fs.promises.readFile(jsonStore, 'utf8'))
       } catch (e) {
         console.warn('⚠️ [KnowledgeObserver] Failed to parse unified store. Initializing new structure.')
       }
@@ -166,7 +168,7 @@ export class KnowledgeObserver {
       systemKnowledge.metadata.sources_processed.push(knowledge.metadata.source)
     }
 
-    fs.writeFileSync(jsonStore, JSON.stringify(systemKnowledge, null, 2))
+    await fs.promises.writeFile(jsonStore, JSON.stringify(systemKnowledge, null, 2))
     logAutonomousAction(`✅ [KnowledgeObserver] Persisted "${knowledge.title}" to unified store at ${jsonStore}`, 'info')
   }
 }

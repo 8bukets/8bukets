@@ -22,11 +22,13 @@ const DIRECTIVES_PATH = path.join(process.cwd(), '.antigravity/directives.md')
 
 export async function getStakeholderDirectives(): Promise<Directive[]> {
   'use cache'
-  if (! fs.existsSync(DIRECTIVES_PATH)) {
+  const exists = await fs.promises.stat(DIRECTIVES_PATH).then(() => true).catch(() => false)
+  if (!exists) {
     // Create default directives if missing
     const defaultDirectives = `# Stakeholder Directives\n\n- [High] Maintain 99.9% system uptime (Active)\n- [Medium] Consolidate all branch knowledge daily (Active)\n`
     const dir = path.dirname(DIRECTIVES_PATH)
-    if (! fs.existsSync(dir)) await fs.promises.mkdir(dir, { recursive: true })
+    const dirExists = await fs.promises.stat(dir).then(() => true).catch(() => false)
+    if (!dirExists) await fs.promises.mkdir(dir, { recursive: true })
     await fs.promises.writeFile(DIRECTIVES_PATH, defaultDirectives)
     return [
       { id: 'dir_default_1', intent: 'Maintain 99.9% system uptime', priority: 'High', status: 'Active', timestamp: new Date().toISOString() },
@@ -59,7 +61,8 @@ export async function dispatchStakeholderAlert(subject: string, body: string, pr
   logAutonomousAction(`[ALERT] ${subject}`, priority === 'critical' ? 'error' : 'info')
 
   const logDir = path.join(process.cwd(), 'logs')
-  if (! fs.existsSync(logDir)) await fs.promises.mkdir(logDir, { recursive: true })
+  const dirExists = await fs.promises.stat(logDir).then(() => true).catch(() => false)
+  if (!dirExists) await fs.promises.mkdir(logDir, { recursive: true })
 
   const alertEntry = `\n--- ALERT (${new Date().toISOString()}) ---\nSubject: ${subject}\nPriority: ${priority}\n\n${body}\n`
   await fs.promises.appendFile(path.join(logDir, 'stakeholder_alerts.log'), alertEntry)

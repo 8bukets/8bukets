@@ -38,9 +38,10 @@ export class EdgeToCloudBridge {
 
       for (const relativePath of this.filesToSync) {
         const fullPath = path.join(process.cwd(), relativePath)
-        if (fs.existsSync(fullPath)) {
+        const exists = await fs.promises.stat(fullPath).then(() => true).catch(() => false)
+        if (exists) {
           try {
-            const content = fs.readFileSync(fullPath, 'utf8')
+            const content = await fs.promises.readFile(fullPath, 'utf8')
             const data = JSON.parse(content)
 
             await collection.updateOne(
@@ -99,11 +100,12 @@ export class EdgeToCloudBridge {
 
         const targetDir = path.dirname(targetPath)
 
-        if (!fs.existsSync(targetDir)) {
-          fs.mkdirSync(targetDir, { recursive: true })
+        const dirExists = await fs.promises.stat(targetDir).then(() => true).catch(() => false)
+        if (!dirExists) {
+          await fs.promises.mkdir(targetDir, { recursive: true })
         }
 
-        fs.writeFileSync(targetPath, JSON.stringify(state.data, null, 2))
+        await fs.promises.writeFile(targetPath, JSON.stringify(state.data, null, 2))
         recovered.push(state.file)
       }
 

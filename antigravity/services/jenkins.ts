@@ -20,9 +20,11 @@ export async function getJenkinsStatus(): Promise<JenkinsPipelineMetrics> {
   let has_parallel = false
   let content = ''
 
-  if (fs.existsSync(ciFilePath)) {
+  const exists = await fs.promises.stat(ciFilePath).then(() => true).catch(() => false)
+  if (exists) {
     try {
-      content = fs.readFileSync(ciFilePath, 'utf-8').toLowerCase()
+      content = await fs.promises.readFile(ciFilePath, 'utf-8')
+      content = content.toLowerCase()
       if (content.includes('security') || content.includes('test')) {
         has_security_or_test = true
       }
@@ -43,7 +45,7 @@ export async function getJenkinsStatus(): Promise<JenkinsPipelineMetrics> {
     }
   }
 
-  const has_jenkins_ci = fs.existsSync(ciFilePath)
+  const has_jenkins_ci = exists
 
   let pipeline_efficiency: 'BASIC' | 'OPTIMIZED' | 'HIGHLY_OPTIMIZED' = 'BASIC'
   if (has_jenkins_ci) {

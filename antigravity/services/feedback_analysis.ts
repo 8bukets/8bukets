@@ -30,9 +30,10 @@ export async function getFeedbackAnalysisServiceData() {
     const criticalIssues: string[] = []
     const suggestions: string[] = []
 
-    const processLog = (filePath: string) => {
-      if (fs.existsSync(filePath)) {
-        const content = fs.readFileSync(filePath, 'utf8')
+    const processLog = async (filePath: string) => {
+      const exists = await fs.promises.stat(filePath).then(() => true).catch(() => false)
+      if (exists) {
+        const content = await fs.promises.readFile(filePath, 'utf8')
         const lines = content.split('\n')
         for (const line of lines) {
           if (line.includes('ERROR') || line.includes('❌') || line.includes('💥')) {
@@ -49,8 +50,8 @@ export async function getFeedbackAnalysisServiceData() {
       }
     }
 
-    processLog(collaborationLog)
-    processLog(autonomousLog)
+    await processLog(collaborationLog)
+    await processLog(autonomousLog)
 
     logAutonomousAction(`[FEEDBACK] Errors: ${errorCount}, Warnings: ${warningsCount}, Critical: ${criticalIssues.length}`, 'info')
 

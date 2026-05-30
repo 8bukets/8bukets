@@ -18,7 +18,7 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
 
   const ideas: SynthesizedIdea[] = []
   const servicesDir = path.join(process.cwd(), 'antigravity/services')
-  const files = fs.readdirSync(servicesDir)
+  const files = await fs.promises.readdir(servicesDir)
 
   // Gap Analysis 1: Real-time Notifications
   // If we have stats and users but no notification logic

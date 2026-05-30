@@ -29,11 +29,12 @@ const MISSION_PATH = path.join(process.cwd(), '.antigravity/mission.md')
 
 export async function getMissionMetadata(): Promise<MissionMetadata> {
   return autonomousFetch(MissionMetadataSchema, async () => {
-    if (!fs.existsSync(MISSION_PATH)) {
+    const exists = await fs.promises.stat(MISSION_PATH).then(() => true).catch(() => false)
+    if (!exists) {
       throw new Error('Mission document missing. System collaboration impaired.')
     }
 
-    const content = fs.readFileSync(MISSION_PATH, 'utf8')
+    const content = await fs.promises.readFile(MISSION_PATH, 'utf8')
 
     const missionStatementMatch = content.match(/## Mission Statement\n([\s\S]*?)\n##/)
     const missionStatement = missionStatementMatch ? missionStatementMatch[1].trim() : 'Autonomous Evolution'
@@ -86,8 +87,9 @@ export async function mergeBranchInsights(branches: any[]) {
   const knowledgePath = path.join(process.cwd(), 'KNOWLEDGE_MERGE.md');
   let content = '';
 
-  if (fs.existsSync(knowledgePath)) {
-    content = fs.readFileSync(knowledgePath, 'utf8');
+  const knowledgeExists = await fs.promises.stat(knowledgePath).then(() => true).catch(() => false)
+  if (knowledgeExists) {
+    content = await fs.promises.readFile(knowledgePath, 'utf8');
   }
 
   let nuggetsAdded = 0;
@@ -133,7 +135,7 @@ export async function mergeBranchInsights(branches: any[]) {
       content += '\n' + newNuggets + '\n\n---\n' + signature + '\n';
     }
 
-    fs.writeFileSync(knowledgePath, content);
+    await fs.promises.writeFile(knowledgePath, content);
   }
 
   return { nuggets: nuggetsAdded };
@@ -174,9 +176,10 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
   const statePath = path.join(process.cwd(), 'autonomous_state.json')
 
   let currentState: any = {}
-  if (fs.existsSync(statePath)) {
+  const stateExists = await fs.promises.stat(statePath).then(() => true).catch(() => false)
+  if (stateExists) {
     try {
-      currentState = JSON.parse(fs.readFileSync(statePath, 'utf8'))
+      currentState = JSON.parse(await fs.promises.readFile(statePath, 'utf8'))
     } catch (e) {
       console.warn('⚠️ [Collaboration] Failed to parse autonomous_state.json, starting fresh.')
     }
@@ -214,7 +217,7 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
   }
 
   // Persist to local fallback
-  fs.writeFileSync(statePath, JSON.stringify(newState, null, 4))
+  await fs.promises.writeFile(statePath, JSON.stringify(newState, null, 4))
 
   // Persist to MongoDB
   try {

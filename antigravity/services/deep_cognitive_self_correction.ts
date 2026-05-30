@@ -24,12 +24,13 @@ export class DeepCognitiveSelfCorrectionService {
     // Scan the `antigravity/services` directory to find files that are too large
     // or contain blocking synchronous methods, and autonomously propose fixes.
     const servicesDir = path.join(process.cwd(), 'antigravity/services')
-    if (fs.existsSync(servicesDir)) {
-      const files = fs.readdirSync(servicesDir)
+    const dirExists = await fs.promises.stat(servicesDir).then(() => true).catch(() => false)
+    if (dirExists) {
+      const files = await fs.promises.readdir(servicesDir)
       for (const file of files) {
         if (file.endsWith('.ts') && !file.endsWith('.test.ts')) {
           const fullPath = path.join(servicesDir, file)
-          const content = fs.readFileSync(fullPath, 'utf8')
+          const content = await fs.promises.readFile(fullPath, 'utf8')
           const lines = content.split('\n').length
 
           if (lines > 100) {

@@ -41,7 +41,7 @@ export class WorkOrderService {
         if (result.success) {
           this.orders = result.data
           logAutonomousAction(`✅ [WorkOrder] Loaded ${this.orders.length} orders from MongoDB.`, 'info')
-          this.saveLocal() // Sync local for fallback
+          await this.saveLocal() // Sync local for fallback
           return
         }
       }
@@ -50,9 +50,10 @@ export class WorkOrderService {
     }
 
     // Fallback to local file
-    if (fs.existsSync(STORAGE_PATH)) {
+    const exists = await fs.promises.stat(STORAGE_PATH).then(() => true).catch(() => false)
+    if (exists) {
       try {
-        const data = fs.readFileSync(STORAGE_PATH, 'utf8')
+        const data = await fs.promises.readFile(STORAGE_PATH, 'utf8')
         const parsed = JSON.parse(data)
         const result = z.array(WorkOrderSchema).safeParse(parsed)
         if (result.success) {
@@ -98,12 +99,13 @@ export class WorkOrderService {
     }
   }
 
-  private saveLocal() {
+  private async saveLocal() {
     const dataDir = path.dirname(STORAGE_PATH)
-    if (!fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir, { recursive: true })
+    const exists = await fs.promises.stat(dataDir).then(() => true).catch(() => false)
+    if (!exists) {
+      await fs.promises.mkdir(dataDir, { recursive: true })
     }
-    fs.writeFileSync(STORAGE_PATH, JSON.stringify(this.orders, null, 4))
+    await fs.promises.writeFile(STORAGE_PATH, JSON.stringify(this.orders, null, 4))
   }
 
   public async createOrder(type: WorkOrder['type'], goal: string, payload: any, dependsOn?: string[]): Promise<WorkOrder> {
@@ -198,7 +200,7 @@ export class WorkOrderService {
    */
   public async clearOrders() {
     this.orders = []
-    this.saveLocal()
+    await this.saveLocal()
     // We don't necessarily want to wipe the DB in a real environment,
     // but for autonomous local runs this is fine.
   }
@@ -277,7 +279,8 @@ export class WorkOrderService {
         try {
           // If we have a specific test for the service, run it. Otherwise run general tests.
           const testPath = `antigravity/services/${order.payload?.serviceName}.test.ts`
-          if (fs.existsSync(path.join(process.cwd(), testPath))) {
+          const testExists = await fs.promises.stat(path.join(process.cwd(), testPath)).then(() => true).catch(() => false)
+          if (testExists) {
             await execAsync(`npx vitest run ${testPath}`)
           } else {
             logAutonomousAction(`ℹ️ [WorkOrder] No specific test found for ${order.payload?.serviceName}. Running general integrity check.`, 'info')

@@ -148,8 +148,9 @@ export class CloudConvergenceService {
 
         if (mongoOrders.length > 0) {
           let localOrders = []
-          if (fs.existsSync(localPath)) {
-            localOrders = JSON.parse(fs.readFileSync(localPath, 'utf8'))
+          const exists = await fs.promises.stat(localPath).then(() => true).catch(() => false)
+          if (exists) {
+            localOrders = JSON.parse(await fs.promises.readFile(localPath, 'utf8'))
           }
 
           // Merge logic: MongoDB pending orders take precedence
@@ -159,7 +160,7 @@ export class CloudConvergenceService {
             orderMap.set(mo.id, orderData)
           })
 
-          fs.writeFileSync(localPath, JSON.stringify(Array.from(orderMap.values()), null, 2))
+          await fs.promises.writeFile(localPath, JSON.stringify(Array.from(orderMap.values()), null, 2))
           logAutonomousAction(`✅ [CloudConvergence] Resolved conflicts: Synced ${mongoOrders.length} orders from MongoDB.`, 'info')
           return { status: 'resolved', conflicts: mongoOrders.length }
         }

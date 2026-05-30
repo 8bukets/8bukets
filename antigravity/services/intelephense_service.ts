@@ -22,9 +22,10 @@ export class IntelephenseService {
 
     // 1. Ingest from local scratch (most complete usually)
     const localPath = path.join(process.cwd(), 'scratch/intelephense_docs.md')
-    if ( fs.existsSync(localPath)) {
+    const exists = await fs.promises.stat(localPath).then(() => true).catch(() => false)
+    if (exists) {
       console.log(' 📄 Ingesting local scratch docs...')
-      const localContent = fs.readFileSync(localPath, 'utf8')
+      const localContent = await fs.promises.readFile(localPath, 'utf8')
       const localKnowledge = KnowledgeObserver.processContent('Intelephense Documentation', localContent, 'local://intelephense_docs.md')
       allSections.push(...localKnowledge.sections)
     }
@@ -94,9 +95,10 @@ export class IntelephenseService {
     const storageDir = path.join(process.cwd(), 'data/knowledge')
     const jsonStore = path.join(storageDir, 'system_knowledge.json')
 
-    if (fs.existsSync(jsonStore)) {
+    const storeExists = await fs.promises.stat(jsonStore).then(() => true).catch(() => false)
+    if (storeExists) {
       console.log(' 🧹 Purging redundant Intelephense entries...')
-      const systemKnowledge = JSON.parse(fs.readFileSync(jsonStore, 'utf8'))
+      const systemKnowledge = JSON.parse(await fs.promises.readFile(jsonStore, 'utf8'))
       if (systemKnowledge.typescript_sections) {
         systemKnowledge.typescript_sections = systemKnowledge.typescript_sections.filter((k: any) => {
           // Purge ALL Intelephense variants and the local filename entry to avoid duplication
@@ -104,7 +106,7 @@ export class IntelephenseService {
           const isLocalFilename = k.title === 'intelephense_docs.md'
           return !isLegacyIntelephense && !isLocalFilename
         })
-        fs.writeFileSync(jsonStore, JSON.stringify(systemKnowledge, null, 2))
+        await fs.promises.writeFile(jsonStore, JSON.stringify(systemKnowledge, null, 2))
       }
     }
 

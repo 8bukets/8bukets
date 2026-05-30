@@ -17,7 +17,8 @@ export class ICloudObserver {
     const homeDir = process.env.HOME || ''
     const standardICloudPath = path.join(homeDir, 'Library/Mobile Documents/com~apple~CloudDocs/8bukets')
 
-    this.syncPath = process.env.ICLOUD_SYNC_PATH || (/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(standardICloudPath) ? standardICloudPath : path.join(process.cwd(), 'scratch/icloud_sim'))
+    // Initial syncPath set synchronously, refined in scan()
+    this.syncPath = process.env.ICLOUD_SYNC_PATH || standardICloudPath
     this.observer = new KnowledgeObserver()
   }
 
@@ -25,23 +26,32 @@ export class ICloudObserver {
    * scan: Iterates through the sync directory and ingests new documents.
    */
   public async scan() {
+    // Dynamic path resolution with async fallback
+    if (!process.env.ICLOUD_SYNC_PATH) {
+      const homeDir = process.env.HOME || ''
+      const standardICloudPath = path.join(homeDir, 'Library/Mobile Documents/com~apple~CloudDocs/8bukets')
+      const exists = await fs.promises.stat(standardICloudPath).then(() => true).catch(() => false)
+      this.syncPath = exists ? standardICloudPath : path.join(process.cwd(), 'scratch/icloud_sim')
+    }
+
     console.log(`☁️ [iCloud Observer] Scanning path: ${this.syncPath}`)
 
-    if (!/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(this.syncPath)) {
+    const exists = await fs.promises.stat(this.syncPath).then(() => true).catch(() => false)
+    if (!exists) {
       console.log('ℹ️ [iCloud Observer] Sync path does not exist. Skipping scan.')
       return []
     }
 
-    const files = fs.readdirSync(this.syncPath)
+    const files = await fs.promises.readdir(this.syncPath)
     const ingested: string[] = []
 
     for (const file of files) {
       const fullPath = path.join(this.syncPath, file)
-      const stats = fs.statSync(fullPath)
+      const stats = await fs.promises.stat(fullPath)
 
       if (stats.isFile() && (file.endsWith('.md') || file.endsWith('.json'))) {
         try {
-          const content = /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.readFileSync(fullPath, 'utf8')
+          const content = await fs.promises.readFile(fullPath, 'utf8')
           let knowledge;
 
           if (file.endsWith('.json')) {

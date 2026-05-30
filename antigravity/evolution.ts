@@ -23,15 +23,17 @@ export async function evolve() {
   ]
 
   // Recursive scan to find "bloated" or unoptimized patterns
-  function scan(dir: string) {
-    if (!fs.existsSync(dir)) return
-    const files = fs.readdirSync(dir)
+  async function scan(dir: string) {
+    const exists = await fs.promises.stat(dir).then(() => true).catch(() => false)
+    if (!exists) return
+    const files = await fs.promises.readdir(dir)
     for (const file of files) {
       const fullPath = path.join(dir, file)
-      if (fs.statSync(fullPath).isDirectory()) {
-        scan(fullPath)
+      const stat = await fs.promises.stat(fullPath)
+      if (stat.isDirectory()) {
+        await scan(fullPath)
       } else if (file.endsWith('.tsx') || file.endsWith('.ts')) {
-        const content = fs.readFileSync(fullPath, 'utf8')
+        const content = await fs.promises.readFile(fullPath, 'utf8')
         const lines = content.split('\n').length
 
         // Rule 2: Detect large files that should be refactored
@@ -74,7 +76,7 @@ export async function evolve() {
   }
 
   for (const dir of scanDirs) {
-    scan(dir)
+    await scan(dir)
   }
 
   logAutonomousAction('✨ [Evolution Report]: Found', suggestions.length, 'potential optimizations.', 'info')
@@ -90,10 +92,10 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
 
   for (const s of suggestions) {
     const fullPath = path.join(process.cwd(), s.file)
-    let content = fs.readFileSync(fullPath, 'utf8')
+    let content = await fs.promises.readFile(fullPath, 'utf8')
 
     if (s.suggestion.startsWith('MISSING_CACHE_DIRECTIVE')) {
-      fs.writeFileSync(fullPath, content)
+      await fs.promises.writeFile(fullPath, content)
     }
 
     if (s.suggestion.startsWith('SYNC_PROP_VIOLATION')) {
@@ -107,7 +109,7 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
 
       // Attempt to wrap params usages
       content = content.replace(/(\{.*?params.*?\}.*?)\.then/g, "resolve(params).then")
-      fs.writeFileSync(fullPath, content)
+      await fs.promises.writeFile(fullPath, content)
     }
 
     // Rule 4 Fix: Replace console.log with logAutonomousAction
@@ -124,7 +126,7 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
         content = `import { logAutonomousAction } from '${relativeCorePath}'\n` + content
       }
       content = content.replace(/console\.log\((.*?)\)/g, "logAutonomousAction($1, 'info')")
-      fs.writeFileSync(fullPath, content)
+      await fs.promises.writeFile(fullPath, content)
     }
 
     // Additional autocorrection logic can be added here

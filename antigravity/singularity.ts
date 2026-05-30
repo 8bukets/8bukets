@@ -13,7 +13,8 @@ export async function bootstrap(idea: { feature: string, rationale: string }) {
   const serviceName = idea.feature.toLowerCase().replace(/\s+/g, '_').replace(/_service$/, '')
   const filePath = path.join(process.cwd(), 'antigravity/services', `${serviceName}.ts`)
 
-  if (fs.existsSync(filePath)) {
+  const exists = await fs.promises.stat(filePath).then(() => true).catch(() => false)
+  if (exists) {
     logAutonomousAction(` - Service ${serviceName} already exists. Skipping bootstrap.`, 'info')
     return
   }
@@ -42,12 +43,13 @@ export async function get${identifier}Data() {
 }
 `
 
-  fs.writeFileSync(filePath, template)
+  await fs.promises.writeFile(filePath, template)
   logAutonomousAction(`✅ [Singularity] Successfully generated ${serviceName}.ts`, 'info')
 
   // Generate Test File
   const testPath = path.join(process.cwd(), 'antigravity/services', `${serviceName}.test.ts`)
-  if (!fs.existsSync(testPath)) {
+  const testExists = await fs.promises.stat(testPath).then(() => true).catch(() => false)
+  if (!testExists) {
     const testTemplate = `/**
  * ${idea.feature} Test
  * Generated autonomously by the Antigravity Singularity Engine.
@@ -63,16 +65,18 @@ describe('${idea.feature}', () => {
   })
 })
 `
-    fs.writeFileSync(testPath, testTemplate)
+    await fs.promises.writeFile(testPath, testTemplate)
     logAutonomousAction(`🧪 [Singularity] Successfully generated ${serviceName}.test.ts`, 'info')
   }
 
   // Scaffolding CI/CD Configurations
   // GitHub Actions Workflow
   const githubActionsDir = path.join(process.cwd(), '.github/workflows')
-  if (fs.existsSync(githubActionsDir)) {
+  const githubDirExists = await fs.promises.stat(githubActionsDir).then(() => true).catch(() => false)
+  if (githubDirExists) {
     const githubWorkflowPath = path.join(githubActionsDir, `test_${serviceName}.yml`)
-    if (!fs.existsSync(githubWorkflowPath)) {
+    const workflowExists = await fs.promises.stat(githubWorkflowPath).then(() => true).catch(() => false)
+    if (!workflowExists) {
       const githubWorkflowTemplate = `name: Test ${serviceName}
 
 on:
@@ -100,15 +104,16 @@ jobs:
       - name: Run Tests
         run: npx vitest run antigravity/services/${serviceName}.test.ts
 `
-      fs.writeFileSync(githubWorkflowPath, githubWorkflowTemplate)
+      await fs.promises.writeFile(githubWorkflowPath, githubWorkflowTemplate)
       logAutonomousAction(`🤖 [Singularity] Generated GitHub Actions workflow for ${serviceName}`, 'info')
     }
   }
 
   // GitLab CI Appending
   const gitlabCiPath = path.join(process.cwd(), '.gitlab-ci.yml')
-  if (fs.existsSync(gitlabCiPath)) {
-    let gitlabCiContent = fs.readFileSync(gitlabCiPath, 'utf8')
+  const gitlabExists = await fs.promises.stat(gitlabCiPath).then(() => true).catch(() => false)
+  if (gitlabExists) {
+    let gitlabCiContent = await fs.promises.readFile(gitlabCiPath, 'utf8')
     const gitlabJobName = `test-${serviceName}`
     if (!gitlabCiContent.includes(gitlabJobName + ':')) {
       const gitlabJobTemplate = `\n${gitlabJobName}:
@@ -117,15 +122,16 @@ jobs:
     - npm ci
     - npx vitest run antigravity/services/${serviceName}.test.ts
 `
-      fs.appendFileSync(gitlabCiPath, gitlabJobTemplate)
+      await fs.promises.appendFile(gitlabCiPath, gitlabJobTemplate)
       logAutonomousAction(`🦊 [Singularity] Appended test job for ${serviceName} to .gitlab-ci.yml`, 'info')
     }
   }
 
   // Jenkinsfile Appending
   const jenkinsfilePath = path.join(process.cwd(), 'Jenkinsfile')
-  if (fs.existsSync(jenkinsfilePath)) {
-    let jenkinsfileContent = fs.readFileSync(jenkinsfilePath, 'utf8')
+  const jenkinsExists = await fs.promises.stat(jenkinsfilePath).then(() => true).catch(() => false)
+  if (jenkinsExists) {
+    let jenkinsfileContent = await fs.promises.readFile(jenkinsfilePath, 'utf8')
     const jenkinsStageName = `Test ${serviceName}`
     if (!jenkinsfileContent.includes(jenkinsStageName)) {
       const jenkinsStageTemplate = `        stage('${jenkinsStageName}') {
@@ -138,7 +144,7 @@ jobs:
       const insertIndex = jenkinsfileContent.indexOf("        stage('Creative Workflow') {")
       if (insertIndex !== -1) {
         jenkinsfileContent = jenkinsfileContent.slice(0, insertIndex) + jenkinsStageTemplate + "\n" + jenkinsfileContent.slice(insertIndex)
-        fs.writeFileSync(jenkinsfilePath, jenkinsfileContent)
+        await fs.promises.writeFile(jenkinsfilePath, jenkinsfileContent)
         logAutonomousAction(`👔 [Singularity] Injected test stage for ${serviceName} into Jenkinsfile`, 'info')
       }
     }

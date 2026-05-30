@@ -87,8 +87,9 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `## 🤖 Unified Knowledge & Market Intelligence\n`
   try {
     const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json')
-    if (fs.existsSync(knowledgePath)) {
-      const knowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
+    const knowledgeExists = await fs.promises.stat(knowledgePath).then(() => true).catch(() => false)
+    if (knowledgeExists) {
+      const knowledge = JSON.parse(await fs.promises.readFile(knowledgePath, 'utf8'))
 
       // 1. Market Data (Markposition)
       if (knowledge.market_data) {
@@ -114,14 +115,16 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
     }
 
     const linksPath = path.join(process.cwd(), 'links.json')
-    if (fs.existsSync(linksPath)) {
-      const links = JSON.parse(fs.readFileSync(linksPath, 'utf8'))
+    const linksExists = await fs.promises.stat(linksPath).then(() => true).catch(() => false)
+    if (linksExists) {
+      const links = JSON.parse(await fs.promises.readFile(linksPath, 'utf8'))
       report += `- **Legacy Market Data:** ${links.length} entries in raw buffer.\n`
     }
 
     const resultsDir = path.join(process.cwd(), 'results')
-    if (fs.existsSync(resultsDir)) {
-      const files = fs.readdirSync(resultsDir)
+    const resultsExists = await fs.promises.stat(resultsDir).then(() => true).catch(() => false)
+    if (resultsExists) {
+      const files = await fs.promises.readdir(resultsDir)
       report += `- **Autonomous Reports:** ${files.length} history files available.\n`
 
       const latestReport = files.filter(f => f.startsWith('DAILY_REPORT')).sort().reverse()[0]
@@ -139,7 +142,7 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
     report += `- **${s.role}**: ${s.email}\n`
   })
 
-  fs.writeFileSync(reportPath, report)
+  await fs.promises.writeFile(reportPath, report)
   logAutonomousAction(`✅ [Intelligence] Report saved to ${reportPath}`, 'info')
 
   return { reportPath, branchCount: branches.length }

@@ -57,20 +57,22 @@ export class Jules {
     }
 
     // 2. Try Local Fallback
-    if (fs.existsSync(MEMORY_PATH)) {
-      try {
-        this.memory = JSON.parse(fs.readFileSync(MEMORY_PATH, 'utf8'))
+    try {
+      const exists = await fs.promises.stat(MEMORY_PATH).then(() => true).catch(() => false)
+      if (exists) {
+        const data = await fs.promises.readFile(MEMORY_PATH, 'utf8')
+        this.memory = JSON.parse(data)
         console.log('✅ [Jules] Cognitive memory loaded from local fallback.')
-      } catch (e) {}
-    }
+      }
+    } catch (e) {}
   }
 
-  private saveLocal() {
-    fs.writeFileSync(MEMORY_PATH, JSON.stringify(this.memory, null, 2))
+  private async saveLocal() {
+    await fs.promises.writeFile(MEMORY_PATH, JSON.stringify(this.memory, null, 2))
   }
 
   private async save() {
-    this.saveLocal()
+    await this.saveLocal()
 
     try {
       const { getMongoClient } = await import('./core')
@@ -157,9 +159,10 @@ export class Jules {
     // Phase 15: Ingest local system documentation (Recursive Scan)
     const ingestSystemKnowledge = async (dir: string, base: string = '') => {
       const fullPath = path.join(process.cwd(), base, dir)
-      if (!fs.existsSync(fullPath)) return
+      const exists = await fs.promises.stat(fullPath).then(() => true).catch(() => false)
+      if (!exists) return
 
-      const entries = fs.readdirSync(fullPath, { withFileTypes: true })
+      const entries = await fs.promises.readdir(fullPath, { withFileTypes: true })
       for (const entry of entries) {
         const relativePath = path.join(base, dir, entry.name)
         if (entry.isDirectory()) {
@@ -168,7 +171,7 @@ export class Jules {
           }
         } else if (entry.name.endsWith('.md')) {
           try {
-            const content = fs.readFileSync(path.join(process.cwd(), relativePath), 'utf8')
+            const content = await fs.promises.readFile(path.join(process.cwd(), relativePath), 'utf8')
             const knowledge = KnowledgeObserver.processContent(`System: ${relativePath}`, content, `local://${relativePath}`)
             await observer.persistKnowledge(knowledge)
             console.log(` ✅ [Jules] Ingested Local Knowledge: ${relativePath}`)
@@ -201,10 +204,11 @@ export class Jules {
 
     if (allKnowledge.length > 0) {
       const dataDir = path.join(process.cwd(), 'data')
-      if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir)
+      const dirExists = await fs.promises.stat(dataDir).then(() => true).catch(() => false)
+      if (!dirExists) await fs.promises.mkdir(dataDir, { recursive: true })
 
       const filePath = path.join(dataDir, 'intelephense_docs.json')
-      fs.writeFileSync(filePath, JSON.stringify(allKnowledge, null, 2))
+      await fs.promises.writeFile(filePath, JSON.stringify(allKnowledge, null, 2))
       this.recordTask(`Knowledge Ingestion: Synchronized ${allKnowledge.length} Intelephense docs.`)
     }
   }
@@ -676,9 +680,10 @@ export class Jules {
 
     for (const source of knowledgeSources) {
        const fullPath = path.join(process.cwd(), source.path)
-       if (fs.existsSync(fullPath)) {
+       const exists = await fs.promises.stat(fullPath).then(() => true).catch(() => false)
+       if (exists) {
           try {
-            const content = fs.readFileSync(fullPath, 'utf8')
+            const content = await fs.promises.readFile(fullPath, 'utf8')
             const knowledge = KnowledgeObserver.processContent(source.title, content, `local://${source.path}`)
             await observer.persistKnowledge(knowledge)
             this.recordTask(`Knowledge Observation: Ingested ${source.title}`)
@@ -688,11 +693,12 @@ export class Jules {
 
     // In a real scenario, we might scan a 'drops' or 'incoming' folder
     const incomingDir = path.join(process.cwd(), 'scratch')
-    if (fs.existsSync(incomingDir)) {
-      const files = fs.readdirSync(incomingDir).filter(f => f.endsWith('_docs.md'))
+    const incomingExists = await fs.promises.stat(incomingDir).then(() => true).catch(() => false)
+    if (incomingExists) {
+      const files = (await fs.promises.readdir(incomingDir)).filter(f => f.endsWith('_docs.md'))
       for (const file of files) {
         const fullPath = path.join(incomingDir, file)
-        const content = fs.readFileSync(fullPath, 'utf8')
+        const content = await fs.promises.readFile(fullPath, 'utf8')
         const title = file.replace('_docs.md', '').split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') + ' Documentation'
 
         const knowledge = KnowledgeObserver.processContent(title, content, `local://${file}`)

@@ -14,8 +14,9 @@ export async function runBackup() {
   const backupDir = path.join(rootDir, 'backups')
 
   // Ensure backups directory exists
-  if (!fs.existsSync(backupDir)) {
-    fs.mkdirSync(backupDir, { recursive: true })
+  const dirExists = await fs.promises.stat(backupDir).then(() => true).catch(() => false)
+  if (!dirExists) {
+    await fs.promises.mkdir(backupDir, { recursive: true })
     logAutonomousAction(`🛡️ [Backup Agent] Created backup directory at: ${backupDir}`, 'info')
   }
 
@@ -24,15 +25,16 @@ export async function runBackup() {
 
   // 1. Backup Jules Memory
   const memoryPath = path.join(rootDir, 'antigravity/.jules_memory.json')
-  if (fs.existsSync(memoryPath)) {
+  const memoryExists = await fs.promises.stat(memoryPath).then(() => true).catch(() => false)
+  if (memoryExists) {
     try {
       // Verify Integrity
-      const memoryContent = fs.readFileSync(memoryPath, 'utf8')
+      const memoryContent = await fs.promises.readFile(memoryPath, 'utf8')
       const parsed = JSON.parse(memoryContent)
 
       if (parsed && typeof parsed === 'object') {
         const backupMemoryPath = path.join(backupDir, `jules_memory_${timestamp}.json`)
-        fs.writeFileSync(backupMemoryPath, memoryContent)
+        await fs.promises.writeFile(backupMemoryPath, memoryContent)
         logAutonomousAction(`✅ [Backup Agent] Archived Jules Memory to ${backupMemoryPath}`, 'info')
         backupCount++
       }
@@ -45,14 +47,15 @@ export async function runBackup() {
 
   // 2. Backup Core Autonomous State if it exists
   const statePath = path.join(rootDir, 'autonomous_state.json')
-  if (fs.existsSync(statePath)) {
+  const stateExists = await fs.promises.stat(statePath).then(() => true).catch(() => false)
+  if (stateExists) {
     try {
-      const stateContent = fs.readFileSync(statePath, 'utf8')
+      const stateContent = await fs.promises.readFile(statePath, 'utf8')
       const parsed = JSON.parse(stateContent)
 
       if (parsed && typeof parsed === 'object') {
         const backupStatePath = path.join(backupDir, `autonomous_state_${timestamp}.json`)
-        fs.writeFileSync(backupStatePath, stateContent)
+        await fs.promises.writeFile(backupStatePath, stateContent)
         logAutonomousAction(`✅ [Backup Agent] Archived Autonomous State to ${backupStatePath}`, 'info')
         backupCount++
       }
