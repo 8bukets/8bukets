@@ -17,8 +17,7 @@
     "ingest:terraform": "tsx --env-file=.env scripts/ingest_terraform_knowledge.ts",
     "connect": "tsx --env-file=.env scripts/connect_and_collaborate.ts",
     "invoke-hello": "curl -L -X POST 'https://tevdxaufsnpsbvvurddg.supabase.co/functions/v1/hello-world' -H \"Authorization: Bearer $NEXT_PUBLIC_SUPABASE_ANON_KEY\" --data '{\"name\":\"Antigravity\"}'",
-    "ingest:knowledge": "npm run ingest:sor && npm run ingest:terraform && tsx --env-file=.env scripts/ingest_localhost_tools_knowledge.ts && tsx --env-file=.env scripts/ingest_markposition_knowledge.ts && tsx --env-file=.env scripts/ingest_render_docs.ts && tsx --env-file=.env scripts/ingest_ai_agents_knowledge.ts && tsx --env-file=.env scripts/ingest_ads_knowledge.ts && tsx --env-file=.env scripts/ingest_macbook_cloud_knowledge.ts && tsx --env-file=.env scripts/ingest_knowledge_merge.ts",
-    "autonomous-creation": "tsx --env-file=.env scripts/autonomous_creation_order.ts"
+    "ingest:knowledge": "npm run ingest:sor && npm run ingest:terraform && tsx --env-file=.env scripts/ingest_localhost_tools_knowledge.ts && tsx --env-file=.env scripts/ingest_markposition_knowledge.ts && tsx --env-file=.env scripts/ingest_render_docs.ts && tsx --env-file=.env scripts/ingest_ai_agents_knowledge.ts && tsx --env-file=.env scripts/ingest_ads_knowledge.ts && tsx --env-file=.env scripts/ingest_macbook_cloud_knowledge.ts && tsx --env-file=.env scripts/ingest_knowledge_merge.ts"
   },
   "dependencies": {
     "@actions/github": "^9.1.1",

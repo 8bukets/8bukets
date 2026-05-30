@@ -71,7 +71,7 @@ export class OnlinePresenceService {
     logAutonomousAction('📡 [OnlinePresence] Synchronizing system presence...', 'info')
 
     try {
-      const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
+      const isCloud = !!(process.env.GITHUB_ACTIONS === 'true' || process.env.GITLAB_CI || process.env.VERCEL || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
       const nodeId = isCloud ? 'cloud-relay-01' : 'macbook-primary-01'
       const nodePriority = isCloud ? 10 : 100 // MacBook (local) has higher priority by default
 
@@ -119,7 +119,7 @@ export class OnlinePresenceService {
         jenkinsStatus = jenkinsHealth.status
       } catch (e) {}
 
-      const cloudProvider = process.env.GITHUB_ACTIONS ? 'github-actions' : (process.env.GITLAB_CI ? 'gitlab-ci' : (process.env.VERCEL ? 'vercel' : (process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true' ? 'autonomous-cloud' : 'none')))
+      const cloudProvider = process.env.GITHUB_ACTIONS === 'true' ? 'github-actions' : (process.env.GITLAB_CI ? 'gitlab-ci' : (process.env.VERCEL ? 'vercel' : (process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true' ? 'autonomous-cloud' : 'none')))
 
       const presence: Presence = {
         agent: 'Jules',

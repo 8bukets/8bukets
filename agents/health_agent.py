@@ -1,61 +1,41 @@
-from typing import List, Dict, Any
+import aiohttp
+import asyncio
 from .base_agent import BaseAgent
-import os
-import time
 
 class HealthCheckAgent(BaseAgent):
     def __init__(self):
         super().__init__("Health Check Agent")
 
-    def run(self, data: List[Dict[str, Any]]) -> Dict[str, Any]:
-        # Check integrity of the data passed
-        missing_titles = sum(1 for p in data if not p.get('title'))
-        missing_dates = sum(1 for p in data if not p.get('date'))
-        missing_links = sum(1 for p in data if not p.get('external_link') and not p.get('post_url'))
+    async def check_url(self, session, url):
+        try:
+            async with session.head(url, allow_redirects=True, timeout=5) as response:
+                return url, response.status
+        except Exception:
+            return url, "Error"
 
-        # Check File System Health
-        files_to_check = ['links.json', 'links.csv', 'scraper.py']
-        file_status = {}
-        for f in files_to_check:
-            if os.path.exists(f):
-                size = os.path.getsize(f)
-                mtime = os.path.getmtime(f)
-                file_status[f] = {
-                    "exists": True,
-                    "size_bytes": size,
-                    "last_modified_ago_seconds": int(time.time() - mtime)
-                }
-            else:
-                file_status[f] = {"exists": False}
+    async def check_links(self, links):
+        async with aiohttp.ClientSession() as session:
+            tasks = [self.check_url(session, link) for link in links]
+            return await asyncio.gather(*tasks)
 
-        status = "HEALTHY"
-        if missing_titles > len(data) * 0.1 or not file_status['links.json']['exists']:
-            status = "DEGRADED"
+    def run(self):
+        self.log("Starting health check on recent links...")
+        if not self.data:
+            return
 
-        return {
-            "status": status,
-            "data_quality": {
-                "missing_titles": missing_titles,
-                "missing_dates": missing_dates,
-                "missing_links": missing_links,
-                "total_records": len(data)
-            },
-            "system_files": file_status
+        # Check only top 10 recent links to save time/resources
+        recent_links = [p.get('external_link') for p in self.data if p.get('external_link')][:10]
+
+        # Async run wrapper
+        loop = asyncio.get_event_loop()
+        if loop.is_running():
+            # Should not happen in standard script execution but safe handling
+            results = asyncio.run(self.check_links(recent_links))
+        else:
+            results = loop.run_until_complete(self.check_links(recent_links))
+
+        self.results = {
+            "checked_count": len(results),
+            "statuses": {str(link): status for link, status in results}
         }
-
-    def format_report(self, results: Dict[str, Any]) -> str:
-        lines = [f"## {self.name} Report"]
-        lines.append(f"**System Status:** {results.get('status')}")
-
-        dq = results.get('data_quality', {})
-        lines.append("\n### Data Quality Checks")
-        lines.append(f"- Missing Titles: {dq.get('missing_titles')}")
-        lines.append(f"- Missing Dates: {dq.get('missing_dates')}")
-
-        fs = results.get('system_files', {})
-        lines.append("\n### File System Check")
-        for fname, stats in fs.items():
-            status = "OK" if stats.get('exists') else "MISSING"
-            lines.append(f"- {fname}: {status}")
-
-        return "\n".join(lines)
+        self.log("Health check complete.")

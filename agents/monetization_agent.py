@@ -1,19 +1,24 @@
-from .base_agent import BaseAgent, Blackboard
+from .base_agent import BaseAgent
+from typing import Dict, List
 
 class MonetizationAgent(BaseAgent):
     def __init__(self):
-        super().__init__("MonetizationAgent", dependencies=["analysis_stats", "bid_strategy"], provides=["monetization_plan"])
+        super().__init__("Monetization Agent")
 
-    async def run(self, data: list, blackboard: Blackboard) -> dict:
-        self.logger.info("Running Monetization Analysis...")
+    def process(self, research: Dict) -> List[str]:
+        self.log("Brainstorming monetization...")
 
-        stats = blackboard.get("analysis_stats", {})
-        bid = blackboard.get("bid_strategy", {})
+        strategies = [
+            "Affiliate marketing for Google Cloud courses",
+            "Consulting services for Oracle-to-GCP migration",
+            "Premium newsletter for multi-cloud architecture"
+        ]
 
-        plan = {
-            "projected_revenue": stats.get("total_posts", 0) * 0.05,
-            "cpm_target": bid.get("recommended_cpm", 0.0),
-            "channels": ["Direct", "Programmatic"]
-        }
+        if "Canada" in str(research):
+            strategies.append("Target Canadian enterprise sector with localization services.")
 
-        return {"monetization_plan": plan}
+        if "AI" in str(research):
+            strategies.append("Consulting services for AI implementations on Oracle Cloud")
+            strategies.append("Develop custom generative AI solutions leveraging Oracle infrastructure")
+
+        return strategies

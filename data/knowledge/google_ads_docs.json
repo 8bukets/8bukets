@@ -13,6 +13,15 @@
             {
                 "heading": "Understanding bidding basics",
                 "content": [
+                    "- Help Center TopicsStart advertisingCampaignsExplore featuresOptimize performanceAccount & billingFix issuesGoogle Partners",
+                    "- ...CampaignsDisplay campaignsSetup & management",
+                    "- Bidding",
+                    "- Understanding bidding basics"
+                ]
+            },
+            {
+                "heading": "Understanding bidding basics",
+                "content": [
                     "Google Ads gives you several ways to bid for your ads, depending on what matters most to you and your business. Most advertisers focus on clicks, impressions, conversions, or views (for video ads).",
                     "Now that you're advertising on Google Ads, you probably have a clear goal in mind for your ads. If you sell coffee, maybe you want to get more people to visit your shop. If you run a hiking club, maybe you're aiming to get more people to sign up for your newsletter. And so on.",
                     "Knowing what you want your ads to do will help you decide how to bid.",
@@ -63,19 +72,19 @@
             }
         ]
     },
-    "https://business.google.com/uk/ad-tools/bidding/": {
+    "https://business.google.com/uk/ad-tools/bidding/?hl=en": {
         "title": "Deliver better results with automated bidding",
-        "url": "https://business.google.com/uk/ad-tools/bidding/",
+        "url": "https://business.google.com/uk/ad-tools/bidding/?hl=en",
         "key_links": [
-            "https://ads.google.com/signup?subid=uk-en-awhp-g-aw-{device}-m-bid-hero-bgc!o2",
-            "https://business.google.com/uk/support/ads-expert/",
-            "https://ads.google.com/signup?subid=uk-en-awhp-g-aw-{device}-m-bid-mid-bgc!o2",
+            "https://ads.google.com/signup?subid=uk-en-awhp-g-aw-c-m-bid-hero-bgc!o2&hl=en&authuser=0",
+            "https://business.google.com/uk/support/ads-expert/?hl=en",
+            "https://ads.google.com/signup?subid=uk-en-awhp-g-aw-c-m-bid-mid-bgc!o2&hl=en&authuser=0",
             "https://support.google.com/google-ads/answer/6167140",
             "https://services.google.com/fh/files/misc/setting_smarter_search_bids_2021.pdf",
             "https://support.google.com/google-ads/answer/7074566",
-            "https://business.google.com/uk/ad-tools/conversion-tracking/",
-            "https://business.google.com/uk/ad-tools/audience-insights/",
-            "https://business.google.com/uk/ad-tools/google-ad-experiments/",
+            "https://business.google.com/uk/ad-tools/conversion-tracking/?hl=en",
+            "https://business.google.com/uk/ad-tools/audience-insights/?hl=en",
+            "https://business.google.com/uk/ad-tools/google-ad-experiments/?hl=en",
             "https://support.google.com/google-ads/answer/2459326?hl=en-UK&sjid=3006212573788294621-NA",
             "https://support.google.com/google-ads/answer/2472725?hl=en-UK&sjid=3006212573788294621-NA",
             "https://support.google.com/google-ads/answer/2471184?hl=en",
@@ -150,7 +159,7 @@
             {
                 "heading": "Learn more about Smart Bidding",
                 "content": [
-                    "Page number 1 / 3"
+                    "Page number 1 / 2"
                 ]
             },
             {
@@ -225,80 +234,80 @@
             }
         ]
     },
-    "https://business.google.com/uk/resources/": {
+    "https://business.google.com/uk/resources/?hl=en": {
         "title": "Find answers andinspiration",
-        "url": "https://business.google.com/uk/resources/",
+        "url": "https://business.google.com/uk/resources/?hl=en",
         "key_links": [
-            "https://business.google.com/uk/resources/articles/seo-vs-ppc/",
-            "https://business.google.com/uk/resources/articles/abcds-of-effective-video-ads/",
-            "https://business.google.com/uk/resources/articles/stretching-your-google-ads-budget/",
-            "https://business.google.com/uk/resources/articles/write-online-ads/",
-            "https://business.google.com/uk/resources/articles/5-ways-to-create-effective-ad-copy-with-AI/",
-            "https://business.google.com/uk/resources/articles/make-products-standout-to-shoppers/",
-            "https://business.google.com/uk/resources/articles/improve-search-ads-with-assets/",
-            "https://business.google.com/uk/resources/articles/using-google-ads-keyword-planner/",
-            "https://business.google.com/uk/resources/articles/reach-larger-new-audiences/",
-            "https://business.google.com/uk/resources/articles/what-are-people-searching/",
-            "https://business.google.com/uk/resources/articles/what-is-paid-search/",
-            "https://business.google.com/uk/resources/articles/basics-of-google-ads-billing-and-payments/",
-            "https://business.google.com/uk/resources/articles/mobile-landing-page/",
-            "https://business.google.com/uk/resources/articles/10-key-features-for-growth/",
-            "https://business.google.com/uk/resources/articles/use-google-ads-to-understand-your-audiences-intent/",
-            "https://business.google.com/uk/resources/articles/4-features-to-improve-keyword-strategy/",
-            "https://business.google.com/uk/resources/articles/reaching-the-right-customers-on-search/",
-            "https://business.google.com/uk/resources/articles/how-to-analyze-google-ads-successfully/",
-            "https://business.google.com/uk/resources/articles/build-awareness-with-video/",
-            "https://business.google.com/uk/resources/articles/how-to-setup-google-ads-a-checklist/",
-            "https://business.google.com/uk/resources/success-stories/nectar-a-resident-company/",
-            "https://business.google.com/uk/resources/articles/build-online-presence-with-local-services-ads/",
-            "https://business.google.com/uk/resources/articles/conversion-measurement/",
-            "https://business.google.com/uk/resources/articles/responsive-display-ads/",
-            "https://business.google.com/uk/resources/success-stories/currensea/",
-            "https://business.google.com/uk/resources/articles/unlock-value-of-creative-assets/",
-            "https://business.google.com/uk/resources/success-stories/bird-and-blend/",
-            "https://business.google.com/uk/resources/success-stories/loci/",
-            "https://business.google.com/uk/resources/success-stories/kinetica-sports/",
-            "https://business.google.com/uk/resources/success-stories/octopus-energy/",
-            "https://business.google.com/uk/resources/articles/ai-essentials/",
-            "https://business.google.com/uk/resources/articles/beginners-guide-youtube-ads/",
-            "https://business.google.com/uk/resources/articles/benefits-of-performance-max/",
-            "https://business.google.com/uk/resources/articles/how-search-data-improves-marketing-performance/",
-            "https://business.google.com/uk/resources/success-stories/never-fully-dressed/",
-            "https://business.google.com/uk/resources/articles/guide-to-keyword-match-types/",
-            "https://business.google.com/uk/resources/success-stories/lucy-and-yak/",
-            "https://business.google.com/uk/resources/success-stories/farai-london/",
-            "https://business.google.com/uk/resources/articles/build-trust-online/",
-            "https://business.google.com/uk/resources/articles/driving-loyalty-through-app-campaigns/",
-            "https://business.google.com/uk/resources/success-stories/pensionbee/",
-            "https://business.google.com/uk/resources/articles/how-consumer-shifts-impact-your-paid-search-strategy/",
-            "https://business.google.com/uk/resources/articles/full-funnel-marketing-with-google-display-ads/",
-            "https://business.google.com/uk/resources/articles/how-to-drive-ad-performance-with-customer-match/",
-            "https://business.google.com/uk/resources/articles/what-are-google-demand-gen-campaigns/",
-            "https://business.google.com/uk/resources/articles/generate-more-leads-with-lead-form-assets/",
-            "https://business.google.com/uk/resources/articles/how-to-tailor-your-online-campaigns-and-win-business/",
-            "https://business.google.com/uk/resources/articles/maximise-your-ad-budget-with-automated-bidding/",
-            "https://business.google.com/uk/resources/articles/three-ways-to-improve-your-quality-score/",
-            "https://business.google.com/uk/resources/articles/7-search-tips-to-boost-your-digital-ad-campaigns/",
-            "https://business.google.com/uk/resources/articles/how-to-increase-website-traffic-and-leads/",
-            "https://business.google.com/uk/resources/articles/improve-your-advertising-with-audience-segments/",
-            "https://business.google.com/uk/resources/articles/privacy-in-ad-performance-with-enhanced-conversions/",
-            "https://business.google.com/uk/resources/articles/reach-your-customers-with-google-mobile-ads/",
-            "https://business.google.com/uk/resources/articles/get-the-most-out-of-advertising-on-google-maps/",
-            "https://business.google.com/uk/resources/success-stories/bellroy/",
-            "https://business.google.com/uk/resources/articles/explore-the-b2b-marketing-funnel-with-google-ads/",
-            "https://business.google.com/uk/resources/success-stories/majestic-heli-ski/",
-            "https://business.google.com/uk/resources/success-stories/blendjet/",
-            "https://business.google.com/uk/resources/success-stories/adidas/",
-            "https://business.google.com/uk/resources/articles/understanding-sales-journeys-with-attribution-models/",
-            "https://business.google.com/uk/resources/success-stories/pringles/",
-            "https://business.google.com/uk/resources/articles/measure-your-results/",
-            "https://business.google.com/uk/resources/success-stories/xfinity/",
-            "https://business.google.com/uk/resources/articles/increase-your-roi-with-value-based-bidding/",
-            "https://business.google.com/uk/resources/success-stories/cider/",
-            "https://business.google.com/uk/resources/articles/account-structures-for-search-growth-with-ai/",
-            "https://business.google.com/uk/resources/articles/how-to-get-the-edge-with-ai-on-paid-search/",
-            "https://business.google.com/uk/resources/articles/5-tips-for-more-effective-advertising-with-google-ai/",
-            "https://business.google.com/uk/resources/articles/how-to-streamline-multi-account-management/"
+            "https://business.google.com/uk/resources/articles/seo-vs-ppc/?hl=en",
+            "https://business.google.com/uk/resources/articles/abcds-of-effective-video-ads/?hl=en",
+            "https://business.google.com/uk/resources/articles/stretching-your-google-ads-budget/?hl=en",
+            "https://business.google.com/uk/resources/articles/write-online-ads/?hl=en",
+            "https://business.google.com/uk/resources/articles/5-ways-to-create-effective-ad-copy-with-AI/?hl=en",
+            "https://business.google.com/uk/resources/articles/make-products-standout-to-shoppers/?hl=en",
+            "https://business.google.com/uk/resources/articles/improve-search-ads-with-assets/?hl=en",
+            "https://business.google.com/uk/resources/articles/using-google-ads-keyword-planner/?hl=en",
+            "https://business.google.com/uk/resources/articles/reach-larger-new-audiences/?hl=en",
+            "https://business.google.com/uk/resources/articles/what-are-people-searching/?hl=en",
+            "https://business.google.com/uk/resources/articles/what-is-paid-search/?hl=en",
+            "https://business.google.com/uk/resources/articles/basics-of-google-ads-billing-and-payments/?hl=en",
+            "https://business.google.com/uk/resources/articles/mobile-landing-page/?hl=en",
+            "https://business.google.com/uk/resources/articles/10-key-features-for-growth/?hl=en",
+            "https://business.google.com/uk/resources/articles/use-google-ads-to-understand-your-audiences-intent/?hl=en",
+            "https://business.google.com/uk/resources/articles/4-features-to-improve-keyword-strategy/?hl=en",
+            "https://business.google.com/uk/resources/articles/reaching-the-right-customers-on-search/?hl=en",
+            "https://business.google.com/uk/resources/articles/how-to-analyze-google-ads-successfully/?hl=en",
+            "https://business.google.com/uk/resources/articles/build-awareness-with-video/?hl=en",
+            "https://business.google.com/uk/resources/articles/how-to-setup-google-ads-a-checklist/?hl=en",
+            "https://business.google.com/uk/resources/success-stories/nectar-a-resident-company/?hl=en",
+            "https://business.google.com/uk/resources/articles/build-online-presence-with-local-services-ads/?hl=en",
+            "https://business.google.com/uk/resources/articles/conversion-measurement/?hl=en",
+            "https://business.google.com/uk/resources/articles/responsive-display-ads/?hl=en",
+            "https://business.google.com/uk/resources/success-stories/currensea/?hl=en",
+            "https://business.google.com/uk/resources/articles/unlock-value-of-creative-assets/?hl=en",
+            "https://business.google.com/uk/resources/success-stories/bird-and-blend/?hl=en",
+            "https://business.google.com/uk/resources/success-stories/loci/?hl=en",
+            "https://business.google.com/uk/resources/success-stories/kinetica-sports/?hl=en",
+            "https://business.google.com/uk/resources/success-stories/octopus-energy/?hl=en",
+            "https://business.google.com/uk/resources/articles/ai-essentials/?hl=en",
+            "https://business.google.com/uk/resources/articles/beginners-guide-youtube-ads/?hl=en",
+            "https://business.google.com/uk/resources/articles/benefits-of-performance-max/?hl=en",
+            "https://business.google.com/uk/resources/articles/how-search-data-improves-marketing-performance/?hl=en",
+            "https://business.google.com/uk/resources/success-stories/never-fully-dressed/?hl=en",
+            "https://business.google.com/uk/resources/articles/guide-to-keyword-match-types/?hl=en",
+            "https://business.google.com/uk/resources/success-stories/lucy-and-yak/?hl=en",
+            "https://business.google.com/uk/resources/success-stories/farai-london/?hl=en",
+            "https://business.google.com/uk/resources/articles/build-trust-online/?hl=en",
+            "https://business.google.com/uk/resources/articles/driving-loyalty-through-app-campaigns/?hl=en",
+            "https://business.google.com/uk/resources/success-stories/pensionbee/?hl=en",
+            "https://business.google.com/uk/resources/articles/how-consumer-shifts-impact-your-paid-search-strategy/?hl=en",
+            "https://business.google.com/uk/resources/articles/full-funnel-marketing-with-google-display-ads/?hl=en",
+            "https://business.google.com/uk/resources/articles/how-to-drive-ad-performance-with-customer-match/?hl=en",
+            "https://business.google.com/uk/resources/articles/what-are-google-demand-gen-campaigns/?hl=en",
+            "https://business.google.com/uk/resources/articles/generate-more-leads-with-lead-form-assets/?hl=en",
+            "https://business.google.com/uk/resources/articles/how-to-tailor-your-online-campaigns-and-win-business/?hl=en",
+            "https://business.google.com/uk/resources/articles/maximise-your-ad-budget-with-automated-bidding/?hl=en",
+            "https://business.google.com/uk/resources/articles/three-ways-to-improve-your-quality-score/?hl=en",
+            "https://business.google.com/uk/resources/articles/7-search-tips-to-boost-your-digital-ad-campaigns/?hl=en",
+            "https://business.google.com/uk/resources/articles/how-to-increase-website-traffic-and-leads/?hl=en",
+            "https://business.google.com/uk/resources/articles/improve-your-advertising-with-audience-segments/?hl=en",
+            "https://business.google.com/uk/resources/articles/privacy-in-ad-performance-with-enhanced-conversions/?hl=en",
+            "https://business.google.com/uk/resources/articles/reach-your-customers-with-google-mobile-ads/?hl=en",
+            "https://business.google.com/uk/resources/articles/get-the-most-out-of-advertising-on-google-maps/?hl=en",
+            "https://business.google.com/uk/resources/success-stories/bellroy/?hl=en",
+            "https://business.google.com/uk/resources/articles/explore-the-b2b-marketing-funnel-with-google-ads/?hl=en",
+            "https://business.google.com/uk/resources/success-stories/majestic-heli-ski/?hl=en",
+            "https://business.google.com/uk/resources/success-stories/blendjet/?hl=en",
+            "https://business.google.com/uk/resources/success-stories/adidas/?hl=en",
+            "https://business.google.com/uk/resources/articles/understanding-sales-journeys-with-attribution-models/?hl=en",
+            "https://business.google.com/uk/resources/success-stories/pringles/?hl=en",
+            "https://business.google.com/uk/resources/articles/measure-your-results/?hl=en",
+            "https://business.google.com/uk/resources/success-stories/xfinity/?hl=en",
+            "https://business.google.com/uk/resources/articles/increase-your-roi-with-value-based-bidding/?hl=en",
+            "https://business.google.com/uk/resources/success-stories/cider/?hl=en",
+            "https://business.google.com/uk/resources/articles/account-structures-for-search-growth-with-ai/?hl=en",
+            "https://business.google.com/uk/resources/articles/how-to-get-the-edge-with-ai-on-paid-search/?hl=en",
+            "https://business.google.com/uk/resources/articles/5-tips-for-more-effective-advertising-with-google-ai/?hl=en",
+            "https://business.google.com/uk/resources/articles/how-to-streamline-multi-account-management/?hl=en"
         ],
         "sections": [
             {
@@ -847,9 +856,9 @@
             }
         ]
     },
-    "https://developers.google.com/ad-manager": {
-        "title": "https://developers.google.com/ad-manager",
-        "url": "https://developers.google.com/ad-manager",
+    "https://developers.google.com/ad-manager?hl=en": {
+        "title": "https://developers.google.com/ad-manager?hl=en",
+        "url": "https://developers.google.com/ad-manager?hl=en",
         "key_links": [
             "https://developers.google.com/",
             "https://developers.google.com/products",
@@ -866,7 +875,7 @@
         ],
         "sections": [
             {
-                "heading": "https://developers.google.com/ad-manager",
+                "heading": "https://developers.google.com/ad-manager?hl=en",
                 "content": [
                     "- Home",
                     "- Products",
@@ -895,9 +904,9 @@
             }
         ]
     },
-    "https://developers.google.com/ad-manager/dynamic-ad-insertion": {
-        "title": "https://developers.google.com/ad-manager/dynamic-ad-insertion",
-        "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion",
+    "https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en": {
+        "title": "https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en",
+        "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en",
         "key_links": [
             "https://developers.google.com/",
             "https://developers.google.com/products",
@@ -914,7 +923,7 @@
         ],
         "sections": [
             {
-                "heading": "https://developers.google.com/ad-manager/dynamic-ad-insertion",
+                "heading": "https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en",
                 "content": [
                     "- Home",
                     "- Products",
@@ -948,9 +957,9 @@
             }
         ]
     },
-    "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service": {
-        "title": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
-        "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
+    "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en": {
+        "title": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en",
+        "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en",
         "key_links": [
             "https://developers.google.com/",
             "https://developers.google.com/products",
@@ -960,7 +969,7 @@
         ],
         "sections": [
             {
-                "heading": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
+                "heading": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en",
                 "content": [
                     "- Home",
                     "- Products",
@@ -1001,9 +1010,9 @@
             }
         ]
     },
-    "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving": {
-        "title": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
-        "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
+    "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en": {
+        "title": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en",
+        "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en",
         "key_links": [
             "https://developers.google.com/",
             "https://developers.google.com/products",
@@ -1021,7 +1030,7 @@
         ],
         "sections": [
             {
-                "heading": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
+                "heading": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en",
                 "content": [
                     "- Home",
                     "- Products",
@@ -1073,9 +1082,9 @@
             }
         ]
     },
-    "https://developers.google.com/ad-manager/api/start": {
+    "https://developers.google.com/ad-manager/api/start?hl=en": {
         "title": "Get started\n\n    \n    \n      \n    \n\n    \n      \n      Stay organized with collections\n    \n    \n      \n      Save and categorize content based on your preferences.",
-        "url": "https://developers.google.com/ad-manager/api/start",
+        "url": "https://developers.google.com/ad-manager/api/start?hl=en",
         "key_links": [
             "https://developers.google.com/",
             "https://developers.google.com/products",
@@ -1103,7 +1112,14 @@
             },
             {
                 "heading": "Get started Stay organized with collections Save and categorize content based on your preferences.",
-                "content": []
+                "content": [
+                    "- On this page",
+                    "- Get access to an Ad Manager network",
+                    "- Create authentication credentials",
+                    "- Configure your Ad Manager network",
+                    "- Set up your client",
+                    "- Next steps"
+                ]
             },
             {
                 "heading": "Page Summary",
@@ -1161,12 +1177,7 @@
                 "heading": "Set up your client",
                 "content": [
                     "Download one of the Ad Manager client libraries. The libraries offer wrapper functions and features that make it easier and faster to develop apps.",
-                    "The following tabs provide quickstarts for coding in each of the languages for which there is a client library."
-                ]
-            },
-            {
-                "heading": "Java",
-                "content": [
+                    "The following tabs provide quickstarts for coding in each of the languages for which there is a client library.",
                     "Here is a basic example that shows how to use the Java client library. For more detailed usage information, refer to the README file in the client library distribution.",
                     "- Setup your credentials Run the following command in a shell: curl https://raw.githubusercontent.com/googleads/googleads-java-lib/main/examples/admanager_axis/src/main/resources/ads.properties -o ~/ads.properties Open the ~/ads.properties file and populate the following fields: [...] api.admanager.applicationName=INSERT_APPLICATION_NAME_HERE api.admanager.jsonKeyFilePath=INSERT_PATH_TO_JSON_KEY_FILE_HERE api.admanager.networkCode=INSERT_NETWORK_CODE_HERE [...]",
                     "Run the following command in a shell:",
@@ -1174,34 +1185,19 @@
                     "Specify dependencies",
                     "Edit your pom.xml file and add the following to the dependencies tag. You can find the latest version number on Github.",
                     "- Write some code and make a request! import com.google.api.ads.common.lib.auth.OfflineCredentials; import com.google.api.ads.common.lib.auth.OfflineCredentials.Api; import com.google.api.ads.admanager.axis.factory.AdManagerServices; import com.google.api.ads.admanager.axis.v202602.Network; import com.google.api.ads.admanager.axis.v202602.NetworkServiceInterface; import com.google.api.ads.admanager.lib.client.AdManagerSession; import com.google.api.client.auth.oauth2.Credential; public class App { public static void main(String[] args) throws Exception { Credential oAuth2Credential = new OfflineCredentials.Builder() .forApi(Api.AD_MANAGER) .fromFile() .build() .generateCredential(); // Construct an AdManagerSession. AdManagerSession session = new AdManagerSession.Builder() .fromFile() .withOAuth2Credential(oAuth2Credential) .build(); // Construct a Google Ad Manager service factory, which can only be used once per // thread, but should be reused as much as possible. AdManagerServices adManagerServices = new AdManagerServices(); // Retrieve the appropriate service NetworkServiceInterface networkService = adManagerServices.get(session, NetworkServiceInterface.class); // Make a request Network network = networkService.getCurrentNetwork(); System.out.printf(\"Current network has network code '%s' and display\" + \" name '%s'.%n\", network.getNetworkCode(), network.getDisplayName()); } } View on GitHub",
-                    "Write some code and make a request!"
-                ]
-            },
-            {
-                "heading": "Python",
-                "content": [
+                    "Write some code and make a request!",
                     "Here is a basic example that shows how to use the Python client library. The Python Client Library supports Python v3.6+. For more detailed usage information, refer to the README file in the client library distribution.",
                     "- Install the library and set up your credentials. Run the following commands in a shell: python3 -m pip install googleads curl https://raw.githubusercontent.com/googleads/googleads-python-lib/main/googleads.yaml \\ -o ~/googleads.yaml",
                     "Run the following commands in a shell:",
                     "- Set up your ~/googleads.yaml file. Fill in the following fields: ad_manager: application_name: INSERT_APPLICATION_NAME_HERE network_code: INSERT_NETWORK_CODE_HERE path_to_private_key_file: INSERT_PATH_TO_FILE_HERE",
                     "Fill in the following fields:",
-                    "- Run some code and make a request. # Import the library. from googleads import ad_manager # Initialize a client object, by default uses the credentials in ~/googleads.yaml. client = ad_manager.AdManagerClient.LoadFromStorage() # Initialize a service. network_service = client.GetService('NetworkService', version='v202602') # Make a request. current_network = network_service.getCurrentNetwork() print(\"Current network has network code '%s' and display name '%s'.\" % (current_network['networkCode'], current_network['displayName'])) View on GitHub"
-                ]
-            },
-            {
-                "heading": "PHP",
-                "content": [
+                    "- Run some code and make a request. # Import the library. from googleads import ad_manager # Initialize a client object, by default uses the credentials in ~/googleads.yaml. client = ad_manager.AdManagerClient.LoadFromStorage() # Initialize a service. network_service = client.GetService('NetworkService', version='v202602') # Make a request. current_network = network_service.getCurrentNetwork() print(\"Current network has network code '%s' and display name '%s'.\" % (current_network['networkCode'], current_network['displayName'])) View on GitHub",
                     "Here is a basic example that shows how to use the PHP client library.",
                     "- Install the library and setup your credentials. Run the following commands in a shell to install the client library and download the adsapi_php.ini file to your home directory: composer require googleads/googleads-php-lib curl https://raw.githubusercontent.com/googleads/googleads-php-lib/main/examples/AdManager/adsapi_php.ini -o ~/adsapi_php.ini",
                     "Run the following commands in a shell to install the client library and download the adsapi_php.ini file to your home directory:",
                     "- Setup your ~/adsapi_php.ini file. Fill in the following fields: [AD_MANAGER] networkCode = \"INSERT_NETWORK_CODE_HERE\" applicationName = \"INSERT_APPLICATION_NAME_HERE\" [OAUTH2] jsonKeyFilePath = \"INSERT_ABSOLUTE_PATH_TO_OAUTH2_JSON_KEY_FILE_HERE\" scopes = \"https://www.googleapis.com/auth/dfp\"",
                     "Fill in the following fields:",
-                    "- Run some code and make a request! This example code must be run from the command line, not a browser. The file containing this code must reside in the root of the project directory, where composer require was run. <?php require 'vendor/autoload.php'; use Google\\AdsApi\\AdManager\\AdManagerSession; use Google\\AdsApi\\AdManager\\AdManagerSessionBuilder; use Google\\AdsApi\\AdManager\\v202602\\ApiException; use Google\\AdsApi\\AdManager\\v202602\\ServiceFactory; use Google\\AdsApi\\Common\\OAuth2TokenBuilder; // Generate a refreshable OAuth2 credential for authentication. $oAuth2Credential = (new OAuth2TokenBuilder()) ->fromFile() ->build(); // Construct an API session configured from a properties file and the OAuth2 // credentials above. $session = (new AdManagerSessionBuilder()) ->fromFile() ->withOAuth2Credential($oAuth2Credential) ->build(); // Get a service. $serviceFactory = new ServiceFactory(); $networkService = $serviceFactory->createNetworkService($session); // Make a request $network = $networkService->getCurrentNetwork(); printf( \"Network with code %d and display name '%s' was found.\\n\", $network->getNetworkCode(), $network->getDisplayName() ); View on GitHub"
-                ]
-            },
-            {
-                "heading": ".NET",
-                "content": [
+                    "- Run some code and make a request! This example code must be run from the command line, not a browser. The file containing this code must reside in the root of the project directory, where composer require was run. <?php require 'vendor/autoload.php'; use Google\\AdsApi\\AdManager\\AdManagerSession; use Google\\AdsApi\\AdManager\\AdManagerSessionBuilder; use Google\\AdsApi\\AdManager\\v202602\\ApiException; use Google\\AdsApi\\AdManager\\v202602\\ServiceFactory; use Google\\AdsApi\\Common\\OAuth2TokenBuilder; // Generate a refreshable OAuth2 credential for authentication. $oAuth2Credential = (new OAuth2TokenBuilder()) ->fromFile() ->build(); // Construct an API session configured from a properties file and the OAuth2 // credentials above. $session = (new AdManagerSessionBuilder()) ->fromFile() ->withOAuth2Credential($oAuth2Credential) ->build(); // Get a service. $serviceFactory = new ServiceFactory(); $networkService = $serviceFactory->createNetworkService($session); // Make a request $network = $networkService->getCurrentNetwork(); printf( \"Network with code %d and display name '%s' was found.\\n\", $network->getNetworkCode(), $network->getDisplayName() ); View on GitHub",
                     "Here is a basic example that shows how to use the .NET client library",
                     "- Create a new project Open Visual Studio and create a new project (Console Application).",
                     "Open Visual Studio and create a new project (Console Application).",
@@ -1216,12 +1212,7 @@
                     "Open App.config and edit the following keys:",
                     "- Make a call to the library You can call the library as shown in the following C# code snippet View on GitHub AdManagerUser user = new AdManagerUser(); using (InventoryService inventoryService = user.GetService<InventoryService>()) { // Create a statement to select ad units. int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT; StatementBuilder statementBuilder = new StatementBuilder().OrderBy(\"id ASC\").Limit(pageSize); // Retrieve a small amount of ad units at a time, paging through until all // ad units have been retrieved. int totalResultSetSize = 0; do { AdUnitPage page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement()); // Print out some information for each ad unit. if (page.results != null) { totalResultSetSize = page.totalResultSetSize; int i = page.startIndex; foreach (AdUnit adUnit in page.results) { Console.WriteLine( \"{0}) Ad unit with ID \\\"{1}\\\" and name \\\"{2}\\\" was found.\", i++, adUnit.id, adUnit.name); } } statementBuilder.IncreaseOffsetBy(pageSize); } while (statementBuilder.GetOffset() < totalResultSetSize); Console.WriteLine(\"Number of results found: {0}\", totalResultSetSize); }",
                     "You can call the library as shown in the following C# code snippet",
-                    "If you don't want to set your credentials in your App.config, then refer to this wiki article for alternate ways of using the AdManagerUser class. For more detailed information about using the .NET Client Library, refer to the README . If you want to develop in .NET without the client library, please refer to the NoClientLibrary wiki article."
-                ]
-            },
-            {
-                "heading": "Ruby",
-                "content": [
+                    "If you don't want to set your credentials in your App.config, then refer to this wiki article for alternate ways of using the AdManagerUser class. For more detailed information about using the .NET Client Library, refer to the README . If you want to develop in .NET without the client library, please refer to the NoClientLibrary wiki article.",
                     "Here is a basic example that shows how to use the Ruby client library. The Ruby client library requires Ruby 2.1 or later.",
                     "- Install the Ruby gem and get the configuration file. Run the following commands in a shell: gem install google-dfp-api curl https://raw.githubusercontent.com/googleads/google-api-ads-ruby/main/ad_manager_api/ad_manager_api.yml -o ~/ad_manager_api.yml If you encounter an error such as \"cannot load such file -- mkmf (LoadError)\" at any point while installing your gems, you may need to install additional Ruby development libraries such as ruby-dev, ruby-devel, xcode-select etc. for your particular environment.",
                     "Run the following commands in a shell:",
@@ -1241,9 +1232,9 @@
             }
         ]
     },
-    "https://admanager.google.com/home/resources/": {
+    "https://admanager.google.com/home/resources/?hl=en": {
         "title": "Learn more, do more.",
-        "url": "https://admanager.google.com/home/resources/",
+        "url": "https://admanager.google.com/home/resources/?hl=en",
         "key_links": [
             "https://signup.withgoogle.com/newsletter/googlepublisher/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en"
         ],
@@ -1634,9 +1625,9 @@
             }
         ]
     },
-    "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview": {
+    "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en": {
         "title": "ad-manager overview (0.50.0)\n\n    \n    \n      \n    \n\n    \n      \n      Stay organized with collections\n    \n    \n      \n      Save and categorize content based on your preferences.",
-        "url": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview",
+        "url": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en",
         "key_links": [
             "https://docs.cloud.google.com/",
             "https://docs.cloud.google.com/docs",
@@ -1672,7 +1663,57 @@
             },
             {
                 "heading": "ad-manager overview (0.50.0) Stay organized with collections Save and categorize content based on your preferences.",
-                "content": []
+                "content": [
+                    "- On this page",
+                    "- Key Reference Links",
+                    "- Getting Started",
+                    "- Use the Google Ad Manager API for JavaMavenGradleSBT",
+                    "- Maven",
+                    "- Gradle",
+                    "- SBT",
+                    "- Which version ID should I get started with?Understanding Version ID and Library VersionsManaging Library VersionsChoosing the Right Version ID",
+                    "- Understanding Version ID and Library Versions",
+                    "- Managing Library Versions",
+                    "- Choosing the Right Version ID",
+                    "- 0.50.0 (latest)",
+                    "- 0.47.0",
+                    "- 0.46.0",
+                    "- 0.44.0",
+                    "- 0.42.0",
+                    "- 0.41.0",
+                    "- 0.40.0",
+                    "- 0.39.0",
+                    "- 0.37.0",
+                    "- 0.35.0",
+                    "- 0.34.0",
+                    "- 0.33.0",
+                    "- 0.32.0",
+                    "- 0.31.0",
+                    "- 0.29.0",
+                    "- 0.27.0",
+                    "- 0.26.0",
+                    "- 0.23.0",
+                    "- 0.22.0",
+                    "- 0.21.0",
+                    "- 0.19.0",
+                    "- 0.18.0",
+                    "- 0.17.0",
+                    "- 0.16.0",
+                    "- 0.15.0",
+                    "- 0.14.0",
+                    "- 0.13.0",
+                    "- 0.12.0",
+                    "- 0.11.0",
+                    "- 0.10.0",
+                    "- 0.8.0",
+                    "- 0.7.0",
+                    "- 0.6.0",
+                    "- 0.5.0",
+                    "- 0.4.0",
+                    "- 0.3.0",
+                    "- 0.2.0",
+                    "- 0.1.0"
+                ]
             },
             {
                 "heading": "Key Reference Links",

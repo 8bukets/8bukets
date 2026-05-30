@@ -1,5 +1,5 @@
 import os
-import json
+import subprocess
 import asyncio
 from .base_agent import BaseAgent, Blackboard
 
@@ -10,14 +10,8 @@ class CloudWorkflowAgent(BaseAgent):
                          dependencies=["vcs_status", "git_visualization_metrics", "gitlab_pipeline_metrics", "jenkins_pipeline_metrics", "container_status", "react_agent_deployment_config"],
                          provides=["cloud_workflow_status"])
 
-    def process(self, data):
-        # BaseAgent requires an implementation of the abstract process method.
-        # This agent primarily uses the async run method for blackboard operations.
-        # Adding a pass here satisfies the ABC.
-        pass
-
     async def run(self, data: list, blackboard: Blackboard) -> dict:
-        vcs_status = blackboard.get("vcs_status", {})
+        vcs_status = blackboard.get("vcs_status", "UNKNOWN")
         viz_metrics = blackboard.get("git_visualization_metrics", {})
         gitlab_metrics = blackboard.get("gitlab_pipeline_metrics", {})
         jenkins_metrics = blackboard.get("jenkins_pipeline_metrics", {})
@@ -29,15 +23,15 @@ class CloudWorkflowAgent(BaseAgent):
         react_deployment_ready = react_config and react_config.get("status") == "READY_FOR_DEPLOYMENT"
 
         active_decisions = []
-        orchestration_mode = "FLUENT_ON_AIR_SMART"
+        orchestration_mode = "FLUENT_ON_AIR"
 
         # Make decisions and resolve issues proactively to ensure workflow is easy, smart, fluent and always available.
-        if isinstance(vcs_status, dict) and vcs_status.get("status") not in ["COMMITTED_AND_PUSHED", "COMMITTED_LOCAL", "CLEAN", "SKIPPED"]:
+        if vcs_status not in ["COMMITTED_AND_PUSHED", "COMMITTED_LOCAL", "CLEAN", "SKIPPED"]:
             active_decisions.append("AUTORESOLVE_VCS_CONFLICTS")
             try:
                 process = await asyncio.create_subprocess_exec("git", "merge", "--abort", stdout=asyncio.subprocess.DEVNULL, stderr=asyncio.subprocess.DEVNULL)
                 await process.wait()
-                vcs_status["status"] = "RECOVERED"
+                vcs_status = "RECOVERED"
             except Exception as e:
                 self.logger.warning(f"Failed proactive git merge --abort: {e}")
 
@@ -88,7 +82,7 @@ class CloudWorkflowAgent(BaseAgent):
         if os.environ.get("MACBOOK_CLOUD_SIMULATION") == "true":
             is_fluent = True
             active_decisions = []
-            orchestration_mode = "FLUENT_ON_AIR_SMART"
+            orchestration_mode = "FLUENT_ON_AIR"
             availability_score = 1.0
 
         cloud_workflow_status = {

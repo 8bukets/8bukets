@@ -1,7 +1,5 @@
 import fs from 'fs'
 import path from 'path'
-import { autonomousFetch } from '../core'
-import { z } from 'zod'
 
 export interface JenkinsPipelineMetrics {
   pipeline_efficiency: 'BASIC' | 'OPTIMIZED' | 'HIGHLY_OPTIMIZED'
@@ -76,75 +74,43 @@ export async function checkJenkinsHealth() {
   }
 }
 
-export const JenkinsTriggerSchema = z.object({
-  pipeline_triggered: z.boolean(),
-  status: z.string().optional()
-})
+export async function triggerJenkinsPipeline(jobName: string, params?: Record<string, string>): Promise<boolean> {
+  const jenkinsUrl = process.env.JENKINS_URL
+  const jenkinsUser = process.env.JENKINS_USER
+  const jenkinsToken = process.env.JENKINS_TOKEN
 
-export async function triggerJenkinsPipeline(jobName: string = 'antigravity-pipeline') {
-  return autonomousFetch(JenkinsTriggerSchema, async () => {
-    const url = process.env.JENKINS_URL
-    const user = process.env.JENKINS_USER
-    const token = process.env.JENKINS_TOKEN
+  if (!jenkinsUrl || !jenkinsUser || !jenkinsToken) {
+    console.log(`⚠️ [Jenkins] Skipping pipeline trigger for ${jobName}. Jenkins configuration missing in environment.`)
+    return false
+  }
 
-    if (!url || !user || !token) {
-      console.warn('⚠️ [Jenkins] Credentials missing. Returning structural mock for trigger.')
-      return { pipeline_triggered: true, status: 'mocked' }
+  try {
+    console.log(`🚀 [Jenkins] Triggering Jenkins pipeline: ${jobName}`)
+    const auth = Buffer.from(`${jenkinsUser}:${jenkinsToken}`).toString('base64')
+
+    let url = `${jenkinsUrl}/job/${jobName}/build`
+    if (params && Object.keys(params).length > 0) {
+      url = `${jenkinsUrl}/job/${jobName}/buildWithParameters`
+      const queryParams = new URLSearchParams(params).toString()
+      url += `?${queryParams}`
     }
 
-    try {
-      const response = await fetch(`${url}/job/${jobName}/build`, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Basic ${Buffer.from(`${user}:${token}`).toString('base64')}`
-        }
-      })
-      if (!response.ok) {
-         throw new Error(`Jenkins trigger failed: ${response.statusText}`)
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Basic ${auth}`
       }
-      return { pipeline_triggered: true, status: 'triggered' }
-    } catch (e) {
-       console.error('❌ [Jenkins] API Trigger Error:', e)
-       throw e
-    }
-  }, { tags: ['jenkins-trigger'], life: 'minutes' })
-}
+    })
 
-export const JenkinsBuildStatusSchema = z.object({
-  building: z.boolean(),
-  result: z.string().nullable(),
-  estimatedDuration: z.number().optional()
-})
-
-export async function getJenkinsBuildStatus(jobName: string = 'antigravity-pipeline') {
-  return autonomousFetch(JenkinsBuildStatusSchema, async () => {
-    const url = process.env.JENKINS_URL
-    const user = process.env.JENKINS_USER
-    const token = process.env.JENKINS_TOKEN
-
-    if (!url || !user || !token) {
-      console.warn('⚠️ [Jenkins] Credentials missing. Returning structural mock for status.')
-      return { building: false, result: 'SUCCESS', estimatedDuration: 0 }
+    if (!response.ok) {
+      console.error(`❌ [Jenkins] Failed to trigger pipeline ${jobName}. Status: ${response.status} ${response.statusText}`)
+      return false
     }
 
-    try {
-      const response = await fetch(`${url}/job/${jobName}/lastBuild/api/json`, {
-        headers: {
-          'Authorization': `Basic ${Buffer.from(`${user}:${token}`).toString('base64')}`
-        }
-      })
-      if (!response.ok) {
-         throw new Error(`Jenkins status failed: ${response.statusText}`)
-      }
-      const data = await response.json()
-      return {
-        building: data.building,
-        result: data.result,
-        estimatedDuration: data.estimatedDuration
-      }
-    } catch (e) {
-       console.error('❌ [Jenkins] API Status Error:', e)
-       throw e
-    }
-  }, { tags: ['jenkins-status'], life: 'minutes' })
+    console.log(`✅ [Jenkins] Successfully triggered Jenkins pipeline: ${jobName}`)
+    return true
+  } catch (error) {
+    console.error(`❌ [Jenkins] Error triggering pipeline ${jobName}:`, error)
+    return false
+  }
 }
