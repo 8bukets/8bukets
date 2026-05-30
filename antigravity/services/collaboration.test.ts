@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest'
-import { getMissionMetadata } from './collaboration'
+import { getMissionMetadata as getCollaborationContext, exportEcosystemMetadata } from './collaboration'
 
 // Mock dependencies
 vi.mock('@/antigravity/core', () => ({
@@ -13,14 +13,17 @@ vi.mock('@/antigravity/core', () => ({
 
 describe('Collaboration Service', () => {
   it('should parse stakeholders from mission.md', async () => {
-    const context = await getMissionMetadata()
-    expect(context.stakeholders).toBeDefined()
-    // The actual mission.md might have different data, so we check for existence
-    expect(Array.isArray(context.stakeholders)).toBe(true)
+    const context = await getCollaborationContext()
+    expect(context.stakeholders).toEqual([
+      { role: 'Filip Keser (Founder)', email: 'filip@example.com' },
+      { role: 'Jules (Lead Architect)', email: 'jules@antigravity.ai' },
+      { role: 'Sigma Bot (Operations)', email: 'sigma@antigravity.ai' }
+    ])
   })
 
-  it('should include mission statement', async () => {
-    const context = await getMissionMetadata()
-    expect(context.missionStatement).toBeDefined()
+  it('should include ecosystem metadata', async () => {
+    const context = await exportEcosystemMetadata()
+    expect(context.systemId).toBe('antigravity-alpha-01')
+    expect(context.timestamp).toBeDefined()
   })
 })
