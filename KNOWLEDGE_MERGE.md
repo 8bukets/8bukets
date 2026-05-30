@@ -2,6 +2,14 @@
 
 
 ## Autonomous Observation
+- **Date**: 2026-05-30T10:38:14.111Z
+- **Target**: Multi-Day Agent Architecture
+- **Title**: Architecture for Time: State Management for Multi-Day Agents
+- **Extracted Summary**:
+  The architecture shifts from Stateless Agents (fragile, forgetful, short-term) which suffer from context pollution, token cost explosion, and reasoning hallucinations during idle time, to Long-Running Agents.
+  Long-Running Agents are durable, context-aware, and support multi-day workflows (e.g., HR Onboarding: Start Onboard Welcome Sent -> Documents Signed -> IT Provisioned -> Hardware Delivered -> Onboard Completed).
+  They utilize Persistent Session Storage, Durable Memory Schemas (Explicit State Checkpoints), Event-Driven Dormancy Gates (Wake on Webhook/Signals), and Multi-Agent Delegation (Specialized Tasks) to survive restarts and pauses.
+
 - **Date**: 2026-05-29T18:34:09.335Z
 - **Target**: local://data/raw_gitlab_tutorial.html
 - **Title**: GitLab CI/CD Pipeline Tutorial
