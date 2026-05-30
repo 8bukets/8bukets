@@ -61,7 +61,11 @@ class ChiefAIOfficerAgent(BaseAgent):
                 if "Phase 12: Autonomous Super-Intelligence (Current)" in agents_docs or "Phase 13" in agents_docs:
                     self.logger.info("CAIO [SYNC]: System maturity confirmed at Phase 12/13. Authorizing sentient orchestration protocols.")
                     strategic_directives.append("ACTIVATE_SENTIENT_ORCHESTRATION")
+                    strategic_directives.append("ESTABLISH_ETHICS_FRAMEWORK")
+                    strategic_directives.append("OPTIMIZE_ROI_TRACKING")
                     strategic_directives.append("ENABLE_PREDICTIVE_RESOURCE_ALLOCATION")
+                    strategic_directives.append("ESTABLISH_ETHICS_FRAMEWORK")
+                    strategic_directives.append("OPTIMIZE_ROI_TRACKING")
                 else:
                     self.logger.warning("CAIO [ALERT]: System maturity falls below Phase 12. Mandating immediate roadmap acceleration.")
                     strategic_directives.append("ACCELERATE_ROADMAP_UPGRADE")
@@ -112,6 +116,15 @@ class ChiefAIOfficerAgent(BaseAgent):
 
         # System Evolution Stability Governance
         evolution_status = evolution.get("status", "UNKNOWN")
+        technical_debt = evolution.get("technical_debt", [])
+        sync_violations = [v for v in technical_debt if "ASYNC_HYGIENE_VIOLATION" in v.get("suggestion", "")]
+
+        if sync_violations:
+            self.logger.warning(f"CAIO [GOVERNANCE]: Detected {len(sync_violations)} sync-over-async violations. Mandating core stabilization.")
+            strategy_status = "STABILIZATION_REQUIRED"
+            strategic_directives.append("STABILIZE_SYSTEM_CORE")
+            strategic_directives.append("REFACTOR_ASYNC_VIOLATIONS")
+
         if evolution_status == "UNSTABLE":
              self.logger.warning("CAIO [GOVERNANCE]: System evolution matrix reporting UNSTABLE state. Mandating immediate strategy review and core consolidation.")
              strategy_status = "REVIEW_REQUIRED"

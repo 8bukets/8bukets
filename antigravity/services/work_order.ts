@@ -80,6 +80,12 @@ export class WorkOrderService {
     return newOrder
   }
 
+  public clearPendingOrders() {
+    this.orders = this.orders.filter(o => o.status !== 'pending')
+    this.save()
+    logAutonomousAction('[WORK_ORDER] Cleared all pending orders', 'info')
+  }
+
   public getPendingOrders(): WorkOrder[] {
     return this.orders.filter(o => o.status === 'pending')
   }
