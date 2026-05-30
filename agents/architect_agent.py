@@ -9,7 +9,7 @@ class ArchitectAgent(BaseAgent):
     """The System Architect: Analyzes performance and re-codes system parameters for daily improvement."""
     def __init__(self):
         super().__init__("Architect",
-                         dependencies=["sigma_performance_report", "telemetry_synthesis", "research_data"],
+                         dependencies=["sigma_performance_report", "telemetry_synthesis", "google_edge_knowledge", "research_data"],
                          provides=["system_evolution"])
 
     async def run(self, data: list, blackboard: Blackboard) -> dict:

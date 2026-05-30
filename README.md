@@ -107,6 +107,12 @@ You can manually pull or upload core repository folders (`antigravity/` and `.gi
 
 Make sure `APPLE_ID` and `APPLE_PASSWORD` (use your primary Apple ID password) are set in your `.env` file.
 
+**Troubleshooting NSFileProviderErrorDomain error -5009:**
+If you encounter the "NSFileProviderErrorDomain error -5009" (or "Postupak se ne može dovršiti") in macOS Finder, it means the iCloud background sync services have become stuck. You can automatically restart these services and resolve the error by running:
+```bash
+npm run fix:icloud
+```
+
 **To upload files to iCloud:**
 ```bash
 python3 sync_icloud.py --upload

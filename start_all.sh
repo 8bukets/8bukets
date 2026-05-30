@@ -5,7 +5,7 @@ echo "🚀 Igniting System's Sovereign Fleet..."
 
 # 1. Start Docker Layer (MongoDB & Frontend)
 echo "🐳 Starting Docker Layer..."
-docker-compose up -d
+docker compose up -d
 
 # 2. Start TypeScript Autonomous Swarm Loop
 echo "🚀 Starting Continuous Autonomous Agent Loop via Node.js..."

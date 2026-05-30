@@ -1,6 +1,9 @@
-import { execSync } from 'child_process'
+import { exec } from 'child_process'
+import { promisify } from 'util'
 import { z } from 'zod'
 import { autonomousFetch, logAutonomousAction } from '@/antigravity/core'
+
+const execAsync = promisify(exec)
 
 export const PersistenceSchema = z.object({
   agent: z.string(),
@@ -25,7 +28,8 @@ export async function getPersistenceHealth(): Promise<PersistenceStatus[]> {
       try {
         if (isMac) {
           try {
-            const output = execSync(`launchctl list ${agent}`).toString()
+            const { stdout } = await execAsync(`launchctl list ${agent}`)
+            const output = stdout.toString()
             const pidMatch = output.match(/"PID" = (\d+);/)
             const lastExitMatch = output.match(/"LastExitStatus" = (\d+);/)
 
@@ -40,7 +44,8 @@ export async function getPersistenceHealth(): Promise<PersistenceStatus[]> {
         } else {
           // Cloud/Linux Fallback using pgrep or ps
           try {
-            const pid = execSync(`pgrep -f ${agent}`).toString().trim()
+            const { stdout } = await execAsync(`pgrep -f ${agent}`)
+            const pid = stdout.toString().trim()
             results.push({
               agent,
               status: pid ? 'running' : 'stopped',

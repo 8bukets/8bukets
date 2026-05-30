@@ -16,3 +16,8 @@ Key instructions:
 1. When generating or referencing GitLab Issue and Task URLs, you must use the `{project_full_path}` placeholder instead of `{group_full_path}/{project_path}`. This correctly encompasses all namespace routing types in GitLab.
 2. You must understand and take into account GitLab processes, particularly Merge Request blockers.
 3. Be aware that MR blockers can include missing approvals, open threads, or CI/CD failures. Plan around these potential roadblocks.
+
+### Merge Request Management
+- **Enforce GitLab Merge Request Approvals.**
+- **Enforce Ultimate tier security checks.**
+- **Identify and report MR blockers:** This includes missing approvals, open/unresolved threads, and CI/CD pipeline failures. Ensure that your plans account for these potential roadblocks.

@@ -3,6 +3,7 @@ import logging
 from typing import List, Dict, Set
 from agents.base_agent import BaseAgent, Blackboard
 from agents.telemetry import telemetry_manager
+from agents.autonomous_decision_agent import AutonomousDecisionAgent
 
 logger = logging.getLogger("AgentOrchestrator")
 
@@ -39,11 +40,19 @@ class AgentOrchestrator:
     async def execute_cycle(self, data: list):
         logger.info(f"Starting Autonomous Execution Cycle (v{self.agents[0].config.get('current_version', 1.0)})...")
         tiers = self._resolve_execution_plan()
+        decision_agent = AutonomousDecisionAgent()
 
         for i, tier in enumerate(tiers):
             logger.info(f"Executing Tier {i+1}: {[a.name for a in tier]}")
             tasks = [self._run_agent(agent, data) for agent in tier]
             await asyncio.gather(*tasks)
+
+            # Check for issues and autonomously resolve them
+            issues = self.blackboard.get("system_issues", [])
+            if issues:
+                logger.warning(f"Detected {len(issues)} issues after Tier {i+1}. Engaging AutonomousDecisionAgent.")
+                await self._run_agent(decision_agent, data)
+
             # Save telemetry after each tier so following agents (like TelemetryAgent) can see it
             telemetry_manager.save_telemetry()
 

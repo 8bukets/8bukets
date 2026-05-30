@@ -1,4 +1,4 @@
-import subprocess
+import asyncio
 from .base_agent import BaseAgent, Blackboard
 
 class GitKrakenEvolutionAgent(BaseAgent):
@@ -17,9 +17,10 @@ class GitKrakenEvolutionAgent(BaseAgent):
 
         branch_count = 1
         try:
-            result = subprocess.run(["git", "branch", "-a"], capture_output=True, text=True)
-            if result.returncode == 0:
-                branches = [b for b in result.stdout.split('\n') if b.strip()]
+            process = await asyncio.create_subprocess_exec("git", "branch", "-a", stdout=asyncio.subprocess.PIPE)
+            stdout, _ = await process.communicate()
+            if process.returncode == 0:
+                branches = [b for b in stdout.decode().split('\n') if b.strip()]
                 branch_count = len(branches)
         except Exception as e:
             self.logger.error(f"Error checking git branches: {e}")
@@ -32,10 +33,14 @@ class GitKrakenEvolutionAgent(BaseAgent):
         commit_count = 1
 
         try:
-            branches_res = subprocess.run(["git", "branch", "-r"], capture_output=True, text=True).stdout.strip().split('\n')
+            process1 = await asyncio.create_subprocess_exec("git", "branch", "-r", stdout=asyncio.subprocess.PIPE)
+            stdout1, _ = await process1.communicate()
+            branches_res = stdout1.decode().strip().split('\n')
             branch_count = max(1, len([b for b in branches_res if b]))
 
-            commits_res = subprocess.run(["git", "rev-list", "--all", "--count"], capture_output=True, text=True).stdout.strip()
+            process2 = await asyncio.create_subprocess_exec("git", "rev-list", "--all", "--count", stdout=asyncio.subprocess.PIPE)
+            stdout2, _ = await process2.communicate()
+            commits_res = stdout2.decode().strip()
             if commits_res.isdigit():
                 commit_count = int(commits_res)
         except Exception as e:
@@ -43,7 +48,9 @@ class GitKrakenEvolutionAgent(BaseAgent):
 
         semantic_commits_detected = False
         try:
-            log_res = subprocess.run(["git", "log", "--oneline", "-n", "20"], capture_output=True, text=True).stdout.lower()
+            process3 = await asyncio.create_subprocess_exec("git", "log", "--oneline", "-n", "20", stdout=asyncio.subprocess.PIPE)
+            stdout3, _ = await process3.communicate()
+            log_res = stdout3.decode().lower()
             if any(prefix in log_res for prefix in ["feat:", "fix:", "chore:", "docs:", "refactor:"]):
                 semantic_commits_detected = True
         except Exception as e:

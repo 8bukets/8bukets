@@ -67,5 +67,82 @@ describe('${idea.feature}', () => {
     logAutonomousAction(`🧪 [Singularity] Successfully generated ${serviceName}.test.ts`, 'info')
   }
 
+  // Scaffolding CI/CD Configurations
+  // GitHub Actions Workflow
+  const githubActionsDir = path.join(process.cwd(), '.github/workflows')
+  if (fs.existsSync(githubActionsDir)) {
+    const githubWorkflowPath = path.join(githubActionsDir, `test_${serviceName}.yml`)
+    if (!fs.existsSync(githubWorkflowPath)) {
+      const githubWorkflowTemplate = `name: Test ${serviceName}
+
+on:
+  push:
+    paths:
+      - 'antigravity/services/${serviceName}.ts'
+      - 'antigravity/services/${serviceName}.test.ts'
+  pull_request:
+    paths:
+      - 'antigravity/services/${serviceName}.ts'
+      - 'antigravity/services/${serviceName}.test.ts'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - name: Install Dependencies
+        run: npm ci
+      - name: Run Tests
+        run: npx vitest run antigravity/services/${serviceName}.test.ts
+`
+      fs.writeFileSync(githubWorkflowPath, githubWorkflowTemplate)
+      logAutonomousAction(`🤖 [Singularity] Generated GitHub Actions workflow for ${serviceName}`, 'info')
+    }
+  }
+
+  // GitLab CI Appending
+  const gitlabCiPath = path.join(process.cwd(), '.gitlab-ci.yml')
+  if (fs.existsSync(gitlabCiPath)) {
+    let gitlabCiContent = fs.readFileSync(gitlabCiPath, 'utf8')
+    const gitlabJobName = `test-${serviceName}`
+    if (!gitlabCiContent.includes(gitlabJobName + ':')) {
+      const gitlabJobTemplate = `\n${gitlabJobName}:
+  stage: test
+  script:
+    - npm ci
+    - npx vitest run antigravity/services/${serviceName}.test.ts
+`
+      fs.appendFileSync(gitlabCiPath, gitlabJobTemplate)
+      logAutonomousAction(`🦊 [Singularity] Appended test job for ${serviceName} to .gitlab-ci.yml`, 'info')
+    }
+  }
+
+  // Jenkinsfile Appending
+  const jenkinsfilePath = path.join(process.cwd(), 'Jenkinsfile')
+  if (fs.existsSync(jenkinsfilePath)) {
+    let jenkinsfileContent = fs.readFileSync(jenkinsfilePath, 'utf8')
+    const jenkinsStageName = `Test ${serviceName}`
+    if (!jenkinsfileContent.includes(jenkinsStageName)) {
+      const jenkinsStageTemplate = `        stage('${jenkinsStageName}') {
+            steps {
+                sh 'npm ci'
+                sh 'npx vitest run antigravity/services/${serviceName}.test.ts'
+            }
+        }\n`
+
+      const insertIndex = jenkinsfileContent.indexOf("        stage('Creative Workflow') {")
+      if (insertIndex !== -1) {
+        jenkinsfileContent = jenkinsfileContent.slice(0, insertIndex) + jenkinsStageTemplate + "\n" + jenkinsfileContent.slice(insertIndex)
+        fs.writeFileSync(jenkinsfilePath, jenkinsfileContent)
+        logAutonomousAction(`👔 [Singularity] Injected test stage for ${serviceName} into Jenkinsfile`, 'info')
+      }
+    }
+  }
+
   return { filePath, testPath, serviceName, feature: idea.feature }
 }

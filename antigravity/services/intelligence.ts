@@ -65,6 +65,23 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   } else {
     report += `  - No pending orders. System is optimal.\n`
   }
+
+  try {
+    const { getPerformanceMonitoringServiceData } = await import('./performance_monitoring')
+    const perf = await getPerformanceMonitoringServiceData()
+    report += `- **System Load:** ${perf.metrics.system.loadavg[0].toFixed(2)}\n`
+    report += `- **Memory RSS:** ${Math.round(perf.metrics.memory.rss / 1024 / 1024)}MB\n`
+  } catch (e) {}
+
+  try {
+    const { getFeedbackAnalysisServiceData } = await import('./feedback_analysis')
+    const feedback = await getFeedbackAnalysisServiceData()
+    report += `- **Autonomous Feedback:** ${feedback.insights.errorCount} errors, ${feedback.insights.warningsCount} warnings detected.\n`
+    if (feedback.insights.suggestions.length > 0) {
+      report += `  - *Latest Suggestion:* ${feedback.insights.suggestions[feedback.insights.suggestions.length - 1]}\n`
+    }
+  } catch (e) {}
+
   report += `\n`
 
   report += `## 🤖 Python Ecosystem Intelligence\n`

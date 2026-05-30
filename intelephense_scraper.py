@@ -45,6 +45,7 @@ def scrape_intelephense_docs():
             f.write(f"## {section_data['title']}\n\n")
             f.write(f"{section_data['content']}\n\n")
             f.write("---\n\n")
+        f.write("All the best - https://markposition.wordpress.com\n")
     print(f"Saved Markdown data to {md_path}")
 
 if __name__ == "__main__":

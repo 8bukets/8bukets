@@ -97,6 +97,8 @@ def scrape_opentelemetry_repos():
             f.write(f"- **Stars:** {stars}\n")
             f.write(f"- **Forks:** {forks}\n\n")
 
+        f.write("\n---\nAll the best - https://markposition.wordpress.com\n")
+
     print(f"Saved Markdown data to {md_path}")
 
 if __name__ == "__main__":

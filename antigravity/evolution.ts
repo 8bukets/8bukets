@@ -34,6 +34,11 @@ export async function evolve() {
         const content = fs.readFileSync(fullPath, 'utf8')
         const lines = content.split('\n').length
 
+        // Phase 12 Directive: Skip components with 'use cache'
+        if (content.includes("'use cache'") || content.includes('"use cache"')) {
+          return
+        }
+
         // Rule 2: Detect large files that should be refactored
         if (lines > 150) {
           suggestions.push({
@@ -91,6 +96,13 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
   for (const s of suggestions) {
     const fullPath = path.join(process.cwd(), s.file)
     let content = fs.readFileSync(fullPath, 'utf8')
+
+    // Phase 12 Directive: Upgrade Phase 9 references
+    if (content.includes('Phase 9')) {
+      logAutonomousAction(` - Upgrading Phase 9 references in ${s.file} to Phase 12`, 'info')
+      content = content.replace(/Phase 9/g, 'Phase 12')
+      fs.writeFileSync(fullPath, content)
+    }
 
     if (s.suggestion.startsWith('MISSING_CACHE_DIRECTIVE')) {
       fs.writeFileSync(fullPath, content)
