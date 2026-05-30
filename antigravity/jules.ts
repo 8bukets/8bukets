@@ -324,7 +324,7 @@ export class Jules {
     if (fs.existsSync(path.join(process.cwd(), 'autonomous_state.json'))) {
       const state = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'autonomous_state.json'), 'utf8'))
       state.stakeholders.forEach((s: any) => {
-        report += `- **${s.name}** (${s.role}) <${s.email}>\n`
+        report += `- **${s.role}** <${s.email}>\n`
       })
     } else {
       report += `_No collaboration state found._\n`
@@ -357,6 +357,20 @@ export class Jules {
           const cleanName = name.replace(/.* -> /, '');
           const lastCommit = execSync(`git log -1 --format="%s|%ar" ${cleanName}`).toString().trim()
           const [lastMessage, lastSeen] = lastCommit.split('|')
+
+          let changedFiles: string[] = []
+          if (raw) {
+            try {
+              // Attempt to get changed files relative to main (top 50 to avoid overhead)
+              changedFiles = execSync(`git diff --name-only main...${cleanName} 2>/dev/null | head -n 50`).toString().trim().split('\n').filter(Boolean)
+            } catch (e) {
+              try {
+                // Fallback to last commit changes
+                changedFiles = execSync(`git show --name-only --format="" ${cleanName} 2>/dev/null | head -n 50`).toString().trim().split('\n').filter(Boolean)
+              } catch (ee) {}
+            }
+          }
+
           return {
             name,
             lastMessage: lastMessage || 'N/A',
@@ -365,7 +379,7 @@ export class Jules {
             domain: 'General',
             knowledge: '',
             results: lastMessage || 'N/A',
-            changedFiles: []
+            changedFiles
           }
         } catch (e) {
           return {
