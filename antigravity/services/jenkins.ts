@@ -73,3 +73,44 @@ export async function checkJenkinsHealth() {
     timestamp: new Date().toISOString()
   }
 }
+
+export async function triggerJenkinsPipeline(jobName: string, params?: Record<string, string>): Promise<boolean> {
+  const jenkinsUrl = process.env.JENKINS_URL
+  const jenkinsUser = process.env.JENKINS_USER
+  const jenkinsToken = process.env.JENKINS_TOKEN
+
+  if (!jenkinsUrl || !jenkinsUser || !jenkinsToken) {
+    console.log(`⚠️ [Jenkins] Skipping pipeline trigger for ${jobName}. Jenkins configuration missing in environment.`)
+    return false
+  }
+
+  try {
+    console.log(`🚀 [Jenkins] Triggering Jenkins pipeline: ${jobName}`)
+    const auth = Buffer.from(`${jenkinsUser}:${jenkinsToken}`).toString('base64')
+
+    let url = `${jenkinsUrl}/job/${jobName}/build`
+    if (params && Object.keys(params).length > 0) {
+      url = `${jenkinsUrl}/job/${jobName}/buildWithParameters`
+      const queryParams = new URLSearchParams(params).toString()
+      url += `?${queryParams}`
+    }
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Basic ${auth}`
+      }
+    })
+
+    if (!response.ok) {
+      console.error(`❌ [Jenkins] Failed to trigger pipeline ${jobName}. Status: ${response.status} ${response.statusText}`)
+      return false
+    }
+
+    console.log(`✅ [Jenkins] Successfully triggered Jenkins pipeline: ${jobName}`)
+    return true
+  } catch (error) {
+    console.error(`❌ [Jenkins] Error triggering pipeline ${jobName}:`, error)
+    return false
+  }
+}

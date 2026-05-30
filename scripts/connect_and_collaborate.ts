@@ -4,6 +4,7 @@ import { SandboxCloudSimulation } from '../antigravity/services/sandbox_cloud_si
 import { onlinePresence } from '../antigravity/services/presence';
 import { cloudConvergence } from '../antigravity/services/cloud_convergence';
 import { syncCollaborationState } from '../antigravity/services/collaboration';
+import { triggerJenkinsPipeline } from '../antigravity/services/jenkins';
 import { jules } from '../antigravity/jules';
 
 async function main() {
@@ -54,6 +55,11 @@ async function main() {
   console.log(' - Synchronizing collaboration state...');
   const branches = await jules.scanAllBranches(true);
   const collaborationState = await syncCollaborationState(branches);
+
+  // 5. Trigger Jenkins Integration Pipeline
+  console.log(' - Connecting Jenkins into engine system and collaborating...');
+  await triggerJenkinsPipeline('ecosystem-sync-pipeline');
+
 
   const finalState = {
     ...collaborationState,
