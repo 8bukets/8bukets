@@ -29,22 +29,42 @@ def update_json_files(new_content):
     if not new_content:
         return
 
+    import os
     for json_path in JSON_PATHS:
         if not os.path.exists(json_path):
             print(f"File {json_path} does not exist, skipping.")
             continue
 
         try:
-            with open(json_path, 'r', encoding='utf-8') as f:
-                data = json.load(f, object_pairs_hook=collections.OrderedDict)
+            import subprocess
+            import tempfile
+            import os
 
-            data["gemini-cli-subagents"] = {
-                "title": "Gemini CLI Subagents",
-                "content": new_content
-            }
+            # Use tempfile to write the new content safely
+            with tempfile.NamedTemporaryFile(mode='w', delete=False, encoding='utf-8', suffix=".md") as temp_content_file:
+                temp_content_file.write(new_content)
+                temp_content_path = temp_content_file.name
 
-            with open(json_path, 'w', encoding='utf-8') as f:
-                json.dump(data, f, indent=4, separators=(',', ': '))
+            node_script = f"""
+const fs = require('fs');
+const jsonPath = process.argv[2];
+const mdPath = process.argv[3];
+const data = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+const newContent = fs.readFileSync(mdPath, 'utf8');
+data['gemini-cli-subagents'] = {{
+    title: "Gemini CLI Subagents",
+    content: newContent
+}};
+fs.writeFileSync(jsonPath, JSON.stringify(data, null, 4));
+"""
+            with tempfile.NamedTemporaryFile(mode='w', delete=False, encoding='utf-8', suffix=".js") as script_file:
+                script_file.write(node_script)
+                script_path = script_file.name
+
+            subprocess.run(['node', script_path, json_path, temp_content_path], check=True)
+
+            os.remove(script_path)
+            os.remove(temp_content_path)
             print(f"Updated {json_path}")
         except Exception as e:
             print(f"Failed to update {json_path}: {e}")
