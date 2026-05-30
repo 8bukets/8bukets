@@ -138,5 +138,14 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     }
   }
 
+  // Gap Analysis 10: Cognitive Debt Auditor
+  if (!files.some(f => f.includes('cognitive_debt_auditor'))) {
+    ideas.push({
+      feature: 'Cognitive Debt Auditor',
+      rationale: 'Analyzes system evolution logs and identifies areas where technical debt is accumulating autonomously.',
+      complexity: 'Medium'
+    })
+  }
+
   return ideas
 }
