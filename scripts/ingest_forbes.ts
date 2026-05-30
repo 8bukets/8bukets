@@ -1,16 +1,19 @@
-import { observeKnowledge } from '../antigravity/services/knowledge'
+import { observeKnowledge } from '../antigravity/services/knowledge';
 
-async function run() {
-  console.log('🚀 [Ingest Forbes] Starting deep market intelligence ingestion...')
-  const url = 'https://forbes.com'
+async function ingestForbes() {
+  console.log('🤖 [Ingest] Fetching market intelligence from Forbes...');
 
-  try {
-    const result = await observeKnowledge(url)
-    console.log(`✅ [Ingest Forbes] Successfully observed: ${result.title}`)
-  } catch (err) {
-    console.error('❌ [Ingest Forbes] Ingestion failed:', err)
-    process.exit(1)
+  const targetUrls = [
+    'https://www.forbes.com/business/',
+    'https://www.forbes.com/innovation/', // Covers IT, tech, and informatics
+    'https://www.forbes.com/money/'       // Covers economy and finance
+  ];
+
+  for (const url of targetUrls) {
+    await observeKnowledge(url);
   }
+
+  console.log('✅ [Ingest] Forbes ingestion complete.');
 }
 
-run()
+ingestForbes().catch(console.error);

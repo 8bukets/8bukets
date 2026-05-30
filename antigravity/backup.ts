@@ -1,3 +1,4 @@
+import { logAutonomousAction } from './core'
 import fs from 'fs'
 import path from 'path'
 import { jules } from './jules'
@@ -7,18 +8,15 @@ import { jules } from './jules'
  * Ensures safe, timestamped persistence of core state files.
  */
 export async function runBackup() {
-  console.log('🛡️ [Backup Agent] Initiating autonomous system backup...')
+  logAutonomousAction('🛡️ [Backup Agent] Initiating autonomous system backup...', 'info')
 
   const rootDir = process.cwd()
   const backupDir = path.join(rootDir, 'backups')
 
   // Ensure backups directory exists
-  try {
-    await fs.promises.access(backupDir)
-  } catch {
-
-    await fs.promises.mkdir(backupDir, { recursive: true })
-    console.log(`🛡️ [Backup Agent] Created backup directory at: ${backupDir}`)
+  if (!fs.existsSync(backupDir)) {
+    fs.mkdirSync(backupDir, { recursive: true })
+    logAutonomousAction(`🛡️ [Backup Agent] Created backup directory at: ${backupDir}`, 'info')
   }
 
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-')
@@ -26,18 +24,16 @@ export async function runBackup() {
 
   // 1. Backup Jules Memory
   const memoryPath = path.join(rootDir, 'antigravity/.jules_memory.json')
-  try {
-    await fs.promises.access(memoryPath)
-    try {
+  if (fs.existsSync(memoryPath)) {
     try {
       // Verify Integrity
-      const memoryContent = await fs.promises.readFile(memoryPath, 'utf8')
+      const memoryContent = fs.readFileSync(memoryPath, 'utf8')
       const parsed = JSON.parse(memoryContent)
 
       if (parsed && typeof parsed === 'object') {
         const backupMemoryPath = path.join(backupDir, `jules_memory_${timestamp}.json`)
-        await fs.promises.writeFile(backupMemoryPath, memoryContent)
-        console.log(`✅ [Backup Agent] Archived Jules Memory to ${backupMemoryPath}`)
+        fs.writeFileSync(backupMemoryPath, memoryContent)
+        logAutonomousAction(`✅ [Backup Agent] Archived Jules Memory to ${backupMemoryPath}`, 'info')
         backupCount++
       }
     } catch (e) {
@@ -49,17 +45,15 @@ export async function runBackup() {
 
   // 2. Backup Core Autonomous State if it exists
   const statePath = path.join(rootDir, 'autonomous_state.json')
-  try {
-    await fs.promises.access(statePath)
+  if (fs.existsSync(statePath)) {
     try {
-    try {
-      const stateContent = await fs.promises.readFile(statePath, 'utf8')
+      const stateContent = fs.readFileSync(statePath, 'utf8')
       const parsed = JSON.parse(stateContent)
 
       if (parsed && typeof parsed === 'object') {
         const backupStatePath = path.join(backupDir, `autonomous_state_${timestamp}.json`)
-        await fs.promises.writeFile(backupStatePath, stateContent)
-        console.log(`✅ [Backup Agent] Archived Autonomous State to ${backupStatePath}`)
+        fs.writeFileSync(backupStatePath, stateContent)
+        logAutonomousAction(`✅ [Backup Agent] Archived Autonomous State to ${backupStatePath}`, 'info')
         backupCount++
       }
     } catch (e) {
@@ -70,7 +64,7 @@ export async function runBackup() {
   // Record task in cognitive memory
   if (backupCount > 0) {
      jules.recordTask(`Autonomous backup completed successfully. Archived ${backupCount} core state files.`)
-     console.log(`🛡️ [Backup Agent] Backup complete. Logged to Jules Memory.`)
+     logAutonomousAction(`🛡️ [Backup Agent] Backup complete. Logged to Jules Memory.`, 'info')
   } else {
      console.warn(`🛡️ [Backup Agent] Backup cycle completed, but no files were archived.`)
   }

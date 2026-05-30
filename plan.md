@@ -1,14 +1,11 @@
-1. **Restore Complete `app/page.tsx` File**
-   - The file was heavily truncated and is missing necessary internal components like `OptimizationPulse`, `OmniPresenceMatrix`, `EvolutionInsights`, and `PersistenceFleetBar`.
-   - I will fetch a full clean version of `app/page.tsx` or manually recreate the components to restore structural integrity.
-   - Run `npm run build` to ensure the Next.js application compiles successfully.
-
-2. **Pre-commit Steps**
-   - Call `pre_commit_instructions` to retrieve and execute required system validations.
-   - Run `vitest run` to ensure unit tests maintain stability.
-   - Validate there are no unresolved module or type errors.
-   - Verify `autonomous_state.json` sync is accurate.
-
-3. **Submit Solution**
-   - Commit the changes locally.
-   - Submit the PR detailing fixes to the build system, TypeScript integrity, and Next.js React integration.
+1. **Update `urlsToObserve` in `antigravity/jules.ts`:**
+   - Modify the array to *only* contain `https://www.investopedia.com/` as requested ("always pull knowledge from investopedia.com").
+2. **Enhance Investopedia integration in `scripts/ingest_investopedia.ts` and `antigravity/services/knowledge.ts`:**
+   - To "integrate all knowledge", we'll improve the scraping to crawl beyond just the front page.
+   - We will implement a deep crawl inside `ingest_investopedia.ts` by fetching links from the main page and passing them to `observeKnowledge`.
+   - Update `observeKnowledge` in `antigravity/services/knowledge.ts` to cleanly handle subpages and aggregate the knowledge efficiently in `KNOWLEDGE_MERGE.md`.
+3. **Execute ingestion & pre-commit tests:**
+   - Run the modified script: `npx tsx scripts/ingest_investopedia.ts` to actually pull the knowledge and generate the KNOWLEDGE_MERGE updates.
+   - Complete pre-commit steps to ensure proper testing, verification, review, and reflection are done.
+4. **Submit changes:**
+   - Submit the PR with the integrated Investopedia scraping enhancements.

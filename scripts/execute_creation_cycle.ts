@@ -1,15 +1,12 @@
-import { jules } from '../antigravity/jules'
-import { workOrderService } from '../antigravity/services/work_order'
-import fs from 'fs'
-import path from 'path'
+import { synthesize } from '../antigravity/synthesis';
+import { workOrderService } from '../antigravity/services/work_order';
+import { logAutonomousAction } from '../antigravity/core';
+import { exec } from 'child_process';
+import { promisify } from 'util';
+import * as fs from 'fs';
+import * as path from 'path';
 
-/**
- * FULL AUTONOMOUS CREATION ORDER AND EXECUTION
- * This script triggers the complete autonomous lifecycle:
- * 1. Synthesis (Gap Analysis)
- * 2. Creation Orders (Work Order Generation)
- * 3. Execution (Bootstrap -> Smoke Test -> Deployment)
- */
+const execAsync = promisify(exec);
 
 async function applyEngineConfiguration() {
     const engineConfigPath = path.join(process.cwd(), 'data/engine_config.json');
@@ -29,20 +26,23 @@ async function applyEngineConfiguration() {
 async function main() {
   console.log('🚀 [Antigravity] Starting Full Autonomous Creation & Execution Cycle...')
 
-  // Ensure data directory exists
-  const dataDir = path.join(process.cwd(), 'data')
-  if (!fs.existsSync(dataDir)) {
-    fs.mkdirSync(dataDir, { recursive: true })
-    console.log('📁 [Antigravity] Created data directory.')
+  // Proactive iCloud Sync Fix
+  console.log('☁️  [CreationCycle] Ensuring iCloud Sync is fluid before starting operations...');
+  try {
+    await execAsync('bash scripts/fix_icloud_sync.sh');
+  } catch (e: any) {
+    console.warn('⚠️  [CreationCycle] Could not fix iCloud sync proactively:', e.message);
   }
 
-  // Clear existing pending orders to ensure a clean run for this demo
-  const storagePath = path.join(process.cwd(), 'data/work_orders.json')
-  if (fs.existsSync(storagePath)) {
-    const data = JSON.parse(fs.readFileSync(storagePath, 'utf8'))
-    const filtered = data.filter((o: any) => o.status !== 'pending')
-    fs.writeFileSync(storagePath, JSON.stringify(filtered, null, 2))
-    console.log('🧹 [Antigravity] Cleared existing pending orders.')
+  // 1. Synthesis: Gap Analysis & Idea Generation
+  const ideas = await synthesize();
+  console.log(`🔮 [CreationCycle] Synthesized ${ideas.length} new ideas.`);
+  logAutonomousAction(`🔮 [CreationCycle] Synthesized ${ideas.length} new ideas.`, 'info');
+
+  if (ideas.length === 0) {
+    console.log('✨ [CreationCycle] No new gaps identified. System state is optimal.');
+    logAutonomousAction('✨ [CreationCycle] No new gaps identified. System state is optimal.', 'info');
+    return;
   }
 
   // Check and apply evolved engine configuration before work cycle
@@ -54,28 +54,19 @@ async function main() {
   // Explicitly confirm autonomous evolution and self-correction sequence
   console.log('🤖 [Antigravity] Autonomous evolution and self-correction phase initiated based on session intelligence. System engine performing internal checks and optimizations.')
 
-  console.log('\n📊 [Antigravity] Cycle Summary:')
-  if (!fs.existsSync(storagePath)) {
-    console.log(' - No work orders file found.')
-    return
-  }
-  const finalOrders = JSON.parse(fs.readFileSync(storagePath, 'utf8'))
-
-  if (finalOrders.length === 0) {
-    console.log(' - No work orders recorded.')
-  } else {
-    finalOrders.forEach((o: any) => {
-      const deps = o.dependsOn ? ` (depends on: ${o.dependsOn.join(', ')})` : ''
-      console.log(` - [${o.status.toUpperCase()}] ID: ${o.id} | ${o.type}: ${o.goal}${deps}`)
-      if (o.result) console.log(`   └─ Result: ${JSON.stringify(o.result)}`)
-      if (o.error) console.log(`   └─ Error: ${o.error}`)
-    })
+      // Create Smoke Test Order (to be executed after bootstrap)
+      await workOrderService.createOrder(
+        'SMOKE_TEST',
+        `Verify ${idea.feature} integrity`,
+        { serviceName: idea.feature.toLowerCase().replace(/\s+/g, '_').replace(/_service$/, '') }
+      );
+    }
   }
 
   console.log('\n✅ [Antigravity] Autonomous Creation Cycle Complete. Evolved system state persisted.')
 }
 
-main().catch(err => {
-  console.error('💥 [Antigravity] Cycle failed:', err)
-  process.exit(1)
-})
+executeCreationCycle().catch(err => {
+  console.error('💥 [CreationCycle] Fatal error:', err);
+  process.exit(1);
+});

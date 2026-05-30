@@ -1,3 +1,4 @@
+import { logAutonomousAction } from './core'
 import fs from 'fs'
 import path from 'path'
 
@@ -7,152 +8,141 @@ import path from 'path'
  */
 
 export async function bootstrap(idea: { feature: string, rationale: string }) {
-  console.log(`🌀 [Singularity] Bootstrapping: ${idea.feature}...`)
-  
-  const serviceName = idea.feature.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/_service$/, '')
+  logAutonomousAction(`🌀 [Singularity] Bootstrapping: ${idea.feature}...`, 'info')
+
+  const serviceName = idea.feature.toLowerCase().replace(/\s+/g, '_').replace(/_service$/, '')
   const filePath = path.join(process.cwd(), 'antigravity/services', `${serviceName}.ts`)
 
-  const workflowPath = path.join(process.cwd(), 'antigravity/workflows', `${serviceName}_workflow.ts`)
-  const githubActionPath = path.join(process.cwd(), '.github/workflows', `autonomous_${serviceName}.yml`)
-
-  // Ensure directories exist
-  const dirs = [
-    path.join(process.cwd(), 'antigravity/services'),
-    path.join(process.cwd(), 'antigravity/workflows'),
-    path.join(process.cwd(), '.github/workflows')
-  ]
-  for (const dir of dirs) {
-    try {
-      await fs.promises.access(dir)
-    } catch {
-      await fs.promises.mkdir(dir, { recursive: true })
-    }
-  }
-
-  let exists = false;
-  try { await fs.promises.access(filePath); exists = true; } catch {}
-  try { await fs.promises.access(workflowPath); exists = true; } catch {}
-  try { await fs.promises.access(githubActionPath); exists = true; } catch {}
-
-  if (exists) {
-    console.log(` - Service ${serviceName} artifacts already exist. Skipping bootstrap to prevent overwriting existing logic.`)
+  if (fs.existsSync(filePath)) {
+    logAutonomousAction(` - Service ${serviceName} already exists. Skipping bootstrap.`, 'info')
     return
   }
 
+  const identifier = idea.feature.replace(/[^a-zA-Z0-9]/g, '')
   const template = `/**
  * ${idea.feature}
  * Generated autonomously by the Antigravity Singularity Engine.
  * Rationale: ${idea.rationale}
  */
 import { z } from 'zod'
-import { autonomousFetch } from '@/antigravity/core'
+import { autonomousFetch } from '../core'
 
-export const ${idea.feature.replace(/[^a-zA-Z0-9]+/g, '')}Schema = z.object({
+export const ${identifier}Schema = z.object({
   status: z.string(),
   lastRun: z.string()
 })
 
-export async function get${idea.feature.replace(/[^a-zA-Z0-9]+/g, '')}Data() {
-  'use cache'
-  return autonomousFetch(${idea.feature.replace(/[^a-zA-Z0-9]+/g, '')}Schema, async () => {
+export async function get${identifier}Data() {
+  return autonomousFetch(${identifier}Schema, async () => {
     return {
       status: 'active',
       lastRun: new Date().toISOString()
     }
-  })
+  }, { life: 'minutes' })
 }
 `
 
-  await fs.promises.writeFile(filePath, template)
-  console.log(`✅ [Singularity] Successfully generated ${serviceName}.ts`)
+  fs.writeFileSync(filePath, template)
+  logAutonomousAction(`✅ [Singularity] Successfully generated ${serviceName}.ts`, 'info')
 
-  const workflowTemplate = `/**
- * ${idea.feature} Autonomous Workflow
+  // Generate Test File
+  const testPath = path.join(process.cwd(), 'antigravity/services', `${serviceName}.test.ts`)
+  if (!fs.existsSync(testPath)) {
+    const testTemplate = `/**
+ * ${idea.feature} Test
  * Generated autonomously by the Antigravity Singularity Engine.
  */
-import { get${idea.feature.replace(/[^a-zA-Z0-9]+/g, '')}Data } from '../services/${serviceName}'
+import { describe, it, expect } from 'vitest'
+import * as service from './${serviceName}'
 
-async function run() {
-  console.log('🤖 [Workflow] Starting autonomous cycle for ${idea.feature}...')
-  const data = await get${idea.feature.replace(/[^a-zA-Z0-9]+/g, '')}Data()
-  console.log('✅ [Workflow] Data fetched:', data)
-}
-
-run().catch(console.error)
+describe('${idea.feature}', () => {
+  it('should have a functional data fetcher', async () => {
+    const data = await service.get${identifier}Data()
+    expect(data.status).toBe('active')
+    expect(data.lastRun).toBeDefined()
+  })
+})
 `
+    fs.writeFileSync(testPath, testTemplate)
+    logAutonomousAction(`🧪 [Singularity] Successfully generated ${serviceName}.test.ts`, 'info')
+  }
 
-  await fs.promises.writeFile(workflowPath, workflowTemplate)
-  console.log(`✅ [Singularity] Successfully generated ${serviceName}_workflow.ts`)
-
-  const githubActionTemplate = `name: Autonomous ${idea.feature} Workflow
+  // Scaffolding CI/CD Configurations
+  // GitHub Actions Workflow
+  const githubActionsDir = path.join(process.cwd(), '.github/workflows')
+  if (fs.existsSync(githubActionsDir)) {
+    const githubWorkflowPath = path.join(githubActionsDir, `test_${serviceName}.yml`)
+    if (!fs.existsSync(githubWorkflowPath)) {
+      const githubWorkflowTemplate = `name: Test ${serviceName}
 
 on:
-  schedule:
-    - cron: '0 * * * *' # Hourly
-  workflow_dispatch:
+  push:
+    paths:
+      - 'antigravity/services/${serviceName}.ts'
+      - 'antigravity/services/${serviceName}.test.ts'
+  pull_request:
+    paths:
+      - 'antigravity/services/${serviceName}.ts'
+      - 'antigravity/services/${serviceName}.test.ts'
 
 jobs:
-  run-workflow:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '20'
           cache: 'npm'
-      - run: npm ci
-      - run: npx tsx antigravity/workflows/${serviceName}_workflow.ts
-        env:
-          MONGODB_URI: \${{ secrets.MONGODB_URI }}
-          NEXT_PUBLIC_SUPABASE_URL: \${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: \${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+      - name: Install Dependencies
+        run: npm ci
+      - name: Run Tests
+        run: npx vitest run antigravity/services/${serviceName}.test.ts
 `
+      fs.writeFileSync(githubWorkflowPath, githubWorkflowTemplate)
+      logAutonomousAction(`🤖 [Singularity] Generated GitHub Actions workflow for ${serviceName}`, 'info')
+    }
+  }
 
-  await fs.promises.writeFile(githubActionPath, githubActionTemplate)
-  console.log(`✅ [Singularity] Successfully generated autonomous_${serviceName}.yml`)
-
-  // Generate GitLab CI entry
-  const gitlabPath = path.join(process.cwd(), '.gitlab-ci.yml')
-  try {
-    await fs.promises.access(gitlabPath)
-    const gitlabContent = await fs.promises.readFile(gitlabPath, 'utf8')
-
-    const gitlabJob = `
-run-autonomous-${serviceName}:
+  // GitLab CI Appending
+  const gitlabCiPath = path.join(process.cwd(), '.gitlab-ci.yml')
+  if (fs.existsSync(gitlabCiPath)) {
+    let gitlabCiContent = fs.readFileSync(gitlabCiPath, 'utf8')
+    const gitlabJobName = `test-${serviceName}`
+    if (!gitlabCiContent.includes(gitlabJobName + ':')) {
+      const gitlabJobTemplate = `\n${gitlabJobName}:
   stage: test
   script:
-    - echo "Running autonomous cycle for ${idea.feature}"
-    - npx tsx antigravity/workflows/${serviceName}_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - npm ci
+    - npx vitest run antigravity/services/${serviceName}.test.ts
 `
-    if (!gitlabContent.includes(`run-autonomous-${serviceName}:`)) {
-      await fs.promises.appendFile(gitlabPath, gitlabJob)
-      console.log(`✅ [Singularity] Successfully updated .gitlab-ci.yml with ${serviceName} job`)
+      fs.appendFileSync(gitlabCiPath, gitlabJobTemplate)
+      logAutonomousAction(`🦊 [Singularity] Appended test job for ${serviceName} to .gitlab-ci.yml`, 'info')
     }
-  } catch {
-    // skip if missing
   }
 
-  // Generate Jenkins pipeline entry
-  const jenkinsPath = path.join(process.cwd(), 'Jenkinsfile')
-  try {
-    await fs.promises.access(jenkinsPath)
-    let jenkinsContent = await fs.promises.readFile(jenkinsPath, 'utf8')
-
-    const jenkinsStage = `        stage('Run Autonomous ${idea.feature}') {
+  // Jenkinsfile Appending
+  const jenkinsfilePath = path.join(process.cwd(), 'Jenkinsfile')
+  if (fs.existsSync(jenkinsfilePath)) {
+    let jenkinsfileContent = fs.readFileSync(jenkinsfilePath, 'utf8')
+    const jenkinsStageName = `Test ${serviceName}`
+    if (!jenkinsfileContent.includes(jenkinsStageName)) {
+      const jenkinsStageTemplate = `        stage('${jenkinsStageName}') {
             steps {
-                sh 'npx tsx antigravity/workflows/${serviceName}_workflow.ts'
+                sh 'npm ci'
+                sh 'npx vitest run antigravity/services/${serviceName}.test.ts'
             }
         }\n`
-    if (!jenkinsContent.includes(`stage('Run Autonomous ${idea.feature}')`)) {
-      jenkinsContent = jenkinsContent.replace(/        stage\('Creative Workflow'\) \{/g, jenkinsStage + "        stage('Creative Workflow') {")
-      await fs.promises.writeFile(jenkinsPath, jenkinsContent)
-      console.log(`✅ [Singularity] Successfully updated Jenkinsfile with ${serviceName} stage`)
+
+      const insertIndex = jenkinsfileContent.indexOf("        stage('Creative Workflow') {")
+      if (insertIndex !== -1) {
+        jenkinsfileContent = jenkinsfileContent.slice(0, insertIndex) + jenkinsStageTemplate + "\n" + jenkinsfileContent.slice(insertIndex)
+        fs.writeFileSync(jenkinsfilePath, jenkinsfileContent)
+        logAutonomousAction(`👔 [Singularity] Injected test stage for ${serviceName} into Jenkinsfile`, 'info')
+      }
     }
-  } catch {
-    // skip if missing
   }
 
-  return { filePath, workflowPath, githubActionPath, serviceName, feature: idea.feature }
+  return { filePath, testPath, serviceName, feature: idea.feature }
 }

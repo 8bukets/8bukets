@@ -1,37 +1,32 @@
-import { Jules } from '../antigravity/jules'
-import { syncCollaborationState, broadcastToStakeholders } from '../antigravity/services/collaboration'
-import { generateConsolidatedReport } from '../antigravity/services/intelligence'
+import { jules } from '../antigravity/jules';
+import { syncCollaborationState } from '../antigravity/services/collaboration';
+import { generateConsolidatedReport } from '../antigravity/services/intelligence';
 
 /**
- * FULL SYSTEM SYNC & COLLABORATION SCRIPT
- * Performs a deep scan of all branches and merges knowledge into the matrix.
+ * Ecosystem Synchronization Script
+ * Performs a comprehensive scan and merge of all system branches and collaboration state.
  */
-
-async function main() {
-  console.log('🚀 [Antigravity] Starting Full Ecosystem Synchronization...')
-  const jules = new Jules('Ops')
+async function syncAll() {
+  console.log('🔄 Starting Ecosystem Synchronization...');
 
   try {
-    // 1. Scan all branches (force: true ensures deep analysis)
-    const branches = await jules.scanAllBranches(true)
-    console.log(`🔍 Found ${branches.length} branches.`)
+    // 1. Scan all branches for intelligence
+    console.log('🔍 Scanning branches...');
+    const branches = await jules.scanAllBranches(true);
 
-    // 2. Synchronize collaboration state and merge insights
-    console.log('🧠 Merging branch insights and synchronizing state...')
-    const state = await syncCollaborationState(branches)
+    // 2. Synchronize collaboration state
+    console.log('🤝 Synchronizing collaboration state...');
+    await syncCollaborationState(branches);
 
-    // 3. Broadcast to stakeholders with updated synergy data
-    await broadcastToStakeholders(state)
+    // 3. Generate consolidated intelligence report
+    console.log('📊 Generating consolidated report...');
+    await generateConsolidatedReport(branches);
 
-    // 4. Generate consolidated intelligence report
-    console.log('📊 Generating consolidated intelligence report...')
-    await generateConsolidatedReport(branches)
-
-    console.log('✅ [Antigravity] Full Ecosystem Sync Complete.')
-  } catch (err) {
-    console.error('💥 [Antigravity] Sync failed:', err)
-    process.exit(1)
+    console.log('✅ Ecosystem Synchronization Complete.');
+  } catch (error) {
+    console.error('❌ Synchronization Failed:', error);
+    process.exit(1);
   }
 }
 
-main()
+syncAll().catch(console.error);

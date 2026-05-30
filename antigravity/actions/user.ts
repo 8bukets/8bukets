@@ -1,7 +1,7 @@
+import { logAutonomousAction } from '../core'
 'use server'
 
-import { updateTag, revalidateTag } from '@/antigravity/core'
-import { revalidatePath } from 'next/cache'
+import { updateTag, revalidateTag, refresh } from '@/antigravity/core'
 
 /**
  * Scalable Mutation: 'Read-Your-Writes' consistency
@@ -9,19 +9,19 @@ import { revalidatePath } from 'next/cache'
  */
 export async function updateUserName(userId: string, newName: string) {
   // Update the DB (mocked)
-  console.log(`Updating user ${userId} to ${newName}`)
-  
+  logAutonomousAction(`Updating user ${userId} to ${newName}`, 'info')
+
   // updateTag gives the user an immediate result
   updateTag(`user-${userId}`)
-  
+
   // revalidateTag can still be used for background revalidation
   revalidateTag('user-list', 'max')
 }
 
 /**
- * Scalable Global Refresh: 
+ * Scalable Global Refresh:
  */
 export async function clearUserSession() {
   // Clear session logic here...
-  revalidatePath('/', 'layout')
+  refresh()
 }

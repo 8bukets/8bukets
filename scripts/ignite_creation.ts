@@ -1,34 +1,27 @@
-import { workOrderService } from '../antigravity/services/work_order'
+import { workOrderService } from '../antigravity/services/work_order';
+import { logAutonomousAction } from '../antigravity/core';
 
-/**
- * IGNITE AUTONOMOUS CREATION
- * This script triggers the full autonomous creation cycle by generating
- * and executing an AUTONOMOUS_CREATION work order.
- */
+async function igniteCreation() {
+  console.log('🔥 [Ignite] Igniting Full Autonomous Creation Cycle...');
+  logAutonomousAction('🔥 [Ignite] Igniting Full Autonomous Creation Cycle...', 'info');
 
-async function main() {
-  console.log('🔥 [Antigravity] Igniting Full Autonomous Creation Cycle...')
-
-  // Create the root autonomous creation order
-  const igniteOrder = workOrderService.createOrder(
+  // Create the top-level creation order
+  const creationOrder = await workOrderService.createOrder(
     'AUTONOMOUS_CREATION',
-    'Ignite full autonomous creation cycle (Synthesis -> Bootstrap -> Smoke Test -> Deployment)',
-    {
-      source: 'manual_ignition',
-      timestamp: new Date().toISOString()
-    }
-  )
+    'Execute Full Autonomous Creation Cycle',
+    { trigger: 'ignite_script', timestamp: new Date().toISOString() }
+  );
 
-  console.log(`✅ [Antigravity] Created ignition order: ${igniteOrder.id}`)
-  console.log('🚀 [Antigravity] Executing pending orders...')
+  console.log(`✅ [Ignite] Creation order generated: ${creationOrder.id}`);
+  console.log('⚡ [Ignite] Triggering immediate execution...');
 
-  // Execute the orders
-  await workOrderService.executePendingOrders()
+  // Process the order (this will trigger synthesis and follow-up chains)
+  await workOrderService.executePendingOrders();
 
-  console.log('\n🏁 [Antigravity] Autonomous ignition cycle finished.')
+  console.log('🚀 [Ignite] Autonomous Creation Cycle execution initiated.');
 }
 
-main().catch(err => {
-  console.error('💥 [Antigravity] Ignition failed:', err)
-  process.exit(1)
-})
+igniteCreation().catch(err => {
+  console.error('💥 [Ignite] Fatal error during ignition:', err);
+  process.exit(1);
+});

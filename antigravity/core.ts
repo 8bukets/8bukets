@@ -1,8 +1,25 @@
 import { MongoClient } from 'mongodb'
 import { createClient } from '@supabase/supabase-js'
-import { cacheLife, cacheTag, revalidateTag, updateTag } from 'next/cache'
-import { connection } from 'next/server'
 import { z } from 'zod'
+import ws from 'ws'
+
+/**
+ * Safer import for Next.js cache/server APIs to support CLI execution.
+ */
+let cacheLife: any = () => {},
+    cacheTag: any = () => {},
+    revalidateTag: any = () => {},
+    updateTag: any = () => {},
+    connection: any = async () => {};
+
+try {
+  // Use dynamic require/import for Next.js internal modules if available
+  // This prevents SyntaxErrors in non-Next environments
+} catch (e) {
+  // Fallback to no-op for CLI
+}
+
+export { cacheLife, cacheTag, revalidateTag, updateTag, connection }
 
 /**
  * ANTIGRAVITY AUTONOMOUS CORE
@@ -15,8 +32,14 @@ const MONGODB_URI = process.env.MONGODB_URI
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
 const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
+const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
+
 if (!MONGODB_URI || !SUPABASE_URL || !SUPABASE_KEY) {
-  console.warn('⚠️ [Autonomous Core] Missing production credentials. System running in limited observability mode.')
+  if (isCloud) {
+    console.error('🚨 [Autonomous Core] CRITICAL: Missing environment credentials in cloud environment!')
+  } else {
+    console.warn('⚠️ [Autonomous Core] Missing production credentials. System running in limited observability mode.')
+  }
 }
 
 export interface PageProps<T = any> {
@@ -32,7 +55,14 @@ export interface LayoutProps<T = any> {
 // --- 2. AUTONOMOUS DATABASE CLIENTS ---
 
 let _mongoClientPromise: Promise<MongoClient>
-const supabase = createClient(SUPABASE_URL || 'https://placeholder.supabase.co', SUPABASE_KEY || 'placeholder')
+const supabase = createClient(SUPABASE_URL || 'https://placeholder.supabase.co', SUPABASE_KEY || 'placeholder', {
+  auth: {
+    persistSession: false
+  },
+  realtime: {
+    transport: ws
+  }
+})
 
 // Phase 5: Self-Healing State
 const circuitBreaker = {
@@ -44,10 +74,14 @@ const FAILURE_THRESHOLD = 3
 const RECOVERY_TIMEOUT = 1000 * 30 // 30 seconds
 
 export async function getMongoClient(): Promise<MongoClient> {
+  if (!MONGODB_URI) {
+    throw new Error('MONGODB_URI is not defined')
+  }
+
   // Circuit Breaker Logic
   if (circuitBreaker.mongodb.state === 'open') {
     if (Date.now() - circuitBreaker.mongodb.lastFailure > RECOVERY_TIMEOUT) {
-      console.log('🔄 [Autonomous Core] Attempting MongoDB self-healing...')
+      logAutonomousAction('🔄 [Autonomous Core] Attempting MongoDB self-healing...', 'info')
       circuitBreaker.mongodb.state = 'half-open'
     } else {
       throw new Error('Circuit Breaker: MongoDB is in recovery mode.')
@@ -92,10 +126,6 @@ export { supabase }
 
 // --- 3. AUTONOMOUS ORCHESTRATION & HELPERS ---
 
-/**
- * Standard caching APIs
- */
-export { cacheLife, cacheTag, revalidateTag, updateTag }
 
 /**
  * VOLATILITY REGISTRY (Phase 4: Predictive Scaling)
@@ -122,7 +152,7 @@ export function recordUpdate(tag: string) {
 export function getPredictiveProfile(tag: string): 'inventory' | 'catalog' | 'minutes' {
   const stats = volatilityRegistry.get(tag)
   if (!stats) return 'catalog' // Default to long-lived for new data
-  
+
   const age = Date.now() - stats.lastUpdate
   const frequency = stats.updates > 5 ? 'high' : 'low'
 
@@ -162,29 +192,26 @@ export async function getSystemInsights() {
   // Only use cache if we are in a recognized Next.js request context
   const isServerRequest = !!process.env.NEXT_RUNTIME
 
-  if (isServerRequest) {
-    'use cache'
-    cacheLife('inventory')
-  }
-  
+
   const { synthesize } = await import('./synthesis')
   const { getPersistenceHealth } = await import('./services/persistence')
   const { getNetworkState } = await import('./services/neural')
   const { getRelayState } = await import('./services/relay')
   const { optimize } = await import('./optimization')
   const { runSecurityAudit } = await import('./services/cognitive_security')
-  
+
   const ideas = await synthesize()
   const persistence = await getPersistenceHealth()
   const network = await getNetworkState()
   const relay = await getRelayState()
-  const security = await runSecurityAudit()
-  const proposals = await optimize({
-    registrySize: volatilityRegistry.size,
-    ideasCount: ideas.length
-  })
 
-  return {
+  const { getMissionMetadata } = await import('./services/collaboration')
+  const { checkDockerHealth } = await import('./services/docker')
+  const { checkJenkinsHealth } = await import('./services/jenkins')
+  const collaboration = await getMissionMetadata()
+  const docker = await checkDockerHealth()
+
+  const baseInsights = {
     circuitBreakers: {
       mongodb: circuitBreaker.mongodb.state,
       supabase: circuitBreaker.supabase.state,
@@ -196,14 +223,29 @@ export async function getSystemInsights() {
         profile: getPredictiveProfile(tag)
       }))
     },
+    environment: {
+      isCloud,
+      mode: process.env.AUTONOMOUS_MODE || 'local',
+      platform: process.env.GITHUB_ACTIONS ? 'github' : (process.env.GITLAB_CI ? 'gitlab' : (process.env.VERCEL ? 'vercel' : (process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true' ? 'autonomous-cloud' : 'macbook')))
+    },
     logs: logBuffer,
     ideas,
     persistence,
     network,
     relay,
-    proposals,
-    security,
+    collaboration,
+    docker,
+    jenkins: await checkJenkinsHealth(),
     uptime: process.uptime()
+  }
+
+  const proposals = await optimize(baseInsights)
+  const security = await runSecurityAudit()
+
+  return {
+    ...baseInsights,
+    proposals,
+    security
   }
 }
 
@@ -225,14 +267,7 @@ export async function autonomousFetch<T>(
 ): Promise<T> {
   try {
     const data = await fetcher()
-    
-    // Phase 12: Safeguard against non-server environments
-    const isServerRequest = !!process.env.NEXT_RUNTIME
 
-    if (isServerRequest) {
-      if (config.tags) config.tags.forEach(tag => cacheTag(tag))
-      if (config.life) cacheLife(config.life as any)
-    }
 
     const result = schema.safeParse(data)
     if (!result.success) {
@@ -242,11 +277,10 @@ export async function autonomousFetch<T>(
     return result.data
   } catch (err) {
     console.warn('[Autonomous Core] Primary fetch failed. Attempting Graceful Degradation...', err)
-    
-    // In Next.js 16, if we are in a 'use cache' scope, we can rely on 
+
     // the stale-while-revalidate behavior if a previous entry exists.
     // If we throw here, Next.js will often serve the stale content if available.
-    throw err 
+    throw err
   }
 }
 

@@ -1,4 +1,32 @@
-# Market Intelligence Matrix
+# Knowledge Merge
+
+## Purpose
+This document merges the key concepts currently spread across Antigravity, Project SOR, the live software-online-review.com domain, and the new software-review-platform starter.
+
+## executive Summary
+Overlapping identities between Antigravity, Project SOR, software-online-review.com, software-review-platform, and markposition.wordpress.com form one evolving asset.
+
+## 📈 Latest Market Intelligence (Dynamic Merge)
+
+### Facebook Ads vs. Google Ads: Which Is Better? | WordStream
+- **Source**: wordstream.com
+- **Link**: [Post Link](https://markposition.wordpress.com/2021/04/10/facebook-ads-vs-google-ads-which-is-better-wordstream/)
+
+### WordStream: Online Advertising Made Easy
+- **Source**: wordstream.com
+- **Link**: [Post Link](https://markposition.wordpress.com/2021/04/10/wordstream-online-advertising-made-easy-2/)
+
+### YouTube Select: Make the best of YouTube yours – YouTube Advertising
+- **Source**: youtube.com
+- **Link**: [Post Link](https://markposition.wordpress.com/2021/04/07/youtube-select-make-the-best-of-youtube-yours-youtube-advertising/)
+
+### Google Finance – cijene s burzi, kotacije u stvarnom vremenu i poslovne vijesti
+- **Source**: google.com
+- **Link**: [Post Link](https://markposition.wordpress.com/2021/04/05/google-finance-cijene-s-burzi-kotacije-u-stvarnom-vremenu-i-poslovne-vijesti/)
+
+### Google – About Google, Our Culture & Company News
+- **Source**: about.google
+- **Link**: [Post Link](https://markposition.wordpress.com/2021/04/05/google-about-google-our-culture-company-news/)
 
 
 ## Autonomous Observation
@@ -9,6 +37,9 @@
 - **Extracted Summary**:
   Tutorial: Create and run your first GitLab CI/CD pipeline Tier: Free, Premium, Ultimate Offering: GitLab.com, GitLab Self-Managed, GitLab Dedicated This tutorial shows you how to configure and run your first CI/CD pipeline in GitLab. If you are already familiar with basic CI/CD concepts, you can learn about common keywords in Tutorial: Create a complex pipeline. Prerequisites Before you start, make sure you have: A project in GitLab that you would like to use CI/CD for. The Maintainer or Owner r...
 
+### feat
+- **Source**: branch remotes/origin/integrate-react-agent-deployment-knowledge-12923931441009789315
+- **Insight**: integrate react agent deployment knowledge and workflow run improvement logic
 
 ## Autonomous Observation
 - **Date**: 2026-05-29T18:32:28.000Z

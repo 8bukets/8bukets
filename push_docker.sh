@@ -1,23 +1,29 @@
 #!/bin/bash
-
-# Exit immediately if a command exits with a non-zero status
 set -e
 
-# Ensure required environment variables are present
-if [ -z "$DOCKER_USERNAME" ]; then
-    echo "Error: DOCKER_USERNAME environment variable is not set."
+# Default variables
+IMAGE_NAME="getanant/sor"
+TAG_NAME="${1:-tagname}"
+
+echo "🚀 Preparing to build and push Docker image: $IMAGE_NAME:$TAG_NAME"
+
+# Check for required credentials
+if [ -z "$DOCKER_USERNAME" ] || [ -z "$DOCKER_PASSWORD" ]; then
+    echo "❌ Error: DOCKER_USERNAME and DOCKER_PASSWORD environment variables must be set."
+    echo "Usage: DOCKER_USERNAME=myuser DOCKER_PASSWORD=mypass ./push_docker.sh [tagname]"
     exit 1
 fi
 
-if [ -z "$DOCKER_PASSWORD" ]; then
-    echo "Error: DOCKER_PASSWORD environment variable is not set."
-    exit 1
-fi
+# Login to Docker Hub
+echo "🔑 Logging in to Docker Hub..."
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
-echo "Building Docker image..."
-make docker-build
+# Build the image
+echo "🔨 Building the Docker image..."
+docker build -t "$IMAGE_NAME:$TAG_NAME" .
 
-echo "Pushing Docker image..."
-make docker-push
+# Push the image
+echo "📤 Pushing the Docker image to registry..."
+docker push "$IMAGE_NAME:$TAG_NAME"
 
-echo "Docker image build and push completed successfully."
+echo "✅ Successfully pushed $IMAGE_NAME:$TAG_NAME"

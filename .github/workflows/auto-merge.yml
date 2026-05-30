@@ -1,23 +1,19 @@
-name: Auto Merge
+name: Auto-merge labeled PRs
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, ready_for_review]
+    types: [labeled]
 
 permissions:
   contents: write
   pull-requests: write
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
-  auto-merge:
+  automerge:
+    if: github.event.label.name == 'automerge'
     runs-on: ubuntu-latest
     steps:
-      - name: Auto Merge PR
-        run: gh pr merge --auto --merge "$PR_URL" || true
-        env:
-          MACBOOK_CLOUD_SIMULATION: true
-          PR_URL: ${{github.event.pull_request.html_url}}
-          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Run automerge action
+        uses: pascalgn/automerge-action@v0.15.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}

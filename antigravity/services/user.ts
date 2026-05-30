@@ -15,7 +15,6 @@ export async function getUser(id: string): Promise<User> {
   return autonomousFetch(
     UserSchema,
     async () => {
-      'use cache'
       // In a real app, fetch from DB
       const user = {
         id,

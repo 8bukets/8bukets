@@ -15,8 +15,11 @@
         }
     ],
     "docker": {
-        "status": "optimal",
-        "containerCount": 0
+        "status": "recovering",
+        "containerCount": 0,
+        "timestamp": "2026-05-29T16:59:56.446Z",
+        "mode": "native",
+        "is_cloud": false
     },
     "jenkins": {
         "status": "SUCCESS",

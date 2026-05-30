@@ -1,10 +1,12 @@
-import fs from 'fs';
-import path from 'path';
+import { logAutonomousAction } from '../core'
+import fs from 'fs'
+import path from 'path'
+import { z } from 'zod'
 
-export interface KnowledgeSection {
-  header: string;
-  content: string;
-}
+/**
+ * KNOWLEDGE OBSERVER SERVICE
+ * Autonomously parses and persists technical documentation and insights.
+ */
 
 export interface KnowledgeInsights {
   source: string;

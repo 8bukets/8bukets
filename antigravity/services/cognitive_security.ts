@@ -18,9 +18,8 @@ export type SecurityAudit = z.infer<typeof SecurityAuditSchema>
  */
 export async function runSecurityAudit(): Promise<SecurityAudit> {
   return autonomousFetch(SecurityAuditSchema, async () => {
-    'use cache'
-    console.log('🛡️ [Cognitive Security] Starting deep-tissue security scan...')
-    
+    logAutonomousAction('🛡️ [Cognitive Security] Starting deep-tissue security scan...', 'info')
+
     let issuesFound = 0
     let scannedFiles = 0
     const riskPatterns = [
@@ -30,16 +29,16 @@ export async function runSecurityAudit(): Promise<SecurityAudit> {
     ]
 
     function scan(dir: string) {
-      const files = /* [Evolution] TODO: Refactor to async */ fs.readdirSync(dir)
+      const files = fs.readdirSync(dir)
       for (const file of files) {
         const fullPath = path.join(dir, file)
         if (file === 'node_modules' || file === '.git' || file === '.next' || file === 'venv') continue
-        
-        if (/* [Evolution] TODO: Refactor to async */ fs.statSync(fullPath).isDirectory()) {
+
+        if (fs.statSync(fullPath).isDirectory()) {
           scan(fullPath)
         } else if (file.endsWith('.ts') || file.endsWith('.tsx') || file.endsWith('.js')) {
           scannedFiles++
-          const content = /* [Evolution] TODO: Refactor to async */ fs.readFileSync(fullPath, 'utf8')
+          const content = fs.readFileSync(fullPath, 'utf8')
           for (const pattern of riskPatterns) {
             if (pattern.test(content)) {
               console.warn(`⚠️ [Security Risk] Potential credential leak in: ${file}`)
@@ -53,7 +52,7 @@ export async function runSecurityAudit(): Promise<SecurityAudit> {
     scan(process.cwd())
 
     const status = issuesFound > 0 ? 'warning' : 'secure'
-    
+
     if (issuesFound > 0) {
       logAutonomousAction(`[SECURITY] Found ${issuesFound} potential risks during audit.`, 'security')
     }

@@ -1,23 +1,27 @@
-/**
- * ANTIGRAVITY CONNECT & COLLABORATE
- *
- * This script leverages the Jules agent to perform an autonomous Docker sovereignty audit
- * and synchronize collaboration context with stakeholders defined in .antigravity/mission.md.
- *
- * It bridges the local environment state with the project's autonomous state.
- */
+import { exec } from 'child_process';
+import * as fs from 'fs/promises';
+import { promisify } from 'util';
+import { syncCollaborationState, triggerEcosystemCollaboration } from '../antigravity/services/collaboration';
 
-import { jules } from '@/antigravity/jules';
-import { sandboxCloudSimulation } from '@/antigravity/services/cloud_simulation';
+const execAsync = promisify(exec);
 
 async function main() {
-  console.log('🚀 [Antigravity] Starting Docker and Collaboration Connection...');
+  console.log('Initiating autonomous Docker sovereignty audit and stakeholder collaboration sync...');
 
-  // 0. Force cloud sandbox execution if in simulation
-  await sandboxCloudSimulation.forceCloudCollaboration();
+  const state: any = {
+    timestamp: new Date().toISOString(),
+    dockerInfo: null,
+    dockerPs: null,
+  };
 
-  // 1. Audit Docker sovereignty
-  await jules.auditDocker();
+  try {
+    console.log('Running docker info...');
+    const { stdout: infoOutput } = await execAsync('docker info');
+    state.dockerInfo = infoOutput;
+  } catch (error: any) {
+    console.error('Failed to run docker info:', error.message);
+    state.dockerInfo = 'Error: ' + error.message;
+  }
 
   // 2. Synchronize collaboration context
   console.log('🐳 [Jules] Connecting to Docker...');
@@ -29,10 +33,21 @@ async function main() {
   }
   await jules.syncCollaboration();
 
-  console.log('✅ [Antigravity] Connection and Collaboration Sync Finished.');
+  const outputPath = 'autonomous_state.json';
+  await fs.writeFile(outputPath, JSON.stringify(state, null, 2));
+  console.log(`Audit complete. State written to ${outputPath}`);
+
+  console.log('Running engine system collaboration sync...');
+  try {
+    await syncCollaborationState();
+    console.log('Engine collaboration sync complete.');
+
+    console.log('Triggering ecosystem collaboration...');
+    await triggerEcosystemCollaboration();
+    console.log('Ecosystem collaboration triggered successfully.');
+  } catch (error: any) {
+     console.error('Failed to sync or trigger collaboration state:', error.message);
+  }
 }
 
-main().catch((error) => {
-  console.error('❌ [Antigravity] Connection failed:', error);
-  process.exit(1);
-});
+main().catch(console.error);

@@ -19,22 +19,42 @@ export type PersistenceStatus = z.infer<typeof PersistenceSchema>
  */
 export async function getPersistenceHealth(): Promise<PersistenceStatus[]> {
   const agents = ['com.sigma.orchestrator', 'com.sigma.jules', 'com.sigma.syra_api']
-  
+  const isMac = process.platform === 'darwin'
+
   return autonomousFetch(z.array(PersistenceSchema), async () => {
-    'use cache'
     const results: PersistenceStatus[] = []
 
     for (const agent of agents) {
       try {
-        const { stdout: output } = await execAsync(`launchctl list ${agent}`)
-        const pidMatch = output.match(/"PID" = (\d+);/)
-        const lastExitMatch = output.match(/"LastExitStatus" = (\d+);/)
-        
-        results.push({
-          agent,
-          status: pidMatch ? 'running' : (lastExitMatch && lastExitMatch[1] === '0' ? 'stopped' : 'error'),
-          pid: pidMatch ? pidMatch[1] : undefined
-        })
+        if (isMac) {
+          try {
+            const { stdout } = await execAsync(`launchctl list ${agent}`)
+            const output = stdout.toString()
+            const pidMatch = output.match(/"PID" = (\d+);/)
+            const lastExitMatch = output.match(/"LastExitStatus" = (\d+);/)
+
+            results.push({
+              agent,
+              status: pidMatch ? 'running' : (lastExitMatch && lastExitMatch[1] === '0' ? 'stopped' : 'error'),
+              pid: pidMatch ? pidMatch[1] : undefined
+            })
+          } catch (macErr) {
+            results.push({ agent, status: 'error' })
+          }
+        } else {
+          // Cloud/Linux Fallback using pgrep or ps
+          try {
+            const { stdout } = await execAsync(`pgrep -f ${agent}`)
+            const pid = stdout.toString().trim()
+            results.push({
+              agent,
+              status: pid ? 'running' : 'stopped',
+              pid: pid || undefined
+            })
+          } catch (e) {
+            results.push({ agent, status: 'stopped' })
+          }
+        }
       } catch (e) {
         results.push({ agent, status: 'error' })
       }

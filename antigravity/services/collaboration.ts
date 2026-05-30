@@ -1,3 +1,4 @@
+import { logAutonomousAction } from '../core'
 import fs from 'fs'
 import path from 'path'
 import { z } from 'zod'
@@ -30,12 +31,11 @@ const MISSION_PATH = path.join(process.cwd(), '.antigravity/mission.md')
 
 export async function getMissionMetadata(): Promise<MissionMetadata> {
   return autonomousFetch(MissionMetadataSchema, async () => {
-    // Note: In Next.js server context, we don't use 'use cache' here to avoid some issues we saw earlier
     if (!fs.existsSync(MISSION_PATH)) {
       throw new Error('Mission document missing. System collaboration impaired.')
     }
 
-    const content = await fs.promises.readFile(MISSION_PATH, 'utf8')
+    const content = fs.readFileSync(MISSION_PATH, 'utf8')
 
     const missionStatementMatch = content.match(/#(?:# Mission Statement| Antigravity Mission)\n([\s\S]*?)(\n##|$)/)
     let missionStatement = missionStatementMatch ? missionStatementMatch[1].trim() : 'Autonomous Evolution'
@@ -76,7 +76,7 @@ export async function getMissionMetadata(): Promise<MissionMetadata> {
 
 export async function exportEcosystemMetadata() {
   const metadata = await getMissionMetadata()
-  console.log('🌐 [Collaboration] Exporting ecosystem metadata for global sync...')
+  logAutonomousAction('🌐 [Collaboration] Exporting ecosystem metadata for global sync...', 'info')
   return {
     ...metadata,
     systemId: 'antigravity-alpha-01',
@@ -139,180 +139,81 @@ ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
   const logDir = path.join(process.cwd(), 'logs')
   if (!fs.existsSync(logDir)) await fs.promises.mkdir(logDir, { recursive: true })
 
-  await fs.promises.appendFile(path.join(logDir, 'collaboration.log'), summary)
+  // Deduplication logic: scan for existing titles
+  const existingNuggets = content.match(/### .+/g) || [];
+  const existingTitles = new Set(existingNuggets.map(t => t.replace('### ', '').trim()));
 
-  return { notifiedCount: metadata.stakeholders.length }
+  let newNuggets = '\n## 🧠 Discovered Knowledge Nuggets\n';
+
+  // Limit to most recent branches to reduce bloat
+  const relevantBranches = branches
+    .sort((a, b) => new Date(b.lastSeen).getTime() - new Date(a.lastSeen).getTime())
+    .slice(0, 20);
+
+  for (const branch of relevantBranches) {
+    // Selection criteria: must have a colon, must be > 10 chars, must not be a chore/fix unless significant
+    const msg = branch.lastMessage || '';
+    if (msg.includes(':') && msg.length > 10 && !existingTitles.has(msg)) {
+      const [prefix, description] = msg.split(':');
+      const lowerPrefix = prefix.toLowerCase();
+
+      // Filter for high-signal prefixes
+      const highSignal = ['feat', 'docs', 'bolt', 'palette', 'sentinel', 'research'].some(s => lowerPrefix.includes(s));
+
+      if (highSignal && description && description.trim().length > 5) {
+        newNuggets += `### ${prefix.trim()}\n- **Source**: branch ${branch.name}\n- **Insight**: ${description.trim()}\n\n`;
+        existingTitles.add(msg);
+        nuggetsAdded++;
+      }
+    }
+  }
+
+  if (nuggetsAdded > 0) {
+    // Insert before signature
+    const escapedSignature = signature.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
+    const sigRegex = new RegExp(`\\n*---\\n*${escapedSignature}\\n*|\\n*${escapedSignature}\\n*`, 'g');
+
+    if (content.includes(signature)) {
+      content = content.replace(sigRegex, '\n\n' + newNuggets + '\n\n---\n' + signature + '\n');
+    } else {
+      content += '\n' + newNuggets + '\n\n---\n' + signature + '\n';
+    }
+
+    fs.writeFileSync(knowledgePath, content);
+  }
+
+  return { nuggets: nuggetsAdded };
 }
 
-export async function generateRelationshipMap(branches: any[], stakeholders: Stakeholder[], goals: string[]) {
-  console.log('🗺️ [Collaboration] Generating relationship map...')
+export async function generateRelationshipMap() {
+  logAutonomousAction('🗺️ [Collaboration] Generating resource relationship map...', 'info');
+  const metadata = await getMissionMetadata();
+  const { jules } = await import('../jules');
+  const branches = await jules.scanAllBranches();
 
-  const map: any = {
-    stakeholderEngagement: {},
-    goalAlignment: {},
-    resourceInventory: [],
-    synergies: []
-  }
+  // Cross-reference stakeholders and goals with ecosystem components
+  const relationshipMap = {
+    system: 'antigravity-alpha-01',
+    stakeholders: metadata.stakeholders.map(s => ({
+      ...s,
+      associated_domains: branches
+        .filter(b => b.name.includes(s.role.toLowerCase()) || b.lastMessage.toLowerCase().includes(s.role.toLowerCase()))
+        .map(b => b.name)
+    })),
+    strategic_goals: metadata.goals.map(g => ({
+      goal: g,
+      tracking_branches: branches
+        .filter(b => g.toLowerCase().split(' ').some(word => word.length > 3 && b.name.toLowerCase().includes(word)))
+        .map(b => b.name)
+    })),
+    timestamp: new Date().toISOString()
+  };
 
-  // Phase 12: Dynamic Resource Discovery (Expanded)
-  const scanDirs = [
-    { path: 'antigravity/services', type: 'Service', pattern: /\.ts$/ },
-    { path: 'scripts', type: 'Automation Script', pattern: /\.ts$|\.sh$/ },
-    { path: 'agents', type: 'AI Agent', pattern: /\.md$|\.py$/ },
-    { path: 'app', type: 'UI Component', pattern: /\.tsx$|\.ts$/ },
-    { path: 'web-app', type: 'UI Component', pattern: /\.tsx$|\.ts$/ },
-    { path: 'public', type: 'Asset', pattern: /.*/ }
-  ]
-
-  for (const dir of scanDirs) {
-    const fullPath = path.join(process.cwd(), dir.path)
-    if (fs.existsSync(fullPath)) {
-      try {
-        const files = await fs.promises.readdir(fullPath)
-        for (const file of files) {
-          if (!file.includes('.test.') && (dir.pattern.test(file))) {
-            map.resourceInventory.push({
-              type: dir.type,
-              name: file.split('.')[0],
-              status: 'Active',
-              path: `${dir.path}/${file}`
-            })
-          }
-        }
-      } catch (e) {}
-    }
-  }
-
-  // Integrate autonomous knowledge into resource inventory
-  const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json')
-  if (fs.existsSync(knowledgePath)) {
-    try {
-      const content = await fs.promises.readFile(knowledgePath, 'utf8')
-      const systemKnowledge = JSON.parse(content)
-
-      // Phase 12: Support both nested 'typescript_sections' and unified flat key structure
-      const allKnowledge: any[] = []
-
-      // Explicitly handled legacy/standard keys
-      if (Array.isArray(systemKnowledge.sections)) allKnowledge.push(...systemKnowledge.sections)
-      if (Array.isArray(systemKnowledge.typescript_sections)) allKnowledge.push(...systemKnowledge.typescript_sections)
-
-      // Dynamic discovery for flat hierarchical structure (market_data, ai_agents, etc.)
-      Object.entries(systemKnowledge).forEach(([key, value]) => {
-        if (key !== 'metadata' && key !== 'sections' && key !== 'typescript_sections' && Array.isArray(value)) {
-          allKnowledge.push(...value)
-        }
-      })
-
-      allKnowledge.forEach((k: any) => {
-        if (k && k.title) {
-          map.resourceInventory.push({
-            type: 'Knowledge',
-            name: k.title,
-            status: 'Ingested',
-            source: k.metadata?.source
-          })
-        }
-      })
-    } catch (e) {
-      console.warn('⚠️ [Collaboration] Failed to parse system_knowledge.json for relationship map.')
-    }
-  }
-
-  // Correlate branches to goals based on keywords and domains
-  goals.forEach(goal => {
-    const relevantBranches = branches.filter(b => {
-      const branchName = b?.name || '';
-      const lastMsg = b?.lastMessage || '';
-      const domain = b?.domain || '';
-      return goal.toLowerCase().split(' ').some(word =>
-        word.length > 3 && (branchName.toLowerCase().includes(word) || lastMsg.toLowerCase().includes(word) || domain.toLowerCase().includes(word))
-      );
-    })
-    map.goalAlignment[goal] = relevantBranches.map(b => b.name)
-  })
-
-  // Correlate stakeholders to roles/branches
-  stakeholders.forEach(s => {
-    map.stakeholderEngagement[s.role] = {
-      email: s.email,
-      activeProjects: branches.filter(b => {
-        const branchName = b?.name || '';
-        return b.category === 'agent' || branchName.includes(s.role.toLowerCase().split(' ')[0]);
-      }).map(b => b.name)
-    }
-  })
-
-  // Identify Static "Resources" (Documentation)
-  map.resourceInventory.push(
-    { type: 'Documentation', name: 'AGENTS.md', status: 'Active' },
-    { type: 'Documentation', name: 'CONSOLIDATED_INTELLIGENCE.md', status: 'Active' },
-    { type: 'Documentation', name: 'KNOWLEDGE_MERGE.md', status: 'Active' }
-  )
-
-  // Phase 12: Advanced Synergy Detection (Resource Overlap)
-  const resourceUsage: Record<string, Set<string>> = {}
-  branches.forEach(b => {
-    if (b.changedFiles) {
-      b.changedFiles.forEach((f: string) => {
-        const matchedResource = map.resourceInventory.find((r: any) => r.path && f.includes(r.path))
-        if (matchedResource) {
-          if (!resourceUsage[matchedResource.name]) resourceUsage[matchedResource.name] = new Set()
-          resourceUsage[matchedResource.name].add(b.name)
-        }
-      })
-    }
-  })
-
-  map.collaborationRecommendations = []
-
-  Object.entries(resourceUsage).forEach(([resource, branchSet]) => {
-    if (branchSet.size > 1) {
-      const synergyBranchNames = Array.from(branchSet)
-      const intensity = synergyBranchNames.length > 2 ? 'High' : 'Medium'
-      map.synergies.push({
-        type: 'Resource Conflict/Synergy',
-        resource,
-        branches: synergyBranchNames,
-        intensity
-      })
-
-      // Phase 12: Generate Actionable Collaboration Recommendations
-      const primaryStakeholders = stakeholders.filter(s => {
-        const rolePrefix = s.role.toLowerCase().split(' ')[0]
-        const emailPrefix = s.email.split('@')[0].toLowerCase()
-        return synergyBranchNames.some(bn =>
-          bn.toLowerCase().includes(rolePrefix) || bn.toLowerCase().includes(emailPrefix)
-        )
-      }).map(s => s.role)
-
-      map.collaborationRecommendations.push({
-        priority: intensity === 'High' ? 'Critical' : 'Routine',
-        action: `Consolidate effort on '${resource}'`,
-        resource,
-        branches: synergyBranchNames,
-        rationale: `${synergyBranchNames.length} branches are concurrently modifying the same resource. ${primaryStakeholders.length > 0 ? `Coordination required between: ${primaryStakeholders.join(', ')}.` : ''}`
-      })
-
-      console.warn(`🤝 [Collaboration] Synergy Detected: ${synergyBranchNames.length} branches working on ${resource}.`)
-    }
-  })
-
-  // Integrate branch results into resources if they implement a specific feature
-  branches.filter(b => b.category === 'feature' && b.results).forEach(b => {
-    map.resourceInventory.push({
-      type: 'Branch Result',
-      name: b.name,
-      status: 'Ready for Merge',
-      result: b.results
-    })
-  })
-
-  return map
+  return relationshipMap;
 }
 
 export async function syncCollaborationState(branchIntelligence?: any[]) {
-  console.log('🔄 [Collaboration] Synchronizing autonomous state...')
+  logAutonomousAction('🔄 [Collaboration] Synchronizing autonomous state...', 'info')
   const metadata = await getMissionMetadata()
 
   const dockerHealthy = await checkDockerHealth()
@@ -328,8 +229,7 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
   let currentState: any = {}
   if (fs.existsSync(statePath)) {
     try {
-      const content = await fs.promises.readFile(statePath, 'utf8')
-      currentState = JSON.parse(content)
+      currentState = JSON.parse(fs.readFileSync(statePath, 'utf8'))
     } catch (e) {
       console.warn('⚠️ [Collaboration] Failed to parse autonomous_state.json, starting fresh.')
     }
@@ -337,19 +237,11 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
 
   const { jules } = await import('../jules')
   const { workOrderService } = await import('./work_order')
-  const { broadcastPulse } = await import('./neural')
-  const { getRelayState } = await import('./relay')
+  const branches = branchIntelligence || await jules.scanAllBranches()
+  const workOrders = await workOrderService.getPendingOrders()
 
-  // Phase 12: Trigger deep branch scan (force: true) to ensure all 1,800+ branches are analyzed
-  const branches = branchIntelligence || await jules.scanAllBranches(true)
-  const workOrders = workOrderService.getPendingOrders() // Simplified for now
-  const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
-
-  // Phase 12: Synchronize Global Neural Pulse and Omni-Presence Relay
-  const neuralPulse = await broadcastPulse()
-  const relayState = await getRelayState()
-
-  await mergeBranchInsights(branches)
+  const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL || process.env.AUTONOMOUS_MODE === 'cloud')
+  const cloudProvider = process.env.GITHUB_ACTIONS ? 'github-actions' : (process.env.GITLAB_CI ? 'gitlab-ci' : (process.env.VERCEL ? 'vercel' : (process.env.AUTONOMOUS_MODE === 'cloud' ? 'autonomous-cloud' : 'none')))
 
   const newState = {
     ...currentState,
@@ -360,15 +252,37 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
     intelligence: {
       branches: branches.length,
       pendingTasks: workOrders.length,
-      relationshipMap,
-      neuralPulse,
-      relayState
+      totalOrders: (await import('./work_order').then(m => m.workOrderService.getPendingOrders())).length
+    },
+    execution_mode: isCloud ? 'cloud' : 'local',
+    autonomous_mode: process.env.AUTONOMOUS_MODE || 'standard',
+    cloud_provider: cloudProvider,
+    system_presence: {
+      status: 'online',
+      agent: 'Jules',
+      hostname: (await import('os')).hostname(),
+      platform: process.platform
     },
     last_sync: new Date().toISOString()
   }
 
-  await fs.promises.writeFile(statePath, JSON.stringify(newState, null, 4))
-  console.log('✅ [Collaboration] Autonomous state synchronized successfully.')
+  // Persist to local fallback
+  fs.writeFileSync(statePath, JSON.stringify(newState, null, 4))
+
+  // Persist to MongoDB
+  try {
+    const client = await getMongoClient()
+    const db = client.db()
+    await db.collection('system_state').updateOne(
+      { systemId: 'antigravity-alpha-01' },
+      { $set: newState },
+      { upsert: true }
+    )
+    logAutonomousAction('✅ [Collaboration] Autonomous state synchronized to MongoDB.', 'info')
+  } catch (e) {
+    console.error('❌ [Collaboration] Failed to sync state to MongoDB:', e)
+  }
+
   return newState
 }
 
@@ -449,30 +363,13 @@ export async function mergeBranchInsights(branches: any[]) {
 
 export async function mergeEcosystemInsights(branchIntelligence: any[], workOrders: any[]) {
   const metadata = await getMissionMetadata()
-  console.log('🧠 [Collaboration] Merging ecosystem insights...')
-
-  await mergeBranchInsights(branchIntelligence)
-  await broadcastToStakeholders({
-    last_sync: new Date().toISOString(),
-    docker: { status: 'synchronized', containerCount: 0 },
-    intelligence: {
-        branches: branchIntelligence.length,
-        pendingTasks: workOrders.length,
-        relationshipMap: await generateRelationshipMap(branchIntelligence, metadata.stakeholders, metadata.goals)
-    }
-  })
-  let marketIntelligence = ''
-  const knowledgePath = path.join(process.cwd(), 'KNOWLEDGE_MERGE.md')
-  if (fs.existsSync(knowledgePath)) {
-    marketIntelligence = await fs.promises.readFile(knowledgePath, 'utf8')
-  }
+  logAutonomousAction('🧠 [Collaboration] Merging ecosystem insights...', 'info')
 
   return {
     mission: metadata.missionStatement,
     goals: metadata.goals,
     branches: branchIntelligence,
     recentWork: workOrders.slice(-5),
-    timestamp: new Date().toISOString(),
-    marketIntelligence
+    timestamp: new Date().toISOString()
   }
 }

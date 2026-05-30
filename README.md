@@ -1,70 +1,151 @@
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/8bukets/8bukets&fullConfiguration=true)
+# Markposition Scraper & Analytics
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+A robust, asynchronous toolset for scraping and analyzing data from `https://markposition.wordpress.com/`.
 
-## Getting Started
+## Supabase Configuration
+This project is configured to work with the Netlify Supabase Extension.
+To set up the project locally:
+1.  Connect your Netlify site to your Supabase project via the Netlify extension.
+2.  The extension will automatically inject the required environment variables: `SUPABASE_DATABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
+3.  For local development, ensure these variables are present in your `.env` file or exported in your environment.
 
-First, run the development server:
+## Features
+
+### Scraper (`scraper.py`)
+*   **High Performance**: Built with `aiohttp` and `asyncio` for concurrent fetching, significantly faster than synchronous scrapers.
+*   **Robust**: Handles network errors and pagination automatically (stops on 404 or empty pages).
+*   **Smart Extraction**:
+    *   Prioritizes content links, then embedded iframes (e.g., YouTube), then title URLs.
+    *   Extracts metadata: Title, Date, Author, Categories, External Link, Domain, Post URL.
+*   **Data Cleaning**: Normalizes text fields.
+*   **Multiple Outputs**: JSON, CSV, and TXT (unique links).
+
+### Analytics (`analytics.py`)
+*   **Insightful Reports**: Generates a Markdown report (`REPORT.md`) summarizing the scraped data.
+*   **Metrics**:
+    *   Total posts and date range.
+    *   Top referenced domains.
+    *   Top categories.
+    *   Posting frequency by year.
+    *   Author statistics.
+
+## Requirements
+
+*   Python 3.7+
+*   `aiohttp`
+*   `beautifulsoup4`
+*   `requests` (legacy dependency, optional for analytics)
+
+Install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pip install aiohttp beautifulsoup4 requests
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Configuration & Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The system relies on various API keys and connection strings to operate both locally and in CI/CD.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1.  **Local Setup**:
+    - Copy `.env.example` to a new file named `.env`:
+      ```bash
+      cp .env.example .env
+      ```
+    - Note for iCloud sync: Add your Apple ID and your primary Apple ID Password to the `APPLE_ID` and `APPLE_PASSWORD` variables in `.env` to use the iCloud sync functionality.
+    - Update `.env` with your actual credentials (e.g., `GOOGLE_API_KEY`, `GEMINI_API_KEY`, database URIs). **Do not commit `.env` to source control.**
 
-## Learn More
+2.  **GitHub Actions / CI/CD**:
+    - In your GitHub repository, go to **Settings > Secrets and variables > Actions**.
+    - Add the variables listed in `.env.example` as Repository Secrets (e.g., `GOOGLE_API_KEY`, `GEMINI_API_KEY`).
+    - The workflows are pre-configured to pass these secrets as environment variables to the system.
 
-To learn more about Next.js, take a look at the following resources:
+## Canonical Knowledge Merge
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The components of this repository, including the scraper tools and analytics for `markposition.wordpress.com`, form the **Market Intelligence Layer** of the broader Antigravity ecosystem.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This ecosystem contains five core identities mapped in the [KNOWLEDGE_MERGE.md](software-review-platform/KNOWLEDGE_MERGE.md) file:
+1. **Antigravity**: internal intelligence and automation layer.
+2. **Project SOR**: public-facing brand and editorial narrative.
+3. **`software-online-review.com`**: the current distribution domain.
+4. **`software-review-platform`**: the future product engine and new review platform MVP.
+5. **`markposition.wordpress.com`**: the external data source tracking ad tech and market trends feeding the intelligence system.
 
-## Deploy on Vercel
+Please refer to `software-review-platform/KNOWLEDGE_MERGE.md` for a comprehensive breakdown of how these layers interact.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Usage
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 1. Scrape Data
 
-## Cloud Deployments (Docker, Supabase, MongoDB)
+Run the asynchronous scraper to fetch data:
 
-The autonomous system supports continuous cloud deployments using standard infrastructure primitives:
+```bash
+python3 scraper.py
+```
 
-- **Docker Configs:** Ensure you use `docker-compose.cloud.yml` when spinning up nodes in external environments (it bypasses local MongoDB expectations).
-- **Online Presence:** The autonomous system remains permanently on via GitHub Actions (`.github/workflows/continuous-presence.yml`) and GitLab CI schedules (`.gitlab-ci.yml`), performing data sync back to the main branches using GitKraken visual commit strategies.
-- **Data Persistence:** Relies purely on remote MongoDB clusters and remote Supabase APIs, connected via standard deployment variables.
+**Options:**
+*   `--json`: Output JSON filename (default: `links.json`)
+*   `--csv`: Output CSV filename (default: `links.csv`)
+*   `--txt`: Output TXT filename for unique links (default: `unique_links.txt`)
+*   `--limit`: Limit the number of pages to scrape (e.g., `--limit 5`).
+*   `--concurrency`: Number of concurrent requests (default: 5).
 
-## Autonomous Daily Sync & Persistence
+### 2. Generate Report
 
-The Antigravity system includes an autonomous daily work cycle that performs Git synchronization (pull/upload) and iCloud folder backups.
+Run the analytics script to process the JSON data:
 
-### 1. macOS Persistence (LaunchAgent)
+```bash
+python3 analytics.py
+```
 
-A `com.sigma.jules.plist` file is provided to automate the daily routine. To install it:
+**Options:**
+*   `--input`: Input JSON file (default: `links.json`)
+*   `--output`: Output Markdown file (default: `REPORT.md`)
 
-1. Open `com.sigma.jules.plist` and replace `YOUR_USERNAME` with your actual macOS username (e.g., `filipkeser`).
-2. Copy the file to your LaunchAgents directory:
-   ```bash
-   cp com.sigma.jules.plist ~/Library/LaunchAgents/
-   ```
-3. Load the agent:
-   ```bash
-   launchctl load ~/Library/LaunchAgents/com.sigma.jules.plist
-   ```
+### 3. Sync with iCloud Drive
 
-The script will now run every day at midnight.
+You can manually pull or upload core repository folders (`antigravity/` and `.github/`) to a folder named `8bukets` in your iCloud Drive. This is useful for maintaining the system across devices like an iPhone.
 
-### 2. iCloud Synchronization
+Make sure `APPLE_ID` and `APPLE_PASSWORD` (use your primary Apple ID password) are set in your `.env` file.
 
-By default, the system syncs to `~/Library/Mobile Documents/com~apple~CloudDocs/Antigravity_Sync`. You can customize this by setting the `ICLOUD_SYNC_PATH` environment variable in your `.env` file.
+**Troubleshooting NSFileProviderErrorDomain error -5009:**
+If you encounter the "NSFileProviderErrorDomain error -5009" (or "Postupak se ne može dovršiti") in macOS Finder, it means the iCloud background sync services have become stuck. You can automatically restart these services and resolve the error by running:
+```bash
+npm run fix:icloud
+```
+
+**To upload files to iCloud:**
+```bash
+python3 sync_icloud.py --upload
+```
+
+**To pull files from iCloud:**
+```bash
+python3 sync_icloud.py --pull
+```
+
+**First-Time Authentication (2FA):**
+The first time you run this script, it will prompt you in the terminal for a Two-Factor Authentication (2FA) code sent to your Apple devices. Once entered, the script will request to trust the session so subsequent runs can proceed autonomously.
+
+## Output Files
+
+*   `links.json`: Full dataset in JSON format.
+*   `links.csv`: Tabular dataset.
+*   `unique_links.txt`: Sorted list of unique extracted URLs.
+*   `REPORT.md`: Statistical summary of the data.
+
+## Autonomous Workflows & GitKraken
+
+The system is designed for fully autonomous operation with integrated version control.
+
+### GitHub Integration
+- **`GitHubEvolutionAgent`**: Automatically stages and commits system evolution (data, results, and config) during each cycle.
+- **GitHub Actions**: A daily workflow is configured in `.github/workflows/autonomous_cycle.yml` to run the system autonomously.
+
+### Monitoring with GitKraken
+To monitor the system's progress using GitKraken:
+1.  **Clone the Repository**: Open the repository in GitKraken.
+2.  **Pull Updates**: The `GitHubEvolutionAgent` creates commits locally. If a `GITHUB_TOKEN` is provided, it will also push to origin.
+3.  **Visualize Evolution**: Use GitKraken's graph view to track daily version increments and data updates.
+4.  **Local Sync**: If the system is running on a server, use GitKraken to pull the latest autonomous commits to your local machine for analysis.
+
+For detailed setup instructions, see `autonomous_workflow.md`.

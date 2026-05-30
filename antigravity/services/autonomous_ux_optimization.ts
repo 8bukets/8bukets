@@ -1,10 +1,10 @@
 /**
  * Autonomous UX Optimization Service
  * Generated autonomously by the Antigravity Singularity Engine.
- * Rationale: Autonomously optimizes user experience patterns based on real-time interaction telemetry and A/B test results.
+ * Rationale: Analyzes user interaction patterns to propose real-time interface improvements.
  */
 import { z } from 'zod'
-import { autonomousFetch } from '@/antigravity/core'
+import { autonomousFetch } from '../core'
 
 export const AutonomousUXOptimizationServiceSchema = z.object({
   status: z.string(),
@@ -12,7 +12,6 @@ export const AutonomousUXOptimizationServiceSchema = z.object({
 })
 
 export async function getAutonomousUXOptimizationServiceData() {
-  'use cache'
   return autonomousFetch(AutonomousUXOptimizationServiceSchema, async () => {
     return {
       status: 'active',

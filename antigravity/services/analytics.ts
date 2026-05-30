@@ -26,17 +26,16 @@ export async function trackEvent(tag: string, event: string, metadata?: any) {
     const client = await getMongoClient()
     const db = client.db()
     await db.collection('autonomous_analytics').insertOne(payload)
-    
+
     logAutonomousAction(`[ANALYTICS] Persisted volatility event for ${tag}`, 'scaling')
   } catch (err) {
     console.warn('⚠️ [Analytics] Failed to persist event to MongoDB. Falling back to memory.', err)
   }
-  
+
   return payload
 }
 
 export async function getRecentAnalytics(limit: number = 10) {
-  'use cache'
   try {
     const client = await getMongoClient()
     const db = client.db()

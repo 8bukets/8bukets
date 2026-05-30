@@ -1,10 +1,10 @@
 /**
  * Autonomous Resource Optimizer
  * Generated autonomously by the Antigravity Singularity Engine.
- * Rationale: Dynamically adjusts CPU and memory limits for neural agents based on real-time execution telemetry.
+ * Rationale: Autonomously adjusts container resources and scaling parameters based on real-time load analytics.
  */
 import { z } from 'zod'
-import { autonomousFetch } from '@/antigravity/core'
+import { autonomousFetch } from '../core'
 
 export const AutonomousResourceOptimizerSchema = z.object({
   status: z.string(),
@@ -12,7 +12,6 @@ export const AutonomousResourceOptimizerSchema = z.object({
 })
 
 export async function getAutonomousResourceOptimizerData() {
-  'use cache'
   return autonomousFetch(AutonomousResourceOptimizerSchema, async () => {
     return {
       status: 'active',

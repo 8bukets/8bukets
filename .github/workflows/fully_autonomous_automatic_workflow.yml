@@ -2,7 +2,7 @@ name: Fully Autonomous Automatic Workflow
 
 on:
   schedule:
-    - cron: '0 */4 * * *'
+    - cron: '0 */2 * * *'
   workflow_dispatch:
 
 permissions:
@@ -23,7 +23,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 20
           cache: 'npm'
 
       - name: Install dependencies
@@ -70,11 +70,11 @@ jobs:
 # This file defines the core CI/CD pipeline responsible for driving the
 # fully autonomous creation cycle of our artificial intelligence agents.
 #
-# It is designed to run automatically at midnight UTC every single day,
-# providing a reliable and consistent heartbeat for the system's ongoing
-# evolution and self-improvement mechanisms. In addition to the scheduled
-# runs, the workflow supports manual triggering via workflow_dispatch,
-# which is particularly useful for ad-hoc testing, emergency updates, or
+# It is designed to run automatically every 4 hours, providing a reliable
+# and consistent heartbeat for the system's ongoing evolution and
+# self-improvement mechanisms. In addition to the scheduled runs, the
+# workflow supports manual triggering via workflow_dispatch, which is
+# particularly useful for ad-hoc testing, emergency updates, or
 # initiating out-of-band creation cycles when new urgent requirements arise.
 #
 # A critical component of this workflow is the "Connect and Collaborate"

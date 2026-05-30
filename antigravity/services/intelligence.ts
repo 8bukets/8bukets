@@ -1,9 +1,11 @@
+import { logAutonomousAction } from '../core'
 import fs from 'fs'
 import path from 'path'
-import { getMissionMetadata, generateRelationshipMap } from './collaboration'
+import { getMissionMetadata } from './collaboration'
 import { workOrderService } from './work_order'
 import { jules } from '../jules'
 import { healthCheck } from '../core'
+import { checkJenkinsHealth } from './jenkins'
 
 /**
  * CONSOLIDATED INTELLIGENCE SERVICE
@@ -11,40 +13,46 @@ import { healthCheck } from '../core'
  */
 
 export async function generateConsolidatedReport(branchIntelligence?: any[]) {
-  'use cache'
-  console.log('📊 [Intelligence] Generating consolidated system report...')
+  logAutonomousAction('📊 [Intelligence] Generating consolidated system report...', 'info')
 
   const metadata = await getMissionMetadata()
-  const branches = branchIntelligence || await jules.scanAllBranches(true)
+  const branches = branchIntelligence || await jules.scanAllBranches()
   const health = await healthCheck()
-  const workOrders = workOrderService.getPendingOrders()
+  const workOrders = await workOrderService.getPendingOrders()
 
   const reportPath = path.join(process.cwd(), 'CONSOLIDATED_INTELLIGENCE.md')
 
   let report = `# CONSOLIDATED INTELLIGENCE REPORT\n\n`
   report += `*Generated: ${new Date().toISOString()}*\n\n`
 
-  report += `## 📋 Executive Summary\n`
-  report += `- **System Posture:** ${health.mongodb === 'connected' && health.supabase === 'connected' ? '✅ OPTIMAL' : '⚠️ DEGRADED'}\n`
-  report += `- **Active Synergy:** ${branches.length} branches analyzed across multiple domains.\n`
-  report += `- **Mission Alignment:** ${metadata.goals.length} strategic goals tracked.\n\n`
-
   report += `## 🎯 Mission Statement\n> ${metadata.missionStatement}\n\n`
 
   report += `## 🏥 System Sovereignty\n`
+  report += `- **Execution Environment:** ${process.env.GITHUB_ACTIONS ? 'Cloud (GitHub Actions)' : (process.env.GITLAB_CI ? 'Cloud (GitLab CI)' : (process.env.VERCEL ? 'Cloud (Vercel)' : 'Local'))}\n`
+  report += `- **Mode:** ${process.env.AUTONOMOUS_MODE || 'standard'}\n`
   report += `- **MongoDB:** ${health.mongodb}\n`
   report += `- **Supabase:** ${health.supabase}\n`
+
+  const jenkinsHealth = await checkJenkinsHealth()
+  report += `- **Jenkins Pipeline:** ${jenkinsHealth.status} (${jenkinsHealth.metrics.pipeline_efficiency})\n`
+
+  const { checkDockerHealth } = await import('./docker')
+  const dockerHealth = await checkDockerHealth()
+  report += `- **Docker Status:** ${dockerHealth.status} (${dockerHealth.containerCount} containers)\n`
+
+  const { GitProviderService } = await import('./git_provider')
+  const prs = await (new GitProviderService()).listPullRequests()
+  report += `- **Open PRs/MRs:** ${prs.length}\n`
+
   report += `- **Total Branches:** ${branches.length}\n\n`
 
   report += `## 🌿 Branch Intelligence (Recent Activity)\n`
-  // Ensure branches is an array of objects
-  const branchArray = Array.isArray(branches) ? branches : []
-  const recentBranches = branchArray
+  const recentBranches = branches
     .sort((a, b) => new Date(b.lastSeen).getTime() - new Date(a.lastSeen).getTime())
     .slice(0, 10)
 
   recentBranches.forEach(b => {
-    report += `- **${b.name}** [${b.category}]: ${b.lastMessage} (*${b.lastSeen}*)\n`
+    report += `- **${b.name}**: ${b.lastMessage} (*${b.lastSeen}*)\n`
   })
   report += `\n`
 
@@ -52,176 +60,64 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `- **Pending Work Orders:** ${workOrders.length}\n`
   if (workOrders.length > 0) {
     workOrders.forEach(wo => {
-      report += `  - [${wo.type}] ${wo.goal}\n`
+      report += `  - [${wo.type}] ${wo.goal || wo.description}\n`
     })
   } else {
     report += `  - No pending orders. System is optimal.\n`
   }
+
+  try {
+    const { getPerformanceMonitoringServiceData } = await import('./performance_monitoring')
+    const perf = await getPerformanceMonitoringServiceData()
+    report += `- **System Load:** ${perf.metrics.system.loadavg[0].toFixed(2)}\n`
+    report += `- **Memory RSS:** ${Math.round(perf.metrics.memory.rss / 1024 / 1024)}MB\n`
+  } catch (e) {}
+
+  try {
+    const { getFeedbackAnalysisServiceData } = await import('./feedback_analysis')
+    const feedback = await getFeedbackAnalysisServiceData()
+    report += `- **Autonomous Feedback:** ${feedback.insights.errorCount} errors, ${feedback.insights.warningsCount} warnings detected.\n`
+    if (feedback.insights.suggestions.length > 0) {
+      report += `  - *Latest Suggestion:* ${feedback.insights.suggestions[feedback.insights.suggestions.length - 1]}\n`
+    }
+  } catch (e) {}
+
   report += `\n`
 
-  const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
-
-  // Phase 12: Integrate Global Neural Network Status
-  const { broadcastPulse } = await import('./neural')
-  const { getRelayState } = await import('./relay')
-  const pulse = await broadcastPulse()
-  const relay = await getRelayState()
-
-  report += `## 🌌 Global Neural Network\n`
-  report += `- **Cognitive Origin:** \`${pulse.origin}\`\n`
-  report += `- **Neural Health:** ${pulse.health === 'optimal' ? '✅' : '⚠️'} ${pulse.health.toUpperCase()}\n`
-  report += `- **Volatility Index:** ${pulse.volatilityTags} active cognitive tags.\n\n`
-
-  report += `## 🛰️ Omni-Presence Relay\n`
-  relay.forEach(r => {
-    report += `- **Environment:** \`${r.environment}\` (Intensity: ${(r.intensity * 100).toFixed(0)}%)\n`
-    report += `  - *Active Views:* ${r.activeViews.join(', ')}\n`
-  })
-  report += `\n`
-
-  report += `## 🤝 Merged Ecosystem Insights\n`
-  report += `Synergy achieved across ${branches.length} branches. Detailed knowledge and results consolidated from specialized agents.\n\n`
-
-  // Phase 12: Synergy & Collaboration Analysis
-  if (relationshipMap.synergies && relationshipMap.synergies.length > 0) {
-    report += `### ⚡ Strategic Synergy Matrix\n`
-    report += `| Resource | Intensity | Collaborating Branches | Actionable Recommendation |\n`
-    report += `| :--- | :---: | :--- | :--- |\n`
-    relationshipMap.synergies.forEach((s: any) => {
-      const recommendation = relationshipMap.collaborationRecommendations.find((r: any) =>
-        r.resource === s.resource || r.action.includes(`'${s.resource}'`)
-      )
-      const recommendationText = recommendation
-        ? `${recommendation.action}${recommendation.rationale.includes('Coordination required') ? `<br/>*${recommendation.rationale.split('. ')[1]}*` : ''}`
-        : 'Consolidate effort'
-      report += `| \`${s.resource}\` | ${s.intensity} | ${s.branches.slice(0, 3).join(', ')}${s.branches.length > 3 ? '...' : ''} | ${recommendationText} |\n`
-    })
-    report += `\n`
-  }
-
-  const insights = branches.filter(b => b.knowledge || (b.results && b.results !== b.lastMessage)).slice(0, 10)
-  if (insights.length > 0) {
-    report += `### 🧠 Specialized Knowledge Nuggets\n`
-    insights.forEach(b => {
-      report += `- **${b.name}**: ${b.results}${b.knowledge ? ` (*Knowledge: ${b.knowledge}*)` : ''}\n`
-    })
-  } else {
-    report += `- No new specialized insights to merge at this time.\n`
-  }
-  report += `\n`
-
-  report += `## 🗺️ Relationship Map\n`
-  report += `### Goal Alignment\n`
-  Object.entries(relationshipMap.goalAlignment).forEach(([goal, relevantBranches]: [string, any]) => {
-    report += `- **Goal:** ${goal}\n`
-    if (relevantBranches.length > 0) {
-      report += `  - *Branches:* ${relevantBranches.join(', ')}\n`
+  report += `## 🤖 Python Ecosystem Intelligence\n`
+  try {
+    const linksPath = path.join(process.cwd(), 'links.json')
+    if (fs.existsSync(linksPath)) {
+      const links = JSON.parse(fs.readFileSync(linksPath, 'utf8'))
+      report += `- **Market Data:** ${links.length} entries analyzed.\n`
     } else {
-      report += `  - *No direct branch alignment detected.*\n`
+      report += `- **Market Data:** Scraper results pending.\n`
     }
-  })
-  report += `\n`
 
-  report += `### Stakeholder Engagement\n`
-  Object.entries(relationshipMap.stakeholderEngagement).forEach(([role, data]: [string, any]) => {
-    report += `- **${role}** (${data.email})\n`
-    if (data.activeProjects.length > 0) {
-      report += `  - *Active Projects:* ${data.activeProjects.join(', ')}\n`
+    const resultsDir = path.join(process.cwd(), 'results')
+    if (fs.existsSync(resultsDir)) {
+      const files = fs.readdirSync(resultsDir)
+      report += `- **Autonomous Reports:** ${files.length} generated.\n`
+
+      const latestReport = files.filter(f => f.startsWith('DAILY_REPORT')).sort().reverse()[0]
+      if (latestReport) {
+        report += `- **Latest Report:** ${latestReport}\n`
+      }
     }
-  })
-  report += `\n`
-
-  report += `## 📦 Resource Inventory\n`
-  relationshipMap.resourceInventory.forEach((res: any) => {
-    report += `- [${res.type}] **${res.name}** - Status: ${res.status}${res.source ? ` (*Source: ${res.source}*)` : ''}\n`
-  })
-  report += `\n`
-
-  report += `## 🧠 Knowledge Matrix\n`
-  const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json')
-  if (/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(knowledgePath)) {
-    try {
-      const systemKnowledge = JSON.parse(/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.readFileSync(knowledgePath, 'utf8'))
-
-      // Phase 12: Support both nested 'typescript_sections' and unified flat key structure
-      const allKnowledge: any[] = []
-
-      if (Array.isArray(systemKnowledge.sections)) allKnowledge.push(...systemKnowledge.sections)
-      if (Array.isArray(systemKnowledge.typescript_sections)) allKnowledge.push(...systemKnowledge.typescript_sections)
-
-      Object.entries(systemKnowledge).forEach(([key, value]) => {
-        if (key !== 'metadata' && key !== 'sections' && key !== 'typescript_sections' && Array.isArray(value)) {
-          allKnowledge.push(...value)
-        }
-      })
-
-      allKnowledge.forEach((k: any) => {
-        if (k && k.title) {
-          report += `### ${k.title}\n`
-          report += `- **Source:** ${k.metadata?.source || 'Internal'}\n`
-          report += `- **Sections:** ${k.sections?.length || 0}\n`
-          if (k.sections && k.sections.length > 0) {
-            report += `  - *Key Topics:* ${k.sections.slice(0, 3).map((s: any) => s.header).join(', ')}\n`
-          }
-          report += `\n`
-        }
-      })
-    } catch (e) {
-      report += `⚠️ Failed to parse Knowledge Matrix.\n\n`
-    }
-  } else {
-    report += `*No autonomous knowledge ingested yet.*\n\n`
-  }
-
-  report += `## 🏆 Results Summary\n`
-  const resultBranches = branches.filter(b => b.results && b.results !== 'N/A' && b.results !== b.lastMessage).slice(0, 5)
-  if (resultBranches.length > 0) {
-    resultBranches.forEach(b => {
-      report += `- **${b.name}**: ${b.results}\n`
-    })
-  } else {
-    report += `- No explicit results extracted from recent history.\n`
+  } catch (e) {
+    report += `- **Ecosystem Status:** Limited observability into Python layer.\n`
   }
   report += `\n`
 
-  report += `## 👥 Stakeholder Collaboration Hub\n`
+  report += `## 👥 Stakeholders\n`
   metadata.stakeholders.forEach(s => {
-    const engagement = relationshipMap.stakeholderEngagement[s.role] || { activeProjects: [] }
-    report += `### ${s.role} (${s.email})\n`
-    report += `- **Current Focus:** ${engagement.activeProjects.length > 0 ? engagement.activeProjects.slice(0, 3).join(', ') : 'Global Monitoring'}\n`
-    const recommendedTasks = relationshipMap.collaborationRecommendations
-      .filter((r: any) => r.priority === 'Critical' && r.branches.some((rb: string) => engagement.activeProjects.includes(rb)))
-    if (recommendedTasks.length > 0) {
-      report += `- **Priority Coordination Required:**\n`
-      recommendedTasks.forEach((rt: any) => {
-        report += `  - ⚠️ [${rt.priority}] ${rt.action} (Resource: ${rt.resource || 'Multiple'})\n`
-      })
-    }
-    report += `\n`
-  })
-  report += `\n`
-
-  report += `## 🚀 Prioritized Action Items\n`
-  if (health.mongodb !== 'connected') report += `- [CRITICAL] Restore MongoDB Atlas connectivity.\n`
-  if (workOrders.length > 5) report += `- [HIGH] Process backlog of ${workOrders.length} pending work orders.\n`
-
-  const highIntensitySynergies = relationshipMap.synergies.filter((s: any) => s.intensity === 'High')
-  highIntensitySynergies.forEach((s: any) => {
-    const coordinator = metadata.stakeholders.find(sh => relationshipMap.stakeholderEngagement[sh.role]?.activeProjects.includes(s.branches[0]))
-    const coordinationMsg = coordinator ? ` (Coordinate with ${coordinator.role})` : ''
-    report += `- [MEDIUM] Resolve High-Intensity synergy on resource: \`${s.resource}\`${coordinationMsg}.\n`
+    report += `- **${s.role}**: ${s.email}\n`
   })
 
-  if (branches.length > 1500) report += `- [LOW] Prune or merge stagnant ecosystem branches (Total: ${branches.length}).\n`
-  report += `- [INFO] Continue autonomous knowledge ingestion for market intelligence.\n`
 
-  const collaborationHealth = relationshipMap.synergies.length > 0
-    ? Math.max(0, 100 - (relationshipMap.synergies.length * 5))
-    : 100
-  report += `\n---\n**Collaboration Health Index:** ${collaborationHealth}% | *Phase 12 Synergy Protocol Active*\n`
 
-  /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.writeFileSync(reportPath, report)
-  console.log(`✅ [Intelligence] Report saved to ${reportPath}`)
+  fs.writeFileSync(reportPath, report)
+  logAutonomousAction(`✅ [Intelligence] Report saved to ${reportPath}`, 'info')
 
   return { reportPath, branchCount: branches.length }
 }

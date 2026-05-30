@@ -20,10 +20,9 @@ export async function getAppStats(): Promise<AppStats> {
     'system-stats',
     AppStatsSchema,
     async () => {
-      'use cache'
       // Autonomous self-diagnostic health check
       const health = await healthCheck()
-      
+
       // Combine multiple autonomous signals into a single output
       return {
         mongoStatus: health.mongodb,

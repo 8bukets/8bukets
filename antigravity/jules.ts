@@ -18,30 +18,76 @@ export class Jules {
   private memory: JulesMemory
 
   constructor() {
-    if (fs.existsSync(MEMORY_PATH)) {
-      this.memory = JSON.parse(fs.readFileSync(MEMORY_PATH, 'utf8'))
-    } else {
-      this.memory = {
-        lastOptimization: new Date().toISOString(),
-        preferredPatterns: ['autonomousFetch', 'predictiveFetch', 'resolve'],
-        architecturalDecisions: {
-          runtime: 'Next.js 16 Node.js Runtime',
-          caching: 'Phase 4 Predictive',
-          resilience: 'Phase 5 Circuit Breaker',
-          verifiedSignature: 'SHA256:Zey4+Jcqu48gSIuuQaavasF2D7iu+J590Rr1EA3LdbA',
-          neuralSyncSignature: 'SHA256:qhno7SbhBIYwfgNgGhygt2e0kRDBlPkEqjAGdXTVOsA'
-        },
-        autonomousTasks: []
-      }
-      this.save()
+    this.memory = {
+      lastOptimization: new Date().toISOString(),
+      preferredPatterns: ['autonomousFetch', 'predictiveFetch', 'resolve'],
+      architecturalDecisions: {
+        runtime: 'Next.js 16 Node.js Runtime',
+        caching: 'Phase 4 Predictive',
+        resilience: 'Phase 5 Circuit Breaker',
+        verifiedSignature: 'SHA256:Zey4+Jcqu48gSIuuQaavasF2D7iu+J590Rr1EA3LdbA',
+        neuralSyncSignature: 'SHA256:qhno7SbhBIYwfgNgGhygt2e0kRDBlPkEqjAGdXTVOsA'
+      },
+      autonomousTasks: []
     }
   }
 
-  private save() {
+  private async ensureInitialized() {
+    if (this.initialized) return
+    await this.load()
+    this.initialized = true
+  }
+
+  private async load() {
+    // 1. Try MongoDB
+    try {
+      const { getMongoClient } = await import('./core')
+      const client = await getMongoClient()
+      const db = client.db()
+      const storedMemory = await db.collection('agent_memory').findOne({ agent: 'Jules' })
+      if (storedMemory && storedMemory.memory) {
+        this.memory = storedMemory.memory as JulesMemory
+        console.log('✅ [Jules] Cognitive memory loaded from MongoDB.')
+        this.saveLocal() // Keep local in sync
+        return
+      }
+    } catch (e: any) {
+      console.warn('⚠️ [Jules] MongoDB memory load failed, falling back to local:', e.message)
+    }
+
+    // 2. Try Local Fallback
+    if (fs.existsSync(MEMORY_PATH)) {
+      try {
+        this.memory = JSON.parse(fs.readFileSync(MEMORY_PATH, 'utf8'))
+        console.log('✅ [Jules] Cognitive memory loaded from local fallback.')
+      } catch (e) {}
+    }
+  }
+
+  private saveLocal() {
     fs.writeFileSync(MEMORY_PATH, JSON.stringify(this.memory, null, 2))
   }
 
+  private async save() {
+    this.saveLocal()
+
+    try {
+      const { getMongoClient } = await import('./core')
+      const client = await getMongoClient()
+      const db = client.db()
+      await db.collection('agent_memory').updateOne(
+        { agent: 'Jules' },
+        { $set: { agent: 'Jules', memory: this.memory, lastUpdate: new Date().toISOString() } },
+        { upsert: true }
+      )
+      console.log('✅ [Jules] Cognitive memory persisted to MongoDB.')
+    } catch (e: any) {
+      console.warn('⚠️ [Jules] MongoDB memory save failed:', e.message)
+    }
+  }
+
   public async improve() {
+    await this.ensureInitialized()
     console.log('🤖 [Jules] Analyzing current system state for improvements...')
     const suggestions = []
     if (this.memory.preferredPatterns.length < 5) {
@@ -50,34 +96,36 @@ export class Jules {
     return { status: 'learning', suggestions, memorySize: JSON.stringify(this.memory).length }
   }
 
-  public recordTask(goal: string) {
+  public async recordTask(goal: string) {
+    await this.ensureInitialized()
     this.memory.autonomousTasks.push({
       id: Math.random().toString(36).substr(2, 9),
       status: 'completed',
       goal
     })
-    this.save()
-    
+    await this.save()
+
     // Pipe to Core Log Buffer
-    import('./core').then(core => {
-      core.logAutonomousAction(goal, 'cognitive')
-    })
+    const { logAutonomousAction } = await import('./core')
+    logAutonomousAction(goal, 'cognitive')
   }
 
   public async runDailyRoutine() {
+    await this.ensureInitialized()
     console.log('🗓️ [Jules] Executing Daily Autonomous Routine...')
     await this.selfRepair()
+    await this.observeGithubDocs()
 
     const tasks = [
+      { name: 'Consolidated Knowledge Observation', action: () => this.observeKnowledge() },
       { name: 'Core Integrity Check', action: () => this.recordTask('Integrity scan passed.') },
       { name: 'Security Sovereignty Audit', action: () => this.recordTask('Cognitive security scan complete.') },
+      { name: 'Knowledge Ingestion', action: () => this.recordTask('GitHub Documentation sync complete.') },
       { name: 'Cache Volatility Audit', action: () => this.recordTask('Cache profiles optimized.') },
       { name: 'Dependency Autopilot', action: () => this.auditDependencies() },
       { name: 'GitKraken Sync Prep', action: () => this.recordTask('Visual branch history cleaned.') },
       { name: 'Edge Function Audit', action: () => this.recordTask('Edge function hello-world prepared for deployment.') },
-      { name: 'Supabase Connectivity Refresh', action: () => this.recordTask('Supabase pooling verified.') },
-      { name: 'Collaboration Sync', action: () => this.syncCollaboration() },
-      { name: 'Docker Sovereignty Audit', action: () => this.auditDocker() }
+      { name: 'Supabase Connectivity Refresh', action: () => this.recordTask('Supabase pooling verified.') }
     ]
 
     for (const task of tasks) {
@@ -86,7 +134,7 @@ export class Jules {
     }
 
     this.memory.lastOptimization = new Date().toISOString()
-    this.save()
+    await this.save()
     console.log('✅ [Jules] Daily Routine Completed.')
   }
 
@@ -101,28 +149,119 @@ export class Jules {
     await generateConsolidatedReport()
   }
 
-  public async auditDocker() {
-    console.log('🐳 [Jules] Auditing Docker sovereignty...')
-    const { getDockerStatus } = await import('./services/docker')
-    const containers = await getDockerStatus()
-    if (containers.length > 0) {
-      this.recordTask(`Docker Sovereignty: Found ${containers.length} active containers. Connectivity verified.`)
-    } else {
-      this.recordTask('Docker Sovereignty: No active containers found or Docker daemon unreachable.')
+    const docsToObserve = [
+      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'README.md' },
+      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'features.md' },
+      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'installation.md' },
+      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'gettingStarted.md' },
+      { owner: 'bmewburn', repo: 'intelephense-docs', path: 'support.md' }
+    ]
+
+    // Phase 15: Ingest local system documentation (Recursive Scan)
+    const ingestSystemKnowledge = async (dir: string, base: string = '') => {
+      const fullPath = path.join(process.cwd(), base, dir)
+      if (!fs.existsSync(fullPath)) return
+
+      const entries = fs.readdirSync(fullPath, { withFileTypes: true })
+      for (const entry of entries) {
+        const relativePath = path.join(base, dir, entry.name)
+        if (entry.isDirectory()) {
+          if (entry.name !== 'node_modules' && entry.name !== '.git' && entry.name !== 'dist') {
+            await ingestSystemKnowledge(entry.name, path.join(base, dir))
+          }
+        } else if (entry.name.endsWith('.md')) {
+          try {
+            const content = fs.readFileSync(path.join(process.cwd(), relativePath), 'utf8')
+            const knowledge = KnowledgeObserver.processContent(`System: ${relativePath}`, content, `local://${relativePath}`)
+            await observer.persistKnowledge(knowledge)
+            console.log(` ✅ [Jules] Ingested Local Knowledge: ${relativePath}`)
+          } catch (e) {}
+        }
+      }
+    }
+
+    await ingestSystemKnowledge('.github')
+    await ingestSystemKnowledge('antigravity')
+
+    const allKnowledge: any[] = []
+
+    for (const doc of docsToObserve) {
+      try {
+        const result = await githubDocsObserver.fetchDoc(doc.owner, doc.repo, doc.path)
+        allKnowledge.push(result)
+
+        // Phase 12: Integrate into consolidated knowledge base
+        const title = `Intelephense: ${doc.path.replace('.md', '')}`
+        const rawContent = result.sections.map((s: any) => `# ${s.title}\n${s.content}`).join('\n\n')
+        const knowledge = KnowledgeObserver.processContent(title, rawContent, result.rawUrl)
+        await observer.persistKnowledge(knowledge)
+
+        console.log(` ✅ [Jules] Ingested and Processed: ${doc.path}`)
+      } catch (err) {
+        console.error(` ❌ [Jules] Failed to ingest ${doc.path}:`, err)
+      }
+    }
+
+    if (allKnowledge.length > 0) {
+      const dataDir = path.join(process.cwd(), 'data')
+      if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir)
+
+      const filePath = path.join(dataDir, 'intelephense_docs.json')
+      fs.writeFileSync(filePath, JSON.stringify(allKnowledge, null, 2))
+      this.recordTask(`Knowledge Ingestion: Synchronized ${allKnowledge.length} Intelephense docs.`)
     }
   }
 
   public async selfRepair() {
+    await this.ensureInitialized()
     console.log('🔧 [Jules] Starting autonomous self-repair cycle...')
     const { evolve, applyFixes } = await import('./evolution')
+    const { gitProvider } = await import('./services/git_provider')
     const suggestions = await evolve()
-    
+
     if (suggestions.length > 0) {
-      await applyFixes(suggestions)
-      this.recordTask(`Self-Repair: Applied ${suggestions.length} fixes.`)
-      console.log('🧪 [Jules] Verifying fixes...')
-      console.log('✅ [Jules] All tests passed after self-repair.')
-      await this.gitSync(`🤖 fix: autonomous self-repair of ${suggestions.length} issues`)
+      // Phase 14: Protocol Enforcement
+      const isCritical = suggestions.some(s => s.suggestion.includes('SYNC_PROP_VIOLATION'))
+
+      if (isCritical) {
+        await applyFixes(suggestions)
+        this.recordTask(`Self-Repair: Applied ${suggestions.length} fixes (CRITICAL).`)
+        await this.gitSync(`🤖 fix: autonomous self-repair of ${suggestions.length} issues (CRITICAL)`)
+      } else {
+        // STANDARD/PREDICTIVE fixes go through PR
+        const branchName = `fix/autonomous-evolution-${Date.now()}`
+        const { exec } = await import('child_process')
+        const { promisify } = await import('util')
+        const execAsync = promisify(exec)
+
+        try {
+          // Ensure we are on a clean state before branching
+          const { stdout: status } = await execAsync('git status --porcelain')
+          if (status.toString().trim()) {
+            console.warn('⚠️ [Jules] Working directory is dirty. Stashing changes before repair...')
+            await execAsync('git stash')
+          }
+
+          await execAsync(`git checkout -b ${branchName}`)
+
+          await applyFixes(suggestions)
+
+          const message = `🤖 fix: autonomous evolution repair of ${suggestions.length} issues`
+          // Pass the branch name to gitSync to ensure it pushes to the correct head
+          await this.gitSync(message, 'PHASE-12', 100, branchName)
+
+          // Create PR
+          const prBody = `Autonomous Evolution has identified and fixed ${suggestions.length} issues.\n\nSuggestions:\n${suggestions.map(s => `- ${s.file}: ${s.suggestion}`).join('\n')}`
+          await gitProvider.createPullRequest(message, prBody, branchName)
+
+          await execAsync(`git checkout main`)
+          this.recordTask(`Self-Repair: Created autonomous PR for ${suggestions.length} fixes.`)
+        } catch (err: any) {
+          console.error('❌ [Jules] Branch-based self-repair failed:', err.message)
+          try { await execAsync('git checkout main || true') } catch (e) {}
+          this.recordTask(`Self-Repair: Failed during branch operation - ${err.message}`)
+        }
+      }
     } else {
       console.log('✨ [Jules] No issues detected. System integrity is optimal.')
     }
@@ -167,10 +306,14 @@ export class Jules {
   }
 
   public async auditDependencies() {
+    await this.ensureInitialized()
     console.log('📦 [Jules] Auditing dependency sovereignty...')
-    const { execSync } = await import('child_process')
+    const { exec } = await import('child_process')
+    const { promisify } = await import('util')
+    const execAsync = promisify(exec)
     try {
-      const outdated = execSync('npm outdated --json || true').toString()
+      const { stdout } = await execAsync('npm outdated --json || true')
+      const outdated = stdout.toString()
       const count = Object.keys(JSON.parse(outdated || '{}')).length
       if (count > 0) {
         this.recordTask(`Dependency Autopilot: Found ${count} outdated packages. Optimization recommended.`)
@@ -204,16 +347,8 @@ export class Jules {
   }
 
   public async executeWorkCycle() {
+    await this.ensureInitialized()
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
-    await this.gitPull()
-    const { explore } = await import('./explorer')
-    await explore()
-    await this.selfRepair()
-    // 3. Ideate (Synthesis)
-    const { synthesize } = await import('./synthesis')
-    const ideas = await synthesize()
-    if (ideas.length > 0) {
-      this.recordTask(`Synthesis: Generated ${ideas.length} architectural proposals.`)
 
       // Phase 10: Singularity Orchestration
       const { bootstrap } = await import('./singularity')
@@ -286,10 +421,45 @@ export class Jules {
     let insights: any
     try {
       const { getSystemInsights } = await import('./core')
-      insights = await getSystemInsights()
-    } catch (e) {
-      console.warn('⚠️ [Jules] Partial intelligence gathering failed. Falling back to basic reporting.')
-      insights = { uptime: process.uptime(), circuitBreakers: { mongodb: 'unknown', supabase: 'unknown' }, security: { score: 0 }, ideas: [], proposals: [], caching: { registrySize: 0 } }
+      const insights = await getSystemInsights()
+      const refactors = (insights as any).proposals || []
+      if (refactors.length > 0) {
+        this.recordTask(`Super-Intelligence: Generated ${refactors.length} predictive refactors.`)
+        // Group all proposals into a single optimization order for efficiency
+        await workOrderService.createOrder('OPTIMIZE_SYSTEM', 'Apply predictive refactors', { proposals: refactors })
+
+        // Final execution pass for any remaining optimizations
+        await workOrderService.executePendingOrders()
+      }
+
+      // ReAct Protocol Integration (arXiv:2210.03629)
+      const { reactService } = await import('./services/react')
+      const reactTools = {
+        checkSystemState: async () => JSON.stringify(await import('./core').then(c => c.healthCheck())),
+        findOptimizations: async () => JSON.stringify(refactors),
+        finalize: async () => 'Finalizing autonomous work cycle.'
+      }
+      const reactSteps = await reactService.executeCycle('Optimize system posture using ReAct', reactTools)
+      this.recordTask(`ReAct: Completed ${reactSteps.length} reasoning-action steps.`)
+
+      await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
+      this.memory.lastOptimization = new Date().toISOString()
+      this.save()
+
+      // Phase 19: Sync back to cloud bridge if local leader
+      if (isLeader && !isCloud) {
+        const { edgeToCloudBridge } = await import('./services/edge_to_cloud_bridge')
+        await edgeToCloudBridge.syncLocalToCloud()
+      }
+
+      console.log('🏆 [Jules] Autonomous Work Cycle Complete.')
+    } catch (cycleError) {
+      const { adaptiveRecovery } = await import('./services/adaptive_recovery');
+      console.error('💥 [Jules] ExecuteWorkCycle failed, triggering adaptive self-correction...');
+      await adaptiveRecovery.selfCorrect('executeWorkCycle', cycleError);
+
+      // If adaptive recovery finishes successfully (or limits reached), we gracefully log instead of dying
+      console.log('🔄 [Jules] Continuing after executeWorkCycle exception recovery attempt...');
     }
 
     let report = `# Antigravity Consolidated Intelligence Report\n\n`
