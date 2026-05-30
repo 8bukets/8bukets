@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { githubDocsObserver } from './github_docs_observer'
-import { KnowledgeObserver, Knowledge } from './knowledge_observer'
+import { KnowledgeObserver, KnowledgeInsights } from './knowledge_observer'
 
 /**
  * INTELEPHENSE SERVICE
@@ -54,25 +54,27 @@ export class IntelephenseService {
     const headerMap = new Map<string, { header: string; content: string }>()
 
     for (const section of allSections) {
-      const existing = headerMap.get(section.header)
-      const isStructural = ['Getting Started', 'Features', 'Installation', 'Type System'].includes(section.header)
+      const header = section.header.trim();
+      const existing = headerMap.get(header)
+      const isStructural = ['Getting Started', 'Features', 'Installation', 'Type System'].includes(header)
 
       if (!existing) {
         // Only keep sections with content, unless they are high-level structural headers
-        if (section.content || isStructural) {
-          headerMap.set(section.header, { ...section })
+        if (section.content.trim() || isStructural) {
+          headerMap.set(header, { header, content: section.content.trim() })
         }
       } else {
+        const newContent = section.content.trim();
         // If header exists, merge content if the new content is different and not empty
-        if (section.content && section.content !== existing.content) {
-          if (existing.content.includes(section.content)) {
+        if (newContent && newContent !== existing.content) {
+          if (existing.content.includes(newContent)) {
             // New content is already a subset, ignore
-          } else if (section.content.includes(existing.content)) {
+          } else if (newContent.includes(existing.content)) {
             // New content is more complete, replace
-            existing.content = section.content
+            existing.content = newContent
           } else {
-            // Both have unique info, append
-            existing.content += '\n\n' + section.content
+            // Both have unique info, append if not redundant
+            existing.content += '\n\n' + newContent
           }
         }
       }
@@ -81,8 +83,10 @@ export class IntelephenseService {
     const uniqueSections = Array.from(headerMap.values())
     console.log(` 🧩 Total unique sections: ${uniqueSections.length}`)
 
-    const consolidatedKnowledge: Knowledge = {
+    const consolidatedKnowledge: KnowledgeInsights = {
       title: 'Intelephense Documentation',
+      source: 'https://intelephense.com/docs',
+      analyzedAt: new Date().toISOString(),
       sections: uniqueSections,
       metadata: {
         source: 'https://intelephense.com/docs',
@@ -110,7 +114,7 @@ export class IntelephenseService {
 
     // 5. Persist consolidated knowledge
     const observer = new KnowledgeObserver()
-    await observer.persistKnowledge(consolidatedKnowledge, 'Intelephense')
+    await observer.persistKnowledge(consolidatedKnowledge)
 
     console.log('✅ Intelephense consolidation complete.')
   }

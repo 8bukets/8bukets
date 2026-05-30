@@ -9,12 +9,13 @@ export interface KnowledgeSection {
 export interface KnowledgeInsights {
   source: string;
   title: string;
-  description: string;
-  topKeywords: string[];
-  recentPosts: { title: string; link: string }[];
+  description?: string;
+  topKeywords?: string[];
+  recentPosts?: { title: string; link: string }[];
   analyzedAt: string;
   history?: { source: string; analyzedAt: string }[];
   sections?: KnowledgeSection[];
+  metadata?: Record<string, any>;
 }
 
 export class KnowledgeObserver {
@@ -45,7 +46,7 @@ export class KnowledgeObserver {
     // Phase 12: Knowledge Synchronization logic
     const section = {
       title: newInsights.title,
-      metadata: {
+      metadata: newInsights.metadata || {
         source: newInsights.source,
         analyzedAt: newInsights.analyzedAt,
         description: newInsights.description
@@ -54,21 +55,33 @@ export class KnowledgeObserver {
     };
 
     if (!existingData.typescript_sections) existingData.typescript_sections = [];
-    existingData.typescript_sections.push(section);
+
+    // Deduplicate by title
+    const existingIndex = existingData.typescript_sections.findIndex((s: any) => s.title === section.title);
+    if (existingIndex !== -1) {
+      existingData.typescript_sections[existingIndex] = section;
+    } else {
+      existingData.typescript_sections.push(section);
+    }
 
     // Write JSON
     fs.writeFileSync(jsonPath, JSON.stringify(existingData, null, 2), 'utf8');
 
-    // Write Markdown
+    // Write Markdown (Regenerate from all sections to keep it unified)
     let mdContent = `# Knowledge Observation Insights (Unified)\n\n`;
-    mdContent += `**Latest Source:** ${newInsights.source}\n`;
-    mdContent += `**Latest Analysis:** ${newInsights.analyzedAt}\n\n`;
 
-    if (newInsights.sections) {
-      newInsights.sections.forEach(s => {
-        mdContent += `## ${s.header}\n${s.content}\n\n`;
-      });
-    }
+    existingData.typescript_sections.forEach((tsSection: any) => {
+      mdContent += `# ${tsSection.title}\n`;
+      mdContent += `**Source:** ${tsSection.metadata?.source || 'Unknown'}\n`;
+      mdContent += `**Analysis:** ${tsSection.metadata?.analyzedAt || tsSection.metadata?.ingestedAt || 'Unknown'}\n\n`;
+
+      if (tsSection.sections) {
+        tsSection.sections.forEach((s: any) => {
+          mdContent += `## ${s.header}\n${s.content}\n\n`;
+        });
+      }
+      mdContent += `---\n\n`;
+    });
 
     fs.writeFileSync(mdPath, mdContent, 'utf8');
     console.log(`✅ [Knowledge Observer] Knowledge successfully merged into ${jsonPath} and ${mdPath}`);
