@@ -1,8 +1,0 @@
-agents:
-  root:
-    model: anthropic/claude-sonnet-4-5
-    instruction: You are a helpful assistant
-    toolsets:
-      - type: a2a
-        url: http://localhost:8080
-        name: code-reviewer

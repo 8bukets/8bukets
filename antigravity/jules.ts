@@ -227,19 +227,17 @@ export class Jules {
       } else {
         // STANDARD/PREDICTIVE fixes go through PR
         const branchName = `fix/autonomous-evolution-${Date.now()}`
-        const { exec } = await import('child_process')
-        const { promisify } = await import('util')
-        const execAsync = promisify(exec)
+        const { execSync } = await import('child_process')
 
         try {
           // Ensure we are on a clean state before branching
-          const { stdout: status } = await execAsync('git status --porcelain')
-          if (status.toString().trim()) {
+          const status = execSync('git status --porcelain').toString().trim()
+          if (status) {
             console.warn('⚠️ [Jules] Working directory is dirty. Stashing changes before repair...')
-            await execAsync('git stash')
+            execSync('git stash')
           }
 
-          await execAsync(`git checkout -b ${branchName}`)
+          execSync(`git checkout -b ${branchName}`)
 
           await applyFixes(suggestions)
 
@@ -251,11 +249,11 @@ export class Jules {
           const prBody = `Autonomous Evolution has identified and fixed ${suggestions.length} issues.\n\nSuggestions:\n${suggestions.map(s => `- ${s.file}: ${s.suggestion}`).join('\n')}`
           await gitProvider.createPullRequest(message, prBody, branchName)
 
-          await execAsync(`git checkout main`)
+          execSync(`git checkout main`)
           this.recordTask(`Self-Repair: Created autonomous PR for ${suggestions.length} fixes.`)
         } catch (err: any) {
           console.error('❌ [Jules] Branch-based self-repair failed:', err.message)
-          try { await execAsync('git checkout main || true') } catch (e) {}
+          execSync('git checkout main || true')
           this.recordTask(`Self-Repair: Failed during branch operation - ${err.message}`)
         }
       }
@@ -274,44 +272,6 @@ export class Jules {
     this.recordTask(`PR Audit: Found ${pulls.length} open PRs.`)
 
     for (const pr of pulls) {
-      const isAutonomous = pr.title.includes('🤖') || pr.title.toLowerCase().includes('autonomous')
-      const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
-
-      // Phase 17: Multi-Provider Convergence (GitHub & GitLab)
-      if (isAutonomous && isCloud) {
-        console.log(`🤖 [Jules] Auditing autonomous ${pr.provider} PR/MR #${pr.id}...`)
-
-        // 1. Check CI Status
-        const ciPassed = await gitProvider.verifyCIStatus(pr.branch, pr.provider)
-        if (!ciPassed) {
-          console.warn(`⚠️ [Jules] CI checks pending or failed for ${pr.provider} PR/MR #${pr.id}.`)
-          continue
-        }
-
-        // 2. Perform Cognitive Audit (ReAct)
-        const { reactService } = await import('./services/react')
-        const auditGoal = `Verify safety of autonomous evolution changes in ${pr.provider} PR/MR #${pr.id}.`
-        const auditTools = {
-           inspectDiff: async () => 'Changes comply with architectural sovereignty guidelines.',
-           checkSecurity: async () => 'No credential leakage detected in PR diff.'
-        }
-        const steps = await reactService.executeCycle(auditGoal, auditTools)
-
-        // 3. Fast-track merge if audit passes
-        const lastStep = steps[steps.length - 1]
-        const auditPassed = lastStep?.observation?.includes('true') || lastStep?.observation?.includes('success') || lastStep?.observation?.includes('comply')
-
-        if (auditPassed) {
-          const merged = await gitProvider.mergePullRequest(pr.id, pr.provider)
-          if (merged) {
-            this.recordTask(`PR Protocol: Converged and merged ${pr.provider} PR/MR #${pr.id}.`)
-            continue
-          }
-        } else {
-          console.warn(`⚠️ [Jules] Cognitive audit failed for ${pr.provider} PR/MR #${pr.id}. Merge skipped.`)
-        }
-      }
-
       const tools = {
         auditPR: async () => pr.title.includes('WIP') ? 'not compliant' : 'compliant',
         verifyCI: async () => {
@@ -321,6 +281,7 @@ export class Jules {
         merge: async () => await gitProvider.mergePullRequest(pr.id, pr.provider)
       }
 
+      const isAutonomous = pr.title.includes('🤖') || pr.title.toLowerCase().includes('autonomous')
       const goal = isAutonomous
         ? `Audit and merge autonomous evolution PR #${pr.id}. Ensure CI passes before merging.`
         : `Audit and merge PR #${pr.id}. Verify compliance with system protocols.`
@@ -338,9 +299,7 @@ export class Jules {
     console.log(`🔄 [Jules] Commencing autonomous Git synchronization on ${branch}...`)
 
     try {
-      const { exec } = await import('child_process')
-      const { promisify } = await import('util')
-      const execAsync = promisify(exec)
+      const { execSync } = await import('child_process')
       const { GitProviderService } = await import('./services/git_provider')
 
       const formattedMessage = GitProviderService.formatGitKrakenMessage(
@@ -351,14 +310,10 @@ export class Jules {
       )
 
       console.log(`[Jules] Staging and syncing on branch ${branch}...`)
-      try {
-        await execAsync('git add -A')
-      } catch (e) {
-        console.warn('⚠️ [Jules] git add failed:', e)
-      }
+      execSync('git add -A', { stdio: 'inherit' })
 
       try {
-        await execAsync(`git commit -m "${formattedMessage}"`)
+        execSync(`git commit -m "${formattedMessage}"`, { stdio: 'inherit' })
         this.recordTask(`Git Sync: Committed changes with GitKraken optimization.`)
       } catch (commitErr: any) {
         // Safe empty commit failure tolerance
@@ -369,13 +324,13 @@ export class Jules {
       if (process.env.GITHUB_TOKEN || process.env.GITLAB_TOKEN) {
         console.log(`[Jules] Rebase pulling and pushing branch ${branch}...`)
         try {
-          await execAsync(`git pull --rebase origin ${branch}`)
+          execSync(`git pull --rebase origin ${branch}`, { stdio: 'inherit' })
         } catch (pullErr: any) {
           console.warn('⚠️ [Jules] Pull rebase failed, continuing to push.', pullErr.message)
         }
 
         try {
-          await execAsync(`git push origin ${branch}`)
+          execSync(`git push origin ${branch}`, { stdio: 'inherit' })
         } catch (pushErr: any) {
           console.warn('⚠️ [Jules] Push failed.', pushErr.message)
         }
@@ -390,12 +345,9 @@ export class Jules {
   public async auditDependencies() {
     await this.ensureInitialized()
     console.log('📦 [Jules] Auditing dependency sovereignty...')
-    const { exec } = await import('child_process')
-    const { promisify } = await import('util')
-    const execAsync = promisify(exec)
+    const { execSync } = await import('child_process')
     try {
-      const { stdout } = await execAsync('npm outdated --json || true')
-      const outdated = stdout.toString()
+      const outdated = execSync('npm outdated --json || true').toString()
       const count = Object.keys(JSON.parse(outdated || '{}')).length
       if (count > 0) {
         this.recordTask(`Dependency Autopilot: Found ${count} outdated packages. Optimization recommended.`)
@@ -433,10 +385,78 @@ export class Jules {
   }
 
   public async syncPresence() {
-    const { onlinePresence } = await import('./services/presence')
-    const presence = await onlinePresence.syncPresence()
-    if (presence) {
-      await this.recordTask(`Presence Sync: Heartbeat broadcasted (${presence.environment}).`)
+    console.log('📡 [Jules] Synchronizing online presence...')
+    try {
+      const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL || process.env.AUTONOMOUS_MODE === 'cloud')
+      const cloudProvider = process.env.GITHUB_ACTIONS ? 'github-actions' : (process.env.GITLAB_CI ? 'gitlab-ci' : (process.env.VERCEL ? 'vercel' : (process.env.AUTONOMOUS_MODE === 'cloud' ? 'autonomous-cloud' : 'none')))
+
+      let dockerStatus = 'unknown'
+      let containerCount = 0
+
+      try {
+        const { checkDockerHealth } = await import('./services/docker')
+        const dockerHealth = await checkDockerHealth()
+        dockerStatus = dockerHealth.status
+        containerCount = dockerHealth.containerCount
+      } catch (dockerErr: any) {
+        console.warn('⚠️ [Jules] Could not fetch Docker status for presence sync:', dockerErr.message)
+      }
+
+      let jenkinsStatus = 'unknown'
+      try {
+        const { checkJenkinsHealth } = await import('./services/jenkins')
+        const jenkinsHealth = await checkJenkinsHealth()
+        jenkinsStatus = jenkinsHealth.status
+      } catch (e) {}
+
+      const presence = {
+        agent: 'Jules',
+        status: 'online',
+        lastSeen: new Date().toISOString(),
+        version: '1.3.0-alpha',
+        capabilities: ['git-sync', 'self-repair', 'knowledge-ingestion', 'pr-audit', 'cloud-sync'],
+        environment: isCloud ? 'cloud' : 'local',
+        execution_mode: isCloud ? 'cloud' : 'local',
+        autonomous_mode: process.env.AUTONOMOUS_MODE || 'standard',
+        cloud_provider: cloudProvider,
+        docker_status: dockerStatus,
+        container_count: containerCount,
+        jenkins_status: jenkinsStatus,
+        workflow_id: process.env.GITHUB_RUN_ID || process.env.CI_PIPELINE_ID || 'local',
+        hostname: (await import('os')).hostname()
+      }
+
+      // 1. Sync to MongoDB
+      try {
+        const { getMongoClient } = await import('./core')
+        const client = await getMongoClient()
+        const db = client.db()
+        await db.collection('agent_presence').updateOne(
+          { agent: 'Jules' },
+          { $set: presence },
+          { upsert: true }
+        )
+        console.log(`✅ [Jules] Online presence heartbeated to MongoDB (Mode: ${presence.execution_mode}/${presence.autonomous_mode}).`)
+      } catch (dbErr: any) {
+        console.warn('⚠️ [Jules] Could not sync presence to MongoDB:', dbErr.message)
+      }
+
+      // 2. Sync to Supabase
+      try {
+        const { supabase } = await import('./core')
+        const { error } = await supabase
+          .from('agent_presence')
+          .upsert({ ...presence, id: 'jules-alpha-01' })
+
+        if (error) throw error
+        console.log('✅ [Jules] Online presence heartbeated to Supabase.')
+      } catch (sbErr: any) {
+        console.warn('⚠️ [Jules] Could not sync presence to Supabase:', sbErr.message)
+      }
+
+      await this.recordTask(`Presence Sync: Heartbeat broadcasted (${presence.execution_mode}).`)
+    } catch (err: any) {
+      console.warn('⚠️ [Jules] Presence sync failed:', err.message)
     }
   }
 
@@ -447,37 +467,11 @@ export class Jules {
     try {
       await this.syncPresence()
 
-      const { onlinePresence } = await import('./services/presence')
-      const isLeader = onlinePresence.isLeader()
-
-      // Phase 17: Resolve State Conflicts early in the cycle
-      const { cloudConvergence } = await import('./services/cloud_convergence')
-      await cloudConvergence.resolveConflicts()
-
-      const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
-
-      if (isLeader) {
-        if (isCloud) {
-          const { cloudWorkflowAgent } = await import('./services/cloud_workflow')
-          await cloudWorkflowAgent.enforceCloudTakeover()
-        } else {
-          // Phase 19: Local leader recovery (MacBook turned back on)
-          // Prevents data regression by pulling latest state from cloud bridge.
-          const { edgeToCloudBridge } = await import('./services/edge_to_cloud_bridge')
-          await edgeToCloudBridge.recoverCloudToLocal()
-        }
-      } else if (!isLeader && isCloud) {
-        console.log('📡 [Jules] Node is not leader. Standing by for cloud-relay duties...')
-        // Even if not leader, we still do some maintenance
-        await this.processPullRequests()
-        await this.observeKnowledge()
-        return
-      }
-
       const { explore } = await import('./explorer')
       const { workOrderService } = await import('./services/work_order')
 
       // Phase 14: Prioritize PR processing in cloud environments to fulfill "merge and work" mandate
+      const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL || process.env.AUTONOMOUS_MODE === 'cloud')
       if (isCloud) {
         console.log('☁️ [Jules] Cloud environment detected. Prioritizing PR/MR auditing...')
         await this.processPullRequests()
@@ -485,11 +479,6 @@ export class Jules {
 
       await explore()
       await this.observeKnowledge()
-
-      // Phase 17: Multi-Cloud Convergence
-      const { cloudConvergence: ccEcosystem } = await import('./services/cloud_convergence')
-      await ccEcosystem.synchronizeEcosystem()
-
       await this.selfRepair()
 
       // Process PRs again after potential self-repairs or new branch creations
@@ -505,22 +494,18 @@ export class Jules {
       await syncCollaborationState(branches)
       await generateConsolidatedReport(branches)
 
-      // Phase 12/17: Unified Collaboration & Knowledge Integration
-      try {
-        console.log('🔗 [Jules] Orchestrating unified collaboration and knowledge integration...');
-        await execAsync('npx tsx scripts/ingest_knowledge_merge.ts');
-        await execAsync('npx tsx scripts/unified_collaboration.ts');
-        await execAsync('npx tsx scripts/automate_knowledge_integration.ts');
-        this.recordTask('Collaboration: Unified ecosystem sync and knowledge integration complete.');
-      } catch (e: any) {
-        console.warn('⚠️ [Jules] Unified orchestration sub-cycle failed:', e.message);
-      }
+      // 3. Ideate (Synthesis)
+      const { synthesize } = await import('./synthesis')
+      const ideas = await synthesize()
+      if (ideas.length > 0) {
+        this.recordTask(`Synthesis: Generated ${ideas.length} architectural proposals.`)
 
-      // 3. Ideate (Creation Cycle via CreationEngine)
-      const { creationEngine } = await import('./services/creation_engine')
-      const creationResult = await creationEngine.runCycle()
-      if (creationResult.features.length > 0) {
-        this.recordTask(`Creation Engine: Successfully processed ${creationResult.features.length} new features.`)
+        // Phase 10: Singularity Orchestration via Work Orders
+        for (const idea of ideas) {
+          if (idea.complexity === 'Low' || idea.complexity === 'Medium') {
+            workOrderService.createOrder('BOOTSTRAP_SERVICE', `Bootstrap ${idea.feature}`, idea)
+          }
+        }
       }
 
       // Phase 12: Super-Intelligence Optimization via Work Orders
@@ -530,11 +515,11 @@ export class Jules {
       if (refactors.length > 0) {
         this.recordTask(`Super-Intelligence: Generated ${refactors.length} predictive refactors.`)
         // Group all proposals into a single optimization order for efficiency
-        await workOrderService.createOrder('OPTIMIZE_SYSTEM', 'Apply predictive refactors', { proposals: refactors })
-
-        // Final execution pass for any remaining optimizations
-        await workOrderService.executePendingOrders()
+        workOrderService.createOrder('OPTIMIZE_SYSTEM', 'Apply predictive refactors', { proposals: refactors })
       }
+
+      // 4. Execute Work Orders
+      await workOrderService.executePendingOrders()
 
       // ReAct Protocol Integration (arXiv:2210.03629)
       const { reactService } = await import('./services/react')
@@ -549,13 +534,6 @@ export class Jules {
       await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
       this.memory.lastOptimization = new Date().toISOString()
       this.save()
-
-      // Phase 19: Sync back to cloud bridge if local leader
-      if (isLeader && !isCloud) {
-        const { edgeToCloudBridge } = await import('./services/edge_to_cloud_bridge')
-        await edgeToCloudBridge.syncLocalToCloud()
-      }
-
       console.log('🏆 [Jules] Autonomous Work Cycle Complete.')
     } catch (cycleError) {
       const { adaptiveRecovery } = await import('./services/adaptive_recovery');
@@ -578,22 +556,18 @@ export class Jules {
     }
 
     console.log('🔍 [Jules] Scanning all ecosystem branches...')
-    const { execFile } = await import('child_process')
-    const { promisify } = await import('util')
-    const execFileAsync = promisify(execFile)
+    const { execFileSync } = await import('child_process')
     try {
-      const { stdout } = await execFileAsync('git', ['branch', '-a'])
-      const branchesRaw = stdout.toString()
+      const branchesRaw = execFileSync('git', ['branch', '-a']).toString()
       const branches = branchesRaw.split('\n')
         .map(b => b.replace('*', '').trim())
         .filter(b => b && !b.includes('->'))
 
       // Limit deep scan to recent local branches to improve performance
-      const branchIntelligencePromises = branches.map(async branch => {
+      const branchIntelligence = branches.map(branch => {
         try {
-          // Use execFileAsync with arguments array to prevent command injection
-          const { stdout: lastCommitStdout } = await execFileAsync('git', ['log', '-1', '--format=%s|%at', branch])
-          const lastCommit = lastCommitStdout.toString().trim()
+          // Use execFileSync with arguments array to prevent command injection
+          const lastCommit = execFileSync('git', ['log', '-1', '--format=%s|%at', branch]).toString().trim()
           const [message, timestamp] = lastCommit.split('|')
           return {
             name: branch,
@@ -604,8 +578,6 @@ export class Jules {
           return { name: branch, lastMessage: 'Unknown', lastSeen: new Date().toISOString() }
         }
       })
-
-      const branchIntelligence = await Promise.all(branchIntelligencePromises)
 
       this.cachedBranchIntelligence = branchIntelligence
       this.lastScanTimestamp = Date.now()
@@ -625,18 +597,6 @@ export class Jules {
     console.log('🧠 [Jules] Observing new knowledge foundations...')
 
     const { observeKnowledge: scanUrl } = await import('./services/knowledge')
-    // Investopedia integration via ingestion script
-    try {
-      console.log('📈 [Jules] Executing specialized Investopedia ingestion...');
-      const { exec } = await import('child_process');
-      const { promisify } = await import('util');
-      const execAsync = promisify(exec);
-      await execAsync('npx tsx scripts/ingest_investopedia.ts');
-      this.recordTask('Knowledge Observed: Unified market intelligence synchronized from investopedia.com');
-    } catch (e: any) {
-      console.warn('⚠️ [Jules] Investopedia ingestion failed:', e.message);
-    }
-
     const urlsToObserve = [
       'https://software-online-review.com',
       'https://markposition.wordpress.com'
@@ -648,43 +608,8 @@ export class Jules {
         this.recordTask(`Knowledge Observed: Extracted intelligence from ${observation.url}`)
       }
     }
-
-    // Phase 18: Specialized Market Intelligence Ingestion
-    const { exec } = await import('child_process')
-    const { promisify } = await import('util')
-    const execAsync = promisify(exec)
-    try {
-      console.log('📈 [Jules] Executing specialized Markposition ingestion...')
-      await execAsync('npx tsx scripts/ingest_markposition_knowledge.ts')
-      this.recordTask('Knowledge Observed: Unified market intelligence synchronized from markposition.wordpress.com')
-    } catch (e: any) {
-      console.warn('⚠️ [Jules] Specialized ingestion failed:', e.message)
-    }
-
     const { KnowledgeObserver } = await import('./services/knowledge_observer')
     const observer = new KnowledgeObserver()
-
-    // Expand Ingestion: Scan for diverse technical documentation artifacts
-    const knowledgeSources = [
-      { path: 'gemmafour_docs.md', title: 'Gemma 4 Technical Report' },
-      { path: 'litert_docs.md', title: 'LiteRT Framework Documentation' },
-      { path: 'opentelemetry_repos.md', title: 'OpenTelemetry Ecosystem Analysis' },
-      { path: 'google_ads_docs.md', title: 'Google Ads Strategic Documentation' },
-      { path: 'ai_agents_knowledge.md', title: 'AI Agents Concept & Architecture' },
-      { path: 'localhost_tools_docs.md', title: 'LocalHost.Co Tools Documentation' }
-    ]
-
-    for (const source of knowledgeSources) {
-       const fullPath = path.join(process.cwd(), source.path)
-       if (fs.existsSync(fullPath)) {
-          try {
-            const content = fs.readFileSync(fullPath, 'utf8')
-            const knowledge = KnowledgeObserver.processContent(source.title, content, `local://${source.path}`)
-            await observer.persistKnowledge(knowledge)
-            this.recordTask(`Knowledge Observation: Ingested ${source.title}`)
-          } catch (e) {}
-       }
-    }
 
     // In a real scenario, we might scan a 'drops' or 'incoming' folder
     const incomingDir = path.join(process.cwd(), 'scratch')

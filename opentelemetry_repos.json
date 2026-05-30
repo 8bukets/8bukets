@@ -5,11 +5,11 @@
         "description": "OpenTelemetry Collector",
         "html_url": "https://github.com/open-telemetry/opentelemetry-collector",
         "language": "Go",
-        "stargazers_count": 7032,
-        "forks_count": 2070,
+        "stargazers_count": 6969,
+        "forks_count": 2058,
         "archived": false,
         "created_at": "2019-05-09T19:42:55Z",
-        "updated_at": "2026-05-19T14:35:37Z"
+        "updated_at": "2026-05-12T05:16:51Z"
     },
     {
         "name": "opentelemetry-go",
@@ -17,11 +17,11 @@
         "description": "OpenTelemetry Go API and SDK",
         "html_url": "https://github.com/open-telemetry/opentelemetry-go",
         "language": "Go",
-        "stargazers_count": 6389,
-        "forks_count": 1352,
+        "stargazers_count": 6380,
+        "forks_count": 1348,
         "archived": false,
         "created_at": "2019-05-16T19:05:26Z",
-        "updated_at": "2026-05-19T11:37:00Z"
+        "updated_at": "2026-05-12T01:01:10Z"
     },
     {
         "name": "opentelemetry-collector-contrib",
@@ -29,11 +29,11 @@
         "description": "Contrib repository for the OpenTelemetry Collector",
         "html_url": "https://github.com/open-telemetry/opentelemetry-collector-contrib",
         "language": "Go",
-        "stargazers_count": 4661,
-        "forks_count": 3590,
+        "stargazers_count": 4651,
+        "forks_count": 3555,
         "archived": false,
         "created_at": "2019-07-11T14:54:32Z",
-        "updated_at": "2026-05-19T14:07:02Z"
+        "updated_at": "2026-05-12T02:40:00Z"
     },
     {
         "name": "opentelemetry-specification",
@@ -41,11 +41,11 @@
         "description": "Specifications for OpenTelemetry",
         "html_url": "https://github.com/open-telemetry/opentelemetry-specification",
         "language": "Makefile",
-        "stargazers_count": 4240,
-        "forks_count": 977,
+        "stargazers_count": 4234,
+        "forks_count": 976,
         "archived": false,
         "created_at": "2019-05-01T18:41:36Z",
-        "updated_at": "2026-05-19T13:08:45Z"
+        "updated_at": "2026-05-12T02:33:57Z"
     },
     {
         "name": "opentelemetry-dotnet",
@@ -54,10 +54,10 @@
         "html_url": "https://github.com/open-telemetry/opentelemetry-dotnet",
         "language": "C#",
         "stargazers_count": 3698,
-        "forks_count": 891,
+        "forks_count": 888,
         "archived": false,
         "created_at": "2019-05-07T21:05:33Z",
-        "updated_at": "2026-05-19T11:18:47Z"
+        "updated_at": "2026-05-07T10:58:58Z"
     },
     {
         "name": "opentelemetry-js",
@@ -65,11 +65,11 @@
         "description": "OpenTelemetry JavaScript Client",
         "html_url": "https://github.com/open-telemetry/opentelemetry-js",
         "language": "TypeScript",
-        "stargazers_count": 3377,
-        "forks_count": 1043,
+        "stargazers_count": 3374,
+        "forks_count": 1035,
         "archived": false,
         "created_at": "2019-05-10T02:01:43Z",
-        "updated_at": "2026-05-19T10:58:51Z"
+        "updated_at": "2026-05-12T05:56:58Z"
     },
     {
         "name": "opentelemetry-ebpf-profiler",
@@ -77,11 +77,11 @@
         "description": "The production-scale datacenter profiler (C/C++, Go, Rust, Python, Java, NodeJS, .NET, PHP, Ruby, Perl, ...)",
         "html_url": "https://github.com/open-telemetry/opentelemetry-ebpf-profiler",
         "language": "Go",
-        "stargazers_count": 3111,
+        "stargazers_count": 3105,
         "forks_count": 399,
         "archived": false,
         "created_at": "2024-04-15T14:22:53Z",
-        "updated_at": "2026-05-19T13:18:44Z"
+        "updated_at": "2026-05-11T20:38:52Z"
     },
     {
         "name": "opentelemetry-demo",
@@ -89,11 +89,11 @@
         "description": "This repository contains the OpenTelemetry Astronomy Shop, a microservice-based distributed system intended to illustrate the implementation of OpenTelemetry in a near real-world environment.",
         "html_url": "https://github.com/open-telemetry/opentelemetry-demo",
         "language": "TypeScript",
-        "stargazers_count": 3083,
-        "forks_count": 6478,
+        "stargazers_count": 3066,
+        "forks_count": 6432,
         "archived": false,
         "created_at": "2022-04-26T19:47:29Z",
-        "updated_at": "2026-05-19T14:30:53Z"
+        "updated_at": "2026-05-11T08:48:32Z"
     },
     {
         "name": "opentelemetry-rust",
@@ -101,11 +101,11 @@
         "description": "The Rust OpenTelemetry implementation",
         "html_url": "https://github.com/open-telemetry/opentelemetry-rust",
         "language": "Rust",
-        "stargazers_count": 2580,
+        "stargazers_count": 2574,
         "forks_count": 661,
         "archived": false,
         "created_at": "2019-11-11T19:53:32Z",
-        "updated_at": "2026-05-18T22:58:29Z"
+        "updated_at": "2026-05-12T00:19:31Z"
     },
     {
         "name": "opentelemetry-java-instrumentation",
@@ -113,11 +113,11 @@
         "description": "OpenTelemetry auto-instrumentation and instrumentation libraries for Java",
         "html_url": "https://github.com/open-telemetry/opentelemetry-java-instrumentation",
         "language": "Java",
-        "stargazers_count": 2537,
-        "forks_count": 1096,
+        "stargazers_count": 2527,
+        "forks_count": 1092,
         "archived": false,
         "created_at": "2019-09-25T20:19:14Z",
-        "updated_at": "2026-05-19T14:35:49Z"
+        "updated_at": "2026-05-12T04:24:13Z"
     },
     {
         "name": "opentelemetry-python",
@@ -125,11 +125,11 @@
         "description": "OpenTelemetry Python API and SDK ",
         "html_url": "https://github.com/open-telemetry/opentelemetry-python",
         "language": "Python",
-        "stargazers_count": 2450,
-        "forks_count": 878,
+        "stargazers_count": 2437,
+        "forks_count": 874,
         "archived": false,
         "created_at": "2019-05-07T21:13:30Z",
-        "updated_at": "2026-05-19T12:07:30Z"
+        "updated_at": "2026-05-12T05:32:42Z"
     },
     {
         "name": "opentelemetry-java",
@@ -137,11 +137,11 @@
         "description": "OpenTelemetry Java SDK",
         "html_url": "https://github.com/open-telemetry/opentelemetry-java",
         "language": "Java",
-        "stargazers_count": 2397,
-        "forks_count": 974,
+        "stargazers_count": 2396,
+        "forks_count": 971,
         "archived": false,
         "created_at": "2019-02-26T16:43:36Z",
-        "updated_at": "2026-05-18T17:08:30Z"
+        "updated_at": "2026-05-12T03:07:06Z"
     },
     {
         "name": "opentelemetry-operator",
@@ -149,11 +149,11 @@
         "description": "Kubernetes Operator for OpenTelemetry Collector",
         "html_url": "https://github.com/open-telemetry/opentelemetry-operator",
         "language": "Go",
-        "stargazers_count": 1693,
-        "forks_count": 626,
+        "stargazers_count": 1686,
+        "forks_count": 619,
         "archived": false,
         "created_at": "2019-12-18T21:39:22Z",
-        "updated_at": "2026-05-19T13:21:34Z"
+        "updated_at": "2026-05-11T12:19:07Z"
     },
     {
         "name": "opentelemetry-go-contrib",
@@ -162,10 +162,10 @@
         "html_url": "https://github.com/open-telemetry/opentelemetry-go-contrib",
         "language": "Go",
         "stargazers_count": 1626,
-        "forks_count": 782,
+        "forks_count": 775,
         "archived": false,
         "created_at": "2020-02-21T18:12:36Z",
-        "updated_at": "2026-05-18T06:22:08Z"
+        "updated_at": "2026-05-11T20:11:59Z"
     },
     {
         "name": "opentelemetry-cpp",
@@ -173,11 +173,11 @@
         "description": "The OpenTelemetry C++ Client",
         "html_url": "https://github.com/open-telemetry/opentelemetry-cpp",
         "language": "C++",
-        "stargazers_count": 1283,
-        "forks_count": 567,
+        "stargazers_count": 1256,
+        "forks_count": 559,
         "archived": false,
         "created_at": "2019-06-21T20:27:18Z",
-        "updated_at": "2026-05-19T08:49:11Z"
+        "updated_at": "2026-05-11T21:49:41Z"
     },
     {
         "name": "community",
@@ -185,11 +185,11 @@
         "description": "OpenTelemetry community content",
         "html_url": "https://github.com/open-telemetry/community",
         "language": "Python",
-        "stargazers_count": 1048,
-        "forks_count": 296,
+        "stargazers_count": 1045,
+        "forks_count": 292,
         "archived": false,
         "created_at": "2019-05-02T17:11:35Z",
-        "updated_at": "2026-05-18T17:09:19Z"
+        "updated_at": "2026-05-11T08:36:37Z"
     },
     {
         "name": "opentelemetry-python-contrib",
@@ -197,11 +197,11 @@
         "description": "OpenTelemetry instrumentation for Python modules",
         "html_url": "https://github.com/open-telemetry/opentelemetry-python-contrib",
         "language": "Python",
-        "stargazers_count": 1048,
-        "forks_count": 950,
+        "stargazers_count": 1043,
+        "forks_count": 945,
         "archived": false,
         "created_at": "2019-11-08T18:23:43Z",
-        "updated_at": "2026-05-19T08:33:15Z"
+        "updated_at": "2026-05-11T21:22:58Z"
     },
     {
         "name": "opentelemetry-go-instrumentation",
@@ -213,7 +213,7 @@
         "forks_count": 137,
         "archived": false,
         "created_at": "2022-08-01T20:24:17Z",
-        "updated_at": "2026-05-13T18:26:17Z"
+        "updated_at": "2026-05-11T12:19:13Z"
     },
     {
         "name": "opentelemetry-js-contrib",
@@ -221,11 +221,11 @@
         "description": "OpenTelemetry instrumentation for JavaScript modules",
         "html_url": "https://github.com/open-telemetry/opentelemetry-js-contrib",
         "language": "TypeScript",
-        "stargazers_count": 906,
-        "forks_count": 658,
+        "stargazers_count": 905,
+        "forks_count": 655,
         "archived": false,
         "created_at": "2020-04-15T17:16:11Z",
-        "updated_at": "2026-05-15T10:19:21Z"
+        "updated_at": "2026-05-11T20:43:05Z"
     },
     {
         "name": "opentelemetry.io",
@@ -233,11 +233,11 @@
         "description": "The OpenTelemetry website and documentation",
         "html_url": "https://github.com/open-telemetry/opentelemetry.io",
         "language": "JavaScript",
-        "stargazers_count": 898,
-        "forks_count": 1781,
+        "stargazers_count": 894,
+        "forks_count": 1771,
         "archived": false,
         "created_at": "2019-04-29T18:56:56Z",
-        "updated_at": "2026-05-19T13:49:30Z"
+        "updated_at": "2026-05-11T21:56:08Z"
     },
     {
         "name": "opentelemetry-php",
@@ -245,11 +245,11 @@
         "description": "The OpenTelemetry PHP Library",
         "html_url": "https://github.com/open-telemetry/opentelemetry-php",
         "language": "PHP",
-        "stargazers_count": 892,
-        "forks_count": 223,
+        "stargazers_count": 891,
+        "forks_count": 224,
         "archived": false,
         "created_at": "2019-09-27T18:08:22Z",
-        "updated_at": "2026-05-15T06:39:54Z"
+        "updated_at": "2026-05-12T05:05:55Z"
     },
     {
         "name": "opentelemetry-proto",
@@ -257,11 +257,11 @@
         "description": "OpenTelemetry protocol (OTLP) specification and Protobuf definitions",
         "html_url": "https://github.com/open-telemetry/opentelemetry-proto",
         "language": "Makefile",
-        "stargazers_count": 786,
+        "stargazers_count": 785,
         "forks_count": 312,
         "archived": false,
         "created_at": "2019-05-22T01:55:25Z",
-        "updated_at": "2026-05-14T02:16:34Z"
+        "updated_at": "2026-05-11T10:34:18Z"
     },
     {
         "name": "opentelemetry-dotnet-contrib",
@@ -269,11 +269,11 @@
         "description": "This repository contains set of components extending functionality of the OpenTelemetry .NET SDK. Instrumentation libraries, exporters, and other components can find their home here.",
         "html_url": "https://github.com/open-telemetry/opentelemetry-dotnet-contrib",
         "language": "C#",
-        "stargazers_count": 639,
-        "forks_count": 386,
+        "stargazers_count": 637,
+        "forks_count": 383,
         "archived": false,
         "created_at": "2020-05-05T20:14:43Z",
-        "updated_at": "2026-05-19T13:50:32Z"
+        "updated_at": "2026-05-11T19:18:43Z"
     },
     {
         "name": "docs-cn",
@@ -281,11 +281,11 @@
         "description": "OpenTelemetry 中文文档: 接入使用、技术标准、RFC、SDK等. ",
         "html_url": "https://github.com/open-telemetry/docs-cn",
         "language": null,
-        "stargazers_count": 624,
+        "stargazers_count": 623,
         "forks_count": 106,
         "archived": true,
         "created_at": "2019-08-10T04:47:43Z",
-        "updated_at": "2026-05-13T06:51:42Z"
+        "updated_at": "2026-04-20T13:22:28Z"
     },
     {
         "name": "semantic-conventions",
@@ -293,11 +293,11 @@
         "description": "Defines standards for generating consistent, accessible telemetry across a variety of domains",
         "html_url": "https://github.com/open-telemetry/semantic-conventions",
         "language": "Open Policy Agent",
-        "stargazers_count": 580,
-        "forks_count": 358,
+        "stargazers_count": 578,
+        "forks_count": 353,
         "archived": false,
         "created_at": "2023-05-09T17:15:53Z",
-        "updated_at": "2026-05-19T04:44:13Z"
+        "updated_at": "2026-05-11T20:57:48Z"
     },
     {
         "name": "opentelemetry-ruby",
@@ -305,11 +305,11 @@
         "description": "OpenTelemetry Ruby API & SDK, and related gems",
         "html_url": "https://github.com/open-telemetry/opentelemetry-ruby",
         "language": "Ruby",
-        "stargazers_count": 575,
+        "stargazers_count": 571,
         "forks_count": 282,
         "archived": false,
         "created_at": "2019-05-28T17:08:27Z",
-        "updated_at": "2026-05-18T23:53:02Z"
+        "updated_at": "2026-05-12T04:27:20Z"
     },
     {
         "name": "opentelemetry-helm-charts",
@@ -318,10 +318,10 @@
         "html_url": "https://github.com/open-telemetry/opentelemetry-helm-charts",
         "language": "Go Template",
         "stargazers_count": 550,
-        "forks_count": 747,
+        "forks_count": 745,
         "archived": false,
         "created_at": "2020-09-23T21:59:55Z",
-        "updated_at": "2026-05-18T14:08:17Z"
+        "updated_at": "2026-05-12T05:44:56Z"
     },
     {
         "name": "opentelemetry-collector-releases",
@@ -329,11 +329,11 @@
         "description": "OpenTelemetry Collector Official Releases",
         "html_url": "https://github.com/open-telemetry/opentelemetry-collector-releases",
         "language": "Go",
-        "stargazers_count": 472,
-        "forks_count": 234,
+        "stargazers_count": 468,
+        "forks_count": 233,
         "archived": false,
         "created_at": "2021-08-26T17:33:42Z",
-        "updated_at": "2026-05-19T14:32:57Z"
+        "updated_at": "2026-05-12T02:20:28Z"
     },
     {
         "name": "opentelemetry-ebpf-instrumentation",
@@ -341,11 +341,11 @@
         "description": null,
         "html_url": "https://github.com/open-telemetry/opentelemetry-ebpf-instrumentation",
         "language": "C",
-        "stargazers_count": 467,
-        "forks_count": 113,
+        "stargazers_count": 462,
+        "forks_count": 110,
         "archived": false,
         "created_at": "2025-04-16T22:04:13Z",
-        "updated_at": "2026-05-19T14:04:08Z"
+        "updated_at": "2026-05-12T02:50:06Z"
     },
     {
         "name": "opentelemetry-dotnet-instrumentation",
@@ -353,11 +353,11 @@
         "description": "OpenTelemetry .NET Automatic Instrumentation",
         "html_url": "https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation",
         "language": "C++",
-        "stargazers_count": 453,
-        "forks_count": 135,
+        "stargazers_count": 454,
+        "forks_count": 134,
         "archived": false,
         "created_at": "2020-07-15T00:50:29Z",
-        "updated_at": "2026-05-19T11:28:37Z"
+        "updated_at": "2026-05-07T12:27:57Z"
     },
     {
         "name": "opentelemetry-lambda",
@@ -365,23 +365,11 @@
         "description": "Create your own Lambda Layer in each OTel language using this starter code. Add the Lambda Layer to your Lambda Function to get tracing with OpenTelemetry.",
         "html_url": "https://github.com/open-telemetry/opentelemetry-lambda",
         "language": "Go",
-        "stargazers_count": 429,
-        "forks_count": 235,
+        "stargazers_count": 428,
+        "forks_count": 236,
         "archived": false,
         "created_at": "2020-12-07T22:23:09Z",
-        "updated_at": "2026-05-18T21:34:11Z"
-    },
-    {
-        "name": "weaver",
-        "full_name": "open-telemetry/weaver",
-        "description": "OTel Weaver lets you easily develop, validate, document, and deploy semantic conventions",
-        "html_url": "https://github.com/open-telemetry/weaver",
-        "language": "Rust",
-        "stargazers_count": 408,
-        "forks_count": 83,
-        "archived": false,
-        "created_at": "2024-02-07T18:14:56Z",
-        "updated_at": "2026-05-19T10:15:22Z"
+        "updated_at": "2026-05-11T19:44:44Z"
     },
     {
         "name": "opentelemetry-network",
@@ -390,10 +378,22 @@
         "html_url": "https://github.com/open-telemetry/opentelemetry-network",
         "language": "C++",
         "stargazers_count": 405,
-        "forks_count": 64,
+        "forks_count": 63,
         "archived": false,
         "created_at": "2021-07-22T16:34:22Z",
         "updated_at": "2026-05-06T06:14:10Z"
+    },
+    {
+        "name": "weaver",
+        "full_name": "open-telemetry/weaver",
+        "description": "OTel Weaver lets you easily develop, validate, document, and deploy semantic conventions",
+        "html_url": "https://github.com/open-telemetry/weaver",
+        "language": "Rust",
+        "stargazers_count": 402,
+        "forks_count": 79,
+        "archived": false,
+        "created_at": "2024-02-07T18:14:56Z",
+        "updated_at": "2026-05-11T23:23:26Z"
     },
     {
         "name": "opentelemetry-erlang",
@@ -401,11 +401,11 @@
         "description": "OpenTelemetry Erlang SDK",
         "html_url": "https://github.com/open-telemetry/opentelemetry-erlang",
         "language": "Erlang",
-        "stargazers_count": 390,
-        "forks_count": 137,
+        "stargazers_count": 389,
+        "forks_count": 136,
         "archived": false,
         "created_at": "2019-05-08T22:19:42Z",
-        "updated_at": "2026-05-16T08:42:09Z"
+        "updated_at": "2026-05-07T06:07:54Z"
     },
     {
         "name": "oteps",
@@ -425,11 +425,11 @@
         "description": "OpenTelemetry API for Swift",
         "html_url": "https://github.com/open-telemetry/opentelemetry-swift",
         "language": "Swift",
-        "stargazers_count": 352,
+        "stargazers_count": 350,
         "forks_count": 223,
         "archived": false,
         "created_at": "2020-02-19T07:24:42Z",
-        "updated_at": "2026-05-19T14:07:39Z"
+        "updated_at": "2026-05-11T14:28:05Z"
     },
     {
         "name": "opentelemetry-java-examples",
@@ -438,10 +438,10 @@
         "html_url": "https://github.com/open-telemetry/opentelemetry-java-examples",
         "language": "Java",
         "stargazers_count": 347,
-        "forks_count": 154,
+        "forks_count": 153,
         "archived": false,
         "created_at": "2021-11-12T05:50:26Z",
-        "updated_at": "2026-05-19T06:16:19Z"
+        "updated_at": "2026-05-11T13:20:36Z"
     },
     {
         "name": "otel-arrow",
@@ -450,22 +450,10 @@
         "html_url": "https://github.com/open-telemetry/otel-arrow",
         "language": "Rust",
         "stargazers_count": 339,
-        "forks_count": 101,
+        "forks_count": 100,
         "archived": false,
         "created_at": "2023-08-07T16:02:14Z",
-        "updated_at": "2026-05-19T06:48:24Z"
-    },
-    {
-        "name": "opentelemetry-go-compile-instrumentation",
-        "full_name": "open-telemetry/opentelemetry-go-compile-instrumentation",
-        "description": "OpenTelemetry Go Compile Instrumentation",
-        "html_url": "https://github.com/open-telemetry/opentelemetry-go-compile-instrumentation",
-        "language": "Go",
-        "stargazers_count": 290,
-        "forks_count": 70,
-        "archived": false,
-        "created_at": "2025-01-13T18:21:55Z",
-        "updated_at": "2026-05-19T11:45:20Z"
+        "updated_at": "2026-05-12T05:11:21Z"
     },
     {
         "name": "opentelemetry-android",
@@ -473,11 +461,23 @@
         "description": "OpenTelemetry Tooling for Android",
         "html_url": "https://github.com/open-telemetry/opentelemetry-android",
         "language": "Kotlin",
-        "stargazers_count": 285,
+        "stargazers_count": 284,
         "forks_count": 100,
         "archived": false,
         "created_at": "2023-07-21T16:31:27Z",
-        "updated_at": "2026-05-19T09:24:01Z"
+        "updated_at": "2026-05-12T05:36:04Z"
+    },
+    {
+        "name": "opentelemetry-go-compile-instrumentation",
+        "full_name": "open-telemetry/opentelemetry-go-compile-instrumentation",
+        "description": "OpenTelemetry Go Compile Instrumentation",
+        "html_url": "https://github.com/open-telemetry/opentelemetry-go-compile-instrumentation",
+        "language": "Go",
+        "stargazers_count": 284,
+        "forks_count": 62,
+        "archived": false,
+        "created_at": "2025-01-13T18:21:55Z",
+        "updated_at": "2026-05-12T03:01:04Z"
     },
     {
         "name": "opentelemetry-java-contrib",
@@ -486,10 +486,10 @@
         "html_url": "https://github.com/open-telemetry/opentelemetry-java-contrib",
         "language": "Java",
         "stargazers_count": 261,
-        "forks_count": 180,
+        "forks_count": 179,
         "archived": false,
         "created_at": "2020-08-17T21:57:13Z",
-        "updated_at": "2026-05-19T10:09:47Z"
+        "updated_at": "2026-05-11T11:50:54Z"
     },
     {
         "name": "opentelemetry-erlang-contrib",
@@ -497,11 +497,11 @@
         "description": "OpenTelemetry instrumentation for Erlang & Elixir",
         "html_url": "https://github.com/open-telemetry/opentelemetry-erlang-contrib",
         "language": "Elixir",
-        "stargazers_count": 211,
+        "stargazers_count": 209,
         "forks_count": 160,
         "archived": false,
         "created_at": "2021-04-19T17:19:27Z",
-        "updated_at": "2026-05-16T18:16:44Z"
+        "updated_at": "2026-05-12T04:24:41Z"
     },
     {
         "name": "opamp-go",
@@ -509,11 +509,11 @@
         "description": "OpAMP protocol implementation in Go",
         "html_url": "https://github.com/open-telemetry/opamp-go",
         "language": "Go",
-        "stargazers_count": 210,
-        "forks_count": 113,
+        "stargazers_count": 208,
+        "forks_count": 111,
         "archived": false,
         "created_at": "2021-11-03T13:44:00Z",
-        "updated_at": "2026-05-16T02:56:12Z"
+        "updated_at": "2026-05-11T18:44:34Z"
     },
     {
         "name": "opentelemetry-cpp-contrib",
@@ -533,11 +533,11 @@
         "description": "OpAMP Specification",
         "html_url": "https://github.com/open-telemetry/opamp-spec",
         "language": "Makefile",
-        "stargazers_count": 141,
+        "stargazers_count": 140,
         "forks_count": 53,
         "archived": false,
         "created_at": "2021-11-03T23:17:09Z",
-        "updated_at": "2026-05-19T12:33:25Z"
+        "updated_at": "2026-05-07T14:37:31Z"
     },
     {
         "name": "opentelemetry-php-instrumentation",
@@ -557,11 +557,11 @@
         "description": null,
         "html_url": "https://github.com/open-telemetry/opentelemetry-injector",
         "language": "Zig",
-        "stargazers_count": 129,
-        "forks_count": 29,
+        "stargazers_count": 127,
+        "forks_count": 28,
         "archived": false,
         "created_at": "2025-05-29T20:07:21Z",
-        "updated_at": "2026-05-18T08:50:02Z"
+        "updated_at": "2026-05-11T06:09:04Z"
     },
     {
         "name": "opentelemetry-ruby-contrib",
@@ -570,10 +570,10 @@
         "html_url": "https://github.com/open-telemetry/opentelemetry-ruby-contrib",
         "language": "Ruby",
         "stargazers_count": 121,
-        "forks_count": 246,
+        "forks_count": 245,
         "archived": false,
         "created_at": "2022-01-25T19:28:05Z",
-        "updated_at": "2026-05-16T10:02:47Z"
+        "updated_at": "2026-05-11T19:28:58Z"
     },
     {
         "name": "opentelemetry-kotlin",
@@ -581,11 +581,11 @@
         "description": "An implementation of the OpenTelemetry specification as a Kotlin Multiplatform Library",
         "html_url": "https://github.com/open-telemetry/opentelemetry-kotlin",
         "language": "Kotlin",
-        "stargazers_count": 117,
-        "forks_count": 19,
+        "stargazers_count": 112,
+        "forks_count": 18,
         "archived": false,
         "created_at": "2026-01-08T02:21:04Z",
-        "updated_at": "2026-05-18T23:21:56Z"
+        "updated_at": "2026-05-12T05:46:05Z"
     },
     {
         "name": "opentelemetry-php-contrib",
@@ -594,7 +594,7 @@
         "html_url": "https://github.com/open-telemetry/opentelemetry-php-contrib",
         "language": "PHP",
         "stargazers_count": 110,
-        "forks_count": 134,
+        "forks_count": 133,
         "archived": false,
         "created_at": "2021-06-17T15:46:19Z",
         "updated_at": "2026-05-12T00:18:54Z"
@@ -621,7 +621,7 @@
         "forks_count": 38,
         "archived": false,
         "created_at": "2023-04-18T20:31:45Z",
-        "updated_at": "2026-05-18T21:29:17Z"
+        "updated_at": "2026-05-08T17:29:11Z"
     },
     {
         "name": "opentelemetry-js-api",
@@ -641,11 +641,11 @@
         "description": "OpenTelemetry Contrib Packages for Rust",
         "html_url": "https://github.com/open-telemetry/opentelemetry-rust-contrib",
         "language": "Rust",
-        "stargazers_count": 85,
-        "forks_count": 88,
+        "stargazers_count": 83,
+        "forks_count": 87,
         "archived": false,
         "created_at": "2023-11-09T14:43:17Z",
-        "updated_at": "2026-05-16T03:40:48Z"
+        "updated_at": "2026-05-11T23:28:58Z"
     },
     {
         "name": "opentelemetry-erlang-api",
@@ -681,7 +681,7 @@
         "forks_count": 61,
         "archived": false,
         "created_at": "2021-07-16T17:15:32Z",
-        "updated_at": "2026-05-19T10:28:45Z"
+        "updated_at": "2026-05-11T18:53:00Z"
     },
     {
         "name": "build-tools",
@@ -714,22 +714,10 @@
         "html_url": "https://github.com/open-telemetry/opentelemetry-proto-go",
         "language": "Makefile",
         "stargazers_count": 41,
-        "forks_count": 42,
+        "forks_count": 41,
         "archived": false,
         "created_at": "2020-11-19T18:33:02Z",
-        "updated_at": "2026-05-19T08:34:38Z"
-    },
-    {
-        "name": "semantic-conventions-genai",
-        "full_name": "open-telemetry/semantic-conventions-genai",
-        "description": null,
-        "html_url": "https://github.com/open-telemetry/semantic-conventions-genai",
-        "language": "Python",
-        "stargazers_count": 40,
-        "forks_count": 19,
-        "archived": false,
-        "created_at": "2026-05-05T03:08:44Z",
-        "updated_at": "2026-05-19T06:34:47Z"
+        "updated_at": "2026-05-09T00:11:55Z"
     },
     {
         "name": "semantic-conventions-java",
@@ -738,10 +726,10 @@
         "html_url": "https://github.com/open-telemetry/semantic-conventions-java",
         "language": "Java",
         "stargazers_count": 38,
-        "forks_count": 31,
+        "forks_count": 30,
         "archived": false,
         "created_at": "2023-08-11T18:09:58Z",
-        "updated_at": "2026-05-15T06:12:46Z"
+        "updated_at": "2026-05-12T03:27:03Z"
     },
     {
         "name": "opentelemetry-browser",
@@ -750,10 +738,22 @@
         "html_url": "https://github.com/open-telemetry/opentelemetry-browser",
         "language": "TypeScript",
         "stargazers_count": 34,
-        "forks_count": 19,
+        "forks_count": 18,
         "archived": false,
         "created_at": "2025-09-11T04:53:31Z",
-        "updated_at": "2026-05-19T04:44:44Z"
+        "updated_at": "2026-05-11T13:06:41Z"
+    },
+    {
+        "name": "semantic-conventions-genai",
+        "full_name": "open-telemetry/semantic-conventions-genai",
+        "description": null,
+        "html_url": "https://github.com/open-telemetry/semantic-conventions-genai",
+        "language": "Python",
+        "stargazers_count": 32,
+        "forks_count": 14,
+        "archived": false,
+        "created_at": "2026-05-05T03:08:44Z",
+        "updated_at": "2026-05-12T00:43:03Z"
     },
     {
         "name": "otel-arrow-collector",
@@ -789,19 +789,7 @@
         "forks_count": 17,
         "archived": false,
         "created_at": "2021-09-29T12:34:29Z",
-        "updated_at": "2026-05-19T06:17:30Z"
-    },
-    {
-        "name": "opentelemetry-ecosystem-explorer",
-        "full_name": "open-telemetry/opentelemetry-ecosystem-explorer",
-        "description": "A repository for the OpenTelemetry Ecosystem Explorer, a tool to help users discover and learn about the various projects in the OpenTelemetry ecosystem.",
-        "html_url": "https://github.com/open-telemetry/opentelemetry-ecosystem-explorer",
-        "language": "TypeScript",
-        "stargazers_count": 20,
-        "forks_count": 38,
-        "archived": false,
-        "created_at": "2026-01-21T15:35:48Z",
-        "updated_at": "2026-05-19T10:04:48Z"
+        "updated_at": "2026-05-05T12:06:58Z"
     },
     {
         "name": "opentelemetry-sandbox-web-js",
@@ -814,6 +802,18 @@
         "archived": true,
         "created_at": "2022-06-14T17:56:35Z",
         "updated_at": "2025-11-17T17:23:30Z"
+    },
+    {
+        "name": "opentelemetry-ecosystem-explorer",
+        "full_name": "open-telemetry/opentelemetry-ecosystem-explorer",
+        "description": "A repository for the OpenTelemetry Ecosystem Explorer, a tool to help users discover and learn about the various projects in the OpenTelemetry ecosystem.",
+        "html_url": "https://github.com/open-telemetry/opentelemetry-ecosystem-explorer",
+        "language": "TypeScript",
+        "stargazers_count": 19,
+        "forks_count": 34,
+        "archived": false,
+        "created_at": "2026-01-21T15:35:48Z",
+        "updated_at": "2026-05-12T00:18:46Z"
     },
     {
         "name": "docs-ja",
@@ -837,7 +837,7 @@
         "forks_count": 19,
         "archived": false,
         "created_at": "2024-04-23T20:44:00Z",
-        "updated_at": "2026-05-18T09:48:13Z"
+        "updated_at": "2026-05-11T14:03:10Z"
     },
     {
         "name": "sig-security",
@@ -846,10 +846,10 @@
         "html_url": "https://github.com/open-telemetry/sig-security",
         "language": "Python",
         "stargazers_count": 15,
-        "forks_count": 19,
+        "forks_count": 18,
         "archived": false,
         "created_at": "2023-07-18T16:05:24Z",
-        "updated_at": "2026-05-18T16:31:43Z"
+        "updated_at": "2026-05-11T15:47:56Z"
     },
     {
         "name": "sig-mainframe",
@@ -873,7 +873,7 @@
         "forks_count": 3,
         "archived": false,
         "created_at": "2025-11-14T18:32:30Z",
-        "updated_at": "2026-05-18T16:38:05Z"
+        "updated_at": "2026-05-05T13:19:11Z"
     },
     {
         "name": "opentelemetry-weaver-examples",
@@ -921,19 +921,7 @@
         "forks_count": 23,
         "archived": false,
         "created_at": "2025-08-28T17:27:35Z",
-        "updated_at": "2026-05-14T20:16:00Z"
-    },
-    {
-        "name": "opentelemetry-weaver-packages",
-        "full_name": "open-telemetry/opentelemetry-weaver-packages",
-        "description": null,
-        "html_url": "https://github.com/open-telemetry/opentelemetry-weaver-packages",
-        "language": "Open Policy Agent",
-        "stargazers_count": 7,
-        "forks_count": 4,
-        "archived": false,
-        "created_at": "2026-01-29T18:58:07Z",
-        "updated_at": "2026-05-15T18:42:23Z"
+        "updated_at": "2026-05-10T09:00:20Z"
     },
     {
         "name": "opamp-java",
@@ -948,6 +936,18 @@
         "updated_at": "2025-11-17T17:23:36Z"
     },
     {
+        "name": "opentelemetry-weaver-packages",
+        "full_name": "open-telemetry/opentelemetry-weaver-packages",
+        "description": null,
+        "html_url": "https://github.com/open-telemetry/opentelemetry-weaver-packages",
+        "language": "Open Policy Agent",
+        "stargazers_count": 6,
+        "forks_count": 4,
+        "archived": false,
+        "created_at": "2026-01-29T18:58:07Z",
+        "updated_at": "2026-04-29T15:45:47Z"
+    },
+    {
         "name": "sig-profiling",
         "full_name": "open-telemetry/sig-profiling",
         "description": "Profiling SIG utilities",
@@ -957,19 +957,7 @@
         "forks_count": 10,
         "archived": false,
         "created_at": "2025-08-11T16:31:48Z",
-        "updated_at": "2026-05-17T19:16:20Z"
-    },
-    {
-        "name": "opentelemetry-python-genai",
-        "full_name": "open-telemetry/opentelemetry-python-genai",
-        "description": null,
-        "html_url": "https://github.com/open-telemetry/opentelemetry-python-genai",
-        "language": "Python",
-        "stargazers_count": 5,
-        "forks_count": 11,
-        "archived": false,
-        "created_at": "2026-05-12T19:29:03Z",
-        "updated_at": "2026-05-18T23:59:05Z"
+        "updated_at": "2026-05-11T05:00:52Z"
     },
     {
         "name": "opentelemetry-go-vanityurls",
@@ -981,7 +969,7 @@
         "forks_count": 14,
         "archived": false,
         "created_at": "2019-11-04T14:19:35Z",
-        "updated_at": "2026-05-18T03:02:43Z"
+        "updated_at": "2026-05-08T11:00:59Z"
     },
     {
         "name": "opentelemetry-proto-profile",
@@ -1014,10 +1002,10 @@
         "html_url": "https://github.com/open-telemetry/.github",
         "language": null,
         "stargazers_count": 3,
-        "forks_count": 25,
+        "forks_count": 24,
         "archived": false,
         "created_at": "2020-10-23T21:10:56Z",
-        "updated_at": "2026-05-18T15:26:03Z"
+        "updated_at": "2026-05-11T19:51:36Z"
     },
     {
         "name": "sig-developer-experience",
@@ -1029,7 +1017,7 @@
         "forks_count": 5,
         "archived": false,
         "created_at": "2024-07-30T23:18:42Z",
-        "updated_at": "2026-05-18T08:26:04Z"
+        "updated_at": "2026-05-11T08:38:11Z"
     },
     {
         "name": "changelog.opentelemetry.io",
@@ -1038,7 +1026,7 @@
         "html_url": "https://github.com/open-telemetry/changelog.opentelemetry.io",
         "language": "TypeScript",
         "stargazers_count": 3,
-        "forks_count": 7,
+        "forks_count": 6,
         "archived": false,
         "created_at": "2025-01-08T20:55:08Z",
         "updated_at": "2026-01-21T22:00:47Z"
@@ -1053,7 +1041,7 @@
         "forks_count": 6,
         "archived": false,
         "created_at": "2024-07-19T18:09:52Z",
-        "updated_at": "2026-05-18T09:20:43Z"
+        "updated_at": "2026-05-08T11:49:50Z"
     },
     {
         "name": "gh-manager",
@@ -1101,7 +1089,7 @@
         "forks_count": 4,
         "archived": false,
         "created_at": "2024-08-19T19:03:25Z",
-        "updated_at": "2026-05-14T14:31:41Z"
+        "updated_at": "2026-05-04T07:27:55Z"
     },
     {
         "name": ".roadmap",
@@ -1173,7 +1161,7 @@
         "forks_count": 1,
         "archived": false,
         "created_at": "2025-06-25T19:33:03Z",
-        "updated_at": "2026-05-18T09:21:56Z"
+        "updated_at": "2026-05-11T09:26:24Z"
     },
     {
         "name": "opentelemetry-zig",
@@ -1190,13 +1178,13 @@
     {
         "name": "opentelemetry-packaging",
         "full_name": "open-telemetry/opentelemetry-packaging",
-        "description": "OpenTelemetry Packaging SIG",
+        "description": null,
         "html_url": "https://github.com/open-telemetry/opentelemetry-packaging",
         "language": null,
         "stargazers_count": 0,
-        "forks_count": 1,
+        "forks_count": 0,
         "archived": false,
         "created_at": "2026-05-11T20:55:13Z",
-        "updated_at": "2026-05-18T16:07:38Z"
+        "updated_at": "2026-05-11T21:04:39Z"
     }
 ]

@@ -1,9 +1,9 @@
 import os
-import asyncio
+import subprocess
 import sys
 import json
 
-async def run_audit():
+def run_audit():
     print("=== STARTING AUTOMATIC AUTONOMOUS AUDIT PROCEDURE ===")
 
     # 1. Check Version Integrity
@@ -22,17 +22,11 @@ async def run_audit():
         # Run tests with PYTHONPATH set to current directory
         env = os.environ.copy()
         env["PYTHONPATH"] = "."
-        proc = await asyncio.create_subprocess_exec(
-            "python3", "-m", "pytest", "tests/",
-            env=env,
-            stdout=asyncio.subprocess.PIPE,
-            stderr=asyncio.subprocess.PIPE
-        )
-        stdout, stderr = await proc.communicate()
-        if proc.returncode == 0:
+        result = subprocess.run(["python3", "-m", "pytest", "tests/"], env=env, capture_output=True, text=True)
+        if result.returncode == 0:
             print("[✅] All core tests passed.")
         else:
-            print(f"[❌] Test failures detected:\n{stderr.decode('utf-8')}\n{stdout.decode('utf-8')}")
+            print(f"[❌] Test failures detected:\n{result.stderr}\n{result.stdout}")
             sys.exit(1)
     except Exception as e:
         print(f"[!] Critical Error during test execution: {e}")
@@ -74,4 +68,4 @@ async def run_audit():
     print("=== AUDIT COMPLETE: SYSTEM IS SECURE AND EVOLVING ===")
 
 if __name__ == "__main__":
-    asyncio.run(run_audit())
+    run_audit()

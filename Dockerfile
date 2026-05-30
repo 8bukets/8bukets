@@ -4,9 +4,6 @@ FROM python:3.12-slim
 # Set the working directory in the container
 WORKDIR /app
 
-# Simulate MacBook cloud presence for autonomous operation
-ENV MACBOOK_CLOUD_SIMULATION=true
-
 # Copy the current directory contents into the container at /app
 COPY . /app
 

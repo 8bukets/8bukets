@@ -1,77 +1,145 @@
 [
     {
-        "id": "wo_zc6v6dlkx",
-        "type": "BOOTSTRAP_SERVICE",
-        "goal": "Bootstrap Test Autonomous Service",
-        "payload": {
-            "feature": "Test Autonomous Service",
-            "rationale": "Testing full cycle",
-            "complexity": "Low"
-        },
-        "status": "completed",
-        "created_at": "2026-05-30T01:27:29.278Z",
-        "node_id": "macbook-primary-01",
-        "updated_at": "2026-05-30T01:27:29.283Z",
-        "completed_at": "2026-05-30T01:27:29.283Z",
-        "result": {
-            "status": "success"
-        }
-    },
-    {
-        "id": "wo_ptq6xjis4",
-        "type": "SMOKE_TEST",
-        "goal": "Verify Test Autonomous Service integrity",
-        "payload": {
-            "serviceName": "test_autonomous"
-        },
-        "status": "completed",
-        "created_at": "2026-05-30T01:27:29.279Z",
-        "node_id": "macbook-primary-01",
-        "dependsOn": [
-            "wo_zc6v6dlkx"
-        ],
-        "updated_at": "2026-05-30T01:27:29.286Z",
-        "completed_at": "2026-05-30T01:27:29.286Z",
-        "result": {
-            "status": "passed"
-        }
-    },
-    {
-        "id": "wo_abgfkmi09",
+        "id": "DEPLOY_V1.87",
         "type": "DEPLOYMENT",
-        "goal": "Deploy Test Autonomous Service to production",
-        "payload": {
-            "serviceName": "test_autonomous"
-        },
+        "description": "Execute rollout for version 1.87",
         "status": "completed",
-        "created_at": "2026-05-30T01:27:29.279Z",
-        "node_id": "macbook-primary-01",
-        "dependsOn": [
-            "wo_ptq6xjis4"
-        ],
-        "updated_at": "2026-05-30T01:27:29.288Z",
-        "completed_at": "2026-05-30T01:27:29.288Z",
+        "created_at": "2026-05-18T08:32:48.710810",
+        "completed_at": "2026-05-18T08:54:14.897Z",
         "result": {
-            "status": "success"
+            "status": "deployed",
+            "output": ""
         }
     },
     {
-        "id": "wo_n0ww4awco",
-        "type": "SYSTEM_SYNC",
-        "goal": "Synchronize Test Autonomous Service evolution to Git",
+        "id": "SMOKE_TEST_V1.87",
+        "type": "TESTING",
+        "description": "Verify system stability for version 1.87",
+        "status": "completed",
+        "created_at": "2026-05-18T08:32:48.710825",
+        "completed_at": "2026-05-18T08:54:14.899Z",
+        "result": {
+            "skipped": true,
+            "reason": "external_type"
+        }
+    },
+    {
+        "id": "CONTENT_DOMINANCE_OF_ADVERTISINGAMAZONCOM_IN_CURRENT_DATASET",
+        "type": "CONTENT_CREATION",
+        "description": "Generate structured review/content for trend: Dominance of advertising.amazon.com in current dataset.",
+        "status": "completed",
+        "created_at": "2026-05-18T08:32:48.710835",
+        "completed_at": "2026-05-18T08:54:14.900Z",
+        "result": {
+            "skipped": true,
+            "reason": "external_type"
+        }
+    },
+    {
+        "id": "CONTENT_DOMINANCE_OF_DEVELOPERSGOOGLECOM_IN_CURRENT_DATASET",
+        "type": "CONTENT_CREATION",
+        "description": "Generate structured review/content for trend: Dominance of developers.google.com in current dataset.",
+        "status": "completed",
+        "created_at": "2026-05-18T08:32:48.710841",
+        "completed_at": "2026-05-18T08:54:14.906Z",
+        "result": {
+            "skipped": true,
+            "reason": "external_type"
+        }
+    },
+    {
+        "id": "CONTENT_DOMINANCE_OF_GOOGLECOM_IN_CURRENT_DATASET",
+        "type": "CONTENT_CREATION",
+        "description": "Generate structured review/content for trend: Dominance of google.com in current dataset.",
+        "status": "completed",
+        "created_at": "2026-05-18T08:32:48.710845",
+        "completed_at": "2026-05-18T08:54:14.907Z",
+        "result": {
+            "skipped": true,
+            "reason": "external_type"
+        }
+    },
+    {
+        "id": "CONTENT_DOMINANCE_OF_MARKETINGPLATFORMGOOGLECOM_IN_CURRENT_DATASET",
+        "type": "CONTENT_CREATION",
+        "description": "Generate structured review/content for trend: Dominance of marketingplatform.google.com in current dataset.",
+        "status": "completed",
+        "created_at": "2026-05-18T08:32:48.710850",
+        "completed_at": "2026-05-18T08:54:14.908Z",
+        "result": {
+            "skipped": true,
+            "reason": "external_type"
+        }
+    },
+    {
+        "id": "INVESTIGATE_SUPPORT_GOOGLE_COM",
+        "type": "RESEARCH",
+        "description": "Deep investigation of connectivity issues for domain: support.google.com",
+        "status": "in_progress",
+        "created_at": "2026-05-18T08:32:48.710857",
+        "updated_at": "2026-05-18T08:32:48.712199"
+    },
+    {
+        "id": "INVESTIGATE_EN_WIKIPEDIA_ORG",
+        "type": "RESEARCH",
+        "description": "Deep investigation of connectivity issues for domain: en.wikipedia.org",
+        "status": "in_progress",
+        "created_at": "2026-05-18T08:32:48.710863",
+        "updated_at": "2026-05-18T08:32:48.712210"
+    },
+    {
+        "id": "REFRESH_MARKET_INTELLIGENCE",
+        "type": "RESEARCH",
+        "description": "Perform deep scrape of market trends",
+        "status": "in_progress",
+        "created_at": "2026-05-18T08:32:48.710867",
+        "updated_at": "2026-05-18T08:32:48.712213"
+    },
+    {
+        "id": "wo_fs2vobm5s",
+        "type": "BOOTSTRAP_SERVICE",
+        "goal": "Bootstrap Multi-Service Orchestration Workflow",
         "payload": {
-            "feature": "Test Autonomous Service"
+            "feature": "Multi-Service Orchestration Workflow",
+            "rationale": "Formalizes autonomous coordination between MongoDB, Supabase, and Docker-based microservices.",
+            "complexity": "Medium"
         },
         "status": "completed",
-        "created_at": "2026-05-30T01:27:29.280Z",
-        "node_id": "macbook-primary-01",
-        "dependsOn": [
-            "wo_abgfkmi09"
-        ],
-        "updated_at": "2026-05-30T01:27:29.288Z",
-        "completed_at": "2026-05-30T01:27:29.288Z",
+        "created_at": "2026-05-18T08:53:01.119Z",
+        "completed_at": "2026-05-18T08:54:14.923Z",
         "result": {
-            "status": "success"
+            "filePath": "/app/antigravity/services/multi-service_orchestration_workflow.ts",
+            "testPath": "/app/antigravity/services/multi-service_orchestration_workflow.test.ts",
+            "serviceName": "multi-service_orchestration_workflow",
+            "feature": "Multi-Service Orchestration Workflow"
         }
+    },
+    {
+        "id": "DEPLOY_V1.88",
+        "type": "DEPLOYMENT",
+        "description": "Execute rollout for version 1.88",
+        "status": "pending",
+        "created_at": "2026-05-18T09:05:14.804321"
+    },
+    {
+        "id": "SMOKE_TEST_V1.88",
+        "type": "TESTING",
+        "description": "Verify system stability for version 1.88",
+        "status": "pending",
+        "created_at": "2026-05-18T09:05:14.804335"
+    },
+    {
+        "id": "DEPLOY_V1.89",
+        "type": "DEPLOYMENT",
+        "description": "Execute rollout for version 1.89",
+        "status": "pending",
+        "created_at": "2026-05-18T09:15:23.849183"
+    },
+    {
+        "id": "SMOKE_TEST_V1.89",
+        "type": "TESTING",
+        "description": "Verify system stability for version 1.89",
+        "status": "pending",
+        "created_at": "2026-05-18T09:15:23.849196"
     }
 ]

@@ -1,7 +1,6 @@
 import { MongoClient } from 'mongodb'
 import { createClient } from '@supabase/supabase-js'
 import { z } from 'zod'
-import ws from 'ws'
 
 /**
  * Safer import for Next.js cache/server APIs to support CLI execution.
@@ -32,7 +31,7 @@ const MONGODB_URI = process.env.MONGODB_URI
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
 const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
-const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
+const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.VERCEL)
 
 if (!MONGODB_URI || !SUPABASE_URL || !SUPABASE_KEY) {
   if (isCloud) {
@@ -55,14 +54,7 @@ export interface LayoutProps<T = any> {
 // --- 2. AUTONOMOUS DATABASE CLIENTS ---
 
 let _mongoClientPromise: Promise<MongoClient>
-const supabase = createClient(SUPABASE_URL || 'https://placeholder.supabase.co', SUPABASE_KEY || 'placeholder', {
-  auth: {
-    persistSession: false
-  },
-  realtime: {
-    transport: ws
-  }
-})
+const supabase = createClient(SUPABASE_URL || 'https://placeholder.supabase.co', SUPABASE_KEY || 'placeholder')
 
 // Phase 5: Self-Healing State
 const circuitBreaker = {
@@ -226,7 +218,7 @@ export async function getSystemInsights() {
     environment: {
       isCloud,
       mode: process.env.AUTONOMOUS_MODE || 'local',
-      platform: process.env.GITHUB_ACTIONS ? 'github' : (process.env.GITLAB_CI ? 'gitlab' : (process.env.VERCEL ? 'vercel' : (process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true' ? 'autonomous-cloud' : 'macbook')))
+      platform: process.env.GITHUB_ACTIONS ? 'github' : (process.env.GITLAB_CI ? 'gitlab' : (process.env.VERCEL ? 'vercel' : 'macbook'))
     },
     logs: logBuffer,
     ideas,

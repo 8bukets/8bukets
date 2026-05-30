@@ -50,7 +50,7 @@ class WorkOrderAgent(BaseAgent):
             if not self._order_exists(orders, smoke_task_id):
                 new_tasks_identified.append({
                     "id": smoke_task_id,
-                    "type": "SMOKE_TEST",
+                    "type": "TESTING",
                     "description": f"Verify system stability for version {version}",
                     "status": "pending",
                     "created_at": datetime.now().isoformat()
@@ -65,7 +65,7 @@ class WorkOrderAgent(BaseAgent):
                 if not self._order_exists(orders, task_id):
                     new_tasks_identified.append({
                         "id": task_id,
-                        "type": "CONTENT_GENERATION",
+                        "type": "CONTENT_CREATION",
                         "description": f"Generate structured review/content for trend: {trend}",
                         "status": "pending",
                         "created_at": datetime.now().isoformat()
@@ -104,7 +104,7 @@ class WorkOrderAgent(BaseAgent):
                 if not self._order_exists(orders, task_id):
                     new_tasks_identified.append({
                         "id": task_id,
-                        "type": "CONTENT_GENERATION",
+                        "type": "CONTENT_CREATION",
                         "description": f"Generate missing technical documentation: {doc}",
                         "status": "pending",
                         "created_at": datetime.now().isoformat()

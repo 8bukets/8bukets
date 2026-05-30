@@ -33,35 +33,14 @@ class ReActAgent(BaseAgent):
             for insight in insights:
                 if "High concentration" in insight:
                     reasoning_log.append("Reasoning: High concentration detected, requires focused ad targeting.")
-                    if "DEPLOY_FOCUSED_AD_CAMPAIGN" not in action_log:
-                        action_log.append("DEPLOY_FOCUSED_AD_CAMPAIGN")
                 elif "efficiency" in insight.lower() or "decision-making" in insight.lower():
                     reasoning_log.append("Reasoning: Strategic benefits identified, should optimize workflow.")
-                    if "OPTIMIZE_WORKFLOW_DECISION_MAKING" not in action_log:
-                        action_log.append("OPTIMIZE_WORKFLOW_DECISION_MAKING")
-                elif "automation" in insight.lower():
-                    reasoning_log.append("Reasoning: Automation opportunity identified, should deploy automation rules.")
-                    if "DEPLOY_AUTOMATION_RULES" not in action_log:
-                        action_log.append("DEPLOY_AUTOMATION_RULES")
-                elif "security" in insight.lower():
-                    reasoning_log.append("Reasoning: Security focus required, initiating security audit.")
-                    if "INITIATE_SECURITY_AUDIT" not in action_log:
-                        action_log.append("INITIATE_SECURITY_AUDIT")
-                elif "performance" in insight.lower():
-                    reasoning_log.append("Reasoning: Performance bottleneck detected, triggering performance optimization.")
-                    if "TRIGGER_PERFORMANCE_OPTIMIZATION" not in action_log:
-                        action_log.append("TRIGGER_PERFORMANCE_OPTIMIZATION")
-
-        react_deployment_logic = definitions.get("react-agent-deployment-logic") or definitions.get("react_framework_details", {}).get("react-agent-deployment-logic")
-        if react_deployment_logic:
-            reasoning_log.append("Reasoning: Found React Agent Deployment Logic, ensuring logic deploy and workflow run improve.")
-            if "VERIFY_LOGIC_DEPLOY_REACT_AGENTS" not in action_log:
-                action_log.append("VERIFY_LOGIC_DEPLOY_REACT_AGENTS")
-            if "IMPROVE_WORKFLOW_RUN" not in action_log:
-                action_log.append("IMPROVE_WORKFLOW_RUN")
 
         # 2. Acting Phase
-        if not action_log:
+        if reasoning_log:
+            action_log.append("DEPLOY_FOCUSED_AD_CAMPAIGN")
+            action_log.append("OPTIMIZE_WORKFLOW_DECISION_MAKING")
+        else:
             reasoning_log.append("Reasoning: No specific insights to act upon.")
             action_log.append("CONTINUE_MONITORING")
 
