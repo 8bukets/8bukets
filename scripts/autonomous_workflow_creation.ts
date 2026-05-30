@@ -49,7 +49,7 @@ jobs:
 }
 
 function generateFullyAutonomousWorkflow() {
-  const content = `name: Fully Autonomous Automatic Workflow
+  const workflowContent = `name: Fully Autonomous Automatic Workflow
 
 on:
   schedule:
@@ -106,20 +106,13 @@ jobs:
         env:
           MACBOOK_CLOUD_SIMULATION: true
 
-      - name: Commit and Push Evolution
+      - name: Commit and Push Changes
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
-          if ! git diff --cached --quiet; then
-            git commit -m "chore: autonomous creation cycle artifacts"
-            git pull --rebase origin main || true
-            git push origin HEAD:\${{ github.ref }} || true
-          else
-            echo "No changes to commit"
-          fi
-        env:
-          GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          git add .
+          git commit -m "chore: fully autonomous automatic workflow creation cycle completed" || true
+          git push origin HEAD:\${{ github.ref }}
 
 # =====================================================================
 # Workflow Architecture Overview & Technical Specifications
@@ -128,11 +121,11 @@ jobs:
 # This file defines the core CI/CD pipeline responsible for driving the
 # fully autonomous creation cycle of our artificial intelligence agents.
 #
-# It is designed to run automatically every 4 hours, providing a reliable
-# and consistent heartbeat for the system's ongoing evolution and
-# self-improvement mechanisms. In addition to the scheduled runs, the
-# workflow supports manual triggering via workflow_dispatch, which is
-# particularly useful for ad-hoc testing, emergency updates, or
+# It is designed to run automatically at midnight UTC every single day,
+# providing a reliable and consistent heartbeat for the system's ongoing
+# evolution and self-improvement mechanisms. In addition to the scheduled
+# runs, the workflow supports manual triggering via workflow_dispatch,
+# which is particularly useful for ad-hoc testing, emergency updates, or
 # initiating out-of-band creation cycles when new urgent requirements arise.
 #
 # A critical component of this workflow is the "Connect and Collaborate"
@@ -181,7 +174,7 @@ jobs:
 `;
 
   const filename = path.join(WORKFLOW_DIR, 'fully_autonomous_automatic_workflow.yml');
-  fs.writeFileSync(filename, content);
+  fs.writeFileSync(filename, workflowContent);
   console.log(`Successfully generated workflow: ${filename}`);
 }
 

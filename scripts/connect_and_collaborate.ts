@@ -23,14 +23,15 @@ async function main() {
     state.dockerInfo = 'Error: ' + error.message;
   }
 
+  // 2. Synchronize collaboration context
+  console.log('🐳 [Jules] Connecting to Docker...');
   try {
-    console.log('Running docker ps...');
-    const { stdout: psOutput } = await execAsync('docker ps');
-    state.dockerPs = psOutput;
-  } catch (error: any) {
-    console.error('Failed to run docker ps:', error.message);
-    state.dockerPs = 'Error: ' + error.message;
+    const { execSync } = require('child_process');
+    execSync('docker info && docker ps');
+  } catch (e) {
+    console.warn('⚠️ [Jules] Docker not running or inaccessible.');
   }
+  await jules.syncCollaboration();
 
   const outputPath = 'autonomous_state.json';
   await fs.writeFile(outputPath, JSON.stringify(state, null, 2));

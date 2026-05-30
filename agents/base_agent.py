@@ -1,20 +1,23 @@
 import logging
 from abc import ABC, abstractmethod
-from typing import Dict, List, Any
+
+logger = logging.getLogger(__name__)
 
 class Blackboard(dict):
     pass
 
 class BaseAgent(ABC):
-    def __init__(self, name: str, dependencies=None, provides=None):
+    def __init__(self, name):
         self.name = name
-        self.dependencies = dependencies or []
-        self.provides = provides or []
-        self.logger = logging.getLogger(name)
+        self.logger = logging.getLogger(f"Agent.{name}")
 
     @abstractmethod
-    def process(self, data: Any) -> Any:
+    async def run(self, context: dict):
+        """
+        Execute the agent's task.
+        :param context: A shared dictionary containing data and state.
+        """
         pass
 
-    def log(self, message: str):
-        print(f"[{self.name}] {message}")
+    def log(self, message):
+        self.logger.info(message)
