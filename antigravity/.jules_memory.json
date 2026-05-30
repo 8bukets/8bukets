@@ -1,5 +1,5 @@
 {
-  "lastOptimization": "2026-05-21T00:28:16.952Z",
+  "lastOptimization": "2026-05-30T03:11:03.313Z",
   "preferredPatterns": [
     "autonomousFetch",
     "predictiveFetch",
@@ -266,562 +266,452 @@
       "role": "General"
     },
     {
-      "id": "93e25iynl",
+      "id": "7p8edgnfl",
       "status": "completed",
       "goal": "System Scan: Health is DEGRADED. Found 1 evolution paths.",
       "role": "General"
     },
     {
-      "id": "kni2oe0y5",
+      "id": "4jb33pe9k",
       "status": "completed",
       "goal": "Self-Repair: Applied 1 fixes.",
       "role": "General"
     },
     {
-      "id": "3n08usofo",
+      "id": "usqgtw277",
       "status": "completed",
       "goal": "Git Sync: Synchronized state with origin.",
       "role": "General"
     },
     {
-      "id": "6dkd3c21s",
+      "id": "yvqjckljg",
       "status": "completed",
       "goal": "Synthesis: Generated 1 proposals.",
       "role": "General"
     },
     {
-      "id": "04vklde29",
+      "id": "ydvk9u1z2",
       "status": "completed",
       "goal": "ReAct: Completed 3 reasoning-action steps.",
       "role": "General"
     },
     {
-      "id": "15dx3h0zu",
+      "id": "l8iaehaf9",
       "status": "completed",
       "goal": "Git Sync: Synchronized state with origin.",
       "role": "General"
     },
     {
-      "id": "wu35inita",
+      "id": "2pcsyv59v",
       "status": "completed",
       "goal": "System Scan: Health is DEGRADED. Found 1 evolution paths.",
       "role": "General"
     },
     {
-      "id": "leaw9fpfj",
+      "id": "87i0m2t23",
       "status": "completed",
       "goal": "Self-Repair: Applied 1 fixes.",
       "role": "General"
     },
     {
-      "id": "lfnkj59t9",
+      "id": "68fmnyx5e",
       "status": "completed",
       "goal": "Git Sync: Synchronized state with origin.",
       "role": "General"
     },
     {
-      "id": "1ojdp6vw0",
+      "id": "gazt3tyxl",
       "status": "completed",
       "goal": "Synthesis: Generated 1 proposals.",
       "role": "General"
     },
     {
-      "id": "qi5k31cue",
+      "id": "vpk3uvk9w",
       "status": "completed",
       "goal": "ReAct: Completed 3 reasoning-action steps.",
       "role": "General"
     },
     {
-      "id": "snsdrob0i",
-      "status": "completed",
-      "goal": "System Scan: Health is DEGRADED. Found 1 evolution paths.",
-      "role": "General"
-    },
-    {
-      "id": "700dgfs1b",
-      "status": "completed",
-      "goal": "System Scan: Health is DEGRADED. Found 1 evolution paths.",
-      "role": "General"
-    },
-    {
-      "id": "uou5vy21e",
-      "status": "completed",
-      "goal": "Self-Repair: Applied 1 fixes.",
-      "role": "General"
-    },
-    {
-      "id": "8ozn9v1df",
+      "id": "fydkgyn4m",
       "status": "completed",
       "goal": "Git Sync: Synchronized state with origin.",
       "role": "General"
     },
     {
-      "id": "fb8kgvonr",
+      "id": "0o8229wad",
+      "status": "completed",
+      "goal": "System Scan: Health is DEGRADED. Found 1 evolution paths.",
+      "role": "General"
+    },
+    {
+      "id": "u4p56bxc9",
+      "status": "completed",
+      "goal": "Self-Repair: Applied 1 fixes.",
+      "role": "General"
+    },
+    {
+      "id": "s4myf6vv7",
+      "status": "completed",
+      "goal": "Git Sync: Synchronized state with origin.",
+      "role": "General"
+    },
+    {
+      "id": "12uvmb4b1",
       "status": "completed",
       "goal": "Synthesis: Generated 1 proposals.",
       "role": "General"
     },
     {
-      "id": "u2iau17kv",
+      "id": "osxbh1e9f",
       "status": "completed",
       "goal": "ReAct: Completed 3 reasoning-action steps.",
       "role": "General"
     },
     {
-      "id": "hwqrf2uly",
+      "id": "7qadvp7b9",
       "status": "completed",
       "goal": "Git Sync: Synchronized state with origin.",
       "role": "General"
     },
     {
-      "id": "42lqqv9b9",
+      "id": "8o7ows38r",
       "status": "completed",
-      "goal": "System Scan: Health is DEGRADED. Found 1 evolution paths.",
-      "role": "General"
+      "goal": "Docker Sovereignty: No active containers found or Docker daemon unreachable."
     },
     {
-      "id": "55pbvyeyu",
+      "id": "8k0wfn001",
       "status": "completed",
-      "goal": "Self-Repair: Applied 1 fixes.",
-      "role": "General"
+      "goal": "Docker Sovereignty: No active containers found or Docker daemon unreachable."
     },
     {
-      "id": "o3ml5f9s3",
+      "id": "m5cdskalb",
       "status": "completed",
-      "goal": "Git Sync: Synchronized state with origin.",
-      "role": "General"
+      "goal": "Docker Sovereignty: No active containers found or Docker daemon unreachable."
     },
     {
-      "id": "nuq4njdtj",
+      "id": "tsw241x36",
       "status": "completed",
-      "goal": "Synthesis: Generated 1 proposals.",
-      "role": "General"
+      "goal": "Collaboration Sync: Exported system context and stakeholder data."
     },
     {
-      "id": "0clobmid6",
+      "id": "ohmxdx4ux",
       "status": "completed",
-      "goal": "ReAct: Completed 3 reasoning-action steps.",
-      "role": "General"
+      "goal": "Docker Sovereignty: No active containers found or Docker daemon unreachable."
     },
     {
-      "id": "z6wgbr8ck",
+      "id": "icsqvc6vx",
       "status": "completed",
-      "goal": "Cloud Workflow: System is FLUENT_ON_AIR.",
-      "role": "General"
+      "goal": "Collaboration Sync: Exported system context and stakeholder data."
     },
     {
-      "id": "1xwpza3x0",
+      "id": "249hrg42f",
       "status": "completed",
-      "goal": "Git Sync: Synchronized state with origin.",
-      "role": "General"
+      "goal": "Docker Sovereignty: No active containers found or Docker daemon unreachable."
     },
     {
-      "id": "ib2mj1lht",
+      "id": "gzxhdcs5r",
       "status": "completed",
-      "goal": "System Scan: Health is DEGRADED. Found 1 evolution paths.",
-      "role": "General"
+      "goal": "Collaboration Sync: Exported system context and stakeholder data."
     },
     {
-      "id": "vd7tr9oti",
+      "id": "898gxr6fg",
       "status": "completed",
-      "goal": "Self-Repair: Applied 1 fixes.",
-      "role": "General"
+      "goal": "Branch Scan: Analyzed 2165 branches for cross-project context."
     },
     {
-      "id": "qf3w1il1y",
+      "id": "dknq4wtzj",
       "status": "completed",
-      "goal": "Git Sync: Synchronized state with origin.",
-      "role": "General"
+      "goal": "Docker Sovereignty: No active containers found or Docker daemon unreachable."
     },
     {
-      "id": "sirarzxjb",
+      "id": "41onqkuwb",
       "status": "completed",
-      "goal": "Synthesis: Generated 1 proposals.",
-      "role": "General"
+      "goal": "Collaboration Sync: Exported system context and stakeholder data."
     },
     {
-      "id": "votdvjagm",
+      "id": "7k5qlu63f",
       "status": "completed",
-      "goal": "ReAct: Completed 3 reasoning-action steps.",
-      "role": "General"
+      "goal": "System Scan: Health is DEGRADED. Found 1 evolution paths."
     },
     {
-      "id": "765mny4yh",
+      "id": "p0t2b3c2a",
       "status": "completed",
-      "goal": "Cloud Workflow: System is FLUENT_ON_AIR.",
-      "role": "General"
+      "goal": "Self-Repair: Applied 1 fixes."
     },
     {
-      "id": "y6kq6y8wy",
+      "id": "c3kq22igq",
       "status": "completed",
-      "goal": "Git Sync: Synchronized state with origin.",
-      "role": "General"
+      "goal": "Git Sync: Committed fixes to local repository."
     },
     {
-      "id": "7k6w1i5tt",
+      "id": "o811j11ox",
       "status": "completed",
-      "goal": "System Scan: Health is DEGRADED. Found 1 evolution paths.",
-      "role": "General"
+      "goal": "Synthesis: Generated 2 architectural proposals."
     },
     {
-      "id": "n6k5vgkoh",
+      "id": "t8dwcei3g",
       "status": "completed",
-      "goal": "Self-Repair: Applied 1 fixes.",
-      "role": "General"
+      "goal": "ReAct: Completed 3 reasoning-action steps."
     },
     {
-      "id": "ereo62nrp",
+      "id": "svomo7nnr",
       "status": "completed",
-      "goal": "Git Sync: Synchronized state with origin.",
-      "role": "General"
+      "goal": "Knowledge Observation: Extracted 15 concepts from https://software-online-review.com"
     },
     {
-      "id": "2xk9h1zka",
+      "id": "60hrhi5hy",
       "status": "completed",
-      "goal": "Synthesis: Generated 1 proposals.",
-      "role": "General"
+      "goal": "GitHub Docs: Observed 1 files from Intelephense docs."
     },
     {
-      "id": "81awl1srv",
+      "id": "djgpn9s67",
       "status": "completed",
-      "goal": "ReAct: Completed 3 reasoning-action steps.",
-      "role": "General"
+      "goal": "iCloud: Ingested 1 new files."
     },
     {
-      "id": "m4o8nvtqg",
+      "id": "91rkubx5v",
       "status": "completed",
-      "goal": "Cloud Workflow: System is FLUENT_ON_AIR.",
-      "role": "General"
+      "goal": "Collaboration Sync: Exported system context and stakeholder data."
     },
     {
-      "id": "9qq8sykpc",
+      "id": "ogl7jlgyf",
       "status": "completed",
-      "goal": "System Scan: Health is DEGRADED. Found 1 evolution paths.",
-      "role": "General"
+      "goal": "Branch Scan: Analyzed 2220 branches for cross-project context."
     },
     {
-      "id": "cgkkwbflc",
+      "id": "pcd12lke1",
       "status": "completed",
-      "goal": "Self-Repair: Applied 1 fixes.",
-      "role": "General"
+      "goal": "Intelligence Report: Generated consolidated system overview."
     },
     {
-      "id": "1dfcgoq5o",
+      "id": "0bwcm3uua",
       "status": "completed",
-      "goal": "Git Sync: Synchronized state with origin.",
-      "role": "General"
+      "goal": "Git Sync: Committed fixes to local repository."
     },
     {
-      "id": "bh2y7pm9g",
+      "id": "ie8xesoog",
       "status": "completed",
-      "goal": "Synthesis: Generated 1 proposals.",
-      "role": "General"
+      "goal": "Docker Sovereignty: No active containers found or Docker daemon unreachable."
     },
     {
-      "id": "b6wxq4gxw",
+      "id": "i2dtb5iih",
       "status": "completed",
-      "goal": "ReAct: Completed 3 reasoning-action steps.",
-      "role": "General"
+      "goal": "Collaboration Sync: Exported system context and stakeholder data."
     },
     {
-      "id": "xnz60o36y",
+      "id": "az8mr73ox",
       "status": "completed",
-      "goal": "Cloud Workflow: System is FLUENT_ON_AIR.",
-      "role": "General"
+      "goal": "Docker Sovereignty: No active containers found or Docker daemon unreachable."
     },
     {
-      "id": "cjcw5p1oy",
+      "id": "209ljem45",
       "status": "completed",
-      "goal": "Git Sync: Synchronized state with origin.",
-      "role": "General"
+      "goal": "Collaboration Sync: Exported system context and stakeholder data."
     },
     {
-      "id": "o9xwhchp7",
+      "id": "pwalcqqmj",
       "status": "completed",
-      "goal": "System Scan: Health is DEGRADED. Found 1 evolution paths.",
-      "role": "General"
+      "goal": "Docker Sovereignty: No active containers found or Docker daemon unreachable."
     },
     {
-      "id": "lqaomr6aa",
+      "id": "xl7r3sdas",
       "status": "completed",
-      "goal": "Self-Repair: Applied 1 fixes.",
-      "role": "General"
+      "goal": "Collaboration Sync: Exported system context and stakeholder data."
     },
     {
-      "id": "rmpidslwp",
+      "id": "tn0gqvuge",
       "status": "completed",
-      "goal": "Git Sync: Synchronized state with origin.",
-      "role": "General"
+      "goal": "Docker Sovereignty: No active containers found or Docker daemon unreachable."
     },
     {
-      "id": "olf7mutbf",
+      "id": "brlg6qu8r",
       "status": "completed",
-      "goal": "Synthesis: Generated 1 proposals.",
-      "role": "General"
+      "goal": "Collaboration Sync: Exported system context and stakeholder data."
     },
     {
-      "id": "ptaqqyo7n",
+      "id": "1mrnuy54h",
       "status": "completed",
-      "goal": "ReAct: Completed 3 reasoning-action steps.",
-      "role": "General"
+      "goal": "Docker Sovereignty: No active containers found or Docker daemon unreachable."
     },
     {
-      "id": "aljy4l3yh",
+      "id": "0uu1n946v",
       "status": "completed",
-      "goal": "Cloud Workflow: System is FLUENT_ON_AIR.",
-      "role": "General"
+      "goal": "Collaboration Sync: Exported system context and stakeholder data."
     },
     {
-      "id": "gfzvuf2oq",
+      "id": "kul08dn7y",
       "status": "completed",
-      "goal": "Git Sync: Synchronized state with origin.",
-      "role": "General"
+      "goal": "Docker Sovereignty: No active containers found or Docker daemon unreachable."
     },
     {
-      "id": "bwv136xi2",
+      "id": "866fkukpo",
       "status": "completed",
-      "goal": "System Scan: Health is DEGRADED. Found 1 evolution paths.",
-      "role": "General"
+      "goal": "Collaboration Sync: Exported system context and stakeholder data."
     },
     {
-      "id": "l0uyuz562",
+      "id": "vovll6ly8",
       "status": "completed",
-      "goal": "Self-Repair: Applied 1 fixes.",
-      "role": "General"
+      "goal": "System Scan: Health is DEGRADED. Found 1 evolution paths."
     },
     {
-      "id": "f9y57lc21",
+      "id": "4vb76gtqb",
       "status": "completed",
-      "goal": "Git Sync: Synchronized state with origin.",
-      "role": "General"
+      "goal": "Self-Repair: Applied 1 fixes."
     },
     {
-      "id": "b7wvjyfer",
+      "id": "8z3p32n5y",
       "status": "completed",
-      "goal": "Synthesis: Generated 1 proposals.",
-      "role": "General"
+      "goal": "Git Sync: Committed fixes to local repository."
     },
     {
-      "id": "qurywsb1g",
+      "id": "ibxld8464",
       "status": "completed",
-      "goal": "ReAct: Completed 2 reasoning-action steps.",
-      "role": "General"
+      "goal": "Synthesis: Generated 2 architectural proposals."
     },
     {
-      "id": "6txeseh2w",
+      "id": "iqmld783b",
       "status": "completed",
-      "goal": "Cloud Workflow: System is FLUENT_ON_AIR.",
-      "role": "General"
+      "goal": "ReAct: Completed 3 reasoning-action steps."
     },
     {
-      "id": "2xd5qipk1",
+      "id": "osm1p7cis",
       "status": "completed",
-      "goal": "Git Sync: Synchronized state with origin.",
-      "role": "General"
+      "goal": "Knowledge Observation: Extracted 15 concepts from https://software-online-review.com"
     },
     {
-      "id": "has80qj7g",
+      "id": "rbez2w02m",
       "status": "completed",
-      "goal": "System Scan: Health is DEGRADED. Found 1 evolution paths.",
-      "role": "General"
+      "goal": "GitHub Docs: Observed 1 files from Intelephense docs."
     },
     {
-      "id": "43hk4wtze",
+      "id": "z56qkysv1",
       "status": "completed",
-      "goal": "Self-Repair: Applied 1 fixes.",
-      "role": "General"
+      "goal": "Collaboration Sync: Exported system context and stakeholder data."
     },
     {
-      "id": "xdgjbdskh",
+      "id": "rcrqcmruz",
       "status": "completed",
-      "goal": "Git Sync: Synchronized state with origin.",
-      "role": "General"
+      "goal": "Branch Scan: Analyzed 2238 branches for cross-project context."
     },
     {
-      "id": "mwuj62cc9",
+      "id": "uvhqyibq7",
       "status": "completed",
-      "goal": "Synthesis: Generated 1 proposals.",
-      "role": "General"
+      "goal": "Intelligence Report: Generated consolidated system overview."
     },
     {
-      "id": "7cp5rnfvp",
+      "id": "too226j9e",
       "status": "completed",
-      "goal": "ReAct: Completed 2 reasoning-action steps.",
-      "role": "General"
+      "goal": "Git Sync: Committed fixes to local repository."
     },
     {
-      "id": "ebzecpfq2",
+      "id": "zaphs8fte",
       "status": "completed",
-      "goal": "Cloud Workflow: System is FLUENT_ON_AIR.",
-      "role": "General"
+      "goal": "System Scan: Health is DEGRADED. Found 1 evolution paths."
     },
     {
-      "id": "998sxbxd6",
+      "id": "i19lr1pw4",
       "status": "completed",
-      "goal": "Git Sync: Synchronized state with origin.",
-      "role": "General"
+      "goal": "Self-Repair: Applied 1 fixes."
     },
     {
-      "id": "sx4a7fhj4",
+      "id": "cfx35w134",
       "status": "completed",
-      "goal": "System Scan: Health is DEGRADED. Found 1 evolution paths.",
-      "role": "General"
+      "goal": "Git Sync: Committed fixes to local repository."
     },
     {
-      "id": "urvrx5r0q",
+      "id": "guqjmey3w",
       "status": "completed",
-      "goal": "Self-Repair: Applied 1 fixes.",
-      "role": "General"
+      "goal": "Synthesis: Generated 2 architectural proposals."
     },
     {
-      "id": "gkrq6y33e",
+      "id": "naixszjn6",
       "status": "completed",
-      "goal": "Git Sync: Synchronized state with origin.",
-      "role": "General"
+      "goal": "ReAct: Completed 3 reasoning-action steps."
     },
     {
-      "id": "kby55qqbl",
+      "id": "laffyqnlu",
       "status": "completed",
-      "goal": "Synthesis: Generated 2 proposals.",
-      "role": "General"
+      "goal": "Knowledge Observation: Extracted 15 concepts from https://software-online-review.com"
     },
     {
-      "id": "3htvmso00",
+      "id": "0ahpz3l5i",
       "status": "completed",
-      "goal": "ReAct: Completed 3 reasoning-action steps.",
-      "role": "General"
+      "goal": "GitHub Docs: Observed 1 files from Intelephense docs."
     },
     {
-      "id": "2cf44jawa",
+      "id": "0qu3v3hh5",
       "status": "completed",
-      "goal": "Cloud Workflow: System is FLUENT_ON_AIR.",
-      "role": "General"
+      "goal": "Collaboration Sync: Exported system context and stakeholder data."
     },
     {
-      "id": "oha24czj6",
+      "id": "oi6dwauct",
       "status": "completed",
-      "goal": "Git Sync: Synchronized state with origin.",
-      "role": "General"
+      "goal": "Branch Scan: Analyzed 2245 branches for cross-project context."
     },
     {
-      "id": "mu7lodmqn",
+      "id": "16pofikgc",
       "status": "completed",
-      "goal": "System Scan: Health is DEGRADED. Found 1 evolution paths.",
-      "role": "General"
+      "goal": "Intelligence Report: Generated consolidated system overview."
     },
     {
-      "id": "7dd10fffp",
+      "id": "h77xpcvgc",
       "status": "completed",
-      "goal": "Self-Repair: Applied 1 fixes.",
-      "role": "General"
+      "goal": "Git Sync: Committed fixes to local repository."
     },
     {
-      "id": "n8mh7l3ih",
+      "id": "1aohjso2b",
       "status": "completed",
-      "goal": "System Scan: Health is DEGRADED. Found 1 evolution paths.",
-      "role": "General"
+      "goal": "System Scan: Health is DEGRADED. Found 1 evolution paths."
     },
     {
-      "id": "phtnf1hqq",
+      "id": "t1ny95gu0",
       "status": "completed",
-      "goal": "Self-Repair: Applied 1 fixes.",
-      "role": "General"
+      "goal": "Self-Repair: Applied 1 fixes."
     },
     {
-      "id": "qp6zk4mvx",
+      "id": "hdsm37f70",
       "status": "completed",
-      "goal": "System Scan: Health is DEGRADED. Found 1 evolution paths.",
-      "role": "General"
+      "goal": "Git Sync: Committed fixes to local repository."
     },
     {
-      "id": "gzsr3t0yk",
+      "id": "1oh5ckgsx",
       "status": "completed",
-      "goal": "Self-Repair: Applied 1 fixes.",
-      "role": "General"
+      "goal": "Synthesis: Generated 2 architectural proposals."
     },
     {
-      "id": "tf2fonu3z",
+      "id": "gclpkx2wn",
       "status": "completed",
-      "goal": "Git Sync: Synchronized state with origin.",
-      "role": "General"
+      "goal": "ReAct: Completed 3 reasoning-action steps."
     },
     {
-      "id": "vvxjmfq57",
+      "id": "54r9qj5ws",
       "status": "completed",
-      "goal": "Synthesis: Generated 1 proposals.",
-      "role": "General"
+      "goal": "Knowledge Observation: Extracted 15 concepts from https://software-online-review.com"
     },
     {
-      "id": "50f3yt841",
+      "id": "myrkp3yen",
       "status": "completed",
-      "goal": "ReAct: Completed 3 reasoning-action steps.",
-      "role": "General"
+      "goal": "GitHub Docs: Observed 1 files from Intelephense docs."
     },
     {
-      "id": "m6rkq4ya9",
+      "id": "6wjfap6f3",
       "status": "completed",
-      "goal": "ReAct Improvement: Synthesized 1 ideas from recent sessions.",
-      "role": "General"
+      "goal": "Collaboration Sync: Exported system context and stakeholder data."
     },
     {
-      "id": "hnlnb3gf4",
+      "id": "wkhzrhekx",
       "status": "completed",
-      "goal": "Cloud Workflow: System is FLUENT_ON_AIR.",
-      "role": "General"
+      "goal": "Branch Scan: Analyzed 2245 branches for cross-project context."
     },
     {
-      "id": "4t2mz5ud8",
+      "id": "oapzsmvmk",
       "status": "completed",
-      "goal": "Git Sync: Synchronized state with origin.",
-      "role": "General"
+      "goal": "Intelligence Report: Generated consolidated system overview."
     },
     {
-      "id": "iqgrgff1e",
+      "id": "8vc5vjdsj",
       "status": "completed",
-      "goal": "iCloud Sync: Successfully synchronized project to /home/jules/Library/Mobile Documents/com~apple~CloudDocs/Antigravity_Sync",
-      "role": "General"
-    },
-    {
-      "id": "7t3qmroaw",
-      "status": "completed",
-      "goal": "System Scan: Health is DEGRADED. Found 1 evolution paths.",
-      "role": "General"
-    },
-    {
-      "id": "h3jhfiawv",
-      "status": "completed",
-      "goal": "Self-Repair: Applied 1 fixes.",
-      "role": "General"
-    },
-    {
-      "id": "fy5ji8oy1",
-      "status": "completed",
-      "goal": "Git Sync: Synchronized state with origin.",
-      "role": "General"
-    },
-    {
-      "id": "6voxwiv25",
-      "status": "completed",
-      "goal": "Synthesis: Generated 1 proposals.",
-      "role": "General"
-    },
-    {
-      "id": "glk1fowlh",
-      "status": "completed",
-      "goal": "ReAct: Completed 2 reasoning-action steps.",
-      "role": "General"
-    },
-    {
-      "id": "49kfa7de2",
-      "status": "completed",
-      "goal": "ReAct Improvement: Synthesized 1 ideas from recent sessions.",
-      "role": "General"
-    },
-    {
-      "id": "n7mmeua3s",
-      "status": "completed",
-      "goal": "Cloud Workflow: System is FLUENT_ON_AIR.",
-      "role": "General"
+      "goal": "Git Sync: Committed fixes to local repository."
     }
   ],
   "activeAgents": []

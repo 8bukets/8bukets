@@ -5,6 +5,16 @@ import { PageProps, resolve } from '@/antigravity/core'
 
 // Mock fetching function
 async function getProduct(slug: string) {
+
+
+
+
+
+
+
+
+
+
   'use cache'
   // In a real app, this would fetch from a database or API
   return {

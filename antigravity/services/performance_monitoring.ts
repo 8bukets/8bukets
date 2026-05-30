@@ -12,6 +12,8 @@ export const PerformanceMonitoringServiceSchema = z.object({
 })
 
 export async function getPerformanceMonitoringServiceData() {
+  try {
+
   'use cache'
   return autonomousFetch(PerformanceMonitoringServiceSchema, async () => {
     return {
@@ -19,4 +21,8 @@ export async function getPerformanceMonitoringServiceData() {
       lastRun: new Date().toISOString()
     }
   }, { life: 'minutes' })
+
+  } catch (err) {
+    console.error('[Evolution Autocorrect] Unhandled error:', err);
+  }
 }

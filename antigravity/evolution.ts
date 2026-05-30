@@ -56,12 +56,21 @@ export async function evolve() {
           })
         }
 
-        // Rule 4: Security - Detect execSync
-        if (content.includes('execSync(')) {
+        // Rule 4: Security & Performance - Detect blocking execSync/execFileSync
+        if (content.includes('execSync(') || content.includes('execFileSync(')) {
           suggestions.push({
             file: fullPath.replace(process.cwd(), ''),
             complexity: lines,
-            suggestion: 'SECURITY_VULNERABILITY: execSync detected. Risk of command injection. Refactor to use execFileSync or spawnSync.'
+            suggestion: 'SECURITY_PERF_VULNERABILITY: Blocking execSync/execFileSync detected. Risk of command injection and event loop blocking. Refactor to use non-blocking execAsync or execFileAsync via promisify.'
+          })
+        }
+
+        // Rule 5: Async Hygiene - Detect sync fs in async contexts
+        if (content.includes('async function') && (content.includes('fs.readFileSync') || content.includes('fs.writeFileSync') || content.includes('fs.existsSync'))) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'ASYNC_HYGIENE_VIOLATION: Synchronous fs operation detected inside an asynchronous function. This blocks the event loop. Refactor to use fs.promises.'
           })
         }
       }
