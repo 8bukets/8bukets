@@ -2,8 +2,9 @@ import fs from 'fs';
 import path from 'path';
 
 const WORKFLOW_DIR = path.join(process.cwd(), '.github', 'workflows');
+const SCRIPTS_DIR = path.join(process.cwd(), 'antigravity', 'workflows');
 
-function generateWorkflow(name: string, scriptName: string) {
+function generateWorkflow(name: string, scriptPath: string) {
   const workflowContent = `name: ${name}
 
 on:
@@ -32,7 +33,7 @@ jobs:
         run: npm ci
 
       - name: Execute Task
-        run: npx tsx scripts/${scriptName}.ts
+        run: npx tsx ${scriptPath}
 
       - name: Commit and Push Changes
         run: |
@@ -183,7 +184,20 @@ function main() {
     fs.mkdirSync(WORKFLOW_DIR, { recursive: true });
   }
 
-  generateWorkflow('Dynamic Data Sync', 'autonomous_sync');
+  // Generate dynamic data sync manually as before
+  generateWorkflow('Dynamic Data Sync', 'scripts/autonomous_sync.ts');
+
+  // Autonomously scan and generate for every workflow in antigravity/workflows
+  if (fs.existsSync(SCRIPTS_DIR)) {
+    const files = fs.readdirSync(SCRIPTS_DIR);
+    for (const file of files) {
+      if (file.endsWith('_workflow.ts')) {
+        const name = file.replace('_workflow.ts', '').split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') + ' Workflow';
+        generateWorkflow(name, `antigravity/workflows/${file}`);
+      }
+    }
+  }
+
   generateFullyAutonomousWorkflow();
   console.log('Workflow creation engine completed.');
 }
