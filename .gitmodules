@@ -1,3 +1,6 @@
 [submodule "hcp-packer-tutorial"]
 	path = hcp-packer-tutorial
 	url = https://github.com/hashicorp-education/learn-hcp-packer-get-started
+[submodule "web-app"]
+	path = web-app
+	url = https://github.com/8bukets/8bukets.git
