@@ -251,6 +251,15 @@ export class Jules {
     const reactSteps = await reactService.executeCycle('Optimize system posture using ReAct', reactTools)
     this.recordTask(`ReAct: Completed ${reactSteps.length} reasoning-action steps.`)
 
+    // Sentient Orchestration (Phase 13 Integration)
+    console.log('🧠 [Jules] Coordinating Sentient Orchestration for Phase 13...')
+    const { orchestrationEngine } = await import('./services/sentient_orchestration')
+    await orchestrationEngine.coordinateIntents([
+      { agent: 'Jules', action: 'DEPLOY_APAC_EDGE_NODES', priority: 'High' },
+      { agent: 'Jules', action: 'ENFORCE_ZERO_LATENCY_SYNC', priority: 'Medium' }
+    ])
+    this.recordTask('Sentient Orchestration: Coordinated Phase 13 deployment intents.')
+
     // Knowledge Observation
     console.log('👁️ [Jules] Initiating Knowledge Observation...')
     const { observeKnowledge, persistKnowledge } = await import('./services/knowledge_observer')

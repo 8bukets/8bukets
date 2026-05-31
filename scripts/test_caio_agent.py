@@ -28,10 +28,19 @@ async def test_caio_agent():
 
     # Check for Phase 12 directives if AGENTS.md is at Phase 12
     with open('AGENTS.md', 'r') as f:
-        if "Phase 12: Autonomous Super-Intelligence (Current)" in f.read():
+        agents_docs = f.read()
+        if "Phase 12: Autonomous Super-Intelligence (Current)" in agents_docs or "Phase 13" in agents_docs:
             assert "ACTIVATE_SENTIENT_ORCHESTRATION" in result["strategic_directives"]
             assert "ESTABLISH_ETHICS_FRAMEWORK" in result["strategic_directives"]
             assert "OPTIMIZE_ROI_TRACKING" in result["strategic_directives"]
+
+    # Check for Phase 13 integrated knowledge directives
+    # Based on data/knowledge/system_knowledge.json which was updated during the cycle
+    assert "ACTIVATE_PHASE_13_PROTOCOLS" in result["strategic_directives"]
+    assert "DEPLOY_APAC_EDGE_NODES" in result["strategic_directives"]
+
+    # Verify Market Intelligence integration in summary
+    assert "Market Intelligence Q3" in result["executive_summary"] or "demand for sovereign AI clusters" in result["executive_summary"]
 
     print("Test passed!")
 
