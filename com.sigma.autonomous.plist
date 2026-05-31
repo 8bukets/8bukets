@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.sigma.autonomous</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>-c</string>
+        <string>cd /path/to/project &amp;&amp; ./start_all.sh</string>
+    </array>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>SYSTEM_AUTH_TOKEN</key>
+        <string>default_dev_token</string>
+    </dict>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>StandardErrorPath</key>
+    <string>/tmp/com.sigma.autonomous.err</string>
+    <key>StandardOutPath</key>
+    <string>/tmp/com.sigma.autonomous.out</string>
+</dict>
+</plist>
