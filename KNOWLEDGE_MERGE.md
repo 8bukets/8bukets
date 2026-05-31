@@ -4598,3 +4598,4662 @@ All the best - https://markposition.wordpress.com
   - **Result:** Verify local deployment and dashboard rendering
 - **Branch:** `remotes/origin/wilson-sonsini-docs-9972618481466643391`
   - **Result:** docs: add Wilson Sonsini firm profile and practice areas
+
+## Ecosystem Knowledge Consolidation (2026-05-30T22:39:14.742Z)
+### 📂 Category: OTHER
+#### 🌐 Strategic Domain: General
+- **Branch:** `jules-12663912162506492305-a6752df2`
+  - **Result:** Merge pull request #2266 from 8bukets/duo-planner-system-prompt-fix-16632607976400072007
+- **Branch:** `main`
+  - **Result:** Merge pull request #2266 from 8bukets/duo-planner-system-prompt-fix-16632607976400072007
+
+### 📂 Category: REMOTES
+#### 🌐 Strategic Domain: General
+- **Branch:** `remotes/origin/HEAD -> origin/jules/scraper-markposition-17752547678215960211`
+  - **Result:** Merge pull request #2263 from 8bukets/ingest-remote-subagents-13626091139436294036
+- **Branch:** `remotes/origin/analytics-redundant-parsing-fix-4098087028764432479`
+  - **Result:** Merge branch 'jules/scraper-markposition-17752547678215960211' into analytics-redundant-parsing-fix-4098087028764432479
+- **Branch:** `remotes/origin/artmusicpage-scraper-13642650452924627148`
+  - **Result:** Merge branch 'jules/scraper-markposition-17752547678215960211' into artmusicpage-scraper-13642650452924627148 resolving conflicts
+- **Branch:** `remotes/origin/blocking-async-batch-fix-8387232668981368166`
+  - **Result:** Merge branch 'jules/scraper-markposition-17752547678215960211' into blocking-async-batch-fix-8387232668981368166
+- **Branch:** `remotes/origin/duo-planner-system-prompt-fix-16632607976400072007`
+  - **Result:** chore: Fix Duo Planner system prompt by removing hallucinated Development and Implementation Notes
+- **Branch:** `remotes/origin/feat/autonomous-daily-license-knowledge-sync-10372390239614697679`
+  - **Result:** feat: autonomous daily knowledge ingestion and license validation
+- **Branch:** `remotes/origin/feat/chief-ai-officer-creation-fix-15085892723513843344`
+  - **Result:** Merge branch 'main' into feat/chief-ai-officer-creation-fix-15085892723513843344
+- **Branch:** `remotes/origin/feat/ecosystem-sync-optimization-3894010060803274875`
+  - **Result:** feat: optimize ecosystem collaboration and knowledge merge protocol
+- **Branch:** `remotes/origin/feat/icloud-knowledge-system-improvement-9850230953244404299`
+  - **Result:** feat: integrate iCloud knowledge and improve evolution engine/agents
+- **Branch:** `remotes/origin/feat/scan-software-online-review-12068023973855912854`
+  - **Result:** Merge main into feat/scan-software-online-review-12068023973855912854 and resolve conflicts
+- **Branch:** `remotes/origin/ingest-remote-subagents-13626091139436294036`
+  - **Result:** Merge branch 'jules/scraper-markposition-17752547678215960211' into ingest-remote-subagents-13626091139436294036
+- **Branch:** `remotes/origin/jules-10804936454534876603-52aca57c`
+  - **Result:** feat: implement Jenkins API integration and ecosystem sync trigger
+- **Branch:** `remotes/origin/jules-16125195344274130564-4d22cb5e`
+  - **Result:** chore: add gitlab ci/cd tutorial jobs
+- **Branch:** `remotes/origin/jules-2876054462022588492-84e7dde1`
+  - **Result:** fix: use nodejs for json stringify to preserve unicode encoding
+- **Branch:** `remotes/origin/jules/scraper-markposition-17752547678215960211`
+  - **Result:** Merge pull request #2263 from 8bukets/ingest-remote-subagents-13626091139436294036
+- **Branch:** `remotes/origin/main`
+  - **Result:** Merge pull request #2266 from 8bukets/duo-planner-system-prompt-fix-16632607976400072007
+- **Branch:** `remotes/origin/performance/optimize-scraper-lxml-5877012242930540926`
+  - **Result:** ⚡ Optimize scraper parsing with lxml
+- **Branch:** `remotes/origin/scrape-oracle-news-9936778584663660002`
+  - **Result:** Merge branch 'jules/scraper-markposition-17752547678215960211' into scrape-oracle-news-9936778584663660002 # Please enter a commit message to explain why this merge is necessary, # especially if it merges an updated upstream into a topic branch. # # Lines starting with '#' will be ignored, and an empty message aborts # the commit.
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-6855106868508477486`
+  - **Result:** Merge branch 'jules/scraper-markposition-17752547678215960211' into sentinel-csv-injection-fix-6855106868508477486 resolving modify/delete conflicts
+- **Branch:** `remotes/origin/update-ai-agent-architecture-10730539674470756070`
+  - **Result:** Merge branch 'jules/scraper-markposition-17752547678215960211' into update-ai-agent-architecture-10730539674470756070 resolving modify/delete conflicts by keeping our versions
+- **Branch:** `remotes/origin/update-gitlab-security-agent-prompt-12909774882496112164`
+  - **Result:** Update GitLab Security Analyst Agent system prompt
+
+## Ecosystem Knowledge Consolidation (2026-05-31T01:13:06.503Z)
+### 📂 Category: OTHER
+#### 🌐 Strategic Domain: General
+- **Branch:** `jules-12654712675481574533-b16dbf26`
+  - **Result:** 🤖 fix: autonomous self-repair of 2 issues
+  - **Artifacts:** 2 files modified.
+- **Branch:** `main`
+  - **Result:** Merge pull request #2267 from 8bukets/chore/docker-collaboration-sync-12663912162506492305
+
+### 📂 Category: REMOTES
+#### 🌐 Strategic Domain: General
+- **Branch:** `remotes/origin/chore/docker-collaboration-sync-12663912162506492305`
+  - **Result:** chore: connect with docker and synchronize collaboration context
+- **Branch:** `remotes/origin/main`
+  - **Result:** Merge pull request #2267 from 8bukets/chore/docker-collaboration-sync-12663912162506492305
+
+## Ecosystem Knowledge Consolidation (2026-05-31T03:29:28.250Z)
+### 📂 Category: OTHER
+#### 🌐 Strategic Domain: General
+- **Branch:** `jules-2618891744527446207-4e1649d7`
+  - **Result:** Merge pull request #2273 from 8bukets/feat/intelephense-docs-integration-6696356503965723987
+- **Branch:** `main`
+  - **Result:** Merge pull request #2273 from 8bukets/feat/intelephense-docs-integration-6696356503965723987
+
+### 📂 Category: REMOTES
+#### 🌐 Strategic Domain: General
+- **Branch:** `remotes/origin/feat/autonomous-creation-ignition-12654712675481574533`
+  - **Result:** feat: execute full autonomous creation and execution cycle
+- **Branch:** `remotes/origin/feat/autonomous-daily-evolution-16799344263411811050`
+  - **Result:** feat: programmatically generate daily autonomous evolution workflow
+- **Branch:** `remotes/origin/feat/autonomous-daily-sync-refactor-11777205157744306714`
+  - **Result:** feat: refactor Jules daily sync for async hygiene and standardize iCloud paths
+- **Branch:** `remotes/origin/feat/intelephense-docs-integration-6696356503965723987`
+  - **Result:** feat: integrate Intelephense documentation and unify knowledge base
+- **Branch:** `remotes/origin/feat/intelephense-docs-update-5938787758015081598`
+  - **Result:** feat: update Intelephense documentation and improve knowledge ingestion
+- **Branch:** `remotes/origin/main`
+  - **Result:** Merge pull request #2273 from 8bukets/feat/intelephense-docs-integration-6696356503965723987
+- **Branch:** `remotes/origin/oracle-ai-knowledge-14411165512379149104`
+  - **Result:** feat: add Oracle AI to knowledge observation URLs
+
+
+## Ecosystem Knowledge Consolidation (2026-05-31T03:33:07.498Z)
+### 📂 Category: OTHER
+#### 🌐 Strategic Domain: General
+- **Branch:** `jules-2618891744527446207-4e1649d7`
+  - **Result:** Commit: Merge pull request #2273 from 8bukets/feat/intelephense-docs-integration-6696356503965723987
+- **Branch:** `main`
+  - **Result:** Commit: Merge pull request #2273 from 8bukets/feat/intelephense-docs-integration-6696356503965723987
+
+### 📂 Category: REMOTES
+#### 🌐 Strategic Domain: General
+- **Branch:** `remotes/origin/HEAD -> origin/jules/scraper-markposition-17752547678215960211`
+  - **Result:** Commit: Merge pull request #2263 from 8bukets/ingest-remote-subagents-13626091139436294036
+- **Branch:** `remotes/origin/add-a2a-remote-agent-152042865285525971`
+  - **Result:** Commit: feat: add generic A2A remote agent configuration
+- **Branch:** `remotes/origin/add-acp-integration-docs-10087323336683703862`
+  - **Result:** Commit: docs: add ACP integration guide for Docker Agent
+- **Branch:** `remotes/origin/add-chief-ai-officer-agent-9719417263665099785`
+  - **Result:** Commit: feat: inject Chief AI Officer tasks into Jules memory
+- **Branch:** `remotes/origin/add-compile-definition-17628200376543609981`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-compile-definition-17628200376543609981
+- **Branch:** `remotes/origin/add-compile-definition-6604126612521959588`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-compile-definition (Resolved conflicts by removing bytecode and data files, favoring PR content)
+- **Branch:** `remotes/origin/add-compile-definition-8931819634976410807`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-compile-definition-8931819634976410807
+- **Branch:** `remotes/origin/add-docker-agent-model-docs-997437020929679972`
+  - **Result:** Commit: docs: add docker agent model providers documentation
+- **Branch:** `remotes/origin/add-docker-mcp-catalog-knowledge-9644100882668346855`
+  - **Result:** Commit: docs(knowledge): ingest Docker MCP Catalog into AI Agents KB
+- **Branch:** `remotes/origin/add-docker-push-methods-8792019299013764107`
+  - **Result:** Commit: Add Docker push automation mechanisms
+- **Branch:** `remotes/origin/add-docker-scripts-14962706392589598489`
+  - **Result:** Commit: feat: add docker deployment scripts
+- **Branch:** `remotes/origin/add-duo-planner-agent-8887381606310982436`
+  - **Result:** Commit: Add Duo Planner Agent system prompt
+- **Branch:** `remotes/origin/add-duo-planner-agent-config-16696385487941017117`
+  - **Result:** Commit: Add Duo Planner AI Agent configuration
+- **Branch:** `remotes/origin/add-filip-keser-license-9070216148560290832`
+  - **Result:** Commit: chore: Add proprietary intellectual property license for Filip Keser
+- **Branch:** `remotes/origin/add-gemini-ide-docs-5507798578309108991`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-gemini-ide-docs-5507798578309108991
+- **Branch:** `remotes/origin/add-gemini-test-csharp-11995490696655996242`
+  - **Result:** Commit: Add standalone C# script for Gemini API test
+- **Branch:** `remotes/origin/add-gemini-test-script-13275281353682128728`
+  - **Result:** Commit: Add script to test gemini model
+- **Branch:** `remotes/origin/add-geminiignore-3994117053724199623`
+  - **Result:** Commit: chore: add .geminiignore file to exclude sensitive/irrelevant files
+- **Branch:** `remotes/origin/add-github-pages-setup-3416434342592822830`
+  - **Result:** Commit: Add GitHub Pages quickstart documentation and automation script
+- **Branch:** `remotes/origin/add-gitlab-runner-service-1151466855069035440`
+  - **Result:** Commit: feat: add autonomous GitLab Runner service to docker-compose
+- **Branch:** `remotes/origin/add-gitlab-security-agent-1535791743023514868`
+  - **Result:** Commit: Add GitLab Security Analyst Agent prompt to .gemini/agents
+- **Branch:** `remotes/origin/add-gitlab-security-agent-prompt-16540176671068222176`
+  - **Result:** Commit: feat(agents): Add GitLab Security Analyst Agent prompt
+- **Branch:** `remotes/origin/add-gitlab-security-agent-prompt-6060929454808838034`
+  - **Result:** Commit: docs(agents): add GitLab Security Analyst Agent system prompt
+- **Branch:** `remotes/origin/add-golang-developer-agents-5802231143872030735`
+  - **Result:** Commit: feat: Add golang developer subagents
+- **Branch:** `remotes/origin/add-google-ads-knowledge-4095321584408330018`
+  - **Result:** Commit: feat(knowledge): add google ads and ad manager documentation\n\n- Fix locale fetching issue in ingest script\n- Add google_ads source to knowledge merge agent\n- Regenerate system knowledge artifacts
+- **Branch:** `remotes/origin/add-google-edge-agent-9371392929328195231`
+  - **Result:** Commit: Merge pull request #2178 from 8bukets/feat/google-innovation-knowledge-3073243176804240163
+- **Branch:** `remotes/origin/add-google-research-agent-6251052890466246126`
+  - **Result:** Commit: feat: add GoogleModelsResearchAgent and standalone scraper
+- **Branch:** `remotes/origin/add-intelephense-scraper-1993524492524163396`
+  - **Result:** Commit: feat: Add intelephense_scraper.py to extract Intelephense docs
+- **Branch:** `remotes/origin/add-jenkins-metrics-12709603847827089760`
+  - **Result:** Commit: feat: Add Jenkins pipeline metrics to collaboration service
+- **Branch:** `remotes/origin/add-jules-cli-7658708591293792322`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-jules-cli-7658708591293792322
+- **Branch:** `remotes/origin/add-litert-scraper-14251549664882389876`
+  - **Result:** Commit: Add scraper for Google LiteRT documentation
+- **Branch:** `remotes/origin/add-malubeach-scraper-16704333902164650708`
+  - **Result:** Commit: Implement Autonomous Multi-Agent System architecture
+- **Branch:** `remotes/origin/add-mongodb-atlas-credentials-17739045232478792657`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-mongodb-atlas-credentials-17739045232478792657
+- **Branch:** `remotes/origin/add-mysql-agent-12534386317238704274`
+  - **Result:** Commit: feat: implement autonomous capabilities for JulesEvolutionAgent
+- **Branch:** `remotes/origin/add-prompts-md-15347215170790120341`
+  - **Result:** Commit: feat: handle API rate limits and resume capabilities in prompt runner
+- **Branch:** `remotes/origin/add-sharing-agents-doc-12054475314514014573`
+  - **Result:** Commit: docs: add documentation for sharing agents via Docker
+- **Branch:** `remotes/origin/add-stitch-scraper-10970862194903572827`
+  - **Result:** Commit: Consolidate and apply security fixes
+- **Branch:** `remotes/origin/add-subagents-14416725836573894587`
+  - **Result:** Commit: Add generalist and browser_agent subagents
+- **Branch:** `remotes/origin/add-test-gemini-script-4486670142137442635`
+  - **Result:** Commit: feat: add script to test google genai sdk
+- **Branch:** `remotes/origin/add-vercel-sandbox-script-10704006226783687744`
+  - **Result:** Commit: Added sandbox_test.ts with @vercel/sandbox usage and installed required dependencies
+- **Branch:** `remotes/origin/add-vercel-sandbox-test-15599509857500160318`
+  - **Result:** Commit: Add Vercel Sandbox integration test script
+- **Branch:** `remotes/origin/add-wilson-sonsini-docs-11494390792641278551`
+  - **Result:** Commit: docs: add documentation for Wilson Sonsini Goodrich & Rosati
+- **Branch:** `remotes/origin/ads-knowledge-ingestion-9541697954921298929`
+  - **Result:** Commit: docs: ingest Google Ads and Ad Manager knowledge base
+- **Branch:** `remotes/origin/agent-test-run-3390`
+  - **Result:** Commit: Test run (69e4de90893fae6bdef03390)
+- **Branch:** `remotes/origin/analytics-redundant-parsing-fix-4098087028764432479`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into analytics-redundant-parsing-fix-4098087028764432479
+- **Branch:** `remotes/origin/analytics-single-pass-optimization-8605272393071134080`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into analytics-single-pass-optimization (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/artmusicpage-scraper-13642650452924627148`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into artmusicpage-scraper-13642650452924627148 resolving conflicts
+- **Branch:** `remotes/origin/async-fluent-workflow-17630423864710655172`
+  - **Result:** Commit: refactor: replace blocking sync calls with non-blocking async across Python/TS agents
+- **Branch:** `remotes/origin/automate-intelephense-docs-sync-12135685512033520108`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into automate-intelephense-docs-sync-12135685512033520108
+- **Branch:** `remotes/origin/automate-markposition-knowledge-merge-14646945117315419790`
+  - **Result:** Commit: feat: automate markposition knowledge merge and enhance autonomous cycle
+- **Branch:** `remotes/origin/autonomous-agents-framework-90146205652415261`
+  - **Result:** Commit: Implement autonomous multi-agent system for ads and content
+- **Branch:** `remotes/origin/autonomous-cloud-integration-v2-7175106802837350237`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into autonomous-cloud-integration-v2-7175106802837350237
+- **Branch:** `remotes/origin/autonomous-cloud-organism-8050182996160797424`
+  - **Result:** Commit: feat: fully integrated autonomous cloud-connected organism
+- **Branch:** `remotes/origin/autonomous-creation-cycle-1075943793736292428`
+  - **Result:** Commit: Merge branch 'main' into autonomous-creation-cycle-1075943793736292428 (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/autonomous-creation-evolution-14168201882249018244`
+  - **Result:** Commit: feat: implement full autonomous creation and execution cycle
+- **Branch:** `remotes/origin/autonomous-daily-sync-refinement-17898063665932042144`
+  - **Result:** Commit: Merge branch 'main' into autonomous-daily-sync-refinement-17898063665932042144
+- **Branch:** `remotes/origin/autonomous-daily-work-fix-recursion-and-streamline-17917200239377968784`
+  - **Result:** Commit: 🤖 chore: Antigravity autonomous core optimization and deployment automation
+- **Branch:** `remotes/origin/autonomous-engine-and-work-orders-5472523483534806540`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into autonomous-engine-and-work-orders-5472523483534806540
+- **Branch:** `remotes/origin/autonomous-loop-enhancement-4557411631469647525`
+  - **Result:** Commit: feat(core): implement autonomous consciousness loop and robust bootstrapping
+- **Branch:** `remotes/origin/autonomous-workflow-creation-17803793083721136421`
+  - **Result:** Commit: feat: full autonomous automatic workflow creation
+- **Branch:** `remotes/origin/best-value-knowledge-integration-17085817906964827060`
+  - **Result:** Commit: chore: downgrade node to v20 and remove untracked web-app submodule
+- **Branch:** `remotes/origin/blocking-async-batch-fix-8387232668981368166`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into blocking-async-batch-fix-8387232668981368166
+- **Branch:** `remotes/origin/bolt-analysis-optimization-12466745862754817385`
+  - **Result:** Commit: ⚡ Bolt: Optimize AnalysisAgent string processing
+- **Branch:** `remotes/origin/bolt-analytics-loop-fusion-2154090310965325169`
+  - **Result:** Commit: ⚡ Bolt: Fuse loops in analytics.py for O(N) single-pass aggregation
+- **Branch:** `remotes/origin/bolt-analytics-loop-fusion-4342012847249900150`
+  - **Result:** Commit: perf: optimize analytics.py by fusing multiple data passes
+- **Branch:** `remotes/origin/bolt-analytics-memory-opt-10610699281805131592`
+  - **Result:** Commit: perf: Use generators in analytics.py to reduce memory usage
+- **Branch:** `remotes/origin/bolt-analytics-memory-optimization-4307986311279861534`
+  - **Result:** Commit: feat: Optimize analytics.py for memory efficiency
+- **Branch:** `remotes/origin/bolt-analytics-optimization-10259687893878942359`
+  - **Result:** Commit: feat: optimize analytics performance with generators and string processing
+- **Branch:** `remotes/origin/bolt-analytics-optimization-10417480937021811411`
+  - **Result:** Commit: ⚡ Bolt: Optimize analytics to O(N) single pass
+- **Branch:** `remotes/origin/bolt-analytics-optimization-10908515795509236780`
+  - **Result:** Commit: Optimize analytics.py memory usage
+- **Branch:** `remotes/origin/bolt-analytics-optimization-12040692262001191394`
+  - **Result:** Commit: ⚡ Bolt: Optimize analytics.py to use single-pass aggregation
+- **Branch:** `remotes/origin/bolt-analytics-optimization-12107031809392749414`
+  - **Result:** Commit: perf(analytics): optimize report generation to single-pass O(N)
+- **Branch:** `remotes/origin/bolt-analytics-optimization-15648676833550371347`
+  - **Result:** Commit: ⚡ Bolt: Optimize analytics report generation
+- **Branch:** `remotes/origin/bolt-analytics-optimization-16185313300638390327`
+  - **Result:** Commit: ⚡ Bolt: Optimize analytics reporting with single-pass aggregation
+- **Branch:** `remotes/origin/bolt-analytics-optimization-3925011970490500691`
+  - **Result:** Commit: Optimize analytics.py to use single-pass aggregation
+- **Branch:** `remotes/origin/bolt-analytics-optimization-6615736312449976122`
+  - **Result:** Commit: ⚡ Bolt: Optimize category aggregation in analytics.py
+- **Branch:** `remotes/origin/bolt-analytics-optimization-8754151602006681142`
+  - **Result:** Commit: ⚡ Bolt: Optimize analytics generation to O(N) single pass
+- **Branch:** `remotes/origin/bolt-analytics-optimization-9055809169994208402`
+  - **Result:** Commit: ⚡ Bolt: Optimize analytics.py with Single Pass Aggregation
+- **Branch:** `remotes/origin/bolt-analytics-optimization-9245305458713542172`
+  - **Result:** Commit: Optimize analytics.py memory usage with generators
+- **Branch:** `remotes/origin/bolt-analyzer-optimization-1039143641568215889`
+  - **Result:** Commit: ⚡ Bolt: Optimize analyzer agent text processing
+- **Branch:** `remotes/origin/bolt-async-optimization-17019192007308131851`
+  - **Result:** Commit: ⚡ Bolt: Offload HTML parsing to thread
+- **Branch:** `remotes/origin/bolt-async-optimization-18155339096957841693`
+  - **Result:** Commit: ⚡ Bolt: Offload HTML parsing to thread pool
+- **Branch:** `remotes/origin/bolt-async-optimization-4906889186346538478`
+  - **Result:** Commit: ⚡ Bolt: Offload HTML parsing to thread to unblock event loop
+- **Branch:** `remotes/origin/bolt-async-optimization-9675568938464924423`
+  - **Result:** Commit: ⚡ Bolt: Offload blocking HTML parsing to thread
+- **Branch:** `remotes/origin/bolt-async-parse-opt-5806315705291172579`
+  - **Result:** Commit: Refactor scraper to offload parsing to thread and optimize regex
+- **Branch:** `remotes/origin/bolt-async-parse-optimization-17693505208777123088`
+  - **Result:** Commit: perf: Offload BeautifulSoup parsing to thread to unblock event loop
+- **Branch:** `remotes/origin/bolt-async-parse-regex-opt-12710797726778672073`
+  - **Result:** Commit: ⚡ Bolt: Offload parsing to thread pool & compile regexes
+- **Branch:** `remotes/origin/bolt-async-parsing-10671026750053224603`
+  - **Result:** Commit: ⚡ Bolt: Offload BeautifulSoup parsing to thread pool
+- **Branch:** `remotes/origin/bolt-async-parsing-11906074804497759769`
+  - **Result:** Commit: ⚡ Bolt: Offload BeautifulSoup parsing to thread
+- **Branch:** `remotes/origin/bolt-async-parsing-optimization-10869312390667142274`
+  - **Result:** Commit: ⚡ Bolt: Offload HTML parsing to thread
+- **Branch:** `remotes/origin/bolt-async-parsing-optimization-11309019924102245471`
+  - **Result:** Commit: Offload HTML parsing to thread pool
+- **Branch:** `remotes/origin/bolt-async-parsing-optimization-15796324175829374067`
+  - **Result:** Commit: perf: offload BeautifulSoup parsing to ProcessPoolExecutor
+- **Branch:** `remotes/origin/bolt-async-parsing-optimization-16928478907331553519`
+  - **Result:** Commit: Offload CPU-bound HTML parsing to executor in scraper.py
+- **Branch:** `remotes/origin/bolt-async-parsing-optimization-17244427144054683353`
+  - **Result:** Commit: ⚡ Optimize scraper by offloading parsing to thread
+- **Branch:** `remotes/origin/bolt-async-parsing-optimization-3479730324006213942`
+  - **Result:** Commit: perf: offload BeautifulSoup parsing to thread
+- **Branch:** `remotes/origin/bolt-async-parsing-optimization-3568259514933349807`
+  - **Result:** Commit: perf: offload HTML parsing to thread in scraper
+- **Branch:** `remotes/origin/bolt-async-parsing-optimization-6782640561880268211`
+  - **Result:** Commit: ⚡ Bolt: Offload HTML parsing to thread pool
+- **Branch:** `remotes/origin/bolt-async-parsing-optimization-8617457668071063436`
+  - **Result:** Commit: ⚡ Bolt: Offload BeautifulSoup parsing to thread executor
+- **Branch:** `remotes/origin/bolt-async-parsing-optimization-8695577183440719223`
+  - **Result:** Commit: Perf: Offload BeautifulSoup parsing to thread
+- **Branch:** `remotes/origin/bolt-async-scraper-fix-5849364190017238219`
+  - **Result:** Commit: ⚡ Bolt: Offload CPU-bound parsing to thread in scraper
+- **Branch:** `remotes/origin/bolt-async-scraper-fix-6895103930580952900`
+  - **Result:** Commit: ⚡ Bolt: Offload scraping parser to thread
+- **Branch:** `remotes/origin/bolt-async-scraper-opt-236202996033375697`
+  - **Result:** Commit: ⚡ Bolt: Offload scraping parsing to ProcessPoolExecutor
+- **Branch:** `remotes/origin/bolt-async-scraper-optimization-11422947491382732977`
+  - **Result:** Commit: ⚡ Bolt: Offload HTML parsing to thread pool
+- **Branch:** `remotes/origin/bolt-async-scraper-optimization-14623000177862231977`
+  - **Result:** Commit: Refactor scraper to offload CPU-bound parsing to thread
+- **Branch:** `remotes/origin/bolt-async-scraper-optimization-16027372263217553810`
+  - **Result:** Commit: Offload blocking BeautifulSoup parsing to thread pool
+- **Branch:** `remotes/origin/bolt-async-scraper-optimization-1710637214429882909`
+  - **Result:** Commit: ⚡ Bolt: Offload blocking parsing to thread
+- **Branch:** `remotes/origin/bolt-async-scraper-optimization-18077522877937982954`
+  - **Result:** Commit: ⚡ Bolt: Offload BeautifulSoup parsing to thread
+- **Branch:** `remotes/origin/bolt-async-scraper-optimization-4263460897058372515`
+  - **Result:** Commit: perf: offload HTML parsing to thread in scraper
+- **Branch:** `remotes/origin/bolt-async-scraper-optimization-7114866315692870116`
+  - **Result:** Commit: perf: Offload BeautifulSoup parsing to thread pool
+- **Branch:** `remotes/origin/bolt-async-scraper-optimization-8040463036980639883`
+  - **Result:** Commit: ⚡ Bolt: Offload blocking HTML parsing to thread
+- **Branch:** `remotes/origin/bolt-async-scraper-parsing-192663672683263227`
+  - **Result:** Commit: Refactor scraper to offload HTML parsing to threads
+- **Branch:** `remotes/origin/bolt-batch-dom-ops-5293727975411682327`
+  - **Result:** Commit: ⚡ Bolt: Batch DOM operations to reduce I/O overhead
+- **Branch:** `remotes/origin/bolt-bs4-find-optimization-49478983487272964`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing speed by ~44%
+- **Branch:** `remotes/origin/bolt-clean-text-optimization-15712517231246244038`
+  - **Result:** Commit: perf: Optimize whitespace normalization in clean_text
+- **Branch:** `remotes/origin/bolt-clean-text-optimization-16548831371905751572`
+  - **Result:** Commit: perf: Optimize whitespace normalization in scraper
+- **Branch:** `remotes/origin/bolt-clean-text-optimization-9860186096037295595`
+  - **Result:** Commit: perf: Optimize whitespace normalization in scraper
+- **Branch:** `remotes/origin/bolt-concurrency-parsing-15586759878100859891`
+  - **Result:** Commit: feat(scraper): optimize parsing with ProcessPoolExecutor and SoupStrainer
+- **Branch:** `remotes/origin/bolt-connection-pooling-8020030636571914955`
+  - **Result:** Commit: ⚡ Bolt: Implement shared aiohttp session for agents
+- **Branch:** `remotes/origin/bolt-db-optimization-14359321693589117772`
+  - **Result:** Commit: Optimize database writes by reusing connection
+- **Branch:** `remotes/origin/bolt-debounce-search-10101038138588298652`
+  - **Result:** Commit: ⚡ Bolt: Debounce search input
+- **Branch:** `remotes/origin/bolt-debounce-search-10189589861044009220`
+  - **Result:** Commit: ⚡ Bolt: Debounce search input
+- **Branch:** `remotes/origin/bolt-debounce-search-11065117447221496679`
+  - **Result:** Commit: ⚡ Bolt: Debounce search input for performance
+- **Branch:** `remotes/origin/bolt-debounce-search-11570184838163532728`
+  - **Result:** Commit: ⚡ Bolt: Add debounce to search input
+- **Branch:** `remotes/origin/bolt-debounce-search-12215083828535086790`
+  - **Result:** Commit: feat: Debounce search input to optimize performance
+- **Branch:** `remotes/origin/bolt-debounce-search-13593696519054928097`
+  - **Result:** Commit: ⚡ Bolt: Debounce search input to reduce re-renders
+- **Branch:** `remotes/origin/bolt-debounce-search-14062090304060224732`
+  - **Result:** Commit: feat: Debounce search input to optimize performance
+- **Branch:** `remotes/origin/bolt-debounce-search-14084131025983025512`
+  - **Result:** Commit: feat: restore daily schedule and optimize health checks
+- **Branch:** `remotes/origin/bolt-debounce-search-14907047231982502450`
+  - **Result:** Commit: feat(perf): debounce search input to reduce layout thrashing
+- **Branch:** `remotes/origin/bolt-debounce-search-15015862755323404001`
+  - **Result:** Commit: feat: debounce search input to optimize rendering
+- **Branch:** `remotes/origin/bolt-debounce-search-154940420085574792`
+  - **Result:** Commit: ⚡ Bolt: Debounce search input
+- **Branch:** `remotes/origin/bolt-debounce-search-15937062067363092227`
+  - **Result:** Commit: feat(perf): add debounce to search input
+- **Branch:** `remotes/origin/bolt-debounce-search-16930451419718990920`
+  - **Result:** Commit: ⚡ Bolt: Debounce search input to reduce DOM thrashing
+- **Branch:** `remotes/origin/bolt-debounce-search-17010444202675904265`
+  - **Result:** Commit: ⚡ Bolt: Add debounce to search input
+- **Branch:** `remotes/origin/bolt-debounce-search-17545745745752688604`
+  - **Result:** Commit: ⚡ Bolt: Debounce search input to reduce DOM operations
+- **Branch:** `remotes/origin/bolt-debounce-search-17782884208193112120`
+  - **Result:** Commit: feat(perf): debounce search input to improve responsiveness
+- **Branch:** `remotes/origin/bolt-debounce-search-17803271733114223338`
+  - **Result:** Commit: ⚡ Bolt: Debounce search input
+- **Branch:** `remotes/origin/bolt-debounce-search-2682208387063881379`
+  - **Result:** Commit: ⚡ Bolt: Debounce search input to reduce main thread blocking
+- **Branch:** `remotes/origin/bolt-debounce-search-2923495583412528786`
+  - **Result:** Commit: feat(js): debounce search input to improve performance
+- **Branch:** `remotes/origin/bolt-debounce-search-3754580611737527363`
+  - **Result:** Commit: ⚡ Bolt: Implement debounce for search input
+- **Branch:** `remotes/origin/bolt-debounce-search-3808806497375807345`
+  - **Result:** Commit: ⚡ Bolt: Debounce search input
+- **Branch:** `remotes/origin/bolt-debounce-search-4486326226905930522`
+  - **Result:** Commit: ⚡ Bolt: Optimize search input with debouncing
+- **Branch:** `remotes/origin/bolt-debounce-search-4612344697000439824`
+  - **Result:** Commit: feat(perf): debounce search input to reduce DOM manipulations
+- **Branch:** `remotes/origin/bolt-debounce-search-5046410561131707962`
+  - **Result:** Commit: feat: debounce search input to optimize rendering performance
+- **Branch:** `remotes/origin/bolt-debounce-search-5458587862546973151`
+  - **Result:** Commit: ⚡ Bolt: Debounce search input to reduce DOM updates
+- **Branch:** `remotes/origin/bolt-debounce-search-5765463060295849249`
+  - **Result:** Commit: feat: debounce search input to improve performance
+- **Branch:** `remotes/origin/bolt-debounce-search-5898530912352758031`
+  - **Result:** Commit: feat(perf): debounce search input to reduce layout thrashing
+- **Branch:** `remotes/origin/bolt-debounce-search-7271068831945520749`
+  - **Result:** Commit: feat(perf): add debounce to search input
+- **Branch:** `remotes/origin/bolt-debounce-search-7385040987692256738`
+  - **Result:** Commit: ⚡ Bolt: Debounce search input
+- **Branch:** `remotes/origin/bolt-debounce-search-7711708122503264549`
+  - **Result:** Commit: ⚡ Bolt: Debounce search input to reduce DOM reflows
+- **Branch:** `remotes/origin/bolt-debounce-search-7869117738860286874`
+  - **Result:** Commit: ⚡ Bolt: Debounce search input to reduce DOM thrashing
+- **Branch:** `remotes/origin/bolt-debounce-search-867343283904291925`
+  - **Result:** Commit: feat(perf): Debounce search input to reduce DOM updates
+- **Branch:** `remotes/origin/bolt-fix-scrape-timeout-13108681531490414412`
+  - **Result:** Commit: feat: Update runner schedule to bi-weekly
+- **Branch:** `remotes/origin/bolt-frontend-search-optimization-16804922774827713480`
+  - **Result:** Commit: feat: optimize search with debounce and dom caching
+- **Branch:** `remotes/origin/bolt-lxml-optimization-3834757643027911057`
+  - **Result:** Commit: ⚡ Bolt: Use lxml parser for faster scraping
+- **Branch:** `remotes/origin/bolt-lxml-optimization-7391636408942362831`
+  - **Result:** Commit: ⚡ Bolt: Use lxml parser for scraper optimization
+- **Branch:** `remotes/origin/bolt-memory-optimization-15158367831407292930`
+  - **Result:** Commit: Refactor data processing to use memory-efficient iterators
+- **Branch:** `remotes/origin/bolt-memory-optimization-18311455152297625638`
+  - **Result:** Commit: Optimize memory usage in analytics and analysis agent
+- **Branch:** `remotes/origin/bolt-offload-parsing-5398069760556689777`
+  - **Result:** Commit: perf: offload HTML parsing to thread executor
+- **Branch:** `remotes/origin/bolt-offload-parsing-to-thread-9019969067081020441`
+  - **Result:** Commit: perf: offload HTML parsing to thread in scraper
+- **Branch:** `remotes/origin/bolt-optimization-scraper-multiprocessing-3254145258243971400`
+  - **Result:** Commit: ⚡ Bolt: Offload HTML parsing to ProcessPoolExecutor
+- **Branch:** `remotes/origin/bolt-optimize-analytics-11199186361559203608`
+  - **Result:** Commit: ⚡ Bolt: Optimize analytics report generation
+- **Branch:** `remotes/origin/bolt-optimize-analytics-13767692266549105080`
+  - **Result:** Commit: feat: optimize analytics aggregation loop
+- **Branch:** `remotes/origin/bolt-optimize-analytics-16514521859020060404`
+  - **Result:** Commit: ⚡ Bolt: Optimize analytics aggregation
+- **Branch:** `remotes/origin/bolt-optimize-analytics-5015200726449326230`
+  - **Result:** Commit: ⚡ Bolt: Optimize analytics report generation
+- **Branch:** `remotes/origin/bolt-optimize-analytics-7277933248821288581`
+  - **Result:** Commit: ⚡ Bolt: Optimize analytics report generation
+- **Branch:** `remotes/origin/bolt-optimize-analytics-domain-extraction-1553876526108642183`
+  - **Result:** Commit: ⚡ Bolt: Optimize domain extraction in analytics
+- **Branch:** `remotes/origin/bolt-optimize-analytics-generators-8873141183038824574`
+  - **Result:** Commit: perf: Use generators in analytics.py for memory efficiency
+- **Branch:** `remotes/origin/bolt-optimize-analyzer-4732393368633707230`
+  - **Result:** Commit: ⚡ Bolt: Optimize AnalyzerAgent text processing
+- **Branch:** `remotes/origin/bolt-optimize-analyzer-5558185628257100983`
+  - **Result:** Commit: ⚡ Bolt: Optimized text analysis in AnalyzerAgent
+- **Branch:** `remotes/origin/bolt-optimize-clean-text-10105258876847505880`
+  - **Result:** Commit: ⚡ Optimize clean_text with split/join
+- **Branch:** `remotes/origin/bolt-optimize-clean-text-13537839588531471008`
+  - **Result:** Commit: ⚡ Bolt: Optimize text cleaning regex
+- **Branch:** `remotes/origin/bolt-optimize-clean-text-13676587996373080392`
+  - **Result:** Commit: ⚡ Bolt: Optimize whitespace normalization in scraper
+- **Branch:** `remotes/origin/bolt-optimize-clean-text-13915256679579302367`
+  - **Result:** Commit: ⚡ Bolt: Optimize whitespace normalization in scraper.py
+- **Branch:** `remotes/origin/bolt-optimize-clean-text-6140486467981305000`
+  - **Result:** Commit: ⚡ Bolt: optimize clean_text using split/join
+- **Branch:** `remotes/origin/bolt-optimize-clean-text-7547135084806054992`
+  - **Result:** Commit: perf: Optimize text cleaning in scraper using split/join
+- **Branch:** `remotes/origin/bolt-optimize-clean-text-regex-6638118421057821125`
+  - **Result:** Commit: ⚡ Bolt: Optimize regex in clean_text
+- **Branch:** `remotes/origin/bolt-optimize-comment-extraction-12627472394580583874`
+  - **Result:** Commit: Optimize HTML comment extraction in scraper.py
+- **Branch:** `remotes/origin/bolt-optimize-db-connection-12196506237305672986`
+  - **Result:** Commit: ⚡ Bolt: Implement Autonomous Agents & Evolutionary Architecture
+- **Branch:** `remotes/origin/bolt-optimize-db-connection-6272426702807930457`
+  - **Result:** Commit: perf: Reuse SQLite connection in BlogScraper
+- **Branch:** `remotes/origin/bolt-optimize-imports-9749881901187692`
+  - **Result:** Commit: Refactor scraper execution to use direct imports
+- **Branch:** `remotes/origin/bolt-optimize-intelligence-agent-6564710749059078669`
+  - **Result:** Commit: ⚡ Bolt: Optimize string concatenation in IntelligenceAgent
+- **Branch:** `remotes/origin/bolt-optimize-markdown-conversion-9212473309758124688`
+  - **Result:** Commit: ⚡ Bolt: Optimize HTML to Markdown conversion
+- **Branch:** `remotes/origin/bolt-optimize-markdown-parsing-5582723908473381878`
+  - **Result:** Commit: perf: Optimize markdown conversion in scraper (~4x faster parsing)
+- **Branch:** `remotes/origin/bolt-optimize-markdownify-10348114377870192162`
+  - **Result:** Commit: perf: Optimize markdown conversion in scraper
+- **Branch:** `remotes/origin/bolt-optimize-markdownify-1164932624854226635`
+  - **Result:** Commit: perf: Optimize markdown conversion in scraper
+- **Branch:** `remotes/origin/bolt-optimize-markdownify-usage-1055696794697199315`
+  - **Result:** Commit: perf: Use MarkdownConverter.convert_soup to avoid re-parsing
+- **Branch:** `remotes/origin/bolt-optimize-parsing-17107118715400400721`
+  - **Result:** Commit: ⚡ Bolt: Optimize HTML parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-optimize-parsing-8171537379019702496`
+  - **Result:** Commit: ⚡ Bolt: Optimize HTML parsing with SoupStrainer and find()
+- **Branch:** `remotes/origin/bolt-optimize-regex-4471345614955732117`
+  - **Result:** Commit: ⚡ Bolt: Optimize regex usage in scraper
+- **Branch:** `remotes/origin/bolt-optimize-regex-scraper-12446079025998555334`
+  - **Result:** Commit: ⚡ Bolt: Optimize regex performance in scraper
+- **Branch:** `remotes/origin/bolt-optimize-researcher-agent-subprocess-15744281419787264708`
+  - **Result:** Commit: ⚡ Bolt: Optimize ResearcherAgent by removing subprocess calls
+- **Branch:** `remotes/origin/bolt-optimize-scraper-12240886470808254228`
+  - **Result:** Commit: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into bolt-optimize-scraper-12240886470808254228
+- **Branch:** `remotes/origin/bolt-optimize-scraper-async-11612507418295470229`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper async I/O and CPU tasks
+- **Branch:** `remotes/origin/bolt-optimize-scraper-bs4-5091120163472675133`
+  - **Result:** Commit: perf(scraper): Optimize BeautifulSoup parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-optimize-scraper-connections-4828433141129646655`
+  - **Result:** Commit: perf: Reuse requests Session and SQLite connection in BlogScraper
+- **Branch:** `remotes/origin/bolt-optimize-scraper-connections-7961924356525398358`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper with persistent connections
+- **Branch:** `remotes/origin/bolt-optimize-scraper-db-12953428567308713973`
+  - **Result:** Commit: ⚡ Bolt: Optimize DB operations with persistent connection
+- **Branch:** `remotes/origin/bolt-optimize-scraper-lxml-6085458244343772742`
+  - **Result:** Commit: perf(scraper): replace BeautifulSoup with lxml for faster parsing
+- **Branch:** `remotes/origin/bolt-optimize-scraper-parser-12123899210017685126`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper using SoupStrainer
+- **Branch:** `remotes/origin/bolt-optimize-scraper-parsing-11174604161297241806`
+  - **Result:** Commit: perf(scraper): optimize HTML comment extraction with regex
+- **Branch:** `remotes/origin/bolt-optimize-scraper-parsing-11280633053696081598`
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into bolt-optimize-scraper-parsing-11280633053696081598
+- **Branch:** `remotes/origin/bolt-optimize-scraper-parsing-11763802598195997667`
+  - **Result:** Commit: ⚡ Bolt: Optimize HTML parsing with Regex extraction
+- **Branch:** `remotes/origin/bolt-optimize-scraper-parsing-11919903531879906039`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into bolt-optimize-scraper-parsing-11919903531879906039
+- **Branch:** `remotes/origin/bolt-optimize-scraper-parsing-12415992345668715669`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing logic
+- **Branch:** `remotes/origin/bolt-optimize-scraper-parsing-15151560624780715186`
+  - **Result:** Commit: feat: Optimize scraper parsing with lxml and SoupStrainer
+- **Branch:** `remotes/origin/bolt-optimize-scraper-parsing-16907071168854197737`
+  - **Result:** Commit: perf(scraper): offload html parsing to thread
+- **Branch:** `remotes/origin/bolt-optimize-scraper-parsing-17875273537499629429`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing logic
+- **Branch:** `remotes/origin/bolt-optimize-scraper-parsing-2345287755710675477`
+  - **Result:** Commit: Perf: Optimize HTML parsing in scraper.py
+- **Branch:** `remotes/origin/bolt-optimize-scraper-parsing-2530261378452141997`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with SoupStrainer and pre-compiled regex
+- **Branch:** `remotes/origin/bolt-optimize-scraper-parsing-3242610597383996985`
+  - **Result:** Commit: ⚡ Bolt: optimize scraper parsing with regex
+- **Branch:** `remotes/origin/bolt-optimize-scraper-parsing-3448923881987596786`
+  - **Result:** Commit: ⚡ Bolt: Optimize HTML parsing and text cleaning
+- **Branch:** `remotes/origin/bolt-optimize-scraper-parsing-3757013743325312913`
+  - **Result:** Commit: Optimize scraper HTML parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-optimize-scraper-parsing-8116934535204558717`
+  - **Result:** Commit: perf: Optimize HTML parsing in scraper.py using SoupStrainer
+- **Branch:** `remotes/origin/bolt-optimize-scraper-parsing-8834013085452887320`
+  - **Result:** Commit: feat(perf): Optimize HTML parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-optimize-scraper-parsing-9068954578831072256`
+  - **Result:** Commit: ⚡ Bolt: Optimize HTML parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-optimize-scraper-processpool-8848344883338521017`
+  - **Result:** Commit: Refactor scraper to offload HTML parsing to ProcessPoolExecutor
+- **Branch:** `remotes/origin/bolt-optimize-scraper-regex-3607488855796295028`
+  - **Result:** Commit: ⚡ Bolt: Optimize text cleaning with pre-compiled regex
+- **Branch:** `remotes/origin/bolt-optimize-scraper-regex-5875406211090922656`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper with Regex extraction
+- **Branch:** `remotes/origin/bolt-optimize-scraper-regex-6221015784546040859`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with Regex
+- **Branch:** `remotes/origin/bolt-optimize-scraper-regex-7246744395174806244`
+  - **Result:** Commit: perf: Optimize HTML parsing with Regex and asyncio.to_thread
+- **Branch:** `remotes/origin/bolt-optimize-scraper-regex-8246851219936015522`
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into bolt-optimize-scraper-regex-8246851219936015522
+- **Branch:** `remotes/origin/bolt-optimize-scraper-regex-strainer-7932646313464459139`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper with regex compilation and SoupStrainer
+- **Branch:** `remotes/origin/bolt-optimize-scraper-soupstrainer-11433902597372652499`
+  - **Result:** Commit: feat: optimize scraper using SoupStrainer
+- **Branch:** `remotes/origin/bolt-optimize-scraper-soupstrainer-3008349512320586446`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper with SoupStrainer and regex pre-compilation
+- **Branch:** `remotes/origin/bolt-optimize-scraper-soupstrainer-4727238500600062314`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper with SoupStrainer and asyncio.to_thread
+- **Branch:** `remotes/origin/bolt-optimize-scraper-soupstrainer-7047580228088986643`
+  - **Result:** Commit: perf: Optimize HTML parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-optimize-scraper-strings-6239449979702564908`
+  - **Result:** Commit: ⚡ Bolt: Optimize string processing operations in scraper.py
+- **Branch:** `remotes/origin/bolt-optimize-scraping-12377921716585212115`
+  - **Result:** Commit: Update schedule to bi-weekly and optimize scraper parsing
+- **Branch:** `remotes/origin/bolt-optimize-scraping-loop-12273168877030437192`
+  - **Result:** Commit: ⚡ Bolt: Optimize url parsing in scraping loop
+- **Branch:** `remotes/origin/bolt-optimize-soup-strainer-9000452125033654155`
+  - **Result:** Commit: ⚡ Optimize scraper parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-optimize-sqlite-connection-12412209145287667062`
+  - **Result:** Commit: ⚡ Bolt: Reuse SQLite connection in BlogScraper
+- **Branch:** `remotes/origin/bolt-optimize-sqlite-connection-8016425655735798810`
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into bolt-optimize-sqlite-connection-8016425655735798810
+- **Branch:** `remotes/origin/bolt-optimize-trend-identification-6164653202853995715`
+  - **Result:** Commit: ⚡ Bolt: Optimize ResearchAgent trend lookup
+- **Branch:** `remotes/origin/bolt-optimize-url-check-11382907469955664052`
+  - **Result:** Commit: ⚡ Bolt: Optimize URL checking in scrape_informatic.py
+- **Branch:** `remotes/origin/bolt-orchestrator-parallelization-5297863247436025808`
+  - **Result:** Commit: ⚡ Optimize AgentOrchestrator with parallel execution
+- **Branch:** `remotes/origin/bolt-parallel-parsing-6993668322750004501`
+  - **Result:** Commit: Refactor scraper to use ProcessPoolExecutor for HTML parsing
+- **Branch:** `remotes/origin/bolt-parallel-research-17289593056697154887`
+  - **Result:** Commit: feat(perf): parallelize research scraping tasks
+- **Branch:** `remotes/origin/bolt-parallel-research-2647431887195173891`
+  - **Result:** Commit: Parallelize independent scraping tasks in ResearcherAgent
+- **Branch:** `remotes/origin/bolt-parallel-scrapers-1860730486667162571`
+  - **Result:** Commit: ⚡ Bolt: Parallelize blog and google scrapers execution
+- **Branch:** `remotes/origin/bolt-parallel-scraping-3456726109416695191`
+  - **Result:** Commit: feat(performance): parallelize researcher agent tasks
+- **Branch:** `remotes/origin/bolt-perf-async-parsing-1087848814974756297`
+  - **Result:** Commit: ⚡ Bolt: Offload BeautifulSoup parsing to thread executor
+- **Branch:** `remotes/origin/bolt-perf-async-parsing-15436290846794780136`
+  - **Result:** Commit: Refactor scraper to offload parsing to thread
+- **Branch:** `remotes/origin/bolt-perf-bs4-find-10023084650521859961`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper using find() instead of select_one()
+- **Branch:** `remotes/origin/bolt-perf-bs4-find-8334151163532908599`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper using find/find_all instead of select_one
+- **Branch:** `remotes/origin/bolt-perf-bs4-process-pool-17427244549051212292`
+  - **Result:** Commit: perf: offload BeautifulSoup parsing to ProcessPoolExecutor
+- **Branch:** `remotes/origin/bolt-perf-health-agent-14939916179485386661`
+  - **Result:** Commit: ⚡ Bolt: Optimize HealthAgent with SoupStrainer
+- **Branch:** `remotes/origin/bolt-perf-lxml-16482792086275296169`
+  - **Result:** Commit: ⚡ Bolt: Use lxml parser for faster scraping
+- **Branch:** `remotes/origin/bolt-perf-lxml-17102794785476392980`
+  - **Result:** Commit: ⚡ Bolt: Use lxml for faster HTML parsing
+- **Branch:** `remotes/origin/bolt-perf-lxml-17997966610705320667`
+  - **Result:** Commit: feat: implement autonomous daily scheduler
+- **Branch:** `remotes/origin/bolt-perf-regex-parsing-2968030038175882512`
+  - **Result:** Commit: ⚡ Bolt: Use Regex for scraping initialization
+- **Branch:** `remotes/origin/bolt-perf-scraper-db-reuse-17434795129379709`
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into bolt-perf-scraper-db-reuse-17434795129379709
+- **Branch:** `remotes/origin/bolt-perf-scraper-executor-4427925572526171604`
+  - **Result:** Commit: feat(scraper): offload parsing to ProcessPoolExecutor for concurrency
+- **Branch:** `remotes/origin/bolt-perf-scraper-lxml-5373269111675878459`
+  - **Result:** Commit: feat(scraper): optimize html parsing with SoupStrainer and lxml
+- **Branch:** `remotes/origin/bolt-perf-scraper-parallel-parsing-8337788158355007430`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing performance
+- **Branch:** `remotes/origin/bolt-perf-scraper-processpool-7203892433310353540`
+  - **Result:** Commit: Refactor scraper to use ProcessPoolExecutor for HTML parsing
+- **Branch:** `remotes/origin/bolt-perf-scraper-session-10551043501921502138`
+  - **Result:** Commit: perf: Optimize scraper DB and network performance
+- **Branch:** `remotes/origin/bolt-perf-scraper-session-13630288180714094123`
+  - **Result:** Commit: ⚡ Bolt: Use requests.Session in BlogScraper for connection pooling
+- **Branch:** `remotes/origin/bolt-perf-scraper-session-13767337779817263521`
+  - **Result:** Commit: ⚡ Bolt: Restore daily reporting schedule
+- **Branch:** `remotes/origin/bolt-perf-string-clean-3059858990745910669`
+  - **Result:** Commit: perf: Optimize whitespace cleaning in scraper
+- **Branch:** `remotes/origin/bolt-performance-async-parsing-2274988266574595101`
+  - **Result:** Commit: perf: offload parsing to executor and compile regex in scraper
+- **Branch:** `remotes/origin/bolt-performance-db-reuse-2052955884465530743`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper DB connection reuse
+- **Branch:** `remotes/origin/bolt-performance-optimization-7338160847142148132`
+  - **Result:** Commit: ⚡ Bolt: Offload CPU-bound parsing to ProcessPoolExecutor
+- **Branch:** `remotes/origin/bolt-performance-optimization-scraper-15457924080390524460`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with ProcessPoolExecutor and SoupStrainer
+- **Branch:** `remotes/origin/bolt-performance-optimization-scraper-1620400809673079347`
+  - **Result:** Commit: Refactor scraper to use ProcessPoolExecutor for CPU-bound parsing
+- **Branch:** `remotes/origin/bolt-performance-orchestrator-parallelization-17677536977170965399`
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into bolt-performance-orchestrator-parallelization-17677536977170965399
+- **Branch:** `remotes/origin/bolt-performance-parsing-4100817167815285905`
+  - **Result:** Commit: ⚡ Bolt: Offload parsing to ProcessPoolExecutor (~3x throughput)
+- **Branch:** `remotes/origin/bolt-performance-parsing-offload-1960806529414267400`
+  - **Result:** Commit: ⚡ Bolt: Offload HTML parsing to ProcessPoolExecutor
+- **Branch:** `remotes/origin/bolt-performance-researcher-parallel-14083446913808093201`
+  - **Result:** Commit: ⚡ Bolt: Parallelize ResearcherAgent scraping tasks
+- **Branch:** `remotes/origin/bolt-performance-soupstrainer-14059433622013418020`
+  - **Result:** Commit: feat: implement autonomous multi-agent system and optimize scraper
+- **Branch:** `remotes/origin/bolt-performance-urlparse-optimization-5520914597685521518`
+  - **Result:** Commit: ⚡ Bolt: Optimize urlparse in scrape_informatic loop
+- **Branch:** `remotes/origin/bolt-persistent-db-connection-11571952799259115102`
+  - **Result:** Commit: Refactor BlogScraper to use persistent DB connection
+- **Branch:** `remotes/origin/bolt-persistent-db-connection-5396829394535109636`
+  - **Result:** Commit: Refactor BlogScraper to use persistent SQLite connection
+- **Branch:** `remotes/origin/bolt-process-pool-optimization-5774478230370778147`
+  - **Result:** Commit: Refactor scraper to offload CPU-bound parsing to ProcessPoolExecutor
+- **Branch:** `remotes/origin/bolt-regex-optimization-10299479456979615296`
+  - **Result:** Commit: perf: pre-compile regex patterns in scraper.py
+- **Branch:** `remotes/origin/bolt-regex-optimization-10487476368557931420`
+  - **Result:** Commit: ⚡ Bolt: Optimize regex performance in scraper.py
+- **Branch:** `remotes/origin/bolt-regex-optimization-10670018771745312262`
+  - **Result:** Commit: perf(scraper): optimize regex usage by pre-compiling patterns
+- **Branch:** `remotes/origin/bolt-regex-optimization-10691544458302673527`
+  - **Result:** Commit: ⚡ Bolt: Pre-compile regex patterns in scraper.py
+- **Branch:** `remotes/origin/bolt-regex-optimization-10956111650494235673`
+  - **Result:** Commit: ⚡ Bolt: Pre-compile regex in scraper for 15-50% speedup
+- **Branch:** `remotes/origin/bolt-regex-optimization-1111975510194507736`
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into bolt-regex-optimization-1111975510194507736
+- **Branch:** `remotes/origin/bolt-regex-optimization-12519421487946893253`
+  - **Result:** Commit: feat: Implement Autonomous Agents System & Optimize Scraper
+- **Branch:** `remotes/origin/bolt-regex-optimization-12963556402097172007`
+  - **Result:** Commit: ⚡ Bolt: Pre-compile regex in scraper.py
+- **Branch:** `remotes/origin/bolt-regex-optimization-13014233567806281065`
+  - **Result:** Commit: ⚡ Bolt: Optimize regex performance in scraper.py
+- **Branch:** `remotes/origin/bolt-regex-optimization-15204028469751389164`
+  - **Result:** Commit: perf: pre-compile regex patterns in scraper
+- **Branch:** `remotes/origin/bolt-regex-optimization-1599343661024760141`
+  - **Result:** Commit: ⚡ Bolt: Optimize regex usage in scraper.py
+- **Branch:** `remotes/origin/bolt-regex-optimization-16017586951371803130`
+  - **Result:** Commit: perf(scraper): pre-compile regex patterns for performance
+- **Branch:** `remotes/origin/bolt-regex-optimization-17160133459693821979`
+  - **Result:** Commit: ⚡ Bolt: optimize scraper regex operations
+- **Branch:** `remotes/origin/bolt-regex-optimization-18097186889136558179`
+  - **Result:** Commit: ⚡ Bolt: Pre-compile regex in scraper
+- **Branch:** `remotes/origin/bolt-regex-optimization-18107597331502090226`
+  - **Result:** Commit: ⚡ Bolt: Pre-compile regex in scraper.py
+- **Branch:** `remotes/origin/bolt-regex-optimization-18236177383458942650`
+  - **Result:** Commit: ⚡ Bolt: Optimize text cleaning regex in scraper
+- **Branch:** `remotes/origin/bolt-regex-optimization-1936252853902893484`
+  - **Result:** Commit: perf(scraper): pre-compile regex patterns
+- **Branch:** `remotes/origin/bolt-regex-optimization-1991346356591584404`
+  - **Result:** Commit: ⚡ Bolt: Pre-compile regex in scraper.py
+- **Branch:** `remotes/origin/bolt-regex-optimization-3412472969268847493`
+  - **Result:** Commit: feat(scraper): optimize regex performance
+- **Branch:** `remotes/origin/bolt-regex-optimization-3847743098797150456`
+  - **Result:** Commit: feat(perf): Optimize regex usage in scraper.py
+- **Branch:** `remotes/origin/bolt-regex-optimization-461532303594678412`
+  - **Result:** Commit: ⚡ Bolt: Pre-compile regex patterns in scraper
+- **Branch:** `remotes/origin/bolt-regex-optimization-4970481472425500127`
+  - **Result:** Commit: perf: Optimize text cleaning in scraper.py
+- **Branch:** `remotes/origin/bolt-regex-optimization-6253122029365977670`
+  - **Result:** Commit: perf: optimize scraper regex usage
+- **Branch:** `remotes/origin/bolt-regex-optimization-6541423053876749115`
+  - **Result:** Commit: ⚡ Bolt: Pre-compile regex in scraper for performance
+- **Branch:** `remotes/origin/bolt-regex-optimization-7449799981287862970`
+  - **Result:** Commit: ⚡ Bolt: Pre-compile regex patterns in scraper.py
+- **Branch:** `remotes/origin/bolt-regex-optimization-8134015789402111822`
+  - **Result:** Commit: perf(scraper): compile regex patterns for 50% speedup in is_url
+- **Branch:** `remotes/origin/bolt-regex-optimization-8222097965856026456`
+  - **Result:** Commit: ⚡ Bolt: Pre-compile regex patterns in scraper.py
+- **Branch:** `remotes/origin/bolt-regex-optimization-9273644519795957416`
+  - **Result:** Commit: ⚡ Bolt: Optimize regex performance in Scraper
+- **Branch:** `remotes/origin/bolt-regex-optimization-9331883071056966144`
+  - **Result:** Commit: ⚡ Bolt: Pre-compile regex in scraper
+- **Branch:** `remotes/origin/bolt-regex-optimization-9346752295468172099`
+  - **Result:** Commit: perf(scraper): optimize text cleaning regex
+- **Branch:** `remotes/origin/bolt-requests-session-14936530182416613497`
+  - **Result:** Commit: ⚡ Bolt: Reuse requests.Session for scraping
+- **Branch:** `remotes/origin/bolt-requests-session-3076311538911381225`
+  - **Result:** Commit: feat(scraper): implement requests.Session for connection pooling
+- **Branch:** `remotes/origin/bolt-researcher-optimization-1888456818967514733`
+  - **Result:** Commit: Refactor ResearcherAgent to use parallel direct execution
+- **Branch:** `remotes/origin/bolt-reuse-db-connection-9935232746444151902`
+  - **Result:** Commit: ⚡ Bolt: Reuse SQLite connection in scraper
+- **Branch:** `remotes/origin/bolt-scrape-optimization-16920957928796283696`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing and URL checks
+- **Branch:** `remotes/origin/bolt-scraper-db-optimization-4669867116472309514`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper DB operations with persistent connection
+- **Branch:** `remotes/origin/bolt-scraper-opt-13454863873453666638`
+  - **Result:** Commit: ⚡ Bolt: Optimize text processing and URL validation
+- **Branch:** `remotes/origin/bolt-scraper-opt-14509076673461080087`
+  - **Result:** Commit: ⚡ Bolt: Optimize string operations in scraper.py
+- **Branch:** `remotes/origin/bolt-scraper-opt-14551540345984142546`
+  - **Result:** Commit: perf: optimize scraper regex and soup selectors
+- **Branch:** `remotes/origin/bolt-scraper-opt-8349179357069676860`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing and regex
+- **Branch:** `remotes/origin/bolt-scraper-optimization-10102277475424892943`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing logic
+- **Branch:** `remotes/origin/bolt-scraper-optimization-10622089792901255880`
+  - **Result:** Commit: perf(scraper): replace select_one with find for 37% speedup
+- **Branch:** `remotes/origin/bolt-scraper-optimization-10656439461992854138`
+  - **Result:** Commit: ⚡ Bolt: Optimized HTML parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-scraper-optimization-10743061150109398195`
+  - **Result:** Commit: ⚡ Bolt: Implement HTTP and DB connection pooling in scraper
+- **Branch:** `remotes/origin/bolt-scraper-optimization-10767670900848312598`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper I/O and networking & Update Schedule
+- **Branch:** `remotes/origin/bolt-scraper-optimization-11007111017944016122`
+  - **Result:** Commit: ⚡ Bolt: Offload HTML parsing to ProcessPoolExecutor
+- **Branch:** `remotes/origin/bolt-scraper-optimization-11367848485225786736`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-scraper-optimization-11470662003426243348`
+  - **Result:** Commit: feat: optimize scraper performance using SoupStrainer
+- **Branch:** `remotes/origin/bolt-scraper-optimization-12075158828532334141`
+  - **Result:** Commit: ⚡ Bolt: Optimize text normalization and URL checking in scraper.py
+- **Branch:** `remotes/origin/bolt-scraper-optimization-1209695739220557992`
+  - **Result:** Commit: ⚡ Bolt: Offload BeautifulSoup parsing to thread
+- **Branch:** `remotes/origin/bolt-scraper-optimization-12253923673738560413`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing and text cleaning
+- **Branch:** `remotes/origin/bolt-scraper-optimization-12314945954917047380`
+  - **Result:** Commit: ⚡ Bolt: Optimize BeautifulSoup selectors in scraper.py
+- **Branch:** `remotes/origin/bolt-scraper-optimization-12663434804223605842`
+  - **Result:** Commit: feat(scraper): Optimize parsing speed with lxml and SoupStrainer
+- **Branch:** `remotes/origin/bolt-scraper-optimization-12683209128422177011`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-scraper-optimization-12730838946492989572`
+  - **Result:** Commit: ⚡ Bolt: Optimize text processing and regex in Scraper
+- **Branch:** `remotes/origin/bolt-scraper-optimization-12894303675301140287`
+  - **Result:** Commit: Optimize scraper parsing and implement daily schedule
+- **Branch:** `remotes/origin/bolt-scraper-optimization-13264479189330922759`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-scraper-optimization-1353906230591736027`
+  - **Result:** Commit: Refactor scraper to offload parsing to ProcessPoolExecutor
+- **Branch:** `remotes/origin/bolt-scraper-optimization-13692736831954935226`
+  - **Result:** Commit: Optimize scraper parsing and string processing
+- **Branch:** `remotes/origin/bolt-scraper-optimization-13982648662733594805`
+  - **Result:** Commit: ⚡ Bolt: Offload parsing to thread and optimize string cleaning
+- **Branch:** `remotes/origin/bolt-scraper-optimization-14036897471248962634`
+  - **Result:** Commit: ⚡ Bolt: Update report schedule to Bi-weekly and optimize scraper
+- **Branch:** `remotes/origin/bolt-scraper-optimization-14139347642198043635`
+  - **Result:** Commit: ⚡ Bolt: Implement Autonomous Agent Framework with IQ Tracking
+- **Branch:** `remotes/origin/bolt-scraper-optimization-1432882463271487528`
+  - **Result:** Commit: ⚡ Bolt: Optimize comment extraction in scraper.py
+- **Branch:** `remotes/origin/bolt-scraper-optimization-14501811676533034993`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-scraper-optimization-14663746392064754858`
+  - **Result:** Commit: Optimize scraper parsing using ProcessPoolExecutor
+- **Branch:** `remotes/origin/bolt-scraper-optimization-1506519924092333588`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with lxml and SoupStrainer
+- **Branch:** `remotes/origin/bolt-scraper-optimization-15237356031409428265`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper DB and network performance
+- **Branch:** `remotes/origin/bolt-scraper-optimization-15412510587565064138`
+  - **Result:** Commit: Optimize scraper parsing with lxml and SoupStrainer
+- **Branch:** `remotes/origin/bolt-scraper-optimization-1551892362047425117`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with lxml + SoupStrainer
+- **Branch:** `remotes/origin/bolt-scraper-optimization-15748232295015660764`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing and regex
+- **Branch:** `remotes/origin/bolt-scraper-optimization-1580596544432865856`
+  - **Result:** Commit: Optimize scraper.py with find() for 45% faster parsing
+- **Branch:** `remotes/origin/bolt-scraper-optimization-15815188979148992861`
+  - **Result:** Commit: Optimize scraper parsing with SoupStrainer and lxml
+- **Branch:** `remotes/origin/bolt-scraper-optimization-16013875375503679049`
+  - **Result:** Commit: Optimize scraper parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-scraper-optimization-16149611248277661854`
+  - **Result:** Commit: ⚡ Bolt: Offload parsing to thread pool & optimize regex
+- **Branch:** `remotes/origin/bolt-scraper-optimization-1627469775693802655`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper performance with SoupStrainer and Regex compilation
+- **Branch:** `remotes/origin/bolt-scraper-optimization-16491499678156145300`
+  - **Result:** Commit: ⚡ Bolt: Implement SoupStrainer and Regex Compilation in Scraper
+- **Branch:** `remotes/origin/bolt-scraper-optimization-16657918426229355615`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing and string cleaning
+- **Branch:** `remotes/origin/bolt-scraper-optimization-1674644285468603909`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-scraper-optimization-17002193795597459113`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-scraper-optimization-17199523190844850574`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing speed
+- **Branch:** `remotes/origin/bolt-scraper-optimization-17350956668787755731`
+  - **Result:** Commit: ⚡ Bolt: Optimize parsing and text cleaning in scraper.py
+- **Branch:** `remotes/origin/bolt-scraper-optimization-17386084348127728897`
+  - **Result:** Commit: ⚡ Bolt: Speed up HTML parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-scraper-optimization-17562788230715464115`
+  - **Result:** Commit: ⚡ Bolt: Optimized scraper concurrency and text cleaning
+- **Branch:** `remotes/origin/bolt-scraper-optimization-17587391646699654466`
+  - **Result:** Commit: Optimize clean_text in scraper.py for 5x speedup
+- **Branch:** `remotes/origin/bolt-scraper-optimization-17660878494174500899`
+  - **Result:** Commit: Refactor scraper.py for performance using SoupStrainer and asyncio.to_thread
+- **Branch:** `remotes/origin/bolt-scraper-optimization-17975571027086999885`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with lxml and SoupStrainer
+- **Branch:** `remotes/origin/bolt-scraper-optimization-1804299991226646115`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper regex and DOM traversal
+- **Branch:** `remotes/origin/bolt-scraper-optimization-18327449327189613971`
+  - **Result:** Commit: Optimize scraper.py parsing performance
+- **Branch:** `remotes/origin/bolt-scraper-optimization-1835167512947388951`
+  - **Result:** Commit: feat(scraper): optimize parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-scraper-optimization-18371574065831210776`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper performance
+- **Branch:** `remotes/origin/bolt-scraper-optimization-1847474833878288521`
+  - **Result:** Commit: ⚡ Bolt: Optimize BeautifulSoup lookups in scraper
+- **Branch:** `remotes/origin/bolt-scraper-optimization-1855974392204699120`
+  - **Result:** Commit: Update default daemon interval to 2 weeks
+- **Branch:** `remotes/origin/bolt-scraper-optimization-193945379704205017`
+  - **Result:** Commit: ⚡ Bolt: Use lxml parser and add request timeout
+- **Branch:** `remotes/origin/bolt-scraper-optimization-2096643163157625379`
+  - **Result:** Commit: ⚡ Bolt: Offload blocking HTML parsing to thread
+- **Branch:** `remotes/origin/bolt-scraper-optimization-2789910246289122534`
+  - **Result:** Commit: ⚡ Bolt: Implement sliding window concurrency for scraper
+- **Branch:** `remotes/origin/bolt-scraper-optimization-2805747022738938559`
+  - **Result:** Commit: ⚡ Bolt: Optimize OracleNewsScraper parsing logic
+- **Branch:** `remotes/origin/bolt-scraper-optimization-3139706522324724213`
+  - **Result:** Commit: Optimize scraper performance with lxml parser and native string methods
+- **Branch:** `remotes/origin/bolt-scraper-optimization-3255174511686836014`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-scraper-optimization-4366988920377669204`
+  - **Result:** Commit: Implement parallel agent pipeline and evolutionary architecture
+- **Branch:** `remotes/origin/bolt-scraper-optimization-4425511347405112219`
+  - **Result:** Commit: Refactor scraper to use ProcessPoolExecutor for HTML parsing
+- **Branch:** `remotes/origin/bolt-scraper-optimization-4489089491268807084`
+  - **Result:** Commit: feat(scraper): optimize parsing with SoupStrainer and pre-compiled regex
+- **Branch:** `remotes/origin/bolt-scraper-optimization-4527013067399901338`
+  - **Result:** Commit: Optimize scraper.py parsing and text cleaning
+- **Branch:** `remotes/origin/bolt-scraper-optimization-4721296771632120675`
+  - **Result:** Commit: feat(scraper): optimize database transactions and requests
+- **Branch:** `remotes/origin/bolt-scraper-optimization-4739353605413310472`
+  - **Result:** Commit: perf(scraper): optimize scraper.py for speed and concurrency
+- **Branch:** `remotes/origin/bolt-scraper-optimization-5664529973391017275`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing logic
+- **Branch:** `remotes/origin/bolt-scraper-optimization-6197596434771922189`
+  - **Result:** Commit: Optimize scraper parsing and fix lxml dependency
+- **Branch:** `remotes/origin/bolt-scraper-optimization-6251848286743864279`
+  - **Result:** Commit: feat(scraper): optimize text processing and url checking
+- **Branch:** `remotes/origin/bolt-scraper-optimization-6401654227032203437`
+  - **Result:** Commit: Optimize scraper parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-scraper-optimization-6543040436860988996`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper extraction performance
+- **Branch:** `remotes/origin/bolt-scraper-optimization-6898091550030942690`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with asyncio.to_thread and SoupStrainer
+- **Branch:** `remotes/origin/bolt-scraper-optimization-7096219376257431429`
+  - **Result:** Commit: Refactor scraper to offload parsing to thread pool
+- **Branch:** `remotes/origin/bolt-scraper-optimization-7163192714171539514`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with SoupStrainer and thread pool
+- **Branch:** `remotes/origin/bolt-scraper-optimization-7167567752449732149`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing
+- **Branch:** `remotes/origin/bolt-scraper-optimization-7399911276449768211`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with SoupStrainer and native find
+- **Branch:** `remotes/origin/bolt-scraper-optimization-7413329541638180653`
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into bolt-scraper-optimization-7413329541638180653
+- **Branch:** `remotes/origin/bolt-scraper-optimization-7563661188205915366`
+  - **Result:** Commit: ⚡ Bolt: Optimize scrape_informatic.py parsing
+- **Branch:** `remotes/origin/bolt-scraper-optimization-7637024351088000721`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper with SoupStrainer
+- **Branch:** `remotes/origin/bolt-scraper-optimization-7742383963711982821`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-scraper-optimization-7815539230824229464`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper connection reuse
+- **Branch:** `remotes/origin/bolt-scraper-optimization-7845776305057042000`
+  - **Result:** Commit: Optimize scraper performance with asyncio.to_thread and string handling
+- **Branch:** `remotes/origin/bolt-scraper-optimization-7888647031094386015`
+  - **Result:** Commit: feat: optimize scraper performance using SoupStrainer and regex
+- **Branch:** `remotes/origin/bolt-scraper-optimization-8032427940220095125`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper HTML parsing
+- **Branch:** `remotes/origin/bolt-scraper-optimization-8033040251280167060`
+  - **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into bolt-scraper-optimization-8033040251280167060
+- **Branch:** `remotes/origin/bolt-scraper-optimization-8035184301873739949`
+  - **Result:** Commit: Optimize scraper performance with requests.Session and DB connection reuse
+- **Branch:** `remotes/origin/bolt-scraper-optimization-8141854433949033594`
+  - **Result:** Commit: Optimize string processing in scraper.py
+- **Branch:** `remotes/origin/bolt-scraper-optimization-8188818073418168636`
+  - **Result:** Commit: Optimize scraper.py by offloading BS4 parsing to thread pool
+- **Branch:** `remotes/origin/bolt-scraper-optimization-8216364124614972911`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-scraper-optimization-8462548713755370695`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with lxml and SoupStrainer
+- **Branch:** `remotes/origin/bolt-scraper-optimization-8476765138408087245`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper string processing
+- **Branch:** `remotes/origin/bolt-scraper-optimization-9850891823025192061`
+  - **Result:** Commit: ⚡ Bolt: Offload HTML parsing to ProcessPoolExecutor
+- **Branch:** `remotes/origin/bolt-scraper-optimizations-13154025621638634765`
+  - **Result:** Commit: ⚡ Bolt: Optimize parsing and string processing in scraper
+- **Branch:** `remotes/origin/bolt-scraper-optimizations-8732903057106461095`
+  - **Result:** Commit: perf: Optimize HTML parsing and string cleaning in scraper
+- **Branch:** `remotes/origin/bolt-scraper-prefetch-14547517538477471181`
+  - **Result:** Commit: ⚡ Bolt: Implement page prefetching in scrape_informatic.py
+- **Branch:** `remotes/origin/bolt-scraper-regex-opt-12848838026143990534`
+  - **Result:** Commit: perf: optimize regex usage in scraper
+- **Branch:** `remotes/origin/bolt-scraper-regex-opt-13958576146438222127`
+  - **Result:** Commit: ⚡ Bolt: Use regex for comment extraction in scraper
+- **Branch:** `remotes/origin/bolt-scraper-regex-optimization-14054671181883869237`
+  - **Result:** Commit: perf(scraper): pre-compile regex patterns for performance
+- **Branch:** `remotes/origin/bolt-scraper-regex-optimization-15114098026015828976`
+  - **Result:** Commit: perf: pre-compile regex patterns in scraper.py
+- **Branch:** `remotes/origin/bolt-scraper-regex-optimization-17562079150727900848`
+  - **Result:** Commit: ⚡ Bolt: Optimized HTML parsing with Regex
+- **Branch:** `remotes/origin/bolt-scraper-regex-optimization-18203484375474782339`
+  - **Result:** Commit: ⚡ Optimize comment extraction in scraper.py using Regex
+- **Branch:** `remotes/origin/bolt-scraper-regex-optimization-8044445612481272700`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper.py with Regex for 3.5x speedup
+- **Branch:** `remotes/origin/bolt-scraper-session-optimization-11606334995791514193`
+  - **Result:** Commit: perf: Use requests.Session in BlogScraper for connection pooling
+- **Branch:** `remotes/origin/bolt-scraper-string-methods-820195039700755149`
+  - **Result:** Commit: ⚡ Bolt: Use string methods instead of Regex in scraper.py
+- **Branch:** `remotes/origin/bolt-scraper-string-optimizations-3167646988735665350`
+  - **Result:** Commit: ⚡ Bolt: Optimize string processing in scraper.py
+- **Branch:** `remotes/origin/bolt-scraper-string-optimizations-477355142347812731`
+  - **Result:** Commit: ⚡ Bolt: Optimize string processing in scraper
+- **Branch:** `remotes/origin/bolt-scraper-string-opts-6057717085486460815`
+  - **Result:** Commit: ⚡ Bolt: Optimize text cleaning and URL checks in scraper
+- **Branch:** `remotes/origin/bolt-session-reuse-139719283220729822`
+  - **Result:** Commit: ⚡ Bolt: Reuse requests.Session in scraper
+- **Branch:** `remotes/origin/bolt-session-reuse-3864696802320021960`
+  - **Result:** Commit: ⚡ Bolt: Use requests.Session for connection pooling
+- **Branch:** `remotes/origin/bolt-soup-strainer-opt-10066254156136550847`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-soup-strainer-opt-10945260070938162723`
+  - **Result:** Commit: ⚡ Bolt: Use SoupStrainer for faster scraping
+- **Branch:** `remotes/origin/bolt-soup-strainer-opt-12465788509084692171`
+  - **Result:** Commit: feat(scraper): optimize HTML parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-soup-strainer-opt-3724597379148151758`
+  - **Result:** Commit: ⚡ Bolt: Use SoupStrainer to optimize HTML parsing speed
+- **Branch:** `remotes/origin/bolt-soup-strainer-opt-386846576486263592`
+  - **Result:** Commit: ⚡ Bolt: Use SoupStrainer to optimize HTML parsing
+- **Branch:** `remotes/origin/bolt-soup-strainer-optimization-12566896173780989686`
+  - **Result:** Commit: ⚡ Bolt: Use SoupStrainer to optimize scraping
+- **Branch:** `remotes/origin/bolt-soup-strainer-optimization-14033430419081646199`
+  - **Result:** Commit: ⚡ Bolt: Use SoupStrainer to optimize HTML parsing
+- **Branch:** `remotes/origin/bolt-soup-strainer-optimization-14316401539640613341`
+  - **Result:** Commit: ⚡ Optimize scraper parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-soup-strainer-optimization-14774255287011841222`
+  - **Result:** Commit: ⚡ Bolt: Use SoupStrainer to optimize HTML parsing speed
+- **Branch:** `remotes/origin/bolt-soup-strainer-optimization-1532769739170430352`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-soup-strainer-optimization-16114231228523814321`
+  - **Result:** Commit: perf: Optimize HTML parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-soup-strainer-optimization-1873153883491687376`
+  - **Result:** Commit: ⚡ Bolt: Use SoupStrainer for faster HTML parsing
+- **Branch:** `remotes/origin/bolt-soup-strainer-optimization-3241381919202913663`
+  - **Result:** Commit: Optimize HTML parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-soup-strainer-optimization-4501769658159024451`
+  - **Result:** Commit: ⚡ Bolt: Use SoupStrainer to optimize HTML parsing
+- **Branch:** `remotes/origin/bolt-soup-strainer-optimization-470891732726673382`
+  - **Result:** Commit: Optimize HTML parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-soup-strainer-optimization-5081953450670982198`
+  - **Result:** Commit: Optimize BeautifulSoup parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-soup-strainer-optimization-6915325972743452926`
+  - **Result:** Commit: ⚡ Bolt: Use SoupStrainer in HealthAgent for ~2x faster integrity checks
+- **Branch:** `remotes/origin/bolt-soup-strainer-optimization-7210431446564416821`
+  - **Result:** Commit: Optimize HTML parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-soup-strainer-optimization-8380713953647872097`
+  - **Result:** Commit: feat: Implement Autonomous Agent System with Evolutionary Architecture
+- **Branch:** `remotes/origin/bolt-soupstrainer-opt-17010756878620689019`
+  - **Result:** Commit: feat(scraper): optimize html parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-soupstrainer-optimization-12556546636567708746`
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into bolt-soupstrainer-optimization-12556546636567708746
+- **Branch:** `remotes/origin/bolt-soupstrainer-optimization-12975139713668624064`
+  - **Result:** Commit: perf: Optimize HTML parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-soupstrainer-optimization-1501220050182828507`
+  - **Result:** Commit: ⚡ Optimize scraper parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-soupstrainer-optimization-16028540390448431806`
+  - **Result:** Commit: ⚡ Bolt: Optimize HTML parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-soupstrainer-optimization-16268499369589720209`
+  - **Result:** Commit: ⚡ Optimize HTML parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-soupstrainer-optimization-17542463183295620968`
+  - **Result:** Commit: ⚡ Bolt: Use SoupStrainer to optimize HTML parsing
+- **Branch:** `remotes/origin/bolt-soupstrainer-optimization-2763848808861924515`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper with SoupStrainer
+- **Branch:** `remotes/origin/bolt-soupstrainer-optimization-2852490476869068237`
+  - **Result:** Commit: ⚡ Bolt: Optimize parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-soupstrainer-optimization-379676222241574445`
+  - **Result:** Commit: ⚡ Bolt: Use SoupStrainer to optimize HTML parsing
+- **Branch:** `remotes/origin/bolt-soupstrainer-optimization-4709552410441311430`
+  - **Result:** Commit: perf: Use SoupStrainer to optimize HTML parsing in scraper
+- **Branch:** `remotes/origin/bolt-soupstrainer-optimization-4767259899525072216`
+  - **Result:** Commit: ⚡ Bolt: Use SoupStrainer to optimize HTML parsing
+- **Branch:** `remotes/origin/bolt-soupstrainer-optimization-4825323749547401551`
+  - **Result:** Commit: ⚡ Bolt: Use SoupStrainer and Pre-compiled Regex for Scraper
+- **Branch:** `remotes/origin/bolt-soupstrainer-optimization-6141461123016257145`
+  - **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into bolt-soupstrainer-optimization-6141461123016257145
+- **Branch:** `remotes/origin/bolt-soupstrainer-optimization-6334610650336767217`
+  - **Result:** Commit: ⚡ Bolt: Reduce schedule frequency to bi-weekly
+- **Branch:** `remotes/origin/bolt-soupstrainer-optimization-6413607027808347711`
+  - **Result:** Commit: ⚡ Bolt: Use SoupStrainer to optimize HTML parsing
+- **Branch:** `remotes/origin/bolt-soupstrainer-optimization-7488770723450221004`
+  - **Result:** Commit: ⚡ Bolt: optimize scraper with SoupStrainer
+- **Branch:** `remotes/origin/bolt-soupstrainer-optimization-7655426233962069468`
+  - **Result:** Commit: perf: Use SoupStrainer to optimize HTML parsing speed
+- **Branch:** `remotes/origin/bolt-soupstrainer-optimization-91602210866800065`
+  - **Result:** Commit: ⚡ Bolt: Use SoupStrainer to optimize HTML parsing
+- **Branch:** `remotes/origin/bolt-soupstrainer-optimization-9740380276744464742`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper with SoupStrainer
+- **Branch:** `remotes/origin/bolt-soupstrainer-optimization-9983537987612195444`
+  - **Result:** Commit: ⚡ Bolt: Optimize parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt-sqlite-batching-10722702013898667713`
+  - **Result:** Commit: ⚡ Bolt: Optimize SQLite inserts with batch commits
+- **Branch:** `remotes/origin/bolt-sqlite-connection-reuse-2661246636143348054`
+  - **Result:** Commit: ⚡ Bolt: Reuse SQLite connection in scraper loop
+- **Branch:** `remotes/origin/bolt-sqlite-optimization-12122879638647029690`
+  - **Result:** Commit: ⚡ Bolt: Reuse SQLite connection in BlogScraper
+- **Branch:** `remotes/origin/bolt-sqlite-optimization-12645598662746331548`
+  - **Result:** Commit: ⚡ Bolt: Optimize SQLite connection usage in BlogScraper
+- **Branch:** `remotes/origin/bolt-sqlite-optimization-17020260834920493883`
+  - **Result:** Commit: ⚡ Bolt: Optimize SQLite connection usage
+- **Branch:** `remotes/origin/bolt-sqlite-optimization-7750118330111008383`
+  - **Result:** Commit: ⚡ Bolt: Reuse SQLite connection in BlogScraper
+- **Branch:** `remotes/origin/bolt-sqlite-perf-7739754023647611635`
+  - **Result:** Commit: ⚡ Bolt: Optimize SQLite transactions in scraper
+- **Branch:** `remotes/origin/bolt-string-optimization-14072839521432093858`
+  - **Result:** Commit: perf: Optimize string processing in scraper.py
+- **Branch:** `remotes/origin/bolt-string-optimization-17042747964062441475`
+  - **Result:** Commit: ⚡ Bolt: optimize whitespace cleaning in scraper.py
+- **Branch:** `remotes/origin/bolt-string-optimization-1809008601482163150`
+  - **Result:** Commit: ⚡ Bolt: Optimize string operations in scraper.py
+- **Branch:** `remotes/origin/bolt-string-optimization-65836508302254531`
+  - **Result:** Commit: ⚡ Bolt: Optimize string processing in scraper.py
+- **Branch:** `remotes/origin/bolt-string-optimizations-16981467871586157841`
+  - **Result:** Commit: perf: Optimize string processing in scraper
+- **Branch:** `remotes/origin/bolt-subprocess-optimization-18368677201782107584`
+  - **Result:** Commit: Refactor `ResearcherAgent` to invoke `scrape_informatic` directly
+- **Branch:** `remotes/origin/bolt-subprocess-optimization-3686568767361641898`
+  - **Result:** Commit: Refactor researcher to use direct imports instead of subprocess
+- **Branch:** `remotes/origin/bolt-thread-pool-optimization-640625226298323794`
+  - **Result:** Commit: ⚡ Bolt: Offload BeautifulSoup parsing to thread pool
+- **Branch:** `remotes/origin/bolt-whitespace-optimization-17195323289091118273`
+  - **Result:** Commit: Optimize whitespace normalization in scraper.py
+- **Branch:** `remotes/origin/bolt-whitespace-optimization-17376282310850280190`
+  - **Result:** Commit: Optimize whitespace normalization in scraper.py
+- **Branch:** `remotes/origin/chore-connect-docker-and-collaborate-12371415653107131827`
+  - **Result:** Commit: chore: execute connect and collaborate workflow for autonomous cloud simulation
+- **Branch:** `remotes/origin/chore-connect-with-docker-13566063638443538481`
+  - **Result:** Commit: chore: connect with docker and collaborate
+- **Branch:** `remotes/origin/chore-docker-async-13305007447948067377`
+  - **Result:** Commit: Refactor Docker service to use async child process execution
+- **Branch:** `remotes/origin/chore-update-jenkins-pipeline-14351996807683244989`
+  - **Result:** Commit: chore: update jenkins pipeline to use typescript scripts
+- **Branch:** `remotes/origin/chore/connect-docker-and-collaborate-9529081767807051507`
+  - **Result:** Commit: Merge branch 'main' into chore/connect-docker-and-collaborate-9529081767807051507 (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/chore/docker-collaboration-sync-12663912162506492305`
+  - **Result:** Commit: chore: connect with docker and synchronize collaboration context
+- **Branch:** `remotes/origin/chore/docker-collaboration-sync-9465155386456086135`
+  - **Result:** Commit: chore: trigger autonomous docker and collaboration sync
+- **Branch:** `remotes/origin/chore/update-gitlab-security-agent-prompt-3893550657493055839`
+  - **Result:** Commit: chore: update gitlab_security_agent system prompt and remove duplicates
+- **Branch:** `remotes/origin/ci-cd-docker-hub-3636239622790037637`
+  - **Result:** Commit: Add CI/CD pipeline to test and push Docker image to Docker Hub
+- **Branch:** `remotes/origin/ci-consolidation-docker-build-cloud-16058181468570173910`
+  - **Result:** Commit: Make Docker CI robust for pull requests
+- **Branch:** `remotes/origin/cloud-autonomous-integration-17870893235290624845`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into cloud-autonomous-integration-17870893235290624845
+- **Branch:** `remotes/origin/cloud-autonomous-stabilization-11787002344957414636`
+  - **Result:** Commit: chore: finalize autonomous cloud integration and stabilize agents
+- **Branch:** `remotes/origin/cloud-simulation-autonomous-presence-9337570099349357215`
+  - **Result:** Commit: Ensure ecosystem presence sync runs correctly in cloud
+- **Branch:** `remotes/origin/cloud-workflow-agent-improvements-13202326670318534185`
+  - **Result:** Commit: Refine Multi-Cloud heuristics in CloudWorkflowAgent
+- **Branch:** `remotes/origin/cloudflare-worker-integration-638735051729847846`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into cloudflare-worker-integration-638735051729847846
+- **Branch:** `remotes/origin/codex/software-review-platform-pr`
+  - **Result:** Commit: Add Railway deploy config
+- **Branch:** `remotes/origin/codex/software-review-platform-standalone`
+  - **Result:** Commit: Standalone Software Review Platform (Pages Router restructure)
+- **Branch:** `remotes/origin/codex/software-review-platform-starter`
+  - **Result:** Commit: Autonomous System Evolution: Version 1.0
+- **Branch:** `remotes/origin/collaboration-intelligence-sync-2178443547158728411`
+  - **Result:** Commit: feat: implement cross-branch collaboration and intelligence synthesis
+- **Branch:** `remotes/origin/configure-gitlab-security-scanners-17673320478219973279`
+  - **Result:** Commit: ci: configure standard GitLab security scanners in pipeline
+- **Branch:** `remotes/origin/connect-docker-collaborate-17099568282070534570`
+  - **Result:** Commit: feat: Add connect and collaborate script
+- **Branch:** `remotes/origin/connect-with-docker-6054650345251122047`
+  - **Result:** Commit: feat: implement docker collaboration integration
+- **Branch:** `remotes/origin/deploy-react-agents-logic-12419630042311388322`
+  - **Result:** Commit: feat(agents): Integrate react logic verification and workflow run improvements
+- **Branch:** `remotes/origin/docker-collaboration-enhancement-318251479879768316`
+  - **Result:** Commit: Merge branch 'main' into docker-collaboration-enhancement-318251479879768316
+- **Branch:** `remotes/origin/docker-compose-modernization-16245170371728763291`
+  - **Result:** Commit: refactor: modernize docker compose commands
+- **Branch:** `remotes/origin/docker-model-runner-docs-390516128211936455`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into docker-model-runner-docs-390516128211936455
+- **Branch:** `remotes/origin/docker-optimization-8426096848725743190`
+  - **Result:** Commit: Optimize Next.js Docker configuration and Compose setup
+- **Branch:** `remotes/origin/docs-automation-triage-10895721213891935153`
+  - **Result:** Commit: docs: add automation and triage processes to CONTRIBUTING.md
+- **Branch:** `remotes/origin/docs/gitlab-mr-approvals-12492817274341021065`
+  - **Result:** Commit: docs: update agent prompts with GitLab MR Approval logic
+- **Branch:** `remotes/origin/docs/wilson-sonsini-17936625149736010375`
+  - **Result:** Commit: docs: add Wilson Sonsini documentation
+- **Branch:** `remotes/origin/duo-planner-prompt-update-15997034599254729562`
+  - **Result:** Commit: docs(agents): update duo planner agent prompt
+- **Branch:** `remotes/origin/duo-planner-system-prompt-fix-16632607976400072007`
+  - **Result:** Commit: chore: Fix Duo Planner system prompt by removing hallucinated Development and Implementation Notes
+- **Branch:** `remotes/origin/duo-planner-system-prompt-update-5875379358552478965`
+  - **Result:** Commit: Update Duo Planner system prompt
+- **Branch:** `remotes/origin/dynamic-cloud-workflow-agents-4167178583632810604`
+  - **Result:** Commit: feat: Make cloud workflow and evolution agents dynamic
+- **Branch:** `remotes/origin/enable-gitlab-security-scanners-17254273171421596517`
+  - **Result:** Commit: chore: add gitlab security scanner templates to ci/cd config
+- **Branch:** `remotes/origin/feat-antigravity-cli-13043538508479130887`
+  - **Result:** Commit: Merge branch 'main' into feat-antigravity-cli-13043538508479130887 (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/feat-daily-tasks-subagent-1551641649633932487`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat-daily-tasks-subagent-1551641649633932487
+- **Branch:** `remotes/origin/feat-improve-continuous-cloud-presence-16750342074827949028`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat-improve-continuous-cloud-presence-16750342074827949028
+- **Branch:** `remotes/origin/feat-macbook-cloud-simulation-5272995196293351855`
+  - **Result:** Commit: feat: add macbook cloud simulation for autonomous workflow integration
+- **Branch:** `remotes/origin/feat-render-worker-macbook-cloud-4132104054450648073`
+  - **Result:** Commit: feat: add render.yaml worker for continuous cloud execution
+- **Branch:** `remotes/origin/feature/50-prompts-cli-11662647561508639317`
+  - **Result:** Commit: feat: Adjust prompt structure, execute LLM simulations, and add visualization dashboards
+- **Branch:** `remotes/origin/feature/a2a-agent-implementation-12474626317752077342`
+  - **Result:** Commit: feat: add a2a client demonstrating multi-agent workflow
+- **Branch:** `remotes/origin/feature/adaptive-recovery-service-3883560226543520640`
+  - **Result:** Commit: feat(jules): implement adaptive recovery service with creativity dose
+- **Branch:** `remotes/origin/feature/add-coding-agents-16251765228471500021`
+  - **Result:** Commit: Add agents.yml with root, librarian, and creativity agents
+- **Branch:** `remotes/origin/feature/add-gitlab-subagents-461501759789154721`
+  - **Result:** Commit: feat(agents): add gitlab_security_agent and duo_planner_agent as gemini CLI subagents
+- **Branch:** `remotes/origin/feature/add-rag-agent-389407236128300017`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feature/add-rag-agent-389407236128300017
+- **Branch:** `remotes/origin/feature/ai-agent-knowledge-refinement-4060124279711853146`
+  - **Result:** Commit: Refine AI agent knowledge implementation based on Google Cloud Discovery article.
+- **Branch:** `remotes/origin/feature/async-system-calls-11356599600095287985`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feature/async-system-calls-11356599600095287985
+- **Branch:** `remotes/origin/feature/autonomous-cloud-presence-6564198224759094346`
+  - **Result:** Commit: feat: implement continuous cloud presence and autonomous daily cycle
+- **Branch:** `remotes/origin/feature/autonomous-cloud-simulation-presence-15239864471767221481`
+  - **Result:** Commit: feat: simulate fully online cloud presence and collaboration
+- **Branch:** `remotes/origin/feature/autonomous-creation-execution-5649264533760770196`
+  - **Result:** Commit: feat: finalize full autonomous creation order and execution engine
+- **Branch:** `remotes/origin/feature/autonomous-creation-ignition-13474937502856613693`
+  - **Result:** Commit: feat: implement full autonomous creation order and execution
+- **Branch:** `remotes/origin/feature/autonomous-improvement-cycle-1978975673869849123`
+  - **Result:** Commit: feat: implement autonomous improvement cycle
+- **Branch:** `remotes/origin/feature/autonomous-sync-persistence-9865428495683171374`
+  - **Result:** Commit: feat: enhance autonomous daily sync and persistence
+- **Branch:** `remotes/origin/feature/autonomous-work-order-system-2865376496549289667`
+  - **Result:** Commit: feat: implement autonomous work order creation and execution system
+- **Branch:** `remotes/origin/feature/autonomous-workflow-creation-15876066780074270466`
+  - **Result:** Commit: feat: implement programmatic full autonomous automatic workflow creation engine
+- **Branch:** `remotes/origin/feature/autonomous-workflow-creation-9438939026043204544`
+  - **Result:** Commit: feat: implement full autonomous automatic workflow creation
+- **Branch:** `remotes/origin/feature/autonomous-workflow-creation-9438939026043204544-2630848645900152425`
+  - **Result:** Commit: Merge branch 'main' into feature/autonomous-workflow-creation-9438939026043204544-2630848645900152425
+- **Branch:** `remotes/origin/feature/autonomous-workflow-pipeline-1359283664930221721`
+  - **Result:** Commit: fix: resolve python pip dependency resolution conflict and downgrade node warning
+- **Branch:** `remotes/origin/feature/backup-agent-11331906079381269962`
+  - **Result:** Commit: feat: implement autonomous backup agent system
+- **Branch:** `remotes/origin/feature/chief-ai-officer-agent-2222453634895722991`
+  - **Result:** Commit: Create agent Chief AI Officer
+- **Branch:** `remotes/origin/feature/chief-ai-officer-agent-9488345300891255929`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feature/chief-ai-officer-agent-9488345300891255929
+- **Branch:** `remotes/origin/feature/cloud-and-local-autonomy-9538834322956606637`
+  - **Result:** Commit: feat: Implement cloud autonomy and macOS background execution
+- **Branch:** `remotes/origin/feature/cloud-autonomous-convergence-1900133257466601663`
+  - **Result:** Commit: feat: implement cloud-integrated autonomous evolution and convergence
+- **Branch:** `remotes/origin/feature/cloud-workflow-fluent-availability-1140691908336489716`
+  - **Result:** Commit: Fix scraper and intelligence tests for python CI checks
+- **Branch:** `remotes/origin/feature/daily-autonomous-session-evolution-10827323028057042936`
+  - **Result:** Commit: feat: implement daily autonomous session evaluation and self-correction
+- **Branch:** `remotes/origin/feature/deploy-react-agents-15831022730085051498`
+  - **Result:** Commit: feat(agents): Integrate React agent deployment config into orchestration
+- **Branch:** `remotes/origin/feature/docker-collaboration-sync-2408669220271786015`
+  - **Result:** Commit: feat: add autonomous docker and collaboration sync script
+- **Branch:** `remotes/origin/feature/docker-self-healing-5846096999198047757`
+  - **Result:** Commit: Merge branch 'main' into feature/docker-self-healing-5846096999198047757
+- **Branch:** `remotes/origin/feature/game-of-logic-4165786141866980928`
+  - **Result:** Commit: chore: verify autonomous audit script
+- **Branch:** `remotes/origin/feature/gemini-git-worktrees-13127368067831034197`
+  - **Result:** Commit: feat(cli): implement gemini git worktrees experimental feature
+- **Branch:** `remotes/origin/feature/github-actions-knowledge-integration-2269942226272473037`
+  - **Result:** Commit: docs: integrate GitHub Actions knowledge
+- **Branch:** `remotes/origin/feature/google-ai-agent-knowledge-13116341653253101712`
+  - **Result:** Commit: Fix and complete Google Cloud AI Agent knowledge integration
+- **Branch:** `remotes/origin/feature/google-ai-agents-knowledge-5091496677341900649`
+  - **Result:** Commit: Implement and integrate AI Agent knowledge from Google Cloud
+- **Branch:** `remotes/origin/feature/google-innovation-knowledge-integration-16677313311842034034`
+  - **Result:** Commit: Integrate Google Innovation & AI knowledge and refactor system store
+- **Branch:** `remotes/origin/feature/hcp-packer-registry-3457585994433865197`
+  - **Result:** Commit: Resolve merge conflicts by accepting origin/main
+- **Branch:** `remotes/origin/feature/icloud-intelligence-merge-2968201843187996904`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feature/icloud-intelligence-merge-2968201843187996904
+- **Branch:** `remotes/origin/feature/icloud-knowledge-engine-1776910588788387485`
+  - **Result:** Commit: Merge branch 'main' into feature/icloud-knowledge-engine-1776910588788387485 (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/feature/icloud-knowledge-engine-improvements-13516138989655533197`
+  - **Result:** Commit: feat: integrate iCloud knowledge scan and improve system engine governance
+- **Branch:** `remotes/origin/feature/icloud-sync-291682100632365852`
+  - **Result:** Commit: feat: add iCloud Drive synchronization script for core folders
+- **Branch:** `remotes/origin/feature/ingest-forbes-8518386977410843897`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feature/ingest-forbes-8518386977410843897
+- **Branch:** `remotes/origin/feature/integrate-google-ai-knowledge-and-branding-7908636121834750902`
+  - **Result:** Commit: feat: integrate Google Innovation & AI knowledge and enforce mandatory branding
+- **Branch:** `remotes/origin/feature/integrate-oracle-ai-knowledge-3950930680222986466`
+  - **Result:** Commit: feat: integrate Oracle AI knowledge into content agent
+- **Branch:** `remotes/origin/feature/integrate-oracle-ai-knowledge-6095839206286019467`
+  - **Result:** Commit: Feat: Integrate Oracle AI scraper into Python orchestrator swarm
+- **Branch:** `remotes/origin/feature/intelephense-docs-consolidation-5239787190712204389`
+  - **Result:** Commit: feat(knowledge): consolidate Intelephense documentation and refactor KnowledgeObserver
+- **Branch:** `remotes/origin/feature/intelephense-docs-sync-6607492412348634028`
+  - **Result:** Commit: Merge branch 'main' into feature/intelephense-docs-sync-6607492412348634028
+- **Branch:** `remotes/origin/feature/intelephense-docs-update-12471147043465180868`
+  - **Result:** Commit: feat: update Intelephense documentation in knowledge base
+- **Branch:** `remotes/origin/feature/investopedia-exclusive-ingestion-16035071324102869573`
+  - **Result:** Commit: feat: exclusively source knowledge from Investopedia and enhance scraping
+- **Branch:** `remotes/origin/feature/jenkins-engine-integration-16717447765251323037`
+  - **Result:** Commit: feat: integrate Jenkins pipeline into engine system collaboration
+- **Branch:** `remotes/origin/feature/jenkins-engine-integration-6487857646863165040`
+  - **Result:** Commit: feat: integrate Jenkins into engine system and collaborate
+- **Branch:** `remotes/origin/feature/jenkins-integration-11798830447983533262`
+  - **Result:** Commit: feat: integrate Jenkins CI/CD pipeline and service
+- **Branch:** `remotes/origin/feature/knowledge-merge-all-entries-11790747981998761777`
+  - **Result:** Commit: feat(scraper): Expand knowledge merge agent to include all market entries
+- **Branch:** `remotes/origin/feature/knowledge-observation-1188044699692138518`
+  - **Result:** Commit: feat: add autonomous knowledge observation service and integrate into workflow
+- **Branch:** `remotes/origin/feature/macbook-cloud-simulation-10813154388376629644`
+  - **Result:** Commit: feat: enable continuous cloud simulation for autonomous merge and work
+- **Branch:** `remotes/origin/feature/macbook-cloud-simulation-537156202459615099`
+  - **Result:** Commit: feat(cloud): inject MACBOOK_CLOUD_SIMULATION across CI/CD and Docker environments
+- **Branch:** `remotes/origin/feature/markposition-autonomous-integration-5824578537508195574`
+  - **Result:** Commit: feat: deep autonomous integration of markposition intelligence
+- **Branch:** `remotes/origin/feature/orchestrator-active-decisions-12848386406612919414`
+  - **Result:** Commit: feat: enhance CloudWorkflowAgent to issue active decisions
+- **Branch:** `remotes/origin/feature/remote-agents-10265795399396816706`
+  - **Result:** Commit: Convert local agents to remote agents and add agent card server
+- **Branch:** `remotes/origin/feature/render-docs-integration-8046385424973720288`
+  - **Result:** Commit: fix: configure Netlify build base and plugin for Next.js
+- **Branch:** `remotes/origin/feature/smarter-cloud-workflow-13558470471841766440`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feature/smarter-cloud-workflow-13558470471841766440
+- **Branch:** `remotes/origin/feature/smarter-evolution-agents-10389664212360041088`
+  - **Result:** Commit: Make system orchestration smarter with dynamic validations
+- **Branch:** `remotes/origin/feature/unified-autonomous-creation-execution-9112787488112891184`
+  - **Result:** Commit: Establish full autonomous creation and execution lifecycle
+- **Branch:** `remotes/origin/feature/unified-knowledge-merge-automation-13778106542075090453`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feature/unified-knowledge-merge-automation (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/feature/wilson-sonsini-docs-5223286484754365385`
+  - **Result:** Commit: feat: add Wilson Sonsini documentation in MD and JSON formats
+- **Branch:** `remotes/origin/fix-agent-duo-planner-6673195564802177862`
+  - **Result:** Commit: Add Duo Planner agent
+- **Branch:** `remotes/origin/fix-and-automate-autonomous-system-4910910196834454154`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into fix-and-automate-autonomous-system (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/fix-autonomous-workflow-4538855426443032551`
+  - **Result:** Commit: fix: correct fully autonomous automatic workflow name and execution
+- **Branch:** `remotes/origin/fix-autonomous-workflow-git-add-16103849688586949052`
+  - **Result:** Commit: fix: allow data folder in gitignore for autonomous workflow to commit
+- **Branch:** `remotes/origin/fix-backend-tests-and-subagents-9232679682193337097`
+  - **Result:** Commit: feat(ai): supercharge subagent execution limits and backend stability\n\n- Increases maxTurns across all subagents to 50 for deep multi-step execution.\n- Configures .gemini/settings.json to allow 500 maxActionsPerTask for browser_agent.\n- Fixes backend testing dependencies and ESM compatibility logic in moderation.js.\n- Mirrors updated configuration to root agents/ directory to ensure seamless discovery.
+- **Branch:** `remotes/origin/fix-cloud-autonomous-presence-9827360869310750655`
+  - **Result:** Commit: fix: resolve CI syntax and module failures
+- **Branch:** `remotes/origin/fix-cloud-workflow-agent-2870930378970445069`
+  - **Result:** Commit: fix(cloud_workflow_agent): retain proactive decisions in cloud simulation mode
+- **Branch:** `remotes/origin/fix-consciousness-loop-11913002333680574261`
+  - **Result:** Commit: Merge branch 'main' into fix-consciousness-loop (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/fix-daily-sync-recursion-2513362835835522754`
+  - **Result:** Commit: fix: daily routine robustness and recursion in optimization engine
+- **Branch:** `remotes/origin/fix-docker-compose-deprecation-3059408130568618537`
+  - **Result:** Commit: fix: Update obsolete docker-compose commands to docker compose
+- **Branch:** `remotes/origin/fix-docs-json-errors-7026823761144797836`
+  - **Result:** Commit: docs: update Gemini remote agent documentation and fix JSON files
+- **Branch:** `remotes/origin/fix-duo-planner-agent-15770505239473824122`
+  - **Result:** Commit: Update Duo Planner prompt
+- **Branch:** `remotes/origin/fix-duo-planner-agent-typo-12908828223794405027`
+  - **Result:** Commit: Merge branch 'main' into fix-duo-planner-agent-typo-12908828223794405027
+- **Branch:** `remotes/origin/fix-duo-planner-prompt-962434380336539480`
+  - **Result:** Commit: Update duo planner agent prompt and fix package.json
+- **Branch:** `remotes/origin/fix-frontend-build-and-cleanup-4571735554462941732`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into fix-frontend-build-and-cleanup-4571735554462941732
+- **Branch:** `remotes/origin/fix-frontend-hardcoded-localhost-16318265694503338411`
+  - **Result:** Commit: Refactor: remove hardcoded localhost API assumptions in frontend
+- **Branch:** `remotes/origin/fix-gitlab-ci-tutorial-147082030447877574`
+  - **Result:** Commit: chore: update .gitlab-ci.yml to match basic pipeline tutorial
+- **Branch:** `remotes/origin/fix-gitlab-security-agent-prompt-4288631769213751586`
+  - **Result:** Commit: Update gitlab_security_agent prompt and remove duplicate
+- **Branch:** `remotes/origin/fix-ingest-ads-docs-5824807487751349212`
+  - **Result:** Commit: feat(docs): use puppeteer for scraping and properly ingest ad knowledge
+- **Branch:** `remotes/origin/fix-ingest-ads-locale-9506371311839128383`
+  - **Result:** Commit: Merge main into fix-ingest-ads-locale-9506371311839128383 and resolve conflicts
+- **Branch:** `remotes/origin/fix-inline-agent-card-json-15069810893663467340`
+  - **Result:** Commit: docs: add missing Inline Agent Card JSON section
+- **Branch:** `remotes/origin/fix-investopedia-crawler-7681232776505417296`
+  - **Result:** Commit: feat: integrate investopedia knowledge crawler
+- **Branch:** `remotes/origin/fix-knowledge-merge-8784423254971562466`
+  - **Result:** Commit: integrate knowledge merge and all the best
+- **Branch:** `remotes/origin/fix-missing-diff-edit-engine-8402215637682154858`
+  - **Result:** Commit: docs: add diff / edit engine to AI agent architecture summary
+- **Branch:** `remotes/origin/fix-oracle-ai-knowledge-integration-2128253207995593297`
+  - **Result:** Commit: fix: integrate Oracle AI knowledge correctly in agents
+- **Branch:** `remotes/origin/fix-package-json-duplicate-deps-10439884539185109676`
+  - **Result:** Commit: Fix syntax and linting errors in frontend route
+- **Branch:** `remotes/origin/fix-subagents-ingestion-12831626859594337963`
+  - **Result:** Commit: Fix python script to properly ingest Gemini CLI Subagents documentation
+- **Branch:** `remotes/origin/fluent-cloud-workflow-10464856889716167813`
+  - **Result:** Commit: feat: make cloud workflow smarter and always available
+- **Branch:** `remotes/origin/fluent-cloud-workflow-5534926808424625988`
+  - **Result:** Commit: chore: refactor docker and git integration for asynchronous cloud fluency
+- **Branch:** `remotes/origin/gemini-cli-subagent-setup-5210662692571654805`
+  - **Result:** Commit: feat: set up gemini CLI custom subagent and settings
+- **Branch:** `remotes/origin/implement-ai-agent-knowledge-12940849847121991383`
+  - **Result:** Commit: Implement AI Agent knowledge from Google Cloud Discover
+- **Branch:** `remotes/origin/implement-ai-agent-knowledge-21882567880054537`
+  - **Result:** Commit: feat: implement AI agent knowledge from Google Cloud Discover
+- **Branch:** `remotes/origin/implement-ai-agents-knowledge-10544419529497787617`
+  - **Result:** Commit: Implement AI Agents knowledge from Google Cloud Discover.
+- **Branch:** `remotes/origin/implement-ai-agents-knowledge-11176623184876779780`
+  - **Result:** Commit: feat: implement expanded AI agents knowledge from Google Cloud
+- **Branch:** `remotes/origin/implement-ai-agents-knowledge-18347247063799517995`
+  - **Result:** Commit: implement AI agents knowledge from Google Cloud
+- **Branch:** `remotes/origin/implement-ai-agents-knowledge-4687692969505756547`
+  - **Result:** Commit: feat: implement AI agents knowledge from Google Cloud
+- **Branch:** `remotes/origin/implement-ai-agents-knowledge-8036846396761105562`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into implement-ai-agents-knowledge-8036846396761105562
+- **Branch:** `remotes/origin/implement-full-autonomous-automatic-workflow-12697350452626035149`
+  - **Result:** Commit: feat: Implement fully autonomous automatic workflow via GitHub Actions
+- **Branch:** `remotes/origin/improve-gemini-cli-remote-agents-docs-7138939385768704032`
+  - **Result:** Commit: fix: correct syntax error in page.tsx caused by incorrect formatting
+- **Branch:** `remotes/origin/improve-git-sync-and-ingest-sor-6424222975070794974`
+  - **Result:** Commit: feat(jules): improve autonomous git workflow and add knowledge ingestion for sor\n\n- Update `gitSync` in `antigravity/jules.ts` to execute `git pull --rebase` and `git push` to autonomously handle conflicts and push changes.\n- Add `scripts/ingest_software_online_review.ts` to ingest knowledge from https://software-online-review.com into the repository.\n- Run ingestion script to update `ai_agents_knowledge.json` and `ai_agents_knowledge.md`.\n- Add `vitest` dependency.
+- **Branch:** `remotes/origin/improve-knowledge-merge-workflow-2767993471474005337`
+  - **Result:** Commit: Merge branch 'main' into improve-knowledge-merge-workflow (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/improve-react-agent-deployment-8771634612839704534`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into improve-react-agent-deployment-8771634612839704534
+- **Branch:** `remotes/origin/improve-react-agent-deployment-logic-17338521942394836955`
+  - **Result:** Commit: feat(agents): Integrate React agent deployment logic and workflow improvements
+- **Branch:** `remotes/origin/improve-react-agent-deployment-logic-18375390156249199906`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into improve-react-agent-deployment-logic-18375390156249199906
+- **Branch:** `remotes/origin/improve-react-agent-deployment-logic-5056405190707898066`
+  - **Result:** Commit: test: ensure test_backward_compatibility has initial state initialized
+- **Branch:** `remotes/origin/improve-react-agent-deployment-logic-6298987540078672534`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into improve-react-agent-deployment-logic-6298987540078672534
+- **Branch:** `remotes/origin/improve-react-deployment-orchestration-8115373201736013250`
+  - **Result:** Commit: feat: integrate react agent deployment configuration and orchestration logic
+- **Branch:** `remotes/origin/ingest-gemini-cli-remote-subagents-16579767984832507209`
+  - **Result:** Commit: docs: ingest Gemini CLI remote subagent documentation
+- **Branch:** `remotes/origin/ingest-google-ads-ad-manager-knowledge-12496557347507220156`
+  - **Result:** Commit: Ingest Google Ads and Ad Manager documentation
+- **Branch:** `remotes/origin/ingest-google-ads-docs-10675560264182079690`
+  - **Result:** Commit: feat: ingest Google Ads and Ad Manager documentation into knowledge base
+- **Branch:** `remotes/origin/ingest-google-ads-knowledge-10194667248273296076`
+  - **Result:** Commit: docs(knowledge): ingest Google Ads and Ad Manager documentation into knowledge base
+- **Branch:** `remotes/origin/ingest-remote-subagents-13626091139436294036`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into ingest-remote-subagents-13626091139436294036
+- **Branch:** `remotes/origin/ingest-remote-subagents-docs-1111005450111027953`
+  - **Result:** Commit: docs: ingest Gemini CLI Remote Subagents documentation and fix CI
+- **Branch:** `remotes/origin/ingest-subagents-knowledge-3401617007249931861`
+  - **Result:** Commit: feat: ingest subagents documentation into knowledge base
+- **Branch:** `remotes/origin/install-mongodb-9863170221053639401`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into install-mongodb-9863170221053639401
+- **Branch:** `remotes/origin/integrate-creative-workflow-15354061651871386487`
+  - **Result:** Commit: Merge branch 'main' into integrate-creative-workflow (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/integrate-google-ai-knowledge-1959220735285178548`
+  - **Result:** Commit: Integrate cumulative knowledge from Google Innovation & AI
+- **Branch:** `remotes/origin/integrate-google-ai-knowledge-2026-14480721120706312503`
+  - **Result:** Commit: Synchronize autonomous system with latest Google Innovation & AI knowledge.
+- **Branch:** `remotes/origin/integrate-google-ai-knowledge-2026-4051496185975015626`
+  - **Result:** Commit: Integrate latest knowledge from Google Innovation & AI blog
+- **Branch:** `remotes/origin/integrate-google-ai-knowledge-577515074625960618`
+  - **Result:** Commit: Integrate latest Google Innovation & AI knowledge into the ecosystem
+- **Branch:** `remotes/origin/integrate-google-ai-knowledge-6028035298449651450`
+  - **Result:** Commit: Integrate knowledge from Google Innovation & AI blog
+- **Branch:** `remotes/origin/integrate-google-ai-knowledge-8707811954243291377`
+  - **Result:** Commit: Integrate latest knowledge from Google Innovation & AI blog
+- **Branch:** `remotes/origin/integrate-google-ai-knowledge-v2-11489467311315949319`
+  - **Result:** Commit: feat: integrate Google Innovation & AI knowledge with strategic synthesis
+- **Branch:** `remotes/origin/integrate-google-blog-knowledge-4910820298428248589`
+  - **Result:** Commit: feat: integrate knowledge from Google Innovation & AI blog
+- **Branch:** `remotes/origin/integrate-google-innovation-ai-knowledge-11329975251392721471`
+  - **Result:** Commit: Integrate Google Innovation & AI blog knowledge into autonomous agent ecosystem
+- **Branch:** `remotes/origin/integrate-google-innovation-ai-knowledge-12634374273910953452`
+  - **Result:** Commit: feat: integrate Google Innovation & AI knowledge into IntelligenceAgent
+- **Branch:** `remotes/origin/integrate-google-innovation-ai-knowledge-12768758200839344177`
+  - **Result:** Commit: Integrate latest Google Innovation & AI blog knowledge
+- **Branch:** `remotes/origin/integrate-google-innovation-ai-knowledge-1484302248395175800`
+  - **Result:** Commit: Integrate knowledge from Google Innovation & AI blog
+- **Branch:** `remotes/origin/integrate-google-innovation-ai-knowledge-2118271840705498457`
+  - **Result:** Commit: Integrate Google Innovation & AI blog knowledge into autonomous ecosystem
+- **Branch:** `remotes/origin/integrate-intelephense-docs-sync-9702537453152045830`
+  - **Result:** Commit: Merge main into integrate-intelephense-docs-sync-9702537453152045830 and resolve conflicts
+- **Branch:** `remotes/origin/integrate-investopedia-knowledge-15544653943204418312`
+  - **Result:** Commit: feat(knowledge): integrate investopedia into autonomous observer
+- **Branch:** `remotes/origin/integrate-jenkins-engine-7625191917033904459`
+  - **Result:** Commit: feat: integrate Jenkins with autonomous engine
+- **Branch:** `remotes/origin/integrate-jenkins-pipeline-generation-14117303396069153360`
+  - **Result:** Commit: feat(singularity): integrate Jenkins pipeline creation into the engine system
+- **Branch:** `remotes/origin/integrate-knowledge-automation-1699996833713122125`
+  - **Result:** Commit: Integrate and automate technical knowledge ingestion and merging
+- **Branch:** `remotes/origin/integrate-knowledge-markposition-11578747878625387044`
+  - **Result:** Commit: feat: integrate market data and update knowledge base
+- **Branch:** `remotes/origin/integrate-localhost-tools-knowledge-16120823680333140752`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into integrate-localhost-tools-knowledge-16120823680333140752
+- **Branch:** `remotes/origin/integrate-markposition-knowledge-merge-11769284760316457005`
+  - **Result:** Commit: feat: integrate and automate Markposition knowledge merge
+- **Branch:** `remotes/origin/integrate-markposition-knowledge-merge-3452272022805466987`
+  - **Result:** Commit: Fix CI failures due to missing pythonpath in pytest
+- **Branch:** `remotes/origin/integrate-oracle-ai-knowledge-1358247655862801319`
+  - **Result:** Commit: feat: integrate Oracle AI knowledge
+- **Branch:** `remotes/origin/integrate-oracle-ai-knowledge-17542849219216672689`
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into integrate-oracle-ai-knowledge-17542849219216672689
+- **Branch:** `remotes/origin/integrate-react-agent-deployment-knowledge-12923931441009789315`
+  - **Result:** Commit: fix(ci): delete Advanced Setup codeql to allow Default Setup to run successfully
+- **Branch:** `remotes/origin/investopedia-puppeteer-ingestion-5835022978805247653`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into investopedia-puppeteer-ingestion-5835022978805247653
+- **Branch:** `remotes/origin/java-gemini-example-4885310981980819263`
+  - **Result:** Commit: feat: add Java example using Google GenAI client
+- **Branch:** `remotes/origin/jenkins-orchestration-pipeline-16548850115893572153`
+  - **Result:** Commit: feat: integrate jenkins pipeline into engine system
+- **Branch:** `remotes/origin/jenkins-pipeline-integration-1209487305569927216`
+  - **Result:** Commit: feat(ci): integrate jenkins pipeline with autonomous engine
+- **Branch:** `remotes/origin/jenkins-pipeline-integration-2917487616063889464`
+  - **Result:** Commit: feat: Implement Jenkins ecosystem collaboration trigger
+- **Branch:** `remotes/origin/jenkins-pipeline-integration-7872982211767864585`
+  - **Result:** Commit: feat: integrate jenkins pipeline into engine system and ci/cd
+- **Branch:** `remotes/origin/jules-1027089695129073368-c49a1c11`
+  - **Result:** Commit: chore: execute daily work cycle and provide environment setup tools
+- **Branch:** `remotes/origin/jules-10724586028665085971-3ad9c277`
+  - **Result:** Commit: chore(knowledge): prepare best value of knowledge integration
+- **Branch:** `remotes/origin/jules-10786450698186069009-a6894be5`
+  - **Result:** Commit: Resolve merge conflicts by accepting origin/main
+- **Branch:** `remotes/origin/jules-10804936454534876603-52aca57c`
+  - **Result:** Commit: feat: implement Jenkins API integration and ecosystem sync trigger
+- **Branch:** `remotes/origin/jules-10805447442179148911-1d117cf3`
+  - **Result:** Commit: 🎨 Palette: Improve report navigation and fix date display
+- **Branch:** `remotes/origin/jules-11023925826679396999-efd664fa`
+  - **Result:** Commit: Ingest Google Ads knowledge
+- **Branch:** `remotes/origin/jules-1103377942034451673-51f864ca`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-1103377942034451673-51f864ca
+- **Branch:** `remotes/origin/jules-11082628370387662325-cceae0c4`
+  - **Result:** Commit: Merge branch 'main' into jules-11082628370387662325-cceae0c4
+- **Branch:** `remotes/origin/jules-11488447269521141033-d797466e`
+  - **Result:** Commit: Merge branch 'main' into jules-11488447269521141033-d797466e
+- **Branch:** `remotes/origin/jules-1164978700782097591-599a1052`
+  - **Result:** Commit: Enhance .gitlab-ci.yml with advanced CI/CD configurations
+- **Branch:** `remotes/origin/jules-11867509925832320780-8aa8894a`
+  - **Result:** Commit: fix: automatically append english locale parameter for Google Ads/Ad Manager docs
+- **Branch:** `remotes/origin/jules-11912267709594997729-d10b0e1f`
+  - **Result:** Commit: chore: lowercase knowledge integration entry titles
+- **Branch:** `remotes/origin/jules-12160844108883332984-433a6b56`
+  - **Result:** Commit: Merge branch 'main' into jules-12160844108883332984-433a6b56
+- **Branch:** `remotes/origin/jules-12457892104228508063-41c0c28d`
+  - **Result:** Commit: fix: integrate knowledge from Oracle AI in agents
+- **Branch:** `remotes/origin/jules-128426962084555676-bc641743`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-128426962084555676-bc641743 (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/jules-13052721785252149852-027ffae0`
+  - **Result:** Commit: feat: integrate vercel ai gateway and setup streamText script
+- **Branch:** `remotes/origin/jules-13238206488982251887-d6084712`
+  - **Result:** Commit: feat: implement GitLab CI/CD tutorial pipeline
+- **Branch:** `remotes/origin/jules-13431006678473017081-2cf66aa8`
+  - **Result:** Commit: Merge branch 'main' into jules-13431006678473017081-2cf66aa8 (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/jules-13607206307106246227-38f47801`
+  - **Result:** Commit: feat: implement autonomous PR merge conflict resolution with Gemini\n\n- Add a TypeScript script `scripts/resolve_pr_conflicts.ts` to identify open PRs with conflicts.\n- Leverage `@google/generative-ai` to safely and logically resolve git conflict markers.\n- Safely manage GitHub and Gemini API tokens, avoiding logging sensitive credentials.\n- Apply robust security checks to only process PRs from trusted repository collaborators.\n- Merge and squash the resolved pull requests via Octokit.\n- Setup GitHub Actions cron job `.github/workflows/resolve-conflicts.yml` to trigger every 4 hours.
+- **Branch:** `remotes/origin/jules-13703867818161648472-ca00df1e`
+  - **Result:** Commit: update GitLab Security Analyst Agent prompt to exact text
+- **Branch:** `remotes/origin/jules-1401381832535268992-101c53a9`
+  - **Result:** Commit: fix(scraper): import re module in scraper.py
+- **Branch:** `remotes/origin/jules-14402645048061780023-73b2e4f9`
+  - **Result:** Commit: Resolve merge conflicts by accepting origin/main
+- **Branch:** `remotes/origin/jules-14816450646255710907-9a961bea`
+  - **Result:** Commit: feat: enhance daily autonomous task with system engine self-correction and validation
+- **Branch:** `remotes/origin/jules-14846758043150100113-f0cfbc39`
+  - **Result:** Commit: Refactor security-auditor subagent to standard subagent layout
+- **Branch:** `remotes/origin/jules-15004287550758535025-a71549d8`
+  - **Result:** Commit: docs: remove incorrect prefix from compile definition
+- **Branch:** `remotes/origin/jules-15373376258129096424-b615f592`
+  - **Result:** Commit: feat: implement full autonomous creation order and execution
+- **Branch:** `remotes/origin/jules-15643813269620827017-18b637fd`
+  - **Result:** Commit: chore: verify initial GitLab CI/CD pipeline configuration
+- **Branch:** `remotes/origin/jules-15669541233529701765-e7b02c45`
+  - **Result:** Commit: feat: Implement Jenkins Integration and Pipeline
+- **Branch:** `remotes/origin/jules-16125195344274130564-4d22cb5e`
+  - **Result:** Commit: chore: add gitlab ci/cd tutorial jobs
+- **Branch:** `remotes/origin/jules-16739887525044798643-c54f1fa3`
+  - **Result:** Commit: feat: Implement fluent multi-cloud workflow orchestration and async Docker auto-recovery
+- **Branch:** `remotes/origin/jules-16746668095937525271-5d5787ff`
+  - **Result:** Commit: feat: update Google Ads knowledge ingestion script to use Puppeteer\n\n- Replaced standard `fetch` with `puppeteer` to properly handle Javascript-rendered SPA content in Google Ads documentation pages.\n- Added proper error handling via finally blocks to prevent zombie headless pages.\n- Updated JSON manipulation logic using safe file parsing rather than regex injection to resolve serialization format overlap problems and ensure duplication prevention.\n- Regenerated updated rich Markdown documentation content.
+- **Branch:** `remotes/origin/jules-16888796621400029054-460e13c4`
+  - **Result:** Commit: chore: update .gitlab-ci.yml with tutorial code
+- **Branch:** `remotes/origin/jules-1717717407806782090-cbdd5077`
+  - **Result:** Commit: chore: verify initial GitLab CI/CD pipeline configuration (#1520)
+- **Branch:** `remotes/origin/jules-17345361020910170827-8e192329`
+  - **Result:** Commit: feat: Add Gemini API invocation script for explaining AI
+- **Branch:** `remotes/origin/jules-17430343990571925541-c81c147a`
+  - **Result:** Commit: docs: generate AI Ecosystem Rollup mapping agents to 12-layer architecture
+- **Branch:** `remotes/origin/jules-17664332290031173343-55f5ab91`
+  - **Result:** Commit: feat: implement autonomous daily work cycle and iCloud synchronization
+- **Branch:** `remotes/origin/jules-18406338226598714071-aab43e45`
+  - **Result:** Commit: fix: correct system memory json syntax formatting
+- **Branch:** `remotes/origin/jules-2331529788625810491-30fe029d`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-2331529788625810491-30fe029d
+- **Branch:** `remotes/origin/jules-269848640437748724-d6177096`
+  - **Result:** Commit: Integrate knowledge merge and all the best - https://markposition.wordpress.com
+- **Branch:** `remotes/origin/jules-2767932536649645053-195aa658`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-2767932536649645053-195aa658
+- **Branch:** `remotes/origin/jules-2876054462022588492-84e7dde1`
+  - **Result:** Commit: fix: use nodejs for json stringify to preserve unicode encoding
+- **Branch:** `remotes/origin/jules-2952753656715436592-50f1624f`
+  - **Result:** Commit: Add robots.txt and SEO tools
+- **Branch:** `remotes/origin/jules-3284237235346634220-17de23f1`
+  - **Result:** Commit: Merge branch 'main' into jules-3284237235346634220-17de23f1
+- **Branch:** `remotes/origin/jules-3377716076333327453-2d27a121`
+  - **Result:** Commit: feat(cloud): add SandboxCloudSimulation for autonomous online presence
+- **Branch:** `remotes/origin/jules-3444915640748353694-63419224`
+  - **Result:** Commit: chore: Generate initial project backlog for GitLab mirroring\n\n- Add `project_backlog.md` detailing current repository health\n- Outline Epics, Issues, and Tasks for Turbopack compilation errors, TypeScript/ESLint warnings, and degraded test states\n- Provide structured format ready for GitLab import
+- **Branch:** `remotes/origin/jules-361744050208613117-0f82961f`
+  - **Result:** Commit: docs: update remote subagents configuration documentation
+- **Branch:** `remotes/origin/jules-3816100636150667016-130985d0`
+  - **Result:** Commit: chore: use non-blocking async exec in gitSync and reset state files
+- **Branch:** `remotes/origin/jules-4102353982491655498-fda2bbfe`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-4102353982491655498-fda2bbfe
+- **Branch:** `remotes/origin/jules-4230806492568327711-dd0d7dbe`
+  - **Result:** Commit: ⚡ Bolt: Optimized scraper parsing (~24% faster) & updated reporting schedule
+- **Branch:** `remotes/origin/jules-4843122813281068614-8b4499aa`
+  - **Result:** Commit: feat(cloud): implement fully autonomous macbook cloud simulation integration
+- **Branch:** `remotes/origin/jules-5125461103553111919-d5f7a47b`
+  - **Result:** Commit: feat: securely configure Google & Gemini API keys
+- **Branch:** `remotes/origin/jules-5559433138773811985-39975caf`
+  - **Result:** Commit: feat: Add `.gitlab-ci.yml` pipeline tutorial configuration
+- **Branch:** `remotes/origin/jules-5565625516958485993-49059093`
+  - **Result:** Commit: fix: integrate knowledge with oracle ai scraper
+- **Branch:** `remotes/origin/jules-5679297940668698803-4384a9af`
+  - **Result:** Commit: feat: add full autonomous automatic workflow creation
+- **Branch:** `remotes/origin/jules-6528044095388834739-5a6c8bcf`
+  - **Result:** Commit: test: Add cloud workflow integration test
+- **Branch:** `remotes/origin/jules-7690709006081030781-1ea88831`
+  - **Result:** Commit: Merge branch 'main' into jules-7690709006081030781-1ea88831 (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/jules-8197540570479854725-c23a5090`
+  - **Result:** Commit: chore(agents): Update Duo Planner agent system prompt
+- **Branch:** `remotes/origin/jules-8471382387327462147-5395dec8`
+  - **Result:** Commit: Ingest Google Ads knowledge and fix output paths
+- **Branch:** `remotes/origin/jules-add-gemini-remote-agent-12873027587560108654`
+  - **Result:** Commit: feat: configure Gemini CLI remote subagent and documentation
+- **Branch:** `remotes/origin/jules-ads-knowledge-ingestion-14603073081341889171`
+  - **Result:** Commit: Ingest Google Ads and Ad Manager knowledge base
+- **Branch:** `remotes/origin/jules-agent-architecture-ingestion-315896060065751771`
+  - **Result:** Commit: Ingest Agent Framework Architecture Terminology without signature
+- **Branch:** `remotes/origin/jules-ai-agent-knowledge-merge-15121321797956756234`
+  - **Result:** Commit: Scaffold AI Agents Orchestrator workflow
+- **Branch:** `remotes/origin/jules-arcjet-integration-16980338037533745889`
+  - **Result:** Commit: fix(frontend): update eslint config formatting and remove extraneous bracket in page.tsx
+- **Branch:** `remotes/origin/jules-autonomous-connect-sync-13567552938698989059`
+  - **Result:** Commit: chore: add connect and collaborate step to autonomous workflows
+- **Branch:** `remotes/origin/jules-autonomous-evolution-12208946204085721942`
+  - **Result:** Commit: feat: implement daily autonomous evolution task - Add new GitHub workflow `.github/workflows/daily_autonomous_evolution.yml` to trigger daily session evaluation - Add new bash script `scripts/autonomous_evolution_task.sh` - Add logging to `scripts/execute_creation_cycle.ts` confirming evolution sequence
+- **Branch:** `remotes/origin/jules-autonomous-workflow-18354041674138581290`
+  - **Result:** Commit: feat: implement full autonomous automatic workflow pipeline
+- **Branch:** `remotes/origin/jules-autonomous-workflow-creation-1089913609311419813`
+  - **Result:** Commit: feat(antigravity): enable full autonomous workflow creation for all complexity levels
+- **Branch:** `remotes/origin/jules-autonomous-workflow-fix-2826640413281112163`
+  - **Result:** Commit: chore: Setup full autonomous workflow and fix python scrapers
+- **Branch:** `remotes/origin/jules-autonomous-workflow-unified-14967929050804960809`
+  - **Result:** Commit: chore(autonomous): migrate remaining workflows to typescript cycle\n\nMigrates `.github/workflows/autonomous_cycle.yml` to use `npm run daily` instead of the legacy `python3 run_system.py`, unifying the core execution paths. The `npm run ignite` and systemd commands were already correctly configured in the repository.
+- **Branch:** `remotes/origin/jules-cloud-autonomy-16506302087474217798`
+  - **Result:** Commit: feat: Enable fully autonomous cloud presence and cycle workflows
+- **Branch:** `remotes/origin/jules-cloud-simulation-enforcement-7338891043576217515`
+  - **Result:** Commit: Enforce cloud simulation flags across all execution paths
+- **Branch:** `remotes/origin/jules-cloud-workflow-agent-9594836607216672043`
+  - **Result:** Commit: feat(agent): implement CloudWorkflowAgent and integrate across cloud ecosystem
+- **Branch:** `remotes/origin/jules-cloud-workflow-agent-enhancement-4497894335591972427`
+  - **Result:** Commit: feat: enhance CloudWorkflowAgent to be smarter and fluent
+- **Branch:** `remotes/origin/jules-cloud-workflow-tolerance-17354439472694641412`
+  - **Result:** Commit: feat: enhance workflow fluency and docker auto-recovery
+- **Branch:** `remotes/origin/jules-compile-knowledge-2707648609195220904`
+  - **Result:** Commit: feat: integrate compile knowledge
+- **Branch:** `remotes/origin/jules-continuous-presence-workflow-3144055533381791740`
+  - **Result:** Commit: feat: add continuous autonomous presence workflow
+- **Branch:** `remotes/origin/jules-daily-autonomous-evolution-8968243163984956068`
+  - **Result:** Commit: implement daily autonomous evolution task\n\n- Add new GitHub workflow `.github/workflows/daily_autonomous_evolution.yml` to trigger daily session evaluation\n- Add new bash script `scripts/autonomous_evolution_task.sh`\n- Enhance files to prevent rename detection block by Git
+- **Branch:** `remotes/origin/jules-download-cli-page-4874267122039212944`
+  - **Result:** Commit: feat: Add Antigravity CLI download portal
+- **Branch:** `remotes/origin/jules-duo-planner-agent-url-fix-5677968275200464330`
+  - **Result:** Commit: Fix URL patterns in duo_planner_agent.md
+- **Branch:** `remotes/origin/jules-feature-integrate-knowledge-merge-9200679916314149754`
+  - **Result:** Commit: feat: integrate knowledge merge and append signature
+- **Branch:** `remotes/origin/jules-fix-autonomous-creation-cycle-5331330201427680768`
+  - **Result:** Commit: Resolve merge conflicts by accepting origin/main
+- **Branch:** `remotes/origin/jules-fix-knowledge-integration-cleanup-10144234766340686184`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into jules-fix-knowledge-integration-cleanup-10144234766340686184
+- **Branch:** `remotes/origin/jules-fix-oracle-scraper-schema-6080803583651507344`
+  - **Result:** Commit: fix: modify oracle AI scraper to output flat JSON schema
+- **Branch:** `remotes/origin/jules-fix-subagent-prompts-16967744904311493464`
+  - **Result:** Commit: Fix subagent definition files location and update duo_planner_agent prompt
+- **Branch:** `remotes/origin/jules-full-autonomous-automatic-workflow-8311799048599272217`
+  - **Result:** Commit: Merge branch 'main' into jules-full-autonomous-automatic-workflow-8311799048599272217
+- **Branch:** `remotes/origin/jules-full-autonomus-workflow-8744732568350416698`
+  - **Result:** Commit: fix: Enable full autonomous web scraping workflow
+- **Branch:** `remotes/origin/jules-gitlab-ci-setup-10531506072496288006`
+  - **Result:** Commit: chore: set up initial GitLab CI/CD pipeline configuration
+- **Branch:** `remotes/origin/jules-gitlab-ci-tutorial-10758887820992568383`
+  - **Result:** Commit: Recreate .gitlab-ci.yml for tutorial
+- **Branch:** `remotes/origin/jules-gitlab-ci-tutorial-5613378872543284671`
+  - **Result:** Commit: Ingest GitLab CI/CD pipeline tutorial knowledge
+- **Branch:** `remotes/origin/jules-gitlab-ci-yml-3154565573179389543`
+  - **Result:** Commit: chore: verify .gitlab-ci.yml matches tutorial
+- **Branch:** `remotes/origin/jules-gitlab-tutorial-ci-4111694628214868400`
+  - **Result:** Commit: chore(ci): Create first GitLab CI/CD pipeline from tutorial
+- **Branch:** `remotes/origin/jules-improve-knowledge-workflows-16068111765054687314`
+  - **Result:** Commit: improve merge integrate run workflow and observe knowledge
+- **Branch:** `remotes/origin/jules-improve-knowledge-workflows-16068111765054687314-3907595530513115604`
+  - **Result:** Commit: Merge branch 'main' into jules-improve-knowledge-workflows-16068111765054687314-3907595530513115604
+- **Branch:** `remotes/origin/jules-improve-knowledge-workflows-9958740170618720237`
+  - **Result:** Commit: feat: improve merge integrate run workflow and observe knowledge
+- **Branch:** `remotes/origin/jules-improve-react-agents-deploy-6633287448450705076`
+  - **Result:** Commit: fix: resolve explicit type any and unused variable typescript lint errors
+- **Branch:** `remotes/origin/jules-improve-workflow-and-knowledge-observer-11114380607500005512`
+  - **Result:** Commit: feat: improve workflow and knowledge observer
+- **Branch:** `remotes/origin/jules-ingest-ads-knowledge-7862837446767067464`
+  - **Result:** Commit: Ingest Google Ads, Ad Manager, and Google Business knowledge
+- **Branch:** `remotes/origin/jules-ingest-google-ads-docs-12444511274572846717`
+  - **Result:** Commit: chore: ingest Google Ads documentation
+- **Branch:** `remotes/origin/jules-ingest-hcp-knowledge-14291451140571066747`
+  - **Result:** Commit: Merge branch 'main' into jules-ingest-hcp-knowledge-14291451140571066747 (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/jules-integrate-knowledge-merge-5016273102093085264`
+  - **Result:** Commit: feat: integrate knowledge merge and signature
+- **Branch:** `remotes/origin/jules-integrate-oracle-knowledge-9421136010084102746`
+  - **Result:** Commit: feat: integrate oracle ai knowledge into system using legacy json schema
+- **Branch:** `remotes/origin/jules-integrate-signature-6068322876973646017`
+  - **Result:** Commit: chore: add signature to newly discovered typescript knowledge ingesters
+- **Branch:** `remotes/origin/jules-intelephense-docs-consolidation-6380568782621863083`
+  - **Result:** Commit: Consolidate Intelephense documentation into unified knowledge store
+- **Branch:** `remotes/origin/jules-investopedia-all-knowledge-14799525503188502250`
+  - **Result:** Commit: feat(knowledge): integrate all knowledge from investopedia.com
+- **Branch:** `remotes/origin/jules-knowledge-ads-ingestion-612535887181382298`
+  - **Result:** Commit: ci: disable CodeQL analysis upload to fix Default Setup conflict
+- **Branch:** `remotes/origin/jules-knowledge-integration-compile-14557175907207924867`
+  - **Result:** Commit: docs: add "prepare best value of knowledge integration" to ai agents knowledge base
+- **Branch:** `remotes/origin/jules-knowledge-integration-subagents-16636673178408066825`
+  - **Result:** Commit: fix(frontend): resolve linting errors and telemetry effect dependency
+- **Branch:** `remotes/origin/jules-knowledge-merge-collaboration-3722212575858302197`
+  - **Result:** Commit: Merge branch 'main' into jules-knowledge-merge-collaboration (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/jules-knowledge-merge-markposition-11506824174069569507`
+  - **Result:** Commit: feat: append markposition signature to KNOWLEDGE_MERGE.md
+- **Branch:** `remotes/origin/jules-knowledge-observe-improvements-9236700373896263344`
+  - **Result:** Commit: Merge branch 'main' into jules-knowledge-observe-improvements-9236700373896263344
+- **Branch:** `remotes/origin/jules-remote-subagents-docs-1653073469927459457`
+  - **Result:** Commit: docs: verify remote subagents documentation
+- **Branch:** `remotes/origin/jules-scrape-informatic-6598290821327070927`
+  - **Result:** Commit: ⚡ Bolt: Optimize URL parsing in scrape_informatic.py (#1446)
+- **Branch:** `remotes/origin/jules-security-optimizations-6605171866180417523`
+  - **Result:** Commit: refactor(security): optimize engine to mitigate command injection risks
+- **Branch:** `remotes/origin/jules-sor-workflow-improvement-8463337196227161862`
+  - **Result:** Commit: enhance software online review knowledge extraction
+- **Branch:** `remotes/origin/jules-ssh-key-setup-7319492468583803481`
+  - **Result:** Commit: chore: configure SSH key for GitHub access
+- **Branch:** `remotes/origin/jules-terraform-knowledge-17709827572083509678`
+  - **Result:** Commit: Merge branch 'main' into jules-terraform-knowledge (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/jules-update-gitlab-ci-16275426523578740483`
+  - **Result:** Commit: Update .gitlab-ci.yml to match GitLab CI tutorial sample code
+- **Branch:** `remotes/origin/jules/add-system-patent-947552789592854459`
+  - **Result:** Commit: docs: add PROMPTS.md containing the list of 50 AI prompts (#2057)
+- **Branch:** `remotes/origin/jules/compile-knowledge-integration-4875845775501523719`
+  - **Result:** Commit: docs: integrate knowledge base definition of 'compile'
+- **Branch:** `remotes/origin/jules/improve-react-workflow-orchestration-10305698287333015349`
+  - **Result:** Commit: feat(agents): expand ReAct proposals and CloudWorkflow deployment logic
+- **Branch:** `remotes/origin/jules/ingest-cli-creativity-9044833233025653876`
+  - **Result:** Commit: feat: ingest antigravity cli knowledge and append signature creatively
+- **Branch:** `remotes/origin/jules/ingest-intelephense-unified-store-3086939939732869599`
+  - **Result:** Commit: feat: ingest Intelephense docs and unify knowledge store
+- **Branch:** `remotes/origin/jules/integrate-knowledge-merge-signature-9637748484475924203`
+  - **Result:** Commit: feat: Integrate knowledge merge and append markposition signature
+- **Branch:** `remotes/origin/jules/knowledge-merge-integration-4756532437460590133`
+  - **Result:** Commit: Fix frontend lint errors
+- **Branch:** `remotes/origin/jules/scraper-intelephense-2916212763307459692`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into jules/scraper-intelephense (Resolved conflicts by removing deprecated data files)
+- **Branch:** `remotes/origin/jules/scraper-markposition-17752547678215960211`
+  - **Result:** Commit: Merge pull request #2263 from 8bukets/ingest-remote-subagents-13626091139436294036
+- **Branch:** `remotes/origin/knowledge-integration-3097887558112004437`
+  - **Result:** Commit: feat: Compile all knowledge sources into a structured Knowledge Integration report
+- **Branch:** `remotes/origin/knowledge-merge-signature-10281291985719549754`
+  - **Result:** Commit: fix: strictly avoid RegExp interpolation for dynamic string targets
+- **Branch:** `remotes/origin/knowledge/docker-gordon-14752052914444722613`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into knowledge/docker-gordon-14752052914444722613
+- **Branch:** `remotes/origin/macbook-cloud-simulation-2285701184876173816`
+  - **Result:** Commit: feat: Simulate MacBook cloud presence for autonomous operation
+- **Branch:** `remotes/origin/main`
+  - **Result:** Commit: Merge pull request #2273 from 8bukets/feat/intelephense-docs-integration-6696356503965723987
+- **Branch:** `remotes/origin/merge-chief-ai-officer-agent-10567370112505730513`
+  - **Result:** Commit: Merge and integrate Chief AI Officer agent definitions
+- **Branch:** `remotes/origin/migrate-ads-scraper-3232352495685919897`
+  - **Result:** Commit: refactor: migrate Google Ads scraper to TypeScript
+- **Branch:** `remotes/origin/migrate-to-node24-1846869886835570748`
+  - **Result:** Commit: chore: migrate github actions to node 24
+- **Branch:** `remotes/origin/multi-cloud-workflow-intelligence-12208347123975439755`
+  - **Result:** Commit: feat: implement multi-cloud workflow orchestration
+- **Branch:** `remotes/origin/nomad-cli-agent-docs-15478110730395729144`
+  - **Result:** Commit: fix: Update GitHub Actions to non-deprecated versions and fix bandit issues
+- **Branch:** `remotes/origin/oci-wordpress-deployment-9120692360420901713`
+  - **Result:** Commit: feat: add terraform and kubernetes configuration for wordpress on OCI
+- **Branch:** `remotes/origin/opt-scraper-regex-6404737091544860092`
+  - **Result:** Commit: Implement self-evolving autonomous system
+- **Branch:** `remotes/origin/optimize-domain-analysis-3826512882999880558`
+  - **Result:** Commit: perf: optimize domain analysis with walrus list comprehension
+- **Branch:** `remotes/origin/optimize-scraper-lxml-10625319758147758999`
+  - **Result:** Commit: Resolve merge conflicts by accepting origin/jules/scraper-markposition-17752547678215960211
+- **Branch:** `remotes/origin/oracle-ai-database-integration-1558530856752998309`
+  - **Result:** Commit: feat: integrate oracle database AI knowledge into system memory
+- **Branch:** `remotes/origin/oracle-ai-knowledge-14411165512379149104`
+  - **Result:** Commit: feat: add Oracle AI to knowledge observation URLs
+- **Branch:** `remotes/origin/oracle-ai-knowledge-integration-13185078831058651875`
+  - **Result:** Commit: feat: Integrate Oracle AI Knowledge into System Memory
+- **Branch:** `remotes/origin/oracle-google-cloud-agents-15432798509012982749`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into oracle-google-cloud-agents (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/oracle-knowledge-update-1623548321536958066`
+  - **Result:** Commit: fix: integrate oracle ai knowledge properly into agents
+- **Branch:** `remotes/origin/palette-add-distribution-bars-2985599301363690621`
+  - **Result:** Commit: feat: Add ASCII distribution bars to analytics report
+- **Branch:** `remotes/origin/palette-add-report-navigation-5682476892525167581`
+  - **Result:** Commit: Add navigation (TOC, anchors) to analytics report
+- **Branch:** `remotes/origin/palette-add-report-percentages-11439172869140532830`
+  - **Result:** Commit: feat: Add percentages to analytics report tables
+- **Branch:** `remotes/origin/palette-add-report-toc-1273852051673532647`
+  - **Result:** Commit: feat: Add Table of Contents to analytics report
+- **Branch:** `remotes/origin/palette-add-report-toc-13017065858519563862`
+  - **Result:** Commit: feat: Add dynamic Table of Contents to daily reports
+- **Branch:** `remotes/origin/palette-add-report-toc-14550766222336483339`
+  - **Result:** Commit: feat: add TOC and navigation links to analytics report
+- **Branch:** `remotes/origin/palette-add-toc-report-14784174799878095511`
+  - **Result:** Commit: feat: add table of contents to generated analytics report
+- **Branch:** `remotes/origin/palette-add-toc-to-report-13463853514148026577`
+  - **Result:** Commit: feat(ux): add Table of Contents to generated agent report
+- **Branch:** `remotes/origin/palette-add-toc-to-report-4251887735189678169`
+  - **Result:** Commit: 🎨 Palette: Add Table of Contents to analytics report
+- **Branch:** `remotes/origin/palette-analysis-ux-improvement-11980673162346986602`
+  - **Result:** Commit: feat: enhance AnalysisAgent with rich Markdown report
+- **Branch:** `remotes/origin/palette-analytics-bar-chart-7462251999169566505`
+  - **Result:** Commit: feat: Add ASCII bar chart to analytics report
+- **Branch:** `remotes/origin/palette-analytics-charts-2666464073759843485`
+  - **Result:** Commit: feat(analytics): add ASCII bar charts and emoji headers to reports
+- **Branch:** `remotes/origin/palette-analytics-charts-4206491572955874021`
+  - **Result:** Commit: feat(analytics): add ASCII bar charts and visual polish to reports
+- **Branch:** `remotes/origin/palette-analytics-charts-9684146293746097755`
+  - **Result:** Commit: feat(analytics): add ASCII bar charts to generated report
+- **Branch:** `remotes/origin/palette-analytics-cli-summary-14007342154187471292`
+  - **Result:** Commit: feat: Add console summary to analytics.py
+- **Branch:** `remotes/origin/palette-analytics-cli-summary-378562869972733659`
+  - **Result:** Commit: 🎨 Palette: Add rich CLI summary to analytics
+- **Branch:** `remotes/origin/palette-analytics-cli-summary-4779315143647098313`
+  - **Result:** Commit: feat: Add emojis to analytics report headers
+- **Branch:** `remotes/origin/palette-analytics-cli-ux-5862653145990614801`
+  - **Result:** Commit: feat: enhance CLI output for analytics.py
+- **Branch:** `remotes/origin/palette-analytics-cli-ux-7657702415316363052`
+  - **Result:** Commit: feat: improve analytics CLI output with summary stats
+- **Branch:** `remotes/origin/palette-analytics-console-feedback-14979050134191655648`
+  - **Result:** Commit: Add console summary to analytics.py for immediate feedback
+- **Branch:** `remotes/origin/palette-analytics-dashboard-4568468974815810948`
+  - **Result:** Commit: Add console dashboard and fix date parsing in analytics
+- **Branch:** `remotes/origin/palette-analytics-dashboard-8316831572934760504`
+  - **Result:** Commit: feat: add colorful terminal dashboard to analytics script
+- **Branch:** `remotes/origin/palette-analytics-emojis-3339331463941271199`
+  - **Result:** Commit: feat: Add emojis to analytics report headers
+- **Branch:** `remotes/origin/palette-analytics-nav-7571403874915432374`
+  - **Result:** Commit: 🎨 Palette: Add TOC and Back-to-Top Navigation to Analytics Report
+- **Branch:** `remotes/origin/palette-analytics-polish-7750837360671891751`
+  - **Result:** Commit: 🎨 Palette: Enhance analytics report with visuals
+- **Branch:** `remotes/origin/palette-analytics-polish-8171703762333426853`
+  - **Result:** Commit: 🎨 Palette: Enhance Markdown report with visualizations
+- **Branch:** `remotes/origin/palette-analytics-report-nav-1565448853703765405`
+  - **Result:** Commit: 🎨 Palette: Add TOC and Back to Top links to analytics report
+- **Branch:** `remotes/origin/palette-analytics-report-navigation-2126016171697891726`
+  - **Result:** Commit: feat: add ToC and navigation anchors to analytics report
+- **Branch:** `remotes/origin/palette-analytics-report-toc-4869005931920220226`
+  - **Result:** Commit: Add TOC and navigation to analytics report
+- **Branch:** `remotes/origin/palette-analytics-report-upgrade-14203127764241002344`
+  - **Result:** Commit: feat: enhance analytics report with ASCII charts and emojis
+- **Branch:** `remotes/origin/palette-analytics-report-ux-10341790926521843230`
+  - **Result:** Commit: feat: enhance analytics report with emojis and better formatting
+- **Branch:** `remotes/origin/palette-analytics-report-ux-11640172714027159768`
+  - **Result:** Commit: 🎨 Palette: Enhanced Analytics Report & CLI Feedback
+- **Branch:** `remotes/origin/palette-analytics-report-ux-1184134755645209419`
+  - **Result:** Commit: feat(analytics): Enhance report UX with TOC, emojis, and navigation
+- **Branch:** `remotes/origin/palette-analytics-report-ux-12029576835141614542`
+  - **Result:** Commit: feat: enhance analytics report UX with visual summaries
+- **Branch:** `remotes/origin/palette-analytics-report-ux-12591573171027613457`
+  - **Result:** Commit: feat(analytics): add TOC and 'Back to Top' links to report
+- **Branch:** `remotes/origin/palette-analytics-report-ux-13219657197638749902`
+  - **Result:** Commit: feat: improve analytics report UX with emojis and TOC
+- **Branch:** `remotes/origin/palette-analytics-report-ux-13310145182868611809`
+  - **Result:** Commit: feat(analytics): enhance report with navigation and emojis
+- **Branch:** `remotes/origin/palette-analytics-report-ux-14075089827549646693`
+  - **Result:** Commit: feat: enhance analytics report with visual data and improved formatting
+- **Branch:** `remotes/origin/palette-analytics-report-ux-14758852295203257646`
+  - **Result:** Commit: feat: Improve UX of generated analytics report
+- **Branch:** `remotes/origin/palette-analytics-report-ux-14959999178292083671`
+  - **Result:** Commit: feat: enhance analytics report with executive summary and emojis
+- **Branch:** `remotes/origin/palette-analytics-report-ux-14993712482288271186`
+  - **Result:** Commit: feat: enhance analytics report with visual metrics and progressive disclosure
+- **Branch:** `remotes/origin/palette-analytics-report-ux-15030314568688647799`
+  - **Result:** Commit: feat(analytics): add TOC and visual polish to generated report
+- **Branch:** `remotes/origin/palette-analytics-report-ux-1529011215089105936`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into palette-analytics-report-ux-1529011215089105936
+- **Branch:** `remotes/origin/palette-analytics-report-ux-15329964485464931220`
+  - **Result:** Commit: 🎨 Palette: Add TOC and visual enhancements to analytics report
+- **Branch:** `remotes/origin/palette-analytics-report-ux-15541317822719673614`
+  - **Result:** Commit: feat: Improve REPORT.md UX with TOC and emojis
+- **Branch:** `remotes/origin/palette-analytics-report-ux-16535941445945509426`
+  - **Result:** Commit: feat: enhance REPORT.md generation in analytics.py
+- **Branch:** `remotes/origin/palette-analytics-report-ux-18105782427134098622`
+  - **Result:** Commit: feat(analytics): improve REPORT.md UX with TOC and navigation
+- **Branch:** `remotes/origin/palette-analytics-report-ux-18318316321736345338`
+  - **Result:** Commit: feat: add TOC and navigation to analytics report
+- **Branch:** `remotes/origin/palette-analytics-report-ux-1927249769187221512`
+  - **Result:** Commit: feat: enhance analytics report UX with executive summary and visual polish
+- **Branch:** `remotes/origin/palette-analytics-report-ux-2030144575011325553`
+  - **Result:** Commit: feat(analytics): enhance REPORT.md with TOC, emojis, and better formatting
+- **Branch:** `remotes/origin/palette-analytics-report-ux-2082125199399639839`
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into palette-analytics-report-ux-2082125199399639839
+- **Branch:** `remotes/origin/palette-analytics-report-ux-2678528789063330717`
+  - **Result:** Commit: 🎨 Palette: Add TOC, emojis, and navigation to analytics report
+- **Branch:** `remotes/origin/palette-analytics-report-ux-2766406126539390708`
+  - **Result:** Commit: feat: enhance REPORT.md with emojis, tables and details
+- **Branch:** `remotes/origin/palette-analytics-report-ux-4099564144535097926`
+  - **Result:** Commit: feat: Add Table of Contents and visual polish to analytics report
+- **Branch:** `remotes/origin/palette-analytics-report-ux-4232613033722096123`
+  - **Result:** Commit: feat(analytics): enhance report with TOC, emojis and navigation
+- **Branch:** `remotes/origin/palette-analytics-report-ux-4257799222443731302`
+  - **Result:** Commit: feat: enhance analytics report with ASCII charts and executive summary
+- **Branch:** `remotes/origin/palette-analytics-report-ux-4326920631813878758`
+  - **Result:** Commit: feat(analytics): enhance report readability with TOC, emojis, and collapsible details
+- **Branch:** `remotes/origin/palette-analytics-report-ux-4867787760190622062`
+  - **Result:** Commit: feat(analytics): improve report UX with TOC, emojis, and sanitation
+- **Branch:** `remotes/origin/palette-analytics-report-ux-4908260963285094639`
+  - **Result:** Commit: feat(analytics): improve report navigability and visual polish
+- **Branch:** `remotes/origin/palette-analytics-report-ux-4967986312640001007`
+  - **Result:** Commit: feat: enhance analytics report with executive summary and collapsible sections
+- **Branch:** `remotes/origin/palette-analytics-report-ux-5612663723740313155`
+  - **Result:** Commit: feat: improve analytics report UX with visual data and ASCII charts
+- **Branch:** `remotes/origin/palette-analytics-report-ux-6865985959898721727`
+  - **Result:** Commit: 🎨 Palette: Enhance analytics report with TOC and visual polish
+- **Branch:** `remotes/origin/palette-analytics-report-ux-699851267367900614`
+  - **Result:** Commit: feat: improve analytics report UX with emojis and visual bars
+- **Branch:** `remotes/origin/palette-analytics-report-ux-7635334485492302228`
+  - **Result:** Commit: feat: enhance analytics report with TOC, emojis, and formatting
+- **Branch:** `remotes/origin/palette-analytics-report-ux-7778046450995178550`
+  - **Result:** Commit: feat(analytics): Enhance report with TOC, emojis, and navigation
+- **Branch:** `remotes/origin/palette-analytics-report-ux-7815834764566994440`
+  - **Result:** Commit: feat: enhance analytics report with executive summary and nav
+- **Branch:** `remotes/origin/palette-analytics-report-ux-831576827789251267`
+  - **Result:** Commit: feat: enhance analytics report UX with TOC, emojis, and percentages
+- **Branch:** `remotes/origin/palette-analytics-report-ux-8715451132490550236`
+  - **Result:** Commit: feat(analytics): add TOC, anchors, and emojis to report
+- **Branch:** `remotes/origin/palette-analytics-report-ux-9171175876471307053`
+  - **Result:** Commit: feat: Improve Markdown report readability and navigation
+- **Branch:** `remotes/origin/palette-analytics-report-ux-9782607580625898370`
+  - **Result:** Commit: feat: enhance analytics report with executive summary and collapsible sections
+- **Branch:** `remotes/origin/palette-analytics-report-visuals-17665906749060305966`
+  - **Result:** Commit: 🎨 Palette: Add visual bar charts to analytics report
+- **Branch:** `remotes/origin/palette-analytics-summary-3021361405572412376`
+  - **Result:** Commit: Add console summary to analytics.py for immediate feedback.
+- **Branch:** `remotes/origin/palette-analytics-summary-4728899381542685866`
+  - **Result:** Commit: feat: add delightful CLI summary to analytics.py
+- **Branch:** `remotes/origin/palette-analytics-summary-8453671355123458848`
+  - **Result:** Commit: feat(analytics): add cli summary output
+- **Branch:** `remotes/origin/palette-analytics-summary-box-4031844974106884823`
+  - **Result:** Commit: feat: Add colored summary box to analytics report generation
+- **Branch:** `remotes/origin/palette-analytics-summary-box-8939838279506558518`
+  - **Result:** Commit: feat: Add colored summary box to analytics CLI output
+- **Branch:** `remotes/origin/palette-analytics-toc-7303821586011748698`
+  - **Result:** Commit: 🎨 Palette: Add Table of Contents and visual polish to analytics report
+- **Branch:** `remotes/origin/palette-analytics-toc-8074372532609925284`
+  - **Result:** Commit: Add Table of Contents with explicit anchors to generated analytics report.
+- **Branch:** `remotes/origin/palette-analytics-ux-10843440201005490887`
+  - **Result:** Commit: Enhance analytics report with improved UX and accessibility
+- **Branch:** `remotes/origin/palette-analytics-ux-11549541802920057325`
+  - **Result:** Commit: feat(analytics): add rich console summary and markdown sanitization
+- **Branch:** `remotes/origin/palette-analytics-ux-12555028588043674226`
+  - **Result:** Commit: 🎨 Palette: Enhance Analytics Report with Visual Polish
+- **Branch:** `remotes/origin/palette-analytics-ux-12742154247019470327`
+  - **Result:** Commit: Enhance analytics report with improved UX and visual formatting
+- **Branch:** `remotes/origin/palette-analytics-ux-13063998870501229074`
+  - **Result:** Commit: feat: enhance analytics report with TOC and navigation
+- **Branch:** `remotes/origin/palette-analytics-ux-13394554780398421548`
+  - **Result:** Commit: Enhance analytics report with ASCII bar charts and summary
+- **Branch:** `remotes/origin/palette-analytics-ux-13601104017469084835`
+  - **Result:** Commit: Add visual summary to analytics CLI output
+- **Branch:** `remotes/origin/palette-analytics-ux-13652391697026705295`
+  - **Result:** Commit: 🎨 Palette: Add ASCII charts and emojis to analytics report
+- **Branch:** `remotes/origin/palette-analytics-ux-13688242619485411561`
+  - **Result:** Commit: Improve REPORT.md UX with emojis, TOC, and better formatting
+- **Branch:** `remotes/origin/palette-analytics-ux-1398025871126022947`
+  - **Result:** Commit: Improve REPORT.md readability with ASCII charts and navigation
+- **Branch:** `remotes/origin/palette-analytics-ux-14026773784102748859`
+  - **Result:** Commit: Add ASCII bar charts and emojis to analytics report
+- **Branch:** `remotes/origin/palette-analytics-ux-15537034640905896812`
+  - **Result:** Commit: 🎨 Palette: Add TOC, emojis, and navigation anchors to analytics report
+- **Branch:** `remotes/origin/palette-analytics-ux-15850026879957669631`
+  - **Result:** Commit: 🎨 Palette: Improve analytics report readability and error messages
+- **Branch:** `remotes/origin/palette-analytics-ux-15956843867430969547`
+  - **Result:** Commit: feat(analytics): add ASCII bar charts and emojis to reports
+- **Branch:** `remotes/origin/palette-analytics-ux-1664535404465252714`
+  - **Result:** Commit: feat: enhance generated report UX with TOC, anchors and emojis
+- **Branch:** `remotes/origin/palette-analytics-ux-17122946232140419354`
+  - **Result:** Commit: 🎨 Palette: Enhance analytics report readability
+- **Branch:** `remotes/origin/palette-analytics-ux-17971427170191617297`
+  - **Result:** Commit: Add visual CLI summary to analytics report generator
+- **Branch:** `remotes/origin/palette-analytics-ux-2099745595997314595`
+  - **Result:** Commit: 🎨 Palette: Add TOC and navigation to analytics report
+- **Branch:** `remotes/origin/palette-analytics-ux-2170686263637983463`
+  - **Result:** Commit: 🎨 Palette: Enhance analytics report with visual visualizations
+- **Branch:** `remotes/origin/palette-analytics-ux-2619089764861975591`
+  - **Result:** Commit: feat: enhance analytics report with ASCII charts and Executive Summary
+- **Branch:** `remotes/origin/palette-analytics-ux-3085333679140130358`
+  - **Result:** Commit: 🎨 Palette: Add ToC and visual polish to analytics report
+- **Branch:** `remotes/origin/palette-analytics-ux-3199574180142194674`
+  - **Result:** Commit: Enhance analytics report UX with TOC, emojis, and navigation aids
+- **Branch:** `remotes/origin/palette-analytics-ux-3624889402201605206`
+  - **Result:** Commit: feat: Add TOC and visual polish to analytics report
+- **Branch:** `remotes/origin/palette-analytics-ux-3806559299360919633`
+  - **Result:** Commit: 🎨 Palette: Enhance analytics report with ASCII charts and navigation
+- **Branch:** `remotes/origin/palette-analytics-ux-4010601009880012208`
+  - **Result:** Commit: Palette: Improve Analytics Report UX
+- **Branch:** `remotes/origin/palette-analytics-ux-5645278881546244962`
+  - **Result:** Commit: 🎨 Palette: Enhance Markdown report UX with navigation and formatting
+- **Branch:** `remotes/origin/palette-analytics-ux-6314444825554011554`
+  - **Result:** Commit: 🎨 Palette: Enhance report readability with TOC and visual cues
+- **Branch:** `remotes/origin/palette-analytics-ux-6396974063233277093`
+  - **Result:** Commit: 🎨 Palette: Enhance analytics report with visual data
+- **Branch:** `remotes/origin/palette-analytics-ux-68910243426309053`
+  - **Result:** Commit: Enhance analytics report with ASCII charts and emojis
+- **Branch:** `remotes/origin/palette-analytics-ux-7505744370262329436`
+  - **Result:** Commit: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into palette-analytics-ux-7505744370262329436
+- **Branch:** `remotes/origin/palette-analytics-ux-7627231207087504158`
+  - **Result:** Commit: 🎨 Palette: Enhance CLI output with visual summary in analytics.py
+- **Branch:** `remotes/origin/palette-analytics-ux-7822139345269315919`
+  - **Result:** Commit: 🎨 Palette: Rich CLI Feedback for Analytics
+- **Branch:** `remotes/origin/palette-analytics-ux-8397484588902920160`
+  - **Result:** Commit: 🎨 Improve analytics report UX with executive summary and emojis
+- **Branch:** `remotes/origin/palette-analytics-ux-8600630013729148115`
+  - **Result:** Commit: 🎨 Palette: Enhance analytics output with colors and charts
+- **Branch:** `remotes/origin/palette-analytics-ux-9003598505295651138`
+  - **Result:** Commit: feat(analytics): Enhance report UX with emojis and collapsible sections
+- **Branch:** `remotes/origin/palette-analytics-ux-9004408265330048174`
+  - **Result:** Commit: Enhance analytics report with ASCII bar charts and emojis
+- **Branch:** `remotes/origin/palette-analytics-ux-9149291915820024140`
+  - **Result:** Commit: feat(analytics): enhance CLI output and report formatting
+- **Branch:** `remotes/origin/palette-analytics-ux-9573677768644785747`
+  - **Result:** Commit: feat: add visual summary to analytics CLI and fix date parsing
+- **Branch:** `remotes/origin/palette-analytics-ux-9606386096062790280`
+  - **Result:** Commit: Enhance analytics report with ASCII charts and emojis
+- **Branch:** `remotes/origin/palette-analytics-ux-9649231222626251426`
+  - **Result:** Commit: feat: enhance analytics report with TOC, anchors, and emojis
+- **Branch:** `remotes/origin/palette-analytics-ux-9996966549873603846`
+  - **Result:** Commit: 🎨 Palette: Add emojis and TOC to analytics report
+- **Branch:** `remotes/origin/palette-analytics-ux-enhancement-1798372891917592058`
+  - **Result:** Commit: 🎨 Palette: Enhance analytics report readability
+- **Branch:** `remotes/origin/palette-analytics-ux-enhancement-8473182943421954671`
+  - **Result:** Commit: Enhance analytics report with improved navigation and visual formatting
+- **Branch:** `remotes/origin/palette-analytics-ux-improvement-10522861074342822232`
+  - **Result:** Commit: feat: Update system schedule to run bi-weekly
+- **Branch:** `remotes/origin/palette-analytics-ux-improvement-16053020405862702595`
+  - **Result:** Commit: 🎨 Palette: Enhance analytics report with emojis and TOC
+- **Branch:** `remotes/origin/palette-analytics-ux-upgrade-1857318026650759511`
+  - **Result:** Commit: feat: Improve analytics report UX with ASCII charts and executive summary
+- **Branch:** `remotes/origin/palette-analytics-visual-polish-4470200487089544601`
+  - **Result:** Commit: feat: add ASCII charts and emojis to analytics report
+- **Branch:** `remotes/origin/palette-analytics-visual-summary-2764218655727614121`
+  - **Result:** Commit: feat: Add visual summary with ASCII charts to analytics CLI output
+- **Branch:** `remotes/origin/palette-analytics-visualization-7864555049711578186`
+  - **Result:** Commit: feat: add ASCII bar charts to analytics report
+- **Branch:** `remotes/origin/palette-analytics-visuals-11507232120657592034`
+  - **Result:** Commit: 🎨 Palette: Add visual feedback to analytics CLI
+- **Branch:** `remotes/origin/palette-analytics-visuals-1727987223613819693`
+  - **Result:** Commit: feat: add visual enhancements to analytics report\n\n- Add ASCII bar charts to tables for better data visualization\n- Add emojis to section headers for better hierarchy\n- Improve docstrings and exception handling in analytics.py (Pylint 9.79/10)
+- **Branch:** `remotes/origin/palette-analytics-visuals-7638117604363083084`
+  - **Result:** Commit: feat(analytics): add ASCII bar charts and emojis to reports
+- **Branch:** `remotes/origin/palette-ascii-analytics-11257540586507137065`
+  - **Result:** Commit: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into palette-ascii-analytics-11257540586507137065
+- **Branch:** `remotes/origin/palette-ascii-analytics-6890644242452492122`
+  - **Result:** Commit: feat: enhance analytics report with ASCII charts and emojis
+- **Branch:** `remotes/origin/palette-ascii-bar-chart-4704095013089866243`
+  - **Result:** Commit: feat(ux): Add ASCII bar chart to keyword trends report
+- **Branch:** `remotes/origin/palette-ascii-bars-10852289251684581107`
+  - **Result:** Commit: feat(analytics): add ASCII bar charts to report tables
+- **Branch:** `remotes/origin/palette-ascii-bars-12554319188292046492`
+  - **Result:** Commit: 🎨 Palette: Add ASCII bar charts to analytics report
+- **Branch:** `remotes/origin/palette-ascii-bars-14633850369654553391`
+  - **Result:** Commit: feat(analytics): add ASCII bar charts to reports
+- **Branch:** `remotes/origin/palette-ascii-bars-1937977779725986035`
+  - **Result:** Commit: feat(analytics): add ASCII bar charts to report tables
+- **Branch:** `remotes/origin/palette-ascii-bars-4314152341351796533`
+  - **Result:** Commit: 🎨 Palette: Add ASCII bars to analytics report
+- **Branch:** `remotes/origin/palette-ascii-bars-4569634660869863011`
+  - **Result:** Commit: 🎨 Palette: Add ASCII bars to analytics report
+- **Branch:** `remotes/origin/palette-ascii-bars-4716182374226108315`
+  - **Result:** Commit: feat: add ASCII bar charts to analytics report tables
+- **Branch:** `remotes/origin/palette-ascii-bars-6236831282512919053`
+  - **Result:** Commit: feat(analytics): add ASCII bar charts to generated reports
+- **Branch:** `remotes/origin/palette-ascii-bars-8727413594208371857`
+  - **Result:** Commit: feat(analytics): add ASCII bar charts to analytics report
+- **Branch:** `remotes/origin/palette-ascii-charts-11999396775685685771`
+  - **Result:** Commit: feat(analytics): add ASCII bar charts to analytics report
+- **Branch:** `remotes/origin/palette-ascii-charts-15534847136011173808`
+  - **Result:** Commit: feat: add ascii bar charts to analytics report
+- **Branch:** `remotes/origin/palette-ascii-charts-15757732960728587034`
+  - **Result:** Commit: feat: add ASCII bar charts to analytics report
+- **Branch:** `remotes/origin/palette-ascii-charts-16355594758621519726`
+  - **Result:** Commit: feat: add ASCII bar charts to daily report keyword trends
+- **Branch:** `remotes/origin/palette-ascii-charts-16467333056139699036`
+  - **Result:** Commit: feat(analytics): add ASCII bar charts to distribution columns
+- **Branch:** `remotes/origin/palette-ascii-charts-16785128241519727077`
+  - **Result:** Commit: feat(analytics): add ASCII bar charts to generated reports
+- **Branch:** `remotes/origin/palette-ascii-charts-5993052222468580086`
+  - **Result:** Commit: feat(analytics): add ASCII bar charts to text reports
+- **Branch:** `remotes/origin/palette-ascii-charts-6299104478852342158`
+  - **Result:** Commit: feat: add ASCII bar charts to analytics report
+- **Branch:** `remotes/origin/palette-ascii-charts-7286146975517193000`
+  - **Result:** Commit: feat(analytics): add ASCII bar charts to generated Markdown report
+- **Branch:** `remotes/origin/palette-ascii-charts-7527273603289417794`
+  - **Result:** Commit: feat(analytics): add ASCII bar charts to generated report
+- **Branch:** `remotes/origin/palette-ascii-viz-2715057583589414713`
+  - **Result:** Commit: 🎨 Palette: Add ASCII visualizations to analytics report
+- **Branch:** `remotes/origin/palette-cli-colors-1479913510295186930`
+  - **Result:** Commit: 🎨 Palette: Add CLI colors and execution summary to scraper.py
+- **Branch:** `remotes/origin/palette-cli-colors-16970097531222949087`
+  - **Result:** Commit: feat(cli): Add colorful emoji logging to CLI
+- **Branch:** `remotes/origin/palette-cli-colors-18422454405439662270`
+  - **Result:** Commit: feat(ux): add colored log formatter for improved CLI experience
+- **Branch:** `remotes/origin/palette-cli-colors-3206504166430713796`
+  - **Result:** Commit: feat: Add color and emoji to scraper CLI output
+- **Branch:** `remotes/origin/palette-cli-colors-v1-15537575789263225364`
+  - **Result:** Commit: feat: implement bi-weekly reporting schedule
+- **Branch:** `remotes/origin/palette-cli-colors-v1-4047913124623383228`
+  - **Result:** Commit: feat: Add CLI colors and emojis for better UX
+- **Branch:** `remotes/origin/palette-cli-colors-v3-11994937576468000160`
+  - **Result:** Commit: feat: Add color-coded logs and .gitignore for better DX
+- **Branch:** `remotes/origin/palette-cli-dashboard-2336811404384765093`
+  - **Result:** Commit: feat(cli): add colorful summary dashboard to scraper output
+- **Branch:** `remotes/origin/palette-cli-dashboard-5972362359914062540`
+  - **Result:** Commit: 🎨 Palette: Add colorful CLI summary dashboard
+- **Branch:** `remotes/origin/palette-cli-dashboard-8254371988405476413`
+  - **Result:** Commit: feat(ci): replace daily reporting with bi-weekly GitHub Action
+- **Branch:** `remotes/origin/palette-cli-enhancement-18203871097305040079`
+  - **Result:** Commit: 🎨 Palette: Enhanced CLI with Visual Polish
+- **Branch:** `remotes/origin/palette-cli-enhancement-5441850221004135602`
+  - **Result:** Commit: feat(cli): enhance run_system.py output with emojis
+- **Branch:** `remotes/origin/palette-cli-logging-11690218801671113971`
+  - **Result:** Commit: feat(cli): enhance console output with colors and emojis
+- **Branch:** `remotes/origin/palette-cli-polish-10024653573136516829`
+  - **Result:** Commit: feat(ux): add colored summary box to scraper CLI
+- **Branch:** `remotes/origin/palette-cli-polish-10033509209368946448`
+  - **Result:** Commit: 🎨 Palette: Enhance CLI Output with Color and Emojis
+- **Branch:** `remotes/origin/palette-cli-polish-10617303078140811985`
+  - **Result:** Commit: feat(cli): add colors and summary box to scraper output
+- **Branch:** `remotes/origin/palette-cli-polish-10945294834958048524`
+  - **Result:** Commit: feat(cli): enhance console output with colors and emojis
+- **Branch:** `remotes/origin/palette-cli-polish-4689025684559590847`
+  - **Result:** Commit: Add colored logging and summary box to scraper CLI
+- **Branch:** `remotes/origin/palette-cli-polish-4820491515556702661`
+  - **Result:** Commit: 🎨 Palette: Enhance CLI Output with Colors and Summary
+- **Branch:** `remotes/origin/palette-cli-polish-5860890348609218987`
+  - **Result:** Commit: feat(ux): Add summary box and colors to CLI output
+- **Branch:** `remotes/origin/palette-cli-polish-7245288327755008219`
+  - **Result:** Commit: feat: Add visual polish to CLI output
+- **Branch:** `remotes/origin/palette-cli-polish-7681580200009180365`
+  - **Result:** Commit: 🎨 UX: Add colored output and summary box to scraper CLI
+- **Branch:** `remotes/origin/palette-cli-polish-8263686010400234400`
+  - **Result:** Commit: feat(cli): Add colored logging and summary table
+- **Branch:** `remotes/origin/palette-cli-progress-8547163842398693145`
+  - **Result:** Commit: feat: add CLI progress indicator to scraper
+- **Branch:** `remotes/origin/palette-cli-spinner-ux-17355742632069179967`
+  - **Result:** Commit: feat: Add CLI spinner and emoji feedback
+- **Branch:** `remotes/origin/palette-cli-spinner-ux-9775132984312638180`
+  - **Result:** Commit: feat: Add Spinner for better CLI UX
+- **Branch:** `remotes/origin/palette-cli-summary-2446121824441803209`
+  - **Result:** Commit: Add visual summary box to CLI output
+- **Branch:** `remotes/origin/palette-cli-summary-6668663755277861295`
+  - **Result:** Commit: 🎨 Palette: Add Summary Box and Colors to CLI
+- **Branch:** `remotes/origin/palette-cli-summary-box-12028055253848911084`
+  - **Result:** Commit: feat: Add colorful summary box to CLI output
+- **Branch:** `remotes/origin/palette-cli-summary-box-15724779665177572819`
+  - **Result:** Commit: feat: Automate bi-weekly reporting and add scraper UX
+- **Branch:** `remotes/origin/palette-cli-summary-box-15876395418728927629`
+  - **Result:** Commit: feat: Add summary box and colors to scraper CLI output
+- **Branch:** `remotes/origin/palette-cli-summary-box-16566719087269269209`
+  - **Result:** Commit: feat: Add summary box to scraper output
+- **Branch:** `remotes/origin/palette-cli-summary-box-17004344822758906732`
+  - **Result:** Commit: feat: Add colored summary box to CLI output
+- **Branch:** `remotes/origin/palette-cli-summary-box-7747250997461256954`
+  - **Result:** Commit: feat: Add colored summary box to scraper CLI
+- **Branch:** `remotes/origin/palette-cli-summary-box-8083330425517569149`
+  - **Result:** Commit: feat: Update scheduler to bi-weekly reports
+- **Branch:** `remotes/origin/palette-cli-summary-fix-logging-8776526000522908466`
+  - **Result:** Commit: 🎨 Palette: Add CLI summary box and unify logging stream
+- **Branch:** `remotes/origin/palette-cli-ux-11195364285862631174`
+  - **Result:** Commit: 🎨 Palette: Enhanced CLI Logging and Reporting UX
+- **Branch:** `remotes/origin/palette-cli-ux-13954950043505493397`
+  - **Result:** Commit: 🎨 Palette: Add rich CLI feedback with emojis and colors
+- **Branch:** `remotes/origin/palette-cli-ux-17335050180511200643`
+  - **Result:** Commit: feat: add CLI visual polish with emojis and colors
+- **Branch:** `remotes/origin/palette-cli-ux-17555004544357050973`
+  - **Result:** Commit: 🎨 Palette: CLI UX improvements and cleanup
+- **Branch:** `remotes/origin/palette-cli-ux-17758522128434594634`
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette-cli-ux-17758522128434594634
+- **Branch:** `remotes/origin/palette-cli-ux-2733075758607402523`
+  - **Result:** Commit: feat: enhance CLI visual feedback with colored logs and summary table
+- **Branch:** `remotes/origin/palette-cli-ux-3199876023688079054`
+  - **Result:** Commit: feat(cli): enhance logs with colors and emojis
+- **Branch:** `remotes/origin/palette-cli-ux-5136733467430420971`
+  - **Result:** Commit: feat(ux): implement bi-weekly autonomous scheduling and CLI polish
+- **Branch:** `remotes/origin/palette-cli-ux-5434733662486237818`
+  - **Result:** Commit: 🎨 Palette: Add CLI colors and summary stats to scraper
+- **Branch:** `remotes/origin/palette-cli-ux-6451827673105305913`
+  - **Result:** Commit: feat(ux): add colored logging and summary table to scraper
+- **Branch:** `remotes/origin/palette-cli-ux-6731712941668298150`
+  - **Result:** Commit: 🎨 Improve CLI UX with colors and emojis
+- **Branch:** `remotes/origin/palette-cli-ux-7116481711061595450`
+  - **Result:** Commit: feat(ux): Add Colors class and summary box to run_system.py
+- **Branch:** `remotes/origin/palette-cli-ux-726014719767405393`
+  - **Result:** Commit: feat: add UX formatting to CLI output
+- **Branch:** `remotes/origin/palette-cli-ux-7383645213978227588`
+  - **Result:** Commit: feat: Add delightful CLI output with colors and emojis
+- **Branch:** `remotes/origin/palette-cli-ux-7717349484047385997`
+  - **Result:** Commit: feat(cli): enhance CLI output with colors and summary box
+- **Branch:** `remotes/origin/palette-cli-ux-8165419945096762309`
+  - **Result:** Commit: feat(ux): improve CLI output and report readability
+- **Branch:** `remotes/origin/palette-cli-ux-biweekly-16790383014690096100`
+  - **Result:** Commit: feat: add CLI polish and bi-weekly scheduling
+- **Branch:** `remotes/origin/palette-cli-ux-colors-16711790772227801289`
+  - **Result:** Commit: feat: Add CLI color support and visual polish
+- **Branch:** `remotes/origin/palette-cli-ux-colors-17941664392335633230`
+  - **Result:** Commit: feat: Add CLI colors and emojis for better UX
+- **Branch:** `remotes/origin/palette-cli-ux-enhancement-16885913552344905053`
+  - **Result:** Commit: Enhance CLI output with colors and summary box
+- **Branch:** `remotes/origin/palette-cli-ux-improvements-11492387069204561579`
+  - **Result:** Commit: feat(ux): improve CLI experience with spinners and color
+- **Branch:** `remotes/origin/palette-cli-ux-improvements-12585797554244564723`
+  - **Result:** Commit: feat: improve CLI UX with colors and emojis
+- **Branch:** `remotes/origin/palette-cli-ux-improvements-16514744854922016217`
+  - **Result:** Commit: feat: enhance CLI output with emojis and formatting
+- **Branch:** `remotes/origin/palette-cli-ux-improvements-17270330985806452288`
+  - **Result:** Commit: feat: improve CLI output with colors and emojis
+- **Branch:** `remotes/origin/palette-cli-ux-improvements-5318917015708801227`
+  - **Result:** Commit: feat: add emojis to orchestrator logs for better CLI UX
+- **Branch:** `remotes/origin/palette-cli-ux-improvements-6092607382424465804`
+  - **Result:** Commit: feat(cli): add rich visual feedback to scraper
+- **Branch:** `remotes/origin/palette-cli-ux-improvements-8535199228408346905`
+  - **Result:** Commit: feat: improve CLI UX with colored logging and graceful interrupt handling
+- **Branch:** `remotes/origin/palette-cli-ux-improvements-8617716335041011148`
+  - **Result:** Commit: feat: Implement Autonomous Agents Expansion with System IQ
+- **Branch:** `remotes/origin/palette-cli-ux-improvements-9208959306242680179`
+  - **Result:** Commit: feat(ux): enhance CLI output with colors and emojis
+- **Branch:** `remotes/origin/palette-cli-ux-logs-15889507569998878970`
+  - **Result:** Commit: feat: enhance CLI logging with emojis and colors
+- **Branch:** `remotes/origin/palette-cli-ux-polish-2111230884908221183`
+  - **Result:** Commit: feat: enhance CLI output with colors, emojis, and summary box
+- **Branch:** `remotes/origin/palette-cli-ux-summary-11132373574447212764`
+  - **Result:** Commit: feat: Add colorful CLI summary using Palette class
+- **Branch:** `remotes/origin/palette-cli-ux-summary-8843972802041575160`
+  - **Result:** Commit: feat: Add CLI summary box to scraper output
+- **Branch:** `remotes/origin/palette-cli-ux-summary-box-17623971089060669166`
+  - **Result:** Commit: Add polished summary box to CLI output
+- **Branch:** `remotes/origin/palette-cli-ux-summary-box-1793080287147073634`
+  - **Result:** Commit: 🎨 Palette: Implement autonomous bi-weekly schedule
+- **Branch:** `remotes/origin/palette-cli-visual-hierarchy-17889502695292782743`
+  - **Result:** Commit: feat(ux): enhance CLI logs and report readability with emojis and structure
+- **Branch:** `remotes/origin/palette-cli-visual-polish-10160750518849227089`
+  - **Result:** Commit: feat: Add visual polish to CLI logs with emojis and colors
+- **Branch:** `remotes/origin/palette-cli-visual-polish-12024230895845903893`
+  - **Result:** Commit: feat: add CLI visual polish with colored logging and emojis
+- **Branch:** `remotes/origin/palette-cli-visual-polish-15892369352802865338`
+  - **Result:** Commit: feat: Add colored logging for improved CLI UX
+- **Branch:** `remotes/origin/palette-cli-visual-polish-15906787407292859541`
+  - **Result:** Commit: feat: enhance CLI output with colors and emojis
+- **Branch:** `remotes/origin/palette-cli-visual-polish-16691567195068530862`
+  - **Result:** Commit: feat: improve CLI visual hierarchy with colored logs and summary box
+- **Branch:** `remotes/origin/palette-cli-visual-polish-16944835121603968346`
+  - **Result:** Commit: feat: Add colored summary box to scraper CLI
+- **Branch:** `remotes/origin/palette-cli-visual-polish-3698444401610641769`
+  - **Result:** Commit: feat: Add visual polish to CLI output with colored logging
+- **Branch:** `remotes/origin/palette-cli-visual-polish-7342470376918669690`
+  - **Result:** Commit: feat: enhance CLI output with colors and summary table
+- **Branch:** `remotes/origin/palette-cli-visual-polish-8268523822408541016`
+  - **Result:** Commit: 🤖 Complete Autonomous Agent System (V2)
+- **Branch:** `remotes/origin/palette-cli-visual-polish-8429968879591285663`
+  - **Result:** Commit: feat: improve CLI UX with colors and emojis
+- **Branch:** `remotes/origin/palette-cli-visuals-10522889352732785467`
+  - **Result:** Commit: feat: improve CLI visual hierarchy with colored logs and summary
+- **Branch:** `remotes/origin/palette-color-logging-7081539865744827473`
+  - **Result:** Commit: Implement semantic color logging for agent swarm CLI
+- **Branch:** `remotes/origin/palette-colored-logging-13485015561319652881`
+  - **Result:** Commit: 🎨 Palette: Add colored logging and emojis to orchestrator
+- **Branch:** `remotes/origin/palette-colored-logging-1491286074497741313`
+  - **Result:** Commit: feat: Add colored logging and emoji indicators to CLI output
+- **Branch:** `remotes/origin/palette-colored-logging-1757555013383239299`
+  - **Result:** Commit: 🎨 Palette: Add colored logging with emojis
+- **Branch:** `remotes/origin/palette-colored-logging-227369184012768819`
+  - **Result:** Commit: 🎨 Palette: Enhance CLI with colored logging
+- **Branch:** `remotes/origin/palette-colored-logging-4205972882040105240`
+  - **Result:** Commit: feat(cli): add colored logging with emojis
+- **Branch:** `remotes/origin/palette-colored-logging-874743676843453366`
+  - **Result:** Commit: 🎨 Palette: Add colored logging to scraper
+- **Branch:** `remotes/origin/palette-colored-logging-ux-17992992893836772305`
+  - **Result:** Commit: feat: add colored logging and fix double logging issue
+- **Branch:** `remotes/origin/palette-colored-logs-4026752911446886464`
+  - **Result:** Commit: 🎨 Palette: Add colored logging for better CLI UX
+- **Branch:** `remotes/origin/palette-daily-report-ux-12337725128930830373`
+  - **Result:** Commit: Add TOC and navigation to daily report
+- **Branch:** `remotes/origin/palette-emoji-cli-16267915948995606301`
+  - **Result:** Commit: 🎨 Palette: Add emoji to CLI output for better readability
+- **Branch:** `remotes/origin/palette-enhance-analytics-report-1016309185674520626`
+  - **Result:** Commit: 🎨 Palette: Enhance Analytics Report UX
+- **Branch:** `remotes/origin/palette-enhance-analytics-report-15055106574491023571`
+  - **Result:** Commit: 🎨 Palette: Enhance analytics report with visual summary and collapsible sections
+- **Branch:** `remotes/origin/palette-enhance-analytics-report-ux-7566122147300059858`
+  - **Result:** Commit: 🎨 Palette: Enhance Analytics Report UX
+- **Branch:** `remotes/origin/palette-enhance-report-2201430122380267668`
+  - **Result:** Commit: 🎨 Palette: Enhance Markdown report with Executive Summary and emojis
+- **Branch:** `remotes/origin/palette-enhance-report-navigation-18147027866662169635`
+  - **Result:** Commit: 🎨 Palette: Enhance REPORT.md readability and navigation
+- **Branch:** `remotes/origin/palette-enhanced-analytics-report-16541518786921245550`
+  - **Result:** Commit: Enhance analytics report with TOC, emojis, and sanitization
+- **Branch:** `remotes/origin/palette-enhanced-analytics-report-4125169103760286117`
+  - **Result:** Commit: feat: enhance analytics report with visual metrics and collapsible sections
+- **Branch:** `remotes/origin/palette-enhanced-analytics-report-6250323296380434089`
+  - **Result:** Commit: 🎨 Palette: Enhanced Analytics Report UX
+- **Branch:** `remotes/origin/palette-enhanced-reporting-16561283463270508168`
+  - **Result:** Commit: 🎨 Palette: Enhance Markdown report readability
+- **Branch:** `remotes/origin/palette-enhanced-reports-13334640253613102957`
+  - **Result:** Commit: 🎨 Palette: Enhance daily report with TOC, emojis, and tables
+- **Branch:** `remotes/origin/palette-enhanced-reports-16415063186850509596`
+  - **Result:** Commit: feat: enhance CLI analytics report with visual data bars
+- **Branch:** `remotes/origin/palette-exec-summary-6369051085132382588`
+  - **Result:** Commit: feat(report): add executive summary table to agent report
+- **Branch:** `remotes/origin/palette-execution-summary-605686719773700306`
+  - **Result:** Commit: 🎨 Palette: Add execution summary box and gitignore
+- **Branch:** `remotes/origin/palette-executive-summary-1397689268436941466`
+  - **Result:** Commit: 🎨 Palette: Enhance daily report with executive summary and charts
+- **Branch:** `remotes/origin/palette-executive-summary-3583176920800534114`
+  - **Result:** Commit: Enhance analytics report with executive summary table and emojis
+- **Branch:** `remotes/origin/palette-fix-markdown-escaping-930315787144321424`
+  - **Result:** Commit: fix(analytics): escape special characters in markdown report
+- **Branch:** `remotes/origin/palette-fix-report-format-6084666268779181301`
+  - **Result:** Commit: Format curiosity findings as markdown list in agent report
+- **Branch:** `remotes/origin/palette-graceful-shutdown-6686216384600575838`
+  - **Result:** Commit: feat(cli): add graceful shutdown to save data on interrupt
+- **Branch:** `remotes/origin/palette-html-report-4670439550378030789`
+  - **Result:** Commit: feat(ux): generate accessible HTML report in ContentAgent
+- **Branch:** `remotes/origin/palette-improve-analytics-report-16936824764363897715`
+  - **Result:** Commit: 🎨 Palette: Enhance analytics report readability
+- **Branch:** `remotes/origin/palette-improve-analytics-report-18062852569660178887`
+  - **Result:** Commit: feat: improve analytics report readability
+- **Branch:** `remotes/origin/palette-improve-analytics-report-981155583379046821`
+  - **Result:** Commit: feat: improve analytics report UX
+- **Branch:** `remotes/origin/palette-improve-analytics-ux-11358974436321208229`
+  - **Result:** Commit: Improve analytics report UX with emojis, highlights, and CLI feedback. Add .gitignore.
+- **Branch:** `remotes/origin/palette-improve-analytics-ux-29325668557069915`
+  - **Result:** Commit: feat: improve REPORT.md UX with TOC, emojis, and formatting
+- **Branch:** `remotes/origin/palette-improve-cli-logging-2441580921908599501`
+  - **Result:** Commit: feat: change job schedule from daily to every two weeks
+- **Branch:** `remotes/origin/palette-improve-report-ux-10297605179538560292`
+  - **Result:** Commit: Enhance analytics report with TOC, emojis, and navigation anchors
+- **Branch:** `remotes/origin/palette-improve-report-ux-10536158584792185614`
+  - **Result:** Commit: Improve REPORT.md UX with TOC and Emojis
+- **Branch:** `remotes/origin/palette-improve-report-ux-10661525199264285560`
+  - **Result:** Commit: feat: enhance daily report UX with navigation and visual cues
+- **Branch:** `remotes/origin/palette-improve-report-ux-1244892965393033926`
+  - **Result:** Commit: feat: add TOC and navigation anchors to analytics report
+- **Branch:** `remotes/origin/palette-improve-report-ux-12668535848296515806`
+  - **Result:** Commit: feat: Improve generated report UX with emojis and TOC
+- **Branch:** `remotes/origin/palette-improve-report-ux-12806219181289335156`
+  - **Result:** Commit: feat: Improve Agent Report UX with TOC and Dashboard
+- **Branch:** `remotes/origin/palette-improve-report-ux-13501189748065964858`
+  - **Result:** Commit: feat: enhance analytics report with TOC, emojis, and sanitization
+- **Branch:** `remotes/origin/palette-improve-report-ux-14047162769090581010`
+  - **Result:** Commit: feat: improve report UX with emojis and tables
+- **Branch:** `remotes/origin/palette-improve-report-ux-14288341330964781354`
+  - **Result:** Commit: feat: Improve UX of daily autonomous reports
+- **Branch:** `remotes/origin/palette-improve-report-ux-1515268010537928843`
+  - **Result:** Commit: feat: enhance analytics report with executive summary and collapsible details
+- **Branch:** `remotes/origin/palette-improve-report-ux-1590412772742970293`
+  - **Result:** Commit: feat: enhance daily report with executive summary and collapsible details
+- **Branch:** `remotes/origin/palette-improve-report-ux-1594767510062861541`
+  - **Result:** Commit: feat: Improve generated report UX
+- **Branch:** `remotes/origin/palette-improve-report-ux-15954132581208631858`
+  - **Result:** Commit: feat: Improve report readability with dashboard and TOC
+- **Branch:** `remotes/origin/palette-improve-report-ux-16744443975495209465`
+  - **Result:** Commit: feat: improve report readability with TOC and formatting
+- **Branch:** `remotes/origin/palette-improve-report-ux-16924772341609305801`
+  - **Result:** Commit: 🎨 Palette: Enhance analytics report with TOC and emojis
+- **Branch:** `remotes/origin/palette-improve-report-ux-17986839873876341700`
+  - **Result:** Commit: feat: improve REPORT.md UX with tables and visual hierarchy
+- **Branch:** `remotes/origin/palette-improve-report-ux-1981383382023870129`
+  - **Result:** Commit: Improve daily report UX with TOC and status emojis
+- **Branch:** `remotes/origin/palette-improve-report-ux-21771574619127567`
+  - **Result:** Commit: 🎨 Improve Daily Report UX with TOC and Emojis
+- **Branch:** `remotes/origin/palette-improve-report-ux-3120211137232020519`
+  - **Result:** Commit: 🎨 Palette: Enhance Analytics Report with TOC, Emojis, and Sanitization
+- **Branch:** `remotes/origin/palette-improve-report-ux-3142867670552745548`
+  - **Result:** Commit: feat: add navigation and visual polish to analytics report
+- **Branch:** `remotes/origin/palette-improve-report-ux-3610494715935454466`
+  - **Result:** Commit: feat: Improve report readability with executive summary and collapsible sections
+- **Branch:** `remotes/origin/palette-improve-report-ux-3734025861997546036`
+  - **Result:** Commit: feat: enhance REPORT.md with TOC, emojis and navigation
+- **Branch:** `remotes/origin/palette-improve-report-ux-4874508048051784270`
+  - **Result:** Commit: feat: Add Table of Contents and navigation anchors to daily reports
+- **Branch:** `remotes/origin/palette-improve-report-ux-490626902117098437`
+  - **Result:** Commit: feat: Improve Agent Report UX with summary table and collapsible sections
+- **Branch:** `remotes/origin/palette-improve-report-ux-5308965302741084128`
+  - **Result:** Commit: 🎨 Palette: Enhance Markdown report UX with TOC, anchors, and emojis
+- **Branch:** `remotes/origin/palette-improve-report-ux-5436844210924255885`
+  - **Result:** Commit: feat: Improve Markdown report UX with visual charts and collapsible details
+- **Branch:** `remotes/origin/palette-improve-report-ux-5549830311502835273`
+  - **Result:** Commit: feat: improve report UX with emojis and navigation
+- **Branch:** `remotes/origin/palette-improve-report-ux-6354626839202487663`
+  - **Result:** Commit: feat: enhance REPORT.md with TOC and better formatting
+- **Branch:** `remotes/origin/palette-improve-report-ux-6475317828769115053`
+  - **Result:** Commit: Improve Markdown Report UX with TOC, emojis and anchors
+- **Branch:** `remotes/origin/palette-improve-report-ux-661272626947042109`
+  - **Result:** Commit: feat: improve report readability with semantic emojis
+- **Branch:** `remotes/origin/palette-improve-report-ux-7874174141320841787`
+  - **Result:** Commit: feat: Improve REPORT.md UX with emojis and navigation
+- **Branch:** `remotes/origin/palette-improve-report-ux-8539269373993322995`
+  - **Result:** Commit: feat: improve report UX with TOC and emojis
+- **Branch:** `remotes/origin/palette-improve-report-ux-8987708130567314093`
+  - **Result:** Commit: Enhance daily report readability with summary and visual cues
+- **Branch:** `remotes/origin/palette-improve-report-ux-9882191085663915429`
+  - **Result:** Commit: feat: improve report readability with collapsible tables
+- **Branch:** `remotes/origin/palette-log-colors-12337295467778807267`
+  - **Result:** Commit: feat(ux): add colored logging and emojis to CLI output
+- **Branch:** `remotes/origin/palette-log-emojis-14996925440065141338`
+  - **Result:** Commit: feat(cli): enhance logs with emojis and improved visibility
+- **Branch:** `remotes/origin/palette-log-formatting-15971220591968669569`
+  - **Result:** Commit: feat(dx): Add colored logging with emojis
+- **Branch:** `remotes/origin/palette-log-formatting-9683465973312644975`
+  - **Result:** Commit: feat(cli): add gemini-powered build, debug & deploy cli
+- **Branch:** `remotes/origin/palette-md-toc-15408984183661595183`
+  - **Result:** Commit: 🎨 Palette: Add TOC and semantic emojis to analytics report
+- **Branch:** `remotes/origin/palette-report-navigation-10113074298348902024`
+  - **Result:** Commit: feat(analytics): improve report navigation and readability
+- **Branch:** `remotes/origin/palette-report-navigation-10356776487469594333`
+  - **Result:** Commit: Add TOC to report and fix date parsing
+- **Branch:** `remotes/origin/palette-report-navigation-10884479842753729590`
+  - **Result:** Commit: feat: add TOC and navigation to daily reports
+- **Branch:** `remotes/origin/palette-report-navigation-11771695338602020565`
+  - **Result:** Commit: feat(report): improve report navigability with TOC and anchors
+- **Branch:** `remotes/origin/palette-report-navigation-14321694259906240108`
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into palette-report-navigation-14321694259906240108
+- **Branch:** `remotes/origin/palette-report-navigation-16056318434640743559`
+  - **Result:** Commit: feat: Add navigation and visual polish to generated report
+- **Branch:** `remotes/origin/palette-report-navigation-16469273364235841712`
+  - **Result:** Commit: Palette: Add Table of Contents and Back to Top links to analytics report
+- **Branch:** `remotes/origin/palette-report-navigation-17302622234226606396`
+  - **Result:** Commit: feat: improve report navigation with TOC and anchors
+- **Branch:** `remotes/origin/palette-report-navigation-2240518606700983656`
+  - **Result:** Commit: feat(report): add navigation aids to daily report
+- **Branch:** `remotes/origin/palette-report-navigation-4012184559007289296`
+  - **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into palette-report-navigation-4012184559007289296
+- **Branch:** `remotes/origin/palette-report-navigation-4813868009156738406`
+  - **Result:** Commit: feat(ux): add navigation to generated reports
+- **Branch:** `remotes/origin/palette-report-navigation-6685589132510964882`
+  - **Result:** Commit: feat(analytics): add TOC and navigation to generated reports
+- **Branch:** `remotes/origin/palette-report-navigation-9686279638515215567`
+  - **Result:** Commit: feat: Add TOC and navigation anchors to daily report
+- **Branch:** `remotes/origin/palette-report-percentages-17226232511035798370`
+  - **Result:** Commit: feat: Implement autonomous evolutionary architecture with DNA-based agents
+- **Branch:** `remotes/origin/palette-report-ux-10190632765765141408`
+  - **Result:** Commit: Improve Report UX with Navigation and Sanitization
+- **Branch:** `remotes/origin/palette-report-ux-1122938860109314687`
+  - **Result:** Commit: feat(ux): add table of contents and anchors to daily report
+- **Branch:** `remotes/origin/palette-report-ux-13084128329690179617`
+  - **Result:** Commit: feat: improve report UX with TOC, anchors and emojis
+- **Branch:** `remotes/origin/palette-report-ux-13346053882994935837`
+  - **Result:** Commit: 🎨 Palette: Improve Report UX with TOC and Emojis
+- **Branch:** `remotes/origin/palette-report-ux-14042064237579661712`
+  - **Result:** Commit: feat: enhance analytics report with emojis and better formatting
+- **Branch:** `remotes/origin/palette-report-ux-14048412210578992959`
+  - **Result:** Commit: feat: add navigation and visual polish to analytics report
+- **Branch:** `remotes/origin/palette-report-ux-14987059388219243677`
+  - **Result:** Commit: 🎨 Palette: Enhance daily report with charts and summary table
+- **Branch:** `remotes/origin/palette-report-ux-16058546482539529052`
+  - **Result:** Commit: feat: improve report readability with tables and ASCII charts
+- **Branch:** `remotes/origin/palette-report-ux-16950258538465395817`
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette-report-ux-16950258538465395817
+- **Branch:** `remotes/origin/palette-report-ux-2586385590797545719`
+  - **Result:** Commit: feat(analytics): add TOC and percentage shares to report
+- **Branch:** `remotes/origin/palette-report-ux-3294594477704470315`
+  - **Result:** Commit: 🎨 Palette: Improve Analytics Report UX
+- **Branch:** `remotes/origin/palette-report-ux-3403375425654783519`
+  - **Result:** Commit: feat: Add Table of Contents to agent reports and ignore report artifacts
+- **Branch:** `remotes/origin/palette-report-ux-4034891635733376615`
+  - **Result:** Commit: 🎨 Palette: Improve REPORT.md navigation and readability
+- **Branch:** `remotes/origin/palette-report-ux-6836477238955573134`
+  - **Result:** Commit: feat: add TOC, anchors, and emojis to analytics report
+- **Branch:** `remotes/origin/palette-report-ux-6858294670111624762`
+  - **Result:** Commit: feat: add TOC and emojis to analytics report for better UX
+- **Branch:** `remotes/origin/palette-report-ux-6923593028800648956`
+  - **Result:** Commit: feat(analytics): improve report readability with TOC and emojis
+- **Branch:** `remotes/origin/palette-report-ux-7438110987153342447`
+  - **Result:** Commit: feat: add navigation and visual polish to generated analytics report
+- **Branch:** `remotes/origin/palette-report-ux-7740280376937285109`
+  - **Result:** Commit: feat: improve REPORT.md UX with TOC and navigation links
+- **Branch:** `remotes/origin/palette-report-ux-7856749345935831268`
+  - **Result:** Commit: 🎨 Palette: Enhance REPORT.md readability and navigation
+- **Branch:** `remotes/origin/palette-report-ux-819349332889907468`
+  - **Result:** Commit: 🎨 Palette: Enhanced Report Navigation
+- **Branch:** `remotes/origin/palette-report-ux-8594930454314981878`
+  - **Result:** Commit: 🎨 Palette: Enhanced Report with TOC and Emojis
+- **Branch:** `remotes/origin/palette-report-ux-8793038979324297126`
+  - **Result:** Commit: feat(analytics): improve report UX with navigation and formatting
+- **Branch:** `remotes/origin/palette-report-ux-8982430581634306711`
+  - **Result:** Commit: feat(report): improve report UX with status dashboard and emojis
+- **Branch:** `remotes/origin/palette-report-ux-9353964670037351042`
+  - **Result:** Commit: feat(analytics): improve REPORT.md visual polish
+- **Branch:** `remotes/origin/palette-report-ux-9415073918142089548`
+  - **Result:** Commit: feat(report): improve daily report UX with summary table and collapsible sections
+- **Branch:** `remotes/origin/palette-report-ux-enhancement-3353987271590337656`
+  - **Result:** Commit: Enhance daily report with Table of Contents, emoji headers, and anchors
+- **Branch:** `remotes/origin/palette-report-ux-enhancement-6279674457010512471`
+  - **Result:** Commit: 🎨 Palette: Enhance daily report with visual status indicators and semantic emojis
+- **Branch:** `remotes/origin/palette-report-ux-improvement-10193181344057520742`
+  - **Result:** Commit: feat: add navigation and visual polish to generated reports
+- **Branch:** `remotes/origin/palette-report-ux-improvement-13692058964087524483`
+  - **Result:** Commit: feat(analytics): improve report navigability and readability
+- **Branch:** `remotes/origin/palette-report-ux-improvement-16505406583261696285`
+  - **Result:** Commit: Merge branch 'artmusicpage-scraper-13642650452924627148' into palette-report-ux-improvement-16505406583261696285
+- **Branch:** `remotes/origin/palette-report-ux-improvement-5601014531851096708`
+  - **Result:** Commit: feat: Improve agent report readability with TOC and navigation
+- **Branch:** `remotes/origin/palette-report-ux-improvement-6564382053803100355`
+  - **Result:** Commit: 🎨 Palette: Improve report navigation and accessibility
+- **Branch:** `remotes/origin/palette-report-ux-improvement-6775578047897650791`
+  - **Result:** Commit: feat: add ToC, anchors and emojis to analytics report
+- **Branch:** `remotes/origin/palette-report-ux-improvement-9188687414031330182`
+  - **Result:** Commit: Add Table of Contents and Back-to-Top links to report generator
+- **Branch:** `remotes/origin/palette-scraper-cli-emojis-15649267029330814989`
+  - **Result:** Commit: 🎨 Palette: Enhance CLI output in scraper.py with emojis
+- **Branch:** `remotes/origin/palette-scraper-cli-summary-16839144126479902630`
+  - **Result:** Commit: feat: Add colorful CLI summary box, robustness, and tests
+- **Branch:** `remotes/origin/palette-scraper-cli-summary-3176708108112650471`
+  - **Result:** Commit: feat: Add visual summary dashboard to CLI output
+- **Branch:** `remotes/origin/palette-scraper-cli-summary-5336252547540046399`
+  - **Result:** Commit: feat: Add visual summary box to scraper CLI output
+- **Branch:** `remotes/origin/palette-scraper-cli-ux-10254727661965721120`
+  - **Result:** Commit: feat: improve scraper CLI feedback with colored summary
+- **Branch:** `remotes/origin/palette-scraper-cli-ux-5391046781979864824`
+  - **Result:** Commit: feat: improve scraper CLI with colors and emojis
+- **Branch:** `remotes/origin/palette-scraper-cli-ux-5822096783494386588`
+  - **Result:** Commit: feat: Add visual polish to scraper CLI output
+- **Branch:** `remotes/origin/palette-scraper-cli-ux-594719543184978660`
+  - **Result:** Commit: feat: add colorful summary to scraper CLI output
+- **Branch:** `remotes/origin/palette-scraper-cli-ux-logging-3017049004643808335`
+  - **Result:** Commit: feat: improve scraper CLI UX with colored logging and emojis
+- **Branch:** `remotes/origin/palette-scraper-cli-ux-refactor-17492087150841204315`
+  - **Result:** Commit: Refactor scraper logging to use custom ColorFormatter
+- **Branch:** `remotes/origin/palette-scraper-progress-6239093521074756069`
+  - **Result:** Commit: 🎨 Palette: Add dynamic progress bar to scraper CLI
+- **Branch:** `remotes/origin/palette-scraper-summary-10400250517688153163`
+  - **Result:** Commit: feat(scraper): Add CLI summary box with execution stats
+- **Branch:** `remotes/origin/palette-scraper-summary-1208629136224129021`
+  - **Result:** Commit: feat(scraper): add summary table to CLI output
+- **Branch:** `remotes/origin/palette-scraper-summary-12144256042396089785`
+  - **Result:** Commit: Add summary table with stats and colors to scraper.py output
+- **Branch:** `remotes/origin/palette-scraper-summary-13588156777621832992`
+  - **Result:** Commit: Add summary box to scraper output
+- **Branch:** `remotes/origin/palette-scraper-summary-15144327026346819071`
+  - **Result:** Commit: Add visual summary box to scraper CLI
+- **Branch:** `remotes/origin/palette-scraper-summary-15872742580256462158`
+  - **Result:** Commit: Add polished summary box to scraper output
+- **Branch:** `remotes/origin/palette-scraper-summary-17513207039517705474`
+  - **Result:** Commit: 🎨 Palette: Add colored summary box to scraper CLI
+- **Branch:** `remotes/origin/palette-scraper-summary-3653925137678397379`
+  - **Result:** Commit: Add colorized summary box to scraper output
+- **Branch:** `remotes/origin/palette-scraper-summary-5050498537794358617`
+  - **Result:** Commit: 🎨 Palette: Add scraping summary box
+- **Branch:** `remotes/origin/palette-scraper-summary-5881723373928113015`
+  - **Result:** Commit: Add summary box to scraper output
+- **Branch:** `remotes/origin/palette-scraper-summary-8932535949334759673`
+  - **Result:** Commit: Add visual summary box to scraper output
+- **Branch:** `remotes/origin/palette-scraper-summary-box-7474193270213142188`
+  - **Result:** Commit: feat: Add CLI summary box to scraper.py
+- **Branch:** `remotes/origin/palette-scraper-ux-11462642934307875723`
+  - **Result:** Commit: 🎨 Palette: Add colorful summary box to scraper CLI
+- **Branch:** `remotes/origin/palette-scraper-ux-5424877083715030058`
+  - **Result:** Commit: feat(scraper): add colored logging and summary table
+- **Branch:** `remotes/origin/palette-scraper-ux-6961191182929731002`
+  - **Result:** Commit: 🎨 Palette: Add colorful summary box to scraper CLI
+- **Branch:** `remotes/origin/palette-scraper-ux-7786747023368569446`
+  - **Result:** Commit: feat: add emojis and colors to scraper CLI output for better UX
+- **Branch:** `remotes/origin/palette-scraper-ux-9017003330469506880`
+  - **Result:** Commit: 🎨 Add styled summary box to scraper CLI output
+- **Branch:** `remotes/origin/palette-scraper-ux-920842883582367998`
+  - **Result:** Commit: Add colorized summary box to scraper CLI output
+- **Branch:** `remotes/origin/palette-scraper-ux-summary-1616700660320259607`
+  - **Result:** Commit: feat: Add colored summary box to scraper CLI output
+- **Branch:** `remotes/origin/palette-scraper-ux-summary-7200015495059057194`
+  - **Result:** Commit: feat: Add execution summary box to scraper CLI
+- **Branch:** `remotes/origin/palette-ux-analytics-bar-chart-17866123775961156330`
+  - **Result:** Commit: feat: add visual distribution chart to analytics report
+- **Branch:** `remotes/origin/palette-ux-analytics-report-10632574585919041328`
+  - **Result:** Commit: feat: enhance analytics report with visual UX improvements
+- **Branch:** `remotes/origin/palette-ux-analytics-report-14597730770972952440`
+  - **Result:** Commit: feat: improve analytics report readability and cli feedback
+- **Branch:** `remotes/origin/palette-ux-analytics-report-17442789238565895596`
+  - **Result:** Commit: feat: add navigation and improve date parsing in analytics report
+- **Branch:** `remotes/origin/palette-ux-analytics-report-8996666478931275733`
+  - **Result:** Commit: 🎨 Palette: Add TOC, emojis, and anchors to analytics report
+- **Branch:** `remotes/origin/palette-ux-analytics-report-9828160744028289635`
+  - **Result:** Commit: 🎨 Palette: Enhance analytics report with ASCII charts and emojis
+- **Branch:** `remotes/origin/palette-ux-analytics-summary-2709532664525857663`
+  - **Result:** Commit: feat: Add visual summary box to analytics CLI output
+- **Branch:** `remotes/origin/palette-ux-analytics-toc-6237905989823681222`
+  - **Result:** Commit: 🎨 Palette: Add TOC and emojis to analytics report
+- **Branch:** `remotes/origin/palette-ux-cli-colors-10748074117931599521`
+  - **Result:** Commit: 🎨 Palette: Enhance CLI Output with Colors and Emojis
+- **Branch:** `remotes/origin/palette-ux-cli-colors-7681114719260817655`
+  - **Result:** Commit: feat: Add colored logging with agent emojis
+- **Branch:** `remotes/origin/palette-ux-cli-colors-9624439488845995317`
+  - **Result:** Commit: feat(ux): add colors and emojis to CLI output
+- **Branch:** `remotes/origin/palette-ux-cli-formatter-5975566970776686696`
+  - **Result:** Commit: 🎨 Palette: Improve CLI output with colors and emojis
+- **Branch:** `remotes/origin/palette-ux-formatter-4201185919690314961`
+  - **Result:** Commit: feat: add UXFormatter for colorful CLI logs
+- **Branch:** `remotes/origin/palette-ux-improvement-2705848965773740744`
+  - **Result:** Commit: feat(analytics): enhance report UX with emojis and TOC
+- **Branch:** `remotes/origin/palette-ux-improvement-analytics-17483918169126367172`
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette-ux-improvement-analytics-17483918169126367172
+- **Branch:** `remotes/origin/palette-ux-improvement-report-visuals-10910068111888807905`
+  - **Result:** Commit: feat: add visual bar charts and percentages to analytics report
+- **Branch:** `remotes/origin/palette-ux-improvement-scraper-345565171526082614`
+  - **Result:** Commit: feat: enhance CLI UX with colors, emojis, and summary
+- **Branch:** `remotes/origin/palette-ux-improvement-scraper-cli-4201072547033955812`
+  - **Result:** Commit: 🎨 Palette: Improve scraper CLI UX with colors and emojis
+- **Branch:** `remotes/origin/palette-ux-improvements-15311569840287861931`
+  - **Result:** Commit: Improve CLI output and report generation UX
+- **Branch:** `remotes/origin/palette-ux-improvements-15719746936022958602`
+  - **Result:** Commit: 🎨 Palette: Enhance CLI output and Report format - Refactored `run_system.py` to collect agent results for summary generation. - Added Executive Summary table to the daily report. - Wrapped individual agent reports in collapsible `<details>` tags. - Added emojis to CLI output for better visual feedback. - Added `.gitignore` to exclude runtime artifacts.
+- **Branch:** `remotes/origin/palette-ux-improvements-15774868112759434697`
+  - **Result:** Commit: 🎨 Palette: Add keyword distribution visualization and accessible links
+- **Branch:** `remotes/origin/palette-ux-improvements-16119935391257888147`
+  - **Result:** Commit: 🎨 Palette: Enhance CLI Output with Colors and Summary Tables
+- **Branch:** `remotes/origin/palette-ux-improvements-16508431813635270838`
+  - **Result:** Commit: Enhance CLI output and Report readability
+- **Branch:** `remotes/origin/palette-ux-improvements-3106649119335658863`
+  - **Result:** Commit: 🎨 Palette: Switch to Bi-Weekly Schedule
+- **Branch:** `remotes/origin/palette-ux-improvements-5803008523500848273`
+  - **Result:** Commit: feat: add CLI colors and emojis for better UX
+- **Branch:** `remotes/origin/palette-ux-report-emojis-17126566663041790687`
+  - **Result:** Commit: feat(ux): add status emojis to daily report
+- **Branch:** `remotes/origin/palette-ux-report-enhancement-10371268008280215914`
+  - **Result:** Commit: feat(ux): improve daily report readability with TOC and emoji headers
+- **Branch:** `remotes/origin/palette-ux-report-enhancement-11202782627352268010`
+  - **Result:** Commit: Palette: Enhanced Analytics Report with TOC and Semantic Emojis
+- **Branch:** `remotes/origin/palette-ux-report-enhancement-11593647151328807214`
+  - **Result:** Commit: feat: Add TOC and visual polish to analytics report
+- **Branch:** `remotes/origin/palette-ux-report-enhancement-13672368509531899362`
+  - **Result:** Commit: 🎨 Palette: Enhance REPORT.md readability and CLI feedback
+- **Branch:** `remotes/origin/palette-ux-report-enhancement-14454170940622711257`
+  - **Result:** Commit: feat(analytics): enhance generated report UX
+- **Branch:** `remotes/origin/palette-ux-report-enhancement-15172318103977119583`
+  - **Result:** Commit: feat(analytics): add ASCII bar charts and emojis to report
+- **Branch:** `remotes/origin/palette-ux-report-enhancement-15716276225370499430`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into palette-ux-report-enhancement-15716276225370499430
+- **Branch:** `remotes/origin/palette-ux-report-enhancement-6200692128049010692`
+  - **Result:** Commit: feat: add TOC and emojis to analytics report
+- **Branch:** `remotes/origin/palette-ux-report-enhancement-8007324327249044575`
+  - **Result:** Commit: feat: enhance REPORT.md readability with visual metrics
+- **Branch:** `remotes/origin/palette-ux-report-enhancement-8027266546471306679`
+  - **Result:** Commit: Enhance daily report with emojis and tables for better UX
+- **Branch:** `remotes/origin/palette-ux-report-enhancement-9069244241412422315`
+  - **Result:** Commit: feat: enhance daily report UX with TOC, summary and charts
+- **Branch:** `remotes/origin/palette-ux-report-improvement-2067216702341582884`
+  - **Result:** Commit: feat: enhance daily report UX with summary table and collapsible sections
+- **Branch:** `remotes/origin/palette-ux-report-improvements-10452147171217744669`
+  - **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into palette-ux-report-improvements-10452147171217744669
+- **Branch:** `remotes/origin/palette-ux-report-improvements-11313390590713595542`
+  - **Result:** Commit: feat: enhance generated report with tables, emojis and collapsible sections
+- **Branch:** `remotes/origin/palette-ux-report-improvements-13543414258176947990`
+  - **Result:** Commit: feat: Improve UX of daily autonomous report
+- **Branch:** `remotes/origin/palette-ux-report-improvements-13793595194787287681`
+  - **Result:** Commit: feat(analytics): Enhance report with ToC, emojis, and summary
+- **Branch:** `remotes/origin/palette-ux-report-improvements-13831713168674477220`
+  - **Result:** Commit: feat: enhance daily report readability with TOC, anchors and emojis
+- **Branch:** `remotes/origin/palette-ux-report-improvements-139991485792048228`
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into palette-ux-report-improvements-139991485792048228
+- **Branch:** `remotes/origin/palette-ux-report-improvements-15199529881851029569`
+  - **Result:** Commit: feat: improve REPORT.md UX with ToC and navigation
+- **Branch:** `remotes/origin/palette-ux-report-improvements-16620648284606070844`
+  - **Result:** Commit: feat(ux): improve daily report navigation and readability
+- **Branch:** `remotes/origin/palette-ux-report-improvements-17277479390002337255`
+  - **Result:** Commit: feat: Improve REPORT.md UX with formatted dates and percentages
+- **Branch:** `remotes/origin/palette-ux-report-improvements-2448419094629096150`
+  - **Result:** Commit: Refactor analytics.py to add TOC, emojis, and navigation anchors to generated report
+- **Branch:** `remotes/origin/palette-ux-report-improvements-2513104578052630135`
+  - **Result:** Commit: feat: Improve REPORT.md UX with ASCII bars and TOC
+- **Branch:** `remotes/origin/palette-ux-report-improvements-3538068568817014543`
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into palette-ux-report-improvements-3538068568817014543
+- **Branch:** `remotes/origin/palette-ux-report-improvements-4373250686351939897`
+  - **Result:** Commit: feat(ux): improve daily report readability with TOC and emojis
+- **Branch:** `remotes/origin/palette-ux-report-improvements-5742295436253287865`
+  - **Result:** Commit: feat(report): add TOC, anchors, and emojis to daily report
+- **Branch:** `remotes/origin/palette-ux-report-improvements-6072740448036314229`
+  - **Result:** Commit: feat(analytics): improve report UX with emojis, TOC, and table sanitization
+- **Branch:** `remotes/origin/palette-ux-report-improvements-8397930480493404381`
+  - **Result:** Commit: feat(analytics): enhance Markdown report UX with TOC and navigation
+- **Branch:** `remotes/origin/palette-ux-report-improvements-9153668087964457098`
+  - **Result:** Commit: feat(analytics): Enhance report with TOC, emojis and anchors
+- **Branch:** `remotes/origin/palette-ux-report-improvements-940930587148457906`
+  - **Result:** Commit: feat: enhance REPORT.md with TOC, emojis and navigation links
+- **Branch:** `remotes/origin/palette-ux-report-improvements-9630359626298714094`
+  - **Result:** Commit: Merge branch 'artmusicpage-scraper-13642650452924627148' into palette-ux-report-improvements-9630359626298714094
+- **Branch:** `remotes/origin/palette-ux-report-links-5553853487436011261`
+  - **Result:** Commit: feat: make report domains clickable and add emojis
+- **Branch:** `remotes/origin/palette-ux-report-nav-14262782421623851357`
+  - **Result:** Commit: 🎨 Palette: Add navigation (TOC & Back-to-Top) to analytics report
+- **Branch:** `remotes/origin/palette-ux-report-nav-14965712706576844094`
+  - **Result:** Commit: feat: add navigation and visual polish to analytics report
+- **Branch:** `remotes/origin/palette-ux-report-nav-16569108711170597601`
+  - **Result:** Commit: feat(analytics): add TOC, emojis and navigation to generated report
+- **Branch:** `remotes/origin/palette-ux-report-nav-593001278126873956`
+  - **Result:** Commit: 🎨 Palette: Add ToC and navigation to analytics report
+- **Branch:** `remotes/origin/palette-ux-report-nav-8282303934729668343`
+  - **Result:** Commit: feat: Add TOC and navigation anchors to daily reports
+- **Branch:** `remotes/origin/palette-ux-report-navigation-1055201088429066015`
+  - **Result:** Commit: feat(analytics): add TOC, anchors, and navigation links to report
+- **Branch:** `remotes/origin/palette-ux-report-navigation-1278181711471932664`
+  - **Result:** Commit: feat(analytics): add navigation to generated report
+- **Branch:** `remotes/origin/palette-ux-report-navigation-13412494468983508002`
+  - **Result:** Commit: feat: add ToC and navigation links to analytics report
+- **Branch:** `remotes/origin/palette-ux-report-navigation-14402610223237389946`
+  - **Result:** Commit: feat(analytics): add TOC and improved navigation to REPORT.md
+- **Branch:** `remotes/origin/palette-ux-report-navigation-9929514783226057505`
+  - **Result:** Commit: feat: Add navigation and emojis to generated analytics report
+- **Branch:** `remotes/origin/palette-ux-report-toc-16462217141887198687`
+  - **Result:** Commit: 🎨 Palette: Add TOC and emojis to analytics report
+- **Branch:** `remotes/origin/palette-ux-report-toc-289613292753469592`
+  - **Result:** Commit: Add Table of Contents to Markdown reports
+- **Branch:** `remotes/origin/palette-ux-report-toc-5253280815386000455`
+  - **Result:** Commit: 🎨 Palette: Add TOC and emojis to analytics report
+- **Branch:** `remotes/origin/palette-ux-report-upgrade-16296272429283810305`
+  - **Result:** Commit: feat: enhance analytics report with executive summary and emojis
+- **Branch:** `remotes/origin/palette-ux-report-upgrade-1698868480581836517`
+  - **Result:** Commit: feat: Improve report readability with TOC, emojis, and percentages
+- **Branch:** `remotes/origin/palette-ux-report-upgrade-3396259779939388031`
+  - **Result:** Commit: feat: enhance analytics report with executive summary and collapsible sections
+- **Branch:** `remotes/origin/palette-ux-scraper-logging-11386897257754529243`
+  - **Result:** Commit: feat: Implement Autonomous Evolutionary Agents System
+- **Branch:** `remotes/origin/palette-ux-scraper-logs-18341771312200934138`
+  - **Result:** Commit: 🎨 Palette: Add emoji feedback to CLI scraper
+- **Branch:** `remotes/origin/palette-visualization-17481071303345446799`
+  - **Result:** Commit: feat(analytics): add ASCII distribution bars to report
+- **Branch:** `remotes/origin/perf-optimize-url-parsing-15164027586550123662`
+  - **Result:** Commit: perf: optimize URL parsing and fix knowledge iteration bug
+- **Branch:** `remotes/origin/perf-scraper-async-parsing-5016705380322021216`
+  - **Result:** Commit: Optimize scraper parsing performance
+- **Branch:** `remotes/origin/perf-scraper-lxml-9392503187182498809`
+  - **Result:** Commit: perf(scraper): switch to lxml parser for faster html parsing
+- **Branch:** `remotes/origin/perf/reuse-sqlite-connection-17869553505288302895`
+  - **Result:** Commit: ⚡ Bolt: Reuse SQLite connection in BlogScraper
+- **Branch:** `remotes/origin/perf/scraper-optimization-9355208223280700533`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing and regex
+- **Branch:** `remotes/origin/perf/scraper-parallel-parsing-15185530234284360857`
+  - **Result:** Commit: Refactor scraper to use ProcessPoolExecutor for HTML parsing
+- **Branch:** `remotes/origin/perf/soup-strainer-optimization-10175378399619273514`
+  - **Result:** Commit: Optimize HTML parsing with SoupStrainer
+- **Branch:** `remotes/origin/performance/optimize-scraper-lxml-5877012242930540926`
+  - **Result:** Commit: ⚡ Optimize scraper parsing with lxml
+- **Branch:** `remotes/origin/project-opinion-evolution-18306036414363557055`
+  - **Result:** Commit: fix: replace hallucinated PII with explicit placeholders in PROJECT_OPINION.md
+- **Branch:** `remotes/origin/promote-site-tool-2062991151514022973`
+  - **Result:** Commit: Update promotion tool with advanced features
+- **Branch:** `remotes/origin/prototype-analytics-research-app-14135302904355352635`
+  - **Result:** Commit: Add cross-platform Analytics and Research app prototype
+- **Branch:** `remotes/origin/react-agent-deployment-18427809291502343091`
+  - **Result:** Commit: feat: improve React agent deployment logic
+- **Branch:** `remotes/origin/react-agent-deployment-improvements-5434617022495989509`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into react-agent-deployment-improvements-5434617022495989509
+- **Branch:** `remotes/origin/remote-subagents-config-5573674147411038862`
+  - **Result:** Commit: fix(lint): Resolve TypeScript any errors in intelligence API route
+- **Branch:** `remotes/origin/remove-markposition-signature-1350745030255766744`
+  - **Result:** Commit: chore: remove markposition signature from generators and artifacts
+- **Branch:** `remotes/origin/remove-unauthorized-signature-9051442489718351903`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into remove-unauthorized-signature-9051442489718351903
+- **Branch:** `remotes/origin/render-deployment-blueprint-8369044938747362942`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into render-deployment-blueprint-8369044938747362942
+- **Branch:** `remotes/origin/restore-jules-tasks-17924979559343397018`
+  - **Result:** Commit: chore: restore and execute last 15 jules daily tasks
+- **Branch:** `remotes/origin/scrape-oracle-news-9936778584663660002`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into scrape-oracle-news-9936778584663660002 # Please enter a commit message to explain why this merge is necessary, # especially if it merges an updated upstream into a topic branch. # # Lines starting with '#' will be ignored, and an empty message aborts # the commit.
+- **Branch:** `remotes/origin/scrape-wishlist-blog-8562532477839035494`
+  - **Result:** Commit: ⚡ Optimize scraper DB connection reuse (#1442)
+- **Branch:** `remotes/origin/sentinel-add-timeout-15463043223349410513`
+  - **Result:** Commit: Security: Add timeout to requests.get in scraper
+- **Branch:** `remotes/origin/sentinel-analytics-security-4671865652902331047`
+  - **Result:** Commit: 🛡️ Sentinel: [MEDIUM] Fix Markdown Injection and Stored XSS in Analytics Report
+- **Branch:** `remotes/origin/sentinel-analytics-security-fix-15562163645125731451`
+  - **Result:** Commit: Fix Stored XSS and Markdown Table Injection in analytics.py
+- **Branch:** `remotes/origin/sentinel-csv-injection-11171345795536949565`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability
+- **Branch:** `remotes/origin/sentinel-csv-injection-196586466427306611`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection in Scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-7375111859144544307`
+  - **Result:** Commit: feat: Prevent CSV injection in scraper output
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-10038367286056826803`
+  - **Result:** Commit: feat: add CSV injection protection and http timeout
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-10221947977265973375`
+  - **Result:** Commit: Fix CSV Formula Injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-10298970558848162615`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-10398875479069463137`
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-10425248433369273234`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-10533494504783963835`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-10553252584862984034`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-10688693902130886614`
+  - **Result:** Commit: Shield: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-10726122690278576956`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-10823602123792792122`
+  - **Result:** Commit: feat: add CSV injection protection, URL validation and update schedule
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-10929502802886218209`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection vulnerability
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-10966589273094838978`
+  - **Result:** Commit: Implement bi-weekly autonomous schedule and fix CSV injection
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-10967338732695959755`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-11016573727348401190`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-11203776991615878317`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-11232382863201934682`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-11266115485320186447`
+  - **Result:** Commit: 🛡️ Sentinel: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-11406993561405723358`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-11483888091103395100`
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper output - Implemented `sanitize_for_csv` to escape formula characters (=, +, -, @) - Applied sanitization to all CSV output fields - Added unit test `tests/test_scraper_security.py` to verify the fix
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-11537968662341487277`
+  - **Result:** Commit: feat: Fix CSV Injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-1187373065145967330`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-12477550236890892701`
+  - **Result:** Commit: Fix CSV Formula Injection in scraper.py
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-12502953329308944649`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-12679590305741242527`
+  - **Result:** Commit: fix(security): sanitize CSV output to prevent formula injection
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-12825710681451950296`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-12864259658340301340`
+  - **Result:** Commit: feat: sanitize CSV output in scraper to prevent injection
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-13037407619798804311`
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-13230148290788168806`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Formula Injection
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-13240856359279585167`
+  - **Result:** Commit: feat: mitigate CSV injection vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-1326975499108887889`
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-13435687001292355366`
+  - **Result:** Commit: Fix CSV Formula Injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-13690101212099271118`
+  - **Result:** Commit: feat(security): prevent CSV injection in scraper output
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-1369174769441350864`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-1387259514847696259`
+  - **Result:** Commit: feat: Fix CSV Injection and add request timeout
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-13940069351560810244`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-13948425390271683598`
+  - **Result:** Commit: feat(security): prevent CSV injection in scraper output
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-14090242410722960324`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-14202911627973574008`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper exports
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-14407786113626138861`
+  - **Result:** Commit: Fix CSV injection vulnerability in OracleNewsScraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-14541326570194157665`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-14810873340249906468`
+  - **Result:** Commit: feat: Fix CSV injection vulnerability and add request timeouts
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-15021706020532406187`
+  - **Result:** Commit: feat: mitigate CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-15245071254079934303`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection vulnerability and add network timeouts
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-15271493773848426638`
+  - **Result:** Commit: feat: sanitize CSV output to prevent formula injection
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-15311644006132140553`
+  - **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into sentinel-csv-injection-fix-15311644006132140553
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-1546845939770947284`
+  - **Result:** Commit: feat(security): fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-15525481074093328612`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-15572259258648426988`
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-15615947622125179060`
+  - **Result:** Commit: feat: Prevent CSV injection in scraper output
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-15771572653654019647`
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-15894353305636399400`
+  - **Result:** Commit: 🛡️ Sentinel: Fix CSV Injection vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-16105451329157671557`
+  - **Result:** Commit: Fix: prevent CSV formula injection in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-16208060421848314312`
+  - **Result:** Commit: feat: add CSV injection protection to scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-16277687269627577921`
+  - **Result:** Commit: feat: add CSV sanitization to scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-16350341539819739877`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-16486355164975308903`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection vulnerability
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-16760384515940097224`
+  - **Result:** Commit: feat: mitigate CSV injection in scraper export
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-16822017676195484048`
+  - **Result:** Commit: feat: add CSV sanitization to prevent formula injection
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-16927322662053655175`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-16999341900923167805`
+  - **Result:** Commit: Fix CSV Formula Injection in scraper output
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-17111531682822942428`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-17134124741547873274`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-17183412811193110878`
+  - **Result:** Commit: Sentinel: [CRITICAL] Fix CSV Formula Injection in scraper.py
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-17211368531501123352`
+  - **Result:** Commit: feat: sanitize CSV output to prevent formula injection
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-17281405972681966215`
+  - **Result:** Commit: feat: Fix CSV Injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-173522705526840343`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Formula Injection in Scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-17397953527120298966`
+  - **Result:** Commit: Update scheduler to bi-weekly and fix CSV injection
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-17447751349152713566`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection vulnerability
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-17501930990885364981`
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-1768906505361909663`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-17693898094176425662`
+  - **Result:** Commit: feat: mitigate CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-17919228704656273105`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-18040119516066267885`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-18101383076845295276`
+  - **Result:** Commit: 🛡️ Sentinel: [MEDIUM] Fix CSV Formula Injection in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-18110555379625017064`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-18436195312292293727`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-1915470429985340471`
+  - **Result:** Commit: feat: Prevent CSV Formula Injection in scraper output
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-1964543136044474218`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-1970007423259072020`
+  - **Result:** Commit: feat: mitigate CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-1998633714457818686`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-2209257127317318783`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper and add request timeout
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-2367946494447138013`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-2409511118285483263`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-2465392663025969514`
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-2516929716089250135`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-2649491938498643870`
+  - **Result:** Commit: 🛡️ Sentinel: [MEDIUM] Fix CSV Injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-2671742778872724140`
+  - **Result:** Commit: feat(security): fix CSV injection in scraper.py
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-2676143552655600062`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper - Add `sanitize_for_csv` method to `MarkPositionScraperAsync` - Sanitize all fields before writing to CSV - Add regression test `tests/test_csv_security.py`
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-2728798420725278990`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-2777825542353398891`
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-2835096762590322415`
+  - **Result:** Commit: feat: sanitize CSV output to prevent formula injection
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-2888261879459732740`
+  - **Result:** Commit: fix(security): sanitize CSV output to prevent formula injection
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-2894680455719942553`
+  - **Result:** Commit: Implement Autonomous Intelligence System and Agents
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-3035923625563795177`
+  - **Result:** Commit: Security: Fix CSV Injection in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-3207276377854702451`
+  - **Result:** Commit: feat: add CSV injection protection to scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-3226420374077565204`
+  - **Result:** Commit: feat: Fix CSV injection and add request timeout
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-322900077655964364`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV injection vulnerability
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-3271170795453668053`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-3346587777523784849`
+  - **Result:** Commit: Fix CSV Formula Injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-3372756158524792787`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-3586558718788844991`
+  - **Result:** Commit: feat(security): fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-3619295018585111086`
+  - **Result:** Commit: feat: add CSV formula injection prevention to scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-3642945773278234521`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-3645820419479198365`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-3785289375321426037`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-3792279438009718609`
+  - **Result:** Commit: feat: Fix CSV injection vulnerability in scraper export
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-3887596587302149695`
+  - **Result:** Commit: feat: sanitize CSV output to prevent formula injection
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-4034437976659804335`
+  - **Result:** Commit: feat: mitigate CSV Formula Injection in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-4282466816023869874`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-455270542941409687`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-4568401042117456863`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-4585330664271559396`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-470987651178611651`
+  - **Result:** Commit: Sentinel: [CRITICAL] Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-4827530763294816913`
+  - **Result:** Commit: 🛡️ Sentinel: [MEDIUM] Fix CSV Injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-4894739317500695690`
+  - **Result:** Commit: feat: Implement IQ-based Self-Learning System
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-5108054978514907420`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-5117126136296905355`
+  - **Result:** Commit: feat: mitigate CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-5445349269422867455`
+  - **Result:** Commit: feat: Fix CSV Injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-5620695880031672864`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-5703429857431099385`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper output - Add sanitize_csv_field method to MarkPositionScraperAsync - Sanitize all fields before writing to CSV - Prepend single quote to fields starting with =, +, -, @ - Add security journal entry
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-5842212844507239476`
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-6097070558699072843`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-6113448530836767636`
+  - **Result:** Commit: Fix CSV Injection Vulnerability in Scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-6157612938304494832`
+  - **Result:** Commit: Shield: Prevent CSV Formula Injection in scraper output
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-62725330299232375`
+  - **Result:** Commit: feat: add CSV injection protection to scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-6338762275838865051`
+  - **Result:** Commit: feat: Prevent CSV injection in scraper output
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-6444014356301136109`
+  - **Result:** Commit: Shield: Prevent CSV Injection in scraper output
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-6481770825108670160`
+  - **Result:** Commit: feat(security): fix CSV injection in scraper.py
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-6507758882169212767`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-6685334984184848027`
+  - **Result:** Commit: feat: Fix CSV injection vulnerability and add request timeout
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-6719136545275287346`
+  - **Result:** Commit: 🛡️ Sentinel: Fix CSV Injection in Scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-6836239007879270434`
+  - **Result:** Commit: feat: sanitize CSV output to prevent formula injection
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-6855106868508477486`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into sentinel-csv-injection-fix-6855106868508477486 resolving modify/delete conflicts
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-6957770214715021106`
+  - **Result:** Commit: feat: sanitize CSV output to prevent formula injection
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-6985959726167139118`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-7120478869350967203`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-7147169420011568758`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection in Scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-7180315405969834431`
+  - **Result:** Commit: Fix CSV injection vulnerability in OracleNewsScraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-7180554626673421136`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-7184062183178777693`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-7279293244231609649`
+  - **Result:** Commit: feat: secure scraper against CSV injection and hanging
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-7308075484168403329`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-7371159905653815278`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-739509856525276517`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-7577014728470115311`
+  - **Result:** Commit: feat: mitigate CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-759890926967212504`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-7686823291032293657`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-7862227408339325944`
+  - **Result:** Commit: feat: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-7887612146044764431`
+  - **Result:** Commit: Sentinel: [CRITICAL] Fix CSV Injection in Scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-8097827664947199765`
+  - **Result:** Commit: Fix: prevent CSV injection in scraper output
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-8110446095122027213`
+  - **Result:** Commit: feat: sanitize CSV output to prevent formula injection
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-8148266777407041766`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper export
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-8170535379154520582`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-8272419126965358914`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-8570611774437113541`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-8672779981271268413`
+  - **Result:** Commit: 🛡️ Sentinel: [MEDIUM] Fix CSV Injection vulnerability
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-8804107294486031886`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-8806247147444025249`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Formula Injection
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-8908501396910626441`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-9391699529269145596`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-9409254303197152043`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-9473825709401880639`
+  - **Result:** Commit: feat: mitigate CSV injection vulnerability
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-9615340353460481815`
+  - **Result:** Commit: fix(security): sanitize CSV output to prevent formula injection
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-9699897401225629135`
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-9865659268675506574`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-9914982601243693922`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-9949658350522574715`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-9988075135877474824`
+  - **Result:** Commit: feat: prevent CSV injection in scraper output
+- **Branch:** `remotes/origin/sentinel-dos-fix-7698536628860291185`
+  - **Result:** Commit: feat(security): enforce 10MB response size limit in scraper
+- **Branch:** `remotes/origin/sentinel-dos-protection-16862266732532693644`
+  - **Result:** Commit: feat(security): enforce 10MB response size limit in scraper
+- **Branch:** `remotes/origin/sentinel-dos-protection-17580237243754700940`
+  - **Result:** Commit: feat(security): Limit response size to 10MB to prevent DoS
+- **Branch:** `remotes/origin/sentinel-dos-protection-3230700475893840806`
+  - **Result:** Commit: feat(security): add DoS protection to scraper
+- **Branch:** `remotes/origin/sentinel-dos-protection-3458073205470456928`
+  - **Result:** Commit: 🛡️ Sentinel: Add DoS protection (max response size limit)
+- **Branch:** `remotes/origin/sentinel-dos-protection-533559007070849355`
+  - **Result:** Commit: feat(security): enforce 10MB response size limit to prevent DoS
+- **Branch:** `remotes/origin/sentinel-dos-protection-7227514493046811769`
+  - **Result:** Commit: feat(security): enforce 10MB response size limit to prevent DoS
+- **Branch:** `remotes/origin/sentinel-dos-protection-8918500770357987717`
+  - **Result:** Commit: feat(security): enforce 5MB response size limit to prevent DoS
+- **Branch:** `remotes/origin/sentinel-fix-analytics-xss-18372825547288126285`
+  - **Result:** Commit: feat(security): sanitize markdown input in analytics report
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-10197426659133330232`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-10464065853925467841`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-11037533236384530390`
+  - **Result:** Commit: 🛡️ Sentinel: [MEDIUM] Fix CSV Injection vulnerability
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-11077555139908489589`
+  - **Result:** Commit: fix(scraper): prevent CSV injection in scraper output
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-11316363243497310988`
+  - **Result:** Commit: feat: update schedule to bi-weekly
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-11369382377147325845`
+  - **Result:** Commit: Implement bi-weekly scheduler
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-11695626658180939497`
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-11799255373234289459`
+  - **Result:** Commit: fix(security): prevent CSV injection in scraper output
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-12004926439260226376`
+  - **Result:** Commit: 🛡️ Sentinel: Fix CSV Injection vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-12055798594259206278`
+  - **Result:** Commit: 🛡️ Sentinel: Fix CSV Formula Injection vulnerability
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-12497847357551567150`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-12970269499686367400`
+  - **Result:** Commit: feat: mitigate CSV injection in scraper output
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-1302740783409552070`
+  - **Result:** Commit: feat: mitigate CSV injection vulnerability in scraper export
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-13633884253574264448`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-14114537918126303723`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection vulnerability
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-14543086347564108493`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection vulnerability
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-1455302439657418501`
+  - **Result:** Commit: feat(security): fix CSV injection vulnerability and add request timeout
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-15309749905560169066`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection in scraper
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-15621383846195780888`
+  - **Result:** Commit: Switch reporting to bi-weekly and fix CSV injection vulnerability
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-15688476494678190926`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper output \n Sanitized CSV output by prepending a single quote to fields starting with =, +, -, or @. This prevents formula injection attacks when the CSV file is opened in spreadsheet software like Microsoft Excel or LibreOffice Calc. \n Verification: Verified with a reproduction script that attempted to inject formulas, confirming that they are now escaped.
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-16076674435631694662`
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-16567090452549899713`
+  - **Result:** Commit: feat: sanitize CSV output to prevent formula injection
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-16604048284398953621`
+  - **Result:** Commit: Fix CSV Formula Injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-16763427666603364889`
+  - **Result:** Commit: Fix CSV Injection Vulnerability in Scraper
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-16995034832963539276`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection in Scraper
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-17518560069698695789`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-17594469209047067087`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-17984937653566116919`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-18109389210743040134`
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-2231238030429809287`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection in scraper
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-2402028977967656957`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-241262454098810507`
+  - **Result:** Commit: feat: Fix CSV Injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-2765330589788490005`
+  - **Result:** Commit: feat(security): prevent CSV injection in scraper output
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-310785540738272778`
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-3161629447767220060`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-4073728526691781890`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-4415051374640604322`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper and add security test
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-4507642298066037592`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-4896609571382596345`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper and sanitize agent outputs
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-514632539404655191`
+  - **Result:** Commit: 🛡️ Sentinel: Fix CSV Injection vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-5151600923195756418`
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-5200529072792038966`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-5692806866209313893`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper output - Implemented `sanitize_for_csv` method in `MarkPositionScraperAsync`. - Prepends single quote to values starting with =, +, -, or @ to prevent formula execution. - Updated `save_batch` to sanitize all fields before writing to CSV. - Added `tests/test_scraper_security.py` to verify the fix.
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-5798817782401239409`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection in scraper output
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-716833391018549425`
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-7376886150336937618`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection in Scraper
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-8336262688317401558`
+  - **Result:** Commit: feat: schedule report generation every other week
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-8347650018740812298`
+  - **Result:** Commit: Sentinel: Fix CSV Injection in Scraper
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-9007503405729872080`
+  - **Result:** Commit: Fix CSV injection and add daily report workflow
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-9365968688429257416`
+  - **Result:** Commit: fix(scraper): prevent CSV formula injection
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-9652304579813962192`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection vulnerability
+- **Branch:** `remotes/origin/sentinel-fix-csv-path-traversal-17631474637171594831`
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into sentinel-fix-csv-path-traversal-17631474637171594831
+- **Branch:** `remotes/origin/sentinel-fix-developer-agent-secrets-7041287385946193103`
+  - **Result:** Commit: 🛡️ Sentinel: Fix hardcoded secrets in DeveloperAgent snippets
+- **Branch:** `remotes/origin/sentinel-fix-dos-scrape-informatic-6075769755342439148`
+  - **Result:** Commit: 🛡️ Sentinel: [MEDIUM] Fix Unbounded Scraping Requests in `scrape_informatic.py`
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-10489928730170267771`
+  - **Result:** Commit: feat: sanitize markdown output in analytics report
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-12251977205690620315`
+  - **Result:** Commit: Implement daily reporting schedule and security enhancements
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-12358420040259215492`
+  - **Result:** Commit: Fix Markdown injection vulnerability in analytics report
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-12642553917768757487`
+  - **Result:** Commit: Fix: Sanitize inputs in analytics report to prevent Markdown Injection and XSS
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-12782230076673312738`
+  - **Result:** Commit: Fix Markdown injection and stored XSS in analytics report
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-12887486750391469562`
+  - **Result:** Commit: Fix Markdown Injection and XSS vulnerability in analytics report.
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-12930383619686102391`
+  - **Result:** Commit: 🛡️ Sentinel: Fix Markdown injection and XSS in analytics report
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-13943307421559350818`
+  - **Result:** Commit: feat(security): sanitize markdown output in analytics report
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-15177720678056733729`
+  - **Result:** Commit: feat: sanitize markdown report output
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-17432524011574370293`
+  - **Result:** Commit: fix(analytics): Sanitize markdown output to prevent injection
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-1745658489602604890`
+  - **Result:** Commit: 🛡️ Sentinel: Fix Markdown injection in analytics report
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-1749769319501119142`
+  - **Result:** Commit: Fix: Sanitize inputs in analytics report generation
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-18133297793763601152`
+  - **Result:** Commit: Sentinel: [HIGH] Fix Markdown injection in analytics report
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-3339496328156938030`
+  - **Result:** Commit: Fix Markdown table injection in analytics report
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-3776990642729282253`
+  - **Result:** Commit: Fix XSS and Markdown injection in analytics report
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-4574407536048453465`
+  - **Result:** Commit: Fix: Sanitize input in analytics report to prevent Markdown Injection and XSS
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-477337563318989740`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix Markdown Injection in Reports
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-4811643959764266800`
+  - **Result:** Commit: feat: sanitize markdown output in reports to prevent injection
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-5126944907342105696`
+  - **Result:** Commit: Fix Markdown Injection in analytics.py
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-584275950262231611`
+  - **Result:** Commit: Fix Markdown injection and XSS in analytics.py
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-682484590421741626`
+  - **Result:** Commit: 🛡️ Sentinel: Fix Markdown injection in analytics report
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-8681751187497699731`
+  - **Result:** Commit: 🛡️ Sentinel: [MEDIUM] Fix Markdown injection in analytics report
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-xss-348040355104541990`
+  - **Result:** Commit: Sentinel: Fix Markdown injection and XSS in analytics report
+- **Branch:** `remotes/origin/sentinel-fix-monetization-markdown-injection-4346962235570198500`
+  - **Result:** Commit: Fix Markdown Injection vulnerability in MonetizationAgent
+- **Branch:** `remotes/origin/sentinel-fix-path-traversal-10046544138462922136`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix path traversal in file download
+- **Branch:** `remotes/origin/sentinel-fix-path-traversal-10143509999486515676`
+  - **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into sentinel-fix-path-traversal-10143509999486515676
+- **Branch:** `remotes/origin/sentinel-fix-path-traversal-10371328394414970725`
+  - **Result:** Commit: feat(security): fix path traversal and hanging risks in scraper
+- **Branch:** `remotes/origin/sentinel-fix-path-traversal-11151724369375188674`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix Path Traversal in scraper.py
+- **Branch:** `remotes/origin/sentinel-fix-path-traversal-11747719043464611104`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix path traversal in file output
+- **Branch:** `remotes/origin/sentinel-fix-path-traversal-12978408799617571456`
+  - **Result:** Commit: 🛡️ Sentinel: Fix Path Traversal vulnerability in file outputs
+- **Branch:** `remotes/origin/sentinel-fix-path-traversal-13097985426424939248`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix Path Traversal in output file handling
+- **Branch:** `remotes/origin/sentinel-fix-path-traversal-14907330338659942512`
+  - **Result:** Commit: 🛡️ Sentinel: Fix Arbitrary File Write via Path Traversal
+- **Branch:** `remotes/origin/sentinel-fix-path-traversal-15570821654986088312`
+  - **Result:** Commit: Fix path traversal vulnerability in scraper output paths
+- **Branch:** `remotes/origin/sentinel-fix-path-traversal-15680085493985051693`
+  - **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into sentinel-fix-path-traversal-15680085493985051693
+- **Branch:** `remotes/origin/sentinel-fix-path-traversal-17914056010192129632`
+  - **Result:** Commit: Fix path traversal vulnerability in scrape_informatic.py
+- **Branch:** `remotes/origin/sentinel-fix-path-traversal-290759818619950664`
+  - **Result:** Commit: fix(security): prevent path traversal in ResearcherAgent
+- **Branch:** `remotes/origin/sentinel-fix-path-traversal-4284819763695223084`
+  - **Result:** Commit: Sentinel: Fix Path Traversal in Scraper
+- **Branch:** `remotes/origin/sentinel-fix-path-traversal-5132007929293032238`
+  - **Result:** Commit: Fix path traversal vulnerability in scraper.py and analytics.py
+- **Branch:** `remotes/origin/sentinel-fix-path-traversal-9841026382038604128`
+  - **Result:** Commit: 🛡️ Sentinel: Fix path traversal vulnerability in scrape_informatic.py
+- **Branch:** `remotes/origin/sentinel-fix-path-traversal-scraper-11209913813544277514`
+  - **Result:** Commit: Fix path traversal vulnerability in scraper.py CLI arguments
+- **Branch:** `remotes/origin/sentinel-fix-path-traversal-scraper-13213867928439084408`
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into sentinel-fix-path-traversal-scraper-13213867928439084408
+- **Branch:** `remotes/origin/sentinel-fix-path-traversal-scraper-16504973600351558814`
+  - **Result:** Commit: feat: fix path traversal vulnerability in scrape_informatic.py
+- **Branch:** `remotes/origin/sentinel-fix-path-traversal-scraper-5008528989288231016`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix path traversal in scraper output
+- **Branch:** `remotes/origin/sentinel-fix-report-injection-1488382414768619374`
+  - **Result:** Commit: feat(analytics): add markdown sanitization to prevent injection
+- **Branch:** `remotes/origin/sentinel-fix-report-xss-injection-17246759234620652764`
+  - **Result:** Commit: feat(security): Fix Markdown injection and XSS in report generator
+- **Branch:** `remotes/origin/sentinel-fix-scraper-timeout-1149197347818136170`
+  - **Result:** Commit: Fix: Add request timeout to prevent scraper hang
+- **Branch:** `remotes/origin/sentinel-fix-scraper-url-validation-5666735410169343396`
+  - **Result:** Commit: fix: add strict URL scheme validation to scraper
+- **Branch:** `remotes/origin/sentinel-fix-scraper-vulnerability-10920558774423191235`
+  - **Result:** Commit: Fix: prevent scraper from following off-domain links
+- **Branch:** `remotes/origin/sentinel-fix-ssrf-12489127144822087081`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix SSRF vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-fix-ssrf-13141535001444282200`
+  - **Result:** Commit: feat: add SSRF protection to BlogScraper
+- **Branch:** `remotes/origin/sentinel-fix-ssrf-15051376789843126320`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix SSRF vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-fix-ssrf-6066388601659048152`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix SSRF in scraper pagination
+- **Branch:** `remotes/origin/sentinel-fix-ssrf-8873580170841012512`
+  - **Result:** Commit: 🛡️ Sentinel: Fix SSRF and DoS risks in scraper
+- **Branch:** `remotes/origin/sentinel-fix-ssrf-pagination-955563201961260698`
+  - **Result:** Commit: Fix SSRF vulnerability in scraper pagination by validating URLs.
+- **Branch:** `remotes/origin/sentinel-fix-ssrf-robottxt-10466184040354898507`
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into sentinel-fix-ssrf-robottxt-10466184040354898507
+- **Branch:** `remotes/origin/sentinel-fix-ssrf-scope-creep-7819911338616714080`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix SSRF/Scope Creep in Scraper
+- **Branch:** `remotes/origin/sentinel-fix-ssrf-scraper-11819724564068421400`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix SSRF in scraper
+- **Branch:** `remotes/origin/sentinel-fix-ssrf-scraper-13895071583699444516`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix SSRF vulnerability in BlogScraper
+- **Branch:** `remotes/origin/sentinel-fix-ssrf-scraper-14046740573993078652`
+  - **Result:** Commit: 🛡️ Sentinel: Fix SSRF risk and add timeout in scraper
+- **Branch:** `remotes/origin/sentinel-fix-ssrf-scraper-474938501788715704`
+  - **Result:** Commit: Shield scraper from SSRF attacks with URL validation
+- **Branch:** `remotes/origin/sentinel-fix-timeout-14878674085611384594`
+  - **Result:** Commit: Sentinel: Add timeout to scraper network requests
+- **Branch:** `remotes/origin/sentinel-fix-timeout-5116426609939890096`
+  - **Result:** Commit: Fix: Add timeout to HTTP requests in scraper
+- **Branch:** `remotes/origin/sentinel-fix-unsafe-links-5959924612481434328`
+  - **Result:** Commit: Fix XSS vulnerability in scraper by validating extracted URLs
+- **Branch:** `remotes/origin/sentinel-fix-unsafe-url-extraction-2825055263495837340`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix unsafe URL extraction in scraper
+- **Branch:** `remotes/origin/sentinel-fix-xss-8439526911048077965`
+  - **Result:** Commit: 🛡️ Sentinel: Fix Stored XSS via Malicious Links
+- **Branch:** `remotes/origin/sentinel-fix-xss-analytics-8641272621039529465`
+  - **Result:** Commit: feat(security): sanitize markdown output in analytics report
+- **Branch:** `remotes/origin/sentinel-fix-xss-content-agent-15220868101376936351`
+  - **Result:** Commit: Fix Stored XSS in Content Agent by escaping Markdown characters
+- **Branch:** `remotes/origin/sentinel-fix-xss-content-agent-7343531926858651240`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix Stored XSS in ContentCreationAgent
+- **Branch:** `remotes/origin/sentinel-fix-xss-links-14504327509896996257`
+  - **Result:** Commit: Fix XSS vulnerability by validating extracted links protocols
+- **Branch:** `remotes/origin/sentinel-fix-xss-report-17694993639350070672`
+  - **Result:** Commit: Fix Stored XSS in Analytics Report
+- **Branch:** `remotes/origin/sentinel-fix-xss-report-generator-15539437928159722919`
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into sentinel-fix-xss-report-generator-15539437928159722919
+- **Branch:** `remotes/origin/sentinel-fix-xss-report-generator-1731145502892106496`
+  - **Result:** Commit: Update report schedule to bi-weekly
+- **Branch:** `remotes/origin/sentinel-fix-xss-sanitization-2461129736912468133`
+  - **Result:** Commit: feat(security): implement output sanitization in orchestrator
+- **Branch:** `remotes/origin/sentinel-fix-xss-scraper-6801267101093428567`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix Stored XSS in scraper
+- **Branch:** `remotes/origin/sentinel-fix-xss-scraper-7020460309446305791`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix Stored XSS vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-fixes-path-traversal-csv-injection-1218736827201610874`
+  - **Result:** Commit: Sentinel: Fix Path Traversal and CSV Injection in Scraper
+- **Branch:** `remotes/origin/sentinel-markdown-injection-15739394978232396905`
+  - **Result:** Commit: feat(security): prevent markdown injection in reports
+- **Branch:** `remotes/origin/sentinel-markdown-injection-fix-11203611282480447013`
+  - **Result:** Commit: feat: sanitize markdown output in analytics report
+- **Branch:** `remotes/origin/sentinel-markdown-injection-fix-14905242363069244554`
+  - **Result:** Commit: feat: sanitize markdown report generation
+- **Branch:** `remotes/origin/sentinel-markdown-injection-fix-17260266237222771190`
+  - **Result:** Commit: Fix Markdown Table Injection and Stored XSS in Analytics Report
+- **Branch:** `remotes/origin/sentinel-markdown-injection-fix-5071286642658606448`
+  - **Result:** Commit: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into sentinel-markdown-injection-fix-5071286642658606448
+- **Branch:** `remotes/origin/sentinel-markdown-injection-fix-7493760724070130119`
+  - **Result:** Commit: feat: sanitize markdown output in analytics report
+- **Branch:** `remotes/origin/sentinel-markdown-sanitization-11985779393416298758`
+  - **Result:** Commit: feat: Add markdown sanitization for analytics report
+- **Branch:** `remotes/origin/sentinel-markdown-sanitization-15094768365702724713`
+  - **Result:** Commit: feat: Sanitize Markdown output in analytics report
+- **Branch:** `remotes/origin/sentinel-markdown-sanitization-7125974230705097522`
+  - **Result:** Commit: feat: add Markdown sanitization to report generator
+- **Branch:** `remotes/origin/sentinel-markdown-sanitization-7145404824939616399`
+  - **Result:** Commit: feat: Add markdown sanitization to agent reports
+- **Branch:** `remotes/origin/sentinel-markdown-sanitization-7412755230245189501`
+  - **Result:** Commit: 🛡️ Sentinel: [MEDIUM] Fix Markdown Injection and XSS in Analytics Report
+- **Branch:** `remotes/origin/sentinel-output-encoding-17232199757136201489`
+  - **Result:** Commit: feat: secure markdown output encoding in analytics
+- **Branch:** `remotes/origin/sentinel-path-traversal-csv-fix-3823511554369856865`
+  - **Result:** Commit: feat: implement bi-weekly reporting schedule
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-10456735655567635784`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix path traversal in scraper scripts
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-10577458576876896305`
+  - **Result:** Commit: Fix: prevent path traversal in scraper.py output
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-10734782859675009310`
+  - **Result:** Commit: Fix path traversal vulnerability in scraper scripts
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-10967416420667337264`
+  - **Result:** Commit: Sentinel: Fix critical path traversal vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-11587562362806338360`
+  - **Result:** Commit: Fix path traversal vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-11594538796228867279`
+  - **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into sentinel-path-traversal-fix-11594538796228867279
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-11914282064131816424`
+  - **Result:** Commit: feat(security): prevent path traversal in scraper CLI arguments
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-11971151149383577133`
+  - **Result:** Commit: Sentinel: Fix path traversal vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-12279666712111008639`
+  - **Result:** Commit: Fix path traversal vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-12513139928667827617`
+  - **Result:** Commit: feat: Implement autonomous multi-agent system
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-12611882508292963082`
+  - **Result:** Commit: feat: Prevent path traversal in scraper output files
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-13129809503624389550`
+  - **Result:** Commit: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into sentinel-path-traversal-fix-13129809503624389550
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-13434890408938991283`
+  - **Result:** Commit: Fix path traversal vulnerability in scraper output paths
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-14234483393294961327`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix path traversal in ResearcherAgent
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-14362573612841171516`
+  - **Result:** Commit: Fix path traversal in scrape_informatic.py
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-14923274991046567104`
+  - **Result:** Commit: 🛡️ Sentinel: Fix Path Traversal vulnerability in scraper output paths
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-15314743226139648978`
+  - **Result:** Commit: Sentinel: Fix critical path traversal vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-16721964439752681814`
+  - **Result:** Commit: feat: Prevent path traversal in scraper output
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-16876609028682252936`
+  - **Result:** Commit: Sentinel 🛡️: [CRITICAL] Fix Path Traversal in Scraper
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-17327093040459172563`
+  - **Result:** Commit: Fix path traversal vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-17847315453125522921`
+  - **Result:** Commit: Fix: prevent path traversal in scraper output and add timeout
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-18413042180626318993`
+  - **Result:** Commit: Fix path traversal vulnerability in file outputs
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-3613197660478104645`
+  - **Result:** Commit: Implement autonomous agents and evolutionary architecture
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-4117566252947461341`
+  - **Result:** Commit: Sentinel: Fix path traversal vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-4227351371045424943`
+  - **Result:** Commit: Fix: prevent path traversal in scraper output
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-5758029356260873176`
+  - **Result:** Commit: Shield: Prevent Path Traversal in output file arguments
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-5954497886422508667`
+  - **Result:** Commit: Fix Path Traversal vulnerability in scraper scripts
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-6263730005958541679`
+  - **Result:** Commit: feat: Prevent path traversal in scrapers
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-6486518614009459970`
+  - **Result:** Commit: Prevent path traversal in scraper output
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-6759279909173799446`
+  - **Result:** Commit: Update job schedule to run every two weeks
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-75464583372601592`
+  - **Result:** Commit: feat(security): prevent path traversal in CLI tools
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-7924678315596277000`
+  - **Result:** Commit: Fix path traversal vulnerability in scraper output paths
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-8208482055150260250`
+  - **Result:** Commit: Shield: Prevent path traversal in output files
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-8645236588093434852`
+  - **Result:** Commit: Security: Fix Path Traversal vulnerability in scraper output arguments
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-8670746319559752468`
+  - **Result:** Commit: feat(security): fix path traversal in file outputs
+- **Branch:** `remotes/origin/sentinel-prevent-xss-urls-6005308337989085500`
+  - **Result:** Commit: Sentinel 🛡️: Prevent XSS by validating URL schemes
+- **Branch:** `remotes/origin/sentinel-scraper-dos-fix-5795128343399673854`
+  - **Result:** Commit: feat: Add response size limit to scraper to prevent DoS
+- **Branch:** `remotes/origin/sentinel-scraper-dos-protection-6869785927635506295`
+  - **Result:** Commit: 🛡️ Sentinel: [MEDIUM] Fix DoS risk in scraper
+- **Branch:** `remotes/origin/sentinel-scraper-security-17958507904962651571`
+  - **Result:** Commit: feat(security): harden scraper against path traversal and CSV injection
+- **Branch:** `remotes/origin/sentinel-scraper-security-3468579950298759361`
+  - **Result:** Commit: Fix stored XSS via scraper URL validation
+- **Branch:** `remotes/origin/sentinel-scraper-security-8881075765074937007`
+  - **Result:** Commit: feat(security): Restrict scraper to http/https protocols
+- **Branch:** `remotes/origin/sentinel-scraper-security-9343399108902085299`
+  - **Result:** Commit: Shield: Prevent Memory DoS and enforce URL scheme in scraper
+- **Branch:** `remotes/origin/sentinel-scraper-timeout-13066185992077732922`
+  - **Result:** Commit: feat(security): add network timeout to scrape_informatic.py
+- **Branch:** `remotes/origin/sentinel-secure-markdown-report-10480316931912744290`
+  - **Result:** Commit: feat(security): sanitize markdown output in reports
+- **Branch:** `remotes/origin/sentinel-security-fix-3723865700498354440`
+  - **Result:** Commit: feat: Fix CSV Injection and Path Traversal in Scraper
+- **Branch:** `remotes/origin/sentinel-security-fix-8692130279913781488`
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into sentinel-security-fix-8692130279913781488
+- **Branch:** `remotes/origin/sentinel-security-fix-url-validation-15877893798096309132`
+  - **Result:** Commit: Sentinel: [HIGH] Fix unsafe URL scheme extraction in scraper
+- **Branch:** `remotes/origin/sentinel-security-fixes-1698740501071019689`
+  - **Result:** Commit: feat: Add timeout to network requests and validate output paths in scraper
+- **Branch:** `remotes/origin/sentinel-security-fixes-2926280521022127220`
+  - **Result:** Commit: feat: Implement CSV injection protection and path traversal prevention in scraper
+- **Branch:** `remotes/origin/sentinel-security-fixes-9176948662016609493`
+  - **Result:** Commit: Sentinel: [CRITICAL/MEDIUM] Fix Path Traversal and CSV Injection in scraper.py
+- **Branch:** `remotes/origin/sentinel-ssrf-fix-11285404620217692066`
+  - **Result:** Commit: feat: add SSRF protection to BlogScraper
+- **Branch:** `remotes/origin/sentinel-ssrf-fix-12142424289060745521`
+  - **Result:** Commit: 🛡️ Sentinel: Fix SSRF Vulnerability in Scraper
+- **Branch:** `remotes/origin/sentinel-ssrf-fix-14822598003080253673`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Prevent SSRF in scraper
+- **Branch:** `remotes/origin/sentinel-ssrf-fix-15679479573064166638`
+  - **Result:** Commit: feat: Add SSRF protection to BlogScraper
+- **Branch:** `remotes/origin/sentinel-ssrf-fix-15708222487213179440`
+  - **Result:** Commit: feat: Add SSRF protection to scraper
+- **Branch:** `remotes/origin/sentinel-ssrf-fix-2624088104699189240`
+  - **Result:** Commit: feat: add SSRF protection to scraper
+- **Branch:** `remotes/origin/sentinel-ssrf-fix-2673881214172986462`
+  - **Result:** Commit: feat: Add SSRF protection to scraper
+- **Branch:** `remotes/origin/sentinel-ssrf-fix-3044566237611297460`
+  - **Result:** Commit: feat: Add URL validation to prevent SSRF in BlogScraper
+- **Branch:** `remotes/origin/sentinel-ssrf-fix-3696920812745344524`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix SSRF vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-ssrf-fix-3716478283625253282`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix SSRF in scraper pagination
+- **Branch:** `remotes/origin/sentinel-ssrf-fix-3881955097333769994`
+  - **Result:** Commit: Fix SSRF in BlogScraper by validating URL scheme and domain
+- **Branch:** `remotes/origin/sentinel-ssrf-fix-4228425810213735351`
+  - **Result:** Commit: feat: Add URL validation to scraper for SSRF protection
+- **Branch:** `remotes/origin/sentinel-ssrf-fix-4537331546277807709`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix SSRF vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel-ssrf-fix-7380402867883374496`
+  - **Result:** Commit: feat: Add strict SSRF protection to scraper
+- **Branch:** `remotes/origin/sentinel-ssrf-fix-7650991945586945721`
+  - **Result:** Commit: feat: Add SSRF protection to scraper
+- **Branch:** `remotes/origin/sentinel-timeout-fix-11256009627229693809`
+  - **Result:** Commit: feat(security): add request timeout to scraper
+- **Branch:** `remotes/origin/sentinel-timeout-fix-6727440236869099341`
+  - **Result:** Commit: 🛡️ Sentinel: [MEDIUM] Fix missing timeout in scraper
+- **Branch:** `remotes/origin/sentinel-timeout-fix-9908235734266386535`
+  - **Result:** Commit: feat(security): Add 30s timeout to scraper requests
+- **Branch:** `remotes/origin/sentinel-url-sanitization-3468833797875970492`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Sanitize scraped URLs to prevent XSS
+- **Branch:** `remotes/origin/sentinel-url-validation-16463849517756046800`
+  - **Result:** Commit: feat: secure scraper with strict URL validation
+- **Branch:** `remotes/origin/sentinel-url-validation-1973285789499580044`
+  - **Result:** Commit: feat: stricter URL validation to prevent injection attacks
+- **Branch:** `remotes/origin/sentinel-url-validation-2700286336477538754`
+  - **Result:** Commit: feat(security): Validate URLs in scraper to prevent injection
+- **Branch:** `remotes/origin/sentinel-url-validation-3025430015714192386`
+  - **Result:** Commit: feat(security): add URL validation to scraper
+- **Branch:** `remotes/origin/sentinel-url-validation-800829515985496089`
+  - **Result:** Commit: feat(security): Implement URL input validation in scraper
+- **Branch:** `remotes/origin/sentinel-url-validation-8385423909047886596`
+  - **Result:** Commit: feat(security): Validate URL schemes and test CSV security
+- **Branch:** `remotes/origin/sentinel-url-validation-994417387190840418`
+  - **Result:** Commit: feat(security): Validate URLs to prevent unsafe schemes
+- **Branch:** `remotes/origin/sentinel-xss-fix-4307107486313997364`
+  - **Result:** Commit: feat: Fix Stored XSS in Markdown reports
+- **Branch:** `remotes/origin/setup-gitlab-ci-pipeline-2613952253405968723`
+  - **Result:** Commit: Setup GitLab CI/CD and fix connectivity test flakiness
+- **Branch:** `remotes/origin/setup-gitlab-runner-9164241396391358061`
+  - **Result:** Commit: chore: register testrunner gitlab runner
+- **Branch:** `remotes/origin/subagent-configuration-update-7123065298896349124`
+  - **Result:** Commit: feat: create collaborator subagent and update existing agent configurations
+- **Branch:** `remotes/origin/sync-intelephense-docs-a0f83c38-7783405287437581386`
+  - **Result:** Commit: chore: synchronize Intelephense documentation from GitHub repository
+- **Branch:** `remotes/origin/test-run-and-pii-sanitization-13332227309819345167`
+  - **Result:** Commit: feat: autonomous system evolution v1.24 with package-based layout
+- **Branch:** `remotes/origin/test-run-results-849871051531129885`
+  - **Result:** Commit: Approve sessions and execute final heavy-lifting cycle (v1.05)
+- **Branch:** `remotes/origin/tutorial-gitlab-ci-13797151436381089667`
+  - **Result:** Commit: Update .gitlab-ci.yml to match beginner tutorial
+- **Branch:** `remotes/origin/tutorial-gitlab-ci-yml-1560275815016283248`
+  - **Result:** Commit: chore: update .gitlab-ci.yml to match basic tutorial
+- **Branch:** `remotes/origin/unbounded-memory-fix-2399372418864956220`
+  - **Result:** Commit: ⚡ optimize scraper parsing with SoupStrainer (#1130)
+- **Branch:** `remotes/origin/unitedsports-initial-setup-6667977739938748492`
+  - **Result:** Commit: ⚡ Bolt: Debounce search input to reduce DOM thrashing (#1143)
+- **Branch:** `remotes/origin/update-ads-knowledge-7539393459345638342`
+  - **Result:** Commit: Update Google Ads documentation in knowledge base
+- **Branch:** `remotes/origin/update-ai-agent-architecture-10730539674470756070`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into update-ai-agent-architecture-10730539674470756070 resolving modify/delete conflicts by keeping our versions
+- **Branch:** `remotes/origin/update-autonomous-workflow-to-nodejs-12950846570803253744`
+  - **Result:** Commit: fix: resolve syntax errors causing CI build failure in Next.js frontend
+- **Branch:** `remotes/origin/update-compile-definition-10278962991354198007`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into update-compile-definition-10278962991354198007
+- **Branch:** `remotes/origin/update-compile-definition-9206230129012668911`
+  - **Result:** Commit: fix: resolve eslint and build errors causing CI failure
+- **Branch:** `remotes/origin/update-docker-env-example-767789022386331497`
+  - **Result:** Commit: chore: add docker hub credentials to .env.example
+- **Branch:** `remotes/origin/update-duo-planner-and-gitlab-security-prompts-10046048910600722965`
+  - **Result:** Commit: Refactor Antigravity architecture for stability and typing
+- **Branch:** `remotes/origin/update-duo-planner-prompt-10360819572265614219`
+  - **Result:** Commit: Update Duo Planner agent system prompt
+- **Branch:** `remotes/origin/update-duo-planner-prompt-13838548475697526700`
+  - **Result:** Commit: docs(agents): update duo planner agent system prompt
+- **Branch:** `remotes/origin/update-duo-planner-prompt-17160719308969941728`
+  - **Result:** Commit: Update Duo Planner agent system prompt
+- **Branch:** `remotes/origin/update-duo-planner-prompt-17199014817685136177`
+  - **Result:** Commit: Update `duo_planner_agent.md` to match the required system prompt
+- **Branch:** `remotes/origin/update-duo-planner-prompt-3916153360372611286`
+  - **Result:** Commit: Update Duo Planner system prompt to exact user specification
+- **Branch:** `remotes/origin/update-duo-planner-prompt-4635641522666448188`
+  - **Result:** Commit: Update Duo Planner AI agent system prompt to match provided specification
+- **Branch:** `remotes/origin/update-duo-planner-prompt-5419136793232727419`
+  - **Result:** Commit: Refactor duo planner agent prompts into .gemini/agents/
+- **Branch:** `remotes/origin/update-gemini-remote-agents-docs-18356627524095625467`
+  - **Result:** Commit: docs: update Remote Subagents documentation
+- **Branch:** `remotes/origin/update-gitlab-ci-parallel-7473238444607453645`
+  - **Result:** Commit: ci: enable parallel job execution via DAG pipeline needs
+- **Branch:** `remotes/origin/update-gitlab-security-agent-prompt-10068468574422245186`
+  - **Result:** Commit: Update GitLab Security Analyst Agent prompt
+- **Branch:** `remotes/origin/update-gitlab-security-agent-prompt-10708558267767267994`
+  - **Result:** Commit: Update GitLab Security Analyst Agent system prompt
+- **Branch:** `remotes/origin/update-gitlab-security-agent-prompt-11069718994655689674`
+  - **Result:** Commit: Update GitLab Security Analyst agent system prompt
+- **Branch:** `remotes/origin/update-gitlab-security-agent-prompt-12909774882496112164`
+  - **Result:** Commit: Update GitLab Security Analyst Agent system prompt
+- **Branch:** `remotes/origin/update-gitlab-security-agent-prompt-13690528861975226507`
+  - **Result:** Commit: docs: update gitlab security agent system prompt
+- **Branch:** `remotes/origin/update-gitlab-security-agent-prompt-15007723366612838738`
+  - **Result:** Commit: docs: add Merge Request Management to gitlab_security_agent prompt
+- **Branch:** `remotes/origin/update-gitlab-security-agent-prompt-1576432677587628022`
+  - **Result:** Commit: Update gitlab_security_agent prompt
+- **Branch:** `remotes/origin/update-gitlab-security-agent-prompt-16940786429236623062`
+  - **Result:** Commit: docs: update gitlab security agent prompt with precise whitespacing
+- **Branch:** `remotes/origin/update-gitlab-security-agent-prompt-5398640052724390254`
+  - **Result:** Commit: Update GitLab Security Analyst Agent system prompt
+- **Branch:** `remotes/origin/update-gitlab-security-agent-prompt-9333680288612190106`
+  - **Result:** Commit: Update GitLab Security Analyst Agent system prompt with extensive details
+- **Branch:** `remotes/origin/update-gitlab-security-agent-prompt-9385198721633097408`
+  - **Result:** Commit: chore(agents): update gitlab security agent system prompt
+- **Branch:** `remotes/origin/update-intelephense-docs-17927462942449394943`
+  - **Result:** Commit: docs: update Intelephense documentation in knowledge base
+- **Branch:** `remotes/origin/update-intelephense-docs-1980752206932081498`
+  - **Result:** Commit: Update Intelephense documentation in knowledge base
+- **Branch:** `remotes/origin/update-intelephense-docs-ingestion-13082987090438689982`
+  - **Result:** Commit: Update Intelephense documentation and ingestion logic
+- **Branch:** `remotes/origin/update-intelephense-docs-v2-11354172945734444343`
+  - **Result:** Commit: docs: update and consolidate Intelephense documentation
+- **Branch:** `remotes/origin/update-knowledge-merge-with-glossary-11855212451135205052`
+  - **Result:** Commit: docs: prepend compile glossary to knowledge merge
+- **Branch:** `remotes/origin/update-mcp-docker-security-11834660539572533331`
+  - **Result:** Commit: Update MCP_DOCKER_SECURITY to use specific image
+- **Branch:** `remotes/origin/update-mongodb-uri-2808493771476678278`
+  - **Result:** Commit: feat: add secure script to test MongoDB Atlas connection
+- **Branch:** `remotes/origin/update-page-layout-props-2850312579087416885`
+  - **Result:** Commit: Resolve merge conflicts by accepting origin/main
+- **Branch:** `remotes/origin/update-react-deployment-logic-11252325931757869303`
+  - **Result:** Commit: feat: integrate react agent deployment logic and fix tools list parsing
+- **Branch:** `remotes/origin/update-remote-subagents-8216224045262465071`
+  - **Result:** Commit: feat: configure and document Gemini CLI remote subagents
+- **Branch:** `remotes/origin/update-scraper-target-14564535453076268184`
+  - **Result:** Commit: Implement collaborative autonomous agent system
+- **Branch:** `remotes/origin/update-scraper-target-15910668004309817623`
+  - **Result:** Commit: Implement autonomous multi-agent system for 24/7 operations
+- **Branch:** `remotes/origin/update-subagent-prompts-18414997782670082926`
+  - **Result:** Commit: chore(agents): add explicit MR management to security and planner agents
+- **Branch:** `remotes/origin/update-subagents-knowledge-6325422281065488321`
+  - **Result:** Commit: docs: update Subagents documentation in AI Agents knowledge base\n\n- Replaces the truncated Subagents section with the full documentation text.\n- Syncs the update across `ai_agents_knowledge.json`, `data/knowledge/ai_agents_knowledge.json`, and `ai_agents_knowledge.md`.\n- Preserves the existing file structure and manual keys.
+- **Branch:** `remotes/origin/update-target-url-11001924703670317262`
+  - **Result:** Commit: Implement Autonomous Multi-Agent System
+- **Branch:** `remotes/origin/ux/improve-report-navigation-7512584289447703113`
+  - **Result:** Commit: 🎨 Palette: Improve REPORT.md with TOC and emojis
+- **Branch:** `remotes/origin/v0/8bukets-bd43e85b`
+  - **Result:** Commit: feat: implement AI agent knowledge from Google Cloud Discover (#1529)
+- **Branch:** `remotes/origin/verify-gitlab-ci-tutorial-12600342277583614221`
+  - **Result:** Commit: chore: verify GitLab CI tutorial jobs in configuration
+- **Branch:** `remotes/origin/verify/localhost-deployment-11300801084643247021`
+  - **Result:** Commit: Verify local deployment and dashboard rendering
+- **Branch:** `remotes/origin/wilson-sonsini-docs-9972618481466643391`
+  - **Result:** Commit: docs: add Wilson Sonsini firm profile and practice areas
+
+### 📂 Category: PERFORMANCE
+#### 🌐 Strategic Domain: General
+- **Branch:** `remotes/origin/bolt/analytics-optimization-4995070729525476780`
+  - **Result:** Commit: perf(analytics): optimize aggregation with generator expressions
+- **Branch:** `remotes/origin/bolt/analytics-optimization-5186329418761379661`
+  - **Result:** Commit: Optimize analytics memory usage with generators
+- **Branch:** `remotes/origin/bolt/analytics-optimization-9314066458299760001`
+  - **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into bolt/analytics-optimization-9314066458299760001
+- **Branch:** `remotes/origin/bolt/debounce-search-10941063823449310273`
+  - **Result:** Commit: feat: Implement Self-Learning Agents (IQ 25 start)
+- **Branch:** `remotes/origin/bolt/debounce-search-12191973509104557966`
+  - **Result:** Commit: Merge branch 'unitedsports-initial-setup-6667977739938748492' into bolt/debounce-search-12191973509104557966
+- **Branch:** `remotes/origin/bolt/debounce-search-12622700298497962578`
+  - **Result:** Commit: ⚡ Bolt: Debounce search input
+- **Branch:** `remotes/origin/bolt/debounce-search-15326880572680328137`
+  - **Result:** Commit: Merge branch 'unitedsports-initial-setup-6667977739938748492' into bolt/debounce-search-15326880572680328137
+- **Branch:** `remotes/origin/bolt/debounce-search-16257675660942743277`
+  - **Result:** Commit: ⚡ Bolt: Debounce search input
+- **Branch:** `remotes/origin/bolt/debounce-search-5142738797831521138`
+  - **Result:** Commit: ⚡ Bolt: Debounce search input for performance
+- **Branch:** `remotes/origin/bolt/offload-parsing-14722444591062844886`
+  - **Result:** Commit: Offload HTML parsing to ProcessPoolExecutor to prevent blocking asyncio loop
+- **Branch:** `remotes/origin/bolt/offload-parsing-18000472276561291701`
+  - **Result:** Commit: ⚡ Bolt: Offload HTML parsing to ProcessPoolExecutor
+- **Branch:** `remotes/origin/bolt/optimize-analytics-counters-3356972243942763781`
+  - **Result:** Commit: ⚡ Bolt: Optimize analytics aggregation and fix date parsing
+- **Branch:** `remotes/origin/bolt/optimize-analytics-domain-parsing-13885933983785398642`
+  - **Result:** Commit: feat(analytics): Optimize domain extraction using pre-computed field
+- **Branch:** `remotes/origin/bolt/optimize-analytics-memory-6106404338256355305`
+  - **Result:** Commit: Refactor analytics.py to use generators for memory efficiency
+- **Branch:** `remotes/origin/bolt/optimize-analytics-one-pass-7086495459285985759`
+  - **Result:** Commit: ⚡ Bolt: Optimize analytics report generation
+- **Branch:** `remotes/origin/bolt/optimize-analyzer-agent-7882848247587785296`
+  - **Result:** Commit: ⚡ Optimize AnalyzerAgent: Remove redundant string concatenation and re-parsing
+- **Branch:** `remotes/origin/bolt/optimize-analyzer-processing-1038964724304632027`
+  - **Result:** Commit: ⚡ Bolt: Optimize AnalyzerAgent text processing
+- **Branch:** `remotes/origin/bolt/optimize-db-commits-11398396024244254319`
+  - **Result:** Commit: ⚡ Bolt: Optimize DB operations with connection reuse and batch commits
+- **Branch:** `remotes/origin/bolt/optimize-font-loading-5528051854303961488`
+  - **Result:** Commit: ⚡ Bolt: Optimize font loading strategy
+- **Branch:** `remotes/origin/bolt/optimize-parsing-concurrency-16573258406501632258`
+  - **Result:** Commit: ⚡ Bolt: Offload HTML parsing to ProcessPoolExecutor
+- **Branch:** `remotes/origin/bolt/optimize-parsing-strainer-9971815033576562724`
+  - **Result:** Commit: ⚡ Bolt: Use SoupStrainer for faster HTML parsing
+- **Branch:** `remotes/origin/bolt/optimize-regex-1525106895244379137`
+  - **Result:** Commit: ⚡ Bolt: Optimize regex performance in scraper
+- **Branch:** `remotes/origin/bolt/optimize-regex-15752829805636869683`
+  - **Result:** Commit: ⚡ Optimize regex usage in scraper.py
+- **Branch:** `remotes/origin/bolt/optimize-regex-3698754049166377150`
+  - **Result:** Commit: ⚡ Bolt: Optimize regex usage in scraper.py
+- **Branch:** `remotes/origin/bolt/optimize-regex-scraper-6105079902300613842`
+  - **Result:** Commit: ⚡ Bolt: Optimize regex performance in scraper.py
+- **Branch:** `remotes/origin/bolt/optimize-researcher-agent-14491778410455862210`
+  - **Result:** Commit: ⚡ Bolt: Optimize ResearcherAgent with direct module calls
+- **Branch:** `remotes/origin/bolt/optimize-scraper-8346930055291121597`
+  - **Result:** Commit: ⚡ Perf: Optimize HTML parsing with lxml and SoupStrainer
+- **Branch:** `remotes/origin/bolt/optimize-scraper-async-parsing-4453799508015818027`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper with non-blocking parsing
+- **Branch:** `remotes/origin/bolt/optimize-scraper-concurrency-1999393658885551350`
+  - **Result:** Commit: ⚡ Bolt: Offload scraping parser to process pool
+- **Branch:** `remotes/origin/bolt/optimize-scraper-connections-13114973092726669835`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper connections (Session & DB reuse)
+- **Branch:** `remotes/origin/bolt/optimize-scraper-cpu-offload-9525808668281039762`
+  - **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into bolt/optimize-scraper-cpu-offload-9525808668281039762
+- **Branch:** `remotes/origin/bolt/optimize-scraper-parsing-10565425489235889147`
+  - **Result:** Commit: ⚡ Bolt: Offload BeautifulSoup parsing to executor
+- **Branch:** `remotes/origin/bolt/optimize-scraper-parsing-10918922297194629297`
+  - **Result:** Commit: perf: offload BeautifulSoup parsing to thread in scraper
+- **Branch:** `remotes/origin/bolt/optimize-scraper-parsing-11833892635611618505`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper with SoupStrainer and regex compilation
+- **Branch:** `remotes/origin/bolt/optimize-scraper-parsing-12555573345404019193`
+  - **Result:** Commit: Perf: Offload scraper parsing to ProcessPoolExecutor
+- **Branch:** `remotes/origin/bolt/optimize-scraper-parsing-15316028881120091100`
+  - **Result:** Commit: ⚡ Bolt: Optimize HTML parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt/optimize-scraper-parsing-16871502457632644118`
+  - **Result:** Commit: Refactor scraper to offload parsing to thread executor
+- **Branch:** `remotes/origin/bolt/optimize-scraper-parsing-17321207130499431239`
+  - **Result:** Commit: Refactor scraper to use ProcessPoolExecutor for CPU-bound parsing
+- **Branch:** `remotes/origin/bolt/optimize-scraper-parsing-17943688807716434539`
+  - **Result:** Commit: ⚡ Optimize scraper parsing with SoupStrainer and thread offloading
+- **Branch:** `remotes/origin/bolt/optimize-scraper-parsing-6721094877906606239`
+  - **Result:** Commit: Perf: Optimize scraper parsing logic
+- **Branch:** `remotes/origin/bolt/optimize-scraper-parsing-6892475922694217553`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing and string ops
+- **Branch:** `remotes/origin/bolt/optimize-scraper-parsing-7966402303171106171`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into bolt/optimize-scraper-parsing-7966402303171106171
+- **Branch:** `remotes/origin/bolt/optimize-scraper-regex-10205989799343987319`
+  - **Result:** Commit: perf(scraper): replace bs4 with regex for comment extraction
+- **Branch:** `remotes/origin/bolt/optimize-scraper-regex-1393195190669429134`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper with regex pre-compilation
+- **Branch:** `remotes/origin/bolt/optimize-scraper-regex-14681340074432388490`
+  - **Result:** Commit: Perf: Pre-compile regex in scraper.py
+- **Branch:** `remotes/origin/bolt/optimize-scraper-regex-1482756939594600405`
+  - **Result:** Commit: ⚡ Bolt: Optimize regex usage in scraper.py
+- **Branch:** `remotes/origin/bolt/optimize-scraper-regex-5860100165924032518`
+  - **Result:** Commit: perf(scraper): pre-compile regex patterns
+- **Branch:** `remotes/origin/bolt/optimize-scraper-regex-8405299950753079753`
+  - **Result:** Commit: ⚡ Bolt: Pre-compile regex patterns in scraper
+- **Branch:** `remotes/origin/bolt/optimize-scraper-regex-9310556906555712372`
+  - **Result:** Commit: perf: Optimize regex usage in scraper.py
+- **Branch:** `remotes/origin/bolt/optimize-scraper-soupstrainer-14420766436161208317`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt/optimize-scraper-soupstrainer-16309493633183505458`
+  - **Result:** Commit: Optimize scraper parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt/optimize-scraper-soupstrainer-2187090943754439441`
+  - **Result:** Commit: ⚡ Bolt: Use SoupStrainer to optimize HTML parsing
+- **Branch:** `remotes/origin/bolt/optimize-scraper-text-cleaning-12035125053828443928`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper text cleaning and URL checks
+- **Branch:** `remotes/origin/bolt/optimize-sqlite-connection-10336361028300221107`
+  - **Result:** Commit: ⚡ Bolt: Optimize SQLite usage in scraper
+- **Branch:** `remotes/origin/bolt/optimize-url-parsing-2495547858907129194`
+  - **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into bolt/optimize-url-parsing-2495547858907129194
+- **Branch:** `remotes/origin/bolt/optimize-url-parsing-5636972327251553148`
+  - **Result:** Commit: ⚡ Bolt: Optimize is_external_link by pre-calculating netloc
+- **Branch:** `remotes/origin/bolt/parallel-parsing-8300594593376061911`
+  - **Result:** Commit: ⚡ Bolt: Parallelize HTML parsing with ProcessPoolExecutor
+- **Branch:** `remotes/origin/bolt/parallel-research-9725055391058247925`
+  - **Result:** Commit: ⚡ Bolt: Parallelize Research Scrapers
+- **Branch:** `remotes/origin/bolt/parallel-researcher-3732082642823576207`
+  - **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into bolt/parallel-researcher-3732082642823576207
+- **Branch:** `remotes/origin/bolt/reuse-sqlite-connection-8909750184306123325`
+  - **Result:** Commit: feat(perf): reuse sqlite connection in BlogScraper
+- **Branch:** `remotes/origin/bolt/scraper-async-parsing-11691327216979292391`
+  - **Result:** Commit: perf: offload scraping to thread to unblock loop
+- **Branch:** `remotes/origin/bolt/scraper-async-parsing-1902549923260096653`
+  - **Result:** Commit: ⚡ Bolt: Offload BeautifulSoup parsing to thread
+- **Branch:** `remotes/origin/bolt/scraper-optimization-5038895935936123886`
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into bolt/scraper-optimization-5038895935936123886
+- **Branch:** `remotes/origin/bolt/scraper-optimization-9022037111060976209`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing and string operations
+- **Branch:** `remotes/origin/bolt/scraper-optimization-soupstrainer-17672817174233874002`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing with SoupStrainer
+- **Branch:** `remotes/origin/bolt/scraper-perf-boost-9671827754750526645`
+  - **Result:** Commit: ⚡ Bolt: Optimize scraper parsing performance
+- **Branch:** `remotes/origin/bolt/soup-strainer-optimization-16070692857915486843`
+  - **Result:** Commit: ⚡ Bolt: Optimize HTML parsing with SoupStrainer
+
+### 📂 Category: FEATURE
+#### 🌐 Strategic Domain: General
+- **Branch:** `remotes/origin/feat/add-chief-ai-officer-agent-1329096278704697703`
+  - **Result:** Commit: feat: Add Chief AI Officer Python agent
+- **Branch:** `remotes/origin/feat/add-dry-run-and-docs-355491477019803773`
+  - **Result:** Commit: fix(ci): freeze gcp deployments to bypass credential failures
+- **Branch:** `remotes/origin/feat/add-duo-planner-agent-13826965705256453185`
+  - **Result:** Commit: feat: Add Duo Planner GitLab agent system prompt
+- **Branch:** `remotes/origin/feat/add-first-gitlab-pipeline-16997691605119051204`
+  - **Result:** Commit: ci: configure first gitlab ci/cd pipeline
+- **Branch:** `remotes/origin/feat/add-subagents-docs-1971776765739377795`
+  - **Result:** Commit: chore: remove compiled pyc files and fix CI failures
+- **Branch:** `remotes/origin/feat/add-vscode-intelephense-scraper-14077541109460571924`
+  - **Result:** Commit: feat: add scraper to fetch vscode-intelephense repository docs
+- **Branch:** `remotes/origin/feat/agent-architecture-ingestion-8781343012191362130`
+  - **Result:** Commit: Merge branch 'main' into feat/agent-architecture-ingestion-8781343012191362130
+- **Branch:** `remotes/origin/feat/ai-agents-knowledge-14795660026662295366`
+  - **Result:** Commit: feat: implement AI agent knowledge from Google Cloud
+- **Branch:** `remotes/origin/feat/ai-agents-knowledge-15681133979794376101`
+  - **Result:** Commit: feat: implement knowledge ingestion for AI agents
+- **Branch:** `remotes/origin/feat/ai-agents-knowledge-ingestion-3432960869783854018`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/ai-agents-knowledge-ingestion-3432960869783854018
+- **Branch:** `remotes/origin/feat/ai-agents-knowledge-ingestion-51848187449270745`
+  - **Result:** Commit: feat: implement AI Agents knowledge ingestion in TypeScript
+- **Branch:** `remotes/origin/feat/ai-agents-knowledge-integration-10133877583552684442`
+  - **Result:** Commit: feat: integrate AI agent knowledge from Google Cloud
+- **Branch:** `remotes/origin/feat/ai-agents-knowledge-integration-17962488157664900856`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/ai-agents-knowledge-integration-17962488157664900856
+- **Branch:** `remotes/origin/feat/ai-agents-knowledge-integration-3155871126605591044`
+  - **Result:** Commit: feat: integrate Google Cloud AI agent knowledge and fix frontend regressions
+- **Branch:** `remotes/origin/feat/ai-agents-knowledge-integration-4554182407588547817`
+  - **Result:** Commit: feat: integrate AI agent foundation and strategic knowledge
+- **Branch:** `remotes/origin/feat/ai-agents-knowledge-update-2880934032855437252`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/ai-agents-knowledge-update-2880934032855437252
+- **Branch:** `remotes/origin/feat/ai-architecture-docs-2911584593714899836`
+  - **Result:** Commit: fix(jules): exclude cache directories from branch diff scanner
+- **Branch:** `remotes/origin/feat/ai-sdk-streamtext-integration-3734860099537308061`
+  - **Result:** Commit: feat: integrate Vercel AI SDK streamText with Google Gemini
+- **Branch:** `remotes/origin/feat/antigravity-cloud-evolution-3450373713332257591`
+  - **Result:** Commit: feat(cloud): evolve Antigravity to fully online multi-agent architecture
+- **Branch:** `remotes/origin/feat/autonomous-cloud-continuity-7259514487637520921`
+  - **Result:** Commit: fix: resolve multi-stack CI failures and secure cloud takeover
+- **Branch:** `remotes/origin/feat/autonomous-cloud-convergence-phase-12-11379028617689834826`
+  - **Result:** Commit: feat: implement unified autonomous cloud convergence (Phase 12)
+- **Branch:** `remotes/origin/feat/autonomous-cloud-evolution-16547296923606318765`
+  - **Result:** Commit: feat: implement autonomous cloud connectivity, async hygiene, and CI fixes
+- **Branch:** `remotes/origin/feat/autonomous-cloud-evolution-2894233982958127060`
+  - **Result:** Commit: feat: implement autonomous cloud evolution engine
+- **Branch:** `remotes/origin/feat/autonomous-cloud-evolution-7110023434295372001`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-cloud-evolution-7110023434295372001
+- **Branch:** `remotes/origin/feat/autonomous-cloud-failover-13782442138819724713`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-cloud-failover-13782442138819724713
+- **Branch:** `remotes/origin/feat/autonomous-cloud-knowledge-consolidation-6778083691317646306`
+  - **Result:** Commit: Merge branch 'main' into feat/autonomous-cloud-knowledge-consolidation-6778083691317646306 (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/feat/autonomous-cloud-merge-bypass-8712146839008626317`
+  - **Result:** Commit: feat: enable autonomous cloud merging and continuous pull request processing
+- **Branch:** `remotes/origin/feat/autonomous-cloud-presence-13349070200456458168`
+  - **Result:** Commit: fix: resolve linting and react hook errors in frontend
+- **Branch:** `remotes/origin/feat/autonomous-cloud-presence-978332573715716812`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-cloud-presence-978332573715716812
+- **Branch:** `remotes/origin/feat/autonomous-cloud-presence-enhancement-11813668786867103175`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-cloud-presence-enhancement-11813668786867103175
+- **Branch:** `remotes/origin/feat/autonomous-cloud-presence-v12-14478074314535541001`
+  - **Result:** Commit: feat: implement autonomous cloud presence and ecosystem collaboration (Final)
+- **Branch:** `remotes/origin/feat/autonomous-cloud-sovereignty-10617479099026703774`
+  - **Result:** Commit: feat: enable autonomous cloud sovereignty and presence
+- **Branch:** `remotes/origin/feat/autonomous-cloud-sovereignty-9356824831657033971`
+  - **Result:** Commit: feat: implement node sovereignty and cloud takeover for always-on autonomy
+- **Branch:** `remotes/origin/feat/autonomous-cloud-workflow-agent-17352121164725625008`
+  - **Result:** Commit: fix: restore missing base_agent and ensure cloud_workflow_agent leverages environment fully
+- **Branch:** `remotes/origin/feat/autonomous-creation-cycle-10141862539312644533`
+  - **Result:** Commit: feat: execute full autonomous creation cycle for System Health Dashboard
+- **Branch:** `remotes/origin/feat/autonomous-creation-cycle-10567644799753050340`
+  - **Result:** Commit: feat: implement full autonomous creation order and execution
+- **Branch:** `remotes/origin/feat/autonomous-creation-cycle-14040463371825265667`
+  - **Result:** Commit: feat: implement full autonomous creation order and execution cycle
+- **Branch:** `remotes/origin/feat/autonomous-creation-cycle-2519215097742916370`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-creation-cycle-2519215097742916370
+- **Branch:** `remotes/origin/feat/autonomous-creation-cycle-5845832032656471987`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-creation-cycle-5845832032656471987
+- **Branch:** `remotes/origin/feat/autonomous-creation-cycle-856121647264189672`
+  - **Result:** Commit: Merge branch 'main' into feat/autonomous-creation-cycle-856121647264189672
+- **Branch:** `remotes/origin/feat/autonomous-creation-cycle-8889704769332571568`
+  - **Result:** Commit: Merge branch 'main' into feat/autonomous-creation-cycle-8889704769332571568 (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/feat/autonomous-creation-cycle-alignment-17511680594965504532`
+  - **Result:** Commit: feat: implement fully autonomous creation and execution lifecycle
+- **Branch:** `remotes/origin/feat/autonomous-creation-cycle-components-16091962715675237550`
+  - **Result:** Commit: feat(autonomous): run workflow to generate Feature Scaling Coordinator and Proactive Scalability Service
+- **Branch:** `remotes/origin/feat/autonomous-creation-cycle-stabilization-15042891493316655880`
+  - **Result:** Commit: Merge branch 'main' into feat/autonomous-creation-cycle-stabilization-15042891493316655880 (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/feat/autonomous-creation-engine-2254624505132207048`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-creation-engine-2254624505132207048
+- **Branch:** `remotes/origin/feat/autonomous-creation-engine-4025311903308148897`
+  - **Result:** Commit: feat: implement autonomous creation engine and enhance synthesis
+- **Branch:** `remotes/origin/feat/autonomous-creation-engine-8264207274703386634`
+  - **Result:** Commit: Merge branch 'main' into feat/autonomous-creation-engine-8264207274703386634
+- **Branch:** `remotes/origin/feat/autonomous-creation-evolution-15095668826431318009`
+  - **Result:** Commit: feat: implement full autonomous creation and execution cycle
+- **Branch:** `remotes/origin/feat/autonomous-creation-evolution-8400947059595205490`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-creation-evolution-8400947059595205490
+- **Branch:** `remotes/origin/feat/autonomous-creation-evolution-9797261657817492019`
+  - **Result:** Commit: feat: enable and execute full autonomous creation cycle
+- **Branch:** `remotes/origin/feat/autonomous-creation-execution-cycle-15305595999665058256`
+  - **Result:** Commit: feat: implement autonomous creation and execution cycle
+- **Branch:** `remotes/origin/feat/autonomous-creation-ignition-12654712675481574533`
+  - **Result:** Commit: feat: execute full autonomous creation and execution cycle
+- **Branch:** `remotes/origin/feat/autonomous-creation-ignition-8279236901022115183`
+  - **Result:** Commit: feat: implement full autonomous creation ignition and execution loop
+- **Branch:** `remotes/origin/feat/autonomous-creation-order-12052078248727379444`
+  - **Result:** Commit: feat: implement full autonomous creation order and execution
+- **Branch:** `remotes/origin/feat/autonomous-creation-order-15598638641975305660`
+  - **Result:** Commit: feat: implement autonomous creation order and execution cycle
+- **Branch:** `remotes/origin/feat/autonomous-creation-system-10495689118004789433`
+  - **Result:** Commit: feat: implement full autonomous creation order and execution system
+- **Branch:** `remotes/origin/feat/autonomous-creation-workflow-3405864056735781942`
+  - **Result:** Commit: feat: add daily autonomous creation cycle workflow
+- **Branch:** `remotes/origin/feat/autonomous-creation-workflow-3510228137813384837`
+  - **Result:** Commit: feat: setup autonomous creation cycle workflow
+- **Branch:** `remotes/origin/feat/autonomous-daily-evolution-16799344263411811050`
+  - **Result:** Commit: feat: programmatically generate daily autonomous evolution workflow
+- **Branch:** `remotes/origin/feat/autonomous-daily-license-knowledge-sync-10372390239614697679`
+  - **Result:** Commit: feat: autonomous daily knowledge ingestion and license validation
+- **Branch:** `remotes/origin/feat/autonomous-daily-sync-icloud-2931573862557497008`
+  - **Result:** Commit: feat: implement autonomous daily git sync and icloud backup
+- **Branch:** `remotes/origin/feat/autonomous-daily-sync-refactor-11777205157744306714`
+  - **Result:** Commit: feat: refactor Jules daily sync for async hygiene and standardize iCloud paths
+- **Branch:** `remotes/origin/feat/autonomous-evolution-engine-improvements-9180002343123851576`
+  - **Result:** Commit: Resolve merge conflicts by accepting origin/main
+- **Branch:** `remotes/origin/feat/autonomous-knowledge-integration-17955218427957192278`
+  - **Result:** Commit: feat: integrate knowledge merge automate and mandatory branding
+- **Branch:** `remotes/origin/feat/autonomous-knowledge-merge-integration-7336376174653750666`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-knowledge-merge-integration-7336376174653750666
+- **Branch:** `remotes/origin/feat/autonomous-knowledge-refinement-16335548248808539628`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-knowledge-refinement-16335548248808539628
+- **Branch:** `remotes/origin/feat/autonomous-multi-ci-workflow-creation-13184263401868233273`
+  - **Result:** Commit: feat(singularity): enable full autonomous automatic workflow creation across CI providers
+- **Branch:** `remotes/origin/feat/autonomous-protocol-jules-16130780090107402276`
+  - **Result:** Commit: feat: autonomous PR management and protocolization in Jules
+- **Branch:** `remotes/origin/feat/autonomous-scale-improvements-3306739590977021046`
+  - **Result:** Commit: Merge branch 'main' into feat/autonomous-scale-improvements-3306739590977021046
+- **Branch:** `remotes/origin/feat/autonomous-sync-orch-3205070913479590018`
+  - **Result:** Commit: feat: enhance autonomous work cycle with Git sync and iCloud
+- **Branch:** `remotes/origin/feat/autonomous-work-order-engine-4034176882068097834`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-work-order-engine-4034176882068097834
+- **Branch:** `remotes/origin/feat/autonomous-workflow-creation-13764436247269423073`
+  - **Result:** Commit: feat(singularity): auto-generate full autonomous workflows
+- **Branch:** `remotes/origin/feat/autonomous-workflow-creation-2438802251754427504`
+  - **Result:** Commit: feat: implement full autonomous automatic workflow creation engine
+- **Branch:** `remotes/origin/feat/autonomous-workflow-creation-5168172668648031949`
+  - **Result:** Commit: feat: implement fully autonomous automatic workflow creation
+- **Branch:** `remotes/origin/feat/boundary-integration-3444742037386565893`
+  - **Result:** Commit: Merge branch 'main' into feat/boundary-integration-3444742037386565893 (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/feat/caio-agent-creation-11276937148352669506`
+  - **Result:** Commit: feat: create Chief AI Officer agent with standard framework compliance\n\n- Renames incorrectly suffixed `chief_ai_officer_agent.*` files to standard `chief_ai_officer.*` naming convention.\n- Provides a clean, functional implementation of the CAIO agent within `agents/`.\n- Ensures framework properly registers the CAIO agent logic.\n- Expands agent documentation regarding ethics, governance, and log auditing.
+- **Branch:** `remotes/origin/feat/caio-intelligence-integration-11172055964198786485`
+  - **Result:** Commit: Merge branch 'main' into feat/caio-intelligence-integration-11172055964198786485 (Resolved conflicts)
+- **Branch:** `remotes/origin/feat/caio-role-definition-2687968350619526686`
+  - **Result:** Commit: feat: define Chief AI Officer (CAIO) role and responsibilities
+- **Branch:** `remotes/origin/feat/caio-role-documentation-939377481223590530`
+  - **Result:** Commit: feat: document Chief AI Officer (CAIO) role
+- **Branch:** `remotes/origin/feat/caio-role-enhancement-5559813700767968476`
+  - **Result:** Commit: feat: enhance CAIO role docs, knowledge, and agent logic
+- **Branch:** `remotes/origin/feat/caio-role-grounded-documentation-v2-2060998097314917415`
+  - **Result:** Commit: Resolve merge conflicts by accepting origin/main
+- **Branch:** `remotes/origin/feat/caio-role-orchestration-enhancement-8826405201008920940`
+  - **Result:** Commit: feat: enhance CAIO role intelligence and system stabilization
+- **Branch:** `remotes/origin/feat/caio-role-refinement-14139776390756160770`
+  - **Result:** Commit: feat: refine CAIO strategy and enhance autonomous core resilience
+- **Branch:** `remotes/origin/feat/chief-ai-officer-agent-16063286064953907813`
+  - **Result:** Commit: feat: create CAIO dispatch script to initialize system optimizations
+- **Branch:** `remotes/origin/feat/chief-ai-officer-agents-7425185603236409614`
+  - **Result:** Commit: feat: add local and remote Chief AI Officer agents
+- **Branch:** `remotes/origin/feat/chief-ai-officer-creation-17511905373912707701`
+  - **Result:** Commit: feat: create Chief AI Officer agent
+- **Branch:** `remotes/origin/feat/chief-ai-officer-creation-fix-15085892723513843344`
+  - **Result:** Commit: Merge branch 'main' into feat/chief-ai-officer-creation-fix-15085892723513843344
+- **Branch:** `remotes/origin/feat/cloud-autonomous-evolution-4476041926243078641`
+  - **Result:** Commit: feat: implement full cloud autonomy and multi-tool integration
+- **Branch:** `remotes/origin/feat/cloud-autonomous-presence-4768792204367486255`
+  - **Result:** Commit: Merge branch 'main' into feat/cloud-autonomous-presence-4768792204367486255
+- **Branch:** `remotes/origin/feat/cloud-autonomous-presence-7598106438601862770`
+  - **Result:** Commit: feat: autonomous cloud presence and fast-track merging
+- **Branch:** `remotes/origin/feat/cloud-connection-sync-9636399974461911067`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/cloud-connection-sync-9636399974461911067
+- **Branch:** `remotes/origin/feat/cloud-convergence-phase-17-526028351036584856`
+  - **Result:** Commit: feat: implement full online cloud convergence and multi-provider evolution (Phase 17)
+- **Branch:** `remotes/origin/feat/cloud-native-autonomy-13870741608362044054`
+  - **Result:** Commit: feat: enable cloud-native autonomy and online presence
+- **Branch:** `remotes/origin/feat/cloud-native-autonomy-3438116551041896813`
+  - **Result:** Commit: [ROADMAP:PHASE-12] Unified Cloud-Native Autonomous Evolution
+- **Branch:** `remotes/origin/feat/cloud-native-autonomy-presence-7653289006767349445`
+  - **Result:** Commit: feat: implement cloud-native autonomy and online presence
+- **Branch:** `remotes/origin/feat/cloud-native-convergence-16112457665657205536`
+  - **Result:** Commit: feat: implement cloud-native autonomous convergence and online presence
+- **Branch:** `remotes/origin/feat/cloud-native-online-presence-8372655786114667910`
+  - **Result:** Commit: feat: reinforce cloud-native online presence and autonomous work
+- **Branch:** `remotes/origin/feat/cloud-simulation-intelligence-18003609215898643719`
+  - **Result:** Commit: feat: integrate cloud simulation intelligence into autonomous workflows
+- **Branch:** `remotes/origin/feat/cloud-workflow-agent-proactive-logic-7308921529560854073`
+  - **Result:** Commit: feat: enhance CloudWorkflowAgent with smarter integrations
+- **Branch:** `remotes/origin/feat/collaboration-dashboard-13924371239853665910`
+  - **Result:** Commit: feat(dashboard): add collaboration dashboard to track multiple repos
+- **Branch:** `remotes/origin/feat/collaboration-intelligence-knowledge-merge-v1-1682981257800000691`
+  - **Result:** Commit: feat: integrate autonomous knowledge into collaboration map and intelligence reports
+- **Branch:** `remotes/origin/feat/collaboration-synergy-analysis-9382599357384352288`
+  - **Result:** Commit: Merge branch 'main' into feat/collaboration-synergy-analysis-9382599357384352288
+- **Branch:** `remotes/origin/feat/compile-knowledge-ingestion-4339613978296539768`
+  - **Result:** Commit: feat: ingest dictionary definition of Compile into central trackers
+- **Branch:** `remotes/origin/feat/connect-docker-and-collaborate-11694233426659600522`
+  - **Result:** Commit: feat: connect with docker and collaborate
+- **Branch:** `remotes/origin/feat/connect-docker-collaboration-10997916882350002599`
+  - **Result:** Commit: Merge branch 'main' into feat/connect-docker-collaboration (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/feat/connect-docker-collaboration-6033606454460470488`
+  - **Result:** Commit: feat: implement autonomous docker connectivity and collaboration sync
+- **Branch:** `remotes/origin/feat/connect-docker-collaboration-high-fidelity-sim-12659027097554184106`
+  - **Result:** Commit: Merge branch 'main' into feat/connect-docker-collaboration-high-fidelity-sim (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/feat/connect-docker-collaboration-sync-final-11700500964007561939`
+  - **Result:** Commit: feat: execute autonomous docker connectivity and collaboration sync
+- **Branch:** `remotes/origin/feat/connect-docker-collaboration-sync-final-11700500964007561939-14187345688277018919`
+  - **Result:** Commit: feat: execute autonomous docker connectivity and collaboration sync
+- **Branch:** `remotes/origin/feat/connect-docker-collaboration-sync-final-11700500964007561939-5613862418405546964`
+  - **Result:** Commit: feat: optimize branch scanning and execute autonomous collaboration sync
+- **Branch:** `remotes/origin/feat/connect-docker-collaboration-sync-final-11700500964007561939-5613862418405546964-revised-8145830076406452013`
+  - **Result:** Commit: Merge branch 'main' into feat/connect-docker-collaboration-sync-final-revised (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/feat/connect-docker-collaboration-sync-final-6753111079424335435`
+  - **Result:** Commit: feat: synchronize autonomous state and collaborate with stakeholders
+- **Branch:** `remotes/origin/feat/connect-docker-collaboration-sync-final-6753111079424335435-11457900944324227307`
+  - **Result:** Commit: Merge branch 'main' into feat/connect-docker-collaboration-sync-final-6753111079424335435-11457900944324227307
+- **Branch:** `remotes/origin/feat/connect-docker-collaboration-sync-v12-15268919459233727210`
+  - **Result:** Commit: feat: enhance docker integration and mission parsing
+- **Branch:** `remotes/origin/feat/consolidate-intelephense-docs-v2-5901927489540456297`
+  - **Result:** Commit: feat: consolidate and enhance Intelephense documentation
+- **Branch:** `remotes/origin/feat/consolidate-intelephense-docs-v2-6711603966730800844`
+  - **Result:** Commit: feat: consolidate Intelephense documentation into a single entry
+- **Branch:** `remotes/origin/feat/consolidated-intelligence-sync-1091614933754712837`
+  - **Result:** Commit: feat: implement consolidated intelligence and branch scanning
+- **Branch:** `remotes/origin/feat/create-caio-agent-4337063691776257193`
+  - **Result:** Commit: Merge branch 'main' into feat/create-caio-agent-4337063691776257193
+- **Branch:** `remotes/origin/feat/custom-github-action-10612201952418849138`
+  - **Result:** Commit: test: Add workflow to test custom GitHub action execution
+- **Branch:** `remotes/origin/feat/daily-sync-resilience-12294637765009606506`
+  - **Result:** Commit: Resolve merge conflicts by accepting origin/main
+- **Branch:** `remotes/origin/feat/daily-sync-workflow-5320368611823718820`
+  - **Result:** Commit: feat: implement daily pull-work-push-sync cycle
+- **Branch:** `remotes/origin/feat/decision-maker-agent-8910670838096441234`
+  - **Result:** Commit: feat: create decision maker agent for antigravity cli
+- **Branch:** `remotes/origin/feat/deploy-react-agents-logic-12098199206590490844`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/deploy-react-agents-logic-12098199206590490844
+- **Branch:** `remotes/origin/feat/docker-build-cloud-13144983304345154316`
+  - **Result:** Commit: ci: Configure Docker Build Cloud across GitHub, GitLab, and Jenkins
+- **Branch:** `remotes/origin/feat/docker-build-cloud-integration-15193242947855086456`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/docker-build-cloud-integration (Resolved conflicts by removing bytecode/telemetry and favoring PR changes)
+- **Branch:** `remotes/origin/feat/docker-collaboration-enhancements-2442044575661287661`
+  - **Result:** Commit: feat: enhance docker connectivity and collaboration logic
+- **Branch:** `remotes/origin/feat/docker-collaboration-integration-7386073686217533934`
+  - **Result:** Commit: Merge branch 'main' into feat/docker-collaboration-integration-7386073686217533934
+- **Branch:** `remotes/origin/feat/docker-collaboration-integration-9536206781039101862`
+  - **Result:** Commit: feat: integrate Docker monitoring and collaboration services
+- **Branch:** `remotes/origin/feat/docker-collaboration-scale-fix-12248709556243193254`
+  - **Result:** Commit: Security: Resolve Dependabot alerts by pinning Python deps, overriding postcss, and tidying Go modules
+- **Branch:** `remotes/origin/feat/docker-collaboration-sync-16687311699313336221`
+  - **Result:** Commit: Merge branch 'main' into feat/docker-collaboration-sync (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/feat/docker-collaboration-sync-231662997979975664`
+  - **Result:** Commit: feat: enable adaptive docker connectivity and collaboration sync
+- **Branch:** `remotes/origin/feat/docker-collaboration-sync-6891326808988151099`
+  - **Result:** Commit: feat: connect with docker and synchronize collaboration state
+- **Branch:** `remotes/origin/feat/docker-collaboration-sync-final-11035090678408338826`
+  - **Result:** Commit: feat: execute autonomous docker connectivity and collaboration sync
+- **Branch:** `remotes/origin/feat/document-hcp-credentials-12060712897845222769`
+  - **Result:** Commit: chore: add HCP credential placeholders to env template
+- **Branch:** `remotes/origin/feat/dual-engine-autonomous-collaboration-180989571444817477`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/dual-engine-autonomous-collaboration-180989571444817477
+- **Branch:** `remotes/origin/feat/ecosystem-merge-collaboration-sync-v1-13937591330884389226`
+  - **Result:** Commit: Merge branch 'main' into feat/ecosystem-merge-collaboration-sync-v1-13937591330884389226
+- **Branch:** `remotes/origin/feat/ecosystem-sync-optimization-3894010060803274875`
+  - **Result:** Commit: feat: optimize ecosystem collaboration and knowledge merge protocol
+- **Branch:** `remotes/origin/feat/enhance-autonomous-cloud-presence-10530074476743667535`
+  - **Result:** Commit: Enhance autonomous cloud presence and workflows
+- **Branch:** `remotes/origin/feat/enhanced-collaboration-intelligence-16362331248901214239`
+  - **Result:** Commit: feat: enhance branch scanning and consolidated intelligence
+- **Branch:** `remotes/origin/feat/enhanced-collaboration-intelligence-sync-15907336332787904375`
+  - **Result:** Commit: Merge branch 'main' into feat/enhanced-collaboration-intelligence-sync (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326`
+  - **Result:** Commit: feat: enhance collaboration merge and global neural sync (Phase 12)
+- **Branch:** `remotes/origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326-10745185975815563107`
+  - **Result:** Commit: feat: enhance ecosystem collaboration merge and communication
+- **Branch:** `remotes/origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326-10745185975815563107-revised-21447012398436571932-3380172087610971607`
+  - **Result:** Commit: feat(collaboration): advance sentient orchestration and neural parity
+- **Branch:** `remotes/origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326-10745185975815563107-revised-21447012398436571932-3380172087610971607-final-1111222233334444555566667777888899990000-6627201860355673710`
+  - **Result:** Commit: feat: enhance ecosystem collaboration merge and communication (Phase 12)
+- **Branch:** `remotes/origin/feat/evolve-autonomous-engine-phase-12-3914839114884356859`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/evolve-autonomous-engine-phase-12-3914839114884356859
+- **Branch:** `remotes/origin/feat/evolve-chief-ai-officer-agent-5969082472717140886`
+  - **Result:** Commit: feat: evolve Chief AI Officer agent with market intelligence and resource allocation capabilities
+- **Branch:** `remotes/origin/feat/fix-icloud-sync-10523504471527145361`
+  - **Result:** Commit: feat: add fix:icloud script to resolve macOS NSFileProviderErrorDomain -5009
+- **Branch:** `remotes/origin/feat/full-autonomous-creation-cycle-12087260732508548696`
+  - **Result:** Commit: Potential fix for pull request finding 'CodeQL / Workflow does not contain permissions'
+- **Branch:** `remotes/origin/feat/full-autonomous-creation-engine-2520836336596562790`
+  - **Result:** Commit: feat: implement fully autonomous creation order and execution chain
+- **Branch:** `remotes/origin/feat/full-autonomous-creation-execution-17830710122661382280`
+  - **Result:** Commit: feat: implement full autonomous creation order and execution chain
+- **Branch:** `remotes/origin/feat/full-autonomous-creation-execution-v2-2098058797614095194`
+  - **Result:** Commit: feat: implement full autonomous creation order and execution chain
+- **Branch:** `remotes/origin/feat/full-autonomous-online-engine-13146767980189175838`
+  - **Result:** Commit: feat: establish full autonomous cloud-connected engine
+- **Branch:** `remotes/origin/feat/full-cloud-autonomous-integration-16044652152122704918`
+  - **Result:** Commit: feat: implement full cloud-active autonomous integration
+- **Branch:** `remotes/origin/feat/full-ecosystem-collaboration-sync-2223737222399285274`
+  - **Result:** Commit: feat: implement and execute full ecosystem collaboration sync
+- **Branch:** `remotes/origin/feat/fully-autonomous-automatic-workflow-13826864228372455189`
+  - **Result:** Commit: feat: Implement fully autonomous automatic workflow with concrete steps\n\n- Deletes the previous placeholder workflow file to reset Git rename state.\n- Creates a new `.github/workflows/fully_autonomous_automatic_workflow.yml` from scratch.\n- Implements the core `npm run connect` and `execute_creation_cycle.ts` steps with correct cloud simulation variables.\n- Adds concrete functionality (`npm run test` as pre-flight checks and `npm run ingest:knowledge` as a post-cycle operation) to fulfill reviewer requirements for functional improvements.\n- Adds extensive file documentation to prevent Git rename similarity conflicts.
+- **Branch:** `remotes/origin/feat/fully-autonomous-automatic-workflow-15126988086375924911`
+  - **Result:** Commit: feat: setup fully autonomous automatic workflow pipeline
+- **Branch:** `remotes/origin/feat/fully-autonomous-workflow-17826823643615309371`
+  - **Result:** Commit: feat: fully autonomous automatic workflow creation
+- **Branch:** `remotes/origin/feat/gemini-cli-security-hook-12046243673500680117`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/gemini-cli-security-hook-12046243673500680117
+- **Branch:** `remotes/origin/feat/gemini-cli-subagents-docs-8356808256042543281`
+  - **Result:** Commit: docs: add Gemini CLI Subagents documentation
+- **Branch:** `remotes/origin/feat/gemma-4-scraper-14386039384216646408`
+  - **Result:** Commit: test(audit): Implement autonomous license validation
+- **Branch:** `remotes/origin/feat/git-merge-approvals-2916397739730846342`
+  - **Result:** Commit: feat: enforce approval rules for GitHub and GitLab PRs/MRs
+- **Branch:** `remotes/origin/feat/gitlab-ci-docker-build-cloud-integration-15454130814432814509`
+  - **Result:** Commit: Merge Docker Build Cloud configuration into GitLab CI pipeline
+- **Branch:** `remotes/origin/feat/gitlab-ci-pipeline-15616713096718552061`
+  - **Result:** Commit: feat: add initial GitLab CI/CD pipeline configuration
+- **Branch:** `remotes/origin/feat/gitlab-ci-setup-14268875280165103242`
+  - **Result:** Commit: No changes needed for .gitlab-ci.yml tutorial
+- **Branch:** `remotes/origin/feat/gitlab-security-agent-15511716266568375880`
+  - **Result:** Commit: feat: update GitLab Security Agent prompt
+- **Branch:** `remotes/origin/feat/go-genai-sdk-example-5056505739912335467`
+  - **Result:** Commit: feat(go-sim): add Gemini GenAI SDK example with error handling
+- **Branch:** `remotes/origin/feat/go-parallel-simulation-12127722696321938947`
+  - **Result:** Commit: feat: create go parallel simulation prototype
+- **Branch:** `remotes/origin/feat/google-ads-scraper-5253922194982887918`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/google-ads-scraper-5253922194982887918
+- **Branch:** `remotes/origin/feat/google-ai-knowledge-integration-17446113522463245373`
+  - **Result:** Commit: Integrated AI Agents knowledge from Google Innovation & AI blog.
+- **Branch:** `remotes/origin/feat/google-innovation-ai-knowledge-integration-2508984454520338148`
+  - **Result:** Commit: Integrate knowledge from Google Innovation & AI blog
+- **Branch:** `remotes/origin/feat/google-innovation-knowledge-3073243176804240163`
+  - **Result:** Commit: feat: integrate Google Innovation & AI blog knowledge
+- **Branch:** `remotes/origin/feat/hcp-terraform-run-task-3528016114234953749`
+  - **Result:** Commit: feat: Add HCP Terraform run task configuration for Packer validation
+- **Branch:** `remotes/origin/feat/high-scale-ecosystem-sync-5489708808675678101`
+  - **Result:** Commit: feat: implement high-scale branch scanning and hierarchical knowledge merge
+- **Branch:** `remotes/origin/feat/high-scale-react-agent-deployment-3564540097483377252`
+  - **Result:** Commit: feat: Enhance React agents deployment logic for higher scale
+- **Branch:** `remotes/origin/feat/highlander-subagent-14372356893109913488`
+  - **Result:** Commit: feat: add highlander subagent
+- **Branch:** `remotes/origin/feat/icloud-knowledge-integration-and-engine-improvement-2061584058297730102`
+  - **Result:** Commit: feat: scan and integrate iCloud knowledge and improve system engine
+- **Branch:** `remotes/origin/feat/icloud-knowledge-integration-and-engine-improvement-460748262715860893`
+  - **Result:** Commit: Merge branch 'main' into feat/icloud-knowledge-integration-and-engine-improvement-460748262715860893
+- **Branch:** `remotes/origin/feat/icloud-knowledge-integration-and-engine-improvement-v2-13334952668195963162`
+  - **Result:** Commit: feat: integrate iCloud knowledge and enhance system engine/agents
+- **Branch:** `remotes/origin/feat/icloud-knowledge-integration-and-engine-improvement-v2-5900978067024052098`
+  - **Result:** Commit: feat: integrate iCloud knowledge and improve system engines and CAIO agent
+- **Branch:** `remotes/origin/feat/icloud-knowledge-integration-and-engine-improvement-v3-7738040317614912379`
+  - **Result:** Commit: feat: integrate iCloud knowledge and improve system engine and agents
+- **Branch:** `remotes/origin/feat/icloud-knowledge-integration-engine-improvement-v12-14525154319708806006`
+  - **Result:** Commit: feat: integrate iCloud knowledge and improve system engine and agents
+- **Branch:** `remotes/origin/feat/icloud-knowledge-phase12-upgrade-11553884983056269678`
+  - **Result:** Commit: feat: integrate iCloud knowledge and upgrade system to Phase 12
+- **Branch:** `remotes/origin/feat/icloud-knowledge-system-improvement-9850230953244404299`
+  - **Result:** Commit: feat: integrate iCloud knowledge and improve evolution engine/agents
+- **Branch:** `remotes/origin/feat/icloud-sync-daily-work-3416451490970137960`
+  - **Result:** Commit: feat(icloud): implement autonomous project sync to iCloud folder
+- **Branch:** `remotes/origin/feat/icloud-sync-system-evolution-8651898857989200077`
+  - **Result:** Commit: Merge branch 'main' into feat/icloud-sync-system-evolution-8651898857989200077
+- **Branch:** `remotes/origin/feat/implement-google-ai-agent-knowledge-8032750828008841906`
+  - **Result:** Commit: feat: implement AI agent knowledge from Google Cloud
+- **Branch:** `remotes/origin/feat/implement-google-ai-agents-knowledge-17341300705636515353`
+  - **Result:** Commit: feat: implement high-quality AI agents knowledge integration
+- **Branch:** `remotes/origin/feat/improve-intelephense-ingestion-9141821199438539105`
+  - **Result:** Commit: feat: improve KnowledgeObserver parser and update Intelephense docs
+- **Branch:** `remotes/origin/feat/improve-intelephense-knowledge-ingestion-v2-3857533015746943913`
+  - **Result:** Commit: feat: improve Intelephense documentation ingestion and parser robustness
+- **Branch:** `remotes/origin/feat/improve-intelephense-knowledge-ingestion-v3-5924406336570391943`
+  - **Result:** Commit: Merge branch 'main' into feat/improve-intelephense-knowledge-ingestion (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/feat/improve-sor-knowledge-observation-workflow-12368605147794196208`
+  - **Result:** Commit: feat: improve software-online-review ingestion and add AI summaries
+- **Branch:** `remotes/origin/feat/ingest-agent-architecture-terminology-6454380025085424990`
+  - **Result:** Commit: feat: ingest agent architecture terminology and tracking
+- **Branch:** `remotes/origin/feat/ingest-caio-role-4517363704390160540`
+  - **Result:** Commit: feat: ingest Chief AI Officer (CAIO) role description
+- **Branch:** `remotes/origin/feat/ingest-caio-role-knowledge-12304134703620086270`
+  - **Result:** Commit: feat: ingest Chief AI Officer (CAIO) role description
+- **Branch:** `remotes/origin/feat/ingest-caio-role-knowledge-v2-8305785302400580683`
+  - **Result:** Commit: feat: enhance and synchronize Chief AI Officer (CAIO) role knowledge
+- **Branch:** `remotes/origin/feat/ingest-gemini-cli-subagents-2252664288604789575`
+  - **Result:** Commit: ci: fix node 20 deprecation warning in all workflows
+- **Branch:** `remotes/origin/feat/ingest-gitlab-ci-tutorial-4208330200923391769`
+  - **Result:** Commit: feat: ingest GitLab CI/CD tutorial into knowledge base
+- **Branch:** `remotes/origin/feat/ingest-google-ads-docs-v2-13679528452571479134`
+  - **Result:** Commit: Merge branch 'main' into feat/ingest-google-ads-docs-v2-13679528452571479134 (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/feat/ingest-google-ads-knowledge-6737559819071582346`
+  - **Result:** Commit: Merge branch 'main' into feat/ingest-google-ads-knowledge-6737559819071582346
+- **Branch:** `remotes/origin/feat/ingest-google-cloud-ai-agents-knowledge-10482240976459445252`
+  - **Result:** Commit: feat: ingest Google Cloud AI Agents knowledge
+- **Branch:** `remotes/origin/feat/ingest-gpgtools-knowledge-5020055793248780056`
+  - **Result:** Commit: Merge branch 'main' into feat/ingest-gpgtools-knowledge (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/feat/ingest-investopedia-10368440207233601793`
+  - **Result:** Commit: feat(knowledge): use puppeteer for investopedia.com to satisfy scraping axioms
+- **Branch:** `remotes/origin/feat/ingest-knowledge-merge-1247852778853905654`
+  - **Result:** Commit: test: exclude backend subproject from root vitest config
+- **Branch:** `remotes/origin/feat/ingest-subagents-3786532283562026658`
+  - **Result:** Commit: feat: Ingest Gemini CLI Subagents knowledge
+- **Branch:** `remotes/origin/feat/instrument-gemini-telemetry-2423728923945984767`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/instrument-gemini-telemetry-2423728923945984767
+- **Branch:** `remotes/origin/feat/integrate-antigravity-cli-1970974784687429419`
+  - **Result:** Commit: Merge branch 'main' into feat/integrate-antigravity-cli-1970974784687429419
+- **Branch:** `remotes/origin/feat/integrate-google-ai-knowledge-17317066349600220724`
+  - **Result:** Commit: feat: integrate Google Innovation & AI blog knowledge
+- **Branch:** `remotes/origin/feat/integrate-google-ai-knowledge-1914861070610569858`
+  - **Result:** Commit: Integrate latest knowledge from Google Innovation & AI Blog
+- **Branch:** `remotes/origin/feat/integrate-google-ai-knowledge-7980540438595824425`
+  - **Result:** Commit: feat: integrate latest Google Innovation & AI knowledge
+- **Branch:** `remotes/origin/feat/integrate-google-innovation-ai-knowledge-v2-1038711777020334701`
+  - **Result:** Commit: feat: integrate knowledge from Google Innovation & AI blog
+- **Branch:** `remotes/origin/feat/integrate-knowledge-merge-7649916960782275169`
+  - **Result:** Commit: feat: integrate knowledge merge and all the best - https://markposition.wordpress.com
+- **Branch:** `remotes/origin/feat/integrate-markposition-autonomy-14681474804703419515`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/integrate-markposition-autonomy-14681474804703419515
+- **Branch:** `remotes/origin/feat/integrate-markposition-knowledge-and-automate-merge-15099676768518099214`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/integrate-markposition-knowledge-and-automate-merge-15099676768518099214
+- **Branch:** `remotes/origin/feat/integrate-oracle-ai-10269913553901722650`
+  - **Result:** Commit: feat: integrate Oracle AI knowledge into agent swarm
+- **Branch:** `remotes/origin/feat/integrate-oracle-ai-knowledge-17141461773939806605`
+  - **Result:** Commit: feat: integrate Oracle AI knowledge with orchestrator
+- **Branch:** `remotes/origin/feat/integrate-oracle-ai-knowledge-3394848601696333844`
+  - **Result:** Commit: feat: integrate oracle ai knowledge
+- **Branch:** `remotes/origin/feat/integrate-oracle-knowledge-15758201363519659377`
+  - **Result:** Commit: feat: integrate oracle ai knowledge
+- **Branch:** `remotes/origin/feat/integrate-react-knowledge-1014096584960652610`
+  - **Result:** Commit: feat(react-agents): integrate knowledge extraction for deployment
+- **Branch:** `remotes/origin/feat/intelephense-docs-consolidation-14111284160958463433`
+  - **Result:** Commit: feat(knowledge): consolidate Intelephense documentation
+- **Branch:** `remotes/origin/feat/intelephense-docs-consolidation-v2-13428827528883240394`
+  - **Result:** Commit: feat: consolidate Intelephense documentation workflow
+- **Branch:** `remotes/origin/feat/intelephense-docs-ingestion-5058226112541762188`
+  - **Result:** Commit: feat: autonomous knowledge ingestion and Intelephense documentation integration
+- **Branch:** `remotes/origin/feat/intelephense-docs-ingestion-5441794929729176117`
+  - **Result:** Commit: feat(knowledge): ingest Intelephense documentation and refactor observers
+- **Branch:** `remotes/origin/feat/intelephense-docs-ingestion-v3-robust-dedup-regeneration-18438715533600734828`
+  - **Result:** Commit: feat: robust Intelephense docs ingestion with improved deduplication and unified regeneration
+- **Branch:** `remotes/origin/feat/intelephense-docs-integration-15548360236186896654`
+  - **Result:** Commit: Merge branch 'main' into feat/intelephense-docs-integration-15548360236186896654
+- **Branch:** `remotes/origin/feat/intelephense-docs-integration-390578372691536711`
+  - **Result:** Commit: feat: integrate Intelephense documentation from GitHub
+- **Branch:** `remotes/origin/feat/intelephense-docs-integration-6696356503965723987`
+  - **Result:** Commit: feat: integrate Intelephense documentation and unify knowledge base
+- **Branch:** `remotes/origin/feat/intelephense-docs-integration-9176181955065313741`
+  - **Result:** Commit: feat: integrate Intelephense documentation ingestion
+- **Branch:** `remotes/origin/feat/intelephense-docs-sync-14439717062784308623`
+  - **Result:** Commit: feat(jules): autonomously synchronize all Intelephense documentation
+- **Branch:** `remotes/origin/feat/intelephense-docs-sync-6999221207327014913`
+  - **Result:** Commit: docs: ingest and consolidate Intelephense documentation
+- **Branch:** `remotes/origin/feat/intelephense-docs-update-5938787758015081598`
+  - **Result:** Commit: feat: update Intelephense documentation and improve knowledge ingestion
+- **Branch:** `remotes/origin/feat/intelephense-docs-update-v2-4092727352639534773`
+  - **Result:** Commit: feat: update Intelephense documentation and consolidate knowledge base
+- **Branch:** `remotes/origin/feat/intelephense-knowledge-consolidation-v2-11323345502320266953`
+  - **Result:** Commit: feat: consolidate Intelephense documentation into autonomous work cycle
+- **Branch:** `remotes/origin/feat/intelephense-knowledge-optimization-6916201581932605219`
+  - **Result:** Commit: feat: optimize Intelephense knowledge ingestion and cleanup
+- **Branch:** `remotes/origin/feat/investopedia-ingestion-10809640050459136774`
+  - **Result:** Commit: feat: integrate investopedia knowledge ingestion
+- **Branch:** `remotes/origin/feat/investopedia-ingestion-17078894864582667817`
+  - **Result:** Commit: feat: continually scrape and ingest Investopedia market intelligence
+- **Branch:** `remotes/origin/feat/jenkins-integration-8889480307913922372`
+  - **Result:** Commit: feat(ci): integrate jenkins configuration parsing into cognitive engine
+- **Branch:** `remotes/origin/feat/jenkins-pipeline-17650508759045310490`
+  - **Result:** Commit: feat: connect jenkins into autonomous engine pipeline
+- **Branch:** `remotes/origin/feat/jules-tools-documentation-3709224248115032248`
+  - **Result:** Commit: feat: add Jules Tools reference and integrate into knowledge base
+- **Branch:** `remotes/origin/feat/knowledge-ingestion-intelephense-9344036021876416224`
+  - **Result:** Commit: feat: implement robust knowledge ingestion and merge Intelephense docs
+- **Branch:** `remotes/origin/feat/knowledge-merge-automation-1708085777270583651`
+  - **Result:** Commit: feat: autonomous knowledge merge and automation
+- **Branch:** `remotes/origin/feat/knowledge-merge-automation-4266785228236839027`
+  - **Result:** Commit: Integrate Knowledge Merge Automation and Autonomous Cycle
+- **Branch:** `remotes/origin/feat/knowledge-observe-integration-17136884743066058279`
+  - **Result:** Commit: feat: implement knowledge saving in knowledge_observer
+- **Branch:** `remotes/origin/feat/macbook-cloud-presence-simulation-16607574531277439639`
+  - **Result:** Commit: Merge branch 'main' into feat/macbook-cloud-presence-simulation-16607574531277439639
+- **Branch:** `remotes/origin/feat/macbook-cloud-simulation-2306204492187680775`
+  - **Result:** Commit: feat: implement fully online macbook cloud simulation overrides
+- **Branch:** `remotes/origin/feat/macbook-cloud-simulation-4201425406939094947`
+  - **Result:** Commit: feat: implement fully online macbook cloud simulation globally
+- **Branch:** `remotes/origin/feat/macbook-cloud-simulation-8632071559345573800`
+  - **Result:** Commit: feat: implement macbook cloud simulation knowledge ingestion
+- **Branch:** `remotes/origin/feat/macbook-cloud-simulation-knowledge-9264395958360396877`
+  - **Result:** Commit: feat: implement macbook cloud simulation and online presence knowledge ingestion
+- **Branch:** `remotes/origin/feat/macbook-cloud-simulation-verification-18070016345319943441`
+  - **Result:** Commit: feat: implement fully online macbook cloud simulation overrides
+- **Branch:** `remotes/origin/feat/macbook-cloud-simulation-verification-18070016345319943441-479083842667788180`
+  - **Result:** Commit: feat: implement functional cloud simulation and collaboration integrations\n\n- Created SandboxCloudSimulation to explicitly manage and enforce cloud mode environments (MACBOOK_CLOUD_SIMULATION).\n- Integrated cloud simulation directly into `scripts/connect_and_collaborate.ts` to trigger simulated ReAct workflows during connection syncs.\n- Adjusted cron schedules in `.github/workflows/continuous-presence.yml` and `.github/workflows/fully_autonomous_automatic_workflow.yml` for higher frequency checks.\n- Ensured valid `npm run test` is executed during pre-flight health checks in `.gitlab-ci.yml` and `.github` workflows.
+- **Branch:** `remotes/origin/feat/markposition-bridge-15977356106835229406`
+  - **Result:** Commit: feat: integrate and automate markposition knowledge bridge
+- **Branch:** `remotes/origin/feat/markposition-knowledge-integration-v2-1630875147127639221`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/markposition-knowledge-integration-v2-1630875147127639221
+- **Branch:** `remotes/origin/feat/markposition-knowledge-merge-automation-4258587857979472884`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/markposition-knowledge-merge-automation-4258587857979472884
+- **Branch:** `remotes/origin/feat/mcp-docker-agent-config-10215645950897788310`
+  - **Result:** Commit: feat: add Docker Agent MCP mode configuration and setup script
+- **Branch:** `remotes/origin/feat/monetization-stripe-supabase-475749064302525361`
+  - **Result:** Commit: feat: implement stripe billing and supabase auth
+- **Branch:** `remotes/origin/feat/mongodb-atlas-migration-4131498074566710377`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/mongodb-atlas-migration-4131498074566710377
+- **Branch:** `remotes/origin/feat/netlify-deploy-button-8112490364183212293`
+  - **Result:** Commit: feat: add deploy to netlify button and configuration
+- **Branch:** `remotes/origin/feat/netlify-supabase-extension-config-2964669740529404630`
+  - **Result:** Commit: fix: resolve ESLint parsing errors from merge conflict
+- **Branch:** `remotes/origin/feat/nextjs-supabase-mongodb-ecosystem-8833511503168317980`
+  - **Result:** Commit: feat: implement Supabase auth, MongoDB integration, CI/CD, and Playwright tests
+- **Branch:** `remotes/origin/feat/observe-knowledge-14086295564930272800`
+  - **Result:** Commit: Merge branch 'main' into feat/observe-knowledge-14086295564930272800
+- **Branch:** `remotes/origin/feat/opentelemetry-scraper-16848949473178496467`
+  - **Result:** Commit: fix: resolve CI failures by fixing tests and updating requirements
+- **Branch:** `remotes/origin/feat/oracle-ai-knowledge-integration-15680791915741879380`
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into feat/oracle-ai-knowledge-integration-15680791915741879380
+- **Branch:** `remotes/origin/feat/otel-genai-semantics-11295433924323540657`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/otel-genai-semantics-11295433924323540657
+- **Branch:** `remotes/origin/feat/phase-12-cloud-convergence-and-sentient-orchestration-8137990793219294746`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/phase-12-cloud-convergence-and-sentient-orchestration-8137990793219294746
+- **Branch:** `remotes/origin/feat/phase-22-cloud-super-intelligence-7069863824765684745`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/phase-22-cloud-super-intelligence-7069863824765684745
+- **Branch:** `remotes/origin/feat/prototype-schema-2382889081635482231`
+  - **Result:** Commit: feat: introduce Prototype data schema using Zod and Mongoose
+- **Branch:** `remotes/origin/feat/react-agent-deployment-improvements-4418304449912244036`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/react-agent-deployment-improvements (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/feat/react-agent-deployment-logic-2660835981298946574`
+  - **Result:** Commit: feat: Integrate react agent deployment logic
+- **Branch:** `remotes/origin/feat/react-agent-deployment-logic-6656436448375867525`
+  - **Result:** Commit: fix: exclude backend tests from root vitest config
+- **Branch:** `remotes/origin/feat/react-agent-integration-8372098972397137891`
+  - **Result:** Commit: feat: implement and integrate ReActAgent into autonomous workflow
+- **Branch:** `remotes/origin/feat/react-integration-v2-8425489280318980511`
+  - **Result:** Commit: feat: implement and integrate ReAct reasoning-acting protocol
+- **Branch:** `remotes/origin/feat/refine-caio-role-knowledge-v2-5295767818736859988`
+  - **Result:** Commit: feat: refine CAIO agent and expand executive agent roles
+- **Branch:** `remotes/origin/feat/remote-subagents-knowledge-10304987597767701842`
+  - **Result:** Commit: feat: add Remote Subagents knowledge documentation
+- **Branch:** `remotes/origin/feat/scale-remote-subagents-9068634002929713743`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/scale-remote-subagents-9068634002929713743
+- **Branch:** `remotes/origin/feat/scan-software-online-review-12068023973855912854`
+  - **Result:** Commit: Merge main into feat/scan-software-online-review-12068023973855912854 and resolve conflicts
+- **Branch:** `remotes/origin/feat/setup-docker-ci-cd-15330021649064333459`
+  - **Result:** Commit: feat: Create Docker CI/CD pipelines for GitHub and GitLab
+- **Branch:** `remotes/origin/feat/setup-npm-workspaces-gemini-cli-12181861489580932121`
+  - **Result:** Commit: feat: setup monorepo for Gemini CLI
+- **Branch:** `remotes/origin/feat/smarter-cloud-workflow-1168853453825745042`
+  - **Result:** Commit: fix: correct JSON syntax error in package.json devDependencies
+- **Branch:** `remotes/origin/feat/smarter-cloud-workflow-7992378765049941579`
+  - **Result:** Commit: feat: make multi-cloud workflow processing smarter and always available
+- **Branch:** `remotes/origin/feat/sor8bukets-worker-9724254739940303207`
+  - **Result:** Commit: feat: containerize sor8bukets and integrate cloudflared tunnel
+- **Branch:** `remotes/origin/feat/thinking-agent-graph-of-thought-8628973372365797019`
+  - **Result:** Commit: feat: add ThinkingAgent for continuous Graph of Thought evaluation
+- **Branch:** `remotes/origin/feat/unified-autonomous-execution-engine-12129098689674624370`
+  - **Result:** Commit: feat: Unify Work Order system and enhance autonomous execution engine
+- **Branch:** `remotes/origin/feat/unified-autonomous-intelligence-v2-11368535330418373877`
+  - **Result:** Commit: feat: unify autonomous knowledge architecture and stabilize ecosystem
+- **Branch:** `remotes/origin/feat/unified-cloud-autonomy-6168364407996649590`
+  - **Result:** Commit: feat: unify autonomous orchestration for cloud persistence
+- **Branch:** `remotes/origin/feat/unified-collaboration-intelligence-10789658545646187286`
+  - **Result:** Commit: feat: implement Phase 12 Unified Collaboration and Intelligence
+- **Branch:** `remotes/origin/feat/unified-collaboration-intelligence-merge-v12-4808907432766111944`
+  - **Result:** Commit: feat: implement unified collaboration and intelligence roadmap
+- **Branch:** `remotes/origin/feat/unified-collaboration-intelligence-v12-3867223440127640861`
+  - **Result:** Commit: feat: unified collaboration and strategic communication (Phase 12)
+- **Branch:** `remotes/origin/feat/unified-knowledge-integration-6924488404722720860`
+  - **Result:** Commit: Resolve merge conflicts by accepting origin/main
+- **Branch:** `remotes/origin/feat/update-autonomous-workflow-9631298294249766702`
+  - **Result:** Commit: feat: update fully autonomous automatic workflow
+- **Branch:** `remotes/origin/feat/update-google-ads-urls-12068705340237813487`
+  - **Result:** Commit: Update Google Ads URL in ingestion script
+- **Branch:** `remotes/origin/feat/update-intelephense-docs-8706527771111135696`
+  - **Result:** Commit: feat: update and consolidate Intelephense documentation
+- **Branch:** `remotes/origin/feat/update-intelephense-docs-comprehensive-14607207959398176805`
+  - **Result:** Commit: feat: update Intelephense documentation with comprehensive content
+- **Branch:** `remotes/origin/feat/update-intelephense-knowledge-16942753363135723418`
+  - **Result:** Commit: Merge branch 'main' into feat/update-intelephense-knowledge-16942753363135723418
+- **Branch:** `remotes/origin/feat/update-intelephense-knowledge-3532439720427266436`
+  - **Result:** Commit: Merge branch 'main' into feat/update-intelephense-knowledge (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/feat/update-intelephense-knowledge-v3-10649927759915972956`
+  - **Result:** Commit: feat: update Intelephense documentation in knowledge base
+- **Branch:** `remotes/origin/feat/vault-radar-agent-8481917393959699580`
+  - **Result:** Commit: feat: Add Vault Radar CLI installation and execution scripts
+- **Branch:** `remotes/origin/feat/vercel-sandbox-agent-4324012582245511797`
+  - **Result:** Commit: feat: integrate Vercel Sandbox CLI via new autonomous SandboxAgent
+
+### 📂 Category: FIX
+#### 🌐 Strategic Domain: General
+- **Branch:** `remotes/origin/fix/ads-knowledge-urls-5233952364580581643`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into fix/ads-knowledge-urls-5233952364580581643
+- **Branch:** `remotes/origin/fix/agent-memory-and-tests-14715316655293625624`
+  - **Result:** Commit: feat: Complete Industrial Autonomous Market Intelligence Ecosystem
+- **Branch:** `remotes/origin/fix/ai-agent-architecture-summary-9021797993819332158`
+  - **Result:** Commit: Fix 12-layer summary list by removing erroneous 13th item
+- **Branch:** `remotes/origin/fix/autonomous-cloud-presence-17176660160653043958`
+  - **Result:** Commit: feat: configure cloud-native docker architecture and 03:15 UTC autonomous schedule\n\n- Update GitHub Action workflows (`.github/workflows/antigravity-daily.yml` and `.github/workflows/autonomous_cycle.yml`) to trigger daily at 03:15 UTC instead of midnight.\n- Add `docker-compose.cloud.yml` in both the root project and the nested software review platform to map production cloud environment variables (MongoDB, PostgreSQL, and Supabase) without requiring local volume bindings.\n- Fix syntax errors in the docker check health function to ensure typescript validation works seamlessly.\n- Update testing config to ignore sub-project dependencies.
+- **Branch:** `remotes/origin/fix/autonomous-evolution-1779330683942`
+  - **Result:** Commit: fix: remove unauthorized markposition signature from codebase to prevent prompt injection (#1904)
+- **Branch:** `remotes/origin/fix/autonomous-evolution-1779334460476`
+  - **Result:** Commit: fix: remove unauthorized markposition signature from codebase to prevent prompt injection (#1904)
+- **Branch:** `remotes/origin/fix/autonomous-evolution-1779417180082`
+  - **Result:** Commit: feat: integrate Jenkins pipeline into engine system collaboration (#1950)
+- **Branch:** `remotes/origin/fix/autonomous-evolution-1779420795460`
+  - **Result:** Commit: feat: integrate react agent deployment logic and fix tools list parsing (#1955)
+- **Branch:** `remotes/origin/fix/autonomous-evolution-1779502182555`
+  - **Result:** Commit: Enforce cloud simulation flags across all execution paths (#1967)
+- **Branch:** `remotes/origin/fix/autonomous-evolution-1779620400378-8609616731264738090`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into fix/autonomous-evolution-1779620400378-8609616731264738090
+- **Branch:** `remotes/origin/fix/autonomous-evolution-1779762421460`
+  - **Result:** Commit: feat: connect jenkins into autonomous engine pipeline (#2104)
+- **Branch:** `remotes/origin/fix/autonomous-evolution-1779764401136`
+  - **Result:** Commit: [ROADMAP:PHASE-12] 🤖 fix: autonomous evolution repair of 3 issues
+- **Branch:** `remotes/origin/fix/autonomous-evolution-1779944023134`
+  - **Result:** Commit: Merge pull request #2172 from 8bukets/fix-ingest-ads-docs-5824807487751349212
+- **Branch:** `remotes/origin/fix/autonomous-evolution-1779958280246`
+  - **Result:** Commit: Merge pull request #2172 from 8bukets/fix-ingest-ads-docs-5824807487751349212
+- **Branch:** `remotes/origin/fix/autonomous-evolution-1779979534880`
+  - **Result:** Commit: Merge pull request #2184 from 8bukets/integrate-investopedia-knowledge-15544653943204418312
+- **Branch:** `remotes/origin/fix/autonomous-evolution-cloud-presence-13859954936909571932`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into fix/autonomous-evolution-cloud-presence (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/fix/autonomous-markposition-integration-8301978892774040495`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into fix/autonomous-markposition-integration (Resolved massive conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/fix/autonomous-system-syntax-16085505803900570829`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into fix/autonomous-system-syntax-16085505803900570829
+- **Branch:** `remotes/origin/fix/connect-and-collaborate-docker-17108642608090644795`
+  - **Result:** Commit: Merge branch 'main' into fix/connect-and-collaborate-docker-17108642608090644795
+- **Branch:** `remotes/origin/fix/consolidate-intelephense-docs-13870510592813051960`
+  - **Result:** Commit: docs: consolidate and update Intelephense knowledge base
+- **Branch:** `remotes/origin/fix/consolidate-intelephense-docs-v2-2578430462449537596`
+  - **Result:** Commit: fix: improve Intelephense documentation consolidation and knowledge persistence
+- **Branch:** `remotes/origin/fix/dependabot-alerts-resolution-4540208840351365133`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into fix/dependabot-alerts-resolution-4540208840351365133
+- **Branch:** `remotes/origin/fix/docker-collaboration-security-refinement-v1-6787919311939925566`
+  - **Result:** Commit: Merge branch 'main' into fix/docker-collaboration-security-refinement-v1-6787919311939925566 (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/fix/docker-collaboration-sync-3245584476125900421`
+  - **Result:** Commit: feat: implement autonomous iCloud sync for Docker configurations
+- **Branch:** `remotes/origin/fix/docker-service-syntax-17329685845215630638`
+  - **Result:** Commit: Merge branch 'main' into fix/docker-service-syntax-17329685845215630638
+- **Branch:** `remotes/origin/fix/docker-simulate-fallback-790646999147421628`
+  - **Result:** Commit: fix(docker): respect cloud simulation flags before executing docker commands
+- **Branch:** `remotes/origin/fix/duo-planner-prompt-update-5857249087494865625`
+  - **Result:** Commit: feat: synchronize Duo Planner agents with the latest provided system prompt
+- **Branch:** `remotes/origin/fix/frontend-lint-and-syntax-errors-2082968033055005265`
+  - **Result:** Commit: Fix frontend CI regressions and missing telemetry context
+- **Branch:** `remotes/origin/fix/frontend-regressions-telemetry-2487658633912563856`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into fix/frontend-regressions-telemetry-2487658633912563856
+- **Branch:** `remotes/origin/fix/google-ads-scraper-json-schema-4403805607853141439`
+  - **Result:** Commit: fix(scraper): align google_ads_docs.json with legacy schema
+- **Branch:** `remotes/origin/fix/google-ads-scraper-json-schema-and-system-knowledge-4955312210061606235`
+  - **Result:** Commit: Resolve merge conflicts by accepting origin/main
+- **Branch:** `remotes/origin/fix/ingest-ads-knowledge-locale-and-signature-14080839341570734784`
+  - **Result:** Commit: fix: remove unauthorized markposition signature and update Google Ads docs with locale enforcement
+- **Branch:** `remotes/origin/fix/ingest-knowledge-merge-828271426504643319`
+  - **Result:** Commit: fix: fix newline formatting and add ingest_knowledge_merge.ts to pipeline
+- **Branch:** `remotes/origin/fix/integrate-oracle-knowledge-8502594485606650107`
+  - **Result:** Commit: feat: Integrate Oracle AI knowledge
+- **Branch:** `remotes/origin/fix/intelephense-docs-sync-refinement-14869498136353830468`
+  - **Result:** Commit: Merge branch 'main' into fix/intelephense-docs-sync-refinement-14869498136353830468
+- **Branch:** `remotes/origin/fix/intelephense-knowledge-consolidation-16405766747480114157`
+  - **Result:** Commit: Merge branch 'main' and consolidate Intelephense knowledge
+- **Branch:** `remotes/origin/fix/knowledge-merge-cleanup-17869909308711961172`
+  - **Result:** Commit: Refactor knowledge tracking to handle URL deduplication, async file operations, and clean up duplicate entries. Consolidated "Compile" definition to centralize documentation.
+- **Branch:** `remotes/origin/fix/knowledge-merge-deduplication-11999895773170301462`
+  - **Result:** Commit: fix(knowledge): deduplicate and canonicalize observations in knowledge merge
+- **Branch:** `remotes/origin/fix/knowledge-merge-signature-10908129405278233651`
+  - **Result:** Commit: fix: ensure correct signature appended to knowledge merge docs
+- **Branch:** `remotes/origin/fix/knowledge-observation-workflow-458143035147139751`
+  - **Result:** Commit: Merge branch 'main' into fix/knowledge-observation-workflow-458143035147139751
+- **Branch:** `remotes/origin/fix/npm-audit-vulnerabilities-17082437904060311474`
+  - **Result:** Commit: Merge branch 'main' into fix/npm-audit-vulnerabilities-17082437904060311474
+- **Branch:** `remotes/origin/fix/observe-knowledge-formatting-12359111499191722507`
+  - **Result:** Commit: Merge branch 'main' into fix/observe-knowledge-formatting (Resolved conflicts by favoring PR changes)
+- **Branch:** `remotes/origin/fix/optimize-execute-creation-cycle-9988671085706556406`
+  - **Result:** Commit: fix(jules): optimize scanAllBranches and autonomous git sync timeouts
+- **Branch:** `remotes/origin/fix/refactor-sync-fs-operations-11463572361275894261`
+  - **Result:** Commit: refactor: replace synchronous file system operations with fs.promises
+- **Branch:** `remotes/origin/fix/restore-page-tsx-and-build-errors-11543629982312211779`
+  - **Result:** Commit: Merge branch 'main' into fix/restore-page-tsx-and-build-errors (Resolved conflicts by favoring PR changes and removing deprecated my-app directory)
+
+### 📂 Category: UX
+#### 🌐 Strategic Domain: General
+- **Branch:** `remotes/origin/palette/analytics-console-summary-16842850884408171374`
+  - **Result:** Commit: 🎨 Palette: Add colorful console summary to analytics
+- **Branch:** `remotes/origin/palette/analytics-navigation-436511791889280438`
+  - **Result:** Commit: feat: add TOC and navigation anchors to analytics report
+- **Branch:** `remotes/origin/palette/analytics-report-ux-1743774692152261155`
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette/analytics-report-ux-1743774692152261155
+- **Branch:** `remotes/origin/palette/analytics-report-ux-17686607480637389809`
+  - **Result:** Commit: 🎨 Palette: Enhance analytics report with TOC and visual improvements
+- **Branch:** `remotes/origin/palette/analytics-report-ux-5453316305838853416`
+  - **Result:** Commit: 🎨 Palette: Enhance Analytics Report with Navigation and Visuals
+- **Branch:** `remotes/origin/palette/analytics-ux-improvement-438937651229381972`
+  - **Result:** Commit: 🎨 Palette: Improve Analytics Report UX with TOC and Anchors
+- **Branch:** `remotes/origin/palette/analytics-ux-improvements-11070002562575307132`
+  - **Result:** Commit: feat: enhance analytics report UX with TOC, emojis, and navigation
+- **Branch:** `remotes/origin/palette/analytics-visualization-3131876872723686653`
+  - **Result:** Commit: Add accessible distribution bars to analytics report tables
+- **Branch:** `remotes/origin/palette/analytics-visuals-7279214207657992734`
+  - **Result:** Commit: 🎨 Palette: Add colorful visual summary to analytics CLI
+- **Branch:** `remotes/origin/palette/ascii-bars-report-13186514826592072461`
+  - **Result:** Commit: 🎨 Palette: Add ASCII distribution bars to analytics report
+- **Branch:** `remotes/origin/palette/ascii-charts-ux-7109884184344478551`
+  - **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into palette/ascii-charts-ux-7109884184344478551
+- **Branch:** `remotes/origin/palette/cli-colors-8575730962200631478`
+  - **Result:** Commit: feat: add colored logging and output to scraper and analytics
+- **Branch:** `remotes/origin/palette/cli-ux-improvements-18294687491796103663`
+  - **Result:** Commit: feat: Add delightful CLI logging with emojis and colors
+- **Branch:** `remotes/origin/palette/enhance-analytics-report-17181999878531895477`
+  - **Result:** Commit: 🎨 Palette: Enhance analytics report with better navigation and visual cues
+- **Branch:** `remotes/origin/palette/enhance-report-ux-10076757261976938434`
+  - **Result:** Commit: feat: enhance analytics report UX with TOC, emojis, and navigation
+- **Branch:** `remotes/origin/palette/enhance-report-ux-11995820090382525723`
+  - **Result:** Commit: feat: enhance analytics report with TOC and emojis
+- **Branch:** `remotes/origin/palette/enhance-report-ux-15850543046997581968`
+  - **Result:** Commit: Enhance REPORT.md with TOC, anchors, and emojis
+- **Branch:** `remotes/origin/palette/enhance-report-ux-2739052330608960722`
+  - **Result:** Commit: feat: enhance analytics report with TOC, emojis and anchors
+- **Branch:** `remotes/origin/palette/improve-report-ux-11475379120362374417`
+  - **Result:** Commit: feat(analytics): improve report UX with TOC, emojis, and sanitization
+- **Branch:** `remotes/origin/palette/improve-report-ux-4852848855851386744`
+  - **Result:** Commit: feat: improve daily report UX with TOC, truncation, and collapsing
+- **Branch:** `remotes/origin/palette/improve-report-ux-7962049104827263798`
+  - **Result:** Commit: feat: improve analytics report readability with TOC and formatting
+- **Branch:** `remotes/origin/palette/improve-report-ux-9149599354572464593`
+  - **Result:** Commit: feat: add TOC, emojis, and navigation to daily reports
+- **Branch:** `remotes/origin/palette/improve-report-ux-9439568871276884131`
+  - **Result:** Commit: 🎨 Palette: Improve Report UX with TOC and Emojis
+- **Branch:** `remotes/origin/palette/markdown-ui-enhancement-18003291754095827946`
+  - **Result:** Commit: feat: enhance markdown report with TOC, anchors, and emojis
+- **Branch:** `remotes/origin/palette/report-navigation-10848490221973178016`
+  - **Result:** Commit: feat: Add navigation and visual improvements to analytics report
+- **Branch:** `remotes/origin/palette/report-navigation-13835048160804897717`
+  - **Result:** Commit: feat: add TOC, emojis, and navigation to analytics report
+- **Branch:** `remotes/origin/palette/report-navigation-16735365326145153163`
+  - **Result:** Commit: 🎨 Palette: Add TOC and accessible anchors to reports
+- **Branch:** `remotes/origin/palette/report-navigation-18425629165094388685`
+  - **Result:** Commit: 🎨 Palette: Add ToC and navigation to analytics report
+- **Branch:** `remotes/origin/palette/report-navigation-ux-5720051547511983391`
+  - **Result:** Commit: feat: add TOC and back-to-top links to analytics report
+- **Branch:** `remotes/origin/palette/report-ux-6009631621912925201`
+  - **Result:** Commit: 🎨 Palette: Improve Analytics Report UX
+- **Branch:** `remotes/origin/palette/report-ux-enhancements-9890536469987073968`
+  - **Result:** Commit: 🎨 Palette: Add visual analytics and navigation to reports
+- **Branch:** `remotes/origin/palette/report-ux-improvements-14310325021165239369`
+  - **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into palette/report-ux-improvements-14310325021165239369
+- **Branch:** `remotes/origin/palette/report-ux-improvements-17015543897776799811`
+  - **Result:** Commit: 🎨 Add dynamic TOC and Footer to Daily Report
+- **Branch:** `remotes/origin/palette/report-ux-improvements-2527286985535633999`
+  - **Result:** Commit: feat: Improve Report Generator UX with dashboard and collapsible sections
+- **Branch:** `remotes/origin/palette/report-ux-toc-35647320164543380`
+  - **Result:** Commit: 🎨 Palette: Add Table of Contents and Navigation Anchors to Report
+- **Branch:** `remotes/origin/palette/report-ux-toc-4596925936165849228`
+  - **Result:** Commit: Add Table of Contents and navigation anchors to daily reports
+
+### 📂 Category: SECURITY
+#### 🌐 Strategic Domain: General
+- **Branch:** `remotes/origin/sentinel/fix-analytics-xss-17804299682407068975`
+  - **Result:** Commit: Fix XSS and Markdown injection in analytics report
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-10353048706525775384`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-11137622632039534003`
+  - **Result:** Commit: Sentinel: [CRITICAL] Fix CSV Injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-11516698988446732046`
+  - **Result:** Commit: feat(security): prevent CSV injection in scraper output
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-11796924900035192869`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-1271702522999364117`
+  - **Result:** Commit: 🛡️ Sentinel: [MEDIUM] Fix CSV Injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-12822134464045250176`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-12899560490042954915`
+  - **Result:** Commit: fix: sanitize CSV output to prevent formula injection
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-13077768089564060512`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-14090242410722960324`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-1424126792917896007`
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-14631498172973798397`
+  - **Result:** Commit: feat: implement self-learning IQ tracking for Intelligence Agent
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-14785501448313010884`
+  - **Result:** Commit: Sentinel: [CRITICAL] Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-15191188867369355221`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-17728883922707922928`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-18204894269063058873`
+  - **Result:** Commit: 🛡️ Sentinel: Fix CSV Injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-18292111345999615126`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV injection in scraper
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-1837485357128189949`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-2336053112863136471`
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper.py
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-2447504539705409279`
+  - **Result:** Commit: feat: Prevent CSV injection in scraper output
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-2502077377827287714`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-2735194479684746444`
+  - **Result:** Commit: 🛡️ Sentinel: Fix CSV Formula Injection in Scraper
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-2739836513252277633`
+  - **Result:** Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into sentinel/fix-csv-injection-2739836513252277633
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-2795873645337088864`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection in Scraper
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-3791034134137478787`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection in scraper output
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-3861579726719101131`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection in scraper output
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-4054564814748295224`
+  - **Result:** Commit: Fix CSV Injection in scraper.py
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-4616410932219879606`
+  - **Result:** Commit: Fix CSV Formula Injection in scraper.py
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-4856694323076265204`
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper by sanitizing outputs.
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-4898138830369691020`
+  - **Result:** Commit: Fix CSV Injection vulnerability in scraper output - Add `sanitize_for_csv` method to `MarkPositionScraperAsync` class in `scraper.py` - Prepend `'` to CSV fields starting with `=`, `+`, `-`, `@` to prevent formula execution - Add entry to `.jules/sentinel.md`
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-5756251649576385500`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection in scraper
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-5760919047341012368`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper export
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-5998751836772194145`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Prevent CSV Injection in scraper
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-7073829351286481379`
+  - **Result:** Commit: feat(security): fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-7284469719528354445`
+  - **Result:** Commit: Fix CSV injection vulnerability in scraper
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-8718980999403222499`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix CSV Injection in Scraper
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-9210533501834948716`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix CSV Injection vulnerability in scraper output
+- **Branch:** `remotes/origin/sentinel/fix-markdown-injection-10552938949682893680`
+  - **Result:** Commit: Fix Markdown injection vulnerability in analytics report generator
+- **Branch:** `remotes/origin/sentinel/fix-markdown-injection-16528079574555238506`
+  - **Result:** Commit: 🛡️ Sentinel: [HIGH] Fix Markdown injection in analytics report
+- **Branch:** `remotes/origin/sentinel/fix-markdown-injection-17509944772710987348`
+  - **Result:** Commit: Fix Markdown table injection and XSS vulnerability in analytics report
+- **Branch:** `remotes/origin/sentinel/fix-markdown-injection-18346561083266000842`
+  - **Result:** Commit: Fix Markdown and HTML injection in analytics report
+- **Branch:** `remotes/origin/sentinel/fix-markdown-injection-2058121724437501855`
+  - **Result:** Commit: fix(security): sanitize markdown input in analytics report
+- **Branch:** `remotes/origin/sentinel/fix-markdown-injection-796801966410983912`
+  - **Result:** Commit: fix: sanitize inputs in Markdown report generation
+- **Branch:** `remotes/origin/sentinel/fix-path-traversal-13515095468763134399`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix Path Traversal in scrape_informatic.py
+- **Branch:** `remotes/origin/sentinel/fix-path-traversal-1539865993913556303`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix Path Traversal in Scrapers
+- **Branch:** `remotes/origin/sentinel/fix-path-traversal-2695657045169320867`
+  - **Result:** Commit: Fix Path Traversal vulnerability in scraper and analytics tools
+- **Branch:** `remotes/origin/sentinel/fix-path-traversal-5310615808568024057`
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into sentinel/fix-path-traversal-5310615808568024057
+- **Branch:** `remotes/origin/sentinel/fix-path-traversal-690021270023294880`
+  - **Result:** Commit: feat: Prevent path traversal in scraper output files
+- **Branch:** `remotes/origin/sentinel/fix-path-traversal-7103619358321639504`
+  - **Result:** Commit: 🛡️ Sentinel: [CRITICAL] Fix Path Traversal in scraper.py
+- **Branch:** `remotes/origin/sentinel/fix-path-traversal-9188874187141553419`
+  - **Result:** Commit: Fix path traversal vulnerability in scraper.py and analytics.py
+- **Branch:** `remotes/origin/sentinel/fix-path-traversal-9909177477694886926`
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into sentinel/fix-path-traversal-9909177477694886926
+- **Branch:** `remotes/origin/sentinel/fix-path-traversal-scraper-15595414302913607334`
+  - **Result:** Commit: Fix path traversal vulnerability in scraper output arguments.
+- **Branch:** `remotes/origin/sentinel/fix-request-timeout-14772585893024475880`
+  - **Result:** Commit: 🛡️ Sentinel: [MEDIUM] Fix missing timeout in HTTP requests
+- **Branch:** `remotes/origin/sentinel/fix-scraper-path-traversal-12683996464696937820`
+  - **Result:** Commit: fix(scraper): prevent path traversal and update schedule
+- **Branch:** `remotes/origin/sentinel/fix-scraper-ssrf-1182726048773637235`
+  - **Result:** Commit: fix: Prevent SSRF in scraper pagination logic
+- **Branch:** `remotes/origin/sentinel/fix-scraper-ssrf-timeout-839827095267002364`
+  - **Result:** Commit: Sentinel: Fix SSRF risk and add timeouts in scraper
+- **Branch:** `remotes/origin/sentinel/fix-scraper-timeout-15962352070527931210`
+  - **Result:** Commit: 🛡️ Sentinel: Fix missing timeout in scraper to prevent DoS
+- **Branch:** `remotes/origin/sentinel/fix-scraper-timeout-6444312596237572236`
+  - **Result:** Commit: Fix: Add timeout to requests in scrape_informatic.py
+- **Branch:** `remotes/origin/sentinel/fix-scraper-timeout-7976927589477460081`
+  - **Result:** Commit: Shield: Add timeout to scraper HTTP requests
+- **Branch:** `remotes/origin/sentinel/fix-scraper-vulnerabilities-4677155217137782042`
+  - **Result:** Commit: feat: secure scraper output (path traversal & csv injection)
+- **Branch:** `remotes/origin/sentinel/fix-ssrf-pagination-12840024860908839`
+  - **Result:** Commit: 🛡️ Sentinel: Fix SSRF vulnerability in scraper pagination
+- **Branch:** `remotes/origin/sentinel/fix-ssrf-url-validation-8246286317573036494`
+  - **Result:** Commit: feat(security): add URL validation to scraper to prevent SSRF
+- **Branch:** `remotes/origin/sentinel/fix-timeout-scraper-8563168967022148924`
+  - **Result:** Commit: feat: Add request timeout to scraper
+- **Branch:** `remotes/origin/sentinel/fix-url-validation-1428990983008492380`
+  - **Result:** Commit: Fix security vulnerability: Add URL validation to scraper
+- **Branch:** `remotes/origin/sentinel/ssrf-protection-3166067632750321151`
+  - **Result:** Commit: feat: Add SSRF protection to scraper

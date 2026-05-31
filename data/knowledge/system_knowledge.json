@@ -5304,75 +5304,6 @@
       }
     },
     {
-      "title": "caio_role_docs.md",
-      "sections": [
-        {
-          "header": "Core Job Description",
-          "content": "A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an organization’s entire artificial intelligence strategy. The role bridges the gap between advanced technical execution and bottom-line business outcomes. A Chief AI Officer directs how a company develops, procures, and implements AI to boost productivity, enter new markets, and maintain a competitive edge.\n\nBecause “AI Officer” is an executive title, it does not require a government-issued professional license (like a lawyer or doctor). However, companies typically look for advanced degrees (Ph.D., Master's) or professional certifications in Data Science, Computer Science, or an MBA."
-        },
-        {
-          "header": "Market Context & Demand (2025-2026)",
-          "content": "- **Growth:** 300% year-over-year growth in CAIO role demand.\n- **Adoption:** 76% of organizations globally now have a CAIO, up from 26% in 2025 (IBM CEO Study, May 2026).\n- **ROI Impact:** Organizations with a dedicated CAIO report approximately 10-45% higher AI ROI than those without.\n- **LinkedIn Trends:** AI-related positions lead growth in 2025 and 2026, with 76% of CxOs consulting with CAIOs on AI decisions.\n- **Salary Benchmarks:** Ranges from $250,000 to $2.5M+ depending on industry and company scale; industry consensus for base is $200K-$500K."
-        },
-        {
-          "header": "Strategy & Vision",
-          "content": "Align AI initiatives with the company’s overall business goals. Develop and articulate the company's AI vision and strategy, identifying opportunities across business functions. Build a unified AI roadmap tied to revenue, cost, and CX."
-        },
-        {
-          "header": "Ethics & Governance",
-          "content": "Establish frameworks (e.g., NIST AI RMF, ISO 42001) to ensure AI algorithms are free from bias, respect user privacy, and meet all legal and cybersecurity regulations like the EU AI Act."
-        },
-        {
-          "header": "Implementation & Tech Stacking",
-          "content": "Decide whether to build proprietary AI models or license third-party tools, managing relationships with external technology vendors. Oversee end-to-end implementation from ideation to deployment. 61% of CAIOs now control the organization's AI budget."
-        },
-        {
-          "header": "Cross-Department Training",
-          "content": "Educate the board, executives, and general workforce on how to leverage AI safely and effectively. Foster a culture of continuous learning and ethical AI practices."
-        },
-        {
-          "header": "Performance Tracking",
-          "content": "Measure the return on investment (ROI) and overall business impact of deployed AI projects."
-        },
-        {
-          "header": "Education",
-          "content": "A Master's or Ph.D. in Artificial Intelligence, Machine Learning, Computer Science, or a related quantitative field. An MBA is highly valued for the business-strategy aspect of the role."
-        },
-        {
-          "header": "Experience",
-          "content": "8+ to 10+ years of progressive leadership experience in data science, AI development, or enterprise digital transformation."
-        },
-        {
-          "header": "Skillset",
-          "content": "A rare blend of technical fluency (understanding AI capabilities and limitations) and executive business acumen. SAP CAIO Philipp Herzig identifies **storytelling** as a core skill."
-        },
-        {
-          "header": "Chief Technology Officer (CTO)",
-          "content": "Focuses on the company’s broad IT infrastructure, software architecture, and system reliability."
-        },
-        {
-          "header": "Chief Data Officer (CDO)",
-          "content": "Manages data governance, architecture, and data pipelines to make sure data is clean and organized."
-        },
-        {
-          "header": "Chief AI Officer (CAIO)",
-          "content": "Uses the foundations managed by the CTO and CDO to specifically drive business value and transform how work gets done. Reports directly to the CEO or Board in most modern structures."
-        },
-        {
-          "header": "Major Organizations with CAIO Roles (2026)",
-          "content": "Many global leaders have appointed dedicated CAIOs to steer their intelligence strategy, including:\n- **JPMorgan Chase**\n- **Walmart**\n- **Siemens**\n- **GE HealthCare**\n- **SAP**\n- **Pfizer**\n- **Lumen Technologies**"
-        },
-        {
-          "header": "External Resources & Certifications",
-          "content": "To explore real-world openings and licensure requirements, research available roles on platforms like **LinkedIn Jobs** or **Indeed**.\n\nFor those looking to transition into executive AI leadership, high-impact certifications and programs include:\n- **Professional Certifications:**\n  - *IAPP AIGP:* Artificial Intelligence Governance Professional (Essential for regulatory alignment)\n  - *USAII CAIS:* Certified Artificial Intelligence Scientist (Strategic focus for CXOs)\n  - *ARTIBA:* Artificial Intelligence Certification (Technical and solution focus)\n- **Coursera Specializations:**\n  - *Agentic AI and AI Agents for Leaders* (Vanderbilt University)\n  - *Executive AI Leadership Mastery Specialization* (Starweaver)\n  - *Strategic AI Governance Specialization* (Starweaver)\n  - *Generative AI for Executives and Business Leaders* (IBM)\n- **University Executive Programs:**\n  - *Chicago Booth:* Chief AI Officer Program (Comprehensive executive leadership)\n  - *MIT xPRO:* AI Strategy and Leadership (Technology-strategy foundation)\n  - *Stanford School of Engineering:* Artificial Intelligence Graduate Certificate (Academically rigorous)\n  - *Wharton Executive Education:* Leadership Program in AI and Analytics\n  - *MIT Sloan:* Artificial Intelligence: Implications for Business Strategy\n  - *Harvard Executive Ed:* Competing in the Age of AI"
-        }
-      ],
-      "metadata": {
-        "source": "local://caio_role_docs.md",
-        "ingestedAt": "2026-05-27T02:02:09.619Z"
-      }
-    },
-    {
       "title": "Web Insight",
       "metadata": {
         "source": "https://software-online-review.com",
@@ -5413,19 +5344,42 @@
       ]
     },
     {
-      "title": "Web Insight",
+      "title": "iCloud: evolution_directives.md",
       "metadata": {
-        "source": "https://software-online-review.com",
-        "analyzedAt": "2026-05-30T01:23:00.196Z",
+        "source": "icloud://evolution_directives.md",
+        "analyzedAt": "2026-05-30T21:23:19.255Z",
         "description": "Extracted system knowledge"
       },
-      "sections": []
+      "sections": [
+        {
+          "header": "Directive 1: Type Purity",
+          "content": "All autonomous services must avoid the 'any' type to ensure structural integrity during self-mutation."
+        },
+        {
+          "header": "Directive 2: Zero-Latency Sync",
+          "content": "Global neural synchronization must achieve sub-50ms latency across edge nodes."
+        }
+      ]
+    },
+    {
+      "title": "Strategic Market Trends 2026",
+      "metadata": {},
+      "sections": [
+        {
+          "header": "AI Agent Proliferation",
+          "content": "In 2026, autonomous agents will constitute 40% of all enterprise software interactions."
+        },
+        {
+          "header": "Sovereign Cloud Networks",
+          "content": "Shift towards decentralized, sovereign cloud networks to ensure data integrity and agent autonomy."
+        }
+      ]
     },
     {
       "title": "Intelephense Documentation",
       "metadata": {
         "source": "https://intelephense.com/docs",
-        "analyzedAt": "2026-05-30T03:07:44.001Z",
+        "analyzedAt": "2026-05-31T03:13:59.014Z",
         "description": "Consolidated Intelephense documentation from local and remote sources."
       },
       "sections": [
@@ -5694,5 +5648,57 @@
   ],
   "nomad": {
     "agent_cli_reference": "nomad agent command reference\nThe nomad agent command starts the Nomad agent, which handles client or server functionality, including exposing interfaces for client consumption and running jobs. The agent runs until it receives an interrupt signal.\n\nRefer to Operating Nomad agents and Nomad agent configuration for more information on how to use this command and the options it has.\n\nUsage\nIf you are running Nomad on Linux, you need to run client agents as root, or with sudo, so that cpuset accounting and network namespaces work correctly.\n\nnomad agent [options]\n\nOptions\nWe recommend configuring a Nomad agent with configuration files. Refer to Nomad agent configuration for details.\n\nYou may, however, may pass the following configuration options as CLI arguments:\n\n-alloc-dir=<path>: Equivalent to the Client alloc_dir config option.\n\n-acl-enabled: Equivalent to the ACL enabled config option.\n\n-acl-replication-token: Equivalent to the ACL replication_token config option.\n\n-bind=<address>: Equivalent to the bind_addr config option.\n\n-bootstrap-expect=<num>: Equivalent to the bootstrap_expect config option.\n\n-client: Enable client mode on the local agent.\n\n-client-intro-token: The JWT token used to authenticate with servers during the client's initial registration. You may also set the token via the NOMAD_CLIENT_INTRO_TOKEN environment variable, which overrides this flag. If neither is set, the agent looks for an intro_token.jwt file within the client_state_dir. It is not possible to set the intro token via a configuration file.\n\n-config=<path>: Specifies the path to a configuration file or a directory of configuration files to load. Can be specified multiple times.\n\n-consul-address=<addr>: Equivalent to the address config option.\n\n-consul-auth=<auth>: Equivalent to the auth config option.\n\n-consul-auto-advertise: Equivalent to the auto_advertise config option.\n\n-consul-ca-file=<path>: Equivalent to the ca_file config option.\n\n-consul-cert-file=<path>: Equivalent to the cert_file config option.\n\n-consul-checks-use-advertise: Equivalent to the checks_use_advertise config option.\n\n-consul-client-auto-join: Equivalent to the client_auto_join config option.\n\n-consul-client-service-name=<name>: Equivalent to the client_service_name config option.\n\n-consul-client-http-check-name=<name>: Equivalent to the client_http_check_name config option.\n\n-consul-client-failures-before-critical=<num>: Equivalent to the client_failures_before_critical config option.\n\n-consul-client-failures-before-warning=<num>: Equivalent to the client_failures_before_warning config option.\n\n-consul-key-file=<path>: Equivalent to the key_file config option.\n\n-consul-server-service-name=<name>: Equivalent to the server_service_name config option.\n\n-consul-server-http-check-name=<name>: Equivalent to the server_http_check_name config option.\n\n-consul-server-serf-check-name=<name>: Equivalent to the server_serf_check_name config option.\n\n-consul-server-rpc-check-name=<name>: Equivalent to the server_rpc_check_name config option.\n\n-consul-server-auto-join: Equivalent to the server_auto_join config option.\n\n-consul-server-failures-before-critical=<num>: Equivalent to the server_failures_before_critical config option.\n\n-consul-server-failures-before-warning=<num>: Equivalent to the server_failures_before_warning config option.\n\n-consul-ssl: Equivalent to the ssl config option.\n\n-consul-token=<token>: Equivalent to the token config option.\n\n-consul-verify-ssl: Equivalent to the verify_ssl config option.\n\n-data-dir=<path>: Equivalent to the data_dir config option.\n\n-dc=<datacenter>: Equivalent to the datacenter config option.\n\n-dev: Start the agent in development mode. This enables a pre-configured dual-role agent (client + server) which is useful for developing or testing Nomad. No other configuration is required to start the agent in this mode, but you may pass an optional comma-separated list of mode configurations:\n\n-dev-connect: Start the agent in development mode, but bind to a public network interface rather than localhost for using Consul service mesh. It may be used with -dev-consul to configure default workload identities for Consul. This mode is supported only on Linux as root.\n\n-dev-consul: Starts the agent in development mode with a default Consul configuration for Nomad workload identity. It may be used with -dev-connect to configure the agent for Consul Service Mesh.\n\n-dev-vault: Starts the agent in development mode with a default Vault configuration for Nomad workload identity.\n\n-encrypt: Set the Serf encryption key. See the Encryption Overview for more details.\n\n-eventlog: Equivalent to the eventlog.enabled config option.\n\n-eventlog-level: Equivalent to the eventlog.level config option.\n\n-join=<address>: Address of another agent to join upon starting up. This can be specified multiple times to specify multiple agents to join.\n\n-log-level=<level>: Equivalent to the log_level config option.\n\n-log-include-location: Equivalent to the log_include_location config option.\n\n-log-json: Equivalent to the log_json config option.\n\n-meta=<key=value>: Equivalent to the Client meta config option.\n\n-network-interface=<interface>: Equivalent to the Client network_interface config option.\n\n-node=<name>: Equivalent to the name config option.\n\n-node-class=<class>: Equivalent to the Client node_class config option.\n\n-node-pool=<node-pool>: Equivalent to the Client node_pool config option.\n\n-plugin-dir=<path>: Equivalent to the plugin_dir config option.\n\n-region=<region>: Equivalent to the region config option.\n\n-rejoin: Equivalent to the rejoin_after_leave config option.\n\n-retry-interval: Equivalent to the retry_interval config option.\n\n-retry-join: Similar to -join but allows retrying a join if the first attempt fails.\n\n$ nomad agent -retry-join \"127.0.0.1:4648\"\n\nretry-join can be defined as a command line flag only for servers. Clients can configure retry-join only in configuration files.\n\n-retry-max: Similar to the retry_max config option.\n\n-server: Enable server mode on the local agent.\n\n-servers=<host:port>: Equivalent to the Client servers config option.\n\n-state-dir=<path>: Equivalent to the Client state_dir config option.\n\n-vault-enabled: Whether to enable or disabled Vault integration.\n\n-vault-address=<addr>: The address to communicate with Vault.\n\n-vault-token=<token>: The Vault token used to derive tokens. Only needs to be set on Servers. Overrides the Vault token read from the VAULT_TOKEN environment variable.\n\n-vault-create-from-role=<role>: The role name to create tokens for tasks from.\n\n-vault-ca-file=<path>: Path to a PEM-encoded CA cert file used to verify the Vault server SSL certificate.\n\n-vault-ca-path=<path>: Path to a directory of PEM-encoded CA cert files used to verify the Vault server SSL certificate.Whether to enable or disabled Vault integration.\n\nvault-cert-file=<path>: The path to the certificate for Vault communication.\n\nvault-key-file=<path>: The path to the private key for Vault communication.\n\nvault-namespace=<namespace>: The Vault namespace used for the integration. Required for servers and clients. Overrides the Vault namespace read from the VAULT_NAMESPACE environment variable.\n\nvault-tls-skip-verify: A boolean that determines whether to skip SSL certificate verification.\n\nvault-tls-server-name=<name>: Used to set the SNI host when connecting to Vault over TLS.\n"
-  }
+  },
+  "google_ads": [
+    {
+      "url": "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU",
+      "title": "Understanding bidding basics - Google Ads Help",
+      "contentPreview": "- Help Center\n- Community\n- Announcements\n- Start advertising\n- Campaigns\n- Explore features\n- Optimize performance\n- Account & billing\n- Fix issues\n- Google Partners\n- Help Center Topics\n- Campaigns\n- Display campaigns\n- Setup & management\n- Bidding\n- Understanding bidding basics\n- Help Center TopicsStart advertisingCampaignsExplore featuresOptimize performanceAccount & billingFix issuesGoogle Partners\n- ...CampaignsDisplay campaignsSetup & management\n- Bidding\n- Understanding bidding basics\n\n#..."
+    },
+    {
+      "url": "https://business.google.com/uk/ad-tools/bidding/?hl=en",
+      "title": "Google Ads Smart Bidding - AI-Driven Bid Optimisations & Ad Spend",
+      "contentPreview": "Add another account\n\nSign out of all accounts\n\nAdd account\n\nSign out\n\nCreate new Google Ads account\n\nMore business products from Google\n\nGoogle Ads\n\nMerchant Center\n\nGoogle Business Profile\n\nGoogle Analytics\n\nManage your site content preferences\n\nMarketing profile settings\n\nAccess your Google accounts in one place.\n\n\n## Want to create a new Google Ads account?\nYou're about to create a new Google Ads account. You can create multiple campaigns in the same account without creating a new account.\n\n-..."
+    },
+    {
+      "url": "https://business.google.com/uk/resources/?hl=en",
+      "title": "Tips & Resources for Online Advertising – Google Ads",
+      "contentPreview": "Add another account\n\nSign out of all accounts\n\nAdd account\n\nSign out\n\nCreate new Google Ads account\n\nMore business products from Google\n\nGoogle Ads\n\nMerchant Center\n\nGoogle Business Profile\n\nGoogle Analytics\n\nManage your site content preferences\n\nMarketing profile settings\n\nAccess your Google accounts in one place.\n\n\n## Want to create a new Google Ads account?\nYou're about to create a new Google Ads account. You can create multiple campaigns in the same account without creating a new account.\n\n-..."
+    },
+    {
+      "url": "https://developers.google.com/ad-manager?hl=en",
+      "title": "Ad Manager  |  Google for DevelopersGoogleGoogle",
+      "contentPreview": "- Google Ad Manager\n\n# Google Ad Manager\n- English\n- Deutsch\n- Español\n- Español – América Latina\n- Français\n- Indonesia\n- Italiano\n- Polski\n- Português – Brasil\n- Tiếng Việt\n- Türkçe\n- Русский\n- עברית\n- العربيّة\n- فارسی\n- हिंदी\n- বাংলা\n- ภาษาไทย\n- 中文 – 简体\n- 中文 – 繁體\n- 日本語\n- 한국어\n- Google Ad Manager\n- Home\n- Products\n- Ad Manager\n\n## A set of tools to manage your Google Ad Manager accounts and campaigns.\n\n### Ad Manager API (Beta)\n\n### Mobile Ads SDK\n\n### Dynamic Ad Insertion\n\n### Ad Manager SOA..."
+    },
+    {
+      "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en",
+      "title": "Dynamic Ad Insertion  |  Google for DevelopersGoogleGoogle",
+      "contentPreview": "- Google Dynamic Ad Insertion\n\n# Google Dynamic Ad Insertion\n- Home\n- HTML5\n- Android\n- iOS\n- tvOS\n- Chromecast\n- Roku\n- Full service DAI\n- Pod serving DAI\n- Ad break\n- Support\n- Ad Manager Help Community\n- Contact support\n- Terms of service\n- Official Google Ad Manager Discord channel\n- Ads developer blog\n- Test tools\n- Video Suite Inspector\n- Sample streams\n- English\n- Deutsch\n- Español\n- Español – América Latina\n- Français\n- Indonesia\n- Italiano\n- Polski\n- Português – Brasil\n- Tiếng Việt\n- ..."
+    },
+    {
+      "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en",
+      "title": "DAI Full Service API  |  Google for DevelopersGoogleGoogle",
+      "contentPreview": "- Google Dynamic Ad Insertion\n\n# Google Dynamic Ad Insertion\n- Home\n- HTML5\n- Android\n- iOS\n- tvOS\n- Chromecast\n- Roku\n- Full service DAI\n- Pod serving DAI\n- Ad break\n- Support\n- Ad Manager Help Community\n- Contact support\n- Terms of service\n- Official Google Ad Manager Discord channel\n- Ads developer blog\n- Test tools\n- Video Suite Inspector\n- Sample streams\n- English\n- Deutsch\n- Español\n- Español – América Latina\n- Français\n- Indonesia\n- Italiano\n- Polski\n- Português – Brasil\n- Tiếng Việt\n- ..."
+    },
+    {
+      "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en",
+      "title": "DAI Pod Serving API  |  Google for DevelopersGoogleGoogle",
+      "contentPreview": "- Google Dynamic Ad Insertion\n\n# Google Dynamic Ad Insertion\n- Home\n- HTML5\n- Android\n- iOS\n- tvOS\n- Chromecast\n- Roku\n- Full service DAI\n- Pod serving DAI\n- Ad break\n- Support\n- Ad Manager Help Community\n- Contact support\n- Terms of service\n- Official Google Ad Manager Discord channel\n- Ads developer blog\n- Test tools\n- Video Suite Inspector\n- Sample streams\n- English\n- Deutsch\n- Español\n- Español – América Latina\n- Français\n- Indonesia\n- Italiano\n- Polski\n- Português – Brasil\n- Tiếng Việt\n- ..."
+    },
+    {
+      "url": "https://developers.google.com/ad-manager/api/start?hl=en",
+      "title": "Get started  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle",
+      "contentPreview": "- Google Ad Manager\n- SOAP API\n- English\n- Deutsch\n- Español\n- Español – América Latina\n- Français\n- Indonesia\n- Italiano\n- Polski\n- Português – Brasil\n- Tiếng Việt\n- Türkçe\n- Русский\n- עברית\n- العربيّة\n- فارسی\n- हिंदी\n- বাংলা\n- ภาษาไทย\n- 中文 – 简体\n- 中文 – 繁體\n- 日本語\n- 한국어\n- Google Ad Manager\n- SOAP API\n- Guides\n- Reference\n- Samples\n- Support\n- Get Started\n- Authentication\n- PQL Guide\n- Third Parties\n- Basic Concepts\n- How To\n- Reports\n- Forecasts\n- Native\n- Programmatic\n- Best Practices\n- Test Ne..."
+    },
+    {
+      "url": "https://admanager.google.com/home/resources/?hl=en",
+      "title": "Resources Overview - Google Ad Manager",
+      "contentPreview": "- Capabilities\n- Partner Solutions\n- Success Stories\n- Resources\n- Blog\n- Support\n- Sign in\n- Get started\n- Capabilities Formats Video Yield Management Data & Insights Brand Safety\n- Formats\n- Video\n- Yield Management\n- Data & Insights\n- Brand Safety\n- Partner Solutions Apps TV & Broadcast Commerce News & Publishing Small Business\n- Apps\n- TV & Broadcast\n- Commerce\n- News & Publishing\n- Small Business\n- Success Stories\n- Resources\n- Blog\n- Support\n- Sign in\n- Get started\n\n## Tell us about your b..."
+    },
+    {
+      "url": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en",
+      "title": "ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation",
+      "contentPreview": "- AI and ML\n- Application development\n- Application hosting\n- Compute\n- Data analytics and pipelines\n- Databases\n- Distributed, hybrid, and multicloud\n- Industry solutions\n- Migration\n- Networking\n- Observability and monitoring\n- Security\n- Storage\n- Access and resources management\n- Costs and usage management\n- Infrastructure as code\n- SDK, languages, frameworks, and tools\n- English\n- Deutsch\n- Español – América Latina\n- Français\n- Português – Brasil\n- 中文 – 简体\n- 日本語\n- 한국어\n- Java\n- Client librar..."
+    }
+  ]
 }

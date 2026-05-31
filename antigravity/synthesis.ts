@@ -208,6 +208,15 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
+  // Gap Analysis 22: Autonomous Ethics Auditor
+  if (!files.some(f => f.includes('ethics_auditor'))) {
+    ideas.push({
+      feature: 'Autonomous Ethics Auditor',
+      rationale: 'Aligns system evolution with documented ethics framework and strategic market directives from iCloud intelligence.',
+      complexity: 'Medium'
+    })
+  }
+
   // Force an idea for demonstration if none exist
   if (ideas.length === 0) {
     ideas.push({

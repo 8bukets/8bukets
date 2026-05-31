@@ -13,9 +13,9 @@ export class ICloudObserver {
   private observer: KnowledgeObserver
 
   constructor() {
-    // Default to the known 8bukets iCloud path
+    // Default to the known Antigravity iCloud path
     const homeDir = process.env.HOME || ''
-    const standardICloudPath = path.join(homeDir, 'Library/Mobile Documents/com~apple~CloudDocs/8bukets')
+    const standardICloudPath = path.join(homeDir, 'Library/Mobile Documents/com~apple~CloudDocs/Antigravity_Sync')
 
     this.syncPath = process.env.ICLOUD_SYNC_PATH || standardICloudPath
     this.observer = new KnowledgeObserver()
@@ -58,12 +58,13 @@ export class ICloudObserver {
              const data = JSON.parse(content)
              // Handle both structured and raw JSON
              knowledge = {
+               source: `icloud://${file}`,
                title: data.title || `iCloud: ${file}`,
-               sections: data.sections || [{ header: 'Content', content: JSON.stringify(data, null, 2) }],
-               metadata: {
-                 source: `icloud://${file}`,
-                 ingestedAt: new Date().toISOString()
-               }
+               description: data.description || 'Extracted system knowledge from iCloud JSON',
+               topKeywords: [],
+               recentPosts: [],
+               analyzedAt: new Date().toISOString(),
+               sections: data.sections || [{ header: 'Content', content: JSON.stringify(data, null, 2) }]
              }
           } else {
              knowledge = KnowledgeObserver.processContent(`iCloud: ${file}`, content, `icloud://${file}`)
