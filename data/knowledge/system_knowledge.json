@@ -5304,75 +5304,6 @@
       }
     },
     {
-      "title": "caio_role_docs.md",
-      "sections": [
-        {
-          "header": "Core Job Description",
-          "content": "A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an organization’s entire artificial intelligence strategy. The role bridges the gap between advanced technical execution and bottom-line business outcomes. A Chief AI Officer directs how a company develops, procures, and implements AI to boost productivity, enter new markets, and maintain a competitive edge.\n\nBecause “AI Officer” is an executive title, it does not require a government-issued professional license (like a lawyer or doctor). However, companies typically look for advanced degrees (Ph.D., Master's) or professional certifications in Data Science, Computer Science, or an MBA."
-        },
-        {
-          "header": "Market Context & Demand (2025-2026)",
-          "content": "- **Growth:** 300% year-over-year growth in CAIO role demand.\n- **Adoption:** 76% of organizations globally now have a CAIO, up from 26% in 2025 (IBM CEO Study, May 2026).\n- **ROI Impact:** Organizations with a dedicated CAIO report approximately 10-45% higher AI ROI than those without.\n- **LinkedIn Trends:** AI-related positions lead growth in 2025 and 2026, with 76% of CxOs consulting with CAIOs on AI decisions.\n- **Salary Benchmarks:** Ranges from $250,000 to $2.5M+ depending on industry and company scale; industry consensus for base is $200K-$500K."
-        },
-        {
-          "header": "Strategy & Vision",
-          "content": "Align AI initiatives with the company’s overall business goals. Develop and articulate the company's AI vision and strategy, identifying opportunities across business functions. Build a unified AI roadmap tied to revenue, cost, and CX."
-        },
-        {
-          "header": "Ethics & Governance",
-          "content": "Establish frameworks (e.g., NIST AI RMF, ISO 42001) to ensure AI algorithms are free from bias, respect user privacy, and meet all legal and cybersecurity regulations like the EU AI Act."
-        },
-        {
-          "header": "Implementation & Tech Stacking",
-          "content": "Decide whether to build proprietary AI models or license third-party tools, managing relationships with external technology vendors. Oversee end-to-end implementation from ideation to deployment. 61% of CAIOs now control the organization's AI budget."
-        },
-        {
-          "header": "Cross-Department Training",
-          "content": "Educate the board, executives, and general workforce on how to leverage AI safely and effectively. Foster a culture of continuous learning and ethical AI practices."
-        },
-        {
-          "header": "Performance Tracking",
-          "content": "Measure the return on investment (ROI) and overall business impact of deployed AI projects."
-        },
-        {
-          "header": "Education",
-          "content": "A Master's or Ph.D. in Artificial Intelligence, Machine Learning, Computer Science, or a related quantitative field. An MBA is highly valued for the business-strategy aspect of the role."
-        },
-        {
-          "header": "Experience",
-          "content": "8+ to 10+ years of progressive leadership experience in data science, AI development, or enterprise digital transformation."
-        },
-        {
-          "header": "Skillset",
-          "content": "A rare blend of technical fluency (understanding AI capabilities and limitations) and executive business acumen. SAP CAIO Philipp Herzig identifies **storytelling** as a core skill."
-        },
-        {
-          "header": "Chief Technology Officer (CTO)",
-          "content": "Focuses on the company’s broad IT infrastructure, software architecture, and system reliability."
-        },
-        {
-          "header": "Chief Data Officer (CDO)",
-          "content": "Manages data governance, architecture, and data pipelines to make sure data is clean and organized."
-        },
-        {
-          "header": "Chief AI Officer (CAIO)",
-          "content": "Uses the foundations managed by the CTO and CDO to specifically drive business value and transform how work gets done. Reports directly to the CEO or Board in most modern structures."
-        },
-        {
-          "header": "Major Organizations with CAIO Roles (2026)",
-          "content": "Many global leaders have appointed dedicated CAIOs to steer their intelligence strategy, including:\n- **JPMorgan Chase**\n- **Walmart**\n- **Siemens**\n- **GE HealthCare**\n- **SAP**\n- **Pfizer**\n- **Lumen Technologies**"
-        },
-        {
-          "header": "External Resources & Certifications",
-          "content": "To explore real-world openings and licensure requirements, research available roles on platforms like **LinkedIn Jobs** or **Indeed**.\n\nFor those looking to transition into executive AI leadership, high-impact certifications and programs include:\n- **Professional Certifications:**\n  - *IAPP AIGP:* Artificial Intelligence Governance Professional (Essential for regulatory alignment)\n  - *USAII CAIS:* Certified Artificial Intelligence Scientist (Strategic focus for CXOs)\n  - *ARTIBA:* Artificial Intelligence Certification (Technical and solution focus)\n- **Coursera Specializations:**\n  - *Agentic AI and AI Agents for Leaders* (Vanderbilt University)\n  - *Executive AI Leadership Mastery Specialization* (Starweaver)\n  - *Strategic AI Governance Specialization* (Starweaver)\n  - *Generative AI for Executives and Business Leaders* (IBM)\n- **University Executive Programs:**\n  - *Chicago Booth:* Chief AI Officer Program (Comprehensive executive leadership)\n  - *MIT xPRO:* AI Strategy and Leadership (Technology-strategy foundation)\n  - *Stanford School of Engineering:* Artificial Intelligence Graduate Certificate (Academically rigorous)\n  - *Wharton Executive Education:* Leadership Program in AI and Analytics\n  - *MIT Sloan:* Artificial Intelligence: Implications for Business Strategy\n  - *Harvard Executive Ed:* Competing in the Age of AI"
-        }
-      ],
-      "metadata": {
-        "source": "local://caio_role_docs.md",
-        "ingestedAt": "2026-05-27T02:02:09.619Z"
-      }
-    },
-    {
       "title": "Web Insight",
       "metadata": {
         "source": "https://software-online-review.com",
@@ -5413,19 +5344,42 @@
       ]
     },
     {
-      "title": "Web Insight",
+      "title": "iCloud: evolution_directives.md",
       "metadata": {
-        "source": "https://software-online-review.com",
-        "analyzedAt": "2026-05-30T01:23:00.196Z",
+        "source": "icloud://evolution_directives.md",
+        "analyzedAt": "2026-05-30T21:23:19.255Z",
         "description": "Extracted system knowledge"
       },
-      "sections": []
+      "sections": [
+        {
+          "header": "Directive 1: Type Purity",
+          "content": "All autonomous services must avoid the 'any' type to ensure structural integrity during self-mutation."
+        },
+        {
+          "header": "Directive 2: Zero-Latency Sync",
+          "content": "Global neural synchronization must achieve sub-50ms latency across edge nodes."
+        }
+      ]
+    },
+    {
+      "title": "Strategic Market Trends 2026",
+      "metadata": {},
+      "sections": [
+        {
+          "header": "AI Agent Proliferation",
+          "content": "In 2026, autonomous agents will constitute 40% of all enterprise software interactions."
+        },
+        {
+          "header": "Sovereign Cloud Networks",
+          "content": "Shift towards decentralized, sovereign cloud networks to ensure data integrity and agent autonomy."
+        }
+      ]
     },
     {
       "title": "Intelephense Documentation",
       "metadata": {
         "source": "https://intelephense.com/docs",
-        "analyzedAt": "2026-05-30T03:07:44.001Z",
+        "analyzedAt": "2026-05-31T03:13:59.014Z",
         "description": "Consolidated Intelephense documentation from local and remote sources."
       },
       "sections": [
@@ -5690,83 +5644,6 @@
           "content": "Intelephense aims to support all frameworks but does not implement framework specific solutions. Some frameworks are coded in a way that make it difficult to analyse. This may be because of lack of type declarations/annotations; heavy use of `__get`, `__set`, `__call`, `__callStatic` magic methods; or dynamic generation of class aliases at runtime.\nPackages can be found online that aim to workaround these issues by providing stubs of symbols to help static analysers like Intelephense understand the code.\n* Laravel - [barryvdh/laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper)"
         }
       ]
-    },
-    {
-      "title": "iCloud: evolution_directives.md",
-      "metadata": {
-        "source": "icloud://evolution_directives.md",
-        "analyzedAt": "2026-05-30T21:23:19.255Z",
-        "description": "Extracted system knowledge"
-      },
-      "sections": [
-        {
-          "header": "Directive 1: Type Purity",
-          "content": "All autonomous services must avoid the 'any' type to ensure structural integrity during self-mutation."
-        },
-        {
-          "header": "Directive 2: Zero-Latency Sync",
-          "content": "Global neural synchronization must achieve sub-50ms latency across edge nodes."
-        }
-      ]
-    },
-    {
-      "title": "Strategic Market Trends 2026",
-      "metadata": {},
-      "sections": [
-        {
-          "header": "AI Agent Proliferation",
-          "content": "In 2026, autonomous agents will constitute 40% of all enterprise software interactions."
-        },
-        {
-          "header": "Sovereign Cloud Networks",
-          "content": "Shift towards decentralized, sovereign cloud networks to ensure data integrity and agent autonomy."
-        }
-      ]
-    },
-    {
-      "title": "iCloud: evolution_directives.md",
-      "metadata": {
-        "source": "icloud://evolution_directives.md",
-        "analyzedAt": "2026-05-30T21:26:37.755Z",
-        "description": "Extracted system knowledge"
-      },
-      "sections": [
-        {
-          "header": "Directive 1: Type Purity",
-          "content": "All autonomous services must avoid the 'any' type to ensure structural integrity during self-mutation."
-        },
-        {
-          "header": "Directive 2: Zero-Latency Sync",
-          "content": "Global neural synchronization must achieve sub-50ms latency across edge nodes."
-        }
-      ]
-    },
-    {
-      "title": "Strategic Market Trends 2026",
-      "metadata": {
-        "source": "icloud://market_trends_2026.json",
-        "analyzedAt": "2026-05-30T21:26:38.020Z",
-        "description": "Extracted system knowledge from iCloud JSON"
-      },
-      "sections": [
-        {
-          "header": "AI Agent Proliferation",
-          "content": "In 2026, autonomous agents will constitute 40% of all enterprise software interactions."
-        },
-        {
-          "header": "Sovereign Cloud Networks",
-          "content": "Shift towards decentralized, sovereign cloud networks to ensure data integrity and agent autonomy."
-        }
-      ]
-    },
-    {
-      "title": "Web Insight",
-      "metadata": {
-        "source": "https://software-online-review.com",
-        "analyzedAt": "2026-05-31T01:12:15.934Z",
-        "description": "Extracted system knowledge"
-      },
-      "sections": []
     }
   ],
   "nomad": {
