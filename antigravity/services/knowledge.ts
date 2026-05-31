@@ -85,32 +85,31 @@ export async function observeKnowledge(url: string) {
     }
     cleanContent = cleanContent.trimEnd()
 
-    let updated = false
-    // Use string parsing to avoid regex bugs
-    const blockRegex = /## Autonomous Observation(?:(?!## Autonomous Observation)[\s\S])*/g
+    // Check if the target is already observed
+    const targetIndicator = `- **Target**: ${url}`;
+    const targetPos = cleanContent.indexOf(targetIndicator);
+    let newContent = cleanContent;
+    let updated = false;
 
-    let blocks = [];
-    let match;
-    while ((match = blockRegex.exec(cleanContent)) !== null) {
-        blocks.push(match[0]);
-    }
+    if (targetPos !== -1) {
+        // Find the beginning of this observation block
+        const blockStartPos = cleanContent.lastIndexOf('## Autonomous Observation', targetPos);
 
-    let newBlocks = blocks.map(block => {
-        if (block.includes(`- **Target**: ${url}\n`) || block.includes(`- **Target**: ${url}\r`)) {
-            updated = true;
-            return relationshipEntry.trimStart();
+        // Find the end of this block (start of the next header, or end of string)
+        const nextHeaderPos = cleanContent.indexOf('\n## ', targetPos);
+        const blockEndPos = nextHeaderPos !== -1 ? nextHeaderPos : cleanContent.length;
+
+        // Replace the old block with the new one
+        newContent = cleanContent.slice(0, blockStartPos) + relationshipEntry.trimStart() + '\n' + cleanContent.slice(blockEndPos);
+        updated = true;
+    } else {
+        // Append observation block right before the first Ecosystem Knowledge Consolidation, or at the end
+        const ecosystemStart = cleanContent.indexOf('\n## Ecosystem Knowledge Consolidation');
+        if (ecosystemStart !== -1) {
+             newContent = cleanContent.slice(0, ecosystemStart) + '\n\n' + relationshipEntry.trimStart() + '\n\n' + cleanContent.slice(ecosystemStart);
+        } else {
+             newContent = cleanContent + '\n\n' + relationshipEntry.trimStart() + '\n\n';
         }
-        return block;
-    });
-
-    if (!updated) {
-        newBlocks.push(relationshipEntry.trimStart());
-    }
-
-    // Replace the part of string where the blocks are
-    let newContent = cleanContent.split(/## Autonomous Observation/)[0].trimEnd()
-    if (newBlocks.length > 0) {
-        newContent += '\n\n' + newBlocks.join('\n\n')
     }
 
     newContent = newContent.trimEnd() + '\n\n' + signature + '\n'
