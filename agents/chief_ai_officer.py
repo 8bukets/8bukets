@@ -61,6 +61,8 @@ class ChiefAIOfficerAgent(BaseAgent):
                 if "Phase 12: Autonomous Super-Intelligence (Current)" in agents_docs or "Phase 13" in agents_docs:
                     self.logger.info("CAIO [SYNC]: System maturity confirmed at Phase 12/13. Authorizing sentient orchestration protocols.")
                     strategic_directives.append("ACTIVATE_SENTIENT_ORCHESTRATION")
+                    strategic_directives.append("ESTABLISH_ETHICS_FRAMEWORK")
+                    strategic_directives.append("OPTIMIZE_ROI_TRACKING")
                     strategic_directives.append("ENABLE_PREDICTIVE_RESOURCE_ALLOCATION")
                 else:
                     self.logger.warning("CAIO [ALERT]: System maturity falls below Phase 12. Mandating immediate roadmap acceleration.")
@@ -112,6 +114,33 @@ class ChiefAIOfficerAgent(BaseAgent):
 
         # System Evolution Stability Governance
         evolution_status = evolution.get("status", "UNKNOWN")
+        technical_debt = evolution.get("technical_debt", [])
+        sync_violations = [v for v in technical_debt if "ASYNC_HYGIENE_VIOLATION" in v.get("suggestion", "")]
+        type_violations = [v for v in technical_debt if "TYPE_SAFETY_VIOLATION" in v.get("suggestion", "")]
+
+        if sync_violations:
+            self.logger.warning(f"CAIO [GOVERNANCE]: Detected {len(sync_violations)} sync-over-async violations. Mandating core stabilization.")
+            strategy_status = "STABILIZATION_REQUIRED"
+            strategic_directives.append("STABILIZE_SYSTEM_CORE")
+            strategic_directives.append("REFACTOR_ASYNC_VIOLATIONS")
+
+        if type_violations:
+            self.logger.warning(f"CAIO [GOVERNANCE]: Detected {len(type_violations)} type safety violations. Enforcing structural purity.")
+            strategic_directives.append("ENFORCE_TYPE_SAFETY_PROTOCOLS")
+
+        # Specific Directive Logic Implementation (v2.1)
+        if "ESTABLISH_ETHICS_FRAMEWORK" in strategic_directives:
+            ethics_path = os.path.join(os.getcwd(), 'data/governance/ethics_framework.json')
+            if not os.path.exists(ethics_path):
+                self.logger.info("CAIO [ETHICS]: Ethics framework missing. Mandating initialization.")
+                strategic_directives.append("INITIALIZE_ETHICS_DOCUMENTATION")
+
+        if "OPTIMIZE_ROI_TRACKING" in strategic_directives:
+            roi_metrics = resource_alloc.get("roi_efficiency", 1.0)
+            if roi_metrics < 0.8:
+                self.logger.warning(f"CAIO [ROI]: Low ROI efficiency detected ({roi_metrics}). Mandating cost optimization.")
+                strategic_directives.append("REDUCE_NON_CRITICAL_COMPUTE")
+
         if evolution_status == "UNSTABLE":
              self.logger.warning("CAIO [GOVERNANCE]: System evolution matrix reporting UNSTABLE state. Mandating immediate strategy review and core consolidation.")
              strategy_status = "REVIEW_REQUIRED"
@@ -133,3 +162,21 @@ class ChiefAIOfficerAgent(BaseAgent):
             "strategic_directives": strategic_directives,
             "executive_summary": "CAIO evaluation cycle completed successfully. System operating within defined parameters."
         }
+
+# CAIO Execution Context
+# The ChiefAIOfficerAgent acts as the primary analytical engine for the multi-agent
+# framework. While standard agents (like SyncAgent or BackupAgent) execute specific
+# bash scripts or API calls, the CAIO operates at a higher level of abstraction.
+# It reads the output of those executions and determines if the system is drifting
+# from its intended architectural state.
+#
+# For example, if the CloudWorkflowAgent reports a "DEGRADED" status due to repeated
+# pipeline failures, the CAIO interprets this not just as an error, but as a strategic
+# risk. It responds by issuing a "RECOVERY_MODE" directive, which signals other
+# agents to prioritize stability over feature exploration.
+#
+# This file contains the core logic for parsing system telemetry and market intelligence.
+# Future iterations of this class are expected to integrate directly with the
+# MongoDB logging infrastructure to pull historical performance data, allowing the
+# CAIO to make predictive adjustments to resource allocation before a degradation
+# actually occurs.

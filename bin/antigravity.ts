@@ -61,4 +61,11 @@ program
     runCommand('bash', ['scripts/fix_icloud_sync.sh']);
   });
 
+program
+  .command('workflow')
+  .description('Generate automated workflow pipelines')
+  .action(() => {
+    runCommand('npx', ['tsx', '--env-file=.env', 'scripts/autonomous_workflow_creation.ts']);
+  });
+
 program.parse(process.argv);

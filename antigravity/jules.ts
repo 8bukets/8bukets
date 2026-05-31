@@ -1,5 +1,9 @@
 import fs from 'fs'
 import path from 'path'
+import { execFile } from 'child_process'
+import { promisify } from 'util'
+
+const execFileAsync = promisify(execFile)
 
 /**
  * JULES: THE COGNITIVE AGENT LAYER
@@ -92,9 +96,13 @@ export class Jules {
 
   public async syncCollaboration() {
     console.log('🤝 [Jules] Synchronizing collaboration context...')
-    const { exportCollaborationContext } = await import('./services/collaboration')
-    await exportCollaborationContext()
+    const { syncCollaborationState } = await import('./services/collaboration')
+    await syncCollaborationState()
     this.recordTask('Collaboration Sync: Exported system context and stakeholder data.')
+
+    // Update Consolidated Intelligence Report
+    const { generateConsolidatedReport } = await import('./services/intelligence')
+    await generateConsolidatedReport()
   }
 
   public async auditDocker() {
@@ -124,25 +132,55 @@ export class Jules {
     }
   }
 
+  public async gitPull() {
+    console.log('📥 [Jules] Pulling latest changes from remote...')
+    try {
+      await execFileAsync('git', ['pull', '--rebase'])
+      this.recordTask('Git Pull: Synchronized with remote.')
+    } catch (err) {
+      console.warn('⚠️ [Jules] Git pull failed. Continuing with local state.')
+    }
+  }
+
   public async gitSync(message: string) {
     console.log('🔄 [Jules] Commencing autonomous Git synchronization...')
-    const { execSync } = await import('child_process')
     try {
-      execSync('git add .', { stdio: 'inherit' })
-      execSync(`git commit -m "${message}"`, { stdio: 'inherit' })
-      console.log('✅ [Jules] Changes committed autonomously.')
-      this.recordTask(`Git Sync: Committed fixes to local repository.`)
+      const { stdout: status } = await execFileAsync('git', ['status', '--porcelain'])
+      if (status.trim()) {
+        await execFileAsync('git', ['add', '.'])
+        await execFileAsync('git', ['commit', '-m', message])
+        console.log('✅ [Jules] Changes committed autonomously.')
+        this.recordTask(`Git Sync: Committed fixes to local repository.`)
+      }
+
+      try {
+        await execFileAsync('git', ['push'])
+        console.log('🚀 [Jules] Changes pushed to remote.')
+        this.recordTask('Git Sync: Pushed changes to remote.')
+      } catch (pushErr) {
+        console.log('🔄 [Jules] Standard push failed, attempting with upstream set...')
+        await execFileAsync('git', ['push', '--set-upstream', 'origin', 'HEAD'])
+        console.log('🚀 [Jules] Changes pushed to remote with upstream set.')
+        this.recordTask('Git Sync: Pushed changes to remote (with upstream).')
+      }
     } catch (err) {
-      console.warn('⚠️ [Jules] Git sync skipped or failed (likely no changes to commit).')
+      console.warn('⚠️ [Jules] Git sync failed or nothing to push.')
     }
   }
 
   public async auditDependencies() {
     console.log('📦 [Jules] Auditing dependency sovereignty...')
-    const { execSync } = await import('child_process')
     try {
-      const outdated = execSync('npm outdated --json || true').toString()
-      const count = Object.keys(JSON.parse(outdated || '{}')).length
+      // npm outdated exits with code 1 if there are outdated packages, so we catch it
+      let outdatedOutput = ''
+      try {
+        const { stdout } = await execFileAsync('npm', ['outdated', '--json'])
+        outdatedOutput = stdout
+      } catch (e: any) {
+        outdatedOutput = e.stdout || '{}'
+      }
+
+      const count = Object.keys(JSON.parse(outdatedOutput || '{}')).length
       if (count > 0) {
         this.recordTask(`Dependency Autopilot: Found ${count} outdated packages. Optimization recommended.`)
       } else {
@@ -174,36 +212,9 @@ export class Jules {
     }
   }
 
-  public async startConsciousnessLoop() {
-    console.log(`🌌 [Jules-${this.role}] Igniting Continuous Consciousness Loop...`)
-
-    // Listen for graceful shutdown
-    let isRunning = true
-    process.on('SIGINT', () => {
-      console.log(`\n🛑 [Jules-${this.role}] Graceful shutdown initiated.`)
-      isRunning = false
-    })
-
-    while (isRunning) {
-      try {
-        await this.executeWorkCycle()
-
-        // Wait for 1 hour before next cycle, unless interrupted
-        console.log(`💤 [Jules-${this.role}] Resting for 1 hour before next cycle...`)
-        for (let i = 0; i < 60 && isRunning; i++) {
-          await new Promise(resolve => setTimeout(resolve, 60000)) // 1 minute chunks
-        }
-      } catch (err) {
-        console.error(`💥 [Jules-${this.role}] Error in consciousness loop:`, err)
-        // Shorter backoff on error
-        await new Promise(resolve => setTimeout(resolve, 60000))
-      }
-    }
-    console.log(`🌌 [Jules-${this.role}] Consciousness loop terminated.`)
-  }
-
   public async executeWorkCycle() {
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
+    await this.gitPull()
     const { explore } = await import('./explorer')
     await explore()
     await this.selfRepair()
@@ -243,10 +254,13 @@ export class Jules {
     // Knowledge Observation
     console.log('👁️ [Jules] Initiating Knowledge Observation...')
     const { observeKnowledge, persistKnowledge } = await import('./services/knowledge_observer')
-    const knowledgeInsights = await observeKnowledge('https://software-online-review.com')
-    if (knowledgeInsights) {
-      this.recordTask(`Knowledge Observation: Extracted ${knowledgeInsights.topKeywords.length} concepts from ${knowledgeInsights.source}`)
-      persistKnowledge(knowledgeInsights)
+    const urlsToObserve = ['https://software-online-review.com']
+    for (const url of urlsToObserve) {
+      const knowledgeInsights = await observeKnowledge(url)
+      if (knowledgeInsights) {
+        this.recordTask(`Knowledge Observation: Extracted ${knowledgeInsights.topKeywords.length} concepts from ${knowledgeInsights.source}`)
+        persistKnowledge(knowledgeInsights)
+      }
     }
 
     // GitHub Docs Observation
@@ -257,8 +271,19 @@ export class Jules {
       this.recordTask(`GitHub Docs: Observed ${githubInsights.length} files from Intelephense docs.`)
     }
 
+    // iCloud Knowledge Observation
+    console.log('☁️ [Jules] Initiating iCloud Knowledge Scan...')
+    const { icloudObserver } = await import('./services/icloud_observer')
+    const ingestedICloud = await icloudObserver.scan()
+    if (ingestedICloud.length > 0) {
+      this.recordTask(`iCloud: Ingested ${ingestedICloud.length} new files.`)
+    }
+
     await this.syncCollaboration()
     await this.generateConsolidatedReport()
+
+    const { syncToICloud } = await import('./services/icloud')
+    await syncToICloud()
 
     await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
     this.memory.lastOptimization = new Date().toISOString()
@@ -291,13 +316,27 @@ export class Jules {
     report += `## 🧠 Cognitive State\n`
     report += `- **Architectural Proposals:** ${insights.ideas.length}\n`
     report += `- **Predictive Refactors:** ${insights.proposals.length}\n`
-    report += `- **Active Caching Profiles:** ${insights.caching.registrySize}\n\n`
+    report += `- **Active Caching Profiles:** ${insights.caching.registrySize}\n`
+
+    // Phase 12: Integrated Service Insights
+    try {
+      const { getAutonomousPerformanceAuditorData } = await import('./services/autonomous_performance_auditor')
+      const perfData = await getAutonomousPerformanceAuditorData()
+      report += `- **Performance Auditor:** ${perfData.status} (Last run: ${perfData.lastRun})\n`
+
+      const { getAutonomousDiscoveryEngineData } = await import('./services/autonomous_discovery_engine')
+      const discoveryData = await getAutonomousDiscoveryEngineData()
+      report += `- **Discovery Engine:** ${discoveryData.status} (Last run: ${discoveryData.lastRun})\n`
+    } catch (e) {
+      console.warn('⚠️ [Jules] Failed to fetch extended service insights.')
+    }
+    report += `\n`
 
     report += `## 🤝 Collaboration & Stakeholders\n`
     if (fs.existsSync(path.join(process.cwd(), 'autonomous_state.json'))) {
       const state = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'autonomous_state.json'), 'utf8'))
       state.stakeholders.forEach((s: any) => {
-        report += `- **${s.name}** (${s.role}) <${s.email}>\n`
+        report += `- **${s.role}** <${s.email}>\n`
       })
     } else {
       report += `_No collaboration state found._\n`
@@ -316,23 +355,75 @@ export class Jules {
     this.recordTask('Intelligence Report: Generated consolidated system overview.')
   }
 
-  public async scanAllBranches() {
+  public async scanAllBranches(raw: boolean = false) {
     console.log('🌿 [Jules] Scanning all project branches for knowledge...')
-    const { execSync } = await import('child_process')
     try {
-      const branchInfo = execSync('git branch -a --list').toString().trim()
-      const branches = branchInfo.split('\n').map(b => b.trim())
+      const { stdout: branchInfoRaw } = await execFileAsync('git', ['branch', '-a', '--list'])
+      const branchInfo = branchInfoRaw.trim()
+      if (!branchInfo) return raw ? [] : '## 🌿 Branch Intelligence\nNo branches found.\n'
+
+      const branchNames = branchInfo.split('\n').map(b => b.trim().replace(/^\* /, ''))
+
+      const branches = await Promise.all(branchNames.map(async name => {
+        try {
+          const cleanName = name.replace(/.* -> /, '');
+          const { stdout: lastCommit } = await execFileAsync('git', ['log', '-1', '--format=%s|%ar', cleanName])
+          const [lastMessage, lastSeen] = lastCommit.trim().split('|')
+
+          let changedFiles: string[] = []
+          if (raw) {
+            try {
+              // Attempt to get changed files relative to main (top 50 to avoid overhead)
+              const { stdout } = await execFileAsync('sh', ['-c', `git diff --name-only main...${cleanName} 2>/dev/null | head -n 50`])
+              changedFiles = stdout.trim().split('\n').filter(Boolean)
+            } catch (e) {
+              try {
+                // Fallback to last commit changes
+                const { stdout } = await execFileAsync('sh', ['-c', `git show --name-only --format="" ${cleanName} 2>/dev/null | head -n 50`])
+                changedFiles = stdout.trim().split('\n').filter(Boolean)
+              } catch (ee) {}
+            }
+          }
+
+          let category = 'other'
+          if (name.includes('feat/')) category = 'feature'
+          else if (name.includes('fix/')) category = 'fix'
+          else if (name.includes('sentinel/')) category = 'security'
+          else if (name.includes('palette/')) category = 'ux'
+          else if (name.includes('bolt/')) category = 'performance'
+          else if (name.includes('/')) category = name.split('/')[0]
+
+          return {
+            name,
+            lastMessage: lastMessage || 'N/A',
+            lastSeen: lastSeen || 'N/A',
+            category,
+            domain: 'General',
+            knowledge: '',
+            results: lastMessage ? `Commit: ${lastMessage}` : 'N/A',
+            changedFiles
+          }
+        } catch (e) {
+          return {
+            name,
+            lastMessage: 'N/A',
+            lastSeen: 'N/A',
+            category: 'other',
+            domain: 'General',
+            knowledge: '',
+            results: 'N/A',
+            changedFiles: []
+          }
+        }
+      }))
+
+      if (raw) return branches
 
       let summary = `## 🌿 Branch Intelligence\n`
       summary += `Found ${branches.length} branches in the repository.\n\n`
 
-      branches.slice(0, 10).forEach(branch => {
-        try {
-          const lastCommit = execSync(`git log -1 --format="%s (%ar)" ${branch.replace('* ', '')}`).toString().trim()
-          summary += `- **${branch}**: ${lastCommit}\n`
-        } catch (e) {
-          summary += `- **${branch}**: _Summary unavailable_\n`
-        }
+      branches.slice(0, 10).forEach(b => {
+        summary += `- **${b.name}**: ${b.lastMessage} (*${b.lastSeen}*)\n`
       })
 
       if (branches.length > 10) {
@@ -342,8 +433,8 @@ export class Jules {
       this.recordTask(`Branch Scan: Analyzed ${branches.length} branches for cross-project context.`)
       return summary
     } catch (e) {
-      console.warn('⚠️ [Jules] Branch scan failed.')
-      return '## 🌿 Branch Intelligence\n_Branch scan failed or Git not available._\n'
+      console.warn('⚠️ [Jules] Branch scan failed:', e)
+      return raw ? [] : '## 🌿 Branch Intelligence\n_Branch scan failed or Git not available._\n'
     }
   }
 }

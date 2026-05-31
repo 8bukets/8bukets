@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { z } from 'zod'
 import { autonomousFetch } from '@/antigravity/core'
-import { checkDockerHealth } from './docker'
+import { isDockerHealthy as checkDockerHealth } from './docker'
 import { getLatestBuildStatus } from './jenkins'
 import { dispatchExecutiveBriefing } from './notification'
 
@@ -37,30 +37,31 @@ export async function getMissionMetadata(): Promise<MissionMetadata> {
 
     const content = await fs.promises.readFile(MISSION_PATH, 'utf8')
 
-    const missionStatementMatch = content.match(/## Mission Statement\n([\s\S]*?)\n##/)
-    const missionStatement = missionStatementMatch ? missionStatementMatch[1].trim() : 'Autonomous Evolution'
+    const missionStatementMatch = content.match(/#(?:# Mission Statement| Antigravity Mission)\n([\s\S]*?)(\n##|$)/)
+    let missionStatement = missionStatementMatch ? missionStatementMatch[1].trim() : 'Autonomous Evolution'
+    if (!missionStatement) missionStatement = 'Autonomous Evolution'
 
     const stakeholders: Stakeholder[] = []
-    const stakeholderSection = content.match(/## Stakeholders\n([\s\S]*?)\n##/)
+    const stakeholderSection = content.match(/## Stakeholders\n([\s\S]*?)(\n##|$)/)
     if (stakeholderSection) {
       const lines = stakeholderSection[1].trim().split('\n')
       lines.forEach(line => {
-        const parts = line.split(':')
-        if (parts.length === 2) {
+        const parts = line.match(/-\s*(.*?)\s*<(.*?)>/)
+        if (parts && parts.length === 3) {
           stakeholders.push({
-            role: parts[0].replace('-', '').trim(),
-            email: parts[1].trim()
+            role: parts[1].trim(),
+            email: parts[2].trim()
           })
         }
       })
     }
 
     const goals: string[] = []
-    const goalsSection = content.match(/## Strategic Goals\n([\s\S]*)/)
+    const goalsSection = content.match(/## (?:Strategic Goals|Goals)\n([\s\S]*?)(\n##|$)/)
     if (goalsSection) {
       const lines = goalsSection[1].trim().split('\n')
       lines.forEach(line => {
-        const goal = line.replace(/^\d+\.\s*/, '').trim()
+        const goal = line.replace(/^(?:\d+\.|\-)\s*/, '').trim()
         if (goal) goals.push(goal)
       })
     }
@@ -110,7 +111,7 @@ ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
   const highIntensitySynergies = state.intelligence.relationshipMap.synergies?.filter((s: any) => s.intensity === 'High') || []
   const criticalActions = state.intelligence.relationshipMap.collaborationRecommendations?.filter((r: any) => r.priority === 'Critical') || []
 
-  const synergyAlert = highIntensitySynergies.length > 0
+  const synergyAlert = highIntensitySynergies.length > 0 || criticalActions.length > 0
     ? `⚠️ CRITICAL: ${highIntensitySynergies.length} High-Intensity synergies requiring coordination.`
     : 'System synergy is optimal.'
 
@@ -128,7 +129,11 @@ ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
     .map((r: any) => `- RESULT: ${r.name} -> ${r.result}`)
     .join('\n')
 
-  const detailedBriefing = `--- STRATEGIC SYNERGY ---\n${synergySummary}\n\n--- REQUIRED COORDINATION ---\n${recommendations}\n\n--- KEY RESULTS ---\n${branchSummary}`
+  const { getStakeholderDirectives, generateActionableBriefing } = await import('./communication')
+  const directives = await getStakeholderDirectives()
+  const actionableBriefing = await generateActionableBriefing(state, directives)
+
+  const detailedBriefing = `--- STRATEGIC SYNERGY ---\n${synergySummary}\n\n--- REQUIRED COORDINATION ---\n${recommendations}\n\n--- KEY RESULTS ---\n${branchSummary}\n\n--- ACTIONABLE INSIGHTS ---\n${actionableBriefing}`
 
   await dispatchExecutiveBriefing(
     `${synergyAlert} Posture: ${state.docker.status}. Analyzed ${state.intelligence.branches} branches.`,
@@ -290,7 +295,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
         action: `Consolidate effort on '${resource}'`,
         resource,
         branches: synergyBranchNames,
-        rationale: `${synergyBranchNames.length} branches are concurrently modifying the same resource. ${primaryStakeholders.length > 0 ? `Coordination required between: ${primaryStakeholders.join(', ')}.` : ''}`
+        rationale: `${synergyBranchNames.length} branches are concurrently modifying '${resource}'. This indicates high developmental contention. ${primaryStakeholders.length > 0 ? `Urgent coordination required between: ${primaryStakeholders.join(', ')}.` : 'Strategic alignment recommended across independent teams.'}`
       })
 
       console.warn(`🤝 [Collaboration] Synergy Detected: ${synergyBranchNames.length} branches working on ${resource}.`)
@@ -313,7 +318,14 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
 export async function syncCollaborationState(branchIntelligence?: any[]) {
   console.log('🔄 [Collaboration] Synchronizing autonomous state...')
   const metadata = await getMissionMetadata()
-  const dockerHealth = await checkDockerHealth()
+
+  const dockerHealthy = await checkDockerHealth()
+  const dockerContainers = await (await import('./docker')).getDockerStatus()
+  const docker = {
+    status: dockerHealthy ? 'optimal' : 'degraded',
+    containerCount: dockerContainers.length
+  }
+
   const jenkinsStatus = await getLatestBuildStatus()
   const statePath = path.join(process.cwd(), 'autonomous_state.json')
 
@@ -341,13 +353,18 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
   const neuralPulse = await broadcastPulse()
   const relayState = await getRelayState()
 
+  // Phase 12: Integrate Stakeholder Directives
+  const { getStakeholderDirectives } = await import('./communication')
+  const directives = await getStakeholderDirectives()
+
   await mergeBranchInsights(branches)
 
   const newState = {
     ...currentState,
     mission: metadata.missionStatement,
     stakeholders: metadata.stakeholders,
-    docker: dockerHealth,
+    directives,
+    docker,
     jenkins: jenkinsStatus,
     intelligence: {
       branches: branches.length,
@@ -374,8 +391,10 @@ export async function mergeBranchInsights(branches: any[]) {
   }
 
   const relevantBranches = branches.filter(b => {
-    // Only include branches with meaningful knowledge or results
-    if (!(b.knowledge || (b.results && b.results !== b.lastMessage && b.results !== 'N/A'))) {
+    // Phase 12: Broadened filter to include more meaningful results
+    const hasMeaningfulResult = b.results && b.results !== 'N/A' && b.results.length > 10;
+
+    if (!(b.knowledge || hasMeaningfulResult)) {
       return false;
     }
 

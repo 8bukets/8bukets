@@ -28,6 +28,15 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
+  // Gap Analysis 20: Autonomous Neural Cache Bridge
+  if (!files.some(f => f.includes('neural_cache_bridge'))) {
+    ideas.push({
+      feature: 'Autonomous Neural Cache Bridge',
+      rationale: 'Facilitates zero-latency state synchronization across distributed neural nodes using a predictive caching layer.',
+      complexity: 'Low'
+    })
+  }
+
   // Gap Analysis 2: Analytics Synthesis
   if (!files.some(f => f.includes('analytics'))) {
     ideas.push({
@@ -186,6 +195,24 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     ideas.push({
       feature: 'Autonomous API Documentation Service',
       rationale: 'Autonomously generates and maintains OpenAPI specifications by scanning service definitions and Zod schemas.',
+      complexity: 'Medium'
+    })
+  }
+
+  // Gap Analysis 21: Autonomous Performance Auditor
+  if (!files.some(f => f.includes('performance_auditor'))) {
+    ideas.push({
+      feature: 'Autonomous Performance Auditor',
+      rationale: 'Continuously monitors service execution times and proposes architectural optimizations to maintain Phase 12 latency targets.',
+      complexity: 'Low'
+    })
+  }
+
+  // Gap Analysis 22: Autonomous Ethics Auditor
+  if (!files.some(f => f.includes('ethics_auditor'))) {
+    ideas.push({
+      feature: 'Autonomous Ethics Auditor',
+      rationale: 'Aligns system evolution with documented ethics framework and strategic market directives from iCloud intelligence.',
       complexity: 'Medium'
     })
   }

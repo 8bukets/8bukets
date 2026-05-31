@@ -22,10 +22,9 @@ Premium Features: Rename, Code Folding, Find All Implementations, Go to Type Def
 
 async function main() {
   console.log('🚀 Starting Intelephense documentation ingestion...');
-  const insights = processContent(intelephenseDocs, 'User-Provided Documentation: Intelephense');
+  const insights = processContent(intelephenseDocs, 'User-Provided Documentation: Intelephense', 'Intelephense - PHP Language Server');
 
   // Customizing insights for better representation
-  insights.title = 'Intelephense - PHP Language Server';
   insights.description = 'High performance PHP language server adhering to LSP with premium features.';
 
   // Manually add some feature highlights as "posts"
@@ -36,7 +35,7 @@ async function main() {
     { title: 'Premium: Rename & Refactoring', link: 'https://intelephense.com/#premium' }
   ];
 
-  persistKnowledge(insights);
+  await persistKnowledge(insights);
   console.log('✨ Ingestion complete.');
 }
 

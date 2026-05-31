@@ -248,6 +248,7 @@ UX layer - djeluje dobro i zato što:
 * terminal UX je dobro dizajniran.
 To dramatično mijenja percepciju kvalitete.
 
+
 * model,
 * agent logic,
 * harness/runtime,

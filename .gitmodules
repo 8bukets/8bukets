@@ -1,0 +1,3 @@
+[submodule "hcp-packer-tutorial"]
+	path = hcp-packer-tutorial
+	url = https://github.com/hashicorp-education/learn-hcp-packer-get-started

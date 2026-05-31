@@ -81,6 +81,7 @@
       "link": "https://software-online-review.com/2026/02/17/schema/"
     }
   ],
+  "analyzedAt": "2026-05-29T01:04:03.880Z",
   "history": [
     {
       "source": "https://software-online-review.com",
@@ -89,7 +90,34 @@
     {
       "source": "https://software-online-review.com",
       "analyzedAt": "2026-05-12T15:19:06.131Z"
+    },
+    {
+      "source": "https://software-online-review.com",
+      "analyzedAt": "2026-05-28T00:55:13.100Z"
+    },
+    {
+      "source": "https://software-online-review.com",
+      "analyzedAt": "2026-05-28T00:56:12.677Z"
+    },
+    {
+      "source": "https://software-online-review.com",
+      "analyzedAt": "2026-05-28T00:56:49.482Z"
+    },
+    {
+      "source": "https://software-online-review.com",
+      "analyzedAt": "2026-05-28T00:57:41.020Z"
+    },
+    {
+      "source": "https://software-online-review.com",
+      "analyzedAt": "2026-05-28T02:10:56.429Z"
+    },
+    {
+      "source": "https://software-online-review.com",
+      "analyzedAt": "2026-05-28T02:35:21.212Z"
+    },
+    {
+      "source": "https://software-online-review.com",
+      "analyzedAt": "2026-05-29T01:04:03.880Z"
     }
-  ],
-  "analyzedAt": "2026-05-12T15:19:06.131Z"
+  ]
 }
