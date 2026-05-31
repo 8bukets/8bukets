@@ -12,6 +12,32 @@ from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 from concurrent.futures import ProcessPoolExecutor
 
+class UXFormatter(logging.Formatter):
+    EMOJIS = {
+        'Fetching': '📥',
+        'Saved': '💾',
+        'Error': '❌',
+        'Stopping': '🛑',
+        'Reached': '🏁',
+        'Page': '📄'
+    }
+
+    def format(self, record):
+        msg = super().format(record)
+        if hasattr(sys.stdout, 'isatty') and sys.stdout.isatty():
+            if record.levelno == logging.INFO:
+                msg = f"\033[96m{msg}\033[0m"  # Cyan
+            elif record.levelno == logging.WARNING:
+                msg = f"\033[93m{msg}\033[0m"  # Yellow
+            elif record.levelno == logging.ERROR:
+                msg = f"\033[91m{msg}\033[0m"  # Red
+
+        for key, emoji in self.EMOJIS.items():
+            if key in record.getMessage():
+                msg = f"{emoji} {msg}"
+                break
+        return msg
+
 # Configure logging
 class ColorFormatter(logging.Formatter):
     grey = "\x1b[38;20m"
