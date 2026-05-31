@@ -1,0 +1,761 @@
+# CONSOLIDATED INTELLIGENCE REPORT
+
+*Generated: 2026-05-31T03:37:23.597Z*
+
+## 📋 Executive Summary
+- **System Posture:** ⚠️ DEGRADED
+- **Active Synergy:** 2271 branches analyzed across multiple domains.
+- **Mission Alignment:** 3 strategic goals tracked.
+
+## 🎯 Mission Statement
+> Autonomous Evolution
+
+## 🏥 System Sovereignty
+- **MongoDB:** error
+- **Supabase:** connected
+- **Total Branches:** 2271
+
+## 🎯 Active Stakeholder Directives
+- **[High]** Maintain 99.9% system uptime
+- **[Medium]** Consolidate all branch knowledge daily
+
+## 🚀 Actionable Intelligence
+### 🎯 Active Stakeholder Directives
+- **[High]** Maintain 99.9% system uptime
+- **[Medium]** Consolidate all branch knowledge daily
+
+### 🚀 System Actions Required
+- [CRITICAL] Investigate Docker node degradation.
+
+
+## 🌿 Branch Intelligence (Recent Activity)
+- **jules-2618891744527446207-4e1649d7** [other]: Merge pull request #2273 from 8bukets/feat/intelephense-docs-integration-6696356503965723987 (*17 minutes ago*)
+- **main** [other]: Merge pull request #2273 from 8bukets/feat/intelephense-docs-integration-6696356503965723987 (*17 minutes ago*)
+- **remotes/origin/HEAD -> origin/jules/scraper-markposition-17752547678215960211** [remotes]: Merge pull request #2263 from 8bukets/ingest-remote-subagents-13626091139436294036 (*14 hours ago*)
+- **remotes/origin/add-a2a-remote-agent-152042865285525971** [remotes]: feat: add generic A2A remote agent configuration (*7 days ago*)
+- **remotes/origin/add-acp-integration-docs-10087323336683703862** [remotes]: docs: add ACP integration guide for Docker Agent (*11 days ago*)
+- **remotes/origin/add-chief-ai-officer-agent-9719417263665099785** [remotes]: feat: inject Chief AI Officer tasks into Jules memory (*10 days ago*)
+- **remotes/origin/add-compile-definition-17628200376543609981** [remotes]: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-compile-definition-17628200376543609981 (*3 weeks ago*)
+- **remotes/origin/add-compile-definition-6604126612521959588** [remotes]: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-compile-definition (Resolved conflicts by removing bytecode and data files, favoring PR content) (*3 days ago*)
+- **remotes/origin/add-compile-definition-8931819634976410807** [remotes]: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-compile-definition-8931819634976410807 (*3 weeks ago*)
+- **remotes/origin/add-docker-agent-model-docs-997437020929679972** [remotes]: docs: add docker agent model providers documentation (*11 days ago*)
+
+## 🛠️ Cognitive State
+- **Pending Work Orders:** 0
+  - No pending orders. System is optimal.
+
+## 🌌 Global Neural Network
+- **Cognitive Origin:** `development`
+- **Neural Health:** ⚠️ DEGRADED
+- **Volatility Index:** 0 active cognitive tags.
+
+## 🛰️ Omni-Presence Relay
+- **Environment:** `development` (Intensity: 85%)
+  - *Active Views:* Command Center, Store
+- **Environment:** `production` (Intensity: 40%)
+  - *Active Views:* Analytics, Explorer
+
+## 🤝 Merged Ecosystem Insights
+Synergy achieved across 2271 branches. Detailed knowledge and results consolidated from specialized agents.
+
+- No new specialized insights to merge at this time.
+
+## 🗺️ Relationship Map
+### Goal Alignment
+- **Goal:** Achieve Singularity Orchestration.
+  - *Branches:* remotes/origin/feat/autonomous-multi-ci-workflow-creation-13184263401868233273, remotes/origin/feat/autonomous-workflow-creation-13764436247269423073, remotes/origin/integrate-jenkins-pipeline-generation-14117303396069153360
+- **Goal:** Maintain Zero-Touch Autonomous Operations.
+  - *Branches:* remotes/origin/add-gitlab-runner-service-1151466855069035440, remotes/origin/add-malubeach-scraper-16704333902164650708, remotes/origin/add-mysql-agent-12534386317238704274, remotes/origin/automate-markposition-knowledge-merge-14646945117315419790, remotes/origin/autonomous-agents-framework-90146205652415261, remotes/origin/autonomous-cloud-integration-v2-7175106802837350237, remotes/origin/autonomous-cloud-organism-8050182996160797424, remotes/origin/autonomous-creation-cycle-1075943793736292428, remotes/origin/autonomous-creation-evolution-14168201882249018244, remotes/origin/autonomous-daily-sync-refinement-17898063665932042144, remotes/origin/autonomous-daily-work-fix-recursion-and-streamline-17917200239377968784, remotes/origin/autonomous-engine-and-work-orders-5472523483534806540, remotes/origin/autonomous-loop-enhancement-4557411631469647525, remotes/origin/autonomous-workflow-creation-17803793083721136421, remotes/origin/bolt-optimize-db-connection-12196506237305672986, remotes/origin/bolt-perf-lxml-17997966610705320667, remotes/origin/bolt-performance-soupstrainer-14059433622013418020, remotes/origin/bolt-regex-optimization-12519421487946893253, remotes/origin/bolt-scraper-optimization-14139347642198043635, remotes/origin/bolt-soup-strainer-optimization-8380713953647872097, remotes/origin/chore-connect-docker-and-collaborate-12371415653107131827, remotes/origin/chore/docker-collaboration-sync-9465155386456086135, remotes/origin/cloud-autonomous-integration-17870893235290624845, remotes/origin/cloud-autonomous-stabilization-11787002344957414636, remotes/origin/cloud-simulation-autonomous-presence-9337570099349357215, remotes/origin/codex/software-review-platform-starter, remotes/origin/feat-macbook-cloud-simulation-5272995196293351855, remotes/origin/feat/autonomous-cloud-continuity-7259514487637520921, remotes/origin/feat/autonomous-cloud-convergence-phase-12-11379028617689834826, remotes/origin/feat/autonomous-cloud-evolution-16547296923606318765, remotes/origin/feat/autonomous-cloud-evolution-2894233982958127060, remotes/origin/feat/autonomous-cloud-evolution-7110023434295372001, remotes/origin/feat/autonomous-cloud-failover-13782442138819724713, remotes/origin/feat/autonomous-cloud-knowledge-consolidation-6778083691317646306, remotes/origin/feat/autonomous-cloud-merge-bypass-8712146839008626317, remotes/origin/feat/autonomous-cloud-presence-13349070200456458168, remotes/origin/feat/autonomous-cloud-presence-978332573715716812, remotes/origin/feat/autonomous-cloud-presence-enhancement-11813668786867103175, remotes/origin/feat/autonomous-cloud-presence-v12-14478074314535541001, remotes/origin/feat/autonomous-cloud-sovereignty-10617479099026703774, remotes/origin/feat/autonomous-cloud-sovereignty-9356824831657033971, remotes/origin/feat/autonomous-cloud-workflow-agent-17352121164725625008, remotes/origin/feat/autonomous-creation-cycle-10141862539312644533, remotes/origin/feat/autonomous-creation-cycle-10567644799753050340, remotes/origin/feat/autonomous-creation-cycle-14040463371825265667, remotes/origin/feat/autonomous-creation-cycle-2519215097742916370, remotes/origin/feat/autonomous-creation-cycle-5845832032656471987, remotes/origin/feat/autonomous-creation-cycle-856121647264189672, remotes/origin/feat/autonomous-creation-cycle-8889704769332571568, remotes/origin/feat/autonomous-creation-cycle-alignment-17511680594965504532, remotes/origin/feat/autonomous-creation-cycle-components-16091962715675237550, remotes/origin/feat/autonomous-creation-cycle-stabilization-15042891493316655880, remotes/origin/feat/autonomous-creation-engine-2254624505132207048, remotes/origin/feat/autonomous-creation-engine-4025311903308148897, remotes/origin/feat/autonomous-creation-engine-8264207274703386634, remotes/origin/feat/autonomous-creation-evolution-15095668826431318009, remotes/origin/feat/autonomous-creation-evolution-8400947059595205490, remotes/origin/feat/autonomous-creation-evolution-9797261657817492019, remotes/origin/feat/autonomous-creation-execution-cycle-15305595999665058256, remotes/origin/feat/autonomous-creation-ignition-12654712675481574533, remotes/origin/feat/autonomous-creation-ignition-8279236901022115183, remotes/origin/feat/autonomous-creation-order-12052078248727379444, remotes/origin/feat/autonomous-creation-order-15598638641975305660, remotes/origin/feat/autonomous-creation-system-10495689118004789433, remotes/origin/feat/autonomous-creation-workflow-3405864056735781942, remotes/origin/feat/autonomous-creation-workflow-3510228137813384837, remotes/origin/feat/autonomous-daily-evolution-16799344263411811050, remotes/origin/feat/autonomous-daily-license-knowledge-sync-10372390239614697679, remotes/origin/feat/autonomous-daily-sync-icloud-2931573862557497008, remotes/origin/feat/autonomous-daily-sync-refactor-11777205157744306714, remotes/origin/feat/autonomous-evolution-engine-improvements-9180002343123851576, remotes/origin/feat/autonomous-knowledge-integration-17955218427957192278, remotes/origin/feat/autonomous-knowledge-merge-integration-7336376174653750666, remotes/origin/feat/autonomous-knowledge-refinement-16335548248808539628, remotes/origin/feat/autonomous-multi-ci-workflow-creation-13184263401868233273, remotes/origin/feat/autonomous-protocol-jules-16130780090107402276, remotes/origin/feat/autonomous-scale-improvements-3306739590977021046, remotes/origin/feat/autonomous-sync-orch-3205070913479590018, remotes/origin/feat/autonomous-work-order-engine-4034176882068097834, remotes/origin/feat/autonomous-workflow-creation-13764436247269423073, remotes/origin/feat/autonomous-workflow-creation-2438802251754427504, remotes/origin/feat/autonomous-workflow-creation-5168172668648031949, remotes/origin/feat/caio-role-refinement-14139776390756160770, remotes/origin/feat/cloud-autonomous-evolution-4476041926243078641, remotes/origin/feat/cloud-autonomous-presence-4768792204367486255, remotes/origin/feat/cloud-autonomous-presence-7598106438601862770, remotes/origin/feat/cloud-native-autonomy-3438116551041896813, remotes/origin/feat/cloud-native-convergence-16112457665657205536, remotes/origin/feat/cloud-native-online-presence-8372655786114667910, remotes/origin/feat/cloud-simulation-intelligence-18003609215898643719, remotes/origin/feat/collaboration-intelligence-knowledge-merge-v1-1682981257800000691, remotes/origin/feat/connect-docker-collaboration-6033606454460470488, remotes/origin/feat/connect-docker-collaboration-sync-final-11700500964007561939, remotes/origin/feat/connect-docker-collaboration-sync-final-11700500964007561939-14187345688277018919, remotes/origin/feat/connect-docker-collaboration-sync-final-11700500964007561939-5613862418405546964, remotes/origin/feat/connect-docker-collaboration-sync-final-6753111079424335435, remotes/origin/feat/docker-collaboration-sync-final-11035090678408338826, remotes/origin/feat/dual-engine-autonomous-collaboration-180989571444817477, remotes/origin/feat/enhance-autonomous-cloud-presence-10530074476743667535, remotes/origin/feat/evolve-autonomous-engine-phase-12-3914839114884356859, remotes/origin/feat/full-autonomous-creation-cycle-12087260732508548696, remotes/origin/feat/full-autonomous-creation-engine-2520836336596562790, remotes/origin/feat/full-autonomous-creation-execution-17830710122661382280, remotes/origin/feat/full-autonomous-creation-execution-v2-2098058797614095194, remotes/origin/feat/full-autonomous-online-engine-13146767980189175838, remotes/origin/feat/full-cloud-autonomous-integration-16044652152122704918, remotes/origin/feat/fully-autonomous-automatic-workflow-13826864228372455189, remotes/origin/feat/fully-autonomous-automatic-workflow-15126988086375924911, remotes/origin/feat/fully-autonomous-workflow-17826823643615309371, remotes/origin/feat/gemma-4-scraper-14386039384216646408, remotes/origin/feat/icloud-sync-daily-work-3416451490970137960, remotes/origin/feat/intelephense-docs-ingestion-5058226112541762188, remotes/origin/feat/intelephense-docs-sync-14439717062784308623, remotes/origin/feat/intelephense-knowledge-consolidation-v2-11323345502320266953, remotes/origin/feat/jenkins-pipeline-17650508759045310490, remotes/origin/feat/knowledge-merge-automation-1708085777270583651, remotes/origin/feat/knowledge-merge-automation-4266785228236839027, remotes/origin/feat/macbook-cloud-simulation-verification-18070016345319943441-479083842667788180, remotes/origin/feat/react-agent-integration-8372098972397137891, remotes/origin/feat/unified-autonomous-execution-engine-12129098689674624370, remotes/origin/feat/unified-autonomous-intelligence-v2-11368535330418373877, remotes/origin/feat/unified-cloud-autonomy-6168364407996649590, remotes/origin/feat/update-autonomous-workflow-9631298294249766702, remotes/origin/feat/vercel-sandbox-agent-4324012582245511797, remotes/origin/feature/autonomous-cloud-presence-6564198224759094346, remotes/origin/feature/autonomous-cloud-simulation-presence-15239864471767221481, remotes/origin/feature/autonomous-creation-execution-5649264533760770196, remotes/origin/feature/autonomous-creation-ignition-13474937502856613693, remotes/origin/feature/autonomous-improvement-cycle-1978975673869849123, remotes/origin/feature/autonomous-sync-persistence-9865428495683171374, remotes/origin/feature/autonomous-work-order-system-2865376496549289667, remotes/origin/feature/autonomous-workflow-creation-15876066780074270466, remotes/origin/feature/autonomous-workflow-creation-9438939026043204544, remotes/origin/feature/autonomous-workflow-creation-9438939026043204544-2630848645900152425, remotes/origin/feature/autonomous-workflow-pipeline-1359283664930221721, remotes/origin/feature/backup-agent-11331906079381269962, remotes/origin/feature/cloud-autonomous-convergence-1900133257466601663, remotes/origin/feature/daily-autonomous-session-evolution-10827323028057042936, remotes/origin/feature/docker-collaboration-sync-2408669220271786015, remotes/origin/feature/game-of-logic-4165786141866980928, remotes/origin/feature/knowledge-observation-1188044699692138518, remotes/origin/feature/macbook-cloud-simulation-10813154388376629644, remotes/origin/feature/markposition-autonomous-integration-5824578537508195574, remotes/origin/feature/unified-autonomous-creation-execution-9112787488112891184, remotes/origin/fix-and-automate-autonomous-system-4910910196834454154, remotes/origin/fix-autonomous-workflow-4538855426443032551, remotes/origin/fix-autonomous-workflow-git-add-16103849688586949052, remotes/origin/fix-cloud-autonomous-presence-9827360869310750655, remotes/origin/fix/agent-memory-and-tests-14715316655293625624, remotes/origin/fix/autonomous-cloud-presence-17176660160653043958, remotes/origin/fix/autonomous-evolution-1779330683942, remotes/origin/fix/autonomous-evolution-1779334460476, remotes/origin/fix/autonomous-evolution-1779417180082, remotes/origin/fix/autonomous-evolution-1779420795460, remotes/origin/fix/autonomous-evolution-1779502182555, remotes/origin/fix/autonomous-evolution-1779620400378-8609616731264738090, remotes/origin/fix/autonomous-evolution-1779762421460, remotes/origin/fix/autonomous-evolution-1779764401136, remotes/origin/fix/autonomous-evolution-1779944023134, remotes/origin/fix/autonomous-evolution-1779958280246, remotes/origin/fix/autonomous-evolution-1779979534880, remotes/origin/fix/autonomous-evolution-cloud-presence-13859954936909571932, remotes/origin/fix/autonomous-markposition-integration-8301978892774040495, remotes/origin/fix/autonomous-system-syntax-16085505803900570829, remotes/origin/fix/docker-collaboration-sync-3245584476125900421, remotes/origin/fix/optimize-execute-creation-cycle-9988671085706556406, remotes/origin/implement-full-autonomous-automatic-workflow-12697350452626035149, remotes/origin/improve-git-sync-and-ingest-sor-6424222975070794974, remotes/origin/integrate-google-ai-knowledge-2026-14480721120706312503, remotes/origin/integrate-google-innovation-ai-knowledge-11329975251392721471, remotes/origin/integrate-google-innovation-ai-knowledge-2118271840705498457, remotes/origin/integrate-investopedia-knowledge-15544653943204418312, remotes/origin/integrate-jenkins-engine-7625191917033904459, remotes/origin/jenkins-pipeline-integration-1209487305569927216, remotes/origin/jules-13607206307106246227-38f47801, remotes/origin/jules-14816450646255710907-9a961bea, remotes/origin/jules-15373376258129096424-b615f592, remotes/origin/jules-17664332290031173343-55f5ab91, remotes/origin/jules-3377716076333327453-2d27a121, remotes/origin/jules-4843122813281068614-8b4499aa, remotes/origin/jules-5679297940668698803-4384a9af, remotes/origin/jules-autonomous-connect-sync-13567552938698989059, remotes/origin/jules-autonomous-evolution-12208946204085721942, remotes/origin/jules-autonomous-workflow-18354041674138581290, remotes/origin/jules-autonomous-workflow-creation-1089913609311419813, remotes/origin/jules-autonomous-workflow-fix-2826640413281112163, remotes/origin/jules-autonomous-workflow-unified-14967929050804960809, remotes/origin/jules-cloud-autonomy-16506302087474217798, remotes/origin/jules-continuous-presence-workflow-3144055533381791740, remotes/origin/jules-daily-autonomous-evolution-8968243163984956068, remotes/origin/jules-fix-autonomous-creation-cycle-5331330201427680768, remotes/origin/jules-full-autonomous-automatic-workflow-8311799048599272217, remotes/origin/jules-full-autonomus-workflow-8744732568350416698, remotes/origin/macbook-cloud-simulation-2285701184876173816, remotes/origin/opt-scraper-regex-6404737091544860092, remotes/origin/palette-cli-ux-5136733467430420971, remotes/origin/palette-cli-ux-improvements-8617716335041011148, remotes/origin/palette-cli-ux-summary-box-1793080287147073634, remotes/origin/palette-cli-visual-polish-8268523822408541016, remotes/origin/palette-improve-report-ux-14288341330964781354, remotes/origin/palette-report-percentages-17226232511035798370, remotes/origin/palette-ux-report-improvements-13543414258176947990, remotes/origin/palette-ux-scraper-logging-11386897257754529243, remotes/origin/sentinel-csv-injection-fix-10966589273094838978, remotes/origin/sentinel-csv-injection-fix-2894680455719942553, remotes/origin/sentinel-path-traversal-fix-12513139928667827617, remotes/origin/sentinel-path-traversal-fix-3613197660478104645, remotes/origin/test-run-and-pii-sanitization-13332227309819345167, remotes/origin/update-autonomous-workflow-to-nodejs-12950846570803253744, remotes/origin/update-scraper-target-14564535453076268184, remotes/origin/update-scraper-target-15910668004309817623, remotes/origin/update-target-url-11001924703670317262
+- **Goal:** Expand the Sovereign Fleet across all environments.
+  - *Branches:* remotes/origin/async-fluent-workflow-17630423864710655172, remotes/origin/feat/autonomous-cloud-sovereignty-10617479099026703774, remotes/origin/feat/autonomous-cloud-sovereignty-9356824831657033971, remotes/origin/feat/autonomous-multi-ci-workflow-creation-13184263401868233273, remotes/origin/feat/caio-agent-creation-11276937148352669506, remotes/origin/feat/docker-build-cloud-13144983304345154316, remotes/origin/feat/refine-caio-role-knowledge-v2-5295767818736859988, remotes/origin/feature/knowledge-merge-all-entries-11790747981998761777, remotes/origin/feature/macbook-cloud-simulation-537156202459615099, remotes/origin/fix-backend-tests-and-subagents-9232679682193337097, remotes/origin/fix/autonomous-evolution-1779502182555, remotes/origin/implement-ai-agents-knowledge-11176623184876779780, remotes/origin/jules-cloud-simulation-enforcement-7338891043576217515, remotes/origin/jules-cloud-workflow-agent-9594836607216672043, remotes/origin/jules/improve-react-workflow-orchestration-10305698287333015349, remotes/origin/update-subagents-knowledge-6325422281065488321
+
+### Stakeholder Engagement
+- **Filip Keser (Founder)** (filip@example.com)
+  - *Active Projects:* remotes/origin/add-filip-keser-license-9070216148560290832
+- **Jules (Lead Architect)** (jules@antigravity.ai)
+  - *Active Projects:* jules-2618891744527446207-4e1649d7, remotes/origin/HEAD -> origin/jules/scraper-markposition-17752547678215960211, remotes/origin/add-jules-cli-7658708591293792322, remotes/origin/feat/autonomous-protocol-jules-16130780090107402276, remotes/origin/feat/jules-tools-documentation-3709224248115032248, remotes/origin/jules-1027089695129073368-c49a1c11, remotes/origin/jules-10724586028665085971-3ad9c277, remotes/origin/jules-10786450698186069009-a6894be5, remotes/origin/jules-10804936454534876603-52aca57c, remotes/origin/jules-10805447442179148911-1d117cf3, remotes/origin/jules-11023925826679396999-efd664fa, remotes/origin/jules-1103377942034451673-51f864ca, remotes/origin/jules-11082628370387662325-cceae0c4, remotes/origin/jules-11488447269521141033-d797466e, remotes/origin/jules-1164978700782097591-599a1052, remotes/origin/jules-11867509925832320780-8aa8894a, remotes/origin/jules-11912267709594997729-d10b0e1f, remotes/origin/jules-12160844108883332984-433a6b56, remotes/origin/jules-12457892104228508063-41c0c28d, remotes/origin/jules-128426962084555676-bc641743, remotes/origin/jules-13052721785252149852-027ffae0, remotes/origin/jules-13238206488982251887-d6084712, remotes/origin/jules-13431006678473017081-2cf66aa8, remotes/origin/jules-13607206307106246227-38f47801, remotes/origin/jules-13703867818161648472-ca00df1e, remotes/origin/jules-1401381832535268992-101c53a9, remotes/origin/jules-14402645048061780023-73b2e4f9, remotes/origin/jules-14816450646255710907-9a961bea, remotes/origin/jules-14846758043150100113-f0cfbc39, remotes/origin/jules-15004287550758535025-a71549d8, remotes/origin/jules-15373376258129096424-b615f592, remotes/origin/jules-15643813269620827017-18b637fd, remotes/origin/jules-15669541233529701765-e7b02c45, remotes/origin/jules-16125195344274130564-4d22cb5e, remotes/origin/jules-16739887525044798643-c54f1fa3, remotes/origin/jules-16746668095937525271-5d5787ff, remotes/origin/jules-16888796621400029054-460e13c4, remotes/origin/jules-1717717407806782090-cbdd5077, remotes/origin/jules-17345361020910170827-8e192329, remotes/origin/jules-17430343990571925541-c81c147a, remotes/origin/jules-17664332290031173343-55f5ab91, remotes/origin/jules-18406338226598714071-aab43e45, remotes/origin/jules-2331529788625810491-30fe029d, remotes/origin/jules-269848640437748724-d6177096, remotes/origin/jules-2767932536649645053-195aa658, remotes/origin/jules-2876054462022588492-84e7dde1, remotes/origin/jules-2952753656715436592-50f1624f, remotes/origin/jules-3284237235346634220-17de23f1, remotes/origin/jules-3377716076333327453-2d27a121, remotes/origin/jules-3444915640748353694-63419224, remotes/origin/jules-361744050208613117-0f82961f, remotes/origin/jules-3816100636150667016-130985d0, remotes/origin/jules-4102353982491655498-fda2bbfe, remotes/origin/jules-4230806492568327711-dd0d7dbe, remotes/origin/jules-4843122813281068614-8b4499aa, remotes/origin/jules-5125461103553111919-d5f7a47b, remotes/origin/jules-5559433138773811985-39975caf, remotes/origin/jules-5565625516958485993-49059093, remotes/origin/jules-5679297940668698803-4384a9af, remotes/origin/jules-6528044095388834739-5a6c8bcf, remotes/origin/jules-7690709006081030781-1ea88831, remotes/origin/jules-8197540570479854725-c23a5090, remotes/origin/jules-8471382387327462147-5395dec8, remotes/origin/jules-add-gemini-remote-agent-12873027587560108654, remotes/origin/jules-ads-knowledge-ingestion-14603073081341889171, remotes/origin/jules-agent-architecture-ingestion-315896060065751771, remotes/origin/jules-ai-agent-knowledge-merge-15121321797956756234, remotes/origin/jules-arcjet-integration-16980338037533745889, remotes/origin/jules-autonomous-connect-sync-13567552938698989059, remotes/origin/jules-autonomous-evolution-12208946204085721942, remotes/origin/jules-autonomous-workflow-18354041674138581290, remotes/origin/jules-autonomous-workflow-creation-1089913609311419813, remotes/origin/jules-autonomous-workflow-fix-2826640413281112163, remotes/origin/jules-autonomous-workflow-unified-14967929050804960809, remotes/origin/jules-cloud-autonomy-16506302087474217798, remotes/origin/jules-cloud-simulation-enforcement-7338891043576217515, remotes/origin/jules-cloud-workflow-agent-9594836607216672043, remotes/origin/jules-cloud-workflow-agent-enhancement-4497894335591972427, remotes/origin/jules-cloud-workflow-tolerance-17354439472694641412, remotes/origin/jules-compile-knowledge-2707648609195220904, remotes/origin/jules-continuous-presence-workflow-3144055533381791740, remotes/origin/jules-daily-autonomous-evolution-8968243163984956068, remotes/origin/jules-download-cli-page-4874267122039212944, remotes/origin/jules-duo-planner-agent-url-fix-5677968275200464330, remotes/origin/jules-feature-integrate-knowledge-merge-9200679916314149754, remotes/origin/jules-fix-autonomous-creation-cycle-5331330201427680768, remotes/origin/jules-fix-knowledge-integration-cleanup-10144234766340686184, remotes/origin/jules-fix-oracle-scraper-schema-6080803583651507344, remotes/origin/jules-fix-subagent-prompts-16967744904311493464, remotes/origin/jules-full-autonomous-automatic-workflow-8311799048599272217, remotes/origin/jules-full-autonomus-workflow-8744732568350416698, remotes/origin/jules-gitlab-ci-setup-10531506072496288006, remotes/origin/jules-gitlab-ci-tutorial-10758887820992568383, remotes/origin/jules-gitlab-ci-tutorial-5613378872543284671, remotes/origin/jules-gitlab-ci-yml-3154565573179389543, remotes/origin/jules-gitlab-tutorial-ci-4111694628214868400, remotes/origin/jules-improve-knowledge-workflows-16068111765054687314, remotes/origin/jules-improve-knowledge-workflows-16068111765054687314-3907595530513115604, remotes/origin/jules-improve-knowledge-workflows-9958740170618720237, remotes/origin/jules-improve-react-agents-deploy-6633287448450705076, remotes/origin/jules-improve-workflow-and-knowledge-observer-11114380607500005512, remotes/origin/jules-ingest-ads-knowledge-7862837446767067464, remotes/origin/jules-ingest-google-ads-docs-12444511274572846717, remotes/origin/jules-ingest-hcp-knowledge-14291451140571066747, remotes/origin/jules-integrate-knowledge-merge-5016273102093085264, remotes/origin/jules-integrate-oracle-knowledge-9421136010084102746, remotes/origin/jules-integrate-signature-6068322876973646017, remotes/origin/jules-intelephense-docs-consolidation-6380568782621863083, remotes/origin/jules-investopedia-all-knowledge-14799525503188502250, remotes/origin/jules-knowledge-ads-ingestion-612535887181382298, remotes/origin/jules-knowledge-integration-compile-14557175907207924867, remotes/origin/jules-knowledge-integration-subagents-16636673178408066825, remotes/origin/jules-knowledge-merge-collaboration-3722212575858302197, remotes/origin/jules-knowledge-merge-markposition-11506824174069569507, remotes/origin/jules-knowledge-observe-improvements-9236700373896263344, remotes/origin/jules-remote-subagents-docs-1653073469927459457, remotes/origin/jules-scrape-informatic-6598290821327070927, remotes/origin/jules-security-optimizations-6605171866180417523, remotes/origin/jules-sor-workflow-improvement-8463337196227161862, remotes/origin/jules-ssh-key-setup-7319492468583803481, remotes/origin/jules-terraform-knowledge-17709827572083509678, remotes/origin/jules-update-gitlab-ci-16275426523578740483, remotes/origin/jules/add-system-patent-947552789592854459, remotes/origin/jules/compile-knowledge-integration-4875845775501523719, remotes/origin/jules/improve-react-workflow-orchestration-10305698287333015349, remotes/origin/jules/ingest-cli-creativity-9044833233025653876, remotes/origin/jules/ingest-intelephense-unified-store-3086939939732869599, remotes/origin/jules/integrate-knowledge-merge-signature-9637748484475924203, remotes/origin/jules/knowledge-merge-integration-4756532437460590133, remotes/origin/jules/scraper-intelephense-2916212763307459692, remotes/origin/jules/scraper-markposition-17752547678215960211, remotes/origin/restore-jules-tasks-17924979559343397018
+- **Sigma Bot (Operations)** (sigma@antigravity.ai)
+
+## 📦 Resource Inventory
+### Services
+- **analytics** (Active)
+- **autonomous_api_documentation** (Active)
+- **autonomous_audit** (Active)
+- **autonomous_compliance** (Active)
+- **autonomous_database_sharding** (Active)
+- **autonomous_discovery_engine** (Active)
+- **autonomous_ethics_auditor** (Active)
+- **autonomous_logging** (Active)
+- **autonomous_neural_cache_bridge** (Active)
+- **autonomous_notification** (Active)
+- **autonomous_performance_auditor** (Active)
+- **autonomous_resource_optimizer** (Active)
+- **autonomous_ux_optimization** (Active)
+- **boundary** (Active)
+- **cloud_convergence** (Active)
+- **cloud_simulation** (Active)
+- **cloud_workflow** (Active)
+- **cognitive_code_self_correction** (Active)
+- **cognitive_security** (Active)
+- **collaboration** (Active)
+- **communication** (Active)
+- **content** (Active)
+- **creation_engine** (Active)
+- **deep_cognitive_self_correction** (Active)
+- **docker** (Active)
+- **edge_to_cloud_bridge** (Active)
+- **feature_scaling_coordinator** (Active)
+- **feedback_analysis** (Active)
+- **git_provider** (Active)
+- **github_docs_observer** (Active)
+- **github_evolution** (Active)
+- **gitkraken** (Active)
+- **gitkraken_metrics** (Active)
+- **gitlab** (Active)
+- **global_neural_sync_service_(phase_12)** (Active)
+- **horizontal_fleet_orchestration** (Active)
+- **icloud** (Active)
+- **icloud_observer** (Active)
+- **intelephense_service** (Active)
+- **intelligence** (Active)
+- **jenkins** (Active)
+- **knowledge** (Active)
+- **knowledge_observer** (Active)
+- **neural** (Active)
+- **neural_performance_relay** (Active)
+- **notification** (Active)
+- **performance_monitoring** (Active)
+- **persistence** (Active)
+- **predictive_analytics_layer** (Active)
+- **presence** (Active)
+- **proactive_scalability** (Active)
+- **react** (Active)
+- **relay** (Active)
+- **sentient_orchestration** (Active)
+- **sentiment_analysis** (Active)
+- **smoke_test** (Active)
+- **stats** (Active)
+- **user** (Active)
+- **visual_neural_relay** (Active)
+- **work_order** (Active)
+
+### Automation Scripts
+- **analyze_recent_sessions** (Active)
+- **autonomous_creation_order** (Active)
+- **autonomous_evolution_task** (Active)
+- **autonomous_sync** (Active)
+- **autonomous_workflow_creation** (Active)
+- **check_cloud_simulation** (Active)
+- **cleanup_knowledge** (Active)
+- **connect_and_collaborate** (Active)
+- **consolidate_intelephense** (Active)
+- **demo_fp_pipeline** (Active)
+- **demo_work_orders** (Active)
+- **execute_creation_cycle** (Active)
+- **fix_icloud_sync** (Active)
+- **full_autonomous_ignition** (Active)
+- **gemini_explain_ai** (Active)
+- **get_prompt** (Active)
+- **ignite_creation** (Active)
+- **ingest_ads_knowledge** (Active)
+- **ingest_agent_architecture** (Active)
+- **ingest_antigravity_cli** (Active)
+- **ingest_boundary_knowledge** (Active)
+- **ingest_caio_role** (Active)
+- **ingest_forbes** (Active)
+- **ingest_gpgtools_knowledge** (Active)
+- **ingest_hcp_knowledge** (Active)
+- **ingest_hcp_packer_knowledge** (Active)
+- **ingest_intelephense** (Active)
+- **ingest_knowledge_merge** (Active)
+- **ingest_macbook_cloud_knowledge** (Active)
+- **ingest_markposition_knowledge** (Active)
+- **ingest_multi_day_agent_knowledge** (Active)
+- **ingest_software_online_review** (Active)
+- **ingest_terraform_knowledge** (Active)
+- **install_launchd** (Active)
+- **install_vault_radar** (Active)
+- **integrate_knowledge** (Active)
+- **manage_hcp_run_task** (Active)
+- **nomad_cli** (Active)
+- **parse_nomad_docs** (Active)
+- **react_orchestrator** (Active)
+- **run_hcp_packer** (Active)
+- **run_vault_radar_agent** (Active)
+- **sync_all_branches** (Active)
+- **test_gemini** (Active)
+- **test_knowledge_integration** (Active)
+- **unified_collaboration** (Active)
+- **update_caio_knowledge_surgical** (Active)
+- **update_knowledge** (Active)
+- **validate_license** (Active)
+
+### AI Agents
+- **backup_agent_prompt** (Active)
+- **base_agent** (Active)
+- **chief_ai_officer** (Active)
+- **chief_ai_officer** (Active)
+- **cloud_workflow_agent** (Active)
+- **duo_planner_agent** (Active)
+- **gitlab_security_agent** (Active)
+- **notification_agent** (Active)
+- **schemas** (Active)
+- **sync_agent** (Active)
+
+### UI Components
+- **layout** (Active)
+- **page** (Active)
+
+### Assets
+- **file** (Active)
+- **globe** (Active)
+- **next** (Active)
+- **vercel** (Active)
+- **window** (Active)
+
+### Knowledges
+- **AGENTS.md** (Ingested) - *Source: icloud://AGENTS.md*
+- **CLAUDE.md** (Ingested) - *Source: icloud://CLAUDE.md*
+- **CONSOLIDATED_INTELLIGENCE.md** (Ingested) - *Source: icloud://CONSOLIDATED_INTELLIGENCE.md*
+- **KNOWLEDGE_MERGE.md** (Ingested) - *Source: icloud://KNOWLEDGE_MERGE.md*
+- **MISSION_HANDOFF 2.md** (Ingested) - *Source: icloud://MISSION_HANDOFF 2.md*
+- **MISSION_HANDOFF.md** (Ingested) - *Source: icloud://MISSION_HANDOFF.md*
+- **README.md** (Ingested) - *Source: icloud://README.md*
+- **USAGE.md** (Ingested) - *Source: icloud://USAGE.md*
+- **project_backlog.md** (Ingested) - *Source: icloud://project_backlog.md*
+- **wilson_sonsini.md** (Ingested) - *Source: icloud://wilson_sonsini.md*
+- **software info by fk – software-online-review – Filip Keser** (Ingested) - *Source: https://software-online-review.com*
+- **(position) mRNA** (Ingested) - *Source: https://markposition.wordpress.com*
+- **Chief AI Officer (CAIO) Role** (Ingested) - *Source: user_provided_research*
+- **neural_sync_docs.md** (Ingested) - *Source: icloud-sim://neural_sync_docs.md*
+- **test_knowledge.md** (Ingested) - *Source: icloud-sim://test_knowledge.md*
+- **Understanding bidding basics - Google Ads Help** (Ingested) - *Source: https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU*
+- **Google Ads Smart Bidding - AI-Driven Bid Optimisations & Ad Spend** (Ingested) - *Source: https://business.google.com/uk/ad-tools/bidding/?hl=en*
+- **Tips & Resources for Online Advertising – Google Ads** (Ingested) - *Source: https://business.google.com/uk/resources/?hl=en*
+- **Ad Manager  |  Google for DevelopersGoogleGoogle** (Ingested) - *Source: https://developers.google.com/ad-manager?hl=en*
+- **Dynamic Ad Insertion  |  Google for DevelopersGoogleGoogle** (Ingested) - *Source: https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en*
+- **DAI Full Service API  |  Google for DevelopersGoogleGoogle** (Ingested) - *Source: https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en*
+- **DAI Pod Serving API  |  Google for DevelopersGoogleGoogle** (Ingested) - *Source: https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en*
+- **Get started  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle** (Ingested) - *Source: https://developers.google.com/ad-manager/api/start?hl=en*
+- **Resources Overview - Google Ad Manager** (Ingested) - *Source: https://admanager.google.com/home/resources/?hl=en*
+- **ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation** (Ingested) - *Source: https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en*
+- **iCloud: autonomous_strategies.md** (Ingested) - *Source: icloud://autonomous_strategies.md*
+- **2026 Market Intelligence** (Ingested) - *Source: icloud://market_intelligence.json*
+- **iCloud: neural_sync_docs.md** (Ingested) - *Source: icloud://neural_sync_docs.md*
+- **iCloud: test_knowledge.md** (Ingested) - *Source: icloud://test_knowledge.md*
+- **autonomous_strategies.md** (Ingested) - *Source: icloud-sim://autonomous_strategies.md*
+- **Google Antigravity** (Ingested) - *Source: https://antigravity.google/product/antigravity-cli*
+- **Web Insight** (Ingested) - *Source: https://software-online-review.com*
+- **iCloud: new_intel.md** (Ingested) - *Source: icloud://new_intel.md*
+- **iCloud: evolution_directives.md** (Ingested) - *Source: icloud://evolution_directives.md*
+- **Strategic Market Trends 2026** (Ingested)
+- **Intelephense Documentation** (Ingested) - *Source: https://intelephense.com/docs*
+
+### Documentations
+- **AGENTS.md** (Active)
+- **CONSOLIDATED_INTELLIGENCE.md** (Active)
+- **KNOWLEDGE_MERGE.md** (Active)
+
+### Branch Results
+- **remotes/origin/feat/add-chief-ai-officer-agent-1329096278704697703** (Ready for Merge)
+- **remotes/origin/feat/add-dry-run-and-docs-355491477019803773** (Ready for Merge)
+- **remotes/origin/feat/add-duo-planner-agent-13826965705256453185** (Ready for Merge)
+- **remotes/origin/feat/add-first-gitlab-pipeline-16997691605119051204** (Ready for Merge)
+- **remotes/origin/feat/add-subagents-docs-1971776765739377795** (Ready for Merge)
+- **remotes/origin/feat/add-vscode-intelephense-scraper-14077541109460571924** (Ready for Merge)
+- **remotes/origin/feat/agent-architecture-ingestion-8781343012191362130** (Ready for Merge)
+- **remotes/origin/feat/ai-agents-knowledge-14795660026662295366** (Ready for Merge)
+- **remotes/origin/feat/ai-agents-knowledge-15681133979794376101** (Ready for Merge)
+- **remotes/origin/feat/ai-agents-knowledge-ingestion-3432960869783854018** (Ready for Merge)
+- **remotes/origin/feat/ai-agents-knowledge-ingestion-51848187449270745** (Ready for Merge)
+- **remotes/origin/feat/ai-agents-knowledge-integration-10133877583552684442** (Ready for Merge)
+- **remotes/origin/feat/ai-agents-knowledge-integration-17962488157664900856** (Ready for Merge)
+- **remotes/origin/feat/ai-agents-knowledge-integration-3155871126605591044** (Ready for Merge)
+- **remotes/origin/feat/ai-agents-knowledge-integration-4554182407588547817** (Ready for Merge)
+- **remotes/origin/feat/ai-agents-knowledge-update-2880934032855437252** (Ready for Merge)
+- **remotes/origin/feat/ai-architecture-docs-2911584593714899836** (Ready for Merge)
+- **remotes/origin/feat/ai-sdk-streamtext-integration-3734860099537308061** (Ready for Merge)
+- **remotes/origin/feat/antigravity-cloud-evolution-3450373713332257591** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-continuity-7259514487637520921** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-convergence-phase-12-11379028617689834826** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-evolution-16547296923606318765** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-evolution-2894233982958127060** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-evolution-7110023434295372001** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-failover-13782442138819724713** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-knowledge-consolidation-6778083691317646306** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-merge-bypass-8712146839008626317** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-presence-13349070200456458168** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-presence-978332573715716812** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-presence-enhancement-11813668786867103175** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-presence-v12-14478074314535541001** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-sovereignty-10617479099026703774** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-sovereignty-9356824831657033971** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-workflow-agent-17352121164725625008** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-cycle-10141862539312644533** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-cycle-10567644799753050340** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-cycle-14040463371825265667** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-cycle-2519215097742916370** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-cycle-5845832032656471987** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-cycle-856121647264189672** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-cycle-8889704769332571568** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-cycle-alignment-17511680594965504532** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-cycle-components-16091962715675237550** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-cycle-stabilization-15042891493316655880** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-engine-2254624505132207048** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-engine-4025311903308148897** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-engine-8264207274703386634** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-evolution-15095668826431318009** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-evolution-8400947059595205490** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-evolution-9797261657817492019** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-execution-cycle-15305595999665058256** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-ignition-12654712675481574533** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-ignition-8279236901022115183** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-order-12052078248727379444** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-order-15598638641975305660** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-system-10495689118004789433** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-workflow-3405864056735781942** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-workflow-3510228137813384837** (Ready for Merge)
+- **remotes/origin/feat/autonomous-daily-evolution-16799344263411811050** (Ready for Merge)
+- **remotes/origin/feat/autonomous-daily-license-knowledge-sync-10372390239614697679** (Ready for Merge)
+- **remotes/origin/feat/autonomous-daily-sync-icloud-2931573862557497008** (Ready for Merge)
+- **remotes/origin/feat/autonomous-daily-sync-refactor-11777205157744306714** (Ready for Merge)
+- **remotes/origin/feat/autonomous-evolution-engine-improvements-9180002343123851576** (Ready for Merge)
+- **remotes/origin/feat/autonomous-knowledge-integration-17955218427957192278** (Ready for Merge)
+- **remotes/origin/feat/autonomous-knowledge-merge-integration-7336376174653750666** (Ready for Merge)
+- **remotes/origin/feat/autonomous-knowledge-refinement-16335548248808539628** (Ready for Merge)
+- **remotes/origin/feat/autonomous-multi-ci-workflow-creation-13184263401868233273** (Ready for Merge)
+- **remotes/origin/feat/autonomous-protocol-jules-16130780090107402276** (Ready for Merge)
+- **remotes/origin/feat/autonomous-scale-improvements-3306739590977021046** (Ready for Merge)
+- **remotes/origin/feat/autonomous-sync-orch-3205070913479590018** (Ready for Merge)
+- **remotes/origin/feat/autonomous-work-order-engine-4034176882068097834** (Ready for Merge)
+- **remotes/origin/feat/autonomous-workflow-creation-13764436247269423073** (Ready for Merge)
+- **remotes/origin/feat/autonomous-workflow-creation-2438802251754427504** (Ready for Merge)
+- **remotes/origin/feat/autonomous-workflow-creation-5168172668648031949** (Ready for Merge)
+- **remotes/origin/feat/boundary-integration-3444742037386565893** (Ready for Merge)
+- **remotes/origin/feat/caio-agent-creation-11276937148352669506** (Ready for Merge)
+- **remotes/origin/feat/caio-intelligence-integration-11172055964198786485** (Ready for Merge)
+- **remotes/origin/feat/caio-role-definition-2687968350619526686** (Ready for Merge)
+- **remotes/origin/feat/caio-role-documentation-939377481223590530** (Ready for Merge)
+- **remotes/origin/feat/caio-role-enhancement-5559813700767968476** (Ready for Merge)
+- **remotes/origin/feat/caio-role-grounded-documentation-v2-2060998097314917415** (Ready for Merge)
+- **remotes/origin/feat/caio-role-orchestration-enhancement-8826405201008920940** (Ready for Merge)
+- **remotes/origin/feat/caio-role-refinement-14139776390756160770** (Ready for Merge)
+- **remotes/origin/feat/chief-ai-officer-agent-16063286064953907813** (Ready for Merge)
+- **remotes/origin/feat/chief-ai-officer-agents-7425185603236409614** (Ready for Merge)
+- **remotes/origin/feat/chief-ai-officer-creation-17511905373912707701** (Ready for Merge)
+- **remotes/origin/feat/chief-ai-officer-creation-fix-15085892723513843344** (Ready for Merge)
+- **remotes/origin/feat/cloud-autonomous-evolution-4476041926243078641** (Ready for Merge)
+- **remotes/origin/feat/cloud-autonomous-presence-4768792204367486255** (Ready for Merge)
+- **remotes/origin/feat/cloud-autonomous-presence-7598106438601862770** (Ready for Merge)
+- **remotes/origin/feat/cloud-connection-sync-9636399974461911067** (Ready for Merge)
+- **remotes/origin/feat/cloud-convergence-phase-17-526028351036584856** (Ready for Merge)
+- **remotes/origin/feat/cloud-native-autonomy-13870741608362044054** (Ready for Merge)
+- **remotes/origin/feat/cloud-native-autonomy-3438116551041896813** (Ready for Merge)
+- **remotes/origin/feat/cloud-native-autonomy-presence-7653289006767349445** (Ready for Merge)
+- **remotes/origin/feat/cloud-native-convergence-16112457665657205536** (Ready for Merge)
+- **remotes/origin/feat/cloud-native-online-presence-8372655786114667910** (Ready for Merge)
+- **remotes/origin/feat/cloud-simulation-intelligence-18003609215898643719** (Ready for Merge)
+- **remotes/origin/feat/cloud-workflow-agent-proactive-logic-7308921529560854073** (Ready for Merge)
+- **remotes/origin/feat/collaboration-dashboard-13924371239853665910** (Ready for Merge)
+- **remotes/origin/feat/collaboration-intelligence-knowledge-merge-v1-1682981257800000691** (Ready for Merge)
+- **remotes/origin/feat/collaboration-synergy-analysis-9382599357384352288** (Ready for Merge)
+- **remotes/origin/feat/compile-knowledge-ingestion-4339613978296539768** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-and-collaborate-11694233426659600522** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-collaboration-10997916882350002599** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-collaboration-6033606454460470488** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-collaboration-high-fidelity-sim-12659027097554184106** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-collaboration-sync-final-11700500964007561939** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-collaboration-sync-final-11700500964007561939-14187345688277018919** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-collaboration-sync-final-11700500964007561939-5613862418405546964** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-collaboration-sync-final-11700500964007561939-5613862418405546964-revised-8145830076406452013** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-collaboration-sync-final-6753111079424335435** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-collaboration-sync-final-6753111079424335435-11457900944324227307** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-collaboration-sync-v12-15268919459233727210** (Ready for Merge)
+- **remotes/origin/feat/consolidate-intelephense-docs-v2-5901927489540456297** (Ready for Merge)
+- **remotes/origin/feat/consolidate-intelephense-docs-v2-6711603966730800844** (Ready for Merge)
+- **remotes/origin/feat/consolidated-intelligence-sync-1091614933754712837** (Ready for Merge)
+- **remotes/origin/feat/create-caio-agent-4337063691776257193** (Ready for Merge)
+- **remotes/origin/feat/custom-github-action-10612201952418849138** (Ready for Merge)
+- **remotes/origin/feat/daily-sync-resilience-12294637765009606506** (Ready for Merge)
+- **remotes/origin/feat/daily-sync-workflow-5320368611823718820** (Ready for Merge)
+- **remotes/origin/feat/decision-maker-agent-8910670838096441234** (Ready for Merge)
+- **remotes/origin/feat/deploy-react-agents-logic-12098199206590490844** (Ready for Merge)
+- **remotes/origin/feat/docker-build-cloud-13144983304345154316** (Ready for Merge)
+- **remotes/origin/feat/docker-build-cloud-integration-15193242947855086456** (Ready for Merge)
+- **remotes/origin/feat/docker-collaboration-enhancements-2442044575661287661** (Ready for Merge)
+- **remotes/origin/feat/docker-collaboration-integration-7386073686217533934** (Ready for Merge)
+- **remotes/origin/feat/docker-collaboration-integration-9536206781039101862** (Ready for Merge)
+- **remotes/origin/feat/docker-collaboration-scale-fix-12248709556243193254** (Ready for Merge)
+- **remotes/origin/feat/docker-collaboration-sync-16687311699313336221** (Ready for Merge)
+- **remotes/origin/feat/docker-collaboration-sync-231662997979975664** (Ready for Merge)
+- **remotes/origin/feat/docker-collaboration-sync-6891326808988151099** (Ready for Merge)
+- **remotes/origin/feat/docker-collaboration-sync-final-11035090678408338826** (Ready for Merge)
+- **remotes/origin/feat/document-hcp-credentials-12060712897845222769** (Ready for Merge)
+- **remotes/origin/feat/dual-engine-autonomous-collaboration-180989571444817477** (Ready for Merge)
+- **remotes/origin/feat/ecosystem-merge-collaboration-sync-v1-13937591330884389226** (Ready for Merge)
+- **remotes/origin/feat/ecosystem-sync-optimization-3894010060803274875** (Ready for Merge)
+- **remotes/origin/feat/enhance-autonomous-cloud-presence-10530074476743667535** (Ready for Merge)
+- **remotes/origin/feat/enhanced-collaboration-intelligence-16362331248901214239** (Ready for Merge)
+- **remotes/origin/feat/enhanced-collaboration-intelligence-sync-15907336332787904375** (Ready for Merge)
+- **remotes/origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326** (Ready for Merge)
+- **remotes/origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326-10745185975815563107** (Ready for Merge)
+- **remotes/origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326-10745185975815563107-revised-21447012398436571932-3380172087610971607** (Ready for Merge)
+- **remotes/origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326-10745185975815563107-revised-21447012398436571932-3380172087610971607-final-1111222233334444555566667777888899990000-6627201860355673710** (Ready for Merge)
+- **remotes/origin/feat/evolve-autonomous-engine-phase-12-3914839114884356859** (Ready for Merge)
+- **remotes/origin/feat/evolve-chief-ai-officer-agent-5969082472717140886** (Ready for Merge)
+- **remotes/origin/feat/fix-icloud-sync-10523504471527145361** (Ready for Merge)
+- **remotes/origin/feat/full-autonomous-creation-cycle-12087260732508548696** (Ready for Merge)
+- **remotes/origin/feat/full-autonomous-creation-engine-2520836336596562790** (Ready for Merge)
+- **remotes/origin/feat/full-autonomous-creation-execution-17830710122661382280** (Ready for Merge)
+- **remotes/origin/feat/full-autonomous-creation-execution-v2-2098058797614095194** (Ready for Merge)
+- **remotes/origin/feat/full-autonomous-online-engine-13146767980189175838** (Ready for Merge)
+- **remotes/origin/feat/full-cloud-autonomous-integration-16044652152122704918** (Ready for Merge)
+- **remotes/origin/feat/full-ecosystem-collaboration-sync-2223737222399285274** (Ready for Merge)
+- **remotes/origin/feat/fully-autonomous-automatic-workflow-13826864228372455189** (Ready for Merge)
+- **remotes/origin/feat/fully-autonomous-automatic-workflow-15126988086375924911** (Ready for Merge)
+- **remotes/origin/feat/fully-autonomous-workflow-17826823643615309371** (Ready for Merge)
+- **remotes/origin/feat/gemini-cli-security-hook-12046243673500680117** (Ready for Merge)
+- **remotes/origin/feat/gemini-cli-subagents-docs-8356808256042543281** (Ready for Merge)
+- **remotes/origin/feat/gemma-4-scraper-14386039384216646408** (Ready for Merge)
+- **remotes/origin/feat/git-merge-approvals-2916397739730846342** (Ready for Merge)
+- **remotes/origin/feat/gitlab-ci-docker-build-cloud-integration-15454130814432814509** (Ready for Merge)
+- **remotes/origin/feat/gitlab-ci-pipeline-15616713096718552061** (Ready for Merge)
+- **remotes/origin/feat/gitlab-ci-setup-14268875280165103242** (Ready for Merge)
+- **remotes/origin/feat/gitlab-security-agent-15511716266568375880** (Ready for Merge)
+- **remotes/origin/feat/go-genai-sdk-example-5056505739912335467** (Ready for Merge)
+- **remotes/origin/feat/go-parallel-simulation-12127722696321938947** (Ready for Merge)
+- **remotes/origin/feat/google-ads-scraper-5253922194982887918** (Ready for Merge)
+- **remotes/origin/feat/google-ai-knowledge-integration-17446113522463245373** (Ready for Merge)
+- **remotes/origin/feat/google-innovation-ai-knowledge-integration-2508984454520338148** (Ready for Merge)
+- **remotes/origin/feat/google-innovation-knowledge-3073243176804240163** (Ready for Merge)
+- **remotes/origin/feat/hcp-terraform-run-task-3528016114234953749** (Ready for Merge)
+- **remotes/origin/feat/high-scale-ecosystem-sync-5489708808675678101** (Ready for Merge)
+- **remotes/origin/feat/high-scale-react-agent-deployment-3564540097483377252** (Ready for Merge)
+- **remotes/origin/feat/highlander-subagent-14372356893109913488** (Ready for Merge)
+- **remotes/origin/feat/icloud-knowledge-integration-and-engine-improvement-2061584058297730102** (Ready for Merge)
+- **remotes/origin/feat/icloud-knowledge-integration-and-engine-improvement-460748262715860893** (Ready for Merge)
+- **remotes/origin/feat/icloud-knowledge-integration-and-engine-improvement-v2-13334952668195963162** (Ready for Merge)
+- **remotes/origin/feat/icloud-knowledge-integration-and-engine-improvement-v2-5900978067024052098** (Ready for Merge)
+- **remotes/origin/feat/icloud-knowledge-integration-and-engine-improvement-v3-7738040317614912379** (Ready for Merge)
+- **remotes/origin/feat/icloud-knowledge-integration-engine-improvement-v12-14525154319708806006** (Ready for Merge)
+- **remotes/origin/feat/icloud-knowledge-phase12-upgrade-11553884983056269678** (Ready for Merge)
+- **remotes/origin/feat/icloud-knowledge-system-improvement-9850230953244404299** (Ready for Merge)
+- **remotes/origin/feat/icloud-sync-daily-work-3416451490970137960** (Ready for Merge)
+- **remotes/origin/feat/icloud-sync-system-evolution-8651898857989200077** (Ready for Merge)
+- **remotes/origin/feat/implement-google-ai-agent-knowledge-8032750828008841906** (Ready for Merge)
+- **remotes/origin/feat/implement-google-ai-agents-knowledge-17341300705636515353** (Ready for Merge)
+- **remotes/origin/feat/improve-intelephense-ingestion-9141821199438539105** (Ready for Merge)
+- **remotes/origin/feat/improve-intelephense-knowledge-ingestion-v2-3857533015746943913** (Ready for Merge)
+- **remotes/origin/feat/improve-intelephense-knowledge-ingestion-v3-5924406336570391943** (Ready for Merge)
+- **remotes/origin/feat/improve-sor-knowledge-observation-workflow-12368605147794196208** (Ready for Merge)
+- **remotes/origin/feat/ingest-agent-architecture-terminology-6454380025085424990** (Ready for Merge)
+- **remotes/origin/feat/ingest-caio-role-4517363704390160540** (Ready for Merge)
+- **remotes/origin/feat/ingest-caio-role-knowledge-12304134703620086270** (Ready for Merge)
+- **remotes/origin/feat/ingest-caio-role-knowledge-v2-8305785302400580683** (Ready for Merge)
+- **remotes/origin/feat/ingest-gemini-cli-subagents-2252664288604789575** (Ready for Merge)
+- **remotes/origin/feat/ingest-gitlab-ci-tutorial-4208330200923391769** (Ready for Merge)
+- **remotes/origin/feat/ingest-google-ads-docs-v2-13679528452571479134** (Ready for Merge)
+- **remotes/origin/feat/ingest-google-ads-knowledge-6737559819071582346** (Ready for Merge)
+- **remotes/origin/feat/ingest-google-cloud-ai-agents-knowledge-10482240976459445252** (Ready for Merge)
+- **remotes/origin/feat/ingest-gpgtools-knowledge-5020055793248780056** (Ready for Merge)
+- **remotes/origin/feat/ingest-investopedia-10368440207233601793** (Ready for Merge)
+- **remotes/origin/feat/ingest-knowledge-merge-1247852778853905654** (Ready for Merge)
+- **remotes/origin/feat/ingest-subagents-3786532283562026658** (Ready for Merge)
+- **remotes/origin/feat/instrument-gemini-telemetry-2423728923945984767** (Ready for Merge)
+- **remotes/origin/feat/integrate-antigravity-cli-1970974784687429419** (Ready for Merge)
+- **remotes/origin/feat/integrate-google-ai-knowledge-17317066349600220724** (Ready for Merge)
+- **remotes/origin/feat/integrate-google-ai-knowledge-1914861070610569858** (Ready for Merge)
+- **remotes/origin/feat/integrate-google-ai-knowledge-7980540438595824425** (Ready for Merge)
+- **remotes/origin/feat/integrate-google-innovation-ai-knowledge-v2-1038711777020334701** (Ready for Merge)
+- **remotes/origin/feat/integrate-knowledge-merge-7649916960782275169** (Ready for Merge)
+- **remotes/origin/feat/integrate-markposition-autonomy-14681474804703419515** (Ready for Merge)
+- **remotes/origin/feat/integrate-markposition-knowledge-and-automate-merge-15099676768518099214** (Ready for Merge)
+- **remotes/origin/feat/integrate-oracle-ai-10269913553901722650** (Ready for Merge)
+- **remotes/origin/feat/integrate-oracle-ai-knowledge-17141461773939806605** (Ready for Merge)
+- **remotes/origin/feat/integrate-oracle-ai-knowledge-3394848601696333844** (Ready for Merge)
+- **remotes/origin/feat/integrate-oracle-knowledge-15758201363519659377** (Ready for Merge)
+- **remotes/origin/feat/integrate-react-knowledge-1014096584960652610** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-consolidation-14111284160958463433** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-consolidation-v2-13428827528883240394** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-ingestion-5058226112541762188** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-ingestion-5441794929729176117** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-ingestion-v3-robust-dedup-regeneration-18438715533600734828** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-integration-15548360236186896654** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-integration-390578372691536711** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-integration-6696356503965723987** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-integration-9176181955065313741** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-sync-14439717062784308623** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-sync-6999221207327014913** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-update-5938787758015081598** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-update-v2-4092727352639534773** (Ready for Merge)
+- **remotes/origin/feat/intelephense-knowledge-consolidation-v2-11323345502320266953** (Ready for Merge)
+- **remotes/origin/feat/intelephense-knowledge-optimization-6916201581932605219** (Ready for Merge)
+- **remotes/origin/feat/investopedia-ingestion-10809640050459136774** (Ready for Merge)
+- **remotes/origin/feat/investopedia-ingestion-17078894864582667817** (Ready for Merge)
+- **remotes/origin/feat/jenkins-integration-8889480307913922372** (Ready for Merge)
+- **remotes/origin/feat/jenkins-pipeline-17650508759045310490** (Ready for Merge)
+- **remotes/origin/feat/jules-tools-documentation-3709224248115032248** (Ready for Merge)
+- **remotes/origin/feat/knowledge-ingestion-intelephense-9344036021876416224** (Ready for Merge)
+- **remotes/origin/feat/knowledge-merge-automation-1708085777270583651** (Ready for Merge)
+- **remotes/origin/feat/knowledge-merge-automation-4266785228236839027** (Ready for Merge)
+- **remotes/origin/feat/knowledge-observe-integration-17136884743066058279** (Ready for Merge)
+- **remotes/origin/feat/macbook-cloud-presence-simulation-16607574531277439639** (Ready for Merge)
+- **remotes/origin/feat/macbook-cloud-simulation-2306204492187680775** (Ready for Merge)
+- **remotes/origin/feat/macbook-cloud-simulation-4201425406939094947** (Ready for Merge)
+- **remotes/origin/feat/macbook-cloud-simulation-8632071559345573800** (Ready for Merge)
+- **remotes/origin/feat/macbook-cloud-simulation-knowledge-9264395958360396877** (Ready for Merge)
+- **remotes/origin/feat/macbook-cloud-simulation-verification-18070016345319943441** (Ready for Merge)
+- **remotes/origin/feat/macbook-cloud-simulation-verification-18070016345319943441-479083842667788180** (Ready for Merge)
+- **remotes/origin/feat/markposition-bridge-15977356106835229406** (Ready for Merge)
+- **remotes/origin/feat/markposition-knowledge-integration-v2-1630875147127639221** (Ready for Merge)
+- **remotes/origin/feat/markposition-knowledge-merge-automation-4258587857979472884** (Ready for Merge)
+- **remotes/origin/feat/mcp-docker-agent-config-10215645950897788310** (Ready for Merge)
+- **remotes/origin/feat/monetization-stripe-supabase-475749064302525361** (Ready for Merge)
+- **remotes/origin/feat/mongodb-atlas-migration-4131498074566710377** (Ready for Merge)
+- **remotes/origin/feat/netlify-deploy-button-8112490364183212293** (Ready for Merge)
+- **remotes/origin/feat/netlify-supabase-extension-config-2964669740529404630** (Ready for Merge)
+- **remotes/origin/feat/nextjs-supabase-mongodb-ecosystem-8833511503168317980** (Ready for Merge)
+- **remotes/origin/feat/observe-knowledge-14086295564930272800** (Ready for Merge)
+- **remotes/origin/feat/opentelemetry-scraper-16848949473178496467** (Ready for Merge)
+- **remotes/origin/feat/oracle-ai-knowledge-integration-15680791915741879380** (Ready for Merge)
+- **remotes/origin/feat/otel-genai-semantics-11295433924323540657** (Ready for Merge)
+- **remotes/origin/feat/phase-12-cloud-convergence-and-sentient-orchestration-8137990793219294746** (Ready for Merge)
+- **remotes/origin/feat/phase-22-cloud-super-intelligence-7069863824765684745** (Ready for Merge)
+- **remotes/origin/feat/prototype-schema-2382889081635482231** (Ready for Merge)
+- **remotes/origin/feat/react-agent-deployment-improvements-4418304449912244036** (Ready for Merge)
+- **remotes/origin/feat/react-agent-deployment-logic-2660835981298946574** (Ready for Merge)
+- **remotes/origin/feat/react-agent-deployment-logic-6656436448375867525** (Ready for Merge)
+- **remotes/origin/feat/react-agent-integration-8372098972397137891** (Ready for Merge)
+- **remotes/origin/feat/react-integration-v2-8425489280318980511** (Ready for Merge)
+- **remotes/origin/feat/refine-caio-role-knowledge-v2-5295767818736859988** (Ready for Merge)
+- **remotes/origin/feat/remote-subagents-knowledge-10304987597767701842** (Ready for Merge)
+- **remotes/origin/feat/scale-remote-subagents-9068634002929713743** (Ready for Merge)
+- **remotes/origin/feat/scan-software-online-review-12068023973855912854** (Ready for Merge)
+- **remotes/origin/feat/setup-docker-ci-cd-15330021649064333459** (Ready for Merge)
+- **remotes/origin/feat/setup-npm-workspaces-gemini-cli-12181861489580932121** (Ready for Merge)
+- **remotes/origin/feat/smarter-cloud-workflow-1168853453825745042** (Ready for Merge)
+- **remotes/origin/feat/smarter-cloud-workflow-7992378765049941579** (Ready for Merge)
+- **remotes/origin/feat/sor8bukets-worker-9724254739940303207** (Ready for Merge)
+- **remotes/origin/feat/thinking-agent-graph-of-thought-8628973372365797019** (Ready for Merge)
+- **remotes/origin/feat/unified-autonomous-execution-engine-12129098689674624370** (Ready for Merge)
+- **remotes/origin/feat/unified-autonomous-intelligence-v2-11368535330418373877** (Ready for Merge)
+- **remotes/origin/feat/unified-cloud-autonomy-6168364407996649590** (Ready for Merge)
+- **remotes/origin/feat/unified-collaboration-intelligence-10789658545646187286** (Ready for Merge)
+- **remotes/origin/feat/unified-collaboration-intelligence-merge-v12-4808907432766111944** (Ready for Merge)
+- **remotes/origin/feat/unified-collaboration-intelligence-v12-3867223440127640861** (Ready for Merge)
+- **remotes/origin/feat/unified-knowledge-integration-6924488404722720860** (Ready for Merge)
+- **remotes/origin/feat/update-autonomous-workflow-9631298294249766702** (Ready for Merge)
+- **remotes/origin/feat/update-google-ads-urls-12068705340237813487** (Ready for Merge)
+- **remotes/origin/feat/update-intelephense-docs-8706527771111135696** (Ready for Merge)
+- **remotes/origin/feat/update-intelephense-docs-comprehensive-14607207959398176805** (Ready for Merge)
+- **remotes/origin/feat/update-intelephense-knowledge-16942753363135723418** (Ready for Merge)
+- **remotes/origin/feat/update-intelephense-knowledge-3532439720427266436** (Ready for Merge)
+- **remotes/origin/feat/update-intelephense-knowledge-v3-10649927759915972956** (Ready for Merge)
+- **remotes/origin/feat/vault-radar-agent-8481917393959699580** (Ready for Merge)
+- **remotes/origin/feat/vercel-sandbox-agent-4324012582245511797** (Ready for Merge)
+
+## 🧠 Knowledge Matrix
+### AGENTS.md
+- **Source:** icloud://AGENTS.md
+- **Sections:** 9
+  - *Key Topics:* Antigravity Vision & Documentation, The Vision: Autonomous Intelligence, Strategic Roadmap
+
+### CLAUDE.md
+- **Source:** icloud://CLAUDE.md
+- **Sections:** 1
+  - *Key Topics:* Introduction
+
+### CONSOLIDATED_INTELLIGENCE.md
+- **Source:** icloud://CONSOLIDATED_INTELLIGENCE.md
+- **Sections:** 34
+  - *Key Topics:* CONSOLIDATED INTELLIGENCE REPORT, 📋 Executive Summary, 🎯 Mission Statement
+
+### KNOWLEDGE_MERGE.md
+- **Source:** icloud://KNOWLEDGE_MERGE.md
+- **Sections:** 84
+  - *Key Topics:* Market Intelligence Matrix, Autonomous Observation, Ecosystem Results & Merged Knowledge (2026-05-17T03:34:52.606Z)
+
+### MISSION_HANDOFF 2.md
+- **Source:** icloud://MISSION_HANDOFF 2.md
+- **Sections:** 7
+  - *Key Topics:* 🚀 MISSION HANDOFF: ANTIGRAVITY ENTERPRISE, 1. Master System Ignition, 2. Persist Background Sovereignty
+
+### MISSION_HANDOFF.md
+- **Source:** icloud://MISSION_HANDOFF.md
+- **Sections:** 5
+  - *Key Topics:* Antigravity: Sovereign Mission Handoff (Consolidated v1.0), 🚀 24/7 Tactical Ignition, 🛡️ Sovereign Security Governance
+
+### README.md
+- **Source:** icloud://README.md
+- **Sections:** 8
+  - *Key Topics:* Introduction, Getting Started, or
+
+### USAGE.md
+- **Source:** icloud://USAGE.md
+- **Sections:** 3
+  - *Key Topics:* Configuration Instructions, 1. Supabase, 2. MongoDB
+
+### project_backlog.md
+- **Source:** icloud://project_backlog.md
+- **Sections:** 7
+  - *Key Topics:* Antigravity Ecosystem - Structured Backlog, 🚀 Epic 1: Project Stabilization and Build Recovery, 🐛 Issue 1.1: Resolve Turbopack OOM and Compilation Errors
+
+### wilson_sonsini.md
+- **Source:** icloud://wilson_sonsini.md
+- **Sections:** 4
+  - *Key Topics:* Introduction, Core Identity & Market Position, Historical Significance & Notable Clients
+
+### software info by fk – software-online-review – Filip Keser
+- **Source:** https://software-online-review.com
+- **Sections:** 372
+  - *Key Topics:* Introduction, software info by fk, Roadmap and business roadmap
+
+### (position) mRNA
+- **Source:** https://markposition.wordpress.com
+- **Sections:** 354
+  - *Key Topics:* Introduction, (position) mRNA, advertising.amazon
+
+### Chief AI Officer (CAIO) Role
+- **Source:** user_provided_research
+- **Sections:** 7
+  - *Key Topics:* Chief AI Officer (CAIO) Role Description, Core Job Description, Key Responsibilities
+
+### neural_sync_docs.md
+- **Source:** icloud-sim://neural_sync_docs.md
+- **Sections:** 2
+  - *Key Topics:* Phase 12: Global Neural Synchronization, Core Mechanisms
+
+### test_knowledge.md
+- **Source:** icloud-sim://test_knowledge.md
+- **Sections:** 1
+  - *Key Topics:* New Knowledge from iCloud
+
+### Understanding bidding basics - Google Ads Help
+- **Source:** https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU
+- **Sections:** 11
+  - *Key Topics:* Introduction, Understanding bidding basics, Focus on clicks (for Search and Display ads)
+
+### Google Ads Smart Bidding - AI-Driven Bid Optimisations & Ad Spend
+- **Source:** https://business.google.com/uk/ad-tools/bidding/?hl=en
+- **Sections:** 41
+  - *Key Topics:* Introduction, Google Ads, Merchant Center
+
+### Tips & Resources for Online Advertising – Google Ads
+- **Source:** https://business.google.com/uk/resources/?hl=en
+- **Sections:** 162
+  - *Key Topics:* Introduction, Google Ads, Merchant Center
+
+### Ad Manager  |  Google for DevelopersGoogleGoogle
+- **Source:** https://developers.google.com/ad-manager?hl=en
+- **Sections:** 10
+  - *Key Topics:* Introduction, Google Ad Manager, A set of tools to manage your Google Ad Manager accounts and campaigns.
+
+### Dynamic Ad Insertion  |  Google for DevelopersGoogleGoogle
+- **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en
+- **Sections:** 10
+  - *Key Topics:* Introduction, Google Dynamic Ad Insertion, Dynamic ad insertion (DAI)
+
+### DAI Full Service API  |  Google for DevelopersGoogleGoogle
+- **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en
+- **Sections:** 8
+  - *Key Topics:* Introduction, Google Dynamic Ad Insertion, Full service DAI
+
+### DAI Pod Serving API  |  Google for DevelopersGoogleGoogle
+- **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en
+- **Sections:** 8
+  - *Key Topics:* Introduction, Google Dynamic Ad Insertion, DAI Pod Serving
+
+### Get started  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle
+- **Source:** https://developers.google.com/ad-manager/api/start?hl=en
+- **Sections:** 16
+  - *Key Topics:* Introduction, Get started Stay organized with collections Save and categorize content based on your preferences., Page Summary
+
+### Resources Overview - Google Ad Manager
+- **Source:** https://admanager.google.com/home/resources/?hl=en
+- **Sections:** 67
+  - *Key Topics:* Introduction, Tell us about your business, Congratulations!
+
+### ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation
+- **Source:** https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en
+- **Sections:** 16
+  - *Key Topics:* Introduction, ad-manager overview (0.50.0) Stay organized with collections Save and categorize content based on your preferences., Key Reference Links
+
+### iCloud: autonomous_strategies.md
+- **Source:** icloud://autonomous_strategies.md
+- **Sections:** 2
+  - *Key Topics:* Multi-Cloud Mesh, Neural Node Balancing
+
+### 2026 Market Intelligence
+- **Source:** icloud://market_intelligence.json
+- **Sections:** 1
+  - *Key Topics:* Emerging Frontiers
+
+### iCloud: neural_sync_docs.md
+- **Source:** icloud://neural_sync_docs.md
+- **Sections:** 2
+  - *Key Topics:* Phase 12: Global Neural Synchronization, Core Mechanisms
+
+### iCloud: test_knowledge.md
+- **Source:** icloud://test_knowledge.md
+- **Sections:** 1
+  - *Key Topics:* New Knowledge from iCloud
+
+### autonomous_strategies.md
+- **Source:** icloud-sim://autonomous_strategies.md
+- **Sections:** 3
+  - *Key Topics:* Autonomous Strategies for 2026, Multi-Cloud Mesh, Neural Node Balancing
+
+### Google Antigravity
+- **Source:** https://antigravity.google/product/antigravity-cli
+- **Sections:** 0
+
+### Web Insight
+- **Source:** https://software-online-review.com
+- **Sections:** 3
+  - *Key Topics:* masthead .site-title a { color: #000000;}, masthead .site-description,, infinite-handle span button,
+
+### iCloud: new_intel.md
+- **Source:** icloud://new_intel.md
+- **Sections:** 2
+  - *Key Topics:* New Intelligence from iCloud, Autonomous Agents
+
+### iCloud: evolution_directives.md
+- **Source:** icloud://evolution_directives.md
+- **Sections:** 2
+  - *Key Topics:* Directive 1: Type Purity, Directive 2: Zero-Latency Sync
+
+### Strategic Market Trends 2026
+- **Source:** Internal
+- **Sections:** 2
+  - *Key Topics:* AI Agent Proliferation, Sovereign Cloud Networks
+
+### Intelephense Documentation
+- **Source:** https://intelephense.com/docs
+- **Sections:** 65
+  - *Key Topics:* About, Visual Studio Code, Configuration
+
+## 🏆 Results Summary
+- **jules-2618891744527446207-4e1649d7**: Commit: Merge pull request #2273 from 8bukets/feat/intelephense-docs-integration-6696356503965723987
+- **main**: Commit: Merge pull request #2273 from 8bukets/feat/intelephense-docs-integration-6696356503965723987
+- **remotes/origin/HEAD -> origin/jules/scraper-markposition-17752547678215960211**: Commit: Merge pull request #2263 from 8bukets/ingest-remote-subagents-13626091139436294036
+- **remotes/origin/add-a2a-remote-agent-152042865285525971**: Commit: feat: add generic A2A remote agent configuration
+- **remotes/origin/add-acp-integration-docs-10087323336683703862**: Commit: docs: add ACP integration guide for Docker Agent
+
+## 👥 Stakeholder Collaboration Hub
+### Filip Keser (Founder) (filip@example.com)
+- **Current Focus:** remotes/origin/add-filip-keser-license-9070216148560290832
+
+### Jules (Lead Architect) (jules@antigravity.ai)
+- **Current Focus:** jules-2618891744527446207-4e1649d7, remotes/origin/HEAD -> origin/jules/scraper-markposition-17752547678215960211, remotes/origin/add-jules-cli-7658708591293792322
+
+### Sigma Bot (Operations) (sigma@antigravity.ai)
+- **Current Focus:** Global Monitoring
+
+
+## 🚀 Prioritized Action Items
+- [CRITICAL] Restore MongoDB Atlas connectivity.
+- [LOW] Prune or merge stagnant ecosystem branches (Total: 2271).
+- [INFO] Continue autonomous knowledge ingestion for market intelligence.
+
+---
+**Collaboration Health Index:** 100% | *Phase 12 Synergy Protocol Active*

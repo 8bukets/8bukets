@@ -18,6 +18,13 @@ const notifications: Notification[] = []
  * Handles system-wide alerts for cognitive events.
  */
 export async function sendNotification(payload: Omit<Notification, 'id' | 'timestamp'>) {
+
+
+
+
+
+
+
   const newNotification: Notification = {
     ...payload,
     id: Math.random().toString(36).substr(2, 9),
@@ -37,4 +44,32 @@ export async function getNotifications(): Promise<Notification[]> {
   'use cache'
   // Use 'inventory' profile for frequent updates
   return notifications
+}
+
+export async function dispatchExecutiveBriefing(summary: string, details?: string) {
+  console.log('📢 [Notification] Dispatching executive briefing...')
+
+  const formattedDetails = details ? details.split('\n\n').map(section => {
+    if (section.startsWith('---')) {
+      return `\n${section.replace(/---/g, '').trim().toUpperCase()}\n${'='.repeat(section.length - 6)}`
+    }
+    return section
+  }).join('\n') : ''
+
+  const fullMessage = details
+    ? `🔔 EXECUTIVE BRIEFING\n\nSTATUS: ${summary}\n${formattedDetails}`
+    : `🔔 EXECUTIVE BRIEFING: ${summary}`
+
+  const briefing: Notification = {
+    id: Math.random().toString(36).substr(2, 9),
+    type: 'evolution',
+    severity: 'info',
+    message: fullMessage,
+    timestamp: new Date().toISOString()
+  }
+
+  notifications.unshift(briefing)
+  logAutonomousAction(`[BRIEFING] ${summary}`, 'info')
+
+  return briefing
 }

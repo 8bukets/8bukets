@@ -1,0 +1,14 @@
+# Next.js 16 + MongoDB Cloud Orchestration
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - MACBOOK_CLOUD_SIMULATION=${MACBOOK_CLOUD_SIMULATION:-true}
+      - MONGODB_URI=${MONGODB_URI}
+      - SUPABASE_DATABASE_URL=${SUPABASE_DATABASE_URL}
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+      - BOUNDARY_URL=${BOUNDARY_URL:-https://e15e881b-2d8b-49da-9306-e8aaf84eef37.boundary.hashicorp.cloud}
