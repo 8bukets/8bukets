@@ -1,9 +1,9 @@
+import re
 import aiohttp
 import asyncio
 from bs4 import BeautifulSoup
 import json
 import csv
-import re
 import argparse
 import logging
 import time
@@ -49,23 +49,38 @@ if not root_logger.handlers:
 
 logger = logging.getLogger(__name__)
 
-BASE_URL = "https://markposition.wordpress.com/"
+DEFAULT_BASE_URL = "https://artmusicpage.wordpress.com/"
 
-class MarkPositionScraperAsync:
-    def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
+class WordpressScraperAsync:
+    def __init__(self, base_url: str, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
+        self.base_url = base_url if base_url.endswith('/') else f"{base_url}/"
         self.output_json = output_json
         self.output_csv = output_csv
         self.output_txt = output_txt
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+        self.disallowed_paths = []
+        self.CLEAN_TEXT_REGEX = re.compile(r'\s+')
+
+    def set_disallowed_paths(self, paths: List[str]):
+        self.disallowed_paths = paths
+
+    def is_allowed(self, url: str) -> bool:
+        if not self.disallowed_paths:
+            return True
+        path = urlparse(url).path
+        for disallowed in self.disallowed_paths:
+            if path.startswith(disallowed):
+                return False
+        return True
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return self.CLEAN_TEXT_REGEX.sub(' ', text).strip()
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
@@ -91,7 +106,10 @@ class MarkPositionScraperAsync:
             return None
 
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
-        url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
+        url = f"{self.base_url}page/{page_num}/" if page_num > 1 else self.base_url
+        if not self.is_allowed(url):
+            logger.info(f"Skipping disallowed URL: {url}")
+            return None
         try:
             async with session.get(url) as response:
                 if response.status == 404:
@@ -103,7 +121,7 @@ class MarkPositionScraperAsync:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+        soup = BeautifulSoup(html, 'lxml')
         articles = soup.find_all('article', class_='post')
         page_posts = []
 
@@ -115,7 +133,8 @@ class MarkPositionScraperAsync:
 
             # Title
             title_text = ""
-            title_tag = article.select_one('h1.entry-title a')
+            # Support both h1 and h2 for entry title
+            title_tag = article.select_one('h1.entry-title a, h2.entry-title a, .entry-title a')
             if title_tag:
                 title_text = self.clean_text(title_tag.get_text())
                 post_data['title'] = title_text
@@ -175,14 +194,6 @@ class MarkPositionScraperAsync:
         }
 
         async with aiohttp.ClientSession(headers=headers) as session:
-            # We don't know the total pages, so we have to fetch sequentially or in chunks until we hit 404/empty.
-            # Pure concurrent fetching of all pages requires knowing the max page.
-            # Heuristic: fetch in batches of `concurrency`. If any page in batch returns 404 or empty, stop.
-
-            # Actually, WordPress pages are sequential. If page N is 404, N+1 is likely 404 too.
-            # But fetching 100 pages 1-by-1 is slow.
-            # Let's try fetching chunks.
-
             active = True
             while active:
                 tasks = []
@@ -197,7 +208,6 @@ class MarkPositionScraperAsync:
                         active = False
                         break
 
-                    # We create a task that acquires semaphore (though sem is less useful if we just create batch size = concurrency)
                     tasks.append(self.fetch_and_parse(session, current_page, sem))
 
                 if not tasks:
@@ -237,7 +247,25 @@ class MarkPositionScraperAsync:
                 # Small delay between batches
                 await asyncio.sleep(0.5)
 
-        self.save_data(all_posts)
+            json.dump(post, json_f, indent=4, ensure_ascii=False)
+
+        return is_first_item
+
+    async def fetch_and_parse(self, session, page_num, sem):
+        async with sem:
+            html = await self.fetch_page(session, page_num)
+            if html:
+                return await self.parse_page(html)
+            return None
+
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text to prevent CSV injection."""
+        if not text:
+            return ""
+        text = str(text)
+        if text.startswith(('=', '+', '-', '@')):
+            return "'" + text
+        return text
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
@@ -306,7 +334,8 @@ class MarkPositionScraperAsync:
         print("="*40 + "\n")
 
 def main():
-    parser = argparse.ArgumentParser(description="Async Scraper for markposition.wordpress.com")
+    parser = argparse.ArgumentParser(description="Async Scraper for WordPress blogs")
+    parser.add_argument("--url", default=DEFAULT_BASE_URL, help="Base URL of the WordPress blog")
     parser.add_argument("--json", default="links.json", help="Output JSON filename")
     parser.add_argument("--csv", default="links.csv", help="Output CSV filename")
     parser.add_argument("--txt", default="unique_links.txt", help="Output TXT filename for unique links")
@@ -315,7 +344,8 @@ def main():
 
     args = parser.parse_args()
 
-    scraper = MarkPositionScraperAsync(
+    scraper = WordpressScraperAsync(
+        base_url=args.url,
         output_json=args.json,
         output_csv=args.csv,
         output_txt=args.txt,
