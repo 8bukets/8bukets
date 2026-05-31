@@ -1,0 +1,33 @@
+{
+  "status": "INITIALIZED",
+  "version": "1.0.0",
+  "last_updated": "2024-05-24T00:00:00Z",
+  "principles": [
+    {
+      "id": "ETH-001",
+      "name": "Bias Prevention",
+      "description": "Ensure AI algorithms are free from bias and promote equitable outcomes."
+    },
+    {
+      "id": "ETH-002",
+      "name": "Privacy & Data Protection",
+      "description": "Respect user privacy and comply with global data protection regulations."
+    },
+    {
+      "id": "ETH-003",
+      "name": "Transparency",
+      "description": "Provide clarity on how AI-driven decisions are made."
+    },
+    {
+      "id": "ETH-004",
+      "name": "Legal Compliance",
+      "description": "Meet all legal and cybersecurity regulations."
+    },
+    {
+      "id": "ETH-005",
+      "name": "Safety Boundaries",
+      "description": "Prohibit fundamentally harmful autonomous actions."
+    }
+  ],
+  "authorized_by": "Chief AI Officer"
+}
