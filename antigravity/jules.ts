@@ -385,14 +385,22 @@ export class Jules {
             }
           }
 
+          let category = 'other'
+          if (name.includes('feat/')) category = 'feature'
+          else if (name.includes('fix/')) category = 'fix'
+          else if (name.includes('sentinel/')) category = 'security'
+          else if (name.includes('palette/')) category = 'ux'
+          else if (name.includes('bolt/')) category = 'performance'
+          else if (name.includes('/')) category = name.split('/')[0]
+
           return {
             name,
             lastMessage: lastMessage || 'N/A',
             lastSeen: lastSeen || 'N/A',
-            category: name.includes('/') ? name.split('/')[0] : 'other',
+            category,
             domain: 'General',
             knowledge: '',
-            results: lastMessage || 'N/A',
+            results: lastMessage ? `Commit: ${lastMessage}` : 'N/A',
             changedFiles
           }
         } catch (e) {
