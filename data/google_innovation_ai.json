@@ -30,6 +30,11 @@
         "snippet": ""
     },
     {
+        "title": "9 demos of Gemini Omni and Gemini 3.5 in action",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-3-5-videos/",
+        "snippet": ""
+    },
+    {
         "title": "Introducing Gemini Omni",
         "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/",
         "snippet": ""
@@ -42,11 +47,6 @@
     {
         "title": "Gemini Embedding 2 is now generally available.",
         "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2-generally-available/",
-        "snippet": ""
-    },
-    {
-        "title": "Deep Research Max: a step change for autonomous research agents",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/",
         "snippet": ""
     },
     {
@@ -160,28 +160,23 @@
         "snippet": ""
     },
     {
+        "title": "Catch up on 12 major I/O 2026 moments",
+        "url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/",
+        "snippet": ""
+    },
+    {
         "title": "Google Research",
         "url": "https://blog.google/innovation-and-ai/technology/research/",
         "snippet": ""
     },
     {
-        "title": "I/O 2026: Welcome to the agentic Gemini era",
-        "url": "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
+        "title": "Take our I/O 2026 quiz, vibe coded in Google AI Studio.",
+        "url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-vibe-coded-quiz/",
         "snippet": ""
     },
     {
         "title": "Dive deeper into I/O 2026 with NotebookLM.",
         "url": "https://blog.google/innovation-and-ai/products/notebooklm/notebooklm-google-io-2026/",
-        "snippet": ""
-    },
-    {
-        "title": "Introducing Managed Agents in the Gemini API",
-        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/",
-        "snippet": ""
-    },
-    {
-        "title": "The Gemini app becomes more agentic, delivering proactive, 24/7 help",
-        "url": "https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/",
         "snippet": ""
     },
     {
@@ -197,6 +192,26 @@
     {
         "title": "Making it easier to understand how content was created and edited",
         "url": "https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/",
+        "snippet": ""
+    },
+    {
+        "title": "Deep Research Max: a step change for autonomous research agents",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/",
+        "snippet": ""
+    },
+    {
+        "title": "I/O 2026: Welcome to the agentic Gemini era",
+        "url": "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
+        "snippet": ""
+    },
+    {
+        "title": "Introducing Managed Agents in the Gemini API",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/",
+        "snippet": ""
+    },
+    {
+        "title": "The Gemini app becomes more agentic, delivering proactive, 24/7 help",
+        "url": "https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/",
         "snippet": ""
     },
     {

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-05-28T08:01:23.456Z",
+    "generated_at": "2026-05-31T08:45:18.666Z",
     "version": 1.94,
     "sources_processed": [
       "ai_agents_knowledge.json",
@@ -37,7 +37,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/bug_report.md",
-        "ingestedAt": "2026-05-28T08:01:23.270Z"
+        "ingestedAt": "2026-05-31T08:45:18.490Z"
       }
     },
     "Internal: .github/ISSUE_TEMPLATE/feature_request.md": {
@@ -49,7 +49,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/feature_request.md",
-        "ingestedAt": "2026-05-28T08:01:23.297Z"
+        "ingestedAt": "2026-05-31T08:45:18.515Z"
       }
     },
     "Internal: .github/PULL_REQUEST_TEMPLATE.md": {
@@ -81,7 +81,7 @@
       ],
       "metadata": {
         "source": "local://.github/PULL_REQUEST_TEMPLATE.md",
-        "ingestedAt": "2026-05-28T08:01:23.317Z"
+        "ingestedAt": "2026-05-31T08:45:18.531Z"
       }
     },
     "Gemma 4 Technical Report": {
@@ -193,7 +193,7 @@
       ],
       "metadata": {
         "source": "local://gemmafour_docs.md",
-        "ingestedAt": "2026-05-28T08:01:23.335Z"
+        "ingestedAt": "2026-05-31T08:45:18.546Z"
       }
     },
     "LiteRT Framework Documentation": {
@@ -273,7 +273,7 @@
       ],
       "metadata": {
         "source": "local://litert_docs.md",
-        "ingestedAt": "2026-05-28T08:01:23.354Z"
+        "ingestedAt": "2026-05-31T08:45:18.561Z"
       }
     },
     "OpenTelemetry Ecosystem Analysis": {
@@ -689,7 +689,7 @@
       ],
       "metadata": {
         "source": "local://opentelemetry_repos.md",
-        "ingestedAt": "2026-05-28T08:01:23.372Z"
+        "ingestedAt": "2026-05-31T08:45:18.587Z"
       }
     },
     "Google Ads Strategic Documentation": {
@@ -1785,7 +1785,7 @@
       ],
       "metadata": {
         "source": "local://google_ads_docs.md",
-        "ingestedAt": "2026-05-28T08:01:23.395Z"
+        "ingestedAt": "2026-05-31T08:45:18.609Z"
       }
     },
     "AI Agents Concept & Architecture": {
@@ -2173,7 +2173,7 @@
       ],
       "metadata": {
         "source": "local://ai_agents_knowledge.md",
-        "ingestedAt": "2026-05-28T08:01:23.413Z"
+        "ingestedAt": "2026-05-31T08:45:18.627Z"
       }
     },
     "LocalHost.Co Tools Documentation": {
@@ -2429,7 +2429,7 @@
       ],
       "metadata": {
         "source": "local://localhost_tools_docs.md",
-        "ingestedAt": "2026-05-28T08:01:23.430Z"
+        "ingestedAt": "2026-05-31T08:45:18.643Z"
       }
     },
     "Google Innovation & AI Blog": {
@@ -2463,6 +2463,10 @@
           "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/quantum-computing/"
         },
         {
+          "header": "9 demos of Gemini Omni and Gemini 3.5 in action",
+          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-3-5-videos/"
+        },
+        {
           "header": "Introducing Gemini Omni",
           "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/"
         },
@@ -2473,10 +2477,6 @@
         {
           "header": "Gemini Embedding 2 is now generally available.",
           "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2-generally-available/"
-        },
-        {
-          "header": "Deep Research Max: a step change for autonomous research agents",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/"
         },
         {
           "header": "Running Guide agent: A step towards running unbounded",
@@ -2567,24 +2567,20 @@
           "content": "- URL: https://blog.google/innovation-and-ai/technology/"
         },
         {
+          "header": "Catch up on 12 major I/O 2026 moments",
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/"
+        },
+        {
           "header": "Google Research",
           "content": "- URL: https://blog.google/innovation-and-ai/technology/research/"
         },
         {
-          "header": "I/O 2026: Welcome to the agentic Gemini era",
-          "content": "- URL: https://blog.google/innovation-and-ai/sundar-pichai-io-2026/"
+          "header": "Take our I/O 2026 quiz, vibe coded in Google AI Studio.",
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-vibe-coded-quiz/"
         },
         {
           "header": "Dive deeper into I/O 2026 with NotebookLM.",
           "content": "- URL: https://blog.google/innovation-and-ai/products/notebooklm/notebooklm-google-io-2026/"
-        },
-        {
-          "header": "Introducing Managed Agents in the Gemini API",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/"
-        },
-        {
-          "header": "The Gemini app becomes more agentic, delivering proactive, 24/7 help",
-          "content": "- URL: https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/"
         },
         {
           "header": "We’re announcing the first Texas Energy Impact Fund recipients.",
@@ -2597,6 +2593,22 @@
         {
           "header": "Making it easier to understand how content was created and edited",
           "content": "- URL: https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/"
+        },
+        {
+          "header": "Deep Research Max: a step change for autonomous research agents",
+          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/"
+        },
+        {
+          "header": "I/O 2026: Welcome to the agentic Gemini era",
+          "content": "- URL: https://blog.google/innovation-and-ai/sundar-pichai-io-2026/"
+        },
+        {
+          "header": "Introducing Managed Agents in the Gemini API",
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/"
+        },
+        {
+          "header": "The Gemini app becomes more agentic, delivering proactive, 24/7 help",
+          "content": "- URL: https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/"
         },
         {
           "header": "Gemini 3.1 Flash TTS: the next generation of expressive AI speech",
@@ -2669,7 +2681,7 @@
       ],
       "metadata": {
         "source": "local://google_innovation_ai_report.md",
-        "ingestedAt": "2026-05-28T08:01:23.449Z"
+        "ingestedAt": "2026-05-31T08:45:18.659Z"
       }
     }
   },

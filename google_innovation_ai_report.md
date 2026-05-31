@@ -20,6 +20,9 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 ### Quantum computing
 - URL: https://blog.google/innovation-and-ai/models-and-research/quantum-computing/
 
+### 9 demos of Gemini Omni and Gemini 3.5 in action
+- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-3-5-videos/
+
 ### Introducing Gemini Omni
 - URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/
 
@@ -28,9 +31,6 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 
 ### Gemini Embedding 2 is now generally available.
 - URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2-generally-available/
-
-### Deep Research Max: a step change for autonomous research agents
-- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/
 
 ### Running Guide agent: A step towards running unbounded
 - URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/running-guide-agent/
@@ -98,20 +98,17 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 ### See all
 - URL: https://blog.google/innovation-and-ai/technology/
 
+### Catch up on 12 major I/O 2026 moments
+- URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/
+
 ### Google Research
 - URL: https://blog.google/innovation-and-ai/technology/research/
 
-### I/O 2026: Welcome to the agentic Gemini era
-- URL: https://blog.google/innovation-and-ai/sundar-pichai-io-2026/
+### Take our I/O 2026 quiz, vibe coded in Google AI Studio.
+- URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-vibe-coded-quiz/
 
 ### Dive deeper into I/O 2026 with NotebookLM.
 - URL: https://blog.google/innovation-and-ai/products/notebooklm/notebooklm-google-io-2026/
-
-### Introducing Managed Agents in the Gemini API
-- URL: https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/
-
-### The Gemini app becomes more agentic, delivering proactive, 24/7 help
-- URL: https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/
 
 ### We’re announcing the first Texas Energy Impact Fund recipients.
 - URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/texas-energy-impact-fund/
@@ -121,6 +118,18 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 
 ### Making it easier to understand how content was created and edited
 - URL: https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/
+
+### Deep Research Max: a step change for autonomous research agents
+- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/
+
+### I/O 2026: Welcome to the agentic Gemini era
+- URL: https://blog.google/innovation-and-ai/sundar-pichai-io-2026/
+
+### Introducing Managed Agents in the Gemini API
+- URL: https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/
+
+### The Gemini app becomes more agentic, delivering proactive, 24/7 help
+- URL: https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/
 
 ### Gemini 3.1 Flash TTS: the next generation of expressive AI speech
 - URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/
