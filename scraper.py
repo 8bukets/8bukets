@@ -10,6 +10,7 @@ import time
 import sys
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
+from concurrent.futures import ProcessPoolExecutor
 
 # Configure logging
 class ColorFormatter(logging.Formatter):
@@ -232,9 +233,6 @@ class WordpressScraperAsync:
                         logger.info(f"🛑 Page {page_idx} has no articles. Stopping.")
                         stop_detected = True
                         break
-                    else:
-                        all_posts.extend(page_posts)
-                        batch_posts_count += len(page_posts)
 
                 if stop_detected:
                     break
@@ -243,9 +241,9 @@ class WordpressScraperAsync:
                     logger.info("🛑 Reached max pages limit.")
                     break
 
-                page_num += len(tasks)
-                # Small delay between batches
-                await asyncio.sleep(0.5)
+                    page_num += len(tasks)
+                    # Small delay between batches
+                    await asyncio.sleep(0.5)
 
             json.dump(post, json_f, indent=4, ensure_ascii=False)
 
@@ -267,11 +265,12 @@ class WordpressScraperAsync:
             return "'" + text
         return text
 
-    async def fetch_and_parse(self, session, page_num, sem):
+    async def fetch_and_parse(self, session, page_num, sem, pool):
         async with sem:
             html = await self.fetch_page(session, page_num)
             if html:
-                return await self.parse_page(html)
+                loop = asyncio.get_running_loop()
+                return await loop.run_in_executor(pool, parse_page, html)
             return None
 
     def save_data(self, posts: List[Dict]):
