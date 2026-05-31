@@ -735,4 +735,3 @@ function setColourAttr(string $colour): void {}
  */
 function setColourDoc(string $colour): void {}
 setColourDoc(''); // Completion suggestions for 'red', 'blue', 'green'
-```

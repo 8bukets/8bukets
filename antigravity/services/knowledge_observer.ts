@@ -67,7 +67,9 @@ export class KnowledgeObserver {
     if (newInsights.sections) {
       newInsights.sections.forEach(s => {
         // Double check for junk content before writing to MD
-        if (s.content.length > 5 && !s.content.includes('{')) {
+        // Allow curly braces if it looks like code or has reasonable length without being minified
+        const isMinifiedJunk = s.content.includes('{') && s.content.length > 200 && !s.content.includes('\n') && !s.content.includes(' ');
+        if (s.content.length > 5 && !isMinifiedJunk) {
           mdContent += `## ${s.header}\n${s.content}\n\n`;
         }
       });
@@ -129,8 +131,10 @@ export class KnowledgeObserver {
 
     // Filter out sections that have too much junk or too little content
     const filteredSections = sections.filter(s => {
-      const junkPatterns = [/{/, /}/, /@media/, /\.wp-/, /!important/];
-      const isJunk = junkPatterns.some(p => p.test(s.content)) && s.content.length > 100;
+      const junkPatterns = [/@media/, /\.wp-/, /!important/];
+      // Only consider it junk if it has many curly braces and no markers of code blocks or high-level formatting
+      const hasTooManyBraces = (s.content.match(/{/g) || []).length > 10 && !s.content.includes('```') && !s.content.includes('<?php');
+      const isJunk = (junkPatterns.some(p => p.test(s.content)) || hasTooManyBraces) && s.content.length > 500;
       return s.content.trim().length > 10 && !isJunk;
     });
 
