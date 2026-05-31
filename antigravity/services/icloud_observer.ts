@@ -13,9 +13,9 @@ export class ICloudObserver {
   private observer: KnowledgeObserver
 
   constructor() {
-    // Default to the known 8bukets iCloud path
+    // Default to the known Antigravity iCloud path
     const homeDir = process.env.HOME || ''
-    const standardICloudPath = path.join(homeDir, 'Library/Mobile Documents/com~apple~CloudDocs/8bukets')
+    const standardICloudPath = path.join(homeDir, 'Library/Mobile Documents/com~apple~CloudDocs/Antigravity_Sync')
 
     this.syncPath = process.env.ICLOUD_SYNC_PATH || standardICloudPath
     this.observer = new KnowledgeObserver()
