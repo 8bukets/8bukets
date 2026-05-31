@@ -111,7 +111,7 @@ ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
   const highIntensitySynergies = state.intelligence.relationshipMap.synergies?.filter((s: any) => s.intensity === 'High') || []
   const criticalActions = state.intelligence.relationshipMap.collaborationRecommendations?.filter((r: any) => r.priority === 'Critical') || []
 
-  const synergyAlert = highIntensitySynergies.length > 0 || criticalActions.length > 0
+  const synergyAlert = highIntensitySynergies.length > 0
     ? `⚠️ CRITICAL: ${highIntensitySynergies.length} High-Intensity synergies requiring coordination.`
     : 'System synergy is optimal.'
 
@@ -129,11 +129,7 @@ ${metadata.stakeholders.map(s => ` - ${s.role} (${s.email})`).join('\n')}
     .map((r: any) => `- RESULT: ${r.name} -> ${r.result}`)
     .join('\n')
 
-  const { getStakeholderDirectives, generateActionableBriefing } = await import('./communication')
-  const directives = await getStakeholderDirectives()
-  const actionableBriefing = await generateActionableBriefing(state, directives)
-
-  const detailedBriefing = `--- STRATEGIC SYNERGY ---\n${synergySummary}\n\n--- REQUIRED COORDINATION ---\n${recommendations}\n\n--- KEY RESULTS ---\n${branchSummary}\n\n--- ACTIONABLE INSIGHTS ---\n${actionableBriefing}`
+  const detailedBriefing = `--- STRATEGIC SYNERGY ---\n${synergySummary}\n\n--- REQUIRED COORDINATION ---\n${recommendations}\n\n--- KEY RESULTS ---\n${branchSummary}`
 
   await dispatchExecutiveBriefing(
     `${synergyAlert} Posture: ${state.docker.status}. Analyzed ${state.intelligence.branches} branches.`,
@@ -353,17 +349,12 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
   const neuralPulse = await broadcastPulse()
   const relayState = await getRelayState()
 
-  // Phase 12: Integrate Stakeholder Directives
-  const { getStakeholderDirectives } = await import('./communication')
-  const directives = await getStakeholderDirectives()
-
   await mergeBranchInsights(branches)
 
   const newState = {
     ...currentState,
     mission: metadata.missionStatement,
     stakeholders: metadata.stakeholders,
-    directives,
     docker,
     jenkins: jenkinsStatus,
     intelligence: {

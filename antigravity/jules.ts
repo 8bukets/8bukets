@@ -1,9 +1,5 @@
 import fs from 'fs'
 import path from 'path'
-import { execFile } from 'child_process'
-import { promisify } from 'util'
-
-const execFileAsync = promisify(execFile)
 
 /**
  * JULES: THE COGNITIVE AGENT LAYER
@@ -134,8 +130,9 @@ export class Jules {
 
   public async gitPull() {
     console.log('📥 [Jules] Pulling latest changes from remote...')
+    const { execFileSync } = await import('child_process')
     try {
-      await execFileAsync('git', ['pull', '--rebase'])
+      execFileSync('git', ['pull', '--rebase'], { stdio: 'inherit' })
       this.recordTask('Git Pull: Synchronized with remote.')
     } catch (err) {
       console.warn('⚠️ [Jules] Git pull failed. Continuing with local state.')
@@ -144,22 +141,23 @@ export class Jules {
 
   public async gitSync(message: string) {
     console.log('🔄 [Jules] Commencing autonomous Git synchronization...')
+    const { execFileSync } = await import('child_process')
     try {
-      const { stdout: status } = await execFileAsync('git', ['status', '--porcelain'])
-      if (status.trim()) {
-        await execFileAsync('git', ['add', '.'])
-        await execFileAsync('git', ['commit', '-m', message])
+      const status = execFileSync('git', ['status', '--porcelain']).toString().trim()
+      if (status) {
+        execFileSync('git', ['add', '.'], { stdio: 'inherit' })
+        execFileSync('git', ['commit', '-m', message], { stdio: 'inherit' })
         console.log('✅ [Jules] Changes committed autonomously.')
         this.recordTask(`Git Sync: Committed fixes to local repository.`)
       }
 
       try {
-        await execFileAsync('git', ['push'])
+        execFileSync('git', ['push'], { stdio: 'inherit' })
         console.log('🚀 [Jules] Changes pushed to remote.')
         this.recordTask('Git Sync: Pushed changes to remote.')
       } catch (pushErr) {
         console.log('🔄 [Jules] Standard push failed, attempting with upstream set...')
-        await execFileAsync('git', ['push', '--set-upstream', 'origin', 'HEAD'])
+        execFileSync('git', ['push', '--set-upstream', 'origin', 'HEAD'], { stdio: 'inherit' })
         console.log('🚀 [Jules] Changes pushed to remote with upstream set.')
         this.recordTask('Git Sync: Pushed changes to remote (with upstream).')
       }
@@ -170,17 +168,10 @@ export class Jules {
 
   public async auditDependencies() {
     console.log('📦 [Jules] Auditing dependency sovereignty...')
+    const { execSync } = await import('child_process')
     try {
-      // npm outdated exits with code 1 if there are outdated packages, so we catch it
-      let outdatedOutput = ''
-      try {
-        const { stdout } = await execFileAsync('npm', ['outdated', '--json'])
-        outdatedOutput = stdout
-      } catch (e: any) {
-        outdatedOutput = e.stdout || '{}'
-      }
-
-      const count = Object.keys(JSON.parse(outdatedOutput || '{}')).length
+      const outdated = execSync('npm outdated --json || true').toString()
+      const count = Object.keys(JSON.parse(outdated || '{}')).length
       if (count > 0) {
         this.recordTask(`Dependency Autopilot: Found ${count} outdated packages. Optimization recommended.`)
       } else {
@@ -357,50 +348,40 @@ export class Jules {
 
   public async scanAllBranches(raw: boolean = false) {
     console.log('🌿 [Jules] Scanning all project branches for knowledge...')
+    const { execSync } = await import('child_process')
     try {
-      const { stdout: branchInfoRaw } = await execFileAsync('git', ['branch', '-a', '--list'])
-      const branchInfo = branchInfoRaw.trim()
+      const branchInfo = execSync('git branch -a --list').toString().trim()
       if (!branchInfo) return raw ? [] : '## 🌿 Branch Intelligence\nNo branches found.\n'
 
       const branchNames = branchInfo.split('\n').map(b => b.trim().replace(/^\* /, ''))
 
-      const branches = await Promise.all(branchNames.map(async name => {
+      const branches = branchNames.map(name => {
         try {
           const cleanName = name.replace(/.* -> /, '');
-          const { stdout: lastCommit } = await execFileAsync('git', ['log', '-1', '--format=%s|%ar', cleanName])
-          const [lastMessage, lastSeen] = lastCommit.trim().split('|')
+          const lastCommit = execSync(`git log -1 --format="%s|%ar" ${cleanName}`).toString().trim()
+          const [lastMessage, lastSeen] = lastCommit.split('|')
 
           let changedFiles: string[] = []
           if (raw) {
             try {
               // Attempt to get changed files relative to main (top 50 to avoid overhead)
-              const { stdout } = await execFileAsync('sh', ['-c', `git diff --name-only main...${cleanName} 2>/dev/null | head -n 50`])
-              changedFiles = stdout.trim().split('\n').filter(Boolean)
+              changedFiles = execSync(`git diff --name-only main...${cleanName} 2>/dev/null | head -n 50`).toString().trim().split('\n').filter(Boolean)
             } catch (e) {
               try {
                 // Fallback to last commit changes
-                const { stdout } = await execFileAsync('sh', ['-c', `git show --name-only --format="" ${cleanName} 2>/dev/null | head -n 50`])
-                changedFiles = stdout.trim().split('\n').filter(Boolean)
+                changedFiles = execSync(`git show --name-only --format="" ${cleanName} 2>/dev/null | head -n 50`).toString().trim().split('\n').filter(Boolean)
               } catch (ee) {}
             }
           }
-
-          let category = 'other'
-          if (name.includes('feat/')) category = 'feature'
-          else if (name.includes('fix/')) category = 'fix'
-          else if (name.includes('sentinel/')) category = 'security'
-          else if (name.includes('palette/')) category = 'ux'
-          else if (name.includes('bolt/')) category = 'performance'
-          else if (name.includes('/')) category = name.split('/')[0]
 
           return {
             name,
             lastMessage: lastMessage || 'N/A',
             lastSeen: lastSeen || 'N/A',
-            category,
+            category: name.includes('/') ? name.split('/')[0] : 'other',
             domain: 'General',
             knowledge: '',
-            results: lastMessage ? `Commit: ${lastMessage}` : 'N/A',
+            results: lastMessage || 'N/A',
             changedFiles
           }
         } catch (e) {
@@ -415,7 +396,7 @@ export class Jules {
             changedFiles: []
           }
         }
-      }))
+      })
 
       if (raw) return branches
 

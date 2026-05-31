@@ -73,16 +73,6 @@ export async function evolve() {
             suggestion: 'ASYNC_HYGIENE_VIOLATION: Synchronous fs operation detected inside an asynchronous function. This blocks the event loop. Refactor to use fs.promises.'
           })
         }
-
-        // Rule 6: Type Safety - Detect usage of 'any'
-        const anyTypeRegex = /:\s*any\b|as\s+any\b/g
-        if (anyTypeRegex.test(content)) {
-          suggestions.push({
-            file: fullPath.replace(process.cwd(), ''),
-            complexity: lines,
-            suggestion: 'TYPE_SAFETY_VIOLATION: Usage of \'any\' type detected. This weakens the type system and risks runtime errors. Use specific interfaces or Zod schemas instead.'
-          })
-        }
       }
     }
   }

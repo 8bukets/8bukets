@@ -178,85 +178,6 @@ jobs:
   console.log(`Successfully generated workflow: ${filename}`);
 }
 
-function generateDailyAutonomousEvolutionWorkflow() {
-  const workflowContent = `name: Daily Autonomous Evolution
-
-on:
-  schedule:
-    - cron: '0 0 * * *'
-  workflow_dispatch:
-
-permissions:
-  contents: write
-  pull-requests: write
-
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
-jobs:
-  evolution-cycle:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Pre-flight Health Checks
-        run: npm run test
-
-      - name: Connect and Collaborate
-        run: npm run connect
-        env:
-          MACBOOK_CLOUD_SIMULATION: true
-
-      - name: Analyze Recent Sessions
-        run: npx tsx scripts/analyze_recent_sessions.ts
-        env:
-          MACBOOK_CLOUD_SIMULATION: true
-
-      - name: Validate System Engine Improvements
-        run: echo "Verifying higher scale and functionality from recent sessions..." && npm run test
-        env:
-          MACBOOK_CLOUD_SIMULATION: true
-
-      - name: Execute Autonomous Session Analysis and Self-Correction
-        run: npx tsx scripts/execute_creation_cycle.ts
-        env:
-          AUTONOMOUS_MODE: cloud
-          MACBOOK_CLOUD_SIMULATION: true
-          MONGODB_URI: \${{ secrets.MONGODB_URI }}
-          NEXT_PUBLIC_SUPABASE_URL: \${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: \${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
-          GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}
-
-      - name: Autonomous Intelligence Sync
-        run: npx tsx scripts/autonomous_sync.ts
-        env:
-          MACBOOK_CLOUD_SIMULATION: true
-
-      - name: Commit and Push Changes
-        run: |
-          git config --global user.name "GitHub Actions Bot"
-          git config --global user.email "actions@github.com"
-          git add .
-          git commit -m "chore: daily autonomous evolution cycle completed" || true
-          git push origin HEAD:\${{ github.ref }}
-`;
-
-  const filename = path.join(WORKFLOW_DIR, 'daily_autonomous_evolution.yml');
-  fs.writeFileSync(filename, workflowContent);
-  console.log(`Successfully generated workflow: ${filename}`);
-}
-
 function main() {
   if (!fs.existsSync(WORKFLOW_DIR)) {
     fs.mkdirSync(WORKFLOW_DIR, { recursive: true });
@@ -264,7 +185,6 @@ function main() {
 
   generateWorkflow('Dynamic Data Sync', 'autonomous_sync');
   generateFullyAutonomousWorkflow();
-  generateDailyAutonomousEvolutionWorkflow();
   console.log('Workflow creation engine completed.');
 }
 

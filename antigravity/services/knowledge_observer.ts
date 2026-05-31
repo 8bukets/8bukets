@@ -15,7 +15,6 @@ export interface KnowledgeInsights {
   analyzedAt: string;
   history?: { source: string; analyzedAt: string }[];
   sections?: KnowledgeSection[];
-  metadata?: Record<string, any>;
 }
 
 export class KnowledgeObserver {
@@ -43,54 +42,36 @@ export class KnowledgeObserver {
       }
     }
 
-    if (!existingData.typescript_sections) existingData.typescript_sections = [];
-
     // Phase 12: Knowledge Synchronization logic
     const section = {
       title: newInsights.title,
       metadata: {
         source: newInsights.source,
         analyzedAt: newInsights.analyzedAt,
-        description: newInsights.description,
-        ...newInsights.metadata
+        description: newInsights.description
       },
       sections: newInsights.sections || []
     };
 
-    // Deduplicate by title
-    const existingIndex = existingData.typescript_sections.findIndex((k: any) => k.title === newInsights.title);
-    if (existingIndex !== -1) {
-      existingData.typescript_sections[existingIndex] = section;
-    } else {
-      existingData.typescript_sections.push(section);
-    }
+    if (!existingData.typescript_sections) existingData.typescript_sections = [];
+    existingData.typescript_sections.push(section);
 
     // Write JSON
     fs.writeFileSync(jsonPath, JSON.stringify(existingData, null, 2), 'utf8');
 
-    // Write Markdown - Regenerate from ALL sections
+    // Write Markdown
     let mdContent = `# Knowledge Observation Insights (Unified)\n\n`;
     mdContent += `**Latest Source:** ${newInsights.source}\n`;
     mdContent += `**Latest Analysis:** ${newInsights.analyzedAt}\n\n`;
 
-    // Add unified keywords and posts if we want, but for now let's keep it simple
-    // or just use the latest ones.
-
-    existingData.typescript_sections.forEach((k: any) => {
-      if (k.sections && k.sections.length > 0) {
-        // Only add title header if there's multiple main sections
-        if (existingData.typescript_sections.length > 1) {
-          mdContent += `# ${k.title}\n\n`;
+    if (newInsights.sections) {
+      newInsights.sections.forEach(s => {
+        // Double check for junk content before writing to MD
+        if (s.content.length > 5 && !s.content.includes('{')) {
+          mdContent += `## ${s.header}\n${s.content}\n\n`;
         }
-
-        k.sections.forEach((s: any) => {
-          // Double check for junk content before writing to MD
-          if (s.content.length > 5 && !s.content.includes('{')) {
-            mdContent += `## ${s.header}\n${s.content}\n\n`;
-          }
-        });
-      }
-    });
+      });
+    }
 
     fs.writeFileSync(mdPath, mdContent, 'utf8');
     console.log(`✅ [Knowledge Observer] Knowledge successfully merged into ${jsonPath} and ${mdPath}`);
@@ -129,7 +110,7 @@ export class KnowledgeObserver {
 
       if (headerMatch && !line.includes('<?php') && !line.startsWith('//') && !line.includes('#[')) {
         if (currentSection) sections.push(currentSection);
-        currentSection = { header: (headerMatch[1] || line.trim()).trim(), content: '' };
+        currentSection = { header: headerMatch[1] || line.trim(), content: '' };
       } else if (currentSection) {
         // Only strip HTML tags if we're not in a code block and it looks like a real tag
         // Simple heuristic: if it contains generic-like patterns, don't strip
@@ -150,7 +131,7 @@ export class KnowledgeObserver {
     const filteredSections = sections.filter(s => {
       const junkPatterns = [/{/, /}/, /@media/, /\.wp-/, /!important/];
       const isJunk = junkPatterns.some(p => p.test(s.content)) && s.content.length > 100;
-      return s.content.trim().length > 10 && !isJunk;
+      return s.content.length > 5 && !isJunk;
     });
 
     // Naive keyword extraction based on frequency (excluding common stop words)
@@ -190,10 +171,6 @@ export class KnowledgeObserver {
 export function persistKnowledge(newInsights: KnowledgeInsights) {
     const observer = new KnowledgeObserver();
     return observer.persistKnowledge(newInsights);
-}
-
-export function processContent(content: string, source: string, title: string = 'Web Insight'): KnowledgeInsights {
-  return KnowledgeObserver.processContent(title, content, source);
 }
 
 export async function observeKnowledge(url: string) {

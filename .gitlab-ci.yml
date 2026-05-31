@@ -116,11 +116,3 @@ run-autonomous-autonomous_performance_auditor:
     - npx tsx antigravity/workflows/autonomous_performance_auditor_workflow.ts
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
-
-run-autonomous-autonomous_ethics_auditor:
-  stage: test
-  script:
-    - echo "Running autonomous cycle for Autonomous Ethics Auditor"
-    - npx tsx antigravity/workflows/autonomous_ethics_auditor_workflow.ts
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"

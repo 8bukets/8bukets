@@ -1,7 +1,3 @@
-/**
- * ANTIGRAVITY COMMUNICATION HUB
- * Optimized for Phase 12 Sentient Orchestration.
- */
 import fs from 'fs'
 import path from 'path'
 import { z } from 'zod'

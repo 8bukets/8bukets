@@ -116,17 +116,12 @@ class ChiefAIOfficerAgent(BaseAgent):
         evolution_status = evolution.get("status", "UNKNOWN")
         technical_debt = evolution.get("technical_debt", [])
         sync_violations = [v for v in technical_debt if "ASYNC_HYGIENE_VIOLATION" in v.get("suggestion", "")]
-        type_violations = [v for v in technical_debt if "TYPE_SAFETY_VIOLATION" in v.get("suggestion", "")]
 
         if sync_violations:
             self.logger.warning(f"CAIO [GOVERNANCE]: Detected {len(sync_violations)} sync-over-async violations. Mandating core stabilization.")
             strategy_status = "STABILIZATION_REQUIRED"
             strategic_directives.append("STABILIZE_SYSTEM_CORE")
             strategic_directives.append("REFACTOR_ASYNC_VIOLATIONS")
-
-        if type_violations:
-            self.logger.warning(f"CAIO [GOVERNANCE]: Detected {len(type_violations)} type safety violations. Enforcing structural purity.")
-            strategic_directives.append("ENFORCE_TYPE_SAFETY_PROTOCOLS")
 
         # Specific Directive Logic Implementation (v2.1)
         if "ESTABLISH_ETHICS_FRAMEWORK" in strategic_directives:

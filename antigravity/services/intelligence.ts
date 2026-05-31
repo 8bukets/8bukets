@@ -36,30 +36,6 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `- **Supabase:** ${health.supabase}\n`
   report += `- **Total Branches:** ${branches.length}\n\n`
 
-  // Phase 12: Active Stakeholder Directives
-  const { getStakeholderDirectives, generateActionableBriefing } = await import('./communication')
-  const directives = await getStakeholderDirectives()
-  const activeDirectives = directives.filter(d => d.status === 'Active')
-
-  report += `## 🎯 Active Stakeholder Directives\n`
-  if (activeDirectives.length > 0) {
-    activeDirectives.forEach(d => {
-      report += `- **[${d.priority}]** ${d.intent}\n`
-    })
-  } else {
-    report += `_No active directives found._\n`
-  }
-  report += `\n`
-
-  // Phase 12: Actionable Briefing
-  const actionableBriefing = await generateActionableBriefing({
-    docker: { status: health.mongodb === 'healthy' ? 'optimal' : 'degraded' },
-    intelligence: { pendingTasks: workOrders.length, relationshipMap: await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals) }
-  }, directives)
-
-  report += `## 🚀 Actionable Intelligence\n`
-  report += actionableBriefing + `\n\n`
-
   report += `## 🌿 Branch Intelligence (Recent Activity)\n`
   // Ensure branches is an array of objects
   const branchArray = Array.isArray(branches) ? branches : []
@@ -123,7 +99,7 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
     report += `\n`
   }
 
-  const insights = branches.filter(b => b.knowledge || (b.results && b.results !== `Commit: ${b.lastMessage}`)).slice(0, 10)
+  const insights = branches.filter(b => b.knowledge || (b.results && b.results !== b.lastMessage)).slice(0, 10)
   if (insights.length > 0) {
     report += `### 🧠 Specialized Knowledge Nuggets\n`
     insights.forEach(b => {
@@ -156,19 +132,10 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `\n`
 
   report += `## 📦 Resource Inventory\n`
-  const categorizedResources: Record<string, any[]> = {}
   relationshipMap.resourceInventory.forEach((res: any) => {
-    if (!categorizedResources[res.type]) categorizedResources[res.type] = []
-    categorizedResources[res.type].push(res)
+    report += `- [${res.type}] **${res.name}** - Status: ${res.status}${res.source ? ` (*Source: ${res.source}*)` : ''}\n`
   })
-
-  Object.entries(categorizedResources).forEach(([type, items]) => {
-    report += `### ${type}s\n`
-    items.forEach(res => {
-      report += `- **${res.name}** (${res.status})${res.source ? ` - *Source: ${res.source}*` : ''}\n`
-    })
-    report += `\n`
-  })
+  report += `\n`
 
   report += `## 🧠 Knowledge Matrix\n`
   const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json')

@@ -19,19 +19,9 @@ fi
 # Create a temporary plist with the correct paths
 echo "📝 [Setup] Configuring $PLIST_NAME for user $USERNAME..."
 
-# Detect npm path
-NPM_PATH=$(which npm)
-if [ -z "$NPM_PATH" ]; then
-  NPM_PATH="/usr/local/bin/npm" # Fallback
-fi
-
-echo "📦 [Setup] Using npm at $NPM_PATH"
-
 # Use sed to replace placeholders in the plist
 # Note: Using | as delimiter to handle paths
-sed -e "s|/Users/YOUR_USERNAME/Documents/Antigravity|$PROJECT_DIR|g" \
-    -e "s|/usr/local/bin/npm|$NPM_PATH|g" \
-    "$PROJECT_DIR/$PLIST_NAME" > "$PROJECT_DIR/${PLIST_NAME}.tmp"
+sed "s|/Users/YOUR_USERNAME/Documents/Antigravity|$PROJECT_DIR|g" "$PROJECT_DIR/$PLIST_NAME" > "$PROJECT_DIR/${PLIST_NAME}.tmp"
 
 # Move to LaunchAgents
 echo "🚚 [Setup] Moving plist to $TARGET_PATH..."

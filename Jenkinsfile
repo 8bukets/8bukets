@@ -82,11 +82,6 @@ pipeline {
                 sh 'npx tsx antigravity/workflows/autonomous_performance_auditor_workflow.ts'
             }
         }
-        stage('Run Autonomous Autonomous Ethics Auditor') {
-            steps {
-                sh 'npx tsx antigravity/workflows/autonomous_ethics_auditor_workflow.ts'
-            }
-        }
         stage('Creative Workflow') {
             parallel {
                 stage('Market Analysis') {
