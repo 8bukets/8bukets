@@ -61,3 +61,11 @@ jobs:
         run: npx tsx scripts/autonomous_sync.ts
         env:
           MACBOOK_CLOUD_SIMULATION: true
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          git add .
+          git commit -m "chore: daily autonomous evolution cycle completed" || true
+          git push origin HEAD:${{ github.ref }}
