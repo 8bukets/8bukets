@@ -83,6 +83,15 @@ export async function evolve() {
             suggestion: 'TYPE_SAFETY_VIOLATION: Usage of \'any\' type detected. This weakens the type system and risks runtime errors. Use specific interfaces or Zod schemas instead.'
           })
         }
+
+        // Rule 7: Zero-Latency Sync Compliance (Directive from iCloud)
+        if (content.includes('sync') && !content.includes('latency') && lines > 100) {
+           suggestions.push({
+             file: fullPath.replace(process.cwd(), ''),
+             complexity: lines,
+             suggestion: 'SYNC_LATENCY_UNOPTIMIZED: Documented goal of <50ms latency for global neural synchronization detected. Code lacks explicit latency monitoring.'
+           })
+        }
       }
     }
   }
@@ -123,6 +132,22 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
       // Attempt to wrap params usages
       content = content.replace(/(\{.*?params.*?\}.*?)\.then/g, "resolve(params).then")
       fs.writeFileSync(fullPath, content)
+    }
+
+    if (s.suggestion.startsWith('ASYNC_HYGIENE_VIOLATION')) {
+       console.log(` - Fixing ${s.file}: Implementing automated try/catch wrapping for async safety.`)
+       // Simplistic wrapping of async function bodies that contain sync fs
+       content = content.replace(/async function(.*?)\{(.*?)\}/gs, (match, args, body) => {
+          if (body.includes('try') && body.includes('catch')) return match;
+          return `async function${args}{\n  try {\n${body}\n  } catch (err) {\n    console.error('[Evolution Autocorrect] Unhandled error:', err);\n  }\n}`;
+       });
+       fs.writeFileSync(fullPath, content);
+    }
+
+    if (s.suggestion.startsWith('MISSING_CACHE_DIRECTIVE') && !content.includes("'use cache'")) {
+       console.log(` - Fixing ${s.file}: Injecting 'use cache' for Phase 12 optimization.`)
+       content = content.replace(/async function(.*?)\{/, "async function$1{\n  'use cache'");
+       fs.writeFileSync(fullPath, content);
     }
     
     // Additional autocorrection logic can be added here

@@ -41,6 +41,16 @@ class ChiefAIOfficerAgent(BaseAgent):
                          dependencies=["system_evolution", "cloud_workflow_status", "market_intelligence", "resource_allocation"],
                          provides=["ai_strategy_status", "infrastructure_optimization", "strategic_directives"])
 
+    def _get_integrated_knowledge(self):
+        knowledge_path = os.path.join(os.getcwd(), 'data/knowledge/system_knowledge.json')
+        if os.path.exists(knowledge_path):
+            try:
+                with open(knowledge_path, 'r') as f:
+                    return json.load(f)
+            except Exception as e:
+                self.logger.error(f"CAIO [ERROR]: Failed to read system knowledge: {e}")
+        return {"typescript_sections": []}
+
     async def run(self, data: list, blackboard: Blackboard) -> dict:
         evolution = blackboard.get("system_evolution", {})
         cloud_status = blackboard.get("cloud_workflow_status", "UNKNOWN")
@@ -55,6 +65,7 @@ class ChiefAIOfficerAgent(BaseAgent):
 
         # Phase 12/13 Maturity & Roadmap Compliance Check
         self.logger.debug("CAIO [CHECK]: Verifying current system maturity phase against documented standards.")
+        agents_docs = ""
         try:
             with open('AGENTS.md', 'r') as f:
                 agents_docs = f.read()
@@ -72,6 +83,22 @@ class ChiefAIOfficerAgent(BaseAgent):
              strategic_directives.append("ESTABLISH_BASELINE_GOVERNANCE")
         except Exception as e:
             self.logger.error(f"CAIO [ERROR]: Critical failure during maturity check read operation: {e}")
+
+        # Integrated Knowledge & Phase 13 Specific Logic
+        knowledge = self._get_integrated_knowledge()
+        for k in knowledge.get("typescript_sections", []):
+            title = k.get("title", "")
+            if "Phase 13" in title or "Phase 13" in str(k.get("sections", [])):
+                self.logger.info(f"CAIO [KNOWLEDGE]: Phase 13 strategy detected in integrated knowledge: {title}")
+                if "ACTIVATE_PHASE_13_PROTOCOLS" not in strategic_directives:
+                    strategic_directives.append("ACTIVATE_PHASE_13_PROTOCOLS")
+
+                # Specifically target decentralized edge nodes if mentioned
+                content_str = str(k.get("sections", [])).lower()
+                if "asia-pacific" in content_str or "edge node" in content_str or "tokyo" in content_str:
+                    if "DEPLOY_APAC_EDGE_NODES" not in strategic_directives:
+                        self.logger.info("CAIO [STRATEGY]: Asia-Pacific edge node expansion identified. Issuing deployment directive.")
+                        strategic_directives.append("DEPLOY_APAC_EDGE_NODES")
 
         # Cloud Infrastructure Resilience Assessment
         if cloud_status == "DEGRADED":
@@ -153,6 +180,19 @@ class ChiefAIOfficerAgent(BaseAgent):
              infrastructure_opt["action"] = "hard_stop_evolution"
              strategic_directives.append("QUARANTINE_MUTATED_NODES")
 
+        # Market Intelligence & Trends Integration for Executive Summary
+        market_trends = market_intel.get("trends", "")
+        # Also scan integrated market intelligence knowledge
+        for k in knowledge.get("typescript_sections", []):
+            if "Market Intelligence" in k.get("title", ""):
+                for section in k.get("sections", []):
+                    if section.get("header") == "Trends":
+                        market_trends += f" {section.get('content')}"
+
+        summary = f"CAIO evaluation cycle completed successfully. Final Strategy: {strategy_status}."
+        if market_trends:
+            summary += f" Market Trends: {market_trends.strip()}"
+
         # Finalize and Dispatch Executive Summary
         self.logger.info(f"CAIO [EXEC]: Evaluation complete. Final Strategy: {strategy_status}. Directives issued: {len(strategic_directives)}")
 
@@ -160,7 +200,7 @@ class ChiefAIOfficerAgent(BaseAgent):
             "ai_strategy_status": strategy_status,
             "infrastructure_optimization": infrastructure_opt,
             "strategic_directives": strategic_directives,
-            "executive_summary": "CAIO evaluation cycle completed successfully. System operating within defined parameters."
+            "executive_summary": summary
         }
 
 # CAIO Execution Context
