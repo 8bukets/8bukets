@@ -279,7 +279,8 @@ class WordpressScraperAsync:
         async with sem:
             html = await self.fetch_page(session, page_num)
             if html:
-                return await self.parse_page(html)
+                loop = asyncio.get_running_loop()
+                return await loop.run_in_executor(self.executor, parse_html_content, html)
             return None
 
     def sanitize_for_csv(self, text: str) -> str:
