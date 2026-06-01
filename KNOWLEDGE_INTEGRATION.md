@@ -942,6 +942,12 @@ The Docker Hub mcp namespace (for MCP servers built by Docker).
 <!-- KNOWLEDGE_MERGE_END -->
 
 ## System Insights
+
+## react-agent-deployment-logic
+
+### React Agent Deployment Logic
+- **Description**: The react agent deployment logic is responsible for verifying the deployment of react agents and improving the workflow run.
+
 <!-- CONSOLIDATED_INTELLIGENCE_START -->
 ### Consolidated System Status
 
