@@ -1,14 +1,15 @@
-import { observeKnowledge, persistKnowledge } from '../antigravity/services/knowledge_observer';
+import { observeKnowledge } from '../antigravity/services/knowledge';
 
 async function main() {
   console.log('🚀 Starting software-online-review ingestion...');
-  const insights = await observeKnowledge('https://software-online-review.com');
-  if (insights) {
-    persistKnowledge(insights);
+  try {
+    const result = await observeKnowledge('https://software-online-review.com');
+    console.log(`✅ [Ingest Software Online Review] Successfully observed: ${result.title}`);
     console.log('✨ Ingestion complete.');
-  } else {
-    console.log('❌ Ingestion failed.');
+  } catch (err) {
+    console.error('❌ Ingestion failed:', err);
+    process.exit(1);
   }
 }
 
-main().catch(console.error);
+main();
