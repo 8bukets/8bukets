@@ -220,7 +220,7 @@ jobs:
           MACBOOK_CLOUD_SIMULATION: true
 
       - name: Analyze Recent Sessions
-        run: npx tsx scripts/analyze_recent_sessions.ts
+        run: npx tsx antigravity-cli.ts autonomous-evolution
         env:
           MACBOOK_CLOUD_SIMULATION: true
 

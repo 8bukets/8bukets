@@ -77,4 +77,20 @@ program
     });
   });
 
+program
+  .command('autonomous-evolution')
+  .description('Perform daily autonomous task to check out recent sessions, improve system engine functionality and scale, and self-correct')
+  .action(() => {
+    const { spawn } = require('child_process');
+    const child = spawn('npx', ['tsx', '--env-file=.env', 'scripts/analyze_recent_sessions.ts'], { stdio: 'inherit', shell: true });
+    child.on('error', (error: Error) => {
+      console.error(`Error executing command: ${error.message}`);
+    });
+    child.on('exit', (code: number | null) => {
+      if (code !== 0) {
+        console.error(`Process exited with code ${code}`);
+      }
+    });
+  });
+
 program.parse();
