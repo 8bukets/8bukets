@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-01T17:13:05.043Z",
+    "generated_at": "2026-06-01T22:59:14.618Z",
     "version": 1.94,
     "sources_processed": [
       "ai_agents_knowledge.json",
@@ -37,7 +37,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/bug_report.md",
-        "ingestedAt": "2026-06-01T17:13:04.878Z"
+        "ingestedAt": "2026-06-01T22:59:14.436Z"
       }
     },
     "Internal: .github/ISSUE_TEMPLATE/feature_request.md": {
@@ -49,7 +49,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/feature_request.md",
-        "ingestedAt": "2026-06-01T17:13:04.898Z"
+        "ingestedAt": "2026-06-01T22:59:14.460Z"
       }
     },
     "Internal: .github/PULL_REQUEST_TEMPLATE.md": {
@@ -81,7 +81,7 @@
       ],
       "metadata": {
         "source": "local://.github/PULL_REQUEST_TEMPLATE.md",
-        "ingestedAt": "2026-06-01T17:13:04.914Z"
+        "ingestedAt": "2026-06-01T22:59:14.477Z"
       }
     },
     "Gemma 4 Technical Report": {
@@ -193,7 +193,7 @@
       ],
       "metadata": {
         "source": "local://gemmafour_docs.md",
-        "ingestedAt": "2026-06-01T17:13:04.931Z"
+        "ingestedAt": "2026-06-01T22:59:14.495Z"
       }
     },
     "LiteRT Framework Documentation": {
@@ -273,7 +273,7 @@
       ],
       "metadata": {
         "source": "local://litert_docs.md",
-        "ingestedAt": "2026-06-01T17:13:04.948Z"
+        "ingestedAt": "2026-06-01T22:59:14.513Z"
       }
     },
     "OpenTelemetry Ecosystem Analysis": {
@@ -689,7 +689,7 @@
       ],
       "metadata": {
         "source": "local://opentelemetry_repos.md",
-        "ingestedAt": "2026-06-01T17:13:04.965Z"
+        "ingestedAt": "2026-06-01T22:59:14.537Z"
       }
     },
     "Google Ads Strategic Documentation": {
@@ -1785,7 +1785,7 @@
       ],
       "metadata": {
         "source": "local://google_ads_docs.md",
-        "ingestedAt": "2026-06-01T17:13:04.988Z"
+        "ingestedAt": "2026-06-01T22:59:14.561Z"
       }
     },
     "AI Agents Concept & Architecture": {
@@ -2173,7 +2173,7 @@
       ],
       "metadata": {
         "source": "local://ai_agents_knowledge.md",
-        "ingestedAt": "2026-06-01T17:13:05.004Z"
+        "ingestedAt": "2026-06-01T22:59:14.578Z"
       }
     },
     "LocalHost.Co Tools Documentation": {
@@ -2429,7 +2429,7 @@
       ],
       "metadata": {
         "source": "local://localhost_tools_docs.md",
-        "ingestedAt": "2026-06-01T17:13:05.021Z"
+        "ingestedAt": "2026-06-01T22:59:14.594Z"
       }
     },
     "Google Innovation & AI Blog": {
@@ -2437,10 +2437,6 @@
         {
           "header": "Google Innovation & AI Blog Updates",
           "content": "Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innovation-and-ai/) and [https://blog.google/innovation-and-ai/models-and-research/](https://blog.google/innovation-and-ai/models-and-research/)"
-        },
-        {
-          "header": "LinkedIn",
-          "content": "- URL: https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/innovation-and-ai/models-and-research/&title=Models%20%26%20research"
         },
         {
           "header": "Google DeepMind",
@@ -2461,6 +2457,22 @@
         {
           "header": "Quantum computing",
           "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/quantum-computing/"
+        },
+        {
+          "header": "Developer tools",
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/developers-tools/"
+        },
+        {
+          "header": "Global network",
+          "content": "- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/"
+        },
+        {
+          "header": "Google Cloud",
+          "content": "- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/"
+        },
+        {
+          "header": "Safety & Security",
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/safety-security/"
         },
         {
           "header": "9 demos of Gemini Omni and Gemini 3.5 in action",
@@ -2487,8 +2499,24 @@
           "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/"
         },
         {
+          "header": "AI Products",
+          "content": "- URL: https://blog.google/innovation-and-ai/products/"
+        },
+        {
+          "header": "Making it easier to understand how content was created and edited",
+          "content": "- URL: https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/"
+        },
+        {
           "header": "A new experiment brings better group meetings to Google Beam",
           "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-research/google-beam-group-meetings/"
+        },
+        {
+          "header": "Gemini for Science: AI experiments and tools for a new era of discovery",
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/"
+        },
+        {
+          "header": "Building superconducting and neutral atom quantum computers",
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/research/neutral-atom-quantum-computers/"
         },
         {
           "header": "Our new study explores how AI can reduce the climate impact of air travel.",
@@ -2519,60 +2547,20 @@
           "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/quantum-computing/world-quantum-day-2026/"
         },
         {
-          "header": "LinkedIn",
-          "content": "- URL: https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/innovation-and-ai/&title=Innovation%20%26%20AI"
-        },
-        {
-          "header": "See all",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/"
-        },
-        {
-          "header": "Developer tools",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/developers-tools/"
-        },
-        {
-          "header": "Gemini app",
-          "content": "- URL: https://blog.google/innovation-and-ai/products/gemini-app/"
-        },
-        {
-          "header": "NotebookLM",
-          "content": "- URL: https://blog.google/innovation-and-ai/products/notebooklm/"
-        },
-        {
-          "header": "See all",
-          "content": "- URL: https://blog.google/innovation-and-ai/products/"
-        },
-        {
-          "header": "Global network",
-          "content": "- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/"
-        },
-        {
-          "header": "Google Cloud",
-          "content": "- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/"
-        },
-        {
-          "header": "See all",
-          "content": "- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/"
-        },
-        {
-          "header": "Safety & Security",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/safety-security/"
-        },
-        {
-          "header": "Health",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/health/"
-        },
-        {
-          "header": "See all",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/"
-        },
-        {
-          "header": "Catch up on 12 major I/O 2026 moments",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/"
+          "header": "Quantum frontiers may be closer than they appear",
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/safety-security/cryptography-migration-timeline/"
         },
         {
           "header": "Google Research",
           "content": "- URL: https://blog.google/innovation-and-ai/technology/research/"
+        },
+        {
+          "header": "How we used Gemini to build Google I/O 2026",
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-google-ai/"
+        },
+        {
+          "header": "Catch up on 12 major I/O 2026 moments",
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/"
         },
         {
           "header": "Take our I/O 2026 quiz, vibe coded in Google AI Studio.",
@@ -2591,8 +2579,36 @@
           "content": "- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/missouri-programs/"
         },
         {
-          "header": "Making it easier to understand how content was created and edited",
-          "content": "- URL: https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/"
+          "header": "LinkedIn",
+          "content": "- URL: https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/innovation-and-ai/models-and-research/&title=Models%20%26%20research"
+        },
+        {
+          "header": "LinkedIn",
+          "content": "- URL: https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/innovation-and-ai/&title=Innovation%20%26%20AI"
+        },
+        {
+          "header": "See all",
+          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/"
+        },
+        {
+          "header": "Gemini app",
+          "content": "- URL: https://blog.google/innovation-and-ai/products/gemini-app/"
+        },
+        {
+          "header": "NotebookLM",
+          "content": "- URL: https://blog.google/innovation-and-ai/products/notebooklm/"
+        },
+        {
+          "header": "See all",
+          "content": "- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/"
+        },
+        {
+          "header": "Health",
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/health/"
+        },
+        {
+          "header": "See all",
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/"
         },
         {
           "header": "Deep Research Max: a step change for autonomous research agents",
@@ -2681,7 +2697,7 @@
       ],
       "metadata": {
         "source": "local://google_innovation_ai_report.md",
-        "ingestedAt": "2026-06-01T17:13:05.036Z"
+        "ingestedAt": "2026-06-01T22:59:14.610Z"
       }
     }
   },

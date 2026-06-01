@@ -26,34 +26,67 @@ async function scrapeGoogleBlog(url: string, categoryPath: string): Promise<Arti
 
         $('a').each((_, el) => {
             const href = $(el).attr('href');
-            if (href && href.includes(categoryPath) && href !== url && !href.endsWith(categoryPath)) {
-                const fullUrl = href.startsWith('http') ? href : `https://blog.google${href}`;
-                if (!seenUrls.has(fullUrl)) {
-                    const title = $(el).text().trim();
-                    if (title && title.length > 5 && !title.startsWith('http')) {
-                        let snippet = "";
-                        const parent = $(el).closest('div, section, li, article');
-                        if (parent.length) {
-                            const summaryTag = parent.find('p, span, div').filter((_, tag) => {
-                                const cls = $(tag).attr('class');
-                                return !!(cls && (cls.toLowerCase().includes('summary') ||
-                                          cls.toLowerCase().includes('description') ||
-                                          cls.toLowerCase().includes('snippet') ||
-                                          cls.toLowerCase().includes('deck')));
-                            });
-                            if (summaryTag.length) {
-                                snippet = summaryTag.text().trim();
-                            }
-                        }
+            if (!href) return;
 
-                        articles.push({
-                            title,
-                            url: fullUrl,
-                            snippet
-                        });
-                        seenUrls.add(fullUrl);
+            const fullUrl = href.startsWith('http') ? href : `https://blog.google${href}`;
+            if (seenUrls.has(fullUrl)) return;
+
+            // Target GA4 analytics data which contains reliable titles
+            const gaDataAttr = $(el).attr('data-ga4-analytics-lead-click');
+            let gaTitle = "";
+            if (gaDataAttr) {
+                try {
+                    const gaData = JSON.parse(gaDataAttr);
+                    if (gaData.article_name) {
+                        gaTitle = gaData.article_name;
+                    }
+                } catch (e) {}
+            }
+
+            // Target specific title classes
+            const heroTitle = $(el).find('.featured-article-cat-subcat-hero__title').text().trim();
+            const nupTitle = $(el).find('.uni-nup__header').text().trim();
+            const directTitle = $(el).text().trim();
+
+            const title = gaTitle || heroTitle || nupTitle || directTitle;
+
+            // Validation: Must be an article-like URL and have a substantial title
+            const isArticleUrl = fullUrl.includes('/innovation-and-ai/') &&
+                                !fullUrl.endsWith('/innovation-and-ai/') &&
+                                !fullUrl.endsWith('/models-and-research/');
+
+            const isNotNav = !['Home', 'Innovation & AI', 'Products & platforms', 'Company news', 'Feed', 'Subscribe'].includes(title);
+
+            if (isArticleUrl && title && title.length > 10 && isNotNav) {
+                let snippet = "";
+
+                // Try finding snippet in parent or sibling containers
+                const heroSummary = $(el).find('.featured-article-cat-subcat-hero__summary').text().trim();
+                const siblingSummary = $(el).next().find('.featured-article-cat-subcat-hero__summary').text().trim();
+                const nupSnippet = $(el).closest('.uni-nup').find('.uni-nup__snippet').text().trim();
+
+                snippet = heroSummary || siblingSummary || nupSnippet;
+
+                if (!snippet) {
+                    const parent = $(el).closest('div, section, li, article');
+                    const summaryTag = parent.find('p, span, div').filter((_, tag) => {
+                        const cls = $(tag).attr('class');
+                        return !!(cls && (cls.toLowerCase().includes('summary') ||
+                                  cls.toLowerCase().includes('description') ||
+                                  cls.toLowerCase().includes('snippet') ||
+                                  cls.toLowerCase().includes('deck')));
+                    });
+                    if (summaryTag.length) {
+                        snippet = summaryTag.text().trim();
                     }
                 }
+
+                articles.push({
+                    title,
+                    url: fullUrl,
+                    snippet
+                });
+                seenUrls.add(fullUrl);
             }
         });
         return articles;
