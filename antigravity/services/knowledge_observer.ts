@@ -85,7 +85,8 @@ export class KnowledgeObserver {
 
         k.sections.forEach((s: any) => {
           // Double check for junk content before writing to MD
-          if (s.content.length > 5 && !s.content.includes('{')) {
+          // Increased permissive threshold to allow technical code blocks
+          if (s.content.length > 5) {
             mdContent += `## ${s.header}\n${s.content}\n\n`;
           }
         });
@@ -148,9 +149,10 @@ export class KnowledgeObserver {
 
     // Filter out sections that have too much junk or too little content
     const filteredSections = sections.filter(s => {
-      const junkPatterns = [/{/, /}/, /@media/, /\.wp-/, /!important/];
-      const isJunk = junkPatterns.some(p => p.test(s.content)) && s.content.length > 100;
-      return s.content.trim().length > 10 && !isJunk;
+      const hasCodeBlock = s.content.includes('```');
+      const junkPatterns = [/@media/, /\.wp-/, /!important/];
+      const isJunk = !hasCodeBlock && junkPatterns.some(p => p.test(s.content)) && s.content.length > 100;
+      return s.content.trim().length > 5 && !isJunk;
     });
 
     // Naive keyword extraction based on frequency (excluding common stop words)
