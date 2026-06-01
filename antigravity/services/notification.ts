@@ -51,13 +51,14 @@ export async function dispatchExecutiveBriefing(summary: string, details?: strin
 
   const formattedDetails = details ? details.split('\n\n').map(section => {
     if (section.startsWith('---')) {
-      return `\n${section.replace(/---/g, '').trim().toUpperCase()}\n${'='.repeat(section.length - 6)}`
+      const header = section.replace(/---/g, '').trim().toUpperCase()
+      return `\n[ ${header} ]\n${'·'.repeat(header.length + 4)}`
     }
     return section
   }).join('\n') : ''
 
   const fullMessage = details
-    ? `🔔 EXECUTIVE BRIEFING\n\nSTATUS: ${summary}\n${formattedDetails}`
+    ? `╔═══════════════════════════════════════════╗\n║         🔔 EXECUTIVE BRIEFING           ║\n╚═══════════════════════════════════════════╝\n\nPOSTURE: ${summary}\n${formattedDetails}`
     : `🔔 EXECUTIVE BRIEFING: ${summary}`
 
   const briefing: Notification = {

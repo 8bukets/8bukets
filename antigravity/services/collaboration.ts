@@ -254,8 +254,10 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     { type: 'Documentation', name: 'KNOWLEDGE_MERGE.md', status: 'Active' }
   )
 
-  // Phase 12: Advanced Synergy Detection (Resource Overlap)
+  // Phase 12: Advanced Synergy Detection (Resource Overlap & Functional Dependencies)
   const resourceUsage: Record<string, Set<string>> = {}
+  const functionalClusters: Record<string, Set<string>> = {}
+
   branches.forEach(b => {
     if (b.changedFiles) {
       b.changedFiles.forEach((f: string) => {
@@ -263,13 +265,46 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
         if (matchedResource) {
           if (!resourceUsage[matchedResource.name]) resourceUsage[matchedResource.name] = new Set()
           resourceUsage[matchedResource.name].add(b.name)
+
+          // Group by Functional Cluster (e.g., 'auth', 'database', 'cloud')
+          const clusterMatch = matchedResource.name.match(/^(auth|db|database|cloud|neural|edge|api|ui|ux|security|knowledge|intelligence)/i)
+          if (clusterMatch) {
+            const cluster = clusterMatch[0].toLowerCase()
+            if (!functionalClusters[cluster]) functionalClusters[cluster] = new Set()
+            functionalClusters[cluster].add(b.name)
+          }
         }
       })
     }
   })
 
   map.collaborationRecommendations = []
+  map.resourceDependencies = []
 
+  // Phase 12: Resource Dependency Tracking (Simplified Static Analysis)
+  const serviceFiles = map.resourceInventory.filter((r: any) => r.type === 'Service')
+  for (const service of serviceFiles) {
+    try {
+      const content = await fs.promises.readFile(path.join(process.cwd(), service.path), 'utf8')
+      const imports = content.match(/import .* from ['"]\.\/(.*)['"]/g) || []
+      imports.forEach(imp => {
+        const depMatch = imp.match(/['"]\.\/(.*)['"]/)
+        if (depMatch) {
+          const depName = depMatch[1].replace(/\.[jt]s$/, '')
+          const target = serviceFiles.find(s => s.name === depName)
+          if (target) {
+            map.resourceDependencies.push({
+              source: service.name,
+              target: target.name,
+              type: 'import'
+            })
+          }
+        }
+      })
+    } catch (e) {}
+  }
+
+  // Resource Overlap Synergy
   Object.entries(resourceUsage).forEach(([resource, branchSet]) => {
     if (branchSet.size > 1) {
       const synergyBranchNames = Array.from(branchSet)
@@ -281,7 +316,6 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
         intensity
       })
 
-      // Phase 12: Generate Actionable Collaboration Recommendations
       const primaryStakeholders = stakeholders.filter(s => {
         const rolePrefix = s.role.toLowerCase().split(' ')[0]
         const emailPrefix = s.email.split('@')[0].toLowerCase()
@@ -297,8 +331,27 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
         branches: synergyBranchNames,
         rationale: `${synergyBranchNames.length} branches are concurrently modifying '${resource}'. This indicates high developmental contention. ${primaryStakeholders.length > 0 ? `Urgent coordination required between: ${primaryStakeholders.join(', ')}.` : 'Strategic alignment recommended across independent teams.'}`
       })
+    }
+  })
 
-      console.warn(`🤝 [Collaboration] Synergy Detected: ${synergyBranchNames.length} branches working on ${resource}.`)
+  // Functional Cluster Synergy
+  Object.entries(functionalClusters).forEach(([cluster, branchSet]) => {
+    if (branchSet.size > 5) { // High density functional focus
+      const synergyBranchNames = Array.from(branchSet)
+      map.synergies.push({
+        type: 'Functional Focus Synergy',
+        resource: `Cluster: ${cluster}`,
+        branches: synergyBranchNames,
+        intensity: 'High'
+      })
+
+      map.collaborationRecommendations.push({
+        priority: 'Medium',
+        action: `Review '${cluster}' functional roadmaps`,
+        resource: cluster,
+        branches: synergyBranchNames,
+        rationale: `${synergyBranchNames.length} branches are targeting the '${cluster}' functional area. This suggests a high-priority system evolution. Recommend a architectural review to ensure consistency.`
+      })
     }
   })
 
@@ -430,18 +483,35 @@ export async function mergeBranchInsights(branches: any[]) {
 
   let newEntries = `\n## Ecosystem Knowledge Consolidation (${new Date().toISOString()})\n`
 
+  // Highlight Strategic Synergies if they exist in the state (passing them in would be better but let's derive from branches)
+  const branchesWithSynergy = relevantBranches.filter(b => b.category === 'feature' || b.category === 'performance')
+  if (branchesWithSynergy.length > 0) {
+    newEntries += `### ⚡ Strategic Synergy Highlights\n`
+    branchesWithSynergy.slice(0, 5).forEach(b => {
+      newEntries += `- **SYNERGY:** \`${b.name}\` -> ${b.results || b.result || 'N/A'} (Focus: ${b.category})\n`
+    })
+    newEntries += `\n`
+  }
+
   Object.entries(categories).forEach(([category, domains]) => {
     newEntries += `### 📂 Category: ${category.toUpperCase()}\n`
     Object.entries(domains).forEach(([domain, branchList]) => {
-      newEntries += `#### 🌐 Strategic Domain: ${domain}\n`
+      newEntries += `#### 🌐 Domain: ${domain}\n`
       branchList.forEach(b => {
         newEntries += `- **Branch:** \`${b.name}\`\n`
-        newEntries += `  - **Result:** ${b.results}\n`
+        newEntries += `  - **Result:** ${b.results || b.result || 'N/A'}\n`
+        if (b.lastSeen) {
+          newEntries += `  - **Activity:** Last active ${b.lastSeen}\n`
+        }
         if (b.knowledge) {
           newEntries += `  - **Knowledge:** ${b.knowledge}\n`
         }
         if (b.changedFiles && b.changedFiles.length > 0) {
           newEntries += `  - **Artifacts:** ${b.changedFiles.length} files modified.\n`
+          const criticalFiles = b.changedFiles.filter((f: string) => f.includes('core.ts') || f.includes('jules.ts') || f.includes('collaboration.ts'))
+          if (criticalFiles.length > 0) {
+            newEntries += `  - **Critical Impact:** Branch modifies core ecosystem files.\n`
+          }
         }
       })
       newEntries += `\n`
