@@ -92,6 +92,15 @@ export async function evolve() {
              suggestion: 'SYNC_LATENCY_UNOPTIMIZED: Documented goal of <50ms latency for global neural synchronization detected. Code lacks explicit latency monitoring.'
            })
         }
+
+        // Rule 8: Regional Configuration Compliance (Phase 13 APAC Expansion)
+        if (content.includes('edge') && !content.includes('region') && lines > 50) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'MISSING_REGIONAL_CONFIG: APAC Phase 13 directive mandates localized regional configuration for edge nodes.'
+          })
+        }
       }
     }
   }

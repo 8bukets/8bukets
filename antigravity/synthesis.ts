@@ -217,6 +217,15 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
+  // Gap Analysis 23: APAC Edge Orchestrator
+  if (!files.some(f => f.includes('apac_edge'))) {
+    ideas.push({
+      feature: 'APAC Edge Orchestrator',
+      rationale: 'Manages autonomous deployment and latency optimization for Tokyo, Singapore, and Sydney edge nodes as per Phase 13 directives.',
+      complexity: 'High'
+    })
+  }
+
   // Force an idea for demonstration if none exist
   if (ideas.length === 0) {
     ideas.push({
