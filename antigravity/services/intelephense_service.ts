@@ -115,7 +115,7 @@ export class IntelephenseService {
 
     // 5. Persist consolidated knowledge
     const observer = new KnowledgeObserver()
-    await observer.persistKnowledge(consolidatedKnowledge, 'Intelephense')
+    await observer.persistKnowledge(consolidatedKnowledge)
 
     console.log('✅ Intelephense consolidation complete.')
   }

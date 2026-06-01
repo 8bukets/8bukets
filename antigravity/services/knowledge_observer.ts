@@ -85,7 +85,7 @@ export class KnowledgeObserver {
 
         k.sections.forEach((s: any) => {
           // Double check for junk content before writing to MD
-          if (s.content.length > 5 && !s.content.includes('{')) {
+          if (s.content.length > 5) {
             mdContent += `## ${s.header}\n${s.content}\n\n`;
           }
         });
