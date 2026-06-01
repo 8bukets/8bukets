@@ -16,16 +16,16 @@
     ],
     "docker": {
         "status": "optimal",
-        "containerCount": 2
+        "containerCount": 0
     },
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1780281156048,
+        "timestamp": 1780285520596,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
-        "branches": 2291,
+        "branches": 2294,
         "pendingTasks": 0,
         "relationshipMap": {
             "stakeholderEngagement": {
@@ -38,7 +38,7 @@
                 "Jules (Lead Architect)": {
                     "email": "jules@antigravity.ai",
                     "activeProjects": [
-                        "jules-14522442966264815851-ecf34d53",
+                        "jules-845370085628204927-f2f69fb8",
                         "remotes/origin/HEAD -> origin/jules/scraper-markposition-17752547678215960211",
                         "remotes/origin/add-jules-cli-7658708591293792322",
                         "remotes/origin/feat/autonomous-protocol-jules-16130780090107402276",
@@ -187,7 +187,8 @@
                     "remotes/origin/integrate-jenkins-pipeline-generation-14117303396069153360"
                 ],
                 "Maintain Zero-Touch Autonomous Operations.": [
-                    "jules-14522442966264815851-ecf34d53",
+                    "jules-845370085628204927-f2f69fb8",
+                    "main",
                     "remotes/origin/add-gitlab-runner-service-1151466855069035440",
                     "remotes/origin/add-malubeach-scraper-16704333902164650708",
                     "remotes/origin/add-mysql-agent-12534386317238704274",
@@ -200,6 +201,7 @@
                     "remotes/origin/autonomous-daily-sync-refinement-17898063665932042144",
                     "remotes/origin/autonomous-daily-work-fix-recursion-and-streamline-17917200239377968784",
                     "remotes/origin/autonomous-engine-and-work-orders-5472523483534806540",
+                    "remotes/origin/autonomous-evolution-command-15592904538658549663",
                     "remotes/origin/autonomous-loop-enhancement-4557411631469647525",
                     "remotes/origin/autonomous-workflow-creation-17803793083721136421",
                     "remotes/origin/bolt-optimize-db-connection-12196506237305672986",
@@ -384,6 +386,7 @@
                     "remotes/origin/jules-full-autonomous-automatic-workflow-8311799048599272217",
                     "remotes/origin/jules-full-autonomus-workflow-8744732568350416698",
                     "remotes/origin/macbook-cloud-simulation-2285701184876173816",
+                    "remotes/origin/main",
                     "remotes/origin/opt-scraper-regex-6404737091544860092",
                     "remotes/origin/palette-cli-ux-5136733467430420971",
                     "remotes/origin/palette-cli-ux-improvements-8617716335041011148",
@@ -507,6 +510,7 @@
                     "remotes/origin/feat/nextjs-supabase-mongodb-ecosystem-8833511503168317980",
                     "remotes/origin/feat/phase-12-cloud-convergence-and-sentient-orchestration-8137990793219294746",
                     "remotes/origin/feat/phase-22-cloud-super-intelligence-7069863824765684745",
+                    "remotes/origin/feat/phase13-apac-integration-14522442966264815851",
                     "remotes/origin/feat/react-agent-integration-8372098972397137891",
                     "remotes/origin/feat/react-integration-v2-8425489280318980511",
                     "remotes/origin/feat/unified-collaboration-intelligence-10789658545646187286",
@@ -1647,6 +1651,12 @@
                     "name": "remotes/origin/feat/add-first-gitlab-pipeline-16997691605119051204",
                     "status": "Ready for Merge",
                     "result": "Commit: ci: configure first gitlab ci/cd pipeline"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "remotes/origin/feat/add-google-ads-urls-1299647422113621709",
+                    "status": "Ready for Merge",
+                    "result": "Commit: feat: add google ads urls to knowledge observation"
                 },
                 {
                     "type": "Branch Result",
@@ -3264,6 +3274,12 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "remotes/origin/feat/phase13-apac-integration-14522442966264815851",
+                    "status": "Ready for Merge",
+                    "result": "Commit: feat: integrate Phase 13 APAC knowledge and improve system engines"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "remotes/origin/feat/prototype-schema-2382889081635482231",
                     "status": "Ready for Merge",
                     "result": "Commit: feat: introduce Prototype data schema using Zod and Mongoose"
@@ -3456,13 +3472,120 @@
                 }
             ],
             "synergies": [],
-            "collaborationRecommendations": []
+            "collaborationRecommendations": [],
+            "resourceDependencies": [
+                {
+                    "source": "cloud_simulation",
+                    "target": "cloud_workflow",
+                    "type": "import"
+                },
+                {
+                    "source": "cloud_simulation",
+                    "target": "docker",
+                    "type": "import"
+                },
+                {
+                    "source": "cloud_simulation",
+                    "target": "react",
+                    "type": "import"
+                },
+                {
+                    "source": "cloud_workflow",
+                    "target": "docker",
+                    "type": "import"
+                },
+                {
+                    "source": "cloud_workflow",
+                    "target": "gitlab",
+                    "type": "import"
+                },
+                {
+                    "source": "cloud_workflow",
+                    "target": "github_evolution",
+                    "type": "import"
+                },
+                {
+                    "source": "cloud_workflow",
+                    "target": "gitkraken_metrics",
+                    "type": "import"
+                },
+                {
+                    "source": "cloud_workflow",
+                    "target": "react",
+                    "type": "import"
+                },
+                {
+                    "source": "collaboration",
+                    "target": "docker",
+                    "type": "import"
+                },
+                {
+                    "source": "collaboration",
+                    "target": "jenkins",
+                    "type": "import"
+                },
+                {
+                    "source": "collaboration",
+                    "target": "notification",
+                    "type": "import"
+                },
+                {
+                    "source": "creation_engine",
+                    "target": "work_order",
+                    "type": "import"
+                },
+                {
+                    "source": "deep_cognitive_self_correction",
+                    "target": "creation_engine",
+                    "type": "import"
+                },
+                {
+                    "source": "icloud_observer",
+                    "target": "knowledge_observer",
+                    "type": "import"
+                },
+                {
+                    "source": "intelephense_service",
+                    "target": "github_docs_observer",
+                    "type": "import"
+                },
+                {
+                    "source": "intelephense_service",
+                    "target": "knowledge_observer",
+                    "type": "import"
+                },
+                {
+                    "source": "intelligence",
+                    "target": "collaboration",
+                    "type": "import"
+                },
+                {
+                    "source": "intelligence",
+                    "target": "work_order",
+                    "type": "import"
+                },
+                {
+                    "source": "knowledge",
+                    "target": "knowledge_observer",
+                    "type": "import"
+                },
+                {
+                    "source": "presence",
+                    "target": "docker",
+                    "type": "import"
+                },
+                {
+                    "source": "presence",
+                    "target": "git_provider",
+                    "type": "import"
+                }
+            ]
         },
         "neuralPulse": {
             "origin": "development",
             "health": "degraded",
             "volatilityTags": 0,
-            "timestamp": "2026-06-01T02:33:01.383Z"
+            "timestamp": "2026-06-01T03:45:27.765Z"
         },
         "relayState": [
             {
@@ -3472,7 +3595,7 @@
                     "Command Center",
                     "Store"
                 ],
-                "lastActivity": "2026-06-01T02:33:01.384Z",
+                "lastActivity": "2026-06-01T03:45:27.789Z",
                 "intensity": 0.85
             },
             {
@@ -3487,21 +3610,21 @@
             }
         ]
     },
-    "last_sync": "2026-06-01T02:33:02.166Z",
+    "last_sync": "2026-06-01T03:45:28.202Z",
     "directives": [
         {
-            "id": "dir_tjy2qs343",
+            "id": "dir_m6mfln1mx",
             "priority": "High",
             "intent": "Maintain 99.9% system uptime",
             "status": "Active",
-            "timestamp": "2026-06-01T02:33:01.391Z"
+            "timestamp": "2026-06-01T03:45:27.797Z"
         },
         {
-            "id": "dir_vimlk1jl5",
+            "id": "dir_8tolj59li",
             "priority": "Medium",
             "intent": "Consolidate all branch knowledge daily",
             "status": "Active",
-            "timestamp": "2026-06-01T02:33:01.391Z"
+            "timestamp": "2026-06-01T03:45:27.797Z"
         }
     ]
 }

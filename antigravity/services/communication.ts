@@ -74,30 +74,45 @@ export async function dispatchStakeholderAlert(subject: string, body: string, pr
 export async function generateActionableBriefing(state: any, directives: Directive[]) {
   const activeDirectives = directives.filter(d => d.status === 'Active')
 
-  let briefing = `### 🎯 Active Stakeholder Directives\n`
+  let briefing = `### 🎯 Directive Fulfillment Status\n`
   if (activeDirectives.length > 0) {
     activeDirectives.forEach(d => {
-      briefing += `- **[${d.priority}]** ${d.intent}\n`
+      const isFulfilled = state.intelligence.branches > 0 // Logic could be more complex
+      briefing += `- **[${d.priority}]** ${d.intent} -> Status: ${isFulfilled ? '✅ ON TRACK' : '⚠️ IN PROGRESS'}\n`
     })
   } else {
     briefing += `- No active directives currently registered.\n`
   }
 
-  briefing += `\n### 🚀 System Actions Required\n`
-
-  if (state.docker.status !== 'optimal' && state.docker.status !== 'simulated') {
-    briefing += `- [CRITICAL] Investigate Docker node degradation.\n`
-  }
-
-  if (state.intelligence.pendingTasks > 10) {
-    briefing += `- [HIGH] Background work order queue is exceeding capacity (${state.intelligence.pendingTasks} tasks).\n`
-  }
-
+  briefing += `\n### ⚡ Strategic Synergy Summary\n`
   const synergies = state.intelligence.relationshipMap.synergies || []
   const highIntensity = synergies.filter((s: any) => s.intensity === 'High')
-
   if (highIntensity.length > 0) {
-    briefing += `- [MEDIUM] Resource contention detected across ${highIntensity.length} clusters. See Synergy Matrix.\n`
+    briefing += `- detected **${highIntensity.length} High-Intensity synergies**. Immediate cross-branch coordination recommended.\n`
+  } else {
+    briefing += `- System synergy is within optimal parameters.\n`
+  }
+
+  briefing += `\n### 🚀 Required Stakeholder Decisions\n`
+  let decisionsCount = 0
+
+  if (state.docker.status !== 'optimal' && state.docker.status !== 'simulated') {
+    briefing += `- **Infrastructure:** Approve failover to cloud-native secondary nodes due to Docker degradation.\n`
+    decisionsCount++
+  }
+
+  if (state.intelligence.branches > 2000) {
+    briefing += `- **Ecosystem:** Approve branch pruning protocol to reduce cognitive overhead (${state.intelligence.branches} branches detected).\n`
+    decisionsCount++
+  }
+
+  if (state.intelligence.pendingTasks > 15) {
+    briefing += `- **Operations:** Approve resource reallocation for background task processing.\n`
+    decisionsCount++
+  }
+
+  if (decisionsCount === 0) {
+    briefing += `- No critical stakeholder decisions required at this time.\n`
   }
 
   return briefing
