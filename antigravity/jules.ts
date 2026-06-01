@@ -264,7 +264,19 @@ export class Jules {
     // Knowledge Observation
     console.log('👁️ [Jules] Initiating Knowledge Observation...')
     const { observeKnowledge, persistKnowledge } = await import('./services/knowledge_observer')
-    const urlsToObserve = ['https://software-online-review.com']
+    const urlsToObserve = [
+      'https://software-online-review.com',
+      'https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU',
+      'https://business.google.com/uk/ad-tools/bidding/',
+      'https://business.google.com/uk/resources/',
+      'https://developers.google.com/ad-manager',
+      'https://developers.google.com/ad-manager/dynamic-ad-insertion',
+      'https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service',
+      'https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving',
+      'https://developers.google.com/ad-manager/api/start',
+      'https://admanager.google.com/home/resources/',
+      'https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview'
+    ]
     for (const url of urlsToObserve) {
       const knowledgeInsights = await observeKnowledge(url)
       if (knowledgeInsights) {
