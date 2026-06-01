@@ -225,14 +225,10 @@ export class Jules {
     if (ideas.length > 0) {
       this.recordTask(`Synthesis: Generated ${ideas.length} architectural proposals.`)
 
-      // Phase 10: Singularity Orchestration
-      const { bootstrap } = await import('./singularity')
-      for (const idea of ideas) {
-        if (idea.complexity === 'Low' || idea.complexity === 'Medium') {
-          await bootstrap(idea)
-          this.recordTask(`Singularity: Autonomously bootstrapped ${idea.feature}.`)
-        }
-      }
+      // Phase 10: Singularity Orchestration (Integrated via CreationEngine)
+      const { creationEngine } = await import('./services/creation_engine')
+      await creationEngine.processIdeas(ideas)
+      this.recordTask(`CreationEngine: Processed ${ideas.length} ideas into work order chains.`)
     }
 
     // Phase 12: Super-Intelligence Optimization
