@@ -38,8 +38,10 @@ async def test_caio_agent():
     # Based on data/knowledge/system_knowledge.json which was updated during the cycle
     assert "ACTIVATE_PHASE_13_PROTOCOLS" in result["strategic_directives"]
     assert "DEPLOY_APAC_EDGE_NODES" in result["strategic_directives"]
+    assert "DECIDE_BUILD_VS_BUY_STRATEGY" in result["strategic_directives"]
 
-    # Verify Market Intelligence integration in summary
+    # Verify Market Intelligence and Role Alignment integration in summary
+    assert "Executive Role Alignment: Verified." in result["executive_summary"]
     assert "Market Intelligence Q3" in result["executive_summary"] or "demand for sovereign AI clusters" in result["executive_summary"]
 
     print("Test passed!")

@@ -86,8 +86,18 @@ class ChiefAIOfficerAgent(BaseAgent):
 
         # Integrated Knowledge & Phase 13 Specific Logic
         knowledge = self._get_integrated_knowledge()
+        role_alignment_verified = False
         for k in knowledge.get("typescript_sections", []):
             title = k.get("title", "")
+
+            # Role Alignment Check
+            if "Chief AI Officer (CAIO) Role" in title:
+                role_alignment_verified = True
+                content_str = str(k.get("sections", [])).lower()
+                if "implementation & tech stacking" in content_str:
+                    self.logger.info("CAIO [ROLE]: Tech stacking responsibility identified. Issuing build vs buy directive.")
+                    strategic_directives.append("DECIDE_BUILD_VS_BUY_STRATEGY")
+
             if "Phase 13" in title or "Phase 13" in str(k.get("sections", [])):
                 self.logger.info(f"CAIO [KNOWLEDGE]: Phase 13 strategy detected in integrated knowledge: {title}")
                 if "ACTIVATE_PHASE_13_PROTOCOLS" not in strategic_directives:
@@ -189,7 +199,11 @@ class ChiefAIOfficerAgent(BaseAgent):
                     if section.get("header") == "Trends":
                         market_trends += f" {section.get('content')}"
 
-        summary = f"CAIO evaluation cycle completed successfully. Final Strategy: {strategy_status}."
+        summary = ""
+        if role_alignment_verified:
+            summary += "Executive Role Alignment: Verified. "
+
+        summary += f"CAIO evaluation cycle completed successfully. Final Strategy: {strategy_status}."
         if market_trends:
             summary += f" Market Trends: {market_trends.strip()}"
 
