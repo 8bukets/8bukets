@@ -76,14 +76,7 @@ export async function observeKnowledge(url: string) {
       existingContent = '# Market Intelligence Matrix\n'
     }
 
-    const signature = 'All the best - https://markposition.wordpress.com'
-
-    // Instead of regex, split on signature and trim
-    let cleanContent = existingContent
-    if (existingContent.includes(signature)) {
-       cleanContent = existingContent.split(signature)[0]
-    }
-    cleanContent = cleanContent.trimEnd()
+    let cleanContent = existingContent.trimEnd()
 
     // Check if the target is already observed
     const targetIndicator = `- **Target**: ${url}`;
@@ -112,7 +105,7 @@ export async function observeKnowledge(url: string) {
         }
     }
 
-    newContent = newContent.trimEnd() + '\n\n' + signature + '\n'
+    newContent = newContent.trimEnd() + '\n'
     await fs.promises.writeFile(knowledgePath, newContent, 'utf8')
     console.log(`✅ [Knowledge Observer] ${updated ? 'Updated' : 'Appended'} insights in KNOWLEDGE_MERGE.md.`)
 
