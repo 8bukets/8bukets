@@ -24,8 +24,11 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   let report = `# CONSOLIDATED INTELLIGENCE REPORT\n\n`
   report += `*Generated: ${new Date().toISOString()}*\n\n`
 
+  const isMongoOptimal = health.mongodb === 'connected' || health.mongodb === 'healthy';
+  const isSupabaseOptimal = health.supabase === 'connected' || health.supabase === 'healthy';
+
   report += `## 📋 Executive Summary\n`
-  report += `- **System Posture:** ${health.mongodb === 'connected' && health.supabase === 'connected' ? '✅ OPTIMAL' : '⚠️ DEGRADED'}\n`
+  report += `- **System Posture:** ${isMongoOptimal && isSupabaseOptimal ? '✅ OPTIMAL' : '⚠️ DEGRADED'}\n`
   report += `- **Active Synergy:** ${branches.length} branches analyzed across multiple domains.\n`
   report += `- **Mission Alignment:** ${metadata.goals.length} strategic goals tracked.\n\n`
 
@@ -51,14 +54,27 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   }
   report += `\n`
 
+  const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
+
   // Phase 12: Actionable Briefing
   const actionableBriefing = await generateActionableBriefing({
     docker: { status: health.mongodb === 'healthy' ? 'optimal' : 'degraded' },
-    intelligence: { pendingTasks: workOrders.length, relationshipMap: await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals) }
+    intelligence: { pendingTasks: workOrders.length, relationshipMap }
   }, directives)
 
   report += `## 🚀 Actionable Intelligence\n`
   report += actionableBriefing + `\n\n`
+
+  const criticalRecs = relationshipMap.collaborationRecommendations.filter((r: any) => r.priority === 'Critical')
+  if (criticalRecs.length > 0) {
+    report += `### 🤝 Strategic Coordination Pathways\n`
+    criticalRecs.forEach((r: any) => {
+      report += `- **Conflict/Synergy on:** \`${r.resource}\`\n`
+      report += `  - **Pathway:** ${r.rationale.includes('Urgent coordination required between:') ? r.rationale.split('Urgent coordination required between:')[1].trim() : 'Cross-team architectural review required.'}\n`
+      report += `  - **Involved Branches:** ${r.branches.join(', ')}\n`
+    })
+    report += `\n`
+  }
 
   report += `## 🌿 Branch Intelligence (Recent Activity)\n`
   // Ensure branches is an array of objects
@@ -82,8 +98,6 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
     report += `  - No pending orders. System is optimal.\n`
   }
   report += `\n`
-
-  const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
 
   // Phase 12: Integrate Global Neural Network Status
   const { broadcastPulse } = await import('./neural')
@@ -235,7 +249,7 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `\n`
 
   report += `## 🚀 Prioritized Action Items\n`
-  if (health.mongodb !== 'connected') report += `- [CRITICAL] Restore MongoDB Atlas connectivity.\n`
+  if (!isMongoOptimal) report += `- [CRITICAL] Restore MongoDB Atlas connectivity.\n`
   if (workOrders.length > 5) report += `- [HIGH] Process backlog of ${workOrders.length} pending work orders.\n`
 
   const highIntensitySynergies = relationshipMap.synergies.filter((s: any) => s.intensity === 'High')

@@ -163,6 +163,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     { path: 'antigravity/services', type: 'Service', pattern: /\.ts$/ },
     { path: 'scripts', type: 'Automation Script', pattern: /\.ts$|\.sh$/ },
     { path: 'agents', type: 'AI Agent', pattern: /\.md$|\.py$/ },
+    { path: 'docs', type: 'Documentation', pattern: /\.md$/ },
     { path: 'app', type: 'UI Component', pattern: /\.tsx$|\.ts$/ },
     { path: 'web-app', type: 'UI Component', pattern: /\.tsx$|\.ts$/ },
     { path: 'public', type: 'Asset', pattern: /.*/ }
@@ -281,16 +282,17 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
   map.collaborationRecommendations = []
   map.resourceDependencies = []
 
-  // Phase 12: Resource Dependency Tracking (Simplified Static Analysis)
+  // Phase 12: Resource Dependency Tracking (Expanded Static Analysis)
   const serviceFiles = map.resourceInventory.filter((r: any) => r.type === 'Service')
   for (const service of serviceFiles) {
     try {
       const content = await fs.promises.readFile(path.join(process.cwd(), service.path), 'utf8')
-      const imports = content.match(/import .* from ['"]\.\/(.*)['"]/g) || []
+      // Support ./, ../, and @/ aliases
+      const imports = content.match(/import .* from ['"](@\/antigravity\/services\/|\.\/|\.\.\/services\/)(.*)['"]/g) || []
       imports.forEach(imp => {
-        const depMatch = imp.match(/['"]\.\/(.*)['"]/)
+        const depMatch = imp.match(/['"](@\/antigravity\/services\/|\.\/|\.\.\/services\/)(.*)['"]/)
         if (depMatch) {
-          const depName = depMatch[1].replace(/\.[jt]s$/, '')
+          const depName = depMatch[2].replace(/\.[jt]s$/, '')
           const target = serviceFiles.find(s => s.name === depName)
           if (target) {
             map.resourceDependencies.push({
@@ -355,13 +357,15 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     }
   })
 
-  // Integrate branch results into resources if they implement a specific feature
-  branches.filter(b => b.category === 'feature' && b.results).forEach(b => {
+  // Integrate branch results into resources (Expanded categories)
+  const resultCategories = ['feature', 'fix', 'performance', 'security', 'ux']
+  branches.filter(b => resultCategories.includes(b.category) && b.results && b.results !== 'N/A').forEach(b => {
     map.resourceInventory.push({
       type: 'Branch Result',
       name: b.name,
       status: 'Ready for Merge',
-      result: b.results
+      result: b.results,
+      category: b.category
     })
   })
 
@@ -410,7 +414,7 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
   const { getStakeholderDirectives } = await import('./communication')
   const directives = await getStakeholderDirectives()
 
-  await mergeBranchInsights(branches)
+  await mergeBranchInsights(branches, relationshipMap)
 
   const newState = {
     ...currentState,
@@ -434,7 +438,7 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
   return newState
 }
 
-export async function mergeBranchInsights(branches: any[]) {
+export async function mergeBranchInsights(branches: any[], relationshipMap?: any) {
   console.log('🧠 [Collaboration] Merging branch insights into ecosystem matrix...')
   const knowledgePath = path.join(process.cwd(), 'KNOWLEDGE_MERGE.md')
 
@@ -482,6 +486,19 @@ export async function mergeBranchInsights(branches: any[]) {
   })
 
   let newEntries = `\n## Ecosystem Knowledge Consolidation (${new Date().toISOString()})\n`
+
+  // Phase 12: Integrated Resource Dependency Summary
+  if (relationshipMap?.resourceDependencies && relationshipMap.resourceDependencies.length > 0) {
+    newEntries += `### 🔗 Resource Dependency Matrix\n`
+    const dependencies = relationshipMap.resourceDependencies.slice(0, 10)
+    dependencies.forEach((d: any) => {
+      newEntries += `- \`${d.source}\` -> depends on -> \`${d.target}\` (${d.type})\n`
+    })
+    if (relationshipMap.resourceDependencies.length > 10) {
+      newEntries += `- _...and ${relationshipMap.resourceDependencies.length - 10} more dependencies._\n`
+    }
+    newEntries += `\n`
+  }
 
   // Highlight Strategic Synergies if they exist in the state (passing them in would be better but let's derive from branches)
   const branchesWithSynergy = relevantBranches.filter(b => b.category === 'feature' || b.category === 'performance')
@@ -532,7 +549,8 @@ export async function mergeEcosystemInsights(branchIntelligence: any[], workOrde
   const metadata = await getMissionMetadata()
   console.log('🧠 [Collaboration] Merging ecosystem insights...')
 
-  await mergeBranchInsights(branchIntelligence)
+  const relationshipMap = await generateRelationshipMap(branchIntelligence, metadata.stakeholders, metadata.goals)
+  await mergeBranchInsights(branchIntelligence, relationshipMap)
   await broadcastToStakeholders({
     last_sync: new Date().toISOString(),
     docker: { status: 'synchronized', containerCount: 0 },
