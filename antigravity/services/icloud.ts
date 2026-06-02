@@ -20,20 +20,22 @@ export async function syncToICloud() {
   // Use os.homedir() to make it more portable
   const homeDir = os.homedir()
   const defaultICloudPath = path.join(homeDir, 'Library/Mobile Documents/com~apple~CloudDocs/Antigravity_Sync')
-  const targetPath = process.env.ICLOUD_SYNC_PATH || defaultICloudPath
-
-  if (!targetPath) {
-    console.warn('⚠️ [iCloud Sync] No target path configured. Skipping sync.')
-    return { status: 'skipped', reason: 'no_path' }
-  }
+  let targetPath = process.env.ICLOUD_SYNC_PATH || defaultICloudPath
 
   // Ensure target directory exists
   try {
     try {
       await fs.access(targetPath)
     } catch {
-      console.log(`☁️ [iCloud Sync] Creating target directory: ${targetPath}`)
-      await fs.mkdir(targetPath, { recursive: true })
+      if (process.env.MACBOOK_CLOUD_SIMULATION === 'true') {
+        const fallbackPath = path.join(process.cwd(), 'scratch/icloud_sim')
+        console.log(`☁️ [iCloud Sync] iCloud path unreachable, falling back to simulation: ${fallbackPath}`)
+        targetPath = fallbackPath
+        await fs.mkdir(targetPath, { recursive: true })
+      } else {
+        console.log(`☁️ [iCloud Sync] Creating target directory: ${targetPath}`)
+        await fs.mkdir(targetPath, { recursive: true })
+      }
     }
 
     // Explicitly verify write access
