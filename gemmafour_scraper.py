@@ -13,7 +13,7 @@ def scrape_gemmafour_docs():
         print(f"Error fetching URL: {e}")
         return
 
-    soup = BeautifulSoup(resp.content, "html.parser")
+    soup = BeautifulSoup(resp.content, "lxml")
 
     # The main container for the content is typically the main article or div.
     # In this case, we can iterate over h2 tags directly.

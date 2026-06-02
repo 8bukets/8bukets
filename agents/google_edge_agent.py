@@ -22,7 +22,7 @@ class GoogleEdgeAgent(BaseAgent):
                 async with session.get(url) as response:
                     if response.status == 200:
                         html = await response.text()
-                        soup = BeautifulSoup(html, "html.parser")
+                        soup = BeautifulSoup(html, "lxml")
                         title_tag = soup.find("title")
                         if title_tag:
                             knowledge["title"] = title_tag.get_text(strip=True)

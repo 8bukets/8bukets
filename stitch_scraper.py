@@ -35,7 +35,7 @@ async def scrape_stitch_docs():
 
         await browser.close()
 
-    soup = BeautifulSoup(html, "html.parser")
+    soup = BeautifulSoup(html, "lxml")
     article = soup.find("article") or soup.find("main") or soup.find(id="main-content")
 
     if not article:

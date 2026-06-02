@@ -31,7 +31,7 @@ class TestWordpressScraperAsync(unittest.TestCase):
 
     def test_extract_categories(self):
         html = '<article class="post category-music category-news"></article>'
-        soup = BeautifulSoup(html, 'html.parser')
+        soup = BeautifulSoup(html, 'lxml')
         article = soup.find('article')
         categories = self.scraper.extract_categories(article)
         self.assertIn("Music", categories)

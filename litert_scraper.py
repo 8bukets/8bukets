@@ -18,7 +18,7 @@ def scrape_litert_docs():
         print(f"Error fetching URL: {e}")
         return
 
-    soup = BeautifulSoup(resp.content, "html.parser")
+    soup = BeautifulSoup(resp.content, "lxml")
 
     # Since the structure might vary, let's look for headings and associate content under them.
     # In Google Dev site, main content is usually inside a <div class="devsite-article-body"> or <article>

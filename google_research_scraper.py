@@ -15,7 +15,7 @@ def scrape_google_blog(url, category_path):
         print(f"Error fetching URL {url}: {e}")
         return []
 
-    soup = BeautifulSoup(resp.content, "html.parser")
+    soup = BeautifulSoup(resp.content, "lxml")
 
     articles = []
     links = soup.find_all('a', href=True)

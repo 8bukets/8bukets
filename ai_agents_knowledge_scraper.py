@@ -19,7 +19,7 @@ def extract_structured_knowledge(url):
         print(f"Error fetching {url}: {e}")
         return None
 
-    soup = BeautifulSoup(resp.content, "html.parser")
+    soup = BeautifulSoup(resp.content, "lxml")
 
     h1 = soup.find('h1')
     title = clean_text(h1.get_text()) if h1 else (soup.title.string.split(" - ")[0] if soup.title else "N/A")
@@ -154,7 +154,7 @@ def run_knowledge_scraper():
         try:
             resp = requests.get(base_url, headers=headers)
             resp.raise_for_status()
-            soup = BeautifulSoup(resp.content, "html.parser")
+            soup = BeautifulSoup(resp.content, "lxml")
             links = soup.find_all('a', href=True)
             for link in links:
                 href = link['href']

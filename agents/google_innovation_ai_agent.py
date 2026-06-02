@@ -27,7 +27,7 @@ class GoogleInnovationAIAgent(BaseAgent):
                 async with session.get(url) as response:
                     if response.status == 200:
                         html = await response.text()
-                        soup = BeautifulSoup(html, "html.parser")
+                        soup = BeautifulSoup(html, "lxml")
 
                         links = soup.find_all('a', href=True)
                         seen_urls = set()
