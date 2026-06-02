@@ -13,7 +13,7 @@
     "evolve": "tsx --env-file=.env antigravity/evolution.ts",
     "daily": "tsx --env-file=.env antigravity/run_daily.ts",
     "ignite": "tsx --env-file=.env antigravity/run_daily.ts --continuous",
-    "autonomous-creation": "tsx --env-file=.env scripts/autonomous_creation_order.ts",
+    "autonomous-creation": "tsx --env-file=.env scripts/full_autonomous_automatic_creation.ts",
     "ingest:sor": "tsx --env-file=.env scripts/ingest_software_online_review.ts",
     "ingest:terraform": "tsx --env-file=.env scripts/ingest_terraform_knowledge.ts",
     "connect": "tsx --env-file=.env scripts/connect_and_collaborate.ts",
@@ -56,7 +56,7 @@
     "eslint-config-next": "^16.3.0-canary.16",
     "jsdom": "^24",
     "tailwindcss": "^4",
-    "tsx": "^4.22.3",
+    "tsx": "^4.22.4",
     "typescript": "^5",
     "vitest": "^4.1.7"
   }

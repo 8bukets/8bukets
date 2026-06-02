@@ -529,7 +529,7 @@ After successful operations:
 
 ## Response Framework
 
-1. **Apply filters first** when available for the query type (including types parameter)
+1. **Apply filters first** when available for the type of query (including types parameter)
 2. **Fetch complete data** via cursor-based pagination (check hasNextPage)
 3. **State analysis scope** ("Analyzed all 247 issues across 3 pages using filters X, Y...")
 4. **Apply PM frameworks** to complete dataset

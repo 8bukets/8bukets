@@ -40,8 +40,8 @@ export class IntelephenseService {
 
         // Add these sections to our consolidated list
         allSections.push(...knowledge.sections)
-      } catch (err) {
-        console.error(` ❌ Failed to fetch ${file}:`, err)
+      } catch (err: any) {
+        console.error(` ❌ Failed to fetch ${file} from GitHub (bmewburn/intelephense-docs):`, err.message || err)
       }
     }
 

@@ -21,7 +21,7 @@
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1780349771992,
+        "timestamp": 1780348393031,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
@@ -38,7 +38,7 @@
                 "Jules (Lead Architect)": {
                     "email": "jules@antigravity.ai",
                     "activeProjects": [
-                        "jules-8391244571441734244-a50091b6",
+                        "jules-7400371801550382505-38d366c9",
                         "remotes/origin/HEAD -> origin/jules/scraper-markposition-17752547678215960211",
                         "remotes/origin/add-jules-cli-7658708591293792322",
                         "remotes/origin/feat/autonomous-protocol-jules-16130780090107402276",
@@ -3613,7 +3613,7 @@
             "origin": "development",
             "health": "optimal",
             "volatilityTags": 0,
-            "timestamp": "2026-06-01T21:36:34.487Z"
+            "timestamp": "2026-06-01T21:14:04.059Z"
         },
         "relayState": [
             {
@@ -3623,7 +3623,7 @@
                     "Command Center",
                     "Store"
                 ],
-                "lastActivity": "2026-06-01T21:36:34.487Z",
+                "lastActivity": "2026-06-01T21:14:04.059Z",
                 "intensity": 0.85
             },
             {
@@ -3638,21 +3638,21 @@
             }
         ]
     },
-    "last_sync": "2026-06-01T21:36:34.904Z",
+    "last_sync": "2026-06-01T21:14:04.494Z",
     "directives": [
         {
-            "id": "dir_jzkxi7afb",
+            "id": "dir_nmproston",
             "priority": "High",
             "intent": "Maintain 99.9% system uptime",
             "status": "Active",
-            "timestamp": "2026-06-01T21:36:34.495Z"
+            "timestamp": "2026-06-01T21:14:04.068Z"
         },
         {
-            "id": "dir_p15xhrypv",
+            "id": "dir_kc1cv33i8",
             "priority": "Medium",
             "intent": "Consolidate all branch knowledge daily",
             "status": "Active",
-            "timestamp": "2026-06-01T21:36:34.495Z"
+            "timestamp": "2026-06-01T21:14:04.068Z"
         }
     ]
 }

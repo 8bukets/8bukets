@@ -70,8 +70,7 @@ export class KnowledgeObserver {
 
     // Write Markdown - Regenerate from ALL sections
     let mdContent = `# Knowledge Observation Insights (Unified)\n\n`;
-    mdContent += `**Latest Source:** ${newInsights.source}\n`;
-    mdContent += `**Latest Analysis:** ${newInsights.analyzedAt}\n\n`;
+    mdContent += `**System Analysis:** ${new Date().toISOString()}\n\n`;
 
     // Add unified keywords and posts if we want, but for now let's keep it simple
     // or just use the latest ones.
@@ -134,12 +133,12 @@ export class KnowledgeObserver {
       } else if (currentSection) {
         // Only strip HTML tags if we're not in a code block and it looks like a real tag
         // Simple heuristic: if it contains generic-like patterns, don't strip
-        let contentLine = line.trim();
+        let contentLine = inCodeBlock ? line : line.trim();
         if (!inCodeBlock) {
            contentLine = contentLine.replace(/<(?!T[A-Z][a-zA-Z0-9]*|T[0-9]|T[,\s]|T>)[^>]*>/gm, '');
         }
 
-        if (contentLine) {
+        if (contentLine || inCodeBlock) {
           currentSection.content += (currentSection.content ? '\n' : '') + contentLine;
         }
       }
