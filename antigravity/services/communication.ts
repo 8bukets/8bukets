@@ -88,9 +88,20 @@ export async function generateActionableBriefing(state: any, directives: Directi
   const synergies = state.intelligence.relationshipMap.synergies || []
   const highIntensity = synergies.filter((s: any) => s.intensity === 'High')
   if (highIntensity.length > 0) {
-    briefing += `- detected **${highIntensity.length} High-Intensity synergies**. Immediate cross-branch coordination recommended.\n`
+    briefing += `- Detected **${highIntensity.length} High-Intensity synergies**. Immediate cross-branch coordination recommended.\n`
   } else {
     briefing += `- System synergy is within optimal parameters.\n`
+  }
+
+  const recommendations = state.intelligence.relationshipMap.collaborationRecommendations || []
+  const criticalRecs = recommendations.filter((r: any) => r.priority === 'Critical')
+
+  if (criticalRecs.length > 0) {
+    briefing += `\n### 🤝 Direct Coordination Paths\n`
+    criticalRecs.forEach((r: any) => {
+      briefing += `- **Resource:** \`${r.resource}\`\n`
+      briefing += `  - *Path:* ${r.rationale.includes('Urgent coordination required between:') ? r.rationale.split('Urgent coordination required between:')[1].trim() : 'Cross-team alignment'}\n`
+    })
   }
 
   briefing += `\n### 🚀 Required Stakeholder Decisions\n`
