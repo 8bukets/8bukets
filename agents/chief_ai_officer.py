@@ -110,6 +110,12 @@ class ChiefAIOfficerAgent(BaseAgent):
                         self.logger.info("CAIO [STRATEGY]: Asia-Pacific edge node expansion identified. Issuing deployment directive.")
                         strategic_directives.append("DEPLOY_APAC_EDGE_NODES")
 
+            # ISO 42001 Compliance Check
+            if "42001" in title or "42001" in str(k.get("sections", [])):
+                if "ENFORCE_ISO_42001_COMPLIANCE" not in strategic_directives:
+                    self.logger.info(f"CAIO [GOVERNANCE]: ISO/IEC 42001:2023 detected in knowledge: {title}. Mandating compliance.")
+                    strategic_directives.append("ENFORCE_ISO_42001_COMPLIANCE")
+
         # Cloud Infrastructure Resilience Assessment
         if cloud_status == "DEGRADED":
             self.logger.warning("CAIO [INFRA]: Cloud workflow degradation detected. Initiating automated recovery and scaling procedures.")

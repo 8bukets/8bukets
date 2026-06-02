@@ -39,6 +39,7 @@ async def test_caio_agent():
     assert "ACTIVATE_PHASE_13_PROTOCOLS" in result["strategic_directives"]
     assert "DEPLOY_APAC_EDGE_NODES" in result["strategic_directives"]
     assert "DECIDE_BUILD_VS_BUY_STRATEGY" in result["strategic_directives"]
+    assert "ENFORCE_ISO_42001_COMPLIANCE" in result["strategic_directives"]
 
     # Verify Market Intelligence and Role Alignment integration in summary
     assert "Executive Role Alignment: Verified." in result["executive_summary"]
