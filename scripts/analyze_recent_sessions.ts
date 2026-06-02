@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { evolve, applyFixes } from '../antigravity/evolution';
 
 async function main() {
   console.log('🔍 [Evolution] Analyzing recent sessions and work orders...');
@@ -63,6 +64,19 @@ async function main() {
         fs.writeFileSync(knowledgePath, md);
         console.log('✅ [Evolution] Successfully injected session insights into KNOWLEDGE_MERGE.md');
     }
+  }
+
+  try {
+    console.log('🚀 [Evolution] Triggering deep autonomous self-correction engine...');
+    const suggestions = await evolve();
+    if (suggestions && suggestions.length > 0) {
+      console.log(`🧠 [Evolution] Applying ${suggestions.length} autonomous fixes to improve system engine and project...`);
+      await applyFixes(suggestions);
+    } else {
+      console.log('✅ [Evolution] Codebase is fully optimized. No architectural drift detected.');
+    }
+  } catch (err) {
+    console.error('⚠️ [Evolution] Self-correction engine failed:', err);
   }
 }
 
