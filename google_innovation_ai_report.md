@@ -2,33 +2,6 @@
 
 Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innovation-and-ai/) and [https://blog.google/innovation-and-ai/models-and-research/](https://blog.google/innovation-and-ai/models-and-research/)
 
-### Google DeepMind
-- URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/
-
-### Google Research
-- URL: https://blog.google/innovation-and-ai/models-and-research/google-research/
-
-### Google Labs
-- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/
-
-### Gemini models
-- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/
-
-### Quantum computing
-- URL: https://blog.google/innovation-and-ai/models-and-research/quantum-computing/
-
-### Developer tools
-- URL: https://blog.google/innovation-and-ai/technology/developers-tools/
-
-### Global network
-- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/
-
-### Google Cloud
-- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/
-
-### Safety & Security
-- URL: https://blog.google/innovation-and-ai/technology/safety-security/
-
 ### 9 demos of Gemini Omni and Gemini 3.5 in action
 - URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-3-5-videos/
 
@@ -46,9 +19,6 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 
 ### Simulate real-world places with Project Genie and Street View
 - URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/
-
-### AI Products
-- URL: https://blog.google/innovation-and-ai/products/
 
 ### Making it easier to understand how content was created and edited
 - URL: https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/
@@ -101,11 +71,44 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 ### Dive deeper into I/O 2026 with NotebookLM.
 - URL: https://blog.google/innovation-and-ai/products/notebooklm/notebooklm-google-io-2026/
 
+### Blue, yellow and green: Google invests in its first data center in Sweden.
+- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/blue-yellow-and-green-google-invests-in-its-first-data-center-in-sweden/
+
 ### We’re announcing the first Texas Energy Impact Fund recipients.
 - URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/texas-energy-impact-fund/
 
 ### We’re announcing new community investments in Missouri.
 - URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/missouri-programs/
+
+### Google DeepMind
+- URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/
+
+### Google Research
+- URL: https://blog.google/innovation-and-ai/models-and-research/google-research/
+
+### Google Labs
+- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/
+
+### Gemini models
+- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/
+
+### Quantum computing
+- URL: https://blog.google/innovation-and-ai/models-and-research/quantum-computing/
+
+### Developer tools
+- URL: https://blog.google/innovation-and-ai/technology/developers-tools/
+
+### Global network
+- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/
+
+### Google Cloud
+- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/
+
+### Safety & Security
+- URL: https://blog.google/innovation-and-ai/technology/safety-security/
+
+### AI Products
+- URL: https://blog.google/innovation-and-ai/products/
 
 ### LinkedIn
 - URL: https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/innovation-and-ai/models-and-research/&title=Models%20%26%20research
