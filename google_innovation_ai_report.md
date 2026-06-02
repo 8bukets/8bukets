@@ -2,9 +2,6 @@
 
 Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innovation-and-ai/) and [https://blog.google/innovation-and-ai/models-and-research/](https://blog.google/innovation-and-ai/models-and-research/)
 
-### LinkedIn
-- URL: https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/innovation-and-ai/models-and-research/&title=Models%20%26%20research
-
 ### Google DeepMind
 - URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/
 
@@ -19,6 +16,18 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 
 ### Quantum computing
 - URL: https://blog.google/innovation-and-ai/models-and-research/quantum-computing/
+
+### Developer tools
+- URL: https://blog.google/innovation-and-ai/technology/developers-tools/
+
+### Global network
+- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/
+
+### Google Cloud
+- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/
+
+### Safety & Security
+- URL: https://blog.google/innovation-and-ai/technology/safety-security/
 
 ### 9 demos of Gemini Omni and Gemini 3.5 in action
 - URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-3-5-videos/
@@ -38,8 +47,20 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 ### Simulate real-world places with Project Genie and Street View
 - URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/
 
+### AI Products
+- URL: https://blog.google/innovation-and-ai/products/
+
+### Making it easier to understand how content was created and edited
+- URL: https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/
+
 ### A new experiment brings better group meetings to Google Beam
 - URL: https://blog.google/innovation-and-ai/models-and-research/google-research/google-beam-group-meetings/
+
+### Gemini for Science: AI experiments and tools for a new era of discovery
+- URL: https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/
+
+### Building superconducting and neutral atom quantum computers
+- URL: https://blog.google/innovation-and-ai/technology/research/neutral-atom-quantum-computers/
 
 ### Our new study explores how AI can reduce the climate impact of air travel.
 - URL: https://blog.google/innovation-and-ai/models-and-research/google-research/contrail-avoidance-research/
@@ -62,47 +83,17 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 ### Answering your trending questions on World Quantum Day
 - URL: https://blog.google/innovation-and-ai/models-and-research/quantum-computing/world-quantum-day-2026/
 
-### LinkedIn
-- URL: https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/innovation-and-ai/&title=Innovation%20%26%20AI
-
-### See all
-- URL: https://blog.google/innovation-and-ai/models-and-research/
-
-### Developer tools
-- URL: https://blog.google/innovation-and-ai/technology/developers-tools/
-
-### Gemini app
-- URL: https://blog.google/innovation-and-ai/products/gemini-app/
-
-### NotebookLM
-- URL: https://blog.google/innovation-and-ai/products/notebooklm/
-
-### See all
-- URL: https://blog.google/innovation-and-ai/products/
-
-### Global network
-- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/
-
-### Google Cloud
-- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/
-
-### See all
-- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/
-
-### Safety & Security
-- URL: https://blog.google/innovation-and-ai/technology/safety-security/
-
-### Health
-- URL: https://blog.google/innovation-and-ai/technology/health/
-
-### See all
-- URL: https://blog.google/innovation-and-ai/technology/
-
-### Catch up on 12 major I/O 2026 moments
-- URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/
+### Quantum frontiers may be closer than they appear
+- URL: https://blog.google/innovation-and-ai/technology/safety-security/cryptography-migration-timeline/
 
 ### Google Research
 - URL: https://blog.google/innovation-and-ai/technology/research/
+
+### How we used Gemini to build Google I/O 2026
+- URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-google-ai/
+
+### Catch up on 12 major I/O 2026 moments
+- URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/
 
 ### Take our I/O 2026 quiz, vibe coded in Google AI Studio.
 - URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-vibe-coded-quiz/
@@ -116,8 +107,29 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 ### We’re announcing new community investments in Missouri.
 - URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/missouri-programs/
 
-### Making it easier to understand how content was created and edited
-- URL: https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/
+### LinkedIn
+- URL: https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/innovation-and-ai/models-and-research/&title=Models%20%26%20research
+
+### LinkedIn
+- URL: https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/innovation-and-ai/&title=Innovation%20%26%20AI
+
+### See all
+- URL: https://blog.google/innovation-and-ai/models-and-research/
+
+### Gemini app
+- URL: https://blog.google/innovation-and-ai/products/gemini-app/
+
+### NotebookLM
+- URL: https://blog.google/innovation-and-ai/products/notebooklm/
+
+### See all
+- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/
+
+### Health
+- URL: https://blog.google/innovation-and-ai/technology/health/
+
+### See all
+- URL: https://blog.google/innovation-and-ai/technology/
 
 ### Deep Research Max: a step change for autonomous research agents
 - URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/

@@ -1,10 +1,5 @@
 [
     {
-        "title": "LinkedIn",
-        "url": "https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/innovation-and-ai/models-and-research/&title=Models%20%26%20research",
-        "snippet": ""
-    },
-    {
         "title": "Google DeepMind",
         "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/",
         "snippet": ""
@@ -27,6 +22,26 @@
     {
         "title": "Quantum computing",
         "url": "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/",
+        "snippet": ""
+    },
+    {
+        "title": "Developer tools",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/",
+        "snippet": ""
+    },
+    {
+        "title": "Global network",
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/",
+        "snippet": ""
+    },
+    {
+        "title": "Google Cloud",
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/",
+        "snippet": ""
+    },
+    {
+        "title": "Safety & Security",
+        "url": "https://blog.google/innovation-and-ai/technology/safety-security/",
         "snippet": ""
     },
     {
@@ -60,8 +75,28 @@
         "snippet": ""
     },
     {
+        "title": "AI Products",
+        "url": "https://blog.google/innovation-and-ai/products/",
+        "snippet": ""
+    },
+    {
+        "title": "Making it easier to understand how content was created and edited",
+        "url": "https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/",
+        "snippet": ""
+    },
+    {
         "title": "A new experiment brings better group meetings to Google Beam",
         "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/google-beam-group-meetings/",
+        "snippet": ""
+    },
+    {
+        "title": "Gemini for Science: AI experiments and tools for a new era of discovery",
+        "url": "https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/",
+        "snippet": ""
+    },
+    {
+        "title": "Building superconducting and neutral atom quantum computers",
+        "url": "https://blog.google/innovation-and-ai/technology/research/neutral-atom-quantum-computers/",
         "snippet": ""
     },
     {
@@ -100,73 +135,23 @@
         "snippet": ""
     },
     {
-        "title": "LinkedIn",
-        "url": "https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/innovation-and-ai/&title=Innovation%20%26%20AI",
-        "snippet": ""
-    },
-    {
-        "title": "See all",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/",
-        "snippet": ""
-    },
-    {
-        "title": "Developer tools",
-        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/",
-        "snippet": ""
-    },
-    {
-        "title": "Gemini app",
-        "url": "https://blog.google/innovation-and-ai/products/gemini-app/",
-        "snippet": ""
-    },
-    {
-        "title": "NotebookLM",
-        "url": "https://blog.google/innovation-and-ai/products/notebooklm/",
-        "snippet": ""
-    },
-    {
-        "title": "See all",
-        "url": "https://blog.google/innovation-and-ai/products/",
-        "snippet": ""
-    },
-    {
-        "title": "Global network",
-        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/",
-        "snippet": ""
-    },
-    {
-        "title": "Google Cloud",
-        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/",
-        "snippet": ""
-    },
-    {
-        "title": "See all",
-        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/",
-        "snippet": ""
-    },
-    {
-        "title": "Safety & Security",
-        "url": "https://blog.google/innovation-and-ai/technology/safety-security/",
-        "snippet": ""
-    },
-    {
-        "title": "Health",
-        "url": "https://blog.google/innovation-and-ai/technology/health/",
-        "snippet": ""
-    },
-    {
-        "title": "See all",
-        "url": "https://blog.google/innovation-and-ai/technology/",
-        "snippet": ""
-    },
-    {
-        "title": "Catch up on 12 major I/O 2026 moments",
-        "url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/",
+        "title": "Quantum frontiers may be closer than they appear",
+        "url": "https://blog.google/innovation-and-ai/technology/safety-security/cryptography-migration-timeline/",
         "snippet": ""
     },
     {
         "title": "Google Research",
         "url": "https://blog.google/innovation-and-ai/technology/research/",
+        "snippet": ""
+    },
+    {
+        "title": "How we used Gemini to build Google I/O 2026",
+        "url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-google-ai/",
+        "snippet": ""
+    },
+    {
+        "title": "Catch up on 12 major I/O 2026 moments",
+        "url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/",
         "snippet": ""
     },
     {
@@ -190,8 +175,43 @@
         "snippet": ""
     },
     {
-        "title": "Making it easier to understand how content was created and edited",
-        "url": "https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/",
+        "title": "LinkedIn",
+        "url": "https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/innovation-and-ai/models-and-research/&title=Models%20%26%20research",
+        "snippet": ""
+    },
+    {
+        "title": "LinkedIn",
+        "url": "https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/innovation-and-ai/&title=Innovation%20%26%20AI",
+        "snippet": ""
+    },
+    {
+        "title": "See all",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/",
+        "snippet": ""
+    },
+    {
+        "title": "Gemini app",
+        "url": "https://blog.google/innovation-and-ai/products/gemini-app/",
+        "snippet": ""
+    },
+    {
+        "title": "NotebookLM",
+        "url": "https://blog.google/innovation-and-ai/products/notebooklm/",
+        "snippet": ""
+    },
+    {
+        "title": "See all",
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/",
+        "snippet": ""
+    },
+    {
+        "title": "Health",
+        "url": "https://blog.google/innovation-and-ai/technology/health/",
+        "snippet": ""
+    },
+    {
+        "title": "See all",
+        "url": "https://blog.google/innovation-and-ai/technology/",
         "snippet": ""
     },
     {
