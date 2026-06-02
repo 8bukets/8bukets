@@ -284,7 +284,7 @@ export class Jules {
     // GitHub Docs Observation
     console.log('👁️ [Jules] Scanning GitHub Docs...')
     const { observeGithubDocs } = await import('./services/github_docs_observer')
-    const githubInsights = await observeGithubDocs('bmewburn/intelephense-docs', ['installation.md', 'configuration.md'])
+    const githubInsights = await observeGithubDocs('bmewburn/intelephense-docs', ['README.md', 'installation.md', 'gettingStarted.md', 'features.md', 'support.md'])
     if (githubInsights.length > 0) {
       this.recordTask(`GitHub Docs: Observed ${githubInsights.length} files from Intelephense docs.`)
     }
