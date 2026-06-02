@@ -27,7 +27,7 @@ class GoogleModelsResearchAgent(BaseAgent):
                 async with session.get(url) as response:
                     if response.status == 200:
                         html = await response.text()
-                        soup = BeautifulSoup(html, "html.parser")
+                        soup = BeautifulSoup(html, "lxml")
 
                         # Find all article links - they often have a specific class or are within a specific structure
                         # Based on typical Google Blog structure, they use <a> tags with titles

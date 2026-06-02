@@ -1,6 +1,6 @@
 import unittest
 import asyncio
-from scraper import MarkPositionScraperAsync
+from scraper import WordpressScraperAsync
 
 class TestScraper(unittest.TestCase):
     def setUp(self):
@@ -20,7 +20,7 @@ class TestScraper(unittest.TestCase):
         </body>
         </html>
         """
-        self.scraper = MarkPositionScraperAsync("test.json", "test.csv", "test.txt")
+        self.scraper = WordpressScraperAsync('http://example.com', "test.json", "test.csv", "test.txt")
 
     def test_clean_text(self):
         self.assertEqual(self.scraper.clean_text("  Hello   World  "), "Hello World")
@@ -37,11 +37,11 @@ class TestScraper(unittest.TestCase):
         self.assertEqual(post['author'], "Author One")
         self.assertEqual(post['external_link'], "http://external.com/link1")
         self.assertIn("Tech", post['categories'])
-from scraper import MarkPositionScraperAsync
+from scraper import WordpressScraperAsync
 
 class TestMarkPositionScraper(unittest.TestCase):
     def setUp(self):
-        self.scraper = MarkPositionScraperAsync("test.json", "test.csv", "test.txt")
+        self.scraper = WordpressScraperAsync('http://example.com', "test.json", "test.csv", "test.txt")
 
     def test_clean_text(self):
         self.assertEqual(self.scraper.clean_text("  hello   world  "), "hello world")
