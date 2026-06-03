@@ -92,6 +92,11 @@ pipeline {
                 sh 'npx tsx antigravity/workflows/apac_edge_orchestrator_workflow.ts'
             }
         }
+        stage('Run Autonomous Autonomous ROI Auditor') {
+            steps {
+                sh 'npx tsx antigravity/workflows/autonomous_roi_auditor_workflow.ts'
+            }
+        }
         stage('Creative Workflow') {
             parallel {
                 stage('Market Analysis') {
