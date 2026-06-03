@@ -73,6 +73,6 @@ Acquiring this IP grants the buyer a foundational, self-healing AI engine. Wheth
 
 ## Seller Information
 
-* **Name:** Filip Keser
+* **Name:** Filip Keser (ORCID: [https://orcid.org/0000-0003-2645-2585](https://orcid.org/0000-0003-2645-2585))
 * **Personal Number (OIB/PIN):** [INSERT OIB]
 * **Bank Account (IBAN):** [INSERT IBAN]
