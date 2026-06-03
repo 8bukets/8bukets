@@ -36,7 +36,6 @@ intelephense {transport}
 ```
 
 Where {transport} is one of:
-
 - `--node-ipc`
 - `--stdio`
 - `--socket={number}`
@@ -307,19 +306,19 @@ This annotation is used to declare a type argument of a generic type, function o
 
 ### @template-extends
 `/** @template-extends ParentType<TypeArg1, TypeArg2> */`
-This annotation is used to declare the type arguments supplied to a generic parent type. The alias `@extends` is also supported.
+This annotation is used to declare the type arguments supplied to a generic parent type. It can be used on classes and interfaces when extending a parent class or interface. The alias `@extends` is also supported.
 
 ### @template-implements
 `/** @template-implements InterfaceType<TypeArg1, TypeArg2> */`
-This annotation is used to declare the type arguments supplied to a generic interface. The alias `@implements` is also supported.
+This annotation is used to declare the type arguments supplied to a generic interface. It can be used on classes and enums when implementing an interface. The alias `@implements` is also supported.
 
 ### @template-use
 `/** @template-use TraitType<TypeArg1, TypeArg2> */`
-This annotation is used to declare the type arguments supplied to a generic trait. The alias `@use` is also supported.
+This annotation is used to declare the type arguments supplied to a generic trait. It can be used on classes, traits and enums when using a trait. The alias `@use` is also supported.
 
 ### @param-closure-this
 `/** @param-closure-this Type $parameter */`
-This annotation is used to declare the type of the `$this` variable inside a closure that is passed as a parameter.
+This annotation is used to declare the type of the `$this` variable inside a closure that is passed as a parameter to a function or method.
 
 ### @param-out
 `/** @param-out Type &$parameter */`
@@ -335,7 +334,7 @@ Similar to above but for functions or methods that have a boolean return type.
 
 ### @mixin
 `/** @mixin ClassName */`
-This annotation is used to declare that the members of the specified class are mixed in. Only available with a licence in Intelephense Premium.
+This annotation is used to declare that the members of the specified class are mixed in to the current class via `__call`, `__callStatic`, `__get` or `__set` magic methods. Only available with a licence in Intelephense Premium.
 
 ### @disregard
 `/** @disregard PXXXX */`
@@ -352,43 +351,161 @@ This annotation is used to import a type alias that has been declared in another
 ## Features
 
 ### Free Features
-- **Workspace Symbols** (`Ctrl+T`): Search for symbols in your workspace.
-- **Document Symbols** (`Ctrl+Shift+O`): List all symbols in the current document.
-- **Go to Definition** (`F12`): Navigate to the definition of a symbol.
-- **Hover** (`Ctrl+K Ctrl+I`): Show information about a symbol.
-- **Highlight**: Highlight all references to the symbol at the cursor.
-- **Code Completion** (`Ctrl+Space`): Context appropriate completion suggestions.
-- **Signature Help** (`Ctrl+Shift+Space`): Information about the signature of a function.
-- **Find All References** (`Shift+F12`): List all references to a symbol.
-- **Formatting** (`Ctrl+Shift+I`): Format a document or selection.
-- **Diagnostics**: Syntax errors, type errors, and other issues.
-- **Inline Values**: Variable values displayed inline during a debug session.
-- **Embedded Languages**: Intelligence for HTML, CSS, and JavaScript within PHP files.
+
+#### Workspace Symbols
+Availability: FREE
+LSP: workspace/symbol
+Keybinding: `Ctrl+T`
+This feature allows you to search for symbols in your workspace and navigate to their definitions.
+
+#### Document Symbols
+Availability: FREE
+LSP: textDocument/documentSymbol
+Keybinding: `Ctrl+Shift+O`
+This feature lists all symbols in the current document, providing an overview of the structure of the file.
+
+#### Go to Definition
+Availability: FREE
+LSP: textDocument/definition
+Keybinding: `F12 | right-click context menu`
+This feature allows you to navigate to the definition of a symbol.
+
+#### Hover
+Availability: FREE
+LSP: textDocument/hover
+Keybinding: `Ctrl+K Ctrl+I | mouse-over`
+This feature provides information about a symbol when hovering over a reference.
+
+#### Highlight
+Availability: FREE
+LSP: textDocument/documentHighlight
+Keybinding: Displayed automatically at the cursor position
+This feature highlights all references to the symbol at the cursor position in the current file.
+
+#### Code Completion
+Availability: FREE
+LSP: textDocument/completion
+Keybinding: `Ctrl+Space`
+Trigger characters: `$ > : \ / ' " * . <`
+This feature provides a list of context appropriate completion suggestions.
+
+#### Signature Help
+Availability: FREE
+LSP: textDocument/signatureHelp
+Keybinding: `Ctrl+Shift+Space`
+Trigger characters: `( , :`
+This feature provides information about the signature of a function or method.
+
+#### Find All References
+Availability: FREE
+LSP: textDocument/references
+Keybinding: `Shift+F12 | right-click context menu`
+This feature provides a list of all references to a symbol.
+
+#### Formatting
+Availability: FREE
+LSP: textDocument/formatting
+Keybinding: `Ctrl+Shift+I (format document)`
+LSP: textDocument/rangeFormatting
+Keybinding: `Ctrl+K Ctrl+F (format selection)`
+This feature provides formatting of a whole document or a selected range.
+
+#### Diagnostics
+Availability: FREE
+LSP: textDocument/publishDiagnostics
+Keybinding: Published automatically onType or onSave
+This feature provides diagnostics for the currently opened files.
+
+#### Inline Values
+Availability: FREE
+LSP: textDocument/inlineValues
+Keybinding: Displayed automatically during a debug session
+This feature provides ranges and text for variables relevant for a debugger.
+
+#### Embedded Languages
+Intelephense presumes that text outside of PHP tags is HTML. Basic language intelligence is provided for HTML and embedded CSS and JavaScript.
 
 ### Premium Features
-- **Rename** (`F2`): Rename a symbol and all references.
-- **Code Folding** (`Ctrl+Shift+[`): Fold and unfold regions of code.
-- **Find All Implementations** (`Ctrl+F12`): List all implementations of a method or interface.
-- **Go to Type Definition**: Navigate to the type definition of a variable.
-- **Go to Declaration**: Navigate to the initial declaration of a symbol.
-- **Smart Select** (`Shift+Alt+→`): Expand and shrink selection based on syntax tree.
-- **Type Hierarchy**: Understand the inheritance structure of a type.
-- **Code Lens**: Additional information and navigation rendered inline.
-- **Inlay Hints**: Inline type and parameter information.
-- **Document Links**: Clickable links to related files and resources.
-- **Code Actions** (`Ctrl+.`): Context appropriate actions (Import Symbol, Add PHPDoc, etc).
+
+#### Rename
+Availability: PREMIUM
+LSP: textDocument/rename
+Keybinding: `F2 | right-click context menu`
+This feature allows you to rename a symbol and all references.
+
+#### Code Folding
+Availability: PREMIUM
+LSP: textDocument/foldingRange
+Keybinding: `Ctrl+Shift+[ (fold) | Ctrl+Shift+] (unfold)`
+This feature allows you to fold and unfold regions of code.
+
+#### Find All Implementations
+Availability: PREMIUM
+LSP: textDocument/implementation
+Keybinding: `Ctrl+F12 | right-click context menu`
+This feature provides a list of all implementations of a method or interface.
+
+#### Go to Type Definition
+Availability: PREMIUM
+LSP: textDocument/typeDefinition
+Keybinding: Right-click context menu
+This feature allows you to navigate to the type definition of a variable.
+
+#### Go to Declaration
+Availability: PREMIUM
+LSP: textDocument/declaration
+Keybinding: Right-click context menu
+This feature allows you to navigate to the initial declaration of a symbol.
+
+#### Smart Select
+Availability: PREMIUM
+LSP: textDocument/selectionRange
+Keybinding: `Shift+Alt+→ (expand) | Shift+Alt+← (shrink)`
+This feature allows you to expand and shrink the current selection based on the syntax tree.
+
+#### Type Hierarchy
+Availability: PREMIUM
+LSP: textDocument/typeHierarchy
+Keybinding: Right-click context menu
+This feature provides a type hierarchy for a class, interface, trait or enum.
+
+#### Code Lens
+Availability: PREMIUM
+LSP: textDocument/codeLens
+Keybinding: Rendered inline above declarations
+This feature provides additional information and navigation for symbol declarations.
+
+#### Inlay Hints
+Availability: PREMIUM
+LSP: textDocument/inlayHint
+Keybinding: Displayed inline automatically
+This feature provides additional type and parameter information in the form of hints.
+
+#### Document Links
+Availability: PREMIUM
+LSP: textDocument/documentLink
+Keybinding: `Ctrl+Click | mouse-over`
+This feature provides clickable links to related files and resources.
+
+#### Code Actions
+Availability: PREMIUM
+LSP: textDocument/codeAction
+Keybinding: `Ctrl+. | left-click lightbulb`
+This feature provides a list of context appropriate actions (Import Symbol, Add PHPDoc, Implement All Abstract Methods).
 
 ## Appendix
 
 ### Compatibility With Frameworks and Libraries
 Intelephense aims to support all PHP frameworks and libraries but does not implement specific solutions for these. Workarounds include:
-- Narrowing types via `instanceof` or `@var` annotations.
-- Using helper files with alternate symbol declarations (Intelephense prioritises user symbols over vendor symbols).
+- Assigning the return value to a variable and narrowing the type via `instanceof`.
+- Using `@var` annotations.
+- Creating custom functions to narrow types.
+- Creating a helper file with alternate symbol declarations (Intelephense prioritises user declared symbols over vendor declared symbols).
 
 ### PHPDoc Instead of PHPStorm Metadata/Attributes
 It is recommended to use PHPDoc types instead of PHPStorm metadata and attributes for greater compatibility.
 
-**Example: Overriding types based on input**
+#### Example: Overriding types based on input
 ```php
 /**
  * @template T of string|object
@@ -399,7 +516,7 @@ function paintColourDoc(string|object $input): string|object {}
 $result = paintColourDoc(new BlueObject); // $result is inferred as BlueObject
 ```
 
-**Example: Map based on string argument**
+#### Example: Map based on string argument
 ```php
 /**
  * @template T of array{red: RedService, blue: BlueObject, green: GreenCollection}
@@ -411,7 +528,7 @@ function getColourDoc(string $value): mixed {}
 $obj = getColourDoc('red'); // $obj is inferred as RedService
 ```
 
-**Example: Array shapes**
+#### Example: Array shapes
 ```php
 /**
  * @return array{red: RedService, blue: BlueObject, green: GreenCollection}
@@ -420,7 +537,7 @@ function getColoursDoc(): array {}
 $green = getColoursDoc()['green']; // $green is inferred as GreenCollection
 ```
 
-**Example: Expected string literals**
+#### Example: Expected string literals
 ```php
 /**
  * @param 'red'|'blue'|'green' $colour
