@@ -139,4 +139,20 @@ program
     });
   });
 
+program
+  .command('improve-merge-integrate-run')
+  .description('improve merge integrate run workflow and observe knowledge')
+  .action(async () => {
+    console.log('🚀 Initiating merge integrate run workflow improvement...');
+    console.log('👁️ Observing knowledge...');
+    try {
+      const { observeKnowledge } = require('./antigravity/services/knowledge_observer');
+      await observeKnowledge('https://software-online-review.com');
+      console.log('✅ Workflow improved and knowledge observed.');
+    } catch (err) {
+      console.error(`❌ Operation failed: ${err}`);
+      process.exit(1);
+    }
+  });
+
 program.parse();
