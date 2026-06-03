@@ -226,6 +226,15 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
+  // Gap Analysis 24: Autonomous ROI Auditor
+  if (!files.some(f => f.includes('roi_auditor'))) {
+    ideas.push({
+      feature: 'Autonomous ROI Auditor',
+      rationale: 'Autonomously audits global fleet compute costs and enforces the Phase 13 95% ROI efficiency mandate.',
+      complexity: 'Medium'
+    })
+  }
+
   // Force an idea for demonstration if none exist
   if (ideas.length === 0) {
     ideas.push({

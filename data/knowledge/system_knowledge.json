@@ -810,7 +810,7 @@
       "title": "Web Insight",
       "metadata": {
         "source": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview",
-        "analyzedAt": "2026-06-03T00:37:05.657Z",
+        "analyzedAt": "2026-06-03T02:29:36.946Z",
         "description": "Extracted system knowledge"
       },
       "sections": []
@@ -3436,6 +3436,29 @@
         {
           "header": "Framework Support",
           "content": "Intelephense aims to support all frameworks but does not implement framework specific solutions. Some frameworks are coded in a way that make it difficult to analyse. This may be because of lack of type declarations/annotations; heavy use of `__get`, `__set`, `__call`, `__callStatic` magic methods; or dynamic generation of class aliases at runtime.\nPackages can be found online that aim to workaround these issues by providing stubs of symbols to help static analysers like Intelephense understand the code.\n* Laravel - [barryvdh/laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper)"
+        }
+      ]
+    },
+    {
+      "title": "iCloud: initial_directive.md",
+      "metadata": {
+        "source": "icloud://initial_directive.md",
+        "analyzedAt": "2026-06-03T02:29:37.461Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": []
+    },
+    {
+      "title": "iCloud: phase13_strategic_directive.md",
+      "metadata": {
+        "source": "icloud://phase13_strategic_directive.md",
+        "analyzedAt": "2026-06-03T02:29:37.528Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": [
+        {
+          "header": "Phase 13 Strategic Directive",
+          "content": "- **Objective**: Optimize APAC Edge Nodes (Tokyo, Singapore, Sydney) for <50ms latency.\n- **ROI Mandate**: Enforce a 95% ROI efficiency target across all global fleet compute services.\n- **Compliance**: Adhere to ISO 42001 standards for all AI deployments."
         }
       ]
     }

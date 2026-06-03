@@ -87,34 +87,39 @@ class ChiefAIOfficerAgent(BaseAgent):
         # Integrated Knowledge & Phase 13 Specific Logic
         knowledge = self._get_integrated_knowledge()
         role_alignment_verified = False
+        roi_mandate_95 = False
+
         for k in knowledge.get("typescript_sections", []):
             title = k.get("title", "")
+            sections_str = str(k.get("sections", [])).lower()
 
             # Role Alignment Check
             if "Chief AI Officer (CAIO) Role" in title:
                 role_alignment_verified = True
-                content_str = str(k.get("sections", [])).lower()
-                if "implementation & tech stacking" in content_str:
+                if "implementation & tech stacking" in sections_str:
                     self.logger.info("CAIO [ROLE]: Tech stacking responsibility identified. Issuing build vs buy directive.")
                     strategic_directives.append("DECIDE_BUILD_VS_BUY_STRATEGY")
 
-            if "Phase 13" in title or "Phase 13" in str(k.get("sections", [])):
+            if "Phase 13" in title or "phase 13" in sections_str:
                 self.logger.info(f"CAIO [KNOWLEDGE]: Phase 13 strategy detected in integrated knowledge: {title}")
                 if "ACTIVATE_PHASE_13_PROTOCOLS" not in strategic_directives:
                     strategic_directives.append("ACTIVATE_PHASE_13_PROTOCOLS")
 
                 # Specifically target decentralized edge nodes if mentioned
-                content_str = str(k.get("sections", [])).lower()
-                if "asia-pacific" in content_str or "edge node" in content_str or "tokyo" in content_str:
+                if "asia-pacific" in sections_str or "edge node" in sections_str or "tokyo" in sections_str:
                     if "DEPLOY_APAC_EDGE_NODES" not in strategic_directives:
                         self.logger.info("CAIO [STRATEGY]: Asia-Pacific edge node expansion identified. Issuing deployment directive.")
                         strategic_directives.append("DEPLOY_APAC_EDGE_NODES")
 
             # ISO 42001 Compliance Check
-            if "42001" in title or "42001" in str(k.get("sections", [])):
+            if "42001" in title or "42001" in sections_str:
                 if "ENFORCE_ISO_42001_COMPLIANCE" not in strategic_directives:
                     self.logger.info(f"CAIO [GOVERNANCE]: ISO/IEC 42001:2023 detected in knowledge: {title}. Mandating compliance.")
                     strategic_directives.append("ENFORCE_ISO_42001_COMPLIANCE")
+
+            # ROI Mandate detection
+            if "95%" in sections_str or "95% roi" in sections_str:
+                roi_mandate_95 = True
 
         # Cloud Infrastructure Resilience Assessment
         if cloud_status == "DEGRADED":
@@ -180,8 +185,16 @@ class ChiefAIOfficerAgent(BaseAgent):
 
         if "OPTIMIZE_ROI_TRACKING" in strategic_directives:
             roi_metrics = resource_alloc.get("roi_efficiency", 1.0)
-            if roi_metrics < 0.8:
-                self.logger.warning(f"CAIO [ROI]: Low ROI efficiency detected ({roi_metrics}). Mandating cost optimization.")
+
+            # Default target is 0.8, Phase 13 mandate is 0.95
+            roi_target = 0.8
+            if roi_mandate_95:
+                self.logger.info("CAIO [ROI]: Enforcing 95% ROI efficiency mandate.")
+                roi_target = 0.95
+
+            if roi_metrics < roi_target:
+                self.logger.warning(f"CAIO [ROI]: ROI efficiency ({roi_metrics}) is below target ({roi_target}). Mandating cost optimization.")
+                strategic_directives.append("ENFORCE_AGGRESSIVE_ROI_OPTIMIZATION")
                 strategic_directives.append("REDUCE_NON_CRITICAL_COMPUTE")
 
         if evolution_status == "UNSTABLE":
