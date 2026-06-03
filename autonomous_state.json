@@ -16,7 +16,7 @@
     ],
     "docker": {
         "status": "optimal",
-        "containerCount": 0
+        "containerCount": 2
     },
     "jenkins": {
         "status": "SUCCESS",
@@ -440,6 +440,7 @@
                     "remotes/origin/update-subagents-knowledge-6325422281065488321"
                 ],
                 "Implement Multi-Agent Neural Relays for Phase 13.": [
+                    "main",
                     "remotes/origin/add-malubeach-scraper-16704333902164650708",
                     "remotes/origin/add-mysql-agent-12534386317238704274",
                     "remotes/origin/autonomous-agents-framework-90146205652415261",
@@ -574,6 +575,7 @@
                     "remotes/origin/jules-cloud-workflow-agent-9594836607216672043",
                     "remotes/origin/jules-daily-autonomous-evolution-8968243163984956068",
                     "remotes/origin/jules-smart-processing-cloud-workflow-18277080341771061055",
+                    "remotes/origin/main",
                     "remotes/origin/multi-cloud-workflow-intelligence-12208347123975439755",
                     "remotes/origin/opt-scraper-regex-6404737091544860092",
                     "remotes/origin/palette-cli-colors-v1-15537575789263225364",
@@ -1176,6 +1178,12 @@
                 },
                 {
                     "type": "Automation Script",
+                    "name": "install_cron",
+                    "status": "Active",
+                    "path": "scripts/install_cron.sh"
+                },
+                {
+                    "type": "Automation Script",
                     "name": "install_launchd",
                     "status": "Active",
                     "path": "scripts/install_launchd.sh"
@@ -1233,6 +1241,12 @@
                     "name": "sync_all_branches",
                     "status": "Active",
                     "path": "scripts/sync_all_branches.ts"
+                },
+                {
+                    "type": "Automation Script",
+                    "name": "sync_icloud",
+                    "status": "Active",
+                    "path": "scripts/sync_icloud.ts"
                 },
                 {
                     "type": "Automation Script",
@@ -5618,7 +5632,7 @@
         },
         "neuralPulse": {
             "origin": "development",
-            "health": "degraded",
+            "health": "optimal",
             "volatilityTags": 0,
             "timestamp": "2026-06-03T03:24:08.100Z"
         },

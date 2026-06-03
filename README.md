@@ -49,22 +49,35 @@ The autonomous system supports continuous cloud deployments using standard infra
 
 The Antigravity system includes an autonomous daily work cycle that performs Git synchronization (pull/upload) and iCloud folder backups.
 
-### 1. macOS Persistence (LaunchAgent)
+### 1. Daily Automation (Persistence)
 
-A `com.sigma.jules.plist` file is provided to automate the daily routine. To install it:
+To "work every day" automatically, Antigravity provides scheduling scripts for both macOS and Linux.
 
-1. Open `com.sigma.jules.plist` and replace `YOUR_USERNAME` with your actual macOS username (e.g., `filipkeser`).
-2. Copy the file to your LaunchAgents directory:
+#### macOS (LaunchAgent)
+1. Run the installation script:
    ```bash
-   cp com.sigma.jules.plist ~/Library/LaunchAgents/
+   ./scripts/install_launchd.sh
    ```
-3. Load the agent:
+   Or manually copy and load `com.sigma.jules.plist` to `~/Library/LaunchAgents/`.
+
+#### Linux (Cron)
+1. Run the installation script:
    ```bash
-   launchctl load ~/Library/LaunchAgents/com.sigma.jules.plist
+   ./scripts/install_cron.sh
    ```
+   This adds a daily job to your user's crontab.
 
-The script will now run every day at midnight.
+Once installed, Jules will execute the daily work cycle every day at midnight.
 
-### 2. iCloud Synchronization
+### 2. Manual Commands
+
+You can manually trigger the core synchronization tasks using the following commands:
+
+- **Pull changes (pluu):** `npm run pluu`
+- **Upload changes:** `npm run upload`
+- **iCloud Sync:** `npm run sync:icloud`
+- **Full Daily Cycle:** `npm run daily`
+
+### 3. iCloud Synchronization
 
 By default, the system syncs to `~/Library/Mobile Documents/com~apple~CloudDocs/Antigravity_Sync`. You can customize this by setting the `ICLOUD_SYNC_PATH` environment variable in your `.env` file.
