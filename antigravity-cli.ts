@@ -93,4 +93,23 @@ program
     });
   });
 
+program
+  .command('connect-with-docker-and-collaborate')
+  .description('Connect with Docker and collaborate autonomously')
+  .action(() => {
+    console.log('🚀 Initiating Docker connection and collaboration protocol...');
+    const { spawn } = require('child_process');
+    const child = spawn('npm', ['run', 'connect'], { stdio: 'inherit', shell: true });
+    child.on('error', (error: Error) => {
+      console.error(`Error executing command: ${error.message}`);
+    });
+    child.on('exit', (code: number | null) => {
+      if (code !== 0) {
+        console.error(`Process exited with code ${code}`);
+      } else {
+        console.log('✅ Connected with Docker and collaborated successfully.');
+      }
+    });
+  });
+
 program.parse();
