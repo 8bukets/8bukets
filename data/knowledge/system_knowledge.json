@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-01T22:59:14.618Z",
+    "generated_at": "2026-06-02T23:12:00.918Z",
     "version": 1.94,
     "sources_processed": [
       "ai_agents_knowledge.json",
@@ -37,7 +37,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/bug_report.md",
-        "ingestedAt": "2026-06-01T22:59:14.436Z"
+        "ingestedAt": "2026-06-02T23:12:00.778Z"
       }
     },
     "Internal: .github/ISSUE_TEMPLATE/feature_request.md": {
@@ -49,7 +49,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/feature_request.md",
-        "ingestedAt": "2026-06-01T22:59:14.460Z"
+        "ingestedAt": "2026-06-02T23:12:00.796Z"
       }
     },
     "Internal: .github/PULL_REQUEST_TEMPLATE.md": {
@@ -81,7 +81,7 @@
       ],
       "metadata": {
         "source": "local://.github/PULL_REQUEST_TEMPLATE.md",
-        "ingestedAt": "2026-06-01T22:59:14.477Z"
+        "ingestedAt": "2026-06-02T23:12:00.810Z"
       }
     },
     "Gemma 4 Technical Report": {
@@ -193,7 +193,7 @@
       ],
       "metadata": {
         "source": "local://gemmafour_docs.md",
-        "ingestedAt": "2026-06-01T22:59:14.495Z"
+        "ingestedAt": "2026-06-02T23:12:00.825Z"
       }
     },
     "LiteRT Framework Documentation": {
@@ -273,7 +273,7 @@
       ],
       "metadata": {
         "source": "local://litert_docs.md",
-        "ingestedAt": "2026-06-01T22:59:14.513Z"
+        "ingestedAt": "2026-06-02T23:12:00.838Z"
       }
     },
     "OpenTelemetry Ecosystem Analysis": {
@@ -689,7 +689,7 @@
       ],
       "metadata": {
         "source": "local://opentelemetry_repos.md",
-        "ingestedAt": "2026-06-01T22:59:14.537Z"
+        "ingestedAt": "2026-06-02T23:12:00.852Z"
       }
     },
     "Google Ads Strategic Documentation": {
@@ -1785,7 +1785,7 @@
       ],
       "metadata": {
         "source": "local://google_ads_docs.md",
-        "ingestedAt": "2026-06-01T22:59:14.561Z"
+        "ingestedAt": "2026-06-02T23:12:00.871Z"
       }
     },
     "AI Agents Concept & Architecture": {
@@ -2173,7 +2173,7 @@
       ],
       "metadata": {
         "source": "local://ai_agents_knowledge.md",
-        "ingestedAt": "2026-06-01T22:59:14.578Z"
+        "ingestedAt": "2026-06-02T23:12:00.885Z"
       }
     },
     "LocalHost.Co Tools Documentation": {
@@ -2429,7 +2429,7 @@
       ],
       "metadata": {
         "source": "local://localhost_tools_docs.md",
-        "ingestedAt": "2026-06-01T22:59:14.594Z"
+        "ingestedAt": "2026-06-02T23:12:00.899Z"
       }
     },
     "Google Innovation & AI Blog": {
@@ -2437,42 +2437,6 @@
         {
           "header": "Google Innovation & AI Blog Updates",
           "content": "Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innovation-and-ai/) and [https://blog.google/innovation-and-ai/models-and-research/](https://blog.google/innovation-and-ai/models-and-research/)"
-        },
-        {
-          "header": "Google DeepMind",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/"
-        },
-        {
-          "header": "Google Research",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-research/"
-        },
-        {
-          "header": "Google Labs",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/"
-        },
-        {
-          "header": "Gemini models",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/"
-        },
-        {
-          "header": "Quantum computing",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/quantum-computing/"
-        },
-        {
-          "header": "Developer tools",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/developers-tools/"
-        },
-        {
-          "header": "Global network",
-          "content": "- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/"
-        },
-        {
-          "header": "Google Cloud",
-          "content": "- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/"
-        },
-        {
-          "header": "Safety & Security",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/safety-security/"
         },
         {
           "header": "9 demos of Gemini Omni and Gemini 3.5 in action",
@@ -2497,10 +2461,6 @@
         {
           "header": "Simulate real-world places with Project Genie and Street View",
           "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/"
-        },
-        {
-          "header": "AI Products",
-          "content": "- URL: https://blog.google/innovation-and-ai/products/"
         },
         {
           "header": "Making it easier to understand how content was created and edited",
@@ -2571,12 +2531,56 @@
           "content": "- URL: https://blog.google/innovation-and-ai/products/notebooklm/notebooklm-google-io-2026/"
         },
         {
+          "header": "Blue, yellow and green: Google invests in its first data center in Sweden.",
+          "content": "- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/blue-yellow-and-green-google-invests-in-its-first-data-center-in-sweden/"
+        },
+        {
           "header": "We’re announcing the first Texas Energy Impact Fund recipients.",
           "content": "- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/texas-energy-impact-fund/"
         },
         {
           "header": "We’re announcing new community investments in Missouri.",
           "content": "- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/missouri-programs/"
+        },
+        {
+          "header": "Google DeepMind",
+          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/"
+        },
+        {
+          "header": "Google Research",
+          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-research/"
+        },
+        {
+          "header": "Google Labs",
+          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/"
+        },
+        {
+          "header": "Gemini models",
+          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/"
+        },
+        {
+          "header": "Quantum computing",
+          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/quantum-computing/"
+        },
+        {
+          "header": "Developer tools",
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/developers-tools/"
+        },
+        {
+          "header": "Global network",
+          "content": "- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/"
+        },
+        {
+          "header": "Google Cloud",
+          "content": "- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/"
+        },
+        {
+          "header": "Safety & Security",
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/safety-security/"
+        },
+        {
+          "header": "AI Products",
+          "content": "- URL: https://blog.google/innovation-and-ai/products/"
         },
         {
           "header": "LinkedIn",
@@ -2697,7 +2701,7 @@
       ],
       "metadata": {
         "source": "local://google_innovation_ai_report.md",
-        "ingestedAt": "2026-06-01T22:59:14.610Z"
+        "ingestedAt": "2026-06-02T23:12:00.913Z"
       }
     }
   },

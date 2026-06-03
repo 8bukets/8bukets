@@ -11,7 +11,7 @@ interface Article {
     snippet: string;
 }
 
-async function scrapeGoogleBlog(url: string, categoryPath: string): Promise<Article[]> {
+async function scrapeGoogleBlog(url: string): Promise<Article[]> {
     console.log(`🤖 [Ingest] Fetching ${url}...`);
     try {
         const response = await fetch(url, { signal: AbortSignal.timeout(20000) });
@@ -21,15 +21,35 @@ async function scrapeGoogleBlog(url: string, categoryPath: string): Promise<Arti
         const html = await response.text();
         const $ = cheerio.load(html);
 
-        const articles: Article[] = [];
-        const seenUrls = new Set<string>();
+        const articleMap = new Map<string, Article>();
 
         $('a').each((_, el) => {
             const href = $(el).attr('href');
             if (!href) return;
 
             const fullUrl = href.startsWith('http') ? href : `https://blog.google${href}`;
-            if (seenUrls.has(fullUrl)) return;
+
+            // Validation: Must be an article-like URL
+            const isArticleUrl = fullUrl.includes('/innovation-and-ai/') &&
+                                !fullUrl.endsWith('/innovation-and-ai/') &&
+                                !fullUrl.endsWith('/models-and-research/') &&
+                                !fullUrl.endsWith('/google-deepmind/') &&
+                                !fullUrl.endsWith('/google-research/') &&
+                                !fullUrl.endsWith('/google-labs/') &&
+                                !fullUrl.endsWith('/gemini-models/') &&
+                                !fullUrl.endsWith('/quantum-computing/') &&
+                                !fullUrl.endsWith('/developers-tools/') &&
+                                !fullUrl.endsWith('/global-network/') &&
+                                !fullUrl.endsWith('/google-cloud/') &&
+                                !fullUrl.endsWith('/safety-security/') &&
+                                !fullUrl.endsWith('/products/') &&
+                                !fullUrl.endsWith('/technology/') &&
+                                !fullUrl.endsWith('/health/') &&
+                                !fullUrl.endsWith('/infrastructure-and-cloud/') &&
+                                !fullUrl.includes('/authors/') &&
+                                !fullUrl.includes('shareArticle');
+
+            if (!isArticleUrl) return;
 
             // Target GA4 analytics data which contains reliable titles
             const gaDataAttr = $(el).attr('data-ga4-analytics-lead-click');
@@ -49,47 +69,44 @@ async function scrapeGoogleBlog(url: string, categoryPath: string): Promise<Arti
             const directTitle = $(el).text().trim();
 
             const title = gaTitle || heroTitle || nupTitle || directTitle;
+            const isNotNav = !['Home', 'Innovation & AI', 'Products & platforms', 'Company news', 'Feed', 'Subscribe', 'See all'].includes(title);
 
-            // Validation: Must be an article-like URL and have a substantial title
-            const isArticleUrl = fullUrl.includes('/innovation-and-ai/') &&
-                                !fullUrl.endsWith('/innovation-and-ai/') &&
-                                !fullUrl.endsWith('/models-and-research/');
-
-            const isNotNav = !['Home', 'Innovation & AI', 'Products & platforms', 'Company news', 'Feed', 'Subscribe'].includes(title);
-
-            if (isArticleUrl && title && title.length > 10 && isNotNav) {
+            if (title && title.length > 10 && isNotNav) {
                 let snippet = "";
 
-                // Try finding snippet in parent or sibling containers
+                // Try finding snippet inside the link (Hero case)
                 const heroSummary = $(el).find('.featured-article-cat-subcat-hero__summary').text().trim();
-                const siblingSummary = $(el).next().find('.featured-article-cat-subcat-hero__summary').text().trim();
-                const nupSnippet = $(el).closest('.uni-nup').find('.uni-nup__snippet').text().trim();
+                const generalSnippet = $(el).find('[class*="summary"], [class*="snippet"], [class*="description"], [class*="deck"]').text().trim();
 
-                snippet = heroSummary || siblingSummary || nupSnippet;
+                snippet = heroSummary || generalSnippet;
 
+                // Try finding snippet in parent or siblings
                 if (!snippet) {
                     const parent = $(el).closest('div, section, li, article');
-                    const summaryTag = parent.find('p, span, div').filter((_, tag) => {
-                        const cls = $(tag).attr('class');
-                        return !!(cls && (cls.toLowerCase().includes('summary') ||
-                                  cls.toLowerCase().includes('description') ||
-                                  cls.toLowerCase().includes('snippet') ||
-                                  cls.toLowerCase().includes('deck')));
-                    });
+                    const summaryTag = parent.find('[class*="summary"], [class*="snippet"], [class*="description"], [class*="deck"]').first();
                     if (summaryTag.length) {
                         snippet = summaryTag.text().trim();
                     }
                 }
 
-                articles.push({
-                    title,
-                    url: fullUrl,
-                    snippet
-                });
-                seenUrls.add(fullUrl);
+                if (!snippet) {
+                    const siblingP = $(el).nextAll('p').first();
+                    if (siblingP.length && siblingP.text().trim().length > 30) {
+                        snippet = siblingP.text().trim();
+                    }
+                }
+
+                const existing = articleMap.get(fullUrl);
+                if (!existing || (!existing.snippet && snippet) || (existing.title.length < title.length)) {
+                    articleMap.set(fullUrl, {
+                        title: title || (existing ? existing.title : ""),
+                        url: fullUrl,
+                        snippet: snippet || (existing ? existing.snippet : "")
+                    });
+                }
             }
         });
-        return articles;
+        return Array.from(articleMap.values());
     } catch (error) {
         console.error(`❌ [Ingest] Error fetching URL ${url}:`, error);
         return [];
@@ -97,8 +114,8 @@ async function scrapeGoogleBlog(url: string, categoryPath: string): Promise<Arti
 }
 
 async function main() {
-    const researchArticles = await scrapeGoogleBlog(MODELS_RESEARCH_URL, "/innovation-and-ai/models-and-research/");
-    const innovationArticles = await scrapeGoogleBlog(INNOVATION_URL, "/innovation-and-ai/");
+    const researchArticles = await scrapeGoogleBlog(MODELS_RESEARCH_URL);
+    const innovationArticles = await scrapeGoogleBlog(INNOVATION_URL);
 
     const allArticles = [...researchArticles, ...innovationArticles];
 
@@ -116,7 +133,8 @@ async function main() {
     const combined = [...allArticles, ...existingArticles];
     const uniqueMap = new Map<string, Article>();
     combined.forEach(art => {
-        if (!uniqueMap.has(art.url)) {
+        const existing = uniqueMap.get(art.url);
+        if (!existing || (!existing.snippet && art.snippet)) {
             uniqueMap.set(art.url, art);
         }
     });

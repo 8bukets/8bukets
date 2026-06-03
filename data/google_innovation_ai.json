@@ -1,50 +1,5 @@
 [
     {
-        "title": "Google DeepMind",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/",
-        "snippet": ""
-    },
-    {
-        "title": "Google Research",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/",
-        "snippet": ""
-    },
-    {
-        "title": "Google Labs",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/",
-        "snippet": ""
-    },
-    {
-        "title": "Gemini models",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/",
-        "snippet": ""
-    },
-    {
-        "title": "Quantum computing",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/",
-        "snippet": ""
-    },
-    {
-        "title": "Developer tools",
-        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/",
-        "snippet": ""
-    },
-    {
-        "title": "Global network",
-        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/",
-        "snippet": ""
-    },
-    {
-        "title": "Google Cloud",
-        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/",
-        "snippet": ""
-    },
-    {
-        "title": "Safety & Security",
-        "url": "https://blog.google/innovation-and-ai/technology/safety-security/",
-        "snippet": ""
-    },
-    {
         "title": "9 demos of Gemini Omni and Gemini 3.5 in action",
         "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-3-5-videos/",
         "snippet": ""
@@ -72,11 +27,6 @@
     {
         "title": "Simulate real-world places with Project Genie and Street View",
         "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/",
-        "snippet": ""
-    },
-    {
-        "title": "AI Products",
-        "url": "https://blog.google/innovation-and-ai/products/",
         "snippet": ""
     },
     {
@@ -165,6 +115,11 @@
         "snippet": ""
     },
     {
+        "title": "Blue, yellow and green: Google invests in its first data center in Sweden.",
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/blue-yellow-and-green-google-invests-in-its-first-data-center-in-sweden/",
+        "snippet": ""
+    },
+    {
         "title": "We’re announcing the first Texas Energy Impact Fund recipients.",
         "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/texas-energy-impact-fund/",
         "snippet": ""
@@ -172,6 +127,56 @@
     {
         "title": "We’re announcing new community investments in Missouri.",
         "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/missouri-programs/",
+        "snippet": ""
+    },
+    {
+        "title": "Google DeepMind",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/",
+        "snippet": ""
+    },
+    {
+        "title": "Google Research",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/",
+        "snippet": ""
+    },
+    {
+        "title": "Google Labs",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/",
+        "snippet": ""
+    },
+    {
+        "title": "Gemini models",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/",
+        "snippet": ""
+    },
+    {
+        "title": "Quantum computing",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/",
+        "snippet": ""
+    },
+    {
+        "title": "Developer tools",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/",
+        "snippet": ""
+    },
+    {
+        "title": "Global network",
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/",
+        "snippet": ""
+    },
+    {
+        "title": "Google Cloud",
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/",
+        "snippet": ""
+    },
+    {
+        "title": "Safety & Security",
+        "url": "https://blog.google/innovation-and-ai/technology/safety-security/",
+        "snippet": ""
+    },
+    {
+        "title": "AI Products",
+        "url": "https://blog.google/innovation-and-ai/products/",
         "snippet": ""
     },
     {

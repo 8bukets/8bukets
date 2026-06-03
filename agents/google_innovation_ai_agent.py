@@ -40,14 +40,28 @@ class GoogleInnovationAIAgent(BaseAgent):
                                 if full_url not in seen_urls:
                                     title = link.get_text(strip=True)
                                     # Basic heuristic to avoid menu links or short fragments
-                                    if title and len(title) > 20:
+                                    if title and len(title) > 10:
                                         # Attempt to find a summary in a neighboring tag or parent
                                         snippet = ""
-                                        parent = link.find_parent(['div', 'section', 'li', 'article'])
-                                        if parent:
-                                            summary_tag = parent.find(['p', 'span', 'div'], class_=lambda x: x and ('summary' in x.lower() or 'description' in x.lower() or 'snippet' in x.lower() or 'deck' in x.lower()))
-                                            if summary_tag:
-                                                snippet = summary_tag.get_text(strip=True)
+
+                                        # Strategy 1: Check children for specific summary classes
+                                        summary_tag = link.find(['p', 'span', 'div'], class_=lambda x: x and ('summary' in x.lower() or 'description' in x.lower() or 'snippet' in x.lower() or 'deck' in x.lower()))
+                                        if summary_tag:
+                                            snippet = summary_tag.get_text(strip=True)
+
+                                        # Strategy 2: Check parent container
+                                        if not snippet:
+                                            parent = link.find_parent(['div', 'section', 'li', 'article'])
+                                            if parent:
+                                                summary_tag = parent.find(['p', 'span', 'div'], class_=lambda x: x and ('summary' in x.lower() or 'description' in x.lower() or 'snippet' in x.lower() or 'deck' in x.lower()))
+                                                if summary_tag:
+                                                    snippet = summary_tag.get_text(strip=True)
+
+                                        # Strategy 3: Check next sibling
+                                        if not snippet:
+                                            next_p = link.find_next_sibling('p')
+                                            if next_p and len(next_p.get_text(strip=True)) > 30:
+                                                snippet = next_p.get_text(strip=True)
 
                                         knowledge["articles"].append({
                                             "title": title,
