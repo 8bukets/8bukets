@@ -35,6 +35,9 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 ### Our new study explores how AI can reduce the climate impact of air travel.
 - URL: https://blog.google/innovation-and-ai/models-and-research/google-research/contrail-avoidance-research/
 
+### Meet Dreambeans, an app that connects you with what matters
+- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/dreambeans/
+
 ### We’re introducing new ways to design in real time with Stitch.
 - URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-updates/
 
@@ -43,9 +46,6 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 
 ### Pomelli adds new ways to build brand content and design websites.
 - URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/pomelli-agentic-capabilities/
-
-### Google Flow Music and Believe bring next-gen tools to artists
-- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/believe-flow-music-partnership/
 
 ### Our new initiative to apply quantum science and AI to the life sciences
 - URL: https://blog.google/innovation-and-ai/models-and-research/quantum-computing/repliqa-quantum-computing-life-sciences/
@@ -65,17 +65,23 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 ### Catch up on 12 major I/O 2026 moments
 - URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/
 
+### Introducing Gemma 4 12B: a unified, encoder-free multimodal model
+- URL: https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12b/
+
 ### Take our I/O 2026 quiz, vibe coded in Google AI Studio.
 - URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-vibe-coded-quiz/
 
-### Dive deeper into I/O 2026 with NotebookLM.
-- URL: https://blog.google/innovation-and-ai/products/notebooklm/notebooklm-google-io-2026/
-
-### Blue, yellow and green: Google invests in its first data center in Sweden.
+### Blue, yellow and green: Google invests in its new data center in Sweden.
 - URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/blue-yellow-and-green-google-invests-in-its-first-data-center-in-sweden/
 
 ### We’re announcing the first Texas Energy Impact Fund recipients.
 - URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/texas-energy-impact-fund/
+
+### Google Flow Music and Believe bring next-gen tools to artists
+- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/believe-flow-music-partnership/
+
+### Dive deeper into I/O 2026 with NotebookLM.
+- URL: https://blog.google/innovation-and-ai/products/notebooklm/notebooklm-google-io-2026/
 
 ### We’re announcing new community investments in Missouri.
 - URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/missouri-programs/
