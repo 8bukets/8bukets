@@ -39,6 +39,33 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `- **Supabase:** ${health.supabase}\n`
   report += `- **Total Branches:** ${branches.length}\n\n`
 
+  const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
+
+  // Phase 12: Resource Ecosystem Summary
+  const categorizedResources: Record<string, any[]> = {}
+  relationshipMap.resourceInventory.forEach((res: any) => {
+    if (!categorizedResources[res.type]) categorizedResources[res.type] = []
+    categorizedResources[res.type].push(res)
+  })
+
+  report += `## 📦 Resource Ecosystem\n`
+  Object.entries(categorizedResources).forEach(([type, items]) => {
+    report += `- **${type}s:** ${items.length} active\n`
+  })
+  report += `\n`
+
+  // Phase 12: Resource Dependency Matrix
+  if (relationshipMap.resourceDependencies && relationshipMap.resourceDependencies.length > 0) {
+    report += `## 🔗 Resource Dependency Matrix\n`
+    relationshipMap.resourceDependencies.slice(0, 15).forEach((d: any) => {
+      report += `- \`${d.source}\` --[${d.type}]--> \`${d.target}\` \n`
+    })
+    if (relationshipMap.resourceDependencies.length > 15) {
+      report += `- _...and ${relationshipMap.resourceDependencies.length - 15} more dependencies._\n`
+    }
+    report += `\n`
+  }
+
   // Phase 12: Active Stakeholder Directives
   const { getStakeholderDirectives, generateActionableBriefing } = await import('./communication')
   const directives = await getStakeholderDirectives()
@@ -53,8 +80,6 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
     report += `_No active directives found._\n`
   }
   report += `\n`
-
-  const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
 
   // Phase 12: Actionable Briefing
   const actionableBriefing = await generateActionableBriefing({
@@ -137,11 +162,14 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
     report += `\n`
   }
 
-  const insights = branches.filter(b => b.knowledge || (b.results && b.results !== `Commit: ${b.lastMessage}`)).slice(0, 10)
+  const insights = branches.filter(b => b.knowledge || (b.results && !b.results.startsWith('Commit:'))).slice(0, 15)
   if (insights.length > 0) {
     report += `### 🧠 Specialized Knowledge Nuggets\n`
     insights.forEach(b => {
-      report += `- **${b.name}**: ${b.results}${b.knowledge ? ` (*Knowledge: ${b.knowledge}*)` : ''}\n`
+      report += `- **${b.name}** [${b.domain}]: ${b.results}\n`
+      if (b.knowledge) {
+        report += `  - *Insight:* ${b.knowledge}\n`
+      }
     })
   } else {
     report += `- No new specialized insights to merge at this time.\n`
@@ -170,11 +198,6 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `\n`
 
   report += `## 📦 Resource Inventory\n`
-  const categorizedResources: Record<string, any[]> = {}
-  relationshipMap.resourceInventory.forEach((res: any) => {
-    if (!categorizedResources[res.type]) categorizedResources[res.type] = []
-    categorizedResources[res.type].push(res)
-  })
 
   Object.entries(categorizedResources).forEach(([type, items]) => {
     report += `### ${type}s\n`

@@ -99,8 +99,17 @@ export async function generateActionableBriefing(state: any, directives: Directi
   if (criticalRecs.length > 0) {
     briefing += `\n### 🤝 Direct Coordination Paths\n`
     criticalRecs.forEach((r: any) => {
-      briefing += `- **Resource:** \`${r.resource}\`\n`
-      briefing += `  - *Path:* ${r.rationale.includes('Urgent coordination required between:') ? r.rationale.split('Urgent coordination required between:')[1].trim() : 'Cross-team alignment'}\n`
+      const coordinationRequired = r.rationale.includes('Urgent coordination required between:')
+      const path = coordinationRequired
+        ? r.rationale.split('Urgent coordination required between:')[1].trim()
+        : 'Cross-team architectural review required.'
+
+      briefing += `- **Resource Conflict/Synergy:** \`${r.resource}\`\n`
+      briefing += `  - **Coordination Required:** ${path}\n`
+      briefing += `  - **Action:** ${r.action}\n`
+      if (r.branches && Array.isArray(r.branches)) {
+        briefing += `  - **Branches:** ${r.branches.slice(0, 3).join(', ')}${r.branches.length > 3 ? ` (+${r.branches.length - 3} more)` : ''}\n`
+      }
     })
   }
 

@@ -411,14 +411,38 @@ export class Jules {
           else if (name.includes('bolt/')) category = 'performance'
           else if (name.includes('/')) category = name.split('/')[0]
 
+          // Phase 12: Enhanced Intelligence Extraction
+          let domain = 'General'
+          let knowledge = ''
+          if (changedFiles.length > 0) {
+            const hasMarkdown = changedFiles.some(f => f.endsWith('.md'))
+            const hasAgents = changedFiles.some(f => f.startsWith('agents/'))
+            const hasDocs = changedFiles.some(f => f.startsWith('docs/'))
+            const hasKnowledgeDir = changedFiles.some(f => f.includes('data/knowledge/'))
+
+            if (hasMarkdown || hasAgents || hasDocs || hasKnowledgeDir) {
+              knowledge = `Enhanced ecosystem knowledge base via ${changedFiles.filter(f => f.endsWith('.md') || f.startsWith('agents/') || f.startsWith('docs/') || f.includes('data/knowledge/')).length} artifacts.`
+            }
+
+            // Detect domain from file paths
+            if (changedFiles.some(f => f.includes('services/'))) domain = 'Services'
+            else if (changedFiles.some(f => f.includes('scripts/'))) domain = 'Automation'
+            else if (changedFiles.some(f => f.includes('app/') || f.includes('web-app/'))) domain = 'UI/UX'
+            else if (hasAgents) domain = 'AI Agents'
+          }
+
+          const results = changedFiles.length > 0
+            ? `${lastMessage} (${changedFiles.length} files changed in ${domain})`
+            : (lastMessage ? `Commit: ${lastMessage}` : 'N/A')
+
           return {
             name,
             lastMessage: lastMessage || 'N/A',
             lastSeen: lastSeen || 'N/A',
             category,
-            domain: 'General',
-            knowledge: '',
-            results: lastMessage ? `Commit: ${lastMessage}` : 'N/A',
+            domain,
+            knowledge,
+            results,
             changedFiles
           }
         } catch (e) {
