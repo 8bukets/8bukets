@@ -262,16 +262,16 @@ export class Jules {
     const { observeKnowledge, persistKnowledge } = await import('./services/knowledge_observer')
     const urlsToObserve = [
       'https://software-online-review.com',
-      'https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU',
-      'https://business.google.com/uk/ad-tools/bidding/',
-      'https://business.google.com/uk/resources/',
-      'https://developers.google.com/ad-manager',
-      'https://developers.google.com/ad-manager/dynamic-ad-insertion',
-      'https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service',
-      'https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving',
-      'https://developers.google.com/ad-manager/api/start',
-      'https://admanager.google.com/home/resources/',
-      'https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview'
+      "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU",
+      "https://business.google.com/uk/ad-tools/bidding/",
+      "https://business.google.com/uk/resources/",
+      "https://developers.google.com/ad-manager",
+      "https://developers.google.com/ad-manager/dynamic-ad-insertion",
+      "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
+      "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
+      "https://developers.google.com/ad-manager/api/start",
+      "https://admanager.google.com/home/resources/",
+      "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview"
     ]
     for (const url of urlsToObserve) {
       const knowledgeInsights = await observeKnowledge(url)
@@ -411,14 +411,38 @@ export class Jules {
           else if (name.includes('bolt/')) category = 'performance'
           else if (name.includes('/')) category = name.split('/')[0]
 
+          // Phase 12: Enhanced Intelligence Extraction
+          let domain = 'General'
+          let knowledge = ''
+          if (changedFiles.length > 0) {
+            const hasMarkdown = changedFiles.some(f => f.endsWith('.md'))
+            const hasAgents = changedFiles.some(f => f.startsWith('agents/'))
+            const hasDocs = changedFiles.some(f => f.startsWith('docs/'))
+            const hasKnowledgeDir = changedFiles.some(f => f.includes('data/knowledge/'))
+
+            if (hasMarkdown || hasAgents || hasDocs || hasKnowledgeDir) {
+              knowledge = `Enhanced ecosystem knowledge base via ${changedFiles.filter(f => f.endsWith('.md') || f.startsWith('agents/') || f.startsWith('docs/') || f.includes('data/knowledge/')).length} artifacts.`
+            }
+
+            // Detect domain from file paths
+            if (changedFiles.some(f => f.includes('services/'))) domain = 'Services'
+            else if (changedFiles.some(f => f.includes('scripts/'))) domain = 'Automation'
+            else if (changedFiles.some(f => f.includes('app/') || f.includes('web-app/'))) domain = 'UI/UX'
+            else if (hasAgents) domain = 'AI Agents'
+          }
+
+          const results = changedFiles.length > 0
+            ? `${lastMessage} (${changedFiles.length} files changed in ${domain})`
+            : (lastMessage ? `Commit: ${lastMessage}` : 'N/A')
+
           return {
             name,
             lastMessage: lastMessage || 'N/A',
             lastSeen: lastSeen || 'N/A',
             category,
-            domain: 'General',
-            knowledge: '',
-            results: lastMessage ? `Commit: ${lastMessage}` : 'N/A',
+            domain,
+            knowledge,
+            results,
             changedFiles
           }
         } catch (e) {
