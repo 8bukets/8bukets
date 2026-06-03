@@ -69,24 +69,34 @@ export class KnowledgeObserver {
     fs.writeFileSync(jsonPath, JSON.stringify(existingData, null, 2), 'utf8');
 
     // Write Markdown - Regenerate from ALL sections
-    let mdContent = `# Knowledge Observation Insights (Unified)\n\n`;
+    const isSingleTopic = existingData.typescript_sections.length === 1;
+    let mdContent = isSingleTopic ? '' : `# Knowledge Observation Insights (Unified)\n\n`;
     mdContent += `**System Analysis:** ${new Date().toISOString()}\n\n`;
-
-    // Add unified keywords and posts if we want, but for now let's keep it simple
-    // or just use the latest ones.
 
     existingData.typescript_sections.forEach((k: any) => {
       if (k.sections && k.sections.length > 0) {
-        // Only add title header if there's multiple main sections
-        if (existingData.typescript_sections.length > 1) {
-          mdContent += `# ${k.title}\n\n`;
+        if (!isSingleTopic) mdContent += `---\n\n`;
+
+        // Use # for the main topic title
+        mdContent += `# ${k.title}\n\n`;
+
+        if (k.metadata) {
+          mdContent += `> **Source:** ${k.metadata.source || 'N/A'}\n`;
+          mdContent += `> **Analyzed At:** ${k.metadata.analyzedAt || 'N/A'}\n\n`;
         }
 
         k.sections.forEach((s: any) => {
-          // Double check for junk content before writing to MD
-          // Increased permissive threshold to allow technical code blocks
-          if (s.content.length > 5) {
-            mdContent += `## ${s.header}\n${s.content}\n\n`;
+          const cleanHeader = s.header.replace(/^#+\s*/, '').trim() || 'Details';
+          const cleanContent = s.content.trim();
+
+          if (cleanContent.length > 5) {
+            // Avoid redundant headers if the section title matches the topic title
+            if (cleanHeader.toLowerCase() === k.title.toLowerCase()) {
+              mdContent += `${cleanContent}\n\n`;
+            } else {
+              // Use ## for internal sections
+              mdContent += `## ${cleanHeader}\n${cleanContent}\n\n`;
+            }
           }
         });
       }
