@@ -37,7 +37,7 @@ class ChiefAIOfficerAgent(BaseAgent):
     - Hardcoded ethical red line enforcement to prevent unauthorized actions.
     """
     def __init__(self):
-        super().__init__("ChiefAIOfficer",
+        super().__init__('ChiefAIOfficer',
                          dependencies=["system_evolution", "cloud_workflow_status", "market_intelligence", "resource_allocation"],
                          provides=["ai_strategy_status", "infrastructure_optimization", "strategic_directives"])
 
