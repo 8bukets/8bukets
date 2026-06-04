@@ -403,11 +403,14 @@ export class Jules {
           }
 
           let category = 'other'
-          if (name.includes('feat/')) category = 'feature'
-          else if (name.includes('fix/')) category = 'fix'
-          else if (name.includes('sentinel/')) category = 'security'
-          else if (name.includes('palette/')) category = 'ux'
-          else if (name.includes('bolt/')) category = 'performance'
+          const lowerMsg = lastMessage.toLowerCase()
+          if (name.includes('feat/') || lowerMsg.startsWith('feat')) category = 'feature'
+          else if (name.includes('fix/') || lowerMsg.startsWith('fix')) category = 'fix'
+          else if (name.includes('sentinel/') || lowerMsg.startsWith('security')) category = 'security'
+          else if (name.includes('palette/') || lowerMsg.startsWith('style') || lowerMsg.startsWith('ui')) category = 'ux'
+          else if (name.includes('bolt/') || lowerMsg.startsWith('perf')) category = 'performance'
+          else if (lowerMsg.startsWith('docs')) category = 'documentation'
+          else if (lowerMsg.startsWith('chore')) category = 'maintenance'
           else if (name.includes('/')) category = name.split('/')[0]
 
           // Phase 12: Enhanced Intelligence Extraction
@@ -420,14 +423,16 @@ export class Jules {
             const hasKnowledgeDir = changedFiles.some(f => f.includes('data/knowledge/'))
 
             if (hasMarkdown || hasAgents || hasDocs || hasKnowledgeDir) {
-              knowledge = `Enhanced ecosystem knowledge base via ${changedFiles.filter(f => f.endsWith('.md') || f.startsWith('agents/') || f.startsWith('docs/') || f.includes('data/knowledge/')).length} artifacts.`
+              const count = changedFiles.filter(f => f.endsWith('.md') || f.startsWith('agents/') || f.startsWith('docs/') || f.includes('data/knowledge/')).length;
+              knowledge = `Enhanced ecosystem knowledge base via ${count} artifact${count > 1 ? 's' : ''}.`
             }
 
-            // Detect domain from file paths
+            // Detect domain from file paths (Prioritized assignment)
             if (changedFiles.some(f => f.includes('services/'))) domain = 'Services'
             else if (changedFiles.some(f => f.includes('scripts/'))) domain = 'Automation'
             else if (changedFiles.some(f => f.includes('app/') || f.includes('web-app/'))) domain = 'UI/UX'
-            else if (hasAgents) domain = 'AI Agents'
+            else if (changedFiles.some(f => f.startsWith('agents/'))) domain = 'AI Agents'
+            else if (changedFiles.some(f => f.startsWith('docs/'))) domain = 'Documentation'
           }
 
           const results = changedFiles.length > 0

@@ -268,7 +268,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
           resourceUsage[matchedResource.name].add(b.name)
 
           // Group by Functional Cluster (e.g., 'auth', 'database', 'cloud')
-          const clusterMatch = matchedResource.name.match(/^(auth|db|database|cloud|neural|edge|api|ui|ux|security|knowledge|intelligence)/i)
+          const clusterMatch = matchedResource.name.match(/^(auth|db|database|cloud|neural|edge|api|ui|ux|security|knowledge|intelligence|analytics|evolution|creation|sync|collaboration)/i)
           if (clusterMatch) {
             const cluster = clusterMatch[0].toLowerCase()
             if (!functionalClusters[cluster]) functionalClusters[cluster] = new Set()
@@ -283,20 +283,22 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
   map.resourceDependencies = []
 
   // Phase 12: Resource Dependency Tracking (Expanded Static Analysis)
-  const serviceFiles = map.resourceInventory.filter((r: any) => r.type === 'Service')
-  for (const service of serviceFiles) {
+  const trackableResources = map.resourceInventory.filter((r: any) => ['Service', 'UI Component', 'Automation Script'].includes(r.type))
+  for (const resource of trackableResources) {
+    if (!resource.path) continue
     try {
-      const content = await fs.promises.readFile(path.join(process.cwd(), service.path), 'utf8')
+      const content = await fs.promises.readFile(path.join(process.cwd(), resource.path), 'utf8')
       // Support ./, ../, and @/ aliases
-      const imports = content.match(/import .* from ['"](@\/antigravity\/services\/|\.\/|\.\.\/services\/)(.*)['"]/g) || []
+      const imports = content.match(/import .* from ['"](@\/antigravity\/services\/|\.\/|\.\.\/services\/|\.\.\/|@\/antigravity\/)(.*)['"]/g) || []
       imports.forEach(imp => {
-        const depMatch = imp.match(/['"](@\/antigravity\/services\/|\.\/|\.\.\/services\/)(.*)['"]/)
+        const depMatch = imp.match(/['"](@\/antigravity\/services\/|\.\/|\.\.\/services\/|\.\.\/|@\/antigravity\/)(.*)['"]/)
         if (depMatch) {
-          const depName = depMatch[2].replace(/\.[jt]s$/, '')
-          const target = serviceFiles.find(s => s.name === depName)
-          if (target) {
+          const depPathPart = depMatch[2].replace(/\.[jt]sx?$/, '')
+          const depName = depPathPart.split('/').pop() || depPathPart
+          const target = map.resourceInventory.find(s => s.name === depName || (s.path && s.path.includes(depPathPart)))
+          if (target && target.name !== resource.name) {
             map.resourceDependencies.push({
-              source: service.name,
+              source: resource.name,
               target: target.name,
               type: 'import'
             })
@@ -500,12 +502,12 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
     newEntries += `\n`
   }
 
-  // Highlight Strategic Synergies if they exist in the state (passing them in would be better but let's derive from branches)
-  const branchesWithSynergy = relevantBranches.filter(b => b.category === 'feature' || b.category === 'performance')
-  if (branchesWithSynergy.length > 0) {
+  // Highlight Strategic Synergies from the relationship map
+  if (relationshipMap?.synergies && relationshipMap.synergies.length > 0) {
     newEntries += `### ⚡ Strategic Synergy Highlights\n`
-    branchesWithSynergy.slice(0, 5).forEach(b => {
-      newEntries += `- **SYNERGY:** \`${b.name}\` -> ${b.results || b.result || 'N/A'} (Focus: ${b.category})\n`
+    const synergies = relationshipMap.synergies.slice(0, 10)
+    synergies.forEach((s: any) => {
+      newEntries += `- **SYNERGY [${s.intensity}]:** \`${s.resource}\` involves branches: ${s.branches.slice(0, 3).join(', ')}${s.branches.length > 3 ? '...' : ''}\n`
     })
     newEntries += `\n`
   }
