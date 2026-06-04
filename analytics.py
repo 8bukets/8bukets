@@ -39,17 +39,24 @@ def generate_report(data, output_file):
     top_domain = domain_counts[0][0] if domain_counts else "N/A"
     top_domain_count = domain_counts[0][1] if domain_counts else 0
 
-    # 2. Category Analysis
-    all_categories = []
+    # Single pass aggregation
     for p in data:
+        # 1. Domain Analysis
+        if p.get('external_link'):
+            domain = p.get('domain')
+            # If domain is missing/None but external_link exists, calculate it
+            # This handles cases where data might not have 'domain' field pre-populated
+            if domain is None:
+                domain = get_domain(p.get('external_link'))
+
+            domain_counter[domain] += 1
+
+        # 2. Category Analysis
         cats = p.get('categories', [])
         if cats:
-            all_categories.extend(cats)
-    category_counts = Counter(all_categories).most_common(10)
+            category_counter.update(cats)
 
-    # 3. Date Analysis
-    dates = []
-    for p in data:
+        # 3. Date Analysis (collection only)
         dt_str = p.get('datetime')
         dt = None
         if dt_str:
@@ -83,10 +90,6 @@ def generate_report(data, output_file):
         start_date = "N/A"
         end_date = "N/A"
         year_counts = []
-
-    # 4. Author Analysis
-    authors = [p.get('author') for p in data if p.get('author')]
-    author_counts = Counter(authors).most_common()
 
     # Generate Markdown
     md = []
