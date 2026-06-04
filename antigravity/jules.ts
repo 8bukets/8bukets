@@ -298,7 +298,6 @@ export class Jules {
     }
 
     await this.syncCollaboration()
-    await this.generateConsolidatedReport()
 
     const { syncToICloud } = await import('./services/icloud')
     await syncToICloud()
