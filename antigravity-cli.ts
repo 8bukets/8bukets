@@ -75,6 +75,21 @@ program
   });
 
 program
+  .command('improve-merge-integrate-run')
+  .description('Improve merge integrate run workflow and observe knowledge')
+  .action(async () => {
+    const url = 'https://software-online-review.com';
+    console.log(`🧠 Improving merge integrate run workflow for ${url}...`);
+    try {
+      const result = await observeKnowledge(url);
+      console.log(`✅ Successfully observed: ${result.title}`);
+    } catch (err) {
+      console.error(`❌ Observation failed: ${err}`);
+      process.exit(1);
+    }
+  });
+
+program
   .command('observe <url>')
   .description('Ingest knowledge from a given URL into the neural mesh')
   .action(async (url) => {

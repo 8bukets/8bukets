@@ -89,7 +89,7 @@ export async function observeKnowledge(url: string) {
         const blockStartPos = cleanContent.lastIndexOf('## Autonomous Observation', targetPos);
 
         // Find the end of this block (start of the next header, or end of string)
-        const nextHeaderPos = cleanContent.indexOf('\n## ', targetPos);
+        const nextHeaderPos = cleanContent.indexOf('\n## ', targetPos + targetIndicator.length);
         const blockEndPos = nextHeaderPos !== -1 ? nextHeaderPos : cleanContent.length;
 
         // Replace the old block with the new one
