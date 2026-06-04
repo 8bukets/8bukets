@@ -300,6 +300,17 @@ class WordpressScraperAsync:
                 return await loop.run_in_executor(pool, parse_page, html)
             return None
 
+    def sanitize_for_csv(self, text: Optional[str]) -> str:
+        """Sanitize text to prevent CSV injection."""
+        if text is None:
+            return ""
+        # Convert to string if not already
+        text_str = str(text)
+        # If the text starts with specific characters, prepend a single quote
+        if text_str.startswith(('=', '+', '-', '@')):
+            return "'" + text_str
+        return text_str
+
     def save_data(self, posts: List[Dict]):
         # JSON
         json_ok = False
@@ -318,13 +329,13 @@ class WordpressScraperAsync:
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        self.sanitize_for_csv(post.get('title', '')),
+                        self.sanitize_for_csv(post.get('date', '')),
+                        self.sanitize_for_csv(post.get('author', '')),
+                        self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                        self.sanitize_for_csv(post.get('external_link', '')),
+                        self.sanitize_for_csv(post.get('domain', '')),
+                        self.sanitize_for_csv(post.get('post_url', ''))
                     ])
             csv_ok = True
         except IOError as e:
