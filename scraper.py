@@ -307,6 +307,12 @@ class BlogScraper:
 
         return False
 
+    def close(self):
+        """Close the database connection."""
+        if self.conn:
+            self.conn.close()
+            logger.info("Database connection closed.")
+
     def fetch_page(self, url):
         if not self.is_safe_url(url):
             logger.error(f"Security Alert: Attempted to scrape unsafe URL: {url}")
