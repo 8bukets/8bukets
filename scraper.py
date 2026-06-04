@@ -196,6 +196,14 @@ class OracleNewsScraper:
             else:
                 logger.error("Failed to retrieve content.")
 
+    def sanitize_for_csv(self, text: str) -> str:
+        """Prevent CSV formula injection."""
+        if not isinstance(text, str):
+            text = str(text)
+        if text and text.startswith(('=', '+', '-', '@')):
+            return f"'{text}"
+        return text
+
     def save_data(self, posts: List[Dict]):
         # JSON
         try:
