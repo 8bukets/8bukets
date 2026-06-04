@@ -99,6 +99,22 @@ class ReportGenerator:
 
         with open(report_filename, "w", encoding="utf-8") as f:
             f.write(f"# Daily Scraper Report - {report_date}\n\n")
+
+            # Pre-calculate data for TOC
+            all_recent_titles = [p[0] for p in new_posts] + [p[0] for p in updated_posts]
+
+            # Table of Contents
+            f.write("## 📋 Table of Contents <a name=\"table-of-contents\"></a>\n")
+            f.write("- [💡 Recommendations](#recommendations)\n")
+            if all_recent_titles:
+                f.write("- [🧠 Keyword Trends](#keyword-trends)\n")
+            f.write("- [📈 SEO Trend Analysis](#seo-trends)\n")
+            if updated_posts:
+                f.write("- [🔄 Content Updates](#content-updates)\n")
+            if new_posts:
+                f.write("- [🆕 Recently Scraped Posts](#new-posts)\n")
+            f.write("\n")
+
             f.write(f"**Total Posts:** {total_posts}\n")
             f.write(f"**New Posts:** {len(new_posts)}\n")
             f.write(f"**Updated Posts:** {len(updated_posts)}\n\n")
