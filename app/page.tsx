@@ -229,14 +229,31 @@ async function PersistenceFleetBar() {
 async function SystemHealthGrid() {
   const stats = await getAppStats();
   const insights = await getSystemInsights();
+  const posture = insights.healthAudit.posture;
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-      <StatusItem label="MongoDB" value={stats.mongoStatus} ok={stats.mongoStatus === 'healthy'} />
-      <StatusItem label="Supabase" value={stats.supabaseStatus} ok={stats.supabaseStatus === 'healthy' || stats.supabaseStatus === 'connected'} />
-      <StatusItem label="Security" value={insights.security.status.toUpperCase()} ok={insights.security.status === 'secure'} />
-      <StatusItem label="Users" value={stats.activeUsers.toString()} ok={true} />
-      <StatusItem label="Uptime" value={`${Math.floor(insights.uptime / 60)}m`} ok={true} />
+    <div className="flex flex-col gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <StatusItem label="Posture" value={posture.toUpperCase()} ok={posture === 'optimal'} />
+        <StatusItem label="MongoDB" value={stats.mongoStatus} ok={stats.mongoStatus === 'healthy'} />
+        <StatusItem label="Supabase" value={stats.supabaseStatus} ok={stats.supabaseStatus === 'healthy' || stats.supabaseStatus === 'connected'} />
+        <StatusItem label="Security" value={insights.security.status.toUpperCase()} ok={insights.security.status === 'secure'} />
+        <StatusItem label="Uptime" value={`${Math.floor(insights.uptime / 60)}m`} ok={true} />
+      </div>
+
+      {insights.healthAudit.recommendations.length > 0 && (
+        <div className="p-4 bg-amber-500/10 border border-amber-500/20 rounded-2xl">
+          <p className="text-[10px] font-black uppercase text-amber-500 mb-2">Predictive Recommendations</p>
+          <ul className="space-y-1">
+            {insights.healthAudit.recommendations.map((rec: string, i: number) => (
+              <li key={i} className="text-xs text-amber-200/70 flex items-center gap-2">
+                <span className="w-1 h-1 bg-amber-500 rounded-full" />
+                {rec}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   )
 }

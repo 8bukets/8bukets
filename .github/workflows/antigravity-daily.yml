@@ -5,6 +5,10 @@ on:
     - cron: '0 0 * * *' # Every day at midnight
   workflow_dispatch: # Allows manual trigger
 
+concurrency:
+  group: antigravity-daily
+  cancel-in-progress: true
+
 permissions:
   contents: write
   pull-requests: write

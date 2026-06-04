@@ -9,73 +9,77 @@ import { logAutonomousAction } from '../core'
  */
 
 export class ICloudObserver {
-  private syncPath: string
+  private scanPaths: string[]
   private observer: KnowledgeObserver
 
   constructor() {
-    // Default to the known Antigravity iCloud path
     const homeDir = process.env.HOME || ''
-    const standardICloudPath = path.join(homeDir, 'Library/Mobile Documents/com~apple~CloudDocs/Antigravity_Sync')
+    const cloudDocs = path.join(homeDir, 'Library/Mobile Documents/com~apple~CloudDocs')
+    
+    this.scanPaths = [
+      path.join(cloudDocs, 'Antigravity_Sync'),
+      path.join(cloudDocs, 'CodeBackups/Antigravity'),
+      path.join(cloudDocs, 'MapAntigravity')
+    ]
 
-    this.syncPath = process.env.ICLOUD_SYNC_PATH || standardICloudPath
+    if (process.env.ICLOUD_SYNC_PATH) {
+      this.scanPaths.push(process.env.ICLOUD_SYNC_PATH)
+    }
+
     this.observer = new KnowledgeObserver()
   }
 
   /**
-   * scan: Iterates through the sync directory and ingests new documents.
+   * scan: Iterates through all scan paths and ingests new documents.
    */
   public async scan() {
-    let effectivePath = this.syncPath
-
-    try {
-      await fs.access(effectivePath)
-    } catch {
-      // Fallback to local scratch for simulation if iCloud path is missing
-      effectivePath = path.join(process.cwd(), 'scratch/icloud_sim')
-      try {
-        await fs.access(effectivePath)
-      } catch {
-        console.log('ℹ️ [iCloud Observer] Sync path does not exist. Skipping scan.')
-        return []
-      }
-    }
-
-    console.log(`☁️ [iCloud Observer] Scanning path: ${effectivePath}`)
-
-    const files = await fs.readdir(effectivePath)
     const ingested: string[] = []
 
-    for (const file of files) {
-      const fullPath = path.join(effectivePath, file)
-      const stats = await fs.stat(fullPath)
+    for (const scanPath of this.scanPaths) {
+      try {
+        await fs.access(scanPath)
+      } catch {
+        continue
+      }
 
-      if (stats.isFile() && (file.endsWith('.md') || file.endsWith('.json'))) {
-        try {
-          const content = await fs.readFile(fullPath, 'utf8')
-          let knowledge;
+      console.log(`☁️ [iCloud Observer] Scanning path: ${scanPath}`)
+      const files = await fs.readdir(scanPath, { recursive: true }) as string[]
 
-          if (file.endsWith('.json')) {
-             const data = JSON.parse(content)
-             // Handle both structured and raw JSON
-             knowledge = {
-               source: `icloud://${file}`,
-               title: data.title || `iCloud: ${file}`,
-               description: data.description || 'Extracted system knowledge from iCloud JSON',
-               topKeywords: [],
-               recentPosts: [],
-               analyzedAt: new Date().toISOString(),
-               sections: data.sections || [{ header: 'Content', content: JSON.stringify(data, null, 2) }]
-             }
-          } else {
-             knowledge = KnowledgeObserver.processContent(`iCloud: ${file}`, content, `icloud://${file}`)
+      for (const file of files) {
+        const fullPath = path.join(scanPath, file)
+        const stats = await fs.stat(fullPath)
+
+        if (stats.isFile() && (file.endsWith('.md') || (file.endsWith('.json') && !file.includes('node_modules')))) {
+          try {
+            const content = await fs.readFile(fullPath, 'utf8')
+            let knowledge;
+
+            if (file.endsWith('.json')) {
+              try {
+                const data = JSON.parse(content)
+                knowledge = {
+                  source: `icloud://${file}`,
+                  title: data.title || `iCloud: ${file}`,
+                  description: data.description || 'Extracted system knowledge from iCloud JSON',
+                  topKeywords: [],
+                  recentPosts: [],
+                  analyzedAt: new Date().toISOString(),
+                  sections: data.sections || [{ header: 'Content', content: JSON.stringify(data, null, 2) }]
+                }
+              } catch (e) { continue; }
+            } else {
+              knowledge = KnowledgeObserver.processContent(`iCloud: ${file}`, content, `icloud://${file}`)
+            }
+
+            if (knowledge) {
+              await this.observer.persistKnowledge(knowledge)
+              ingested.push(file)
+              logAutonomousAction(`[ICLOUD] Ingested ${file}`, 'cognitive')
+              console.log(` ✅ [iCloud Observer] Successfully ingested: ${file}`)
+            }
+          } catch (err) {
+            console.error(` ❌ [iCloud Observer] Failed to process ${file}:`, err)
           }
-
-          await this.observer.persistKnowledge(knowledge)
-          ingested.push(file)
-          logAutonomousAction(`[ICLOUD] Ingested ${file}`, 'cognitive')
-          console.log(` ✅ [iCloud Observer] Successfully ingested: ${file}`)
-        } catch (err) {
-          console.error(` ❌ [iCloud Observer] Failed to process ${file}:`, err)
         }
       }
     }

@@ -203,8 +203,41 @@ export async function getSystemInsights() {
     relay,
     proposals,
     security,
-    uptime: process.uptime()
+    uptime: process.uptime(),
+    healthAudit: await predictiveHealthAudit()
   }
+}
+
+/**
+ * predictiveHealthAudit: Monitors system stability trends.
+ */
+export async function predictiveHealthAudit() {
+  const health = await healthCheck()
+  const status = {
+    posture: 'optimal' as 'optimal' | 'warning' | 'critical',
+    recommendations: [] as string[]
+  }
+
+  if (health.mongodb !== 'healthy') {
+    status.posture = 'critical'
+    status.recommendations.push('Immediate MongoDB Atlas reconnection required.')
+  }
+
+  if (health.supabase !== 'healthy' && health.supabase !== 'connected') {
+    status.posture = 'warning'
+    status.recommendations.push('Supabase connectivity is intermittent. Check API quotas.')
+  }
+
+  // Phase 12: Predictive Volatility Analysis
+  const volatileTags = Array.from(volatilityRegistry.entries())
+    .filter(([_, stats]) => stats.updates > 20)
+  
+  if (volatileTags.length > 0) {
+    status.posture = 'warning'
+    status.recommendations.push(`Detected ${volatileTags.length} high-volatility cache tags. Consider sharding the persistence layer.`)
+  }
+
+  return status
 }
 
 /**

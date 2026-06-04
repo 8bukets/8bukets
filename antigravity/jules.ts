@@ -257,6 +257,14 @@ export class Jules {
     ])
     this.recordTask('Sentient Orchestration: Coordinated Phase 13 deployment intents.')
 
+    // Execution Phase: Process pending work orders
+    console.log('⚡ [Jules] Processing pending work orders...')
+    const { workOrderService } = await import('./services/work_order')
+    await workOrderService.executePendingOrders()
+
+    // Maintenance Phase: Autonomous Merge
+    await this.autonomousMerge()
+
     // Knowledge Observation
     console.log('👁️ [Jules] Initiating Knowledge Observation...')
     const { observeKnowledge, persistKnowledge } = await import('./services/knowledge_observer')
@@ -452,6 +460,89 @@ export class Jules {
     } catch (e) {
       console.warn('⚠️ [Jules] Branch scan failed:', e)
       return raw ? [] : '## 🌿 Branch Intelligence\n_Branch scan failed or Git not available._\n'
+    }
+  }
+
+  public async autonomousMerge() {
+    console.log('🌿 [Jules] Evaluating branches for autonomous merge...')
+    try {
+      const branches = await this.scanAllBranches(true) as any[]
+      const readyForMerge = branches.filter(b => 
+        ['feature', 'fix', 'performance', 'security', 'ux'].includes(b.category) && 
+        b.results && b.results !== 'N/A' &&
+        !b.name.includes('main') &&
+        !b.name.includes('HEAD')
+      )
+
+      if (readyForMerge.length === 0) {
+        console.log('✨ [Jules] No branches identified for autonomous merge.')
+        return
+      }
+
+      console.log(`🌿 [Jules] Found ${readyForMerge.length} branches ready for merge. Processing top 5...`)
+      
+      const batch = readyForMerge.slice(0, 5)
+      for (const branch of batch) {
+        try {
+          const branchName = branch.name.replace('remotes/origin/', '')
+          console.log(` 🌀 [Jules] Merging branch: ${branchName}...`)
+          
+          // 1. Ensure we are on main
+          await execFileAsync('git', ['checkout', 'main'])
+          await execFileAsync('git', ['pull', 'origin', 'main'])
+          
+          // 2. Merge
+          await execFileAsync('git', ['merge', branchName, '--no-edit'])
+          
+          // 3. Push
+          await execFileAsync('git', ['push', 'origin', 'main'])
+          
+          this.recordTask(`Autonomous Merge: Successfully merged ${branchName} into main.`)
+          console.log(` ✅ [Jules] Merged ${branchName} successfully.`)
+
+          // 4. Prune branch after successful merge
+          await this.pruneBranch(branchName)
+        } catch (mergeErr: any) {
+          console.error(` ❌ [Jules] Failed to merge ${branch.name}:`, mergeErr.message)
+          await execFileAsync('git', ['merge', '--abort']).catch(() => {})
+        }
+      }
+
+      // 5. Global Pruning Scan (Cleanup stagnant branches)
+      await this.globalPruningScan()
+    } catch (err) {
+      console.warn('⚠️ [Jules] Autonomous merge cycle encountered an error:', err)
+    }
+  }
+
+  private async pruneBranch(name: string) {
+    try {
+      console.log(` 🧹 [Jules] Pruning branch: ${name}...`)
+      await execFileAsync('git', ['push', 'origin', '--delete', name])
+      await execFileAsync('git', ['branch', '-d', name]).catch(() => {}) // Delete local if exists
+      this.recordTask(`Branch Pruning: Deleted merged branch ${name}.`)
+    } catch (err) {
+      console.warn(` ⚠️ [Jules] Failed to prune branch ${name}. It may have already been deleted.`)
+    }
+  }
+
+  private async globalPruningScan() {
+    console.log(' 🔍 [Jules] Performing global branch pruning scan...')
+    try {
+      // Find branches already merged into main
+      const { stdout: mergedBranchesRaw } = await execFileAsync('git', ['branch', '-r', '--merged', 'origin/main'])
+      const mergedBranches = mergedBranchesRaw.trim().split('\n')
+        .map(b => b.trim().replace('origin/', ''))
+        .filter(b => b && b !== 'main' && !b.includes('HEAD') && !b.includes('->'))
+
+      if (mergedBranches.length > 0) {
+        console.log(` 🧹 [Jules] Found ${mergedBranches.length} merged branches to prune.`)
+        for (const branch of mergedBranches.slice(0, 10)) { // Prune in batches
+          await this.pruneBranch(branch)
+        }
+      }
+    } catch (err) {
+      console.warn(' ⚠️ [Jules] Global pruning scan failed:', err)
     }
   }
 }

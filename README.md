@@ -1,70 +1,62 @@
+# 🌌 Antigravity: The Autonomous Evolution Engine
+
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/8bukets/8bukets&fullConfiguration=true)
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+**Antigravity** is a multi-layered autonomous system designed for continuous cognitive evolution, multi-agent orchestration, and sovereign fleet management. It integrates high-level architectural ideation with ground-level execution, maintaining a permanent online presence across cloud and local environments.
 
-## Getting Started
+---
 
-First, run the development server:
+## 🏗️ System Architecture
 
+### 1. **The Jules Agent (Cognitive Layer)**
+The lead architect, **Jules**, orchestrates the ecosystem's evolution. It performs:
+- **Daily Work Cycles:** Autonomous self-repair, security audits, and dependency management.
+- **Synthesis:** Generates architectural proposals based on system gaps and market intelligence.
+- **Autonomous Merge:** Manages a fleet of over 2,300 branches, autonomously merging validated features into the production core.
+
+### 2. **Autonomous Creation Engine (Execution Layer)**
+Translates synthesized ideas into actionable work order chains:
+- `BOOTSTRAP_SERVICE` → `SMOKE_TEST` → `DEPLOYMENT`
+- Maintains zero-touch operations via a prioritized task queue.
+
+### 3. **Omni-Presence Matrix (Connectivity Layer)**
+Ensures 24/7 uptime through a hybrid synchronization strategy:
+- **Cloud Simulation:** GitHub Actions and GitLab CI maintain constant activity.
+- **iCloud Sync:** Real-time synchronization of intelligence data and code backups to Apple Cloud Docs.
+- **Sovereign Fleet:** Deploys edge nodes with APAC regional optimization (<50ms latency).
+
+---
+
+## 📊 Dashboard & Monitoring
+
+The **Antigravity Command** dashboard provides a real-time view of the ecosystem's health:
+- **System Posture:** Live status of MongoDB, Supabase, and Docker sovereignty.
+- **Cognitive Pulse:** Real-time log of autonomous decisions and predictive refactors.
+- **Global Neural Network:** Tracking connectivity across Tokyo, Singapore, and European edge nodes.
+
+---
+
+## 🚀 Getting Started
+
+### Development Environment
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev      # Start the Antigravity Command Dashboard
+npm run daily    # Manually trigger a Jules Daily Routine
+npm run ignite   # Start the Continuous Autonomous Loop
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### macOS Native Persistence
+To install the **Jules LaunchAgent** for automated local maintenance:
+1. Update `com.sigma.jules.plist` with your macOS username.
+2. `cp com.sigma.jules.plist ~/Library/LaunchAgents/`
+3. `launchctl load ~/Library/LaunchAgents/com.sigma.jules.plist`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📜 Licensing
 
-## Learn More
+Antigravity is dual-licensed:
+1. **MIT License**: Applies to the software codebase.
+2. **Creative Commons Attribution 4.0 International (CC BY 4.0)**: Applies to documentation, telemetry, and visual results.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-## Cloud Deployments (Docker, Supabase, MongoDB)
-
-The autonomous system supports continuous cloud deployments using standard infrastructure primitives:
-
-- **Docker Configs:** Ensure you use `docker-compose.cloud.yml` when spinning up nodes in external environments (it bypasses local MongoDB expectations).
-- **Online Presence:** The autonomous system remains permanently on via GitHub Actions (`.github/workflows/continuous-presence.yml`) and GitLab CI schedules (`.gitlab-ci.yml`), performing data sync back to the main branches using GitKraken visual commit strategies.
-- **Data Persistence:** Relies purely on remote MongoDB clusters and remote Supabase APIs, connected via standard deployment variables.
-
-## Autonomous Daily Sync & Persistence
-
-The Antigravity system includes an autonomous daily work cycle that performs Git synchronization (pull/upload) and iCloud folder backups.
-
-### 1. macOS Persistence (LaunchAgent)
-
-A `com.sigma.jules.plist` file is provided to automate the daily routine. To install it:
-
-1. Open `com.sigma.jules.plist` and replace `YOUR_USERNAME` with your actual macOS username (e.g., `filipkeser`).
-2. Copy the file to your LaunchAgents directory:
-   ```bash
-   cp com.sigma.jules.plist ~/Library/LaunchAgents/
-   ```
-3. Load the agent:
-   ```bash
-   launchctl load ~/Library/LaunchAgents/com.sigma.jules.plist
-   ```
-
-The script will now run every day at midnight.
-
-### 2. iCloud Synchronization
-
-By default, the system syncs to `~/Library/Mobile Documents/com~apple~CloudDocs/Antigravity_Sync`. You can customize this by setting the `ICLOUD_SYNC_PATH` environment variable in your `.env` file.
+Copyright (c) 2026 Filip Keser.
