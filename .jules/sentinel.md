@@ -1,7 +1,8 @@
-## 2026-02-01 - CSV Injection Vulnerability in Scraper
-
-**Vulnerability:** The scraper was writing user-controlled data (titles, authors, etc.) directly to a CSV file without sanitization. If a field started with `=`, `+`, `-`, or `@`, it could be interpreted as a formula by spreadsheet software (Excel, LibreOffice), potentially leading to arbitrary code execution on the analyst's machine.
-
-**Learning:** We often trust data scraped from "reputable" sites like WordPress blogs, but compromised sites or malicious user comments (if scraped) can introduce payloads. Scrapers must treat all external data as untrusted.
-
-**Prevention:** Always sanitize data before writing to CSV. Prepending a single quote `'` to fields starting with special formula characters forces the spreadsheet to treat the cell as text.
+## 2026-01-27 - CSV Injection and Path Traversal in Scraper
+**Vulnerability:** The scraper accepted unsanitized input for CSV generation and unvalidated file paths for output.
+**Learning:** Python's `csv` module does not automatically sanitize formula injection characters (`=`, `+`, `-`, `@`). CLI tools accepting paths must validate them against the CWD.
+**Prevention:** Implement input sanitization for CSV fields and strict path validation using `os.path.abspath` and `os.path.commonpath`.
+## 2026-02-05 - Prevented CSV Injection
+**Vulnerability:** Unsanitized scraped data (title, author, etc.) starting with `=`, `+`, `-`, or `@` could be executed as formulas when the CSV output is opened in Excel.
+**Learning:** Even when scraping data from "trusted" platforms, the content can contain malicious payloads intended for downstream tools like spreadsheets.
+**Prevention:** Always sanitize data before writing to CSV by prepending a single quote `'` to fields starting with risky characters.
