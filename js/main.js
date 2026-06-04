@@ -1,3 +1,13 @@
+// Utility for performance
+function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+        const context = this;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), wait);
+    };
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('United Sports News website loaded successfully.');
 
