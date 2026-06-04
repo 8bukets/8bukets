@@ -1,0 +1,43 @@
+name: Resolve PR Conflicts
+
+on:
+  schedule:
+    - cron: '0 */4 * * *' # Every 4 hours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  resolve-conflicts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Need full history to perform merges
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: |
+          npm ci || npm install
+          # We need tsx locally to run the script if not already in devDependencies
+          npm install tsx @actions/github @google/generative-ai --no-save
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "google-labs-jules[bot]"
+          git config --global user.email "161369871+google-labs-jules[bot]@users.noreply.github.com"
+          git config --global pull.rebase false
+
+      - name: Run Conflict Resolution Script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: npx tsx scripts/resolve_pr_conflicts.ts
