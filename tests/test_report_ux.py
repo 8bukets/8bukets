@@ -1,69 +1,117 @@
 import unittest
 import os
-import shutil
 import sqlite3
-from datetime import datetime
+import shutil
+from datetime import datetime, timedelta
 from report_generator import ReportGenerator
 
 class TestReportUX(unittest.TestCase):
     def setUp(self):
-        self.test_dir = "test_reports"
-        self.db_name = "test_wishlist.db"
-        if not os.path.exists(self.test_dir):
-            os.makedirs(self.test_dir)
+        self.db_name = "test_ux.db"
+        self.report_dir = "test_reports"
+        if os.path.exists(self.report_dir):
+            shutil.rmtree(self.report_dir)
 
-        # Setup DB
-        self.init_db()
-        self.seed_data()
+        # Initialize DB
+        with sqlite3.connect(self.db_name) as conn:
+            cursor = conn.cursor()
+
+            # Posts table
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS posts (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    title TEXT,
+                    post_url TEXT UNIQUE,
+                    external_link TEXT,
+                    date_str TEXT,
+                    datetime_iso TEXT,
+                    author TEXT,
+                    categories TEXT,
+                    scraped_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )
+            ''')
+
+            # Changes table
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS changes (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    post_id INTEGER,
+                    field TEXT,
+                    old_value TEXT,
+                    new_value TEXT,
+                    changed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY(post_id) REFERENCES posts(id)
+                )
+            ''')
+
+            # Rankings table
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS rankings (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    query TEXT,
+                    rank INTEGER,
+                    title TEXT,
+                    url TEXT,
+                    checked_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )
+            ''')
+
+            # Insert Dummy Data for Report sections
+
+            # 1. New Post (scraped recently)
+            cursor.execute('''
+                INSERT INTO posts (title, post_url, scraped_at)
+                VALUES (?, ?, datetime('now'))
+            ''', ("New UX Post", "http://example.com/new"))
+
+            # 2. Updated Post
+            cursor.execute('''
+                INSERT INTO posts (title, post_url, scraped_at)
+                VALUES (?, ?, datetime('now', '-2 days'))
+            ''', ("Old Post", "http://example.com/old"))
+            post_id = cursor.lastrowid
+
+            cursor.execute('''
+                INSERT INTO changes (post_id, field, old_value, new_value, changed_at)
+                VALUES (?, 'title', 'Old Title', 'New Title', datetime('now'))
+            ''', (post_id,))
+
+            # 3. Rankings
+            cursor.execute('''
+                INSERT INTO rankings (query, rank, title, url, checked_at)
+                VALUES (?, 1, 'Top Rank', 'http://example.com', datetime('now'))
+            ''', ("ux design",))
+
+            conn.commit()
 
     def tearDown(self):
-        if os.path.exists(self.test_dir):
-            shutil.rmtree(self.test_dir)
         if os.path.exists(self.db_name):
             os.remove(self.db_name)
+        if os.path.exists(self.report_dir):
+            shutil.rmtree(self.report_dir)
 
-    def init_db(self):
-        with sqlite3.connect(self.db_name) as conn:
-            cursor = conn.cursor()
-            cursor.execute('CREATE TABLE IF NOT EXISTS posts (id INTEGER PRIMARY KEY, title TEXT, post_url TEXT, external_link TEXT, scraped_at TIMESTAMP)')
-            cursor.execute('CREATE TABLE IF NOT EXISTS changes (id INTEGER PRIMARY KEY, post_id INTEGER, field TEXT, old_value TEXT, new_value TEXT, changed_at TIMESTAMP)')
-            cursor.execute('CREATE TABLE IF NOT EXISTS rankings (id INTEGER PRIMARY KEY, query TEXT, rank INTEGER, title TEXT, url TEXT, checked_at TIMESTAMP)')
-            conn.commit()
-
-    def seed_data(self):
-        with sqlite3.connect(self.db_name) as conn:
-            cursor = conn.cursor()
-            now = datetime.now()
-
-            # New Post
-            cursor.execute('INSERT INTO posts (title, post_url, scraped_at) VALUES (?, ?, ?)',
-                           ("Test Post", "http://example.com", now))
-
-            # Ranking
-            cursor.execute('INSERT INTO rankings (query, rank, title, url, checked_at) VALUES (?, ?, ?, ?, ?)',
-                           ("test query", 1, "Test", "http://example.com", now))
-
-            conn.commit()
-
-    def test_report_structure(self):
-        generator = ReportGenerator(db_name=self.db_name, report_dir=self.test_dir)
+    def test_report_has_ux_features(self):
+        generator = ReportGenerator(db_name=self.db_name, report_dir=self.report_dir)
         generator.generate_daily_report()
 
-        report_date = datetime.now().strftime("%Y-%m-%d")
-        report_path = os.path.join(self.test_dir, f"report_{report_date}.md")
+        # Find the generated file
+        files = os.listdir(self.report_dir)
+        self.assertTrue(len(files) > 0, "No report generated")
+        report_path = os.path.join(self.report_dir, files[0])
 
-        self.assertTrue(os.path.exists(report_path), "Report file should exist")
-
-        with open(report_path, "r", encoding="utf-8") as f:
+        with open(report_path, 'r', encoding='utf-8') as f:
             content = f.read()
 
-        # Check for UX elements
-        self.assertIn("<a name='table-of-contents'></a>", content)
-        self.assertIn("## 📑 Table of Contents", content)
-        self.assertIn("[💡 Recommendations](#recommendations)", content)
-        self.assertIn("[Back to Top](#table-of-contents)", content)
-        self.assertIn("<a name='recommendations'></a>", content)
-        self.assertIn("<a name='recently-scraped-posts'></a>", content)
+        # Check for Table of Contents
+        self.assertIn("## 📋 Table of Contents", content, "TOC header missing")
+        self.assertIn("[💡 Recommendations](#recommendations)", content, "TOC link missing")
+
+        # Check for Anchors
+        self.assertIn("<a id='recommendations'></a>", content, "Anchor tag for recommendations missing")
+        self.assertIn("<a id='recently-scraped-posts'></a>", content, "Anchor tag for new posts missing")
+
+        # Check for Back to Top
+        self.assertIn("[⬆️ Back to Top](#table-of-contents)", content, "Back to Top link missing")
 
 if __name__ == '__main__':
     unittest.main()
