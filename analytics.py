@@ -84,7 +84,16 @@ def generate_report(data, output_file):
     authors = [p.get('author') for p in data if p.get('author')]
     author_counts = Counter(authors).most_common()
 
-    # Generate Markdown
+    # Define Sections
+    # Key: (Emoji, Title, Slug)
+    sections_info = [
+        ("stats", "📊", "General Statistics", "general-statistics"),
+        ("domains", "🔗", "Top 10 Referenced Domains", "top-10-referenced-domains"),
+        ("categories", "📂", "Top 10 Categories", "top-10-categories"),
+        ("years", "📅", "Posts by Year", "posts-by-year"),
+        ("authors", "✍️", "Authors", "authors"),
+    ]
+
     md = []
     md.append("# 🎨 Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
@@ -152,8 +161,10 @@ def generate_report(data, output_file):
         md.append(f"- {author}: {count} posts")
     md.append("\n[⬆️ Back to Top](#table-of-contents)")
 
+def generate_report(data, output_file):
+    content = generate_markdown_content(data)
     with open(output_file, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(md))
+        f.write(content)
 
     # Colored Output
     if sys.stdout.isatty():
