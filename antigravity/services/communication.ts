@@ -100,17 +100,25 @@ export async function generateActionableBriefing(state: any, directives: Directi
     briefing += `\n### 🤝 Direct Coordination Paths\n`
     criticalRecs.forEach((r: any) => {
       const coordinationRequired = r.rationale.includes('Urgent coordination required between:')
-      const path = coordinationRequired
+      const coordinationPath = coordinationRequired
         ? r.rationale.split('Urgent coordination required between:')[1].trim()
         : 'Cross-team architectural review required.'
 
       briefing += `- **Resource Conflict/Synergy:** \`${r.resource}\`\n`
-      briefing += `  - **Coordination Required:** ${path}\n`
-      briefing += `  - **Action:** ${r.action}\n`
+      briefing += `  - **Strategic Pathway:** ${coordinationPath}\n`
+      briefing += `  - **Action Item:** ${r.action}\n`
       if (r.branches && Array.isArray(r.branches)) {
-        briefing += `  - **Branches:** ${r.branches.slice(0, 3).join(', ')}${r.branches.length > 3 ? ` (+${r.branches.length - 3} more)` : ''}\n`
+        briefing += `  - **Impacted Branches:** ${r.branches.slice(0, 5).join(', ')}${r.branches.length > 5 ? ` (+${r.branches.length - 5} more)` : ''}\n`
       }
     })
+  }
+
+  // Phase 12: Specific Agent-to-Stakeholder Directives
+  briefing += `\n### 🤖 Agent-to-Stakeholder Directives\n`
+  if (synergies.length > 0) {
+    briefing += `- **Jules Directive:** "I have detected ${synergies.length} developmental overlaps. Stakeholders should prioritize the 'Strategic Coordination Paths' defined above to avoid architectural drift."\n`
+  } else {
+    briefing += `- **Jules Directive:** "System alignment is optimal. No manual intervention required for current development streams."\n`
   }
 
   briefing += `\n### 🚀 Required Stakeholder Decisions\n`
