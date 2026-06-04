@@ -56,6 +56,20 @@ SECTIONS = {
     "authors": {"title": "Authors", "emoji": "✍️"}
 }
 
+def sanitize_markdown(text):
+    """
+    Sanitize text to prevent Markdown injection and XSS.
+    Escapes pipe characters for tables and HTML tags.
+    """
+    if text is None:
+        return ""
+    text = str(text)
+    # Escape pipe to prevent table injection
+    text = text.replace('|', '\\|')
+    # Escape HTML tags to prevent XSS
+    text = text.replace('<', '&lt;').replace('>', '&gt;')
+    return text
+
 def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
