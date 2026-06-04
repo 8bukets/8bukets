@@ -802,7 +802,7 @@
       "title": "Web Insight",
       "metadata": {
         "source": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview",
-        "analyzedAt": "2026-06-04T00:47:52.114Z",
+        "analyzedAt": "2026-06-04T05:26:53.520Z",
         "description": "Extracted system knowledge"
       },
       "sections": []
@@ -3531,6 +3531,34 @@
         {
           "header": "Phase 13 Strategic Directive",
           "content": "- **Objective**: Optimize APAC Edge Nodes (Tokyo, Singapore, Sydney) for <50ms latency.\n- **ROI Mandate**: Enforce a 95% ROI efficiency target across all global fleet compute services.\n- **Compliance**: Adhere to ISO 42001 standards for all AI deployments."
+        }
+      ]
+    },
+    {
+      "title": "iCloud: market_intelligence_q3.md",
+      "metadata": {
+        "source": "icloud://market_intelligence_q3.md",
+        "analyzedAt": "2026-06-04T05:26:54.182Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": [
+        {
+          "header": "Trends",
+          "content": "- Increased demand for sovereign AI clusters to ensure data sovereignty.\n- Global shift towards decentralized edge orchestration."
+        }
+      ]
+    },
+    {
+      "title": "iCloud: phase13_regional_compliance.md",
+      "metadata": {
+        "source": "icloud://phase13_regional_compliance.md",
+        "analyzedAt": "2026-06-04T05:26:54.239Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": [
+        {
+          "header": "Directives",
+          "content": "- Implement Asia-Pacific Regional Compliance for all edge nodes in Tokyo and Singapore.\n- Ensure 95% ROI efficiency across all APAC deployments."
         }
       ]
     }

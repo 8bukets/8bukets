@@ -110,6 +110,15 @@ export async function evolve() {
             suggestion: 'MISSING_ROI_TRACKING: Resource-intensive service detected without explicit ROI efficiency tracking as per Phase 13 mandate.'
           })
         }
+
+        // Rule 10: Regional Compliance Metadata (Phase 13 APAC Directive)
+        if (fullPath.includes('apac') && !content.includes('regionalCompliance')) {
+           suggestions.push({
+             file: fullPath.replace(process.cwd(), ''),
+             complexity: lines,
+             suggestion: 'MISSING_REGIONAL_COMPLIANCE: APAC regional service detected without mandatory regionalCompliance metadata.'
+           })
+        }
       }
     }
   }
