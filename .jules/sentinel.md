@@ -1,4 +1,8 @@
-## 2026-01-29 - [Markdown Injection in Analytics Report]
-**Vulnerability:** The `analytics.py` script generated a Markdown report (`REPORT.md`) by directly inserting user-controlled data (scraped from websites) into Markdown tables and lists without sanitization. This allowed "Markdown Injection" (breaking table structure with pipes `|`) and potentially Stored XSS (if the Markdown viewer renders raw HTML tags).
-**Learning:** Even internal reporting tools that process external data are vulnerable to injection attacks. We often assume data scraped from "valid" sites is safe, but it can contain malicious formatting characters or be manipulated by an attacker to exploit the viewing tool (in this case, a Markdown viewer). Memory entries indicated sanitization existed, but the code revealed it was missing—always verify implementation against documentation/memory.
-**Prevention:** All external data inserted into structured formats (HTML, Markdown, SQL, CSV) must be sanitized or escaped for the specific context. For Markdown tables, pipes `|` must be escaped. For general text, HTML tags should be escaped to prevent XSS.
+## 2026-01-27 - Path Traversal in Scraper Output
+**Vulnerability:** `scraper.py` accepted paths outside the working directory (e.g. `../file.json`) for output arguments, allowing arbitrary file overwrite.
+**Learning:** CLI tools taking file paths as arguments often overlook validation, assuming benign user intent.
+**Prevention:** Enforce output paths to be within the current working directory using `os.path.abspath` and `os.path.commonpath`.
+## 2025-02-18 - [CSV Injection Vulnerability in Scraper]
+**Vulnerability:** The scraper writes user-controlled data (e.g., post titles) directly to a CSV file without sanitization. If a title begins with specific characters (`=`, `+`, `-`, `@`), spreadsheet software like Excel may interpret it as a formula, potentially leading to code execution (CSV Injection).
+**Learning:** Even when scraping "trusted" sites, content can be manipulated or contain malicious data. Data destined for spreadsheet formats must always be treated as untrusted and sanitized to prevent formula injection.
+**Prevention:** Sanitize all fields before writing to CSV. Prepend a single quote `'` to any field starting with dangerous characters (`=`, `+`, `-`, `@`) to force the spreadsheet to treat it as text.
