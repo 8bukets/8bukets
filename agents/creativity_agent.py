@@ -1,41 +1,50 @@
-from typing import List, Dict, Any
-from .base_agent import BaseAgent
-import random
+from .base_agent import BaseAgent, Blackboard
 
 class CreativityAgent(BaseAgent):
     def __init__(self):
-        super().__init__("Creativity Agent")
+        super().__init__("CreativityAgent", dependencies=["intelligence_insights", "ai_agents_definitions"], provides=["creative_concepts"])
 
-    def run(self, data: List[Dict[str, Any]]) -> Dict[str, Any]:
-        if not data or len(data) < 2:
-            return {"error": "Not enough data for creativity"}
+    async def run(self, data: list, blackboard: Blackboard) -> dict:
+        self.logger.info("Running Creativity Session...")
 
-        # "Remix" Ideas: Combine title structures
-        titles = [p.get('title') for p in data if p.get('title')]
+        insights = blackboard.get("intelligence_insights", [])
+        knowledge = blackboard.get("ai_agents_definitions", {})
 
-        generated_ideas = []
-        if titles:
-            for _ in range(3):
-                t1 = random.choice(titles)
-                t2 = random.choice(titles)
+        concepts = [
+            "5 Trends Shaping the Future",
+            "Why Your Strategy Needs a Reboot",
+            "Monetization: Beyond the Basics"
+        ]
 
-                # Simple mashup logic: First half of A + Second half of B
-                parts1 = t1.split()
-                parts2 = t2.split()
+        if any("advertising" in str(insight).lower() for insight in insights):
+            concepts.append("Deep Dive: High concentration of advertising-related content.")
 
-                mid1 = len(parts1) // 2
-                mid2 = len(parts2) // 2
+        agent_types = knowledge.get("types", "").lower()
+        if "background agents" in agent_types:
+            concepts.append("Efficiency Playbook: Automating with Background Agents")
+        if "interactive partners" in agent_types:
+            concepts.append("User Engagement: Building Interactive Partner Agents")
 
-                new_title = " ".join(parts1[:mid1] + parts2[mid2:])
-                generated_ideas.append(new_title)
+        use_cases = knowledge.get("use_cases", {})
+        if use_cases:
+            if use_cases.get("code"):
+                concepts.append("The Future of Dev: Accelerating with Code Agents")
+            if use_cases.get("security"):
+                concepts.append("Autonomous Defense: Protecting the Perimeter with Security Agents")
+            if use_cases.get("data"):
+                concepts.append("Data Insights: Unleashing Data Agents on Complex Analytics")
 
-        return {
-            "remixed_ideas": generated_ideas
-        }
+        # NEW ENHANCEMENT: Map concepts directly to Work Orders as suggested by 8bukets intelligence
+        executable_orders = []
+        for i, concept in enumerate(concepts):
+            executable_orders.append({
+                "id": f"AUTO_CREATIVE_EXEC_{i}",
+                "type": "CONTENT_CREATION",
+                "description": concept,
+                "status": "pending"
+            })
 
-    def format_report(self, results: Dict[str, Any]) -> str:
-        lines = [f"## {self.name} Report"]
-        lines.append("\n### Creative Brainstorming (Remixed Titles)")
-        for idea in results.get('remixed_ideas', []):
-            lines.append(f"- {idea}")
-        return "\n".join(lines)
+        # Blackboard doesn't have a sync set() method natively in BaseAgent,
+        # but agents return dicts which are merged into blackboard asynchronously.
+
+        return {"creative_concepts": concepts, "creative_work_orders": executable_orders}

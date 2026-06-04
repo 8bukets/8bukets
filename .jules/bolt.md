@@ -1,3 +1,9 @@
-## 2025-01-28 - SoupStrainer Sensitivity
-**Learning:** `SoupStrainer` with `lxml` is highly effective for performance (parsing only relevant tags), but filtering by attributes (e.g., `class_='post'`) within the strainer can be strict or fail if the parser handles the document structure differently than expected. Straining by tag name only and then filtering by attributes in the resulting soup is more robust and still yields significant gains.
-**Action:** When using `SoupStrainer` on complex or unknown HTML structures, start by straining the tag name only, then refine with `find_all` on the partial soup.
+## 2026-01-27 - Optimizing BeautifulSoup with SoupStrainer
+**Learning:** Parsing large HTML documents with `BeautifulSoup` is significantly faster when using `SoupStrainer` to limit the parse tree to only relevant tags (e.g., 'article'), especially when combined with replacing CSS selectors (`select_one`) with direct tag lookups (`find`).
+**Action:** When scraping specific elements from large pages, always check if `SoupStrainer` can be used to discard unnecessary HTML structure before full parsing.
+## 2025-01-26 - SoupStrainer with html.parser
+**Learning:** SoupStrainer does not improve parsing performance significantly when used with 'html.parser' because the parser still tokenizes the entire document. It may save memory but can be CPU neutral or even slower due to overhead. Measurable gains require 'lxml'.
+**Action:** Only use SoupStrainer for performance if 'lxml' is available. Otherwise, consider regex splitting for massive documents if strict correctness is not required.
+## 2024-05-22 - Data Reuse in Analytics
+**Learning:** `analytics.py` was redundantly parsing URLs to extract domains, even though `scraper.py` already pre-calculated and stored this information. This caused a significant performance overhead (~40% of user CPU time).
+**Action:** Always check if upstream data sources (like scraper output) already contain the derived data needed for analysis before re-calculating it.
