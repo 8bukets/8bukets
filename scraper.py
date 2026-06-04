@@ -72,6 +72,15 @@ class OracleNewsScraper:
             return f"'{text_str}"
         return text_str
 
+    def sanitize_for_csv(self, text: str) -> str:
+        """
+        Sanitize text for CSV to prevent formula injection.
+        Prepends a single quote if the text starts with =, +, -, or @.
+        """
+        if text and text.startswith(('=', '+', '-', '@')):
+            return f"'{text}"
+        return text
+
     def parse_date(self, date_text: str) -> Optional[Dict[str, str]]:
         """Parse date string like 'Oct 15, 2025' to ISO format."""
         try:
@@ -89,10 +98,10 @@ class OracleNewsScraper:
 
     async def fetch_page(self, session: aiohttp.ClientSession) -> Optional[str]:
         try:
-            async with session.get(BASE_URL) as response:
+            async with session.get(BASE_URL, timeout=10) as response:
                 response.raise_for_status()
                 return await response.text()
-        except aiohttp.ClientError as e:
+        except (aiohttp.ClientError, asyncio.TimeoutError) as e:
             logger.error(f"Error fetching page: {e}")
             return None
 
