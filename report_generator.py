@@ -173,6 +173,7 @@ class ReportGenerator:
                 f.write("\n[Back to Top](#table-of-contents)\n\n")
 
             # New Posts Section
+            f.write("<a id='recently-scraped-posts'></a>\n")
             if new_posts:
                 f.write("## <a name=\"recently-scraped-posts\"></a>🆕 Recently Scraped Posts\n\n")
                 f.write("| Title | Scraped At | Link |\n")
@@ -190,7 +191,9 @@ class ReportGenerator:
                     f.write(f"| {title} | {scraped_at} | [View]({url}) |\n")
                 f.write("\n[Back to Top](#table-of-contents)\n")
             else:
+                f.write("## 🆕 Recently Scraped Posts\n\n")
                 f.write("No new posts scraped in the last 24 hours.\n")
+            f.write("\n[⬆️ Back to Top](#table-of-contents)\n\n")
 
             # Footer
             f.write("\n\n---\n")
@@ -233,6 +236,25 @@ class ReportGenerator:
                 "date": checked_at
             })
         return analysis
+
+    def generate_toc(self, has_keywords, has_updates):
+        """Generate Table of Contents string."""
+        toc = [
+            "## 📋 Table of Contents",
+            "<a id='table-of-contents'></a>",
+            "- [💡 Recommendations](#recommendations)"
+        ]
+        if has_keywords:
+            toc.append("- [🧠 Keyword Trends](#keyword-trends)")
+
+        toc.append("- [📈 SEO Trend Analysis](#seo-trend-analysis)")
+
+        if has_updates:
+            toc.append("- [🔄 Content Updates](#content-updates)")
+
+        toc.append("- [🆕 Recently Scraped Posts](#recently-scraped-posts)")
+        toc.append("\n")
+        return "\n".join(toc)
 
     def generate_recommendations(self, new_posts, updated_posts, rankings, past_rankings):
         recs = []
