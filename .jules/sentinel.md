@@ -1,4 +1,12 @@
-## 2026-01-29 - Markdown Table Injection in Analytics Report
-**Vulnerability:** Unsanitized user input (domains, categories) was directly interpolated into Markdown table cells in `analytics.py`. Malicious inputs containing pipe characters (`|`) could break the table structure, and inputs with HTML tags could lead to stored XSS if the report is viewed in a vulnerable Markdown viewer.
-**Learning:** Even internal reporting tools that process external data must sanitize their output. Text-based formats like Markdown are susceptible to injection attacks similar to SQL or HTML injection.
-**Prevention:** Always escape control characters (like `|` in Markdown tables) and sanitize HTML when generating Markdown from untrusted sources. Use a dedicated `sanitize_markdown` utility.
+## 2026-01-27 - Path Traversal in CLI Output Arguments
+**Vulnerability:** CLI tools (`scraper.py`) accepted output file paths directly from arguments without validation, allowing arbitrary file writes via path traversal (e.g., `../file.json`).
+**Learning:** Python's `open()` does not sandbox file access; CLI tools accepting paths must explicitly validate them against a root directory.
+**Prevention:** Use `os.path.abspath` and `os.path.commonpath` to enforce that resolved paths remain within the intended working directory.
+# Sentinel Journal
+
+This journal tracks critical security learnings and vulnerability fixes.
+
+## 2024-10-27 - [Hardcoded Credentials in Developer Agent]
+**Vulnerability:** The `DeveloperAgent` was generating Python code snippets with hardcoded database credentials (`password="welcome"`).
+**Learning:** Hardcoded credentials in example code are often copy-pasted into production by developers, leading to security breaches.
+**Prevention:** All generated code examples must use environment variables or secret management systems for credentials. Modified `DeveloperAgent` to use `os.environ.get`.

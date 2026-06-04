@@ -1,0 +1,21 @@
+{
+    "audience_segments": [
+        "IT Decision Makers",
+        "Cloud Architects",
+        "DBAs"
+    ],
+    "geo_targeting": [
+        "Global"
+    ],
+    "keyword_targeting": [
+        "oracle",
+        "database",
+        "at",
+        "google",
+        "cloud"
+    ],
+    "exclusion_list": [
+        "Competitors",
+        "Students"
+    ]
+}
