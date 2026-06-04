@@ -4,6 +4,19 @@ from collections import Counter
 from urllib.parse import urlparse
 from datetime import datetime
 import sys
+import html
+
+def sanitize_markdown(text):
+    """Sanitize text for use in Markdown tables and content."""
+    if text is None:
+        return ""
+    if not isinstance(text, str):
+        text = str(text)
+    # Escape HTML to prevent XSS
+    text = html.escape(text)
+    # Escape pipe characters for Markdown tables
+    text = text.replace('|', '&#124;')
+    return text
 
 def load_data(filepath):
     try:
@@ -124,7 +137,7 @@ def generate_report(data, output_file):
 
     md.append("\n## Authors")
     for author, count in author_counts:
-        md.append(f"- {author}: {count} posts")
+        md.append(f"- {sanitize_markdown(author)}: {count} posts")
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
