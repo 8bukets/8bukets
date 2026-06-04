@@ -1,12 +1,13 @@
 import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
 import re
 import argparse
 import logging
 import time
+import os
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
@@ -20,6 +21,17 @@ logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
 
+def validate_path(filepath: str) -> str:
+    """
+    Validates that the filepath is safe and within the current working directory.
+    Returns the absolute path if safe, raises ValueError otherwise.
+    """
+    abs_path = os.path.abspath(filepath)
+    cwd = os.path.abspath(os.getcwd())
+    if os.path.commonpath([cwd, abs_path]) != cwd:
+        raise ValueError(f"Security Error: Path '{filepath}' attempts to access outside the working directory.")
+    return abs_path
+
 class MarkPositionScraperAsync:
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
@@ -29,12 +41,31 @@ class MarkPositionScraperAsync:
         self.concurrency = concurrency
         self.session = None
 
+    def sanitize_for_csv(self, text: Optional[str]) -> str:
+        """Sanitize text to prevent CSV injection."""
+        if not text:
+            return ""
+        text = str(text)
+        if text.startswith(('=', '+', '-', '@')):
+            return f"'{text}"
+        return text
+
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
         return re.sub(r'\s+', ' ', text).strip()
+
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text to prevent CSV injection."""
+        if not text:
+            return ""
+        # Convert to string just in case
+        text_str = str(text)
+        if text_str.startswith(('=', '+', '-', '@')):
+            return "'" + text_str
+        return text_str
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
@@ -59,15 +90,22 @@ class MarkPositionScraperAsync:
         except:
             return None
 
-    def sanitize_for_csv(self, text: Optional[str]) -> str:
-        """Sanitize text to prevent CSV injection (formula injection)."""
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text to prevent CSV injection."""
         if not text:
             return ""
-        # Convert to string just in case
-        text_str = str(text)
-        if text_str.startswith(('=', '+', '-', '@')):
-            return "'" + text_str
-        return text_str
+
+        # Ensure it's a string
+        text = str(text)
+
+        # Strip whitespace
+        text = text.strip()
+
+        # Check for injection characters
+        if text.startswith(('=', '+', '-', '@')):
+            return "'" + text
+
+        return text
 
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
         url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
@@ -82,7 +120,8 @@ class MarkPositionScraperAsync:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+        strainer = SoupStrainer('article')
+        soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
         articles = soup.find_all('article', class_='post')
         page_posts = []
 
@@ -233,18 +272,15 @@ class MarkPositionScraperAsync:
     def save_batch(self, posts: List[Dict], json_f, csv_writer, txt_f, seen_links: Set[str], is_first_item: bool) -> bool:
         for post in posts:
             # CSV
-            row = [
-                post.get('title', ''),
-                post.get('date', ''),
-                post.get('author', ''),
-                ", ".join(post.get('categories', [])),
-                post.get('external_link', ''),
-                post.get('domain', ''),
-                post.get('post_url', '')
-            ]
-            # Sanitize all fields for CSV injection
-            sanitized_row = [self.sanitize_for_csv(field) for field in row]
-            csv_writer.writerow(sanitized_row)
+            csv_writer.writerow([
+                self.sanitize_for_csv(post.get('title', '')),
+                self.sanitize_for_csv(post.get('date', '')),
+                self.sanitize_for_csv(post.get('author', '')),
+                self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                self.sanitize_for_csv(post.get('external_link', '')),
+                self.sanitize_for_csv(post.get('domain', '')),
+                self.sanitize_for_csv(post.get('post_url', ''))
+            ])
 
             # TXT
             link = post.get('external_link')
@@ -267,7 +303,8 @@ class MarkPositionScraperAsync:
         async with sem:
             html = await self.fetch_page(session, page_num)
             if html:
-                return await self.parse_page(html)
+                loop = asyncio.get_running_loop()
+                return await loop.run_in_executor(None, self._parse_page_sync, html)
             return None
 
 def main():
@@ -280,10 +317,19 @@ def main():
 
     args = parser.parse_args()
 
+    # Validate paths to prevent path traversal
+    try:
+        json_path = validate_path(args.json)
+        csv_path = validate_path(args.csv)
+        txt_path = validate_path(args.txt)
+    except ValueError as e:
+        logger.error(str(e))
+        return
+
     scraper = MarkPositionScraperAsync(
-        output_json=args.json,
-        output_csv=args.csv,
-        output_txt=args.txt,
+        output_json=json_path,
+        output_csv=csv_path,
+        output_txt=txt_path,
         max_pages=args.limit,
         concurrency=args.concurrency
     )
