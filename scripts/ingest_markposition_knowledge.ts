@@ -15,7 +15,7 @@ interface MarketEntry {
     post_url: string;
 }
 
-async function scrapeMarkpositionKnowledge(maxPages: number = 3) {
+export async function scrapeMarkpositionKnowledge(maxPages: number = 3) {
     console.log(`🤖 [Ingest] Fetching market intelligence from ${BASE_URL} (max ${maxPages} pages)...`);
     try {
         const allEntries: MarketEntry[] = [];
@@ -165,4 +165,6 @@ async function scrapeMarkpositionKnowledge(maxPages: number = 3) {
     }
 }
 
-scrapeMarkpositionKnowledge();
+if (require.main === module) {
+    scrapeMarkpositionKnowledge();
+}

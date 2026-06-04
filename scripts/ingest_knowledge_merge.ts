@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-async function ingestKnowledgeMerge() {
+export async function ingestKnowledgeMerge() {
     console.log('🤖 [Ingest] Dynamically merging knowledge from system_knowledge.json...');
 
     const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json');
@@ -52,4 +52,6 @@ async function ingestKnowledgeMerge() {
     }
 }
 
-ingestKnowledgeMerge().catch(console.error);
+if (require.main === module) {
+    ingestKnowledgeMerge().catch(console.error);
+}
