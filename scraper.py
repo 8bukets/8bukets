@@ -161,6 +161,14 @@ class MarkPositionScraperAsync:
         """Check if text looks like a URL."""
         return self.URL_PATTERN.match(text.strip()) is not None
 
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text to prevent CSV injection."""
+        if not text:
+            return ""
+        if text.startswith(('=', '+', '-', '@')):
+            return f"'{text}"
+        return text
+
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
         categories = []
