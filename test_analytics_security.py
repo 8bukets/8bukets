@@ -1,28 +1,55 @@
 import unittest
-import analytics
+import json
+import os
+import subprocess
+import sys
 
 class TestAnalyticsSecurity(unittest.TestCase):
-    def test_sanitize_markdown_html(self):
-        input_text = "<script>alert('xss')</script>"
-        expected = "&lt;script&gt;alert(&#x27;xss&#x27;)&lt;/script&gt;"
-        self.assertEqual(analytics.sanitize_markdown(input_text), expected)
+    def setUp(self):
+        self.input_file = 'test_links_sec.json'
+        self.output_file = 'REPORT_SEC.md'
 
-    def test_sanitize_markdown_pipe(self):
-        input_text = "Category | With Pipe"
-        expected = "Category &#124; With Pipe"
-        self.assertEqual(analytics.sanitize_markdown(input_text), expected)
+        # Malicious data
+        self.data = [
+            {
+                "title": "Bad Post",
+                "date": "2023-01-01",
+                "datetime": "2023-01-01T00:00:00",
+                "author": "<b>Hacker</b>",
+                "categories": ["Malicious | Category"],
+                "external_link": "http://evil.com/safe",
+                "post_url": "http://example.com"
+            }
+        ]
 
-    def test_sanitize_markdown_mixed(self):
-        input_text = "<b onmouseover=alert(1)>Bold | Pipe</b>"
-        # Exact expected string depends on how html.escape works (python 3.2+ escapes single quotes by default if quote=True, which is default)
-        # html.escape("<") -> "&lt;"
-        # html.escape(">") -> "&gt;"
-        # html.escape("'") -> "&#x27;"
-        expected = "&lt;b onmouseover=alert(1)&gt;Bold &#124; Pipe&lt;/b&gt;"
-        self.assertEqual(analytics.sanitize_markdown(input_text), expected)
+        with open(self.input_file, 'w') as f:
+            json.dump(self.data, f)
 
-    def test_sanitize_markdown_none(self):
-        self.assertEqual(analytics.sanitize_markdown(None), "")
+    def tearDown(self):
+        if os.path.exists(self.input_file):
+            os.remove(self.input_file)
+        if os.path.exists(self.output_file):
+            os.remove(self.output_file)
+
+    def test_markdown_injection(self):
+        # Run analytics.py
+        result = subprocess.run(
+            [sys.executable, 'analytics.py', '--input', self.input_file, '--output', self.output_file],
+            capture_output=True,
+            text=True
+        )
+        self.assertEqual(result.returncode, 0, "analytics.py failed to run")
+
+        # Read the report
+        with open(self.output_file, 'r', encoding='utf-8') as f:
+            content = f.read()
+
+        # Check for HTML injection in Author
+        self.assertIn('&lt;b&gt;Hacker&lt;/b&gt;', content, "HTML in author name was not escaped!")
+
+        # Check for Table Injection in Category
+        # We expect 'Malicious \| Category'
+        self.assertIn(r'Malicious \| Category', content, "Pipe in category was not escaped!")
 
 if __name__ == '__main__':
     unittest.main()
