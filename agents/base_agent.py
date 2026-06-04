@@ -7,8 +7,10 @@ class Blackboard(dict):
     pass
 
 class BaseAgent(ABC):
-    def __init__(self, name):
+    def __init__(self, name, dependencies=None, provides=None):
         self.name = name
+        self.dependencies = dependencies or []
+        self.provides = provides or []
         self.logger = logging.getLogger(f"Agent.{name}")
 
     @abstractmethod

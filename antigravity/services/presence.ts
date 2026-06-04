@@ -102,8 +102,16 @@ export class OnlinePresenceService {
 
         if (isCloud) {
            // Cloud node only becomes leader if no higher priority node is active
+           // Specifically check for macbook-primary-01 sovereignty
+           const macbookNode = otherNodes.find(n => n['telemetry']?.node_id === 'macbook-primary-01')
            const higherPriorityActive = otherNodes.some(n => (n.node_priority || 0) > nodePriority)
-           isLeader = !higherPriorityActive
+
+           if (macbookNode) {
+             console.log(`📡 [OnlinePresence] MacBook node detected. Last seen: ${macbookNode.lastSeen}`)
+             isLeader = false // MacBook always takes precedence if active in last 15m
+           } else {
+             isLeader = !higherPriorityActive
+           }
         }
       } catch (e) {
         logAutonomousAction('⚠️ [OnlinePresence] Leadership audit failed. Assuming default sovereignty.', 'warning')
