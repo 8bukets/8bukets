@@ -81,6 +81,23 @@ class MarkPositionScraperAsync:
         except:
             return None
 
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text to prevent CSV injection."""
+        if not text:
+            return ""
+
+        # Ensure it's a string
+        text = str(text)
+
+        # Strip whitespace
+        text = text.strip()
+
+        # Check for injection characters
+        if text.startswith(('=', '+', '-', '@')):
+            return "'" + text
+
+        return text
+
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
         url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
         try:
