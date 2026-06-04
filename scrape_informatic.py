@@ -26,6 +26,8 @@ class Post:
     image_url: Optional[str]
 
 BASE_URL = "https://informaticmagazine.data.blog"
+PARSED_BASE_URL = urlparse(BASE_URL)
+PAGINATION_PATTERN = re.compile(r'<div class=["\']nav-previous["\'][^>]*>\s*<a[^>]+href=["\']([^"\']+)["\']')
 
 def configure_logging(verbose: bool):
     level = logging.DEBUG if verbose else logging.INFO
@@ -62,6 +64,15 @@ def is_external_link(link_url: str, parsed_base: ParseResult) -> bool:
     """
     if not link_url:
         return False
+
+    # Optimization: Use pre-parsed global if applicable
+    if base_url == BASE_URL:
+        parsed_base = PARSED_BASE_URL
+    else:
+        try:
+            parsed_base = urlparse(base_url)
+        except Exception:
+            return False
 
     try:
         parsed_link = urlparse(link_url)
