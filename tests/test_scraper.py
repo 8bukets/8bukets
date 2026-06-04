@@ -29,6 +29,7 @@ class TestBlogScraper(unittest.TestCase):
         self.db_name = "test_wishlist.db"
         self.json_name = "test_wishlist.json"
         self.scraper = BlogScraper("http://mock.url", self.json_name, self.db_name)
+        self.scraper.open_db()
 
     def tearDown(self):
         self.scraper.close_db()
