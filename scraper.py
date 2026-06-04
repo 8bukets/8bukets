@@ -1,9 +1,9 @@
+import re
 import aiohttp
 import asyncio
 from bs4 import BeautifulSoup
 import json
 import csv
-import re
 import argparse
 import logging
 import time
@@ -99,7 +99,7 @@ class WordpressScraperAsync:
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return self.CLEAN_TEXT_REGEX.sub(' ', text).strip()
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
@@ -266,7 +266,25 @@ class WordpressScraperAsync:
                 # Small delay between batches
                 await asyncio.sleep(0.5)
 
-        self.save_data(all_posts)
+            json.dump(post, json_f, indent=4, ensure_ascii=False)
+
+        return is_first_item
+
+    async def fetch_and_parse(self, session, page_num, sem):
+        async with sem:
+            html = await self.fetch_page(session, page_num)
+            if html:
+                return await self.parse_page(html)
+            return None
+
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text to prevent CSV injection."""
+        if not text:
+            return ""
+        text = str(text)
+        if text.startswith(('=', '+', '-', '@')):
+            return "'" + text
+        return text
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:

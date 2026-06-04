@@ -1,0 +1,19 @@
+name: Delete stale branches
+
+on:
+  schedule:
+    - cron: '0 3 * * 0' # weekly on Sunday at 03:00 UTC
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Delete merged branches older than 30 days
+        uses: tj-actions/branch-cleanup@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          days-before-stale: 30
+          target-branches: main

@@ -3,6 +3,10 @@ from scraper import WordpressScraperAsync, DEFAULT_BASE_URL
 import os
 
 class ResearchAgent(BaseAgent):
+    """
+    Advanced Research Agent that performs real asynchronous investigation
+    of external domains identified during analysis.
+    """
     def __init__(self):
         super().__init__("Research")
 
