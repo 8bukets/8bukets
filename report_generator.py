@@ -192,6 +192,10 @@ class ReportGenerator:
             else:
                 f.write("No new posts scraped in the last 24 hours.\n")
 
+            # Footer
+            f.write("\n\n---\n")
+            f.write("Generated with ❤️ by Palette\n")
+
         logger.info(f"Report generated: {report_filename}")
 
     def analyze_keywords(self, titles):
