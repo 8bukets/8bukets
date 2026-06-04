@@ -3,7 +3,7 @@ from unittest.mock import MagicMock, patch
 import json
 import os
 import sqlite3
-from scraper import BlogScraper
+from scraper import BlogScraper, validate_path
 
 class TestBlogScraper(unittest.TestCase):
     def setUp(self):
@@ -29,21 +29,25 @@ class TestBlogScraper(unittest.TestCase):
         self.db_name = "test_wishlist.db"
         self.json_name = "test_wishlist.json"
         self.scraper = BlogScraper("http://mock.url", self.json_name, self.db_name)
+        self.scraper.open_db()
 
     def tearDown(self):
+        self.scraper.close_db()
+        if hasattr(self, 'scraper') and self.scraper:
+            self.scraper.close()
         if os.path.exists(self.db_name):
             os.remove(self.db_name)
         if os.path.exists(self.json_name):
             os.remove(self.json_name)
 
-    @patch('scraper.BlogScraper.is_safe_url')
-    @patch('requests.get')
-    def test_fetch_page(self, mock_get, mock_is_safe):
-        mock_is_safe.return_value = True
+    def test_fetch_page(self):
+        # Mock the session.get method directly
+        self.scraper.session.get = MagicMock()
+
         mock_response = MagicMock()
         mock_response.status_code = 200
         mock_response.content = self.mock_html.encode('utf-8')
-        mock_get.return_value = mock_response
+        self.scraper.session.get.return_value = mock_response
 
         content = self.scraper.fetch_page("http://mock.url")
         self.assertIsNotNone(content)
@@ -74,21 +78,41 @@ class TestBlogScraper(unittest.TestCase):
             'categories': ['Test']
         }
 
-        # First insertion should succeed
-        success = self.scraper.save_to_db(item)
-        self.assertTrue(success)
-
-        # Duplicate insertion (by post_url) should fail/ignore
-        success = self.scraper.save_to_db(item)
-        self.assertFalse(success)
-
-        # Verify data in DB
         with sqlite3.connect(self.db_name) as conn:
+            # First insertion should succeed
+            success = self.scraper.save_to_db(item, conn)
+            self.assertTrue(success)
+
+            # Duplicate insertion (by post_url) should fail/ignore
+            success = self.scraper.save_to_db(item, conn)
+            self.assertFalse(success)
+
+            # Verify data in DB
             cursor = conn.cursor()
             cursor.execute("SELECT * FROM posts WHERE post_url=?", ('http://example.com/unique-post-1',))
             row = cursor.fetchone()
             self.assertIsNotNone(row)
             self.assertEqual(row[1], 'DB Test') # title
+
+    def test_is_safe_url(self):
+        # Safe URLs
+        self.assertTrue(self.scraper.is_safe_url("http://example.com"))
+        self.assertTrue(self.scraper.is_safe_url("https://google.com/foo/bar"))
+
+        # Unsafe URLs - Scheme
+        self.assertFalse(self.scraper.is_safe_url("ftp://example.com"))
+        self.assertFalse(self.scraper.is_safe_url("file:///etc/passwd"))
+        self.assertFalse(self.scraper.is_safe_url("javascript:alert(1)"))
+
+        # Unsafe URLs - Localhost/Private
+        self.assertFalse(self.scraper.is_safe_url("http://localhost"))
+        self.assertFalse(self.scraper.is_safe_url("http://localhost:8080"))
+        self.assertFalse(self.scraper.is_safe_url("http://127.0.0.1"))
+        self.assertFalse(self.scraper.is_safe_url("http://127.0.0.1:5000"))
+        self.assertFalse(self.scraper.is_safe_url("http://0.0.0.0"))
+        self.assertFalse(self.scraper.is_safe_url("http://[::1]"))
+        self.assertFalse(self.scraper.is_safe_url("http://192.168.1.1"))
+        self.assertFalse(self.scraper.is_safe_url("http://10.0.0.50"))
 
 if __name__ == '__main__':
     unittest.main()
