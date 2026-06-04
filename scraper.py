@@ -42,12 +42,16 @@ class OracleNewsScraper:
 
         return path
 
+    # Pre-compile regex for performance
+    CLEAN_REGEX = re.compile(r'\s+')
+    COMMENT_REGEX = re.compile(r'<!--(.*?)-->', re.DOTALL)
+
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return self.CLEAN_REGEX.sub(' ', text).strip()
 
     def sanitize_for_csv(self, text: str) -> str:
         """Sanitize text to prevent CSV Injection (Formula Injection)."""
@@ -102,6 +106,15 @@ class OracleNewsScraper:
 
     def parse_page(self, html: str) -> List[Dict]:
         news_html = self._extract_news_comment(html)
+
+        # Fallback to BeautifulSoup parsing if regex fails
+        if not news_html:
+            soup = BeautifulSoup(html, 'html.parser')
+            comments = soup.find_all(string=lambda text: isinstance(text, Comment))
+            for c in comments:
+                if 'rc92v0' in c and '<section' in c:
+                    news_html = c
+                    break
 
         if not news_html:
             logger.warning("Could not find hidden news section in HTML comments.")
