@@ -161,6 +161,15 @@ class MarkPositionScraperAsync:
         text = text.replace('\xa0', ' ')
         return self.CLEAN_TEXT_REGEX.sub(' ', text).strip()
 
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text for CSV to prevent formula injection."""
+        if not text:
+            return ""
+        # If the text starts with a dangerous character, prepend a single quote
+        if text.startswith(('=', '+', '-', '@')):
+            return f"'{text}"
+        return text
+
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
         return self.URL_REGEX.match(text.strip()) is not None
