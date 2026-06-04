@@ -1,3 +1,6 @@
-## 2026-01-29 - [Dynamic Navigation in Static Reports]
-**Learning:** When generating static reports (like Markdown) with navigation (TOC), conditional content blocks can lead to broken links if the TOC isn't equally conditional.
-**Action:** Always wrap TOC entries in the same boolean checks used for the content sections they link to.
+## 2026-01-27 - [Reliable Markdown Navigation]
+**Learning:** Standard Markdown auto-generated anchors (slugs) can be unpredictable with emojis. Using explicit HTML anchors (`<a name="..."></a>`) in headers guarantees reliable deep-linking.
+**Action:** Use manual HTML anchors when creating internal navigation for Markdown documents with rich headers.
+## 2026-02-06 - ASCII Visualization in Text Reports
+**Learning:** Text-based reports (Markdown/Logs) are often dense and hard to scan. Adding simple ASCII visualizations (like bar charts) significantly improves readability and "delight" without requiring complex frontend changes.
+**Action:** Look for opportunities to add "Distribution" or "Trend" columns with ASCII art in other generated reports or CLI outputs.
