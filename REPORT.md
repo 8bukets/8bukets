@@ -1,24 +1,23 @@
 # Markposition Analytics Report
 
-**Generated on:** 2026-01-31 08:08:14
+**Generated on:** 2026-01-27 08:11:19
 
-<a name='table-of-contents'></a>
 ## Table of Contents
-- [📊 General Statistics](#general-statistics)
-- [🔗 Top 10 Referenced Domains](#top-10-referenced-domains)
-- [🏷️ Top 10 Categories](#top-10-categories)
-- [📅 Posts by Year](#posts-by-year)
-- [✍️ Authors](#authors)
+- [General Statistics](#general-statistics)
+- [Top 10 Referenced Domains](#top-10-referenced-domains)
+- [Top 10 Categories](#top-10-categories)
+- [Posts by Year](#posts-by-year)
+- [Authors](#authors)
 
-<a name='general-statistics'></a>
 ## 📊 General Statistics
+> 💡 **Highlight:** The most active year was **2020** with **254** posts!
+
 - **Total Posts:** 679
 - **Date Range:** 2020-05-19 to 2022-10-05
 - **Unique Domains Linked:** 367
 
 [Back to Top](#table-of-contents)
 
-<a name='top-10-referenced-domains'></a>
 ## 🔗 Top 10 Referenced Domains
 | Domain | Count |
 | :--- | :---: |
@@ -35,8 +34,7 @@
 
 [Back to Top](#table-of-contents)
 
-<a name='top-10-categories'></a>
-## 🏷️ Top 10 Categories
+## 📂 Top 10 Categories
 | Category | Count |
 | :--- | :---: |
 | Ad Ads Advertise | 660 |
@@ -48,7 +46,6 @@
 
 [Back to Top](#table-of-contents)
 
-<a name='posts-by-year'></a>
 ## 📅 Posts by Year
 | Year | Count |
 | :--- | :---: |
@@ -58,7 +55,6 @@
 
 [Back to Top](#table-of-contents)
 
-<a name='authors'></a>
 ## ✍️ Authors
 - Filip Keser: 679 posts
 

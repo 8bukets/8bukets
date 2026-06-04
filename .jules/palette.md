@@ -1,7 +1,6 @@
-# Palette's Journal
-
-This journal tracks critical UX and accessibility learnings.
-
-## 2026-01-31 - Markdown as UI
-**Learning:** For CLI tools where Markdown reports serve as the primary user interface, flat lists become unmanageable quickly.
-**Action:** Always implement web-like navigation features (Table of Contents, Anchor Links, Back-to-Top buttons) in generated Markdown reports to simulate a structured application experience.
+## 2026-01-27 - Handling Emojis in Markdown Headers
+**Learning:** Standard Markdown renderers often strip emojis or handle them inconsistently in auto-generated anchor links. To ensure ToC links work reliably, manually verify that anchor links target text-only slugs (e.g., `#general-statistics` instead of `#📊-general-statistics`).
+**Action:** When adding emojis to headers, always verify the resulting anchor slug matches the link target.
+## 2026-02-06 - ASCII Visualizations in CLI Reports
+**Learning:** Text-based reports (Markdown/CLI) are often hard to scan for trends. Adding simple ASCII bar charts (e.g., `█████░░░`) to tables significantly improves the ability to visualize distributions at a glance without needing external tools.
+**Action:** When generating text-based reports, always look for opportunities to add "Distribution" columns with ASCII visualizations for numerical data.
