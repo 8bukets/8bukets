@@ -150,7 +150,8 @@ class OracleNewsScraper:
 
             # Extract Date (heuristic from URL or nearby text)
             # URL format example: ...-2025-12-11/
-            date_match = re.search(r'(\d{4}-\d{2}-\d{2})', href)
+            # Optimization: Use pre-compiled regex
+            date_match = self.DATE_PATTERN.search(href)
             date_str = date_match.group(1) if date_match else ""
 
             article_data = {
