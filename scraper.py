@@ -176,7 +176,7 @@ class BlogScraper:
         except sqlite3.Error as e:
             logger.error(f"Database initialization error: {e}")
 
-    def save_to_db(self, item):
+    def save_to_db(self, item, conn, commit=True):
         """Save a single item to the database, handling updates."""
         if not self.conn:
             logger.error("Database connection is not initialized.")
@@ -384,6 +384,7 @@ class BlogScraper:
     def run(self):
         url = self.base_url
         new_items_count = 0
+        items_processed = 0
 
         # Performance optimization: Reuse DB connection
         self.conn = sqlite3.connect(self.db_name)
