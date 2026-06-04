@@ -70,6 +70,14 @@ def sanitize_markdown(text):
     text = text.replace('<', '&lt;').replace('>', '&gt;')
     return text
 
+def generate_bar(count, max_count, length=20):
+    if max_count == 0:
+        return f'<span aria-hidden="true">{"░" * length}</span>'
+
+    filled_length = int(length * count / max_count)
+    bar = "█" * filled_length + "░" * (length - filled_length)
+    return f'<span aria-hidden="true">{bar}</span>'
+
 def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
