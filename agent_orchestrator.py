@@ -1,5 +1,6 @@
 import logging
 import os
+import concurrent.futures
 from datetime import datetime
 from agents.analyst import AnalystAgent
 from agents.researcher import ResearcherAgent
@@ -39,44 +40,61 @@ class AgentOrchestrator:
         logger.info("Orchestrating agents with Collaboration Protocol...")
         outputs = {}
 
-        # 1. Independent / Foundational Agents
-        outputs['HealthAgent'] = self.health_agent.run()
-        outputs['AnalystAgent'] = self.analyst_agent.run()
-        outputs['ResearcherAgent'] = self.researcher_agent.run()
-        outputs['MonetizationAgent'] = self.monetization_agent.run()
+        with concurrent.futures.ThreadPoolExecutor() as executor:
+            # Phase 1: Start Independent Agents
+            # These can run in background immediately
+            future_health = executor.submit(self.health_agent.run)
+            future_researcher = executor.submit(self.researcher_agent.run)
+            future_creator = executor.submit(self.creator_agent.run)
+            future_curiosity = executor.submit(self.curiosity_agent.run)
 
-        # 2. Collaborative Agents
+            # Dependencies for Phase 2
+            future_analyst = executor.submit(self.analyst_agent.run)
+            future_monetization = executor.submit(self.monetization_agent.run)
 
-        # Intelligence
-        intel_context = {'keywords': outputs['AnalystAgent'].get('keywords', [])}
-        self.intelligence_agent.perform_task(context=intel_context)
-        outputs['IntelligenceAgent'] = self.intelligence_agent.results
+            # Phase 2: Collect Dependencies (Wait for Analyst & Monetization)
+            outputs['AnalystAgent'] = future_analyst.result()
+            outputs['MonetizationAgent'] = future_monetization.result()
 
-        # AdManager
-        ad_context = {
-            'keywords': outputs['AnalystAgent'].get('keywords', []),
-            'top_opportunities': outputs['MonetizationAgent'].get('top_opportunities', [])
-        }
-        self.ad_manager_agent.perform_task(context=ad_context)
-        outputs['AdManagerAgent'] = self.ad_manager_agent.results
+            # Phase 3: Start Dependent Agents
 
-        # Curiosity (Exploration)
-        # Needs no input, but uses DB.
-        outputs['CuriosityAgent'] = self.curiosity_agent.run()
+            # Intelligence depends on Analyst
+            intel_context = {'keywords': outputs['AnalystAgent'].get('keywords', [])}
+            def run_intelligence(context):
+                self.intelligence_agent.perform_task(context=context)
+                return self.intelligence_agent.results
+            future_intelligence = executor.submit(run_intelligence, intel_context)
 
-        # Creative (Innovation)
-        # Needs Curiosity context
-        creative_context = {
-            'curiosity_findings': outputs['CuriosityAgent'].get('findings', []),
-            'exploration_query': outputs['CuriosityAgent'].get('exploration_query', '')
-        }
-        self.creative_agent.perform_task(context=creative_context)
-        outputs['CreativeAgent'] = self.creative_agent.results
+            # AdManager depends on Analyst + Monetization
+            ad_context = {
+                'keywords': outputs['AnalystAgent'].get('keywords', []),
+                'top_opportunities': outputs['MonetizationAgent'].get('top_opportunities', [])
+            }
+            def run_ad_manager(context):
+                self.ad_manager_agent.perform_task(context=context)
+                return self.ad_manager_agent.results
+            future_ad_manager = executor.submit(run_ad_manager, ad_context)
 
-        # Creator (Content)
-        # Creator needs Ad/Strategy context
-        # Ideally we pass Strategy here too
-        outputs['CreatorAgent'] = self.creator_agent.run()
+            # Phase 4: Wait for Curiosity (needed for Creative)
+            outputs['CuriosityAgent'] = future_curiosity.result()
+
+            # Phase 5: Start Creative (depends on Curiosity)
+            creative_context = {
+                'curiosity_findings': outputs['CuriosityAgent'].get('findings', []),
+                'exploration_query': outputs['CuriosityAgent'].get('exploration_query', '')
+            }
+            def run_creative(context):
+                self.creative_agent.perform_task(context=context)
+                return self.creative_agent.results
+            future_creative = executor.submit(run_creative, creative_context)
+
+            # Phase 6: Final Collection
+            outputs['HealthAgent'] = future_health.result()
+            outputs['ResearcherAgent'] = future_researcher.result()
+            outputs['CreatorAgent'] = future_creator.result()
+            outputs['IntelligenceAgent'] = future_intelligence.result()
+            outputs['AdManagerAgent'] = future_ad_manager.result()
+            outputs['CreativeAgent'] = future_creative.result()
 
         self.generate_report(outputs)
 
