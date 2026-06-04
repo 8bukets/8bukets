@@ -1,3 +1,6 @@
-## 2025-02-18 - [Regex vs BeautifulSoup for Comment Extraction]
-**Learning:** Extracting content from HTML comments using `BeautifulSoup`'s `find_all(string=lambda text: isinstance(text, Comment))` parses the entire DOM, which is O(N). For large pages where we only need a specific comment block, using `re.finditer` to locate the comment is ~99% faster (O(M) where M is document length but simpler operation).
-**Action:** When scraping specific hidden content (comments/scripts) from large pages, prefer regex extraction first, then parse the extracted fragment, instead of parsing the whole page. Always keep a fallback to full parsing for robustness.
+## 2025-01-27 - Regex Extraction for Hidden Comments
+**Learning:** Using regex (`re.finditer`) to extract large hidden HTML comments containing specific substrings is significantly faster (~50x) than parsing the entire DOM with `BeautifulSoup`, especially when the target content is buried in a comment block.
+**Action:** When scraping sites that embed content in comments (e.g., lazy-loading placeholders), prioritize regex extraction for the initial step, but always include a robust fallback (e.g., full DOM parsing) to handle edge cases where regex might fail.
+## 2025-10-27 - [Initial Performance Assessment]
+**Learning:** `analytics.py` re-parses URLs for domain extraction despite `scraper.py` already providing a pre-computed `domain` field in `links.json`.
+**Action:** Always check if upstream data sources (like scrapers or APIs) already provide processed fields before computing them again in downstream consumers.
