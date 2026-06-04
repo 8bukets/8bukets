@@ -280,6 +280,16 @@ class MarkPositionScraperAsync:
                 # Finalize JSON even on error
                 json_f.write('\n]')
 
+    def sanitize_csv_field(self, text: str) -> str:
+        """Sanitize text to prevent CSV injection (formula injection)."""
+        if not text:
+            return ""
+        # Convert to string just in case, though expect strings
+        text_str = str(text)
+        if text_str.startswith(('=', '+', '-', '@')):
+            return "'" + text_str
+        return text_str
+
     def save_batch(self, posts: List[Dict], json_f, csv_writer, txt_f, seen_links: Set[str], is_first_item: bool) -> bool:
         for post in posts:
             # CSV
