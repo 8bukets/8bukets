@@ -1,12 +1,13 @@
 import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
 import re
 import argparse
 import logging
 import time
+import os
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 
@@ -20,7 +21,23 @@ logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
 
+def validate_path(filepath: str) -> str:
+    """
+    Validates that the filepath is safe and within the current working directory.
+    Returns the absolute path if safe, raises ValueError otherwise.
+    """
+    abs_path = os.path.abspath(filepath)
+    cwd = os.path.abspath(os.getcwd())
+    if os.path.commonpath([cwd, abs_path]) != cwd:
+        raise ValueError(f"Security Error: Path '{filepath}' attempts to access outside the working directory.")
+    return abs_path
+
 class MarkPositionScraperAsync:
+    # ⚡ Bolt Optimization: Pre-compile regex patterns for performance
+    WHITESPACE_PATTERN = re.compile(r'\s+')
+    URL_PATTERN = re.compile(r'^https?://')
+    POST_CLASS_PATTERN = re.compile(r'\bpost\b')
+
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
         self.output_json = output_json
         self.output_csv = output_csv
@@ -29,16 +46,37 @@ class MarkPositionScraperAsync:
         self.concurrency = concurrency
         self.session = None
 
+    def sanitize_for_csv(self, text: Optional[str]) -> str:
+        """Sanitize text to prevent CSV injection."""
+        if not text:
+            return ""
+        text = str(text)
+        if text.startswith(('=', '+', '-', '@')):
+            return f"'{text}"
+        return text
+
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        # ⚡ Bolt Optimization: Use pre-compiled regex
+        return self.WHITESPACE_PATTERN.sub(' ', text).strip()
+
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text to prevent CSV injection."""
+        if not text:
+            return ""
+        # Convert to string just in case
+        text_str = str(text)
+        if text_str.startswith(('=', '+', '-', '@')):
+            return "'" + text_str
+        return text_str
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
-        return re.match(r'^https?://', text.strip()) is not None
+        # ⚡ Bolt Optimization: Use pre-compiled regex
+        return self.URL_PATTERN.match(text.strip()) is not None
 
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
@@ -59,6 +97,23 @@ class MarkPositionScraperAsync:
         except:
             return None
 
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text to prevent CSV injection."""
+        if not text:
+            return ""
+
+        # Ensure it's a string
+        text = str(text)
+
+        # Strip whitespace
+        text = text.strip()
+
+        # Check for injection characters
+        if text.startswith(('=', '+', '-', '@')):
+            return "'" + text
+
+        return text
+
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
         url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
         try:
@@ -72,7 +127,8 @@ class MarkPositionScraperAsync:
             return None
 
     async def parse_page(self, html: str) -> List[Dict]:
-        soup = BeautifulSoup(html, 'html.parser')
+        strainer = SoupStrainer('article')
+        soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
         articles = soup.find_all('article', class_='post')
         page_posts = []
 
@@ -84,19 +140,23 @@ class MarkPositionScraperAsync:
 
             # Title
             title_text = ""
-            title_tag = article.select_one('h1.entry-title a')
+            title_header = article.find('h1', class_='entry-title')
+            title_tag = title_header.find('a') if title_header else None
+
             if title_tag:
                 title_text = self.clean_text(title_tag.get_text())
                 post_data['title'] = title_text
 
             # Date
-            date_tag = article.select_one('time.entry-date')
+            date_tag = article.find('time', class_='entry-date')
             if date_tag:
                 post_data['date'] = self.clean_text(date_tag.get_text())
                 post_data['datetime'] = date_tag.get('datetime')
 
             # Author
-            author_tag = article.select_one('.author.vcard .fn')
+            author_container = article.find(class_='vcard')
+            author_tag = author_container.find(class_='fn') if author_container else None
+
             if author_tag:
                 post_data['author'] = self.clean_text(author_tag.get_text())
             else:
@@ -107,15 +167,15 @@ class MarkPositionScraperAsync:
 
             # External Link
             external_link = None
-            content_div = article.select_one('.entry-content')
+            content_div = article.find(class_='entry-content')
 
             if content_div:
-                link_tag = content_div.select_one('a')
+                link_tag = content_div.find('a')
                 if link_tag:
                     external_link = link_tag.get('href')
 
                 if not external_link:
-                    iframe_tag = content_div.select_one('iframe')
+                    iframe_tag = content_div.find('iframe')
                     if iframe_tag:
                         external_link = iframe_tag.get('src')
 
@@ -234,13 +294,13 @@ class MarkPositionScraperAsync:
         for post in posts:
             # CSV
             csv_writer.writerow([
-                self.sanitize_csv_field(post.get('title', '')),
-                self.sanitize_csv_field(post.get('date', '')),
-                self.sanitize_csv_field(post.get('author', '')),
-                self.sanitize_csv_field(", ".join(post.get('categories', []))),
-                self.sanitize_csv_field(post.get('external_link', '')),
-                self.sanitize_csv_field(post.get('domain', '')),
-                self.sanitize_csv_field(post.get('post_url', ''))
+                self.sanitize_for_csv(post.get('title', '')),
+                self.sanitize_for_csv(post.get('date', '')),
+                self.sanitize_for_csv(post.get('author', '')),
+                self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                self.sanitize_for_csv(post.get('external_link', '')),
+                self.sanitize_for_csv(post.get('domain', '')),
+                self.sanitize_for_csv(post.get('post_url', ''))
             ])
 
             # TXT
@@ -264,7 +324,8 @@ class MarkPositionScraperAsync:
         async with sem:
             html = await self.fetch_page(session, page_num)
             if html:
-                return await self.parse_page(html)
+                loop = asyncio.get_running_loop()
+                return await loop.run_in_executor(None, self._parse_page_sync, html)
             return None
 
 def main():
@@ -277,10 +338,19 @@ def main():
 
     args = parser.parse_args()
 
+    # Validate paths to prevent path traversal
+    try:
+        json_path = validate_path(args.json)
+        csv_path = validate_path(args.csv)
+        txt_path = validate_path(args.txt)
+    except ValueError as e:
+        logger.error(str(e))
+        return
+
     scraper = MarkPositionScraperAsync(
-        output_json=args.json,
-        output_csv=args.csv,
-        output_txt=args.txt,
+        output_json=json_path,
+        output_csv=csv_path,
+        output_txt=txt_path,
         max_pages=args.limit,
         concurrency=args.concurrency
     )
