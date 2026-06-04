@@ -1,7 +1,3 @@
 __pycache__/
-*.pyc
-links.json
-links.csv
-unique_links.txt
-REPORT.md
+agents/__pycache__/
 results/

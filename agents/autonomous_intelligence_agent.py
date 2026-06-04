@@ -5,7 +5,7 @@ class AutonomousIntelligenceAgent(BaseAgent):
     def __init__(self):
         super().__init__("Autonomous Intelligence Agent")
 
-    def process(self, all_results: Dict[str, Any]) -> str:
+    def process(self, all_results: Dict[str, Any], memory: Dict[str, Any] = None) -> str:
         self.log("Synthesizing high-level intelligence...")
 
         health = all_results.get('health', {}).get('status', 'Unknown')
@@ -21,4 +21,7 @@ Monetization Opportunities Identified: {monetization_count}
 
 Strategic Direction: Continue monitoring regional rollouts and engage with partner ecosystems.
 """
+        if memory and 'oracle_ai_knowledge' in memory:
+            summary += "\nOracle AI Knowledge Integrated: Active\n"
+
         return summary
