@@ -85,6 +85,18 @@ class ReportGenerator:
         report_date = datetime.now().strftime("%Y-%m-%d")
         report_filename = os.path.join(self.report_dir, f"report_{report_date}.md")
 
+        all_recent_titles = [p[0] for p in new_posts] + [p[0] for p in updated_posts]
+
+        # Determine active sections for TOC
+        sections = []
+        sections.append(("recommendations", "💡 Recommendations"))
+        if all_recent_titles:
+            sections.append(("keyword-trends", "🧠 Keyword Trends"))
+        sections.append(("seo-trend-analysis", "📈 SEO Trend Analysis"))
+        if updated_posts:
+            sections.append(("content-updates", "🔄 Content Updates"))
+        sections.append(("recently-scraped-posts", "🆕 Recently Scraped Posts"))
+
         with open(report_filename, "w", encoding="utf-8") as f:
             f.write(f"# Daily Scraper Report - {report_date}\n\n")
             f.write(f"**Total Posts:** {total_posts}\n")
