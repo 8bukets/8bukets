@@ -8,6 +8,7 @@ import logging
 import argparse
 import sys
 import sqlite3
+import os
 from datetime import datetime
 
 class Colors:
@@ -433,6 +434,23 @@ class BlogScraper:
             logger.info(f"Data saved to {self.output_json}")
         except IOError as e:
             logger.error(f"Error saving data to {self.output_json}: {e}")
+
+def validate_path(filepath):
+    """
+    Validates that the output file path is within the current working directory
+    to prevent path traversal attacks.
+    """
+    # Resolve absolute path
+    abs_path = os.path.abspath(filepath)
+    # Get current working directory
+    cwd = os.getcwd()
+
+    # Check if the resolved path starts with the cwd
+    # os.path.commonpath returns the longest common sub-path
+    if os.path.commonpath([abs_path, cwd]) != cwd:
+        raise ValueError(f"Security Risk: Path '{filepath}' attempts to write outside the current directory.")
+
+    return filepath
 
 def main():
     parser = argparse.ArgumentParser(description="Scrape wishlist.design.blog")

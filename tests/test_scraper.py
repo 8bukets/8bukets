@@ -3,7 +3,7 @@ from unittest.mock import MagicMock, patch
 import json
 import os
 import sqlite3
-from scraper import BlogScraper
+from scraper import BlogScraper, validate_path
 
 class TestBlogScraper(unittest.TestCase):
     def setUp(self):
