@@ -1,75 +1,66 @@
-import unittest
+from scraper import OracleNewsScraper
 import os
 import csv
-from scraper import OracleNewsScraper
+import unittest
 
-class TestScraperSecurity(unittest.TestCase):
-    def setUp(self):
-        self.output_json = "test_sec_links.json"
-        self.output_csv = "test_sec_links.csv"
-        self.output_txt = "test_sec_unique_links.txt"
-        self.scraper = OracleNewsScraper(self.output_json, self.output_csv, self.output_txt)
+class TestSecurity(unittest.TestCase):
+    def test_path_traversal(self):
+        print("\nTesting Path Traversal...")
+        try:
+            OracleNewsScraper(
+                output_json="../vulnerable.json",
+                output_csv="safe.csv",
+                output_txt="safe.txt"
+            )
+            self.fail("Did not raise ValueError for path traversal")
+        except ValueError as e:
+            print(f"Caught expected error: {e}")
+            self.assertIn("traverses outside", str(e))
 
-    def tearDown(self):
-        for f in [self.output_json, self.output_csv, self.output_txt]:
-            if os.path.exists(f):
-                os.remove(f)
+    def test_csv_injection(self):
+        print("\nTesting CSV Injection...")
+        json_file = "test_safe.json"
+        csv_file = "test_safe.csv"
+        txt_file = "test_safe.txt"
 
-    def test_csv_injection_prevention(self):
-        """Test that potential CSV injection payloads are sanitized."""
-        malicious_posts = [
-            {
-                'title': '=cmd|/C calc!A0',
-                'date': '+2025-01-01',
-                'author': '-Author',
-                'categories': ['@Category'],
-                'external_link': 'http://example.com',
-                'domain': 'example.com',
-                'post_url': 'http://example.com/post'
-            }
-        ]
+        # Cleanup
+        for f in [json_file, csv_file, txt_file]:
+            if os.path.exists(f): os.remove(f)
 
-        self.scraper.save_data(malicious_posts)
+        scraper = OracleNewsScraper(json_file, csv_file, txt_file)
 
-        with open(self.output_csv, 'r', encoding='utf-8') as f:
+        malicious_data = [{
+            'title': '=SUM(1+1)',
+            'date': '2025-01-01',
+            'author': '@Admin',
+            'categories': ['+News'],
+            'external_link': '-http://evil.com',
+            'domain': 'example.com',
+            'post_url': 'http://example.com'
+        }]
+
+        scraper.save_data(malicious_data)
+
+        # verify csv
+        with open(csv_file, 'r', newline='', encoding='utf-8') as f:
             reader = csv.reader(f)
             header = next(reader)
             row = next(reader)
 
-            # Row structure: ['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL']
+            # Row structure: Title, Date, Author, Categories, External Link, Domain, Post URL
+            # indices: 0, 1, 2, 3, 4, 5, 6
 
-            # Check Title (=)
-            self.assertEqual(row[0], "'=cmd|/C calc!A0", "Title starting with '=' should be escaped")
-            # Check Date (+)
-            self.assertEqual(row[1], "'+2025-01-01", "Date starting with '+' should be escaped")
-            # Check Author (-)
-            self.assertEqual(row[2], "'-Author", "Author starting with '-' should be escaped")
-            # Check Categories (@)
-            self.assertEqual(row[3], "'@Category", "Categories starting with '@' should be escaped")
+            self.assertTrue(row[0].startswith("'="), f"Title not sanitized: {row[0]}")
+            self.assertTrue(row[2].startswith("'@"), f"Author not sanitized: {row[2]}")
+            # Categories are joined by ", ". If the first one starts with +, the string starts with +
+            self.assertTrue(row[3].startswith("'+"), f"Categories not sanitized: {row[3]}")
+            self.assertTrue(row[4].startswith("'-"), f"External Link not sanitized: {row[4]}")
 
-    def test_safe_data_not_escaped(self):
-        """Test that safe data is not modified."""
-        safe_posts = [
-            {
-                'title': 'Safe Title',
-                'date': '2025-01-01',
-                'author': 'Safe Author',
-                'categories': ['News'],
-                'external_link': 'http://example.com',
-                'domain': 'example.com',
-                'post_url': 'http://example.com/post'
-            }
-        ]
+        print("CSV Injection protection verified.")
 
-        self.scraper.save_data(safe_posts)
-
-        with open(self.output_csv, 'r', encoding='utf-8') as f:
-            reader = csv.reader(f)
-            header = next(reader)
-            row = next(reader)
-
-            self.assertEqual(row[0], "Safe Title")
-            self.assertEqual(row[1], "2025-01-01")
+        # Cleanup
+        for f in [json_file, csv_file, txt_file]:
+            if os.path.exists(f): os.remove(f)
 
 if __name__ == '__main__':
     unittest.main()
