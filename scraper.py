@@ -78,6 +78,15 @@ class MarkPositionScraperAsync:
         # ⚡ Bolt Optimization: Use pre-compiled regex
         return self.URL_PATTERN.match(text.strip()) is not None
 
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text to prevent CSV injection."""
+        if not text:
+            return ""
+        # If the text starts with a formula character, prepend a single quote
+        if text.startswith(('=', '+', '-', '@')):
+            return f"'{text}"
+        return text
+
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
         categories = []
@@ -292,7 +301,7 @@ class MarkPositionScraperAsync:
 
     def save_batch(self, posts: List[Dict], json_f, csv_writer, txt_f, seen_links: Set[str], is_first_item: bool) -> bool:
         for post in posts:
-            # CSV
+            # CSV - Sanitize all fields to prevent CSV injection
             csv_writer.writerow([
                 self.sanitize_for_csv(post.get('title', '')),
                 self.sanitize_for_csv(post.get('date', '')),
