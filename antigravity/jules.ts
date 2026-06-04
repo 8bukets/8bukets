@@ -394,6 +394,26 @@ export class Jules {
       persistKnowledge(knowledgeInsights)
     }
 
+    // Markposition Market Intelligence Ingestion
+    console.log('🤖 [Jules] Ingesting Markposition Market Intelligence...')
+    try {
+      const { scrapeMarkpositionKnowledge } = await import('../scripts/ingest_markposition_knowledge')
+      await scrapeMarkpositionKnowledge(2) // Scrape first 2 pages autonomously
+      this.recordTask('Markposition Ingestion: Synchronized latest market intelligence.')
+    } catch (err: any) {
+      console.warn('⚠️ [Jules] Markposition ingestion failed:', err.message)
+    }
+
+    // Knowledge Merge
+    console.log('🔄 [Jules] Performing Knowledge Merge...')
+    try {
+      const { ingestKnowledgeMerge } = await import('../scripts/ingest_knowledge_merge')
+      await ingestKnowledgeMerge()
+      this.recordTask('Knowledge Merge: Consolidated intelligence into reports.')
+    } catch (err: any) {
+      console.warn('⚠️ [Jules] Knowledge merge failed:', err.message)
+    }
+
     // GitHub Docs Observation
     console.log('👁️ [Jules] Scanning GitHub Docs...')
     const { observeGithubDocs } = await import('./services/github_docs_observer')
