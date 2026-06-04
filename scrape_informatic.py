@@ -1,16 +1,18 @@
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
+import re
 import json
 import time
 import logging
 import argparse
 import sys
-from urllib.parse import urlparse
+from urllib.parse import urlparse, ParseResult
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from dataclasses import dataclass, asdict
 from typing import List, Optional
 from markdownify import markdownify as md
+from utils import validate_output_path
 
 @dataclass
 class Post:
@@ -54,7 +56,7 @@ def get_session():
 
     return session
 
-def is_external_link(link_url: str, base_url: str) -> bool:
+def is_external_link(link_url: str, parsed_base: ParseResult) -> bool:
     """
     Checks if a link is external to the base domain.
     """
@@ -63,7 +65,6 @@ def is_external_link(link_url: str, base_url: str) -> bool:
 
     try:
         parsed_link = urlparse(link_url)
-        parsed_base = urlparse(base_url)
     except Exception:
         return False
 
@@ -73,7 +74,7 @@ def is_external_link(link_url: str, base_url: str) -> bool:
 
     return parsed_link.netloc != parsed_base.netloc
 
-def parse_post_html(post_soup, base_url: str) -> Post:
+def parse_post_html(post_soup, parsed_base_url: ParseResult) -> Post:
     """
     Parses a single article soup object and returns a Post object.
     """
@@ -111,7 +112,7 @@ def parse_post_html(post_soup, base_url: str) -> Post:
         # Extract external links
         for link in content_div.find_all('a'):
             href = link.get('href')
-            if href and is_external_link(href, base_url):
+            if href and is_external_link(href, parsed_base_url):
                 external_links.append(href)
 
     # Image
@@ -136,6 +137,7 @@ def scrape(output_file: str, max_pages: int = 0):
     all_posts = []
     page = 1
     current_url = BASE_URL
+    parsed_base_url = urlparse(BASE_URL)
 
     while current_url:
         if max_pages > 0 and page > max_pages:
@@ -150,22 +152,30 @@ def scrape(output_file: str, max_pages: int = 0):
             logging.error(f"Error fetching {current_url}: {e}")
             break
 
-        soup = BeautifulSoup(response.content, 'html.parser')
+        # Optimization: Use SoupStrainer to only parse 'article' tags
+        strainer = SoupStrainer('article')
+        soup = BeautifulSoup(response.content, 'html.parser', parse_only=strainer)
 
         posts = soup.find_all('article')
         logging.info(f"Found {len(posts)} posts on page {page}.")
 
         for post_soup in posts:
             try:
-                post_obj = parse_post_html(post_soup, BASE_URL)
+                post_obj = parse_post_html(post_soup, parsed_base_url)
                 all_posts.append(post_obj)
             except Exception as e:
                 logging.error(f"Error parsing post on page {page}: {e}")
 
-        # Pagination
-        nav_previous = soup.find('div', class_='nav-previous')
-        if nav_previous and nav_previous.find('a'):
-            current_url = nav_previous.find('a')['href']
+        # Pagination optimization: Use regex on bytes to find the link without parsing full HTML
+        # Robust regex to handle attributes, quotes, and whitespace variations
+        # Matches: <div ... class="...nav-previous..." ...> ... <a ... href="URL" ...>
+        pagination_regex = (
+            rb'<div\s+[^>]*class=[\'"][^\'"]*nav-previous[^\'"]*[\'"][^>]*>'
+            rb'\s*<a\s+[^>]*href=[\'"]([^\'"]+)[\'"]'
+        )
+        match = re.search(pagination_regex, response.content)
+        if match:
+            current_url = match.group(1).decode('utf-8')
             page += 1
             time.sleep(1) # Polite delay
         else:
@@ -175,9 +185,12 @@ def scrape(output_file: str, max_pages: int = 0):
     logging.info(f"Total posts scraped: {len(all_posts)}")
 
     try:
-        with open(output_file, 'w', encoding='utf-8') as f:
+        validated_path = validate_output_path(output_file)
+        with open(validated_path, 'w', encoding='utf-8') as f:
             json.dump([asdict(p) for p in all_posts], f, indent=4, ensure_ascii=False)
-        logging.info(f"Saved to {output_file}")
+        logging.info(f"Saved to {validated_path}")
+    except ValueError as ve:
+        logging.error(str(ve))
     except IOError as e:
         logging.error(f"Failed to save output to {output_file}: {e}")
 
