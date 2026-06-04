@@ -169,6 +169,15 @@ class MarkPositionScraperAsync:
             return f"'{text}"
         return text
 
+    def sanitize_for_csv(self, value: str) -> str:
+        """
+        Sanitize value to prevent CSV injection.
+        Prepends ' if the value starts with =, +, -, or @.
+        """
+        if value and isinstance(value, str) and value.startswith(('=', '+', '-', '@')):
+            return "'" + value
+        return value
+
     def extract_categories(self, article: BeautifulSoup) -> List[str]:
         """Extract categories from article class names."""
         categories = []
