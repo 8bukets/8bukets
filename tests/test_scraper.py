@@ -40,12 +40,14 @@ class TestBlogScraper(unittest.TestCase):
         if os.path.exists(self.json_name):
             os.remove(self.json_name)
 
-    @patch('requests.get')
-    def test_fetch_page(self, mock_get):
+    def test_fetch_page(self):
+        # Mock the session.get method directly
+        self.scraper.session.get = MagicMock()
+
         mock_response = MagicMock()
         mock_response.status_code = 200
         mock_response.content = self.mock_html.encode('utf-8')
-        mock_get.return_value = mock_response
+        self.scraper.session.get.return_value = mock_response
 
         content = self.scraper.fetch_page("http://mock.url")
         self.assertIsNotNone(content)

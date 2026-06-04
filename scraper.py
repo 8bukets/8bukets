@@ -114,6 +114,9 @@ class BlogScraper:
 
     def init_db(self):
         """Initialize the SQLite database."""
+        if not self.conn:
+            return
+
         try:
             with self.conn:
                 cursor = self.conn.cursor()
@@ -175,6 +178,8 @@ class BlogScraper:
             ''')
             self.conn.commit()
         except sqlite3.Error as e:
+            if self.conn:
+                self.conn.rollback()
             logger.error(f"Database initialization error: {e}")
 
     def save_to_db(self, item, conn, commit=True):
@@ -296,6 +301,8 @@ class BlogScraper:
                 return True # New post
 
         except sqlite3.Error as e:
+            if self.conn:
+                self.conn.rollback()
             logger.error(f"Database insertion/update error: {e}")
             if self.conn:
                 self.conn.rollback()
@@ -320,7 +327,8 @@ class BlogScraper:
 
         logger.info(f"Fetching {url}...")
         try:
-            response = requests.get(url, headers=self.headers, timeout=10)
+            # Use session for connection pooling
+            response = self.session.get(url, timeout=10)
             response.raise_for_status()
             return response.content
         except requests.RequestException as e:
