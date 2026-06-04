@@ -13,11 +13,39 @@ from utils import validate_output_path
 from concurrent.futures import ProcessPoolExecutor
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+    GREY = '\033[90m'
+
+class UXFormatter(logging.Formatter):
+    def format(self, record):
+        if record.levelno == logging.INFO:
+            prefix = f"{Colors.BLUE}ℹ️{Colors.ENDC}"
+        elif record.levelno == logging.WARNING:
+            prefix = f"{Colors.WARNING}⚠️{Colors.ENDC}"
+        elif record.levelno == logging.ERROR:
+            prefix = f"{Colors.FAIL}❌{Colors.ENDC}"
+        else:
+            prefix = ""
+
+        # Keep the timestamp
+        timestamp = self.formatTime(record, "%H:%M:%S")
+        return f"{Colors.GREY}{timestamp}{Colors.ENDC} {prefix} {record.getMessage()}"
+
+def setup_ux_logging():
+    handler = logging.StreamHandler(sys.stdout)
+    handler.setFormatter(UXFormatter())
+    logging.root.handlers = [handler]
+    logging.root.setLevel(logging.INFO)
+
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
