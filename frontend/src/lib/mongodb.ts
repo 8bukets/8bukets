@@ -1,0 +1,49 @@
+import mongoose from 'mongoose';
+import { MongoClient } from 'mongodb';
+
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://Vercel-Admin-atlas-beige-envelope:<db_password>@atlas-beige-envelope.xdsv2yt.mongodb.net/?appName=atlas-beige-envelope';
+
+if (!MONGODB_URI) {
+  throw new Error('Please define the MONGODB_URI environment variable inside .env.local');
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let cached = (global as any).mongoose;
+
+if (!cached) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  cached = (global as any).mongoose = { conn: null, promise: null };
+}
+
+/**
+ * getMongoClient: Low-level driver access for raw queries
+ */
+let client: MongoClient;
+let clientPromise: Promise<MongoClient>;
+
+export async function getMongoClient() {
+  if (clientPromise) return clientPromise;
+  client = new MongoClient(MONGODB_URI);
+  clientPromise = client.connect();
+  return clientPromise;
+}
+
+async function dbConnect() {
+  if (cached.conn) {
+    return cached.conn;
+  }
+
+  if (!cached.promise) {
+    const opts = {
+      bufferCommands: false,
+    };
+
+    cached.promise = mongoose.connect(MONGODB_URI!, opts).then((mongoose) => {
+      return mongoose;
+    });
+  }
+  cached.conn = await cached.promise;
+  return cached.conn;
+}
+
+export default dbConnect;
