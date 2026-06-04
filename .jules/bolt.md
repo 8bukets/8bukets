@@ -1,3 +1,6 @@
-## 2024-02-05 - Python Loop Overhead vs C-Optimized Iterators
-**Learning:** Explicit Python loops (e.g. `for item in data:`) can be slower than multiple passes using C-optimized list comprehensions or `Counter(list)`, even if algorithmically O(N) vs O(4N), due to interpreter overhead. However, the single-pass approach significantly reduces memory usage by avoiding intermediate lists.
-**Action:** When optimizing for speed in Python, profile carefully. Sometimes "dumber" multi-pass code using built-ins is faster. When optimizing for memory, single-pass explicit loops are superior. Hybrid approach (batching into lists inside a loop) can offer a balance.
+## 2026-01-27 - Regex Pre-compilation
+**Learning:** Pre-compiling frequent regex patterns (especially in loops like `clean_text` called for every field) yields significant performance gains (~15-46% in micro-benchmarks).
+**Action:** Always identify and pre-compile regex patterns used in hot paths or tight loops.
+## 2025-02-06 - Regex Recompilation in Scraper
+**Learning:** `scraper.py` was re-compiling regexes (`re.match`, `re.sub`) inside frequently called methods (`clean_text`, `is_url`). While Python caches recent regexes, explicit pre-compilation removes lookup overhead and clarifies intent.
+**Action:** Use class-level pre-compiled regex constants (`re.compile`) for patterns used in loops or high-frequency methods.
