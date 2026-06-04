@@ -1,5 +1,13 @@
 __pycache__/
 *.pyc
-links.json
-links.csv
-unique_links.txt
+*.pyo
+*.pyd
+.env
+.venv
+env/
+venv/
+.Python
+env/
+venv/
+.env
+.DS_Store
