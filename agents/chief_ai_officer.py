@@ -111,6 +111,18 @@ class ChiefAIOfficerAgent(BaseAgent):
                         self.logger.info("CAIO [STRATEGY]: Asia-Pacific edge node expansion identified. Issuing deployment directive.")
                         strategic_directives.append("DEPLOY_APAC_EDGE_NODES")
 
+                # Asia-Pacific Regional Compliance check
+                if "regional compliance" in sections_str:
+                    if "ENFORCE_APAC_REGIONAL_COMPLIANCE" not in strategic_directives:
+                        self.logger.info("CAIO [GOVERNANCE]: APAC Regional Compliance detected. Issuing compliance directive.")
+                        strategic_directives.append("ENFORCE_APAC_REGIONAL_COMPLIANCE")
+
+            # Sovereign AI Clusters check
+            if "sovereign ai cluster" in sections_str:
+                if "PROVISION_SOVEREIGN_AI_CLUSTERS" not in strategic_directives:
+                    self.logger.info("CAIO [STRATEGY]: Demand for sovereign AI clusters detected. Issuing provisioning directive.")
+                    strategic_directives.append("PROVISION_SOVEREIGN_AI_CLUSTERS")
+
             # ISO 42001 Compliance Check
             if "42001" in title or "42001" in sections_str:
                 if "ENFORCE_ISO_42001_COMPLIANCE" not in strategic_directives:
