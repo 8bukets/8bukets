@@ -23,6 +23,10 @@ logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
 
+# Pre-compile the strainer to avoid overhead on every page parse
+# We strain by 'article' tag only to ensure we capture all posts regardless of other classes
+POST_STRAINER = SoupStrainer('article')
+
 class MarkPositionScraperAsync:
     # Pre-compile regex patterns for performance
     CLEAN_TEXT_REGEX = re.compile(r'\s+')
