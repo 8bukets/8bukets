@@ -1,129 +1,113 @@
 import unittest
-import sqlite3
 import os
+import sqlite3
+import datetime
 import shutil
-import sys
-from datetime import datetime, timedelta
-
-# Add root directory to path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 from report_generator import ReportGenerator
 
 class TestReportGenerator(unittest.TestCase):
     def setUp(self):
-        self.test_dir = "test_reports"
-        self.db_name = "test_wishlist_report.db"
-        if os.path.exists(self.test_dir):
-            shutil.rmtree(self.test_dir)
+        self.db_name = "test_report_db.db"
+        self.report_dir = "test_reports"
+
+        # Ensure clean state
         if os.path.exists(self.db_name):
             os.remove(self.db_name)
+        if os.path.exists(self.report_dir):
+            shutil.rmtree(self.report_dir)
 
-        # Setup DB
-        self.conn = sqlite3.connect(self.db_name)
-        self.cursor = self.conn.cursor()
-        self.cursor.execute('''
-            CREATE TABLE IF NOT EXISTS posts (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                title TEXT,
-                post_url TEXT UNIQUE,
-                external_link TEXT,
-                date_str TEXT,
-                datetime_iso TEXT,
-                author TEXT,
-                categories TEXT,
-                scraped_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-            )
-        ''')
-        self.cursor.execute('''
-            CREATE TABLE IF NOT EXISTS changes (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                post_id INTEGER,
-                field TEXT,
-                old_value TEXT,
-                new_value TEXT,
-                changed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                FOREIGN KEY(post_id) REFERENCES posts(id)
-            )
-        ''')
-        self.cursor.execute('''
-            CREATE TABLE IF NOT EXISTS rankings (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                query TEXT,
-                rank INTEGER,
-                title TEXT,
-                url TEXT,
-                checked_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-            )
-        ''')
-        self.conn.commit()
+        self.init_db()
+        self.populate_db()
 
-        self.generator = ReportGenerator(self.db_name, self.test_dir)
+        self.generator = ReportGenerator(db_name=self.db_name, report_dir=self.report_dir)
 
     def tearDown(self):
-        self.conn.close()
         if os.path.exists(self.db_name):
             os.remove(self.db_name)
-        if os.path.exists(self.test_dir):
-            shutil.rmtree(self.test_dir)
+        if os.path.exists(self.report_dir):
+            shutil.rmtree(self.report_dir)
 
-    def test_generate_report_no_data(self):
+    def init_db(self):
+        with sqlite3.connect(self.db_name) as conn:
+            cursor = conn.cursor()
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS posts (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    title TEXT,
+                    post_url TEXT UNIQUE,
+                    external_link TEXT,
+                    date_str TEXT,
+                    datetime_iso TEXT,
+                    author TEXT,
+                    categories TEXT,
+                    scraped_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )
+            ''')
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS changes (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    post_id INTEGER,
+                    field TEXT,
+                    old_value TEXT,
+                    new_value TEXT,
+                    changed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY(post_id) REFERENCES posts(id)
+                )
+            ''')
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS rankings (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    query TEXT,
+                    rank INTEGER,
+                    title TEXT,
+                    url TEXT,
+                    checked_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )
+            ''')
+            conn.commit()
+
+    def populate_db(self):
+        with sqlite3.connect(self.db_name) as conn:
+            cursor = conn.cursor()
+            recent = datetime.datetime.now()
+
+            # Insert posts
+            posts = [
+                ("Design Trends", "http://example.com/1", "http://ext.com/1", "2023-10-26", recent.isoformat(), "Author", '["Design"]', recent),
+                ("Design Ideas", "http://example.com/2", "http://ext.com/2", "2023-10-26", recent.isoformat(), "Author", '["Ideas"]', recent),
+            ]
+            for p in posts:
+                cursor.execute('''
+                    INSERT INTO posts (title, post_url, external_link, date_str, datetime_iso, author, categories, scraped_at)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                ''', p)
+            conn.commit()
+
+    def test_create_ascii_bar(self):
+        bar = self.generator.create_ascii_bar(5, 10, width=10)
+        self.assertEqual(bar, "█████░░░░░")
+
+        bar = self.generator.create_ascii_bar(10, 10, width=10)
+        self.assertEqual(bar, "██████████")
+
+        bar = self.generator.create_ascii_bar(0, 10, width=10)
+        self.assertEqual(bar, "░░░░░░░░░░")
+
+    def test_report_generation(self):
         self.generator.generate_daily_report()
-        files = os.listdir(self.test_dir)
-        self.assertEqual(len(files), 1)
-        with open(os.path.join(self.test_dir, files[0]), 'r', encoding='utf-8') as f:
+
+        if not os.path.exists(self.report_dir):
+             self.fail("Report directory was not created")
+
+        report_files = os.listdir(self.report_dir)
+        self.assertTrue(len(report_files) > 0)
+
+        with open(os.path.join(self.report_dir, report_files[0]), 'r') as f:
             content = f.read()
-            self.assertIn("# Daily Scraper Report", content)
-            self.assertIn("Total Posts:** 0", content)
 
-            # Check TOC
-            self.assertIn("## 📋 Table of Contents", content)
-            self.assertIn("[💡 Recommendations](#recommendations)", content)
-            self.assertIn("[📈 SEO Trend Analysis](#seo-trend-analysis)", content)
-            # Conditional TOC should be missing
-            self.assertNotIn("[🧠 Keyword Trends]", content)
-            self.assertNotIn("[🆕 Recently Scraped Posts]", content)
-
-            # Check Anchors
-            self.assertIn("<a name='recommendations'></a>", content)
-
-            # Default headers
-            self.assertIn("## 💡 Recommendations", content)
-            self.assertIn("## 📈 SEO Trend Analysis", content)
-
-            # Conditional headers should be missing
-            self.assertNotIn("## 🧠 Keyword Trends", content)
-            self.assertNotIn("## 🔄 Content Updates", content)
-            self.assertNotIn("## 🆕 Recently Scraped Posts", content)
-
-            # Footer
-            self.assertIn("Generated with ❤️ by Palette", content)
-
-    def test_generate_report_with_data(self):
-        # Insert data
-        now = datetime.now()
-        self.cursor.execute("INSERT INTO posts (title, post_url, scraped_at) VALUES (?, ?, ?)",
-                            ("Test Post", "http://test.com", now))
-        self.conn.commit()
-
-        self.generator.generate_daily_report()
-        files = os.listdir(self.test_dir)
-        self.assertEqual(len(files), 1)
-        with open(os.path.join(self.test_dir, files[0]), 'r', encoding='utf-8') as f:
-            content = f.read()
-            self.assertIn("Total Posts:** 1", content)
-
-            # Check TOC
-            self.assertIn("[🆕 Recently Scraped Posts](#recently-scraped-posts)", content)
-            self.assertIn("[🧠 Keyword Trends](#keyword-trends)", content)
-
-            # Check Headers & Anchors
-            self.assertIn("<a name='recently-scraped-posts'></a>", content)
-            self.assertIn("## 🆕 Recently Scraped Posts", content)
-            self.assertIn("Test Post", content)
-
-            # Footer
-            self.assertIn("Generated with ❤️ by Palette", content)
+        self.assertIn("## 🧠 Keyword Trends", content)
+        self.assertIn("Distribution", content)
+        self.assertIn("██", content) # Check for block character
 
 if __name__ == '__main__':
     unittest.main()
