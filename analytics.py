@@ -13,6 +13,12 @@ def load_data(filepath):
         print(f"Error: File '{filepath}' not found.")
         sys.exit(1)
 
+def sanitize_markdown(text):
+    """Sanitize text to prevent Markdown injection (e.g. escaping pipes)."""
+    if not isinstance(text, str):
+        return str(text) if text is not None else ""
+    return text.replace("|", "&#124;").replace("<", "&lt;").replace(">", "&gt;")
+
 def get_domain(url):
     if not url:
         return None
