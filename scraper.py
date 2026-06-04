@@ -62,6 +62,16 @@ class OracleNewsScraper:
             return "'" + text
         return text
 
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text to prevent CSV injection (formula injection)."""
+        if not text:
+            return ""
+        # Ensure we are working with a string
+        text_str = str(text)
+        if text_str.startswith(('=', '+', '-', '@')):
+            return f"'{text_str}"
+        return text_str
+
     def parse_date(self, date_text: str) -> Optional[Dict[str, str]]:
         """Parse date string like 'Oct 15, 2025' to ISO format."""
         try:
