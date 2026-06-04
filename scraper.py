@@ -170,6 +170,15 @@ class MarkPositionScraperAsync:
             return f"'{text}"
         return text
 
+    def sanitize_for_csv(self, text: str) -> str:
+        """
+        Sanitize text for CSV to prevent CSV Injection (Formula Injection).
+        Prepends a single quote if the text starts with =, +, -, or @.
+        """
+        if isinstance(text, str) and text.startswith(('=', '+', '-', '@')):
+            return "'" + text
+        return text
+
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
         return self.URL_REGEX.match(text.strip()) is not None
