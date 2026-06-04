@@ -1,4 +1,12 @@
-## 2026-02-03 - Markdown Injection in Analytics Reports
-**Vulnerability:** The analytics report generator injected unsanitized user content (domains, categories, authors) directly into Markdown tables and content. Malicious input containing pipes (`|`) or HTML tags could break the report layout or execute arbitrary scripts (XSS) if the report is viewed in a browser-based Markdown viewer.
-**Learning:** Reporting tools that generate structured text formats (like Markdown, CSV, HTML) are often overlooked targets for injection attacks. Just because the output isn't a webpage served to a user doesn't mean it's safe; the report itself is an artifact that can carry payloads.
-**Prevention:** Always implement context-aware output encoding. For Markdown, this means escaping HTML characters (`<`, `>`, `&`) and specific Markdown syntax delimiters (like `|` in tables) before embedding untrusted data.
+## 2026-01-27 - Path Traversal in CLI Output Arguments
+**Vulnerability:** CLI tools (`scraper.py`) accepted output file paths directly from arguments without validation, allowing arbitrary file writes via path traversal (e.g., `../file.json`).
+**Learning:** Python's `open()` does not sandbox file access; CLI tools accepting paths must explicitly validate them against a root directory.
+**Prevention:** Use `os.path.abspath` and `os.path.commonpath` to enforce that resolved paths remain within the intended working directory.
+# Sentinel Journal
+
+This journal tracks critical security learnings and vulnerability fixes.
+
+## 2024-10-27 - [Hardcoded Credentials in Developer Agent]
+**Vulnerability:** The `DeveloperAgent` was generating Python code snippets with hardcoded database credentials (`password="welcome"`).
+**Learning:** Hardcoded credentials in example code are often copy-pasted into production by developers, leading to security breaches.
+**Prevention:** All generated code examples must use environment variables or secret management systems for credentials. Modified `DeveloperAgent` to use `os.environ.get`.

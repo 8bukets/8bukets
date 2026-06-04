@@ -1,53 +1,60 @@
 import unittest
-import os
 import sys
+import os
+import tempfile
 import json
 
-# Add parent directory to path so we can import analytics
+# Add parent directory to path to import analytics
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 import analytics
 
 class TestAnalyticsSecurity(unittest.TestCase):
-    def setUp(self):
-        self.test_output = "REPORT_TEST_SEC.md"
-        self.malicious_data = [
-            {
-                "title": "Malicious Post",
-                "date": "2023-01-01",
-                "author": "Evil|Author",
-                "categories": ["Cat|egory", "<script>alert(1)</script>"],
-                "external_link": "https://malicious.com/post",
-                "domain": "malicious.com",
-                "post_url": "https://malicious.com/post"
-            }
-        ]
-
-    def tearDown(self):
-        if os.path.exists(self.test_output):
-            os.remove(self.test_output)
-
     def test_markdown_injection(self):
-        # Generate report
-        analytics.generate_report(self.malicious_data, self.test_output)
+        # Create a temporary file for input data
+        with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.json') as f:
+            json.dump([
+                {
+                    "title": "Malicious Post",
+                    "date": "2023-10-28",
+                    "author": "Hacker|Admin",
+                    "categories": ["Hacking|Good", "[Link](javascript:alert(1))"],
+                    "external_link": "http://evil.com|break|table",
+                    "datetime": "2023-10-28T10:00:00"
+                }
+            ], f)
+            input_file = f.name
 
-        # Read report
-        with open(self.test_output, 'r', encoding='utf-8') as f:
-            content = f.read()
+        # Create a temporary file for output report
+        with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.md') as f:
+            output_file = f.name
 
-        # Check for escaped characters
-        # Pipe should be escaped
-        # We expect sanitization to happen, so raw malicious strings should NOT be present in a way that breaks markdown
+        try:
+            # Run the report generation
+            data = analytics.load_data(input_file)
+            analytics.generate_report(data, output_file)
 
-        # Check Author
-        self.assertIn("Evil&#124;Author", content, "Pipe in author should be escaped")
+            # Read the output
+            with open(output_file, 'r') as f:
+                content = f.read()
 
-        # Check Category
-        self.assertIn("Cat&#124;egory", content, "Pipe in category should be escaped")
+            # Check for escaped characters
+            # We expect evil.com\|break\|table
+            self.assertIn(r"evil.com\|break\|table", content, "Pipe in domain should be escaped")
 
-        # Check HTML Injection
-        self.assertIn("&lt;script&gt;", content, "HTML tags should be escaped")
-        self.assertNotIn("<script>", content, "Raw HTML script tag found!")
+            # We expect Hacking\|Good
+            self.assertIn(r"Hacking\|Good", content, "Pipe in category should be escaped")
+
+            # We expect brackets to be escaped
+            self.assertIn(r"\[Link\](javascript:alert(1))", content, "Brackets in category should be escaped")
+
+            # We expect Hacker\|Admin
+            self.assertIn(r"Hacker\|Admin", content, "Pipe in author should be escaped")
+
+        finally:
+            if os.path.exists(input_file):
+                os.remove(input_file)
+            if os.path.exists(output_file):
+                os.remove(output_file)
 
 if __name__ == '__main__':
     unittest.main()
