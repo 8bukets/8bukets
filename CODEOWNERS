@@ -1,0 +1,6 @@
+# CODEOWNERS
+
+# Require review from the repository owner for changes in top-level folders
+/backend @8bukets
+/scraper @8bukets
+/.github @8bukets
