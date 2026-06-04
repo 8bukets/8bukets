@@ -3,6 +3,7 @@ import sys
 import json
 import os
 import logging
+import concurrent.futures
 from typing import List, Dict
 import concurrent.futures
 
@@ -130,4 +131,39 @@ class ResearcherAgent(BaseAgent):
             except Exception as e:
                 self.logger.error(f"Google search scraping failed: {e}")
 
+                if os.path.exists(output_file):
+                    with open(output_file, 'r', encoding='utf-8') as f:
+                        return json.load(f)
+                else:
+                    return []
+            except Exception as e:
+                self.logger.error(f"Blog scraping failed: {e}")
+                return []
+
+        def search_google():
+            # 2. Check Google Listings
+            try:
+                search_output = "google_search_results.json"
+                # We assume google_search_scraper.py is in the root directory
+                cmd = [sys.executable, "google_search_scraper.py", "-o", search_output]
+                subprocess.run(cmd, check=True)
+
+                if os.path.exists(search_output):
+                    with open(search_output, 'r', encoding='utf-8') as f:
+                        return json.load(f)
+                else:
+                    return []
+            except Exception as e:
+                self.logger.error(f"Google search scraping failed: {e}")
+                return []
+
+        # Optimization: Run independent scraping tasks in parallel
+        with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
+            future_blog = executor.submit(scrape_blog)
+            future_google = executor.submit(search_google)
+
+            results['blog_posts'] = future_blog.result()
+            results['google_listings'] = future_google.result()
+
+        self.logger.info("Research phase complete.")
         return results
