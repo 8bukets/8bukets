@@ -109,6 +109,15 @@ class WordpressScraperAsync:
         text = text.replace('\xa0', ' ')
         return self.CLEAN_TEXT_REGEX.sub(' ', text).strip()
 
+    def sanitize_for_csv(self, value: Optional[str]) -> str:
+        """Sanitize a value to prevent CSV injection."""
+        if not value:
+            return ""
+        value_str = str(value)
+        if value_str.startswith(('=', '+', '-', '@')):
+            return f"'{value_str}"
+        return value_str
+
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
         return re.match(r'^https?://', text.strip()) is not None
@@ -318,13 +327,13 @@ class WordpressScraperAsync:
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        self.sanitize_for_csv(post.get('title', '')),
+                        self.sanitize_for_csv(post.get('date', '')),
+                        self.sanitize_for_csv(post.get('author', '')),
+                        self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                        self.sanitize_for_csv(post.get('external_link', '')),
+                        self.sanitize_for_csv(post.get('domain', '')),
+                        self.sanitize_for_csv(post.get('post_url', ''))
                     ])
             csv_ok = True
         except IOError as e:
