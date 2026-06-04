@@ -168,6 +168,96 @@ New-Scale SIEM TM includes three essential technological components: First, it c
 - **Relationship Map**: Confirmed relationship with https://software-online-review.com (Title: software info by fk – software-online-review – Filip Keser) as an intelligence source. Extracted key topics: software info by fk, Roadmap and business roadmap, Nvidia Dgx Spark... (Content Length: 248222 chars)
 
 
+
+## Autonomous Observation
+- **Date**: 2026-06-04T17:41:34.760Z
+- **Target**: https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU
+- **Title**: Understanding bidding basics - Google Ads Help
+- **Relationship Map**: Confirmed relationship with https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU (Title: Understanding bidding basics - Google Ads Help) as an intelligence source. Extracted key topics: Understanding bidding basics, Focus on clicks (for Search and Display ads), Focus on impressions... (Content Length: 13812 chars)
+
+
+
+
+## Autonomous Observation
+- **Date**: 2026-06-04T17:41:35.109Z
+- **Target**: https://business.google.com/uk/ad-tools/bidding/
+- **Title**: Google Ads Smart Bidding - AI-Driven Bid Optimisations & Ad Spend
+- **Relationship Map**: Confirmed relationship with https://business.google.com/uk/ad-tools/bidding/ (Title: Google Ads Smart Bidding - AI-Driven Bid Optimisations & Ad Spend) as an intelligence source. Extracted key topics: Want to create a new Google Ads account?, Want to create a new Google Ads account?, Deliver better results with automated bidding... (Content Length: 19697 chars)
+
+
+
+
+## Autonomous Observation
+- **Date**: 2026-06-04T17:41:35.725Z
+- **Target**: https://business.google.com/uk/resources/
+- **Title**: Tips & Resources for Online Advertising – Google Ads
+- **Relationship Map**: Confirmed relationship with https://business.google.com/uk/resources/ (Title: Tips & Resources for Online Advertising – Google Ads) as an intelligence source. Extracted key topics: Want to create a new Google Ads account?, Want to create a new Google Ads account?, Find answers andinspiration... (Content Length: 32960 chars)
+
+
+
+
+## Autonomous Observation
+- **Date**: 2026-06-04T17:41:36.213Z
+- **Target**: https://developers.google.com/ad-manager
+- **Title**: Ad Manager  |  Google for DevelopersGoogleGoogle
+- **Relationship Map**: Confirmed relationship with https://developers.google.com/ad-manager (Title: Ad Manager  |  Google for DevelopersGoogleGoogle) as an intelligence source. Extracted key topics: Google Ad Manager, Google Ad Manager 계정 및 캠페인을 관리하기 위한 도구 모음입니다., Ad Manager API(베타)... (Content Length: 2989 chars)
+
+
+
+
+## Autonomous Observation
+- **Date**: 2026-06-04T17:41:36.596Z
+- **Target**: https://developers.google.com/ad-manager/dynamic-ad-insertion
+- **Title**: Dynamic Ad Insertion  |  Google for DevelopersGoogleGoogle
+- **Relationship Map**: Confirmed relationship with https://developers.google.com/ad-manager/dynamic-ad-insertion (Title: Dynamic Ad Insertion  |  Google for DevelopersGoogleGoogle) as an intelligence source. Extracted key topics: Google Dynamic Ad Insertion, Dynamic ad insertion (DAI), Full service DAI... (Content Length: 7160 chars)
+
+
+
+
+## Autonomous Observation
+- **Date**: 2026-06-04T17:41:37.687Z
+- **Target**: https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service
+- **Title**: DAI Full Service API  |  Google for DevelopersGoogleGoogle
+- **Relationship Map**: Confirmed relationship with https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service (Title: DAI Full Service API  |  Google for DevelopersGoogleGoogle) as an intelligence source. Extracted key topics: Google Dynamic Ad Insertion, Tam hizmet DAI, IMA DAI SDK'sı ile... (Content Length: 9749 chars)
+
+
+
+
+## Autonomous Observation
+- **Date**: 2026-06-04T17:41:38.410Z
+- **Target**: https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving
+- **Title**: DAI Pod Serving API  |  Google for DevelopersGoogleGoogle
+- **Relationship Map**: Confirmed relationship with https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving (Title: DAI Pod Serving API  |  Google for DevelopersGoogleGoogle) as an intelligence source. Extracted key topics: Google Dynamic Ad Insertion, Publicación de grupos de anuncios de DAI, Une anuncios en una transmisión en vivo... (Content Length: 13379 chars)
+
+
+
+
+## Autonomous Observation
+- **Date**: 2026-06-04T17:41:38.700Z
+- **Target**: https://developers.google.com/ad-manager/api/start
+- **Title**: Get started  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle
+- **Relationship Map**: Confirmed relationship with https://developers.google.com/ad-manager/api/start (Title: Get started  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle) as an intelligence source. Extracted key topics: Get started Stay organized with collections Save and categorize content based on your preferences., Get access to an Ad Manager network, Create authentication credentials... (Content Length: 13676 chars)
+
+
+
+
+## Autonomous Observation
+- **Date**: 2026-06-04T17:41:38.927Z
+- **Target**: https://admanager.google.com/home/resources/
+- **Title**: Resources Overview - Google Ad Manager
+- **Relationship Map**: Confirmed relationship with https://admanager.google.com/home/resources/ (Title: Resources Overview - Google Ad Manager) as an intelligence source. Extracted key topics: Tell us about your business, Congratulations!, Sign Up for Google AdSense... (Content Length: 16593 chars)
+
+
+
+
+## Autonomous Observation
+- **Date**: 2026-06-04T17:41:39.811Z
+- **Target**: https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
+- **Title**: ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation
+- **Relationship Map**: Confirmed relationship with https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview (Title: ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation) as an intelligence source. Extracted key topics: ad-manager overview (0.50.0) Stay organized with collections Save and categorize content based on your preferences., Key Reference Links, Getting Started... (Content Length: 288418 chars)
+
+
+
 ## Ecosystem Knowledge Consolidation (2026-06-01T03:42:55.578Z)
 ### ⚡ Strategic Synergy Highlights
 - **SYNERGY:** `remotes/origin/bolt/analytics-optimization-4995070729525476780` -> Commit: perf(analytics): optimize aggregation with generator expressions (Focus: performance)

@@ -49,6 +49,25 @@ program
   });
 
 program
+  .command('improve-merge-integrate-run <urls...>')
+  .description('Ingest knowledge from multiple URLs into the neural mesh')
+  .action(async (urls: string[]) => {
+    for (const url of urls) {
+      console.log(`🧠 Observing knowledge from ${url}...`);
+      try {
+        const result = await observeKnowledge(url);
+        if (result) {
+          console.log(`✅ Successfully observed: ${result.title}`);
+        } else {
+           console.log(`✅ Successfully observed: ${url}`);
+        }
+      } catch (err) {
+        console.error(`❌ Observation failed: ${err}`);
+      }
+    }
+  });
+
+program
   .command('ignite-cloud-presence')
   .description('Ignite continuous cloud presence and ecosystem collaboration setup for remote environments')
   .action(async () => {

@@ -3533,6 +3533,1146 @@
           "content": "- **Objective**: Optimize APAC Edge Nodes (Tokyo, Singapore, Sydney) for <50ms latency.\n- **ROI Mandate**: Enforce a 95% ROI efficiency target across all global fleet compute services.\n- **Compliance**: Adhere to ISO 42001 standards for all AI deployments."
         }
       ]
+    },
+    {
+      "title": "Understanding bidding basics - Google Ads Help",
+      "metadata": {
+        "source": "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU",
+        "analyzedAt": "2026-06-04T17:41:34.455Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": [
+        {
+          "header": "Understanding bidding basics",
+          "content": "Google Ads gives you several ways to bid for your ads, depending on what matters most to you and your business. Most advertisers focus on clicks, impressions, conversions, or views (for video ads).\nNow that you're advertising on Google Ads, you probably have a clear goal in mind for your ads. If you sell coffee, maybe you want to get more people to visit your shop. If you run a hiking club, maybe you're aiming to get more people to sign up for your newsletter. And so on.\nKnowing what you want your ads to do will help you decide how to bid.\nGoogle Ads runs an auction every single time it has an ad space available -- on a search result, or on a blog, news site, or some other page. Each auction decides which ads will show at that moment in that space. Your bid puts you in the auction.\nYou can focus on different things when you bid: clicks, impressions, conversions, views, or engagements, depending on your campaign type. Which would you choose? Let's look at these more closely."
+        },
+        {
+          "header": "Focus on clicks (for Search and Display ads)",
+          "content": "If your main goal is to have people visit your website, then clicks are a good place to start. Using cost-per-click (CPC) bidding, you'll pay only when someone actually clicks on your ad and comes to your site.\nExample:\nIf you run a hiking club in Vermont, you might want to bid a lot for direct-hit keywords like \"Vermont hiking\" and a different amount for broader keywords like \"hiking maps.\""
+        },
+        {
+          "header": "Focus on impressions",
+          "content": "If your campaign is targeting just the Search Network and your main goal is to increase your brand visibility, consider using Target Impression Share. With this bidding strategy, Google Ads will automatically set your bids to help achieve your Impression Share goal. For example, if you choose an Impression Share target of 65% on the absolute top of the page, Google Ads will automatically set your bids to help show your ads on the absolute top of the page 65% of the total possible amount of times they could show.\nIf your campaign is targeting just the Display Network, instead of paying by the click, you can pay by the number of times your ad is visibly shown. That's called cost-per-thousand viewable impressions (vCPM) bidding, since you pay for every 1,000 times your ad appears and is viewable. If you're mostly interested in getting your name or logo in front of lots of people, this is a smart option. Learn how ads are measured as viewable.\n- [Learn how ads are measured as viewable](https://support.google.com/google-ads/answer/6085471)\nViewable CPM bidding, like CPC manual bidding, lets you set bids at the ad group level, or for individual placements."
+        },
+        {
+          "header": "Focus on conversions (for Search and Display ads)",
+          "content": "With this advanced bidding method, you tell Google Ads the amount you're willing to pay for a conversion, or cost per action (CPA). A conversion (sometimes called an acquisition) is a particular action you want to happen on your website. Often that's a sale, but it could be an email sign-up or some other action. You pay for each engaged view and click on Display ads, but Google Ads will automatically set your bids for you to try to get you as many conversions as possible at the cost per action you specified.\nTo use CPA bidding you must have conversion tracking turned on, among other things, so CPA bidding is suited for intermediate and advanced Google Ads users.\n- [conversion tracking](https://support.google.com/google-ads/bin/answer.py?answer=6308)"
+        },
+        {
+          "header": "Focus on views (for video ads only)",
+          "content": "If your main goal is to evaluate how engaged viewers are with your video content, where they choose to watch your videos, and when they drop off from watching your content, you'll use cost-per-view (CPV) bidding. With CPV bidding, you'll pay for video views and other video interactions, such as clicks on the calls-to-action overlay (CTAs), cards, and companion banners.\n- [cost-per-view (CPV) bidding](https://support.google.com/google-ads/answer/2472735)\nTo set a target CPV bid, you enter the average price you want to pay for a view while setting up your Video views campaign. Your bid is called your target CPV bid, or tCPV. This bid applies at the campaign level."
+        },
+        {
+          "header": "Related links",
+          "content": "- [About Target CPA bidding](https://support.google.com/google-ads/answer/6268632)\n- [Determine a bid strategy based on your goals](https://support.google.com/google-ads/answer/2472725)"
+        },
+        {
+          "header": "Try these next steps:",
+          "content": "- [Post to the help community Get answers from community members](/google-ads/community?hl=en&help_center_link=CL6NlgESHFVuZGVyc3RhbmRpbmcgYmlkZGluZyBiYXNpY3M)\n- [Contact us Tell us more and we’ll help you get there](/google-ads/gethelp)"
+        },
+        {
+          "header": "Bidding",
+          "content": "- [Bidding](/google-ads/topic/10289453?hl=en&ref_topic=10289172)\n- [About the Display Network ad auction](/google-ads/answer/2996564?hl=en&ref_topic=10289453)\n- [About bidding features in Display campaigns](/google-ads/answer/2947304?hl=en&ref_topic=10289453)\n- [Choose a bid for your Display Network campaign](/google-ads/answer/2454058?hl=en&ref_topic=10289453)\n- [Achieve your advertising goals today!](https://adsonair.withgoogle.com/pmaxstellar)\nAttend our Performance Max Masterclass, a livestream workshop session bringing together industry and Google ads PMax experts."
+        },
+        {
+          "header": "Register now",
+          "content": "- [Register now](https://adsonair.withgoogle.com/pmaxstellar)\n- [Privacy Policy](//www.google.com/intl/en/privacy.html)\n- [Terms of Service](https://www.google.com/accounts/TOS)\n- [Google Ads Advertising Policies](//support.google.com/adwordspolicy/?hl=en)\n- [About the Help Center](//support.google.com/google-ads/answer/3094231)"
+        }
+      ]
+    },
+    {
+      "title": "Google Ads Smart Bidding - AI-Driven Bid Optimisations & Ad Spend",
+      "metadata": {
+        "source": "https://business.google.com/uk/ad-tools/bidding/",
+        "analyzedAt": "2026-06-04T17:41:35.035Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": [
+        {
+          "header": "Add another account",
+          "content": "- [logout Sign out of all accounts](https://accounts.google.com/Logout?continue=https://business.google.com/)\nSign out of all accounts\n- [add Add account](https://accounts.google.com/AddSession?hl=en&continue=https://business.google.com/)"
+        },
+        {
+          "header": "Add account",
+          "content": "- [logout Sign out](https://accounts.google.com/Logout?continue=https://business.google.com/)"
+        },
+        {
+          "header": "Sign out",
+          "content": "Create new Google Ads account\nMore business products from Google"
+        },
+        {
+          "header": "Google Ads",
+          "content": "- [Merchant Center](https://merchants.google.com/mc/default?mcsubid=uk-en-bgc-mc-web!o3&gfr_referral=true&hl=en&fmp=1)"
+        },
+        {
+          "header": "Merchant Center",
+          "content": "- [Google Business Profile](https://business.google.com/?gmbsrc=uk-en-z-z-z-gmb-s-z-u~bgcmhp-sso-u&hl=en&skipLandingPage=true&skipPagesList=1&cbl=sso&cbp=bgc&cbt=sso)\nGoogle Business Profile\n- [Google Analytics](https://analytics.google.com/analytics/?utm_campaign=bgc-website-ga&utm_source=google&utm_medium=ga-organic-website&utm_content=ga-create-account&utm_term=cta-website-ga-organic)"
+        },
+        {
+          "header": "Google Analytics",
+          "content": "Manage your site content preferences\nMarketing profile settings\n- [Privacy Policy](https://policies.google.com/privacy)\n- [Terms of Service](https://myaccount.google.com/termsofservice)\nAccess your Google accounts in one place.\n- [Sign in with Google](https://accounts.google.com/ServiceLogin?&continue=https://business.google.com/)"
+        },
+        {
+          "header": "Want to create a new Google Ads account?",
+          "content": "You're about to create a new Google Ads account. You can create multiple campaigns in the same account without creating a new account.\n- [Overview](https://business.google.com/uk/google-ads/)\n- [Goals](https://business.google.com/uk/google-ads/campaign-goals/)\n- [How it works](https://business.google.com/uk/google-ads/how-ads-work/)\n- [Cost](https://business.google.com/uk/google-ads/campaign-budget/)\n- [Articles & case studies](https://business.google.com/uk/resources/)\n- [Expert support](https://business.google.com/uk/support/ads-expert/)\n- Start with foundations\n- [Merchant Center Help shoppers discover and buy your products](https://business.google.com/uk/merchant-center/)\n- [Google Business Profile List your business on Search and Maps](https://business.google.com/uk/business-profile/)\n- Start advertising\n- [Overview Explore all that Google Ads has to offer](https://business.google.com/uk/google-ads/)\n- [How it works Create, set up, and launch a campaign](https://business.google.com/uk/google-ads/how-ads-work/)\n- [Meet your goals Find solutions to meet your advertising goal](https://business.google.com/uk/google-ads/campaign-goals/)\n- [Cost Get the most out of your budget](https://business.google.com/uk/google-ads/campaign-budget/)\n- [Privacy Drive performance with privacy-centric solutions](https://business.google.com/uk/privacy/)\n- Create ads\n- [Performance Max Multiply conversions across Google channels](https://business.google.com/uk/ad-solutions/performance-max/)\n- [YouTube Ads Reach and build connections with engaged viewers](https://business.google.com/uk/ad-solutions/youtube-ads/)\n- [Search Reach people searching for the products or services you offer](https://business.google.com/uk/ad-solutions/search/)\n- [Demand Gen Create and convert new customer demand](https://business.google.com/uk/ad-solutions/demand-generation/)\n- [Display Promote your business where people browse online](https://business.google.com/uk/ad-solutions/display-ads/)\n- [Local Services Ads Attract more local customers](https://business.google.com/uk/ad-solutions/local-service-ads/)\n- [View all](https://business.google.com/uk/ad-solutions/)\n- Ad tools\n- [Manager Accounts Manage multiple ads accounts](https://business.google.com/uk/ad-tools/manage-accounts/)\n- [Keyword Planner Optimise with the right keyword](https://business.google.com/uk/ad-tools/keyword-planner/)\n- [Google Ads Editor Quickly and easily edit campaigns at scale](https://business.google.com/uk/ad-tools/google-ads-editor/)\n- [Google Ads Mobile App Track your campaign anywhere in real-time](https://business.google.com/uk/ad-tools/google-ads-app/)\n- [Reach Planner Customise your YouTube media strategy](https://business.google.com/uk/ad-tools/reach-planner/)\n- [View all](https://business.google.com/uk/ad-tools/)\n- No-cost solutions\n- [Google Analytics Understand your website traffic](https://business.google.com/uk/google-analytics/)\n- [Merchant Center Help shoppers discover and buy your product](https://business.google.com/uk/merchant-center/)\n- [Google Business Profile Get your business on Google](https://business.google.com/uk/business-profile/)\n- Expertise\n- [Think with Google Explore the latest insights and marketing strategies](https://business.google.com/uk/think/)\n- [Accelerate with Google Get a personalised marketing strategy and learning plan](https://business.google.com/uk/accelerate/home/)\n- Partners\n- [Become a partner Gain training, insights, and rewards](https://business.google.com/uk/support/become-a-partner/)\n- [Work with a partner Get expert guidance for your campaign](https://business.google.com/uk/support/work-with-a-partner/)\n- Help\n- [Get expert support Contact us for support with Google Ads](https://business.google.com/uk/support/ads-expert/)\n- [Get help Browse help topics](https://business.google.com/uk/support/)\n- [Manage your Google account](https://myaccount.google.com/)\n- [add Add another account](https://accounts.google.com/AddSession?hl=en&continue=https://business.google.com/)"
+        },
+        {
+          "header": "Add another account",
+          "content": "- [logout Sign out of all accounts](https://accounts.google.com/Logout?continue=https://business.google.com/)\nSign out of all accounts\n- [add Add account](https://accounts.google.com/AddSession?hl=en&continue=https://business.google.com/)"
+        },
+        {
+          "header": "Add account",
+          "content": "- [logout Sign out](https://accounts.google.com/Logout?continue=https://business.google.com/)"
+        },
+        {
+          "header": "Sign out",
+          "content": "Create new Google Ads account\nMore business products from Google"
+        },
+        {
+          "header": "Google Ads",
+          "content": "- [Merchant Center](https://merchants.google.com/mc/default?mcsubid=uk-en-bgc-mc-web!o3&gfr_referral=true&hl=en&fmp=1)"
+        },
+        {
+          "header": "Merchant Center",
+          "content": "- [Google Business Profile](https://business.google.com/?gmbsrc=uk-en-z-z-z-gmb-s-z-u~bgcmhp-sso-u&hl=en&skipLandingPage=true&skipPagesList=1&cbl=sso&cbp=bgc&cbt=sso)\nGoogle Business Profile\n- [Google Analytics](https://analytics.google.com/analytics/?utm_campaign=bgc-website-ga&utm_source=google&utm_medium=ga-organic-website&utm_content=ga-create-account&utm_term=cta-website-ga-organic)"
+        },
+        {
+          "header": "Google Analytics",
+          "content": "Manage your site content preferences\nMarketing profile settings\n- [Privacy Policy](https://policies.google.com/privacy)\n- [Terms of Service](https://myaccount.google.com/termsofservice)\nAccess your Google accounts in one place.\n- [Sign in with Google](https://accounts.google.com/ServiceLogin?&continue=https://business.google.com/)"
+        },
+        {
+          "header": "Want to create a new Google Ads account?",
+          "content": "You're about to create a new Google Ads account. You can create multiple campaigns in the same account without creating a new account.\n- [Schedule a meeting](https://business.google.com/uk/support/schedule-appointment/)\n- [Sign in with Google](https://accounts.google.com/ServiceLogin?&continue=https://business.google.com/)\n- [Google Ads](https://business.google.com/uk/google-ads/)\n- [Goals](https://business.google.com/uk/google-ads/campaign-goals/)\n- [How it works](https://business.google.com/uk/google-ads/how-ads-work/)\n- [Cost](https://business.google.com/uk/google-ads/campaign-budget/)\n- [Articles & case studies](https://business.google.com/uk/resources/)\n- [Expert support](https://business.google.com/uk/support/ads-expert/)\n- [Schedule a meeting](https://business.google.com/uk/support/schedule-appointment/)\n- [Overview](https://business.google.com/uk/google-ads/)\n- [Goals](https://business.google.com/uk/google-ads/campaign-goals/)\n- [How it works](https://business.google.com/uk/google-ads/how-ads-work/)\n- [Cost](https://business.google.com/uk/google-ads/campaign-budget/)\n- [Articles & case studies](https://business.google.com/uk/resources/)\n- [Expert support](https://business.google.com/uk/support/ads-expert/)\n- [Merchant Center Help shoppers discover and buy your products](https://business.google.com/uk/merchant-center/)\n- [Google Business Profile List your business on Search and Maps](https://business.google.com/uk/business-profile/)\n- [Overview Explore all that Google Ads has to offer](https://business.google.com/uk/google-ads/)\n- [How it works Create, set up, and launch a campaign](https://business.google.com/uk/google-ads/how-ads-work/)\n- [Meet your goals Find solutions to meet your advertising goal](https://business.google.com/uk/google-ads/campaign-goals/)\n- [Cost Get the most out of your budget](https://business.google.com/uk/google-ads/campaign-budget/)\n- [Privacy Drive performance with privacy-centric solutions](https://business.google.com/uk/privacy/)\n- [Performance Max Multiply conversions across Google channels](https://business.google.com/uk/ad-solutions/performance-max/)\n- [YouTube Ads Reach and build connections with engaged viewers](https://business.google.com/uk/ad-solutions/youtube-ads/)\n- [Search Reach people searching for the products or services you offer](https://business.google.com/uk/ad-solutions/search/)\n- [Demand Gen Create and convert new customer demand](https://business.google.com/uk/ad-solutions/demand-generation/)\n- [Display Promote your business where people browse online](https://business.google.com/uk/ad-solutions/display-ads/)\n- [Local Services Ads Attract more local customers](https://business.google.com/uk/ad-solutions/local-service-ads/)\n- [View all](https://business.google.com/uk/ad-solutions/)\n- [Manager Accounts Manage multiple ads accounts](https://business.google.com/uk/ad-tools/manage-accounts/)\n- [Keyword Planner Optimise with the right keyword](https://business.google.com/uk/ad-tools/keyword-planner/)\n- [Google Ads Editor Quickly and easily edit campaigns at scale](https://business.google.com/uk/ad-tools/google-ads-editor/)\n- [Google Ads Mobile App Track your campaign anywhere in real-time](https://business.google.com/uk/ad-tools/google-ads-app/)\n- [Reach Planner Customise your YouTube media strategy](https://business.google.com/uk/ad-tools/reach-planner/)\n- [View all](https://business.google.com/uk/ad-tools/)\n- [Google Analytics Understand your website traffic](https://business.google.com/uk/google-analytics/)\n- [Merchant Center Help shoppers discover and buy your product](https://business.google.com/uk/merchant-center/)\n- [Google Business Profile Get your business on Google](https://business.google.com/uk/business-profile/)\n- [Think with Google Explore the latest insights and marketing strategies](https://business.google.com/uk/think/)\n- [Accelerate with Google Get a personalised marketing strategy and learning plan](https://business.google.com/uk/accelerate/home/)\n- [Become a partner Gain training, insights, and rewards](https://business.google.com/uk/support/become-a-partner/)\n- [Work with a partner Get expert guidance for your campaign](https://business.google.com/uk/support/work-with-a-partner/)\n- [Get expert support Contact us for support with Google Ads](https://business.google.com/uk/support/ads-expert/)\n- [Get help Browse help topics](https://business.google.com/uk/support/)"
+        },
+        {
+          "header": "Grow your business with Google Ads",
+          "content": "- Nespresso boosts direct-to-consumer revenue by leveraging AI-powered Search campaigns 25% increase in purchases"
+        },
+        {
+          "header": "Nespresso boosts direct-to-consumer revenue by leveraging AI-powered Search campaigns",
+          "content": "25% increase in purchases\n- Paycor finds new growth paths among mid-market businesses using Google solutions 105% increase in revenue"
+        },
+        {
+          "header": "Paycor finds new growth paths among mid-market businesses using Google solutions",
+          "content": "105% increase in revenue\n- loveholidays earns more profit using Smart Bidding compared to its own solution 57% more profit"
+        },
+        {
+          "header": "loveholidays earns more profit using Smart Bidding compared to its own solution",
+          "content": "57% more profit"
+        },
+        {
+          "header": "Partner with a Google Ads expert to set up your first campaign",
+          "content": "- We’ll get you up to speed on the latest platform updates\n- We’ll design a media plan that makes the most of your budget\n- We’ll help you launch your first campaign with hands-on guidance\n- [Start now](https://business.google.com/uk/support/ads-expert/)"
+        },
+        {
+          "header": "Get started with Smart Bidding",
+          "content": "More than 80% of Google advertisers are using automated bidding.\nOn average, advertisers that switch from a Target CPA to a Target ROAS bid strategy can see 14% more conversion value at a similar return on ad spend.\nMore than 80% of Google advertisers are using automated bidding.\nOn average, advertisers that switch from a Target CPA to a Target ROAS bid strategy can see 14% more conversion value at a similar return on ad spend.\n1 / 2"
+        },
+        {
+          "header": "Learn more about Smart Bidding",
+          "content": "- [Finding success with Smart Bidding](https://support.google.com/google-ads/answer/6167140)\n- [Setting Smarter Search Bids](https://services.google.com/fh/files/misc/setting_smarter_search_bids_2021.pdf)\n- [Bid strategy report for automated bidding strategies](https://support.google.com/google-ads/answer/7074566)\nPage number 1 / 3"
+        },
+        {
+          "header": "Conversion Measurement",
+          "content": "Prioritise privacy while measuring which ads drive customers to make purchases online or in-store, sign contracts and more.\n- [Learn more](https://business.google.com/uk/ad-tools/conversion-tracking/)"
+        },
+        {
+          "header": "Insights Page",
+          "content": "Grow your business with insights and trends that are tailored to your business.\n- [Learn more](https://business.google.com/uk/ad-tools/audience-insights/)"
+        },
+        {
+          "header": "Experiments Page",
+          "content": "The Experiments page in Google Ads can help you create, manage and optimise your experiments in one place.\n- [Learn more](https://business.google.com/uk/ad-tools/google-ad-experiments/)"
+        },
+        {
+          "header": "What is bidding in Google Ads? add remove",
+          "content": "- [the Understanding bidding basics page](https://support.google.com/google-ads/answer/2459326?hl=en-UK&sjid=3006212573788294621-NA)"
+        },
+        {
+          "header": "What is the best bidding strategy for Google Ads? add remove",
+          "content": "- Manual bidding, which allows you to determine what you want to pay\n- Smart Bidding, which uses Google AI to optimise your bids at every auction based on your defined objective\n- [the Determine a bid strategy based on your goals page](https://support.google.com/google-ads/answer/2472725?hl=en-UK&sjid=3006212573788294621-NA)"
+        },
+        {
+          "header": "How do I decide how much to bid on Google Ads? add remove",
+          "content": "- Your campaign type\n- How much your keywords cost\n- How successful your keywords are\n- [the Choose a bid amount that works for you page](https://support.google.com/google-ads/answer/2471184?hl=en)"
+        },
+        {
+          "header": "What is the minimum bid for Google Ads? add remove",
+          "content": "- [the Choose a bid amount that works for you page](https://support.google.com/google-ads/answer/2471184?hl=en-UK&sjid=3006212573788294621-NA)"
+        },
+        {
+          "header": "How can automated bidding help an advertiser improve campaign performance? add remove",
+          "content": "- Get as many clicks as possible within your budget\n- Get as many conversions as possible within your target CPA\n- Meet your ROAS target\n- Get the most conversions or conversion value for your budget\n- [the About automated bidding page](https://support.google.com/google-ads/answer/2979071?hl=en&sjid=3006212573788294621-NA)"
+        },
+        {
+          "header": "Products",
+          "content": "- [Google Ads](https://business.google.com/uk/google-ads/)\n- [YouTube Ads](https://business.google.com/uk/ad-solutions/youtube-ads/)\n- [Merchant Center](https://business.google.com/uk/merchant-center/)\n- [Business Profile](https://business.google.com/uk/business-profile/)\n- [Google Analytics](https://business.google.com/uk/google-analytics/)\n- [Manufacturer Center](https://business.google.com/uk/merchant-center/manufacturer-center/)"
+        },
+        {
+          "header": "Learning and support",
+          "content": "- [Accelerate with Google](https://business.google.com/uk/accelerate/home/)\n- [Think with Google](https://business.google.com/uk/think/)\n- [Google Ads Help Center](https://support.google.com/google-ads/#topic=10286612&utm_source=smb_marketing&utm_medium=referral&utm_campaign=uk-en-et-awhp-footer&utm_content=)\n- [Your guide to Merchant Center](https://support.google.com/merchants/answer/12159157)\n- [Your guide to Google Ads](https://support.google.com/google-ads/answer/6146252?utm_medium=et&utm_campaign=en&utm_source=ww-ww-et-b2bfooter_adwords)\n- [Google Advertiser Community](https://support.google.com/google-ads/community?ctx=lithium)"
+        },
+        {
+          "header": "Partners and developers",
+          "content": "- [Google Partners](https://partnersdirectory.withgoogle.com/?premier=true)\n- [Google Developers site](https://developers.google.com/)\n- [Google Ads Scripts](https://developers.google.com/google-ads/scripts/docs/start)\n- [Google Ads Remarketing Tags](https://support.google.com/google-ads/answer/2476688)\n- [Google Ads API](https://business.google.com/uk/ad-tools/google-ads-api/)"
+        },
+        {
+          "header": "More solutions",
+          "content": "- [Workspace](https://workspace.google.com/)\n- [Chrome](https://www.google.com/chrome/)\n- [Google Cloud](https://cloud.google.com/)\n- [AdSense](https://adsense.google.com/start/)\n- [AdMob](https://admob.google.com/home/get-started/)\nActual results will vary by advertiser.\n- [About Google](https://www.google.com/intl/en/about)\n- [Google products](https://www.google.com/intl/en/about/products)\n- [Privacy](https://policies.google.com/privacy?authuser=0)\n- [Terms](https://policies.google.com/terms)\n- [Help](https://support.google.com/google-ads/)\n- Australia and New Zealand - English Brasil - Português (Brasil) Canada - English Canada - Français Česká Republika - Čeština Deutschland - Deutsch English (Global) España - Español Español (Latinoamérica) France - Français India - English Indonesia - Bahasa Indonesia Italia - Italiano Nederland - Nederlands Polska - Polski Русский România - Română Sverige - Svenska Türkiye - Türkçe United Kingdom - English United States - English Việt Nam - Tiếng Việt ישראל - עברית العربية 简体中文 繁體中文 日本 - 日本語 대한민국 - 한국어 ไทย - ไทย Україна - Українська"
+        }
+      ]
+    },
+    {
+      "title": "Tips & Resources for Online Advertising – Google Ads",
+      "metadata": {
+        "source": "https://business.google.com/uk/resources/",
+        "analyzedAt": "2026-06-04T17:41:35.637Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": [
+        {
+          "header": "Add another account",
+          "content": "- [logout Sign out of all accounts](https://accounts.google.com/Logout?continue=https://business.google.com/)\nSign out of all accounts\n- [add Add account](https://accounts.google.com/AddSession?hl=en&continue=https://business.google.com/)"
+        },
+        {
+          "header": "Add account",
+          "content": "- [logout Sign out](https://accounts.google.com/Logout?continue=https://business.google.com/)"
+        },
+        {
+          "header": "Sign out",
+          "content": "Create new Google Ads account\nMore business products from Google"
+        },
+        {
+          "header": "Google Ads",
+          "content": "- [Merchant Center](https://merchants.google.com/mc/default?mcsubid=uk-en-bgc-mc-web!o3&gfr_referral=true&hl=en&fmp=1)"
+        },
+        {
+          "header": "Merchant Center",
+          "content": "- [Google Business Profile](https://business.google.com/?gmbsrc=uk-en-z-z-z-gmb-s-z-u~bgcmhp-sso-u&hl=en&skipLandingPage=true&skipPagesList=1&cbl=sso&cbp=bgc&cbt=sso)\nGoogle Business Profile\n- [Google Analytics](https://analytics.google.com/analytics/?utm_campaign=bgc-website-ga&utm_source=google&utm_medium=ga-organic-website&utm_content=ga-create-account&utm_term=cta-website-ga-organic)"
+        },
+        {
+          "header": "Google Analytics",
+          "content": "Manage your site content preferences\nMarketing profile settings\n- [Privacy Policy](https://policies.google.com/privacy)\n- [Terms of Service](https://myaccount.google.com/termsofservice)\nAccess your Google accounts in one place.\n- [Sign in with Google](https://accounts.google.com/ServiceLogin?&continue=https://business.google.com/)"
+        },
+        {
+          "header": "Want to create a new Google Ads account?",
+          "content": "You're about to create a new Google Ads account. You can create multiple campaigns in the same account without creating a new account.\n- [Overview](https://business.google.com/uk/google-ads/)\n- [Goals](https://business.google.com/uk/google-ads/campaign-goals/)\n- [How it works](https://business.google.com/uk/google-ads/how-ads-work/)\n- [Cost](https://business.google.com/uk/google-ads/campaign-budget/)\n- [Articles & case studies](https://business.google.com/uk/resources/)\n- [Expert support](https://business.google.com/uk/support/ads-expert/)\n- Start with foundations\n- [Merchant Center Help shoppers discover and buy your products](https://business.google.com/uk/merchant-center/)\n- [Google Business Profile List your business on Search and Maps](https://business.google.com/uk/business-profile/)\n- Start advertising\n- [Overview Explore all that Google Ads has to offer](https://business.google.com/uk/google-ads/)\n- [How it works Create, set up, and launch a campaign](https://business.google.com/uk/google-ads/how-ads-work/)\n- [Meet your goals Find solutions to meet your advertising goal](https://business.google.com/uk/google-ads/campaign-goals/)\n- [Cost Get the most out of your budget](https://business.google.com/uk/google-ads/campaign-budget/)\n- [Privacy Drive performance with privacy-centric solutions](https://business.google.com/uk/privacy/)\n- Create ads\n- [Performance Max Multiply conversions across Google channels](https://business.google.com/uk/ad-solutions/performance-max/)\n- [YouTube Ads Reach and build connections with engaged viewers](https://business.google.com/uk/ad-solutions/youtube-ads/)\n- [Search Reach people searching for the products or services you offer](https://business.google.com/uk/ad-solutions/search/)\n- [Demand Gen Create and convert new customer demand](https://business.google.com/uk/ad-solutions/demand-generation/)\n- [Display Promote your business where people browse online](https://business.google.com/uk/ad-solutions/display-ads/)\n- [Local Services Ads Attract more local customers](https://business.google.com/uk/ad-solutions/local-service-ads/)\n- [View all](https://business.google.com/uk/ad-solutions/)\n- Ad tools\n- [Manager Accounts Manage multiple ads accounts](https://business.google.com/uk/ad-tools/manage-accounts/)\n- [Keyword Planner Optimise with the right keyword](https://business.google.com/uk/ad-tools/keyword-planner/)\n- [Google Ads Editor Quickly and easily edit campaigns at scale](https://business.google.com/uk/ad-tools/google-ads-editor/)\n- [Google Ads Mobile App Track your campaign anywhere in real-time](https://business.google.com/uk/ad-tools/google-ads-app/)\n- [Reach Planner Customise your YouTube media strategy](https://business.google.com/uk/ad-tools/reach-planner/)\n- [View all](https://business.google.com/uk/ad-tools/)\n- No-cost solutions\n- [Google Analytics Understand your website traffic](https://business.google.com/uk/google-analytics/)\n- [Merchant Center Help shoppers discover and buy your product](https://business.google.com/uk/merchant-center/)\n- [Google Business Profile Get your business on Google](https://business.google.com/uk/business-profile/)\n- Expertise\n- [Think with Google Explore the latest insights and marketing strategies](https://business.google.com/uk/think/)\n- [Accelerate with Google Get a personalised marketing strategy and learning plan](https://business.google.com/uk/accelerate/home/)\n- Partners\n- [Become a partner Gain training, insights, and rewards](https://business.google.com/uk/support/become-a-partner/)\n- [Work with a partner Get expert guidance for your campaign](https://business.google.com/uk/support/work-with-a-partner/)\n- Help\n- [Get expert support Contact us for support with Google Ads](https://business.google.com/uk/support/ads-expert/)\n- [Get help Browse help topics](https://business.google.com/uk/support/)\n- [Manage your Google account](https://myaccount.google.com/)\n- [add Add another account](https://accounts.google.com/AddSession?hl=en&continue=https://business.google.com/)"
+        },
+        {
+          "header": "Add another account",
+          "content": "- [logout Sign out of all accounts](https://accounts.google.com/Logout?continue=https://business.google.com/)\nSign out of all accounts\n- [add Add account](https://accounts.google.com/AddSession?hl=en&continue=https://business.google.com/)"
+        },
+        {
+          "header": "Add account",
+          "content": "- [logout Sign out](https://accounts.google.com/Logout?continue=https://business.google.com/)"
+        },
+        {
+          "header": "Sign out",
+          "content": "Create new Google Ads account\nMore business products from Google"
+        },
+        {
+          "header": "Google Ads",
+          "content": "- [Merchant Center](https://merchants.google.com/mc/default?mcsubid=uk-en-bgc-mc-web!o3&gfr_referral=true&hl=en&fmp=1)"
+        },
+        {
+          "header": "Merchant Center",
+          "content": "- [Google Business Profile](https://business.google.com/?gmbsrc=uk-en-z-z-z-gmb-s-z-u~bgcmhp-sso-u&hl=en&skipLandingPage=true&skipPagesList=1&cbl=sso&cbp=bgc&cbt=sso)\nGoogle Business Profile\n- [Google Analytics](https://analytics.google.com/analytics/?utm_campaign=bgc-website-ga&utm_source=google&utm_medium=ga-organic-website&utm_content=ga-create-account&utm_term=cta-website-ga-organic)"
+        },
+        {
+          "header": "Google Analytics",
+          "content": "Manage your site content preferences\nMarketing profile settings\n- [Privacy Policy](https://policies.google.com/privacy)\n- [Terms of Service](https://myaccount.google.com/termsofservice)\nAccess your Google accounts in one place.\n- [Sign in with Google](https://accounts.google.com/ServiceLogin?&continue=https://business.google.com/)"
+        },
+        {
+          "header": "Want to create a new Google Ads account?",
+          "content": "You're about to create a new Google Ads account. You can create multiple campaigns in the same account without creating a new account.\n- [Schedule a meeting](https://business.google.com/uk/support/schedule-appointment/)\n- [Sign in with Google](https://accounts.google.com/ServiceLogin?&continue=https://business.google.com/)\n- [Google Ads](https://business.google.com/uk/google-ads/)\n- [Goals](https://business.google.com/uk/google-ads/campaign-goals/)\n- [How it works](https://business.google.com/uk/google-ads/how-ads-work/)\n- [Cost](https://business.google.com/uk/google-ads/campaign-budget/)\n- [Articles & case studies](https://business.google.com/uk/resources/)\n- [Expert support](https://business.google.com/uk/support/ads-expert/)\n- [Schedule a meeting](https://business.google.com/uk/support/schedule-appointment/)\n- [Overview](https://business.google.com/uk/google-ads/)\n- [Goals](https://business.google.com/uk/google-ads/campaign-goals/)\n- [How it works](https://business.google.com/uk/google-ads/how-ads-work/)\n- [Cost](https://business.google.com/uk/google-ads/campaign-budget/)\n- [Articles & case studies](https://business.google.com/uk/resources/)\n- [Expert support](https://business.google.com/uk/support/ads-expert/)\n- [Merchant Center Help shoppers discover and buy your products](https://business.google.com/uk/merchant-center/)\n- [Google Business Profile List your business on Search and Maps](https://business.google.com/uk/business-profile/)\n- [Overview Explore all that Google Ads has to offer](https://business.google.com/uk/google-ads/)\n- [How it works Create, set up, and launch a campaign](https://business.google.com/uk/google-ads/how-ads-work/)\n- [Meet your goals Find solutions to meet your advertising goal](https://business.google.com/uk/google-ads/campaign-goals/)\n- [Cost Get the most out of your budget](https://business.google.com/uk/google-ads/campaign-budget/)\n- [Privacy Drive performance with privacy-centric solutions](https://business.google.com/uk/privacy/)\n- [Performance Max Multiply conversions across Google channels](https://business.google.com/uk/ad-solutions/performance-max/)\n- [YouTube Ads Reach and build connections with engaged viewers](https://business.google.com/uk/ad-solutions/youtube-ads/)\n- [Search Reach people searching for the products or services you offer](https://business.google.com/uk/ad-solutions/search/)\n- [Demand Gen Create and convert new customer demand](https://business.google.com/uk/ad-solutions/demand-generation/)\n- [Display Promote your business where people browse online](https://business.google.com/uk/ad-solutions/display-ads/)\n- [Local Services Ads Attract more local customers](https://business.google.com/uk/ad-solutions/local-service-ads/)\n- [View all](https://business.google.com/uk/ad-solutions/)\n- [Manager Accounts Manage multiple ads accounts](https://business.google.com/uk/ad-tools/manage-accounts/)\n- [Keyword Planner Optimise with the right keyword](https://business.google.com/uk/ad-tools/keyword-planner/)\n- [Google Ads Editor Quickly and easily edit campaigns at scale](https://business.google.com/uk/ad-tools/google-ads-editor/)\n- [Google Ads Mobile App Track your campaign anywhere in real-time](https://business.google.com/uk/ad-tools/google-ads-app/)\n- [Reach Planner Customise your YouTube media strategy](https://business.google.com/uk/ad-tools/reach-planner/)\n- [View all](https://business.google.com/uk/ad-tools/)\n- [Google Analytics Understand your website traffic](https://business.google.com/uk/google-analytics/)\n- [Merchant Center Help shoppers discover and buy your product](https://business.google.com/uk/merchant-center/)\n- [Google Business Profile Get your business on Google](https://business.google.com/uk/business-profile/)\n- [Think with Google Explore the latest insights and marketing strategies](https://business.google.com/uk/think/)\n- [Accelerate with Google Get a personalised marketing strategy and learning plan](https://business.google.com/uk/accelerate/home/)\n- [Become a partner Gain training, insights, and rewards](https://business.google.com/uk/support/become-a-partner/)\n- [Work with a partner Get expert guidance for your campaign](https://business.google.com/uk/support/work-with-a-partner/)\n- [Get expert support Contact us for support with Google Ads](https://business.google.com/uk/support/ads-expert/)\n- [Get help Browse help topics](https://business.google.com/uk/support/)"
+        },
+        {
+          "header": "Product type",
+          "content": "- Google Ads\n- YouTube Ads"
+        },
+        {
+          "header": "Campaign type",
+          "content": "- App\n- Display\n- Multiple campaigns\n- Performance Max\n- Search\n- Video/YouTube"
+        },
+        {
+          "header": "Content type",
+          "content": "- Article\n- Success story"
+        },
+        {
+          "header": "Industry",
+          "content": "- eCommerce\n- Food & beverage\n- Wholesale retail"
+        },
+        {
+          "header": "Marketing level",
+          "content": "- Beginner\n- Expert\n- Intermediate"
+        },
+        {
+          "header": "Marketing goal",
+          "content": "- App\n- Brand awareness\n- Generate leads\n- Increase website traffic\n- Multiple marketing goals\n- Offline sales\n- Online sales\n- [Google Ads The Best Paid SEO Strategies for Businesses Article](https://business.google.com/uk/resources/articles/seo-vs-ppc/)"
+        },
+        {
+          "header": "The Best Paid SEO Strategies for Businesses",
+          "content": "- [YouTube Ads ABCDs of effective video ads Article](https://business.google.com/uk/resources/articles/abcds-of-effective-video-ads/)"
+        },
+        {
+          "header": "ABCDs of effective video ads",
+          "content": "- [Google Ads 10 tips for Google Ads budget management Article](https://business.google.com/uk/resources/articles/stretching-your-google-ads-budget/)"
+        },
+        {
+          "header": "10 tips for Google Ads budget management",
+          "content": "- [Google Ads How can you write successful online ads with Google? Article](https://business.google.com/uk/resources/articles/write-online-ads/)"
+        },
+        {
+          "header": "How can you write successful online ads with Google?",
+          "content": "- [Google Ads 5 ways to create better ad copy by utilising AI Article](https://business.google.com/uk/resources/articles/5-ways-to-create-effective-ad-copy-with-AI/)"
+        },
+        {
+          "header": "5 ways to create better ad copy by utilising AI",
+          "content": "- [Google Ads How to make your products stand out to shoppers on Google Ads Article](https://business.google.com/uk/resources/articles/make-products-standout-to-shoppers/)"
+        },
+        {
+          "header": "How to make your products stand out to shoppers on Google Ads",
+          "content": "- [Google Ads How assets can help you connect with valuable customers Article](https://business.google.com/uk/resources/articles/improve-search-ads-with-assets/)"
+        },
+        {
+          "header": "How assets can help you connect with valuable customers",
+          "content": "- [Google Ads How to use the Keyword Planner tool effectively Article](https://business.google.com/uk/resources/articles/using-google-ads-keyword-planner/)"
+        },
+        {
+          "header": "How to use the Keyword Planner tool effectively",
+          "content": "- [Google Ads Reach a larger or new audience with Google Display Network (GDN) targeting Article](https://business.google.com/uk/resources/articles/reach-larger-new-audiences/)"
+        },
+        {
+          "header": "Reach a larger or new audience with Google Display Network (GDN) targeting",
+          "content": "- [Google Ads What are people searching for online? Article](https://business.google.com/uk/resources/articles/what-are-people-searching/)"
+        },
+        {
+          "header": "What are people searching for online?",
+          "content": "- [Google Ads What is paid search? Article](https://business.google.com/uk/resources/articles/what-is-paid-search/)"
+        },
+        {
+          "header": "What is paid search?",
+          "content": "- [Google Ads Billing and payments in Google Ads Article](https://business.google.com/uk/resources/articles/basics-of-google-ads-billing-and-payments/)"
+        },
+        {
+          "header": "Billing and payments in Google Ads",
+          "content": "- [Google Ads 5 things to consider when optimising your mobile landing page Article](https://business.google.com/uk/resources/articles/mobile-landing-page/)"
+        },
+        {
+          "header": "5 things to consider when optimising your mobile landing page",
+          "content": "- [Google Ads 10 Google Ads features that will grow your business Article](https://business.google.com/uk/resources/articles/10-key-features-for-growth/)"
+        },
+        {
+          "header": "10 Google Ads features that will grow your business",
+          "content": "- [Google Ads Understand intent to place ads more effectively Article](https://business.google.com/uk/resources/articles/use-google-ads-to-understand-your-audiences-intent/)"
+        },
+        {
+          "header": "Understand intent to place ads more effectively",
+          "content": "- [Google Ads 4 Google Ads features to improve your keyword strategy Article](https://business.google.com/uk/resources/articles/4-features-to-improve-keyword-strategy/)"
+        },
+        {
+          "header": "4 Google Ads features to improve your keyword strategy",
+          "content": "- [Google Ads 4:42 Best Practices Guide: Reaching the right customers on Search Article](https://business.google.com/uk/resources/articles/reaching-the-right-customers-on-search/)"
+        },
+        {
+          "header": "Best Practices Guide: Reaching the right customers on Search",
+          "content": "- [Google Ads Analytics in Google Ads Article](https://business.google.com/uk/resources/articles/how-to-analyze-google-ads-successfully/)"
+        },
+        {
+          "header": "Analytics in Google Ads",
+          "content": "- [Google Ads 6:24 Best Practices Guide: Google AI for Video Advertising Article](https://business.google.com/uk/resources/articles/build-awareness-with-video/)"
+        },
+        {
+          "header": "Best Practices Guide: Google AI for Video Advertising",
+          "content": "- [Google Ads How to set up Google Ads: a checklist Article](https://business.google.com/uk/resources/articles/how-to-setup-google-ads-a-checklist/)"
+        },
+        {
+          "header": "How to set up Google Ads: a checklist",
+          "content": "- [YouTube Ads With help from TrueView for action, Nectar by Resident’s sales rise and shine Success story](https://business.google.com/uk/resources/success-stories/nectar-a-resident-company/)"
+        },
+        {
+          "header": "With help from TrueView for action, Nectar by Resident’s sales rise and shine",
+          "content": "- [Google Ads How any business can grow online with Local Services Ads Article](https://business.google.com/uk/resources/articles/build-online-presence-with-local-services-ads/)"
+        },
+        {
+          "header": "How any business can grow online with Local Services Ads",
+          "content": "- [Google Ads How to set up conversion measurement on your website Article](https://business.google.com/uk/resources/articles/conversion-measurement/)"
+        },
+        {
+          "header": "How to set up conversion measurement on your website",
+          "content": "- [Google Ads Save time and drive efficiency with responsive display ads Article](https://business.google.com/uk/resources/articles/responsive-display-ads/)"
+        },
+        {
+          "header": "Save time and drive efficiency with responsive display ads",
+          "content": "- [Google Ads 00:30 Currensea boosts customer acquisition 422%, with help of Google Search Success story](https://business.google.com/uk/resources/success-stories/currensea/)"
+        },
+        {
+          "header": "Currensea boosts customer acquisition 422%, with help of Google Search",
+          "content": "- [Google Ads How to unlock the value of your creative assets with Google Ads Article](https://business.google.com/uk/resources/articles/unlock-value-of-creative-assets/)"
+        },
+        {
+          "header": "How to unlock the value of your creative assets with Google Ads",
+          "content": "- [Google Ads 00:30 A strong brew: Bird & Blend sees 439% ROAS through Google Ads Success story](https://business.google.com/uk/resources/success-stories/bird-and-blend/)"
+        },
+        {
+          "header": "A strong brew: Bird & Blend sees 439% ROAS through Google Ads",
+          "content": "- [Google Ads 0:30 LØCI achieves 500% ROAS with Google Ads Success story](https://business.google.com/uk/resources/success-stories/loci/)"
+        },
+        {
+          "header": "LØCI achieves 500% ROAS with Google Ads",
+          "content": "- [Google Ads Kinetica Sports’ full-funnel campaign hits 267% increase in ROAS, with help from Google Ads. Success story](https://business.google.com/uk/resources/success-stories/kinetica-sports/)"
+        },
+        {
+          "header": "Kinetica Sports’ full-funnel campaign hits 267% increase in ROAS, with help from Google Ads.",
+          "content": "- [How experimenting with their Google Ads Strategy helped Octopus Energy sign up over 2 million customers Success story](https://business.google.com/uk/resources/success-stories/octopus-energy/)"
+        },
+        {
+          "header": "How experimenting with their Google Ads Strategy helped Octopus Energy sign up over 2 million customers",
+          "content": "- [Google Ads Best Practices Guide: AI Essentials in Google Ads Article](https://business.google.com/uk/resources/articles/ai-essentials/)"
+        },
+        {
+          "header": "Best Practices Guide: AI Essentials in Google Ads",
+          "content": "- [Google Ads A beginners’ guide to YouTube video ads: Drive action with video advertising Article](https://business.google.com/uk/resources/articles/beginners-guide-youtube-ads/)"
+        },
+        {
+          "header": "A beginners’ guide to YouTube video ads: Drive action with video advertising",
+          "content": "- [Google Ads Get better results across all Google Ads channels with Performance Max campaigns Article](https://business.google.com/uk/resources/articles/benefits-of-performance-max/)"
+        },
+        {
+          "header": "Get better results across all Google Ads channels with Performance Max campaigns",
+          "content": "- [Google Ads Understanding demand: How search data can improve your marketing performance Article](https://business.google.com/uk/resources/articles/how-search-data-improves-marketing-performance/)"
+        },
+        {
+          "header": "Understanding demand: How search data can improve your marketing performance",
+          "content": "- [Google Ads 00:30 How fashion brand Never Fully Dressed achieved 890% ROAS through Google Ads Success story](https://business.google.com/uk/resources/success-stories/never-fully-dressed/)"
+        },
+        {
+          "header": "How fashion brand Never Fully Dressed achieved 890% ROAS through Google Ads",
+          "content": "- [Google Ads A guide to keyword match types in Google Ads Article](https://business.google.com/uk/resources/articles/guide-to-keyword-match-types/)"
+        },
+        {
+          "header": "A guide to keyword match types in Google Ads",
+          "content": "- [Google Ads 00:30 Lucy & Yak sees 233% increase in revenue through Google Ads Success story](https://business.google.com/uk/resources/success-stories/lucy-and-yak/)"
+        },
+        {
+          "header": "Lucy & Yak sees 233% increase in revenue through Google Ads",
+          "content": "- [Google Ads The perfect fit: Farai London scales by 400% with Google Ads Success story](https://business.google.com/uk/resources/success-stories/farai-london/)"
+        },
+        {
+          "header": "The perfect fit: Farai London scales by 400% with Google Ads",
+          "content": "- [Google Ads Build trust online: How the Google Guarantee works Article](https://business.google.com/uk/resources/articles/build-trust-online/)"
+        },
+        {
+          "header": "Build trust online: How the Google Guarantee works",
+          "content": "- [Google Ads A guide to App campaigns on Google Ads Article](https://business.google.com/uk/resources/articles/driving-loyalty-through-app-campaigns/)"
+        },
+        {
+          "header": "A guide to App campaigns on Google Ads",
+          "content": "- [How optimisation helped PensionBee triple their customer base Success story](https://business.google.com/uk/resources/success-stories/pensionbee/)"
+        },
+        {
+          "header": "How optimisation helped PensionBee triple their customer base",
+          "content": "- [Google Ads 3 consumer shifts to influence your retail paid search strategy Article](https://business.google.com/uk/resources/articles/how-consumer-shifts-impact-your-paid-search-strategy/)"
+        },
+        {
+          "header": "3 consumer shifts to influence your retail paid search strategy",
+          "content": "- [Google Ads Drive awareness and conversions: Cover the entire marketing funnel with Google Display Ads Article](https://business.google.com/uk/resources/articles/full-funnel-marketing-with-google-display-ads/)"
+        },
+        {
+          "header": "Drive awareness and conversions: Cover the entire marketing funnel with Google Display Ads",
+          "content": "- [Google Ads What is Google Customer Match, and how can it help you reach valuable audiences online? Article](https://business.google.com/uk/resources/articles/how-to-drive-ad-performance-with-customer-match/)"
+        },
+        {
+          "header": "What is Google Customer Match, and how can it help you reach valuable audiences online?",
+          "content": "- [Google Ads Spark interest and inspire action: What are Demand Gen campaigns? Article](https://business.google.com/uk/resources/articles/what-are-google-demand-gen-campaigns/)"
+        },
+        {
+          "header": "Spark interest and inspire action: What are Demand Gen campaigns?",
+          "content": "- [Google Ads Get more leads with less effort: a guide to lead form assets Article](https://business.google.com/uk/resources/articles/generate-more-leads-with-lead-form-assets/)"
+        },
+        {
+          "header": "Get more leads with less effort: a guide to lead form assets",
+          "content": "- [Google Ads How to tailor your ads to reach customers at every stage of their purchase journey Article](https://business.google.com/uk/resources/articles/how-to-tailor-your-online-campaigns-and-win-business/)"
+        },
+        {
+          "header": "How to tailor your ads to reach customers at every stage of their purchase journey",
+          "content": "- [Google Ads How to save time and boost results with automated bidding Article](https://business.google.com/uk/resources/articles/maximise-your-ad-budget-with-automated-bidding/)"
+        },
+        {
+          "header": "How to save time and boost results with automated bidding",
+          "content": "- [Google Ads How to improve your Google Ads Quality Score Article](https://business.google.com/uk/resources/articles/three-ways-to-improve-your-quality-score/)"
+        },
+        {
+          "header": "How to improve your Google Ads Quality Score",
+          "content": "- [Google Ads From browsing to buying: 7 Search strategies to win new customers Article](https://business.google.com/uk/resources/articles/7-search-tips-to-boost-your-digital-ad-campaigns/)"
+        },
+        {
+          "header": "From browsing to buying: 7 Search strategies to win new customers",
+          "content": "- [Google Ads How to increase website traffic and lead generation with Google Ads Article](https://business.google.com/uk/resources/articles/how-to-increase-website-traffic-and-leads/)"
+        },
+        {
+          "header": "How to increase website traffic and lead generation with Google Ads",
+          "content": "- [Google Ads How audience segments can help you find and reach the right customers at the right time Article](https://business.google.com/uk/resources/articles/improve-your-advertising-with-audience-segments/)"
+        },
+        {
+          "header": "How audience segments can help you find and reach the right customers at the right time",
+          "content": "- [Google Ads Enhanced conversions: Measure ad performance while protecting people’s privacy Article](https://business.google.com/uk/resources/articles/privacy-in-ad-performance-with-enhanced-conversions/)"
+        },
+        {
+          "header": "Enhanced conversions: Measure ad performance while protecting people’s privacy",
+          "content": "- [Google Ads Discover Mobile Advertising with Google Ads Article](https://business.google.com/uk/resources/articles/reach-your-customers-with-google-mobile-ads/)"
+        },
+        {
+          "header": "Discover Mobile Advertising with Google Ads",
+          "content": "- [Google Ads Boost your business by advertising on Google Maps Article](https://business.google.com/uk/resources/articles/get-the-most-out-of-advertising-on-google-maps/)"
+        },
+        {
+          "header": "Boost your business by advertising on Google Maps",
+          "content": "- [YouTube Ads Bellroy grows sales with shoppable Video action campaigns and value-based bidding Success story](https://business.google.com/uk/resources/success-stories/bellroy/)"
+        },
+        {
+          "header": "Bellroy grows sales with shoppable Video action campaigns and value-based bidding",
+          "content": "- [Google Ads Navigating the B2B marketing funnel with Google Ads Article](https://business.google.com/uk/resources/articles/explore-the-b2b-marketing-funnel-with-google-ads/)"
+        },
+        {
+          "header": "Navigating the B2B marketing funnel with Google Ads",
+          "content": "- [YouTube Ads Majestic Heli Ski get nearly half of their new skiers from YouTube Success story](https://business.google.com/uk/resources/success-stories/majestic-heli-ski/)"
+        },
+        {
+          "header": "Majestic Heli Ski get nearly half of their new skiers from YouTube",
+          "content": "- [YouTube Ads BlendJet’s YouTube strategy led to 413% revenue growth Success story](https://business.google.com/uk/resources/success-stories/blendjet/)"
+        },
+        {
+          "header": "BlendJet’s YouTube strategy led to 413% revenue growth",
+          "content": "- [YouTube Ads Adidas uses sequencing to move customers from awareness to consideration Success story](https://business.google.com/uk/resources/success-stories/adidas/)"
+        },
+        {
+          "header": "Adidas uses sequencing to move customers from awareness to consideration",
+          "content": "- [Google Ads Beyond the last click: Using attribution models to understand your Google Ads performance Article](https://business.google.com/uk/resources/articles/understanding-sales-journeys-with-attribution-models/)"
+        },
+        {
+          "header": "Beyond the last click: Using attribution models to understand your Google Ads performance",
+          "content": "- [YouTube Ads Pringles masters tentpole marketing moments with TrueView for reach Success story](https://business.google.com/uk/resources/success-stories/pringles/)"
+        },
+        {
+          "header": "Pringles masters tentpole marketing moments with TrueView for reach",
+          "content": "- [YouTube Ads Measure your results Article](https://business.google.com/uk/resources/articles/measure-your-results/)"
+        },
+        {
+          "header": "Measure your results",
+          "content": "- [YouTube Ads Xfinity Mobile turns data into dollars Success story](https://business.google.com/uk/resources/success-stories/xfinity/)"
+        },
+        {
+          "header": "Xfinity Mobile turns data into dollars",
+          "content": "- [Google Ads Maximise your ROI: How to get started with value-based bidding on Google Ads Article](https://business.google.com/uk/resources/articles/increase-your-roi-with-value-based-bidding/)"
+        },
+        {
+          "header": "Maximise your ROI: How to get started with value-based bidding on Google Ads",
+          "content": "- [YouTube Ads Video action campaigns on YouTube Shorts helped Cider gain new customers at a 33% lower CPA Success story](https://business.google.com/uk/resources/success-stories/cider/)"
+        },
+        {
+          "header": "Video action campaigns on YouTube Shorts helped Cider gain new customers at a 33% lower CPA",
+          "content": "- [Google Ads A foundation for success: How to structure your Google Ads account for growth on Search with AI Article](https://business.google.com/uk/resources/articles/account-structures-for-search-growth-with-ai/)"
+        },
+        {
+          "header": "A foundation for success: How to structure your Google Ads account for growth on Search with AI",
+          "content": "- [Google Ads Paid search optimisation in the age of AI-powered marketing: How advertisers can stand out? Article](https://business.google.com/uk/resources/articles/how-to-get-the-edge-with-ai-on-paid-search/)"
+        },
+        {
+          "header": "Paid search optimisation in the age of AI-powered marketing: How advertisers can stand out?",
+          "content": "- [Google Ads 5 ways to use Google AI for more effective advertising Article](https://business.google.com/uk/resources/articles/5-tips-for-more-effective-advertising-with-google-ai/)"
+        },
+        {
+          "header": "5 ways to use Google AI for more effective advertising",
+          "content": "- [Google Ads Simplifying multi-account management: Streamline your workflow with a Google Ads manager account Article](https://business.google.com/uk/resources/articles/how-to-streamline-multi-account-management/)"
+        },
+        {
+          "header": "Products",
+          "content": "- [Google Ads](https://business.google.com/uk/google-ads/)\n- [YouTube Ads](https://business.google.com/uk/ad-solutions/youtube-ads/)\n- [Merchant Center](https://business.google.com/uk/merchant-center/)\n- [Business Profile](https://business.google.com/uk/business-profile/)\n- [Google Analytics](https://business.google.com/uk/google-analytics/)\n- [Manufacturer Center](https://business.google.com/uk/merchant-center/manufacturer-center/)"
+        },
+        {
+          "header": "Learning and support",
+          "content": "- [Accelerate with Google](https://business.google.com/uk/accelerate/home/)\n- [Think with Google](https://business.google.com/uk/think/)\n- [Google Ads Help Center](https://support.google.com/google-ads/#topic=10286612&utm_source=smb_marketing&utm_medium=referral&utm_campaign=uk-en-et-awhp-footer&utm_content=)\n- [Your guide to Merchant Center](https://support.google.com/merchants/answer/12159157)\n- [Your guide to Google Ads](https://support.google.com/google-ads/answer/6146252?utm_medium=et&utm_campaign=en&utm_source=ww-ww-et-b2bfooter_adwords)\n- [Google Advertiser Community](https://support.google.com/google-ads/community?ctx=lithium)"
+        },
+        {
+          "header": "Partners and developers",
+          "content": "- [Google Partners](https://partnersdirectory.withgoogle.com/?premier=true)\n- [Google Developers site](https://developers.google.com/)\n- [Google Ads Scripts](https://developers.google.com/google-ads/scripts/docs/start)\n- [Google Ads Remarketing Tags](https://support.google.com/google-ads/answer/2476688)\n- [Google Ads API](https://business.google.com/uk/ad-tools/google-ads-api/)"
+        },
+        {
+          "header": "More solutions",
+          "content": "- [Workspace](https://workspace.google.com/)\n- [Chrome](https://www.google.com/chrome/)\n- [Google Cloud](https://cloud.google.com/)\n- [AdSense](https://adsense.google.com/start/)\n- [AdMob](https://admob.google.com/home/get-started/)\nActual results will vary by advertiser.\n- [About Google](https://www.google.com/intl/en/about)\n- [Google products](https://www.google.com/intl/en/about/products)\n- [Privacy](https://policies.google.com/privacy?authuser=0)\n- [Terms](https://policies.google.com/terms)\n- [Help](https://support.google.com/google-ads/)\n- Australia and New Zealand - English Brasil - Português (Brasil) Canada - English Canada - Français Česká Republika - Čeština Deutschland - Deutsch English (Global) España - Español Español (Latinoamérica) France - Français India - English Indonesia - Bahasa Indonesia Italia - Italiano Nederland - Nederlands Polska - Polski Русский România - Română Sverige - Svenska Türkiye - Türkçe United Kingdom - English United States - English Việt Nam - Tiếng Việt ישראל - עברית العربية 简体中文 日本 - 日本語 대한민국 - 한국어 ไทย - ไทย Україна - Українська"
+        }
+      ]
+    },
+    {
+      "title": "Ad Manager  |  Google for DevelopersGoogleGoogle",
+      "metadata": {
+        "source": "https://developers.google.com/ad-manager",
+        "analyzedAt": "2026-06-04T17:41:36.145Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": [
+        {
+          "header": "Google Ad Manager",
+          "content": "- [Google Ad Manager](https://developers.google.com/ad-manager?hl=ko)\n- [Ad Manager](https://developers.google.com/ad-manager?hl=ko)"
+        },
+        {
+          "header": "Google Ad Manager 계정 및 캠페인을 관리하기 위한 도구 모음입니다.",
+          "content": "- [api](https://developers.google.com/ad-manager/api/beta?hl=ko)"
+        },
+        {
+          "header": "Ad Manager API(베타)",
+          "content": "- [Ad Manager API(베타)](https://developers.google.com/ad-manager/api/beta?hl=ko)\n- [시작하기](https://developers.google.com/ad-manager/api/beta?hl=ko)\n- [phone_iphone](https://developers.google.com/ad-manager/mobile-ads-sdk?hl=ko)"
+        },
+        {
+          "header": "모바일 광고 SDK",
+          "content": "- [모바일 광고 SDK](https://developers.google.com/ad-manager/mobile-ads-sdk?hl=ko)\n- [Android](https://developers.google.com/ad-manager/mobile-ads-sdk/android/next-gen/quick-start?hl=ko)\n- [Android](https://developers.google.com/ad-manager/mobile-ads-sdk/android/quick-start?hl=ko)\n- [iOS](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/quick-start?hl=ko)\n- [Unity](https://developers.google.com/ad-manager/mobile-ads-sdk/unity/quick-start?hl=ko)\n- [Flutter](https://developers.google.com/ad-manager/mobile-ads-sdk/flutter/quick-start?hl=ko)\n- [live_tv](https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=ko)"
+        },
+        {
+          "header": "동적 광고 삽입",
+          "content": "- [동적 광고 삽입](https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=ko)\n- [시작하기](https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=ko)\n- [track_changes](https://developers.google.com/ad-manager/api?hl=ko)"
+        },
+        {
+          "header": "Ad Manager SOAP API",
+          "content": "- [Ad Manager SOAP API](https://developers.google.com/ad-manager/api?hl=ko)\n- [시작하기](https://developers.google.com/ad-manager/api?hl=ko)"
+        },
+        {
+          "header": "연결",
+          "content": "- [블로그](//developers-kr.googleblog.com)\n- [Bluesky](https://goo.gle/3FReQXN)\n- [Instagram](https://www.instagram.com/googlefordevs/)\n- [LinkedIn](https://www.linkedin.com/showcase/googledevelopers/)\n- [X(트위터)](//twitter.com/googledevs)\n- [YouTube](//www.youtube.com/user/GoogleDevelopers)"
+        },
+        {
+          "header": "프로그램",
+          "content": "- [Google Developer Program](/program)\n- [Google Developer Groups](/community)\n- [Google Developer Experts](/community/experts)\n- [Accelerators](/community/accelerators)\n- [Google Cloud & NVIDIA](/community/nvidia)"
+        },
+        {
+          "header": "개발자 콘솔",
+          "content": "- [Google API Console](//console.developers.google.com)\n- [Google Cloud Platform Console](//console.cloud.google.com)\n- [Google Play Console](//play.google.com/apps/publish)\n- [Firebase Console](//console.firebase.google.com)\n- [Actions on Google Console](//console.actions.google.com)\n- [Cast SDK Developer Console](//cast.google.com/publish)\n- [Chrome Web Store Dashboard](//chrome.google.com/webstore/developer/dashboard)\n- [Google Home Developer Console](//console.home.google.com)\n- [Android](//developer.android.com?hl=ko)\n- [Chrome](//developer.chrome.com/home?hl=ko)\n- [Firebase](//firebase.google.com?hl=ko)\n- [Google Cloud Platform](//cloud.google.com?hl=ko)\n- [Google AI](//ai.google.dev/?hl=ko)\n- [모든 제품](https://developers.google.com/products?hl=ko)\n- [개인정보처리방침](//policies.google.com/privacy?hl=ko)"
+        }
+      ]
+    },
+    {
+      "title": "Dynamic Ad Insertion  |  Google for DevelopersGoogleGoogle",
+      "metadata": {
+        "source": "https://developers.google.com/ad-manager/dynamic-ad-insertion",
+        "analyzedAt": "2026-06-04T17:41:36.508Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": [
+        {
+          "header": "Google Dynamic Ad Insertion",
+          "content": "- [Home](https://developers.google.com/ad-manager/dynamic-ad-insertion)\n- [HTML5](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5)\n- [Android](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android)\n- [iOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios)\n- [tvOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos)\n- [Chromecast](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast)\n- [Roku](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku)\n- [Full service DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service)\n- [Pod serving DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving)\n- [Ad break](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/ad-break)\n- Support\n- [Ad Manager Help Community](//support.google.com/admanager/community)\n- [Contact support](//support.google.com/admanager/contact/contact_us_ima_sdk)\n- [Terms of service](https://developers.google.com/ad-manager/dynamic-ad-insertion/terms)\n- [Official Google Ad Manager Discord channel](//goo.gle/google-ad-manager-discord)\n- [Ads developer blog](//ads-developers.googleblog.com/search/label/ima_sdk)\n- Test tools\n- [Video Suite Inspector](//googleads.github.io/googleads-ima-html5-dai/vsi/)\n- [Sample streams](https://developers.google.com/ad-manager/dynamic-ad-insertion/streams)\n- [Google Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion)\n- Home More\n- More\n- SDKs More\n- More\n- APIs More\n- More\n- Resources More\n- More\n- [Home](/ad-manager/dynamic-ad-insertion)\n- [HTML5](/ad-manager/dynamic-ad-insertion/sdk/html5)\n- [Android](/ad-manager/dynamic-ad-insertion/sdk/android)\n- [iOS](/ad-manager/dynamic-ad-insertion/sdk/ios)\n- [tvOS](/ad-manager/dynamic-ad-insertion/sdk/tvos)\n- [Chromecast](/ad-manager/dynamic-ad-insertion/sdk/cast)\n- [Roku](/ad-manager/dynamic-ad-insertion/sdk/roku)\n- [Full service DAI](/ad-manager/dynamic-ad-insertion/full-service)\n- [Pod serving DAI](/ad-manager/dynamic-ad-insertion/pod-serving)\n- [Ad break](/ad-manager/dynamic-ad-insertion/api/ad-break)\n- Support\n- [Ad Manager Help Community](//support.google.com/admanager/community)\n- [Contact support](//support.google.com/admanager/contact/contact_us_ima_sdk)\n- [Terms of service](/ad-manager/dynamic-ad-insertion/terms)\n- [Official Google Ad Manager Discord channel](//goo.gle/google-ad-manager-discord)\n- [Ads developer blog](//ads-developers.googleblog.com/search/label/ima_sdk)\n- Test tools\n- [Video Suite Inspector](//googleads.github.io/googleads-ima-html5-dai/vsi/)\n- [Sample streams](/ad-manager/dynamic-ad-insertion/streams)\n- [Home](https://developers.google.com/)\n- [Products](https://developers.google.com/products)\n- [Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion)"
+        },
+        {
+          "header": "Dynamic ad insertion (DAI)",
+          "content": "DAI lets you monetize your video content, taking away the complexity of the ad request and ad response process from the SDK. This approach reduces the likelihood of client-side errors and produces a TV-like experience without latency or buffering between content and ads.\nWith DAI, you can target individual ads for livestreams and videos on demand programming, obtain multi-screen reach with broad device support, and take advantage of programmatic monetization across all devices with Ad Exchange for video. Regardless of the original format of your content, once it becomes digital, DAI lets you show targeted video ads within your content, based on the individual user viewing the content.\nDAI lets you perform these workflows through the Full service API and Pod serving API, along with supported SDK platforms.\nTo start using DAI, select one of the following integrations:"
+        },
+        {
+          "header": "Full service DAI",
+          "content": "- [Full service DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service)\n- [Learn More](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service)"
+        },
+        {
+          "header": "Pod serving DAI",
+          "content": "- [Pod serving DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving)\n- [Learn More](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving)"
+        },
+        {
+          "header": "Supported platforms",
+          "content": "- [Supported platforms](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5/get-started)\n- [HTML5](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5/get-started)\n- [Android](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android/get-started)\n- [iOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios/get-started)\n- [tvOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos/get-started)\n- [Chromecast](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/chromecast/get-started)\n- [Roku](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku/get-started)"
+        },
+        {
+          "header": "Get Support",
+          "content": "- [Get Support](https://support.google.com/admanager/contact/contact_us_ima_sdk)\n- [Contact IMA SDK Support](https://support.google.com/admanager/contact/contact_us_ima_sdk)\nExcept as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.\n- [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/)\n- [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0)\n- [Google Developers Site Policies](https://developers.google.com/site-policies)\nLast updated 2026-02-26 UTC."
+        },
+        {
+          "header": "Connect",
+          "content": "- [Blog](//googledevelopers.blogspot.com)\n- [Bluesky](https://goo.gle/3FReQXN)\n- [Instagram](https://www.instagram.com/googlefordevs/)\n- [LinkedIn](https://www.linkedin.com/showcase/googledevelopers/)\n- [X (Twitter)](//twitter.com/googledevs)\n- [YouTube](//www.youtube.com/user/GoogleDevelopers)"
+        },
+        {
+          "header": "Programs",
+          "content": "- [Google Developer Program](/program)\n- [Google Developer Groups](/community)\n- [Google Developer Experts](/community/experts)\n- [Accelerators](/community/accelerators)\n- [Google Cloud & NVIDIA](/community/nvidia)"
+        },
+        {
+          "header": "Developer consoles",
+          "content": "- [Google API Console](//console.developers.google.com)\n- [Google Cloud Platform Console](//console.cloud.google.com)\n- [Google Play Console](//play.google.com/apps/publish)\n- [Firebase Console](//console.firebase.google.com)\n- [Actions on Google Console](//console.actions.google.com)\n- [Cast SDK Developer Console](//cast.google.com/publish)\n- [Chrome Web Store Dashboard](//chrome.google.com/webstore/developer/dashboard)\n- [Google Home Developer Console](//console.home.google.com)\n- [Android](//developer.android.com)\n- [Chrome](//developer.chrome.com/home)\n- [Firebase](//firebase.google.com)\n- [Google Cloud Platform](//cloud.google.com)\n- [Google AI](//ai.google.dev/)\n- [All products](/products)\n- [Terms](/terms/site-terms)\n- [Privacy](//policies.google.com/privacy)"
+        }
+      ]
+    },
+    {
+      "title": "DAI Full Service API  |  Google for DevelopersGoogleGoogle",
+      "metadata": {
+        "source": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
+        "analyzedAt": "2026-06-04T17:41:37.612Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": [
+        {
+          "header": "Google Dynamic Ad Insertion",
+          "content": "- [Ana Sayfa](https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=tr)\n- [HTML5](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5?hl=tr)\n- [Android](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android?hl=tr)\n- [iOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios?hl=tr)\n- [tvOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos?hl=tr)\n- [Chromecast](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast?hl=tr)\n- [Roku](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku?hl=tr)\n- [API'lar](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=tr)\n- [Tam hizmet DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=tr)\n- [DAI yayınlayan kapsül](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=tr)\n- [Reklam arası](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/ad-break?hl=tr)\n- Destek\n- [Ad Manager Yardım Topluluğu](//support.google.com/admanager/community?hl=tr)\n- [Destek ekibiyle iletişime geçme](//support.google.com/admanager/contact/contact_us_ima_sdk?hl=tr)\n- [Hizmet şartları](https://developers.google.com/ad-manager/dynamic-ad-insertion/terms?hl=tr)\n- [Resmi Google Ad Manager Discord kanalı](//goo.gle/google-ad-manager-discord)\n- [Reklam geliştirici blogu](//ads-developers.googleblog.com/search/label/ima_sdk)\n- Test araçları\n- [Video Ürün Paketi Denetleyicisi](//googleads.github.io/googleads-ima-html5-dai/vsi/)\n- [Örnek yayınlar](https://developers.google.com/ad-manager/dynamic-ad-insertion/streams?hl=tr)\n- [Tam hizmet DAI API'si](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=tr)\n- [Rehberler](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=tr)\n- [Başvuru Kaynakları](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service/reference/live?hl=tr)\n- [Google Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service?hl=tr)\n- Ana Sayfa Diğer\n- Diğer\n- SDK'lar Diğer\n- Diğer\n- [API'lar](/ad-manager/dynamic-ad-insertion/full-service)\n- Diğer\n- [Rehberler](/ad-manager/dynamic-ad-insertion/full-service)\n- [Başvuru Kaynakları](/ad-manager/dynamic-ad-insertion/api/full-service/reference/live)\n- Kaynaklar Diğer\n- Diğer\n- [Genel bakış](/ad-manager/dynamic-ad-insertion/full-service)\n- [DAI Full Service API hakkında bilgi edinme](/ad-manager/dynamic-ad-insertion/api/full-service/get-started)\n- [Genel bakış](/ad-manager/dynamic-ad-insertion/api/full-service/stream-session-overview)\n- [Akış oturumu isteklerinin kimliğini doğrulama](/ad-manager/dynamic-ad-insertion/api/full-service/stream-session-requests)\n- Geliştirme\n- [DAI canlı yayınlarını yönetme](/ad-manager/dynamic-ad-insertion/api/full-service/video-player-live)\n- [DAI seç-izle video akışları isteme](/ad-manager/dynamic-ad-insertion/api/full-service/video-player-vod)\n- [Reklam Seçenekleri'ni uygulama](/ad-manager/dynamic-ad-insertion/api/full-service/wta)\n- [Seç-izle yayınlarında atlanabilir reklamları etkinleştirme](/ad-manager/dynamic-ad-insertion/api/full-service/vod-skippable-ads)\n- [Ana Sayfa](/ad-manager/dynamic-ad-insertion)\n- [HTML5](/ad-manager/dynamic-ad-insertion/sdk/html5)\n- [Android](/ad-manager/dynamic-ad-insertion/sdk/android)\n- [iOS](/ad-manager/dynamic-ad-insertion/sdk/ios)\n- [tvOS](/ad-manager/dynamic-ad-insertion/sdk/tvos)\n- [Chromecast](/ad-manager/dynamic-ad-insertion/sdk/cast)\n- [Roku](/ad-manager/dynamic-ad-insertion/sdk/roku)\n- [Tam hizmet DAI](/ad-manager/dynamic-ad-insertion/full-service)\n- [DAI yayınlayan kapsül](/ad-manager/dynamic-ad-insertion/pod-serving)\n- [Reklam arası](/ad-manager/dynamic-ad-insertion/api/ad-break)\n- Destek\n- [Ad Manager Yardım Topluluğu](//support.google.com/admanager/community)\n- [Destek ekibiyle iletişime geçme](//support.google.com/admanager/contact/contact_us_ima_sdk)\n- [Hizmet şartları](/ad-manager/dynamic-ad-insertion/terms)\n- [Resmi Google Ad Manager Discord kanalı](//goo.gle/google-ad-manager-discord)\n- [Reklam geliştirici blogu](//ads-developers.googleblog.com/search/label/ima_sdk)\n- Test araçları\n- [Video Ürün Paketi Denetleyicisi](//googleads.github.io/googleads-ima-html5-dai/vsi/)\n- [Örnek yayınlar](/ad-manager/dynamic-ad-insertion/streams)\n- [IMA SDK](https://developers.google.com/interactive-media-ads?hl=tr)\n- [Ana Sayfa](https://developers.google.com/?hl=tr)\n- [Ürünler](https://developers.google.com/products?hl=tr)\n- [Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=tr)\n- [DAI Full Service API](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service?hl=tr)\n- [API'lar](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=tr)"
+        },
+        {
+          "header": "IMA DAI SDK'sı ile",
+          "content": "- Web sayfası veya uygulama, IMA DAI SDK'sını şunlar üzerinden yükler: HTML5 için yerleştirilmiş bir komut dosyası etiketi Android, Google Cast, iOS, tvOS veya Roku için yerel bir uygulama\n- HTML5 için yerleştirilmiş bir komut dosyası etiketi\n- Android, Google Cast, iOS, tvOS veya Roku için yerel bir uygulama\n- SDK, bir VOD akışı veya Google Ad Manager 360'tan canlı yayın ister.\n- Ad Manager 360, eklenen reklam aralarını içeren video akışıyla yanıt verir.\n- SDK, yanıtı ayrıştırır, ortama göre doğru medya türünü belirler ve video akışını (ve gerekirse tamamlayıcı reklamları) web sayfasına veya uygulamaya yayınlar.\n- Video oynatıcı, oynatma ayrıntıları için SDK ile anlaşır ve içeriği oynatır.\n- Video oynatıcı, yayın içi meta verileri dinler ve işlenmek üzere SDK'ya iletir.\n- SDK, gösterim ping'lerini ve izleme etkinliklerini gerektiği şekilde tetikler.\nIMA DAI SDK'sı kullanarak istemci video oynatıcısını nasıl uygulayacağınızla ilgili ayrıntılı talimatlar için SDK kılavuzlarımıza göz atın:\n- [HTML5](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5?service=full&hl=tr)\n- [Android](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android?service=full&hl=tr)\n- [iOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios?service=full&hl=tr)\n- [tvOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos?service=full&hl=tr)\n- [Chromecast](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast?service=full&hl=tr)\n- [Roku](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku?service=full&hl=tr)"
+        },
+        {
+          "header": "DAI API'si ile",
+          "content": "- İstemcinin oynatıcı uygulaması, Google Ad Manager 360'tan VOD akışı veya canlı yayın ister.\n- Ad Manager 360, eklenen reklam aralarını içeren video akışıyla yanıt verir.\n- İstemcinin oynatıcı uygulaması akışı oynatmaya başlar ve reklam meta verilerini bir kez istediğinde (VOD akışları için) VEYA düzenli olarak başlar Reklam meta verileri için yoklama (canlı yayınlar için).\n- İstemcinin oynatıcı uygulaması yayın içi meta verileri dinleyip ayrıştırır. ve reklamı tanımlamak için bunu reklam meta verilerindeki değerlerle karşılaştırır. etkinlikler.\n- İstemcinin video oynatıcı uygulaması, gerektiğinde reklam gösterimi ping'lerini ve izleme etkinliklerini tetikler.\nİstemci video oynatıcı uygulama hakkında ayrıntılı talimatlar için API kılavuzlarımızı incelemek için aşağıdaki adımları uygulayın:\n- [Canlı API](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service/video-player-live?hl=tr)\n- [Seç-izle API](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service/video-player-vod?hl=tr)\nAksi belirtilmediği sürece bu sayfanın içeriği Creative Commons Atıf 4.0 Lisansı altında ve kod örnekleri Apache 2.0 Lisansı altında lisanslanmıştır. Ayrıntılı bilgi için Google Developers Site Politikaları'na göz atın. Java, Oracle ve/veya satış ortaklarının tescilli ticari markasıdır.\n- [Creative Commons Atıf 4.0 Lisansı](https://creativecommons.org/licenses/by/4.0/)\n- [Apache 2.0 Lisansı](https://www.apache.org/licenses/LICENSE-2.0)\n- [Google Developers Site Politikaları](https://developers.google.com/site-policies?hl=tr)\nSon güncelleme tarihi: 2026-03-05 UTC."
+        },
+        {
+          "header": "Ağ",
+          "content": "- [Blog](//googledevelopers.blogspot.com)\n- [Bluesky](https://goo.gle/3FReQXN)\n- [Instagram](https://www.instagram.com/googlefordevs/)\n- [LinkedIn](https://www.linkedin.com/showcase/googledevelopers/)\n- [X (Twitter)](//twitter.com/googledevs)\n- [YouTube](//www.youtube.com/user/GoogleDevelopers)"
+        },
+        {
+          "header": "Programlar",
+          "content": "- [Google Developer Program](/program)\n- [Google Developer Groups](/community)\n- [Google Developer Experts](/community/experts)\n- [Accelerators](/community/accelerators)\n- [Google Cloud & NVIDIA](/community/nvidia)"
+        },
+        {
+          "header": "Geliştirici konsolları",
+          "content": "- [Google API Console](//console.developers.google.com)\n- [Google Cloud Platform Console](//console.cloud.google.com)\n- [Google Play Console](//play.google.com/apps/publish)\n- [Firebase Console](//console.firebase.google.com)\n- [Actions on Google Console](//console.actions.google.com)\n- [Cast SDK Developer Console](//cast.google.com/publish)\n- [Chrome Web Store Dashboard](//chrome.google.com/webstore/developer/dashboard)\n- [Google Home Developer Console](//console.home.google.com)\n- [Android](//developer.android.com?hl=tr)\n- [Chrome](//developer.chrome.com/home?hl=tr)\n- [Firebase](//firebase.google.com?hl=tr)\n- [Google Cloud Platform](//cloud.google.com?hl=tr)\n- [Google AI](//ai.google.dev/?hl=tr)\n- [Tüm ürünler](https://developers.google.com/products?hl=tr)\n- [Şartlar](https://developers.google.com/terms/site-terms?hl=tr)\n- [Gizlilik](//policies.google.com/privacy?hl=tr)"
+        }
+      ]
+    },
+    {
+      "title": "DAI Pod Serving API  |  Google for DevelopersGoogleGoogle",
+      "metadata": {
+        "source": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
+        "analyzedAt": "2026-06-04T17:41:38.330Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": [
+        {
+          "header": "Google Dynamic Ad Insertion",
+          "content": "- [Página principal](https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=es-419)\n- [HTML5](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5?hl=es-419)\n- [Android](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android?hl=es-419)\n- [iOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios?hl=es-419)\n- [tvOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos?hl=es-419)\n- [Chromecast](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast?hl=es-419)\n- [Roku](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku?hl=es-419)\n- [API](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=es-419)\n- [DAI de servicio completo](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=es-419)\n- [DAI de publicación de grupos de anuncios](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=es-419)\n- [Pausa publicitaria](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/ad-break?hl=es-419)\n- Asistencia\n- [Comunidad de ayuda de Ad Manager](//support.google.com/admanager/community?hl=es-419)\n- [Comunicarse con el equipo de asistencia](//support.google.com/admanager/contact/contact_us_ima_sdk?hl=es-419)\n- [Condiciones del Servicio](https://developers.google.com/ad-manager/dynamic-ad-insertion/terms?hl=es-419)\n- [Canal oficial de Discord de Google Ad Manager](//goo.gle/google-ad-manager-discord)\n- [Blog para desarrolladores de anuncios](//ads-developers.googleblog.com/search/label/ima_sdk)\n- Herramientas de prueba\n- [Inspector de paquetes de video](//googleads.github.io/googleads-ima-html5-dai/vsi/)\n- [Transmisiones de muestra](https://developers.google.com/ad-manager/dynamic-ad-insertion/streams?hl=es-419)\n- [API de publicación de grupos de anuncios de la DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=es-419)\n- [Guías](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=es-419)\n- [Referencia](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/reference/live?hl=es-419)\n- [Google Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving?hl=es-419)\n- Página principal Más\n- Más\n- SDKs Más\n- Más\n- [API](/ad-manager/dynamic-ad-insertion/pod-serving)\n- Más\n- [Guías](/ad-manager/dynamic-ad-insertion/pod-serving)\n- [Referencia](/ad-manager/dynamic-ad-insertion/api/pod-serving/reference/live)\n- Recursos Más\n- Más\n- [Descripción general](/ad-manager/dynamic-ad-insertion/pod-serving)\n- [Aprende sobre la API de DAI Pod Serving](/ad-manager/dynamic-ad-insertion/api/pod-serving)\n- Desarrolla la inserción de anuncios del servidor\n- [Descripción general](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/get-started)\n- [Prepara la app de reproductor de video del cliente](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client)\n- [Inserta anuncios con metadatos de sincronización de la tanda de anuncios](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/manipulator)\n- [Inserta anuncios con redireccionamientos de segmentos](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/manipulator-basic)\n- [Descripción general](/ad-manager/dynamic-ad-insertion/api/pod-serving/vod)\n- [Prepara tu app de reproductor de video cliente](/ad-manager/dynamic-ad-insertion/api/pod-serving/vod/client)\n- [Cómo configurar tu servidor de manipulación de manifiestos](/ad-manager/dynamic-ad-insertion/api/pod-serving/vod/manipulator)\n- Configura la inserción de anuncios guiada por el servidor\n- [Acerca de la inserción de anuncios guiada por el servidor](/ad-manager/dynamic-ad-insertion/server-guided)\n- [Comienza a usar SGAI para transmisiones en vivo](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/get-started/sgai)\n- [Página principal](/ad-manager/dynamic-ad-insertion)\n- [HTML5](/ad-manager/dynamic-ad-insertion/sdk/html5)\n- [Android](/ad-manager/dynamic-ad-insertion/sdk/android)\n- [iOS](/ad-manager/dynamic-ad-insertion/sdk/ios)\n- [tvOS](/ad-manager/dynamic-ad-insertion/sdk/tvos)\n- [Chromecast](/ad-manager/dynamic-ad-insertion/sdk/cast)\n- [Roku](/ad-manager/dynamic-ad-insertion/sdk/roku)\n- [DAI de servicio completo](/ad-manager/dynamic-ad-insertion/full-service)\n- [DAI de publicación de grupos de anuncios](/ad-manager/dynamic-ad-insertion/pod-serving)\n- [Pausa publicitaria](/ad-manager/dynamic-ad-insertion/api/ad-break)\n- Asistencia\n- [Comunidad de ayuda de Ad Manager](//support.google.com/admanager/community)\n- [Comunicarse con el equipo de asistencia](//support.google.com/admanager/contact/contact_us_ima_sdk)\n- [Condiciones del Servicio](/ad-manager/dynamic-ad-insertion/terms)\n- [Canal oficial de Discord de Google Ad Manager](//goo.gle/google-ad-manager-discord)\n- [Blog para desarrolladores de anuncios](//ads-developers.googleblog.com/search/label/ima_sdk)\n- Herramientas de prueba\n- [Inspector de paquetes de video](//googleads.github.io/googleads-ima-html5-dai/vsi/)\n- [Transmisiones de muestra](/ad-manager/dynamic-ad-insertion/streams)\n- [Página principal](https://developers.google.com/?hl=es-419)\n- [Productos](https://developers.google.com/products?hl=es-419)\n- [Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=es-419)\n- [DAI Pod Serving API](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving?hl=es-419)\n- [API](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=es-419)"
+        },
+        {
+          "header": "Publicación de grupos de anuncios de DAI",
+          "content": "La publicación de grupos de inserción de anuncios dinámicos (DAI) te permite solicitar grupos de anuncios, ya sea de Google o de servidores de anuncios de terceros, para transmisiones en vivo y de video on demand (VOD). Para obtener más detalles, consulta Cómo configurar pausas publicitarias y plantillas de pausas.\n- [Cómo configurar pausas publicitarias y plantillas de pausas](https://support.google.com/admanager/answer/9204132?hl=es-419#zippy=,configure-ad-pods-and-break-templates)\n- Redireccionamiento de publicación de grupos de anuncios: Te permite recuperar segmentos de manifiesto para implementar la inserción de anuncios del servidor (SSAI). Los segmentos son URLs dinámicas que redireccionan a archivos multimedia de contenido o de anuncios.\n- [DAI guiada por el servidor](https://developers.google.com/ad-manager/dynamic-ad-insertion/server-guided?hl=es-419)\nEn el caso del VOD, Google Ad Manager devuelve los manifiestos completos del grupo de anuncios.\nLa Publicación de grupos de anuncios de DAI ofrece las siguientes plataformas compatibles:\n- [HTML5](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5?service=pod&hl=es-419)\n- [Android](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android?service=pod&hl=es-419)\n- [iOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios?service=pod&hl=es-419)\n- [tvOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos?service=pod&hl=es-419)\n- [Chromecast](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast?service=pod&hl=es-419)\n- [Roku](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku?service=pod&hl=es-419)\nPara obtener detalles sobre las transmisiones en vivo y los VOD, consulta los siguientes flujos de trabajo:"
+        },
+        {
+          "header": "Une anuncios en una transmisión en vivo",
+          "content": "- [transmisión en vivo](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/get-started?hl=es-419)\n- [Cómo proporcionar parámetros de segmentación a tus novedades](https://support.google.com/admanager/answer/7320899?hl=es-419)\n- [Cómo encontrar un ID de sesión de DAI o una clave de depuración](https://support.google.com/admanager/answer/7257678?hl=es-419)\n- [Cómo supervisar y depurar una sesión de transmisión específica](https://support.google.com/admanager/answer/7009058?hl=es-419)\n- Realiza una solicitud de manifiesto a tu concatenador de video o manipulador de manifiesto, y pasa el ID de sesión. Repite la solicitud de actualizaciones del manifiesto durante la reproducción.\n- En el caso de los manifiestos de DASH, realiza una solicitud de plantilla de período para toda la sesión.\n- [Cómo completar la plantilla de período](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/manipulator?hl=es-419#populate_the_period_template)\n- Devuelve el manifiesto final que contiene segmentos de contenido o de medios publicitarios para la reproducción del cliente. Comienza la reproducción.\n- Sondea Google Ad Manager con regularidad para obtener actualizaciones de los metadatos de los anuncios con la frecuencia de sondeo que se devolvió en la solicitud de transmisión. Almacena los metadatos del anuncio para buscar eventos de anuncios.\n- Durante una pausa publicitaria, el reproductor de video carga los segmentos de medios y sigue los redireccionamientos de Google Ad Manager a los archivos de medios.\n- [escucha el reproductor de video para detectar metadatos cronometrados](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client?hl=es-419#listen_for_ad_events)\n- [Envía pings de verificación de medios](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client?hl=es-419#send_media_verification_pings)"
+        },
+        {
+          "header": "Une anuncios en una transmisión de VOD",
+          "content": "- [transmisión de VOD](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/vod?hl=es-419)\n- [Cómo proporcionar parámetros de segmentación a tu transmisión](https://support.google.com/admanager/answer/7320899?hl=es-419)\n- [Encuentra un ID de sesión de DAI o una clave de depuración](https://support.google.com/admanager/answer/7257678?hl=es-419)\n- [Supervisa y depura una sesión de transmisión específica](https://support.google.com/admanager/answer/7009058?hl=es-419)\n- Realiza una solicitud de manifiesto a tu unificador de video o manipulador de manifiestos y pasa el ID de sesión.\n- Usa el ID de sesión para solicitar todos los bloques de anuncios a la vez.\n- Recupera los manifiestos completos de todos los bloques de anuncios. Para crear el manifiesto final, une los manifiestos de los bloques de anuncios con la transmisión de contenido.\n- Muestra el manifiesto final, que contiene segmentos de contenido y de anuncios.\n- Solicita metadatos de anuncios para todos los eventos de anuncios. Almacena los metadatos de anuncios para buscar eventos de anuncios. Comienza la reproducción.\n- Durante una pausa publicitaria, el reproductor de video carga los segmentos de contenido multimedia y sigue las redirecciones de Google Ad Manager a los archivos multimedia.\n- [escucha los eventos de anuncios](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client?hl=es-419#listen_for_ad_events)\n- [Envía pings de verificación de contenido multimedia](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client?hl=es-419#send_media_verification_pings)\nSalvo que se indique lo contrario, el contenido de esta página está sujeto a la licencia Atribución 4.0 de Creative Commons, y los ejemplos de código están sujetos a la licencia Apache 2.0. Para obtener más información, consulta las políticas del sitio de Google Developers. Java es una marca registrada de Oracle o sus afiliados.\n- [licencia Atribución 4.0 de Creative Commons](https://creativecommons.org/licenses/by/4.0/)\n- [licencia Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)\n- [políticas del sitio de Google Developers](https://developers.google.com/site-policies?hl=es-419)\nÚltima actualización: 2026-03-05 (UTC)"
+        },
+        {
+          "header": "Conéctate",
+          "content": "- [Blog](//desarrolladores.googleblog.com)\n- [Bluesky](https://goo.gle/3FReQXN)\n- [Instagram](https://www.instagram.com/googlefordevs/)\n- [LinkedIn](https://www.linkedin.com/showcase/googledevelopers/)\n- [X (Twitter)](//twitter.com/googledevslatam)\n- [YouTube](//www.youtube.com/channel/UCeo-MamuQVFRcfQmS2N7fhw)"
+        },
+        {
+          "header": "Programas",
+          "content": "- [Google Developer Program](/program)\n- [Google Developer Groups](/community)\n- [Google Developer Experts](/community/experts)\n- [Accelerators](/community/accelerators)\n- [Google Cloud & NVIDIA](/community/nvidia)"
+        },
+        {
+          "header": "Consolas para desarrolladores",
+          "content": "- [Google API Console](//console.developers.google.com)\n- [Google Cloud Platform Console](//console.cloud.google.com)\n- [Google Play Console](//play.google.com/apps/publish)\n- [Firebase Console](//console.firebase.google.com)\n- [Actions on Google Console](//console.actions.google.com)\n- [Cast SDK Developer Console](//cast.google.com/publish)\n- [Chrome Web Store Dashboard](//chrome.google.com/webstore/developer/dashboard)\n- [Google Home Developer Console](//console.home.google.com)\n- [Android](//developer.android.com?hl=es-419)\n- [Chrome](//developer.chrome.com/home?hl=es-419)\n- [Firebase](//firebase.google.com?hl=es-419)\n- [Google Cloud Platform](//cloud.google.com?hl=es-419)\n- [Google AI](//ai.google.dev/?hl=es-419)\n- [Todos los productos](https://developers.google.com/products?hl=es-419)\n- [Condiciones](https://developers.google.com/terms/site-terms?hl=es-419)\n- [Privacidad](//policies.google.com/privacy?hl=es-419)"
+        }
+      ]
+    },
+    {
+      "title": "Get started  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle",
+      "metadata": {
+        "source": "https://developers.google.com/ad-manager/api/start",
+        "analyzedAt": "2026-06-04T17:41:38.627Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": [
+        {
+          "header": "Get started Stay organized with collections Save and categorize content based on your preferences.",
+          "content": "You can use the Google Ad Manager SOAP API to build apps that manage inventory, create orders, pull reports, and more.\nTo help you get started, we offer client libraries for Java, .NET, Python, PHP, and Ruby.\n- [client libraries](/ad-manager/api/clients)\nTo make your first API request, follow these steps:"
+        },
+        {
+          "header": "Get access to an Ad Manager network",
+          "content": "If you don't already have one, sign up for an Ad Manager account. You can also create a test network if you want to test the API in a separate environment. Note that you don't need an AdSense account for test purposes.\n- [Ad Manager account](//support.google.com/admanager/answer/7084151)\n- [test network](/ad-manager/api/environments)\nMake a note of your network code. You can find this in the URL when you sign in to your network. For example, in the URL https://admanager.google.com/1234#home, 1234 is your network code.\n- [Terms of Service](//www.google.com/intl/en_ALL/doubleclick/tos/dfp-api-terms.html)"
+        },
+        {
+          "header": "Create authentication credentials",
+          "content": "You must authenticate all Ad Manager SOAP API requests using OAuth 2.0. The following steps cover the use case of accessing your own Ad Manager data. For more details and other options, see Authentication.\n- [Authentication](/ad-manager/api/authentication)\nOpen the Google API Console Credentials page\n- [Google API Console Credentials page](https://console.cloud.google.com/apis/credentials)\n- From the project menu, choose Create project, enter a name for the project, and optionally, edit the provided Project ID. Click Create.\nFrom the project menu, choose Create project, enter a name for the project, and optionally, edit the provided Project ID. Click Create.\n- On the Credentials page, select Create credentials, then select Service account key.\nOn the Credentials page, select Create credentials, then select Service account key.\nSelect New service account and select JSON as the key type.\n- [New service account](//console.developers.google.com/apis/credentials/serviceaccountkey)\n- Click Create to download a file containing a private key.\nClick Create to download a file containing a private key."
+        },
+        {
+          "header": "Configure your Ad Manager network",
+          "content": "Sign in to Google Ad Manager.\n- [Sign in](//admanager.google.com/)\n- In the sidebar, click Admin > Global settings.\nIn the sidebar, click Admin > Global settings.\n- Under General settings > Api access click the slider to Enabled.\nUnder General settings > Api access click the slider to Enabled.\n- Click the Save button at the bottom of the page.\nClick the Save button at the bottom of the page."
+        },
+        {
+          "header": "Set up your client",
+          "content": "Download one of the Ad Manager client libraries. The libraries offer wrapper functions and features that make it easier and faster to develop apps.\n- [Ad Manager client libraries](/ad-manager/api/clients)\nThe following tabs provide quickstarts for coding in each of the languages for which there is a client library."
+        },
+        {
+          "header": "Java",
+          "content": "Here is a basic example that shows how to use the Java client library. For more detailed usage information, refer to the README file in the client library distribution.\n- [Java client library](//github.com/googleads/googleads-java-lib)\n- [README](//github.com/googleads/googleads-java-lib/blob/main/README.md)\n- Setup your credentials Run the following command in a shell: curl https://raw.githubusercontent.com/googleads/googleads-java-lib/main/examples/admanager_axis/src/main/resources/ads.properties -o ~/ads.properties Open the ~/ads.properties file and populate the following fields: [...] api.admanager.applicationName=INSERT_APPLICATION_NAME_HERE api.admanager.jsonKeyFilePath=INSERT_PATH_TO_JSON_KEY_FILE_HERE api.admanager.networkCode=INSERT_NETWORK_CODE_HERE [...]\nRun the following command in a shell:"
+        },
+        {
+          "header": "Specify dependencies",
+          "content": "Edit your pom.xml file and add the following to the dependencies tag. You can find the latest version number on Github.\n- [Github](https://github.com/googleads/googleads-java-lib/releases)\nWrite some code and make a request!\n- [View on GitHub](https://github.com/googleads/googleads-java-lib/blob/main/examples/admanager_axis/src/main/java/admanager/axis/v202602/networkservice/GetCurrentNetwork.java)"
+        },
+        {
+          "header": "Python",
+          "content": "Here is a basic example that shows how to use the Python client library. The Python Client Library supports Python v3.6+. For more detailed usage information, refer to the README file in the client library distribution.\n- [Python client library](//github.com/googleads/googleads-python-lib)\n- [README](//github.com/googleads/googleads-python-lib/blob/main/README.md)\n- Install the library and set up your credentials. Run the following commands in a shell: python3 -m pip install googleads curl https://raw.githubusercontent.com/googleads/googleads-python-lib/main/googleads.yaml \\ -o ~/googleads.yaml\nRun the following commands in a shell:\n- Set up your ~/googleads.yaml file. Fill in the following fields: ad_manager: application_name: INSERT_APPLICATION_NAME_HERE network_code: INSERT_NETWORK_CODE_HERE path_to_private_key_file: INSERT_PATH_TO_FILE_HERE\nFill in the following fields:\n- [View on GitHub](https://github.com/googleads/googleads-python-lib/blob/main/examples/ad_manager/v202602/network_service/get_current_network.py)"
+        },
+        {
+          "header": "PHP",
+          "content": "Here is a basic example that shows how to use the PHP client library.\n- [PHP client library](//github.com/googleads/googleads-php-lib)\nRun the following commands in a shell to install the client library and download the adsapi_php.ini file to your home directory:\n- [adsapi_php.ini](//github.com/googleads/googleads-php-lib/blob/HEAD/examples/AdManager/adsapi_php.ini)\n- Setup your ~/adsapi_php.ini file. Fill in the following fields: [AD_MANAGER] networkCode = \"INSERT_NETWORK_CODE_HERE\" applicationName = \"INSERT_APPLICATION_NAME_HERE\" [OAUTH2] jsonKeyFilePath = \"INSERT_ABSOLUTE_PATH_TO_OAUTH2_JSON_KEY_FILE_HERE\" scopes = \"https://www.googleapis.com/auth/dfp\"\nFill in the following fields:\n- [View on GitHub](https://github.com/googleads/googleads-php-lib/blob/main/examples/AdManager/v202602/NetworkService/GetCurrentNetwork.php)"
+        },
+        {
+          "header": ".NET",
+          "content": "Here is a basic example that shows how to use the .NET client library\n- [.NET client library](//github.com/googleads/googleads-dotnet-lib)\n- Create a new project Open Visual Studio and create a new project (Console Application).\nOpen Visual Studio and create a new project (Console Application).\nAdd a nuget dependency for Google.Dfp.\n- [Google.Dfp](//www.nuget.org/packages/Google.Dfp/)\n- Setup your App.config Copy src\\App.config to your project directory and add it to your project. If your application has its own App.config, then you can copy the following nodes into your App.config: configuration/AdManagerApi configuration/configSections/section[name=\"AdManagerApi\"] configuration/system.net\nCopy src\\App.config to your project directory and add it to your project. If your application has its own App.config, then you can copy the following nodes into your App.config:\n- configuration/AdManagerApi\n- configuration/configSections/section[name=\"AdManagerApi\"]\n- configuration/system.net\n- Setup credentials Open App.config and edit the following keys:    \nOpen App.config and edit the following keys:\nYou can call the library as shown in the following C# code snippet\n- [View on GitHub](https://github.com/googleads/googleads-dotnet-lib/blob/main/examples/AdManager/CSharp/v202602/InventoryService/GetAllAdUnits.cs)\nIf you don't want to set your credentials in your App.config, then refer to this wiki article for alternate ways of using the AdManagerUser class. For more detailed information about using the .NET Client Library, refer to the README . If you want to develop in .NET without the client library, please refer to the NoClientLibrary wiki article.\n- [this wiki article](//github.com/googleads/googleads-dotnet-lib/wiki/Getting-Started)\n- [README](//github.com/googleads/googleads-dotnet-lib/blob/main/README.md)\n- [NoClientLibrary wiki article](//github.com/googleads/googleads-dotnet-lib/wiki/NoClientLibrary)"
+        },
+        {
+          "header": "Ruby",
+          "content": "Here is a basic example that shows how to use the Ruby client library. The Ruby client library requires Ruby 2.1 or later.\n- [Ruby client library](//github.com/googleads/google-api-ads-ruby/tree/HEAD/ad_manager_api)\n- Install the Ruby gem and get the configuration file. Run the following commands in a shell: gem install google-dfp-api curl https://raw.githubusercontent.com/googleads/google-api-ads-ruby/main/ad_manager_api/ad_manager_api.yml -o ~/ad_manager_api.yml If you encounter an error such as \"cannot load such file -- mkmf (LoadError)\" at any point while installing your gems, you may need to install additional Ruby development libraries such as ruby-dev, ruby-devel, xcode-select etc. for your particular environment.\nRun the following commands in a shell:\nPopulate the required fields in the ~/ad_manager_api.yml file. If you don't already have an OAuth2 keyfile, you'll need to follow the steps to create your OAuth2 credentials.\n- [create your OAuth2 credentials](/ad-manager/api/authentication#service)\n- [View on GitHub](https://github.com/googleads/google-api-ads-ruby/blob/main/ad_manager_api/examples/v202602/network_service/get_current_network.rb)\nMore detailed steps for getting started can be found in the README file that is distributed with the Ruby client library. Also, check out our full example library for Ruby.\n- [README](//github.com/googleads/google-api-ads-ruby/wiki/DFP-Readme)\n- [full example library](https://github.com/googleads/google-api-ads-ruby/tree/HEAD/ad_manager_api/examples)"
+        },
+        {
+          "header": "Next steps",
+          "content": "When you have a client library up and running, modify the examples provided to extend them for your needs.\nBrowse the reference documentation to learn more about the API.\n- [reference documentation](/ad-manager/api/rel_notes)\nIf you need help, visit our Support page.\n- [Support page](/ad-manager/api/community)\nExcept as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.\n- [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/)\n- [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0)\n- [Google Developers Site Policies](https://developers.google.com/site-policies)\nLast updated 2026-02-25 UTC."
+        },
+        {
+          "header": "Connect",
+          "content": "- [Blog](//googledevelopers.blogspot.com)\n- [Bluesky](https://goo.gle/3FReQXN)\n- [Instagram](https://www.instagram.com/googlefordevs/)\n- [LinkedIn](https://www.linkedin.com/showcase/googledevelopers/)\n- [X (Twitter)](//twitter.com/googledevs)\n- [YouTube](//www.youtube.com/user/GoogleDevelopers)"
+        },
+        {
+          "header": "Programs",
+          "content": "- [Google Developer Program](/program)\n- [Google Developer Groups](/community)\n- [Google Developer Experts](/community/experts)\n- [Accelerators](/community/accelerators)\n- [Google Cloud & NVIDIA](/community/nvidia)"
+        },
+        {
+          "header": "Developer consoles",
+          "content": "- [Google API Console](//console.developers.google.com)\n- [Google Cloud Platform Console](//console.cloud.google.com)\n- [Google Play Console](//play.google.com/apps/publish)\n- [Firebase Console](//console.firebase.google.com)\n- [Actions on Google Console](//console.actions.google.com)\n- [Cast SDK Developer Console](//cast.google.com/publish)\n- [Chrome Web Store Dashboard](//chrome.google.com/webstore/developer/dashboard)\n- [Google Home Developer Console](//console.home.google.com)\n- [Android](//developer.android.com)\n- [Chrome](//developer.chrome.com/home)\n- [Firebase](//firebase.google.com)\n- [Google Cloud Platform](//cloud.google.com)\n- [Google AI](//ai.google.dev/)\n- [All products](/products)\n- [Terms](/terms/site-terms)\n- [Privacy](//policies.google.com/privacy)"
+        }
+      ]
+    },
+    {
+      "title": "Resources Overview - Google Ad Manager",
+      "metadata": {
+        "source": "https://admanager.google.com/home/resources/",
+        "analyzedAt": "2026-06-04T17:41:38.845Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": [
+        {
+          "header": "Tell us about your business",
+          "content": "Approximately how many monthly pageviews does your website have?\nDo you have a Google AdSense account?"
+        },
+        {
+          "header": "Congratulations!",
+          "content": "Congratulations! You are qualified to sign up for Google Ad Manager.\n- [Continue to sign up](https://admanager.google.com/settings/signup/start?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)"
+        },
+        {
+          "header": "Sign Up for Google AdSense",
+          "content": "You need an AdSense account to work with Google Ad Manager. Sign up and come back after your application has been approved.\n- [Sign up](https://www.google.com/adsense/signup?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)"
+        },
+        {
+          "header": "Increase your revenue in browsers with limited signals",
+          "content": "Learn how global publishers are using publisher provided Identifiers to increase programmatic revenue in browsers that no longer support third-party cookies."
+        },
+        {
+          "header": "Read Story",
+          "content": "- [Read Story](/home/resources/increase-your-revenue-in-browsers-with-limited-signals/)"
+        },
+        {
+          "header": "Get the latest, delivered.",
+          "content": "Our monthly newsletter puts the latest success stories, insights, and product news right into your inbox.\n- [Subscribe](https://signup.withgoogle.com/newsletter/googlepublisher/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)"
+        },
+        {
+          "header": "Filter by:",
+          "content": "- Topic Ad Formats Advanced TV Brand Safety Core Ad Serving Data and Insights Dynamic Ad Insertion Ecosystem Mobile App Privacy Video Yield Management"
+        },
+        {
+          "header": "Topic",
+          "content": "- Ad Formats\n- Advanced TV\n- Brand Safety\n- Core Ad Serving\n- Data and Insights\n- Dynamic Ad Insertion\n- Ecosystem\n- Mobile App\n- Privacy\n- Video\n- Yield Management\n- Type Feature Brief Guide Report White Paper"
+        },
+        {
+          "header": "Type",
+          "content": "- Feature Brief\n- Guide\n- Report\n- White Paper"
+        },
+        {
+          "header": "No matching results",
+          "content": "- [Guide Publisher best practices for live sporting events Read more](/home/resources/publisher-best-practices-for-live-sporting-events/)"
+        },
+        {
+          "header": "Publisher best practices for live sporting events",
+          "content": "- Read more\n- [Feature Brief Powering direct transactions: Investing in your growth Read more](/home/resources/powering-direct-transactions-investing-in-your-growth/)"
+        },
+        {
+          "header": "Powering direct transactions: Investing in your growth",
+          "content": "- Read more\n- [Report Building the future of live monetization Read more](/home/resources/building-the-future-of-live-monetization/)"
+        },
+        {
+          "header": "Building the future of live monetization",
+          "content": "- Read more\n- [Report Increase your revenue in browsers with limited signals Read more](/home/resources/increase-your-revenue-in-browsers-with-limited-signals/)"
+        },
+        {
+          "header": "Increase your revenue in browsers with limited signals",
+          "content": "- Read more\n- [Guide The publisher’s playbook for navigating today’s privacy environment Read more](/home/resources/publisher-privacy-playbook/)"
+        },
+        {
+          "header": "The publisher’s playbook for navigating today’s privacy environment",
+          "content": "- Read more\n- [Report For e-commerce, the time for digital ads is now Read more](/home/resources/for-e-commerce-the-time-for-digital-ads-is-now/)"
+        },
+        {
+          "header": "For e-commerce, the time for digital ads is now",
+          "content": "- Read more\n- [Guide How automation can help you manage and grow your business Read more](/home/resources/how-automation-can-help-you-manage-and-grow-your-business/)"
+        },
+        {
+          "header": "How automation can help you manage and grow your business",
+          "content": "- Read more\n- [Report 2020 advanced TV inventory report Read more](/home/resources/2020-advanced-tv-inventory-report/)"
+        },
+        {
+          "header": "2020 advanced TV inventory report",
+          "content": "- Read more\n- [Guide Building a Retail Media Business with Google Read more](/home/resources/building-retail-media-business-with-google-ad-manager/)"
+        },
+        {
+          "header": "Building a Retail Media Business with Google",
+          "content": "- Read more\n- [Guide Protecting your ad-supported CTV experiences Read more](/home/resources/protecting-ad-supported-ctv-experiences/)"
+        },
+        {
+          "header": "Protecting your ad-supported CTV experiences",
+          "content": "- Read more\n- [Guide Getting started with Dynamic Ad Insertion Read more](/home/resources/getting-started-with-dynamic-ad-insertion/)"
+        },
+        {
+          "header": "Getting started with Dynamic Ad Insertion",
+          "content": "- Read more\n- [White Paper The Next-Generation Telco Bundle Read more](/home/resources/next-generation-telco-bundle-white-paper/)"
+        },
+        {
+          "header": "The Next-Generation Telco Bundle",
+          "content": "- Read more\n- [Feature Brief Maximize your revenue with Opportunities and Experiments Read more](/home/resources/feature_brief_opportunities_and_experiments/)"
+        },
+        {
+          "header": "Maximize your revenue with Opportunities and Experiments",
+          "content": "- Read more\n- [Feature Brief Get customized insights with Ad Manager reporting Read more](/home/resources/feature_brief_reporting/)"
+        },
+        {
+          "header": "Get customized insights with Ad Manager reporting",
+          "content": "- Read more\n- [Feature Brief How Authorized Buyers work with Google Ad Manager Read more](/home/resources/how_authorized_buyers_work_with_google/)"
+        },
+        {
+          "header": "How Authorized Buyers work with Google Ad Manager",
+          "content": "- Read more\n- [Feature Brief Use machine learning to manage and forecast inventory more effectively Read more](/home/resources/feature_brief_inventory_management_and_forecasting/)"
+        },
+        {
+          "header": "Use machine learning to manage and forecast inventory more effectively",
+          "content": "- Read more\n- [Feature Brief Capture growing video budgets with out-stream video ads Read more](/home/resources/feature_brief_outstream_video/)"
+        },
+        {
+          "header": "Capture growing video budgets with out-stream video ads",
+          "content": "- Read more\n- [Feature Brief Streamlined and improved workflows for video content ingestion Read more](/home/resources/feature_brief_video_content_ingestion/)"
+        },
+        {
+          "header": "Streamlined and improved workflows for video content ingestion",
+          "content": "- Read more\n- [Guide Reimagining the commercial break everywhere viewers are watching Read more](/home/resources/2019-advanced-tv-guide/)"
+        },
+        {
+          "header": "Reimagining the commercial break everywhere viewers are watching",
+          "content": "- Read more\n- [Report 2019 Advanced TV Inventory Report Read more](/home/resources/2019-advanced-tv-report/)"
+        },
+        {
+          "header": "2019 Advanced TV Inventory Report",
+          "content": "- Read more\n- [Report APAC’s changing digital landscape: How broadcast and video companies can keep up Read more](/home/resources/apacs-changing-broadcast-and-video-landscape/)"
+        },
+        {
+          "header": "APAC’s changing digital landscape: How broadcast and video companies can keep up",
+          "content": "- Read more\n- [Feature Brief Save time and increase inventory value with Open Measurement for apps Read more](/home/resources/feature-brief-open-measurement/)"
+        },
+        {
+          "header": "Save time and increase inventory value with Open Measurement for apps",
+          "content": "- Read more\n- [Feature Brief Modernize your direct deals with Programmatic Guaranteed Read more](/home/resources/feature-brief-programmatic-guaranteed/)"
+        },
+        {
+          "header": "Modernize your direct deals with Programmatic Guaranteed",
+          "content": "- Read more\n- [Feature Brief Seamlessly reach viewers everywhere with Dynamic Ad Insertion Read more](/home/resources/feature-brief-dynamic-ad-insertion/)"
+        },
+        {
+          "header": "Seamlessly reach viewers everywhere with Dynamic Ad Insertion",
+          "content": "- Read more\n- [Feature Brief Earn more from your video content with Smarter Ad Breaks Read more](/home/resources/feature-brief-smarter-ad-breaks/)"
+        },
+        {
+          "header": "Earn more from your video content with Smarter Ad Breaks",
+          "content": "- Read more\n- [Feature Brief Monitor and manage ad exchange ads in the Ad review center Read more](/home/resources/feature-brief-ad-review-center/)"
+        },
+        {
+          "header": "Monitor and manage ad exchange ads in the Ad review center",
+          "content": "- Read more\n- [Feature Brief Get comprehensive yield management with Google Ad Manager Read more](/home/resources/feature-brief-yield-management/)"
+        },
+        {
+          "header": "Get comprehensive yield management with Google Ad Manager",
+          "content": "- Read more\n- [Feature Brief Improve app revenue and fill rates with App Mediation Read more](/home/resources/feature-brief-app-mediation/)"
+        },
+        {
+          "header": "Improve app revenue and fill rates with App Mediation",
+          "content": "- Read more\n- [Feature Brief Create a customized ad experience with Native Ads Read more](/home/resources/feature-brief-native-ads/)"
+        },
+        {
+          "header": "Create a customized ad experience with Native Ads",
+          "content": "- Read more\n- [Feature Brief Improving user experience with the Better Ads Standards Read more](/home/resources/feature-brief-better-ads-standards/)"
+        },
+        {
+          "header": "Improving user experience with the Better Ads Standards",
+          "content": "- Read more\n- [Feature Brief Bring more bids to the auction with Open Bidding Read more](/home/resources/feature-brief-open-bidding/)"
+        },
+        {
+          "header": "Bring more bids to the auction with Open Bidding",
+          "content": "- Read more\n- [Feature Brief Create a better ad experience with rewarded ads Read more](/home/resources/feature-brief-rewarded-ads/)"
+        },
+        {
+          "header": "Create a better ad experience with rewarded ads",
+          "content": "- Read more\n- [Guide Video viewability best practices guide for publishers Read more](/home/resources/video-viewability-best-practices-publishers/)"
+        },
+        {
+          "header": "Video viewability best practices guide for publishers",
+          "content": "- Read more\n- [Report Grow faster with a Google Certified Publishing Partner Read more](/home/resources/grow-faster-google-certified-publishing-partner/)"
+        },
+        {
+          "header": "Grow faster with a Google Certified Publishing Partner",
+          "content": "- Read more\n- [Guide Rethink your eCommerce experience with Google Ad Manager Read more](/home/resources/ecommerce-guide/)"
+        },
+        {
+          "header": "Rethink your eCommerce experience with Google Ad Manager",
+          "content": "- Read more\n- [Report The convergence of TV and digital: How broadcasters are building for success Read more](/home/resources/convergence-of-tv-and-digital-broadcasters-are-building-for-success/)"
+        },
+        {
+          "header": "The convergence of TV and digital: How broadcasters are building for success",
+          "content": "- Read more\n- [Guide Taking a Page from the Sports Playbook: Engaging Fans in the Digital Age Read more](/home/resources/taking-page-sports-playbook-engaging-fans-digital-age/)"
+        },
+        {
+          "header": "Taking a Page from the Sports Playbook: Engaging Fans in the Digital Age",
+          "content": "- Read more\n- [Guide Digital Trade Marketing: Delighting Shoppers in the Age of Digital Read more](/home/resources/digital-trade-marketing-guide/)"
+        },
+        {
+          "header": "Digital Trade Marketing: Delighting Shoppers in the Age of Digital",
+          "content": "- Read more\n- [Report Publishers save 57% more time with Programmatic Guaranteed deals Read more](/home/resources/publishers-save-time-with-programmatic-guaranteed/)"
+        },
+        {
+          "header": "Publishers save 57% more time with Programmatic Guaranteed deals",
+          "content": "- Read more\n- [Report Capture growing video budgets with new out-stream formats on Google Ad Manager Read more](/home/resources/capture-growing-video-budgets-new-out-stream-formats/)"
+        },
+        {
+          "header": "Capture growing video budgets with new out-stream formats on Google Ad Manager",
+          "content": "- Read more\n- [Report Building for beyond with the Insights Engine Project Read more](/home/resources/building-beyond-insights-engine/)"
+        },
+        {
+          "header": "Building for beyond with the Insights Engine Project",
+          "content": "- Read more\n- [Report Digitizing supplier marketing: Increasing sales of products and services Read more](/home/resources/digitizing-supplier-marketing/)"
+        },
+        {
+          "header": "Digitizing supplier marketing: Increasing sales of products and services",
+          "content": "- Read more\n- [Report Improving protections for publishers Read more](/home/resources/improving-protections-publishers/)"
+        },
+        {
+          "header": "Improving protections for publishers",
+          "content": "- Read more\n- [Report TV made smarter with Google Ad Manager Read more](/home/resources/tv-made-smarter/)"
+        },
+        {
+          "header": "TV made smarter with Google Ad Manager",
+          "content": "- Read more\n- [Report What’s next for the mobile web? Read more](/home/resources/whats-next-mobile-web/)"
+        },
+        {
+          "header": "What’s next for the mobile web?",
+          "content": "- Read more\n- [Report Programmatic Guaranteed with custom creatives delivers scale for Vox Media Read more](/home/resources/article-programmatic-delivers-scale-vox-media/)"
+        },
+        {
+          "header": "Programmatic Guaranteed with custom creatives delivers scale for Vox Media",
+          "content": "- Read more\n- [Guide Creating better ad experiences for everyone Read more](/home/resources/creating-better-ad-experiences-guide/)"
+        },
+        {
+          "header": "Creating better ad experiences for everyone",
+          "content": "- Read more\n- [Guide How publishers can engage with people who use ad blockers Read more](/home/resources/guide-how-publishers-engage-with-ad-blockers/)"
+        },
+        {
+          "header": "How publishers can engage with people who use ad blockers",
+          "content": "- Read more\n- [Report Programmatic TV’s European Evolution Read more](/home/resources/report-programmatic-tv-europe-evolution/)"
+        },
+        {
+          "header": "Programmatic TV’s European Evolution",
+          "content": "- Read more"
+        },
+        {
+          "header": "Hungry for more?",
+          "content": "Learn how global publishers are finding success using Ad Manager to power their ads businesses.\n- [Success Stories](/home/success-stories/)"
+        },
+        {
+          "header": "About Google Ad Manager",
+          "content": "- [Overview](/home/)\n- [Capabilities](/home/capabilities/)\n- [Partner Solutions](/home/partner-solutions/)"
+        },
+        {
+          "header": "Learning & support",
+          "content": "- [Support](https://support.google.com/admanager/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)\n- [Blog](https://www.blog.google/products/admanager/)\n- [Skillshop](https://skillshop.withgoogle.com/)"
+        },
+        {
+          "header": "Developers & partners",
+          "content": "- [Google developers site](https://developers.google.com/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)\n- [Ad Manager for developers](https://developers.google.com/ad-manager/api/start?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)\n- [Certified Publishing Partners](https://www.google.com/ads/publisher/partners/find-a-partner/?utm_source=admanager&utm_campaign=footer)"
+        },
+        {
+          "header": "Related products",
+          "content": "- [Google Marketing Platform](https://marketingplatform.google.com/about/)\n- [Google Ads](https://ads.google.com/home/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)\n- [Google AdSense](https://www.google.com/adsense/start/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)\n- [Google AdMob](https://www.google.com/admob/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)\n- [Google Cloud](https://cloud.google.com/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)"
+        },
+        {
+          "header": "More from Google",
+          "content": "- [Think with Google](https://www.thinkwithgoogle.com/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)\n- [Google Revenue Solutions](https://www.google.com/ads/publisher/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)\n- [Business Solutions](https://www.google.com/services/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)\n- [Google Workspace](https://workspace.google.com/?utm_source=admanager.google.com&utm_medium=et&utm_campaign=admanager.google.com%2Fhome%2Fresources%2F&hl=en)\n- [Privacy](https://www.google.com/intl/en/policies/privacy/)\n- [Terms](https://www.google.com/intl/en/policies/terms/)\n- [About Google](https://www.google.com/intl/en/about/)\n- [Google Products](https://www.google.com/intl/en/about/products/)\n- Cookies management controls\n- [Help](https://support.google.com/?hl=en)\n- Change language or region 简体中文DeutschEnglish (UK)English (US)EspañolFrançaisItaliano日本語한국어NederlandsPortuguês (Brasil)"
+        }
+      ]
+    },
+    {
+      "title": "ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation",
+      "metadata": {
+        "source": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview",
+        "analyzedAt": "2026-06-04T17:41:39.723Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": [
+        {
+          "header": "Key Reference Links",
+          "content": "Google Ad Manager API Description: The Ad Manager API enables an app to integrate with Google Ad Manager. You can read Ad Manager data and run reports using the API.\n- [Google Ad Manager API Product Reference](https://developers.google.com/ad-manager/api/beta)\n- [GitHub Repository](https://github.com/googleapis/google-cloud-java/tree/main/java-admanager)\n- [Maven artifact](https://central.sonatype.com/artifact/com.google.api-ads/ad-manager)"
+        },
+        {
+          "header": "Getting Started",
+          "content": "In order to use this library, you first need to go through the following steps:\n- [Install a JDK (Java Development Kit)](https://cloud.google.com/java/docs/setup#install_a_jdk_java_development_kit)\n- [Select or create a Cloud Platform project](https://console.cloud.google.com/project)\n- [Enable billing for your project](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project)\n- [Enable the API](https://console.cloud.google.com/apis/library/admanager.googleapis.com)\n- [Set up authentication](https://cloud.google.com/docs/authentication/client-libraries)"
+        },
+        {
+          "header": "Use the Google Ad Manager API for Java",
+          "content": "To ensure that your project uses compatible versions of the libraries and their component artifacts, import com.google.cloud:libraries-bom and use the BOM to specify dependency versions. Be sure to remove any versions that you set previously. For more information about BOMs, see Google Cloud Platform Libraries BOM.\n- [Google Cloud Platform Libraries BOM](https://cloud.google.com/java/docs/bom)"
+        },
+        {
+          "header": "Maven",
+          "content": "Import the BOM in the dependencyManagement section of your pom.xml file. Include specific artifacts you depend on in the dependencies section, but don't specify the artifacts' versions in the dependencies section.\nThe example below demonstrates how you would import the BOM and include the ad-manager artifact."
+        },
+        {
+          "header": "Gradle",
+          "content": "BOMs are supported by default in Gradle 5.x or later. Add a platform dependency on com.google.cloud:libraries-bom and remove the version from the dependency declarations in the artifact's build.gradle file.\nThe example below demonstrates how you would import the BOM and include the ad-manager artifact.\nThe platform and enforcedPlatform keywords supply dependency versions declared in a BOM. The enforcedPlatform keyword enforces the dependency versions declared in the BOM and thus overrides what you specified.\nFor more details of the platform and enforcedPlatform keywords Gradle 5.x or higher, see Gradle: Importing Maven BOMs.\n- [Gradle: Importing Maven BOMs](https://docs.gradle.org/current/userguide/platforms.html#sub:bom_import)\nIf you're using Gradle 4.6 or later, add enableFeaturePreview('IMPROVED_POM_SUPPORT') to your settings.gradle file. For details, see Gradle 4.6 Release Notes: BOM import. Versions of Gradle earlier than 4.6 don't support BOMs.\n- [Gradle 4.6 Release Notes: BOM import](https://docs.gradle.org/4.6/release-notes.html#bom-import)"
+        },
+        {
+          "header": "SBT",
+          "content": "SBT doesn't support BOMs. You can find recommended versions of libraries from a particular BOM version on the dashboard and set the versions manually. To use the latest version of this library, add this to your dependencies:\n- [doesn't support BOMs](https://github.com/sbt/sbt/issues/4531)\n- [dashboard](https://storage.googleapis.com/cloud-opensource-java-dashboard/com.google.cloud/libraries-bom/index.html)"
+        },
+        {
+          "header": "Which version ID should I get started with?",
+          "content": "For this library, we recommend using com.google.ads.admanager.v1 for new applications.\n- [com.google.ads.admanager.v1](https://cloud.google.com/java/docs/reference/ad-manager/0.50.0/com.google.ads.admanager.v1)"
+        },
+        {
+          "header": "Understanding Version ID and Library Versions",
+          "content": "When using a Cloud client library, it's important to distinguish between two types of versions:\n- Library Version: The version of the software package (the client library) that helps you interact with the Cloud service. These libraries are released and updated frequently with bug fixes, improvements, and support for new service features and versions. The version selector at the top of this page represents the client library version.\n- Version ID: The version of the Cloud service itself (e.g. Google Ad Manager API). New Version IDs are introduced infrequently, and often involve changes to the core functionality and structure of the Cloud service itself. The packages in the lefthand navigation represent packages tied to a specific Version ID of the Cloud service."
+        },
+        {
+          "header": "Managing Library Versions",
+          "content": "We recommend using the com.google.cloud:libraries-bom installation method detailed above to streamline dependency management across multiple Cloud Java client libraries. This ensures compatibility and simplifies updates."
+        },
+        {
+          "header": "Choosing the Right Version ID",
+          "content": "Each Cloud Java client library may contain packages tied to specific Version IDs (e.g., v1, v2alpha). For new production applications, use the latest stable Version ID. This is identified by the highest version number without a suffix (like \"alpha\" or \"beta\"). You can read more about Cloud API versioning strategy here.\n- [Cloud API versioning strategy here](https://cloud.google.com/apis/design/versioning)\nImportant: Unstable Version ID releases (those with suffixes) are subject to breaking changes when upgrading. Use them only for testing or if you specifically need their experimental features.\nExcept as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.\n- [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/)\n- [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0)\n- [Google Developers Site Policies](https://developers.google.com/site-policies)\nLast updated 2026-04-25 UTC."
+        },
+        {
+          "header": "Products and pricing",
+          "content": "- [See all products](//cloud.google.com/products/)\n- [Google Cloud pricing](//cloud.google.com/pricing/)\n- [Google Cloud Marketplace](//cloud.google.com/marketplace/)\n- [Contact sales](//cloud.google.com/contact/)"
+        },
+        {
+          "header": "Support",
+          "content": "- [Community forums](//discuss.google.dev/c/google-cloud/14/)\n- [Support](//cloud.google.com/support-hub/)\n- [Release Notes](//docs.cloud.google.com/release-notes)\n- [System status](//status.cloud.google.com)"
+        },
+        {
+          "header": "Resources",
+          "content": "- [GitHub](//github.com/googlecloudPlatform/)\n- [Getting Started with Google Cloud](/docs/get-started/)\n- [Code samples](/docs/samples)\n- [Cloud Architecture Center](/architecture/)\n- [Training and Certification](//cloud.google.com/learn/training/)"
+        },
+        {
+          "header": "Engage",
+          "content": "- [Blog](//cloud.google.com/blog/)\n- [Events](//cloud.google.com/events/)\n- [X (Twitter)](//x.com/googlecloud)\n- [Google Cloud on YouTube](//www.youtube.com/googlecloud)\n- [Google Cloud Tech on YouTube](//www.youtube.com/googlecloudplatform)\n- [About Google](//about.google/)\n- [Privacy](//policies.google.com/privacy)\n- [Site terms](//policies.google.com/terms?hl=en)\n- [Google Cloud terms](//cloud.google.com/product-terms)\n- [Our third decade of climate action: join us](//cloud.google.com/sustainability)\n- [Subscribe](//cloud.google.com/newsletter/)"
+        }
+      ]
     }
   ],
   "nomad": {
