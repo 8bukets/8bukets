@@ -110,7 +110,7 @@ def generate_report(data, output_file):
 
     # Generate Markdown
     md = []
-    md.append("# Markposition Analytics Report")
+    md.append("# 📊 Markposition Analytics Report")
     md.append(f"\n**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
     # Table of Contents
