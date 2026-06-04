@@ -43,6 +43,10 @@ def create_ascii_bar(count, max_count, length=20):
 def generate_report(data, output_file):
     total_posts = len(data)
 
+    # Performance Optimization: Use Generators with Counter
+    # This delegates the counting loop to C-optimized code in collections.Counter
+    # and avoids creating large intermediate lists.
+
     # 1. Domain Analysis
     # Optimization: Use pre-computed 'domain' field if available to avoid expensive URL parsing.
     # We maintain the filter 'if p.get("external_link")' to preserve original behavior (only counting posts with links).
@@ -67,15 +71,12 @@ def generate_report(data, output_file):
         if cats:
             category_counter.update(cats)
 
-    # 3. Date Analysis
-    dates = []
     for p in data:
         dt_str = p.get('datetime') or p.get('date')
         if dt_str:
             try:
                 # Handle ISO format or standard date format
                 dt = datetime.fromisoformat(dt_str)
-                dates.append(dt)
             except ValueError:
                 pass
 
