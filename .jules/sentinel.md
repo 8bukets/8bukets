@@ -1,4 +1,6 @@
-## 2026-01-28 - CSV Injection in Scraper
-**Vulnerability:** The scraper was writing user-controlled input directly to CSV files without sanitization, allowing for Formula Injection.
-**Learning:** Scraped data can contain malicious payloads targeting data analysts' tools (like Excel).
-**Prevention:** Always sanitize fields starting with `=`, `+`, `-`, or `@` by prepending a single quote `'` when exporting to CSV.
+# Sentinel Security Journal
+
+## 2025-10-15 - Path Traversal in File Output
+**Vulnerability:** User-controlled output paths in `scraper.py` allowed writing files outside the working directory (Path Traversal).
+**Learning:** CLI tools accepting file paths as arguments must validate that the resolved path is within the intended directory, even if they are just "scrapers".
+**Prevention:** Use `os.path.abspath` and `os.path.commonpath` to validate paths against `os.getcwd()` before opening files.
