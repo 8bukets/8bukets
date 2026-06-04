@@ -47,6 +47,15 @@ class UXFormatter:
     def error(msg: str):
         print(f"{Colors.RED}❌ {msg}{Colors.ENDC}")
 
+# Define sections with titles and emojis
+SECTIONS = {
+    "general": {"title": "General Statistics", "emoji": "📊"},
+    "domains": {"title": "Top 10 Referenced Domains", "emoji": "🔗"},
+    "categories": {"title": "Top 10 Categories", "emoji": "📂"},
+    "years": {"title": "Posts by Year", "emoji": "📅"},
+    "authors": {"title": "Authors", "emoji": "✍️"}
+}
+
 def load_data(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
