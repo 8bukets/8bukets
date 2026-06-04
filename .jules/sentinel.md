@@ -1,4 +1,8 @@
-## 2026-01-30 - CSV Formula Injection
-**Vulnerability:** The scraper was writing user-controlled input (titles, authors, etc.) directly to CSV files without sanitization. If these fields started with characters like `=`, `+`, `-`, or `@`, they could be interpreted as formulas by spreadsheet software (Excel, Google Sheets), potentially leading to data exfiltration or arbitrary code execution on the analyst's machine.
-**Learning:** Data exported for use in other applications (like CSVs for Excel) must be treated as untrusted and sanitized according to the *consumer's* security model, not just the source's. Standard CSV libraries handle delimiter escaping but not formula injection.
-**Prevention:** Implement a sanitization layer for all CSV exports that prefixes potentially dangerous characters with a single quote (`'`), forcing them to be treated as literal strings.
+## 2025-02-18 - Path Traversal in Scraper Output
+**Vulnerability:** The `scraper.py` script accepted file paths for output (`--json`, `--csv`, `--txt`) without validation, allowing a user to write files to arbitrary locations on the filesystem (Path Traversal).
+**Learning:** Command-line tools that accept file paths are often overlooked for security compared to web apps, but they can be just as dangerous if used in automated pipelines or setuid contexts. Standard libraries like `argparse` do not sanitize paths by default.
+**Prevention:** Always validate user-provided file paths using a strict allow-list or by ensuring they resolve within a specific safe directory using `os.path.abspath` and `os.path.commonpath`.
+## 2026-02-06 - Markdown Report Injection
+**Vulnerability:** The analytics report generator (`analytics.py`) directly embedded user-controlled data (domain names, categories, authors) into Markdown tables without escaping. Malicious inputs containing `|` could break the table structure, and inputs with `<script>` could introduce XSS if rendered in a browser.
+**Learning:** Generating structured text formats (Markdown, CSV, JSON) manually requires careful escaping of delimiters. Trusting `urlparse` to sanitize domains is insufficient as it preserves characters like `|`.
+**Prevention:** Use a dedicated `escape_markdown` function for all dynamic content inserted into Markdown reports. Ensure tests cover malicious inputs with special characters (`|`, `<`, `>`, `[`, `]`).
