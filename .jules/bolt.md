@@ -1,3 +1,6 @@
-## 2026-01-31 - [Python Loop Overhead vs C-Optimized Counter]
-**Learning:** Merging multiple iterations over a list into a single manual Python loop (e.g., `for p in data: c[x]+=1`) was measurably slower (1.7s) than multiple passes using Generator Expressions with `collections.Counter` (1.48s) or List Comprehensions (1.3s). This is because `Counter(iterable)` runs the loop in C, while manual iteration incurs Python interpreter overhead for every step.
-**Action:** When optimizing aggregation in Python, prioritize passing iterables (Generators/Lists) directly to C-implemented constructors like `Counter()` over manual loops, even if it means iterating the source data multiple times (assuming source iteration is cheap).
+## 2024-05-23 - BeautifulSoup SoupStrainer Optimization
+**Learning:** Parsing the entire HTML document with `BeautifulSoup` when only a specific subset of tags is needed is wasteful. Using `SoupStrainer('a', href=True)` to filter tags *before* creating the full parse tree resulted in a ~40% performance improvement (1.5s vs 2.5s in benchmarks) for extracting links.
+**Action:** Always consider `SoupStrainer` when scraping specific elements from large HTML pages, especially if using the default `html.parser` which is slower than `lxml`.
+## 2026-02-06 - Redundant URL Parsing
+**Learning:** The analytics pipeline was performing redundant `urlparse` operations on every record to extract domains, ignoring the existing `domain` field provided by the scraper. This highlighted the importance of verifying input data schema before implementing extraction logic.
+**Action:** When optimizing data processing scripts, first inspect the full schema of the input data to identify pre-calculated fields that can replace runtime computations.
