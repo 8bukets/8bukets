@@ -47,6 +47,12 @@ def get_domain(url):
     except:
         return None
 
+def sanitize_table_cell(text):
+    """Sanitize text for Markdown table cells."""
+    if text is None:
+        return ""
+    return str(text).replace("|", "&#124;")
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
