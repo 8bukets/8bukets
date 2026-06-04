@@ -100,6 +100,14 @@ class ChiefAIOfficerAgent(BaseAgent):
                     self.logger.info("CAIO [ROLE]: Tech stacking responsibility identified. Issuing build vs buy directive.")
                     strategic_directives.append("DECIDE_BUILD_VS_BUY_STRATEGY")
 
+                if "cross-department training" in sections_str:
+                    self.logger.info("CAIO [ROLE]: Training responsibility identified. Issuing cross-department literacy directive.")
+                    strategic_directives.append("INITIATE_CROSS_DEPARTMENT_TRAINING")
+
+                if "ethics & governance" in sections_str:
+                    self.logger.info("CAIO [ROLE]: Ethics and governance responsibility identified. Issuing framework enforcement directive.")
+                    strategic_directives.append("ENFORCE_GOVERNANCE_FRAMEWORKS")
+
             if "Phase 13" in title or "phase 13" in sections_str:
                 self.logger.info(f"CAIO [KNOWLEDGE]: Phase 13 strategy detected in integrated knowledge: {title}")
                 if "ACTIVATE_PHASE_13_PROTOCOLS" not in strategic_directives:
