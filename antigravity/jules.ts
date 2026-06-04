@@ -350,6 +350,14 @@ export class Jules {
     await this.ensureInitialized()
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
 
+    // Phase 22: Cloud Takeover Audit
+    try {
+      const { cloudWorkflowAgent } = await import('./services/cloud_workflow')
+      await cloudWorkflowAgent.enforceCloudTakeover()
+    } catch (e) {
+      console.warn('⚠️ [Jules] Cloud takeover audit failed, continuing work cycle.')
+    }
+
       // Phase 10: Singularity Orchestration
       const { bootstrap } = await import('./singularity')
       for (const idea of ideas) {
@@ -447,6 +455,10 @@ export class Jules {
       this.save()
 
       // Phase 19: Sync back to cloud bridge if local leader
+      const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
+      const { onlinePresence } = await import('./services/presence')
+      const isLeader = onlinePresence.isLeader()
+
       if (isLeader && !isCloud) {
         const { edgeToCloudBridge } = await import('./services/edge_to_cloud_bridge')
         await edgeToCloudBridge.syncLocalToCloud()

@@ -2,6 +2,8 @@ import { exec } from 'child_process';
 import * as fs from 'fs/promises';
 import { promisify } from 'util';
 import { syncCollaborationState, triggerEcosystemCollaboration } from '../antigravity/services/collaboration';
+import { jules } from '../antigravity/jules';
+import { onlinePresence } from '../antigravity/services/presence';
 
 const execAsync = promisify(exec);
 
@@ -18,19 +20,20 @@ async function main() {
     console.log('Running docker info...');
     const { stdout: infoOutput } = await execAsync('docker info');
     state.dockerInfo = infoOutput;
+
+    console.log('Running docker ps...');
+    const { stdout: psOutput } = await execAsync('docker ps');
+    state.dockerPs = psOutput;
   } catch (error: any) {
-    console.error('Failed to run docker info:', error.message);
-    state.dockerInfo = 'Error: ' + error.message;
+    console.warn('⚠️ [Jules] Docker not running or inaccessible:', error.message);
+    state.dockerInfo = state.dockerInfo || ('Error: ' + error.message);
   }
 
-  // 2. Synchronize collaboration context
-  console.log('🐳 [Jules] Connecting to Docker...');
-  try {
-    const { execSync } = require('child_process');
-    execSync('docker info && docker ps');
-  } catch (e) {
-    console.warn('⚠️ [Jules] Docker not running or inaccessible.');
-  }
+  // 2. Synchronize presence and collaboration context
+  console.log('📡 [Jules] Synchronizing online presence...');
+  await onlinePresence.syncPresence();
+
+  console.log('🤝 [Jules] Synchronizing collaboration state...');
   await jules.syncCollaboration();
 
   const outputPath = 'autonomous_state.json';

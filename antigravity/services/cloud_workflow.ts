@@ -20,6 +20,9 @@ export class CloudWorkflowAgent {
     if (!isCloud) return { takeover: false, reason: 'not_in_cloud_env' }
 
     const { onlinePresence } = await import('./presence')
+
+    // Establish current leadership status before audit
+    await onlinePresence.syncPresence()
     const isLeader = onlinePresence.isLeader()
 
     if (isLeader) {
