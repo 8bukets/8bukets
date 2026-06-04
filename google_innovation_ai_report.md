@@ -65,11 +65,17 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 ### Catch up on 12 major I/O 2026 moments
 - URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/
 
+### Kaggle is making AI benchmark creation effortless
+- URL: https://blog.google/innovation-and-ai/technology/developers-tools/build-kaggle--benchmarks-locally/
+
 ### Introducing Gemma 4 12B: a unified, encoder-free multimodal model
 - URL: https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12b/
 
 ### Take our I/O 2026 quiz, vibe coded in Google AI Studio.
 - URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-vibe-coded-quiz/
+
+### We’re announcing a new data center and energy investments in Gray and Roberts Counties, Texas.
+- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/meitner-energy-center/
 
 ### Blue, yellow and green: Google invests in its new data center in Sweden.
 - URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/blue-yellow-and-green-google-invests-in-its-first-data-center-in-sweden/
