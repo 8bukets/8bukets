@@ -35,7 +35,7 @@ class AnalyzerAgent(BaseAgent):
         self.logger.info(f"Analyzing {len(blog_posts)} posts...")
 
         sentiments = []
-        all_content = ""
+        all_words = []
         categories_counter = Counter()
 
         for post in blog_posts:
@@ -43,18 +43,16 @@ class AnalyzerAgent(BaseAgent):
             if content:
                 blob = TextBlob(content)
                 sentiments.append(blob.sentiment.polarity)
-                all_content += " " + content
+                # Optimization: reuse existing blob
+                words = [w.lower() for w in blob.words if len(w) > 4 and w.isalpha()]
+                all_words.extend(words)
 
             for cat in post.get('categories', []):
                 categories_counter[cat] += 1
 
         avg_sentiment = sum(sentiments) / len(sentiments) if sentiments else 0
 
-        # Simple keyword extraction
-        blob = TextBlob(all_content)
-        # Filter for significant words
-        words = [w.lower() for w in blob.words if len(w) > 4 and w.isalpha()]
-        keywords = Counter(words).most_common(10)
+        keywords = Counter(all_words).most_common(10)
 
         result["average_sentiment"] = avg_sentiment
         result["top_categories"] = categories_counter.most_common(5)
