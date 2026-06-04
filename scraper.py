@@ -174,6 +174,7 @@ class MarkPositionScraperAsync:
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+        self.start_time = time.time()
 
     def validate_path(self, path: str) -> str:
         """Validate that the output path is within the current working directory."""
@@ -249,90 +250,6 @@ class MarkPositionScraperAsync:
             logger.error(f"Error fetching page {page_num}: {e}")
             return None
 
-<<<<<<< bolt-optimize-scraper-12240886470808254228
-    async def parse_page(self, html: str) -> List[Dict]:
-        # Optimization: Use SoupStrainer to parse only article tags
-        strainer = SoupStrainer('article')
-        soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
-        articles = soup.find_all('article', class_='post')
-        soup = BeautifulSoup(html, 'html.parser')
-
-        # Optimization: Narrow search scope to #content div if present to avoid traversing footer/sidebar
-        content = soup.find('div', id='content')
-        if content:
-            articles = content.find_all('article', class_='post')
-        else:
-            articles = soup.find_all('article', class_='post')
-
-        page_posts = []
-
-        if not articles:
-            return []
-
-        for article in articles:
-            post_data = {}
-
-            # Title
-            # Optimization: Replace select_one with find for performance
-            title_text = ""
-            # Old: title_tag = article.select_one('h1.entry-title a')
-            h1 = article.find('h1', class_='entry-title')
-            title_tag = h1.find('a') if h1 else None
-
-            if title_tag:
-                title_text = self.clean_text(title_tag.get_text())
-                post_data['title'] = title_text
-
-            # Date
-            # Old: date_tag = article.select_one('time.entry-date')
-            date_tag = article.find('time', class_='entry-date')
-            if date_tag:
-                post_data['date'] = self.clean_text(date_tag.get_text())
-                post_data['datetime'] = date_tag.get('datetime')
-
-            # Author
-            # Old: author_tag = article.select_one('.author.vcard .fn')
-            # Optimization: 'fn' class is unique enough within the article context
-            author_tag = article.find(class_='fn')
-            if author_tag:
-                post_data['author'] = self.clean_text(author_tag.get_text())
-            else:
-                post_data['author'] = None
-
-            # Categories
-            post_data['categories'] = self.extract_categories(article)
-
-            # External Link
-            external_link = None
-            # Old: content_div = article.select_one('.entry-content')
-            content_div = article.find(class_='entry-content')
-
-            if content_div:
-                link_tag = content_div.find('a')
-                if link_tag:
-                    external_link = link_tag.get('href')
-
-                if not external_link:
-                    iframe_tag = content_div.find('iframe')
-                    if iframe_tag:
-                        external_link = iframe_tag.get('src')
-
-            if not external_link and title_text and self.is_url(title_text):
-                external_link = title_text
-
-            post_data['external_link'] = external_link
-            post_data['domain'] = self.extract_domain(external_link)
-
-            # Post URL
-            if title_tag:
-                post_data['post_url'] = title_tag.get('href')
-
-            page_posts.append(post_data)
-
-        return page_posts
-
-=======
->>>>>>> sentinel-csv-injection-fix-6855106868508477486
     async def scrape(self):
         page_num = 1
         sem = asyncio.Semaphore(self.concurrency)
@@ -345,25 +262,6 @@ class MarkPositionScraperAsync:
         # Set a global timeout for all requests
         timeout = aiohttp.ClientTimeout(total=30)
 
-<<<<<<< bolt-optimize-scraper-12240886470808254228
-        async with aiohttp.ClientSession(headers=headers, timeout=timeout) as session:
-            # We don't know the total pages, so we have to fetch sequentially or in chunks until we hit 404/empty.
-            # Pure concurrent fetching of all pages requires knowing the max page.
-            # Heuristic: fetch in batches of `concurrency`. If any page in batch returns 404 or empty, stop.
-
-            active = True
-            while active:
-                tasks = []
-                # Prepare a batch of pages
-                batch_start = page_num
-                # If max_pages is set, clamp the batch size
-                current_concurrency = self.concurrency
-
-                for i in range(current_concurrency):
-                    current_page = batch_start + i
-                    if self.max_pages and current_page > self.max_pages:
-                        active = False
-=======
         try:
             async with aiohttp.ClientSession(headers=headers, timeout=timeout) as session:
                 active = True
@@ -383,7 +281,6 @@ class MarkPositionScraperAsync:
                         tasks.append(self.fetch_and_parse(session, current_page, sem))
 
                     if not tasks:
->>>>>>> sentinel-csv-injection-fix-6855106868508477486
                         break
 
                     logger.info(f"Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
@@ -465,6 +362,14 @@ class MarkPositionScraperAsync:
             json.dump(post, json_f, indent=4, ensure_ascii=False)
 
         return is_first_item
+
+        unique_links = set()
+        for post in all_posts:
+            link = post.get('external_link')
+            if link:
+                unique_links.add(link)
+
+        self.print_summary(len(all_posts), len(unique_links))
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
