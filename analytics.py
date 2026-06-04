@@ -45,27 +45,42 @@ def generate_report(data, output_file):
     domain_counts = Counter(domains).most_common(10)
     max_domain_count = domain_counts[0][1] if domain_counts else 0
 
-    # 2. Category Analysis
-    all_categories = []
     for p in data:
-        cats = p.get('categories', [])
+        # 1. Domain Analysis
+        # Use pre-calculated domain if available, otherwise parse external_link
+        domain = p.get('domain')
+        if not domain:
+            external_link = p.get('external_link')
+            if external_link:
+                domain = get_domain(external_link)
+
+        if domain:
+            domain_counter[domain] += 1
+
+        # 2. Category Analysis
+        cats = p.get('categories')
         if cats:
             all_categories.extend(cats)
     category_counts = Counter(all_categories).most_common(10)
     max_category_count = category_counts[0][1] if category_counts else 0
 
-    # 3. Date Analysis
-    dates = []
-    for p in data:
+        # 3. Date Analysis
         dt_str = p.get('datetime')
         if dt_str:
             try:
                 # Handle ISO format
                 dt = datetime.fromisoformat(dt_str)
                 dates.append(dt)
+                year_counter[dt.year] += 1
             except ValueError:
                 pass
 
+        # 4. Author Analysis
+        author = p.get('author')
+        if author:
+            author_counter[author] += 1
+
+    # Post-loop processing
     if dates:
         dates.sort()
         start_date = dates[0].strftime('%Y-%m-%d')
@@ -80,9 +95,13 @@ def generate_report(data, output_file):
         year_counts = []
         max_year_count = 0
 
-    # 4. Author Analysis
-    authors = [p.get('author') for p in data if p.get('author')]
-    author_counts = Counter(authors).most_common()
+    domain_counts = domain_counter.most_common(10)
+    category_counts = category_counter.most_common(10)
+    year_counts = year_counter.most_common()
+    year_counts.sort(key=lambda x: x[0], reverse=True)
+    author_counts = author_counter.most_common()
+
+    unique_domain_count = len(domain_counter)
 
     # Define Sections
     # Key: (Emoji, Title, Slug)
