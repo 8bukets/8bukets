@@ -81,16 +81,27 @@ def generate_report(data, output_file):
 
     # 2. Category Analysis
     all_categories = []
+    years = []
+    authors = []
+
+    min_date = None
+    max_date = None
+
+    # Single pass loop O(N)
     for p in data:
-        cats = p.get('categories', [])
+        # Domain
+        domain = p.get('domain')
+        if domain:
+            domains.append(domain)
+
+        # Categories
+        cats = p.get('categories')
         if cats:
             all_categories.extend(cats)
     category_counts = Counter(all_categories).most_common(10)
     max_category_count = category_counts[0][1] if category_counts else 0
 
-    # 3. Date Analysis
-    dates = []
-    for p in data:
+        # Date
         dt_str = p.get('datetime')
         dt = None
         if dt_str:
@@ -184,7 +195,7 @@ def generate_report(data, output_file):
     md.append("\n## 🔗 Top 10 Referenced Domains")
     md.append("| Domain | Count |")
     md.append("| :--- | :---: |")
-    for domain, count in domain_counts:
+    for domain, count in top_domains:
         md.append(f"| {domain} | {count} |")
     md.append("\n[Back to Top](#table-of-contents)")
 
@@ -199,7 +210,7 @@ def generate_report(data, output_file):
     md.append("\n## 📅 Posts by Year")
     md.append("| Year | Count |")
     md.append("| :--- | :---: |")
-    for year, count in year_counts:
+    for year, count in sorted_years:
         md.append(f"| {year} | {count} |")
     md.append("\n[Back to Top](#table-of-contents)")
     md.append("\n## 📊 General Statistics")
