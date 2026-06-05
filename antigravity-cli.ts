@@ -78,6 +78,7 @@ program
   .command('improve-merge-integrate-run')
   .description('Improve merge integrate run workflow and observe knowledge')
   .action(async () => {
+    // Execute merge integrate run workflow
     const url = 'https://software-online-review.com';
     console.log(`🧠 Improving merge integrate run workflow for ${url}...`);
     try {
