@@ -81,6 +81,12 @@ class MarkPositionScraperAsync:
         text = text.replace('\xa0', ' ')
         return self.CLEAN_TEXT_REGEX.sub(' ', text).strip()
 
+    def sanitize_csv_field(self, field: str) -> str:
+        """Sanitize field to prevent CSV injection."""
+        if field and field.startswith(('=', '+', '-', '@')):
+            return "'" + field
+        return field
+
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
         # Use pre-compiled regex
