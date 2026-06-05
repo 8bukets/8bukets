@@ -29,7 +29,6 @@ export async function runBackup() {
   try {
     await fs.promises.access(memoryPath)
     try {
-    try {
       // Verify Integrity
       const memoryContent = await fs.promises.readFile(memoryPath, 'utf8')
       const parsed = JSON.parse(memoryContent)
@@ -43,7 +42,7 @@ export async function runBackup() {
     } catch (e) {
       console.error(`⚠️ [Backup Agent] Integrity check failed for Jules Memory. Skipping backup. Error:`, e)
     }
-  } else {
+  } catch (e) {
       console.warn(`⚠️ [Backup Agent] Could not find Jules Memory at ${memoryPath}`)
   }
 
@@ -51,7 +50,6 @@ export async function runBackup() {
   const statePath = path.join(rootDir, 'autonomous_state.json')
   try {
     await fs.promises.access(statePath)
-    try {
     try {
       const stateContent = await fs.promises.readFile(statePath, 'utf8')
       const parsed = JSON.parse(stateContent)
@@ -65,6 +63,8 @@ export async function runBackup() {
     } catch (e) {
       console.error(`⚠️ [Backup Agent] Integrity check failed for Autonomous State. Skipping backup. Error:`, e)
     }
+  } catch (e) {
+      console.warn(`⚠️ [Backup Agent] Could not find Autonomous State at ${statePath}`)
   }
 
   // Record task in cognitive memory
