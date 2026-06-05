@@ -42,6 +42,8 @@ async def test_caio_agent():
     assert "ENFORCE_ISO_42001_COMPLIANCE" in result["strategic_directives"]
     assert "INITIATE_CROSS_DEPARTMENT_TRAINING" in result["strategic_directives"]
     assert "ENFORCE_GOVERNANCE_FRAMEWORKS" in result["strategic_directives"]
+    assert "ALIGN_AI_STRATEGY_WITH_BUSINESS_GOALS" in result["strategic_directives"]
+    assert "MEASURE_AI_BUSINESS_IMPACT" in result["strategic_directives"]
 
     # Verify Market Intelligence and Role Alignment integration in summary
     assert "Executive Role Alignment: Verified." in result["executive_summary"]
