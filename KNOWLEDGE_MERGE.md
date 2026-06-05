@@ -7841,3 +7841,218 @@
 - **Branch:** `remotes/origin/connect-and-collaborate-3133568529877548177`
   - **Result:** Commit: chore: trigger connect and collaborate workflow
   - **Activity:** Last active 7 minutes ago
+
+## Ecosystem Knowledge Consolidation (2026-06-05T00:42:07.542Z)
+### 🔗 Resource Dependency Matrix
+- `cloud_simulation` -> depends on -> `cloud_workflow` (import)
+- `cloud_simulation` -> depends on -> `docker` (import)
+- `cloud_simulation` -> depends on -> `react` (import)
+- `cloud_workflow` -> depends on -> `docker` (import)
+- `cloud_workflow` -> depends on -> `gitlab` (import)
+- `cloud_workflow` -> depends on -> `github_evolution` (import)
+- `cloud_workflow` -> depends on -> `gitkraken_metrics` (import)
+- `cloud_workflow` -> depends on -> `react` (import)
+- `collaboration` -> depends on -> `docker` (import)
+- `collaboration` -> depends on -> `jenkins` (import)
+- _...and 42 more dependencies._
+
+### 📂 Category: OTHER
+#### 🌐 Domain: Automation
+- **Branch:** `jules-14602813324423635796-48a23d44`
+  - **Result:** 🤖 fix: autonomous self-repair of 4 issues (3 files changed in Automation)
+  - **Activity:** Last active 14 seconds ago
+  - **Artifacts:** 3 files modified.
+
+#### 🌐 Domain: General
+- **Branch:** `main`
+  - **Result:** Commit: Merge pull request #2370 from 8bukets/update-gitlab-security-agent-prompt-669638159378343834
+  - **Activity:** Last active 3 hours ago
+
+### 📂 Category: REMOTES
+#### 🌐 Domain: General
+- **Branch:** `remotes/origin/HEAD -> origin/jules/scraper-markposition-17752547678215960211`
+  - **Result:** Commit: Merge pull request #2372 from 8bukets/feat/markposition-integration-13716106460631195250
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/add-google-edge-agent-9371392929328195231`
+  - **Result:** Commit: Merge pull request #2371 from 8bukets/feat/integrate-google-innovation-knowledge-14618042010162779019
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/agent-duo-planner-8737922611126981833`
+  - **Result:** Commit: No changes required
+  - **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/analytics-redundant-parsing-fix-4098087028764432479`
+  - **Result:** Commit: Merge pull request #1324 from 8bukets/bolt/optimize-scraper-soupstrainer-14420766436161208317
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/analytics-single-pass-optimization-8605272393071134080`
+  - **Result:** Commit: Merge pull request #1336 from 8bukets/palette-ux-improvement-scraper-345565171526082614
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/blocking-async-batch-fix-8387232668981368166`
+  - **Result:** Commit: Merge pull request #1333 from 8bukets/bolt-optimize-scraper-parsing-3757013743325312913
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/bolt-analytics-optimization-12107031809392749414`
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into bolt-analytics-optimization-12107031809392749414
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/bolt-analytics-optimization-16185313300638390327`
+  - **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into bolt-analytics-optimization-16185313300638390327
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/bolt-async-scraper-parsing-192663672683263227`
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into bolt-async-scraper-parsing-192663672683263227
+  - **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/bolt-debounce-search-10189589861044009220`
+  - **Result:** Commit: Merge branch 'unitedsports-initial-setup-6667977739938748492' into bolt-debounce-search-10189589861044009220
+  - **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/bolt-optimize-analytics-5015200726449326230`
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into bolt-optimize-analytics-5015200726449326230
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/bolt-optimize-parsing-17107118715400400721`
+  - **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into bolt-optimize-parsing-17107118715400400721
+  - **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/bolt-optimize-scraper-parsing-3448923881987596786`
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into bolt-optimize-scraper-parsing-3448923881987596786
+  - **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/bolt-optimize-scraper-parsing-3757013743325312913`
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into bolt-optimize-scraper-parsing-3757013743325312913
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/bolt-optimize-scraper-parsing-9068954578831072256`
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into bolt-optimize-scraper-parsing-9068954578831072256
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/bolt-regex-optimization-9273644519795957416`
+  - **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into bolt-regex-optimization-9273644519795957416
+  - **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/dependabot/npm_and_yarn/software-review-platform/backend/npm_and_yarn-0a9c170602`
+  - **Result:** Commit: build(deps): Bump hono
+  - **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/jules-scrape-informatic-6598290821327070927`
+  - **Result:** Commit: Merge pull request #1298 from 8bukets/palette-daily-report-ux-12337725128930830373
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/jules/scraper-markposition-17752547678215960211`
+  - **Result:** Commit: Merge pull request #2372 from 8bukets/feat/markposition-integration-13716106460631195250
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/main`
+  - **Result:** Commit: Merge pull request #2370 from 8bukets/update-gitlab-security-agent-prompt-669638159378343834
+  - **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/optimize-scraper-lxml-10625319758147758999`
+  - **Result:** Commit: Merge pull request #1340 from 8bukets/palette-enhanced-analytics-report-16541518786921245550
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/oracle-google-cloud-agents-15432798509012982749`
+  - **Result:** Commit: Merge pull request #1292 from 8bukets/sentinel-markdown-sanitization-7412755230245189501
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/palette-analytics-report-navigation-2126016171697891726`
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into palette-analytics-report-navigation-2126016171697891726
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/palette-analytics-ux-3085333679140130358`
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette-analytics-ux-3085333679140130358
+  - **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/palette-daily-report-ux-12337725128930830373`
+  - **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into palette-daily-report-ux-12337725128930830373
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/palette-enhanced-analytics-report-16541518786921245550`
+  - **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into palette-enhanced-analytics-report-16541518786921245550
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/palette-report-ux-1122938860109314687`
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into palette-report-ux-1122938860109314687
+  - **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/palette-ux-improvement-scraper-345565171526082614`
+  - **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into palette-ux-improvement-scraper-345565171526082614
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/palette-ux-report-enhancement-6200692128049010692`
+  - **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into palette-ux-report-enhancement-6200692128049010692
+  - **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/perf/scraper-optimization-9355208223280700533`
+  - **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into perf/scraper-optimization-9355208223280700533
+  - **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/scrape-oracle-news-9936778584663660002`
+  - **Result:** Commit: Merge pull request #1303 from 8bukets/sentinel-csv-injection-fix-1387259514847696259
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/scrape-wishlist-blog-8562532477839035494`
+  - **Result:** Commit: Merge pull request #1310 from 8bukets/sentinel-fix-ssrf-13141535001444282200
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/sentinel-csv-injection-11171345795536949565`
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into sentinel-csv-injection-11171345795536949565
+  - **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-1387259514847696259`
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into sentinel-csv-injection-fix-1387259514847696259
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-16486355164975308903`
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into sentinel-csv-injection-fix-16486355164975308903
+  - **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-17447751349152713566`
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into sentinel-csv-injection-fix-17447751349152713566
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-2649491938498643870`
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into sentinel-csv-injection-fix-2649491938498643870
+  - **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-3035923625563795177`
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into sentinel-csv-injection-fix-3035923625563795177
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-3645820419479198365`
+  - **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into sentinel-csv-injection-fix-3645820419479198365
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-6855106868508477486`
+  - **Result:** Commit: Merge pull request #1264 from 8bukets/palette/analytics-navigation-436511791889280438
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/sentinel-fix-ssrf-13141535001444282200`
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into sentinel-fix-ssrf-13141535001444282200
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/sentinel-markdown-sanitization-7412755230245189501`
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into sentinel-markdown-sanitization-7412755230245189501
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/unbounded-memory-fix-2399372418864956220`
+  - **Result:** Commit: Merge pull request #1334 from 8bukets/palette/improve-report-ux-11475379120362374417
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/unitedsports-initial-setup-6667977739938748492`
+  - **Result:** Commit: Merge pull request #1178 from 8bukets/bolt-debounce-search-10189589861044009220
+  - **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/update-gitlab-security-agent-prompt-669638159378343834`
+  - **Result:** Commit: Update gitlab security agent prompt
+  - **Activity:** Last active 3 hours ago
+
+### 📂 Category: PERFORMANCE
+#### 🌐 Domain: General
+- **Branch:** `remotes/origin/bolt/optimize-analytics-counters-3356972243942763781`
+  - **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into bolt/optimize-analytics-counters-3356972243942763781
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/bolt/optimize-regex-1525106895244379137`
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into bolt/optimize-regex-1525106895244379137
+  - **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/bolt/optimize-scraper-connections-13114973092726669835`
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into bolt/optimize-scraper-connections-13114973092726669835
+  - **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/bolt/optimize-scraper-soupstrainer-14420766436161208317`
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into bolt/optimize-scraper-soupstrainer-14420766436161208317
+  - **Activity:** Last active 2 hours ago
+
+### 📂 Category: FEATURE
+#### 🌐 Domain: General
+- **Branch:** `remotes/origin/feat/connect-docker-collaboration-sync-v12-final-11639225190852212326-7646056837559955541`
+  - **Result:** Commit: chore: execute Docker connectivity audit and collaboration sync
+  - **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/feat/integrate-google-innovation-knowledge-14618042010162779019`
+  - **Result:** Commit: feat: integrate latest Google Innovation & AI knowledge
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/feat/markposition-integration-13716106460631195250`
+  - **Result:** Commit: feat: integrate Markposition knowledge and automate merge
+  - **Activity:** Last active 2 hours ago
+
+### 📂 Category: UX
+#### 🌐 Domain: General
+- **Branch:** `remotes/origin/palette/analytics-navigation-436511791889280438`
+  - **Result:** Commit: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into palette/analytics-navigation-436511791889280438
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/palette/analytics-visualization-3131876872723686653`
+  - **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette/analytics-visualization-3131876872723686653
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/palette/improve-report-ux-11475379120362374417`
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into palette/improve-report-ux-11475379120362374417
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/palette/report-ux-toc-4596925936165849228`
+  - **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into palette/report-ux-toc-4596925936165849228
+  - **Activity:** Last active 3 hours ago
+
+### 📂 Category: SECURITY
+#### 🌐 Domain: General
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-1837485357128189949`
+  - **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into sentinel/fix-csv-injection-1837485357128189949
+  - **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-2502077377827287714`
+  - **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into sentinel/fix-csv-injection-2502077377827287714
+  - **Activity:** Last active 3 hours ago
