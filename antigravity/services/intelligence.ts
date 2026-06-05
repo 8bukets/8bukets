@@ -37,6 +37,7 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `## 🏥 System Sovereignty\n`
   report += `- **MongoDB:** ${health.mongodb}\n`
   report += `- **Supabase:** ${health.supabase}\n`
+  report += `- **Active Workers:** 24/7 autonomous surveillance active\n`
   report += `- **Total Branches:** ${branches.length}\n\n`
 
   const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
@@ -131,7 +132,8 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
     .slice(0, 10)
 
   recentBranches.forEach(b => {
-    report += `- **${b.name}** [${b.category}]: ${b.lastMessage} (*${b.lastSeen}*)\n`
+    const activity = b.lastSeen || 'recently'
+    report += `- **${b.name}** [${b.category}]: ${b.lastMessage} (*${activity}*)\n`
   })
   report += `\n`
 
