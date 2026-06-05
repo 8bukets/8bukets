@@ -108,6 +108,14 @@ class ChiefAIOfficerAgent(BaseAgent):
                     self.logger.info("CAIO [ROLE]: Ethics and governance responsibility identified. Issuing framework enforcement directive.")
                     strategic_directives.append("ENFORCE_GOVERNANCE_FRAMEWORKS")
 
+                if "strategy & vision" in sections_str:
+                    self.logger.info("CAIO [ROLE]: Strategy & Vision responsibility identified. Issuing alignment directive.")
+                    strategic_directives.append("ALIGN_AI_STRATEGY_WITH_BUSINESS_GOALS")
+
+                if "performance tracking" in sections_str:
+                    self.logger.info("CAIO [ROLE]: Performance Tracking responsibility identified. Issuing measurement directive.")
+                    strategic_directives.append("MEASURE_AI_BUSINESS_IMPACT")
+
             if "Phase 13" in title or "phase 13" in sections_str:
                 self.logger.info(f"CAIO [KNOWLEDGE]: Phase 13 strategy detected in integrated knowledge: {title}")
                 if "ACTIVATE_PHASE_13_PROTOCOLS" not in strategic_directives:
