@@ -14,14 +14,14 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 ### Gemini Embedding 2 is now generally available.
 - URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2-generally-available/
 
+### The latest AI news we announced in May 2026
+- URL: https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-may-2026/
+
 ### Running Guide agent: A step towards running unbounded
 - URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/running-guide-agent/
 
 ### Simulate real-world places with Project Genie and Street View
 - URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/
-
-### Making it easier to understand how content was created and edited
-- URL: https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/
 
 ### A new experiment brings better group meetings to Google Beam
 - URL: https://blog.google/innovation-and-ai/models-and-research/google-research/google-beam-group-meetings/
@@ -56,14 +56,14 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 ### Quantum frontiers may be closer than they appear
 - URL: https://blog.google/innovation-and-ai/technology/safety-security/cryptography-migration-timeline/
 
-### Google Research
-- URL: https://blog.google/innovation-and-ai/technology/research/
-
 ### How we used Gemini to build Google I/O 2026
 - URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-google-ai/
 
 ### Catch up on 12 major I/O 2026 moments
 - URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/
+
+### Gemma 4 QAT models: Optimizing model compression for mobile and laptop efficiency
+- URL: https://blog.google/innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/
 
 ### Kaggle is making AI benchmark creation effortless
 - URL: https://blog.google/innovation-and-ai/technology/developers-tools/build-kaggle--benchmarks-locally/
@@ -71,11 +71,17 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 ### Introducing Gemma 4 12B: a unified, encoder-free multimodal model
 - URL: https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12b/
 
-### Take our I/O 2026 quiz, vibe coded in Google AI Studio.
-- URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-vibe-coded-quiz/
-
 ### We’re announcing a new data center and energy investments in Gray and Roberts Counties, Texas.
 - URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/meitner-energy-center/
+
+### Making it easier to understand how content was created and edited
+- URL: https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/
+
+### Google Research
+- URL: https://blog.google/innovation-and-ai/technology/research/
+
+### Take our I/O 2026 quiz, vibe coded in Google AI Studio.
+- URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-vibe-coded-quiz/
 
 ### Blue, yellow and green: Google invests in its new data center in Sweden.
 - URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/blue-yellow-and-green-google-invests-in-its-first-data-center-in-sweden/
