@@ -1,0 +1,12 @@
+[Unit]
+Description=Antigravity Autonomous Daily Work Cycle
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=PROJECT_DIR
+ExecStart=NPM_PATH run daily
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

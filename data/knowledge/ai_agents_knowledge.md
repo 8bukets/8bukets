@@ -1,6 +1,6 @@
 # Knowledge Observation Insights (Unified)
 
-**System Analysis:** 2026-06-05T03:01:20.384Z
+**System Analysis:** 2026-06-05T03:36:00.969Z
 
 ---
 
@@ -11311,7 +11311,7 @@ SHA256:qhno7SbhBIYwfgNgGhygt2e0kRDBlPkEqjAGdXTVOsA
 # iCloud: 50ty.json
 
 > **Source:** icloud://50ty.json
-> **Analyzed At:** 2026-06-04T00:47:52.652Z
+> **Analyzed At:** 2026-06-05T03:35:58.731Z
 
 ## Content
 [
@@ -11622,7 +11622,7 @@ SHA256:qhno7SbhBIYwfgNgGhygt2e0kRDBlPkEqjAGdXTVOsA
 # iCloud: 50ty.md
 
 > **Source:** icloud://50ty.md
-> **Analyzed At:** 2026-06-04T00:47:52.726Z
+> **Analyzed At:** 2026-06-05T03:35:58.829Z
 
 ## 50 Content Creation and Strategy Prompts
 Part 1: Content Creation (Prompts 1–10)
@@ -12311,7 +12311,7 @@ The real magic happens when you chain these prompts together. Use **Prompt 11 (C
 # iCloud: AGENTS.md
 
 > **Source:** icloud://AGENTS.md
-> **Analyzed At:** 2026-06-04T00:47:52.794Z
+> **Analyzed At:** 2026-06-05T03:35:58.931Z
 
 ## The Vision: Autonomous Intelligence
 The Antigravity ecosystem is designed to be **Self-Healing**, **Self-Validating**, and **Self-Orchestrating**. By leveraging Next.js 16 and a unified core, we eliminate architectural drift and manual synchronization overhead.
@@ -12375,61 +12375,2048 @@ All the best - https://markposition.wordpress.com
 # iCloud: CONSOLIDATED_INTELLIGENCE.md
 
 > **Source:** icloud://CONSOLIDATED_INTELLIGENCE.md
-> **Analyzed At:** 2026-06-04T00:47:52.943Z
+> **Analyzed At:** 2026-06-05T03:35:59.129Z
 
-## Antigravity Consolidated Intelligence Report
-**Generated At:** 2026-06-04T00:32:35.987Z
-**Uptime:** 87s
+## CONSOLIDATED INTELLIGENCE REPORT
+*Generated: 2026-06-05T03:33:12.090Z*
 
-## 🛡️ System Sovereignty
-- **MongoDB:** closed
-- **Supabase:** closed
-- **Security Audit:** warning (9 issues)
+## 📋 Executive Summary
+- **System Posture:** ✅ OPTIMAL
+- **Active Synergy:** 2373 branches analyzed across multiple domains.
+- **Mission Alignment:** 4 strategic goals tracked.
 
-## 🧠 Cognitive State
-- **Architectural Proposals:** 3
-- **Predictive Refactors:** 0
-- **Active Caching Profiles:** 0
-- **Performance Auditor:** active (Last run: 2026-06-04T00:32:35.995Z)
-- **Discovery Engine:** active (Last run: 2026-06-04T00:32:36.002Z)
+## 🎯 Mission Statement
+> Autonomous Evolution
 
-## 🤝 Collaboration & Stakeholders
-- **Filip Keser (Founder)**
-- **Jules (Lead Architect)**
-- **Sigma Bot (Operations)**
+## 🏥 System Sovereignty
+- **MongoDB:** healthy
+- **Supabase:** connected
+- **Total Branches:** 2373
 
-## 🌿 Branch Intelligence
-Found 2353 branches in the repository.
-- **jules-11727907802921261757-a2a7358c**: 🤖 fix: autonomous self-repair of 4 issues (*72 seconds ago*)
-- **main**: Merge pull request #2355 from 8bukets/fix/gitlab-security-agent-prompt-5086130321090221521 (*3 hours ago*)
-- **remotes/origin/HEAD -> origin/jules/scraper-markposition-17752547678215960211**: Merge pull request #2349 from 8bukets/performance-optimization-lxml-17617874497305430093 (*10 hours ago*)
-- **remotes/origin/add-a2a-remote-agent-152042865285525971**: feat: add generic A2A remote agent configuration (*11 days ago*)
-- **remotes/origin/add-acp-integration-docs-10087323336683703862**: docs: add ACP integration guide for Docker Agent (*2 weeks ago*)
-- **remotes/origin/add-chief-ai-officer-agent-9719417263665099785**: feat: inject Chief AI Officer tasks into Jules memory (*2 weeks ago*)
-- **remotes/origin/add-compile-definition-17628200376543609981**: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-compile-definition-17628200376543609981 (*3 weeks ago*)
-- **remotes/origin/add-compile-definition-6604126612521959588**: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-compile-definition (Resolved conflicts by removing bytecode and data files, favoring PR content) (*7 days ago*)
-- **remotes/origin/add-compile-definition-8931819634976410807**: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-compile-definition-8931819634976410807 (*3 weeks ago*)
-- **remotes/origin/add-docker-agent-model-docs-997437020929679972**: docs: add docker agent model providers documentation (*2 weeks ago*)
-_...and 2343 more branches._
+## 📦 Resource Ecosystem
+- **Services:** 62 active
+- **Automation Scripts:** 53 active
+- **AI Agents:** 10 active
+- **Documentations:** 10 active
+- **UI Components:** 2 active
+- **Assets:** 5 active
+- **Knowledges:** 63 active
+- **Branch Results:** 1360 active
 
-## 📜 Recent Autonomous Tasks
-- Branch Scan: Analyzed 2353 branches for cross-project context.
-- Collaboration Sync: Exported system context and stakeholder data.
-- GitHub Docs: Observed 5 files from Intelephense docs.
-- Knowledge Observation: Extracted 15 concepts from https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
-- Knowledge Observation: Extracted 15 concepts from https://admanager.google.com/home/resources/
-- Knowledge Observation: Extracted 15 concepts from https://developers.google.com/ad-manager/api/start
-- Knowledge Observation: Extracted 15 concepts from https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving
-- Knowledge Observation: Extracted 15 concepts from https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service
-- Knowledge Observation: Extracted 15 concepts from https://developers.google.com/ad-manager/dynamic-ad-insertion
-- Knowledge Observation: Extracted 15 concepts from https://developers.google.com/ad-manager
+## 🔗 Resource Dependency Matrix
+- `cloud_simulation` --[import]--> `cloud_workflow`
+- `cloud_simulation` --[import]--> `docker`
+- `cloud_simulation` --[import]--> `react`
+- `cloud_workflow` --[import]--> `docker`
+- `cloud_workflow` --[import]--> `gitlab`
+- `cloud_workflow` --[import]--> `github_evolution`
+- `cloud_workflow` --[import]--> `gitkraken_metrics`
+- `cloud_workflow` --[import]--> `react`
+- `collaboration` --[import]--> `docker`
+- `collaboration` --[import]--> `jenkins`
+- `collaboration` --[import]--> `autonomous_notification`
+- `creation_engine` --[import]--> `work_order`
+- `deep_cognitive_self_correction` --[import]--> `creation_engine`
+- `icloud_observer` --[import]--> `knowledge_observer`
+- `intelephense_service` --[import]--> `github_docs_observer`
+- _...and 36 more dependencies._
+
+## 🎯 Active Stakeholder Directives
+- **[High]** Maintain 99.9% system uptime
+- **[Medium]** Consolidate all branch knowledge daily
+
+## 🎯 Directive Fulfillment Status
+- **[High]** Maintain 99.9% system uptime -> Status: ⚠️ IN PROGRESS
+- **[Medium]** Consolidate all branch knowledge daily -> Status: ⚠️ IN PROGRESS
+
+## ⚡ Strategic Synergy Summary
+- System synergy is within optimal parameters.
+
+## 🤖 Agent-to-Stakeholder Directives
+- **Jules Directive:** "System alignment is optimal. No manual intervention required for current development streams."
+
+## 🚀 Required Stakeholder Decisions
+- **Operations:** Approve resource reallocation for background task processing.
+
+## 🌿 Branch Intelligence (Recent Activity)
+- **jules-13623861503531250231-4b0dd593** [other]: 🤖 fix: autonomous self-repair of 4 issues (*42 seconds ago*)
+- **main** [other]: Merge pull request #2376 from 8bukets/jules-google-ads-knowledge-9522670797089792938 (*23 minutes ago*)
+- **remotes/origin/HEAD -> origin/jules/scraper-markposition-17752547678215960211** [remotes]: Merge pull request #2372 from 8bukets/feat/markposition-integration-13716106460631195250 (*5 hours ago*)
+- **remotes/origin/add-a2a-remote-agent-152042865285525971** [feature]: feat: add generic A2A remote agent configuration (*12 days ago*)
+- **remotes/origin/add-acp-integration-docs-10087323336683703862** [documentation]: docs: add ACP integration guide for Docker Agent (*2 weeks ago*)
+- **remotes/origin/add-chief-ai-officer-agent-9719417263665099785** [feature]: feat: inject Chief AI Officer tasks into Jules memory (*2 weeks ago*)
+- **remotes/origin/add-compile-definition-17628200376543609981** [remotes]: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-compile-definition-17628200376543609981 (*3 weeks ago*)
+- **remotes/origin/add-compile-definition-6604126612521959588** [remotes]: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-compile-definition (Resolved conflicts by removing bytecode and data files, favoring PR content) (*8 days ago*)
+- **remotes/origin/add-compile-definition-8931819634976410807** [remotes]: Merge branch 'jules/scraper-markposition-17752547678215960211' into add-compile-definition-8931819634976410807 (*3 weeks ago*)
+- **remotes/origin/add-docker-agent-model-docs-997437020929679972** [documentation]: docs: add docker agent model providers documentation (*2 weeks ago*)
+
+## 🛠️ Cognitive State
+- **Pending Work Orders:** 18
+- [BOOTSTRAP_SERVICE] Bootstrap Proactive Scalability Service
+- [SMOKE_TEST] Verify Proactive Scalability Service
+- [DEPLOYMENT] Deploy Proactive Scalability Service
+- [BOOTSTRAP_SERVICE] Bootstrap Horizontal Fleet Orchestration Service
+- [SMOKE_TEST] Verify Horizontal Fleet Orchestration Service
+- [DEPLOYMENT] Deploy Horizontal Fleet Orchestration Service
+- [BOOTSTRAP_SERVICE] Bootstrap Proactive Scalability Service
+- [SMOKE_TEST] Verify Proactive Scalability Service
+- [DEPLOYMENT] Deploy Proactive Scalability Service
+- [BOOTSTRAP_SERVICE] Bootstrap Horizontal Fleet Orchestration Service
+- [SMOKE_TEST] Verify Horizontal Fleet Orchestration Service
+- [DEPLOYMENT] Deploy Horizontal Fleet Orchestration Service
+- [BOOTSTRAP_SERVICE] Bootstrap Proactive Scalability Service
+- [SMOKE_TEST] Verify Proactive Scalability Service
+- [DEPLOYMENT] Deploy Proactive Scalability Service
+- [BOOTSTRAP_SERVICE] Bootstrap Horizontal Fleet Orchestration Service
+- [SMOKE_TEST] Verify Horizontal Fleet Orchestration Service
+- [DEPLOYMENT] Deploy Horizontal Fleet Orchestration Service
+
+## 🌌 Global Neural Network
+- **Cognitive Origin:** `development`
+- **Neural Health:** ✅ OPTIMAL
+- **Volatility Index:** 0 active cognitive tags.
+
+## 🛰️ Omni-Presence Relay
+- **Environment:** `development` (Intensity: 85%)
+- *Active Views:* Command Center, Store
+- **Environment:** `production` (Intensity: 40%)
+- *Active Views:* Analytics, Explorer
+
+## 🤝 Merged Ecosystem Insights
+Synergy achieved across 2373 branches. Detailed knowledge and results consolidated from specialized agents.
+
+## 🧠 Specialized Knowledge Nuggets
+- **jules-13623861503531250231-4b0dd593** [General]: 🤖 fix: autonomous self-repair of 4 issues (7 files changed in General)
+- *Insight:* Enhanced ecosystem knowledge base via 4 artifacts.
+
+## Goal Alignment
+- **Goal:** Achieve Singularity Orchestration.
+- *Branches:* remotes/origin/feat/autonomous-multi-ci-workflow-creation-13184263401868233273, remotes/origin/feat/autonomous-workflow-creation-13764436247269423073, remotes/origin/integrate-jenkins-pipeline-generation-14117303396069153360
+- **Goal:** Maintain Zero-Touch Autonomous Operations.
+- *Branches:* jules-13623861503531250231-4b0dd593, remotes/origin/add-gitlab-runner-service-1151466855069035440, remotes/origin/add-malubeach-scraper-16704333902164650708, remotes/origin/add-mysql-agent-12534386317238704274, remotes/origin/automate-markposition-knowledge-merge-14646945117315419790, remotes/origin/autonomous-agents-framework-90146205652415261, remotes/origin/autonomous-cloud-integration-v2-7175106802837350237, remotes/origin/autonomous-cloud-organism-8050182996160797424, remotes/origin/autonomous-creation-cycle-1075943793736292428, remotes/origin/autonomous-creation-evolution-14168201882249018244, remotes/origin/autonomous-daily-sync-refinement-17898063665932042144, remotes/origin/autonomous-daily-work-fix-recursion-and-streamline-17917200239377968784, remotes/origin/autonomous-engine-and-work-orders-5472523483534806540, remotes/origin/autonomous-evolution-command-15592904538658549663, remotes/origin/autonomous-loop-enhancement-4557411631469647525, remotes/origin/autonomous-workflow-creation-17803793083721136421, remotes/origin/bolt-optimize-db-connection-12196506237305672986, remotes/origin/bolt-perf-lxml-17997966610705320667, remotes/origin/bolt-performance-soupstrainer-14059433622013418020, remotes/origin/bolt-regex-optimization-12519421487946893253, remotes/origin/bolt-scraper-optimization-14139347642198043635, remotes/origin/bolt-soup-strainer-optimization-8380713953647872097, remotes/origin/chore-connect-docker-and-collaborate-12371415653107131827, remotes/origin/chore/docker-collaboration-sync-9465155386456086135, remotes/origin/cloud-autonomous-integration-17870893235290624845, remotes/origin/cloud-autonomous-stabilization-11787002344957414636, remotes/origin/cloud-simulation-autonomous-presence-9337570099349357215, remotes/origin/codex/software-review-platform-starter, remotes/origin/evolution-engine-16785727583013198625, remotes/origin/feat-macbook-cloud-simulation-5272995196293351855, remotes/origin/feat/autonomous-cloud-continuity-7259514487637520921, remotes/origin/feat/autonomous-cloud-convergence-phase-12-11379028617689834826, remotes/origin/feat/autonomous-cloud-evolution-16547296923606318765, remotes/origin/feat/autonomous-cloud-evolution-2894233982958127060, remotes/origin/feat/autonomous-cloud-evolution-7110023434295372001, remotes/origin/feat/autonomous-cloud-failover-13782087979428754100, remotes/origin/feat/autonomous-cloud-failover-13782442138819724713, remotes/origin/feat/autonomous-cloud-knowledge-consolidation-6778083691317646306, remotes/origin/feat/autonomous-cloud-merge-bypass-8712146839008626317, remotes/origin/feat/autonomous-cloud-presence-13349070200456458168, remotes/origin/feat/autonomous-cloud-presence-978332573715716812, remotes/origin/feat/autonomous-cloud-presence-enhancement-11813668786867103175, remotes/origin/feat/autonomous-cloud-presence-v12-14478074314535541001, remotes/origin/feat/autonomous-cloud-sovereignty-10617479099026703774, remotes/origin/feat/autonomous-cloud-sovereignty-9356824831657033971, remotes/origin/feat/autonomous-cloud-workflow-agent-17352121164725625008, remotes/origin/feat/autonomous-creation-cycle-10141862539312644533, remotes/origin/feat/autonomous-creation-cycle-10567644799753050340, remotes/origin/feat/autonomous-creation-cycle-14040463371825265667, remotes/origin/feat/autonomous-creation-cycle-2519215097742916370, remotes/origin/feat/autonomous-creation-cycle-5845832032656471987, remotes/origin/feat/autonomous-creation-cycle-856121647264189672, remotes/origin/feat/autonomous-creation-cycle-8889704769332571568, remotes/origin/feat/autonomous-creation-cycle-alignment-17511680594965504532, remotes/origin/feat/autonomous-creation-cycle-components-16091962715675237550, remotes/origin/feat/autonomous-creation-cycle-stabilization-15042891493316655880, remotes/origin/feat/autonomous-creation-engine-2254624505132207048, remotes/origin/feat/autonomous-creation-engine-4025311903308148897, remotes/origin/feat/autonomous-creation-engine-8264207274703386634, remotes/origin/feat/autonomous-creation-evolution-15095668826431318009, remotes/origin/feat/autonomous-creation-evolution-8400947059595205490, remotes/origin/feat/autonomous-creation-evolution-9797261657817492019, remotes/origin/feat/autonomous-creation-execution-cycle-15305595999665058256, remotes/origin/feat/autonomous-creation-ignition-12654712675481574533, remotes/origin/feat/autonomous-creation-ignition-8279236901022115183, remotes/origin/feat/autonomous-creation-orchestration-16938243851371264019, remotes/origin/feat/autonomous-creation-order-12052078248727379444, remotes/origin/feat/autonomous-creation-order-15598638641975305660, remotes/origin/feat/autonomous-creation-pulse-17454744157999079928, remotes/origin/feat/autonomous-creation-system-10495689118004789433, remotes/origin/feat/autonomous-creation-workflow-3405864056735781942, remotes/origin/feat/autonomous-creation-workflow-3510228137813384837, remotes/origin/feat/autonomous-daily-evolution-16799344263411811050, remotes/origin/feat/autonomous-daily-license-knowledge-sync-10372390239614697679, remotes/origin/feat/autonomous-daily-sync-icloud-2931573862557497008, remotes/origin/feat/autonomous-daily-sync-refactor-11777205157744306714, remotes/origin/feat/autonomous-evolution-engine-improvements-9180002343123851576, remotes/origin/feat/autonomous-knowledge-integration-17955218427957192278, remotes/origin/feat/autonomous-knowledge-merge-integration-7336376174653750666, remotes/origin/feat/autonomous-knowledge-refinement-16335548248808539628, remotes/origin/feat/autonomous-multi-ci-workflow-creation-13184263401868233273, remotes/origin/feat/autonomous-protocol-jules-16130780090107402276, remotes/origin/feat/autonomous-scale-improvements-3306739590977021046, remotes/origin/feat/autonomous-sync-orch-3205070913479590018, remotes/origin/feat/autonomous-work-order-engine-4034176882068097834, remotes/origin/feat/autonomous-workflow-creation-13764436247269423073, remotes/origin/feat/autonomous-workflow-creation-2438802251754427504, remotes/origin/feat/autonomous-workflow-creation-5168172668648031949, remotes/origin/feat/caio-role-refinement-14139776390756160770, remotes/origin/feat/cloud-autonomous-evolution-4476041926243078641, remotes/origin/feat/cloud-autonomous-presence-4768792204367486255, remotes/origin/feat/cloud-autonomous-presence-7598106438601862770, remotes/origin/feat/cloud-native-autonomy-3438116551041896813, remotes/origin/feat/cloud-native-convergence-16112457665657205536, remotes/origin/feat/cloud-native-online-presence-8372655786114667910, remotes/origin/feat/cloud-simulation-intelligence-18003609215898643719, remotes/origin/feat/collaboration-intelligence-knowledge-merge-v1-1682981257800000691, remotes/origin/feat/connect-docker-and-collaborate-4263909557176402294, remotes/origin/feat/connect-docker-collaboration-6033606454460470488, remotes/origin/feat/connect-docker-collaboration-sync-final-11700500964007561939, remotes/origin/feat/connect-docker-collaboration-sync-final-11700500964007561939-14187345688277018919, remotes/origin/feat/connect-docker-collaboration-sync-final-11700500964007561939-5613862418405546964, remotes/origin/feat/connect-docker-collaboration-sync-final-6753111079424335435, remotes/origin/feat/connect-docker-collaboration-sync-v12-final-18361574323939110813, remotes/origin/feat/docker-collaboration-sync-final-11035090678408338826, remotes/origin/feat/dual-engine-autonomous-collaboration-180989571444817477, remotes/origin/feat/enhance-autonomous-cloud-presence-10530074476743667535, remotes/origin/feat/evolve-autonomous-engine-phase-12-3914839114884356859, remotes/origin/feat/full-autonomous-creation-cycle-12087260732508548696, remotes/origin/feat/full-autonomous-creation-engine-2520836336596562790, remotes/origin/feat/full-autonomous-creation-execution-17830710122661382280, remotes/origin/feat/full-autonomous-creation-execution-v2-2098058797614095194, remotes/origin/feat/full-autonomous-online-engine-13146767980189175838, remotes/origin/feat/full-cloud-autonomous-integration-16044652152122704918, remotes/origin/feat/fully-autonomous-automatic-workflow-13826864228372455189, remotes/origin/feat/fully-autonomous-automatic-workflow-15126988086375924911, remotes/origin/feat/fully-autonomous-workflow-17826823643615309371, remotes/origin/feat/gemma-4-scraper-14386039384216646408, remotes/origin/feat/icloud-sync-daily-work-3416451490970137960, remotes/origin/feat/intelephense-docs-ingestion-5058226112541762188, remotes/origin/feat/intelephense-docs-sync-14439717062784308623, remotes/origin/feat/intelephense-knowledge-consolidation-v2-11323345502320266953, remotes/origin/feat/jenkins-pipeline-17650508759045310490, remotes/origin/feat/knowledge-merge-automation-1708085777270583651, remotes/origin/feat/knowledge-merge-automation-4266785228236839027, remotes/origin/feat/macbook-cloud-simulation-verification-18070016345319943441-479083842667788180, remotes/origin/feat/react-agent-integration-8372098972397137891, remotes/origin/feat/unified-autonomous-creation-orchestrator-784590386845426502, remotes/origin/feat/unified-autonomous-execution-engine-12129098689674624370, remotes/origin/feat/unified-autonomous-intelligence-v2-11368535330418373877, remotes/origin/feat/unified-cloud-autonomy-6168364407996649590, remotes/origin/feat/update-autonomous-workflow-9631298294249766702, remotes/origin/feat/vercel-sandbox-agent-4324012582245511797, remotes/origin/feature/autonomous-cloud-presence-6564198224759094346, remotes/origin/feature/autonomous-cloud-simulation-presence-15239864471767221481, remotes/origin/feature/autonomous-creation-execution-5649264533760770196, remotes/origin/feature/autonomous-creation-ignition-13474937502856613693, remotes/origin/feature/autonomous-improvement-cycle-1978975673869849123, remotes/origin/feature/autonomous-sync-persistence-9865428495683171374, remotes/origin/feature/autonomous-work-order-system-2865376496549289667, remotes/origin/feature/autonomous-workflow-creation-15876066780074270466, remotes/origin/feature/autonomous-workflow-creation-9438939026043204544, remotes/origin/feature/autonomous-workflow-creation-9438939026043204544-2630848645900152425, remotes/origin/feature/autonomous-workflow-pipeline-1359283664930221721, remotes/origin/feature/backup-agent-11331906079381269962, remotes/origin/feature/cloud-autonomous-convergence-1900133257466601663, remotes/origin/feature/daily-autonomous-session-evolution-10827323028057042936, remotes/origin/feature/docker-collaboration-sync-2408669220271786015, remotes/origin/feature/game-of-logic-4165786141866980928, remotes/origin/feature/knowledge-observation-1188044699692138518, remotes/origin/feature/macbook-cloud-simulation-10813154388376629644, remotes/origin/feature/markposition-autonomous-integration-5824578537508195574, remotes/origin/feature/unified-autonomous-creation-execution-9112787488112891184, remotes/origin/fix-and-automate-autonomous-system-4910910196834454154, remotes/origin/fix-autonomous-workflow-4538855426443032551, remotes/origin/fix-autonomous-workflow-git-add-16103849688586949052, remotes/origin/fix-cloud-autonomous-presence-9827360869310750655, remotes/origin/fix-workflow-creation-16196168275927692425, remotes/origin/fix/agent-memory-and-tests-14715316655293625624, remotes/origin/fix/autonomous-cloud-presence-17176660160653043958, remotes/origin/fix/autonomous-evolution-1779330683942, remotes/origin/fix/autonomous-evolution-1779334460476, remotes/origin/fix/autonomous-evolution-1779417180082, remotes/origin/fix/autonomous-evolution-1779420795460, remotes/origin/fix/autonomous-evolution-1779502182555, remotes/origin/fix/autonomous-evolution-1779620400378-8609616731264738090, remotes/origin/fix/autonomous-evolution-1779762421460, remotes/origin/fix/autonomous-evolution-1779764401136, remotes/origin/fix/autonomous-evolution-1779944023134, remotes/origin/fix/autonomous-evolution-1779958280246, remotes/origin/fix/autonomous-evolution-1779979534880, remotes/origin/fix/autonomous-evolution-cloud-presence-13859954936909571932, remotes/origin/fix/autonomous-markposition-integration-8301978892774040495, remotes/origin/fix/autonomous-system-syntax-16085505803900570829, remotes/origin/fix/docker-collaboration-sync-3245584476125900421, remotes/origin/fix/optimize-execute-creation-cycle-9988671085706556406, remotes/origin/fully-autonomous-workflow-17686295934602386415, remotes/origin/implement-full-autonomous-automatic-workflow-12697350452626035149, remotes/origin/improve-git-sync-and-ingest-sor-6424222975070794974, remotes/origin/integrate-google-ai-knowledge-2026-14480721120706312503, remotes/origin/integrate-google-innovation-ai-knowledge-11329975251392721471, remotes/origin/integrate-google-innovation-ai-knowledge-2118271840705498457, remotes/origin/integrate-investopedia-knowledge-15544653943204418312, remotes/origin/integrate-jenkins-engine-7625191917033904459, remotes/origin/jenkins-pipeline-integration-1209487305569927216, remotes/origin/jules-11727907802921261757-a2a7358c, remotes/origin/jules-13607206307106246227-38f47801, remotes/origin/jules-14602813324423635796-48a23d44, remotes/origin/jules-14816450646255710907-9a961bea, remotes/origin/jules-15373376258129096424-b615f592, remotes/origin/jules-17664332290031173343-55f5ab91, remotes/origin/jules-3377716076333327453-2d27a121, remotes/origin/jules-4843122813281068614-8b4499aa, remotes/origin/jules-5679297940668698803-4384a9af, remotes/origin/jules-autonomous-connect-sync-13567552938698989059, remotes/origin/jules-autonomous-evolution-12208946204085721942, remotes/origin/jules-autonomous-evolution-task-12630282421402691933, remotes/origin/jules-autonomous-workflow-18354041674138581290, remotes/origin/jules-autonomous-workflow-4040168382414053656, remotes/origin/jules-autonomous-workflow-creation-1089913609311419813, remotes/origin/jules-autonomous-workflow-fix-2826640413281112163, remotes/origin/jules-autonomous-workflow-unified-14967929050804960809, remotes/origin/jules-cloud-autonomy-16506302087474217798, remotes/origin/jules-continuous-presence-workflow-3144055533381791740, remotes/origin/jules-daily-autonomous-evolution-8968243163984956068, remotes/origin/jules-fix-autonomous-creation-cycle-5331330201427680768, remotes/origin/jules-full-autonomous-automatic-workflow-8311799048599272217, remotes/origin/jules-full-autonomus-workflow-8744732568350416698, remotes/origin/jules/autonomous-online-coding-presence-17025271764789693305, remotes/origin/jules/autonomous-online-coding-presence-17025271764789693305-17731566985487010590, remotes/origin/jules/connect-docker-collaborate-11639225190852212326, remotes/origin/macbook-cloud-simulation-2285701184876173816, remotes/origin/opt-scraper-regex-6404737091544860092, remotes/origin/palette-cli-ux-5136733467430420971, remotes/origin/palette-cli-ux-improvements-8617716335041011148, remotes/origin/palette-cli-ux-summary-box-1793080287147073634, remotes/origin/palette-cli-visual-polish-8268523822408541016, remotes/origin/palette-improve-report-ux-14288341330964781354, remotes/origin/palette-report-percentages-17226232511035798370, remotes/origin/palette-ux-report-improvements-13543414258176947990, remotes/origin/palette-ux-scraper-logging-11386897257754529243, remotes/origin/sentinel-csv-injection-fix-10966589273094838978, remotes/origin/sentinel-csv-injection-fix-2894680455719942553, remotes/origin/sentinel-path-traversal-fix-12513139928667827617, remotes/origin/sentinel-path-traversal-fix-3613197660478104645, remotes/origin/test-run-and-pii-sanitization-13332227309819345167, remotes/origin/update-autonomous-workflow-to-nodejs-12950846570803253744, remotes/origin/update-scraper-target-14564535453076268184, remotes/origin/update-scraper-target-15910668004309817623, remotes/origin/update-target-url-11001924703670317262
+- **Goal:** Expand the Sovereign Fleet across all environments.
+- *Branches:* remotes/origin/async-fluent-workflow-17630423864710655172, remotes/origin/dependabot/pip/pip-590e9db7b9, remotes/origin/feat/autonomous-cloud-sovereignty-10617479099026703774, remotes/origin/feat/autonomous-cloud-sovereignty-9356824831657033971, remotes/origin/feat/autonomous-multi-ci-workflow-creation-13184263401868233273, remotes/origin/feat/caio-agent-creation-11276937148352669506, remotes/origin/feat/docker-build-cloud-13144983304345154316, remotes/origin/feat/refine-caio-role-knowledge-v2-5295767818736859988, remotes/origin/feature/knowledge-merge-all-entries-11790747981998761777, remotes/origin/feature/macbook-cloud-simulation-537156202459615099, remotes/origin/fix-backend-tests-and-subagents-9232679682193337097, remotes/origin/fix/autonomous-evolution-1779502182555, remotes/origin/implement-ai-agents-knowledge-11176623184876779780, remotes/origin/jules-cloud-simulation-enforcement-7338891043576217515, remotes/origin/jules-cloud-workflow-agent-9594836607216672043, remotes/origin/jules/improve-react-workflow-orchestration-10305698287333015349, remotes/origin/update-subagents-knowledge-6325422281065488321
+- **Goal:** Implement Multi-Agent Neural Relays for Phase 13.
+- *Branches:* remotes/origin/add-malubeach-scraper-16704333902164650708, remotes/origin/add-mysql-agent-12534386317238704274, remotes/origin/autonomous-agents-framework-90146205652415261, remotes/origin/autonomous-creation-evolution-14168201882249018244, remotes/origin/autonomous-loop-enhancement-4557411631469647525, remotes/origin/bolt-connection-pooling-8020030636571914955, remotes/origin/bolt-debounce-search-3754580611737527363, remotes/origin/bolt-optimize-db-connection-12196506237305672986, remotes/origin/bolt-perf-lxml-17997966610705320667, remotes/origin/bolt-performance-soupstrainer-14059433622013418020, remotes/origin/bolt-regex-optimization-12519421487946893253, remotes/origin/bolt-requests-session-3076311538911381225, remotes/origin/bolt-scraper-optimization-10743061150109398195, remotes/origin/bolt-scraper-optimization-12894303675301140287, remotes/origin/bolt-scraper-optimization-14139347642198043635, remotes/origin/bolt-scraper-optimization-16491499678156145300, remotes/origin/bolt-scraper-optimization-2789910246289122534, remotes/origin/bolt-scraper-optimization-4366988920377669204, remotes/origin/bolt-scraper-prefetch-14547517538477471181, remotes/origin/bolt-soup-strainer-optimization-8380713953647872097, remotes/origin/bolt/debounce-search-10941063823449310273, remotes/origin/collaboration-intelligence-sync-2178443547158728411, remotes/origin/connect-with-docker-6054650345251122047, remotes/origin/duo-planner-system-prompt-fix-16632607976400072007, remotes/origin/feat/ai-agents-knowledge-14795660026662295366, remotes/origin/feat/ai-agents-knowledge-15681133979794376101, remotes/origin/feat/ai-agents-knowledge-ingestion-51848187449270745, remotes/origin/feat/antigravity-cloud-evolution-3450373713332257591, remotes/origin/feat/autonomous-cloud-convergence-phase-12-11379028617689834826, remotes/origin/feat/autonomous-cloud-evolution-16547296923606318765, remotes/origin/feat/autonomous-cloud-evolution-2894233982958127060, remotes/origin/feat/autonomous-cloud-failover-13782087979428754100, remotes/origin/feat/autonomous-cloud-presence-v12-14478074314535541001, remotes/origin/feat/autonomous-cloud-sovereignty-9356824831657033971, remotes/origin/feat/autonomous-creation-cycle-10567644799753050340, remotes/origin/feat/autonomous-creation-cycle-14040463371825265667, remotes/origin/feat/autonomous-creation-cycle-alignment-17511680594965504532, remotes/origin/feat/autonomous-creation-engine-4025311903308148897, remotes/origin/feat/autonomous-creation-evolution-15095668826431318009, remotes/origin/feat/autonomous-creation-execution-cycle-15305595999665058256, remotes/origin/feat/autonomous-creation-ignition-8279236901022115183, remotes/origin/feat/autonomous-creation-order-12052078248727379444, remotes/origin/feat/autonomous-creation-order-15598638641975305660, remotes/origin/feat/autonomous-creation-pulse-17454744157999079928, remotes/origin/feat/autonomous-creation-system-10495689118004789433, remotes/origin/feat/autonomous-daily-sync-icloud-2931573862557497008, remotes/origin/feat/autonomous-workflow-creation-2438802251754427504, remotes/origin/feat/autonomous-workflow-creation-5168172668648031949, remotes/origin/feat/caio-agent-creation-11276937148352669506, remotes/origin/feat/caio-role-evolution-2026-compliance-6543835775831674985, remotes/origin/feat/cloud-autonomous-evolution-4476041926243078641, remotes/origin/feat/cloud-convergence-phase-17-526028351036584856, remotes/origin/feat/cloud-native-autonomy-3438116551041896813, remotes/origin/feat/cloud-native-autonomy-presence-7653289006767349445, remotes/origin/feat/cloud-native-convergence-16112457665657205536, remotes/origin/feat/connect-docker-collaboration-6033606454460470488, remotes/origin/feat/connect-docker-collaboration-sync-v12-final-18361574323939110813, remotes/origin/feat/consolidated-intelligence-sync-1091614933754712837, remotes/origin/feat/daily-sync-workflow-5320368611823718820, remotes/origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326, remotes/origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326-10745185975815563107-revised-21447012398436571932-3380172087610971607, remotes/origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326-10745185975815563107-revised-21447012398436571932-3380172087610971607-final-1111222233334444555566667777888899990000-6627201860355673710, remotes/origin/feat/evolve-autonomous-engine-phase-12-3914839114884356859, remotes/origin/feat/full-autonomous-creation-engine-2520836336596562790, remotes/origin/feat/full-autonomous-creation-execution-17830710122661382280, remotes/origin/feat/full-autonomous-creation-execution-v2-2098058797614095194, remotes/origin/feat/full-cloud-autonomous-integration-16044652152122704918, remotes/origin/feat/full-ecosystem-collaboration-sync-2223737222399285274, remotes/origin/feat/fully-autonomous-automatic-workflow-13826864228372455189, remotes/origin/feat/gemma-4-scraper-14386039384216646408, remotes/origin/feat/high-scale-ecosystem-sync-5489708808675678101, remotes/origin/feat/icloud-knowledge-engine-upgrade-v13-2920037181549628681, remotes/origin/feat/icloud-knowledge-integration-and-phase13-upgrade-3178530314395886673, remotes/origin/feat/icloud-knowledge-phase12-upgrade-11553884983056269678, remotes/origin/feat/icloud-sync-daily-work-3416451490970137960, remotes/origin/feat/implement-google-ai-agent-knowledge-8032750828008841906, remotes/origin/feat/implement-google-ai-agents-knowledge-17341300705636515353, remotes/origin/feat/knowledge-ingestion-intelephense-9344036021876416224, remotes/origin/feat/knowledge-observe-integration-17136884743066058279, remotes/origin/feat/macbook-cloud-simulation-2306204492187680775, remotes/origin/feat/macbook-cloud-simulation-4201425406939094947, remotes/origin/feat/macbook-cloud-simulation-8632071559345573800, remotes/origin/feat/macbook-cloud-simulation-knowledge-9264395958360396877, remotes/origin/feat/macbook-cloud-simulation-verification-18070016345319943441, remotes/origin/feat/macbook-cloud-simulation-verification-18070016345319943441-479083842667788180, remotes/origin/feat/monetization-stripe-supabase-475749064302525361, remotes/origin/feat/nextjs-supabase-mongodb-ecosystem-8833511503168317980, remotes/origin/feat/phase-12-cloud-convergence-and-sentient-orchestration-8137990793219294746, remotes/origin/feat/phase-13-integration-18269709634930068672, remotes/origin/feat/phase-22-cloud-super-intelligence-7069863824765684745, remotes/origin/feat/phase13-apac-integration-14522442966264815851, remotes/origin/feat/react-agent-integration-8372098972397137891, remotes/origin/feat/react-integration-v2-8425489280318980511, remotes/origin/feat/unified-autonomous-creation-orchestrator-784590386845426502, remotes/origin/feat/unified-collaboration-intelligence-10789658545646187286, remotes/origin/feat/unified-collaboration-intelligence-merge-v12-4808907432766111944, remotes/origin/feat/unified-collaboration-intelligence-v12-3867223440127640861, remotes/origin/feature/a2a-agent-implementation-12474626317752077342, remotes/origin/feature/adaptive-recovery-service-3883560226543520640, remotes/origin/feature/ai-agent-knowledge-refinement-4060124279711853146, remotes/origin/feature/autonomous-cloud-presence-6564198224759094346, remotes/origin/feature/autonomous-creation-ignition-13474937502856613693, remotes/origin/feature/autonomous-improvement-cycle-1978975673869849123, remotes/origin/feature/autonomous-work-order-system-2865376496549289667, remotes/origin/feature/autonomous-workflow-creation-15876066780074270466, remotes/origin/feature/autonomous-workflow-creation-9438939026043204544, remotes/origin/feature/backup-agent-11331906079381269962, remotes/origin/feature/cloud-and-local-autonomy-9538834322956606637, remotes/origin/feature/cloud-autonomous-convergence-1900133257466601663, remotes/origin/feature/daily-autonomous-session-evolution-10827323028057042936, remotes/origin/feature/gemini-git-worktrees-13127368067831034197, remotes/origin/feature/google-ai-agents-knowledge-5091496677341900649, remotes/origin/fix/autonomous-evolution-1779764401136, remotes/origin/fix/docker-collaboration-sync-3245584476125900421, remotes/origin/implement-ai-agent-knowledge-12940849847121991383, remotes/origin/implement-ai-agent-knowledge-21882567880054537, remotes/origin/implement-ai-agents-knowledge-10544419529497787617, remotes/origin/implement-ai-agents-knowledge-11176623184876779780, remotes/origin/implement-ai-agents-knowledge-18347247063799517995, remotes/origin/implement-ai-agents-knowledge-4687692969505756547, remotes/origin/implement-ai-agents-knowledge-8036846396761105562, remotes/origin/implement-full-autonomous-automatic-workflow-12697350452626035149, remotes/origin/jenkins-pipeline-integration-2917487616063889464, remotes/origin/jules-10804936454534876603-52aca57c, remotes/origin/jules-13238206488982251887-d6084712, remotes/origin/jules-13607206307106246227-38f47801, remotes/origin/jules-15373376258129096424-b615f592, remotes/origin/jules-15669541233529701765-e7b02c45, remotes/origin/jules-16739887525044798643-c54f1fa3, remotes/origin/jules-17664332290031173343-55f5ab91, remotes/origin/jules-4843122813281068614-8b4499aa, remotes/origin/jules-autonomous-evolution-12208946204085721942, remotes/origin/jules-autonomous-workflow-18354041674138581290, remotes/origin/jules-cloud-workflow-agent-9594836607216672043, remotes/origin/jules-daily-autonomous-evolution-8968243163984956068, remotes/origin/jules-smart-processing-cloud-workflow-18277080341771061055, remotes/origin/multi-cloud-workflow-intelligence-12208347123975439755, remotes/origin/opt-scraper-regex-6404737091544860092, remotes/origin/palette-cli-colors-v1-15537575789263225364, remotes/origin/palette-cli-ux-5136733467430420971, remotes/origin/palette-cli-ux-improvements-8617716335041011148, remotes/origin/palette-cli-ux-summary-box-1793080287147073634, remotes/origin/palette-color-logging-7081539865744827473, remotes/origin/palette-report-percentages-17226232511035798370, remotes/origin/palette-ux-scraper-logging-11386897257754529243, remotes/origin/sentinel-csv-injection-fix-10966589273094838978, remotes/origin/sentinel-csv-injection-fix-11483888091103395100, remotes/origin/sentinel-csv-injection-fix-2894680455719942553, remotes/origin/sentinel-csv-injection-fix-4894739317500695690, remotes/origin/sentinel-fix-csv-injection-11369382377147325845, remotes/origin/sentinel-fix-csv-injection-5692806866209313893, remotes/origin/sentinel-fix-markdown-injection-12251977205690620315, remotes/origin/sentinel-fix-xss-sanitization-2461129736912468133, remotes/origin/sentinel-path-traversal-csv-fix-3823511554369856865, remotes/origin/sentinel-path-traversal-fix-12513139928667827617, remotes/origin/sentinel-path-traversal-fix-3613197660478104645, remotes/origin/sentinel-security-fixes-2926280521022127220, remotes/origin/sentinel-url-validation-800829515985496089, remotes/origin/sentinel/fix-csv-injection-14631498172973798397, remotes/origin/update-scraper-target-14564535453076268184, remotes/origin/update-scraper-target-15910668004309817623, remotes/origin/update-target-url-11001924703670317262, remotes/origin/v0/8bukets-bd43e85b
+
+## Stakeholder Engagement
+- **Filip Keser (Founder)** (filip@example.com)
+- *Active Projects:* remotes/origin/add-filip-keser-license-9070216148560290832
+- **Jules (Lead Architect)** (jules@antigravity.ai)
+- *Active Projects:* jules-13623861503531250231-4b0dd593, remotes/origin/HEAD -> origin/jules/scraper-markposition-17752547678215960211, remotes/origin/add-jules-cli-7658708591293792322, remotes/origin/feat/autonomous-protocol-jules-16130780090107402276, remotes/origin/feat/jules-tools-documentation-3709224248115032248, remotes/origin/jules-1027089695129073368-c49a1c11, remotes/origin/jules-10456088293019605300-ea46692d, remotes/origin/jules-10724586028665085971-3ad9c277, remotes/origin/jules-10786450698186069009-a6894be5, remotes/origin/jules-10804936454534876603-52aca57c, remotes/origin/jules-10805447442179148911-1d117cf3, remotes/origin/jules-11023925826679396999-efd664fa, remotes/origin/jules-1103377942034451673-51f864ca, remotes/origin/jules-11082628370387662325-cceae0c4, remotes/origin/jules-11285418165717792072-a5eba6df, remotes/origin/jules-11488447269521141033-d797466e, remotes/origin/jules-11604914884030509655-2a01bd4d, remotes/origin/jules-1164978700782097591-599a1052, remotes/origin/jules-11727907802921261757-a2a7358c, remotes/origin/jules-11867509925832320780-8aa8894a, remotes/origin/jules-11912267709594997729-d10b0e1f, remotes/origin/jules-12160844108883332984-433a6b56, remotes/origin/jules-12457892104228508063-41c0c28d, remotes/origin/jules-128426962084555676-bc641743, remotes/origin/jules-13052721785252149852-027ffae0, remotes/origin/jules-13238206488982251887-d6084712, remotes/origin/jules-13431006678473017081-2cf66aa8, remotes/origin/jules-13607206307106246227-38f47801, remotes/origin/jules-13624149409171185598-1639bd71, remotes/origin/jules-13703867818161648472-ca00df1e, remotes/origin/jules-1401381832535268992-101c53a9, remotes/origin/jules-14402645048061780023-73b2e4f9, remotes/origin/jules-14602813324423635796-48a23d44, remotes/origin/jules-14816450646255710907-9a961bea, remotes/origin/jules-14846758043150100113-f0cfbc39, remotes/origin/jules-15004287550758535025-a71549d8, remotes/origin/jules-15373376258129096424-b615f592, remotes/origin/jules-15643813269620827017-18b637fd, remotes/origin/jules-15669541233529701765-e7b02c45, remotes/origin/jules-16125195344274130564-4d22cb5e, remotes/origin/jules-16739887525044798643-c54f1fa3, remotes/origin/jules-16746668095937525271-5d5787ff, remotes/origin/jules-16888796621400029054-460e13c4, remotes/origin/jules-16939367844823065236-726fb4d6, remotes/origin/jules-1717717407806782090-cbdd5077, remotes/origin/jules-17345361020910170827-8e192329, remotes/origin/jules-17430343990571925541-c81c147a, remotes/origin/jules-17573959315851915687-6552f004, remotes/origin/jules-17664332290031173343-55f5ab91, remotes/origin/jules-18146261634137769827-28ffb4d9, remotes/origin/jules-18406338226598714071-aab43e45, remotes/origin/jules-2331529788625810491-30fe029d, remotes/origin/jules-269848640437748724-d6177096, remotes/origin/jules-2767932536649645053-195aa658, remotes/origin/jules-2876054462022588492-84e7dde1, remotes/origin/jules-2952753656715436592-50f1624f, remotes/origin/jules-3199115398511884696-2585088d, remotes/origin/jules-3284237235346634220-17de23f1, remotes/origin/jules-3377716076333327453-2d27a121, remotes/origin/jules-3444915640748353694-63419224, remotes/origin/jules-361744050208613117-0f82961f, remotes/origin/jules-3816100636150667016-130985d0, remotes/origin/jules-4102353982491655498-fda2bbfe, remotes/origin/jules-4230806492568327711-dd0d7dbe, remotes/origin/jules-4843122813281068614-8b4499aa, remotes/origin/jules-5125461103553111919-d5f7a47b, remotes/origin/jules-5559433138773811985-39975caf, remotes/origin/jules-5565625516958485993-49059093, remotes/origin/jules-5679297940668698803-4384a9af, remotes/origin/jules-6528044095388834739-5a6c8bcf, remotes/origin/jules-7690709006081030781-1ea88831, remotes/origin/jules-8197540570479854725-c23a5090, remotes/origin/jules-8391244571441734244-a50091b6, remotes/origin/jules-8471382387327462147-5395dec8, remotes/origin/jules-add-gemini-remote-agent-12873027587560108654, remotes/origin/jules-ads-knowledge-ingestion-14603073081341889171, remotes/origin/jules-agent-architecture-ingestion-315896060065751771, remotes/origin/jules-ai-agent-knowledge-merge-15121321797956756234, remotes/origin/jules-arcjet-integration-16980338037533745889, remotes/origin/jules-autonomous-connect-sync-13567552938698989059, remotes/origin/jules-autonomous-evolution-12208946204085721942, remotes/origin/jules-autonomous-evolution-task-12630282421402691933, remotes/origin/jules-autonomous-workflow-18354041674138581290, remotes/origin/jules-autonomous-workflow-4040168382414053656, remotes/origin/jules-autonomous-workflow-creation-1089913609311419813, remotes/origin/jules-autonomous-workflow-fix-2826640413281112163, remotes/origin/jules-autonomous-workflow-unified-14967929050804960809, remotes/origin/jules-cloud-autonomy-16506302087474217798, remotes/origin/jules-cloud-simulation-enforcement-7338891043576217515, remotes/origin/jules-cloud-workflow-agent-9594836607216672043, remotes/origin/jules-cloud-workflow-agent-enhancement-4497894335591972427, remotes/origin/jules-cloud-workflow-tolerance-17354439472694641412, remotes/origin/jules-compile-knowledge-2707648609195220904, remotes/origin/jules-continuous-presence-workflow-3144055533381791740, remotes/origin/jules-daily-autonomous-evolution-8968243163984956068, remotes/origin/jules-download-cli-page-4874267122039212944, remotes/origin/jules-duo-planner-agent-url-fix-5677968275200464330, remotes/origin/jules-feature-integrate-knowledge-merge-9200679916314149754, remotes/origin/jules-fix-autonomous-creation-cycle-5331330201427680768, remotes/origin/jules-fix-knowledge-integration-cleanup-10144234766340686184, remotes/origin/jules-fix-oracle-scraper-schema-6080803583651507344, remotes/origin/jules-fix-subagent-prompts-16967744904311493464, remotes/origin/jules-full-autonomous-automatic-workflow-8311799048599272217, remotes/origin/jules-full-autonomus-workflow-8744732568350416698, remotes/origin/jules-gitlab-ci-setup-10531506072496288006, remotes/origin/jules-gitlab-ci-tutorial-10758887820992568383, remotes/origin/jules-gitlab-ci-tutorial-5613378872543284671, remotes/origin/jules-gitlab-ci-yml-3154565573179389543, remotes/origin/jules-gitlab-tutorial-ci-4111694628214868400, remotes/origin/jules-google-ads-knowledge-9522670797089792938, remotes/origin/jules-improve-knowledge-workflows-16068111765054687314, remotes/origin/jules-improve-knowledge-workflows-16068111765054687314-3907595530513115604, remotes/origin/jules-improve-knowledge-workflows-9958740170618720237, remotes/origin/jules-improve-react-agents-deploy-6633287448450705076, remotes/origin/jules-improve-workflow-and-knowledge-observer-11114380607500005512, remotes/origin/jules-ingest-ads-knowledge-7862837446767067464, remotes/origin/jules-ingest-google-ads-docs-12444511274572846717, remotes/origin/jules-ingest-hcp-knowledge-14291451140571066747, remotes/origin/jules-integrate-knowledge-merge-5016273102093085264, remotes/origin/jules-integrate-oracle-knowledge-9421136010084102746, remotes/origin/jules-integrate-signature-6068322876973646017, remotes/origin/jules-intelephense-docs-consolidation-6380568782621863083, remotes/origin/jules-investopedia-all-knowledge-14799525503188502250, remotes/origin/jules-knowledge-ads-ingestion-612535887181382298, remotes/origin/jules-knowledge-integration-409871911149242401, remotes/origin/jules-knowledge-integration-compile-14557175907207924867, remotes/origin/jules-knowledge-integration-subagents-16636673178408066825, remotes/origin/jules-knowledge-merge-collaboration-3722212575858302197, remotes/origin/jules-knowledge-merge-markposition-11506824174069569507, remotes/origin/jules-knowledge-observe-improvements-9236700373896263344, remotes/origin/jules-remote-subagents-docs-1653073469927459457, remotes/origin/jules-scrape-informatic-6598290821327070927, remotes/origin/jules-security-optimizations-6605171866180417523, remotes/origin/jules-smart-processing-cloud-workflow-18277080341771061055, remotes/origin/jules-sor-workflow-improvement-8463337196227161862, remotes/origin/jules-ssh-key-setup-7319492468583803481, remotes/origin/jules-terraform-knowledge-17709827572083509678, remotes/origin/jules-update-gitlab-ci-16275426523578740483, remotes/origin/jules/add-system-patent-947552789592854459, remotes/origin/jules/autonomous-online-coding-presence-17025271764789693305, remotes/origin/jules/autonomous-online-coding-presence-17025271764789693305-17731566985487010590, remotes/origin/jules/compile-knowledge-integration-4875845775501523719, remotes/origin/jules/connect-docker-collaborate-11639225190852212326, remotes/origin/jules/improve-react-workflow-orchestration-10305698287333015349, remotes/origin/jules/ingest-cli-creativity-9044833233025653876, remotes/origin/jules/ingest-intelephense-unified-store-3086939939732869599, remotes/origin/jules/integrate-knowledge-merge-signature-9637748484475924203, remotes/origin/jules/knowledge-merge-integration-4756532437460590133, remotes/origin/jules/scraper-intelephense-2916212763307459692, remotes/origin/jules/scraper-markposition-17752547678215960211, remotes/origin/restore-jules-tasks-17924979559343397018
+- **Sigma Bot (Operations)** (sigma@antigravity.ai)
+
+## Services
+- **analytics** (Active)
+- **apac_edge_orchestrator** (Active)
+- **autonomous_api_documentation** (Active)
+- **autonomous_audit** (Active)
+- **autonomous_compliance** (Active)
+- **autonomous_database_sharding** (Active)
+- **autonomous_discovery_engine** (Active)
+- **autonomous_ethics_auditor** (Active)
+- **autonomous_logging** (Active)
+- **autonomous_neural_cache_bridge** (Active)
+- **autonomous_notification** (Active)
+- **autonomous_performance_auditor** (Active)
+- **autonomous_resource_optimizer** (Active)
+- **autonomous_roi_auditor** (Active)
+- **autonomous_ux_optimization** (Active)
+- **boundary** (Active)
+- **cloud_convergence** (Active)
+- **cloud_simulation** (Active)
+- **cloud_workflow** (Active)
+- **cognitive_code_self_correction** (Active)
+- **cognitive_security** (Active)
+- **collaboration** (Active)
+- **communication** (Active)
+- **content** (Active)
+- **creation_engine** (Active)
+- **deep_cognitive_self_correction** (Active)
+- **docker** (Active)
+- **edge_to_cloud_bridge** (Active)
+- **feature_scaling_coordinator** (Active)
+- **feedback_analysis** (Active)
+- **git_provider** (Active)
+- **github_docs_observer** (Active)
+- **github_evolution** (Active)
+- **gitkraken** (Active)
+- **gitkraken_metrics** (Active)
+- **gitlab** (Active)
+- **global_neural_sync_service_(phase_12)** (Active)
+- **horizontal_fleet_orchestration** (Active)
+- **icloud** (Active)
+- **icloud_observer** (Active)
+- **intelephense_service** (Active)
+- **intelligence** (Active)
+- **jenkins** (Active)
+- **knowledge** (Active)
+- **knowledge_observer** (Active)
+- **neural** (Active)
+- **neural_performance_relay** (Active)
+- **notification** (Active)
+- **performance_monitoring** (Active)
+- **persistence** (Active)
+- **predictive_analytics_layer** (Active)
+- **presence** (Active)
+- **proactive_scalability** (Active)
+- **react** (Active)
+- **relay** (Active)
+- **sentient_orchestration** (Active)
+- **sentiment_analysis** (Active)
+- **smoke_test** (Active)
+- **stats** (Active)
+- **user** (Active)
+- **visual_neural_relay** (Active)
+- **work_order** (Active)
+
+## Automation Scripts
+- **analyze_recent_sessions** (Active)
+- **autonomous_creation_order** (Active)
+- **autonomous_evolution_task** (Active)
+- **autonomous_sync** (Active)
+- **autonomous_workflow_creation** (Active)
+- **check_cloud_simulation** (Active)
+- **cleanup_knowledge** (Active)
+- **connect_and_collaborate** (Active)
+- **consolidate_intelephense** (Active)
+- **demo_fp_pipeline** (Active)
+- **demo_work_orders** (Active)
+- **execute_creation_cycle** (Active)
+- **fix_icloud_sync** (Active)
+- **full_autonomous_automatic_creation** (Active)
+- **full_autonomous_ignition** (Active)
+- **gemini_explain_ai** (Active)
+- **get_prompt** (Active)
+- **ignite_creation** (Active)
+- **ingest_ads_knowledge** (Active)
+- **ingest_agent_architecture** (Active)
+- **ingest_antigravity_cli** (Active)
+- **ingest_boundary_knowledge** (Active)
+- **ingest_caio_role** (Active)
+- **ingest_forbes** (Active)
+- **ingest_gpgtools_knowledge** (Active)
+- **ingest_hcp_knowledge** (Active)
+- **ingest_hcp_packer_knowledge** (Active)
+- **ingest_intelephense** (Active)
+- **ingest_knowledge_merge** (Active)
+- **ingest_macbook_cloud_knowledge** (Active)
+- **ingest_markposition_knowledge** (Active)
+- **ingest_multi_day_agent_knowledge** (Active)
+- **ingest_software_online_review** (Active)
+- **ingest_terraform_knowledge** (Active)
+- **ingest_user_caio_knowledge** (Active)
+- **install_cron** (Active)
+- **install_launchd** (Active)
+- **install_vault_radar** (Active)
+- **integrate_knowledge** (Active)
+- **manage_hcp_run_task** (Active)
+- **nomad_cli** (Active)
+- **parse_nomad_docs** (Active)
+- **react_orchestrator** (Active)
+- **run_hcp_packer** (Active)
+- **run_vault_radar_agent** (Active)
+- **sync_all_branches** (Active)
+- **sync_icloud** (Active)
+- **test_gemini** (Active)
+- **test_knowledge_integration** (Active)
+- **unified_collaboration** (Active)
+- **update_caio_knowledge_surgical** (Active)
+- **update_knowledge** (Active)
+- **validate_license** (Active)
+
+## AI Agents
+- **backup_agent_prompt** (Active)
+- **base_agent** (Active)
+- **chief_ai_officer** (Active)
+- **chief_ai_officer** (Active)
+- **cloud_workflow_agent** (Active)
+- **duo_planner_agent** (Active)
+- **gitlab_security_agent** (Active)
+- **notification_agent** (Active)
+- **schemas** (Active)
+- **sync_agent** (Active)
+
+## Documentations
+- **AGENTS_ROLLUP** (Active)
+- **AI_AGENT_ARCHITECTURE** (Active)
+- **ANTIGRAVITY_ARCHITECTURE_PROPOSALS** (Active)
+- **CLOUD_ARCHITECTURE** (Active)
+- **HCP_PACKER_TUTORIAL** (Active)
+- **MACBOOK_CLOUD_PRESENCE** (Active)
+- **ethics_framework** (Active)
+- **AGENTS.md** (Active)
+- **CONSOLIDATED_INTELLIGENCE.md** (Active)
+- **KNOWLEDGE_MERGE.md** (Active)
+
+## UI Components
+- **layout** (Active)
+- **page** (Active)
+
+## Assets
+- **file** (Active)
+- **globe** (Active)
+- **next** (Active)
+- **vercel** (Active)
+- **window** (Active)
+
+## Knowledges
+- **AGENTS.md** (Ingested) - *Source: icloud://AGENTS.md*
+- **CLAUDE.md** (Ingested) - *Source: icloud://CLAUDE.md*
+- **CONSOLIDATED_INTELLIGENCE.md** (Ingested) - *Source: icloud://CONSOLIDATED_INTELLIGENCE.md*
+- **KNOWLEDGE_MERGE.md** (Ingested) - *Source: icloud://KNOWLEDGE_MERGE.md*
+- **MISSION_HANDOFF 2.md** (Ingested) - *Source: icloud://MISSION_HANDOFF 2.md*
+- **MISSION_HANDOFF.md** (Ingested) - *Source: icloud://MISSION_HANDOFF.md*
+- **README.md** (Ingested) - *Source: icloud://README.md*
+- **USAGE.md** (Ingested) - *Source: icloud://USAGE.md*
+- **project_backlog.md** (Ingested) - *Source: icloud://project_backlog.md*
+- **wilson_sonsini.md** (Ingested) - *Source: icloud://wilson_sonsini.md*
+- **Chief AI Officer (CAIO) Role** (Ingested) - *Source: user_input://caio_user_input.md*
+- **neural_sync_docs.md** (Ingested) - *Source: icloud-sim://neural_sync_docs.md*
+- **test_knowledge.md** (Ingested) - *Source: icloud-sim://test_knowledge.md*
+- **Web Insight** (Ingested) - *Source: https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview*
+- **iCloud: phase13_directives.md** (Ingested) - *Source: icloud://phase13_directives.md*
+- **iCloud: 50ty.json** (Ingested) - *Source: icloud://50ty.json*
+- **iCloud: 50ty.md** (Ingested) - *Source: icloud://50ty.md*
+- **iCloud: AGENTS.md** (Ingested) - *Source: icloud://AGENTS.md*
+- **iCloud: CLAUDE.md** (Ingested) - *Source: icloud://CLAUDE.md*
+- **iCloud: CONSOLIDATED_INTELLIGENCE.md** (Ingested) - *Source: icloud://CONSOLIDATED_INTELLIGENCE.md*
+- **iCloud: KNOWLEDGE_INTEGRATION.md** (Ingested) - *Source: icloud://KNOWLEDGE_INTEGRATION.md*
+- **iCloud: KNOWLEDGE_MERGE.md** (Ingested) - *Source: icloud://KNOWLEDGE_MERGE.md*
+- **iCloud: MISSION_HANDOFF 2.md** (Ingested) - *Source: icloud://MISSION_HANDOFF 2.md*
+- **iCloud: MISSION_HANDOFF.md** (Ingested) - *Source: icloud://MISSION_HANDOFF.md*
+- **iCloud: README.md** (Ingested) - *Source: icloud://README.md*
+- **iCloud: USAGE.md** (Ingested) - *Source: icloud://USAGE.md*
+- **software info by fk &#8211; software-online-review &#8211; Filip Keser** (Ingested) - *Source: icloud://ai_agents_knowledge.json*
+- **iCloud: ai_agents_knowledge.md** (Ingested) - *Source: icloud://ai_agents_knowledge.md*
+- **iCloud: autonomous_state.json** (Ingested) - *Source: icloud://autonomous_state.json*
+- **iCloud: caio_role_docs.md** (Ingested) - *Source: icloud://caio_role_docs.md*
+- **iCloud: package-lock.json** (Ingested) - *Source: icloud://package-lock.json*
+- **iCloud: package.json** (Ingested) - *Source: icloud://package.json*
+- **iCloud: project_backlog.md** (Ingested) - *Source: icloud://project_backlog.md*
+- **iCloud: test_knowledge_output.json** (Ingested) - *Source: icloud://test_knowledge_output.json*
+- **iCloud: tsconfig.json** (Ingested) - *Source: icloud://tsconfig.json*
+- **iCloud: wilson_sonsini.md** (Ingested) - *Source: icloud://wilson_sonsini.md*
+- **Market Intelligence** (Ingested) - *Source: market_research_sync*
+- **software info by fk – software-online-review – Filip Keser** (Ingested) - *Source: https://software-online-review.com*
+- **iCloud: initial_directive.md** (Ingested) - *Source: icloud://initial_directive.md*
+- **iCloud: phase13_strategic_directive.md** (Ingested) - *Source: icloud://phase13_strategic_directive.md*
+- **iCloud: market_intelligence_q3.md** (Ingested) - *Source: icloud://market_intelligence_q3.md*
+- **iCloud: phase13_regional_compliance.md** (Ingested) - *Source: icloud://phase13_regional_compliance.md*
+- **Intelephense Documentation** (Ingested) - *Source: https://intelephense.com/docs*
+- **Understanding bidding basics - Google Ads Help** (Ingested) - *Source: https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU*
+- **Google Ads Smart Bidding - AI-Driven Bid Optimisations & Ad Spend** (Ingested) - *Source: https://business.google.com/uk/ad-tools/bidding/*
+- **Tips & Resources for Online Advertising – Google Ads** (Ingested) - *Source: https://business.google.com/uk/resources/*
+- **Ad Manager  |  Google for DevelopersGoogleGoogle** (Ingested) - *Source: https://developers.google.com/ad-manager*
+- **Dynamic Ad Insertion  |  Google for DevelopersGoogleGoogle** (Ingested) - *Source: https://developers.google.com/ad-manager/dynamic-ad-insertion*
+- **DAI Full Service API  |  Google for DevelopersGoogleGoogle** (Ingested) - *Source: https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service*
+- **DAI Pod Serving API  |  Google for DevelopersGoogleGoogle** (Ingested) - *Source: https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving*
+- **Los gehts  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle** (Ingested) - *Source: https://developers.google.com/ad-manager/api/start*
+- **Resources Overview - Google Ad Manager** (Ingested) - *Source: https://admanager.google.com/home/resources/*
+- **ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation** (Ingested) - *Source: https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview*
+- **Understanding bidding basics - Google Ads Help** (Ingested)
+- **Google Ads Smart Bidding - AI-Driven Bid Optimisations & Ad Spend** (Ingested)
+- **Tips & Resources for Online Advertising – Google Ads** (Ingested)
+- **Ad Manager  |  Google for DevelopersGoogleGoogle** (Ingested)
+- **Dynamic Ad Insertion  |  Google for DevelopersGoogleGoogle** (Ingested)
+- **DAI Full Service API  |  Google for DevelopersGoogleGoogle** (Ingested)
+- **DAI Pod Serving API  |  Google for DevelopersGoogleGoogle** (Ingested)
+- **Get started  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle** (Ingested)
+- **Resources Overview - Google Ad Manager** (Ingested)
+- **ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation** (Ingested)
+
+## Branch Results
+- **remotes/origin/add-a2a-remote-agent-152042865285525971** (Ready for Merge)
+- **remotes/origin/add-chief-ai-officer-agent-9719417263665099785** (Ready for Merge)
+- **remotes/origin/add-docker-scripts-14962706392589598489** (Ready for Merge)
+- **remotes/origin/add-gitlab-runner-service-1151466855069035440** (Ready for Merge)
+- **remotes/origin/add-gitlab-security-agent-prompt-16540176671068222176** (Ready for Merge)
+- **remotes/origin/add-golang-developer-agents-5802231143872030735** (Ready for Merge)
+- **remotes/origin/add-google-ads-knowledge-4095321584408330018** (Ready for Merge)
+- **remotes/origin/add-google-research-agent-6251052890466246126** (Ready for Merge)
+- **remotes/origin/add-improve-merge-integrate-run-13954481227278798151** (Ready for Merge)
+- **remotes/origin/add-intelephense-scraper-1993524492524163396** (Ready for Merge)
+- **remotes/origin/add-jenkins-metrics-12709603847827089760** (Ready for Merge)
+- **remotes/origin/add-mysql-agent-12534386317238704274** (Ready for Merge)
+- **remotes/origin/add-prompts-md-15347215170790120341** (Ready for Merge)
+- **remotes/origin/add-test-gemini-script-4486670142137442635** (Ready for Merge)
+- **remotes/origin/automate-markposition-knowledge-merge-14646945117315419790** (Ready for Merge)
+- **remotes/origin/autonomous-cloud-organism-8050182996160797424** (Ready for Merge)
+- **remotes/origin/autonomous-creation-evolution-14168201882249018244** (Ready for Merge)
+- **remotes/origin/autonomous-evolution-command-15592904538658549663** (Ready for Merge)
+- **remotes/origin/autonomous-loop-enhancement-4557411631469647525** (Ready for Merge)
+- **remotes/origin/autonomous-workflow-creation-17803793083721136421** (Ready for Merge)
+- **remotes/origin/bolt-analytics-loop-fusion-4342012847249900150** (Ready for Merge)
+- **remotes/origin/bolt-analytics-memory-opt-10610699281805131592** (Ready for Merge)
+- **remotes/origin/bolt-analytics-memory-optimization-4307986311279861534** (Ready for Merge)
+- **remotes/origin/bolt-analytics-optimization-10259687893878942359** (Ready for Merge)
+- **remotes/origin/bolt-async-parse-optimization-17693505208777123088** (Ready for Merge)
+- **remotes/origin/bolt-async-parsing-optimization-15796324175829374067** (Ready for Merge)
+- **remotes/origin/bolt-async-parsing-optimization-3568259514933349807** (Ready for Merge)
+- **remotes/origin/bolt-async-parsing-optimization-8695577183440719223** (Ready for Merge)
+- **remotes/origin/bolt-async-scraper-optimization-4263460897058372515** (Ready for Merge)
+- **remotes/origin/bolt-async-scraper-optimization-7114866315692870116** (Ready for Merge)
+- **remotes/origin/bolt-clean-text-optimization-15712517231246244038** (Ready for Merge)
+- **remotes/origin/bolt-clean-text-optimization-16548831371905751572** (Ready for Merge)
+- **remotes/origin/bolt-clean-text-optimization-9860186096037295595** (Ready for Merge)
+- **remotes/origin/bolt-concurrency-parsing-15586759878100859891** (Ready for Merge)
+- **remotes/origin/bolt-debounce-search-12215083828535086790** (Ready for Merge)
+- **remotes/origin/bolt-debounce-search-14062090304060224732** (Ready for Merge)
+- **remotes/origin/bolt-debounce-search-14084131025983025512** (Ready for Merge)
+- **remotes/origin/bolt-debounce-search-14907047231982502450** (Ready for Merge)
+- **remotes/origin/bolt-debounce-search-15937062067363092227** (Ready for Merge)
+- **remotes/origin/bolt-debounce-search-17782884208193112120** (Ready for Merge)
+- **remotes/origin/bolt-debounce-search-2923495583412528786** (Ready for Merge)
+- **remotes/origin/bolt-debounce-search-5046410561131707962** (Ready for Merge)
+- **remotes/origin/bolt-debounce-search-5765463060295849249** (Ready for Merge)
+- **remotes/origin/bolt-debounce-search-5898530912352758031** (Ready for Merge)
+- **remotes/origin/bolt-debounce-search-7271068831945520749** (Ready for Merge)
+- **remotes/origin/bolt-debounce-search-867343283904291925** (Ready for Merge)
+- **remotes/origin/bolt-fix-scrape-timeout-13108681531490414412** (Ready for Merge)
+- **remotes/origin/bolt-frontend-search-optimization-16804922774827713480** (Ready for Merge)
+- **remotes/origin/bolt-offload-parsing-5398069760556689777** (Ready for Merge)
+- **remotes/origin/bolt-offload-parsing-to-thread-9019969067081020441** (Ready for Merge)
+- **remotes/origin/bolt-optimize-analytics-13767692266549105080** (Ready for Merge)
+- **remotes/origin/bolt-optimize-analytics-generators-8873141183038824574** (Ready for Merge)
+- **remotes/origin/bolt-optimize-clean-text-7547135084806054992** (Ready for Merge)
+- **remotes/origin/bolt-optimize-db-connection-6272426702807930457** (Ready for Merge)
+- **remotes/origin/bolt-optimize-markdown-parsing-5582723908473381878** (Ready for Merge)
+- **remotes/origin/bolt-optimize-markdownify-10348114377870192162** (Ready for Merge)
+- **remotes/origin/bolt-optimize-markdownify-1164932624854226635** (Ready for Merge)
+- **remotes/origin/bolt-optimize-markdownify-usage-1055696794697199315** (Ready for Merge)
+- **remotes/origin/bolt-optimize-scraper-bs4-5091120163472675133** (Ready for Merge)
+- **remotes/origin/bolt-optimize-scraper-connections-4828433141129646655** (Ready for Merge)
+- **remotes/origin/bolt-optimize-scraper-lxml-6085458244343772742** (Ready for Merge)
+- **remotes/origin/bolt-optimize-scraper-parsing-11174604161297241806** (Ready for Merge)
+- **remotes/origin/bolt-optimize-scraper-parsing-15151560624780715186** (Ready for Merge)
+- **remotes/origin/bolt-optimize-scraper-parsing-16907071168854197737** (Ready for Merge)
+- **remotes/origin/bolt-optimize-scraper-parsing-2345287755710675477** (Ready for Merge)
+- **remotes/origin/bolt-optimize-scraper-parsing-8116934535204558717** (Ready for Merge)
+- **remotes/origin/bolt-optimize-scraper-parsing-8834013085452887320** (Ready for Merge)
+- **remotes/origin/bolt-optimize-scraper-regex-7246744395174806244** (Ready for Merge)
+- **remotes/origin/bolt-optimize-scraper-soupstrainer-11433902597372652499** (Ready for Merge)
+- **remotes/origin/bolt-optimize-scraper-soupstrainer-7047580228088986643** (Ready for Merge)
+- **remotes/origin/bolt-parallel-research-17289593056697154887** (Ready for Merge)
+- **remotes/origin/bolt-parallel-scraping-3456726109416695191** (Ready for Merge)
+- **remotes/origin/bolt-perf-bs4-process-pool-17427244549051212292** (Ready for Merge)
+- **remotes/origin/bolt-perf-lxml-17997966610705320667** (Ready for Merge)
+- **remotes/origin/bolt-perf-scraper-executor-4427925572526171604** (Ready for Merge)
+- **remotes/origin/bolt-perf-scraper-lxml-5373269111675878459** (Ready for Merge)
+- **remotes/origin/bolt-perf-scraper-session-10551043501921502138** (Ready for Merge)
+- **remotes/origin/bolt-perf-string-clean-3059858990745910669** (Ready for Merge)
+- **remotes/origin/bolt-performance-async-parsing-2274988266574595101** (Ready for Merge)
+- **remotes/origin/bolt-performance-soupstrainer-14059433622013418020** (Ready for Merge)
+- **remotes/origin/bolt-regex-optimization-10299479456979615296** (Ready for Merge)
+- **remotes/origin/bolt-regex-optimization-10670018771745312262** (Ready for Merge)
+- **remotes/origin/bolt-regex-optimization-12519421487946893253** (Ready for Merge)
+- **remotes/origin/bolt-regex-optimization-15204028469751389164** (Ready for Merge)
+- **remotes/origin/bolt-regex-optimization-16017586951371803130** (Ready for Merge)
+- **remotes/origin/bolt-regex-optimization-1936252853902893484** (Ready for Merge)
+- **remotes/origin/bolt-regex-optimization-3412472969268847493** (Ready for Merge)
+- **remotes/origin/bolt-regex-optimization-3847743098797150456** (Ready for Merge)
+- **remotes/origin/bolt-regex-optimization-4970481472425500127** (Ready for Merge)
+- **remotes/origin/bolt-regex-optimization-6253122029365977670** (Ready for Merge)
+- **remotes/origin/bolt-regex-optimization-8134015789402111822** (Ready for Merge)
+- **remotes/origin/bolt-regex-optimization-9346752295468172099** (Ready for Merge)
+- **remotes/origin/bolt-requests-session-3076311538911381225** (Ready for Merge)
+- **remotes/origin/bolt-scraper-opt-14551540345984142546** (Ready for Merge)
+- **remotes/origin/bolt-scraper-optimization-10622089792901255880** (Ready for Merge)
+- **remotes/origin/bolt-scraper-optimization-11470662003426243348** (Ready for Merge)
+- **remotes/origin/bolt-scraper-optimization-12663434804223605842** (Ready for Merge)
+- **remotes/origin/bolt-scraper-optimization-1835167512947388951** (Ready for Merge)
+- **remotes/origin/bolt-scraper-optimization-4489089491268807084** (Ready for Merge)
+- **remotes/origin/bolt-scraper-optimization-4721296771632120675** (Ready for Merge)
+- **remotes/origin/bolt-scraper-optimization-4739353605413310472** (Ready for Merge)
+- **remotes/origin/bolt-scraper-optimization-6251848286743864279** (Ready for Merge)
+- **remotes/origin/bolt-scraper-optimizations-8732903057106461095** (Ready for Merge)
+- **remotes/origin/bolt-scraper-regex-opt-12848838026143990534** (Ready for Merge)
+- **remotes/origin/bolt-scraper-regex-optimization-14054671181883869237** (Ready for Merge)
+- **remotes/origin/bolt-scraper-regex-optimization-15114098026015828976** (Ready for Merge)
+- **remotes/origin/bolt-scraper-session-optimization-11606334995791514193** (Ready for Merge)
+- **remotes/origin/bolt-soup-strainer-opt-12465788509084692171** (Ready for Merge)
+- **remotes/origin/bolt-soup-strainer-optimization-16114231228523814321** (Ready for Merge)
+- **remotes/origin/bolt-soup-strainer-optimization-8380713953647872097** (Ready for Merge)
+- **remotes/origin/bolt-soupstrainer-opt-17010756878620689019** (Ready for Merge)
+- **remotes/origin/bolt-soupstrainer-optimization-12975139713668624064** (Ready for Merge)
+- **remotes/origin/bolt-soupstrainer-optimization-4709552410441311430** (Ready for Merge)
+- **remotes/origin/bolt-soupstrainer-optimization-7655426233962069468** (Ready for Merge)
+- **remotes/origin/bolt-string-optimization-14072839521432093858** (Ready for Merge)
+- **remotes/origin/bolt-string-optimizations-16981467871586157841** (Ready for Merge)
+- **remotes/origin/bolt/analytics-optimization-4995070729525476780** (Ready for Merge)
+- **remotes/origin/bolt/analytics-optimization-5186329418761379661** (Ready for Merge)
+- **remotes/origin/bolt/analytics-optimization-9314066458299760001** (Ready for Merge)
+- **remotes/origin/bolt/debounce-search-10941063823449310273** (Ready for Merge)
+- **remotes/origin/bolt/debounce-search-12191973509104557966** (Ready for Merge)
+- **remotes/origin/bolt/debounce-search-12622700298497962578** (Ready for Merge)
+- **remotes/origin/bolt/debounce-search-15326880572680328137** (Ready for Merge)
+- **remotes/origin/bolt/debounce-search-16257675660942743277** (Ready for Merge)
+- **remotes/origin/bolt/debounce-search-5142738797831521138** (Ready for Merge)
+- **remotes/origin/bolt/offload-parsing-14722444591062844886** (Ready for Merge)
+- **remotes/origin/bolt/offload-parsing-18000472276561291701** (Ready for Merge)
+- **remotes/origin/bolt/optimize-analytics-counters-3356972243942763781** (Ready for Merge)
+- **remotes/origin/bolt/optimize-analytics-domain-parsing-13885933983785398642** (Ready for Merge)
+- **remotes/origin/bolt/optimize-analytics-memory-6106404338256355305** (Ready for Merge)
+- **remotes/origin/bolt/optimize-analytics-one-pass-7086495459285985759** (Ready for Merge)
+- **remotes/origin/bolt/optimize-analyzer-agent-7882848247587785296** (Ready for Merge)
+- **remotes/origin/bolt/optimize-analyzer-processing-1038964724304632027** (Ready for Merge)
+- **remotes/origin/bolt/optimize-db-commits-11398396024244254319** (Ready for Merge)
+- **remotes/origin/bolt/optimize-font-loading-5528051854303961488** (Ready for Merge)
+- **remotes/origin/bolt/optimize-parsing-concurrency-16573258406501632258** (Ready for Merge)
+- **remotes/origin/bolt/optimize-parsing-strainer-9971815033576562724** (Ready for Merge)
+- **remotes/origin/bolt/optimize-regex-1525106895244379137** (Ready for Merge)
+- **remotes/origin/bolt/optimize-regex-15752829805636869683** (Ready for Merge)
+- **remotes/origin/bolt/optimize-regex-3698754049166377150** (Ready for Merge)
+- **remotes/origin/bolt/optimize-regex-scraper-6105079902300613842** (Ready for Merge)
+- **remotes/origin/bolt/optimize-researcher-agent-14491778410455862210** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-8346930055291121597** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-async-parsing-4453799508015818027** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-concurrency-1999393658885551350** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-connections-13114973092726669835** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-cpu-offload-9525808668281039762** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-parsing-10565425489235889147** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-parsing-10918922297194629297** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-parsing-11833892635611618505** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-parsing-12555573345404019193** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-parsing-15316028881120091100** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-parsing-16871502457632644118** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-parsing-17321207130499431239** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-parsing-17943688807716434539** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-parsing-6721094877906606239** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-parsing-6892475922694217553** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-parsing-7966402303171106171** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-regex-10205989799343987319** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-regex-1393195190669429134** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-regex-14681340074432388490** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-regex-1482756939594600405** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-regex-5860100165924032518** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-regex-8405299950753079753** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-regex-9310556906555712372** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-soupstrainer-14420766436161208317** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-soupstrainer-16309493633183505458** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-soupstrainer-2187090943754439441** (Ready for Merge)
+- **remotes/origin/bolt/optimize-scraper-text-cleaning-12035125053828443928** (Ready for Merge)
+- **remotes/origin/bolt/optimize-sqlite-connection-10336361028300221107** (Ready for Merge)
+- **remotes/origin/bolt/optimize-url-parsing-2495547858907129194** (Ready for Merge)
+- **remotes/origin/bolt/optimize-url-parsing-5636972327251553148** (Ready for Merge)
+- **remotes/origin/bolt/parallel-parsing-8300594593376061911** (Ready for Merge)
+- **remotes/origin/bolt/parallel-research-9725055391058247925** (Ready for Merge)
+- **remotes/origin/bolt/parallel-researcher-3732082642823576207** (Ready for Merge)
+- **remotes/origin/bolt/reuse-sqlite-connection-8909750184306123325** (Ready for Merge)
+- **remotes/origin/bolt/scraper-async-parsing-11691327216979292391** (Ready for Merge)
+- **remotes/origin/bolt/scraper-async-parsing-1902549923260096653** (Ready for Merge)
+- **remotes/origin/bolt/scraper-optimization-5038895935936123886** (Ready for Merge)
+- **remotes/origin/bolt/scraper-optimization-9022037111060976209** (Ready for Merge)
+- **remotes/origin/bolt/scraper-optimization-soupstrainer-17672817174233874002** (Ready for Merge)
+- **remotes/origin/bolt/scraper-perf-boost-9671827754750526645** (Ready for Merge)
+- **remotes/origin/bolt/soup-strainer-optimization-16070692857915486843** (Ready for Merge)
+- **remotes/origin/collaboration-intelligence-sync-2178443547158728411** (Ready for Merge)
+- **remotes/origin/connect-docker-collaborate-17099568282070534570** (Ready for Merge)
+- **remotes/origin/connect-with-docker-6054650345251122047** (Ready for Merge)
+- **remotes/origin/deploy-react-agents-logic-12419630042311388322** (Ready for Merge)
+- **remotes/origin/dynamic-cloud-workflow-agents-4167178583632810604** (Ready for Merge)
+- **remotes/origin/evolution-engine-16785727583013198625** (Ready for Merge)
+- **remotes/origin/feat-macbook-cloud-simulation-5272995196293351855** (Ready for Merge)
+- **remotes/origin/feat-render-worker-macbook-cloud-4132104054450648073** (Ready for Merge)
+- **remotes/origin/feat/add-chief-ai-officer-agent-1329096278704697703** (Ready for Merge)
+- **remotes/origin/feat/add-dry-run-and-docs-355491477019803773** (Ready for Merge)
+- **remotes/origin/feat/add-duo-planner-agent-13826965705256453185** (Ready for Merge)
+- **remotes/origin/feat/add-first-gitlab-pipeline-16997691605119051204** (Ready for Merge)
+- **remotes/origin/feat/add-google-ads-urls-1299647422113621709** (Ready for Merge)
+- **remotes/origin/feat/add-subagents-docs-1971776765739377795** (Ready for Merge)
+- **remotes/origin/feat/add-vscode-intelephense-scraper-14077541109460571924** (Ready for Merge)
+- **remotes/origin/feat/agent-architecture-ingestion-8781343012191362130** (Ready for Merge)
+- **remotes/origin/feat/ai-agents-knowledge-14795660026662295366** (Ready for Merge)
+- **remotes/origin/feat/ai-agents-knowledge-15681133979794376101** (Ready for Merge)
+- **remotes/origin/feat/ai-agents-knowledge-ingestion-3432960869783854018** (Ready for Merge)
+- **remotes/origin/feat/ai-agents-knowledge-ingestion-51848187449270745** (Ready for Merge)
+- **remotes/origin/feat/ai-agents-knowledge-integration-10133877583552684442** (Ready for Merge)
+- **remotes/origin/feat/ai-agents-knowledge-integration-17962488157664900856** (Ready for Merge)
+- **remotes/origin/feat/ai-agents-knowledge-integration-3155871126605591044** (Ready for Merge)
+- **remotes/origin/feat/ai-agents-knowledge-integration-4554182407588547817** (Ready for Merge)
+- **remotes/origin/feat/ai-agents-knowledge-update-2880934032855437252** (Ready for Merge)
+- **remotes/origin/feat/ai-architecture-docs-2911584593714899836** (Ready for Merge)
+- **remotes/origin/feat/ai-sdk-streamtext-integration-3734860099537308061** (Ready for Merge)
+- **remotes/origin/feat/antigravity-cloud-evolution-3450373713332257591** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-continuity-7259514487637520921** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-convergence-phase-12-11379028617689834826** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-evolution-16547296923606318765** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-evolution-2894233982958127060** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-evolution-7110023434295372001** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-failover-13782087979428754100** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-failover-13782442138819724713** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-knowledge-consolidation-6778083691317646306** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-merge-bypass-8712146839008626317** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-presence-13349070200456458168** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-presence-978332573715716812** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-presence-enhancement-11813668786867103175** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-presence-v12-14478074314535541001** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-sovereignty-10617479099026703774** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-sovereignty-9356824831657033971** (Ready for Merge)
+- **remotes/origin/feat/autonomous-cloud-workflow-agent-17352121164725625008** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-cycle-10141862539312644533** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-cycle-10567644799753050340** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-cycle-14040463371825265667** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-cycle-2519215097742916370** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-cycle-5845832032656471987** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-cycle-856121647264189672** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-cycle-8889704769332571568** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-cycle-alignment-17511680594965504532** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-cycle-components-16091962715675237550** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-cycle-stabilization-15042891493316655880** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-engine-2254624505132207048** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-engine-4025311903308148897** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-engine-8264207274703386634** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-evolution-15095668826431318009** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-evolution-8400947059595205490** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-evolution-9797261657817492019** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-execution-cycle-15305595999665058256** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-ignition-12654712675481574533** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-ignition-8279236901022115183** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-orchestration-16938243851371264019** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-order-12052078248727379444** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-order-15598638641975305660** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-pulse-17454744157999079928** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-system-10495689118004789433** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-workflow-3405864056735781942** (Ready for Merge)
+- **remotes/origin/feat/autonomous-creation-workflow-3510228137813384837** (Ready for Merge)
+- **remotes/origin/feat/autonomous-daily-evolution-16799344263411811050** (Ready for Merge)
+- **remotes/origin/feat/autonomous-daily-license-knowledge-sync-10372390239614697679** (Ready for Merge)
+- **remotes/origin/feat/autonomous-daily-sync-icloud-2931573862557497008** (Ready for Merge)
+- **remotes/origin/feat/autonomous-daily-sync-refactor-11777205157744306714** (Ready for Merge)
+- **remotes/origin/feat/autonomous-evolution-engine-improvements-9180002343123851576** (Ready for Merge)
+- **remotes/origin/feat/autonomous-knowledge-integration-17955218427957192278** (Ready for Merge)
+- **remotes/origin/feat/autonomous-knowledge-merge-integration-7336376174653750666** (Ready for Merge)
+- **remotes/origin/feat/autonomous-knowledge-refinement-16335548248808539628** (Ready for Merge)
+- **remotes/origin/feat/autonomous-multi-ci-workflow-creation-13184263401868233273** (Ready for Merge)
+- **remotes/origin/feat/autonomous-protocol-jules-16130780090107402276** (Ready for Merge)
+- **remotes/origin/feat/autonomous-scale-improvements-3306739590977021046** (Ready for Merge)
+- **remotes/origin/feat/autonomous-sync-orch-3205070913479590018** (Ready for Merge)
+- **remotes/origin/feat/autonomous-work-order-engine-4034176882068097834** (Ready for Merge)
+- **remotes/origin/feat/autonomous-workflow-creation-13764436247269423073** (Ready for Merge)
+- **remotes/origin/feat/autonomous-workflow-creation-2438802251754427504** (Ready for Merge)
+- **remotes/origin/feat/autonomous-workflow-creation-5168172668648031949** (Ready for Merge)
+- **remotes/origin/feat/boundary-integration-3444742037386565893** (Ready for Merge)
+- **remotes/origin/feat/caio-agent-creation-11276937148352669506** (Ready for Merge)
+- **remotes/origin/feat/caio-governance-framework-11040349771906535570** (Ready for Merge)
+- **remotes/origin/feat/caio-intelligence-integration-11172055964198786485** (Ready for Merge)
+- **remotes/origin/feat/caio-role-definition-2687968350619526686** (Ready for Merge)
+- **remotes/origin/feat/caio-role-documentation-939377481223590530** (Ready for Merge)
+- **remotes/origin/feat/caio-role-enhancement-5559813700767968476** (Ready for Merge)
+- **remotes/origin/feat/caio-role-evolution-2026-compliance-6543835775831674985** (Ready for Merge)
+- **remotes/origin/feat/caio-role-grounded-documentation-v2-2060998097314917415** (Ready for Merge)
+- **remotes/origin/feat/caio-role-integration-update-15602867892251324330** (Ready for Merge)
+- **remotes/origin/feat/caio-role-orchestration-enhancement-8826405201008920940** (Ready for Merge)
+- **remotes/origin/feat/caio-role-refinement-14139776390756160770** (Ready for Merge)
+- **remotes/origin/feat/chief-ai-officer-agent-16063286064953907813** (Ready for Merge)
+- **remotes/origin/feat/chief-ai-officer-agents-7425185603236409614** (Ready for Merge)
+- **remotes/origin/feat/chief-ai-officer-creation-17511905373912707701** (Ready for Merge)
+- **remotes/origin/feat/chief-ai-officer-creation-fix-15085892723513843344** (Ready for Merge)
+- **remotes/origin/feat/cloud-autonomous-evolution-4476041926243078641** (Ready for Merge)
+- **remotes/origin/feat/cloud-autonomous-presence-4768792204367486255** (Ready for Merge)
+- **remotes/origin/feat/cloud-autonomous-presence-7598106438601862770** (Ready for Merge)
+- **remotes/origin/feat/cloud-connection-sync-9636399974461911067** (Ready for Merge)
+- **remotes/origin/feat/cloud-convergence-phase-17-526028351036584856** (Ready for Merge)
+- **remotes/origin/feat/cloud-native-autonomy-13870741608362044054** (Ready for Merge)
+- **remotes/origin/feat/cloud-native-autonomy-3438116551041896813** (Ready for Merge)
+- **remotes/origin/feat/cloud-native-autonomy-presence-7653289006767349445** (Ready for Merge)
+- **remotes/origin/feat/cloud-native-convergence-16112457665657205536** (Ready for Merge)
+- **remotes/origin/feat/cloud-native-online-presence-8372655786114667910** (Ready for Merge)
+- **remotes/origin/feat/cloud-presence-cli-11807476769292428876** (Ready for Merge)
+- **remotes/origin/feat/cloud-simulation-intelligence-18003609215898643719** (Ready for Merge)
+- **remotes/origin/feat/cloud-workflow-agent-proactive-logic-7308921529560854073** (Ready for Merge)
+- **remotes/origin/feat/collaboration-dashboard-13924371239853665910** (Ready for Merge)
+- **remotes/origin/feat/collaboration-intelligence-knowledge-merge-v1-1682981257800000691** (Ready for Merge)
+- **remotes/origin/feat/collaboration-synergy-analysis-9382599357384352288** (Ready for Merge)
+- **remotes/origin/feat/compile-knowledge-ingestion-4339613978296539768** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-and-collaborate-11694233426659600522** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-and-collaborate-4263909557176402294** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-collaboration-10997916882350002599** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-collaboration-6033606454460470488** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-collaboration-high-fidelity-sim-12659027097554184106** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-collaboration-sync-final-11700500964007561939** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-collaboration-sync-final-11700500964007561939-14187345688277018919** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-collaboration-sync-final-11700500964007561939-5613862418405546964** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-collaboration-sync-final-11700500964007561939-5613862418405546964-revised-8145830076406452013** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-collaboration-sync-final-6753111079424335435** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-collaboration-sync-final-6753111079424335435-11457900944324227307** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-collaboration-sync-v12-15268919459233727210** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-collaboration-sync-v12-final-11639225190852212326-7646056837559955541** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-collaboration-sync-v12-final-18361574323939110813** (Ready for Merge)
+- **remotes/origin/feat/connect-docker-collaboration-sync-v12-final-8112697616985708404** (Ready for Merge)
+- **remotes/origin/feat/consolidate-intelephense-docs-v2-5901927489540456297** (Ready for Merge)
+- **remotes/origin/feat/consolidate-intelephense-docs-v2-6711603966730800844** (Ready for Merge)
+- **remotes/origin/feat/consolidated-intelligence-sync-1091614933754712837** (Ready for Merge)
+- **remotes/origin/feat/create-agent-chief-ai-officer-4762951995153845072** (Ready for Merge)
+- **remotes/origin/feat/create-caio-agent-4337063691776257193** (Ready for Merge)
+- **remotes/origin/feat/custom-github-action-10612201952418849138** (Ready for Merge)
+- **remotes/origin/feat/daily-sync-automation-7731541607332651903** (Ready for Merge)
+- **remotes/origin/feat/daily-sync-resilience-12294637765009606506** (Ready for Merge)
+- **remotes/origin/feat/daily-sync-workflow-5320368611823718820** (Ready for Merge)
+- **remotes/origin/feat/daily-work-sync-cycle-5240414677769717089** (Ready for Merge)
+- **remotes/origin/feat/decision-maker-agent-8910670838096441234** (Ready for Merge)
+- **remotes/origin/feat/deploy-react-agents-improve-16615732861125133740** (Ready for Merge)
+- **remotes/origin/feat/deploy-react-agents-logic-12098199206590490844** (Ready for Merge)
+- **remotes/origin/feat/docker-build-cloud-13144983304345154316** (Ready for Merge)
+- **remotes/origin/feat/docker-build-cloud-integration-15193242947855086456** (Ready for Merge)
+- **remotes/origin/feat/docker-collaboration-enhancements-2442044575661287661** (Ready for Merge)
+- **remotes/origin/feat/docker-collaboration-integration-7386073686217533934** (Ready for Merge)
+- **remotes/origin/feat/docker-collaboration-integration-9536206781039101862** (Ready for Merge)
+- **remotes/origin/feat/docker-collaboration-scale-fix-12248709556243193254** (Ready for Merge)
+- **remotes/origin/feat/docker-collaboration-sync-16687311699313336221** (Ready for Merge)
+- **remotes/origin/feat/docker-collaboration-sync-231662997979975664** (Ready for Merge)
+- **remotes/origin/feat/docker-collaboration-sync-6891326808988151099** (Ready for Merge)
+- **remotes/origin/feat/docker-collaboration-sync-final-11035090678408338826** (Ready for Merge)
+- **remotes/origin/feat/document-hcp-credentials-12060712897845222769** (Ready for Merge)
+- **remotes/origin/feat/dual-engine-autonomous-collaboration-180989571444817477** (Ready for Merge)
+- **remotes/origin/feat/ecosystem-merge-collaboration-sync-v1-13937591330884389226** (Ready for Merge)
+- **remotes/origin/feat/ecosystem-sync-optimization-3894010060803274875** (Ready for Merge)
+- **remotes/origin/feat/enhance-autonomous-cloud-presence-10530074476743667535** (Ready for Merge)
+- **remotes/origin/feat/enhance-caio-agent-role-knowledge-v2-5314257329463039471** (Ready for Merge)
+- **remotes/origin/feat/enhanced-collaboration-intelligence-16362331248901214239** (Ready for Merge)
+- **remotes/origin/feat/enhanced-collaboration-intelligence-merge-v15-9653925109654101343** (Ready for Merge)
+- **remotes/origin/feat/enhanced-collaboration-intelligence-sync-15907336332787904375** (Ready for Merge)
+- **remotes/origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326** (Ready for Merge)
+- **remotes/origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326-10745185975815563107** (Ready for Merge)
+- **remotes/origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326-10745185975815563107-revised-21447012398436571932-3380172087610971607** (Ready for Merge)
+- **remotes/origin/feat/enhanced-collaboration-intelligence-sync-v12-2219647980549242326-10745185975815563107-revised-21447012398436571932-3380172087610971607-final-1111222233334444555566667777888899990000-6627201860355673710** (Ready for Merge)
+- **remotes/origin/feat/enhanced-collaboration-intelligence-v13-845370085628204927-2439975860907887804** (Ready for Merge)
+- **remotes/origin/feat/enhanced-ecosystem-collaboration-v12-2618891744527446207** (Ready for Merge)
+- **remotes/origin/feat/evolve-autonomous-engine-phase-12-3914839114884356859** (Ready for Merge)
+- **remotes/origin/feat/evolve-chief-ai-officer-agent-5969082472717140886** (Ready for Merge)
+- **remotes/origin/feat/fix-icloud-sync-10523504471527145361** (Ready for Merge)
+- **remotes/origin/feat/full-autonomous-creation-cycle-12087260732508548696** (Ready for Merge)
+- **remotes/origin/feat/full-autonomous-creation-engine-2520836336596562790** (Ready for Merge)
+- **remotes/origin/feat/full-autonomous-creation-execution-17830710122661382280** (Ready for Merge)
+- **remotes/origin/feat/full-autonomous-creation-execution-v2-2098058797614095194** (Ready for Merge)
+- **remotes/origin/feat/full-autonomous-online-engine-13146767980189175838** (Ready for Merge)
+- **remotes/origin/feat/full-cloud-autonomous-integration-16044652152122704918** (Ready for Merge)
+- **remotes/origin/feat/full-ecosystem-collaboration-sync-2223737222399285274** (Ready for Merge)
+- **remotes/origin/feat/fully-autonomous-automatic-workflow-13826864228372455189** (Ready for Merge)
+- **remotes/origin/feat/fully-autonomous-automatic-workflow-15126988086375924911** (Ready for Merge)
+- **remotes/origin/feat/fully-autonomous-workflow-17826823643615309371** (Ready for Merge)
+- **remotes/origin/feat/gemini-cli-security-hook-12046243673500680117** (Ready for Merge)
+- **remotes/origin/feat/gemini-cli-subagents-docs-8356808256042543281** (Ready for Merge)
+- **remotes/origin/feat/gemma-4-scraper-14386039384216646408** (Ready for Merge)
+- **remotes/origin/feat/git-merge-approvals-2916397739730846342** (Ready for Merge)
+- **remotes/origin/feat/gitlab-ci-docker-build-cloud-integration-15454130814432814509** (Ready for Merge)
+- **remotes/origin/feat/gitlab-ci-pipeline-15616713096718552061** (Ready for Merge)
+- **remotes/origin/feat/gitlab-ci-setup-14268875280165103242** (Ready for Merge)
+- **remotes/origin/feat/gitlab-security-agent-15511716266568375880** (Ready for Merge)
+- **remotes/origin/feat/go-genai-sdk-example-5056505739912335467** (Ready for Merge)
+- **remotes/origin/feat/go-parallel-simulation-12127722696321938947** (Ready for Merge)
+- **remotes/origin/feat/google-ads-scraper-5253922194982887918** (Ready for Merge)
+- **remotes/origin/feat/google-ai-knowledge-integration-17446113522463245373** (Ready for Merge)
+- **remotes/origin/feat/google-innovation-ai-knowledge-integration-2508984454520338148** (Ready for Merge)
+- **remotes/origin/feat/google-innovation-knowledge-3073243176804240163** (Ready for Merge)
+- **remotes/origin/feat/google-innovation-knowledge-7813460965753453272** (Ready for Merge)
+- **remotes/origin/feat/google-innovation-knowledge-integration-13031051407126518063** (Ready for Merge)
+- **remotes/origin/feat/google-innovation-knowledge-integration-16785196635202352379** (Ready for Merge)
+- **remotes/origin/feat/hcp-terraform-run-task-3528016114234953749** (Ready for Merge)
+- **remotes/origin/feat/high-scale-ecosystem-sync-5489708808675678101** (Ready for Merge)
+- **remotes/origin/feat/high-scale-react-agent-deployment-3564540097483377252** (Ready for Merge)
+- **remotes/origin/feat/highlander-subagent-14372356893109913488** (Ready for Merge)
+- **remotes/origin/feat/icloud-knowledge-engine-upgrade-v13-2920037181549628681** (Ready for Merge)
+- **remotes/origin/feat/icloud-knowledge-integration-and-engine-improvement-15937578227129391712** (Ready for Merge)
+- **remotes/origin/feat/icloud-knowledge-integration-and-engine-improvement-2061584058297730102** (Ready for Merge)
+- **remotes/origin/feat/icloud-knowledge-integration-and-engine-improvement-460748262715860893** (Ready for Merge)
+- **remotes/origin/feat/icloud-knowledge-integration-and-engine-improvement-v2-13334952668195963162** (Ready for Merge)
+- **remotes/origin/feat/icloud-knowledge-integration-and-engine-improvement-v2-5900978067024052098** (Ready for Merge)
+- **remotes/origin/feat/icloud-knowledge-integration-and-engine-improvement-v3-7738040317614912379** (Ready for Merge)
+- **remotes/origin/feat/icloud-knowledge-integration-and-phase13-upgrade-3178530314395886673** (Ready for Merge)
+- **remotes/origin/feat/icloud-knowledge-integration-engine-improvement-v12-14525154319708806006** (Ready for Merge)
+- **remotes/origin/feat/icloud-knowledge-phase12-upgrade-11553884983056269678** (Ready for Merge)
+- **remotes/origin/feat/icloud-knowledge-system-improvement-9850230953244404299** (Ready for Merge)
+- **remotes/origin/feat/icloud-sync-daily-work-3416451490970137960** (Ready for Merge)
+- **remotes/origin/feat/icloud-sync-system-evolution-8651898857989200077** (Ready for Merge)
+- **remotes/origin/feat/implement-google-ai-agent-knowledge-8032750828008841906** (Ready for Merge)
+- **remotes/origin/feat/implement-google-ai-agents-knowledge-17341300705636515353** (Ready for Merge)
+- **remotes/origin/feat/improve-intelephense-ingestion-9141821199438539105** (Ready for Merge)
+- **remotes/origin/feat/improve-intelephense-knowledge-ingestion-v2-3857533015746943913** (Ready for Merge)
+- **remotes/origin/feat/improve-intelephense-knowledge-ingestion-v3-5924406336570391943** (Ready for Merge)
+- **remotes/origin/feat/improve-knowledge-consolidation-formatting-3319617687203598922** (Ready for Merge)
+- **remotes/origin/feat/improve-merge-integrate-run-workflow-5771109157479393294** (Ready for Merge)
+- **remotes/origin/feat/improve-sor-knowledge-observation-workflow-12368605147794196208** (Ready for Merge)
+- **remotes/origin/feat/ingest-agent-architecture-terminology-6454380025085424990** (Ready for Merge)
+- **remotes/origin/feat/ingest-caio-role-4517363704390160540** (Ready for Merge)
+- **remotes/origin/feat/ingest-caio-role-knowledge-12304134703620086270** (Ready for Merge)
+- **remotes/origin/feat/ingest-caio-role-knowledge-v2-8305785302400580683** (Ready for Merge)
+- **remotes/origin/feat/ingest-gemini-cli-subagents-2252664288604789575** (Ready for Merge)
+- **remotes/origin/feat/ingest-gitlab-ci-tutorial-4208330200923391769** (Ready for Merge)
+- **remotes/origin/feat/ingest-google-ads-docs-v2-13679528452571479134** (Ready for Merge)
+- **remotes/origin/feat/ingest-google-ads-knowledge-6737559819071582346** (Ready for Merge)
+- **remotes/origin/feat/ingest-google-cloud-ai-agents-knowledge-10482240976459445252** (Ready for Merge)
+- **remotes/origin/feat/ingest-gpgtools-knowledge-5020055793248780056** (Ready for Merge)
+- **remotes/origin/feat/ingest-investopedia-10368440207233601793** (Ready for Merge)
+- **remotes/origin/feat/ingest-knowledge-merge-1247852778853905654** (Ready for Merge)
+- **remotes/origin/feat/ingest-siem-tools-docs-11841359330780266416** (Ready for Merge)
+- **remotes/origin/feat/ingest-subagents-3786532283562026658** (Ready for Merge)
+- **remotes/origin/feat/instrument-gemini-telemetry-2423728923945984767** (Ready for Merge)
+- **remotes/origin/feat/integrate-antigravity-cli-1970974784687429419** (Ready for Merge)
+- **remotes/origin/feat/integrate-google-ai-knowledge-17317066349600220724** (Ready for Merge)
+- **remotes/origin/feat/integrate-google-ai-knowledge-1914861070610569858** (Ready for Merge)
+- **remotes/origin/feat/integrate-google-ai-knowledge-7980540438595824425** (Ready for Merge)
+- **remotes/origin/feat/integrate-google-innovation-ai-knowledge-v2-1038711777020334701** (Ready for Merge)
+- **remotes/origin/feat/integrate-google-innovation-knowledge-14359259327475631995** (Ready for Merge)
+- **remotes/origin/feat/integrate-google-innovation-knowledge-14618042010162779019** (Ready for Merge)
+- **remotes/origin/feat/integrate-google-innovation-knowledge-1546037599646819763** (Ready for Merge)
+- **remotes/origin/feat/integrate-knowledge-merge-7649916960782275169** (Ready for Merge)
+- **remotes/origin/feat/integrate-markposition-autonomy-14681474804703419515** (Ready for Merge)
+- **remotes/origin/feat/integrate-markposition-knowledge-and-automate-merge-15099676768518099214** (Ready for Merge)
+- **remotes/origin/feat/integrate-oracle-ai-10269913553901722650** (Ready for Merge)
+- **remotes/origin/feat/integrate-oracle-ai-knowledge-17141461773939806605** (Ready for Merge)
+- **remotes/origin/feat/integrate-oracle-ai-knowledge-3394848601696333844** (Ready for Merge)
+- **remotes/origin/feat/integrate-oracle-knowledge-15758201363519659377** (Ready for Merge)
+- **remotes/origin/feat/integrate-react-knowledge-1014096584960652610** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-consolidation-14111284160958463433** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-consolidation-v2-13428827528883240394** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-consolidation-v2-18123467141878603474** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-ingestion-5058226112541762188** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-ingestion-5441794929729176117** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-ingestion-v3-robust-dedup-regeneration-18438715533600734828** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-integration-15548360236186896654** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-integration-390578372691536711** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-integration-6696356503965723987** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-integration-9176181955065313741** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-sync-14439717062784308623** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-sync-6999221207327014913** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-sync-refinement-1980913010444940091** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-update-5938787758015081598** (Ready for Merge)
+- **remotes/origin/feat/intelephense-docs-update-v2-4092727352639534773** (Ready for Merge)
+- **remotes/origin/feat/intelephense-knowledge-consolidation-v2-11323345502320266953** (Ready for Merge)
+- **remotes/origin/feat/intelephense-knowledge-integration-16806829838660900765** (Ready for Merge)
+- **remotes/origin/feat/intelephense-knowledge-optimization-6916201581932605219** (Ready for Merge)
+- **remotes/origin/feat/intelephense-knowledge-sync-83711920263729845** (Ready for Merge)
+- **remotes/origin/feat/investopedia-ingestion-10809640050459136774** (Ready for Merge)
+- **remotes/origin/feat/investopedia-ingestion-17078894864582667817** (Ready for Merge)
+- **remotes/origin/feat/jenkins-integration-8889480307913922372** (Ready for Merge)
+- **remotes/origin/feat/jenkins-pipeline-17650508759045310490** (Ready for Merge)
+- **remotes/origin/feat/jules-tools-documentation-3709224248115032248** (Ready for Merge)
+- **remotes/origin/feat/knowledge-ingestion-intelephense-9344036021876416224** (Ready for Merge)
+- **remotes/origin/feat/knowledge-merge-automation-1708085777270583651** (Ready for Merge)
+- **remotes/origin/feat/knowledge-merge-automation-4266785228236839027** (Ready for Merge)
+- **remotes/origin/feat/knowledge-observe-integration-17136884743066058279** (Ready for Merge)
+- **remotes/origin/feat/macbook-cloud-presence-simulation-16607574531277439639** (Ready for Merge)
+- **remotes/origin/feat/macbook-cloud-simulation-2306204492187680775** (Ready for Merge)
+- **remotes/origin/feat/macbook-cloud-simulation-4201425406939094947** (Ready for Merge)
+- **remotes/origin/feat/macbook-cloud-simulation-8632071559345573800** (Ready for Merge)
+- **remotes/origin/feat/macbook-cloud-simulation-knowledge-9264395958360396877** (Ready for Merge)
+- **remotes/origin/feat/macbook-cloud-simulation-verification-18070016345319943441** (Ready for Merge)
+- **remotes/origin/feat/macbook-cloud-simulation-verification-18070016345319943441-479083842667788180** (Ready for Merge)
+- **remotes/origin/feat/markposition-bridge-15977356106835229406** (Ready for Merge)
+- **remotes/origin/feat/markposition-integration-13716106460631195250** (Ready for Merge)
+- **remotes/origin/feat/markposition-knowledge-integration-v2-1630875147127639221** (Ready for Merge)
+- **remotes/origin/feat/markposition-knowledge-merge-automation-4258587857979472884** (Ready for Merge)
+- **remotes/origin/feat/mcp-docker-agent-config-10215645950897788310** (Ready for Merge)
+- **remotes/origin/feat/monetization-stripe-supabase-475749064302525361** (Ready for Merge)
+- **remotes/origin/feat/mongodb-atlas-migration-4131498074566710377** (Ready for Merge)
+- **remotes/origin/feat/netlify-deploy-button-8112490364183212293** (Ready for Merge)
+- **remotes/origin/feat/netlify-supabase-extension-config-2964669740529404630** (Ready for Merge)
+- **remotes/origin/feat/nextjs-supabase-mongodb-ecosystem-8833511503168317980** (Ready for Merge)
+- **remotes/origin/feat/observe-knowledge-14086295564930272800** (Ready for Merge)
+- **remotes/origin/feat/opentelemetry-scraper-16848949473178496467** (Ready for Merge)
+- **remotes/origin/feat/oracle-ai-knowledge-integration-15680791915741879380** (Ready for Merge)
+- **remotes/origin/feat/otel-genai-semantics-11295433924323540657** (Ready for Merge)
+- **remotes/origin/feat/phase-12-cloud-convergence-and-sentient-orchestration-8137990793219294746** (Ready for Merge)
+- **remotes/origin/feat/phase-13-integration-18269709634930068672** (Ready for Merge)
+- **remotes/origin/feat/phase-22-cloud-super-intelligence-7069863824765684745** (Ready for Merge)
+- **remotes/origin/feat/phase13-apac-integration-14522442966264815851** (Ready for Merge)
+- **remotes/origin/feat/prototype-schema-2382889081635482231** (Ready for Merge)
+- **remotes/origin/feat/react-agent-deployment-improvements-4418304449912244036** (Ready for Merge)
+- **remotes/origin/feat/react-agent-deployment-logic-2660835981298946574** (Ready for Merge)
+- **remotes/origin/feat/react-agent-deployment-logic-6656436448375867525** (Ready for Merge)
+- **remotes/origin/feat/react-agent-integration-8372098972397137891** (Ready for Merge)
+- **remotes/origin/feat/react-integration-v2-8425489280318980511** (Ready for Merge)
+- **remotes/origin/feat/refine-caio-role-knowledge-v2-5295767818736859988** (Ready for Merge)
+- **remotes/origin/feat/remote-subagents-knowledge-10304987597767701842** (Ready for Merge)
+- **remotes/origin/feat/scale-remote-subagents-9068634002929713743** (Ready for Merge)
+- **remotes/origin/feat/scan-software-online-review-12068023973855912854** (Ready for Merge)
+- **remotes/origin/feat/setup-docker-ci-cd-15330021649064333459** (Ready for Merge)
+- **remotes/origin/feat/setup-npm-workspaces-gemini-cli-12181861489580932121** (Ready for Merge)
+- **remotes/origin/feat/smarter-cloud-workflow-1168853453825745042** (Ready for Merge)
+- **remotes/origin/feat/smarter-cloud-workflow-7992378765049941579** (Ready for Merge)
+- **remotes/origin/feat/sor8bukets-worker-9724254739940303207** (Ready for Merge)
+- **remotes/origin/feat/thinking-agent-graph-of-thought-8628973372365797019** (Ready for Merge)
+- **remotes/origin/feat/unified-autonomous-creation-orchestrator-784590386845426502** (Ready for Merge)
+- **remotes/origin/feat/unified-autonomous-execution-engine-12129098689674624370** (Ready for Merge)
+- **remotes/origin/feat/unified-autonomous-intelligence-v2-11368535330418373877** (Ready for Merge)
+- **remotes/origin/feat/unified-cloud-autonomy-6168364407996649590** (Ready for Merge)
+- **remotes/origin/feat/unified-collaboration-intelligence-10789658545646187286** (Ready for Merge)
+- **remotes/origin/feat/unified-collaboration-intelligence-merge-v12-4808907432766111944** (Ready for Merge)
+- **remotes/origin/feat/unified-collaboration-intelligence-v12-3867223440127640861** (Ready for Merge)
+- **remotes/origin/feat/unified-collaboration-intelligence-v13-845370085628204927** (Ready for Merge)
+- **remotes/origin/feat/unified-collaboration-intelligence-v14-16995956840405251892** (Ready for Merge)
+- **remotes/origin/feat/unified-knowledge-integration-6924488404722720860** (Ready for Merge)
+- **remotes/origin/feat/update-autonomous-workflow-9631298294249766702** (Ready for Merge)
+- **remotes/origin/feat/update-caio-knowledge-user-input-17103174669694285788** (Ready for Merge)
+- **remotes/origin/feat/update-google-ads-urls-12068705340237813487** (Ready for Merge)
+- **remotes/origin/feat/update-intelephense-docs-8706527771111135696** (Ready for Merge)
+- **remotes/origin/feat/update-intelephense-docs-comprehensive-14607207959398176805** (Ready for Merge)
+- **remotes/origin/feat/update-intelephense-knowledge-14107267003483988573** (Ready for Merge)
+- **remotes/origin/feat/update-intelephense-knowledge-16942753363135723418** (Ready for Merge)
+- **remotes/origin/feat/update-intelephense-knowledge-3532439720427266436** (Ready for Merge)
+- **remotes/origin/feat/update-intelephense-knowledge-v3-10649927759915972956** (Ready for Merge)
+- **remotes/origin/feat/vault-radar-agent-8481917393959699580** (Ready for Merge)
+- **remotes/origin/feat/vercel-sandbox-agent-4324012582245511797** (Ready for Merge)
+- **remotes/origin/feature/50-prompts-cli-11662647561508639317** (Ready for Merge)
+- **remotes/origin/feature/a2a-agent-implementation-12474626317752077342** (Ready for Merge)
+- **remotes/origin/feature/adaptive-recovery-service-3883560226543520640** (Ready for Merge)
+- **remotes/origin/feature/add-gitlab-subagents-461501759789154721** (Ready for Merge)
+- **remotes/origin/feature/add-orcid-data-13596250082615676351** (Ready for Merge)
+- **remotes/origin/feature/autonomous-cloud-presence-6564198224759094346** (Ready for Merge)
+- **remotes/origin/feature/autonomous-cloud-simulation-presence-15239864471767221481** (Ready for Merge)
+- **remotes/origin/feature/autonomous-creation-execution-5649264533760770196** (Ready for Merge)
+- **remotes/origin/feature/autonomous-creation-ignition-13474937502856613693** (Ready for Merge)
+- **remotes/origin/feature/autonomous-improvement-cycle-1978975673869849123** (Ready for Merge)
+- **remotes/origin/feature/autonomous-sync-persistence-9865428495683171374** (Ready for Merge)
+- **remotes/origin/feature/autonomous-work-order-system-2865376496549289667** (Ready for Merge)
+- **remotes/origin/feature/autonomous-workflow-creation-15876066780074270466** (Ready for Merge)
+- **remotes/origin/feature/autonomous-workflow-creation-9438939026043204544** (Ready for Merge)
+- **remotes/origin/feature/autonomous-workflow-pipeline-1359283664930221721** (Ready for Merge)
+- **remotes/origin/feature/backup-agent-11331906079381269962** (Ready for Merge)
+- **remotes/origin/feature/cloud-and-local-autonomy-9538834322956606637** (Ready for Merge)
+- **remotes/origin/feature/cloud-autonomous-convergence-1900133257466601663** (Ready for Merge)
+- **remotes/origin/feature/cloud-workflow-fluent-availability-1140691908336489716** (Ready for Merge)
+- **remotes/origin/feature/daily-autonomous-session-evolution-10827323028057042936** (Ready for Merge)
+- **remotes/origin/feature/deploy-react-agents-15831022730085051498** (Ready for Merge)
+- **remotes/origin/feature/docker-collaboration-sync-2408669220271786015** (Ready for Merge)
+- **remotes/origin/feature/gemini-git-worktrees-13127368067831034197** (Ready for Merge)
+- **remotes/origin/feature/google-ai-agent-knowledge-13116341653253101712** (Ready for Merge)
+- **remotes/origin/feature/icloud-knowledge-engine-improvements-13516138989655533197** (Ready for Merge)
+- **remotes/origin/feature/icloud-sync-291682100632365852** (Ready for Merge)
+- **remotes/origin/feature/integrate-google-ai-knowledge-and-branding-7908636121834750902** (Ready for Merge)
+- **remotes/origin/feature/integrate-oracle-ai-knowledge-3950930680222986466** (Ready for Merge)
+- **remotes/origin/feature/integrate-oracle-ai-knowledge-6095839206286019467** (Ready for Merge)
+- **remotes/origin/feature/intelephense-docs-consolidation-5239787190712204389** (Ready for Merge)
+- **remotes/origin/feature/intelephense-docs-update-12471147043465180868** (Ready for Merge)
+- **remotes/origin/feature/investopedia-exclusive-ingestion-16035071324102869573** (Ready for Merge)
+- **remotes/origin/feature/jenkins-engine-integration-16717447765251323037** (Ready for Merge)
+- **remotes/origin/feature/jenkins-engine-integration-6487857646863165040** (Ready for Merge)
+- **remotes/origin/feature/jenkins-integration-11798830447983533262** (Ready for Merge)
+- **remotes/origin/feature/knowledge-merge-all-entries-11790747981998761777** (Ready for Merge)
+- **remotes/origin/feature/knowledge-observation-1188044699692138518** (Ready for Merge)
+- **remotes/origin/feature/macbook-cloud-simulation-10813154388376629644** (Ready for Merge)
+- **remotes/origin/feature/macbook-cloud-simulation-537156202459615099** (Ready for Merge)
+- **remotes/origin/feature/markposition-autonomous-integration-5824578537508195574** (Ready for Merge)
+- **remotes/origin/feature/orchestrator-active-decisions-12848386406612919414** (Ready for Merge)
+- **remotes/origin/feature/render-docs-integration-8046385424973720288** (Ready for Merge)
+- **remotes/origin/feature/wilson-sonsini-docs-5223286484754365385** (Ready for Merge)
+- **remotes/origin/fix-autonomous-workflow-4538855426443032551** (Ready for Merge)
+- **remotes/origin/fix-autonomous-workflow-git-add-16103849688586949052** (Ready for Merge)
+- **remotes/origin/fix-backend-tests-and-subagents-9232679682193337097** (Ready for Merge)
+- **remotes/origin/fix-cloud-autonomous-presence-9827360869310750655** (Ready for Merge)
+- **remotes/origin/fix-cloud-workflow-agent-2870930378970445069** (Ready for Merge)
+- **remotes/origin/fix-daily-sync-recursion-2513362835835522754** (Ready for Merge)
+- **remotes/origin/fix-docker-compose-deprecation-3059408130568618537** (Ready for Merge)
+- **remotes/origin/fix-ingest-ads-docs-5824807487751349212** (Ready for Merge)
+- **remotes/origin/fix-investopedia-crawler-7681232776505417296** (Ready for Merge)
+- **remotes/origin/fix-knowledge-merge-regex-14608744486022558221** (Ready for Merge)
+- **remotes/origin/fix-oracle-ai-knowledge-integration-2128253207995593297** (Ready for Merge)
+- **remotes/origin/fix-package-json-duplicate-deps-10439884539185109676** (Ready for Merge)
+- **remotes/origin/fix-subagents-ingestion-12831626859594337963** (Ready for Merge)
+- **remotes/origin/fix-tsx-dependency-7400371801550382505** (Ready for Merge)
+- **remotes/origin/fix-workflow-creation-16196168275927692425** (Ready for Merge)
+- **remotes/origin/fix/ads-knowledge-urls-5233952364580581643** (Ready for Merge)
+- **remotes/origin/fix/agent-memory-and-tests-14715316655293625624** (Ready for Merge)
+- **remotes/origin/fix/ai-agent-architecture-summary-9021797993819332158** (Ready for Merge)
+- **remotes/origin/fix/autonomous-cloud-presence-17176660160653043958** (Ready for Merge)
+- **remotes/origin/fix/autonomous-evolution-1779330683942** (Ready for Merge)
+- **remotes/origin/fix/autonomous-evolution-1779334460476** (Ready for Merge)
+- **remotes/origin/fix/autonomous-evolution-1779417180082** (Ready for Merge)
+- **remotes/origin/fix/autonomous-evolution-1779420795460** (Ready for Merge)
+- **remotes/origin/fix/autonomous-evolution-1779502182555** (Ready for Merge)
+- **remotes/origin/fix/autonomous-evolution-1779620400378-8609616731264738090** (Ready for Merge)
+- **remotes/origin/fix/autonomous-evolution-1779762421460** (Ready for Merge)
+- **remotes/origin/fix/autonomous-evolution-1779764401136** (Ready for Merge)
+- **remotes/origin/fix/autonomous-evolution-1779944023134** (Ready for Merge)
+- **remotes/origin/fix/autonomous-evolution-1779958280246** (Ready for Merge)
+- **remotes/origin/fix/autonomous-evolution-1779979534880** (Ready for Merge)
+- **remotes/origin/fix/autonomous-evolution-cloud-presence-13859954936909571932** (Ready for Merge)
+- **remotes/origin/fix/autonomous-markposition-integration-8301978892774040495** (Ready for Merge)
+- **remotes/origin/fix/autonomous-system-syntax-16085505803900570829** (Ready for Merge)
+- **remotes/origin/fix/connect-and-collaborate-docker-17108642608090644795** (Ready for Merge)
+- **remotes/origin/fix/consolidate-intelephense-docs-13870510592813051960** (Ready for Merge)
+- **remotes/origin/fix/consolidate-intelephense-docs-v2-2578430462449537596** (Ready for Merge)
+- **remotes/origin/fix/dependabot-alerts-resolution-4540208840351365133** (Ready for Merge)
+- **remotes/origin/fix/docker-collaboration-security-refinement-v1-6787919311939925566** (Ready for Merge)
+- **remotes/origin/fix/docker-collaboration-sync-3245584476125900421** (Ready for Merge)
+- **remotes/origin/fix/docker-compose-mongo-rate-limit-3501599801052228875** (Ready for Merge)
+- **remotes/origin/fix/docker-service-syntax-17329685845215630638** (Ready for Merge)
+- **remotes/origin/fix/docker-simulate-fallback-790646999147421628** (Ready for Merge)
+- **remotes/origin/fix/duo-planner-prompt-update-5857249087494865625** (Ready for Merge)
+- **remotes/origin/fix/frontend-lint-and-syntax-errors-2082968033055005265** (Ready for Merge)
+- **remotes/origin/fix/frontend-regressions-telemetry-2487658633912563856** (Ready for Merge)
+- **remotes/origin/fix/gitlab-security-agent-prompt-5086130321090221521** (Ready for Merge)
+- **remotes/origin/fix/google-ads-scraper-json-schema-4403805607853141439** (Ready for Merge)
+- **remotes/origin/fix/google-ads-scraper-json-schema-and-system-knowledge-4955312210061606235** (Ready for Merge)
+- **remotes/origin/fix/ingest-ads-knowledge-locale-and-signature-14080839341570734784** (Ready for Merge)
+- **remotes/origin/fix/ingest-knowledge-merge-828271426504643319** (Ready for Merge)
+- **remotes/origin/fix/integrate-oracle-knowledge-8502594485606650107** (Ready for Merge)
+- **remotes/origin/fix/intelephense-docs-sync-refinement-14869498136353830468** (Ready for Merge)
+- **remotes/origin/fix/intelephense-knowledge-consolidation-16405766747480114157** (Ready for Merge)
+- **remotes/origin/fix/intelephense-knowledge-consolidation-v2-9086495977670438311** (Ready for Merge)
+- **remotes/origin/fix/knowledge-merge-cleanup-17869909308711961172** (Ready for Merge)
+- **remotes/origin/fix/knowledge-merge-deduplication-11999895773170301462** (Ready for Merge)
+- **remotes/origin/fix/knowledge-merge-signature-10908129405278233651** (Ready for Merge)
+- **remotes/origin/fix/knowledge-observation-workflow-458143035147139751** (Ready for Merge)
+- **remotes/origin/fix/npm-audit-vulnerabilities-17082437904060311474** (Ready for Merge)
+- **remotes/origin/fix/observe-knowledge-formatting-12359111499191722507** (Ready for Merge)
+- **remotes/origin/fix/optimize-execute-creation-cycle-9988671085706556406** (Ready for Merge)
+- **remotes/origin/fix/performance-html-parser-to-lxml-7139146645906228856** (Ready for Merge)
+- **remotes/origin/fix/refactor-sync-fs-operations-11463572361275894261** (Ready for Merge)
+- **remotes/origin/fix/restore-page-tsx-and-build-errors-11543629982312211779** (Ready for Merge)
+- **remotes/origin/fluent-cloud-workflow-10464856889716167813** (Ready for Merge)
+- **remotes/origin/gemini-cli-subagent-setup-5210662692571654805** (Ready for Merge)
+- **remotes/origin/implement-ai-agent-knowledge-21882567880054537** (Ready for Merge)
+- **remotes/origin/implement-ai-agents-knowledge-11176623184876779780** (Ready for Merge)
+- **remotes/origin/implement-ai-agents-knowledge-4687692969505756547** (Ready for Merge)
+- **remotes/origin/implement-full-autonomous-automatic-workflow-12697350452626035149** (Ready for Merge)
+- **remotes/origin/improve-gemini-cli-remote-agents-docs-7138939385768704032** (Ready for Merge)
+- **remotes/origin/improve-git-sync-and-ingest-sor-6424222975070794974** (Ready for Merge)
+- **remotes/origin/improve-merge-integrate-run-13413317813168219712** (Ready for Merge)
+- **remotes/origin/improve-merge-integrate-run-3347991371920530382** (Ready for Merge)
+- **remotes/origin/improve-react-agent-deployment-logic-17338521942394836955** (Ready for Merge)
+- **remotes/origin/improve-react-deployment-orchestration-8115373201736013250** (Ready for Merge)
+- **remotes/origin/ingest-google-ads-docs-10675560264182079690** (Ready for Merge)
+- **remotes/origin/ingest-subagents-knowledge-3401617007249931861** (Ready for Merge)
+- **remotes/origin/integrate-google-ai-knowledge-v2-11489467311315949319** (Ready for Merge)
+- **remotes/origin/integrate-google-blog-knowledge-4910820298428248589** (Ready for Merge)
+- **remotes/origin/integrate-google-innovation-ai-knowledge-12634374273910953452** (Ready for Merge)
+- **remotes/origin/integrate-investopedia-knowledge-15544653943204418312** (Ready for Merge)
+- **remotes/origin/integrate-jenkins-engine-7625191917033904459** (Ready for Merge)
+- **remotes/origin/integrate-jenkins-pipeline-generation-14117303396069153360** (Ready for Merge)
+- **remotes/origin/integrate-knowledge-markposition-11578747878625387044** (Ready for Merge)
+- **remotes/origin/integrate-markposition-knowledge-merge-11769284760316457005** (Ready for Merge)
+- **remotes/origin/integrate-markposition-knowledge-merge-3452272022805466987** (Ready for Merge)
+- **remotes/origin/integrate-oracle-ai-knowledge-10753405246268437587** (Ready for Merge)
+- **remotes/origin/integrate-oracle-ai-knowledge-1358247655862801319** (Ready for Merge)
+- **remotes/origin/integrate-react-agent-deployment-knowledge-12923931441009789315** (Ready for Merge)
+- **remotes/origin/java-gemini-example-4885310981980819263** (Ready for Merge)
+- **remotes/origin/jenkins-orchestration-pipeline-16548850115893572153** (Ready for Merge)
+- **remotes/origin/jenkins-pipeline-integration-1209487305569927216** (Ready for Merge)
+- **remotes/origin/jenkins-pipeline-integration-2917487616063889464** (Ready for Merge)
+- **remotes/origin/jenkins-pipeline-integration-7872982211767864585** (Ready for Merge)
+- **remotes/origin/jules-10456088293019605300-ea46692d** (Ready for Merge)
+- **remotes/origin/jules-10804936454534876603-52aca57c** (Ready for Merge)
+- **remotes/origin/jules-11727907802921261757-a2a7358c** (Ready for Merge)
+- **remotes/origin/jules-11867509925832320780-8aa8894a** (Ready for Merge)
+- **remotes/origin/jules-12457892104228508063-41c0c28d** (Ready for Merge)
+- **remotes/origin/jules-13052721785252149852-027ffae0** (Ready for Merge)
+- **remotes/origin/jules-13238206488982251887-d6084712** (Ready for Merge)
+- **remotes/origin/jules-13607206307106246227-38f47801** (Ready for Merge)
+- **remotes/origin/jules-1401381832535268992-101c53a9** (Ready for Merge)
+- **remotes/origin/jules-14602813324423635796-48a23d44** (Ready for Merge)
+- **remotes/origin/jules-14816450646255710907-9a961bea** (Ready for Merge)
+- **remotes/origin/jules-15373376258129096424-b615f592** (Ready for Merge)
+- **remotes/origin/jules-15669541233529701765-e7b02c45** (Ready for Merge)
+- **remotes/origin/jules-16739887525044798643-c54f1fa3** (Ready for Merge)
+- **remotes/origin/jules-16746668095937525271-5d5787ff** (Ready for Merge)
+- **remotes/origin/jules-17345361020910170827-8e192329** (Ready for Merge)
+- **remotes/origin/jules-17664332290031173343-55f5ab91** (Ready for Merge)
+- **remotes/origin/jules-18406338226598714071-aab43e45** (Ready for Merge)
+- **remotes/origin/jules-2876054462022588492-84e7dde1** (Ready for Merge)
+- **remotes/origin/jules-3377716076333327453-2d27a121** (Ready for Merge)
+- **remotes/origin/jules-4843122813281068614-8b4499aa** (Ready for Merge)
+- **remotes/origin/jules-5125461103553111919-d5f7a47b** (Ready for Merge)
+- **remotes/origin/jules-5565625516958485993-49059093** (Ready for Merge)
+- **remotes/origin/jules-5679297940668698803-4384a9af** (Ready for Merge)
+- **remotes/origin/jules-add-gemini-remote-agent-12873027587560108654** (Ready for Merge)
+- **remotes/origin/jules-arcjet-integration-16980338037533745889** (Ready for Merge)
+- **remotes/origin/jules-autonomous-evolution-12208946204085721942** (Ready for Merge)
+- **remotes/origin/jules-autonomous-workflow-18354041674138581290** (Ready for Merge)
+- **remotes/origin/jules-autonomous-workflow-creation-1089913609311419813** (Ready for Merge)
+- **remotes/origin/jules-cloud-autonomy-16506302087474217798** (Ready for Merge)
+- **remotes/origin/jules-cloud-workflow-agent-9594836607216672043** (Ready for Merge)
+- **remotes/origin/jules-cloud-workflow-agent-enhancement-4497894335591972427** (Ready for Merge)
+- **remotes/origin/jules-cloud-workflow-tolerance-17354439472694641412** (Ready for Merge)
+- **remotes/origin/jules-compile-knowledge-2707648609195220904** (Ready for Merge)
+- **remotes/origin/jules-continuous-presence-workflow-3144055533381791740** (Ready for Merge)
+- **remotes/origin/jules-download-cli-page-4874267122039212944** (Ready for Merge)
+- **remotes/origin/jules-duo-planner-agent-url-fix-5677968275200464330** (Ready for Merge)
+- **remotes/origin/jules-feature-integrate-knowledge-merge-9200679916314149754** (Ready for Merge)
+- **remotes/origin/jules-fix-oracle-scraper-schema-6080803583651507344** (Ready for Merge)
+- **remotes/origin/jules-fix-subagent-prompts-16967744904311493464** (Ready for Merge)
+- **remotes/origin/jules-full-autonomus-workflow-8744732568350416698** (Ready for Merge)
+- **remotes/origin/jules-improve-knowledge-workflows-9958740170618720237** (Ready for Merge)
+- **remotes/origin/jules-improve-react-agents-deploy-6633287448450705076** (Ready for Merge)
+- **remotes/origin/jules-improve-workflow-and-knowledge-observer-11114380607500005512** (Ready for Merge)
+- **remotes/origin/jules-integrate-knowledge-merge-5016273102093085264** (Ready for Merge)
+- **remotes/origin/jules-integrate-oracle-knowledge-9421136010084102746** (Ready for Merge)
+- **remotes/origin/jules-investopedia-all-knowledge-14799525503188502250** (Ready for Merge)
+- **remotes/origin/jules-knowledge-integration-subagents-16636673178408066825** (Ready for Merge)
+- **remotes/origin/jules-knowledge-merge-markposition-11506824174069569507** (Ready for Merge)
+- **remotes/origin/jules-smart-processing-cloud-workflow-18277080341771061055** (Ready for Merge)
+- **remotes/origin/jules/autonomous-online-coding-presence-17025271764789693305** (Ready for Merge)
+- **remotes/origin/jules/autonomous-online-coding-presence-17025271764789693305-17731566985487010590** (Ready for Merge)
+- **remotes/origin/jules/connect-docker-collaborate-11639225190852212326** (Ready for Merge)
+- **remotes/origin/jules/improve-react-workflow-orchestration-10305698287333015349** (Ready for Merge)
+- **remotes/origin/jules/ingest-cli-creativity-9044833233025653876** (Ready for Merge)
+- **remotes/origin/jules/ingest-intelephense-unified-store-3086939939732869599** (Ready for Merge)
+- **remotes/origin/jules/integrate-knowledge-merge-signature-9637748484475924203** (Ready for Merge)
+- **remotes/origin/jules/knowledge-merge-integration-4756532437460590133** (Ready for Merge)
+- **remotes/origin/knowledge-integration-3097887558112004437** (Ready for Merge)
+- **remotes/origin/knowledge-merge-signature-10281291985719549754** (Ready for Merge)
+- **remotes/origin/macbook-cloud-simulation-2285701184876173816** (Ready for Merge)
+- **remotes/origin/multi-cloud-workflow-intelligence-12208347123975439755** (Ready for Merge)
+- **remotes/origin/nomad-cli-agent-docs-15478110730395729144** (Ready for Merge)
+- **remotes/origin/oci-wordpress-deployment-9120692360420901713** (Ready for Merge)
+- **remotes/origin/optimize-domain-analysis-3826512882999880558** (Ready for Merge)
+- **remotes/origin/oracle-ai-database-integration-1558530856752998309** (Ready for Merge)
+- **remotes/origin/oracle-ai-knowledge-14411165512379149104** (Ready for Merge)
+- **remotes/origin/oracle-ai-knowledge-integration-13185078831058651875** (Ready for Merge)
+- **remotes/origin/oracle-knowledge-update-1623548321536958066** (Ready for Merge)
+- **remotes/origin/palette-add-distribution-bars-2985599301363690621** (Ready for Merge)
+- **remotes/origin/palette-add-report-percentages-11439172869140532830** (Ready for Merge)
+- **remotes/origin/palette-add-report-toc-1273852051673532647** (Ready for Merge)
+- **remotes/origin/palette-add-report-toc-13017065858519563862** (Ready for Merge)
+- **remotes/origin/palette-add-report-toc-14550766222336483339** (Ready for Merge)
+- **remotes/origin/palette-add-toc-report-14784174799878095511** (Ready for Merge)
+- **remotes/origin/palette-add-toc-to-report-13463853514148026577** (Ready for Merge)
+- **remotes/origin/palette-analysis-ux-improvement-11980673162346986602** (Ready for Merge)
+- **remotes/origin/palette-analytics-bar-chart-7462251999169566505** (Ready for Merge)
+- **remotes/origin/palette-analytics-charts-2666464073759843485** (Ready for Merge)
+- **remotes/origin/palette-analytics-charts-4206491572955874021** (Ready for Merge)
+- **remotes/origin/palette-analytics-charts-9684146293746097755** (Ready for Merge)
+- **remotes/origin/palette-analytics-cli-summary-14007342154187471292** (Ready for Merge)
+- **remotes/origin/palette-analytics-cli-summary-4779315143647098313** (Ready for Merge)
+- **remotes/origin/palette-analytics-cli-ux-5862653145990614801** (Ready for Merge)
+- **remotes/origin/palette-analytics-cli-ux-7657702415316363052** (Ready for Merge)
+- **remotes/origin/palette-analytics-dashboard-8316831572934760504** (Ready for Merge)
+- **remotes/origin/palette-analytics-emojis-3339331463941271199** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-upgrade-14203127764241002344** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-10341790926521843230** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-12029576835141614542** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-12591573171027613457** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-13219657197638749902** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-13310145182868611809** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-14075089827549646693** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-14758852295203257646** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-14959999178292083671** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-14993712482288271186** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-15030314568688647799** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-15541317822719673614** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-16535941445945509426** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-18105782427134098622** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-1927249769187221512** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-2030144575011325553** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-2766406126539390708** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-4099564144535097926** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-4232613033722096123** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-4257799222443731302** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-4326920631813878758** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-4908260963285094639** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-4967986312640001007** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-5612663723740313155** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-699851267367900614** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-7635334485492302228** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-7778046450995178550** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-7815834764566994440** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-831576827789251267** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-8715451132490550236** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-9171175876471307053** (Ready for Merge)
+- **remotes/origin/palette-analytics-report-ux-9782607580625898370** (Ready for Merge)
+- **remotes/origin/palette-analytics-summary-4728899381542685866** (Ready for Merge)
+- **remotes/origin/palette-analytics-summary-8453671355123458848** (Ready for Merge)
+- **remotes/origin/palette-analytics-summary-box-4031844974106884823** (Ready for Merge)
+- **remotes/origin/palette-analytics-summary-box-8939838279506558518** (Ready for Merge)
+- **remotes/origin/palette-analytics-ux-11549541802920057325** (Ready for Merge)
+- **remotes/origin/palette-analytics-ux-13063998870501229074** (Ready for Merge)
+- **remotes/origin/palette-analytics-ux-15956843867430969547** (Ready for Merge)
+- **remotes/origin/palette-analytics-ux-1664535404465252714** (Ready for Merge)
+- **remotes/origin/palette-analytics-ux-2619089764861975591** (Ready for Merge)
+- **remotes/origin/palette-analytics-ux-3624889402201605206** (Ready for Merge)
+- **remotes/origin/palette-analytics-ux-9003598505295651138** (Ready for Merge)
+- **remotes/origin/palette-analytics-ux-9149291915820024140** (Ready for Merge)
+- **remotes/origin/palette-analytics-ux-9573677768644785747** (Ready for Merge)
+- **remotes/origin/palette-analytics-ux-improvement-10522861074342822232** (Ready for Merge)
+- **remotes/origin/palette-analytics-ux-upgrade-1857318026650759511** (Ready for Merge)
+- **remotes/origin/palette-analytics-visual-polish-4470200487089544601** (Ready for Merge)
+- **remotes/origin/palette-analytics-visual-summary-2764218655727614121** (Ready for Merge)
+- **remotes/origin/palette-analytics-visualization-7864555049711578186** (Ready for Merge)
+- **remotes/origin/palette-analytics-visuals-1727987223613819693** (Ready for Merge)
+- **remotes/origin/palette-analytics-visuals-7638117604363083084** (Ready for Merge)
+- **remotes/origin/palette-ascii-analytics-6890644242452492122** (Ready for Merge)
+- **remotes/origin/palette-ascii-bar-chart-4704095013089866243** (Ready for Merge)
+- **remotes/origin/palette-ascii-bars-10852289251684581107** (Ready for Merge)
+- **remotes/origin/palette-ascii-bars-14633850369654553391** (Ready for Merge)
+- **remotes/origin/palette-ascii-bars-1937977779725986035** (Ready for Merge)
+- **remotes/origin/palette-ascii-bars-4716182374226108315** (Ready for Merge)
+- **remotes/origin/palette-ascii-bars-6236831282512919053** (Ready for Merge)
+- **remotes/origin/palette-ascii-bars-8727413594208371857** (Ready for Merge)
+- **remotes/origin/palette-ascii-charts-11999396775685685771** (Ready for Merge)
+- **remotes/origin/palette-ascii-charts-15534847136011173808** (Ready for Merge)
+- **remotes/origin/palette-ascii-charts-15757732960728587034** (Ready for Merge)
+- **remotes/origin/palette-ascii-charts-16355594758621519726** (Ready for Merge)
+- **remotes/origin/palette-ascii-charts-16467333056139699036** (Ready for Merge)
+- **remotes/origin/palette-ascii-charts-16785128241519727077** (Ready for Merge)
+- **remotes/origin/palette-ascii-charts-5993052222468580086** (Ready for Merge)
+- **remotes/origin/palette-ascii-charts-6299104478852342158** (Ready for Merge)
+- **remotes/origin/palette-ascii-charts-7286146975517193000** (Ready for Merge)
+- **remotes/origin/palette-ascii-charts-7527273603289417794** (Ready for Merge)
+- **remotes/origin/palette-cli-colors-16970097531222949087** (Ready for Merge)
+- **remotes/origin/palette-cli-colors-18422454405439662270** (Ready for Merge)
+- **remotes/origin/palette-cli-colors-3206504166430713796** (Ready for Merge)
+- **remotes/origin/palette-cli-colors-v1-15537575789263225364** (Ready for Merge)
+- **remotes/origin/palette-cli-colors-v1-4047913124623383228** (Ready for Merge)
+- **remotes/origin/palette-cli-colors-v3-11994937576468000160** (Ready for Merge)
+- **remotes/origin/palette-cli-dashboard-2336811404384765093** (Ready for Merge)
+- **remotes/origin/palette-cli-dashboard-8254371988405476413** (Ready for Merge)
+- **remotes/origin/palette-cli-enhancement-5441850221004135602** (Ready for Merge)
+- **remotes/origin/palette-cli-logging-11690218801671113971** (Ready for Merge)
+- **remotes/origin/palette-cli-polish-10024653573136516829** (Ready for Merge)
+- **remotes/origin/palette-cli-polish-10617303078140811985** (Ready for Merge)
+- **remotes/origin/palette-cli-polish-10945294834958048524** (Ready for Merge)
+- **remotes/origin/palette-cli-polish-5860890348609218987** (Ready for Merge)
+- **remotes/origin/palette-cli-polish-7245288327755008219** (Ready for Merge)
+- **remotes/origin/palette-cli-polish-8263686010400234400** (Ready for Merge)
+- **remotes/origin/palette-cli-progress-8547163842398693145** (Ready for Merge)
+- **remotes/origin/palette-cli-spinner-ux-17355742632069179967** (Ready for Merge)
+- **remotes/origin/palette-cli-spinner-ux-9775132984312638180** (Ready for Merge)
+- **remotes/origin/palette-cli-summary-box-12028055253848911084** (Ready for Merge)
+- **remotes/origin/palette-cli-summary-box-15724779665177572819** (Ready for Merge)
+- **remotes/origin/palette-cli-summary-box-15876395418728927629** (Ready for Merge)
+- **remotes/origin/palette-cli-summary-box-16566719087269269209** (Ready for Merge)
+- **remotes/origin/palette-cli-summary-box-17004344822758906732** (Ready for Merge)
+- **remotes/origin/palette-cli-summary-box-7747250997461256954** (Ready for Merge)
+- **remotes/origin/palette-cli-summary-box-8083330425517569149** (Ready for Merge)
+- **remotes/origin/palette-cli-ux-17335050180511200643** (Ready for Merge)
+- **remotes/origin/palette-cli-ux-3199876023688079054** (Ready for Merge)
+- **remotes/origin/palette-cli-ux-5136733467430420971** (Ready for Merge)
+- **remotes/origin/palette-cli-ux-7116481711061595450** (Ready for Merge)
+- **remotes/origin/palette-cli-ux-726014719767405393** (Ready for Merge)
+- **remotes/origin/palette-cli-ux-7383645213978227588** (Ready for Merge)
+- **remotes/origin/palette-cli-ux-7717349484047385997** (Ready for Merge)
+- **remotes/origin/palette-cli-ux-8165419945096762309** (Ready for Merge)
+- **remotes/origin/palette-cli-ux-biweekly-16790383014690096100** (Ready for Merge)
+- **remotes/origin/palette-cli-ux-colors-16711790772227801289** (Ready for Merge)
+- **remotes/origin/palette-cli-ux-colors-17941664392335633230** (Ready for Merge)
+- **remotes/origin/palette-cli-ux-improvements-11492387069204561579** (Ready for Merge)
+- **remotes/origin/palette-cli-ux-improvements-12585797554244564723** (Ready for Merge)
+- **remotes/origin/palette-cli-ux-improvements-16514744854922016217** (Ready for Merge)
+- **remotes/origin/palette-cli-ux-improvements-17270330985806452288** (Ready for Merge)
+- **remotes/origin/palette-cli-ux-improvements-5318917015708801227** (Ready for Merge)
+- **remotes/origin/palette-cli-ux-improvements-6092607382424465804** (Ready for Merge)
+- **remotes/origin/palette-cli-ux-improvements-8535199228408346905** (Ready for Merge)
+- **remotes/origin/palette-cli-ux-improvements-8617716335041011148** (Ready for Merge)
+- **remotes/origin/palette-cli-ux-improvements-9208959306242680179** (Ready for Merge)
+- **remotes/origin/palette-cli-ux-logs-15889507569998878970** (Ready for Merge)
+- **remotes/origin/palette-cli-ux-polish-2111230884908221183** (Ready for Merge)
+- **remotes/origin/palette-cli-ux-summary-11132373574447212764** (Ready for Merge)
+- **remotes/origin/palette-cli-ux-summary-8843972802041575160** (Ready for Merge)
+- **remotes/origin/palette-cli-visual-hierarchy-17889502695292782743** (Ready for Merge)
+- **remotes/origin/palette-cli-visual-polish-10160750518849227089** (Ready for Merge)
+- **remotes/origin/palette-cli-visual-polish-12024230895845903893** (Ready for Merge)
+- **remotes/origin/palette-cli-visual-polish-15892369352802865338** (Ready for Merge)
+- **remotes/origin/palette-cli-visual-polish-15906787407292859541** (Ready for Merge)
+- **remotes/origin/palette-cli-visual-polish-16691567195068530862** (Ready for Merge)
+- **remotes/origin/palette-cli-visual-polish-16944835121603968346** (Ready for Merge)
+- **remotes/origin/palette-cli-visual-polish-3698444401610641769** (Ready for Merge)
+- **remotes/origin/palette-cli-visual-polish-7342470376918669690** (Ready for Merge)
+- **remotes/origin/palette-cli-visual-polish-8429968879591285663** (Ready for Merge)
+- **remotes/origin/palette-cli-visuals-10522889352732785467** (Ready for Merge)
+- **remotes/origin/palette-colored-logging-1491286074497741313** (Ready for Merge)
+- **remotes/origin/palette-colored-logging-4205972882040105240** (Ready for Merge)
+- **remotes/origin/palette-colored-logging-ux-17992992893836772305** (Ready for Merge)
+- **remotes/origin/palette-enhanced-analytics-report-4125169103760286117** (Ready for Merge)
+- **remotes/origin/palette-enhanced-reports-16415063186850509596** (Ready for Merge)
+- **remotes/origin/palette-exec-summary-6369051085132382588** (Ready for Merge)
+- **remotes/origin/palette-fix-markdown-escaping-930315787144321424** (Ready for Merge)
+- **remotes/origin/palette-graceful-shutdown-6686216384600575838** (Ready for Merge)
+- **remotes/origin/palette-html-report-4670439550378030789** (Ready for Merge)
+- **remotes/origin/palette-improve-analytics-report-18062852569660178887** (Ready for Merge)
+- **remotes/origin/palette-improve-analytics-report-981155583379046821** (Ready for Merge)
+- **remotes/origin/palette-improve-analytics-ux-29325668557069915** (Ready for Merge)
+- **remotes/origin/palette-improve-cli-logging-2441580921908599501** (Ready for Merge)
+- **remotes/origin/palette-improve-report-ux-1244892965393033926** (Ready for Merge)
+- **remotes/origin/palette-improve-report-ux-12668535848296515806** (Ready for Merge)
+- **remotes/origin/palette-improve-report-ux-12806219181289335156** (Ready for Merge)
+- **remotes/origin/palette-improve-report-ux-13501189748065964858** (Ready for Merge)
+- **remotes/origin/palette-improve-report-ux-14047162769090581010** (Ready for Merge)
+- **remotes/origin/palette-improve-report-ux-14288341330964781354** (Ready for Merge)
+- **remotes/origin/palette-improve-report-ux-1515268010537928843** (Ready for Merge)
+- **remotes/origin/palette-improve-report-ux-1590412772742970293** (Ready for Merge)
+- **remotes/origin/palette-improve-report-ux-1594767510062861541** (Ready for Merge)
+- **remotes/origin/palette-improve-report-ux-15954132581208631858** (Ready for Merge)
+- **remotes/origin/palette-improve-report-ux-16744443975495209465** (Ready for Merge)
+- **remotes/origin/palette-improve-report-ux-17986839873876341700** (Ready for Merge)
+- **remotes/origin/palette-improve-report-ux-3142867670552745548** (Ready for Merge)
+- **remotes/origin/palette-improve-report-ux-3610494715935454466** (Ready for Merge)
+- **remotes/origin/palette-improve-report-ux-3734025861997546036** (Ready for Merge)
+- **remotes/origin/palette-improve-report-ux-4874508048051784270** (Ready for Merge)
+- **remotes/origin/palette-improve-report-ux-490626902117098437** (Ready for Merge)
+- **remotes/origin/palette-improve-report-ux-5436844210924255885** (Ready for Merge)
+- **remotes/origin/palette-improve-report-ux-5549830311502835273** (Ready for Merge)
+- **remotes/origin/palette-improve-report-ux-6354626839202487663** (Ready for Merge)
+- **remotes/origin/palette-improve-report-ux-661272626947042109** (Ready for Merge)
+- **remotes/origin/palette-improve-report-ux-7874174141320841787** (Ready for Merge)
+- **remotes/origin/palette-improve-report-ux-8539269373993322995** (Ready for Merge)
+- **remotes/origin/palette-improve-report-ux-9882191085663915429** (Ready for Merge)
+- **remotes/origin/palette-log-colors-12337295467778807267** (Ready for Merge)
+- **remotes/origin/palette-log-emojis-14996925440065141338** (Ready for Merge)
+- **remotes/origin/palette-log-formatting-15971220591968669569** (Ready for Merge)
+- **remotes/origin/palette-log-formatting-9683465973312644975** (Ready for Merge)
+- **remotes/origin/palette-report-navigation-11771695338602020565** (Ready for Merge)
+- **remotes/origin/palette-report-navigation-16056318434640743559** (Ready for Merge)
+- **remotes/origin/palette-report-navigation-17302622234226606396** (Ready for Merge)
+- **remotes/origin/palette-report-navigation-2240518606700983656** (Ready for Merge)
+- **remotes/origin/palette-report-navigation-4813868009156738406** (Ready for Merge)
+- **remotes/origin/palette-report-navigation-6685589132510964882** (Ready for Merge)
+- **remotes/origin/palette-report-navigation-9686279638515215567** (Ready for Merge)
+- **remotes/origin/palette-report-percentages-17226232511035798370** (Ready for Merge)
+- **remotes/origin/palette-report-ux-13084128329690179617** (Ready for Merge)
+- **remotes/origin/palette-report-ux-14042064237579661712** (Ready for Merge)
+- **remotes/origin/palette-report-ux-14048412210578992959** (Ready for Merge)
+- **remotes/origin/palette-report-ux-16058546482539529052** (Ready for Merge)
+- **remotes/origin/palette-report-ux-2586385590797545719** (Ready for Merge)
+- **remotes/origin/palette-report-ux-3403375425654783519** (Ready for Merge)
+- **remotes/origin/palette-report-ux-6836477238955573134** (Ready for Merge)
+- **remotes/origin/palette-report-ux-6858294670111624762** (Ready for Merge)
+- **remotes/origin/palette-report-ux-6923593028800648956** (Ready for Merge)
+- **remotes/origin/palette-report-ux-7438110987153342447** (Ready for Merge)
+- **remotes/origin/palette-report-ux-7740280376937285109** (Ready for Merge)
+- **remotes/origin/palette-report-ux-8793038979324297126** (Ready for Merge)
+- **remotes/origin/palette-report-ux-8982430581634306711** (Ready for Merge)
+- **remotes/origin/palette-report-ux-9353964670037351042** (Ready for Merge)
+- **remotes/origin/palette-report-ux-9415073918142089548** (Ready for Merge)
+- **remotes/origin/palette-report-ux-improvement-10193181344057520742** (Ready for Merge)
+- **remotes/origin/palette-report-ux-improvement-13692058964087524483** (Ready for Merge)
+- **remotes/origin/palette-report-ux-improvement-5601014531851096708** (Ready for Merge)
+- **remotes/origin/palette-report-ux-improvement-6775578047897650791** (Ready for Merge)
+- **remotes/origin/palette-scraper-cli-summary-16839144126479902630** (Ready for Merge)
+- **remotes/origin/palette-scraper-cli-summary-3176708108112650471** (Ready for Merge)
+- **remotes/origin/palette-scraper-cli-summary-5336252547540046399** (Ready for Merge)
+- **remotes/origin/palette-scraper-cli-ux-10254727661965721120** (Ready for Merge)
+- **remotes/origin/palette-scraper-cli-ux-5391046781979864824** (Ready for Merge)
+- **remotes/origin/palette-scraper-cli-ux-5822096783494386588** (Ready for Merge)
+- **remotes/origin/palette-scraper-cli-ux-594719543184978660** (Ready for Merge)
+- **remotes/origin/palette-scraper-summary-10400250517688153163** (Ready for Merge)
+- **remotes/origin/palette-scraper-summary-1208629136224129021** (Ready for Merge)
+- **remotes/origin/palette-scraper-summary-box-7474193270213142188** (Ready for Merge)
+- **remotes/origin/palette-scraper-ux-5424877083715030058** (Ready for Merge)
+- **remotes/origin/palette-scraper-ux-summary-1616700660320259607** (Ready for Merge)
+- **remotes/origin/palette-scraper-ux-summary-7200015495059057194** (Ready for Merge)
+- **remotes/origin/palette-ux-analytics-bar-chart-17866123775961156330** (Ready for Merge)
+- **remotes/origin/palette-ux-analytics-report-10632574585919041328** (Ready for Merge)
+- **remotes/origin/palette-ux-analytics-report-14597730770972952440** (Ready for Merge)
+- **remotes/origin/palette-ux-analytics-report-17442789238565895596** (Ready for Merge)
+- **remotes/origin/palette-ux-analytics-summary-2709532664525857663** (Ready for Merge)
+- **remotes/origin/palette-ux-cli-colors-7681114719260817655** (Ready for Merge)
+- **remotes/origin/palette-ux-cli-colors-9624439488845995317** (Ready for Merge)
+- **remotes/origin/palette-ux-formatter-4201185919690314961** (Ready for Merge)
+- **remotes/origin/palette-ux-improvement-2705848965773740744** (Ready for Merge)
+- **remotes/origin/palette-ux-improvement-report-visuals-10910068111888807905** (Ready for Merge)
+- **remotes/origin/palette-ux-improvements-5803008523500848273** (Ready for Merge)
+- **remotes/origin/palette-ux-report-emojis-17126566663041790687** (Ready for Merge)
+- **remotes/origin/palette-ux-report-enhancement-11593647151328807214** (Ready for Merge)
+- **remotes/origin/palette-ux-report-enhancement-14454170940622711257** (Ready for Merge)
+- **remotes/origin/palette-ux-report-enhancement-15172318103977119583** (Ready for Merge)
+- **remotes/origin/palette-ux-report-enhancement-8007324327249044575** (Ready for Merge)
+- **remotes/origin/palette-ux-report-enhancement-9069244241412422315** (Ready for Merge)
+- **remotes/origin/palette-ux-report-improvement-2067216702341582884** (Ready for Merge)
+- **remotes/origin/palette-ux-report-improvements-11313390590713595542** (Ready for Merge)
+- **remotes/origin/palette-ux-report-improvements-13543414258176947990** (Ready for Merge)
+- **remotes/origin/palette-ux-report-improvements-13793595194787287681** (Ready for Merge)
+- **remotes/origin/palette-ux-report-improvements-13831713168674477220** (Ready for Merge)
+- **remotes/origin/palette-ux-report-improvements-15199529881851029569** (Ready for Merge)
+- **remotes/origin/palette-ux-report-improvements-17277479390002337255** (Ready for Merge)
+- **remotes/origin/palette-ux-report-improvements-2513104578052630135** (Ready for Merge)
+- **remotes/origin/palette-ux-report-improvements-4373250686351939897** (Ready for Merge)
+- **remotes/origin/palette-ux-report-improvements-5742295436253287865** (Ready for Merge)
+- **remotes/origin/palette-ux-report-improvements-6072740448036314229** (Ready for Merge)
+- **remotes/origin/palette-ux-report-improvements-8397930480493404381** (Ready for Merge)
+- **remotes/origin/palette-ux-report-links-5553853487436011261** (Ready for Merge)
+- **remotes/origin/palette-ux-report-nav-16569108711170597601** (Ready for Merge)
+- **remotes/origin/palette-ux-report-navigation-1055201088429066015** (Ready for Merge)
+- **remotes/origin/palette-ux-report-navigation-13412494468983508002** (Ready for Merge)
+- **remotes/origin/palette-ux-report-navigation-14402610223237389946** (Ready for Merge)
+- **remotes/origin/palette-ux-report-upgrade-16296272429283810305** (Ready for Merge)
+- **remotes/origin/palette-ux-report-upgrade-1698868480581836517** (Ready for Merge)
+- **remotes/origin/palette-ux-report-upgrade-3396259779939388031** (Ready for Merge)
+- **remotes/origin/palette-ux-scraper-logging-11386897257754529243** (Ready for Merge)
+- **remotes/origin/palette/analytics-console-summary-16842850884408171374** (Ready for Merge)
+- **remotes/origin/palette/analytics-navigation-436511791889280438** (Ready for Merge)
+- **remotes/origin/palette/analytics-report-ux-1743774692152261155** (Ready for Merge)
+- **remotes/origin/palette/analytics-report-ux-17686607480637389809** (Ready for Merge)
+- **remotes/origin/palette/analytics-report-ux-5453316305838853416** (Ready for Merge)
+- **remotes/origin/palette/analytics-ux-improvement-438937651229381972** (Ready for Merge)
+- **remotes/origin/palette/analytics-ux-improvements-11070002562575307132** (Ready for Merge)
+- **remotes/origin/palette/analytics-visualization-3131876872723686653** (Ready for Merge)
+- **remotes/origin/palette/analytics-visuals-7279214207657992734** (Ready for Merge)
+- **remotes/origin/palette/ascii-bars-report-13186514826592072461** (Ready for Merge)
+- **remotes/origin/palette/ascii-charts-ux-7109884184344478551** (Ready for Merge)
+- **remotes/origin/palette/cli-colors-8575730962200631478** (Ready for Merge)
+- **remotes/origin/palette/cli-ux-improvements-18294687491796103663** (Ready for Merge)
+- **remotes/origin/palette/enhance-analytics-report-17181999878531895477** (Ready for Merge)
+- **remotes/origin/palette/enhance-report-ux-10076757261976938434** (Ready for Merge)
+- **remotes/origin/palette/enhance-report-ux-11995820090382525723** (Ready for Merge)
+- **remotes/origin/palette/enhance-report-ux-15850543046997581968** (Ready for Merge)
+- **remotes/origin/palette/enhance-report-ux-2739052330608960722** (Ready for Merge)
+- **remotes/origin/palette/improve-report-ux-11475379120362374417** (Ready for Merge)
+- **remotes/origin/palette/improve-report-ux-4852848855851386744** (Ready for Merge)
+- **remotes/origin/palette/improve-report-ux-7962049104827263798** (Ready for Merge)
+- **remotes/origin/palette/improve-report-ux-9149599354572464593** (Ready for Merge)
+- **remotes/origin/palette/improve-report-ux-9439568871276884131** (Ready for Merge)
+- **remotes/origin/palette/markdown-ui-enhancement-18003291754095827946** (Ready for Merge)
+- **remotes/origin/palette/report-navigation-10848490221973178016** (Ready for Merge)
+- **remotes/origin/palette/report-navigation-13835048160804897717** (Ready for Merge)
+- **remotes/origin/palette/report-navigation-16735365326145153163** (Ready for Merge)
+- **remotes/origin/palette/report-navigation-18425629165094388685** (Ready for Merge)
+- **remotes/origin/palette/report-navigation-ux-5720051547511983391** (Ready for Merge)
+- **remotes/origin/palette/report-ux-6009631621912925201** (Ready for Merge)
+- **remotes/origin/palette/report-ux-enhancements-9890536469987073968** (Ready for Merge)
+- **remotes/origin/palette/report-ux-improvements-14310325021165239369** (Ready for Merge)
+- **remotes/origin/palette/report-ux-improvements-17015543897776799811** (Ready for Merge)
+- **remotes/origin/palette/report-ux-improvements-2527286985535633999** (Ready for Merge)
+- **remotes/origin/palette/report-ux-toc-35647320164543380** (Ready for Merge)
+- **remotes/origin/palette/report-ux-toc-4596925936165849228** (Ready for Merge)
+- **remotes/origin/perf-optimize-url-parsing-15164027586550123662** (Ready for Merge)
+- **remotes/origin/perf-scraper-lxml-9392503187182498809** (Ready for Merge)
+- **remotes/origin/project-opinion-evolution-18306036414363557055** (Ready for Merge)
+- **remotes/origin/react-agent-deployment-18427809291502343091** (Ready for Merge)
+- **remotes/origin/remote-subagents-config-5573674147411038862** (Ready for Merge)
+- **remotes/origin/sentinel-add-timeout-15463043223349410513** (Ready for Merge)
+- **remotes/origin/sentinel-analytics-security-fix-15562163645125731451** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-7375111859144544307** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-10038367286056826803** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-10221947977265973375** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-10298970558848162615** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-10398875479069463137** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-10425248433369273234** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-10823602123792792122** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-10967338732695959755** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-11016573727348401190** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-11203776991615878317** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-11232382863201934682** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-11483888091103395100** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-11537968662341487277** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-1187373065145967330** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-12679590305741242527** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-12864259658340301340** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-13037407619798804311** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-13240856359279585167** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-1326975499108887889** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-13435687001292355366** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-13690101212099271118** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-13948425390271683598** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-14090242410722960324** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-14202911627973574008** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-14407786113626138861** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-14541326570194157665** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-14810873340249906468** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-15021706020532406187** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-15271493773848426638** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-1546845939770947284** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-15572259258648426988** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-15615947622125179060** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-15771572653654019647** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-16105451329157671557** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-16208060421848314312** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-16277687269627577921** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-16350341539819739877** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-16760384515940097224** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-16822017676195484048** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-16927322662053655175** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-16999341900923167805** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-17134124741547873274** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-17211368531501123352** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-17281405972681966215** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-17501930990885364981** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-1768906505361909663** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-17693898094176425662** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-17919228704656273105** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-18040119516066267885** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-1915470429985340471** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-1964543136044474218** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-1970007423259072020** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-1998633714457818686** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-2209257127317318783** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-2409511118285483263** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-2465392663025969514** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-2516929716089250135** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-2671742778872724140** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-2676143552655600062** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-2728798420725278990** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-2777825542353398891** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-2835096762590322415** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-2888261879459732740** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-3207276377854702451** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-3226420374077565204** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-3271170795453668053** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-3346587777523784849** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-3586558718788844991** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-3619295018585111086** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-3785289375321426037** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-3792279438009718609** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-3887596587302149695** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-4034437976659804335** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-455270542941409687** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-4568401042117456863** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-4894739317500695690** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-5108054978514907420** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-5117126136296905355** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-5445349269422867455** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-5703429857431099385** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-6113448530836767636** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-62725330299232375** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-6338762275838865051** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-6481770825108670160** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-6685334984184848027** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-6836239007879270434** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-6957770214715021106** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-7120478869350967203** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-7180315405969834431** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-7184062183178777693** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-7279293244231609649** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-7308075484168403329** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-7371159905653815278** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-7577014728470115311** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-7686823291032293657** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-7862227408339325944** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-8097827664947199765** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-8110446095122027213** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-8148266777407041766** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-8170535379154520582** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-8272419126965358914** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-8570611774437113541** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-8908501396910626441** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-9391699529269145596** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-9473825709401880639** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-9615340353460481815** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-9699897401225629135** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-9865659268675506574** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-9949658350522574715** (Ready for Merge)
+- **remotes/origin/sentinel-csv-injection-fix-9988075135877474824** (Ready for Merge)
+- **remotes/origin/sentinel-dos-fix-7698536628860291185** (Ready for Merge)
+- **remotes/origin/sentinel-dos-protection-16862266732532693644** (Ready for Merge)
+- **remotes/origin/sentinel-dos-protection-17580237243754700940** (Ready for Merge)
+- **remotes/origin/sentinel-dos-protection-3230700475893840806** (Ready for Merge)
+- **remotes/origin/sentinel-dos-protection-533559007070849355** (Ready for Merge)
+- **remotes/origin/sentinel-dos-protection-7227514493046811769** (Ready for Merge)
+- **remotes/origin/sentinel-dos-protection-8918500770357987717** (Ready for Merge)
+- **remotes/origin/sentinel-fix-analytics-xss-18372825547288126285** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-11077555139908489589** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-11316363243497310988** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-11695626658180939497** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-11799255373234289459** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-12497847357551567150** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-12970269499686367400** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-1302740783409552070** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-1455302439657418501** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-15688476494678190926** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-16567090452549899713** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-16604048284398953621** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-16763427666603364889** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-17518560069698695789** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-17594469209047067087** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-17984937653566116919** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-241262454098810507** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-2765330589788490005** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-310785540738272778** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-3161629447767220060** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-4073728526691781890** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-4896609571382596345** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-5151600923195756418** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-5200529072792038966** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-5692806866209313893** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-716833391018549425** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-8336262688317401558** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-9007503405729872080** (Ready for Merge)
+- **remotes/origin/sentinel-fix-csv-injection-9365968688429257416** (Ready for Merge)
+- **remotes/origin/sentinel-fix-markdown-injection-10489928730170267771** (Ready for Merge)
+- **remotes/origin/sentinel-fix-markdown-injection-12358420040259215492** (Ready for Merge)
+- **remotes/origin/sentinel-fix-markdown-injection-12642553917768757487** (Ready for Merge)
+- **remotes/origin/sentinel-fix-markdown-injection-12782230076673312738** (Ready for Merge)
+- **remotes/origin/sentinel-fix-markdown-injection-12887486750391469562** (Ready for Merge)
+- **remotes/origin/sentinel-fix-markdown-injection-13943307421559350818** (Ready for Merge)
+- **remotes/origin/sentinel-fix-markdown-injection-15177720678056733729** (Ready for Merge)
+- **remotes/origin/sentinel-fix-markdown-injection-17432524011574370293** (Ready for Merge)
+- **remotes/origin/sentinel-fix-markdown-injection-1749769319501119142** (Ready for Merge)
+- **remotes/origin/sentinel-fix-markdown-injection-3339496328156938030** (Ready for Merge)
+- **remotes/origin/sentinel-fix-markdown-injection-3776990642729282253** (Ready for Merge)
+- **remotes/origin/sentinel-fix-markdown-injection-4574407536048453465** (Ready for Merge)
+- **remotes/origin/sentinel-fix-markdown-injection-4811643959764266800** (Ready for Merge)
+- **remotes/origin/sentinel-fix-monetization-markdown-injection-4346962235570198500** (Ready for Merge)
+- **remotes/origin/sentinel-fix-path-traversal-10371328394414970725** (Ready for Merge)
+- **remotes/origin/sentinel-fix-path-traversal-15570821654986088312** (Ready for Merge)
+- **remotes/origin/sentinel-fix-path-traversal-17914056010192129632** (Ready for Merge)
+- **remotes/origin/sentinel-fix-path-traversal-290759818619950664** (Ready for Merge)
+- **remotes/origin/sentinel-fix-path-traversal-5132007929293032238** (Ready for Merge)
+- **remotes/origin/sentinel-fix-path-traversal-scraper-11209913813544277514** (Ready for Merge)
+- **remotes/origin/sentinel-fix-path-traversal-scraper-16504973600351558814** (Ready for Merge)
+- **remotes/origin/sentinel-fix-report-injection-1488382414768619374** (Ready for Merge)
+- **remotes/origin/sentinel-fix-report-xss-injection-17246759234620652764** (Ready for Merge)
+- **remotes/origin/sentinel-fix-scraper-timeout-1149197347818136170** (Ready for Merge)
+- **remotes/origin/sentinel-fix-scraper-url-validation-5666735410169343396** (Ready for Merge)
+- **remotes/origin/sentinel-fix-scraper-vulnerability-10920558774423191235** (Ready for Merge)
+- **remotes/origin/sentinel-fix-ssrf-pagination-955563201961260698** (Ready for Merge)
+- **remotes/origin/sentinel-fix-timeout-5116426609939890096** (Ready for Merge)
+- **remotes/origin/sentinel-fix-unsafe-links-5959924612481434328** (Ready for Merge)
+- **remotes/origin/sentinel-fix-xss-analytics-8641272621039529465** (Ready for Merge)
+- **remotes/origin/sentinel-fix-xss-content-agent-15220868101376936351** (Ready for Merge)
+- **remotes/origin/sentinel-fix-xss-links-14504327509896996257** (Ready for Merge)
+- **remotes/origin/sentinel-fix-xss-report-17694993639350070672** (Ready for Merge)
+- **remotes/origin/sentinel-fix-xss-sanitization-2461129736912468133** (Ready for Merge)
+- **remotes/origin/sentinel-markdown-injection-15739394978232396905** (Ready for Merge)
+- **remotes/origin/sentinel-markdown-injection-fix-11203611282480447013** (Ready for Merge)
+- **remotes/origin/sentinel-markdown-injection-fix-14905242363069244554** (Ready for Merge)
+- **remotes/origin/sentinel-markdown-injection-fix-7493760724070130119** (Ready for Merge)
+- **remotes/origin/sentinel-markdown-sanitization-11985779393416298758** (Ready for Merge)
+- **remotes/origin/sentinel-markdown-sanitization-15094768365702724713** (Ready for Merge)
+- **remotes/origin/sentinel-markdown-sanitization-7125974230705097522** (Ready for Merge)
+- **remotes/origin/sentinel-markdown-sanitization-7145404824939616399** (Ready for Merge)
+- **remotes/origin/sentinel-output-encoding-17232199757136201489** (Ready for Merge)
+- **remotes/origin/sentinel-path-traversal-csv-fix-3823511554369856865** (Ready for Merge)
+- **remotes/origin/sentinel-path-traversal-fix-10577458576876896305** (Ready for Merge)
+- **remotes/origin/sentinel-path-traversal-fix-10734782859675009310** (Ready for Merge)
+- **remotes/origin/sentinel-path-traversal-fix-11587562362806338360** (Ready for Merge)
+- **remotes/origin/sentinel-path-traversal-fix-12279666712111008639** (Ready for Merge)
+- **remotes/origin/sentinel-path-traversal-fix-12513139928667827617** (Ready for Merge)
+- **remotes/origin/sentinel-path-traversal-fix-12611882508292963082** (Ready for Merge)
+- **remotes/origin/sentinel-path-traversal-fix-13434890408938991283** (Ready for Merge)
+- **remotes/origin/sentinel-path-traversal-fix-14362573612841171516** (Ready for Merge)
+- **remotes/origin/sentinel-path-traversal-fix-16721964439752681814** (Ready for Merge)
+- **remotes/origin/sentinel-path-traversal-fix-17327093040459172563** (Ready for Merge)
+- **remotes/origin/sentinel-path-traversal-fix-17847315453125522921** (Ready for Merge)
+- **remotes/origin/sentinel-path-traversal-fix-18413042180626318993** (Ready for Merge)
+- **remotes/origin/sentinel-path-traversal-fix-4227351371045424943** (Ready for Merge)
+- **remotes/origin/sentinel-path-traversal-fix-5954497886422508667** (Ready for Merge)
+- **remotes/origin/sentinel-path-traversal-fix-6263730005958541679** (Ready for Merge)
+- **remotes/origin/sentinel-path-traversal-fix-75464583372601592** (Ready for Merge)
+- **remotes/origin/sentinel-path-traversal-fix-7924678315596277000** (Ready for Merge)
+- **remotes/origin/sentinel-path-traversal-fix-8645236588093434852** (Ready for Merge)
+- **remotes/origin/sentinel-path-traversal-fix-8670746319559752468** (Ready for Merge)
+- **remotes/origin/sentinel-scraper-dos-fix-5795128343399673854** (Ready for Merge)
+- **remotes/origin/sentinel-scraper-security-17958507904962651571** (Ready for Merge)
+- **remotes/origin/sentinel-scraper-security-3468579950298759361** (Ready for Merge)
+- **remotes/origin/sentinel-scraper-security-8881075765074937007** (Ready for Merge)
+- **remotes/origin/sentinel-scraper-timeout-13066185992077732922** (Ready for Merge)
+- **remotes/origin/sentinel-secure-markdown-report-10480316931912744290** (Ready for Merge)
+- **remotes/origin/sentinel-security-fix-3723865700498354440** (Ready for Merge)
+- **remotes/origin/sentinel-security-fixes-1698740501071019689** (Ready for Merge)
+- **remotes/origin/sentinel-security-fixes-2926280521022127220** (Ready for Merge)
+- **remotes/origin/sentinel-ssrf-fix-11285404620217692066** (Ready for Merge)
+- **remotes/origin/sentinel-ssrf-fix-15679479573064166638** (Ready for Merge)
+- **remotes/origin/sentinel-ssrf-fix-15708222487213179440** (Ready for Merge)
+- **remotes/origin/sentinel-ssrf-fix-2624088104699189240** (Ready for Merge)
+- **remotes/origin/sentinel-ssrf-fix-2673881214172986462** (Ready for Merge)
+- **remotes/origin/sentinel-ssrf-fix-3044566237611297460** (Ready for Merge)
+- **remotes/origin/sentinel-ssrf-fix-3881955097333769994** (Ready for Merge)
+- **remotes/origin/sentinel-ssrf-fix-4228425810213735351** (Ready for Merge)
+- **remotes/origin/sentinel-ssrf-fix-7380402867883374496** (Ready for Merge)
+- **remotes/origin/sentinel-ssrf-fix-7650991945586945721** (Ready for Merge)
+- **remotes/origin/sentinel-timeout-fix-11256009627229693809** (Ready for Merge)
+- **remotes/origin/sentinel-timeout-fix-9908235734266386535** (Ready for Merge)
+- **remotes/origin/sentinel-url-validation-16463849517756046800** (Ready for Merge)
+- **remotes/origin/sentinel-url-validation-1973285789499580044** (Ready for Merge)
+- **remotes/origin/sentinel-url-validation-2700286336477538754** (Ready for Merge)
+- **remotes/origin/sentinel-url-validation-3025430015714192386** (Ready for Merge)
+- **remotes/origin/sentinel-url-validation-800829515985496089** (Ready for Merge)
+- **remotes/origin/sentinel-url-validation-8385423909047886596** (Ready for Merge)
+- **remotes/origin/sentinel-url-validation-994417387190840418** (Ready for Merge)
+- **remotes/origin/sentinel-xss-fix-4307107486313997364** (Ready for Merge)
+- **remotes/origin/sentinel/fix-analytics-xss-17804299682407068975** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-10353048706525775384** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-11137622632039534003** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-11516698988446732046** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-11796924900035192869** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-1271702522999364117** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-12822134464045250176** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-12899560490042954915** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-13077768089564060512** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-14090242410722960324** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-1424126792917896007** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-14631498172973798397** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-14785501448313010884** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-15191188867369355221** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-17728883922707922928** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-18204894269063058873** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-18292111345999615126** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-1837485357128189949** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-2336053112863136471** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-2447504539705409279** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-2502077377827287714** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-2735194479684746444** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-2739836513252277633** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-2795873645337088864** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-3791034134137478787** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-3861579726719101131** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-4054564814748295224** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-4616410932219879606** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-4856694323076265204** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-4898138830369691020** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-5756251649576385500** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-5760919047341012368** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-5998751836772194145** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-7073829351286481379** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-7284469719528354445** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-8718980999403222499** (Ready for Merge)
+- **remotes/origin/sentinel/fix-csv-injection-9210533501834948716** (Ready for Merge)
+- **remotes/origin/sentinel/fix-markdown-injection-10552938949682893680** (Ready for Merge)
+- **remotes/origin/sentinel/fix-markdown-injection-16528079574555238506** (Ready for Merge)
+- **remotes/origin/sentinel/fix-markdown-injection-17509944772710987348** (Ready for Merge)
+- **remotes/origin/sentinel/fix-markdown-injection-18346561083266000842** (Ready for Merge)
+- **remotes/origin/sentinel/fix-markdown-injection-2058121724437501855** (Ready for Merge)
+- **remotes/origin/sentinel/fix-markdown-injection-796801966410983912** (Ready for Merge)
+- **remotes/origin/sentinel/fix-path-traversal-13515095468763134399** (Ready for Merge)
+- **remotes/origin/sentinel/fix-path-traversal-1539865993913556303** (Ready for Merge)
+- **remotes/origin/sentinel/fix-path-traversal-2695657045169320867** (Ready for Merge)
+- **remotes/origin/sentinel/fix-path-traversal-5310615808568024057** (Ready for Merge)
+- **remotes/origin/sentinel/fix-path-traversal-690021270023294880** (Ready for Merge)
+- **remotes/origin/sentinel/fix-path-traversal-7103619358321639504** (Ready for Merge)
+- **remotes/origin/sentinel/fix-path-traversal-9188874187141553419** (Ready for Merge)
+- **remotes/origin/sentinel/fix-path-traversal-9909177477694886926** (Ready for Merge)
+- **remotes/origin/sentinel/fix-path-traversal-scraper-15595414302913607334** (Ready for Merge)
+- **remotes/origin/sentinel/fix-request-timeout-14772585893024475880** (Ready for Merge)
+- **remotes/origin/sentinel/fix-scraper-path-traversal-12683996464696937820** (Ready for Merge)
+- **remotes/origin/sentinel/fix-scraper-ssrf-1182726048773637235** (Ready for Merge)
+- **remotes/origin/sentinel/fix-scraper-ssrf-timeout-839827095267002364** (Ready for Merge)
+- **remotes/origin/sentinel/fix-scraper-timeout-15962352070527931210** (Ready for Merge)
+- **remotes/origin/sentinel/fix-scraper-timeout-6444312596237572236** (Ready for Merge)
+- **remotes/origin/sentinel/fix-scraper-timeout-7976927589477460081** (Ready for Merge)
+- **remotes/origin/sentinel/fix-scraper-vulnerabilities-4677155217137782042** (Ready for Merge)
+- **remotes/origin/sentinel/fix-ssrf-pagination-12840024860908839** (Ready for Merge)
+- **remotes/origin/sentinel/fix-ssrf-url-validation-8246286317573036494** (Ready for Merge)
+- **remotes/origin/sentinel/fix-timeout-scraper-8563168967022148924** (Ready for Merge)
+- **remotes/origin/sentinel/fix-url-validation-1428990983008492380** (Ready for Merge)
+- **remotes/origin/sentinel/ssrf-protection-3166067632750321151** (Ready for Merge)
+- **remotes/origin/subagent-configuration-update-7123065298896349124** (Ready for Merge)
+- **remotes/origin/test-run-and-pii-sanitization-13332227309819345167** (Ready for Merge)
+- **remotes/origin/update-autonomous-workflow-to-nodejs-12950846570803253744** (Ready for Merge)
+- **remotes/origin/update-compile-definition-9206230129012668911** (Ready for Merge)
+- **remotes/origin/update-mongodb-uri-2808493771476678278** (Ready for Merge)
+- **remotes/origin/update-react-deployment-logic-11252325931757869303** (Ready for Merge)
+- **remotes/origin/update-remote-subagents-8216224045262465071** (Ready for Merge)
+- **remotes/origin/v0/8bukets-bd43e85b** (Ready for Merge)
+
+## AGENTS.md
+- **Source:** icloud://AGENTS.md
+- **Sections:** 9
+- *Key Topics:* Antigravity Vision & Documentation, The Vision: Autonomous Intelligence, Strategic Roadmap
+
+## CLAUDE.md
+- **Source:** icloud://CLAUDE.md
+- **Sections:** 1
+- *Key Topics:* Introduction
+
+## CONSOLIDATED_INTELLIGENCE.md
+- **Source:** icloud://CONSOLIDATED_INTELLIGENCE.md
+- **Sections:** 34
+- *Key Topics:* CONSOLIDATED INTELLIGENCE REPORT, 📋 Executive Summary, 🎯 Mission Statement
+
+## KNOWLEDGE_MERGE.md
+- **Source:** icloud://KNOWLEDGE_MERGE.md
+- **Sections:** 84
+- *Key Topics:* Market Intelligence Matrix, Autonomous Observation, Ecosystem Results & Merged Knowledge (2026-05-17T03:34:52.606Z)
+
+## MISSION_HANDOFF 2.md
+- **Source:** icloud://MISSION_HANDOFF 2.md
+- **Sections:** 7
+- *Key Topics:* 🚀 MISSION HANDOFF: ANTIGRAVITY ENTERPRISE, 1. Master System Ignition, 2. Persist Background Sovereignty
+
+## MISSION_HANDOFF.md
+- **Source:** icloud://MISSION_HANDOFF.md
+- **Sections:** 5
+- *Key Topics:* Antigravity: Sovereign Mission Handoff (Consolidated v1.0), 🚀 24/7 Tactical Ignition, 🛡️ Sovereign Security Governance
+
+## README.md
+- **Source:** icloud://README.md
+- **Sections:** 8
+- *Key Topics:* Introduction, Getting Started, or
+
+## USAGE.md
+- **Source:** icloud://USAGE.md
+- **Sections:** 3
+- *Key Topics:* Configuration Instructions, 1. Supabase, 2. MongoDB
+
+## project_backlog.md
+- **Source:** icloud://project_backlog.md
+- **Sections:** 7
+- *Key Topics:* Antigravity Ecosystem - Structured Backlog, 🚀 Epic 1: Project Stabilization and Build Recovery, 🐛 Issue 1.1: Resolve Turbopack OOM and Compilation Errors
+
+## wilson_sonsini.md
+- **Source:** icloud://wilson_sonsini.md
+- **Sections:** 4
+- *Key Topics:* Introduction, Core Identity & Market Position, Historical Significance & Notable Clients
+
+## Chief AI Officer (CAIO) Role
+- **Source:** user_input://caio_user_input.md
+- **Sections:** 5
+- *Key Topics:* Chief AI Officer (CAIO) Role, Core Job Description, Key Responsibilities
+
+## neural_sync_docs.md
+- **Source:** icloud-sim://neural_sync_docs.md
+- **Sections:** 2
+- *Key Topics:* Phase 12: Global Neural Synchronization, Core Mechanisms
+
+## test_knowledge.md
+- **Source:** icloud-sim://test_knowledge.md
+- **Sections:** 1
+- *Key Topics:* New Knowledge from iCloud
+
+## Web Insight
+- **Source:** https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
+- **Sections:** 0
+
+## iCloud: phase13_directives.md
+- **Source:** icloud://phase13_directives.md
+- **Sections:** 3
+- *Key Topics:* Objective, Tactical Directives, Signature
+
+## iCloud: 50ty.json
+- **Source:** icloud://50ty.json
+- **Sections:** 1
+- *Key Topics:* Content
+
+## iCloud: 50ty.md
+- **Source:** icloud://50ty.md
+- **Sections:** 2
+- *Key Topics:* 50 Content Creation and Strategy Prompts, How to Get Maximum Value From This Collection
+
+## iCloud: AGENTS.md
+- **Source:** icloud://AGENTS.md
+- **Sections:** 7
+- *Key Topics:* The Vision: Autonomous Intelligence, Strategic Roadmap, 1. The Autonomous Core (`antigravity/core.ts`)
+
+## iCloud: CLAUDE.md
+- **Source:** icloud://CLAUDE.md
+- **Sections:** 0
+
+- **Source:** icloud://CONSOLIDATED_INTELLIGENCE.md
+- **Sections:** 95
+- *Key Topics:* CONSOLIDATED INTELLIGENCE REPORT, 📋 Executive Summary, 🎯 Mission Statement
+
+## iCloud: KNOWLEDGE_INTEGRATION.md
+- **Source:** icloud://KNOWLEDGE_INTEGRATION.md
+- **Sections:** 66
+- *Key Topics:* Knowledge Observation Insights (Unified), About, Visual Studio Code
+
+## iCloud: KNOWLEDGE_MERGE.md
+- **Source:** icloud://KNOWLEDGE_MERGE.md
+- **Sections:** 92
+- *Key Topics:* Autonomous Observation, Autonomous Observation, Autonomous Observation
+
+## iCloud: MISSION_HANDOFF 2.md
+- **Source:** icloud://MISSION_HANDOFF 2.md
+- **Sections:** 4
+- *Key Topics:* 🚀 MISSION HANDOFF: ANTIGRAVITY ENTERPRISE, Executive Dashboard Overview, Autonomous Governance Brief
+
+## iCloud: MISSION_HANDOFF.md
+- **Source:** icloud://MISSION_HANDOFF.md
+- **Sections:** 5
+- *Key Topics:* Antigravity: Sovereign Mission Handoff (Consolidated v1.0), 🚀 24/7 Tactical Ignition, 🛡️ Sovereign Security Governance
+
+## iCloud: README.md
+- **Source:** icloud://README.md
+- **Sections:** 10
+- *Key Topics:* Getting Started, Learn More, Deploy on Vercel
+
+## iCloud: USAGE.md
+- **Source:** icloud://USAGE.md
+- **Sections:** 3
+- *Key Topics:* Configuration Instructions, 1. Supabase, 2. MongoDB
+
+## software info by fk &#8211; software-online-review &#8211; Filip Keser
+- **Source:** icloud://ai_agents_knowledge.json
+- **Sections:** 1
+- *Key Topics:* Content
+
+## iCloud: ai_agents_knowledge.md
+- **Source:** icloud://ai_agents_knowledge.md
+- **Sections:** 4
+- *Key Topics:* Knowledge Observation Insights (Unified), 🔑 Top Keywords (Merged), 📰 Recent Intelligence & Posts
+
+## iCloud: autonomous_state.json
+- **Source:** icloud://autonomous_state.json
+- **Sections:** 1
+- *Key Topics:* Content
+
+## iCloud: caio_role_docs.md
+- **Source:** icloud://caio_role_docs.md
+- **Sections:** 7
+- *Key Topics:* Chief AI Officer (CAIO) Role Description (2025/2026 Update), Core Job Description, Key Responsibilities
+
+## iCloud: package-lock.json
+- **Source:** icloud://package-lock.json
+- **Sections:** 1
+- *Key Topics:* Content
+
+## iCloud: package.json
+- **Source:** icloud://package.json
+- **Sections:** 1
+- *Key Topics:* Content
+
+## iCloud: project_backlog.md
+- **Source:** icloud://project_backlog.md
+- **Sections:** 7
+- *Key Topics:* Antigravity Ecosystem - Structured Backlog, 🚀 Epic 1: Project Stabilization and Build Recovery, 🐛 Issue 1.1: Resolve Turbopack OOM and Compilation Errors
+
+## iCloud: test_knowledge_output.json
+- **Source:** icloud://test_knowledge_output.json
+- **Sections:** 1
+- *Key Topics:* Content
+
+## iCloud: tsconfig.json
+- **Source:** icloud://tsconfig.json
+- **Sections:** 1
+- *Key Topics:* Content
+
+## iCloud: wilson_sonsini.md
+- **Source:** icloud://wilson_sonsini.md
+- **Sections:** 3
+- *Key Topics:* Core Identity & Market Position, Historical Significance & Notable Clients, Primary Practice Areas
+
+## Market Intelligence
+- **Source:** market_research_sync
+- **Sections:** 1
+- *Key Topics:* Trends
+
+## software info by fk – software-online-review – Filip Keser
+- **Source:** https://software-online-review.com
+- **Sections:** 375
+- *Key Topics:* software info by fk, Roadmap and business roadmap, Nvidia Dgx Spark
+
+## iCloud: initial_directive.md
+- **Source:** icloud://initial_directive.md
+- **Sections:** 0
+
+## iCloud: phase13_strategic_directive.md
+- **Source:** icloud://phase13_strategic_directive.md
+- **Sections:** 1
+- *Key Topics:* Phase 13 Strategic Directive
+
+## iCloud: market_intelligence_q3.md
+- **Source:** icloud://market_intelligence_q3.md
+- **Sections:** 1
+- *Key Topics:* Trends
+
+## iCloud: phase13_regional_compliance.md
+- **Source:** icloud://phase13_regional_compliance.md
+- **Sections:** 1
+- *Key Topics:* Directives
+
+## Intelephense Documentation
+- **Source:** https://intelephense.com/docs
+- **Sections:** 85
+- *Key Topics:* About, Visual Studio Code, Other Editors
+
+## Understanding bidding basics - Google Ads Help
+- **Source:** https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU
+- **Sections:** 9
+- *Key Topics:* Understanding bidding basics, Focus on clicks (for Search and Display ads), Focus on impressions
+
+## Google Ads Smart Bidding - AI-Driven Bid Optimisations & Ad Spend
+- **Source:** https://business.google.com/uk/ad-tools/bidding/
+- **Sections:** 33
+- *Key Topics:* Add another account, Add account, Sign out
+
+## Tips & Resources for Online Advertising – Google Ads
+- **Source:** https://business.google.com/uk/resources/
+- **Sections:** 93
+- *Key Topics:* Add another account, Add account, Sign out
+
+## Ad Manager  |  Google for DevelopersGoogleGoogle
+- **Source:** https://developers.google.com/ad-manager
+- **Sections:** 9
+- *Key Topics:* Google Ad Manager, A set of tools to manage your Google Ad Manager accounts and campaigns., Ad Manager API (Beta)
+
+## Dynamic Ad Insertion  |  Google for DevelopersGoogleGoogle
+- **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion
+- **Sections:** 9
+- *Key Topics:* Google Dynamic Ad Insertion, Dynamic ad insertion (DAI), Full service DAI
+
+## DAI Full Service API  |  Google for DevelopersGoogleGoogle
+- **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service
+- **Sections:** 6
+- *Key Topics:* Google Dynamic Ad Insertion, IMA DAI SDK を使用する場合, DAI API を使用する場合
+
+## DAI Pod Serving API  |  Google for DevelopersGoogleGoogle
+- **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving
+- **Sections:** 7
+- *Key Topics:* Google Dynamic Ad Insertion, การแสดงพ็อด DAI, เชื่อมโฆษณาเข้ากับไลฟ์สด
+
+## Los gehts  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle
+- **Source:** https://developers.google.com/ad-manager/api/start
+- **Sections:** 14
+- *Key Topics:* Los gehts Mit Sammlungen den Überblick behalten Sie können Inhalte basierend auf Ihren Einstellungen speichern und kategorisieren., Zugriff auf ein Ad Manager-Netzwerk erhalten, Anmeldedaten für die Authentifizierung erstellen
+
+## Resources Overview - Google Ad Manager
+- **Source:** https://admanager.google.com/home/resources/
+- **Sections:** 65
+- *Key Topics:* Tell us about your business, Congratulations!, Sign Up for Google AdSense
+
+## ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation
+- **Source:** https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
+- **Sections:** 14
+- *Key Topics:* Key Reference Links, Getting Started, Use the Google Ad Manager API for Java
+
+## Understanding bidding basics - Google Ads Help
+- **Source:** Internal
+- **Sections:** 0
+
+## Google Ads Smart Bidding - AI-Driven Bid Optimisations & Ad Spend
+- **Source:** Internal
+- **Sections:** 0
+
+## Tips & Resources for Online Advertising – Google Ads
+- **Source:** Internal
+- **Sections:** 0
+
+## Ad Manager  |  Google for DevelopersGoogleGoogle
+- **Source:** Internal
+- **Sections:** 0
+
+## Dynamic Ad Insertion  |  Google for DevelopersGoogleGoogle
+- **Source:** Internal
+- **Sections:** 0
+
+## DAI Full Service API  |  Google for DevelopersGoogleGoogle
+- **Source:** Internal
+- **Sections:** 0
+
+## DAI Pod Serving API  |  Google for DevelopersGoogleGoogle
+- **Source:** Internal
+- **Sections:** 0
+
+## Get started  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle
+- **Source:** Internal
+- **Sections:** 0
+
+## Resources Overview - Google Ad Manager
+- **Source:** Internal
+- **Sections:** 0
+
+## ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation
+- **Source:** Internal
+- **Sections:** 0
+
+## 🏆 Results Summary
+- **jules-13623861503531250231-4b0dd593**: 🤖 fix: autonomous self-repair of 4 issues (7 files changed in General)
+- **main**: Commit: Merge pull request #2376 from 8bukets/jules-google-ads-knowledge-9522670797089792938
+- **remotes/origin/HEAD -> origin/jules/scraper-markposition-17752547678215960211**: Commit: Merge pull request #2372 from 8bukets/feat/markposition-integration-13716106460631195250
+- **remotes/origin/add-a2a-remote-agent-152042865285525971**: Commit: feat: add generic A2A remote agent configuration
+- **remotes/origin/add-acp-integration-docs-10087323336683703862**: Commit: docs: add ACP integration guide for Docker Agent
+
+## Filip Keser (Founder) (filip@example.com)
+- **Current Focus:** remotes/origin/add-filip-keser-license-9070216148560290832
+
+## Jules (Lead Architect) (jules@antigravity.ai)
+- **Current Focus:** jules-13623861503531250231-4b0dd593, remotes/origin/HEAD -> origin/jules/scraper-markposition-17752547678215960211, remotes/origin/add-jules-cli-7658708591293792322
+
+## Sigma Bot (Operations) (sigma@antigravity.ai)
+- **Current Focus:** Global Monitoring
+
+## 🚀 Prioritized Action Items
+- [HIGH] Process backlog of 18 pending work orders.
+- [LOW] Prune or merge stagnant ecosystem branches (Total: 2373).
+- [INFO] Continue autonomous knowledge ingestion for market intelligence.
+---
+**Collaboration Health Index:** 100% | *Phase 12 Synergy Protocol Active*
 
 ---
 
 # iCloud: KNOWLEDGE_INTEGRATION.md
 
 > **Source:** icloud://KNOWLEDGE_INTEGRATION.md
-> **Analyzed At:** 2026-06-04T00:47:53.009Z
+> **Analyzed At:** 2026-06-05T03:35:59.219Z
 
 ## Knowledge Observation Insights (Unified)
 **Latest Source:** https://intelephense.com/docs
@@ -12826,112 +14813,73 @@ Packages can be found online that aim to workaround these issues by providing st
 # iCloud: KNOWLEDGE_MERGE.md
 
 > **Source:** icloud://KNOWLEDGE_MERGE.md
-> **Analyzed At:** 2026-06-04T00:47:53.127Z
+> **Analyzed At:** 2026-06-05T03:35:59.364Z
 
 ## Autonomous Observation
-- **Date**: 2026-06-03T00:00:00.000Z
-- **Target**: https://software-online-review.com
-- **Title**: Top SIEM Tools for SOC Analysts
-- **Context**: Ingested and observed external market or technical intelligence from https://software-online-review.com.
-A cursory look at 2021’s cyberattack statistics shows that organizations need the help of trained, certified security operations center (SOC) analysts who know how to effectively use the latest tools and techniques, including security information and event management (SIEM) platforms.
-Take a look at the following data recently published by TechJury (Bulao, 2022):
-Malicious actors on average introduce 300,000 pieces of new malware each day.
-Ransomware cases grew by 150% in 2020 compared with the previous year.
-By 2021, a business was hit by ransomware every 11 seconds, compared with every 40 seconds back in 2017—an increase of approximately 360%.
-Approximately 94% of malware infections come from email, indicating that employees do not have the proper training to spot suspicious emails.
-These trends highlight the value of SOC analysts for businesses, as an effective SOC can help mitigate the various cyberthreats faced by businesses today. To get started, let’s define SOC and SIEM before reviewing the most effective SIEM tools that SOC analysts can use to improve efficiency.
-The Top SIEM Tools for SOC Analysts
-SOC analysts need a broad set of tools to diagnose potential vulnerabilities, proactively secure networks, and find innovative solutions for evolving malware threats.
-Here is our list of the best SIEM tools & Software:
-1. Splunk
-Splunk pulls information from all aspects of a network, making it easier for SOC analysts to locate pertinent data and act quickly in on-site, cloud, and hybrid database environments (Splunk, 2022). When an anomalous event occurs that suggests a potential breach, SOC analysts will have easy and efficient access to database information so they can respond appropriately.
-2. SolarWinds Security Event Manager
-SolarWinds’ Security Event Manager provides SOC analysts with a tool that improves security through advanced threat identification, forensic analysis, and automated incident responses (SolarWinds, 2019). In addition to offering an intuitive dashboard, the Security Event Manager integrates with many compliance reporting tools to aid businesses that must conform to HIPAA, PCI DSS, and other regulations.
-3. LogRhythm
-LogRhythm’s SIEM platform offers a reliable way to improve an organization’s security posture in light of challenges associated with the rise in remote work and cloud migration (LogRhythm, 2022). LogRhythm applies a zero-trust model while optimizing security infrastructures against emerging cybersecurity threats. LogRhythm provides additional training that helps all types of IT professionals use its features correctly.
-4. Trellix Platform
-The Trellix platform provides real-time visibility into system activity. The tool allows SOC analysts to see real-time system, network, application, and database activity and performance (Trellix, 2022). When fully integrated into a system, analysts can examine specific events to identify potential issues, from suspicious activity to slow speeds. Trellix users can also add content packs to customize the tool for relevant industry compliance regulations.
-5. AlienVault OSSIM
-AlienVault OSSIM is an open-source SIEM product by AT&T designed to help security professionals in asset discovery, assessing vulnerabilities, intrusion detection, behavior monitoring, and SIEM event correlation (AT&T Business, 2020).
-
-## Defining SOC and SIEM
-A SOC is a centralized department within an organization or data center that consists of security analysts, who use a variety of processes, tools, and technologies to monitor and improve the organization’s cybersecurity infrastructure (LogDNA, 2022).
-“SIEM” refers to a specific management tool that SOC analysts and other cybersecurity professionals use. A SIEM platform typically includes a range of tools that aid SOC professionals, including:
-Forensic tools for investigating cyberattacks
-Threat hunting features to locate vulnerabilities
-Threat intelligence and security analytics features
-Advanced analytics visualization
-The core difference is that SOC refers to an entire centralized department, including SOC analysts and their processes and tools, whereas SIEM refers to specific software used by a SOC analyst or team. SIEM platforms facilitate a comprehensive approach to cybersecurity by giving SOCs the ability to monitor data in real time and establish security policies that improve overall network safety.
-To avoid confusion, it’s worth noting that the abbreviation “SOC” has two meanings. In addition to the definition of SOC outlined above, SOC security can also refer to System and Organization Controls, a set of compliance standards established by the American Institute of Certified Public Accountants (Imperva, 2022). SOC auditing helps ensure that all institutions using financial data employ methods to keep that data secure.
-Secure Your Future as a SOC Analyst with EC-Council
-EC-Council excels at preparing cyber security professionals at all experience levels to become certified SOC analysts through the Certified SOC Analyst (CSA) program. The 3-day program covers SIEM deployment, advanced incident detection, how to respond to a range of real incidents, and more.
-EC-Council provides applicants with two pathways for achieving their CSA certification. The first option is to sign up for an approved EC-Council training, which covers everything candidates need to know for the certification exam. Learners can choose between self-study or instructor-led training, offered in online and in-person formats. Eligible professionals who can prove they have at least 1 year of experience in a field related to information security also have the option to skip directly to taking the exam.
-What is SIEM?
-Security Information and Event Management (SIEM) is a software solution or platform that aggregates and analyzes activity data from various resources across your entire IT infrastructure. SIEM systems collect security data from network devices, servers, domain controllers, and more, providing real-time analysis of security alerts generated by applications and network hardware.
-SIEM tools work on rule-based algorithms and statistical correlation to establish relationships between log entries. These tools have two main goals: to provide reports on security-related incidents and events, such as successful and failed logins, and to send alerts if the analysis indicates a potential security issue.
-With SIEM, organizations can gain valuable insights into their security posture, identify trends, and discover threats or anomalies that could indicate a security incident. This is the core of an organization's ability to proactively monitor and respond to security threats.
-About This Explainer: This content is part of a series on SIEM security.
-What is a Security Operations Center (SOC)?
-A SOC is a centralized operational unit that deals with security issues at an organizational and technical level. The SOC is responsible for continuously monitoring and improving the organization's security posture, while preventing, detecting, analyzing, and responding to cyber incidents using technology and well-defined processes and procedures.
-A SOC team consists of security analysts, engineers, and managers who work together to ensure rapid incident detection and effective remediation. Their responsibilities extend beyond mere detection, including threat hunting, forensic analysis, and incident response.
-Unlike SIEM, which is a tool, a SOC is a team or department within an organization. It's a holistic approach to cybersecurity that integrates a range of tools (including SIEM), processes, and a strong team of security professionals.
-In my experience, here are tips for effectively integrating and optimizing the relationship between SIEM and SOC to build a robust and proactive cybersecurity framework:
-Automate repetitive incident response tasks
-Use SOAR (Security Orchestration, Automation, and Response) capabilities to automate tasks like isolating compromised devices or blocking malicious IP addresses. This allows SOC analysts to focus on complex investigations.
-Design custom data input pipelines.
-Prioritize and structure the data sources that SIEM ingests based on criticality, such as identity providers, endpoint detection tools, and cloud logs. This ensures the SOC team receives actionable insights instead of being overwhelmed by irrelevant data.
-Develop adaptive correlation rules
-Collaboration between SOC analysts and SIEM administrators to create dynamic correlation rules that evolve with threat intelligence updates. Regularly review these rules to address new attack vectors and reduce false positives.
-Integrate threat intelligence into the SIEM workflow.
-Enrich SIEM alerts with real-time threat intelligence, including IOC databases, geolocation data, and attacker profiles. This allows SOC teams to quickly contextualize alerts and prioritize investigations.
-Leverage UEBA for nuanced threat detection.
-Implement User and Entity Behavior Analytics (UEBA) to detect anomalies like lateral movement or privilege abuse. This adds depth to SIEM insights and empowers SOC teams to discover Advanced Persistent Threats (APTs).
-SIEM vs. SOC: Five Key Differences
-While SIEM and SOC are key elements of an organization's cybersecurity framework, they serve different purposes and have different operational focuses, functionalities, threat responses, scopes, and complexities and costs.
-1. Operational Focus
-The operational focus of SIEM and SOC differs significantly. SIEM, being essentially a tool, focuses on collecting and correlating data from various sources, generating alerts based on predefined vendor rules or correlation, and providing reporting capabilities. Its main goal is to provide insight into the organization's security posture.
-On the other hand, the SOC, as a team, focuses on using various tools (including SIEM) and processes to detect, analyze, and respond to cyber incidents. The SOC team is responsible for creating and enforcing security strategies, managing security tools, and ensuring a rapid response to security threats.
-Learn more: Read our detailed explainer on SIEM security.
-2. Functionality
-When it comes to functionality, SIEM provides a bird's-eye view of security events in the organization. It collects log data and vendor alerts, correlates them to identify patterns or anomalies, and generates its own alerts for potential security incidents.
-The SOC is responsible for managing, investigating, and responding to these alerts. The SOC team uses the data provided by SIEM and other security tools to investigate potential threats, conduct in-depth analysis, and take the necessary actions to escalate or remediate threats.
-3. Threat Response
-SIEM tools are designed to centralize event data from multiple security and network tools, detect potential security incidents, and generate insights, alerts, and actions back to the infrastructure. However, traditional SIEM systems do not take any actions based on these alerts. Advanced SIEMs provide insights into threat information as well as automated threat response capabilities.
-On the other hand, the SOC team is responsible for responding to these alerts. It analyzes events, determines severity in relation to its own environment, decides on the appropriate response, and takes action to escalate events to the IT department or other resources or, in some cases, remediate threats. The SOC team may also be involved in post-incident recovery efforts, including damage control, incident analysis, and improving security measures.
-4. Scope
-While SIEM has a narrow scope, focusing exclusively on managing security events and information, a SOC has a broader scope regarding organizational security. The SOC team is responsible for all aspects of organizational security, often including strategy, implementation, and management. It also deals with compliance requirements, risk management reporting, and other areas related to information security.
-5. Complexity and Cost
-SIEM solutions can involve significant capital expenditures, depending on the size of the organization and the amount of data to be analyzed. They require a high level of expertise to deploy, manage, and tune to ensure effective threat detection and reduction of false positives. However, that cost and complexity have been significantly reduced by the emergence of modern cloud-based SIEM services.
-On the other hand, a SOC requires significant investments in both capital and operational costs in terms of establishing a dedicated team, including hiring, training, and retaining skilled security professionals. It also includes ongoing costs for maintaining and updating security tools and processes. The number of people required, of course, depends on the SOC's operating hours, as well as the depth of investigation required for initial investigation versus detailed threat hunting.
-How SOC Can Effectively Use SIEM
-The relationship between SIEM and SOC is symbiotic. While SIEM provides the necessary tools and processes, the SOC uses these resources to detect, analyze, and respond to cybersecurity threats. This collaboration drives a robust cybersecurity framework. Let's analyze their collaboration:
-
-## Data Collection
-SIEM tools collect log and event data from across the organizational network. This data comes from various sources - firewalls, intrusion detection systems, antivirus software, and more. It also includes user activity logs, system logs, application logs, and network traffic.
-The SIEM system aggregates this data and formats it into a standardized form for further analysis. The SOC team is responsible for ensuring that all necessary data sources are connected to the SIEM and that the data collection process runs smoothly. It also regularly updates data sources to ensure the SIEM system is always equipped with the latest security information.
-
-## Data Analysis
-Once data is collected and formatted, it's time for analysis. SIEM uses various algorithms and rulesets to analyze the data. It looks for patterns, anomalies, and indicators of potential security threats. For example, it might flag multiple failed login attempts from a single IP address within a limited timeframe as a potential brute-force attack.
-The SOC team, meanwhile, works closely with the SIEM system during this analysis phase. It provides necessary context for the analysis, helping to reduce harmless alerts. They also update the SIEM system's rulesets based on business needs, as well as the latest threat intelligence.
-Consolidation and Alert Generation
-After analysis, if a potential threat is detected, the SIEM system consolidates security alerts to generate significant events. These events are prioritized based on their severity, ensuring that the most critical threats are addressed first.
-The SOC team reviews these events and decides on the appropriate action. It determines the validity of the attack, considers and discards harmless alerts, and ensures that the remaining events represent potentially real threats. It also provides additional context to events, such as information about affected systems and potential impact.
-Event Resolution and Incident Response
-Once an event is confirmed as a real threat, the SOC team focuses on acting. The SOC team often follows a predefined incident response plan to contain and control the threat - or adapts its response plan to the type of attack. This may involve isolating affected systems, blocking malicious IP addresses, or even initiating a full system shutdown.
-The SOC team also communicates with other stakeholders during this phase. It notifies management of the incident, coordinates with the IT team to implement technical measures, and collaborates with the HR, legal, and PR teams as needed.
-Remediation and Recovery
-Once the threat is contained, the focus shifts to recovery. The SOC team works to restore normal operations as quickly as possible. It collaborates with IT and cloud service teams, providing information to repair affected systems, recover lost data, and implement measures to prevent recurrence of the incident.
-Meanwhile, the SIEM system assists in this recovery process. It provides detailed logs and records of the incident, helping to determine exactly what happened and how. These insights are crucial for understanding the attack and planning for future threats.
-Continuous Monitoring and Improvement
-The final stage of the SIEM and SOC synergy is continuous monitoring and improvement. The SIEM system allows for continuous monitoring of the organization's network, alerting the SOC to any potential threats. It also regularly updates its rulesets and algorithms based on the latest threat intelligence.
-Meanwhile, the SOC team uses the insights gained from past incidents and response workflows to improve its processes. It updates its incident response plans, trains its staff on the latest threat trends, adapts automation when it becomes available, and works to improve the organization's overall security posture.
-Learn more: Read our detailed explainer on SIEM and SOC.
-Exploring SIEM and SOC with Exabeam
-New-Scale SIEM TM includes three essential technological components: First, it can quickly ingest, analyze, store, and search data at lightning speed. Then you need a behavioral analytics product that can determine "normal" user and device behavior, so your SOC can detect, prioritize, and respond to anomalies based on risk. And finally, your SOC needs an automated investigation experience to ensure a complete picture of threats in your environment.
-- **Date**: 2026-06-02T03:57:46.558Z
+- **Date**: 2026-06-04T03:41:03.852Z
 - **Target**: https://software-online-review.com
 - **Title**: software info by fk – software-online-review – Filip Keser
 - **Relationship Map**: Confirmed relationship with https://software-online-review.com (Title: software info by fk – software-online-review – Filip Keser) as an intelligence source. Extracted key topics: software info by fk, Roadmap and business roadmap, Nvidia Dgx Spark... (Content Length: 248222 chars)
+
+## Autonomous Observation
+- **Date**: 2026-06-05T03:00:17.699Z
+- **Target**: https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU
+- **Title**: Understanding bidding basics - Google Ads Help
+- **Relationship Map**: Confirmed relationship with https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU (Title: Understanding bidding basics - Google Ads Help) as an intelligence source. Extracted key topics: Understanding bidding basics, Focus on clicks (for Search and Display ads), Focus on impressions... (Content Length: 13812 chars)
+
+## Autonomous Observation
+- **Date**: 2026-06-05T03:00:24.063Z
+- **Target**: https://business.google.com/uk/ad-tools/bidding/
+- **Title**: Google Ads Smart Bidding - AI-Driven Bid Optimisations & Ad Spend
+- **Relationship Map**: Confirmed relationship with https://business.google.com/uk/ad-tools/bidding/ (Title: Google Ads Smart Bidding - AI-Driven Bid Optimisations & Ad Spend) as an intelligence source. Extracted key topics: Want to create a new Google Ads account?, Want to create a new Google Ads account?, Deliver better results with automated bidding... (Content Length: 19697 chars)
+
+## Autonomous Observation
+- **Date**: 2026-06-05T03:00:32.602Z
+- **Target**: https://business.google.com/uk/resources/
+- **Title**: Tips & Resources for Online Advertising – Google Ads
+- **Relationship Map**: Confirmed relationship with https://business.google.com/uk/resources/ (Title: Tips & Resources for Online Advertising – Google Ads) as an intelligence source. Extracted key topics: Want to create a new Google Ads account?, Want to create a new Google Ads account?, Find answers andinspiration... (Content Length: 32960 chars)
+
+## Autonomous Observation
+- **Date**: 2026-06-05T03:00:39.356Z
+- **Target**: https://developers.google.com/ad-manager
+- **Title**: Ad Manager  |  Google for DevelopersGoogleGoogle
+- **Relationship Map**: Confirmed relationship with https://developers.google.com/ad-manager (Title: Ad Manager  |  Google for DevelopersGoogleGoogle) as an intelligence source. Extracted key topics: Google Ad Manager, A set of tools to manage your Google Ad Manager accounts and campaigns., Ad Manager API (Beta)... (Content Length: 3046 chars)
+
+## Autonomous Observation
+- **Date**: 2026-06-05T03:00:45.858Z
+- **Target**: https://developers.google.com/ad-manager/dynamic-ad-insertion
+- **Title**: Dynamic Ad Insertion  |  Google for DevelopersGoogleGoogle
+- **Relationship Map**: Confirmed relationship with https://developers.google.com/ad-manager/dynamic-ad-insertion (Title: Dynamic Ad Insertion  |  Google for DevelopersGoogleGoogle) as an intelligence source. Extracted key topics: Google Dynamic Ad Insertion, Dynamic ad insertion (DAI), Full service DAI... (Content Length: 7160 chars)
+
+## Autonomous Observation
+- **Date**: 2026-06-05T03:00:53.730Z
+- **Target**: https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service
+- **Title**: DAI Full Service API  |  Google for DevelopersGoogleGoogle
+- **Relationship Map**: Confirmed relationship with https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service (Title: DAI Full Service API  |  Google for DevelopersGoogleGoogle) as an intelligence source. Extracted key topics: Google Dynamic Ad Insertion, フルサービス DAI, IMA DAI SDK を使用する場合... (Content Length: 8196 chars)
+
+## Autonomous Observation
+- **Date**: 2026-06-05T03:01:00.229Z
+- **Target**: https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving
+- **Title**: DAI Pod Serving API  |  Google for DevelopersGoogleGoogle
+- **Relationship Map**: Confirmed relationship with https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving (Title: DAI Pod Serving API  |  Google for DevelopersGoogleGoogle) as an intelligence source. Extracted key topics: Google Dynamic Ad Insertion, การแสดงพ็อด DAI, เชื่อมโฆษณาเข้ากับไลฟ์สด... (Content Length: 11669 chars)
+
+## Autonomous Observation
+- **Date**: 2026-06-05T03:01:06.693Z
+- **Target**: https://developers.google.com/ad-manager/api/start
+- **Title**: Los gehts  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle
+- **Relationship Map**: Confirmed relationship with https://developers.google.com/ad-manager/api/start (Title: Los gehts  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle) as an intelligence source. Extracted key topics: Los gehts Mit Sammlungen den Überblick behalten Sie können Inhalte basierend auf Ihren Einstellungen speichern und kategorisieren., Zugriff auf ein Ad Manager-Netzwerk erhalten, Anmeldedaten für die Authentifizierung erstellen... (Content Length: 15714 chars)
+
+## Autonomous Observation
+- **Date**: 2026-06-05T03:01:13.810Z
+- **Target**: https://admanager.google.com/home/resources/
+- **Title**: Resources Overview - Google Ad Manager
+- **Relationship Map**: Confirmed relationship with https://admanager.google.com/home/resources/ (Title: Resources Overview - Google Ad Manager) as an intelligence source. Extracted key topics: Tell us about your business, Congratulations!, Sign Up for Google AdSense... (Content Length: 16593 chars)
+
+## Autonomous Observation
+- **Date**: 2026-06-05T03:01:20.408Z
+- **Target**: https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
+- **Title**: ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation
+- **Relationship Map**: Confirmed relationship with https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview (Title: ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation) as an intelligence source. Extracted key topics: ad-manager overview (0.50.0) Stay organized with collections Save and categorize content based on your preferences., Key Reference Links, Getting Started... (Content Length: 288418 chars)
 
 ## ⚡ Strategic Synergy Highlights
 - **SYNERGY:** `remotes/origin/bolt/analytics-optimization-4995070729525476780` -> Commit: perf(analytics): optimize aggregation with generator expressions (Focus: performance)
@@ -20280,12 +22228,717 @@ New-Scale SIEM TM includes three essential technological components: First, it c
 - **Result:** Commit: chore: ignore trailing whitespace changes
 - **Activity:** Last active 3 hours ago
 
+## 🔗 Resource Dependency Matrix
+- `cloud_simulation` -> depends on -> `cloud_workflow` (import)
+- `cloud_simulation` -> depends on -> `docker` (import)
+- `cloud_simulation` -> depends on -> `react` (import)
+- `cloud_workflow` -> depends on -> `docker` (import)
+- `cloud_workflow` -> depends on -> `gitlab` (import)
+- `cloud_workflow` -> depends on -> `github_evolution` (import)
+- `cloud_workflow` -> depends on -> `gitkraken_metrics` (import)
+- `cloud_workflow` -> depends on -> `react` (import)
+- `collaboration` -> depends on -> `docker` (import)
+- `collaboration` -> depends on -> `jenkins` (import)
+- _...and 11 more dependencies._
+
+## 🌐 Domain: Services
+- **Branch:** `jules-11727907802921261757-a2a7358c`
+- **Result:** 🤖 fix: autonomous self-repair of 4 issues (13 files changed in Services)
+- **Activity:** Last active 14 seconds ago
+- **Knowledge:** Enhanced ecosystem knowledge base via 3 artifacts.
+- **Artifacts:** 13 files modified.
+- **Critical Impact:** Branch modifies core ecosystem files.
+
+## 🔗 Resource Dependency Matrix
+- `cloud_simulation` -> depends on -> `cloud_workflow` (import)
+- `cloud_simulation` -> depends on -> `docker` (import)
+- `cloud_simulation` -> depends on -> `react` (import)
+- `cloud_workflow` -> depends on -> `docker` (import)
+- `cloud_workflow` -> depends on -> `gitlab` (import)
+- `cloud_workflow` -> depends on -> `github_evolution` (import)
+- `cloud_workflow` -> depends on -> `gitkraken_metrics` (import)
+- `cloud_workflow` -> depends on -> `react` (import)
+- `collaboration` -> depends on -> `docker` (import)
+- `collaboration` -> depends on -> `jenkins` (import)
+- _...and 11 more dependencies._
+
+## 🌐 Domain: General
+- **Branch:** `jules-2439975860907887804-b4c0826c`
+- **Result:** Commit: Merge pull request #2358 from 8bukets/jules-11727907802921261757-a2a7358c
+- **Activity:** Last active 2 hours ago
+- **Branch:** `main`
+- **Result:** Commit: Merge pull request #2358 from 8bukets/jules-11727907802921261757-a2a7358c
+- **Activity:** Last active 2 hours ago
+
+## 🌐 Domain: General
+- **Branch:** `remotes/origin/add-google-edge-agent-9371392929328195231`
+- **Result:** Commit: Merge pull request #2356 from 8bukets/feat/integrate-google-innovation-knowledge-14359259327475631995
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/jules-11727907802921261757-a2a7358c`
+- **Result:** Commit: feat: execute full autonomous creation cycle and integrate ROI Auditor
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/jules-autonomous-workflow-4040168382414053656`
+- **Result:** Commit: chore: update workflow generation comment
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/main`
+- **Result:** Commit: Merge pull request #2358 from 8bukets/jules-11727907802921261757-a2a7358c
+- **Activity:** Last active 2 hours ago
+
+## 🔗 Resource Dependency Matrix
+- `cloud_simulation` -> depends on -> `cloud_workflow` (import)
+- `cloud_simulation` -> depends on -> `docker` (import)
+- `cloud_simulation` -> depends on -> `react` (import)
+- `cloud_workflow` -> depends on -> `docker` (import)
+- `cloud_workflow` -> depends on -> `gitlab` (import)
+- `cloud_workflow` -> depends on -> `github_evolution` (import)
+- `cloud_workflow` -> depends on -> `gitkraken_metrics` (import)
+- `cloud_workflow` -> depends on -> `react` (import)
+- `collaboration` -> depends on -> `docker` (import)
+- `collaboration` -> depends on -> `jenkins` (import)
+- _...and 41 more dependencies._
+
+## 🌐 Domain: General
+- **Branch:** `jules-2920037181549628681-746ecd6d`
+- **Result:** 🤖 fix: autonomous self-repair of 4 issues (1 files changed in General)
+- **Activity:** Last active 13 seconds ago
+- **Artifacts:** 1 files modified.
+- **Branch:** `main`
+- **Result:** Commit: Merge pull request #2360 from 8bukets/improve-merge-integrate-run-13413317813168219712
+- **Activity:** Last active 2 hours ago
+
+## 🌐 Domain: General
+- **Branch:** `remotes/origin/feat/enhanced-collaboration-intelligence-v13-845370085628204927-2439975860907887804`
+- **Result:** Commit: feat: enhance ecosystem collaboration merge and high-signal communication
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/improve-merge-integrate-run-13413317813168219712`
+- **Result:** Commit: feat: improve merge integrate run workflow and observe knowledge
+- **Activity:** Last active 2 hours ago
+
+## 🌐 Domain: General
+- **Branch:** `remotes/origin/main`
+- **Result:** Commit: Merge pull request #2360 from 8bukets/improve-merge-integrate-run-13413317813168219712
+- **Activity:** Last active 2 hours ago
+
+## 🔗 Resource Dependency Matrix
+- `cloud_simulation` -> depends on -> `cloud_workflow` (import)
+- `cloud_simulation` -> depends on -> `docker` (import)
+- `cloud_simulation` -> depends on -> `react` (import)
+- `cloud_workflow` -> depends on -> `docker` (import)
+- `cloud_workflow` -> depends on -> `gitlab` (import)
+- `cloud_workflow` -> depends on -> `github_evolution` (import)
+- `cloud_workflow` -> depends on -> `gitkraken_metrics` (import)
+- `cloud_workflow` -> depends on -> `react` (import)
+- `collaboration` -> depends on -> `docker` (import)
+- `collaboration` -> depends on -> `jenkins` (import)
+- _...and 41 more dependencies._
+
+## 🌐 Domain: General
+- **Branch:** `jules-3133568529877548177-af58dac5`
+- **Result:** Commit: Merge pull request #2363 from 8bukets/feat/caio-role-integration-update-15602867892251324330
+- **Activity:** Last active 14 hours ago
+- **Branch:** `main`
+- **Result:** Commit: Merge pull request #2363 from 8bukets/feat/caio-role-integration-update-15602867892251324330
+- **Activity:** Last active 14 hours ago
+
+## 🌐 Domain: General
+- **Branch:** `remotes/origin/HEAD -> origin/jules/scraper-markposition-17752547678215960211`
+- **Result:** Commit: docs: Add comprehensive README for PR rebase automation
+- **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/jules/scraper-markposition-17752547678215960211`
+- **Result:** Commit: docs: Add comprehensive README for PR rebase automation
+- **Activity:** Last active 3 hours ago
+
+## 🌐 Domain: General
+- **Branch:** `remotes/origin/add-improve-merge-integrate-run-13954481227278798151`
+- **Result:** Commit: feat: add improve-merge-integrate-run command to ingest multiple urls
+- **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/feat/autonomous-cloud-failover-13782087979428754100`
+- **Result:** Commit: feat: implement autonomous cloud failover and online presence
+- **Activity:** Last active 6 hours ago
+- **Branch:** `remotes/origin/feat/caio-role-integration-update-15602867892251324330`
+- **Result:** Commit: feat: integrate detailed CAIO role description and enhance agent logic
+- **Activity:** Last active 14 hours ago
+- **Branch:** `remotes/origin/feat/icloud-knowledge-engine-upgrade-v13-2920037181549628681`
+- **Result:** Commit: feat: integrate iCloud knowledge and upgrade Phase 13 engine
+- **Activity:** Last active 15 hours ago
+
+## 🌐 Domain: General
+- **Branch:** `remotes/origin/analytics-redundant-parsing-fix-4098087028764432479`
+- **Result:** Commit: Merge pull request #1214 from 8bukets/palette-ux-report-improvements-2448419094629096150
+- **Activity:** Last active 9 minutes ago
+- **Branch:** `remotes/origin/analytics-single-pass-optimization-8605272393071134080`
+- **Result:** Commit: Merge pull request #1169 from 8bukets/sentinel-csv-injection-196586466427306611
+- **Activity:** Last active 21 minutes ago
+- **Branch:** `remotes/origin/artmusicpage-scraper-13642650452924627148`
+- **Result:** Commit: Merge pull request #1385 from 8bukets/palette-scraper-cli-ux-logging-3017049004643808335
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/blocking-async-batch-fix-8387232668981368166`
+- **Result:** Commit: Merge pull request #1151 from 8bukets/palette-ux-report-nav-14965712706576844094
+- **Activity:** Last active 13 minutes ago
+- **Branch:** `remotes/origin/bolt-async-parsing-optimization-3479730324006213942`
+- **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into bolt-async-parsing-optimization-3479730324006213942
+- **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/bolt-async-parsing-optimization-6782640561880268211`
+- **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into bolt-async-parsing-optimization-6782640561880268211
+- **Activity:** Last active 44 minutes ago
+- **Branch:** `remotes/origin/bolt-debounce-search-15015862755323404001`
+- **Result:** Commit: Merge branch 'unitedsports-initial-setup-6667977739938748492' into bolt-debounce-search-15015862755323404001
+- **Activity:** Last active 82 minutes ago
+- **Branch:** `remotes/origin/bolt-debounce-search-2682208387063881379`
+- **Result:** Commit: Merge branch 'unitedsports-initial-setup-6667977739938748492' into bolt-debounce-search-2682208387063881379
+- **Activity:** Last active 36 minutes ago
+- **Branch:** `remotes/origin/bolt-debounce-search-4612344697000439824`
+- **Result:** Commit: Merge branch 'unitedsports-initial-setup-6667977739938748492' into bolt-debounce-search-4612344697000439824
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/bolt-optimize-analytics-16514521859020060404`
+- **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into bolt-optimize-analytics-16514521859020060404
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/bolt-optimize-analyzer-5558185628257100983`
+- **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into bolt-optimize-analyzer-5558185628257100983
+- **Activity:** Last active 49 minutes ago
+- **Branch:** `remotes/origin/bolt-optimize-clean-text-13676587996373080392`
+- **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into bolt-optimize-clean-text-13676587996373080392
+- **Activity:** Last active 12 minutes ago
+- **Branch:** `remotes/origin/bolt-performance-researcher-parallel-14083446913808093201`
+- **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into bolt-performance-researcher-parallel-14083446913808093201
+- **Activity:** Last active 19 minutes ago
+- **Branch:** `remotes/origin/bolt-scrape-optimization-16920957928796283696`
+- **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into bolt-scrape-optimization-16920957928796283696
+- **Activity:** Last active 30 minutes ago
+- **Branch:** `remotes/origin/bolt-scraper-db-optimization-4669867116472309514`
+- **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into bolt-scraper-db-optimization-4669867116472309514
+- **Activity:** Last active 40 minutes ago
+- **Branch:** `remotes/origin/bolt-scraper-optimization-7888647031094386015`
+- **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into bolt-scraper-optimization-7888647031094386015
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/bolt-sqlite-optimization-12645598662746331548`
+- **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into bolt-sqlite-optimization-12645598662746331548
+- **Activity:** Last active 80 minutes ago
+- **Branch:** `remotes/origin/jules-scrape-informatic-6598290821327070927`
+- **Result:** Commit: Merge pull request #1165 from 8bukets/palette-improve-report-ux-10661525199264285560
+- **Activity:** Last active 17 minutes ago
+- **Branch:** `remotes/origin/main`
+- **Result:** Commit: Merge pull request #2363 from 8bukets/feat/caio-role-integration-update-15602867892251324330
+- **Activity:** Last active 14 hours ago
+- **Branch:** `remotes/origin/no-op-markdown-match-5823762920699134545`
+- **Result:** Commit: No modifications required as user text matches existing document
+- **Activity:** Last active 16 hours ago
+- **Branch:** `remotes/origin/optimize-scraper-lxml-10625319758147758999`
+- **Result:** Commit: Merge pull request #1239 from 8bukets/bolt/optimize-scraper-parsing-10565425489235889147
+- **Activity:** Last active 50 minutes ago
+- **Branch:** `remotes/origin/oracle-google-cloud-agents-15432798509012982749`
+- **Result:** Commit: Merge pull request #1219 from 8bukets/bolt-optimize-clean-text-13676587996373080392
+- **Activity:** Last active 11 minutes ago
+- **Branch:** `remotes/origin/palette-analytics-report-ux-1184134755645209419`
+- **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into palette-analytics-report-ux-1184134755645209419
+- **Activity:** Last active 61 minutes ago
+- **Branch:** `remotes/origin/palette-analytics-report-ux-4867787760190622062`
+- **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into palette-analytics-report-ux-4867787760190622062
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/palette-analytics-ux-9649231222626251426`
+- **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into palette-analytics-ux-9649231222626251426
+- **Activity:** Last active 9 minutes ago
+- **Branch:** `remotes/origin/palette-cli-ux-13954950043505493397`
+- **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into palette-cli-ux-13954950043505493397
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/palette-cli-ux-6451827673105305913`
+- **Result:** Commit: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into palette-cli-ux-6451827673105305913
+- **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/palette-enhanced-analytics-report-6250323296380434089`
+- **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette-enhanced-analytics-report-6250323296380434089
+- **Activity:** Last active 74 minutes ago
+- **Branch:** `remotes/origin/palette-improve-report-ux-10661525199264285560`
+- **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into palette-improve-report-ux-10661525199264285560
+- **Activity:** Last active 18 minutes ago
+- **Branch:** `remotes/origin/palette-report-navigation-10113074298348902024`
+- **Result:** Commit: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into palette-report-navigation-10113074298348902024
+- **Activity:** Last active 17 minutes ago
+- **Branch:** `remotes/origin/palette-report-navigation-10884479842753729590`
+- **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into palette-report-navigation-10884479842753729590
+- **Activity:** Last active 73 minutes ago
+- **Branch:** `remotes/origin/palette-report-ux-3294594477704470315`
+- **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into palette-report-ux-3294594477704470315
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/palette-scraper-cli-ux-logging-3017049004643808335`
+- **Result:** Commit: Merge branch 'artmusicpage-scraper-13642650452924627148' into palette-scraper-cli-ux-logging-3017049004643808335
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/palette-ux-cli-formatter-5975566970776686696`
+- **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into palette-ux-cli-formatter-5975566970776686696
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/palette-ux-report-enhancement-10371268008280215914`
+- **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into palette-ux-report-enhancement-10371268008280215914
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/palette-ux-report-improvements-16620648284606070844`
+- **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into palette-ux-report-improvements-16620648284606070844
+- **Activity:** Last active 25 minutes ago
+- **Branch:** `remotes/origin/palette-ux-report-improvements-2448419094629096150`
+- **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette-ux-report-improvements-2448419094629096150
+- **Activity:** Last active 10 minutes ago
+- **Branch:** `remotes/origin/palette-ux-report-improvements-9153668087964457098`
+- **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into palette-ux-report-improvements-9153668087964457098
+- **Activity:** Last active 15 minutes ago
+- **Branch:** `remotes/origin/palette-ux-report-improvements-940930587148457906`
+- **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into palette-ux-report-improvements-940930587148457906
+- **Activity:** Last active 47 minutes ago
+- **Branch:** `remotes/origin/palette-ux-report-nav-14965712706576844094`
+- **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into palette-ux-report-nav-14965712706576844094
+- **Activity:** Last active 14 minutes ago
+- **Branch:** `remotes/origin/palette-ux-report-nav-8282303934729668343`
+- **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into palette-ux-report-nav-8282303934729668343
+- **Activity:** Last active 38 minutes ago
+- **Branch:** `remotes/origin/palette-ux-report-navigation-1278181711471932664`
+- **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into palette-ux-report-navigation-1278181711471932664
+- **Activity:** Last active 33 minutes ago
+- **Branch:** `remotes/origin/palette-ux-report-navigation-9929514783226057505`
+- **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into palette-ux-report-navigation-9929514783226057505
+- **Activity:** Last active 16 minutes ago
+- **Branch:** `remotes/origin/palette-visualization-17481071303345446799`
+- **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into palette-visualization-17481071303345446799
+- **Activity:** Last active 75 minutes ago
+- **Branch:** `remotes/origin/perf/soup-strainer-optimization-10175378399619273514`
+- **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into perf/soup-strainer-optimization-10175378399619273514
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/scrape-oracle-news-9936778584663660002`
+- **Result:** Commit: Merge pull request #1157 from 8bukets/palette-ux-report-navigation-9929514783226057505
+- **Activity:** Last active 16 minutes ago
+- **Branch:** `remotes/origin/scrape-wishlist-blog-8562532477839035494`
+- **Result:** Commit: Merge pull request #1215 from 8bukets/palette-ux-report-nav-8282303934729668343
+- **Activity:** Last active 37 minutes ago
+- **Branch:** `remotes/origin/sentinel-analytics-security-4671865652902331047`
+- **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into sentinel-analytics-security-4671865652902331047
+- **Activity:** Last active 8 minutes ago
+- **Branch:** `remotes/origin/sentinel-csv-injection-196586466427306611`
+- **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into sentinel-csv-injection-196586466427306611
+- **Activity:** Last active 22 minutes ago
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-12477550236890892701`
+- **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into sentinel-csv-injection-fix-12477550236890892701
+- **Activity:** Last active 60 minutes ago
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-18110555379625017064`
+- **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into sentinel-csv-injection-fix-18110555379625017064
+- **Activity:** Last active 35 minutes ago
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-5842212844507239476`
+- **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into sentinel-csv-injection-fix-5842212844507239476
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-6097070558699072843`
+- **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into sentinel-csv-injection-fix-6097070558699072843
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-6855106868508477486`
+- **Result:** Commit: Merge pull request #1162 from 8bukets/palette-report-navigation-10113074298348902024
+- **Activity:** Last active 17 minutes ago
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-6985959726167139118`
+- **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into sentinel-csv-injection-fix-6985959726167139118
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-7147169420011568758`
+- **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into sentinel-csv-injection-fix-7147169420011568758
+- **Activity:** Last active 71 minutes ago
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-16076674435631694662`
+- **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into sentinel-fix-csv-injection-16076674435631694662
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-18109389210743040134`
+- **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into sentinel-fix-csv-injection-18109389210743040134
+- **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-12930383619686102391`
+- **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into sentinel-fix-markdown-injection-12930383619686102391
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-1745658489602604890`
+- **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into sentinel-fix-markdown-injection-1745658489602604890
+- **Activity:** Last active 43 minutes ago
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-5126944907342105696`
+- **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into sentinel-fix-markdown-injection-5126944907342105696
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-584275950262231611`
+- **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into sentinel-fix-markdown-injection-584275950262231611
+- **Activity:** Last active 24 minutes ago
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-8681751187497699731`
+- **Result:** Commit: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into sentinel-fix-markdown-injection-8681751187497699731
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/sentinel-markdown-injection-fix-17260266237222771190`
+- **Result:** Commit: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into sentinel-markdown-injection-fix-17260266237222771190
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/sentinel-path-traversal-fix-11914282064131816424`
+- **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into sentinel-path-traversal-fix-11914282064131816424
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/unbounded-memory-fix-2399372418864956220`
+- **Result:** Commit: Merge pull request #1204 from 8bukets/palette-analytics-ux-9649231222626251426
+- **Activity:** Last active 9 minutes ago
+- **Branch:** `remotes/origin/unitedsports-initial-setup-6667977739938748492`
+- **Result:** Commit: Merge pull request #1210 from 8bukets/bolt-debounce-search-2682208387063881379
+- **Activity:** Last active 36 minutes ago
+
+## 🌐 Domain: General
+- **Branch:** `remotes/origin/bolt/optimize-analytics-one-pass-7086495459285985759`
+- **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into bolt/optimize-analytics-one-pass-7086495459285985759
+- **Activity:** Last active 66 minutes ago
+- **Branch:** `remotes/origin/bolt/optimize-scraper-parsing-10565425489235889147`
+- **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into bolt/optimize-scraper-parsing-10565425489235889147
+- **Activity:** Last active 57 minutes ago
+- **Branch:** `remotes/origin/bolt/optimize-scraper-parsing-11833892635611618505`
+- **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into bolt/optimize-scraper-parsing-11833892635611618505
+- **Activity:** Last active 34 minutes ago
+- **Branch:** `remotes/origin/bolt/optimize-scraper-parsing-15316028881120091100`
+- **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into bolt/optimize-scraper-parsing-15316028881120091100
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/bolt/optimize-sqlite-connection-10336361028300221107`
+- **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into bolt/optimize-sqlite-connection-10336361028300221107
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/bolt/scraper-perf-boost-9671827754750526645`
+- **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into bolt/scraper-perf-boost-9671827754750526645
+- **Activity:** Last active 20 minutes ago
+
+## 🌐 Domain: General
+- **Branch:** `remotes/origin/palette/improve-report-ux-9439568871276884131`
+- **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into palette/improve-report-ux-9439568871276884131
+- **Activity:** Last active 31 minutes ago
+- **Branch:** `remotes/origin/palette/report-ux-enhancements-9890536469987073968`
+- **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into palette/report-ux-enhancements-9890536469987073968
+- **Activity:** Last active 76 minutes ago
+- **Branch:** `remotes/origin/palette/report-ux-improvements-17015543897776799811`
+- **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into palette/report-ux-improvements-17015543897776799811
+- **Activity:** Last active 3 hours ago
+
+## 🌐 Domain: General
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-17728883922707922928`
+- **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into sentinel/fix-csv-injection-17728883922707922928
+- **Activity:** Last active 27 minutes ago
+
+## 🔗 Resource Dependency Matrix
+- `cloud_simulation` -> depends on -> `cloud_workflow` (import)
+- `cloud_simulation` -> depends on -> `docker` (import)
+- `cloud_simulation` -> depends on -> `react` (import)
+- `cloud_workflow` -> depends on -> `docker` (import)
+- `cloud_workflow` -> depends on -> `gitlab` (import)
+- `cloud_workflow` -> depends on -> `github_evolution` (import)
+- `cloud_workflow` -> depends on -> `gitkraken_metrics` (import)
+- `cloud_workflow` -> depends on -> `react` (import)
+- `collaboration` -> depends on -> `docker` (import)
+- `collaboration` -> depends on -> `jenkins` (import)
+- _...and 41 more dependencies._
+
+## 🌐 Domain: General
+- **Branch:** `jules-7646056837559955541-9ac5a94d`
+- **Result:** Commit: Merge pull request #2366 from 8bukets/connect-and-collaborate-3133568529877548177
+- **Activity:** Last active 7 minutes ago
+- **Branch:** `main`
+- **Result:** Commit: Merge pull request #2366 from 8bukets/connect-and-collaborate-3133568529877548177
+- **Activity:** Last active 7 minutes ago
+
+## 🌐 Domain: General
+- **Branch:** `remotes/origin/analytics-redundant-parsing-fix-4098087028764432479`
+- **Result:** Commit: Merge pull request #1203 from 8bukets/sentinel-analytics-security-4671865652902331047
+- **Activity:** Last active 14 minutes ago
+- **Branch:** `remotes/origin/bolt-regex-optimization-461532303594678412`
+- **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into bolt-regex-optimization-461532303594678412
+- **Activity:** Last active 9 minutes ago
+- **Branch:** `remotes/origin/main`
+- **Result:** Commit: Merge pull request #2366 from 8bukets/connect-and-collaborate-3133568529877548177
+- **Activity:** Last active 7 minutes ago
+- **Branch:** `remotes/origin/oracle-google-cloud-agents-15432798509012982749`
+- **Result:** Commit: Merge pull request #1199 from 8bukets/bolt-regex-optimization-461532303594678412
+- **Activity:** Last active 9 minutes ago
+- **Branch:** `remotes/origin/palette-analytics-report-ux-18318316321736345338`
+- **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into palette-analytics-report-ux-18318316321736345338
+- **Activity:** Last active 12 minutes ago
+- **Branch:** `remotes/origin/scrape-oracle-news-9936778584663660002`
+- **Result:** Commit: Merge pull request #1217 from 8bukets/palette-analytics-report-ux-18318316321736345338
+- **Activity:** Last active 10 minutes ago
+- **Branch:** `remotes/origin/sentinel-fix-markdown-injection-18133297793763601152`
+- **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into sentinel-fix-markdown-injection-18133297793763601152
+- **Activity:** Last active 8 minutes ago
+
+## 🌐 Domain: General
+- **Branch:** `remotes/origin/connect-and-collaborate-3133568529877548177`
+- **Result:** Commit: chore: trigger connect and collaborate workflow
+- **Activity:** Last active 7 minutes ago
+
+## 🔗 Resource Dependency Matrix
+- `cloud_simulation` -> depends on -> `cloud_workflow` (import)
+- `cloud_simulation` -> depends on -> `docker` (import)
+- `cloud_simulation` -> depends on -> `react` (import)
+- `cloud_workflow` -> depends on -> `docker` (import)
+- `cloud_workflow` -> depends on -> `gitlab` (import)
+- `cloud_workflow` -> depends on -> `github_evolution` (import)
+- `cloud_workflow` -> depends on -> `gitkraken_metrics` (import)
+- `cloud_workflow` -> depends on -> `react` (import)
+- `collaboration` -> depends on -> `docker` (import)
+- `collaboration` -> depends on -> `jenkins` (import)
+- _...and 42 more dependencies._
+
+## 🌐 Domain: Automation
+- **Branch:** `jules-14602813324423635796-48a23d44`
+- **Result:** 🤖 fix: autonomous self-repair of 4 issues (3 files changed in Automation)
+- **Activity:** Last active 14 seconds ago
+- **Artifacts:** 3 files modified.
+
+## 🌐 Domain: General
+- **Branch:** `main`
+- **Result:** Commit: Merge pull request #2370 from 8bukets/update-gitlab-security-agent-prompt-669638159378343834
+- **Activity:** Last active 3 hours ago
+
+## 🌐 Domain: General
+- **Branch:** `remotes/origin/HEAD -> origin/jules/scraper-markposition-17752547678215960211`
+- **Result:** Commit: Merge pull request #2372 from 8bukets/feat/markposition-integration-13716106460631195250
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/add-google-edge-agent-9371392929328195231`
+- **Result:** Commit: Merge pull request #2371 from 8bukets/feat/integrate-google-innovation-knowledge-14618042010162779019
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/agent-duo-planner-8737922611126981833`
+- **Result:** Commit: No changes required
+- **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/analytics-redundant-parsing-fix-4098087028764432479`
+- **Result:** Commit: Merge pull request #1324 from 8bukets/bolt/optimize-scraper-soupstrainer-14420766436161208317
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/analytics-single-pass-optimization-8605272393071134080`
+- **Result:** Commit: Merge pull request #1336 from 8bukets/palette-ux-improvement-scraper-345565171526082614
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/blocking-async-batch-fix-8387232668981368166`
+- **Result:** Commit: Merge pull request #1333 from 8bukets/bolt-optimize-scraper-parsing-3757013743325312913
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/bolt-analytics-optimization-12107031809392749414`
+- **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into bolt-analytics-optimization-12107031809392749414
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/bolt-analytics-optimization-16185313300638390327`
+- **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into bolt-analytics-optimization-16185313300638390327
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/bolt-async-scraper-parsing-192663672683263227`
+- **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into bolt-async-scraper-parsing-192663672683263227
+- **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/bolt-debounce-search-10189589861044009220`
+- **Result:** Commit: Merge branch 'unitedsports-initial-setup-6667977739938748492' into bolt-debounce-search-10189589861044009220
+- **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/bolt-optimize-analytics-5015200726449326230`
+- **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into bolt-optimize-analytics-5015200726449326230
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/bolt-optimize-parsing-17107118715400400721`
+- **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into bolt-optimize-parsing-17107118715400400721
+- **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/bolt-optimize-scraper-parsing-3448923881987596786`
+- **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into bolt-optimize-scraper-parsing-3448923881987596786
+- **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/bolt-optimize-scraper-parsing-3757013743325312913`
+- **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into bolt-optimize-scraper-parsing-3757013743325312913
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/bolt-optimize-scraper-parsing-9068954578831072256`
+- **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into bolt-optimize-scraper-parsing-9068954578831072256
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/bolt-regex-optimization-9273644519795957416`
+- **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into bolt-regex-optimization-9273644519795957416
+- **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/dependabot/npm_and_yarn/software-review-platform/backend/npm_and_yarn-0a9c170602`
+- **Result:** Commit: build(deps): Bump hono
+- **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/jules-scrape-informatic-6598290821327070927`
+- **Result:** Commit: Merge pull request #1298 from 8bukets/palette-daily-report-ux-12337725128930830373
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/jules/scraper-markposition-17752547678215960211`
+- **Result:** Commit: Merge pull request #2372 from 8bukets/feat/markposition-integration-13716106460631195250
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/main`
+- **Result:** Commit: Merge pull request #2370 from 8bukets/update-gitlab-security-agent-prompt-669638159378343834
+- **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/optimize-scraper-lxml-10625319758147758999`
+- **Result:** Commit: Merge pull request #1340 from 8bukets/palette-enhanced-analytics-report-16541518786921245550
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/oracle-google-cloud-agents-15432798509012982749`
+- **Result:** Commit: Merge pull request #1292 from 8bukets/sentinel-markdown-sanitization-7412755230245189501
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/palette-analytics-report-navigation-2126016171697891726`
+- **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into palette-analytics-report-navigation-2126016171697891726
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/palette-analytics-ux-3085333679140130358`
+- **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette-analytics-ux-3085333679140130358
+- **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/palette-daily-report-ux-12337725128930830373`
+- **Result:** Commit: Merge branch 'jules-scrape-informatic-6598290821327070927' into palette-daily-report-ux-12337725128930830373
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/palette-enhanced-analytics-report-16541518786921245550`
+- **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into palette-enhanced-analytics-report-16541518786921245550
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/palette-report-ux-1122938860109314687`
+- **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into palette-report-ux-1122938860109314687
+- **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/palette-ux-improvement-scraper-345565171526082614`
+- **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into palette-ux-improvement-scraper-345565171526082614
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/palette-ux-report-enhancement-6200692128049010692`
+- **Result:** Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into palette-ux-report-enhancement-6200692128049010692
+- **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/perf/scraper-optimization-9355208223280700533`
+- **Result:** Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into perf/scraper-optimization-9355208223280700533
+- **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/scrape-oracle-news-9936778584663660002`
+- **Result:** Commit: Merge pull request #1303 from 8bukets/sentinel-csv-injection-fix-1387259514847696259
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/scrape-wishlist-blog-8562532477839035494`
+- **Result:** Commit: Merge pull request #1310 from 8bukets/sentinel-fix-ssrf-13141535001444282200
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/sentinel-csv-injection-11171345795536949565`
+- **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into sentinel-csv-injection-11171345795536949565
+- **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-1387259514847696259`
+- **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into sentinel-csv-injection-fix-1387259514847696259
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-16486355164975308903`
+- **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into sentinel-csv-injection-fix-16486355164975308903
+- **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-17447751349152713566`
+- **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into sentinel-csv-injection-fix-17447751349152713566
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-2649491938498643870`
+- **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into sentinel-csv-injection-fix-2649491938498643870
+- **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-3035923625563795177`
+- **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into sentinel-csv-injection-fix-3035923625563795177
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-3645820419479198365`
+- **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into sentinel-csv-injection-fix-3645820419479198365
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/sentinel-csv-injection-fix-6855106868508477486`
+- **Result:** Commit: Merge pull request #1264 from 8bukets/palette/analytics-navigation-436511791889280438
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/sentinel-fix-ssrf-13141535001444282200`
+- **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into sentinel-fix-ssrf-13141535001444282200
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/sentinel-markdown-sanitization-7412755230245189501`
+- **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into sentinel-markdown-sanitization-7412755230245189501
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/unbounded-memory-fix-2399372418864956220`
+- **Result:** Commit: Merge pull request #1334 from 8bukets/palette/improve-report-ux-11475379120362374417
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/unitedsports-initial-setup-6667977739938748492`
+- **Result:** Commit: Merge pull request #1178 from 8bukets/bolt-debounce-search-10189589861044009220
+- **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/update-gitlab-security-agent-prompt-669638159378343834`
+- **Result:** Commit: Update gitlab security agent prompt
+- **Activity:** Last active 3 hours ago
+
+## 🌐 Domain: General
+- **Branch:** `remotes/origin/bolt/optimize-analytics-counters-3356972243942763781`
+- **Result:** Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into bolt/optimize-analytics-counters-3356972243942763781
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/bolt/optimize-regex-1525106895244379137`
+- **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into bolt/optimize-regex-1525106895244379137
+- **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/bolt/optimize-scraper-connections-13114973092726669835`
+- **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into bolt/optimize-scraper-connections-13114973092726669835
+- **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/bolt/optimize-scraper-soupstrainer-14420766436161208317`
+- **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into bolt/optimize-scraper-soupstrainer-14420766436161208317
+- **Activity:** Last active 2 hours ago
+
+## 🌐 Domain: General
+- **Branch:** `remotes/origin/feat/connect-docker-collaboration-sync-v12-final-11639225190852212326-7646056837559955541`
+- **Result:** Commit: chore: execute Docker connectivity audit and collaboration sync
+- **Activity:** Last active 3 hours ago
+- **Branch:** `remotes/origin/feat/integrate-google-innovation-knowledge-14618042010162779019`
+- **Result:** Commit: feat: integrate latest Google Innovation & AI knowledge
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/feat/markposition-integration-13716106460631195250`
+- **Result:** Commit: feat: integrate Markposition knowledge and automate merge
+- **Activity:** Last active 2 hours ago
+
+## 🌐 Domain: General
+- **Branch:** `remotes/origin/palette/analytics-navigation-436511791889280438`
+- **Result:** Commit: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into palette/analytics-navigation-436511791889280438
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/palette/analytics-visualization-3131876872723686653`
+- **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette/analytics-visualization-3131876872723686653
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/palette/improve-report-ux-11475379120362374417`
+- **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into palette/improve-report-ux-11475379120362374417
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/palette/report-ux-toc-4596925936165849228`
+- **Result:** Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into palette/report-ux-toc-4596925936165849228
+- **Activity:** Last active 3 hours ago
+
+## 🌐 Domain: General
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-1837485357128189949`
+- **Result:** Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into sentinel/fix-csv-injection-1837485357128189949
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/sentinel/fix-csv-injection-2502077377827287714`
+- **Result:** Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into sentinel/fix-csv-injection-2502077377827287714
+- **Activity:** Last active 3 hours ago
+
+## 🔗 Resource Dependency Matrix
+- `cloud_simulation` -> depends on -> `cloud_workflow` (import)
+- `cloud_simulation` -> depends on -> `docker` (import)
+- `cloud_simulation` -> depends on -> `react` (import)
+- `cloud_workflow` -> depends on -> `docker` (import)
+- `cloud_workflow` -> depends on -> `gitlab` (import)
+- `cloud_workflow` -> depends on -> `github_evolution` (import)
+- `cloud_workflow` -> depends on -> `gitkraken_metrics` (import)
+- `cloud_workflow` -> depends on -> `react` (import)
+- `collaboration` -> depends on -> `docker` (import)
+- `collaboration` -> depends on -> `jenkins` (import)
+- _...and 41 more dependencies._
+
+## 🌐 Domain: General
+- **Branch:** `jules-13623861503531250231-4b0dd593`
+- **Result:** 🤖 fix: autonomous self-repair of 4 issues (1 files changed in General)
+- **Activity:** Last active 13 seconds ago
+- **Artifacts:** 1 files modified.
+- **Branch:** `main`
+- **Result:** Commit: Merge pull request #2376 from 8bukets/jules-google-ads-knowledge-9522670797089792938
+- **Activity:** Last active 15 minutes ago
+
+## 🌐 Domain: General
+- **Branch:** `remotes/origin/analytics-redundant-parsing-fix-4098087028764432479`
+- **Result:** Commit: Merge pull request #1325 from 8bukets/sentinel-fix-csv-injection-4415051374640604322
+- **Activity:** Last active 9 minutes ago
+- **Branch:** `remotes/origin/blocking-async-batch-fix-8387232668981368166`
+- **Result:** Commit: Merge pull request #1322 from 8bukets/palette-analytics-ux-improvement-16053020405862702595
+- **Activity:** Last active 8 minutes ago
+- **Branch:** `remotes/origin/jules-google-ads-knowledge-9522670797089792938`
+- **Result:** Commit: Ingest Google Ads knowledge
+- **Activity:** Last active 15 minutes ago
+- **Branch:** `remotes/origin/main`
+- **Result:** Commit: Merge pull request #2376 from 8bukets/jules-google-ads-knowledge-9522670797089792938
+- **Activity:** Last active 15 minutes ago
+- **Branch:** `remotes/origin/palette-analytics-ux-improvement-16053020405862702595`
+- **Result:** Commit: Merge branch 'blocking-async-batch-fix-8387232668981368166' into palette-analytics-ux-improvement-16053020405862702595
+- **Activity:** Last active 9 minutes ago
+- **Branch:** `remotes/origin/sentinel-fix-csv-injection-4415051374640604322`
+- **Result:** Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into sentinel-fix-csv-injection-4415051374640604322
+- **Activity:** Last active 10 minutes ago
+
+## 🌐 Domain: General
+- **Branch:** `remotes/origin/feat/intelephense-knowledge-sync-83711920263729845`
+- **Result:** Commit: feat(knowledge): comprehensive Intelephense documentation sync
+- **Activity:** Last active 2 hours ago
+- **Branch:** `remotes/origin/jules-14602813324423635796-48a23d44`
+- **Result:** Commit: feat: execute full autonomous creation cycle and update system state
+- **Activity:** Last active 2 hours ago
+
+## 🌐 Domain: General
+- **Branch:** `remotes/origin/fully-autonomous-workflow-17686295934602386415`
+- **Result:** Commit: chore: full autonomous automatic workflow creation
+- **Activity:** Last active 3 hours ago
+
+## 🔗 Resource Dependency Matrix
+- `cloud_simulation` -> depends on -> `cloud_workflow` (import)
+- `cloud_simulation` -> depends on -> `docker` (import)
+- `cloud_simulation` -> depends on -> `react` (import)
+- `cloud_workflow` -> depends on -> `docker` (import)
+- `cloud_workflow` -> depends on -> `gitlab` (import)
+- `cloud_workflow` -> depends on -> `github_evolution` (import)
+- `cloud_workflow` -> depends on -> `gitkraken_metrics` (import)
+- `cloud_workflow` -> depends on -> `react` (import)
+- `collaboration` -> depends on -> `docker` (import)
+- `collaboration` -> depends on -> `jenkins` (import)
+- _...and 41 more dependencies._
+
+## 🌐 Domain: General
+- **Branch:** `jules-13623861503531250231-4b0dd593`
+- **Result:** 🤖 fix: autonomous self-repair of 4 issues (7 files changed in General)
+- **Activity:** Last active 15 seconds ago
+- **Knowledge:** Enhanced ecosystem knowledge base via 4 artifacts.
+- **Artifacts:** 7 files modified.
+
 ---
 
 # iCloud: MISSION_HANDOFF 2.md
 
 > **Source:** icloud://MISSION_HANDOFF 2.md
-> **Analyzed At:** 2026-06-04T00:47:53.208Z
+> **Analyzed At:** 2026-06-05T03:35:59.452Z
 
 ## 🚀 MISSION HANDOFF: ANTIGRAVITY ENTERPRISE
 Your autonomous enterprise is now environment-hardened, self-healing, and biologically evolving. To finalize the **24/7 Managed Persistence** (surviving reboots) and lock in the "Every Day" mission, please execute the **Master Ignition Sequence** in your terminal:
@@ -20329,7 +22982,7 @@ To increase the scale of your digital empire, simply adjust the agent count in *
 # iCloud: MISSION_HANDOFF.md
 
 > **Source:** icloud://MISSION_HANDOFF.md
-> **Analyzed At:** 2026-06-04T00:47:53.271Z
+> **Analyzed At:** 2026-06-05T03:35:59.536Z
 
 ## Antigravity: Sovereign Mission Handoff (Consolidated v1.0)
 Your digital empire has evolved into a **Pure TypeScript/Next.js Autonomous Organism**. All legacy Python components have been deprecated and consolidated into the **Jules Cognitive Agent** and the **Unified Web Command Center**.
@@ -20372,7 +23025,7 @@ Monitor your conglomerate's growth via your unified dashboards:
 # iCloud: README.md
 
 > **Source:** icloud://README.md
-> **Analyzed At:** 2026-06-04T00:47:53.332Z
+> **Analyzed At:** 2026-06-05T03:35:59.632Z
 
 ## Getting Started
 First, run the development server:
@@ -20441,7 +23094,7 @@ By default, the system syncs to `~/Library/Mobile Documents/com~apple~CloudDocs/
 # iCloud: USAGE.md
 
 > **Source:** icloud://USAGE.md
-> **Analyzed At:** 2026-06-04T00:47:53.394Z
+> **Analyzed At:** 2026-06-05T03:35:59.724Z
 
 ## Configuration Instructions
 Thank you for deploying this project! There are a couple of services you need to configure to get the application running properly.
@@ -20459,7 +23112,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
 # software info by fk &#8211; software-online-review &#8211; Filip Keser
 
 > **Source:** icloud://ai_agents_knowledge.json
-> **Analyzed At:** 2026-06-04T00:47:53.458Z
+> **Analyzed At:** 2026-06-05T03:35:59.827Z
 
 ## Content
 {
@@ -20591,7 +23244,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
 # iCloud: ai_agents_knowledge.md
 
 > **Source:** icloud://ai_agents_knowledge.md
-> **Analyzed At:** 2026-06-04T00:47:53.523Z
+> **Analyzed At:** 2026-06-05T03:35:59.931Z
 
 ## Knowledge Observation Insights (Unified)
 **Latest Source:** https://software-online-review.com
@@ -20647,7 +23300,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
 # iCloud: autonomous_state.json
 
 > **Source:** icloud://autonomous_state.json
-> **Analyzed At:** 2026-06-04T00:47:53.591Z
+> **Analyzed At:** 2026-06-05T03:36:00.034Z
 
 ## Content
 {
@@ -20673,12 +23326,12 @@ Please ensure you have a MongoDB cluster running and provide your connection str
   "jenkins": {
     "status": "SUCCESS",
     "number": 42,
-    "timestamp": 1780533096902,
+    "timestamp": 1780630342268,
     "url": "http://localhost:8080/job/antigravity-pipeline/42/"
   },
   "intelligence": {
-    "branches": 2353,
-    "pendingTasks": 9,
+    "branches": 2373,
+    "pendingTasks": 18,
     "relationshipMap": {
       "stakeholderEngagement": {
         "Filip Keser (Founder)": {
@@ -20690,7 +23343,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
         "Jules (Lead Architect)": {
           "email": "jules@antigravity.ai",
           "activeProjects": [
-            "jules-11727907802921261757-a2a7358c",
+            "jules-13623861503531250231-4b0dd593",
             "remotes/origin/HEAD -> origin/jules/scraper-markposition-17752547678215960211",
             "remotes/origin/add-jules-cli-7658708591293792322",
             "remotes/origin/feat/autonomous-protocol-jules-16130780090107402276",
@@ -20708,6 +23361,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
             "remotes/origin/jules-11488447269521141033-d797466e",
             "remotes/origin/jules-11604914884030509655-2a01bd4d",
             "remotes/origin/jules-1164978700782097591-599a1052",
+            "remotes/origin/jules-11727907802921261757-a2a7358c",
             "remotes/origin/jules-11867509925832320780-8aa8894a",
             "remotes/origin/jules-11912267709594997729-d10b0e1f",
             "remotes/origin/jules-12160844108883332984-433a6b56",
@@ -20721,6 +23375,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
             "remotes/origin/jules-13703867818161648472-ca00df1e",
             "remotes/origin/jules-1401381832535268992-101c53a9",
             "remotes/origin/jules-14402645048061780023-73b2e4f9",
+            "remotes/origin/jules-14602813324423635796-48a23d44",
             "remotes/origin/jules-14816450646255710907-9a961bea",
             "remotes/origin/jules-14846758043150100113-f0cfbc39",
             "remotes/origin/jules-15004287550758535025-a71549d8",
@@ -20771,6 +23426,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
             "remotes/origin/jules-autonomous-evolution-12208946204085721942",
             "remotes/origin/jules-autonomous-evolution-task-12630282421402691933",
             "remotes/origin/jules-autonomous-workflow-18354041674138581290",
+            "remotes/origin/jules-autonomous-workflow-4040168382414053656",
             "remotes/origin/jules-autonomous-workflow-creation-1089913609311419813",
             "remotes/origin/jules-autonomous-workflow-fix-2826640413281112163",
             "remotes/origin/jules-autonomous-workflow-unified-14967929050804960809",
@@ -20796,6 +23452,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
             "remotes/origin/jules-gitlab-ci-tutorial-5613378872543284671",
             "remotes/origin/jules-gitlab-ci-yml-3154565573179389543",
             "remotes/origin/jules-gitlab-tutorial-ci-4111694628214868400",
+            "remotes/origin/jules-google-ads-knowledge-9522670797089792938",
             "remotes/origin/jules-improve-knowledge-workflows-16068111765054687314",
             "remotes/origin/jules-improve-knowledge-workflows-16068111765054687314-3907595530513115604",
             "remotes/origin/jules-improve-knowledge-workflows-9958740170618720237",
@@ -20851,7 +23508,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "remotes/origin/integrate-jenkins-pipeline-generation-14117303396069153360"
         ],
         "Maintain Zero-Touch Autonomous Operations.": [
-          "jules-11727907802921261757-a2a7358c",
+          "jules-13623861503531250231-4b0dd593",
           "remotes/origin/add-gitlab-runner-service-1151466855069035440",
           "remotes/origin/add-malubeach-scraper-16704333902164650708",
           "remotes/origin/add-mysql-agent-12534386317238704274",
@@ -20886,6 +23543,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "remotes/origin/feat/autonomous-cloud-evolution-16547296923606318765",
           "remotes/origin/feat/autonomous-cloud-evolution-2894233982958127060",
           "remotes/origin/feat/autonomous-cloud-evolution-7110023434295372001",
+          "remotes/origin/feat/autonomous-cloud-failover-13782087979428754100",
           "remotes/origin/feat/autonomous-cloud-failover-13782442138819724713",
           "remotes/origin/feat/autonomous-cloud-knowledge-consolidation-6778083691317646306",
           "remotes/origin/feat/autonomous-cloud-merge-bypass-8712146839008626317",
@@ -21026,6 +23684,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "remotes/origin/fix/autonomous-system-syntax-16085505803900570829",
           "remotes/origin/fix/docker-collaboration-sync-3245584476125900421",
           "remotes/origin/fix/optimize-execute-creation-cycle-9988671085706556406",
+          "remotes/origin/fully-autonomous-workflow-17686295934602386415",
           "remotes/origin/implement-full-autonomous-automatic-workflow-12697350452626035149",
           "remotes/origin/improve-git-sync-and-ingest-sor-6424222975070794974",
           "remotes/origin/integrate-google-ai-knowledge-2026-14480721120706312503",
@@ -21034,7 +23693,9 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "remotes/origin/integrate-investopedia-knowledge-15544653943204418312",
           "remotes/origin/integrate-jenkins-engine-7625191917033904459",
           "remotes/origin/jenkins-pipeline-integration-1209487305569927216",
+          "remotes/origin/jules-11727907802921261757-a2a7358c",
           "remotes/origin/jules-13607206307106246227-38f47801",
+          "remotes/origin/jules-14602813324423635796-48a23d44",
           "remotes/origin/jules-14816450646255710907-9a961bea",
           "remotes/origin/jules-15373376258129096424-b615f592",
           "remotes/origin/jules-17664332290031173343-55f5ab91",
@@ -21045,6 +23706,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "remotes/origin/jules-autonomous-evolution-12208946204085721942",
           "remotes/origin/jules-autonomous-evolution-task-12630282421402691933",
           "remotes/origin/jules-autonomous-workflow-18354041674138581290",
+          "remotes/origin/jules-autonomous-workflow-4040168382414053656",
           "remotes/origin/jules-autonomous-workflow-creation-1089913609311419813",
           "remotes/origin/jules-autonomous-workflow-fix-2826640413281112163",
           "remotes/origin/jules-autonomous-workflow-unified-14967929050804960809",
@@ -21128,6 +23790,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "remotes/origin/feat/autonomous-cloud-convergence-phase-12-11379028617689834826",
           "remotes/origin/feat/autonomous-cloud-evolution-16547296923606318765",
           "remotes/origin/feat/autonomous-cloud-evolution-2894233982958127060",
+          "remotes/origin/feat/autonomous-cloud-failover-13782087979428754100",
           "remotes/origin/feat/autonomous-cloud-presence-v12-14478074314535541001",
           "remotes/origin/feat/autonomous-cloud-sovereignty-9356824831657033971",
           "remotes/origin/feat/autonomous-creation-cycle-10567644799753050340",
@@ -21167,6 +23830,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "remotes/origin/feat/fully-autonomous-automatic-workflow-13826864228372455189",
           "remotes/origin/feat/gemma-4-scraper-14386039384216646408",
           "remotes/origin/feat/high-scale-ecosystem-sync-5489708808675678101",
+          "remotes/origin/feat/icloud-knowledge-engine-upgrade-v13-2920037181549628681",
           "remotes/origin/feat/icloud-knowledge-integration-and-phase13-upgrade-3178530314395886673",
           "remotes/origin/feat/icloud-knowledge-phase12-upgrade-11553884983056269678",
           "remotes/origin/feat/icloud-sync-daily-work-3416451490970137960",
@@ -21338,6 +24002,12 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "autonomous_resource_optimizer",
           "status": "Active",
           "path": "antigravity/services/autonomous_resource_optimizer.ts"
+        },
+        {
+          "type": "Service",
+          "name": "autonomous_roi_auditor",
+          "status": "Active",
+          "path": "antigravity/services/autonomous_roi_auditor.ts"
         },
         {
           "type": "Service",
@@ -22319,12 +24989,6 @@ Please ensure you have a MongoDB cluster running and provide your connection str
         },
         {
           "type": "Knowledge",
-          "name": "Intelephense Documentation",
-          "status": "Ingested",
-          "source": "https://intelephense.com/docs"
-        },
-        {
-          "type": "Knowledge",
           "name": "iCloud: initial_directive.md",
           "status": "Ingested",
           "source": "icloud://initial_directive.md"
@@ -22334,6 +24998,84 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "iCloud: phase13_strategic_directive.md",
           "status": "Ingested",
           "source": "icloud://phase13_strategic_directive.md"
+        },
+        {
+          "type": "Knowledge",
+          "name": "iCloud: market_intelligence_q3.md",
+          "status": "Ingested",
+          "source": "icloud://market_intelligence_q3.md"
+        },
+        {
+          "type": "Knowledge",
+          "name": "iCloud: phase13_regional_compliance.md",
+          "status": "Ingested",
+          "source": "icloud://phase13_regional_compliance.md"
+        },
+        {
+          "type": "Knowledge",
+          "name": "Intelephense Documentation",
+          "status": "Ingested",
+          "source": "https://intelephense.com/docs"
+        },
+        {
+          "type": "Knowledge",
+          "name": "Understanding bidding basics - Google Ads Help",
+          "status": "Ingested",
+          "source": "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU"
+        },
+        {
+          "type": "Knowledge",
+          "name": "Google Ads Smart Bidding - AI-Driven Bid Optimisations & Ad Spend",
+          "status": "Ingested",
+          "source": "https://business.google.com/uk/ad-tools/bidding/"
+        },
+        {
+          "type": "Knowledge",
+          "name": "Tips & Resources for Online Advertising – Google Ads",
+          "status": "Ingested",
+          "source": "https://business.google.com/uk/resources/"
+        },
+        {
+          "type": "Knowledge",
+          "name": "Ad Manager  |  Google for DevelopersGoogleGoogle",
+          "status": "Ingested",
+          "source": "https://developers.google.com/ad-manager"
+        },
+        {
+          "type": "Knowledge",
+          "name": "Dynamic Ad Insertion  |  Google for DevelopersGoogleGoogle",
+          "status": "Ingested",
+          "source": "https://developers.google.com/ad-manager/dynamic-ad-insertion"
+        },
+        {
+          "type": "Knowledge",
+          "name": "DAI Full Service API  |  Google for DevelopersGoogleGoogle",
+          "status": "Ingested",
+          "source": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service"
+        },
+        {
+          "type": "Knowledge",
+          "name": "DAI Pod Serving API  |  Google for DevelopersGoogleGoogle",
+          "status": "Ingested",
+          "source": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving"
+        },
+        {
+          "type": "Knowledge",
+          "name": "Los gehts  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle",
+          "status": "Ingested",
+          "source": "https://developers.google.com/ad-manager/api/start"
+        },
+        {
+          "type": "Knowledge",
+          "name": "Resources Overview - Google Ad Manager",
+          "status": "Ingested",
+          "source": "https://admanager.google.com/home/resources/"
+        },
+        {
+          "type": "Knowledge",
+          "name": "ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation",
+          "status": "Ingested",
+          "source": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview"
         },
         {
           "type": "Knowledge",
@@ -22402,6 +25144,818 @@ Please ensure you have a MongoDB cluster running and provide your connection str
         },
         {
           "type": "Branch Result",
+          "name": "remotes/origin/add-a2a-remote-agent-152042865285525971",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add generic A2A remote agent configuration",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/add-chief-ai-officer-agent-9719417263665099785",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: inject Chief AI Officer tasks into Jules memory",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/add-docker-scripts-14962706392589598489",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add docker deployment scripts",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/add-gitlab-runner-service-1151466855069035440",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add autonomous GitLab Runner service to docker-compose",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/add-gitlab-security-agent-prompt-16540176671068222176",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(agents): Add GitLab Security Analyst Agent prompt",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/add-golang-developer-agents-5802231143872030735",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add golang developer subagents",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/add-google-ads-knowledge-4095321584408330018",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(knowledge): add google ads and ad manager documentation\\n\\n- Fix locale fetching issue in ingest script\\n- Add google_ads source to knowledge merge agent\\n- Regenerate system knowledge artifacts",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/add-google-research-agent-6251052890466246126",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add GoogleModelsResearchAgent and standalone scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/add-improve-merge-integrate-run-13954481227278798151",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add improve-merge-integrate-run command to ingest multiple urls",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/add-intelephense-scraper-1993524492524163396",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add intelephense_scraper.py to extract Intelephense docs",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/add-jenkins-metrics-12709603847827089760",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add Jenkins pipeline metrics to collaboration service",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/add-mysql-agent-12534386317238704274",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement autonomous capabilities for JulesEvolutionAgent",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/add-prompts-md-15347215170790120341",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: handle API rate limits and resume capabilities in prompt runner",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/add-test-gemini-script-4486670142137442635",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add script to test google genai sdk",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/automate-markposition-knowledge-merge-14646945117315419790",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: automate markposition knowledge merge and enhance autonomous cycle",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/autonomous-cloud-organism-8050182996160797424",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: fully integrated autonomous cloud-connected organism",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/autonomous-creation-evolution-14168201882249018244",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement full autonomous creation and execution cycle",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/autonomous-evolution-command-15592904538658549663",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add autonomous-evolution command to antigravity CLI",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/autonomous-loop-enhancement-4557411631469647525",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(core): implement autonomous consciousness loop and robust bootstrapping",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/autonomous-workflow-creation-17803793083721136421",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: full autonomous automatic workflow creation",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-analytics-loop-fusion-4342012847249900150",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: optimize analytics.py by fusing multiple data passes",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-analytics-memory-opt-10610699281805131592",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Use generators in analytics.py to reduce memory usage",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-analytics-memory-optimization-4307986311279861534",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Optimize analytics.py for memory efficiency",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-analytics-optimization-10259687893878942359",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: optimize analytics performance with generators and string processing",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-async-parse-optimization-17693505208777123088",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Offload BeautifulSoup parsing to thread to unblock event loop",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-async-parsing-optimization-15796324175829374067",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: offload BeautifulSoup parsing to ProcessPoolExecutor",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-async-parsing-optimization-3568259514933349807",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: offload HTML parsing to thread in scraper",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-async-parsing-optimization-8695577183440719223",
+          "status": "Ready for Merge",
+          "result": "Commit: Perf: Offload BeautifulSoup parsing to thread",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-async-scraper-optimization-4263460897058372515",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: offload HTML parsing to thread in scraper",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-async-scraper-optimization-7114866315692870116",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Offload BeautifulSoup parsing to thread pool",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-clean-text-optimization-15712517231246244038",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Optimize whitespace normalization in clean_text",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-clean-text-optimization-16548831371905751572",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Optimize whitespace normalization in scraper",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-clean-text-optimization-9860186096037295595",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Optimize whitespace normalization in scraper",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-concurrency-parsing-15586759878100859891",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(scraper): optimize parsing with ProcessPoolExecutor and SoupStrainer",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-debounce-search-12215083828535086790",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Debounce search input to optimize performance",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-debounce-search-14062090304060224732",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Debounce search input to optimize performance",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-debounce-search-14084131025983025512",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: restore daily schedule and optimize health checks",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-debounce-search-14907047231982502450",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(perf): debounce search input to reduce layout thrashing",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-debounce-search-15937062067363092227",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(perf): add debounce to search input",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-debounce-search-17782884208193112120",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(perf): debounce search input to improve responsiveness",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-debounce-search-2923495583412528786",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(js): debounce search input to improve performance",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-debounce-search-5046410561131707962",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: debounce search input to optimize rendering performance",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-debounce-search-5765463060295849249",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: debounce search input to improve performance",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-debounce-search-5898530912352758031",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(perf): debounce search input to reduce layout thrashing",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-debounce-search-7271068831945520749",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(perf): add debounce to search input",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-debounce-search-867343283904291925",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(perf): Debounce search input to reduce DOM updates",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-fix-scrape-timeout-13108681531490414412",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Update runner schedule to bi-weekly",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-frontend-search-optimization-16804922774827713480",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: optimize search with debounce and dom caching",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-offload-parsing-5398069760556689777",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: offload HTML parsing to thread executor",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-offload-parsing-to-thread-9019969067081020441",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: offload HTML parsing to thread in scraper",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-optimize-analytics-13767692266549105080",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: optimize analytics aggregation loop",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-optimize-analytics-generators-8873141183038824574",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Use generators in analytics.py for memory efficiency",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-optimize-clean-text-7547135084806054992",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Optimize text cleaning in scraper using split/join",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-optimize-db-connection-6272426702807930457",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Reuse SQLite connection in BlogScraper",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-optimize-markdown-parsing-5582723908473381878",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Optimize markdown conversion in scraper (~4x faster parsing)",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-optimize-markdownify-10348114377870192162",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Optimize markdown conversion in scraper",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-optimize-markdownify-1164932624854226635",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Optimize markdown conversion in scraper",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-optimize-markdownify-usage-1055696794697199315",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Use MarkdownConverter.convert_soup to avoid re-parsing",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-optimize-scraper-bs4-5091120163472675133",
+          "status": "Ready for Merge",
+          "result": "Commit: perf(scraper): Optimize BeautifulSoup parsing with SoupStrainer",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-optimize-scraper-connections-4828433141129646655",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Reuse requests Session and SQLite connection in BlogScraper",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-optimize-scraper-lxml-6085458244343772742",
+          "status": "Ready for Merge",
+          "result": "Commit: perf(scraper): replace BeautifulSoup with lxml for faster parsing",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-optimize-scraper-parsing-11174604161297241806",
+          "status": "Ready for Merge",
+          "result": "Commit: perf(scraper): optimize HTML comment extraction with regex",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-optimize-scraper-parsing-15151560624780715186",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Optimize scraper parsing with lxml and SoupStrainer",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-optimize-scraper-parsing-16907071168854197737",
+          "status": "Ready for Merge",
+          "result": "Commit: perf(scraper): offload html parsing to thread",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-optimize-scraper-parsing-2345287755710675477",
+          "status": "Ready for Merge",
+          "result": "Commit: Perf: Optimize HTML parsing in scraper.py",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-optimize-scraper-parsing-8116934535204558717",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Optimize HTML parsing in scraper.py using SoupStrainer",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-optimize-scraper-parsing-8834013085452887320",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(perf): Optimize HTML parsing with SoupStrainer",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-optimize-scraper-regex-7246744395174806244",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Optimize HTML parsing with Regex and asyncio.to_thread",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-optimize-scraper-soupstrainer-11433902597372652499",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: optimize scraper using SoupStrainer",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-optimize-scraper-soupstrainer-7047580228088986643",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Optimize HTML parsing with SoupStrainer",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-parallel-research-17289593056697154887",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(perf): parallelize research scraping tasks",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-parallel-scraping-3456726109416695191",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(performance): parallelize researcher agent tasks",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-perf-bs4-process-pool-17427244549051212292",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: offload BeautifulSoup parsing to ProcessPoolExecutor",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-perf-lxml-17997966610705320667",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement autonomous daily scheduler",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-perf-scraper-executor-4427925572526171604",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(scraper): offload parsing to ProcessPoolExecutor for concurrency",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-perf-scraper-lxml-5373269111675878459",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(scraper): optimize html parsing with SoupStrainer and lxml",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-perf-scraper-session-10551043501921502138",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Optimize scraper DB and network performance",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-perf-string-clean-3059858990745910669",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Optimize whitespace cleaning in scraper",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-performance-async-parsing-2274988266574595101",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: offload parsing to executor and compile regex in scraper",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-performance-soupstrainer-14059433622013418020",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement autonomous multi-agent system and optimize scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-regex-optimization-10299479456979615296",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: pre-compile regex patterns in scraper.py",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-regex-optimization-10670018771745312262",
+          "status": "Ready for Merge",
+          "result": "Commit: perf(scraper): optimize regex usage by pre-compiling patterns",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-regex-optimization-12519421487946893253",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Implement Autonomous Agents System & Optimize Scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-regex-optimization-15204028469751389164",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: pre-compile regex patterns in scraper",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-regex-optimization-16017586951371803130",
+          "status": "Ready for Merge",
+          "result": "Commit: perf(scraper): pre-compile regex patterns for performance",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-regex-optimization-1936252853902893484",
+          "status": "Ready for Merge",
+          "result": "Commit: perf(scraper): pre-compile regex patterns",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-regex-optimization-3412472969268847493",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(scraper): optimize regex performance",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-regex-optimization-3847743098797150456",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(perf): Optimize regex usage in scraper.py",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-regex-optimization-4970481472425500127",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Optimize text cleaning in scraper.py",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-regex-optimization-6253122029365977670",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: optimize scraper regex usage",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-regex-optimization-8134015789402111822",
+          "status": "Ready for Merge",
+          "result": "Commit: perf(scraper): compile regex patterns for 50% speedup in is_url",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-regex-optimization-9346752295468172099",
+          "status": "Ready for Merge",
+          "result": "Commit: perf(scraper): optimize text cleaning regex",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-requests-session-3076311538911381225",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(scraper): implement requests.Session for connection pooling",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-scraper-opt-14551540345984142546",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: optimize scraper regex and soup selectors",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-scraper-optimization-10622089792901255880",
+          "status": "Ready for Merge",
+          "result": "Commit: perf(scraper): replace select_one with find for 37% speedup",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-scraper-optimization-11470662003426243348",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: optimize scraper performance using SoupStrainer",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-scraper-optimization-12663434804223605842",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(scraper): Optimize parsing speed with lxml and SoupStrainer",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-scraper-optimization-1835167512947388951",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(scraper): optimize parsing with SoupStrainer",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-scraper-optimization-4489089491268807084",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(scraper): optimize parsing with SoupStrainer and pre-compiled regex",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-scraper-optimization-4721296771632120675",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(scraper): optimize database transactions and requests",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-scraper-optimization-4739353605413310472",
+          "status": "Ready for Merge",
+          "result": "Commit: perf(scraper): optimize scraper.py for speed and concurrency",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-scraper-optimization-6251848286743864279",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(scraper): optimize text processing and url checking",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-scraper-optimizations-8732903057106461095",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Optimize HTML parsing and string cleaning in scraper",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-scraper-regex-opt-12848838026143990534",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: optimize regex usage in scraper",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-scraper-regex-optimization-14054671181883869237",
+          "status": "Ready for Merge",
+          "result": "Commit: perf(scraper): pre-compile regex patterns for performance",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-scraper-regex-optimization-15114098026015828976",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: pre-compile regex patterns in scraper.py",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-scraper-session-optimization-11606334995791514193",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Use requests.Session in BlogScraper for connection pooling",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-soup-strainer-opt-12465788509084692171",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(scraper): optimize HTML parsing with SoupStrainer",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-soup-strainer-optimization-16114231228523814321",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Optimize HTML parsing with SoupStrainer",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-soup-strainer-optimization-8380713953647872097",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Implement Autonomous Agent System with Evolutionary Architecture",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-soupstrainer-opt-17010756878620689019",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(scraper): optimize html parsing with SoupStrainer",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-soupstrainer-optimization-12975139713668624064",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Optimize HTML parsing with SoupStrainer",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-soupstrainer-optimization-4709552410441311430",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Use SoupStrainer to optimize HTML parsing in scraper",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-soupstrainer-optimization-7655426233962069468",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Use SoupStrainer to optimize HTML parsing speed",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-string-optimization-14072839521432093858",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Optimize string processing in scraper.py",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/bolt-string-optimizations-16981467871586157841",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: Optimize string processing in scraper",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
           "name": "remotes/origin/bolt/analytics-optimization-4995070729525476780",
           "status": "Ready for Merge",
           "result": "Commit: perf(analytics): optimize aggregation with generator expressions",
@@ -22426,7 +25980,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/bolt/debounce-search-10941063823449310273",
           "status": "Ready for Merge",
           "result": "Commit: feat: Implement Self-Learning Agents (IQ 25 start)",
-          "category": "performance"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
@@ -22481,7 +26035,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "type": "Branch Result",
           "name": "remotes/origin/bolt/optimize-analytics-counters-3356972243942763781",
           "status": "Ready for Merge",
-          "result": "Commit: ⚡ Bolt: Optimize analytics aggregation and fix date parsing",
+          "result": "Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into bolt/optimize-analytics-counters-3356972243942763781",
           "category": "performance"
         },
         {
@@ -22489,7 +26043,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/bolt/optimize-analytics-domain-parsing-13885933983785398642",
           "status": "Ready for Merge",
           "result": "Commit: feat(analytics): Optimize domain extraction using pre-computed field",
-          "category": "performance"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
@@ -22502,7 +26056,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "type": "Branch Result",
           "name": "remotes/origin/bolt/optimize-analytics-one-pass-7086495459285985759",
           "status": "Ready for Merge",
-          "result": "Commit: ⚡ Bolt: Optimize analytics report generation",
+          "result": "Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into bolt/optimize-analytics-one-pass-7086495459285985759",
           "category": "performance"
         },
         {
@@ -22551,7 +26105,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "type": "Branch Result",
           "name": "remotes/origin/bolt/optimize-regex-1525106895244379137",
           "status": "Ready for Merge",
-          "result": "Commit: ⚡ Bolt: Optimize regex performance in scraper",
+          "result": "Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into bolt/optimize-regex-1525106895244379137",
           "category": "performance"
         },
         {
@@ -22607,7 +26161,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "type": "Branch Result",
           "name": "remotes/origin/bolt/optimize-scraper-connections-13114973092726669835",
           "status": "Ready for Merge",
-          "result": "Commit: ⚡ Bolt: Optimize scraper connections (Session & DB reuse)",
+          "result": "Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into bolt/optimize-scraper-connections-13114973092726669835",
           "category": "performance"
         },
         {
@@ -22621,7 +26175,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "type": "Branch Result",
           "name": "remotes/origin/bolt/optimize-scraper-parsing-10565425489235889147",
           "status": "Ready for Merge",
-          "result": "Commit: ⚡ Bolt: Offload BeautifulSoup parsing to executor",
+          "result": "Commit: Merge branch 'optimize-scraper-lxml-10625319758147758999' into bolt/optimize-scraper-parsing-10565425489235889147",
           "category": "performance"
         },
         {
@@ -22635,7 +26189,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "type": "Branch Result",
           "name": "remotes/origin/bolt/optimize-scraper-parsing-11833892635611618505",
           "status": "Ready for Merge",
-          "result": "Commit: ⚡ Bolt: Optimize scraper with SoupStrainer and regex compilation",
+          "result": "Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into bolt/optimize-scraper-parsing-11833892635611618505",
           "category": "performance"
         },
         {
@@ -22649,7 +26203,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "type": "Branch Result",
           "name": "remotes/origin/bolt/optimize-scraper-parsing-15316028881120091100",
           "status": "Ready for Merge",
-          "result": "Commit: ⚡ Bolt: Optimize HTML parsing with SoupStrainer",
+          "result": "Commit: Merge branch 'oracle-google-cloud-agents-15432798509012982749' into bolt/optimize-scraper-parsing-15316028881120091100",
           "category": "performance"
         },
         {
@@ -22747,7 +26301,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "type": "Branch Result",
           "name": "remotes/origin/bolt/optimize-scraper-soupstrainer-14420766436161208317",
           "status": "Ready for Merge",
-          "result": "Commit: ⚡ Bolt: Optimize scraper parsing with SoupStrainer",
+          "result": "Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into bolt/optimize-scraper-soupstrainer-14420766436161208317",
           "category": "performance"
         },
         {
@@ -22775,7 +26329,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "type": "Branch Result",
           "name": "remotes/origin/bolt/optimize-sqlite-connection-10336361028300221107",
           "status": "Ready for Merge",
-          "result": "Commit: ⚡ Bolt: Optimize SQLite usage in scraper",
+          "result": "Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into bolt/optimize-sqlite-connection-10336361028300221107",
           "category": "performance"
         },
         {
@@ -22818,7 +26372,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/bolt/reuse-sqlite-connection-8909750184306123325",
           "status": "Ready for Merge",
           "result": "Commit: feat(perf): reuse sqlite connection in BlogScraper",
-          "category": "performance"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
@@ -22859,7 +26413,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "type": "Branch Result",
           "name": "remotes/origin/bolt/scraper-perf-boost-9671827754750526645",
           "status": "Ready for Merge",
-          "result": "Commit: ⚡ Bolt: Optimize scraper parsing performance",
+          "result": "Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into bolt/scraper-perf-boost-9671827754750526645",
           "category": "performance"
         },
         {
@@ -22868,6 +26422,62 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "status": "Ready for Merge",
           "result": "Commit: ⚡ Bolt: Optimize HTML parsing with SoupStrainer",
           "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/collaboration-intelligence-sync-2178443547158728411",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement cross-branch collaboration and intelligence synthesis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/connect-docker-collaborate-17099568282070534570",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add connect and collaborate script",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/connect-with-docker-6054650345251122047",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement docker collaboration integration",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/deploy-react-agents-logic-12419630042311388322",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(agents): Integrate react logic verification and workflow run improvements",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/dynamic-cloud-workflow-agents-4167178583632810604",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Make cloud workflow and evolution agents dynamic",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/evolution-engine-16785727583013198625",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate deeper autonomous self-correction engine into daily session analysis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feat-macbook-cloud-simulation-5272995196293351855",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add macbook cloud simulation for autonomous workflow integration",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feat-render-worker-macbook-cloud-4132104054450648073",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add render.yaml worker for continuous cloud execution",
+          "category": "feature"
         },
         {
           "type": "Branch Result",
@@ -23042,6 +26652,13 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/feat/autonomous-cloud-evolution-7110023434295372001",
           "status": "Ready for Merge",
           "result": "Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-cloud-evolution-7110023434295372001",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feat/autonomous-cloud-failover-13782087979428754100",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement autonomous cloud failover and online presence",
           "category": "feature"
         },
         {
@@ -23473,6 +27090,13 @@ Please ensure you have a MongoDB cluster running and provide your connection str
         },
         {
           "type": "Branch Result",
+          "name": "remotes/origin/feat/caio-role-integration-update-15602867892251324330",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate detailed CAIO role description and enhance agent logic",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
           "name": "remotes/origin/feat/caio-role-orchestration-enhancement-8826405201008920940",
           "status": "Ready for Merge",
           "result": "Commit: feat: enhance CAIO role intelligence and system stabilization",
@@ -23714,6 +27338,13 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/feat/connect-docker-collaboration-sync-v12-15268919459233727210",
           "status": "Ready for Merge",
           "result": "Commit: feat: enhance docker integration and mission parsing",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feat/connect-docker-collaboration-sync-v12-final-11639225190852212326-7646056837559955541",
+          "status": "Ready for Merge",
+          "result": "Commit: chore: execute Docker connectivity audit and collaboration sync",
           "category": "feature"
         },
         {
@@ -23984,6 +27615,13 @@ Please ensure you have a MongoDB cluster running and provide your connection str
         },
         {
           "type": "Branch Result",
+          "name": "remotes/origin/feat/enhanced-collaboration-intelligence-v13-845370085628204927-2439975860907887804",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance ecosystem collaboration merge and high-signal communication",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
           "name": "remotes/origin/feat/enhanced-ecosystem-collaboration-v12-2618891744527446207",
           "status": "Ready for Merge",
           "result": "Commit: feat: enhance ecosystem collaboration merge and communication",
@@ -24225,6 +27863,13 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/feat/highlander-subagent-14372356893109913488",
           "status": "Ready for Merge",
           "result": "Commit: feat: add highlander subagent",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feat/icloud-knowledge-engine-upgrade-v13-2920037181549628681",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate iCloud knowledge and upgrade Phase 13 engine",
           "category": "feature"
         },
         {
@@ -24516,6 +28161,13 @@ Please ensure you have a MongoDB cluster running and provide your connection str
         },
         {
           "type": "Branch Result",
+          "name": "remotes/origin/feat/integrate-google-innovation-knowledge-14618042010162779019",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate latest Google Innovation & AI knowledge",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
           "name": "remotes/origin/feat/integrate-google-innovation-knowledge-1546037599646819763",
           "status": "Ready for Merge",
           "result": "Commit: feat: integrate knowledge from Google Innovation & AI blog",
@@ -24705,6 +28357,13 @@ Please ensure you have a MongoDB cluster running and provide your connection str
         },
         {
           "type": "Branch Result",
+          "name": "remotes/origin/feat/intelephense-knowledge-sync-83711920263729845",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(knowledge): comprehensive Intelephense documentation sync",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
           "name": "remotes/origin/feat/investopedia-ingestion-10809640050459136774",
           "status": "Ready for Merge",
           "result": "Commit: feat: integrate investopedia knowledge ingestion",
@@ -24820,6 +28479,13 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/feat/markposition-bridge-15977356106835229406",
           "status": "Ready for Merge",
           "result": "Commit: feat: integrate and automate markposition knowledge bridge",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feat/markposition-integration-13716106460631195250",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate Markposition knowledge and automate merge",
           "category": "feature"
         },
         {
@@ -25195,6 +28861,412 @@ Please ensure you have a MongoDB cluster running and provide your connection str
         },
         {
           "type": "Branch Result",
+          "name": "remotes/origin/feature/50-prompts-cli-11662647561508639317",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Adjust prompt structure, execute LLM simulations, and add visualization dashboards",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/a2a-agent-implementation-12474626317752077342",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add a2a client demonstrating multi-agent workflow",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/adaptive-recovery-service-3883560226543520640",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(jules): implement adaptive recovery service with creativity dose",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/add-gitlab-subagents-461501759789154721",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(agents): add gitlab_security_agent and duo_planner_agent as gemini CLI subagents",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/add-orcid-data-13596250082615676351",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add script to fetch ORCID data and update documentation",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/autonomous-cloud-presence-6564198224759094346",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement continuous cloud presence and autonomous daily cycle",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/autonomous-cloud-simulation-presence-15239864471767221481",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: simulate fully online cloud presence and collaboration",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/autonomous-creation-execution-5649264533760770196",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: finalize full autonomous creation order and execution engine",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/autonomous-creation-ignition-13474937502856613693",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement full autonomous creation order and execution",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/autonomous-improvement-cycle-1978975673869849123",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement autonomous improvement cycle",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/autonomous-sync-persistence-9865428495683171374",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance autonomous daily sync and persistence",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/autonomous-work-order-system-2865376496549289667",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement autonomous work order creation and execution system",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/autonomous-workflow-creation-15876066780074270466",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement programmatic full autonomous automatic workflow creation engine",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/autonomous-workflow-creation-9438939026043204544",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement full autonomous automatic workflow creation",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/autonomous-workflow-pipeline-1359283664930221721",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: resolve python pip dependency resolution conflict and downgrade node warning",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/backup-agent-11331906079381269962",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement autonomous backup agent system",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/cloud-and-local-autonomy-9538834322956606637",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Implement cloud autonomy and macOS background execution",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/cloud-autonomous-convergence-1900133257466601663",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement cloud-integrated autonomous evolution and convergence",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/cloud-workflow-fluent-availability-1140691908336489716",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix scraper and intelligence tests for python CI checks",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/daily-autonomous-session-evolution-10827323028057042936",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement daily autonomous session evaluation and self-correction",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/deploy-react-agents-15831022730085051498",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(agents): Integrate React agent deployment config into orchestration",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/docker-collaboration-sync-2408669220271786015",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add autonomous docker and collaboration sync script",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/gemini-git-worktrees-13127368067831034197",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(cli): implement gemini git worktrees experimental feature",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/google-ai-agent-knowledge-13116341653253101712",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix and complete Google Cloud AI Agent knowledge integration",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/icloud-knowledge-engine-improvements-13516138989655533197",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate iCloud knowledge scan and improve system engine governance",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/icloud-sync-291682100632365852",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add iCloud Drive synchronization script for core folders",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/integrate-google-ai-knowledge-and-branding-7908636121834750902",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate Google Innovation & AI knowledge and enforce mandatory branding",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/integrate-oracle-ai-knowledge-3950930680222986466",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate Oracle AI knowledge into content agent",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/integrate-oracle-ai-knowledge-6095839206286019467",
+          "status": "Ready for Merge",
+          "result": "Commit: Feat: Integrate Oracle AI scraper into Python orchestrator swarm",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/intelephense-docs-consolidation-5239787190712204389",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(knowledge): consolidate Intelephense documentation and refactor KnowledgeObserver",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/intelephense-docs-update-12471147043465180868",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: update Intelephense documentation in knowledge base",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/investopedia-exclusive-ingestion-16035071324102869573",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: exclusively source knowledge from Investopedia and enhance scraping",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/jenkins-engine-integration-16717447765251323037",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate Jenkins pipeline into engine system collaboration",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/jenkins-engine-integration-6487857646863165040",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate Jenkins into engine system and collaborate",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/jenkins-integration-11798830447983533262",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate Jenkins CI/CD pipeline and service",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/knowledge-merge-all-entries-11790747981998761777",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(scraper): Expand knowledge merge agent to include all market entries",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/knowledge-observation-1188044699692138518",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add autonomous knowledge observation service and integrate into workflow",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/macbook-cloud-simulation-10813154388376629644",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enable continuous cloud simulation for autonomous merge and work",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/macbook-cloud-simulation-537156202459615099",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(cloud): inject MACBOOK_CLOUD_SIMULATION across CI/CD and Docker environments",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/markposition-autonomous-integration-5824578537508195574",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: deep autonomous integration of markposition intelligence",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/orchestrator-active-decisions-12848386406612919414",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance CloudWorkflowAgent to issue active decisions",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/render-docs-integration-8046385424973720288",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: configure Netlify build base and plugin for Next.js",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/feature/wilson-sonsini-docs-5223286484754365385",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add Wilson Sonsini documentation in MD and JSON formats",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/fix-autonomous-workflow-4538855426443032551",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: correct fully autonomous automatic workflow name and execution",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/fix-autonomous-workflow-git-add-16103849688586949052",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: allow data folder in gitignore for autonomous workflow to commit",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/fix-backend-tests-and-subagents-9232679682193337097",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(ai): supercharge subagent execution limits and backend stability\\n\\n- Increases maxTurns across all subagents to 50 for deep multi-step execution.\\n- Configures .gemini/settings.json to allow 500 maxActionsPerTask for browser_agent.\\n- Fixes backend testing dependencies and ESM compatibility logic in moderation.js.\\n- Mirrors updated configuration to root agents/ directory to ensure seamless discovery.",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/fix-cloud-autonomous-presence-9827360869310750655",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: resolve CI syntax and module failures",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/fix-cloud-workflow-agent-2870930378970445069",
+          "status": "Ready for Merge",
+          "result": "Commit: fix(cloud_workflow_agent): retain proactive decisions in cloud simulation mode",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/fix-daily-sync-recursion-2513362835835522754",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: daily routine robustness and recursion in optimization engine",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/fix-docker-compose-deprecation-3059408130568618537",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: Update obsolete docker-compose commands to docker compose",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/fix-ingest-ads-docs-5824807487751349212",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(docs): use puppeteer for scraping and properly ingest ad knowledge",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/fix-investopedia-crawler-7681232776505417296",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate investopedia knowledge crawler",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/fix-knowledge-merge-regex-14608744486022558221",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: safely splice knowledge markdown to prevent truncation",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/fix-oracle-ai-knowledge-integration-2128253207995593297",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: integrate Oracle AI knowledge correctly in agents",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/fix-package-json-duplicate-deps-10439884539185109676",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix syntax and linting errors in frontend route",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/fix-subagents-ingestion-12831626859594337963",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix python script to properly ingest Gemini CLI Subagents documentation",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/fix-tsx-dependency-7400371801550382505",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: install missing tsx dependency",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/fix-workflow-creation-16196168275927692425",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: execute full autonomous automatic creation correctly",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
           "name": "remotes/origin/fix/ads-knowledge-urls-5233952364580581643",
           "status": "Ready for Merge",
           "result": "Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into fix/ads-knowledge-urls-5233952364580581643",
@@ -25205,7 +29277,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/fix/agent-memory-and-tests-14715316655293625624",
           "status": "Ready for Merge",
           "result": "Commit: feat: Complete Industrial Autonomous Market Intelligence Ecosystem",
-          "category": "fix"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
@@ -25219,7 +29291,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/fix/autonomous-cloud-presence-17176660160653043958",
           "status": "Ready for Merge",
           "result": "Commit: feat: configure cloud-native docker architecture and 03:15 UTC autonomous schedule\\n\\n- Update GitHub Action workflows (`.github/workflows/antigravity-daily.yml` and `.github/workflows/autonomous_cycle.yml`) to trigger daily at 03:15 UTC instead of midnight.\\n- Add `docker-compose.cloud.yml` in both the root project and the nested software review platform to map production cloud environment variables (MongoDB, PostgreSQL, and Supabase) without requiring local volume bindings.\\n- Fix syntax errors in the docker check health function to ensure typescript validation works seamlessly.\\n- Update testing config to ignore sub-project dependencies.",
-          "category": "fix"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
@@ -25240,14 +29312,14 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/fix/autonomous-evolution-1779417180082",
           "status": "Ready for Merge",
           "result": "Commit: feat: integrate Jenkins pipeline into engine system collaboration (#1950)",
-          "category": "fix"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/fix/autonomous-evolution-1779420795460",
           "status": "Ready for Merge",
           "result": "Commit: feat: integrate react agent deployment logic and fix tools list parsing (#1955)",
-          "category": "fix"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
@@ -25268,7 +29340,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/fix/autonomous-evolution-1779762421460",
           "status": "Ready for Merge",
           "result": "Commit: feat: connect jenkins into autonomous engine pipeline (#2104)",
-          "category": "fix"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
@@ -25359,7 +29431,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/fix/docker-collaboration-sync-3245584476125900421",
           "status": "Ready for Merge",
           "result": "Commit: feat: implement autonomous iCloud sync for Docker configurations",
-          "category": "fix"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
@@ -25387,7 +29459,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/fix/duo-planner-prompt-update-5857249087494865625",
           "status": "Ready for Merge",
           "result": "Commit: feat: synchronize Duo Planner agents with the latest provided system prompt",
-          "category": "fix"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
@@ -25443,7 +29515,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/fix/integrate-oracle-knowledge-8502594485606650107",
           "status": "Ready for Merge",
           "result": "Commit: feat: Integrate Oracle AI knowledge",
-          "category": "fix"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
@@ -25538,6 +29610,2582 @@ Please ensure you have a MongoDB cluster running and provide your connection str
         },
         {
           "type": "Branch Result",
+          "name": "remotes/origin/fluent-cloud-workflow-10464856889716167813",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: make cloud workflow smarter and always available",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/gemini-cli-subagent-setup-5210662692571654805",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: set up gemini CLI custom subagent and settings",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/implement-ai-agent-knowledge-21882567880054537",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement AI agent knowledge from Google Cloud Discover",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/implement-ai-agents-knowledge-11176623184876779780",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement expanded AI agents knowledge from Google Cloud",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/implement-ai-agents-knowledge-4687692969505756547",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement AI agents knowledge from Google Cloud",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/implement-full-autonomous-automatic-workflow-12697350452626035149",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Implement fully autonomous automatic workflow via GitHub Actions",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/improve-gemini-cli-remote-agents-docs-7138939385768704032",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: correct syntax error in page.tsx caused by incorrect formatting",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/improve-git-sync-and-ingest-sor-6424222975070794974",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(jules): improve autonomous git workflow and add knowledge ingestion for sor\\n\\n- Update `gitSync` in `antigravity/jules.ts` to execute `git pull --rebase` and `git push` to autonomously handle conflicts and push changes.\\n- Add `scripts/ingest_software_online_review.ts` to ingest knowledge from https://software-online-review.com into the repository.\\n- Run ingestion script to update `ai_agents_knowledge.json` and `ai_agents_knowledge.md`.\\n- Add `vitest` dependency.",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/improve-merge-integrate-run-13413317813168219712",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve merge integrate run workflow and observe knowledge",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/improve-merge-integrate-run-3347991371920530382",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve merge integrate run workflow and observe knowledge",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/improve-react-agent-deployment-logic-17338521942394836955",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(agents): Integrate React agent deployment logic and workflow improvements",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/improve-react-deployment-orchestration-8115373201736013250",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate react agent deployment configuration and orchestration logic",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/ingest-google-ads-docs-10675560264182079690",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: ingest Google Ads and Ad Manager documentation into knowledge base",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/ingest-subagents-knowledge-3401617007249931861",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: ingest subagents documentation into knowledge base",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/integrate-google-ai-knowledge-v2-11489467311315949319",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate Google Innovation & AI knowledge with strategic synthesis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/integrate-google-blog-knowledge-4910820298428248589",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate knowledge from Google Innovation & AI blog",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/integrate-google-innovation-ai-knowledge-12634374273910953452",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate Google Innovation & AI knowledge into IntelligenceAgent",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/integrate-investopedia-knowledge-15544653943204418312",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(knowledge): integrate investopedia into autonomous observer",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/integrate-jenkins-engine-7625191917033904459",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate Jenkins with autonomous engine",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/integrate-jenkins-pipeline-generation-14117303396069153360",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(singularity): integrate Jenkins pipeline creation into the engine system",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/integrate-knowledge-markposition-11578747878625387044",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate market data and update knowledge base",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/integrate-markposition-knowledge-merge-11769284760316457005",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate and automate Markposition knowledge merge",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/integrate-markposition-knowledge-merge-3452272022805466987",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CI failures due to missing pythonpath in pytest",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/integrate-oracle-ai-knowledge-10753405246268437587",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate knowledge from Oracle AI page",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/integrate-oracle-ai-knowledge-1358247655862801319",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate Oracle AI knowledge",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/integrate-react-agent-deployment-knowledge-12923931441009789315",
+          "status": "Ready for Merge",
+          "result": "Commit: fix(ci): delete Advanced Setup codeql to allow Default Setup to run successfully",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/java-gemini-example-4885310981980819263",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add Java example using Google GenAI client",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jenkins-orchestration-pipeline-16548850115893572153",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate jenkins pipeline into engine system",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jenkins-pipeline-integration-1209487305569927216",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(ci): integrate jenkins pipeline with autonomous engine",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jenkins-pipeline-integration-2917487616063889464",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Implement Jenkins ecosystem collaboration trigger",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jenkins-pipeline-integration-7872982211767864585",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate jenkins pipeline into engine system and ci/cd",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-10456088293019605300-ea46692d",
+          "status": "Ready for Merge",
+          "result": "Commit: fix(ci): resolve GitHub CI check suite failures",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-10804936454534876603-52aca57c",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement Jenkins API integration and ecosystem sync trigger",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-11727907802921261757-a2a7358c",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: execute full autonomous creation cycle and integrate ROI Auditor",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-11867509925832320780-8aa8894a",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: automatically append english locale parameter for Google Ads/Ad Manager docs",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-12457892104228508063-41c0c28d",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: integrate knowledge from Oracle AI in agents",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-13052721785252149852-027ffae0",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate vercel ai gateway and setup streamText script",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-13238206488982251887-d6084712",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement GitLab CI/CD tutorial pipeline",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-13607206307106246227-38f47801",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement autonomous PR merge conflict resolution with Gemini\\n\\n- Add a TypeScript script `scripts/resolve_pr_conflicts.ts` to identify open PRs with conflicts.\\n- Leverage `@google/generative-ai` to safely and logically resolve git conflict markers.\\n- Safely manage GitHub and Gemini API tokens, avoiding logging sensitive credentials.\\n- Apply robust security checks to only process PRs from trusted repository collaborators.\\n- Merge and squash the resolved pull requests via Octokit.\\n- Setup GitHub Actions cron job `.github/workflows/resolve-conflicts.yml` to trigger every 4 hours.",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-1401381832535268992-101c53a9",
+          "status": "Ready for Merge",
+          "result": "Commit: fix(scraper): import re module in scraper.py",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-14602813324423635796-48a23d44",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: execute full autonomous creation cycle and update system state",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-14816450646255710907-9a961bea",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance daily autonomous task with system engine self-correction and validation",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-15373376258129096424-b615f592",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement full autonomous creation order and execution",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-15669541233529701765-e7b02c45",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Implement Jenkins Integration and Pipeline",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-16739887525044798643-c54f1fa3",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Implement fluent multi-cloud workflow orchestration and async Docker auto-recovery",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-16746668095937525271-5d5787ff",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: update Google Ads knowledge ingestion script to use Puppeteer\\n\\n- Replaced standard `fetch` with `puppeteer` to properly handle Javascript-rendered SPA content in Google Ads documentation pages.\\n- Added proper error handling via finally blocks to prevent zombie headless pages.\\n- Updated JSON manipulation logic using safe file parsing rather than regex injection to resolve serialization format overlap problems and ensure duplication prevention.\\n- Regenerated updated rich Markdown documentation content.",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-17345361020910170827-8e192329",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add Gemini API invocation script for explaining AI",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-17664332290031173343-55f5ab91",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement autonomous daily work cycle and iCloud synchronization",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-18406338226598714071-aab43e45",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: correct system memory json syntax formatting",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-2876054462022588492-84e7dde1",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: use nodejs for json stringify to preserve unicode encoding",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-3377716076333327453-2d27a121",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(cloud): add SandboxCloudSimulation for autonomous online presence",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-4843122813281068614-8b4499aa",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(cloud): implement fully autonomous macbook cloud simulation integration",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-5125461103553111919-d5f7a47b",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: securely configure Google & Gemini API keys",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-5565625516958485993-49059093",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: integrate knowledge with oracle ai scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-5679297940668698803-4384a9af",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add full autonomous automatic workflow creation",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-add-gemini-remote-agent-12873027587560108654",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: configure Gemini CLI remote subagent and documentation",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-arcjet-integration-16980338037533745889",
+          "status": "Ready for Merge",
+          "result": "Commit: fix(frontend): update eslint config formatting and remove extraneous bracket in page.tsx",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-autonomous-evolution-12208946204085721942",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement daily autonomous evolution task - Add new GitHub workflow `.github/workflows/daily_autonomous_evolution.yml` to trigger daily session evaluation - Add new bash script `scripts/autonomous_evolution_task.sh` - Add logging to `scripts/execute_creation_cycle.ts` confirming evolution sequence",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-autonomous-workflow-18354041674138581290",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement full autonomous automatic workflow pipeline",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-autonomous-workflow-creation-1089913609311419813",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(antigravity): enable full autonomous workflow creation for all complexity levels",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-cloud-autonomy-16506302087474217798",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Enable fully autonomous cloud presence and cycle workflows",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-cloud-workflow-agent-9594836607216672043",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(agent): implement CloudWorkflowAgent and integrate across cloud ecosystem",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-cloud-workflow-agent-enhancement-4497894335591972427",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance CloudWorkflowAgent to be smarter and fluent",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-cloud-workflow-tolerance-17354439472694641412",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance workflow fluency and docker auto-recovery",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-compile-knowledge-2707648609195220904",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate compile knowledge",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-continuous-presence-workflow-3144055533381791740",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add continuous autonomous presence workflow",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-download-cli-page-4874267122039212944",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add Antigravity CLI download portal",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-duo-planner-agent-url-fix-5677968275200464330",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix URL patterns in duo_planner_agent.md",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-feature-integrate-knowledge-merge-9200679916314149754",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate knowledge merge and append signature",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-fix-oracle-scraper-schema-6080803583651507344",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: modify oracle AI scraper to output flat JSON schema",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-fix-subagent-prompts-16967744904311493464",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix subagent definition files location and update duo_planner_agent prompt",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-full-autonomus-workflow-8744732568350416698",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: Enable full autonomous web scraping workflow",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-improve-knowledge-workflows-9958740170618720237",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve merge integrate run workflow and observe knowledge",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-improve-react-agents-deploy-6633287448450705076",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: resolve explicit type any and unused variable typescript lint errors",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-improve-workflow-and-knowledge-observer-11114380607500005512",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve workflow and knowledge observer",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-integrate-knowledge-merge-5016273102093085264",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate knowledge merge and signature",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-integrate-oracle-knowledge-9421136010084102746",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate oracle ai knowledge into system using legacy json schema",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-investopedia-all-knowledge-14799525503188502250",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(knowledge): integrate all knowledge from investopedia.com",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-knowledge-integration-subagents-16636673178408066825",
+          "status": "Ready for Merge",
+          "result": "Commit: fix(frontend): resolve linting errors and telemetry effect dependency",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-knowledge-merge-markposition-11506824174069569507",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: append markposition signature to KNOWLEDGE_MERGE.md",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules-smart-processing-cloud-workflow-18277080341771061055",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(workflow): implement smarter processing and multi-cloud collaboration",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules/autonomous-online-coding-presence-17025271764789693305",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add autonomous-online-coding command for cloud presence simulation",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules/autonomous-online-coding-presence-17025271764789693305-17731566985487010590",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add autonomous-online-coding command for cloud presence simulation",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules/connect-docker-collaborate-11639225190852212326",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: extend CLI to connect with Docker and collaborate autonomously\\n\\n- Added `connect-with-docker-and-collaborate` command to `antigravity-cli.ts`.\\n- Spawns the underlying `npm run connect` script with standard I/O inheritance.",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules/improve-react-workflow-orchestration-10305698287333015349",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(agents): expand ReAct proposals and CloudWorkflow deployment logic",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules/ingest-cli-creativity-9044833233025653876",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: ingest antigravity cli knowledge and append signature creatively",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules/ingest-intelephense-unified-store-3086939939732869599",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: ingest Intelephense docs and unify knowledge store",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules/integrate-knowledge-merge-signature-9637748484475924203",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Integrate knowledge merge and append markposition signature",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/jules/knowledge-merge-integration-4756532437460590133",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix frontend lint errors",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/knowledge-integration-3097887558112004437",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Compile all knowledge sources into a structured Knowledge Integration report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/knowledge-merge-signature-10281291985719549754",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: strictly avoid RegExp interpolation for dynamic string targets",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/macbook-cloud-simulation-2285701184876173816",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Simulate MacBook cloud presence for autonomous operation",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/multi-cloud-workflow-intelligence-12208347123975439755",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement multi-cloud workflow orchestration",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/nomad-cli-agent-docs-15478110730395729144",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: Update GitHub Actions to non-deprecated versions and fix bandit issues",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/oci-wordpress-deployment-9120692360420901713",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add terraform and kubernetes configuration for wordpress on OCI",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/optimize-domain-analysis-3826512882999880558",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: optimize domain analysis with walrus list comprehension",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/oracle-ai-database-integration-1558530856752998309",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate oracle database AI knowledge into system memory",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/oracle-ai-knowledge-14411165512379149104",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add Oracle AI to knowledge observation URLs",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/oracle-ai-knowledge-integration-13185078831058651875",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Integrate Oracle AI Knowledge into System Memory",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/oracle-knowledge-update-1623548321536958066",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: integrate oracle ai knowledge properly into agents",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-add-distribution-bars-2985599301363690621",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add ASCII distribution bars to analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-add-report-percentages-11439172869140532830",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add percentages to analytics report tables",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-add-report-toc-1273852051673532647",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add Table of Contents to analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-add-report-toc-13017065858519563862",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add dynamic Table of Contents to daily reports",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-add-report-toc-14550766222336483339",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add TOC and navigation links to analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-add-toc-report-14784174799878095511",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add table of contents to generated analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-add-toc-to-report-13463853514148026577",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(ux): add Table of Contents to generated agent report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analysis-ux-improvement-11980673162346986602",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance AnalysisAgent with rich Markdown report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-bar-chart-7462251999169566505",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add ASCII bar chart to analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-charts-2666464073759843485",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add ASCII bar charts and emoji headers to reports",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-charts-4206491572955874021",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add ASCII bar charts and visual polish to reports",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-charts-9684146293746097755",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add ASCII bar charts to generated report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-cli-summary-14007342154187471292",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add console summary to analytics.py",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-cli-summary-4779315143647098313",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add emojis to analytics report headers",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-cli-ux-5862653145990614801",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance CLI output for analytics.py",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-cli-ux-7657702415316363052",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve analytics CLI output with summary stats",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-dashboard-8316831572934760504",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add colorful terminal dashboard to analytics script",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-emojis-3339331463941271199",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add emojis to analytics report headers",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-upgrade-14203127764241002344",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance analytics report with ASCII charts and emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-10341790926521843230",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance analytics report with emojis and better formatting",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-12029576835141614542",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance analytics report UX with visual summaries",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-12591573171027613457",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add TOC and 'Back to Top' links to report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-13219657197638749902",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve analytics report UX with emojis and TOC",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-13310145182868611809",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): enhance report with navigation and emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-14075089827549646693",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance analytics report with visual data and improved formatting",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-14758852295203257646",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Improve UX of generated analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-14959999178292083671",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance analytics report with executive summary and emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-14993712482288271186",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance analytics report with visual metrics and progressive disclosure",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-15030314568688647799",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add TOC and visual polish to generated report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-15541317822719673614",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Improve REPORT.md UX with TOC and emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-16535941445945509426",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance REPORT.md generation in analytics.py",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-18105782427134098622",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): improve REPORT.md UX with TOC and navigation",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-1927249769187221512",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance analytics report UX with executive summary and visual polish",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-2030144575011325553",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): enhance REPORT.md with TOC, emojis, and better formatting",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-2766406126539390708",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance REPORT.md with emojis, tables and details",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-4099564144535097926",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add Table of Contents and visual polish to analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-4232613033722096123",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): enhance report with TOC, emojis and navigation",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-4257799222443731302",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance analytics report with ASCII charts and executive summary",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-4326920631813878758",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): enhance report readability with TOC, emojis, and collapsible details",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-4908260963285094639",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): improve report navigability and visual polish",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-4967986312640001007",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance analytics report with executive summary and collapsible sections",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-5612663723740313155",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve analytics report UX with visual data and ASCII charts",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-699851267367900614",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve analytics report UX with emojis and visual bars",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-7635334485492302228",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance analytics report with TOC, emojis, and formatting",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-7778046450995178550",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): Enhance report with TOC, emojis, and navigation",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-7815834764566994440",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance analytics report with executive summary and nav",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-831576827789251267",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance analytics report UX with TOC, emojis, and percentages",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-8715451132490550236",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add TOC, anchors, and emojis to report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-9171175876471307053",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Improve Markdown report readability and navigation",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-report-ux-9782607580625898370",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance analytics report with executive summary and collapsible sections",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-summary-4728899381542685866",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add delightful CLI summary to analytics.py",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-summary-8453671355123458848",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add cli summary output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-summary-box-4031844974106884823",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add colored summary box to analytics report generation",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-summary-box-8939838279506558518",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add colored summary box to analytics CLI output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-ux-11549541802920057325",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add rich console summary and markdown sanitization",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-ux-13063998870501229074",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance analytics report with TOC and navigation",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-ux-15956843867430969547",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add ASCII bar charts and emojis to reports",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-ux-1664535404465252714",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance generated report UX with TOC, anchors and emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-ux-2619089764861975591",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance analytics report with ASCII charts and Executive Summary",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-ux-3624889402201605206",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add TOC and visual polish to analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-ux-9003598505295651138",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): Enhance report UX with emojis and collapsible sections",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-ux-9149291915820024140",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): enhance CLI output and report formatting",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-ux-9573677768644785747",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add visual summary to analytics CLI and fix date parsing",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-ux-improvement-10522861074342822232",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Update system schedule to run bi-weekly",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-ux-upgrade-1857318026650759511",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Improve analytics report UX with ASCII charts and executive summary",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-visual-polish-4470200487089544601",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add ASCII charts and emojis to analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-visual-summary-2764218655727614121",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add visual summary with ASCII charts to analytics CLI output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-visualization-7864555049711578186",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add ASCII bar charts to analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-visuals-1727987223613819693",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add visual enhancements to analytics report\\n\\n- Add ASCII bar charts to tables for better data visualization\\n- Add emojis to section headers for better hierarchy\\n- Improve docstrings and exception handling in analytics.py (Pylint 9.79/10)",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-analytics-visuals-7638117604363083084",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add ASCII bar charts and emojis to reports",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ascii-analytics-6890644242452492122",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance analytics report with ASCII charts and emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ascii-bar-chart-4704095013089866243",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(ux): Add ASCII bar chart to keyword trends report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ascii-bars-10852289251684581107",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add ASCII bar charts to report tables",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ascii-bars-14633850369654553391",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add ASCII bar charts to reports",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ascii-bars-1937977779725986035",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add ASCII bar charts to report tables",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ascii-bars-4716182374226108315",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add ASCII bar charts to analytics report tables",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ascii-bars-6236831282512919053",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add ASCII bar charts to generated reports",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ascii-bars-8727413594208371857",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add ASCII bar charts to analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ascii-charts-11999396775685685771",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add ASCII bar charts to analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ascii-charts-15534847136011173808",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add ascii bar charts to analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ascii-charts-15757732960728587034",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add ASCII bar charts to analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ascii-charts-16355594758621519726",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add ASCII bar charts to daily report keyword trends",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ascii-charts-16467333056139699036",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add ASCII bar charts to distribution columns",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ascii-charts-16785128241519727077",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add ASCII bar charts to generated reports",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ascii-charts-5993052222468580086",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add ASCII bar charts to text reports",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ascii-charts-6299104478852342158",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add ASCII bar charts to analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ascii-charts-7286146975517193000",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add ASCII bar charts to generated Markdown report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ascii-charts-7527273603289417794",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add ASCII bar charts to generated report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-colors-16970097531222949087",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(cli): Add colorful emoji logging to CLI",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-colors-18422454405439662270",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(ux): add colored log formatter for improved CLI experience",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-colors-3206504166430713796",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add color and emoji to scraper CLI output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-colors-v1-15537575789263225364",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement bi-weekly reporting schedule",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-colors-v1-4047913124623383228",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add CLI colors and emojis for better UX",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-colors-v3-11994937576468000160",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add color-coded logs and .gitignore for better DX",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-dashboard-2336811404384765093",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(cli): add colorful summary dashboard to scraper output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-dashboard-8254371988405476413",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(ci): replace daily reporting with bi-weekly GitHub Action",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-enhancement-5441850221004135602",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(cli): enhance run_system.py output with emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-logging-11690218801671113971",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(cli): enhance console output with colors and emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-polish-10024653573136516829",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(ux): add colored summary box to scraper CLI",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-polish-10617303078140811985",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(cli): add colors and summary box to scraper output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-polish-10945294834958048524",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(cli): enhance console output with colors and emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-polish-5860890348609218987",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(ux): Add summary box and colors to CLI output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-polish-7245288327755008219",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add visual polish to CLI output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-polish-8263686010400234400",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(cli): Add colored logging and summary table",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-progress-8547163842398693145",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add CLI progress indicator to scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-spinner-ux-17355742632069179967",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add CLI spinner and emoji feedback",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-spinner-ux-9775132984312638180",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add Spinner for better CLI UX",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-summary-box-12028055253848911084",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add colorful summary box to CLI output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-summary-box-15724779665177572819",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Automate bi-weekly reporting and add scraper UX",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-summary-box-15876395418728927629",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add summary box and colors to scraper CLI output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-summary-box-16566719087269269209",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add summary box to scraper output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-summary-box-17004344822758906732",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add colored summary box to CLI output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-summary-box-7747250997461256954",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add colored summary box to scraper CLI",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-summary-box-8083330425517569149",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Update scheduler to bi-weekly reports",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-ux-17335050180511200643",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add CLI visual polish with emojis and colors",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-ux-3199876023688079054",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(cli): enhance logs with colors and emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-ux-5136733467430420971",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(ux): implement bi-weekly autonomous scheduling and CLI polish",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-ux-7116481711061595450",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(ux): Add Colors class and summary box to run_system.py",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-ux-726014719767405393",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add UX formatting to CLI output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-ux-7383645213978227588",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add delightful CLI output with colors and emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-ux-7717349484047385997",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(cli): enhance CLI output with colors and summary box",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-ux-8165419945096762309",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(ux): improve CLI output and report readability",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-ux-biweekly-16790383014690096100",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add CLI polish and bi-weekly scheduling",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-ux-colors-16711790772227801289",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add CLI color support and visual polish",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-ux-colors-17941664392335633230",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add CLI colors and emojis for better UX",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-ux-improvements-11492387069204561579",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(ux): improve CLI experience with spinners and color",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-ux-improvements-12585797554244564723",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve CLI UX with colors and emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-ux-improvements-16514744854922016217",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance CLI output with emojis and formatting",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-ux-improvements-17270330985806452288",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve CLI output with colors and emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-ux-improvements-5318917015708801227",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add emojis to orchestrator logs for better CLI UX",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-ux-improvements-6092607382424465804",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(cli): add rich visual feedback to scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-ux-improvements-8535199228408346905",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve CLI UX with colored logging and graceful interrupt handling",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-ux-improvements-8617716335041011148",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Implement Autonomous Agents Expansion with System IQ",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-ux-improvements-9208959306242680179",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(ux): enhance CLI output with colors and emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-ux-logs-15889507569998878970",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance CLI logging with emojis and colors",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-ux-polish-2111230884908221183",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance CLI output with colors, emojis, and summary box",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-ux-summary-11132373574447212764",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add colorful CLI summary using Palette class",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-ux-summary-8843972802041575160",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add CLI summary box to scraper output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-visual-hierarchy-17889502695292782743",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(ux): enhance CLI logs and report readability with emojis and structure",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-visual-polish-10160750518849227089",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add visual polish to CLI logs with emojis and colors",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-visual-polish-12024230895845903893",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add CLI visual polish with colored logging and emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-visual-polish-15892369352802865338",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add colored logging for improved CLI UX",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-visual-polish-15906787407292859541",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance CLI output with colors and emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-visual-polish-16691567195068530862",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve CLI visual hierarchy with colored logs and summary box",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-visual-polish-16944835121603968346",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add colored summary box to scraper CLI",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-visual-polish-3698444401610641769",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add visual polish to CLI output with colored logging",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-visual-polish-7342470376918669690",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance CLI output with colors and summary table",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-visual-polish-8429968879591285663",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve CLI UX with colors and emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-cli-visuals-10522889352732785467",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve CLI visual hierarchy with colored logs and summary",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-colored-logging-1491286074497741313",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add colored logging and emoji indicators to CLI output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-colored-logging-4205972882040105240",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(cli): add colored logging with emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-colored-logging-ux-17992992893836772305",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add colored logging and fix double logging issue",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-enhanced-analytics-report-4125169103760286117",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance analytics report with visual metrics and collapsible sections",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-enhanced-reports-16415063186850509596",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance CLI analytics report with visual data bars",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-exec-summary-6369051085132382588",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(report): add executive summary table to agent report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-fix-markdown-escaping-930315787144321424",
+          "status": "Ready for Merge",
+          "result": "Commit: fix(analytics): escape special characters in markdown report",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-graceful-shutdown-6686216384600575838",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(cli): add graceful shutdown to save data on interrupt",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-html-report-4670439550378030789",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(ux): generate accessible HTML report in ContentAgent",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-analytics-report-18062852569660178887",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve analytics report readability",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-analytics-report-981155583379046821",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve analytics report UX",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-analytics-ux-29325668557069915",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve REPORT.md UX with TOC, emojis, and formatting",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-cli-logging-2441580921908599501",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: change job schedule from daily to every two weeks",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-report-ux-1244892965393033926",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add TOC and navigation anchors to analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-report-ux-12668535848296515806",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Improve generated report UX with emojis and TOC",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-report-ux-12806219181289335156",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Improve Agent Report UX with TOC and Dashboard",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-report-ux-13501189748065964858",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance analytics report with TOC, emojis, and sanitization",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-report-ux-14047162769090581010",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve report UX with emojis and tables",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-report-ux-14288341330964781354",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Improve UX of daily autonomous reports",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-report-ux-1515268010537928843",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance analytics report with executive summary and collapsible details",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-report-ux-1590412772742970293",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance daily report with executive summary and collapsible details",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-report-ux-1594767510062861541",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Improve generated report UX",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-report-ux-15954132581208631858",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Improve report readability with dashboard and TOC",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-report-ux-16744443975495209465",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve report readability with TOC and formatting",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-report-ux-17986839873876341700",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve REPORT.md UX with tables and visual hierarchy",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-report-ux-3142867670552745548",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add navigation and visual polish to analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-report-ux-3610494715935454466",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Improve report readability with executive summary and collapsible sections",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-report-ux-3734025861997546036",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance REPORT.md with TOC, emojis and navigation",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-report-ux-4874508048051784270",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add Table of Contents and navigation anchors to daily reports",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-report-ux-490626902117098437",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Improve Agent Report UX with summary table and collapsible sections",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-report-ux-5436844210924255885",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Improve Markdown report UX with visual charts and collapsible details",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-report-ux-5549830311502835273",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve report UX with emojis and navigation",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-report-ux-6354626839202487663",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance REPORT.md with TOC and better formatting",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-report-ux-661272626947042109",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve report readability with semantic emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-report-ux-7874174141320841787",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Improve REPORT.md UX with emojis and navigation",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-report-ux-8539269373993322995",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve report UX with TOC and emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-improve-report-ux-9882191085663915429",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve report readability with collapsible tables",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-log-colors-12337295467778807267",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(ux): add colored logging and emojis to CLI output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-log-emojis-14996925440065141338",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(cli): enhance logs with emojis and improved visibility",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-log-formatting-15971220591968669569",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(dx): Add colored logging with emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-log-formatting-9683465973312644975",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(cli): add gemini-powered build, debug & deploy cli",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-navigation-11771695338602020565",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(report): improve report navigability with TOC and anchors",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-navigation-16056318434640743559",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add navigation and visual polish to generated report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-navigation-17302622234226606396",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve report navigation with TOC and anchors",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-navigation-2240518606700983656",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(report): add navigation aids to daily report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-navigation-4813868009156738406",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(ux): add navigation to generated reports",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-navigation-6685589132510964882",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add TOC and navigation to generated reports",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-navigation-9686279638515215567",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add TOC and navigation anchors to daily report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-percentages-17226232511035798370",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Implement autonomous evolutionary architecture with DNA-based agents",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-ux-13084128329690179617",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve report UX with TOC, anchors and emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-ux-14042064237579661712",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance analytics report with emojis and better formatting",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-ux-14048412210578992959",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add navigation and visual polish to analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-ux-16058546482539529052",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve report readability with tables and ASCII charts",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-ux-2586385590797545719",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add TOC and percentage shares to report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-ux-3403375425654783519",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add Table of Contents to agent reports and ignore report artifacts",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-ux-6836477238955573134",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add TOC, anchors, and emojis to analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-ux-6858294670111624762",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add TOC and emojis to analytics report for better UX",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-ux-6923593028800648956",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): improve report readability with TOC and emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-ux-7438110987153342447",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add navigation and visual polish to generated analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-ux-7740280376937285109",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve REPORT.md UX with TOC and navigation links",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-ux-8793038979324297126",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): improve report UX with navigation and formatting",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-ux-8982430581634306711",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(report): improve report UX with status dashboard and emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-ux-9353964670037351042",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): improve REPORT.md visual polish",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-ux-9415073918142089548",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(report): improve daily report UX with summary table and collapsible sections",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-ux-improvement-10193181344057520742",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add navigation and visual polish to generated reports",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-ux-improvement-13692058964087524483",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): improve report navigability and readability",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-ux-improvement-5601014531851096708",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Improve agent report readability with TOC and navigation",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-report-ux-improvement-6775578047897650791",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add ToC, anchors and emojis to analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-scraper-cli-summary-16839144126479902630",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add colorful CLI summary box, robustness, and tests",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-scraper-cli-summary-3176708108112650471",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add visual summary dashboard to CLI output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-scraper-cli-summary-5336252547540046399",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add visual summary box to scraper CLI output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-scraper-cli-ux-10254727661965721120",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve scraper CLI feedback with colored summary",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-scraper-cli-ux-5391046781979864824",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve scraper CLI with colors and emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-scraper-cli-ux-5822096783494386588",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add visual polish to scraper CLI output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-scraper-cli-ux-594719543184978660",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add colorful summary to scraper CLI output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-scraper-summary-10400250517688153163",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(scraper): Add CLI summary box with execution stats",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-scraper-summary-1208629136224129021",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(scraper): add summary table to CLI output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-scraper-summary-box-7474193270213142188",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add CLI summary box to scraper.py",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-scraper-ux-5424877083715030058",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(scraper): add colored logging and summary table",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-scraper-ux-summary-1616700660320259607",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add colored summary box to scraper CLI output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-scraper-ux-summary-7200015495059057194",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add execution summary box to scraper CLI",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-analytics-bar-chart-17866123775961156330",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add visual distribution chart to analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-analytics-report-10632574585919041328",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance analytics report with visual UX improvements",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-analytics-report-14597730770972952440",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve analytics report readability and cli feedback",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-analytics-report-17442789238565895596",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add navigation and improve date parsing in analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-analytics-summary-2709532664525857663",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add visual summary box to analytics CLI output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-cli-colors-7681114719260817655",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add colored logging with agent emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-cli-colors-9624439488845995317",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(ux): add colors and emojis to CLI output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-formatter-4201185919690314961",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add UXFormatter for colorful CLI logs",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-improvement-2705848965773740744",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): enhance report UX with emojis and TOC",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-improvement-report-visuals-10910068111888807905",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add visual bar charts and percentages to analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-improvements-5803008523500848273",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add CLI colors and emojis for better UX",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-emojis-17126566663041790687",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(ux): add status emojis to daily report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-enhancement-11593647151328807214",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add TOC and visual polish to analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-enhancement-14454170940622711257",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): enhance generated report UX",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-enhancement-15172318103977119583",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add ASCII bar charts and emojis to report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-enhancement-8007324327249044575",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance REPORT.md readability with visual metrics",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-enhancement-9069244241412422315",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance daily report UX with TOC, summary and charts",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-improvement-2067216702341582884",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance daily report UX with summary table and collapsible sections",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-improvements-11313390590713595542",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance generated report with tables, emojis and collapsible sections",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-improvements-13543414258176947990",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Improve UX of daily autonomous report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-improvements-13793595194787287681",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): Enhance report with ToC, emojis, and summary",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-improvements-13831713168674477220",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance daily report readability with TOC, anchors and emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-improvements-15199529881851029569",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve REPORT.md UX with ToC and navigation",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-improvements-17277479390002337255",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Improve REPORT.md UX with formatted dates and percentages",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-improvements-2513104578052630135",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Improve REPORT.md UX with ASCII bars and TOC",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-improvements-4373250686351939897",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(ux): improve daily report readability with TOC and emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-improvements-5742295436253287865",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(report): add TOC, anchors, and emojis to daily report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-improvements-6072740448036314229",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): improve report UX with emojis, TOC, and table sanitization",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-improvements-8397930480493404381",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): enhance Markdown report UX with TOC and navigation",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-links-5553853487436011261",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: make report domains clickable and add emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-nav-16569108711170597601",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add TOC, emojis and navigation to generated report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-navigation-1055201088429066015",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add TOC, anchors, and navigation links to report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-navigation-13412494468983508002",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add ToC and navigation links to analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-navigation-14402610223237389946",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add TOC and improved navigation to REPORT.md",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-upgrade-16296272429283810305",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance analytics report with executive summary and emojis",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-upgrade-1698868480581836517",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Improve report readability with TOC, emojis, and percentages",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-report-upgrade-3396259779939388031",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: enhance analytics report with executive summary and collapsible sections",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/palette-ux-scraper-logging-11386897257754529243",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Implement Autonomous Evolutionary Agents System",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
           "name": "remotes/origin/palette/analytics-console-summary-16842850884408171374",
           "status": "Ready for Merge",
           "result": "Commit: 🎨 Palette: Add colorful console summary to analytics",
@@ -25547,7 +32195,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "type": "Branch Result",
           "name": "remotes/origin/palette/analytics-navigation-436511791889280438",
           "status": "Ready for Merge",
-          "result": "Commit: feat: add TOC and navigation anchors to analytics report",
+          "result": "Commit: Merge branch 'sentinel-csv-injection-fix-6855106868508477486' into palette/analytics-navigation-436511791889280438",
           "category": "ux"
         },
         {
@@ -25583,13 +32231,13 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/palette/analytics-ux-improvements-11070002562575307132",
           "status": "Ready for Merge",
           "result": "Commit: feat: enhance analytics report UX with TOC, emojis, and navigation",
-          "category": "ux"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/palette/analytics-visualization-3131876872723686653",
           "status": "Ready for Merge",
-          "result": "Commit: Add accessible distribution bars to analytics report tables",
+          "result": "Commit: Merge branch 'analytics-redundant-parsing-fix-4098087028764432479' into palette/analytics-visualization-3131876872723686653",
           "category": "ux"
         },
         {
@@ -25618,14 +32266,14 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/palette/cli-colors-8575730962200631478",
           "status": "Ready for Merge",
           "result": "Commit: feat: add colored logging and output to scraper and analytics",
-          "category": "ux"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/palette/cli-ux-improvements-18294687491796103663",
           "status": "Ready for Merge",
           "result": "Commit: feat: Add delightful CLI logging with emojis and colors",
-          "category": "ux"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
@@ -25639,14 +32287,14 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/palette/enhance-report-ux-10076757261976938434",
           "status": "Ready for Merge",
           "result": "Commit: feat: enhance analytics report UX with TOC, emojis, and navigation",
-          "category": "ux"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/palette/enhance-report-ux-11995820090382525723",
           "status": "Ready for Merge",
           "result": "Commit: feat: enhance analytics report with TOC and emojis",
-          "category": "ux"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
@@ -25660,13 +32308,13 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/palette/enhance-report-ux-2739052330608960722",
           "status": "Ready for Merge",
           "result": "Commit: feat: enhance analytics report with TOC, emojis and anchors",
-          "category": "ux"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/palette/improve-report-ux-11475379120362374417",
           "status": "Ready for Merge",
-          "result": "Commit: feat(analytics): improve report UX with TOC, emojis, and sanitization",
+          "result": "Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into palette/improve-report-ux-11475379120362374417",
           "category": "ux"
         },
         {
@@ -25674,27 +32322,27 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/palette/improve-report-ux-4852848855851386744",
           "status": "Ready for Merge",
           "result": "Commit: feat: improve daily report UX with TOC, truncation, and collapsing",
-          "category": "ux"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/palette/improve-report-ux-7962049104827263798",
           "status": "Ready for Merge",
           "result": "Commit: feat: improve analytics report readability with TOC and formatting",
-          "category": "ux"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/palette/improve-report-ux-9149599354572464593",
           "status": "Ready for Merge",
           "result": "Commit: feat: add TOC, emojis, and navigation to daily reports",
-          "category": "ux"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/palette/improve-report-ux-9439568871276884131",
           "status": "Ready for Merge",
-          "result": "Commit: 🎨 Palette: Improve Report UX with TOC and Emojis",
+          "result": "Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into palette/improve-report-ux-9439568871276884131",
           "category": "ux"
         },
         {
@@ -25702,21 +32350,21 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/palette/markdown-ui-enhancement-18003291754095827946",
           "status": "Ready for Merge",
           "result": "Commit: feat: enhance markdown report with TOC, anchors, and emojis",
-          "category": "ux"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/palette/report-navigation-10848490221973178016",
           "status": "Ready for Merge",
           "result": "Commit: feat: Add navigation and visual improvements to analytics report",
-          "category": "ux"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/palette/report-navigation-13835048160804897717",
           "status": "Ready for Merge",
           "result": "Commit: feat: add TOC, emojis, and navigation to analytics report",
-          "category": "ux"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
@@ -25737,7 +32385,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/palette/report-navigation-ux-5720051547511983391",
           "status": "Ready for Merge",
           "result": "Commit: feat: add TOC and back-to-top links to analytics report",
-          "category": "ux"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
@@ -25750,7 +32398,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "type": "Branch Result",
           "name": "remotes/origin/palette/report-ux-enhancements-9890536469987073968",
           "status": "Ready for Merge",
-          "result": "Commit: 🎨 Palette: Add visual analytics and navigation to reports",
+          "result": "Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into palette/report-ux-enhancements-9890536469987073968",
           "category": "ux"
         },
         {
@@ -25764,7 +32412,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "type": "Branch Result",
           "name": "remotes/origin/palette/report-ux-improvements-17015543897776799811",
           "status": "Ready for Merge",
-          "result": "Commit: 🎨 Add dynamic TOC and Footer to Daily Report",
+          "result": "Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into palette/report-ux-improvements-17015543897776799811",
           "category": "ux"
         },
         {
@@ -25772,7 +32420,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/palette/report-ux-improvements-2527286985535633999",
           "status": "Ready for Merge",
           "result": "Commit: feat: Improve Report Generator UX with dashboard and collapsible sections",
-          "category": "ux"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
@@ -25785,15 +32433,1730 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "type": "Branch Result",
           "name": "remotes/origin/palette/report-ux-toc-4596925936165849228",
           "status": "Ready for Merge",
-          "result": "Commit: Add Table of Contents and navigation anchors to daily reports",
+          "result": "Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into palette/report-ux-toc-4596925936165849228",
           "category": "ux"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/perf-optimize-url-parsing-15164027586550123662",
+          "status": "Ready for Merge",
+          "result": "Commit: perf: optimize URL parsing and fix knowledge iteration bug",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/perf-scraper-lxml-9392503187182498809",
+          "status": "Ready for Merge",
+          "result": "Commit: perf(scraper): switch to lxml parser for faster html parsing",
+          "category": "performance"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/project-opinion-evolution-18306036414363557055",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: replace hallucinated PII with explicit placeholders in PROJECT_OPINION.md",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/react-agent-deployment-18427809291502343091",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: improve React agent deployment logic",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/remote-subagents-config-5573674147411038862",
+          "status": "Ready for Merge",
+          "result": "Commit: fix(lint): Resolve TypeScript any errors in intelligence API route",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-add-timeout-15463043223349410513",
+          "status": "Ready for Merge",
+          "result": "Commit: Security: Add timeout to requests.get in scraper",
+          "category": "security"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-analytics-security-fix-15562163645125731451",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix Stored XSS and Markdown Table Injection in analytics.py",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-7375111859144544307",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Prevent CSV injection in scraper output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-10038367286056826803",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add CSV injection protection and http timeout",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-10221947977265973375",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV Formula Injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-10298970558848162615",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper.py",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-10398875479069463137",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV Injection vulnerability in scraper.py",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-10425248433369273234",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-10823602123792792122",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add CSV injection protection, URL validation and update schedule",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-10967338732695959755",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-11016573727348401190",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper.py",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-11203776991615878317",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-11232382863201934682",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper output",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-11483888091103395100",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV Injection vulnerability in scraper output - Implemented `sanitize_for_csv` to escape formula characters (=, +, -, @) - Applied sanitization to all CSV output fields - Added unit test `tests/test_scraper_security.py` to verify the fix",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-11537968662341487277",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Fix CSV Injection vulnerability in scraper.py",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-1187373065145967330",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper output",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-12679590305741242527",
+          "status": "Ready for Merge",
+          "result": "Commit: fix(security): sanitize CSV output to prevent formula injection",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-12864259658340301340",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: sanitize CSV output in scraper to prevent injection",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-13037407619798804311",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV Injection vulnerability in scraper.py",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-13240856359279585167",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: mitigate CSV injection vulnerability in scraper output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-1326975499108887889",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV Injection vulnerability in scraper output",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-13435687001292355366",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV Formula Injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-13690101212099271118",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): prevent CSV injection in scraper output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-13948425390271683598",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): prevent CSV injection in scraper output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-14090242410722960324",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-14202911627973574008",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper exports",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-14407786113626138861",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in OracleNewsScraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-14541326570194157665",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper.py",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-14810873340249906468",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Fix CSV injection vulnerability and add request timeouts",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-15021706020532406187",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: mitigate CSV injection vulnerability in scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-15271493773848426638",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: sanitize CSV output to prevent formula injection",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-1546845939770947284",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): fix CSV injection vulnerability in scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-15572259258648426988",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV Injection vulnerability in scraper.py",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-15615947622125179060",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Prevent CSV injection in scraper output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-15771572653654019647",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV Injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-16105451329157671557",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix: prevent CSV formula injection in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-16208060421848314312",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add CSV injection protection to scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-16277687269627577921",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add CSV sanitization to scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-16350341539819739877",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper output",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-16760384515940097224",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: mitigate CSV injection in scraper export",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-16822017676195484048",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add CSV sanitization to prevent formula injection",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-16927322662053655175",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-16999341900923167805",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV Formula Injection in scraper output",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-17134124741547873274",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper output",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-17211368531501123352",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: sanitize CSV output to prevent formula injection",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-17281405972681966215",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Fix CSV Injection vulnerability in scraper.py",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-17501930990885364981",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV Injection vulnerability in scraper.py",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-1768906505361909663",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-17693898094176425662",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: mitigate CSV injection vulnerability in scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-17919228704656273105",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-18040119516066267885",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-1915470429985340471",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Prevent CSV Formula Injection in scraper output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-1964543136044474218",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper.py",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-1970007423259072020",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: mitigate CSV injection vulnerability in scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-1998633714457818686",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-2209257127317318783",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper and add request timeout",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-2409511118285483263",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper.py",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-2465392663025969514",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV Injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-2516929716089250135",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper output",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-2671742778872724140",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): fix CSV injection in scraper.py",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-2676143552655600062",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper - Add `sanitize_for_csv` method to `MarkPositionScraperAsync` - Sanitize all fields before writing to CSV - Add regression test `tests/test_csv_security.py`",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-2728798420725278990",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-2777825542353398891",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV Injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-2835096762590322415",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: sanitize CSV output to prevent formula injection",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-2888261879459732740",
+          "status": "Ready for Merge",
+          "result": "Commit: fix(security): sanitize CSV output to prevent formula injection",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-3207276377854702451",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add CSV injection protection to scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-3226420374077565204",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Fix CSV injection and add request timeout",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-3271170795453668053",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper.py",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-3346587777523784849",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV Formula Injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-3586558718788844991",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): fix CSV injection vulnerability in scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-3619295018585111086",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add CSV formula injection prevention to scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-3785289375321426037",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper.py",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-3792279438009718609",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Fix CSV injection vulnerability in scraper export",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-3887596587302149695",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: sanitize CSV output to prevent formula injection",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-4034437976659804335",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: mitigate CSV Formula Injection in scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-455270542941409687",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-4568401042117456863",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-4894739317500695690",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Implement IQ-based Self-Learning System",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-5108054978514907420",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper output",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-5117126136296905355",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: mitigate CSV injection vulnerability in scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-5445349269422867455",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Fix CSV Injection vulnerability in scraper.py",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-5703429857431099385",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper output - Add sanitize_csv_field method to MarkPositionScraperAsync - Sanitize all fields before writing to CSV - Prepend single quote to fields starting with =, +, -, @ - Add security journal entry",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-6113448530836767636",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV Injection Vulnerability in Scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-62725330299232375",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add CSV injection protection to scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-6338762275838865051",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Prevent CSV injection in scraper output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-6481770825108670160",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): fix CSV injection in scraper.py",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-6685334984184848027",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Fix CSV injection vulnerability and add request timeout",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-6836239007879270434",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: sanitize CSV output to prevent formula injection",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-6957770214715021106",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: sanitize CSV output to prevent formula injection",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-7120478869350967203",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper output",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-7180315405969834431",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in OracleNewsScraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-7184062183178777693",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper output",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-7279293244231609649",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: secure scraper against CSV injection and hanging",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-7308075484168403329",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-7371159905653815278",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper output",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-7577014728470115311",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: mitigate CSV injection vulnerability in scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-7686823291032293657",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper output",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-7862227408339325944",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Fix CSV injection vulnerability in scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-8097827664947199765",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix: prevent CSV injection in scraper output",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-8110446095122027213",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: sanitize CSV output to prevent formula injection",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-8148266777407041766",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper export",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-8170535379154520582",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-8272419126965358914",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-8570611774437113541",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper.py",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-8908501396910626441",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-9391699529269145596",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-9473825709401880639",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: mitigate CSV injection vulnerability",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-9615340353460481815",
+          "status": "Ready for Merge",
+          "result": "Commit: fix(security): sanitize CSV output to prevent formula injection",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-9699897401225629135",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV Injection vulnerability in scraper.py",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-9865659268675506574",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper output",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-9949658350522574715",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-csv-injection-fix-9988075135877474824",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: prevent CSV injection in scraper output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-dos-fix-7698536628860291185",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): enforce 10MB response size limit in scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-dos-protection-16862266732532693644",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): enforce 10MB response size limit in scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-dos-protection-17580237243754700940",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): Limit response size to 10MB to prevent DoS",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-dos-protection-3230700475893840806",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): add DoS protection to scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-dos-protection-533559007070849355",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): enforce 10MB response size limit to prevent DoS",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-dos-protection-7227514493046811769",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): enforce 10MB response size limit to prevent DoS",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-dos-protection-8918500770357987717",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): enforce 5MB response size limit to prevent DoS",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-analytics-xss-18372825547288126285",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): sanitize markdown input in analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-11077555139908489589",
+          "status": "Ready for Merge",
+          "result": "Commit: fix(scraper): prevent CSV injection in scraper output",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-11316363243497310988",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: update schedule to bi-weekly",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-11695626658180939497",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV Injection vulnerability in scraper.py",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-11799255373234289459",
+          "status": "Ready for Merge",
+          "result": "Commit: fix(security): prevent CSV injection in scraper output",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-12497847357551567150",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-12970269499686367400",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: mitigate CSV injection in scraper output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-1302740783409552070",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: mitigate CSV injection vulnerability in scraper export",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-1455302439657418501",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): fix CSV injection vulnerability and add request timeout",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-15688476494678190926",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper output \\n Sanitized CSV output by prepending a single quote to fields starting with =, +, -, or @. This prevents formula injection attacks when the CSV file is opened in spreadsheet software like Microsoft Excel or LibreOffice Calc. \\n Verification: Verified with a reproduction script that attempted to inject formulas, confirming that they are now escaped.",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-16567090452549899713",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: sanitize CSV output to prevent formula injection",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-16604048284398953621",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV Formula Injection vulnerability in scraper.py",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-16763427666603364889",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV Injection Vulnerability in Scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-17518560069698695789",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-17594469209047067087",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-17984937653566116919",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper.py",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-241262454098810507",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Fix CSV Injection vulnerability in scraper.py",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-2765330589788490005",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): prevent CSV injection in scraper output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-310785540738272778",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV Injection vulnerability in scraper output",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-3161629447767220060",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-4073728526691781890",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper output",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-4896609571382596345",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper and sanitize agent outputs",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-5151600923195756418",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV Injection vulnerability in scraper.py",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-5200529072792038966",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-5692806866209313893",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection vulnerability in scraper output - Implemented `sanitize_for_csv` method in `MarkPositionScraperAsync`. - Prepends single quote to values starting with =, +, -, or @ to prevent formula execution. - Updated `save_batch` to sanitize all fields before writing to CSV. - Added `tests/test_scraper_security.py` to verify the fix.",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-716833391018549425",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV Injection vulnerability in scraper output",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-8336262688317401558",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: schedule report generation every other week",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-9007503405729872080",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix CSV injection and add daily report workflow",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-csv-injection-9365968688429257416",
+          "status": "Ready for Merge",
+          "result": "Commit: fix(scraper): prevent CSV formula injection",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-markdown-injection-10489928730170267771",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: sanitize markdown output in analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-markdown-injection-12358420040259215492",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix Markdown injection vulnerability in analytics report",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-markdown-injection-12642553917768757487",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix: Sanitize inputs in analytics report to prevent Markdown Injection and XSS",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-markdown-injection-12782230076673312738",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix Markdown injection and stored XSS in analytics report",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-markdown-injection-12887486750391469562",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix Markdown Injection and XSS vulnerability in analytics report.",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-markdown-injection-13943307421559350818",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): sanitize markdown output in analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-markdown-injection-15177720678056733729",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: sanitize markdown report output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-markdown-injection-17432524011574370293",
+          "status": "Ready for Merge",
+          "result": "Commit: fix(analytics): Sanitize markdown output to prevent injection",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-markdown-injection-1749769319501119142",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix: Sanitize inputs in analytics report generation",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-markdown-injection-3339496328156938030",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix Markdown table injection in analytics report",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-markdown-injection-3776990642729282253",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix XSS and Markdown injection in analytics report",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-markdown-injection-4574407536048453465",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix: Sanitize input in analytics report to prevent Markdown Injection and XSS",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-markdown-injection-4811643959764266800",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: sanitize markdown output in reports to prevent injection",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-monetization-markdown-injection-4346962235570198500",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix Markdown Injection vulnerability in MonetizationAgent",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-path-traversal-10371328394414970725",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): fix path traversal and hanging risks in scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-path-traversal-15570821654986088312",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix path traversal vulnerability in scraper output paths",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-path-traversal-17914056010192129632",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix path traversal vulnerability in scrape_informatic.py",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-path-traversal-290759818619950664",
+          "status": "Ready for Merge",
+          "result": "Commit: fix(security): prevent path traversal in ResearcherAgent",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-path-traversal-5132007929293032238",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix path traversal vulnerability in scraper.py and analytics.py",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-path-traversal-scraper-11209913813544277514",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix path traversal vulnerability in scraper.py CLI arguments",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-path-traversal-scraper-16504973600351558814",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: fix path traversal vulnerability in scrape_informatic.py",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-report-injection-1488382414768619374",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(analytics): add markdown sanitization to prevent injection",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-report-xss-injection-17246759234620652764",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): Fix Markdown injection and XSS in report generator",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-scraper-timeout-1149197347818136170",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix: Add request timeout to prevent scraper hang",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-scraper-url-validation-5666735410169343396",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: add strict URL scheme validation to scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-scraper-vulnerability-10920558774423191235",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix: prevent scraper from following off-domain links",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-ssrf-pagination-955563201961260698",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix SSRF vulnerability in scraper pagination by validating URLs.",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-timeout-5116426609939890096",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix: Add timeout to HTTP requests in scraper",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-unsafe-links-5959924612481434328",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix XSS vulnerability in scraper by validating extracted URLs",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-xss-analytics-8641272621039529465",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): sanitize markdown output in analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-xss-content-agent-15220868101376936351",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix Stored XSS in Content Agent by escaping Markdown characters",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-xss-links-14504327509896996257",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix XSS vulnerability by validating extracted links protocols",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-xss-report-17694993639350070672",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix Stored XSS in Analytics Report",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-fix-xss-sanitization-2461129736912468133",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): implement output sanitization in orchestrator",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-markdown-injection-15739394978232396905",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): prevent markdown injection in reports",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-markdown-injection-fix-11203611282480447013",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: sanitize markdown output in analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-markdown-injection-fix-14905242363069244554",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: sanitize markdown report generation",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-markdown-injection-fix-7493760724070130119",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: sanitize markdown output in analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-markdown-sanitization-11985779393416298758",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add markdown sanitization for analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-markdown-sanitization-15094768365702724713",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Sanitize Markdown output in analytics report",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-markdown-sanitization-7125974230705097522",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add Markdown sanitization to report generator",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-markdown-sanitization-7145404824939616399",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add markdown sanitization to agent reports",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-output-encoding-17232199757136201489",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: secure markdown output encoding in analytics",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-path-traversal-csv-fix-3823511554369856865",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement bi-weekly reporting schedule",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-path-traversal-fix-10577458576876896305",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix: prevent path traversal in scraper.py output",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-path-traversal-fix-10734782859675009310",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix path traversal vulnerability in scraper scripts",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-path-traversal-fix-11587562362806338360",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix path traversal vulnerability in scraper output",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-path-traversal-fix-12279666712111008639",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix path traversal vulnerability in scraper.py",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-path-traversal-fix-12513139928667827617",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Implement autonomous multi-agent system",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-path-traversal-fix-12611882508292963082",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Prevent path traversal in scraper output files",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-path-traversal-fix-13434890408938991283",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix path traversal vulnerability in scraper output paths",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-path-traversal-fix-14362573612841171516",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix path traversal in scrape_informatic.py",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-path-traversal-fix-16721964439752681814",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Prevent path traversal in scraper output",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-path-traversal-fix-17327093040459172563",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix path traversal vulnerability in scraper.py",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-path-traversal-fix-17847315453125522921",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix: prevent path traversal in scraper output and add timeout",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-path-traversal-fix-18413042180626318993",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix path traversal vulnerability in file outputs",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-path-traversal-fix-4227351371045424943",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix: prevent path traversal in scraper output",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-path-traversal-fix-5954497886422508667",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix Path Traversal vulnerability in scraper scripts",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-path-traversal-fix-6263730005958541679",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Prevent path traversal in scrapers",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-path-traversal-fix-75464583372601592",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): prevent path traversal in CLI tools",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-path-traversal-fix-7924678315596277000",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix path traversal vulnerability in scraper output paths",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-path-traversal-fix-8645236588093434852",
+          "status": "Ready for Merge",
+          "result": "Commit: Security: Fix Path Traversal vulnerability in scraper output arguments",
+          "category": "security"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-path-traversal-fix-8670746319559752468",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): fix path traversal in file outputs",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-scraper-dos-fix-5795128343399673854",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add response size limit to scraper to prevent DoS",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-scraper-security-17958507904962651571",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): harden scraper against path traversal and CSV injection",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-scraper-security-3468579950298759361",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix stored XSS via scraper URL validation",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-scraper-security-8881075765074937007",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): Restrict scraper to http/https protocols",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-scraper-timeout-13066185992077732922",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): add network timeout to scrape_informatic.py",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-secure-markdown-report-10480316931912744290",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): sanitize markdown output in reports",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-security-fix-3723865700498354440",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Fix CSV Injection and Path Traversal in Scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-security-fixes-1698740501071019689",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add timeout to network requests and validate output paths in scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-security-fixes-2926280521022127220",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Implement CSV injection protection and path traversal prevention in scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-ssrf-fix-11285404620217692066",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add SSRF protection to BlogScraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-ssrf-fix-15679479573064166638",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add SSRF protection to BlogScraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-ssrf-fix-15708222487213179440",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add SSRF protection to scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-ssrf-fix-2624088104699189240",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add SSRF protection to scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-ssrf-fix-2673881214172986462",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add SSRF protection to scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-ssrf-fix-3044566237611297460",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add URL validation to prevent SSRF in BlogScraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-ssrf-fix-3881955097333769994",
+          "status": "Ready for Merge",
+          "result": "Commit: Fix SSRF in BlogScraper by validating URL scheme and domain",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-ssrf-fix-4228425810213735351",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add URL validation to scraper for SSRF protection",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-ssrf-fix-7380402867883374496",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add strict SSRF protection to scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-ssrf-fix-7650991945586945721",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Add SSRF protection to scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-timeout-fix-11256009627229693809",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): add request timeout to scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-timeout-fix-9908235734266386535",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): Add 30s timeout to scraper requests",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-url-validation-16463849517756046800",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: secure scraper with strict URL validation",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-url-validation-1973285789499580044",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: stricter URL validation to prevent injection attacks",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-url-validation-2700286336477538754",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): Validate URLs in scraper to prevent injection",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-url-validation-3025430015714192386",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): add URL validation to scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-url-validation-800829515985496089",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): Implement URL input validation in scraper",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-url-validation-8385423909047886596",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): Validate URL schemes and test CSV security",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-url-validation-994417387190840418",
+          "status": "Ready for Merge",
+          "result": "Commit: feat(security): Validate URLs to prevent unsafe schemes",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/sentinel-xss-fix-4307107486313997364",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: Fix Stored XSS in Markdown reports",
+          "category": "feature"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/sentinel/fix-analytics-xss-17804299682407068975",
           "status": "Ready for Merge",
           "result": "Commit: Fix XSS and Markdown injection in analytics report",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
@@ -25814,14 +34177,14 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/sentinel/fix-csv-injection-11516698988446732046",
           "status": "Ready for Merge",
           "result": "Commit: feat(security): prevent CSV injection in scraper output",
-          "category": "security"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/sentinel/fix-csv-injection-11796924900035192869",
           "status": "Ready for Merge",
           "result": "Commit: Fix CSV injection vulnerability in scraper.py",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
@@ -25835,42 +34198,42 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/sentinel/fix-csv-injection-12822134464045250176",
           "status": "Ready for Merge",
           "result": "Commit: Fix CSV injection vulnerability in scraper output",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/sentinel/fix-csv-injection-12899560490042954915",
           "status": "Ready for Merge",
           "result": "Commit: fix: sanitize CSV output to prevent formula injection",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/sentinel/fix-csv-injection-13077768089564060512",
           "status": "Ready for Merge",
           "result": "Commit: Fix CSV injection vulnerability in scraper",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/sentinel/fix-csv-injection-14090242410722960324",
           "status": "Ready for Merge",
           "result": "Commit: Fix CSV injection vulnerability in scraper output",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/sentinel/fix-csv-injection-1424126792917896007",
           "status": "Ready for Merge",
           "result": "Commit: Fix CSV Injection vulnerability in scraper output",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/sentinel/fix-csv-injection-14631498172973798397",
           "status": "Ready for Merge",
           "result": "Commit: feat: implement self-learning IQ tracking for Intelligence Agent",
-          "category": "security"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
@@ -25884,13 +34247,13 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/sentinel/fix-csv-injection-15191188867369355221",
           "status": "Ready for Merge",
           "result": "Commit: Fix CSV injection vulnerability in scraper.py",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/sentinel/fix-csv-injection-17728883922707922928",
           "status": "Ready for Merge",
-          "result": "Commit: Fix CSV injection vulnerability in scraper.py",
+          "result": "Commit: Merge branch 'analytics-single-pass-optimization-8605272393071134080' into sentinel/fix-csv-injection-17728883922707922928",
           "category": "security"
         },
         {
@@ -25911,7 +34274,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "type": "Branch Result",
           "name": "remotes/origin/sentinel/fix-csv-injection-1837485357128189949",
           "status": "Ready for Merge",
-          "result": "Commit: Fix CSV injection vulnerability in scraper.py",
+          "result": "Commit: Merge branch 'unbounded-memory-fix-2399372418864956220' into sentinel/fix-csv-injection-1837485357128189949",
           "category": "security"
         },
         {
@@ -25919,20 +34282,20 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/sentinel/fix-csv-injection-2336053112863136471",
           "status": "Ready for Merge",
           "result": "Commit: Fix CSV Injection vulnerability in scraper.py",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/sentinel/fix-csv-injection-2447504539705409279",
           "status": "Ready for Merge",
           "result": "Commit: feat: Prevent CSV injection in scraper output",
-          "category": "security"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/sentinel/fix-csv-injection-2502077377827287714",
           "status": "Ready for Merge",
-          "result": "Commit: Fix CSV injection vulnerability in scraper",
+          "result": "Commit: Merge branch 'scrape-oracle-news-9936778584663660002' into sentinel/fix-csv-injection-2502077377827287714",
           "category": "security"
         },
         {
@@ -25975,28 +34338,28 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/sentinel/fix-csv-injection-4054564814748295224",
           "status": "Ready for Merge",
           "result": "Commit: Fix CSV Injection in scraper.py",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/sentinel/fix-csv-injection-4616410932219879606",
           "status": "Ready for Merge",
           "result": "Commit: Fix CSV Formula Injection in scraper.py",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/sentinel/fix-csv-injection-4856694323076265204",
           "status": "Ready for Merge",
           "result": "Commit: Fix CSV Injection vulnerability in scraper by sanitizing outputs.",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/sentinel/fix-csv-injection-4898138830369691020",
           "status": "Ready for Merge",
           "result": "Commit: Fix CSV Injection vulnerability in scraper output - Add `sanitize_for_csv` method to `MarkPositionScraperAsync` class in `scraper.py` - Prepend `'` to CSV fields starting with `=`, `+`, `-`, `@` to prevent formula execution - Add entry to `.jules/sentinel.md`",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
@@ -26010,7 +34373,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/sentinel/fix-csv-injection-5760919047341012368",
           "status": "Ready for Merge",
           "result": "Commit: Fix CSV injection vulnerability in scraper export",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
@@ -26024,14 +34387,14 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/sentinel/fix-csv-injection-7073829351286481379",
           "status": "Ready for Merge",
           "result": "Commit: feat(security): fix CSV injection vulnerability in scraper",
-          "category": "security"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/sentinel/fix-csv-injection-7284469719528354445",
           "status": "Ready for Merge",
           "result": "Commit: Fix CSV injection vulnerability in scraper",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
@@ -26052,7 +34415,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/sentinel/fix-markdown-injection-10552938949682893680",
           "status": "Ready for Merge",
           "result": "Commit: Fix Markdown injection vulnerability in analytics report generator",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
@@ -26066,28 +34429,28 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/sentinel/fix-markdown-injection-17509944772710987348",
           "status": "Ready for Merge",
           "result": "Commit: Fix Markdown table injection and XSS vulnerability in analytics report",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/sentinel/fix-markdown-injection-18346561083266000842",
           "status": "Ready for Merge",
           "result": "Commit: Fix Markdown and HTML injection in analytics report",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/sentinel/fix-markdown-injection-2058121724437501855",
           "status": "Ready for Merge",
           "result": "Commit: fix(security): sanitize markdown input in analytics report",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/sentinel/fix-markdown-injection-796801966410983912",
           "status": "Ready for Merge",
           "result": "Commit: fix: sanitize inputs in Markdown report generation",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
@@ -26108,7 +34471,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/sentinel/fix-path-traversal-2695657045169320867",
           "status": "Ready for Merge",
           "result": "Commit: Fix Path Traversal vulnerability in scraper and analytics tools",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
@@ -26122,7 +34485,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/sentinel/fix-path-traversal-690021270023294880",
           "status": "Ready for Merge",
           "result": "Commit: feat: Prevent path traversal in scraper output files",
-          "category": "security"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
@@ -26136,7 +34499,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/sentinel/fix-path-traversal-9188874187141553419",
           "status": "Ready for Merge",
           "result": "Commit: Fix path traversal vulnerability in scraper.py and analytics.py",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
@@ -26150,7 +34513,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/sentinel/fix-path-traversal-scraper-15595414302913607334",
           "status": "Ready for Merge",
           "result": "Commit: Fix path traversal vulnerability in scraper output arguments.",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
@@ -26164,14 +34527,14 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/sentinel/fix-scraper-path-traversal-12683996464696937820",
           "status": "Ready for Merge",
           "result": "Commit: fix(scraper): prevent path traversal and update schedule",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/sentinel/fix-scraper-ssrf-1182726048773637235",
           "status": "Ready for Merge",
           "result": "Commit: fix: Prevent SSRF in scraper pagination logic",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
@@ -26192,7 +34555,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/sentinel/fix-scraper-timeout-6444312596237572236",
           "status": "Ready for Merge",
           "result": "Commit: Fix: Add timeout to requests in scrape_informatic.py",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
@@ -26206,7 +34569,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/sentinel/fix-scraper-vulnerabilities-4677155217137782042",
           "status": "Ready for Merge",
           "result": "Commit: feat: secure scraper output (path traversal & csv injection)",
-          "category": "security"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
@@ -26220,28 +34583,84 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "name": "remotes/origin/sentinel/fix-ssrf-url-validation-8246286317573036494",
           "status": "Ready for Merge",
           "result": "Commit: feat(security): add URL validation to scraper to prevent SSRF",
-          "category": "security"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/sentinel/fix-timeout-scraper-8563168967022148924",
           "status": "Ready for Merge",
           "result": "Commit: feat: Add request timeout to scraper",
-          "category": "security"
+          "category": "feature"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/sentinel/fix-url-validation-1428990983008492380",
           "status": "Ready for Merge",
           "result": "Commit: Fix security vulnerability: Add URL validation to scraper",
-          "category": "security"
+          "category": "fix"
         },
         {
           "type": "Branch Result",
           "name": "remotes/origin/sentinel/ssrf-protection-3166067632750321151",
           "status": "Ready for Merge",
           "result": "Commit: feat: Add SSRF protection to scraper",
-          "category": "security"
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/subagent-configuration-update-7123065298896349124",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: create collaborator subagent and update existing agent configurations",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/test-run-and-pii-sanitization-13332227309819345167",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: autonomous system evolution v1.24 with package-based layout",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/update-autonomous-workflow-to-nodejs-12950846570803253744",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: resolve syntax errors causing CI build failure in Next.js frontend",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/update-compile-definition-9206230129012668911",
+          "status": "Ready for Merge",
+          "result": "Commit: fix: resolve eslint and build errors causing CI failure",
+          "category": "fix"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/update-mongodb-uri-2808493771476678278",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: add secure script to test MongoDB Atlas connection",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/update-react-deployment-logic-11252325931757869303",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: integrate react agent deployment logic and fix tools list parsing",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/update-remote-subagents-8216224045262465071",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: configure and document Gemini CLI remote subagents",
+          "category": "feature"
+        },
+        {
+          "type": "Branch Result",
+          "name": "remotes/origin/v0/8bukets-bd43e85b",
+          "status": "Ready for Merge",
+          "result": "Commit: feat: implement AI agent knowledge from Google Cloud Discover (#1529)",
+          "category": "feature"
         }
       ],
       "synergies": [],
@@ -26299,7 +34718,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
         },
         {
           "source": "collaboration",
-          "target": "notification",
+          "target": "autonomous_notification",
           "type": "import"
         },
         {
@@ -26351,6 +34770,156 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "source": "presence",
           "target": "git_provider",
           "type": "import"
+        },
+        {
+          "source": "autonomous_creation_order",
+          "target": "work_order",
+          "type": "import"
+        },
+        {
+          "source": "check_cloud_simulation",
+          "target": "docker",
+          "type": "import"
+        },
+        {
+          "source": "check_cloud_simulation",
+          "target": "react",
+          "type": "import"
+        },
+        {
+          "source": "check_cloud_simulation",
+          "target": "cloud_workflow",
+          "type": "import"
+        },
+        {
+          "source": "connect_and_collaborate",
+          "target": "cloud_simulation",
+          "type": "import"
+        },
+        {
+          "source": "consolidate_intelephense",
+          "target": "intelephense_service",
+          "type": "import"
+        },
+        {
+          "source": "demo_work_orders",
+          "target": "work_order",
+          "type": "import"
+        },
+        {
+          "source": "execute_creation_cycle",
+          "target": "work_order",
+          "type": "import"
+        },
+        {
+          "source": "full_autonomous_automatic_creation",
+          "target": "docker",
+          "type": "import"
+        },
+        {
+          "source": "full_autonomous_automatic_creation",
+          "target": "work_order",
+          "type": "import"
+        },
+        {
+          "source": "full_autonomous_ignition",
+          "target": "work_order",
+          "type": "import"
+        },
+        {
+          "source": "ignite_creation",
+          "target": "work_order",
+          "type": "import"
+        },
+        {
+          "source": "ingest_boundary_knowledge",
+          "target": "knowledge",
+          "type": "import"
+        },
+        {
+          "source": "ingest_forbes",
+          "target": "knowledge",
+          "type": "import"
+        },
+        {
+          "source": "ingest_gpgtools_knowledge",
+          "target": "knowledge",
+          "type": "import"
+        },
+        {
+          "source": "ingest_hcp_knowledge",
+          "target": "knowledge",
+          "type": "import"
+        },
+        {
+          "source": "ingest_hcp_packer_knowledge",
+          "target": "knowledge_observer",
+          "type": "import"
+        },
+        {
+          "source": "ingest_intelephense",
+          "target": "knowledge_observer",
+          "type": "import"
+        },
+        {
+          "source": "ingest_markposition_knowledge",
+          "target": "knowledge",
+          "type": "import"
+        },
+        {
+          "source": "ingest_software_online_review",
+          "target": "knowledge",
+          "type": "import"
+        },
+        {
+          "source": "ingest_terraform_knowledge",
+          "target": "knowledge",
+          "type": "import"
+        },
+        {
+          "source": "ingest_user_caio_knowledge",
+          "target": "knowledge_observer",
+          "type": "import"
+        },
+        {
+          "source": "react_orchestrator",
+          "target": "react",
+          "type": "import"
+        },
+        {
+          "source": "sync_all_branches",
+          "target": "collaboration",
+          "type": "import"
+        },
+        {
+          "source": "sync_all_branches",
+          "target": "intelligence",
+          "type": "import"
+        },
+        {
+          "source": "sync_icloud",
+          "target": "icloud",
+          "type": "import"
+        },
+        {
+          "source": "test_knowledge_integration",
+          "target": "github_docs_observer",
+          "type": "import"
+        },
+        {
+          "source": "unified_collaboration",
+          "target": "collaboration",
+          "type": "import"
+        },
+        {
+          "source": "unified_collaboration",
+          "target": "intelligence",
+          "type": "import"
+        },
+        {
+          "source": "page",
+          "target": "stats",
+          "type": "import"
         }
       ]
     },
@@ -26358,7 +34927,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
       "origin": "development",
       "health": "optimal",
       "volatilityTags": 0,
-      "timestamp": "2026-06-04T00:32:02.545Z"
+      "timestamp": "2026-06-05T03:32:47.343Z"
     },
     "relayState": [
       {
@@ -26368,7 +34937,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
           "Command Center",
           "Store"
         ],
-        "lastActivity": "2026-06-04T00:32:02.545Z",
+        "lastActivity": "2026-06-05T03:32:47.343Z",
         "intensity": 0.85
       },
       {
@@ -26383,21 +34952,21 @@ Please ensure you have a MongoDB cluster running and provide your connection str
       }
     ]
   },
-  "last_sync": "2026-06-04T00:32:03.018Z",
+  "last_sync": "2026-06-05T03:32:47.867Z",
   "directives": [
     {
-      "id": "dir_vcr62ie15",
+      "id": "dir_ywxau6oe7",
       "priority": "High",
       "intent": "Maintain 99.9% system uptime",
       "status": "Active",
-      "timestamp": "2026-06-04T00:32:02.557Z"
+      "timestamp": "2026-06-05T03:32:47.349Z"
     },
     {
-      "id": "dir_g4symifn9",
+      "id": "dir_giy9ur6os",
       "priority": "Medium",
       "intent": "Consolidate all branch knowledge daily",
       "status": "Active",
-      "timestamp": "2026-06-04T00:32:02.557Z"
+      "timestamp": "2026-06-05T03:32:47.349Z"
     }
   ]
 }
@@ -26407,7 +34976,7 @@ Please ensure you have a MongoDB cluster running and provide your connection str
 # iCloud: caio_role_docs.md
 
 > **Source:** icloud://caio_role_docs.md
-> **Analyzed At:** 2026-06-04T00:47:53.658Z
+> **Analyzed At:** 2026-06-05T03:36:00.128Z
 
 ## Chief AI Officer (CAIO) Role Description (2025/2026 Update)
 A Chief AI Officer (CAIO) is a C-suite executive responsible for overseeing an organization’s entire artificial intelligence strategy. The role bridges the gap between advanced technical execution and bottom-line business outcomes. As AI adoption accelerates, the CAIO has evolved from a "nice-to-have" to a critical executive position, with 73% of Fortune 500 companies planning to hire one by the end of 2026.
@@ -26452,7 +35021,7 @@ A Chief AI Officer directs how a company develops, procures, and implements AI t
 # iCloud: package-lock.json
 
 > **Source:** icloud://package-lock.json
-> **Analyzed At:** 2026-06-04T00:47:53.729Z
+> **Analyzed At:** 2026-06-05T03:36:00.250Z
 
 ## Content
 {
@@ -37113,7 +45682,7 @@ A Chief AI Officer directs how a company develops, procures, and implements AI t
 # iCloud: package.json
 
 > **Source:** icloud://package.json
-> **Analyzed At:** 2026-06-04T00:47:53.796Z
+> **Analyzed At:** 2026-06-05T03:36:00.408Z
 
 ## Content
 {
@@ -37188,7 +45757,7 @@ A Chief AI Officer directs how a company develops, procures, and implements AI t
 # iCloud: project_backlog.md
 
 > **Source:** icloud://project_backlog.md
-> **Analyzed At:** 2026-06-04T00:47:53.862Z
+> **Analyzed At:** 2026-06-05T03:36:00.500Z
 
 ## Antigravity Ecosystem - Structured Backlog
 Based on the local codebase health assessment, the following Work Items should be imported into GitLab. The local codebase is currently degraded due to Turbopack compilation failures, TypeScript issues, and missing credentials.
@@ -37243,7 +45812,7 @@ Based on the local codebase health assessment, the following Work Items should b
 # iCloud: test_knowledge_output.json
 
 > **Source:** icloud://test_knowledge_output.json
-> **Analyzed At:** 2026-06-04T00:47:53.930Z
+> **Analyzed At:** 2026-06-05T03:36:00.593Z
 
 ## Content
 {
@@ -37409,7 +45978,7 @@ Based on the local codebase health assessment, the following Work Items should b
 # iCloud: tsconfig.json
 
 > **Source:** icloud://tsconfig.json
-> **Analyzed At:** 2026-06-04T00:47:53.997Z
+> **Analyzed At:** 2026-06-05T03:36:00.720Z
 
 ## Content
 {
@@ -37461,7 +46030,7 @@ Based on the local codebase health assessment, the following Work Items should b
 # iCloud: wilson_sonsini.md
 
 > **Source:** icloud://wilson_sonsini.md
-> **Analyzed At:** 2026-06-04T00:47:54.064Z
+> **Analyzed At:** 2026-06-05T03:36:00.882Z
 
 ## Core Identity & Market Position
 • **Startup Lifecycle:** They are the "cradle-to-grave" firm for startups, representing companies from initial incorporation and seed funding to multi-billion dollar IPOs and global M&A.
