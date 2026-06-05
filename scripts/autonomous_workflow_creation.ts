@@ -266,7 +266,7 @@ function main() {
   // Generate dynamic data sync manually as before
   generateWorkflow('Dynamic Data Sync', 'scripts/autonomous_sync.ts');
 
-  // Autonomously scan and generate for all workflows in antigravity/workflows
+  // Autonomously scan and generate for all workflow scripts in antigravity/workflows
   if (fs.existsSync(SCRIPTS_DIR)) {
     const files = fs.readdirSync(SCRIPTS_DIR);
     for (const file of files) {
