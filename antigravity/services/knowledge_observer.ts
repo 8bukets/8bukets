@@ -142,10 +142,10 @@ export class KnowledgeObserver {
         currentSection = { header: (headerMatch[1] || line.trim()).trim(), content: '' };
       } else if (currentSection) {
         // Only strip HTML tags if we're not in a code block and it looks like a real tag
-        // Simple heuristic: if it contains generic-like patterns, don't strip
+        // Simple heuristic: allow generics like <T>, <TKey, TValue>, <string, int>
         let contentLine = inCodeBlock ? line : line.trim();
         if (!inCodeBlock) {
-           contentLine = contentLine.replace(/<(?!T[A-Z][a-zA-Z0-9]*|T[0-9]|T[,\s]|T>)[^>]*>/gm, '');
+           contentLine = contentLine.replace(/<(?!(\/?(T[A-Z][a-zA-Z0-9]*|T[0-9]|T[,\s]|T|string|int|mixed|object|float|bool|iterable|callable|void|null|true|false)))[^>]*>/gm, '');
         }
 
         if (contentLine || inCodeBlock) {
