@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { z } from 'zod'
 import { autonomousFetch } from '@/antigravity/core'
-import { isDockerHealthy as checkDockerHealth } from './docker'
+import { checkDockerHealth } from './docker'
 import { getLatestBuildStatus } from './jenkins'
 import { dispatchExecutiveBriefing } from './notification'
 
@@ -268,7 +268,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
           resourceUsage[matchedResource.name].add(b.name)
 
           // Group by Functional Cluster (e.g., 'auth', 'database', 'cloud')
-          const clusterMatch = matchedResource.name.match(/^(auth|db|database|cloud|neural|edge|api|ui|ux|security|knowledge|intelligence)/i)
+          const clusterMatch = matchedResource.name.match(/^(auth|db|database|cloud|neural|edge|api|ui|ux|security|knowledge|intelligence|analytics|evolution|creation|sync|collaboration)/i)
           if (clusterMatch) {
             const cluster = clusterMatch[0].toLowerCase()
             if (!functionalClusters[cluster]) functionalClusters[cluster] = new Set()
@@ -283,23 +283,36 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
   map.resourceDependencies = []
 
   // Phase 12: Resource Dependency Tracking (Expanded Static Analysis)
-  const serviceFiles = map.resourceInventory.filter((r: any) => r.type === 'Service')
-  for (const service of serviceFiles) {
+  const trackableResources = map.resourceInventory.filter((r: any) => ['Service', 'UI Component', 'Automation Script'].includes(r.type))
+  for (const resource of trackableResources) {
+    if (!resource.path) continue
     try {
-      const content = await fs.promises.readFile(path.join(process.cwd(), service.path), 'utf8')
-      // Support ./, ../, and @/ aliases
-      const imports = content.match(/import .* from ['"](@\/antigravity\/services\/|\.\/|\.\.\/services\/)(.*)['"]/g) || []
+      const content = await fs.promises.readFile(path.join(process.cwd(), resource.path), 'utf8')
+      // Support ./, ../, and @/ aliases, and account for varying import styles
+      const imports = content.match(/import .* from ['"](@\/antigravity\/services\/|@\/antigravity\/|\.\/|\.\.\/services\/|\.\.\/)(.*)['"]/g) || []
       imports.forEach(imp => {
-        const depMatch = imp.match(/['"](@\/antigravity\/services\/|\.\/|\.\.\/services\/)(.*)['"]/)
+        const depMatch = imp.match(/['"](@\/antigravity\/services\/|@\/antigravity\/|\.\/|\.\.\/services\/|\.\.\/)(.*)['"]/)
         if (depMatch) {
-          const depName = depMatch[2].replace(/\.[jt]s$/, '')
-          const target = serviceFiles.find(s => s.name === depName)
-          if (target) {
-            map.resourceDependencies.push({
-              source: service.name,
-              target: target.name,
-              type: 'import'
-            })
+          const depPathPart = depMatch[2].replace(/\.[jt]sx?$/, '')
+          const depName = depPathPart.split('/').pop() || depPathPart
+
+          // Find the specific resource that matches this dependency
+          const target = map.resourceInventory.find((s: any) =>
+            s.name === depName ||
+            (s.path && s.path.includes(depPathPart)) ||
+            (s.path && depPathPart.includes(s.name))
+          )
+
+          if (target && target.name !== resource.name) {
+            // Deduplicate dependencies
+            const exists = map.resourceDependencies.some((d: any) => d.source === resource.name && d.target === target.name)
+            if (!exists) {
+              map.resourceDependencies.push({
+                source: resource.name,
+                target: target.name,
+                type: 'import'
+              })
+            }
           }
         }
       })
@@ -465,7 +478,10 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
         const parts = existingContent.split(branchIdentifier)
         for (let i = 1; i < parts.length; i++) {
           const branchSection = parts[i].split('##')[0];
-          if (branchSection.includes(resultIdentifier) && (!knowledgeIdentifier || branchSection.includes(knowledgeIdentifier))) {
+          // Robust deduplication matching both results and knowledge nuggets
+          const matchResult = branchSection.includes(resultIdentifier);
+          const matchKnowledge = !knowledgeIdentifier || branchSection.includes(knowledgeIdentifier);
+          if (matchResult && matchKnowledge) {
               return false;
           }
         }
@@ -500,12 +516,12 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
     newEntries += `\n`
   }
 
-  // Highlight Strategic Synergies if they exist in the state (passing them in would be better but let's derive from branches)
-  const branchesWithSynergy = relevantBranches.filter(b => b.category === 'feature' || b.category === 'performance')
-  if (branchesWithSynergy.length > 0) {
+  // Highlight Strategic Synergies from the relationship map
+  if (relationshipMap?.synergies && relationshipMap.synergies.length > 0) {
     newEntries += `### ⚡ Strategic Synergy Highlights\n`
-    branchesWithSynergy.slice(0, 5).forEach(b => {
-      newEntries += `- **SYNERGY:** \`${b.name}\` -> ${b.results || b.result || 'N/A'} (Focus: ${b.category})\n`
+    const synergies = relationshipMap.synergies.slice(0, 10)
+    synergies.forEach((s: any) => {
+      newEntries += `- **SYNERGY [${s.intensity}]:** \`${s.resource}\` involves branches: ${s.branches.slice(0, 3).join(', ')}${s.branches.length > 3 ? '...' : ''}\n`
     })
     newEntries += `\n`
   }

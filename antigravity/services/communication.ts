@@ -99,9 +99,37 @@ export async function generateActionableBriefing(state: any, directives: Directi
   if (criticalRecs.length > 0) {
     briefing += `\n### 🤝 Direct Coordination Paths\n`
     criticalRecs.forEach((r: any) => {
-      briefing += `- **Resource:** \`${r.resource}\`\n`
-      briefing += `  - *Path:* ${r.rationale.includes('Urgent coordination required between:') ? r.rationale.split('Urgent coordination required between:')[1].trim() : 'Cross-team alignment'}\n`
+      const coordinationRequired = r.rationale.includes('Urgent coordination required between:')
+      const coordinationPath = coordinationRequired
+        ? r.rationale.split('Urgent coordination required between:')[1].trim()
+        : 'Cross-team architectural review required.'
+
+      briefing += `- **Resource Conflict/Synergy:** \`${r.resource}\`\n`
+      briefing += `  - **Strategic Pathway:** ${coordinationPath}\n`
+      briefing += `  - **Action Item:** ${r.action}\n`
+      if (r.branches && Array.isArray(r.branches)) {
+        briefing += `  - **Impacted Branches:** ${r.branches.slice(0, 5).join(', ')}${r.branches.length > 5 ? ` (+${r.branches.length - 5} more)` : ''}\n`
+      }
     })
+  }
+
+  // Phase 12: Specific Agent-to-Stakeholder Directives
+  briefing += `\n### 🤖 Agent-to-Stakeholder Directives\n`
+  if (synergies.length > 0) {
+    const highIntensity = synergies.filter((s: any) => s.intensity === 'High')
+    if (highIntensity.length > 0) {
+      briefing += `- **Jules Directive (CRITICAL):** "Immediate intervention required for ${highIntensity.length} high-intensity resource overlaps. Consolidate these branches to prevent significant architectural fragmentation."\n`
+    } else {
+      briefing += `- **Jules Directive:** "I have detected ${synergies.length} developmental overlaps. Stakeholders should prioritize the 'Strategic Coordination Paths' defined above to avoid architectural drift."\n`
+    }
+  } else {
+    briefing += `- **Jules Directive:** "System alignment is optimal. No manual intervention required for current development streams."\n`
+  }
+
+  // Phase 12: Resource Synergy Insights
+  if (state.intelligence.relationshipMap.resourceDependencies?.length > 0) {
+    const deps = state.intelligence.relationshipMap.resourceDependencies.length
+    briefing += `- **Intelligence Directive:** "Ecosystem features ${deps} cross-service dependencies. Ensure that changes to core services are preceded by automated dependency impact analysis."\n`
   }
 
   briefing += `\n### 🚀 Required Stakeholder Decisions\n`

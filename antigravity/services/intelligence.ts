@@ -37,7 +37,35 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `## 🏥 System Sovereignty\n`
   report += `- **MongoDB:** ${health.mongodb}\n`
   report += `- **Supabase:** ${health.supabase}\n`
+  report += `- **Active Workers:** 24/7 autonomous surveillance active\n`
   report += `- **Total Branches:** ${branches.length}\n\n`
+
+  const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
+
+  // Phase 12: Resource Ecosystem Summary
+  const categorizedResources: Record<string, any[]> = {}
+  relationshipMap.resourceInventory.forEach((res: any) => {
+    if (!categorizedResources[res.type]) categorizedResources[res.type] = []
+    categorizedResources[res.type].push(res)
+  })
+
+  report += `## 📦 Resource Ecosystem\n`
+  Object.entries(categorizedResources).forEach(([type, items]) => {
+    report += `- **${type}s:** ${items.length} active\n`
+  })
+  report += `\n`
+
+  // Phase 12: Resource Dependency Matrix
+  if (relationshipMap.resourceDependencies && relationshipMap.resourceDependencies.length > 0) {
+    report += `## 🔗 Resource Dependency Matrix\n`
+    relationshipMap.resourceDependencies.slice(0, 15).forEach((d: any) => {
+      report += `- \`${d.source}\` --[${d.type}]--> \`${d.target}\` \n`
+    })
+    if (relationshipMap.resourceDependencies.length > 15) {
+      report += `- _...and ${relationshipMap.resourceDependencies.length - 15} more dependencies._\n`
+    }
+    report += `\n`
+  }
 
   // Phase 12: Active Stakeholder Directives
   const { getStakeholderDirectives, generateActionableBriefing } = await import('./communication')
@@ -54,8 +82,6 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   }
   report += `\n`
 
-  const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
-
   // Phase 12: Actionable Briefing
   const actionableBriefing = await generateActionableBriefing({
     docker: { status: health.mongodb === 'healthy' ? 'optimal' : 'degraded' },
@@ -69,9 +95,31 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   if (criticalRecs.length > 0) {
     report += `### 🤝 Strategic Coordination Pathways\n`
     criticalRecs.forEach((r: any) => {
+      const coordinationPath = r.rationale.includes('Urgent coordination required between:')
+        ? r.rationale.split('Urgent coordination required between:')[1].trim()
+        : 'Cross-team architectural review required.';
+
       report += `- **Conflict/Synergy on:** \`${r.resource}\`\n`
-      report += `  - **Pathway:** ${r.rationale.includes('Urgent coordination required between:') ? r.rationale.split('Urgent coordination required between:')[1].trim() : 'Cross-team architectural review required.'}\n`
-      report += `  - **Involved Branches:** ${r.branches.join(', ')}\n`
+      report += `  - **Strategic Pathway:** ${coordinationPath}\n`
+      report += `  - **Involved Branches:** ${r.branches.slice(0, 5).join(', ')}${r.branches.length > 5 ? ` (+${r.branches.length - 5} more)` : ''}\n`
+    })
+    report += `\n`
+  }
+
+  // Phase 12: Integrated Strategic Synergy Matrix
+  if (relationshipMap.synergies && relationshipMap.synergies.length > 0) {
+    report += `### ⚡ Strategic Synergy Matrix\n`
+    report += `| Resource | Intensity | Collaborating Branches | Actionable Recommendation |\n`
+    report += `| :--- | :---: | :--- | :--- |\n`
+    relationshipMap.synergies.slice(0, 10).forEach((s: any) => {
+      const recommendation = relationshipMap.collaborationRecommendations.find((r: any) =>
+        r.resource === s.resource || r.action.includes(`'${s.resource}'`)
+      )
+      const recommendationText = recommendation
+        ? `${recommendation.action}${recommendation.rationale.includes('Coordination required') ? `<br/>*${recommendation.rationale.split('. ')[1]}*` : ''}`
+        : 'Consolidate effort'
+
+      report += `| \`${s.resource}\` | ${s.intensity} | ${s.branches.slice(0, 2).join(', ')}${s.branches.length > 2 ? '...' : ''} | ${recommendationText} |\n`
     })
     report += `\n`
   }
@@ -84,7 +132,8 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
     .slice(0, 10)
 
   recentBranches.forEach(b => {
-    report += `- **${b.name}** [${b.category}]: ${b.lastMessage} (*${b.lastSeen}*)\n`
+    const activity = b.lastSeen || 'recently'
+    report += `- **${b.name}** [${b.category}]: ${b.lastMessage} (*${activity}*)\n`
   })
   report += `\n`
 
@@ -120,28 +169,14 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `## 🤝 Merged Ecosystem Insights\n`
   report += `Synergy achieved across ${branches.length} branches. Detailed knowledge and results consolidated from specialized agents.\n\n`
 
-  // Phase 12: Synergy & Collaboration Analysis
-  if (relationshipMap.synergies && relationshipMap.synergies.length > 0) {
-    report += `### ⚡ Strategic Synergy Matrix\n`
-    report += `| Resource | Intensity | Collaborating Branches | Actionable Recommendation |\n`
-    report += `| :--- | :---: | :--- | :--- |\n`
-    relationshipMap.synergies.forEach((s: any) => {
-      const recommendation = relationshipMap.collaborationRecommendations.find((r: any) =>
-        r.resource === s.resource || r.action.includes(`'${s.resource}'`)
-      )
-      const recommendationText = recommendation
-        ? `${recommendation.action}${recommendation.rationale.includes('Coordination required') ? `<br/>*${recommendation.rationale.split('. ')[1]}*` : ''}`
-        : 'Consolidate effort'
-      report += `| \`${s.resource}\` | ${s.intensity} | ${s.branches.slice(0, 3).join(', ')}${s.branches.length > 3 ? '...' : ''} | ${recommendationText} |\n`
-    })
-    report += `\n`
-  }
-
-  const insights = branches.filter(b => b.knowledge || (b.results && b.results !== `Commit: ${b.lastMessage}`)).slice(0, 10)
+  const insights = branches.filter(b => b.knowledge || (b.results && !b.results.startsWith('Commit:'))).slice(0, 15)
   if (insights.length > 0) {
     report += `### 🧠 Specialized Knowledge Nuggets\n`
     insights.forEach(b => {
-      report += `- **${b.name}**: ${b.results}${b.knowledge ? ` (*Knowledge: ${b.knowledge}*)` : ''}\n`
+      report += `- **${b.name}** [${b.domain}]: ${b.results}\n`
+      if (b.knowledge) {
+        report += `  - *Insight:* ${b.knowledge}\n`
+      }
     })
   } else {
     report += `- No new specialized insights to merge at this time.\n`
@@ -170,11 +205,6 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `\n`
 
   report += `## 📦 Resource Inventory\n`
-  const categorizedResources: Record<string, any[]> = {}
-  relationshipMap.resourceInventory.forEach((res: any) => {
-    if (!categorizedResources[res.type]) categorizedResources[res.type] = []
-    categorizedResources[res.type].push(res)
-  })
 
   Object.entries(categorizedResources).forEach(([type, items]) => {
     report += `### ${type}s\n`

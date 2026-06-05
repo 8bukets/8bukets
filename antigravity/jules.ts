@@ -18,10 +18,15 @@ interface JulesMemory {
 
 const MEMORY_PATH = path.join(process.cwd(), 'antigravity/.jules_memory.json')
 
+export type AgentRole = 'Coder' | 'Reviewer' | 'Ops' | 'Chief AI Officer' | 'Architect' | 'Observer';
+
 export class Jules {
+  public role: AgentRole;
+
   private memory: JulesMemory
 
-  constructor() {
+  constructor(role: AgentRole = 'Coder') {
+    this.role = role;
     if (fs.existsSync(MEMORY_PATH)) {
       this.memory = JSON.parse(fs.readFileSync(MEMORY_PATH, 'utf8'))
     } else {
@@ -270,16 +275,16 @@ export class Jules {
     const { observeKnowledge, persistKnowledge } = await import('./services/knowledge_observer')
     const urlsToObserve = [
       'https://software-online-review.com',
-      'https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU',
-      'https://business.google.com/uk/ad-tools/bidding/',
-      'https://business.google.com/uk/resources/',
-      'https://developers.google.com/ad-manager',
-      'https://developers.google.com/ad-manager/dynamic-ad-insertion',
-      'https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service',
-      'https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving',
-      'https://developers.google.com/ad-manager/api/start',
-      'https://admanager.google.com/home/resources/',
-      'https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview'
+      "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU",
+      "https://business.google.com/uk/ad-tools/bidding/",
+      "https://business.google.com/uk/resources/",
+      "https://developers.google.com/ad-manager",
+      "https://developers.google.com/ad-manager/dynamic-ad-insertion",
+      "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
+      "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
+      "https://developers.google.com/ad-manager/api/start",
+      "https://admanager.google.com/home/resources/",
+      "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview"
     ]
     for (const url of urlsToObserve) {
       const knowledgeInsights = await observeKnowledge(url)
@@ -411,21 +416,50 @@ export class Jules {
           }
 
           let category = 'other'
-          if (name.includes('feat/')) category = 'feature'
-          else if (name.includes('fix/')) category = 'fix'
-          else if (name.includes('sentinel/')) category = 'security'
-          else if (name.includes('palette/')) category = 'ux'
-          else if (name.includes('bolt/')) category = 'performance'
+          const lowerMsg = lastMessage.toLowerCase()
+          if (name.includes('feat/') || lowerMsg.startsWith('feat')) category = 'feature'
+          else if (name.includes('fix/') || lowerMsg.startsWith('fix')) category = 'fix'
+          else if (name.includes('sentinel/') || lowerMsg.startsWith('security')) category = 'security'
+          else if (name.includes('palette/') || lowerMsg.startsWith('style') || lowerMsg.startsWith('ui')) category = 'ux'
+          else if (name.includes('bolt/') || lowerMsg.startsWith('perf')) category = 'performance'
+          else if (lowerMsg.startsWith('docs')) category = 'documentation'
+          else if (lowerMsg.startsWith('chore')) category = 'maintenance'
           else if (name.includes('/')) category = name.split('/')[0]
+
+          // Phase 12: Enhanced Intelligence Extraction
+          let domain = 'General'
+          let knowledge = ''
+          if (changedFiles.length > 0) {
+            const hasMarkdown = changedFiles.some(f => f.endsWith('.md'))
+            const hasAgents = changedFiles.some(f => f.startsWith('agents/'))
+            const hasDocs = changedFiles.some(f => f.startsWith('docs/'))
+            const hasKnowledgeDir = changedFiles.some(f => f.includes('data/knowledge/'))
+
+            if (hasMarkdown || hasAgents || hasDocs || hasKnowledgeDir) {
+              const count = changedFiles.filter(f => f.endsWith('.md') || f.startsWith('agents/') || f.startsWith('docs/') || f.includes('data/knowledge/')).length;
+              knowledge = `Enhanced ecosystem knowledge base via ${count} artifact${count > 1 ? 's' : ''}.`
+            }
+
+            // Detect domain from file paths (Prioritized assignment)
+            if (changedFiles.some(f => f.includes('services/'))) domain = 'Services'
+            else if (changedFiles.some(f => f.includes('scripts/'))) domain = 'Automation'
+            else if (changedFiles.some(f => f.includes('app/') || f.includes('web-app/'))) domain = 'UI/UX'
+            else if (changedFiles.some(f => f.startsWith('agents/'))) domain = 'AI Agents'
+            else if (changedFiles.some(f => f.startsWith('docs/'))) domain = 'Documentation'
+          }
+
+          const results = changedFiles.length > 0
+            ? `${lastMessage} (${changedFiles.length} files changed in ${domain})`
+            : (lastMessage ? `Commit: ${lastMessage}` : 'N/A')
 
           return {
             name,
             lastMessage: lastMessage || 'N/A',
             lastSeen: lastSeen || 'N/A',
             category,
-            domain: 'General',
-            knowledge: '',
-            results: lastMessage ? `Commit: ${lastMessage}` : 'N/A',
+            domain,
+            knowledge,
+            results,
             changedFiles
           }
         } catch (e) {

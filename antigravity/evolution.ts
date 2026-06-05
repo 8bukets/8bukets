@@ -101,6 +101,24 @@ export async function evolve() {
             suggestion: 'MISSING_REGIONAL_CONFIG: APAC Phase 13 directive mandates localized regional configuration for edge nodes.'
           })
         }
+
+        // Rule 9: ROI Efficiency Monitoring (Phase 13 ROI Mandate)
+        if ((content.includes('autonomousFetch') || content.includes('execAsync')) && !content.includes('trackROI') && !fullPath.includes('core.ts')) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'MISSING_ROI_TRACKING: Resource-intensive service detected without explicit ROI efficiency tracking as per Phase 13 mandate.'
+          })
+        }
+
+        // Rule 10: Regional Compliance Metadata (Phase 13 APAC Directive)
+        if (fullPath.includes('apac') && !content.includes('regionalCompliance')) {
+           suggestions.push({
+             file: fullPath.replace(process.cwd(), ''),
+             complexity: lines,
+             suggestion: 'MISSING_REGIONAL_COMPLIANCE: APAC regional service detected without mandatory regionalCompliance metadata.'
+           })
+        }
       }
     }
   }
@@ -160,6 +178,12 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
     }
     
     // Additional autocorrection logic can be added here
+    if (s.suggestion.startsWith('MISSING_ROI_TRACKING')) {
+      console.log(` - Fixing ${s.file}: Injecting placeholder trackROI call.`)
+      // Add trackROI placeholder to autonomousFetch calls
+      content = content.replace(/autonomousFetch\((.*?)\)/g, 'autonomousFetch($1).then(res => { console.log("📊 [ROI] Efficiency tracking placeholder"); return res; })')
+      fs.writeFileSync(fullPath, content)
+    }
   }
   
   console.log('✅ [Antigravity Evolution] Autocorrection complete.')

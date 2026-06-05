@@ -87,6 +87,11 @@ pipeline {
                 sh 'npx tsx antigravity/workflows/autonomous_ethics_auditor_workflow.ts'
             }
         }
+        stage('Run Autonomous APAC Edge Orchestrator') {
+            steps {
+                sh 'npx tsx antigravity/workflows/apac_edge_orchestrator_workflow.ts'
+            }
+        }
         stage('Creative Workflow') {
             parallel {
                 stage('Market Analysis') {

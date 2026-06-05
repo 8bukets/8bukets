@@ -38,6 +38,12 @@ We use **Vitest** for unit and integration tests.
 - All autonomous core changes MUST pass validation before being merged.
 
 ## Synchronization Protocols (Update)
+- **Daily Work:** Use `npm run daily` for the full autonomous cycle (pull, repair, sync, push).
+- **Manual Tasks:**
+  - `npm run pluu`: Pull changes (rebase).
+  - `npm run upload`: Push changes.
+  - `npm run sync:icloud`: Manual project backup to iCloud.
+- **Persistence:** Use `scripts/install_launchd.sh` (macOS) or `scripts/install_cron.sh` (Linux) to automate "working every day".
 - **Connect:** Use `npm run connect` to trigger Docker auditing and stakeholder collaboration sync.
 - **GitHub:** Autonomous PR validation is triggered by the Explorer.
 - **GitKraken:** Visual branch validation should reflect the "Clean Architecture" maintained by the Core.
