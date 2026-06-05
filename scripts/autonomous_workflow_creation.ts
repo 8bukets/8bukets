@@ -4,6 +4,7 @@ import path from 'path';
 const WORKFLOW_DIR = path.join(process.cwd(), '.github', 'workflows');
 
 function generateWorkflow(name: string, scriptName: string) {
+  const scriptPath = scriptName.includes('/') ? scriptName : `scripts/${scriptName}`;
   const workflowContent = `name: ${name}
 
 on:
@@ -32,7 +33,7 @@ jobs:
         run: npm ci
 
       - name: Execute Task
-        run: npx tsx scripts/${scriptName}.ts
+        run: npx tsx ${scriptPath}.ts
 
       - name: Commit and Push Changes
         run: |
@@ -92,7 +93,7 @@ jobs:
           MACBOOK_CLOUD_SIMULATION: true
 
       - name: Execute Fully Autonomous Creation Cycle
-        run: npx tsx scripts/execute_creation_cycle.ts
+        run: npx tsx scripts/full_autonomous_automatic_creation.ts
         env:
           AUTONOMOUS_MODE: cloud
           MACBOOK_CLOUD_SIMULATION: true
@@ -141,7 +142,7 @@ jobs:
 #
 # Following the initial connection phase, the workflow proceeds to the
 # primary execution stage: "Execute Fully Autonomous Creation Cycle".
-# Here, we invoke \`npx tsx scripts/execute_creation_cycle.ts\`. This
+# Here, we invoke \`npx tsx scripts/full_autonomous_automatic_creation.ts\`. This
 # script is the heart of the generative process, orchestrating the actions
 # of multiple specialized sub-agents. It requires several key environment
 # variables to operate securely and effectively:
@@ -181,6 +182,18 @@ jobs:
 function main() {
   if (!fs.existsSync(WORKFLOW_DIR)) {
     fs.mkdirSync(WORKFLOW_DIR, { recursive: true });
+  }
+
+  const workflowsPath = path.join(process.cwd(), 'antigravity', 'workflows');
+  if (fs.existsSync(workflowsPath)) {
+    const files = fs.readdirSync(workflowsPath);
+    for (const file of files) {
+      if (file.endsWith('_workflow.ts')) {
+        const name = file.replace('_workflow.ts', '').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        const scriptName = `antigravity/workflows/${file.replace('.ts', '')}`;
+        generateWorkflow(name, scriptName);
+      }
+    }
   }
 
   generateWorkflow('Dynamic Data Sync', 'autonomous_sync');
