@@ -18,10 +18,15 @@ interface JulesMemory {
 
 const MEMORY_PATH = path.join(process.cwd(), 'antigravity/.jules_memory.json')
 
+export type AgentRole = 'Coder' | 'Reviewer' | 'Ops' | 'Chief AI Officer' | 'Architect' | 'Observer';
+
 export class Jules {
+  public role: AgentRole;
+
   private memory: JulesMemory
 
-  constructor() {
+  constructor(role: AgentRole = 'Coder') {
+    this.role = role;
     if (fs.existsSync(MEMORY_PATH)) {
       this.memory = JSON.parse(fs.readFileSync(MEMORY_PATH, 'utf8'))
     } else {
