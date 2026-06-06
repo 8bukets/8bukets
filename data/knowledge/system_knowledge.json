@@ -802,7 +802,7 @@
       "title": "Web Insight",
       "metadata": {
         "source": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview",
-        "analyzedAt": "2026-06-05T00:41:34.350Z",
+        "analyzedAt": "2026-06-06T17:09:08.266Z",
         "description": "Extracted system knowledge"
       },
       "sections": []
@@ -4885,6 +4885,24 @@
         {
           "header": "Developer consoles",
           "content": "- [Google API Console](//console.developers.google.com)\n- [Google Cloud Platform Console](//console.cloud.google.com)\n- [Google Play Console](//play.google.com/apps/publish)\n- [Firebase Console](//console.firebase.google.com)\n- [Actions on Google Console](//console.actions.google.com)\n- [Cast SDK Developer Console](//cast.google.com/publish)\n- [Chrome Web Store Dashboard](//chrome.google.com/webstore/developer/dashboard)\n- [Google Home Developer Console](//console.home.google.com)\n- [Android](//developer.android.com)\n- [Chrome](//developer.chrome.com/home)\n- [Firebase](//firebase.google.com)\n- [Google Cloud Platform](//cloud.google.com)\n- [Google AI](//ai.google.dev/)\n- [All products](/products)\n- [Terms](/terms/site-terms)\n- [Privacy](//policies.google.com/privacy)"
+        }
+      ]
+    },
+    {
+      "title": "iCloud: phase_13_strategy.md",
+      "metadata": {
+        "source": "icloud://phase_13_strategy.md",
+        "analyzedAt": "2026-06-06T17:09:08.952Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": [
+        {
+          "header": "Overview",
+          "content": "Phase 13 focuses on the \"Singularity of Efficiency\". All agents must now prioritize 95% ROI on compute operations."
+        },
+        {
+          "header": "Strategic Directives",
+          "content": "- **ENFORCE_QUANTUM_RESISTANCE**: All neural sync signatures must upgrade to post-quantum cryptographic standards.\n- **APAC_LATENCY_MASTERY**: Target <30ms latency for Tokyo and Singapore edge nodes.\n- **ROI_DIRECTIVE_95**: Any process with <95% efficiency must be throttled or refactored autonomously.\n- **SOVEREIGN_DATA_CLUSTERS**: Deploy localized MongoDB clusters in APAC regions to ensure data sovereignty."
         }
       ]
     }

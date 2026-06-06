@@ -16,17 +16,17 @@
     ],
     "docker": {
         "status": "optimal",
-        "containerCount": 0
+        "containerCount": 2
     },
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1780632434091,
+        "timestamp": 1780765749174,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
-        "branches": 2375,
-        "pendingTasks": 0,
+        "branches": 2406,
+        "pendingTasks": 6,
         "relationshipMap": {
             "stakeholderEngagement": {
                 "Filip Keser (Founder)": {
@@ -38,7 +38,7 @@
                 "Jules (Lead Architect)": {
                     "email": "jules@antigravity.ai",
                     "activeProjects": [
-                        "jules-17564530872616543141-92f4980d",
+                        "jules-16455813924717578317-e3c03c41",
                         "remotes/origin/HEAD -> origin/jules/scraper-markposition-17752547678215960211",
                         "remotes/origin/add-jules-cli-7658708591293792322",
                         "remotes/origin/feat/autonomous-protocol-jules-16130780090107402276",
@@ -53,6 +53,7 @@
                         "remotes/origin/jules-1103377942034451673-51f864ca",
                         "remotes/origin/jules-11082628370387662325-cceae0c4",
                         "remotes/origin/jules-11285418165717792072-a5eba6df",
+                        "remotes/origin/jules-11392749645888504105-52d924d9",
                         "remotes/origin/jules-11488447269521141033-d797466e",
                         "remotes/origin/jules-11604914884030509655-2a01bd4d",
                         "remotes/origin/jules-1164978700782097591-599a1052",
@@ -102,6 +103,7 @@
                         "remotes/origin/jules-3816100636150667016-130985d0",
                         "remotes/origin/jules-4039569702954338871-6dfc0852",
                         "remotes/origin/jules-4102353982491655498-fda2bbfe",
+                        "remotes/origin/jules-4218664248837075517-97620320",
                         "remotes/origin/jules-4230806492568327711-dd0d7dbe",
                         "remotes/origin/jules-4843122813281068614-8b4499aa",
                         "remotes/origin/jules-5125461103553111919-d5f7a47b",
@@ -156,6 +158,7 @@
                         "remotes/origin/jules-improve-workflow-and-knowledge-observer-11114380607500005512",
                         "remotes/origin/jules-ingest-ads-knowledge-7862837446767067464",
                         "remotes/origin/jules-ingest-google-ads-docs-12444511274572846717",
+                        "remotes/origin/jules-ingest-google-ai-croatian-7848067479310360387",
                         "remotes/origin/jules-ingest-hcp-knowledge-14291451140571066747",
                         "remotes/origin/jules-integrate-knowledge-merge-5016273102093085264",
                         "remotes/origin/jules-integrate-oracle-knowledge-9421136010084102746",
@@ -169,6 +172,8 @@
                         "remotes/origin/jules-knowledge-merge-collaboration-3722212575858302197",
                         "remotes/origin/jules-knowledge-merge-markposition-11506824174069569507",
                         "remotes/origin/jules-knowledge-observe-improvements-9236700373896263344",
+                        "remotes/origin/jules-optimize-analytics-15369716282927792834",
+                        "remotes/origin/jules-performance-optimization-analytics-11306538287504956069",
                         "remotes/origin/jules-remote-subagents-docs-1653073469927459457",
                         "remotes/origin/jules-scrape-informatic-6598290821327070927",
                         "remotes/origin/jules-security-optimizations-6605171866180417523",
@@ -204,6 +209,7 @@
                     "remotes/origin/integrate-jenkins-pipeline-generation-14117303396069153360"
                 ],
                 "Maintain Zero-Touch Autonomous Operations.": [
+                    "jules-16455813924717578317-e3c03c41",
                     "remotes/origin/add-gitlab-runner-service-1151466855069035440",
                     "remotes/origin/add-malubeach-scraper-16704333902164650708",
                     "remotes/origin/add-mysql-agent-12534386317238704274",
@@ -226,6 +232,7 @@
                     "remotes/origin/bolt-scraper-optimization-14139347642198043635",
                     "remotes/origin/bolt-soup-strainer-optimization-8380713953647872097",
                     "remotes/origin/chore-connect-docker-and-collaborate-12371415653107131827",
+                    "remotes/origin/chore/autonomous-evolution-update-18136705694323907139",
                     "remotes/origin/chore/docker-collaboration-sync-9465155386456086135",
                     "remotes/origin/cloud-autonomous-integration-17870893235290624845",
                     "remotes/origin/cloud-autonomous-stabilization-11787002344957414636",
@@ -244,6 +251,7 @@
                     "remotes/origin/feat/autonomous-cloud-merge-bypass-8712146839008626317",
                     "remotes/origin/feat/autonomous-cloud-presence-13349070200456458168",
                     "remotes/origin/feat/autonomous-cloud-presence-978332573715716812",
+                    "remotes/origin/feat/autonomous-cloud-presence-and-merge-7435388487164725443",
                     "remotes/origin/feat/autonomous-cloud-presence-enhancement-11813668786867103175",
                     "remotes/origin/feat/autonomous-cloud-presence-v12-14478074314535541001",
                     "remotes/origin/feat/autonomous-cloud-sovereignty-10617479099026703774",
@@ -298,8 +306,10 @@
                     "remotes/origin/feat/cloud-native-autonomy-3438116551041896813",
                     "remotes/origin/feat/cloud-native-convergence-16112457665657205536",
                     "remotes/origin/feat/cloud-native-online-presence-8372655786114667910",
+                    "remotes/origin/feat/cloud-presence-13706315460514423185",
                     "remotes/origin/feat/cloud-simulation-intelligence-18003609215898643719",
                     "remotes/origin/feat/collaboration-intelligence-knowledge-merge-v1-1682981257800000691",
+                    "remotes/origin/feat/connect-and-collaborate-10869785352580861022",
                     "remotes/origin/feat/connect-docker-and-collaborate-4263909557176402294",
                     "remotes/origin/feat/connect-docker-collaboration-6033606454460470488",
                     "remotes/origin/feat/connect-docker-collaboration-sync-final-11700500964007561939",
@@ -379,6 +389,8 @@
                     "remotes/origin/fix/autonomous-system-syntax-16085505803900570829",
                     "remotes/origin/fix/docker-collaboration-sync-3245584476125900421",
                     "remotes/origin/fix/optimize-execute-creation-cycle-9988671085706556406",
+                    "remotes/origin/full-autonomous-automatic-workflow-13691277307478214724",
+                    "remotes/origin/full-autonomous-workflow-5729065178633075095",
                     "remotes/origin/fully-autonomous-workflow-17686295934602386415",
                     "remotes/origin/implement-full-autonomous-automatic-workflow-12697350452626035149",
                     "remotes/origin/improve-git-sync-and-ingest-sor-6424222975070794974",
@@ -509,6 +521,7 @@
                     "remotes/origin/feat/cloud-native-autonomy-3438116551041896813",
                     "remotes/origin/feat/cloud-native-autonomy-presence-7653289006767349445",
                     "remotes/origin/feat/cloud-native-convergence-16112457665657205536",
+                    "remotes/origin/feat/cloud-presence-13706315460514423185",
                     "remotes/origin/feat/connect-docker-collaboration-6033606454460470488",
                     "remotes/origin/feat/connect-docker-collaboration-sync-v12-final-18361574323939110813",
                     "remotes/origin/feat/consolidated-intelligence-sync-1091614933754712837",
@@ -552,6 +565,7 @@
                     "remotes/origin/feat/unified-collaboration-intelligence-10789658545646187286",
                     "remotes/origin/feat/unified-collaboration-intelligence-merge-v12-4808907432766111944",
                     "remotes/origin/feat/unified-collaboration-intelligence-v12-3867223440127640861",
+                    "remotes/origin/feat/unified-collaboration-intelligence-v12-final-17564530872616543141",
                     "remotes/origin/feature/a2a-agent-implementation-12474626317752077342",
                     "remotes/origin/feature/adaptive-recovery-service-3883560226543520640",
                     "remotes/origin/feature/ai-agent-knowledge-refinement-4060124279711853146",
@@ -1709,12 +1723,6 @@
                 },
                 {
                     "type": "Knowledge",
-                    "name": "Intelephense Documentation",
-                    "status": "Ingested",
-                    "source": "https://intelephense.com/docs"
-                },
-                {
-                    "type": "Knowledge",
                     "name": "Understanding bidding basics - Google Ads Help",
                     "status": "Ingested",
                     "source": "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU"
@@ -1772,6 +1780,24 @@
                     "name": "ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation",
                     "status": "Ingested",
                     "source": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Intelephense Documentation",
+                    "status": "Ingested",
+                    "source": "https://intelephense.com/docs"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "Get started  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle",
+                    "status": "Ingested",
+                    "source": "https://developers.google.com/ad-manager/api/start"
+                },
+                {
+                    "type": "Knowledge",
+                    "name": "iCloud: phase_13_strategy.md",
+                    "status": "Ingested",
+                    "source": "icloud://phase_13_strategy.md"
                 },
                 {
                     "type": "Knowledge",
@@ -1878,6 +1904,13 @@
                     "name": "remotes/origin/add-golang-developer-agents-5802231143872030735",
                     "status": "Ready for Merge",
                     "result": "Commit: feat: Add golang developer subagents",
+                    "category": "feature"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "remotes/origin/add-google-adk-knowledge-and-examples-17228136166825962958",
+                    "status": "Ready for Merge",
+                    "result": "Commit: feat: Add Google ADK translated knowledge and code examples",
                     "category": "feature"
                 },
                 {
@@ -3394,6 +3427,13 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "remotes/origin/feat/autonomous-cloud-presence-and-merge-7435388487164725443",
+                    "status": "Ready for Merge",
+                    "result": "Commit: feat: enable autonomous cloud presence and automatic PR merging (fixed lockfile)",
+                    "category": "feature"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "remotes/origin/feat/autonomous-cloud-presence-enhancement-11813668786867103175",
                     "status": "Ready for Merge",
                     "result": "Commit: Merge branch 'jules/scraper-markposition-17752547678215960211' into feat/autonomous-cloud-presence-enhancement-11813668786867103175",
@@ -3744,6 +3784,13 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "remotes/origin/feat/caio-integration-enhancement-12997886670436036730",
+                    "status": "Ready for Merge",
+                    "result": "Commit: feat: enhance Chief AI Officer (CAIO) integration",
+                    "category": "feature"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "remotes/origin/feat/caio-intelligence-integration-11172055964198786485",
                     "status": "Ready for Merge",
                     "result": "Commit: Merge branch 'main' into feat/caio-intelligence-integration-11172055964198786485 (Resolved conflicts)",
@@ -3905,6 +3952,13 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "remotes/origin/feat/cloud-presence-13706315460514423185",
+                    "status": "Ready for Merge",
+                    "result": "Commit: feat: implement ignite-cloud-presence command for autonomous cloud operation",
+                    "category": "feature"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "remotes/origin/feat/cloud-presence-cli-11807476769292428876",
                     "status": "Ready for Merge",
                     "result": "Commit: Merge branch 'main' into feat/cloud-presence-cli-11807476769292428876",
@@ -3950,6 +4004,13 @@
                     "name": "remotes/origin/feat/compile-knowledge-ingestion-4339613978296539768",
                     "status": "Ready for Merge",
                     "result": "Commit: feat: ingest dictionary definition of Compile into central trackers",
+                    "category": "feature"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "remotes/origin/feat/connect-and-collaborate-10869785352580861022",
+                    "status": "Ready for Merge",
+                    "result": "Commit: chore: execute autonomous connection and collaboration sync",
                     "category": "feature"
                 },
                 {
@@ -4542,6 +4603,13 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "remotes/origin/feat/google-innovation-knowledge-integration-6794887600436846347",
+                    "status": "Ready for Merge",
+                    "result": "Commit: feat: integrate latest Google Innovation & AI knowledge",
+                    "category": "feature"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "remotes/origin/feat/hcp-terraform-run-task-3528016114234953749",
                     "status": "Ready for Merge",
                     "result": "Commit: feat: Add HCP Terraform run task configuration for Packer validation",
@@ -5011,6 +5079,13 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "remotes/origin/feat/intelephense-docs-sync-3894921985645154105",
+                    "status": "Ready for Merge",
+                    "result": "Commit: feat: update Intelephense documentation in knowledge base",
+                    "category": "feature"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "remotes/origin/feat/intelephense-docs-sync-6999221207327014913",
                     "status": "Ready for Merge",
                     "result": "Commit: docs: ingest and consolidate Intelephense documentation",
@@ -5462,6 +5537,13 @@
                     "name": "remotes/origin/feat/unified-collaboration-intelligence-v12-3867223440127640861",
                     "status": "Ready for Merge",
                     "result": "Commit: feat: unified collaboration and strategic communication (Phase 12)",
+                    "category": "feature"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "remotes/origin/feat/unified-collaboration-intelligence-v12-final-17564530872616543141",
+                    "status": "Ready for Merge",
+                    "result": "Commit: feat: implement Phase 12 Unified Collaboration and Strategic Communication",
                     "category": "feature"
                 },
                 {
@@ -6320,6 +6402,13 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "remotes/origin/full-autonomous-workflow-5729065178633075095",
+                    "status": "Ready for Merge",
+                    "result": "Commit: fix: update workflow engine to use full autonomous creation",
+                    "category": "fix"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "remotes/origin/gemini-cli-subagent-setup-5210662692571654805",
                     "status": "Ready for Merge",
                     "result": "Commit: feat: set up gemini CLI custom subagent and settings",
@@ -6379,6 +6468,13 @@
                     "name": "remotes/origin/improve-merge-integrate-run-3347991371920530382",
                     "status": "Ready for Merge",
                     "result": "Commit: feat: improve merge integrate run workflow and observe knowledge",
+                    "category": "feature"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "remotes/origin/improve-merge-integrate-run-observe-knowledge-6856212206819797744",
+                    "status": "Ready for Merge",
+                    "result": "Commit: feat: improve merge integrate run workflow and observe knowledge for software-online-review.com",
                     "category": "feature"
                 },
                 {
@@ -6673,6 +6769,13 @@
                     "name": "remotes/origin/jules-4039569702954338871-6dfc0852",
                     "status": "Ready for Merge",
                     "result": "Commit: feat: improve merge integrate run workflow and observe knowledge",
+                    "category": "feature"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "remotes/origin/jules-4218664248837075517-97620320",
+                    "status": "Ready for Merge",
+                    "result": "Commit: feat: create AgentRole type including Chief AI Officer",
                     "category": "feature"
                 },
                 {
@@ -9145,6 +9248,13 @@
                     "status": "Ready for Merge",
                     "result": "Commit: Merge branch 'scrape-wishlist-blog-8562532477839035494' into palette/report-ux-toc-4596925936165849228",
                     "category": "ux"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "remotes/origin/perf-optimize-regex-10602796158546240842",
+                    "status": "Ready for Merge",
+                    "result": "Commit: perf: Optimize regex matching by pre-compiling url pattern",
+                    "category": "performance"
                 },
                 {
                     "type": "Branch Result",
@@ -11630,9 +11740,9 @@
         },
         "neuralPulse": {
             "origin": "development",
-            "health": "degraded",
+            "health": "optimal",
             "volatilityTags": 0,
-            "timestamp": "2026-06-05T04:07:21.509Z"
+            "timestamp": "2026-06-06T17:09:34.814Z"
         },
         "relayState": [
             {
@@ -11642,7 +11752,7 @@
                     "Command Center",
                     "Store"
                 ],
-                "lastActivity": "2026-06-05T04:07:21.541Z",
+                "lastActivity": "2026-06-06T17:09:34.814Z",
                 "intensity": 0.85
             },
             {
@@ -11657,21 +11767,21 @@
             }
         ]
     },
-    "last_sync": "2026-06-05T04:07:22.093Z",
+    "last_sync": "2026-06-06T17:09:35.359Z",
     "directives": [
         {
-            "id": "dir_b077m7so0",
+            "id": "dir_omgzuwzfn",
             "priority": "High",
             "intent": "Maintain 99.9% system uptime",
             "status": "Active",
-            "timestamp": "2026-06-05T04:07:21.559Z"
+            "timestamp": "2026-06-06T17:09:34.826Z"
         },
         {
-            "id": "dir_rt4gsihn5",
+            "id": "dir_8agxkb221",
             "priority": "Medium",
             "intent": "Consolidate all branch knowledge daily",
             "status": "Active",
-            "timestamp": "2026-06-05T04:07:21.559Z"
+            "timestamp": "2026-06-06T17:09:34.826Z"
         }
     ]
 }
