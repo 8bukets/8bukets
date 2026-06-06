@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UltraFastAgentFrame",
+  "type": "object",
+  "properties": {
+    "i": { "type": "string", "maxLength": 36 },
+    "s": { "type": "integer", "minimum": 0 },
+    "t": { "type": "string", "enum": ["h", "r", "a", "c", "i", "e", "x"] },
+    "d": { "type": ["string", "object"] },
+    "ts": { "type": "integer" },
+    "m": {
+      "type": "object",
+      "properties": {
+        "ttft": { "type": "integer" },
+        "tokens": { "type": "integer" },
+        "model": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["i", "s", "t", "d", "ts"],
+  "additionalProperties": false
+}
