@@ -197,16 +197,21 @@ export class OnlinePresenceService {
         logAutonomousAction('⚠️ [OnlinePresence] Failed to sync to Supabase.', 'warning')
       }
 
-      // 5. Broadcast to Edge Worker (Simulated)
+      // 5. Broadcast to Edge Worker (Simulated or Real)
       try {
         const workerUrl = process.env.EDGE_WORKER_URL || 'https://antigravity-edge-worker.sigma.workers.dev'
-        await fetch(`${workerUrl}/heartbeat`, {
+        const response = await fetch(`${workerUrl}/heartbeat`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(presence)
         })
-      } catch (e) {
-        // Silent fail for simulation if worker URL is not reachable
+        if (response.ok) {
+          logAutonomousAction(`✅ [OnlinePresence] Edge Worker heartbeat successful (${nodeId}).`, 'info')
+        } else {
+          logAutonomousAction(`⚠️ [OnlinePresence] Edge Worker heartbeat returned status: ${response.status}`, 'warning')
+        }
+      } catch (e: any) {
+        logAutonomousAction(`⚠️ [OnlinePresence] Edge Worker heartbeat failed: ${e.message}`, 'warning')
       }
 
       this.lastPresence = presence
