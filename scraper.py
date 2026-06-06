@@ -91,7 +91,6 @@ class WordpressScraperAsync:
         self.concurrency = concurrency
         self.session = None
         self.disallowed_paths = []
-        self.CLEAN_TEXT_REGEX = re.compile(r'\s+')
         self.URL_REGEX = re.compile(r'^https?://')
 
     def set_disallowed_paths(self, paths: List[str]):
