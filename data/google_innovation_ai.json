@@ -20,6 +20,11 @@
         "snippet": ""
     },
     {
+        "title": "The latest AI news we announced in May 2026",
+        "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-may-2026/",
+        "snippet": ""
+    },
+    {
         "title": "Running Guide agent: A step towards running unbounded",
         "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/running-guide-agent/",
         "snippet": ""
@@ -27,11 +32,6 @@
     {
         "title": "Simulate real-world places with Project Genie and Street View",
         "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/",
-        "snippet": ""
-    },
-    {
-        "title": "Making it easier to understand how content was created and edited",
-        "url": "https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/",
         "snippet": ""
     },
     {
@@ -90,11 +90,6 @@
         "snippet": ""
     },
     {
-        "title": "Google Research",
-        "url": "https://blog.google/innovation-and-ai/technology/research/",
-        "snippet": ""
-    },
-    {
         "title": "How we used Gemini to build Google I/O 2026",
         "url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-google-ai/",
         "snippet": ""
@@ -102,6 +97,11 @@
     {
         "title": "Catch up on 12 major I/O 2026 moments",
         "url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/",
+        "snippet": ""
+    },
+    {
+        "title": "Gemma 4 QAT models: Optimizing model compression for mobile and laptop efficiency",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/",
         "snippet": ""
     },
     {
@@ -115,13 +115,23 @@
         "snippet": ""
     },
     {
-        "title": "Take our I/O 2026 quiz, vibe coded in Google AI Studio.",
-        "url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-vibe-coded-quiz/",
+        "title": "We’re announcing a new data center and energy investments in Gray and Roberts Counties, Texas.",
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/meitner-energy-center/",
         "snippet": ""
     },
     {
-        "title": "We’re announcing a new data center and energy investments in Gray and Roberts Counties, Texas.",
-        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/meitner-energy-center/",
+        "title": "Making it easier to understand how content was created and edited",
+        "url": "https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/",
+        "snippet": ""
+    },
+    {
+        "title": "Google Research",
+        "url": "https://blog.google/innovation-and-ai/technology/research/",
+        "snippet": ""
+    },
+    {
+        "title": "Take our I/O 2026 quiz, vibe coded in Google AI Studio.",
+        "url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-vibe-coded-quiz/",
         "snippet": ""
     },
     {
