@@ -1,6 +1,6 @@
 # Knowledge Observation Insights (Unified)
 
-**System Analysis:** 2026-06-06T17:09:08.998Z
+**System Analysis:** 2026-06-06T17:34:30.662Z
 
 ---
 
@@ -42778,10 +42778,185 @@ Last updated 2026-04-25 UTC.
 
 ---
 
+# Get started  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle
+
+> **Source:** https://developers.google.com/ad-manager/api/start
+> **Analyzed At:** 2026-06-06T02:58:43.741Z
+
+## Get started Stay organized with collections Save and categorize content based on your preferences.
+You can use the Google Ad Manager SOAP API to build apps that manage inventory, create orders, pull reports, and more.
+To help you get started, we offer client libraries for Java, .NET, Python, PHP, and Ruby.
+- [client libraries](/ad-manager/api/clients)
+To make your first API request, follow these steps:
+
+## Get access to an Ad Manager network
+If you don't already have one, sign up for an Ad Manager account. You can also create a test network if you want to test the API in a separate environment. Note that you don't need an AdSense account for test purposes.
+- [Ad Manager account](//support.google.com/admanager/answer/7084151)
+- [test network](/ad-manager/api/environments)
+Make a note of your network code. You can find this in the URL when you sign in to your network. For example, in the URL https://admanager.google.com/1234#home, 1234 is your network code.
+- [Terms of Service](//www.google.com/intl/en_ALL/doubleclick/tos/dfp-api-terms.html)
+
+## Create authentication credentials
+You must authenticate all Ad Manager SOAP API requests using OAuth 2.0. The following steps cover the use case of accessing your own Ad Manager data. For more details and other options, see Authentication.
+- [Authentication](/ad-manager/api/authentication)
+Open the Google API Console Credentials page
+- [Google API Console Credentials page](https://console.cloud.google.com/apis/credentials)
+- From the project menu, choose Create project, enter a name for the project, and optionally, edit the provided Project ID. Click Create.
+From the project menu, choose Create project, enter a name for the project, and optionally, edit the provided Project ID. Click Create.
+- On the Credentials page, select Create credentials, then select Service account key.
+On the Credentials page, select Create credentials, then select Service account key.
+Select New service account and select JSON as the key type.
+- [New service account](//console.developers.google.com/apis/credentials/serviceaccountkey)
+- Click Create to download a file containing a private key.
+Click Create to download a file containing a private key.
+
+## Configure your Ad Manager network
+Sign in to Google Ad Manager.
+- [Sign in](//admanager.google.com/)
+- In the sidebar, click Admin > Global settings.
+In the sidebar, click Admin > Global settings.
+- Under General settings > Api access click the slider to Enabled.
+Under General settings > Api access click the slider to Enabled.
+- Click the Save button at the bottom of the page.
+Click the Save button at the bottom of the page.
+
+## Set up your client
+Download one of the Ad Manager client libraries. The libraries offer wrapper functions and features that make it easier and faster to develop apps.
+- [Ad Manager client libraries](/ad-manager/api/clients)
+The following tabs provide quickstarts for coding in each of the languages for which there is a client library.
+
+## Java
+Here is a basic example that shows how to use the Java client library. For more detailed usage information, refer to the README file in the client library distribution.
+- [Java client library](//github.com/googleads/googleads-java-lib)
+- [README](//github.com/googleads/googleads-java-lib/blob/main/README.md)
+- Setup your credentials Run the following command in a shell: curl https://raw.githubusercontent.com/googleads/googleads-java-lib/main/examples/admanager_axis/src/main/resources/ads.properties -o ~/ads.properties Open the ~/ads.properties file and populate the following fields: [...] api.admanager.applicationName=INSERT_APPLICATION_NAME_HERE api.admanager.jsonKeyFilePath=INSERT_PATH_TO_JSON_KEY_FILE_HERE api.admanager.networkCode=INSERT_NETWORK_CODE_HERE [...]
+Run the following command in a shell:
+
+## Specify dependencies
+Edit your pom.xml file and add the following to the dependencies tag. You can find the latest version number on Github.
+- [Github](https://github.com/googleads/googleads-java-lib/releases)
+Write some code and make a request!
+- [View on GitHub](https://github.com/googleads/googleads-java-lib/blob/main/examples/admanager_axis/src/main/java/admanager/axis/v202602/networkservice/GetCurrentNetwork.java)
+
+## Python
+Here is a basic example that shows how to use the Python client library. The Python Client Library supports Python v3.6+. For more detailed usage information, refer to the README file in the client library distribution.
+- [Python client library](//github.com/googleads/googleads-python-lib)
+- [README](//github.com/googleads/googleads-python-lib/blob/main/README.md)
+- Install the library and set up your credentials. Run the following commands in a shell: python3 -m pip install googleads curl https://raw.githubusercontent.com/googleads/googleads-python-lib/main/googleads.yaml \ -o ~/googleads.yaml
+Run the following commands in a shell:
+- Set up your ~/googleads.yaml file. Fill in the following fields: ad_manager: application_name: INSERT_APPLICATION_NAME_HERE network_code: INSERT_NETWORK_CODE_HERE path_to_private_key_file: INSERT_PATH_TO_FILE_HERE
+Fill in the following fields:
+- [View on GitHub](https://github.com/googleads/googleads-python-lib/blob/main/examples/ad_manager/v202602/network_service/get_current_network.py)
+
+## PHP
+Here is a basic example that shows how to use the PHP client library.
+- [PHP client library](//github.com/googleads/googleads-php-lib)
+Run the following commands in a shell to install the client library and download the adsapi_php.ini file to your home directory:
+- [adsapi_php.ini](//github.com/googleads/googleads-php-lib/blob/HEAD/examples/AdManager/adsapi_php.ini)
+- Setup your ~/adsapi_php.ini file. Fill in the following fields: [AD_MANAGER] networkCode = "INSERT_NETWORK_CODE_HERE" applicationName = "INSERT_APPLICATION_NAME_HERE" [OAUTH2] jsonKeyFilePath = "INSERT_ABSOLUTE_PATH_TO_OAUTH2_JSON_KEY_FILE_HERE" scopes = "https://www.googleapis.com/auth/dfp"
+Fill in the following fields:
+- [View on GitHub](https://github.com/googleads/googleads-php-lib/blob/main/examples/AdManager/v202602/NetworkService/GetCurrentNetwork.php)
+
+## .NET
+Here is a basic example that shows how to use the .NET client library
+- [.NET client library](//github.com/googleads/googleads-dotnet-lib)
+- Create a new project Open Visual Studio and create a new project (Console Application).
+Open Visual Studio and create a new project (Console Application).
+Add a nuget dependency for Google.Dfp.
+- [Google.Dfp](//www.nuget.org/packages/Google.Dfp/)
+- Setup your App.config Copy src\App.config to your project directory and add it to your project. If your application has its own App.config, then you can copy the following nodes into your App.config: configuration/AdManagerApi configuration/configSections/section[name="AdManagerApi"] configuration/system.net
+Copy src\App.config to your project directory and add it to your project. If your application has its own App.config, then you can copy the following nodes into your App.config:
+- configuration/AdManagerApi
+- configuration/configSections/section[name="AdManagerApi"]
+- configuration/system.net
+- Setup credentials Open App.config and edit the following keys:
+Open App.config and edit the following keys:
+You can call the library as shown in the following C# code snippet
+- [View on GitHub](https://github.com/googleads/googleads-dotnet-lib/blob/main/examples/AdManager/CSharp/v202602/InventoryService/GetAllAdUnits.cs)
+If you don't want to set your credentials in your App.config, then refer to this wiki article for alternate ways of using the AdManagerUser class. For more detailed information about using the .NET Client Library, refer to the README . If you want to develop in .NET without the client library, please refer to the NoClientLibrary wiki article.
+- [this wiki article](//github.com/googleads/googleads-dotnet-lib/wiki/Getting-Started)
+- [README](//github.com/googleads/googleads-dotnet-lib/blob/main/README.md)
+- [NoClientLibrary wiki article](//github.com/googleads/googleads-dotnet-lib/wiki/NoClientLibrary)
+
+## Ruby
+Here is a basic example that shows how to use the Ruby client library. The Ruby client library requires Ruby 2.1 or later.
+- [Ruby client library](//github.com/googleads/google-api-ads-ruby/tree/HEAD/ad_manager_api)
+- Install the Ruby gem and get the configuration file. Run the following commands in a shell: gem install google-dfp-api curl https://raw.githubusercontent.com/googleads/google-api-ads-ruby/main/ad_manager_api/ad_manager_api.yml -o ~/ad_manager_api.yml If you encounter an error such as "cannot load such file -- mkmf (LoadError)" at any point while installing your gems, you may need to install additional Ruby development libraries such as ruby-dev, ruby-devel, xcode-select etc. for your particular environment.
+Run the following commands in a shell:
+Populate the required fields in the ~/ad_manager_api.yml file. If you don't already have an OAuth2 keyfile, you'll need to follow the steps to create your OAuth2 credentials.
+- [create your OAuth2 credentials](/ad-manager/api/authentication#service)
+- [View on GitHub](https://github.com/googleads/google-api-ads-ruby/blob/main/ad_manager_api/examples/v202602/network_service/get_current_network.rb)
+More detailed steps for getting started can be found in the README file that is distributed with the Ruby client library. Also, check out our full example library for Ruby.
+- [README](//github.com/googleads/google-api-ads-ruby/wiki/DFP-Readme)
+- [full example library](https://github.com/googleads/google-api-ads-ruby/tree/HEAD/ad_manager_api/examples)
+
+## Next steps
+When you have a client library up and running, modify the examples provided to extend them for your needs.
+Browse the reference documentation to learn more about the API.
+- [reference documentation](/ad-manager/api/rel_notes)
+If you need help, visit our Support page.
+- [Support page](/ad-manager/api/community)
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+- [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/)
+- [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0)
+- [Google Developers Site Policies](https://developers.google.com/site-policies)
+Last updated 2026-02-25 UTC.
+
+## Connect
+- [Blog](//googledevelopers.blogspot.com)
+- [Bluesky](https://goo.gle/3FReQXN)
+- [Instagram](https://www.instagram.com/googlefordevs/)
+- [LinkedIn](https://www.linkedin.com/showcase/googledevelopers/)
+- [X (Twitter)](//twitter.com/googledevs)
+- [YouTube](//www.youtube.com/user/GoogleDevelopers)
+
+## Programs
+- [Google Developer Program](/program)
+- [Google Developer Groups](/community)
+- [Google Developer Experts](/community/experts)
+- [Accelerators](/community/accelerators)
+- [Google Cloud & NVIDIA](/community/nvidia)
+
+## Developer consoles
+- [Google API Console](//console.developers.google.com)
+- [Google Cloud Platform Console](//console.cloud.google.com)
+- [Google Play Console](//play.google.com/apps/publish)
+- [Firebase Console](//console.firebase.google.com)
+- [Actions on Google Console](//console.actions.google.com)
+- [Cast SDK Developer Console](//cast.google.com/publish)
+- [Chrome Web Store Dashboard](//chrome.google.com/webstore/developer/dashboard)
+- [Google Home Developer Console](//console.home.google.com)
+- [Android](//developer.android.com)
+- [Chrome](//developer.chrome.com/home)
+- [Firebase](//firebase.google.com)
+- [Google Cloud Platform](//cloud.google.com)
+- [Google AI](//ai.google.dev/)
+- [All products](/products)
+- [Terms](/terms/site-terms)
+- [Privacy](//policies.google.com/privacy)
+
+---
+
+# iCloud: phase_13_strategy.md
+
+> **Source:** icloud://phase_13_strategy.md
+> **Analyzed At:** 2026-06-06T17:09:08.952Z
+
+## Overview
+Phase 13 focuses on the "Singularity of Efficiency". All agents must now prioritize 95% ROI on compute operations.
+
+## Strategic Directives
+- **ENFORCE_QUANTUM_RESISTANCE**: All neural sync signatures must upgrade to post-quantum cryptographic standards.
+- **APAC_LATENCY_MASTERY**: Target <30ms latency for Tokyo and Singapore edge nodes.
+- **ROI_DIRECTIVE_95**: Any process with <95% efficiency must be throttled or refactored autonomously.
+- **SOVEREIGN_DATA_CLUSTERS**: Deploy localized MongoDB clusters in APAC regions to ensure data sovereignty.
+
+---
+
 # Intelephense Documentation
 
 > **Source:** https://intelephense.com/docs
-> **Analyzed At:** 2026-06-05T08:35:23.871Z
+> **Analyzed At:** 2026-06-06T17:34:30.280Z
 
 ## About
 Intelephense is a high performance, cross platform, cross editor PHP language server adhering to the Language Server Protocol (LSP).
@@ -44584,177 +44759,3 @@ Intelephense aims to support all frameworks but does not implement framework spe
 Packages can be found online that aim to workaround these issues by providing stubs of symbols to help static analysers like Intelephense understand the code.
 * Laravel - [barryvdh/laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper)
 
----
-
-# Get started  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle
-
-> **Source:** https://developers.google.com/ad-manager/api/start
-> **Analyzed At:** 2026-06-06T02:58:43.741Z
-
-## Get started Stay organized with collections Save and categorize content based on your preferences.
-You can use the Google Ad Manager SOAP API to build apps that manage inventory, create orders, pull reports, and more.
-To help you get started, we offer client libraries for Java, .NET, Python, PHP, and Ruby.
-- [client libraries](/ad-manager/api/clients)
-To make your first API request, follow these steps:
-
-## Get access to an Ad Manager network
-If you don't already have one, sign up for an Ad Manager account. You can also create a test network if you want to test the API in a separate environment. Note that you don't need an AdSense account for test purposes.
-- [Ad Manager account](//support.google.com/admanager/answer/7084151)
-- [test network](/ad-manager/api/environments)
-Make a note of your network code. You can find this in the URL when you sign in to your network. For example, in the URL https://admanager.google.com/1234#home, 1234 is your network code.
-- [Terms of Service](//www.google.com/intl/en_ALL/doubleclick/tos/dfp-api-terms.html)
-
-## Create authentication credentials
-You must authenticate all Ad Manager SOAP API requests using OAuth 2.0. The following steps cover the use case of accessing your own Ad Manager data. For more details and other options, see Authentication.
-- [Authentication](/ad-manager/api/authentication)
-Open the Google API Console Credentials page
-- [Google API Console Credentials page](https://console.cloud.google.com/apis/credentials)
-- From the project menu, choose Create project, enter a name for the project, and optionally, edit the provided Project ID. Click Create.
-From the project menu, choose Create project, enter a name for the project, and optionally, edit the provided Project ID. Click Create.
-- On the Credentials page, select Create credentials, then select Service account key.
-On the Credentials page, select Create credentials, then select Service account key.
-Select New service account and select JSON as the key type.
-- [New service account](//console.developers.google.com/apis/credentials/serviceaccountkey)
-- Click Create to download a file containing a private key.
-Click Create to download a file containing a private key.
-
-## Configure your Ad Manager network
-Sign in to Google Ad Manager.
-- [Sign in](//admanager.google.com/)
-- In the sidebar, click Admin > Global settings.
-In the sidebar, click Admin > Global settings.
-- Under General settings > Api access click the slider to Enabled.
-Under General settings > Api access click the slider to Enabled.
-- Click the Save button at the bottom of the page.
-Click the Save button at the bottom of the page.
-
-## Set up your client
-Download one of the Ad Manager client libraries. The libraries offer wrapper functions and features that make it easier and faster to develop apps.
-- [Ad Manager client libraries](/ad-manager/api/clients)
-The following tabs provide quickstarts for coding in each of the languages for which there is a client library.
-
-## Java
-Here is a basic example that shows how to use the Java client library. For more detailed usage information, refer to the README file in the client library distribution.
-- [Java client library](//github.com/googleads/googleads-java-lib)
-- [README](//github.com/googleads/googleads-java-lib/blob/main/README.md)
-- Setup your credentials Run the following command in a shell: curl https://raw.githubusercontent.com/googleads/googleads-java-lib/main/examples/admanager_axis/src/main/resources/ads.properties -o ~/ads.properties Open the ~/ads.properties file and populate the following fields: [...] api.admanager.applicationName=INSERT_APPLICATION_NAME_HERE api.admanager.jsonKeyFilePath=INSERT_PATH_TO_JSON_KEY_FILE_HERE api.admanager.networkCode=INSERT_NETWORK_CODE_HERE [...]
-Run the following command in a shell:
-
-## Specify dependencies
-Edit your pom.xml file and add the following to the dependencies tag. You can find the latest version number on Github.
-- [Github](https://github.com/googleads/googleads-java-lib/releases)
-Write some code and make a request!
-- [View on GitHub](https://github.com/googleads/googleads-java-lib/blob/main/examples/admanager_axis/src/main/java/admanager/axis/v202602/networkservice/GetCurrentNetwork.java)
-
-## Python
-Here is a basic example that shows how to use the Python client library. The Python Client Library supports Python v3.6+. For more detailed usage information, refer to the README file in the client library distribution.
-- [Python client library](//github.com/googleads/googleads-python-lib)
-- [README](//github.com/googleads/googleads-python-lib/blob/main/README.md)
-- Install the library and set up your credentials. Run the following commands in a shell: python3 -m pip install googleads curl https://raw.githubusercontent.com/googleads/googleads-python-lib/main/googleads.yaml \ -o ~/googleads.yaml
-Run the following commands in a shell:
-- Set up your ~/googleads.yaml file. Fill in the following fields: ad_manager: application_name: INSERT_APPLICATION_NAME_HERE network_code: INSERT_NETWORK_CODE_HERE path_to_private_key_file: INSERT_PATH_TO_FILE_HERE
-Fill in the following fields:
-- [View on GitHub](https://github.com/googleads/googleads-python-lib/blob/main/examples/ad_manager/v202602/network_service/get_current_network.py)
-
-## PHP
-Here is a basic example that shows how to use the PHP client library.
-- [PHP client library](//github.com/googleads/googleads-php-lib)
-Run the following commands in a shell to install the client library and download the adsapi_php.ini file to your home directory:
-- [adsapi_php.ini](//github.com/googleads/googleads-php-lib/blob/HEAD/examples/AdManager/adsapi_php.ini)
-- Setup your ~/adsapi_php.ini file. Fill in the following fields: [AD_MANAGER] networkCode = "INSERT_NETWORK_CODE_HERE" applicationName = "INSERT_APPLICATION_NAME_HERE" [OAUTH2] jsonKeyFilePath = "INSERT_ABSOLUTE_PATH_TO_OAUTH2_JSON_KEY_FILE_HERE" scopes = "https://www.googleapis.com/auth/dfp"
-Fill in the following fields:
-- [View on GitHub](https://github.com/googleads/googleads-php-lib/blob/main/examples/AdManager/v202602/NetworkService/GetCurrentNetwork.php)
-
-## .NET
-Here is a basic example that shows how to use the .NET client library
-- [.NET client library](//github.com/googleads/googleads-dotnet-lib)
-- Create a new project Open Visual Studio and create a new project (Console Application).
-Open Visual Studio and create a new project (Console Application).
-Add a nuget dependency for Google.Dfp.
-- [Google.Dfp](//www.nuget.org/packages/Google.Dfp/)
-- Setup your App.config Copy src\App.config to your project directory and add it to your project. If your application has its own App.config, then you can copy the following nodes into your App.config: configuration/AdManagerApi configuration/configSections/section[name="AdManagerApi"] configuration/system.net
-Copy src\App.config to your project directory and add it to your project. If your application has its own App.config, then you can copy the following nodes into your App.config:
-- configuration/AdManagerApi
-- configuration/configSections/section[name="AdManagerApi"]
-- configuration/system.net
-- Setup credentials Open App.config and edit the following keys:
-Open App.config and edit the following keys:
-You can call the library as shown in the following C# code snippet
-- [View on GitHub](https://github.com/googleads/googleads-dotnet-lib/blob/main/examples/AdManager/CSharp/v202602/InventoryService/GetAllAdUnits.cs)
-If you don't want to set your credentials in your App.config, then refer to this wiki article for alternate ways of using the AdManagerUser class. For more detailed information about using the .NET Client Library, refer to the README . If you want to develop in .NET without the client library, please refer to the NoClientLibrary wiki article.
-- [this wiki article](//github.com/googleads/googleads-dotnet-lib/wiki/Getting-Started)
-- [README](//github.com/googleads/googleads-dotnet-lib/blob/main/README.md)
-- [NoClientLibrary wiki article](//github.com/googleads/googleads-dotnet-lib/wiki/NoClientLibrary)
-
-## Ruby
-Here is a basic example that shows how to use the Ruby client library. The Ruby client library requires Ruby 2.1 or later.
-- [Ruby client library](//github.com/googleads/google-api-ads-ruby/tree/HEAD/ad_manager_api)
-- Install the Ruby gem and get the configuration file. Run the following commands in a shell: gem install google-dfp-api curl https://raw.githubusercontent.com/googleads/google-api-ads-ruby/main/ad_manager_api/ad_manager_api.yml -o ~/ad_manager_api.yml If you encounter an error such as "cannot load such file -- mkmf (LoadError)" at any point while installing your gems, you may need to install additional Ruby development libraries such as ruby-dev, ruby-devel, xcode-select etc. for your particular environment.
-Run the following commands in a shell:
-Populate the required fields in the ~/ad_manager_api.yml file. If you don't already have an OAuth2 keyfile, you'll need to follow the steps to create your OAuth2 credentials.
-- [create your OAuth2 credentials](/ad-manager/api/authentication#service)
-- [View on GitHub](https://github.com/googleads/google-api-ads-ruby/blob/main/ad_manager_api/examples/v202602/network_service/get_current_network.rb)
-More detailed steps for getting started can be found in the README file that is distributed with the Ruby client library. Also, check out our full example library for Ruby.
-- [README](//github.com/googleads/google-api-ads-ruby/wiki/DFP-Readme)
-- [full example library](https://github.com/googleads/google-api-ads-ruby/tree/HEAD/ad_manager_api/examples)
-
-## Next steps
-When you have a client library up and running, modify the examples provided to extend them for your needs.
-Browse the reference documentation to learn more about the API.
-- [reference documentation](/ad-manager/api/rel_notes)
-If you need help, visit our Support page.
-- [Support page](/ad-manager/api/community)
-Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
-- [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/)
-- [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0)
-- [Google Developers Site Policies](https://developers.google.com/site-policies)
-Last updated 2026-02-25 UTC.
-
-## Connect
-- [Blog](//googledevelopers.blogspot.com)
-- [Bluesky](https://goo.gle/3FReQXN)
-- [Instagram](https://www.instagram.com/googlefordevs/)
-- [LinkedIn](https://www.linkedin.com/showcase/googledevelopers/)
-- [X (Twitter)](//twitter.com/googledevs)
-- [YouTube](//www.youtube.com/user/GoogleDevelopers)
-
-## Programs
-- [Google Developer Program](/program)
-- [Google Developer Groups](/community)
-- [Google Developer Experts](/community/experts)
-- [Accelerators](/community/accelerators)
-- [Google Cloud & NVIDIA](/community/nvidia)
-
-## Developer consoles
-- [Google API Console](//console.developers.google.com)
-- [Google Cloud Platform Console](//console.cloud.google.com)
-- [Google Play Console](//play.google.com/apps/publish)
-- [Firebase Console](//console.firebase.google.com)
-- [Actions on Google Console](//console.actions.google.com)
-- [Cast SDK Developer Console](//cast.google.com/publish)
-- [Chrome Web Store Dashboard](//chrome.google.com/webstore/developer/dashboard)
-- [Google Home Developer Console](//console.home.google.com)
-- [Android](//developer.android.com)
-- [Chrome](//developer.chrome.com/home)
-- [Firebase](//firebase.google.com)
-- [Google Cloud Platform](//cloud.google.com)
-- [Google AI](//ai.google.dev/)
-- [All products](/products)
-- [Terms](/terms/site-terms)
-- [Privacy](//policies.google.com/privacy)
-
----
-
-# iCloud: phase_13_strategy.md
-
-> **Source:** icloud://phase_13_strategy.md
-> **Analyzed At:** 2026-06-06T17:09:08.952Z
-
-## Overview
-Phase 13 focuses on the "Singularity of Efficiency". All agents must now prioritize 95% ROI on compute operations.
-
-## Strategic Directives
-- **ENFORCE_QUANTUM_RESISTANCE**: All neural sync signatures must upgrade to post-quantum cryptographic standards.
-- **APAC_LATENCY_MASTERY**: Target <30ms latency for Tokyo and Singapore edge nodes.
-- **ROI_DIRECTIVE_95**: Any process with <95% efficiency must be throttled or refactored autonomously.
-- **SOVEREIGN_DATA_CLUSTERS**: Deploy localized MongoDB clusters in APAC regions to ensure data sovereignty.
