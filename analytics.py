@@ -41,7 +41,7 @@ def generate_report(data, output_file):
     total_posts = len(data)
 
     # 1. Domain Analysis
-    domains = [get_domain(p.get('external_link')) for p in data if p.get('external_link')]
+    domains = [p.get('domain') or get_domain(p.get('external_link')) for p in data if p.get('external_link')]
     domain_counts = Counter(domains).most_common(10)
     top_domain = domain_counts[0][0] if domain_counts else "N/A"
     top_domain_count = domain_counts[0][1] if domain_counts else 0
