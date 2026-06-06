@@ -230,7 +230,7 @@ jobs:
           MACBOOK_CLOUD_SIMULATION: true
 
       - name: Execute Autonomous Session Analysis and Self-Correction
-        run: npx tsx scripts/execute_creation_cycle.ts
+        run: npx tsx scripts/full_autonomous_automatic_creation.ts
         env:
           AUTONOMOUS_MODE: cloud
           MACBOOK_CLOUD_SIMULATION: true
