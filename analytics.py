@@ -48,15 +48,21 @@ def generate_report(data, output_file):
 
     # 2. Category Analysis
     all_categories = []
+    dates = []
+    authors = []
+
     for p in data:
+        # 1. Domain Analysis
+        ext_link = p.get('external_link')
+        if ext_link:
+            domains.append(get_domain(ext_link))
+
+        # 2. Category Analysis
         cats = p.get('categories', [])
         if cats:
             all_categories.extend(cats)
-    category_counts = Counter(all_categories).most_common(10)
 
-    # 3. Date Analysis
-    dates = []
-    for p in data:
+        # 3. Date Analysis
         dt = None
         dt_str = p.get('datetime')
         if dt_str:
@@ -79,6 +85,17 @@ def generate_report(data, output_file):
         if dt:
             dates.append(dt)
 
+        # 4. Author Analysis
+        author = p.get('author')
+        if author:
+            authors.append(author)
+
+    domain_counts = Counter(domains).most_common(10)
+    top_domain = domain_counts[0][0] if domain_counts else "N/A"
+    top_domain_count = domain_counts[0][1] if domain_counts else 0
+
+    category_counts = Counter(all_categories).most_common(10)
+
     if dates:
         dates.sort()
         start_date = dates[0].strftime('%Y-%m-%d')
@@ -91,8 +108,6 @@ def generate_report(data, output_file):
         end_date = "N/A"
         year_counts = []
 
-    # 4. Author Analysis
-    authors = [p.get('author') for p in data if p.get('author')]
     author_counts = Counter(authors).most_common()
 
     # Max counts for bars
