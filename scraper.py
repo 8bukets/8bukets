@@ -88,7 +88,6 @@ class WordpressScraperAsync:
         self.concurrency = concurrency
         self.session = None
         self.disallowed_paths = []
-        self.CLEAN_TEXT_REGEX = re.compile(r'\s+')
         self.URL_REGEX = re.compile(r'^https?://')
 
     def set_disallowed_paths(self, paths: List[str]):
@@ -107,8 +106,7 @@ class WordpressScraperAsync:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
-        text = text.replace('\xa0', ' ')
-        return self.CLEAN_TEXT_REGEX.sub(' ', text).strip()
+        return " ".join(text.replace('\xa0', ' ').split())
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
