@@ -146,8 +146,20 @@ class ChiefAIOfficerAgent(BaseAgent):
                     strategic_directives.append("ENFORCE_ISO_42001_COMPLIANCE")
 
             # ROI Mandate detection
-            if "95%" in sections_str or "95% roi" in sections_str:
+            if "95%" in sections_str or "95% roi" in sections_str or "roi_directive_95" in sections_str:
                 roi_mandate_95 = True
+
+            # Quantum Resistance Directive
+            if "quantum_resistance" in sections_str or "quantum-resistant" in sections_str:
+                if "ENFORCE_QUANTUM_RESISTANCE" not in strategic_directives:
+                    self.logger.info("CAIO [SECURITY]: Quantum-resistant upgrade mandate detected. Issuing enforcement directive.")
+                    strategic_directives.append("ENFORCE_QUANTUM_RESISTANCE")
+
+            # Sovereign Data clusters for APAC
+            if "sovereign_data_clusters" in sections_str:
+                if "PROVISION_SOVEREIGN_DATA_CLUSTERS" not in strategic_directives:
+                    self.logger.info("CAIO [STRATEGY]: Sovereign data cluster directive detected. Issuing provisioning directive.")
+                    strategic_directives.append("PROVISION_SOVEREIGN_DATA_CLUSTERS")
 
         # Cloud Infrastructure Resilience Assessment
         if cloud_status == "DEGRADED":

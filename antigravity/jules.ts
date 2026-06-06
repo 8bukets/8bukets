@@ -300,6 +300,15 @@ export class Jules {
     const ingestedICloud = await icloudObserver.scan()
     if (ingestedICloud.length > 0) {
       this.recordTask(`iCloud: Ingested ${ingestedICloud.length} new files.`)
+
+      // Phase 13: Immediate re-evaluation after new strategic knowledge ingestion
+      console.log('🧠 [Jules] New knowledge detected. Re-triggering evolution engine for Phase 13 alignment...')
+      const { evolve, applyFixes } = await import('./evolution')
+      const newSuggestions = await evolve()
+      if (newSuggestions.length > 0) {
+        await applyFixes(newSuggestions)
+        this.recordTask(`Phase 13 Real-time Alignment: Applied ${newSuggestions.length} fixes based on new knowledge.`)
+      }
     }
 
     await this.syncCollaboration()

@@ -119,6 +119,24 @@ export async function evolve() {
              suggestion: 'MISSING_REGIONAL_COMPLIANCE: APAC regional service detected without mandatory regionalCompliance metadata.'
            })
         }
+
+        // Rule 11: Quantum Resistance Audit (Phase 13 Directive)
+        if (content.includes('signature') && !content.includes('quantum-resistant') && !content.includes('post-quantum')) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'QUANTUM_VULNERABILITY: Cryptographic signature detected without documented quantum-resistant upgrade path.'
+          })
+        }
+
+        // Rule 12: Sovereign Data Clusters (Phase 13 Directive)
+        if (content.includes('MongoClient') && !content.includes('sovereignCluster') && !fullPath.includes('core.ts')) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'NON_SOVEREIGN_DATA_CONFIG: MongoDB client initialization detected without APAC localized sovereignty configuration.'
+          })
+        }
       }
     }
   }
