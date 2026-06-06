@@ -51,7 +51,6 @@ def generate_report(data, output_file):
     dates = []
     authors = []
 
-    # Single pass over data
     for p in data:
         # 1. Domain Analysis
         ext_link = p.get('external_link')
@@ -91,7 +90,6 @@ def generate_report(data, output_file):
         if author:
             authors.append(author)
 
-    # Process aggregates
     domain_counts = Counter(domains).most_common(10)
     top_domain = domain_counts[0][0] if domain_counts else "N/A"
     top_domain_count = domain_counts[0][1] if domain_counts else 0
