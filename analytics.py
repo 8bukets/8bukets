@@ -45,12 +45,11 @@ def generate_report(data, output_file):
     dates = []
     authors = []
 
-    # Single pass over data
     for p in data:
         # 1. Domain Analysis
         ext_link = p.get('external_link')
         if ext_link:
-            domains.append(p.get('domain') or get_domain(ext_link))
+            domains.append(get_domain(ext_link))
 
         # 2. Category Analysis
         cats = p.get('categories', [])

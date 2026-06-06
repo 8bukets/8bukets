@@ -149,6 +149,11 @@ export class Jules {
     await generateConsolidatedReport()
   }
 
+  public async observeGithubDocs() {
+    const { githubDocsObserver } = await import('./services/github_docs_observer')
+    const { KnowledgeObserver } = await import('./services/knowledge_observer')
+    const observer = new KnowledgeObserver()
+
     const docsToObserve = [
       { owner: 'bmewburn', repo: 'intelephense-docs', path: 'README.md' },
       { owner: 'bmewburn', repo: 'intelephense-docs', path: 'features.md' },
@@ -209,6 +214,30 @@ export class Jules {
       const filePath = path.join(dataDir, 'intelephense_docs.json')
       fs.writeFileSync(filePath, JSON.stringify(allKnowledge, null, 2))
       this.recordTask(`Knowledge Ingestion: Synchronized ${allKnowledge.length} Intelephense docs.`)
+    }
+  }
+
+  public async autonomousPrAudit() {
+    console.log('🔍 [Jules] Auditing open PRs for autonomous merge criteria...')
+    const { gitProvider } = await import('./services/git_provider')
+    const prs = await gitProvider.listPullRequests()
+
+    for (const pr of prs) {
+      const isAutonomous = pr.title.includes('🤖') || pr.title.toLowerCase().includes('autonomous') || pr.title.toLowerCase().includes('evolve')
+      if (isAutonomous) {
+        console.log(` 🤖 [Jules] Analyzing autonomous PR #${pr.id}: "${pr.title}"`)
+        const ciPassed = await gitProvider.verifyCIStatus(pr.branch, pr.provider)
+
+        if (ciPassed) {
+          console.log(` ✅ [Jules] CI passed for PR #${pr.id}. Attempting autonomous merge...`)
+          const merged = await gitProvider.mergePullRequest(pr.id, pr.provider)
+          if (merged) {
+            this.recordTask(`Autonomous Merge: Merged PR #${pr.id} (${pr.title}) successfully.`)
+          }
+        } else {
+          console.log(` ⏳ [Jules] PR #${pr.id} is pending CI or has failures. Skipping merge.`)
+        }
+      }
     }
   }
 
@@ -350,6 +379,12 @@ export class Jules {
     await this.ensureInitialized()
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
 
+    // Phase 22: Autonomous PR Audit (Priority in Cloud)
+    const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
+    if (isCloud) {
+       await this.autonomousPrAudit()
+    }
+
     // Phase 22: Cloud Takeover Audit
     try {
       const { cloudWorkflowAgent } = await import('./services/cloud_workflow')
@@ -358,7 +393,10 @@ export class Jules {
       console.warn('⚠️ [Jules] Cloud takeover audit failed, continuing work cycle.')
     }
 
-      // Phase 10: Singularity Orchestration
+    // Phase 10: Synthesis & Singularity Orchestration
+    try {
+      const { synthesize } = await import('./synthesis')
+      const ideas = await synthesize()
       const { bootstrap } = await import('./singularity')
       for (const idea of ideas) {
         if (idea.complexity === 'Low' || idea.complexity === 'Medium') {
@@ -366,6 +404,8 @@ export class Jules {
           this.recordTask(`Singularity: Autonomously bootstrapped ${idea.feature}.`)
         }
       }
+    } catch (e) {
+      console.warn('⚠️ [Jules] Synthesis or Singularity failed:', e)
     }
 
     // Phase 12: Super-Intelligence Optimization
