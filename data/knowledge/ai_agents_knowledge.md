@@ -1,6 +1,6 @@
 # Knowledge Observation Insights (Unified)
 
-**System Analysis:** 2026-06-05T08:35:24.239Z
+**System Analysis:** 2026-06-06T02:59:58.047Z
 
 ---
 
@@ -40976,7 +40976,7 @@ Skip to content ↓
 # Understanding bidding basics - Google Ads Help
 
 > **Source:** https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU
-> **Analyzed At:** 2026-06-05T03:00:17.554Z
+> **Analyzed At:** 2026-06-06T02:54:57.833Z
 
 ## Understanding bidding basics
 Google Ads gives you several ways to bid for your ads, depending on what matters most to you and your business. Most advertisers focus on clicks, impressions, conversions, or views (for video ads).
@@ -41034,7 +41034,7 @@ Attend our Performance Max Masterclass, a livestream workshop session bringing t
 # Google Ads Smart Bidding - AI-Driven Bid Optimisations & Ad Spend
 
 > **Source:** https://business.google.com/uk/ad-tools/bidding/
-> **Analyzed At:** 2026-06-05T03:00:23.972Z
+> **Analyzed At:** 2026-06-06T02:55:22.125Z
 
 ## Add another account
 - [logout Sign out of all accounts](https://accounts.google.com/Logout?continue=https://business.google.com/)
@@ -41298,7 +41298,7 @@ Actual results will vary by advertiser.
 # Tips & Resources for Online Advertising – Google Ads
 
 > **Source:** https://business.google.com/uk/resources/
-> **Analyzed At:** 2026-06-05T03:00:32.513Z
+> **Analyzed At:** 2026-06-06T02:55:55.851Z
 
 ## Add another account
 - [logout Sign out of all accounts](https://accounts.google.com/Logout?continue=https://business.google.com/)
@@ -41736,56 +41736,56 @@ Actual results will vary by advertiser.
 # Ad Manager  |  Google for DevelopersGoogleGoogle
 
 > **Source:** https://developers.google.com/ad-manager
-> **Analyzed At:** 2026-06-05T03:00:39.257Z
+> **Analyzed At:** 2026-06-06T02:56:23.868Z
 
 ## Google Ad Manager
-- [Google Ad Manager](https://developers.google.com/ad-manager)
-- [Home](https://developers.google.com/)
-- [Products](https://developers.google.com/products)
-- [Ad Manager](https://developers.google.com/ad-manager)
+- [Google Ad Manager](https://developers.google.com/ad-manager?hl=ar)
+- [الصفحة الرئيسية](https://developers.google.com/?hl=ar)
+- [المنتجات](https://developers.google.com/products?hl=ar)
+- [Ad Manager](https://developers.google.com/ad-manager?hl=ar)
 
-## A set of tools to manage your Google Ad Manager accounts and campaigns.
-- [api](https://developers.google.com/ad-manager/api/beta)
+## مجموعة من الأدوات لإدارة حساباتك وحملاتك على "مدير إعلانات Google".
+- [api](https://developers.google.com/ad-manager/api/beta?hl=ar)
 
-## Ad Manager API (Beta)
-- [Ad Manager API (Beta)](https://developers.google.com/ad-manager/api/beta)
-- [Get started](https://developers.google.com/ad-manager/api/beta)
-- [phone_iphone](https://developers.google.com/ad-manager/mobile-ads-sdk)
+## Ad Manager API (الإصدار التجريبي)
+- [Ad Manager API (الإصدار التجريبي)](https://developers.google.com/ad-manager/api/beta?hl=ar)
+- [البدء](https://developers.google.com/ad-manager/api/beta?hl=ar)
+- [phone_iphone](https://developers.google.com/ad-manager/mobile-ads-sdk?hl=ar)
 
-## Mobile Ads SDK
-- [Mobile Ads SDK](https://developers.google.com/ad-manager/mobile-ads-sdk)
-- [Android](https://developers.google.com/ad-manager/mobile-ads-sdk/android/next-gen/quick-start)
-- [Android](https://developers.google.com/ad-manager/mobile-ads-sdk/android/quick-start)
-- [iOS](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/quick-start)
-- [Unity](https://developers.google.com/ad-manager/mobile-ads-sdk/unity/quick-start)
-- [Flutter](https://developers.google.com/ad-manager/mobile-ads-sdk/flutter/quick-start)
-- [live_tv](https://developers.google.com/ad-manager/dynamic-ad-insertion)
+## حزمة تطوير البرامج (SDK) لعرض الإعلانات على الأجهزة الجوّالة
+- [حزمة تطوير البرامج (SDK) لعرض الإعلانات على الأجهزة الجوّالة](https://developers.google.com/ad-manager/mobile-ads-sdk?hl=ar)
+- [Android](https://developers.google.com/ad-manager/mobile-ads-sdk/android/next-gen/quick-start?hl=ar)
+- [Android](https://developers.google.com/ad-manager/mobile-ads-sdk/android/quick-start?hl=ar)
+- [iOS](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/quick-start?hl=ar)
+- [Unity](https://developers.google.com/ad-manager/mobile-ads-sdk/unity/quick-start?hl=ar)
+- [Flutter](https://developers.google.com/ad-manager/mobile-ads-sdk/flutter/quick-start?hl=ar)
+- [live_tv](https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=ar)
 
-## Dynamic Ad Insertion
-- [Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion)
-- [Get started](https://developers.google.com/ad-manager/dynamic-ad-insertion)
-- [track_changes](https://developers.google.com/ad-manager/api)
+## إدراج إعلان ديناميكي
+- [إدراج إعلان ديناميكي](https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=ar)
+- [البدء](https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=ar)
+- [track_changes](https://developers.google.com/ad-manager/api?hl=ar)
 
-## Ad Manager SOAP API
-- [Ad Manager SOAP API](https://developers.google.com/ad-manager/api)
-- [Get started](https://developers.google.com/ad-manager/api)
+## واجهة برمجة التطبيقات SOAP في "مدير إعلانات Google"
+- [واجهة برمجة التطبيقات SOAP في "مدير إعلانات Google"](https://developers.google.com/ad-manager/api?hl=ar)
+- [البدء](https://developers.google.com/ad-manager/api?hl=ar)
 
-## Connect
-- [Blog](//googledevelopers.blogspot.com)
+## التواصل
+- [المدوّنة](//googledevelopers.blogspot.com)
 - [Bluesky](https://goo.gle/3FReQXN)
 - [Instagram](https://www.instagram.com/googlefordevs/)
 - [LinkedIn](https://www.linkedin.com/showcase/googledevelopers/)
-- [X (Twitter)](//twitter.com/googledevs)
+- [‫X ‏(Twitter سابقًا)](//twitter.com/googledevs)
 - [YouTube](//www.youtube.com/user/GoogleDevelopers)
 
-## Programs
+## البرامج
 - [Google Developer Program](/program)
 - [Google Developer Groups](/community)
 - [Google Developer Experts](/community/experts)
 - [Accelerators](/community/accelerators)
 - [Google Cloud & NVIDIA](/community/nvidia)
 
-## Developer consoles
+## وحدات تحكّم المطوّرين
 - [Google API Console](//console.developers.google.com)
 - [Google Cloud Platform Console](//console.cloud.google.com)
 - [Google Play Console](//play.google.com/apps/publish)
@@ -41794,21 +41794,146 @@ Actual results will vary by advertiser.
 - [Cast SDK Developer Console](//cast.google.com/publish)
 - [Chrome Web Store Dashboard](//chrome.google.com/webstore/developer/dashboard)
 - [Google Home Developer Console](//console.home.google.com)
-- [Android](//developer.android.com)
-- [Chrome](//developer.chrome.com/home)
-- [Firebase](//firebase.google.com)
-- [Google Cloud Platform](//cloud.google.com)
-- [Google AI](//ai.google.dev/)
-- [All products](/products)
-- [Terms](/terms/site-terms)
-- [Privacy](//policies.google.com/privacy)
+- [Android](//developer.android.com?hl=ar)
+- [Chrome](//developer.chrome.com/home?hl=ar)
+- [Firebase](//firebase.google.com?hl=ar)
+- [Google Cloud Platform](//cloud.google.com?hl=ar)
+- [Google AI](//ai.google.dev/?hl=ar)
+- [كلّ المنتجات](https://developers.google.com/products?hl=ar)
+- [البنود](https://developers.google.com/terms/site-terms?hl=ar)
+- [الخصوصية](//policies.google.com/privacy?hl=ar)
 
 ---
 
 # Dynamic Ad Insertion  |  Google for DevelopersGoogleGoogle
 
 > **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion
-> **Analyzed At:** 2026-06-05T03:00:45.753Z
+> **Analyzed At:** 2026-06-06T02:57:01.756Z
+
+## Google Dynamic Ad Insertion
+- [صفحه اصلی](https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=fa)
+- [HTML5](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5?hl=fa)
+- [Android](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android?hl=fa)
+- [iOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios?hl=fa)
+- [tvOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos?hl=fa)
+- [Chromecast](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast?hl=fa)
+- [روکو](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku?hl=fa)
+- [خدمات کامل DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=fa)
+- [غلاف ارائه DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=fa)
+- [تبلیغات موقت](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/ad-break?hl=fa)
+- پشتیبانی
+- [انجمن راهنمای مدیر تبلیغات](//support.google.com/admanager/community?hl=fa)
+- [با پشتیبانی تماس بگیرید](//support.google.com/admanager/contact/contact_us_ima_sdk?hl=fa)
+- [شرایط استفاده از خدمات](https://developers.google.com/ad-manager/dynamic-ad-insertion/terms?hl=fa)
+- [کانال رسمی دیسکورد مدیریت تبلیغات گوگل](//goo.gle/google-ad-manager-discord)
+- [وبلاگ توسعه دهنده تبلیغات](//ads-developers.googleblog.com/search/label/ima_sdk)
+- ابزار تست
+- [بازرس مجموعه ویدیویی](//googleads.github.io/googleads-ima-html5-dai/vsi/)
+- [نمونه جریان ها](https://developers.google.com/ad-manager/dynamic-ad-insertion/streams?hl=fa)
+- [Google Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=fa)
+- صفحه اصلی موارد بیشتر
+- موارد بیشتر
+- SDK ها موارد بیشتر
+- موارد بیشتر
+- API ها موارد بیشتر
+- موارد بیشتر
+- منابع موارد بیشتر
+- موارد بیشتر
+- [صفحه اصلی](/ad-manager/dynamic-ad-insertion)
+- [HTML5](/ad-manager/dynamic-ad-insertion/sdk/html5)
+- [Android](/ad-manager/dynamic-ad-insertion/sdk/android)
+- [iOS](/ad-manager/dynamic-ad-insertion/sdk/ios)
+- [tvOS](/ad-manager/dynamic-ad-insertion/sdk/tvos)
+- [Chromecast](/ad-manager/dynamic-ad-insertion/sdk/cast)
+- [روکو](/ad-manager/dynamic-ad-insertion/sdk/roku)
+- [خدمات کامل DAI](/ad-manager/dynamic-ad-insertion/full-service)
+- [غلاف ارائه DAI](/ad-manager/dynamic-ad-insertion/pod-serving)
+- [تبلیغات موقت](/ad-manager/dynamic-ad-insertion/api/ad-break)
+- پشتیبانی
+- [انجمن راهنمای مدیر تبلیغات](//support.google.com/admanager/community)
+- [با پشتیبانی تماس بگیرید](//support.google.com/admanager/contact/contact_us_ima_sdk)
+- [شرایط استفاده از خدمات](/ad-manager/dynamic-ad-insertion/terms)
+- [کانال رسمی دیسکورد مدیریت تبلیغات گوگل](//goo.gle/google-ad-manager-discord)
+- [وبلاگ توسعه دهنده تبلیغات](//ads-developers.googleblog.com/search/label/ima_sdk)
+- ابزار تست
+- [بازرس مجموعه ویدیویی](//googleads.github.io/googleads-ima-html5-dai/vsi/)
+- [نمونه جریان ها](/ad-manager/dynamic-ad-insertion/streams)
+- [‏Cloud Translation API‏](//cloud.google.com/translate/?hl=fa)
+- [صفحه اصلی](https://developers.google.com/?hl=fa)
+- [محصولات](https://developers.google.com/products?hl=fa)
+- [Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=fa)
+
+## درج آگهی پویا (DAI)
+DAI به شما امکان می‌دهد از محتوای ویدیویی خود درآمد کسب کنید و پیچیدگی فرآیند درخواست تبلیغ و پاسخ به تبلیغ را از SDK حذف می‌کند. این رویکرد احتمال خطاهای سمت کلاینت را کاهش می‌دهد و تجربه‌ای شبیه به تلویزیون را بدون تأخیر یا بافر بین محتوا و تبلیغات ایجاد می‌کند.
+با DAI، می‌توانید تبلیغات فردی را برای پخش زنده و ویدیوهای درخواستی هدف قرار دهید، با پشتیبانی از دستگاه‌های گسترده، به دسترسی چند صفحه‌ای دست یابید و از طریق Ad Exchange برای ویدیو، از کسب درآمد برنامه‌ریزی‌شده در تمام دستگاه‌ها بهره‌مند شوید. صرف نظر از قالب اصلی محتوای شما، پس از دیجیتالی شدن، DAI به شما امکان می‌دهد تبلیغات ویدیویی هدفمند را در محتوای خود، بر اساس کاربر منفردی که محتوا را مشاهده می‌کند، نمایش دهید.
+DAI به شما امکان می‌دهد این گردش‌های کاری را از طریق API سرویس کامل و API سرویس پاد، به همراه پلتفرم‌های SDK پشتیبانی‌شده، انجام دهید.
+برای شروع استفاده از DAI، یکی از ادغام‌های زیر را انتخاب کنید:
+
+## خدمات کامل DAI
+- [خدمات کامل DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=fa)
+- [بیشتر بدانید](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=fa)
+
+## غلاف ارائه DAI
+- [غلاف ارائه DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=fa)
+- [بیشتر بدانید](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=fa)
+
+## پلتفرم های پشتیبانی شده
+- [پلتفرم های پشتیبانی شده](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5/get-started?hl=fa)
+- [HTML5](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5/get-started?hl=fa)
+- [Android](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android/get-started?hl=fa)
+- [iOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios/get-started?hl=fa)
+- [tvOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos/get-started?hl=fa)
+- [Chromecast](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/chromecast/get-started?hl=fa)
+- [روکو](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku/get-started?hl=fa)
+
+## دریافت پشتیبانی
+- [دریافت پشتیبانی](https://support.google.com/admanager/contact/contact_us_ima_sdk?hl=fa)
+- [با پشتیبانی IMA SDK تماس بگیرید](https://support.google.com/admanager/contact/contact_us_ima_sdk?hl=fa)
+جز در مواردی که غیر از این ذکر شده باشد،‌محتوای این صفحه تحت مجوز Creative Commons Attribution 4.0 License است. نمونه کدها نیز دارای مجوز Apache 2.0 License است. برای اطلاع از جزئیات، به خطمشی‌های سایت Google Developers‏ مراجعه کنید. جاوا علامت تجاری ثبت‌شده Oracle و/یا شرکت‌های وابسته به آن است.
+- [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/)
+- [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0)
+- [خطمشی‌های سایت Google Developers‏](https://developers.google.com/site-policies?hl=fa)
+تاریخ آخرین به‌روزرسانی 2026-02-27 به‌وقت ساعت هماهنگ جهانی.
+
+## متصل کردن
+- [وبلاگ](//googledevelopers.blogspot.com)
+- [Bluesky](https://goo.gle/3FReQXN)
+- [Instagram](https://www.instagram.com/googlefordevs/)
+- [LinkedIn](https://www.linkedin.com/showcase/googledevelopers/)
+- [‫X (توییتر)](//twitter.com/googledevs)
+- [YouTube](//www.youtube.com/user/GoogleDevelopers)
+
+## برنامه‌ها
+- [Google Developer Program](/program)
+- [Google Developer Groups](/community)
+- [Google Developer Experts](/community/experts)
+- [Accelerators](/community/accelerators)
+- [Google Cloud & NVIDIA](/community/nvidia)
+
+## کنسول‌های برنامه‌نویس
+- [Google API Console](//console.developers.google.com)
+- [Google Cloud Platform Console](//console.cloud.google.com)
+- [کنسول Google Play](//play.google.com/apps/publish)
+- [Firebase Console](//console.firebase.google.com)
+- [Actions on Google Console](//console.actions.google.com)
+- [Cast SDK Developer Console](//cast.google.com/publish)
+- [Chrome Web Store Dashboard](//chrome.google.com/webstore/developer/dashboard)
+- [Google Home Developer Console](//console.home.google.com)
+- [Android](//developer.android.com?hl=fa)
+- [Chrome](//developer.chrome.com/home?hl=fa)
+- [Firebase](//firebase.google.com?hl=fa)
+- [Google Cloud Platform](//cloud.google.com?hl=fa)
+- [Google AI](//ai.google.dev/?hl=fa)
+- [همه محصولات](https://developers.google.com/products?hl=fa)
+- [شرایط](https://developers.google.com/terms/site-terms?hl=fa)
+- [حریم خصوصی](//policies.google.com/privacy?hl=fa)
+
+---
+
+# DAI Full Service API  |  Google for DevelopersGoogleGoogle
+
+> **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service
+> **Analyzed At:** 2026-06-06T02:57:38.434Z
 
 ## Google Dynamic Ad Insertion
 - [Home](https://developers.google.com/ad-manager/dynamic-ad-insertion)
@@ -41818,6 +41943,7 @@ Actual results will vary by advertiser.
 - [tvOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos)
 - [Chromecast](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast)
 - [Roku](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku)
+- [APIs](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service)
 - [Full service DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service)
 - [Pod serving DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving)
 - [Ad break](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/ad-break)
@@ -41830,15 +41956,29 @@ Actual results will vary by advertiser.
 - Test tools
 - [Video Suite Inspector](//googleads.github.io/googleads-ima-html5-dai/vsi/)
 - [Sample streams](https://developers.google.com/ad-manager/dynamic-ad-insertion/streams)
-- [Google Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion)
+- [Full service DAI API](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service)
+- [Guides](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service)
+- [Reference](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service/reference/live)
+- [Google Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service)
 - Home More
 - More
 - SDKs More
 - More
-- APIs More
+- [APIs](/ad-manager/dynamic-ad-insertion/full-service)
 - More
+- [Guides](/ad-manager/dynamic-ad-insertion/full-service)
+- [Reference](/ad-manager/dynamic-ad-insertion/api/full-service/reference/live)
 - Resources More
 - More
+- [Overview](/ad-manager/dynamic-ad-insertion/full-service)
+- [Learn the DAI Full Service API](/ad-manager/dynamic-ad-insertion/api/full-service/get-started)
+- [Overview](/ad-manager/dynamic-ad-insertion/api/full-service/stream-session-overview)
+- [Authenticate Stream Session Requests](/ad-manager/dynamic-ad-insertion/api/full-service/stream-session-requests)
+- Develop
+- [Manage DAI livestreams](/ad-manager/dynamic-ad-insertion/api/full-service/video-player-live)
+- [Request DAI VOD streams](/ad-manager/dynamic-ad-insertion/api/full-service/video-player-vod)
+- [Implement AdChoices](/ad-manager/dynamic-ad-insertion/api/full-service/wta)
+- [Enable skippable ads in VOD streams](/ad-manager/dynamic-ad-insertion/api/full-service/vod-skippable-ads)
 - [Home](/ad-manager/dynamic-ad-insertion)
 - [HTML5](/ad-manager/dynamic-ad-insertion/sdk/html5)
 - [Android](/ad-manager/dynamic-ad-insertion/sdk/android)
@@ -41858,41 +41998,45 @@ Actual results will vary by advertiser.
 - Test tools
 - [Video Suite Inspector](//googleads.github.io/googleads-ima-html5-dai/vsi/)
 - [Sample streams](/ad-manager/dynamic-ad-insertion/streams)
+- [IMA SDK](/interactive-media-ads)
 - [Home](https://developers.google.com/)
 - [Products](https://developers.google.com/products)
 - [Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion)
+- [DAI Full Service API](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service)
+- [APIs](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service)
 
-## Dynamic ad insertion (DAI)
-DAI lets you monetize your video content, taking away the complexity of the ad request and ad response process from the SDK. This approach reduces the likelihood of client-side errors and produces a TV-like experience without latency or buffering between content and ads.
-With DAI, you can target individual ads for livestreams and videos on demand programming, obtain multi-screen reach with broad device support, and take advantage of programmatic monetization across all devices with Ad Exchange for video. Regardless of the original format of your content, once it becomes digital, DAI lets you show targeted video ads within your content, based on the individual user viewing the content.
-DAI lets you perform these workflows through the Full service API and Pod serving API, along with supported SDK platforms.
-To start using DAI, select one of the following integrations:
+## With the IMA DAI SDK
+- The web page or app loads the IMA DAI SDK through: an embedded script tag for HTML5 a native app for Android, Google Cast, iOS, tvOS, or Roku
+- an embedded script tag for HTML5
+- a native app for Android, Google Cast, iOS, tvOS, or Roku
+- The SDK requests either a VOD stream or live stream from Google Ad Manager 360.
+- Ad Manager 360 responds with the video stream that includes inserted ad breaks.
+- The SDK parses the response, determines the correct media type based on environment, and delivers the video stream (and companion ads if needed) to the web page or app.
+- The video player negotiates the playback details with the SDK and plays the content.
+- The video player listens for instream metadata and passes it to the SDK for processing.
+- The SDK fires impression pings and tracking events as needed.
+For detailed instructions on how to implement a client video player using the IMA DAI SDK, check out our SDK guides:
+- [HTML5](/ad-manager/dynamic-ad-insertion/sdk/html5?service=full)
+- [Android](/ad-manager/dynamic-ad-insertion/sdk/android?service=full)
+- [iOS](/ad-manager/dynamic-ad-insertion/sdk/ios?service=full)
+- [tvOS](/ad-manager/dynamic-ad-insertion/sdk/tvos?service=full)
+- [Chromecast](/ad-manager/dynamic-ad-insertion/sdk/cast?service=full)
+- [Roku](/ad-manager/dynamic-ad-insertion/sdk/roku?service=full)
 
-## Full service DAI
-- [Full service DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service)
-- [Learn More](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service)
-
-## Pod serving DAI
-- [Pod serving DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving)
-- [Learn More](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving)
-
-## Supported platforms
-- [Supported platforms](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5/get-started)
-- [HTML5](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5/get-started)
-- [Android](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android/get-started)
-- [iOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios/get-started)
-- [tvOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos/get-started)
-- [Chromecast](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/chromecast/get-started)
-- [Roku](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku/get-started)
-
-## Get Support
-- [Get Support](https://support.google.com/admanager/contact/contact_us_ima_sdk)
-- [Contact IMA SDK Support](https://support.google.com/admanager/contact/contact_us_ima_sdk)
+## With the DAI API
+- The client's player app requests either a VOD stream or live stream from Google Ad Manager 360.
+- Ad Manager 360 responds with the video stream that includes inserted ad breaks.
+- The client's player app begins playback of the stream, and either requests ad metadata once (for VOD streams) OR begins regularly polling for ad metadata (for live streams).
+- The client's player app listens for instream metadata, parses it, and compares it to the values in the ad metadata to identify ad events.
+- The client's video player app fires ad impression pings and tracking events as needed.
+For detailed instructions on how to implement a client video player, using the DAI REST API, check out our API guides:
+- [Live API](/ad-manager/dynamic-ad-insertion/api/full-service/video-player-live)
+- [VOD API](/ad-manager/dynamic-ad-insertion/api/full-service/video-player-vod)
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
 - [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/)
 - [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0)
 - [Google Developers Site Policies](https://developers.google.com/site-policies)
-Last updated 2026-02-26 UTC.
+Last updated 2026-03-05 UTC.
 
 ## Connect
 - [Blog](//googledevelopers.blogspot.com)
@@ -41929,289 +42073,148 @@ Last updated 2026-02-26 UTC.
 
 ---
 
-# DAI Full Service API  |  Google for DevelopersGoogleGoogle
-
-> **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service
-> **Analyzed At:** 2026-06-05T03:00:53.640Z
-
-## Google Dynamic Ad Insertion
-- [ホーム](https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=ja)
-- [HTML5](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5?hl=ja)
-- [Android](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android?hl=ja)
-- [iOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios?hl=ja)
-- [tvOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos?hl=ja)
-- [Chromecast](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast?hl=ja)
-- [Roku](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku?hl=ja)
-- [API](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=ja)
-- [フルサービス DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=ja)
-- [Pod Serving DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=ja)
-- [アドブレーク](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/ad-break?hl=ja)
-- サポート
-- [アド マネージャー ヘルプ コミュニティ](//support.google.com/admanager/community?hl=ja)
-- [サポートに問い合わせる](//support.google.com/admanager/contact/contact_us_ima_sdk?hl=ja)
-- [利用規約](https://developers.google.com/ad-manager/dynamic-ad-insertion/terms?hl=ja)
-- [Google アド マネージャーの公式 Discord チャンネル](//goo.gle/google-ad-manager-discord)
-- [広告デベロッパー ブログ](//ads-developers.googleblog.com/search/label/ima_sdk)
-- テストツール
-- [動画配信インスペクタ](//googleads.github.io/googleads-ima-html5-dai/vsi/)
-- [サンプル ストリーム](https://developers.google.com/ad-manager/dynamic-ad-insertion/streams?hl=ja)
-- [フルサービスの DAI API](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=ja)
-- [ガイド](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=ja)
-- [リファレンス](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service/reference/live?hl=ja)
-- [Google Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service?hl=ja)
-- ホーム その他
-- その他
-- SDK その他
-- その他
-- [API](/ad-manager/dynamic-ad-insertion/full-service)
-- その他
-- [ガイド](/ad-manager/dynamic-ad-insertion/full-service)
-- [リファレンス](/ad-manager/dynamic-ad-insertion/api/full-service/reference/live)
-- リソース その他
-- その他
-- [DAI Full Service API について学習する](/ad-manager/dynamic-ad-insertion/api/full-service/get-started)
-- [ストリーム セッション リクエストを認証する](/ad-manager/dynamic-ad-insertion/api/full-service/stream-session-requests)
-- 開発
-- [DAI ライブ配信を管理する](/ad-manager/dynamic-ad-insertion/api/full-service/video-player-live)
-- [DAI VOD ストリームをリクエストする](/ad-manager/dynamic-ad-insertion/api/full-service/video-player-vod)
-- [AdChoices を実装する](/ad-manager/dynamic-ad-insertion/api/full-service/wta)
-- [VOD ストリームでスキップ可能な広告を有効にする](/ad-manager/dynamic-ad-insertion/api/full-service/vod-skippable-ads)
-- [ホーム](/ad-manager/dynamic-ad-insertion)
-- [HTML5](/ad-manager/dynamic-ad-insertion/sdk/html5)
-- [Android](/ad-manager/dynamic-ad-insertion/sdk/android)
-- [iOS](/ad-manager/dynamic-ad-insertion/sdk/ios)
-- [tvOS](/ad-manager/dynamic-ad-insertion/sdk/tvos)
-- [Chromecast](/ad-manager/dynamic-ad-insertion/sdk/cast)
-- [Roku](/ad-manager/dynamic-ad-insertion/sdk/roku)
-- [フルサービス DAI](/ad-manager/dynamic-ad-insertion/full-service)
-- [Pod Serving DAI](/ad-manager/dynamic-ad-insertion/pod-serving)
-- [アドブレーク](/ad-manager/dynamic-ad-insertion/api/ad-break)
-- サポート
-- [アド マネージャー ヘルプ コミュニティ](//support.google.com/admanager/community)
-- [サポートに問い合わせる](//support.google.com/admanager/contact/contact_us_ima_sdk)
-- [利用規約](/ad-manager/dynamic-ad-insertion/terms)
-- [Google アド マネージャーの公式 Discord チャンネル](//goo.gle/google-ad-manager-discord)
-- [広告デベロッパー ブログ](//ads-developers.googleblog.com/search/label/ima_sdk)
-- テストツール
-- [動画配信インスペクタ](//googleads.github.io/googleads-ima-html5-dai/vsi/)
-- [サンプル ストリーム](/ad-manager/dynamic-ad-insertion/streams)
-- [IMA SDK](https://developers.google.com/interactive-media-ads?hl=ja)
-- [ホーム](https://developers.google.com/?hl=ja)
-- [プロダクト](https://developers.google.com/products?hl=ja)
-- [Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=ja)
-- [DAI Full Service API](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service?hl=ja)
-- [API](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=ja)
-
-## IMA DAI SDK を使用する場合
-- ウェブページまたはアプリが次の方法で IMA DAI SDK を読み込む HTML5 用の埋め込みスクリプトタグ Android、Google Cast、iOS、tvOS、Roku 用のネイティブ アプリ
-- HTML5 用の埋め込みスクリプトタグ
-- Android、Google Cast、iOS、tvOS、Roku 用のネイティブ アプリ
-- SDK が Google アド マネージャー 360 に VOD ストリームまたはライブ ストリームをリクエストします。
-- アド マネージャー 360 は、挿入されたミッドロール挿入点を含む動画ストリームで応答します。
-- SDK はレスポンスを解析し、環境に応じた適切なメディアタイプを特定して、動画ストリーム（および必要に応じてコンパニオン広告）をウェブページまたはアプリに配信します。
-- 動画プレーヤーは、再生の詳細について SDK とネゴシエートしてコンテンツを再生します。
-- 動画プレーヤーは、インストリーム メタデータをリッスンし、処理のために SDK に渡します。
-- SDK は、必要に応じてインプレッション ping とトラッキング イベントを呼び出します。
-IMA DAI SDK を使用してクライアントの動画プレーヤーを実装する詳しい手順については、次の SDK ガイドをご覧ください。
-- [HTML5](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5?service=full&hl=ja)
-- [Android](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android?service=full&hl=ja)
-- [iOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios?service=full&hl=ja)
-- [tvOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos?service=full&hl=ja)
-- [Chromecast](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast?service=full&hl=ja)
-- [Roku](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku?service=full&hl=ja)
-
-## DAI API を使用する場合
-- クライアントのプレーヤー アプリが VOD ストリームまたはライブ ストリームをリクエストする Google アドマネージャー 360 からの キャンペーンタイプです
-- アド マネージャー 360 から、次を含む動画ストリームが返されます。 挿入されました。
-- クライアントのプレーヤー アプリがストリームの再生を開始し、次のいずれか 広告メタデータを 1 回リクエストする（VOD ストリームの場合）、または定期的に開始 広告メタデータのポーリング（ライブ配信の場合）。
-- クライアントのプレーヤー アプリは、インストリーム メタデータをリッスンし、解析して広告メタデータの値と比較して、広告イベントを特定します。
-- クライアントの動画プレーヤー アプリは、必要に応じて広告インプレッション ピングとトラッキング イベントを送信します。
-クライアント動画プレーヤーの実装方法について詳しくは、 使用方法については、次の API ガイドをご覧ください。
-- [ライブ API](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service/video-player-live?hl=ja)
-- [VOD API](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/full-service/video-player-vod?hl=ja)
-特に記載のない限り、このページのコンテンツはクリエイティブ・コモンズの表示 4.0 ライセンスにより使用許諾されます。コードサンプルは Apache 2.0 ライセンスにより使用許諾されます。詳しくは、Google Developers サイトのポリシーをご覧ください。Java は Oracle および関連会社の登録商標です。
-- [クリエイティブ・コモンズの表示 4.0 ライセンス](https://creativecommons.org/licenses/by/4.0/)
-- [Apache 2.0 ライセンス](https://www.apache.org/licenses/LICENSE-2.0)
-- [Google Developers サイトのポリシー](https://developers.google.com/site-policies?hl=ja)
-最終更新日 2026-03-05 UTC。
-
-## つながる
-- [ブログ](//developers-jp.googleblog.com)
-- [Bluesky](https://goo.gle/3FReQXN)
-- [Instagram](https://www.instagram.com/googlefordevs/)
-- [LinkedIn](https://www.linkedin.com/showcase/googledevelopers/)
-- [X（Twitter）](//twitter.com/googledevjp)
-- [YouTube](//www.youtube.com/channel/UC6tAXy7UFO_QG0LeD_OKQBQ)
-
-## プログラム
-- [Google Developer Program](/program)
-- [Google Developer Groups](/community)
-- [Google Developer Experts](/community/experts)
-- [Accelerators](/community/accelerators)
-- [Google Cloud & NVIDIA](/community/nvidia)
-
-## デベロッパー コンソール
-- [Google API Console](//console.developers.google.com)
-- [Google Cloud Platform Console](//console.cloud.google.com)
-- [Google Play Console](//play.google.com/apps/publish)
-- [Firebase Console](//console.firebase.google.com)
-- [Actions on Google Console](//console.actions.google.com)
-- [Cast SDK Developer Console](//cast.google.com/publish)
-- [Chrome Web Store Dashboard](//chrome.google.com/webstore/developer/dashboard)
-- [Google Home Developer Console](//console.home.google.com)
-- [Android](//developer.android.com?hl=ja)
-- [Chrome](//developer.chrome.com/home?hl=ja)
-- [Firebase](//firebase.google.com?hl=ja)
-- [Google Cloud Platform](//cloud.google.com?hl=ja)
-- [Google AI](//ai.google.dev/?hl=ja)
-- [すべてのプロダクト](https://developers.google.com/products?hl=ja)
-- [利用規約](https://developers.google.com/terms/site-terms?hl=ja)
-- [プライバシー](//policies.google.com/privacy?hl=ja)
-
----
-
 # DAI Pod Serving API  |  Google for DevelopersGoogleGoogle
 
 > **Source:** https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving
-> **Analyzed At:** 2026-06-05T03:01:00.134Z
+> **Analyzed At:** 2026-06-06T02:58:08.439Z
 
 ## Google Dynamic Ad Insertion
-- [หน้าแรก](https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=th)
-- [HTML5](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5?hl=th)
-- [Android](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android?hl=th)
-- [iOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios?hl=th)
-- [tvOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos?hl=th)
-- [Chromecast](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast?hl=th)
-- [Roku](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku?hl=th)
-- [API](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=th)
-- [DAI บริการเต็มรูปแบบ](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=th)
-- [DAI ที่แสดงพ็อด](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=th)
-- [ช่วงพักโฆษณา](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/ad-break?hl=th)
-- การสนับสนุน
-- [ชุมชนความช่วยเหลือของ Ad Manager](//support.google.com/admanager/community?hl=th)
-- [ติดต่อฝ่ายสนับสนุน](//support.google.com/admanager/contact/contact_us_ima_sdk?hl=th)
-- [ข้อกำหนดในการให้บริการ](https://developers.google.com/ad-manager/dynamic-ad-insertion/terms?hl=th)
-- [ช่อง Discord อย่างเป็นทางการของ Google Ad Manager](//goo.gle/google-ad-manager-discord)
-- [บล็อกนักพัฒนาโฆษณา](//ads-developers.googleblog.com/search/label/ima_sdk)
-- เครื่องมือทดสอบ
-- [เครื่องมือตรวจสอบ Video Suite](//googleads.github.io/googleads-ima-html5-dai/vsi/)
-- [ตัวอย่างสตรีม](https://developers.google.com/ad-manager/dynamic-ad-insertion/streams?hl=th)
-- [API การแสดงพ็อด DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=th)
-- [คำแนะนำ](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=th)
-- [ข้อมูลอ้างอิง](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/reference/live?hl=th)
-- [Google Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving?hl=th)
-- หน้าแรก เพิ่มเติม
-- เพิ่มเติม
-- SDK เพิ่มเติม
-- เพิ่มเติม
+- [Página principal](https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=es-419)
+- [HTML5](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5?hl=es-419)
+- [Android](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android?hl=es-419)
+- [iOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios?hl=es-419)
+- [tvOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos?hl=es-419)
+- [Chromecast](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast?hl=es-419)
+- [Roku](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku?hl=es-419)
+- [API](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=es-419)
+- [DAI de servicio completo](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=es-419)
+- [DAI de publicación de grupos de anuncios](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=es-419)
+- [Pausa publicitaria](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/ad-break?hl=es-419)
+- Asistencia
+- [Comunidad de ayuda de Ad Manager](//support.google.com/admanager/community?hl=es-419)
+- [Comunicarse con el equipo de asistencia](//support.google.com/admanager/contact/contact_us_ima_sdk?hl=es-419)
+- [Condiciones del Servicio](https://developers.google.com/ad-manager/dynamic-ad-insertion/terms?hl=es-419)
+- [Canal oficial de Discord de Google Ad Manager](//goo.gle/google-ad-manager-discord)
+- [Blog para desarrolladores de anuncios](//ads-developers.googleblog.com/search/label/ima_sdk)
+- Herramientas de prueba
+- [Inspector de paquetes de video](//googleads.github.io/googleads-ima-html5-dai/vsi/)
+- [Transmisiones de muestra](https://developers.google.com/ad-manager/dynamic-ad-insertion/streams?hl=es-419)
+- [API de publicación de grupos de anuncios de la DAI](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=es-419)
+- [Guías](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=es-419)
+- [Referencia](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/reference/live?hl=es-419)
+- [Google Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving?hl=es-419)
+- Página principal Más
+- Más
+- SDKs Más
+- Más
 - [API](/ad-manager/dynamic-ad-insertion/pod-serving)
-- เพิ่มเติม
-- [คำแนะนำ](/ad-manager/dynamic-ad-insertion/pod-serving)
-- [ข้อมูลอ้างอิง](/ad-manager/dynamic-ad-insertion/api/pod-serving/reference/live)
-- ทรัพยากร เพิ่มเติม
-- เพิ่มเติม
-- [ภาพรวม](/ad-manager/dynamic-ad-insertion/pod-serving)
-- [ดูข้อมูลเกี่ยวกับ DAI Pod Serving API](/ad-manager/dynamic-ad-insertion/api/pod-serving)
-- พัฒนาการแทรกโฆษณาฝั่งเซิร์ฟเวอร์
-- [ภาพรวม](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/get-started)
-- [เตรียมแอปโปรแกรมเล่นวิดีโอของไคลเอ็นต์](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client)
-- [แทรกโฆษณาด้วยข้อมูลเมตาเกี่ยวกับเวลาของพ็อดโฆษณา](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/manipulator)
-- [แทรกโฆษณาโดยใช้การเปลี่ยนเส้นทางของกลุ่ม](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/manipulator-basic)
-- [ภาพรวม](/ad-manager/dynamic-ad-insertion/api/pod-serving/vod)
-- [เตรียมแอปโปรแกรมเล่นวิดีโอของไคลเอ็นต์ของคุณ](/ad-manager/dynamic-ad-insertion/api/pod-serving/vod/client)
-- [กำหนดค่าเซิร์ฟเวอร์การจัดการไฟล์ Manifest](/ad-manager/dynamic-ad-insertion/api/pod-serving/vod/manipulator)
-- ตั้งค่าการแทรกโฆษณาที่แนะนําโดยเซิร์ฟเวอร์
-- [เกี่ยวกับการแทรกโฆษณาที่เซิร์ฟเวอร์แนะนำ](/ad-manager/dynamic-ad-insertion/server-guided)
-- [เริ่มต้นใช้งาน SGAI สําหรับสตรีมแบบสด](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/get-started/sgai)
-- [หน้าแรก](/ad-manager/dynamic-ad-insertion)
+- Más
+- [Guías](/ad-manager/dynamic-ad-insertion/pod-serving)
+- [Referencia](/ad-manager/dynamic-ad-insertion/api/pod-serving/reference/live)
+- Recursos Más
+- Más
+- [Descripción general](/ad-manager/dynamic-ad-insertion/pod-serving)
+- [Aprende sobre la API de DAI Pod Serving](/ad-manager/dynamic-ad-insertion/api/pod-serving)
+- Desarrolla la inserción de anuncios del servidor
+- [Descripción general](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/get-started)
+- [Prepara la app de reproductor de video del cliente](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client)
+- [Inserta anuncios con metadatos de sincronización de la tanda de anuncios](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/manipulator)
+- [Inserta anuncios con redireccionamientos de segmentos](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/manipulator-basic)
+- [Descripción general](/ad-manager/dynamic-ad-insertion/api/pod-serving/vod)
+- [Prepara tu app de reproductor de video cliente](/ad-manager/dynamic-ad-insertion/api/pod-serving/vod/client)
+- [Cómo configurar tu servidor de manipulación de manifiestos](/ad-manager/dynamic-ad-insertion/api/pod-serving/vod/manipulator)
+- Configura la inserción de anuncios guiada por el servidor
+- [Acerca de la inserción de anuncios guiada por el servidor](/ad-manager/dynamic-ad-insertion/server-guided)
+- [Comienza a usar SGAI para transmisiones en vivo](/ad-manager/dynamic-ad-insertion/api/pod-serving/live/get-started/sgai)
+- [Página principal](/ad-manager/dynamic-ad-insertion)
 - [HTML5](/ad-manager/dynamic-ad-insertion/sdk/html5)
 - [Android](/ad-manager/dynamic-ad-insertion/sdk/android)
 - [iOS](/ad-manager/dynamic-ad-insertion/sdk/ios)
 - [tvOS](/ad-manager/dynamic-ad-insertion/sdk/tvos)
 - [Chromecast](/ad-manager/dynamic-ad-insertion/sdk/cast)
 - [Roku](/ad-manager/dynamic-ad-insertion/sdk/roku)
-- [DAI บริการเต็มรูปแบบ](/ad-manager/dynamic-ad-insertion/full-service)
-- [DAI ที่แสดงพ็อด](/ad-manager/dynamic-ad-insertion/pod-serving)
-- [ช่วงพักโฆษณา](/ad-manager/dynamic-ad-insertion/api/ad-break)
-- การสนับสนุน
-- [ชุมชนความช่วยเหลือของ Ad Manager](//support.google.com/admanager/community)
-- [ติดต่อฝ่ายสนับสนุน](//support.google.com/admanager/contact/contact_us_ima_sdk)
-- [ข้อกำหนดในการให้บริการ](/ad-manager/dynamic-ad-insertion/terms)
-- [ช่อง Discord อย่างเป็นทางการของ Google Ad Manager](//goo.gle/google-ad-manager-discord)
-- [บล็อกนักพัฒนาโฆษณา](//ads-developers.googleblog.com/search/label/ima_sdk)
-- เครื่องมือทดสอบ
-- [เครื่องมือตรวจสอบ Video Suite](//googleads.github.io/googleads-ima-html5-dai/vsi/)
-- [ตัวอย่างสตรีม](/ad-manager/dynamic-ad-insertion/streams)
-- [หน้าแรก](https://developers.google.com/?hl=th)
-- [ผลิตภัณฑ์](https://developers.google.com/products?hl=th)
-- [Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=th)
-- [DAI Pod Serving API](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving?hl=th)
-- [API](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=th)
+- [DAI de servicio completo](/ad-manager/dynamic-ad-insertion/full-service)
+- [DAI de publicación de grupos de anuncios](/ad-manager/dynamic-ad-insertion/pod-serving)
+- [Pausa publicitaria](/ad-manager/dynamic-ad-insertion/api/ad-break)
+- Asistencia
+- [Comunidad de ayuda de Ad Manager](//support.google.com/admanager/community)
+- [Comunicarse con el equipo de asistencia](//support.google.com/admanager/contact/contact_us_ima_sdk)
+- [Condiciones del Servicio](/ad-manager/dynamic-ad-insertion/terms)
+- [Canal oficial de Discord de Google Ad Manager](//goo.gle/google-ad-manager-discord)
+- [Blog para desarrolladores de anuncios](//ads-developers.googleblog.com/search/label/ima_sdk)
+- Herramientas de prueba
+- [Inspector de paquetes de video](//googleads.github.io/googleads-ima-html5-dai/vsi/)
+- [Transmisiones de muestra](/ad-manager/dynamic-ad-insertion/streams)
+- [Página principal](https://developers.google.com/?hl=es-419)
+- [Productos](https://developers.google.com/products?hl=es-419)
+- [Dynamic Ad Insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=es-419)
+- [DAI Pod Serving API](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving?hl=es-419)
+- [API](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=es-419)
 
-## การแสดงพ็อด DAI
-DAI Pod Serving ช่วยให้คุณขอพ็อดโฆษณาจาก Google หรือเซิร์ฟเวอร์โฆษณาของบุคคลที่สามสำหรับสตรีมแบบสดและวิดีโอออนดีมานด์ (VOD) ได้ ดูรายละเอียดเพิ่มเติมได้ที่ กำหนดค่าพ็อดโฆษณาและเทมเพลตช่วงพักโฆษณา
-- [กำหนดค่าพ็อดโฆษณาและเทมเพลตช่วงพักโฆษณา](https://support.google.com/admanager/answer/9204132?hl=th#zippy=,configure-ad-pods-and-break-templates)
-- การเปลี่ยนเส้นทางการแสดงพ็อด: ช่วยให้คุณดึงข้อมูลกลุ่มไฟล์ Manifest เพื่อใช้การแทรกโฆษณาฝั่งเซิร์ฟเวอร์ (SSAI) ได้ กลุ่มคือ URL แบบไดนามิกที่เปลี่ยนเส้นทางไปยังเนื้อหาหรือไฟล์สื่อโฆษณา
-- [DAI ที่เซิร์ฟเวอร์แนะนำ](https://developers.google.com/ad-manager/dynamic-ad-insertion/server-guided?hl=th)
-สำหรับ VOD นั้น Google Ad Manager จะแสดงไฟล์ Manifest ของพ็อดโฆษณาที่สมบูรณ์
-DAI Pod Serving มีแพลตฟอร์มที่รองรับดังต่อไปนี้
-- [HTML5](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5?service=pod&hl=th)
-- [Android](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android?service=pod&hl=th)
-- [iOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios?service=pod&hl=th)
-- [tvOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos?service=pod&hl=th)
-- [Chromecast](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast?service=pod&hl=th)
-- [Roku](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku?service=pod&hl=th)
-ดูรายละเอียดเกี่ยวกับไลฟ์สดและ VOD ได้ที่เวิร์กโฟลว์ต่อไปนี้
+## Publicación de grupos de anuncios de DAI
+La publicación de grupos de inserción de anuncios dinámicos (DAI) te permite solicitar grupos de anuncios, ya sea de Google o de servidores de anuncios de terceros, para transmisiones en vivo y de video on demand (VOD). Para obtener más detalles, consulta Cómo configurar pausas publicitarias y plantillas de pausas.
+- [Cómo configurar pausas publicitarias y plantillas de pausas](https://support.google.com/admanager/answer/9204132?hl=es-419#zippy=,configure-ad-pods-and-break-templates)
+- Redireccionamiento de publicación de grupos de anuncios: Te permite recuperar segmentos de manifiesto para implementar la inserción de anuncios del servidor (SSAI). Los segmentos son URLs dinámicas que redireccionan a archivos multimedia de contenido o de anuncios.
+- [DAI guiada por el servidor](https://developers.google.com/ad-manager/dynamic-ad-insertion/server-guided?hl=es-419)
+En el caso del VOD, Google Ad Manager devuelve los manifiestos completos del grupo de anuncios.
+La Publicación de grupos de anuncios de DAI ofrece las siguientes plataformas compatibles:
+- [HTML5](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/html5?service=pod&hl=es-419)
+- [Android](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/android?service=pod&hl=es-419)
+- [iOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/ios?service=pod&hl=es-419)
+- [tvOS](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/tvos?service=pod&hl=es-419)
+- [Chromecast](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/cast?service=pod&hl=es-419)
+- [Roku](https://developers.google.com/ad-manager/dynamic-ad-insertion/sdk/roku?service=pod&hl=es-419)
+Para obtener detalles sobre las transmisiones en vivo y los VOD, consulta los siguientes flujos de trabajo:
 
-## เชื่อมโฆษณาเข้ากับไลฟ์สด
-- [ไลฟ์สด](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/get-started?hl=th)
-- [จัดเตรียมพารามิเตอร์การกำหนดเป้าหมายไปยังสตรีมของคุณ](https://support.google.com/admanager/answer/7320899?hl=th)
-- [ค้นหารหัสเซสชัน DAI หรือคีย์การแก้ไขข้อบกพร่อง](https://support.google.com/admanager/answer/7257678?hl=th)
-- [ตรวจสอบและแก้ไขข้อบกพร่องเซสชันของสตรีมที่ต้องการ](https://support.google.com/admanager/answer/7009058?hl=th)
-- ส่งคำขอไฟล์ Manifest ไปยังโปรแกรมต่อวิดีโอหรือตัวจัดการไฟล์ Manifest โดยส่งรหัสเซสชัน ส่งคำขออัปเดตไฟล์ Manifest ซ้ำตลอดการเล่น
-- สำหรับไฟล์ Manifest ของ DASH ให้ส่งคำขอเทมเพลตช่วงเวลา 1 รายการสำหรับทั้งเซสชัน
-- [ป้อนข้อมูลในเทมเพลตช่วงเวลา](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/manipulator?hl=th#populate_the_period_template)
-- ส่งคืนไฟล์ Manifest สุดท้ายที่มีกลุ่มสื่อเนื้อหาหรือโฆษณาสำหรับการ เล่นของไคลเอ็นต์ เริ่มเล่น
-- ตรวจสอบ Google Ad Manager เป็นประจำเพื่อดูข้อมูลอัปเดตของข้อมูลเมตาโฆษณาโดยใช้ความถี่ในการตรวจสอบสถานะ (Polling Frequency) ที่ส่งคืนในคำขอสตรีม จัดเก็บข้อมูลเมตาของโฆษณาเพื่อค้นหาเหตุการณ์โฆษณา
-- ในช่วงพักโฆษณา วิดีโอเพลเยอร์จะโหลดกลุ่มสื่อและ ทำตามการเปลี่ยนเส้นทางของ Google Ad Manager ไปยังไฟล์สื่อ
-- [ให้ฟังโปรแกรมเล่นวิดีโอเพื่อหาข้อมูลเมตาที่กำหนดเวลา](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client?hl=th#listen_for_ad_events)
-- [ส่งการ Ping เพื่อยืนยันสื่อ](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client?hl=th#send_media_verification_pings)
+## Une anuncios en una transmisión en vivo
+- [transmisión en vivo](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/get-started?hl=es-419)
+- [Cómo proporcionar parámetros de segmentación a tus novedades](https://support.google.com/admanager/answer/7320899?hl=es-419)
+- [Cómo encontrar un ID de sesión de DAI o una clave de depuración](https://support.google.com/admanager/answer/7257678?hl=es-419)
+- [Cómo supervisar y depurar una sesión de transmisión específica](https://support.google.com/admanager/answer/7009058?hl=es-419)
+- Realiza una solicitud de manifiesto a tu concatenador de video o manipulador de manifiesto, y pasa el ID de sesión. Repite la solicitud de actualizaciones del manifiesto durante la reproducción.
+- En el caso de los manifiestos de DASH, realiza una solicitud de plantilla de período para toda la sesión.
+- [Cómo completar la plantilla de período](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/manipulator?hl=es-419#populate_the_period_template)
+- Devuelve el manifiesto final que contiene segmentos de contenido o de medios publicitarios para la reproducción del cliente. Comienza la reproducción.
+- Sondea Google Ad Manager con regularidad para obtener actualizaciones de los metadatos de los anuncios con la frecuencia de sondeo que se devolvió en la solicitud de transmisión. Almacena los metadatos del anuncio para buscar eventos de anuncios.
+- Durante una pausa publicitaria, el reproductor de video carga los segmentos de medios y sigue los redireccionamientos de Google Ad Manager a los archivos de medios.
+- [escucha el reproductor de video para detectar metadatos cronometrados](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client?hl=es-419#listen_for_ad_events)
+- [Envía pings de verificación de medios](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client?hl=es-419#send_media_verification_pings)
 
-## เชื่อมโฆษณาเข้ากับสตรีม VOD
-- [สตรีม VOD](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/vod?hl=th)
-- [จัดเตรียมพารามิเตอร์การกำหนดเป้าหมายไปยังสตรีมของคุณ](https://support.google.com/admanager/answer/7320899?hl=th)
-- [ค้นหารหัสเซสชัน DAI หรือคีย์การแก้ไขข้อบกพร่อง](https://support.google.com/admanager/answer/7257678?hl=th)
-- [ตรวจสอบและแก้ไขข้อบกพร่องเซสชันของสตรีมที่ต้องการ](https://support.google.com/admanager/answer/7009058?hl=th)
-- ส่งคำขอไฟล์ Manifest ไปยังโปรแกรมต่อวิดีโอหรือตัวจัดการไฟล์ Manifest โดยส่งรหัสเซสชัน
-- ใช้รหัสเซสชันเพื่อขอพ็อดโฆษณาทั้งหมดพร้อมกัน
-- ดึงข้อมูลไฟล์ Manifest ที่สมบูรณ์ของพ็อดโฆษณาทั้งหมด หากต้องการสร้างไฟล์ Manifest สุดท้าย ให้เย็บไฟล์ Manifest ของพ็อดโฆษณา เข้ากับสตรีมเนื้อหา
-- ส่งคืนไฟล์ Manifest สุดท้ายซึ่งมีทั้งเนื้อหาและกลุ่มโฆษณา
-- ขอข้อมูลเมตาของโฆษณาสําหรับเหตุการณ์โฆษณาทั้งหมด จัดเก็บข้อมูลเมตาของโฆษณาเพื่อ ค้นหาเหตุการณ์โฆษณา เริ่มเล่น
-- ในช่วงพักโฆษณา วิดีโอเพลเยอร์จะโหลดกลุ่มสื่อและ ทำตามการเปลี่ยนเส้นทางของ Google Ad Manager ไปยังไฟล์สื่อ
-- [รอเหตุการณ์โฆษณา](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client?hl=th#listen_for_ad_events)
-- [ส่งการ Ping เพื่อยืนยันสื่อ](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client?hl=th#send_media_verification_pings)
-เนื้อหาของหน้าเว็บนี้ได้รับอนุญาตภายใต้ใบอนุญาตที่ต้องระบุที่มาของครีเอทีฟคอมมอนส์ 4.0 และตัวอย่างโค้ดได้รับอนุญาตภายใต้ใบอนุญาต Apache 2.0 เว้นแต่จะระบุไว้เป็นอย่างอื่น โปรดดูรายละเอียดที่นโยบายเว็บไซต์ Google Developers Java เป็นเครื่องหมายการค้าจดทะเบียนของ Oracle และ/หรือบริษัทในเครือ
-- [ใบอนุญาตที่ต้องระบุที่มาของครีเอทีฟคอมมอนส์ 4.0](https://creativecommons.org/licenses/by/4.0/)
-- [ใบอนุญาต Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- [นโยบายเว็บไซต์ Google Developers](https://developers.google.com/site-policies?hl=th)
-อัปเดตล่าสุด 2026-03-05 UTC
+## Une anuncios en una transmisión de VOD
+- [transmisión de VOD](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/vod?hl=es-419)
+- [Cómo proporcionar parámetros de segmentación a tu transmisión](https://support.google.com/admanager/answer/7320899?hl=es-419)
+- [Encuentra un ID de sesión de DAI o una clave de depuración](https://support.google.com/admanager/answer/7257678?hl=es-419)
+- [Supervisa y depura una sesión de transmisión específica](https://support.google.com/admanager/answer/7009058?hl=es-419)
+- Realiza una solicitud de manifiesto a tu unificador de video o manipulador de manifiestos y pasa el ID de sesión.
+- Usa el ID de sesión para solicitar todos los bloques de anuncios a la vez.
+- Recupera los manifiestos completos de todos los bloques de anuncios. Para crear el manifiesto final, une los manifiestos de los bloques de anuncios con la transmisión de contenido.
+- Muestra el manifiesto final, que contiene segmentos de contenido y de anuncios.
+- Solicita metadatos de anuncios para todos los eventos de anuncios. Almacena los metadatos de anuncios para buscar eventos de anuncios. Comienza la reproducción.
+- Durante una pausa publicitaria, el reproductor de video carga los segmentos de contenido multimedia y sigue las redirecciones de Google Ad Manager a los archivos multimedia.
+- [escucha los eventos de anuncios](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client?hl=es-419#listen_for_ad_events)
+- [Envía pings de verificación de contenido multimedia](https://developers.google.com/ad-manager/dynamic-ad-insertion/api/pod-serving/live/client?hl=es-419#send_media_verification_pings)
+Salvo que se indique lo contrario, el contenido de esta página está sujeto a la licencia Atribución 4.0 de Creative Commons, y los ejemplos de código están sujetos a la licencia Apache 2.0. Para obtener más información, consulta las políticas del sitio de Google Developers. Java es una marca registrada de Oracle o sus afiliados.
+- [licencia Atribución 4.0 de Creative Commons](https://creativecommons.org/licenses/by/4.0/)
+- [licencia Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+- [políticas del sitio de Google Developers](https://developers.google.com/site-policies?hl=es-419)
+Última actualización: 2026-03-05 (UTC)
 
-## เชื่อมต่อ
-- [บล็อก](//googledevelopers.blogspot.com)
+## Conéctate
+- [Blog](//desarrolladores.googleblog.com)
 - [Bluesky](https://goo.gle/3FReQXN)
 - [Instagram](https://www.instagram.com/googlefordevs/)
 - [LinkedIn](https://www.linkedin.com/showcase/googledevelopers/)
-- [X (Twitter)](//twitter.com/googledevs)
-- [YouTube](//www.youtube.com/user/GoogleDevelopers)
+- [X (Twitter)](//twitter.com/googledevslatam)
+- [YouTube](//www.youtube.com/channel/UCeo-MamuQVFRcfQmS2N7fhw)
 
-## โปรแกรม
+## Programas
 - [Google Developer Program](/program)
 - [Google Developer Groups](/community)
 - [Google Developer Experts](/community/experts)
 - [Accelerators](/community/accelerators)
 - [Google Cloud & NVIDIA](/community/nvidia)
 
-## คอนโซลของนักพัฒนาซอฟต์แวร์
+## Consolas para desarrolladores
 - [Google API Console](//console.developers.google.com)
 - [Google Cloud Platform Console](//console.cloud.google.com)
 - [Google Play Console](//play.google.com/apps/publish)
@@ -42220,14 +42223,14 @@ DAI Pod Serving มีแพลตฟอร์มที่รองรับด�
 - [Cast SDK Developer Console](//cast.google.com/publish)
 - [Chrome Web Store Dashboard](//chrome.google.com/webstore/developer/dashboard)
 - [Google Home Developer Console](//console.home.google.com)
-- [Android](//developer.android.com?hl=th)
-- [Chrome](//developer.chrome.com/home?hl=th)
-- [Firebase](//firebase.google.com?hl=th)
-- [Google Cloud Platform](//cloud.google.com?hl=th)
-- [Google AI](//ai.google.dev/?hl=th)
-- [ผลิตภัณฑ์ทั้งหมด](https://developers.google.com/products?hl=th)
-- [ข้อกำหนด](https://developers.google.com/terms/site-terms?hl=th)
-- [ความเป็นส่วนตัว](//policies.google.com/privacy?hl=th)
+- [Android](//developer.android.com?hl=es-419)
+- [Chrome](//developer.chrome.com/home?hl=es-419)
+- [Firebase](//firebase.google.com?hl=es-419)
+- [Google Cloud Platform](//cloud.google.com?hl=es-419)
+- [Google AI](//ai.google.dev/?hl=es-419)
+- [Todos los productos](https://developers.google.com/products?hl=es-419)
+- [Condiciones](https://developers.google.com/terms/site-terms?hl=es-419)
+- [Privacidad](//policies.google.com/privacy?hl=es-419)
 
 ---
 
@@ -42392,7 +42395,7 @@ Zuletzt aktualisiert: 2026-02-25 (UTC).
 # Resources Overview - Google Ad Manager
 
 > **Source:** https://admanager.google.com/home/resources/
-> **Analyzed At:** 2026-06-05T03:01:13.714Z
+> **Analyzed At:** 2026-06-06T02:59:10.900Z
 
 ## Tell us about your business
 Approximately how many monthly pageviews does your website have?
@@ -42681,7 +42684,7 @@ Learn how global publishers are finding success using Ad Manager to power their 
 # ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation
 
 > **Source:** https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
-> **Analyzed At:** 2026-06-05T03:01:20.315Z
+> **Analyzed At:** 2026-06-06T02:59:57.970Z
 
 ## Key Reference Links
 Google Ad Manager API Description: The Ad Manager API enables an app to integrate with Google Ad Manager. You can read Ad Manager data and run reports using the API.
@@ -44580,3 +44583,162 @@ You may also see several non standard types in hovers.
 Intelephense aims to support all frameworks but does not implement framework specific solutions. Some frameworks are coded in a way that make it difficult to analyse. This may be because of lack of type declarations/annotations; heavy use of `__get`, `__set`, `__call`, `__callStatic` magic methods; or dynamic generation of class aliases at runtime.
 Packages can be found online that aim to workaround these issues by providing stubs of symbols to help static analysers like Intelephense understand the code.
 * Laravel - [barryvdh/laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper)
+
+---
+
+# Get started  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle
+
+> **Source:** https://developers.google.com/ad-manager/api/start
+> **Analyzed At:** 2026-06-06T02:58:43.741Z
+
+## Get started Stay organized with collections Save and categorize content based on your preferences.
+You can use the Google Ad Manager SOAP API to build apps that manage inventory, create orders, pull reports, and more.
+To help you get started, we offer client libraries for Java, .NET, Python, PHP, and Ruby.
+- [client libraries](/ad-manager/api/clients)
+To make your first API request, follow these steps:
+
+## Get access to an Ad Manager network
+If you don't already have one, sign up for an Ad Manager account. You can also create a test network if you want to test the API in a separate environment. Note that you don't need an AdSense account for test purposes.
+- [Ad Manager account](//support.google.com/admanager/answer/7084151)
+- [test network](/ad-manager/api/environments)
+Make a note of your network code. You can find this in the URL when you sign in to your network. For example, in the URL https://admanager.google.com/1234#home, 1234 is your network code.
+- [Terms of Service](//www.google.com/intl/en_ALL/doubleclick/tos/dfp-api-terms.html)
+
+## Create authentication credentials
+You must authenticate all Ad Manager SOAP API requests using OAuth 2.0. The following steps cover the use case of accessing your own Ad Manager data. For more details and other options, see Authentication.
+- [Authentication](/ad-manager/api/authentication)
+Open the Google API Console Credentials page
+- [Google API Console Credentials page](https://console.cloud.google.com/apis/credentials)
+- From the project menu, choose Create project, enter a name for the project, and optionally, edit the provided Project ID. Click Create.
+From the project menu, choose Create project, enter a name for the project, and optionally, edit the provided Project ID. Click Create.
+- On the Credentials page, select Create credentials, then select Service account key.
+On the Credentials page, select Create credentials, then select Service account key.
+Select New service account and select JSON as the key type.
+- [New service account](//console.developers.google.com/apis/credentials/serviceaccountkey)
+- Click Create to download a file containing a private key.
+Click Create to download a file containing a private key.
+
+## Configure your Ad Manager network
+Sign in to Google Ad Manager.
+- [Sign in](//admanager.google.com/)
+- In the sidebar, click Admin > Global settings.
+In the sidebar, click Admin > Global settings.
+- Under General settings > Api access click the slider to Enabled.
+Under General settings > Api access click the slider to Enabled.
+- Click the Save button at the bottom of the page.
+Click the Save button at the bottom of the page.
+
+## Set up your client
+Download one of the Ad Manager client libraries. The libraries offer wrapper functions and features that make it easier and faster to develop apps.
+- [Ad Manager client libraries](/ad-manager/api/clients)
+The following tabs provide quickstarts for coding in each of the languages for which there is a client library.
+
+## Java
+Here is a basic example that shows how to use the Java client library. For more detailed usage information, refer to the README file in the client library distribution.
+- [Java client library](//github.com/googleads/googleads-java-lib)
+- [README](//github.com/googleads/googleads-java-lib/blob/main/README.md)
+- Setup your credentials Run the following command in a shell: curl https://raw.githubusercontent.com/googleads/googleads-java-lib/main/examples/admanager_axis/src/main/resources/ads.properties -o ~/ads.properties Open the ~/ads.properties file and populate the following fields: [...] api.admanager.applicationName=INSERT_APPLICATION_NAME_HERE api.admanager.jsonKeyFilePath=INSERT_PATH_TO_JSON_KEY_FILE_HERE api.admanager.networkCode=INSERT_NETWORK_CODE_HERE [...]
+Run the following command in a shell:
+
+## Specify dependencies
+Edit your pom.xml file and add the following to the dependencies tag. You can find the latest version number on Github.
+- [Github](https://github.com/googleads/googleads-java-lib/releases)
+Write some code and make a request!
+- [View on GitHub](https://github.com/googleads/googleads-java-lib/blob/main/examples/admanager_axis/src/main/java/admanager/axis/v202602/networkservice/GetCurrentNetwork.java)
+
+## Python
+Here is a basic example that shows how to use the Python client library. The Python Client Library supports Python v3.6+. For more detailed usage information, refer to the README file in the client library distribution.
+- [Python client library](//github.com/googleads/googleads-python-lib)
+- [README](//github.com/googleads/googleads-python-lib/blob/main/README.md)
+- Install the library and set up your credentials. Run the following commands in a shell: python3 -m pip install googleads curl https://raw.githubusercontent.com/googleads/googleads-python-lib/main/googleads.yaml \ -o ~/googleads.yaml
+Run the following commands in a shell:
+- Set up your ~/googleads.yaml file. Fill in the following fields: ad_manager: application_name: INSERT_APPLICATION_NAME_HERE network_code: INSERT_NETWORK_CODE_HERE path_to_private_key_file: INSERT_PATH_TO_FILE_HERE
+Fill in the following fields:
+- [View on GitHub](https://github.com/googleads/googleads-python-lib/blob/main/examples/ad_manager/v202602/network_service/get_current_network.py)
+
+## PHP
+Here is a basic example that shows how to use the PHP client library.
+- [PHP client library](//github.com/googleads/googleads-php-lib)
+Run the following commands in a shell to install the client library and download the adsapi_php.ini file to your home directory:
+- [adsapi_php.ini](//github.com/googleads/googleads-php-lib/blob/HEAD/examples/AdManager/adsapi_php.ini)
+- Setup your ~/adsapi_php.ini file. Fill in the following fields: [AD_MANAGER] networkCode = "INSERT_NETWORK_CODE_HERE" applicationName = "INSERT_APPLICATION_NAME_HERE" [OAUTH2] jsonKeyFilePath = "INSERT_ABSOLUTE_PATH_TO_OAUTH2_JSON_KEY_FILE_HERE" scopes = "https://www.googleapis.com/auth/dfp"
+Fill in the following fields:
+- [View on GitHub](https://github.com/googleads/googleads-php-lib/blob/main/examples/AdManager/v202602/NetworkService/GetCurrentNetwork.php)
+
+## .NET
+Here is a basic example that shows how to use the .NET client library
+- [.NET client library](//github.com/googleads/googleads-dotnet-lib)
+- Create a new project Open Visual Studio and create a new project (Console Application).
+Open Visual Studio and create a new project (Console Application).
+Add a nuget dependency for Google.Dfp.
+- [Google.Dfp](//www.nuget.org/packages/Google.Dfp/)
+- Setup your App.config Copy src\App.config to your project directory and add it to your project. If your application has its own App.config, then you can copy the following nodes into your App.config: configuration/AdManagerApi configuration/configSections/section[name="AdManagerApi"] configuration/system.net
+Copy src\App.config to your project directory and add it to your project. If your application has its own App.config, then you can copy the following nodes into your App.config:
+- configuration/AdManagerApi
+- configuration/configSections/section[name="AdManagerApi"]
+- configuration/system.net
+- Setup credentials Open App.config and edit the following keys:
+Open App.config and edit the following keys:
+You can call the library as shown in the following C# code snippet
+- [View on GitHub](https://github.com/googleads/googleads-dotnet-lib/blob/main/examples/AdManager/CSharp/v202602/InventoryService/GetAllAdUnits.cs)
+If you don't want to set your credentials in your App.config, then refer to this wiki article for alternate ways of using the AdManagerUser class. For more detailed information about using the .NET Client Library, refer to the README . If you want to develop in .NET without the client library, please refer to the NoClientLibrary wiki article.
+- [this wiki article](//github.com/googleads/googleads-dotnet-lib/wiki/Getting-Started)
+- [README](//github.com/googleads/googleads-dotnet-lib/blob/main/README.md)
+- [NoClientLibrary wiki article](//github.com/googleads/googleads-dotnet-lib/wiki/NoClientLibrary)
+
+## Ruby
+Here is a basic example that shows how to use the Ruby client library. The Ruby client library requires Ruby 2.1 or later.
+- [Ruby client library](//github.com/googleads/google-api-ads-ruby/tree/HEAD/ad_manager_api)
+- Install the Ruby gem and get the configuration file. Run the following commands in a shell: gem install google-dfp-api curl https://raw.githubusercontent.com/googleads/google-api-ads-ruby/main/ad_manager_api/ad_manager_api.yml -o ~/ad_manager_api.yml If you encounter an error such as "cannot load such file -- mkmf (LoadError)" at any point while installing your gems, you may need to install additional Ruby development libraries such as ruby-dev, ruby-devel, xcode-select etc. for your particular environment.
+Run the following commands in a shell:
+Populate the required fields in the ~/ad_manager_api.yml file. If you don't already have an OAuth2 keyfile, you'll need to follow the steps to create your OAuth2 credentials.
+- [create your OAuth2 credentials](/ad-manager/api/authentication#service)
+- [View on GitHub](https://github.com/googleads/google-api-ads-ruby/blob/main/ad_manager_api/examples/v202602/network_service/get_current_network.rb)
+More detailed steps for getting started can be found in the README file that is distributed with the Ruby client library. Also, check out our full example library for Ruby.
+- [README](//github.com/googleads/google-api-ads-ruby/wiki/DFP-Readme)
+- [full example library](https://github.com/googleads/google-api-ads-ruby/tree/HEAD/ad_manager_api/examples)
+
+## Next steps
+When you have a client library up and running, modify the examples provided to extend them for your needs.
+Browse the reference documentation to learn more about the API.
+- [reference documentation](/ad-manager/api/rel_notes)
+If you need help, visit our Support page.
+- [Support page](/ad-manager/api/community)
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+- [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/)
+- [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0)
+- [Google Developers Site Policies](https://developers.google.com/site-policies)
+Last updated 2026-02-25 UTC.
+
+## Connect
+- [Blog](//googledevelopers.blogspot.com)
+- [Bluesky](https://goo.gle/3FReQXN)
+- [Instagram](https://www.instagram.com/googlefordevs/)
+- [LinkedIn](https://www.linkedin.com/showcase/googledevelopers/)
+- [X (Twitter)](//twitter.com/googledevs)
+- [YouTube](//www.youtube.com/user/GoogleDevelopers)
+
+## Programs
+- [Google Developer Program](/program)
+- [Google Developer Groups](/community)
+- [Google Developer Experts](/community/experts)
+- [Accelerators](/community/accelerators)
+- [Google Cloud & NVIDIA](/community/nvidia)
+
+## Developer consoles
+- [Google API Console](//console.developers.google.com)
+- [Google Cloud Platform Console](//console.cloud.google.com)
+- [Google Play Console](//play.google.com/apps/publish)
+- [Firebase Console](//console.firebase.google.com)
+- [Actions on Google Console](//console.actions.google.com)
+- [Cast SDK Developer Console](//cast.google.com/publish)
+- [Chrome Web Store Dashboard](//chrome.google.com/webstore/developer/dashboard)
+- [Google Home Developer Console](//console.home.google.com)
+- [Android](//developer.android.com)
+- [Chrome](//developer.chrome.com/home)
+- [Firebase](//firebase.google.com)
+- [Google Cloud Platform](//cloud.google.com)
+- [Google AI](//ai.google.dev/)
+- [All products](/products)
+- [Terms](/terms/site-terms)
+- [Privacy](//policies.google.com/privacy)
