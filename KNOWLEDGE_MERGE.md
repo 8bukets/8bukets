@@ -9,92 +9,73 @@
 
 
 ## Autonomous Observation
-- **Date**: 2026-06-05T03:00:17.699Z
+- **Date**: 2026-06-06T02:54:58.154Z
 - **Target**: https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU
 - **Title**: Understanding bidding basics - Google Ads Help
 - **Relationship Map**: Confirmed relationship with https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU (Title: Understanding bidding basics - Google Ads Help) as an intelligence source. Extracted key topics: Understanding bidding basics, Focus on clicks (for Search and Display ads), Focus on impressions... (Content Length: 13812 chars)
 
 
-
-
 ## Autonomous Observation
-- **Date**: 2026-06-05T03:00:24.063Z
+- **Date**: 2026-06-06T02:55:22.274Z
 - **Target**: https://business.google.com/uk/ad-tools/bidding/
 - **Title**: Google Ads Smart Bidding - AI-Driven Bid Optimisations & Ad Spend
 - **Relationship Map**: Confirmed relationship with https://business.google.com/uk/ad-tools/bidding/ (Title: Google Ads Smart Bidding - AI-Driven Bid Optimisations & Ad Spend) as an intelligence source. Extracted key topics: Want to create a new Google Ads account?, Want to create a new Google Ads account?, Deliver better results with automated bidding... (Content Length: 19697 chars)
 
 
-
-
 ## Autonomous Observation
-- **Date**: 2026-06-05T03:00:32.602Z
+- **Date**: 2026-06-06T02:55:55.962Z
 - **Target**: https://business.google.com/uk/resources/
 - **Title**: Tips & Resources for Online Advertising – Google Ads
 - **Relationship Map**: Confirmed relationship with https://business.google.com/uk/resources/ (Title: Tips & Resources for Online Advertising – Google Ads) as an intelligence source. Extracted key topics: Want to create a new Google Ads account?, Want to create a new Google Ads account?, Find answers andinspiration... (Content Length: 32960 chars)
 
 
-
-
 ## Autonomous Observation
-- **Date**: 2026-06-05T03:00:39.356Z
+- **Date**: 2026-06-06T02:56:23.975Z
 - **Target**: https://developers.google.com/ad-manager
 - **Title**: Ad Manager  |  Google for DevelopersGoogleGoogle
-- **Relationship Map**: Confirmed relationship with https://developers.google.com/ad-manager (Title: Ad Manager  |  Google for DevelopersGoogleGoogle) as an intelligence source. Extracted key topics: Google Ad Manager, A set of tools to manage your Google Ad Manager accounts and campaigns., Ad Manager API (Beta)... (Content Length: 3046 chars)
-
-
+- **Relationship Map**: Confirmed relationship with https://developers.google.com/ad-manager (Title: Ad Manager  |  Google for DevelopersGoogleGoogle) as an intelligence source. Extracted key topics: Google Ad Manager, مجموعة من الأدوات لإدارة حساباتك وحملاتك على "مدير إعلانات Google"., Ad Manager API (الإصدار التجريبي)... (Content Length: 3464 chars)
 
 
 ## Autonomous Observation
-- **Date**: 2026-06-05T03:00:45.858Z
+- **Date**: 2026-06-06T02:57:01.860Z
 - **Target**: https://developers.google.com/ad-manager/dynamic-ad-insertion
 - **Title**: Dynamic Ad Insertion  |  Google for DevelopersGoogleGoogle
-- **Relationship Map**: Confirmed relationship with https://developers.google.com/ad-manager/dynamic-ad-insertion (Title: Dynamic Ad Insertion  |  Google for DevelopersGoogleGoogle) as an intelligence source. Extracted key topics: Google Dynamic Ad Insertion, Dynamic ad insertion (DAI), Full service DAI... (Content Length: 7160 chars)
-
-
+- **Relationship Map**: Confirmed relationship with https://developers.google.com/ad-manager/dynamic-ad-insertion (Title: Dynamic Ad Insertion  |  Google for DevelopersGoogleGoogle) as an intelligence source. Extracted key topics: Google Dynamic Ad Insertion, درج آگهی پویا (DAI), خدمات کامل DAI... (Content Length: 7707 chars)
 
 
 ## Autonomous Observation
-- **Date**: 2026-06-05T03:00:53.730Z
+- **Date**: 2026-06-06T02:57:38.539Z
 - **Target**: https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service
 - **Title**: DAI Full Service API  |  Google for DevelopersGoogleGoogle
-- **Relationship Map**: Confirmed relationship with https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service (Title: DAI Full Service API  |  Google for DevelopersGoogleGoogle) as an intelligence source. Extracted key topics: Google Dynamic Ad Insertion, フルサービス DAI, IMA DAI SDK を使用する場合... (Content Length: 8196 chars)
-
-
+- **Relationship Map**: Confirmed relationship with https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service (Title: DAI Full Service API  |  Google for DevelopersGoogleGoogle) as an intelligence source. Extracted key topics: Google Dynamic Ad Insertion, Full service DAI, With the IMA DAI SDK... (Content Length: 8776 chars)
 
 
 ## Autonomous Observation
-- **Date**: 2026-06-05T03:01:00.229Z
+- **Date**: 2026-06-06T02:58:08.539Z
 - **Target**: https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving
 - **Title**: DAI Pod Serving API  |  Google for DevelopersGoogleGoogle
-- **Relationship Map**: Confirmed relationship with https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving (Title: DAI Pod Serving API  |  Google for DevelopersGoogleGoogle) as an intelligence source. Extracted key topics: Google Dynamic Ad Insertion, การแสดงพ็อด DAI, เชื่อมโฆษณาเข้ากับไลฟ์สด... (Content Length: 11669 chars)
-
-
+- **Relationship Map**: Confirmed relationship with https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving (Title: DAI Pod Serving API  |  Google for DevelopersGoogleGoogle) as an intelligence source. Extracted key topics: Google Dynamic Ad Insertion, Publicación de grupos de anuncios de DAI, Une anuncios en una transmisión en vivo... (Content Length: 13379 chars)
 
 
 ## Autonomous Observation
-- **Date**: 2026-06-05T03:01:06.693Z
+- **Date**: 2026-06-06T02:58:43.841Z
 - **Target**: https://developers.google.com/ad-manager/api/start
-- **Title**: Los gehts  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle
-- **Relationship Map**: Confirmed relationship with https://developers.google.com/ad-manager/api/start (Title: Los gehts  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle) as an intelligence source. Extracted key topics: Los gehts Mit Sammlungen den Überblick behalten Sie können Inhalte basierend auf Ihren Einstellungen speichern und kategorisieren., Zugriff auf ein Ad Manager-Netzwerk erhalten, Anmeldedaten für die Authentifizierung erstellen... (Content Length: 15714 chars)
-
-
+- **Title**: Get started  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle
+- **Relationship Map**: Confirmed relationship with https://developers.google.com/ad-manager/api/start (Title: Get started  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle) as an intelligence source. Extracted key topics: Get started Stay organized with collections Save and categorize content based on your preferences., Get access to an Ad Manager network, Create authentication credentials... (Content Length: 13676 chars)
 
 
 ## Autonomous Observation
-- **Date**: 2026-06-05T03:01:13.810Z
+- **Date**: 2026-06-06T02:59:11.011Z
 - **Target**: https://admanager.google.com/home/resources/
 - **Title**: Resources Overview - Google Ad Manager
 - **Relationship Map**: Confirmed relationship with https://admanager.google.com/home/resources/ (Title: Resources Overview - Google Ad Manager) as an intelligence source. Extracted key topics: Tell us about your business, Congratulations!, Sign Up for Google AdSense... (Content Length: 16593 chars)
 
 
-
-
 ## Autonomous Observation
-- **Date**: 2026-06-05T03:01:20.408Z
+- **Date**: 2026-06-06T02:59:58.078Z
 - **Target**: https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
 - **Title**: ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation
 - **Relationship Map**: Confirmed relationship with https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview (Title: ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation) as an intelligence source. Extracted key topics: ad-manager overview (0.50.0) Stay organized with collections Save and categorize content based on your preferences., Key Reference Links, Getting Started... (Content Length: 288418 chars)
-
 
 
 ## Ecosystem Knowledge Consolidation (2026-06-01T03:42:55.578Z)
