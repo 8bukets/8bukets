@@ -471,7 +471,9 @@ export class Jules {
     }
 
     await this.syncCollaboration()
-    await this.generateConsolidatedReport()
+    await this.generateConsolidatedReport();
+    const { triggerEcosystemCollaboration } = await import("./services/collaboration");
+    await triggerEcosystemCollaboration();
 
     const { syncToICloud } = await import('./services/icloud')
     await syncToICloud()

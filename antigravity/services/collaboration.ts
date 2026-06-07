@@ -4,7 +4,7 @@ import path from 'path'
 import { z } from 'zod'
 import { autonomousFetch } from '@/antigravity/core'
 import { isDockerHealthy as checkDockerHealth } from './docker'
-import { getLatestBuildStatus } from './jenkins'
+import { getJenkinsBuildStatus as getLatestBuildStatus, triggerJenkinsPipeline } from './jenkins'
 import { dispatchExecutiveBriefing } from './notification'
 
 
@@ -371,5 +371,19 @@ export async function mergeEcosystemInsights(branchIntelligence: any[], workOrde
     branches: branchIntelligence,
     recentWork: workOrders.slice(-5),
     timestamp: new Date().toISOString()
+  }
+}
+
+export async function triggerEcosystemCollaboration() {
+  logAutonomousAction('🚀 [Collaboration] Triggering ecosystem collaboration...', 'info')
+  try {
+    const triggerResult = await triggerJenkinsPipeline('antigravity-pipeline')
+    if (triggerResult && triggerResult.pipeline_triggered) {
+      logAutonomousAction(`✅ [Collaboration] Jenkins pipeline triggered: ${triggerResult.status}`, 'info')
+    } else {
+       console.warn('⚠️ [Collaboration] Jenkins pipeline trigger failed to initialize properly.')
+    }
+  } catch (e: any) {
+    console.error('❌ [Collaboration] Error triggering Jenkins pipeline:', e.message)
   }
 }
