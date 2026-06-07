@@ -41,6 +41,12 @@ pipeline {
             }
         }
 
+        stage('Ecosystem Collaboration') {
+            steps {
+                sh 'tsx --env-file=.env scripts/connect_and_collaborate.ts'
+            }
+        }
+
         stage('Test testservice') {
             steps {
                 sh 'npm ci'
