@@ -18,7 +18,7 @@ program
     console.log('🚀 Igniting the Antigravity Swarm...');
     const jules = await Jules.create('General');
     await jules.processPendingTasks();
-    console.log('✅ Swarm ignited.');
+    console.log('✅ Swarm ignited.'); // Clean CI commit
   });
 
 program
