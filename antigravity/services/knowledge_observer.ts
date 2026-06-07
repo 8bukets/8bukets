@@ -102,7 +102,10 @@ export class KnowledgeObserver {
       }
     });
 
-    fs.writeFileSync(mdPath, mdContent, 'utf8');
+    // Trim trailing whitespace from every line
+    const cleanMdContent = mdContent.split('\n').map(line => line.trimEnd()).join('\n');
+
+    fs.writeFileSync(mdPath, cleanMdContent, 'utf8');
     console.log(`✅ [Knowledge Observer] Knowledge successfully merged into ${jsonPath} and ${mdPath}`);
     return existingData;
   }

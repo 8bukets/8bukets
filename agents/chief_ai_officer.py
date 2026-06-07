@@ -1,5 +1,6 @@
 import os
 import json
+import re
 from .base_agent import BaseAgent, Blackboard
 
 class ChiefAIOfficerAgent(BaseAgent):
@@ -115,6 +116,18 @@ class ChiefAIOfficerAgent(BaseAgent):
                 if "performance tracking" in sections_str:
                     self.logger.info("CAIO [ROLE]: Performance Tracking responsibility identified. Issuing measurement directive.")
                     strategic_directives.append("MEASURE_AI_BUSINESS_IMPACT")
+
+                if re.search(r'\bcto\b|\bcdo\b', sections_str):
+                    self.logger.info("CAIO [ROLE]: Coordination with CTO/CDO identified. Issuing technical leadership coordination directive.")
+                    strategic_directives.append("COORDINATE_WITH_TECHNICAL_LEADERSHIP")
+
+                if "research available roles" in sections_str:
+                    self.logger.info("CAIO [ROLE]: Market research identified. Issuing role analysis directive.")
+                    strategic_directives.append("ANALYZE_MARKET_AI_ROLES")
+
+                if "leadership certifications" in sections_str:
+                    self.logger.info("CAIO [ROLE]: Certification research identified. Issuing executive development directive.")
+                    strategic_directives.append("RESEARCH_AI_LEADERSHIP_CERTIFICATIONS")
 
             if "Phase 13" in title or "phase 13" in sections_str:
                 self.logger.info(f"CAIO [KNOWLEDGE]: Phase 13 strategy detected in integrated knowledge: {title}")
