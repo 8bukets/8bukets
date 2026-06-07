@@ -14,6 +14,9 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   'use cache'
   console.log('📊 [Intelligence] Generating consolidated system report...')
 
+  const { trackROI } = await import('../core')
+  trackROI('IntelligenceService', 0.98)
+
   const metadata = await getMissionMetadata()
   const branches = branchIntelligence || await jules.scanAllBranches(true)
   const health = await healthCheck()
@@ -260,6 +263,29 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
     report += `- No explicit results extracted from recent history.\n`
   }
   report += `\n`
+
+  // Phase 13: Ecosystem Synergy Graph (Tree Representation)
+  report += `## 🕸️ Ecosystem Synergy Graph\n`
+  const resourceToBranches: Record<string, string[]> = {}
+
+  relationshipMap.synergies.forEach((s: any) => {
+    if (!resourceToBranches[s.resource]) resourceToBranches[s.resource] = []
+    resourceToBranches[s.resource].push(...s.branches)
+  })
+
+  Object.entries(resourceToBranches).forEach(([res, brs]) => {
+    const uniqueBrs = Array.from(new Set(brs))
+    report += `### 📦 ${res}\n`
+    uniqueBrs.forEach((b, idx) => {
+      const prefix = idx === uniqueBrs.length - 1 ? '└──' : '├──'
+      report += `${prefix} 🌿 \`${b}\`\n`
+    })
+    report += `\n`
+  })
+
+  if (Object.keys(resourceToBranches).length === 0) {
+    report += `_No high-signal synergy overlaps detected for graph generation._\n\n`
+  }
 
   report += `## 👥 Stakeholder Collaboration Hub\n`
   metadata.stakeholders.forEach(s => {
