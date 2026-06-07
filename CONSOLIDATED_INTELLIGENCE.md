@@ -47,3 +47,8 @@ _...and 2235 more branches._
 - Self-Repair: Applied 1 fixes.
 - System Scan: Health is DEGRADED. Found 1 evolution paths.
 - Git Sync: Committed fixes to local repository.
+
+## 🤖 Gemini CLI Subagents Intelligence
+- **Ingested on:** 2026-06-07T13:57:19.659Z
+- **Source:** Local Documentation
+- **Summary:** Gemini CLI supports creating specialized subagents (e.g. security auditor, generalist, codebase investigator) using Markdown definition files with YAML frontmatter. These subagents have isolated context loops, specialized tools, and recursion protection. They can be forced using the @ syntax.

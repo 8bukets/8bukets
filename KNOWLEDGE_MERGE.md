@@ -30,6 +30,11 @@ Overlapping identities between Antigravity, Project SOR, software-online-review.
 
 
 ## Autonomous Observation
+- **Date**: 2026-06-07T13:57:19.659Z
+- **Target**: Gemini CLI Subagents Documentation
+- **Title**: Gemini CLI Subagents
+- **Context**: Ingested Gemini CLI subagents documentation into the knowledge base to allow the AI to learn how to create and manage specialized subagents.
+
 - **Date**: 2026-05-29T18:34:09.335Z
 - **Target**: local://data/raw_gitlab_tutorial.html
 - **Title**: GitLab CI/CD Pipeline Tutorial
