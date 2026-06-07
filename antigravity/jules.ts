@@ -60,6 +60,10 @@ export class Jules {
   }
 
   public recordTask(goal: string) {
+    // Deduplicate identical goals within a short window (e.g., prevent duplicate daily routine tasks)
+    const isDuplicate = this.memory.autonomousTasks.some(t => t.goal === goal && t.status === 'completed');
+    if (isDuplicate) return;
+
     this.memory.autonomousTasks.push({
       id: Math.random().toString(36).substr(2, 9),
       status: 'completed',

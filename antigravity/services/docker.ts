@@ -22,7 +22,7 @@ export async function getDockerStatus(): Promise<DockerContainer[]> {
   return autonomousFetch(z.array(DockerContainerSchema), async () => {
     'use cache'
 
-    if (process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true') {
+    if (process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true' || process.env.MACBOOK_CLOUD_SIMULATION === 'true') {
       console.log('🐳 [Docker] Simulation Active: Returning mock fleet status.');
       return [
         { id: 'sim-mongodb-01', image: 'mongo:latest', status: 'Up 2 hours', name: 'mongodb' },
@@ -62,7 +62,7 @@ export async function getDockerStatus(): Promise<DockerContainer[]> {
 }
 
 export async function isDockerHealthy(): Promise<boolean> {
-  if (process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true') return true;
+  if (process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true' || process.env.MACBOOK_CLOUD_SIMULATION === 'true') return true;
 
   try {
     await execAsync('docker ps')
