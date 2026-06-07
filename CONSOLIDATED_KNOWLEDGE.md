@@ -1,6 +1,6 @@
 # Consolidated Knowledge Base
 
-**Last Sync:** 2026-05-28T08:01:23.456Z
+**Last Sync:** 2026-06-07T11:57:03.407Z
 **System Version:** 1.94
 
 ## 🧩 Strategic Identity & Unified Model
@@ -5172,8 +5172,101 @@ Scraped from [https://localhost.co/tools/](https://localhost.co/tools/)
 #### Google Innovation & AI Blog Updates
 Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innovation-and-ai/) and [https://blog.google/innovation-and-ai/models-and-research/](https://blog.google/innovation-and-ai/models-and-research/)
 
-#### LinkedIn
-- URL: https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/innovation-and-ai/models-and-research/&title=Models%20%26%20research
+#### 9 demos of Gemini Omni and Gemini 3.5 in action
+- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-3-5-videos/
+
+#### Introducing Gemini Omni
+- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/
+
+#### Gemini 3.5: frontier intelligence with action
+- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/
+
+#### Gemini Embedding 2 is now generally available.
+- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2-generally-available/
+
+#### The latest AI news we announced in May 2026
+- URL: https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-may-2026/
+
+#### Running Guide agent: A step towards running unbounded
+- URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/running-guide-agent/
+
+#### Simulate real-world places with Project Genie and Street View
+- URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/
+
+#### A new experiment brings better group meetings to Google Beam
+- URL: https://blog.google/innovation-and-ai/models-and-research/google-research/google-beam-group-meetings/
+
+#### Gemini for Science: AI experiments and tools for a new era of discovery
+- URL: https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/
+
+#### Building superconducting and neutral atom quantum computers
+- URL: https://blog.google/innovation-and-ai/technology/research/neutral-atom-quantum-computers/
+
+#### Our new study explores how AI can reduce the climate impact of air travel.
+- URL: https://blog.google/innovation-and-ai/models-and-research/google-research/contrail-avoidance-research/
+
+#### Meet Dreambeans, an app that connects you with what matters
+- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/dreambeans/
+
+#### We’re introducing new ways to design in real time with Stitch.
+- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-updates/
+
+#### New agents, mobile apps and Gemini Omni for Google Flow and Google Flow Music
+- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-updates/
+
+#### Pomelli adds new ways to build brand content and design websites.
+- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/pomelli-agentic-capabilities/
+
+#### Our new initiative to apply quantum science and AI to the life sciences
+- URL: https://blog.google/innovation-and-ai/models-and-research/quantum-computing/repliqa-quantum-computing-life-sciences/
+
+#### Answering your trending questions on World Quantum Day
+- URL: https://blog.google/innovation-and-ai/models-and-research/quantum-computing/world-quantum-day-2026/
+
+#### Quantum frontiers may be closer than they appear
+- URL: https://blog.google/innovation-and-ai/technology/safety-security/cryptography-migration-timeline/
+
+#### How we used Gemini to build Google I/O 2026
+- URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-google-ai/
+
+#### Catch up on 12 major I/O 2026 moments
+- URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/
+
+#### Gemma 4 QAT models: Optimizing model compression for mobile and laptop efficiency
+- URL: https://blog.google/innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/
+
+#### Kaggle is making AI benchmark creation effortless
+- URL: https://blog.google/innovation-and-ai/technology/developers-tools/build-kaggle--benchmarks-locally/
+
+#### Introducing Gemma 4 12B: a unified, encoder-free multimodal model
+- URL: https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12b/
+
+#### We’re announcing a new data center and energy investments in Gray and Roberts Counties, Texas.
+- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/meitner-energy-center/
+
+#### Making it easier to understand how content was created and edited
+- URL: https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/
+
+#### Google Research
+- URL: https://blog.google/innovation-and-ai/technology/research/
+
+#### Take our I/O 2026 quiz, vibe coded in Google AI Studio.
+- URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-vibe-coded-quiz/
+
+#### Blue, yellow and green: Google invests in its new data center in Sweden.
+- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/blue-yellow-and-green-google-invests-in-its-first-data-center-in-sweden/
+
+#### We’re announcing the first Texas Energy Impact Fund recipients.
+- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/texas-energy-impact-fund/
+
+#### Google Flow Music and Believe bring next-gen tools to artists
+- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/believe-flow-music-partnership/
+
+#### Dive deeper into I/O 2026 with NotebookLM.
+- URL: https://blog.google/innovation-and-ai/products/notebooklm/notebooklm-google-io-2026/
+
+#### We’re announcing new community investments in Missouri.
+- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/missouri-programs/
 
 #### Google DeepMind
 - URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/
@@ -5190,56 +5283,29 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 #### Quantum computing
 - URL: https://blog.google/innovation-and-ai/models-and-research/quantum-computing/
 
-#### Introducing Gemini Omni
-- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/
+#### Developer tools
+- URL: https://blog.google/innovation-and-ai/technology/developers-tools/
 
-#### Gemini 3.5: frontier intelligence with action
-- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/
+#### Global network
+- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/
 
-#### Gemini Embedding 2 is now generally available.
-- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2-generally-available/
+#### Google Cloud
+- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/
 
-#### Deep Research Max: a step change for autonomous research agents
-- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/
+#### Safety & Security
+- URL: https://blog.google/innovation-and-ai/technology/safety-security/
 
-#### Running Guide agent: A step towards running unbounded
-- URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/running-guide-agent/
+#### AI Products
+- URL: https://blog.google/innovation-and-ai/products/
 
-#### Simulate real-world places with Project Genie and Street View
-- URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/
-
-#### A new experiment brings better group meetings to Google Beam
-- URL: https://blog.google/innovation-and-ai/models-and-research/google-research/google-beam-group-meetings/
-
-#### Our new study explores how AI can reduce the climate impact of air travel.
-- URL: https://blog.google/innovation-and-ai/models-and-research/google-research/contrail-avoidance-research/
-
-#### We’re introducing new ways to design in real time with Stitch.
-- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-updates/
-
-#### New agents, mobile apps and Gemini Omni for Google Flow and Google Flow Music
-- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-updates/
-
-#### Pomelli adds new ways to build brand content and design websites.
-- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/pomelli-agentic-capabilities/
-
-#### Google Flow Music and Believe bring next-gen tools to artists
-- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/believe-flow-music-partnership/
-
-#### Our new initiative to apply quantum science and AI to the life sciences
-- URL: https://blog.google/innovation-and-ai/models-and-research/quantum-computing/repliqa-quantum-computing-life-sciences/
-
-#### Answering your trending questions on World Quantum Day
-- URL: https://blog.google/innovation-and-ai/models-and-research/quantum-computing/world-quantum-day-2026/
+#### LinkedIn
+- URL: https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/innovation-and-ai/models-and-research/&title=Models%20%26%20research
 
 #### LinkedIn
 - URL: https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/innovation-and-ai/&title=Innovation%20%26%20AI
 
 #### See all
 - URL: https://blog.google/innovation-and-ai/models-and-research/
-
-#### Developer tools
-- URL: https://blog.google/innovation-and-ai/technology/developers-tools/
 
 #### Gemini app
 - URL: https://blog.google/innovation-and-ai/products/gemini-app/
@@ -5248,19 +5314,7 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 - URL: https://blog.google/innovation-and-ai/products/notebooklm/
 
 #### See all
-- URL: https://blog.google/innovation-and-ai/products/
-
-#### Global network
-- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/
-
-#### Google Cloud
-- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/
-
-#### See all
 - URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/
-
-#### Safety & Security
-- URL: https://blog.google/innovation-and-ai/technology/safety-security/
 
 #### Health
 - URL: https://blog.google/innovation-and-ai/technology/health/
@@ -5268,29 +5322,17 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 #### See all
 - URL: https://blog.google/innovation-and-ai/technology/
 
-#### Google Research
-- URL: https://blog.google/innovation-and-ai/technology/research/
+#### Deep Research Max: a step change for autonomous research agents
+- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/
 
 #### I/O 2026: Welcome to the agentic Gemini era
 - URL: https://blog.google/innovation-and-ai/sundar-pichai-io-2026/
-
-#### Dive deeper into I/O 2026 with NotebookLM.
-- URL: https://blog.google/innovation-and-ai/products/notebooklm/notebooklm-google-io-2026/
 
 #### Introducing Managed Agents in the Gemini API
 - URL: https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/
 
 #### The Gemini app becomes more agentic, delivering proactive, 24/7 help
 - URL: https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/
-
-#### We’re announcing the first Texas Energy Impact Fund recipients.
-- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/texas-energy-impact-fund/
-
-#### We’re announcing new community investments in Missouri.
-- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/missouri-programs/
-
-#### Making it easier to understand how content was created and edited
-- URL: https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/
 
 #### Gemini 3.1 Flash TTS: the next generation of expressive AI speech
 - URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/
