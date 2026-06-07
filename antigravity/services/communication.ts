@@ -132,6 +132,19 @@ export async function generateActionableBriefing(state: any, directives: Directi
     briefing += `- **Intelligence Directive:** "Ecosystem features ${deps} cross-service dependencies. Ensure that changes to core services are preceded by automated dependency impact analysis."\n`
   }
 
+  // Phase 13: Direct Coordination Matrix
+  const clusters = state.intelligence.relationshipMap.functionalClusters || {}
+  if (Object.keys(clusters).length > 0) {
+    briefing += `\n### 📊 Direct Coordination Matrix\n`
+    briefing += `| Functional Cluster | Involved Branches | Potential For Friction |\n`
+    briefing += `| :--- | :--- | :---: |\n`
+
+    Object.entries(clusters).forEach(([cluster, branches]: [string, any]) => {
+      const friction = branches.length > 5 ? '🔴 High' : (branches.length > 2 ? '🟡 Medium' : '🟢 Low')
+      briefing += `| \`${cluster}\` | ${branches.slice(0, 3).join(', ')}${branches.length > 3 ? ` (+${branches.length - 3})` : ''} | ${friction} |\n`
+    })
+  }
+
   briefing += `\n### 🚀 Required Stakeholder Decisions\n`
   let decisionsCount = 0
 
