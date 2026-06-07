@@ -260,7 +260,7 @@ export async function healthCheck() {
     timestamp: new Date().toISOString()
   }
 
-  if (process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true') {
+  if (process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true' || process.env.MACBOOK_CLOUD_SIMULATION === 'true') {
     results.mongodb = 'healthy'
   } else {
     try {
