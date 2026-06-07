@@ -27,11 +27,11 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   let report = `# CONSOLIDATED INTELLIGENCE REPORT\n\n`
   report += `*Generated: ${new Date().toISOString()}*\n\n`
 
-  const isMongoOptimal = health.mongodb === 'connected' || health.mongodb === 'healthy';
+  const isMongoOptimal = health.mongodb === 'connected' || health.mongodb === 'healthy' || health.mongodb === 'simulated';
   const isSupabaseOptimal = health.supabase === 'connected' || health.supabase === 'healthy';
 
   report += `## 📋 Executive Summary\n`
-  report += `- **System Posture:** ${isMongoOptimal && isSupabaseOptimal ? '✅ OPTIMAL' : '⚠️ DEGRADED'}\n`
+  report += `- **System Posture:** ${isMongoOptimal && isSupabaseOptimal ? (health.mongodb === 'simulated' ? '⚡ SIMULATED' : '✅ OPTIMAL') : '⚠️ DEGRADED'}\n`
   report += `- **Active Synergy:** ${branches.length} branches analyzed across multiple domains.\n`
   report += `- **Mission Alignment:** ${metadata.goals.length} strategic goals tracked.\n\n`
 

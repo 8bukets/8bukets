@@ -143,6 +143,7 @@ program
   .description('Connect with Docker and collaborate autonomously')
   .action(() => {
     console.log('🚀 Initiating Docker connection and collaboration protocol...');
+    console.log('📦 Status: Auditing sovereignty and syncing stakeholder context...');
     const { spawn } = require('child_process');
     const child = spawn('npm', ['run', 'connect'], { stdio: 'inherit', shell: true });
     child.on('error', (error: Error) => {
