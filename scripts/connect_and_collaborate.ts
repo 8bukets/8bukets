@@ -21,11 +21,15 @@ async function main() {
 
   // 2. Synchronize collaboration context
   console.log('🐳 [Jules] Connecting to Docker...');
-  try {
-    const { execSync } = require('child_process');
-    execSync('docker info && docker ps');
-  } catch (e) {
-    console.warn('⚠️ [Jules] Docker not running or inaccessible.');
+  if (process.env.ANTIGRAVITY_SIMULATE_DOCKER !== 'true' && process.env.MACBOOK_CLOUD_SIMULATION !== 'true') {
+    try {
+      const { execSync } = require('child_process');
+      execSync('docker info && docker ps');
+    } catch (e) {
+      console.warn('⚠️ [Jules] Docker not running or inaccessible.');
+    }
+  } else {
+    console.log('🐳 [Jules] Simulation Active: Skipping raw Docker command execution.');
   }
   await jules.syncCollaboration();
 

@@ -261,7 +261,7 @@ export async function healthCheck() {
   }
 
   if (process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true' || process.env.MACBOOK_CLOUD_SIMULATION === 'true') {
-    results.mongodb = 'healthy'
+    results.mongodb = 'simulated'
   } else {
     try {
       const client = await getMongoClient()
