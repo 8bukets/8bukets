@@ -1,7 +1,7 @@
 {
     "metadata": {
-        "generated_at": "2026-06-07T13:57:19.659Z",
-        "version": 3,
+        "generated_at": "2026-06-07T14:30:44.723Z",
+        "version": 4,
         "sources_processed": [
             "local://.github/ISSUE_TEMPLATE/bug_report.md",
             "local://.github/ISSUE_TEMPLATE/feature_request.md",
@@ -26,9 +26,9 @@
             "litert_docs.json",
             "stitch_docs.json",
             "vscode_intelephense_docs.json",
-            "local_prompt"
-        ,
-            "Gemini CLI Subagents"]
+            "local_prompt",
+            "Gemini CLI Subagents"
+        ]
     },
     "market_data": {
         "total_entries": 680,

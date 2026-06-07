@@ -1,5 +1,4 @@
 import fs from 'fs';
-import path from 'path';
 
 async function ingestGeminiCliSubagents() {
   console.log("Starting Gemini CLI Subagents Knowledge Ingestion...");
@@ -46,20 +45,37 @@ async function ingestGeminiCliSubagents() {
     if (fs.existsSync(systemKnowledgePath)) {
         let content = fs.readFileSync(systemKnowledgePath, 'utf8');
         if (!content.includes('"Gemini CLI Subagents"')) {
-            const metadataRegex = /"metadata":\s*\{\s*"generated_at":\s*"[^"]*",\s*"version":\s*(\d+),\s*"sources_processed":\s*\[(.*?)\]\s*\}/s;
-            const match = content.match(metadataRegex);
-            if (match) {
-                const version = parseInt(match[1]) + 1;
-                const sources = match[2];
-                const newSources = sources + ',\n            "Gemini CLI Subagents"';
-                const newMetadata = `"metadata": {
-            "generated_at": "${now}",
-            "version": ${version},
-            "sources_processed": [${newSources}]
-        }`;
-                content = content.replace(metadataRegex, newMetadata);
-                fs.writeFileSync(systemKnowledgePath, content, 'utf8');
-                console.log(`Successfully ingested and updated ${systemKnowledgePath}.`);
+            try {
+                const systemKnowledge = JSON.parse(content);
+                systemKnowledge.metadata.sources_processed.push("Gemini CLI Subagents");
+                systemKnowledge.metadata.generated_at = now;
+                systemKnowledge.metadata.version++;
+                fs.writeFileSync(systemKnowledgePath, JSON.stringify(systemKnowledge, null, 4), 'utf8');
+                console.log(`Successfully parsed and updated ${systemKnowledgePath}.`);
+            } catch (e) {
+                console.error("Could not parse system_knowledge.json. Using regex fallback.");
+                const metadataRegex = /"metadata":\s*\{\s*"generated_at":\s*"[^"]*",\s*"version":\s*(\d+),\s*"sources_processed":\s*\[(.*?)\]\s*\}/s;
+                const match = content.match(metadataRegex);
+                if (match) {
+                    const version = parseInt(match[1]) + 1;
+                    const sourcesStr = match[2];
+
+                    let sources = sourcesStr.split(',').map(s => s.trim().replace(/^"|"$/g, '')).filter(s => s !== '');
+                    if (!sources.includes('Gemini CLI Subagents')) {
+                        sources.push('Gemini CLI Subagents');
+                    }
+
+                    const newSourcesStr = sources.map(s => `\n            "${s}"`).join(',') + '\n        ';
+
+                    const newMetadata = `"metadata": {
+        "generated_at": "${now}",
+        "version": ${version},
+        "sources_processed": [${newSourcesStr}]
+    }`;
+                    content = content.replace(metadataRegex, newMetadata);
+                    fs.writeFileSync(systemKnowledgePath, content, 'utf8');
+                    console.log(`Successfully ingested and updated ${systemKnowledgePath}.`);
+                }
             }
         } else {
              console.log(`Knowledge already exists in ${systemKnowledgePath}. Skipping.`);
