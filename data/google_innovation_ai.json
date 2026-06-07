@@ -1,5 +1,35 @@
 [
     {
+        "title": "Google DeepMind",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/",
+        "snippet": "",
+        "content": "News from Google DeepMind about how we're building AI responsibly to benefit everyone...."
+    },
+    {
+        "title": "Google Research",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/",
+        "snippet": "",
+        "content": ""
+    },
+    {
+        "title": "Google Labs",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/",
+        "snippet": "",
+        "content": "News about Google Labs, Google's home for the latest AI experiments and technology...."
+    },
+    {
+        "title": "Gemini models",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/",
+        "snippet": "",
+        "content": ""
+    },
+    {
+        "title": "Quantum computing",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/",
+        "snippet": "",
+        "content": "News from Google Quantum AI about how we're building quantum computing for unsolvable problems...."
+    },
+    {
         "title": "9 demos of Gemini Omni and Gemini 3.5 in action",
         "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-3-5-videos/",
         "snippet": ""
@@ -157,31 +187,6 @@
     {
         "title": "We’re announcing new community investments in Missouri.",
         "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/missouri-programs/",
-        "snippet": ""
-    },
-    {
-        "title": "Google DeepMind",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/",
-        "snippet": ""
-    },
-    {
-        "title": "Google Research",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/",
-        "snippet": ""
-    },
-    {
-        "title": "Google Labs",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/",
-        "snippet": ""
-    },
-    {
-        "title": "Gemini models",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/",
-        "snippet": ""
-    },
-    {
-        "title": "Quantum computing",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/",
         "snippet": ""
     },
     {

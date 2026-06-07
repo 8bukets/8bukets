@@ -343,352 +343,52 @@
       "goal": "Knowledge Observation: Ingested Google Innovation & AI Blog"
     },
     {
-      "id": "47q088ch8",
+      "id": "iwwtcn7zl",
       "status": "completed",
       "goal": "Knowledge Observed: Extracted intelligence from https://software-online-review.com"
     },
     {
-      "id": "adpj9elf9",
+      "id": "w2c9so40m",
       "status": "completed",
       "goal": "Knowledge Observed: Extracted intelligence from https://markposition.wordpress.com"
     },
     {
-      "id": "qeoy1is3l",
+      "id": "p0bu78yh3",
       "status": "completed",
       "goal": "Knowledge Observed: Unified market intelligence synchronized from markposition.wordpress.com"
     },
     {
-      "id": "elgtentte",
+      "id": "f8hi6kzrx",
       "status": "completed",
       "goal": "Knowledge Observation: Ingested Gemma 4 Technical Report"
     },
     {
-      "id": "45xq4956i",
+      "id": "lonbcmp8k",
       "status": "completed",
       "goal": "Knowledge Observation: Ingested LiteRT Framework Documentation"
     },
     {
-      "id": "d0k3c28yf",
+      "id": "fmxgdawx1",
       "status": "completed",
       "goal": "Knowledge Observation: Ingested OpenTelemetry Ecosystem Analysis"
     },
     {
-      "id": "pp74kxz14",
+      "id": "egqrp8s48",
       "status": "completed",
       "goal": "Knowledge Observation: Ingested Google Ads Strategic Documentation"
     },
     {
-      "id": "43cf66gxi",
+      "id": "y8im78l8q",
       "status": "completed",
       "goal": "Knowledge Observation: Ingested AI Agents Concept & Architecture"
     },
     {
-      "id": "1nnvjba7i",
+      "id": "jrrn8bgty",
       "status": "completed",
       "goal": "Knowledge Observation: Ingested LocalHost.Co Tools Documentation"
     },
     {
-      "id": "13eq7vk0o",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested Google Innovation & AI Blog"
-    },
-    {
-      "id": "0witrlqsv",
-      "status": "completed",
-      "goal": "Knowledge Observed: Extracted intelligence from https://software-online-review.com"
-    },
-    {
-      "id": "dixvyac24",
-      "status": "completed",
-      "goal": "Knowledge Observed: Extracted intelligence from https://markposition.wordpress.com"
-    },
-    {
-      "id": "skfkmhg63",
-      "status": "completed",
-      "goal": "Knowledge Observed: Unified market intelligence synchronized from markposition.wordpress.com"
-    },
-    {
-      "id": "cdk7vofrf",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested Gemma 4 Technical Report"
-    },
-    {
-      "id": "g7gt1mte9",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested LiteRT Framework Documentation"
-    },
-    {
-      "id": "ldr8wykzs",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested OpenTelemetry Ecosystem Analysis"
-    },
-    {
-      "id": "eak3nmhch",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested Google Ads Strategic Documentation"
-    },
-    {
-      "id": "89ynhv1ok",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested AI Agents Concept & Architecture"
-    },
-    {
-      "id": "g40o9kdbh",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested LocalHost.Co Tools Documentation"
-    },
-    {
-      "id": "h8hofg683",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested Google Innovation & AI Blog"
-    },
-    {
-      "id": "hvnju4m7f",
-      "status": "completed",
-      "goal": "Knowledge Observed: Extracted intelligence from https://software-online-review.com"
-    },
-    {
-      "id": "q3mu98wcn",
-      "status": "completed",
-      "goal": "Knowledge Observed: Extracted intelligence from https://markposition.wordpress.com"
-    },
-    {
-      "id": "1832ege4v",
-      "status": "completed",
-      "goal": "Knowledge Observed: Unified market intelligence synchronized from markposition.wordpress.com"
-    },
-    {
-      "id": "wyi0eusah",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested Gemma 4 Technical Report"
-    },
-    {
-      "id": "g4i8gef0j",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested LiteRT Framework Documentation"
-    },
-    {
-      "id": "5ai27jq8z",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested OpenTelemetry Ecosystem Analysis"
-    },
-    {
-      "id": "v4nt7l2t5",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested Google Ads Strategic Documentation"
-    },
-    {
-      "id": "takjizsp3",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested AI Agents Concept & Architecture"
-    },
-    {
-      "id": "gbw58fvi3",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested LocalHost.Co Tools Documentation"
-    },
-    {
-      "id": "alawy5f0k",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested Google Innovation & AI Blog"
-    },
-    {
-      "id": "qya9cm1xm",
-      "status": "completed",
-      "goal": "Knowledge Observed: Extracted intelligence from https://software-online-review.com"
-    },
-    {
-      "id": "cose53vh0",
-      "status": "completed",
-      "goal": "Knowledge Observed: Extracted intelligence from https://markposition.wordpress.com"
-    },
-    {
-      "id": "i7tdpbf8a",
-      "status": "completed",
-      "goal": "Knowledge Observed: Unified market intelligence synchronized from markposition.wordpress.com"
-    },
-    {
-      "id": "6wzt594tb",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested Gemma 4 Technical Report"
-    },
-    {
-      "id": "fun0vbp0o",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested LiteRT Framework Documentation"
-    },
-    {
-      "id": "sf589pamj",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested OpenTelemetry Ecosystem Analysis"
-    },
-    {
-      "id": "k8xsco0ig",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested Google Ads Strategic Documentation"
-    },
-    {
-      "id": "g8pvxy4m3",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested AI Agents Concept & Architecture"
-    },
-    {
-      "id": "41mgu6nqn",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested LocalHost.Co Tools Documentation"
-    },
-    {
-      "id": "ewihn4li2",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested Google Innovation & AI Blog"
-    },
-    {
-      "id": "xb7k4z24o",
-      "status": "completed",
-      "goal": "Knowledge Observed: Extracted intelligence from https://software-online-review.com"
-    },
-    {
-      "id": "5ppvrk8xu",
-      "status": "completed",
-      "goal": "Knowledge Observed: Extracted intelligence from https://markposition.wordpress.com"
-    },
-    {
-      "id": "ou46uh873",
-      "status": "completed",
-      "goal": "Knowledge Observed: Unified market intelligence synchronized from markposition.wordpress.com"
-    },
-    {
-      "id": "u6hfembaf",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested Gemma 4 Technical Report"
-    },
-    {
-      "id": "7uc55x0cq",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested LiteRT Framework Documentation"
-    },
-    {
-      "id": "lu7pbrdvn",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested OpenTelemetry Ecosystem Analysis"
-    },
-    {
-      "id": "u7et71kys",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested Google Ads Strategic Documentation"
-    },
-    {
-      "id": "4hoxtcmw7",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested AI Agents Concept & Architecture"
-    },
-    {
-      "id": "qouazbjqg",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested LocalHost.Co Tools Documentation"
-    },
-    {
-      "id": "upkl5176g",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested Google Innovation & AI Blog"
-    },
-    {
-      "id": "utykj8eab",
-      "status": "completed",
-      "goal": "Knowledge Observed: Extracted intelligence from https://software-online-review.com"
-    },
-    {
-      "id": "3ffni25b4",
-      "status": "completed",
-      "goal": "Knowledge Observed: Extracted intelligence from https://markposition.wordpress.com"
-    },
-    {
-      "id": "xfl95pno7",
-      "status": "completed",
-      "goal": "Knowledge Observed: Unified market intelligence synchronized from markposition.wordpress.com"
-    },
-    {
-      "id": "c99s5a4uy",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested Gemma 4 Technical Report"
-    },
-    {
-      "id": "rnw07udub",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested LiteRT Framework Documentation"
-    },
-    {
-      "id": "69dvsv94q",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested OpenTelemetry Ecosystem Analysis"
-    },
-    {
-      "id": "fpr2hcioy",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested Google Ads Strategic Documentation"
-    },
-    {
-      "id": "cid0xf2wu",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested AI Agents Concept & Architecture"
-    },
-    {
-      "id": "zcq2qj25w",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested LocalHost.Co Tools Documentation"
-    },
-    {
-      "id": "1lbawqge5",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested Google Innovation & AI Blog"
-    },
-    {
-      "id": "jna3m0prl",
-      "status": "completed",
-      "goal": "Knowledge Observed: Extracted intelligence from https://software-online-review.com"
-    },
-    {
-      "id": "jsr44wj0l",
-      "status": "completed",
-      "goal": "Knowledge Observed: Extracted intelligence from https://markposition.wordpress.com"
-    },
-    {
-      "id": "a99gf9cz7",
-      "status": "completed",
-      "goal": "Knowledge Observed: Unified market intelligence synchronized from markposition.wordpress.com"
-    },
-    {
-      "id": "3tv1hov2u",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested Gemma 4 Technical Report"
-    },
-    {
-      "id": "tasxc7d4d",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested LiteRT Framework Documentation"
-    },
-    {
-      "id": "un0nbs19l",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested OpenTelemetry Ecosystem Analysis"
-    },
-    {
-      "id": "auszwkw7j",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested Google Ads Strategic Documentation"
-    },
-    {
-      "id": "e27cxcpzq",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested AI Agents Concept & Architecture"
-    },
-    {
-      "id": "256d8knf3",
-      "status": "completed",
-      "goal": "Knowledge Observation: Ingested LocalHost.Co Tools Documentation"
-    },
-    {
-      "id": "0axngxjqp",
+      "id": "fh2twthry",
       "status": "completed",
       "goal": "Knowledge Observation: Ingested Google Innovation & AI Blog"
     }

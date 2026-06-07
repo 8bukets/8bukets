@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-07T11:57:03.407Z",
+    "generated_at": "2026-06-07T23:00:48.722Z",
     "version": 1.94,
     "sources_processed": [
       "ai_agents_knowledge.json",
@@ -37,7 +37,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/bug_report.md",
-        "ingestedAt": "2026-06-07T11:57:03.234Z"
+        "ingestedAt": "2026-06-07T23:00:48.551Z"
       }
     },
     "Internal: .github/ISSUE_TEMPLATE/feature_request.md": {
@@ -49,7 +49,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/feature_request.md",
-        "ingestedAt": "2026-06-07T11:57:03.259Z"
+        "ingestedAt": "2026-06-07T23:00:48.573Z"
       }
     },
     "Internal: .github/PULL_REQUEST_TEMPLATE.md": {
@@ -81,7 +81,7 @@
       ],
       "metadata": {
         "source": "local://.github/PULL_REQUEST_TEMPLATE.md",
-        "ingestedAt": "2026-06-07T11:57:03.276Z"
+        "ingestedAt": "2026-06-07T23:00:48.593Z"
       }
     },
     "Gemma 4 Technical Report": {
@@ -193,7 +193,7 @@
       ],
       "metadata": {
         "source": "local://gemmafour_docs.md",
-        "ingestedAt": "2026-06-07T11:57:03.293Z"
+        "ingestedAt": "2026-06-07T23:00:48.618Z"
       }
     },
     "LiteRT Framework Documentation": {
@@ -273,7 +273,7 @@
       ],
       "metadata": {
         "source": "local://litert_docs.md",
-        "ingestedAt": "2026-06-07T11:57:03.309Z"
+        "ingestedAt": "2026-06-07T23:00:48.635Z"
       }
     },
     "OpenTelemetry Ecosystem Analysis": {
@@ -689,7 +689,7 @@
       ],
       "metadata": {
         "source": "local://opentelemetry_repos.md",
-        "ingestedAt": "2026-06-07T11:57:03.326Z"
+        "ingestedAt": "2026-06-07T23:00:48.652Z"
       }
     },
     "Google Ads Strategic Documentation": {
@@ -1785,7 +1785,7 @@
       ],
       "metadata": {
         "source": "local://google_ads_docs.md",
-        "ingestedAt": "2026-06-07T11:57:03.349Z"
+        "ingestedAt": "2026-06-07T23:00:48.668Z"
       }
     },
     "AI Agents Concept & Architecture": {
@@ -2173,7 +2173,7 @@
       ],
       "metadata": {
         "source": "local://ai_agents_knowledge.md",
-        "ingestedAt": "2026-06-07T11:57:03.366Z"
+        "ingestedAt": "2026-06-07T23:00:48.684Z"
       }
     },
     "LocalHost.Co Tools Documentation": {
@@ -2429,7 +2429,7 @@
       ],
       "metadata": {
         "source": "local://localhost_tools_docs.md",
-        "ingestedAt": "2026-06-07T11:57:03.384Z"
+        "ingestedAt": "2026-06-07T23:00:48.701Z"
       }
     },
     "Google Innovation & AI Blog": {
@@ -2437,6 +2437,26 @@
         {
           "header": "Google Innovation & AI Blog Updates",
           "content": "Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innovation-and-ai/) and [https://blog.google/innovation-and-ai/models-and-research/](https://blog.google/innovation-and-ai/models-and-research/)"
+        },
+        {
+          "header": "Google DeepMind",
+          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/\n- Insight: News from Google DeepMind about how we're building AI responsibly to benefit everyone...."
+        },
+        {
+          "header": "Google Research",
+          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-research/"
+        },
+        {
+          "header": "Google Labs",
+          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/\n- Insight: News about Google Labs, Google's home for the latest AI experiments and technology...."
+        },
+        {
+          "header": "Gemini models",
+          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/"
+        },
+        {
+          "header": "Quantum computing",
+          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/quantum-computing/\n- Insight: News from Google Quantum AI about how we're building quantum computing for unsolvable problems...."
         },
         {
           "header": "9 demos of Gemini Omni and Gemini 3.5 in action",
@@ -2567,26 +2587,6 @@
           "content": "- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/missouri-programs/"
         },
         {
-          "header": "Google DeepMind",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/"
-        },
-        {
-          "header": "Google Research",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-research/"
-        },
-        {
-          "header": "Google Labs",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/"
-        },
-        {
-          "header": "Gemini models",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/"
-        },
-        {
-          "header": "Quantum computing",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/quantum-computing/"
-        },
-        {
           "header": "Developer tools",
           "content": "- URL: https://blog.google/innovation-and-ai/technology/developers-tools/"
         },
@@ -2680,7 +2680,7 @@
         },
         {
           "header": "Evolving expectations of what’s possibleKent Walker shares Google’s perspective on the future of privacy at IAPP Global Summit 2026.",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/safety-security/evolving-expectations-of-whats-possible/\n- Summary: Kent Walker shares Google’s perspective on the future of privacy at IAPP Global Summit 2026."
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/safety-security/evolving-expectations-of-whats-possible/"
         },
         {
           "header": "Find out how AlphaEvolve has gone from research to solving real-life problems.",
@@ -2725,7 +2725,7 @@
       ],
       "metadata": {
         "source": "local://google_innovation_ai_report.md",
-        "ingestedAt": "2026-06-07T11:57:03.400Z"
+        "ingestedAt": "2026-06-07T23:00:48.715Z"
       }
     }
   },
