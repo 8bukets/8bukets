@@ -3,13 +3,10 @@ import time
 import logging
 import argparse
 from main_orchestrator import run_orchestration
+from ux_utils import configure_ux_logging
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger("AutonomousRunner")
+logger = configure_ux_logging("AutonomousRunner")
 
 def job():
     logger.info("Executing scheduled daily orchestration job...")

@@ -29,13 +29,6 @@ BASE_URL = "https://informaticmagazine.data.blog"
 PARSED_BASE_URL = urlparse(BASE_URL)
 PAGINATION_PATTERN = re.compile(r'<div class=["\']nav-previous["\'][^>]*>\s*<a[^>]+href=["\']([^"\']+)["\']')
 
-def configure_logging(verbose: bool):
-    level = logging.DEBUG if verbose else logging.INFO
-    logging.basicConfig(
-        level=level,
-        format='%(asctime)s - %(levelname)s - %(message)s'
-    )
-
 def get_session():
     """
     Creates a requests Session with retry logic and a user-agent.
@@ -213,7 +206,7 @@ def main():
 
     args = parser.parse_args()
 
-    configure_logging(args.verbose)
+    configure_ux_logging(verbose=args.verbose)
     scrape(args.output, args.pages)
 
 if __name__ == "__main__":
