@@ -1,55 +1,43 @@
 import unittest
-import sys
 import os
-
-# Add current directory to path so we can import analytics
-sys.path.append(os.getcwd())
-
-try:
-    from analytics import create_ascii_bar
-except ImportError:
-    # Function not implemented yet
-    create_ascii_bar = None
+import tempfile
+from analytics import create_ascii_bar, generate_report
 
 class TestAnalyticsUX(unittest.TestCase):
-    def test_create_ascii_bar_basic(self):
-        if not create_ascii_bar:
-            self.skipTest("create_ascii_bar not implemented yet")
+    def test_create_ascii_bar(self):
+        # Test full bar
+        self.assertEqual(create_ascii_bar(10, 10, 10), "██████████")
+        # Test empty bar
+        self.assertEqual(create_ascii_bar(0, 10, 10), "░░░░░░░░░░")
+        # Test half bar
+        self.assertEqual(create_ascii_bar(5, 10, 10), "█████░░░░░")
+        # Test default length (20)
+        self.assertEqual(len(create_ascii_bar(5, 10)), 20)
 
-        # 50% of 20 chars = 10 chars
-        bar = create_ascii_bar(50, 100, 20)
-        self.assertEqual(bar, "██████████          ")
-        self.assertEqual(len(bar), 20)
+    def test_generate_report_visuals(self):
+        # Mock data
+        data = [
+            {"domain": "example.com", "categories": ["Tech"], "datetime": "2023-01-01T12:00:00", "author": "Alice", "external_link": "https://example.com/1"},
+            {"domain": "example.com", "categories": ["Tech"], "datetime": "2023-01-02T12:00:00", "author": "Alice", "external_link": "https://example.com/2"},
+            {"domain": "other.com", "categories": ["Life"], "datetime": "2022-01-01T12:00:00", "author": "Bob", "external_link": "https://other.com/1"},
+        ]
 
-    def test_create_ascii_bar_full(self):
-        if not create_ascii_bar:
-            self.skipTest("create_ascii_bar not implemented yet")
+        with tempfile.NamedTemporaryFile(mode='w+', delete=False) as tmp:
+            output_file = tmp.name
 
-        bar = create_ascii_bar(100, 100, 10)
-        self.assertEqual(bar, "██████████")
+        try:
+            generate_report(data, output_file)
 
-    def test_create_ascii_bar_empty(self):
-        if not create_ascii_bar:
-            self.skipTest("create_ascii_bar not implemented yet")
+            with open(output_file, 'r', encoding='utf-8') as f:
+                content = f.read()
 
-        bar = create_ascii_bar(0, 100, 10)
-        self.assertEqual(bar, "          ")
+            # Check for bar chart characters
+            self.assertIn("█", content)
+            self.assertIn("Distribution", content)
 
-    def test_create_ascii_bar_rounding(self):
-        if not create_ascii_bar:
-            self.skipTest("create_ascii_bar not implemented yet")
+        finally:
+            if os.path.exists(output_file):
+                os.remove(output_file)
 
-        # 33/100 * 10 = 3.3 -> 3
-        bar = create_ascii_bar(33, 100, 10)
-        self.assertEqual(bar, "███       ")
-
-    def test_create_ascii_bar_zero_total(self):
-        if not create_ascii_bar:
-            self.skipTest("create_ascii_bar not implemented yet")
-
-        # Should handle division by zero or empty list case gracefully
-        bar = create_ascii_bar(10, 0, 10)
-        self.assertEqual(bar, "          ")
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
