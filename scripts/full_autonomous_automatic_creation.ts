@@ -5,7 +5,7 @@ import fs from 'fs'
 import path from 'path'
 
 /**
- * FULL AUTONOMOUS AUTOMATIC CREATION ORDER AND EXECUTION
+ * FULL AUTONOMOUS AUTOMATIC CREATION ORDER AND EXECUTION (IMPROVED)
  *
  * This script unifies the entire Antigravity lifecycle:
  * 1. Pre-flight Health Checks (DB, Cloud, Docker)
