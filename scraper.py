@@ -6,6 +6,7 @@ import csv
 import re
 import argparse
 import logging
+import os
 from typing import List, Dict, Optional
 from urllib.parse import urlparse
 from datetime import datetime
@@ -22,16 +23,71 @@ BASE_URL = "https://www.oracle.com/news/"
 
 class OracleNewsScraper:
     def __init__(self, output_json: str, output_csv: str, output_txt: str):
-        self.output_json = output_json
-        self.output_csv = output_csv
-        self.output_txt = output_txt
+        self.output_json = self.validate_path(output_json)
+        self.output_csv = self.validate_path(output_csv)
+        self.output_txt = self.validate_path(output_txt)
+
+    def validate_path(self, path: str) -> str:
+        """Validate that the path is within the current working directory."""
+        if not path:
+            raise ValueError("Path cannot be empty")
+
+        # Resolve absolute path
+        abs_path = os.path.abspath(path)
+        cwd = os.getcwd()
+
+        # Check if path is within CWD
+        if os.path.commonpath([abs_path, cwd]) != cwd:
+            raise ValueError(f"Security Error: Path '{path}' traverses outside the current working directory.")
+
+        return path
+
+    # Pre-compile regex for performance
+    CLEAN_REGEX = re.compile(r'\s+')
+    COMMENT_REGEX = re.compile(r'<!--(.*?)-->', re.DOTALL)
 
     def clean_text(self, text: str) -> str:
         """Normalize whitespace and remove non-breaking spaces."""
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return re.sub(r'\s+', ' ', text).strip()
+        return self.CLEAN_REGEX.sub(' ', text).strip()
+
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text to prevent CSV Injection (Formula Injection)."""
+        if not text:
+            return ""
+        text = str(text)
+        if text.startswith(('=', '+', '-', '@')):
+            return "'" + text
+        return text
+
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text to prevent CSV injection (formula injection)."""
+        if not text:
+            return ""
+        # Ensure we are working with a string
+        text_str = str(text)
+        if text_str.startswith(('=', '+', '-', '@')):
+            return f"'{text_str}"
+        return text_str
+
+    def sanitize_for_csv(self, text: str) -> str:
+        """
+        Sanitize text for CSV to prevent formula injection.
+        Prepends a single quote if the text starts with =, +, -, or @.
+        """
+        if text and text.startswith(('=', '+', '-', '@')):
+            return f"'{text}"
+        return text
+
+    def sanitize_for_csv(self, value: str) -> str:
+        """Sanitize a value to prevent CSV injection."""
+        if not isinstance(value, str):
+            return value
+        if value and value.startswith(('=', '+', '-', '@')):
+            return f"'{value}"
+        return value
 
     def parse_date(self, date_text: str) -> Optional[Dict[str, str]]:
         """Parse date string like 'Oct 15, 2025' to ISO format."""
@@ -50,26 +106,42 @@ class OracleNewsScraper:
 
     async def fetch_page(self, session: aiohttp.ClientSession) -> Optional[str]:
         try:
-            async with session.get(BASE_URL) as response:
+            async with session.get(BASE_URL, timeout=10) as response:
                 response.raise_for_status()
                 return await response.text()
-        except aiohttp.ClientError as e:
+        except (aiohttp.ClientError, asyncio.TimeoutError) as e:
             logger.error(f"Error fetching page: {e}")
             return None
 
-    def parse_page(self, html: str) -> List[Dict]:
-        # Optimization: Use regex to find the comment containing the news section
-        # instead of parsing the entire HTML with BeautifulSoup.
-        # This avoids building the full DOM tree just to extract a specific comment block.
-        news_html = None
-        # Non-greedy match for comments
-        comment_pattern = re.compile(r'<!--(.*?)-->', re.DOTALL)
+    def _extract_news_comment(self, html: str) -> Optional[str]:
+        """Extract the hidden news section from HTML comments using regex for performance."""
+        # Fast path: Regex
+        # Regex for HTML comments: <!--(.*?)-->
+        # We look for a comment containing 'rc92v0' and '<section'
+        for match in re.finditer(r'<!--(.*?)-->', html, re.DOTALL):
+            c = match.group(1)
+            if 'rc92v0' in c and '<section' in c:
+                return c
 
-        for match in comment_pattern.finditer(html):
-            content = match.group(1)
-            if 'rc92v0' in content and '<section' in content:
-                news_html = content
-                break
+        # Slow path: BeautifulSoup (fallback)
+        soup = BeautifulSoup(html, 'html.parser')
+        comments = soup.find_all(string=lambda text: isinstance(text, Comment))
+        for c in comments:
+            if 'rc92v0' in c and '<section' in c:
+                return c
+        return None
+
+    def parse_page(self, html: str) -> List[Dict]:
+        news_html = self._extract_news_comment(html)
+
+        # Fallback to BeautifulSoup parsing if regex fails
+        if not news_html:
+            soup = BeautifulSoup(html, 'html.parser')
+            comments = soup.find_all(string=lambda text: isinstance(text, Comment))
+            for c in comments:
+                if 'rc92v0' in c and '<section' in c:
+                    news_html = c
+                    break
 
         if not news_html:
             logger.warning("Could not find hidden news section in HTML comments.")
@@ -111,7 +183,7 @@ class OracleNewsScraper:
             if external_link:
                 try:
                     post_data['domain'] = urlparse(external_link).netloc.replace('www.', '')
-                except:
+                except Exception:
                     pass
 
             # Author (Default)
@@ -120,7 +192,7 @@ class OracleNewsScraper:
             # Categories (Default/Inferred)
             post_data['categories'] = ["News"]
             if external_link and '/announcement/' in external_link:
-                 post_data['categories'].append("Announcement")
+                post_data['categories'].append("Announcement")
 
             page_posts.append(post_data)
 
@@ -141,6 +213,14 @@ class OracleNewsScraper:
             else:
                 logger.error("Failed to retrieve content.")
 
+    def sanitize_for_csv(self, text: str) -> str:
+        """Prevent CSV formula injection."""
+        if not isinstance(text, str):
+            text = str(text)
+        if text and text.startswith(('=', '+', '-', '@')):
+            return f"'{text}"
+        return text
+
     def save_data(self, posts: List[Dict]):
         # JSON
         try:
@@ -156,7 +236,7 @@ class OracleNewsScraper:
                 writer = csv.writer(f)
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
-                    writer.writerow([
+                    row = [
                         post.get('title', ''),
                         post.get('date', ''),
                         post.get('author', ''),
@@ -164,6 +244,26 @@ class OracleNewsScraper:
                         post.get('external_link', ''),
                         post.get('domain', ''),
                         post.get('post_url', '')
+                    ]
+                    # Sanitize CSV fields to prevent formula injection
+                    sanitized_row = []
+                    for field in row:
+                        if isinstance(field, str) and field.startswith(('=', '+', '-', '@')):
+                            sanitized_row.append("'" + field)
+                        else:
+                            sanitized_row.append(field)
+                    writer.writerow(sanitized_row)
+                    # Prepare data for CSV with sanitization
+                    categories = ", ".join(post.get('categories', []))
+
+                    writer.writerow([
+                        self.sanitize_for_csv(post.get('title', '')),
+                        self.sanitize_for_csv(post.get('date', '')),
+                        self.sanitize_for_csv(post.get('author', '')),
+                        self.sanitize_for_csv(categories),
+                        self.sanitize_for_csv(post.get('external_link', '')),
+                        self.sanitize_for_csv(post.get('domain', '')),
+                        self.sanitize_for_csv(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
