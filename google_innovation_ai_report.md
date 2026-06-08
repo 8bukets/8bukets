@@ -2,6 +2,24 @@
 
 Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innovation-and-ai/) and [https://blog.google/innovation-and-ai/models-and-research/](https://blog.google/innovation-and-ai/models-and-research/)
 
+### Google DeepMind
+- URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/
+- Insight: News from Google DeepMind about how we're building AI responsibly to benefit everyone....
+
+### Google Research
+- URL: https://blog.google/innovation-and-ai/models-and-research/google-research/
+
+### Google Labs
+- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/
+- Insight: News about Google Labs, Google's home for the latest AI experiments and technology....
+
+### Gemini models
+- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/
+
+### Quantum computing
+- URL: https://blog.google/innovation-and-ai/models-and-research/quantum-computing/
+- Insight: News from Google Quantum AI about how we're building quantum computing for unsolvable problems....
+
 ### 9 demos of Gemini Omni and Gemini 3.5 in action
 - URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-3-5-videos/
 
@@ -98,21 +116,6 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 ### We’re announcing new community investments in Missouri.
 - URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/missouri-programs/
 
-### Google DeepMind
-- URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/
-
-### Google Research
-- URL: https://blog.google/innovation-and-ai/models-and-research/google-research/
-
-### Google Labs
-- URL: https://blog.google/innovation-and-ai/models-and-research/google-labs/
-
-### Gemini models
-- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/
-
-### Quantum computing
-- URL: https://blog.google/innovation-and-ai/models-and-research/quantum-computing/
-
 ### Developer tools
 - URL: https://blog.google/innovation-and-ai/technology/developers-tools/
 
@@ -184,7 +187,6 @@ Scraped from [https://blog.google/innovation-and-ai/](https://blog.google/innova
 
 ### Evolving expectations of what’s possibleKent Walker shares Google’s perspective on the future of privacy at IAPP Global Summit 2026.
 - URL: https://blog.google/innovation-and-ai/technology/safety-security/evolving-expectations-of-whats-possible/
-- Summary: Kent Walker shares Google’s perspective on the future of privacy at IAPP Global Summit 2026.
 
 ### Find out how AlphaEvolve has gone from research to solving real-life problems.
 - URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/alphaevolve-updates/
