@@ -229,11 +229,17 @@ class ReportGenerator:
 
         logger.info(f"Report generated: {report_filename}")
 
+    def _generate_ascii_bar(self, value, max_value, length=10):
+        if max_value == 0: return ""
+        filled_len = int((value / max_value) * length)
+        # Using block character for filled and space/light shade for empty
+        return '█' * filled_len + '░' * (length - filled_len)
+
     def analyze_keywords(self, titles):
         text = " ".join(titles).lower()
         text = re.sub(r'[^\w\s]', '', text)
         words = text.split()
-        stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'this', 'that', 'it', 'as', 'from', 'de', 'la'}
+        stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'this', 'that', 'it', 'as', 'from', 'de', 'la', 'new'}
         filtered_words = [w for w in words if w not in stop_words and len(w) > 2]
         return Counter(filtered_words).most_common(10)
 
