@@ -37,6 +37,19 @@ def get_domain(url):
     except:
         return None
 
+def sanitize_markdown(text):
+    """Sanitize text for Markdown tables to prevent injection."""
+    if text is None:
+        return ""
+    text = str(text)
+    # Escape HTML characters
+    text = html.escape(text)
+    # Escape pipes
+    text = text.replace('|', '&#124;')
+    # Remove newlines to keep table structure
+    text = text.replace('\n', ' ').replace('\r', '')
+    return text
+
 def generate_report(data, output_file):
     total_posts = len(data)
 
@@ -64,7 +77,12 @@ def generate_report(data, output_file):
                 # Handle ISO format or standard date format
                 dt = datetime.fromisoformat(dt_str)
             except ValueError:
-                pass
+                try:
+                    # Handle YYYY-MM-DD
+                    dt = datetime.strptime(dt_str, '%Y-%m-%d')
+                except ValueError:
+                    continue
+            dates.append(dt)
 
         # Fallback to parsing the 'date' field if 'datetime' is missing or failed
         if dt is None:
