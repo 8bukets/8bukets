@@ -61,7 +61,7 @@ def generate_report(data, output_file):
         dt_str = p.get('datetime')
         if dt_str:
             try:
-                # Handle ISO format
+                # Handle ISO format or standard date format
                 dt = datetime.fromisoformat(dt_str)
             except ValueError:
                 pass
