@@ -309,6 +309,7 @@ class ReportGenerator:
         else:
             trends = self.analyze_seo_trends(rankings, past_rankings)
             for t in trends:
+                query = self.sanitize_markdown(t['query'])
                 if "⬇️" in t['change']:
                     # Query is from DB, should escape if used in output, but here it is just text.
                     # Wait, if this list item is written to Markdown, it should be escaped too.
