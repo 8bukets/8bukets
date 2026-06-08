@@ -145,6 +145,20 @@ export async function generateActionableBriefing(state: any, directives: Directi
     })
   }
 
+  // Phase 14: Strategic Alignment & Cross-Agent Dependency Matrix
+  const dependencies = state.intelligence.relationshipMap.resourceDependencies || []
+  if (dependencies.length > 0) {
+    briefing += `\n### 🔗 Strategic Dependency Matrix\n`
+    briefing += `| Source Service | Target Dependency | Connection Type |\n`
+    briefing += `| :--- | :--- | :---: |\n`
+    dependencies.slice(0, 10).forEach((d: any) => {
+      briefing += `| \`${d.source}\` | \`${d.target}\` | ${d.type} |\n`
+    })
+    if (dependencies.length > 10) {
+      briefing += `\n*...and ${dependencies.length - 10} more cross-agent dependencies.*\n`
+    }
+  }
+
   briefing += `\n### 🚀 Required Stakeholder Decisions\n`
   let decisionsCount = 0
 
