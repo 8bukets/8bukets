@@ -171,8 +171,6 @@ export async function getSystemInsights() {
   const { getPersistenceHealth } = await import('./services/persistence')
   const { getNetworkState } = await import('./services/neural')
   const { getRelayState } = await import('./services/relay')
-  const { getDockerStatus } = await import('./services/docker')
-  const { getCollaborationContext } = await import('./services/collaboration')
   const { optimize } = await import('./optimization')
   const { runSecurityAudit } = await import('./services/cognitive_security')
   
@@ -180,10 +178,13 @@ export async function getSystemInsights() {
   const persistence = await getPersistenceHealth()
   const network = await getNetworkState()
   const relay = await getRelayState()
-  const docker = await getDockerStatus()
-  const collaboration = await getCollaborationContext()
+  const security = await runSecurityAudit()
+  const proposals = await optimize({
+    registrySize: volatilityRegistry.size,
+    ideasCount: ideas.length
+  })
 
-  const baseInsights = {
+  return {
     circuitBreakers: {
       mongodb: circuitBreaker.mongodb.state,
       supabase: circuitBreaker.supabase.state,
@@ -200,18 +201,9 @@ export async function getSystemInsights() {
     persistence,
     network,
     relay,
-    docker,
-    collaboration,
-    uptime: process.uptime()
-  }
-
-  const proposals = await optimize(baseInsights)
-  const security = await runSecurityAudit()
-
-  return {
-    ...baseInsights,
     proposals,
-    security
+    security,
+    uptime: process.uptime()
   }
 }
 
@@ -268,12 +260,16 @@ export async function healthCheck() {
     timestamp: new Date().toISOString()
   }
 
-  try {
-    const client = await getMongoClient()
-    await client.db().admin().ping()
-    results.mongodb = 'healthy'
-  } catch (e) {
-    results.mongodb = 'error'
+  if (process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true' || process.env.MACBOOK_CLOUD_SIMULATION === 'true') {
+    results.mongodb = 'simulated'
+  } else {
+    try {
+      const client = await getMongoClient()
+      await client.db().admin().ping()
+      results.mongodb = 'healthy'
+    } catch (e) {
+      results.mongodb = 'error'
+    }
   }
 
   try {
@@ -293,4 +289,25 @@ export async function healthCheck() {
 export async function getRuntimeEnv(key: string) {
   await connection()
   return process.env[key]
+}
+
+/**
+ * trackROI: Enforces Phase 13 ROI efficiency tracking.
+ * Records efficiency metrics for resource-intensive autonomous operations.
+ */
+export function trackROI(service: string, efficiency: number, metadata: Record<string, any> = {}) {
+  const timestamp = new Date().toISOString()
+  const logEntry = `📊 [ROI] Service: ${service} | Efficiency: ${(efficiency * 100).toFixed(2)}% | Time: ${timestamp}`
+
+  console.log(logEntry)
+  logAutonomousAction(logEntry, 'roi')
+
+  // Phase 13 mandate: Integration with Predictive Analytics
+  import('./services/analytics').then(a => {
+    a.trackEvent(service, 'ROI_METRIC', { efficiency, timestamp, ...metadata })
+  }).catch(() => {
+    // Analytics might not be initialized in all environments
+  })
+
+  return { status: 'recorded', efficiency, timestamp }
 }

@@ -10,12 +10,7 @@ cd "$ROOT_DIR"
 
 # 1. Start Docker Services (MongoDB & Persistence Layer)
 echo "🐳 [Docker] Initializing core containers..."
-if command -v docker-compose &> /dev/null
-then
-    /usr/local/bin/docker-compose up -d || docker-compose up -d
-else
-    docker compose up -d
-fi
+docker compose up -d
 
 # 2. Trigger Autonomous Work Cycle (Enterprise Selection)
 echo "🧠 [Jules] Commencing initial autonomous work cycle..."

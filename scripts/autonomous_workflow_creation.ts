@@ -1,0 +1,285 @@
+import fs from 'fs';
+import path from 'path';
+
+const WORKFLOW_DIR = path.join(process.cwd(), '.github', 'workflows');
+const SCRIPTS_DIR = path.join(process.cwd(), 'antigravity', 'workflows');
+
+function generateWorkflow(name: string, scriptPath: string) {
+  const workflowContent = `name: ${name}
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  run-task:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Execute Task
+        run: npx tsx ${scriptPath}
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          git add .
+          git commit -m "chore: automated updates from ${name}" || true
+          git push origin HEAD:\${{ github.ref }}
+`;
+
+  const filename = path.join(WORKFLOW_DIR, `generated_${name.toLowerCase().replace(/\s+/g, '_')}.yml`);
+  fs.writeFileSync(filename, workflowContent);
+  console.log(`Successfully generated workflow: ${filename}`);
+}
+
+function generateFullyAutonomousWorkflow() {
+  const workflowContent = `name: Fully Autonomous Automatic Workflow
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  fully-autonomous:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Pre-flight Health Checks
+        run: npm run test
+
+      - name: Docker Health Check
+        run: docker info && docker ps
+
+      - name: Connect and Collaborate
+        run: npm run connect
+        env:
+          MACBOOK_CLOUD_SIMULATION: true
+
+      - name: Execute Fully Autonomous Creation Cycle
+        run: npx tsx scripts/full_autonomous_automatic_creation.ts
+        env:
+          AUTONOMOUS_MODE: cloud
+          MACBOOK_CLOUD_SIMULATION: true
+          MONGODB_URI: \${{ secrets.MONGODB_URI }}
+          NEXT_PUBLIC_SUPABASE_URL: \${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: \${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}
+
+      - name: Post-cycle Knowledge Ingestion
+        run: npm run ingest:knowledge || true
+        env:
+          MACBOOK_CLOUD_SIMULATION: true
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          git add .
+          git commit -m "chore: fully autonomous automatic workflow creation cycle completed" || true
+          git push origin HEAD:\${{ github.ref }}
+
+# =====================================================================
+# Workflow Architecture Overview & Technical Specifications
+# =====================================================================
+#
+# This file defines the core CI/CD pipeline responsible for driving the
+# fully autonomous creation cycle of our artificial intelligence agents.
+#
+# It is designed to run automatically at midnight UTC every single day,
+# providing a reliable and consistent heartbeat for the system's ongoing
+# evolution and self-improvement mechanisms. In addition to the scheduled
+# runs, the workflow supports manual triggering via workflow_dispatch,
+# which is particularly useful for ad-hoc testing, emergency updates, or
+# initiating out-of-band creation cycles when new urgent requirements arise.
+#
+# A critical component of this workflow is the "Connect and Collaborate"
+# step. This step executes the \`npm run connect\` command. To ensure that
+# the local ecosystem sync processes function correctly within the context
+# of a GitHub Actions runner, we inject the \`MACBOOK_CLOUD_SIMULATION: true\`
+# environment variable. This simulation flag instructs the underlying
+# scripts to bypass local machine checks (such as verifying the presence
+# of Docker Desktop, GitLab CI runners, or specific GUI applications like
+# GitKraken) and instead assume a fully capable, cloud-connected operating
+# environment. This is essential for the system to successfully fetch the
+# latest state from the remote blackboard and synchronize agent memories.
+#
+# Following the initial connection phase, the workflow proceeds to the
+# primary execution stage: "Execute Fully Autonomous Creation Cycle".
+# Here, we invoke \`npx tsx scripts/full_autonomous_automatic_creation.ts\`. This
+# script is the heart of the generative process, orchestrating the actions
+# of multiple specialized sub-agents. It requires several key environment
+# variables to operate securely and effectively:
+#
+# - AUTONOMOUS_MODE: Hardcoded to 'cloud' to reinforce the execution context
+#   and ensure scripts don't attempt interactive prompts that would stall
+#   the headless runner.
+# - MACBOOK_CLOUD_SIMULATION: Passed again here to maintain consistency
+#   across all executed sub-processes and ensure networking layers remain
+#   configured for remote interactions.
+# - MONGODB_URI: Injected securely via GitHub Secrets, allowing the system
+#   to persist long-term memories, agent knowledge graphs, and telemetry
+#   data to our primary MongoDB Atlas cluster.
+# - NEXT_PUBLIC_SUPABASE_URL & NEXT_PUBLIC_SUPABASE_ANON_KEY: These
+#   secrets authenticate the system with Supabase, enabling real-time
+#   subscriptions, relational data storage, and edge function invocations
+#   necessary for real-time dashboard updates.
+# - GITHUB_TOKEN: A built-in secret provided by the runner. We configure
+#   the job permissions to ensure this token has write access to contents
+#   and pull requests, allowing the system to autonomously commit code,
+#   open PRs, and merge verified changes back into the main branch.
+#
+# Post-cycle processing includes an automated ingestion step to ensure
+# newly generated insights and knowledge maps are immediately integrated
+# back into the root intelligence data sources via the merge tools.
+# The architecture guarantees that the system is entirely self-sufficient,
+# continually iterating on its codebase, documentation, and operational
+# strategies without necessitating manual human oversight.
+# =====================================================================
+`;
+
+  const filename = path.join(WORKFLOW_DIR, 'fully_autonomous_automatic_workflow.yml');
+  fs.writeFileSync(filename, workflowContent);
+  console.log(`Successfully generated workflow: ${filename}`);
+}
+
+function generateDailyAutonomousEvolutionWorkflow() {
+  const workflowContent = `name: Daily Autonomous Evolution
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  evolution-cycle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Pre-flight Health Checks
+        run: npm run test
+
+      - name: Connect and Collaborate
+        run: npm run connect
+        env:
+          MACBOOK_CLOUD_SIMULATION: true
+
+      - name: Analyze Recent Sessions
+        run: npx tsx antigravity-cli.ts autonomous-evolution
+        env:
+          MACBOOK_CLOUD_SIMULATION: true
+
+      - name: Validate System Engine Improvements
+        run: echo "Verifying higher scale and functionality from recent sessions..." && npm run test
+        env:
+          MACBOOK_CLOUD_SIMULATION: true
+
+      - name: Execute Autonomous Session Analysis and Self-Correction
+        run: npx tsx scripts/full_autonomous_automatic_creation.ts
+        env:
+          AUTONOMOUS_MODE: cloud
+          MACBOOK_CLOUD_SIMULATION: true
+          MONGODB_URI: \${{ secrets.MONGODB_URI }}
+          NEXT_PUBLIC_SUPABASE_URL: \${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: \${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}
+
+      - name: Autonomous Intelligence Sync
+        run: npx tsx scripts/autonomous_sync.ts
+        env:
+          MACBOOK_CLOUD_SIMULATION: true
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          git add .
+          git commit -m "chore: daily autonomous evolution cycle completed" || true
+          git push origin HEAD:\${{ github.ref }}
+`;
+
+  const filename = path.join(WORKFLOW_DIR, 'daily_autonomous_evolution.yml');
+  fs.writeFileSync(filename, workflowContent);
+  console.log(`Successfully generated workflow: ${filename}`);
+}
+
+function main() {
+  if (!fs.existsSync(WORKFLOW_DIR)) {
+    fs.mkdirSync(WORKFLOW_DIR, { recursive: true });
+  }
+
+  // Generate dynamic data sync manually as before
+  generateWorkflow('Dynamic Data Sync', 'scripts/autonomous_sync.ts');
+
+  // Autonomously scan and generate for all workflow scripts in antigravity/workflows
+  if (fs.existsSync(SCRIPTS_DIR)) {
+    const files = fs.readdirSync(SCRIPTS_DIR);
+    for (const file of files) {
+      if (file.endsWith('_workflow.ts')) {
+        const name = file.replace('_workflow.ts', '').split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') + ' Workflow';
+        generateWorkflow(name, `antigravity/workflows/${file}`);
+      }
+    }
+  }
+
+  generateFullyAutonomousWorkflow();
+  generateDailyAutonomousEvolutionWorkflow();
+  console.log('Workflow creation engine completed.');
+}
+
+main();

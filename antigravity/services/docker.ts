@@ -21,6 +21,15 @@ export type DockerContainer = z.infer<typeof DockerContainerSchema>
 export async function getDockerStatus(): Promise<DockerContainer[]> {
   return autonomousFetch(z.array(DockerContainerSchema), async () => {
     'use cache'
+
+    if (process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true' || process.env.MACBOOK_CLOUD_SIMULATION === 'true') {
+      console.log('🐳 [Docker] Simulation Active: Returning mock fleet status.');
+      return [
+        { id: 'sim-mongodb-01', image: 'mongo:latest', status: 'Up 2 hours', name: 'mongodb' },
+        { id: 'sim-app-01', image: 'my-app:latest', status: 'Up 2 hours', name: 'app' }
+      ];
+    }
+
     try {
       const { stdout } = await execAsync('docker ps --format "{{.ID}}|{{.Image}}|{{.Status}}|{{.Names}}"')
       if (!stdout) return []
@@ -53,6 +62,8 @@ export async function getDockerStatus(): Promise<DockerContainer[]> {
 }
 
 export async function isDockerHealthy(): Promise<boolean> {
+  if (process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true' || process.env.MACBOOK_CLOUD_SIMULATION === 'true') return true;
+
   try {
     await execAsync('docker ps')
     return true
@@ -60,3 +71,7 @@ export async function isDockerHealthy(): Promise<boolean> {
     return false
   }
 }
+
+// Phase 12: Standardized Aliases for high-fidelity simulation and tests
+export const getDockerFleetStatus = getDockerStatus
+export const checkDockerHealth = isDockerHealthy

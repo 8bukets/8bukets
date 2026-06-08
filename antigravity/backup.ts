@@ -13,8 +13,11 @@ export async function runBackup() {
   const backupDir = path.join(rootDir, 'backups')
 
   // Ensure backups directory exists
-  if (!fs.existsSync(backupDir)) {
-    fs.mkdirSync(backupDir, { recursive: true })
+  try {
+    await fs.promises.access(backupDir)
+  } catch {
+
+    await fs.promises.mkdir(backupDir, { recursive: true })
     console.log(`🛡️ [Backup Agent] Created backup directory at: ${backupDir}`)
   }
 
@@ -23,41 +26,45 @@ export async function runBackup() {
 
   // 1. Backup Jules Memory
   const memoryPath = path.join(rootDir, 'antigravity/.jules_memory.json')
-  if (fs.existsSync(memoryPath)) {
+  try {
+    await fs.promises.access(memoryPath)
     try {
       // Verify Integrity
-      const memoryContent = fs.readFileSync(memoryPath, 'utf8')
+      const memoryContent = await fs.promises.readFile(memoryPath, 'utf8')
       const parsed = JSON.parse(memoryContent)
 
       if (parsed && typeof parsed === 'object') {
         const backupMemoryPath = path.join(backupDir, `jules_memory_${timestamp}.json`)
-        fs.writeFileSync(backupMemoryPath, memoryContent)
+        await fs.promises.writeFile(backupMemoryPath, memoryContent)
         console.log(`✅ [Backup Agent] Archived Jules Memory to ${backupMemoryPath}`)
         backupCount++
       }
     } catch (e) {
       console.error(`⚠️ [Backup Agent] Integrity check failed for Jules Memory. Skipping backup. Error:`, e)
     }
-  } else {
+  } catch (e) {
       console.warn(`⚠️ [Backup Agent] Could not find Jules Memory at ${memoryPath}`)
   }
 
   // 2. Backup Core Autonomous State if it exists
   const statePath = path.join(rootDir, 'autonomous_state.json')
-  if (fs.existsSync(statePath)) {
+  try {
+    await fs.promises.access(statePath)
     try {
-      const stateContent = fs.readFileSync(statePath, 'utf8')
+      const stateContent = await fs.promises.readFile(statePath, 'utf8')
       const parsed = JSON.parse(stateContent)
 
       if (parsed && typeof parsed === 'object') {
         const backupStatePath = path.join(backupDir, `autonomous_state_${timestamp}.json`)
-        fs.writeFileSync(backupStatePath, stateContent)
+        await fs.promises.writeFile(backupStatePath, stateContent)
         console.log(`✅ [Backup Agent] Archived Autonomous State to ${backupStatePath}`)
         backupCount++
       }
     } catch (e) {
       console.error(`⚠️ [Backup Agent] Integrity check failed for Autonomous State. Skipping backup. Error:`, e)
     }
+  } catch (e) {
+      console.warn(`⚠️ [Backup Agent] Could not find Autonomous State at ${statePath}`)
   }
 
   // Record task in cognitive memory

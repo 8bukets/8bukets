@@ -15,7 +15,8 @@ The Antigravity ecosystem is designed to be **Self-Healing**, **Self-Validating*
 9. **Phase 9: Global Neural Sync (Complete)** - Multi-agent collaboration and cross-project autonomous synchronization.
 10. **Phase 10: Singularity Orchestration (Complete)** - Total autonomous self-generation of full-stack ecosystems.
 11. **Phase 11: Omni-Presence (Complete)** - Real-time neural relay, cross-environment UI sync, and adaptive intent fulfillment.
-12. **Phase 12: Autonomous Super-Intelligence (Current)** - Infinite self-optimization and system-wide sentient orchestration.
+12. **Phase 12: Autonomous Super-Intelligence (Complete)** - Infinite self-optimization and system-wide sentient orchestration.
+13. **Phase 13: Decentralized Edge Orchestration (Current)** - Asia-Pacific expansion, zero-latency neural synchronization (<50ms), and autonomous edge node deployment.
 
 ## System Documentation
 
@@ -37,6 +38,13 @@ We use **Vitest** for unit and integration tests.
 - All autonomous core changes MUST pass validation before being merged.
 
 ## Synchronization Protocols (Update)
+- **Daily Work:** Use `npm run daily` for the full autonomous cycle (pull, repair, sync, push).
+- **Manual Tasks:**
+  - `npm run pluu`: Pull changes (rebase).
+  - `npm run upload`: Push changes.
+  - `npm run sync:icloud`: Manual project backup to iCloud.
+- **Persistence:** Use `scripts/install_launchd.sh` (macOS) or `scripts/install_cron.sh` (Linux) to automate "working every day".
+- **Connect:** Use `npm run connect` to trigger Docker auditing and stakeholder collaboration sync.
 - **GitHub:** Autonomous PR validation is triggered by the Explorer.
 - **GitKraken:** Visual branch validation should reflect the "Clean Architecture" maintained by the Core.
 
@@ -46,7 +54,8 @@ To "work better," the agent (Jules) follows these self-improving directives:
 2.  **Architectural Stewardship:** Jules proactively guards the Next.js 16 core patterns, preventing "drift" toward legacy React patterns.
 3.  **Predictive Refinement:** Jules analyzes the Explorer's output to automatically suggest Phase 6 cognitive upgrades.
 4. **Self-Correction:** If a Circuit Breaker trips (Phase 5), Jules automatically logs the failure and adjusts the Predictive Scaling (Phase 4) profile to be more conservative.
-5. **Identity Anchoring:** All Phase 9/10 operations are authorized against the verified signatures:
+5. **Identity Anchoring:** All Phase 12 operations are authorized against the verified signatures:
     - Admin: `SHA256:Zey4+Jcqu48gSIuuQaavasF2D7iu+J590Rr1EA3LdbA`
     - Neural Sync: `SHA256:qhno7SbhBIYwfgNgGhygt2e0kRDBlPkEqjAGdXTVOsA`
 
+All the best - https://markposition.wordpress.com
