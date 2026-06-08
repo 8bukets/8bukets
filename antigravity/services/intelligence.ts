@@ -4,6 +4,7 @@ import { getMissionMetadata, generateRelationshipMap } from './collaboration'
 import { workOrderService } from './work_order'
 import { jules } from '../jules'
 import { healthCheck } from '../core'
+import { checkDockerHealth } from './docker'
 
 /**
  * CONSOLIDATED INTELLIGENCE SERVICE
@@ -31,7 +32,7 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   const isSupabaseOptimal = health.supabase === 'connected' || health.supabase === 'healthy';
 
   report += `## 📋 Executive Summary\n`
-  report += `- **System Posture:** ${isMongoOptimal && isSupabaseOptimal ? (health.mongodb === 'simulated' ? '⚡ SIMULATED' : '✅ OPTIMAL') : '⚠️ DEGRADED'}\n`
+  report += `- **System Posture:** ${isMongoOptimal && isSupabaseOptimal ? (health.mongodb === 'simulated' ? '✅ OPTIMAL (SIMULATED)' : '✅ OPTIMAL') : '⚠️ DEGRADED'}\n`
   report += `- **Active Synergy:** ${branches.length} branches analyzed across multiple domains.\n`
   report += `- **Mission Alignment:** ${metadata.goals.length} strategic goals tracked.\n\n`
 
@@ -86,8 +87,10 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   report += `\n`
 
   // Phase 12: Actionable Briefing
+  const dockerHealthy = await checkDockerHealth()
+  const dockerStatus = dockerHealthy ? 'optimal' : 'degraded'
   const actionableBriefing = await generateActionableBriefing({
-    docker: { status: health.mongodb === 'healthy' ? 'optimal' : 'degraded' },
+    docker: { status: dockerStatus },
     intelligence: { pendingTasks: workOrders.length, relationshipMap }
   }, directives)
 

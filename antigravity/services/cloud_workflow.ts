@@ -9,6 +9,13 @@ import { reactService } from './react'
 const execFileAsync = promisify(execFile)
 
 export class CloudWorkflowAgent {
+  public async enforceCloudTakeover() {
+    console.log('🚀 [CloudWorkflowAgent] Enforcing Cloud Takeover protocol...');
+    const { workOrderService } = await import('./work_order');
+    await workOrderService.executePendingOrders();
+    console.log('✅ [CloudWorkflowAgent] Cloud Takeover protocol executed.');
+  }
+
   public async evaluateTelemetry() {
     console.log('☁️ [CloudWorkflowAgent] Evaluating deep telemetry...')
     if (process.env.MACBOOK_CLOUD_SIMULATION === 'true') {
