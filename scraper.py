@@ -77,6 +77,99 @@ logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
 
+def clean_text(text: str) -> str:
+    """Normalize whitespace and remove non-breaking spaces."""
+    if not text:
+        return ""
+    text = text.replace('\xa0', ' ')
+    return re.sub(r'\s+', ' ', text).strip()
+
+def is_url(text: str) -> bool:
+    """Check if text looks like a URL."""
+    return re.match(r'^https?://', text.strip()) is not None
+
+def extract_categories(article: BeautifulSoup) -> List[str]:
+    """Extract categories from article class names."""
+    categories = []
+    if article.get('class'):
+        for cls in article['class']:
+            if cls.startswith('category-'):
+                cat_name = cls.replace('category-', '').replace('-', ' ').title()
+                categories.append(cat_name)
+    return categories
+
+def extract_domain(url: str) -> Optional[str]:
+    """Extract domain from URL."""
+    if not url:
+        return None
+    try:
+        return urlparse(url).netloc.replace('www.', '')
+    except:
+        return None
+
+def parse_html_content(html: str) -> List[Dict]:
+    """Parse HTML content to extract posts."""
+    soup = BeautifulSoup(html, 'html.parser')
+    articles = soup.find_all('article', class_='post')
+    page_posts = []
+
+    if not articles:
+        return []
+
+    for article in articles:
+        post_data = {}
+
+        # Title
+        title_text = ""
+        title_tag = article.select_one('h1.entry-title a')
+        if title_tag:
+            title_text = clean_text(title_tag.get_text())
+            post_data['title'] = title_text
+
+        # Date
+        date_tag = article.select_one('time.entry-date')
+        if date_tag:
+            post_data['date'] = clean_text(date_tag.get_text())
+            post_data['datetime'] = date_tag.get('datetime')
+
+        # Author
+        author_tag = article.select_one('.author.vcard .fn')
+        if author_tag:
+            post_data['author'] = clean_text(author_tag.get_text())
+        else:
+            post_data['author'] = None
+
+        # Categories
+        post_data['categories'] = extract_categories(article)
+
+        # External Link
+        external_link = None
+        content_div = article.select_one('.entry-content')
+
+        if content_div:
+            link_tag = content_div.select_one('a')
+            if link_tag:
+                external_link = link_tag.get('href')
+
+            if not external_link:
+                iframe_tag = content_div.select_one('iframe')
+                if iframe_tag:
+                    external_link = iframe_tag.get('src')
+
+        if not external_link and title_text and is_url(title_text):
+            external_link = title_text
+
+        post_data['external_link'] = external_link
+        post_data['domain'] = extract_domain(external_link)
+
+        # Post URL
+        if title_tag:
+            post_data['post_url'] = title_tag.get('href')
+
+        page_posts.append(post_data)
+
+    return page_posts
+
 class MarkPositionScraperAsync:
     # Pre-compile regex patterns for performance
     CLEAN_TEXT_PATTERN = re.compile(r'\s+')
@@ -302,57 +395,56 @@ class MarkPositionScraperAsync:
         }
 
         async with aiohttp.ClientSession(headers=headers) as session:
-            tasks = set()
-            next_page = 1
-            results = []
-            stop_scheduling = False
+            # Use ProcessPoolExecutor to offload CPU-bound parsing
+            with concurrent.futures.ProcessPoolExecutor() as pool:
+                tasks = set()
+                next_page = 1
+                results = []
+                stop_scheduling = False
 
-            # Initial fill of the queue
-            while len(tasks) < self.concurrency and not stop_scheduling:
-                if self.max_pages and next_page > self.max_pages:
-                    stop_scheduling = True
-                    break
-
-                # Create task
-                task = asyncio.create_task(self.fetch_and_parse(session, next_page))
-                tasks.add(task)
-                next_page += 1
-
-            while tasks:
-                # Wait for at least one task to complete
-                done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
-                tasks = pending
-
-                for task in done:
-                    try:
-                        page_num, page_posts = await task
-
-                        if page_posts is None:
-                            # 404 or Error
-                            logger.info(f"Page {page_num} returned 404 or error. Stopping new scheduling.")
-                            stop_scheduling = True
-                        elif len(page_posts) == 0:
-                            logger.info(f"Page {page_num} has no articles. Stopping new scheduling.")
-                            stop_scheduling = True
-                        else:
-                            logger.info(f"Page {page_num} scraped ({len(page_posts)} posts).")
-                            results.append((page_num, page_posts))
-                    except Exception as e:
-                        logger.error(f"Task failed: {e}")
-                        # If a task fails unpredictably, we generally might want to continue or retry.
-                        # For now, we assume it's a transient error or a bad page, but don't stop everything unless necessary.
-                        # But typically consistent failure implies we should stop or retry.
-                        pass
-
-                # Schedule new tasks if slot is available and not stopping
+                # Initial fill of the queue
                 while len(tasks) < self.concurrency and not stop_scheduling:
                     if self.max_pages and next_page > self.max_pages:
                         stop_scheduling = True
                         break
 
-                    task = asyncio.create_task(self.fetch_and_parse(session, next_page))
+                    # Create task, passing the pool
+                    task = asyncio.create_task(self.fetch_and_parse(session, next_page, pool))
                     tasks.add(task)
                     next_page += 1
+
+                while tasks:
+                    # Wait for at least one task to complete
+                    done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+                    tasks = pending
+
+                    for task in done:
+                        try:
+                            page_num, page_posts = await task
+
+                            if page_posts is None:
+                                # 404 or Error
+                                logger.info(f"Page {page_num} returned 404 or error. Stopping new scheduling.")
+                                stop_scheduling = True
+                            elif len(page_posts) == 0:
+                                logger.info(f"Page {page_num} has no articles. Stopping new scheduling.")
+                                stop_scheduling = True
+                            else:
+                                logger.info(f"Page {page_num} scraped ({len(page_posts)} posts).")
+                                results.append((page_num, page_posts))
+                        except Exception as e:
+                            logger.error(f"Task failed: {e}")
+                            pass
+
+                    # Schedule new tasks if slot is available and not stopping
+                    while len(tasks) < self.concurrency and not stop_scheduling:
+                        if self.max_pages and next_page > self.max_pages:
+                            stop_scheduling = True
+                            break
+
+                        task = asyncio.create_task(self.fetch_and_parse(session, next_page, pool))
+                        tasks.add(task)
+                        next_page += 1
 
         # Sort results by page number to ensure order
         results.sort(key=lambda x: x[0])
@@ -404,7 +496,7 @@ class MarkPositionScraperAsync:
 
         return is_first_item
 
-    async def fetch_and_parse(self, session, page_num) -> Tuple[int, Optional[List[Dict]]]:
+    async def fetch_and_parse(self, session, page_num, pool) -> Tuple[int, Optional[List[Dict]]]:
         html = await self.fetch_page(session, page_num)
         if html:
             loop = asyncio.get_running_loop()
