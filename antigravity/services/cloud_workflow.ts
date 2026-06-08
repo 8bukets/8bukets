@@ -3,7 +3,7 @@ import { promisify } from 'util'
 import { checkDockerHealth } from './docker'
 import { getGitLabMetrics } from './gitlab'
 import { getGitHubMetrics } from './github_evolution'
-import { getGitKrakenMetrics } from './gitkraken_metrics' // We will mock this or implement later
+import { getGitKrakenMetrics } from './gitkraken_metrics'
 import { reactService } from './react'
 
 const execFileAsync = promisify(execFile)
@@ -55,26 +55,34 @@ export class CloudWorkflowAgent {
     const dockerMetrics = await checkDockerHealth()
     const gitlabMetrics = await getGitLabMetrics()
     const githubMetrics = await getGitHubMetrics()
-
-    // Mock GitKraken metrics based on memory context
-    const gitKrakenMetrics = { compatibilityScore: 85 }
+    const gitkrakenMetrics = await getGitKrakenMetrics()
+    const { getMongoDBMetrics } = await import('./mongodb_metrics')
+    const { getSupabaseMetrics } = await import('./supabase_metrics')
+    const mongodbMetrics = await getMongoDBMetrics()
+    const supabaseMetrics = await getSupabaseMetrics()
 
     return {
       docker: dockerMetrics,
       gitlab: gitlabMetrics,
       github: githubMetrics,
-      gitkraken: gitKrakenMetrics
+      gitkraken: gitkrakenMetrics,
+      mongodb: mongodbMetrics,
+      supabase: supabaseMetrics
     }
   }
 
   public async ensureFluentStatus() {
     const telemetry = await this.evaluateTelemetry()
 
-    // Evaluate if fluent
-    const isDockerTolerable = telemetry.docker.status === 'optimal' || telemetry.docker.status === 'simulated' || telemetry.docker.status === 'degraded' || telemetry.docker.status === 'recovering'
-    const isGitKrakenTolerable = telemetry.gitkraken.compatibilityScore >= 80
+    // Evaluate if fluent (Phase 12 logic)
+    const isDockerTolerable = telemetry.docker.status === 'optimal' || telemetry.docker.status === 'simulated' || telemetry.docker.status === 'degraded' || telemetry.docker.status === 'recovering' || telemetry.docker.status === 'cloud-active'
+    const isGitKrakenTolerable = (telemetry.gitkraken as any).compatibilityScore >= 80
+    const isGitHubTolerable = (telemetry.github as any).semanticCommitScore >= 50
+    const isGitLabTolerable = (telemetry.gitlab as any).hasPipeline || (process.env.MACBOOK_CLOUD_SIMULATION === 'true')
+    const isMongoTolerable = (telemetry.mongodb as any).status === 'healthy' || (process.env.MACBOOK_CLOUD_SIMULATION === 'true')
+    const isSupabaseTolerable = (telemetry.supabase as any).status === 'healthy' || (process.env.MACBOOK_CLOUD_SIMULATION === 'true')
 
-    const isFluent = isDockerTolerable && isGitKrakenTolerable
+    const isFluent = isDockerTolerable && isGitKrakenTolerable && isGitHubTolerable && isGitLabTolerable && isMongoTolerable && isSupabaseTolerable
 
     if (isFluent) {
       console.log('✅ [CloudWorkflowAgent] System is in FLUENT_ON_AIR mode.')

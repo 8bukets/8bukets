@@ -23,7 +23,9 @@ async function applyEngineConfiguration() {
     }
 }
 
-async function main() {
+import { jules } from '../antigravity/jules';
+
+async function executeCreationCycle() {
   console.log('🚀 [Antigravity] Starting Full Autonomous Creation & Execution Cycle...')
 
   // Proactive iCloud Sync Fix
@@ -42,7 +44,7 @@ async function main() {
   if (ideas.length === 0) {
     console.log('✨ [CreationCycle] No new gaps identified. System state is optimal.');
     logAutonomousAction('✨ [CreationCycle] No new gaps identified. System state is optimal.', 'info');
-    return;
+    // return; // Continue to work cycle even if no new ideas
   }
 
   // Check and apply evolved engine configuration before work cycle
@@ -54,6 +56,8 @@ async function main() {
   // Explicitly confirm autonomous evolution and self-correction sequence
   console.log('🤖 [Antigravity] Autonomous evolution and self-correction phase initiated based on session intelligence. System engine performing internal checks and optimizations.')
 
+  for (const idea of ideas) {
+    if (idea.complexity === 'Low' || idea.complexity === 'Medium') {
       // Create Smoke Test Order (to be executed after bootstrap)
       await workOrderService.createOrder(
         'SMOKE_TEST',

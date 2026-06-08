@@ -454,13 +454,9 @@ export class Jules {
       console.warn('⚠️ [Jules] Knowledge merge failed:', err.message)
     }
 
-    // GitHub Docs Observation
-    console.log('👁️ [Jules] Scanning GitHub Docs...')
-    const { observeGithubDocs } = await import('./services/github_docs_observer')
-    const githubInsights = await observeGithubDocs('bmewburn/intelephense-docs', ['installation.md', 'configuration.md'])
-    if (githubInsights.length > 0) {
-      this.recordTask(`GitHub Docs: Observed ${githubInsights.length} files from Intelephense docs.`)
-    }
+    // GitHub Docs Observation (Phase 15: Local & Remote)
+    console.log('👁️ [Jules] Scanning GitHub & System Docs...')
+    await this.observeGithubDocs()
 
     // iCloud Knowledge Observation
     console.log('☁️ [Jules] Initiating iCloud Knowledge Scan...')

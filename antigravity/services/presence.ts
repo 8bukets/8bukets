@@ -22,12 +22,15 @@ export const PresenceSchema = z.object({
     mode: z.string()
   }),
   connectivity: z.object({
-    mongodb: z.object({ status: z.string(), latency: z.number() }),
-    supabase: z.object({ status: z.string(), latency: z.number() })
+    mongodb: z.object({ status: z.string(), latency: z.number(), metrics: z.any().optional() }),
+    supabase: z.object({ status: z.string(), latency: z.number(), metrics: z.any().optional() })
   }),
   git: z.object({
     open_prs: z.number(),
-    providers: z.array(z.string())
+    providers: z.array(z.string()),
+    github_metrics: z.any().optional(),
+    gitlab_metrics: z.any().optional(),
+    gitkraken_metrics: z.any().optional()
   }),
   jenkins_status: z.string().optional(),
   node_priority: z.number().optional(),
@@ -78,6 +81,18 @@ export class OnlinePresenceService {
       // 1. Fetch component health
       const dockerHealth = await checkDockerHealth()
       const prs = await gitProvider.listPullRequests()
+
+      const { getGitHubMetrics } = await import('./github_evolution')
+      const { getGitLabMetrics } = await import('./gitlab')
+      const { getGitKrakenMetrics } = await import('./gitkraken_metrics')
+      const { getMongoDBMetrics } = await import('./mongodb_metrics')
+      const { getSupabaseMetrics } = await import('./supabase_metrics')
+
+      const githubMetrics = await getGitHubMetrics()
+      const gitlabMetrics = await getGitLabMetrics()
+      const gitkrakenMetrics = await getGitKrakenMetrics()
+      const mongodbMetrics = await getMongoDBMetrics()
+      const supabaseMetrics = await getSupabaseMetrics()
 
       const start = Date.now()
       const coreHealth = await healthCheck()
@@ -148,12 +163,15 @@ export class OnlinePresenceService {
           mode: dockerHealth.mode
         },
         connectivity: {
-          mongodb: { status: coreHealth.mongodb, latency },
-          supabase: { status: coreHealth.supabase, latency }
+          mongodb: { status: coreHealth.mongodb, latency, metrics: mongodbMetrics },
+          supabase: { status: coreHealth.supabase, latency, metrics: supabaseMetrics }
         },
         git: {
           open_prs: prs.length,
-          providers: Array.from(new Set(prs.map(p => p.provider)))
+          providers: Array.from(new Set(prs.map(p => p.provider))),
+          github_metrics: githubMetrics,
+          gitlab_metrics: gitlabMetrics,
+          gitkraken_metrics: gitkrakenMetrics
         },
         system: {
           hostname: os.hostname(),
