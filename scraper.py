@@ -10,6 +10,7 @@ import time
 import os
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
+from concurrent.futures import ProcessPoolExecutor
 
 # Configure logging
 logging.basicConfig(
@@ -205,6 +206,7 @@ class MarkPositionScraperAsync:
     async def scrape(self):
         page_num = 1
         sem = asyncio.Semaphore(self.concurrency)
+        loop = asyncio.get_running_loop()
 
         # Headers
         headers = {
@@ -214,7 +216,8 @@ class MarkPositionScraperAsync:
         # Open files for incremental writing
         with open(self.output_json, 'w', encoding='utf-8') as json_f, \
              open(self.output_csv, 'w', newline='', encoding='utf-8') as csv_f, \
-             open(self.output_txt, 'w', encoding='utf-8') as txt_f:
+             open(self.output_txt, 'w', encoding='utf-8') as txt_f, \
+             ProcessPoolExecutor() as executor:
 
             # Initialize CSV
             csv_writer = csv.writer(csv_f)
@@ -243,7 +246,7 @@ class MarkPositionScraperAsync:
                                 active = False
                                 break
 
-                            tasks.append(self.fetch_and_parse(session, current_page, sem))
+                            tasks.append(self.fetch_and_parse(session, current_page, sem, executor))
 
                         if not tasks:
                             break
@@ -329,7 +332,7 @@ class MarkPositionScraperAsync:
 
         return is_first_item
 
-    async def fetch_and_parse(self, session, page_num, sem):
+    async def fetch_and_parse(self, session, page_num, sem, executor):
         async with sem:
             html = await self.fetch_page(session, page_num)
             if html:
