@@ -167,6 +167,9 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     { path: 'docs', type: 'Documentation', pattern: /\.md$/ },
     { path: 'app', type: 'UI Component', pattern: /\.tsx$|\.ts$/ },
     { path: 'web-app', type: 'UI Component', pattern: /\.tsx$|\.ts$/ },
+    { path: 'database', type: 'Database Schema', pattern: /\.sql$|\.json$/ },
+    { path: 'bin', type: 'Binary/Executable', pattern: /.*/ },
+    { path: 'terraform', type: 'Infrastructure', pattern: /\.tf$/ },
     { path: 'public', type: 'Asset', pattern: /.*/ }
   ]
 
@@ -471,14 +474,14 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
 
   const relevantBranches = branches.filter(b => {
     // Phase 12: Broadened filter to include more meaningful results
-    const hasMeaningfulResult = b.results && b.results !== 'N/A' && b.results.length > 10;
+    const hasMeaningfulResult = b.results && b.results !== 'N/A' && b.results.length > 5;
 
     if (!(b.knowledge || hasMeaningfulResult)) {
       return false;
     }
 
     // Generate unique ID for this insight
-    const insightId = `${b.name}|${b.results}|${b.knowledge || ''}`;
+    const insightId = `${b.name}|${b.category}|${b.results}|${b.knowledge || ''}`;
     if (seenInsights.has(insightId)) return false;
     seenInsights.add(insightId);
 
