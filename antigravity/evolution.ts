@@ -16,12 +16,14 @@ export async function evolve() {
   console.log('🧠 [Antigravity Evolution] Commencing cognitive analysis...')
   
   const suggestions: EvolutionMetric[] = []
-  const baseDir = path.join(process.cwd(), 'app')
+  const baseDir = process.cwd()
 
   // Recursive scan to find "bloated" or unoptimized patterns
   function scan(dir: string) {
     const files = fs.readdirSync(dir)
     for (const file of files) {
+      if (['node_modules', '.git', '.next', 'venv', '__pycache__', 'dist', 'build', '.npm-cache', 'scratch'].includes(file)) continue;
+
       const fullPath = path.join(dir, file)
       if (fs.statSync(fullPath).isDirectory()) {
         scan(fullPath)
@@ -121,11 +123,11 @@ export async function evolve() {
         }
 
         // Rule 11: Quantum Resistance Audit (Phase 13 Directive)
-        if (content.includes('signature') && !content.includes('quantum-resistant') && !content.includes('post-quantum')) {
+        if ((content.includes('signature') || content.includes('security') || content.includes('auth')) && !content.includes('quantum-resistant') && !content.includes('post-quantum')) {
           suggestions.push({
             file: fullPath.replace(process.cwd(), ''),
             complexity: lines,
-            suggestion: 'QUANTUM_VULNERABILITY: Cryptographic signature detected without documented quantum-resistant upgrade path.'
+            suggestion: 'QUANTUM_VULNERABILITY: Security-critical component detected without documented quantum-resistant upgrade path.'
           })
         }
 
@@ -135,6 +137,15 @@ export async function evolve() {
             file: fullPath.replace(process.cwd(), ''),
             complexity: lines,
             suggestion: 'NON_SOVEREIGN_DATA_CONFIG: MongoDB client initialization detected without APAC localized sovereignty configuration.'
+          })
+        }
+
+        // Rule 13: APAC Orchestration Compliance (Phase 13 Directive)
+        if (content.includes('apac') && !content.includes('getAPACEdgeOrchestratorData') && !fullPath.includes('apac_edge_orchestrator.ts')) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'MISSING_APAC_ORCHESTRATION: APAC-specific service detected without mandatory integration with APACEdgeOrchestrator for status reporting.'
           })
         }
       }

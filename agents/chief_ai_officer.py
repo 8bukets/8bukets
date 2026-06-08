@@ -135,7 +135,18 @@ class ChiefAIOfficerAgent(BaseAgent):
                     strategic_directives.append("ACTIVATE_PHASE_13_PROTOCOLS")
 
                 # Specifically target decentralized edge nodes if mentioned
-                if "asia-pacific" in sections_str or "edge node" in sections_str or "tokyo" in sections_str:
+                if any(city in sections_str for city in ["singapore", "tokyo", "sydney"]):
+                    if "DEPLOY_APAC_EDGE_NODES" not in strategic_directives:
+                        self.logger.info("CAIO [STRATEGY]: Specific APAC edge node expansion (Singapore, Tokyo, or Sydney) identified. Issuing deployment directive.")
+                        strategic_directives.append("DEPLOY_APAC_EDGE_NODES")
+                    if "MONITOR_APAC_LATENCY" not in strategic_directives:
+                        strategic_directives.append("MONITOR_APAC_LATENCY")
+                    if "ENFORCE_APAC_REGIONAL_COMPLIANCE" not in strategic_directives:
+                        strategic_directives.append("ENFORCE_APAC_REGIONAL_COMPLIANCE")
+                    if "PROVISION_SOVEREIGN_DATA_CLUSTERS" not in strategic_directives:
+                        strategic_directives.append("PROVISION_SOVEREIGN_DATA_CLUSTERS")
+
+                elif "asia-pacific" in sections_str or "edge node" in sections_str or "tokyo" in sections_str:
                     if "DEPLOY_APAC_EDGE_NODES" not in strategic_directives:
                         self.logger.info("CAIO [STRATEGY]: Asia-Pacific edge node expansion identified. Issuing deployment directive.")
                         strategic_directives.append("DEPLOY_APAC_EDGE_NODES")
