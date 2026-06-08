@@ -1,21 +1,26 @@
-from .base_agent import BaseAgent
-from typing import Dict, List
+from agents.base_agent import BaseAgent
 import random
 
 class CreativityAgent(BaseAgent):
     def __init__(self):
-        super().__init__("Creativity Agent")
+        super().__init__("Creativity")
 
-    def process(self, keywords: List[tuple]) -> List[str]:
-        self.log("Generating creative headlines...")
+    async def run(self, context: dict):
+        self.log("Brainstorming creative content ideas...")
+        analysis = context.get("analysis", {})
+        top_cats = [c[0] for c in analysis.get("top_categories", [])]
 
-        words = [w[0].title() for w in keywords]
-        if not words:
-            words = ["Cloud", "Future", "Tech"]
+        ideas = []
+        if top_cats:
+            # Idea 1: Top list
+            ideas.append(f"Top 10 {top_cats[0]} Trends You Missed")
 
-        headlines = [
-            f"Why {words[0]} is the New Gold",
-            f"The Secret Behind Oracle's {words[1] if len(words)>1 else 'Move'}",
-            f"10 Things You Didn't Know About {words[0]} and Google"
-        ]
-        return headlines
+            # Idea 2: Combination
+            if len(top_cats) >= 2:
+                ideas.append(f"How {top_cats[0]} Intersects with {top_cats[1]}")
+
+            # Idea 3: Deep Dive
+            ideas.append(f"The Ultimate Guide to {random.choice(top_cats)}")
+
+        context["creative_ideas"] = ideas
+        self.log(f"Generated {len(ideas)} ideas.")
