@@ -1,7 +1,9 @@
-## 2024-05-23 - BeautifulSoup SoupStrainer Behavior
-**Learning:** `SoupStrainer` is stricter than `find_all` when matching attributes with strings. While `find_all(class_='post')` matches "post category-tech", `SoupStrainer(class_='post')` does not. It requires regex (e.g., `re.compile(r'\bpost\b')`) to perform partial/word matches on attributes.
-**Action:** When using `SoupStrainer` for performance, always verify attribute matching logic with regex if the attribute value is a list (like class names).
-
-## 2024-05-23 - Asyncio Blocking with BeautifulSoup
-**Learning:** `BeautifulSoup` parsing is CPU-intensive and blocks the `asyncio` event loop. On pages with large HTML (simulated 5000 repetitions), parsing time can dominate. Offloading to `SoupStrainer` reduced parsing time by ~3x (14s to 5s in simulation).
-**Action:** Use `SoupStrainer` to parse only relevant sections of large HTML documents in async scrapers to minimize blocking time.
+## 2026-01-27 - Optimizing BeautifulSoup with SoupStrainer
+**Learning:** Parsing large HTML documents with `BeautifulSoup` is significantly faster when using `SoupStrainer` to limit the parse tree to only relevant tags (e.g., 'article'), especially when combined with replacing CSS selectors (`select_one`) with direct tag lookups (`find`).
+**Action:** When scraping specific elements from large pages, always check if `SoupStrainer` can be used to discard unnecessary HTML structure before full parsing.
+## 2025-01-26 - SoupStrainer with html.parser
+**Learning:** SoupStrainer does not improve parsing performance significantly when used with 'html.parser' because the parser still tokenizes the entire document. It may save memory but can be CPU neutral or even slower due to overhead. Measurable gains require 'lxml'.
+**Action:** Only use SoupStrainer for performance if 'lxml' is available. Otherwise, consider regex splitting for massive documents if strict correctness is not required.
+## 2024-05-22 - Data Reuse in Analytics
+**Learning:** `analytics.py` was redundantly parsing URLs to extract domains, even though `scraper.py` already pre-calculated and stored this information. This caused a significant performance overhead (~40% of user CPU time).
+**Action:** Always check if upstream data sources (like scraper output) already contain the derived data needed for analysis before re-calculating it.
