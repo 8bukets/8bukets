@@ -1,20 +1,29 @@
-from .base_agent import BaseAgent
-from typing import Dict, List
+from agents.base_agent import BaseAgent
 
 class MonetizationAgent(BaseAgent):
     def __init__(self):
-        super().__init__("Monetization Agent")
+        super().__init__("Monetization")
 
-    def process(self, research: Dict) -> List[str]:
-        self.log("Brainstorming monetization...")
+    async def run(self, context: dict):
+        self.log("Scanning for monetization opportunities...")
+        data = context.get("raw_data", [])
 
-        strategies = [
-            "Affiliate marketing for Google Cloud courses",
-            "Consulting services for Oracle-to-GCP migration",
-            "Premium newsletter for multi-cloud architecture"
-        ]
+        commercial_keywords = ["buy", "shop", "store", "sale", "price", "deal", "discount", "amazon", "ebay", "course", "premium"]
 
-        if "Canada" in str(research):
-            strategies.append("Target Canadian enterprise sector with localization services.")
+        opportunities = []
+        for post in data:
+            title = (post.get("title") or "").lower()
+            link = (post.get("external_link") or "").lower()
 
-        return strategies
+            # Simple keyword matching
+            matched_keywords = [k for k in commercial_keywords if k in title or k in link]
+
+            if matched_keywords:
+                opportunities.append({
+                    "title": post.get("title"),
+                    "link": post.get("external_link"),
+                    "keywords": matched_keywords
+                })
+
+        context["monetization_ops"] = opportunities
+        self.log(f"Found {len(opportunities)} potential monetization opportunities.")
