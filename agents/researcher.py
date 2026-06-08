@@ -24,7 +24,6 @@ class ResearcherAgent(BaseAgent):
     def _scrape_blog_task(self, limit, output_file):
         """Task to scrape blog content."""
         try:
-            # We assume scrape_informatic.py is in the root directory
             cmd = [sys.executable, "scrape_informatic.py", "-n", str(limit), "-o", output_file]
             subprocess.run(cmd, check=True)
 
