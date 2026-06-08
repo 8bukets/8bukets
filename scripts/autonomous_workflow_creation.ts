@@ -136,7 +136,7 @@ jobs:
 # of a GitHub Actions runner, we inject the \`MACBOOK_CLOUD_SIMULATION: true\`
 # environment variable. This simulation flag instructs the underlying
 # scripts to bypass local machine checks (such as verifying the presence
-# of Docker Desktop, GitLab CI runners, or specific GUI applications like
+# of Docker Desktop, Docker Cloud, GitLab CI runners, or specific GUI applications like
 # GitKraken) and instead assume a fully capable, cloud-connected operating
 # environment. This is essential for the system to successfully fetch the
 # latest state from the remote blackboard and synchronize agent memories.
