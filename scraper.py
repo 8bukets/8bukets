@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-from bs4 import BeautifulSoup, Comment
+from bs4 import BeautifulSoup
 import json
 import csv
 import re
