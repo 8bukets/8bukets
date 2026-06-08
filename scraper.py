@@ -47,6 +47,11 @@ def setup_ux_logging():
     logging.root.setLevel(logging.INFO)
 
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+# Clear existing handlers if any (e.g. from previous basicConfig calls in interactive sessions)
+if logger.hasHandlers():
+    logger.handlers.clear()
+logger.addHandler(handler)
 
 BASE_URL = "https://markposition.wordpress.com/"
 
