@@ -404,7 +404,7 @@ LSP: textDocument/hover
 Keybinding: Ctrl+K Ctrl+I | mouse-over
 This feature provides information about a symbol when hovering over a reference to that symbol in the current file. The information provided can include the type of the symbol, it's signature if it is a function or method, and any associated documentation.
 
-*Hover shows type information and documentation for a symbol*
+*Hover tooltip showing PHP symbol type information and documentation*
 
 #### Highlight
 Availability: FREE
