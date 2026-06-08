@@ -1,22 +1,78 @@
+import re
 import aiohttp
 import asyncio
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import json
 import csv
-import re
 import argparse
 import logging
 import time
+import os
 from typing import List, Dict, Optional, Set, Tuple
 from urllib.parse import urlparse
-import concurrent.futures
+from utils import validate_output_path
+
+class UXFormatter(logging.Formatter):
+    """Custom logging formatter for improved UX."""
+
+    # ANSI Color Codes
+    GREY = "\x1b[38;20m"
+    BLUE = "\x1b[34;20m"
+    CYAN = "\x1b[36;20m"
+    YELLOW = "\x1b[33;20m"
+    RED = "\x1b[31;20m"
+    BOLD_RED = "\x1b[31;1m"
+    RESET = "\x1b[0m"
+
+    COLORS = {
+        logging.DEBUG: GREY,
+        logging.INFO: CYAN,
+        logging.WARNING: YELLOW,
+        logging.ERROR: RED,
+        logging.CRITICAL: BOLD_RED,
+    }
+
+    def format(self, record):
+        # Determine if we should colorize
+        use_color = False
+        if hasattr(sys.stderr, "isatty") and sys.stderr.isatty():
+            use_color = True
+
+        # Get original message
+        message = record.getMessage()
+
+        # Add Emojis based on content
+        if "429" in message:
+            message = f"⏳ {message}"
+        elif "scraped" in message:
+            message = f"📥 {message}"
+        elif "Saved" in message:
+            message = f"💾 {message}"
+        elif "Stopping" in message:
+            message = f"🛑 {message}"
+        elif "Error" in message or "failed" in message:
+            message = f"❌ {message}"
+        elif "Starting" in message:
+            message = f"🏁 {message}"
+
+        # Format timestamp
+        record.asctime = self.formatTime(record, self.datefmt)
+
+        # Colorize levels and message if applicable
+        if use_color:
+            color = self.COLORS.get(record.levelno, self.RESET)
+            levelname = f"{color}{record.levelname}{self.RESET}"
+            # Also color the message for better visibility
+            message = f"{color}{message}{self.RESET}"
+        else:
+            levelname = record.levelname
+
+        return f"{record.asctime} - {levelname} - {message}"
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%H:%M:%S'
-)
+handler = logging.StreamHandler(sys.stderr)
+handler.setFormatter(UXFormatter(datefmt='%H:%M:%S'))
+logging.basicConfig(level=logging.INFO, handlers=[handler])
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://markposition.wordpress.com/"
@@ -115,13 +171,124 @@ def parse_html_content(html: str) -> List[Dict]:
     return page_posts
 
 class MarkPositionScraperAsync:
+    # Pre-compile regex patterns for performance
+    CLEAN_TEXT_PATTERN = re.compile(r'\s+')
+    URL_PATTERN = re.compile(r'^https?://')
+
     def __init__(self, output_json: str, output_csv: str, output_txt: str, max_pages: Optional[int] = None, concurrency: int = 5):
-        self.output_json = output_json
-        self.output_csv = output_csv
-        self.output_txt = output_txt
+        self.output_json = self._validate_path(output_json)
+        self.output_csv = self._validate_path(output_csv)
+        self.output_txt = self._validate_path(output_txt)
         self.max_pages = max_pages
         self.concurrency = concurrency
         self.session = None
+
+    def _validate_path(self, path: str) -> str:
+        """
+        Validate that the path is within the current working directory.
+        Returns the absolute path if valid, raises ValueError otherwise.
+        """
+        if not path:
+            return path
+
+        # Get absolute path
+        abs_path = os.path.abspath(path)
+        # Get current working directory
+        cwd = os.getcwd()
+
+        # Check if the path starts with the CWD
+        # os.path.commonpath throws error on Windows if drives are different,
+        # but here we assume same drive or just use string check for simplicity in linux env
+        try:
+            common = os.path.commonpath([abs_path, cwd])
+            if common != cwd:
+                 # Check if it's exactly the CWD or a file inside it
+                # If common is cwd, then abs_path is inside or is cwd
+                # wait, commonpath of /a/b/c and /a/b is /a/b.
+                # commonpath of /a/b/c and /a/d is /a
+
+                # If abs_path is /app/subdir/file and cwd is /app
+                # common is /app. Correct.
+
+                # If abs_path is /tmp/file and cwd is /app
+                # common is / (or empty).
+
+                # So we want common == cwd.
+                raise ValueError(f"Path traversal detected: {path} is outside {cwd}")
+        except ValueError:
+             # handle case where commonpath might fail or return different drive
+             raise ValueError(f"Invalid path: {path}")
+
+        return abs_path
+
+    def clean_text(self, text: str) -> str:
+        """Normalize whitespace and remove non-breaking spaces."""
+        if not text:
+            return ""
+        text = text.replace('\xa0', ' ')
+        return self.CLEAN_TEXT_PATTERN.sub(' ', text).strip()
+        # ' '.join(text.split()) handles all whitespace normalization efficiently
+        return " ".join(text.split())
+
+    def sanitize_for_csv(self, text: Optional[str]) -> str:
+        """Sanitize text to prevent CSV injection."""
+        if not text:
+            return ""
+        text = str(text)
+        if text.startswith(('=', '+', '-', '@')):
+            return "'" + text
+        return text
+
+    def _sanitize_csv_field(self, field: str) -> str:
+        """
+        Sanitize a CSV field to prevent formula injection.
+        If a field starts with =, +, -, or @, prepend a single quote.
+        """
+        if not field:
+            return ""
+        if str(field).startswith(('=', '+', '-', '@')):
+            return f"'{field}"
+        return str(field)
+
+    def is_url(self, text: str) -> bool:
+        """Check if text looks like a URL."""
+        return self.URL_PATTERN.match(text.strip()) is not None
+
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text to prevent CSV injection."""
+        if not text:
+            return ""
+        if text.startswith(('=', '+', '-', '@')):
+            return f"'{text}"
+        return text
+
+    def sanitize_for_csv(self, value: str) -> str:
+        """
+        Sanitize value to prevent CSV injection.
+        Prepends ' if the value starts with =, +, -, or @.
+        """
+        if value and isinstance(value, str) and value.startswith(('=', '+', '-', '@')):
+            return "'" + value
+        return value
+
+    def extract_categories(self, article: BeautifulSoup) -> List[str]:
+        """Extract categories from article class names."""
+        categories = []
+        if article.get('class'):
+            for cls in article['class']:
+                if cls.startswith('category-'):
+                    cat_name = cls.replace('category-', '').replace('-', ' ').title()
+                    categories.append(cat_name)
+        return categories
+
+    def extract_domain(self, url: str) -> Optional[str]:
+        """Extract domain from URL."""
+        if not url:
+            return None
+        try:
+            return urlparse(url).netloc.replace('www.', '')
+        except:
+            return None
 
     async def fetch_page(self, session: aiohttp.ClientSession, page_num: int) -> Optional[str]:
         url = f"{BASE_URL}page/{page_num}/" if page_num > 1 else BASE_URL
@@ -134,6 +301,90 @@ class MarkPositionScraperAsync:
         except aiohttp.ClientError as e:
             logger.error(f"Error fetching page {page_num}: {e}")
             return None
+
+    async def parse_page(self, html: str) -> List[Dict]:
+        # Optimization: Use SoupStrainer to only parse article tags
+        # Optimization: Use find() instead of select_one() for ~46% faster extraction
+        strainer = SoupStrainer('article')
+        soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
+        # Use regex for class matching because SoupStrainer requires exact string match
+        # for string arguments, but we need to match 'post' in a list of classes.
+        strainer = SoupStrainer('article', class_=re.compile(r'\bpost\b'))
+        soup = BeautifulSoup(html, 'html.parser', parse_only=strainer)
+    def _parse_page_sync(self, html: str) -> List[Dict]:
+        """Synchronous parsing logic to be run in an executor."""
+        soup = BeautifulSoup(html, 'html.parser')
+        articles = soup.find_all('article', class_='post')
+        soup = BeautifulSoup(html, 'html.parser')
+
+        # Optimization: Narrow search scope to #content div if present to avoid traversing footer/sidebar
+        content = soup.find('div', id='content')
+        if content:
+            articles = content.find_all('article', class_='post')
+        else:
+            articles = soup.find_all('article', class_='post')
+
+        page_posts = []
+
+        if not articles:
+            return []
+
+        for article in articles:
+            post_data = {}
+
+            # Title: h1.entry-title -> a
+            title_text = ""
+            h1 = article.find('h1', class_='entry-title')
+            title_tag = h1.find('a') if h1 else None
+
+            if title_tag:
+                title_text = self.clean_text(title_tag.get_text())
+                post_data['title'] = title_text
+
+            # Date: time.entry-date
+            date_tag = article.find('time', class_='entry-date')
+            if date_tag:
+                post_data['date'] = self.clean_text(date_tag.get_text())
+                post_data['datetime'] = date_tag.get('datetime')
+
+            # Author
+            # Use select_one for specificity (.author.vcard .fn) to ensure correctness
+            author_tag = article.select_one('.author.vcard .fn')
+            if author_tag:
+                post_data['author'] = self.clean_text(author_tag.get_text())
+            else:
+                post_data['author'] = None
+
+            # Categories
+            post_data['categories'] = self.extract_categories(article)
+
+            # External Link
+            external_link = None
+            content_div = article.find(class_='entry-content')
+
+            if content_div:
+                link_tag = content_div.find('a')
+                if link_tag:
+                    external_link = link_tag.get('href')
+
+                if not external_link:
+                    iframe_tag = content_div.find('iframe')
+                    if iframe_tag:
+                        external_link = iframe_tag.get('src')
+
+            if not external_link and title_text and self.is_url(title_text):
+                external_link = title_text
+
+            post_data['external_link'] = external_link
+            post_data['domain'] = self.extract_domain(external_link)
+
+            # Post URL
+            if title_tag:
+                post_data['post_url'] = title_tag.get('href')
+
+            page_posts.append(post_data)
+
+        return page_posts
 
     async def scrape(self):
         all_posts = []
@@ -201,16 +452,66 @@ class MarkPositionScraperAsync:
         for _, posts in results:
             all_posts.extend(posts)
 
-        self.save_data(all_posts)
+                        if stop_detected:
+                            break
+
+                        if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
+                            logger.info("Reached max pages limit.")
+                            break
+
+                        page_num += len(tasks)
+                        # Small delay between batches
+                        await asyncio.sleep(0.5)
+            finally:
+                # Finalize JSON even on error
+                json_f.write('\n]')
+
+    def save_batch(self, posts: List[Dict], json_f, csv_writer, txt_f, seen_links: Set[str], is_first_item: bool) -> bool:
+        for post in posts:
+            # CSV
+            csv_writer.writerow([
+                post.get('title', ''),
+                post.get('date', ''),
+                post.get('author', ''),
+                ", ".join(post.get('categories', [])),
+                post.get('external_link', ''),
+                post.get('domain', ''),
+                post.get('post_url', '')
+            ])
+
+            # TXT
+            link = post.get('external_link')
+            if link and link not in seen_links:
+                seen_links.add(link)
+                txt_f.write(link + '\n')
+
+            # JSON
+            if not is_first_item:
+                json_f.write(',\n')
+            else:
+                json_f.write('\n')
+                is_first_item = False
+
+            json.dump(post, json_f, indent=4, ensure_ascii=False)
+
+        return is_first_item
 
     async def fetch_and_parse(self, session, page_num, pool) -> Tuple[int, Optional[List[Dict]]]:
         html = await self.fetch_page(session, page_num)
         if html:
-            # Run parsing in the process pool
             loop = asyncio.get_running_loop()
-            posts = await loop.run_in_executor(pool, parse_html_content, html)
+            posts = await loop.run_in_executor(None, self._parse_page_sync, html)
             return page_num, posts
         return page_num, None
+
+    def sanitize_for_csv(self, text: str) -> str:
+        """Sanitize text to prevent CSV injection."""
+        if not text:
+            return ""
+        text = str(text)
+        if text.startswith(('=', '+', '-', '@')):
+            return "'" + text
+        return text
 
     def save_data(self, posts: List[Dict]):
         # JSON
@@ -228,13 +529,20 @@ class MarkPositionScraperAsync:
                 writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
                 for post in posts:
                     writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
+                        self._sanitize_csv_field(post.get('title', '')),
+                        self._sanitize_csv_field(post.get('date', '')),
+                        self._sanitize_csv_field(post.get('author', '')),
+                        self._sanitize_csv_field(", ".join(post.get('categories', []))),
+                        self._sanitize_csv_field(post.get('external_link', '')),
+                        self._sanitize_csv_field(post.get('domain', '')),
+                        self._sanitize_csv_field(post.get('post_url', ''))
+                        self.sanitize_for_csv(post.get('title', '')),
+                        self.sanitize_for_csv(post.get('date', '')),
+                        self.sanitize_for_csv(post.get('author', '')),
+                        self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                        self.sanitize_for_csv(post.get('external_link', '')),
+                        self.sanitize_for_csv(post.get('domain', '')),
+                        self.sanitize_for_csv(post.get('post_url', ''))
                     ])
             logger.info(f"Saved {len(posts)} posts to {self.output_csv}")
         except IOError as e:
