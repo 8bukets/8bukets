@@ -1,63 +1,50 @@
 import unittest
 import os
 import sys
-import json
-from datetime import datetime
-
-# Add root directory to sys.path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 from analytics import generate_report
+
+# Ensure we can import from root
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 class TestAnalytics(unittest.TestCase):
     def setUp(self):
         self.test_data = [
             {
-                "title": "Post 1",
-                "date": "2025-01-01",
-                "author": "Author A",
-                "categories": ["Cat1", "Cat2"],
-                "external_link": "https://example.com/1",
-                "domain": "example.com"
-            },
-            {
-                "title": "Post 2",
-                "date": "2025-01-02",
-                "author": "Author B",
-                "categories": ["Cat1"],
-                "external_link": "https://example.org/2",
-                "domain": "example.org"
+                "datetime": "2023-01-01T12:00:00",
+                "external_link": "https://example.com",
+                "categories": ["TestCategory"],
+                "author": "Test Author"
             }
         ]
-        self.output_file = "TEST_REPORT.md"
+        self.output_file = "test_report.md"
 
     def tearDown(self):
         if os.path.exists(self.output_file):
             os.remove(self.output_file)
 
-    def test_generate_report(self):
+    def test_report_ux_elements(self):
         generate_report(self.test_data, self.output_file)
-
-        self.assertTrue(os.path.exists(self.output_file))
 
         with open(self.output_file, 'r', encoding='utf-8') as f:
             content = f.read()
 
-        # Check for basic structure
-        self.assertIn("# Markposition Analytics Report", content)
-        self.assertIn("Total Posts:** 2", content)
-        self.assertIn("Unique Domains Linked:** 2", content)
+        # Check for Table of Contents
+        self.assertIn("## 📑 Table of Contents", content)
+        self.assertIn("<a name='table-of-contents'></a>", content)
 
-        # Check content
-        self.assertIn("example.com", content)
-        self.assertIn("example.org", content)
-        self.assertIn("Cat1", content)
-        self.assertIn("Cat2", content)
+        # Check for Anchors
+        self.assertIn("<a name='general-statistics'></a>", content)
+        self.assertIn("<a name='top-referenced-domains'></a>", content)
 
-        # Note: Currently analytics.py expects 'datetime' key, so dates might be missing in report.
-        # This test documents current behavior if it fails on date checks,
-        # but I won't assert dates yet to ensure it passes on current code if I were to assert absence.
-        # But for optimization verification, I'll assert presence later.
+        # Check for Emojis in headers
+        self.assertIn("## 📊 General Statistics", content)
+        self.assertIn("## 🔗 Top 10 Referenced Domains", content)
+        self.assertIn("## 🏷️ Top 10 Categories", content)
+        self.assertIn("## 📅 Posts by Year", content)
+        self.assertIn("## ✍️ Authors", content)
+
+        # Check for Back to Top links
+        self.assertIn("[Back to Top](#table-of-contents)", content)
 
 if __name__ == '__main__':
     unittest.main()

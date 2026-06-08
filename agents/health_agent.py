@@ -1,41 +1,46 @@
-import aiohttp
-import asyncio
-from .base_agent import BaseAgent
+from agents.base_agent import BaseAgent
+import os
+import shutil
 
 class HealthCheckAgent(BaseAgent):
     def __init__(self):
-        super().__init__("Health Check Agent")
+        super().__init__("HealthCheck")
 
-    async def check_url(self, session, url):
+    async def run(self, context: dict):
+        self.log("Performing health checks...")
+
+        health_status = {"healthy": True, "issues": []}
+
+        # Check files
+        expected_files = ["links.json", "links.csv"]
+        for f in expected_files:
+            if not os.path.exists(f):
+                health_status["healthy"] = False
+                health_status["issues"].append(f"Missing file: {f}")
+            else:
+                size = os.path.getsize(f)
+                if size == 0:
+                    health_status["healthy"] = False
+                    health_status["issues"].append(f"Empty file: {f}")
+
+        # Check report generation
+        report = context.get("report_file")
+        if report and not os.path.exists(report):
+            health_status["healthy"] = False
+            health_status["issues"].append("Report was not generated.")
+
+        # Disk usage check (basic)
         try:
-            async with session.head(url, allow_redirects=True, timeout=5) as response:
-                return url, response.status
-        except Exception:
-            return url, "Error"
+            total, used, free = shutil.disk_usage(".")
+            if free < 1024 * 1024 * 10: # Less than 10MB
+                health_status["healthy"] = False
+                health_status["issues"].append("Low disk space.")
+        except:
+            pass
 
-    async def check_links(self, links):
-        async with aiohttp.ClientSession() as session:
-            tasks = [self.check_url(session, link) for link in links]
-            return await asyncio.gather(*tasks)
-
-    def run(self):
-        self.log("Starting health check on recent links...")
-        if not self.data:
-            return
-
-        # Check only top 10 recent links to save time/resources
-        recent_links = [p.get('external_link') for p in self.data if p.get('external_link')][:10]
-
-        # Async run wrapper
-        loop = asyncio.get_event_loop()
-        if loop.is_running():
-            # Should not happen in standard script execution but safe handling
-            results = asyncio.run(self.check_links(recent_links))
+        if health_status["healthy"]:
+            self.log("System is HEALTHY.")
         else:
-            results = loop.run_until_complete(self.check_links(recent_links))
+            self.log(f"System UNHEALTHY: {', '.join(health_status['issues'])}")
 
-        self.results = {
-            "checked_count": len(results),
-            "statuses": {str(link): status for link, status in results}
-        }
-        self.log("Health check complete.")
+        context["health"] = health_status

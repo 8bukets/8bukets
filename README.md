@@ -1,5 +1,7 @@
 # Markposition Scraper & Analytics
 
+Maintained by Filip Keser (ORCID: [https://orcid.org/0000-0003-2645-2585](https://orcid.org/0000-0003-2645-2585))
+
 A robust, asynchronous toolset for scraping and analyzing data from `https://markposition.wordpress.com/`.
 
 ## Supabase Configuration

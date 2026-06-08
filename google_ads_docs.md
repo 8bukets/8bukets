@@ -55,7 +55,7 @@ To set a target CPV bid, you enter the average price you want to pay for a view 
 
 ## Deliver better results with automated bidding
 
-Source: [https://business.google.com/uk/ad-tools/bidding/?hl=en](https://business.google.com/uk/ad-tools/bidding/?hl=en)
+Source: [https://business.google.com/uk/ad-tools/bidding/](https://business.google.com/uk/ad-tools/bidding/)
 
 # Deliver better results with automated bidding
 
@@ -154,7 +154,7 @@ The Experiments page in Google Ads can help you create, manage and optimise your
 
 ## Find answers andinspiration
 
-Source: [https://business.google.com/uk/resources/?hl=en](https://business.google.com/uk/resources/?hl=en)
+Source: [https://business.google.com/uk/resources/](https://business.google.com/uk/resources/)
 
 # Find answers andinspiration
 
@@ -544,9 +544,9 @@ Google Ads
 
 ---
 
-## https://developers.google.com/ad-manager?hl=en
+## https://developers.google.com/ad-manager
 
-Source: [https://developers.google.com/ad-manager?hl=en](https://developers.google.com/ad-manager?hl=en)
+Source: [https://developers.google.com/ad-manager](https://developers.google.com/ad-manager)
 
 - Home
 - Products
@@ -564,9 +564,9 @@ Source: [https://developers.google.com/ad-manager?hl=en](https://developers.goog
 
 ---
 
-## https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en
+## https://developers.google.com/ad-manager/dynamic-ad-insertion
 
-Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en](https://developers.google.com/ad-manager/dynamic-ad-insertion?hl=en)
+Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion](https://developers.google.com/ad-manager/dynamic-ad-insertion)
 
 - Home
 - Products
@@ -592,9 +592,9 @@ To start using DAI, select one of the following integrations:
 
 ---
 
-## https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en
+## https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service
 
-Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service?hl=en)
+Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service)
 
 - Home
 - Products
@@ -628,9 +628,9 @@ For detailed instructions on how to implement a client video player, using the D
 
 ---
 
-## https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en
+## https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving
 
-Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving?hl=en)
+Source: [https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving)
 
 - Home
 - Products
@@ -691,7 +691,7 @@ For details on livestream and VOD, see the following workflows:
 
       Save and categorize content based on your preferences.
 
-Source: [https://developers.google.com/ad-manager/api/start?hl=en](https://developers.google.com/ad-manager/api/start?hl=en)
+Source: [https://developers.google.com/ad-manager/api/start](https://developers.google.com/ad-manager/api/start)
 
 Looking for a REST API? The Ad Manager API (Beta) is now available.
 
@@ -853,7 +853,7 @@ If you need help, visit our Support page.
 
 ## Learn more, do more.
 
-Source: [https://admanager.google.com/home/resources/?hl=en](https://admanager.google.com/home/resources/?hl=en)
+Source: [https://admanager.google.com/home/resources/](https://admanager.google.com/home/resources/)
 
 # Learn more, do more.
 
@@ -1102,7 +1102,7 @@ Learn how global publishers are finding success using Ad Manager to power their 
 
       Save and categorize content based on your preferences.
 
-Source: [https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en](https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview?hl=en)
+Source: [https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview](https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview)
 
 - Home
 - Documentation

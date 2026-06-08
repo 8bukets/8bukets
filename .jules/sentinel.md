@@ -1,12 +1,11 @@
-## 2026-01-27 - Path Traversal in CLI Output Arguments
-**Vulnerability:** CLI tools (`scraper.py`) accepted output file paths directly from arguments without validation, allowing arbitrary file writes via path traversal (e.g., `../file.json`).
-**Learning:** Python's `open()` does not sandbox file access; CLI tools accepting paths must explicitly validate them against a root directory.
-**Prevention:** Use `os.path.abspath` and `os.path.commonpath` to enforce that resolved paths remain within the intended working directory.
-# Sentinel Journal
-
-This journal tracks critical security learnings and vulnerability fixes.
-
-## 2024-10-27 - [Hardcoded Credentials in Developer Agent]
-**Vulnerability:** The `DeveloperAgent` was generating Python code snippets with hardcoded database credentials (`password="welcome"`).
-**Learning:** Hardcoded credentials in example code are often copy-pasted into production by developers, leading to security breaches.
-**Prevention:** All generated code examples must use environment variables or secret management systems for credentials. Modified `DeveloperAgent` to use `os.environ.get`.
+<<<<<<< sentinel/fix-csv-injection-2739836513252277633
+## 2025-02-18 - CSV Injection in Scraper Output
+**Vulnerability:** The scraper directly wrote unsanitized user content (titles, authors, categories) into a CSV file. Malicious content starting with `=`, `+`, `-`, or `@` could execute formulas when opened in spreadsheet software.
+**Learning:** Data extracted from web pages, even if seemingly harmless text like "Category", can contain payloads targeting the *viewer* of the data (in this case, an analyst using Excel).
+**Prevention:** Always sanitize data before writing to CSV. Prepend a single quote `'` to fields starting with dangerous characters (`=`, `+`, `-`, `@`) to force them to be treated as strings.
+=======
+## 2024-05-22 - [CLI Path Traversal]
+**Vulnerability:** `scraper.py` and `analytics.py` allowed writing output files to arbitrary paths via CLI arguments (e.g., `../evil.json`).
+**Learning:** Even local CLI tools can be vectors for path traversal if they accept file paths as arguments without validation, especially if wrapped by other systems.
+**Prevention:** Implemented `validate_output_path` in `utils.py` to enforce that output paths are within the current working directory using `os.path.abspath` and `os.path.commonpath`.
+>>>>>>> jules/scraper-markposition-17752547678215960211

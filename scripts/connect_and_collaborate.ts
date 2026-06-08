@@ -1,5 +1,11 @@
-import { execSync } from 'child_process';
-import * as fs from 'fs';
+import { exec } from 'child_process';
+import * as fs from 'fs/promises';
+import { promisify } from 'util';
+import { syncCollaborationState, triggerEcosystemCollaboration } from '../antigravity/services/collaboration';
+import { jules } from '../antigravity/jules';
+import { onlinePresence } from '../antigravity/services/presence';
+
+const execAsync = promisify(exec);
 
 async function main() {
   console.log('Initiating autonomous Docker sovereignty audit and stakeholder collaboration sync...');
@@ -12,23 +18,39 @@ async function main() {
 
   try {
     console.log('Running docker info...');
-    state.dockerInfo = execSync('docker info', { encoding: 'utf-8' });
+    const { stdout: infoOutput } = await execAsync('docker info');
+    state.dockerInfo = infoOutput;
+
+    console.log('Running docker ps...');
+    const { stdout: psOutput } = await execAsync('docker ps');
+    state.dockerPs = psOutput;
   } catch (error: any) {
-    console.error('Failed to run docker info:', error.message);
-    state.dockerInfo = 'Error: ' + error.message;
+    console.warn('⚠️ [Jules] Docker not running or inaccessible:', error.message);
+    state.dockerInfo = state.dockerInfo || ('Error: ' + error.message);
   }
 
-  try {
-    console.log('Running docker ps...');
-    state.dockerPs = execSync('docker ps', { encoding: 'utf-8' });
-  } catch (error: any) {
-    console.error('Failed to run docker ps:', error.message);
-    state.dockerPs = 'Error: ' + error.message;
-  }
+  // 2. Synchronize presence and collaboration context
+  console.log('📡 [Jules] Synchronizing online presence...');
+  await onlinePresence.syncPresence();
+
+  console.log('🤝 [Jules] Synchronizing collaboration state...');
+  await jules.syncCollaboration();
 
   const outputPath = 'autonomous_state.json';
-  fs.writeFileSync(outputPath, JSON.stringify(state, null, 2));
+  await fs.writeFile(outputPath, JSON.stringify(state, null, 2));
   console.log(`Audit complete. State written to ${outputPath}`);
+
+  console.log('Running engine system collaboration sync...');
+  try {
+    await syncCollaborationState();
+    console.log('Engine collaboration sync complete.');
+
+    console.log('Triggering ecosystem collaboration...');
+    await triggerEcosystemCollaboration();
+    console.log('Ecosystem collaboration triggered successfully.');
+  } catch (error: any) {
+     console.error('Failed to sync or trigger collaboration state:', error.message);
+  }
 }
 
 main().catch(console.error);

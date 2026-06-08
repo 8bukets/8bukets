@@ -34,6 +34,11 @@ export async function evolve() {
         const content = fs.readFileSync(fullPath, 'utf8')
         const lines = content.split('\n').length
 
+        // Phase 12 Directive: Skip components with 'use cache'
+        if (content.includes("'use cache'") || content.includes('"use cache"')) {
+          return
+        }
+
         // Rule 2: Detect large files that should be refactored
         if (lines > 150) {
           suggestions.push({
@@ -69,6 +74,15 @@ export async function evolve() {
             suggestion: 'TYPE_SAFETY_VIOLATION: usage of "any" type detected.'
           })
         }
+
+        // Rule 5: Async Hygiene - Detect sync fs in async contexts
+        if (content.includes('async function') && (content.includes('fs.readFileSync') || content.includes('fs.writeFileSync') || content.includes('fs.existsSync'))) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'ASYNC_HYGIENE_VIOLATION: Synchronous fs operation detected inside an asynchronous function. This blocks the event loop. Refactor to use fs.promises.'
+          })
+        }
       }
     }
   }
@@ -91,6 +105,13 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
   for (const s of suggestions) {
     const fullPath = path.join(process.cwd(), s.file)
     let content = fs.readFileSync(fullPath, 'utf8')
+
+    // Phase 12 Directive: Upgrade Phase 9 references
+    if (content.includes('Phase 9')) {
+      logAutonomousAction(` - Upgrading Phase 9 references in ${s.file} to Phase 12`, 'info')
+      content = content.replace(/Phase 9/g, 'Phase 12')
+      fs.writeFileSync(fullPath, content)
+    }
 
     if (s.suggestion.startsWith('MISSING_CACHE_DIRECTIVE')) {
       fs.writeFileSync(fullPath, content)

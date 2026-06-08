@@ -2,7 +2,7 @@ name: Continuous Autonomous Cloud Presence
 
 on:
   schedule:
-    - cron: '*/5 * * * *' # Every 5 minutes for rapid persistent connection
+    - cron: '*/2 * * * *' # Every 5 minutes for rapid persistent connection
   workflow_dispatch: # Allows manual trigger
 
 permissions:
@@ -20,7 +20,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 22
           cache: 'npm'
 
       - name: Setup Python
@@ -42,26 +42,8 @@ jobs:
       - name: Initial Diagnostic Health Check
         run: npm run test || echo "Continuing workflow even with failing tests"
 
-      - name: Ecosystem Collaboration Sync
-        env:
-          SYSTEM_AUTH_TOKEN: ${{ secrets.SYSTEM_AUTH_TOKEN || 'default_dev_token' }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN || secrets.GITHUB_ACTIONS_TOKEN }}
-          MACBOOK_CLOUD_SIMULATION: true
-        run: npm run connect
-
-      - name: Execute Autonomous Engine (Cloud Mode)
-        run: python3 autonomous_engine.py --engine cloud --skip-scraper
-        env:
-          MONGODB_URI: ${{ secrets.MONGODB_URI }}
-          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          SYSTEM_AUTH_TOKEN: ${{ secrets.SYSTEM_AUTH_TOKEN || 'default_dev_token' }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Execute Unified Autonomous Cycle (Sync & Work)
-        run: npm run daily
+      - name: Execute Unified Autonomous Sync & Work Cycle
+        run: npx tsx scripts/autonomous_sync.ts
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
