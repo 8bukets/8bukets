@@ -73,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const handleSearch = (e) => {
             const term = e.target.value.toLowerCase();
             const articles = articleList.getElementsByTagName('article');
-
             Array.from(articles).forEach(article => {
                 // Search in the entire text content of the article
                 const text = article.textContent.toLowerCase();
