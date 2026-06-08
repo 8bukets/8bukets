@@ -1,3 +1,13 @@
-## 2025-02-04 - DOM Traversal Bottleneck in Search
-**Learning:** The synchronous DOM traversal (`getElementsByTagName` + `forEach`) in the search input event listener was blocking the main thread on every keystroke, causing potential UI jank.
-**Action:** Applied debouncing (300ms) to the search input handler. Future UI interactions involving list filtering should always be debounced or throttled.
+# BOLT'S JOURNAL
+
+This journal documents critical performance learnings, patterns, and anti-patterns discovered while optimizing the codebase.
+
+## Format
+Each entry should follow this format:
+`## YYYY-MM-DD - [Title]`
+`**Learning:** [Insight]`
+`**Action:** [How to apply next time]`
+
+## 2024-05-22 - Debouncing Search Input
+**Learning:** Attaching event listeners directly to the `input` event without debouncing causes synchronous DOM updates on every keystroke, leading to potential layout thrashing and UI lag.
+**Action:** Always wrap high-frequency event listeners (input, scroll, resize) with a `debounce` or `throttle` function to batch updates and improve responsiveness.
