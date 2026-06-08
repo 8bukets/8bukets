@@ -1,3 +1,13 @@
+// Utility for performance
+function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+        const context = this;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), wait);
+    };
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('United Sports News website loaded successfully.');
 
@@ -45,8 +55,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input');
     const articleList = document.getElementById('article-list');
 
+    // Debounce function to limit the rate of execution
+    function debounce(func, delay) {
+        let timeoutId;
+        return function(...args) {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                func.apply(this, args);
+            }, delay);
+        };
+    }
+
     if (searchInput && articleList) {
-        const performSearch = (term) => {
+        // Debounce the search input handler to improve performance
+        searchInput.addEventListener('input', debounce((e) => {
+        const performSearch = (e) => {
+        const handleSearch = (e) => {
+            const term = e.target.value.toLowerCase();
             const articles = articleList.getElementsByTagName('article');
             Array.from(articles).forEach(article => {
                 // Search in the entire text content of the article
@@ -58,15 +83,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     article.style.display = 'none';
                 }
             });
+        }, 300)); // 300ms delay
         };
 
-        // Debounce the search to improve performance by reducing DOM updates
-        const debouncedSearch = debounce((e) => {
-            const term = e.target.value.toLowerCase();
-            performSearch(term);
-        }, 300);
-
+        // Debounce search input to improve performance
+        const debouncedSearch = debounce(performSearch, 300);
         searchInput.addEventListener('input', debouncedSearch);
+        // Debounce the search input to improve performance
+        searchInput.addEventListener('input', debounce(handleSearch, 300));
     }
 
     // Contact Form Validation
@@ -136,15 +160,18 @@ function filterByCategory(category) {
     });
 }
 
-// Utility: Debounce function
+// Utility function to debounce high-frequency events
+/**
+ * Debounce function to limit the rate at which a function can fire.
+ * @param {Function} func - The function to debounce.
+ * @param {number} wait - The delay in milliseconds.
+ * @returns {Function} - The debounced function.
+ */
 function debounce(func, wait) {
     let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
+    return function(...args) {
+        const context = this;
         clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
+        timeout = setTimeout(() => func.apply(context, args), wait);
     };
 }
