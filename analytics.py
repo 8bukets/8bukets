@@ -250,6 +250,9 @@ def generate_report(data, output_file):
 
     md.append("\n[Back to Top](#table-of-contents)")
 
+    # Footer
+    md.append("\n---\n*Generated with ❤️ by Palette*")
+
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(md))
 
