@@ -52,6 +52,98 @@ class UXFormatter:
 
 BASE_URL = "https://markposition.wordpress.com/"
 
+def clean_text(text: str) -> str:
+    """Normalize whitespace and remove non-breaking spaces."""
+    if not text:
+        return ""
+    text = text.replace('\xa0', ' ')
+    return re.sub(r'\s+', ' ', text).strip()
+
+def is_url(text: str) -> bool:
+    """Check if text looks like a URL."""
+    return re.match(r'^https?://', text.strip()) is not None
+
+def extract_categories(article: BeautifulSoup) -> List[str]:
+    """Extract categories from article class names."""
+    categories = []
+    if article.get('class'):
+        for cls in article['class']:
+            if cls.startswith('category-'):
+                cat_name = cls.replace('category-', '').replace('-', ' ').title()
+                categories.append(cat_name)
+    return categories
+
+def extract_domain(url: str) -> Optional[str]:
+    """Extract domain from URL."""
+    if not url:
+        return None
+    try:
+        return urlparse(url).netloc.replace('www.', '')
+    except:
+        return None
+
+def parse_html_content(html: str) -> List[Dict]:
+    soup = BeautifulSoup(html, 'html.parser')
+    articles = soup.find_all('article', class_='post')
+    page_posts = []
+
+    if not articles:
+        return []
+
+    for article in articles:
+        post_data = {}
+
+        # Title
+        title_text = ""
+        title_tag = article.select_one('h1.entry-title a')
+        if title_tag:
+            title_text = clean_text(title_tag.get_text())
+            post_data['title'] = title_text
+
+        # Date
+        date_tag = article.select_one('time.entry-date')
+        if date_tag:
+            post_data['date'] = clean_text(date_tag.get_text())
+            post_data['datetime'] = date_tag.get('datetime')
+
+        # Author
+        author_tag = article.select_one('.author.vcard .fn')
+        if author_tag:
+            post_data['author'] = clean_text(author_tag.get_text())
+        else:
+            post_data['author'] = None
+
+        # Categories
+        post_data['categories'] = extract_categories(article)
+
+        # External Link
+        external_link = None
+        content_div = article.select_one('.entry-content')
+
+        if content_div:
+            link_tag = content_div.select_one('a')
+            if link_tag:
+                external_link = link_tag.get('href')
+
+            if not external_link:
+                iframe_tag = content_div.select_one('iframe')
+                if iframe_tag:
+                    external_link = iframe_tag.get('src')
+
+        if not external_link and title_text and is_url(title_text):
+            external_link = title_text
+
+        post_data['external_link'] = external_link
+        post_data['domain'] = extract_domain(external_link)
+
+        # Post URL
+        if title_tag:
+            post_data['post_url'] = title_tag.get('href')
+
+        page_posts.append(post_data)
+
+    return page_posts
+
 class MarkPositionScraperAsync:
     CLEAN_TEXT_REGEX = re.compile(r'\s+')
     # Pre-compile regex patterns for performance
@@ -268,9 +360,6 @@ class MarkPositionScraperAsync:
                         UXFormatter.warning(f"Page {page_idx} has no articles. Stopping.")
                         stop_detected = True
                         break
-                    else:
-                        all_posts.extend(page_posts)
-                        batch_posts_count += len(page_posts)
 
                         # Check results
                         stop_detected = False
@@ -331,7 +420,8 @@ class MarkPositionScraperAsync:
         async with sem:
             html = await self.fetch_page(session, page_num)
             if html:
-                return await self.parse_page(html)
+                loop = asyncio.get_running_loop()
+                return await loop.run_in_executor(self.pool, parse_html_content, html)
             return None
 
     def sanitize_for_csv(self, value: str) -> str:
