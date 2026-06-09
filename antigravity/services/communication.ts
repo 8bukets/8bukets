@@ -85,6 +85,11 @@ export async function generateActionableBriefing(state: any, directives: Directi
   }
 
   briefing += `\n### ⚡ Strategic Synergy Summary\n`
+  const crossDomain = state.intelligence.relationshipMap.crossDomainSynergies || []
+  if (crossDomain.length > 0) {
+    briefing += `- Detected **${crossDomain.length} Cross-Domain synergies**. High potential for architectural alignment across service types.\n`
+  }
+
   const synergies = state.intelligence.relationshipMap.synergies || []
   const highIntensity = synergies.filter((s: any) => s.intensity === 'High')
   if (highIntensity.length > 0) {
@@ -118,12 +123,19 @@ export async function generateActionableBriefing(state: any, directives: Directi
   if (synergies.length > 0) {
     const highIntensity = synergies.filter((s: any) => s.intensity === 'High')
     if (highIntensity.length > 0) {
-      briefing += `- **Jules Directive (CRITICAL):** "Immediate intervention required for ${highIntensity.length} high-intensity resource overlaps. Consolidate these branches to prevent significant architectural fragmentation."\n`
+      const targetResources = highIntensity.map((s: any) => `\`${s.resource}\``).join(', ')
+      briefing += `- **Jules Directive (CRITICAL):** "Immediate intervention required for high-intensity resource overlaps on ${targetResources}. Consolidate these branches to prevent significant architectural fragmentation."\n`
     } else {
       briefing += `- **Jules Directive:** "I have detected ${synergies.length} developmental overlaps. Stakeholders should prioritize the 'Strategic Coordination Paths' defined above to avoid architectural drift."\n`
     }
   } else {
     briefing += `- **Jules Directive:** "System alignment is optimal. No manual intervention required for current development streams."\n`
+  }
+
+  // Phase 13: Data-Driven Cross-Domain Insight
+  if (crossDomain.length > 0) {
+    const topSynergy = crossDomain[0]
+    briefing += `- **Intelligence Directive:** "Strategic cross-domain connection detected between \`${topSynergy.source}\` (${topSynergy.sourceType}) and \`${topSynergy.target}\` (${topSynergy.targetType}). Recommend unified architectural review."\n`
   }
 
   // Phase 12: Resource Synergy Insights
@@ -142,6 +154,20 @@ export async function generateActionableBriefing(state: any, directives: Directi
     Object.entries(clusters).forEach(([cluster, branches]: [string, any]) => {
       const friction = branches.length > 5 ? '🔴 High' : (branches.length > 2 ? '🟡 Medium' : '🟢 Low')
       briefing += `| \`${cluster}\` | ${branches.slice(0, 3).join(', ')}${branches.length > 3 ? ` (+${branches.length - 3})` : ''} | ${friction} |\n`
+    })
+  }
+
+  // Phase 13: Strategic Priority Matrix
+  const impactful = state.intelligence.relationshipMap.impactfulBranches || []
+  if (impactful.length > 0) {
+    briefing += `\n### 📊 Strategic Priority Matrix\n`
+    briefing += `| Strategic Initiative | Impact Score | Estimated Effort | Priority |\n`
+    briefing += `| :--- | :---: | :---: | :---: |\n`
+
+    impactful.slice(0, 8).forEach((b: any) => {
+      const effort = b.score > 80 ? 'High' : (b.score > 40 ? 'Medium' : 'Low')
+      const priority = b.score > 60 ? 'Critical' : 'Routine'
+      briefing += `| \`${b.name}\` | ${b.score} | ${effort} | ${priority} |\n`
     })
   }
 
