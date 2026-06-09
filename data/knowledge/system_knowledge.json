@@ -431,6 +431,126 @@
           ]
         }
       ]
+    },
+    {
+      "url": "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU",
+      "title": "Google Ads and Ad Manager Resource",
+      "sections": [
+        {
+          "header": "About",
+          "content": [
+            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://business.google.com/uk/ad-tools/bidding/",
+      "title": "Google Ads and Ad Manager Resource",
+      "sections": [
+        {
+          "header": "About",
+          "content": [
+            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://business.google.com/uk/resources/",
+      "title": "Google Ads and Ad Manager Resource",
+      "sections": [
+        {
+          "header": "About",
+          "content": [
+            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://developers.google.com/ad-manager",
+      "title": "Google Ads and Ad Manager Resource",
+      "sections": [
+        {
+          "header": "About",
+          "content": [
+            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion",
+      "title": "Google Ads and Ad Manager Resource",
+      "sections": [
+        {
+          "header": "About",
+          "content": [
+            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service",
+      "title": "Google Ads and Ad Manager Resource",
+      "sections": [
+        {
+          "header": "About",
+          "content": [
+            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving",
+      "title": "Google Ads and Ad Manager Resource",
+      "sections": [
+        {
+          "header": "About",
+          "content": [
+            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://developers.google.com/ad-manager/api/start",
+      "title": "Google Ads and Ad Manager Resource",
+      "sections": [
+        {
+          "header": "About",
+          "content": [
+            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://admanager.google.com/home/resources/",
+      "title": "Google Ads and Ad Manager Resource",
+      "sections": [
+        {
+          "header": "About",
+          "content": [
+            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview",
+      "title": "Google Ads and Ad Manager Resource",
+      "sections": [
+        {
+          "header": "About",
+          "content": [
+            "This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion."
+          ]
+        }
+      ]
     }
   ]
 }
