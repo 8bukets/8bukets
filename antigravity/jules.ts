@@ -53,10 +53,44 @@ export class Jules {
   public async improve() {
     console.log('🤖 [Jules] Analyzing current system state for improvements...')
     const suggestions = []
+
+    // Knowledge-driven improvements
+    const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json')
+    if (fs.existsSync(knowledgePath)) {
+      const knowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
+      const sections = knowledge.typescript_sections || []
+      const hasQuantum = sections.some((s: any) => s.title.toLowerCase().includes('quantum'))
+      const hasOmega = sections.some((s: any) => s.title.toLowerCase().includes('omega'))
+
+      if (hasQuantum && !this.memory.preferredPatterns.includes('crystals-kyber')) {
+        suggestions.push('Integrate Crystals-Kyber for Quantum-resistant security as per latest strategy.')
+      }
+      if (hasOmega && !this.memory.preferredPatterns.includes('low-latency-sync')) {
+        suggestions.push('Implement <30ms low-latency synchronization for Project Omega.')
+      }
+    }
+
     if (this.memory.preferredPatterns.length < 5) {
       suggestions.push('Expand preferred patterns to include Taint API and View Transitions.')
     }
+
     return { status: 'learning', suggestions, memorySize: JSON.stringify(this.memory).length }
+  }
+
+  public consultKnowledge(query: string) {
+    console.log(`🔍 [Jules] Consulting system knowledge for: "${query}"...`)
+    const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json')
+    if (!fs.existsSync(knowledgePath)) return []
+
+    const knowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
+    const results = (knowledge.typescript_sections || []).filter((s: any) => {
+       const inTitle = s.title.toLowerCase().includes(query.toLowerCase())
+       const inContent = s.sections?.some((sec: any) => sec.content.toLowerCase().includes(query.toLowerCase()))
+       return inTitle || inContent
+    })
+
+    console.log(`💡 [Jules] Found ${results.length} relevant knowledge entries.`)
+    return results
   }
 
   public recordTask(goal: string) {
