@@ -148,6 +148,24 @@ export async function evolve() {
             suggestion: 'MISSING_APAC_ORCHESTRATION: APAC-specific service detected without mandatory integration with APACEdgeOrchestrator for status reporting.'
           })
         }
+
+        // Rule 14: Next.js 16 Compliance (connection() requirement)
+        if ((content.includes('cookies()') || content.includes('headers()')) && !content.includes('await connection()')) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'NEXT_16_CONNECTION_MISSING: Next.js 16 requires awaiting connection() before using cookies() or headers().'
+          })
+        }
+
+        // Rule 15: Project Omega Latency Compliance (Phase 13 Directive)
+        if (content.includes('sync') && !content.includes('latency < 30') && lines > 80) {
+           suggestions.push({
+             file: fullPath.replace(process.cwd(), ''),
+             complexity: lines,
+             suggestion: 'PROJECT_OMEGA_LATENCY_VIOLATION: Project Omega mandates <30ms latency for all synchronization operations. Explicit monitoring or optimization is missing.'
+           })
+        }
       }
     }
   }
@@ -191,12 +209,16 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
     }
 
     if (s.suggestion.startsWith('ASYNC_HYGIENE_VIOLATION')) {
-       console.log(` - Fixing ${s.file}: Implementing automated try/catch wrapping for async safety.`)
-       // Simplistic wrapping of async function bodies that contain sync fs
-       content = content.replace(/async function(.*?)\{(.*?)\}/gs, (match, args, body) => {
-          if (body.includes('try') && body.includes('catch')) return match;
-          return `async function${args}{\n  try {\n${body}\n  } catch (err) {\n    console.error('[Evolution Autocorrect] Unhandled error:', err);\n  }\n}`;
-       });
+       console.log(` - Fixing ${s.file}: Refactoring synchronous fs to fs.promises (safely).`)
+
+       // Only apply if the file likely contains async context already (as per scan rule)
+       if (content.includes('async function')) {
+         content = content.replace(/fs\.readFileSync\((.*?),\s*['"]utf8['"]\)/g, 'await fs.promises.readFile($1, \'utf8\')')
+         content = content.replace(/fs\.readFileSync\((.*?)\)/g, 'await fs.promises.readFile($1)')
+         content = content.replace(/fs\.writeFileSync\((.*?)\)/g, 'await fs.promises.writeFile($1)')
+         content = content.replace(/fs\.existsSync\((.*?)\)/g, 'await fs.promises.access($1).then(() => true).catch(() => false)')
+       }
+
        fs.writeFileSync(fullPath, content);
     }
 
@@ -211,6 +233,17 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
       console.log(` - Fixing ${s.file}: Injecting placeholder trackROI call.`)
       // Add trackROI placeholder to autonomousFetch calls
       content = content.replace(/autonomousFetch\((.*?)\)/g, 'autonomousFetch($1).then(res => { console.log("📊 [ROI] Efficiency tracking placeholder"); return res; })')
+      fs.writeFileSync(fullPath, content)
+    }
+
+    if (s.suggestion.startsWith('NEXT_16_CONNECTION_MISSING')) {
+      console.log(` - Fixing ${s.file}: Injecting await connection()`)
+      if (!content.includes("from 'next/server'")) {
+        content = "import { connection } from 'next/server'\n" + content
+      } else if (!content.includes('connection')) {
+        content = content.replace(/import \{(.*?)\} from 'next\/server'/, "import {$1, connection} from 'next/server'")
+      }
+      content = content.replace(/async function(.*?)\{/, "async function$1{\n  await connection()")
       fs.writeFileSync(fullPath, content)
     }
   }
