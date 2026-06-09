@@ -222,9 +222,10 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
 
   report += `## 🧠 Knowledge Matrix\n`
   const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json')
-  if (/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(knowledgePath)) {
+  const knowledgeExists = await fs.promises.access(knowledgePath).then(() => true).catch(() => false)
+  if (knowledgeExists) {
     try {
-      const systemKnowledge = JSON.parse(/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.readFileSync(knowledgePath, 'utf8'))
+      const systemKnowledge = JSON.parse(await fs.promises.readFile(knowledgePath, 'utf8'))
 
       // Phase 12: Support both nested 'typescript_sections' and unified flat key structure
       const allKnowledge: any[] = []
@@ -326,7 +327,7 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
     : 100
   report += `\n---\n**Collaboration Health Index:** ${collaborationHealth}% | *Phase 12 Synergy Protocol Active*\n`
 
-  /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.writeFileSync(reportPath, report)
+  await fs.promises.writeFile(reportPath, report)
   console.log(`✅ [Intelligence] Report saved to ${reportPath}`)
 
   return { reportPath, branchCount: branches.length }
