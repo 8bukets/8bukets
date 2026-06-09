@@ -99,6 +99,11 @@ export class Jules {
 
   public async recordTask(goal: string) {
     await this.ensureInitialized()
+
+    // Deduplication logic: Don't record the exact same goal if it was recently added
+    const isDuplicate = this.memory.autonomousTasks.some(t => t.goal === goal);
+    if (isDuplicate) return;
+
     this.memory.autonomousTasks.push({
       id: Math.random().toString(36).substr(2, 9),
       status: 'completed',

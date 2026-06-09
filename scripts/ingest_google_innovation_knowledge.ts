@@ -77,7 +77,7 @@ async function scrapeGoogleBlog(url: string): Promise<Article[]> {
             }
         }
 
-        const articles = Array.from(articleMap.values()).slice(0, 5); // Limit to top 5 for depth
+        const articles = Array.from(articleMap.values()).slice(0, 20); // Expanded limit for deeper ingestion
         for (const art of articles) {
             art.content = await scrapeArticleContent(art.url);
         }
