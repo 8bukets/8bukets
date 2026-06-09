@@ -99,6 +99,16 @@ export default async function CommandCenter({
               </div>
 
               <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-sm">🤝</span>
+                  <h3 className="text-xs font-black uppercase tracking-widest text-zinc-500">Collaboration Hub</h3>
+                </div>
+                <Suspense fallback={<div className="h-40 bg-white/5 rounded-xl animate-pulse" />}>
+                  <CollaborationHub />
+                </Suspense>
+              </div>
+
+              <div>
                 <h3 className="text-xs font-black uppercase tracking-widest text-zinc-500 mb-4">Global Neural Network</h3>
                 <Suspense fallback={<div className="h-20 bg-white/5 rounded-xl animate-pulse" />}>
                   <NeuralNetworkList />
@@ -249,6 +259,38 @@ function StatusItem({ label, value, ok }: { label: string, value: string, ok: bo
     </div>
   )
 }
+async function CollaborationHub() {
+  const { getMissionMetadata } = await import('@/antigravity/services/collaboration');
+  const metadata = await getMissionMetadata();
+
+  return (
+    <div className="space-y-6">
+      <div>
+        <h4 className="text-[10px] font-black uppercase text-zinc-500 mb-3 tracking-widest text-center">Stakeholders</h4>
+        <div className="grid grid-cols-1 gap-2">
+          {metadata.stakeholders.map((s: any, i: number) => (
+            <div key={i} className="px-4 py-3 bg-white/5 border border-white/10 rounded-xl flex flex-col gap-0.5">
+              <span className="text-xs font-bold text-zinc-200">{s.role}</span>
+              <span className="text-[10px] text-zinc-500 font-mono italic">{s.email}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div>
+        <h4 className="text-[10px] font-black uppercase text-zinc-500 mb-3 tracking-widest text-center">Strategic Goals</h4>
+        <div className="space-y-2">
+          {metadata.goals.map((goal: string, i: number) => (
+            <div key={i} className="flex gap-3 items-start p-3 bg-blue-500/5 border border-blue-500/10 rounded-xl">
+              <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 shrink-0 shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
+              <p className="text-[11px] text-zinc-300 leading-tight">{goal}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 async function AnalyticsForecast() {
   const { getRecentAnalytics } = await import('@/antigravity/services/analytics');
   const events = await getRecentAnalytics(3);
