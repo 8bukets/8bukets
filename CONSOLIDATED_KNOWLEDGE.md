@@ -2027,3 +2027,103 @@ Summary: markposition.wordpress.com is a blog by Filip Keser that provides infor
 
 ---
 All the best - https://markposition.wordpress.com
+
+## Autonomous Observation
+- **Date**: 2026-06-09T04:22:43.196Z
+- **Target**: https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU
+- **Title**: Google Ads and Ad Manager Resource
+- **Context**: Ingested and observed external market or technical intelligence from https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU.
+
+Summary: This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion.
+
+---
+
+## Autonomous Observation
+- **Date**: 2026-06-09T04:22:43.196Z
+- **Target**: https://business.google.com/uk/ad-tools/bidding/
+- **Title**: Google Ads and Ad Manager Resource
+- **Context**: Ingested and observed external market or technical intelligence from https://business.google.com/uk/ad-tools/bidding/.
+
+Summary: This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion.
+
+---
+
+## Autonomous Observation
+- **Date**: 2026-06-09T04:22:43.196Z
+- **Target**: https://business.google.com/uk/resources/
+- **Title**: Google Ads and Ad Manager Resource
+- **Context**: Ingested and observed external market or technical intelligence from https://business.google.com/uk/resources/.
+
+Summary: This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion.
+
+---
+
+## Autonomous Observation
+- **Date**: 2026-06-09T04:22:43.196Z
+- **Target**: https://developers.google.com/ad-manager
+- **Title**: Google Ads and Ad Manager Resource
+- **Context**: Ingested and observed external market or technical intelligence from https://developers.google.com/ad-manager.
+
+Summary: This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion.
+
+---
+
+## Autonomous Observation
+- **Date**: 2026-06-09T04:22:43.196Z
+- **Target**: https://developers.google.com/ad-manager/dynamic-ad-insertion
+- **Title**: Google Ads and Ad Manager Resource
+- **Context**: Ingested and observed external market or technical intelligence from https://developers.google.com/ad-manager/dynamic-ad-insertion.
+
+Summary: This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion.
+
+---
+
+## Autonomous Observation
+- **Date**: 2026-06-09T04:22:43.196Z
+- **Target**: https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service
+- **Title**: Google Ads and Ad Manager Resource
+- **Context**: Ingested and observed external market or technical intelligence from https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service.
+
+Summary: This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion.
+
+---
+
+## Autonomous Observation
+- **Date**: 2026-06-09T04:22:43.196Z
+- **Target**: https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving
+- **Title**: Google Ads and Ad Manager Resource
+- **Context**: Ingested and observed external market or technical intelligence from https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving.
+
+Summary: This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion.
+
+---
+
+## Autonomous Observation
+- **Date**: 2026-06-09T04:22:43.196Z
+- **Target**: https://developers.google.com/ad-manager/api/start
+- **Title**: Google Ads and Ad Manager Resource
+- **Context**: Ingested and observed external market or technical intelligence from https://developers.google.com/ad-manager/api/start.
+
+Summary: This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion.
+
+---
+
+## Autonomous Observation
+- **Date**: 2026-06-09T04:22:43.196Z
+- **Target**: https://admanager.google.com/home/resources/
+- **Title**: Google Ads and Ad Manager Resource
+- **Context**: Ingested and observed external market or technical intelligence from https://admanager.google.com/home/resources/.
+
+Summary: This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion.
+
+---
+
+## Autonomous Observation
+- **Date**: 2026-06-09T04:22:43.196Z
+- **Target**: https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview
+- **Title**: Google Ads and Ad Manager Resource
+- **Context**: Ingested and observed external market or technical intelligence from https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview.
+
+Summary: This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion.
+
+---
