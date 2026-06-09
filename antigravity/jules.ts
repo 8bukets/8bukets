@@ -25,6 +25,10 @@ export class Jules {
 
   private memory: JulesMemory
 
+  public static async create(role: AgentRole = 'Coder'): Promise<Jules> {
+    return new Jules(role);
+  }
+
   constructor(role: AgentRole = 'Coder') {
     this.role = role;
     if (fs.existsSync(MEMORY_PATH)) {
@@ -256,7 +260,13 @@ export class Jules {
     }
   }
 
-  public async executeWorkCycle() {
+  public async processPendingTasks() {
+    console.log('⚙️ [Jules] Processing all pending work orders...');
+    const { workOrderService } = await import('./services/work_order');
+    await workOrderService.executePendingOrders();
+  }
+
+  public async executeWorkCycle(parentOrderId?: string) {
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
     await this.gitPull()
     const { explore } = await import('./explorer')
@@ -270,7 +280,7 @@ export class Jules {
 
       // Phase 10: Singularity Orchestration (Integrated via CreationEngine)
       const { creationEngine } = await import('./services/creation_engine')
-      await creationEngine.processIdeas(ideas)
+      await creationEngine.processIdeas(ideas, parentOrderId)
       this.recordTask(`CreationEngine: Processed ${ideas.length} ideas into work order chains.`)
     }
 

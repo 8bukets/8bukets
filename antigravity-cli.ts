@@ -16,9 +16,21 @@ program
   .description('Ignite the autonomous swarm')
   .action(async () => {
     console.log('🚀 Igniting the Antigravity Swarm...');
-    const jules = await Jules.create('General');
-    await jules.processPendingTasks();
+    const julesAgent = await Jules.create('Observer');
+    await julesAgent.processPendingTasks();
     console.log('✅ Swarm ignited.');
+  });
+
+program
+  .command('full-autonomous-creation')
+  .description('Trigger the full autonomous creation and execution cycle')
+  .action(async () => {
+    console.log('🚀 Triggering Full Autonomous Creation Cycle...');
+    const { spawn } = require('child_process');
+    const child = spawn('npm', ['run', 'autonomous-creation'], { stdio: 'inherit', shell: true });
+    child.on('error', (error: Error) => {
+      console.error(`Error executing cycle: ${error.message}`);
+    });
   });
 
 program

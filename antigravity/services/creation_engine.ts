@@ -6,7 +6,7 @@ import { workOrderService } from './work_order'
  * into dependency-linked work order chains (BOOTSTRAP_SERVICE -> SMOKE_TEST -> DEPLOYMENT).
  */
 export class AutonomousCreationEngine {
-  public async processIdeas(ideas: any[]) {
+  public async processIdeas(ideas: any[], parentOrderId?: string) {
     try {
       console.log(`🏭 [CreationEngine] Processing ${ideas.length} synthesized ideas...`)
 
@@ -15,15 +15,16 @@ export class AutonomousCreationEngine {
           console.log(`🔗 [CreationEngine] Chaining creation cycle for: ${idea.feature}`)
 
           // 1. Bootstrap
-          const bootstrapOrder = workOrderService.createOrder(
+          const bootstrapOrder = await workOrderService.createOrder(
             'BOOTSTRAP_SERVICE',
             `Bootstrap ${idea.feature}`,
-            idea
+            idea,
+            parentOrderId ? [parentOrderId] : undefined
           )
 
           // 2. Smoke Test (Depends on Bootstrap)
           const serviceName = idea.feature.toLowerCase().replace(/\s+/g, '_').replace(/_service$/, '')
-          const smokeTestOrder = workOrderService.createOrder(
+          const smokeTestOrder = await workOrderService.createOrder(
             'SMOKE_TEST',
             `Verify ${idea.feature}`,
             {
@@ -34,7 +35,7 @@ export class AutonomousCreationEngine {
           )
 
           // 3. Deployment (Depends on Smoke Test)
-          workOrderService.createOrder(
+          await workOrderService.createOrder(
             'DEPLOYMENT',
             `Deploy ${idea.feature}`,
             idea,

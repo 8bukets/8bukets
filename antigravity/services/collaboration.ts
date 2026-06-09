@@ -480,7 +480,7 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
 
   // Phase 12: Trigger deep branch scan (force: true) to ensure all 1,800+ branches are analyzed
   const branches = branchIntelligence || await jules.scanAllBranches(true)
-  const workOrders = workOrderService.getPendingOrders() // Simplified for now
+  const workOrders = await workOrderService.getPendingOrders() // Simplified for now
   const relationshipMap = await generateRelationshipMap(branches, metadata.stakeholders, metadata.goals)
 
   // Phase 12: Synchronize Global Neural Pulse and Omni-Presence Relay

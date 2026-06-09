@@ -32,39 +32,38 @@ const STORAGE_PATH = path.join(process.cwd(), 'data/work_orders.json')
 
 export class WorkOrderService {
   private orders: WorkOrder[] = []
+  private initialized: Promise<void>
 
   constructor() {
-    this.load()
+    this.initialized = this.load()
   }
 
-  private load() {
-    if (/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(STORAGE_PATH)) {
-      try {
-        const data = /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.readFileSync(STORAGE_PATH, 'utf8')
-        const parsed = JSON.parse(data)
-        const result = z.array(WorkOrderSchema).safeParse(parsed)
-        if (result.success) {
-          this.orders = result.data
-        } else {
-          console.error('❌ [WorkOrder] Data validation failed:', result.error.format())
-          this.orders = []
-        }
-      } catch (e) {
-        console.error('❌ [WorkOrder] Failed to load work orders:', e)
+  private async load() {
+    try {
+      await fs.promises.access(STORAGE_PATH)
+      const data = await fs.promises.readFile(STORAGE_PATH, 'utf8')
+      const parsed = JSON.parse(data)
+      const result = z.array(WorkOrderSchema).safeParse(parsed)
+      if (result.success) {
+        this.orders = result.data
+      } else {
+        console.error('❌ [WorkOrder] Data validation failed:', result.error.format())
         this.orders = []
       }
+    } catch (e) {
+      // File likely doesn't exist yet, which is fine
+      this.orders = []
     }
   }
 
-  private save() {
+  private async save() {
     const dataDir = path.dirname(STORAGE_PATH)
-    if (!/* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir, { recursive: true })
-    }
-    /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ /* [Evolution] TODO: Refactor to async */ fs.writeFileSync(STORAGE_PATH, JSON.stringify(this.orders, null, 2))
+    await fs.promises.mkdir(dataDir, { recursive: true })
+    await fs.promises.writeFile(STORAGE_PATH, JSON.stringify(this.orders, null, 2))
   }
 
-  public createOrder(type: WorkOrder['type'], goal: string, payload: any, dependsOn?: string[]): WorkOrder {
+  public async createOrder(type: WorkOrder['type'], goal: string, payload: any, dependsOn?: string[]): Promise<WorkOrder> {
+    await this.initialized
     const newOrder: WorkOrder = {
       id: `wo_${Math.random().toString(36).substring(2, 11)}`,
       type,
@@ -75,22 +74,25 @@ export class WorkOrderService {
       created_at: new Date().toISOString()
     }
     this.orders.push(newOrder)
-    this.save()
+    await this.save()
     logAutonomousAction(`[WORK_ORDER] Created: ${newOrder.id} - ${goal}`, 'cognitive')
     return newOrder
   }
 
-  public clearPendingOrders() {
+  public async clearPendingOrders() {
+    await this.initialized
     this.orders = this.orders.filter(o => o.status !== 'pending')
-    this.save()
+    await this.save()
     logAutonomousAction('[WORK_ORDER] Cleared all pending orders', 'info')
   }
 
-  public getPendingOrders(): WorkOrder[] {
+  public async getPendingOrders(): Promise<WorkOrder[]> {
+    await this.initialized
     return this.orders.filter(o => o.status === 'pending')
   }
 
   public async updateOrderStatus(id: string, status: WorkOrder['status'], result?: any, error?: string) {
+    await this.initialized
     const order = this.orders.find(o => o.id === id)
     if (order) {
       order.status = status
@@ -99,16 +101,17 @@ export class WorkOrderService {
       }
       if (result) order.result = result
       if (error) order.error = error
-      this.save()
+      await this.save()
     }
   }
 
   public async executePendingOrders() {
+    await this.initialized
     let hasProgress = true
 
     while (hasProgress) {
       hasProgress = false
-      const pending = this.getPendingOrders()
+      const pending = await this.getPendingOrders()
       if (pending.length === 0) break
 
       console.log(`⚡ [WorkOrder] Processing ${pending.length} pending orders...`)
@@ -197,7 +200,7 @@ export class WorkOrderService {
 
       case 'AUTONOMOUS_CREATION':
         const { jules: julesA } = await import('../jules')
-        await julesA.executeWorkCycle()
+        await julesA.executeWorkCycle(order.id)
         return { status: 'autonomous_creation_executed' }
 
       default:
