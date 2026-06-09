@@ -110,6 +110,15 @@ export class Jules {
     logAutonomousAction(goal, 'cognitive')
   }
 
+  public async observeKnowledge() {
+    const { observeKnowledge, persistKnowledge } = await import('./services/knowledge_observer')
+    const knowledgeInsights = await observeKnowledge('https://software-online-review.com')
+    if (knowledgeInsights) {
+      this.recordTask(`Knowledge Observation: Extracted ${knowledgeInsights.topKeywords.length} concepts from ${knowledgeInsights.source}`)
+      persistKnowledge(knowledgeInsights)
+    }
+  }
+
   public async runDailyRoutine() {
     await this.ensureInitialized()
     console.log('🗓️ [Jules] Executing Daily Autonomous Routine...')
@@ -388,7 +397,13 @@ export class Jules {
     // Phase 22: Cloud Takeover Audit
     try {
       const { cloudWorkflowAgent } = await import('./services/cloud_workflow')
-      await cloudWorkflowAgent.enforceCloudTakeover()
+      const { workOrderService } = await import('./services/work_order')
+      const takeoverResult = await cloudWorkflowAgent.enforceCloudTakeover()
+
+      if (takeoverResult.takeover) {
+        console.log('🌩️ [Jules] Cloud takeover active. Executing recovered work orders...')
+        await workOrderService.executePendingOrders()
+      }
     } catch (e) {
       console.warn('⚠️ [Jules] Cloud takeover audit failed, continuing work cycle.')
     }
@@ -427,12 +442,7 @@ export class Jules {
 
     // Knowledge Observation
     console.log('👁️ [Jules] Initiating Knowledge Observation...')
-    const { observeKnowledge, persistKnowledge } = await import('./services/knowledge_observer')
-    const knowledgeInsights = await observeKnowledge('https://software-online-review.com')
-    if (knowledgeInsights) {
-      this.recordTask(`Knowledge Observation: Extracted ${knowledgeInsights.topKeywords.length} concepts from ${knowledgeInsights.source}`)
-      persistKnowledge(knowledgeInsights)
-    }
+    await this.observeKnowledge()
 
     // Markposition Market Intelligence Ingestion
     console.log('🤖 [Jules] Ingesting Markposition Market Intelligence...')
@@ -494,6 +504,7 @@ export class Jules {
       const insights = await getSystemInsights()
       const refactors = (insights as any).proposals || []
       if (refactors.length > 0) {
+        const { workOrderService } = await import('./services/work_order')
         this.recordTask(`Super-Intelligence: Generated ${refactors.length} predictive refactors.`)
         // Group all proposals into a single optimization order for efficiency
         await workOrderService.createOrder('OPTIMIZE_SYSTEM', 'Apply predictive refactors', { proposals: refactors })

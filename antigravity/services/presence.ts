@@ -110,6 +110,7 @@ export class OnlinePresenceService {
              console.log(`📡 [OnlinePresence] MacBook node detected. Last seen: ${macbookNode.lastSeen}`)
              isLeader = false // MacBook always takes precedence if active in last 15m
            } else {
+             console.log('📡 [OnlinePresence] No active MacBook node detected. Cloud node assuming leadership.')
              isLeader = !higherPriorityActive
            }
         }
