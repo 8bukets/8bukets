@@ -285,6 +285,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
 
   map.collaborationRecommendations = []
   map.resourceDependencies = []
+  map.crossDomainSynergies = []
 
   // Phase 12: Resource Dependency Tracking (Expanded Static Analysis)
   const trackableResources = map.resourceInventory.filter((r: any) => ['Service', 'UI Component', 'Automation Script'].includes(r.type))
@@ -314,8 +315,21 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
               map.resourceDependencies.push({
                 source: resource.name,
                 target: target.name,
-                type: 'import'
+                type: 'import',
+                sourceType: resource.type,
+                targetType: target.type
               })
+
+              // Phase 13: Cross-Domain Synergy Detection
+              if (resource.type !== target.type) {
+                map.crossDomainSynergies.push({
+                  source: resource.name,
+                  sourceType: resource.type,
+                  target: target.name,
+                  targetType: target.type,
+                  intensity: 'Medium'
+                })
+              }
             }
           }
         }
@@ -378,6 +392,47 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
       })
     }
   })
+
+  // Phase 13: Strategic Impact Scoring
+  map.impactfulBranches = branches.map(b => {
+    let score = 0;
+
+    // 1. Category Priority
+    const categoryWeights: Record<string, number> = {
+      'security': 50,
+      'performance': 40,
+      'fix': 30,
+      'feature': 20,
+      'documentation': 10,
+      'maintenance': 5,
+      'other': 0
+    };
+    score += categoryWeights[b.category] || 0;
+
+    // 2. Alignment with Strategic Goals
+    Object.entries(map.goalAlignment).forEach(([goal, relevantBranches]: [string, any]) => {
+      if (relevantBranches.includes(b.name)) {
+        score += 25; // Bonus for each goal it aligns with
+      }
+    });
+
+    // 3. Artifact Impact
+    if (b.changedFiles) {
+      score += Math.min(b.changedFiles.length * 2, 40); // Cap artifact bonus at 40
+
+      const coreFiles = b.changedFiles.filter((f: string) =>
+        f.includes('core.ts') || f.includes('jules.ts') || f.includes('collaboration.ts') || f.includes('intelligence.ts')
+      );
+      score += coreFiles.length * 15; // Extra weight for core file modifications
+    }
+
+    return {
+      name: b.name,
+      category: b.category,
+      score,
+      results: b.results
+    };
+  }).sort((a, b) => b.score - a.score).slice(0, 20);
 
   // Integrate branch results into resources (Expanded categories)
   const resultCategories = ['feature', 'fix', 'performance', 'security', 'ux']
@@ -538,6 +593,15 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
     const synergies = relationshipMap.synergies.slice(0, 10)
     synergies.forEach((s: any) => {
       newEntries += `- **SYNERGY [${s.intensity}]:** \`${s.resource}\` involves branches: ${s.branches.slice(0, 3).join(', ')}${s.branches.length > 3 ? '...' : ''}\n`
+    })
+    newEntries += `\n`
+  }
+
+  // Phase 13: High-Impact Strategic Results
+  if (relationshipMap?.impactfulBranches && relationshipMap.impactfulBranches.length > 0) {
+    newEntries += `### 🏆 Top Impactful Strategic Results\n`
+    relationshipMap.impactfulBranches.slice(0, 5).forEach((b: any) => {
+      newEntries += `- **[Score: ${b.score}]** \`${b.name}\` (${b.category}): ${b.results}\n`
     })
     newEntries += `\n`
   }
