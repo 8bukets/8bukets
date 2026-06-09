@@ -129,11 +129,6 @@ export class WorkOrderService {
     return newOrder
   }
 
-  public clearPendingOrders() {
-    this.orders = this.orders.filter(o => o.status !== 'pending')
-    this.save()
-    logAutonomousAction('[WORK_ORDER] Cleared all pending orders', 'info')
-  }
 
   public getPendingOrders(): WorkOrder[] {
     return this.orders.filter(o => o.status === 'pending')
@@ -170,6 +165,12 @@ export class WorkOrderService {
     this.orders = this.orders.filter(o => o.status !== 'pending')
     this.saveLocal()
     logAutonomousAction('🧹 [WorkOrder] Cleared all pending work orders.', 'info')
+  }
+
+  public async reload() {
+    logAutonomousAction('🔄 [WorkOrder] Reloading state...', 'info')
+    this.loadPromise = this.load()
+    await this.loadPromise
   }
 
   public async executePendingOrders() {

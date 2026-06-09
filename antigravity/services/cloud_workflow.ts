@@ -30,9 +30,16 @@ export class CloudWorkflowAgent {
 
        // Perform state recovery via bridge
        const { edgeToCloudBridge } = await import('./edge_to_cloud_bridge')
-       await edgeToCloudBridge.recoverCloudToLocal()
+       const { workOrderService } = await import('./work_order')
 
-       return { takeover: true, intensity: 'high' }
+       const recoveredFiles = await edgeToCloudBridge.recoverCloudToLocal()
+       if (recoveredFiles.length > 0) {
+          console.log(`📦 [CloudWorkflowAgent] Recovered ${recoveredFiles.length} state files. Reloading work orders...`)
+          await workOrderService.reload()
+       }
+
+       console.log('⚡ [CloudWorkflowAgent] Cloud Takeover initiated. Sovereignty established.')
+       return { takeover: true, intensity: 'high', recoveredFiles }
     }
 
     return { takeover: false, reason: 'primary_node_online' }
