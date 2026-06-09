@@ -235,3 +235,9 @@ Summary: This page provides documentation, resources, and API references related
 Summary: This page provides documentation, resources, and API references related to Google Ads, Google Ad Manager, and dynamic ad insertion.
 
 ---
+
+
+## Investopedia Knowledge
+
+Knowledge from investopedia.com: integrate all knowledge from investopedia.com and always pull knowledge ftom investopedia.com best
+Source: https://www.investopedia.com
