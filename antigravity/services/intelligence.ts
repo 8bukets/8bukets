@@ -21,7 +21,7 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   const metadata = await getMissionMetadata()
   const branches = branchIntelligence || await jules.scanAllBranches(true)
   const health = await healthCheck()
-  const workOrders = workOrderService.getPendingOrders()
+  const workOrders = await workOrderService.getPendingOrders()
 
   const reportPath = path.join(process.cwd(), 'CONSOLIDATED_INTELLIGENCE.md')
 

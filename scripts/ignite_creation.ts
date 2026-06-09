@@ -10,7 +10,7 @@ async function main() {
   console.log('🔥 [Antigravity] Igniting Full Autonomous Creation Cycle...')
 
   // Create the root autonomous creation order
-  const igniteOrder = workOrderService.createOrder(
+  const igniteOrder = await workOrderService.createOrder(
     'AUTONOMOUS_CREATION',
     'Ignite full autonomous creation cycle (Synthesis -> Bootstrap -> Smoke Test -> Deployment)',
     {

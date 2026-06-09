@@ -34,11 +34,11 @@ async function main() {
 
   // Step 2: State Purge
   console.log('🧹 [Antigravity] Purging stale pending orders...')
-  workOrderService.clearPendingOrders()
+  await workOrderService.clearPendingOrders()
 
   // Step 3: Root Order Generation
   console.log('📝 [Antigravity] Generating root AUTONOMOUS_CREATION order...')
-  const rootOrder = workOrderService.createOrder(
+  const rootOrder = await workOrderService.createOrder(
     'AUTONOMOUS_CREATION',
     'Execute full autonomous creation cycle (Synthesis -> Bootstrap -> Smoke Test -> Deployment)',
     {
@@ -58,10 +58,21 @@ async function main() {
   const storagePath = path.join(process.cwd(), 'data/work_orders.json')
   if (fs.existsSync(storagePath)) {
     const allOrders = JSON.parse(fs.readFileSync(storagePath, 'utf8'))
-    const sessionOrders = allOrders.filter((o: any) =>
-        o.id === rootOrder.id || (o.dependsOn && o.dependsOn.includes(rootOrder.id)) ||
-        allOrders.some((parent: any) => o.dependsOn && o.dependsOn.includes(parent.id) && parent.created_at >= rootOrder.created_at)
-    )
+
+    // Improved linkage: Find all orders that transitively depend on the root order
+    const sessionOrderIds = new Set<string>([rootOrder.id])
+    let expanded = true
+    while (expanded) {
+      expanded = false
+      for (const order of allOrders) {
+        if (!sessionOrderIds.has(order.id) && order.dependsOn?.some((depId: string) => sessionOrderIds.has(depId))) {
+          sessionOrderIds.add(order.id)
+          expanded = true
+        }
+      }
+    }
+
+    const sessionOrders = allOrders.filter((o: any) => sessionOrderIds.has(o.id))
 
     if (sessionOrders.length === 0) {
       console.log(' - No orders were executed in this pulse.')

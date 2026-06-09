@@ -10,7 +10,7 @@ async function demo() {
 
   // 1. Create a Content Generation order
   console.log('\n--- Step 1: Creating Autonomous Orders ---')
-  workOrderService.createOrder(
+  await workOrderService.createOrder(
     'CONTENT_GENERATION',
     'Generate Autonomous System Status Report',
     {
@@ -21,7 +21,7 @@ async function demo() {
   )
 
   // 2. Create a Bootstrap order (Simulated Idea)
-  workOrderService.createOrder(
+  await workOrderService.createOrder(
     'BOOTSTRAP_SERVICE',
     'Bootstrap Task Orchestrator',
     {
