@@ -1775,7 +1775,7 @@
       "title": "software info by fk – software-online-review – Filip Keser",
       "metadata": {
         "source": "https://software-online-review.com",
-        "analyzedAt": "2026-06-08T03:46:13.500Z",
+        "analyzedAt": "2026-06-09T08:54:41.497Z",
         "description": "Extracted system knowledge"
       },
       "sections": [
@@ -5059,5 +5059,10 @@
       "title": "ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation",
       "contentPreview": "- AI and ML\n- Application development\n- Application hosting\n- Compute\n- Data analytics and pipelines\n- Databases\n- Distributed, hybrid, and multicloud\n- Industry solutions\n- Migration\n- Networking\n- Observability and monitoring\n- Security\n- Storage\n- Access and resources management\n- Costs and usage management\n- Infrastructure as code\n- SDK, languages, frameworks, and tools\n- English\n- Deutsch\n- Español – América Latina\n- Français\n- Português – Brasil\n- 中文 – 简体\n- 日本語\n- 한국어\n- Java\n- Client librar..."
     }
-  ]
+  ],
+  "software_online_review": {
+    "title": "Software Online Review",
+    "source": "https://software-online-review.com",
+    "notes": "Information software by fk – software-online-review – Filip Keser. integrate knowledge merge and all the best - https://software-online-review.com"
+  }
 }
