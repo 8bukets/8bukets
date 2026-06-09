@@ -278,7 +278,7 @@ function main() {
   }
 
   generateFullyAutonomousWorkflow();
-  generateDailyAutonomousEvolutionWorkflow();
+  generateDailyAutonomousEvolutionWorkflow(); // Trivial syntactic change to force clean commit
   console.log('Workflow creation engine completed.');
 }
 
