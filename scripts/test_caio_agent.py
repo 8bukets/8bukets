@@ -56,6 +56,7 @@ async def test_caio_agent():
     # Verify Market Intelligence and Role Alignment integration in summary
     assert "Executive Role Alignment: Verified." in result["executive_summary"]
     assert "Market Intelligence Q3" in result["executive_summary"] or "demand for sovereign AI clusters" in result["executive_summary"]
+    assert "Licensure Status: Not required for executive AI leadership (Verified)." in result["executive_summary"]
 
     print("Test passed!")
 
