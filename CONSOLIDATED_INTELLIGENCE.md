@@ -1910,3 +1910,5 @@ _No high-signal synergy overlaps detected for graph generation._
 
 ---
 **Collaboration Health Index:** 100% | *Phase 12 Synergy Protocol Active*
+
+- **[Duo Planner Agent]** Added system prompt and instructions for the GitLab Product Manager AI Agent.
