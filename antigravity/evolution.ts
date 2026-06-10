@@ -166,6 +166,15 @@ export async function evolve() {
              suggestion: 'PROJECT_OMEGA_LATENCY_VIOLATION: Project Omega mandates <30ms latency for all synchronization operations. Explicit monitoring or optimization is missing.'
            })
         }
+
+        // Rule 16: Quantum Synergy Compliance (Phase 13 Directive)
+        if (content.includes('synergy') && !content.includes('quantum-resistant') && !content.includes('Crystals-Kyber')) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'QUANTUM_SYNERGY_VIOLATION: Strategic synergy patterns detected without documented quantum-resistant orchestration (Crystals-Kyber).'
+          })
+        }
       }
     }
   }
