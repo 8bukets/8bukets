@@ -184,6 +184,12 @@ class ChiefAIOfficerAgent(BaseAgent):
                     self.logger.info("CAIO [SECURITY]: Quantum-resistant upgrade mandate detected. Issuing enforcement directive.")
                     strategic_directives.append("ENFORCE_QUANTUM_RESISTANCE")
 
+            # Quantum Synergy Directive (Phase 13)
+            if "quantum synergy" in sections_str or "activate_quantum_synergy" in sections_str:
+                if "ACTIVATE_QUANTUM_SYNERGY" not in strategic_directives:
+                    self.logger.info("CAIO [STRATEGY]: Quantum Synergy activation detected in integrated knowledge. Issuing directive.")
+                    strategic_directives.append("ACTIVATE_QUANTUM_SYNERGY")
+
             # Sovereign Data clusters for APAC
             if "sovereign_data_clusters" in sections_str:
                 if "PROVISION_SOVEREIGN_DATA_CLUSTERS" not in strategic_directives:

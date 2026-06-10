@@ -63,11 +63,21 @@ export class Jules {
     if (fs.existsSync(knowledgePath)) {
       const knowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'))
       const sections = knowledge.typescript_sections || []
-      const hasQuantum = sections.some((s: any) => s.title.toLowerCase().includes('quantum'))
-      const hasOmega = sections.some((s: any) => s.title.toLowerCase().includes('omega'))
+
+      const checkKnowledge = (query: string) => sections.some((s: any) =>
+        s.title.toLowerCase().includes(query.toLowerCase()) ||
+        s.sections?.some((sec: any) => sec.content.toLowerCase().includes(query.toLowerCase()))
+      )
+
+      const hasQuantum = checkKnowledge('quantum')
+      const hasOmega = checkKnowledge('omega')
+      const hasQuantumSynergy = checkKnowledge('quantum synergy')
 
       if (hasQuantum && !this.memory.preferredPatterns.includes('crystals-kyber')) {
         suggestions.push('Integrate Crystals-Kyber for Quantum-resistant security as per latest strategy.')
+      }
+      if (hasQuantumSynergy) {
+        suggestions.push('Orchestrate Quantum Synergy protocols for Phase 13 APAC expansion.')
       }
       if (hasOmega && !this.memory.preferredPatterns.includes('low-latency-sync')) {
         suggestions.push('Implement <30ms low-latency synchronization for Project Omega.')
