@@ -1,4 +1,5 @@
 # Next.js 16 + MongoDB Local Dev Orchestration
+# Phase 13: Sentient Orchestration and APAC Edge Node Simulation
 services:
   app:
     build:
