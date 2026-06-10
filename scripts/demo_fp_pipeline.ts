@@ -40,6 +40,7 @@ const asyncTrim = async (arr: string[]) => arr.map(s => s.trim());
 const asyncToUpperCase = async (arr: string[]) => arr.map(s => s.toUpperCase());
 
 async function runAsyncPipeline() {
+  'use cache'
   const result = await asyncPipe(
     fetchRawData(),
     asyncTrim,

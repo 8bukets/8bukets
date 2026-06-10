@@ -3,14 +3,15 @@ import path from 'path';
 import { evolve, applyFixes } from '../antigravity/evolution';
 
 async function main() {
+  'use cache'
   console.log('🔍 [Evolution] Analyzing recent sessions and work orders...');
 
   const ordersPath = path.join(process.cwd(), 'data/work_orders.json');
   let total = 0, success = 0, failed = 0;
 
-  if (fs.existsSync(ordersPath)) {
+  if (await fs.promises.access(ordersPath).then(() => true).catch(() => false)) {
     try {
-      const data = JSON.parse(fs.readFileSync(ordersPath, 'utf8'));
+      const data = JSON.parse(await fs.promises.readFile(ordersPath, 'utf8'));
       total = data.length;
       success = data.filter((o: any) => o.status === 'completed' || o.status === 'success').length;
       failed = data.filter((o: any) => o.status === 'failed' || o.status === 'error').length;
@@ -29,9 +30,9 @@ async function main() {
   // We write an improved engine configuration or something similar to simulate system scale and functionality improvements
   const engineConfigPath = path.join(process.cwd(), 'data/engine_config.json');
   let engineConfig: any = { scaleFactor: 1.0, features: [] };
-  if (fs.existsSync(engineConfigPath)) {
+  if (await fs.promises.access(engineConfigPath).then(() => true).catch(() => false)) {
      try {
-       engineConfig = JSON.parse(fs.readFileSync(engineConfigPath, 'utf8'));
+       engineConfig = JSON.parse(await fs.promises.readFile(engineConfigPath, 'utf8'));
      } catch (e) {}
   }
 
@@ -42,12 +43,12 @@ async function main() {
   engineConfig.lastEvolution = new Date().toISOString();
 
   fs.mkdirSync(path.dirname(engineConfigPath), { recursive: true });
-  fs.writeFileSync(engineConfigPath, JSON.stringify(engineConfig, null, 2));
+  await fs.promises.writeFile(engineConfigPath, JSON.stringify(engineConfig, null, 2));
   console.log('✅ [Evolution] Updated System Engine parameters (scale factor and functionality).');
 
   const knowledgePath = path.join(process.cwd(), 'KNOWLEDGE_MERGE.md');
-  if (fs.existsSync(knowledgePath)) {
-    let md = fs.readFileSync(knowledgePath, 'utf8');
+  if (await fs.promises.access(knowledgePath).then(() => true).catch(() => false)) {
+    let md = await fs.promises.readFile(knowledgePath, 'utf8');
 
     const timestamp = new Date().toISOString();
     const newEntry = `- **Date**: ${timestamp}
@@ -61,7 +62,7 @@ async function main() {
         md = md.replace(regex, (match) => {
             return `${match}${newEntry}\n`;
         });
-        fs.writeFileSync(knowledgePath, md);
+        await fs.promises.writeFile(knowledgePath, md);
         console.log('✅ [Evolution] Successfully injected session insights into KNOWLEDGE_MERGE.md');
     }
   }

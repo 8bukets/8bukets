@@ -27,7 +27,7 @@ async function testKnowledgeIntegration() {
     }
 
     const testJsonPath = path.join(process.cwd(), 'test_knowledge_output.json')
-    fs.writeFileSync(testJsonPath, JSON.stringify(consolidatedKnowledge, null, 2))
+    await fs.promises.writeFile(testJsonPath, JSON.stringify(consolidatedKnowledge, null, 2))
     console.log(`📝 Sample output written to ${testJsonPath}`)
   } else {
     console.error('\n❌ No insights extracted. Check network or repository details.')

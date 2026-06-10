@@ -26,7 +26,7 @@ export class KnowledgeObserver {
   }
 
   public async persistKnowledge(newInsights: KnowledgeInsights) {
-    if (!fs.existsSync(this.storageDir)) {
+    if (!await fs.promises.access(this.storageDir).then(() => true).catch(() => false)) {
       fs.mkdirSync(this.storageDir, { recursive: true });
     }
 
@@ -35,9 +35,9 @@ export class KnowledgeObserver {
 
     let existingData: any = { typescript_sections: [] };
 
-    if (fs.existsSync(jsonPath)) {
+    if (await fs.promises.access(jsonPath).then(() => true).catch(() => false)) {
       try {
-        existingData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+        existingData = JSON.parse(await fs.promises.readFile(jsonPath, 'utf8'));
       } catch (e) {
         console.warn('⚠️ [Knowledge Observer] Could not parse existing knowledge JSON, starting fresh.');
       }
@@ -66,7 +66,7 @@ export class KnowledgeObserver {
     }
 
     // Write JSON
-    fs.writeFileSync(jsonPath, JSON.stringify(existingData, null, 2), 'utf8');
+    await fs.promises.writeFile(jsonPath, JSON.stringify(existingData, null, 2), 'utf8');
 
     // Write Markdown - Regenerate from ALL sections
     const isSingleTopic = existingData.typescript_sections.length === 1;
@@ -105,7 +105,7 @@ export class KnowledgeObserver {
     // Trim trailing whitespace from every line
     const cleanMdContent = mdContent.split('\n').map(line => line.trimEnd()).join('\n');
 
-    fs.writeFileSync(mdPath, cleanMdContent, 'utf8');
+    await fs.promises.writeFile(mdPath, cleanMdContent, 'utf8');
     console.log(`✅ [Knowledge Observer] Knowledge successfully merged into ${jsonPath} and ${mdPath}`);
     return existingData;
   }
@@ -211,6 +211,7 @@ export function processContent(content: string, source: string, title: string = 
 }
 
 export async function observeKnowledge(url: string) {
+  'use cache'
   console.log(`👁️ [Knowledge Observer] Scanning ${url} for autonomous insights...`);
   try {
     const controller = new AbortController();

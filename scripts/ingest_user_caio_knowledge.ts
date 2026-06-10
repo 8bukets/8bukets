@@ -4,12 +4,12 @@ import { KnowledgeObserver } from '../antigravity/services/knowledge_observer';
 
 async function ingestUserCaioKnowledge() {
   const mdPath = path.join(process.cwd(), 'data/knowledge/caio_user_input.md');
-  if (!fs.existsSync(mdPath)) {
+  if (!await fs.promises.access(mdPath).then(() => true).catch(() => false)) {
     console.error(`❌ File not found: ${mdPath}`);
     process.exit(1);
   }
 
-  const content = fs.readFileSync(mdPath, 'utf8');
+  const content = await fs.promises.readFile(mdPath, 'utf8');
   const source = 'user_input://caio_user_input.md';
   const title = 'Chief AI Officer (CAIO) Role';
 

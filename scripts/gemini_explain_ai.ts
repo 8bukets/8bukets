@@ -9,6 +9,7 @@ try {
 }
 
 async function main() {
+  'use cache'
   const apiKey = process.env.GEMINI_API_KEY;
 
   if (!apiKey) {

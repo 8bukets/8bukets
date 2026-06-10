@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 async function ingestMultiDayAgentKnowledge() {
+  'use cache'
   console.log("Starting Multi-Day Agent Architecture Knowledge Ingestion...");
 
   try {
@@ -17,25 +18,25 @@ async function ingestMultiDayAgentKnowledge() {
 `;
 
     const knowledgePath = 'KNOWLEDGE_MERGE.md';
-    if (fs.existsSync(knowledgePath)) {
-      let content = fs.readFileSync(knowledgePath, 'utf-8');
+    if (await fs.promises.access(knowledgePath).then(() => true).catch(() => false)) {
+      let content = await fs.promises.readFile(knowledgePath, 'utf-8');
       const insertPointRegex = /(## Autonomous Observation\n)/;
       if (insertPointRegex.test(content)) {
          content = content.replace(insertPointRegex, (match) => `${match}${newObservation}\n`);
       } else {
          content += '\n## Autonomous Observation\n' + newObservation;
       }
-      fs.writeFileSync(knowledgePath, content, 'utf-8');
+      await fs.promises.writeFile(knowledgePath, content, 'utf-8');
       console.log(`Successfully ingested and updated ${knowledgePath}.`);
     } else {
       console.warn(`${knowledgePath} not found.`);
     }
 
     const consolidatedPath = 'CONSOLIDATED_INTELLIGENCE.md';
-    if (fs.existsSync(consolidatedPath)) {
-       let content = fs.readFileSync(consolidatedPath, 'utf-8');
+    if (await fs.promises.access(consolidatedPath).then(() => true).catch(() => false)) {
+       let content = await fs.promises.readFile(consolidatedPath, 'utf-8');
        content += `\n## 🚀 Architecture for Time: State Management for Multi-Day Agents\n- **Ingested on:** ${now}\n- **Source:** Visual Architecture Diagram\n- **Summary:** The architecture shifts from fragile Stateless Agents to Long-Running Agents that are durable and context-aware. They support multi-day workflows via Persistent Session Storage, Durable Memory Schemas, Event-Driven Dormancy Gates, and Multi-Agent Delegation to survive idle time and restarts.\n`;
-       fs.writeFileSync(consolidatedPath, content, 'utf-8');
+       await fs.promises.writeFile(consolidatedPath, content, 'utf-8');
        console.log(`Successfully ingested and updated ${consolidatedPath}.`);
     } else {
        console.warn(`${consolidatedPath} not found.`);

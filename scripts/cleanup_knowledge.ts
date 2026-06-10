@@ -2,13 +2,14 @@ import fs from 'fs-extra'
 import path from 'path'
 
 async function cleanup() {
+  'use cache'
   console.log('🧹 Starting Knowledge Base Cleanup...')
 
   const storageDir = path.join(process.cwd(), 'data/knowledge')
   const jsonStore = path.join(storageDir, 'system_knowledge.json')
   const mdStore = path.join(storageDir, 'ai_agents_knowledge.md')
 
-  if (!fs.existsSync(jsonStore)) {
+  if (!await fs.promises.access(jsonStore).then(() => true).catch(() => false)) {
     console.log('❌ JSON store not found.')
     return
   }
@@ -53,7 +54,7 @@ async function cleanup() {
     mdContent += `---\n\n`
   }
 
-  fs.writeFileSync(mdStore, mdContent)
+  await fs.promises.writeFile(mdStore, mdContent)
   console.log('✅ Markdown knowledge base rebuilt and cleaned.')
 }
 

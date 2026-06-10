@@ -4,6 +4,7 @@ import * as cheerio from 'cheerio';
 import puppeteer from 'puppeteer';
 
 async function ingestAdsKnowledge() {
+  'use cache'
   const baseUrls = [
     'https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU',
     'https://business.google.com/uk/ad-tools/bidding/',
@@ -77,33 +78,33 @@ async function ingestAdsKnowledge() {
   // Write MD
   const mdPath = path.join(process.cwd(), 'data', 'knowledge', 'google_ads_docs.md');
   const dirPath = path.dirname(mdPath);
-  if (!fs.existsSync(dirPath)) {
+  if (!await fs.promises.access(dirPath).then(() => true).catch(() => false)) {
     fs.mkdirSync(dirPath, { recursive: true });
   }
 
-  if (fs.existsSync(mdPath)) {
-    let existingContent = fs.readFileSync(mdPath, 'utf8');
+  if (await fs.promises.access(mdPath).then(() => true).catch(() => false)) {
+    let existingContent = await fs.promises.readFile(mdPath, 'utf8');
     // Programmatic regex replacement to satisfy rules
     existingContent = existingContent.replace(/[\s\S]*/, () => mdContentTotal);
-    fs.writeFileSync(mdPath, existingContent, 'utf8');
+    await fs.promises.writeFile(mdPath, existingContent, 'utf8');
   } else {
-    fs.writeFileSync(mdPath, mdContentTotal, 'utf8');
+    await fs.promises.writeFile(mdPath, mdContentTotal, 'utf8');
   }
 
   // Write JSON
   const jsonPath = path.join(process.cwd(), 'data', 'knowledge', 'system_knowledge.json');
   let sysKnowledge: any = {};
-  if (fs.existsSync(jsonPath)) {
-      sysKnowledge = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+  if (await fs.promises.access(jsonPath).then(() => true).catch(() => false)) {
+      sysKnowledge = JSON.parse(await fs.promises.readFile(jsonPath, 'utf8'));
   }
   sysKnowledge['google_ads'] = jsonResults;
 
   // Use 2-space indentation for system_knowledge.json
-  fs.writeFileSync(jsonPath, JSON.stringify(sysKnowledge, null, 2), 'utf8');
+  await fs.promises.writeFile(jsonPath, JSON.stringify(sysKnowledge, null, 2), 'utf8');
 
   // Also write legacy schema
   const legacyJsonPath = path.join(process.cwd(), 'data', 'knowledge', 'google_ads_docs.json');
-  fs.writeFileSync(legacyJsonPath, JSON.stringify(jsonResults, null, 2), 'utf8');
+  await fs.promises.writeFile(legacyJsonPath, JSON.stringify(jsonResults, null, 2), 'utf8');
 
   console.log('Ingestion complete!');
 }

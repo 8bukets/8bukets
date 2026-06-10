@@ -16,6 +16,7 @@ import path from 'path'
  */
 
 async function main() {
+  'use cache'
   console.log('🚀 [Antigravity] Starting Full Autonomous Automatic Creation Pulse...')
 
   // Step 1: Pre-flight Health Checks
@@ -56,8 +57,8 @@ async function main() {
   // Step 5: Detailed Final Reporting
   console.log('\n📊 [Antigravity] Final Execution Report:')
   const storagePath = path.join(process.cwd(), 'data/work_orders.json')
-  if (fs.existsSync(storagePath)) {
-    const allOrders = JSON.parse(fs.readFileSync(storagePath, 'utf8'))
+  if (await fs.promises.access(storagePath).then(() => true).catch(() => false)) {
+    const allOrders = JSON.parse(await fs.promises.readFile(storagePath, 'utf8'))
 
     // Improved linkage: Find all orders that transitively depend on the root order
     const sessionOrderIds = new Set<string>([rootOrder.id])

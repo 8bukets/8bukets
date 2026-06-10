@@ -12,7 +12,8 @@ export interface PredictiveRefactor {
   impactScore: number
 }
 
-export async function optimize(data?: { registrySize: number, ideasCount: number }): Promise<PredictiveRefactor[]> {
+export async function optimize(data?: {
+  registrySize: number, ideasCount: number }): Promise<PredictiveRefactor[]> {
   console.log('🧠 [Super-Intelligence] Initiating infinite self-optimization scan...')
 
   const registrySize = data?.registrySize ?? 0
