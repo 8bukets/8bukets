@@ -27,3 +27,10 @@
 - **Ingested on:** 2026-06-10T02:52:06.827Z
 - **Source:** Local Environment
 - **Summary:** The system is fully capable of autonomous cloud execution using MACBOOK_CLOUD_SIMULATION=true, integrating with Docker, GitHub, GitKraken, Supabase, MongoDB, and GitLab to ensure a continuous online presence and evolutionary coding capabilities.
+
+
+## Gemini CLI Subagents Docs
+URL: gemini_cli_subagents_docs.md
+
+### Subagents
+Subagents are specialized agents that operate within your main Gemini CLI session. They are designed to handle specific, complex tasks—like deep codebase analysis, documentation lookup, or domain-specific reasoning—without cluttering the main agent’s context or toolset.
