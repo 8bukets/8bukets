@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-08T23:03:31.979Z",
+    "generated_at": "2026-06-09T22:44:53.624Z",
     "version": 1.94,
     "sources_processed": [
       "ai_agents_knowledge.json",
@@ -37,7 +37,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/bug_report.md",
-        "ingestedAt": "2026-06-08T23:03:31.818Z"
+        "ingestedAt": "2026-06-09T22:44:53.472Z"
       }
     },
     "Internal: .github/ISSUE_TEMPLATE/feature_request.md": {
@@ -49,7 +49,7 @@
       ],
       "metadata": {
         "source": "local://.github/ISSUE_TEMPLATE/feature_request.md",
-        "ingestedAt": "2026-06-08T23:03:31.838Z"
+        "ingestedAt": "2026-06-09T22:44:53.493Z"
       }
     },
     "Internal: .github/PULL_REQUEST_TEMPLATE.md": {
@@ -81,7 +81,7 @@
       ],
       "metadata": {
         "source": "local://.github/PULL_REQUEST_TEMPLATE.md",
-        "ingestedAt": "2026-06-08T23:03:31.854Z"
+        "ingestedAt": "2026-06-09T22:44:53.507Z"
       }
     },
     "Gemma 4 Technical Report": {
@@ -193,7 +193,7 @@
       ],
       "metadata": {
         "source": "local://gemmafour_docs.md",
-        "ingestedAt": "2026-06-08T23:03:31.877Z"
+        "ingestedAt": "2026-06-09T22:44:53.523Z"
       }
     },
     "LiteRT Framework Documentation": {
@@ -273,7 +273,7 @@
       ],
       "metadata": {
         "source": "local://litert_docs.md",
-        "ingestedAt": "2026-06-08T23:03:31.892Z"
+        "ingestedAt": "2026-06-09T22:44:53.539Z"
       }
     },
     "OpenTelemetry Ecosystem Analysis": {
@@ -689,7 +689,7 @@
       ],
       "metadata": {
         "source": "local://opentelemetry_repos.md",
-        "ingestedAt": "2026-06-08T23:03:31.907Z"
+        "ingestedAt": "2026-06-09T22:44:53.554Z"
       }
     },
     "Google Ads Strategic Documentation": {
@@ -1785,7 +1785,7 @@
       ],
       "metadata": {
         "source": "local://google_ads_docs.md",
-        "ingestedAt": "2026-06-08T23:03:31.923Z"
+        "ingestedAt": "2026-06-09T22:44:53.575Z"
       }
     },
     "AI Agents Concept & Architecture": {
@@ -2173,7 +2173,7 @@
       ],
       "metadata": {
         "source": "local://ai_agents_knowledge.md",
-        "ingestedAt": "2026-06-08T23:03:31.939Z"
+        "ingestedAt": "2026-06-09T22:44:53.589Z"
       }
     },
     "LocalHost.Co Tools Documentation": {
@@ -2429,7 +2429,7 @@
       ],
       "metadata": {
         "source": "local://localhost_tools_docs.md",
-        "ingestedAt": "2026-06-08T23:03:31.958Z"
+        "ingestedAt": "2026-06-09T22:44:53.604Z"
       }
     },
     "Google Innovation & AI Blog": {
@@ -2475,6 +2475,10 @@
           "content": "- URL: https://blog.google/innovation-and-ai/technology/safety-security/\n- Insight: We're committed to your privacy and security. Get news on what we're doing to keep you safe...."
         },
         {
+          "header": "Fluid, natural voice translation with Gemini 3.5 Live Translate",
+          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-live-3-5-translate/\n- Insight: Twenty years ago, translation at Google began as one of our pioneering machine learning experiments to turn the science of language into the magic of human connection. That experiment has come a long way with over a trillion words being translated for billions of users across our products every month.Today, we’re taking our next step with the release of Gemini 3.5 Live Translate, our latest audio model for live speech-to-speech translation.The model automatically detects 70+ languages and generates smooth, natural-sounding translated speech that preserves the speakers' intonation, pacing and pitch. Unlike turn by turn systems that wait for the speaker to finish speaking before responding, 3.5 Live Translate generates speech continuously, balancing the trade-off between waiting for context to improve quality and translating immediately to stay in sync with the speaker. It delivers fluid audio without awkward pauses and stays just a few seconds behind the speaker throughout the session.G..."
+        },
+        {
           "header": "9 demos of Gemini Omni and Gemini 3.5 in action",
           "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-3-5-videos/\n- Insight: At Google I/O 2026, we announced our latest models: Gemini Omni and the Gemini 3.5 family of models.Gemini Omni is our new model that can create anything from any input, starting with video. With Omni, you can combine images, audio, video and text as input and generate high-quality videos grounded in Gemini's real-world knowledge. You can also easily edit your videos through conversation.Then there’s Gemini 3.5, our latest family of models combining frontier intelligence with action. This represents a major leap forward in building more capable, intelligent agents. We’re kicking off the series by releasing 3.5 Flash. It delivers frontier performance for agents and coding, excelling at complex long-horizon tasks that deliver real-world utility.To give you a clearer understanding of Gemini Omni and Gemini 3.5 Flash, here are 9 demos of what they can help you do.Gemini OmniEdit your videos through conversation. One capability that makes Omni special is that it gives you an easier way to e..."
         },
@@ -2485,10 +2489,6 @@
         {
           "header": "Gemini 3.5: frontier intelligence with action",
           "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/\n- Insight: Today, we’re introducing Gemini 3.5, our latest family of models combining frontier intelligence with action. This represents a major leap forward in building more capable, intelligent agents. We’re kicking off the series by releasing 3.5 Flash. It delivers frontier performance for agents and coding, excelling at complex long-horizon tasks that deliver real-world utility.3.5 Flash is available today to billions of people globally:For everyone via the Gemini app and AI Mode in Google SearchFor developers in our agent-first development platform Google Antigravity and Gemini API in Google AI Studio and Android StudioFor enterprises in Gemini Enterprise Agent Platform and Gemini Enterprise.We’re also hard at work on 3.5 Pro. It's already being used internally, and we look forward to rolling it out next month.3.5 Flash: frontier performance for agents and codingGemini 3.5 Flash delivers intelligence that rivals large flagship models on multiple dimensions, at the speeds you have come to exp..."
-        },
-        {
-          "header": "Gemini Embedding 2 is now generally available.",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2-generally-available/\n- Insight: When we first introduced Gemini Embedding 2, we invited developers and enterprises to enable deeper intelligence for their projects using natively multimodal embeddings. During its preview phase, we saw users create remarkable prototypes, from advanced e-commerce discovery engines to efficient video analysis tools. These projects demonstrated the need for systems that can search and reason across text, image, video and audio data, which previously required complex, fragmented pipelines.Now, we’re offering the stability and optimizations required to move these multimodal projects into production with the general availability of Gemini Embedding 2 via the Gemini API and Gemini Enterprise Agent Platform.As a core technology powering many Google products, we are excited to share these research breakthroughs with the developer community...."
         },
         {
           "header": "The latest AI news we announced in May 2026",
@@ -2503,6 +2503,10 @@
           "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/\n- Insight: Genie is our general-purpose world model capable of generating diverse, interactive environments. Since launching, Genie has become a foundational tool for research, enabling agents to learn and reason in complex virtual settings and even helping Waymo simulate hyper-realistic road environments.Now, we’re taking a leap forward by connecting Genie’s generative power with the real-world imagery of Google Street View, allowing our models to anchor themselves in reality. This expansion of Genie’s capabilities can provide a virtual environment for AI agents or robots to navigate and interact with the complexities of the real world.Today, we’re launching this new Street View grounding capability within Project Genie, our experimental prototype. With this upgrade, you'll be able to leverage real-world imagery to explore your favorite spots, or reimagine them with a creative twist. We’re also expanding access to Project Genie to more people around the globe.Select the “Ocean World” style to sc..."
         },
         {
+          "header": "4 ways researchers are collaborating with Co-Scientist to solve big problems",
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/research/co-scientist-research-problems/\n- Insight: We recently published our latest research on Co-Scientist, a collaborative AI designed for structured scientific thinking to help researchers develop new hypotheses in life sciences and beyond.The system is made up of a coalition of specialized agents that work together in three distinct phases. First, Co-Scientist generates ideas through agents that propose hypotheses and explore a wide variety of research avenues. Next, it debates ideas, with one agent that acts as a virtual peer reviewer before another pits vetted ideas against each other in an “idea tournament.” Finally, it evolves ideas, with agents that refine, combine and improve the best hypotheses, as well as agents that synthesize the research for a human scientist. A supervisor agent ties the system together, breaking down high-level research goals into individual tasks, allocating resources and coordinating specialized agents to work in parallel.Since sharing early research last year, we’ve been developing and testing the s..."
+        },
+        {
           "header": "A new experiment brings better group meetings to Google Beam",
           "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-research/google-beam-group-meetings/\n- Insight: While video conferencing tools keep us connected, users can still struggle to feel included in the conversation. Trying to read subtle emotions in a sea of tiny boxes may leave remote participants feeling like observers rather than engaged participants. Google Beam, our true-to-life video communication platform, helps you solve this problem by turning your meetings into a more active exchange.Today, we’re sharing a new experiment that brings better group meetings to Google Beam across more devices. Using HP Dimension’s immersive display, Google Beam renders participants joining from non-Beam devices in their true size, positioned as if they were sitting around a table with you. Paired with spatial audio that anchors each voice directly to the person speaking, colleagues look, sound, and feel more like they are in the same room.This optimization happens automatically, whether you join a meeting from home or the office. Our research suggests approaches like these help close the hybrid 'i..."
         },
@@ -2515,16 +2519,20 @@
           "content": "- URL: https://blog.google/innovation-and-ai/technology/research/neutral-atom-quantum-computers/\n- Insight: At Google Quantum AI, our mission has always been clear: build quantum computing for otherwise unsolvable problems. For over a decade, we have pioneered the development of superconducting quantum bits (qubits), achieving milestones like beyond-classical performance, error correction and verifiable quantum advantage that once seemed decades away. We are now increasingly confident that commercially relevant quantum computers based on superconducting technology will become available by the end of this decade.Today, we are excited to share that Google Quantum AI is expanding our quantum computing effort to include neutral atom quantum computing, which uses individual atoms as qubits.Two promising approaches to quantum computingGoogle will accelerate our timeline to near-term milestones and broaden our impact by exploiting the complementary strengths of two modalities. Superconducting qubits have already scaled to circuits with millions of gate and measurement cycles, where each cycle takes..."
         },
         {
-          "header": "Our new study explores how AI can reduce the climate impact of air travel.",
-          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-research/contrail-avoidance-research/\n- Insight: In 2023, Google partnered with American Airlines to show that pilots using AI-based forecasts could reduce contrails on a small set of test flights. A 54% reduction across 70 flights marked the industry's first proof point that commercial flights could verifiably reduce their contrail impact — but identifying the right flights still required hours of manual coordination.Our new study shows what happens when contrail avoidance is built directly into the tools airlines already use. Google's AI contrail forecasts were integrated into American Airline’s flight planning software and used in a trial of 2,400 transatlantic flights that were part of the airline’s standard schedule. For the flights that successfully flew the contrail avoidance plans, there was a 62% reduction in contrail formation rate compared to the control group.We're excited to scale this work and continue our research and partnership with the industry to automate contrail avoidance, a solution that offers a scalable and co..."
+          "header": "Google Research",
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/research/"
         },
         {
           "header": "How we used Gemini to build Google I/O 2026",
           "content": "- URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-google-ai/\n- Insight: Google I/O 2026 was all about how we’re making AI helpful for everyone in new ways. But we didn’t just make announcements about our innovations in AI at I/O — we used those tools to bring I/O to life, too.It’s both a strange and exciting moment to be building anything. We're living through an incredible shift where AI tools are getting better each month, effectively rewriting the rules of what we can create.This year, we challenged ourselves to use the same AI we were putting on stage to out-innovate, out-create and out-efficient ourselves.We moved faster than ever and prototyped in real-time — blending human artistry with experimental technology — with no better example than the \"Timmy TPU\" film.But the reward is showing how these tools unlock creativity and offload the mundane tasks, giving the team their best hours back for the parts they are uniquely suited to do. When done right, the event is amazing on its own, and, as a viewer, you stop thinking about how AI was used. That shift..."
         },
         {
-          "header": "Catch up on 12 major I/O 2026 moments",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/\n- Insight: Our biggest, boldest new developments took center stage at Google I/O 2026. We announced technical breakthroughs, like Gemini Omni’s ability to create anything from any input, starting with video. And we shared product updates to help you day-to-day, like the brand new, intelligent Search box that will let you search across modalities, using text, images, files, videos or Chrome tabs as inputs. (And with plenty of other big I/O announcements, there’s a lot more where that came from!)In case you missed it, here are some of our most exciting I/O keynote reveals this year.1. Gemini OmniGemini Omni is our new model that can create anything from any input — starting with video. With Omni, you can combine images, audio, video and text as input and generate high-quality videos grounded in Gemini's real-world knowledge. You can also easily edit your videos through conversation.First, we’re launching the first model in the Omni family: Gemini Omni Flash. Gemini Omni Flash is rolling out to all ..."
+          "header": "See what 3 builders are making with Gemma 4",
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4-builders/\n- Insight: We recently released Gemma 4, our most capable open models to date. Since then, they have been downloaded more than 150 million times, and we’ve been expanding the family’s capabilities. We introduced Multi-Token Prediction (MTP) to accelerate inference, and recently released the 12B Unified model and Quantization-Aware-Training (QAT) checkpoints. Released under an Apache 2.0 license, Gemma 4 gives builders and organizations flexibility to fine-tune and deploy models across a variety of environments, from edge devices to local workstations.Many builders are sharing what they’ve created with Gemma 4, showcasing how the models’ capabilities translate into real-world applications. Here are three highlights of what people and companies are creating.Build low-latency, on-device apps.The team at the app building company HubX used Gemma 4 to build BetterSpeak, an offline AI English tutoring platform. BetterSpeak uses the edge-optimized Gemma 4 E2B (effective 2B parameters) model as the reason..."
+        },
+        {
+          "header": "Bringing the latest Gemini models to Apple developers",
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/developers-tools/bringing-gemini-models-to-apple-developers/\n- Insight: Updated June 9, 2026Apple’s Worldwide Developers Conference (WWDC) kicked off this week, and we’re excited to share that Apple developers can now securely call cloud-hosted Gemini models using the Foundation Models framework, and access Gemini in Xcode. This announcement gives Apple developers seamless access to Gemini models to deliver dynamic experiences for their end users and increase their own development velocity.Call Gemini models directly from the Foundation Models frameworkAt WWDC, Apple announced that it's opening its Foundation Models framework to third-party cloud model providers. Starting with iOS 27, macOS 27, iPadOS 27, visionOS 27 and watchOS 27, model providers can implement the new public LanguageModel protocol to provide a common interface for model inference. We've made Gemini models available to the Foundation Models framework through the Firebase Apple SDK.This provides a fully native development experience — cloud-hosted Gemini models can plug directly into the F..."
         },
         {
           "header": "Do better research with NotebookLM",
@@ -2535,12 +2543,24 @@
           "content": "- URL: https://blog.google/innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/\n- Insight: Since releasing Gemma 4 two months ago, we've been continuously working to expand its capabilities. First, we introduced Multi-Token Prediction (MTP) to accelerate inference, and just a couple of days ago, we released a 12B model to bridge the gap between our E4B and 26B MOE models.Today, we are releasing new checkpoints optimized with Quantization-Aware Training (QAT) to make Gemma 4 even more efficient, so you can run models locally on everyday edge devices and consumer GPUs.By simulating quantization during training, QAT minimizes quality loss when the model is compressed. This release includes QAT checkpoints for the popular Q4_0 quantization format as well as a novel quantization format specialized for mobile use cases. Using this mobile format, we’ve reduced the memory footprint of Gemma 4 E2B to 1GB. Together, these dramatically reduce memory requirements while preserving the capabilities and quality you expect from Gemma 4.Keeping model quality while making them smallerQuantiza..."
         },
         {
-          "header": "Kaggle is making AI benchmark creation effortless",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/developers-tools/build-kaggle--benchmarks-locally/\n- Insight: As AI models evolve from simple chatbots into reasoning agents that write code, use tools and solve complex problems, traditional benchmarks are no longer enough. The community needs dynamic, rigorous evaluations — built by the people who use these models in the real-world.That’s why we launched Kaggle Benchmarks. Since then, the global AI community has created more than 10,000 evaluation tasks, creating the trustworthy, transparent public leaderboards that help labs measure and accelerate AI progress.Today, we are taking the next step by launching local development for Kaggle Benchmarks.Use Kaggle Benchmarks from your local development environmentUntil now, creating evaluation tasks meant working exclusively in Kaggle's web-based notebook editor, instead of developers’ preferred stack to build with.Our new update enables developers to create, validate, push, run and download tasks directly from their local development environments like Antigravity, VSCode, Cursor and coding agents. Th..."
-        },
-        {
           "header": "We’re announcing a new data center and energy investments in Gray and Roberts Counties, Texas.",
           "content": "- URL: https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/meitner-energy-center/\n- Insight: Google and Intersect are announcing construction of the Meitner Energy Center, which includes a new data center co-located with new energy generation in Gray and Roberts Counties, Texas. Co-location means the data center will come online alongside dedicated clean power that will help meet its demand while reducing the need for new power supply on the local grid.This investment is built on a commitment to deliver data centers the right way, through responsibly increasing local energy capacity, using air cooling to limit water consumption, and supporting thousands of jobs in the region. The data center will join Google’s global network that powers services people and businesses rely on every day, including Search, Gmail, Maps, Cloud, online banking and 911 systems.For more information, read our press release...."
+        },
+        {
+          "header": "Gemini Embedding 2 is now generally available.",
+          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2-generally-available/\n- Insight: When we first introduced Gemini Embedding 2, we invited developers and enterprises to enable deeper intelligence for their projects using natively multimodal embeddings. During its preview phase, we saw users create remarkable prototypes, from advanced e-commerce discovery engines to efficient video analysis tools. These projects demonstrated the need for systems that can search and reason across text, image, video and audio data, which previously required complex, fragmented pipelines.Now, we’re offering the stability and optimizations required to move these multimodal projects into production with the general availability of Gemini Embedding 2 via the Gemini API and Gemini Enterprise Agent Platform.As a core technology powering many Google products, we are excited to share these research breakthroughs with the developer community...."
+        },
+        {
+          "header": "Our new study explores how AI can reduce the climate impact of air travel.",
+          "content": "- URL: https://blog.google/innovation-and-ai/models-and-research/google-research/contrail-avoidance-research/\n- Insight: In 2023, Google partnered with American Airlines to show that pilots using AI-based forecasts could reduce contrails on a small set of test flights. A 54% reduction across 70 flights marked the industry's first proof point that commercial flights could verifiably reduce their contrail impact — but identifying the right flights still required hours of manual coordination.Our new study shows what happens when contrail avoidance is built directly into the tools airlines already use. Google's AI contrail forecasts were integrated into American Airline’s flight planning software and used in a trial of 2,400 transatlantic flights that were part of the airline’s standard schedule. For the flights that successfully flew the contrail avoidance plans, there was a 62% reduction in contrail formation rate compared to the control group.We're excited to scale this work and continue our research and partnership with the industry to automate contrail avoidance, a solution that offers a scalable and co..."
+        },
+        {
+          "header": "Catch up on 12 major I/O 2026 moments",
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/\n- Insight: Our biggest, boldest new developments took center stage at Google I/O 2026. We announced technical breakthroughs, like Gemini Omni’s ability to create anything from any input, starting with video. And we shared product updates to help you day-to-day, like the brand new, intelligent Search box that will let you search across modalities, using text, images, files, videos or Chrome tabs as inputs. (And with plenty of other big I/O announcements, there’s a lot more where that came from!)In case you missed it, here are some of our most exciting I/O keynote reveals this year.1. Gemini OmniGemini Omni is our new model that can create anything from any input — starting with video. With Omni, you can combine images, audio, video and text as input and generate high-quality videos grounded in Gemini's real-world knowledge. You can also easily edit your videos through conversation.First, we’re launching the first model in the Omni family: Gemini Omni Flash. Gemini Omni Flash is rolling out to all ..."
+        },
+        {
+          "header": "Kaggle is making AI benchmark creation effortless",
+          "content": "- URL: https://blog.google/innovation-and-ai/technology/developers-tools/build-kaggle--benchmarks-locally/\n- Insight: As AI models evolve from simple chatbots into reasoning agents that write code, use tools and solve complex problems, traditional benchmarks are no longer enough. The community needs dynamic, rigorous evaluations — built by the people who use these models in the real-world.That’s why we launched Kaggle Benchmarks. Since then, the global AI community has created more than 10,000 evaluation tasks, creating the trustworthy, transparent public leaderboards that help labs measure and accelerate AI progress.Today, we are taking the next step by launching local development for Kaggle Benchmarks.Use Kaggle Benchmarks from your local development environmentUntil now, creating evaluation tasks meant working exclusively in Kaggle's web-based notebook editor, instead of developers’ preferred stack to build with.Our new update enables developers to create, validate, push, run and download tasks directly from their local development environments like Antigravity, VSCode, Cursor and coding agents. Th..."
         },
         {
           "header": "Meet Dreambeans, an app that connects you with what matters",
@@ -2577,10 +2597,6 @@
         {
           "header": "Making it easier to understand how content was created and edited",
           "content": "- URL: https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/"
-        },
-        {
-          "header": "Google Research",
-          "content": "- URL: https://blog.google/innovation-and-ai/technology/research/"
         },
         {
           "header": "Take our I/O 2026 quiz, vibe coded in Google AI Studio.",
@@ -2729,7 +2745,7 @@
       ],
       "metadata": {
         "source": "local://google_innovation_ai_report.md",
-        "ingestedAt": "2026-06-08T23:03:31.972Z"
+        "ingestedAt": "2026-06-09T22:44:53.617Z"
       }
     }
   },
