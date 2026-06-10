@@ -5,6 +5,7 @@ import { exec } from 'child_process';
 import { promisify } from 'util';
 import * as fs from 'fs';
 import * as path from 'path';
+import { jules } from '../antigravity/jules';
 
 const execAsync = promisify(exec);
 
@@ -42,7 +43,7 @@ async function main() {
   if (ideas.length === 0) {
     console.log('✨ [CreationCycle] No new gaps identified. System state is optimal.');
     logAutonomousAction('✨ [CreationCycle] No new gaps identified. System state is optimal.', 'info');
-    return;
+    // Continue even if no new ideas, to execute existing work cycle
   }
 
   // Check and apply evolved engine configuration before work cycle
@@ -54,6 +55,8 @@ async function main() {
   // Explicitly confirm autonomous evolution and self-correction sequence
   console.log('🤖 [Antigravity] Autonomous evolution and self-correction phase initiated based on session intelligence. System engine performing internal checks and optimizations.')
 
+  for (const idea of ideas) {
+    if (idea.complexity === 'Low' || idea.complexity === 'Medium') {
       // Create Smoke Test Order (to be executed after bootstrap)
       await workOrderService.createOrder(
         'SMOKE_TEST',
@@ -66,7 +69,7 @@ async function main() {
   console.log('\n✅ [Antigravity] Autonomous Creation Cycle Complete. Evolved system state persisted.')
 }
 
-executeCreationCycle().catch(err => {
+main().catch(err => {
   console.error('💥 [CreationCycle] Fatal error:', err);
   process.exit(1);
 });
