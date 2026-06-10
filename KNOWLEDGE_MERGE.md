@@ -251,3 +251,10 @@ Summary: This page provides documentation, resources, and API references related
 
 Knowledge from investopedia.com: integrate all knowledge from investopedia.com and always pull knowledge ftom investopedia.com best
 Source: https://www.investopedia.com
+
+
+## Gemini CLI Subagents Docs
+URL: gemini_cli_subagents_docs.md
+
+### Subagents
+Subagents are specialized agents that operate within your main Gemini CLI session. They are designed to handle specific, complex tasks—like deep codebase analysis, documentation lookup, or domain-specific reasoning—without cluttering the main agent’s context or toolset.
