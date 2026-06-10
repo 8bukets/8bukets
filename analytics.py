@@ -28,6 +28,9 @@ def load_data(filepath):
     except FileNotFoundError:
         print(f"Error: File '{filepath}' not found.")
         sys.exit(1)
+        # best
+        # ⚡ Performance Optimization Task
+        # You are a performance-focused agent. Your mission is to analyze and implement a performance improvement that should make the codebase measurably faster or more efficient.
 
 def get_domain(url):
     if not url:
