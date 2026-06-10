@@ -31,7 +31,7 @@ describe('KnowledgeObserver', () => {
   })
 
   it('should handle Title Case headers', () => {
-    const raw = 'Introduction\nThis is the intro and it is long enough.\nGetting Started\nStep 1 is also long enough.'
+    const raw = '# Introduction\nThis is the intro and it is long enough.\n# Getting Started\nStep 1 is also long enough.'
     const result = KnowledgeObserver.processContent('Test Title', raw, 'test-source')
 
     expect(result.sections).toHaveLength(2)
@@ -40,12 +40,12 @@ describe('KnowledgeObserver', () => {
   })
 
   it('should handle uppercase headers and skip code blocks', () => {
-    const raw = `INTRODUCTION
+    const raw = `# INTRODUCTION
 This is an introduction.
 <?php
 class SkipMe {}
 ?>
-DETAILS
+# DETAILS
 Some details here.`
     const result = KnowledgeObserver.processContent('Test Title', raw, 'test-source')
 

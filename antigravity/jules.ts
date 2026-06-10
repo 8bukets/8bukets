@@ -478,19 +478,30 @@ export class Jules {
           // Phase 12: Enhanced Intelligence Extraction
           let domain = 'General'
           let knowledge = ''
+
+          // Domain detection from commit message (as fallback or primary)
+          if (lowerMsg.includes('service') || lowerMsg.includes('core')) domain = 'Services'
+          else if (lowerMsg.includes('script') || lowerMsg.includes('automation') || lowerMsg.includes('workflow')) domain = 'Automation'
+          else if (lowerMsg.includes('ui') || lowerMsg.includes('ux') || lowerMsg.includes('frontend') || lowerMsg.includes('page')) domain = 'UI/UX'
+          else if (lowerMsg.includes('agent') || lowerMsg.includes('cognitive')) domain = 'AI Agents'
+          else if (lowerMsg.includes('doc') || lowerMsg.includes('knowledge')) domain = 'Documentation'
+          else if (lowerMsg.includes('security') || lowerMsg.includes('auth')) domain = 'Security'
+
           if (changedFiles.length > 0) {
             const hasMarkdown = changedFiles.some(f => f.endsWith('.md'))
             const hasAgents = changedFiles.some(f => f.startsWith('agents/'))
             const hasDocs = changedFiles.some(f => f.startsWith('docs/'))
             const hasKnowledgeDir = changedFiles.some(f => f.includes('data/knowledge/'))
+            const hasSecurity = changedFiles.some(f => f.includes('security') || f.includes('auth') || f.includes('compliance'))
 
             if (hasMarkdown || hasAgents || hasDocs || hasKnowledgeDir) {
               const count = changedFiles.filter(f => f.endsWith('.md') || f.startsWith('agents/') || f.startsWith('docs/') || f.includes('data/knowledge/')).length;
               knowledge = `Enhanced ecosystem knowledge base via ${count} artifact${count > 1 ? 's' : ''}.`
             }
 
-            // Detect domain from file paths (Prioritized assignment)
-            if (changedFiles.some(f => f.includes('services/'))) domain = 'Services'
+            // Detect domain from file paths (Prioritized assignment, overrides commit msg detection if match found)
+            if (hasSecurity) domain = 'Security'
+            else if (changedFiles.some(f => f.includes('services/'))) domain = 'Services'
             else if (changedFiles.some(f => f.includes('scripts/'))) domain = 'Automation'
             else if (changedFiles.some(f => f.includes('app/') || f.includes('web-app/'))) domain = 'UI/UX'
             else if (changedFiles.some(f => f.startsWith('agents/'))) domain = 'AI Agents'
@@ -499,7 +510,7 @@ export class Jules {
 
           const results = changedFiles.length > 0
             ? `${lastMessage} (${changedFiles.length} files changed in ${domain})`
-            : (lastMessage ? `Commit: ${lastMessage}` : 'N/A')
+            : (lastMessage && lastMessage !== 'N/A' ? `Commit: ${lastMessage}` : 'N/A')
 
           return {
             name,
