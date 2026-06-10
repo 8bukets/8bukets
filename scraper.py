@@ -218,76 +218,127 @@ class WordpressScraperAsync:
         return page_posts
 
     async def scrape(self):
-        all_posts = []
         page_num = 1
         sem = asyncio.Semaphore(self.concurrency)
 
-        # Headers
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-        }
+        json_f = None
+        csv_f = None
+        txt_f = None
 
-        async with aiohttp.ClientSession(headers=headers) as session:
-            active = True
-            while active:
-                tasks = []
-                # Prepare a batch of pages
-                batch_start = page_num
-                # If max_pages is set, clamp the batch size
-                current_concurrency = self.concurrency
+        # Open files for incremental writing
+        try:
+            json_f = open(self.output_json, 'w', encoding='utf-8')
+            csv_f = open(self.output_csv, 'w', newline='', encoding='utf-8')
+            txt_f = open(self.output_txt, 'w', encoding='utf-8')
 
-                for i in range(current_concurrency):
-                    current_page = batch_start + i
-                    if self.max_pages and current_page > self.max_pages:
-                        active = False
+            # Write headers
+            json_f.write('[\n')
+            csv_writer = csv.writer(csv_f)
+            csv_writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
+
+            is_first_item = True
+            unique_links = set()
+            total_fetched = 0
+
+            # Headers
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+            }
+
+            async with aiohttp.ClientSession(headers=headers) as session:
+                active = True
+                while active:
+                    tasks = []
+                    batch_start = page_num
+                    current_concurrency = self.concurrency
+
+                    for i in range(current_concurrency):
+                        current_page = batch_start + i
+                        if self.max_pages and current_page > self.max_pages:
+                            active = False
+                            break
+                        tasks.append(self.fetch_and_parse(session, current_page, sem))
+
+                    if not tasks:
                         break
 
-                    tasks.append(self.fetch_and_parse(session, current_page, sem))
+                    logger.info(f"🚀 Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
+                    results = await asyncio.gather(*tasks)
 
-                if not tasks:
-                    break
+                    stop_detected = False
 
-                logger.info(f"🚀 Fetching pages {batch_start} to {batch_start + len(tasks) - 1}...")
-                results = await asyncio.gather(*tasks)
+                    for idx, page_posts in enumerate(results):
+                        page_idx = batch_start + idx
+                        if page_posts is None:
+                            logger.info(f"🛑 Page {page_idx} returned 404 or empty. Stopping.")
+                            stop_detected = True
+                            break
+                        elif len(page_posts) == 0:
+                            logger.info(f"🛑 Page {page_idx} has no articles. Stopping.")
+                            stop_detected = True
+                            break
 
-                # Check results
-                batch_posts_count = 0
-                stop_detected = False
+                        # Process posts incrementally
+                        total_fetched += len(page_posts)
+                        for post in page_posts:
+                            # JSON
+                            if not is_first_item:
+                                json_f.write(',\n')
+                            json.dump(post, json_f, indent=4, ensure_ascii=False)
+                            is_first_item = False
 
-                # Results are ordered by page number
-                for idx, page_posts in enumerate(results):
-                    page_idx = batch_start + idx
-                    if page_posts is None:
-                        # 404 or Error
-                        logger.info(f"🛑 Page {page_idx} returned 404 or empty. Stopping.")
-                        stop_detected = True
-                        break # Don't process further pages in this batch effectively (though they were fetched)
-                    elif len(page_posts) == 0:
-                        logger.info(f"🛑 Page {page_idx} has no articles. Stopping.")
-                        stop_detected = True
+                            # CSV
+                            csv_writer.writerow([
+                                self.sanitize_for_csv(post.get('title', '')),
+                                self.sanitize_for_csv(post.get('date', '')),
+                                self.sanitize_for_csv(post.get('author', '')),
+                                self.sanitize_for_csv(", ".join(post.get('categories', []))),
+                                self.sanitize_for_csv(post.get('external_link', '')),
+                                self.sanitize_for_csv(post.get('domain', '')),
+                                self.sanitize_for_csv(post.get('post_url', ''))
+                            ])
+
+                            # TXT
+                            link = post.get('external_link')
+                            if link and link not in unique_links:
+                                unique_links.add(link)
+                                txt_f.write(link + '\n')
+
+                    if stop_detected:
                         break
 
-                if stop_detected:
-                    break
-
-                if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
-                    logger.info("🛑 Reached max pages limit.")
-                    break
+                    if self.max_pages and (batch_start + len(tasks) - 1) >= self.max_pages:
+                        logger.info("🛑 Reached max pages limit.")
+                        break
 
                     page_num += len(tasks)
-                    # Small delay between batches
                     await asyncio.sleep(0.5)
 
-            json.dump(post, json_f, indent=4, ensure_ascii=False)
+            json_f.write('\n]\n')
 
-        return is_first_item
+            print("\n" + "="*40)
+            print(f"📊 Scraping Summary")
+            print("="*40)
+            print(f"✅ Total Posts Fetched: {total_fetched}")
+            print(f"🔗 Unique Links Found: {len(unique_links)}")
+            print("-" * 40)
+            print(f"{'📁 JSON Report:':<20} {self.output_json} (Saved)")
+            print(f"{'📄 CSV Report:':<20} {self.output_csv} (Saved)")
+            print(f"{'📝 Links List:':<20} {self.output_txt} (Saved)")
+            print("="*40 + "\n")
+
+        except IOError as e:
+            logger.error(f"Error saving data: {e}")
+        finally:
+            if json_f: json_f.close()
+            if csv_f: csv_f.close()
+            if txt_f: txt_f.close()
 
     async def fetch_and_parse(self, session, page_num, sem):
         async with sem:
             html = await self.fetch_page(session, page_num)
             if html:
-                loop = asyncio.get_running_loop()
-                return await loop.run_in_executor(self.executor, parse_html_content, html)
+                return await self.parse_page(html)
             return None
 
     def sanitize_for_csv(self, text: str) -> str:
@@ -299,72 +350,6 @@ class WordpressScraperAsync:
             return "'" + text
         return text
 
-    async def fetch_and_parse(self, session, page_num, sem, pool):
-        async with sem:
-            html = await self.fetch_page(session, page_num)
-            if html:
-                loop = asyncio.get_running_loop()
-                return await loop.run_in_executor(pool, parse_page, html)
-            return None
-
-    def save_data(self, posts: List[Dict]):
-        # JSON
-        json_ok = False
-        try:
-            with open(self.output_json, 'w', encoding='utf-8') as f:
-                json.dump(posts, f, indent=4, ensure_ascii=False)
-            json_ok = True
-        except IOError as e:
-            logger.error(f"Failed to save JSON: {e}")
-
-        # CSV
-        csv_ok = False
-        try:
-            with open(self.output_csv, 'w', newline='', encoding='utf-8') as f:
-                writer = csv.writer(f)
-                writer.writerow(['Title', 'Date', 'Author', 'Categories', 'External Link', 'Domain', 'Post URL'])
-                for post in posts:
-                    writer.writerow([
-                        post.get('title', ''),
-                        post.get('date', ''),
-                        post.get('author', ''),
-                        ", ".join(post.get('categories', [])),
-                        post.get('external_link', ''),
-                        post.get('domain', ''),
-                        post.get('post_url', '')
-                    ])
-            csv_ok = True
-        except IOError as e:
-            logger.error(f"Failed to save CSV: {e}")
-
-        # Unique Links TXT
-        unique_links = set()
-        for post in posts:
-            link = post.get('external_link')
-            if link:
-                unique_links.add(link)
-
-        sorted_links = sorted(list(unique_links))
-        txt_ok = False
-        try:
-            with open(self.output_txt, 'w', encoding='utf-8') as f:
-                for link in sorted_links:
-                    f.write(link + '\n')
-            txt_ok = True
-        except IOError as e:
-            logger.error(f"Failed to save TXT: {e}")
-
-        # Summary
-        print("\n" + "="*40)
-        print(f"📊 Scraping Summary")
-        print("="*40)
-        print(f"✅ Total Posts Fetched: {len(posts)}")
-        print(f"🔗 Unique Links Found: {len(sorted_links)}")
-        print("-" * 40)
-        print(f"{'📁 JSON Report:':<20} {self.output_json} {'(Saved)' if json_ok else '(Failed)'}")
-        print(f"{'📄 CSV Report:':<20} {self.output_csv} {'(Saved)' if csv_ok else '(Failed)'}")
-        print(f"{'📝 Links List:':<20} {self.output_txt} {'(Saved)' if txt_ok else '(Failed)'}")
-        print("="*40 + "\n")
 
 def main():
     parser = argparse.ArgumentParser(description="Async Scraper for WordPress blogs")
