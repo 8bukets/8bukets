@@ -22,11 +22,13 @@ export class IntelephenseService {
 
     // 1. Ingest from local scratch (most complete usually)
     const localPath = path.join(process.cwd(), 'scratch/intelephense_docs.md')
-    if ( fs.existsSync(localPath)) {
+    try {
+      const localContent = await fs.promises.readFile(localPath, 'utf8')
       console.log(' 📄 Ingesting local scratch docs...')
-      const localContent = fs.readFileSync(localPath, 'utf8')
       const localKnowledge = KnowledgeObserver.processContent('Intelephense Documentation', localContent, 'local://intelephense_docs.md')
       allSections.push(...localKnowledge.sections)
+    } catch (err) {
+      // Local scratch may not exist in all environments, skip silently
     }
 
     // 2. Fetch and merge from GitHub
@@ -95,27 +97,35 @@ export class IntelephenseService {
       analyzedAt: new Date().toISOString()
     }
 
-    // 4. Purge redundant entries from the store before persisting
+    // 4. Persist consolidated knowledge
+    const observer = new KnowledgeObserver()
+    await observer.persistKnowledge(consolidatedKnowledge)
+
+    // 5. Purge redundant legacy entries (Post-persist to avoid data loss if write fails)
     const storageDir = path.join(process.cwd(), 'data/knowledge')
     const jsonStore = path.join(storageDir, 'system_knowledge.json')
 
-    if (fs.existsSync(jsonStore)) {
-      console.log(' 🧹 Purging redundant Intelephense entries...')
-      const systemKnowledge = JSON.parse(fs.readFileSync(jsonStore, 'utf8'))
+    try {
+      const data = await fs.promises.readFile(jsonStore, 'utf8')
+      const systemKnowledge = JSON.parse(data)
+
       if (systemKnowledge.typescript_sections) {
-        systemKnowledge.typescript_sections = systemKnowledge.typescript_sections.filter((k: any) => {
-          // Purge ALL Intelephense variants and the local filename entry to avoid duplication
-          const isLegacyIntelephense = k.title.startsWith('Intelephense')
+        const originalCount = systemKnowledge.typescript_sections.length
+        const filtered = systemKnowledge.typescript_sections.filter((k: any) => {
+          // Purge legacy "Intelephense: file" titles but KEEP the new "Intelephense Documentation"
+          const isLegacyIntelephense = k.title.startsWith('Intelephense') && k.title !== 'Intelephense Documentation'
           const isLocalFilename = k.title === 'intelephense_docs.md'
           return !isLegacyIntelephense && !isLocalFilename
         })
-        fs.writeFileSync(jsonStore, JSON.stringify(systemKnowledge, null, 2))
-      }
-    }
 
-    // 5. Persist consolidated knowledge
-    const observer = new KnowledgeObserver()
-    await observer.persistKnowledge(consolidatedKnowledge)
+        if (filtered.length !== originalCount) {
+          console.log(` 🧹 Purged ${originalCount - filtered.length} redundant Intelephense entries.`)
+          await fs.promises.writeFile(jsonStore, JSON.stringify({ ...systemKnowledge, typescript_sections: filtered }, null, 2))
+        }
+      }
+    } catch (err) {
+      // Silently handle if file is missing or unparseable
+    }
 
     console.log('✅ Intelephense consolidation complete.')
   }
