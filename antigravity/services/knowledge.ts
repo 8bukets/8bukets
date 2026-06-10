@@ -90,44 +90,36 @@ ${summary}
       existingContent = '# Market Intelligence Matrix\n'
     }
 
-    const signature = 'All the best - https://markposition.wordpress.com'
+    let cleanContent = existingContent.trimEnd()
 
-    // Instead of regex, split on signature and trim
-    let cleanContent = existingContent
-    if (existingContent.includes(signature)) {
-       cleanContent = existingContent.split(signature)[0]
-    }
-    cleanContent = cleanContent.trimEnd()
+    // Check if the target is already observed
+    const targetIndicator = `- **Target**: ${url}`;
+    const targetPos = cleanContent.indexOf(targetIndicator);
+    let newContent = cleanContent;
+    let updated = false;
 
-    let updated = false
-    // Use string parsing to avoid regex bugs
-    const blockRegex = /## Autonomous Observation(?:(?!## Autonomous Observation)[\s\S])*/g
+    if (targetPos !== -1) {
+        // Find the beginning of this observation block
+        const blockStartPos = cleanContent.lastIndexOf('## Autonomous Observation', targetPos);
 
-    let blocks = [];
-    let match;
-    while ((match = blockRegex.exec(cleanContent)) !== null) {
-        blocks.push(match[0]);
-    }
+        // Find the end of this block (start of the next header, or end of string)
+        const nextHeaderPos = cleanContent.indexOf('\n## ', targetPos + targetIndicator.length);
+        const blockEndPos = nextHeaderPos !== -1 ? nextHeaderPos : cleanContent.length;
 
-    let newBlocks = blocks.map(block => {
-        if (block.includes(`- **Target**: ${url}\n`) || block.includes(`- **Target**: ${url}\r`)) {
-            updated = true;
-            return relationshipEntry.trimStart();
+        // Replace the old block with the new one
+        newContent = cleanContent.slice(0, blockStartPos) + relationshipEntry.trimStart() + '\n' + cleanContent.slice(blockEndPos);
+        updated = true;
+    } else {
+        // Append observation block right before the first Ecosystem Knowledge Consolidation, or at the end
+        const ecosystemStart = cleanContent.indexOf('\n## Ecosystem Knowledge Consolidation');
+        if (ecosystemStart !== -1) {
+             newContent = cleanContent.slice(0, ecosystemStart) + '\n\n' + relationshipEntry.trimStart() + '\n\n' + cleanContent.slice(ecosystemStart);
+        } else {
+             newContent = cleanContent + '\n\n' + relationshipEntry.trimStart() + '\n\n';
         }
-        return block;
-    });
-
-    if (!updated) {
-        newBlocks.push(relationshipEntry.trimStart());
     }
 
-    // Replace the part of string where the blocks are
-    let newContent = cleanContent.split(/## Autonomous Observation/)[0].trimEnd()
-    if (newBlocks.length > 0) {
-        newContent += '\n\n' + newBlocks.join('\n\n')
-    }
-
-    newContent = newContent.trimEnd() + '\n\n' + signature + '\n'
+    newContent = newContent.trimEnd() + '\n'
     await fs.promises.writeFile(knowledgePath, newContent, 'utf8')
     console.log(`✅ [Knowledge Observer] ${updated ? 'Updated' : 'Appended'} insights in KNOWLEDGE_MERGE.md.`)
 

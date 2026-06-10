@@ -38,7 +38,7 @@ jobs:
           MACBOOK_CLOUD_SIMULATION: true
 
       - name: Analyze Recent Sessions
-        run: npx tsx scripts/analyze_recent_sessions.ts
+        run: npx tsx antigravity-cli.ts autonomous-evolution
         env:
           MACBOOK_CLOUD_SIMULATION: true
 
@@ -48,7 +48,7 @@ jobs:
           MACBOOK_CLOUD_SIMULATION: true
 
       - name: Execute Autonomous Session Analysis and Self-Correction
-        run: npx tsx scripts/execute_creation_cycle.ts
+        run: npx tsx scripts/full_autonomous_automatic_creation.ts
         env:
           AUTONOMOUS_MODE: cloud
           MACBOOK_CLOUD_SIMULATION: true
@@ -61,3 +61,11 @@ jobs:
         run: npx tsx scripts/autonomous_sync.ts
         env:
           MACBOOK_CLOUD_SIMULATION: true
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          git add .
+          git commit -m "chore: daily autonomous evolution cycle completed" || true
+          git push origin HEAD:${{ github.ref }}

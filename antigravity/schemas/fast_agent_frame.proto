@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package agent.v1;
+
+message FastAgentFrame {
+  string interaction_id = 1; // Field tags save space, no minification needed
+  uint32 sequence_number = 2;
+
+  enum EventType {
+    HANDSHAKE = 0;
+    REASONING = 1;
+    ANSWER = 2;
+    TOOL_CALL = 3;
+    TOOL_INVOKE = 4;
+    ERROR = 5;
+    TERMINATE = 6;
+  }
+  EventType type = 3;
+
+  oneof payload {
+    string text_delta = 4;
+    string json_object_delta = 5; // Serialized short string for structured data
+  }
+
+  uint64 timestamp_ms = 6;
+
+  message Metadata {
+    uint32 ttft_ms = 1;
+    uint32 total_tokens = 2;
+    string model_name = 3;
+  }
+  Metadata meta = 7;
+}

@@ -46,4 +46,5 @@ export function getSafeUser(user: User) {
     id: user.id,
     name: user.name
   }
+
 }

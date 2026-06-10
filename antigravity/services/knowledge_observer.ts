@@ -17,6 +17,7 @@ export interface KnowledgeInsights {
   analyzedAt: string;
   history?: { source: string; analyzedAt: string }[];
   sections?: KnowledgeSection[];
+  metadata?: Record<string, any>;
 }
 
 export class KnowledgeObserver {
@@ -27,7 +28,7 @@ export class KnowledgeObserver {
   }
 
   public async persistKnowledge(newInsights: KnowledgeInsights) {
-    if (!fs.existsSync(this.storageDir)) {
+    if (!await fs.promises.access(this.storageDir).then(() => true).catch(() => false)) {
       fs.mkdirSync(this.storageDir, { recursive: true });
     }
 
@@ -36,13 +37,15 @@ export class KnowledgeObserver {
 
     let existingData: any = { typescript_sections: [] };
 
-    if (fs.existsSync(jsonPath)) {
+    if (await fs.promises.access(jsonPath).then(() => true).catch(() => false)) {
       try {
-        existingData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+        existingData = JSON.parse(await fs.promises.readFile(jsonPath, 'utf8'));
       } catch (e) {
         console.warn('⚠️ [Knowledge Observer] Could not parse existing knowledge JSON, starting fresh.');
       }
     }
+
+    if (!existingData.typescript_sections) existingData.typescript_sections = [];
 
     // Phase 12: Knowledge Synchronization logic
     const section = {
@@ -50,32 +53,61 @@ export class KnowledgeObserver {
       metadata: {
         source: newInsights.source,
         analyzedAt: newInsights.analyzedAt,
-        description: newInsights.description
+        description: newInsights.description,
+        ...newInsights.metadata
       },
       sections: newInsights.sections || []
     };
 
-    if (!existingData.typescript_sections) existingData.typescript_sections = [];
-    existingData.typescript_sections.push(section);
-
-    // Write JSON
-    fs.writeFileSync(jsonPath, JSON.stringify(existingData, null, 2), 'utf8');
-
-    // Write Markdown
-    let mdContent = `# Knowledge Observation Insights (Unified)\n\n`;
-    mdContent += `**Latest Source:** ${newInsights.source}\n`;
-    mdContent += `**Latest Analysis:** ${newInsights.analyzedAt}\n\n`;
-
-    if (newInsights.sections) {
-      newInsights.sections.forEach(s => {
-        // Double check for junk content before writing to MD
-        if (s.content.length > 5 && !s.content.includes('{')) {
-          mdContent += `## ${s.header}\n${s.content}\n\n`;
-        }
-      });
+    // Deduplicate by title
+    const existingIndex = existingData.typescript_sections.findIndex((k: any) => k.title === newInsights.title);
+    if (existingIndex !== -1) {
+      existingData.typescript_sections[existingIndex] = section;
+    } else {
+      existingData.typescript_sections.push(section);
     }
 
-    fs.writeFileSync(mdPath, mdContent, 'utf8');
+    // Write JSON
+    await fs.promises.writeFile(jsonPath, JSON.stringify(existingData, null, 2), 'utf8');
+
+    // Write Markdown - Regenerate from ALL sections
+    const isSingleTopic = existingData.typescript_sections.length === 1;
+    let mdContent = isSingleTopic ? '' : `# Knowledge Observation Insights (Unified)\n\n`;
+    mdContent += `**System Analysis:** ${new Date().toISOString()}\n\n`;
+
+    existingData.typescript_sections.forEach((k: any) => {
+      if (k.sections && k.sections.length > 0) {
+        if (!isSingleTopic) mdContent += `---\n\n`;
+
+        // Use # for the main topic title
+        mdContent += `# ${k.title}\n\n`;
+
+        if (k.metadata) {
+          mdContent += `> **Source:** ${k.metadata.source || 'N/A'}\n`;
+          mdContent += `> **Analyzed At:** ${k.metadata.analyzedAt || 'N/A'}\n\n`;
+        }
+
+        k.sections.forEach((s: any) => {
+          const cleanHeader = s.header.replace(/^#+\s*/, '').trim() || 'Details';
+          const cleanContent = s.content.trim();
+
+          if (cleanContent.length > 5) {
+            // Avoid redundant headers if the section title matches the topic title
+            if (cleanHeader.toLowerCase() === k.title.toLowerCase()) {
+              mdContent += `${cleanContent}\n\n`;
+            } else {
+              // Use ## for internal sections
+              mdContent += `## ${cleanHeader}\n${cleanContent}\n\n`;
+            }
+          }
+        });
+      }
+    });
+
+    // Trim trailing whitespace from every line
+    const cleanMdContent = mdContent.split('\n').map(line => line.trimEnd()).join('\n');
+
+    await fs.promises.writeFile(mdPath, cleanMdContent, 'utf8');
     console.log(`✅ [Knowledge Observer] Knowledge successfully merged into ${jsonPath} and ${mdPath}`);
     return existingData;
   }
@@ -108,20 +140,21 @@ export class KnowledgeObserver {
         return;
       }
 
-      const headerMatch = !inCodeBlock && (line.match(/^#+\s*(.*)/) || line.match(/^[A-Z][A-Za-z\s]{2,20}$/));
+      const headerMatch = !inCodeBlock && line.match(/^#+\s*(.*)/);
 
       if (headerMatch && !line.includes('<?php') && !line.startsWith('//') && !line.includes('#[')) {
         if (currentSection) sections.push(currentSection);
-        currentSection = { header: headerMatch[1] || line.trim(), content: '' };
+        currentSection = { header: headerMatch[1].trim(), content: '' };
       } else if (currentSection) {
         // Only strip HTML tags if we're not in a code block and it looks like a real tag
-        // Simple heuristic: if it contains generic-like patterns, don't strip
-        let contentLine = line.trim();
+        // Simple heuristic: allow generics like <T>, <TKey, TValue>, <string, int>
+        let contentLine = inCodeBlock ? line : line.trim();
         if (!inCodeBlock) {
-           contentLine = contentLine.replace(/<(?!T[A-Z][a-zA-Z0-9]*|T[0-9]|T[,\s]|T>)[^>]*>/gm, '');
+           // Strip tags but preserve common PHP/TypeScript generics
+           contentLine = contentLine.replace(/<(?!\/?(T[A-Z][a-zA-Z0-9]*|T[0-9]|T[,\s]|T|string|int|mixed|object|float|bool|iterable|callable|void|null|true|false))[^>]*>?/gm, '');
         }
 
-        if (contentLine) {
+        if (contentLine || inCodeBlock) {
           currentSection.content += (currentSection.content ? '\n' : '') + contentLine;
         }
       }
@@ -131,9 +164,10 @@ export class KnowledgeObserver {
 
     // Filter out sections that have too much junk or too little content
     const filteredSections = sections.filter(s => {
-      const junkPatterns = [/{/, /}/, /@media/, /\.wp-/, /!important/];
-      const isJunk = junkPatterns.some(p => p.test(s.content)) && s.content.length > 100;
-      return s.content.length > 10 && !isJunk;
+      const hasCodeBlock = s.content.includes('```');
+      const junkPatterns = [/@media/, /\.wp-/, /!important/];
+      const isJunk = !hasCodeBlock && junkPatterns.some(p => p.test(s.content)) && s.content.length > 100;
+      return s.content.trim().length > 5 && !isJunk;
     });
 
     // Naive keyword extraction based on frequency (excluding common stop words)
@@ -175,7 +209,12 @@ export function persistKnowledge(newInsights: KnowledgeInsights) {
     return observer.persistKnowledge(newInsights);
 }
 
+export function processContent(content: string, source: string, title: string = 'Web Insight'): KnowledgeInsights {
+  return KnowledgeObserver.processContent(title, content, source);
+}
+
 export async function observeKnowledge(url: string) {
+  'use cache'
   console.log(`👁️ [Knowledge Observer] Scanning ${url} for autonomous insights...`);
   try {
     const controller = new AbortController();

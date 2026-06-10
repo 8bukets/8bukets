@@ -18,6 +18,13 @@ const notifications: Notification[] = []
  * Handles system-wide alerts for cognitive events.
  */
 export async function sendNotification(payload: Omit<Notification, 'id' | 'timestamp'>) {
+
+
+
+
+
+
+
   const newNotification: Notification = {
     ...payload,
     id: Math.random().toString(36).substr(2, 9),
@@ -29,11 +36,41 @@ export async function sendNotification(payload: Omit<Notification, 'id' | 'times
 
   // Log to the global autonomous buffer
   logAutonomousAction(`[${payload.type.toUpperCase()}] ${payload.message}`, payload.severity === 'critical' ? 'error' : 'info')
-
+  
   return newNotification
 }
 
 export async function getNotifications(): Promise<Notification[]> {
+  'use cache'
   // Use 'inventory' profile for frequent updates
   return notifications
+}
+
+export async function dispatchExecutiveBriefing(summary: string, details?: string) {
+  console.log('📢 [Notification] Dispatching executive briefing...')
+
+  const formattedDetails = details ? details.split('\n\n').map(section => {
+    if (section.startsWith('---')) {
+      const header = section.replace(/---/g, '').trim().toUpperCase()
+      return `\n[ ${header} ]\n${'·'.repeat(header.length + 4)}`
+    }
+    return section
+  }).join('\n') : ''
+
+  const fullMessage = details
+    ? `╔═══════════════════════════════════════════╗\n║         🔔 EXECUTIVE BRIEFING           ║\n╚═══════════════════════════════════════════╝\n\nPOSTURE: ${summary}\n${formattedDetails}`
+    : `🔔 EXECUTIVE BRIEFING: ${summary}`
+
+  const briefing: Notification = {
+    id: Math.random().toString(36).substr(2, 9),
+    type: 'evolution',
+    severity: 'info',
+    message: fullMessage,
+    timestamp: new Date().toISOString()
+  }
+
+  notifications.unshift(briefing)
+  logAutonomousAction(`[BRIEFING] ${summary}`, 'info')
+
+  return briefing
 }

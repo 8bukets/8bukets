@@ -1,6 +1,5 @@
 import fs from 'fs'
 import path from 'path'
-import { logAutonomousAction } from './core'
 
 /**
  * ANTIGRAVITY COGNITIVE EVOLUTION ENGINE
@@ -14,29 +13,31 @@ interface EvolutionMetric {
 }
 
 export async function evolve() {
-  logAutonomousAction('🧠 [Antigravity Evolution] Commencing cognitive analysis...', 'info')
-
+  console.log('🧠 [Antigravity Evolution] Commencing cognitive analysis...')
+  
   const suggestions: EvolutionMetric[] = []
-  const scanDirs = [
-    path.join(process.cwd(), 'antigravity'),
-    path.join(process.cwd(), 'software-review-platform')
-  ]
+  const baseDir = process.cwd()
 
   // Recursive scan to find "bloated" or unoptimized patterns
-  function scan(dir: string) {
-    if (!fs.existsSync(dir)) return
+  async function scan(dir: string) {
     const files = fs.readdirSync(dir)
     for (const file of files) {
+      if (['node_modules', '.git', '.next', 'venv', '__pycache__', 'dist', 'build', '.npm-cache', 'scratch'].includes(file)) continue;
+
       const fullPath = path.join(dir, file)
       if (fs.statSync(fullPath).isDirectory()) {
-        scan(fullPath)
+        await scan(fullPath)
       } else if (file.endsWith('.tsx') || file.endsWith('.ts')) {
-        const content = fs.readFileSync(fullPath, 'utf8')
+        const content = await fs.promises.readFile(fullPath, 'utf8')
         const lines = content.split('\n').length
-
-        // Phase 12 Directive: Skip components with 'use cache'
-        if (content.includes("'use cache'") || content.includes('"use cache"')) {
-          return
+        
+        // Example Evolutionary Logic: Detect lack of 'use cache' in large async components
+        if (lines > 50 && content.includes('async function') && !content.includes("'use cache'")) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'MISSING_CACHE_DIRECTIVE: High complexity async component detected without granular caching.'
+          })
         }
 
         // Rule 2: Detect large files that should be refactored
@@ -57,21 +58,12 @@ export async function evolve() {
           })
         }
 
-        // Rule 4: Detect console.log in production-like files
-        if (content.includes('console.log') && !fullPath.includes('.test.') && !fullPath.includes('jules.ts')) {
+        // Rule 4: Security & Performance - Detect blocking execSync/execFileSync
+        if (content.includes('execSync(') || content.includes('execFileSync(')) {
           suggestions.push({
             file: fullPath.replace(process.cwd(), ''),
             complexity: lines,
-            suggestion: 'LOGGING_VIOLATION: console.log detected in production path. Use logAutonomousAction.'
-          })
-        }
-
-        // Rule 5: Detect "any" type usage (Type safety)
-        if (content.includes(': any') || content.includes('as any')) {
-          suggestions.push({
-            file: fullPath.replace(process.cwd(), ''),
-            complexity: lines,
-            suggestion: 'TYPE_SAFETY_VIOLATION: usage of "any" type detected.'
+            suggestion: 'SECURITY_PERF_VULNERABILITY: Blocking execSync/execFileSync detected. Risk of command injection and event loop blocking. Refactor to use non-blocking execAsync or execFileAsync via promisify.'
           })
         }
 
@@ -83,15 +75,113 @@ export async function evolve() {
             suggestion: 'ASYNC_HYGIENE_VIOLATION: Synchronous fs operation detected inside an asynchronous function. This blocks the event loop. Refactor to use fs.promises.'
           })
         }
+
+        // Rule 6: Type Safety - Detect usage of 'any'
+        const anyTypeRegex = /:\s*any\b|as\s+any\b/g
+        if (anyTypeRegex.test(content)) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'TYPE_SAFETY_VIOLATION: Usage of \'any\' type detected. This weakens the type system and risks runtime errors. Use specific interfaces or Zod schemas instead.'
+          })
+        }
+
+        // Rule 7: Zero-Latency Sync Compliance (Directive from iCloud)
+        if (content.includes('sync') && !content.includes('latency') && lines > 100) {
+           suggestions.push({
+             file: fullPath.replace(process.cwd(), ''),
+             complexity: lines,
+             suggestion: 'SYNC_LATENCY_UNOPTIMIZED: Documented goal of <50ms latency for global neural synchronization detected. Code lacks explicit latency monitoring.'
+           })
+        }
+
+        // Rule 8: Regional Configuration Compliance (Phase 13 APAC Expansion)
+        if (content.includes('edge') && !content.includes('region') && lines > 50) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'MISSING_REGIONAL_CONFIG: APAC Phase 13 directive mandates localized regional configuration for edge nodes.'
+          })
+        }
+
+        // Rule 9: ROI Efficiency Monitoring (Phase 13 ROI Mandate)
+        if ((content.includes('autonomousFetch') || content.includes('execAsync')) && !content.includes('trackROI') && !fullPath.includes('core.ts')) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'MISSING_ROI_TRACKING: Resource-intensive service detected without explicit ROI efficiency tracking as per Phase 13 mandate.'
+          })
+        }
+
+        // Rule 10: Regional Compliance Metadata (Phase 13 APAC Directive)
+        if (fullPath.includes('apac') && !content.includes('regionalCompliance')) {
+           suggestions.push({
+             file: fullPath.replace(process.cwd(), ''),
+             complexity: lines,
+             suggestion: 'MISSING_REGIONAL_COMPLIANCE: APAC regional service detected without mandatory regionalCompliance metadata.'
+           })
+        }
+
+        // Rule 11: Quantum Resistance Audit (Phase 13 Directive)
+        if ((content.includes('signature') || content.includes('security') || content.includes('auth')) && !content.includes('quantum-resistant') && !content.includes('post-quantum')) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'QUANTUM_VULNERABILITY: Security-critical component detected without documented quantum-resistant upgrade path.'
+          })
+        }
+
+        // Rule 12: Sovereign Data Clusters (Phase 13 Directive)
+        if (content.includes('MongoClient') && !content.includes('sovereignCluster') && !fullPath.includes('core.ts')) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'NON_SOVEREIGN_DATA_CONFIG: MongoDB client initialization detected without APAC localized sovereignty configuration.'
+          })
+        }
+
+        // Rule 13: APAC Orchestration Compliance (Phase 13 Directive)
+        if (content.includes('apac') && !content.includes('getAPACEdgeOrchestratorData') && !fullPath.includes('apac_edge_orchestrator.ts')) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'MISSING_APAC_ORCHESTRATION: APAC-specific service detected without mandatory integration with APACEdgeOrchestrator for status reporting.'
+          })
+        }
+
+        // Rule 14: Next.js 16 Compliance (connection() requirement)
+        if ((content.includes('cookies()') || content.includes('headers()')) && !content.includes('await connection()')) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'NEXT_16_CONNECTION_MISSING: Next.js 16 requires awaiting connection() before using cookies() or headers().'
+          })
+        }
+
+        // Rule 15: Project Omega Latency Compliance (Phase 13 Directive)
+        if (content.includes('sync') && !content.includes('latency < 30') && lines > 80) {
+           suggestions.push({
+             file: fullPath.replace(process.cwd(), ''),
+             complexity: lines,
+             suggestion: 'PROJECT_OMEGA_LATENCY_VIOLATION: Project Omega mandates <30ms latency for all synchronization operations. Explicit monitoring or optimization is missing.'
+           })
+        }
+
+        // Rule 16: Quantum Synergy Compliance (Phase 13 Directive)
+        if (content.includes('synergy') && !content.includes('quantum-resistant') && !content.includes('Crystals-Kyber')) {
+          suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'QUANTUM_SYNERGY_VIOLATION: Strategic synergy patterns detected without documented quantum-resistant orchestration (Crystals-Kyber).'
+          })
+        }
       }
     }
   }
 
-  for (const dir of scanDirs) {
-    scan(dir)
-  }
+  await scan(baseDir)
 
-  logAutonomousAction('✨ [Evolution Report]: Found', suggestions.length, 'potential optimizations.', 'info')
+  console.log('✨ [Evolution Report]: Found', suggestions.length, 'potential optimizations.')
   return suggestions
 }
 
@@ -100,60 +190,74 @@ export async function evolve() {
  * Programmatically fixes common architectural drift issues.
  */
 export async function applyFixes(suggestions: EvolutionMetric[]) {
-  logAutonomousAction('🛠️ [Antigravity Evolution] Applying autonomous fixes...', 'info')
-
+  console.log('🛠️ [Antigravity Evolution] Applying autonomous fixes...')
+  
   for (const s of suggestions) {
     const fullPath = path.join(process.cwd(), s.file)
-    let content = fs.readFileSync(fullPath, 'utf8')
-
-    // Phase 12 Directive: Upgrade Phase 9 references
-    if (content.includes('Phase 9')) {
-      logAutonomousAction(` - Upgrading Phase 9 references in ${s.file} to Phase 12`, 'info')
-      content = content.replace(/Phase 9/g, 'Phase 12')
-      fs.writeFileSync(fullPath, content)
-    }
+    let content = await fs.promises.readFile(fullPath, 'utf8')
 
     if (s.suggestion.startsWith('MISSING_CACHE_DIRECTIVE')) {
-      fs.writeFileSync(fullPath, content)
+      console.log(` - Fixing ${s.file}: Injecting 'use cache'`)
+      // Inject 'use cache' at the top of the first async function found
+      content = content.replace(/async function\s*(\w*)\s*\((.*?)\)\s*\{/, "async function $1($2) {\n  'use cache'")
+      await fs.promises.writeFile(fullPath, content)
     }
 
     if (s.suggestion.startsWith('SYNC_PROP_VIOLATION')) {
-      logAutonomousAction(` - Fixing ${s.file}: Wrapping params in resolve(, 'info')`)
+      console.log(` - Fixing ${s.file}: Wrapping params in resolve()`)
       // Add the import if missing
       if (!content.includes('import {') || !content.includes('@/antigravity/core')) {
         content = "import { resolve } from '@/antigravity/core'\n" + content
       } else if (!content.includes('resolve')) {
         content = content.replace(/import \{(.*?)\} from '@\/antigravity\/core'/, "import {$1, resolve} from '@/antigravity/core'")
       }
-
+      
       // Attempt to wrap params usages
       content = content.replace(/(\{.*?params.*?\}.*?)\.then/g, "resolve(params).then")
-      fs.writeFileSync(fullPath, content)
+      await fs.promises.writeFile(fullPath, content)
     }
 
-    // Rule 4 Fix: Replace console.log with logAutonomousAction
-    if (s.suggestion.startsWith('LOGGING_VIOLATION')) {
-      logAutonomousAction(` - Fixing ${s.file}: Replacing console.log with logAutonomousAction`, 'info')
+    if (s.suggestion.startsWith('ASYNC_HYGIENE_VIOLATION')) {
+       console.log(` - Fixing ${s.file}: Refactoring synchronous fs to fs.promises (safely).`)
 
-      // Calculate relative path to core.ts
-      const fileDir = path.dirname(fullPath)
-      const corePath = path.join(process.cwd(), 'antigravity/core')
-      let relativeCorePath = path.relative(fileDir, corePath)
-      if (!relativeCorePath.startsWith('.')) relativeCorePath = './' + relativeCorePath
+       // Only apply if the file likely contains async context already (as per scan rule)
+       if (content.includes('async function')) {
+         content = content.replace(/fs\.readFileSync\((.*?),\s*['"]utf8['"]\)/g, 'await fs.promises.readFile($1, \'utf8\')')
+         content = content.replace(/fs\.readFileSync\((.*?)\)/g, 'await fs.promises.readFile($1)')
+         content = content.replace(/fs\.writeFileSync\((.*?)\)/g, 'await fs.promises.writeFile($1)')
+         content = content.replace(/fs\.existsSync\((.*?)\)/g, 'await fs.promises.access($1).then(() => true).catch(() => false)')
+       }
 
-      if (!content.includes('logAutonomousAction')) {
-        content = `import { logAutonomousAction } from '${relativeCorePath}'\n` + content
-      }
-      content = content.replace(/console\.log\((.*?)\)/g, "logAutonomousAction($1, 'info')")
-      fs.writeFileSync(fullPath, content)
+       await fs.promises.writeFile(fullPath, content);
     }
 
+    if (s.suggestion.startsWith('MISSING_CACHE_DIRECTIVE') && !content.includes("'use cache'")) {
+       console.log(` - Fixing ${s.file}: Injecting 'use cache' for Phase 12 optimization.`)
+       content = content.replace(/async function\s*(\w*)\s*\((.*?)\)\s*\{/, "async function $1($2) {\n  'use cache'");
+       await fs.promises.writeFile(fullPath, content);
+    }
+    
     // Additional autocorrection logic can be added here
-  }
+    if (s.suggestion.startsWith('MISSING_ROI_TRACKING')) {
+      // Disabled due to syntax corruption in complex async signatures.
+      // ROI tracking should be implemented manually or via a more robust AST-based refactor.
+    }
 
-  logAutonomousAction('✅ [Antigravity Evolution] Autocorrection complete.', 'info')
+    if (s.suggestion.startsWith('NEXT_16_CONNECTION_MISSING')) {
+      console.log(` - Fixing ${s.file}: Injecting await connection()`)
+      if (!content.includes("from 'next/server'")) {
+        content = "import { connection } from 'next/server'\n" + content
+      } else if (!content.includes('connection')) {
+        content = content.replace(/import \{(.*?)\} from 'next\/server'/, "import {$1, connection} from 'next/server'")
+      }
+      content = content.replace(/async function\s*(\w*)\s*\((.*?)\)\s*\{/, "async function $1($2) {\n  await connection()")
+      await fs.promises.writeFile(fullPath, content)
+    }
+  }
+  
+  console.log('✅ [Antigravity Evolution] Autocorrection complete.')
 }
 
-// if (require.main === module) {
-//   evolve().catch(console.error)
-// }
+if (require.main === module) {
+  evolve().catch(console.error)
+}

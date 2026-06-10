@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
+<<<<<<< HEAD
 export async function ingestKnowledgeMerge() {
     console.log('🤖 [Ingest] Dynamically merging knowledge from system_knowledge.json...');
 
@@ -55,3 +56,56 @@ export async function ingestKnowledgeMerge() {
 if (require.main === module) {
     ingestKnowledgeMerge().catch(console.error);
 }
+=======
+async function ingestKnowledgeMerge() {
+  'use cache'
+  console.log("Starting Knowledge Merge Ingestion...");
+
+  try {
+    const htmlPath = path.join(process.cwd(), 'data/knowledge_merge_source.html');
+    if (!await fs.promises.access(htmlPath).then(() => true).catch(() => false)) {
+      console.warn(`Source file not found at ${htmlPath}. Skipping ingestion.`);
+      return;
+    }
+
+    const htmlContent = await fs.promises.readFile(htmlPath, 'utf8');
+
+    // Very basic extraction of body content
+    const bodyMatch = htmlContent.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+    const extractedText = bodyMatch ? bodyMatch[1].trim().replace(/<[^>]+>/g, '').trim() : 'No content found';
+
+    const now = new Date().toISOString();
+    const newObservation = `- **Date**: ${now}
+- **Target**: Knowledge Merge Sources
+- **Title**: Dynamic Knowledge Merge Ingestion
+- **Extracted Summary**:
+  ${extractedText}
+`;
+
+    const knowledgePath = path.join(process.cwd(), 'KNOWLEDGE_MERGE.md');
+    if (await fs.promises.access(knowledgePath).then(() => true).catch(() => false)) {
+      let content = await fs.promises.readFile(knowledgePath, 'utf-8');
+
+      const insertPointRegex = /(## Autonomous Observation\n)/;
+
+      if (insertPointRegex.test(content)) {
+         content = content.replace(insertPointRegex, (match) => `${match}${newObservation}\n`);
+      } else {
+         content += `\n## Autonomous Observation\n${newObservation}`;
+      }
+
+      await fs.promises.writeFile(knowledgePath, content, 'utf-8');
+      console.log(`Successfully ingested and updated ${knowledgePath}.`);
+    } else {
+      console.warn(`${knowledgePath} not found.`);
+    }
+
+    console.log("Knowledge Merge Ingestion Complete.");
+  } catch (error) {
+    console.error("Error during ingestion:", error);
+    process.exit(1);
+  }
+}
+
+ingestKnowledgeMerge();
+>>>>>>> main

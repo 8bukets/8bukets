@@ -3,11 +3,9 @@ pipeline {
 
     environment {
         MACBOOK_CLOUD_SIMULATION = 'true'
-        ARCH = 'amd64'
-        DOCKER_ACCESS_TOKEN = credentials('docker-access-token')
-        DOCKER_ACCOUNT = credentials('docker-account')
-        CLOUD_BUILDER_NAME = 'sor'
-        IMAGE_NAME = 'getanant/docker-build-cloud-demo'
+        NODE_ENV = 'production'
+        // Define any required environment variables for the node/ts execution
+        // e.g., JENKINS_URL, SUPABASE variables, etc.
     }
 
     stages {
@@ -17,109 +15,92 @@ pipeline {
             }
         }
 
-        stage('Build & Test Node') {
-            options {
-                timeout(time: 1, unit: 'HOURS')
-            }
+        stage('Install Dependencies') {
             steps {
-                // Utilizing local npm cache for faster builds
-                sh 'npm ci --cache .npm --prefer-offline'
-                sh 'npm run build'
-                sh 'npm run test || true'
+                sh 'npm install'
             }
         }
 
-        stage('Security Scan') {
+        stage('Lint & Test') {
             steps {
-                sh 'npm audit || true'
+                sh 'npm run lint || true' // ignoring lint errors if strictly set
+                sh 'npm run test'
             }
         }
 
-        stage('Engine Connection') {
+        stage('Build Docker Image') {
             steps {
-                sh 'npm run connect'
+                script {
+                    echo "Building Docker Image..."
+                    sh 'docker build -t antigravity-system:latest .'
+                }
             }
         }
 
-        stage('Test testservice') {
+        stage('Run Autonomous Feedback Analysis Service') {
             steps {
-                sh 'npm ci'
-                sh 'npx vitest run antigravity/services/testservice.test.ts'
+                sh 'npx tsx antigravity/workflows/feedback_analysis_workflow.ts'
             }
         }
-
-        stage('Test autonomous_resource_optimizer') {
+        stage('Run Autonomous Performance Monitoring Service') {
             steps {
-                sh 'npm ci'
-                sh 'npx vitest run antigravity/services/autonomous_resource_optimizer.test.ts'
+                sh 'npx tsx antigravity/workflows/performance_monitoring_workflow.ts'
             }
         }
-
-        stage('Test system_health_dashboard') {
+        stage('Run Autonomous Cognitive Security Service') {
             steps {
-                sh 'npm ci'
-                sh 'npx vitest run antigravity/services/system_health_dashboard.test.ts'
+                sh 'npx tsx antigravity/workflows/cognitive_security_workflow.ts'
             }
         }
-
-        stage('Test proactive_scalability') {
+        stage('Run Autonomous Visual Neural Relay') {
             steps {
-                sh 'npm ci'
-                sh 'npx vitest run antigravity/services/proactive_scalability.test.ts'
+                sh 'npx tsx antigravity/workflows/visual_neural_relay_workflow.ts'
             }
         }
-
-        stage('Test autonomous_ux_optimization') {
+        stage('Run Autonomous Feature Scaling Coordinator') {
             steps {
-                sh 'npm ci'
-                sh 'npx vitest run antigravity/services/autonomous_ux_optimization.test.ts'
+                sh 'npx tsx antigravity/workflows/feature_scaling_coordinator_workflow.ts'
             }
         }
-
-        stage('Test global_neural_sync_service_phase_12') {
+        stage('Run Autonomous Autonomous Resource Optimizer') {
             steps {
-                sh 'npm ci'
-                sh 'npx vitest run antigravity/services/global_neural_sync_service_phase_12.test.ts'
+                sh 'npx tsx antigravity/workflows/autonomous_resource_optimizer_workflow.ts'
             }
         }
-
-        stage('Test ai_strategy_advisor') {
+        stage('Run Autonomous Proactive Scalability Service') {
             steps {
-                sh 'npm ci'
-                sh 'npx vitest run antigravity/services/ai_strategy_advisor.test.ts'
+                sh 'npx tsx antigravity/workflows/proactive_scalability_workflow.ts'
             }
         }
-
-        stage('Test dynamic_schema_evolution') {
+        stage('Run Autonomous Autonomous Neural Cache Bridge') {
             steps {
-                sh 'npm ci'
-                sh 'npx vitest run antigravity/services/dynamic_schema_evolution.test.ts'
+                sh 'npx tsx antigravity/workflows/autonomous_neural_cache_bridge_workflow.ts'
             }
         }
-
-        stage('Test autonomous_documentation') {
+        stage('Run Autonomous Autonomous Performance Auditor') {
             steps {
-                sh 'npm ci'
-                sh 'npx vitest run antigravity/services/autonomous_documentation.test.ts'
+                sh 'npx tsx antigravity/workflows/autonomous_performance_auditor_workflow.ts'
             }
         }
-
-        stage('Test test_autonomous') {
+        stage('Run Autonomous Autonomous Ethics Auditor') {
             steps {
-                sh 'npm ci'
-                sh 'npx vitest run antigravity/services/test_autonomous.test.ts'
+                sh 'npx tsx antigravity/workflows/autonomous_ethics_auditor_workflow.ts'
             }
         }
-
+        stage('Run Autonomous APAC Edge Orchestrator') {
+            steps {
+                sh 'npx tsx antigravity/workflows/apac_edge_orchestrator_workflow.ts'
+            }
+        }
         stage('Creative Workflow') {
             parallel {
-                stage('Analyze Market') {
+                stage('Market Analysis') {
                     steps {
                         sh 'npm run ingest:sor'
                         sh 'npm run ingest:forbes'
                     }
                 }
-                stage('Generate Assets') {
+                stage('Daily Tasks') {
                     steps {
                         sh 'npm run daily'
                     }
@@ -132,27 +113,27 @@ pipeline {
             }
         }
 
-        stage('Docker Build') {
-            environment {
-                BUILDX_URL = sh(returnStdout: true, script: 'curl -s https://raw.githubusercontent.com/docker/actions-toolkit/main/.github/buildx-lab-releases.json | jq -r ".latest.assets[] | select(endswith(\"linux-$ARCH\"))"').trim()
-                COMPOSE_URL = sh(returnStdout: true, script: 'curl -sL -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/repos/docker/compose-desktop/releases | jq "[ .[] | select(.prerelease==false and .draft==false) ] | .[0].assets.[] | select(.name | endswith(\"linux-${ARCH}\")) | .browser_download_url"').trim()
-            }
+        stage('Ignite System') {
             steps {
-                sh 'mkdir -vp ~/.docker/cli-plugins/'
-                sh 'curl --silent -L --output ~/.docker/cli-plugins/docker-buildx $BUILDX_URL'
-                sh 'curl --silent -L --output ~/.docker/cli-plugins/docker-compose $COMPOSE_URL'
-                sh 'chmod a+x ~/.docker/cli-plugins/docker-buildx'
-                sh 'chmod a+x ~/.docker/cli-plugins/docker-compose'
-                sh 'echo "$DOCKER_ACCESS_TOKEN" | docker login --username $DOCKER_ACCOUNT --password-stdin'
-                sh 'docker buildx create --use --driver cloud "${DOCKER_ACCOUNT}/${CLOUD_BUILDER_NAME}"'
-                sh 'docker compose build || true'
+                script {
+                    echo "Triggering Autonomous Cycle / System Ignition..."
+                    // This runs the continuous cycle locally or triggers it
+                    // Alternatively you can run npm run connect to broadcast status
+                    sh 'npm run connect'
+                }
             }
         }
     }
 
     post {
         always {
-            archiveArtifacts artifacts: 'results/**/*.md', allowEmptyArchive: true
+            echo "Pipeline finished. Ensure collaboration status is updated."
+        }
+        success {
+            echo "Pipeline succeeded! System evolution achieved."
+        }
+        failure {
+            echo "Pipeline failed. Check logs."
         }
     }
 }

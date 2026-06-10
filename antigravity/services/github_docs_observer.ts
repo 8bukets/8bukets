@@ -1,92 +1,79 @@
-import { logAutonomousAction } from '../core'
-import { z } from 'zod'
-import { autonomousFetch } from '@/antigravity/core'
-
-export const GithubDocSectionSchema = z.object({
-  title: z.string(),
-  content: z.string()
-})
-
-export const GithubDocsSchema = z.object({
-  repo: z.string(),
-  file: z.string(),
-  sections: z.array(GithubDocSectionSchema),
-  rawUrl: z.string(),
-  lastUpdated: z.string()
-})
-
-export type GithubDocs = z.infer<typeof GithubDocsSchema>
-
 /**
- * GITHUB DOCS OBSERVER
- * Autonomously extracts technical sections from raw GitHub markdown files.
+ * GITHUB DOCUMENTATION OBSERVER
+ * Autonomously extracts technical knowledge from GitHub markdown documentation.
  */
+
+export interface GithubDocInsight {
+  source: string;
+  file: string;
+  sections: { title: string; content: string }[];
+  analyzedAt: string;
+  rawUrl: string;
+}
+
 export class GithubDocsObserver {
-  private baseUrl = 'https://raw.githubusercontent.com'
-
   /**
-   * fetchDoc: Retrieves and parses a markdown file from GitHub.
+   * fetchDoc: Single file version expected by IntelephenseService and consolidate_intelephense script.
    */
-  public async fetchDoc(owner: string, repo: string, path: string, branch: string = 'master'): Promise<GithubDocs> {
-    const rawUrl = `${this.baseUrl}/${owner}/${repo}/${branch}/${path}`
-
-    return autonomousFetch(GithubDocsSchema, async () => {
-      logAutonomousAction(`📡 [GithubDocsObserver] Fetching: ${owner}/${repo}/${path}...`, 'info')
-      const response = await fetch(rawUrl)
-
-      if (!response.ok) {
-        throw new Error(`Failed to fetch doc from GitHub: ${response.statusText}`)
-      }
-
-      const markdown = await response.text()
-      const sections = this.parseMarkdown(markdown)
-
-      return {
-        repo: `${owner}/${repo}`,
-        file: path,
-        sections,
-        rawUrl,
-        lastUpdated: new Date().toISOString()
-      }
-    }, { life: 'catalog', tags: [`github-docs-${repo}-${path.replace(/\//g, '-')}`] })
-  }
-
-  /**
-   * parseMarkdown: Extracts sections based on markdown headers.
-   * Improved to handle empty sections and nested headers.
-   */
-  private parseMarkdown(markdown: string): { title: string; content: string }[] {
+  public async fetchDoc(owner: string, repo: string, file: string): Promise<GithubDocInsight> {
+    const rawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/master/${file}`
+    const response = await fetch(rawUrl)
+    if (!response.ok) {
+      throw new Error(`Failed to fetch ${file}: ${response.statusText}`)
+    }
+    const markdown = await response.text()
     const sections: { title: string; content: string }[] = []
 
-    const lines = markdown.split('\n')
-    let currentTitle = 'Overview'
-    let currentContent: string[] = []
-
-    for (const line of lines) {
-      const headerMatch = line.match(/^#+\s+(.*)$/)
+    // Split by markdown headers
+    const parts = markdown.split(/^(?=#+\s+)/m)
+    for (const part of parts) {
+      if (!part.trim()) continue
+      const headerMatch = part.match(/^(#+)\s+(.*)/)
       if (headerMatch) {
-        // Save previous section if it has content or isn't the default Overview
-        if (currentContent.length > 0 || currentTitle !== 'Overview') {
-          sections.push({
-            title: currentTitle,
-            content: currentContent.join('\n').trim()
-          })
+        const title = headerMatch[2].trim()
+        const content = part.substring(headerMatch[0].length).trim()
+        if (title) {
+          sections.push({ title, content })
         }
-        currentTitle = headerMatch[1]
-        currentContent = []
-      } else {
-        currentContent.push(line)
       }
     }
 
-    // Push final section
-    sections.push({
-      title: currentTitle,
-      content: currentContent.join('\n').trim()
-    })
+    return {
+      source: `https://github.com/${owner}/${repo}`,
+      file,
+      sections,
+      analyzedAt: new Date().toISOString(),
+      rawUrl
+    }
+  }
 
-    return sections.filter(s => s.title !== 'Overview' || s.content !== '')
+  /**
+   * observeGithubDocs: Batch version.
+   */
+  public async observeGithubDocs(repo: string, files: string[]): Promise<GithubDocInsight[]> {
+    console.log(`👁️ [GitHub Docs Observer] Scanning ${repo} for technical insights...`)
+    const insights: GithubDocInsight[] = []
+    const [owner, name] = repo.split('/')
+
+    for (const file of files) {
+      try {
+        const insight = await this.fetchDoc(owner, name, file)
+        insights.push(insight)
+        console.log(`✅ [GitHub Docs Observer] Extracted ${insight.sections.length} sections from ${file}`)
+      } catch (error: any) {
+        console.error(`❌ [GitHub Docs Observer] Error observing ${file}:`, error.message)
+      }
+    }
+    return insights
   }
 }
 
 export const githubDocsObserver = new GithubDocsObserver()
+
+/**
+ * Legacy standalone function export.
+ */
+export async function observeGithubDocs(repo: string, files: string[]): Promise<GithubDocInsight[]> {
+  'use cache'
+  return githubDocsObserver.observeGithubDocs(repo, files)
+}

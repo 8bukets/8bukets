@@ -1,19 +1,24 @@
-import { defineConfig, configDefaults } from 'vitest/config';
-import path from 'path';
+import { defineConfig } from 'vitest/config'
+import react from '@vitejs/plugin-react'
+import path from 'path'
 
 export default defineConfig({
+  plugins: [react()],
   test: {
+    environment: 'jsdom',
     globals: true,
-    exclude: [...configDefaults.exclude, 'software-review-platform/backend/**'],
-    environment: 'node',
-    testTimeout: 15000,
-    exclude: ['**/node_modules/**', '**/dist/**', 'software-review-platform/backend/test/**'],
+    exclude: [
+      '**/node_modules/**',
+      '**/dist/**',
+      '**/cypress/**',
+      '**/.{idea,git,cache,output,temp}/**',
+      '**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*',
+      'scratch/**'
+    ],
   },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './'),
-      'next/cache': path.resolve(__dirname, './tests/mocks/next-cache.ts'),
-      'next/server': path.resolve(__dirname, './tests/mocks/next-server.ts'),
     },
   },
-});
+})

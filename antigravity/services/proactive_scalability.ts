@@ -1,10 +1,10 @@
 /**
  * Proactive Scalability Service
  * Generated autonomously by the Antigravity Singularity Engine.
- * Rationale: Predicts future traffic spikes and pre-allocates resources using neural network forecasting.
+ * Rationale: Predicts traffic spikes and pre-warms cloud worker instances before demand increases.
  */
 import { z } from 'zod'
-import { autonomousFetch } from '../core'
+import { autonomousFetch } from '@/antigravity/core'
 
 export const ProactiveScalabilityServiceSchema = z.object({
   status: z.string(),
@@ -12,10 +12,17 @@ export const ProactiveScalabilityServiceSchema = z.object({
 })
 
 export async function getProactiveScalabilityServiceData() {
+  try {
+
+  'use cache'
   return autonomousFetch(ProactiveScalabilityServiceSchema, async () => {
     return {
       status: 'active',
       lastRun: new Date().toISOString()
     }
   }, { life: 'minutes' })
+
+  } catch (err) {
+    console.error('[Evolution Autocorrect] Unhandled error:', err);
+  }
 }

@@ -1,32 +1,41 @@
-version: '3.8'
-
+# Next.js 16 + MongoDB Local Dev Orchestration
 services:
-  frontend:
+  app:
     build:
-      context: ./frontend
+      context: .
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
     environment:
-      - NODE_ENV=production
-      - MONGODB_URI=mongodb+srv://Vercel-Admin-atlas-beige-envelope:<db_password>@atlas-beige-envelope.xdsv2yt.mongodb.net/?appName=atlas-beige-envelope
-      # Set your Supabase keys here or in a .env file
+      - MACBOOK_CLOUD_SIMULATION=${MACBOOK_CLOUD_SIMULATION:-false}
+      - MONGODB_URI=mongodb://mongodb:27017/my-app
       - SUPABASE_DATABASE_URL=${SUPABASE_DATABASE_URL}
       - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
-      - MACBOOK_CLOUD_SIMULATION=true
-    networks:
-      - app-network
+      - BOUNDARY_URL=${BOUNDARY_URL:-https://e15e881b-2d8b-49da-9306-e8aaf84eef37.boundary.hashicorp.cloud}
+    depends_on:
+      - mongodb
 
-  gitlab-runner:
-    image: gitlab/gitlab-runner:latest
-    container_name: gitlab-runner
-    restart: always
+  mongodb:
+    image: public.ecr.aws/docker/library/mongo:latest
+    ports:
+      - "27017:27017"
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./.gitlab-runner-config:/etc/gitlab-runner
-    networks:
-      - app-network
+      - mongodb_data:/data/db
 
-networks:
-  app-network:
-    driver: bridge
+  # Autonomous presence container
+  connect:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - MACBOOK_CLOUD_SIMULATION=${MACBOOK_CLOUD_SIMULATION:-false}
+      - MONGODB_URI=mongodb://mongodb:27017/my-app
+      - SUPABASE_DATABASE_URL=${SUPABASE_DATABASE_URL}
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+    command: ["npm", "run", "connect"]
+    depends_on:
+      - mongodb
+      - app
+
+volumes:
+  mongodb_data:
