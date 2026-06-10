@@ -43,7 +43,7 @@ async function main() {
   if (ideas.length === 0) {
     console.log('✨ [CreationCycle] No new gaps identified. System state is optimal.');
     logAutonomousAction('✨ [CreationCycle] No new gaps identified. System state is optimal.', 'info');
-    return;
+    // Continue even if no new ideas, to execute existing work cycle
   }
 
   // Check and apply evolved engine configuration before work cycle

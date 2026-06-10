@@ -163,8 +163,8 @@ export class OnlinePresenceService {
           memory_usage: process.memoryUsage() as unknown as Record<string, number>,
           system_metrics: {
             loadavg: perf.metrics.system.loadavg,
-            totalmem: perf.metrics.system.totalmem,
-            freemem: perf.metrics.system.freemem,
+            totalmem: perf.metrics.system.totalMemory,
+            freemem: perf.metrics.system.freeMemory,
             rss: perf.metrics.memory.rss
           }
         },

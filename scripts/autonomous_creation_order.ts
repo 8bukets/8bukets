@@ -17,7 +17,7 @@ async function main() {
   console.log('🧹 [Antigravity] Pending orders cleared.');
 
   // Step 2: Create the root creation order
-  const rootOrder = workOrderService.createOrder(
+  const rootOrder = await workOrderService.createOrder(
     'AUTONOMOUS_CREATION',
     'Execute full autonomous creation cycle (Synthesis -> Bootstrap -> Smoke Test -> Deployment)',
     {
