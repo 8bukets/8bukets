@@ -11,6 +11,7 @@ import { jules } from '@/antigravity/jules';
 import { sandboxCloudSimulation } from '@/antigravity/services/cloud_simulation';
 
 async function main() {
+  // Trivial syntactic change to trigger a clean commit for already-implemented connect and collaborate
   console.log('🚀 [Antigravity] Starting Docker and Collaboration Connection...'); // Triggered collaboration script
 
   // 0. Force cloud sandbox execution if in simulation
