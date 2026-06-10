@@ -197,6 +197,19 @@ export class Jules {
     await ingestSystemKnowledge('.github')
     await ingestSystemKnowledge('antigravity')
 
+    // Phase 15+: Ingest Root Documentation
+    const rootEntries = fs.readdirSync(process.cwd(), { withFileTypes: true })
+    for (const entry of rootEntries) {
+      if (!entry.isDirectory() && entry.name.endsWith('.md')) {
+        try {
+          const content = fs.readFileSync(path.join(process.cwd(), entry.name), 'utf8')
+          const knowledge = KnowledgeObserver.processContent(`System: ${entry.name}`, content, `local://${entry.name}`)
+          await observer.persistKnowledge(knowledge)
+          console.log(` ✅ [Jules] Ingested Root Knowledge: ${entry.name}`)
+        } catch (e) {}
+      }
+    }
+
     const allKnowledge: any[] = []
 
     for (const doc of docsToObserve) {
@@ -598,7 +611,9 @@ export class Jules {
     this.recordTask('Intelligence Report: Generated consolidated system overview.')
   }
 
-  public async scanAllBranches(raw: boolean = false) {
+  public async scanAllBranches(raw: true): Promise<any[]>
+  public async scanAllBranches(raw: false): Promise<string>
+  public async scanAllBranches(raw: boolean = false): Promise<string | any[]> {
     console.log('🌿 [Jules] Scanning all project branches for knowledge...')
     const { execSync } = await import('child_process')
     try {

@@ -84,10 +84,11 @@ export class OnlinePresenceService {
       const latency = Date.now() - start
 
       const providers = []
-      if (process.env.GITHUB_TOKEN) providers.push('github')
-      if (process.env.GITLAB_TOKEN) providers.push('gitlab')
-      if (process.env.MONGODB_URI) providers.push('mongodb')
-      if (process.env.NEXT_PUBLIC_SUPABASE_URL) providers.push('supabase')
+      if (process.env.GITHUB_TOKEN || process.env.MACBOOK_CLOUD_SIMULATION === 'true') providers.push('github')
+      if (process.env.GITLAB_TOKEN || process.env.MACBOOK_CLOUD_SIMULATION === 'true') providers.push('gitlab')
+      if (process.env.MONGODB_URI || process.env.MACBOOK_CLOUD_SIMULATION === 'true') providers.push('mongodb')
+      if (process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.MACBOOK_CLOUD_SIMULATION === 'true') providers.push('supabase')
+      if (process.env.MACBOOK_CLOUD_SIMULATION === 'true') providers.push('gitkraken', 'docker')
 
       // 2. Determine Leadership (Node Sovereignty)
       let isLeader = !isCloud // Local node is leader by default if active

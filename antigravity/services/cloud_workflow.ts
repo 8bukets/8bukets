@@ -62,15 +62,18 @@ export class CloudWorkflowAgent {
     const dockerMetrics = await checkDockerHealth()
     const gitlabMetrics = await getGitLabMetrics()
     const githubMetrics = await getGitHubMetrics()
+    const gitKrakenMetrics = await getGitKrakenMetrics()
 
-    // Mock GitKraken metrics based on memory context
-    const gitKrakenMetrics = { compatibilityScore: 85 }
+    const { healthCheck } = await import('../core')
+    const coreHealth = await healthCheck()
 
     return {
       docker: dockerMetrics,
       gitlab: gitlabMetrics,
       github: githubMetrics,
-      gitkraken: gitKrakenMetrics
+      gitkraken: gitKrakenMetrics,
+      supabase: { status: coreHealth.supabase },
+      mongodb: { status: coreHealth.mongodb }
     }
   }
 

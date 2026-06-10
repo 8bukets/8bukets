@@ -294,6 +294,12 @@ export async function healthCheck() {
     timestamp: new Date().toISOString()
   }
 
+  if (process.env.MACBOOK_CLOUD_SIMULATION === 'true') {
+    results.mongodb = 'healthy'
+    results.supabase = 'healthy'
+    return results
+  }
+
   try {
     const client = await getMongoClient()
     await client.db().admin().ping()
