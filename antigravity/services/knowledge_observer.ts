@@ -138,17 +138,18 @@ export class KnowledgeObserver {
         return;
       }
 
-      const headerMatch = !inCodeBlock && (line.match(/^#+\s*(.*)/) || line.match(/^[A-Z][A-Za-z\s]{2,20}$/));
+      const headerMatch = !inCodeBlock && line.match(/^#+\s*(.*)/);
 
       if (headerMatch && !line.includes('<?php') && !line.startsWith('//') && !line.includes('#[')) {
         if (currentSection) sections.push(currentSection);
-        currentSection = { header: (headerMatch[1] || line.trim()).trim(), content: '' };
+        currentSection = { header: headerMatch[1].trim(), content: '' };
       } else if (currentSection) {
         // Only strip HTML tags if we're not in a code block and it looks like a real tag
         // Simple heuristic: allow generics like <T>, <TKey, TValue>, <string, int>
         let contentLine = inCodeBlock ? line : line.trim();
         if (!inCodeBlock) {
-           contentLine = contentLine.replace(/<(?!(\/?(T[A-Z][a-zA-Z0-9]*|T[0-9]|T[,\s]|T|string|int|mixed|object|float|bool|iterable|callable|void|null|true|false)))[^>]*>/gm, '');
+           // Strip tags but preserve common PHP/TypeScript generics
+           contentLine = contentLine.replace(/<(?!\/?(T[A-Z][a-zA-Z0-9]*|T[0-9]|T[,\s]|T|string|int|mixed|object|float|bool|iterable|callable|void|null|true|false))[^>]*>?/gm, '');
         }
 
         if (contentLine || inCodeBlock) {
