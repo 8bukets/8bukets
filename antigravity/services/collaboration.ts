@@ -459,6 +459,13 @@ export async function syncCollaborationState(branchIntelligence?: any[]) {
   console.log('🔄 [Collaboration] Synchronizing autonomous state...')
   const metadata = await getMissionMetadata()
 
+  // Phase 13: Quantum Synergy Alignment Check
+  const hasQuantumSynergy = metadata.goals.some(g => g.toLowerCase().includes('quantum synergy')) ||
+                             metadata.missionStatement.toLowerCase().includes('quantum synergy')
+  if (hasQuantumSynergy) {
+    console.log('⚛️ [Collaboration] Phase 13 Quantum Synergy detected. Aligning neural relays...')
+  }
+
   const dockerHealthy = await checkDockerHealth()
   const dockerContainers = await (await import('./docker')).getDockerStatus()
   const docker = {

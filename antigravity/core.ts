@@ -44,6 +44,22 @@ const FAILURE_THRESHOLD = 3
 const RECOVERY_TIMEOUT = 1000 * 30 // 30 seconds
 
 export async function getMongoClient(): Promise<MongoClient> {
+  // Phase 12: Functional Simulation for restricted environments
+  if (process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true' || process.env.MACBOOK_CLOUD_SIMULATION === 'true') {
+    return {
+      db: () => ({
+        admin: () => ({
+          ping: async () => ({ ok: 1 })
+        }),
+        collection: () => ({
+          insertOne: async () => ({ acknowledged: true }),
+          find: () => ({ toArray: async () => [] })
+        })
+      }),
+      connect: async () => ({})
+    } as any;
+  }
+
   // Circuit Breaker Logic
   if (circuitBreaker.mongodb.state === 'open') {
     if (Date.now() - circuitBreaker.mongodb.lastFailure > RECOVERY_TIMEOUT) {

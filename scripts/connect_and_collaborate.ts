@@ -24,6 +24,10 @@ async function main() {
   console.log('🐳 [Jules] Connecting to Docker...');
   await jules.syncCollaboration();
 
+  // Phase 12: Trigger functional work after synchronization
+  console.log('⚙️ [Jules] Processing pending collaboration tasks...');
+  await jules.processPendingTasks();
+
   console.log('✅ [Antigravity] Connection and Collaboration Sync Finished.');
 }
 
