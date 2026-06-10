@@ -31,6 +31,7 @@ echo "📦 [Setup] Using npm at $NPM_PATH"
 # Note: Using | as delimiter to handle paths
 sed -e "s|/Users/YOUR_USERNAME/Documents/Antigravity|$PROJECT_DIR|g" \
     -e "s|/usr/local/bin/npm|$NPM_PATH|g" \
+    -e "s|YOUR_USERNAME|$USERNAME|g" \
     "$PROJECT_DIR/$PLIST_NAME" > "$PROJECT_DIR/${PLIST_NAME}.tmp"
 
 # Move to LaunchAgents
