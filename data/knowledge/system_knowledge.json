@@ -2869,6 +2869,32 @@
           "content": "- **Chief Technology Officer (CTO):** Focuses on the company’s broad IT infrastructure, software architecture, and system reliability.\n- **Chief Data Officer (CDO):** Manages data governance, architecture, and data pipelines to make sure data is clean and organized.\n- **Chief AI Officer (CAIO):** Uses the foundations managed by the CTO and CDO to specifically drive business value and transform how work gets done."
         }
       ]
+    },
+    {
+          "title": "Tutorial: Create and run your first GitLab CI/CD pipeline",
+          "metadata": {
+                "source": "user_input://gitlab_ci_tutorial.md",
+                "analyzedAt": "2026-06-10T13:05:55.679678+00:00",
+                "description": "Extracted system knowledge"
+          },
+          "sections": [
+                {
+                      "header": "Tutorial Overview",
+                      "content": "Tutorial: Create and run your first GitLab CI/CD pipeline\nTier: Free, Premium, Ultimate\nOffering: GitLab.com, GitLab Self-Managed, GitLab Dedicated\nThis tutorial shows you how to configure and run your first CI/CD pipeline in GitLab."
+                },
+                {
+                      "header": "Prerequisites & Runners",
+                      "content": "Before you start, make sure you have a project in GitLab with the Maintainer or Owner role. In GitLab, runners are agents that run your CI/CD jobs. GitLab.com provides instance runners for you. Otherwise, install GitLab Runner on your local machine and register it using the shell executor."
+                },
+                {
+                      "header": "Creating .gitlab-ci.yml",
+                      "content": "Create a .gitlab-ci.yml file at the root of your repository. It defines the structure and order of jobs that the runner should execute. A sample configuration defines jobs like build-job, test-job1, test-job2, and deploy-prod across different stages (build, test, deploy). Predefined variables like $GITLAB_USER_LOGIN and $CI_COMMIT_BRANCH are available."
+                },
+                {
+                      "header": ".gitlab-ci.yml tips",
+                      "content": "Each job contains a script section and belongs to a stage. Jobs in a single stage run in parallel. Use 'needs' to run jobs out of stage order. Use 'rules' to specify when to run or skip jobs. Use 'cache' and 'artifacts' for persistence. Use 'default' to specify configurations applied to all jobs, such as before_script and after_script."
+                }
+          ]
     }
   ]
 }

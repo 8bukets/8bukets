@@ -25,7 +25,7 @@
 - **Binary/Executables:** 2 active
 - **Infrastructures:** 2 active
 - **Assets:** 5 active
-- **Knowledges:** 26 active
+- **Knowledges:** 27 active
 - **Branch Results:** 1403 active
 
 ## 🔗 Resource Dependency Matrix
