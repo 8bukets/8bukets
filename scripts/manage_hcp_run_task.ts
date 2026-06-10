@@ -3,6 +3,7 @@
  */
 
 async function createRunTask() {
+  'use cache'
   const tfeToken = process.env.TFE_TOKEN;
   if (!tfeToken) {
     console.error("Error: TFE_TOKEN environment variable is not set.");

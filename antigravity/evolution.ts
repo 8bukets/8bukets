@@ -19,16 +19,16 @@ export async function evolve() {
   const baseDir = process.cwd()
 
   // Recursive scan to find "bloated" or unoptimized patterns
-  function scan(dir: string) {
+  async function scan(dir: string) {
     const files = fs.readdirSync(dir)
     for (const file of files) {
       if (['node_modules', '.git', '.next', 'venv', '__pycache__', 'dist', 'build', '.npm-cache', 'scratch'].includes(file)) continue;
 
       const fullPath = path.join(dir, file)
       if (fs.statSync(fullPath).isDirectory()) {
-        scan(fullPath)
+        await scan(fullPath)
       } else if (file.endsWith('.tsx') || file.endsWith('.ts')) {
-        const content = fs.readFileSync(fullPath, 'utf8')
+        const content = await fs.promises.readFile(fullPath, 'utf8')
         const lines = content.split('\n').length
         
         // Example Evolutionary Logic: Detect lack of 'use cache' in large async components
@@ -170,7 +170,7 @@ export async function evolve() {
     }
   }
 
-  scan(baseDir)
+  await scan(baseDir)
 
   console.log('✨ [Evolution Report]: Found', suggestions.length, 'potential optimizations.')
   return suggestions
@@ -185,13 +185,13 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
   
   for (const s of suggestions) {
     const fullPath = path.join(process.cwd(), s.file)
-    let content = fs.readFileSync(fullPath, 'utf8')
+    let content = await fs.promises.readFile(fullPath, 'utf8')
 
     if (s.suggestion.startsWith('MISSING_CACHE_DIRECTIVE')) {
       console.log(` - Fixing ${s.file}: Injecting 'use cache'`)
       // Inject 'use cache' at the top of the first async function found
-      content = content.replace(/async function(.*?)\{/, "async function$1{\n  'use cache'")
-      fs.writeFileSync(fullPath, content)
+      content = content.replace(/async function\s*(\w*)\s*\((.*?)\)\s*\{/, "async function $1($2) {\n  'use cache'")
+      await fs.promises.writeFile(fullPath, content)
     }
 
     if (s.suggestion.startsWith('SYNC_PROP_VIOLATION')) {
@@ -205,7 +205,7 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
       
       // Attempt to wrap params usages
       content = content.replace(/(\{.*?params.*?\}.*?)\.then/g, "resolve(params).then")
-      fs.writeFileSync(fullPath, content)
+      await fs.promises.writeFile(fullPath, content)
     }
 
     if (s.suggestion.startsWith('ASYNC_HYGIENE_VIOLATION')) {
@@ -219,21 +219,19 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
          content = content.replace(/fs\.existsSync\((.*?)\)/g, 'await fs.promises.access($1).then(() => true).catch(() => false)')
        }
 
-       fs.writeFileSync(fullPath, content);
+       await fs.promises.writeFile(fullPath, content);
     }
 
     if (s.suggestion.startsWith('MISSING_CACHE_DIRECTIVE') && !content.includes("'use cache'")) {
        console.log(` - Fixing ${s.file}: Injecting 'use cache' for Phase 12 optimization.`)
-       content = content.replace(/async function(.*?)\{/, "async function$1{\n  'use cache'");
-       fs.writeFileSync(fullPath, content);
+       content = content.replace(/async function\s*(\w*)\s*\((.*?)\)\s*\{/, "async function $1($2) {\n  'use cache'");
+       await fs.promises.writeFile(fullPath, content);
     }
     
     // Additional autocorrection logic can be added here
     if (s.suggestion.startsWith('MISSING_ROI_TRACKING')) {
-      console.log(` - Fixing ${s.file}: Injecting placeholder trackROI call.`)
-      // Add trackROI placeholder to autonomousFetch calls
-      content = content.replace(/autonomousFetch\((.*?)\)/g, 'autonomousFetch($1).then(res => { console.log("📊 [ROI] Efficiency tracking placeholder"); return res; })')
-      fs.writeFileSync(fullPath, content)
+      // Disabled due to syntax corruption in complex async signatures.
+      // ROI tracking should be implemented manually or via a more robust AST-based refactor.
     }
 
     if (s.suggestion.startsWith('NEXT_16_CONNECTION_MISSING')) {
@@ -243,8 +241,8 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
       } else if (!content.includes('connection')) {
         content = content.replace(/import \{(.*?)\} from 'next\/server'/, "import {$1, connection} from 'next/server'")
       }
-      content = content.replace(/async function(.*?)\{/, "async function$1{\n  await connection()")
-      fs.writeFileSync(fullPath, content)
+      content = content.replace(/async function\s*(\w*)\s*\((.*?)\)\s*\{/, "async function $1($2) {\n  await connection()")
+      await fs.promises.writeFile(fullPath, content)
     }
   }
   

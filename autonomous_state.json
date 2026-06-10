@@ -21,12 +21,12 @@
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1781041272888,
+        "timestamp": 1781055296762,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
-        "branches": 2470,
-        "pendingTasks": 0,
+        "branches": 2472,
+        "pendingTasks": 6,
         "relationshipMap": {
             "stakeholderEngagement": {
                 "Filip Keser (Founder)": {
@@ -38,7 +38,7 @@
                 "Jules (Lead Architect)": {
                     "email": "jules@antigravity.ai",
                     "activeProjects": [
-                        "jules-4438105350883229131-acd9c540",
+                        "jules-3305349361750404416-548980f0",
                         "remotes/origin/HEAD -> origin/jules/scraper-markposition-17752547678215960211",
                         "remotes/origin/add-jules-cli-7658708591293792322",
                         "remotes/origin/feat/autonomous-protocol-jules-16130780090107402276",
@@ -224,6 +224,7 @@
                     "remotes/origin/integrate-jenkins-pipeline-generation-14117303396069153360"
                 ],
                 "Maintain Zero-Touch Autonomous Operations.": [
+                    "jules-3305349361750404416-548980f0",
                     "remotes/origin/add-gitlab-runner-service-1151466855069035440",
                     "remotes/origin/add-malubeach-scraper-16704333902164650708",
                     "remotes/origin/add-mysql-agent-12534386317238704274",
@@ -1534,93 +1535,9 @@
                 },
                 {
                     "type": "Knowledge",
-                    "name": "AGENTS.md",
-                    "status": "Ingested",
-                    "source": "icloud://AGENTS.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "CLAUDE.md",
-                    "status": "Ingested",
-                    "source": "icloud://CLAUDE.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "CONSOLIDATED_INTELLIGENCE.md",
-                    "status": "Ingested",
-                    "source": "icloud://CONSOLIDATED_INTELLIGENCE.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "KNOWLEDGE_MERGE.md",
-                    "status": "Ingested",
-                    "source": "icloud://KNOWLEDGE_MERGE.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "MISSION_HANDOFF 2.md",
-                    "status": "Ingested",
-                    "source": "icloud://MISSION_HANDOFF 2.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "MISSION_HANDOFF.md",
-                    "status": "Ingested",
-                    "source": "icloud://MISSION_HANDOFF.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "README.md",
-                    "status": "Ingested",
-                    "source": "icloud://README.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "USAGE.md",
-                    "status": "Ingested",
-                    "source": "icloud://USAGE.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "project_backlog.md",
-                    "status": "Ingested",
-                    "source": "icloud://project_backlog.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "wilson_sonsini.md",
-                    "status": "Ingested",
-                    "source": "icloud://wilson_sonsini.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Chief AI Officer (CAIO) Role",
-                    "status": "Ingested",
-                    "source": "user_input://caio_user_input.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "neural_sync_docs.md",
-                    "status": "Ingested",
-                    "source": "icloud-sim://neural_sync_docs.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "test_knowledge.md",
-                    "status": "Ingested",
-                    "source": "icloud-sim://test_knowledge.md"
-                },
-                {
-                    "type": "Knowledge",
                     "name": "Web Insight",
                     "status": "Ingested",
                     "source": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: phase13_directives.md",
-                    "status": "Ingested",
-                    "source": "icloud://phase13_directives.md"
                 },
                 {
                     "type": "Knowledge",
@@ -1747,188 +1664,6 @@
                     "name": "iCloud: wilson_sonsini.md",
                     "status": "Ingested",
                     "source": "icloud://wilson_sonsini.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Market Intelligence",
-                    "status": "Ingested",
-                    "source": "market_research_sync"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "software info by fk – software-online-review – Filip Keser",
-                    "status": "Ingested",
-                    "source": "https://software-online-review.com"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: initial_directive.md",
-                    "status": "Ingested",
-                    "source": "icloud://initial_directive.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: phase13_strategic_directive.md",
-                    "status": "Ingested",
-                    "source": "icloud://phase13_strategic_directive.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: market_intelligence_q3.md",
-                    "status": "Ingested",
-                    "source": "icloud://market_intelligence_q3.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: phase13_regional_compliance.md",
-                    "status": "Ingested",
-                    "source": "icloud://phase13_regional_compliance.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Understanding bidding basics - Google Ads Help",
-                    "status": "Ingested",
-                    "source": "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Google Ads Smart Bidding - AI-Driven Bid Optimisations & Ad Spend",
-                    "status": "Ingested",
-                    "source": "https://business.google.com/uk/ad-tools/bidding/"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Tips & Resources for Online Advertising – Google Ads",
-                    "status": "Ingested",
-                    "source": "https://business.google.com/uk/resources/"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Ad Manager  |  Google for DevelopersGoogleGoogle",
-                    "status": "Ingested",
-                    "source": "https://developers.google.com/ad-manager"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Dynamic Ad Insertion  |  Google for DevelopersGoogleGoogle",
-                    "status": "Ingested",
-                    "source": "https://developers.google.com/ad-manager/dynamic-ad-insertion"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "DAI Full Service API  |  Google for DevelopersGoogleGoogle",
-                    "status": "Ingested",
-                    "source": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "DAI Pod Serving API  |  Google for DevelopersGoogleGoogle",
-                    "status": "Ingested",
-                    "source": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Los gehts  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle",
-                    "status": "Ingested",
-                    "source": "https://developers.google.com/ad-manager/api/start"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Resources Overview - Google Ad Manager",
-                    "status": "Ingested",
-                    "source": "https://admanager.google.com/home/resources/"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation",
-                    "status": "Ingested",
-                    "source": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Get started  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle",
-                    "status": "Ingested",
-                    "source": "https://developers.google.com/ad-manager/api/start"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: phase_13_strategy.md",
-                    "status": "Ingested",
-                    "source": "icloud://phase_13_strategy.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Comenzar  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle",
-                    "status": "Ingested",
-                    "source": "https://developers.google.com/ad-manager/api/start"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Intelephense Documentation",
-                    "status": "Ingested",
-                    "source": "https://intelephense.com/docs"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: omega_strategy.md",
-                    "status": "Ingested",
-                    "source": "icloud://omega_strategy.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Quantum Resistance Protocol",
-                    "status": "Ingested",
-                    "source": "icloud://quantum_resistance.json"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Understanding bidding basics - Google Ads Help",
-                    "status": "Ingested"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Google Ads Smart Bidding - AI-Driven Bid Optimisations & Ad Spend",
-                    "status": "Ingested"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Tips & Resources for Online Advertising – Google Ads",
-                    "status": "Ingested"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Ad Manager  |  Google for DevelopersGoogleGoogle",
-                    "status": "Ingested"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Dynamic Ad Insertion  |  Google for DevelopersGoogleGoogle",
-                    "status": "Ingested"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "DAI Full Service API  |  Google for DevelopersGoogleGoogle",
-                    "status": "Ingested"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "DAI Pod Serving API  |  Google for DevelopersGoogleGoogle",
-                    "status": "Ingested"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Get started  |  Ad Manager SOAP API  |  Google for DevelopersGoogleGoogle",
-                    "status": "Ingested"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Resources Overview - Google Ad Manager",
-                    "status": "Ingested"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "ad-manager overview (0.50.0)  |  Java client libraries  |  Google Cloud Documentation",
-                    "status": "Ingested"
                 },
                 {
                     "type": "Documentation",
@@ -4138,6 +3873,13 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "remotes/origin/feat/connect-docker-collaborate-4438105350883229131",
+                    "status": "Ready for Merge",
+                    "result": "Commit: feat: connect with docker and collaborate",
+                    "category": "feature"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "remotes/origin/feat/connect-docker-collaboration-10997916882350002599",
                     "status": "Ready for Merge",
                     "result": "Commit: Merge branch 'main' into feat/connect-docker-collaboration (Resolved conflicts by favoring PR changes)",
@@ -4701,6 +4443,13 @@
                     "name": "remotes/origin/feat/google-ai-knowledge-integration-17446113522463245373",
                     "status": "Ready for Merge",
                     "result": "Commit: Integrated AI Agents knowledge from Google Innovation & AI blog.",
+                    "category": "feature"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "remotes/origin/feat/google-innovation-ai-integration-11661717793900787489",
+                    "status": "Ready for Merge",
+                    "result": "Commit: feat: integrate latest Google Innovation & AI knowledge",
                     "category": "feature"
                 },
                 {
@@ -11705,7 +11454,14 @@
                 }
             ],
             "synergies": [],
-            "functionalClusters": {},
+            "functionalClusters": {
+                "collaboration": [
+                    "jules-3305349361750404416-548980f0"
+                ],
+                "knowledge": [
+                    "jules-3305349361750404416-548980f0"
+                ]
+            },
             "collaborationRecommendations": [],
             "resourceDependencies": [
                 {
@@ -12460,6 +12216,12 @@
                     "results": "Commit: feat(singularity): enable full autonomous automatic workflow creation across CI providers"
                 },
                 {
+                    "name": "jules-3305349361750404416-548980f0",
+                    "category": "other",
+                    "score": 80,
+                    "results": "🤖 fix: autonomous self-repair of 185 issues (39 files changed in Services)"
+                },
+                {
                     "name": "remotes/origin/fix/autonomous-evolution-1779502182555",
                     "category": "fix",
                     "score": 80,
@@ -12560,12 +12322,6 @@
                     "category": "feature",
                     "score": 70,
                     "results": "Commit: feat: implement full autonomous creation order and execution"
-                },
-                {
-                    "name": "remotes/origin/feat/autonomous-creation-cycle-14040463371825265667",
-                    "category": "feature",
-                    "score": 70,
-                    "results": "Commit: feat: implement full autonomous creation order and execution cycle"
                 }
             ]
         },
@@ -12573,7 +12329,7 @@
             "origin": "development",
             "health": "degraded",
             "volatilityTags": 0,
-            "timestamp": "2026-06-09T21:41:38.980Z"
+            "timestamp": "2026-06-10T01:35:25.149Z"
         },
         "relayState": [
             {
@@ -12583,7 +12339,7 @@
                     "Command Center",
                     "Store"
                 ],
-                "lastActivity": "2026-06-09T21:41:38.980Z",
+                "lastActivity": "2026-06-10T01:35:25.149Z",
                 "intensity": 0.85
             },
             {
@@ -12598,21 +12354,21 @@
             }
         ]
     },
-    "last_sync": "2026-06-09T21:41:39.560Z",
+    "last_sync": "2026-06-10T01:35:25.735Z",
     "directives": [
         {
-            "id": "dir_8fk85xayt",
+            "id": "dir_3fdm5lpv8",
             "priority": "High",
             "intent": "Maintain 99.9% system uptime",
             "status": "Active",
-            "timestamp": "2026-06-09T21:41:38.990Z"
+            "timestamp": "2026-06-10T01:35:25.157Z"
         },
         {
-            "id": "dir_z2bnjgr5b",
+            "id": "dir_gcsranlt3",
             "priority": "Medium",
             "intent": "Consolidate all branch knowledge daily",
             "status": "Active",
-            "timestamp": "2026-06-09T21:41:38.990Z"
+            "timestamp": "2026-06-10T01:35:25.157Z"
         }
     ]
 }

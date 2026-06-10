@@ -12,10 +12,11 @@ import path from 'path'
  */
 
 async function applyEngineConfiguration() {
+  'use cache'
     const engineConfigPath = path.join(process.cwd(), 'data/engine_config.json');
-    if (fs.existsSync(engineConfigPath)) {
+    if (await fs.promises.access(engineConfigPath).then(() => true).catch(() => false)) {
         try {
-            const config = JSON.parse(fs.readFileSync(engineConfigPath, 'utf8'));
+            const config = JSON.parse(await fs.promises.readFile(engineConfigPath, 'utf8'));
             console.log(`⚙️ [Antigravity] Applying evolved System Engine configuration. Scale Factor: ${config.scaleFactor}`);
             if (config.features && config.features.includes('advanced_self_correction')) {
                  console.log(`🔧 [Antigravity] Advanced self-correction heuristics enabled.`);
@@ -31,17 +32,17 @@ async function main() {
 
   // Ensure data directory exists
   const dataDir = path.join(process.cwd(), 'data')
-  if (!fs.existsSync(dataDir)) {
+  if (!await fs.promises.access(dataDir).then(() => true).catch(() => false)) {
     fs.mkdirSync(dataDir, { recursive: true })
     console.log('📁 [Antigravity] Created data directory.')
   }
 
   // Clear existing pending orders to ensure a clean run for this demo
   const storagePath = path.join(process.cwd(), 'data/work_orders.json')
-  if (fs.existsSync(storagePath)) {
-    const data = JSON.parse(fs.readFileSync(storagePath, 'utf8'))
+  if (await fs.promises.access(storagePath).then(() => true).catch(() => false)) {
+    const data = JSON.parse(await fs.promises.readFile(storagePath, 'utf8'))
     const filtered = data.filter((o: any) => o.status !== 'pending')
-    fs.writeFileSync(storagePath, JSON.stringify(filtered, null, 2))
+    await fs.promises.writeFile(storagePath, JSON.stringify(filtered, null, 2))
     console.log('🧹 [Antigravity] Cleared existing pending orders.')
   }
 
@@ -55,11 +56,11 @@ async function main() {
   console.log('🤖 [Antigravity] Autonomous evolution and self-correction phase initiated based on session intelligence. System engine performing internal checks and optimizations.')
 
   console.log('\n📊 [Antigravity] Cycle Summary:')
-  if (!fs.existsSync(storagePath)) {
+  if (!await fs.promises.access(storagePath).then(() => true).catch(() => false)) {
     console.log(' - No work orders file found.')
     return
   }
-  const finalOrders = JSON.parse(fs.readFileSync(storagePath, 'utf8'))
+  const finalOrders = JSON.parse(await fs.promises.readFile(storagePath, 'utf8'))
 
   if (finalOrders.length === 0) {
     console.log(' - No work orders recorded.')

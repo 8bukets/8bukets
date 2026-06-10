@@ -2,16 +2,17 @@ import fs from 'fs';
 import path from 'path';
 
 async function ingestKnowledgeMerge() {
+  'use cache'
   console.log("Starting Knowledge Merge Ingestion...");
 
   try {
     const htmlPath = path.join(process.cwd(), 'data/knowledge_merge_source.html');
-    if (!fs.existsSync(htmlPath)) {
+    if (!await fs.promises.access(htmlPath).then(() => true).catch(() => false)) {
       console.warn(`Source file not found at ${htmlPath}. Skipping ingestion.`);
       return;
     }
 
-    const htmlContent = fs.readFileSync(htmlPath, 'utf8');
+    const htmlContent = await fs.promises.readFile(htmlPath, 'utf8');
 
     // Very basic extraction of body content
     const bodyMatch = htmlContent.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
@@ -26,8 +27,8 @@ async function ingestKnowledgeMerge() {
 `;
 
     const knowledgePath = path.join(process.cwd(), 'KNOWLEDGE_MERGE.md');
-    if (fs.existsSync(knowledgePath)) {
-      let content = fs.readFileSync(knowledgePath, 'utf-8');
+    if (await fs.promises.access(knowledgePath).then(() => true).catch(() => false)) {
+      let content = await fs.promises.readFile(knowledgePath, 'utf-8');
 
       const insertPointRegex = /(## Autonomous Observation\n)/;
 
@@ -37,7 +38,7 @@ async function ingestKnowledgeMerge() {
          content += `\n## Autonomous Observation\n${newObservation}`;
       }
 
-      fs.writeFileSync(knowledgePath, content, 'utf-8');
+      await fs.promises.writeFile(knowledgePath, content, 'utf-8');
       console.log(`Successfully ingested and updated ${knowledgePath}.`);
     } else {
       console.warn(`${knowledgePath} not found.`);

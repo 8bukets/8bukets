@@ -7,12 +7,12 @@ async function validateLicense() {
   try {
     const licensePath = path.join(process.cwd(), 'LICENSE');
 
-    if (!fs.existsSync(licensePath)) {
+    if (!await fs.promises.access(licensePath).then(() => true).catch(() => false)) {
       console.error("❌ Validation Failed: LICENSE file does not exist.");
       process.exit(1);
     }
 
-    const licenseContent = fs.readFileSync(licensePath, 'utf8');
+    const licenseContent = await fs.promises.readFile(licensePath, 'utf8');
 
     const expectedCopyright = "Copyright (c) 2024 Filip Keser. All rights reserved.";
 

@@ -3,15 +3,16 @@ import * as cheerio from 'cheerio';
 import path from 'path';
 
 async function ingestAgentArchitecture() {
+  'use cache'
   console.log("Starting Agent Framework Architecture Terminology Ingestion...");
 
   try {
     const filePath = path.resolve('docs/agent_architecture_terminology.html');
-    if (!fs.existsSync(filePath)) {
+    if (!await fs.promises.access(filePath).then(() => true).catch(() => false)) {
       throw new Error(`File not found: ${filePath}`);
     }
 
-    const html = fs.readFileSync(filePath, 'utf-8');
+    const html = await fs.promises.readFile(filePath, 'utf-8');
     const $ = cheerio.load(html);
 
     // Clean HTML to extract body text effectively
@@ -38,8 +39,8 @@ All the best - https://markposition.wordpress.com
 
     // Safely append to KNOWLEDGE_MERGE.md using greedy negative lookaheads and callback functions
     const knowledgePath = 'KNOWLEDGE_MERGE.md';
-    if (fs.existsSync(knowledgePath)) {
-      let content = fs.readFileSync(knowledgePath, 'utf-8');
+    if (await fs.promises.access(knowledgePath).then(() => true).catch(() => false)) {
+      let content = await fs.promises.readFile(knowledgePath, 'utf-8');
 
       const insertPointRegex = /## Autonomous Observation/;
       if (insertPointRegex.test(content)) {
@@ -47,7 +48,7 @@ All the best - https://markposition.wordpress.com
       } else {
          content += '\n' + newObservation;
       }
-      fs.writeFileSync(knowledgePath, content, 'utf-8');
+      await fs.promises.writeFile(knowledgePath, content, 'utf-8');
       console.log(`Successfully ingested and updated ${knowledgePath}.`);
     } else {
       console.warn(`${knowledgePath} not found.`);
@@ -55,10 +56,10 @@ All the best - https://markposition.wordpress.com
 
     // Safely append to CONSOLIDATED_INTELLIGENCE.md
     const consolidatedPath = 'CONSOLIDATED_INTELLIGENCE.md';
-    if (fs.existsSync(consolidatedPath)) {
-       let content = fs.readFileSync(consolidatedPath, 'utf-8');
+    if (await fs.promises.access(consolidatedPath).then(() => true).catch(() => false)) {
+       let content = await fs.promises.readFile(consolidatedPath, 'utf-8');
        content += `\n## 🚀 Agent Framework Architecture Terminology Intelligence\n- **Ingested on:** ${now}\n- **Source:** ${url}\n- **Summary:** The provided text breaks down an agent framework into its core layers including logic, harness, tooling, context, and prompts.\n\nAll the best - https://markposition.wordpress.com\n`;
-       fs.writeFileSync(consolidatedPath, content, 'utf-8');
+       await fs.promises.writeFile(consolidatedPath, content, 'utf-8');
        console.log(`Successfully ingested and updated ${consolidatedPath}.`);
     } else {
        console.warn(`${consolidatedPath} not found.`);

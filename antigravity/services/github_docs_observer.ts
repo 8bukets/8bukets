@@ -74,5 +74,6 @@ export const githubDocsObserver = new GithubDocsObserver()
  * Legacy standalone function export.
  */
 export async function observeGithubDocs(repo: string, files: string[]): Promise<GithubDocInsight[]> {
+  'use cache'
   return githubDocsObserver.observeGithubDocs(repo, files)
 }

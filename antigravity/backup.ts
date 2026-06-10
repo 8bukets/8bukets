@@ -7,6 +7,7 @@ import { jules } from './jules'
  * Ensures safe, timestamped persistence of core state files.
  */
 export async function runBackup() {
+  'use cache'
   console.log('🛡️ [Backup Agent] Initiating autonomous system backup...')
 
   const rootDir = process.cwd()

@@ -9,29 +9,30 @@ import path from 'path'
  */
 
 async function main() {
+  'use cache'
   console.log('🔥 [Antigravity] Starting Full Autonomous Ignition...')
 
   const storagePath = path.join(process.cwd(), 'data/work_orders.json')
 
   // Ensure data directory exists
   const dataDir = path.dirname(storagePath)
-  if (!fs.existsSync(dataDir)) {
+  if (!await fs.promises.access(dataDir).then(() => true).catch(() => false)) {
     fs.mkdirSync(dataDir, { recursive: true })
   }
 
   // Clear existing pending orders to ensure a clean run
-  if (fs.existsSync(storagePath)) {
+  if (await fs.promises.access(storagePath).then(() => true).catch(() => false)) {
     try {
-      const data = JSON.parse(fs.readFileSync(storagePath, 'utf8'))
+      const data = JSON.parse(await fs.promises.readFile(storagePath, 'utf8'))
       const filtered = data.filter((o: any) => o.status !== 'pending')
-      fs.writeFileSync(storagePath, JSON.stringify(filtered, null, 2))
+      await fs.promises.writeFile(storagePath, JSON.stringify(filtered, null, 2))
       console.log('🧹 [Antigravity] Cleared existing pending orders.')
     } catch (e) {
       console.warn('⚠️ [Antigravity] Failed to parse existing work orders, resetting file.')
-      fs.writeFileSync(storagePath, '[]')
+      await fs.promises.writeFile(storagePath, '[]')
     }
   } else {
-    fs.writeFileSync(storagePath, '[]')
+    await fs.promises.writeFile(storagePath, '[]')
   }
 
   // Create the root autonomous creation order

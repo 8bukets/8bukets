@@ -4,6 +4,7 @@ import fs from 'fs';
 import path from 'path';
 
 async function ingestHcpPackerKnowledge() {
+  'use cache'
   console.log('🧪 Ingesting HCP Packer Knowledge...');
   try {
     const filePath = path.resolve(__dirname, '../docs/HCP_PACKER_TUTORIAL.md');
@@ -33,7 +34,7 @@ async function ingestHcpPackerKnowledge() {
     let existingContent = '';
     let shouldAppend = true;
 
-    if (fs.existsSync(knowledgePath)) {
+    if (await fs.promises.access(knowledgePath).then(() => true).catch(() => false)) {
       existingContent = await fs.promises.readFile(knowledgePath, 'utf8');
       if (existingContent.includes(`- **Target**: ${url}`)) {
         shouldAppend = false;

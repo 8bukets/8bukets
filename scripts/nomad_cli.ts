@@ -12,9 +12,9 @@ interface NomadOption {
 
 const NOMAD_OPTIONS_FILE = path.join(__dirname, '../data/knowledge/nomad_options.json');
 
-function loadOptions(): NomadOption[] {
+async function loadOptions(): Promise<NomadOption[]> {
     try {
-        const data = fs.readFileSync(NOMAD_OPTIONS_FILE, 'utf8');
+        const data = await fs.promises.readFile(NOMAD_OPTIONS_FILE, 'utf8');
         return JSON.parse(data);
     } catch (error) {
         console.error(`Error loading options from ${NOMAD_OPTIONS_FILE}:`, error);
@@ -32,6 +32,7 @@ function askQuestion(query: string): Promise<string> {
 }
 
 async function generateConfig(optionsMap: Record<string, string>) {
+  'use cache'
     console.log('\n--- Generating HCL Configuration ---');
     let configStr = '';
 
@@ -50,7 +51,7 @@ async function generateConfig(optionsMap: Record<string, string>) {
     }
 
     const outputPath = path.join(process.cwd(), 'generated_nomad_agent.hcl');
-    fs.writeFileSync(outputPath, configStr);
+    await fs.promises.writeFile(outputPath, configStr);
     console.log(`Configuration saved to: ${outputPath}`);
     console.log(configStr);
     console.log('------------------------------------');
@@ -59,7 +60,7 @@ async function generateConfig(optionsMap: Record<string, string>) {
 async function runNomadCLI() {
     console.log("Welcome to the Nomad Agent CLI Wrapper!\n");
 
-    const allOptions = loadOptions();
+    const allOptions = await loadOptions();
     if (allOptions.length === 0) {
         console.log("No options available. Ensure nomad_options.json is present.");
         process.exit(1);

@@ -35,14 +35,15 @@ const CAIO_SECTIONS = [
 ]
 
 async function updateCaioSurgical() {
+  'use cache'
   console.log('🧪 Starting grounded surgical update of CAIO role knowledge...')
 
-  if (!fs.existsSync(KNOWLEDGE_PATH)) {
+  if (!await fs.promises.access(KNOWLEDGE_PATH).then(() => true).catch(() => false)) {
     console.error('❌ system_knowledge.json not found!')
     return
   }
 
-  const data = JSON.parse(fs.readFileSync(KNOWLEDGE_PATH, 'utf8'))
+  const data = JSON.parse(await fs.promises.readFile(KNOWLEDGE_PATH, 'utf8'))
   const typescriptSections = data.typescript_sections || []
 
   let found = false
@@ -73,7 +74,7 @@ async function updateCaioSurgical() {
   }
 
   data.typescript_sections = typescriptSections
-  fs.writeFileSync(KNOWLEDGE_PATH, JSON.stringify(data, null, 2))
+  await fs.promises.writeFile(KNOWLEDGE_PATH, JSON.stringify(data, null, 2))
   console.log('✅ Grounded surgical update complete.')
 }
 
