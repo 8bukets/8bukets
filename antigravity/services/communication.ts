@@ -198,14 +198,24 @@ export async function generateActionableBriefing(state: any, directives: Directi
     decisionsCount++
   }
 
-  if (state.intelligence.pendingTasks > 15) {
-    briefing += `- **Operations:** Approve resource reallocation for background task processing.\n`
+  if (state.intelligence.pendingTasks > 10) {
+    briefing += `- **Operations:** Approve resource reallocation for background task processing (${state.intelligence.pendingTasks} pending orders).\n`
+    decisionsCount++
+  }
+
+  if (state.intelligence.neuralPulse && state.intelligence.neuralPulse.health !== 'optimal') {
+    briefing += `- **Neural Network:** Investigate health degradation in \`${state.intelligence.neuralPulse.origin}\` environment.\n`
     decisionsCount++
   }
 
   if (decisionsCount === 0) {
     briefing += `- No critical stakeholder decisions required at this time.\n`
   }
+
+  const stabilityIndex = synergies.length > 0
+    ? Math.max(0, 100 - (synergies.length * 5))
+    : 100
+  briefing += `\n---\n**Coordination Stability Index:** ${stabilityIndex}% | *Sentient Orchestration Active*\n`
 
   return briefing
 }

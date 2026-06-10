@@ -288,52 +288,52 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
   map.crossDomainSynergies = []
 
   // Phase 12: Resource Dependency Tracking (Expanded Static Analysis)
-  const trackableResources = map.resourceInventory.filter((r: any) => ['Service', 'UI Component', 'Automation Script'].includes(r.type))
+  const trackableResources = map.resourceInventory.filter((r: any) => ['Service', 'UI Component', 'Automation Script', 'AI Agent'].includes(r.type))
   for (const resource of trackableResources) {
     if (!resource.path) continue
     try {
       const content = await fs.promises.readFile(path.join(process.cwd(), resource.path), 'utf8')
-      // Support ./, ../, and @/ aliases, and account for varying import styles
-      const imports = content.match(/import .* from ['"](@\/antigravity\/services\/|@\/antigravity\/|\.\/|\.\.\/services\/|\.\.\/)(.*)['"]/g) || []
-      imports.forEach(imp => {
-        const depMatch = imp.match(/['"](@\/antigravity\/services\/|@\/antigravity\/|\.\/|\.\.\/services\/|\.\.\/)(.*)['"]/)
-        if (depMatch) {
-          const depPathPart = depMatch[2].replace(/\.[jt]sx?$/, '')
-          const depName = depPathPart.split('/').pop() || depPathPart
+      // Improved regex to handle various import/require styles including optional spaces and dynamic imports
+      const importRegex = /(?:import|from|require\s*\(|import\s*\(|import)\s*.*?['"](@\/antigravity\/services\/|@\/antigravity\/|\.\/|\.\.\/services\/|\.\.\/)(.*?)['"]/g;
 
-          // Find the specific resource that matches this dependency
-          const target = map.resourceInventory.find((s: any) =>
-            s.name === depName ||
-            (s.path && s.path.includes(depPathPart)) ||
-            (s.path && depPathPart.includes(s.name))
-          )
+      let match;
+      while ((match = importRegex.exec(content)) !== null) {
+        const fullMatch = match[0];
+        const depPathPart = match[2].replace(/\.[jt]sx?$/, '');
+        const depName = depPathPart.split('/').pop() || depPathPart;
 
-          if (target && target.name !== resource.name) {
-            // Deduplicate dependencies
-            const exists = map.resourceDependencies.some((d: any) => d.source === resource.name && d.target === target.name)
-            if (!exists) {
-              map.resourceDependencies.push({
+        // Find the specific resource that matches this dependency
+        const target = map.resourceInventory.find((s: any) =>
+          s.name === depName ||
+          (s.path && s.path.includes(depPathPart)) ||
+          (s.path && depPathPart.includes(s.name))
+        );
+
+        if (target && target.name !== resource.name) {
+          // Deduplicate dependencies
+          const exists = map.resourceDependencies.some((d: any) => d.source === resource.name && d.target === target.name);
+          if (!exists) {
+            map.resourceDependencies.push({
+              source: resource.name,
+              target: target.name,
+              type: fullMatch.includes('require') ? 'require' : 'import',
+              sourceType: resource.type,
+              targetType: target.type
+            });
+
+            // Phase 13: Cross-Domain Synergy Detection
+            if (resource.type !== target.type) {
+              map.crossDomainSynergies.push({
                 source: resource.name,
-                target: target.name,
-                type: 'import',
                 sourceType: resource.type,
-                targetType: target.type
-              })
-
-              // Phase 13: Cross-Domain Synergy Detection
-              if (resource.type !== target.type) {
-                map.crossDomainSynergies.push({
-                  source: resource.name,
-                  sourceType: resource.type,
-                  target: target.name,
-                  targetType: target.type,
-                  intensity: 'Medium'
-                })
-              }
+                target: target.name,
+                targetType: target.type,
+                intensity: 'Medium'
+              });
             }
           }
         }
-      })
+      }
     } catch (e) {}
   }
 
@@ -403,6 +403,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
       'performance': 40,
       'fix': 30,
       'feature': 20,
+      'agent': 25,
       'documentation': 10,
       'maintenance': 5,
       'other': 0
@@ -412,18 +413,23 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     // 2. Alignment with Strategic Goals
     Object.entries(map.goalAlignment).forEach(([goal, relevantBranches]: [string, any]) => {
       if (relevantBranches.includes(b.name)) {
-        score += 25; // Bonus for each goal it aligns with
+        score += 30; // Bonus for each goal it aligns with
       }
     });
 
     // 3. Artifact Impact
     if (b.changedFiles) {
-      score += Math.min(b.changedFiles.length * 2, 40); // Cap artifact bonus at 40
+      score += Math.min(b.changedFiles.length * 3, 50); // Cap artifact bonus at 50
 
       const coreFiles = b.changedFiles.filter((f: string) =>
-        f.includes('core.ts') || f.includes('jules.ts') || f.includes('collaboration.ts') || f.includes('intelligence.ts')
+        f.includes('core.ts') || f.includes('jules.ts') || f.includes('collaboration.ts') || f.includes('intelligence.ts') || f.includes('evolution.ts')
       );
-      score += coreFiles.length * 15; // Extra weight for core file modifications
+      score += coreFiles.length * 20; // Extra weight for core file modifications
+    }
+
+    // 4. Knowledge Nugget Bonus
+    if (b.knowledge) {
+      score += 20;
     }
 
     return {
@@ -432,7 +438,7 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
       score,
       results: b.results
     };
-  }).sort((a, b) => b.score - a.score).slice(0, 20);
+  }).sort((a, b) => b.score - a.score).slice(0, 25);
 
   // Integrate branch results into resources (Expanded categories)
   const resultCategories = ['feature', 'fix', 'performance', 'security', 'ux']
@@ -600,13 +606,13 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
   // Phase 13: High-Impact Strategic Results
   if (relationshipMap?.impactfulBranches && relationshipMap.impactfulBranches.length > 0) {
     newEntries += `### 🏆 Top Impactful Strategic Results\n`
-    relationshipMap.impactfulBranches.slice(0, 5).forEach((b: any) => {
-      newEntries += `- **[Score: ${b.score}]** \`${b.name}\` (${b.category}): ${b.results}\n`
+    relationshipMap.impactfulBranches.slice(0, 8).forEach((b: any) => {
+      newEntries += `- **[Score: ${b.score}]** \`${b.name}\` (${b.category?.toUpperCase()}): ${b.results}\n`
     })
     newEntries += `\n`
   }
 
-  Object.entries(domains).forEach(([domain, branchList]) => {
+  Object.entries(domains).sort((a, b) => b[1].length - a[1].length).forEach(([domain, branchList]) => {
     newEntries += `### 🌐 Strategic Domain: ${domain}\n`
     branchList.forEach(b => {
       newEntries += `- **Branch:** \`${b.name}\`\n`
@@ -620,7 +626,7 @@ export async function mergeBranchInsights(branches: any[], relationshipMap?: any
       }
       if (b.changedFiles && b.changedFiles.length > 0) {
         newEntries += `  - **Artifacts:** ${b.changedFiles.length} files modified.\n`
-        const criticalFiles = b.changedFiles.filter((f: string) => f.includes('core.ts') || f.includes('jules.ts') || f.includes('collaboration.ts'))
+        const criticalFiles = b.changedFiles.filter((f: string) => f.includes('core.ts') || f.includes('jules.ts') || f.includes('collaboration.ts') || f.includes('evolution.ts') || f.includes('intelligence.ts'))
         if (criticalFiles.length > 0) {
           newEntries += `  - **Critical Impact:** Branch modifies core ecosystem files.\n`
         }
