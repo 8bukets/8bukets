@@ -236,6 +236,15 @@ export async function synthesize(): Promise<SynthesizedIdea[]> {
     })
   }
 
+  // Gap Analysis 25: Autonomous Infrastructure Graph
+  if (!files.some(f => f.includes('infrastructure_graph'))) {
+    ideas.push({
+      feature: 'Autonomous Infrastructure Graph',
+      rationale: 'Provides a real-time visualization of resource dependencies and neural node health across the APAC edge network.',
+      complexity: 'Medium'
+    })
+  }
+
   // Force an idea for demonstration if none exist
   if (ideas.length === 0) {
     ideas.push({
