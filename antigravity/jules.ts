@@ -511,11 +511,10 @@ export class Jules {
     console.log('📊 [Jules] Generating Consolidated Intelligence Report...')
     const reportPath = path.join(process.cwd(), 'CONSOLIDATED_INTELLIGENCE.md')
 
-    let insights: any
     try {
       const { getSystemInsights } = await import('./core')
       const insights = await getSystemInsights()
-      const refactors = (insights as any).proposals || []
+      const refactors = insights.proposals || []
       if (refactors.length > 0) {
         const { workOrderService } = await import('./services/work_order')
         this.recordTask(`Super-Intelligence: Generated ${refactors.length} predictive refactors.`)

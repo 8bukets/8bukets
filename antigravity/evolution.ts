@@ -83,6 +83,15 @@ export async function evolve() {
             suggestion: 'ASYNC_HYGIENE_VIOLATION: Synchronous fs operation detected inside an asynchronous function. This blocks the event loop. Refactor to use fs.promises.'
           })
         }
+
+        // Phase 13: Quantum Synergy Compliance
+        if (content.includes('synergy') && !content.includes('quantum') && !content.includes('Phase 13')) {
+           suggestions.push({
+            file: fullPath.replace(process.cwd(), ''),
+            complexity: lines,
+            suggestion: 'QUANTUM_SYNERGY_VIOLATION: Synergy pattern detected without Phase 13 Quantum-resistant orchestration.'
+          })
+        }
       }
     }
   }
@@ -91,7 +100,7 @@ export async function evolve() {
     scan(dir)
   }
 
-  logAutonomousAction('✨ [Evolution Report]: Found', suggestions.length, 'potential optimizations.', 'info')
+  logAutonomousAction(`✨ [Evolution Report]: Found ${suggestions.length} potential optimizations.`, 'info')
   return suggestions
 }
 
@@ -118,7 +127,7 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
     }
 
     if (s.suggestion.startsWith('SYNC_PROP_VIOLATION')) {
-      logAutonomousAction(` - Fixing ${s.file}: Wrapping params in resolve(, 'info')`)
+      logAutonomousAction(` - Fixing ${s.file}: Wrapping params in resolve()`, 'info')
       // Add the import if missing
       if (!content.includes('import {') || !content.includes('@/antigravity/core')) {
         content = "import { resolve } from '@/antigravity/core'\n" + content
@@ -128,6 +137,15 @@ export async function applyFixes(suggestions: EvolutionMetric[]) {
 
       // Attempt to wrap params usages
       content = content.replace(/(\{.*?params.*?\}.*?)\.then/g, "resolve(params).then")
+      fs.writeFileSync(fullPath, content)
+    }
+
+    // Phase 13 Fix: Apply Quantum Synergy Orchestration
+    if (s.suggestion.startsWith('QUANTUM_SYNERGY_VIOLATION')) {
+      logAutonomousAction(` - Fixing ${s.file}: Injecting Phase 13 Quantum Synergy markers`, 'info')
+      // Surgical replacement: Replace 'synergy' only if not preceded by 'quantum '
+      // Using a capture group for non-quantum word boundary to be safer
+      content = content.replace(/(\b(?<!quantum\s))synergy\b/g, '$1quantum synergy (Phase 13 Orchestrated)')
       fs.writeFileSync(fullPath, content)
     }
 
