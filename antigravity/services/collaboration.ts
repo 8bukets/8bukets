@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { z } from 'zod'
-import { autonomousFetch } from '@/antigravity/core'
+import { autonomousFetch, cacheLife } from '@/antigravity/core'
 import { checkDockerHealth } from './docker'
 import { getLatestBuildStatus } from './jenkins'
 import { dispatchExecutiveBriefing } from './notification'
@@ -29,8 +29,14 @@ export type MissionMetadata = z.infer<typeof MissionMetadataSchema>
 const MISSION_PATH = path.join(process.cwd(), '.antigravity/mission.md')
 
 export async function getMissionMetadata(): Promise<MissionMetadata> {
+  // Phase 12: Safeguard against CLI-mode execution
+  const isServerRequest = !!process.env.NEXT_RUNTIME
+  if (isServerRequest) {
+    'use cache'
+    cacheLife('catalog')
+  }
+
   return autonomousFetch(MissionMetadataSchema, async () => {
-    // Note: In Next.js server context, we don't use 'use cache' here to avoid some issues we saw earlier
     if (!await fs.promises.access(MISSION_PATH).then(() => true).catch(() => false)) {
       throw new Error('Mission document missing. System collaboration impaired.')
     }
