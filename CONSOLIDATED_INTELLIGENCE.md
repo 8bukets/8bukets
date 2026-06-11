@@ -18,6 +18,7 @@
 - What is the difference between AI agents, AI assistants, and bots?
 - Key differences
 - How do AI agents work?
+- [Stripe Link CLI](data/knowledge/stripe_link_cli.md) - Secure, one-time-use payment credentials from a Link wallet.
 
 ## 👥 Stakeholders
 - **Chief AI Officer**: caio@antigravity.internal
