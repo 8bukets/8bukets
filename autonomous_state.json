@@ -21,11 +21,11 @@
     "jenkins": {
         "status": "SUCCESS",
         "number": 42,
-        "timestamp": 1781138504422,
+        "timestamp": 1781146624122,
         "url": "http://localhost:8080/job/antigravity-pipeline/42/"
     },
     "intelligence": {
-        "branches": 2500,
+        "branches": 2503,
         "pendingTasks": 6,
         "relationshipMap": {
             "stakeholderEngagement": {
@@ -38,7 +38,7 @@
                 "Jules (Lead Architect)": {
                     "email": "jules@antigravity.ai",
                     "activeProjects": [
-                        "jules-12133170053802619677-d16f2898",
+                        "jules-14163370338724399850-c46a02f7",
                         "remotes/origin/HEAD -> origin/jules/scraper-markposition-17752547678215960211",
                         "remotes/origin/add-jules-cli-7658708591293792322",
                         "remotes/origin/feat/autonomous-protocol-jules-16130780090107402276",
@@ -229,7 +229,6 @@
                     "remotes/origin/integrate-jenkins-pipeline-generation-14117303396069153360"
                 ],
                 "Maintain Zero-Touch Autonomous Operations.": [
-                    "jules-12133170053802619677-d16f2898",
                     "remotes/origin/add-gitlab-runner-service-1151466855069035440",
                     "remotes/origin/add-malubeach-scraper-16704333902164650708",
                     "remotes/origin/add-mysql-agent-12534386317238704274",
@@ -304,6 +303,7 @@
                     "remotes/origin/feat/autonomous-creation-orchestration-16938243851371264019",
                     "remotes/origin/feat/autonomous-creation-order-12052078248727379444",
                     "remotes/origin/feat/autonomous-creation-order-15598638641975305660",
+                    "remotes/origin/feat/autonomous-creation-pulse-12133170053802619677",
                     "remotes/origin/feat/autonomous-creation-pulse-17454744157999079928",
                     "remotes/origin/feat/autonomous-creation-system-10495689118004789433",
                     "remotes/origin/feat/autonomous-creation-workflow-3405864056735781942",
@@ -546,6 +546,7 @@
                     "remotes/origin/feat/autonomous-creation-ignition-8279236901022115183",
                     "remotes/origin/feat/autonomous-creation-order-12052078248727379444",
                     "remotes/origin/feat/autonomous-creation-order-15598638641975305660",
+                    "remotes/origin/feat/autonomous-creation-pulse-12133170053802619677",
                     "remotes/origin/feat/autonomous-creation-pulse-17454744157999079928",
                     "remotes/origin/feat/autonomous-creation-system-10495689118004789433",
                     "remotes/origin/feat/autonomous-daily-sync-icloud-2931573862557497008",
@@ -1560,213 +1561,15 @@
                 },
                 {
                     "type": "Knowledge",
-                    "name": "Web Insight",
+                    "name": "overview",
                     "status": "Ingested",
-                    "source": "https://admanager.google.com/home/resources/"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: 50ty.json",
-                    "status": "Ingested",
-                    "source": "icloud://50ty.json"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: 50ty.md",
-                    "status": "Ingested",
-                    "source": "icloud://50ty.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: AGENTS.md",
-                    "status": "Ingested",
-                    "source": "icloud://AGENTS.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: CLAUDE.md",
-                    "status": "Ingested",
-                    "source": "icloud://CLAUDE.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: CONSOLIDATED_INTELLIGENCE.md",
-                    "status": "Ingested",
-                    "source": "icloud://CONSOLIDATED_INTELLIGENCE.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: KNOWLEDGE_INTEGRATION.md",
-                    "status": "Ingested",
-                    "source": "icloud://KNOWLEDGE_INTEGRATION.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: KNOWLEDGE_MERGE.md",
-                    "status": "Ingested",
-                    "source": "icloud://KNOWLEDGE_MERGE.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: MISSION_HANDOFF 2.md",
-                    "status": "Ingested",
-                    "source": "icloud://MISSION_HANDOFF 2.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: MISSION_HANDOFF.md",
-                    "status": "Ingested",
-                    "source": "icloud://MISSION_HANDOFF.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: README.md",
-                    "status": "Ingested",
-                    "source": "icloud://README.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: USAGE.md",
-                    "status": "Ingested",
-                    "source": "icloud://USAGE.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "software info by fk &#8211; software-online-review &#8211; Filip Keser",
-                    "status": "Ingested",
-                    "source": "icloud://ai_agents_knowledge.json"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: ai_agents_knowledge.md",
-                    "status": "Ingested",
-                    "source": "icloud://ai_agents_knowledge.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: autonomous_state.json",
-                    "status": "Ingested",
-                    "source": "icloud://autonomous_state.json"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: caio_role_docs.md",
-                    "status": "Ingested",
-                    "source": "icloud://caio_role_docs.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: package-lock.json",
-                    "status": "Ingested",
-                    "source": "icloud://package-lock.json"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: package.json",
-                    "status": "Ingested",
-                    "source": "icloud://package.json"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: project_backlog.md",
-                    "status": "Ingested",
-                    "source": "icloud://project_backlog.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: test_knowledge_output.json",
-                    "status": "Ingested",
-                    "source": "icloud://test_knowledge_output.json"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: tsconfig.json",
-                    "status": "Ingested",
-                    "source": "icloud://tsconfig.json"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: wilson_sonsini.md",
-                    "status": "Ingested",
-                    "source": "icloud://wilson_sonsini.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "software online review.com",
-                    "status": "Ingested",
-                    "source": "https://software-online-review.com"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "iCloud: phase_13_strategy.md",
-                    "status": "Ingested",
-                    "source": "icloud://phase_13_strategy.md"
+                    "source": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview"
                 },
                 {
                     "type": "Knowledge",
                     "name": "Intelephense Documentation",
                     "status": "Ingested",
                     "source": "https://intelephense.com/docs"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Chief AI Officer (CAIO) Role",
-                    "status": "Ingested",
-                    "source": "user_input://caio_user_input.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Tutorial: Create and run your first GitLab CI/CD pipeline",
-                    "status": "Ingested",
-                    "source": "user_input://gitlab_ci_tutorial.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "Duo Planner Agent",
-                    "status": "Ingested",
-                    "source": "agents/duo_planner_agent.md"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "2459326?hl=en&ref topic=10289453&sjid=5167206403107665975 EU",
-                    "status": "Ingested",
-                    "source": "https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "ad manager",
-                    "status": "Ingested",
-                    "source": "https://developers.google.com/ad-manager"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "dynamic ad insertion",
-                    "status": "Ingested",
-                    "source": "https://developers.google.com/ad-manager/dynamic-ad-insertion"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "full service",
-                    "status": "Ingested",
-                    "source": "https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "pod serving",
-                    "status": "Ingested",
-                    "source": "https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "start",
-                    "status": "Ingested",
-                    "source": "https://developers.google.com/ad-manager/api/start"
-                },
-                {
-                    "type": "Knowledge",
-                    "name": "overview",
-                    "status": "Ingested",
-                    "source": "https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview"
                 },
                 {
                     "type": "Documentation",
@@ -3563,6 +3366,13 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "remotes/origin/feat/autonomous-creation-pulse-12133170053802619677",
+                    "status": "Ready for Merge",
+                    "result": "Commit: feat: implement autonomous creation pulse and fix knowledge preservation",
+                    "category": "feature"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "remotes/origin/feat/autonomous-creation-pulse-17454744157999079928",
                     "status": "Ready for Merge",
                     "result": "Commit: feat: implement and execute full autonomous creation pulse",
@@ -5040,9 +4850,23 @@
                 },
                 {
                     "type": "Branch Result",
+                    "name": "remotes/origin/feat/intelephense-docs-consolidation-13875423515166385602",
+                    "status": "Ready for Merge",
+                    "result": "Commit: feat: unify Intelephense documentation ingestion",
+                    "category": "feature"
+                },
+                {
+                    "type": "Branch Result",
                     "name": "remotes/origin/feat/intelephense-docs-consolidation-14111284160958463433",
                     "status": "Ready for Merge",
                     "result": "Commit: feat(knowledge): consolidate Intelephense documentation",
+                    "category": "feature"
+                },
+                {
+                    "type": "Branch Result",
+                    "name": "remotes/origin/feat/intelephense-docs-consolidation-15301713937832088755",
+                    "status": "Ready for Merge",
+                    "result": "Commit: feat: consolidate full Intelephense documentation",
                     "category": "feature"
                 },
                 {
@@ -11648,11 +11472,7 @@
                 }
             ],
             "synergies": [],
-            "functionalClusters": {
-                "knowledge": [
-                    "jules-12133170053802619677-d16f2898"
-                ]
-            },
+            "functionalClusters": {},
             "collaborationRecommendations": [],
             "resourceDependencies": [
                 {
@@ -12552,12 +12372,6 @@
                     "results": "Commit: [ROADMAP:PHASE-12] 🤖 fix: autonomous evolution repair of 3 issues"
                 },
                 {
-                    "name": "jules-12133170053802619677-d16f2898",
-                    "category": "other",
-                    "score": 80,
-                    "results": "🤖 fix: autonomous self-repair of 192 issues (10 files changed in Services)"
-                },
-                {
                     "name": "remotes/origin/add-mysql-agent-12534386317238704274",
                     "category": "feature",
                     "score": 80,
@@ -12676,6 +12490,12 @@
                     "category": "feature",
                     "score": 80,
                     "results": "Commit: feat: implement full autonomous creation and execution cycle"
+                },
+                {
+                    "name": "remotes/origin/feat/autonomous-creation-execution-cycle-15305595999665058256",
+                    "category": "feature",
+                    "score": 80,
+                    "results": "Commit: feat: implement autonomous creation and execution cycle"
                 }
             ]
         },
@@ -12683,7 +12503,7 @@
             "origin": "development",
             "health": "degraded",
             "volatilityTags": 0,
-            "timestamp": "2026-06-11T00:42:18.882Z"
+            "timestamp": "2026-06-11T02:57:31.500Z"
         },
         "relayState": [
             {
@@ -12693,7 +12513,7 @@
                     "Command Center",
                     "Store"
                 ],
-                "lastActivity": "2026-06-11T00:42:18.882Z",
+                "lastActivity": "2026-06-11T02:57:31.500Z",
                 "intensity": 0.85
             },
             {
@@ -12708,21 +12528,21 @@
             }
         ]
     },
-    "last_sync": "2026-06-11T00:42:19.488Z",
+    "last_sync": "2026-06-11T02:57:32.143Z",
     "directives": [
         {
-            "id": "dir_vvvqmbprl",
+            "id": "dir_5y1nvaf48",
             "priority": "High",
             "intent": "Maintain 99.9% system uptime",
             "status": "Active",
-            "timestamp": "2026-06-11T00:42:18.889Z"
+            "timestamp": "2026-06-11T02:57:31.513Z"
         },
         {
-            "id": "dir_655us16k7",
+            "id": "dir_2vjxb1q8w",
             "priority": "Medium",
             "intent": "Consolidate all branch knowledge daily",
             "status": "Active",
-            "timestamp": "2026-06-11T00:42:18.889Z"
+            "timestamp": "2026-06-11T02:57:31.513Z"
         }
     ]
 }
