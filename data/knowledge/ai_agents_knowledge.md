@@ -1,6 +1,6 @@
 # Knowledge Observation Insights (Unified)
 
-**System Analysis:** 2026-06-11T01:10:37.683Z
+**System Analysis:** 2026-06-11T02:33:09.032Z
 
 ---
 
@@ -37593,7 +37593,7 @@ Wilson Sonsini’s history is essentially the history of modern technology:
 # Intelephense Documentation
 
 > **Source:** https://intelephense.com/docs
-> **Analyzed At:** 2026-06-11T01:10:37.432Z
+> **Analyzed At:** 2026-06-11T02:33:08.832Z
 
 ## About
 Intelephense is a high performance, cross platform, cross editor PHP language server adhering to the Language Server Protocol (LSP).

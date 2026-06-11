@@ -344,13 +344,11 @@ export class Jules {
       }
     }
 
-    // GitHub Docs Observation
-    console.log('👁️ [Jules] Scanning GitHub Docs...')
-    const { observeGithubDocs } = await import('./services/github_docs_observer')
-    const githubInsights = await observeGithubDocs('bmewburn/intelephense-docs', ['README.md', 'installation.md', 'gettingStarted.md', 'features.md', 'support.md'])
-    if (githubInsights.length > 0) {
-      this.recordTask(`GitHub Docs: Observed ${githubInsights.length} files from Intelephense docs.`)
-    }
+    // GitHub Docs Observation (Intelephense)
+    console.log('👁️ [Jules] Consolidating Intelephense Documentation...')
+    const { intelephenseService } = await import('./services/intelephense_service')
+    await intelephenseService.consolidate()
+    this.recordTask('Intelephense: Consolidated documentation from GitHub and local scratch.')
 
     // iCloud Knowledge Observation
     console.log('☁️ [Jules] Initiating iCloud Knowledge Scan...')

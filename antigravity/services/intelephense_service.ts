@@ -6,6 +6,7 @@ import { KnowledgeObserver, Knowledge } from './knowledge_observer'
 /**
  * INTELEPHENSE SERVICE
  * Orchestrates the consolidation of Intelephense documentation from local and remote sources.
+ * Phase 13: Integrated with Jules work cycle for autonomous knowledge maintenance.
  */
 export class IntelephenseService {
   private readonly owner = 'bmewburn'
