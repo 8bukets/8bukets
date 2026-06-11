@@ -10409,3 +10409,15 @@
   - **Activity:** Last active 15 seconds ago
   - **Knowledge:** Enhanced ecosystem knowledge base via 1 artifact.
   - **Artifacts:** 10 files modified.
+
+## Google Ads Knowledge Ingestion
+- [Google Ads Document](https://support.google.com/google-ads/answer/2459326?hl=en&ref_topic=10289453&sjid=5167206403107665975-EU)
+- [Google Ads Document](https://business.google.com/uk/ad-tools/bidding/)
+- [Google Ads Document](https://business.google.com/uk/resources/)
+- [Google Ads Document](https://developers.google.com/ad-manager)
+- [Google Ads Document](https://developers.google.com/ad-manager/dynamic-ad-insertion)
+- [Google Ads Document](https://developers.google.com/ad-manager/dynamic-ad-insertion/full-service)
+- [Google Ads Document](https://developers.google.com/ad-manager/dynamic-ad-insertion/pod-serving)
+- [Google Ads Document](https://developers.google.com/ad-manager/api/start)
+- [Google Ads Document](https://admanager.google.com/home/resources/)
+- [Google Ads Document](https://docs.cloud.google.com/java/docs/reference/ad-manager/latest/overview)

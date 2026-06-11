@@ -1969,3 +1969,7 @@ _No high-signal synergy overlaps detected for graph generation._
 
 ---
 **Collaboration Health Index:** 100% | *Phase 12 Synergy Protocol Active*
+
+## Google Ads Knowledge
+- [Google Ads URL](https://business.google.com/uk/ad-tools/bidding/)
+- [Google Ads URL](https://business.google.com/uk/resources/)
