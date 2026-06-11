@@ -336,16 +336,23 @@ export class Jules {
     try {
       const status = execFileSync('git', ['status', '--porcelain']).toString().trim()
       if (status) {
+        let commitMessage = message
+        if (phase && progress !== undefined) {
+          const { GitProviderService } = await import('./services/git_provider')
+          commitMessage = GitProviderService.formatGitKrakenMessage(message, phase, progress)
+        }
+
         execFileSync('git', ['add', '.'], { stdio: 'inherit' })
-        execFileSync('git', ['commit', '-m', message], { stdio: 'inherit' })
+        execFileSync('git', ['commit', '-m', commitMessage], { stdio: 'inherit' })
         console.log('✅ [Jules] Changes committed autonomously.')
         this.recordTask(`Git Sync: Committed fixes to local repository.`)
       }
 
       try {
-        execFileSync('git', ['push'], { stdio: 'inherit' })
-        console.log('🚀 [Jules] Changes pushed to remote.')
-        this.recordTask('Git Sync: Pushed changes to remote.')
+        const targetBranch = branch || 'HEAD'
+        execFileSync('git', ['push', 'origin', targetBranch], { stdio: 'inherit' })
+        console.log(`🚀 [Jules] Changes pushed to remote (${targetBranch}).`)
+        this.recordTask(`Git Sync: Pushed changes to remote (${targetBranch}).`)
       } catch (pushErr) {
         console.log('🔄 [Jules] Standard push failed, attempting with upstream set...')
         execFileSync('git', ['push', '--set-upstream', 'origin', 'HEAD'], { stdio: 'inherit' })
@@ -498,11 +505,13 @@ export class Jules {
     const { triggerEcosystemCollaboration } = await import("./services/collaboration");
     await triggerEcosystemCollaboration();
 
+    // Phase 19: iCloud synchronization (native)
     try {
-      const { syncToICloud } = await import('./services/icloud_observer')
-      // @ts-ignore
-      if (typeof syncToICloud === 'function') await syncToICloud()
-    } catch (e) {}
+      const { syncToICloud } = await import('./services/icloud')
+      await syncToICloud()
+    } catch (e) {
+       // Gracefully skip if native iCloud sync service is not available in current environment
+    }
 
     await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
     this.memory.lastOptimization = new Date().toISOString()

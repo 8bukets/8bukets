@@ -104,9 +104,8 @@ export class OnlinePresenceService {
 
         if (isCloud) {
            // Cloud node only becomes leader if no higher priority node (MacBook) is active
-           const activeNodes = otherNodes.filter(n => n.status === 'online' || n.status === 'recovered')
-           const macbookNode = activeNodes.find(n => n.telemetry?.node_id === 'macbook-primary-01')
-           const higherPriorityActive = activeNodes.some(n => (n.node_priority || 0) > nodePriority)
+           const macbookNode = otherNodes.find(n => (n.telemetry?.node_id || n['telemetry']?.node_id) === 'macbook-primary-01')
+           const higherPriorityActive = otherNodes.some(n => (n.node_priority || 0) > nodePriority)
 
            if (macbookNode) {
              const lastSeen = new Date(macbookNode.lastSeen).getTime()

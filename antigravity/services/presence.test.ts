@@ -81,7 +81,14 @@ describe('OnlinePresenceService', () => {
 
     // Mock existing high priority node
     const mockFind = vi.fn(() => ({
-      toArray: vi.fn(() => Promise.resolve([{ node_priority: 100 }]))
+      toArray: vi.fn(() => Promise.resolve([
+        {
+          node_priority: 100,
+          status: 'online',
+          lastSeen: new Date().toISOString(),
+          telemetry: { node_id: 'macbook-primary-01' }
+        }
+      ]))
     }))
 
     vi.spyOn(core, 'getMongoClient').mockImplementationOnce(async () => ({
