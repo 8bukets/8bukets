@@ -29,7 +29,7 @@ async function main() {
 
   // We write an improved engine configuration or something similar to simulate system scale and functionality improvements
   const engineConfigPath = path.join(process.cwd(), 'data/engine_config.json');
-  let engineConfig: any = { scaleFactor: 1.0, features: [] };
+  let engineConfig: any = { scaleFactor: 1.0, features: [], autonomousCorrectionCount: 0 };
   if (await fs.promises.access(engineConfigPath).then(() => true).catch(() => false)) {
      try {
        engineConfig = JSON.parse(await fs.promises.readFile(engineConfigPath, 'utf8'));
@@ -37,6 +37,7 @@ async function main() {
   }
 
   engineConfig.scaleFactor = (engineConfig.scaleFactor || 1.0) * 1.25;
+  engineConfig.autonomousCorrectionCount = (engineConfig.autonomousCorrectionCount || 0) + failed;
   if (!engineConfig.features.includes('advanced_self_correction')) {
       engineConfig.features.push('advanced_self_correction');
   }
