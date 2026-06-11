@@ -19,6 +19,7 @@
 - Key differences
 - How do AI agents work?
 - [Stripe Link CLI](data/knowledge/stripe_link_cli.md) - Secure, one-time-use payment credentials from a Link wallet.
+- [Stripe Link for Agents](data/knowledge/stripe_link_agents.md) - Give your agent a wallet you control to let agents spend on your behalf securely.
 
 ## 👥 Stakeholders
 - **Chief AI Officer**: caio@antigravity.internal
