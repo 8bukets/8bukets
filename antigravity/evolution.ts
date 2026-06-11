@@ -175,6 +175,28 @@ export async function evolve() {
             suggestion: 'QUANTUM_SYNERGY_VIOLATION: Strategic synergy patterns detected without documented quantum-resistant orchestration (Crystals-Kyber).'
           })
         }
+
+        // Rule 17: Legal Tech & Venture Readiness Audit (Phase 14 Wilson Sonsini Insight)
+        if (content.includes('startup') || content.includes('ipo') || content.includes('venture')) {
+          if (!content.includes('legal-compliance') && !content.includes('IP-header')) {
+            suggestions.push({
+              file: fullPath.replace(process.cwd(), ''),
+              complexity: lines,
+              suggestion: 'VENTURE_READINESS_VIOLATION: Venture-critical component detected without documented legal-compliance audit or IP-header protection.'
+            })
+          }
+        }
+
+        // Rule 18: Phase 14 Anticipatory Intelligence Compliance
+        if (content.includes('predictive') || content.includes('anticipatory')) {
+          if (!content.includes('venture-alignment') && !content.includes('anticipatory-scaling')) {
+            suggestions.push({
+              file: fullPath.replace(process.cwd(), ''),
+              complexity: lines,
+              suggestion: 'PHASE_14_ANTICIPATORY_VIOLATION: Anticipatory logic detected without explicit venture-alignment or anticipatory-scaling metrics.'
+            })
+          }
+        }
       }
     }
   }

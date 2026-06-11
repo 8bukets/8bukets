@@ -72,6 +72,8 @@ export class Jules {
       const hasQuantum = checkKnowledge('quantum')
       const hasOmega = checkKnowledge('omega')
       const hasQuantumSynergy = checkKnowledge('quantum synergy')
+      const hasPhase14 = checkKnowledge('Phase 14')
+      const hasWilsonSonsini = checkKnowledge('Wilson Sonsini')
 
       if (hasQuantum && !this.memory.preferredPatterns.includes('crystals-kyber')) {
         suggestions.push('Integrate Crystals-Kyber for Quantum-resistant security as per latest strategy.')
@@ -81,6 +83,12 @@ export class Jules {
       }
       if (hasOmega && !this.memory.preferredPatterns.includes('low-latency-sync')) {
         suggestions.push('Implement <30ms low-latency synchronization for Project Omega.')
+      }
+      if (hasPhase14) {
+        suggestions.push('Initiate Phase 14 Anticipatory Intelligence protocols for legal-venture synthesis.')
+      }
+      if (hasWilsonSonsini) {
+        suggestions.push('Align autonomous core with Wilson Sonsini startup lifecycle and venture-readiness metrics.')
       }
     }
 
