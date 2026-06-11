@@ -154,3 +154,11 @@ run-autonomous-apac_edge_orchestrator:
     - npx tsx antigravity/workflows/apac_edge_orchestrator_workflow.ts
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
+
+run-autonomous-autonomous_infrastructure_graph:
+  stage: test
+  script:
+    - echo "Running autonomous cycle for Autonomous Infrastructure Graph"
+    - npx tsx antigravity/workflows/autonomous_infrastructure_graph_workflow.ts
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"

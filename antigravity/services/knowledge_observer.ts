@@ -57,8 +57,12 @@ export class KnowledgeObserver {
       sections: newInsights.sections || []
     };
 
-    // Deduplicate by title
-    const existingIndex = existingData.typescript_sections.findIndex((k: any) => k.title === newInsights.title);
+    // Deduplicate by title OR source URL to prevent collisions
+    const existingIndex = existingData.typescript_sections.findIndex((k: any) =>
+      k.title === newInsights.title ||
+      (k.metadata && k.metadata.source === newInsights.source)
+    );
+
     if (existingIndex !== -1) {
       existingData.typescript_sections[existingIndex] = section;
     } else {
@@ -229,7 +233,9 @@ export async function observeKnowledge(url: string) {
       throw new Error(`Received insufficient content from ${url}`);
     }
 
-    return KnowledgeObserver.processContent('Web Insight', html, url);
+    // Use the URL as the title if it's a generic "Web Insight" to prevent collisions
+    const title = url.split('/').pop()?.replace(/[-_]/g, ' ') || 'Web Insight';
+    return KnowledgeObserver.processContent(title, html, url);
   } catch (error: any) {
     if (error.name === 'AbortError') {
       console.error(`❌ [Knowledge Observer] Timeout observing ${url}`);
