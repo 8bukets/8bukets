@@ -1,5 +1,5 @@
-import fs from 'fs'
-import path from 'path'
+import * as fs from 'fs'
+import * as path from 'path'
 
 /**
  * JULES: THE COGNITIVE AGENT LAYER
@@ -16,6 +16,7 @@ const MEMORY_PATH = path.join(process.cwd(), 'antigravity/.jules_memory.json')
 
 export class Jules {
   private memory: JulesMemory
+  private initialized: boolean = false
 
   constructor() {
     this.memory = {
@@ -329,22 +330,29 @@ export class Jules {
     }
   }
 
-  public async gitSync(message: string) {
+  public async gitSync(message: string, phase?: string, progress?: number, branch?: string) {
     console.log('🔄 [Jules] Commencing autonomous Git synchronization...')
     const { execFileSync } = await import('child_process')
     try {
       const status = execFileSync('git', ['status', '--porcelain']).toString().trim()
       if (status) {
+        let commitMessage = message
+        if (phase && progress !== undefined) {
+          const { GitProviderService } = await import('./services/git_provider')
+          commitMessage = GitProviderService.formatGitKrakenMessage(message, phase, progress)
+        }
+
         execFileSync('git', ['add', '.'], { stdio: 'inherit' })
-        execFileSync('git', ['commit', '-m', message], { stdio: 'inherit' })
+        execFileSync('git', ['commit', '-m', commitMessage], { stdio: 'inherit' })
         console.log('✅ [Jules] Changes committed autonomously.')
         this.recordTask(`Git Sync: Committed fixes to local repository.`)
       }
 
       try {
-        execFileSync('git', ['push'], { stdio: 'inherit' })
-        console.log('🚀 [Jules] Changes pushed to remote.')
-        this.recordTask('Git Sync: Pushed changes to remote.')
+        const targetBranch = branch || 'HEAD'
+        execFileSync('git', ['push', 'origin', targetBranch], { stdio: 'inherit' })
+        console.log(`🚀 [Jules] Changes pushed to remote (${targetBranch}).`)
+        this.recordTask(`Git Sync: Pushed changes to remote (${targetBranch}).`)
       } catch (pushErr) {
         console.log('🔄 [Jules] Standard push failed, attempting with upstream set...')
         execFileSync('git', ['push', '--set-upstream', 'origin', 'HEAD'], { stdio: 'inherit' })
@@ -400,6 +408,9 @@ export class Jules {
   public async executeWorkCycle() {
     await this.ensureInitialized()
     console.log('🌟 [Jules] Beginning Autonomous Work Cycle...')
+
+    // Phase 14: Autonomous Self-Repair & Evolution
+    await this.selfRepair()
 
     // Phase 22: Autonomous PR Audit (Priority in Cloud)
     const isCloud = !!(process.env.GITHUB_ACTIONS || process.env.GITLAB_CI || process.env.AUTONOMOUS_MODE === 'cloud' || process.env.MACBOOK_CLOUD_SIMULATION === 'true')
@@ -479,11 +490,7 @@ export class Jules {
 
     // GitHub Docs Observation
     console.log('👁️ [Jules] Scanning GitHub Docs...')
-    const { observeGithubDocs } = await import('./services/github_docs_observer')
-    const githubInsights = await observeGithubDocs('bmewburn/intelephense-docs', ['installation.md', 'configuration.md'])
-    if (githubInsights.length > 0) {
-      this.recordTask(`GitHub Docs: Observed ${githubInsights.length} files from Intelephense docs.`)
-    }
+    await this.observeGithubDocs()
 
     // iCloud Knowledge Observation
     console.log('☁️ [Jules] Initiating iCloud Knowledge Scan...')
@@ -498,8 +505,13 @@ export class Jules {
     const { triggerEcosystemCollaboration } = await import("./services/collaboration");
     await triggerEcosystemCollaboration();
 
-    const { syncToICloud } = await import('./services/icloud')
-    await syncToICloud()
+    // Phase 19: iCloud synchronization (native)
+    try {
+      const { syncToICloud } = await import('./services/icloud')
+      await syncToICloud()
+    } catch (e) {
+       // Gracefully skip if native iCloud sync service is not available in current environment
+    }
 
     await this.gitSync(`🤖 chore: autonomous daily work completion (${new Date().toLocaleDateString()})`)
     this.memory.lastOptimization = new Date().toISOString()
@@ -511,9 +523,10 @@ export class Jules {
     console.log('📊 [Jules] Generating Consolidated Intelligence Report...')
     const reportPath = path.join(process.cwd(), 'CONSOLIDATED_INTELLIGENCE.md')
 
+    let insights: any = { uptime: 0, circuitBreakers: { mongodb: 'unknown', supabase: 'unknown' }, security: { status: 'unknown', issuesFound: 0 }, ideas: [], proposals: [], caching: { registrySize: 0 } }
     try {
       const { getSystemInsights } = await import('./core')
-      const insights = await getSystemInsights()
+      insights = await getSystemInsights()
       const refactors = insights.proposals || []
       if (refactors.length > 0) {
         const { workOrderService } = await import('./services/work_order')
@@ -598,7 +611,7 @@ export class Jules {
     }
 
     report += `\n`
-    report += await this.scanAllBranches()
+    report += await this.scanAllBranches(false)
 
     report += `\n## 📜 Recent Autonomous Tasks\n`
     this.memory.autonomousTasks.slice(-10).reverse().forEach(task => {
