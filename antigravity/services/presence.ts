@@ -88,10 +88,11 @@ export class OnlinePresenceService {
       if (process.env.GITLAB_TOKEN || process.env.MACBOOK_CLOUD_SIMULATION === 'true') providers.push('gitlab')
       if (process.env.MONGODB_URI || process.env.MACBOOK_CLOUD_SIMULATION === 'true') providers.push('mongodb')
       if (process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.MACBOOK_CLOUD_SIMULATION === 'true') providers.push('supabase')
-      if (process.env.MACBOOK_CLOUD_SIMULATION === 'true') providers.push('gitkraken', 'docker')
+      if (process.env.MACBOOK_CLOUD_SIMULATION === 'true' || process.env.ANTIGRAVITY_SIMULATE_DOCKER === 'true') providers.push('docker')
+      if (process.env.MACBOOK_CLOUD_SIMULATION === 'true') providers.push('gitkraken')
 
       // 2. Determine Leadership (Node Sovereignty)
-      let isLeader = !isCloud // Local node is leader by default if active
+      let isLeader = !isCloud // Local node (MacBook) is leader by default if active
       try {
         const client = await getMongoClient()
         const db = client.db()
@@ -102,18 +103,30 @@ export class OnlinePresenceService {
         }).toArray()
 
         if (isCloud) {
-           // Cloud node only becomes leader if no higher priority node is active
-           // Specifically check for macbook-primary-01 sovereignty
-           const macbookNode = otherNodes.find(n => n['telemetry']?.node_id === 'macbook-primary-01')
-           const higherPriorityActive = otherNodes.some(n => (n.node_priority || 0) > nodePriority)
+           // Cloud node only becomes leader if no higher priority node (MacBook) is active
+           const activeNodes = otherNodes.filter(n => n.status === 'online' || n.status === 'recovered')
+           const macbookNode = activeNodes.find(n => n.telemetry?.node_id === 'macbook-primary-01')
+           const higherPriorityActive = activeNodes.some(n => (n.node_priority || 0) > nodePriority)
 
            if (macbookNode) {
-             console.log(`📡 [OnlinePresence] MacBook node detected. Last seen: ${macbookNode.lastSeen}`)
-             isLeader = false // MacBook always takes precedence if active in last 15m
+             const lastSeen = new Date(macbookNode.lastSeen).getTime()
+             const diffMinutes = (Date.now() - lastSeen) / (1000 * 60)
+
+             if (diffMinutes < 15) {
+               console.log(`📡 [OnlinePresence] MacBook node is ACTIVE (seen ${diffMinutes.toFixed(1)}m ago). Cloud node yielding leadership.`)
+               isLeader = false
+             } else {
+               console.log(`📡 [OnlinePresence] MacBook node STALE (seen ${diffMinutes.toFixed(1)}m ago). Cloud node assuming leadership.`)
+               isLeader = !higherPriorityActive
+             }
            } else {
-             console.log('📡 [OnlinePresence] No active MacBook node detected. Cloud node assuming leadership.')
+             console.log('📡 [OnlinePresence] No active MacBook node detected in ecosystem. Cloud node assuming leadership.')
              isLeader = !higherPriorityActive
            }
+        } else {
+          // If we are the MacBook, we assert leadership
+          isLeader = true
+          console.log('📡 [OnlinePresence] MacBook node asserting primary leadership.')
         }
       } catch (e) {
         logAutonomousAction('⚠️ [OnlinePresence] Leadership audit failed. Assuming default sovereignty.', 'warning')

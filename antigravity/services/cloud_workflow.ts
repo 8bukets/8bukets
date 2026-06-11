@@ -28,18 +28,23 @@ export class CloudWorkflowAgent {
     if (isLeader) {
        console.log('🚀 [CloudWorkflowAgent] Cloud Node has Leadership. Enabling HIGH_INTENSITY mode.')
 
-       // Perform state recovery via bridge
-       const { edgeToCloudBridge } = await import('./edge_to_cloud_bridge')
-       const { workOrderService } = await import('./work_order')
+       try {
+         // Perform state recovery via bridge
+         const { edgeToCloudBridge } = await import('./edge_to_cloud_bridge')
+         const { workOrderService } = await import('./work_order')
 
-       const recoveredFiles = await edgeToCloudBridge.recoverCloudToLocal()
-       if (recoveredFiles.length > 0) {
-          console.log(`📦 [CloudWorkflowAgent] Recovered ${recoveredFiles.length} state files. Reloading work orders...`)
-          await workOrderService.reload()
+         const recoveredFiles = await edgeToCloudBridge.recoverCloudToLocal()
+         if (recoveredFiles.length > 0) {
+            console.log(`📦 [CloudWorkflowAgent] Recovered ${recoveredFiles.length} state files. Reloading work orders...`)
+            await workOrderService.reload()
+         }
+
+         console.log('⚡ [CloudWorkflowAgent] Cloud Takeover initiated. Sovereignty established.')
+         return { takeover: true, intensity: 'high', recoveredFiles }
+       } catch (recoveryErr: any) {
+         console.error(`❌ [CloudWorkflowAgent] Cloud Takeover recovery failed: ${recoveryErr.message}`)
+         return { takeover: true, intensity: 'degraded', error: recoveryErr.message }
        }
-
-       console.log('⚡ [CloudWorkflowAgent] Cloud Takeover initiated. Sovereignty established.')
-       return { takeover: true, intensity: 'high', recoveredFiles }
     }
 
     return { takeover: false, reason: 'primary_node_online' }
