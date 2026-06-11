@@ -31,17 +31,18 @@ export async function runSecurityAudit(): Promise<SecurityAudit> {
       /process\.env\..*? =/ // Hardcoded env assignments
     ]
 
-    function scan(dir: string) {
-      const files = /* [Evolution] TODO: Refactor to async */ fs.readdirSync(dir)
+    async function scan(dir: string) {
+      const files = await fs.promises.readdir(dir)
       for (const file of files) {
         const fullPath = path.join(dir, file)
         if (file === 'node_modules' || file === '.git' || file === '.next' || file === 'venv') continue
         
-        if (/* [Evolution] TODO: Refactor to async */ fs.statSync(fullPath).isDirectory()) {
-          scan(fullPath)
+        const stat = await fs.promises.stat(fullPath)
+        if (stat.isDirectory()) {
+          await scan(fullPath)
         } else if (file.endsWith('.ts') || file.endsWith('.tsx') || file.endsWith('.js')) {
           scannedFiles++
-          const content = /* [Evolution] TODO: Refactor to async */ await fs.promises.readFile(fullPath, 'utf8')
+          const content = await fs.promises.readFile(fullPath, 'utf8')
           for (const pattern of riskPatterns) {
             if (pattern.test(content)) {
               console.warn(`⚠️ [Security Risk] Potential credential leak in: ${file}`)
@@ -52,7 +53,7 @@ export async function runSecurityAudit(): Promise<SecurityAudit> {
       }
     }
 
-    scan(process.cwd())
+    await scan(process.cwd())
 
     const status = issuesFound > 0 ? 'warning' : 'secure'
     

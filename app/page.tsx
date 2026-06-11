@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
+import fs from "fs";
+import path from "path";
 import { PageProps, resolve, getSystemInsights } from "@/antigravity/core";
 import { getAppStats } from "@/antigravity/services/stats";
 
 export default async function CommandCenter({
   params, searchParams }: PageProps) {
-  'use cache'
   await Promise.all([resolve(params), resolve(searchParams)]);
 
   return (
@@ -68,6 +69,13 @@ export default async function CommandCenter({
                   <div className="w-2 h-2 rounded-full bg-green-500/30" />
                 </div>
               </div>
+            </section>
+
+            <section className="p-8 bg-zinc-50 dark:bg-zinc-900/30 border border-zinc-200 dark:border-zinc-800 rounded-[2rem]">
+               <h2 className="text-sm font-bold uppercase tracking-widest text-zinc-400 mb-6">Strategic Intelligence Matrix</h2>
+               <Suspense fallback={<div className="h-40 w-full animate-pulse bg-zinc-100 dark:bg-zinc-800 rounded-2xl" />}>
+                 <StrategicOverview />
+               </Suspense>
             </section>
           </div>
 
@@ -259,9 +267,52 @@ function StatusItem({ label, value, ok }: { label: string, value: string, ok: bo
     </div>
   )
 }
+async function StrategicOverview() {
+  const { jules } = await import('@/antigravity/jules');
+  const statePath = path.join(process.cwd(), 'autonomous_state.json');
+
+  if (!fs.existsSync(statePath)) return <p className="text-xs text-zinc-500 italic">Synchronizing intelligence matrix...</p>;
+
+  const state = JSON.parse(fs.readFileSync(statePath, 'utf8'));
+  const map = state.intelligence?.relationshipMap || {};
+
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <h3 className="text-xs font-black uppercase text-zinc-500 mb-4 tracking-tighter">Impactful Results</h3>
+        <div className="space-y-3">
+          {(map.impactfulBranches || []).slice(0, 5).map((b: any, i: number) => (
+            <div key={i} className="flex flex-col gap-1">
+              <div className="flex justify-between items-center">
+                <span className="text-[11px] font-bold text-blue-500 truncate max-w-[150px]">{b.name.split('/').pop()}</span>
+                <span className="text-[10px] font-mono text-zinc-400 bg-zinc-800 px-1.5 rounded">Score: {b.score}</span>
+              </div>
+              <p className="text-[10px] text-zinc-400 line-clamp-1">{b.results}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div>
+        <h3 className="text-xs font-black uppercase text-zinc-500 mb-4 tracking-tighter">Dependency Matrix</h3>
+        <div className="space-y-2">
+          {(map.resourceDependencies || []).slice(0, 6).map((d: any, i: number) => (
+            <div key={i} className="flex items-center gap-2 text-[10px] text-zinc-300">
+              <span className="text-zinc-500">Service</span>
+              <code className="px-1 py-0.5 bg-zinc-100 dark:bg-zinc-800 rounded">{d.source}</code>
+              <span className="text-zinc-600">→</span>
+              <code className="px-1 py-0.5 bg-blue-500/10 text-blue-500 rounded">{d.target}</code>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 async function CollaborationHub() {
   const { getMissionMetadata } = await import('@/antigravity/services/collaboration');
-  const metadata = await getMissionMetadata();
+  const { getStakeholderDirectives } = await import('@/antigravity/services/communication');
+  const [metadata, directives] = await Promise.all([getMissionMetadata(), getStakeholderDirectives()]);
 
   return (
     <div className="space-y-6">
@@ -276,6 +327,22 @@ async function CollaborationHub() {
           ))}
         </div>
       </div>
+
+      <div>
+        <h4 className="text-[10px] font-black uppercase text-zinc-500 mb-3 tracking-widest text-center">Domain Directives</h4>
+        <div className="space-y-2">
+          {directives.filter(d => d.status === 'Active').slice(0, 4).map((d: any, i: number) => (
+            <div key={i} className="p-3 bg-white/5 border border-white/10 rounded-xl">
+              <div className="flex justify-between mb-1">
+                <span className="text-[9px] font-black text-blue-400 uppercase tracking-widest">{d.domain || 'General'}</span>
+                <span className={`text-[8px] px-1 rounded font-bold ${d.priority === 'Critical' ? 'bg-red-500 text-white' : 'bg-zinc-800 text-zinc-400'}`}>{d.priority}</span>
+              </div>
+              <p className="text-[10px] text-zinc-300 leading-tight">{d.intent}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div>
         <h4 className="text-[10px] font-black uppercase text-zinc-500 mb-3 tracking-widest text-center">Strategic Goals</h4>
         <div className="space-y-2">

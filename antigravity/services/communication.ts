@@ -5,7 +5,7 @@
 import fs from 'fs'
 import path from 'path'
 import { z } from 'zod'
-import { logAutonomousAction } from '@/antigravity/core'
+import { logAutonomousAction, cacheLife } from '@/antigravity/core'
 
 /**
  * ANTIGRAVITY COMMUNICATION HUB (Phase 12)
@@ -17,7 +17,9 @@ export const DirectiveSchema = z.object({
   intent: z.string(),
   priority: z.enum(['Low', 'Medium', 'High', 'Critical']),
   status: z.enum(['Active', 'Fulfilled', 'Obsolete']),
-  timestamp: z.string()
+  timestamp: z.string(),
+  domain: z.string().optional(),
+  synergyScore: z.number().optional()
 })
 
 export type Directive = z.infer<typeof DirectiveSchema>
@@ -25,7 +27,13 @@ export type Directive = z.infer<typeof DirectiveSchema>
 const DIRECTIVES_PATH = path.join(process.cwd(), '.antigravity/directives.md')
 
 export async function getStakeholderDirectives(): Promise<Directive[]> {
-  'use cache'
+  // Phase 12: Safeguard against CLI-mode execution
+  const isServerRequest = !!process.env.NEXT_RUNTIME
+  if (isServerRequest) {
+    'use cache'
+    cacheLife('minutes')
+  }
+
   if (! await fs.promises.access(DIRECTIVES_PATH).then(() => true).catch(() => false)) {
     // Create default directives if missing
     const defaultDirectives = `# Stakeholder Directives\n\n- [High] Maintain 99.9% system uptime (Active)\n- [Medium] Consolidate all branch knowledge daily (Active)\n`
@@ -43,13 +51,17 @@ export async function getStakeholderDirectives(): Promise<Directive[]> {
 
   const lines = content.split('\n')
   lines.forEach(line => {
-    const match = line.match(/^-\s*\[(Low|Medium|High|Critical)\]\s*(.*?)\s*\((Active|Fulfilled|Obsolete)\)$/i)
+    // Phase 13: Enhanced directive parsing with Domain and synergyScore support
+    // Pattern: - [Priority] [Domain] Intent (Status) {Score: 85}
+    const match = line.match(/^-\s*\[(Low|Medium|High|Critical)\]\s*(?:\[(.*?)\]\s*)?(.*?)\s*\((Active|Fulfilled|Obsolete)\)(?:\s*\{Score:\s*(\d+)\})?$/i)
     if (match) {
       directives.push({
         id: `dir_${Math.random().toString(36).substr(2, 9)}`,
         priority: match[1] as any,
-        intent: match[2].trim(),
-        status: match[3] as any,
+        domain: match[2] || 'General',
+        intent: match[3].trim(),
+        status: match[4] as any,
+        synergyScore: match[5] ? parseInt(match[5]) : undefined,
         timestamp: new Date().toISOString()
       })
     }
@@ -76,9 +88,21 @@ export async function generateActionableBriefing(state: any, directives: Directi
 
   let briefing = `### 🎯 Directive Fulfillment Status\n`
   if (activeDirectives.length > 0) {
+    // Phase 13: Group directives by Domain for better stakeholder coordination
+    const domainGroups: Record<string, Directive[]> = {}
     activeDirectives.forEach(d => {
-      const isFulfilled = state.intelligence.branches > 0 // Logic could be more complex
-      briefing += `- **[${d.priority}]** ${d.intent} -> Status: ${isFulfilled ? '✅ ON TRACK' : '⚠️ IN PROGRESS'}\n`
+      const domain = d.domain || 'General'
+      if (!domainGroups[domain]) domainGroups[domain] = []
+      domainGroups[domain].push(d)
+    })
+
+    Object.entries(domainGroups).forEach(([domain, groupDirectives]) => {
+      briefing += `#### 🌐 Domain: ${domain}\n`
+      groupDirectives.forEach(d => {
+        const isFulfilled = state.intelligence.branches > 0 // Logic could be more complex
+        const score = d.synergyScore ? ` (Synergy: ${d.synergyScore}%)` : ''
+        briefing += `- **[${d.priority}]** ${d.intent}${score} -> Status: ${isFulfilled ? '✅ ON TRACK' : '⚠️ IN PROGRESS'}\n`
+      })
     })
   } else {
     briefing += `- No active directives currently registered.\n`
@@ -131,6 +155,10 @@ export async function generateActionableBriefing(state: any, directives: Directi
   } else {
     briefing += `- **Jules Directive:** "System alignment is optimal. No manual intervention required for current development streams."\n`
   }
+
+  // Phase 14: Strategic Alignment Scoring
+  const alignmentScore = Math.max(0, 100 - (state.intelligence.pendingTasks * 2))
+  briefing += `- **Stewardship Directive:** "Current Strategic Alignment Score is **${alignmentScore}%**. ${alignmentScore < 80 ? 'Recommend immediate backlog grooming to restore focus.' : 'System remains highly focused on core mission goals.'}"\n`
 
   // Phase 13: Data-Driven Cross-Domain Insight
   if (crossDomain.length > 0) {

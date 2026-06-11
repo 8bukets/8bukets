@@ -179,8 +179,11 @@ export async function getSystemInsights() {
   const isServerRequest = !!process.env.NEXT_RUNTIME
 
   if (isServerRequest) {
-    'use cache'
-    cacheLife('inventory')
+    try {
+      cacheLife('inventory')
+    } catch (e) {
+      // Not in a 'use cache' context, skip
+    }
   }
   
   const { synthesize } = await import('./synthesis')
@@ -246,8 +249,12 @@ export async function autonomousFetch<T>(
     const isServerRequest = !!process.env.NEXT_RUNTIME
 
     if (isServerRequest) {
-      if (config.tags) config.tags.forEach(tag => cacheTag(tag))
-      if (config.life) cacheLife(config.life as any)
+      try {
+        if (config.tags) config.tags.forEach(tag => cacheTag(tag))
+        if (config.life) cacheLife(config.life as any)
+      } catch (e) {
+        // cacheTag/cacheLife only work inside "use cache" functions
+      }
     }
 
     const result = schema.safeParse(data)
