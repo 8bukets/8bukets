@@ -8,6 +8,10 @@ Overlapping identities between Antigravity, Project SOR, software-online-review.
 
 ## 📈 Latest Market Intelligence (Dynamic Merge)
 
+### Stripe Link CLI for AI Agents
+- **Source**: link.com/agents
+- **Link**: [data/knowledge/stripe_link_cli.md](data/knowledge/stripe_link_cli.md)
+
 ### Facebook Ads vs. Google Ads: Which Is Better? | WordStream
 - **Source**: wordstream.com
 - **Link**: [Post Link](https://markposition.wordpress.com/2021/04/10/facebook-ads-vs-google-ads-which-is-better-wordstream/)
