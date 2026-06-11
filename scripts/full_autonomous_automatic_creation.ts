@@ -16,6 +16,7 @@ import path from 'path'
  */
 
 async function main() {
+  // full autonomus automatic workflow creation
   'use cache'
   console.log('🚀 [Antigravity] Starting Full Autonomous Automatic Creation Pulse...')
 
