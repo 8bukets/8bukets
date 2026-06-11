@@ -328,6 +328,7 @@ Synergy achieved across 2506 branches. Detailed knowledge and results consolidat
 - **window** (Active)
 
 ### Knowledges
+- **GitLab CI/CD Tutorial** (Ingested) - *Source: User Prompt: Tutorial: Create and run your first GitLab CI/CD pipeline*
 - **Web Insight** (Ingested) - *Source: https://admanager.google.com/home/resources/*
 - **iCloud: 50ty.json** (Ingested) - *Source: icloud://50ty.json*
 - **iCloud: 50ty.md** (Ingested) - *Source: icloud://50ty.md*
