@@ -14,6 +14,8 @@ from typing import List, Optional
 from markdownify import markdownify as md
 from utils import validate_output_path
 
+REQUEST_TIMEOUT = 10  # seconds
+
 @dataclass
 class Post:
     title: Optional[str]
@@ -150,7 +152,7 @@ def scrape(output_file: str, max_pages: int = 0):
 
         logging.info(f"Scraping page {page}: {current_url}...")
         try:
-            response = session.get(current_url)
+            response = session.get(current_url, timeout=REQUEST_TIMEOUT)
             response.raise_for_status()
         except requests.exceptions.RequestException as e:
             logging.error(f"Error fetching {current_url}: {e}")
