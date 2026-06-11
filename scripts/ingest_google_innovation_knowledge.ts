@@ -4,6 +4,9 @@ import * as cheerio from 'cheerio';
 
 const INNOVATION_URL = "https://blog.google/innovation-and-ai/";
 const MODELS_RESEARCH_URL = "https://blog.google/innovation-and-ai/models-and-research/";
+const PRODUCTS_URL = "https://blog.google/innovation-and-ai/products/";
+const INFRASTRUCTURE_URL = "https://blog.google/innovation-and-ai/infrastructure-and-cloud/";
+const TECHNOLOGY_URL = "https://blog.google/innovation-and-ai/technology/";
 
 interface Article {
     title: string;
@@ -55,8 +58,12 @@ async function scrapeGoogleBlog(url: string): Promise<Article[]> {
             const isArticleUrl = fullUrl.includes('/innovation-and-ai/') &&
                                 !fullUrl.endsWith('/innovation-and-ai/') &&
                                 !fullUrl.endsWith('/models-and-research/') &&
+                                !fullUrl.endsWith('/products/') &&
+                                !fullUrl.endsWith('/infrastructure-and-cloud/') &&
+                                !fullUrl.endsWith('/technology/') &&
                                 !fullUrl.includes('/authors/') &&
-                                !fullUrl.includes('shareArticle');
+                                !fullUrl.includes('shareArticle') &&
+                                !fullUrl.includes('linkedin.com/shareArticle');
 
             if (!isArticleUrl) continue;
 
@@ -92,8 +99,17 @@ async function scrapeGoogleBlog(url: string): Promise<Article[]> {
 async function main() {
     const researchArticles = await scrapeGoogleBlog(MODELS_RESEARCH_URL);
     const innovationArticles = await scrapeGoogleBlog(INNOVATION_URL);
+    const productsArticles = await scrapeGoogleBlog(PRODUCTS_URL);
+    const infrastructureArticles = await scrapeGoogleBlog(INFRASTRUCTURE_URL);
+    const technologyArticles = await scrapeGoogleBlog(TECHNOLOGY_URL);
 
-    const allArticles = [...researchArticles, ...innovationArticles];
+    const allArticles = [
+        ...researchArticles,
+        ...innovationArticles,
+        ...productsArticles,
+        ...infrastructureArticles,
+        ...technologyArticles
+    ];
 
     // Deduplicate and merge with existing
     const jsonPath = path.join(process.cwd(), 'data/google_innovation_ai.json');
@@ -120,7 +136,12 @@ async function main() {
     // Save to Markdown
     const mdPath = path.join(process.cwd(), 'google_innovation_ai_report.md');
     let mdContent = `# Google Innovation & AI Blog Updates\n\n`;
-    mdContent += `Scraped from [${INNOVATION_URL}](${INNOVATION_URL}) and [${MODELS_RESEARCH_URL}](${MODELS_RESEARCH_URL})\n\n`;
+    mdContent += `Scraped from:\n`;
+    mdContent += `- [Innovation & AI](${INNOVATION_URL})\n`;
+    mdContent += `- [Models & Research](${MODELS_RESEARCH_URL})\n`;
+    mdContent += `- [Products](${PRODUCTS_URL})\n`;
+    mdContent += `- [Infrastructure & Cloud](${INFRASTRUCTURE_URL})\n`;
+    mdContent += `- [Technology](${TECHNOLOGY_URL})\n\n`;
 
     finalArticles.forEach(article => {
         mdContent += `### ${article.title}\n`;
