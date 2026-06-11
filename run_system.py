@@ -16,7 +16,9 @@ from agents.health_agent import HealthCheckAgent
 from agents.monetization_agent import MonetizationAgent
 from agents.creativity_agent import CreativityAgent
 from agents.iq_agent import IQAgent
+import sys
 from agents.antigravity_agent import AntigravityAgent
+from agents.cli_utils import Palette
 
 # Configure logging
 logging.basicConfig(
@@ -112,6 +114,11 @@ async def run_pipeline(skip_scrape=False, limit=2):
         logger.info("Knowledge Base evolved and saved.")
     except Exception as e:
         logger.error(f"Failed to save Knowledge Base: {e}")
+
+    # 7. Visual Summary
+    sys.stderr.flush()
+    sys.stdout.flush()
+    Palette.print_summary(len(agents), report_filename, "Success")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run Autonomous Agent System")
