@@ -74,6 +74,8 @@ export class Jules {
       const hasQuantumSynergy = checkKnowledge('quantum synergy')
       const hasPhase14 = checkKnowledge('Phase 14')
       const hasWilsonSonsini = checkKnowledge('Wilson Sonsini')
+      const hasCognitiveSovereignty = checkKnowledge('cognitive sovereignty')
+      const hasLegalVentureSynthesis = checkKnowledge('legal-venture synthesis')
 
       if (hasQuantum && !this.memory.preferredPatterns.includes('crystals-kyber')) {
         suggestions.push('Integrate Crystals-Kyber for Quantum-resistant security as per latest strategy.')
@@ -89,6 +91,12 @@ export class Jules {
       }
       if (hasWilsonSonsini) {
         suggestions.push('Align autonomous core with Wilson Sonsini startup lifecycle and venture-readiness metrics.')
+      }
+      if (hasCognitiveSovereignty) {
+        suggestions.push('Enforce Cognitive Sovereignty across all agent modules via verifiedSignature protocols.')
+      }
+      if (hasLegalVentureSynthesis) {
+        suggestions.push('Activate Phase 14 Anticipatory Intelligence for real-time legal-venture synthesis audits.')
       }
     }
 
@@ -147,6 +155,7 @@ export class Jules {
       { name: 'Supabase Connectivity Refresh', action: () => this.recordTask('Supabase pooling verified.') },
       { name: 'Collaboration Sync', action: () => this.syncCollaboration() },
       { name: 'Docker Sovereignty Audit', action: () => this.auditDocker() },
+      { name: 'Cognitive Sovereignty Audit', action: () => this.auditSovereignty() },
       { name: 'APAC Latency Validation', action: () => this.recordTask('APAC Phase 13 Latency: <50ms target verified for Tokyo and Singapore edge nodes.') }
     ]
 
@@ -179,6 +188,16 @@ export class Jules {
       this.recordTask(`Docker Sovereignty: Found ${containers.length} active containers. Connectivity verified.`)
     } else {
       this.recordTask('Docker Sovereignty: No active containers found or Docker daemon unreachable.')
+    }
+  }
+
+  public async auditSovereignty() {
+    console.log('🛡️ [Jules] Auditing cognitive sovereignty signatures...')
+    const verified = !!this.memory.architecturalDecisions.verifiedSignature
+    if (verified) {
+      this.recordTask('Cognitive Sovereignty: verifiedSignature present in memory. Identity anchored.')
+    } else {
+      this.recordTask('Cognitive Sovereignty Warning: verifiedSignature missing. High risk of unauthorized cognitive drift.')
     }
   }
 
@@ -489,19 +508,40 @@ export class Jules {
           else if (name.includes('bolt/') || lowerMsg.startsWith('perf')) category = 'performance'
           else if (lowerMsg.startsWith('docs')) category = 'documentation'
           else if (lowerMsg.startsWith('chore')) category = 'maintenance'
+          else if (name.includes('agent/')) category = 'agent'
           else if (name.includes('/')) category = name.split('/')[0]
 
           // Phase 12: Enhanced Intelligence Extraction
           let domain = 'General'
           let knowledge = ''
 
+          // Strategic Keyword Extraction (Phase 13/14 Support)
+          const strategicKeywords = [
+            { key: 'quantum', domain: 'Security', label: '⚛️ Quantum Resistance' },
+            { key: 'apac', domain: 'Services', label: '🌏 APAC Orchestration' },
+            { key: 'next.js 16', domain: 'Services', label: '🚀 Next.js 16' },
+            { key: 'omega', domain: 'Services', label: 'Ω Omega Latency' },
+            { key: 'wilson sonsini', domain: 'Security', label: '⚖️ Legal Tech' },
+            { key: 'phase 14', domain: 'General', label: '🔮 Phase 14 Anticipation' },
+            { key: 'synergy', domain: 'General', label: '⚡ Quantum Synergy' }
+          ]
+
+          strategicKeywords.forEach(sk => {
+            if (lowerMsg.includes(sk.key) || name.toLowerCase().includes(sk.key)) {
+              domain = sk.domain
+              knowledge = `Aligned with strategic initiative: ${sk.label}.`
+            }
+          })
+
           // Domain detection from commit message (as fallback or primary)
-          if (lowerMsg.includes('service') || lowerMsg.includes('core')) domain = 'Services'
-          else if (lowerMsg.includes('script') || lowerMsg.includes('automation') || lowerMsg.includes('workflow')) domain = 'Automation'
-          else if (lowerMsg.includes('ui') || lowerMsg.includes('ux') || lowerMsg.includes('frontend') || lowerMsg.includes('page')) domain = 'UI/UX'
-          else if (lowerMsg.includes('agent') || lowerMsg.includes('cognitive')) domain = 'AI Agents'
-          else if (lowerMsg.includes('doc') || lowerMsg.includes('knowledge')) domain = 'Documentation'
-          else if (lowerMsg.includes('security') || lowerMsg.includes('auth')) domain = 'Security'
+          if (domain === 'General') {
+            if (lowerMsg.includes('service') || lowerMsg.includes('core')) domain = 'Services'
+            else if (lowerMsg.includes('script') || lowerMsg.includes('automation') || lowerMsg.includes('workflow')) domain = 'Automation'
+            else if (lowerMsg.includes('ui') || lowerMsg.includes('ux') || lowerMsg.includes('frontend') || lowerMsg.includes('page')) domain = 'UI/UX'
+            else if (lowerMsg.includes('agent') || lowerMsg.includes('cognitive')) domain = 'AI Agents'
+            else if (lowerMsg.includes('doc') || lowerMsg.includes('knowledge')) domain = 'Documentation'
+            else if (lowerMsg.includes('security') || lowerMsg.includes('auth')) domain = 'Security'
+          }
 
           if (changedFiles.length > 0) {
             const hasMarkdown = changedFiles.some(f => f.endsWith('.md'))
@@ -512,7 +552,11 @@ export class Jules {
 
             if (hasMarkdown || hasAgents || hasDocs || hasKnowledgeDir) {
               const count = changedFiles.filter(f => f.endsWith('.md') || f.startsWith('agents/') || f.startsWith('docs/') || f.includes('data/knowledge/')).length;
-              knowledge = `Enhanced ecosystem knowledge base via ${count} artifact${count > 1 ? 's' : ''}.`
+              if (!knowledge) {
+                knowledge = `Enhanced ecosystem knowledge base via ${count} artifact${count > 1 ? 's' : ''}.`
+              } else {
+                knowledge += ` Found ${count} relevant artifacts.`
+              }
             }
 
             // Detect domain from file paths (Prioritized assignment, overrides commit msg detection if match found)

@@ -90,8 +90,8 @@ export class KnowledgeObserver {
         }
 
         k.sections.forEach((s: any) => {
-          const cleanHeader = s.header.replace(/^#+\s*/, '').trim() || 'Details';
-          const cleanContent = s.content.trim();
+          const cleanHeader = (s.header || 'Details').replace(/^#+\s*/, '').trim() || 'Details';
+          const cleanContent = (s.content || '').trim();
 
           if (cleanContent.length > 5) {
             // Avoid redundant headers if the section title matches the topic title

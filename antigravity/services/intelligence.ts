@@ -90,6 +90,8 @@ export async function generateConsolidatedReport(branchIntelligence?: any[]) {
   const dockerHealthy = await checkDockerHealth()
   const dockerStatus = dockerHealthy ? 'optimal' : 'degraded'
   const actionableBriefing = await generateActionableBriefing({
+    mission: metadata.missionStatement,
+    stakeholders: metadata.stakeholders,
     docker: { status: dockerStatus },
     intelligence: { pendingTasks: workOrders.length, relationshipMap }
   }, directives)
