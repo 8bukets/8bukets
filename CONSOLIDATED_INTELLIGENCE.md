@@ -47,3 +47,10 @@ Summary: markposition.wordpress.com is a blog by Filip Keser that provides infor
 
 ---
 all the best - https://markposition.wordpress.com
+
+
+## Intelephense Premium Documentation
+URL: data/knowledge/intelephense_docs.md
+
+### Overview
+Comprehensive guide on installing, configuring, and using Intelephense Premium, including its type system and integration details.

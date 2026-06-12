@@ -588,6 +588,18 @@
           ]
         }
       ]
+    },
+    {
+      "url": "data/knowledge/intelephense_docs.md",
+      "title": "Intelephense Premium Documentation",
+      "sections": [
+        {
+          "header": "Intelephense Premium Documentation",
+          "content": [
+            "Comprehensive guide on installing, configuring, and using Intelephense Premium, including its type system and integration details."
+          ]
+        }
+      ]
     }
   ]
 }

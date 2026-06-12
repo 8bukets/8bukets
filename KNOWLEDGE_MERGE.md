@@ -262,3 +262,7 @@ URL: gemini_cli_subagents_docs.md
 
 ### Subagents
 Subagents are specialized agents that operate within your main Gemini CLI session. They are designed to handle specific, complex tasks—like deep codebase analysis, documentation lookup, or domain-specific reasoning—without cluttering the main agent’s context or toolset.
+
+### Intelephense Premium Documentation
+- **Source**: User provided documentation
+- **Link**: [data/knowledge/intelephense_docs.md](data/knowledge/intelephense_docs.md)
