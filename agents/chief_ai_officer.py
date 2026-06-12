@@ -131,6 +131,14 @@ class ChiefAIOfficerAgent(BaseAgent):
                     self.logger.info("CAIO [ROLE]: Certification research identified. Issuing executive development directive.")
                     strategic_directives.append("RESEARCH_AI_LEADERSHIP_CERTIFICATIONS")
 
+                if "linkedin jobs" in sections_str:
+                    self.logger.info("CAIO [STRATEGY]: LinkedIn Jobs identified as a primary research platform. Issuing targeted role scouting directive.")
+                    strategic_directives.append("SCOUT_LINKEDIN_FOR_CAIO_OPENINGS")
+
+                if "coursera" in sections_str:
+                    self.logger.info("CAIO [STRATEGY]: Coursera identified as a primary certification platform. Issuing executive development directive.")
+                    strategic_directives.append("AUDIT_COURSERA_AI_CERTIFICATIONS")
+
                 if "government-issued professional license" in sections_str:
                     licensure_not_required = True
 

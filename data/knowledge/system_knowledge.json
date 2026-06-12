@@ -1399,7 +1399,7 @@
       "title": "Chief AI Officer (CAIO) Role",
       "metadata": {
         "source": "user_input://caio_user_input.md",
-        "analyzedAt": "2026-06-11T06:36:51.746Z",
+        "analyzedAt": "2026-06-12T06:16:07.476Z",
         "description": "Extracted system knowledge"
       },
       "sections": [
@@ -1554,7 +1554,7 @@
       "title": "Chief AI Officer (CAIO) Market Intelligence",
       "metadata": {
         "source": "user_input://caio_market_intelligence_2026.md",
-        "analyzedAt": "2026-06-11T06:36:51.867Z",
+        "analyzedAt": "2026-06-12T06:16:07.764Z",
         "description": "Extracted system knowledge"
       },
       "sections": [
@@ -1611,6 +1611,32 @@
         {
           "header": "Anticipatory Intelligence",
           "content": "- Initiate **Phase 14 Anticipatory Scaling** protocols.\n- Predict legal-compliance risks 72 hours before code deployment."
+        }
+      ]
+    },
+    {
+      "title": "Chief AI Officer (CAIO) Research & Benchmarks 2026",
+      "metadata": {
+        "source": "https://justinmckelvey.com/blog/chief-ai-officer",
+        "analyzedAt": "2026-06-12T06:19:26.059Z",
+        "description": "Extracted system knowledge"
+      },
+      "sections": [
+        {
+          "header": "LinkedIn Jobs & Recruitment Platform",
+          "content": "LinkedIn Jobs remains the primary recruitment platform for CAIO roles in 2026. The recruitment focus has shifted from \"AI transformation\" to specific operational shipping and portfolio management.\n- **Top Recruitment Requirement:** Ability to show a 60/40 ratio of shipped AI vs governance documentation.\n- **Platform Strategy:** \"Defensive hiring\" is active on LinkedIn—if competitors hire a CAIO, firms are listing roles to avoid structural disadvantages."
+        },
+        {
+          "header": "Coursera & Academic Certifications",
+          "content": "Executive AI certifications are now a primary signal for candidate depth.\n- **Executive AI Leadership Mastery (Coursera):** Specialized program for C-suite readiness.\n- **Agentic AI and AI Agents for Leaders (Vanderbilt/Coursera):** Focuses on the implementation of autonomous agentic workflows.\n- **AI Strategy and Leadership (MIT xPRO):** High-value executive program for data strategy."
+        },
+        {
+          "header": "Salary Benchmarks (2026)",
+          "content": "- **Growth-Stage Startups:** $250K - $400K base.\n- **Mid-Market ($100M-$1B):** $300K - $500K base ($500K - $900K total comp).\n- **Enterprise (Fortune 500):** $400K - $1M+ base ($1M - $3M+ total comp).\n- **Enterprise (Regulated):** $500K - $1.2M base ($2M - $5M total comp)."
+        },
+        {
+          "header": "Hiring Signals (Strategic ROI)",
+          "content": "Firms are triggering CAIO searches when:\n1. AI represents 5%+ of revenue or 10%+ of cost structure.\n2. The company has 3+ live AI projects with no single owner.\n3. The CEO is spending 10%+ of their time on AI decisions."
         }
       ]
     }
