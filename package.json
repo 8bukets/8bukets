@@ -12,6 +12,7 @@
     "explore": "tsx --env-file=.env antigravity/explorer.ts",
     "evolve": "tsx --env-file=.env antigravity/evolution.ts",
     "daily": "tsx --env-file=.env antigravity/run_daily.ts",
+    "work:daily": "tsx --env-file=.env scripts/work_daily.ts",
     "ignite": "tsx --env-file=.env antigravity/run_daily.ts --continuous",
     "pluu": "git pull --rebase",
     "upload": "git push",
