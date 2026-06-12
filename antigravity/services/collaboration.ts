@@ -274,6 +274,22 @@ export async function generateRelationshipMap(branches: any[], stakeholders: Sta
     { type: 'Documentation', name: 'KNOWLEDGE_MERGE.md', status: 'Active' }
   )
 
+  // Phase 13: Integrate active Docker containers into resource inventory
+  try {
+    const { getDockerStatus } = await import('./docker')
+    const containers = await getDockerStatus()
+    containers.forEach(c => {
+      map.resourceInventory.push({
+        type: 'Infrastructure (Docker)',
+        name: c.name,
+        status: c.status,
+        image: c.image
+      })
+    })
+  } catch (e) {
+    console.warn('⚠️ [Collaboration] Failed to ingest Docker containers into relationship map.')
+  }
+
   // Phase 12: Advanced Synergy Detection (Resource Overlap & Functional Dependencies)
   const resourceUsage: Record<string, Set<string>> = {}
   const functionalClusters: Record<string, Set<string>> = {}
