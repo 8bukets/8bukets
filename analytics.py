@@ -47,9 +47,13 @@ def generate_report(data, output_file):
 
     for p in data:
         # 1. Domain Analysis
-        ext_link = p.get('external_link')
-        if ext_link:
-            domains.append(get_domain(ext_link))
+        domain = p.get('domain')
+        if domain:
+            domains.append(domain)
+        else:
+            ext_link = p.get('external_link')
+            if ext_link:
+                domains.append(get_domain(ext_link))
 
         # 2. Category Analysis
         cats = p.get('categories', [])
