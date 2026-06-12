@@ -48,6 +48,7 @@ Supports standard and non-standard annotations: @template, @template-extends, @t
 `;
 
 async function main() {
+  'use cache'
   console.log('🚀 Starting Intelephense documentation ingestion...');
   const insights = processContent(intelephenseDocs, 'User-Provided Documentation: Intelephense', 'Intelephense Documentation');
 

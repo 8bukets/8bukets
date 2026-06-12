@@ -163,6 +163,7 @@ export default async function CommandCenter({
 }
 
 async function OptimizationPulse() {
+  'use cache'
   const { getSystemInsights } = await import('@/antigravity/core');
   const insights = await getSystemInsights();
 
@@ -271,9 +272,9 @@ async function StrategicOverview() {
   const { jules } = await import('@/antigravity/jules');
   const statePath = path.join(process.cwd(), 'autonomous_state.json');
 
-  if (!fs.existsSync(statePath)) return <p className="text-xs text-zinc-500 italic">Synchronizing intelligence matrix...</p>;
+  if (!await fs.promises.access(statePath).then(() => true).catch(() => false)) return <p className="text-xs text-zinc-500 italic">Synchronizing intelligence matrix...</p>;
 
-  const state = JSON.parse(fs.readFileSync(statePath, 'utf8'));
+  const state = JSON.parse(await fs.promises.readFile(statePath, 'utf8'));
   const map = state.intelligence?.relationshipMap || {};
 
   return (
