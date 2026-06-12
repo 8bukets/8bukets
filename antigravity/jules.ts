@@ -489,19 +489,40 @@ export class Jules {
           else if (name.includes('bolt/') || lowerMsg.startsWith('perf')) category = 'performance'
           else if (lowerMsg.startsWith('docs')) category = 'documentation'
           else if (lowerMsg.startsWith('chore')) category = 'maintenance'
+          else if (name.includes('agent/')) category = 'agent'
           else if (name.includes('/')) category = name.split('/')[0]
 
           // Phase 12: Enhanced Intelligence Extraction
           let domain = 'General'
           let knowledge = ''
 
+          // Strategic Keyword Extraction (Phase 13/14 Support)
+          const strategicKeywords = [
+            { key: 'quantum', domain: 'Security', label: '⚛️ Quantum Resistance' },
+            { key: 'apac', domain: 'Services', label: '🌏 APAC Orchestration' },
+            { key: 'next.js 16', domain: 'Services', label: '🚀 Next.js 16' },
+            { key: 'omega', domain: 'Services', label: 'Ω Omega Latency' },
+            { key: 'wilson sonsini', domain: 'Security', label: '⚖️ Legal Tech' },
+            { key: 'phase 14', domain: 'General', label: '🔮 Phase 14 Anticipation' },
+            { key: 'synergy', domain: 'General', label: '⚡ Quantum Synergy' }
+          ]
+
+          strategicKeywords.forEach(sk => {
+            if (lowerMsg.includes(sk.key) || name.toLowerCase().includes(sk.key)) {
+              domain = sk.domain
+              knowledge = `Aligned with strategic initiative: ${sk.label}.`
+            }
+          })
+
           // Domain detection from commit message (as fallback or primary)
-          if (lowerMsg.includes('service') || lowerMsg.includes('core')) domain = 'Services'
-          else if (lowerMsg.includes('script') || lowerMsg.includes('automation') || lowerMsg.includes('workflow')) domain = 'Automation'
-          else if (lowerMsg.includes('ui') || lowerMsg.includes('ux') || lowerMsg.includes('frontend') || lowerMsg.includes('page')) domain = 'UI/UX'
-          else if (lowerMsg.includes('agent') || lowerMsg.includes('cognitive')) domain = 'AI Agents'
-          else if (lowerMsg.includes('doc') || lowerMsg.includes('knowledge')) domain = 'Documentation'
-          else if (lowerMsg.includes('security') || lowerMsg.includes('auth')) domain = 'Security'
+          if (domain === 'General') {
+            if (lowerMsg.includes('service') || lowerMsg.includes('core')) domain = 'Services'
+            else if (lowerMsg.includes('script') || lowerMsg.includes('automation') || lowerMsg.includes('workflow')) domain = 'Automation'
+            else if (lowerMsg.includes('ui') || lowerMsg.includes('ux') || lowerMsg.includes('frontend') || lowerMsg.includes('page')) domain = 'UI/UX'
+            else if (lowerMsg.includes('agent') || lowerMsg.includes('cognitive')) domain = 'AI Agents'
+            else if (lowerMsg.includes('doc') || lowerMsg.includes('knowledge')) domain = 'Documentation'
+            else if (lowerMsg.includes('security') || lowerMsg.includes('auth')) domain = 'Security'
+          }
 
           if (changedFiles.length > 0) {
             const hasMarkdown = changedFiles.some(f => f.endsWith('.md'))
@@ -512,7 +533,11 @@ export class Jules {
 
             if (hasMarkdown || hasAgents || hasDocs || hasKnowledgeDir) {
               const count = changedFiles.filter(f => f.endsWith('.md') || f.startsWith('agents/') || f.startsWith('docs/') || f.includes('data/knowledge/')).length;
-              knowledge = `Enhanced ecosystem knowledge base via ${count} artifact${count > 1 ? 's' : ''}.`
+              if (!knowledge) {
+                knowledge = `Enhanced ecosystem knowledge base via ${count} artifact${count > 1 ? 's' : ''}.`
+              } else {
+                knowledge += ` Found ${count} relevant artifacts.`
+              }
             }
 
             // Detect domain from file paths (Prioritized assignment, overrides commit msg detection if match found)
