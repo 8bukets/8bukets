@@ -246,7 +246,12 @@ export class Jules {
     const prs = await gitProvider.listPullRequests()
 
     for (const pr of prs) {
-      const isAutonomous = pr.title.includes('🤖') || pr.title.toLowerCase().includes('autonomous') || pr.title.toLowerCase().includes('evolve')
+      const isAutonomous = pr.title.includes('🤖') ||
+                           pr.title.toLowerCase().includes('autonomous') ||
+                           pr.title.toLowerCase().includes('evolve') ||
+                           pr.title.toLowerCase().includes('fix/autonomous') ||
+                           pr.title.toLowerCase().includes('feature/autonomous')
+
       if (isAutonomous) {
         console.log(` 🤖 [Jules] Analyzing autonomous PR #${pr.id}: "${pr.title}"`)
         const ciPassed = await gitProvider.verifyCIStatus(pr.branch, pr.provider)
@@ -418,15 +423,21 @@ export class Jules {
        await this.autonomousPrAudit()
     }
 
-    // Phase 22: Cloud Takeover Audit
+    // Phase 22: Cloud Takeover & Fluency Audit
     try {
       const { cloudWorkflowAgent } = await import('./services/cloud_workflow')
       const { workOrderService } = await import('./services/work_order')
+
+      const isFluent = await cloudWorkflowAgent.ensureFluentStatus()
+      if (!isFluent) {
+        console.warn('⚠️ [Jules] System not fluent. Cloud takeover might be degraded.')
+      }
+
       const takeoverResult = await cloudWorkflowAgent.enforceCloudTakeover()
 
       if (takeoverResult.takeover) {
-        console.log('🌩️ [Jules] Cloud takeover active. Executing recovered work orders...')
-        await workOrderService.executePendingOrders()
+        console.log('🌩️ [Jules] Cloud takeover active. Sovereignty established.')
+        // Note: enforceCloudTakeover already triggers executePendingOrders()
       }
     } catch (e) {
       console.warn('⚠️ [Jules] Cloud takeover audit failed, continuing work cycle.')
