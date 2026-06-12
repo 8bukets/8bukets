@@ -10911,3 +10911,5 @@
 - **Target**: data/knowledge/data_agent_kit.md
 - **Title**: The future of agentic development: Redefining the data practitioner lifecycle with Data Agent Kit
 - **Relationship Map**: Confirmed relationship with data_agent_kit.md as an intelligence source. Extracted key topics: Data Agent Kit, Data Cloud, Agentic tools, Model Context Protocol (MCP)...
+
+- [Intelephence Personal and Google Jules Integration](data/knowledge/intelephence_jules_integration.md)
