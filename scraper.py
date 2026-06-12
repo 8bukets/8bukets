@@ -12,7 +12,6 @@ from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse
 from concurrent.futures import ProcessPoolExecutor
 
-CLEAN_TEXT_REGEX = re.compile(r'\s+')
 URL_REGEX = re.compile(r'^https?://')
 
 class UXFormatter(logging.Formatter):
@@ -114,7 +113,7 @@ class WordpressScraperAsync:
         if not text:
             return ""
         text = text.replace('\xa0', ' ')
-        return CLEAN_TEXT_REGEX.sub(' ', text).strip()
+        return " ".join(text.split())
 
     def is_url(self, text: str) -> bool:
         """Check if text looks like a URL."""
