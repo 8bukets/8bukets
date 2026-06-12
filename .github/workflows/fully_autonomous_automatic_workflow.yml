@@ -2,7 +2,7 @@ name: Fully Autonomous Automatic Workflow
 
 on:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -34,6 +34,15 @@ jobs:
 
       - name: Docker Health Check
         run: docker info && docker ps
+
+      - name: Synchronize Presence and Collaboration
+        run: npm run connect
+        env:
+          AUTONOMOUS_MODE: cloud
+          MACBOOK_CLOUD_SIMULATION: true
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
 
       - name: Execute Unified Autonomous Sync & Creation Cycle
         run: npx tsx scripts/autonomous_sync.ts

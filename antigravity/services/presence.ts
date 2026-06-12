@@ -32,6 +32,7 @@ export const PresenceSchema = z.object({
   jenkins_status: z.string().optional(),
   node_priority: z.number().optional(),
   is_leader: z.boolean().optional(),
+  leadership_status: z.string().optional(),
   capabilities: z.array(z.string()).optional(),
   autonomous_mode: z.string().optional(),
   cloud_provider: z.string().optional(),
@@ -153,7 +154,8 @@ export class OnlinePresenceService {
         jenkins_status: jenkinsStatus,
         node_priority: nodePriority,
         is_leader: isLeader,
-        capabilities: ['git-sync', 'self-repair', 'knowledge-ingestion', 'pr-audit', 'cloud-sync', 'autonomous-evolution'],
+        leadership_status: (isCloud && isLeader) ? 'Autonomous Cloud Leadership' : (isLeader ? 'Primary Node Leadership' : 'Subordinate Node'),
+        capabilities: ['git-sync', 'self-repair', 'knowledge-ingestion', 'pr-audit', 'cloud-sync', 'autonomous-evolution', 'cloud-takeover'],
         autonomous_mode: process.env.AUTONOMOUS_MODE || 'standard',
         cloud_provider: cloudProvider,
         docker: {
