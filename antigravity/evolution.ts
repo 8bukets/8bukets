@@ -197,6 +197,17 @@ export async function evolve() {
             })
           }
         }
+
+        // Rule 19: Cognitive Sovereignty Violation (Phase 14 Directive)
+        if (fullPath.includes('jules.ts') || fullPath.includes('agent')) {
+          if (!content.includes('verifiedSignature')) {
+            suggestions.push({
+              file: fullPath.replace(process.cwd(), ''),
+              complexity: lines,
+              suggestion: 'COGNITIVE_SOVEREIGNTY_VIOLATION: Critical agent module detected without mandatory verifiedSignature in memory or configuration.'
+            })
+          }
+        }
       }
     }
   }
@@ -204,6 +215,7 @@ export async function evolve() {
   await scan(baseDir)
 
   console.log('✨ [Evolution Report]: Found', suggestions.length, 'potential optimizations.')
+  suggestions.forEach(s => console.log(` - [${s.file}] ${s.suggestion}`))
   return suggestions
 }
 

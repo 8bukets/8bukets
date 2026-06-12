@@ -74,6 +74,8 @@ export class Jules {
       const hasQuantumSynergy = checkKnowledge('quantum synergy')
       const hasPhase14 = checkKnowledge('Phase 14')
       const hasWilsonSonsini = checkKnowledge('Wilson Sonsini')
+      const hasCognitiveSovereignty = checkKnowledge('cognitive sovereignty')
+      const hasLegalVentureSynthesis = checkKnowledge('legal-venture synthesis')
 
       if (hasQuantum && !this.memory.preferredPatterns.includes('crystals-kyber')) {
         suggestions.push('Integrate Crystals-Kyber for Quantum-resistant security as per latest strategy.')
@@ -89,6 +91,12 @@ export class Jules {
       }
       if (hasWilsonSonsini) {
         suggestions.push('Align autonomous core with Wilson Sonsini startup lifecycle and venture-readiness metrics.')
+      }
+      if (hasCognitiveSovereignty) {
+        suggestions.push('Enforce Cognitive Sovereignty across all agent modules via verifiedSignature protocols.')
+      }
+      if (hasLegalVentureSynthesis) {
+        suggestions.push('Activate Phase 14 Anticipatory Intelligence for real-time legal-venture synthesis audits.')
       }
     }
 
@@ -147,6 +155,7 @@ export class Jules {
       { name: 'Supabase Connectivity Refresh', action: () => this.recordTask('Supabase pooling verified.') },
       { name: 'Collaboration Sync', action: () => this.syncCollaboration() },
       { name: 'Docker Sovereignty Audit', action: () => this.auditDocker() },
+      { name: 'Cognitive Sovereignty Audit', action: () => this.auditSovereignty() },
       { name: 'APAC Latency Validation', action: () => this.recordTask('APAC Phase 13 Latency: <50ms target verified for Tokyo and Singapore edge nodes.') }
     ]
 
@@ -179,6 +188,16 @@ export class Jules {
       this.recordTask(`Docker Sovereignty: Found ${containers.length} active containers. Connectivity verified.`)
     } else {
       this.recordTask('Docker Sovereignty: No active containers found or Docker daemon unreachable.')
+    }
+  }
+
+  public async auditSovereignty() {
+    console.log('🛡️ [Jules] Auditing cognitive sovereignty signatures...')
+    const verified = !!this.memory.architecturalDecisions.verifiedSignature
+    if (verified) {
+      this.recordTask('Cognitive Sovereignty: verifiedSignature present in memory. Identity anchored.')
+    } else {
+      this.recordTask('Cognitive Sovereignty Warning: verifiedSignature missing. High risk of unauthorized cognitive drift.')
     }
   }
 
