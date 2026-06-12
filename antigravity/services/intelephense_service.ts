@@ -11,7 +11,7 @@ import { KnowledgeObserver, Knowledge } from './knowledge_observer'
 export class IntelephenseService {
   private readonly owner = 'bmewburn'
   private readonly repo = 'intelephense-docs'
-  private readonly files = ['README.md', 'installation.md', 'gettingStarted.md', 'features.md', 'support.md']
+  private readonly files = ['README.md', 'installation.md', 'gettingStarted.md', 'features.md', 'support.md', 'LICENSE.txt']
 
   /**
    * consolidate: Fetches, merges, and persists Intelephense knowledge.
