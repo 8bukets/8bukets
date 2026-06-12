@@ -1,4 +1,5 @@
 import fs from 'fs';
+import fsPromises from 'fs/promises';
 import path from 'path';
 
 async function ingestGeminiCliSubagents() {
@@ -14,8 +15,8 @@ async function ingestGeminiCliSubagents() {
 `;
 
     const knowledgePath = 'KNOWLEDGE_MERGE.md';
-    if (fs.existsSync(knowledgePath)) {
-      let content = fs.readFileSync(knowledgePath, 'utf-8');
+    if (await fsPromises.access(knowledgePath).then(() => true).catch(() => false)) {
+      let content = await fsPromises.readFile(knowledgePath, 'utf-8');
       if (!content.includes('Target**: Gemini CLI Subagents Documentation')) {
         const insertPointRegex = /(## Autonomous Observation\n)/;
         if (insertPointRegex.test(content)) {
@@ -23,7 +24,7 @@ async function ingestGeminiCliSubagents() {
         } else {
            content += '\n## Autonomous Observation\n' + newObservation;
         }
-        fs.writeFileSync(knowledgePath, content, 'utf-8');
+        await fsPromises.writeFile(knowledgePath, content, 'utf-8');
         console.log(`Successfully ingested and updated ${knowledgePath}.`);
       } else {
         console.log(`Knowledge already exists in ${knowledgePath}. Skipping.`);
@@ -31,11 +32,11 @@ async function ingestGeminiCliSubagents() {
     }
 
     const consolidatedPath = 'CONSOLIDATED_INTELLIGENCE.md';
-    if (fs.existsSync(consolidatedPath)) {
-       let content = fs.readFileSync(consolidatedPath, 'utf-8');
+    if (await fsPromises.access(consolidatedPath).then(() => true).catch(() => false)) {
+       let content = await fsPromises.readFile(consolidatedPath, 'utf-8');
        if (!content.includes('Gemini CLI Subagents Intelligence')) {
          content += `\n## 🤖 Gemini CLI Subagents Intelligence\n- **Ingested on:** ${now}\n- **Source:** Local Documentation\n- **Summary:** Gemini CLI supports creating specialized subagents (e.g. security auditor, generalist, codebase investigator) using Markdown definition files with YAML frontmatter. These subagents have isolated context loops, specialized tools, and recursion protection. They can be forced using the @ syntax.\n`;
-         fs.writeFileSync(consolidatedPath, content, 'utf-8');
+         await fsPromises.writeFile(consolidatedPath, content, 'utf-8');
          console.log(`Successfully ingested and updated ${consolidatedPath}.`);
        } else {
          console.log(`Knowledge already exists in ${consolidatedPath}. Skipping.`);
@@ -43,8 +44,8 @@ async function ingestGeminiCliSubagents() {
     }
 
     const systemKnowledgePath = 'data/knowledge/system_knowledge.json';
-    if (fs.existsSync(systemKnowledgePath)) {
-        let content = fs.readFileSync(systemKnowledgePath, 'utf8');
+    if (await fsPromises.access(systemKnowledgePath).then(() => true).catch(() => false)) {
+        let content = await fsPromises.readFile(systemKnowledgePath, 'utf8');
         if (!content.includes('"Gemini CLI Subagents"')) {
             const metadataRegex = /"metadata":\s*\{\s*"generated_at":\s*"[^"]*",\s*"version":\s*(\d+),\s*"sources_processed":\s*\[(.*?)\]\s*\}/s;
             const match = content.match(metadataRegex);
@@ -58,7 +59,7 @@ async function ingestGeminiCliSubagents() {
             "sources_processed": [${newSources}]
         }`;
                 content = content.replace(metadataRegex, newMetadata);
-                fs.writeFileSync(systemKnowledgePath, content, 'utf8');
+                await fsPromises.writeFile(systemKnowledgePath, content, 'utf8');
                 console.log(`Successfully ingested and updated ${systemKnowledgePath}.`);
             }
         } else {

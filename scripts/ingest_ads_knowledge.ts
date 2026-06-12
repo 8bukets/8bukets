@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import * as fsPromises from 'fs/promises';
 import * as path from 'path';
 import * as cheerio from 'cheerio';
 
@@ -128,21 +129,21 @@ async function scrapeGoogleAdsDocs() {
 
     const jsonPath = "data/knowledge/google_ads_docs.json";
     const dirPath = path.dirname(jsonPath);
-    if (!fs.existsSync(dirPath)) {
-        fs.mkdirSync(dirPath, { recursive: true });
+    if (!await fsPromises.access(dirPath).then(() => true).catch(() => false)) {
+        await fsPromises.mkdir(dirPath, { recursive: true });
     }
-    fs.writeFileSync(jsonPath, JSON.stringify(data, null, 4), 'utf-8');
+    await fsPromises.writeFile(jsonPath, JSON.stringify(data, null, 4), 'utf-8');
     console.log(`Saved Google Ads docs JSON to ${jsonPath}`);
 
     const mdPath = "data/knowledge/google_ads_docs.md";
-    fs.writeFileSync(mdPath, mdContent, 'utf-8');
+    await fsPromises.writeFile(mdPath, mdContent, 'utf-8');
     console.log(`Saved Google Ads docs Markdown to ${mdPath}`);
 
     // Update system_knowledge.json
     const knowledgePath = path.join(process.cwd(), 'data/knowledge/system_knowledge.json');
-    if (fs.existsSync(knowledgePath)) {
+    if (await fsPromises.access(knowledgePath).then(() => true).catch(() => false)) {
         try {
-            const knowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'));
+            const knowledge = JSON.parse(await fsPromises.readFile(knowledgePath, 'utf8'));
 
             // Flattening check during ingest
             if (knowledge.sections && knowledge.sections.google_ads) {
@@ -160,7 +161,7 @@ async function scrapeGoogleAdsDocs() {
             }
             knowledge.metadata.generated_at = new Date().toISOString();
 
-            fs.writeFileSync(knowledgePath, JSON.stringify(knowledge, null, 4), 'utf8');
+            await fsPromises.writeFile(knowledgePath, JSON.stringify(knowledge, null, 4), 'utf8');
             console.log(`✅ [Ingest] Merged Google Ads docs into system_knowledge.json.`);
         } catch (e) {
             console.error('❌ [Ingest] Failed to update system_knowledge.json:', e);

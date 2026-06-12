@@ -2,6 +2,7 @@ import { jules } from '../antigravity/jules';
 import { generateRelationshipMap, mergeBranchInsights, syncCollaborationState } from '../antigravity/services/collaboration';
 import { logAutonomousAction } from '../antigravity/core';
 import * as fs from 'fs';
+import * as fsPromises from 'fs/promises';
 import * as path from 'path';
 
 /**
@@ -29,11 +30,11 @@ async function main() {
     const mapPath = path.join(process.cwd(), 'data/relationship_map.json');
 
     const dataDir = path.dirname(mapPath);
-    if (!fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir, { recursive: true });
+    if (!await fsPromises.access(dataDir).then(() => true).catch(() => false)) {
+      await fsPromises.mkdir(dataDir, { recursive: true });
     }
 
-    fs.writeFileSync(mapPath, JSON.stringify(relationshipMap, null, 2));
+    await fsPromises.writeFile(mapPath, JSON.stringify(relationshipMap, null, 2), 'utf8');
     console.log(`✅ [UnifiedCollaboration] Relationship map saved to ${mapPath}.`);
 
     // 4. Synchronize Autonomous State

@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import * as fsPromises from 'fs/promises';
 import * as path from 'path';
 
 interface Section {
@@ -18,12 +19,12 @@ async function ingestRenderDocs() {
     const jsonPath = 'render_docs.json';
     const mdPath = 'render_docs.md';
 
-    if (!fs.existsSync(rawTextPath)) {
+    if (!await fsPromises.access(rawTextPath).then(() => true).catch(() => false)) {
         console.error(`File not found: ${rawTextPath}`);
         return;
     }
 
-    const rawText = fs.readFileSync(rawTextPath, 'utf-8');
+    const rawText = await fsPromises.readFile(rawTextPath, 'utf-8');
     const lines = rawText.split('\n').map(line => line.trim()).filter(line => line.length > 0);
 
     const pageData: PageData = {
@@ -70,10 +71,10 @@ async function ingestRenderDocs() {
     // expect a flat JSON structure containing a sections array directly at the root."
     const finalData = { sections: pageData.sections, title: pageData.title, url: pageData.url };
 
-    fs.writeFileSync(jsonPath, JSON.stringify(finalData, null, 4), 'utf-8');
+    await fsPromises.writeFile(jsonPath, JSON.stringify(finalData, null, 4), 'utf-8');
     console.log(`Saved Render docs JSON to ${jsonPath}`);
 
-    fs.writeFileSync(mdPath, mdContent, 'utf-8');
+    await fsPromises.writeFile(mdPath, mdContent, 'utf-8');
     console.log(`Saved Render docs Markdown to ${mdPath}`);
 }
 
